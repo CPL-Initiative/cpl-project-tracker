@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9292,
-    "output_tokens": 3690,
+    "output_tokens": 4351,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,53 +30,48 @@
     "model": null
    }
   ],
-  "output_tokens": 3690,
+  "output_tokens": 4351,
   "output_tokens_details": {
-   "thinking_tokens": 1419
+   "thinking_tokens": 1869
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.11097,
- "ms": 30136,
- "seconds": 30.7,
+ "cost_usd": 0.12419,
+ "ms": 35680,
+ "seconds": 36.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 31,
+   "placed": 33,
    "listed": 34,
-   "share": 0.912,
+   "share": 0.971,
    "missing": [
-    "ARTV1",
-    "BIOLC1001",
-    "BIOLC1001L"
+    "ARTV1"
    ],
-   "unexplained": [
-    "BIOLC1001",
-    "BIOLC1001L"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ARTHV1",
-    "BIOLC1001&BIOLC1001L"
+    "ARTHV1"
    ],
    "flagged": [
     "ARTHV1"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
    "status": "unequal",
    "computed": [
     33.0,
-    34.0
+    35.0
    ],
    "stated": [
     33.0,
@@ -84,14 +79,14 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 33.0-34.0; the catalog states 33.0-46.0"
+    "the blocks sum to 33.0-35.0; the catalog states 33.0-46.0"
    ],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
      70.0,
-     89.0
+     90.0
     ],
     "stated": [
      60.0,
@@ -132,7 +127,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "REQUIREMENTS (Course List)",
+   "section_heading": "Elementary Teacher Education: Integrated Programs, A.A-T (REQUIREMENTS tab)",
    "measure": "units",
    "total_units": {
     "min": 33,
@@ -162,6 +157,51 @@
   },
   "blocks": [
    {
+    "name": "Required Core Courses: BIOL C1001 & C1001L",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Biology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL C1001L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: or BIOL V04",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Biology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL V04",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
     "name": "Required Core Courses",
     "rule": "all",
     "minimum": null,
@@ -171,19 +211,6 @@
      "max": 27
     },
     "courses": [
-     {
-      "code": "BIOL C1001 & BIOL C1001L",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "BIOL V04",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
      {
       "code": "CDEV C1000",
       "units": 3,
@@ -441,18 +468,18 @@
   "missing_explained": [
    {
     "code": "ART V01",
-    "why": "catalog prints ARTH V01 Art Appreciation in List B (recorded as catalog addition); likely the same course renumbered"
+    "why": "catalog prints ARTH V01 Art Appreciation in List B instead; recorded as catalog addition"
    }
   ],
   "notes": [
-   "The page prints no program heading in the extracted text; section_heading names the REQUIREMENTS tab's Course List.",
-   "BIOL C1001 & C1001L is printed as one paired row (4 units) and recorded as a single entry 'BIOL C1001 & BIOL C1001L' covering both closed-list courses BIOL C1001 and BIOL C1001L; BIOL V04 is its alternative.",
-   "Catalog prints 'CDEV C1000'; closed list stores it as 'CDEVC1000' (same course, no catalog addition).",
-   "ENGL C1003 row prints 3-4 units for the choice among ENGL C1003, ENGL V18 and HIST V76; individual units not printed for alternatives.",
-   "List C is optional ('Select up to 12 units'); recorded as choose_units with minimum 0 (max 12). It also allows 'Any course unused from List A or List B'. Required Additional Units 7-19.",
-   "Elective Units 3-21 recorded as degree_elective_units; Double-Counted Units (22-28) also printed in the degree summary.",
-   "The outcomes tab prints one outcomes list for the program, recorded for this award."
+   "The page prints no section heading in the extracted text; heading recorded from the program title and award.",
+   "The core row 'BIOL C1001 & C1001L ... 4 or BIOL V04' is recorded as two option_group 'Biology' blocks inside the core (the pair, or BIOL V04); the printed 4 units belong to the pair and were placed on BIOL C1001; no units are printed beside BIOL V04 alone. These count toward Required Core Units 26-27.",
+   "ENGL C1003 printed 3-4 with alternatives ENGL V18 and HIST V76 (no units printed beside the alternatives).",
+   "List C is optional ('Select up to 12 units'); recorded as choose_units with minimum 0. It also allows 'Any course unused from List A or List B'. Required Additional Units (Lists A-C combined) printed as 7-19.",
+   "Closed list stores CDEVC1000 without a space; catalog prints CDEV C1000, treated as the same course.",
+   "Degree page prints Required Major Units 33-46, CalGETC 34, Double-Counted Units (22-28), Elective Units 3-21, Total 60; elective units recorded in degree_elective_units.",
+   "Outcomes are from the page's program student learning outcomes tab for this program."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

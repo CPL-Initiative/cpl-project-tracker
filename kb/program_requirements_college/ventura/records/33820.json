@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Architectural Science",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-as/",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-science-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7702,
+  "input_tokens": 8250,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7702,
-    "output_tokens": 1307,
+    "input_tokens": 8250,
+    "output_tokens": 2243,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,67 +30,92 @@
     "model": null
    }
   ],
-  "output_tokens": 1307,
+  "output_tokens": 2243,
   "output_tokens_details": {
-   "thinking_tokens": 459
+   "thinking_tokens": 490
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05695,
- "ms": 11444,
- "seconds": 12.2,
+ "cost_usd": 0.07786,
+ "ms": 17709,
+ "seconds": 18.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "ARCHV10",
-    "ARCHV21",
-    "ARCHV22",
-    "ARCHV23",
-    "ARCHV25",
-    "ARCHV31",
-    "ARCHV32",
-    "ARCHV40",
-    "ARCHV41",
-    "DRFTV5A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 16,
+   "codes": [
+    "ARCHV11",
+    "ARCHV15",
+    "ARCHV24",
+    "ARCHV33",
+    "ARCHV58",
+    "ARCHV59",
+    "ARCHV60",
+    "ARCHV64",
+    "ARCHV96",
+    "CTV20",
+    "CTV58",
+    "CTV59",
+    "CTV60",
+    "CTV64",
+    "DRFTV2B",
+    "DRFTV5B"
+   ],
+   "flagged": [
+    "ARCHV11",
+    "ARCHV15",
+    "ARCHV24",
+    "ARCHV33",
+    "ARCHV58",
+    "ARCHV59",
+    "ARCHV60",
+    "ARCHV64",
+    "ARCHV96",
+    "CTV20",
+    "CTV58",
+    "CTV59",
+    "CTV60",
+    "CTV64",
+    "DRFTV2B",
+    "DRFTV5B"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    25.0,
+    25.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -105,15 +130,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Plan of Study Grid",
+   "section_heading": "Architectural Science Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,60 +155,242 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Recognize and critically analyze the elements and principles of architectural design and construction",
+    "Develop critical understanding of the practice of architecture and its components.",
+    "Recognize and execute cognitive, cultural, physical, social and sustainable factors in planning construction and the execution of architectural designs.",
+    "Display competency with graphic communication of ideas."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ARCH V10",
-    "why": "named only in the A.S. (Architectural Design) plan of study; no certificate requirements in the text"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARCH V10",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V23",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DRFT V05A",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ARCH V21",
-    "why": "named only in the A.S. (Architectural Design) plan of study; no certificate requirements in the text"
+    "name": "Recommended Courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARCH V11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH V15",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH V24",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH V33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH V60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH V64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH V96",
+      "units": 1,
+      "units_max": 14,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CT V20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CT V60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CT V64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRFT V02B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRFT V05B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "ARCH V22",
-    "why": "named only in the A.S. (Architectural Design) plan of study; no certificate requirements in the text"
-   },
-   {
-    "code": "ARCH V23",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARCH V25",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARCH V31",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARCH V32",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARCH V40",
-    "why": "named only in the A.S. (Architectural Design) plan of study; no certificate requirements in the text"
-   },
-   {
-    "code": "ARCH V41",
-    "why": "named only in the A.S. (Architectural Design) plan of study; no certificate requirements in the text"
-   },
-   {
-    "code": "DRFT V05A",
-    "why": "not in the text"
+    "name": "Additional Specialized Courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARCH V58",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH V59",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CT V58",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CT V59",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source URL is the Architectural Design A.S. page, not the Architectural Science Certificate of Achievement. The extracted text contains only site navigation, the A.S. Plan of Study Grid (Total Units/Hours 59-61, including VC GE areas) and an outcomes tab; the program requirements tab for any award is not in the text.",
-   "No requirements for the Architectural Science certificate are printed, so no blocks, totals or degree figures are recorded. The 59-61 total belongs to the A.S. plan of study and is not this certificate's total.",
-   "The plan of study refers to 'Required Additional Courses' (2-3 units each) and 'Elective ARCH course' slots without listing them; those lists were not captured.",
-   "The outcomes tab on the page lists four program student learning outcomes for the A.S. (Architectural Design) program; they were not recorded because the page is for a different award and it is not stated that the certificate shares them. A reviewer should check the certificate's own page.",
-   "The reviewer should locate the Architectural Science Certificate of Achievement page in the 2026-2027 Ventura College catalog."
+   "The captured text does not print the program heading; section_heading is taken from the program name and page URL (architectural-science-coa).",
+   "Total Units for the Certificate 25 recorded as total_units; the required core block's courses sum to 25.",
+   "ARCH V23/DRFT V05A printed as a cross-listed pair (Introduction to AutoCAD); recorded as ARCH V23 with DRFT V05A as alternative.",
+   "Recommended and Additional Specialized courses include cross-listed equivalents (e.g., ARCH V11/CT V20/DRFT V02B; ARCH V24/DRFT V05B; ARCH V60/CT V60; ARCH V64/CT V64; ARCH V58/CT V58; ARCH V59/CT V59), listed separately as printed. The catalog states they do not satisfy certificate requirements.",
+   "Outcomes come from the page's program student learning outcomes tab, which applies to this program."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

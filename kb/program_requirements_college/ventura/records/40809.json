@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Food Safety",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/food-safety-ca/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11853,
+  "input_tokens": 8143,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11853,
-    "output_tokens": 909,
+    "input_tokens": 8143,
+    "output_tokens": 1230,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 909,
+  "output_tokens": 1230,
   "output_tokens_details": {
-   "thinking_tokens": 261
+   "thinking_tokens": 220
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06559,
- "ms": 9811,
- "seconds": 10.5,
+ "cost_usd": 0.05717,
+ "ms": 9847,
+ "seconds": 10.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 11,
    "listed": 11,
-   "share": 0.0,
-   "missing": [
-    "AGV10",
-    "AGV13",
-    "AGV31",
-    "AGV32",
-    "AGV33",
-    "AGV34",
-    "AGV36",
-    "AGV37",
-    "AGV38",
-    "AGV39",
-    "AGV96"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -72,26 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    16.0,
+    22.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    16.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -106,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "No Food Safety section in the text (Agriculture course descriptions only)",
+   "section_heading": "REQUIREMENTS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 16,
+    "max": 22
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -131,61 +121,124 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Identify and describe the agricultural practices/processes affecting food safety from production to processing.",
+    "Identify local, state and federal government agencies responsible for Food Safety regulation and compliance.",
+    "Evaluate the conditions of a food borne illness hazard situation, propose a solution, and develop standard operating procedures (SOPs), good Manufacturing Practices (GMPs) to prevent a future occurrence.",
+    "Differentiate between required certifications in food safety, such as HACCP (Hazard Analysis and Critical Control Point), PCQI (Preventative Controls Qualified Individual), and FSVP (Foreign Supplier Verification)."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AG V10",
-    "why": "appears only in course descriptions; no program requirements in the text"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "AG V36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG V37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG V38",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG V39",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AG V13",
-    "why": "appears only in course descriptions; no program requirements in the text"
-   },
-   {
-    "code": "AG V31",
-    "why": "appears only in course descriptions; no program requirements in the text"
-   },
-   {
-    "code": "AG V32",
-    "why": "appears only in course descriptions; no program requirements in the text"
-   },
-   {
-    "code": "AG V33",
-    "why": "appears only in course descriptions; no program requirements in the text"
-   },
-   {
-    "code": "AG V34",
-    "why": "appears only in course descriptions; no program requirements in the text"
-   },
-   {
-    "code": "AG V36",
-    "why": "appears only in course descriptions; no program requirements in the text"
-   },
-   {
-    "code": "AG V37",
-    "why": "appears only in course descriptions; no program requirements in the text"
-   },
-   {
-    "code": "AG V38",
-    "why": "appears only in a course description cut off mid-text; no program requirements in the text"
-   },
-   {
-    "code": "AG V39",
-    "why": "not in the text"
-   },
-   {
-    "code": "AG V96",
-    "why": "not in the text"
+    "name": "Required Additional Courses",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "AG V10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG V13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG V31",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG V32",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG V33",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG V34",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG V96",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text contains only Agriculture course descriptions (starting mid-description and ending cut off within AG V38). The Food Safety Certificate of Achievement requirements section is not included, so no blocks, total, outcomes or careers could be recorded. A reviewer should check the program requirements section of the source page.",
-   "The program description is not in the text either, so no careers were recorded. The phrase 'food safety related careers' appears only in the AG V36 course description, not in a program section."
+   "The text prints no program title heading; section_heading uses the requirements tab name. The page is the Food Safety Certificate of Achievement page per the source URL.",
+   "AG V96 is printed with 3 units in the catalog, while the state file stores 1 unit.",
+   "Outcomes are from the page's program student learning outcomes tab for this program."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

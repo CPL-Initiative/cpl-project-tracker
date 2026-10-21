@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9341,
-    "output_tokens": 4358,
+    "output_tokens": 4195,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4358,
+  "output_tokens": 4195,
   "output_tokens_details": {
-   "thinking_tokens": 1637
+   "thinking_tokens": 1463
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.12452,
- "ms": 34757,
- "seconds": 35.3,
+ "cost_usd": 0.12126,
+ "ms": 32965,
+ "seconds": 33.3,
  "parts": null,
  "error": null,
  "score": {
@@ -108,7 +109,7 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
     34.0,
     35.0
@@ -119,27 +120,8 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 34.0-35.0; the catalog states 33.0-46.0"
-   ],
-   "degree": {
-    "pass": true,
-    "status": "equal",
-    "computed": [
-     71.0,
-     90.0
-    ],
-    "stated": [
-     60.0,
-     60.0
-    ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
-    "why": [],
-    "overlap": true
-   }
+    "'List C: Select up to 12 units from the following (optional):' chooses units but names no minimum"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -289,7 +271,7 @@
     ]
    },
    {
-    "name": "List A: Select one course from the following",
+    "name": "List A: Select one course from the following:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -315,7 +297,7 @@
     ]
    },
    {
-    "name": "List B: Select one course from the following",
+    "name": "List B: Select one course from the following:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -355,9 +337,9 @@
     ]
    },
    {
-    "name": "List C: Select up to 12 units from the following (optional)",
+    "name": "List C: Select up to 12 units from the following (optional):",
     "rule": "choose_units",
-    "minimum": 0,
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": null,
@@ -495,7 +477,7 @@
    },
    {
     "code": "COMM V01",
-    "why": "not in the text; catalog prints COMM C1000 Introduction to Public Speaking instead"
+    "why": "not in the text; catalog prints COMM C1000 instead"
    },
    {
     "code": "ENGL C1001",
@@ -555,15 +537,15 @@
    }
   ],
   "notes": [
-   "The page prints no program-title heading for the requirements; section_heading uses the table heading 'Course List' under the REQUIREMENTS tab.",
-   "BIOL C1001 & C1001L are printed as a pair with 4 units for both, 'or BIOL V04'; BIOL V04 replaces the pair. The 4 units are recorded on BIOL C1001 and BIOL C1001L has no printed units of its own.",
-   "CDEV C1000 is recorded as the closed-list course CDEVC1000 (same code without the space).",
-   "ARTH V01 Art Appreciation appears to be the closed-list ART V01 under a new subject code; COMM C1000 may correspond to COMM V01 (different title). Both marked as catalog additions.",
-   "List C is optional ('Select up to 12 units'), so recorded as choose_units with minimum 0 and no stated total; it also allows 'Any course unused from List A or List B'. Required Additional Units are printed as 7-19.",
-   "Degree summary: Required Major Units 33-46, CalGETC 34, Double-Counted Units (22-28), Elective Units 3-21, Total 60. Elective units recorded as degree_elective_units.",
-   "The single outcomes list on the page is the program's list; recorded for this award.",
-   "Plan of Study shows ENGL C1003 at 4 units while requirements list the choice as 3-4."
+   "The program's title heading is not in the extracted text; section_heading uses the REQUIREMENTS tab's 'Course List' heading.",
+   "The catalog prints 'BIOL C1001 & C1001L' as one row worth 4 units, 'or BIOL V04'. Recorded BIOL C1001 with the row's 4 units and BIOL V04 as its alternative, and BIOL C1001L as a separate entry with no units; the choice is the BIOL C1001/C1001L pair or BIOL V04 (units for BIOL V04 not printed).",
+   "CDEV C1000 is matched to the closed-list entry 'CDEVC1000' (same code without a space).",
+   "ENGL C1003 row prints 3-4 units for the choice among ENGL C1003, ENGL V18 and HIST V76; alternatives' own units are not printed.",
+   "List C is optional ('Select up to 12 units'); minimum left null since no required minimum is stated. It also allows 'Any course unused from List A or List B'. Required Additional Units 7-19 covers Lists A, B and C.",
+   "Degree summary: Required Major Units 33-46, CalGETC 34, Double-Counted Units (22-28), Elective Units 3-21, total 60. Elective units recorded in degree_elective_units.",
+   "Plan of Study totals 61 units; it is illustrative only.",
+   "The outcomes list is printed for the program on this page and recorded for this award."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

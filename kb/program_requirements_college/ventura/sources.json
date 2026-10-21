@@ -28,7 +28,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 3788
+  "text_chars": 4740
  },
  {
   "control_number": "06948",
@@ -62,7 +62,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4051
+  "text_chars": 5314
  },
  {
   "control_number": "06957",
@@ -119,11 +119,12 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.895,
+  "coverage": 0.842,
   "codes_found": [
    "ARTV27",
    "CTV65",
    "DRFTV2A",
+   "MTV15",
    "MTV4",
    "WELV1",
    "WELV13A",
@@ -132,37 +133,68 @@
    "WELV14B",
    "WELV2",
    "WELV20",
-   "WELV27",
    "WELV3",
    "WELV30",
    "WELV4",
-   "WELV65",
    "WELV96"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/welding/",
-   "title": "Welding < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/welding/welding-technology-as/",
+   "title": "Welding Technology, Associate in Science < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.5
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 13227
+  "text_chars": 5730
  },
  {
   "control_number": "06969",
   "title": "Construction Technology—Construction Management Option",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.793,
+  "codes_found": [
+   "ARCHV11",
+   "ARCHV12",
+   "ARCHV58",
+   "ARCHV59",
+   "ARCHV60",
+   "ARCHV64",
+   "ARCHV75",
+   "CTV20",
+   "CTV30",
+   "CTV50",
+   "CTV52",
+   "CTV63",
+   "CTV66",
+   "CTV67",
+   "CTV70",
+   "CTV71",
+   "CTV72",
+   "CTV76",
+   "CTV77",
+   "CTV79",
+   "CTV96",
+   "DRFTV2B",
+   "MTV4"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-construction-management-option-as/",
+   "title": "Construction Technology, Construction Management Option, Associate in Science < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 29,
-  "text_chars": 0
+  "text_chars": 5979
  },
  {
   "control_number": "06970",
@@ -170,7 +202,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
    "WSV10",
    "WSV12",
@@ -181,7 +213,9 @@
    "WSV18",
    "WSV20",
    "WSV21",
-   "WSV25"
+   "WSV22",
+   "WSV25",
+   "WSV96"
   ],
   "source": {
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/wastewater-as/",
@@ -194,7 +228,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4082
+  "text_chars": 5157
  },
  {
   "control_number": "06971",
@@ -391,17 +425,17 @@
    "MUSV9B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/music/",
-   "title": "Music < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/music/music-aa/",
+   "title": "Music, Associate in Arts < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 50,
-  "text_chars": 16000
+  "text_chars": 8467
  },
  {
   "control_number": "06976",
@@ -431,17 +465,17 @@
    "PHOTV9B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/",
-   "title": "Photography < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/photography-aa/",
+   "title": "Photography, Associate in Arts < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 15311
+  "text_chars": 5783
  },
  {
   "control_number": "06980",
@@ -569,12 +603,42 @@
   "title": "Construction Technology—Building Inspection Option",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ARCHV11",
+   "ARCHV12",
+   "ARCHV58",
+   "ARCHV59",
+   "ARCHV60",
+   "ARCHV67",
+   "CTV20",
+   "CTV43",
+   "CTV52",
+   "CTV59",
+   "CTV63",
+   "CTV64",
+   "CTV66",
+   "CTV70",
+   "CTV71",
+   "CTV72",
+   "CTV96",
+   "DRFTV2B",
+   "MTV4",
+   "WELV65"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-building-inspection-option-as/",
+   "title": "Construction Technology, Building Inspection Option, Associate in Science < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 25,
-  "text_chars": 0
+  "text_chars": 5590
  },
  {
   "control_number": "08253",
@@ -603,19 +667,44 @@
    }
   },
   "listed": 7,
-  "text_chars": 3714
+  "text_chars": 4290
  },
  {
   "control_number": "10520",
   "title": "Drafting Technology: Industrial Design & Manufacturing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCHV23",
+   "DRFTV14",
+   "DRFTV18",
+   "DRFTV2A",
+   "DRFTV4",
+   "DRFTV41",
+   "DRFTV42",
+   "DRFTV43",
+   "DRFTV44",
+   "DRFTV50",
+   "DRFTV5A",
+   "MTV15",
+   "MTV2",
+   "MTV35",
+   "WELV1"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/drafting-technology-industrial-design-manufacturing-option-as/",
+   "title": "Drafting Technology: Industrial Design and Manufacturing Option, Associate in Science < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 5677
  },
  {
   "control_number": "10521",
@@ -623,7 +712,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
    "WSV11",
    "WSV14",
@@ -634,7 +723,9 @@
    "WSV19",
    "WSV20",
    "WSV21",
-   "WSV25"
+   "WSV22",
+   "WSV25",
+   "WSV96"
   ],
   "source": {
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/water-science-as/",
@@ -647,19 +738,33 @@
    }
   },
   "listed": 12,
-  "text_chars": 4081
+  "text_chars": 5140
  },
  {
   "control_number": "10594",
   "title": "Emergency Medical Services—Paramedic Studies",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PMV1A",
+   "PMV1B",
+   "PMV2A",
+   "PMV2B"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/emergency-medical-services-paramedic-studies-as/",
+   "title": "Emergency Medical Services: Paramedic Studies, Associate in Science < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 5200
  },
  {
   "control_number": "15323",
@@ -667,9 +772,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 0.938,
   "codes_found": [
    "BIOLC1001",
+   "BIOLC1001L",
    "BIOLV12",
    "PSYCC1000",
    "PSYV31",
@@ -1139,108 +1245,12 @@
   "title": "General Studies Patterns II/III—Social and Behavioral Sciences Emphasis",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.789,
-  "codes_found": [
-   "AGV1",
-   "AGV12",
-   "ANTHV2",
-   "ANTHV3",
-   "ANTHV4",
-   "ANTHV5",
-   "ANTHV6",
-   "ANTHV7",
-   "CDEVC1000",
-   "CDV5",
-   "CDV61",
-   "CHSTV1",
-   "CHSTV2",
-   "CHSTV3",
-   "CJV1",
-   "CJV2",
-   "CJV28",
-   "ECONC2001",
-   "ECONC2002",
-   "ESRMV3",
-   "ETHSV1",
-   "ETHSV14",
-   "ETHSV2",
-   "ETHSV4",
-   "FILMV11",
-   "GEOGV2",
-   "GEOGV6",
-   "GEOGV8",
-   "HEDV20",
-   "HEDV22",
-   "HISTC1001",
-   "HISTC1002",
-   "HISTV16",
-   "HISTV32",
-   "HISTV43",
-   "HISTV44",
-   "HISTV45",
-   "HISTV47",
-   "HISTV50",
-   "HISTV51",
-   "HISTV53",
-   "HISTV54",
-   "HISTV55",
-   "HISTV58",
-   "HISTV59",
-   "HISTV70",
-   "HISTV76",
-   "HISTV78",
-   "HISTV79",
-   "HISTV82",
-   "HISTV86",
-   "MATHC2210",
-   "MATHV46",
-   "POLSC1000",
-   "POLSV11",
-   "POLSV12",
-   "POLSV14",
-   "POLSV17",
-   "POLSV18",
-   "POLSV2",
-   "POLSV3",
-   "POLSV4",
-   "POLSV5",
-   "POLSV9",
-   "PSYCC1000",
-   "PSYV15",
-   "PSYV2",
-   "PSYV25",
-   "PSYV29",
-   "PSYV3",
-   "PSYV30",
-   "PSYV31",
-   "PSYV32",
-   "PSYV4",
-   "PSYV5",
-   "PSYV7",
-   "SOCIC1000",
-   "SOCV13",
-   "SOCV2",
-   "SOCV24",
-   "SOCV3",
-   "SOCV31",
-   "SOCV4",
-   "SOCV5",
-   "SOCV7",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://catalog.vcccd.edu/ventura/transfer-information/calgetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) < Ventura College",
-   "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.111
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 109,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "18476",
@@ -1326,27 +1336,30 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTV16",
    "ACCTV1A",
    "ACCTV1B",
    "ACCTV2",
    "ACCTV9",
-   "BUSV30"
+   "BUSV30",
+   "BUSV55",
+   "BUSV57",
+   "BUSV62"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/accounting/",
-   "title": "Accounting < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/accounting-coa/",
+   "title": "Accounting, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 7985
+  "text_chars": 3853
  },
  {
   "control_number": "20561",
@@ -1369,29 +1382,45 @@
    "BUSV75"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/",
-   "title": "Business < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/business-management-coa/",
+   "title": "Business Management, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.5
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 16000
+  "text_chars": 3897
  },
  {
   "control_number": "20565",
   "title": "Medical Assistant—Administrative",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSV17",
+   "BUSV25",
+   "BUSV26",
+   "BUSV27A",
+   "BUSV28A",
+   "BUSV29"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/medical-assistant-administrative-coa/",
+   "title": "Medical Assistant - Administrative, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 3609
  },
  {
   "control_number": "20576",
@@ -1448,36 +1477,109 @@
   "title": "Automotive Career Education",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACEV11",
+   "ACEV12",
+   "ACEV13",
+   "ACEV21",
+   "ACEV22",
+   "ACEV23",
+   "ACEV31",
+   "ACEV32",
+   "ACEV33",
+   "ACEV41",
+   "ACEV42"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-career-education-coa/",
+   "title": "Automotive Career Education, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 5612
  },
  {
   "control_number": "20580",
   "title": "Drafting Technology—Industrial Design and Manufacturing Option",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ARCHV23",
+   "DRFTV14",
+   "DRFTV18",
+   "DRFTV2A",
+   "DRFTV41",
+   "DRFTV42",
+   "DRFTV43",
+   "DRFTV44",
+   "DRFTV50",
+   "DRFTV5A",
+   "MTV15",
+   "MTV2",
+   "MTV35",
+   "WELV1",
+   "WELV2",
+   "WELV4"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/drafting-technology-industrial-design-manufacturing-option-coa/",
+   "title": "Drafting Technology: Industrial Design and Manufacturing Option, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 4934
  },
  {
   "control_number": "20582",
   "title": "Welding Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.842,
+  "codes_found": [
+   "ARTV27",
+   "CTV65",
+   "DRFTV2A",
+   "MTV15",
+   "MTV4",
+   "WELV1",
+   "WELV13A",
+   "WELV13B",
+   "WELV14A",
+   "WELV14B",
+   "WELV2",
+   "WELV20",
+   "WELV3",
+   "WELV30",
+   "WELV4",
+   "WELV96"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/welding/welding-technology-coa/",
+   "title": "Welding Technology, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 4420
  },
  {
   "control_number": "20583",
@@ -1485,7 +1587,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.773,
   "codes_found": [
    "ARCHV11",
    "ARCHV12",
@@ -1494,16 +1596,11 @@
    "ARCHV60",
    "ARCHV64",
    "ARCHV75",
-   "CTV12",
    "CTV20",
    "CTV30",
    "CTV50",
    "CTV52",
-   "CTV58",
-   "CTV59",
-   "CTV60",
    "CTV64",
-   "CTV75",
    "CTV76",
    "CTV77",
    "CTV79",
@@ -1511,53 +1608,120 @@
    "DRFTV2B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/",
-   "title": "Construction Technology < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-construction-management-option-coa/",
+   "title": "Construction Technology, Construction Management Option, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.75
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 22,
-  "text_chars": 16000
+  "text_chars": 4935
  },
  {
   "control_number": "20584",
   "title": "Construction Technology—Building Inspection Option",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.773,
+  "codes_found": [
+   "ARCHV11",
+   "ARCHV12",
+   "ARCHV58",
+   "ARCHV59",
+   "ARCHV60",
+   "ARCHV67",
+   "CTV20",
+   "CTV43",
+   "CTV59",
+   "CTV63",
+   "CTV66",
+   "CTV70",
+   "CTV71",
+   "CTV72",
+   "CTV96",
+   "DRFTV2B",
+   "WELV65"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-building-inspection-option-coa/",
+   "title": "Construction Technology, Building Inspection Option, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 4812
  },
  {
   "control_number": "20585",
   "title": "Wastewater Science",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WSV10",
+   "WSV12",
+   "WSV13",
+   "WSV15",
+   "WSV16",
+   "WSV17",
+   "WSV18",
+   "WSV20",
+   "WSV21",
+   "WSV25"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/wastewater-coa/",
+   "title": "Wastewater Science, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 4864
  },
  {
   "control_number": "20586",
   "title": "Water Science",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WSV11",
+   "WSV14",
+   "WSV15",
+   "WSV16",
+   "WSV17",
+   "WSV18",
+   "WSV19",
+   "WSV20",
+   "WSV21",
+   "WSV25"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/water-science-coa/",
+   "title": "Water Science, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 4827
  },
  {
   "control_number": "20587",
@@ -1585,31 +1749,92 @@
    }
   },
   "listed": 6,
-  "text_chars": 3776
+  "text_chars": 4134
  },
  {
   "control_number": "20588",
   "title": "Ceramics—General",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTV11A",
+   "ARTV19",
+   "ARTV25A",
+   "ARTV50A",
+   "ARTV51A",
+   "ARTV51B",
+   "ARTV52A",
+   "ARTV52B"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/ceramics-coa/",
+   "title": "Ceramics—General, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 4082
  },
  {
   "control_number": "20589",
   "title": "Music",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSV10",
+   "MUSV11",
+   "MUSV12",
+   "MUSV14A",
+   "MUSV14B",
+   "MUSV14C",
+   "MUSV15",
+   "MUSV17",
+   "MUSV18",
+   "MUSV21A",
+   "MUSV21B",
+   "MUSV21C",
+   "MUSV22A",
+   "MUSV22B",
+   "MUSV22C",
+   "MUSV24A",
+   "MUSV24B",
+   "MUSV24C",
+   "MUSV24D",
+   "MUSV2A",
+   "MUSV2AL",
+   "MUSV2B",
+   "MUSV2BL",
+   "MUSV2C",
+   "MUSV2CL",
+   "MUSV2D",
+   "MUSV2DL",
+   "MUSV34",
+   "MUSV45",
+   "MUSV46",
+   "MUSV47",
+   "MUSV9A",
+   "MUSV9B"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/music/music-coa/",
+   "title": "Music, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 33,
-  "text_chars": 0
+  "text_chars": 5785
  },
  {
   "control_number": "20591",
@@ -1617,40 +1842,61 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
    "ARTV11A",
    "PHOTV1",
+   "PHOTV13",
+   "PHOTV14",
+   "PHOTV15",
    "PHOTV2",
+   "PHOTV20",
    "PHOTV4A",
+   "PHOTV4B",
    "PHOTV6A",
+   "PHOTV6B",
+   "PHOTV70A",
    "PHOTV8",
    "PHOTV9A"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/photography-aa/",
-   "title": "Photography, Associate in Arts < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/photography-coa/",
+   "title": "Photography, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 3890
+  "text_chars": 4162
  },
  {
   "control_number": "20593",
   "title": "Emergency Medical Services—Paramedic Studies",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PMV1A",
+   "PMV1B",
+   "PMV2A",
+   "PMV2B"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/emergency-medical-services-paramedic-studies-coa/",
+   "title": "Emergency Medical Services: Paramedic Studies, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 4655
  },
  {
   "control_number": "20597",
@@ -1700,9 +1946,10 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 0.938,
   "codes_found": [
    "BIOLC1001",
+   "BIOLC1001L",
    "PSYCC1000",
    "PSYV31",
    "PSYV4",
@@ -1769,7 +2016,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 5222
+  "text_chars": 5714
  },
  {
   "control_number": "30587",
@@ -1777,9 +2024,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.824,
+  "coverage": 0.882,
   "codes_found": [
    "BIOLC1001",
+   "BIOLC1001L",
    "PSYCC1000",
    "PSYV15",
    "PSYV2",
@@ -1991,17 +2239,17 @@
    "THAV8"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/",
-   "title": "Course Identification Numbering System (C-ID) < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/theatre-arts/theatre-arts-aat/",
+   "title": "Theatre Arts, Associate in Arts for Transfer < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 4232
+  "text_chars": 4935
  },
  {
   "control_number": "31437",
@@ -2168,19 +2416,37 @@
    }
   },
   "listed": 9,
-  "text_chars": 4062
+  "text_chars": 4799
  },
  {
   "control_number": "31875",
   "title": "Medical Assistant—Multi-Skilled",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSV17",
+   "BUSV25",
+   "BUSV26",
+   "BUSV27A",
+   "BUSV28A",
+   "BUSV28B",
+   "BUSV28BL",
+   "BUSV29"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/medical-assistant-multi-skilled-coa/",
+   "title": "Medical Assistant - Multi-Skilled, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3811
  },
  {
   "control_number": "32052",
@@ -2397,34 +2663,33 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.929,
+  "coverage": 0.857,
   "codes_found": [
    "ANTHV2",
    "GEOGV1",
    "GEOGV16",
    "GEOGV1L",
    "GEOGV2",
-   "GEOGV22",
-   "GEOGV26",
    "GEOGV5",
    "GEOGV6",
    "GEOGV8",
+   "GEOLV11",
    "GEOLV2",
    "GISV22",
    "GISV26"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/",
-   "title": "Course Identification Numbering System (C-ID) < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/geography/geography-aat/",
+   "title": "Geography, Associate in Arts for Transfer < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 5769
+  "text_chars": 5529
  },
  {
   "control_number": "32893",
@@ -2439,17 +2704,17 @@
    "MTV5"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/",
-   "title": "Manufacturing Technology < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/biomedical-device-manufacturing-coa/",
+   "title": "Biomedical Device Manufacturing, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.333
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 9732
+  "text_chars": 3714
  },
  {
   "control_number": "33720",
@@ -2502,17 +2767,17 @@
    "PHILV9"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/transfer-information/transfer-uc/",
-   "title": "Transfer to the University of California (UC) < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/philosophy/philosophy-aat/",
+   "title": "Philosophy, Associate in Arts for Transfer < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 11214
+  "text_chars": 5419
  },
  {
   "control_number": "33782",
@@ -2548,19 +2813,40 @@
    }
   },
   "listed": 14,
-  "text_chars": 3769
+  "text_chars": 4650
  },
  {
   "control_number": "33819",
   "title": "Architectural Design",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCHV10",
+   "ARCHV11",
+   "ARCHV15",
+   "ARCHV21",
+   "ARCHV22",
+   "ARCHV25",
+   "ARCHV40",
+   "ARCHV41",
+   "CTV20",
+   "DRFTV2B",
+   "DRFTV51"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-coa/",
+   "title": "Architectural Design, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 5120
  },
  {
   "control_number": "33820",
@@ -2568,26 +2854,31 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
    "ARCHV10",
    "ARCHV21",
    "ARCHV22",
+   "ARCHV23",
+   "ARCHV25",
+   "ARCHV31",
+   "ARCHV32",
    "ARCHV40",
-   "ARCHV41"
+   "ARCHV41",
+   "DRFTV5A"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-as/",
-   "title": "Architectural Design, Associate in Science < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-science-coa/",
+   "title": "Architectural Science, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 4111
+  "text_chars": 5493
  },
  {
   "control_number": "33821",
@@ -2606,17 +2897,17 @@
    "DRFTV5B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/",
-   "title": "Architecture < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-technology-coa/",
+   "title": "Architectural Technology, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 7252
+  "text_chars": 3792
  },
  {
   "control_number": "33822",
@@ -2637,29 +2928,49 @@
    "DRFTV5B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/",
-   "title": "Drafting < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/drafting-technology-coa/",
+   "title": "Drafting Technology, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.5
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 9676
+  "text_chars": 4499
  },
  {
   "control_number": "33823",
   "title": "Digital Marketing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSV30",
+   "BUSV38",
+   "BUSV45",
+   "BUSV46",
+   "BUSV48",
+   "BUSV49",
+   "BUSV50",
+   "BUSV52",
+   "BUSV57",
+   "BUSV62"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/social-media-marketing-coa/",
+   "title": "Digital Marketing, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3767
  },
  {
   "control_number": "33842",
@@ -2667,7 +2978,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "ARCHV10",
    "ARCHV21",
@@ -2677,11 +2988,12 @@
    "ARCHV31",
    "ARCHV32",
    "ARCHV40",
-   "ARCHV41"
+   "ARCHV41",
+   "DRFTV5A"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-science-as/",
-   "title": "Architectural Science, Associate in Science < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-as/",
+   "title": "Architectural Design, Associate in Science < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
@@ -2690,19 +3002,40 @@
    }
   },
   "listed": 10,
-  "text_chars": 4163
+  "text_chars": 5993
  },
  {
   "control_number": "33858",
   "title": "Architectural Design",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCHV10",
+   "ARCHV11",
+   "ARCHV15",
+   "ARCHV21",
+   "ARCHV22",
+   "ARCHV25",
+   "ARCHV40",
+   "ARCHV41",
+   "CTV20",
+   "DRFTV2B",
+   "DRFTV51"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-as/",
+   "title": "Architectural Design, Associate in Science < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 5993
  },
  {
   "control_number": "35198",
@@ -2754,17 +3087,17 @@
    "MUSV9B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/transfer-information/transfer-uc/",
-   "title": "Transfer to the University of California (UC) < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/music/music-aat/",
+   "title": "Music, Associate in Arts for Transfer < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 40,
-  "text_chars": 6219
+  "text_chars": 4896
  },
  {
   "control_number": "35207",
@@ -2772,9 +3105,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.513,
+  "coverage": 0.538,
   "codes_found": [
    "BIOLC1001",
+   "BIOLC1001L",
    "CDEVC1000",
    "EDUV10",
    "EDUV8",
@@ -2848,24 +3182,54 @@
   "title": "Diesel Engine Repair",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMV11",
+   "DMV12",
+   "DMV26",
+   "DMV28",
+   "DMV40"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/diesel-mechanics/diesel-engine-repair-coa/",
+   "title": "Diesel Engine Repair, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 3600
  },
  {
   "control_number": "35485",
   "title": "Medium- and Heavy-Duty Vehicle Repair",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMV30",
+   "DMV34",
+   "DMV40",
+   "DMV42",
+   "DMV44"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/diesel-mechanics/medium-heavy-duty-vehicle-repair-coa/",
+   "title": "Medium and Heavy Duty Vehicle Repair, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 3856
  },
  {
   "control_number": "35486",
@@ -2896,7 +3260,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 3860
+  "text_chars": 4603
  },
  {
   "control_number": "35499",
@@ -2904,10 +3268,11 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
    "ANATV1",
    "BIOLC1001",
+   "BIOLC1001L",
    "CHEMV120A",
    "CHEMV120B",
    "CHEMV160A",
@@ -3034,12 +3399,29 @@
   "title": "Accounting Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTV1A",
+   "ACCTV2",
+   "ACCTV3",
+   "ACCTV8",
+   "BUSV30",
+   "BUSV55",
+   "BUSV62"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/bookkeeping-coa/",
+   "title": "Accounting Technician, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3496
  },
  {
   "control_number": "36645",
@@ -3068,7 +3450,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3764
+  "text_chars": 4376
  },
  {
   "control_number": "36653",
@@ -3076,26 +3458,28 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.714,
+  "coverage": 1.0,
   "codes_found": [
+   "ANATV1",
    "CHEMV101",
    "CHEMV104",
    "CHEMV120A",
    "MICRV1",
-   "PHSOV1"
+   "PHSOV1",
+   "PHYSV1"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/microbiology/",
-   "title": "Microbiology < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/biology/pre-allied-health-coa/",
+   "title": "Pre-Allied Health Sciences, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 1987
+  "text_chars": 4056
  },
  {
   "control_number": "36858",
@@ -3203,7 +3587,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.963,
+  "coverage": 1.0,
   "codes_found": [
    "AGV1",
    "AGV61",
@@ -3226,6 +3610,7 @@
    "AGV96C",
    "AGV96D",
    "BIOLC1001",
+   "BIOLC1001L",
    "CHEMV101",
    "ENGLC1000",
    "MICRV1",
@@ -3243,7 +3628,7 @@
    }
   },
   "listed": 27,
-  "text_chars": 5663
+  "text_chars": 7423
  },
  {
   "control_number": "39995",
@@ -3251,7 +3636,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.938,
+  "coverage": 1.0,
   "codes_found": [
    "AGV1",
    "AGV61",
@@ -3264,6 +3649,7 @@
    "AGV68",
    "AGV96A",
    "BIOLC1001",
+   "BIOLC1001L",
    "CHEMV101",
    "ENGLC1000",
    "PSYV4",
@@ -3280,7 +3666,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 4574
+  "text_chars": 5489
  },
  {
   "control_number": "40081",
@@ -3349,7 +3735,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 4363
+  "text_chars": 6489
  },
  {
   "control_number": "40155",
@@ -3385,7 +3771,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 4558
+  "text_chars": 5516
  },
  {
   "control_number": "40179",
@@ -3442,19 +3828,31 @@
    }
   },
   "listed": 11,
-  "text_chars": 4007
+  "text_chars": 5191
  },
  {
   "control_number": "40580",
   "title": "Agriculture Field Supervisor (Noncredit)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGN150",
+   "AGN151"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/agriculture-field-supervisor-cocn/",
+   "title": "Agriculture Field Supervisor (Noncredit), Certificate of Completion < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3836
  },
  {
   "control_number": "40713",
@@ -3519,17 +3917,17 @@
    "AGV96"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/",
-   "title": "Agriculture < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/food-safety-ca/",
+   "title": "Food Safety, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 16000
+  "text_chars": 5028
  },
  {
   "control_number": "40823",
@@ -3576,48 +3974,110 @@
   "title": "Automotive Repair Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACEV11",
+   "ACEV12",
+   "ACEV13",
+   "ACEV33",
+   "ACEV41",
+   "ACEV96"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-repair-technician-coa/",
+   "title": "Automotive Repair Technician, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 4012
  },
  {
   "control_number": "40930",
   "title": "Automotive Performance Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACEV12",
+   "ACEV13",
+   "ACEV23",
+   "ACEV31",
+   "ACEV32",
+   "ACEV41",
+   "ACEV42",
+   "ACEV96"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-performance-technician-coa/",
+   "title": "Automotive Performance Technician, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 4654
  },
  {
   "control_number": "40934",
   "title": "Automotive Maintenance Technician",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACEV11",
+   "ACEV12",
+   "ACEV13"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-maintenance-technician-coa/",
+   "title": "Automotive Maintenance Technician, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3419
  },
  {
   "control_number": "40935",
   "title": "Automotive Service Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACEV11",
+   "ACEV12",
+   "ACEV21",
+   "ACEV22",
+   "ACEV96"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-service-technician-coa/",
+   "title": "Automotive Service Technician, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 3820
  },
  {
   "control_number": "40960",
@@ -3637,17 +4097,17 @@
    "AGN139"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/",
-   "title": "Noncredit Programs and Courses < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/food-safety-noncredit-coc/",
+   "title": "Food Safety (Noncredit), Certificate of Completion < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 11730
+  "text_chars": 4690
  },
  {
   "control_number": "41582",
@@ -3735,12 +4195,39 @@
   "title": "Chicana/o Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHV2",
+   "ARTHV9A",
+   "ARTHV9B",
+   "ARTHV9C",
+   "CHSTV1",
+   "CHSTV2",
+   "CHSTV3",
+   "CHSTV90",
+   "ENGLV34",
+   "HISTV47",
+   "HISTV58",
+   "HISTV65",
+   "SOCV24",
+   "SPANV3",
+   "SPANV3S",
+   "SPANV4",
+   "SPANV4S"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/chicano-studies/chicano-studies-aa/",
+   "title": "Chicana/o Studies, Associate in Arts < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 6368
  },
  {
   "control_number": "41927",
@@ -3771,12 +4258,24 @@
   "title": "Mathematics Readiness (Noncredit)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IDSN100",
+   "MATHN113"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/mathematics/mathematics-readiness-cocy/",
+   "title": "Mathematics Readiness (Noncredit), Certificate of Competency < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3600
  },
  {
   "control_number": "42256",
@@ -3796,40 +4295,72 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.583,
+  "coverage": 1.0,
   "codes_found": [
+   "ANTHV7",
+   "HEDV2",
+   "HEDV3",
+   "HEDV4",
    "HEDV70",
    "HEDV71",
    "HEDV73",
    "HEDV76",
    "HEDV87",
    "KINV70A",
-   "KINV70B"
+   "KINV70B",
+   "PSYV2"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/holistic-studies/holistic-studies-health-pa/",
-   "title": "Holistic Studies: Holistic Health, Proficiency Award < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/holistic-studies/holistic-health-coa/",
+   "title": "Holistic Health, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 2727
+  "text_chars": 4152
  },
  {
   "control_number": "42370",
   "title": "Community Health and Health Education",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHSTV1",
+   "CHSTV2",
+   "CHSTV3",
+   "CJV3",
+   "COMMV12",
+   "HEDV1",
+   "HEDV20",
+   "HEDV22",
+   "HEDV24",
+   "HEDV87",
+   "KINV20",
+   "KINV21",
+   "KINV24",
+   "KINV52",
+   "KINV70A",
+   "PSYV30",
+   "SOCV3"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/health-education/community-health-and-health-education-coa/",
+   "title": "Community Health and Health Education, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 4753
  },
  {
   "control_number": "42398",
@@ -3868,7 +4399,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 4090
+  "text_chars": 5968
  },
  {
   "control_number": "42877",
@@ -3915,7 +4446,7 @@
    }
   },
   "listed": 25,
-  "text_chars": 4476
+  "text_chars": 6382
  },
  {
   "control_number": "42967",
@@ -3947,19 +4478,34 @@
    }
   },
   "listed": 10,
-  "text_chars": 4371
+  "text_chars": 5108
  },
  {
   "control_number": "42983",
   "title": "CNC Machinist",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRFTV50",
+   "MTV18",
+   "MTV35",
+   "MTV6",
+   "MTV7"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/cnc-machinist-coa/",
+   "title": "CNC Machinist, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 4198
  },
  {
   "control_number": "43045",
@@ -3971,6 +4517,7 @@
   "codes_found": [
    "ARTV81",
    "COMMV16",
+   "ENGLV12",
    "FILMV1",
    "FILMV10",
    "FILMV11",
@@ -3981,33 +4528,49 @@
    "FILMV4",
    "FILMV5",
    "FILMV7",
-   "THAV29A",
-   "THAV29B"
+   "THAV30A"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/transfer-information/transfer-uc/",
-   "title": "Transfer to the University of California (UC) < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/film/film-television-electronic-media-ast/",
+   "title": "Film, Television, and Electronic Media, Associate in Science for Transfer < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 16000
+  "text_chars": 4013
  },
  {
   "control_number": "43149",
   "title": "CNC Machine Operator",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRFTV2A",
+   "MTV10",
+   "MTV15",
+   "MTV4",
+   "MTV5",
+   "MTV8",
+   "WELV2"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/cnc-machine-operator-coa/",
+   "title": "CNC Machine Operator, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3762
  },
  {
   "control_number": "43209",
@@ -4082,12 +4645,34 @@
   "title": "Automotive Career Education Expert Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACEV12",
+   "ACEV13",
+   "ACEV21",
+   "ACEV22",
+   "ACEV23",
+   "ACEV31",
+   "ACEV32",
+   "ACEV33",
+   "ACEV41",
+   "ACEV42",
+   "ACEV43",
+   "ACEV96"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-career-education-expert-technician-coa/",
+   "title": "Automotive Career Education Expert Technician, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 5152
  },
  {
   "control_number": "43974",
@@ -4204,12 +4789,24 @@
   "title": "Academic English Foundations (Noncredit)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLN101",
+   "ENGLN102"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/english/academic-english-foundations-noncredit-cocn-html/",
+   "title": "Academic English Foundations (Noncredit), Certificate of Competency < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3408
  },
  {
   "control_number": "44186",
@@ -4268,12 +4865,26 @@
   "title": "Introduction to Transitional Kindergarten Teaching",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDV22",
+   "CDV4",
+   "CDV4L",
+   "CDV63"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/intro-to-teaching-coa/",
+   "title": "Introduction to Transitional Kindergarten Teaching, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 3868
  },
  {
   "control_number": "44189",
@@ -4440,11 +5051,16 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.643,
+  "coverage": 1.0,
   "codes_found": [
    "KINV10",
    "KINV18",
+   "KINV2",
    "KINV26",
+   "KINV40A",
+   "KINV44A",
+   "KINV46A",
+   "KINV48A",
    "KINV80",
    "KINV81",
    "KINV82",
@@ -4453,29 +5069,41 @@
    "KINV87"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/intercollegiate-athletics/2-year-coa/",
-   "title": "Intercollegiate Athletics: 2-Year Certificate of Achievement < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/kinesiology/athleticcoaching/",
+   "title": "Athletic Coaching, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 6217
+  "text_chars": 4180
  },
  {
   "control_number": "44737",
   "title": "Employability",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEBN105",
+   "ATEBN106"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/employability-cocn/",
+   "title": "Employability (Noncredit), Certificate of Completion < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3019
  },
  {
   "control_number": "44818",
@@ -4737,7 +5365,7 @@
    }
   },
   "listed": 97,
-  "text_chars": 7466
+  "text_chars": 10048
  },
  {
   "control_number": "45133",
@@ -4751,17 +5379,17 @@
    "EMSV10L"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/emergency-medical-services/",
-   "title": "Emergency Medical Services < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/emergency-medical-technician-coa/",
+   "title": "Emergency Medical Technician, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.667
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 5938
+  "text_chars": 5162
  },
  {
   "control_number": "45196",
@@ -4801,17 +5429,17 @@
    "DANCV50D"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/dance/",
-   "title": "Dance < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/dance/dance-aa/",
+   "title": "Dance, Associate in Arts < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 28,
-  "text_chars": 16000
+  "text_chars": 5922
  },
  {
   "control_number": "45198",
@@ -4996,272 +5624,43 @@
    }
   },
   "listed": 99,
-  "text_chars": 7466
+  "text_chars": 10048
  },
  {
   "control_number": "45348",
   "title": "Automotive Career Education, Bachelor in Science (BS)",
   "award": "Baccalaureate of Science (B.S.) Degree.",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
-  "listed": 23,
-  "text_chars": 0
- },
- {
-  "control_number": "45355",
-  "title": "California General Education Transfer Curriculum (Cal-GETC)",
-  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-  "shape": "certificate",
   "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
-   "AGV1",
-   "AGV12",
-   "AGV4",
-   "AGV54A",
-   "AGV6",
-   "AGV66",
-   "ANPHV1",
-   "ANTHC1001",
-   "ANTHC1001L",
-   "ANTHV2",
-   "ANTHV3",
-   "ANTHV4",
-   "ANTHV5",
-   "ANTHV6",
-   "ANTHV7",
-   "ANTHV8",
-   "ANTHV9",
-   "ARTHC1100",
-   "ARTHC1200",
-   "ARTHV1",
-   "ARTHV2D",
-   "ARTHV2E",
-   "ARTHV2F",
-   "ARTHV2G",
-   "ARTHV4",
-   "ARTHV5",
-   "ARTHV6",
-   "ARTHV7",
-   "ARTHV8",
-   "ARTHV9A",
-   "ARTHV9B",
-   "ARTHV9C",
-   "ASTRC1001",
-   "ASTRC1001L",
-   "BIOLC1001",
-   "BIOLC1001L",
-   "BIOLV10",
-   "BIOLV12",
-   "BIOLV14",
-   "BIOLV18",
-   "BIOLV29",
-   "BIOLV29L",
-   "BIOLV3",
-   "BIOLV4",
-   "CDEVC1000",
-   "CDV27",
-   "CDV3",
-   "CDV5",
-   "CDV61",
-   "CHEMV101",
-   "CHEMV102",
-   "CHEMV104",
-   "CHEMV120A",
-   "CHEMV120B",
-   "CHEMV160A",
-   "CHEMV160B",
-   "CHSTV1",
-   "CHSTV2",
-   "CHSTV3",
-   "CJV1",
-   "CJV2",
-   "CJV28",
-   "COMMC1000",
-   "COMMC1004",
-   "COMMV12",
-   "COMMV16",
-   "COMMV2",
-   "CSV17",
-   "DANCV1",
-   "DANCV2",
-   "ECONC2001",
-   "ECONC2002",
-   "ENGLC1000",
-   "ENGLC1001",
-   "ENGLC1003",
-   "ENGLV15",
-   "ENGLV16",
-   "ENGLV18",
-   "ENGLV21A",
-   "ENGLV21B",
-   "ENGLV22A",
-   "ENGLV22B",
-   "ENGLV23",
-   "ENGLV26",
-   "ENGLV27",
-   "ENGLV29A",
-   "ENGLV29B",
-   "ENGLV30",
-   "ENGLV31",
-   "ENGLV33",
-   "ENGLV34",
-   "ENGLV35",
-   "ENGLV36",
-   "ENGMV1A",
-   "ESRMV1",
-   "ESRMV10",
-   "ESRMV14",
-   "ESRMV2",
-   "ESRMV3",
-   "ETHSV1",
-   "ETHSV14",
-   "ETHSV2",
-   "ETHSV4",
-   "FILMV1",
-   "FILMV10",
-   "FILMV11",
-   "FILMV29A",
-   "FILMV29B",
-   "FRENV2",
-   "GEOGV1",
-   "GEOGV1L",
-   "GEOGV2",
-   "GEOGV5",
-   "GEOGV6",
-   "GEOGV8",
-   "GEOLV11",
-   "GEOLV2",
-   "GEOLV21",
-   "GEOLV2L",
-   "GEOLV3",
-   "GEOLV3L",
-   "GEOLV7",
-   "GEOLV9",
-   "GERMV2",
-   "HEDV20",
-   "HEDV22",
-   "HISTC1001",
-   "HISTC1002",
-   "HISTV16",
-   "HISTV32",
-   "HISTV43",
-   "HISTV44",
-   "HISTV45",
-   "HISTV47",
-   "HISTV50",
-   "HISTV51",
-   "HISTV52",
-   "HISTV53",
-   "HISTV54",
-   "HISTV55",
-   "HISTV58",
-   "HISTV59",
-   "HISTV65",
-   "HISTV70",
-   "HISTV76",
-   "HISTV78",
-   "HISTV79",
-   "HISTV82",
-   "HISTV86",
-   "ITALV2",
-   "JAPNV2",
-   "KINV87",
-   "MATHC2210",
-   "MATHC2220",
-   "MATHV15",
-   "MATHV20",
-   "MATHV21C",
-   "MATHV22",
-   "MATHV23",
-   "MATHV4",
-   "MATHV46",
-   "MATHV52",
-   "MICRV1",
-   "MUSV105",
-   "MUSV3",
-   "MUSV6",
-   "MUSV7",
-   "MUSV8",
-   "MUSV9A",
-   "MUSV9B",
-   "PHILV1",
-   "PHILV10",
-   "PHILV12",
-   "PHILV14",
-   "PHILV15",
-   "PHILV2",
-   "PHILV5",
-   "PHILV9",
-   "PHOTV7",
-   "PHSCV1",
-   "PHSOV1",
-   "PHYSV2A",
-   "PHYSV2AL",
-   "PHYSV2B",
-   "PHYSV2BL",
-   "PHYSV3A",
-   "PHYSV3AL",
-   "PHYSV3B",
-   "PHYSV3BL",
-   "PHYSV4",
-   "PHYSV4L",
-   "PHYSV5",
-   "PHYSV5L",
-   "PHYSV6",
-   "PHYSV6L",
-   "POLSC1000",
-   "POLSV11",
-   "POLSV12",
-   "POLSV14",
-   "POLSV17",
-   "POLSV18",
-   "POLSV19",
-   "POLSV2",
-   "POLSV3",
-   "POLSV4",
-   "POLSV5",
-   "POLSV9",
-   "PSYCC1000",
-   "PSYV15",
-   "PSYV2",
-   "PSYV25",
-   "PSYV29",
-   "PSYV3",
-   "PSYV30",
-   "PSYV31",
-   "PSYV32",
-   "PSYV4",
-   "PSYV5",
-   "PSYV7",
-   "SOCIC1000",
-   "SOCV13",
-   "SOCV2",
-   "SOCV24",
-   "SOCV3",
-   "SOCV31",
-   "SOCV4",
-   "SOCV5",
-   "SOCV7",
-   "SPANV3",
-   "SPANV3S",
-   "SPANV4",
-   "SPANV4S",
-   "STATC1000",
-   "THAV1",
-   "THAV17A",
-   "THAV17B",
-   "THAV20",
-   "THAV28",
-   "THAV29A",
-   "THAV29B"
+   "ACEV11",
+   "ACEV12",
+   "ACEV13",
+   "ACEV21",
+   "ACEV22",
+   "ACEV23",
+   "ACEV31",
+   "ACEV310",
+   "ACEV311",
+   "ACEV32",
+   "ACEV320",
+   "ACEV321",
+   "ACEV322",
+   "ACEV33",
+   "ACEV41",
+   "ACEV42",
+   "ACEV430",
+   "ACEV431",
+   "ACEV440",
+   "ACEV441",
+   "BUSV312",
+   "COMMV442",
+   "SOCV432"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/general-studies-options/calgetc-coa/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC), Certificate of Achievement < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-career-education-bs/",
+   "title": "Automotive Career Education, Bachelor in Science < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
@@ -5269,20 +5668,49 @@
     "title": 1.0
    }
   },
+  "listed": 23,
+  "text_chars": 6648
+ },
+ {
+  "control_number": "45355",
+  "title": "California General Education Transfer Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 240,
-  "text_chars": 21639
+  "text_chars": 0
  },
  {
   "control_number": "45385",
   "title": "Analog Photography",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOTV1",
+   "PHOTV14",
+   "PHOTV4A",
+   "PHOTV4B",
+   "PHOTV6A",
+   "PHOTV8",
+   "PHOTV9A"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/analog-photography-coa/",
+   "title": "Analog Photography, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3649
  },
  {
   "control_number": "45422",
@@ -5366,7 +5794,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 4122
+  "text_chars": 5329
  },
  {
   "control_number": "45488",
@@ -5526,12 +5954,25 @@
   "title": "Pre-Paramedic",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANPHV1",
+   "EMSV10",
+   "EMSV10L"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/pre-paramedic-coa/",
+   "title": "Pre-Paramedic, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 5526
  },
  {
   "control_number": "45535",
@@ -5700,10 +6141,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.941,
+  "coverage": 0.971,
   "codes_found": [
    "ANTHV3",
    "BIOLC1001",
+   "BIOLC1001L",
    "BIOLV4",
    "BUSV17",
    "CDEVC1000",
@@ -5803,33 +6245,48 @@
   "title": "Medical Interpretation in Spanish (Noncredit)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "SPANN160A",
    "SPANN160B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/",
-   "title": "Noncredit Programs and Courses < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/medical-interpretation-cocn/",
+   "title": "Medical Interpretation in Spanish (Noncredit), Certificate of Completion (COCN) < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
   },
   "listed": 2,
-  "text_chars": 5043
+  "text_chars": 3309
  },
  {
   "control_number": "46417",
   "title": "Spanish for Medical Personnel",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPANN170A",
+   "SPANN170B"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/spanish-medical-personnel-cocn/",
+   "title": "Spanish for Medical Personnel, Certificate of Completion (COCN) < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4037
  },
  {
   "control_number": "46422",
@@ -5918,73 +6375,112 @@
    }
   },
   "listed": 23,
-  "text_chars": 4263
+  "text_chars": 4729
  },
  {
   "control_number": "46424",
   "title": "Medical Interpretation in Spanish",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "SPANV60A",
    "SPANV60B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/spanish/",
-   "title": "Spanish < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/spanish/medical-interpretation-coa/",
+   "title": "Medical Interpretation in Spanish, Certificate of Achievement (COA) < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
   },
   "listed": 2,
-  "text_chars": 5286
+  "text_chars": 3253
  },
  {
   "control_number": "46425",
   "title": "Spanish for Medical Personnel",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "SPANV70A",
    "SPANV70B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/spanish/",
-   "title": "Spanish < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/spanish/spanish-medical-personnel-coa/",
+   "title": "Spanish for Medical Personnel, Certificate of Achievement (COA) < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
   },
   "listed": 2,
-  "text_chars": 4988
+  "text_chars": 3981
  },
  {
   "control_number": "46429",
   "title": "Fine Art—Graphic Design",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTV11A",
+   "ARTV11B",
+   "ARTV70A",
+   "ARTV71",
+   "ARTV72",
+   "PHOTV2"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/fine-art-graphic-design-coa/",
+   "title": "Fine Art—Graphic Design, Certificate of Achievement (COA) < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 3767
  },
  {
   "control_number": "46472",
   "title": "Figure Sculpture",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTV11A",
+   "ARTV13A",
+   "ARTV19",
+   "ARTV25A",
+   "ARTV58A",
+   "ARTV58B",
+   "ARTV58C"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/figure-sculpture-coa/",
+   "title": "Figure Sculpture, Certificate of Achievement (COA) < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 4067
  },
  {
   "control_number": "46481",
@@ -6027,12 +6523,27 @@
   "title": "Fine Art—Drawing",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTV12A",
+   "ARTV12B",
+   "ARTV12C",
+   "ARTV13A",
+   "ARTV29A"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/fine-art-drawing-coa/",
+   "title": "Fine Art—Drawing Certificate of Achievement (COA) < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 3541
  },
  {
   "control_number": "46483",
@@ -6062,29 +6573,47 @@
    "ARTV47B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/",
-   "title": "Art < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/fine-art-painting-coa/",
+   "title": "Fine Art—Painting, Certificate of Achievement (COA) < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.333
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 16000
+  "text_chars": 4251
  },
  {
   "control_number": "46484",
   "title": "Sculpture",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTV11A",
+   "ARTV19",
+   "ARTV25A",
+   "ARTV25B",
+   "ARTV26A",
+   "ARTV26B",
+   "ARTV50A",
+   "ARTV51A"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/sculpture-coa/",
+   "title": "Sculpture, Certificate of Achievement (COA) < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 4140
  },
  {
   "control_number": "46542",
@@ -6161,10 +6690,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.88,
+  "coverage": 0.92,
   "codes_found": [
    "ANTHV2",
    "BIOLC1001",
+   "BIOLC1001L",
    "CDEVC1000",
    "CDV24",
    "CDV27",
@@ -6244,17 +6774,17 @@
    "CSV9"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/",
-   "title": "Computer Science < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/cybersecurity-coa/",
+   "title": "CyberSecurity, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 4286
  },
  {
   "control_number": "46563",
@@ -6289,11 +6819,25 @@
   "title": "Cisco CCNA",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSV41",
+   "CSV61",
+   "CSV62",
+   "CSV63"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/cisco-ccna-coa/",
+   "title": "Cisco CCNA, Certificate of Achievement < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 3944
  }
 ]

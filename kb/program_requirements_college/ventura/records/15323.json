@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8599,
-    "output_tokens": 2691,
+    "output_tokens": 2559,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2691,
+  "output_tokens": 2559,
   "output_tokens_details": {
-   "thinking_tokens": 949
+   "thinking_tokens": 864
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08822,
- "ms": 22419,
- "seconds": 23.0,
+ "cost_usd": 0.08558,
+ "ms": 21317,
+ "seconds": 21.7,
  "parts": null,
  "error": null,
  "score": {
@@ -361,14 +362,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Closed list stores 'SOCIC1000' (no space, units not stored); the catalog prints 'SOCI C1000' 3 units. Treated as the same course, so catalog_addition is false.",
-   "List A is printed as 'Select one option from the following': the pair BIOL C1001 & C1001L (4 units printed for the pair, no individual units) or BIOL V12 (3). Recorded as two option blocks in option_group 'List A'.",
-   "The catalog prints 'Required Additional Units 6-8' across List A and List B together; no separate total is printed for each list.",
+   "The closed list stores 'SOCIC1000' (no space, units not stored); treated as the same course the catalog prints as SOCI C1000.",
+   "List A prints 4 units for the BIOL C1001 & C1001L pair only; individual units are not printed, so they are left null and the pair's 4 is recorded as that option block's stated total.",
+   "'Required Additional Units 6-8' is printed once for List A and List B together; no per-list total is printed.",
    "SOC/PSY V31 is a cross-listed course recorded as SOC V31 with PSY V31 as alternative.",
-   "Degree summary: Required Major Units 26-28, VCCCD GE Units 24, Double-Counted Units (6-9), Elective Units 14-19, Total Units for the A.A. Degree 60. Plan of study totals 60-63.",
-   "Outcomes are printed under the page's program student learning outcomes tab for the program; recorded as this award's outcomes.",
-   "Recommended courses are stated not to satisfy degree requirements."
+   "Degree table: Required Major Units 26-28, VCCCD GE Units 24, Double-Counted Units (6-9), Elective Units 14-19, Total 60. Elective units recorded in degree_elective_units.",
+   "Plan of Study totals 60-63 units; the requirements table states 60.",
+   "Outcomes are printed in the page's program student learning outcomes tab for the program; recorded for this A.A. award."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }
