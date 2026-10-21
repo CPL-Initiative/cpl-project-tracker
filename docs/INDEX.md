@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 90 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 60 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 413 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1210** | |
+| Session handoffs | 414 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1211** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-21 (S442 SkyManzanita, the CPL Queue routine): the harvest keeps a Requirements tab whose numbers carry a campus letter (#2309); Moorpark, Oxnard and Ventura re-read, 307 more programs complete; Sheet 109 still open.
 - 2026-10-21 (S441 SkyIronbark, the CPL Queue routine): S440's harvest PR #2306 merged; the CLAUDE.md pass sent as Open Asks Sheet 109 (five cards, nothing applied); the two Python tests failing on main fixed.
 - 2026-10-20 (S439 SkySaltbush, opened by Sam): the funding page prints JST counts and the 75% need, office hours and the MAP Dashboard chat as help, the landing page and its training video in the Contents, Funding Model Numbers; the introduction is always the published two-priority film, rebuilt from Scenario 3 with a new MP4 (#2296-#2298); S438's memory rows written; handoff 440 (SkyChaparral); no KB note.
 - 2026-10-20 (side session beside S438, opened by Sam): the funding page asks for the view first (All Institutions / My Institution), then the college or district, and the Funding outcomes cards follow it (#2293); the funding lane and lessons compacted under budget; privacy UI pass clean; handoff 439 gains a section; no KB note.
@@ -129,5 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-20 (S437 SkySagebrush, opened by Sam): the CR Progress view (#2287), the C-ID site found and baselined (#2289), Open Asks Sheet 108 answered, the auto-mark rule drafted and waiting on Sam's word; handoff 438 (SkySumac); no KB note.
 - 2026-10-20 (S436 SkyTanbark): the Exhibit Progress view (#2285), the Fact Sheet's UI pass, Open Asks Sheet 107; handoff 437 (SkySagebrush).
 - 2026-10-20 (S434 SkyElderberry, the routine): Sierra's third UI pass, Copy, Helpful, Not helpful and the note's Send as underlined words (#2281); Sheet 105 still open; the strays wait on a curator's discipline calls; handoff 435; no KB note.
-- 2026-10-20 (S433 SkyCoffeeberry, the routine): the two ENVR forestry pairs queued for a faculty reviewer as `surfaced` pairs (#2278); the CSR quarterly routine compares the handbook with the accepted 19th edition on a quarterly cron (#2279); the CSR lane compacted under its budget; Sheet 105 still open; handoff 434; no KB note.
-- 2026-10-20 (S432 SkyYerbaSanta, the routine): Sheet 104 applied, ten forestry identities to ENVR and four wine to AGPR, each discipline following its code (#2276), re-keyed live and read back; the quarterly probe read a second time; Open Asks Sheet 105 asks about the two forestry stragglers (the permission check held their apply); handoff 433; no KB note.

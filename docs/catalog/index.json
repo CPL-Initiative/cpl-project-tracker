@@ -15887,8 +15887,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 413,
+   "count": 414,
    "docs": [
+    {
+     "created": "2026-10-21",
+     "governs": [],
+     "n": 443,
+     "path": "docs/session_443_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "claude-md-pass"
+     ],
+     "title": "Session 443 handoff: the Ventura district's campus letter fixed; Moorpark, Oxnard and Ventura re-read; Sheet 109 still open",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-21",
      "governs": [],
@@ -23019,5 +23034,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1210
+ "total": 1211
 }

@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-21T10:24:01Z",
-  "session": 441,
-  "moniker": "SkyIronbark",
+  "written_at": "2026-10-21T16:00:08Z",
+  "session": 442,
+  "moniker": "SkyManzanita",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_442_handoff.md",
+  "handoff": "docs/session_443_handoff.md",
   "next_step": {
     "title": "Read the next thin colleges",
-    "text": "List the colleges whose active programs have under 60 percent records, read each one capture-only first, then extract under the 40 dollar go."
+    "text": "Sierra, Reedley and MiraCosta are next on the thin list; read the host's own outline first, then a capture-only read, then extract under the 40 dollar go."
   },
   "calls": [
     {
@@ -24,8 +24,16 @@
   },
   "changes": [
     {
-      "at": "2026-10-21T10:20Z",
-      "text": "Session 440's pull request with West Los Angeles, Irvine Valley and Santa Monica merged; the harvest itself did not move this run."
+      "at": "2026-10-21T12:05Z",
+      "text": "The reader now keeps a Requirements tab whose course numbers carry a campus letter, as the Ventura district prints them."
+    },
+    {
+      "at": "2026-10-21T15:20Z",
+      "text": "Moorpark, Oxnard and Ventura read again and loaded: 209 new records, 100, 86 and 121 passing the machine checks, about 32 dollars in extraction."
+    },
+    {
+      "at": "2026-10-21T15:50Z",
+      "text": "Display build 8d733f684f83, 16,729 programs, applying through the display job."
     }
   ],
   "headline": [
@@ -110,14 +118,14 @@
     {
       "day": "2026-10-21",
       "active": 20282,
-      "complete": 12132,
+      "complete": 12439,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-21T11:12:00Z"
+    "at": "2026-10-22T05:12:00Z"
   },
   "harvest": {
     "day": "2026-10-21",
