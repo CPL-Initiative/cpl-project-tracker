@@ -1,0 +1,1566 @@
+{
+ "college": "MiraCosta College",
+ "catalog_url": "https://catalog.miracosta.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 187,
+ "with_closed_list": 161,
+ "started": "2026-10-21T22:42:09Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.miracosta.edu/sitemap.xml",
+  "status": 200,
+  "listed": 442,
+  "nested": 0,
+  "program_pages": 286,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 48,
+ "child_pages": 0,
+ "banner_h1": null,
+ "loads": 305,
+ "seconds": 1427.0,
+ "found": 29,
+ "by_method": {
+  "link_search": 21,
+  "no_closed_list": 26,
+  "not_found": 89,
+  "page_claimed": 43,
+  "sitemap_page": 8
+ },
+ "shared_pages": {
+  "https://catalog.miracosta.edu/disciplines/nursing/": [
+   "05130",
+   "19095"
+  ],
+  "https://catalog.miracosta.edu/disciplines/horticulture/": [
+   "07862",
+   "21976"
+  ],
+  "https://catalog.miracosta.edu/disciplines/design/": [
+   "07863",
+   "07872",
+   "18974",
+   "21978"
+  ],
+  "https://catalog.miracosta.edu/disciplines/dance/": [
+   "07877",
+   "19039"
+  ],
+  "https://catalog.miracosta.edu/disciplines/childdevelopment/": [
+   "07879",
+   "15183",
+   "15310"
+  ],
+  "https://catalog.miracosta.edu/disciplines/hospitality/": [
+   "07881",
+   "20765"
+  ],
+  "https://catalog.miracosta.edu/continuingeducation/noncreditesl/": [
+   "36097",
+   "36272"
+  ],
+  "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/": [
+   "36100",
+   "39489",
+   "39491"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "05110",
+   "title": "Sustainable Landscape and Turf Management",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "05113",
+   "title": "Bookkeeping",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "07077",
+   "title": "Web Development and Design",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "07866",
+   "title": "Entrepreneurship",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "07876",
+   "title": "Design & Technology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/pathways/businesstechnology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4458,
+     "content": 17406,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "11747",
+   "title": "Graphic Design",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "11750",
+   "title": "Software Development",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "12111",
+   "title": "Restaurant Management",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "12306",
+   "title": "Retail Management",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "12880",
+   "title": "Landscape Architecture",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "15309",
+   "title": "Bioprocess Technology",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/pathways/businesstechnology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4458,
+     "content": 17406,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "17363",
+   "title": "Personal Fitness Trainer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "18844",
+   "title": "Yoga Instructor (300 Hours)",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "18975",
+   "title": "Software Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "18986",
+   "title": "Digital Photography",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "18987",
+   "title": "Digital Photography",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "20767",
+   "title": "Restaurant Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21974",
+   "title": "Sustainable Landscape and Turf Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21979",
+   "title": "Landscape Architecture",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21980",
+   "title": "Research and Development",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21982",
+   "title": "Bookkeeping",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21984",
+   "title": "Entrepreneurship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21985",
+   "title": "Retail Management",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21991",
+   "title": "Web Development and Design",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21992",
+   "title": "Graphic Design",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21995",
+   "title": "Computer-Aided Design & Drafting",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21996",
+   "title": "Computer-Aided Drafting",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21998",
+   "title": "Music Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/pathways/businesstechnology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 43,
+    "why": "coarse net: the page's code tokens name 0 of 43 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4458,
+     "content": 17406,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "21999",
+   "title": "Design and Technology",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/pathways/businesstechnology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4458,
+     "content": 17406,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22000",
+   "title": "Medical Office Professional",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22002",
+   "title": "Licensed Vocational Nursing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22003",
+   "title": "Child Development Associate Teacher",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22005",
+   "title": "Child Development Master Teacher",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22006",
+   "title": "Child Development Teacher",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30238",
+   "title": "Internet and E-Commerce",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30725",
+   "title": "Liberal Arts: Business and Technology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/pathways/businesstechnology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 27,
+    "why": "coarse net: the page's code tokens name 0 of 27 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4458,
+     "content": 17406,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "31596",
+   "title": "Diploma",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31936",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/pathways/arts/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 0 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4077,
+     "content": 17028,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "32467",
+   "title": "Theatre Arts",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/pathways/arts/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4077,
+     "content": 17028,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "33310",
+   "title": "Master Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "34012",
+   "title": "Biomanufacturing",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35549",
+   "title": "Computer Applications",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35580",
+   "title": "Early Childhood Education for Transfer",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35650",
+   "title": "Viticulture and Enology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35670",
+   "title": "Sustainable Agriculture",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35671",
+   "title": "Pest Control Adviser",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35677",
+   "title": "Sustainable Agriculture",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35678",
+   "title": "Viticulture and Enology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35767",
+   "title": "Biomanufacturing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35768",
+   "title": "Biomanufacturing",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35842",
+   "title": "Computer Applications - Microsoft Word",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36143",
+   "title": "Management Information Systems (MIS)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36144",
+   "title": "Tech Support",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36145",
+   "title": "Internet and E-Commerce",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36146",
+   "title": "Management Information Systems (MIS)",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36147",
+   "title": "Medical Assistant",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36148",
+   "title": "Systems Administration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36153",
+   "title": "Engineering Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/pathways/businesstechnology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4458,
+     "content": 17406,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36154",
+   "title": "Executive Administrative Professional",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36160",
+   "title": "Executive Administrative Professional",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36162",
+   "title": "Computer-Aided Drafting",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36168",
+   "title": "Cyber Security",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36169",
+   "title": "Systems Administration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36170",
+   "title": "Engineering Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/pathways/businesstechnology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4458,
+     "content": 17406,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36171",
+   "title": "Tech Support",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36174",
+   "title": "Cyber Security",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36253",
+   "title": "Computer Applications",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36305",
+   "title": "Information Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/pathways/businesstechnology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 0 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4458,
+     "content": 17406,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36315",
+   "title": "Information Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/pathways/businesstechnology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 0 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4458,
+     "content": 17406,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36418",
+   "title": "Computer-Aided Design & Drafting",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36442",
+   "title": "Research and Development",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "39140",
+   "title": "Automotive/Motorcycle Maintenance and Light Repair",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "39490",
+   "title": "English Fundamentals: Reading and Writing for Career Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "39492",
+   "title": "English Fundamentals:  Grammar",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40670",
+   "title": "Laboratory Skills",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41292",
+   "title": "Computer Applications - Microsoft Excel",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41611",
+   "title": "Office Clerk",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41612",
+   "title": "Google Apps",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41613",
+   "title": "Affordable Housing Management",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41618",
+   "title": "Teacher's Aide Training",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41652",
+   "title": "Supply Chain Management (SCM)",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41653",
+   "title": "Supply Chain Management (SCM)",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41672",
+   "title": "Electric, Hybrid, and Alternative-Fuel Vehicle Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41718",
+   "title": "Patient Care Coordinator",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41723",
+   "title": "Professional Accounting: Preparing for the CPA Exam",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "42864",
+   "title": "Employment Success Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43719",
+   "title": "Artificial Intelligence",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43720",
+   "title": "Artificial Intelligence",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46055",
+   "title": "Family Child Care Entrepreneurship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "05136",
+   "title": "Psychology",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ]
+  },
+  {
+   "control_number": "17409",
+   "title": "Registered Nursing: Track II: LVN-to-RN (ADN)",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "18311",
+   "title": "Gerontology",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ]
+  },
+  {
+   "control_number": "18313",
+   "title": "Human Development",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "30674",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "30724",
+   "title": "Liberal Arts: Health Sciences",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "31734",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ]
+  },
+  {
+   "control_number": "31741",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "31937",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ]
+  },
+  {
+   "control_number": "35028",
+   "title": "Museum Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "35669",
+   "title": "Pest Control Adviser",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "36150",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ]
+  },
+  {
+   "control_number": "36413",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "36417",
+   "title": "French",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ]
+  },
+  {
+   "control_number": "36422",
+   "title": "Italian",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "36427",
+   "title": "Global Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "36545",
+   "title": "Film, Television, and Electronic Media",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "37240",
+   "title": "Biology",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "37386",
+   "title": "Social Justice Studies: Gender Studies",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "37407",
+   "title": "Anthropology",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "37408",
+   "title": "Social Justice Studies: LGBTQ Studies",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "37409",
+   "title": "Child and Adolescent Development",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ]
+  },
+  {
+   "control_number": "38711",
+   "title": "Japanese",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "38712",
+   "title": "Japanese",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "38727",
+   "title": "Art History",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ]
+  },
+  {
+   "control_number": "38729",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "38730",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "38751",
+   "title": "Social Justice Studies: Chicana and Chicano Studies",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "39582",
+   "title": "Social Work and Human Services",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ]
+  },
+  {
+   "control_number": "40264",
+   "title": "Liberal Arts: Elementary Subject Matter Education",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "40327",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "40575",
+   "title": "French",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "40576",
+   "title": "Italian Language and Culture",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "40577",
+   "title": "Spanish",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "41547",
+   "title": "Hospitality Management",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "41895",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "42105",
+   "title": "Social Justice Studies: African American Studies",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "42705",
+   "title": "Sustainability Studies",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "42807",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ]
+  },
+  {
+   "control_number": "43613",
+   "title": "Global Health",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "43788",
+   "title": "Geography",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+   ]
+  },
+  {
+   "control_number": "44000",
+   "title": "Public Health",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ]
+  },
+  {
+   "control_number": "44614",
+   "title": "Data Science",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 4,
+  "0.8-1.0": 2,
+  "1.0": 23
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/miracosta",
+  "kept": 29,
+  "programs": 0,
+  "list": []
+ },
+ "run": "39688122055"
+}
