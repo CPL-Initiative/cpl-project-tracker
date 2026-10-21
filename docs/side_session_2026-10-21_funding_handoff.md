@@ -4,6 +4,7 @@ date: 2026-10-21
 session: side session (session_01XQMmTq7rSj2Q4Q3fSJyV1m), beside S442 SkyManzanita and S443 SkyToyon
 tags: [handoff, implementation-funding, sierra-retrieval-corpus, funding-video, library]
 status: current
+checkpoint: light, at 92% context (Rule 9a). Not refreshed: the docs lint, cpl_memory rows, the vault session note, the status files, the decision sheet.
 ---
 
 # Funding-page side session, 2026-10-21
@@ -43,3 +44,18 @@ CPL is said `C.P.L.`, one FTES `F.T.E.S.`, more than one `FTEs`. Nine scenes re-
 
 ## Subscriptions
 PR #2323 is watched by this session; drop it when merged.
+
+## Final state (checkpoint, 2026-10-21 evening)
+
+Sam: *"I think we may finally be done with the funding model! ... I'm stoked with the final outcome."*
+
+- **Narrated film Draft 6 and introduction v9** (agent-built, in #2323): seven barrier volleys in the narrated cut fill the
+  two weak spots Sam heard (Targets 80-90 s, Minimum conditions 104-109 s; `VOLLEYS_S2` in `build.py`); the Veteran Star
+  and *"63 colleges already meet this condition, a commitment they also made for the 2025-26 $50,000 funding"* on the
+  Minimum conditions slide of both films, computed (`T._videoFigures().vet`, figures.json; 63 = Veteran Star flags among
+  ESS 25-82 recipients; a strict 75% count is 62, the gap is Santa Barbara with 0 MIS veterans). Barrier captions were
+  written by the agent and await Sam's word. A ~1 s blank at 0:51 (Two priorities) is untouched.
+- **The funding page's Contents** links the narrated introduction (`#narrated-link`) after the 100-second one.
+- **#2323 is OPEN** at d4f381728: merge it (squash) once `test` passes on its head. This session watched it.
+- Rendered with the imageio-ffmpeg binary (`FFMPEG=.../imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2`); a scene's
+  optional `say` carries the spoken form (C.P.L., F.T.E.S. for one, FTEs for more) while captions keep `text`.
