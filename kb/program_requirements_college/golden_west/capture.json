@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 181,
  "with_closed_list": 152,
- "started": "2026-10-15T14:10:07Z",
+ "started": "2026-10-21T22:41:56Z",
  "scope": "/golden-west/",
  "sitemap": {
   "url": "https://catalog.cccd.edu/sitemap.xml",
@@ -19,77 +19,42 @@
  "pages_read": 212,
  "child_pages": 0,
  "banner_h1": "Academic Catalogs",
- "loads": 249,
- "seconds": 1187.4,
- "found": 81,
+ "loads": 214,
+ "seconds": 1025.2,
+ "found": 135,
  "by_method": {
   "no_closed_list": 29,
-  "not_found": 28,
-  "page_claimed": 43,
-  "sitemap_page": 81
+  "not_found": 6,
+  "page_claimed": 11,
+  "sitemap_page": 135
  },
  "shared_pages": {
   "https://catalog.cccd.edu/golden-west/pathways/business/liberal-arts/emphasis-bus-pub-aa/": [
    "11418",
    "19436"
   ],
-  "https://catalog.cccd.edu/golden-west/pathways/business/business-management/retail-management-coa/": [
-   "19379",
-   "19380"
-  ],
   "https://catalog.cccd.edu/golden-west/pathways/language-communications/communication-studies/communication-studies-aat/": [
    "30582",
    "44209"
+  ],
+  "https://catalog.cccd.edu/golden-west/pathways/stem/mathematics/mathematics-ast/": [
+   "30641",
+   "46547"
   ],
   "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/business-administration-ast/": [
    "31436",
    "41509"
   ],
-  "https://catalog.cccd.edu/golden-west/adult-education-noncredit/": [
-   "38003",
-   "38007",
-   "38008",
-   "39044",
-   "42858",
-   "45308",
-   "45330",
-   "45331",
-   "45333",
-   "46427"
+  "https://catalog.cccd.edu/golden-west/pathways/stem/physics/physics-ast/": [
+   "33205",
+   "46548"
+  ],
+  "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/chassis-specialist-coa/": [
+   "43823",
+   "44256"
   ]
  },
  "not_found": [
-  {
-   "control_number": "11420",
-   "title": "Marketing",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/pathways/business/marketing/marketing-aa/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "textContent",
-    "coverage": 0.067,
-    "body": 0.0,
-    "content": 0.067,
-    "net": 1,
-    "listed": 15,
-    "why": "coarse net: the page's code tokens name 1 of 15 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1940,
-     "content": 5286,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      939
-     ]
-    ]
-   }
-  },
   {
    "control_number": "11424",
    "title": "Administrative Assistant",
@@ -100,7 +65,7 @@
      "award": 0,
      "title": 0.5
     },
-    "field": "innerText",
+    "field": "innerText+tabs",
     "coverage": 0.0,
     "body": 0.0,
     "content": 0.0,
@@ -111,7 +76,7 @@
     "chars": {
      "body": 2057,
      "content": 4638,
-     "tabs": 0
+     "tabs": 214
     },
     "tab_panels": [
      [
@@ -135,130 +100,6 @@
    "award": "A.A. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19437",
-   "title": "Liberal Arts: Emphasis in Mathematics",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-math-aa/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.302,
-    "body": 0.0,
-    "content": 0.094,
-    "net": 16,
-    "listed": 53,
-    "why": "coarse net: the page's code tokens name 16 of 53 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2650,
-     "content": 6452,
-     "tabs": 1401
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      1381
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "19438",
-   "title": "Liberal Arts: Emphasis in Science",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/liberal-arts/emphasis-social-behav-aa/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.023,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 1,
-    "listed": 44,
-    "why": "coarse net: the page's code tokens name 1 of 44 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2715,
-     "content": 8572,
-     "tabs": 3560
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      3540
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "19851",
-   "title": "Software Development",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/software-development-cert-achieve/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2722,
-     "content": 5448,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      290
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "19852",
-   "title": "Software Development",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/liberal-arts/emphasis-hum-behav-self-dev-aa/",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2807,
-     "content": 9633,
-     "tabs": 4584
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      4564
-     ]
-    ]
    }
   },
   {
@@ -301,589 +142,21 @@
    }
   },
   {
-   "control_number": "35931",
-   "title": "Liberal Arts: Emphasis in Computer Science and Technology",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-comp-sci-tech-aa/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "textContent",
-    "coverage": 0.038,
-    "body": 0.0,
-    "content": 0.038,
-    "net": 1,
-    "listed": 26,
-    "why": "coarse net: the page's code tokens name 1 of 26 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2597,
-     "content": 6777,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      1803
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "38767",
-   "title": "English for Citizenship",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/ell/citizenship-cert-competency/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2077,
-     "content": 4683,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      204
-     ]
-    ]
-   }
-  },
-  {
    "control_number": "38946",
    "title": "Medical Coding Specialist",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
    }
-  },
-  {
-   "control_number": "40672",
-   "title": "Entrepreneurship I - Small Business Startup Essentials",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/entrepreneurship-small-business-startup-essentials-cert-achieve/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 9,
-    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2542,
-     "content": 5606,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      631
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "43200",
-   "title": "Introduction to Academic English for Multilingual Students",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/ell/intro-english-multilingual-cert-completion/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2110,
-     "content": 4774,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      262
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "43201",
-   "title": "Computer Literacy I",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/computer-business-applications/computer-literacy1-cert-completion/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 3,
-    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1931,
-     "content": 4565,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      246
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "43587",
-   "title": "Security Guard",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/criminal-justice/security-guard-cert-completion/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 3,
-    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2139,
-     "content": 4752,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      216
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "43672",
-   "title": "Computer Literacy II",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/computer-business-applications/computer-literacy2-cert-completion/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "textContent",
-    "coverage": 0.25,
-    "body": 0.0,
-    "content": 0.25,
-    "net": 1,
-    "listed": 4,
-    "why": "coarse net: the page's code tokens name 1 of 4 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2160,
-     "content": 4791,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      243
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "44034",
-   "title": "Support for Calculus",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/support-for-calculus-cert-of-comp/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2520,
-     "content": 5108,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      176
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "44047",
-   "title": "Certified Nurse Assistant",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/nursing/certified-nurse-assistant-cert-of-completion/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2057,
-     "content": 4638,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      194
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "44827",
-   "title": "Engineering",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/engineering/engr-as/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "textContent",
-    "coverage": 0.043,
-    "body": 0.0,
-    "content": 0.043,
-    "net": 1,
-    "listed": 23,
-    "why": "coarse net: the page's code tokens name 1 of 23 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2353,
-     "content": 5998,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      1264
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "44890",
-   "title": "Ocean Lifeguard I",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/criminal-justice/ocean-lifeguard-i-cert-comp/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1568,
-     "content": 4162,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      207
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "45332",
-   "title": "Essentials of Statistics",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-statistics-cert-comp/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 3,
-    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2228,
-     "content": 4919,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      269
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "45334",
-   "title": "Essentials of Intermediate Algebra (Factoring and Quadratics)",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-intermediate-algebra-factoring-quad-cert-comp/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2108,
-     "content": 4711,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      179
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "45335",
-   "title": "Essentials of Intermediate Algebra (Exponential and Logarithmic)",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-intermediate-algebra-exponential-logs-cert-comp/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2106,
-     "content": 4709,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      181
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "45461",
-   "title": "Essentials of Intermediate Algebra (Functions)",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-intermediate-functions-cert-comp/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2196,
-     "content": 4800,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      180
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "46485",
-   "title": "Esthetician",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/cosmetology/esthetician-nc/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3341,
-     "content": 5987,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      173
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "46486",
-   "title": "Cosmetology",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/cosmetology/cosmetology-nc/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 4,
-    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3585,
-     "content": 6313,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      252
-     ]
-    ]
-   }
   }
  ],
  "page_claimed": [
-  {
-   "control_number": "03893",
-   "title": "Business & Management",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/business/liberal-arts/emphasis-bus-pub-aa/",
-    "https://catalog.cccd.edu/golden-west/pathways/business/business-management/retail-management-coa/"
-   ]
-  },
-  {
-   "control_number": "11434",
-   "title": "Computer Aided Design and Drafting",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/general-education/associate-degree/"
-   ]
-  },
   {
    "control_number": "17961",
    "title": "IGETC",
    "award": "Certificate of Achievement requiring 60+S/90+Q units",
    "pages": [
     "https://catalog.cccd.edu/golden-west/general-education/associate-degree/"
-   ]
-  },
-  {
-   "control_number": "18354",
-   "title": "General Biology",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/economics/environmental-studies-policy-aa/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/biology/",
-    "https://catalog.cccd.edu/golden-west/pathways/health-sciences/pre-professional/pre-physical-therapy-cert-achieve/",
-    "https://catalog.cccd.edu/golden-west/pathways/health-sciences/pre-professional/pre-physician-assistant-cert-achieve/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/environmental-sci/environmental-sci-ast/"
-   ]
-  },
-  {
-   "control_number": "18355",
-   "title": "Chemistry",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/stem/biology/",
-    "https://catalog.cccd.edu/golden-west/pathways/health-sciences/pre-professional/pre-physical-therapy-cert-achieve/",
-    "https://catalog.cccd.edu/golden-west/pathways/health-sciences/pre-professional/pre-physician-assistant-cert-achieve/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/environmental-sci/environmental-sci-ast/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/geology/geology-ast/"
    ]
   },
   {
@@ -909,59 +182,6 @@
    ]
   },
   {
-   "control_number": "18423",
-   "title": "Spanish",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/liberal-arts/emphasis-arts-hum-aa/",
-    "https://catalog.cccd.edu/golden-west/pathways/language-communications/spanish/",
-    "https://catalog.cccd.edu/golden-west/general-education/associate-degree/"
-   ]
-  },
-  {
-   "control_number": "18424",
-   "title": "Vietnamese Language",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/liberal-arts/emphasis-arts-hum-aa/",
-    "https://catalog.cccd.edu/golden-west/general-education/associate-degree/"
-   ]
-  },
-  {
-   "control_number": "18425",
-   "title": "World Language",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/liberal-arts/emphasis-arts-hum-aa/",
-    "https://catalog.cccd.edu/golden-west/pathways/language-communications/spanish/",
-    "https://catalog.cccd.edu/golden-west/general-education/associate-degree/"
-   ]
-  },
-  {
-   "control_number": "18968",
-   "title": "Chassis and Drivetrain Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/"
-   ]
-  },
-  {
-   "control_number": "18969",
-   "title": "Engine Performance and Emission Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/"
-   ]
-  },
-  {
-   "control_number": "19381",
-   "title": "Staff Accountant",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/business/accounting/"
-   ]
-  },
-  {
    "control_number": "19384",
    "title": "Criminal Justice: Law Enforcement",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
@@ -973,64 +193,20 @@
    ]
   },
   {
-   "control_number": "21331",
-   "title": "Human Resources Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "control_number": "19437",
+   "title": "Liberal Arts: Emphasis in Mathematics",
+   "award": "A.A. Degree",
    "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/business/business-management/retail-management-coa/",
-    "https://catalog.cccd.edu/golden-west/pathways/business/liberal-arts/emphasis-bus-pub-aa/",
-    "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/"
-   ]
-  },
-  {
-   "control_number": "21333",
-   "title": "Marketing",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/business/business-management/retail-management-coa/",
-    "https://catalog.cccd.edu/golden-west/pathways/business/liberal-arts/emphasis-bus-pub-aa/",
-    "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/"
-   ]
-  },
-  {
-   "control_number": "21355",
-   "title": "Graphic Design and Production Option",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/",
-    "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/digital-arts/"
-   ]
-  },
-  {
-   "control_number": "31432",
-   "title": "Theater Arts",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/",
-    "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/liberal-arts/emphasis-arts-hum-aa/",
+    "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-science-aa/",
     "https://catalog.cccd.edu/golden-west/general-education/associate-degree/"
    ]
   },
   {
-   "control_number": "32672",
-   "title": "Music",
-   "award": "A.A- T Degree",
+   "control_number": "19852",
+   "title": "Software Development",
+   "award": "A.A. Degree",
    "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/music/"
-   ]
-  },
-  {
-   "control_number": "33205",
-   "title": "Physics",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/economics/economics-aat/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/environmental-sci/environmental-sci-ast/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/physics/",
-    "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-    "https://catalog.cccd.edu/golden-west/general-education/associate-degree/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-math-aa/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/mathematics/"
+    "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/software-development-cert-achieve/"
    ]
   },
   {
@@ -1054,42 +230,11 @@
    ]
   },
   {
-   "control_number": "35264",
-   "title": "Scenic, Lighting and Projection Design Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/",
-    "https://catalog.cccd.edu/golden-west/general-education/associate-degree/",
-    "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/liberal-arts/emphasis-arts-hum-aa/"
-   ]
-  },
-  {
    "control_number": "35525",
    "title": "Global Studies",
    "award": "A.A- T Degree",
    "pages": [
     "https://catalog.cccd.edu/golden-west/general-education/associate-degree/"
-   ]
-  },
-  {
-   "control_number": "35877",
-   "title": "Computer Science",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/stem/environmental-sci/environmental-sci-ast/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/physics/",
-    "https://catalog.cccd.edu/golden-west/general-education/associate-degree/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-math-aa/"
-   ]
-  },
-  {
-   "control_number": "37192",
-   "title": "Costume Production and Wardrobe Technician",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/",
-    "https://catalog.cccd.edu/golden-west/general-education/associate-degree/",
-    "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/liberal-arts/emphasis-arts-hum-aa/"
    ]
   },
   {
@@ -1103,936 +248,823 @@
    ]
   },
   {
-   "control_number": "40673",
-   "title": "Entrepreneurship II - Small Business Ownership and Expansion",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/"
-   ]
-  },
-  {
-   "control_number": "42308",
-   "title": "Enrolled Agent Tax Specialist",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/business/accounting/"
-   ]
-  },
-  {
-   "control_number": "42330",
-   "title": "UX and Web Design",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/",
-    "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/digital-arts/"
-   ]
-  },
-  {
-   "control_number": "43096",
-   "title": "Chemistry",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/stem/environmental-sci/environmental-sci-ast/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/geology/geology-ast/",
-    "https://catalog.cccd.edu/golden-west/pathways/health-sciences/pre-professional/pre-physical-therapy-cert-achieve/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/biology/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/physics/"
-   ]
-  },
-  {
-   "control_number": "43198",
-   "title": "Bookkeeping",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/business/accounting/"
-   ]
-  },
-  {
-   "control_number": "43823",
-   "title": "Chassis Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/"
-   ]
-  },
-  {
-   "control_number": "44255",
-   "title": "Automotive HVAC Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/"
-   ]
-  },
-  {
-   "control_number": "44256",
-   "title": "Chassis Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/"
-   ]
-  },
-  {
-   "control_number": "44257",
-   "title": "Engine Performance and Emissions Specialist",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/"
-   ]
-  },
-  {
-   "control_number": "44258",
-   "title": "Powertrain Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/"
-   ]
-  },
-  {
-   "control_number": "44259",
-   "title": "Smog Technician Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/"
-   ]
-  },
-  {
-   "control_number": "44863",
-   "title": "Engine Performance Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/"
-   ]
-  },
-  {
-   "control_number": "45345",
-   "title": "Hybrid Electric Vehicle Maintenance Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/"
-   ]
-  },
-  {
    "control_number": "45476",
    "title": "Cal-GETC",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "pages": [
     "https://catalog.cccd.edu/golden-west/general-education/associate-degree/"
    ]
-  },
-  {
-   "control_number": "46040",
-   "title": "Chemistry",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/health-sciences/pre-professional/pre-physical-therapy-cert-achieve/",
-    "https://catalog.cccd.edu/golden-west/pathways/health-sciences/pre-professional/pre-physician-assistant-cert-achieve/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/biology/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/environmental-sci/environmental-sci-ast/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/geology/geology-ast/"
-   ]
-  },
-  {
-   "control_number": "46548",
-   "title": "Physics 2.0",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.cccd.edu/golden-west/pathways/stem/physics/",
-    "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-    "https://catalog.cccd.edu/golden-west/general-education/associate-degree/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-math-aa/",
-    "https://catalog.cccd.edu/golden-west/pathways/stem/mathematics/"
-   ]
   }
  ],
  "coverage_bands": {
-  "0.5-0.8": 18,
-  "0.8-1.0": 27,
-  "1.0": 36
+  "0.5-0.8": 13,
+  "0.8-1.0": 38,
+  "1.0": 84
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 81,
+  "against": "kb/program_requirements_college/golden_west",
+  "kept": 49,
+  "programs": 86,
   "list": [
    {
-    "control_number": "03903",
-    "title": "American Sign Language Interpreting",
+    "control_number": "03893",
+    "title": "Business & Management",
     "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/american-sign-language-interpreting/american-sign-language-interpreting-aa/",
-    "coverage": 1.0,
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-management/business-mgmt-aa/",
+    "coverage": 0.95,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "03923",
     "title": "Digital Arts",
     "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/",
-    "coverage": 0.7,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03928",
-    "title": "Registered Nurse",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/nursing/rn-as/",
-    "coverage": 0.966,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03941",
-    "title": "Police Academy",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/criminal-justice-police-academy/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/digital-arts-aa/",
+    "coverage": 0.9,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/",
+    "was_coverage": 0.7,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "11415",
     "title": "Accounting",
     "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/business/accounting/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/accounting/accounting-aa/",
     "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/business/accounting/",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "11418",
-    "title": "Business Administration",
+    "control_number": "11420",
+    "title": "Marketing",
     "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/business/liberal-arts/emphasis-bus-pub-aa/",
-    "coverage": 0.562,
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/marketing/marketing-aa/",
+    "coverage": 0.933,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "11439",
-    "title": "LVN to RN",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/nursing/lvn-rn-as/",
-    "coverage": 0.952,
+    "control_number": "11434",
+    "title": "Computer Aided Design and Drafting",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/computer-aided-design-drafting-cadd/cadd-computer-aided-design-drafting-aa/",
+    "coverage": 0.929,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "17960",
     "title": "CSU General Education Breadth",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://catalog.cccd.edu/golden-west/general-education/associate-degree/",
-    "coverage": 0.576,
+    "coverage": 0.752,
+    "was_url": "https://catalog.cccd.edu/golden-west/general-education/associate-degree/",
+    "was_coverage": 0.576,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18354",
+    "title": "General Biology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/biology/general-biology-aa/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "18355",
+    "title": "Chemistry",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/chemistry/chemistry-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "18358",
     "title": "Physics",
     "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/physics/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/physics/physics-aa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/stem/physics/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18423",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/spanish/spanish-aa/",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "18424",
+    "title": "Vietnamese Language",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/vietnamese/vietnamese-language-aa/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "18425",
+    "title": "World Language",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/spanish/world-language-aa/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18416",
-    "title": "Psychology",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/psychology/",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18418",
-    "title": "Criminal Justice: Administration of Justice",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/criminal-justice/",
-    "coverage": 0.7,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18426",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/art/art-aa/",
-    "coverage": 0.951,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "18427",
     "title": "Dance",
     "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/dance/",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/dance/dance-aa/",
+    "coverage": 0.923,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/dance/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "18428",
     "title": "Theater Arts",
     "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/theater-arts-aa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18968",
+    "title": "Chassis and Drivetrain Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/automotive-chassis-drivetrain-specialist-cert-achieve/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "18572",
-    "title": "Liberal Studies for Elementary Education",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/education/education-elementary-k-8/liberal-studies-elementary-education-aa/",
-    "coverage": 0.925,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18945",
-    "title": "Business Administration",
+    "control_number": "18969",
+    "title": "Engine Performance and Emission Specialist",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/business-administration-cert-achieve/",
-    "coverage": 0.867,
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/automotive-engine-performance-emission-specialist-cert-achieve/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19379",
-    "title": "Retail Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-management/retail-management-coa/",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "19380",
     "title": "Business & Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-management/retail-management-coa/",
-    "coverage": 0.688,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-management/business-mgmt-coa/",
+    "coverage": 0.938,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/business/business-management/retail-management-coa/",
+    "was_coverage": 0.688,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "19382",
-    "title": "American Sign Language Interpreting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/american-sign-language-interpreting/american-sign-language-interpreting-cert-achieve/",
+    "control_number": "19381",
+    "title": "Staff Accountant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/accounting/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "19435",
-    "title": "Liberal Arts: Emphasis in Arts and Humanities",
+    "control_number": "19438",
+    "title": "Liberal Arts: Emphasis in Science",
     "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/liberal-arts/emphasis-arts-hum-aa/",
-    "coverage": 0.93,
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-science-aa/",
+    "coverage": 0.977,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "19436",
-    "title": "Liberal Arts: Emphasis in Business and Public Administration",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/business/liberal-arts/emphasis-bus-pub-aa/",
-    "coverage": 0.939,
+    "control_number": "19851",
+    "title": "Software Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/software-development-cert-achieve/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "19439",
-    "title": "Liberal Arts: Emphasis in Social and Behavioral Sciences",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/liberal-arts/emphasis-social-behav-aa/",
-    "coverage": 0.821,
+    "control_number": "21331",
+    "title": "Human Resources Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-management/human-resources-management-coa/",
+    "coverage": 0.9,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "19461",
-    "title": "Liberal Arts: Emphasis in Human Behavior and Self-Development",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/liberal-arts/emphasis-hum-behav-self-dev-aa/",
-    "coverage": 0.931,
+    "control_number": "21333",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/marketing/marketing-cert-achieve/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "21349",
     "title": "Computer Aided Design and Drafting",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/computer-aided-design-drafting-cadd/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/computer-aided-design-drafting-cadd/cadd-computer-aided-design-drafting-cert-achieve/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/career-education/computer-aided-design-drafting-cadd/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "30582",
-    "title": "Communication Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/communication-studies/communication-studies-aat/",
-    "coverage": 1.0,
+    "control_number": "21355",
+    "title": "Graphic Design and Production Option",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/",
+    "coverage": 0.75,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "30641",
     "title": "Mathematics",
     "award": "A.S. T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/mathematics/",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/mathematics/mathematics-ast/",
+    "coverage": 0.5,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/stem/mathematics/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "30701",
-    "title": "Sociology",
+    "control_number": "31432",
+    "title": "Theater Arts",
     "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/sociology/sociology-aat/",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30713",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/psychology/psychology-aat/",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31116",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/history/history-aat/",
-    "coverage": 0.688,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31124",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/political-science/political-science-associate-aat/",
-    "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31125",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/english/english-aat/",
-    "coverage": 0.778,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31339",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/art/art-history-aat/",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31340",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/art/studio-arts-aat/",
-    "coverage": 0.905,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31436",
-    "title": "Business Administration",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/business-administration-ast/",
-    "coverage": 0.636,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31541",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/kinesiology/kinesiology-aat/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/theater-arts-aat/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "32098",
     "title": "Philosophy",
     "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/philosophy/",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/philosophy/philosophy-aat/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/philosophy/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "32102",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/geology/geology-ast/",
+    "control_number": "32672",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/music/music-aat/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32118",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/anthropology/anthropology-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32145",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/geography/geography-aat/",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32277",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/education/education-elementary-k-8/elementary-teacher-education-aat/",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "32848",
     "title": "Spanish",
     "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/spanish/",
-    "coverage": 0.636,
+    "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/spanish/spanish-aat/",
+    "coverage": 0.818,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/spanish/",
+    "was_coverage": 0.636,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33205",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/physics/physics-ast/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "33676",
     "title": "Music",
     "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/music/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/music/music-aa/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/music/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "35212",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/economics/economics-aat/",
-    "coverage": 0.895,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37279",
-    "title": "Automotive Lube Technician",
-    "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/automotive-technology/automotive-lube-technician-specialist-cert-completion/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37280",
-    "title": "Automotive Tire and Wheel Technician",
-    "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/automotive-technology/automotive-tire-wheel-technician-cert-completion/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37281",
-    "title": "Vehicle Maintenance Specialist",
-    "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/automotive-technology/vehicle-maintenance-specialist-cert-completion/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37636",
-    "title": "Child and Adolescent Development",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/education/child-dev/chad-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37746",
-    "title": "Pre-Occupational Therapy",
+    "control_number": "35264",
+    "title": "Scenic, Lighting and Projection Design Technician",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/pre-professional/pre-occupational-therapy-cert-achieve/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/scenic-lighting-projection-design-technician-cert-achieve/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "37901",
-    "title": "Pre-Physical Therapy",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/pre-professional/pre-physical-therapy-cert-achieve/",
+    "control_number": "35877",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/computer-science-as/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "37902",
-    "title": "Pre-Physician Assistant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/pre-professional/pre-physician-assistant-cert-achieve/",
+    "control_number": "35931",
+    "title": "Liberal Arts: Emphasis in Computer Science and Technology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-comp-sci-tech-aa/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37192",
+    "title": "Costume Production and Wardrobe Technician",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/costume-production-wardrobe-technician-cert-achieve/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "38003",
     "title": "English Life Skills 1",
     "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/ell/english-life-skills-1-cert-competency/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "38007",
     "title": "English Life Skills 2",
     "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/ell/english-life-skills-2-cert-competency/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "38008",
     "title": "English Life Skills 3",
     "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/ell/english-life-skills-3-cert-competency/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "38957",
-    "title": "Pre-Health Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/pre-professional/pre-health-science-cert-achieve/",
+    "control_number": "38767",
+    "title": "English for Citizenship",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/ell/citizenship-cert-competency/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "39044",
     "title": "GED Preparation",
     "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/college-preparation/ged-preparation-cert-competency/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "39189",
-    "title": "Smog Inspector",
-    "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/automotive-technology/smog-inspector-cert-completion/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40252",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/political-science/law-public-policy-aat/",
-    "coverage": 0.704,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41101",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/environmental-sci/environmental-sci-ast/",
+    "control_number": "40672",
+    "title": "Entrepreneurship I - Small Business Startup Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/entrepreneurship-small-business-startup-essentials-cert-achieve/",
     "coverage": 0.889,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "41125",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/public-health/public-health-science-ast/",
+    "control_number": "40673",
+    "title": "Entrepreneurship II - Small Business Ownership and Expansion",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/entrepreneurship-ii-small-business-ownership-expansion-cert-achieve/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41509",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/business-administration-ast/",
-    "coverage": 0.867,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "41897",
     "title": "Biology",
     "award": "A.S. T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/biology/",
-    "coverage": 0.545,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/biology/biology-ast/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/stem/biology/",
+    "was_coverage": 0.545,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "42148",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/social-work-human-services/social-work-human-services-aat/",
-    "coverage": 0.844,
+    "control_number": "42308",
+    "title": "Enrolled Agent Tax Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/accounting/enrolled-agent-coa/",
+    "coverage": 0.8,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "42329",
     "title": "Digital Art Production",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/digital-arts/",
-    "coverage": 0.833,
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/digital-art-production-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/digital-arts/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42330",
+    "title": "UX and Web Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/ux-web-design-cert-coa/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "42608",
     "title": "LVN 30 Unit Option",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/nursing/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/nursing/lvn-30-unit-option-coa/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/nursing/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "42844",
     "title": "Computer Science",
     "award": "A.S. T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/",
-    "coverage": 0.533,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/computer-science-ast/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/",
+    "was_coverage": 0.533,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "42858",
     "title": "Senior Healthcare Technician",
     "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/nursing/senior-health-tech-cert-completion/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "42940",
     "title": "Academic Writing for Multilingual Students",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/education/education-elementary-k-8/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/",
     "coverage": 0.5,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/education/education-elementary-k-8/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43096",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/chemistry/chemistry-ast/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "43170",
     "title": "Business Fundamentals",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/business-fundamentals-coa/",
     "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43198",
+    "title": "Bookkeeping",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/business/accounting/bookkeeping-coa/",
+    "coverage": 0.75,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "43199",
     "title": "Comprehensive Automotive Technician",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/comprehensive-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43200",
+    "title": "Introduction to Academic English for Multilingual Students",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/ell/intro-english-multilingual-cert-completion/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43201",
+    "title": "Computer Literacy I",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/computer-business-applications/computer-literacy1-cert-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43587",
+    "title": "Security Guard",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/criminal-justice/security-guard-cert-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43672",
+    "title": "Computer Literacy II",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/computer-business-applications/computer-literacy2-cert-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43823",
+    "title": "Chassis Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/chassis-specialist-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "43954",
     "title": "Gender and Queer Studies",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/sociology/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/sociology/gender-studies-coa/",
     "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/sociology/",
+    "was_coverage": 0.714,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "44209",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/communication-studies/communication-studies-aat/",
+    "control_number": "44034",
+    "title": "Support for Calculus",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/support-for-calculus-cert-of-comp/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "45055",
-    "title": "Paraeducator",
+    "control_number": "44047",
+    "title": "Certified Nurse Assistant",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/nursing/certified-nurse-assistant-cert-of-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44255",
+    "title": "Automotive HVAC Specialist",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/education/education-elementary-k-8/paraeducator-coa/",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/hvac-specialist-coa/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "45056",
-    "title": "Modern Policing",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/criminal-justice-police-academy/modern-police-as/",
-    "coverage": 0.957,
+    "control_number": "44256",
+    "title": "Chassis Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/chassis-specialist-coa/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "44257",
+    "title": "Engine Performance and Emissions Specialist",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/engine-perf-emission-specialist-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "44258",
+    "title": "Powertrain Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/powertrain-specialist-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "44259",
+    "title": "Smog Technician Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/smog-tech-specialist-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "44827",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/engineering/engr-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44863",
+    "title": "Engine Performance Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/engine-performance-specialist-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "44890",
+    "title": "Ocean Lifeguard I",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/criminal-justice/ocean-lifeguard-i-cert-comp/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "45308",
     "title": "Essentials of Number Systems and Arithmetic",
     "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-number-systems-arith-cert-comp/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "45330",
     "title": "Essentials of Beginning Algebra (Exponents and Polynomials)",
     "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-beg-alg-exponents-poly-cert-comp/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "45331",
     "title": "Essentials of Beginning Algebra (Lines)",
     "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-beg-alg-lines-cert-comp/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45332",
+    "title": "Essentials of Statistics",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-statistics-cert-comp/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "45333",
     "title": "Essentials of Intermediate Algebra (Radical, Rational, and Absolute Values)",
     "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-intermediate-radical-rat-abs-values-cert-comp/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "46131",
-    "title": "Environmental Studies and Policy",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/economics/environmental-studies-policy-aa/",
-    "coverage": 0.92,
+    "control_number": "45334",
+    "title": "Essentials of Intermediate Algebra (Factoring and Quadratics)",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-intermediate-algebra-factoring-quad-cert-comp/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45335",
+    "title": "Essentials of Intermediate Algebra (Exponential and Logarithmic)",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-intermediate-algebra-exponential-logs-cert-comp/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45345",
+    "title": "Hybrid Electric Vehicle Maintenance Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/hybrid-electric-veh-mainten-specialist-COA/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45461",
+    "title": "Essentials of Intermediate Algebra (Functions)",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-intermediate-functions-cert-comp/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46040",
+    "title": "Chemistry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/chemistry/chemistry-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "46426",
@@ -2040,31 +1072,61 @@
     "award": "Noncredit program",
     "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/criminal-justice/law-enforcement-option-nc/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/criminal-justice/law-enforcement-option-nc/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "46427",
     "title": "Small Business Management Basics",
     "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-    "coverage": 0.5,
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/business/small-business-management-nc/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46485",
+    "title": "Esthetician",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/cosmetology/esthetician-nc/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46486",
+    "title": "Cosmetology",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/cosmetology/cosmetology-nc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "46547",
     "title": "Mathematics 2.0",
     "award": "A.S. T Degree",
-    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-math-aa/",
-    "coverage": 0.667,
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/mathematics/mathematics-ast/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-math-aa/",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46548",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.cccd.edu/golden-west/pathways/stem/physics/physics-ast/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    }
   ]
  },
- "run": "38748828247"
+ "run": "39688079435"
 }

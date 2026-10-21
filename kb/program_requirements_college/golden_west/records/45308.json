@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Essentials of Number Systems and Arithmetic",
  "award": "Noncredit program",
- "source_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+ "source_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-number-systems-arith-cert-comp/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8151,
+  "input_tokens": 6765,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8151,
-    "output_tokens": 900,
+    "input_tokens": 6765,
+    "output_tokens": 560,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 900,
+  "output_tokens": 560,
   "output_tokens_details": {
-   "thinking_tokens": 300
+   "thinking_tokens": 101
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0506,
- "ms": 12264,
- "seconds": 12.8,
+ "cost_usd": 0.03826,
+ "ms": 6111,
+ "seconds": 7.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 3,
    "listed": 3,
-   "share": 0.0,
-   "missing": [
-    "MATHG50N",
-    "MATHG51N",
-    "MATHG52N"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -64,26 +61,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record states no figure, but the catalog text names 10 Hours, 10 Hours, 10 Hours, 10 Hours"
-   ]
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    30.0
+   ],
+   "stated": [
+    18.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -95,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Mathematics (MATH)",
+   "section_heading": "Essentials of Number Systems and Arithmetic, Certificate of Competency",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 30
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -120,32 +121,54 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Identify which number sets a number is an element of.",
+    "Add and subtract fractions with different denominators.",
+    "Round a decimal to a desired place value."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MATH G050N",
-    "why": "Only its course description is in the text, with no program requirements list."
-   },
-   {
-    "code": "MATH G051N",
-    "why": "Only its course description is in the text, with no program requirements list."
-   },
-   {
-    "code": "MATH G052N",
-    "why": "Only its course description is in the text, with no program requirements list."
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH G050N",
+      "units": 6,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G051N",
+      "units": 6,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G052N",
+      "units": 6,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The text holds only course descriptions from the Adult Education/Noncredit course listing, not the program page for Essentials of Number Systems and Arithmetic, Certificate of Competency. No requirements, rule, total hours, outcomes or careers for the program are printed, so no blocks were recorded.",
-   "Each of MATH G050N (Sets of Numbers), MATH G051N (Fractions and Percentages) and MATH G052N (Decimal Numbers) is printed as 6-10 Hours (0 lecture hours; 6-10 lab hours). Each is listed under 'Catalog Program Pages Referencing' as part of Essentials of Number Systems and Arithmetic, Certificate of Competency. This suggests they make up the program, but the text does not state the requirement rule.",
-   "Measure is set to hours because this is a noncredit program and the courses are counted in hours.",
-   "A reviewer should check the program page itself for the requirement list and total hours.",
-   "MATH G053N and MATH G054N reference a different program (Essentials of Beginning Algebra (Lines)) and were not considered."
+   "The course list column is headed 'Hours', but the total row is labeled 'Total Units 18-30'. It is recorded as 18-30 hours because this is a noncredit program and the column counts hours.",
+   "Each course prints a 6-10 hour range."
   ]
  },
- "extracted_run": "38748828247"
+ "extracted_run": "39688079435"
 }

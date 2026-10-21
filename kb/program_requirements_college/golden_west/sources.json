@@ -16,12 +16,42 @@
   "title": "Business & Management",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "ACCTG100",
+   "ACCTG101",
+   "ACCTG102",
+   "BUSG100",
+   "BUSG101",
+   "BUSG108",
+   "BUSG121",
+   "BUSG130",
+   "BUSG139",
+   "BUSG160",
+   "BUSG210",
+   "CSG130",
+   "MGMTG110",
+   "MGMTG111",
+   "MGMTG115",
+   "MGMTG130",
+   "MGMTG155",
+   "MGMTG162",
+   "MKTGG135"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-management/business-mgmt-aa/",
+   "title": "Business & Management, Associate in Arts Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 3390
  },
  {
   "control_number": "03903",
@@ -45,7 +75,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 6,
@@ -69,28 +100,31 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.7,
+  "coverage": 0.9,
   "codes_found": [
+   "ARTG115",
    "DARTG100",
    "DARTG135",
    "DARTG150",
    "DARTG152",
    "DARTG170",
    "DARTG174",
-   "DARTG178"
+   "DARTG178",
+   "PHOTG190"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/",
-   "title": "Digital Arts < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/digital-arts-aa/",
+   "title": "Digital Arts, Associate in Arts Degree < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 10,
-  "text_chars": 12700
+  "text_chars": 3060
  },
  {
   "control_number": "03928",
@@ -136,7 +170,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 29,
@@ -160,7 +195,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 2,
@@ -212,17 +248,18 @@
    "CJG220"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/business/accounting/",
-   "title": "Accounting < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/accounting/accounting-aa/",
+   "title": "Accounting, Associate in Arts Degree < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 13,
-  "text_chars": 13863
+  "text_chars": 3039
  },
  {
   "control_number": "11417",
@@ -261,7 +298,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 16,
@@ -284,12 +322,37 @@
   "title": "Marketing",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "BUSG100",
+   "BUSG101",
+   "BUSG130",
+   "BUSG139",
+   "BUSG160",
+   "CSG130",
+   "DARTG150",
+   "MGMTG110",
+   "MGMTG155",
+   "MKTGG100",
+   "MKTGG135",
+   "MKTGG140",
+   "MKTGG157",
+   "MKTGG167"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/marketing/marketing-aa/",
+   "title": "Marketing, Associate in Arts Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 2901
  },
  {
   "control_number": "11424",
@@ -332,12 +395,36 @@
   "title": "Computer Aided Design and Drafting",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ARTG107",
+   "ARTG108",
+   "ARTG109",
+   "BUSG130",
+   "BUSG139",
+   "DRAFG105",
+   "DRAFG110",
+   "DRAFG170",
+   "MATHG115",
+   "MATHG115S",
+   "MATHG120",
+   "MATHG180",
+   "WORKG100"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/computer-aided-design-drafting-cadd/cadd-computer-aided-design-drafting-aa/",
+   "title": "Computer Aided Design and Drafting, Associate in Arts Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3179
  },
  {
   "control_number": "11439",
@@ -375,7 +462,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 21,
@@ -435,12 +523,14 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.576,
+  "coverage": 0.752,
   "codes_found": [
    "ANTHG100",
    "ANTHG130",
    "ANTHG140",
    "ANTHG150",
+   "ANTHG185",
+   "ANTHG185L",
    "ANTHG190",
    "ANTHG200",
    "ARTG100",
@@ -457,7 +547,29 @@
    "ARTG139",
    "ARTG142",
    "ARTG150",
+   "ASTRG100",
+   "ASTRG100L",
+   "BIOLG100",
+   "BIOLG101",
+   "BIOLG104",
+   "BIOLG104L",
+   "BIOLG110",
+   "BIOLG120",
+   "BIOLG160",
+   "BIOLG180",
+   "BIOLG182",
+   "BIOLG183",
+   "BIOLG186",
+   "BIOLG210",
+   "BIOLG220",
+   "BIOLG225",
    "BUSG100",
+   "CHEMG110",
+   "CHEMG130",
+   "CHEMG180",
+   "CHEMG185",
+   "CHEMG220",
+   "CHEMG225",
    "CJG123",
    "CJG140",
    "CJG141",
@@ -469,6 +581,15 @@
    "CMSTG255",
    "CMSTG265",
    "COMMC1000",
+   "COUNG104",
+   "COUNG105",
+   "COUNG150",
+   "COUNG151",
+   "COUNG152",
+   "COUNG153",
+   "COUNG154",
+   "COUNG155",
+   "COUNG156",
    "CSG262",
    "DANCG100",
    "DANCG101",
@@ -501,12 +622,20 @@
    "ETHSG181",
    "GEOGG100",
    "GEOGG120",
+   "GEOGG130",
+   "GEOGG180",
+   "GEOGG180L",
    "GEOGG185",
    "GEOGG190",
+   "GEOLG105",
+   "GEOLG106",
+   "GEOLG110",
+   "GEOLG120",
    "GLSTG101",
    "GLSTG102",
    "GLSTG130",
    "GLSTG150",
+   "GLSTG230",
    "HISTG110",
    "HISTG120",
    "HISTG121",
@@ -517,7 +646,12 @@
    "HISTG162",
    "HISTG180",
    "HISTG185",
+   "HLEDG100",
+   "HLEDG107",
+   "HLEDG135",
    "HLEDG220",
+   "KING100",
+   "KING101",
    "MATHG100",
    "MATHG103",
    "MATHG104",
@@ -547,6 +681,11 @@
    "PHILG140",
    "PHILG150",
    "PHOTG120",
+   "PHSCG100",
+   "PHYSG110",
+   "PHYSG111",
+   "PHYSG120",
+   "PHYSG185",
    "POLSC1000",
    "PSCIG100",
    "PSCIG101",
@@ -612,11 +751,12 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": null
    }
   },
   "listed": 290,
-  "text_chars": 13459
+  "text_chars": 16000
  },
  {
   "control_number": "17961",
@@ -635,24 +775,57 @@
   "title": "General Biology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLG180",
+   "BIOLG182",
+   "BIOLG183",
+   "BIOLG186",
+   "CHEMG180",
+   "CHEMG185",
+   "MATHG180"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/biology/general-biology-aa/",
+   "title": "General Biology, Associate in Arts Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2869
  },
  {
   "control_number": "18355",
   "title": "Chemistry",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEMG180",
+   "CHEMG185",
+   "CHEMG220",
+   "CHEMG225"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/chemistry/chemistry-aa/",
+   "title": "Chemistry, Associate in Arts Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2780
  },
  {
   "control_number": "18358",
@@ -667,17 +840,18 @@
    "PHYSG285"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/physics/",
-   "title": "Physics < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/physics/physics-aa/",
+   "title": "Physics, Associate in Arts Degree < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 3,
-  "text_chars": 8461
+  "text_chars": 2597
  },
  {
   "control_number": "18415",
@@ -713,7 +887,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 9,
@@ -742,7 +917,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.75
+    "title": 0.75,
+    "section": null
    }
   },
   "listed": 10,
@@ -777,36 +953,105 @@
   "title": "Spanish",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ARTG127",
+   "ETHSG134",
+   "HISTG140",
+   "HISTG155",
+   "SOCG134",
+   "SPANG160",
+   "SPANG161",
+   "SPANG180",
+   "SPANG185",
+   "SPANG200",
+   "SPANG280",
+   "SPANG285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/spanish/spanish-aa/",
+   "title": "Spanish, Associate in Arts Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3271
  },
  {
   "control_number": "18424",
   "title": "Vietnamese Language",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ANTHG100",
+   "ANTHG190",
+   "ANTHG200",
+   "HISTG120",
+   "PHILG110",
+   "VIETG180",
+   "VIETG185",
+   "VIETG280",
+   "VIETG285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/vietnamese/vietnamese-language-aa/",
+   "title": "Vietnamese Language, Associate in Arts Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2813
  },
  {
   "control_number": "18425",
   "title": "World Language",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HISTG120",
+   "SIGNG10",
+   "SIGNG200",
+   "SPANG160",
+   "SPANG161",
+   "SPANG165",
+   "SPANG180",
+   "SPANG185",
+   "SPANG200",
+   "SPANG280",
+   "SPANG285",
+   "VIETG180",
+   "VIETG185",
+   "VIETG280",
+   "VIETG285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/spanish/world-language-aa/",
+   "title": "World Language, Associate in Arts Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3303
  },
  {
   "control_number": "18426",
@@ -863,7 +1108,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 41,
@@ -875,34 +1121,46 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 0.923,
   "codes_found": [
    "DANCG100",
    "DANCG105",
    "DANCG106",
+   "DANCG108",
    "DANCG112",
    "DANCG113",
    "DANCG115",
    "DANCG120",
    "DANCG125",
+   "DANCG130",
    "DANCG145",
    "DANCG150",
+   "DANCG155",
+   "DANCG160",
    "DANCG200",
+   "DANCG215",
    "DANCG220",
-   "DANCG230"
+   "DANCG225",
+   "DANCG230",
+   "DANCG231",
+   "DANCG235",
+   "DANCG240",
+   "DANCG245",
+   "DANCG260"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/dance/",
-   "title": "Dance < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/dance/dance-aa/",
+   "title": "Dance, Associate in Arts Degree < Golden West College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 26,
-  "text_chars": 16000
+  "text_chars": 4303
  },
  {
   "control_number": "18428",
@@ -939,17 +1197,18 @@
    "THEAG210"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/",
-   "title": "Theater Arts < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/theater-arts-aa/",
+   "title": "Theater Arts, Associate in Arts Degree < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 25,
-  "text_chars": 16000
+  "text_chars": 3775
  },
  {
   "control_number": "18429",
@@ -1040,7 +1299,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 53,
@@ -1075,7 +1335,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 15,
@@ -1086,24 +1347,58 @@
   "title": "Chassis and Drivetrain Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOG120",
+   "AUTOG140",
+   "AUTOG141",
+   "AUTOG150",
+   "AUTOG151",
+   "AUTOG160"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/automotive-chassis-drivetrain-specialist-cert-achieve/",
+   "title": "Chassis and Drivetrain Specialist, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2871
  },
  {
   "control_number": "18969",
   "title": "Engine Performance and Emission Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOG110",
+   "AUTOG120",
+   "AUTOG130",
+   "AUTOG131",
+   "AUTOG145",
+   "AUTOG160"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/automotive-engine-performance-emission-specialist-cert-achieve/",
+   "title": "Automotive: Engine Performance and Emission Specialist, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2848
  },
  {
   "control_number": "19324",
@@ -1148,7 +1443,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 16,
@@ -1160,44 +1456,66 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.688,
+  "coverage": 0.938,
   "codes_found": [
    "ACCTG100",
    "BUSG100",
+   "BUSG101",
    "BUSG108",
    "BUSG130",
    "BUSG139",
+   "BUSG160",
    "CSG130",
    "MGMTG110",
    "MGMTG111",
    "MGMTG115",
    "MGMTG130",
+   "MGMTG155",
+   "MGMTG162",
    "MKTGG135"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-management/retail-management-coa/",
-   "title": "Retail Management, Certificate of Achievement < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-management/business-mgmt-coa/",
+   "title": "Business & Management, Certificate of Achievement < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 16,
-  "text_chars": 3252
+  "text_chars": 3100
  },
  {
   "control_number": "19381",
   "title": "Staff Accountant",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG101",
+   "ACCTG102",
+   "ACCTG105",
+   "ACCTG120",
+   "ACCTG121",
+   "ACCTG211"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/accounting/",
+   "title": "Accounting < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 13863
  },
  {
   "control_number": "19382",
@@ -1224,7 +1542,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 9,
@@ -1363,7 +1682,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 100,
@@ -1416,7 +1736,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 33,
@@ -1427,7 +1748,7 @@
   "title": "Liberal Arts: Emphasis in Mathematics",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1439,12 +1760,66 @@
   "title": "Liberal Arts: Emphasis in Science",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.977,
+  "codes_found": [
+   "ANTHG185",
+   "ANTHG185L",
+   "ASTRG100",
+   "ASTRG100L",
+   "BIOLG100",
+   "BIOLG101",
+   "BIOLG104",
+   "BIOLG104L",
+   "BIOLG110",
+   "BIOLG120",
+   "BIOLG160",
+   "BIOLG180",
+   "BIOLG182",
+   "BIOLG183",
+   "BIOLG186",
+   "BIOLG200",
+   "BIOLG210",
+   "BIOLG219",
+   "BIOLG220",
+   "BIOLG221",
+   "BIOLG225",
+   "CHEMG110",
+   "CHEMG130",
+   "CHEMG180",
+   "CHEMG185",
+   "CHEMG220",
+   "CHEMG225",
+   "GEOGG130",
+   "GEOGG180",
+   "GEOGG180L",
+   "GEOLG105",
+   "GEOLG106",
+   "GEOLG110",
+   "GEOLG120",
+   "PHSCG100",
+   "PHYSG110",
+   "PHYSG111",
+   "PHYSG120",
+   "PHYSG125",
+   "PHYSG185",
+   "PHYSG280",
+   "PHYSG285",
+   "PSYCG250"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-science-aa/",
+   "title": "Liberal Arts: Emphasis in Science, Associate in Arts Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 44,
-  "text_chars": 0
+  "text_chars": 4379
  },
  {
   "control_number": "19439",
@@ -1531,7 +1906,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 84,
@@ -1648,7 +2024,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 102,
@@ -1671,19 +2048,32 @@
   "title": "Software Development",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSG178",
+   "CSG196"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/software-development-cert-achieve/",
+   "title": "Software Development, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2603
  },
  {
   "control_number": "19852",
   "title": "Software Development",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1707,12 +2097,32 @@
   "title": "Human Resources Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ACCTG110",
+   "BUSG100",
+   "BUSG108",
+   "BUSG130",
+   "BUSG139",
+   "BUSG160",
+   "MGMTG111",
+   "MGMTG115",
+   "MGMTG130"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-management/human-resources-management-coa/",
+   "title": "Human Resources Management, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2908
  },
  {
   "control_number": "21332",
@@ -1731,12 +2141,31 @@
   "title": "Marketing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSG100",
+   "BUSG101",
+   "BUSG130",
+   "BUSG139",
+   "MGMTG155",
+   "MKTGG100",
+   "MKTGG157",
+   "MKTGG167"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/marketing/marketing-cert-achieve/",
+   "title": "Marketing, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2646
  },
  {
   "control_number": "21336",
@@ -1787,29 +2216,47 @@
    "DRAFG170"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/computer-aided-design-drafting-cadd/",
-   "title": "Computer Aided Design & Drafting - CADD < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/computer-aided-design-drafting-cadd/cadd-computer-aided-design-drafting-cert-achieve/",
+   "title": "Computer Aided Design and Drafting, Certificate of Achievement < Golden West College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 3,
-  "text_chars": 6057
+  "text_chars": 2677
  },
  {
   "control_number": "21355",
   "title": "Graphic Design and Production Option",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "DARTG135",
+   "DARTG150",
+   "DARTG152",
+   "DARTG170",
+   "DARTG174",
+   "DARTG179"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/",
+   "title": "Digital Arts < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 11663
  },
  {
   "control_number": "21356",
@@ -1860,7 +2307,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 9,
@@ -1872,31 +2320,28 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 0.5,
   "codes_found": [
-   "ECONG160",
+   "CSG175",
    "MATHG180",
    "MATHG185",
    "MATHG280",
    "MATHG285",
-   "MATHG287",
-   "PSYCG140",
-   "SOCG125",
-   "STATC1000",
-   "STATC1000E"
+   "PHYSG185"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/mathematics/",
-   "title": "Mathematics < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/mathematics/mathematics-ast/",
+   "title": "Mathematics 2.0, Associate in Science Degree for Transfer < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 12,
-  "text_chars": 16000
+  "text_chars": 2910
  },
  {
   "control_number": "30701",
@@ -1938,7 +2383,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 27,
@@ -1975,7 +2421,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 17,
@@ -2032,7 +2479,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 16,
@@ -2078,7 +2526,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 25,
@@ -2114,7 +2563,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 19,
@@ -2168,7 +2618,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 36,
@@ -2209,7 +2660,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 21,
@@ -2220,12 +2672,38 @@
   "title": "Theater Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEAG100",
+   "THEAG106",
+   "THEAG107",
+   "THEAG111",
+   "THEAG115",
+   "THEAG125",
+   "THEAG135",
+   "THEAG166",
+   "THEAG170",
+   "THEAG174",
+   "THEAG175",
+   "THEAG176",
+   "THEAG177",
+   "THEAG178",
+   "THEAG210"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/theater-arts-aat/",
+   "title": "Theater Arts, Associate in Arts Degree for Transfer < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3693
  },
  {
   "control_number": "31436",
@@ -2250,7 +2728,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 11,
@@ -2299,7 +2778,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 27,
@@ -2311,8 +2791,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
+   "HISTG180",
+   "HISTG185",
    "PHILG100",
    "PHILG102",
    "PHILG110",
@@ -2325,17 +2807,18 @@
    "PSCIG150"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/philosophy/",
-   "title": "Philosophy < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/philosophy/philosophy-aat/",
+   "title": "Philosophy, Associate in Arts Degree for Transfer < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 12,
-  "text_chars": 10948
+  "text_chars": 3307
  },
  {
   "control_number": "32102",
@@ -2359,7 +2842,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 6,
@@ -2407,7 +2891,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 26,
@@ -2449,7 +2934,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 21,
@@ -2511,7 +2997,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 45,
@@ -2522,12 +3009,32 @@
   "title": "Music",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSG116",
+   "MUSG117",
+   "MUSG121",
+   "MUSG122",
+   "MUSG216",
+   "MUSG217",
+   "MUSG260",
+   "MUSG261",
+   "MUSG290"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/music/music-aat/",
+   "title": "Music, Associate in Arts Degree for Transfer < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3018
  },
  {
   "control_number": "32848",
@@ -2535,8 +3042,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.636,
+  "coverage": 0.818,
   "codes_found": [
+   "HISTG155",
+   "SOCG134",
    "SPANG160",
    "SPANG165",
    "SPANG180",
@@ -2546,29 +3055,47 @@
    "SPANG285"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/spanish/",
-   "title": "Spanish < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/language-communications/spanish/spanish-aat/",
+   "title": "Spanish, Associate in Arts Degree for Transfer < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 11,
-  "text_chars": 9533
+  "text_chars": 3523
  },
  {
   "control_number": "33205",
   "title": "Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHG180",
+   "MATHG185",
+   "MATHG280",
+   "PHYSG185",
+   "PHYSG280",
+   "PHYSG285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/physics/physics-ast/",
+   "title": "Physics 2.0, Associate in Science Degree for Transfer < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2968
  },
  {
   "control_number": "33206",
@@ -2605,17 +3132,18 @@
    "MUSG290"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/music/",
-   "title": "Music < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/music/music-aa/",
+   "title": "Music, Associate in Arts Degree < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 13,
-  "text_chars": 16000
+  "text_chars": 3243
  },
  {
   "control_number": "33957",
@@ -2674,7 +3202,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 19,
@@ -2685,12 +3214,29 @@
   "title": "Scenic, Lighting and Projection Design Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEAG100",
+   "THEAG170",
+   "THEAG174",
+   "THEAG175",
+   "THEAG176",
+   "THEAG185"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/scenic-lighting-projection-design-technician-cert-achieve/",
+   "title": "Scenic, Lighting, and Projection Design Technician, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2804
  },
  {
   "control_number": "35525",
@@ -2709,24 +3255,76 @@
   "title": "Computer Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSG242",
+   "CSG262",
+   "MATHG180",
+   "MATHG185",
+   "PHYSG185",
+   "PHYSG280"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/computer-science-as/",
+   "title": "Computer Science, Associate in Science Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2882
  },
  {
   "control_number": "35931",
   "title": "Liberal Arts: Emphasis in Computer Science and Technology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "AUTOG110",
+   "BIOLG100",
+   "CHEMG180",
+   "CHEMG185",
+   "CSG130",
+   "CSG231",
+   "CSG242",
+   "CSG262",
+   "DARTG135",
+   "DARTG150",
+   "DARTG178",
+   "DARTG180",
+   "DRAFG105",
+   "DRAFG110",
+   "ENGRG101",
+   "ENGRG220",
+   "ENGRG280",
+   "ENGRG285",
+   "LIBRG110",
+   "MATHG140",
+   "MATHG140S",
+   "PHYSG185",
+   "PHYSG280",
+   "PHYSG285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-comp-sci-tech-aa/",
+   "title": "Liberal Arts: Emphasis in Computer Science and Technology, Associate in Arts Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 26,
-  "text_chars": 0
+  "text_chars": 4063
  },
  {
   "control_number": "36188",
@@ -2769,12 +3367,33 @@
   "title": "Costume Production and Wardrobe Technician",
   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEAG100",
+   "THEAG126",
+   "THEAG170",
+   "THEAG174",
+   "THEAG175",
+   "THEAG176",
+   "THEAG177",
+   "THEAG178",
+   "THEAG180",
+   "THEAG211"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/costume-production-wardrobe-technician-cert-achieve/",
+   "title": "Costume Production and Wardrobe Technician, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2984
  },
  {
   "control_number": "37279",
@@ -2794,7 +3413,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 2,
@@ -2818,7 +3438,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 2,
@@ -2843,7 +3464,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
@@ -2886,7 +3508,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 21,
@@ -2917,7 +3540,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 9,
@@ -2957,7 +3581,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 18,
@@ -2999,7 +3624,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 20,
@@ -3018,17 +3644,18 @@
    "ELLG16N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-   "title": "Adult Education/Noncredit < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/ell/english-life-skills-1-cert-competency/",
+   "title": "English Life Skills 1, Certificate of Competency < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
-  "text_chars": 5542
+  "text_chars": 2255
  },
  {
   "control_number": "38007",
@@ -3043,17 +3670,18 @@
    "ELLG26N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-   "title": "Adult Education/Noncredit < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/ell/english-life-skills-2-cert-competency/",
+   "title": "English Life Skills 2, Certificate of Competency < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
-  "text_chars": 5542
+  "text_chars": 2315
  },
  {
   "control_number": "38008",
@@ -3068,17 +3696,18 @@
    "ELLG36N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-   "title": "Adult Education/Noncredit < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/ell/english-life-skills-3-cert-competency/",
+   "title": "English Life Skills 3, Certificate of Competency < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
-  "text_chars": 5548
+  "text_chars": 2277
  },
  {
   "control_number": "38285",
@@ -3097,12 +3726,25 @@
   "title": "English for Citizenship",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELLG27N",
+   "ELLG28N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/ell/citizenship-cert-competency/",
+   "title": "English for Citizenship, Certificate of Competency < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2303
  },
  {
   "control_number": "38946",
@@ -3137,7 +3779,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 5,
@@ -3157,17 +3800,18 @@
    "GEDG80N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-   "title": "Adult Education/Noncredit < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/college-preparation/ged-preparation-cert-competency/",
+   "title": "GED Preparation, Certificate of Competency < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 4,
-  "text_chars": 6246
+  "text_chars": 2082
  },
  {
   "control_number": "39189",
@@ -3187,7 +3831,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 2,
@@ -3259,7 +3904,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 54,
@@ -3282,24 +3928,62 @@
   "title": "Entrepreneurship I - Small Business Startup Essentials",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ACCTG163",
+   "BUSG101",
+   "BUSG153",
+   "BUSG158",
+   "BUSG159",
+   "MGMTG163",
+   "MKTGG157",
+   "MKTGG167"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/entrepreneurship-small-business-startup-essentials-cert-achieve/",
+   "title": "Entrepreneurship I - Small Business Startup Essentials, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3026
  },
  {
   "control_number": "40673",
   "title": "Entrepreneurship II - Small Business Ownership and Expansion",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG163",
+   "BUSG101",
+   "BUSG153",
+   "BUSG158",
+   "BUSG159",
+   "MGMTG162",
+   "MGMTG163",
+   "MKTGG167"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/entrepreneurship-ii-small-business-ownership-expansion-cert-achieve/",
+   "title": "Entrepreneurship II - Small Business Ownership and Expansion, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2965
  },
  {
   "control_number": "41101",
@@ -3333,7 +4017,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 18,
@@ -3374,7 +4059,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 19,
@@ -3409,7 +4095,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 15,
@@ -3421,27 +4108,33 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.545,
+  "coverage": 1.0,
   "codes_found": [
    "BIOLG180",
    "BIOLG182",
    "BIOLG183",
    "BIOLG186",
    "CHEMG180",
-   "CHEMG185"
+   "CHEMG185",
+   "MATHG180",
+   "PHYSG120",
+   "PHYSG125",
+   "PHYSG185",
+   "PHYSG280"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/biology/",
-   "title": "Biology < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/biology/biology-ast/",
+   "title": "Biology, Associate in Science Degree for Transfer < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 11,
-  "text_chars": 16000
+  "text_chars": 3105
  },
  {
   "control_number": "42148",
@@ -3486,7 +4179,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 32,
@@ -3497,12 +4191,27 @@
   "title": "Enrolled Agent Tax Specialist",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ACCTG100",
+   "ACCTG101",
+   "ACCTG111",
+   "ACCTG113"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/accounting/enrolled-agent-coa/",
+   "title": "Enrolled Agent Tax Specialist, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2655
  },
  {
   "control_number": "42329",
@@ -3510,38 +4219,57 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
    "DARTG100",
    "DARTG135",
    "DARTG150",
    "DARTG174",
-   "DARTG179"
+   "DARTG179",
+   "PHOTG190"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/digital-arts/",
-   "title": "Digital Arts < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/digital-art-production-coa/",
+   "title": "Digital Art Production, Certificate of Achievement < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.333
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 6,
-  "text_chars": 11726
+  "text_chars": 2576
  },
  {
   "control_number": "42330",
   "title": "UX and Web Design",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DARTG150",
+   "DARTG160",
+   "DARTG178",
+   "DARTG180",
+   "DARTG200",
+   "DARTG240"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/ux-web-design-cert-coa/",
+   "title": "UX and Web Design, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2606
  },
  {
   "control_number": "42608",
@@ -3563,17 +4291,18 @@
    "NURSG295C"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/nursing/",
-   "title": "Nursing < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/health-sciences/nursing/lvn-30-unit-option-coa/",
+   "title": "LVN 30 Unit Option, Certificate of Achievement < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 10,
-  "text_chars": 12845
+  "text_chars": 2928
  },
  {
   "control_number": "42844",
@@ -3581,8 +4310,11 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.533,
+  "coverage": 1.0,
   "codes_found": [
+   "BIOLG180",
+   "BIOLG186",
+   "CHEMG180",
    "CSG131",
    "CSG153",
    "CSG154",
@@ -3590,20 +4322,25 @@
    "CSG189",
    "CSG231",
    "CSG242",
-   "CSG262"
+   "CSG262",
+   "MATHG180",
+   "MATHG185",
+   "PHYSG185",
+   "PHYSG280"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/",
-   "title": "Computer Science < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/computer-science-ast/",
+   "title": "Computer Science, Associate in Science Degree for Transfer < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 15,
-  "text_chars": 11906
+  "text_chars": 3130
  },
  {
   "control_number": "42858",
@@ -3618,17 +4355,18 @@
    "NURSG52N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-   "title": "Adult Education/Noncredit < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/nursing/senior-health-tech-cert-completion/",
+   "title": "Senior Healthcare Technician, Certificate of Completion < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
-  "text_chars": 5359
+  "text_chars": 2064
  },
  {
   "control_number": "42940",
@@ -3642,29 +4380,49 @@
    "ENGLC1000E"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/education/education-elementary-k-8/",
-   "title": "Education (Elementary / K-8) < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/",
+   "title": "Business Administration < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 4,
-  "text_chars": 6661
+  "text_chars": 4014
  },
  {
   "control_number": "43096",
   "title": "Chemistry",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEMG180",
+   "CHEMG185",
+   "CHEMG220",
+   "CHEMG225",
+   "MATHG180",
+   "MATHG185",
+   "PHYSG185",
+   "PHYSG280"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/chemistry/chemistry-ast/",
+   "title": "Chemistry, Associate in Science Degree for Transfer < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2885
  },
  {
   "control_number": "43170",
@@ -3680,29 +4438,44 @@
    "BUSG139"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/",
-   "title": "Business Administration < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/business-fundamentals-coa/",
+   "title": "Business Fundamentals, Certificate of Achievement < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.5
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 4,
-  "text_chars": 9756
+  "text_chars": 2671
  },
  {
   "control_number": "43198",
   "title": "Bookkeeping",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ACCTG101",
+   "ACCTG105",
+   "ACCTG120"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/business/accounting/bookkeeping-coa/",
+   "title": "Bookkeeping, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2226
  },
  {
   "control_number": "43199",
@@ -3724,77 +4497,149 @@
    "AUTOG181"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/",
-   "title": "Automotive Technology < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/comprehensive-coa/",
+   "title": "Comprehensive Automotive Technician, Certificate of Achievement < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.333
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 3016
  },
  {
   "control_number": "43200",
   "title": "Introduction to Academic English for Multilingual Students",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELLG40N",
+   "ELLG41N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/ell/intro-english-multilingual-cert-completion/",
+   "title": "Introduction to Academic English for Multilingual Students, Certificate of Completion < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2394
  },
  {
   "control_number": "43201",
   "title": "Computer Literacy I",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CBAG10N",
+   "CBAG11N",
+   "CBAG12N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/computer-business-applications/computer-literacy1-cert-completion/",
+   "title": "Computer Literacy I, Certificate of Completion < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2199
  },
  {
   "control_number": "43587",
   "title": "Security Guard",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJG10N",
+   "CJG11N",
+   "CJG72N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/criminal-justice/security-guard-cert-completion/",
+   "title": "Security Guard, Certificate of Completion < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2377
  },
  {
   "control_number": "43672",
   "title": "Computer Literacy II",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CBAG13N",
+   "CBAG14N",
+   "CBAG15N",
+   "CBAG16N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/computer-business-applications/computer-literacy2-cert-completion/",
+   "title": "Computer Literacy II, Certificate of Completion < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2425
  },
  {
   "control_number": "43823",
   "title": "Chassis Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOG120",
+   "AUTOG140",
+   "AUTOG141",
+   "AUTOG181"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/chassis-specialist-coa/",
+   "title": "Chassis Specialist, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2706
  },
  {
   "control_number": "43954",
@@ -3804,48 +4649,75 @@
   "method": "sitemap_page",
   "coverage": 0.714,
   "codes_found": [
-   "ETHSG111",
+   "HISTG121",
    "SOCG110",
    "SOCG111",
    "SOCG115",
    "SOCG140"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/sociology/",
-   "title": "Sociology < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/sociology/gender-studies-coa/",
+   "title": "Gender and Queer Studies, Certificate of Achievement < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 7,
-  "text_chars": 13194
+  "text_chars": 2600
  },
  {
   "control_number": "44034",
   "title": "Support for Calculus",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHG98N",
+   "MATHG99N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/support-for-calculus-cert-of-comp/",
+   "title": "Support for Calculus, Certificate of Competency < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2588
  },
  {
   "control_number": "44047",
   "title": "Certified Nurse Assistant",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURSG60N",
+   "NURSG61N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/nursing/certified-nurse-assistant-cert-of-completion/",
+   "title": "Certified Nurse Assistant, Certificate of Completion < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2273
  },
  {
   "control_number": "44209",
@@ -3872,7 +4744,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 9,
@@ -3883,96 +4756,234 @@
   "title": "Automotive HVAC Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOG120",
+   "AUTOG160",
+   "AUTOG181"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/hvac-specialist-coa/",
+   "title": "Automotive HVAC Specialist, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2702
  },
  {
   "control_number": "44256",
   "title": "Chassis Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOG120",
+   "AUTOG140",
+   "AUTOG141",
+   "AUTOG181"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/chassis-specialist-coa/",
+   "title": "Chassis Specialist, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2706
  },
  {
   "control_number": "44257",
   "title": "Engine Performance and Emissions Specialist",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOG110",
+   "AUTOG120",
+   "AUTOG130",
+   "AUTOG131",
+   "AUTOG181"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/engine-perf-emission-specialist-as/",
+   "title": "Engine Performance and Emissions Specialist, Associate in Science Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2879
  },
  {
   "control_number": "44258",
   "title": "Powertrain Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOG110",
+   "AUTOG120",
+   "AUTOG150",
+   "AUTOG151",
+   "AUTOG181"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/powertrain-specialist-coa/",
+   "title": "Powertrain Specialist, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2726
  },
  {
   "control_number": "44259",
   "title": "Smog Technician Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOG120",
+   "AUTOG130",
+   "AUTOG131",
+   "AUTOG145"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/smog-tech-specialist-coa/",
+   "title": "Smog Technician Specialist, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2761
  },
  {
   "control_number": "44827",
   "title": "Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLG100",
+   "BIOLG210",
+   "BIOLG225",
+   "CHEMG180",
+   "CHEMG185",
+   "CSG153",
+   "CSG154",
+   "CSG175",
+   "CSG189",
+   "CSG262",
+   "DRAFG105",
+   "DRAFG110",
+   "ENGRG101",
+   "ENGRG220",
+   "ENGRG280",
+   "ENGRG285",
+   "MATHG180",
+   "MATHG185",
+   "MATHG280",
+   "MATHG285",
+   "PHYSG185",
+   "PHYSG280",
+   "PHYSG285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/engineering/engr-as/",
+   "title": "Engineering, Associate in Science Degree < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 3635
  },
  {
   "control_number": "44863",
   "title": "Engine Performance Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOG110",
+   "AUTOG120",
+   "AUTOG130",
+   "AUTOG181"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/engine-performance-specialist-coa/",
+   "title": "Engine Performance Specialist, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2746
  },
  {
   "control_number": "44890",
   "title": "Ocean Lifeguard I",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LIFEG50N",
+   "LIFEG51N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/criminal-justice/ocean-lifeguard-i-cert-comp/",
+   "title": "Ocean Lifeguard I, Certificate of Completion < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1797
  },
  {
   "control_number": "45055",
@@ -3997,7 +5008,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 7,
@@ -4041,7 +5053,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 23,
@@ -4060,17 +5073,18 @@
    "MATHG52N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-   "title": "Adult Education/Noncredit < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-number-systems-arith-cert-comp/",
+   "title": "Essentials of Number Systems and Arithmetic, Certificate of Competency < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
-  "text_chars": 5451
+  "text_chars": 2425
  },
  {
   "control_number": "45330",
@@ -4085,17 +5099,18 @@
    "MATHG58N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-   "title": "Adult Education/Noncredit < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-beg-alg-exponents-poly-cert-comp/",
+   "title": "Essentials of Beginning Algebra (Exponents and Polynomials), Certificate of Competency < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
-  "text_chars": 5554
+  "text_chars": 2430
  },
  {
   "control_number": "45331",
@@ -4110,29 +5125,44 @@
    "MATHG55N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-   "title": "Adult Education/Noncredit < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-beg-alg-lines-cert-comp/",
+   "title": "Essentials of Beginning Algebra (Lines), Certificate of Competency < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
-  "text_chars": 5488
+  "text_chars": 2392
  },
  {
   "control_number": "45332",
   "title": "Essentials of Statistics",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "STATG10N",
+   "STATG11N",
+   "STATG12N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-statistics-cert-comp/",
+   "title": "Essentials of Statistics, Certificate of Competency < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2519
  },
  {
   "control_number": "45333",
@@ -4147,65 +5177,120 @@
    "MATHG63N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-   "title": "Adult Education/Noncredit < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-intermediate-radical-rat-abs-values-cert-comp/",
+   "title": "Essentials of Intermediate Algebra (Radical, Rational, and Absolute Values), Certificate of Competency < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
-  "text_chars": 5579
+  "text_chars": 2497
  },
  {
   "control_number": "45334",
   "title": "Essentials of Intermediate Algebra (Factoring and Quadratics)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHG59N",
+   "MATHG60N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-intermediate-algebra-factoring-quad-cert-comp/",
+   "title": "Essentials of Intermediate Algebra (Factoring and Quadratics), Certificate of Competency < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2309
  },
  {
   "control_number": "45335",
   "title": "Essentials of Intermediate Algebra (Exponential and Logarithmic)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHG66N",
+   "MATHG67N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-intermediate-algebra-exponential-logs-cert-comp/",
+   "title": "Essentials of Intermediate Algebra (Exponential and Logarithmic), Certificate of Competency < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2309
  },
  {
   "control_number": "45345",
   "title": "Hybrid Electric Vehicle Maintenance Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOG101",
+   "AUTOG120",
+   "AUTOG140",
+   "AUTOG170"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/hybrid-electric-veh-mainten-specialist-COA/",
+   "title": "Hybrid Electric Vehicle Maintenance Specialist, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2739
  },
  {
   "control_number": "45461",
   "title": "Essentials of Intermediate Algebra (Functions)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHG64N",
+   "MATHG65N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/mathematics/essentials-intermediate-functions-cert-comp/",
+   "title": "Essentials of Intermediate Algebra (Functions), Certificate of Competency < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2398
  },
  {
   "control_number": "45476",
@@ -4224,12 +5309,27 @@
   "title": "Chemistry",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEMG180",
+   "CHEMG185",
+   "CHEMG220",
+   "CHEMG225"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/chemistry/chemistry-coa/",
+   "title": "Chemistry, Certificate of Achievement < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2366
  },
  {
   "control_number": "46131",
@@ -4270,7 +5370,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 25,
@@ -4293,14 +5394,15 @@
    "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/criminal-justice/law-enforcement-option-nc/",
    "title": "Law Enforcement Option, Certificate of Completion < Golden West College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 4,
-  "text_chars": 3158
+  "text_chars": 2720
  },
  {
   "control_number": "46427",
@@ -4308,47 +5410,78 @@
   "award": "Noncredit program",
   "shape": "noncredit",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
+   "BUSG11N",
+   "BUSG12N",
    "ELLG50N",
    "ELLG51N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
-   "title": "Adult Education/Noncredit < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/business/small-business-management-nc/",
+   "title": "Small Business Management Basics, Certificate of Completion < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 4,
-  "text_chars": 4835
+  "text_chars": 2375
  },
  {
   "control_number": "46485",
   "title": "Esthetician",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSMG71N",
+   "COSMG72N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/cosmetology/esthetician-nc/",
+   "title": "Esthetician, Certificate of Completion < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2585
  },
  {
   "control_number": "46486",
   "title": "Cosmetology",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSMG21N",
+   "COSMG22N",
+   "COSMG23N",
+   "COSMG24N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/cosmetology/cosmetology-nc/",
+   "title": "Cosmetology, Certificate of Completion < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2664
  },
  {
   "control_number": "46547",
@@ -4356,36 +5489,58 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "CSG175",
    "MATHG180",
    "MATHG185",
    "MATHG280",
-   "MATHG285"
+   "MATHG285",
+   "PHYSG185"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-math-aa/",
-   "title": "Liberal Arts: Emphasis in Mathematics, Associate in Arts Degree < Golden West College",
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/mathematics/mathematics-ast/",
+   "title": "Mathematics 2.0, Associate in Science Degree for Transfer < Golden West College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 6,
-  "text_chars": 3048
+  "text_chars": 2910
  },
  {
   "control_number": "46548",
   "title": "Physics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSG175",
+   "MATHG180",
+   "MATHG185",
+   "MATHG280",
+   "MATHG285",
+   "PHYSG185",
+   "PHYSG280",
+   "PHYSG285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/golden-west/pathways/stem/physics/physics-ast/",
+   "title": "Physics 2.0, Associate in Science Degree for Transfer < Golden West College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2968
  }
 ]

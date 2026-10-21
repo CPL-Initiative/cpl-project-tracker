@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Computer Science",
  "award": "A.S. T Degree",
- "source_url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/computer-science-ast/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10409,
+  "input_tokens": 7041,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10409,
-    "output_tokens": 1407,
+    "input_tokens": 7041,
+    "output_tokens": 1780,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1407,
+  "output_tokens": 1780,
   "output_tokens_details": {
-   "thinking_tokens": 423
+   "thinking_tokens": 555
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06978,
- "ms": 12410,
- "seconds": 12.8,
+ "cost_usd": 0.06376,
+ "ms": 14856,
+ "seconds": 15.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 15,
    "listed": 15,
-   "share": 0.0,
-   "missing": [
-    "BIOLG180",
-    "BIOLG186",
-    "CHEMG180",
-    "CSG131",
-    "CSG153",
-    "CSG154",
-    "CSG175",
-    "CSG189",
-    "CSG231",
-    "CSG242",
-    "CSG262",
-    "MATHG180",
-    "MATHG185",
-    "PHYSG185",
-    "PHYSG280"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -76,140 +61,222 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    28.0,
+    29.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    28.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     62.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 10,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Computer Science, Associate in Science Degree for Transfer",
+   "section_heading": "Required Courses",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 29
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Design software components and specifications to satisfy small business and scientific problem requirements.",
+    "Implement algorithms that include basic computation techniques, simple I/O, conditional and iterative structures, and the definition of functions.",
+    "Utilize object oriented principles for class hierarchies and inheritance to create computing solutions of simple to moderate complexity.",
+    "Implement programs at machine language level using fundamental high-level programming constructs.",
+    "Describe formal tools of symbolic logic as they relate to real-life situations, program correctness, database queries, and algorithms."
+   ],
+   "careers": [
+    "business and science programming solutions",
+    "management",
+    "Programmer Analyst",
+    "Software Engineer",
+    "Web Developer",
+    "Networking Engineer",
+    "IT Consultant",
+    "Database Analyst",
+    "Research",
+    "Teaching in Secondary and Postsecondary Education"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "BIOL G180",
-    "why": "not in the text; requirements section not provided"
-   },
-   {
-    "code": "BIOL G186",
-    "why": "not in the text; requirements section not provided"
-   },
-   {
-    "code": "CHEM G180",
-    "why": "not in the text; requirements section not provided"
-   },
-   {
-    "code": "CS G131",
-    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
-   },
-   {
-    "code": "CS G153",
-    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
-   },
-   {
-    "code": "CS G154",
-    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
-   },
-   {
-    "code": "CS G175",
-    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
-   },
-   {
-    "code": "CS G189",
-    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
-   },
-   {
-    "code": "CS G231",
-    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
-   },
-   {
-    "code": "CS G242",
-    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
-   },
-   {
-    "code": "CS G262",
-    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
-   },
-   {
-    "code": "MATH G180",
-    "why": "not in the text; requirements section not provided"
-   },
-   {
-    "code": "MATH G185",
-    "why": "not in the text; requirements section not provided"
-   },
-   {
-    "code": "PHYS G185",
-    "why": "not in the text; requirements section not provided"
-   },
-   {
-    "code": "PHYS G280",
-    "why": "not in the text; requirements section not provided"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CS G153",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS G175",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CS G131",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS G154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS G189",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CS G231",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS G242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS G262",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS G185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS G280",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "BIOL G180",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL G186",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM G180",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text contains only Computer Science (CS) course descriptions and 'Catalog Program Pages Referencing' lists. It does not include the requirements section for the Computer Science, Associate in Science Degree for Transfer. No blocks, totals, GE pattern, outcomes or careers could be recorded.",
-   "The heading 'Computer Science, Associate in Science Degree for Transfer' is taken from the referencing lists under CS G131, G153, G154, G175, G189, G231, G242 and G262. Those lists suggest these courses appear in the A.S.-T. The rules (required vs. choose) are not shown.",
-   "A reviewer should fetch the actual program requirements page for the A.S.-T to extract the blocks."
+   "The excerpt does not print the program's own heading; section_heading uses the requirements list heading 'Required Courses'. The description text is cut off at its start.",
+   "Alternative courses print no units of their own; their units are left null. The 4-5 range beside PHYS G280 appears to cover the whole choice (PHYS G280 or BIOL G180/BIOL G186/CHEM G180).",
+   "Major Total 28-29, GE Pattern (Cal-GETC) 34, Total Units 60 as printed; transferable electives fill the remainder to 60 with no units printed.",
+   "Career entries 'business and science programming solutions' and 'management' come from the description sentence about careers after a baccalaureate degree; the rest from the potential careers list.",
+   "Program learning outcomes are printed once for the program; recorded for this A.S.-T award."
   ]
  },
- "extracted_run": "38748828247"
+ "extracted_run": "39688079435"
 }

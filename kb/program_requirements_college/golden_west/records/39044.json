@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "GED Preparation",
  "award": "Noncredit program",
- "source_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/",
+ "source_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/college-preparation/ged-preparation-cert-competency/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8193,
+  "input_tokens": 6635,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8193,
-    "output_tokens": 881,
+    "input_tokens": 6635,
+    "output_tokens": 762,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,33 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 881,
+  "output_tokens": 762,
   "output_tokens_details": {
-   "thinking_tokens": 229
+   "thinking_tokens": 156
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05039,
- "ms": 10701,
- "seconds": 11.2,
+ "cost_usd": 0.04178,
+ "ms": 6428,
+ "seconds": 6.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 4,
    "listed": 4,
-   "share": 0.0,
-   "missing": [
-    "GEDG50N",
-    "GEDG60N",
-    "GEDG70N",
-    "GEDG80N"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -66,12 +62,18 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "against": null,
+   "status": "unequal",
+   "computed": [
+    90.0,
+    128.0
+   ],
+   "stated": [
+    90.0,
+    218.0
+   ],
+   "against": "program",
    "why": [
-    "the record states no figure, but the catalog text names 36 Hours, 10 Hours, 10 Hours"
+    "the blocks sum to 90.0-128.0; the catalog states 90.0-218.0"
    ]
   },
   "repeated": {
@@ -79,12 +81,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,11 +102,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "General Education Development (GED)",
+   "section_heading": "GED Preparation, Certificate of Competency",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 90,
+    "max": 218
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -121,36 +123,62 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate an understanding of the concepts in language arts, mathematics, science, and social science that prepare students to pass the General Education Development (GED) exam.",
+    "Demonstrate critical thinking skills to evaluate ideas and information."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "GED G050N",
-    "why": "Only its course description is in the text (45 hours, references GED Preparation, Certificate of Competency); no program requirements list is printed."
-   },
-   {
-    "code": "GED G060N",
-    "why": "Only its course description is in the text (64 hours, references GED Preparation, Certificate of Competency); no program requirements list is printed."
-   },
-   {
-    "code": "GED G070N",
-    "why": "Only its course description is in the text (45 hours, references GED Preparation, Certificate of Competency); no program requirements list is printed."
-   },
-   {
-    "code": "GED G080N",
-    "why": "Only its course description is in the text (64 hours, references GED Preparation, Certificate of Competency); no program requirements list is printed."
+    "name": "Required Courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GED G050N",
+      "units": 45,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GED G060N",
+      "units": 64,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GED G070N",
+      "units": 45,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GED G080N",
+      "units": 64,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text is the course-description listing from the Adult Education/Noncredit page, not the program page for 'GED Preparation, Certificate of Competency'. No requirements, rule, or total hours for the program are printed, so no blocks were recorded.",
-   "Each of the four closed-list GED courses is printed with hours: GED G050N 45 hours, GED G060N 64 hours, GED G070N 45 hours, and GED G080N 64 hours. Each lists 'GED Preparation, Certificate of Competency' among its program pages. A reviewer should check the program page to confirm whether all four are required. If they are, the total would be 218 hours, but this figure is not printed in the text and is not recorded.",
-   "The award is named 'Certificate of Competency' in the course references.",
-   "No program outcomes or careers are printed in the text.",
-   "The text is cut off at both its start and its end."
+   "Noncredit program counted in hours; course hours and the 'Total Hours 90-218' are recorded in the units fields.",
+   "Block rule read from 'Select a minimum of two of the following:'; the overview says 'two-four courses'.",
+   "The page heading says 'Certificate of Competency' while the overview text says students earn a 'Certificate of Completion in GED Preparation'; reviewer may wish to confirm the award name.",
+   "The printed total 90-218 is recorded as the program total; no separate block total is printed."
   ]
  },
- "extracted_run": "38748828247"
+ "extracted_run": "39688079435"
 }
