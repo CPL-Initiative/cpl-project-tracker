@@ -360,6 +360,9 @@ LIVE = {}
 if FIG:
     LIVE['s1'] = live_config(CONFIG['s1'], FIG, 'Scenario 1')
     LIVE['s2'] = live_config(CONFIG['s2'], FIG, FIG.get('published') or 'Scenario 2')
+    # Re-voiced from the published scenario's figures (S443, 2026-10-21, Sam's edited
+    # script), so the narrated cut's picture reads the model too.
+    LIVE['n2'] = live_config(CONFIG['n2'], FIG, FIG.get('published') or 'Scenario 2')
 
 if '--check' in sys.argv:
     if not FIG:
