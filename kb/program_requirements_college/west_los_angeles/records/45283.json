@@ -1,0 +1,168 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "45283",
+ "shape": "noncredit",
+ "title": "English as a Second Language - Conversation",
+ "award": "Noncredit program",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=233",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7095,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7095,
+    "output_tokens": 828,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 828,
+  "output_tokens_details": {
+   "thinking_tokens": 299
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04494,
+ "ms": 7171,
+ "seconds": 7.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    108.0,
+    108.0
+   ],
+   "stated": [
+    108.0,
+    108.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ACADEMIC PROGRAM CODE: W045283F",
+   "measure": "hours",
+   "total_units": {
+    "min": 108,
+    "max": 108
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate essential oral communication skills in English",
+    "Interpret information presented in an authentic listening passage and answer comprehension questions",
+    "Participate in conversations and discussions about a range of topics, texts, and issues"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL NC 050CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL NC 060CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins at page 233 after the program's title heading, which is cut off (likely on the previous page). The section is identified by its program code W045283F and the description of the 'English as a Second Language – Conversation Certificate of Competency'.",
+   "The award is a Certificate of Competency counted in hours. The total is 108 hours as printed, which matches 54 + 54 hours.",
+   "The text that follows on the page belongs to the ESL Pronunciation and ESL Speech 1 certificates. It was not read for this record."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

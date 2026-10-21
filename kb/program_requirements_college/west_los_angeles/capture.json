@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 245,
  "with_closed_list": 228,
- "started": "2026-10-21T02:52:13Z",
+ "started": "2026-10-21T03:13:49Z",
  "pdf": {
   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
   "access": "ok",
@@ -2922,7 +2922,7 @@
   ]
  },
  "loads": 1,
- "seconds": 170.2,
+ "seconds": 93.6,
  "found": 214,
  "by_method": {
   "no_closed_list": 17,
@@ -5517,5 +5517,5 @@
    }
   ]
  },
- "run": "39527755740"
+ "run": "39536207109"
 }

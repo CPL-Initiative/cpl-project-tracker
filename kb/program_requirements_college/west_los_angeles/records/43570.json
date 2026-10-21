@@ -1,0 +1,374 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "43570",
+ "shape": "adt",
+ "title": "Film, Television, and Electronic Media",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=108",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9067,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9067,
+    "output_tokens": 2763,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2763,
+  "output_tokens_details": {
+   "thinking_tokens": 916
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09153,
+ "ms": 22224,
+ "seconds": 22.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 14,
+   "share": 0.929,
+   "missing": [
+    "FLMPRD385"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "CINEMA14",
+    "CINEMA32",
+    "FLMPRD126",
+    "FLMPRD202",
+    "FLMPRD911"
+   ],
+   "flagged": [
+    "CINEMA14",
+    "CINEMA32",
+    "FLMPRD126",
+    "FLMPRD202",
+    "FLMPRD911"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 18.0-19.0; the catalog states 18.0-18.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     61.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     31.0,
+     31.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Film, Television, and Electronic Media for Transfer (ACADEMIC PROGRAM CODE: W043570H)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 11,
+    "max": 11
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 31,
+    "max": 31
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify major technological influences which have affected the content of motion pictures from the invention of the movie camera to the present day",
+    "Identify and describe film genres, cultural influences and major artistic movements in film history",
+    "Identify and classify professional film personnel and equipment",
+    "Demonstrate knowledge of movie pre-production, production and post production processes through writing directing, producing and editing their own original films",
+    "Practice critiquing, analyzing, and evaluating films based on visual values, story components and editing"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (choose two courses)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CINEMA 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CINEMA 014",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major electives, List A - Area 1: Audio",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CINEMA 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major electives, List A - Area 2: Video or Film Production",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CINEMA 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major electives, List B (select one course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CINEMA 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 126",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Major electives, List C (select one course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CINEMA 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 911",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MULTIMD 805",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FLM PRD 385",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "No program title heading is printed in the extracted text for this award (text begins at the academic program code); section_heading uses the degree name from the description.",
+   "List A is printed as one list with a combined total of 6 units ('select one course from each area'); recorded as two area blocks of one course each, with the 6-unit total not attached to either block.",
+   "Lists B and C each end with 'Any course not already used above ... 3', allowing any course not already used; this open option is not recorded as a course.",
+   "Catalog codes use leading zeros (e.g., CINEMA 005, CINEMA 009) matching closed-list codes CINEMA 5, CINEMA 9, etc.; treated as the same courses.",
+   "CSU-transferable Elective Units 11 recorded as degree_elective_units since a major total (18) is also printed; Total Units 60 recorded as degree_total and Cal-GETC 31 (less double-counted) as ge_units.",
+   "FLM PRD 911 footnote: repeat 3 times to accumulate a minimum of 3 units.",
+   "Page break between pages 108 and 109 falls inside List C; the list appears to continue correctly on the next page.",
+   "Catalog titles differ from state file titles for CINEMA 002 and FLM PRD 100."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

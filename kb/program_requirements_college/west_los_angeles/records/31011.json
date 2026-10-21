@@ -1,0 +1,279 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "31011",
+ "shape": "adt",
+ "title": "Administration of Justice",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=64",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10683,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10683,
+    "output_tokens": 1891,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1891,
+  "output_tokens_details": {
+   "thinking_tokens": 465
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08055,
+ "ms": 22279,
+ "seconds": 22.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     56.0,
+     64.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     25.0,
+     28.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Administration of Justice for Transfer (AS-T) Degree (ACADEMIC PROGRAM CODE: W031011H)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 13,
+    "max": 17
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 25,
+    "max": 28
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Practice and demonstrate behaviors, skills, and knowledge necessary to advance professionally in corrections and law enforcement. (Theme: Professional advancement)",
+    "Identify social, behavioral, historical, and cultural issues to respond to the challenges of work, family, community, and the global world. (Theme: Challenging issues)",
+    "Apply critical thinking to investigate and interpret the influences of hereditary and environmental factors in assessing and treating criminal behavior. (Theme: Critical thinking, heredity, and environment)",
+    "Pursue continuous educational opportunities on issues related to the current and emerging fields related to criminal justice. (Theme: Research, updates)",
+    "Read, evaluate, and critically analyze current research methodologies; apply select research methodologies to the practice of criminal justice. (Theme: Research methodologies)"
+   ],
+   "careers": [
+    "law enforcement"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ADM JUS 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM JUS 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major electives, List A (choose two from the following)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ADM JUS 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM JUS 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM JUS 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM JUS 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM JUS 067",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM JUS 075",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major electives, List B (choose two from the following)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section's own title heading is not present in the extracted text (text begins at 'ACADEMIC PROGRAM CODE: W031011H' on page 64); section_heading is taken from the degree name in the description. Reviewer should confirm the printed heading (likely 'ADMINISTRATION OF JUSTICE (AS-T)').",
+   "Catalog prints codes with leading zeros (ADM JUS 001, SOC 001); these were matched to closed-list ADM JUS 1, SOC 1, etc.",
+   "Total Major Units 18-19, Cal-GETC GE Units (less double-counted) 25-28, CSU-transferable Elective Units 13-17, Total Units 60 as printed.",
+   "The same five program learning outcomes are also printed for the Administration of Justice AA degree; recorded here from the AS-T section."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

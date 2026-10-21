@@ -1,0 +1,277 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "03330",
+ "shape": "degree",
+ "title": "Economics",
+ "award": "A.A. Degree",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=99",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11535,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11535,
+    "output_tokens": 1816,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1816,
+  "output_tokens_details": {
+   "thinking_tokens": 470
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08246,
+ "ms": 14753,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    25.0
+   ],
+   "stated": [
+    23.0,
+    25.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     55.0,
+     65.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     18.0,
+     21.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ACADEMIC PROGRAM CODE: W003330C",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 14,
+    "max": 19
+   },
+   "ge_pattern": "LACCD GE Plan",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 18,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Employ economic reasoning and logic to explain the world and make better decisions.",
+    "Achieve a basic understanding of markets, economic institutions, and the global economy.",
+    "Locate, utilize, and critically interpret economic information and data using statistical methods or economic theories.",
+    "Use the theory of demand and supply to explain market equilibrium and the effects of government interventions.",
+    "Analyze and evaluate fiscal and monetary theory and policy.",
+    "Identify the various market structures; demonstrate the firm’s decision under different market structures; evaluate the effects of government intervention such as anti-trust legislation and regulation."
+   ],
+   "careers": [
+    "business",
+    "education",
+    "writing",
+    "government"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "ACCTG 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 236",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 261",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major elective units (choose one from the following)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ACCTG 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 262",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section's title heading (e.g. 'ECONOMICS (AA)') is cut off before page 99 in the extracted text; the first printed line of the section, the academic program code W003330C, is used as section_heading.",
+   "Catalog codes ACCTG 001, ACCTG 002, ECON 010 and ECON 011 are read as the closed-list ACCTG 1, ACCTG002, ECON 10 and ECON 11 (zero-padding/spacing differences only), so catalog_addition is false.",
+   "Asterisked courses (ACCTG 001, ECON C2001, ECON C2002, STAT C1000, ACCTG 002, MATH 262) are marked as recommended for students also pursuing the AS-T in Business Administration 2.0 or the AA-T in Economics; this does not change their requirement status in this degree.",
+   "GE pattern printed as 'LACCD GE Plan Units (less double-counted) 18-21'; 'Additional Degree-applicable Elective Units 14-19' recorded as degree_elective_units; Total Units 60 recorded as degree_total."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

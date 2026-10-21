@@ -1,0 +1,145 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "39510",
+ "shape": "noncredit",
+ "title": "21st Century Employability Skills: Empathy and Adaptability",
+ "award": "Noncredit program",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=255",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7647,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7647,
+    "output_tokens": 621,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 621,
+  "output_tokens_details": {
+   "thinking_tokens": 164
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04301,
+ "ms": 6758,
+ "seconds": 7.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "BSICSKL110CE",
+    "BSICSKL111CE"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 9 hours, 9 hours, 3-9 hours, 3-9 hours"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "NONCREDIT PROGRAMS & COURSES",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BSICSKL 110CE",
+    "why": "Only its course description (9 hours) is in the text; no program requirements list places it."
+   },
+   {
+    "code": "BSICSKL 111CE",
+    "why": "Only its course description (3-9 hours) is in the text; no program requirements list places it."
+   }
+  ],
+  "notes": [
+   "The supplied text is the course-description portion of the Noncredit Programs & Courses section (page 255). It does not include a program section for '21st Century Employability Skills: Empathy and Adaptability', so no requirement blocks, total hours, outcomes or careers are recorded.",
+   "The course descriptions print BSICSKL 110CE as 9 hours and BSICSKL 111CE as 3-9 hours. Those are likely the program's two courses (about 12-18 hours), but the text states no program total, so total_units is left null.",
+   "A reviewer should check the catalog's noncredit program listings, likely on an earlier page, for this certificate's own requirement list."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

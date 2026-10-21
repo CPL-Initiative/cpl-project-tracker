@@ -1,0 +1,201 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "40106",
+ "shape": "adt",
+ "title": "Environmental Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9318,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9318,
+    "output_tokens": 1113,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1113,
+  "output_tokens_details": {
+   "thinking_tokens": 270
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05953,
+ "ms": 9812,
+ "seconds": 10.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 12,
+   "share": 0.0,
+   "missing": [
+    "BIOLOGY6",
+    "BIOLOGY7",
+    "CHEM101",
+    "CHEM102",
+    "ECONC2001",
+    "ENVSCI1",
+    "GEOLOGY1",
+    "GEOLOGY6",
+    "MATH261",
+    "PHYSICS6",
+    "PHYSICS7",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Science (AS-T) section not found in the provided text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOLOGY 6",
+    "why": "Environmental Science section not in the text"
+   },
+   {
+    "code": "BIOLOGY 7",
+    "why": "Environmental Science section not in the text"
+   },
+   {
+    "code": "CHEM 101",
+    "why": "Environmental Science section not in the text; named only in the Geology AS-T section"
+   },
+   {
+    "code": "CHEM 102",
+    "why": "Environmental Science section not in the text; named only in the Geology AS-T section"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "Environmental Science section not in the text; named only in the Global Studies AA-T section"
+   },
+   {
+    "code": "ENV SCI 1",
+    "why": "Environmental Science section not in the text"
+   },
+   {
+    "code": "GEOLOGY 1",
+    "why": "Environmental Science section not in the text; GEOLOGY 001 named only in the Geology AS-T section"
+   },
+   {
+    "code": "GEOLOGY 6",
+    "why": "Environmental Science section not in the text; GEOLOGY 006 named only in the Geology AS-T section"
+   },
+   {
+    "code": "MATH 261",
+    "why": "Environmental Science section not in the text; named only in the Geology AS-T section"
+   },
+   {
+    "code": "PHYSICS 6",
+    "why": "Environmental Science section not in the text"
+   },
+   {
+    "code": "PHYSICS 7",
+    "why": "Environmental Science section not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "Environmental Science section not in the text"
+   }
+  ],
+  "notes": [
+   "The provided text (catalog pages 113-114) contains the Geology (AS-T), Global Studies (AA-T) and Graphic Design I (CA) sections, but no Environmental Science (AS-T) section, so no requirements, totals, outcomes or careers were recorded.",
+   "Page 113 opens with the tail of a preceding program (Cal-GETC GE Units 24-25, CSU-transferable Elective Units 15-18, Total Units 60); its heading and courses are on an earlier page not provided, so it cannot be confirmed as the Environmental Science AS-T and was not used.",
+   "Reviewer should check the preceding catalog page (likely page 112 of the PDF) for the Environmental Science AS-T section."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

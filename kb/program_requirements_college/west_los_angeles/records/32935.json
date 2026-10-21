@@ -1,0 +1,171 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "32935",
+ "shape": "adt",
+ "title": "Early Childhood Education",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11328,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11328,
+    "output_tokens": 915,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 915,
+  "output_tokens_details": {
+   "thinking_tokens": 267
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06361,
+ "ms": 10204,
+ "seconds": 10.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "CHDEV10",
+    "CHDEV2",
+    "CHDEV22",
+    "CHDEV34",
+    "CHDEV42",
+    "CHDEV7"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in the provided text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CH DEV 10",
+    "why": "A.S.-T section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CH DEV 2",
+    "why": "A.S.-T section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CH DEV 22",
+    "why": "A.S.-T section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CH DEV 34",
+    "why": "A.S.-T section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CH DEV 42",
+    "why": "A.S.-T section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CH DEV 7",
+    "why": "A.S.-T section not in the text; named only in other awards' sections"
+   }
+  ],
+  "notes": [
+   "The excerpt (pages 78-81) does not contain the Early Childhood Education A.S.-T section. Page 78 opens mid-sentence with the end of an introduction that mentions an 'associate in science transfer degree in Early Childhood Education'. It then prints only the Child Development (AA), Child Development (CA), Administration and Supervision of Early Childhood Education (CA), and Health, Nutrition, and Food Sanitation (CA) sections.",
+   "None of those sections was recorded, because they belong to other awards. The A.S.-T requirements likely appear on page 77 or elsewhere in the catalog. A reviewer should fetch that page.",
+   "No outcomes or careers are recorded because the A.S.-T section is absent. The Child Development AA program outcomes and the careers named in the certificate sections were not attributed to this award."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

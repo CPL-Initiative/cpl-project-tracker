@@ -1,0 +1,197 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "43838",
+ "shape": "certificate",
+ "title": "Essentials of Robotics and Programming",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9244,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9244,
+    "output_tokens": 1149,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1149,
+  "output_tokens_details": {
+   "thinking_tokens": 364
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05996,
+ "ms": 10093,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CS119"
+   ],
+   "flagged": [
+    "CS119"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    10.0,
+    10.0
+   ],
+   "stated": [
+    10.0,
+    10.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESSENTIALS OF ROBOTICS AND PROGRAMMING (CA)",
+   "measure": "units",
+   "total_units": {
+    "min": 10,
+    "max": 10
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand electric motors, servos, sensors, switches, and actuators.",
+    "Use and learn topics of the Python language such as data types, variables, control structures, Python Objects and Oriented Design.",
+    "Utilize skills in programming and electronics engineering using Arduino.",
+    "Demonstrate knowledge of the major engineering disciplines, engineering decision-making, ethics and factors for success in academic and professional settings."
+   ],
+   "careers": [
+    "programming",
+    "robotics",
+    "engineering",
+    "mechatronics",
+    "software development",
+    "Robotics Technicians",
+    "Industrial Engineering Technicians",
+    "Electrical & Electronic Technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "MIT 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 101",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EET 123",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section spans catalog pages 104-105 (PDF pages); read only the Essentials of Robotics and Programming (CA) section.",
+   "CS 119 Programming in Python is printed as a required core course but is not in the closed list; recorded as a catalog addition.",
+   "Printed total of 10 units matches the sum of the four required courses (3+2+2+3).",
+   "Careers 'programming', 'robotics', 'engineering', 'mechatronics' and 'software development' are career fields taken from the description ('professional career in programming and robotics'; 'prepares students for engineering, mechatronics, and software development'); reviewer may wish to confirm these should count as careers."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

@@ -1,0 +1,322 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "03313",
+ "shape": "degree",
+ "title": "Aviation Maintenance Technician",
+ "award": "A.S. Degree",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=71",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10444,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10444,
+    "output_tokens": 2218,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2218,
+  "output_tokens_details": {
+   "thinking_tokens": 537
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08614,
+ "ms": 17566,
+ "seconds": 18.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    60.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     81.0,
+     81.0
+    ],
+    "stated": [
+     81.0,
+     81.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ACADEMIC PROGRAM CODE: W003313C",
+   "measure": "units",
+   "total_units": {
+    "min": 60,
+    "max": 60
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "LACCD GE Plan",
+   "degree_total": {
+    "min": 81,
+    "max": 81
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Effectively communicate both verbally and in writing with a variety of personnel using proper terminology, records, and forms.",
+    "Apply basic mathematics and graphic principles as used in aviation (aerospace).",
+    "Apply aerodynamic principals in the assembly, repair and maintenance of power plant and aircraft structures.",
+    "Apply basic electrical principals as it applies to electrical and mechanical components.",
+    "Properly inspect, check, service, repair and overhaul airframe and airframe components.",
+    "Properly use tools, equipment, safety apparel. The proper procedures for safety in and around aircraft and equipment.",
+    "Display proper work ethics for independent and collectively working with management, co-workers, and the FAA in order to maximize efficiency in the workplace.",
+    "Apply the knowledge from theory and laboratory training gained in the program to pass the required examinations for certification."
+   ],
+   "careers": [
+    "aircraft mechanics",
+    "aviation industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 60,
+     "max": 60
+    },
+    "courses": [
+     {
+      "code": "AVIATEK 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 002",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 004",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 005",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 006",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 007",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 008",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 009",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 010",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 011",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 012",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 013",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 014",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 015",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 016",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 017",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 018",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 019",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 020",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The A.S. section's title heading falls before the extracted text (which begins at 'ACADEMIC PROGRAM CODE: W003313C'); section_heading uses that first printed line. Reviewer should confirm the heading on the preceding page.",
+   "Catalog prints codes zero-padded (AVIATEK 001 etc.); treated as the same courses as closed-list AVIATEK 1-20, so catalog_addition is false.",
+   "Total Major Units 60, LACCD GE Plan Units (less double counted) 21, Total Units 81 recorded as total_units, ge_units and degree_total respectively.",
+   "Outcome 6 printed as two sentences ('...safety apparel. The proper procedures...'); kept as one entry as printed under number 6.",
+   "Certificate of Achievement sections (Aircraft Power Plant Technician, Airframe Maintenance Technician) were ignored."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

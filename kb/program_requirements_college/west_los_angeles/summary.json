@@ -1,0 +1,159 @@
+{
+ "college": "West Los Angeles College",
+ "programs": 245,
+ "with_closed_list": 228,
+ "found": 214,
+ "extracted": 214,
+ "errors": 0,
+ "passed_machine_checks": 173,
+ "failed": {
+  "coverage": 20,
+  "invented": 5,
+  "arithmetic": 36,
+  "repeated": 0,
+  "outcomes": 1
+ },
+ "cost_usd": 14.97,
+ "cost_per_program": 0.07,
+ "not_found": [
+  {
+   "control_number": "15011",
+   "title": "Computer Application Office Technology-Legal Secretary",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88",
+    "coverage": 0.444
+   }
+  },
+  {
+   "control_number": "35058",
+   "title": "International Area Studies - Africa",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "pages": [
+     114
+    ],
+    "coverage": 0.875,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "35064",
+   "title": "International Area Studies - Middle East",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "pages": [
+     114
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "35079",
+   "title": "International Area Studies - Latin America",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "pages": [
+     278
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "36842",
+   "title": "Career Exploration: Information Communications Technology/Digital Media",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     230
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "37264",
+   "title": "Workplace Success I: Creative Leadership",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37276",
+   "title": "Workplace Success II: Creativity and Innovation in the Workplace",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37833",
+   "title": "Workforce Preparation and Career Success",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38677",
+   "title": "ESL Pathways",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39049",
+   "title": "Front Desk Representative and Reservationist",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     239
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "41466",
+   "title": "Academic & Workforce Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "43074",
+   "title": "Interactive Design II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "pages": [
+     122
+    ],
+    "coverage": 0.667,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "44669",
+   "title": "Aviation Maintenance Technology - Avionics",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "pages": [
+     49
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "45276",
+   "title": "Certified Residential License Appraiser Practicum II",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "pages": [
+     149
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  }
+ ],
+ "run": "39536207109"
+}

@@ -1,0 +1,251 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "43628",
+ "shape": "adt",
+ "title": "UCTP Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=142",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9349,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9349,
+    "output_tokens": 1666,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1666,
+  "output_tokens_details": {
+   "thinking_tokens": 522
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07072,
+ "ms": 19414,
+ "seconds": 19.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    46.0,
+    46.0
+   ],
+   "stated": [
+    46.0,
+    46.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     73.0,
+     73.0
+    ],
+    "stated": [
+     73.0,
+     73.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     27.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Physics for UC Transfer (UCTP) (ACADEMIC PROGRAM CODE: W043628M)",
+   "measure": "units",
+   "total_units": {
+    "min": 46,
+    "max": 46
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 73,
+    "max": 73
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop critical thinking skills and move toward autonomous learning.",
+    "Comprehend, describe, and apply the procedures of physics and understand their limitations.",
+    "Demonstrate competence in applying the methods of scientific inquiry.",
+    "Apply the basic physics principles to a wide/diverse range of problems"
+   ],
+   "careers": [
+    "physical science",
+    "math",
+    "engineering",
+    "computer science"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 46,
+     "max": 46
+    },
+    "courses": [
+     {
+      "code": "PHYSICS 037",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 038",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 039",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 261",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 262",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 263",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section's printed heading falls before the extracted text, which starts at 'ACADEMIC PROGRAM CODE: W043628M'. The section heading recorded here is taken from its description ('Associate in Science in Physics for UC Transfer (UCTP)').",
+   "This record reads the UCTP section, not the following PHYSICS (AS-T) section. The UCTP section alone lists CHEM 101, CHEM 102, MATH 270 and MATH 275 from the closed list, which matches the program title.",
+   "Catalog codes are printed with leading zeros or without a space (PHYSICS 037, MATH270, CHEM101). They were matched to closed-list PHYSICS 37, MATH 270, CHEM 101 and so on, and are not marked as catalog additions.",
+   "The page prints Total Major Units 46, Cal-GETC GE Units (less double-counted) 27 and Total Units 73. The 73 is recorded as degree_total.",
+   "The fourth outcome is printed without a final period in this section; it is copied as printed.",
+   "Outcomes are the same as those printed for the separate Physics AS-T section."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

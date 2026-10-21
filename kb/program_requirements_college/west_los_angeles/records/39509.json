@@ -1,0 +1,171 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "39509",
+ "shape": "noncredit",
+ "title": "21st Century Employability Skills: Diversity Awareness and Collaboration",
+ "award": "Noncredit program",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=226",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6793,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6793,
+    "output_tokens": 970,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 970,
+  "output_tokens_details": {
+   "thinking_tokens": 303
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04657,
+ "ms": 8129,
+ "seconds": 8.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    6.0,
+    18.0
+   ],
+   "stated": [
+    6.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "21st Century Employability Skills: Diversity Awareness and Collaboration (ACADEMIC PROGRAM CODE: W039509E)",
+   "measure": "hours",
+   "total_units": {
+    "min": 6,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use social or cultural differences to help expand the concept of what is “normal” and use this to generate new ideas.",
+    "Value diversity in the workplace, including gender, sexual orientation, ethnicity, and age. Understand these differences can improve products, services, or work processes.",
+    "Develop and improve relationships with people of different backgrounds and beliefs by improving self-awareness, sensitivity to others’ feelings, and professionalism.",
+    "Share leadership by gathering ideas and using the skills of all team members. Offer help and encourages everyone to share responsibilities.",
+    "Find positive ways to deal with conflict amongst team members and see failure as a way to learn."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSICSKL 112CE",
+      "units": 3,
+      "units_max": 9,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 113CE",
+      "units": 3,
+      "units_max": 9,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins at the program code line; the program's title heading appears to sit on the preceding page and is not printed in the text, so section_heading combines the program title with the printed program code.",
+   "The award is counted in hours (6-18 hours). Each course is printed with a range of 3-9 hours.",
+   "The text that follows belongs to a different program (Empathy & Adaptability, W039510E) and was not read.",
+   "The text names no careers."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

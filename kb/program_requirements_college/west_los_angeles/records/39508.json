@@ -1,0 +1,170 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "39508",
+ "shape": "noncredit",
+ "title": "21st Century Employability Skills: Communication and Digital Literacy",
+ "award": "Noncredit program",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=226",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7392,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7392,
+    "output_tokens": 974,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 974,
+  "output_tokens_details": {
+   "thinking_tokens": 326
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04905,
+ "ms": 8232,
+ "seconds": 8.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    6.0,
+    18.0
+   ],
+   "stated": [
+    6.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ACADEMIC PROGRAM CODE: W039508E",
+   "measure": "hours",
+   "total_units": {
+    "min": 6,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Speak in a professional manner, use appropriate content, and says things in a way that others will understand",
+    "Can communicate using technology tools like email, LinkedIn, or PowerPoint slide shows. Know how to use social media appropriately in work settings.",
+    "Understand what technology tools are available to help people work together in person and online.",
+    "Demonstrate a basic understanding of computer, tablet, smart phone hardware and software and how they work.",
+    "Employ the importance from right and wrong, both morally and legally, in using or sharing any documents, pictures, programs, or access to personal or private information."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSICSKL 116CE",
+      "units": 3,
+      "units_max": 9,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 117CE",
+      "units": 3,
+      "units_max": 9,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program's title heading is not in the excerpt (likely printed at the bottom of the previous page); the section is identified by its academic program code W039508E and its description naming the 21st Century Employability Skills: Communication and Digital Literacy certificate program. section_heading uses the program code line.",
+   "Award is counted in hours: total (6-18 hours) and each course (3-9 hours) recorded as hours.",
+   "The following sections (Diversity Awareness & Collaboration, Empathy & Adaptability) belong to other programs and were not read."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

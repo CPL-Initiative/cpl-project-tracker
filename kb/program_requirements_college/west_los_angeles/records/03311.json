@@ -1,0 +1,332 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "03311",
+ "shape": "degree",
+ "title": "Kinesiology",
+ "award": "A.A. Degree",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=123",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9472,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9472,
+    "output_tokens": 2108,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2108,
+  "output_tokens_details": {
+   "thinking_tokens": 530
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08005,
+ "ms": 20792,
+ "seconds": 21.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 13,
+   "share": 0.769,
+   "missing": [
+    "KIN251",
+    "KIN303",
+    "KIN3501"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "DANCETQ111",
+    "DANCETQ121",
+    "KIN247",
+    "KIN291"
+   ],
+   "flagged": [
+    "DANCETQ111",
+    "DANCETQ121",
+    "KIN247",
+    "KIN291"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "KINESIOLOGY (AA)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 21,
+    "max": 21
+   },
+   "ge_pattern": "LACCD GE Plan",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand the five components of fitness: cardiovascular endurance, muscle strength, muscle endurance, flexibility and body composition.",
+    "Assess the risk factors of a specific training activity and practice safety precautions.",
+    "Distinguish how different types of activities (ex. Jazz Dance vs. Weight Training) relate to the five components of fitness.",
+    "List activities that are beneficial for modifying body composition.",
+    "List activities that benefit the cardiovascular system.",
+    "Apply and practice the concepts of teamwork, cooperation, communication and respect for each other.",
+    "Demonstrate increased movement vocabulary."
+   ],
+   "careers": [
+    "education",
+    "professional sports",
+    "writing",
+    "healthcare"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "ANATOMY 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN MAJ 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSIOL 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major elective units (choose one course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HEALTH 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN MAJ 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Movement-based electives (choose 4 courses total from at least three of the following areas)",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "DANCETQ 111",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANCETQ 121",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN 329",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 350",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 247",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN 251-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 287",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 291",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN 387",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "KIN 251",
+    "why": "named only in the preceding Kinesiology program section, not in the A.A. section"
+   },
+   {
+    "code": "KIN 303",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 350-1",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The page opens with the tail of a different Kinesiology program (likely the AA-T: outcomes, core, List A, Cal-GETC, Total Major Units 21-23); only the KINESIOLOGY (AA) section was read.",
+   "Catalog prints ANATOMY 001, PHYSIOL 001, HEALTH 012 with zero-padded numbers; treated as the closed-list ANATOMY 1, PHYSIOL 1, HEALTH 12.",
+   "Movement-based electives require 4 courses drawn from at least three of Areas 3 (Dance), 4 (Fitness), 5 (Mind/Body), 6 (Team Sports); the area distribution rule is not captured by the block structure.",
+   "The movement-based electives list spans a page break (Area 3 heading on page 123, its courses on page 124).",
+   "Additional Degree-applicable Elective Units 21 recorded as degree_elective_units; LACCD GE Plan Units (less double-counted) 21."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

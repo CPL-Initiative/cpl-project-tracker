@@ -1,0 +1,167 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "43507",
+ "shape": "certificate",
+ "title": "Data Analytics",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=93",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10865,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10865,
+    "output_tokens": 859,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 859,
+  "output_tokens_details": {
+   "thinking_tokens": 213
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06064,
+ "ms": 8749,
+ "seconds": 9.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "CIS105",
+    "CIS112",
+    "CIS124",
+    "CIS192",
+    "CIS193",
+    "CIS219"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: no Data Analytics (CA) section in the supplied text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS 105",
+    "why": "named only in the AI-Powered Web and Data Management (CA) and Data Science Essentials (CA) sections, not in a Data Analytics section"
+   },
+   {
+    "code": "CIS 112",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIS 124",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIS 192",
+    "why": "named only in other programs' sections (AWS cloud certificate, AI-Powered Web and Data Management, Data Science)"
+   },
+   {
+    "code": "CIS 193",
+    "why": "named only in other programs' sections (AWS cloud certificate, Data Science)"
+   },
+   {
+    "code": "CIS 219",
+    "why": "named only in the AI-Powered Web and Data Management (CA) and Data Science (CA) sections"
+   }
+  ],
+  "notes": [
+   "The supplied catalog pages (92-94) contain no section for the Data Analytics Certificate of Achievement. They print the end of an AWS/cloud certificate, Essentials of Video Game Programming (CA), AI-Powered Web and Data Management (CA), Data Science (CA), Data Science Essentials (CA) and Dental Assistant (AS). None of these is recorded, because none is the named award.",
+   "The Data Analytics section may be on another page of the catalog, or the program may have been replaced by AI-Powered Web and Data Management (CA). That section's description says it builds 'upon the foundation of data analytics' and shares CIS 105, CIS 192 and CIS 219 with the closed list. A reviewer should check the full catalog."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

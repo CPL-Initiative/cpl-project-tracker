@@ -1,0 +1,389 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "08607",
+ "shape": "degree",
+ "title": "Child Development",
+ "award": "A.A. Degree",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11633,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11633,
+    "output_tokens": 3324,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3324,
+  "output_tokens_details": {
+   "thinking_tokens": 1098
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11301,
+ "ms": 25915,
+ "seconds": 26.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 18,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CHDEV1",
+    "FAM&CS21"
+   ],
+   "flagged": [
+    "CHDEV1",
+    "FAM&CS21"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    37.0,
+    40.0
+   ],
+   "stated": [
+    40.0,
+    40.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 37.0-40.0; the catalog states 40.0-40.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     55.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     18.0,
+     21.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ACADEMIC PROGRAM CODE: W008607C (Child Development Associate of Arts degree)",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 2
+   },
+   "ge_pattern": "LACCD GE Plan",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 18,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Practice and demonstrate an understanding of child development and their relationships with children and families to understand children as individuals and to plan responses to their unique needs and potentials.",
+    "Practice, model, and teach behaviors appropriate in a diverse society by creating a safe, secure learning environment for all children; by showing appreciation of and respect for the individual differences and unique needs of each member of the learning community; and by empowering children to give and expect equity, fairness, and dignity.",
+    "Critically investigate, interpret and analyze results of the strengths and weaknesses of multiple assessment methodologies and know how to use them effectively. Utilize a variety of methods, they systematically observe, monitor, and document children’s activities and behavior, analyzing, communicating, and using the information they decide would improve their work with children, parents, and others.",
+    "Practice and demonstrate an understanding of how to promote children’s cognitive, social, emotional, physical, and linguistic development by organizing and orchestrating the environment in ways that best facilitate the development and learning of young children.",
+    "Apply critical thinking to design and implement academic subjects, and assessment tools so that the program design is developmentally appropriate learning experience that integrate within and across the disciplines.",
+    "Utilize a variety of practices and resources to promote individual development, meaningful learning and social cooperation."
+   ],
+   "careers": [
+    "early childhood education"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 34,
+     "max": 34
+    },
+    "courses": [
+     {
+      "code": "CH DEV 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 022",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 023",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 034",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 042",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 065",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Child Health, Safety, and Nutrition",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization electives",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FAM & CS 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Infant Studies",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization electives",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CH DEV 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Administration and Supervision",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization electives",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CH DEV 038",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 039",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Special Needs",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization electives",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CH DEV 044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "School Age Programs",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization electives",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CH DEV 046",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 047",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The degree's own heading line (e.g., 'CHILD DEVELOPMENT (AA)') falls before the extracted text; the section begins at 'ACADEMIC PROGRAM CODE: W008607C' on page 78 and ends at 'Total Units 60' on page 79.",
+   "Specialization electives: 'choose any one of the following sets' printed with 6 units; each set (6 units) is recorded as a block in option_group 'Specialization electives'. The 6-unit total is printed for the group, not per set.",
+   "The Child Health, Safety, and Nutrition set also requires 'Any CH DEV course not used in the degree' (3 units), which has no specific code and is not recorded as a course entry.",
+   "CH DEV 001 Child Growth and Development is not in the closed list (catalog_addition true). Catalog codes with leading zeros (e.g., CH DEV 002) are matched to closed-list codes (CH DEV 2); CH DEV 046 matches closed-list CHDEV046.",
+   "Major total 40 = 34 required + 6 specialization. Degree: LACCD GE Plan 18-21 (less double-counted), additional degree-applicable electives 0-2, total 60.",
+   "The program description notes eligibility for the 'Teacher Level' Child Development Permit; only 'early childhood education' was recorded as a career field."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

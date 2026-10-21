@@ -1,0 +1,258 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "08603",
+ "shape": "certificate",
+ "title": "Airframe Maintenance Technician",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=73",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7480,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7480,
+    "output_tokens": 1618,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1618,
+  "output_tokens_details": {
+   "thinking_tokens": 357
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06228,
+ "ms": 12598,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    42.0,
+    42.0
+   ],
+   "stated": [
+    42.0,
+    42.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Airframe Maintenance Technician Certificate of Achievement (ACADEMIC PROGRAM CODE: W008603D)",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Properly inspect, check, service, repair and overhaul airframe and airframe components",
+    "Properly use tools, equipment, safety apparel, and use proper safety procedures in and around aircraft and equipment",
+    "Display proper work ethics for independent and collectively working with management, co-workers, and the FAA in order to maximize efficiency in the workplace",
+    "Apply the knowledge from theory and laboratory training gained in the program to pass the required examination for certification"
+   ],
+   "careers": [
+    "Aircraft Maintenance Technicians",
+    "aircraft maintenance industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 42,
+     "max": 42
+    },
+    "courses": [
+     {
+      "code": "AVIATEK 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 002",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 004",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 005",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 006",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 007",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 008",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 009",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 010",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 011",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 012",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 013",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIATEK 014",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program's title heading is not in the extracted text (it likely appears at the bottom of page 72); the section begins with 'ACADEMIC PROGRAM CODE: W008603D' and the description names the Airframe Maintenance Technician Certificate of Achievement.",
+   "The catalog prints codes with leading zeros (AVIATEK 001 ... AVIATEK 014); these were matched to closed-list codes AVIATEK 1 ... AVIATEK 14 and not marked as catalog additions.",
+   "All courses are marked with * (prerequisite or corequisite required).",
+   "The description says training is given in 'powerplant systems', which may be copied from the Powerplant program text; reviewer may check.",
+   "Course units sum to 42, matching the printed Required courses and Total Units figures."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

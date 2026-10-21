@@ -1,0 +1,7606 @@
+[
+ {
+  "control_number": "03304",
+  "title": "Business",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "BUS31",
+   "BUS32",
+   "BUS38",
+   "BUS5",
+   "FINANCE2",
+   "MARKET1",
+   "MARKET21",
+   "MGMT1",
+   "MGMT13",
+   "MGMT2"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=75",
+   "title": "ACADEMIC PROGRAM CODE: W003304C",
+   "h1": "ACADEMIC PROGRAM CODE: W003304C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 9009
+ },
+ {
+  "control_number": "03305",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG15",
+   "ACCTG2",
+   "ACCTG25",
+   "BUS1",
+   "BUS32",
+   "BUS5",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=62",
+   "title": "ACADEMIC PROGRAM CODE: W003305C",
+   "h1": "ACADEMIC PROGRAM CODE: W003305C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    62,
+    63
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 9867
+ },
+ {
+  "control_number": "03307",
+  "title": "Marketing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS1",
+   "BUS31",
+   "BUS32",
+   "BUS38",
+   "BUS5",
+   "FINANCE2",
+   "MARKET1",
+   "MARKET21",
+   "MGMT1",
+   "MGMT13",
+   "MGMT6"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=129",
+   "title": "ACADEMIC PROGRAM CODE: W003307C",
+   "h1": "ACADEMIC PROGRAM CODE: W003307C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    129
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 4244
+ },
+ {
+  "control_number": "03308",
+  "title": "Real Estate",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS5",
+   "MGMT2",
+   "REALES1",
+   "REALES11",
+   "REALES14",
+   "REALES18",
+   "REALES21",
+   "REALES3",
+   "REALES4",
+   "REALES5",
+   "REALES7",
+   "REALES9"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=145",
+   "title": "ACADEMIC PROGRAM CODE: W003308C",
+   "h1": "ACADEMIC PROGRAM CODE: W003308C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145,
+    146,
+    147
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 13163
+ },
+ {
+  "control_number": "03310",
+  "title": "Computer Science Information Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "CIS112",
+   "CIS120",
+   "CIS192",
+   "CIS211",
+   "CIS213",
+   "CS112",
+   "CS116",
+   "CS118",
+   "CS121",
+   "CS131",
+   "CS136",
+   "CS159",
+   "CS213",
+   "CS216"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=91",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91,
+    92,
+    93,
+    94
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "03311",
+  "title": "Kinesiology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.846,
+  "codes_found": [
+   "ANATOMY1",
+   "HEALTH12",
+   "KIN251",
+   "KIN2511",
+   "KIN287",
+   "KIN329",
+   "KIN350",
+   "KIN387",
+   "KINMAJ100",
+   "KINMAJ126",
+   "PHYSIOL1"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=123",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 9463
+ },
+ {
+  "control_number": "03313",
+  "title": "Aviation Maintenance Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIATEK1",
+   "AVIATEK10",
+   "AVIATEK11",
+   "AVIATEK12",
+   "AVIATEK13",
+   "AVIATEK14",
+   "AVIATEK15",
+   "AVIATEK16",
+   "AVIATEK17",
+   "AVIATEK18",
+   "AVIATEK19",
+   "AVIATEK2",
+   "AVIATEK20",
+   "AVIATEK3",
+   "AVIATEK4",
+   "AVIATEK5",
+   "AVIATEK6",
+   "AVIATEK7",
+   "AVIATEK8",
+   "AVIATEK9"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=71",
+   "title": "ACADEMIC PROGRAM CODE: W003313C",
+   "h1": "ACADEMIC PROGRAM CODE: W003313C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72,
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 20,
+  "text_chars": 10549
+ },
+ {
+  "control_number": "03314",
+  "title": "Art-Drawing & Painting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "ART201",
+   "ART202",
+   "ART204",
+   "ART205",
+   "ART300",
+   "ART501",
+   "ART502"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=69",
+   "title": "ACADEMIC PROGRAM CODE: W003314C",
+   "h1": "ACADEMIC PROGRAM CODE: W003314C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 9621
+ },
+ {
+  "control_number": "03317",
+  "title": "French",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FRENCH1",
+   "FRENCH2"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=125",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4283
+ },
+ {
+  "control_number": "03323",
+  "title": "Philosophy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03326",
+  "title": "Chemistry",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=76",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 9743
+ },
+ {
+  "control_number": "03328",
+  "title": "Administration of Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS14",
+   "ADMJUS160",
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS4",
+   "ADMJUS5",
+   "ADMJUS6",
+   "ADMJUS67",
+   "ADMJUS75",
+   "ADMJUS8"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=65",
+   "title": "ACADEMIC PROGRAM CODE: W003328C",
+   "h1": "ACADEMIC PROGRAM CODE: W003328C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65,
+    66
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 9083
+ },
+ {
+  "control_number": "03329",
+  "title": "Anthropology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO104",
+   "ANTHRO109",
+   "ANTHRO111",
+   "ANTHRO121",
+   "ANTHRO132",
+   "EARTH1",
+   "EARTH2",
+   "GEOLOGY1",
+   "GEOLOGY6"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=67",
+   "title": "ACADEMIC PROGRAM CODE: W003329C",
+   "h1": "ACADEMIC PROGRAM CODE: W003329C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 4389
+ },
+ {
+  "control_number": "03330",
+  "title": "Economics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "CIS101",
+   "ECON10",
+   "ECON11",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH236",
+   "MATH261",
+   "MATH262",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=99",
+   "title": "ACADEMIC PROGRAM CODE: W003330C",
+   "h1": "ACADEMIC PROGRAM CODE: W003330C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100,
+    101,
+    102
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "03331",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "ANTHRO101",
+   "ANTHRO102",
+   "ECONC2001",
+   "GEOG1",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY86",
+   "HISTORY87",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=118",
+   "title": "ACADEMIC PROGRAM CODE: W003331C",
+   "h1": "ACADEMIC PROGRAM CODE: W003331C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118,
+    119
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 8455
+ },
+ {
+  "control_number": "03333",
+  "title": "Political Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.938,
+  "codes_found": [
+   "ANTHRO101",
+   "ECON10",
+   "ECONC2001",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY41",
+   "HISTORY42",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI20",
+   "POLSCI60",
+   "POLSCI61",
+   "POLSCI7",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=143",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143,
+    144,
+    145,
+    146
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "03334",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "ANTHRO102",
+   "ECONC2001",
+   "HISTC1002",
+   "PHILOS1",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOC1",
+   "SOC11",
+   "SOC2",
+   "SOC31",
+   "SOC50",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=155",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155,
+    156
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 10366
+ },
+ {
+  "control_number": "03336",
+  "title": "Paralegal",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.952,
+  "codes_found": [
+   "ENGLC1000",
+   "PALEGAL10",
+   "PALEGAL11",
+   "PALEGAL12",
+   "PALEGAL13",
+   "PALEGAL14",
+   "PALEGAL16",
+   "PALEGAL17",
+   "PALEGAL18",
+   "PALEGAL19",
+   "PALEGAL20",
+   "PALEGAL33",
+   "PALEGAL35",
+   "PALEGAL41",
+   "PALEGAL42",
+   "PALEGAL43",
+   "PALEGAL44",
+   "PALEGAL45",
+   "PALEGAL46",
+   "PALEGAL51"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=135",
+   "title": "ACADEMIC PROGRAM CODE: W003336C",
+   "h1": "ACADEMIC PROGRAM CODE: W003336C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136,
+    137
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 21,
+  "text_chars": 11368
+ },
+ {
+  "control_number": "08599",
+  "title": "Management: Small Business",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.923,
+  "codes_found": [
+   "ACCTG1",
+   "BUS1",
+   "BUS31",
+   "BUS32",
+   "BUS38",
+   "BUS5",
+   "MARKET1",
+   "MARKET21",
+   "MGMT1",
+   "MGMT13",
+   "MGMT2",
+   "MGMT6"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=128",
+   "title": "ACADEMIC PROGRAM CODE: W008599C",
+   "h1": "ACADEMIC PROGRAM CODE: W008599C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128,
+    129
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 13,
+  "text_chars": 9544
+ },
+ {
+  "control_number": "08603",
+  "title": "Airframe Maintenance Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIATEK1",
+   "AVIATEK10",
+   "AVIATEK11",
+   "AVIATEK12",
+   "AVIATEK13",
+   "AVIATEK14",
+   "AVIATEK2",
+   "AVIATEK3",
+   "AVIATEK4",
+   "AVIATEK5",
+   "AVIATEK6",
+   "AVIATEK7",
+   "AVIATEK8",
+   "AVIATEK9"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=73",
+   "title": "ACADEMIC PROGRAM CODE: W008603D",
+   "h1": "ACADEMIC PROGRAM CODE: W008603D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 3091
+ },
+ {
+  "control_number": "08604",
+  "title": "Aircraft Power Plant Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIATEK1",
+   "AVIATEK15",
+   "AVIATEK16",
+   "AVIATEK17",
+   "AVIATEK18",
+   "AVIATEK19",
+   "AVIATEK2",
+   "AVIATEK20",
+   "AVIATEK3",
+   "AVIATEK4",
+   "AVIATEK5",
+   "AVIATEK6",
+   "AVIATEK7",
+   "AVIATEK8"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=72",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72,
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 10390
+ },
+ {
+  "control_number": "08605",
+  "title": "Art- Ceramics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "ART201",
+   "ART202",
+   "ART501",
+   "ART502",
+   "ART708",
+   "ART709",
+   "ART710",
+   "ART711"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=68",
+   "title": "ACADEMIC PROGRAM CODE: W008605C",
+   "h1": "ACADEMIC PROGRAM CODE: W008605C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68,
+    69,
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 11897
+ },
+ {
+  "control_number": "08607",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV46",
+   "CHDEV47",
+   "CHDEV65",
+   "CHDEV7",
+   "CHDEV8"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78",
+   "title": "ACADEMIC PROGRAM CODE: W008607C",
+   "h1": "ACADEMIC PROGRAM CODE: W008607C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79,
+    80,
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "15011",
+  "title": "Computer Application Office Technology-Legal Secretary",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16585",
+  "title": "Computer Network Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.727,
+  "codes_found": [
+   "CIS110",
+   "CIS192",
+   "CIS212",
+   "CIS213",
+   "CIS225",
+   "CIS227",
+   "CIS229",
+   "CIS230"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=89",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90,
+    91,
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "16828",
+  "title": "Addiction Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST10",
+   "ADDICST16",
+   "ADDICST2",
+   "ADDICST4",
+   "ADDICST5",
+   "ADDICST7",
+   "ADDICST84",
+   "ADDICST85",
+   "PSYCC1000",
+   "PSYCH14",
+   "SOC11"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=63",
+   "title": "ACADEMIC PROGRAM CODE: W016828C",
+   "h1": "ACADEMIC PROGRAM CODE: W016828C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    63,
+    64,
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 14320
+ },
+ {
+  "control_number": "17111",
+  "title": "Computer Network & Security Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.812,
+  "codes_found": [
+   "CIS101",
+   "CIS110",
+   "CIS112",
+   "CIS192",
+   "CIS211",
+   "CIS212",
+   "CIS213",
+   "CIS214",
+   "CIS215",
+   "CIS225",
+   "CIS227",
+   "CIS229",
+   "CIS230"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88,
+    89,
+    90,
+    91
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "17282",
+  "title": "Hospitality",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "HOSPT100",
+   "HOSPT302",
+   "HOSPT303",
+   "HOSPT310",
+   "HOSPT311",
+   "HOSPT320",
+   "HOSPT325",
+   "HOSPT330",
+   "MARKET21",
+   "MGMT6"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=119",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120,
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 14661
+ },
+ {
+  "control_number": "17283",
+  "title": "Hospitality Hotel Front Desk & Back Office Operations",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSPT100",
+   "HOSPT302",
+   "HOSPT303",
+   "HOSPT310",
+   "HOSPT325",
+   "HOSPT330",
+   "MARKET1",
+   "MGMT6"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=121",
+   "title": "ACADEMIC PROGRAM CODE: W017283D",
+   "h1": "ACADEMIC PROGRAM CODE: W017283D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 3742
+ },
+ {
+  "control_number": "17284",
+  "title": "Hospitality Hotel Sales & Marketing",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "HOSPT100",
+   "HOSPT302",
+   "HOSPT310",
+   "HOSPT311",
+   "HOSPT325",
+   "MARKET1",
+   "MARKET21"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=121",
+   "title": "ACADEMIC PROGRAM CODE: W017284D",
+   "h1": "ACADEMIC PROGRAM CODE: W017284D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 1910
+ },
+ {
+  "control_number": "17285",
+  "title": "Hospitality Event & Convention Planning",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19283",
+  "title": "Mathematics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=130",
+   "title": "ACADEMIC PROGRAM CODE: W019283C",
+   "h1": "ACADEMIC PROGRAM CODE: W019283C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 3284
+ },
+ {
+  "control_number": "19431",
+  "title": "Liberal Arts & Sciences Arts & Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.956,
+  "codes_found": [
+   "ARABIC1",
+   "ARABIC2",
+   "ART201",
+   "ART202",
+   "ART300",
+   "ART501",
+   "ASL1",
+   "ASL2",
+   "CINEMA107",
+   "CINEMA3",
+   "COMM104",
+   "COMM121",
+   "COMM122",
+   "COMM151",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH215",
+   "ENGLISH219",
+   "ENGLISH234",
+   "ENGLISH245",
+   "FRENCH1",
+   "FRENCH2",
+   "HISTORY1",
+   "HISTORY2",
+   "HUMAN30",
+   "HUMAN31",
+   "HUMAN60",
+   "JAPAN1",
+   "MUSIC101",
+   "MUSIC111",
+   "PHILOS1",
+   "PHILOS20",
+   "PHILOS33",
+   "PHILOS41",
+   "SPANISH1",
+   "SPANISH2",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=125",
+   "title": "ACADEMIC PROGRAM CODE: W019431C",
+   "h1": "ACADEMIC PROGRAM CODE: W019431C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125,
+    126,
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 46,
+  "text_chars": 9165
+ },
+ {
+  "control_number": "19432",
+  "title": "Liberal Arts & Sciences Behavioral & Social Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19433",
+  "title": "Liberal Arts & Sciences  Health Professions",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "ALDHTH43CO",
+   "ALDHTH44CO",
+   "ALDHTH45CO",
+   "ALDHTH46CO",
+   "ALDHTH47CO",
+   "ALDHTH48CO",
+   "ALDHTH49CO",
+   "ANATOMY1",
+   "CHEM101",
+   "CHEM51",
+   "CHEM60",
+   "COMMC1000",
+   "ENGLC1000",
+   "MICRO20",
+   "PSYCC1000",
+   "PSYCH41",
+   "SOC1",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=126",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126,
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 21,
+  "text_chars": 7561
+ },
+ {
+  "control_number": "19434",
+  "title": "Liberal Arts & Science Math, Sciences & Computer Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19524",
+  "title": "Business Application & Database Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.846,
+  "codes_found": [
+   "CIS101",
+   "CIS104",
+   "CIS105",
+   "CIS120",
+   "CIS124",
+   "CIS190",
+   "CIS192",
+   "CIS193",
+   "CIS219",
+   "CS111",
+   "CS112"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179",
+   "title": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "h1": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    179,
+    180,
+    181,
+    182
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19525",
+  "title": "Network & Information System Security",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.636,
+  "codes_found": [
+   "CIS110",
+   "CIS192",
+   "CIS211",
+   "CIS212",
+   "CIS213",
+   "CIS214",
+   "CIS215"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90",
+   "title": "ACADEMIC PROGRAM CODE: W019525D",
+   "h1": "ACADEMIC PROGRAM CODE: W019525D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91,
+    92,
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19526",
+  "title": "Web Support & Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "CIS101",
+   "CIS104",
+   "CIS105",
+   "CIS120",
+   "CIS124",
+   "CIS148",
+   "CIS150",
+   "CIS190",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS195",
+   "CS111"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179",
+   "title": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "h1": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    179,
+    180,
+    181,
+    182
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19601",
+  "title": "Pharmacy Technician Basic",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "ALDHTH56",
+   "ALDHTH57",
+   "PHRMCTK23",
+   "PHRMCTK29",
+   "PHRMCTK30",
+   "PHRMCTK31",
+   "PHRMCTK32"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=139",
+   "title": "ACADEMIC PROGRAM CODE: W019601D",
+   "h1": "ACADEMIC PROGRAM CODE: W019601D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139,
+    140
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 7319
+ },
+ {
+  "control_number": "19602",
+  "title": "Pharmacy Technician Advanced",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "ALDHTH56",
+   "ALDHTH57",
+   "PHRMCTK23",
+   "PHRMCTK29",
+   "PHRMCTK30",
+   "PHRMCTK31",
+   "PHRMCTK32",
+   "PHRMCTK35",
+   "PHRMCTK37"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=139",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139,
+    140
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 10105
+ },
+ {
+  "control_number": "19603",
+  "title": "Pharmacy Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.812,
+  "codes_found": [
+   "ALDHTH56",
+   "ALDHTH57",
+   "BIOLOGY3",
+   "CHEM51",
+   "COMMC1000",
+   "PHRMCTK23",
+   "PHRMCTK29",
+   "PHRMCTK30",
+   "PHRMCTK31",
+   "PHRMCTK32",
+   "PHRMCTK35",
+   "PHRMCTK37",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=138",
+   "title": "ACADEMIC PROGRAM CODE: W019603C",
+   "h1": "ACADEMIC PROGRAM CODE: W019603C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138,
+    139,
+    140
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 10830
+ },
+ {
+  "control_number": "19709",
+  "title": "Film & TV  Production Crafts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "FLMPRD100",
+   "FLMPRD101C",
+   "FLMPRD103A",
+   "FLMPRD106",
+   "FLMPRD115A",
+   "FLMPRD115B",
+   "FLMPRD120",
+   "FLMPRD121",
+   "FLMPRD125",
+   "FLMPRD126",
+   "FLMPRD140A",
+   "FLMPRD140B",
+   "FLMPRD300",
+   "FLMPRD901",
+   "FLMPRD911"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=106",
+   "title": "ACADEMIC PROGRAM CODE: W019709D",
+   "h1": "ACADEMIC PROGRAM CODE: W019709D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107,
+    108,
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 20,
+  "text_chars": 15711
+ },
+ {
+  "control_number": "19847",
+  "title": "Computer Web Support & Database Administration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.882,
+  "codes_found": [
+   "CIS101",
+   "CIS104",
+   "CIS105",
+   "CIS120",
+   "CIS124",
+   "CIS148",
+   "CIS150",
+   "CIS190",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS195",
+   "CIS219",
+   "CS111",
+   "CS112"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179",
+   "title": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "h1": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    179,
+    180,
+    181,
+    182
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19848",
+  "title": "Computer Web Support & Database Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "CIS101",
+   "CIS104",
+   "CIS105",
+   "CIS120",
+   "CIS124",
+   "CIS148",
+   "CIS190",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS195",
+   "CIS219",
+   "CS111",
+   "CS112"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179",
+   "title": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "h1": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    179,
+    180,
+    181,
+    182
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20228",
+  "title": "Business",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20229",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG15",
+   "ACCTG2",
+   "ACCTG25",
+   "BUS1",
+   "BUS32",
+   "BUS5",
+   "CIS101",
+   "ECONC2001",
+   "ECONC2002",
+   "MGMT1"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=62",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    62,
+    63
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 10073
+ },
+ {
+  "control_number": "20230",
+  "title": "Management: Small Business",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS1",
+   "BUS31",
+   "BUS32",
+   "BUS38",
+   "BUS5",
+   "MARKET1",
+   "MARKET21",
+   "MGMT1",
+   "MGMT13",
+   "MGMT2",
+   "MGMT6"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=128",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128,
+    129
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 9760
+ },
+ {
+  "control_number": "20231",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20234",
+  "title": "Computer Science Information Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "CIS112",
+   "CIS120",
+   "CIS192",
+   "CIS211",
+   "CIS213",
+   "CS112",
+   "CS116",
+   "CS118",
+   "CS121",
+   "CS131",
+   "CS136",
+   "CS159",
+   "CS213",
+   "CS216"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=92",
+   "title": "ACADEMIC PROGRAM CODE: W020234D",
+   "h1": "ACADEMIC PROGRAM CODE: W020234D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93,
+    94,
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20236",
+  "title": "Computer Network & Security Mgmt.",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.812,
+  "codes_found": [
+   "CIS101",
+   "CIS110",
+   "CIS112",
+   "CIS192",
+   "CIS211",
+   "CIS212",
+   "CIS213",
+   "CIS214",
+   "CIS215",
+   "CIS225",
+   "CIS227",
+   "CIS229",
+   "CIS230"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88,
+    89,
+    90,
+    91
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20247",
+  "title": "Child Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV46",
+   "CHDEV47",
+   "CHDEV7",
+   "CHDEV8"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=79",
+   "title": "ACADEMIC PROGRAM CODE: W020247D",
+   "h1": "ACADEMIC PROGRAM CODE: W020247D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80,
+    81,
+    82
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20256",
+  "title": "Hospitality",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "BUS32",
+   "BUS5",
+   "HOSPT100",
+   "HOSPT135",
+   "HOSPT302",
+   "HOSPT303",
+   "HOSPT310",
+   "HOSPT311",
+   "HOSPT320",
+   "HOSPT325",
+   "HOSPT330",
+   "MARKET1",
+   "MARKET21",
+   "MGMT2",
+   "MGMT6"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=120",
+   "title": "ACADEMIC PROGRAM CODE: W020256D",
+   "h1": "ACADEMIC PROGRAM CODE: W020256D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120,
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 7881
+ },
+ {
+  "control_number": "20258",
+  "title": "Paralegal",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1000",
+   "PALEGAL10",
+   "PALEGAL11",
+   "PALEGAL12",
+   "PALEGAL13",
+   "PALEGAL14",
+   "PALEGAL16",
+   "PALEGAL17",
+   "PALEGAL18",
+   "PALEGAL19",
+   "PALEGAL20",
+   "PALEGAL33",
+   "PALEGAL35",
+   "PALEGAL41",
+   "PALEGAL42",
+   "PALEGAL43",
+   "PALEGAL44",
+   "PALEGAL45",
+   "PALEGAL46",
+   "PALEGAL51"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=136",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    136,
+    137
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 20,
+  "text_chars": 10258
+ },
+ {
+  "control_number": "20260",
+  "title": "Addiction Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST10",
+   "ADDICST16",
+   "ADDICST2",
+   "ADDICST4",
+   "ADDICST5",
+   "ADDICST7",
+   "ADDICST84",
+   "ADDICST85",
+   "PSYCC1000",
+   "PSYCH14",
+   "SOC11"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=63",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    63,
+    64,
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 15207
+ },
+ {
+  "control_number": "23061",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.909,
+  "codes_found": [
+   "FIRETEK201",
+   "FIRETEK202",
+   "FIRETEK203",
+   "FIRETEK204",
+   "FIRETEK205",
+   "FIRETEK207",
+   "FIRETEK209",
+   "FIRETEK210",
+   "FIRETEK213",
+   "FIRETEK217"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=109",
+   "title": "ACADEMIC PROGRAM CODE: W023061C",
+   "h1": "ACADEMIC PROGRAM CODE: W023061C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109,
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 5733
+ },
+ {
+  "control_number": "23062",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRETEK201",
+   "FIRETEK202",
+   "FIRETEK203",
+   "FIRETEK204",
+   "FIRETEK205",
+   "FIRETEK207",
+   "FIRETEK209",
+   "FIRETEK213",
+   "FIRETEK216",
+   "FIRETEK217"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=110",
+   "title": "ACADEMIC PROGRAM CODE: W023062D",
+   "h1": "ACADEMIC PROGRAM CODE: W023062D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 2765
+ },
+ {
+  "control_number": "24160",
+  "title": "Healthcare Careers Preparation Certificate of Completion",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "VOCED405CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=263",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    263
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 5267
+ },
+ {
+  "control_number": "24190",
+  "title": "Choosing Business Careers Certificate of Completion",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED416CE",
+   "VOCED420CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
+   "title": "ACADEMIC PROGRAM CODE: W024190E",
+   "h1": "ACADEMIC PROGRAM CODE: W024190E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    230
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3649
+ },
+ {
+  "control_number": "24200",
+  "title": "Business Tools Certificate of Completion",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED415CE",
+   "VOCED418CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=229",
+   "title": "ACADEMIC PROGRAM CODE: W024200E",
+   "h1": "ACADEMIC PROGRAM CODE: W024200E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    229
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1071
+ },
+ {
+  "control_number": "24227",
+  "title": "Communicating in Business Certificate of Completion",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED417CE",
+   "VOCED419CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231",
+   "title": "ACADEMIC PROGRAM CODE: W024227E",
+   "h1": "ACADEMIC PROGRAM CODE: W024227E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3731
+ },
+ {
+  "control_number": "24228",
+  "title": "Job Readiness Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED98CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
+   "title": "ACADEMIC PROGRAM CODE: W024228E",
+   "h1": "ACADEMIC PROGRAM CODE: W024228E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    243
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 2837
+ },
+ {
+  "control_number": "24296",
+  "title": "In-Home Supportive Services Provider",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED408CE",
+   "VOCED96CE",
+   "VOCED97CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240",
+   "title": "ACADEMIC PROGRAM CODE: W024296E",
+   "h1": "ACADEMIC PROGRAM CODE: W024296E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    240
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 2863
+ },
+ {
+  "control_number": "24298",
+  "title": "Healthcare Services Certificate of Completion",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED400CE",
+   "VOCED403CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240",
+   "title": "ACADEMIC PROGRAM CODE: W024298E",
+   "h1": "ACADEMIC PROGRAM CODE: W024298E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    240
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4062
+ },
+ {
+  "control_number": "24301",
+  "title": "Pre-Nursing Career Preparation Certificate of Completion",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED400CE",
+   "VOCED403CE",
+   "VOCED409CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=245",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    245,
+    246
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 8763
+ },
+ {
+  "control_number": "30369",
+  "title": "The Foundation of English Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC61CE",
+   "ESLNC62CE",
+   "ESLNC63CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    249
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 4027
+ },
+ {
+  "control_number": "30421",
+  "title": "Healthcare Career Discovery Certificate of Completion",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "VOCED404CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239",
+   "title": "ACADEMIC PROGRAM CODE: W030421E",
+   "h1": "ACADEMIC PROGRAM CODE: W030421E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    239
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1559
+ },
+ {
+  "control_number": "31010",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH74",
+   "PSYCH91",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=144",
+   "title": "ACADEMIC PROGRAM CODE: W031010G",
+   "h1": "ACADEMIC PROGRAM CODE: W031010G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 6761
+ },
+ {
+  "control_number": "31011",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS4",
+   "ADMJUS5",
+   "ADMJUS67",
+   "ADMJUS75",
+   "ADMJUS8",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=64",
+   "title": "ACADEMIC PROGRAM CODE: W031011H",
+   "h1": "ACADEMIC PROGRAM CODE: W031011H",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64,
+    65,
+    66
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 13439
+ },
+ {
+  "control_number": "31478",
+  "title": "Medical Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH57",
+   "HLTHOCC51",
+   "HLTHOCC52",
+   "HLTHOCC53",
+   "HLTHOCC54",
+   "HLTHOCC55",
+   "HLTHOCC56",
+   "HLTHOCC57",
+   "HLTHOCC58",
+   "HLTHOCC59",
+   "HLTHOCC60",
+   "HLTHOCC61"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=130",
+   "title": "ACADEMIC PROGRAM CODE: W031478C",
+   "h1": "ACADEMIC PROGRAM CODE: W031478C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130,
+    131,
+    132,
+    133
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 15904
+ },
+ {
+  "control_number": "31479",
+  "title": "Medical Assisting - Administrative",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH57",
+   "HLTHOCC51",
+   "HLTHOCC52",
+   "HLTHOCC53",
+   "HLTHOCC54",
+   "HLTHOCC55",
+   "HLTHOCC56",
+   "HLTHOCC57",
+   "HLTHOCC58",
+   "HLTHOCC59",
+   "HLTHOCC60",
+   "HLTHOCC61"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=131",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 15132
+ },
+ {
+  "control_number": "31480",
+  "title": "Medical Assisting - Clinical",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.917,
+  "codes_found": [
+   "ALDHTH57",
+   "HLTHOCC51",
+   "HLTHOCC52",
+   "HLTHOCC54",
+   "HLTHOCC55",
+   "HLTHOCC56",
+   "HLTHOCC57",
+   "HLTHOCC58",
+   "HLTHOCC59",
+   "HLTHOCC60",
+   "HLTHOCC61"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132",
+   "title": "ACADEMIC PROGRAM CODE: W031480D",
+   "h1": "ACADEMIC PROGRAM CODE: W031480D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 9593
+ },
+ {
+  "control_number": "31481",
+  "title": "Medical Assisting - Administrative and Clinical",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH57",
+   "HLTHOCC51",
+   "HLTHOCC52",
+   "HLTHOCC53",
+   "HLTHOCC54",
+   "HLTHOCC55",
+   "HLTHOCC56",
+   "HLTHOCC57",
+   "HLTHOCC58",
+   "HLTHOCC59",
+   "HLTHOCC60",
+   "HLTHOCC61"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=131",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 15132
+ },
+ {
+  "control_number": "32887",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH127",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH215",
+   "ENGLISH219",
+   "ENGLISH234",
+   "ENGLISH239",
+   "ENGLISH245"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=105",
+   "title": "ACADEMIC PROGRAM CODE: W032887G",
+   "h1": "ACADEMIC PROGRAM CODE: W032887G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    105,
+    106
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 7705
+ },
+ {
+  "control_number": "32935",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV10",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV34",
+   "CHDEV42",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78",
+   "title": "associate in science transfer degree in Early Childhood",
+   "h1": "associate in science transfer degree in Early Childhood",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79,
+    80,
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32972",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "HISTC1002",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=143",
+   "title": "ACADEMIC PROGRAM CODE: W032972G",
+   "h1": "ACADEMIC PROGRAM CODE: W032972G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143,
+    144,
+    145,
+    146
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32975",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32976",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY86",
+   "HISTORY87",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=117",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117,
+    118
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 9886
+ },
+ {
+  "control_number": "32977",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "ECON10",
+   "ECON11",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH236",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=98",
+   "title": "ACADEMIC PROGRAM CODE: W032977G",
+   "h1": "ACADEMIC PROGRAM CODE: W032977G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98,
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 6768
+ },
+ {
+  "control_number": "32982",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "ANTHRO102",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH91",
+   "SOC1",
+   "SOC11",
+   "SOC2",
+   "SOC31",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=154",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154,
+    155,
+    156
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 14797
+ },
+ {
+  "control_number": "32983",
+  "title": "PHYSICS",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32990",
+  "title": "ANTHROPOLOGY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO104",
+   "ANTHRO121",
+   "ANTHRO132",
+   "GEOLOGY1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=66",
+   "title": "ACADEMIC PROGRAM CODE: W032990G",
+   "h1": "ACADEMIC PROGRAM CODE: W032990G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66,
+    67
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 8605
+ },
+ {
+  "control_number": "33024",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "ART107",
+   "ART117",
+   "ART201",
+   "ART204",
+   "ART501",
+   "ART502",
+   "ART708",
+   "ART709"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=69",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 9959
+ },
+ {
+  "control_number": "33448",
+  "title": "IGETC - General Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.77,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS4",
+   "ADMJUS67",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ART103",
+   "ASTRON1",
+   "COMMC1000",
+   "ECON11",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH215",
+   "ENGLISH219",
+   "ENVSCI1",
+   "ENVSCI2",
+   "GEOG1",
+   "GEOG15",
+   "GEOG2",
+   "GEOLOGY1",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY87",
+   "HUMAN30",
+   "HUMAN31",
+   "MATH236",
+   "MATH245",
+   "MATH260",
+   "MATH261",
+   "OCEANO1",
+   "PHILOS1",
+   "PHILOS20",
+   "PHILOS33",
+   "PHYSSC1",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCH2",
+   "SPANISH3",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=277",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    277,
+    278
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 62,
+  "text_chars": 4798
+ },
+ {
+  "control_number": "33520",
+  "title": "CSU General Education (CSU-GE-Breadth)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.732,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS4",
+   "ADMJUS67",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO111",
+   "ASTRON1",
+   "COMMC1000",
+   "ECON11",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH215",
+   "ENGLISH219",
+   "ENGLISH234",
+   "ENVSCI1",
+   "ENVSCI2",
+   "GEOG1",
+   "GEOG15",
+   "GEOG2",
+   "GEOLOGY1",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY87",
+   "HUMAN30",
+   "HUMAN31",
+   "MATH236",
+   "MATH245",
+   "MATH260",
+   "MATH261",
+   "OCEANO1",
+   "PHILOS1",
+   "PHILOS20",
+   "PHILOS33",
+   "PHYSSC1",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH41",
+   "PSYCH52",
+   "SPANISH3",
+   "SPANISH4",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=277",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    277,
+    278
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 72,
+  "text_chars": 4798
+ },
+ {
+  "control_number": "33554",
+  "title": "Foundation for Academic Success II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL23CE",
+   "BSICSKL5CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=238",
+   "title": "ACADEMIC PROGRAM CODE: W033554F",
+   "h1": "ACADEMIC PROGRAM CODE: W033554F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    238
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2001
+ },
+ {
+  "control_number": "33568",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HISTORY1",
+   "HISTORY2",
+   "PHILOS1",
+   "PHILOS12",
+   "PHILOS20",
+   "PHILOS33",
+   "PHILOS41",
+   "PHILOS6",
+   "PHILOS8"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=140",
+   "title": "ACADEMIC PROGRAM CODE: W033568G",
+   "h1": "ACADEMIC PROGRAM CODE: W033568G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    140,
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 7338
+ },
+ {
+  "control_number": "33759",
+  "title": "Foundation for Academic Success I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL27CE",
+   "BSICSKL34CE",
+   "BSICSKL75CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=238",
+   "title": "ACADEMIC PROGRAM CODE: W033759F",
+   "h1": "ACADEMIC PROGRAM CODE: W033759F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    238
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3481
+ },
+ {
+  "control_number": "33794",
+  "title": "DENTAL ASSISTANT",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENAST1",
+   "DENAST10",
+   "DENAST12",
+   "DENAST13",
+   "DENAST3",
+   "DENAST5",
+   "DENAST6",
+   "DENAST7",
+   "DENAST8",
+   "DENAST9"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=95",
+   "title": "ACADEMIC PROGRAM CODE: W033794C",
+   "h1": "ACADEMIC PROGRAM CODE: W033794C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96,
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 13674
+ },
+ {
+  "control_number": "33798",
+  "title": "Dental Assistant",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENAST1",
+   "DENAST10",
+   "DENAST12",
+   "DENAST13",
+   "DENAST3",
+   "DENAST5",
+   "DENAST6",
+   "DENAST7",
+   "DENAST8",
+   "DENAST9"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=96",
+   "title": "ACADEMIC PROGRAM CODE: W033798D",
+   "h1": "ACADEMIC PROGRAM CODE: W033798D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 9705
+ },
+ {
+  "control_number": "33861",
+  "title": "Health Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "CHEM101",
+   "CHEM51",
+   "CHEM60",
+   "MICRO20",
+   "PHYSIOL1"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=116",
+   "title": "ACADEMIC PROGRAM CODE: W033861C",
+   "h1": "ACADEMIC PROGRAM CODE: W033861C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 9771
+ },
+ {
+  "control_number": "33893",
+  "title": "Global Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.545,
+  "codes_found": [
+   "ENGLISH204",
+   "GEOG2",
+   "HISTORY87",
+   "POLSCI2",
+   "POLSCI60",
+   "POLSCI7"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
+   "title": "The Associate in Arts in Global Studies for Transfer (AA-T)",
+   "h1": "The Associate in Arts in Global Studies for Transfer (AA-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113,
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 6144
+ },
+ {
+  "control_number": "35053",
+  "title": "Paramedicine",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH43CO",
+   "ALDHTH44CO",
+   "ALDHTH45CO",
+   "ALDHTH46CO",
+   "ALDHTH47CO",
+   "ALDHTH48CO",
+   "ALDHTH49CO",
+   "ALDHTH50CO"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=137",
+   "title": "ACADEMIC PROGRAM CODE: W035053C",
+   "h1": "ACADEMIC PROGRAM CODE: W035053C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137,
+    138
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 8370
+ },
+ {
+  "control_number": "35058",
+  "title": "International Area Studies - Africa",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35064",
+  "title": "International Area Studies - Middle East",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35079",
+  "title": "International Area Studies - Latin America",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35203",
+  "title": "International Area Studies - Asia",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35281",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO102",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "MATH245",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=133",
+   "title": "ACADEMIC PROGRAM CODE: W035281H",
+   "h1": "ACADEMIC PROGRAM CODE: W035281H",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    133
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 3812
+ },
+ {
+  "control_number": "35320",
+  "title": "Custodial Technician Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED60CE",
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232",
+   "title": "ACADEMIC PROGRAM CODE: W035320E",
+   "h1": "ACADEMIC PROGRAM CODE: W035320E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    232
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3963
+ },
+ {
+  "control_number": "35761",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "MATH261",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=73",
+   "title": "ACADEMIC PROGRAM CODE: W035761H",
+   "h1": "ACADEMIC PROGRAM CODE: W035761H",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 4911
+ },
+ {
+  "control_number": "36268",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "CHEM101",
+   "ECONC2001",
+   "HEALTH11",
+   "PSYCC1000",
+   "PSYCH52",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=117",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 14961
+ },
+ {
+  "control_number": "36683",
+  "title": "Pre-Algebra Fundamentals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36685",
+  "title": "Arithmetic Fundamentals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36801",
+  "title": "College Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.6,
+  "codes_found": [
+   "BSICSKL27CE",
+   "BSICSKL75CE",
+   "VOCED290CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
+   "title": "ACADEMIC PROGRAM CODE: W036801F",
+   "h1": "ACADEMIC PROGRAM CODE: W036801F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    230,
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 6720
+ },
+ {
+  "control_number": "36842",
+  "title": "Career Exploration: Information Communications Technology/Digital Media",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36925",
+  "title": "Paramedic",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH43CO",
+   "ALDHTH44CO",
+   "ALDHTH45CO",
+   "ALDHTH46CO",
+   "ALDHTH47CO",
+   "ALDHTH48CO",
+   "ALDHTH49CO",
+   "ALDHTH50CO"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=138",
+   "title": "ACADEMIC PROGRAM CODE: W036925D",
+   "h1": "ACADEMIC PROGRAM CODE: W036925D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 4596
+ },
+ {
+  "control_number": "37003",
+  "title": "LAW, PUBLIC POLICY AND SOCIETY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.964,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS67",
+   "ADMJUS75",
+   "ADMJUS8",
+   "ANTHRO102",
+   "BUS5",
+   "COMM104",
+   "COMM122",
+   "COMM151",
+   "COMMC1000",
+   "COUNSEL40",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "HISTC1002",
+   "PHILOS20",
+   "PHILOS8",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI60",
+   "POLSCI7",
+   "SOC11",
+   "SOC2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=124",
+   "title": "ACADEMIC PROGRAM CODE: W037003G",
+   "h1": "ACADEMIC PROGRAM CODE: W037003G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    124,
+    125,
+    126,
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 28,
+  "text_chars": 15305
+ },
+ {
+  "control_number": "37026",
+  "title": "CLIMATE CHANGE AND ENVIRONMENTAL STUDIES",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "BIOLOGY10",
+   "BIOLOGY3",
+   "CHEM60",
+   "COMM122",
+   "EARTH1",
+   "EARTH2",
+   "ECON11",
+   "ECONC2001",
+   "ENVSCI24",
+   "GEOG1",
+   "GEOG15",
+   "GEOG2",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "PHILOS28",
+   "POLSCI60",
+   "SOC2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=85",
+   "title": "ACADEMIC PROGRAM CODE: W037026C",
+   "h1": "ACADEMIC PROGRAM CODE: W037026C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86,
+    87
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 19,
+  "text_chars": 13777
+ },
+ {
+  "control_number": "37029",
+  "title": "ELEMENTARY TEACHER EDUCATION",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.737,
+  "codes_found": [
+   "ART103",
+   "BIOLOGY3",
+   "CHEM51",
+   "COMMC1000",
+   "EDUC1",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "HISTORY86",
+   "MUSIC111",
+   "PHYSSC1",
+   "PHYSSC14",
+   "POLSC1000",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=100",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 20,
+  "text_chars": 4596
+ },
+ {
+  "control_number": "37050",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.792,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM101",
+   "CHEM51",
+   "CHEM60",
+   "DANCETQ111",
+   "DANCETQ121",
+   "HEALTH12",
+   "KIN229",
+   "KIN251",
+   "KIN2511",
+   "KIN287",
+   "KIN329",
+   "KIN3341",
+   "KIN350",
+   "KIN387",
+   "KINMAJ100",
+   "PHYSICS6",
+   "PHYSIOL1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=122",
+   "title": "ACADEMIC PROGRAM CODE: W037050G",
+   "h1": "ACADEMIC PROGRAM CODE: W037050G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123,
+    124
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 24,
+  "text_chars": 11246
+ },
+ {
+  "control_number": "37251",
+  "title": "Administrative Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "VOCED415CE",
+   "VOCED418CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228",
+   "title": "ACADEMIC PROGRAM CODE: W037251E",
+   "h1": "ACADEMIC PROGRAM CODE: W037251E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    228,
+    229
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 7577
+ },
+ {
+  "control_number": "37264",
+  "title": "Workplace Success I: Creative Leadership",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37276",
+  "title": "Workplace Success II: Creativity and Innovation in the Workplace",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37830",
+  "title": "Facilities Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED123CE",
+   "VOCED124CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236",
+   "title": "ACADEMIC PROGRAM CODE: W037830E",
+   "h1": "ACADEMIC PROGRAM CODE: W037830E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    236
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1114
+ },
+ {
+  "control_number": "37832",
+  "title": "Conservation Studies",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED222CE",
+   "VOCED223CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231",
+   "title": "ACADEMIC PROGRAM CODE: W037832E",
+   "h1": "ACADEMIC PROGRAM CODE: W037832E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1920
+ },
+ {
+  "control_number": "37833",
+  "title": "Workforce Preparation and Career Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37834",
+  "title": "College Readiness for the English Language Learner",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "BSICSKL27CE",
+   "BSICSKL75CE",
+   "VOCED289CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    230,
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 8519
+ },
+ {
+  "control_number": "37838",
+  "title": "REAL ESTATE APPRAISER I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "REALES10",
+   "REALES39",
+   "REALES40",
+   "REALES9"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=149",
+   "title": "ACADEMIC PROGRAM CODE: W037838D",
+   "h1": "ACADEMIC PROGRAM CODE: W037838D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149,
+    150,
+    151,
+    152
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37839",
+  "title": "Real Estate Salesperson",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS5",
+   "REALES1",
+   "REALES10",
+   "REALES11",
+   "REALES14",
+   "REALES21",
+   "REALES3",
+   "REALES4",
+   "REALES5",
+   "REALES7",
+   "REALES9"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    151,
+    152
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 9825
+ },
+ {
+  "control_number": "37840",
+  "title": "Cloud Computing-Amazon Web Services",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37859",
+  "title": "REAL ESTATE BROKER",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS5",
+   "REALES1",
+   "REALES10",
+   "REALES11",
+   "REALES14",
+   "REALES21",
+   "REALES3",
+   "REALES4",
+   "REALES5",
+   "REALES7",
+   "REALES9"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151",
+   "title": "ACADEMIC PROGRAM CODE: W037859D",
+   "h1": "ACADEMIC PROGRAM CODE: W037859D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    151,
+    152
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 7678
+ },
+ {
+  "control_number": "37860",
+  "title": "REAL ESTATE APPRAISER II",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.926,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS5",
+   "CIS101",
+   "CIS104",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "FINANCE1",
+   "GEOG1",
+   "MGMT1",
+   "MGMT13",
+   "MGMT6",
+   "REALES1",
+   "REALES10",
+   "REALES11",
+   "REALES14",
+   "REALES21",
+   "REALES3",
+   "REALES39",
+   "REALES40",
+   "REALES5",
+   "REALES7",
+   "REALES9",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=150",
+   "title": "ADADEMIC PROGRAM CODE: W037860D",
+   "h1": "ADADEMIC PROGRAM CODE: W037860D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    150,
+    151,
+    152,
+    153
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 27,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37863",
+  "title": "ENGINEERING: MECHANICAL TRACK",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "EGDTEK101",
+   "ENGGEN101",
+   "ENGGEN131",
+   "ENGGEN220",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=103",
+   "title": "ACADEMIC PROGRAM CODE: W037863C",
+   "h1": "ACADEMIC PROGRAM CODE: W037863C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 13763
+ },
+ {
+  "control_number": "37864",
+  "title": "ENGINEERING: CIVIL TRACK",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "EGDTEK101",
+   "ENGGEN101",
+   "ENGGEN131",
+   "ENGGEN220",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=101",
+   "title": "ACADEMIC PROGRAM CODE: W037864C",
+   "h1": "ACADEMIC PROGRAM CODE: W037864C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    101,
+    102,
+    103,
+    104
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37983",
+  "title": "Employment Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "BSICSKL78CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    243
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4279
+ },
+ {
+  "control_number": "38289",
+  "title": "Statistics Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACADPR15CE",
+   "ACADPR16CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248",
+   "title": "ACADEMIC PROGRAM CODE: W038289F",
+   "h1": "ACADEMIC PROGRAM CODE: W038289F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    248
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3423
+ },
+ {
+  "control_number": "38290",
+  "title": "STEM Mathematics Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACADPR16CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248",
+   "title": "ACADEMIC PROGRAM CODE: W038290F",
+   "h1": "ACADEMIC PROGRAM CODE: W038290F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    248
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 2487
+ },
+ {
+  "control_number": "38291",
+  "title": "Liberal Arts Mathematics Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACADPR16CE",
+   "ACADPR18CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=244",
+   "title": "ACADEMIC PROGRAM CODE: W038291F",
+   "h1": "ACADEMIC PROGRAM CODE: W038291F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    244
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3747
+ },
+ {
+  "control_number": "38292",
+  "title": "ESL Fundamentals and Custodial Technicians",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED60CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235",
+   "title": "ACADEMIC PROGRAM CODE: W038292E",
+   "h1": "ACADEMIC PROGRAM CODE: W038292E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    235
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 2322
+ },
+ {
+  "control_number": "38390",
+  "title": "ESL Fundamentals I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC6CE",
+   "VOCED289CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235",
+   "title": "ACADEMIC PROGRAM CODE: W038390F",
+   "h1": "ACADEMIC PROGRAM CODE: W038390F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    235
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1133
+ },
+ {
+  "control_number": "38406",
+  "title": "Science Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "BSICSKL93CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=247",
+   "title": "ACADEMIC PROGRAM CODE: W038406F",
+   "h1": "ACADEMIC PROGRAM CODE: W038406F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    247
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2413
+ },
+ {
+  "control_number": "38617",
+  "title": "Banquet and Restaurant Server",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38624",
+  "title": "ESL Fundamentals III",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC15CE",
+   "ESLNC9CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236",
+   "title": "ACADEMIC PROGRAM CODE: W038624F",
+   "h1": "ACADEMIC PROGRAM CODE: W038624F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    236
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2991
+ },
+ {
+  "control_number": "38647",
+  "title": "Mobile Application Development Essentials",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "CIS148"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=180",
+   "title": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "h1": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    180
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 5737
+ },
+ {
+  "control_number": "38677",
+  "title": "ESL Pathways",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38719",
+  "title": "ESL Fundamentals II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC7CE",
+   "ESLNC8CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236",
+   "title": "ACADEMIC PROGRAM CODE: W038719F",
+   "h1": "ACADEMIC PROGRAM CODE: W038719F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    236
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3928
+ },
+ {
+  "control_number": "38768",
+  "title": "Administrative Assistant for the English Language Learner",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED415CE",
+   "VOCED418CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228",
+   "title": "ACADEMIC PROGRAM CODE: W038768F",
+   "h1": "ACADEMIC PROGRAM CODE: W038768F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    228,
+    229
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 5738
+ },
+ {
+  "control_number": "38782",
+  "title": "Autism Services Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED425CE",
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=229",
+   "title": "ACADEMIC PROGRAM CODE: W038782E",
+   "h1": "ACADEMIC PROGRAM CODE: W038782E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    229
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3449
+ },
+ {
+  "control_number": "38943",
+  "title": "Climate Change Studies - Social Science",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "ECON11",
+   "ENVSCI24",
+   "GEOG2",
+   "PHILOS28",
+   "POLSCI60",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=86",
+   "title": "ACADEMIC PROGRAM CODE: W038943D",
+   "h1": "ACADEMIC PROGRAM CODE: W038943D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86,
+    87
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 7375
+ },
+ {
+  "control_number": "38944",
+  "title": "Climate Change Studies - Natural Science",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY10",
+   "BIOLOGY3",
+   "CHEM60",
+   "ENVSCI24",
+   "GEOG1",
+   "GEOG15",
+   "GEOLOGY1",
+   "PHILOS28"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=85",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 9494
+ },
+ {
+  "control_number": "38972",
+  "title": "Maintenance Attendant for Hospitality",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39013",
+  "title": "Guest and Public Spaces Attendant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED244CE",
+   "VOCED245CE",
+   "VOCED250CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239",
+   "title": "ACADEMIC PROGRAM CODE: W039013E",
+   "h1": "ACADEMIC PROGRAM CODE: W039013E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    239
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 2791
+ },
+ {
+  "control_number": "39038",
+  "title": "Leadership and Workplace Success in the Public Sector",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL104CE",
+   "BSICSKL78CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
+   "title": "ACADEMIC PROGRAM CODE: W039038E",
+   "h1": "ACADEMIC PROGRAM CODE: W039038E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    243,
+    244
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 6839
+ },
+ {
+  "control_number": "39039",
+  "title": "21st Century Employability Skills: Entrepreneurial and Analytical Mindset",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL109CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=227",
+   "title": "ACADEMIC PROGRAM CODE: W039039E",
+   "h1": "ACADEMIC PROGRAM CODE: W039039E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    227
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 3635
+ },
+ {
+  "control_number": "39049",
+  "title": "Front Desk Representative and Reservationist",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39122",
+  "title": "ENGINEERING: ELECTRICAL TRACK",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "CHEM101",
+   "ENGGEN101",
+   "ENGGEN220",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=102",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39123",
+  "title": "ENGINEERING: COMPUTER, SOFTWARE TRACK",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS131",
+   "CS136",
+   "ENGGEN101",
+   "ENGGEN220",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=102",
+   "title": "ACADEMIC PROGRAM CODE: W039123C",
+   "h1": "ACADEMIC PROGRAM CODE: W039123C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39126",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "MATH261",
+   "MATH262",
+   "PHYSICS37"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90",
+   "title": "ACADEMIC PROGRAM CODE: W039126H",
+   "h1": "ACADEMIC PROGRAM CODE: W039126H",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 5419
+ },
+ {
+  "control_number": "39419",
+  "title": "Biotechnology Lab Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "BIOTECH1",
+   "BIOTECH2",
+   "BIOTECH3",
+   "CHEM60"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=74",
+   "title": "ACADEMIC PROGRAM CODE: W039419D",
+   "h1": "ACADEMIC PROGRAM CODE: W039419D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74,
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 6702
+ },
+ {
+  "control_number": "39485",
+  "title": "Social Justice Studies: Chicano Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.909,
+  "codes_found": [
+   "ART117",
+   "CHICANO2",
+   "CHICANO37",
+   "CHICANO47",
+   "ENGLISH219",
+   "HISTORY43",
+   "SOC11",
+   "SPANISH10",
+   "SPANISH12",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=152",
+   "title": "ACADEMIC PROGRAM CODE: W039485G",
+   "h1": "ACADEMIC PROGRAM CODE: W039485G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    152,
+    153,
+    154,
+    155
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39506",
+  "title": "Algebra Fundamentals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39507",
+  "title": "Resilient Leadership for College Engagement",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39508",
+  "title": "21st Century Employability Skills: Communication and Digital Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL116CE",
+   "BSICSKL117CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=226",
+   "title": "ACADEMIC PROGRAM CODE: W039508E",
+   "h1": "ACADEMIC PROGRAM CODE: W039508E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    226
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4543
+ },
+ {
+  "control_number": "39509",
+  "title": "21st Century Employability Skills: Diversity Awareness and Collaboration",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL112CE",
+   "BSICSKL113CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=226",
+   "title": "ACADEMIC PROGRAM CODE: W039509E",
+   "h1": "ACADEMIC PROGRAM CODE: W039509E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    226
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2833
+ },
+ {
+  "control_number": "39510",
+  "title": "21st Century Employability Skills: Empathy and Adaptability",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL110CE",
+   "BSICSKL111CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=255",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    255
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 5314
+ },
+ {
+  "control_number": "39511",
+  "title": "21st Century Employability Skills: Self-Awareness and Resilience",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL114CE",
+   "BSICSKL115CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=227",
+   "title": "ACADEMIC PROGRAM CODE: W039511E",
+   "h1": "ACADEMIC PROGRAM CODE: W039511E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    227
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1992
+ },
+ {
+  "control_number": "39618",
+  "title": "Real Estate Supervisory/Trainee Appraiser Licensing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED197CE",
+   "VOCED198CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=246",
+   "title": "ACADEMIC PROGRAM CODE: W039618E",
+   "h1": "ACADEMIC PROGRAM CODE: W039618E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    246
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3083
+ },
+ {
+  "control_number": "40106",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "ECONC2001",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "MATH261"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113,
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 9493
+ },
+ {
+  "control_number": "40202",
+  "title": "Social Justice Studies: LGBTQ Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "ANTHRO109",
+   "ANTHRO130",
+   "CHICANO47",
+   "HISTORY44",
+   "SOC11",
+   "SOC31",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=153",
+   "title": "ACADEMIC PROGRAM CODE: W040202G",
+   "h1": "ACADEMIC PROGRAM CODE: W040202G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153,
+    154,
+    155,
+    156
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40223",
+  "title": "Emergency Medical Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH21"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=101",
+   "title": "ACADEMIC PROGRAM CODE: W040223D",
+   "h1": "ACADEMIC PROGRAM CODE: W040223D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    101
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 4340
+ },
+ {
+  "control_number": "40810",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "GEOLOGY1",
+   "GEOLOGY2",
+   "GEOLOGY6",
+   "GEOLOGY7",
+   "MATH261",
+   "MATH262"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
+   "title": "ACADEMIC PROGRAM CODE: W040810H",
+   "h1": "ACADEMIC PROGRAM CODE: W040810H",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 4433
+ },
+ {
+  "control_number": "41145",
+  "title": "Architecture Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41340",
+  "title": "Real Estate Appraiser III",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "REALES41",
+   "REALES42",
+   "REALES43",
+   "REALES44",
+   "REALES45"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151",
+   "title": "The Real Estate Appraiser III Certificate of Achievement is",
+   "h1": "The Real Estate Appraiser III Certificate of Achievement is",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    151
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 4797
+ },
+ {
+  "control_number": "41358",
+  "title": "Engineering I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "CHEM101",
+   "ENGGEN101"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=103",
+   "title": "ACADEMIC PROGRAM CODE: W041358D",
+   "h1": "ACADEMIC PROGRAM CODE: W041358D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 11137
+ },
+ {
+  "control_number": "41359",
+  "title": "Engineering II: Mechanical and Civil Engineering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "ENGGEN101",
+   "ENGGEN131",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104",
+   "title": "ACADEMIC PROGRAM CODE: W041359D",
+   "h1": "ACADEMIC PROGRAM CODE: W041359D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 9456
+ },
+ {
+  "control_number": "41360",
+  "title": "Engineering III: Computer and Software, and Electrical Engineering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.917,
+  "codes_found": [
+   "CHEM101",
+   "ENGGEN101",
+   "ENGGEN120",
+   "ENGGEN220",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104",
+   "title": "ACADEMIC PROGRAM CODE: W041360D",
+   "h1": "ACADEMIC PROGRAM CODE: W041360D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 7316
+ },
+ {
+  "control_number": "41378",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS5",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH236",
+   "MATH261",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=76",
+   "title": "ACADEMIC PROGRAM CODE: W041378H",
+   "h1": "ACADEMIC PROGRAM CODE: W041378H",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 9273
+ },
+ {
+  "control_number": "41381",
+  "title": "Fundamentals of Dental Assisting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENAST1",
+   "DENAST12",
+   "DENAST13",
+   "DENAST7",
+   "DENAST8"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=96",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 9837
+ },
+ {
+  "control_number": "41448",
+  "title": "Financial Literacy for College & Workforce Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL65CE",
+   "BSICSKL66CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237",
+   "title": "ACADEMIC PROGRAM CODE: W041448E",
+   "h1": "ACADEMIC PROGRAM CODE: W041448E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    237
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2299
+ },
+ {
+  "control_number": "41464",
+  "title": "Licensing/Employment Test Prep",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL74CE",
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=244",
+   "title": "ACADEMIC PROGRAM CODE: W041464E",
+   "h1": "ACADEMIC PROGRAM CODE: W041464E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    244
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2744
+ },
+ {
+  "control_number": "41465",
+  "title": "Dental Career Skill Enhancement",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED406CE",
+   "VOCED407CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232",
+   "title": "ACADEMIC PROGRAM CODE: W041465E",
+   "h1": "ACADEMIC PROGRAM CODE: W041465E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    232
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3158
+ },
+ {
+  "control_number": "41466",
+  "title": "Academic & Workforce Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41546",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS5",
+   "ECONC2001",
+   "HOSPT100",
+   "HOSPT110",
+   "HOSPT302",
+   "HOSPT320",
+   "HOSPT340",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=119",
+   "title": "ACADEMIC PROGRAM CODE: W041546H",
+   "h1": "ACADEMIC PROGRAM CODE: W041546H",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120,
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 14485
+ },
+ {
+  "control_number": "41589",
+  "title": "Tutor Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED88CE",
+   "VOCED89CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249",
+   "title": "ACADEMIC PROGRAM CODE: W041589E",
+   "h1": "ACADEMIC PROGRAM CODE: W041589E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    249
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2993
+ },
+ {
+  "control_number": "42249",
+  "title": "Global Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLISH203",
+   "ENGLISH204",
+   "GEOG1",
+   "GEOG2",
+   "GEOG7",
+   "HISTORY87",
+   "POLSCI2",
+   "POLSCI60",
+   "POLSCI61",
+   "POLSCI7",
+   "SPANISH4"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
+   "title": "ACADEMIC PROGRAM CODE: W042249G",
+   "h1": "ACADEMIC PROGRAM CODE: W042249G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113,
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 6179
+ },
+ {
+  "control_number": "42377",
+  "title": "Facilities Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS1",
+   "BUS32",
+   "BUS45",
+   "BUS46",
+   "BUS5",
+   "MGMT1",
+   "MGMT31"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=106",
+   "title": "ACADEMIC PROGRAM CODE: W042377D",
+   "h1": "ACADEMIC PROGRAM CODE: W042377D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 3181
+ },
+ {
+  "control_number": "42485",
+  "title": "Fundamentals of Athletic Training and Sports Medicine",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "HEALTH11",
+   "HEALTH12",
+   "KINMAJ126"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=70",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 9530
+ },
+ {
+  "control_number": "42488",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "CHICANO37",
+   "SPANISH1",
+   "SPANISH10",
+   "SPANISH12",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH4"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=157",
+   "title": "ACADEMIC PROGRAM CODE: W042488C",
+   "h1": "ACADEMIC PROGRAM CODE: W042488C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 4771
+ },
+ {
+  "control_number": "42555",
+  "title": "Advanced Athletic Training and Sports Medicine",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "HEALTH11",
+   "HEALTH12",
+   "KINMAJ100",
+   "KINMAJ126",
+   "KINMAJ127",
+   "KINMAJ128",
+   "PHYSIOL1"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=71",
+   "title": "ACADEMIC PROGRAM CODE: W042555D",
+   "h1": "ACADEMIC PROGRAM CODE: W042555D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 2954
+ },
+ {
+  "control_number": "42558",
+  "title": "Athletic Training and Sports Medicine",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "HEALTH11",
+   "HEALTH12",
+   "KINMAJ100",
+   "KINMAJ126",
+   "KINMAJ127",
+   "KINMAJ128",
+   "PHYSIOL1"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=70",
+   "title": "ACADEMIC PROGRAM CODE: W042558C",
+   "h1": "ACADEMIC PROGRAM CODE: W042558C",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 7544
+ },
+ {
+  "control_number": "42627",
+  "title": "In-Home Supportive Services Provider for the English Language Learner",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "VOCED408CE",
+   "VOCED96CE",
+   "VOCED97CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240",
+   "title": "ACADEMIC PROGRAM CODE: W042627E",
+   "h1": "ACADEMIC PROGRAM CODE: W042627E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    240
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 1834
+ },
+ {
+  "control_number": "42629",
+  "title": "Construction Industry Exploration & Preparation Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL74CE",
+   "VOCED252CE",
+   "VOCED259CE",
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231",
+   "title": "ACADEMIC PROGRAM CODE: W042629E",
+   "h1": "ACADEMIC PROGRAM CODE: W042629E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231,
+    232
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 4805
+ },
+ {
+  "control_number": "43067",
+  "title": "Interactive Design I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "ART103",
+   "ART501",
+   "ART633",
+   "MULTIMD100",
+   "MULTIMD805",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=122",
+   "title": "ACADEMIC PROGRAM CODE: W043067D",
+   "h1": "ACADEMIC PROGRAM CODE: W043067D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 4814
+ },
+ {
+  "control_number": "43073",
+  "title": "Graphic Design I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "ART103",
+   "ART501",
+   "ART633",
+   "ART635",
+   "ART639",
+   "MULTIMD100",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=114",
+   "title": "ACADEMIC PROGRAM CODE: W043073D",
+   "h1": "ACADEMIC PROGRAM CODE: W043073D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114,
+    115
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 6310
+ },
+ {
+  "control_number": "43074",
+  "title": "Interactive Design II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43178",
+  "title": "Graphic Design II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.556,
+  "codes_found": [
+   "ART103",
+   "ART501",
+   "ART633",
+   "MULTIMD100",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=115",
+   "title": "ACADEMIC PROGRAM CODE: W043178D",
+   "h1": "ACADEMIC PROGRAM CODE: W043178D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    115
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 3154
+ },
+ {
+  "control_number": "43260",
+  "title": "Corrections",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS309",
+   "ADMJUS39",
+   "ADMJUS75",
+   "ADMJUS8",
+   "CORR2"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=65",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65,
+    66
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 10316
+ },
+ {
+  "control_number": "43351",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "COMM104",
+   "COMM121",
+   "COMM122",
+   "COMM151",
+   "COMM170",
+   "COMM180",
+   "COMMC1000",
+   "ENGLISH102",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=86",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86,
+    87
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 9307
+ },
+ {
+  "control_number": "43359",
+  "title": "Cyber Security Essentials",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS112",
+   "CIS211",
+   "CIS213"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90",
+   "title": "ACADEMIC PROGRAM CODE: W043359D",
+   "h1": "ACADEMIC PROGRAM CODE: W043359D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91,
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 11886
+ },
+ {
+  "control_number": "43450",
+  "title": "UCTP Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=77",
+   "title": "ACADEMIC PROGRAM CODE: W043450M",
+   "h1": "ACADEMIC PROGRAM CODE: W043450M",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 3677
+ },
+ {
+  "control_number": "43457",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "GEOG1",
+   "GEOG15",
+   "GEOG2",
+   "GEOG3",
+   "GEOG7",
+   "GEOLOGY1"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=112",
+   "title": "ACADEMIC PROGRAM CODE: W043457G",
+   "h1": "ACADEMIC PROGRAM CODE: W043457G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113,
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 12498
+ },
+ {
+  "control_number": "43483",
+  "title": "Fundamentals of Medical Assisting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH21",
+   "HLTHOCC52",
+   "HLTHOCC61",
+   "HLTHOCC62"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132",
+   "title": "ACADEMIC PROGRAM CODE: W043483D",
+   "h1": "ACADEMIC PROGRAM CODE: W043483D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 12493
+ },
+ {
+  "control_number": "43507",
+  "title": "Data Analytics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "CIS105",
+   "CIS192",
+   "CIS193",
+   "CIS219"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=93",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94,
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 14579
+ },
+ {
+  "control_number": "43570",
+  "title": "Film, Television, and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "CINEMA1",
+   "CINEMA107",
+   "CINEMA112",
+   "CINEMA18",
+   "CINEMA2",
+   "CINEMA3",
+   "CINEMA4",
+   "CINEMA5",
+   "CINEMA6",
+   "CINEMA9",
+   "COMM170",
+   "FLMPRD100",
+   "MULTIMD805"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=108",
+   "title": "ACADEMIC PROGRAM CODE: W043570H",
+   "h1": "ACADEMIC PROGRAM CODE: W043570H",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 14,
+  "text_chars": 8254
+ },
+ {
+  "control_number": "43628",
+  "title": "UCTP Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=142",
+   "title": "ACADEMIC PROGRAM CODE: W043628M",
+   "h1": "ACADEMIC PROGRAM CODE: W043628M",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    142,
+    143
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 9794
+ },
+ {
+  "control_number": "43667",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO102",
+   "CHDEV11",
+   "COMM122",
+   "ECONC2001",
+   "ECONC2002",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH41",
+   "PSYCH79",
+   "PSYCH900",
+   "PSYCH91",
+   "PSYCH921",
+   "SOC1",
+   "SOC11",
+   "SOC2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=154",
+   "title": "ACADEMIC PROGRAM CODE: W043667G",
+   "h1": "ACADEMIC PROGRAM CODE: W043667G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154,
+    155,
+    156
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 17,
+  "text_chars": 14341
+ },
+ {
+  "control_number": "43694",
+  "title": "Orthodontic Dental Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "ALDHTH21",
+   "DENAST1",
+   "DENAST13",
+   "DENAST17",
+   "DENAST18",
+   "DENAST7",
+   "DENAST8",
+   "DENAST901"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=97",
+   "title": "ACADEMIC PROGRAM CODE:  W043694D",
+   "h1": "ACADEMIC PROGRAM CODE:  W043694D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 3597
+ },
+ {
+  "control_number": "43749",
+  "title": "Data Science Essentials",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS105",
+   "CS159"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=94",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94,
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 9989
+ },
+ {
+  "control_number": "43762",
+  "title": "Data Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS192",
+   "CIS193",
+   "CIS219",
+   "CS121",
+   "CS159"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=94",
+   "title": "ACADEMIC PROGRAM CODE: W043762D",
+   "h1": "ACADEMIC PROGRAM CODE: W043762D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94,
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 7833
+ },
+ {
+  "control_number": "43838",
+  "title": "Essentials of Robotics and Programming",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EET123",
+   "ENGGEN101",
+   "MIT220"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 9737
+ },
+ {
+  "control_number": "44361",
+  "title": "Interpersonal Skills for the Workplace",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED122CE",
+   "VOCED822CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=241",
+   "title": "ACADEMIC PROGRAM CODE: W044361E",
+   "h1": "ACADEMIC PROGRAM CODE: W044361E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    241
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4315
+ },
+ {
+  "control_number": "44362",
+  "title": "Adult Basic Education",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL23CE",
+   "BSICSKL34CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228",
+   "title": "ACADEMIC PROGRAM CODE: W044362F",
+   "h1": "ACADEMIC PROGRAM CODE: W044362F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    228,
+    229
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 4382
+ },
+ {
+  "control_number": "44396",
+  "title": "Health, Nutrition, and  Food Sanitation in Early Childhood Education",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV10",
+   "CHDEV172",
+   "HEALTH11",
+   "HEALTH12"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=80",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80,
+    81,
+    82,
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44397",
+  "title": "Teaching Learners with Special Needs",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV172",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV44",
+   "CHDEV45"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=83",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 10884
+ },
+ {
+  "control_number": "44398",
+  "title": "Infant and Toddlers Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV11",
+   "CHDEV172",
+   "CHDEV2",
+   "CHDEV30",
+   "CHDEV31"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=81",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81,
+    82,
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44417",
+  "title": "Food Service Manager Skills Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED247CE",
+   "VOCED254CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    237,
+    238
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 8957
+ },
+ {
+  "control_number": "44418",
+  "title": "Food Handler’s Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED247CE",
+   "VOCED253CE",
+   "VOCED98CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237",
+   "title": "ACADEMIC PROGRAM CODE: W044418E",
+   "h1": "ACADEMIC PROGRAM CODE: W044418E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    237,
+    238
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 5766
+ },
+ {
+  "control_number": "44419",
+  "title": "Gig Economy Success Kit",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED63CE",
+   "VOCED84CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239",
+   "title": "ACADEMIC PROGRAM CODE: W044419E",
+   "h1": "ACADEMIC PROGRAM CODE: W044419E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    239
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 3659
+ },
+ {
+  "control_number": "44443",
+  "title": "Administration and Supervision of Early Childhood Education",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV10",
+   "CHDEV172",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV65",
+   "CHDEV7",
+   "CHDEV8"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=80",
+   "title": "ACADEMIC PROGRAM CODE: W044443D",
+   "h1": "ACADEMIC PROGRAM CODE: W044443D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80,
+    81,
+    82,
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44444",
+  "title": "Preschool Associate Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV7",
+   "CHDEV8"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=82",
+   "title": "ACADEMIC PROGRAM CODE: W044444D",
+   "h1": "ACADEMIC PROGRAM CODE: W044444D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 14974
+ },
+ {
+  "control_number": "44452",
+  "title": "Title 22: Preschool Associate Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV7",
+   "CHDEV8"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=84",
+   "title": "ACADEMIC PROGRAM CODE: W044452D",
+   "h1": "ACADEMIC PROGRAM CODE: W044452D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 2909
+ },
+ {
+  "control_number": "44553",
+  "title": "Computer Skills for the Workplace",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED103CE",
+   "VOCED104CE",
+   "VOCED105CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231",
+   "title": "ACADEMIC PROGRAM CODE: W044553E",
+   "h1": "ACADEMIC PROGRAM CODE: W044553E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 2893
+ },
+ {
+  "control_number": "44586",
+  "title": "Entrepreneurship Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED84CE",
+   "VOCED97CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235",
+   "title": "ACADEMIC PROGRAM CODE: W044586E",
+   "h1": "ACADEMIC PROGRAM CODE: W044586E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    235
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 3186
+ },
+ {
+  "control_number": "44587",
+  "title": "Introduction to Computers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED128CE",
+   "VOCED129CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
+   "title": "ACADEMIC PROGRAM CODE: W044587E",
+   "h1": "ACADEMIC PROGRAM CODE: W044587E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    243
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 3756
+ },
+ {
+  "control_number": "44613",
+  "title": "Essentials of Video Game Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS116",
+   "CS173",
+   "CS175",
+   "FLMPRD201",
+   "GAD101",
+   "GAD2101"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=93",
+   "title": "ACADEMIC PROGRAM CODE: W044613D",
+   "h1": "ACADEMIC PROGRAM CODE: W044613D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 3721
+ },
+ {
+  "control_number": "44623",
+  "title": "Virtual Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "FLMPRD200",
+   "FLMPRD201",
+   "FLMPRD202",
+   "FLMPRD207",
+   "FLMPRD214"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=109",
+   "title": "ACADEMIC PROGRAM CODE: W044623D",
+   "h1": "ACADEMIC PROGRAM CODE: W044623D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 3646
+ },
+ {
+  "control_number": "44669",
+  "title": "Aviation Maintenance Technology - Avionics",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44806",
+  "title": "Technology for Success in the Workplace",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED103CE",
+   "VOCED104CE",
+   "VOCED105CE",
+   "VOCED129CE",
+   "VOCED3CE",
+   "VOCED98CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248",
+   "title": "ACADEMIC PROGRAM CODE: W044806E",
+   "h1": "ACADEMIC PROGRAM CODE: W044806E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    248
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 1618
+ },
+ {
+  "control_number": "44945",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.905,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS4",
+   "ADMJUS67",
+   "AFROAM4",
+   "AFROAM5",
+   "ANATOMY1",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO104",
+   "ANTHRO109",
+   "ANTHRO121",
+   "ANTHRO130",
+   "ANTHRO132",
+   "ART101",
+   "ART103",
+   "ART107",
+   "ART117",
+   "ASIAN3",
+   "ASTRON1",
+   "BIOLOGY10",
+   "BIOLOGY3",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM221",
+   "CHEM51",
+   "CHEM60",
+   "CHEM66",
+   "CHICANO2",
+   "CHICANO37",
+   "CHICANO47",
+   "CINEMA107",
+   "CINEMA18",
+   "CINEMA3",
+   "CINEMA4",
+   "COMM122",
+   "COMMC1000",
+   "CS131",
+   "DANCEST805",
+   "EARTH1",
+   "ECON10",
+   "ECON11",
+   "EDUC211",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH101Y",
+   "ENGLISH102",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH215",
+   "ENGLISH219",
+   "ENGLISH234",
+   "ENVSCI1",
+   "ENVSCI2",
+   "ENVSCI24",
+   "GEOG1",
+   "GEOG2",
+   "GEOG7",
+   "GEOLOGY1",
+   "GEOLOGY2",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY11",
+   "HISTORY2",
+   "HISTORY27",
+   "HISTORY29",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN30",
+   "HUMAN31",
+   "HUMAN60",
+   "MATH230",
+   "MATH236",
+   "MATH245",
+   "MATH246",
+   "MATH260",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "MICRO20",
+   "MUSIC111",
+   "OCEANO1",
+   "PHILOS1",
+   "PHILOS12",
+   "PHILOS20",
+   "PHILOS28",
+   "PHILOS33",
+   "PHILOS41",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSSC1",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI60",
+   "POLSCI61",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH91",
+   "SOC1",
+   "SOC11",
+   "SOC2",
+   "SOC31",
+   "SPANISH10",
+   "SPANISH12",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH4",
+   "STATC1000",
+   "STATC1000E",
+   "THEATER100",
+   "THEATER110"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=273",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    273,
+    274,
+    275
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 148,
+  "text_chars": 5035
+ },
+ {
+  "control_number": "45275",
+  "title": "Residential License Appraiser Practicum I",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.545,
+  "codes_found": [
+   "REALES46",
+   "REALES47L",
+   "REALES48",
+   "REALES49L",
+   "REALES942",
+   "REALES943"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=147",
+   "title": "ACADEMIC PROGRAM CODE: W045275D",
+   "h1": "ACADEMIC PROGRAM CODE: W045275D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    147,
+    148
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 7932
+ },
+ {
+  "control_number": "45276",
+  "title": "Certified Residential License Appraiser Practicum II",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45277",
+  "title": "Certified Nursing Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH21",
+   "ALDHTH33",
+   "NRSHCA399A",
+   "NRSHCA399B",
+   "NRSHCA400",
+   "NRSHCA56"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=134",
+   "title": "ACADEMIC PROGRAM CODE: W045277D",
+   "h1": "ACADEMIC PROGRAM CODE: W045277D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 4552
+ },
+ {
+  "control_number": "45278",
+  "title": "Real Estate Appraisal",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS15",
+   "BUS5",
+   "CS101",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLISH101Y",
+   "FINANCE1",
+   "FINANCE2",
+   "FINANCE8",
+   "GEOG1",
+   "MATH245",
+   "MATH246",
+   "MGMT1",
+   "MGMT13",
+   "MGMT6",
+   "REALES1",
+   "REALES10",
+   "REALES11",
+   "REALES14",
+   "REALES21",
+   "REALES3",
+   "REALES39",
+   "REALES40",
+   "REALES5",
+   "REALES7",
+   "REALES9",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=146",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146,
+    147
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 31,
+  "text_chars": 10412
+ },
+ {
+  "control_number": "45283",
+  "title": "English as a Second Language - Conversation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC50CE",
+   "ESLNC60CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=233",
+   "title": "ACADEMIC PROGRAM CODE: W045283F",
+   "h1": "ACADEMIC PROGRAM CODE: W045283F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    233
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3589
+ },
+ {
+  "control_number": "45310",
+  "title": "English for Speakers of Other Languages (Level 1)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC110CE",
+   "ESLNC221CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=234",
+   "title": "ACADEMIC PROGRAM CODE: W045310F",
+   "h1": "ACADEMIC PROGRAM CODE: W045310F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    234
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1220
+ },
+ {
+  "control_number": "45311",
+  "title": "English for Speakers of Other Languages (Level 2)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC210CE",
+   "ESLNC222CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    235
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4389
+ },
+ {
+  "control_number": "45312",
+  "title": "English as a Second Language - Pronunciation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC48CE",
+   "ESLNC49CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=233",
+   "title": "ACADEMIC PROGRAM CODE: W045312F",
+   "h1": "ACADEMIC PROGRAM CODE: W045312F",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    233
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2638
+ },
+ {
+  "control_number": "45613",
+  "title": "Digital Media: Production & Streaming",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED871CE",
+   "VOCED872CE",
+   "VOCED873CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232",
+   "title": "ACADEMIC PROGRAM CODE: W045613E",
+   "h1": "ACADEMIC PROGRAM CODE: W045613E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    232
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 1949
+ },
+ {
+  "control_number": "45655",
+  "title": "School Age Programs",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV11",
+   "CHDEV172",
+   "CHDEV46",
+   "CHDEV47",
+   "CHDEV7",
+   "CHDEV8"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=82",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45672",
+  "title": "Game Art",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FLMPRD200",
+   "FLMPRD207",
+   "GAD101",
+   "GAD102",
+   "GAD2101",
+   "GAD2102",
+   "GAD2103"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=110",
+   "title": "ACADEMIC PROGRAM CODE: W045672D",
+   "h1": "ACADEMIC PROGRAM CODE: W045672D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110,
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 5321
+ },
+ {
+  "control_number": "45673",
+  "title": "Game Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FLMPRD200",
+   "FLMPRD201",
+   "GAD101",
+   "GAD102",
+   "GAD203",
+   "GAD2101",
+   "GAD2102",
+   "GAD2103"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=111",
+   "title": "ACADEMIC PROGRAM CODE: W045673D",
+   "h1": "ACADEMIC PROGRAM CODE: W045673D",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 3142
+ },
+ {
+  "control_number": "45685",
+  "title": "Licensed Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "NRSHCA81A",
+   "NRSHCA81B",
+   "NRSHCA81C",
+   "NRSHCA82A",
+   "NRSHCA82B",
+   "NRSHCA82C",
+   "NRSHCA83A",
+   "NRSHCA83B",
+   "NRSHCA83C"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=209",
+   "title": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "h1": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    209
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 5319
+ },
+ {
+  "control_number": "45719",
+  "title": "Nursing Assistant Preparation (CNA)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED343CE",
+   "VOCED473CE",
+   "VOCED475CE",
+   "VOCED476CE",
+   "VOCED662CE",
+   "VOCED954CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=245",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    245
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 4545
+ },
+ {
+  "control_number": "45793",
+  "title": "First-Time Management Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED443CE",
+   "VOCED939CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237",
+   "title": "ACADEMIC PROGRAM CODE: W045793E",
+   "h1": "ACADEMIC PROGRAM CODE: W045793E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    237
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 4251
+ },
+ {
+  "control_number": "45825",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS213",
+   "CS216",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=129",
+   "title": "ACADEMIC PROGRAM CODE: W045825H",
+   "h1": "ACADEMIC PROGRAM CODE: W045825H",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    129,
+    130
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 6897
+ },
+ {
+  "control_number": "45855",
+  "title": "Virtual and Executive Administrative Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED288CE",
+   "VOCED440CE",
+   "VOCED441CE",
+   "VOCED442CE",
+   "VOCED443CE",
+   "VOCED472CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249",
+   "title": "ACADEMIC PROGRAM CODE: W045855E",
+   "h1": "ACADEMIC PROGRAM CODE: W045855E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    249
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 1953
+ },
+ {
+  "control_number": "45856",
+  "title": "Roadmap to People Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED288CE",
+   "VOCED440CE",
+   "VOCED441CE",
+   "VOCED442CE",
+   "VOCED443CE",
+   "VOCED472CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=246",
+   "title": "ACADEMIC PROGRAM CODE: W045856E",
+   "h1": "ACADEMIC PROGRAM CODE: W045856E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    246,
+    247
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 5572
+ },
+ {
+  "control_number": "46130",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.938,
+  "codes_found": [
+   "ADDICST1",
+   "ALDHTH102",
+   "ALDHTH103",
+   "ANATOMY1",
+   "BIOLOGY3",
+   "CHEM101",
+   "CHEM60",
+   "HEALTH11",
+   "MICRO20",
+   "PSYCC1000",
+   "PSYCH52",
+   "PSYCH91",
+   "SOC1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=116",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46261",
+  "title": "Spanish for the Workplace Fundamentals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "VOCED945CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=266",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    266
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4578
+ },
+ {
+  "control_number": "46438",
+  "title": "Introduction to California Building Codes Fundamentals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED259CE",
+   "VOCED464CE",
+   "VOCED465CE",
+   "VOCED466CE",
+   "VOCED467CE",
+   "VOCED468CE",
+   "VOCED469CE",
+   "VOCED470CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=241",
+   "title": "ACADEMIC PROGRAM CODE: W046438E",
+   "h1": "ACADEMIC PROGRAM CODE: W046438E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    241,
+    242,
+    243
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 12169
+ },
+ {
+  "control_number": "46441",
+  "title": "Introduction to Construction, Inspection and Codes",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED252CE",
+   "VOCED259CE",
+   "VOCED464CE",
+   "VOCED465CE",
+   "VOCED466CE",
+   "VOCED467CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=242",
+   "title": "ACADEMIC PROGRAM CODE: W046441E",
+   "h1": "ACADEMIC PROGRAM CODE: W046441E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    242,
+    243
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 8039
+ },
+ {
+  "control_number": "46446",
+  "title": "Introduction to Green Construction",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED252CE",
+   "VOCED259CE",
+   "VOCED465CE",
+   "VOCED466CE",
+   "VOCED467CE",
+   "VOCED471CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=242",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    242,
+    243
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 8853
+ },
+ {
+  "control_number": "46447",
+  "title": "Leadership for Environmental Conservation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL104CE",
+   "VOCED222CE",
+   "VOCED223CE",
+   "VOCED322CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    243,
+    244
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 9082
+ },
+ {
+  "control_number": "46522",
+  "title": "Medical Assisting Essentials",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH21",
+   "ALDHTH33",
+   "COOPED95",
+   "HLTHOCC52",
+   "HLTHOCC61"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132",
+   "title": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "h1": "CREDIT PROGRAMS: DEGREES & CERTIFICATES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 14801
+ },
+ {
+  "control_number": "46550",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "ART103",
+   "BIOLOGY3",
+   "CHDEV1",
+   "CHEM51",
+   "COMMC1000",
+   "EARTH1",
+   "EARTH2",
+   "EDUC1",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "HISTORY86",
+   "MUSIC111",
+   "PHYSICS6",
+   "PHYSSC1",
+   "PHYSSC14",
+   "POLSC1000",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=100",
+   "title": "ACADEMIC PROGRAM CODE: W046550G",
+   "h1": "ACADEMIC PROGRAM CODE: W046550G",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 23,
+  "text_chars": 3751
+ }
+]

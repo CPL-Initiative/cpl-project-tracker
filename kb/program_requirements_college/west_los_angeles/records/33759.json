@@ -1,0 +1,178 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "33759",
+ "shape": "noncredit",
+ "title": "Foundation for Academic Success I",
+ "award": "Noncredit program",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=238",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7036,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7036,
+    "output_tokens": 1109,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1109,
+  "output_tokens_details": {
+   "thinking_tokens": 349
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05032,
+ "ms": 9433,
+ "seconds": 9.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    144.0,
+    144.0
+   ],
+   "stated": [
+    144.0,
+    144.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ACADEMIC PROGRAM CODE: W033759F (144 hours)",
+   "measure": "hours",
+   "total_units": {
+    "min": 144,
+    "max": 144
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Writing – Students will compose a grammatically correct and coherent written summary and response to assigned material and prompts.",
+    "Reading—Students will identify authorial intent, main ideas, and supporting details in various texts read silently and aloud.",
+    "Calculate whole numbers, fractions, mixed numbers, and decimals through addition, subtraction, multiplication and division functions in numeric and word problems.",
+    "Determine and employ the necessary sequence of steps and calculations to solve and graph algebraic linear equations and geometric measurements.",
+    "Analyze historical primary and secondary sources and understand their meaning and inferences and socio-political context.",
+    "Apply scientific reasoning skills and interpret data sets and make correlations."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSICSKL 027CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 034CE",
+      "units": 117,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 075CE",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program's title heading is not in the extracted text (it likely sits at the bottom of the previous page). The section is identified by its program code line, 'ACADEMIC PROGRAM CODE: W033759F', and its description, which names the Foundation for Academic Success I Certificate of Competency.",
+   "The award is counted in hours: 144 hours total. The course hours (18 + 117 + 9) match this total.",
+   "The text that follows, Foundation for Academic Success II (W033554F) and Front Desk Representative & Reservationist, belongs to other programs and was not read for this record."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

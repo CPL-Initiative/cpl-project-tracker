@@ -1,0 +1,410 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "37029",
+ "shape": "adt",
+ "title": "ELEMENTARY TEACHER EDUCATION",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=100",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7815,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7815,
+    "output_tokens": 3444,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3444,
+  "output_tokens_details": {
+   "thinking_tokens": 1232
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10014,
+ "ms": 27480,
+ "seconds": 28.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 19,
+   "share": 0.737,
+   "missing": [
+    "ART101",
+    "CHEM60",
+    "GEOG7",
+    "HISTORY11",
+    "MATH215"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "ARTHC1100",
+    "ARTHC1200",
+    "CHDEV1",
+    "EARTH1",
+    "EARTH2",
+    "HISTC1001",
+    "PHYSICS6"
+   ],
+   "flagged": [
+    "ARTHC1100",
+    "ARTHC1200",
+    "CHDEV1",
+    "EARTH1",
+    "EARTH2",
+    "HISTC1001",
+    "PHYSICS6"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    35.0,
+    40.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ELEMENTARY TEACHER EDUCATION: INTEGRATED PROGRAMS (AA-T)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Implement various environmental rating scales and assessment tools for school-age programs.",
+    "Be able to design and implement age appropriate activities.",
+    "Identify opportunities that support school-age student learning and development."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "EDUC 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOLOGY 003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 086",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLISH 102",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major elective units, List A: EARTH 001 and EARTH 002",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EARTH 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EARTH 002",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Major elective units, List A: PHYS SC 001 and PHYS SC 014",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS SC 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS SC 014",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major elective units, List A: CHEM 051 and PHYSICS 006",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 051",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 006",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Major elective units, List B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major elective units, List C",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 101",
+    "why": "not in the text; catalog prints ARTH C1100 instead"
+   },
+   {
+    "code": "ART101",
+    "why": "not in the text; catalog prints ARTH C1100 instead"
+   },
+   {
+    "code": "CHEM 60",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 7",
+    "why": "not in the text; possibly in List C continuation cut off by the page break"
+   },
+   {
+    "code": "HISTORY 11",
+    "why": "not in the text; catalog prints HIST C1001 instead"
+   },
+   {
+    "code": "MATH 215",
+    "why": "not in the text; possibly in List C or a later part cut off by the page break"
+   }
+  ],
+  "notes": [
+   "The text ends after the first List C course (ENGL C1001); List C and any later requirements (e.g., total major units, MATH course) appear cut off at the page break. Reviewer should check the next page.",
+   "List A ('choose one from the following', 4-9 units) offers three pairs of courses joined by AND; each pair is recorded as its own all-required block in option_group 'List A'. The printed 4-9 total applies to the list as a whole.",
+   "The 'Total Major Units 23-25 ... Total Units 60' lines at the top of the page belong to the preceding program (Business/Economics), not this award; total_units and degree_total left null.",
+   "ge_units 34 is taken from the generic ADT requirement sentence stating Cal-GETC is 34 semester units; the 60-unit sentence is the generic ADT requirement, not recorded as degree_total.",
+   "HISTORY 086 OR ENGLISH 102 recorded as one core entry with an alternative; ENGLISH 102 and ENGL C1001 are printed with an asterisk (prerequisite/corequisite), omitted from codes. The catalog titles ENGLISH 102 'Academic Writing and Literature', differing from the closed-list title.",
+   "Codes printed with leading zeros (EDUC 001, BIOLOGY 003, PHYS SC 001/014, CHEM 051, HISTORY 086) treated as matching closed-list EDUC 1, BIOLOGY 3, PHYS SC 1/14, CHEM 51, HISTORY 86.",
+   "Required core courses sum to the stated 25 units counting the HISTORY 086/ENGLISH 102 choice once."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

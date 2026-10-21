@@ -1,0 +1,229 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "41359",
+ "shape": "certificate",
+ "title": "Engineering II: Mechanical and Civil Engineering",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9309,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9309,
+    "output_tokens": 1507,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1507,
+  "output_tokens_details": {
+   "thinking_tokens": 479
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06738,
+ "ms": 13601,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering II: Mechanical and Civil Engineering Certificate of Achievement (ACADEMIC PROGRAM CODE: W041359D)",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design, implement, test, and debug programs that use each of the following: basic computation, simple input/output, standard conditional and iterative structures, user-defined functions, arrays, pointers, classes, and external data files.",
+    "Analyze and solve a wide variety of problems in the areas of mechanics, gravity, conservation of energy and momentum, kinematics, and solids and fluids using skills in algebra, trigonometry, and calculus."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 38,
+     "max": 38
+    },
+    "courses": [
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 101",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 261",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 262",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 263",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 275",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 037",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 038",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHYSICS 039",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section's heading (program title line and major code) is not in the excerpt; the text begins at 'ACADEMIC PROGRAM CODE: W041359D' at the top of page 104, so the heading is likely on the previous page.",
+   "The catalog prints PHYSICS 037, 038, 039 with a leading zero; these are taken to be the closed list's PHYSICS 37, 38, 39.",
+   "MATH 263 is printed with the title 'Calculus II' (likely a typo for Calculus III).",
+   "Course units sum to 38 with one of MATH 270/MATH 275 and one of PHYSICS 038/PHYSICS 039, matching the printed 38-unit total."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

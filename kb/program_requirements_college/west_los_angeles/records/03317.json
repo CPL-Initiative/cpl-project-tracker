@@ -1,0 +1,151 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "03317",
+ "shape": "degree",
+ "title": "French",
+ "award": "A.A. Degree",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=125",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7373,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7373,
+    "output_tokens": 960,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 960,
+  "output_tokens_details": {
+   "thinking_tokens": 400
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04869,
+ "ms": 9985,
+ "seconds": 10.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "FRENCH1",
+    "FRENCH2"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FRENCH 1",
+    "why": "No French A.A. section in the text; FRENCH 001 appears only in the elective list of Liberal Arts & Sciences: Arts & Humanities (AA)"
+   },
+   {
+    "code": "FRENCH 2",
+    "why": "No French A.A. section in the text; FRENCH 002 appears only in the elective list of Liberal Arts & Sciences: Arts & Humanities (AA)"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 125) has no section for a French A.A. degree. It shows the end of a preceding program (Total Major Units 31; Cal-GETC 13-19; CSU-transferable electives 10-16; Total 60) and the start of Liberal Arts & Sciences: Arts & Humanities (AA), major code 4903.10, program code W019431C.",
+   "That Liberal Arts & Sciences program lists FRENCH 001 and 002 among 18 elective units, with no more than 6 units in any single discipline. It also mentions French as a possible transfer major. Its requirements, outcomes and careers were not recorded because it is a different award.",
+   "The text is cut off mid-list (it ends at JAPAN 001). The French A.A. section may be on another page; a reviewer should check whether the college still offers a French A.A. in the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "39536207109"
+}
