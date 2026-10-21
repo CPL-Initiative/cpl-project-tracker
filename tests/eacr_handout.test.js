@@ -32,8 +32,8 @@ check("the EACR names My College's storage key", !!eacrKey);
 check("college_briefing.js still declares SCOPE_KEY", !!briefingKey);
 check("⭐ the two literals are identical (a rename on either side breaks the hand-off)",
   !!eacrKey && eacrKey === briefingKey);
-check("My College reads the remembered scope as {scope, college, district, swpRegion}",
-  /scope: state\.scope, college: state\.college, district: state\.district,\s*swpRegion: state\.swpRegion/.test(briefingSrc));
+check("My College reads only a hand-off, once (Sam, 2026-10-21: tabs never remember a choice)",
+  /r\.handoff !== true/.test(briefingSrc) && /localStorage\.removeItem\(SCOPE_KEY\)/.test(briefingSrc));
 
 // ── 2. Behaviour ────────────────────────────────────────────────────────────
 const exhibits = [
@@ -111,7 +111,7 @@ function run() {
   check("with ONE college filtered, it is handed over as My College's remembered choice",
     val(() => stored().college) === "Norco College" && val(() => stored().scope) === "college");
   check("...in the shape My College restores (district and swpRegion blank)",
-    val(() => stored().district) === "" && val(() => stored().swpRegion) === "");
+    val(() => stored().district) === "" && val(() => stored().swpRegion) === "" && val(() => stored().handoff) === true);
   check("...and the tab is opened by the router, not a hash guess",
     navs.length === 2 && navs[1][0] === "college-briefing");
 

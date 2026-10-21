@@ -118,9 +118,9 @@
     // the entity within it. `college` above stays the college-scope selection
     // because everything downstream of it keys on the college NAME.
     scope: null,
-    // The PREVIOUS visit's choice, offered as a shortcut on the scope question
-    // and read by nothing else. Never seeds `scope`/`college` — the tab always
-    // asks first (Sam, 2026-08-21). See restoreScope().
+    // A choice another tab handed over (restoreScope()), offered as a shortcut on
+    // the scope question and read by nothing else. Never seeds `scope`/`college`;
+    // the tab always asks first (Sam, 2026-08-21).
     remembered: null,
     // Per-college detail, fetched on selection rather than up front — 123
     // colleges' worth of credential rows is not worth loading to show one.
@@ -1472,13 +1472,13 @@
    * that", where a disabled one with a sentence reads as "known, not yet wired"
    * — which is the truth, and it is also how the next person knows to ask. */
   function scopePicker() {
-    // The shortcut the old auto-restore used to take on the reader's behalf.
-    // Named, so nobody lands on a college without having read its name.
+    // A choice another tab handed over (the statewide map's Create Handout), offered
+    // by name, so nobody lands on a college without having read its name.
     var last = rememberedLabel();
     var resume = last
       ? '<div class="cb-scope-again"><button type="button" class="cb-act" data-scope-resume="1">'
-        + "Open " + esc(last) + " again</button>"
-        + '<span class="cb-scope-again-l">what you looked at last time</span></div>'
+        + "Open " + esc(last) + "</button>"
+        + '<span class="cb-scope-again-l">the college you chose on the statewide map</span></div>'
       : "";
     return '<div class="cb-scope" role="group" aria-label="Choose your view">'
       + '<h2 class="cb-scope-q">What would you like to look at?</h2>'
@@ -3570,19 +3570,19 @@
     if (T && typeof T.navigate === "function") T.navigate("cpl-pathways");
   }
 
+  /* The choice lasts the visit and is never stored (Sam, 2026-10-21: "It would be best if tabs
+   * didn't remember the previously filtered objects"). The one stored choice My College reads is
+   * a hand-off another tab writes just before opening it (the statewide map's Create Handout,
+   * marked `handoff`); it is read once and cleared. A choice an earlier build stored is cleared
+   * unread. */
   function rememberScope() {
     shareChoice();
-    try {
-      localStorage.setItem(SCOPE_KEY, JSON.stringify({
-        scope: state.scope, college: state.college, district: state.district,
-        swpRegion: state.swpRegion
-      }));
-    } catch (e) { /* in-memory only */ }
   }
   function restoreScope() {
     try {
       var r = JSON.parse(localStorage.getItem(SCOPE_KEY) || "null");
-      if (!r || !r.scope) return;
+      try { localStorage.removeItem(SCOPE_KEY); } catch (e) { /* private window */ }
+      if (!r || !r.scope || r.handoff !== true) return;
       // Only offer a scope that is still READY. A remembered "swp" from a
       // future build must not become a shortcut that lands on a blank screen.
       var known = SCOPES.filter(function (s) { return s.k === r.scope && s.ready; });
