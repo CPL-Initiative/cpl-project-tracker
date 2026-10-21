@@ -1,0 +1,30 @@
+{
+ "college": "Santa Monica College",
+ "programs": 256,
+ "with_closed_list": 240,
+ "found": 239,
+ "extracted": 239,
+ "errors": 1,
+ "passed_machine_checks": 157,
+ "failed": {
+  "coverage": 14,
+  "invented": 1,
+  "arithmetic": 78,
+  "repeated": 1,
+  "outcomes": 5
+ },
+ "cost_usd": 20.34,
+ "cost_per_program": 0.0851,
+ "not_found": [
+  {
+   "control_number": "08982",
+   "title": "General Science",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=141",
+    "coverage": 0.245
+   }
+  }
+ ],
+ "run": "39567439681"
+}

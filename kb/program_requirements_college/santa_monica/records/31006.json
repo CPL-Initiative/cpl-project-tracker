@@ -1,0 +1,907 @@
+{
+ "college": "Santa Monica College",
+ "control_number": "31006",
+ "shape": "adt",
+ "title": "Art History",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=164",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13320,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13320,
+    "output_tokens": 4394,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4394,
+  "output_tokens_details": {
+   "thinking_tokens": 352
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.14116,
+ "ms": 30646,
+ "seconds": 31.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 154,
+   "share": 0.0,
+   "missing": [
+    "AHIS11",
+    "AHIS15",
+    "AHIS17",
+    "AHIS18",
+    "AHIS21",
+    "AHIS22",
+    "AHIS3",
+    "AHIS52",
+    "AHIS71",
+    "AHIS72",
+    "ANTHRO14",
+    "ANTHRO2",
+    "ANTHRO20",
+    "ANTHRO21",
+    "ANTHRO22",
+    "ANTHRO3",
+    "ANTHRO4",
+    "ANTHRO7",
+    "ARABIC1",
+    "ART10A",
+    "ART10C",
+    "ART13",
+    "ART21A",
+    "ART21B",
+    "ART40B",
+    "ART40C",
+    "ART52B",
+    "ART52C",
+    "ART60",
+    "ARTHC1100",
+    "ARTHC1200",
+    "CHNESE1",
+    "CHNESE2",
+    "CHNESE3",
+    "CHNESE4",
+    "CHNESE9",
+    "DANCE2",
+    "DANCE5",
+    "ECON15",
+    "ENGL32",
+    "ENGL51",
+    "ENGL52",
+    "ENGL55",
+    "FILM1",
+    "FILM2",
+    "FILM7",
+    "FRENCH1",
+    "FRENCH2",
+    "FRENCH3",
+    "FRENCH4",
+    "GEOG8",
+    "GERMAN1",
+    "GERMAN2",
+    "GERMAN3",
+    "GERMAN4",
+    "HEBREW1",
+    "HEBREW2",
+    "HIST1",
+    "HIST10",
+    "HIST13",
+    "HIST15",
+    "HIST16",
+    "HIST19",
+    "HIST2",
+    "HIST20",
+    "HIST21",
+    "HIST22",
+    "HIST24",
+    "HIST25",
+    "HIST26",
+    "HIST29",
+    "HIST3",
+    "HIST33",
+    "HIST34",
+    "HIST38",
+    "HIST39",
+    "HIST4",
+    "HIST41",
+    "HIST42",
+    "HIST43",
+    "HIST5",
+    "HIST52",
+    "HIST53",
+    "HIST55",
+    "HIST6",
+    "HIST62",
+    "HISTC1001",
+    "HISTC1002",
+    "HUM26",
+    "ITAL1",
+    "ITAL2",
+    "ITAL3",
+    "JAPAN1",
+    "JAPAN2",
+    "JAPAN3",
+    "JAPAN4",
+    "KOREAN1",
+    "KOREAN2",
+    "KOREAN3",
+    "KOREAN4",
+    "MUSIC1",
+    "MUSIC30",
+    "MUSIC31",
+    "MUSIC32",
+    "MUSIC33",
+    "MUSIC36",
+    "MUSIC37",
+    "MUSIC39",
+    "MUSIC60A",
+    "MUSIC60B",
+    "NUTR7",
+    "PERSIN1",
+    "PERSIN2",
+    "PHILOS1",
+    "PHILOS10",
+    "PHILOS11",
+    "PHILOS2",
+    "PHILOS22",
+    "PHILOS23",
+    "PHILOS3",
+    "PHILOS4",
+    "PHILOS5",
+    "PHILOS51",
+    "PHILOS52",
+    "PHOTO1",
+    "PHOTO52",
+    "POLSC21",
+    "POLSC22",
+    "POLSC23",
+    "POLSC51",
+    "POLSC52",
+    "RELST51",
+    "RELST52",
+    "RUSS1",
+    "RUSS2",
+    "SOCIOL30",
+    "SOCIOL31",
+    "SOCIOL32",
+    "SOCIOL33",
+    "SOCIOL34",
+    "SPAN1",
+    "SPAN11",
+    "SPAN12",
+    "SPAN2",
+    "SPAN20",
+    "SPAN3",
+    "SPAN4",
+    "SPAN9",
+    "THART2",
+    "THART41",
+    "THART5",
+    "WGS10",
+    "WGS20",
+    "WGS30"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Art History section not in the provided text (page shows Liberal Arts and Mathematics)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AHIS 11",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "AHIS 15",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "AHIS 17",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "AHIS 18",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "AHIS 21",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "AHIS 22",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "AHIS 3",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "AHIS 52",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "AHIS 71",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "AHIS 72",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ANTHRO 14",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ANTHRO 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ANTHRO 20",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ANTHRO 21",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ANTHRO 22",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ANTHRO 3",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ANTHRO 4",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ANTHRO 7",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ARABIC 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ART 10A",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ART 10C",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ART 13",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ART 21A",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ART 21B",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ART 40B",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ART 40C",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ART 52B",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ART 52C",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ART 60",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "CHNESE 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "CHNESE 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "CHNESE 3",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "CHNESE 4",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "CHNESE 9",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "DANCE 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "DANCE 5",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ECON 15",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ENGL 32",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ENGL 51",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ENGL 52",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ENGL 55",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "FILM 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "FILM 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "FILM 7",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "FRENCH 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "FRENCH 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "FRENCH 3",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "FRENCH 4",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "GEOG 8",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "GERMAN 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "GERMAN 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "GERMAN 3",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "GERMAN 4",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HEBREW 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HEBREW 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 10",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 13",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 15",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 16",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 19",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 20",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 21",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 22",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 24",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 25",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 26",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 29",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 3",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 33",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 34",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 38",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 39",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 4",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 41",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 42",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 43",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 5",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 52",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 53",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 55",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 6",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST 62",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "HUM 26",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ITAL 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ITAL 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "ITAL 3",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "JAPAN 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "JAPAN 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "JAPAN 3",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "JAPAN 4",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "KOREAN 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "KOREAN 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "KOREAN 3",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "KOREAN 4",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "MUSIC 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "MUSIC 30",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "MUSIC 31",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "MUSIC 32",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "MUSIC 33",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "MUSIC 36",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "MUSIC 37",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "MUSIC 39",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "MUSIC 60A",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "MUSIC 60B",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "NUTR7",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PERSIN 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PERSIN 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHILOS 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHILOS 10",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHILOS 11",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHILOS 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHILOS 22",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHILOS 23",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHILOS 3",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHILOS 4",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHILOS 5",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHILOS 51",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHILOS 52",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHOTO 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "PHOTO 52",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "POL SC 21",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "POL SC 22",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "POL SC 23",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "POL SC 51",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "POL SC 52",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "REL ST 51",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "REL ST 52",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "RUSS 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "RUSS 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SOCIOL 30",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SOCIOL 31",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SOCIOL 32",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SOCIOL 33",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SOCIOL 34",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SPAN 1",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SPAN 11",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SPAN 12",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SPAN 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SPAN 20",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SPAN 3",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SPAN 4",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "SPAN 9",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "TH ART 2",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "TH ART 41",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "TH ART 5",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "WGS 10",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "WGS 20",
+    "why": "Art History section not in the text"
+   },
+   {
+    "code": "WGS 30",
+    "why": "Art History section not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39567439681"
+}

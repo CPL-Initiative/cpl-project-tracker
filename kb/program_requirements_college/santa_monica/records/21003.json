@@ -1,0 +1,223 @@
+{
+ "college": "Santa Monica College",
+ "control_number": "21003",
+ "shape": "certificate",
+ "title": "Computer Business Applications",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=113",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9602,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9602,
+    "output_tokens": 2491,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2491,
+  "output_tokens_details": {
+   "thinking_tokens": 1381
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08823,
+ "ms": 22521,
+ "seconds": 22.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 17,
+   "share": 0.0,
+   "missing": [
+    "ACCTG1",
+    "ACCTG21",
+    "BUS1",
+    "BUS34A",
+    "CIS1",
+    "CIS30",
+    "CIS32",
+    "CIS35A",
+    "CIS35B",
+    "CIS37",
+    "CIS38",
+    "CIS39",
+    "CIS4",
+    "CIS50",
+    "OFTECH1",
+    "OFTECH10",
+    "OFTECH5"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in the provided text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCTG 1",
+    "why": "CBA section not in the text; appears only under QuickBooks Virtual Enterprise"
+   },
+   {
+    "code": "ACCTG 21",
+    "why": "CBA section not in the text; appears only under QuickBooks Virtual Enterprise"
+   },
+   {
+    "code": "BUS 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 34A",
+    "why": "CBA section not in the text; appears only under Social Media Assistant"
+   },
+   {
+    "code": "CIS 1",
+    "why": "CBA section not in the text; appears only in an untitled section of uncertain identity"
+   },
+   {
+    "code": "CIS 30",
+    "why": "CBA section not in the text; appears only under other certificates"
+   },
+   {
+    "code": "CIS 32",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIS 35A",
+    "why": "CBA section not in the text; appears only under QuickBooks Virtual Enterprise"
+   },
+   {
+    "code": "CIS 35B",
+    "why": "CBA section not in the text; appears only under QuickBooks Virtual Enterprise"
+   },
+   {
+    "code": "CIS 37",
+    "why": "CBA section not in the text; appears only under other certificates"
+   },
+   {
+    "code": "CIS 38",
+    "why": "CBA section not in the text; appears only under Digital Publishing"
+   },
+   {
+    "code": "CIS 39",
+    "why": "CBA section not in the text; appears only in an untitled section of uncertain identity"
+   },
+   {
+    "code": "CIS 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIS 50",
+    "why": "CBA section not in the text; appears only under Social Media Assistant and Website Creator"
+   },
+   {
+    "code": "OFTECH 1",
+    "why": "CBA section not in the text; appears only under other certificates"
+   },
+   {
+    "code": "OFTECH 10",
+    "why": "CBA section not in the text; appears only under Digital Publishing"
+   },
+   {
+    "code": "OFTECH 5",
+    "why": "CBA section not in the text; appears only under Digital Publishing"
+   }
+  ],
+  "notes": [
+   "The text begins mid-section on page 113: a Program Learning Outcomes paragraph and an Area of Emphasis (21 units) listing BUS 32, BUS 62, CIS 1, CIS 30, CIS 37, CIS 39, OFTECH 1, with its heading on the previous page and not shown.",
+   "That untitled section does not match the Computer Business Applications closed list (BUS 32 and BUS 62 are absent from it; ACCTG, BUS 1, CIS 4, CIS 32, CIS 35A/B, CIS 38, CIS 50, OFTECH 5/10 are missing from the section), so it was not attributed to this award; it may be another certificate (e.g., Business Information Worker). A reviewer should check page 112 of the PDF for the Computer Business Applications section.",
+   "Remaining sections shown are Digital Publishing, QuickBooks Virtual Enterprise, Social Media Assistant, Website Creator, Website Development Management, Receptionist (noncredit), and Computer Science; none is Computer Business Applications."
+  ]
+ },
+ "extracted_run": "39567439681"
+}

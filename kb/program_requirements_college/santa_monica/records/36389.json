@@ -1,0 +1,184 @@
+{
+ "college": "Santa Monica College",
+ "control_number": "36389",
+ "shape": "noncredit",
+ "title": "Rehabilitation Therapy Aide",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=154",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7974,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7974,
+    "output_tokens": 1417,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1417,
+  "output_tokens_details": {
+   "thinking_tokens": 557
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06024,
+ "ms": 12393,
+ "seconds": 12.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Rehabilitation Therapy Aide, Certificate of Completion (Noncredit)",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Differentiate among the varying roles of a rehabilitation aide, assistant and therapist",
+    "Demonstrate competency in basic medical office ethics and common practices",
+    "Give examples of diagnoses, injuries and disabilities, and their associated precautions, commonly encountered in a rehabilitation therapy setting",
+    "Use common rehabilitation therapy terminology",
+    "Identify and locate some of the major muscle groups of the human body",
+    "Recognize proper muscle movement and body mechanics along the various planes of the body",
+    "Lift, maintain and clean equipment, machines and tools commonly used in rehabilitation therapy settings",
+    "Recognize some modalities used in rehabilitation settings and distinguish an aide’s role in helping patients with those modalities",
+    "Learn and become CPR, AED, and First Aid certified in accordance with the American Red Cross guidelines."
+   ],
+   "careers": [
+    "rehabilitation aide"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HEALTH 900",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEALTH 902",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEALTH 904",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog states 'Area of Emphasis: (0 units)' and prints (0) beside each course, with no hours, so measure is 'units' and total_units is the printed 0; unlike neighboring noncredit programs, no hour counts are given for this certificate.",
+   "Program learning outcomes are printed as one inline numbered sentence; list numbers and the separating semicolons/'and' between items were removed; wording otherwise as printed.",
+   "'rehabilitation aide' recorded as a career from the description ('essential job duties and responsibilities of a rehabilitation aide'); reviewer may confirm.",
+   "Other noncredit certificates on the page (Home Health Aide, Older Adults, Nurse Assistant) were ignored."
+  ]
+ },
+ "extracted_run": "39567439681"
+}

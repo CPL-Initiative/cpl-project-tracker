@@ -1,0 +1,169 @@
+{
+ "college": "Santa Monica College",
+ "control_number": "45162",
+ "shape": "noncredit",
+ "title": "Create Space: Laser Cutting and Engraving",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=95",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10094,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10094,
+    "output_tokens": 1441,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1441,
+  "output_tokens_details": {
+   "thinking_tokens": 671
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0692,
+ "ms": 12289,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Create Space: Laser Cutting and Engraving, Noncredit Certificate of Completion",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate proficiency in operating laser cutting and engraving machines, including setting up, calibrating, and adjusting the equipment for various materials and desired outcomes.",
+    "Students will understand different materials that can be cut or engraved using lasers, such as wood, acrylic, metal, glass, and fabric. This includes knowledge of how different materials react to laser cutting and engraving and how to select appropriate settings.",
+    "Students will learn skills in preparing digital files for laser processing, including creating vector graphics, using design software, and ensuring that files are formatted correctly for the laser cutter.",
+    "Students will develop confidence in managing laser cutting and engraving projects from concept to completion, including planning, setting up, executing, and finishing projects while meeting deadlines and client specifications."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "ART 900",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 904",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints this noncredit certificate in units ('Area of Emphasis: (0 units)', each course '(0)') and gives no hours, so measure is 'units' and total_units is the printed 0 units; a reviewer may want to confirm the hours from another source.",
+   "The program learning outcomes are printed as one running paragraph beginning with 'Upon completion of the program, students will'. I split it into four outcomes at the points where each sentence begins a new outcome with 'Students will'. I kept the 'This includes...' sentence with the materials outcome, and I removed the lead-in from the first outcome. Please check this split.",
+   "No careers or job titles are named in this section."
+  ]
+ },
+ "extracted_run": "39567439681"
+}
