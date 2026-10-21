@@ -2886,13 +2886,18 @@
     function has(value) {
       return Array.prototype.some.call(sel.options, function (o) { return o.value === String(value); });
     }
-    fill("");
+    takeShared(colleges);
+    if (pickedCollege && colleges.indexOf(pickedCollege) < 0) pickedCollege = "";
+    col.value = pickedCollege;
+    fill(pickedCollege);
     sel.addEventListener("change", function () {
       var i = parseInt(sel.value, 10);
       onChange(isNaN(i) ? 0 : i);
     });
     col.addEventListener("change", function () {
       var keep = sel.value;
+      pickedCollege = col.value;
+      shareChoice(col.value);
       fill(col.value);
       if (has(keep)) { sel.value = keep; return; }
       if (sel.options.length) {
@@ -2922,7 +2927,11 @@
     oppView.textContent = "View CPL Visual";
     var oppGet = document.createElement("button");
     oppGet.type = "button"; oppGet.className = "cplpw-oppact"; oppGet.textContent = "Download CPL Extract";
+    var oppMine = document.createElement("button");
+    oppMine.type = "button"; oppMine.className = "cplpw-oppact"; oppMine.textContent = "Open My College";
+    oppMine.addEventListener("click", function () { if (col.value) openMyCollege(col.value); });
     opp.appendChild(oppView); opp.appendChild(oppGet);
+    if (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") opp.appendChild(oppMine);
     function syncOpp() {
       opp.hidden = !col.value;
       if (col.value) oppView.href = "cpl-opportunity/?college=" + encodeURIComponent(col.value);
@@ -2974,10 +2983,169 @@
     row.appendChild(stat);
     // Opening a pathway another college offers (a ladder's link) widens to All colleges.
     function show(value) {
-      if (!has(value)) { col.value = ""; fill(""); syncOpp(); syncStat(); }
+      if (!has(value)) { col.value = ""; pickedCollege = ""; fill(""); syncOpp(); syncStat(); }
       sel.value = String(value);
     }
-    return { row: row, select: sel, college: col, show: show };
+    return { row: row, select: sel, college: col, show: show, has: has };
+  }
+
+  /* ── one college choice for CPL Pathways and My College (Sam, 2026-10-21, step 1 of folding
+   * My College into CPL Pathways) ──
+   * A college picked in either tab is the college the other opens on, for as long as this page
+   * is open. The choice lives in memory, never in storage: My College always asks first on a
+   * new visit (Sam, 2026-08-21), and a choice made a minute ago in this page is the reader's
+   * own. The two tabs spell some colleges differently (MAP's "Mt San Antonio College", the
+   * catalog's "Mt. San Antonio College"), so a name is matched through the short-name
+   * crosswalk (college_short_names.js), never by its spelling. */
+  var CHOICE_BY = "cpl-pathways";
+  function choiceKey(name) {
+    if (!name) return "";
+    var f = window.cplCollegeShort;
+    var k = typeof f === "function" ? f(String(name), "short") : String(name);
+    return String(k || name).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  }
+  function shareChoice(college) {
+    window.CPL_COLLEGE_CHOICE = { college: college || null, by: CHOICE_BY };
+    shareSeen = window.CPL_COLLEGE_CHOICE; sharePending = false;
+  }
+  /* The shared choice as one of `names`, or "" when there is none or no name matches. */
+  function sharedCollegeIn(names) {
+    var C = window.CPL_COLLEGE_CHOICE;
+    if (!C || !C.college) return "";
+    var k = choiceKey(C.college);
+    for (var i = 0; i < names.length; i++) if (choiceKey(names[i]) === k) return names[i];
+    return "";
+  }
+  /* The college this tab shows, kept across a re-render (the table's list landing re-renders the
+     tab, and used to drop the reader's college back to All colleges). */
+  var pickedCollege = "";
+  /* A choice My College made since this tab last looked, applied once a college of that name is
+     listed here (a college may join the list only when the table's records land). The tab's own
+     writes are never applied back to it, and a cleared choice leaves this tab's college alone. */
+  var shareSeen = null, sharePending = false;
+  function takeShared(colleges) {
+    var C = window.CPL_COLLEGE_CHOICE;
+    if (C !== shareSeen) { shareSeen = C; sharePending = !!(C && C.college && C.by !== CHOICE_BY); }
+    if (!sharePending) return false;
+    var m = sharedCollegeIn(colleges);
+    if (!m) return false;
+    sharePending = false;
+    var moved = m !== pickedCollege;
+    pickedCollege = m;
+    return moved;
+  }
+  /* My College for the college picked here: the shared choice, then the tab. */
+  function openMyCollege(college) {
+    shareChoice(college);
+    var T = window.CPL_TABS;
+    if (T && typeof T.navigate === "function") T.navigate("college-briefing");
+  }
+
+  /* ── a college's program data, in one line (Sam, 2026-10-21) ──
+   * Complete: an active program in COCI whose record passes the three machine checks, as the
+   * Program Requirements tab counts it (program_record_machine_pass). SLOs: the outcomes
+   * course_outcomes holds for the college, against the courses the state's Program Course File
+   * lists for its programs (coci_program_courses), matched on the code without its spaces or
+   * hyphens. Disagreements: records that miss a listed course or add one the catalog prints and
+   * the state's list does not (the courses and off-list checks). Every read is public. */
+  function statKey(code) { return String(code || "").toUpperCase().replace(/[^A-Z0-9]/g, ""); }
+  function statFails(c) {
+    c = c || {};
+    var out = [];
+    if (c.coverage !== true) out.push("courses");
+    if (c.invented !== true) out.push("off-list");
+    if (c.arithmetic !== "equal" && c.arithmetic !== "unstated") out.push("units");
+    return out;
+  }
+  function collegeStatus(got) {
+    got = got || {};
+    var active = {};
+    (got.active || []).forEach(function (r) { if (r && r.control_number) active[r.control_number] = true; });
+    var nActive = Object.keys(active).length;
+    var complete = 0, conflicts = 0, updated = null;
+    (got.records || []).forEach(function (r) {
+      var f = statFails(r.checks);
+      if (active[r.control_number] && !f.length) complete += 1;
+      if (f.indexOf("courses") >= 0 || f.indexOf("off-list") >= 0) conflicts += 1;
+      if (r.loaded_at && (!updated || r.loaded_at > updated)) updated = r.loaded_at;
+    });
+    var slos = 0, withSlo = {}, kinds = {};
+    (got.outcomes || []).forEach(function (o) {
+      var n = Array.isArray(o.outcomes) ? o.outcomes.length : 0;
+      slos += n;
+      if (n) { withSlo[statKey(o.course_code)] = true; if (o.source_kind) kinds[o.source_kind] = true; }
+    });
+    var listed = {};
+    (got.listed || []).forEach(function (r) { var k = statKey(r && r.course_code); if (k) listed[k] = true; });
+    var nListed = Object.keys(listed).length;
+    var covered = Object.keys(listed).filter(function (k) { return withSlo[k]; }).length;
+    return {
+      active: nActive, complete: complete, records: (got.records || []).length,
+      pct: nActive ? Math.round(100 * complete / nActive) : null,
+      updated: updated, conflicts: conflicts, slos: slos,
+      listed: nListed, covered: covered, coverPct: nListed ? Math.round(100 * covered / nListed) : null,
+      kinds: Object.keys(kinds).sort()
+    };
+  }
+  function readCollegeStatus(college) {
+    var c = "&college=eq." + encodeURIComponent(college);
+    return Promise.all([
+      roepGetAll("/coci_college_programs?select=control_number&status=eq.Active" + c + "&order=id"),
+      roepGetAll("/program_requirement_records?select=control_number,checks,loaded_at" + c + "&order=control_number"),
+      roepGetAll("/course_outcomes?select=course_code,outcomes,source_kind" + c + "&order=id"),
+      roepGetAll("/coci_program_courses?select=course_code" + c + "&order=program_control_number,course_control_number,course_code")
+    ]).then(function (g) { return { active: g[0], records: g[1], outcomes: g[2], listed: g[3] }; });
+  }
+  function statNum(n) { return Number(n || 0).toLocaleString("en-US"); }
+  function statDay(ts) {
+    var d = ts ? new Date(ts) : null;
+    if (!d || isNaN(d.getTime())) return "";
+    try { return d.toLocaleDateString("en-US", { timeZone: "America/Los_Angeles" }); }
+    catch (e) { return d.toISOString().slice(0, 10); }
+  }
+  var STAT_SOURCE = { course_outline: "course outlines", catalog: "the catalog" };
+  /* A figure opens its list on the Program Requirements tab: the Records view, picked to the college.
+     That tab loads its own module; this one never does (it would read as reading that tab's tables).
+     Loaded already, its goTo runs at once; otherwise the request waits for the tab's first activation,
+     which reads it (window.CPL_PROGRAM_REQUIREMENTS_GOTO). */
+  function openCollegeRecords(college, rshow) {
+    var T = window.CPL_TABS;
+    if (!T || typeof T.navigate !== "function") return;
+    var to = { view: "records", rcollege: college, rshow: rshow, sec: "records:find" };
+    var M = window.CPL_PROGRAM_REQUIREMENTS;
+    if (M && typeof M.goTo === "function") { T.navigate("program-requirements"); M.goTo(to); return; }
+    window.CPL_PROGRAM_REQUIREMENTS_GOTO = to;
+    T.navigate("program-requirements");
+  }
+  function paintCollegeStatus(node, college, s) {
+    function go(words, rshow) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "go"; b.textContent = words;
+      b.setAttribute("data-rshow", rshow);
+      b.addEventListener("click", function () { openCollegeRecords(college, rshow); });
+      return b;
+    }
+    function add(x) { node.appendChild(typeof x === "string" ? document.createTextNode(x) : x); }
+    var parts = [];
+    if (s.active) {
+      parts.push([go(s.pct + "% complete", "complete"),
+        ": " + statNum(s.complete) + " of " + statNum(s.active) + " active programs" +
+        (s.updated ? ", records updated " + statDay(s.updated) : "")]);
+    } else {
+      parts.push(["No active programs in COCI"]);
+    }
+    if (s.slos) {
+      var from = s.kinds.length === 1 ? STAT_SOURCE[s.kinds[0]] || s.kinds[0] : "course outlines and the catalog";
+      parts.push([go(statNum(s.slos) + " SLOs", "all"), " from " + from +
+        (s.listed ? ", for " + s.coverPct + "% of the " + statNum(s.listed) + " courses its programs list" : "")]);
+    } else {
+      parts.push(["No course SLOs read yet"]);
+    }
+    parts.push(s.conflicts
+      ? [go(statNum(s.conflicts) + (s.conflicts === 1 ? " record" : " records"), "conflict"),
+        s.conflicts === 1 ? " disagrees with the state's course list" : " disagree with the state's course list"]
+      : ["No record disagrees with the state's course list"]);
+    parts.forEach(function (p, i) { if (i) add(" · "); p.forEach(add); });
   }
 
   /* ── a college's program data, in one line (Sam, 2026-10-21) ──
@@ -3141,6 +3309,9 @@
     root.appendChild(container);
     var start = 0;
     if (shownIdent) items.forEach(function (it, j) { if (itemIdent(it, j) === shownIdent) start = j; });
+    if (selector && selector.college.value && !selector.has(start) && selector.select.options.length) {
+      start = parseInt(selector.select.options[0].value, 10) || 0;
+    }
     if (selector) selector.show(start);
     show(start);
   }
@@ -3176,11 +3347,33 @@
   }
 
   // ── Boot ──────────────────────────────────────────────────────────────────
+  /* Coming back to this tab after My College picked a college: re-render on it, keeping
+     the reader's place otherwise. The tab boot calls activate() on the first visit only. */
+  function applySharedChoice() {
+    var L = lastRender;
+    if (!L || !L.root || L.root.isConnected === false) return;
+    var C = window.CPL_COLLEGE_CHOICE;
+    if (C === shareSeen && !sharePending) return;
+    if (!C || !C.college || C.by === CHOICE_BY || choiceKey(C.college) === choiceKey(pickedCollege)) {
+      shareSeen = C; sharePending = false; return;
+    }
+    render(L.root, L.data, L.live, L.dir, L.liveNote);
+  }
+  var sharedWired = false;
+  function wireSharedChoice() {
+    if (sharedWired) return;
+    sharedWired = true;
+    window.addEventListener("cpl-tab-activated", function (e) {
+      if (e && e.detail && e.detail.tab === "cpl-pathways") applySharedChoice();
+    });
+  }
+
   function activate() {
     ensureCss();
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
-    if (root.getAttribute("data-cplpw-rendered") === "1") return;
+    wireSharedChoice();
+    if (root.getAttribute("data-cplpw-rendered") === "1") { applySharedChoice(); return; }
     root.setAttribute("data-cplpw-rendered", "1");
 
     var data = window.CPL_PATHWAYS || { programs: [] };
@@ -3265,5 +3458,7 @@
     _collegeStatus: collegeStatus,
     _paintCollegeStatus: paintCollegeStatus,
     _readCollegeStatus: readCollegeStatus,
+    _choiceKey: choiceKey,
+    _pickedCollege: function () { return pickedCollege; },
   };
 })();
