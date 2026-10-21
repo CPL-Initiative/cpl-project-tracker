@@ -273,6 +273,22 @@ check(C.section_award("Students who complete the Certificate of Achievement in A
                       {"award": "A.A. Degree", "title": "Accounting"}) is None,
       "a paragraph that mentions the award is no section heading")
 
+# Foothill's own shape (page read run 39657323731): a generic degree heading, the award named
+# only in the Award Type(s) line, and the page read's " · " joins.
+PH = ("Photography · On This Page · Program Description\nAward Type(s) · AA = Associate in Arts Degree · "
+      "CA = Certificate of Achievement · Units Required\nAssociate Degree Requirements\nA minimum of 90 units\n"
+      "Certificate Requirements · Certificate of Achievement in Photography · Units: 24\n"
+      "Certificate of Achievement in Photography Criticism")
+check(C.section_award(PH, {"award": "A.A. Degree", "title": "Photography"}, 1.0) == "aa" and
+      C.section_award(PH, {"award": "Certificate of Achievement: 18 or greater", "title": "Photography"}, 1.0) == "coa",
+      "Foothill's generic degree heading and award line, and its certificate heading, each head a section")
+check(C.section_award(PH, {"award": "A.A. Degree", "title": "Photography"}, 0.5) is None and
+      C.section_award(PH, {"award": "A.S. Degree", "title": "Photography"}, 1.0) is None,
+      "the generic heading serves only a degree the award line names, on a page whose label names its title")
+check(C.section_award("AA-T = Associate in Arts for Transfer\nAssociate Degree Requirements",
+                      {"award": "A.A. Degree", "title": "Photography"}, 1.0) is None,
+      "an award line naming the transfer degree serves no A.A.")
+
 
 def sclaim(award, title, section):
     c = claim(award, title)

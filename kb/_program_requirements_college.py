@@ -486,7 +486,7 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
         out.append({"url": pg["url"], "group": pg.get("group") or pg["url"], "coverage": cov, "found": found,
                     "text": text, "field": field,
                     "got": pg["got"], "label": {"award": award_hit, "title": title,
-                                                "section": section_award(text, program)},
+                                                "section": section_award(text, program, title)},
                     "key": (award_hit, title, round(cov, 3))})
     out.sort(key=lambda c: c["key"], reverse=True)
     return out
@@ -561,24 +561,38 @@ SECTION_AWARD = {
     "coa": re.compile(r"certificate of achievement", re.I),
 }
 SECTION_LINE = 140     # characters: a heading, not a paragraph that mentions the award
+# Foothill heads its degree section "Associate Degree Requirements", naming neither the award
+# nor the program, and names the award once in its Award Type(s) line ("AA = Associate in Arts
+# Degree · CA = Certificate of Achievement"; page read run 39657323731, S443). A degree claimant
+# reads that heading as its section when the award line names its award and the page's own
+# label names its title in full.
+DEGREE_HEADING = re.compile(r"^associate degree requirements$", re.I)
+AWARD_TYPE_KEY = {"aa": re.compile(r"\bAA\s*=\s*Associate in Arts\b(?! (?:Degree )?for Transfer)", re.I),
+                  "as": re.compile(r"\bAS\s*=\s*Associate in Science\b(?! (?:Degree )?for Transfer)", re.I)}
+SEGMENT = re.compile(r"\n| \u00b7 ")   # a line, or the " · " a page read joins short lines with
 
 
-def section_award(text: str, program: dict) -> str | None:
-    """The program's award kind when one short line of the page's text names that award
-    and every word of the program's title, else None."""
+def section_award(text: str, program: dict, title_share: float = 0.0) -> str | None:
+    """The program's award kind when the page heads a section for it, else None: one short
+    line naming that award and every word of the program's title, or, for an A.A. or A.S. on
+    a page whose label names the title in full, the generic degree heading beside an award
+    line naming that award."""
     kind = P.award_kind(program.get("award"))
     pat = SECTION_AWARD.get(kind)
     tokens = P.title_tokens(program.get("title") or "")
     if not pat or not tokens:
         return None
-    for line in (text or "").splitlines():
-        ln = line.strip().lower()
+    lines = [ln.strip() for ln in SEGMENT.split(text or "")]
+    for ln in (x.lower() for x in lines):
         if not ln or len(ln) > SECTION_LINE or not pat.search(ln):
             continue
         if kind in ("aa", "as") and (SECTION_AWARD["adt"].search(ln) or "transfer" in ln):
             continue   # "Associate in Arts in Anthropology for Transfer" is the A.A.-T's section
         if all(re.search(r"\b" + re.escape(w) + r"\b", ln) for w in tokens):
             return kind
+    if kind in AWARD_TYPE_KEY and title_share >= 1.0 and AWARD_TYPE_KEY[kind].search(text or "") \
+            and any(DEGREE_HEADING.match(ln) for ln in lines):
+        return kind
     return None
 
 
