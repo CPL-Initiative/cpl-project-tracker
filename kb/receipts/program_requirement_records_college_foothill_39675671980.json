@@ -1,0 +1,222 @@
+{
+ "college": "Foothill College",
+ "load_run": "39675671980",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-21T21:05:28Z",
+ "records": 144,
+ "posted": 126,
+ "batches": 6,
+ "inserted": 29,
+ "kept": 97,
+ "skipped": [
+  {
+   "control_number": "06104",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19484",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35561",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35772",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39351",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39675",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39889",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39891",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39996",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40239",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40240",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41275",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43207",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43676",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44253",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45656",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45754",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46561",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38675242638",
+  "39671107254"
+ ],
+ "machine_pass": 97,
+ "inserted_keys": [
+  "06014",
+  "06050",
+  "06062",
+  "06072",
+  "09277",
+  "09290",
+  "20084",
+  "20087",
+  "33437",
+  "33525",
+  "33526",
+  "33527",
+  "38653",
+  "39211",
+  "39890",
+  "39983",
+  "40694",
+  "41328",
+  "41696",
+  "41898",
+  "41899",
+  "41978",
+  "42334",
+  "42336",
+  "42475",
+  "43690",
+  "43983",
+  "44249",
+  "44600"
+ ],
+ "kept_keys": [
+  "06009",
+  "06016",
+  "06027",
+  "06031",
+  "06045",
+  "06047",
+  "06068",
+  "06071",
+  "06074",
+  "06079",
+  "06082",
+  "06090",
+  "06092",
+  "06094",
+  "06096",
+  "06098",
+  "09287",
+  "11058",
+  "11827",
+  "11830",
+  "15549",
+  "17590",
+  "19476",
+  "19477",
+  "19486",
+  "19488",
+  "19489",
+  "20086",
+  "20088",
+  "20091",
+  "30483",
+  "30912",
+  "30914",
+  "32127",
+  "32152",
+  "32281",
+  "32359",
+  "32362",
+  "32417",
+  "32422",
+  "32431",
+  "32468",
+  "32772",
+  "32843",
+  "33001",
+  "33003",
+  "33004",
+  "33033",
+  "33034",
+  "33360",
+  "33521",
+  "33522",
+  "33524",
+  "33837",
+  "35594",
+  "35719",
+  "35990",
+  "35991",
+  "35993",
+  "36287",
+  "36328",
+  "36342",
+  "36459",
+  "36735",
+  "37294",
+  "37567",
+  "38476",
+  "39512",
+  "39538",
+  "39843",
+  "40689",
+  "40691",
+  "40962",
+  "40963",
+  "41127",
+  "41642",
+  "42889",
+  "43189",
+  "43194",
+  "43399",
+  "43401",
+  "43445",
+  "43688",
+  "43828",
+  "44221",
+  "44565",
+  "44745",
+  "45169",
+  "45170",
+  "45171",
+  "45694",
+  "45722",
+  "45930",
+  "46172",
+  "46202",
+  "46285",
+  "46325"
+ ],
+ "rollback": "delete from public.program_requirement_records where college = 'Foothill College' and checked = false and control_number in ('06014', '06050', '06062', '06072', '09277', '09290', '20084', '20087', '33437', '33525', '33526', '33527', '38653', '39211', '39890', '39983', '40694', '41328', '41696', '41898', '41899', '41978', '42334', '42336', '42475', '43690', '43983', '44249', '44600');"
+}
