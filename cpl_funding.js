@@ -15863,8 +15863,10 @@
     // not adopt the default config it holds before then); `published` names the
     // scenario colleges read, which may differ from this browser's selection.
     _scenario: function () {
+      // savedAt: the shared row's updated_at, so the explainer's "As of" moves
+      // with every save (Sam, 2026-10-21).
       return { name: activeScenario, project: activeProject, projects: projectIds(), config: SUPA_CONFIG,
-        loaded: remoteLoaded, published: realPublishedScenario() };
+        loaded: remoteLoaded, published: realPublishedScenario(), savedAt: CONFIG_AT };
     },
     _setNotes: function (o) { NOTES = o || {}; },
     _setReports: function (rows) { REPORTS = Array.isArray(rows) ? rows.slice() : []; REPORT_MSG = {}; },
