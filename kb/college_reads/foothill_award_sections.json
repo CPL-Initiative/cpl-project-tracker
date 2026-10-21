@@ -1,0 +1,10 @@
+{
+  "_readme": "S443 (SkyToyon): how Foothill's CourseLeaf program pages print a program's A.A. and its certificate on one page. 73 of Foothill's 190 programs with a course list read no page (page_claimed, capture 38675242638): the page went to the certificate and the A.A. lost it. The reader's section-heading rule (section_award) found no line naming the award and the title together on a capture-only read (run 39654813908), so this read prints the headings and tab labels as the page prints them.",
+  "college": "Foothill College",
+  "questions": {"award_sections": "Where does the page name each award (A.A., A.S., Certificate of Achievement): a heading line, a tab label, or text?"},
+  "keywords": ["associate in (?:arts|science)[^\\n]{0,60}", "certificate of achievement[^\\n]{0,60}", "\\bA\\.[AS]\\.[^\\n]{0,40}", "career certificate[^\\n]{0,40}"],
+  "pages": [
+    {"answers": ["award_sections"], "url": "https://catalog.foothill.edu/degrees-certificates/accounting/"},
+    {"answers": ["award_sections"], "url": "https://catalog.foothill.edu/degrees-certificates/photography/"}
+  ]
+}
