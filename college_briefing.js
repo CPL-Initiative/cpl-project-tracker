@@ -106,7 +106,7 @@
   // closes everything, Sierra included. A control that silently exempts one
   // section teaches people it is broken.
   var SECTION_IDS = ["sierra", "start", "opps", "stand", "waiting", "types", "courseshare",
-                     "tier", "funding", "reports", "advice", "contacts", "resources"];
+                     "tier", "funding", "advice", "contacts", "resources"];
 
   var state = {
     college: null, data: null, loading: false, error: null, loadedSignedIn: null,
@@ -3114,10 +3114,13 @@
     h += sec("funding", "My CPL Funding", "on the funding page",
       '<p class="cb-note">This college&#39;s funding, the minimum conditions it meets, its targets and its next steps '
       + "are on the CPL funding page, in its My Institution view.</p>"
-      + '<p><a class="cb-act" id="cb-fundpage" target="_blank" rel="noopener" href="'
-      + esc(fundingPageUrl(state.college)) + '">Open My CPL Funding</a></p>');
-    var repSec = myReportsSection();
-    h += sec("reports", "Reported expenditures", esc(repSec.summary), repSec.body);
+      + '<p class="cb-fundlinks"><a class="cb-act" id="cb-fundpage" target="_blank" rel="noopener" href="'
+      + esc(fundingPageUrl(state.college)) + '">Open My CPL Funding</a>'
+      + (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function"
+          ? ' <button type="button" class="cb-act" id="cb-reportsgo">Open your expenditure reports</button>' : "")
+      + "</p>"
+      + '<p class="cb-note">The college&#39;s expenditure reports are on Implementation Funding too, for the people MAP '
+      + "lists as its CPL coordinator or primary CPL contact.</p>");
 
     // ── Where you stand ───────────────────────────────────────────────────
     // Every figure carries its denominator. Nothing here can reach 100% and
@@ -3399,7 +3402,6 @@
     var ae = document.activeElement;
     var inBox = !!(ae && ae !== root && root.contains(ae) && ae.classList && ae.classList.contains("cplchat-input"));
     root.innerHTML = h;
-    mountReportsSignin(root);
     // The pickers move INSIDE the Sierra AI box (Sam: "put all the college
     // selectors in the CPL Assistant box for simplicity"). They are built in
     // the main string, then relocated, so the bar markup stays in one place.
@@ -3866,6 +3868,12 @@
     if (rep) rep.onclick = function () { buildBriefingReport(root); };
     var wbk = root.querySelector("#cb-workbook");
     if (wbk) wbk.onclick = function () { buildOpportunityExtract(wbk); };
+    var rgo = root.querySelector("#cb-reportsgo");
+    if (rgo) rgo.onclick = function () {
+      window.CPL_FUNDING_REPORTS_INTENT = { focus: true };
+      var T = window.CPL_TABS;
+      if (T && typeof T.navigate === "function") T.navigate("implementation-funding");
+    };
     // The roster's spelling, which the funding module keys on (MAP says
     // "Laney College"; the roster, "Laney").
     wireHowTo(root, state.college ? rosterKey(state.college) : null, "mycollege");
@@ -4479,7 +4487,7 @@
     var s = getSession();
     return s && s.access_token ? s : null;
   }
-  function loadMyReports(root) {
+  function loadMyReports(root, done) {
     var s = personSession();
     if (!s) { state.myReports = "signedout"; state.myRows = null; state.myToken = null; state.myEmail = null; return; }
     if (state.myToken === s.access_token && state.myReports !== "error" && state.myReports !== "signedout") return;
@@ -4489,51 +4497,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (rows) { state.myRows = Array.isArray(rows) ? rows : []; state.myReports = "ready"; })
       .catch(function () { state.myRows = null; state.myReports = "error"; })
-      .then(function () { if (root) render(root); });
-  }
-  function collegeNameById(id) {
-    var m = (state.data && state.data.nameToId) || {};
-    for (var n in m) { if (Object.prototype.hasOwnProperty.call(m, n) && m[n] === id) return n; }
-    return null;
-  }
-  // { summary, body } for the section. EVERY state says something: a blank
-  // section on a money figure reads as broken, and "you are not listed" and
-  // "nothing recorded yet" are different claims.
-  function myReportsSection() {
-    var name = state.college;
-    var id = state.data && state.data.nameToId ? state.data.nameToId[name] : null;
-    var M = window.CPL_FUNDING_TAB, R = M && M.reports;
-    var st = state.myReports;
-    if (st === "idle" || st === "signedout") {
-      return { summary: "for college staff", body:
-        '<p class="cb-note">Once a year each college reports what it has expended of its CPL implementation '
-        + "funding, in eight expenditure categories, and the Chancellor&#39;s Office records the report. The people MAP lists as a college&#39;s CPL "
-        + "coordinator or primary CPL contact can read that college&#39;s reports here. Sign in with the address "
-        + "MAP lists for you; the email link brings you back to this page.</p>"
-        + '<div class="cb-reports-signin" id="cbReportsSignin"></div>' };
-    }
-    if (st === "error" || (!R && state.funding === "error")) return { summary: "not loaded", body:
-      '<p class="cb-note">The reports did not load. Reload the page to try again.</p>' };
-    if (st === "loading" || !R) return { summary: "loading…", body: '<p class="cb-note">Reading your college&#39;s reports…</p>' };
-    var rows = state.myRows || [];
-    var mine = {};
-    rows.forEach(function (r) { mine[r.college_id] = true; });
-    var who = state.myEmail ? esc(state.myEmail) : "this address";
-    if (id == null || !mine[id]) {
-      var names = Object.keys(mine).map(function (k) { return collegeNameById(Number(k)); })
-        .filter(Boolean).sort();
-      return { summary: "not listed for this college", body: names.length
-        ? '<p class="cb-note">You are signed in as ' + who + ". MAP lists this address as the CPL coordinator or "
-          + "primary CPL contact for " + esc(names.join(", ")) + ". Choose one of those colleges to read its reports.</p>"
-        : '<p class="cb-note">You are signed in as ' + who + ". MAP does not list this address as the CPL "
-          + "coordinator or primary CPL contact for any college. A college updates its contacts in the MAP "
-          + "platform&#39;s College Contacts, and this page reads the change after MAP&#39;s nightly sync.</p>" };
-    }
-    var own = rows.filter(function (r) { return r.college_id === id && r.fiscal_year; });
-    if (!own.length) return { summary: "none recorded", body:
-      '<p class="cb-note">No expenditure report is recorded yet for ' + esc(name) + ". When the Chancellor&#39;s "
-      + "Office records your college&#39;s report for a fiscal year, it shows here.</p>" };
-    return reportsTableHtml(name, R.mark(own), R);
+      .then(function () { if (done) done(); else if (root) render(root); });
   }
   function reportsTableHtml(name, marked, R) {
     var latest = marked.filter(function (x) { return x.latest; })
@@ -4565,12 +4529,97 @@
       + "</tbody></table></div>"
       + '<p class="cb-note">' + notes.join(" ") + "</p>" };
   }
-  function mountReportsSignin(root) {
+  function mountReportsSignin(root, returnTab) {
     var el = root.querySelector("#cbReportsSignin");
     if (!el || !window.CPL_REVIEWER_SIGNIN || typeof window.CPL_REVIEWER_SIGNIN.mountInto !== "function") return;
     window.CPL_REVIEWER_SIGNIN.mountInto(el, { title: "Sign in to read your college's reports",
       blurb: "A one-time link, sent to the address MAP lists as your college's CPL coordinator or primary CPL contact.",
-      returnTab: "college-briefing" });
+      returnTab: returnTab || "college-briefing" });
+  }
+
+  /* ── The college's expenditure reports, on Implementation Funding (Sam, 2026-10-21:
+   *    "move funding to Implementation Funding") ─────────────────────────────
+   * The college half of the Reporting box (S308) left My College with My CPL Funding.
+   * Implementation Funding draws this panel at the top of its 2026-28 Funding view: for a
+   * person MAP lists as a college's CPL coordinator or primary CPL contact, every college the
+   * address is listed under, read only, through cpl_funding_my_reports() (the function decides
+   * who sees what; the panel only asks). opts.invite (the reader came from My College's Open
+   * your expenditure reports) shows the panel in every state, the sign-in box included, and the
+   * email link returns to opts.returnTab. Without it the panel shows only reports a signed-in
+   * person is listed for, so a curator who is no college's contact sees nothing new. */
+  var reportNames = {};
+  function reportNamesFor(ids, cb) {
+    var need = ids.filter(function (id) { return !(id in reportNames); });
+    if (!need.length) { cb(); return; }
+    jget(REST + "/map_colleges?select=college_id,college_name&college_id=in.(" + need.join(",") + ")")
+      .then(function (rows) { (rows || []).forEach(function (r) { reportNames[r.college_id] = r.college_name; }); })
+      .catch(function () { /* the panel names the college by its report's own name instead */ })
+      .then(cb);
+  }
+  function reportsPanel(el, opts) {
+    if (!el) return false;
+    opts = opts || {};
+    ensureCss();
+    var invite = !!opts.invite, title = "Your college&#39;s expenditure reports";
+    var R = window.CPL_FUNDING_TAB && window.CPL_FUNDING_TAB.reports;
+    function show(body) {
+      el.hidden = false;
+      el.innerHTML = '<div class="cb-panel cb-myreports"><h3 class="cb-h">' + title + "</h3>" + body + "</div>";
+      if (opts.focus && typeof el.scrollIntoView === "function") { opts.focus = false; el.scrollIntoView({ block: "start" }); }
+      return true;
+    }
+    function hide() { el.hidden = true; el.innerHTML = ""; return false; }
+    var s = personSession();
+    if (!s) {
+      if (!invite) return hide();
+      show('<p class="cb-note">Once a year each college reports what it has expended of its CPL implementation '
+        + "funding, in eight expenditure categories, and the Chancellor&#39;s Office records the report. The people MAP "
+        + "lists as a college&#39;s CPL coordinator or primary CPL contact can read that college&#39;s reports here. "
+        + "Sign in with the address MAP lists for you; the email link brings you back to this page.</p>"
+        + '<div class="cb-reports-signin" id="cbReportsSignin"></div>');
+      mountReportsSignin(el, opts.returnTab);
+      return true;
+    }
+    if (state.myToken !== s.access_token || state.myReports === "idle" || state.myReports === "signedout") {
+      var p = loadMyReports(null, function () { if (el.isConnected !== false) reportsPanel(el, opts); });
+      if (p && typeof p.then === "function") return invite ? show('<p class="cb-note">Reading your college&#39;s reports…</p>') : hide();
+    }
+    if (state.myReports === "loading") return invite ? show('<p class="cb-note">Reading your college&#39;s reports…</p>') : hide();
+    if (state.myReports === "error" || !R) {
+      return invite ? show('<p class="cb-note">The reports did not load. Reload the page to try again.</p>') : hide();
+    }
+    var rows = state.myRows || [], byId = {}, ids = [];
+    rows.forEach(function (r) {
+      if (r.college_id == null) return;
+      if (!byId[r.college_id]) { byId[r.college_id] = []; ids.push(r.college_id); }
+      byId[r.college_id].push(r);
+    });
+    var who = state.myEmail ? esc(state.myEmail) : "this address";
+    if (!ids.length) {
+      if (!invite) return hide();
+      return show('<p class="cb-note">You are signed in as ' + who + ". MAP does not list this address as the CPL "
+        + "coordinator or primary CPL contact for any college. A college updates its contacts in the MAP "
+        + "platform&#39;s College Contacts, and this page reads the change after MAP&#39;s nightly sync.</p>");
+    }
+    var missing = ids.filter(function (id) { return !(id in reportNames); });
+    if (missing.length) {
+      reportNamesFor(missing, function () {
+        missing.forEach(function (id) { if (!(id in reportNames)) reportNames[id] = null; });
+        if (el.isConnected !== false) reportsPanel(el, opts);
+      });
+      return invite ? show('<p class="cb-note">Reading your college&#39;s reports…</p>') : hide();
+    }
+    var parts = ids.map(function (id) {
+      var own = byId[id].filter(function (r) { return r.fiscal_year; });
+      var name = reportNames[id] || (own[0] && own[0].college) || "College " + id;
+      var body = own.length ? reportsTableHtml(name, R.mark(own), R).body
+        : '<p class="cb-note">No expenditure report is recorded yet for ' + esc(name) + ". When the Chancellor&#39;s "
+          + "Office records your college&#39;s report for a fiscal year, it shows here.</p>";
+      return (ids.length > 1 ? '<h4 class="cb-myrep-h">' + esc(name) + "</h4>" : "") + body;
+    });
+    return show('<p class="cb-note">Signed in as ' + who + ", whom MAP lists as the CPL coordinator or primary CPL "
+      + "contact for " + esc(ids.map(function (id) { return reportNames[id] || "College " + id; }).join(", ")) + ".</p>"
+      + parts.join(""));
   }
 
   /* ── Load ────────────────────────────────────────────────────────────── */
@@ -4779,7 +4828,6 @@
     var root = document.getElementById("college-briefing-root");
     if (!root) return;
     if (state.scope === null) restoreScope();
-    loadMyReports(root);
     if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadSwp(root); loadLive(root); render(root); return; }
     // No sign-in branch: a public reader loads the `_pub` mirrors through
     // sources(). `loadedSignedIn` above is what reloads from the OTHER source
@@ -4915,6 +4963,8 @@
     // Public: the My CPL Funding block for one institution, on any page that
     // has loaded cpl_funding.js (the explainer and the tab's Public view).
     fundingPanel: fundingPanel,
+    // The college half of the Reporting box, drawn by Implementation Funding (2026-10-21).
+    reportsPanel: reportsPanel,
     // Public: the printer every My CPL Funding view shares.
     printPanel: printPanel,
     _publishedScenarioOf: publishedScenarioOf,

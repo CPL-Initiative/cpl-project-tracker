@@ -13386,6 +13386,32 @@
     sc.onload = cb; sc.onerror = cb;
     document.head.appendChild(sc);
   }
+  /* ── THE COLLEGE'S EXPENDITURE REPORTS (Sam, 2026-10-21: "move funding to
+   * Implementation Funding") ─────────────────────────────────────────────────
+   * The college half of the Reporting box moved here from My College. My College's
+   * Open your expenditure reports leaves window.CPL_FUNDING_REPORTS_INTENT and opens
+   * this tab; the panel then shows in every state, the sign-in box included, and the
+   * email link returns here. Without that request it shows only to a signed-in person
+   * MAP lists as a college's contact, so the curator's view gains nothing it does not
+   * need, and a college's own people find their reports at the top of the view. The
+   * renderer and the read are My College's (college_briefing.js reportsPanel), loaded
+   * only when there is something to show. */
+  function paintMyReports() {
+    var el = document.getElementById("cplFundMyReports");
+    if (!el) return;
+    var intent = window.CPL_FUNDING_REPORTS_INTENT || null;
+    var signedIn = false;
+    try { signedIn = !!(window.CPL_SESSION && typeof window.CPL_SESSION.get === "function" &&
+      (window.CPL_SESSION.get() || {}).access_token) || !!(localStorage.getItem("cpl_sb") || sessionStorage.getItem("cpl_sb")); } catch (e) {}
+    if (!intent && !signedIn) return;
+    loadScriptCompat("college_briefing.js", "CPL_COLLEGE_BRIEFING", function () {
+      var B = window.CPL_COLLEGE_BRIEFING, now = document.getElementById("cplFundMyReports");
+      if (!now || !B || typeof B.reportsPanel !== "function") return;
+      var focus = !!(intent && intent.focus);
+      if (intent) intent.focus = false;
+      B.reportsPanel(now, { invite: !!intent, returnTab: "implementation-funding", focus: focus });
+    });
+  }
   function paintOnePanel() {
     var el = document.getElementById("cplFundOnePanel");
     if (!el || !oneCollegeView() || !state.oneCollege) return;
@@ -13933,6 +13959,8 @@
       '<div class="cplfund-src">Version as of ' + esc(String(d.model_version).replace(/\.\d+$/, "")) + "</div>" +
       actionsRowHtml() +
       authbarHtml() +
+      // The college's expenditure reports (2026-10-21), drawn by My College's renderer.
+      (publicMode() ? "" : '<div id="cplFundMyReports" class="cplfund-myreports" hidden></div>') +
       // ONE id-keyed map, emitted in the curator's stored order (Sam,
       // 2026-09-11). Every section is BUILT here in house order — the order of
       // these assignments is what SECTION_HOUSE_ORDER names, and the two have
@@ -14549,6 +14577,7 @@
       if (p2) p2.focus();
     };
     paintOnePanel();
+    paintMyReports();
     var onePdf = document.getElementById("cplFundOnePdf");
     if (onePdf) onePdf.addEventListener("click", printOne);
     wireSeg("cplFundYear", function (v) { state.viewSlot = v; render(); });
