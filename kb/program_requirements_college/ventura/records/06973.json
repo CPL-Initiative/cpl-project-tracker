@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Music",
  "award": "A.A. Degree",
- "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/music/",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/music/music-aa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13608,
+  "input_tokens": 10489,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13608,
-    "output_tokens": 2099,
+    "input_tokens": 10489,
+    "output_tokens": 4086,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,107 +30,83 @@
     "model": null
    }
   ],
-  "output_tokens": 2099,
+  "output_tokens": 4086,
   "output_tokens_details": {
-   "thinking_tokens": 468
+   "thinking_tokens": 791
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09641,
- "ms": 16947,
- "seconds": 17.5,
+ "cost_usd": 0.12368,
+ "ms": 30070,
+ "seconds": 30.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 50,
    "listed": 50,
-   "share": 0.0,
-   "missing": [
-    "MUSV10",
-    "MUSV105",
-    "MUSV106",
-    "MUSV11",
-    "MUSV12",
-    "MUSV131",
-    "MUSV14A",
-    "MUSV14B",
-    "MUSV14C",
-    "MUSV15",
-    "MUSV17",
-    "MUSV18",
-    "MUSV20",
-    "MUSV21A",
-    "MUSV21B",
-    "MUSV21C",
-    "MUSV22A",
-    "MUSV22B",
-    "MUSV22C",
-    "MUSV24A",
-    "MUSV24B",
-    "MUSV24C",
-    "MUSV24D",
-    "MUSV25",
-    "MUSV2A",
-    "MUSV2AL",
-    "MUSV2B",
-    "MUSV2BL",
-    "MUSV2C",
-    "MUSV2CL",
-    "MUSV2D",
-    "MUSV2DL",
-    "MUSV3",
-    "MUSV31A",
-    "MUSV31B",
-    "MUSV31C",
-    "MUSV31D",
-    "MUSV31E",
-    "MUSV31F",
-    "MUSV31G",
-    "MUSV31V",
-    "MUSV34",
-    "MUSV39",
-    "MUSV45",
-    "MUSV46",
-    "MUSV47",
-    "MUSV6",
-    "MUSV7",
-    "MUSV9A",
-    "MUSV9B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "MUSV1"
+   ],
+   "flagged": [
+    "MUSV1"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    34.5,
+    36.5
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    36.0,
+    38.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
-   ]
+    "the blocks sum to 34.5-36.5; the catalog states 36.0-38.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     59.5,
+     66.5
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -143,248 +119,486 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Music, A.A. Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 36,
+    "max": 38
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 1,
+    "max": 6
    },
-   "ge_pattern": null,
+   "ge_pattern": "VC General Education Pattern (local Ventura College GE)",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 24
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate proficiency in music theory, aural skills, and sight-reading, applying these skills to analysis, composition, and performance.",
+    "Develop technical and expressive proficiency on a primary instrument, voice, or composition through solo and ensemble performance, showcasing stylistic understanding across various musical genres.",
+    "Analyze and articulate the historical, cultural, and stylistic significance of diverse musical traditions, demonstrating an understanding of music’s role in society and its influence on contemporary practices."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MUS V02A",
-    "why": "only in course descriptions; A.A. requirements not in text"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "MUS V02A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02D",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02AL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02BL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02CL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02DL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS V02AL",
-    "why": "only in course descriptions; A.A. requirements not in text"
+    "name": "Required Additional Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS V09A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V09B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V24A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V24B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS V02B",
-    "why": "only in course descriptions; A.A. requirements not in text"
+    "name": "List A: Select 1 course from the following and repeat it for four semesters",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS V31A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31B",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31C",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31D",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31E",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31F",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31G",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31V",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS V02BL",
-    "why": "only in course descriptions; A.A. requirements not in text"
+    "name": "List B: Select 4 units from the following (repeated courses are allowed)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS V10",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V11",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V12",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V14A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V14B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V14C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V15",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V17",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V18",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V21A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V21B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V21C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V22A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V22B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V22C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V34",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V45",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V46",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V47",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS V02C",
-    "why": "only in course descriptions; A.A. requirements not in text"
+    "name": "List C: Select 2 courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS V24C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V24D",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V06",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V07",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V25",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V39",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V131",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS V02CL",
-    "why": "only in course descriptions; A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V02D",
-    "why": "only in course descriptions; A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V02DL",
-    "why": "only in course descriptions; A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V03",
-    "why": "only in course descriptions; A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V06",
-    "why": "only in course descriptions; A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V07",
-    "why": "only in course descriptions; A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V09A",
-    "why": "only in course descriptions; A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V09B",
-    "why": "only in course descriptions; A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V10",
-    "why": "only in course descriptions; A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V11",
-    "why": "only in course descriptions; A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V12",
-    "why": "only in course descriptions; A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V14A",
-    "why": "only in course descriptions; A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V14B",
-    "why": "only in course descriptions (cut off); A.A. requirements not in text"
-   },
-   {
-    "code": "MUS V105",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V106",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V131",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V14C",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V15",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V17",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V18",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V20",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V21A",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V21B",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V21C",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V22A",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V22B",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V22C",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V24A",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V24B",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V24C",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V24D",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V25",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V31A",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V31B",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V31C",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V31D",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V31E",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V31F",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V31G",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V31V",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V34",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V39",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V45",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V46",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS V47",
-    "why": "not in the text"
+    "name": "Recommendations Prior to Entering the Program",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text contains only site navigation, print options, and the COURSES tab (course descriptions MUS V01 through a truncated MUS V14B entry). No A.A. Degree in Music requirements section, total, outcomes, or careers appear, so no section heading could be recorded and no blocks were built.",
-   "The course descriptions list ends mid-entry at MUS V14B ('Degre'), so the text is cut off; the program requirements tab likely needs to be fetched separately.",
-   "MUS V01, MUS V08, MUS V13A-D appear in course descriptions but are not in the closed list; they were not recorded since no requirement section places them."
+   "Section heading is not printed in the extracted text; 'Music, A.A. Degree' is inferred from the page URL and requirements tab.",
+   "The catalog prints 'Required Additional Units 20-22' covering the Required Additional Courses together with Lists A, B and C; no separate total is printed for each block, so stated is null on those blocks.",
+   "List A requires one private-lesson course repeated for four semesters (4 x 0.5 = 2 units); recorded as choose_courses minimum 1.",
+   "List B allows repeated courses to reach 4 units.",
+   "Degree table: Required Major Units 36-38, VCCCD General Education Units 24, Double-Counted Units (3-6), Elective Units 1-6, Total Units for the A.A. Degree 60. Elective Units 1-6 recorded in degree_elective_units.",
+   "GE calculations use the local Ventura College GE pattern; students may alternatively choose CalGETC.",
+   "'Recommended Elective Courses' refers to 'List D', which does not appear in the text; possibly an error on the page.",
+   "MUS V01 Music Fundamentals is recommended before entering the program and does not satisfy degree requirements; not in the closed list.",
+   "The plan of study totals 60-62 units, differing from the printed degree total of 60.",
+   "Program student learning outcomes are printed in the page's outcomes tab for the program; recorded as applying to this A.A. award.",
+   "Catalog prints MUS V47 title as 'Advanced Opera/Music Theatre Workshop' (state file: 'Musical Theatre')."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

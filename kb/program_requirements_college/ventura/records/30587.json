@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8521,
-    "output_tokens": 2467,
+    "output_tokens": 2476,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2467,
+  "output_tokens": 2476,
   "output_tokens_details": {
-   "thinking_tokens": 907
+   "thinking_tokens": 1059
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08342,
- "ms": 21218,
- "seconds": 21.8,
+ "cost_usd": 0.0836,
+ "ms": 29626,
+ "seconds": 30.0,
  "parts": null,
  "error": null,
  "score": {
@@ -62,10 +63,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    19.0,
+    17.0,
     20.0
    ],
    "stated": [
@@ -73,12 +74,14 @@
     20.0
    ],
    "against": "program",
-   "why": [],
+   "why": [
+    "the blocks sum to 17.0-20.0; the catalog states 19.0-20.0"
+   ],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     68.0,
+     66.0,
      71.0
     ],
     "stated": [
@@ -116,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -190,18 +193,18 @@
     ]
    },
    {
-    "name": "List A: Select one option from the following: BIOL C1001 & C1001L",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "List A",
+    "name": "List A: Select one option from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
     "stated": {
-     "min": 4,
-     "max": 4
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "BIOL C1001",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -212,19 +215,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List A: Select one option from the following: PSY V03",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "List A",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "PSY V03",
       "units": 3,
@@ -329,14 +320,14 @@
    }
   ],
   "notes": [
-   "List A is 'Select one option': either the BIOL C1001 & C1001L pair (printed together as 4 units, no separate units per course) or PSY V03; recorded as two option blocks in option_group 'List A'.",
-   "List B also allows 'Any course unused in List A'; List C also allows 'Any course unused in List A or List B'. These cross-list choices are not repeated in the blocks.",
-   "The catalog prints 'Additional Required Units 9-10' as a combined total for Lists A, B and C; no separate per-list totals are printed.",
-   "STAT C1000 is printed as an 'or' alternative to PSY V04 without its own units beside it.",
-   "PSY/SOC V31 printed as a cross-listed course; recorded as PSY V31 with SOC V31 as alternative.",
-   "Degree summary: Required Major Units 19-20, CalGETC 34, Double-Counted Units (9-10), Elective Units 15-17, Total 60; elective units recorded in degree_elective_units.",
-   "The outcomes list is printed on the page's program student learning outcomes tab for this award."
+   "List A option 'BIOL C1001 & C1001L' is a single option (both courses together, 4 units printed for the pair); recorded as two entries with the 4 units on BIOL C1001. Choosing one option means either the BIOL pair or PSY V03.",
+   "STAT C1000 is printed as an 'or' option to PSY V04 with no units beside it.",
+   "List B also allows any course unused in List A; List C allows any course unused in List A or List B.",
+   "'Additional Required Units 9-10' is printed for Lists A, B and C together, not per block.",
+   "Degree summary: Required Major Units 19-20, CalGETC 34, Double-Counted Units (9-10), Elective Units 15-17, Total 60.",
+   "Section heading taken from the page's navigation entry; the requirements tab prints no separate heading.",
+   "Outcomes are from the page's program student learning outcomes tab."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Film Television Media Arts",
  "award": "A.A. Degree",
- "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/film-television-media-aa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12782,
+  "input_tokens": 8284,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12782,
-    "output_tokens": 1147,
+    "input_tokens": 8284,
+    "output_tokens": 2901,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,55 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1147,
+  "output_tokens": 2901,
   "output_tokens_details": {
-   "thinking_tokens": 189
+   "thinking_tokens": 793
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07407,
- "ms": 12161,
- "seconds": 12.7,
+ "cost_usd": 0.09116,
+ "ms": 23039,
+ "seconds": 24.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 26,
    "listed": 26,
-   "share": 0.0,
-   "missing": [
-    "FTMAM100",
-    "FTMAM102",
-    "FTMAM103",
-    "FTMAM105",
-    "FTMAM106",
-    "FTMAM107",
-    "FTMAM115",
-    "FTMAM116",
-    "FTMAM124",
-    "FTMAM125",
-    "FTMAM126A",
-    "FTMAM130",
-    "FTMAM134",
-    "FTMAM138",
-    "FTMAM139",
-    "FTMAM140",
-    "FTMAM145A",
-    "FTMAM170",
-    "FTMAM190A",
-    "FTMAM190B",
-    "FTMAM192A",
-    "FTMAM192B",
-    "FTMAM194A",
-    "FTMAM194B",
-    "FTMAM80",
-    "JOURM1"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -87,26 +61,46 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     56.0,
+     76.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -119,148 +113,293 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "COURSES (no A.A. Degree requirements section in the text)",
+   "section_heading": "REQUIREMENTS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 14,
+    "max": 24
    },
-   "ge_pattern": null,
+   "ge_pattern": "Moorpark College General Education (VCCCD General Education Pattern, Areas 1-7) or Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "transform language and concepts into fictional and non-fictional productions.",
+    "critically analyze mass communication media and their business models."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "FTMA M100",
-    "why": "only a course description in the text; no degree requirements printed"
+    "name": "Required Major Courses - Select and complete two courses (6 units)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "FTMA M100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JOUR M01",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "FTMA M102",
-    "why": "only a course description in the text; no degree requirements printed"
+    "name": "LIST A: Area A - Audio Production",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FTMA M140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M145A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "FTMA M103",
-    "why": "only a course description in the text; no degree requirements printed"
+    "name": "LIST A: Area 2 - Video Production",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FTMA M124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "FTMA M105",
-    "why": "only a course description in the text; no degree requirements printed"
+    "name": "LIST B: Select and complete one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "FTMA M105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "FTMA M106",
-    "why": "only a course description in the text; no degree requirements printed"
-   },
-   {
-    "code": "FTMA M107",
-    "why": "only a course description in the text; no degree requirements printed"
-   },
-   {
-    "code": "FTMA M115",
-    "why": "only a course description in the text; no degree requirements printed"
-   },
-   {
-    "code": "FTMA M116",
-    "why": "only a course description in the text; no degree requirements printed"
-   },
-   {
-    "code": "FTMA M124",
-    "why": "only a course description in the text; no degree requirements printed"
-   },
-   {
-    "code": "FTMA M125",
-    "why": "only a course description in the text; no degree requirements printed"
-   },
-   {
-    "code": "FTMA M126A",
-    "why": "only a course description in the text; no degree requirements printed"
-   },
-   {
-    "code": "FTMA M130",
-    "why": "only a truncated course description in the text; no degree requirements printed"
-   },
-   {
-    "code": "FTMA M134",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "FTMA M138",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "FTMA M139",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "FTMA M140",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "FTMA M145A",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "FTMA M170",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "FTMA M190A",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "FTMA M192A",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "FTMA M192B",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "FTMA M194A",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "FTMA M194B",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "FTMA M80",
-    "why": "only a course description in the text (titled Work Experience Education, 1-14 units); no degree requirements printed"
-   },
-   {
-    "code": "FTMAM190B",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "JOUR M01",
-    "why": "not in the text"
+    "name": "LIST C: Select and complete a minimum of 3 units from the following list",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "FTMA M102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M126A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M190A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M190B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M192A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M192B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M194A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M194B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "LIST A ('Select and complete two courses, one from each area', 6 units) is recorded as two blocks, one per area, each choosing one course; the 6-unit total is printed for List A as a whole.",
+   "LIST B's stated 3 units comes from the summary row 'Units from LIST B 3'; its own heading prints no units. List B also allows 'Any course from Required Core or List A not previously selected.'",
+   "LIST C also allows 'Any course from REQUIRED CORE, LIST A or LIST B not previously selected.'",
+   "The catalog lists FTMA M190B ('FTMA M190B'); the closed list stores it as 'FTMAM190B' without a space, treated as the same course.",
+   "FTMA M190A is printed with 3 units, but the closed list stores 2 units. FTMA M80 is printed with 3 units and the title 'Work Experience Education in Film Television Media Arts'; the closed list stores 1 unit and the title 'Internship in Film Television Media Arts'.",
+   "General education may be the VCCCD/Moorpark local pattern (24 units, 6 double-counted, 24 elective units) or Cal-GETC (34 units, 6-9 double-counted, 14-17 elective units). ge_units 24-34 and degree_elective_units 14-24 span both paths; the degree total is 60 for both.",
+   "The program learning outcomes are printed in the page's outcomes tab for the program; the A.A. is recorded as sharing them."
+  ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "39600815599"
 }

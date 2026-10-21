@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Addictive Disorders Studies",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/advanced-skills-addiction-treatment-counselors-coa/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/addictive-disorders-studies-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7726,
+  "input_tokens": 8479,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7726,
-    "output_tokens": 1817,
+    "input_tokens": 8479,
+    "output_tokens": 1670,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,45 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1817,
+  "output_tokens": 1670,
   "output_tokens_details": {
-   "thinking_tokens": 498
+   "thinking_tokens": 380
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06724,
- "ms": 14157,
- "seconds": 14.8,
+ "cost_usd": 0.06732,
+ "ms": 13885,
+ "seconds": 14.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 15,
    "listed": 15,
-   "share": 0.0,
-   "missing": [
-    "ADSR101",
-    "ADSR102",
-    "ADSR103",
-    "ADSR104",
-    "ADSR105A",
-    "ADSR108",
-    "ADSR109",
-    "ADSR112",
-    "ADSR113A",
-    "ADSR118",
-    "ADSR124",
-    "ADSR200A",
-    "ADSR200B",
-    "ADSR210A",
-    "ADSR210B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -77,29 +61,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    42.0,
+    42.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    42.0,
+    42.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 10,
+   "program": 7,
    "courses": 0,
-   "count": 10,
+   "count": 7,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -111,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Advanced Skills for Addiction Treatment Counselors, Certificate of Achievement",
+   "section_heading": "Required Core Course",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 42,
+    "max": 42
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -137,84 +122,144 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Describe the organizational structures, management and administrative policies and procedures affecting success and failure of alcohol and drug treatment programs.",
-    "Train, supervise, evaluate, and discipline other counselors in order to enhance and facilitate professional development within an organization.",
-    "Design and effectively lead group counseling sessions utilizing a variety of advanced group leadership practices such as: depth work engagement and the application of effective methods and modalities, interventions, techniques, and theories as applied to addiction and recovery counseling services.",
-    "Describe mental disorders and best practices for their treatment including recognizing the appropriate use of psychotropic medications, and when psychiatric referral and professional consultation is required.",
-    "Identify the major types of eating disorders that are often co-occurring with addictions and the unique nutritional needs of recovering individuals.",
-    "Identify the cycle, patterns and progression of domestic violence/interpersonal abuse through the use of power and control strategies and the relationship between alcohol/drug abuse and domestic/interpersonal abuse.",
-    "Utilize screening, intake and counseling procedures unique to domestic violence/interpersonal abuse (specifically how they relate to those individuals on probation, parole and/or in Batterers' Intervention Programs as per the CA Penal Code.",
-    "Describe the role of public policy in addressing binge and underage drinking and explain the process of formulating and enacting prevention strategies and the rational for community involvement.",
-    "Describe how treatment and recovery from trauma bonds reduces the likelihood of re-experiencing traumatizing events by increasing awareness of these bonds, thereby extinguishing potentially high-risk, repetitive behaviors and addiction.",
-    "Define the concept of the disease of alcoholism as a family disease, describe its effects on family relationships and development of co-dependency and demonstrate knowledge of the reprogramming strategies for adult children of alcoholics."
+    "Master concepts central to understanding and working with substance use disorders.",
+    "Apply critical thinking to evidence based best practices and present-day research relevant to substance use disorders.",
+    "Identify major risk and protective factors that contribute to substance use disorders.",
+    "Learn how to facilitate psychoeducation, process and skill development groups using both written and oral techniques.",
+    "Demonstrate familiarity with the standards of professional ethics in the field of substance use disorder treatment and prevention.",
+    "Apply their knowledge of substance use treatment and prevention in both their professional role and in their communities.",
+    "Retrieve and synthesize relevant contemporary research on substance use disorder treatment and prevention and apply the information in the practical work setting."
    ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ADS R101",
-    "why": "named only as a foundational course completed before this certificate; requirements tab not in the text"
-   },
-   {
-    "code": "ADS R102",
-    "why": "named only as a foundational course completed before this certificate; requirements tab not in the text"
-   },
-   {
-    "code": "ADS R103",
-    "why": "named only as a foundational course completed before this certificate; requirements tab not in the text"
-   },
-   {
-    "code": "ADS R104",
-    "why": "named only as a foundational course completed before this certificate; requirements tab not in the text"
-   },
-   {
-    "code": "ADS R105A",
-    "why": "named only as a foundational course completed before this certificate; requirements tab not in the text"
-   },
-   {
-    "code": "ADS R108",
-    "why": "not in the text (requirements tab missing)"
-   },
-   {
-    "code": "ADS R109",
-    "why": "not in the text (requirements tab missing)"
-   },
-   {
-    "code": "ADS R112",
-    "why": "not in the text (requirements tab missing)"
-   },
-   {
-    "code": "ADS R113A",
-    "why": "named only as a foundational course completed before this certificate; requirements tab not in the text"
-   },
-   {
-    "code": "ADS R118",
-    "why": "named only as a foundational course completed before this certificate; requirements tab not in the text"
-   },
-   {
-    "code": "ADS R124",
-    "why": "named only as a foundational course completed before this certificate; requirements tab not in the text"
-   },
-   {
-    "code": "ADS R200A",
-    "why": "not in the text (requirements tab missing)"
-   },
-   {
-    "code": "ADS R200B",
-    "why": "not in the text (requirements tab missing)"
-   },
-   {
-    "code": "ADS R210B",
-    "why": "not in the text (requirements tab missing)"
-   },
-   {
-    "code": "ADSR210A",
-    "why": "not in the text (requirements tab missing)"
+    "name": "Required Core Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 42,
+     "max": 42
+    },
+    "courses": [
+     {
+      "code": "ADS R101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R105A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R113A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R200A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R210A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R200B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R210B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements table prints ADS R200A & ADS R210A and ADS R200B & ADS R210B as paired rows with 4.5 units per pair; individual units (3 and 1.5) are taken from the Plan of Study grid on the same page.",
+   "The closed list stores the field experience course as 'ADSR210A' (no space, no units); the catalog prints it as 'ADS R210A'. Treated as the same course, not a catalog addition.",
+   "Section heading: the page text shows no award title heading; the requirements tab's block heading 'Required Core Course' is used. Total Required Units for Certificate: 42.",
+   "The outcomes are printed on the page's program student learning outcomes tab for this program; recorded as this certificate's outcomes.",
+   "No careers are named in the provided text."
+  ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }

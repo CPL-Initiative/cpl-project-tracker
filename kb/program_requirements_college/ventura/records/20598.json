@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8305,
-    "output_tokens": 2357,
+    "output_tokens": 2530,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2357,
+  "output_tokens": 2530,
   "output_tokens_details": {
-   "thinking_tokens": 722
+   "thinking_tokens": 812
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08036,
- "ms": 20611,
- "seconds": 21.2,
+ "cost_usd": 0.08382,
+ "ms": 21259,
+ "seconds": 21.6,
  "parts": null,
  "error": null,
  "score": {
@@ -213,14 +214,14 @@
     "courses": [
      {
       "code": "BIOL C1001",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL C1001L",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -337,16 +338,17 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Section heading taken from the page's navigation; the requirements tab prints no heading of its own.",
-   "SWHS V10 & V10L are printed as one row with 5 units; split as 3 and 2 per the Plan of Study grid.",
-   "BIOL C1001 & C1001L are printed as one row with 4 units under List A; units per course not printed, so left null. List A says 'Select one option' but lists only this single option, so recorded as required ('all').",
-   "'Required Additional Units 10-11' covers List A and List B together; no separate total printed for either list.",
-   "STAT C1000 is printed as an 'or' option to PSY V04 without its own units.",
-   "'SOC/PSY V31' is a cross-listed course recorded as SOC V31 with PSY V31 as alternative.",
-   "Closed list stores 'SOCIC1000' (no space); matched to catalog's SOCI C1000.",
-   "The outcomes tab prints outcomes for 'this program'; recorded as applying to this certificate.",
-   "Recommended courses note says they 'do not satisfy the requirements for this degree' though the award is a certificate."
+   "The closed list stores 'SOCIC1000' (no space, units not stored); the catalog prints 'SOCI C1000 Introduction to Sociology 3'. Treated as the same course, catalog_addition false.",
+   "The requirements table prints 'SWHS V10 & V10L' with a combined 5 units; the 3/2 split is taken from the Plan of Study grid on the same page.",
+   "The requirements table prints 'BIOL C1001 & C1001L' with a combined 4 units; the 3/1 split follows the state file's units, not a printed per-course figure.",
+   "List A says 'Select one option from the following' but prints only one option (BIOL C1001 & C1001L), so it is recorded as an all-required block.",
+   "STAT C1000 is printed as an 'or' alternative to PSY V04 without its own units.",
+   "SOC/PSY V31 is a cross-listed course recorded as SOC V31 with PSY V31 as its alternative.",
+   "'Required Additional Units 10-11' is printed for List A and List B together, so no per-block stated total was recorded for those lists.",
+   "Recommended courses are printed without units and are not in the closed list; the page states they do not satisfy requirements.",
+   "The outcomes are printed once for 'this program' on the page's outcomes tab; recorded as this certificate's outcomes.",
+   "No careers are named in the text."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

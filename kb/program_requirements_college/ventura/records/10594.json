@@ -1,0 +1,260 @@
+{
+ "college": "Ventura College",
+ "control_number": "10594",
+ "shape": "degree",
+ "title": "Emergency Medical Services—Paramedic Studies",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/emergency-medical-services-paramedic-studies-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8057,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8057,
+    "output_tokens": 1496,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1496,
+  "output_tokens_details": {
+   "thinking_tokens": 415
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06215,
+ "ms": 11915,
+ "seconds": 12.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ANATV1",
+    "ANPHV1",
+    "PHSOV1",
+    "PSYV15",
+    "PSYV30"
+   ],
+   "flagged": [
+    "ANATV1",
+    "ANPHV1",
+    "PHSOV1",
+    "PSYV15",
+    "PSYV30"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    37.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     61.0,
+     61.0
+    ],
+    "stated": [
+     61.0,
+     61.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Emergency Medical Services: Paramedic Studies, Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 0
+   },
+   "ge_pattern": "VCCCD General Education Pattern",
+   "degree_total": {
+    "min": 61,
+    "max": 61
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Function within the paramedic scope of practice to provide professional, competent and safe care while applying scientific knowledge and demonstrating mastery of skills, management and leadership to a group of patients with complex and diverse needs.",
+    "Utilize effective communication and interpersonal skills with patients, patient family members, the public, and health care teams.",
+    "Understand and observe the concept of lifelong learning, including the pursuit of advanced degrees and practice in the health field."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 37,
+     "max": 37
+    },
+    "courses": [
+     {
+      "code": "PM V01A",
+      "units": 6.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PM V01B",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PM V02A",
+      "units": 6.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PM V02B",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANAT V01",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHSO V01",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANPH V01",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY V15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY V30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading appears in the page text only as a truncated navigation item ('mergency Medical Services: Paramedic Studies, Associate in Science'); the requirements tab itself prints no heading.",
+   "The recommended courses are printed as 'ANAT V01 and PHSO V01, or ANPH V01; PSY V15; PSY V30'. ANAT V01 with PHSO V01 is an alternative path to ANPH V01. They are listed separately because the pairing cannot be expressed as a single alternative. The catalog states they do not satisfy degree requirements.",
+   "The page prints 'Elective Units 0' and 'Double-Counted Units (0)'. The degree total is 37 major units plus 24 GE units, for 61 units.",
+   "The outcomes come from the page's program student learning outcomes tab for this award."
+  ]
+ },
+ "extracted_run": "39622549965"
+}

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Photography",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/photography/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/photography/photography-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11647,
+  "input_tokens": 7455,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11647,
-    "output_tokens": 1007,
+    "input_tokens": 7455,
+    "output_tokens": 1100,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1007,
+  "output_tokens": 1100,
   "output_tokens_details": {
-   "thinking_tokens": 207
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06673,
- "ms": 8679,
- "seconds": 9.0,
+ "cost_usd": 0.05182,
+ "ms": 9245,
+ "seconds": 9.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 14,
    "listed": 14,
-   "share": 0.0,
-   "missing": [
-    "ARTM110",
-    "DESM126",
-    "FTMAM130",
-    "PHOTM10",
-    "PHOTM20",
-    "PHOTM30A",
-    "PHOTM30B",
-    "PHOTM40",
-    "PHTCM31A",
-    "PHTCM31B",
-    "PHTCM33",
-    "PHTCM35",
-    "PHTCM37",
-    "PHTCM50"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -75,26 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    19.5,
+    19.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    19.5,
+    19.5
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -102,22 +89,22 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Photography, Certificate of Achievement",
+   "section_heading": "Photography Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 19.5,
+    "max": 19.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -134,74 +121,147 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "create photographic works utilizing appropriate compositional considerations.",
+    "demonstrate competent skills in camera operation, film and digital printing",
+    "evaluate photographs with the same critical skills that are applied to literature and science.",
+    "research and discuss past and present works, recognize and analyze the history and social role of photography."
+   ],
+   "careers": [
+    "photography"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ART M110",
-    "why": "not in the text; certificate requirements not included"
+    "name": "REQUIRED CORE: Complete the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHOT M10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT M20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTC M31A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTC M50",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DES M126",
-    "why": "named only as Same-As in PHTC M33 course description; certificate requirements not included"
-   },
-   {
-    "code": "FTMA M130",
-    "why": "not in the text; certificate requirements not included"
-   },
-   {
-    "code": "PHOT M10",
-    "why": "appears only in course descriptions; certificate requirements not included"
-   },
-   {
-    "code": "PHOT M20",
-    "why": "appears only in course descriptions; certificate requirements not included"
-   },
-   {
-    "code": "PHOT M30A",
-    "why": "appears only in course descriptions; certificate requirements not included"
-   },
-   {
-    "code": "PHOT M30B",
-    "why": "appears only in course descriptions; certificate requirements not included"
-   },
-   {
-    "code": "PHOT M40",
-    "why": "appears only in course descriptions; certificate requirements not included"
-   },
-   {
-    "code": "PHTC M31A",
-    "why": "appears only in course descriptions; certificate requirements not included"
-   },
-   {
-    "code": "PHTC M31B",
-    "why": "appears only in course descriptions; certificate requirements not included"
-   },
-   {
-    "code": "PHTC M33",
-    "why": "appears only in course descriptions; certificate requirements not included"
-   },
-   {
-    "code": "PHTC M35",
-    "why": "appears only in course descriptions; certificate requirements not included"
-   },
-   {
-    "code": "PHTC M37",
-    "why": "appears only in course descriptions; certificate requirements not included"
-   },
-   {
-    "code": "PHTC M50",
-    "why": "appears only in course descriptions; certificate requirements not included"
+    "name": "LIST A: Select and complete three courses from the following",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART M110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT M30A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT M30B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT M40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTC M31B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTC M33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DES M126",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTC M35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTC M37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text contains only site navigation and the COURSES tab (course descriptions); the 'Photography, Certificate of Achievement' requirements section is named only in the navigation menu and its content is not present. No blocks, totals, outcomes or careers could be recorded.",
-   "Reviewer should fetch the program page for Photography, Certificate of Achievement (separate from the A.S. and Studio Lighting certificate) to obtain the requirements.",
-   "The course list text is cut off mid-entry at PHOT M80."
+   "Section heading is not printed in the extracted text; the heading given is inferred from the page URL (photography-coa).",
+   "PHTC M33/DES M126 is printed as a cross-listed pair (Image Editing) and is recorded as one choice with DES M126 as the alternative.",
+   "The outcomes come from the page's program student learning outcomes tab and are recorded as this award's outcomes.",
+   "Careers: the description names only 'the very competitive profession of photography'; 'photography' is recorded as the career field. A reviewer should confirm."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "39600815599"
 }

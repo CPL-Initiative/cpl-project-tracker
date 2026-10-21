@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Welding Technology",
  "award": "A.S. Degree",
- "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/welding/",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/welding/welding-technology-as/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11498,
+  "input_tokens": 8628,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11498,
-    "output_tokens": 1075,
+    "input_tokens": 8628,
+    "output_tokens": 2697,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,76 +30,86 @@
     "model": null
    }
   ],
-  "output_tokens": 1075,
+  "output_tokens": 2697,
   "output_tokens_details": {
-   "thinking_tokens": 257
+   "thinking_tokens": 767
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06749,
- "ms": 9999,
- "seconds": 10.7,
+ "cost_usd": 0.08845,
+ "ms": 22562,
+ "seconds": 23.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 19,
    "listed": 19,
-   "share": 0.0,
-   "missing": [
-    "ARTV27",
-    "CTV65",
-    "DRFTV2A",
-    "DRFTV4",
-    "MTV15",
-    "MTV4",
-    "WELV1",
-    "WELV13A",
-    "WELV13B",
-    "WELV14A",
-    "WELV14B",
-    "WELV2",
-    "WELV20",
-    "WELV27",
-    "WELV3",
-    "WELV30",
-    "WELV4",
-    "WELV65",
-    "WELV96"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 4,
+   "codes": [
+    "ARCHV11",
+    "CTV20",
+    "DRFTV2B",
+    "PHYSV1"
+   ],
+   "flagged": [
+    "ARCHV11",
+    "CTV20",
+    "DRFTV2B",
+    "PHYSV1"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    27.0,
+    27.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -112,120 +122,294 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Welding",
+   "section_heading": "Welding Technology, Associate in Science",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 27
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 9,
+    "max": 9
    },
-   "ge_pattern": null,
+   "ge_pattern": "VCCCD General Education Pattern",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 24
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Set up equipment and perform basic welding processes.",
+    "Read and interpret blueprint drawings commonly used in welding fabrication.",
+    "Understand basic metallurgy and material selection used in welding."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ART V27",
-    "why": "A.S. requirements not in text; named only as same-as for WEL V27 in course list"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "WEL V01",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEL V02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DRFT V02A",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CT V65",
-    "why": "A.S. requirements not in text; named only as same-as for WEL V65 in course list"
+    "name": "List A: Select 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DRFT V04",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MT V04",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MT V15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEL V20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEL V27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART V27",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEL V30",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEL V65",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CT V65",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEL V96",
+      "units": 1,
+      "units_max": 14,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DRFT V02A",
-    "why": "A.S. requirements not in text; named only as same-as for WEL V02 in course list"
+    "name": "List B: WEL V03",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "WEL V03",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DRFT V04",
-    "why": "not in the text"
+    "name": "List B: WEL V13A & WEL V13B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "WEL V13A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEL V13B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MT V04",
-    "why": "A.S. requirements not in text; named only as an advisory for WEL V30"
+    "name": "List C: WEL V04",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List C",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "WEL V04",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MT V15",
-    "why": "not in the text"
+    "name": "List C: WEL V14A & WEL V14B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List C",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "WEL V14A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEL V14B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "WEL V01",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
-   },
-   {
-    "code": "WEL V02",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
-   },
-   {
-    "code": "WEL V03",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
-   },
-   {
-    "code": "WEL V04",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
-   },
-   {
-    "code": "WEL V13A",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
-   },
-   {
-    "code": "WEL V13B",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
-   },
-   {
-    "code": "WEL V14A",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
-   },
-   {
-    "code": "WEL V14B",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
-   },
-   {
-    "code": "WEL V20",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
-   },
-   {
-    "code": "WEL V27",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
-   },
-   {
-    "code": "WEL V30",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
-   },
-   {
-    "code": "WEL V65",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
-   },
-   {
-    "code": "WEL V96",
-    "why": "A.S. requirements not in text; appears only in course descriptions"
+    "name": "Recommended Courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARCH V11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CT V20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRFT V02B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS V01",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section heading taken from the page's navigation entry; the requirements tab prints no separate heading.",
+   "List B and List C each say 'Select 1 option'; each option recorded as its own block in option groups 'List B' and 'List C'. The catalog prints 8 units beside each paired option (WEL V13A & WEL V13B; WEL V14A & WEL V14B) but no units beside the individual courses, so their units are null (closed list stores 4 each).",
+   "The catalog prints 'Required Additional Units 22' covering List A (6), List B (8) and List C (8) together; not assigned to any single block.",
+   "Degree breakdown printed: Required Major Units 27, VCCCD General Education Units 24, Double-Counted Units (0), Elective Units 9, Total Units for the A.S. Degree 60. Elective Units 9 recorded as degree_elective_units.",
+   "WEL V96 printed with range 1-14 units.",
+   "Plan of Study totals 61 units and pairs WEL V13A with WEL V14A in one semester and WEL V13B with WEL V14B in another, a scheduling arrangement that differs from the List B/List C grouping; requirements tab used.",
+   "Program student learning outcomes are printed on the page's outcomes tab for this program and recorded for this award."
+  ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

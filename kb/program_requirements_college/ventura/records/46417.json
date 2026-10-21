@@ -1,0 +1,172 @@
+{
+ "college": "Ventura College",
+ "control_number": "46417",
+ "shape": "noncredit",
+ "title": "Spanish for Medical Personnel",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/spanish-medical-personnel-cocn/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7479,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7479,
+    "output_tokens": 813,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 813,
+  "output_tokens_details": {
+   "thinking_tokens": 139
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04618,
+ "ms": 7063,
+ "seconds": 7.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    192.5,
+    192.5
+   ],
+   "stated": [
+    192.5,
+    192.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish for Medical Personnel, Certificate of Completion (COCN)",
+   "measure": "hours",
+   "total_units": {
+    "min": 192.5,
+    "max": 192.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop and use a personal glossary of basic and advanced medical terminology in English and Spanish.",
+    "Read and analyze medical documents, identifying specialized terminology and its appropriate Spanish equivalent.",
+    "Communicate basic and advanced medical information effectively in Spanish within different clinical contexts.",
+    "Aurally comprehend and process medical information in Spanish during patient interactions.",
+    "Apply cultural competence in communication with Spanish-speaking patients, recognizing cultural and linguistic factors that influence health behaviors and treatment adherence.",
+    "Identify professional responsibilities and legal considerations related to language services in healthcare settings.",
+    "Demonstrate cultural competency to connect and build rapport with patients from the Latinx community."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPAN N170A",
+      "units": 96.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN N170B",
+      "units": 96.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Completion counted in hours; 'Total Hours for the Certificate 192.5' recorded as total_units.",
+   "Advisory on recommended preparation (SPAN V04 or SPAN V04S with a grade of C or better) is entry preparation, not a program course; not recorded as a block.",
+   "Outcomes are printed in the page's program student learning outcomes tab for this program."
+  ]
+ },
+ "extracted_run": "39622549965"
+}

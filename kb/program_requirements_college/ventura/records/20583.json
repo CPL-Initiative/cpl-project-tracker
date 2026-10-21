@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Construction Technology—Construction Management Option",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-construction-management-option-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12350,
+  "input_tokens": 8259,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12350,
-    "output_tokens": 1302,
+    "input_tokens": 8259,
+    "output_tokens": 1939,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,51 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1302,
+  "output_tokens": 1939,
   "output_tokens_details": {
-   "thinking_tokens": 264
+   "thinking_tokens": 420
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07544,
- "ms": 11276,
- "seconds": 11.9,
+ "cost_usd": 0.07182,
+ "ms": 15576,
+ "seconds": 15.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 22,
    "listed": 22,
-   "share": 0.0,
-   "missing": [
-    "ARCHV11",
-    "ARCHV12",
-    "ARCHV58",
-    "ARCHV59",
-    "ARCHV60",
-    "ARCHV64",
-    "ARCHV75",
-    "CTV12",
-    "CTV20",
-    "CTV30",
-    "CTV50",
-    "CTV52",
-    "CTV58",
-    "CTV59",
-    "CTV60",
-    "CTV64",
-    "CTV75",
-    "CTV76",
-    "CTV77",
-    "CTV79",
-    "CTV96",
-    "DRFTV2B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -83,26 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    30.0,
+    30.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -117,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "COURSES",
+   "section_heading": "Construction Technology—Construction Management Option",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 30,
+    "max": 30
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -142,106 +121,195 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Prepare and evaluate construction cost estimates using quantity takeoffs, unit pricing, and cost-control methods appropriate to residential and light commercial projects.",
+    "Interpret and apply construction drawings and written specifications to determine scope of work, materials, and sequencing requirements.",
+    "Develop and analyze construction schedules that establish the logical sequence of construction activities and coordination of trades.",
+    "Differentiate and coordinate office operations and field operations to support project planning, documentation, communication, and site supervision.",
+    "Apply applicable building codes, safety standards, and regulatory requirements to evaluate construction work for compliance and risk management."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ARCH V11",
-    "why": "named only as a same-as/advisory in course descriptions; no requirements section in text"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "CT V20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARCH V11",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "DRFT V02B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT V64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARCH V64",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT V77",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT V79",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ARCH V12",
-    "why": "named only as a same-as in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "ARCH V58",
-    "why": "named only as a same-as in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "ARCH V59",
-    "why": "named only as a same-as in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "ARCH V60",
-    "why": "named only as a same-as in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "ARCH V64",
-    "why": "named only as a same-as in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "ARCH V75",
-    "why": "named only as a same-as in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "CT V12",
-    "why": "appears only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "CT V20",
-    "why": "appears only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "CT V30",
-    "why": "appears only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "CT V50",
-    "why": "appears only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "CT V52",
-    "why": "appears only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "CT V58",
-    "why": "appears only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "CT V59",
-    "why": "appears only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "CT V60",
-    "why": "appears only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "CT V64",
-    "why": "appears only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "CT V75",
-    "why": "appears only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "CT V76",
-    "why": "appears only in course descriptions (cut off); no requirements section in text"
-   },
-   {
-    "code": "CT V77",
-    "why": "not in the text"
-   },
-   {
-    "code": "CT V79",
-    "why": "not in the text"
-   },
-   {
-    "code": "CT V96",
-    "why": "not in the text"
-   },
-   {
-    "code": "DRFT V02B",
-    "why": "named only as a same-as/advisory in course descriptions; no requirements section in text"
+    "name": "Required Additional Courses — List A: Select 6 courses from the following",
+    "rule": "choose_courses",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CT V12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARCH V12",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT V30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT V50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT V52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT V58",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARCH V58",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT V59",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARCH V59",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT V60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARCH V60",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT V75",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARCH V75",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT V76",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT V96",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text contains only site navigation and the COURSES tab (course descriptions, cut off after CT V76). The program requirements section for the Construction Management Option Certificate of Achievement is not in the text, so no blocks, totals, outcomes or careers could be recorded.",
-   "section_heading records the only content tab present ('COURSES'); a reviewer should fetch the program's Requirements tab for this award.",
-   "Course descriptions mention audiences (e.g., inspectors, contractors, electricians), but careers are not taken from course descriptions."
+   "The page text does not print the program heading; section_heading uses the program title given.",
+   "CT V96 is printed under 'May select 3 units from the following as part of the six courses additionally required', so it is recorded inside List A as one of the six choices; the catalog prints 3 units beside it while the state file stores 1 (variable-unit work experience).",
+   "Cross-listed codes printed as 'CT/ARCH Vxx' are recorded as the CT course with the ARCH course as an alternative; 'CT V20/ARCH V11/DRFT V02B' recorded as CT V20 with ARCH V11 and DRFT V02B as alternatives.",
+   "List A prints no unit total of its own; the certificate total is 30 units (12 core + 6 courses x 3 units).",
+   "The outcomes are printed in the page's program student learning outcomes tab for this program; recorded as this award's outcomes."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

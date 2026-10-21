@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Film, Television, and Electronic Media",
  "award": "A.S. T Degree",
- "source_url": "https://catalog.vcccd.edu/ventura/transfer-information/transfer-uc/",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/film/film-television-electronic-media-ast/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13956,
+  "input_tokens": 7767,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13956,
-    "output_tokens": 1159,
+    "input_tokens": 7767,
+    "output_tokens": 2047,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,46 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1159,
+  "output_tokens": 2047,
   "output_tokens_details": {
-   "thinking_tokens": 247
+   "thinking_tokens": 562
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.079,
- "ms": 10463,
- "seconds": 11.0,
+ "cost_usd": 0.07201,
+ "ms": 15814,
+ "seconds": 16.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 17,
    "listed": 17,
-   "share": 0.0,
-   "missing": [
-    "ARTV81",
-    "COMMV16",
-    "ENGLV12",
-    "FILMV1",
-    "FILMV10",
-    "FILMV11",
-    "FILMV12",
-    "FILMV2",
-    "FILMV29A",
-    "FILMV29B",
-    "FILMV3A",
-    "FILMV4",
-    "FILMV5",
-    "FILMV7",
-    "THAV29A",
-    "THAV29B",
-    "THAV30A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -78,26 +61,46 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     69.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -110,117 +113,215 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Film Studies (see also Art. Art History, and Photography)",
+   "section_heading": "REQUIREMENTS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 11,
+    "max": 17
    },
-   "ge_pattern": null,
+   "ge_pattern": "CalGETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Create and edit works of film, including narrative and editorial projects.",
+    "Analyze works of film and media."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ART V81",
-    "why": "appears only in the UC-transferable course list, not in any program requirements"
+    "name": "Required Core Courses, Select 2 courses (6 units):",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "COMM V16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM V12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL V12",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "COMM V16",
-    "why": "appears only in the UC-transferable course list, not in any program requirements"
+    "name": "List A: Complete 1 Video and Film Production and 1 Audio course (6 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "FILM V02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM V07",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGL V12",
-    "why": "not in the text"
+    "name": "List B, Select 1 course from the following (3 units):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "FILM V10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THA V29A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM V29A",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THA V29B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM V29B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THA V30A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "FILM V01",
-    "why": "appears only in the UC-transferable course list, not in any program requirements"
-   },
-   {
-    "code": "FILM V02",
-    "why": "appears only in the UC-transferable course list, not in any program requirements"
-   },
-   {
-    "code": "FILM V03A",
-    "why": "appears only in the UC-transferable course list, not in any program requirements"
-   },
-   {
-    "code": "FILM V04",
-    "why": "appears only in the UC-transferable course list, not in any program requirements"
-   },
-   {
-    "code": "FILM V05",
-    "why": "appears only in the UC-transferable course list, not in any program requirements"
-   },
-   {
-    "code": "FILM V07",
-    "why": "appears only in the UC-transferable course list, not in any program requirements"
-   },
-   {
-    "code": "FILM V10",
-    "why": "appears only in the UC-transferable course list, not in any program requirements"
-   },
-   {
-    "code": "FILM V11",
-    "why": "appears only in the UC-transferable course list, not in any program requirements"
-   },
-   {
-    "code": "FILM V12",
-    "why": "not in the text"
-   },
-   {
-    "code": "FILM V29A",
-    "why": "appears only in the UC-transferable course list, not in any program requirements"
-   },
-   {
-    "code": "FILM V29B",
-    "why": "appears only in the UC-transferable course list, not in any program requirements"
-   },
-   {
-    "code": "THA V29A",
-    "why": "not in the text"
-   },
-   {
-    "code": "THA V29B",
-    "why": "not in the text"
-   },
-   {
-    "code": "THA V30A",
-    "why": "not in the text"
+    "name": "List C, Select 1 course (3 units):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART V81",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM V03A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM V04",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM V05",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM V11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source page is Ventura College's 'Transfer to UC' list of UC-transferable courses by subject, not the requirements for the Film, Television, and Electronic Media A.S.-T degree. No award section, requirement blocks, totals, GE pattern, outcomes or careers are printed, so no blocks were recorded.",
-   "The section_heading names the Film Studies subject heading in the UC-transferable list, the part of the text closest to this program. It is not a program section.",
-   "The text is cut off mid-entry ('ICA V69 Spring'), and the start of the list is truncated as well.",
-   "A reviewer should take the program requirements from the degree's own catalog page."
+   "No program heading is printed in the extracted text; section_heading uses the 'REQUIREMENTS' tab label. The page is the A.S.-T in Film, Television, and Electronic Media.",
+   "Cross-listed codes printed as 'FILM/ENGL V12', 'THA/FILM V29A' and 'THA/FILM V29B' are recorded as one entry with the other subject as an alternative.",
+   "List B also allows 'Any course not already selected from the list of Required Core Courses or List A above' (3 units); List C also allows any course not already selected from the Required Core Courses or List A or B. These open rows are not recorded as courses.",
+   "List A says 'Complete 1 Video and Film Production and 1 Audio course' but lists only FILM V02 and FILM V07, so both are recorded as required.",
+   "The page prints Double-Counted Units (3-9) between CalGETC and the major; electives 11-17 are CSU transferable units to reach 60, recorded in degree_elective_units.",
+   "The outcomes list is printed for the program on the page's outcomes tab and is recorded for this award."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

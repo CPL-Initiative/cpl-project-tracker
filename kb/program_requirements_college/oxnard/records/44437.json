@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Logistics",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/logistics/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/logistics/logistics-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7720,
+  "input_tokens": 7490,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7720,
-    "output_tokens": 715,
+    "input_tokens": 7490,
+    "output_tokens": 858,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,36 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 715,
+  "output_tokens": 858,
   "output_tokens_details": {
-   "thinking_tokens": 178
+   "thinking_tokens": 133
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04518,
- "ms": 6936,
- "seconds": 7.5,
+ "cost_usd": 0.04712,
+ "ms": 7395,
+ "seconds": 8.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 6,
    "listed": 6,
-   "share": 0.0,
-   "missing": [
-    "LOGIR100",
-    "LOGIR101",
-    "LOGIR102",
-    "LOGIR103",
-    "LOGIR104",
-    "LOGIR105"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -68,26 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -102,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Logistics",
+   "section_heading": "Logistics, Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -127,43 +121,90 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Determine the role of logistics in modern production, operations  manufacturing",
+    "Define supply chain management and understand challenges involved in creating and maintaining supply chain strategies",
+    "Explain essential elements of the global supply chain",
+    "Select the best mode of transportation given product attributes and costs associated with the selected transportation mode",
+    "Identify the basic concepts and practices of importing and exporting goods"
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "LOGI R100",
-    "why": "only a course description in the text; no certificate requirements printed"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LOGI R100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LOGI R101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LOGI R102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LOGI R103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "LOGI R101",
-    "why": "only a course description in the text; no certificate requirements printed"
-   },
-   {
-    "code": "LOGI R102",
-    "why": "only a course description in the text; no certificate requirements printed"
-   },
-   {
-    "code": "LOGI R103",
-    "why": "only a course description in the text; no certificate requirements printed"
-   },
-   {
-    "code": "LOGI R104",
-    "why": "only a course description in the text; no certificate requirements printed"
-   },
-   {
-    "code": "LOGI R105",
-    "why": "only a course description in the text; no certificate requirements printed"
+    "name": "Complete two courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LOGI R104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LOGI R105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The text holds only the COURSES tab of the Logistics page. The CERTIFICATES OF ACHIEVEMENT tab is named but its content (requirements, total units, outcomes) is not in the text, so no blocks are recorded.",
-   "The course list is cut off at LOGI R107 (Digital Engineering for Naval Product). The page also lists LOGI R106 and LOGI R107, which are not in the closed list. They are not placed because no requirement list names them.",
-   "No program learning outcomes or careers are printed in the supplied text.",
-   "A reviewer should check the certificate requirements tab on the source page."
+   "The 'choose two' block lists exactly two courses, so both are effectively required; total of 18 units is consistent.",
+   "First outcome is copied as printed ('operations  manufacturing' with a double space); a word or comma may be missing in the source.",
+   "Outcomes are printed in the page's program student learning outcomes tab for this certificate page."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }

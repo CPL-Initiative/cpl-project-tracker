@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Drafting Technology",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/drafting-technology-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9757,
+  "input_tokens": 7910,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9757,
-    "output_tokens": 806,
+    "input_tokens": 7910,
+    "output_tokens": 1544,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,66 +30,74 @@
     "model": null
    }
   ],
-  "output_tokens": 806,
+  "output_tokens": 1544,
   "output_tokens_details": {
-   "thinking_tokens": 136
+   "thinking_tokens": 364
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05515,
- "ms": 7447,
- "seconds": 8.0,
+ "cost_usd": 0.06252,
+ "ms": 12813,
+ "seconds": 13.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 9,
    "listed": 9,
-   "share": 0.0,
-   "missing": [
-    "ARCHV23",
-    "ARCHV24",
-    "DRFTV14",
-    "DRFTV42",
-    "DRFTV43",
-    "DRFTV44",
-    "DRFTV51",
-    "DRFTV5A",
-    "DRFTV5B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 7,
+   "codes": [
+    "DRFTV18",
+    "DRFTV2A",
+    "DRFTV3",
+    "DRFTV41",
+    "MTV2",
+    "MTV35",
+    "WELV1"
+   ],
+   "flagged": [
+    "DRFTV18",
+    "DRFTV2A",
+    "DRFTV3",
+    "DRFTV41",
+    "MTV2",
+    "MTV35",
+    "WELV1"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    13.0,
+    14.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    13.0,
+    14.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -104,15 +112,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "[Tab: COURSES]",
+   "section_heading": "Course List",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 13,
+    "max": 14
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -129,54 +137,169 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate an understanding of drawing methods and graphic composition techniques.",
+    "Prepare technical drawings using computer-aided drafting (CAD) and design software.",
+    "Analyze information to develop solutions to technical aspects of a design problem."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ARCH V23",
-    "why": "No program requirements in the text; named only as same-as/prerequisite in course descriptions"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "DRFT V05A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARCH V23",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRFT V42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRFT V43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRFT V44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ARCH V24",
-    "why": "No program requirements in the text; named only as same-as for DRFT V05B in course descriptions"
+    "name": "List A: Select one course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "DRFT V05B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARCH V24",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRFT V51",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRFT V14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DRFT V05A",
-    "why": "No program requirements in the text; appears only in the course descriptions"
-   },
-   {
-    "code": "DRFT V05B",
-    "why": "No program requirements in the text; appears only in the course descriptions"
-   },
-   {
-    "code": "DRFT V14",
-    "why": "No program requirements in the text; appears only in the course descriptions"
-   },
-   {
-    "code": "DRFT V42",
-    "why": "No program requirements in the text; appears only in the course descriptions"
-   },
-   {
-    "code": "DRFT V43",
-    "why": "No program requirements in the text; appears only in the course descriptions"
-   },
-   {
-    "code": "DRFT V44",
-    "why": "No program requirements in the text; appears only in the course descriptions"
-   },
-   {
-    "code": "DRFT V51",
-    "why": "No program requirements in the text; appears only in the course descriptions"
+    "name": "Recommended Courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DRFT V02A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRFT V18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRFT V41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MT V02",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MT V35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WEL V01",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRFT V03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied catalog text contains only the COURSES tab of the Drafting page (course descriptions); no program requirements, total, outcomes or careers for the Drafting Technology Certificate of Achievement are printed, so no blocks were recorded.",
-   "A reviewer should check the page's program/requirements tab for the Drafting Technology Certificate of Achievement section.",
-   "Course descriptions show DRFT V05A same-as ARCH V23 and DRFT V05B same-as ARCH V24; these pairs would likely be alternatives in the certificate's requirements."
+   "The page text does not print the program title heading; section_heading uses the requirements tab's 'Course List' heading. The page URL indicates the Drafting Technology Certificate of Achievement.",
+   "Program student learning outcomes are printed once for the program on the page's outcomes tab; recorded for this certificate.",
+   "Recommended courses text says they 'do not satisfy the requirements for this degree' although the award is a certificate; they are recorded as recommended and not counted toward the 13-14 unit total.",
+   "No careers are named in the provided text."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

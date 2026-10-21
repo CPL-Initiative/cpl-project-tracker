@@ -722,6 +722,34 @@ sharing pages 148-154 and two on the course availability table.
 
 **Sam's sheet 32 (2026-10-04):** a program shows "up to" plus the recommended path's figure, each course carries CPL in three kinds (articulated here, could adopt, for consideration), and catalog-and-state-file differences go to the college as drafts on the harvest tab and My College while the MAP team sends. Verbatim: lessons, *Moved from the lane (S386 compaction)*.
 
+## S442, the routine's run beside Sam's SkyManzanita (2026-10-21): the Ventura district's campus letter
+
+- **Two sessions ran as S442 on one queue.** The routine's 11:15Z firing found no open PR newer than 10-19 and no
+  `list_sessions`, and Sam opened SkyManzanita by hand about the same hour. Both worked the harvest's thin list; both
+  read Oxnard's host within the hour, and each display job wrote its own build (bf781cf0cd22 for Reedley, 8d733f684f83
+  for the three Ventura colleges) over the same rows in the same window, leaving a mix. A build from `main` after both
+  merged, applied once, settled it. A session with no `list_sessions` reads `main`'s commits again before each
+  display dispatch, not only at the start.
+- **The old reader's capture and the new one disagree on Oxnard:** SkyManzanita's free capture read it "exactly as
+  before" (reader work); with the campus-letter fix it found 120 of 132 (94 before).
+
+- **A tab the filter cannot read as naming a course is dropped before any check sees it.** Moorpark's Animal Care and
+  Training A.S. took its own page at title 1.0 yet read 0 of 42 listed courses. Page read 39595155181 printed only the
+  Overview; with `"expand": true` (39595760314) the REQUIREMENTS tab printed `ANCT M01A`, `ANCT M09` ... The Ventura
+  district letters each number by campus (M, and R and V at Oxnard and Ventura). `SUBJECT_TOKEN` took a number to start
+  with a digit or Coastline's C, so `hidden_tabs_text` dropped the panel as the search dialog, and the capture fell
+  back to textContent, where each code runs into its title (`ANCT M01AAnimal`) and no pattern ends. Any one letter may
+  now lead (#2309; guard in `tests/program_requirements_pilot_test.py`, failing without the fix).
+- **Moorpark after the fix:** capture-only 39596973339 found 144 of 145 (99 before; 106 at coverage 1.0, 57 before),
+  one page claimed (39 before). Extraction 39600815599: 144 extracted, 100 passing (31), $10.40. Load 39605787602
+  inserted 83 and kept 52; reread 39606457885 replaced 1. Display build c45da149b72b, 16,606 rows.
+- **Golden West's re-read with today's reader (39591103370) found the same 81 pages as S395.** Its gap is the catalog's
+  shape: 43 programs' only pages are department pages (Automotive Technology's nine certificates, Accounting's three)
+  or the General Education page, and 29 have no course list in the state's file. A reader change there is a
+  department-page reader, not a code fix.
+- **Read the thin list for a shared cause before a college's own.** Moorpark (34%), Oxnard (49%) and Ventura (55%)
+  sat on one host and one numbering habit; one fix reaches all three.
+
 ## S440 SkyChaparral (2026-10-21): three colleges no list named, Santa Monica's 40-minute PDF, Taft 38661 gone
 
 - **List the thin colleges live before picking the next one.** The parked list named eleven colleges; a live read of

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Architectural Science",
  "award": "A.S. Degree",
- "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-science-as/",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-as/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7734,
+  "input_tokens": 8460,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7734,
-    "output_tokens": 2026,
+    "input_tokens": 8460,
+    "output_tokens": 2375,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,55 +30,98 @@
     "model": null
    }
   ],
-  "output_tokens": 2026,
+  "output_tokens": 2375,
   "output_tokens_details": {
-   "thinking_tokens": 841
+   "thinking_tokens": 570
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07146,
- "ms": 25352,
- "seconds": 25.9,
+ "cost_usd": 0.08134,
+ "ms": 18053,
+ "seconds": 18.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 10,
    "listed": 10,
-   "share": 0.9,
-   "missing": [
-    "DRFTV5A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 14,
    "codes": [
+    "ARCHV11",
+    "ARCHV15",
     "ARCHV20",
-    "ARTV2F"
+    "ARCHV24",
+    "ARCHV33",
+    "ARCHV60",
+    "ARCHV64",
+    "ARCHV96",
+    "ARTV2F",
+    "CTV20",
+    "CTV64",
+    "DRFTV2B",
+    "DRFTV51",
+    "DRFTV5B"
    ],
    "flagged": [
+    "ARCHV11",
+    "ARCHV15",
     "ARCHV20",
-    "ARTV2F"
+    "ARCHV24",
+    "ARCHV33",
+    "ARCHV60",
+    "ARCHV64",
+    "ARCHV96",
+    "ARTV2F",
+    "CTV20",
+    "CTV64",
+    "DRFTV2B",
+    "DRFTV51",
+    "DRFTV5B"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    25.0,
-    25.0
+    18.0,
+    20.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     58.0,
+     62.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -100,34 +143,31 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Architectural Science, A.S.",
+   "section_heading": "Course List (REQUIREMENTS tab, Architectural Design A.S.)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 16,
+    "max": 18
    },
-   "ge_pattern": "VC GE",
+   "ge_pattern": "VCCCD General Education Pattern",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 24
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -140,13 +180,13 @@
   },
   "blocks": [
    {
-    "name": "Plan of Study Grid (named ARCH courses)",
+    "name": "Required Core Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 14,
+     "max": 14
     },
     "courses": [
      {
@@ -164,35 +204,7 @@
       "catalog_addition": false
      },
      {
-      "code": "ARCH V23",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ARCH V25",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "ARCH V22",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ARCH V31",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ARCH V32",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -215,7 +227,65 @@
     ]
    },
    {
-    "name": "Elective ARCH course (ARCH V20/ART V02F recommended)",
+    "name": "Required Additional Courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ARCH V11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CT V20",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "DRFT V02B",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH V15",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH V25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V96",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRFT V51",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Recommended Elective Courses",
     "rule": "recommended",
     "minimum": null,
     "option_group": null,
@@ -224,6 +294,76 @@
      "max": null
     },
     "courses": [
+     {
+      "code": "ARCH V23",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V24",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH V31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH V60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH V64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CT V64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRFT V05A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRFT V05B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
      {
       "code": "ARCH V20",
       "units": 3,
@@ -241,19 +381,16 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "DRFT V05A",
-    "why": "not in the text (only the plan of study is present; ARCH V23 is listed instead)"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The captured text contains no Program Requirements tab; only the Plan of Study Grid and the outcomes tab are present. Blocks were read from the plan of study, which is a suggested sequence, not the official requirement list. A reviewer should check the requirements tab.",
-   "The plan of study lists 'Elective ARCH course' rows totaling 3+3+3+2 units, with no course codes; these were not recorded as a block, and the number of elective ARCH units required is not stated in the text. One elective ARCH row double counts with VC GE Area 3 (ARCH V20/ART V02F recommended).",
-   "The plan of study prints 'Total Units/Hours 62', which is the total of the sample plan including VC GE courses; it was not recorded as degree_total or total_units because it is not printed as the award's requirement total.",
-   "ENGL C1000 and the VC GE Area rows are general education and were not placed in blocks.",
-   "Outcomes come from the page's program student learning outcomes tab for this program."
+   "The page URL names 'architectural-design-as' while the program is titled Architectural Science; no program heading is printed in the extracted text, so the section heading is taken from the REQUIREMENTS tab's 'Course List'. Reviewer should confirm this is the same award.",
+   "ARCH V11/CT V20/DRFT V02B is printed as one cross-listed row; recorded as ARCH V11 with CT V20 and DRFT V02B as alternatives.",
+   "ARCH V20/ART V02F is printed as one cross-listed recommended course; recorded with ART V02F as alternative. ARCH V64 and CT V64 are printed as separate recommended entries with the same title and kept separate.",
+   "Elective Units 16-18 are counted toward the 60-unit A.S. degree outside the 18-20 major units and recorded as degree_elective_units; recommended courses may fulfill these electives but do not satisfy core requirements.",
+   "Double-Counted Units printed as (0).",
+   "Plan of Study total prints 59-61 units, which differs from the 60-unit degree total.",
+   "Program learning outcomes are printed once for the program in the outcomes tab; recorded for this award."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

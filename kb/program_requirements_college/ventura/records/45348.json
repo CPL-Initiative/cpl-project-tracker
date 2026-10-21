@@ -1,0 +1,347 @@
+{
+ "college": "Ventura College",
+ "control_number": "45348",
+ "shape": "degree",
+ "title": "Automotive Career Education, Bachelor in Science (BS)",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-career-education-bs/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9164,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9164,
+    "output_tokens": 2302,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2302,
+  "output_tokens_details": {
+   "thinking_tokens": 530
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0827,
+ "ms": 18428,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 23,
+   "share": 0.87,
+   "missing": [
+    "BUSV312",
+    "COMMV442",
+    "SOCV432"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    116.0,
+    131.0
+   ],
+   "stated": [
+    126.0,
+    141.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    49.0
+   ],
+   "why": [
+    "the blocks and general education sum to 116.0-131.0; the catalog prints 126.0-141.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     82.0,
+     82.0
+    ],
+    "stated": [
+     82.0,
+     82.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Career Education, Bachelor in Science (BS)",
+   "measure": "units",
+   "total_units": {
+    "min": 82,
+    "max": 82
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CSU General Education Breadth, IGETC, or Cal-GETC (lower division), plus required upper division general education courses",
+   "degree_total": {
+    "min": 126,
+    "max": 141
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 49
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding of safety in the repair and service associated with electrified vehicles.",
+    "Identify and describe theory and operation of electrified vehicle classifications, systems, and supporting systems.",
+    "Perform critical thinking to diagnose, repair, and test electrified vehicle systems and supporting systems.",
+    "Demonstrate an understanding of laws, regulations, and standards related to electrified vehicles.",
+    "Produce a professional research report and presentation representing their opinion on an approved topic related to electrified vehicles and the automotive industry."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Lower Division Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 43,
+     "max": 43
+    },
+    "courses": [
+     {
+      "code": "ACE V11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V22",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V23",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V31",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V32",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V33",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V41",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V42",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Upper Division Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 39,
+     "max": 39
+    },
+    "courses": [
+     {
+      "code": "ACE V310",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V311",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V320",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V321",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V322",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V430",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V431",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V440",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACE V441",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS V312",
+    "why": "Listed under Required Upper Division General Education Courses (10 units), outside the 82-unit major; GE courses are not placed in blocks."
+   },
+   {
+    "code": "SOC V432",
+    "why": "Listed under Required Upper Division General Education Courses (10 units), outside the 82-unit major; GE courses are not placed in blocks."
+   },
+   {
+    "code": "COMM V442",
+    "why": "Listed under Required Upper Division General Education Courses (10 units), outside the 82-unit major; GE courses are not placed in blocks."
+   }
+  ],
+  "notes": [
+   "Total Major Units 82 = lower division core 43 + upper division core 39; the three upper division GE courses (BUS V312, SOC V432, COMM V442, 10 units) are required for the degree but printed as general education, not major.",
+   "ge_units records the lower division GE range printed (34-49: CSU GE Breadth 44-49, IGETC 34-37, Cal-GETC 34); the page also prints Required Upper Division General Education Units 10. Degree total 126-141 = 82 + 34-49 + 10.",
+   "Plan of study total of 92 units counts the major plus upper division GE courses only; lower division GE is completed separately.",
+   "Outcomes are from the page's program student learning outcomes tab for this program.",
+   "Section heading taken from the program title; the extracted text shows only tab headings (REQUIREMENTS, PLAN OF STUDY)."
+  ]
+ },
+ "extracted_run": "39622549965"
+}

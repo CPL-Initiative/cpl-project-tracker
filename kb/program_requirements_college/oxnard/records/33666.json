@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Film, Television, and Electronic Media",
  "award": "A.S. T Degree",
- "source_url": "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/film-television-electronic-media/film-television-electronic-media-ast/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8217,
+  "input_tokens": 8265,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8217,
-    "output_tokens": 1251,
+    "input_tokens": 8265,
+    "output_tokens": 2717,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,47 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1251,
+  "output_tokens": 2717,
   "output_tokens_details": {
-   "thinking_tokens": 248
+   "thinking_tokens": 668
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05789,
- "ms": 10750,
- "seconds": 11.4,
+ "cost_usd": 0.0874,
+ "ms": 20720,
+ "seconds": 21.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 17,
    "listed": 17,
-   "share": 0.0,
-   "missing": [
-    "FTVER100",
-    "FTVER101",
-    "FTVER102",
-    "FTVER103",
-    "FTVER104",
-    "FTVER106",
-    "FTVER107",
-    "FTVER110",
-    "FTVER111",
-    "FTVER113",
-    "FTVER115",
-    "FTVER120",
-    "FTVER130",
-    "FTVER135",
-    "FTVER150",
-    "FTVER155",
-    "FTVER160"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -79,26 +61,46 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 13,
    "courses": 0,
-   "count": 0,
+   "count": 13,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -111,116 +113,240 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Film, Television, and Electronic Media",
+   "section_heading": "Film, Television, and Electronic Media A.S.-T Degree (REQUIREMENTS tab)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 8,
+    "max": 11
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Effectively communicate information and stories to a target audience, applying a general knowledge of visual storytelling and specific technical skills from their area of specialization.",
+    "Demonstrate critical thinking, research, and analysis skills to understand the trends, terminology, and technology to thrive in the entertainment industry and accomplish professional and personal goals.",
+    "Demonstrate basic trouble shooting skills and the ability to creatively problem-solve throughout the filmmaking process.",
+    "Demonstrate knowledge of historical, legal, and ethical issues, theories and concepts in film history and all aspects of film and media production.",
+    "Demonstrate skills and knowledge to obtain entry-level professional employment in an area of specialization.",
+    "Demonstrate professional-level achievement through multiple projects and a completed industry-standard demo reel or portfolio.",
+    "Demonstrate proficiency in post-production technology and techniques.",
+    "Exhibit sensitivity to diversity and professional responsibility in all areas of film, media and Television.",
+    "Demonstrate writing proficiency appropriate for entry-level professional practice including compelling story and character development and effective pitching strategies.",
+    "Assemble creative teams and work effectively to guide a crew through the pre-production, production and post-production process and the completion of film and media projects.",
+    "Demonstrate effective use of equipment and current technologies appropriate to the entry level of professional practice including working effectively with various cameras, lenses, lighting, audio and accessories.",
+    "Design and execute creative lighting schemes and choices that serve the story.",
+    "Apply principles of composition and camera movement to enhance the story and articulate director’s vision."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "FTVE R100",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "FTVE R100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE R110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FTVE R111",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "FTVE R101",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+    "name": "List A - Area 1: Audio",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FTVE R120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "FTVE R102",
-    "why": "not in the text"
+    "name": "List A - Area 2: Video",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FTVE R130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE R135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE R150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "FTVE R103",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+    "name": "List B - Complete one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "FTVE R107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE R106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "FTVE R104",
-    "why": "not in the text"
-   },
-   {
-    "code": "FTVE R106",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
-   },
-   {
-    "code": "FTVE R107",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
-   },
-   {
-    "code": "FTVE R110",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
-   },
-   {
-    "code": "FTVE R111",
-    "why": "not in the text"
-   },
-   {
-    "code": "FTVE R113",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
-   },
-   {
-    "code": "FTVE R115",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
-   },
-   {
-    "code": "FTVE R120",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
-   },
-   {
-    "code": "FTVE R130",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
-   },
-   {
-    "code": "FTVE R135",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
-   },
-   {
-    "code": "FTVE R150",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
-   },
-   {
-    "code": "FTVE R155",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
-   },
-   {
-    "code": "FTVE R160",
-    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+    "name": "List C - Complete one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "FTVE R101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE R102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE R103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE R104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE R113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE R115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE R155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE R160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source page (transfer-information/transfer-uc) is a list of UC-transferable courses by subject, not the program page for the Film, Television, and Electronic Media A.S.-T degree. It prints no requirements, totals, blocks, outcomes or careers for the award, so no blocks were recorded.",
-   "The 'Film, Television, and Electronic Media' section of the UC list includes FTVE R190A and FTVE R190B, which are not in the closed list; they were not recorded as catalog additions because the list is not a requirement list.",
-   "A reviewer should locate the actual Oxnard College FTVE A.S.-T program page for the 2026-2027 catalog to record requirements."
+   "The catalog prints no units beside individual courses, so course units are null; block totals are printed (Core 6, List A 6, List B 3, List C 3).",
+   "List A (6 units) reads 'Select one audio and one video production course'; recorded as two blocks: Area 1: Audio (only FTVE R120, so required) and Area 2: Video (choose 1). List A's printed 6 units are not on either block's stated.",
+   "Lists B and C each also allow 'Any course not selected above' (i.e., unselected courses from earlier lists); this is not represented as separate entries.",
+   "Degree summary: Total Required Major Units 18; Cal-GETC 34; Double-Counted Units -0-3; Free Electives Required 8-11; Total Units Required for AS-T Degree 60. Free electives recorded in degree_elective_units.",
+   "Outcomes come from the page's program student learning outcomes tab, which appears to be a single program-wide list shared by this award; several outcomes (demo reel, lighting schemes) read as broader than this 18-unit transfer degree.",
+   "No careers are named in the provided text."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }

@@ -1,0 +1,242 @@
+{
+ "college": "Moorpark College",
+ "control_number": "12383",
+ "shape": "degree",
+ "title": "Media Arts",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/design/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12295,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12295,
+    "output_tokens": 1253,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1253,
+  "output_tokens_details": {
+   "thinking_tokens": 250
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07424,
+ "ms": 10679,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 20,
+   "share": 0.0,
+   "missing": [
+    "ARTM30",
+    "ARTM32",
+    "ARTM40A",
+    "DESM100",
+    "DESM100H",
+    "DESM101",
+    "DESM101H",
+    "DESM121",
+    "DESM125A",
+    "DESM126",
+    "DESM130",
+    "DESM133",
+    "DESM142",
+    "DESM143",
+    "DESM150",
+    "DESM151",
+    "DESM190",
+    "DESM80",
+    "FTMAM101",
+    "GAMEM101"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Design (DES) Course Guide",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART M30",
+    "why": "not in the text; Media Arts A.S. requirements section absent"
+   },
+   {
+    "code": "ART M32",
+    "why": "not in the text; Media Arts A.S. requirements section absent"
+   },
+   {
+    "code": "ART M40A",
+    "why": "not in the text; Media Arts A.S. requirements section absent"
+   },
+   {
+    "code": "DES M100",
+    "why": "only in course descriptions; program requirements not in text"
+   },
+   {
+    "code": "DES M100H",
+    "why": "only in course descriptions; program requirements not in text"
+   },
+   {
+    "code": "DES M101",
+    "why": "only in course descriptions; program requirements not in text"
+   },
+   {
+    "code": "DES M101H",
+    "why": "only in course descriptions; program requirements not in text"
+   },
+   {
+    "code": "DES M121",
+    "why": "only in course descriptions; program requirements not in text"
+   },
+   {
+    "code": "DES M125A",
+    "why": "only in course descriptions; program requirements not in text"
+   },
+   {
+    "code": "DES M126",
+    "why": "only in course descriptions; program requirements not in text"
+   },
+   {
+    "code": "DES M130",
+    "why": "only in course descriptions; program requirements not in text"
+   },
+   {
+    "code": "DES M133",
+    "why": "only in course descriptions; program requirements not in text"
+   },
+   {
+    "code": "DES M142",
+    "why": "not in the text; course guide cut off before it"
+   },
+   {
+    "code": "DES M143",
+    "why": "not in the text; course guide cut off before it"
+   },
+   {
+    "code": "DES M150",
+    "why": "not in the text; course guide cut off before it"
+   },
+   {
+    "code": "DES M151",
+    "why": "not in the text; course guide cut off before it"
+   },
+   {
+    "code": "DES M190",
+    "why": "not in the text; course guide cut off before it"
+   },
+   {
+    "code": "DES M80",
+    "why": "only in course descriptions (as Work Experience Education in Design, 1-14 units); program requirements not in text"
+   },
+   {
+    "code": "FTMA M101",
+    "why": "not in the text; Media Arts A.S. requirements section absent"
+   },
+   {
+    "code": "GAME M101",
+    "why": "not in the text; Media Arts A.S. requirements section absent"
+   }
+  ],
+  "notes": [
+   "The supplied text contains only site navigation, print options and the COURSES tab (Design (DES) Course Guide); the Media Arts A.S. Degree program section with its requirements, totals, outcomes and careers is not included, so no blocks were recorded. A reviewer should fetch the Programs tab of the page.",
+   "The course guide text is cut off mid-description at DES M136, before DES M142, M143, M150, M151 and M190.",
+   "DES M80 is titled 'Work Experience Education in Design' (1-14 units) in the course guide, while the closed list names it 'Internship in Design' (1 unit).",
+   "No program or course learning outcomes and no careers appear in the text."
+  ]
+ },
+ "extracted_run": "39600815599"
+}

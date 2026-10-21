@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Bookkeeping",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/accounting/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/accounting/bookkeeping-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9435,
+  "input_tokens": 7340,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9435,
-    "output_tokens": 602,
+    "input_tokens": 7340,
+    "output_tokens": 495,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,33 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 602,
+  "output_tokens": 495,
   "output_tokens_details": {
-   "thinking_tokens": 188
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04978,
- "ms": 6386,
- "seconds": 7.0,
+ "cost_usd": 0.03926,
+ "ms": 4325,
+ "seconds": 4.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 3,
    "listed": 3,
-   "share": 0.0,
-   "missing": [
-    "ACCTR100",
-    "ACCTR106",
-    "BISR123"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -65,26 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    9.0,
+    9.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    9.0,
+    9.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -99,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Credit Courses",
+   "section_heading": "Bookkeeping, Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 9,
+    "max": 9
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -124,30 +121,55 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Define and apply; the accounting cycle, double-entry accounting, and the closing process.",
+    "Illustrate in an Excel worksheet; numbers, text, functions, formulas, as well as chart creation.",
+    "Process financial information for both manual and computerized systems, as well as produce appropriate output."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ACCT R100",
-    "why": "appears only in the course descriptions; no Bookkeeping requirements in the text"
-   },
-   {
-    "code": "ACCT R106",
-    "why": "appears only in the course descriptions; no Bookkeeping requirements in the text"
-   },
-   {
-    "code": "BIS R123",
-    "why": "not in the text"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT R100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIS R123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT R106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text holds only site navigation, print options and the Accounting COURSES tab, cut off mid-description at ACCT R810. No section for the Bookkeeping Certificate of Achievement is present, so no blocks, total, outcomes or careers could be recorded.",
-   "The section_heading is the heading of the course listing that was read, not a program heading.",
-   "A reviewer should check the Programs tab of https://catalog.vcccd.edu/oxnard/programs-courses/accounting/ for the Bookkeeping requirements."
+   "The page's text does not print a program heading; section_heading is inferred from the page URL (bookkeeping-coa) and the award name.",
+   "Total taken from 'Total Required Units for Certificate 9'.",
+   "No careers named in the provided text."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }

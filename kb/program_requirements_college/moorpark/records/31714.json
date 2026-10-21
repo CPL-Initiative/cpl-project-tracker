@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Theatre Arts",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/theatre-arts/theatre-arts-aat/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8385,
+  "input_tokens": 7550,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8385,
-    "output_tokens": 1078,
+    "input_tokens": 7550,
+    "output_tokens": 1709,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,70 +30,81 @@
     "model": null
    }
   ],
-  "output_tokens": 1078,
+  "output_tokens": 1709,
   "output_tokens_details": {
-   "thinking_tokens": 287
+   "thinking_tokens": 322
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0551,
- "ms": 9497,
- "seconds": 9.9,
+ "cost_usd": 0.06438,
+ "ms": 13672,
+ "seconds": 14.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 13,
    "listed": 13,
-   "share": 0.0,
-   "missing": [
-    "THAM1",
-    "THAM10A",
-    "THAM1H",
-    "THAM2A",
-    "THAM2B",
-    "THAM4",
-    "THAM4H",
-    "THAM8",
-    "TTHAM20",
-    "TTHAM23A",
-    "TTHAM25A",
-    "TTHAM27A",
-    "TTHAM28"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "TTHAM11A"
+   ],
+   "flagged": [
+    "TTHAM11A"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -106,96 +117,184 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Course Identification Numbering System (C-ID)",
+   "section_heading": "Theatre Arts AA-T",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 11,
+    "max": 11
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "demonstrate literacy in Theatre history and appreciation through the analysis of dramatic literature from diverse styles, periods and cultures.",
+    "apply learned skills in acting, directing, design, technical production, stagecraft, lighting, audio, costume construction and/or makeup application.",
+    "apply management and problem-solving skills to produce a theatrical work in a studio or main stage venue.",
+    "collaborate with peers and instructors in practical applications of skills on original or scripted works that explore diverse backgrounds and peoples to enhance cultural competency.",
+    "demonstrate a working knowledge of tools and technologies integral to theatre production."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "THA M01",
-    "why": "Only in the C-ID crosswalk (THTR 111); the text has no A.A-T requirements"
+    "name": "REQUIRED CORE: Complete the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "THA M01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THA M01H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THA M04",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THA M04H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THA M02A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THA M10A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TTHA M11A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "THA M01H",
-    "why": "Only in the C-ID crosswalk as an alternative for THTR 111; the text has no A.A-T requirements"
-   },
-   {
-    "code": "THA M02A",
-    "why": "Only in the C-ID crosswalk (THTR 151); the text has no A.A-T requirements"
-   },
-   {
-    "code": "THA M02B",
-    "why": "Only in the C-ID crosswalk (THTR 152); the text has no A.A-T requirements"
-   },
-   {
-    "code": "THA M04",
-    "why": "Only in the C-ID crosswalk (THTR 113); the text has no A.A-T requirements"
-   },
-   {
-    "code": "THA M04H",
-    "why": "Only in the C-ID crosswalk as an alternative for THTR 113; the text has no A.A-T requirements"
-   },
-   {
-    "code": "THA M08",
-    "why": "Only in the C-ID crosswalk (THTR 114); the text has no A.A-T requirements"
-   },
-   {
-    "code": "THA M10A",
-    "why": "Only in the C-ID crosswalk (THTR 191); the text has no A.A-T requirements"
-   },
-   {
-    "code": "TTHA M20",
-    "why": "Only in the C-ID crosswalk (THTR 171); the text has no A.A-T requirements"
-   },
-   {
-    "code": "TTHA M23A",
-    "why": "Only in the C-ID crosswalk (THTR 173); the text has no A.A-T requirements"
-   },
-   {
-    "code": "TTHA M25A",
-    "why": "Only in the C-ID crosswalk (THTR 172); the text has no A.A-T requirements"
-   },
-   {
-    "code": "TTHA M27A",
-    "why": "Only in the C-ID crosswalk (THTR 174); the text has no A.A-T requirements"
-   },
-   {
-    "code": "TTHA M28",
-    "why": "Only in the C-ID crosswalk (THTR 175); the text has no A.A-T requirements"
+    "name": "LIST A: Select and complete three courses (9 units)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "THA M02B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THA M08",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THA M10A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TTHA M11A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TTHA M20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TTHA M23A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TTHA M25A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TTHA M27A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TTHA M28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no separate heading for the award beyond the program page title; section_heading is taken from the page (Theatre Arts AA-T).",
+   "THA M10A and TTHA M11A appear in both the Required Core (as alternatives) and List A, where they count only 'If not already used as REQUIRED CORE'.",
+   "Degree summary prints: Total Units for the Major 18, General Education (Cal-GETC) 34, Double-Counted Units 3, Elective Units 11, Total Units for the AA-T Degree 60. The 11 elective units are recorded as degree_elective_units.",
+   "TTHA M11A (Theatre Production: Technical I) is not in the closed list and is recorded as a catalog addition.",
+   "The program student learning outcomes are printed on the page's outcomes tab for the program; recorded as this award's outcomes.",
+   "No careers are named in the text."
+  ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "39600815599"
 }

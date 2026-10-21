@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Addictive Disorders Studies in the Criminal Justice System",
  "award": "A.S. Degree",
- "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/addictive-disorders-studies-criminal-justice-system-as/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11655,
+  "input_tokens": 8374,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11655,
-    "output_tokens": 884,
+    "input_tokens": 8374,
+    "output_tokens": 1439,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 884,
+  "output_tokens": 1439,
   "output_tokens_details": {
-   "thinking_tokens": 253
+   "thinking_tokens": 274
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0643,
- "ms": 8927,
- "seconds": 9.3,
+ "cost_usd": 0.06228,
+ "ms": 11590,
+ "seconds": 12.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "ADSR106",
-    "ADSR107",
-    "ADSR116",
-    "ADSR117",
-    "ADSR119",
-    "ADSR120",
-    "ADSR121",
-    "ADSR122",
-    "ADSR123",
-    "ADSR124"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -72,26 +61,46 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     50.0,
+     70.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -104,87 +113,148 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "No A.S. degree section in the text (course descriptions only, Addictive Disorders Studies page)",
+   "section_heading": "Addictive Disorders Studies in the Criminal Justice System, A.S. Degree (REQUIREMENTS tab)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 8,
+    "max": 18
    },
-   "ge_pattern": null,
+   "ge_pattern": "Oxnard College General Education Pattern or Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Identify concepts central to the relationship of addiction that lead to significant involvement in the criminal justice system.",
+    "Apply critical thinking to addiction data and become acquainted with the relationship to drugs and alcohol usage and crime",
+    "Identify differences between incarcerated substance abusers and other substance abusers.",
+    "Define all the components of a DUI (Driving under the influence) treatment program.",
+    "Learn how to deliver articulate presentations both written and oral.",
+    "Improve information retrieval and organizational skills including the use of online resources, resulting in the ability to refer clients to the appropriate clinical resources."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ADS R106",
-    "why": "appears only as a course description; no degree requirements in text"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADS R116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ADS R107",
-    "why": "appears only as a course description; no degree requirements in text"
-   },
-   {
-    "code": "ADS R116",
-    "why": "appears only as a course description; no degree requirements in text"
-   },
-   {
-    "code": "ADS R117",
-    "why": "appears only as a course description; no degree requirements in text"
-   },
-   {
-    "code": "ADS R119",
-    "why": "appears only as a course description; no degree requirements in text"
-   },
-   {
-    "code": "ADS R120",
-    "why": "appears only as a course description; no degree requirements in text"
-   },
-   {
-    "code": "ADS R121",
-    "why": "appears only as a course description; no degree requirements in text"
-   },
-   {
-    "code": "ADS R122",
-    "why": "appears only as a course description (cut off); no degree requirements in text"
-   },
-   {
-    "code": "ADS R123",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "ADS R124",
-    "why": "not in the text (text cut off)"
+    "name": "Complete two courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ADS R106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied catalog text contains only course descriptions (starting mid-description and cut off during ADS R122); it does not include the program description, requirements table, totals, outcomes or careers for the Addictive Disorders Studies in the Criminal Justice System A.S. degree. The reviewer should obtain the program's requirements section.",
-   "No careers recorded: the only occupational mentions (e.g., DUI program, probation, police work) appear in course descriptions, not in the program's own section."
+   "The page heading is not in the extracted text; section_heading is reconstructed from the program title and the REQUIREMENTS tab.",
+   "The page prints two degree paths: Oxnard College General Education Pattern (24 units) with 18 free elective units, or Cal-GETC (34 units) with 8 free elective units; both total 60 units with 0 double-counted units. ge_units and degree_elective_units record the range across the two paths (24-34 and 8-18).",
+   "Free electives are outside the 18-unit major total, so open_elective_units is null and they are recorded in degree_elective_units.",
+   "The program outcomes list is printed on the page's outcomes tab for the program; recorded as this award's outcomes.",
+   "No careers are named in the text."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }

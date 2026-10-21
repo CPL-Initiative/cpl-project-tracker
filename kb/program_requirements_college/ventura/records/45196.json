@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Dance",
  "award": "A.A. Degree",
- "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/dance/",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/dance/dance-aa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12533,
+  "input_tokens": 8818,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12533,
-    "output_tokens": 1333,
+    "input_tokens": 8818,
+    "output_tokens": 2981,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,57 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1333,
+  "output_tokens": 2981,
   "output_tokens_details": {
-   "thinking_tokens": 153
+   "thinking_tokens": 678
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07679,
- "ms": 11038,
- "seconds": 11.6,
+ "cost_usd": 0.09489,
+ "ms": 23926,
+ "seconds": 24.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 28,
    "listed": 28,
-   "share": 0.0,
-   "missing": [
-    "DANCV1",
-    "DANCV10A",
-    "DANCV10B",
-    "DANCV10C",
-    "DANCV10D",
-    "DANCV15A",
-    "DANCV15B",
-    "DANCV15C",
-    "DANCV15D",
-    "DANCV2",
-    "DANCV27A",
-    "DANCV27B",
-    "DANCV27C",
-    "DANCV27D",
-    "DANCV3",
-    "DANCV30A",
-    "DANCV30B",
-    "DANCV30C",
-    "DANCV30D",
-    "DANCV4",
-    "DANCV40A",
-    "DANCV40B",
-    "DANCV40C",
-    "DANCV40D",
-    "DANCV50A",
-    "DANCV50B",
-    "DANCV50C",
-    "DANCV50D"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -89,26 +61,46 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    27.0,
+    30.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    27.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     57.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -121,160 +113,336 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Dance",
+   "section_heading": "Course List",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 30
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 6,
+    "max": 9
    },
-   "ge_pattern": null,
+   "ge_pattern": "VCCCD General Education Pattern",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 24
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Analyze and effectively practice the ways the body is organized in relationship to multiple dance genres and somatic practices.",
+    "Develop and demonstrate current methods and relevant strategies necessary to further their academic dance pursuits, their professional careers in dance and dance-related fields.",
+    "Demonstrate oral and written knowledge of cultural, historical and theoretical perspectives on dance.",
+    "Evaluate and demonstrate comprehensive compositional, pedagogical and technical skills.",
+    "Describe, analyze, and interpret diverse artistic dance works.",
+    "Demonstrate and analyze functional anatomical knowledge in relationship to different dance genres."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "DANC V01",
-    "why": "described in course list only; A.A. requirements not in the text"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "DANC V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC V02",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V04",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V30A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V50A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC V02",
-    "why": "described in course list only; A.A. requirements not in the text"
+    "name": "List A: Modern I-IV",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "DANC V10A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V10B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V10C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V10D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC V03",
-    "why": "described in course list only; A.A. requirements not in the text"
+    "name": "List A: Ballet I-IV",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "DANC V15A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V15B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V15C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V15D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC V04",
-    "why": "described in course list only; A.A. requirements not in the text"
+    "name": "List A: Street Dance I-IV",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "DANC V27A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V27B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V27C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V27D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC V10A",
-    "why": "described in course list only; A.A. requirements not in the text"
+    "name": "List A: Mexican Folklorico I-IV",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "DANC V40A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V40B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V40C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V40D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC V10B",
-    "why": "described in course list only; A.A. requirements not in the text"
+    "name": "List B: Dance Performance II-IV",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "DANC V30B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V30C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V30D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC V10C",
-    "why": "described in course list only; A.A. requirements not in the text"
-   },
-   {
-    "code": "DANC V10D",
-    "why": "described in course list only; A.A. requirements not in the text"
-   },
-   {
-    "code": "DANC V15A",
-    "why": "described in course list only; A.A. requirements not in the text"
-   },
-   {
-    "code": "DANC V15B",
-    "why": "described in course list only; A.A. requirements not in the text"
-   },
-   {
-    "code": "DANC V15C",
-    "why": "described in course list only; A.A. requirements not in the text"
-   },
-   {
-    "code": "DANC V15D",
-    "why": "described in course list only; A.A. requirements not in the text"
-   },
-   {
-    "code": "DANC V27A",
-    "why": "described in course list only; A.A. requirements not in the text"
-   },
-   {
-    "code": "DANC V27B",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V27C",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V27D",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V30A",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V30B",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V30C",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V30D",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V40A",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V40B",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V40C",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V40D",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V50A",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V50B",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V50C",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "DANC V50D",
-    "why": "not in the text (text cut off)"
+    "name": "List B: Composition II-IV",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "DANC V50B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V50C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC V50D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text is the COURSES tab of the Dance page only; it ends mid-description at DANC V27A. The ASSOCIATE DEGREES tab with the A.A. Degree requirements, totals, outcomes and careers is not in the text, so no blocks, totals, outcomes or careers could be recorded.",
-   "Courses DANC V13A-D, DANC V14 and DANC V23 appear in the course descriptions but are not on the closed list; they were not placed because no requirement section names them.",
-   "Reviewer should fetch the ASSOCIATE DEGREES section of the page to record the A.A. requirements."
+   "The page prints no award heading in the extracted text; section_heading uses the requirements table heading 'Course List' on the Dance A.A. page.",
+   "List A and List B options print one unit total per whole sequence (8 for each List A option; 9 for Performance, 6 for Composition), recorded as each block's stated; no units are printed beside individual sequence courses, so their units are null.",
+   "'Required Additional Units 14-17' covers List A plus List B combined; no single block holds that figure.",
+   "DANC V02 is printed as an 'or' alternative to DANC V01 with no units beside it.",
+   "Degree summary: Required Major Units 27-30, VCCCD GE Units 24, Double-Counted Units (0), Elective Units 6-9, Total 60. Electives recorded in degree_elective_units.",
+   "Plan of Study totals 61-64 units, which differs from the stated 60-unit degree total.",
+   "The single outcomes list on the page is for the program as a whole; the A.A. shares it.",
+   "Careers left empty: the only career mention ('professional careers in dance and dance-related fields') appears inside an outcome, not a program description or careers section."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

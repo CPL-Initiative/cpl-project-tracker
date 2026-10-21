@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Chicana/o Studies, Latina/o Studies",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/chicana-o-studies/chicana-o-latina-o-studies-aat/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11683,
+  "input_tokens": 7745,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11683,
-    "output_tokens": 1420,
+    "input_tokens": 7745,
+    "output_tokens": 1480,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1420,
+  "output_tokens": 1480,
   "output_tokens_details": {
-   "thinking_tokens": 466
+   "thinking_tokens": 298
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07513,
- "ms": 13246,
- "seconds": 13.6,
+ "cost_usd": 0.06058,
+ "ms": 11479,
+ "seconds": 12.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 11,
    "listed": 11,
-   "share": 0.0,
-   "missing": [
-    "CHSTR101",
-    "CHSTR102",
-    "CHSTR103",
-    "CHSTR104",
-    "CHSTR108",
-    "SOCR108",
-    "SPANR210",
-    "SPANR220",
-    "SPANR220H",
-    "SPANR230",
-    "SPANR230H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -73,26 +61,46 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    19.0,
+    20.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    19.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     71.0,
+     73.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -105,94 +113,162 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Cal-GETC",
+   "section_heading": "REQUIREMENTS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 19,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 19
    },
    "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Analyze the role that race and ethnicity play and have played in shaping the experiences of different ethnic groups in the United States, with an emphasis on Chicana/os.",
+    "Evaluate the role that activism and struggle have played in building a Chicano/a consciousness.",
+    "Develop and articulate effective plans for promoting culturally-responsive social change in the Chicana/o communities and broader society.",
+    "Apply historical and cultural knowledge of the Chicana/o experience in the analysis of contemporary socio-political issues facing the Chicana/o communities.",
+    "Critically analyze the Chicana/o experience from a variety of cultural, historical, and socio-political theories and perspectives."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CHST R101",
-    "why": "appears only in Cal-GETC GE lists (Areas 4 and 6), not in a program requirements section"
+    "name": "Required Core Courses - Complete each of the following:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CHST R101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHST R103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHST R104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHST R102",
-    "why": "appears only in Cal-GETC GE Area 4 list, not in a program requirements section"
+    "name": "List A - Complete the following course:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CHST R102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHST R103",
-    "why": "not in the text"
-   },
-   {
-    "code": "CHST R104",
-    "why": "not in the text"
-   },
-   {
-    "code": "CHST R108",
-    "why": "appears only in Cal-GETC GE Area 4 list, not in a program requirements section"
-   },
-   {
-    "code": "SOC R108",
-    "why": "appears only in Cal-GETC GE Area 4 list, not in a program requirements section"
-   },
-   {
-    "code": "SPAN R210",
-    "why": "appears only in Cal-GETC GE Area 3B list, not in a program requirements section"
-   },
-   {
-    "code": "SPAN R220",
-    "why": "appears only in Cal-GETC GE Area 3B list, not in a program requirements section"
-   },
-   {
-    "code": "SPAN R220H",
-    "why": "appears only in Cal-GETC GE Area 3B list (honors alternative), not in a program requirements section"
-   },
-   {
-    "code": "SPAN R230",
-    "why": "appears only in Cal-GETC GE Area 3B list, not in a program requirements section"
-   },
-   {
-    "code": "SPAN R230H",
-    "why": "appears only in Cal-GETC GE Area 3B list (honors alternative), not in a program requirements section"
+    "name": "List B - Complete two courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "SPAN R210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN R220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN R220H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN R230",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN R230H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHST R108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC R108",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text is Oxnard College's Cal-GETC general education area lists (source URL /transfer-information/calgetc/), not the Chicana/o Studies, Latina/o Studies A.A-T program page. No section for this award, no major requirements, totals, outcomes or careers appear in the text, so no blocks were recorded.",
-   "The text begins mid-table (Area 3A list cut off at the start) and ends mid-sentence in a tab about admission requirements.",
-   "ge_pattern set to Cal-GETC because the page states full Cal-GETC certification is required for all Associate Degrees for Transfer beginning Fall 2025; reviewer should confirm against the actual program page.",
-   "Closed-list courses found in the text appear only as GE area options (CHST R101/R102/R108, SOC R108 in Area 4; CHST R101 in Area 6; SPAN R210/R220/R220H/R230/R230H in Area 3B); GE courses are not placed in blocks.",
-   "The correct catalog page for the program's major requirements should be retrieved and re-read."
+   "The text prints no program heading for this section; section_heading uses the page's REQUIREMENTS tab label. The total line reads 'Total Units Required for AA-T Degree 60'.",
+   "The page prints 'Double-Counted Units 12' between Cal-GETC 34 and Free Electives 18-19; free electives are recorded in degree_elective_units as printed.",
+   "Units for the alternatives SPAN R220H, SPAN R230H and SOC R108 are not printed beside them, so they are null.",
+   "Outcomes come from the page's program student learning outcomes tab, which belongs to this award's page."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }

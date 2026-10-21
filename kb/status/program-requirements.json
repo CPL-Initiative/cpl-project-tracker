@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-21T17:22:08Z",
+  "written_at": "2026-10-21T18:50:54Z",
   "session": 442,
   "moniker": "SkyManzanita",
   "run": "Sam's session",
@@ -38,6 +38,18 @@
     {
       "at": "2026-10-21T17:10Z",
       "text": "On screen the reference is now called CPL Pathways, and the CPL Pathways tab shows a chosen college's program data in one line."
+    },
+    {
+      "at": "2026-10-21T12:05Z",
+      "text": "The reader now keeps a Requirements tab whose course numbers carry a campus letter, as the Ventura district prints them."
+    },
+    {
+      "at": "2026-10-21T15:20Z",
+      "text": "Moorpark, Oxnard and Ventura read again and loaded: 209 new records, 100, 86 and 121 passing the machine checks, about 32 dollars in extraction."
+    },
+    {
+      "at": "2026-10-21T20:00Z",
+      "text": "One display build from main with Reedley, Moorpark, Oxnard and Ventura, applied once after two runs' builds overlapped."
     }
   ],
   "headline": [

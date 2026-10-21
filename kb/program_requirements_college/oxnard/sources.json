@@ -41,19 +41,34 @@
    }
   },
   "listed": 22,
-  "text_chars": 5915
+  "text_chars": 6616
  },
  {
   "control_number": "06913",
   "title": "Air Conditioning and Refrigeration",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "ACR15",
+   "ACR191",
+   "ACR25",
+   "ACR35",
+   "ACR45"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/air-conditioning-refrigeration/air-conditioning-refrigeration-as/",
+   "title": "Air Conditioning and Refrigeration, Associate in Science < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 5838
  },
  {
   "control_number": "06915",
@@ -71,29 +86,49 @@
    "ATR150"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/",
-   "title": "Automotive Technology < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/automotive-technology-as/",
+   "title": "Automotive Technology, Associate in Science < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 5888
  },
  {
   "control_number": "06916",
   "title": "Automotive Body and Fender Repair",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABR1",
+   "ABR2",
+   "ABR3",
+   "ABR4",
+   "ABR5A",
+   "ABR5B",
+   "ABR7A",
+   "ABR7B",
+   "ATR110",
+   "ATR115"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-body-fender-repair/automotive-body-fender-repair-as/",
+   "title": "Automotive Body and Fender Repair, Associate in Science < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 6305
  },
  {
   "control_number": "06925",
@@ -101,7 +136,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.933,
   "codes_found": [
    "PHILR101",
    "PHILR101H",
@@ -114,23 +149,22 @@
    "PHILR110",
    "PHILR111",
    "PHILR112",
-   "PHILR114",
    "PHILR115",
    "PHILR115H",
    "PHILR116"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/philosophy/",
-   "title": "Philosophy < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/philosophy/philosophy-aa/",
+   "title": "Philosophy, Associate in Arts < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 15042
+  "text_chars": 5238
  },
  {
   "control_number": "06929",
@@ -167,7 +201,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 5024
+  "text_chars": 6922
  },
  {
   "control_number": "06937",
@@ -203,17 +237,17 @@
    "CRMR191"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/",
-   "title": "Culinary Arts & Restaurant Management < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/culinary-arts-as/",
+   "title": "Culinary Arts, Associate in Science < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 16000
+  "text_chars": 5691
  },
  {
   "control_number": "07084",
@@ -270,12 +304,30 @@
   "title": "Restaurant Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRMR100",
+   "CRMR104",
+   "CRMR106",
+   "CRMR107",
+   "CRMR109",
+   "CRMR110",
+   "CRMR112",
+   "CRMR113"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/restaurant-management-as/",
+   "title": "Restaurant Management, Associate in Science < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 5173
  },
  {
   "control_number": "09552",
@@ -301,17 +353,17 @@
    "FTR90"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/",
-   "title": "Fire Technology < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/fire-technology-as/",
+   "title": "Fire Technology, Associate in Science < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 16000
+  "text_chars": 5951
  },
  {
   "control_number": "09553",
@@ -381,17 +433,17 @@
    "ADSR124"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/",
-   "title": "Addictive Disorders Studies < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/addictive-disorders-studies-criminal-justice-system-as/",
+   "title": "Addictive Disorders Studies in the Criminal Justice System, Associate in Science < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.5
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 5598
  },
  {
   "control_number": "17622",
@@ -415,156 +467,29 @@
    "DAR25"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/dental-assisting/",
-   "title": "Dental Assisting < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/dental-assisting/dental-assisting-coa/",
+   "title": "Dental Assisting, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 15572
+  "text_chars": 4729
  },
  {
   "control_number": "18130",
   "title": "CSU General Education - Breadth",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.975,
-  "codes_found": [
-   "ANATR101",
-   "ANTHC1001",
-   "ANTHC1001H",
-   "ANTHC1001L",
-   "ANTHR110",
-   "ANTHR111",
-   "ANTHR111H",
-   "ANTHR113",
-   "ANTHR116",
-   "ANTHR118",
-   "ANTHR119",
-   "ARTHC1100",
-   "ARTHC1200",
-   "ARTR101",
-   "ARTR140",
-   "ARTR171",
-   "ARTR174",
-   "ASLR101",
-   "ASLR102",
-   "ASLR103",
-   "ASLR104",
-   "ASLR110",
-   "ASTRC1001",
-   "ASTRC1001L",
-   "BIOLC1001",
-   "BIOLC1001H",
-   "BIOLC1001L",
-   "BIOLR100",
-   "BIOLR100L",
-   "BIOLR120",
-   "BIOLR120L",
-   "BIOLR122",
-   "BIOLR122L",
-   "BIOLR155",
-   "BIOLR155L",
-   "BRSR101",
-   "CHEMR104",
-   "CHEMR110",
-   "CHEMR112",
-   "CHEMR120",
-   "CHEMR122",
-   "CHEMR130",
-   "CHEMR132",
-   "CHSTR101",
-   "COMMC1004",
-   "COMMR107",
-   "COMMR110",
-   "ENGLC1000",
-   "ENGLC1000H",
-   "ENGLC1001",
-   "ENGLC1003",
-   "ENGLC1003H",
-   "ENGLR103",
-   "ESLR100",
-   "ESRMR100",
-   "ESRMR100L",
-   "ETHSR119",
-   "FTVER107",
-   "GEOGR101",
-   "GEOGR101L",
-   "GEOGR103",
-   "GEOLR101",
-   "GEOLR101L",
-   "GEOLR103",
-   "GEOLR103L",
-   "GEOLR114",
-   "GEOLR114L",
-   "GEOLR121",
-   "GEOLR130",
-   "MATHC2210",
-   "MATHC2220",
-   "MATHR101",
-   "MATHR102",
-   "MATHR106",
-   "MATHR115",
-   "MATHR116",
-   "MATHR117",
-   "MATHR122",
-   "MATHR134",
-   "MATHR143",
-   "MICRR100",
-   "MICRR100L",
-   "MSTR100",
-   "MSTR100L",
-   "MSTR103",
-   "MSTR103L",
-   "MUSR101",
-   "MUSR103",
-   "MUSR109",
-   "MUSR116",
-   "MUSR130",
-   "PHILR107",
-   "PHILR111",
-   "PHILR112",
-   "PHILR114",
-   "PHSCR170",
-   "PHSOR101",
-   "PHYSR101",
-   "PHYSR101L",
-   "PHYSR102",
-   "PHYSR102L",
-   "PHYSR121",
-   "PHYSR122",
-   "PHYSR131",
-   "PHYSR132",
-   "PHYSR133",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "PSYR103",
-   "PSYR105",
-   "READR105",
-   "SOCR114",
-   "SOCR125",
-   "SPANR234",
-   "STATC1000",
-   "STATC1000H",
-   "THTRR111"
-  ],
-  "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/ocge/",
-   "title": "Oxnard College General Education (OC GE) < Oxnard College",
-   "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.5
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 120,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "18131",
@@ -1021,67 +946,158 @@
    }
   },
   "listed": 22,
-  "text_chars": 4714
+  "text_chars": 5411
  },
  {
   "control_number": "22456",
   "title": "Air Conditioning and Refrigeration",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "ACR15",
+   "ACR191",
+   "ACR25",
+   "ACR35",
+   "ACR45"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/air-conditioning-refrigeration/air-conditioning-refrigeration-coa/",
+   "title": "Air Conditioning and Refrigeration, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 4402
  },
  {
   "control_number": "22458",
   "title": "Automotive Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATR110",
+   "ATR113",
+   "ATR115",
+   "ATR116",
+   "ATR140",
+   "ATR150"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/automotive-technology-coa/",
+   "title": "Automotive Technology, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 4377
  },
  {
   "control_number": "22459",
   "title": "Automotive Body and Fender Repair",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABR1",
+   "ABR2",
+   "ABR3",
+   "ABR4",
+   "ABR5A",
+   "ABR5B",
+   "ABR7A",
+   "ABR7B",
+   "ATR110",
+   "ATR115"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-body-fender-repair/automotive-body-fender-repair-coa/",
+   "title": "Automotive Body and Fender Repair, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 4797
  },
  {
   "control_number": "22465",
   "title": "Culinary Arts",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRMR100",
+   "CRMR101",
+   "CRMR102A",
+   "CRMR102B",
+   "CRMR102C",
+   "CRMR103A",
+   "CRMR104",
+   "CRMR105",
+   "CRMR106",
+   "CRMR107",
+   "CRMR120",
+   "CRMR191"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/culinary-arts-coa/",
+   "title": "Culinary Arts, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 4843
  },
  {
   "control_number": "22466",
   "title": "Restaurant Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRMR100",
+   "CRMR104",
+   "CRMR106",
+   "CRMR107",
+   "CRMR109",
+   "CRMR110",
+   "CRMR112",
+   "CRMR113"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/restaurant-management-coa/",
+   "title": "Restaurant Management, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 4247
  },
  {
   "control_number": "22470",
@@ -1089,41 +1105,62 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.533,
+  "coverage": 1.0,
   "codes_found": [
    "ADSR101",
    "ADSR102",
    "ADSR103",
    "ADSR104",
    "ADSR105A",
+   "ADSR108",
+   "ADSR109",
+   "ADSR112",
    "ADSR113A",
    "ADSR118",
-   "ADSR124"
+   "ADSR124",
+   "ADSR200A",
+   "ADSR200B",
+   "ADSR210A",
+   "ADSR210B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/advanced-skills-addiction-treatment-counselors-coa/",
-   "title": "Advanced Skills for Addiction Treatment Counselors, Certificate of Achievement < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/addictive-disorders-studies-coa/",
+   "title": "Addictive Disorders Studies, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 4678
+  "text_chars": 5407
  },
  {
   "control_number": "22471",
   "title": "Addictive Disorders Studies in the Criminal Justice System",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADSR116",
+   "ADSR117",
+   "ADSR119",
+   "ADSR120"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/addictive-disorders-studies-criminal-justice-system-coa/",
+   "title": "Addictive Disorders Studies in the Criminal Justice System, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 4136
  },
  {
   "control_number": "22472",
@@ -1131,27 +1168,33 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
    "FTR151",
+   "FTR152",
    "FTR154",
+   "FTR155",
+   "FTR157",
    "FTR158",
    "FTR160",
+   "FTR161",
    "FTR167",
-   "FTR170"
+   "FTR170",
+   "FTR173",
+   "FTR90"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/fire-fighter-i-ii-academy-coa/",
-   "title": "Fire Fighter I/II Academy, Certificate of Achievement < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/fire-technology-coa/",
+   "title": "Fire Technology, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 4237
+  "text_chars": 5046
  },
  {
   "control_number": "30804",
@@ -1555,11 +1598,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.947,
   "codes_found": [
    "ARTR174H",
    "CHSTR101",
-   "CHSTR107",
    "HISTR107",
    "HISTR109",
    "HISTR126",
@@ -1578,17 +1620,17 @@
    "SPANR236H"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
-   "title": "Transfer to the University of California (UC) < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/spanish/spanish-aat/",
+   "title": "Spanish, Associate in Arts for Transfer < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 16000
+  "text_chars": 4469
  },
  {
   "control_number": "32088",
@@ -1656,17 +1698,17 @@
    "PHILR116"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
-   "title": "Transfer to the University of California (UC) < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/philosophy/philosophy-aat/",
+   "title": "Philosophy, Associate in Arts for Transfer < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 4558
+  "text_chars": 4286
  },
  {
   "control_number": "32109",
@@ -1695,41 +1737,88 @@
    "CNITR191C"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-networking-information-technology/",
-   "title": "Computer Networking/Information Technology < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-networking-information-technology/computer-networking-information-technology-as/",
+   "title": "Computer Networking Information Technology, Associate in Science < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 16000
+  "text_chars": 6194
  },
  {
   "control_number": "32110",
   "title": "Computer Networking Information Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNITR101",
+   "CNITR120",
+   "CNITR121",
+   "CNITR127",
+   "CNITR130",
+   "CNITR131",
+   "CNITR142",
+   "CNITR143",
+   "CNITR144",
+   "CNITR145",
+   "CNITR146",
+   "CNITR151",
+   "CNITR161",
+   "CNITR170",
+   "CNITR191A",
+   "CNITR191B",
+   "CNITR191C"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-networking-information-technology/computer-networking-information-technology-coa/",
+   "title": "Computer Networking Information Technology, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 5338
  },
  {
   "control_number": "32111",
   "title": "Advanced Skills for Addiction Treatment Counselors",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADSR105B",
+   "ADSR106",
+   "ADSR107",
+   "ADSR111",
+   "ADSR113B",
+   "ADSR115",
+   "ADSR121",
+   "ADSR122",
+   "ADSR123",
+   "ADSR125"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/advanced-skills-addiction-treatment-counselors-coa/",
+   "title": "Advanced Skills for Addiction Treatment Counselors, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 6073
  },
  {
   "control_number": "32257",
@@ -1866,12 +1955,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.9,
   "codes_found": [
    "ANTHR102",
    "ANTHR102H",
    "GEOGR101",
-   "GEOGR101L",
    "GEOGR102",
    "GEOGR103",
    "GEOGR104",
@@ -1880,17 +1968,17 @@
    "GISR106"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/",
-   "title": "Course Identification Numbering System (C-ID) < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/geography/geography-aat/",
+   "title": "Geography, Associate in Arts for Transfer < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 6298
+  "text_chars": 4056
  },
  {
   "control_number": "32794",
@@ -2057,14 +2145,17 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.824,
+  "coverage": 1.0,
   "codes_found": [
    "FTVER100",
    "FTVER101",
+   "FTVER102",
    "FTVER103",
+   "FTVER104",
    "FTVER106",
    "FTVER107",
    "FTVER110",
+   "FTVER111",
    "FTVER113",
    "FTVER115",
    "FTVER120",
@@ -2075,17 +2166,17 @@
    "FTVER160"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
-   "title": "Transfer to the University of California (UC) < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/film-television-electronic-media/film-television-electronic-media-ast/",
+   "title": "Film, Television, and Electronic Media, Associate in Science for Transfer < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 4588
+  "text_chars": 5568
  },
  {
   "control_number": "33928",
@@ -2115,29 +2206,57 @@
    "LAWR191"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/paralegal-studies/",
-   "title": "Paralegal Studies < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/paralegal-studies/paralegal-studies-coa/",
+   "title": "Paralegal Studies, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 15971
+  "text_chars": 4664
  },
  {
   "control_number": "33938",
   "title": "Paralegal Studies",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSR111",
+   "LAWR101",
+   "LAWR102",
+   "LAWR103",
+   "LAWR104",
+   "LAWR105",
+   "LAWR110",
+   "LAWR112",
+   "LAWR113",
+   "LAWR114",
+   "LAWR115",
+   "LAWR120",
+   "LAWR121",
+   "LAWR122",
+   "LAWR123",
+   "LAWR124",
+   "LAWR130",
+   "LAWR191"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/paralegal-studies/paralegal-studies-as/",
+   "title": "Paralegal Studies, Associate in Science < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 6042
  },
  {
   "control_number": "35031",
@@ -2196,7 +2315,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 3947
+  "text_chars": 7018
  },
  {
   "control_number": "35104",
@@ -2240,12 +2359,29 @@
   "title": "Film, Television, and Electronic Media Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "FTVER102",
+   "FTVER103",
+   "FTVER106",
+   "FTVER120",
+   "FTVER130",
+   "FTVER135",
+   "FTVER150"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/film-television-electronic-media/film-television-electronic-media-production-coa/",
+   "title": "Film, Television, and Electronic Media Production, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 4145
  },
  {
   "control_number": "35226",
@@ -2272,17 +2408,17 @@
    "FTVER190B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/film-television-electronic-media/",
-   "title": "Film, Television, and Electronic Media < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/film-television-electronic-media/film-television-electronic-media-as/",
+   "title": "Film, Television, and Electronic Media Production, Associate in Science < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.8
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 16000
+  "text_chars": 6888
  },
  {
   "control_number": "35373",
@@ -2677,24 +2813,53 @@
   "title": "Deaf Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASLR101",
+   "ASLR102",
+   "ASLR103",
+   "ASLR104"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/american-sign-language/deaf-studies-aa/",
+   "title": "Deaf Studies, Associate in Arts < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 5575
  },
  {
   "control_number": "37419",
   "title": "American Sign Language",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASLR101",
+   "ASLR102",
+   "ASLR103",
+   "ASLR104",
+   "ASLR110"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/american-sign-language/american-sign-language-coa/",
+   "title": "American Sign Language, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 3970
  },
  {
   "control_number": "37441",
@@ -2745,12 +2910,52 @@
   "title": "Chicana/o Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ANTHR119",
+   "ARTR174",
+   "ARTR174H",
+   "BRSR101",
+   "CHSTR101",
+   "CHSTR102",
+   "CHSTR103",
+   "CHSTR104",
+   "DANCR110A",
+   "DANCR110B",
+   "ENGLR126",
+   "ETHSR119",
+   "HISTR107",
+   "HISTR109",
+   "HISTR126",
+   "MUSR109",
+   "MUSR126",
+   "SOCR103",
+   "SOCR108",
+   "SPANR200",
+   "SPANR210",
+   "SPANR220",
+   "SPANR220H",
+   "SPANR230",
+   "SPANR230H",
+   "SPANR232",
+   "SPANR232H",
+   "SPANR234",
+   "SPANR236",
+   "SPANR236H"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/chicana-o-studies/chicana-o-studies-aa/",
+   "title": "Chicana/o Studies, Associate in Arts < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 32,
-  "text_chars": 0
+  "text_chars": 6049
  },
  {
   "control_number": "37665",
@@ -2808,17 +3013,17 @@
    "ESLR801B"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/english-second-language/",
-   "title": "English as a Second Language < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/english-second-language/english-second-language-level-2-cocy-noncredit/",
+   "title": "English as a Second Language - Level 2, Certificate of Competency Noncredit < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 3881
+  "text_chars": 3916
  },
  {
   "control_number": "37947",
@@ -2892,28 +3097,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.515,
   "codes_found": [
-   "ANTHR119",
-   "ARTR174H",
-   "BRSR101",
-   "CHSTR101",
-   "CHSTR102",
-   "CHSTR107",
-   "CHSTR108",
-   "ENGLR126",
-   "ENGLR129",
-   "ETHSR119",
-   "HISTR107",
-   "HISTR109",
-   "MUSR109",
    "PSYR103",
    "PSYR104",
    "SJSR110",
    "SJSR120",
    "SJSR130",
    "SOCR103",
-   "SOCR108",
    "SOCR111",
    "SOCR125",
    "SOCR140",
@@ -2923,23 +3114,21 @@
    "SPANR220H",
    "SPANR230",
    "SPANR230H",
-   "SPANR232",
-   "SPANR232H",
    "STATC1000",
    "STATC1000H"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
-   "title": "Transfer to the University of California (UC) < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/",
+   "title": "Course Identification Numbering System (C-ID) < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText+tabs",
+   "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 0.0
    }
   },
   "listed": 33,
-  "text_chars": 16000
+  "text_chars": 5886
  },
  {
   "control_number": "39110",
@@ -3015,117 +3204,238 @@
   "title": "Business Information Worker Quick Start",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOTR800",
+   "CAOTR801",
+   "CAOTR802",
+   "CAOTR803",
+   "CAOTR804",
+   "CAOTR805",
+   "CAOTR806",
+   "CAOTR807"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-applications-office-technologies/business-information-worker-quick-start-cocn-noncredit/",
+   "title": "Business Information Worker Quick Start, Certificate of Completion Noncredit < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3686
  },
  {
   "control_number": "40062",
   "title": "Cybersecurity",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNITR120",
+   "CNITR127",
+   "CNITR131",
+   "CNITR143",
+   "CNITR144",
+   "CNITR145",
+   "CNITR146",
+   "CNITR151",
+   "CNITR161"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-networking-information-technology/cybersecurity-coa/",
+   "title": "Cybersecurity, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 9429
  },
  {
   "control_number": "40172",
   "title": "Automotive Air Conditioning Service",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATR110",
+   "ATR115",
+   "ATR170"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/automotive-air-conditioning-service-coa/",
+   "title": "Automotive Air Conditioning Service, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3930
  },
  {
   "control_number": "40173",
   "title": "Automotive Service Advising",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ATR110",
    "ATR161"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/",
-   "title": "Automotive Technology < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/automotive-service-advising-coa/",
+   "title": "Automotive Service Advising, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
   },
   "listed": 2,
-  "text_chars": 16000
+  "text_chars": 3736
  },
  {
   "control_number": "40278",
   "title": "Automotive Steering and Suspension",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATR110",
+   "ATR115",
+   "ATR140"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/automotive-steering-suspension-coa/",
+   "title": "Automotive Steering and Suspension, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3907
  },
  {
   "control_number": "40341",
   "title": "Automotive Brake Systems",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATR110",
+   "ATR115",
+   "ATR150"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/automotive-braking-systems-coa/",
+   "title": "Automotive Brake Systems, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3909
  },
  {
   "control_number": "40342",
   "title": "Automotive Emissions Systems",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATR110",
+   "ATR113",
+   "ATR115",
+   "ATR148"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/automotive-emissions-systems-coa/",
+   "title": "Automotive Emissions Systems, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 4043
  },
  {
   "control_number": "40343",
   "title": "Automotive Engine Performance",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATR110",
+   "ATR113",
+   "ATR114",
+   "ATR115"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/automotive-engine-performance-coa/",
+   "title": "Automotive Engine Performance, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 4011
  },
  {
   "control_number": "40344",
   "title": "Automotive Transmission and Driveline Systems",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATR110",
+   "ATR115",
+   "ATR120",
+   "ATR126"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/automotive-transmission-driveline-systems-coa/",
+   "title": "Automotive Transmission and Driveline Systems, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 3830
  },
  {
   "control_number": "40729",
@@ -3190,17 +3500,17 @@
    "EMTR109"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/emergency-medical-technology/",
-   "title": "Emergency Medical Technology < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/emergency-medical-technology/emergency-medical-technician-coa/",
+   "title": "Emergency Medical Technician, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.667
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 1,
-  "text_chars": 4769
+  "text_chars": 4140
  },
  {
   "control_number": "40767",
@@ -3390,12 +3700,27 @@
   "title": "Community Behavioral Health Worker",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADSR102",
+   "ADSR104",
+   "ADSR113A",
+   "ADSR118",
+   "ADSR124"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/community-behavioral-health-worker-coa/",
+   "title": "Community Behavioral Health Worker, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 3844
  },
  {
   "control_number": "42098",
@@ -3458,7 +3783,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3915
+  "text_chars": 4252
  },
  {
   "control_number": "42311",
@@ -3619,17 +3944,17 @@
    "ECER117"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/early-childhood-education/",
-   "title": "Early Childhood Education < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/early-childhood-education/early-childhood-ed-site-supervisor-coa/",
+   "title": "Early Childhood Education Site Supervisor, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.6
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 5460
+  "text_chars": 5004
  },
  {
   "control_number": "44437",
@@ -3647,17 +3972,17 @@
    "LOGIR105"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/logistics/",
-   "title": "Logistics < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/logistics/logistics-coa/",
+   "title": "Logistics, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 5108
+  "text_chars": 3841
  },
  {
   "control_number": "44438",
@@ -3665,23 +3990,24 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTR100",
-   "ACCTR106"
+   "ACCTR106",
+   "BISR123"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/accounting/",
-   "title": "Accounting < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/accounting/bookkeeping-coa/",
+   "title": "Bookkeeping, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 9476
+  "text_chars": 3595
  },
  {
   "control_number": "44500",
@@ -3816,245 +4142,20 @@
   "title": "Law Office Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
-  "listed": 7,
-  "text_chars": 0
- },
- {
-  "control_number": "45289",
-  "title": "California General Education Transfer Curriculum (Cal-GETC)",
-  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-  "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.991,
+  "coverage": 1.0,
   "codes_found": [
-   "ANATR101",
-   "ANTHC1001",
-   "ANTHC1001H",
-   "ANTHC1001L",
-   "ANTHR102",
-   "ANTHR102H",
-   "ANTHR103",
-   "ANTHR105",
-   "ANTHR106",
-   "ANTHR107",
-   "ANTHR110",
-   "ANTHR111",
-   "ANTHR111H",
-   "ANTHR113",
-   "ANTHR114",
-   "ANTHR115",
-   "ANTHR116",
-   "ANTHR119",
-   "ARTHC1100",
-   "ARTHC1100H",
-   "ARTHC1200",
-   "ARTHC1200H",
-   "ARTR101",
-   "ARTR171",
-   "ARTR172",
-   "ARTR172H",
-   "ARTR174",
-   "ARTR174H",
-   "ASLR103",
-   "ASLR104",
-   "ASLR110",
-   "ASTRC1001",
-   "ASTRC1001L",
-   "BIOLC1001",
-   "BIOLC1001H",
-   "BIOLC1001L",
-   "BIOLR100",
-   "BIOLR100L",
-   "BIOLR120",
-   "BIOLR120L",
-   "BIOLR122",
-   "BIOLR122L",
-   "BIOLR155",
-   "BIOLR155L",
-   "BRSR101",
-   "CHEMR104",
-   "CHEMR110",
-   "CHEMR112",
-   "CHEMR120",
-   "CHEMR122",
-   "CHEMR130",
-   "CHEMR132",
-   "CHSTR101",
-   "CHSTR102",
-   "CHSTR107",
-   "CHSTR108",
-   "COMMC1000",
-   "COMMC1004",
-   "COMMR102",
-   "COMMR113",
-   "DANCR100",
-   "ECONC2001",
-   "ECONC2001H",
-   "ECONC2002",
-   "ECONC2002H",
-   "ECONR100",
-   "ENGLC1000",
-   "ENGLC1000H",
-   "ENGLC1001",
-   "ENGLC1003",
-   "ENGLC1003H",
-   "ENGLR104",
-   "ENGLR105",
-   "ENGLR107",
-   "ENGLR108",
-   "ENGLR111",
-   "ENGLR112",
-   "ENGLR124",
-   "ENGLR125",
-   "ENGLR126",
-   "ENGLR129",
-   "ENGLR134",
-   "ESLR100",
-   "ESRMR100",
-   "ETHSR107",
-   "ETHSR110",
-   "ETHSR114",
-   "ETHSR119",
-   "ETHSR134",
-   "FTVER107",
-   "GEOGR101",
-   "GEOGR101L",
-   "GEOGR102",
-   "GEOGR103",
-   "GEOGR104",
-   "GEOGR105",
-   "GEOLR101",
-   "GEOLR101L",
-   "GEOLR103",
-   "GEOLR103L",
-   "GEOLR114",
-   "GEOLR114L",
-   "GEOLR121",
-   "GEOLR130",
-   "GLSTR101",
-   "GLSTR102",
-   "HEDR113",
-   "HEDR115",
-   "HISTC1001",
-   "HISTC1001H",
-   "HISTC1002",
-   "HISTC1002H",
-   "HISTR104",
-   "HISTR107",
-   "HISTR108",
-   "HISTR109",
-   "HISTR110",
-   "HISTR117",
-   "HISTR124",
-   "HISTR125",
-   "HISTR125H",
-   "HISTR126",
-   "HISTR150",
-   "HISTR150H",
-   "HISTR160",
-   "HISTR160H",
-   "IDSR102",
-   "MATHC2210",
-   "MATHC2220",
-   "MATHR101",
-   "MATHR106",
-   "MATHR115",
-   "MATHR117",
-   "MATHR122",
-   "MATHR130",
-   "MATHR134",
-   "MATHR143",
-   "MICRR100",
-   "MICRR100L",
-   "MSTR100",
-   "MSTR100L",
-   "MSTR103",
-   "MSTR103L",
-   "MUSR101",
-   "MUSR103",
-   "MUSR109",
-   "MUSR116",
-   "PHILR101",
-   "PHILR101H",
-   "PHILR102",
-   "PHILR102H",
-   "PHILR105",
-   "PHILR106",
-   "PHILR108",
-   "PHILR110",
-   "PHILR111",
-   "PHILR114",
-   "PHILR115",
-   "PHILR115H",
-   "PHILR116",
-   "PHSCR170",
-   "PHSOR101",
-   "PHYSR101",
-   "PHYSR101L",
-   "PHYSR102",
-   "PHYSR102L",
-   "PHYSR121",
-   "PHYSR122",
-   "PHYSR131",
-   "PHYSR132",
-   "PHYSR133",
-   "POLSC1000",
-   "POLSR100",
-   "POLSR102",
-   "POLSR104",
-   "POLSR108",
-   "POLSR120",
-   "POLSR125",
-   "POLSR125H",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "PSYR102",
-   "PSYR103",
-   "PSYR104",
-   "PSYR105",
-   "PSYR108",
-   "PSYR108H",
-   "PSYR110",
-   "PSYR122",
-   "PSYR125",
-   "PSYR131",
-   "SJSR110",
-   "SJSR120",
-   "SJSR130",
-   "SOCIC1000",
-   "SOCIC1000H",
-   "SOCR102",
-   "SOCR103",
-   "SOCR106",
-   "SOCR108",
-   "SOCR111",
-   "SOCR114",
-   "SOCR116",
-   "SOCR119",
-   "SOCR125",
-   "SOCR140",
-   "SPANR210",
-   "SPANR220",
-   "SPANR220H",
-   "SPANR230",
-   "SPANR230H",
-   "SPANR232",
-   "SPANR232H",
-   "SPANR234",
-   "SPANR236",
-   "SPANR236H",
-   "STATC1000",
-   "STATC1000H",
-   "THTRR111",
-   "URBSR101"
+   "ACCTR106",
+   "BUSR111",
+   "BUSR121",
+   "BUSR140",
+   "LAWR101",
+   "LAWR102",
+   "LAWR103"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/cal-getc-coa/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC), Certificate of Achievement < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/paralegal-studies/law-office-management-coa/",
+   "title": "Law Office Management, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
@@ -4062,8 +4163,20 @@
     "title": 1.0
    }
   },
+  "listed": 7,
+  "text_chars": 4091
+ },
+ {
+  "control_number": "45289",
+  "title": "California General Education Transfer Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 222,
-  "text_chars": 21569
+  "text_chars": 0
  },
  {
   "control_number": "45303",
@@ -4071,7 +4184,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.818,
+  "coverage": 1.0,
   "codes_found": [
    "THTRR111",
    "THTRR114",
@@ -4080,21 +4193,23 @@
    "THTRR171",
    "THTRR172A",
    "THTRR173A",
+   "THTRR174A",
+   "THTRR175A",
    "THTRR191A",
    "THTRR192A"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
-   "title": "Transfer to the University of California (UC) < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/theatre/theatre-arts-aat/",
+   "title": "Theatre Arts, Associate in Arts for Transfer < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 3267
+  "text_chars": 5619
  },
  {
   "control_number": "45433",
@@ -4140,7 +4255,7 @@
    }
   },
   "listed": 25,
-  "text_chars": 5098
+  "text_chars": 6397
  },
  {
   "control_number": "45489",
@@ -4148,10 +4263,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.818,
+  "coverage": 1.0,
   "codes_found": [
    "CHSTR101",
    "CHSTR102",
+   "CHSTR103",
+   "CHSTR104",
    "CHSTR108",
    "SOCR108",
    "SPANR210",
@@ -4161,17 +4278,17 @@
    "SPANR230H"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/chicana-o-studies/chicana-o-latina-o-studies-aat/",
+   "title": "Chicana/o Studies, Latina/o Studies, Associate in Arts for Transfer < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 12582
+  "text_chars": 4032
  },
  {
   "control_number": "45578",
@@ -4179,10 +4296,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
+   "MUSR100",
    "MUSR101",
    "MUSR103",
+   "MUSR106",
    "MUSR107A",
    "MUSR107B",
    "MUSR107C",
@@ -4203,17 +4322,17 @@
    "MUSR185"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/",
-   "title": "Course Identification Numbering System (C-ID) < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/music/music-aat/",
+   "title": "Music, Associate in Arts for Transfer < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0
    }
   },
   "listed": 22,
-  "text_chars": 4339
+  "text_chars": 5862
  },
  {
   "control_number": "45642",
@@ -4244,17 +4363,17 @@
    "ARTR191"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/graphic-design/",
-   "title": "Graphic Design < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/graphic-design/graphic-design-as/",
+   "title": "Graphic Design, Associate in Science < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 16000
+  "text_chars": 5513
  },
  {
   "control_number": "45646",
@@ -4284,17 +4403,17 @@
    "ARTR191"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/art-history/",
-   "title": "Art + Design < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/graphic-design/graphic-design-coa/",
+   "title": "Graphic Design, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.5
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 16000
+  "text_chars": 4613
  },
  {
   "control_number": "45658",
@@ -4408,21 +4527,24 @@
   "title": "Wildland Fire Academy",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "EMTR109",
    "FTR180"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/",
-   "title": "Fire Technology < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/wildland-fire-academy-coa/",
+   "title": "Wildland Fire Academy, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
   },
   "listed": 2,
-  "text_chars": 16000
+  "text_chars": 4346
  },
  {
   "control_number": "46369",
@@ -4560,24 +4682,59 @@
   "title": "English as a Second Language - Level 5",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLR804A",
+   "ESLR804C"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/english-second-language/english-second-language-level-5-cocy-noncredit/",
+   "title": "English as a Second Language - Level 5, Certificate of Competency Noncredit < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4096
  },
  {
   "control_number": "46576",
   "title": "Baking and Pastry",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRMR100",
+   "CRMR103A",
+   "CRMR103B",
+   "CRMR103C",
+   "CRMR104",
+   "CRMR106",
+   "CRMR120",
+   "CRMR170",
+   "CRMR171",
+   "CRMR172",
+   "CRMR173",
+   "CRMR174",
+   "CRMR191"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/baking-and-pastry-coa/",
+   "title": "Baking and Pastry, Certificate of Achievement < Oxnard College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 4808
  },
  {
   "control_number": "46583",
@@ -4611,25 +4768,27 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "HEDR117",
+   "HEDR120",
    "KINR101",
    "KINR200",
    "KINR201",
    "KINR202"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/kinesiology/",
-   "title": "Kinesiology < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/kinesiology/rehabilitation-therapy-aide-coa/",
+   "title": "Rehabilitation Therapy Aide, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 4178
  },
  {
   "control_number": "46586",
@@ -4666,16 +4825,16 @@
    "KINR205"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/kinesiology/sports-fitness-and-recreation-management-as/",
-   "title": "Sports, Fitness, and Recreation Management, Associate in Science < Oxnard College",
+   "url": "https://catalog.vcccd.edu/oxnard/programs-courses/kinesiology/sports-fitness-and-recreation-management-coa/",
+   "title": "Sports, Fitness, and Recreation Management, Certificate of Achievement < Oxnard College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 25,
-  "text_chars": 7393
+  "text_chars": 4606
  }
 ]

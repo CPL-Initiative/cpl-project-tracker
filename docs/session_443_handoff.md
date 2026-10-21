@@ -45,8 +45,22 @@ tracker #2315 merges (re-run it then). Nothing from the Rule 9 list was skipped 
 5. **Step 2 of the fold** after Sam's go: My College's sections render inside CPL Pathways' college view
    (`college_briefing.js` renders into a root; keep one Sierra per page, a remembered choice a shortcut, sections
    loaded when opened).
-6. The harvest's next colleges: the five CourseLeaf colleges need reader work (lessons S442); the four with no record
-   stay parked.
+6. The harvest's next colleges: Sierra, MiraCosta, Foothill and Golden West need reader work (Oxnard was the fifth;
+   the routine's run fixed it); the four with no record stay parked.
+
+## The routine's S442 run, beside this one (11:15Z to about 20:00Z)
+
+The CPL Queue routine fired at 11:15Z while Sam's SkyManzanita was working; with no `list_sessions` and no open PR
+newer than 10-19, neither saw the other. The routine's run worked the harvest (#2309):
+
+- **A number led by a campus letter now keeps its Requirements tab.** `SUBJECT_TOKEN` read no course in the Ventura
+  district's `ANCT M01A`, so `hidden_tabs_text` dropped each tab. Re-read and loaded under the $40 go (about $32):
+  Moorpark 100 passing (31 before), Oxnard 86 (25), Ventura 121 (53). Oxnard is no longer reader work.
+- **One display build from `main` with Reedley and the three colleges** went out after both runs' display jobs had
+  written their own builds over the same rows; read #2309's last "Applied record" commit before trusting a display.
+- Headline at ~16:00Z: 20,282 active programs, 12,439 complete, 114 colleges.
+- Sheet 109's replies were applied by SkyManzanita (#2310); the routine's run applied nothing from it.
+- Lessons: `docs/program_requirements_harvest_lessons.md`, the routine's S442 section.
 
 ## Lessons to honor
 

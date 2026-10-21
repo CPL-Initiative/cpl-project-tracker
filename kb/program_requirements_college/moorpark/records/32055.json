@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Music",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/music/music-aat/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9202,
+  "input_tokens": 7833,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9202,
-    "output_tokens": 1637,
+    "input_tokens": 7833,
+    "output_tokens": 1867,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,52 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1637,
+  "output_tokens": 1867,
   "output_tokens_details": {
-   "thinking_tokens": 310
+   "thinking_tokens": 278
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06955,
- "ms": 13428,
- "seconds": 13.8,
+ "cost_usd": 0.06867,
+ "ms": 13686,
+ "seconds": 14.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 23,
    "listed": 23,
-   "share": 0.0,
-   "missing": [
-    "MUSM10",
-    "MUSM100",
-    "MUSM18",
-    "MUSM180",
-    "MUSM21",
-    "MUSM210",
-    "MUSM23",
-    "MUSM230",
-    "MUSM2A",
-    "MUSM2AL",
-    "MUSM2B",
-    "MUSM2BL",
-    "MUSM2C",
-    "MUSM2CL",
-    "MUSM2D",
-    "MUSM2DL",
-    "MUSM30A",
-    "MUSM30B",
-    "MUSM30C",
-    "MUSM30D",
-    "MUSM30E",
-    "MUSM30F",
-    "MUSM30G"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -84,26 +61,45 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    22.0,
+    22.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -116,140 +112,246 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "No program section in text (C-ID course mapping table)",
+   "section_heading": "REQUIREMENTS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 22,
+    "max": 22
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 4,
+    "max": 4
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "develop a cultural understanding of artistic human expression through musical appreciation and development of performance skills."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MUS M02A",
-    "why": "appears only in C-ID mapping table (MUS 120); no program requirements in text"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS M02A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M02AL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M02B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M02BL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M02C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M02CL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M02D",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M02DL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS M02AL",
-    "why": "appears only in C-ID mapping table (MUS 125); no program requirements in text"
+    "name": "Applied Music",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "MUS M30A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M30B",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M30C",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M30D",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M30E",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M30F",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M30G",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS M02B",
-    "why": "appears only in C-ID mapping table (MUS 130); no program requirements in text"
-   },
-   {
-    "code": "MUS M02BL",
-    "why": "appears only in C-ID mapping table (MUS 135); no program requirements in text"
-   },
-   {
-    "code": "MUS M02C",
-    "why": "appears only in C-ID mapping table (MUS 140); no program requirements in text"
-   },
-   {
-    "code": "MUS M02CL",
-    "why": "appears only in C-ID mapping table (MUS 145); no program requirements in text"
-   },
-   {
-    "code": "MUS M02D",
-    "why": "appears only in C-ID mapping table (MUS 150); no program requirements in text"
-   },
-   {
-    "code": "MUS M02DL",
-    "why": "appears only in C-ID mapping table (MUS 155); no program requirements in text"
-   },
-   {
-    "code": "MUS M10",
-    "why": "appears only in C-ID mapping table (MUS 180); no program requirements in text"
-   },
-   {
-    "code": "MUS M100",
-    "why": "appears only in C-ID mapping table (MUS 180); no program requirements in text"
-   },
-   {
-    "code": "MUS M18",
-    "why": "appears only in C-ID mapping table (MUS 180); no program requirements in text"
-   },
-   {
-    "code": "MUS M180",
-    "why": "appears only in C-ID mapping table (MUS 180); no program requirements in text"
-   },
-   {
-    "code": "MUS M21",
-    "why": "appears only in C-ID mapping table (MUS 180); no program requirements in text"
-   },
-   {
-    "code": "MUS M210",
-    "why": "appears only in C-ID mapping table (MUS 180); no program requirements in text"
-   },
-   {
-    "code": "MUS M23",
-    "why": "appears only in C-ID mapping table (MUS 180); no program requirements in text"
-   },
-   {
-    "code": "MUS M230",
-    "why": "appears only in C-ID mapping table (MUS 180); no program requirements in text"
-   },
-   {
-    "code": "MUS M30A",
-    "why": "appears only in C-ID mapping table (MUS 160); no program requirements in text"
-   },
-   {
-    "code": "MUS M30B",
-    "why": "appears only in C-ID mapping table (MUS 160); no program requirements in text"
-   },
-   {
-    "code": "MUS M30C",
-    "why": "appears only in C-ID mapping table (MUS 160); no program requirements in text"
-   },
-   {
-    "code": "MUS M30D",
-    "why": "appears only in C-ID mapping table (MUS 160); no program requirements in text"
-   },
-   {
-    "code": "MUS M30E",
-    "why": "appears only in C-ID mapping table (MUS 160); no program requirements in text"
-   },
-   {
-    "code": "MUS M30F",
-    "why": "appears only in C-ID mapping table (MUS 160); no program requirements in text"
-   },
-   {
-    "code": "MUS M30G",
-    "why": "appears only in C-ID mapping table (MUS 160); no program requirements in text"
+    "name": "Major Ensemble and/or Specialized Ensemble",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MUS M10",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M18",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M21",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M23",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M100",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M180",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M210",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M230",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text is Moorpark College's C-ID descriptor-to-course mapping table (transfer-information/c-id), not the Music A.A.-T program page. It states no blocks, totals, GE pattern, outcomes or careers for the award, so nothing is recorded; the program's own catalog page should be obtained.",
-   "The text is cut off at the end ('Students should consult ht').",
-   "The C-ID table lists MUS 180 (ensembles) and MUS 160 (applied music) as 'or' groupings of Moorpark courses, but these are descriptor equivalencies, not degree rules."
+   "Applied Music footnote 1: 'Four semesters = 2 units' — student completes four semesters of 0.5-unit applied music (courses may be repeated); recorded as choose 2 units.",
+   "Ensemble footnote 2: 'Four semesters = 4 units' — four semesters of 1-unit ensembles; recorded as choose 4 units.",
+   "Degree summary prints Total Units for Major 22, Cal-GETC 34, Double-Counted Units 0, Elective Units 4, Total 60; the 4 elective units are recorded as degree_elective_units.",
+   "The page prints one outcome for the program as a whole; recorded it for this award.",
+   "Section heading taken from the REQUIREMENTS tab; the page does not print the program title within the extracted text."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "39600815599"
 }

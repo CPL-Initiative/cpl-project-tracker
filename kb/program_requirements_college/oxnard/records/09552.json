@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Fire Technology",
  "award": "A.S. Degree",
- "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/fire-technology-as/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11927,
+  "input_tokens": 8514,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11927,
-    "output_tokens": 1060,
+    "input_tokens": 8514,
+    "output_tokens": 2244,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1060,
+  "output_tokens": 2244,
   "output_tokens_details": {
-   "thinking_tokens": 228
+   "thinking_tokens": 800
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06891,
- "ms": 9600,
- "seconds": 10.0,
+ "cost_usd": 0.07894,
+ "ms": 18853,
+ "seconds": 19.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 14,
    "listed": 14,
-   "share": 0.0,
-   "missing": [
-    "EMTR169",
-    "FTR151",
-    "FTR152",
-    "FTR154",
-    "FTR155",
-    "FTR157",
-    "FTR158",
-    "FTR160",
-    "FTR161",
-    "FTR167",
-    "FTR170",
-    "FTR173",
-    "FTR180",
-    "FTR90"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -77,25 +62,47 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    35.0,
+    52.5
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    35.5,
+    55.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
-   ]
+    "the blocks sum to 35.0-52.5; the catalog states 35.5-55.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     59.0,
+     80.0
+    ],
+    "stated": [
+     60.0,
+     79.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -108,105 +115,180 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "COURSES",
+   "section_heading": "Fire Technology A.S. Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 35.5,
+    "max": 55
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 0,
+    "max": 3.5
    },
-   "ge_pattern": null,
+   "ge_pattern": "Oxnard College General Education or Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 79
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 24
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Appropriately manage patient care relating to illness and injury, in the pre-hospital setting.",
+    "Compare various types of fire protection systems and explain each system's role in the fire service.",
+    "Identify apparatus, equipment and tools essential for successful fire department operations.",
+    "Identify the roles and responsibilities of the fire service.",
+    "Describe the importance of fire prevention and how it relates to the community, public education and the fire service.",
+    "Recognize factors on the fire ground that jeopardize the safety of fire fighters.",
+    "Relate the building construction type to its anticipated fire behavior in emergency situations.",
+    "Recognize the characteristics of fire behavior and relate how the external influences of weather and chemicals affect it."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "EMT R169",
-    "why": "not in a requirements section; named only as a prerequisite or enrollment limitation in course descriptions"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32.5,
+     "max": 32.5
+    },
+    "courses": [
+     {
+      "code": "FT R151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMT R169",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R158",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R167",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "FT R090",
-    "why": "appears only as a course description; no A.S. requirements section in the text"
-   },
-   {
-    "code": "FT R151",
-    "why": "appears only as a course description; no A.S. requirements section in the text"
-   },
-   {
-    "code": "FT R152",
-    "why": "appears only as a course description; no A.S. requirements section in the text"
-   },
-   {
-    "code": "FT R154",
-    "why": "appears only as a course description; no A.S. requirements section in the text"
-   },
-   {
-    "code": "FT R155",
-    "why": "appears only as a course description; no A.S. requirements section in the text"
-   },
-   {
-    "code": "FT R157",
-    "why": "appears only as a course description; no A.S. requirements section in the text"
-   },
-   {
-    "code": "FT R158",
-    "why": "appears only as a course description; no A.S. requirements section in the text"
-   },
-   {
-    "code": "FT R160",
-    "why": "appears only as a course description; no A.S. requirements section in the text"
-   },
-   {
-    "code": "FT R161",
-    "why": "appears only as a course description; no A.S. requirements section in the text"
-   },
-   {
-    "code": "FT R167",
-    "why": "appears only as a course description; no A.S. requirements section in the text"
-   },
-   {
-    "code": "FT R170",
-    "why": "appears only as a course description; no A.S. requirements section in the text"
-   },
-   {
-    "code": "FT R173",
-    "why": "appears only as a course description; no A.S. requirements section in the text"
-   },
-   {
-    "code": "FT R180",
-    "why": "not in the text"
+    "name": "Required Additional Courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 22.5
+    },
+    "courses": [
+     {
+      "code": "FT R157",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R173",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R090",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text contains only the page footer, print options and the COURSES tab (course descriptions); the A.S. Degree requirements section, program description, outcomes and careers are not in the text, so no blocks, totals, outcomes or careers could be recorded.",
-   "The course listing is cut off mid-description at FT R173; FT R180 and any later courses are not in the text.",
-   "Course descriptions mention career opportunities (e.g., FT R090, FT R151), but these were not recorded as program careers because they come from course descriptions, not the program's own section.",
-   "Reviewer should check the program's requirements tab on the source page for the A.S. Degree course list and totals."
+   "The excerpt prints no explicit section heading; the heading is inferred from the page URL and program title.",
+   "The requirements table prints no units beside individual courses. Core course units are taken from the Plan of Study grid on the same page.",
+   "In Required Additional Courses, FT R170 and FT R173 are printed as one paired option ('FT R170 & FT R173'), so choosing that option means taking both courses. They are recorded as separate entries.",
+   "Units for FT R157, FT R180, FT R170, FT R173 and FT R090 are not printed individually; the plan of study shows only 3 for the elective row.",
+   "Two degree paths are printed. With Oxnard College General Education (24 units), double-counted units are 0-3, free electives 0-3.5 and the total is 60-79; this path is recorded in degree_total, ge_units and degree_elective_units.",
+   "With Cal-GETC (34 units), there are no double-counted units, no free electives and the total is 69.5-89. This path is not recorded in the fields.",
+   "The program outcomes list is printed for the program as a whole and is recorded for this award."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }

@@ -1,0 +1,342 @@
+{
+ "college": "Moorpark College",
+ "control_number": "39160",
+ "shape": "degree",
+ "title": "Cybersecurity",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/computer-network-systems-engineering/cybersecurity-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8077,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8077,
+    "output_tokens": 2415,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2415,
+  "output_tokens_details": {
+   "thinking_tokens": 638
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08061,
+ "ms": 20557,
+ "seconds": 20.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 18,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CNSEM111"
+   ],
+   "flagged": [
+    "CNSEM111"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    33.0,
+    38.0
+   ],
+   "stated": [
+    33.0,
+    37.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 33.0-38.0; the catalog states 33.0-37.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     57.0,
+     65.0
+    ],
+    "stated": [
+     60.0,
+     61.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 3
+   },
+   "ge_pattern": "Moorpark College General Education (Areas 1-7) or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 61
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "design, build, and maintain secure networks that includes varied systems such as a virtual system, windows system, Linux system, firewall, wireless devices, and technology systems both on premise and on the cloud.",
+    "demonstrate proficiency to design, recommend and use security strategies and resources that mitigate threats.",
+    "demonstrate use of cyber defense tools, and apply cyber defense methods to mitigate threats as they apply to systems and networks both on premise and on the cloud.",
+    "demonstrate effective troubleshooting skills and utilize both oral and written communication skills.",
+    "perform reliable independent work and develop the skills necessary for effective teamwork."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CNSE M01",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M06",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M18",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M57",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M82",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M80",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives for Major Group A - select and complete one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CNSE M13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M19",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective for Major Group B - select and complete two courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CNSE M56",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M83",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M84",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M86",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSE M111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNSE M170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints two degree totals: 60-61 with the Moorpark College GE Pattern (24 units, elective units 0-3) and 67-71 with the Cal-GETC Pattern (34 units, elective units 0). degree_total, ge_units and degree_elective_units record the local GE path; the Cal-GETC path is an alternative.",
+   "Closed-list codes CNSEM01 and CNSEM13 are matched to catalog codes CNSE M01 and CNSE M13 (spacing difference only).",
+   "CNSE M80 is titled 'Work Experience Education in Computer Network Systems Engineering' (1-4 units) in the catalog, but 'Internship in Computer Network Systems Engineering' (1 unit) in the state file.",
+   "Group B stated total of 5 units is taken from the line 'Units from Elective Courses Group B 5' in the required list; two courses from the list could total 5 or 6 units, so reviewer may check.",
+   "Group A stated 3-4 is printed both on the Group A heading and in the required list.",
+   "The outcomes list is printed on the page's outcomes tab for the program as a whole; recorded as this award's outcomes.",
+   "'Prepares student to pass Professional Industry Certification Exam' is not recorded as a career."
+  ]
+ },
+ "extracted_run": "39600815599"
+}

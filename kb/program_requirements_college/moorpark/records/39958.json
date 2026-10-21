@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Environmental Engineering Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/engineering/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/engineering/environmental-engineering-technology-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11979,
+  "input_tokens": 7317,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11979,
-    "output_tokens": 899,
+    "input_tokens": 7317,
+    "output_tokens": 995,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,62 +30,64 @@
     "model": null
    }
   ],
-  "output_tokens": 899,
+  "output_tokens": 995,
   "output_tokens_details": {
-   "thinking_tokens": 351
+   "thinking_tokens": 174
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0659,
- "ms": 12451,
- "seconds": 12.9,
+ "cost_usd": 0.04917,
+ "ms": 11020,
+ "seconds": 11.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 5,
-   "share": 0.0,
-   "missing": [
-    "CHEMM12",
-    "ENGRM33",
-    "ENGRM35",
-    "ENGRM4",
-    "GISM1"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "ENGRM33L",
+    "WSV22"
+   ],
+   "flagged": [
+    "ENGRM33L",
+    "WSV22"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    20.0,
+    20.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -100,15 +102,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Engineering Courses",
+   "section_heading": "Course List",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 20,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -125,38 +127,84 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "work in an environmental industry and assist the environmental engineer with compliance of local, state, and federal regulations.",
+    "work in an environmental industry and assist the environmental engineer with identification, assessment, and clean-up of environmental pollution including air, water, and soil pollution.",
+    "demonstrate an understanding of our environmental pollution problems and the application of relevant scientific and engineering principles in addressing those problems."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CHEM M12",
-    "why": "program requirements not in text; named only as an advisory in the ENGR M33 course description"
-   },
-   {
-    "code": "ENGR M04",
-    "why": "program requirements not in text; appears only as a course description"
-   },
-   {
-    "code": "ENGR M33",
-    "why": "program requirements not in text; appears only as a course description"
-   },
-   {
-    "code": "ENGR M35",
-    "why": "program requirements not in text; its course description says it is part of the certificate but gives no rule"
-   },
-   {
-    "code": "GIS M01",
-    "why": "not in the text"
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM M12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GIS M01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR M04",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR M33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR M33L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGR M35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WS V22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text is the COURSES tab of the Moorpark Engineering page (course descriptions only), cut off mid-entry at ENGR M80. The program requirements section for the Environmental Engineering Technology Certificate of Achievement is not in the text, so no blocks, total, outcomes or careers could be recorded. A reviewer should check the page's PROGRAMS tab or the 2026-2027 catalog PDF.",
-   "ENGR M35's description states: 'This course is part of a Certificate in Environmental Engineering Technology.' This confirms the course belongs to the certificate but gives no requirement rule or units, so it is not placed in a block.",
-   "section_heading records the course-list heading because no program section for this award appears in the text."
+   "The extracted text prints no program title heading for the requirements; the only heading over the course table is 'Course List' under the REQUIREMENTS tab. The page URL identifies it as the Environmental Engineering Technology Certificate of Achievement.",
+   "Total Required Major Units: 20 matches the sum of the listed course units (4+3+3+3+1+3+3).",
+   "ENGR M33L and WS V22 are not in the closed list and are recorded as catalog additions. WS V22 has a V prefix suggesting a Ventura College course; a reviewer may want to confirm.",
+   "Outcomes were taken from the page's program student learning outcomes tab, which applies to this program as a whole."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "39600815599"
 }

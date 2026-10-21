@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Music",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.vcccd.edu/ventura/transfer-information/transfer-uc/",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/music/music-aat/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9893,
+  "input_tokens": 8767,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9893,
-    "output_tokens": 2049,
+    "input_tokens": 8767,
+    "output_tokens": 2997,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,69 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 2049,
+  "output_tokens": 2997,
   "output_tokens_details": {
-   "thinking_tokens": 159
+   "thinking_tokens": 554
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08055,
- "ms": 16354,
- "seconds": 16.9,
+ "cost_usd": 0.09501,
+ "ms": 21682,
+ "seconds": 22.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 40,
    "listed": 40,
-   "share": 0.0,
-   "missing": [
-    "MUSV1",
-    "MUSV10",
-    "MUSV11",
-    "MUSV12",
-    "MUSV14A",
-    "MUSV14B",
-    "MUSV14C",
-    "MUSV15",
-    "MUSV17",
-    "MUSV18",
-    "MUSV21A",
-    "MUSV21B",
-    "MUSV21C",
-    "MUSV22A",
-    "MUSV22B",
-    "MUSV22C",
-    "MUSV24A",
-    "MUSV24B",
-    "MUSV24C",
-    "MUSV2A",
-    "MUSV2AL",
-    "MUSV2B",
-    "MUSV2BL",
-    "MUSV2C",
-    "MUSV2CL",
-    "MUSV2D",
-    "MUSV2DL",
-    "MUSV31A",
-    "MUSV31B",
-    "MUSV31C",
-    "MUSV31D",
-    "MUSV31E",
-    "MUSV31F",
-    "MUSV31G",
-    "MUSV31V",
-    "MUSV34",
-    "MUSV39",
-    "MUSV8",
-    "MUSV9A",
-    "MUSV9B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -102,25 +62,47 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    21.0,
+    21.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    21.0,
+    22.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
-   ]
+    "the blocks sum to 21.0-21.0; the catalog states 21.0-22.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     57.0,
+     62.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -133,209 +115,378 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Music",
+   "section_heading": "Music, Associate in Arts for Transfer",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 22
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 2,
+    "max": 7
    },
-   "ge_pattern": null,
+   "ge_pattern": "CalGETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Apply lessons of assigned course work and or knowledge and skills attained throughout the course work to new and varied subjects.",
+    "Generate new ideas, express their selves creatively, or solve complex problems in an original way",
+    "Use course work and information taught throughout the course to draw conclusions or create new sources of information that can be shared with others."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MUS V01",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS V02A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS V01",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02AL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02BL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02CL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS V02A",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
+    "name": "Applied Music: Select 4 courses (2 units total)",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "MUS V31A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31B",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31C",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31D",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31E",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31F",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31G",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V31V",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS V02AL",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
+    "name": "Large Ensemble: Complete 4 semester of a Large Ensemble (4 units total)",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MUS V10",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V11",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V12",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V14A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V14B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V14C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V15",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V17",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V18",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V21A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V21B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V21C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V22A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V22B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V22C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V34",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS V02B",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V02BL",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V02C",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V02CL",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V02D",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V02DL",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V08",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V09A",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V09B",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V10",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V11",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V12",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V14A",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V14B",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V14C",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V15",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V17",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V18",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V21A",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V21B",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V21C",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V22A",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V22B",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V22C",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V24A",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V24B",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V24C",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V31A",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V31B",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V31C",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V31D",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V31E",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V31F",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V31G",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V31V",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V34",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
-   },
-   {
-    "code": "MUS V39",
-    "why": "listed only in UC-transferable course list; no degree requirements in text"
+    "name": "List A: Complete at least 3 units",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS V02D",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V02DL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V08",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V09A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V09B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V24A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V24B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V24C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS V39",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source page is Ventura College's list of UC-transferable courses (Transfer Information > Transfer UC), not the Music A.A.-T degree page. The 'Music' heading lists courses transferable to UC with credit limits; it states no requirements, blocks, totals, outcomes or careers for the A.A.-T in Music, so no blocks were recorded.",
-   "The text is a fragment beginning mid-list (Kinesiology) and cut off in the Physics section.",
-   "The UC list notes 'No credit for MUS V01 if taken after MUS V02A' — a UC transfer credit limit, not a degree rule.",
-   "A reviewer should obtain the actual Music A.A.-T program page for the 2026-2027 catalog to record requirements."
+   "The page's own title heading is not in the extracted text (only a navigation fragment ' in Arts for Transfer'); section_heading is inferred from the program/award and the navigation entry.",
+   "MUS V01 is printed as an 'or' option to MUS V02A with no units beside it; units left null.",
+   "Large Ensemble requires 4 semesters (4 units); this may allow repeating the same ensemble course rather than four distinct courses. Recorded as choose_courses 4.",
+   "Degree summary also prints 'Double-counted units (0-3)'. Electives printed as 'CSU transferrable units to reach 60' with 2-7 units, recorded as degree_elective_units since a major total (21-22) is printed.",
+   "The outcomes list appears to be a generic program outcomes list printed on the page's outcomes tab; recorded as printed."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "39622549965"
 }

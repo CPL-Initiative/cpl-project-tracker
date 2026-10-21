@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Vinyl Cutting and Printing Level I",
  "award": "Noncredit program",
- "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/makerspace/vinyl-cutting-printing-level-i-coc/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8198,
+  "input_tokens": 7230,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8198,
-    "output_tokens": 921,
+    "input_tokens": 7230,
+    "output_tokens": 585,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,34 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 921,
+  "output_tokens": 585,
   "output_tokens_details": {
-   "thinking_tokens": 322
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05121,
- "ms": 10842,
- "seconds": 11.2,
+ "cost_usd": 0.04062,
+ "ms": 8674,
+ "seconds": 9.0,
  "parts": null,
  "error": null,
  "score": {
-  "measure": "units",
+  "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 5,
-   "share": 0.0,
-   "missing": [
-    "MAKRM901",
-    "MAKRM903",
-    "MAKRM910",
-    "MAKRM920",
-    "MAKRM923"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -66,23 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record states no figure, but the catalog text names 0 Units, 0 Units, 0 Units, 0 Units"
-   ]
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -97,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Makerspace",
-   "measure": "units",
+   "section_heading": "Vinyl Cutting and Printing Level I",
+   "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 48,
+    "max": 48
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -122,40 +121,68 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "create and apply design thinking solutions through the use of advanced vinyl cutting and printing equipment and technology",
+    "demonstrate proficiency in using industry standard software and equipment to produce vinyl print and cut products",
+    "demonstrate the ability to collaborate and communicate within a team environment"
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MAKR M901",
-    "why": "Only its course description is in the text; no program requirements list places it."
-   },
-   {
-    "code": "MAKR M903",
-    "why": "Only its course description is in the text; no program requirements list places it."
-   },
-   {
-    "code": "MAKR M910",
-    "why": "Only its course description is in the text; no program requirements list places it."
-   },
-   {
-    "code": "MAKR M920",
-    "why": "Only its course description is in the text; no program requirements list places it."
-   },
-   {
-    "code": "MAKR M923",
-    "why": "Only its course description is in the text; no program requirements list places it."
+    "name": "Complete the following five courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MAKR M901",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAKR M903",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAKR M910",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAKR M920",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAKR M923",
+      "units": 20,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text is the noncredit course-description listing (ENSC courses, then a 'Makerspace' subject heading with MAKR course descriptions). It holds no section for the Vinyl Cutting and Printing Level I program: no requirements list, total, outcomes or careers. No blocks were recorded.",
-   "section_heading 'Makerspace' is the subject heading under which the five closed-list courses are described, not a program heading.",
-   "All five closed-list courses appear as course descriptions, each listed at 0 Units. No hours are printed for any course or for the program. Measure is left as 'units' because the text never states hours. A reviewer should check the program page for its hours and requirements.",
-   "The prerequisite chain in the descriptions (MAKR M910 -> M920 -> M923) agrees with the closed list but does not set program requirements.",
-   "The text is cut off mid-description at MAKR M930."
+   "Noncredit Certificate of Completion counted in hours; course hours are from the 'Units/Hours' column and the total is 'Total Hours 48', which matches the sum of the course hours.",
+   "The section heading is not printed in the extracted text; the program title was used."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "39600815599"
 }
