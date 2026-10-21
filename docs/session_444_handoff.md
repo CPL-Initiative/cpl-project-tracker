@@ -45,8 +45,8 @@ S443, `docs/college_action_page_lessons.md` S443.
    with main's `capture.json`, spot-check the new shared pages' coverage, then extract.
 4. **Palomar** (103 page-claimed, unchanged): a page read of two of its claimed pages
    (`kb/college_reads/`), then a reader change for its shape.
-5. **Open Asks Sheet 111** (https://claude.ai/artifact/8W3qnADfQzmxcR4LLztk16, current): read its `replies` first.
-   Card 1 the combined tab's name; card 2 whether the public funding page forgets the chosen institution.
+5. **Open Asks Sheet 111** (https://claude.ai/artifact/8W3qnADfQzmxcR4LLztk16) was answered 21:58Z: the combined tab
+   is **CPL Pathways**; the public funding page **forgets** the chosen institution (applied in #2327). No card is open.
 
 ## Lessons to honor
 

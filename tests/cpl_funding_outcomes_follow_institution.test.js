@@ -218,8 +218,8 @@ check("a2: My Institution with none chosen keeps the statewide cards", T._public
     if (first === undefined) first = w2.CPL_FUNDING_TAB._publicProgress().scope;
   });
   w2.CPL_FUNDING_TAB.boot();
-  check("r1: the first model notice already reads the remembered college's scope",
-    !!first && first.kind === "college" && first.name === per[both.college].scope.name);
+  check("r1: a choice an earlier build stored never opens; the first notice reads statewide (Sam, Sheet 111 card 2)",
+    (first == null || first.kind !== "college") && w2.localStorage.getItem("cplfund_one_choice_v1") === null);
 }
 
 // ── words: the scoped lines keep the house vocabulary ────────────────────────

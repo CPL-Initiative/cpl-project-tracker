@@ -1719,5 +1719,5 @@ converted to underlined words (Sam, 2026-10-09). Clean light and dark at 320, 39
   I've noticed it on other tabs as well (e.g., My College)."* #2325: Program Requirements' picks and filters and
   My College's choice last the visit; a hand-off between tabs is marked `handoff`, read once and cleared; stored
   values from earlier builds are cleared once. The rule is in CLAUDE.md beside the UI practices.
-- **Open:** Implementation Funding's public one-institution choice was remembered at Sam's call 9 (2026-10-15);
-  whether the new rule reaches it is his (Open Asks Sheet 111).
+- **Sheet 111 (answered 21:58Z):** the combined tab is CPL Pathways; the public funding page forgets its chosen
+  institution too, reversing call 9 (Sam picked *forget* over the recommended *keep*; #2327).
