@@ -151,14 +151,22 @@ window.COBI_ADMIN_SURFACE = {
     "cpl-pathways": {
       "modules": [
         "college_cpl_workbook.js",
+        "commons_progress.js",
         "cpl_baccalaureates_data.js",
         "cpl_pathways.js",
         "cpl_pathways_ccr_data.js",
         "cpl_pathways_data.js",
-        "cpl_pathways_membership_data.js"
+        "cpl_pathways_membership_data.js",
+        "program_requirements.js"
       ],
       "reads": [
+        "coci_college_programs",
+        "coci_program_courses",
+        "course_outcomes",
+        "map_colleges",
+        "program_record_verdicts",
         "program_requirement_records",
+        "program_source_addenda",
         "program_source_registry"
       ],
       "writes": [

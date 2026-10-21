@@ -687,7 +687,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 460
+     "line": 475
     }
    ],
    "main_committers": []
@@ -1209,7 +1209,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2790,
+     "line": 2795,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1399,7 +1399,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1508
+     "line": 1523
     }
    ],
    "main_committers": []
@@ -1622,6 +1622,7 @@
      "tabs": [
       "canonical-subj4",
       "commons",
+      "cpl-pathways",
       "cr-reference",
       "credential-reference",
       "program-requirements"
@@ -1642,8 +1643,9 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2544,
+     "line": 2547,
      "tabs": [
+      "cpl-pathways",
       "program-requirements"
      ]
     },
@@ -1758,7 +1760,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2789,
+     "line": 2794,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1926,7 +1928,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 690
+     "line": 705
     }
    ],
    "main_committers": []
@@ -2715,7 +2717,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2788,
+     "line": 2793,
      "tabs": [
       "cpl-pathways"
      ]
@@ -3761,7 +3763,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1182
+     "line": 1197
     }
    ],
    "main_committers": []
@@ -4801,7 +4803,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1073
+     "line": 1088
     },
     {
      "id": "module:admin.js",
@@ -5242,7 +5244,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2933,
+     "line": 2938,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5445,6 +5447,16 @@
      ]
     },
     {
+     "id": "module:cpl_pathways.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 3052,
+     "tabs": [
+      "cpl-pathways"
+     ]
+    },
+    {
      "id": "module:cr_reference.js",
      "kind": "module",
      "direction": "read",
@@ -5525,7 +5537,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3089,
+     "line": 3226,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5595,7 +5607,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3083,
+     "line": 3220,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5631,7 +5643,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1447
+     "line": 1462
     },
     {
      "id": "module:college_briefing.js",
@@ -5874,7 +5886,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2189,
+     "line": 2194,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5917,7 +5929,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3049,
+     "line": 3186,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5940,7 +5952,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2356,
+     "line": 2361,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5996,7 +6008,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3097,
+     "line": 3234,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6162,7 +6174,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3070,
+     "line": 3207,
      "tabs": [
       "cpl-pathways"
      ]
@@ -8849,6 +8861,7 @@
      "how": "literal",
      "line": 126,
      "tabs": [
+      "cpl-pathways",
       "program-requirements"
      ]
     }
@@ -15313,6 +15326,7 @@
      "how": "seeded",
      "line": 0,
      "tabs": [
+      "cpl-pathways",
       "program-requirements"
      ]
     },
@@ -16672,6 +16686,16 @@
   },
   "file:program_requirements.js": {
    "consumers": [
+    {
+     "id": "module:cpl_pathways.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 3053,
+     "tabs": [
+      "cpl-pathways"
+     ]
+    },
     {
      "id": "page:CPL_Dashboard.html",
      "kind": "page",
@@ -21905,12 +21929,23 @@
   "supabase:coci_college_programs": {
    "consumers": [
     {
+     "id": "module:cpl_pathways.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "helper",
+     "line": 3032,
+     "tabs": [
+      "cpl-pathways"
+     ]
+    },
+    {
      "id": "module:program_requirements.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
      "line": 742,
      "tabs": [
+      "cpl-pathways",
       "program-requirements"
      ]
     },
@@ -21926,6 +21961,16 @@
   },
   "supabase:coci_program_courses": {
    "consumers": [
+    {
+     "id": "module:cpl_pathways.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "helper",
+     "line": 3035,
+     "tabs": [
+      "cpl-pathways"
+     ]
+    },
     {
      "id": "script:kb/_program_requirements_pilot.py",
      "kind": "script",
@@ -21973,12 +22018,23 @@
      ]
     },
     {
+     "id": "module:cpl_pathways.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "helper",
+     "line": 3034,
+     "tabs": [
+      "cpl-pathways"
+     ]
+    },
+    {
      "id": "module:program_requirements.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
      "line": 1654,
      "tabs": [
+      "cpl-pathways",
       "program-requirements"
      ]
     }
@@ -23534,6 +23590,7 @@
      "how": "literal",
      "line": 667,
      "tabs": [
+      "cpl-pathways",
       "program-requirements"
      ]
     },
@@ -23857,6 +23914,7 @@
      "how": "literal",
      "line": 780,
      "tabs": [
+      "cpl-pathways",
       "program-requirements"
      ]
     }
@@ -23888,7 +23946,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1574,
+     "line": 1579,
      "tabs": [
       "cpl-pathways"
      ]
@@ -23900,6 +23958,7 @@
      "how": "literal",
      "line": 470,
      "tabs": [
+      "cpl-pathways",
       "program-requirements"
      ]
     },
@@ -23929,6 +23988,7 @@
      "how": "literal",
      "line": 846,
      "tabs": [
+      "cpl-pathways",
       "program-requirements"
      ]
     }
@@ -23963,7 +24023,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1575,
+     "line": 1580,
      "tabs": [
       "cpl-pathways"
      ]
@@ -23975,6 +24035,7 @@
      "how": "literal",
      "line": 632,
      "tabs": [
+      "cpl-pathways",
       "program-requirements"
      ]
     },
@@ -24650,6 +24711,7 @@
   "commons_progress.js": [
    "canonical-subj4",
    "commons",
+   "cpl-pathways",
    "cr-reference",
    "credential-reference",
    "program-requirements"
@@ -24732,6 +24794,7 @@
    "pipeline"
   ],
   "program_requirements.js": [
+   "cpl-pathways",
    "program-requirements"
   ],
   "raci.js": [

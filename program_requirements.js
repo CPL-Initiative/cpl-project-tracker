@@ -2180,7 +2180,7 @@
     var q = el("input", { id: "prh-rq", type: "search", placeholder: "Name or control number", autocomplete: "off" });
     q.value = state.rq;
     var shows = [["all", "All records"]].concat(reviewing ? [["waiting", "Waiting on your reading"]] : [])
-      .concat([["fail", "Fail a machine check"], ["pass", "Pass the machine checks"],
+      .concat([["fail", "Fail a machine check"], ["conflict", "Disagree with the state's course list"], ["pass", "Pass the machine checks"],
         ["complete", "Complete: an active program, passing"], ["checked", "Confirmed by a person"]]);
     if (!shows.some(function (o) { return o[0] === state.rshow; })) state.rshow = "all";
     var showSel = el("select", { id: "prh-rshow" }, shows.map(function (o) { return el("option", { value: o[0], text: o[1] }); }));
@@ -2320,6 +2320,9 @@
       if (show === "waiting") return waiting ? waiting(p) : true;
       if (show === "fail") return machineFails(p).length > 0;
       if (show === "pass") return machineFails(p).length === 0;
+      /* Where the catalog and the state's Program Course File disagree: a listed course the record
+         misses, or a course it adds that the list lacks (CPL Pathways' college line, 2026-10-21). */
+      if (show === "conflict") return machineFails(p).some(function (f) { return f === "courses" || f === "off-list"; });
       if (show === "complete") return machineFails(p).length === 0 && activeIn(p) === true;
       if (show === "checked") return !!p.checked;
       return true;
@@ -2594,6 +2597,7 @@
     records: { view: "records", sec: "records:find" },
     checked: { view: "records", rshow: "checked", sec: "records:find" },
     fail: { view: "records", rshow: "fail", sec: "records:find" },
+    conflict: { view: "records", rshow: "conflict", sec: "records:find" },
     complete: { view: "records", rshow: "complete", sec: "records:find" },
     waiting: { view: "records", rshow: "waiting", sec: "records:find" },
     maps: { view: "sequences", sec: "sequences:colleges" },
@@ -2861,7 +2865,7 @@
   var WHOLE = [
     { id: "links", title: "Links", note: "Each college's catalog, course outline system and program map, found or settled",
       halves: [["catalog", "catalogs"], ["cms", "outline systems"], ["ppm", "program maps"]], open: ["Open the colleges", TO.colleges] },
-    { id: "roep", title: "ROEP data", note: "Active programs with ROEP figures, or a gap the read filed", open: ["Open the records", TO.records] },
+    { id: "roep", title: "Program data", note: "Active programs with their requirements read, or a gap the read filed", open: ["Open the records", TO.records] },
     { id: "coci", title: "COCI comparison", note: "Active programs whose catalog list was compared with COCI's", open: ["Open the records", TO.records] },
     { id: "outcomes", title: "SLOs and PLOs", note: "Course SLOs read, of the courses on active programs; programs read for their PLOs",
       halves: [["slo", "course SLOs"], ["plo", "program PLOs"]], open: ["Open the records", TO.records] },
@@ -2873,7 +2877,7 @@
      lends its sections, its count controls and its call cards, so a count opens this tab's own
      list and a call's records answer here. Its words are the harvest's. */
   var PROGRESS = {
-    title: "Catalog ROEP harvest", sub: "Progress",
+    title: "Program requirements", sub: "Progress",
     lede: "Where the harvest stands. The milestones and parts are read live from the harvest's tables on each visit; the next step, the calls and what changed come from the last session's checkpoint.",
     milestones: MILESTONES, parts: PARTS, partsTitle: "Parts of the harvest", headline: HEADLINE, sources: SOURCE,
     whole: { parts: WHOLE, key: "harvest", label: "The whole harvest", of: "of the whole harvest", partsLabel: "The five parts",
