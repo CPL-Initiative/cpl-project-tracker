@@ -58,6 +58,9 @@
    are defined only where this page's own chrome and the Sierra drawer read them. */
 .masthead, .fs-sra-drawer, .fs-sra-backdrop{
   --seal-blue:#002F6D; --on-accent:#FFFFFF; --surface:var(--surface-opaque);
+  /* The drawer paints the reader's question white on seal blue with
+     --on-seal; undefined, it fell back to body ink, navy on navy. */
+  --on-seal:#FFFFFF;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
