@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-10-21T11:59:25Z",
- "count": 17,
+ "_generated_at": "2026-10-21T14:36:10Z",
+ "count": 16,
  "suggestions": {
   "ADJUS 23 Principles and Procedures of the Justice System": [
    {
@@ -18,16 +18,6 @@
     "kind": "course",
     "title": "Community Relations",
     "code": "ADJUS 25",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "ADJUS 57 Report Writing for Public Safety Personnel": [
-   {
-    "kind": "course",
-    "title": "Report Writing for Public Safety Personnel",
-    "code": "ADJUS 57",
     "share": 1.0,
     "colleges": 1,
     "scoped": true
