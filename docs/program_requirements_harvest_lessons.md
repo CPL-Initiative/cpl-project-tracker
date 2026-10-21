@@ -722,6 +722,33 @@ sharing pages 148-154 and two on the course availability table.
 
 **Sam's sheet 32 (2026-10-04):** a program shows "up to" plus the recommended path's figure, each course carries CPL in three kinds (articulated here, could adopt, for consideration), and catalog-and-state-file differences go to the college as drafts on the harvest tab and My College while the MAP team sends. Verbatim: lessons, *Moved from the lane (S386 compaction)*.
 
+## S440 SkyChaparral (2026-10-21): three colleges no list named, Santa Monica's 40-minute PDF, Taft 38661 gone
+
+- **List the thin colleges live before picking the next one.** The parked list named eleven colleges; a live read of
+  active COCI programs against records (under 60%) found three more with almost nothing filed and no note saying why:
+  Santa Monica (1 of 254), Irvine Valley (1 of 166) and West LA (4 of 233), each holding only its pilot rows. None
+  had ever been read by the college pipeline.
+- **One run waits per branch.** `program-requirements-college.yml` groups runs by ref with cancel-in-progress off, so
+  a second queued run replaces the first pending one: three dispatches in a row ran the first, canceled the second
+  (Santa Monica, run 39527753004) and queued the third. Queue the next run only when nothing is pending.
+- **A dispatch checks out the commit the branch held when it was sent.** A display dispatch sent in the same breath
+  as a build commit (the commit failed on a staged path) was pinned to the old build (run 39553230693, canceled
+  before it started). Push, confirm the head, then dispatch.
+- **A slow PDF is a wait, not a refusal.** Santa Monica's catalog link answered 200 and its 472-page, 14.5 MB PDF did
+  not finish in 600 s (run 39536186746). A page read (39538245162) showed the HTML catalog links no page per
+  program. Sam raised the ceiling to 2,400 s (`CATALOG_PDF_WAIT_MAX_S`, guard in `tests/program_requirements_pilot_test.py`)
+  and the procedure record names 2,400 (`program_source_procedure_set`, receipt
+  `kb/receipts/program_source_procedure_smc_pdf_wait_2026-10-21_s440.sql`); the rerun (39548766337) found 239 of 240.
+- **A removed row takes its filed record with it.** Build 5f9939404fcf still carried Taft 38661 from
+  `kb/program_requirements_college/taft/records/`, and its display job (39548756872) wrote 16,301 rows and reported
+  38661 missing. Removing the file and rebuilding (772abb3ddebe) clears it, as Hartnell's re-read did.
+- **Taft 38661 (Sheet 98 card 1):** the auto-mode classifier refused the receipt and delete file twice, with and
+  without Sam's go, so Sam ran the guarded delete himself (md5 6b5e44f66a545875fe54b89c8a9d5469, unchecked, no
+  verdicts). No copy of the row is committed.
+- **Counts:** West LA 214 of 228 found, 214 extracted, 173 passing, $14.97, load 39539613701 inserted 195 and kept 4;
+  Irvine Valley 144 of 146 found (curriQunet, 78 minutes of capture), 122 passing, $11.02, load 39548442445 inserted
+  143 and kept 1. Both were already in the dated reads (pilot colleges).
+
 ## S424 SkyBuckthorn (2026-10-19): the verdict rows worked, Taft's four wrong pages settled, the Jev sitting's selection
 
 - **A check that holds no record back is not a failure to ask about.** S421's Cañada sitting asked Jev about 22
