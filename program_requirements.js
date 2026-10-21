@@ -2877,7 +2877,7 @@
      lends its sections, its count controls and its call cards, so a count opens this tab's own
      list and a call's records answer here. Its words are the harvest's. */
   var PROGRESS = {
-    title: "Program requirements", sub: "Progress",
+    title: "CPL Pathways", sub: "Progress",
     lede: "Where the harvest stands. The milestones and parts are read live from the harvest's tables on each visit; the next step, the calls and what changed come from the last session's checkpoint.",
     milestones: MILESTONES, parts: PARTS, partsTitle: "Parts of the harvest", headline: HEADLINE, sources: SOURCE,
     whole: { parts: WHOLE, key: "harvest", label: "The whole harvest", of: "of the whole harvest", partsLabel: "The five parts",
