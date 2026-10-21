@@ -13,10 +13,16 @@
   },
   "calls": [
     {
-      "title": "The second reader waits on the xAI API billing moving to the district card",
-      "text": "Sam, 2026-10-20 about 16:30 UTC: the API is paid for separately from the Grok subscription, and the account is moving to the RCCD district credit card, which will take some time. When the key exists: Sam sets XAI_API_KEY and XAI_MODEL as Edge Function secrets on the Work Plan project, a session deploys program-requirements-extract with cpl-chat-deploy.yml, then runs second-reader.yml for Canada College.",
+      "title": "The second reader waits on a new xAI subscription",
+      "text": "Sam, 2026-10-20 about 16:30 UTC: the API is paid for separately from the Grok subscription, and the account is moving to the RCCD district credit card. When the key exists: Sam sets XAI_API_KEY and XAI_MODEL as Edge Function secrets on the Work Plan project, a session deploys program-requirements-extract with cpl-chat-deploy.yml, then runs second-reader.yml for Canada College.",
       "no_reply": "The second reader stays built and unrun; the records that fail a machine check are read by one model and Jev's sittings, whose verdicts files carry each college's next fix.",
-      "link": "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu"
+      "link": "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-21",
+        "words": "Later, on Open Asks Sheet 98 card 2: \"I need to get a new subscription first which will take a few days, so keep this on ice for now.\""
+      },
+      "link_text": "Open Sheet 98"
     }
   ],
   "notes": {

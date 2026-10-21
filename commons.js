@@ -157,11 +157,14 @@
       else {
         var ul = el("ul", null, calls.map(function (c) {
           var li = el("li", { text: c.title || "" });
+          /* Answered on its sheet: the call stays listed, with the answer's words and who gave them. */
+          if (c.answer && c.answer.words) li.appendChild(el("span", { cls: "cmn-why", text: " Answered by " + (c.answer.by || DECIDER) + (c.answer.at ? ", " + c.answer.at : "") + ": " + c.answer.words }));
           if (c.link && /^https:\/\//.test(c.link)) { li.appendChild(document.createTextNode(" ")); li.appendChild(openLink(c.link, c.link_text || "Open the decision sheet")); }
           else if (c.view && c.view.href && c.view.text) { li.appendChild(document.createTextNode(" ")); li.appendChild(openLink(c.view.href, c.view.text)); }
           return li;
         }));
-        kids = [el("p", null, [stateChip({ key: "open", word: calls.length + " open" })]), ul];
+        var open = calls.filter(function (c) { return !(c.answer && c.answer.words); }).length;
+        kids = [el("p", null, [stateChip(open ? { key: "open", word: open + " open" } : { key: "ok", word: "None open" })]), ul];
       }
     }
     return cell("Calls waiting on " + DECIDER, kids);

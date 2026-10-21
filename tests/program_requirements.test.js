@@ -2663,6 +2663,23 @@ block("(26)", function () {
   check("(26) the glance counts blocked catalogs", /2catalogs block the reader/.test(m.root.textContent.replace(/\s+/g, "")) || /2\s*catalogs block the reader/.test(m.root.textContent));
 });
 
+// Sam, 2026-10-21: "the open asks on The Commons doesn't seem to record that I responded to
+// the sheets". A call that names no record counted as open forever; its sheet answer now rides
+// the status file as `answer`, and the call reads answered everywhere it is counted.
+block("(27)", function () {
+  const out = progressReady(20);
+  const ask = { title: "The second reader waits", text: "Waits on a key.", link: "https://claude.ai/artifact/x" };
+  out.M._state.progress.queue.calls = [ask];
+  out.M._state.view = "progress"; out.M._render();
+  check("(27) a call with no answer and no records is one to-do", out.root.querySelector("#prh-todo-go").textContent === "Sam's to-dos (1)");
+  out.M._state.progress.queue.calls = [Object.assign({}, ask, { answer: { by: "Sam", at: "2026-10-21", words: "Later: keep this on ice." } })];
+  out.M._render();
+  const go = out.root.querySelector("#prh-todo-go"), card = out.root.querySelector('details[data-sec="progress:call:0"]');
+  check("(27) answered on its sheet, it leaves the count", go.textContent === "Sam's to-dos: all answered", go.textContent);
+  check("(27) the card reads Answered and shows his words",
+    /Answered/.test(card.querySelector(".prh-sec-label").textContent) && /Sam, 2026-10-21: Later: keep this on ice\./.test(card.textContent), card.textContent);
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {

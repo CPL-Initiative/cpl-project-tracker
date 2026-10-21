@@ -222,7 +222,10 @@
   /* Answered: a verdict on the record's current requirements, or checked. A record the
      reader cannot see counts as open. */
   function refAnswered(ref) { var p = recordFor(ref); return !!p && !stateLine(p).waiting; }
-  function callAnswered(c) { var refs = callRefs(c); return refs.length > 0 && refs.every(refAnswered); }
+  function callAnswered(c) {
+    if (c && c.answer && c.answer.words) return true;   /* answered on its sheet (commons_progress.js answeredBy) */
+    var refs = callRefs(c); return refs.length > 0 && refs.every(refAnswered);
+  }
   /* The check Sam asked for on a finished call (2026-10-10: "it would be nice to have a check
      mark on the block"): drawn in CSS, ghosted, beside the word that says it. */
   function doneMark() { return el("span", { cls: "prh-done-mark", "aria-hidden": "true" }); }
@@ -2960,6 +2963,7 @@
     var calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
     var open = 0, first = -1;
     calls.forEach(function (c, i) {
+      if (c && c.answer && c.answer.words) return;   /* answered on its sheet */
       var refs = callRefs(c), n = 0;
       if (!refs.length) n = 1;
       refs.forEach(function (ref) { if (!refAnswered(ref)) n++; });
