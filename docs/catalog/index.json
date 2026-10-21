@@ -13372,7 +13372,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 83,
+   "count": 84,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14484,6 +14484,22 @@
      "title": "Scope \u2014 MAP performance vs the three funding-priority metrics (funding tab v2)",
      "type": null,
      "updated": "2026-06-11"
+    },
+    {
+     "created": "2026-10-21",
+     "governs": [],
+     "path": "docs/side_session_2026-10-21_funding_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "sierra-retrieval-corpus",
+      "funding-video",
+      "library"
+     ],
+     "title": "Side session beside S442/S443, 2026-10-21: the funding page's Sierra, the guidance memo, the Sierra funding note, the narrated film",
+     "type": null,
+     "updated": ""
     },
     {
      "created": "2026-07-03",
@@ -23072,5 +23088,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1213
+ "total": 1214
 }
