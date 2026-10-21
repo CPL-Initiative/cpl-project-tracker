@@ -1,0 +1,704 @@
+{
+ "college": "Foothill College",
+ "catalog_url": "https://catalog.foothill.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 209,
+ "with_closed_list": 190,
+ "started": "2026-10-21T18:42:14Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.foothill.edu/sitemap.xml",
+  "status": 200,
+  "listed": 2136,
+  "nested": 0,
+  "program_pages": 140,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 140,
+ "child_pages": 0,
+ "banner_h1": "Academic Catalog",
+ "loads": 142,
+ "seconds": 675.7,
+ "found": 116,
+ "by_method": {
+  "no_closed_list": 19,
+  "not_found": 1,
+  "page_claimed": 73,
+  "sitemap_page": 116
+ },
+ "shared_pages": {
+  "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/": [
+   "19484",
+   "35561",
+   "35772",
+   "39351",
+   "39675",
+   "43207",
+   "44253"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/mathematics-2-ast/": [
+   "32127",
+   "46202"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/physics-2-ast/": [
+   "32362",
+   "46285"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/elementary-teacher-education-integrated-programs-aat/": [
+   "37567",
+   "46325"
+  ],
+  "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/": [
+   "39889",
+   "39891",
+   "39996",
+   "40239",
+   "40240",
+   "43676",
+   "45754",
+   "46561"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "36414",
+   "title": "Interventional Pulmonology Assistant",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "06014",
+   "title": "Accounting",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/accounting/"
+   ]
+  },
+  {
+   "control_number": "06043",
+   "title": "Art: General",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/art/",
+    "https://catalog.foothill.edu/degrees-certificates/art-history-aat/",
+    "https://catalog.foothill.edu/degrees-certificates/studio-arts-aat/"
+   ]
+  },
+  {
+   "control_number": "06050",
+   "title": "Photography",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/photography/"
+   ]
+  },
+  {
+   "control_number": "06051",
+   "title": "Graphic and Interactive Design",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/"
+   ]
+  },
+  {
+   "control_number": "06062",
+   "title": "Dental Assisting",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/dental-assisting/"
+   ]
+  },
+  {
+   "control_number": "06072",
+   "title": "Paramedic",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/paramedic/"
+   ]
+  },
+  {
+   "control_number": "09277",
+   "title": "Environmental Horticulture & Design",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/environmental-horticulture-design/"
+   ]
+  },
+  {
+   "control_number": "09290",
+   "title": "Theatre Technology",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/theatre-technology/",
+    "https://catalog.foothill.edu/degrees-certificates/theatre-arts/"
+   ]
+  },
+  {
+   "control_number": "14561",
+   "title": "Program Supervision and Mentoring",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/child-development/"
+   ]
+  },
+  {
+   "control_number": "20084",
+   "title": "Inside Wireman",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-inside-wireman/"
+   ]
+  },
+  {
+   "control_number": "20087",
+   "title": "Music Technology",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/music-technology/"
+   ]
+  },
+  {
+   "control_number": "20090",
+   "title": "Advanced-Level Pharmacy Technician (ASHP/ACPE Accredited)",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/pharmacy-technician/"
+   ]
+  },
+  {
+   "control_number": "31970",
+   "title": "Sheet Metal Building Trades",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-sheet-metal/"
+   ]
+  },
+  {
+   "control_number": "33358",
+   "title": "Geographic Information Systems Technology II",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/geographic-information-systems-technology/"
+   ]
+  },
+  {
+   "control_number": "33359",
+   "title": "Geographic Information Systems Technology III",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/geographic-information-systems-technology/",
+    "https://catalog.foothill.edu/degrees-certificates/geography-aat/"
+   ]
+  },
+  {
+   "control_number": "33437",
+   "title": "Geographic Information Systems Technology",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/geographic-information-systems-technology/"
+   ]
+  },
+  {
+   "control_number": "33523",
+   "title": "Residential Plumbing",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-technology/"
+   ]
+  },
+  {
+   "control_number": "33525",
+   "title": "Air Conditioning and Refrigeration Technology",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-refrigeration-technology/"
+   ]
+  },
+  {
+   "control_number": "33526",
+   "title": "Plumbing Technology",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-technology/"
+   ]
+  },
+  {
+   "control_number": "33527",
+   "title": "Steamfitting and Pipefitting Technology",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-steamfitting-pipefitting-technology/"
+   ]
+  },
+  {
+   "control_number": "36426",
+   "title": "Game Audio II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/music-technology/"
+   ]
+  },
+  {
+   "control_number": "37177",
+   "title": "Makerspace Coordinator",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/"
+   ]
+  },
+  {
+   "control_number": "38653",
+   "title": "Acting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/theatre-arts/"
+   ]
+  },
+  {
+   "control_number": "38825",
+   "title": "Digital Marketing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/business-administration/"
+   ]
+  },
+  {
+   "control_number": "39211",
+   "title": "Veterinary Assisting",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/veterinary-technology/"
+   ]
+  },
+  {
+   "control_number": "39457",
+   "title": "Graphic Design",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/",
+    "https://catalog.foothill.edu/degrees-certificates/photography/"
+   ]
+  },
+  {
+   "control_number": "39458",
+   "title": "Illustration",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/",
+    "https://catalog.foothill.edu/degrees-certificates/art/"
+   ]
+  },
+  {
+   "control_number": "39459",
+   "title": "Web Design",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/",
+    "https://catalog.foothill.edu/degrees-certificates/computer-science/"
+   ]
+  },
+  {
+   "control_number": "39460",
+   "title": "Game Design",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/"
+   ]
+  },
+  {
+   "control_number": "39838",
+   "title": "Residential Wireman",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-inside-wireman/"
+   ]
+  },
+  {
+   "control_number": "39888",
+   "title": "Online and Blended Instruction",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/"
+   ]
+  },
+  {
+   "control_number": "39973",
+   "title": "Early Childhood Education Fundamentals",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/early-childhood-education-ast/",
+    "https://catalog.foothill.edu/degrees-certificates/child-development/",
+    "https://catalog.foothill.edu/degrees-certificates/child-adolescent-development-aat/"
+   ]
+  },
+  {
+   "control_number": "39974",
+   "title": "Early Childhood Special Education",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/early-childhood-education-ast/",
+    "https://catalog.foothill.edu/degrees-certificates/child-development/"
+   ]
+  },
+  {
+   "control_number": "39975",
+   "title": "Elementary After Care Education",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/early-childhood-education-ast/",
+    "https://catalog.foothill.edu/degrees-certificates/child-development/"
+   ]
+  },
+  {
+   "control_number": "40360",
+   "title": "Audio Post Production",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/music-technology/"
+   ]
+  },
+  {
+   "control_number": "40361",
+   "title": "Songwriting",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/music-technology/"
+   ]
+  },
+  {
+   "control_number": "40363",
+   "title": "Electronic Music",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/music-technology/"
+   ]
+  },
+  {
+   "control_number": "40369",
+   "title": "Game Audio I",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/music-technology/"
+   ]
+  },
+  {
+   "control_number": "40491",
+   "title": "Child Development Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/child-development/"
+   ]
+  },
+  {
+   "control_number": "40693",
+   "title": "Pharmacy Assistant (Aide/Clerk)",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/pharmacy-technician/"
+   ]
+  },
+  {
+   "control_number": "40694",
+   "title": "Basic Pharmacy Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/pharmacy-technician/"
+   ]
+  },
+  {
+   "control_number": "40838",
+   "title": "Emerging Educational Technology Leadership",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/"
+   ]
+  },
+  {
+   "control_number": "40841",
+   "title": "STEAM Instructional Leadership",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/"
+   ]
+  },
+  {
+   "control_number": "40842",
+   "title": "Education Technology Specialist",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/"
+   ]
+  },
+  {
+   "control_number": "41275",
+   "title": "Data Analytics",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/business-administration/",
+    "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+    "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
+    "https://catalog.foothill.edu/degrees-certificates/geographic-information-systems-technology/"
+   ]
+  },
+  {
+   "control_number": "41328",
+   "title": "Cybersecurity",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+    "https://catalog.foothill.edu/degrees-certificates/enterprise-networking/",
+    "https://catalog.foothill.edu/degrees-certificates/general-studies-science/"
+   ]
+  },
+  {
+   "control_number": "41696",
+   "title": "Plumbing and Pipefitting Apprenticeship",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-and-pipefitting/"
+   ]
+  },
+  {
+   "control_number": "41898",
+   "title": "Network Computing",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+    "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
+    "https://catalog.foothill.edu/degrees-certificates/enterprise-networking/"
+   ]
+  },
+  {
+   "control_number": "41899",
+   "title": "Introduction to Sports Medicine",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/sports-medicine/"
+   ]
+  },
+  {
+   "control_number": "41978",
+   "title": "IT Support",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+    "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
+    "https://catalog.foothill.edu/degrees-certificates/enterprise-networking/"
+   ]
+  },
+  {
+   "control_number": "42334",
+   "title": "Advanced Sports Medicine",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/sports-medicine/"
+   ]
+  },
+  {
+   "control_number": "42336",
+   "title": "Air Conditioning Mechanic",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-mechanic/"
+   ]
+  },
+  {
+   "control_number": "42475",
+   "title": "Test, Adjust and Balancing (TAB) Technician",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-test-adjust-balancing-technician/"
+   ]
+  },
+  {
+   "control_number": "42515",
+   "title": "Infant and Toddler Development and Care",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/child-development/",
+    "https://catalog.foothill.edu/degrees-certificates/early-childhood-education-ast/"
+   ]
+  },
+  {
+   "control_number": "42516",
+   "title": "Nanny, Child, and Family Studies",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/child-development/"
+   ]
+  },
+  {
+   "control_number": "42517",
+   "title": "Financial Accounting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/accounting/",
+    "https://catalog.foothill.edu/degrees-certificates/business-administration-2-ast/",
+    "https://catalog.foothill.edu/degrees-certificates/business-administration/",
+    "https://catalog.foothill.edu/degrees-certificates/economics-aat/"
+   ]
+  },
+  {
+   "control_number": "42518",
+   "title": "CPA Exam Preparation - Audit",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/accounting/"
+   ]
+  },
+  {
+   "control_number": "42519",
+   "title": "CPA Exam Preparation - Business Environment and Concepts",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/business-administration-2-ast/",
+    "https://catalog.foothill.edu/degrees-certificates/business-administration/",
+    "https://catalog.foothill.edu/degrees-certificates/accounting/",
+    "https://catalog.foothill.edu/degrees-certificates/economics-aat/"
+   ]
+  },
+  {
+   "control_number": "42520",
+   "title": "CPA Exam Preparation - Regulations",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/accounting/"
+   ]
+  },
+  {
+   "control_number": "42521",
+   "title": "Bookkeeping",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/accounting/"
+   ]
+  },
+  {
+   "control_number": "42522",
+   "title": "Payroll Preparation",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/accounting/"
+   ]
+  },
+  {
+   "control_number": "42901",
+   "title": "Tax Specialist",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/accounting/"
+   ]
+  },
+  {
+   "control_number": "42902",
+   "title": "CPA Exam Preparation - Financial Accounting Reporting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/accounting/",
+    "https://catalog.foothill.edu/degrees-certificates/business-administration-2-ast/",
+    "https://catalog.foothill.edu/degrees-certificates/business-administration/",
+    "https://catalog.foothill.edu/degrees-certificates/economics-aat/"
+   ]
+  },
+  {
+   "control_number": "42903",
+   "title": "Accounting Ethics",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/accounting/"
+   ]
+  },
+  {
+   "control_number": "43215",
+   "title": "Research, Design and Development for Global Good",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/"
+   ]
+  },
+  {
+   "control_number": "43425",
+   "title": "Commercial Photography",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/photography/"
+   ]
+  },
+  {
+   "control_number": "43426",
+   "title": "Digital Photography Techniques",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/photography/"
+   ]
+  },
+  {
+   "control_number": "43690",
+   "title": "Advanced Web Applications Development",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+    "https://catalog.foothill.edu/degrees-certificates/general-studies-science/"
+   ]
+  },
+  {
+   "control_number": "43983",
+   "title": "Semiconductor Processing",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/semiconductor-process-engineering/"
+   ]
+  },
+  {
+   "control_number": "44249",
+   "title": "Archaeological Field Work",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/anthropology-aat/",
+    "https://catalog.foothill.edu/degrees-certificates/anthropology/"
+   ]
+  },
+  {
+   "control_number": "44566",
+   "title": "Visual Storytelling and Comic Arts",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/"
+   ]
+  },
+  {
+   "control_number": "44600",
+   "title": "Business and Marketing",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/business-administration/"
+   ]
+  },
+  {
+   "control_number": "45532",
+   "title": "Artificial Intelligence Empowered Instruction",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 10,
+  "0.8-1.0": 21,
+  "1.0": 85
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/foothill",
+  "kept": 116,
+  "programs": 0,
+  "list": []
+ },
+ "run": "39654813908"
+}
