@@ -60,6 +60,7 @@ MAX_LOADS = 8            # page loads per program, shared pages excluded
 ACCEPT_SHARE = 0.5       # a page naming this share of the listed codes is the page
 TEXT_CAP = 16000         # characters of page text kept per program
 CATALOG_PDF_WAIT_S = 600 # seconds a procedure's whole-catalog PDF may take to arrive
+CATALOG_PDF_WAIT_MAX_S = 2400  # the longest wait a procedure record may name (40 minutes)
 HTML_CAP = 60000         # characters of CourseLeaf course-list HTML kept
 WINDOW_BEFORE = 2500     # text kept before the first listed code on the page
 WINDOW_AFTER = 1500      # and after the last
@@ -482,9 +483,10 @@ def procedure_catalog(procedure) -> dict | None:
         return None
     # A whole catalog is one large file: Santa Monica's took longer than the
     # reader's usual 180 s and timed out (run 37543985175), so a catalog step
-    # waits 600 s unless its record says otherwise (30 s to 1,500 s).
+    # waits 600 s unless its record says otherwise (30 s to 2,400 s; Sam raised the
+    # ceiling to 40 minutes on 2026-10-21 when Santa Monica's took longer than 600 s).
     wait = step.get("timeout_s")
-    wait = wait if isinstance(wait, int) and 30 <= wait <= 1500 else CATALOG_PDF_WAIT_S
+    wait = wait if isinstance(wait, int) and 30 <= wait <= CATALOG_PDF_WAIT_MAX_S else CATALOG_PDF_WAIT_S
     out = {"start": start, "follow": (follow or "").strip(), "format": fmt, "timeout_s": wait}
     if named:
         out["file"] = file

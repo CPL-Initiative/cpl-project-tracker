@@ -271,12 +271,14 @@ check(P.procedure_catalog(STEP) == {"start": SMC_HOME, "follow": "Download the F
                                     "timeout_s": 600}
       and P.procedure_catalog({"catalog": dict(STEP["catalog"], timeout_s=900)})["timeout_s"] == 900
       and P.procedure_catalog({"catalog": dict(STEP["catalog"], timeout_s=5)})["timeout_s"] == 600
+      and P.procedure_catalog({"catalog": dict(STEP["catalog"], timeout_s=2400)})["timeout_s"] == 2400
+      and P.procedure_catalog({"catalog": dict(STEP["catalog"], timeout_s=2401)})["timeout_s"] == 600
       and P.procedure_catalog(None) is None and P.procedure_catalog({"v": 1, "hosts": []}) is None
       and P.procedure_catalog({"catalog": {"start": "catalog.smc.edu", "follow": "x"}}) is None
       and P.procedure_catalog({"catalog": {"start": SMC_HOME, "follow": " "}}) is None
       and P.procedure_catalog({"catalog": {"start": SMC_HOME, "follow": "x", "format": "docx"}}) is None,
       "a procedure's catalog step is read only when it names an http start page, link text and pdf or html, "
-      "and waits 600 s for a whole-catalog PDF unless the record names 30-1,500 s (run 37543985175 timed out at 180)")
+      "and waits 600 s for a whole-catalog PDF unless the record names 30-2,400 s (run 37543985175 timed out at 180)")
 LINKS = [{"text": "Download the Full Catalog (PDF archive 2019)", "href": SMC_HOME + "?old"},
          {"text": "  Download   the full catalog ", "href": SMC_PDF},
          {"text": "Catalog Home", "href": SMC_HOME}]
