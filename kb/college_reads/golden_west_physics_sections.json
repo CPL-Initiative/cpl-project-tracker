@@ -1,0 +1,7 @@
+{
+  "_readme": "S443 (SkyToyon): which line of Golden West's Physics page gave Computer Science A.S. (35877) a section there on capture-only run 39661010112 (section_award). The reader's section-heading rule may be reading a sentence that names the award and the title as a heading.",
+  "college": "Golden West College",
+  "questions": {"cs_line": "Which short line names Computer Science with an associate in science award?"},
+  "keywords": ["[^\\n]{0,80}computer science[^\\n]{0,80}", "associate in science[^\\n]{0,60}"],
+  "pages": [{"answers": ["cs_line"], "url": "https://catalog.cccd.edu/golden-west/pathways/stem/physics/"}]
+}
