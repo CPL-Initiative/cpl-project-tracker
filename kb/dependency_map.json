@@ -1739,14 +1739,14 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 101
+     "line": 108
     },
     {
      "id": "script:prototype/funding_video/narrate.py",
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 41
+     "line": 43
     },
     {
      "id": "script:prototype/noncredit_video/cues.py",
@@ -17154,14 +17154,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 72
+     "line": 79
     },
     {
      "id": "script:prototype/funding_video/narrate.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 50
+     "line": 52
     }
    ],
    "served": true,

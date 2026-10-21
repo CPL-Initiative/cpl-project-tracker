@@ -9,355 +9,343 @@
   "last_tail_s": 3.4,
   "_why": "The narrated cut paces each scene as its lead-in (the seam, its barrier and the first reveal), its clip, and its air; Sam, 2026-09-26: \"slow down and lengthen the timing a bit to accommodate readability and narration.\""
  },
- "total": 162.36,
+ "total": 160.43,
  "scenes": [
   {
    "scene": "Title",
    "start": 0.0,
    "speech_start": 1.4,
-   "speech_end": 6.46,
-   "end": 7.26,
+   "speech_end": 6.45,
+   "end": 7.25,
    "anchors": [
     {
      "at": 0.3,
-     "t": 1.45,
-     "said": 1.45,
+     "t": 1.445,
+     "said": 1.445,
      "word": "Greetings CPL heroes"
     },
     {
      "at": 1.4,
-     "t": 2.66,
-     "said": 3.871,
+     "t": 2.65,
+     "said": 3.805,
      "word": "CPL Initiative funding works"
     },
     {
      "at": 3.6,
-     "t": 4.86,
-     "said": 5.575,
+     "t": 4.85,
+     "said": 5.548,
      "word": "for your college"
     }
    ]
   },
   {
    "scene": "The funding",
-   "start": 7.26,
-   "speech_start": 8.26,
-   "speech_end": 23.89,
-   "end": 24.69,
+   "start": 7.25,
+   "speech_start": 8.25,
+   "speech_end": 24.72,
+   "end": 25.52,
    "anchors": [
     {
      "at": 2.4,
-     "t": 13.744,
-     "said": 13.744,
+     "t": 14.014,
+     "said": 14.014,
      "word": "million dollars"
     },
     {
      "at": 3.6,
-     "t": 16.655,
-     "said": 16.655,
+     "t": 16.715,
+     "said": 16.715,
      "word": "About twenty-five million"
     },
     {
      "at": 4.3,
-     "t": 19.64,
-     "said": 19.64,
+     "t": 20.14,
+     "said": 20.14,
      "word": "while the remainder"
     }
    ]
   },
   {
    "scene": "Maximum allocation",
-   "start": 24.69,
-   "speech_start": 25.69,
-   "speech_end": 40.5,
-   "end": 42.9,
+   "start": 25.52,
+   "speech_start": 26.52,
+   "speech_end": 41.33,
+   "end": 43.73,
    "anchors": [
     {
      "at": 0.1,
-     "t": 25.735,
-     "said": 25.735,
+     "t": 26.565,
+     "said": 26.565,
      "word": "Each institution has a maximum allocation"
     },
     {
      "at": 1.6,
-     "t": 31.454,
-     "said": 31.454,
+     "t": 32.284,
+     "said": 32.284,
      "word": "base funding of one hundred fifty thousand"
     },
     {
      "at": 2.35,
-     "t": 35.25,
-     "said": 35.695,
+     "t": 36.08,
+     "said": 36.525,
      "word": "four hundred thousand dollars"
     },
     {
      "at": 4.0,
-     "t": 36.9,
-     "said": 37.79,
+     "t": 37.73,
+     "said": 38.62,
      "word": "The average is about"
     }
    ]
   },
   {
    "scene": "Credit and noncredit",
-   "start": 42.9,
-   "speech_start": 43.9,
-   "speech_end": 48.76,
-   "end": 49.9,
+   "start": 43.73,
+   "speech_start": 44.73,
+   "speech_end": 49.59,
+   "end": 50.73,
    "anchors": [
     {
      "at": 0.1,
-     "t": 43.0,
-     "said": 43.93,
+     "t": 43.83,
+     "said": 44.76,
      "word": "Allocations are split"
     },
     {
      "at": 1.8,
-     "t": 44.7,
-     "said": 45.347,
+     "t": 45.53,
+     "said": 46.177,
      "word": "credit and noncredit shares"
     },
     {
      "at": 4.2,
-     "t": 47.1,
-     "said": 47.205,
+     "t": 47.93,
+     "said": 48.035,
      "word": "so all students are supported"
     }
    ]
   },
   {
    "scene": "Two priorities",
-   "start": 49.9,
-   "speech_start": 50.9,
-   "speech_end": 69.2,
-   "end": 70.0,
+   "start": 50.73,
+   "speech_start": 51.73,
+   "speech_end": 69.74,
+   "end": 70.54,
    "anchors": [
     {
      "at": 0.1,
-     "t": 50.975,
-     "said": 50.975,
+     "t": 51.8,
+     "said": 51.8,
      "word": "Funding is based on two priority outcomes"
     },
     {
      "at": 1.2,
-     "t": 53.915,
-     "said": 53.915,
+     "t": 54.745,
+     "said": 54.745,
      "word": "The access priority counts"
     },
     {
      "at": 5.2,
-     "t": 59.349,
-     "said": 59.349,
+     "t": 60.085,
+     "said": 60.095,
      "word": "the completion priority counts"
     },
     {
      "at": 9.2,
-     "t": 63.445,
-     "said": 63.445,
+     "t": 64.085,
+     "said": 64.085,
      "word": "The Chancellor's Office will report"
     }
    ]
   },
   {
    "scene": "How a target is set",
-   "start": 70.0,
-   "speech_start": 71.0,
-   "speech_end": 81.84,
-   "end": 82.64,
+   "start": 70.54,
+   "speech_start": 71.54,
+   "speech_end": 75.94,
+   "end": 80.14,
    "anchors": [
     {
      "at": 0.1,
-     "t": 71.02,
-     "said": 71.02,
+     "t": 70.64,
+     "said": 71.56,
      "word": "Outcomes are measured in FTES"
     },
     {
      "at": 3.0,
-     "t": 74.152,
-     "said": 74.487,
-     "word": "the FTES reimbursement rate"
-    },
-    {
-     "at": 6.4,
-     "t": 77.552,
-     "said": 77.552,
-     "word": "four thousand two hundred sixty-nine"
-    },
-    {
-     "at": 7.2,
-     "t": 80.24,
-     "said": 80.316,
-     "word": "per priority statewide"
+     "t": 73.54,
+     "said": 74.769,
+     "word": "the reimbursement rate"
     }
    ]
   },
   {
    "scene": "Targets",
-   "start": 82.64,
-   "speech_start": 83.64,
-   "speech_end": 106.25,
-   "end": 107.05,
+   "start": 80.14,
+   "speech_start": 81.14,
+   "speech_end": 103.28,
+   "end": 104.08,
    "anchors": [
     {
      "at": 0.1,
-     "t": 83.685,
-     "said": 83.685,
+     "t": 81.185,
+     "said": 81.185,
      "word": "Your college has its own target"
     },
     {
      "at": 0.9,
-     "t": 86.96,
-     "said": 86.96,
+     "t": 84.48,
+     "said": 84.48,
      "word": "Thirty semester units"
     },
     {
      "at": 2.0,
-     "t": 91.99,
-     "said": 91.99,
+     "t": 89.485,
+     "said": 89.485,
      "word": "For the average allocation"
     },
     {
      "at": 3.0,
-     "t": 97.305,
-     "said": 97.305,
+     "t": 94.875,
+     "said": 94.875,
      "word": "Reach half the target"
     },
     {
      "at": 5.0,
-     "t": 99.447,
-     "said": 99.447,
+     "t": 97.014,
+     "said": 97.014,
      "word": "qualifies for half the maximum funding"
     },
     {
      "at": 6.6,
-     "t": 102.585,
-     "said": 102.585,
+     "t": 99.765,
+     "said": 99.765,
      "word": "Colleges that achieve target"
     },
     {
      "at": 7.6,
-     "t": 104.65,
-     "said": 105.009,
+     "t": 101.68,
+     "said": 102.138,
      "word": "receive full funding"
     }
    ]
   },
   {
    "scene": "Minimum conditions",
-   "start": 107.05,
-   "speech_start": 108.05,
-   "speech_end": 127.24,
-   "end": 128.04,
+   "start": 104.08,
+   "speech_start": 105.08,
+   "speech_end": 124.84,
+   "end": 125.64,
    "anchors": [
     {
      "at": 0.1,
-     "t": 112.032,
-     "said": 112.032,
+     "t": 109.185,
+     "said": 109.185,
      "word": "meet three conditions"
     },
     {
      "at": 1.3,
-     "t": 113.625,
-     "said": 113.625,
+     "t": 110.73,
+     "said": 110.73,
      "word": "name a CPL coordinator"
     },
     {
      "at": 2.6,
-     "t": 116.23,
-     "said": 116.23,
+     "t": 113.485,
+     "said": 113.485,
      "word": "confirm your participation"
     },
     {
      "at": 3.9,
-     "t": 118.255,
-     "said": 118.255,
+     "t": 115.671,
+     "said": 115.671,
      "word": "upload Joint Services Transcripts"
     },
     {
      "at": 6.0,
-     "t": 123.575,
-     "said": 123.575,
+     "t": 121.115,
+     "said": 121.115,
      "word": "Until then"
     }
    ]
   },
   {
    "scene": "Timing",
-   "start": 128.04,
-   "speech_start": 129.04,
-   "speech_end": 140.31,
-   "end": 141.11,
+   "start": 125.64,
+   "speech_start": 126.64,
+   "speech_end": 137.94,
+   "end": 138.74,
    "anchors": [
     {
      "at": 0.1,
-     "t": 129.09,
-     "said": 129.09,
+     "t": 126.695,
+     "said": 126.695,
      "word": "The Chancellor's Office will release funding"
     },
     {
      "at": 1.9,
-     "t": 131.022,
-     "said": 131.022,
+     "t": 128.825,
+     "said": 128.825,
      "word": "twice a year"
     },
     {
      "at": 4.6,
-     "t": 135.025,
-     "said": 135.025,
+     "t": 132.715,
+     "said": 132.715,
      "word": "The full two-year amount"
     },
     {
      "at": 6.4,
-     "t": 137.51,
-     "said": 137.868,
+     "t": 135.14,
+     "said": 135.715,
      "word": "what remains carries forward"
     }
    ]
   },
   {
    "scene": "Support",
-   "start": 141.11,
-   "speech_start": 142.11,
-   "speech_end": 152.11,
-   "end": 152.91,
+   "start": 138.74,
+   "speech_start": 139.74,
+   "speech_end": 150.11,
+   "end": 150.91,
    "anchors": [
     {
      "at": 0.1,
-     "t": 141.52,
-     "said": 142.155,
+     "t": 139.365,
+     "said": 139.79,
      "word": "You won't do this alone"
     },
     {
      "at": 0.8,
-     "t": 142.22,
-     "said": 143.59,
+     "t": 140.065,
+     "said": 141.4,
      "word": "Every priority comes with recommended strategies"
     },
     {
      "at": 5.2,
-     "t": 146.62,
-     "said": 146.62,
+     "t": 144.465,
+     "said": 144.465,
      "word": "a CPL Initiative help team"
     },
     {
      "at": 6.6,
-     "t": 150.426,
-     "said": 150.426,
+     "t": 148.308,
+     "said": 148.308,
      "word": "detailed guidance"
     }
    ]
   },
   {
    "scene": "Find your college",
-   "start": 152.91,
-   "speech_start": 153.91,
-   "speech_end": 158.96,
-   "end": 162.36,
+   "start": 150.91,
+   "speech_start": 151.91,
+   "speech_end": 157.03,
+   "end": 160.43,
    "anchors": [
     {
      "at": 0.9,
-     "t": 153.98,
-     "said": 153.98,
+     "t": 151.94,
+     "said": 151.94,
      "word": "Find details"
     }
    ]
@@ -366,182 +354,177 @@
  "cues": [
   {
    "start": 1.4,
-   "end": 3.205,
+   "end": 3.215,
    "text": "Greetings CPL heroes!"
   },
   {
-   "start": 3.205,
-   "end": 6.46,
+   "start": 3.215,
+   "end": 6.45,
    "text": "Here's how CPL Initiative funding works for your college."
   },
   {
-   "start": 8.26,
-   "end": 10.12,
+   "start": 8.25,
+   "end": 10.14,
    "text": "Huge thanks to our Chancellor,"
   },
   {
-   "start": 10.12,
-   "end": 16.36,
+   "start": 10.14,
+   "end": 16.575,
    "text": "Board of Governors and the legislature for appropriating thirty-five million dollars to support CPL."
   },
   {
-   "start": 16.36,
-   "end": 19.485,
+   "start": 16.575,
+   "end": 19.945,
    "text": "About twenty-five million goes directly to the colleges,"
   },
   {
-   "start": 19.485,
-   "end": 23.89,
+   "start": 19.945,
+   "end": 24.72,
    "text": "while the remainder is funding CPL infrastructure and innovation projects."
   },
   {
-   "start": 25.69,
-   "end": 29.505,
+   "start": 26.52,
+   "end": 30.335,
    "text": "Each institution has a maximum allocation for the two-year period,"
   },
   {
-   "start": 29.505,
-   "end": 37.45,
+   "start": 30.335,
+   "end": 38.28,
    "text": "with smaller colleges eligible for base funding of one hundred fifty thousand and larger colleges capped at four hundred thousand dollars."
   },
   {
-   "start": 37.45,
-   "end": 40.5,
+   "start": 38.28,
+   "end": 41.33,
    "text": "The average is about two hundred fourteen thousand."
   },
   {
-   "start": 43.9,
-   "end": 47.03,
+   "start": 44.73,
+   "end": 47.86,
    "text": "Allocations are split between credit and noncredit shares,"
   },
   {
-   "start": 47.03,
-   "end": 48.76,
+   "start": 47.86,
+   "end": 49.59,
    "text": "so all students are supported."
   },
   {
-   "start": 50.9,
-   "end": 53.645,
+   "start": 51.73,
+   "end": 54.52,
    "text": "Funding is based on two priority outcomes."
   },
   {
-   "start": 53.645,
-   "end": 57.41,
+   "start": 54.52,
+   "end": 58.19,
    "text": "The access priority counts all applied, or articulated, CPL units,"
   },
   {
-   "start": 57.41,
-   "end": 61.727,
+   "start": 58.19,
+   "end": 62.386,
    "text": "whereas the completion priority counts transcribed CPL units."
   },
   {
-   "start": 61.727,
-   "end": 69.2,
+   "start": 62.386,
+   "end": 69.74,
    "text": "The Chancellor's Office will report on career attainment together with the infrastructure and innovation projects."
   },
   {
-   "start": 71.0,
-   "end": 76.78,
-   "text": "Outcomes are measured in FTES and funding at half the FTES reimbursement rate,"
+   "start": 71.54,
+   "end": 75.94,
+   "text": "Outcomes are measured in FTES and funded at half the reimbursement rate."
   },
   {
-   "start": 76.78,
-   "end": 81.84,
-   "text": "which totals four thousand two hundred sixty-nine FTES per priority statewide."
-  },
-  {
-   "start": 83.64,
-   "end": 86.685,
+   "start": 81.14,
+   "end": 84.2,
    "text": "Your college has its own target under each priority."
   },
   {
-   "start": 86.685,
-   "end": 90.095,
+   "start": 84.2,
+   "end": 88.055,
    "text": "Thirty semester units of CPL are counted as one FTES."
   },
   {
-   "start": 90.095,
-   "end": 94.915,
+   "start": 88.055,
+   "end": 92.52,
    "text": "For the average allocation, the Access target is about thirty-one FTES."
   },
   {
-   "start": 94.915,
-   "end": 101.207,
+   "start": 92.52,
+   "end": 98.342,
    "text": "Reach half the target, and your college qualifies for half the maximum funding."
   },
   {
-   "start": 101.207,
-   "end": 106.25,
+   "start": 98.342,
+   "end": 103.28,
    "text": "Colleges that achieve target for both priorities receive full funding."
   },
   {
-   "start": 108.05,
-   "end": 110.905,
+   "start": 105.08,
+   "end": 108.04,
    "text": "Before the Chancellor's Office releases any funding,"
   },
   {
-   "start": 110.905,
-   "end": 113.425,
+   "start": 108.04,
+   "end": 110.55,
    "text": "your college needs to meet three conditions:"
   },
   {
-   "start": 113.425,
-   "end": 117.865,
+   "start": 110.55,
+   "end": 115.22,
    "text": "name a CPL coordinator in MAP, confirm your participation,"
   },
   {
-   "start": 117.865,
-   "end": 123.3,
+   "start": 115.22,
+   "end": 120.85,
    "text": "and upload Joint Services Transcripts for at least seventy-five percent of enrolled veterans."
   },
   {
-   "start": 123.3,
-   "end": 127.24,
+   "start": 120.85,
+   "end": 124.84,
    "text": "Until then, the funding is held in reserve for the two-year period."
   },
   {
-   "start": 129.04,
-   "end": 132.53,
+   "start": 126.64,
+   "end": 129.785,
    "text": "The Chancellor's Office will release funding twice a year,"
   },
   {
-   "start": 132.53,
-   "end": 134.715,
+   "start": 129.785,
+   "end": 132.485,
    "text": "based on your college's CPL to date."
   },
   {
-   "start": 134.715,
-   "end": 137.605,
+   "start": 132.485,
+   "end": 135.42,
    "text": "The full two-year amount is available from year one,"
   },
   {
-   "start": 137.605,
-   "end": 140.31,
+   "start": 135.42,
+   "end": 137.94,
    "text": "and what remains carries forward to year two."
   },
   {
-   "start": 142.11,
-   "end": 143.42,
+   "start": 139.74,
+   "end": 141.175,
    "text": "You won't do this alone."
   },
   {
-   "start": 143.42,
-   "end": 146.47,
+   "start": 141.175,
+   "end": 144.3,
    "text": "Every priority comes with recommended strategies,"
   },
   {
-   "start": 146.47,
-   "end": 152.11,
+   "start": 144.3,
+   "end": 150.11,
    "text": "a CPL Initiative help team supports every college, and detailed guidance will follow."
   },
   {
-   "start": 153.91,
-   "end": 157.635,
+   "start": 151.91,
+   "end": 155.755,
    "text": "Find details on the CPL funding page and let's do this together."
   },
   {
-   "start": 157.635,
-   "end": 158.96,
+   "start": 155.755,
+   "end": 157.03,
    "text": "Our time is now!"
   }
  ]

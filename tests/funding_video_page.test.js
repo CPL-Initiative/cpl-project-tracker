@@ -97,7 +97,7 @@ const narration = readScript("s1");
 // The narrated cuts: n1 is Scenario 1's (draft 4, Kokoro), n2 Scenario 2's (draft 3, Sierra).
 const NARRATED = [
   { tag: "n1 ", v: "n1", s: "s1", mp4: "20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4" },
-  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4" },
+  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4" },
 ];
 const sha1 = (t) => crypto.createHash("sha1").update(t, "utf8").digest("hex");
 NARRATED.forEach(({ s }) => {
@@ -113,9 +113,10 @@ NARRATED.forEach(({ s }) => {
       ["sˈiː pˈiː ˈɛl", "twˈɛnti twˈɛnti", "ˌɛmˌeɪpˈiː"].every((b) => (script.never || []).some((n) => n.phonemes === b)));
   } else {
     // ElevenLabs reads outside the repo: each committed clip must have been read from its scene's current text
+    // (its `say`, the spoken form, where the captions' written form differs: C.P.L. for CPL)
     const eng = script.engine, voiced = script.scenes.filter((x) => !x.pending);
     check(tag + "n4 every voiced scene's clip is committed and was read from the scene's current text",
-      voiced.length > 0 && voiced.every((x) => x.read && x.read.text_sha1 === sha1(x.text) && fs.existsSync(path.join(DIR, eng.clips, x.read.clip))));
+      voiced.length > 0 && voiced.every((x) => x.read && x.read.text_sha1 === sha1(x.say || x.text) && fs.existsSync(path.join(DIR, eng.clips, x.read.clip))));
     check(tag + "n5 a scene still waiting on its read says why, and carries no clip",
       script.scenes.filter((x) => x.pending).every((x) => x.pending.length > 40 && !x.read));
   }
@@ -230,7 +231,7 @@ NARRATED.forEach(({ tag, v, s }) => {
   const off = anchors.map((a) => Math.max(Math.abs(nt(a.film) - a.t), Math.abs(ft(a.t) - a.film)));
   check(tag + "h2 the clock passes through each anchor within 0.05 s (worst " + Math.max(...off).toExponential(1) + " s)",
     spans.length === L.scenes.length && off.every((x) => x < 0.05));
-  const norm = (t) => t.replace(/\u2019/g, "'").replace(/^[^\w']+|[^\w']+$/g, "").toLowerCase();
+  const norm = (t) => t.replace(/\u2019/g, "'").replace(/^[^\w']+|[^\w']+$/g, "").replace(/\./g, "").toLowerCase();
   const onset = anchors.map((a) => {
     const ws = H.scenes[a.scene].words, ph = a.word.split(/\s+/).map(norm);
     const i = ws.findIndex((_, j) => ph.every((p, k) => ws[j + k] && norm(ws[j + k][0]) === p));

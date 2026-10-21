@@ -1,5 +1,5 @@
 {
- "_about": "The narration of Scenario 2's narrated cut, draft 2 (S317 SkyCompass, 2026-10-02), voiced by Sierra. Sam, 2026-10-02: \"write a script for the scenario 2 video for an ElevenLabs narrator. Keep it very simple and focused and see if you can select a female voice model to narrate and give her the name Sierra on the video as a sample\", and \"The music can drop to background level.\" One or two plain sentences per scene of the current Scenario 2 picture (the introduction's v7: the average allocation, the targets slide, December 30, 2026, the CPL funding page), about 330 words where draft 1 had 430. Every figure is the film's, read from the engine under the live config, md5 764fd264 (checked live 2026-10-02): $35,000,000; about $25 million to 118 institutions; the $150,000 to $400,000 range and the $213,901 average; 4,366.7 FTES statewide for each priority; 34.5 FTES for the average Access target. The voice says the figures in words and writes MAP as map, so the captions and the aligner read what she says. Draft 3 (S443, 2026-10-21): Sam's edits to every scene but Support, from his marked-up script (20261021_CPL_Funding_in_Motion_Narration_Script_Sierra.docx); the figures are the published Scenario 3's (about 4,269 FTES per priority, an average Access target of about 31.3 FTES).",
+ "_about": "The narration of Scenario 2's narrated cut, draft 2 (S317 SkyCompass, 2026-10-02), voiced by Sierra. Sam, 2026-10-02: \"write a script for the scenario 2 video for an ElevenLabs narrator. Keep it very simple and focused and see if you can select a female voice model to narrate and give her the name Sierra on the video as a sample\", and \"The music can drop to background level.\" One or two plain sentences per scene of the current Scenario 2 picture (the introduction's v7: the average allocation, the targets slide, December 30, 2026, the CPL funding page), about 330 words where draft 1 had 430. Every figure is the film's, read from the engine under the live config, md5 764fd264 (checked live 2026-10-02): $35,000,000; about $25 million to 118 institutions; the $150,000 to $400,000 range and the $213,901 average; 4,366.7 FTES statewide for each priority; 34.5 FTES for the average Access target. The voice says the figures in words and writes MAP as map, so the captions and the aligner read what she says. Draft 3 (S443, 2026-10-21): Sam's edits to every scene but Support, from his marked-up script (20261021_CPL_Funding_in_Motion_Narration_Script_Sierra.docx); the figures are the published Scenario 3's (about 4,269 FTES per priority, an average Access target of about 31.3 FTES). Draft 5 (2026-10-21): Sam's pronunciation, from his sample C on eleven_multilingual_v2 (\"C is the best\"; \"when referring to 1 FTES, it does need to be spelled out as F-T-E-S. When multiple, it's F-T-Es\"): each scene that says CPL or FTES carries `say`, the text as the voice reads it (C.P.L., one F.T.E.S., several FTEs), while `text` keeps the written forms for the captions; and the targets scene loses its statewide total (his cut).",
  "voice": "Sierra",
  "engine": {
   "name": "elevenlabs",
@@ -22,11 +22,12 @@
   {
    "scene": "Title",
    "text": "Greetings CPL heroes! Here's how CPL Initiative funding works for your college.",
+   "say": "Greetings C.P.L. heroes! Here's how C.P.L. Initiative funding works for your college.",
    "read": {
     "clip": "01.mp3",
-    "generation": "gTHfj8KnQsMnmAt3BxyV",
+    "generation": "4rOjeYFgDtKLWvOFFoAk",
     "read_on": "2026-10-21",
-    "text_sha1": "ca87bb3b8814ab59b7c209fa4ecb355e3f8aecf8"
+    "text_sha1": "195a362eb31b94e31041c56124deab9d464b9463"
    },
    "cues": [
     {
@@ -49,11 +50,12 @@
   {
    "scene": "The funding",
    "text": "Huge thanks to our Chancellor, Board of Governors and the legislature for appropriating thirty-five million dollars to support CPL. About twenty-five million goes directly to the colleges, while the remainder is funding CPL infrastructure and innovation projects.",
+   "say": "Huge thanks to our Chancellor, Board of Governors and the legislature for appropriating thirty-five million dollars to support C.P.L. About twenty-five million goes directly to the colleges, while the remainder is funding C.P.L. infrastructure and innovation projects.",
    "read": {
     "clip": "02.mp3",
-    "generation": "uhwJoyfFtI9oXHBxnw1m",
+    "generation": "UzSzWa45QtqdQmc4FHJt",
     "read_on": "2026-10-21",
-    "text_sha1": "8db95c72a86034e4bc1b4346360c21dee23958ed"
+    "text_sha1": "407b689594e8036b64a5ff73cdc9943a1ec25ab7"
    },
    "cues": [
     {
@@ -149,11 +151,12 @@
   {
    "scene": "Two priorities",
    "text": "Funding is based on two priority outcomes. The access priority counts all applied, or articulated, CPL units, whereas the completion priority counts transcribed CPL units. The Chancellor's Office will report on career attainment together with the infrastructure and innovation projects.",
+   "say": "Funding is based on two priority outcomes. The access priority counts all applied, or articulated, C.P.L. units, whereas the completion priority counts transcribed C.P.L. units. The Chancellor's Office will report on career attainment together with the infrastructure and innovation projects.",
    "read": {
     "clip": "05.mp3",
-    "generation": "CkoTA7y2aplyBLbkbpi5",
+    "generation": "ZF0JFi5pwG1xS8tLLgI0",
     "read_on": "2026-10-21",
-    "text_sha1": "90a95d183d3737a3b2192c929b69db062c5ae3f3"
+    "text_sha1": "e3f1fa5ab8262b086b7f8de1cfbfb82faa9591ad"
    },
    "cues": [
     {
@@ -180,12 +183,13 @@
   },
   {
    "scene": "How a target is set",
-   "text": "Outcomes are measured in FTES and funding at half the FTES reimbursement rate, which totals four thousand two hundred sixty-nine FTES per priority statewide.",
+   "text": "Outcomes are measured in FTES and funded at half the reimbursement rate.",
+   "say": "Outcomes are measured in FTEs and funded at half the reimbursement rate.",
    "read": {
     "clip": "06.mp3",
-    "generation": "zOyK0gHgCUOxZLT06DdT",
+    "generation": "EOHdLUOMipK84od3Vl08",
     "read_on": "2026-10-21",
-    "text_sha1": "6d5b46e9d47892d267afa584df0bc3659643fa1f"
+    "text_sha1": "db92c4bb4c74fd33d362536413021b1be5c87b79"
    },
    "cues": [
     {
@@ -195,35 +199,38 @@
     },
     {
      "at": 0.8,
-     "word": "and funding",
+     "word": "and funded",
      "why": "the line, A priority's statewide funding, divided by its FTES reimbursement rate",
      "skip": "the voice names the funding and the rate in one breath, and the picture needs 2.2 seconds between the line and the rate row while the funding counts up; pinned, the line led its words by 1.9 seconds, so the rate row takes the cue"
     },
     {
      "at": 3.0,
-     "word": "the FTES reimbursement rate",
+     "word": "the reimbursement rate",
      "why": "the rate row, $2,824.82: the $5,649.63 base rate times a factor of 0.5"
     },
     {
      "at": 6.4,
-     "word": "four thousand two hundred sixty-nine",
-     "why": "the Access target lands on 4,366.7 FTES, the institutions’ targets added up"
+     "word": "half the reimbursement rate",
+     "why": "the Access target lands on 4,366.7 FTES, the institutions’ targets added up",
+     "skip": "the voice no longer names the statewide target (Sam cut that line, 2026-10-21), so the count lands at the film's pace after the rate row"
     },
     {
      "at": 7.2,
-     "word": "per priority statewide",
-     "why": "the line, Completion is set the same way: 4,366.7 FTES"
+     "word": "rate",
+     "why": "the line, Completion is set the same way: 4,366.7 FTES",
+     "skip": "the voice no longer says per priority statewide (cut with the total, 2026-10-21), so the Completion line follows at the film's pace"
     }
    ]
   },
   {
    "scene": "Targets",
    "text": "Your college has its own target under each priority. Thirty semester units of CPL are counted as one FTES. For the average allocation, the Access target is about thirty-one FTES. Reach half the target, and your college qualifies for half the maximum funding. Colleges that achieve target for both priorities receive full funding.",
+   "say": "Your college has its own target under each priority. Thirty semester units of C.P.L. are counted as one F.T.E.S. For the average allocation, the Access target is about thirty-one FTEs. Reach half the target, and your college qualifies for half the maximum funding. Colleges that achieve target for both priorities receive full funding.",
    "read": {
     "clip": "07.mp3",
-    "generation": "XutnQqHDJzUtLqF2SgdO",
+    "generation": "xXH83koGSFpVQwe3JSzQ",
     "read_on": "2026-10-21",
-    "text_sha1": "255622f6fdb3d216f53e56a137f72320b38cdfbc"
+    "text_sha1": "d11f3fabb4f9e44e59da1bb20a395eb7adca6b81"
    },
    "cues": [
     {
@@ -266,11 +273,12 @@
   {
    "scene": "Minimum conditions",
    "text": "Before the Chancellor's Office releases any funding, your college needs to meet three conditions: name a CPL coordinator in map, confirm your participation, and upload Joint Services Transcripts for at least seventy-five percent of enrolled veterans. Until then, the funding is held in reserve for the two-year period.",
+   "say": "Before the Chancellor's Office releases any funding, your college needs to meet three conditions: name a C.P.L. coordinator in map, confirm your participation, and upload Joint Services Transcripts for at least seventy-five percent of enrolled veterans. Until then, the funding is held in reserve for the two-year period.",
    "read": {
     "clip": "08.mp3",
-    "generation": "NujhwSio4aP4EYTJhU24",
+    "generation": "Vjf9A3W9GI2N4TqILtgp",
     "read_on": "2026-10-21",
-    "text_sha1": "778ae9ac247cefe31e5760114fe43c3d2f883059"
+    "text_sha1": "135c15d301c5b288276ecae521f02525381c3fa0"
    },
    "cues": [
     {
@@ -303,11 +311,12 @@
   {
    "scene": "Timing",
    "text": "The Chancellor's Office will release funding twice a year, based on your college's CPL to date. The full two-year amount is available from year one, and what remains carries forward to year two.",
+   "say": "The Chancellor's Office will release funding twice a year, based on your college's C.P.L. to date. The full two-year amount is available from year one, and what remains carries forward to year two.",
    "read": {
     "clip": "09.mp3",
-    "generation": "3r0jAnmbjCNbnfJqSQGb",
+    "generation": "XrgIGFlJiJyqUMqu60Kc",
     "read_on": "2026-10-21",
-    "text_sha1": "181afd6b1bdc2e0136613246991c8118eeda2a36"
+    "text_sha1": "277c2e051fa3fcb0944a0dbda3d3e93175002012"
    },
    "cues": [
     {
@@ -335,11 +344,12 @@
   {
    "scene": "Support",
    "text": "You won't do this alone. Every priority comes with recommended strategies, a CPL Initiative help team supports every college, and detailed guidance will follow.",
+   "say": "You won't do this alone. Every priority comes with recommended strategies, a C.P.L. Initiative help team supports every college, and detailed guidance will follow.",
    "read": {
     "clip": "10.mp3",
-    "generation": "JPR8TFSh7skMZBKH9jw6",
-    "read_on": "2026-10-02",
-    "text_sha1": "466ca367b771a484b7541ab257e6f45c90ec7fdf"
+    "generation": "W13AHWCDAK67WlnFDT5X",
+    "read_on": "2026-10-21",
+    "text_sha1": "bc8cea681c5fbc36939bef2ccb9c76f229ca3ee5"
    },
    "cues": [
     {
@@ -367,11 +377,12 @@
   {
    "scene": "Find your college",
    "text": "Find details on the CPL funding page and let's do this together. Our time is now!",
+   "say": "Find details on the C.P.L. funding page and let's do this together. Our time is now!",
    "read": {
     "clip": "11.mp3",
-    "generation": "ZCYxrWbeAP3X5CqaOPpJ",
+    "generation": "HC0Er3puDsOGGqy3XlWe",
     "read_on": "2026-10-21",
-    "text_sha1": "ad9e845f2742826c34e2a4c73e346bf4c04f39b9"
+    "text_sha1": "fb350ae2a2bafb5068a2331708e4827c5f96437b"
    },
    "cues": [
     {
