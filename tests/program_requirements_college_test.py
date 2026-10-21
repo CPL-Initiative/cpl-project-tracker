@@ -258,6 +258,37 @@ check(C.page_winners([("42020", claim(1, 1.0)), ("45549", claim(1, 1.0))]) == {"
 check(len(C.page_winners([("19163", claim(0, .75)), ("19170", claim(0, .6))])) == 1,
       "a page naming no claimant's award goes to one program only")
 
+# A page whose label names no award but whose text heads a section for each sibling's
+# award is shared (Foothill's Accounting A.A. and certificate, capture 38675242638, S443).
+FH = "Accounting\nAssociate in Arts Degree in Accounting\nACTG 1A ACTG 1B\nCertificate of Achievement in Accounting\nACTG 1A ACTG 67"
+check(C.section_award(FH, {"award": "A.A. Degree", "title": "Accounting"}) == "aa" and
+      C.section_award(FH, {"award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+                           "title": "Accounting"}) == "coa",
+      "a section heading names the award and the title together, on one line")
+check(C.section_award("Associate in Arts in Anthropology for Transfer", {"award": "A.A. Degree", "title": "Anthropology"}) is None and
+      C.section_award("Anthropology A.A.-T", {"award": "A.A. Degree", "title": "Anthropology"}) is None,
+      "an A.A. does not read an A.A.-T section as its own")
+check(C.section_award("Students who complete the Certificate of Achievement in Accounting may continue to the "
+                      "Associate in Arts degree, which adds general education and electives totaling ninety units",
+                      {"award": "A.A. Degree", "title": "Accounting"}) is None,
+      "a paragraph that mentions the award is no section heading")
+
+
+def sclaim(award, title, section):
+    c = claim(award, title)
+    c["label"]["section"] = section
+    return c
+
+
+check(C.page_winners([("06014", sclaim(0, 1.0, "aa")), ("19477", sclaim(0, 1.0, "coa"))]) == {"06014", "19477"},
+      "a page heading a section for each claimant's award goes to both (Foothill's Accounting)")
+check(C.page_winners([("06014", sclaim(0, 1.0, "aa")), ("19477", sclaim(0, 1.0, None))]) in ({"06014"}, {"19477"}),
+      "one section heading alone does not share the page")
+check(C.page_winners([("02260", sclaim(0, 1.0, "aa")), ("32355", sclaim(1, 1.0, "adt"))]) == {"32355"},
+      "a page whose label names a claimant's award keeps the label's rule")
+check(C.page_winners([("1", sclaim(0, 1.0, "aa")), ("2", sclaim(0, 0.5, "aa")), ("3", sclaim(0, 1.0, "coa"))]) == {"1", "3"},
+      "within one award, the title the page names more fully keeps its section")
+
 # assign(): a loser moves to its next page; one with none left reads no page
 PG = [page(start + "degrees/x-aa-t/", "X, A.A.-T", "X AA-T ABC 101 ABC 102 ABC 103"),
       page(start + "degrees/x-aa/", "X, A.A.", "X A.A. ABC 101 ABC 102 ABC 103 ABC 104"),

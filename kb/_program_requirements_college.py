@@ -485,7 +485,8 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
             continue   # a list this short names its courses on many pages; the page must name the program too
         out.append({"url": pg["url"], "group": pg.get("group") or pg["url"], "coverage": cov, "found": found,
                     "text": text, "field": field,
-                    "got": pg["got"], "label": {"award": award_hit, "title": title},
+                    "got": pg["got"], "label": {"award": award_hit, "title": title,
+                                                "section": section_award(text, program)},
                     "key": (award_hit, title, round(cov, 3))})
     out.sort(key=lambda c: c["key"], reverse=True)
     return out
@@ -544,6 +545,43 @@ def choose_page(program: dict, pages: list[dict]) -> dict | None:
     return c[0] if c else None
 
 
+# A section heading that names an award and the program together, on one line of a
+# page's text: "Associate in Arts Degree in Accounting", "Accounting, Certificate of
+# Achievement". Foothill prints a program's A.A. and its certificate as two sections of
+# one page under the banner h1 "Academic Catalog" (capture 38675242638, S443), so the
+# page's heading, title and address name neither award and page_winners() gave the page
+# to one of them: 73 of Foothill's 190 programs with a course list read no page. The
+# extraction is told the program's award and records the section it read
+# (section_heading), so each sibling reads its own section of the shared page.
+SECTION_AWARD = {
+    "adt": re.compile(r"associate (?:in|of) (?:arts|science)(?: degree)? for transfer|"
+                      r"\ba\.?\s?[as]\.?\s?-\s?t\b", re.I),
+    "as": re.compile(r"associate (?:in|of) science(?! (?:degree )?for transfer)|\ba\.\s?s\.(?!\s?-\s?t)", re.I),
+    "aa": re.compile(r"associate (?:in|of) arts(?! (?:degree )?for transfer)|\ba\.\s?a\.(?!\s?-\s?t)", re.I),
+    "coa": re.compile(r"certificate of achievement", re.I),
+}
+SECTION_LINE = 140     # characters: a heading, not a paragraph that mentions the award
+
+
+def section_award(text: str, program: dict) -> str | None:
+    """The program's award kind when one short line of the page's text names that award
+    and every word of the program's title, else None."""
+    kind = P.award_kind(program.get("award"))
+    pat = SECTION_AWARD.get(kind)
+    tokens = P.title_tokens(program.get("title") or "")
+    if not pat or not tokens:
+        return None
+    for line in (text or "").splitlines():
+        ln = line.strip().lower()
+        if not ln or len(ln) > SECTION_LINE or not pat.search(ln):
+            continue
+        if kind in ("aa", "as") and (SECTION_AWARD["adt"].search(ln) or "transfer" in ln):
+            continue   # "Associate in Arts in Anthropology for Transfer" is the A.A.-T's section
+        if all(re.search(r"\b" + re.escape(w) + r"\b", ln) for w in tokens):
+            return kind
+    return None
+
+
 def page_winners(claims: list[tuple[str, dict]]) -> set[str]:
     """Which of the programs claiming one page keep it. Those whose award the
     page names, and among them the ones it names most fully: two state records
@@ -551,8 +589,21 @@ def page_winners(claims: list[tuple[str, dict]]) -> set[str]:
     every title word named) share it; Culinary Arts: Professional Cooking A.S.
     loses the Culinary Arts Management A.S. page. When the page names no
     claimant's award, the one it names most fully keeps it, more listed courses
-    breaking a tie."""
+    breaking a tie, unless its text heads a section for two or more of the
+    claimants' awards (section_award()): then each award's claimant keeps it."""
     named = [(cn, c) for cn, c in claims if c["label"]["award"]]
+    # A page naming no claimant's award in its label, whose text heads a section for two
+    # or more of the claimants' awards, goes to each award's fullest-named claimant.
+    by_kind: dict[str, list[tuple[str, dict]]] = {}
+    for cn, c in claims:
+        if c["label"].get("section"):
+            by_kind.setdefault(c["label"]["section"], []).append((cn, c))
+    if not named and len(by_kind) >= 2:
+        keep = set()
+        for group in by_kind.values():
+            top = max(c["label"]["title"] for _, c in group)
+            keep |= {cn for cn, c in group if c["label"]["title"] == top}
+        return keep
     if named:
         top = max(c["label"]["title"] for _, c in named)
         return {cn for cn, c in named if c["label"]["title"] == top}
