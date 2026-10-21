@@ -1,0 +1,537 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "39684",
+ "shape": "adt",
+ "title": "Environmental Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51414",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8583,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8583,
+    "output_tokens": 3979,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3979,
+  "output_tokens_details": {
+   "thinking_tokens": 1634
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11391,
+ "ms": 31481,
+ "seconds": 31.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 29,
+   "share": 0.724,
+   "missing": [
+    "BIOL80A",
+    "BIOL80AH",
+    "BIOL80B",
+    "BIOL80BH",
+    "ECONC2001",
+    "ECONC2001H",
+    "MATHC2210",
+    "MATHC2210H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "BIO80",
+    "BIO80H",
+    "BIO81",
+    "BIO81H",
+    "ECON1",
+    "ECON1H",
+    "MATH3A",
+    "MATH3AH",
+    "STATC1000"
+   ],
+   "flagged": [
+    "BIO80",
+    "BIO80H",
+    "BIO81",
+    "BIO81H",
+    "ECON1",
+    "ECON1H",
+    "MATH3A",
+    "MATH3AH",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    34.0,
+    41.0
+   ],
+   "stated": [
+    35.0,
+    43.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 34.0-41.0; the catalog states 35.0-43.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Science for Transfer - AS-T",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 43
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of global, regional, and local environmental problems and issues",
+    "Apply critical thinking to evaluate the extent to which human activities degrade, protect, or restore the environment",
+    "Utilize scientific and ecological principles to evaluate biodiversity, assess causes of biodiversity loss, and propose ways to conserve biodiversity",
+    "Demonstrate an understanding of the fundamental relationship between an organism and its natural world and the central role of the niche in defining this relationship"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "core",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 16",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "core",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 80",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 80H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 81",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 81H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 3",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "core",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 81",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 81H",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "BIO 16",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: (14-15 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ENV 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one science with a lab",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOL 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one calculus course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 3A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 3AH",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one statistics course:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MGT 10",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 10H",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MGT 10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select two or three courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECON 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 1H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL80A",
+    "why": "not in the text; catalog prints BIO 81 (Integrated Biology: From DNA to Organisms) instead"
+   },
+   {
+    "code": "BIOL80AH",
+    "why": "not in the text; catalog prints BIO 81H instead"
+   },
+   {
+    "code": "BIOL80B",
+    "why": "not in the text; catalog prints BIO 80 (Integrated Biology: Organisms to Ecosystems) instead"
+   },
+   {
+    "code": "BIOL80BH",
+    "why": "not in the text; catalog prints BIO 80H instead"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text; catalog prints archived ECON 1 (Principles of Economics-Micro) instead"
+   },
+   {
+    "code": "ECON C2001H",
+    "why": "not in the text; catalog prints archived ECON 1H instead"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog prints archived MATH 3A instead"
+   },
+   {
+    "code": "MATH C2210H",
+    "why": "not in the text; catalog prints archived MATH 3AH instead"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39539599944"
+}

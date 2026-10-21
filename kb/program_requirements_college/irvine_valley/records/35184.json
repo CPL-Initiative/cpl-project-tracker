@@ -1,0 +1,443 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "35184",
+ "shape": "degree",
+ "title": "GLOBAL STUDIES",
+ "award": "A.A. Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51399",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7696,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7696,
+    "output_tokens": 2377,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2377,
+  "output_tokens_details": {
+   "thinking_tokens": 453
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07832,
+ "ms": 17701,
+ "seconds": 18.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 18,
+   "share": 0.556,
+   "missing": [
+    "ECON167",
+    "ECONC2002",
+    "ECONC2002H",
+    "PS12",
+    "PS12H",
+    "PS14",
+    "PS14H",
+    "PS167"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 15,
+   "codes": [
+    "ECON13",
+    "ECON167A",
+    "ECON167B",
+    "ECON167C",
+    "ECON2",
+    "ECON2H",
+    "GEOG2",
+    "POLS12",
+    "POLS12H",
+    "POLS14",
+    "POLS14H",
+    "POLS167A",
+    "POLS167B",
+    "POLS167C",
+    "POLS21"
+   ],
+   "flagged": [
+    "ECON13",
+    "ECON167A",
+    "ECON167B",
+    "ECON167C",
+    "ECON2",
+    "ECON2H",
+    "GEOG2",
+    "POLS12",
+    "POLS12H",
+    "POLS14",
+    "POLS14H",
+    "POLS167A",
+    "POLS167B",
+    "POLS167C",
+    "POLS21"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    24.0
+   ],
+   "stated": [
+    22.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Global Studies - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete the following core courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "GLBL 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLBL 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 14H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Elective List A--Complete 6 units from the courses below:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "GEOG 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 3H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 2H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective List B--Complete 6 units from the courses below:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "POLS 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 12H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Experiential Learning List C--Complete one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "POLS 167A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 167B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 167C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 167A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 167B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 167C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PS 14",
+    "why": "not in the text; catalog prints POLS 14 instead"
+   },
+   {
+    "code": "PS 14H",
+    "why": "not in the text; catalog prints POLS 14H instead"
+   },
+   {
+    "code": "PS 12",
+    "why": "not in the text; catalog prints POLS 12 instead"
+   },
+   {
+    "code": "PS 12H",
+    "why": "not in the text; catalog prints POLS 12H instead"
+   },
+   {
+    "code": "PS 167",
+    "why": "not in the text; catalog prints POLS 167A/B/C instead"
+   },
+   {
+    "code": "PS167",
+    "why": "not in the text; catalog prints POLS 167A/B/C instead"
+   },
+   {
+    "code": "ECON 167",
+    "why": "not in the text; catalog prints ECON 167A/B/C instead"
+   },
+   {
+    "code": "ECON167",
+    "why": "not in the text; catalog prints ECON 167A/B/C instead"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text; catalog prints archived ECON 2 instead"
+   },
+   {
+    "code": "ECON C2002H",
+    "why": "not in the text; catalog prints archived ECON 2H instead"
+   }
+  ],
+  "notes": [
+   "Catalog uses POLS subject codes where the closed list uses PS; POLS courses recorded as catalog additions.",
+   "Catalog lists ECON 2/ECON 2H (marked Archive) where the closed list has ECON C2002/C2002H; GLBL 1 is also marked Archive in the catalog.",
+   "ECON 6 is printed as 'same as ENV 6'.",
+   "Total 22.0-24.0 is labeled 'Total Units Required' and read as the major total; no degree total or GE pattern printed.",
+   "Summary text is cut off ('The goal of th'); any outcomes or careers that follow are not in the text."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

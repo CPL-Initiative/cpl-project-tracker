@@ -1,0 +1,517 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "46227",
+ "shape": "adt",
+ "title": "English",
+ "award": "A.A- T Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51417",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8346,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8346,
+    "output_tokens": 3950,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3950,
+  "output_tokens_details": {
+   "thinking_tokens": 1307
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11238,
+ "ms": 30318,
+ "seconds": 30.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 32,
+   "share": 0.562,
+   "missing": [
+    "ENGLC1002",
+    "ENGLC1002H",
+    "LIT16",
+    "LIT20",
+    "LIT21",
+    "LIT22",
+    "LIT23",
+    "LIT24",
+    "LIT30",
+    "LIT31",
+    "LIT32",
+    "LIT33",
+    "LIT42",
+    "LIT7"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 14,
+   "codes": [
+    "ENGL16",
+    "ENGL20",
+    "ENGL21",
+    "ENGL22",
+    "ENGL23",
+    "ENGL24",
+    "ENGL30",
+    "ENGL31",
+    "ENGL32",
+    "ENGL33",
+    "ENGL42",
+    "ENGL7",
+    "LIT1",
+    "LIT1H"
+   ],
+   "flagged": [
+    "ENGL16",
+    "ENGL20",
+    "ENGL21",
+    "ENGL22",
+    "ENGL23",
+    "ENGL24",
+    "ENGL30",
+    "ENGL31",
+    "ENGL32",
+    "ENGL33",
+    "ENGL42",
+    "ENGL7",
+    "LIT1",
+    "LIT1H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "English for Transfer - AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "LIT 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LIT 1H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select two (6 units):",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List B: Select one (3 units):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "LIT 46",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LIT 46H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WR 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WR 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WR 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WR 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C: Select one (3 units):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "FILM 74",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LIT 74",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 30",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LIT 43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 49",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WR 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1002",
+    "why": "not in the text; catalog prints archived LIT 1 in its place"
+   },
+   {
+    "code": "ENGL C1002H",
+    "why": "not in the text; catalog prints archived LIT 1H in its place"
+   },
+   {
+    "code": "LIT 20",
+    "why": "not in the text; catalog prints ENGL 20 instead"
+   },
+   {
+    "code": "LIT 21",
+    "why": "not in the text; catalog prints ENGL 21 instead"
+   },
+   {
+    "code": "LIT 22",
+    "why": "not in the text; catalog prints ENGL 22 instead"
+   },
+   {
+    "code": "LIT 23",
+    "why": "not in the text; catalog prints ENGL 23 instead"
+   },
+   {
+    "code": "LIT 33",
+    "why": "not in the text; catalog prints ENGL 33 instead"
+   },
+   {
+    "code": "LIT 7",
+    "why": "not in the text; catalog prints ENGL 7 instead"
+   },
+   {
+    "code": "LIT 16",
+    "why": "not in the text; catalog prints ENGL 16 instead"
+   },
+   {
+    "code": "LIT 24",
+    "why": "not in the text; catalog prints ENGL 24 instead"
+   },
+   {
+    "code": "LIT 30",
+    "why": "not in the text; catalog prints ENGL 30 instead"
+   },
+   {
+    "code": "LIT 31",
+    "why": "not in the text; catalog prints ENGL 31 instead"
+   },
+   {
+    "code": "LIT 32",
+    "why": "not in the text; catalog prints ENGL 32 instead"
+   },
+   {
+    "code": "LIT 42",
+    "why": "not in the text; catalog prints ENGL 42 instead"
+   }
+  ],
+  "notes": [
+   "Catalog prints LIT 1/LIT 1H marked '( Archive )' where the closed list has ENGL C1002/C1002H; LIT courses 7, 16, 20-24, 30-33, 42 appear renumbered as ENGL in the catalog. Recorded codes as printed with catalog_addition true.",
+   "Required Core shows stray figures '0.0- 70.0' and '4.0' between entries; read as page formatting artifacts. Block stated total is 7.",
+   "List B also allows any List A course not already used; List C also allows any List A or B course not already used. These are not repeated in the blocks.",
+   "LIT 46 and LIT 46H are printed as separate rows in List B; recorded as one entry with the honors twin as alternative.",
+   "FILM 74 (same as LIT 74) and TA 30 (same as COMM 30) are cross-listed; LIT 74 and COMM 30 also print as their own rows in List C but are recorded once as alternatives. LIT 74 is also noted as same as HUM 74.",
+   "Total units 19 taken from 'Total : 19.0'; summary also says 'Complete a minimum of 19 semester units in the major.'",
+   "The 60 semester unit requirement is presented as the generic SB1440 requirement, not recorded as degree_total; reviewer may check.",
+   "Cal-GETC is named as the GE pattern; no GE units are printed.",
+   "The 'Learning Outcome(s):' heading is cut off ('Literature: I'); no outcomes recorded. The summary paragraph describing what students will be able to do was not recorded as formal outcomes.",
+   "No careers are named in the text."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

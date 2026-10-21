@@ -1,0 +1,242 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "33818",
+ "shape": "certificate",
+ "title": "Administrative Assistant",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51496",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6851,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6851,
+    "output_tokens": 1648,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1648,
+  "output_tokens_details": {
+   "thinking_tokens": 558
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06036,
+ "ms": 13458,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 9,
+   "share": 0.778,
+   "missing": [
+    "CIM107",
+    "MGT203"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CIM1",
+    "MGT103"
+   ],
+   "flagged": [
+    "CIM1",
+    "MGT103"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.5,
+    18.5
+   ],
+   "stated": [
+    18.5,
+    18.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administrative Assistant - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18.5,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "apply computing techniques to solve common business problems",
+    "manipulate and interpret data",
+    "disseminate the data methodology, analysis, and results",
+    "engage in critical thinking",
+    "manipulate the features and functions of common business applications to produce a variety of business documents"
+   ],
+   "careers": [
+    "Administrative Assistants",
+    "Business Office/Information Specialists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18.5,
+     "max": 18.5
+    },
+    "courses": [
+     {
+      "code": "CIM 201A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 201B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIM 112.1",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 112.2",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 210.2",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGT 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGT 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIM 107",
+    "why": "not in the text; catalog prints CIM 1 Introduction to Personal Computer Applications (3 units) in its place, likely a renumbering"
+   },
+   {
+    "code": "MGT 203",
+    "why": "not in the text; catalog prints MGT 103 Business English (3 units) in its place, likely a renumbering"
+   }
+  ],
+  "notes": [
+   "CIM 1 and MGT 103 carry the same titles and units as closed-list CIM 107 and MGT 203; recorded as printed with catalog_addition true. Reviewer should confirm renumbering.",
+   "CIM 112.1 and CIM 112.2 are each printed as '( same as ACCT 112 )'; the same cross-listed code is given for both, which looks like a catalog error, so ACCT 112 was not recorded as an alternative.",
+   "CIM 115 and CIM 210.2 are marked '( Archive )' in the catalog but are still listed as requirements.",
+   "Outcomes were taken from the Summary's 'Expected outcomes' sentence, split at its semicolons; the text is cut off after 'and to compose', so the final outcome is incomplete and was not recorded.",
+   "Catalog says to complete the courses 'in the order recommended below'; all are required."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

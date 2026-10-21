@@ -1,0 +1,169 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "46418",
+ "shape": "noncredit",
+ "title": "Medical Assisting",
+ "award": "Noncredit program",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51681",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6287,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6287,
+    "output_tokens": 943,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 943,
+  "output_tokens_details": {
+   "thinking_tokens": 343
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04401,
+ "ms": 8342,
+ "seconds": 8.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Medical Assisting Certificate of Completion - Certificate of Completion",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply human anatomy and physiological terms, execute administrative and clinical medical assistant procedures, and follow safety regulations/guidelines to be an efficient medical assistant in a healthcare facility.",
+    "Demonstrate intercultural competence, sensitivity, and respect when interacting with diverse groups of patients and medical professionals across multiple modes of communication."
+   ],
+   "careers": [
+    "medical assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "MEDA 520",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDA 510",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Completion: the catalog prints 0.0 units for each course and 'Total : 0.0'; no hours are printed, so measure is recorded as units and total_units as 0 as printed.",
+   "MEDA 510 is marked '( Archive )' in the catalog while MEDA 520 is 'Active (Fully Approved)'; reviewer should check whether MEDA 510 is still offered for the 2026-2027 catalog year.",
+   "The catalog page includes CSS styling text (not requirements), which was ignored."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

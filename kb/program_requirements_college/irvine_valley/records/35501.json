@@ -1,0 +1,335 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "35501",
+ "shape": "adt",
+ "title": "BIOLOGY",
+ "award": "A.S. T Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51481",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7266,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7266,
+    "output_tokens": 2340,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2340,
+  "output_tokens_details": {
+   "thinking_tokens": 768
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07586,
+ "ms": 19206,
+ "seconds": 19.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 14,
+   "share": 0.571,
+   "missing": [
+    "BIO51",
+    "BIO51H",
+    "BIO52",
+    "BIO52H",
+    "MATHC2210",
+    "MATHC2210H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "BIO80",
+    "BIO80H",
+    "BIO81",
+    "BIO81H",
+    "MATH3A",
+    "MATH3AH"
+   ],
+   "flagged": [
+    "BIO80",
+    "BIO80H",
+    "BIO81",
+    "BIO81H",
+    "MATH3A",
+    "MATH3AH"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biology for Transfer - AS-T",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate scientific processes and ideas effectively in written and oral forms.",
+    "Identify and explain relationships between form and function of biological structures at the molecular, cellular"
+   ],
+   "careers": [
+    "allied health disciplines"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIO 80",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 80H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 81",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 81H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "LIST A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 23,
+     "max": 23
+    },
+    "courses": [
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 1AH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 1BH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 3A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 3AH",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "LIST A: PHYS 2A and PHYS 2B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics sequence",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "PHYS 2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: PHYS 4A and PHYS 4B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics sequence",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIO 51",
+    "why": "not in the text; catalog core lists BIO 80/80H"
+   },
+   {
+    "code": "BIO 51H",
+    "why": "not in the text; catalog core lists BIO 80/80H"
+   },
+   {
+    "code": "BIO 52",
+    "why": "not in the text; catalog core lists BIO 81/81H"
+   },
+   {
+    "code": "BIO 52H",
+    "why": "not in the text; catalog core lists BIO 81/81H"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog lists MATH 3A/3AH (archived)"
+   },
+   {
+    "code": "MATH C2210H",
+    "why": "not in the text; catalog lists MATH 3A/3AH (archived)"
+   }
+  ],
+  "notes": [
+   "LIST A prints 23 units, which includes the 8-unit physics sequence; the physics choice (PHYS 2A+2B or PHYS 4A+4B) is recorded as two option blocks, so the LIST A block's stated 23 covers both the CHEM/MATH block and one physics sequence.",
+   "Total 31.0 printed as the major total; the 60-unit figure is the general SB1440 requirement, not recorded as degree_total.",
+   "Several listed courses are marked Archive (CHEM 1B, MATH 3A, MATH 3AH, PHYS 4A, PHYS 4B); the catalog page may not match the 2026-2027 closed list, which names BIO 51/52 and MATH C2210 instead of BIO 80/81 and MATH 3A.",
+   "BIO 80, BIO 80H, BIO 81, BIO 81H, MATH 3A, MATH 3AH are not in the closed list and recorded as catalog additions.",
+   "The Learning Outcome(s) list is cut off mid-sentence in the second outcome; it is recorded only as far as printed and further outcomes may be missing."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

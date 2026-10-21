@@ -1,0 +1,375 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "10264",
+ "shape": "degree",
+ "title": "Anthropology",
+ "award": "A.A. Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51487",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7725,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7725,
+    "output_tokens": 2491,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2491,
+  "output_tokens_details": {
+   "thinking_tokens": 587
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08072,
+ "ms": 19570,
+ "seconds": 20.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 23,
+   "share": 0.826,
+   "missing": [
+    "MATHC2210",
+    "MATHC2210H",
+    "MATHC2220",
+    "MATHC2220H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "MATH3A",
+    "MATH3AH",
+    "MATH3B",
+    "MATH3BH"
+   ],
+   "flagged": [
+    "MATH3A",
+    "MATH3AH",
+    "MATH3B",
+    "MATH3BH"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    28.0
+   ],
+   "stated": [
+    25.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Anthropology - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe how the sub-disciplines of Physical Anthropology, Cultural Anthropology, Archeology, and Linguistics (the four-field approach) are integrated and provide a theoretical basis for understanding human behavior past and present.",
+    "Explain evolutionary theory and have an understanding of the fossil record of human evolution as well as the relationship between non-human and human primates.",
+    "Apply the concepts of cultural relativism, a holistic approach, and ethnocentrism to critically evaluate traditional non-western customs and beliefs as well as cultural change.",
+    "Identify and explain current archeological fieldwork techniques"
+   ],
+   "careers": [
+    "medicine",
+    "scientific anthropology",
+    "forensic science"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete the following courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "ANTH 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete one course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 3A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 3AH",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Complete two courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "BIO 51",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 51H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 52",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 52H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 1AH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 1BH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 3B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 3BH",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog lists archived MATH 3A instead"
+   },
+   {
+    "code": "MATH C2210H",
+    "why": "not in the text; catalog lists archived MATH 3AH instead"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text; catalog lists archived MATH 3B instead"
+   },
+   {
+    "code": "MATH C2220H",
+    "why": "not in the text; catalog lists archived MATH 3BH instead"
+   }
+  ],
+  "notes": [
+   "Section is headed 'Anthropology - A.A. Degree', but the summary text describes an AS degree (adds science/math courses, careers in medicine, forensic science); the requirements list includes science courses, so the page may mix A.A. and A.S. content. Reviewer should verify.",
+   "MATH 3A/3AH/3B/3BH (marked Archive) are not on the closed list and recorded as catalog additions; the closed list names MATH C2210/C2220 which may be their replacements. CHEM 1B and PHYS 4A/4B/4C are also marked Archive in the catalog.",
+   "Honors twins (MATH 3AH, MATH 3BH, BIO 51H, BIO 52H, CHEM 1AH, CHEM 1BH) printed as separate rows in choice lists were recorded as alternatives of their base courses.",
+   "BIO 52H printed without units.",
+   "The last learning outcome lacks ending punctuation and may be truncated in the source text.",
+   "Careers are taken from the summary sentence that refers to the AS degree.",
+   "Total printed: 25.0-28.0 units; no GE pattern or degree total printed."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

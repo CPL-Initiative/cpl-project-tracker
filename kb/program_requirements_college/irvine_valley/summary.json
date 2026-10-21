@@ -1,0 +1,47 @@
+{
+ "college": "Irvine Valley College",
+ "programs": 171,
+ "with_closed_list": 146,
+ "found": 144,
+ "extracted": 144,
+ "errors": 0,
+ "passed_machine_checks": 122,
+ "failed": {
+  "coverage": 3,
+  "invented": 1,
+  "arithmetic": 19,
+  "repeated": 0,
+  "outcomes": 1
+ },
+ "cost_usd": 11.02,
+ "cost_per_program": 0.0766,
+ "not_found": [
+  {
+   "control_number": "32814",
+   "title": "ENGLISH",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51417",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.391,
+    "body": 0.391,
+    "content": 0.391,
+    "net": 9,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 9 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5362,
+     "content": 5362,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "39539599944"
+}

@@ -1,0 +1,407 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "10266",
+ "shape": "degree",
+ "title": "Biology",
+ "award": "A.S. Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51482",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7875,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7875,
+    "output_tokens": 3166,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3166,
+  "output_tokens_details": {
+   "thinking_tokens": 1024
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09482,
+ "ms": 24244,
+ "seconds": 24.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 24,
+   "share": 0.5,
+   "missing": [
+    "BIO19",
+    "BIO19H",
+    "BIO30",
+    "BIO43",
+    "BIO44",
+    "BIO55",
+    "BIO97",
+    "BIO99",
+    "BIOL80A",
+    "BIOL80AH",
+    "BIOL80B",
+    "BIOL80BH"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 10,
+   "codes": [
+    "BIO80",
+    "BIO80H",
+    "BIO81",
+    "BIO81H",
+    "BIOL19",
+    "BIOL19H",
+    "BIOL30",
+    "BIOL43",
+    "BIOL44",
+    "BIOL55"
+   ],
+   "flagged": [
+    "BIO80",
+    "BIO80H",
+    "BIO81",
+    "BIO81H",
+    "BIOL19",
+    "BIOL19H",
+    "BIOL30",
+    "BIOL43",
+    "BIOL44",
+    "BIOL55"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    26.0
+   ],
+   "stated": [
+    22.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biology - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate scientific processes and ideas effectively in written and oral forms.",
+    "Demonstrate understanding of the mechanisms driving evolution, the role of evolution as the central unifying concept of biology and describe similarities and differences of the major taxonomic groups.",
+    "Effectively apply current technology and scientific methodologies for problem solving.",
+    "Identify and explain relationships between form and function of biological structures at the molecular, cellular, organismal and ecosystem levels."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete the following core courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "BIO 80",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 80H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 81",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 81H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 82",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 83",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 6 - 10 units from the following courses:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "BIO 4",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 14",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 15",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 19",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 19H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 12A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 12B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIO 19",
+    "why": "catalog prints it as BIOL 19 (Marine Biology), recorded under that code"
+   },
+   {
+    "code": "BIO 19H",
+    "why": "catalog prints it as BIOL 19H (Marine Biology Honors), recorded as alternative under that code"
+   },
+   {
+    "code": "BIO 30",
+    "why": "catalog prints BIOL 30 (California Wildlife and Wildlands), recorded under that code"
+   },
+   {
+    "code": "BIO 43",
+    "why": "catalog prints BIOL 43, recorded under that code"
+   },
+   {
+    "code": "BIO 44",
+    "why": "catalog prints BIOL 44, recorded under that code"
+   },
+   {
+    "code": "BIO 55",
+    "why": "catalog prints BIOL 55, recorded under that code"
+   },
+   {
+    "code": "BIO 97",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIO 99",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL80A",
+    "why": "catalog prints BIO 81 (Integrated Biology: From DNA to Organisms), recorded under that code"
+   },
+   {
+    "code": "BIOL80AH",
+    "why": "catalog prints BIO 81H (honors), recorded as alternative under that code"
+   },
+   {
+    "code": "BIOL80B",
+    "why": "catalog prints BIO 80 (Integrated Biology: Organisms to Ecosystems), recorded under that code"
+   },
+   {
+    "code": "BIOL80BH",
+    "why": "catalog prints BIO 80H (honors), recorded as alternative under that code"
+   }
+  ],
+  "notes": [
+   "Several catalog codes differ from closed-list codes for apparently the same courses (BIO 80/80H vs BIOL80B/BIOL80BH, BIO 81/81H vs BIOL80A/BIOL80AH, BIOL 19/19H/30/43/44/55 vs BIO 19/19H/30/43/44/55); recorded as printed with catalog_addition true. Reviewer should confirm mapping.",
+   "In the 6-10 unit elective block, CHEM 1A AND CHEM 1B are printed as a 10-unit pair, and CHEM 12A AND CHEM 12B as a 10-unit pair; each pair must be taken together as one selection.",
+   "BIO 80, BIO 80H, BIO 4, BIO 11, BIO 12, BIO 15 and CHEM 1B are marked '( Archive )' in the catalog listing.",
+   "Printed total 'Total : 22.0- 26.0' is the major total (core 16 + electives 6-10); no degree total or GE pattern is printed in the text.",
+   "The learning outcomes list is cut off: a fifth outcome beginning 'Locate and eva' is truncated and was not recorded."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

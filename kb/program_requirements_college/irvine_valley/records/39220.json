@@ -1,0 +1,923 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "39220",
+ "shape": "adt",
+ "title": "Law, Public Policy, and Society",
+ "award": "A.A- T Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51381",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10999,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10999,
+    "output_tokens": 6812,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 6812,
+  "output_tokens_details": {
+   "thinking_tokens": 2079
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.18024,
+ "ms": 50328,
+ "seconds": 50.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 45,
+   "listed": 59,
+   "share": 0.763,
+   "missing": [
+    "ECON167",
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H",
+    "HISTC1001",
+    "HISTC1002",
+    "PS12",
+    "PS12H",
+    "PS14",
+    "PS14H",
+    "PS167",
+    "PS4",
+    "SOC2"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 30,
+   "codes": [
+    "AJ168A",
+    "AJ168B",
+    "AJ168C",
+    "AJ168D",
+    "ECON1",
+    "ECON167A",
+    "ECON167B",
+    "ECON167C",
+    "ECON167D",
+    "ECON1H",
+    "ECON2",
+    "ECON2H",
+    "HIST20",
+    "HIST21",
+    "LGL168A",
+    "LGL168B",
+    "LGL168C",
+    "LGL168D",
+    "PHIL5",
+    "POLS12",
+    "POLS12H",
+    "POLS14",
+    "POLS14H",
+    "POLS167A",
+    "POLS167B",
+    "POLS167C",
+    "POLS167D",
+    "POLS4",
+    "POLS5",
+    "STATC1000"
+   ],
+   "flagged": [
+    "AJ168A",
+    "AJ168B",
+    "AJ168C",
+    "AJ168D",
+    "ECON1",
+    "ECON167A",
+    "ECON167B",
+    "ECON167C",
+    "ECON167D",
+    "ECON1H",
+    "ECON2",
+    "ECON2H",
+    "HIST20",
+    "HIST21",
+    "LGL168A",
+    "LGL168B",
+    "LGL168C",
+    "LGL168D",
+    "PHIL5",
+    "POLS12",
+    "POLS12H",
+    "POLS14",
+    "POLS14H",
+    "POLS167A",
+    "POLS167B",
+    "POLS167C",
+    "POLS167D",
+    "POLS4",
+    "POLS5",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    31.0,
+    33.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Law, Public Policy, and Society for Transfer - AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core - Complete the Following:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 31,
+     "max": 34.5
+    },
+    "courses": [
+     {
+      "code": "PHIL 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core - Select One:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AJ 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGT 12A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MGT 12AH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core - Select One:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core - Select One:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core - Select One:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 10H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MGT 10",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MGT 10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Core - Select One:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIST 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Core - Select One:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Select a minimum of six units from two of the areas listed below: (Note: Courses must not have been used above.)",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AJ 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGT 12A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MGT 12AH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 1H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 2H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 5",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 12H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 14H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLBL 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLBL 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTH 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GS 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GS 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 20H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUN 1",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUN 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COUN 6H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUN 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 168A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AJ 168B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AJ 168C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AJ 168D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 167A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 167B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 167C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 167D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LGL 168A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LGL 168B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LGL 168C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LGL 168D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 167A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 167B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 167C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 167D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 167",
+    "why": "not in text; catalog prints ECON 167A-D instead"
+   },
+   {
+    "code": "ECON167",
+    "why": "duplicate closed-list entries; not in text (catalog prints ECON 167A-D)"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in text; catalog prints archived ECON 1 instead"
+   },
+   {
+    "code": "ECON C2001H",
+    "why": "not in text; catalog prints archived ECON 1H instead"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in text; catalog prints archived ECON 2 instead"
+   },
+   {
+    "code": "ECON C2002H",
+    "why": "not in text; catalog prints archived ECON 2H instead"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "not in text; catalog prints archived HIST 20 instead"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "not in text; catalog prints archived HIST 21 instead"
+   },
+   {
+    "code": "PS 4",
+    "why": "not in text; catalog prints POLS 4"
+   },
+   {
+    "code": "PS 12",
+    "why": "not in text; catalog prints POLS 12"
+   },
+   {
+    "code": "PS 12H",
+    "why": "not in text; catalog prints POLS 12H"
+   },
+   {
+    "code": "PS 14",
+    "why": "not in text; catalog prints POLS 14"
+   },
+   {
+    "code": "PS 14H",
+    "why": "not in text; catalog prints POLS 14H"
+   },
+   {
+    "code": "PS 167",
+    "why": "not in text; catalog prints POLS 167A-D"
+   },
+   {
+    "code": "PS167",
+    "why": "duplicate closed-list entries; not in text (catalog prints POLS 167A-D)"
+   },
+   {
+    "code": "SOC 2",
+    "why": "not in text"
+   }
+  ],
+  "notes": [
+   "The catalog text is cut off at 'Tot' (likely 'Total Units Required'), so no program total is recorded; total_units left null.",
+   "'Units: 31.0- 34.5' is printed under the first 'Required Core - Complete the Following' heading and recorded as that block's stated total, but it likely covers the whole major (all core selections plus List A); reviewer should check whether it is the major total.",
+   "All other blocks print 'Units: 0.0', which appears to be a placeholder; stated left null for those blocks.",
+   "PHIL 2 is followed by '3.0' and '4.0'; recorded PHIL 2 as 3 units, reading 4.0 as belonging to the ENGL C1000/C1000H row.",
+   "List A requires a minimum of six units from two different areas (Area 1 AJ, Area 2 Business, Area 3 Economics, Area 4 Political Science, Area 5 Public Policy, Area 6 Diversity, Area 7 College Success, Area 8 Internship/Fieldwork); recorded as one choose_units block. ETHN 10 appears in both Area 5 and Area 6 and is listed once. Courses used in the core may not be reused in List A.",
+   "ECON 10/ECON 10H/MGT 10/MGT 10H are cross-listed ('same as') and recorded as one choice; PHIL 5 is same as POLS 5 (and PS 5).",
+   "Several listed courses are marked Archive (MGT 12AH, HIST 20, HIST 21, ECON 1/1H/2/2H, ETHN 10, GLBL 1); the closed list instead names newer codes (HIST C1001/C1002, ECON C2001/C2002, PS codes for POLS). The page may reflect an older catalog version.",
+   "No general education pattern, degree total, outcomes or careers appear in the text."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

@@ -1,0 +1,472 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "36638",
+ "shape": "adt",
+ "title": "GLOBAL STUDIES",
+ "award": "A.A- T Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51398",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8773,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8773,
+    "output_tokens": 3229,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3229,
+  "output_tokens_details": {
+   "thinking_tokens": 774
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09967,
+ "ms": 23934,
+ "seconds": 24.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 28,
+   "listed": 36,
+   "share": 0.778,
+   "missing": [
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H",
+    "PS12",
+    "PS12H",
+    "PS14",
+    "PS14H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "ECON1",
+    "ECON1H",
+    "ECON2",
+    "ECON2H",
+    "POLS12",
+    "POLS12H",
+    "POLS14",
+    "POLS14H",
+    "STATC1000"
+   ],
+   "flagged": [
+    "ECON1",
+    "ECON1H",
+    "ECON2",
+    "ECON2H",
+    "POLS12",
+    "POLS12H",
+    "POLS14",
+    "POLS14H",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    19.0,
+    31.0
+   ],
+   "stated": [
+    21.0,
+    25.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 19.0-31.0; the catalog states 21.0-25.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Global Studies for Transfer - AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete the following core courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "GLBL 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLBL 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select five courses from at least four of the following areas (15-19 units)",
+    "rule": "choose_courses",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "ANTH 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 3H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 1H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 2H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 10H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MGT 10",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MGT 10H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 10",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 10H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 12H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 14H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHI 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FR 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FR 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JA 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JA 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON C2001",
+    "why": "not in the text; catalog prints archived ECON 1 in Area 3"
+   },
+   {
+    "code": "ECON C2001H",
+    "why": "not in the text; catalog prints archived ECON 1H in Area 3"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text; catalog prints archived ECON 2 in Area 3"
+   },
+   {
+    "code": "ECON C2002H",
+    "why": "not in the text; catalog prints archived ECON 2H in Area 3"
+   },
+   {
+    "code": "PS 12",
+    "why": "not in the text under this code; catalog prints POLS 12 (likely same course, different subject prefix)"
+   },
+   {
+    "code": "PS 12H",
+    "why": "not in the text under this code; catalog prints POLS 12H"
+   },
+   {
+    "code": "PS 14",
+    "why": "not in the text under this code; catalog prints POLS 14"
+   },
+   {
+    "code": "PS 14H",
+    "why": "not in the text under this code; catalog prints POLS 14H"
+   }
+  ],
+  "notes": [
+   "List A requires five courses drawn from at least four of five areas (Area 1 Culture and Society: ANTH 2, HIST 1, HIST 2; Area 2 Geography: GEOG 1, GEOG 1L, GEOG 2, GEOG 3; Area 3 Economics: ECON 1, ECON 2, ECON 10 group; Area 4 Politics: POLS 12, POLS 14; Area 5 Humanities: CHI 3, FR 3, FR 4, HUM 1, HUM 27, JA 3, JA 4, SPAN 3, SPAN 4). Recorded as one choose_courses block; the area-distribution rule is not captured structurally.",
+   "Total units 21-25 is the printed program total (core 6 + List A 15-19); no degree total or GE pattern is printed in the excerpt.",
+   "Several courses are marked Archive in the catalog: GLBL 1, ECON 1, ECON 1H, ECON 2, ECON 2H, MGT 10, MGT 10H. Closed list has ECON C2001/C2002 (and honors) which likely replaced ECON 1/2 but are not printed.",
+   "Catalog prints POLS 12/12H/14/14H while the closed list uses PS 12/12H/14/14H; recorded as printed with catalog_addition true. Reviewer should confirm they are the same courses.",
+   "MGT 10H is printed as '( same as ECON 10 )'; ECON 10H also printed '( same as MGT 10 )'. STAT C1000 is an added alternative not in the closed list.",
+   "Text is cut off mid-sentence in the summary ('is designed'); no program learning outcomes or careers appear in the excerpt."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

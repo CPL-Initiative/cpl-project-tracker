@@ -5,18 +5,11 @@
  "catalog_year": "2026-2027",
  "programs": 171,
  "with_closed_list": 146,
- "started": "2026-10-21T01:32:22Z",
+ "started": "2026-10-21T03:38:56Z",
  "curriqunet": {
   "catalog": 4690,
   "view_prefix": "https://irvine.curriqunet.com/Catalog/iq/",
-  "errors": [
-   "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49255: APIRequestContext.get: socket hang up (ECONNRESET) (tried again)",
-   "https://irvine.curriqunet.com/Catalog/_getPage?catalogId=4690&id=49408: APIRequestContext.get: socket hang up (ECONNRESET) (tried again)",
-   "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49674: APIRequestContext.get: socket hang up (ECONNRESET) (tried again)",
-   "https://irvine.curriqunet.com/Catalog/_getPage?catalogId=4690&id=49718: APIRequestContext.get: socket hang up (ECONNRESET) (tried again)",
-   "https://irvine.curriqunet.com/Catalog/_getPage?catalogId=4690&id=51352: APIRequestContext.get: socket hang up (ECONNRESET) (tried again)",
-   "https://irvine.curriqunet.com/Catalog/_getPage?catalogId=4690&id=49799: APIRequestContext.get: socket hang up (ECONNRESET) (tried again)"
-  ],
+  "errors": [],
   "sections": [
    "Degrees & Certificates"
   ],
@@ -29,8 +22,8 @@
  },
  "pages_read": 237,
  "banner_h1": null,
- "loads": 1000,
- "seconds": 4697.9,
+ "loads": 994,
+ "seconds": 4520.7,
  "found": 144,
  "by_method": {
   "no_closed_list": 25,
@@ -1550,5 +1543,5 @@
    }
   ]
  },
- "run": "39527749560"
+ "run": "39539599944"
 }

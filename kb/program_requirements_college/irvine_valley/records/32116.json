@@ -1,0 +1,347 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "32116",
+ "shape": "adt",
+ "title": "Political Science",
+ "award": "A.A- T Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51361",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7975,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7975,
+    "output_tokens": 2822,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2822,
+  "output_tokens_details": {
+   "thinking_tokens": 1034
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08834,
+ "ms": 23247,
+ "seconds": 23.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 26,
+   "listed": 26,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    12.0,
+    17.0
+   ],
+   "stated": [
+    18.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [
+    "'LIST B: Select one (3 units)' chooses 1 courses but 0 carry units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Political Science for Transfer - AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE: Select 3 courses (9 units)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 5",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 12H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 14H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Select two courses (6 units minimum)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "POLS 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 10",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 10H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MGT 10",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MGT 10H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 10",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 10H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HLTH 10",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 167A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 167B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 167C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 167D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: Select one (3 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": []
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "As printed, every listed elective course (POLS 4, statistics, POLS 3, 6, 17, 21, 30, 167A-D) appears under the LIST A heading, and LIST B prints only 'Any course not selected from the REQUIRED CORE or LIST A' with no courses. The C-ID TMC usually puts POLS 4 and statistics in List A and the area courses (POLS 3, 6, 17, 21, 30, 167A-D) in List B; a reviewer should check whether the page's layout misplaced the LIST B heading.",
+   "LIST A also allows 'Any course not selected from the REQUIRE CORE'; LIST B allows any course not selected from the REQUIRED CORE or LIST A. These open references to other blocks are not recorded as courses.",
+   "The statistics options (STAT C1000, ECON 10, ECON 10H, MGT 10, MGT 10H, PSYC 10, PSYC 10H, HLTH 10) are printed as OR rows and recorded as one choice. MGT 10 and MGT 10H are marked Archive in the catalog.",
+   "The closed list prints 'POLS167A' without a space; the catalog's 'POLS 167A' is treated as the same course, so it is not marked as a catalog addition.",
+   "POLS 5 is printed as same as PHIL 5 and is recorded as one choice with PHIL 5 as the alternative.",
+   "Total printed: 18.0-22.0 units. No general education pattern or degree total is printed in this text.",
+   "The summary text is cut off at 'Upon comp', so any program learning outcomes are missing from this text. No careers are named in the text received."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

@@ -1,0 +1,178 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "45590",
+ "shape": "certificate",
+ "title": "Introduction To Information Technology and Cybersecurity",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51526",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6441,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6441,
+    "output_tokens": 852,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 852,
+  "output_tokens_details": {
+   "thinking_tokens": 219
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0428,
+ "ms": 7564,
+ "seconds": 8.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    10.0,
+    10.0
+   ],
+   "stated": [
+    10.0,
+    10.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Introduction To Information Technology and Cybersecurity - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 10,
+    "max": 10
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will apply computing techniques to solve common business problems, to manipulate and interpret data, and to disseminate the data, methodology, analysis, and results."
+   ],
+   "careers": [
+    "entry-level information communications technologies professional",
+    "Computer User Support Specialist",
+    "Computer Network Support Specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CIM 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CIM 170 is listed with status '( Archive )' in the catalog while the other two courses are 'Active (Fully Approved)'; reviewer may want to confirm it remains a requirement.",
+   "The catalog prints CIM 170's title as 'Introduction to Information Systems Security (Security+)', differing slightly from the closed list title '(NETWORK SECURITY+)'.",
+   "The summary also names 'computer technical support and networking' as areas of specialization; these were not recorded as careers.",
+   "The award title says 8S/12Q to fewer than 16S/24Q units; the printed total of 10.0 units is consistent with that range."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

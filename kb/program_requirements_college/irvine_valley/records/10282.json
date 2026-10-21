@@ -1,0 +1,403 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "10282",
+ "shape": "degree",
+ "title": "Economics",
+ "award": "A.A. Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49233/49241/51717",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7903,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7903,
+    "output_tokens": 2665,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2665,
+  "output_tokens_details": {
+   "thinking_tokens": 895
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08491,
+ "ms": 21041,
+ "seconds": 21.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 15,
+   "share": 0.933,
+   "missing": [
+    "ECON5"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 15,
+   "codes": [
+    "ACCT1AH",
+    "ACCT1B",
+    "ACCT1BH",
+    "ECON10H",
+    "HLTH10",
+    "MATH26",
+    "MATH26H",
+    "MATH4A",
+    "MATH4AH",
+    "MGT10",
+    "MGT104",
+    "MGT10H",
+    "PSYC10",
+    "PSYC10H",
+    "STATC1000"
+   ],
+   "flagged": [
+    "ACCT1AH",
+    "ACCT1B",
+    "ACCT1BH",
+    "ECON10H",
+    "HLTH10",
+    "MATH26",
+    "MATH26H",
+    "MATH4A",
+    "MATH4AH",
+    "MGT10",
+    "MGT104",
+    "MGT10H",
+    "PSYC10",
+    "PSYC10H",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    25.0
+   ],
+   "stated": [
+    19.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Economics for Transfer - AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "The economic problem of scarcity and its consequences for marginal decision making by individuals, firms and society;",
+    "Basic economic modeling, mathematical and graphical analysis will evaluate resource allocation and changes within markets and the economy; and",
+    "Government policies for solutions to market failure will assess advantages and disadvantages of government policy on markets and the economy."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 10",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 10H",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "MGT 10",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "MGT 10H",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "HLTH 10",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC 10",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC 10H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2210",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2210H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2220H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT 1AH",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 1B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT 1BH",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGT 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List B: Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ECON 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 4A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 4AH",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 26",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 26H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 5",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The requested award is the Economics A.A. Degree, but the catalog text only prints the Economics for Transfer AA-T section; the requirements recorded are from the AA-T section. A reviewer should confirm whether a separate A.A. page exists (ECON 5 from the closed list does not appear).",
+   "List B also allows 'Any LIST A course not already used.'; List A courses are not repeated in the List B block.",
+   "The statistics requirement prints a group range of 3.0-4.0; STAT C1000 (4 units) is recorded as the main course with the other statistics courses as alternatives. ECON 10/MGT 10 are cross-listed.",
+   "MATH 4A and MATH 26 are marked Archive in the catalog; their honors versions are active.",
+   "The outcomes were printed under 'Students will learn the following:' rather than a labeled program learning outcomes heading; reviewer should confirm they are the program outcomes.",
+   "The SB1440 statement of 60 CSU transferable units is a general requirement for the degree type and is not recorded as degree_total. The text is cut off at 'All courses in the majo'."
+  ]
+ },
+ "extracted_run": "39539599944"
+}
