@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/supabase_sierra_guidance_sb135_funding_off.sql",
+ "name": "sierra_guidance_sb135_funding_off_2026_10_21",
+ "version": "20261021182314",
+ "sha256": "e64e9dca80e277c7a0d0e805c20e8dd5b3e3e3c4b57eb0567b32cf6a6ade6047",
+ "run": "39651328078",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
