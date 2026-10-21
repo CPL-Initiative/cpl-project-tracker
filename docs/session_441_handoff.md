@@ -24,13 +24,15 @@ carry over below unchanged. If the routine started you, follow `docs/reference/s
 ## What shipped (PR #2306)
 
 - **Three colleges no list had named, read for the first time:** West LA 195 loaded (214 extracted, 173 passing,
-  $14.97), Irvine Valley 143 loaded (144, 122, $11.02), Santa Monica 239 extracted (157 passing, $20.34; one
-  extraction error), load and display build at sign-off: see the PR.
+  $14.97), Irvine Valley 143 loaded (144, 122, $11.02), Santa Monica 224 loaded (239 extracted, 157 passing,
+  $20.34; one extraction error), display build 6433296e07e2. The headline moved from 11,687 to 12,132 complete of
+  20,282 active programs (114 colleges).
 - **The PDF wait ceiling** (`kb/_program_requirements_pilot.py`, guard in `tests/program_requirements_pilot_test.py`)
   and Santa Monica's procedure record at 2,400 s (receipt
   `kb/receipts/program_source_procedure_smc_pdf_wait_2026-10-21_s440.sql`).
 - **Taft 38661's filed record removed** (build 772abb3ddebe), after the display job found the row missing.
-- Orange Coast 10278 passes (read live). Lane `program-requirements-harvest.md` and lessons S440 updated.
+- Orange Coast 10278 passes (read live). Lane `program-requirements-harvest.md`, lessons S440, the status file and
+  two `cpl_memory` rows (`sam-pdf-wait-40-minutes-2026-10-21`, `harvest-one-run-waits-per-branch-2026-10-21`).
 
 ## Priority
 
