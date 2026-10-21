@@ -619,7 +619,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 14024,
+     "line": 14042,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5699,7 +5699,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 15450,
+     "line": 15468,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5784,7 +5784,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 15377,
+     "line": 15395,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5827,7 +5827,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 15362,
+     "line": 15380,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -17134,7 +17134,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 239
+     "line": 282
     }
    ],
    "served": true,
@@ -17147,7 +17147,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 398
+     "line": 443
     },
     {
      "id": "script:prototype/funding_video/cues.py",
@@ -17174,7 +17174,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 202
+     "line": 212
     }
    ],
    "served": true,
@@ -17187,7 +17187,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 226
+     "line": 236
     }
    ],
    "served": true,

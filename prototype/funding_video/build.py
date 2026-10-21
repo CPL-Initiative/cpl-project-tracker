@@ -106,6 +106,16 @@ TIMING_VOICED = [[0, 'Sep 2026', 'Model released'], [18, 'Nov 2026', 'Confirmati
 # `capped` counts the institutions at the maximum award, whose targets it lowers.
 # The slide then subtracts the difference. "FTES reimbursement rate", never price
 # (Sam, 2026-10-02).
+# THE VETERANS' CONDITION (Sam, 2026-10-21: "add a gold star to the vet sprint
+# qualifying condition and highlight that 63 colleges already meet this
+# condition, which was also a commitment for the previous $50k funding"). The
+# Minimum conditions scene marks the third condition with the Veteran Star and
+# says how many colleges meet it. The count is the model's (figures.json `vet`,
+# T._videoFigures: the ESS 25-82 recipients whose outcome 1 reads met, the way
+# the $15M Distributions view counts it); the typed value is the 2026-10-21 read.
+def vet_line(met):
+    return '%d colleges already meet this condition, a commitment they also made for the 2025–26 $50,000 funding.' % met
+VET_TYPED = {'met': 63, 'asOf': '2026-10-21', 'text': vet_line(63)}
 SAMPLE_TARGET_S1 = {'ftes': 44.3, 'usd': 112484, 'ftesWords': '44.3', 'usdWords': '112,484', 'halfFtesWords': '22.2', 'halfUsdWords': '56,242'}
 
 CONFIG = {
@@ -150,7 +160,7 @@ CONFIG = {
         'linkLabel': 'How CPL funding works',
         'kick': 'An introduction for colleges',
         'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges.',
-        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v8.mp4',
+        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v9.mp4',
         'explainer': BASE,
         'prioName': 'Two priorities',
         'prioHead': 'Two priorities carry the funding',
@@ -167,7 +177,7 @@ CONFIG = {
         # maximum account for the 100.9 FTES.
         'how': {'rows': [['Access', 12620154, 4467.6, 4366.7], ['Completion', 12620154, 4467.6, 4366.7]],
                 'rate': 5649.63, 'factor': 0.5, 'price': 2824.82, 'capped': 7},
-        'split': SPLIT_TWO, 'ex': AVERAGE,
+        'split': SPLIT_TWO, 'ex': AVERAGE, 'vet': VET_TYPED,
         'target': {'ftes': 34.49, 'usd': 99270.78, 'ftesWords': '34.5', 'usdWords': '99,271', 'halfFtesWords': '17.2', 'halfUsdWords': '49,635'},
     },
 }
@@ -219,12 +229,45 @@ CONFIG['n2'] = dict(
     pageTitle='CPL Funding in Motion: The Narrated Introduction',
     eyebrow='CPL Initiative',
     dek='The introduction to CPL funding for colleges, narrated by Sierra, about two and a half minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
-    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4',
+    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_6.mp4',
     narrator='Narrated by Sierra',
     audio='narration_s2.mp3',
     credit='Sierra is a synthetic voice made with ElevenLabs.',
     narr=narration('narration_s2_layout.json'),
 )
+
+# THE VOLLEYS (Sam, 2026-10-21, on Draft 5: "There is one spot that has a bit of
+# a white screen lag and another that has the pointer moving slowly--probably
+# timing issues with the adjusted narration. Would be nice to use those moments
+# for the pointer to shoot down some more barriers"). Measured on Draft 5's
+# frames: Minimum conditions opened on a blank stage from 104.1 s to 109.3 s
+# (the heading waits for "meet three conditions", so the scene's first 0.1 s of
+# picture held for 5.1 s), and the arrow crept from the targets slide to the
+# Targets bar from 80.1 s to 89.5 s (2.8 s of flight stretched to ten, under a
+# heading and a line that type in with the voice). Each volley is one of those
+# windows: from the scene's start to the anchor whose word ends it, with its
+# barriers at seconds after the scene's start, [at, x, y, label] in stage units.
+VOLLEYS_S2 = [
+    {'scene': 'Targets', 'until': 'For the average allocation',
+     'hits': [[1.9, 72, 24, 'Units that never count'], [3.7, 46, 33, 'A fee to prove it'],
+              [5.5, 82, 36, 'Forms with no guide'], [7.3, 58, 27, 'Waiting a term to hear']]},
+    {'scene': 'Minimum conditions', 'until': 'meet three conditions',
+     'hits': [[1.7, 68, 22, 'Military training unread'], [3.0, 40, 30, 'No one knows it exists'],
+              [4.3, 80, 34, 'Courses that don’t match']]},
+]
+BAR_NARR = 1.8   # the narrated barrier's pace (BAR in the source): it shows from 0.95 BAR before its hit to 0.8 BAR after
+def volleys(narr, spec):
+    out = []
+    for v in spec:
+        sc = next(x for x in narr['scenes'] if x['scene'] == v['scene'])
+        end = next(a['t'] for a in sc['anchors'] if a['word'] == v['until'])
+        hits = [{'t': round(sc['start'] + at, 3), 'x': x, 'y': y, 'label': lab} for at, x, y, lab in v['hits']]
+        # every barrier drops in after the scene opens and is gone before the word that ends the window
+        assert hits[0]['t'] - 0.95 * BAR_NARR > sc['start'] - 0.3 and hits[-1]['t'] + 0.8 * BAR_NARR < end + 0.7, (v['scene'], hits, end)
+        out.append({'scene': v['scene'], 'from': sc['start'], 'to': end, 'hits': hits})
+    return out
+if CONFIG['n2'].get('narr'):
+    CONFIG['n2']['volleys'] = volleys(CONFIG['n2']['narr'], VOLLEYS_S2)
 
 # ── THE INTRODUCTIONS READ THE MODEL (Sam, 2026-10-19: "revise the video and
 # other text based on live info rather than hard coded data"). figures.json,
@@ -330,6 +373,8 @@ def live_config(typed, fig, scenario):
         tf, tu = funded[0]['avgTargetFtes'], funded[0]['avgTargetUsd']
         c['target'] = {'ftes': round(tf, 2), 'usd': round(tu, 2), 'ftesWords': '%.1f' % tf, 'usdWords': money_words(tu),
                        'halfFtesWords': '%.1f' % (tf / 2), 'halfUsdWords': money_words(tu / 2)}
+    if typed.get('vet') and f.get('vet'):
+        c['vet'] = {'met': f['vet']['met'], 'asOf': f['vet'].get('asOf'), 'text': vet_line(f['vet']['met'])}
     c['deadline'] = long_date(f['deadline'])
     c['timing'] = timing(month_words(f['deadline']))
     c['figures'] = {'config_md5': fig['config_md5'], 'read_at': fig['read_at'], 'scenario': scenario, 'published': scenario == fig.get('published')}
@@ -347,7 +392,7 @@ def flat(o, pre=''):
 
 def figure_diffs(typed, live):
     """Which figures the model moved, against the typed (voiced) values."""
-    keys = ['split.labs', 'ex.max', 'ex.cr', 'ex.nc', 'prios', 'how', 'target.ftesWords', 'target.usdWords', 'deadline', 'timing']
+    keys = ['split.labs', 'ex.max', 'ex.cr', 'ex.nc', 'prios', 'how', 'target.ftesWords', 'target.usdWords', 'deadline', 'timing', 'vet.met']
     ft, fl = flat(typed), flat(live)
     diffs = []
     for k in sorted(set(ft) | set(fl)):

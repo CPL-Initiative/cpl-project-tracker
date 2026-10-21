@@ -80,6 +80,8 @@ window.scrollTo = function () {};
 window.CPL_FUNDING_NO_REMOTE = true;
 window.eval(read("college_short_names.js"));
 window.eval(read("cpl_funding_data.js"));
+// The performance feed: the veterans' JST condition the film counts (T._videoFigures().vet).
+window.eval(read("cpl_funding_performance.js"));
 window.eval(read("cpl_funding.js"));
 const T = window.CPL_FUNDING_TAB;
 T._setConfig(cfg);

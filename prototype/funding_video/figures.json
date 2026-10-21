@@ -1,7 +1,7 @@
 {
  "source": "tests/fixtures/cpl_funding_config_de95c290.json",
  "config_md5": "de95c290",
- "read_at": "2026-10-19T22:38:50.787Z",
+ "read_at": "2026-10-21T22:11:54.914Z",
  "project": "cpl-implementation",
  "published": "Scenario 3",
  "scenarios": {
@@ -105,7 +105,13 @@
      "date": "",
      "label": "Potential Year 3 Depending on Funding Availability"
     }
-   ]
+   ],
+   "vet": {
+    "met": 63,
+    "of": 118,
+    "threshold": 0.75,
+    "asOf": "2026-10-21"
+   }
   },
   "Scenario 2": {
    "scenario": "Scenario 2",
@@ -204,7 +210,13 @@
      "date": "",
      "label": "Potential Year 3 Depending on Funding Availability"
     }
-   ]
+   ],
+   "vet": {
+    "met": 63,
+    "of": 118,
+    "threshold": 0.75,
+    "asOf": "2026-10-21"
+   }
   },
   "Scenario 3": {
    "scenario": "Scenario 3",
@@ -303,7 +315,13 @@
      "date": "",
      "label": "Potential Year 3 Depending on Funding Availability"
     }
-   ]
+   ],
+   "vet": {
+    "met": 63,
+    "of": 118,
+    "threshold": 0.75,
+    "asOf": "2026-10-21"
+   }
   }
  }
 }

@@ -97,7 +97,7 @@ const narration = readScript("s1");
 // The narrated cuts: n1 is Scenario 1's (draft 4, Kokoro), n2 Scenario 2's (draft 3, Sierra).
 const NARRATED = [
   { tag: "n1 ", v: "n1", s: "s1", mp4: "20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4" },
-  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4" },
+  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_6.mp4" },
 ];
 const sha1 = (t) => crypto.createHash("sha1").update(t, "utf8").digest("hex");
 NARRATED.forEach(({ s }) => {
@@ -135,7 +135,7 @@ function boot(file, reduced) {
 }
 
 [["funding_in_motion.html", "20260926_CPL_Funding_in_Motion_v4.mp4", ""],
- ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v8.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
+ ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v9.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
   const raw = fs.readFileSync(path.join(DIR, file), "utf8");
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   check(tag + "b2 " + file + " carries the current source (the barrier layer)", raw.includes("var ENC=") && raw.includes("Play the introduction"));
@@ -446,6 +446,66 @@ NARRATED.forEach(({ tag, v, s }) => {
         && cfg.ex.kickLead === "Sample College · Access");
     w.close();
   });
+}
+
+{
+  // 12. Sam, 2026-10-21, on Draft 5: "There is one spot that has a bit of a
+  // white screen lag and another that has the pointer moving slowly... Would be
+  // nice to use those moments for the pointer to shoot down some more
+  // barriers:) Can you add a gold star to the vet sprint qualifying condition
+  // and highlight that 63 colleges already meet this condition, which was also
+  // a commitment for the previous $50k funding?"
+  const cfgOf = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
+  const BAR = Number((/var BAR=NARR\?([\d.]+):1/.exec(src) || [])[1]);
+  const cfg = cfgOf("funding_in_motion_n2.html"), L = cfg.narr, V = cfg.volleys || [];
+  check("v1 n2 carries two volleys, Targets and Minimum conditions, seven barriers in all, each captioned",
+    V.length === 2 && V.map((v) => v.scene).join() === "Targets,Minimum conditions" &&
+    V.reduce((n, v) => n + v.hits.length, 0) === 7 && V.every((v) => v.hits.every((h) => h.label.length > 8)));
+  const w = boot("funding_in_motion_n2.html", false), d = w.document, { ft } = w.__film;
+  const inv = Array.from(d.querySelectorAll("#fx .inv"));
+  check("v2 the page draws them: five seam barriers and seven in the volleys", inv.length === 12);
+  // each window is where the narration outran the picture: the film moves less than a third of real time
+  check("v3 each volley fills a window where the picture is held (film advances under a third of narration time)",
+    V.every((v) => v.to - v.from > 4 && (ft(v.to) - ft(v.from)) / (v.to - v.from) < 0.34 &&
+      L.scenes.some((s) => s.scene === v.scene && Math.abs(s.start - v.from) < 1e-9)));
+  check("v4 every volley barrier drops in after its window opens and is gone before the word that closes it",
+    V.every((v) => v.hits.every((h, i) => h.t - 0.95 * BAR > v.from - 0.3 && h.t + 0.8 * BAR < v.to + 0.7 &&
+      (i === 0 || h.t - v.hits[i - 1].t >= 1.2))));
+  const visibleAt = (win, t) => { win.__film.seek(t); return Array.from(win.document.querySelectorAll("#fx .inv")).filter((e) => e.style.visibility === "visible").length; };
+  check("v5 a barrier shows at each volley hit", V.every((v) => v.hits.every((h) => visibleAt(w, h.t) >= 1)));
+  // jsdom lays nothing out, so the flight is read from the source: the arrow reaches each barrier
+  // before its recoil begins (0.27 barrier-seconds before the hit) and stays until after the burst
+  const arrive = Number((/P\(h\.t-([\d.]+),h\.x,ty,0\),P\(h\.t\+([\d.]+),h\.x,ty,0\)/.exec(src) || [])[1]);
+  check("v6 inside a volley the arrow flies on the narration's clock and sits under each barrier before it fires",
+    arrive >= 0.27 * BAR && /vw=volAt\(t\),a=vw\?arrowAt\(t,vw\.K\):arrowAt\(T\)/.test(src) && /K=k2;buildVol\(\)/.test(src));
+  const wr = boot("funding_in_motion_n2.html", true);
+  check("v7 reduced motion: no volley barriers either", V.every((v) => v.hits.every((h) => visibleAt(wr, h.t) === 0)));
+  check("v8 the introductions carry no volleys", ["funding_in_motion.html", "funding_in_motion_s2.html"].every((f) => !cfgOf(f).volleys));
+  w.close(); wr.close();
+  // The Veteran Star and the count, in s2 and n2; the count is the model's (figures.json `vet`)
+  const FIG = JSON.parse(fs.readFileSync(path.join(DIR, "figures.json"), "utf8"));
+  const vet = FIG.scenarios[FIG.published].vet;
+  check("v9 figures.json files the colleges meeting the veterans' condition, from the performance feed",
+    vet && Number.isInteger(vet.met) && vet.met > 0 && vet.met <= vet.of && vet.threshold === 0.75 && /^\d{4}-\d{2}-\d{2}$/.test(vet.asOf));
+  [["funding_in_motion_s2.html", "s2 ", 65.6 + 7.5], ["funding_in_motion_n2.html", "n2 ", null]].forEach(([file, tag, t]) => {
+    const c = cfgOf(file), ww = boot(file, false), dd = ww.document;
+    const sc = c.narr ? c.narr.scenes.find((s) => s.scene === "Minimum conditions") : null;
+    ww.__film.seek(t != null ? t : sc.end - 1);
+    const star = dd.querySelector("#stage .vstar"), line = dd.querySelector("#stage .vetline");
+    const want = vet.met + " colleges already meet this condition, a commitment they also made for the 2025–26 $50,000 funding.";
+    check(tag + "v10 the veterans' condition carries the Veteran Star, gold, beside it",
+      !!star && star.textContent === "★" && star.getAttribute("aria-label") === "Veteran Star" &&
+      /\.vstar\{[^}]*color:var\(--stage-gold\)/.test(src) && star.parentNode.textContent.includes("Joint Services Transcripts"));
+    check(tag + "v11 and the line beneath it says how many colleges meet it (" + vet.met + "), and the 2025–26 commitment",
+      !!line && line.textContent === want && c.vet.met === vet.met && Number(line.style.opacity) > 0.99);
+    ww.close();
+  });
+  const w1 = boot("funding_in_motion.html", false);
+  w1.__film.seek(72);
+  check("v12 Scenario 1's introduction is unchanged: no star, no count", !w1.document.querySelector("#stage .vstar") && !cfgOf("funding_in_motion.html").vet);
+  w1.close();
+  check("v13 the new marks use the page's tokens, no raw color", ![".vstar{", ".vetline{"].some((sel) => {
+    const i = src.indexOf(sel); return i < 0 || /#[0-9A-Fa-f]{3,6}\b/.test(src.slice(i, src.indexOf("}", i))); }));
 }
 
 let fail = 0;

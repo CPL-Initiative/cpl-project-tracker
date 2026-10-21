@@ -12923,7 +12923,22 @@
       average: { max: avg, cr: avg - avgNc, nc: avgNc, pos: cap > base ? (avg - base) / (cap - base) * 100 : 0 },
       capped: am && am.cappedCount != null ? am.cappedCount : 0,
       priorities: prios, reported: reported,
-      deadline: participationDeadline(), timeline: timingItems() };
+      deadline: participationDeadline(), timeline: timingItems(), vet: videoVetCondition() };
+  }
+  // The veterans' JST condition in the film (Sam, 2026-10-21: "add a gold star
+  // to the vet sprint qualifying condition and highlight that 63 colleges
+  // already meet this condition, which was also a commitment for the previous
+  // $50k funding"). Counted the way the $15M Distributions view counts its
+  // outcome 1 met: each ESS 25-82 recipient whose essOutcome1 reads met (the
+  // Veteran Star flag), so the film and the tab cannot disagree. null until
+  // the performance feed is loaded.
+  function videoVetCondition() {
+    var pf = perf();
+    if (!pf || !pf.vet_star) return null;
+    var recips = grantRecipients(), met = 0;
+    recips.forEach(function (r) { if (essOutcome1(r.name).state === "met") met++; });
+    return { met: met, of: recips.length, threshold: pf.vet_star_threshold || 0.75,
+      asOf: pf.vet_star_as_of ? String(pf.vet_star_as_of).slice(0, 10) : null };
   }
   // The headline figures the splash compares, filed against live. A film shows
   // these; a difference on any of them is a frame that no longer matches.
@@ -12937,12 +12952,15 @@
       out["p" + (i + 1) + " " + (p.title || p.label) + " target"] = Math.round(p.target * 10) / 10;
     });
     out["average target"] = f.priorities && f.priorities[0] ? Math.round(f.priorities[0].avgTargetFtes * 10) / 10 : null;
+    // The Minimum conditions scene's count of colleges meeting the veterans' condition.
+    if (f.vet) out["veteran condition met"] = f.vet.met;
     return out;
   }
   var VIDEO_LABEL = { appropriation: "the appropriation", toInstitutions: "to institutions", statewide: "statewide projects",
     institutions: "institutions", base: "base award", cap: "cap", deadline: "confirmation deadline",
     averageMax: "average max award", averageCr: "average credit share", averageNc: "average noncredit share",
-    "average target": "the average Access target (FTES)" };
+    "average target": "the average Access target (FTES)",
+    "veteran condition met": "colleges meeting the veterans' JST condition" };
   function videoDiff(filed, live) {
     var a = videoHeadline(filed), b = videoHeadline(live), out = [];
     Object.keys(b).forEach(function (k) {
