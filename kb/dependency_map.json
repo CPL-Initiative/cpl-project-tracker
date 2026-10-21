@@ -6,7 +6,7 @@
   "edge_functions": 9,
   "file_datasets": 709,
   "external_services": 184,
-  "consumers": 468,
+  "consumers": 469,
   "workflows": 58,
   "data_js_files": 70,
   "tabs": 39
@@ -965,6 +965,13 @@
       "map-queue",
       "map-users"
      ]
+    },
+    {
+     "id": "module:scripts/funding_sierra_note.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 30
     },
     {
      "id": "script:chatbox/health_check.sh",
@@ -17772,6 +17779,13 @@
       "college-briefing",
       "implementation-funding"
      ]
+    },
+    {
+     "id": "module:scripts/funding_sierra_note.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "global",
+     "line": 48
     }
    ],
    "served": true,
