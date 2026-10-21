@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_cpl_opportunity_san_joaquin_delta_2026-10-21.sql",
+ "name": "cpl_library_cpl_opportunity_san_joaquin_delta_2026_10_21",
+ "version": "20261021202719",
+ "sha256": "5bf528f01fc3e4e5efb0f92ba51195cd01f4f10aec0d70c559948a9a1e2c7e8c",
+ "run": "39669802343",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
