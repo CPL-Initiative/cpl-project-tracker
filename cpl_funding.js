@@ -3664,6 +3664,27 @@
     if (key === "elig_intro") delete ov.eligIntro;   // the legacy key this block replaced
     persistActive();
   }
+  // ── A STATUS PER DOCUMENT (Sam, 2026-10-21: "for status, I meant the reports on
+  //    the funding tab...so the memo, once edited and finalized, could be set to
+  //    final") ────────────────────────────────────────────────────────────────
+  // Draft, Final or Tabled for each document the Report view writes, saved with
+  // the scenario like the memo's passages. The public memo page (funding-model/
+  // memo/) reads the published scenario's: a tabled memo leaves the public page
+  // and the funding page's Contents; draft and final both show, and the word
+  // "draft" is never printed there.
+  var DOC_STATUS = [{ val: "draft", label: "Draft" }, { val: "final", label: "Final" }, { val: "tabled", label: "Tabled" }];
+  function docStatus(type) {
+    var v = firstDefined(SCENARIO.docStatus && SCENARIO.docStatus[type], SHARED.docStatus && SHARED.docStatus[type]);
+    return DOC_STATUS.some(function (d) { return d.val === v; }) ? v : "draft";
+  }
+  function setDocStatus(type, v) {
+    if (!DOC_STATUS.some(function (d) { return d.val === v; })) return;
+    var ov = activeOverride();
+    ov.docStatus = isPlainObj(ov.docStatus) ? ov.docStatus : {};
+    if (v === "draft") delete ov.docStatus[type]; else ov.docStatus[type] = v;
+    if (!Object.keys(ov.docStatus).length) delete ov.docStatus;
+    persistActive();
+  }
   // ── THE EXPLAINER'S OWN PROSE (Sam, 2026-10-09: "want to be able to edit the
   //    How This Model Works page but can't see how to do that") ─────────────
   // The explainer (funding-model/) typed most of its prose into its own
@@ -12472,6 +12493,12 @@
       { val: "report", label: "Report" }, { val: "brief", label: "Brief" }];
     return '<div class="cplfund-reptoolbar">' +
       '<span class="cplfund-ctl-lbl">Document type</span>' + segHtml("cplFundDocType", types, state.docType) +
+      (unlocked()
+        ? '<label class="cplfund-ctl-lbl" for="cplFundDocStatus">Status</label><select id="cplFundDocStatus" class="cplfund-ed-sel">' +
+          DOC_STATUS.map(function (d) {
+            return '<option value="' + d.val + '"' + (docStatus(state.docType) === d.val ? " selected" : "") + ">" + d.label + "</option>";
+          }).join("") + "</select>"
+        : '<span class="cplfund-ctl-lbl">Status: ' + esc(DOC_STATUS.filter(function (d) { return d.val === docStatus(state.docType); })[0].label) + "</span>") +
       '<button type="button" class="cplfund-optbtn" id="cplFundMemoRegen" title="Regenerate from the current model (discards inline edits)">Regenerate</button>' +
       (state.memoRegenAt ? '<span class="dk" role="status" id="cplFundMemoRegenAt">Regenerated from the current model at ' +
         esc(state.memoRegenAt) + ".</span>" : "") +
@@ -14592,6 +14619,11 @@
       });
     });
     wireSeg("cplFundDocType", function (v) { if (v !== state.docType) { state.docType = v; render(); } });
+    var docStatusSel = document.getElementById("cplFundDocStatus");
+    if (docStatusSel) docStatusSel.addEventListener("change", function () {
+      if (!unlocked()) return;
+      setDocStatus(state.docType, docStatusSel.value);
+    });
     var memoRegen = document.getElementById("cplFundMemoRegen");
     // A VISIBLE RESULT (Sam, 2026-09-24, screen recording: "still
     // unresponsive"). The click did rebuild the memo, but with no inline edits
@@ -15862,6 +15894,7 @@
     _printHtml: buildPrintHtml,
     _requirementsText: buildRequirementsText,
     _briefHtml: buildBriefHtml,
+    _docStatus: docStatus, _setDocStatus: setDocStatus, DOC_STATUS: DOC_STATUS,
     _buildMemo: function (docType) {
       var prev = state.docType;
       if (docType) state.docType = docType;

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-21T14:37:45Z",
+ "written_at": "2026-10-21T17:28:03Z",
  "rows": [
   {
    "key": "requirements",
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-21T14:33:50Z",
+    "at": "2026-10-21T17:23:37Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,9 +140,9 @@
     "records": 2648,
     "records_stamped": 1829,
     "saved_at": "2026-10-21T13:18:47Z",
-    "fold_at": "2026-10-21T14:33:50Z",
-    "map_titles": 4731,
-    "unclassified": 413,
+    "fold_at": "2026-10-21T17:23:37Z",
+    "map_titles": 4734,
+    "unclassified": 416,
     "left_map": 605,
     "below_80": 1151,
     "below_60": 245
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-21T14:35:44+00:00",
+    "at": "2026-10-21T17:25:48+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -287,7 +287,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-10-21T12:01:21Z",
+    "at": "2026-10-21T14:37:51Z",
     "every_hours": null
    },
    "facts": {
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-21T14:33:48Z",
+    "at": "2026-10-21T17:23:34Z",
     "every_hours": 24
    },
    "facts": {

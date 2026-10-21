@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-21T14:33:37.626597+00:00",
+  "scraped_at": "2026-10-21T17:23:20.210388+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29173,
+    "jst": 29187,
     "star_colleges": 63
   },
   "computed_star_colleges": 63,
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 590,
+      "jst": 591,
       "star": true
     },
     "Norco College": {
@@ -177,7 +177,7 @@
     },
     "Glendale Community College": {
       "vets": 196,
-      "jst": 226,
+      "jst": 227,
       "star": true
     },
     "Los Angeles Trade Technical College": {
@@ -222,7 +222,7 @@
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 193,
+      "jst": 195,
       "star": true
     },
     "Los Angeles Mission College": {
@@ -265,14 +265,14 @@
       "jst": 114,
       "star": true
     },
+    "Oxnard College": {
+      "vets": 118,
+      "jst": 162,
+      "star": true
+    },
     "San Jose City College": {
       "vets": 148,
       "jst": 122,
-      "star": true
-    },
-    "Oxnard College": {
-      "vets": 118,
-      "jst": 161,
       "star": true
     },
     "Golden West College": {
@@ -340,6 +340,11 @@
       "jst": 56,
       "star": true
     },
+    "Palo Verde College": {
+      "vets": 24,
+      "jst": 9,
+      "star": false
+    },
     "Skyline College": {
       "vets": 167,
       "jst": 105,
@@ -349,11 +354,6 @@
       "vets": 42,
       "jst": 52,
       "star": true
-    },
-    "Palo Verde College": {
-      "vets": 24,
-      "jst": 9,
-      "star": false
     },
     "Copper Mountain College": {
       "vets": 72,
@@ -485,14 +485,14 @@
       "jst": 132,
       "star": true
     },
+    "Butte College": {
+      "vets": 290,
+      "jst": 123,
+      "star": false
+    },
     "Sacramento City College": {
       "vets": 203,
       "jst": 117,
-      "star": false
-    },
-    "Butte College": {
-      "vets": 290,
-      "jst": 114,
       "star": false
     },
     "Cuyamaca College": {

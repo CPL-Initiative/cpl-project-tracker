@@ -211176,6 +211176,248 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 15.0
     },
     {
+      "exhibit_id": "MAPICI-NURS-1-001",
+      "exhibit_ids": [
+        "MAPICI-NURS-1-001"
+      ],
+      "title": "National US&R Response System- Structural Collapse Technician",
+      "unified_title": "National US&R Response System- Structural Collapse Technician",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "National US&R Response System- Structural Collapse Technician"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FST 082",
+          "credit": "1 hour in Structural Collapse Specialist 1"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-NURS-1-001",
+          "title": "National US&R Response System- Structural Collapse Technician",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Palo Verde College": 1.0
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "adopter_rec_idx": {
+        "Palo Verde College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
+      "exhibit_id": "MAPICI-RISO-1-001",
+      "exhibit_ids": [
+        "MAPICI-RISO-1-001"
+      ],
+      "title": "Rescue International-- Swiftwater Operations",
+      "unified_title": "Rescue International-- Swiftwater Operations",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Rescue International-- Swiftwater Operations"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FST 111",
+          "credit": "1 hour in River and Flood Rescue Technician"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-RISO-1-001",
+          "title": "Rescue International-- Swiftwater Operations",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Palo Verde College": 1.0
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "adopter_rec_idx": {
+        "Palo Verde College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
       "exhibit_id": "MAPCBES-REP-1-001|MAPCXS-REP-1-001|MAPCxS-PORE-1-001",
       "exhibit_ids": [
         "MAPCBES-REP-1-001",
@@ -359484,6 +359726,85 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 1.0
     },
     {
+      "exhibit_id": "MAPICI-CEIC-1-001",
+      "exhibit_ids": [
+        "MAPICI-CEIC-1-001"
+      ],
+      "title": "Cal EMA- Incident Commander",
+      "unified_title": "Cal EMA- Incident Commander",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Cal EMA- Incident Commander"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "236"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 17,
+      "potential_names": [
+        "Allan Hancock College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 18,
+      "credit_recs": [
+        {
+          "course": "FST 161",
+          "credit": "1 hour in Haz Mat - Incident Command Systems"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CEIC-1-001",
+          "title": "Cal EMA- Incident Commander",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Palo Verde College": 1.0
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "adopter_rec_idx": {
+        "Palo Verde College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
       "exhibit_id": "MAPSAS-D:A-1-001|MAPSAS-DA1-1-001|MAPSAS-DA2-1-001|MAPSAS-DE-A-1-001",
       "exhibit_ids": [
         "MAPSAS-D:A-1-001",
@@ -411496,21 +411817,21 @@ window.CPL_STATEWIDE = {
         "pct": 0.5
       },
       {
+        "college": "Palo Verde College",
+        "credit_recs": 74,
+        "exhibits": 74,
+        "disciplines": 2,
+        "ccc_collaborative": 0,
+        "industry_certs": 74,
+        "pct": 0.5
+      },
+      {
         "college": "Coalinga College",
         "credit_recs": 73,
         "exhibits": 69,
         "disciplines": 10,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 0.5
-      },
-      {
-        "college": "Palo Verde College",
-        "credit_recs": 71,
-        "exhibits": 71,
-        "disciplines": 2,
-        "ccc_collaborative": 0,
-        "industry_certs": 71,
         "pct": 0.5
       },
       {
@@ -411724,9 +412045,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1567,
-        "exhibits": 590,
-        "courses": 687,
+        "credit_recs": 1570,
+        "exhibits": 593,
+        "courses": 690,
         "colleges": 56,
         "ccc_collaborative": 541,
         "pct": 10.8
@@ -411922,8 +412243,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 4033,
-        "exhibits": 1283,
+        "credit_recs": 4036,
+        "exhibits": 1286,
         "colleges": 81,
         "pct": 27.8
       },
@@ -411962,14 +412283,14 @@ window.CPL_STATEWIDE = {
         "credit_recs": 8971,
         "exhibits": 3946,
         "colleges": 91,
-        "pct": 61.8
+        "pct": 61.7
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 3056,
-        "exhibits": 1224,
+        "credit_recs": 3059,
+        "exhibits": 1227,
         "colleges": 78,
-        "pct": 21.0
+        "pct": 21.1
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
@@ -412031,8 +412352,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12801,
-        "exhibits": 6119,
+        "credit_recs": 12804,
+        "exhibits": 6122,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.1
@@ -412457,8 +412778,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-21T14:32:53",
-  "total_credit_recs": 14526,
+  "generated_at": "2026-10-21T17:22:33",
+  "total_credit_recs": 14529,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",
