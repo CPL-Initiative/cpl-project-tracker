@@ -24,8 +24,9 @@ stale (S441 SkyIronbark had already run). Read, in order: this file, `docs/refer
 
 The context meter hit its emergency line right after the full checkpoint, so this handoff is current but nothing ran after it.
 Both funding branches are now pushed (no PR yet): `claude/my-cpl-funding-moves` at 31a82b96 and
-`claude/college-reports-to-funding` at e62457d0. PR A's four-shard local run did not finish, so treat A as untested
-beyond the funding and My College suites. CPLBrain#424's `coverage` failure is the usual ordering: it passes once
+`claude/college-reports-to-funding` at e62457d0. PR A's four-shard run finished with one failure: `tests/cpl_funding_how_to_meet_it.test.js` 5n ("on My College, a MAP
+name opens the college's own steps and its row's link") still expects the funding block on My College; re-point it to
+the funding page's block (as S442 did in `college_briefing.test.js`'s `blockOf`) before opening PR A. CPLBrain#424's `coverage` failure is the usual ordering: it passes once
 tracker #2315 merges (re-run it then). Nothing from the Rule 9 list was skipped at the checkpoint itself beyond what
 *Not refreshed* names.
 
