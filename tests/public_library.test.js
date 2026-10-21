@@ -107,6 +107,17 @@ block("(2c)", function () {
   check("(2c) the page is in the a11y sweep, light and dark", /"public-library":\s*\{\s*file: "library\/index\.html"/.test(A11Y) && /"public-library-dark"/.test(A11Y));
 });
 
+// ── (2d) The public header (Sam, 2026-10-21) ───────────────────────────
+block("(2d)", function () {
+  check("(2d) the CPL Initiative logo opens the Chancellor's Office CPL page",
+    /class="cplh-logo" href="https:\/\/www\.cccco\.edu\/about-us\/chancellors-office\/divisions\/educational-services-and-support\/credit-for-prior-learning\/"/.test(PAGE));
+  ["fact-sheet/", "https://map.rccd.edu/\"", "map.rccd.edu/cpllandingpages/", "insights/dashboard", "creditforbeingyou.org"].forEach(function (u) {
+    check("(2d) the header links " + u, PAGE.indexOf(u.replace(/\\/g, "")) >= 0);
+  });
+  check("(2d) both logos carry alt text, one per theme", (PAGE.match(/<img class="cplh-(light|dark)" src="[^"]+" alt="[^"]{20,}"/g) || []).length === 2);
+  check("(2d) a light and a dark control, sharing COBI's cpl_theme", /data-cplh-theme="light"/.test(PAGE) && /data-cplh-theme="dark"/.test(PAGE) && /var KEY = "cpl_theme"/.test(PAGE));
+});
+
 // ── (3) The Library tab's switch ─────────────────────────────────────────
 const ROW = { id: "r1", slug: "dsp-credit-starting-points", title: "DSP Credit Starting Points", kind: "document",
   made_on: "2026-10-20", status: "draft", seen_by: null, home: "web", url: "https://claude.ai/artifact/P4R8", summary: "Internal summary", versions: [] };

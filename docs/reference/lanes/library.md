@@ -52,7 +52,12 @@ piece or narrowing its audience unlists it. `cpl_library_public()` (anon) return
 pieces' public fields only, to the page at `library/` and the Admin tab's **Public library**
 panel (Remove beside each). A Claude page also needs its claude.ai link set public, which the
 switch asks the lister to confirm. Schema `kb/supabase_cpl_library_public.sql`; test
-`tests/public_library.test.js`; in the a11y sweep light and dark. **Next:** Sierra links
+`tests/public_library.test.js`; in the a11y sweep light and dark. **Every public piece carries the public
+header** (Sam, 2026-10-21): the CPL Initiative logo to the Chancellor's Office CPL page, links to
+the CPL Fact Sheet, MAP, Find your college (the landing pages), the MAP dashboard, Credit for
+Being You and the CPL Library, and Light and Dark controls on COBI's `cpl_theme`. The source is
+`CPLBrain/04-projects/cpl-initiative/public-header/` (`header.html`, and `apply.py`, which
+embeds the logos for a claude.ai page); `library/index.html` carries a copy. **Next:** Sierra links
 listed pieces (a separate PR, A/B first); YouTube training videos become film records.
 
 ## Sam's rulings (2026-10-05, all in `cpl_memory`)
