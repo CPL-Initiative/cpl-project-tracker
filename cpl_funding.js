@@ -13171,15 +13171,14 @@
     fresh.parentNode.replaceChild(kept, fresh);
     patchStepOne(kept);
   }
-  // The reader's choice, remembered in their own browser (Sam, 2026-10-15,
-  // call 9: "Remember it"), so a college that returns sees its own funding
-  // first. A per-viewer convenience: it never leaves the browser.
+  // The reader's choice lasts the visit (Sam, Open Asks Sheet 111 card 2,
+  // 2026-10-21: "forget", reversing call 9's "Remember it"). ONE_STORE names the
+  // key an earlier build wrote; it is cleared once, never applied.
   var ONE_STORE = "cplfund_one_choice_v1";
   function chooseOne(v) {
     v = oneChoiceValid(v) ? String(v) : "";
     state.oneCollege = v;
     if (v) state.collegeView = "one";
-    try { if (v) localStorage.setItem(ONE_STORE, v); else localStorage.removeItem(ONE_STORE); } catch (e) {}
     render();
     try { document.dispatchEvent(new CustomEvent("cplfund:onechoice", { detail: { value: v } })); } catch (e) {}
   }
@@ -13187,10 +13186,7 @@
   function restoreOneChoice() {
     if (_oneRestored || !publicMode()) return;
     _oneRestored = true;
-    if (state.oneCollege) return;
-    var v = null;
-    try { v = localStorage.getItem(ONE_STORE); } catch (e) {}
-    if (v && oneChoiceValid(v)) { state.oneCollege = v; state.collegeView = "one"; }
+    try { localStorage.removeItem(ONE_STORE); } catch (e) {}
   }
   // ── THE PDF ASKS FOR A COLLEGE FIRST (Sam, 2026-10-15, call 5) ──────────
   // On a public rendering with no college chosen, PDF asks for one, with the
