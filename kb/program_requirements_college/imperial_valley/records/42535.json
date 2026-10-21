@@ -1,0 +1,169 @@
+{
+ "college": "Imperial Valley College",
+ "control_number": "42535",
+ "shape": "noncredit",
+ "title": "Computer Fundamentals for ESL Students",
+ "award": "Noncredit program",
+ "source_url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8598",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6214,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6214,
+    "output_tokens": 722,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 722,
+  "output_tokens_details": {
+   "thinking_tokens": 172
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0393,
+ "ms": 7056,
+ "seconds": 7.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    72.0,
+    72.0
+   ],
+   "stated": [
+    72.0,
+    72.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "COMPUTER FUNDAMENTALS FOR ESL STUDENTS (NONCREDIT CERTIFICATE OF COMPLETION)",
+   "measure": "hours",
+   "total_units": {
+    "min": 72,
+    "max": 72
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and learn about basic computer hardware components.",
+    "Utilize computers for personal and professional tasks.",
+    "Familiarize students with electronic forms of communication.",
+    "Give ESL student the ability to effectively navigate the Internet and use online tools."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses for the certificate",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 72,
+     "max": 72
+    },
+    "courses": [
+     {
+      "code": "BUS 805",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 806",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints figures (36.0, 72.0) without a label; this is a noncredit certificate of completion and the courses carry 0 units in the state file, so these figures were read as hours. A reviewer should confirm.",
+   "BUS 805 is marked '( Historical )' in the catalog, which may mean the course is inactive.",
+   "The CAREER OPPORTUNITIES heading reads 'Not Applicable', so careers are empty."
+  ]
+ },
+ "extracted_run": "39691376155"
+}

@@ -1,0 +1,231 @@
+{
+ "college": "Imperial Valley College",
+ "control_number": "36695",
+ "shape": "adt",
+ "title": "Public Health Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8639",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11571,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11571,
+    "output_tokens": 1422,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1422,
+  "output_tokens_details": {
+   "thinking_tokens": 339
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07472,
+ "ms": 11764,
+ "seconds": 12.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 18,
+   "share": 0.0,
+   "missing": [
+    "ACCT210",
+    "ANTH102",
+    "BIOL100",
+    "BIOL200",
+    "BIOL202",
+    "BIOL204",
+    "BIOL206",
+    "BIOL220",
+    "CHEM100",
+    "CHEM200",
+    "ECON101",
+    "ECON102",
+    "HE102",
+    "HE103",
+    "PSY146",
+    "PSYCC1000",
+    "SOC101",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT 210",
+    "why": "not in the text; Public Health Science A.S.-T section absent"
+   },
+   {
+    "code": "ANTH 102",
+    "why": "named only in the Cal-GETC certificate GE list (Area 4), not a Public Health Science section"
+   },
+   {
+    "code": "BIOL 100",
+    "why": "named only in the Cal-GETC certificate GE list (Area 5B)"
+   },
+   {
+    "code": "BIOL 200",
+    "why": "named only in the Cal-GETC certificate GE list (Area 5B)"
+   },
+   {
+    "code": "BIOL 202",
+    "why": "named only in the Cal-GETC certificate GE list (Area 5B)"
+   },
+   {
+    "code": "BIOL 204",
+    "why": "named only in the Cal-GETC certificate GE list (Area 5B)"
+   },
+   {
+    "code": "BIOL 206",
+    "why": "named only in the Cal-GETC certificate GE list (Area 5B)"
+   },
+   {
+    "code": "BIOL 220",
+    "why": "named only in the Cal-GETC certificate GE list (Area 5B)"
+   },
+   {
+    "code": "CHEM 100",
+    "why": "named only in the Cal-GETC certificate GE list (Area 5A)"
+   },
+   {
+    "code": "CHEM 200",
+    "why": "named only in the Cal-GETC certificate GE list (Area 5A)"
+   },
+   {
+    "code": "ECON 101",
+    "why": "named only in the Cal-GETC certificate GE list (Area 4)"
+   },
+   {
+    "code": "ECON 102",
+    "why": "named only in the Cal-GETC certificate GE list (Area 4)"
+   },
+   {
+    "code": "HE 102",
+    "why": "not in the text; Public Health Science A.S.-T section absent"
+   },
+   {
+    "code": "HE 103",
+    "why": "not in the text; Public Health Science A.S.-T section absent"
+   },
+   {
+    "code": "PSY 146",
+    "why": "named only in the Cal-GETC certificate GE list (Area 4)"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "named only in the Cal-GETC certificate GE list (Area 4)"
+   },
+   {
+    "code": "SOC 101",
+    "why": "named only in the Cal-GETC certificate GE list (Area 4)"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "named only in the Cal-GETC certificate GE list (Area 2)"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text is the California General Education Transfer Curriculum (Cal-GETC) certificate page, not the Public Health Science A.S.-T section; no requirements for the named award appear, so no blocks, totals, outcomes or careers were recorded.",
+   "The section_heading records the only heading present in the text; it belongs to a different award (Cal-GETC certificate). A reviewer should fetch the correct Public Health Science A.S.-T page.",
+   "Courses listed in the Cal-GETC areas are general education courses and were not placed in blocks."
+  ]
+ },
+ "extracted_run": "39691376155"
+}
