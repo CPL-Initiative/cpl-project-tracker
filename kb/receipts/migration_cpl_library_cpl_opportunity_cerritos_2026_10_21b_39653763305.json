@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_cpl_opportunity_cerritos_2026-10-21.sql",
+ "name": "cpl_library_cpl_opportunity_cerritos_2026_10_21b",
+ "version": "20261021183523",
+ "sha256": "e206a076a387c6ee8bb35b4f895ebc24258cbe6e234df2a2039dcc64ba73a659",
+ "run": "39653763305",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

@@ -224,14 +224,28 @@
     // ── catalog harvest: which courses each program lists ───────────────
     var catalog = input.catalog || [];
     var progCourses = {}, inCatalog = {};
+    // Some catalogs write a code without its space (Bakersfield: "AUTOB30" for
+    // AUTO B30, 1,415 of 2,492 codes on 2026-10-21); resolve one to the COCI
+    // course whose subject and number join to the same string.
+    // Foothill's COCI numbers carry leading zeros ("ACTG 001A" for the catalog's
+    // "ACTG 1A", 1,077 of 2,370 codes on 2026-10-21), so the key drops those too.
+    function joinKey(subj, num) {
+      return (String(subj) + String(num).replace(/^0+(?=[0-9A-Z])/i, "")).replace(/ /g, "").toUpperCase();
+    }
+    var joined = {};
+    courses.forEach(function (c) { joined[joinKey(c.subj, c.num)] = c.id; });
+    function catKey(s) {
+      var k = codeKey(s, ""), m = /^(.*?) ?(\S+)$/.exec(k);
+      return byId[k] || !k ? k : (joined[m ? joinKey(m[1], m[2]) : k.replace(/ /g, "")] || k);
+    }
     catalog.forEach(function (p) {
       var set = {};
       (p.blocks || []).forEach(function (b) {
         (b.courses || []).forEach(function (c) {
-          var code = codeKey(c.code, "");
+          var code = catKey(c.code);
           set[code] = 1; inCatalog[code] = 1;
           (c.alternatives || []).forEach(function (alt) {
-            var a2 = codeKey(typeof alt === "string" ? alt : alt && alt.code, "");
+            var a2 = catKey(typeof alt === "string" ? alt : alt && alt.code);
             if (a2) { set[a2] = 1; inCatalog[a2] = 1; }
           });
         });
@@ -740,7 +754,7 @@
     var adoptRows = adopt.map(function (r) {
       return [e(r.disc), e(r.title), e(r.crId), e(r.course), e(r.courseId), e(r.units === "" || r.units == null ? "" : r.units),
         e(r.why), e(r.tier), e(r.priority),
-        r.link ? '<a class="cpo-adopt" href="' + e(r.link) + '" target="_blank" rel="noopener">Could Adopt - View in MAP<span class="cpo-sr"> (opens MAP; search ' + e(r.crId) + ")</span></a>"
+        r.link ? '<a class="cpo-adopt" href="' + e(r.link) + '" target="_blank" rel="noopener" data-crid="' + e(String(r.crId).split(",")[0].trim()) + '">Could Adopt - View in MAP<span class="cpo-sr"> (copies ' + e(String(r.crId).split(",")[0].trim()) + " and opens MAP)</span></a>"
           : '<span class="cpo-muted">' + e(r.linkStatus) + "</span>"];
     });
     var exRows = b.existing.map(function (x2) {
@@ -770,9 +784,10 @@
       + '<div class="cpo-fact"><b>' + n(adopt.length) + "</b><span>Could Adopt matches to a course</span></div>"
       + '<div class="cpo-fact"><b>' + n(s.priority.High) + "</b><span>high-priority course opportunities</span></div></div></section>"
       + '<section aria-labelledby="cpo-h-adopt"><h2 id="cpo-h-adopt">Could Adopt</h2>'
-      + '<p class="cpo-note">Statewide credit recommendations the college has not adopted, matched to its courses. MAP has no web address for one exhibit card, so each link opens MAP\'s CPL Opportunities page: search the recommendation ID there, then use Request Adopt or Quick Adopt (MAP asks you to sign in). '
+      + '<p class="cpo-note">Statewide credit recommendations the college has not adopted, matched to its courses. Each link copies the recommendation\'s exhibit ID and opens MAP\'s CPL Opportunities page. There, paste the ID into the search box and press Search: the card comes up with Request Quick Adopt (MAP asks you to sign in). MAP has no web address that opens one card. '
       + (s.verifiedAt ? "Links appear only for IDs MAP listed on that page when checked " + e(s.verifiedAt) + "."
         : "The check of which IDs MAP lists could not be read, so no links are shown.") + "</p>"
+      + '<p class="cpo-note" id="cpo-copied" aria-live="polite"></p>'
       + '<div class="cpo-filters"><label class="cpo-f">Search <input type="search" id="cpo-q" placeholder="Title, ID or course"></label>'
       + sel("cpo-disc", "Discipline", uniq(adopt.map(function (r) { return r.disc; })))
       + sel("cpo-pri", "Priority", ["High", "Medium", "Low"])
@@ -823,6 +838,19 @@
       return (!q || tr.textContent.toLowerCase().indexOf(q) >= 0) && (!p || (tr.getAttribute("data-pri") || "").toLowerCase() === p);
     });
     filt("cpo-bare-t", ["cpo-bq"], function (tr) { var q = val("cpo-bq"); return !q || tr.textContent.toLowerCase().indexOf(q) >= 0; });
+    // MAP keeps its search inside the page and Quick Adopt needs a MAP sign-in,
+    // so the link copies the exhibit ID to paste there (Sam and Ashley, 2026-10-21).
+    var said = root.querySelector("#cpo-copied");
+    root.addEventListener("click", function (ev) {
+      var a = ev.target && ev.target.closest ? ev.target.closest("a.cpo-adopt[data-crid]") : null;
+      if (!a) return;
+      var id = a.getAttribute("data-crid");
+      var tell = function (ok) {
+        if (said) said.textContent = ok ? "Copied " + id + ". In MAP, paste it into the search box and press Search."
+          : "In MAP, search " + id + ".";
+      };
+      try { navigator.clipboard.writeText(id).then(function () { tell(true); }, function () { tell(false); }); } catch (err) { tell(false); }
+    });
     var dl = root.querySelector("#cpo-download");
     if (dl) dl.onclick = function () { downloadWorkbook(b); dl.textContent = "Downloaded"; setTimeout(function () { dl.textContent = "Download CPL Extract"; }, 2600); };
     var cp = root.querySelector("#cpo-copy");

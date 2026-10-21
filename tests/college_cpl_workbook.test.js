@@ -10,6 +10,9 @@
 //   4. a college spelled differently in each source still resolves
 //   5. the .xlsx is a valid zip with frozen, filtered sheets and escaped names
 //   6. "Could Adopt - View in MAP" is a working hyperlink only for an ID MAP listed
+//   7. a catalog code written without its space (Bakersfield's "AUTOB30") still finds its course,
+//      and one COCI pads with zeros (Foothill's "ACTG 001A" for "ACTG 1A") does too
+//   8. each Could Adopt link carries the exhibit ID it copies for MAP's search
 //
 // Run from repo root: `npm test` (or `node tests/college_cpl_workbook.test.js`).
 const fs = require("fs");
@@ -82,6 +85,26 @@ check("…so the stale identity's credential never reaches it", !byId["CISC 323"
 check("the statewide CR reaches CISC 323 through its three peer colleges",
   byId["CISC 323"].sw.length === 1 && byId["CISC 323"].sw[0].peers.join() === "Other College,Peer A,Peer B");
 
+// 7. an unspaced catalog code resolves to its course; an unknown one stays as read
+const b7 = W.build({ college: COLLEGE, today: "2026-10-21", lookup: lookup, members: members, aligned: aligned,
+  statewide: statewide, programs: programs, shareBase: "https://example.org/cpl-opportunity/",
+  catalog: [{ control_number: "07200", program_title: "Computer Networking", blocks: [{ courses: [{ code: "FIRE1706" }, { code: "ZZZ999", alternatives: ["HIST300"] }] }] }] });
+const by7 = {};
+b7.courses.forEach(function (c) { by7[c.id] = c; });
+check("an unspaced catalog code (FIRE1706) marks FIRE 1706 as in the catalog", by7["FIRE 1706"].inCatalog === true);
+check("an unspaced alternative (HIST300) marks HIST 300 too", by7["HIST 300"].inCatalog === true);
+check("a course the catalog does not list stays out", by7["CISC 323"].inCatalog === false);
+
+const lookup8 = { colleges: [COLLEGE], rows: [[0, "CCF1", "ACTG", "001A", "Financial Accounting I", 5, "C", "0502.00: Accounting", "", "", ""],
+  [0, "CCF2", "C S", "01AH", "Honors Programming", 4.5, "C", "0707.10: Computer Programming", "", "", ""]] };
+const b8 = W.build({ college: COLLEGE, today: "2026-10-21", lookup: lookup8, members: { colleges: [COLLEGE], members: {} }, aligned: { aligned: {} },
+  statewide: { exhibits: [] }, programs: programs, shareBase: "https://example.org/cpl-opportunity/",
+  catalog: [{ control_number: "07200", program_title: "Accounting", blocks: [{ courses: [{ code: "ACTG 1A" }, { code: "C S 1AH" }] }] }] });
+const by8 = {};
+b8.courses.forEach(function (c) { by8[c.id] = c; });
+check("a catalog ACTG 1A finds COCI's zero-padded ACTG 001A", by8["ACTG 001A"].inCatalog === true);
+check("a catalog C S 1AH finds COCI's C S 01AH", by8["C S 01AH"].inCatalog === true);
+
 // 2. AP / IB excluded, CLEP kept
 check("an AP exhibit the college holds is not an existing exhibit", !b.existing.some(function (e) { return /^AP /.test(e.title); }));
 check("the college's CompTIA Server+ line is an existing exhibit on CISC 323",
@@ -140,6 +163,16 @@ check("with no verification read, no CR gets a link", b3.swRows.every(function (
 const html = W.pageHtml(b);
 check("the visual names the college", html.indexOf("<h1>Test River College</h1>") > 0);
 check("the visual's Could Adopt table links the verified CR to MAP", /class="cpo-adopt" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses"/.test(html));
+check("each Could Adopt link carries the exhibit ID it copies", /class="cpo-adopt"[^>]*data-crid="MAPICI-CN-1-001"/.test(html) && html.indexOf('id="cpo-copied" aria-live="polite"') > 0);
+// clicking it copies the ID and says what to do in MAP; the link still opens MAP
+let copied = null, handler = null, prevented = false;
+const said8 = { textContent: "" };
+sandbox.navigator = { clipboard: { writeText: function (t) { copied = t; return Promise.resolve(); } } };
+W.wirePage({ addEventListener: function (type, fn) { if (type === "click") handler = fn; },
+  querySelector: function (q) { return q === "#cpo-copied" ? said8 : null; } }, b);
+const link8 = { getAttribute: function (k) { return k === "data-crid" ? "MAPICI-CN-1-001" : null; } };
+handler({ target: { closest: function () { return link8; } }, preventDefault: function () { prevented = true; } });
+check("a Could Adopt click copies the exhibit ID and leaves the link to open MAP", copied === "MAPICI-CN-1-001" && !prevented);
 check("the visual offers its shareable link", html.indexOf("https://example.org/cpl-opportunity/?college=Test%20River%20College") > 0);
 check("every table header cell is scoped", (html.match(/<th /g) || []).length === (html.match(/<th scope="col">/g) || []).length);
 
@@ -156,7 +189,10 @@ check("My College offers the visual and the extract only for one college",
   /state\.scope === "college" && state\.college\s*\?\s*'<a class="cb-act" id="cb-oppvisual"/.test(src) && /id="cb-workbook">Download CPL Extract</.test(src));
 check("My College loads the builder on first use", /loadScript\("college_cpl_workbook\.js", "CPL_COLLEGE_WORKBOOK"/.test(src));
 
+setTimeout(function () {
+check("…and tells the reader to paste it into MAP's search", /^Copied MAPICI-CN-1-001\. In MAP, paste it/.test(said8.textContent));
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
 process.exit(pass === results.length ? 0 : 1);
+}, 0);
