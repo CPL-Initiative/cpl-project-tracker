@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_cpl_opportunity_moreno_valley_2026-10-21.sql",
+ "name": "cpl_library_cpl_opportunity_moreno_valley_2026_10_21",
+ "version": "20261021194614",
+ "sha256": "145b53a10d9ab081ca9f1db1478d7c3cfe0b84a1c30ddab7d57a53d34d3cdfde",
+ "run": "39664108554",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
