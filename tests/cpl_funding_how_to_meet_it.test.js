@@ -149,25 +149,19 @@ function setup(opts) {
     a.getAttribute("href") === "funding-model/?college=" + encodeURIComponent(KEY) + "&confirm=1#institutions");
 }
 {
-  // My College passes MAP's name for the college ("… College"); the dialog
-  // resolves it to the roster's row, so it names the college and Confirm now
-  // carries the roster key.
-  const { w, doc, T, B } = setup();
+  // My CPL Funding moved to the funding page (Sam, 2026-10-21: "move funding to
+  // Implementation Funding"): the block draws there by the roster's key, and
+  // its How to meet it opens the college's own steps, with Confirm now opening
+  // the row's form on the same page.
+  const { w, doc, B } = setup();
   const KEY = w.CPL_FUNDING.colleges.find((c) => /^Laney$|^Chaffey$|^Cabrillo$/.test(c.college)).college;
   const root = doc.getElementById("college-briefing-root");
-  const cfg = T._config();
-  B._state.scope = "college";
-  B._state.data = { colleges: [KEY + " College"], nameToId: {}, summaryByName: {},
-    raw: { config: cfg, nameToId: {}, summaryById: {}, contactByName: {} } };
-  B._state.data.briefing = B._buildBriefing({ config: cfg, college: null }, { scenario: B._briefingScenario(cfg), year: "1" });
-  B._state.college = KEY + " College";
-  B._loadFunding(root);
-  B.render(root);
+  const drew = B.fundingPanel(root, KEY);
   const part = root.querySelector('[data-howto="part"]');
   if (part) part.click();
-  const a = doc.querySelector("#cplFundHowTo a.cplfund-howto-go");
-  check("5n: on My College, a MAP name opens the college's own steps and its row's link",
-    !!part && !!a && a.getAttribute("href") === "funding-model/?college=" + encodeURIComponent(KEY) + "&confirm=1#institutions" &&
+  const go = doc.querySelector("#cplFundHowTo button.cplfund-howto-go[data-howtoconfirm]");
+  check("5n: on the funding page, the college's block opens its own steps and Confirm now",
+    drew && !!part && !!go && new RegExp(KEY).test(doc.getElementById("cplFundHowTo").textContent) &&
     !!doc.querySelector("#cplFundHowTo .cplfund-howto-who"));
 }
 {

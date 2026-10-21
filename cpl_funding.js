@@ -15374,6 +15374,16 @@
     state.q = "";
     _deepLinkCollege = hit.college;
     _deepLinkPending = true;
+    // `view=one` (My College's Open My CPL Funding, Sam 2026-10-21: "move funding to
+    // Implementation Funding") opens the My Institution view on the college instead,
+    // on a public rendering, where that view lives.
+    var view = "";
+    try { view = new URLSearchParams(window.location.search).get("view") || ""; } catch (e) {}
+    if (view === "one" && publicMode()) {
+      state.oneCollege = hit.college; state.collegeView = "one"; _oneRestored = true;
+      _deepLinkPending = false;
+      return;
+    }
     // A link names a row of the table, so the table shows, whatever choice the
     // reader's browser remembers. `confirm=1` (My College's Confirm now, Sam
     // 2026-10-15, call 5) also opens the row's confirmation form.
