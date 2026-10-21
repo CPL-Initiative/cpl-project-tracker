@@ -1,63 +1,80 @@
 ---
-title: "Session 443 handoff: the Ventura district's campus letter fixed; Moorpark, Oxnard and Ventura re-read; Sheet 109 still open"
+title: "Session 443 handoff: My College folding into CPL Pathways (step 1 open, funding moved out), Reedley loaded, Sheet 109 applied"
 date: 2026-10-21
 session: 442 (SkyManzanita)
-tags: [handoff, program-requirements-harvest, claude-md-pass]
+tags: [handoff, my-college-action-page, cpl-pathways, implementation-funding, program-requirements-harvest]
 status: current
 ---
 
 # You are Session 443
 
-Your moniker is **SkyFlannelbush**. Session 442 (**SkyManzanita**) was started by the CPL Queue routine at 11:15Z on
-2026-10-21. If the routine started you, follow `docs/reference/scheduled_sessions.md` first.
+Your moniker is **SkyToyon**. Session 442 (**SkyManzanita**) was opened by Sam; the greeting named it S441 and was
+stale (S441 SkyIronbark had already run). Read, in order: this file, `docs/reference/lanes/my-college-action-page.md`
+(the fold), `docs/college_action_page_lessons.md` S442, `docs/program_requirements_harvest_lessons.md` S442.
 
-## What happened this run
+## Sam's decisions this run
 
-- **No `list_sessions`.** The fallback found no open PR newer than 2026-10-19 (#2257, the credential watch, draft).
-- **[Open Asks Sheet 109](https://claude.ai/artifact/FJ2UbqDiaCfc6adgrTjynE) (current) had no replies** at 11:16Z.
-  Nothing on it was applied.
-- **The harvest's tab filter dropped the Ventura district's Requirements tabs (#2309).** `SUBJECT_TOKEN` read no course
-  in a number led by a campus letter (`ANCT M01A`), so `hidden_tabs_text` dropped each tab and the capture fell back to
-  textContent, where codes run into titles. Found by two free page reads (39595155181, 39595760314 with
-  `"expand": true`). Any one letter may now lead. Guard in `tests/program_requirements_pilot_test.py`.
-- **Re-read and loaded, about $32 in extraction:** Moorpark 144 found (99 before), 100 passing (31), 83 inserted, 1
-  reread; Oxnard 120 found (94), 86 passing (25), 56 inserted; Ventura 173 found (131), 121 passing (53), 70 inserted,
-  14 reread. Receipts in `kb/receipts/`.
-- **Golden West's free re-read (39591103370) found the same 81 pages.** Its gap is department and GE pages holding
-  several awards, a reader question rather than a code fix (lessons S442).
-- **Display build 8d733f684f83** (16,729 rows): the first apply (run 39630350229) wrote 15,216 and stopped on one
-  SSL EOF at Santa Rosa 21740; the second (39641128488) wrote all 16,729, none missing, no errors. Its applied record
-  is the rollback.
+- Open Asks Sheet 109: all five as recommended (light checkpoint tier, the UI pass as a nightly queue item, the
+  auto-mark rule with one hold list in CLAUDE.md, saying when sessions are not visible, CLAUDE.md under budget). #2310.
+- The program-requirements reference is **CPL Pathways** on screen, "for now"; never ROEP, Catalog Harvest or PR.
+- Consolidate My College into CPL Pathways: "go on step 1, move funding to Implementation Funding". The combined tab's
+  name is **[Open Asks Sheet 110](https://claude.ai/artifact/5fdto32csyAMPvwWmKdjTX) card 1** (current; CPL Pathways recommended).
 
-## Priority
+## EMERGENCY checkpoint note (S442, ~17:28Z)
 
-1. **PR #2309** was merged by S442 after the display apply. Nothing on it is open.
-2. **Read Sheet 109's replies** (`ArtifactData` list, collection `replies`, url above; then `replies/done`) and apply
-   them as handoff 442 item 1 describes. No reply: the sheet waits.
-3. **The thin list** (read live 11:20Z, active COCI programs against records under 60%): Sierra 13%, Reedley 17%,
-   MiraCosta 6% (all parked for the reader), Skyline 25% (58 of 144 have a course list in the state's file: the
-   state's gap), Golden West 27% (department pages), Foothill 42%, College of the Canyons 53%. Look for a shared cause
-   first, as this run did. Free reads first; extraction under the $40 go.
-4. **The Course Progress view** (Commons lane NEXT), as handoff 440 item 2 describes.
-5. **Grok:** nothing until Sam says the key is in.
+The context meter hit its emergency line right after the full checkpoint, so this handoff is current but nothing ran after it.
+Both funding branches are now pushed (no PR yet): `claude/my-cpl-funding-moves` at 31a82b96 and
+`claude/college-reports-to-funding` at e62457d0. PR A's four-shard run finished with one failure: `tests/cpl_funding_how_to_meet_it.test.js` 5n ("on My College, a MAP
+name opens the college's own steps and its row's link") still expects the funding block on My College; re-point it to
+the funding page's block (as S442 did in `college_briefing.test.js`'s `blockOf`) before opening PR A. CPLBrain#424's `coverage` failure is the usual ordering: it passes once
+tracker #2315 merges (re-run it then). Nothing from the Rule 9 list was skipped at the checkpoint itself beyond what
+*Not refreshed* names.
 
-## Headline (read live about 15:59Z)
+## Open work, in order
 
-20,282 active programs, 12,439 complete (12,132 at 10:22Z), 114 colleges; 16,893 records in all.
+1. **#2313 (step 1, one college choice):** main merged in at cd6bfdde; merge on `test` success.
+2. **PR A, branch `claude/my-cpl-funding-moves` (31a82b96, pushed, no PR yet):** My
+   CPL Funding becomes a link to `funding-model/?college=<roster key>&view=one`. Main moved `cpl_funding.js`
+   (4141c249) after it was cut: merge main in, run the suites in four shards (`node tests/run.js --shard i/4`, about
+   40 minutes), push, open the PR, merge on `test`.
+3. **PR B, branch `claude/college-reports-to-funding` (e62457d0 on top of A, pushed, no PR yet):** the expenditure reports as
+   `reportsPanel` at the top of Implementation Funding's 2026-28 Funding view. Push after A merges; its related
+   suites passed (36 checks in `cpl_funding_reports_college_half.test.js`).
+4. **Reedley:** display build bf781cf0cd22 on `claude/harvest-reedley-s442`, display job dispatched ~17:20Z; when the
+   "Applied record" commit lands, open the PR (as #2308 did for Santa Monica) and merge on `test`.
+5. **Step 2 of the fold** after Sam's go: My College's sections render inside CPL Pathways' college view
+   (`college_briefing.js` renders into a root; keep one Sierra per page, a remembered choice a shortcut, sections
+   loaded when opened).
+6. The harvest's next colleges: Sierra, MiraCosta, Foothill and Golden West need reader work (Oxnard was the fifth;
+   the routine's run fixed it); the four with no record stay parked.
+
+## The routine's S442 run, beside this one (11:15Z to about 20:00Z)
+
+The CPL Queue routine fired at 11:15Z while Sam's SkyManzanita was working; with no `list_sessions` and no open PR
+newer than 10-19, neither saw the other. The routine's run worked the harvest (#2309):
+
+- **A number led by a campus letter now keeps its Requirements tab.** `SUBJECT_TOKEN` read no course in the Ventura
+  district's `ANCT M01A`, so `hidden_tabs_text` dropped each tab. Re-read and loaded under the $40 go (about $32):
+  Moorpark 100 passing (31 before), Oxnard 86 (25), Ventura 121 (53). Oxnard is no longer reader work.
+- **One display build from `main` with Reedley and the three colleges** went out after both runs' display jobs had
+  written their own builds over the same rows; read #2309's last "Applied record" commit before trusting a display.
+- Headline at ~16:00Z: 20,282 active programs, 12,439 complete, 114 colleges.
+- Sheet 109's replies were applied by SkyManzanita (#2310); the routine's run applied nothing from it.
+- Lessons: `docs/program_requirements_harvest_lessons.md`, the routine's S442 section.
 
 ## Lessons to honor
 
-- When a college reads near zero coverage on pages labeled exactly, open the page's tab in a page read before
-  changing the reader; the filter in front of the checks can drop the text unseen.
-- Read the thin list for a shared host or habit; one fix reached three colleges.
-- One run waits per branch, and a display apply holds the branch about an hour: extract and load every college
-  first, then build and apply once.
+- Loading another tab's module credits its tables to your tab in every derived map; hand it a request instead
+  (`docs/kb-notes/methodology-hand-another-tab-a-request.md`).
+- `CPL_TABS.onActivate` fires once; listen to `cpl-tab-activated` for returns.
+- A free capture (`extract=0`) writes `capture_preview.json`; compare it with main's `capture.json` before spending.
+- `pkill -f` with a pattern that appears in your own command kills your own shell; kill by PID from `ps`.
 
 ## Not refreshed
 
-The UI pass (Sheet 109 card 2 asks to move it out of the checkpoint; the ledger keeps `cpl-opportunity` due), the
-Pipeline tab (nothing moved), `kb/README.md`, `README.md`, no KB note, the Commons' four other run logs (untouched).
+Pipeline tab (the M-ID pipeline did not move), `kb/README.md` (no KB structure change), `README.md` (the tab
+descriptions still hold at the level it describes), the Commons' four other run logs (untouched).
 
 ## Let go
 
-S442 holds no PR subscription, no check-in and no artifact watch. PR #2309 merged; vault PR 422 merged. The routine's next firing is 05:12Z on 2026-10-22.
+S442 dropped its subscriptions on #2313, #2315 and CPLBrain#424 and its watch on Sheet 110; no check-in is pending. Subscribe to whatever you merge. The routine's next firing is 05:12Z on 2026-10-22.

@@ -14086,220 +14086,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 30.0
     },
     {
-      "exhibit_id": "MAPICI-FI1C1-1-001",
-      "exhibit_ids": [
-        "MAPICI-FI1C1-1-001"
-      ],
-      "title": "Fire Inspector I",
-      "unified_title": "Fire Inspector I",
-      "is_classified": true,
-      "issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Fire Inspector 1 Certification (IFSAC/ProBoard)"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Family and Consumer Sciences",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "106",
-        "130",
-        "132"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "Cabrillo College",
-        "Santa Ana College"
-      ],
-      "potential": 107,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 109,
-      "credit_recs": [
-        {
-          "course": "FTC 104",
-          "credit": "3 hours in Fire Prevention"
-        },
-        {
-          "course": "FTC 106",
-          "credit": "3 hours in Fire Protection Systems"
-        },
-        {
-          "course": "FT 2",
-          "credit": "3 hours in Fire Prevention"
-        },
-        {
-          "course": "FT 3",
-          "credit": "3 hours in Fire Protection Systems"
-        },
-        {
-          "course": "FOT 130A",
-          "credit": "1 hour in Fire Inspector 1A: Duties and Administration"
-        },
-        {
-          "course": "FOT 130B",
-          "credit": "1 hour in Fire Inspector 1B: Introduction to Fire and Life Safety"
-        },
-        {
-          "course": "FOT 130C",
-          "credit": "1 hour in Fire Inspector 1C: Field Inspection"
-        },
-        {
-          "course": "EAR 26",
-          "credit": "3 hours in Fire Protection Systems"
-        },
-        {
-          "course": "LOCAL GE E",
-          "credit": "3 hours in Fire Prevention"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-FI1C1-1-001",
-          "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
-          "units": 21.0,
-          "lines": 9
-        }
-      ],
-      "adopter_units": {
-        "Cabrillo College": 6.0,
-        "Santa Ana College": 9.0
-      },
-      "adopter_lines": {
-        "Cabrillo College": 2,
-        "Santa Ana College": 5
-      },
-      "adopter_rec_idx": {
-        "Cabrillo College": [
-          2,
-          3
-        ],
-        "Santa Ana College": [
-          0,
-          1,
-          4,
-          5,
-          6
-        ]
-      },
-      "peer_units_median": 7.5,
-      "peer_units_max": 9.0,
-      "rec_units_total": 21.0
-    },
-    {
       "exhibit_id": "MAPCXS-M1FB-1-001",
       "exhibit_ids": [
         "MAPCXS-M1FB-1-001"
@@ -19162,6 +18948,251 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 4.0,
       "peer_units_max": 5.0,
       "rec_units_total": 12.5
+    },
+    {
+      "exhibit_id": "MAPICI-FI12-1-001|MAPICI-FI1C1-1-001",
+      "exhibit_ids": [
+        "MAPICI-FI12-1-001",
+        "MAPICI-FI1C1-1-001"
+      ],
+      "title": "Fire Inspector I",
+      "unified_title": "Fire Inspector I",
+      "is_classified": true,
+      "issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Inspector 1 Certificate",
+        "Fire Inspector 1 Certification (IFSAC/ProBoard)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Family and Consumer Sciences",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "106",
+        "130",
+        "132"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 3,
+      "adopter_names": [
+        "Cabrillo College",
+        "Glendale Community College",
+        "Santa Ana College"
+      ],
+      "potential": 106,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 109,
+      "credit_recs": [
+        {
+          "course": "FTC 104",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FTC 106",
+          "credit": "3 hours in Fire Protection Systems"
+        },
+        {
+          "course": "FT 2",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FT 3",
+          "credit": "3 hours in Fire Protection Systems"
+        },
+        {
+          "course": "FOT 130A",
+          "credit": "1 hour in Fire Inspector 1A: Duties and Administration"
+        },
+        {
+          "course": "FOT 130B",
+          "credit": "1 hour in Fire Inspector 1B: Introduction to Fire and Life Safety"
+        },
+        {
+          "course": "FOT 130C",
+          "credit": "1 hour in Fire Inspector 1C: Field Inspection"
+        },
+        {
+          "course": "EAR 26",
+          "credit": "3 hours in Fire Protection Systems"
+        },
+        {
+          "course": "LOCAL GE E",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FIRE 103",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FIRE 105",
+          "credit": "3 hours in Fire Protection Systems"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Fire Prevention",
+          "cid": "FIRE 110 X"
+        },
+        {
+          "credit": "3 hours in Fire Protection Systems",
+          "cid": "FIRE 120 X"
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-FI12-1-001",
+          "title": "Fire Inspector 1 Certificate",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-FI1C1-1-001",
+          "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
+          "units": 21.0,
+          "lines": 9
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 6.0,
+        "Glendale Community College": 6.0,
+        "Santa Ana College": 9.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 2,
+        "Glendale Community College": 2,
+        "Santa Ana College": 5
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          2,
+          3
+        ],
+        "Glendale Community College": [
+          9,
+          10
+        ],
+        "Santa Ana College": [
+          0,
+          1,
+          4,
+          5,
+          6
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 9.0,
+      "rec_units_total": 27.0
     },
     {
       "exhibit_id": "MAPMM-C1IC-1-001",
@@ -52922,6 +52953,489 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPCXS-A2PA-1-001",
+      "exhibit_ids": [
+        "MAPCXS-A2PA-1-001"
+      ],
+      "title": "ADJUS 23 Principles and Procedures of the Justice System",
+      "unified_title": "ADJUS 23 Principles and Procedures of the Justice System",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ADJUS 23 Principles and Procedures of the Justice System"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "128"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merritt College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 100,
+      "credit_recs": [
+        {
+          "course": "ADJUS 023",
+          "credit": "3 hours in Principles and Procedures of the Justice System"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-A2PA-1-001",
+          "title": "ADJUS 23 Principles and Procedures of the Justice System",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Merritt College": 3.0
+      },
+      "adopter_lines": {
+        "Merritt College": 1
+      },
+      "adopter_rec_idx": {
+        "Merritt College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCXS-A2CR-1-001",
+      "exhibit_ids": [
+        "MAPCXS-A2CR-1-001"
+      ],
+      "title": "ADJUS 25 Community Relations",
+      "unified_title": "ADJUS 25 Community Relations",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ADJUS 25 Community Relations"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "128"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merritt College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 100,
+      "credit_recs": [
+        {
+          "course": "ADJUS 025",
+          "credit": "3 hours in Community Relations"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-A2CR-1-001",
+          "title": "ADJUS 25 Community Relations",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Merritt College": 3.0
+      },
+      "adopter_lines": {
+        "Merritt College": 1
+      },
+      "adopter_rec_idx": {
+        "Merritt College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCXS-A5RW-1-001",
+      "exhibit_ids": [
+        "MAPCXS-A5RW-1-001"
+      ],
+      "title": "Report Writing for Public Safety Personnel",
+      "unified_title": "Report Writing for Public Safety Personnel",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ADJUS 57 Report Writing for Public Safety Personnel"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "128"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merritt College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 100,
+      "credit_recs": [
+        {
+          "course": "ADJUS 057",
+          "credit": "3 hours in Report Writing for Public Safety Personnel"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-A5RW-1-001",
+          "title": "ADJUS 57 Report Writing for Public Safety Personnel",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Merritt College": 3.0
+      },
+      "adopter_lines": {
+        "Merritt College": 1
+      },
+      "adopter_rec_idx": {
+        "Merritt College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPICA-CFJC-1-001|MAPICI-CFJA-1-001",
       "exhibit_ids": [
         "MAPICA-CFJC-1-001",
@@ -53612,202 +54126,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 6.0,
       "peer_units_max": 21.0,
       "rec_units_total": 33.0
-    },
-    {
-      "exhibit_id": "MAPCXS-AJ1C-1-001|MAPCXS-CBE-5-1-001|MAPCxS-ITAO1-1-001",
-      "exhibit_ids": [
-        "MAPCXS-AJ1C-1-001",
-        "MAPCXS-CBE-5-1-001",
-        "MAPCxS-ITAO1-1-001"
-      ],
-      "title": "Introduction to Administration of Justice",
-      "unified_title": "Introduction to Administration of Justice",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Admin Just 1 CBE",
-        "Discipline Exam - ADM JUS 001",
-        "Introduction to Administration of Justice ADJ 1 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "128"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 3,
-      "adopter_names": [
-        "East Los Angeles College",
-        "Los Angeles Mission College",
-        "Norco College"
-      ],
-      "potential": 98,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "ADM JUS 001",
-          "credit": "3 hours in INTRODUCTION TO ADMINISTRATION OF JUSTICE"
-        },
-        {
-          "course": "ADJ 1",
-          "credit": "3 hours in Introduction to the Administration of Justice"
-        },
-        {
-          "course": "ADM JUS 001",
-          "credit": "3 hours in Introduction To Administration Of Justice"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXS-AJ1C-1-001",
-          "title": "Admin Just 1 CBE",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXS-CBE-5-1-001",
-          "title": "Discipline Exam - ADM JUS 001",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCxS-ITAO1-1-001",
-          "title": "Introduction to Administration of Justice ADJ 1 Cx",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "East Los Angeles College": 3.0,
-        "Los Angeles Mission College": 3.0,
-        "Norco College": 3.0
-      },
-      "adopter_lines": {
-        "East Los Angeles College": 1,
-        "Los Angeles Mission College": 1,
-        "Norco College": 1
-      },
-      "adopter_rec_idx": {
-        "East Los Angeles College": [
-          0
-        ],
-        "Los Angeles Mission College": [
-          2
-        ],
-        "Norco College": [
-          1
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 9.0
     },
     {
       "exhibit_id": "MAPICI-A1CL-1-001|MAPICI-A2OC-1-001|MAPICI-CCL-1-001",
@@ -56654,26 +56972,26 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 33.0
     },
     {
-      "exhibit_id": "MAPCXS-A2OC-1-001|MAPCXS-AJ2C-1-001|MAPCXS-COCL-1-001|MAPCXS-DE-A-1-001",
+      "exhibit_id": "MAPCXS-AJ1C-1-001|MAPCXS-CBE-5-1-001|MAPCXS-CBEF6-1-001|MAPCxS-ITAO1-1-001",
       "exhibit_ids": [
-        "MAPCXS-A2OC-1-001",
-        "MAPCXS-AJ2C-1-001",
-        "MAPCXS-COCL-1-001",
-        "MAPCXS-DE-A-1-001"
+        "MAPCXS-AJ1C-1-001",
+        "MAPCXS-CBE-5-1-001",
+        "MAPCXS-CBEF6-1-001",
+        "MAPCxS-ITAO1-1-001"
       ],
-      "title": "Concepts of Criminal Law",
-      "unified_title": "Concepts of Criminal Law",
+      "title": "Introduction to Administration of Justice",
+      "unified_title": "Introduction to Administration of Justice",
       "is_classified": true,
-      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.65,
+      "confidence_title": 1.0,
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "ADJU 203\tConcepts of Criminal Law - Credit by Exam",
-        "Admin Just 2 CBE",
-        "Concepts of Criminal Law",
-        "Discipline Exam - ADM JUS 002"
+        "Admin Just 1 CBE",
+        "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
+        "Discipline Exam - ADM JUS 001",
+        "Introduction to Administration of Justice ADJ 1 Cx"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
@@ -56685,10 +57003,10 @@ window.CPL_STATEWIDE = {
       "collaborative_type": "Local",
       "adopters": 4,
       "adopter_names": [
-        "Chaffey College",
         "East Los Angeles College",
         "Los Angeles Mission College",
-        "Modesto Junior College"
+        "Merritt College",
+        "Norco College"
       ],
       "potential": 97,
       "potential_names": [
@@ -56702,6 +57020,7 @@ window.CPL_STATEWIDE = {
         "Cerritos College",
         "Cerro Coso Community College",
         "Chabot College",
+        "Chaffey College",
         "Citrus College",
         "City College of San Francisco",
         "Clovis Community College",
@@ -56749,16 +57068,15 @@ window.CPL_STATEWIDE = {
         "Madera College",
         "Mendocino College",
         "Merced College",
-        "Merritt College",
         "MiraCosta College",
         "Mission College",
+        "Modesto Junior College",
         "Monterey Peninsula College",
         "Moorpark College",
         "Moreno Valley College",
         "Mt. San Antonio College",
         "Mt. San Jacinto College",
         "Napa Valley College",
-        "Norco College",
         "Ohlone College",
         "Palo Verde College",
         "Palomar College",
@@ -56793,72 +57111,72 @@ window.CPL_STATEWIDE = {
       "total_addressable": 101,
       "credit_recs": [
         {
-          "course": "ADM JUS 002",
-          "credit": "3 hours in CONCEPTS OF CRIMINAL LAW"
+          "course": "ADM JUS 001",
+          "credit": "3 hours in INTRODUCTION TO ADMINISTRATION OF JUSTICE"
         },
         {
-          "course": "ADJU 203",
-          "credit": "3 hours in Concepts of Criminal Law"
+          "course": "ADJ 1",
+          "credit": "3 hours in Introduction to the Administration of Justice"
         },
         {
-          "course": "CJ 2",
-          "credit": "3 hours in Concepts of Criminal Law"
+          "course": "ADM JUS 001",
+          "credit": "3 hours in Introduction To Administration Of Justice"
         },
         {
-          "course": "ADM JUS 002",
-          "credit": "3 hours in Concepts Of Criminal Law"
+          "course": "ADJUS 021",
+          "credit": "3 hours in Introduction to Administration of Justice"
         }
       ],
       "authoritative_recs": [],
       "exhibit_records": [
         {
-          "id": "MAPCXS-A2OC-1-001",
-          "title": "ADJU 203\tConcepts of Criminal Law - Credit by Exam",
+          "id": "MAPCXS-AJ1C-1-001",
+          "title": "Admin Just 1 CBE",
           "units": 3.0,
           "lines": 1
         },
         {
-          "id": "MAPCXS-AJ2C-1-001",
-          "title": "Admin Just 2 CBE",
+          "id": "MAPCXS-CBE-5-1-001",
+          "title": "Discipline Exam - ADM JUS 001",
           "units": 3.0,
           "lines": 1
         },
         {
-          "id": "MAPCXS-COCL-1-001",
-          "title": "Concepts of Criminal Law",
+          "id": "MAPCXS-CBEF6-1-001",
+          "title": "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
           "units": 3.0,
           "lines": 1
         },
         {
-          "id": "MAPCXS-DE-A-1-001",
-          "title": "Discipline Exam - ADM JUS 002",
+          "id": "MAPCxS-ITAO1-1-001",
+          "title": "Introduction to Administration of Justice ADJ 1 Cx",
           "units": 3.0,
           "lines": 1
         }
       ],
       "adopter_units": {
-        "Chaffey College": 3.0,
         "East Los Angeles College": 3.0,
         "Los Angeles Mission College": 3.0,
-        "Modesto Junior College": 3.0
+        "Merritt College": 3.0,
+        "Norco College": 3.0
       },
       "adopter_lines": {
-        "Chaffey College": 1,
         "East Los Angeles College": 1,
         "Los Angeles Mission College": 1,
-        "Modesto Junior College": 1
+        "Merritt College": 1,
+        "Norco College": 1
       },
       "adopter_rec_idx": {
-        "Chaffey College": [
-          2
-        ],
         "East Los Angeles College": [
           0
         ],
         "Los Angeles Mission College": [
+          2
+        ],
+        "Merritt College": [
           3
         ],
-        "Modesto Junior College": [
+        "Norco College": [
           1
         ]
       },
@@ -60231,6 +60549,236 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 1.5,
       "peer_units_max": 3.0,
       "rec_units_total": 11.5
+    },
+    {
+      "exhibit_id": "MAPCXS-A2OC-1-001|MAPCXS-AJ2C-1-001|MAPCXS-CBEF7-1-001|MAPCXS-COCL-1-001|MAPCXS-DE-A-1-001",
+      "exhibit_ids": [
+        "MAPCXS-A2OC-1-001",
+        "MAPCXS-AJ2C-1-001",
+        "MAPCXS-CBEF7-1-001",
+        "MAPCXS-COCL-1-001",
+        "MAPCXS-DE-A-1-001"
+      ],
+      "title": "Concepts of Criminal Law",
+      "unified_title": "Concepts of Criminal Law",
+      "is_classified": true,
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ADJU 203\tConcepts of Criminal Law - Credit by Exam",
+        "Admin Just 2 CBE",
+        "Concepts of Criminal Law",
+        "Credit by Exam for ADJUS 22 Concepts of Criminal Law",
+        "Discipline Exam - ADM JUS 002"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "128"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 5,
+      "adopter_names": [
+        "Chaffey College",
+        "East Los Angeles College",
+        "Los Angeles Mission College",
+        "Merritt College",
+        "Modesto Junior College"
+      ],
+      "potential": 96,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 101,
+      "credit_recs": [
+        {
+          "course": "ADM JUS 002",
+          "credit": "3 hours in CONCEPTS OF CRIMINAL LAW"
+        },
+        {
+          "course": "ADJU 203",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "CJ 2",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "ADM JUS 002",
+          "credit": "3 hours in Concepts Of Criminal Law"
+        },
+        {
+          "course": "ADJUS 022",
+          "credit": "3 hours in CONCEPTS OF CRIMINAL LAW"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-A2OC-1-001",
+          "title": "ADJU 203\tConcepts of Criminal Law - Credit by Exam",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-AJ2C-1-001",
+          "title": "Admin Just 2 CBE",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-CBEF7-1-001",
+          "title": "Credit by Exam for ADJUS 22 Concepts of Criminal Law",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-COCL-1-001",
+          "title": "Concepts of Criminal Law",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-DE-A-1-001",
+          "title": "Discipline Exam - ADM JUS 002",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Chaffey College": 3.0,
+        "East Los Angeles College": 3.0,
+        "Los Angeles Mission College": 3.0,
+        "Merritt College": 3.0,
+        "Modesto Junior College": 3.0
+      },
+      "adopter_lines": {
+        "Chaffey College": 1,
+        "East Los Angeles College": 1,
+        "Los Angeles Mission College": 1,
+        "Merritt College": 1,
+        "Modesto Junior College": 1
+      },
+      "adopter_rec_idx": {
+        "Chaffey College": [
+          2
+        ],
+        "East Los Angeles College": [
+          0
+        ],
+        "Los Angeles Mission College": [
+          3
+        ],
+        "Merritt College": [
+          4
+        ],
+        "Modesto Junior College": [
+          1
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 15.0
     },
     {
       "exhibit_id": "MAPCXS-C2IS-1-001",
@@ -64091,6 +64639,515 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 97.0
     },
     {
+      "exhibit_id": "MAPMM-BMT-1-001|MAPMM-BMT1-1-001|MAPMM-BMT2-1-001|MAPMM-CFBM-1-001|MAPMM-MBT-1-001",
+      "exhibit_ids": [
+        "MAPMM-BMT-1-001",
+        "MAPMM-BMT1-1-001",
+        "MAPMM-BMT2-1-001",
+        "MAPMM-CFBM-1-001",
+        "MAPMM-MBT-1-001"
+      ],
+      "title": "Basic Military Training",
+      "unified_title": "Basic Military Training",
+      "is_classified": true,
+      "issuing_agency": "American Council on Education (ACE)",
+      "training_agency": "U.S. Armed Forces",
+      "confidence_title": 0.92,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Basic Military Training",
+        "Credit for Basic Military Service",
+        "Credit for Basic Military Service - HLTH 101 + PE 101 + (PE 102 or PE 215)",
+        "Military Basic Training"
+      ],
+      "cpl_type": "Military",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "31",
+      "top_codes": [
+        "0",
+        "105",
+        "263",
+        "277",
+        "350",
+        "40",
+        "89"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 20,
+      "adopter_names": [
+        "Bakersfield College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "City College of San Francisco",
+        "Copper Mountain College",
+        "De Anza College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Madera College",
+        "Merritt College",
+        "Mission College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "West Los Angeles College"
+      ],
+      "potential": 94,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fullerton College",
+        "Gavilan College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 114,
+      "credit_recs": [
+        {
+          "course": "KIN 104",
+          "credit": "3 hours in Fitness and Wellness"
+        },
+        {
+          "course": "PEX 122",
+          "credit": "1.5 hours in Cross Training and Functional Exercises"
+        },
+        {
+          "course": "PEX 124",
+          "credit": "1 hour in Personal Fitness Program"
+        },
+        {
+          "course": "PEX 126",
+          "credit": "1.5 hours in Physical Fitness Training"
+        },
+        {
+          "course": "HED 100",
+          "credit": "3 hours in Contemporary Health Problems"
+        },
+        {
+          "course": "KIN M01",
+          "credit": "1 hour in Personal Fitness Program"
+        },
+        {
+          "course": "HES 1",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "KIN A81A",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KIN A81B",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "OSRM B4",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "HEALTH 101",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KIN 231",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "KINF 138A",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "EXSC 140A",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "EXSC 140B",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KINS B21FF",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "KINS B21WJ",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "EMT 13",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "PE 205A",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "PE 211A",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "PE 6",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "PE 8",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KINS C105",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KINS C106",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "PE 16",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "PE 6",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KIN 054C",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "KIN 039A",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "KIN 055B",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KIN 079",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "HSCI C101",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "KIN 054A",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "LACCD GE 7",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "HS 001",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "PE 096",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "HLTH 101",
+          "credit": "1 hour in FIRST AID"
+        },
+        {
+          "course": "PE 101",
+          "credit": "1 hour in FITNESS LAB I"
+        },
+        {
+          "course": "PE 102",
+          "credit": "1 hour in FITNESS LAB II"
+        },
+        {
+          "course": "PE 215",
+          "credit": "1 hour in Self Defense for Women I"
+        },
+        {
+          "course": "Local GE 7",
+          "credit": "4 hours in Lifelong Learning"
+        },
+        {
+          "course": "KNES 053.",
+          "credit": "5 hours in Health and Fitness"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Principles of Health Education",
+          "cid": "HIST 150"
+        },
+        {
+          "credit": "1 hour in Weight Training I",
+          "cid": ""
+        },
+        {
+          "credit": "1 hour in Advanced Strength Training",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPMM-BMT-1-001",
+          "title": "Basic Military Training",
+          "units": 11.0,
+          "lines": 6
+        },
+        {
+          "id": "MAPMM-BMT1-1-001",
+          "title": "Credit for Basic Military Service",
+          "units": 47.0,
+          "lines": 29
+        },
+        {
+          "id": "MAPMM-BMT2-1-001",
+          "title": "Basic Military Training",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPMM-CFBM-1-001",
+          "title": "Credit for Basic Military Service - HLTH 101 + PE 101 + (PE 102 or PE 215)",
+          "units": 4.0,
+          "lines": 4
+        },
+        {
+          "id": "MAPMM-MBT-1-001",
+          "title": "Military Basic Training",
+          "units": 5.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 5.0,
+        "Cerritos College": 10.0,
+        "Cerro Coso Community College": 5.0,
+        "City College of San Francisco": 5.0,
+        "Copper Mountain College": 4.0,
+        "De Anza College": 5.0,
+        "Foothill College": 4.0,
+        "Fresno City College": 2.0,
+        "Glendale Community College": 4.0,
+        "Madera College": 2.0,
+        "Merritt College": 4.0,
+        "Mission College": 5.0,
+        "Moorpark College": 1.0,
+        "Moreno Valley College": 5.0,
+        "Norco College": 5.0,
+        "Riverside City College": 5.0,
+        "San Bernardino Valley College": 5.0,
+        "San Diego Mesa College": 2.0,
+        "San Diego Miramar College": 2.0,
+        "West Los Angeles College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 3,
+        "Cerritos College": 5,
+        "Cerro Coso Community College": 3,
+        "City College of San Francisco": 3,
+        "Copper Mountain College": 2,
+        "De Anza College": 1,
+        "Foothill College": 1,
+        "Fresno City College": 2,
+        "Glendale Community College": 4,
+        "Madera College": 2,
+        "Merritt College": 2,
+        "Mission College": 3,
+        "Moorpark College": 1,
+        "Moreno Valley College": 3,
+        "Norco College": 3,
+        "Riverside City College": 3,
+        "San Bernardino Valley College": 3,
+        "San Diego Mesa College": 2,
+        "San Diego Miramar College": 2,
+        "West Los Angeles College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          9,
+          15,
+          16
+        ],
+        "Cerritos College": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "Cerro Coso Community College": [
+          22,
+          23,
+          30
+        ],
+        "City College of San Francisco": [
+          17,
+          18,
+          19
+        ],
+        "Copper Mountain College": [
+          33,
+          34
+        ],
+        "De Anza College": [
+          40
+        ],
+        "Foothill College": [
+          39
+        ],
+        "Fresno City College": [
+          20,
+          21
+        ],
+        "Glendale Community College": [
+          35,
+          36,
+          37,
+          38
+        ],
+        "Madera College": [
+          24,
+          25
+        ],
+        "Merritt College": [
+          26,
+          31
+        ],
+        "Mission College": [
+          27,
+          28,
+          29
+        ],
+        "Moorpark College": [
+          5
+        ],
+        "Moreno Valley College": [
+          6,
+          7,
+          8
+        ],
+        "Norco College": [
+          6,
+          7,
+          8
+        ],
+        "Riverside City College": [
+          6,
+          7,
+          8
+        ],
+        "San Bernardino Valley College": [
+          10,
+          11,
+          12
+        ],
+        "San Diego Mesa College": [
+          13,
+          14
+        ],
+        "San Diego Miramar College": [
+          13,
+          14
+        ],
+        "West Los Angeles College": [
+          32
+        ]
+      },
+      "peer_units_median": 4.5,
+      "peer_units_max": 10.0,
+      "rec_units_total": 71.0
+    },
+    {
       "exhibit_id": "MAPSAS-C:T-1-001|MAPSAS-CT(F-1-001|MAPSAS-CT(I-1-001|MAPSAS-CT(T-1-001|MAPSAS-CT(T1-1-001|MAPSAS-CT1-1-001|MAPSAS-CT10-1-001|MAPSAS-CT11-1-001|MAPSAS-CT12-1-001|MAPSAS-CT13-1-001|MAPSAS-CT2-1-001|MAPSAS-CT3-1-001|MAPSAS-CT4-1-001|MAPSAS-CT5-1-001|MAPSAS-CT6-1-001|MAPSAS-CT7-1-001|MAPSAS-CT8-1-001|MAPSAS-CT9-1-001",
       "exhibit_ids": [
         "MAPSAS-C:T-1-001",
@@ -64530,500 +65587,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 42.0
-    },
-    {
-      "exhibit_id": "MAPMM-BMT-1-001|MAPMM-BMT1-1-001|MAPMM-BMT2-1-001|MAPMM-CFBM-1-001|MAPMM-MBT-1-001",
-      "exhibit_ids": [
-        "MAPMM-BMT-1-001",
-        "MAPMM-BMT1-1-001",
-        "MAPMM-BMT2-1-001",
-        "MAPMM-CFBM-1-001",
-        "MAPMM-MBT-1-001"
-      ],
-      "title": "Basic Military Training",
-      "unified_title": "Basic Military Training",
-      "is_classified": true,
-      "issuing_agency": "American Council on Education (ACE)",
-      "training_agency": "U.S. Armed Forces",
-      "confidence_title": 0.92,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Basic Military Training",
-        "Credit for Basic Military Service",
-        "Credit for Basic Military Service - HLTH 101 + PE 101 + (PE 102 or PE 215)",
-        "Military Basic Training"
-      ],
-      "cpl_type": "Military",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "31",
-      "top_codes": [
-        "0",
-        "105",
-        "263",
-        "277",
-        "350",
-        "40",
-        "89"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 19,
-      "adopter_names": [
-        "Bakersfield College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "City College of San Francisco",
-        "Copper Mountain College",
-        "De Anza College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Madera College",
-        "Mission College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Norco College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "West Los Angeles College"
-      ],
-      "potential": 94,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fullerton College",
-        "Gavilan College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 113,
-      "credit_recs": [
-        {
-          "course": "KIN 104",
-          "credit": "3 hours in Fitness and Wellness"
-        },
-        {
-          "course": "PEX 122",
-          "credit": "1.5 hours in Cross Training and Functional Exercises"
-        },
-        {
-          "course": "PEX 124",
-          "credit": "1 hour in Personal Fitness Program"
-        },
-        {
-          "course": "PEX 126",
-          "credit": "1.5 hours in Physical Fitness Training"
-        },
-        {
-          "course": "HED 100",
-          "credit": "3 hours in Contemporary Health Problems"
-        },
-        {
-          "course": "KIN M01",
-          "credit": "1 hour in Personal Fitness Program"
-        },
-        {
-          "course": "HES 1",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "KIN A81A",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KIN A81B",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "OSRM B4",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "HEALTH 101",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KIN 231",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "KINF 138A",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "EXSC 140A",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "EXSC 140B",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KINS B21FF",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "KINS B21WJ",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "EMT 13",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "PE 205A",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "PE 211A",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "PE 6",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "PE 8",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KINS C105",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KINS C106",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "PE 16",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "PE 6",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KIN 039A",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "KIN 055B",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KIN 079",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "HSCI C101",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "LACCD GE 7",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "HS 001",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "PE 096",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "HLTH 101",
-          "credit": "1 hour in FIRST AID"
-        },
-        {
-          "course": "PE 101",
-          "credit": "1 hour in FITNESS LAB I"
-        },
-        {
-          "course": "PE 102",
-          "credit": "1 hour in FITNESS LAB II"
-        },
-        {
-          "course": "PE 215",
-          "credit": "1 hour in Self Defense for Women I"
-        },
-        {
-          "course": "Local GE 7",
-          "credit": "4 hours in Lifelong Learning"
-        },
-        {
-          "course": "KNES 053.",
-          "credit": "5 hours in Health and Fitness"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Principles of Health Education",
-          "cid": "HIST 150"
-        },
-        {
-          "credit": "1 hour in Weight Training I",
-          "cid": ""
-        },
-        {
-          "credit": "1 hour in Advanced Strength Training",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPMM-BMT-1-001",
-          "title": "Basic Military Training",
-          "units": 11.0,
-          "lines": 6
-        },
-        {
-          "id": "MAPMM-BMT1-1-001",
-          "title": "Credit for Basic Military Service",
-          "units": 43.0,
-          "lines": 27
-        },
-        {
-          "id": "MAPMM-BMT2-1-001",
-          "title": "Basic Military Training",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPMM-CFBM-1-001",
-          "title": "Credit for Basic Military Service - HLTH 101 + PE 101 + (PE 102 or PE 215)",
-          "units": 4.0,
-          "lines": 4
-        },
-        {
-          "id": "MAPMM-MBT-1-001",
-          "title": "Military Basic Training",
-          "units": 5.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 5.0,
-        "Cerritos College": 10.0,
-        "Cerro Coso Community College": 5.0,
-        "City College of San Francisco": 5.0,
-        "Copper Mountain College": 4.0,
-        "De Anza College": 5.0,
-        "Foothill College": 4.0,
-        "Fresno City College": 2.0,
-        "Glendale Community College": 4.0,
-        "Madera College": 2.0,
-        "Mission College": 5.0,
-        "Moorpark College": 1.0,
-        "Moreno Valley College": 5.0,
-        "Norco College": 5.0,
-        "Riverside City College": 5.0,
-        "San Bernardino Valley College": 5.0,
-        "San Diego Mesa College": 2.0,
-        "San Diego Miramar College": 2.0,
-        "West Los Angeles College": 3.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 3,
-        "Cerritos College": 5,
-        "Cerro Coso Community College": 3,
-        "City College of San Francisco": 3,
-        "Copper Mountain College": 2,
-        "De Anza College": 1,
-        "Foothill College": 1,
-        "Fresno City College": 2,
-        "Glendale Community College": 4,
-        "Madera College": 2,
-        "Mission College": 3,
-        "Moorpark College": 1,
-        "Moreno Valley College": 3,
-        "Norco College": 3,
-        "Riverside City College": 3,
-        "San Bernardino Valley College": 3,
-        "San Diego Mesa College": 2,
-        "San Diego Miramar College": 2,
-        "West Los Angeles College": 1
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          9,
-          15,
-          16
-        ],
-        "Cerritos College": [
-          0,
-          1,
-          2,
-          3,
-          4
-        ],
-        "Cerro Coso Community College": [
-          22,
-          23,
-          29
-        ],
-        "City College of San Francisco": [
-          17,
-          18,
-          19
-        ],
-        "Copper Mountain College": [
-          31,
-          32
-        ],
-        "De Anza College": [
-          38
-        ],
-        "Foothill College": [
-          37
-        ],
-        "Fresno City College": [
-          20,
-          21
-        ],
-        "Glendale Community College": [
-          33,
-          34,
-          35,
-          36
-        ],
-        "Madera College": [
-          24,
-          25
-        ],
-        "Mission College": [
-          26,
-          27,
-          28
-        ],
-        "Moorpark College": [
-          5
-        ],
-        "Moreno Valley College": [
-          6,
-          7,
-          8
-        ],
-        "Norco College": [
-          6,
-          7,
-          8
-        ],
-        "Riverside City College": [
-          6,
-          7,
-          8
-        ],
-        "San Bernardino Valley College": [
-          10,
-          11,
-          12
-        ],
-        "San Diego Mesa College": [
-          13,
-          14
-        ],
-        "San Diego Miramar College": [
-          13,
-          14
-        ],
-        "West Los Angeles College": [
-          30
-        ]
-      },
-      "peer_units_median": 5.0,
-      "peer_units_max": 10.0,
-      "rec_units_total": 67.0
     },
     {
       "exhibit_id": "MAPCBEN-MT-1-001|MAPCXH-HAWH-1-001|MAPCXS-AMT-1-001|MAPCXS-H1MT-1-001|MAPCxS-MTH0-1-001",
@@ -172881,12 +173444,13 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 198.0
     },
     {
-      "exhibit_id": "MAPICA-F1C-1-001|MAPICG-FF1C-1-001|MAPICI-F1A-1-001|MAPICI-F1C2-1-001|MAPICI-F1OF-1-001|MAPICI-FC1A-1-001|MAPICI-FF1(-1-001|MAPICI-FF1C-1-001|MAPICI-FFI2-1-001|MAPICI-FPO1-1-001",
+      "exhibit_id": "MAPICA-F1C-1-001|MAPICG-FF1C-1-001|MAPICI-F1A-1-001|MAPICI-F1C2-1-001|MAPICI-F1C3-1-001|MAPICI-F1OF-1-001|MAPICI-FC1A-1-001|MAPICI-FF1(-1-001|MAPICI-FF1C-1-001|MAPICI-FFI2-1-001|MAPICI-FPO1-1-001",
       "exhibit_ids": [
         "MAPICA-F1C-1-001",
         "MAPICG-FF1C-1-001",
         "MAPICI-F1A-1-001",
         "MAPICI-F1C2-1-001",
+        "MAPICI-F1C3-1-001",
         "MAPICI-F1OF-1-001",
         "MAPICI-FC1A-1-001",
         "MAPICI-FF1(-1-001",
@@ -172908,6 +173472,7 @@ window.CPL_STATEWIDE = {
         "Fire Fighter I",
         "Fire Protection Organization 1 or 1A Certification",
         "Firefighter 1 Academy",
+        "Firefighter 1 Certificate",
         "Firefighter 1 Certification",
         "Firefighter 1 or Firefighter 1A Certification",
         "Firefighter Certificate 1 A"
@@ -173204,18 +173769,6 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Building Construction for Fire Protection"
         },
         {
-          "course": "FIRE 101",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FIRE 102",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIRE 104",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
           "course": "FAC 060B",
           "credit": "1 hour in Firefighter 1B - Hazardous Materials / WMD"
         },
@@ -173246,12 +173799,36 @@ window.CPL_STATEWIDE = {
         {
           "course": "F SC 111",
           "credit": "13 hours in Firefighter One Academy"
+        },
+        {
+          "course": "FIRE 101",
+          "credit": "3 hours in Principles of Fire Emergency Services"
+        },
+        {
+          "course": "FIRE 102",
+          "credit": "3 hours in Fire Behavior & Combustion"
+        },
+        {
+          "course": "FIRE 104",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIRE 105",
+          "credit": "3 hours in Fire Protection Systems"
+        },
+        {
+          "course": "FIRE 106",
+          "credit": "3 hours in Principles of Fire and Emergency Services Safety and Survival"
+        },
+        {
+          "course": "FIRE 144",
+          "credit": "1.5 hours in Physical Standards for the Firefighter"
         }
       ],
       "authoritative_recs": [
         {
           "credit": "3 hours in Fire Behavior and Combustion",
-          "cid": "FIRE 140 X"
+          "cid": ""
         },
         {
           "credit": "3 hours in Building Construction for Fire Protection",
@@ -173272,14 +173849,34 @@ window.CPL_STATEWIDE = {
         {
           "credit": "3 hours in CSU-GE Area E or Native GE Area Equivalent",
           "cid": ""
+        },
+        {
+          "credit": "3 hours in Principles of Fire Emergency Services",
+          "cid": "FIRE 100 X"
+        },
+        {
+          "credit": "3 hours in Fire Behavior & Combustion",
+          "cid": "FIRE 140 X"
+        },
+        {
+          "credit": "3 hours in Fire Protection Systems",
+          "cid": "FIRE 120 X"
+        },
+        {
+          "credit": "3 hours in Principles of Fire and Emergency Services Safety and Survival",
+          "cid": "FIRE 150 X"
+        },
+        {
+          "credit": "1.5 hours in Physical Standards for the Firefighter",
+          "cid": ""
         }
       ],
       "exhibit_records": [
         {
           "id": "MAPICA-F1C-1-001",
           "title": "Firefighter 1 Certification",
-          "units": 135.0,
-          "lines": 45
+          "units": 126.0,
+          "lines": 42
         },
         {
           "id": "MAPICG-FF1C-1-001",
@@ -173298,6 +173895,12 @@ window.CPL_STATEWIDE = {
           "title": "Firefighter 1 Certification",
           "units": 13.0,
           "lines": 1
+        },
+        {
+          "id": "MAPICI-F1C3-1-001",
+          "title": "Firefighter 1 Certificate",
+          "units": 16.5,
+          "lines": 6
         },
         {
           "id": "MAPICI-F1OF-1-001",
@@ -173345,7 +173948,7 @@ window.CPL_STATEWIDE = {
         "College of the Desert": 27.5,
         "College of the Sequoias": 9.0,
         "Columbia College": 9.0,
-        "Glendale Community College": 9.0,
+        "Glendale Community College": 16.5,
         "Lake Tahoe Community College": 18.0,
         "Los Angeles Mission College": 3.0,
         "Mendocino College": 6.0,
@@ -173365,7 +173968,7 @@ window.CPL_STATEWIDE = {
         "College of the Desert": 5,
         "College of the Sequoias": 3,
         "Columbia College": 3,
-        "Glendale Community College": 3,
+        "Glendale Community College": 6,
         "Lake Tahoe Community College": 6,
         "Los Angeles Mission College": 1,
         "Mendocino College": 2,
@@ -173402,14 +174005,14 @@ window.CPL_STATEWIDE = {
           24,
           25,
           26,
-          58
+          55
         ],
         "College of the Desert": [
           23,
           41,
           42,
-          55,
-          56
+          52,
+          53
         ],
         "College of the Sequoias": [
           45,
@@ -173422,9 +174025,12 @@ window.CPL_STATEWIDE = {
           29
         ],
         "Glendale Community College": [
-          48,
-          49,
-          50
+          56,
+          57,
+          58,
+          59,
+          60,
+          61
         ],
         "Lake Tahoe Community College": [
           2,
@@ -173435,14 +174041,14 @@ window.CPL_STATEWIDE = {
           39
         ],
         "Los Angeles Mission College": [
-          57
+          54
         ],
         "Mendocino College": [
           3,
           43
         ],
         "Palo Verde College": [
-          54
+          51
         ],
         "San Diego City College": [
           12
@@ -173466,9 +174072,9 @@ window.CPL_STATEWIDE = {
           20,
           21,
           22,
-          51,
-          52,
-          53
+          48,
+          49,
+          50
         ],
         "Sierra College": [
           30,
@@ -173478,7 +174084,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 9.0,
       "peer_units_max": 27.5,
-      "rec_units_total": 203.5
+      "rec_units_total": 211.0
     },
     {
       "exhibit_id": "MAPCBEN-MP-1-001|MAPCXS-MP-1-001|MAPCxS-MB0C-1-001",
@@ -177600,6 +178206,130 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "College of the Canyons": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-JPPM-1-001",
+      "exhibit_ids": [
+        "MAPICI-JPPM-1-001"
+      ],
+      "title": "JOBTRAIN PWASC Property Management Training Program",
+      "unified_title": "JOBTRAIN PWASC Property Management Training Program",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "JOBTRAIN PWASC Property Management Training Program"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "15"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merritt College"
+      ],
+      "potential": 62,
+      "potential_names": [
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College"
+      ],
+      "total_addressable": 63,
+      "credit_recs": [
+        {
+          "course": "RLEST 008",
+          "credit": "3 hours in PROPERTY MANAGEMENT"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-JPPM-1-001",
+          "title": "JOBTRAIN PWASC Property Management Training Program",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Merritt College": 3.0
+      },
+      "adopter_lines": {
+        "Merritt College": 1
+      },
+      "adopter_rec_idx": {
+        "Merritt College": [
           0
         ]
       },
@@ -210446,6 +211176,248 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 15.0
     },
     {
+      "exhibit_id": "MAPICI-NURS-1-001",
+      "exhibit_ids": [
+        "MAPICI-NURS-1-001"
+      ],
+      "title": "National US&R Response System- Structural Collapse Technician",
+      "unified_title": "National US&R Response System- Structural Collapse Technician",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "National US&R Response System- Structural Collapse Technician"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FST 082",
+          "credit": "1 hour in Structural Collapse Specialist 1"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-NURS-1-001",
+          "title": "National US&R Response System- Structural Collapse Technician",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Palo Verde College": 1.0
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "adopter_rec_idx": {
+        "Palo Verde College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
+      "exhibit_id": "MAPICI-RISO-1-001",
+      "exhibit_ids": [
+        "MAPICI-RISO-1-001"
+      ],
+      "title": "Rescue International-- Swiftwater Operations",
+      "unified_title": "Rescue International-- Swiftwater Operations",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Rescue International-- Swiftwater Operations"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FST 111",
+          "credit": "1 hour in River and Flood Rescue Technician"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-RISO-1-001",
+          "title": "Rescue International-- Swiftwater Operations",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Palo Verde College": 1.0
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "adopter_rec_idx": {
+        "Palo Verde College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
       "exhibit_id": "MAPCBES-REP-1-001|MAPCXS-REP-1-001|MAPCxS-PORE-1-001",
       "exhibit_ids": [
         "MAPCBES-REP-1-001",
@@ -214836,6 +215808,246 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 1.0,
       "peer_units_max": 1.0,
       "rec_units_total": 1.0
+    },
+    {
+      "exhibit_id": "MAPPRA-PFB2-1-001",
+      "exhibit_ids": [
+        "MAPPRA-PFB2-1-001"
+      ],
+      "title": "International Business",
+      "unified_title": "International Business",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Portfolio for BUSN 20"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "4"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 58,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Diablo Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Madera College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Ohlone College",
+        "Palomar College",
+        "Porterville College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 59,
+      "credit_recs": [
+        {
+          "course": "BUSN 20",
+          "credit": "3 units in BUSN 20 International Business"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRA-PFB2-1-001",
+          "title": "Portfolio for BUSN 20",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPPRA-PFB5-1-001",
+      "exhibit_ids": [
+        "MAPPRA-PFB5-1-001"
+      ],
+      "title": "Portfolio for BUSN 52",
+      "unified_title": "Portfolio for BUSN 52",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Portfolio for BUSN 52"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "4"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 58,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Diablo Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Madera College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Ohlone College",
+        "Palomar College",
+        "Porterville College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 59,
+      "credit_recs": [
+        {
+          "course": "BUSN 52",
+          "credit": "3 units in BUSN 52 Business Communications"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRA-PFB5-1-001",
+          "title": "Portfolio for BUSN 52",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
     },
     {
       "exhibit_id": "MAPICI-FTRE-1-001",
@@ -232726,6 +233938,462 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Lemoore College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-IFC6-1-001",
+      "exhibit_ids": [
+        "MAPICI-IFC6-1-001"
+      ],
+      "title": "Industry for CNT 68",
+      "unified_title": "Industry for CNT 68",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Industry for CNT 68"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "35"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 52,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Hartnell College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Medanos College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 53,
+      "credit_recs": [
+        {
+          "course": "CNT 68",
+          "credit": "3 units in CNT 68 Digital Forensics Fundamentals"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-IFC6-1-001",
+          "title": "Industry for CNT 68",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-IFC7-1-001",
+      "exhibit_ids": [
+        "MAPICI-IFC7-1-001"
+      ],
+      "title": "Industry for CNT 7285",
+      "unified_title": "Industry for CNT 7285",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Industry for CNT 7285"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "35"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 52,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Hartnell College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Medanos College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 53,
+      "credit_recs": [
+        {
+          "course": "CNT 7285",
+          "credit": "3 units in CNT 7285 Cloud Infrastructure: CompTIA Cloud+ Certification"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-IFC7-1-001",
+          "title": "Industry for CNT 7285",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-IFC5-1-001",
+      "exhibit_ids": [
+        "MAPICI-IFC5-1-001"
+      ],
+      "title": "Industry for CNT 52",
+      "unified_title": "Industry for CNT 52",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Industry for CNT 52"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "35"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 52,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Hartnell College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Medanos College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 53,
+      "credit_recs": [
+        {
+          "course": "CNT 52",
+          "credit": "3 units in CNT 52/CIS 66 Networking Fundamentals"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-IFC5-1-001",
+          "title": "Industry for CNT 52",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-IFC61-1-001",
+      "exhibit_ids": [
+        "MAPICI-IFC61-1-001"
+      ],
+      "title": "Industry for CIS 66",
+      "unified_title": "Industry for CIS 66",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Industry for CIS 66"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "35"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 52,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Hartnell College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Medanos College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 53,
+      "credit_recs": [
+        {
+          "course": "CIS 66",
+          "credit": "3 units in CIS 66/CNT 52 Networking Fundamentals"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-IFC61-1-001",
+          "title": "Industry for CIS 66",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
           0
         ]
       },
@@ -295723,6 +297391,757 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 61.0
     },
     {
+      "exhibit_id": "MAPSAH-ITH-1-001|MAPSAS-I:TH-1-001|MAPSAS-IETH-1-001|MAPSAS-IT(-1-001|MAPSAS-ITH(-1-001|MAPSAS-ITH-1-001|MAPSAS-ITH1-1-001|MAPSAS-ITH10-1-001|MAPSAS-ITH2-1-001|MAPSAS-ITH3-1-001|MAPSAS-ITH4-1-001|MAPSAS-ITH5-1-001|MAPSAS-ITH6-1-001|MAPSAS-ITH7-1-001|MAPSAS-ITH8-1-001|MAPSAS-ITH9-1-001",
+      "exhibit_ids": [
+        "MAPSAH-ITH-1-001",
+        "MAPSAS-I:TH-1-001",
+        "MAPSAS-IETH-1-001",
+        "MAPSAS-IT(-1-001",
+        "MAPSAS-ITH(-1-001",
+        "MAPSAS-ITH-1-001",
+        "MAPSAS-ITH1-1-001",
+        "MAPSAS-ITH10-1-001",
+        "MAPSAS-ITH2-1-001",
+        "MAPSAS-ITH3-1-001",
+        "MAPSAS-ITH4-1-001",
+        "MAPSAS-ITH5-1-001",
+        "MAPSAS-ITH6-1-001",
+        "MAPSAS-ITH7-1-001",
+        "MAPSAS-ITH8-1-001",
+        "MAPSAS-ITH9-1-001"
+      ],
+      "title": "IB Theatre HL",
+      "unified_title": "IB Theatre HL",
+      "is_classified": true,
+      "issuing_agency": "International Baccalaureate (IB)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB : Theater HL",
+        "IB Exam Theatre HL",
+        "IB Theater HL",
+        "IB Theatre (HL)",
+        "IB Theatre HL",
+        "IB Theatre HL (Score of 4 or higher)",
+        "IB Theatre HL (Score of 4-7)",
+        "IB Theatre HL (score 5-7): Cal-GETC Area 3A"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "50",
+      "top_codes": [
+        "0",
+        "115",
+        "75"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 80,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 32,
+      "potential_names": [
+        "Cañada College",
+        "College of Alameda",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Siskiyous",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "Merritt College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 112,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "COMM 8",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "Local GE 3B",
+          "credit": "3 hours in 3B. Humanities"
+        },
+        {
+          "course": "GE 3A",
+          "credit": "3 hours in Area 3- Arts"
+        },
+        {
+          "course": "THART 10",
+          "credit": "3 hours in Arts"
+        },
+        {
+          "course": "Cal-GETC Area 3A",
+          "credit": "3 hours in Arts"
+        },
+        {
+          "course": "GE 3 Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "4 hours in Arts and Humanities"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 3A",
+          "credit": "3 hours in Arts & Humanities"
+        },
+        {
+          "course": "Local GE Area A-3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area C",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "6 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAH-ITH-1-001",
+          "title": "IB Theatre HL",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-I:TH-1-001",
+          "title": "IB : Theater HL",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-IETH-1-001",
+          "title": "IB Exam Theatre HL",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPSAS-IT(-1-001",
+          "title": "IB Theatre (HL)",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ITH(-1-001",
+          "title": "IB Theatre HL (Score of 4 or higher)",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPSAS-ITH-1-001",
+          "title": "IB Theatre HL",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ITH1-1-001",
+          "title": "IB Theatre HL (score 5-7): Cal-GETC Area 3A",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPSAS-ITH10-1-001",
+          "title": "IB Theater HL",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ITH2-1-001",
+          "title": "IB Theatre HL",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ITH3-1-001",
+          "title": "IB Theatre HL (Score of 4-7)",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ITH4-1-001",
+          "title": "IB Theatre HL",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ITH5-1-001",
+          "title": "IB Theatre HL",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ITH6-1-001",
+          "title": "IB Theatre HL",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ITH7-1-001",
+          "title": "IB Theatre HL",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ITH8-1-001",
+          "title": "IB Theater HL",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ITH9-1-001",
+          "title": "IB Theater HL",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Allan Hancock College": 3.0,
+        "American River College": 3.0,
+        "Antelope Valley College": 3.0,
+        "Bakersfield College": 3.0,
+        "Barstow Community College": 3.0,
+        "Berkeley City College": 3.0,
+        "Butte College": 3.0,
+        "Cabrillo College": 6.0,
+        "Cerritos College": 3.0,
+        "Chabot College": 3.0,
+        "Chaffey College": 6.0,
+        "Citrus College": 3.0,
+        "City College of San Francisco": 6.0,
+        "Clovis Community College": 6.0,
+        "Coalinga College": 3.0,
+        "Coastline Community College": 3.0,
+        "College of Marin": 3.0,
+        "College of the Canyons": 3.0,
+        "College of the Redwoods": 3.0,
+        "College of the Sequoias": 3.0,
+        "Columbia College": 3.0,
+        "Compton College": 3.0,
+        "Contra Costa College": 3.0,
+        "Copper Mountain College": 6.0,
+        "Cuesta College": 3.0,
+        "Cypress College": 3.0,
+        "De Anza College": 3.0,
+        "Diablo Valley College": 3.0,
+        "East Los Angeles College": 3.0,
+        "El Camino College": 6.0,
+        "Evergreen Valley College": 3.0,
+        "Folsom Lake College": 3.0,
+        "Foothill College": 7.0,
+        "Fresno City College": 3.0,
+        "Glendale Community College": 3.0,
+        "Golden West College": 3.0,
+        "Hartnell College": 3.0,
+        "Lake Tahoe Community College": 3.0,
+        "Laney College": 3.0,
+        "Long Beach City College": 3.0,
+        "Los Angeles City College": 3.0,
+        "Los Angeles Mission College": 3.0,
+        "Los Angeles Pierce College": 9.0,
+        "Los Angeles Trade Technical College": 3.0,
+        "Los Angeles Valley College": 3.0,
+        "Los Medanos College": 3.0,
+        "Madera College": 3.0,
+        "Mendocino College": 3.0,
+        "Merced College": 3.0,
+        "Mission College": 6.0,
+        "Modesto Junior College": 3.0,
+        "Monterey Peninsula College": 3.0,
+        "Moreno Valley College": 3.0,
+        "Mt. San Antonio College": 3.0,
+        "Napa Valley College": 3.0,
+        "Norco College": 3.0,
+        "Ohlone College": 3.0,
+        "Oxnard College": 3.0,
+        "Pasadena City College": 3.0,
+        "Reedley College": 3.0,
+        "Sacramento City College": 3.0,
+        "Saddleback College": 6.0,
+        "San Bernardino Valley College": 6.0,
+        "San Diego City College": 3.0,
+        "San Diego Mesa College": 3.0,
+        "San Diego Miramar College": 3.0,
+        "San Joaquin Delta College": 3.0,
+        "San Jose City College": 3.0,
+        "Santa Ana College": 6.0,
+        "Santa Monica College": 3.0,
+        "Santa Rosa Junior College": 3.0,
+        "Shasta College": 3.0,
+        "Sierra College": 3.0,
+        "Solano Community College": 3.0,
+        "Ventura College": 3.0,
+        "Victor Valley College": 3.0,
+        "West Los Angeles College": 3.0,
+        "West Valley College": 6.0,
+        "Woodland Community College": 9.0,
+        "Yuba College": 9.0
+      },
+      "adopter_lines": {
+        "Allan Hancock College": 1,
+        "American River College": 1,
+        "Antelope Valley College": 1,
+        "Bakersfield College": 1,
+        "Barstow Community College": 1,
+        "Berkeley City College": 1,
+        "Butte College": 1,
+        "Cabrillo College": 2,
+        "Cerritos College": 1,
+        "Chabot College": 1,
+        "Chaffey College": 2,
+        "Citrus College": 1,
+        "City College of San Francisco": 2,
+        "Clovis Community College": 2,
+        "Coalinga College": 1,
+        "Coastline Community College": 1,
+        "College of Marin": 1,
+        "College of the Canyons": 1,
+        "College of the Redwoods": 1,
+        "College of the Sequoias": 1,
+        "Columbia College": 1,
+        "Compton College": 1,
+        "Contra Costa College": 1,
+        "Copper Mountain College": 2,
+        "Cuesta College": 1,
+        "Cypress College": 1,
+        "De Anza College": 1,
+        "Diablo Valley College": 1,
+        "East Los Angeles College": 1,
+        "El Camino College": 2,
+        "Evergreen Valley College": 1,
+        "Folsom Lake College": 1,
+        "Foothill College": 2,
+        "Fresno City College": 1,
+        "Glendale Community College": 1,
+        "Golden West College": 1,
+        "Hartnell College": 1,
+        "Lake Tahoe Community College": 1,
+        "Laney College": 1,
+        "Long Beach City College": 1,
+        "Los Angeles City College": 1,
+        "Los Angeles Mission College": 1,
+        "Los Angeles Pierce College": 3,
+        "Los Angeles Trade Technical College": 1,
+        "Los Angeles Valley College": 1,
+        "Los Medanos College": 1,
+        "Madera College": 1,
+        "Mendocino College": 1,
+        "Merced College": 1,
+        "Mission College": 2,
+        "Modesto Junior College": 1,
+        "Monterey Peninsula College": 1,
+        "Moreno Valley College": 1,
+        "Mt. San Antonio College": 1,
+        "Napa Valley College": 1,
+        "Norco College": 1,
+        "Ohlone College": 1,
+        "Oxnard College": 1,
+        "Pasadena City College": 1,
+        "Reedley College": 1,
+        "Sacramento City College": 1,
+        "Saddleback College": 2,
+        "San Bernardino Valley College": 2,
+        "San Diego City College": 1,
+        "San Diego Mesa College": 1,
+        "San Diego Miramar College": 1,
+        "San Joaquin Delta College": 1,
+        "San Jose City College": 1,
+        "Santa Ana College": 2,
+        "Santa Monica College": 1,
+        "Santa Rosa Junior College": 1,
+        "Shasta College": 1,
+        "Sierra College": 1,
+        "Solano Community College": 1,
+        "Ventura College": 1,
+        "Victor Valley College": 1,
+        "West Los Angeles College": 1,
+        "West Valley College": 2,
+        "Woodland Community College": 2,
+        "Yuba College": 3
+      },
+      "adopter_rec_idx": {
+        "Allan Hancock College": [
+          5
+        ],
+        "American River College": [
+          5
+        ],
+        "Antelope Valley College": [
+          5
+        ],
+        "Bakersfield College": [
+          5
+        ],
+        "Barstow Community College": [
+          5
+        ],
+        "Berkeley City College": [
+          5
+        ],
+        "Butte College": [
+          5
+        ],
+        "Cabrillo College": [
+          5,
+          12
+        ],
+        "Cerritos College": [
+          5
+        ],
+        "Chabot College": [
+          5
+        ],
+        "Chaffey College": [
+          5,
+          6
+        ],
+        "Citrus College": [
+          5
+        ],
+        "City College of San Francisco": [
+          5,
+          7
+        ],
+        "Clovis Community College": [
+          1,
+          5
+        ],
+        "Coalinga College": [
+          5
+        ],
+        "Coastline Community College": [
+          3
+        ],
+        "College of Marin": [
+          5
+        ],
+        "College of the Canyons": [
+          5
+        ],
+        "College of the Redwoods": [
+          5
+        ],
+        "College of the Sequoias": [
+          5
+        ],
+        "Columbia College": [
+          5
+        ],
+        "Compton College": [
+          5
+        ],
+        "Contra Costa College": [
+          5
+        ],
+        "Copper Mountain College": [
+          5,
+          7
+        ],
+        "Cuesta College": [
+          5
+        ],
+        "Cypress College": [
+          5
+        ],
+        "De Anza College": [
+          5
+        ],
+        "Diablo Valley College": [
+          5
+        ],
+        "East Los Angeles College": [
+          5
+        ],
+        "El Camino College": [
+          5,
+          7
+        ],
+        "Evergreen Valley College": [
+          5
+        ],
+        "Folsom Lake College": [
+          5
+        ],
+        "Foothill College": [
+          5,
+          8
+        ],
+        "Fresno City College": [
+          5
+        ],
+        "Glendale Community College": [
+          5
+        ],
+        "Golden West College": [
+          5
+        ],
+        "Hartnell College": [
+          5
+        ],
+        "Lake Tahoe Community College": [
+          5
+        ],
+        "Laney College": [
+          5
+        ],
+        "Long Beach City College": [
+          5
+        ],
+        "Los Angeles City College": [
+          5
+        ],
+        "Los Angeles Mission College": [
+          5
+        ],
+        "Los Angeles Pierce College": [
+          0,
+          5,
+          9
+        ],
+        "Los Angeles Trade Technical College": [
+          5
+        ],
+        "Los Angeles Valley College": [
+          5
+        ],
+        "Los Medanos College": [
+          5
+        ],
+        "Madera College": [
+          5
+        ],
+        "Mendocino College": [
+          5
+        ],
+        "Merced College": [
+          5
+        ],
+        "Mission College": [
+          5,
+          11
+        ],
+        "Modesto Junior College": [
+          5
+        ],
+        "Monterey Peninsula College": [
+          5
+        ],
+        "Moreno Valley College": [
+          5
+        ],
+        "Mt. San Antonio College": [
+          5
+        ],
+        "Napa Valley College": [
+          5
+        ],
+        "Norco College": [
+          5
+        ],
+        "Ohlone College": [
+          5
+        ],
+        "Oxnard College": [
+          5
+        ],
+        "Pasadena City College": [
+          5
+        ],
+        "Reedley College": [
+          5
+        ],
+        "Sacramento City College": [
+          5
+        ],
+        "Saddleback College": [
+          0,
+          5
+        ],
+        "San Bernardino Valley College": [
+          5,
+          10
+        ],
+        "San Diego City College": [
+          5
+        ],
+        "San Diego Mesa College": [
+          5
+        ],
+        "San Diego Miramar College": [
+          5
+        ],
+        "San Joaquin Delta College": [
+          5
+        ],
+        "San Jose City College": [
+          5
+        ],
+        "Santa Ana College": [
+          2,
+          5
+        ],
+        "Santa Monica College": [
+          5
+        ],
+        "Santa Rosa Junior College": [
+          5
+        ],
+        "Shasta College": [
+          5
+        ],
+        "Sierra College": [
+          5
+        ],
+        "Solano Community College": [
+          5
+        ],
+        "Ventura College": [
+          5
+        ],
+        "Victor Valley College": [
+          5
+        ],
+        "West Los Angeles College": [
+          5
+        ],
+        "West Valley College": [
+          5,
+          11
+        ],
+        "Woodland Community College": [
+          5,
+          13
+        ],
+        "Yuba College": [
+          4,
+          5,
+          7
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 9.0,
+      "rec_units_total": 46.0
+    },
+    {
       "exhibit_id": "MAPICI-ABM-1-001",
       "exhibit_ids": [
         "MAPICI-ABM-1-001"
@@ -300881,762 +303300,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 15.0,
       "rec_units_total": 50.0
-    },
-    {
-      "exhibit_id": "MAPSAH-ITH-1-001|MAPSAS-I:TH-1-001|MAPSAS-IETH-1-001|MAPSAS-IT(-1-001|MAPSAS-ITH(-1-001|MAPSAS-ITH-1-001|MAPSAS-ITH1-1-001|MAPSAS-ITH10-1-001|MAPSAS-ITH2-1-001|MAPSAS-ITH3-1-001|MAPSAS-ITH4-1-001|MAPSAS-ITH5-1-001|MAPSAS-ITH6-1-001|MAPSAS-ITH7-1-001|MAPSAS-ITH8-1-001|MAPSAS-ITH9-1-001",
-      "exhibit_ids": [
-        "MAPSAH-ITH-1-001",
-        "MAPSAS-I:TH-1-001",
-        "MAPSAS-IETH-1-001",
-        "MAPSAS-IT(-1-001",
-        "MAPSAS-ITH(-1-001",
-        "MAPSAS-ITH-1-001",
-        "MAPSAS-ITH1-1-001",
-        "MAPSAS-ITH10-1-001",
-        "MAPSAS-ITH2-1-001",
-        "MAPSAS-ITH3-1-001",
-        "MAPSAS-ITH4-1-001",
-        "MAPSAS-ITH5-1-001",
-        "MAPSAS-ITH6-1-001",
-        "MAPSAS-ITH7-1-001",
-        "MAPSAS-ITH8-1-001",
-        "MAPSAS-ITH9-1-001"
-      ],
-      "title": "IB Theatre HL",
-      "unified_title": "IB Theatre HL",
-      "is_classified": true,
-      "issuing_agency": "International Baccalaureate (IB)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "IB : Theater HL",
-        "IB Exam Theatre HL",
-        "IB Theater HL",
-        "IB Theatre (HL)",
-        "IB Theatre HL",
-        "IB Theatre HL (Score of 4 or higher)",
-        "IB Theatre HL (Score of 4-7)",
-        "IB Theatre HL (score 5-7): Cal-GETC Area 3A"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "50",
-      "top_codes": [
-        "0",
-        "115",
-        "75"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 81,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 31,
-      "potential_names": [
-        "Cañada College",
-        "College of Alameda",
-        "College of San Mateo",
-        "College of the Desert",
-        "College of the Siskiyous",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Fullerton College",
-        "Gavilan College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Las Positas College",
-        "Lemoore College",
-        "Los Angeles Harbor College",
-        "Los Angeles Southwest College",
-        "MiraCosta College",
-        "Moorpark College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Santa Barbara City College",
-        "Santiago Canyon College",
-        "Skyline College",
-        "Southwestern College",
-        "Taft College"
-      ],
-      "total_addressable": 112,
-      "credit_recs": [
-        {
-          "course": "CPL 1",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "COMM 8",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "Local GE 3B",
-          "credit": "3 hours in 3B. Humanities"
-        },
-        {
-          "course": "GE 3A",
-          "credit": "3 hours in Area 3- Arts"
-        },
-        {
-          "course": "THART 10",
-          "credit": "3 hours in Arts"
-        },
-        {
-          "course": "Cal-GETC Area 3A",
-          "credit": "3 hours in Arts"
-        },
-        {
-          "course": "GE 3 Area 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "4 hours in Arts and Humanities"
-        },
-        {
-          "course": "LACCD GE 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area 3A",
-          "credit": "3 hours in Arts & Humanities"
-        },
-        {
-          "course": "Local GE Area A-3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area C",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "6 hours in Arts and Humanities"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPSAH-ITH-1-001",
-          "title": "IB Theatre HL",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-I:TH-1-001",
-          "title": "IB : Theater HL",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-IETH-1-001",
-          "title": "IB Exam Theatre HL",
-          "units": 6.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPSAS-IT(-1-001",
-          "title": "IB Theatre (HL)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ITH(-1-001",
-          "title": "IB Theatre HL (Score of 4 or higher)",
-          "units": 6.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPSAS-ITH-1-001",
-          "title": "IB Theatre HL",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ITH1-1-001",
-          "title": "IB Theatre HL (score 5-7): Cal-GETC Area 3A",
-          "units": 6.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPSAS-ITH10-1-001",
-          "title": "IB Theater HL",
-          "units": 6.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ITH2-1-001",
-          "title": "IB Theatre HL",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ITH3-1-001",
-          "title": "IB Theatre HL (Score of 4-7)",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ITH4-1-001",
-          "title": "IB Theatre HL",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ITH5-1-001",
-          "title": "IB Theatre HL",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ITH6-1-001",
-          "title": "IB Theatre HL",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ITH7-1-001",
-          "title": "IB Theatre HL",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ITH8-1-001",
-          "title": "IB Theater HL",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ITH9-1-001",
-          "title": "IB Theater HL",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Allan Hancock College": 3.0,
-        "American River College": 3.0,
-        "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
-        "Barstow Community College": 3.0,
-        "Berkeley City College": 3.0,
-        "Butte College": 3.0,
-        "Cabrillo College": 6.0,
-        "Cerritos College": 3.0,
-        "Chabot College": 3.0,
-        "Chaffey College": 6.0,
-        "Citrus College": 3.0,
-        "City College of San Francisco": 6.0,
-        "Clovis Community College": 6.0,
-        "Coalinga College": 3.0,
-        "Coastline Community College": 3.0,
-        "College of Marin": 3.0,
-        "College of the Canyons": 3.0,
-        "College of the Redwoods": 3.0,
-        "College of the Sequoias": 3.0,
-        "Columbia College": 3.0,
-        "Compton College": 3.0,
-        "Contra Costa College": 3.0,
-        "Copper Mountain College": 6.0,
-        "Cuesta College": 3.0,
-        "Cypress College": 3.0,
-        "De Anza College": 3.0,
-        "Diablo Valley College": 3.0,
-        "East Los Angeles College": 3.0,
-        "El Camino College": 6.0,
-        "Evergreen Valley College": 3.0,
-        "Folsom Lake College": 3.0,
-        "Foothill College": 7.0,
-        "Fresno City College": 3.0,
-        "Glendale Community College": 3.0,
-        "Golden West College": 3.0,
-        "Hartnell College": 3.0,
-        "Lake Tahoe Community College": 3.0,
-        "Laney College": 3.0,
-        "Long Beach City College": 3.0,
-        "Los Angeles City College": 3.0,
-        "Los Angeles Mission College": 3.0,
-        "Los Angeles Pierce College": 9.0,
-        "Los Angeles Trade Technical College": 3.0,
-        "Los Angeles Valley College": 3.0,
-        "Los Medanos College": 3.0,
-        "Madera College": 3.0,
-        "Mendocino College": 3.0,
-        "Merced College": 3.0,
-        "Merritt College": 3.0,
-        "Mission College": 6.0,
-        "Modesto Junior College": 3.0,
-        "Monterey Peninsula College": 3.0,
-        "Moreno Valley College": 3.0,
-        "Mt. San Antonio College": 3.0,
-        "Napa Valley College": 3.0,
-        "Norco College": 3.0,
-        "Ohlone College": 3.0,
-        "Oxnard College": 3.0,
-        "Pasadena City College": 3.0,
-        "Reedley College": 3.0,
-        "Sacramento City College": 3.0,
-        "Saddleback College": 6.0,
-        "San Bernardino Valley College": 6.0,
-        "San Diego City College": 3.0,
-        "San Diego Mesa College": 3.0,
-        "San Diego Miramar College": 3.0,
-        "San Joaquin Delta College": 3.0,
-        "San Jose City College": 3.0,
-        "Santa Ana College": 6.0,
-        "Santa Monica College": 3.0,
-        "Santa Rosa Junior College": 3.0,
-        "Shasta College": 3.0,
-        "Sierra College": 3.0,
-        "Solano Community College": 3.0,
-        "Ventura College": 3.0,
-        "Victor Valley College": 3.0,
-        "West Los Angeles College": 3.0,
-        "West Valley College": 6.0,
-        "Woodland Community College": 9.0,
-        "Yuba College": 9.0
-      },
-      "adopter_lines": {
-        "Allan Hancock College": 1,
-        "American River College": 1,
-        "Antelope Valley College": 1,
-        "Bakersfield College": 1,
-        "Barstow Community College": 1,
-        "Berkeley City College": 1,
-        "Butte College": 1,
-        "Cabrillo College": 2,
-        "Cerritos College": 1,
-        "Chabot College": 1,
-        "Chaffey College": 2,
-        "Citrus College": 1,
-        "City College of San Francisco": 2,
-        "Clovis Community College": 2,
-        "Coalinga College": 1,
-        "Coastline Community College": 1,
-        "College of Marin": 1,
-        "College of the Canyons": 1,
-        "College of the Redwoods": 1,
-        "College of the Sequoias": 1,
-        "Columbia College": 1,
-        "Compton College": 1,
-        "Contra Costa College": 1,
-        "Copper Mountain College": 2,
-        "Cuesta College": 1,
-        "Cypress College": 1,
-        "De Anza College": 1,
-        "Diablo Valley College": 1,
-        "East Los Angeles College": 1,
-        "El Camino College": 2,
-        "Evergreen Valley College": 1,
-        "Folsom Lake College": 1,
-        "Foothill College": 2,
-        "Fresno City College": 1,
-        "Glendale Community College": 1,
-        "Golden West College": 1,
-        "Hartnell College": 1,
-        "Lake Tahoe Community College": 1,
-        "Laney College": 1,
-        "Long Beach City College": 1,
-        "Los Angeles City College": 1,
-        "Los Angeles Mission College": 1,
-        "Los Angeles Pierce College": 3,
-        "Los Angeles Trade Technical College": 1,
-        "Los Angeles Valley College": 1,
-        "Los Medanos College": 1,
-        "Madera College": 1,
-        "Mendocino College": 1,
-        "Merced College": 1,
-        "Merritt College": 1,
-        "Mission College": 2,
-        "Modesto Junior College": 1,
-        "Monterey Peninsula College": 1,
-        "Moreno Valley College": 1,
-        "Mt. San Antonio College": 1,
-        "Napa Valley College": 1,
-        "Norco College": 1,
-        "Ohlone College": 1,
-        "Oxnard College": 1,
-        "Pasadena City College": 1,
-        "Reedley College": 1,
-        "Sacramento City College": 1,
-        "Saddleback College": 2,
-        "San Bernardino Valley College": 2,
-        "San Diego City College": 1,
-        "San Diego Mesa College": 1,
-        "San Diego Miramar College": 1,
-        "San Joaquin Delta College": 1,
-        "San Jose City College": 1,
-        "Santa Ana College": 2,
-        "Santa Monica College": 1,
-        "Santa Rosa Junior College": 1,
-        "Shasta College": 1,
-        "Sierra College": 1,
-        "Solano Community College": 1,
-        "Ventura College": 1,
-        "Victor Valley College": 1,
-        "West Los Angeles College": 1,
-        "West Valley College": 2,
-        "Woodland Community College": 2,
-        "Yuba College": 3
-      },
-      "adopter_rec_idx": {
-        "Allan Hancock College": [
-          5
-        ],
-        "American River College": [
-          5
-        ],
-        "Antelope Valley College": [
-          5
-        ],
-        "Bakersfield College": [
-          5
-        ],
-        "Barstow Community College": [
-          5
-        ],
-        "Berkeley City College": [
-          5
-        ],
-        "Butte College": [
-          5
-        ],
-        "Cabrillo College": [
-          5,
-          12
-        ],
-        "Cerritos College": [
-          5
-        ],
-        "Chabot College": [
-          5
-        ],
-        "Chaffey College": [
-          5,
-          6
-        ],
-        "Citrus College": [
-          5
-        ],
-        "City College of San Francisco": [
-          5,
-          7
-        ],
-        "Clovis Community College": [
-          1,
-          5
-        ],
-        "Coalinga College": [
-          5
-        ],
-        "Coastline Community College": [
-          3
-        ],
-        "College of Marin": [
-          5
-        ],
-        "College of the Canyons": [
-          5
-        ],
-        "College of the Redwoods": [
-          5
-        ],
-        "College of the Sequoias": [
-          5
-        ],
-        "Columbia College": [
-          5
-        ],
-        "Compton College": [
-          5
-        ],
-        "Contra Costa College": [
-          5
-        ],
-        "Copper Mountain College": [
-          5,
-          7
-        ],
-        "Cuesta College": [
-          5
-        ],
-        "Cypress College": [
-          5
-        ],
-        "De Anza College": [
-          5
-        ],
-        "Diablo Valley College": [
-          5
-        ],
-        "East Los Angeles College": [
-          5
-        ],
-        "El Camino College": [
-          5,
-          7
-        ],
-        "Evergreen Valley College": [
-          5
-        ],
-        "Folsom Lake College": [
-          5
-        ],
-        "Foothill College": [
-          5,
-          8
-        ],
-        "Fresno City College": [
-          5
-        ],
-        "Glendale Community College": [
-          5
-        ],
-        "Golden West College": [
-          5
-        ],
-        "Hartnell College": [
-          5
-        ],
-        "Lake Tahoe Community College": [
-          5
-        ],
-        "Laney College": [
-          5
-        ],
-        "Long Beach City College": [
-          5
-        ],
-        "Los Angeles City College": [
-          5
-        ],
-        "Los Angeles Mission College": [
-          5
-        ],
-        "Los Angeles Pierce College": [
-          0,
-          5,
-          9
-        ],
-        "Los Angeles Trade Technical College": [
-          5
-        ],
-        "Los Angeles Valley College": [
-          5
-        ],
-        "Los Medanos College": [
-          5
-        ],
-        "Madera College": [
-          5
-        ],
-        "Mendocino College": [
-          5
-        ],
-        "Merced College": [
-          5
-        ],
-        "Merritt College": [
-          5
-        ],
-        "Mission College": [
-          5,
-          11
-        ],
-        "Modesto Junior College": [
-          5
-        ],
-        "Monterey Peninsula College": [
-          5
-        ],
-        "Moreno Valley College": [
-          5
-        ],
-        "Mt. San Antonio College": [
-          5
-        ],
-        "Napa Valley College": [
-          5
-        ],
-        "Norco College": [
-          5
-        ],
-        "Ohlone College": [
-          5
-        ],
-        "Oxnard College": [
-          5
-        ],
-        "Pasadena City College": [
-          5
-        ],
-        "Reedley College": [
-          5
-        ],
-        "Sacramento City College": [
-          5
-        ],
-        "Saddleback College": [
-          0,
-          5
-        ],
-        "San Bernardino Valley College": [
-          5,
-          10
-        ],
-        "San Diego City College": [
-          5
-        ],
-        "San Diego Mesa College": [
-          5
-        ],
-        "San Diego Miramar College": [
-          5
-        ],
-        "San Joaquin Delta College": [
-          5
-        ],
-        "San Jose City College": [
-          5
-        ],
-        "Santa Ana College": [
-          2,
-          5
-        ],
-        "Santa Monica College": [
-          5
-        ],
-        "Santa Rosa Junior College": [
-          5
-        ],
-        "Shasta College": [
-          5
-        ],
-        "Sierra College": [
-          5
-        ],
-        "Solano Community College": [
-          5
-        ],
-        "Ventura College": [
-          5
-        ],
-        "Victor Valley College": [
-          5
-        ],
-        "West Los Angeles College": [
-          5
-        ],
-        "West Valley College": [
-          5,
-          11
-        ],
-        "Woodland Community College": [
-          5,
-          13
-        ],
-        "Yuba College": [
-          4,
-          5,
-          7
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 9.0,
-      "rec_units_total": 46.0
     },
     {
       "exhibit_id": "MAPCBES-PCBE-1-001",
@@ -358063,6 +359726,85 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 1.0
     },
     {
+      "exhibit_id": "MAPICI-CEIC-1-001",
+      "exhibit_ids": [
+        "MAPICI-CEIC-1-001"
+      ],
+      "title": "Cal EMA- Incident Commander",
+      "unified_title": "Cal EMA- Incident Commander",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Cal EMA- Incident Commander"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "236"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 17,
+      "potential_names": [
+        "Allan Hancock College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 18,
+      "credit_recs": [
+        {
+          "course": "FST 161",
+          "credit": "1 hour in Haz Mat - Incident Command Systems"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CEIC-1-001",
+          "title": "Cal EMA- Incident Commander",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Palo Verde College": 1.0
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "adopter_rec_idx": {
+        "Palo Verde College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
       "exhibit_id": "MAPSAS-D:A-1-001|MAPSAS-DA1-1-001|MAPSAS-DA2-1-001|MAPSAS-DE-A-1-001",
       "exhibit_ids": [
         "MAPSAS-D:A-1-001",
@@ -381663,85 +383405,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 2.0
     },
     {
-      "exhibit_id": "MAPICI-A0-P-1-001|MAPICI-A0-P3-1-001",
-      "exhibit_ids": [
-        "MAPICI-A0-P-1-001",
-        "MAPICI-A0-P3-1-001"
-      ],
-      "title": "FAA Private Pilot Ground School",
-      "unified_title": "FAA Private Pilot Ground School",
-      "is_classified": true,
-      "issuing_agency": "Federal Aviation Administration (FAA)",
-      "training_agency": "Riverside Flight Academy",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AERO 022 - Private Pilot Ground School",
-        "AERO 022 - Private Pilot Ground School - Riverside Flight Academy FAA approved Private Pilot Certification Ground Course"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "355"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "San Bernardino Valley College"
-      ],
-      "potential": 9,
-      "potential_names": [
-        "Cypress College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Reedley College",
-        "Sacramento City College",
-        "San Diego Miramar College",
-        "Southwestern College"
-      ],
-      "total_addressable": 10,
-      "credit_recs": [
-        {
-          "course": "AERO 022",
-          "credit": "6 hours in Private Pilot Ground School"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-A0-P-1-001",
-          "title": "AERO 022 - Private Pilot Ground School",
-          "units": 6.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-A0-P3-1-001",
-          "title": "AERO 022 - Private Pilot Ground School - Riverside Flight Academy FAA approved Private Pilot Certification Ground Course",
-          "units": 6.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "San Bernardino Valley College": 6.0
-      },
-      "adopter_lines": {
-        "San Bernardino Valley College": 1
-      },
-      "adopter_rec_idx": {
-        "San Bernardino Valley College": [
-          0
-        ]
-      },
-      "peer_units_median": 6.0,
-      "peer_units_max": 6.0,
-      "rec_units_total": 6.0
-    },
-    {
       "exhibit_id": "MAPCXS-A2EO2-1-001",
       "exhibit_ids": [
         "MAPCXS-A2EO2-1-001"
@@ -384974,112 +386637,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 159.5
     },
     {
-      "exhibit_id": "MAPICI-A0-P1-1-001|MAPICI-A0-P2-1-001|MAPICI-FPPC-1-001",
-      "exhibit_ids": [
-        "MAPICI-A0-P1-1-001",
-        "MAPICI-A0-P2-1-001",
-        "MAPICI-FPPC-1-001"
-      ],
-      "title": "FAA Private Pilot Certificate",
-      "unified_title": "FAA Private Pilot Certificate",
-      "is_classified": true,
-      "issuing_agency": "Federal Aviation Administration (FAA)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.97,
-      "quality_flag": "",
-      "raw_titles": [
-        "AERO 022 - Private Pilot Ground School - FAA Card",
-        "AERO 022L - Private Pilot Ground School Lab - FAA Card",
-        "FAA-issued Private Pilot Certificate"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "355"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "San Bernardino Valley College",
-        "San Diego Miramar College"
-      ],
-      "potential": 8,
-      "potential_names": [
-        "Cypress College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Reedley College",
-        "Sacramento City College",
-        "Southwestern College"
-      ],
-      "total_addressable": 10,
-      "credit_recs": [
-        {
-          "course": "AVIA 101",
-          "credit": "3 hours in Private Pilot Ground School"
-        },
-        {
-          "course": "AVIA 101L",
-          "credit": "1.0 hours in Private Pilot Flight Lab"
-        },
-        {
-          "course": "AERO 022",
-          "credit": "6 hours in Private Pilot Ground School"
-        },
-        {
-          "course": "AERO 022L",
-          "credit": "3 hours in Private Pilot Flight Lab"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-A0-P1-1-001",
-          "title": "AERO 022 - Private Pilot Ground School - FAA Card",
-          "units": 6.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-A0-P2-1-001",
-          "title": "AERO 022L - Private Pilot Ground School Lab - FAA Card",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-FPPC-1-001",
-          "title": "FAA-issued Private Pilot Certificate",
-          "units": 4.0,
-          "lines": 2
-        }
-      ],
-      "adopter_units": {
-        "San Bernardino Valley College": 9.0,
-        "San Diego Miramar College": 4.0
-      },
-      "adopter_lines": {
-        "San Bernardino Valley College": 2,
-        "San Diego Miramar College": 2
-      },
-      "adopter_rec_idx": {
-        "San Bernardino Valley College": [
-          2,
-          3
-        ],
-        "San Diego Miramar College": [
-          0,
-          1
-        ]
-      },
-      "peer_units_median": 6.5,
-      "peer_units_max": 9.0,
-      "rec_units_total": 13.0
-    },
-    {
       "exhibit_id": "MAPICI-A0-I1-1-001|MAPICI-A0-I2-1-001|MAPICI-FIR-1-001",
       "exhibit_ids": [
         "MAPICI-A0-I1-1-001",
@@ -385194,6 +386751,102 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 7.5,
       "peer_units_max": 10.0,
       "rec_units_total": 15.0
+    },
+    {
+      "exhibit_id": "MAPICI-A0-P-1-001|MAPICI-A0-P3-1-001|MAPICI-PFPP-1-001",
+      "exhibit_ids": [
+        "MAPICI-A0-P-1-001",
+        "MAPICI-A0-P3-1-001",
+        "MAPICI-PFPP-1-001"
+      ],
+      "title": "FAA Private Pilot Ground School",
+      "unified_title": "FAA Private Pilot Ground School",
+      "is_classified": true,
+      "issuing_agency": "Federal Aviation Administration (FAA)",
+      "training_agency": "Riverside Flight Academy",
+      "confidence_title": 0.85,
+      "confidence_issuer": 0.95,
+      "quality_flag": "",
+      "raw_titles": [
+        "AERO 022 - Private Pilot Ground School",
+        "AERO 022 - Private Pilot Ground School - Riverside Flight Academy FAA approved Private Pilot Certification Ground Course",
+        "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "355"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "Glendale Community College",
+        "San Bernardino Valley College"
+      ],
+      "potential": 8,
+      "potential_names": [
+        "Cypress College",
+        "Fullerton College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Reedley College",
+        "Sacramento City College",
+        "San Diego Miramar College",
+        "Southwestern College"
+      ],
+      "total_addressable": 10,
+      "credit_recs": [
+        {
+          "course": "AERO 022",
+          "credit": "6 hours in Private Pilot Ground School"
+        },
+        {
+          "course": "AT 120",
+          "credit": "5 hours in PRIVATE PILOT GROUND SCHOOL"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-A0-P-1-001",
+          "title": "AERO 022 - Private Pilot Ground School",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-A0-P3-1-001",
+          "title": "AERO 022 - Private Pilot Ground School - Riverside Flight Academy FAA approved Private Pilot Certification Ground Course",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-PFPP-1-001",
+          "title": "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
+          "units": 5.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Glendale Community College": 5.0,
+        "San Bernardino Valley College": 6.0
+      },
+      "adopter_lines": {
+        "Glendale Community College": 1,
+        "San Bernardino Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "Glendale Community College": [
+          1
+        ],
+        "San Bernardino Valley College": [
+          0
+        ]
+      },
+      "peer_units_median": 5.5,
+      "peer_units_max": 6.0,
+      "rec_units_total": 11.0
     },
     {
       "exhibit_id": "MAPPRS-FACA-1-001",
@@ -385659,6 +387312,139 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 5.0,
       "peer_units_max": 5.0,
       "rec_units_total": 5.0
+    },
+    {
+      "exhibit_id": "MAPICI-A0-P1-1-001|MAPICI-A0-P2-1-001|MAPICI-FPPC-1-001|MAPICI-FPPC1-1-001",
+      "exhibit_ids": [
+        "MAPICI-A0-P1-1-001",
+        "MAPICI-A0-P2-1-001",
+        "MAPICI-FPPC-1-001",
+        "MAPICI-FPPC1-1-001"
+      ],
+      "title": "FAA Private Pilot Certificate",
+      "unified_title": "FAA Private Pilot Certificate",
+      "is_classified": true,
+      "issuing_agency": "Federal Aviation Administration (FAA)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.97,
+      "quality_flag": "",
+      "raw_titles": [
+        "AERO 022 - Private Pilot Ground School - FAA Card",
+        "AERO 022L - Private Pilot Ground School Lab - FAA Card",
+        "FAA Private Pilot Certificate",
+        "FAA-issued Private Pilot Certificate"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "355"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 3,
+      "adopter_names": [
+        "Glendale Community College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College"
+      ],
+      "potential": 7,
+      "potential_names": [
+        "Cypress College",
+        "Fullerton College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Reedley College",
+        "Sacramento City College",
+        "Southwestern College"
+      ],
+      "total_addressable": 10,
+      "credit_recs": [
+        {
+          "course": "AVIA 101",
+          "credit": "3 hours in Private Pilot Ground School"
+        },
+        {
+          "course": "AVIA 101L",
+          "credit": "1.0 hours in Private Pilot Flight Lab"
+        },
+        {
+          "course": "AERO 022",
+          "credit": "6 hours in Private Pilot Ground School"
+        },
+        {
+          "course": "AERO 022L",
+          "credit": "3 hours in Private Pilot Flight Lab"
+        },
+        {
+          "course": "AT 112",
+          "credit": "2 hours in PRIVATE PILOT LAB I"
+        },
+        {
+          "course": "AT 113",
+          "credit": "3 hours in PRIVATE PILOT LAB II"
+        },
+        {
+          "course": "AT 120",
+          "credit": "5 hours in PRIVATE PILOT GROUND SCHOOL"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-A0-P1-1-001",
+          "title": "AERO 022 - Private Pilot Ground School - FAA Card",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-A0-P2-1-001",
+          "title": "AERO 022L - Private Pilot Ground School Lab - FAA Card",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-FPPC-1-001",
+          "title": "FAA-issued Private Pilot Certificate",
+          "units": 4.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-FPPC1-1-001",
+          "title": "FAA Private Pilot Certificate",
+          "units": 10.0,
+          "lines": 3
+        }
+      ],
+      "adopter_units": {
+        "Glendale Community College": 10.0,
+        "San Bernardino Valley College": 9.0,
+        "San Diego Miramar College": 4.0
+      },
+      "adopter_lines": {
+        "Glendale Community College": 3,
+        "San Bernardino Valley College": 2,
+        "San Diego Miramar College": 2
+      },
+      "adopter_rec_idx": {
+        "Glendale Community College": [
+          4,
+          5,
+          6
+        ],
+        "San Bernardino Valley College": [
+          2,
+          3
+        ],
+        "San Diego Miramar College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 9.0,
+      "peer_units_max": 10.0,
+      "rec_units_total": 23.0
     },
     {
       "exhibit_id": "MAPCXS-E2OF-1-001",
@@ -409497,7 +411283,16 @@ window.CPL_STATEWIDE = {
         "disciplines": 4,
         "ccc_collaborative": 8,
         "industry_certs": 8,
-        "pct": 1.4
+        "pct": 1.3
+      },
+      {
+        "college": "Las Positas College",
+        "credit_recs": 188,
+        "exhibits": 142,
+        "disciplines": 10,
+        "ccc_collaborative": 12,
+        "industry_certs": 87,
+        "pct": 1.3
       },
       {
         "college": "Los Angeles Trade Technical College",
@@ -409506,15 +411301,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 5,
         "ccc_collaborative": 1,
         "industry_certs": 53,
-        "pct": 1.3
-      },
-      {
-        "college": "Las Positas College",
-        "credit_recs": 182,
-        "exhibits": 136,
-        "disciplines": 9,
-        "ccc_collaborative": 12,
-        "industry_certs": 83,
         "pct": 1.3
       },
       {
@@ -409572,6 +411358,15 @@ window.CPL_STATEWIDE = {
         "pct": 1.1
       },
       {
+        "college": "Glendale Community College",
+        "credit_recs": 151,
+        "exhibits": 107,
+        "disciplines": 15,
+        "ccc_collaborative": 33,
+        "industry_certs": 45,
+        "pct": 1.0
+      },
+      {
         "college": "De Anza College",
         "credit_recs": 150,
         "exhibits": 136,
@@ -409614,15 +411409,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 14,
         "ccc_collaborative": 0,
         "industry_certs": 57,
-        "pct": 1.0
-      },
-      {
-        "college": "Glendale Community College",
-        "credit_recs": 142,
-        "exhibits": 104,
-        "disciplines": 15,
-        "ccc_collaborative": 28,
-        "industry_certs": 36,
         "pct": 1.0
       },
       {
@@ -409842,6 +411628,15 @@ window.CPL_STATEWIDE = {
         "pct": 0.6
       },
       {
+        "college": "Merritt College",
+        "credit_recs": 93,
+        "exhibits": 83,
+        "disciplines": 7,
+        "ccc_collaborative": 2,
+        "industry_certs": 5,
+        "pct": 0.6
+      },
+      {
         "college": "Shasta College",
         "credit_recs": 93,
         "exhibits": 76,
@@ -409857,15 +411652,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 9,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 0.6
-      },
-      {
-        "college": "Merritt College",
-        "credit_recs": 86,
-        "exhibits": 77,
-        "disciplines": 4,
-        "ccc_collaborative": 0,
-        "industry_certs": 4,
         "pct": 0.6
       },
       {
@@ -410031,21 +411817,21 @@ window.CPL_STATEWIDE = {
         "pct": 0.5
       },
       {
+        "college": "Palo Verde College",
+        "credit_recs": 74,
+        "exhibits": 74,
+        "disciplines": 2,
+        "ccc_collaborative": 0,
+        "industry_certs": 74,
+        "pct": 0.5
+      },
+      {
         "college": "Coalinga College",
         "credit_recs": 73,
         "exhibits": 69,
         "disciplines": 10,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 0.5
-      },
-      {
-        "college": "Palo Verde College",
-        "credit_recs": 71,
-        "exhibits": 71,
-        "disciplines": 2,
-        "ccc_collaborative": 0,
-        "industry_certs": 71,
         "pct": 0.5
       },
       {
@@ -410241,17 +412027,17 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6174,
+        "credit_recs": 6173,
         "exhibits": 2340,
         "courses": 351,
         "colleges": 88,
         "ccc_collaborative": 35,
-        "pct": 42.6
+        "pct": 42.5
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2482,
-        "exhibits": 1084,
+        "credit_recs": 2486,
+        "exhibits": 1086,
         "courses": 1219,
         "colleges": 57,
         "ccc_collaborative": 594,
@@ -410259,12 +412045,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1557,
-        "exhibits": 583,
-        "courses": 679,
-        "colleges": 55,
-        "ccc_collaborative": 536,
-        "pct": 10.7
+        "credit_recs": 1570,
+        "exhibits": 593,
+        "courses": 690,
+        "colleges": 56,
+        "ccc_collaborative": 541,
+        "pct": 10.8
       },
       {
         "discipline": "Interdisciplinary Studies",
@@ -410277,18 +412063,18 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Business and Management",
-        "credit_recs": 501,
-        "exhibits": 306,
-        "courses": 245,
-        "colleges": 45,
+        "credit_recs": 504,
+        "exhibits": 309,
+        "courses": 248,
+        "colleges": 47,
         "ccc_collaborative": 46,
         "pct": 3.5
       },
       {
         "discipline": "Information Technology",
-        "credit_recs": 481,
-        "exhibits": 276,
-        "courses": 313,
+        "credit_recs": 485,
+        "exhibits": 280,
+        "courses": 314,
         "colleges": 53,
         "ccc_collaborative": 127,
         "pct": 3.3
@@ -410309,7 +412095,7 @@ window.CPL_STATEWIDE = {
         "courses": 170,
         "colleges": 37,
         "ccc_collaborative": 40,
-        "pct": 2.6
+        "pct": 2.5
       },
       {
         "discipline": "Social Sciences",
@@ -410376,11 +412162,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Education",
-        "credit_recs": 96,
+        "credit_recs": 98,
         "exhibits": 41,
-        "courses": 61,
-        "colleges": 27,
-        "ccc_collaborative": 28,
+        "courses": 63,
+        "colleges": 28,
+        "ccc_collaborative": 30,
         "pct": 0.7
       },
       {
@@ -410450,37 +412236,37 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 7559,
+        "credit_recs": 7558,
         "exhibits": 2862,
         "colleges": 83,
-        "pct": 52.1
+        "pct": 52.0
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 4019,
-        "exhibits": 1274,
+        "credit_recs": 4036,
+        "exhibits": 1286,
         "colleges": 81,
-        "pct": 27.7
+        "pct": 27.8
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2251,
-        "exhibits": 1762,
-        "colleges": 62,
+        "credit_recs": 2256,
+        "exhibits": 1767,
+        "colleges": 63,
         "pct": 15.5
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 430,
-        "exhibits": 345,
+        "credit_recs": 432,
+        "exhibits": 347,
         "colleges": 32,
         "pct": 3.0
       },
       {
         "cpl_type": "Military",
-        "credit_recs": 150,
+        "credit_recs": 152,
         "exhibits": 73,
-        "colleges": 34,
+        "colleges": 35,
         "pct": 1.0
       },
       {
@@ -410494,22 +412280,22 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 8967,
-        "exhibits": 3941,
+        "credit_recs": 8971,
+        "exhibits": 3946,
         "colleges": 91,
-        "pct": 61.8
+        "pct": 61.7
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 3039,
-        "exhibits": 1215,
+        "credit_recs": 3059,
+        "exhibits": 1227,
         "colleges": 78,
-        "pct": 21.0
+        "pct": 21.1
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1457,
-        "exhibits": 409,
+        "credit_recs": 1456,
+        "exhibits": 411,
         "colleges": 43,
         "pct": 10.0
       },
@@ -410529,9 +412315,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Military training (M)",
-        "credit_recs": 214,
+        "credit_recs": 216,
         "exhibits": 90,
-        "colleges": 35,
+        "colleges": 36,
         "pct": 1.5
       },
       {
@@ -410566,17 +412352,17 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12786,
-        "exhibits": 6105,
+        "credit_recs": 12804,
+        "exhibits": 6122,
         "colleges": 98,
         "disciplines": 23,
-        "pct": 88.2
+        "pct": 88.1
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1467,
-        "exhibits": 194,
-        "colleges": 66,
+        "credit_recs": 1474,
+        "exhibits": 196,
+        "colleges": 67,
         "disciplines": 11,
         "pct": 10.1
       },
@@ -410669,14 +412455,6 @@ window.CPL_STATEWIDE = {
         "colleges": 80,
         "cpl_type": "Standardized Assessment",
         "discipline": "Social Sciences"
-      },
-      {
-        "title": "IB Theatre HL (score 5-7): Cal-GETC Area 3A",
-        "credit_recs": 81,
-        "courses": 2,
-        "colleges": 80,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Fine and Applied Arts"
       },
       {
         "title": "AP Psychology (score 3-5): Cal-GETC Area 4",
@@ -410797,6 +412575,14 @@ window.CPL_STATEWIDE = {
         "colleges": 80,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "IB Theatre HL (score 5-7): Cal-GETC Area 3A",
+        "credit_recs": 80,
+        "courses": 2,
+        "colleges": 79,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Fine and Applied Arts"
       },
       {
         "title": "IB Physics HL (score 5-7): Cal-GETC Area 5A",
@@ -410992,8 +412778,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-20T17:19:25",
-  "total_credit_recs": 14504,
+  "generated_at": "2026-10-21T17:22:33",
+  "total_credit_recs": 14529,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

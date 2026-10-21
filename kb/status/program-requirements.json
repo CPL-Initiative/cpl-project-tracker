@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-21T18:36:03Z",
+  "written_at": "2026-10-21T18:50:54Z",
   "session": 442,
   "moniker": "SkyManzanita",
-  "run": "the CPL Queue routine",
+  "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_443_handoff.md",
   "next_step": {
-    "title": "Read the next thin colleges",
-    "text": "Sierra, Reedley and MiraCosta are next on the thin list; read the host's own outline first, then a capture-only read, then extract under the 40 dollar go."
+    "title": "Reader work for five CourseLeaf colleges",
+    "text": "Sierra, MiraCosta, Golden West, Foothill and Oxnard captured exactly as before on October 21, so their missing programs need the CourseLeaf reader to find each program's own page; Reedley's records are loaded and its display build waits on its pull request."
   },
   "calls": [
     {
@@ -24,6 +24,22 @@
   },
   "changes": [
     {
+      "at": "2026-10-21T14:10Z",
+      "text": "Six thin colleges captured again for free; Reedley's reader now finds 196 of its 200 programs with a closed course list, and the five CourseLeaf colleges found the same pages as before."
+    },
+    {
+      "at": "2026-10-21T15:05Z",
+      "text": "Reedley extracted for 11 dollars 18, 167 of 196 passing the machine checks, and 159 new records loaded."
+    },
+    {
+      "at": "2026-10-21T17:20Z",
+      "text": "Reedley's display build written and its display job started."
+    },
+    {
+      "at": "2026-10-21T17:10Z",
+      "text": "On screen the reference is now called CPL Pathways, and the CPL Pathways tab shows a chosen college's program data in one line."
+    },
+    {
       "at": "2026-10-21T12:05Z",
       "text": "The reader now keeps a Requirements tab whose course numbers carry a campus letter, as the Ventura district prints them."
     },
@@ -32,8 +48,8 @@
       "text": "Moorpark, Oxnard and Ventura read again and loaded: 209 new records, 100, 86 and 121 passing the machine checks, about 32 dollars in extraction."
     },
     {
-      "at": "2026-10-21T18:31Z",
-      "text": "Display build 8d733f684f83, 16,729 programs, applied in full on the second run after one dropped connection."
+      "at": "2026-10-21T20:00Z",
+      "text": "One display build from main with Reedley, Moorpark, Oxnard and Ventura, applied once after two runs' builds overlapped."
     }
   ],
   "headline": [
@@ -129,7 +145,7 @@
   },
   "harvest": {
     "day": "2026-10-21",
-    "gaps": 3781,
+    "gaps": 3894,
     "parts": {
       "links": {
         "catalog": [
@@ -146,7 +162,7 @@
         ]
       },
       "roep": [
-        19312,
+        19198,
         20282
       ],
       "coci": [

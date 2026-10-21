@@ -10,62 +10,62 @@
     "other": 150000
   },
   "summary": {
-    "files": 1224,
-    "bytes": 12568457,
-    "over_budget": 9,
+    "files": 1226,
+    "bytes": 12586012,
+    "over_budget": 8,
     "handoff_max": 443,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60810,
+    "always_loaded_bytes": 59378,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60810,
-        "over": 1
+        "bytes": 59378,
+        "over": 0
       },
       "other": {
-        "files": 122,
-        "bytes": 3853415,
+        "files": 123,
+        "bytes": 3860460,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9564,
+        "bytes": 10121,
         "over": 0
       },
       "lessons": {
         "files": 84,
-        "bytes": 2319564,
+        "bytes": 2325641,
         "over": 1
       },
       "kb_note": {
-        "files": 561,
-        "bytes": 2767942,
+        "files": 562,
+        "bytes": 2770429,
         "over": 0
       },
       "roadmap_lane": {
         "files": 41,
-        "bytes": 418291,
+        "bytes": 419341,
         "over": 4
       },
       "handoff": {
         "files": 414,
-        "bytes": 3138871,
+        "bytes": 3140642,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 9,
       "house_voice": 23,
+      "oversized_doc": 8,
       "kb_note_dialect": 1,
       "vault_heavy_path": 64
     },
     "vault": {
-      "files": 23667,
-      "bytes": 3305384711,
-      "heavy_bytes": 2215520999,
-      "heavy_share": 0.67,
+      "files": 23850,
+      "bytes": 3351386489,
+      "heavy_bytes": 2254247324,
+      "heavy_share": 0.673,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -135,19 +135,6 @@
     }
   },
   "findings": [
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 60810,
-        "limit": 60000,
-        "lane": "always_loaded",
-        "over_by": 810,
-        "ratio": 1.01
-      },
-      "message": "60,810 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
     {
       "rule": "house_voice",
       "fixable": false,
@@ -470,13 +457,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 739057,
+        "bytes": 739749,
         "limit": 150000,
         "lane": "other",
-        "over_by": 589057,
+        "over_by": 589749,
         "ratio": 4.93
       },
-      "message": "739,057 B is 4.9× the other budget (150,000 B) — candidate for compaction",
+      "message": "739,749 B is 4.9× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -544,20 +531,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1212793076,
+        "bytes": 1249960445,
         "kind": "dir"
       },
-      "message": "directory totals 1,212,793,076 B inside the vault"
+      "message": "directory totals 1,249,960,445 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 141131207,
+        "bytes": 142044642,
         "kind": "dir"
       },
-      "message": "directory totals 141,131,207 B inside the vault"
+      "message": "directory totals 142,044,642 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -594,10 +581,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 31644829,
+        "bytes": 32231809,
         "kind": "dir"
       },
-      "message": "directory totals 31,644,829 B inside the vault"
+      "message": "directory totals 32,231,809 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -784,10 +771,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 11823934,
+        "bytes": 11875795,
         "kind": "file"
       },
-      "message": "11,823,934 B single file inside the vault"
+      "message": "11,875,795 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1044,10 +1031,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3329483,
+        "bytes": 3331137,
         "kind": "file"
       },
-      "message": "3,329,483 B single file inside the vault"
+      "message": "3,331,137 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1124,10 +1111,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354637,
+        "bytes": 2354653,
         "kind": "file"
       },
-      "message": "2,354,637 B single file inside the vault"
+      "message": "2,354,653 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1164,10 +1151,10 @@
       "fixable": false,
       "path": "kb/exhibit_audit/latest.json",
       "detail": {
-        "bytes": 2047709,
+        "bytes": 2052719,
         "kind": "file"
       },
-      "message": "2,047,709 B single file inside the vault"
+      "message": "2,052,719 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

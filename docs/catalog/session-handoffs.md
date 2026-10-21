@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 443 | [Session 443 handoff: the Ventura district's campus letter fixed; Moorpark, Oxnard and Ventura re-read; Sheet 109 still open](../session_443_handoff.md) | 2026-10-21 |
+| 443 | [Session 443 handoff: My College folding into CPL Pathways (step 1 open, funding moved out), Reedley loaded, Sheet 109 applied](../session_443_handoff.md) | 2026-10-21 |
 | 442 | [Session 442 handoff: the CLAUDE.md pass waits on Sheet 109; S440's harvest PR merged; two tests fixed](../session_442_handoff.md) | 2026-10-21 |
 | 441 | [Session 441 handoff: the program requirements harvest reaches Santa Monica, Irvine Valley and West LA; Taft 38661 removed](../session_441_handoff.md) | 2026-10-21 |
 | 440 | [Session 440 handoff: the funding page's JST counts and help, the two-priority film, then the CLAUDE.md pass](../session_440_handoff.md) | 2026-10-20 |

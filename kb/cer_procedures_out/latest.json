@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-10-20T13:04:21Z",
+ "_generated_at": "2026-10-21T13:18:45Z",
  "procedures_hash": "575c290d755b",
- "queue": 405,
+ "queue": 421,
  "saved_not_folded": 0,
- "waiting": 405,
- "proposed": 370,
- "needs_you_count": 423,
+ "waiting": 421,
+ "proposed": 386,
+ "needs_you_count": 431,
  "not_yet_asked": 0,
  "fold_held": 18,
  "procedures": [
@@ -21,9 +21,18 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 0,
-   "held": 88,
-   "sample": []
+   "settled": 3,
+   "held": 92,
+   "sample": [
+    [
+     "FAA Private Pilot Certificate",
+     "FAA Private Pilot Certificate"
+    ],
+    [
+     "Fire Inspector 1 Certificate",
+     "Fire Inspector I"
+    ]
+   ]
   },
   {
    "id": "statewide-catalog",
@@ -36,9 +45,14 @@
     "words": "use the MAP statewide CRs to match some of the exhibits",
     "skill": "Rule 5e"
    },
-   "settled": 0,
+   "settled": 1,
    "held": 1,
-   "sample": []
+   "sample": [
+    [
+     "Firefighter 1 Certificate",
+     "Firefighter 1"
+    ]
+   ]
   },
   {
    "id": "nccer-verbatim",
@@ -111,9 +125,14 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 0,
-   "held": 161,
-   "sample": []
+   "settled": 4,
+   "held": 167,
+   "sample": [
+    [
+     "ADJUS 57 Report Writing for Public Safety Personnel",
+     "Report Writing for Public Safety Personnel"
+    ]
+   ]
   },
   {
    "id": "issuer-issues-the-card",
@@ -128,7 +147,7 @@
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
    "settled": 0,
-   "held": 47,
+   "held": 48,
    "sample": []
   },
   {
@@ -143,7 +162,7 @@
     "skill": "Rule 5f"
    },
    "settled": 0,
-   "held": 120,
+   "held": 121,
    "sample": []
   },
   {
@@ -172,7 +191,7 @@
     "words": "the credential-merge doctrine: what folds and what stays distinct",
     "skill": "Rule 8c"
    },
-   "settled": 0,
+   "settled": 3,
    "held": 53,
    "sample": []
   },
@@ -188,7 +207,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 83,
+   "held": 85,
    "sample": []
   },
   {
@@ -201,16 +220,33 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 0,
-   "held": 405,
-   "sample": []
+   "settled": 4,
+   "held": 413,
+   "sample": [
+    [
+     "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
+     "Introduction to Administration of Justice"
+    ],
+    [
+     "Credit by Exam for ADJUS 22 Concepts of Criminal Law",
+     "Concepts of Criminal Law"
+    ],
+    [
+     "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
+     "FAA Private Pilot Ground School"
+    ],
+    [
+     "Portfolio for BUSN 20",
+     "International Business"
+    ]
+   ]
   }
  ],
  "classifier_run": {
   "calls": 1,
   "answered": 1,
   "errors": [],
-  "cost_usd": 0.51
+  "cost_usd": 0.5
  },
  "needs_you": [
   {
@@ -250,6 +286,32 @@
    },
    "colleges": [
     "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "ADJUS 23 Principles and Procedures of the Justice System",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has California Commission on Peace Officer Standards and Training (POST))",
+   "proposal": {
+    "title": "Principles and Procedures of the Justice System",
+    "issuer": "California Community Colleges",
+    "confidence": 0.92,
+    "note": "Course code stripped; joins the existing house family. The issuer is CCC because the CPL type is Credit By Exam."
+   },
+   "colleges": [
+    "Merritt College"
+   ]
+  },
+  {
+   "raw_title": "ADJUS 25 Community Relations",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has California Commission on Peace Officer Standards and Training (POST))",
+   "proposal": {
+    "title": "Community Relations",
+    "issuer": "California Community Colleges",
+    "confidence": 0.92,
+    "note": "Course code stripped; joins the existing house family. The issuer is CCC because the CPL type is Credit By Exam."
+   },
+   "colleges": [
+    "Merritt College"
    ]
   },
   {
@@ -3425,6 +3487,58 @@
    ]
   },
   {
+   "raw_title": "Industry for CIS 66",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Networking Fundamentals",
+    "issuer": "California Community Colleges",
+    "confidence": 0.5,
+    "note": "This IC-typed exhibit names only a course; the title comes from the catalog course-title hint. The actual industry cert (possibly CompTIA Network+) is unnamed, so the CCC issuer is provisional and needs review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for CNT 52",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Networking Fundamentals",
+    "issuer": "California Community Colleges",
+    "confidence": 0.5,
+    "note": "Course-only IC exhibit; the catalog title matches CIS 66, so the two are joined. The industry cert is unnamed, so the issuer is provisional."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for CNT 68",
+   "why": "the classifier is unsure (0.55)",
+   "proposal": {
+    "title": "Digital Forensics Fundamentals",
+    "issuer": "California Community Colleges",
+    "confidence": 0.55,
+    "note": "Course-only IC exhibit; the catalog title matches a house family. The underlying industry cert is unnamed, so the issuer is provisional."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for CNT 7285",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "CompTIA Cloud+",
+    "issuer": "CompTIA",
+    "confidence": 0.75,
+    "note": "The catalog course title 'Cloud Infrastructure: CompTIA Cloud+ Certification' names the cert, and the CPL type is Industry Certification. It is therefore joined to the CompTIA Cloud+ family with CompTIA as issuer, replacing the CCC issuer from the hint."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
    "raw_title": "Industry for EMS 10",
    "why": "the classifier is unsure (0.45)",
    "proposal": {
@@ -3838,6 +3952,19 @@
    },
    "colleges": [
     "Cabrillo College"
+   ]
+  },
+  {
+   "raw_title": "JOBTRAIN PWASC Property Management Training Program",
+   "why": "the classifier is unsure (0.55)",
+   "proposal": {
+    "title": "Property Management",
+    "issuer": "JobTrain",
+    "confidence": 0.55,
+    "note": "JobTrain, a Bay Area workforce nonprofit, was stripped from the title and treated as issuer and trainer. PWASC is an unidentified partner acronym that may be the true issuer, so this needs review."
+   },
+   "colleges": [
+    "Merritt College"
    ]
   },
   {
@@ -4803,6 +4930,19 @@
    ]
   },
   {
+   "raw_title": "Portfolio for BUSN 52",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Business Communication",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "The catalog title 'Business Communications' is joined to the CCC house family 'Business Communication', since it is the same course competency. The cx hint was set aside."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
    "raw_title": "Portfolio for ENG 19A",
    "why": "the classifier's title has a dangling word",
    "proposal": {
@@ -5490,7 +5630,7 @@
     "Juvenile Law and Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5505,7 +5645,7 @@
     "Automotive Technology Maintenance and Light Repair (MLR)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5520,7 +5660,7 @@
     "Business Management and Entrepreneurship"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5535,7 +5675,7 @@
     "Center for Financial Training (CFT) — Human Resources Management"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5550,7 +5690,7 @@
     "Anatomy and Physiology Honors"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5565,7 +5705,7 @@
     "History of Architecture 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5580,7 +5720,7 @@
     "Modern Dance Techniques 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5595,7 +5735,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5610,7 +5750,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5625,7 +5765,7 @@
     "Construction Inspection: Uniform Plumbing Code (UPC) Advanced"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5640,7 +5780,7 @@
     "Medical Assisting Clinical Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5655,7 +5795,7 @@
     "Medical Assisting Laboratory Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5670,7 +5810,7 @@
     "McDonald's Business Leadership Practices"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5685,7 +5825,7 @@
     "McDonald's Mid-Management Foundations Curriculum"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5700,7 +5840,7 @@
     "Music Skills 2"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5715,7 +5855,7 @@
     "Pharmacology"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5730,7 +5870,7 @@
     "Landscape Installation and Maintenance 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   },
   {
@@ -5745,7 +5885,7 @@
     "Sustainable Gardening for Landscapes (Horticulture)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-20",
+   "fold_report": "2026-10-21",
    "colleges": []
   }
  ]

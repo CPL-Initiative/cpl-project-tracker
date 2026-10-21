@@ -241,6 +241,10 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
     doc.getElementById("cplFundMemo").getAttribute("contenteditable") === "true" &&
     !!doc.getElementById("cplFundDocType") &&
     !!doc.getElementById("cplFundMemoPdf") && !!doc.getElementById("cplFundMemoDocx") && !!doc.getElementById("cplFundMemoCopy"));
+  // A status per document (Sam, 2026-10-21): a reader sees it as a word; only a
+  // signed-in curator gets the control.
+  check("a reader sees the memo's status as a word and no status control",
+    !doc.getElementById("cplFundDocStatus") && /Status: Draft/.test(doc.querySelector(".cplfund-reptoolbar").textContent));
   // The default memo carries the ESS-25-82 skeleton.
   const memo = T._buildMemo("memo");
   ["MEMORANDUM", "TO:", "FROM:", "RE:", "Funding Overview", "Priority Outcomes",
@@ -449,6 +453,27 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
   const grouped = shapeOf(T._csv());
   check("CSV: the district-grouped export keeps the same shape",
     grouped.bad === 0 && grouped.head === flat.head && grouped.n > flat.n);
+}
+
+// The document status control, for a signed-in curator (Sam, 2026-10-21).
+{
+  const { window } = freshDom();
+  window.CPL_SESSION = {
+    get: function () { return { access_token: "header.payload.sig", email: "co@cccco.edu" }; },
+    isFresh: function () { return true; },
+    authHeaders: function () { return { apikey: "anon", Authorization: "Bearer header.payload.sig" }; }
+  };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._setSubview("report");
+  const sel = doc.getElementById("cplFundDocStatus");
+  check("a curator gets a Status control offering Draft, Final and Tabled",
+    !!sel && Array.from(sel.options).map(function (o) { return o.textContent; }).join(",") === "Draft,Final,Tabled");
+  sel.value = "final";
+  sel.dispatchEvent(new window.Event("change", { bubbles: true }));
+  check("choosing Final saves the memo's status", T._docStatus("memo") === "final" &&
+    doc.getElementById("cplFundDocStatus").value === "final");
+  check("the status is the document's own: the letter stays a draft", T._docStatus("letter") === "draft");
 }
 
 finish();

@@ -1643,6 +1643,8 @@
       + (state.scope === "college" && state.college
           ? '<a class="cb-act" id="cb-oppvisual" target="_blank" rel="noopener" href="' + esc(opportunityPageUrl(state.college)) + '">View CPL Visual</a>'
             + '<button type="button" class="cb-act" id="cb-workbook">Download CPL Extract</button>'
+            + (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function"
+                ? '<button type="button" class="cb-act" id="cb-pathways">Open CPL Pathways</button>' : "")
           : "")
       // Two ways back, because they are different journeys. Switching college is
       // the common one and must not cost a trip through "who are you" — that
@@ -3106,33 +3108,16 @@
     var oppsSum = oppsSummary();
     h += sec("opps", "What you could already give credit for", oppsSum, oppsBody());
 
-    // ── Your funding ──────────────────────────────────────────────────────
-    // Two appropriations, kept visibly apart. Neither figure is derived here.
-    var f = fundingFor(state.college);
-    // The program whose priorities the funding box describes. _prios() (in
-    // cpl_funding.js) and collectPrograms() (here) walk the SAME ordered
-    // priority set out of the SAME config, so position joins them — but
-    // ASSERT that rather than assume it. Attaching one priority's strategies
-    // to another priority's money is the bad failure here, so a disagreement
-    // falls back to the standalone list instead.
-    var implProg = null;
-    b.programs.forEach(function (p) { if (p.id === IMPL_PROJECT) implProg = p; });
-    var stratsInline = implProg && f && prioritiesAlign(f.prios, implProg);
-    var fundBody = fundingBlockHtml({ funding: state.funding, college: state.college, f: f,
-      detail: state.detail, b: b, implProg: implProg, stratsInline: stratsInline });
-    // Summary: the two appropriations, so the shut row still answers "what
-    // money is on the table?". EVERY branch says something — a blank summary
-    // on a money section reads as broken, and "not loaded" and "nothing" are
-    // different claims.
-    var fundSum = "";
-    if (state.funding === "error") fundSum = "not loaded";
-    else if (state.funding !== "ready" || (state.funding === "ready" && !f)) fundSum = "loading…";
-    else if (f && !f.onRoster) fundSum = "noncredit carve-out";
-    else if (f) {
-      if (f.grant) fundSum = f.grant.declined ? "seed declined" : money(f.grant.amount) + " seed";
-      if (f.alloc) fundSum += (fundSum ? " · " : "") + money(f.alloc.total) + " cap";
-    }
-    h += sec("funding", "My CPL Funding", esc(fundSum), fundBody);
+    // ── My CPL Funding, on the funding page (Sam, 2026-10-21: "move funding to
+    // Implementation Funding") ─────────────────────────────────────────────
+    // The block lives with Implementation Funding: its public page draws it for one
+    // institution with this file's own renderer (fundingPanel), so the college reads
+    // one description in one place. This fold says where and opens it on the college.
+    h += sec("funding", "My CPL Funding", "on the funding page",
+      '<p class="cb-note">This college&#39;s funding, the minimum conditions it meets, its targets and its next steps '
+      + "are on the CPL funding page, in its My Institution view.</p>"
+      + '<p><a class="cb-act" id="cb-fundpage" target="_blank" rel="noopener" href="'
+      + esc(fundingPageUrl(state.college)) + '">Open My CPL Funding</a></p>');
     var repSec = myReportsSection();
     h += sec("reports", "Reported expenditures", esc(repSec.summary), repSec.body);
 
@@ -3322,14 +3307,12 @@
         cs.share == null ? "withheld" : safePct(cs.share, 1) + "% to a real course", csBody);
     }
 
-    // ── Advice — only for programs NOT already nested in the funding box ──
-    // The implementation strategies now live inside the priority they count
-    // toward (Sam, 2026-08-12). Anything else the team adds to the config
-    // still gets its own section here, so guarantee (c) — every project is
-    // walked, a new program appears with no code change — survives the move.
-    var restPrograms = b.programs.filter(function (p) {
-      return !(stratsInline && p.id === IMPL_PROJECT);
-    });
+    // ── Advice — every program the team's config holds ──
+    // The implementation strategies sat inside the funding box from 2026-08-12;
+    // the box moved to the funding page on 2026-10-21 (it nests them there), so
+    // here they are advice beside the rest. Guarantee (c), every project walked
+    // and a new program appearing with no code change, holds.
+    var restPrograms = b.programs.slice();
     if (restPrograms.length) {
       var advBody = '<div class="cb-note" style="margin-top:0">These are written by the team, not by this page. '
         + "They are advice; the ones we can measure for this college carry a figure.</div>";
@@ -3537,7 +3520,56 @@
    * `state.remembered` is deliberately a separate field. Nothing downstream
    * reads it; only the picker does, and only to offer the shortcut. Wrapped
    * because storage can be unavailable. */
+  /* ── one college choice for My College and CPL Pathways (Sam, 2026-10-21) ──
+   * A college picked in either tab is the college the other opens on, while this page is open.
+   * The choice lives in memory only, so a new visit still asks first (above). Names are matched
+   * through the short-name crosswalk: MAP says "Mt San Antonio College", the catalog "Mt. San
+   * Antonio College". The twin of this block is in cpl_pathways.js. */
+  var CHOICE_BY = "college-briefing";
+  function choiceKey(name) {
+    if (!name) return "";
+    var f = window.cplCollegeShort;
+    var k = typeof f === "function" ? f(String(name), "short") : String(name);
+    return String(k || name).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  }
+  var shareSeen = null;
+  function shareChoice() {
+    window.CPL_COLLEGE_CHOICE = { college: state.scope === "college" ? (state.college || null) : null, by: CHOICE_BY };
+    shareSeen = window.CPL_COLLEGE_CHOICE;
+  }
+  /* A college CPL Pathways picked since this tab last looked: open it, once the list is read.
+     A cleared choice, or this tab's own, leaves the page as it is. */
+  function applySharedChoice(root) {
+    var C = window.CPL_COLLEGE_CHOICE;
+    if (!C || C === shareSeen || !state.data) return;
+    shareSeen = C;
+    if (!C.college || C.by === CHOICE_BY) return;
+    var k = choiceKey(C.college), names = state.data.colleges || [], m = "";
+    for (var i = 0; i < names.length; i++) if (choiceKey(names[i]) === k) { m = names[i]; break; }
+    if (!m || (state.scope === "college" && state.college === m)) return;
+    state.scope = "college";
+    state.district = ""; state.swpRegion = "";
+    selectCollege(m, root);
+  }
+  var sharedWired = false;
+  function wireSharedChoice() {
+    if (sharedWired) return;
+    sharedWired = true;
+    window.addEventListener("cpl-tab-activated", function (e) {
+      if (e && e.detail && e.detail.tab === "college-briefing") {
+        var root = document.getElementById("college-briefing-root");
+        if (root) applySharedChoice(root);
+      }
+    });
+  }
+  function openPathways() {
+    shareChoice();
+    var T = window.CPL_TABS;
+    if (T && typeof T.navigate === "function") T.navigate("cpl-pathways");
+  }
+
   function rememberScope() {
+    shareChoice();
     try {
       localStorage.setItem(SCOPE_KEY, JSON.stringify({
         scope: state.scope, college: state.college, district: state.district,
@@ -3712,6 +3744,12 @@
    * analysis here as an Excel workbook (college_cpl_workbook.js, loaded on first use). */
   var OPP_PAGE = "cpl-opportunity/";
   function opportunityPageUrl(college) { return OPP_PAGE + "?college=" + encodeURIComponent(college); }
+  /* The funding page's My Institution view for a college, named by the roster's spelling,
+     the key the funding module joins on (MAP says "Laney College"; the roster, "Laney"). */
+  var FUNDING_PAGE = "funding-model/";
+  function fundingPageUrl(college) {
+    return FUNDING_PAGE + "?college=" + encodeURIComponent(college ? rosterKey(college) : "") + "&view=one";
+  }
   function buildOpportunityExtract(btn) {
     var was = btn.textContent, college = state.college;
     var done = function (msg) {
@@ -3879,6 +3917,8 @@
     if (rep) rep.onclick = function () { buildBriefingReport(root); };
     var wbk = root.querySelector("#cb-workbook");
     if (wbk) wbk.onclick = function () { buildOpportunityExtract(wbk); };
+    var pth = root.querySelector("#cb-pathways");
+    if (pth) pth.onclick = function () { openPathways(); };
     // The roster's spelling, which the funding module keys on (MAP says
     // "Laney College"; the roster, "Laney").
     wireHowTo(root, state.college ? rosterKey(state.college) : null, "mycollege");
@@ -4036,7 +4076,9 @@
   }
   /* What this page shows, for the funding tab's Refresh splash. */
   function describeFunding() {
-    var surface = "My College: My CPL Funding";
+    // My CPL Funding moved to the funding page (2026-10-21); what this page still draws from the
+    // model is the steps the CPL Initiative suggests, in Start here and Advice.
+    var surface = "My College: suggested steps";
     if (state.funding !== "ready" || !state.college) {
       return { surface: surface, detail: "no college open in this window; it reads the model when one is chosen" };
     }
@@ -4790,8 +4832,9 @@
     var root = document.getElementById("college-briefing-root");
     if (!root) return;
     if (state.scope === null) restoreScope();
+    wireSharedChoice();
     loadMyReports(root);
-    if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadSwp(root); loadLive(root); render(root); return; }
+    if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadSwp(root); loadLive(root); render(root); applySharedChoice(root); return; }
     // No sign-in branch: a public reader loads the `_pub` mirrors through
     // sources(). `loadedSignedIn` above is what reloads from the OTHER source
     // when a reader signs in or out mid-session.
@@ -4804,6 +4847,7 @@
     loadLive(root);
     loadAll().then(function () {
       state.loading = false; state.loadedSignedIn = signedIn(); render(root);
+      applySharedChoice(root);
     }).catch(function (e) {
       state.loading = false; state.error = String(e && e.message || e); state.loadedSignedIn = signedIn(); render(root);
     });
@@ -4916,6 +4960,8 @@
     _SIERRA_Q_KEY: SIERRA_Q_KEY,
     _money: money,
     _state: state,
+    // The one college choice shared with CPL Pathways (Sam, 2026-10-21).
+    _shared: { apply: applySharedChoice, key: choiceKey },
     _SCENARIO: SCENARIO,
     _briefingScenario: briefingScenario,
     _loadFunding: loadFunding,

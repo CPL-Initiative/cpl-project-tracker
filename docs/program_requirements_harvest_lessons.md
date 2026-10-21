@@ -722,7 +722,16 @@ sharing pages 148-154 and two on the course availability table.
 
 **Sam's sheet 32 (2026-10-04):** a program shows "up to" plus the recommended path's figure, each course carries CPL in three kinds (articulated here, could adopt, for consideration), and catalog-and-state-file differences go to the college as drafts on the harvest tab and My College while the MAP team sends. Verbatim: lessons, *Moved from the lane (S386 compaction)*.
 
-## S442 SkyManzanita (2026-10-21): the Ventura district's campus letter, Moorpark from 31 passing to 100
+## S442, the routine's run beside Sam's SkyManzanita (2026-10-21): the Ventura district's campus letter
+
+- **Two sessions ran as S442 on one queue.** The routine's 11:15Z firing found no open PR newer than 10-19 and no
+  `list_sessions`, and Sam opened SkyManzanita by hand about the same hour. Both worked the harvest's thin list; both
+  read Oxnard's host within the hour, and each display job wrote its own build (bf781cf0cd22 for Reedley, 8d733f684f83
+  for the three Ventura colleges) over the same rows in the same window, leaving a mix. A build from `main` after both
+  merged, applied once, settled it. A session with no `list_sessions` reads `main`'s commits again before each
+  display dispatch, not only at the start.
+- **The old reader's capture and the new one disagree on Oxnard:** SkyManzanita's free capture read it "exactly as
+  before" (reader work); with the campus-letter fix it found 120 of 132 (94 before).
 
 - **A tab the filter cannot read as naming a course is dropped before any check sees it.** Moorpark's Animal Care and
   Training A.S. took its own page at title 1.0 yet read 0 of 42 listed courses. Page read 39595155181 printed only the
@@ -858,3 +867,27 @@ agents; a per-college tab; an agent per college that the college and the MAP
 team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
+
+## S442 SkyManzanita (2026-10-21): six colleges captured again, Reedley loaded, CPL Pathways' college line
+
+- **A free capture first says whether a reader improved.** The live list of thin colleges (active COCI programs
+  against records, under 60%) named Sierra, MiraCosta, Reedley, Golden West, Foothill and Oxnard, each read once
+  between 2026-10-15 and 10-17. A capture-only read of each (`extract=0`, one branch a college,
+  `claude/harvest-<college>-s442`) writes `capture_preview.json` and leaves `capture.json` alone, so compare the
+  preview with main's capture. Reedley's curriQunet read went from 36 of 200 programs with a closed list found to 196;
+  the five CourseLeaf colleges captured exactly as before (Sierra still reads 3 pages and falls back to the index;
+  Foothill 73 and Golden West 43 programs claimed by another program's page; MiraCosta 89 not found). Their gaps are
+  reader work, never a re-run.
+- **Reedley:** extraction run 39616074283, 196 extracted, 167 passing the machine checks, $11.18 under the $40 go;
+  load 39622476849 inserted 159 and kept 36 (receipt `kb/receipts/program_requirement_records_college_reedley_39622476849.json`,
+  its rollback inside); display build bf781cf0cd22 on the branch, display job dispatched.
+- **The thin list on 2026-10-21 (~14:00Z):** no records at Diablo Valley, Santiago Canyon, North Orange Continuing
+  Education and San Jose City (parked for the reader); under 30% at MiraCosta, Sierra, Reedley (before its load),
+  Skyline and Golden West; Skyline's ceiling is COCI itself (a closed course list for 58 of 144 programs);
+  Canyons' missing 100 are noncredit programs its credit catalog does not carry.
+- **The name on screen is CPL Pathways (Sam, 2026-10-21: "Let's use 'CPL Pathways' for now").** No rendered string
+  says ROEP or catalog harvest (`tests/cpl_pathways_college_status.test.js` g); code identifiers keep `roep`.
+- **CPL Pathways' college line (Sam's ask, #2312):** complete counts an active COCI program passing the three machine
+  checks; SLOs cover the courses the state's Program Course File lists for the college's programs; a disagreement is a
+  record failing the courses or off-list check, and the Records view gained that filter so the count opens exactly
+  what it counted.

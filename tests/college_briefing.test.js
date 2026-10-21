@@ -605,6 +605,23 @@ check("funding: no re-derived allocation arithmetic in the briefing",
   !/headcount_pct|floor_window|ruralPerCollege|ruralAlloc|23240308|24240308|0\.0183/.test(briefingCode),
   "the allocation comes from cpl_funding.js via _alloc(); a second implementation drifts");
 
+// ── My CPL Funding moved to the funding page (Sam, 2026-10-21: "move funding to
+// Implementation Funding") ──
+// The block's renderer is unchanged and the funding page draws it (fundingPanel), so the
+// guards below read the block itself, composed from the page state as the funding page
+// composes it, and My College's own page is asserted to carry only the fold that links there.
+function blockOf(M) {
+  const st = M._state, b = st.data.briefing, f = M._fundingFor(st.college);
+  let impl = null;
+  b.programs.forEach(function (p) { if (p.id === "cpl-implementation") impl = p; });
+  const inline = !!(impl && f && M._prioritiesAlign(f.prios, impl));
+  const div = blockDoc.createElement("div");
+  div.innerHTML = M._fundingBlockHtml({ funding: st.funding, college: st.college, f: f, detail: st.detail,
+    b: b, implProg: impl, stratsInline: inline });
+  return div;
+}
+const blockDoc = new JSDOM("<!doctype html><body></body>").window.document;
+
 // ── Part H — the funding section renders end-to-end ──
 // The pure helpers above are exercised in isolation; this walks the real
 // render() with a college selected, so a throw or a missing branch fails here
@@ -633,7 +650,13 @@ B._state.data = {
 };
 const fr = wf.document.getElementById("college-briefing-root");
 B.render(fr);
-const ftxt = fr.textContent;
+const fblk = blockOf(B), ftxt = fblk.textContent;
+check("render: My College's page carries My CPL Funding as a link to the funding page, on the college",
+  (function () {
+    const a = fr.querySelector('details.cb-sec[data-sec="funding"] a#cb-fundpage');
+    return !!a && /^funding-model\/\?college=[^&]+&view=one$/.test(a.getAttribute("href")) && a.textContent === "Open My CPL Funding";
+  })());
+check("render: and no funding figure is left on My College's page", fr.querySelectorAll(".cb-fbig, .cb-prios").length === 0);
 check("render: the seed grant appears as money", /\$50,000/.test(ftxt));
 check("render: the allocation appears as money", /\$175,000/.test(ftxt));
 check("render: a floored college is TOLD it is at the floor, not left to infer",
@@ -654,7 +677,7 @@ check("render: an outstanding participation requirement is surfaced",
   /1\. A CPL Coordinator \(primary CPL contact\) is named in MAP/.test(ftxt) &&
   /once the minimum conditions are met/.test(ftxt));
 // The minimum conditions reuse the outcome list's look (.cb-conds), so count the outcomes alone.
-check("render: the ESS outcomes are listed", fr.querySelectorAll(".cb-ess-list:not(.cb-conds) li").length === 3);
+check("render: the ESS outcomes are listed", fblk.querySelectorAll(".cb-ess-list:not(.cb-conds) li").length === 3);
 check("render: Sierra AI suggested questions render as buttons",
   fr.querySelectorAll("button.cb-ask").length >= 3);
 // SUPERSEDED 2026-08-17 (Sky167). Sam's 2026-08-11 instruction was "put the
@@ -694,10 +717,11 @@ Bn.render(nr);
 // element that carries a college's money, not via a "$" substring. The page
 // legitimately contains "$50k ESS 25-82" as a PROGRAM NAME, so a text-level
 // dollar match fails on correct output.
+const nblkErr = blockOf(Bn);
 check("render: a failed model read says so, and attributes NO funding to the college",
-  /The CPL funding figures did not load/.test(nr.textContent)
-  && /Reload the page to see the college's funding/.test(nr.textContent)
-  && nr.querySelectorAll(".cb-fbig").length === 0);
+  /The CPL funding figures did not load/.test(nblkErr.textContent)
+  && /Reload the page to see the college's funding/.test(nblkErr.textContent)
+  && nblkErr.querySelectorAll(".cb-fbig").length === 0);
 
 // ── Part I — "transcribed" in MAP is a MARK, not a posting ──
 // Sam, 2026-08-11: a college checks the Transcribe step in MAP when it judges
@@ -922,17 +946,26 @@ N._state.data = {
 };
 const nr2 = wn2.document.getElementById("college-briefing-root");
 N.render(nr2);
-const ntxt = nr2.textContent;
+const ntxt = nr2.textContent, nbtxt = blockOf(N).textContent;
 check("(N) the waiting breakdown renders", /What that waiting credit actually is/.test(ntxt));
 check("(N) …and reconciles to the headline in the box above", /5,000 units/.test(ntxt));
 check("(N) …and names basic military service as the good news",
   /basic military service/i.test(ntxt) && /one decision applied repeatedly/.test(ntxt));
 check("(N) the priority split renders with real tab names",
-  /2026–2028 College Implementation Funding/.test(ntxt) && /2025–2026 \$50K Seed Funding/.test(ntxt));
+  /2026–2028 College Implementation Funding/.test(nbtxt) && /2025–2026 \$50K Seed Funding/.test(nbtxt));
 check("(N) each priority shows its cap AND this college's target",
-  /\$207,428/.test(ntxt) && /36\.7 FTES/.test(ntxt));
+  /\$207,428/.test(nbtxt) && /36\.7 FTES/.test(nbtxt));
 check("(N) 'Do this next' names a step from the team's own config",
-  /Do this next/.test(ntxt) && /Act on all JST credit recommendations in MAP/.test(ntxt));
+  // Re-pointed 2026-10-21 to the block: the old page also carried the Start here lead, which
+  // satisfied the pattern on its own. The property is the block's Do this next naming a strategy
+  // the team's config (TWO) holds, word for word.
+  (function () {
+    const m = /Do this next(.*?)(For the seed funding|$)/.exec(nbtxt);
+    const strats = [];
+    (function walk(o) { if (Array.isArray(o)) { if (o.length && o.every((x) => typeof x === "string")) o.forEach((x) => strats.push(x)); else o.forEach(walk); }
+      else if (o && typeof o === "object") Object.keys(o).forEach((k) => walk(o[k])); })(TWO);
+    return !!m && strats.some((t) => m[1].indexOf(String(t).replace(/[.\s]+$/, "")) >= 0);
+  })());
 check("(N) resources render as links", nr2.querySelectorAll(".cb-resi a").length >= 12);
 // The waiting breakdown emits its own .cb-bar progress bars, and finish()
 // relocates the FIRST .cb-bar in document order into the Sierra AI box. The
@@ -1283,10 +1316,11 @@ const jTxt = jRoot.textContent.replace(/\s+/g, " ");
 check("(P) ⭐ Mt. San Antonio is NOT told it is off the funding roster",
   !/is not on the 115-college funding roster/.test(jTxt),
   "the roster row was always there — the join dropped it");
-check("(P) …and its real allocation renders", /\$400,000/.test(jTxt));
+const jbTxt = blockOf(J).textContent.replace(/\s+/g, " ");
+check("(P) …and its real allocation renders", /\$400,000/.test(jbTxt));
 check("(P) …and it is told it is held to the maximum, and where the difference went",
   // "cap" vocabulary (one pool, 2026-08-31); the where-it-went promise holds.
-  /cap/.test(jTxt) && /redirected to the other colleges/.test(jTxt));
+  /cap/.test(jbTxt) && /redirected to the other colleges/.test(jbTxt));
 
 // ── The collapsed shape ──
 // RESCOPED 2026-08-17 (Sky167). Sierra is a `details.cb-sec` now too — Sam
@@ -1397,10 +1431,13 @@ NEST._state.data = { colleges: ["Mt. San Antonio College"], summaryByName: {},
   briefing: N._buildBriefing({ config: THREE, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
 const nestRoot = wNest.document.getElementById("college-briefing-root");
 NEST.render(nestRoot);
-const nestTxt = nestRoot.textContent.replace(/\s+/g, " ");
+const nestPage = nestRoot;
+// The nesting lives in the block, which the funding page draws; read it there.
+const nestBlk = blockOf(NEST);
+const nestTxt = nestBlk.textContent.replace(/\s+/g, " ");
 check("(P) the strategies nest inside the funding priority rows",
-  nestRoot.querySelectorAll(".cb-prow details.cb-strat").length === 3,
-  "one disclosure per priority, got " + nestRoot.querySelectorAll(".cb-prow details.cb-strat").length);
+  nestBlk.querySelectorAll(".cb-prow details.cb-strat").length === 3,
+  "one disclosure per priority, got " + nestBlk.querySelectorAll(".cb-prow details.cb-strat").length);
 check("(P) …labelled by count, so the reader knows what opening costs",
   // Spelled out and attributed since 2026-10-01 (Sam's mockup card 10).
   /Two steps the CPL Initiative suggests/.test(nestTxt) && /One step the CPL Initiative suggests/.test(nestTxt),
@@ -1411,15 +1448,15 @@ check("(P) the flat advice list is gone once the steps are folded in",
 // The "not measured here" flag was honest and it was noise: repeated on
 // nearly every row it made advice look like an audit.
 check("(P) the repeated 'not measured here' flag is dropped in the nested view",
-  nestRoot.querySelectorAll(".cb-strat .cb-flag").length === 0);
+  nestBlk.querySelectorAll(".cb-strat .cb-flag").length === 0);
 check("(P) …but a strategy that IS measured still shows its figure",
-  nestRoot.querySelectorAll(".cb-strat .cb-m").length > 0);
+  nestBlk.querySelectorAll(".cb-strat .cb-m").length > 0);
 // Sam, 2026-10-15 (the My College mockup, call 4: "Open one copy"): the steps
 // under a college's own priorities arrive open; the statewide copy under the
 // explainer's Funding outcomes folds once a college is chosen.
 check("(P) the nested steps arrive open (Sam, 2026-10-15)",
-  nestRoot.querySelectorAll("details.cb-strat").length > 0 &&
-  Array.prototype.every.call(nestRoot.querySelectorAll("details.cb-strat"), function (d) { return d.open; }));
+  nestBlk.querySelectorAll("details.cb-strat").length > 0 &&
+  Array.prototype.every.call(nestBlk.querySelectorAll("details.cb-strat"), function (d) { return d.open; }));
 // ⭐ THE LIVE SHAPE since 2026-09-22. THREE lists three priorities, as the live
 // config does, while the funding module carries a fourth (career attainment)
 // from its baked defaults at a 0% share. Counting it sent every college's steps
@@ -1428,8 +1465,8 @@ check("(P) the nested steps arrive open (Sam, 2026-10-15)",
 // no steps and no funding, so the funding box leaves it out.
 check("(P) ⭐ an unlisted priority at a 0% share stays out of the funding box and the count gate",
   (FUND._prios("Mt San Antonio", "1") || []).length === 4 &&
-  nestRoot.querySelectorAll(".cb-prios .cb-prow").length === 3 &&
-  !/Career attainment/.test(nestRoot.querySelector(".cb-prios") ? nestRoot.querySelector(".cb-prios").textContent : ""),
+  nestBlk.querySelectorAll(".cb-prios .cb-prow").length === 3 &&
+  !/Career attainment/.test(nestBlk.querySelector(".cb-prios") ? nestBlk.querySelector(".cb-prios").textContent : ""),
   "the model carries 4 priorities; the box shows the 3 the config lists");
 
 // ⭐ Guarantee (c) SURVIVES THE MOVE. Sam adds programs to the config and they

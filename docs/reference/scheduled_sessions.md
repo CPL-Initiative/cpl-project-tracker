@@ -82,6 +82,18 @@ is his standing preference there too.
    moves to Draft ([`lanes/library.md`](lanes/library.md)). A draft is never
    outward, so it needs no hold; approving it is Sam's.
 
+## The UI pass: one view a night
+
+Sam's Sheet 109 card 2 (2026-10-21) moved the UI pass out of `/checkpoint` (his 2026-10-08 ruling put one view in
+every checkpoint; nine of twelve skipped it for want of room). **The first scheduled session of each UTC day takes
+it as a queue item**, after the item the handoff names first, when `python3 scripts/ui_pass.py --next` names a view
+and the ledger records no pass dated today. Audit that view with `/a11y-pass`, with its two pass checks: **wiring**
+(`ui_pass.py --wiring <id>`: open each view sharing a dataset and confirm the shared figures agree on screen) and
+**First Light** (tokens only, no raw hex, the theme's type, light and dark). A small fix ships in its own PR; a
+larger one becomes a lane item or a sheet card. Then `ui_pass.py --record <id> "<what it found and fixed>"` and
+commit the ledger with the fix. A session that cannot finish leaves the view due; the ledger carries it to the
+next night. CI's `--check` fails when a tab joins the nav and the ledger lacks it (`--sync` adds it).
+
 ## While working: go with the recommendation
 
 **When a call has a clear recommendation and can be undone, act on it.**
@@ -89,12 +101,7 @@ Reversible means `git revert` undoes it, or its Rule 10 receipt does. Put a card
 on the standing sheet that says *Proceeded on the recommendation (S<N>, <date>);
 reply to reverse*, so Sam's reading is a review, never a gate.
 
-**Hold for Sam, still:** anything outward (sending to a college or a person;
-drafts are fine), a public KB merge (human-gated by its curation pipeline),
-deleting data, a production deploy outside a standing authorization, a change to
-the program's name or identity, funding figures published to colleges, who does
-what on the team, and any call a lane marks as his. A held item becomes a card;
-move on to the next queue item.
+**Hold for Sam, still:** the one hold list in `CLAUDE.md` (*Decisions arrive as decision sheets*, Sam's Sheet 109 card 3, 2026-10-21), which covers a session Sam opens by hand too. A held item becomes a card; move on to the next queue item.
 
 **Extraction cost: a standing go up to $40 a college (Sam, 2026-10-14, S393,
 his words: *"limit is $40 per college"*; `cpl_memory`

@@ -1,10 +1,10 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-10-20T13:04:21Z",
- "_queue_count": 405,
+ "_generated_at": "2026-10-21T13:18:45Z",
+ "_queue_count": 421,
  "_counts": {
-  "staged": 370,
-  "needs_you": 423,
+  "staged": 386,
+  "needs_you": 431,
   "not_yet_asked": 0
  },
  "_residual": [],
@@ -46,6 +46,40 @@
    "rests_on": [
     "Rule 9"
    ]
+  },
+  "ADJUS 23 Principles and Procedures of the Justice System": {
+   "title": "Principles and Procedures of the Justice System",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "Course code stripped; joins the existing house family. The issuer is CCC because the CPL type is Credit By Exam.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ]
+  },
+  "ADJUS 25 Community Relations": {
+   "title": "Community Relations",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "Course code stripped; joins the existing house family. The issuer is CCC because the CPL type is Credit By Exam.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ]
+  },
+  "ADJUS 57 Report Writing for Public Safety Personnel": {
+   "title": "Report Writing for Public Safety Personnel",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ADJUS 57; issuer = CCC.",
+   "procedure": "course-identity"
   },
   "AGBUS 015: Computer Application to Agriculture": {
    "title": "Agricultural Computer Applications",
@@ -1889,6 +1923,32 @@
    ],
    "trainer": "Long Beach Unified School District"
   },
+  "Credit by Exam for ADJUS 21 Introduction to Administration of Justice": {
+   "title": "Introduction to Administration of Justice",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "The cx hint 'for ADJUS 21 ...' was set aside because it kept a dangling word and the course code. The mechanism and code are stripped, and the title joins the house family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ]
+  },
+  "Credit by Exam for ADJUS 22 Concepts of Criminal Law": {
+   "title": "Concepts of Criminal Law",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "The cx hint was set aside because it kept a dangling 'for' and the course code. The title joins the house family 'Concepts of Criminal Law'.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ]
+  },
   "Credit by Exam: Introduction to Criminal Justice": {
    "title": "Introduction to Criminal Justice",
    "issuer": "California Community Colleges",
@@ -2472,6 +2532,14 @@
     "issuer-issues-the-card"
    ]
   },
+  "FAA Private Pilot Certificate": {
+   "title": "FAA Private Pilot Certificate",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'FAA Private Pilot Certificate'; issuer from the curated credential KB.",
+   "procedure": "brand-family"
+  },
   "FIRE 33 -Fire Protection Organization and System": {
    "title": "Fire Protection Organization",
    "issuer": "California Community Colleges",
@@ -2510,6 +2578,14 @@
     "Rule 8b",
     "Rule 6"
    ]
+  },
+  "Fire Inspector 1 Certificate": {
+   "title": "Fire Inspector I",
+   "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'Fire Inspector I'; issuer from the curated credential KB.",
+   "procedure": "brand-family"
   },
   "Fire Investigator 1A, 1B, 1C": {
    "title": "Fire Investigator 1A–1C (Full Series)",
@@ -2576,6 +2652,14 @@
     "Rule 4",
     "Rule 8"
    ]
+  },
+  "Firefighter 1 Certificate": {
+   "title": "Firefighter 1",
+   "issuer": "California State Fire Training (SFT)",
+   "via": "statewide",
+   "confidence": 0.85,
+   "note": "Matched the statewide CCC-collaborative catalog entry 'Firefighter 1'; issuer from the curated credential KB.",
+   "procedure": "statewide-catalog"
   },
   "Fitness for Life Military Training": {
    "title": "Fitness for Life (Military)",
@@ -3006,6 +3090,57 @@
     "join-when-likely-one"
    ]
   },
+  "Industry for CIS 66": {
+   "title": "Networking Fundamentals",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.5,
+   "note": "This IC-typed exhibit names only a course; the title comes from the catalog course-title hint. The actual industry cert (possibly CompTIA Network+) is unnamed, so the CCC issuer is provisional and needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for CNT 52": {
+   "title": "Networking Fundamentals",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.5,
+   "note": "Course-only IC exhibit; the catalog title matches CIS 66, so the two are joined. The industry cert is unnamed, so the issuer is provisional.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ]
+  },
+  "Industry for CNT 68": {
+   "title": "Digital Forensics Fundamentals",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.55,
+   "note": "Course-only IC exhibit; the catalog title matches a house family. The underlying industry cert is unnamed, so the issuer is provisional.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ]
+  },
+  "Industry for CNT 7285": {
+   "title": "CompTIA Cloud+",
+   "issuer": "CompTIA",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "The catalog course title 'Cloud Infrastructure: CompTIA Cloud+ Certification' names the cert, and the CPL type is Industry Certification. It is therefore joined to the CompTIA Cloud+ family with CompTIA as issuer, replacing the CCC issuer from the hint.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "issuer-issues-the-card",
+    "Rule 8c"
+   ]
+  },
   "Industry for EMS 10": {
    "title": "Paramedic Theory 1",
    "issuer": "National Registry of Emergency Medical Technicians (NREMT)",
@@ -3431,6 +3566,20 @@
     "Rule 5f",
     "join-when-likely-one"
    ]
+  },
+  "JOBTRAIN PWASC Property Management Training Program": {
+   "title": "Property Management",
+   "issuer": "JobTrain",
+   "via": "classifier",
+   "confidence": 0.55,
+   "note": "JobTrain, a Bay Area workforce nonprofit, was stripped from the title and treated as issuer and trainer. PWASC is an unidentified partner acronym that may be the true issuer, so this needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "local-trainer-is-agency",
+    "Rule 1",
+    "Rule 5f"
+   ],
+   "trainer": "JobTrain"
   },
   "Juvenile Corrections Training": {
    "title": "Juvenile Corrections Officer Core Course",
@@ -4228,6 +4377,19 @@
     "issuer-issues-the-card"
    ]
   },
+  "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements": {
+   "title": "FAA Private Pilot Ground School",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "The evidence is knowledge-test and ground-school completion, not the full Private Pilot Certificate. As a narrower competency it joins the FAA Private Pilot Ground School family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "mechanism-collapses",
+    "Rule 8c"
+   ]
+  },
   "Personal Money Management High School to College Articulation": {
    "title": "Personal Money Management",
    "issuer": "Local High School",
@@ -4277,6 +4439,31 @@
     "course-identity",
     "Rule 5c",
     "mechanism-collapses"
+   ]
+  },
+  "Portfolio for BUSN 20": {
+   "title": "International Business",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "The cx hint 'for BUSN 20' was set aside as a dangling-word and course-code proposal. The catalog course title is used instead.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for BUSN 52": {
+   "title": "Business Communication",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "The catalog title 'Business Communications' is joined to the CCC house family 'Business Communication', since it is the same course competency. The cx hint was set aside.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
    ]
   },
   "Portfolio of spatial projects or map products demonstrating mastery": {

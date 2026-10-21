@@ -174,13 +174,14 @@ check("...and a curator's edit to the page's own FAQ reaches it, escaped",
   })());
 // THE CONTENTS: one link per section, each to the section's own id, and a
 // link opens its section's fold. Driven through the page's own handler.
-check("the Contents list carries one link per section, in page order, to each section's id, then the video and the three help items last",
+check("the Contents list carries one link per section, in page order, to each section's id, then the memo, the video and the three help items last",
   (function () {
     const links = Array.from(doc.querySelectorAll('#toc-list a[href^="#"]'));
     const ids = Array.from(doc.querySelectorAll("main > section")).map((sec) => sec.id);
     const items = Array.from(doc.querySelectorAll("#toc-list > li"));
     return links.length === ids.length && links.every((a, i) => a.getAttribute("href") === "#" + ids[i]) &&
-      items.length === ids.length + 4 && !!items[ids.length].querySelector("#video-link") &&
+      items.length === ids.length + 5 && !!items[ids.length].querySelector("#memo-link") &&
+      !!items[ids.length + 1].querySelector("#video-link") &&
       !!items[items.length - 2].querySelector("#landing-link");
   })());
 check("a Contents link OPENS its section's fold, and Collapse all / Expand all flips every fold",
@@ -243,6 +244,21 @@ check("the status line is empty on a successful paint",
     doc.querySelectorAll("#workedbody tr").length === before.worked &&
     doc.querySelectorAll("#nc-list li").length === before.nc &&
     doc.querySelectorAll("#timing-list li").length === before.timing);
+}
+
+// "As of: 10/21/2026 Ver. 3" (Sam, 2026-10-21): the masthead date is the
+// shared config's last save (Pacific time) and the number is the scenario's,
+// so neither is typed and both move with a save.
+{
+  const v = () => doc.querySelector(".ver").textContent.replace(/\s+/g, " ").trim();
+  win.CPL_PAINT_EXPLAINER(Object.assign({}, D, { saved_at: "2026-10-21T15:04:00Z", scenario: "Scenario 3" }));
+  check("the masthead reads 'As of: <last save> Ver. <scenario number>'", v() === "As of: 10/21/2026 Ver. 3");
+  win.CPL_PAINT_EXPLAINER(Object.assign({}, D, { saved_at: "2026-10-22T05:30:00Z", scenario: "Scenario 3" }));
+  check("the date is the save's Pacific day, not its UTC day", v() === "As of: 10/21/2026 Ver. 3");
+  win.CPL_PAINT_EXPLAINER(Object.assign({}, D, { saved_at: "", model_version: "2026-08-31", scenario: "Scenario 1" }));
+  check("with no save time it falls back to the model's version date", v() === "As of: 8/31/2026 Ver. 1");
+  check("the payload carries the save time from the tab", "saved_at" in D);
+  win.CPL_PAINT_EXPLAINER(D);
 }
 
 // ── THE TIMING AND THE STRATEGIES ARE PAINTED, FROM THE ENGINE ───────────

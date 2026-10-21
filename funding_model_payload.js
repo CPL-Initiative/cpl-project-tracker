@@ -24,6 +24,7 @@
     // engine resolves the same selection and overlay the tab does.
     const modelVersion = String(D.model_version || "").replace(/\.\d+$/, "");
     const scenarioName = (typeof T._scenario === "function" && T._scenario().name) || "";
+    const savedAt = (typeof T._scenario === "function" && T._scenario().savedAt) || "";
 
   // One row per INSTITUTION under one pool (2026-08-31): name, district,
   // combined FTES, the one combined max award, and the two flags the page
@@ -174,7 +175,7 @@
              w: ep.nc_weight != null ? ep.nc_weight : 1 };
   })();
    const payload = {
-    model_version: modelVersion, scenario: scenarioName,
+    model_version: modelVersion, scenario: scenarioName, saved_at: savedAt,
     pool: { one_time: pool("one_time_2026_27"), admin: pool("admin_cost"),
             scaling: pool("scaling_projects_tech"),
             floor: pool("floor_window"),
