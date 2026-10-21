@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-21T09:21:32Z",
-  "session": 440,
-  "moniker": "SkyChaparral",
-  "run": "a session Sam opened",
+  "written_at": "2026-10-21T10:24:01Z",
+  "session": 441,
+  "moniker": "SkyIronbark",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_441_handoff.md",
+  "handoff": "docs/session_442_handoff.md",
   "next_step": {
     "title": "Read the next thin colleges",
-    "text": "List the colleges whose active programs have under 60 percent records, read each one capture-only first, then extract under the 40 dollar go; the CLAUDE.md pass sheet comes first if Sam opens the session."
+    "text": "List the colleges whose active programs have under 60 percent records, read each one capture-only first, then extract under the 40 dollar go."
   },
   "calls": [
     {
@@ -24,8 +24,8 @@
   },
   "changes": [
     {
-      "at": "2026-10-21T09:20Z",
-      "text": "West Los Angeles, Irvine Valley and Santa Monica read for the first time: 562 records loaded unchecked, 445 more programs complete. Santa Monica's catalog step now waits up to 40 minutes for its PDF. Taft's CSU GE-Breadth row 38661 was removed on Sam's ruling."
+      "at": "2026-10-21T10:20Z",
+      "text": "Session 440's pull request with West Los Angeles, Irvine Valley and Santa Monica merged; the harvest itself did not move this run."
     }
   ],
   "headline": [
@@ -117,7 +117,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-21T10:12:00Z"
+    "at": "2026-10-21T11:12:00Z"
   },
   "harvest": {
     "day": "2026-10-21",
@@ -138,7 +138,7 @@
         ]
       },
       "roep": [
-        18852,
+        19074,
         20282
       ],
       "coci": [

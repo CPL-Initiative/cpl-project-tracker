@@ -1,7 +1,7 @@
 ---
 title: "Governance & team enablement — lane state"
 created: 2026-08-28
-updated: 2026-10-11
+updated: 2026-10-21
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -102,6 +102,8 @@ not paperwork: DR-26's first cut read under `using (true)`, and mapping it is
 what made "who can see this" a question someone asked out loud.
 
 ## Status
+
+**NEEDS SAM (Open Asks Sheet 109, cards 1-5, S441, 2026-10-21): the CLAUDE.md pass.** Sam asked on 2026-10-20 (~17:15Z, "yes") for every rule in `CLAUDE.md` tagged keep, update or pull with its evidence, and nothing changed until he answers. The tag table is `CPLBrain/decision-sheets/claude-md-pass/2026-10-21-claude-md-pass.md`; the five edits are the cards: a light checkpoint tier (1), the UI pass as its own queue item (2), the auto-mark rule with one hold list (3), saying when other sessions are not visible (4), and two pulls that bring `CLAUDE.md` (60,897 bytes) back under its 60,000 budget (5). Fable advised on cards 1 to 3 (added the lessons doc to the light set, proposed card 2, and three holds: a deploy outside a standing authorization, a cost above a standing limit, reversing a dated ruling). The context meter's 786,077 fallback against a larger window stays as is: it warns early, the safe side, and self-calibrates at the first compaction.
 
 ✅ **Vision 2030 goal figures: one set for both views (Sam, Open Asks Sheet 66 card 1, 2026-10-11 23:44Z, his own call: *One set, as proposed*; the same on Sheet 65).** `vision_2030_goals()` in `excel_to_dashboard.py` states the three goals once for the tab and the annual report (`CPL_DATA.vision2030`): Goal 1 measures students against 250,000 (22% on 2026-10-11) and names the credit recommendation count without a percent of the workgroup target (the bar read 1419.5% before); Goals 2 and 3 show `V2030_G2_PROGRESS`/`_CURRENT` and `V2030_G3_PROGRESS`/`_CURRENT` from `kb/dashboard_config.json`, **TBA** until Sam sets them, with no bar and no default standing in (the report had stated 55% and 60%, the tab a fixed 65%); Goal 2 keeps its active-colleges line. Owner of the Goal 2 and 3 figures: Sam, by setting the four keys. Guard: `tests/vision_2030_first_light_test.py` section 6.
 

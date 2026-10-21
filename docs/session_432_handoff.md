@@ -4,6 +4,8 @@ date: 2026-10-20
 session: 431 (SkyChaparral)
 tags: [handoff, common-subjects-reference, agri, remint, decision-sheet, mq, ci-flake]
 status: current
+superseded: true
+superseded_by: session_442_handoff.md
 ---
 
 # You are Session 432

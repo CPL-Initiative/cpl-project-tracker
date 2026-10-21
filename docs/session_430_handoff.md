@@ -4,6 +4,8 @@ date: 2026-10-20
 session: 428 (SkyPinyon)
 tags: [handoff, ctdl, credential-engine, wested, program-requirements, commons, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_442_handoff.md
 ---
 
 # You are Session 430

@@ -4,6 +4,8 @@ date: 2026-10-20
 session: 432 (SkyYerbaSanta)
 tags: [handoff, common-subjects-reference, agri, envr, agpr, remint, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_442_handoff.md
 ---
 
 # You are Session 433

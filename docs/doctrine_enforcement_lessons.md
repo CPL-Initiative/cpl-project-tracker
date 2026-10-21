@@ -575,3 +575,20 @@ tracker reader cannot see) and it is the cheaper side of the trade.
 - **`lane_retirement_signal` learned the `## Next` heading.** Once the cross-list lane's two NEEDS SAM cells
   were ruled, its list of four open items read as quiet. The vocabulary grows only by re-reading the file
   the lint got wrong.
+
+## 2026-10-21 — S441 SkyIronbark: the CLAUDE.md pass, and two tests that rotted on main
+
+- **A rule a run skips most of the time is mis-placed, not under-enforced.** The UI pass (checkpoint step 9) was
+  skipped in 9 of 12 handoffs (430 to 441), each time "no room for a fix PR" at sign-off. Fable's read: a light
+  checkpoint tier would legitimize the skip; moving the pass to the start of a run gives it the room. Both went to
+  Sam as Open Asks Sheet 109 cards 1 and 2 rather than an edit.
+- **A tool the doctrine assumes can be absent.** `list_sessions` was missing in this scheduled session and in two
+  firings on 2026-10-17. The fallback (open PRs plus `main`'s commits since the handoff) found S440's unmerged,
+  all-green #2306 and its handoff 441 on the branch; S441 merged it. A rule that names a tool should name its
+  fallback (card 4).
+- **A procedure's record file must know when its work has landed.** `kb/_draft_workplan_descriptions.py --check`
+  read the two drafts the runner had already written (4.7, 4.8) as stale, so its test failed on main for two days.
+  `landed()` now treats a draft equal to the snapshot's description as the record, and `--sql` leaves it out.
+- **A fixture keyed by an id rots when the ids re-key.** `kb/_test_activity_card_current.py` still named the
+  Apprentice row 3.1.2a, renamed 3.1.3 in the 2026-07-21 reorg. Neither test runs in CI, which is how both rotted
+  unseen; wiring them in is a small follow-up.
