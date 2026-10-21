@@ -1,0 +1,326 @@
+{
+ "college": "Moorpark College",
+ "reread_run": "39606457885",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39600815599",
+ "at": "2026-10-21T13:16:59Z",
+ "posted": 84,
+ "batches": 4,
+ "skipped": [
+  {
+   "control_number": "12383",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31117",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37450",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39413",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39414",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40636",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42643",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43405",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45352",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 1,
+ "absent": 0,
+ "held": 0,
+ "kept": 83,
+ "carried": 0,
+ "replaced_keys": [
+  "06878"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "06846",
+  "06855",
+  "06871",
+  "06875",
+  "06881",
+  "06882",
+  "06883",
+  "06892",
+  "07114",
+  "07121",
+  "07124",
+  "07129",
+  "07133",
+  "12123",
+  "17654",
+  "17779",
+  "22101",
+  "22109",
+  "22113",
+  "22114",
+  "22115",
+  "22116",
+  "22117",
+  "22121",
+  "30063",
+  "30064",
+  "30484",
+  "30511",
+  "31394",
+  "31714",
+  "32055",
+  "32056",
+  "32891",
+  "33686",
+  "33710",
+  "33726",
+  "33807",
+  "33836",
+  "35172",
+  "35659",
+  "36731",
+  "36857",
+  "37292",
+  "37389",
+  "37438",
+  "37625",
+  "39112",
+  "39113",
+  "39160",
+  "39161",
+  "39958",
+  "40060",
+  "40146",
+  "40152",
+  "40153",
+  "40301",
+  "40302",
+  "40304",
+  "40431",
+  "40526",
+  "41151",
+  "41164",
+  "41402",
+  "41403",
+  "41404",
+  "41415",
+  "41450",
+  "42257",
+  "42447",
+  "42464",
+  "42465",
+  "42466",
+  "42647",
+  "42791",
+  "42799",
+  "43122",
+  "43379",
+  "43380",
+  "43512",
+  "45480",
+  "46080",
+  "46405",
+  "46473"
+ ],
+ "carried_keys": [],
+ "machine_pass": 69,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Moorpark College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 39600815599;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 11,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "REQUIRED CORE COURSES",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CHEM M01A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CHEM M01AH",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM M01B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM M07A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM M07B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2210",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH C2210H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2220",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH C2220H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH M25C",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH M35",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHYS M20A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS M20AL",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS M20B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS M20BL",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS M20C",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHYS M20CL",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "use the process of scientific inquiry to qualitatively and quantitatively solve chemistry problems by gathering evidential information, analyzing data, forming appropriate conclusions, and communicating these results through written and oral expressions.",
+      "demonstrate a mastery of organic chemistry material at a level equal to or greater than the national average as determined by the nationally standardized Organic Chemistry exam developed by the American Chemical Society (ACS) at the completion of the capstone class CHEM M07B Organic Chemistry II."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Associate in Science in Chemistry for UC Transfer (REQUIREMENTS tab)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/chemistry/chemistry-uctp/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748862351,
+   "program_title": "Chemistry",
+   "control_number": "06878"
+  }
+ ]
+}
