@@ -1,0 +1,325 @@
+{
+ "college": "Grossmont College",
+ "control_number": "08787",
+ "shape": "degree",
+ "title": "Forensic Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/forensic-technology-as-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7371,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7371,
+    "output_tokens": 2262,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2262,
+  "output_tokens_details": {
+   "thinking_tokens": 612
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07472,
+ "ms": 18186,
+ "seconds": 19.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "AOJ224"
+   ],
+   "flagged": [
+    "AOJ224"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    42.0,
+    42.0
+   ],
+   "stated": [
+    42.0,
+    42.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 29,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree Major Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge, skills, and abilities relevant to the AOJ certificate / degree program completed.",
+    "Demonstrate ethical and professional behavior.",
+    "Communicate effectively, in written, verbal and non-verbal forms.",
+    "Identify the major components of the criminal justice system, current and historical, including laws enforcement, courts and corrections.",
+    "Describe and/or demonstrate the stages of a criminal investigation and the protocol of evidence collection, preservation, and analysis."
+   ],
+   "careers": [
+    "Adjudicator/Judge",
+    "Arson Investigator",
+    "Bar Examiner",
+    "Correctional Officer",
+    "Crime Lab/Forensic Technician",
+    "Dispatcher",
+    "District Attorney",
+    "Lawyer/Prosecutor/Public Defender",
+    "Evidence Technician/Specialist",
+    "Federal Law Enforcement",
+    "Border Patrol Agent",
+    "FBI",
+    "Immigration and Customs Enforcement",
+    "Postal Inspector",
+    "Transportation Security Administration Officer",
+    "Treasury Agent",
+    "Secret Service",
+    "U.S. Marshall",
+    "Fingerprint Examiner",
+    "Forensic Scientist",
+    "Forensic Specialist",
+    "Fraud/Forgery Investigator",
+    "Latent Print Examiner",
+    "Parole/Probation Officer",
+    "Police Officer/Deputy Sheriff/Highway Patrol",
+    "Security Director",
+    "Security Manager",
+    "Security Officer",
+    "Traffic Officer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Associate Degree Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AOJ-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ-148",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ-150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ-200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ-206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ-218",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ-220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ-240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ-252",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ-254",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CHEM-113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM-115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AOJ-224",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Program Learning Outcomes and Career Opportunities list are printed for the Administration of Justice program as a whole (all four options); this award shares them.",
+   "Career entries were copied without the footnote marker '1' (Bachelor's Degree or higher usually required) and the asterisk on 'Security Director*'.",
+   "Individual units for CHEM-113, CHEM-115 and CHEM-120 are not printed; only the block total of 4 is shown.",
+   "The page says 'Plus General Education and Elective Requirements' but names no GE pattern and prints no degree total.",
+   "The same major courses also qualify for a Certificate of Achievement in Administration of Justice: Forensics Technology.",
+   "Catalog codes use hyphens (AOJ-110, BIOL-C1000) and match the closed list's AOJ 110 and BIOLC1000 forms."
+  ]
+ },
+ "extracted_run": "39753931343"
+}
