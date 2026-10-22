@@ -124,6 +124,14 @@ check("(f) the no-pathway choice in the list clears it too", !!root.querySelecto
   check("(g) the caption counts the matches", /pathways? match(es)? “nursing”/.test(root.querySelector(".cplpw-selcount").textContent));
   found[0].click();
   check("(g) a match opens its pathway", sel.value !== "" && !root.querySelector(".cplpw-found"));
+  // Picking a college with the search still typed redraws the matches for that college (Sam, S448).
+  typeIn("nursing");
+  change(col, "Mt. San Antonio College");
+  const atMt = [...root.querySelectorAll(".cplpw-found-go")].map((b) => b.textContent);
+  check("(g) a college picked after a search redraws the matches for it", atMt.length > 0 && atMt.every((t) => t.startsWith("Mt. San Antonio College — ") && /nursing/i.test(t)), atMt);
+  find.value = "nursing"; find.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+  check("(g) Enter on the same words redraws them", root.querySelectorAll(".cplpw-found-go").length === atMt.length);
+  change(col, "");
   typeIn("nursing zzzqqq");
   check("(g) words that match nothing say so", texts().length === 0 && /No pathway matches/.test(root.textContent));
   typeIn("");

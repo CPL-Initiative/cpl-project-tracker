@@ -2962,7 +2962,10 @@
       pickedCollege = col.value;
       shareChoice(col.value);
       fill(col.value);
-      if (has(keep)) { sel.value = keep; syncClear(); return; }
+      /* With no pathway chosen the view below is the search's matches or the prompt: redraw it
+         for the new college (Sam, S448: picking a college after a search left the old list). */
+      if (keep === "") { sel.value = ""; onChange(-1); syncClear(); return; }
+      if (keep !== "" && has(keep)) { sel.value = keep; syncClear(); return; }
       var first = firstPathway();
       sel.value = first;
       onChange(first === "" ? -1 : parseInt(first, 10));
@@ -3002,9 +3005,9 @@
     findWrap.appendChild(findLabel);
     findWrap.appendChild(find);
     var findTimer = null;
-    function runFind() {
+    function runFind(force) {
       findTimer = null;
-      if (find.value === pickedQuery) return;
+      if (find.value === pickedQuery && !force) return;
       pickedQuery = find.value;
       var keep = sel.value;
       fill(col.value);
@@ -3018,7 +3021,7 @@
       findTimer = setTimeout(runFind, 200);
     });
     find.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") { e.preventDefault(); if (findTimer) clearTimeout(findTimer); runFind(); }
+      if (e.key === "Enter") { e.preventDefault(); if (findTimer) clearTimeout(findTimer); runFind(true); }
     });
     row.appendChild(colWrap);
     row.appendChild(findWrap);
@@ -3033,11 +3036,7 @@
     oppView.textContent = "View CPL Visual";
     var oppGet = document.createElement("button");
     oppGet.type = "button"; oppGet.className = "cplpw-oppact"; oppGet.textContent = "Download CPL Extract";
-    var oppMine = document.createElement("button");
-    oppMine.type = "button"; oppMine.className = "cplpw-oppact"; oppMine.textContent = "Open My College";
-    oppMine.addEventListener("click", function () { if (col.value) openMyCollege(col.value); });
     opp.appendChild(oppView); opp.appendChild(oppGet);
-    if (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") opp.appendChild(oppMine);
     function syncOpp() {
       opp.hidden = !col.value;
       if (col.value) oppView.href = "cpl-opportunity/?college=" + encodeURIComponent(col.value);
@@ -3178,15 +3177,11 @@
     var m = sharedCollegeIn(colleges);
     if (!m) return false;
     sharePending = false;
+    // The statewide map's Create Handout asks for the My College section open (S448, step 3).
+    if (window.CPL_COLLEGE_CHOICE && window.CPL_COLLEGE_CHOICE.open === "my-college") mineOpen = true;
     var moved = m !== pickedCollege;
     pickedCollege = m;
     return moved;
-  }
-  /* My College for the college picked here: the shared choice, then the tab. */
-  function openMyCollege(college) {
-    shareChoice(college);
-    var T = window.CPL_TABS;
-    if (T && typeof T.navigate === "function") T.navigate("college-briefing");
   }
 
   /* ── a college's program data, in one line (Sam, 2026-10-21) ──
@@ -3539,7 +3534,9 @@
     if (!L || !L.root || L.root.isConnected === false) return;
     var C = window.CPL_COLLEGE_CHOICE;
     if (C === shareSeen && !sharePending) return;
-    if (!C || !C.college || C.by === CHOICE_BY || choiceKey(C.college) === choiceKey(pickedCollege)) {
+    var same = C && C.college && choiceKey(C.college) === choiceKey(pickedCollege);
+    if (same && C.open === "my-college" && C.by !== CHOICE_BY) { shareSeen = C; sharePending = false; mineOpen = true; }
+    else if (!C || !C.college || C.by === CHOICE_BY || same) {
       shareSeen = C; sharePending = false; return;
     }
     render(L.root, L.data, L.live, L.dir, L.liveNote);
