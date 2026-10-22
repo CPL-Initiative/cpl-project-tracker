@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_funding_config_scenario4_2026-10-22_s449.sql",
+ "name": "cpl_funding_config_scenario4_2026_10_22_s449",
+ "version": "20261022214951",
+ "sha256": "5eac0dd9b6f0e86f0b8ab987cd454291fc49d16b7b4f9070f19635e314fec469",
+ "run": "39859904983",
+ "status": 201,
+ "response": "[{\"rows_updated\":1,\"new_updated_at\":\"2026-10-22 21:49:51.960463+00\",\"scenarios\":[\"Scenario 1\",\"Scenario 2\",\"Scenario 3\",\"Scenario 4\"],\"published\":\"Scenario 3\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
