@@ -868,6 +868,34 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S446 SkyMadrone (2026-10-22, the CPL Queue routine): a degree-and-certificate address, 88 records, the page-claimed that remain
+
+- **A degree-and-certificate address names both awards (#2345).** Grossmont addresses a degree and its certificate
+  on one page (`law-enforcement-as-certificate-achievement`, `arabic-aa-certificate-achievement`). The capture view
+  (page read 39750446541) shows one list under "Associate Degree Major Requirements", then "Certificate of
+  Achievement" and "Any student who chooses to complete only the courses required for the above major qualifies for a
+  Certificate of Achievement". `SLUG_AWARD` read the certificate alone, so the A.S. scored no award on its own page
+  and lost it. `SLUG_DEGREE_CERT` and `slug_awards()` read both awards. Grossmont's free capture went from 139 found
+  and 15 page-claimed to 144 and 10. Main's captures held the shape at two colleges: Grossmont 9 and Pasadena City 7.
+- **Palomar's 45 that remain have no catalog entry of their own.** Its curriQunet catalog lists 235 entries for 342
+  programs in the state file. The pages they lost belong to siblings, and the titles drifted ("Web Design and
+  Development" is now Web Front End Design; "Fashion: Buying and Management" sits under Fashion Merchandising), or
+  the program is no longer listed. Reading no page is right for them, and no reader change applies.
+- **The new rules did not move three of the four colleges named next.** Free captures under #2337 and #2339:
+  Mt. San Jacinto 99 to 100 found and 25 to 24 page-claimed (its losers fall back to the general education or C-ID
+  chart page because their own page was never found, 28 not found); Santa Barbara City 249 to 248 and 20 to 21 (its
+  Administration of Justice pages were never captured). Neither is a sharing fault. Saddleback's capture was still
+  running at the checkpoint.
+- **Loads and rereads.** Palomar 282 found (from 224), 254 passing (from 196), $18.76; 62 inserted, 1 replaced by
+  the reread. MiraCosta 142 (from 119), 98 passing (from 80), $11.96; 21 inserted, the reread replaced none (the
+  extraction re-wrote only its 21 new records). Grossmont 144 (from 139), 97 passing (from 93), $10.61; 5 inserted.
+  Display build 1b3616641146 covers 17,390 rows (from 17,302). Receipts are under `kb/receipts/`.
+- **A capture-only run's push can lag the run's "completed" state by a minute.** Read the branch head again before
+  concluding that a run filed nothing.
+- **The UI pass, CPL opportunity visual (#2344):** the page painted no `h1` until a college loaded, and at 360px the
+  picker's longest college name widened `main`'s grid track past the viewport (`minmax(0, 1fr)` now). A dark target
+  joined `a11y.config.js`.
+
 ## S445 SkyCurrant (2026-10-22): a shared page per heading, MiraCosta's degree lists, Palomar's "Cert. Achievement"
 
 - **Read the capture's own text before changing a reader.** No capture keeps the text it read, so a page read with
