@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8412,
-    "output_tokens": 3733,
+    "output_tokens": 3890,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3733,
+  "output_tokens": 3890,
   "output_tokens_details": {
-   "thinking_tokens": 1269
+   "thinking_tokens": 1347
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.10831,
- "ms": 29053,
- "seconds": 29.4,
+ "cost_usd": 0.11145,
+ "ms": 30522,
+ "seconds": 30.8,
  "parts": null,
  "error": null,
  "score": {
@@ -452,12 +453,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "BIOL 100 (4-5 units) may be replaced by the combination BIOL 140 & BIOL 141 together; both are recorded as alternatives, but they must be taken as a pair. No individual units are printed for them.",
-   "List A is a single choice of one lecture/lab course or combination (stated 4-8 units for the list as a whole); each combination is recorded as its own 'all' block in option_group 'List A'. CHEM 101 appears in three of the combinations. The catalog prints no per-course units in List A or List B.",
-   "The 'At least 60 CSU transferable semester units' line is a generic ADT graduation requirement, not recorded as a degree total; no Cal-GETC units are printed.",
-   "The outcomes list comes from the page's outcomes tab and appears to be a Liberal Studies-style list for the program as a whole; the award is assumed to share it.",
-   "The catalog text begins mid-sentence ('or.'), so part of the program description may be cut off; no careers are named in the visible text (only that the multiple subject credential is required for teaching at the elementary school level)."
+   "The page prints no distinct section heading for the award beyond 'Associate Degree for Transfer Graduation Requirements' and 'Major Requirements'; 'Major Requirements' used as section_heading.",
+   "BIOL 100 (4) or BIOL 140 & BIOL 141 taken together; both BIOL 140 and BIOL 141 recorded as alternatives to BIOL 100 but must be completed as a pair. The 4-5 range is printed beside the BIOL row.",
+   "List A prints a block total of 4-8 units for the whole choice; it is not attached to any single option block. Each lecture/lab combination is recorded as its own block in option_group 'List A'. No per-course units are printed in List A or List B.",
+   "List B: ART 100 or ART 101 counts as one choice.",
+   "'At least 60 CSU transferable semester units' is the generic ADT graduation requirement, not recorded as degree_total. No GE unit figure printed for Cal-GETC.",
+   "Outcomes taken from the page's outcomes tab; they read like general Liberal Studies outcomes and may be shared across the department's programs—reviewer should confirm they belong to this AA-T.",
+   "The description mentions a multiple subject teaching credential 'required for teaching at the elementary school level'; no explicit career list, so careers left empty."
   ]
  },
- "extracted_run": "38670933359"
+ "extracted_run": "39782741424"
 }
