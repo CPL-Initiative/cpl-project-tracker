@@ -4,6 +4,8 @@ date: 2026-10-21
 session: 440 (SkyChaparral)
 tags: [handoff, program-requirements-harvest, catalog-sweep]
 status: current
+superseded: true
+superseded_by: session_445_handoff.md
 ---
 
 # You are Session 441

@@ -4,6 +4,8 @@ date: 2026-10-21
 session: 443 (SkyToyon)
 tags: [handoff, program-requirements-harvest, my-college-action-page, implementation-funding, cpl-pathways]
 status: current
+superseded: true
+superseded_by: session_445_handoff.md
 ---
 
 # You are Session 444

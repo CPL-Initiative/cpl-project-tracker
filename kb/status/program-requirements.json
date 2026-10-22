@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-21T21:52:18Z",
-  "session": 443,
-  "moniker": "SkyToyon",
+  "written_at": "2026-10-22T02:40:09Z",
+  "session": 444,
+  "moniker": "SkyBlueOak",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_444_handoff.md",
+  "handoff": "docs/session_445_handoff.md",
   "next_step": {
-    "title": "The page-claimed sweep: Imperial Valley, Sierra and Golden West's extraction",
-    "text": "A page that heads a section per award now serves each sibling program. Foothill gained 28 programs and Golden West's capture 14; run each college with many page-claimed programs through a free capture, then extract. Palomar needs its own reader look."
+    "title": "MiraCosta's discipline pages, then the rest of the page-claimed sweep",
+    "text": "Load Sierra and MiraCosta and build their display; then read the text MiraCosta's hidden tabs give the reader, so each program on a discipline page keeps it; then Ventura, Moorpark, Orange Coast, Oxnard and Citrus."
   },
   "calls": [
     {
@@ -23,6 +23,13 @@
         "words": "Later, on Open Asks Sheet 98 card 2: \"I need to get a new subscription first which will take a few days, so keep this on ice for now.\""
       },
       "link_text": "Open Sheet 98"
+    },
+    {
+      "title": "Ask Program Mapper's vendor to share the 63 community colleges' program maps",
+      "text": "Sam pasted the vendor's member list on 2026-10-21; 37 map hosts are now on the registry (#2330). Every mapper host the reader has reached answers 403, so the maps are known and unread. A request to the vendor is outward, so it waits on Sam.",
+      "if_no_reply": "The maps stay unread; the reader asks each recorded host once a run whether it has opened.",
+      "link": "https://claude.ai/artifact/AKsM96ZjKRmrYPHGWiDffG",
+      "link_text": "Open Sheet 112"
     }
   ],
   "notes": {
@@ -30,28 +37,28 @@
   },
   "changes": [
     {
-      "at": "2026-10-21T20:31Z",
-      "text": "A catalog page that heads a section for each award, such as Foothill's A.A. and certificate on one page, now serves each sibling program."
+      "at": "2026-10-21T22:56:00Z",
+      "text": "Foothill's 29 new records merged into the page's build."
     },
     {
-      "at": "2026-10-21T21:05Z",
-      "text": "Foothill re-read and loaded: 144 programs found, up from 116; 97 pass the machine checks, up from 73; 29 new records."
+      "at": "2026-10-21T23:08:00Z",
+      "text": "The Procedures view flags a catalog that blocks the reader and whether a hand-filed copy carries the read."
     },
     {
-      "at": "2026-10-21T21:45Z",
-      "text": "The Records view no longer remembers picked colleges or filters between visits."
+      "at": "2026-10-21T23:24:00Z",
+      "text": "37 Program Mapper hosts from Sam's list recorded on the registry."
     },
     {
-      "at": "2026-10-21T14:10Z",
-      "text": "Six thin colleges captured again for free; Reedley's reader now finds 196 of its 200 programs with a closed course list, and the five CourseLeaf colleges found the same pages as before."
+      "at": "2026-10-21T23:27:00Z",
+      "text": "A call Sam answered on its sheet counts as answered."
     },
     {
-      "at": "2026-10-21T15:05Z",
-      "text": "Reedley extracted for 11 dollars 18, 167 of 196 passing the machine checks, and 159 new records loaded."
+      "at": "2026-10-22T01:26:00Z",
+      "text": "Golden West (79 new records) and Imperial Valley (42) loaded and built."
     },
     {
-      "at": "2026-10-21T17:20Z",
-      "text": "Reedley's display build written and its display job started."
+      "at": "2026-10-22T02:36:00Z",
+      "text": "The reader takes department and discipline pages and reads a section heading over two lines: Sierra 35 to 81 programs found, MiraCosta 29 to 68."
     }
   ],
   "headline": [
@@ -138,6 +145,12 @@
       "active": 20282,
       "complete": 12463,
       "colleges": 114
+    },
+    {
+      "day": "2026-10-22",
+      "active": 20282,
+      "complete": 12607,
+      "colleges": 114
     }
   ],
   "next_run": {
@@ -146,8 +159,8 @@
     "at": "2026-10-22T05:12:00Z"
   },
   "harvest": {
-    "day": "2026-10-21",
-    "gaps": 3621,
+    "day": "2026-10-22",
+    "gaps": 3492,
     "parts": {
       "links": {
         "catalog": [
@@ -164,11 +177,11 @@
         ]
       },
       "roep": [
-        19181,
+        19166,
         20282
       ],
       "coci": [
-        15560,
+        15731,
         20282
       ],
       "outcomes": {
@@ -177,12 +190,12 @@
           89192
         ],
         "plo": [
-          15560,
+          15731,
           20282
         ]
       },
       "careers": [
-        14510,
+        14681,
         20282
       ]
     }

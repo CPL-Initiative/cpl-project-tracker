@@ -4,6 +4,8 @@ date: 2026-10-21
 session: 442 (SkyManzanita)
 tags: [handoff, my-college-action-page, cpl-pathways, implementation-funding, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_445_handoff.md
 ---
 
 # You are Session 443
