@@ -1,0 +1,597 @@
+{
+ "college": "Citrus College",
+ "catalog_url": "https://catalog.citruscollege.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 193,
+ "with_closed_list": 185,
+ "started": "2026-10-22T04:18:54Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.citruscollege.edu/sitemap.xml",
+  "status": 200,
+  "listed": 1787,
+  "nested": 0,
+  "program_pages": 280,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 348,
+ "child_pages": 68,
+ "banner_h1": null,
+ "loads": 352,
+ "seconds": 1798.0,
+ "found": 178,
+ "by_method": {
+  "no_closed_list": 8,
+  "not_found": 4,
+  "page_claimed": 3,
+  "sitemap_page": 178
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "02356",
+   "title": "Criminal Justice",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-justice-studies-adt/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5728,
+     "content": 26866,
+     "tabs": 5577
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      353
+     ],
+     [
+      "Requirements",
+      2910
+     ],
+     [
+      "Curriculum Map",
+      2623
+     ],
+     [
+      "Career Information",
+      600
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "30937",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5410,
+     "content": 24275,
+     "tabs": 3898
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      384
+     ],
+     [
+      "Requirements",
+      1723
+     ],
+     [
+      "Curriculum Map",
+      2131
+     ],
+     [
+      "Career Information",
+      162
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44410",
+   "title": "Hairstyling Program",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/hairstyling-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4949,
+     "content": 21211,
+     "tabs": 335
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      496
+     ],
+     [
+      "Requirements",
+      315
+     ],
+     [
+      "Career Information",
+      664
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44462",
+   "title": "Hairstyling Program",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/hairstyling-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4930,
+     "content": 21744,
+     "tabs": 912
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      466
+     ],
+     [
+      "Requirements",
+      892
+     ],
+     [
+      "Career Information",
+      664
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "20037",
+   "title": "Criminal Justice",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/"
+   ]
+  },
+  {
+   "control_number": "33327",
+   "title": "Correctional Science",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
+   ]
+  },
+  {
+   "control_number": "33599",
+   "title": "Correctional Science",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 10,
+  "0.8-1.0": 26,
+  "1.0": 142
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/citrus",
+  "kept": 144,
+  "programs": 34,
+  "list": [
+   {
+    "control_number": "11234",
+    "title": "Architectural Design",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.citruscollege.edu/disciplines/architecture/",
+    "coverage": 0.688,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "11240",
+    "title": "Child Develop. Master Teacher: Early Intervention Specialty",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.citruscollege.edu/disciplines/child-development/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-as/",
+    "was_coverage": 0.533,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "11244",
+    "title": "Public Works Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.citruscollege.edu/disciplines/public-works/",
+    "coverage": 0.778,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-supervision-management-skill-award/",
+    "was_coverage": 0.556,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30830",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/sociology/sociology-adt/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30877",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/psychology/psychology-adt/",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30940",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31179",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/child-development/early-childhood-education-adt/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-associate-teacher-skill-award/",
+    "was_coverage": 0.556,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31430",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/english/",
+    "coverage": 0.969,
+    "was_url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31431",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/physics/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31539",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-adt/",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31572",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/history/history-adt/",
+    "coverage": 0.971,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31840",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/kinesiology-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32305",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/journalism-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33308",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/foreign-languages/spanish-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33607",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/art-history-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33609",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/studio-arts-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "35078",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/biology/biology-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36543",
+    "title": "IT Technician: Support Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37121",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/philosophy/philosophy-adt/",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37131",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/economics/economics-adt/",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37315",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/geography/global-studies-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37384",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/anthropology/anthropology-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37537",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/nutrition-dietetics-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37629",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/computer-science/computer-science-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38754",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/biology/environmental-science-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "40210",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/music/music-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "40957",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/earth-science/geology-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41356",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/geography/geography-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41679",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "42822",
+    "title": "Film, Television and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/film-television-electronic-media-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "42837",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+    "coverage": 0.939,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45031",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
+    "coverage": 0.979,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45069",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/communication-studies-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "46167",
+    "title": "Environmental Monitoring in Biomanufacturing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.citruscollege.edu/disciplines/biotechnology/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   }
+  ]
+ },
+ "run": "39721486190"
+}
