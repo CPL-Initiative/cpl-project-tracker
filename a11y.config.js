@@ -1996,6 +1996,12 @@ module.exports = {
     title: "CPL opportunity visual (shareable)",
     mayHideBelow: [],
   },
+  "cpl-opportunity-dark": {
+    file: "cpl-opportunity/index.html",
+    title: "CPL opportunity visual (shareable), dark",
+    mayHideBelow: [],
+    seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")),
+  },
 
   /* ── The funding tab's Public page view (S307, 2026-09-30; reshaped 2026-10-15) ──
      Sam asked for the Public view and the explainer to be audited for
