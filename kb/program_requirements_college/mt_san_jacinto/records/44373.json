@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7837,
+  "input_tokens": 7787,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7837,
-    "output_tokens": 1290,
+    "input_tokens": 7787,
+    "output_tokens": 1235,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1290,
+  "output_tokens": 1235,
   "output_tokens_details": {
-   "thinking_tokens": 429
+   "thinking_tokens": 407
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05715,
- "ms": 11558,
- "seconds": 12.1,
+ "cost_usd": 0.05585,
+ "ms": 10649,
+ "seconds": 11.2,
  "parts": null,
  "error": null,
  "score": {
@@ -110,7 +111,7 @@
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -143,9 +144,7 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": [
-    "aging-related careers"
-   ]
+   "careers": []
   },
   "blocks": [
    {
@@ -213,14 +212,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page prints no distinct section heading; the heading is taken from the overview text 'The Gerontology/Aging Studies, A.S. at MSJC'.",
-   "Degree total of 60 is taken from the page's statement that students must complete MSJC Local General Education requirements '(a total of 60 units) for the Associate of Science degree in Gerontology/Aging Studies' and the requirements table line 'Electives (as needed to reach 60 units)'.",
-   "MSJC Local General Education is printed as 27 units in the requirements table.",
-   "Elective units are not printed; the page says electives are taken as needed to reach 60 units.",
-   "Program map courses (HS, ENGL, COMM, etc.) are a recommended sequence including GE and electives, not major requirements; they were not recorded as blocks.",
-   "No program learning outcomes are printed in the text.",
-   "Career entry 'aging-related careers' comes from the overview ('employment in various aging-related careers'); the Career Exploration tab names no specific careers. Reviewer may judge whether this generic field should count."
+   "Degree total of 60 taken from the Requirements tab ('overall total of 60 degree applicable units', table: MSJC Local General Education 27, Required Gerontology Courses 21, Electives as needed to reach 60 units) and the overview ('a total of 60 units' for this A.S.).",
+   "Electives are stated only as 'as needed to reach 60 units' with no units printed; electives_fill_degree set true.",
+   "The Program Map tab lists a recommended semester sequence including GE and other courses (ENGL-C1000, HS-120, HS-121, NUTR-101, AH-105, PE-115, etc.); these are a suggested GE/elective plan, not major requirements, and were not recorded as blocks.",
+   "The overview says graduates are prepared for 'employment in various aging-related careers' but names no specific career or job title; careers left empty. A Career Exploration tab exists but its content is not in the text.",
+   "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

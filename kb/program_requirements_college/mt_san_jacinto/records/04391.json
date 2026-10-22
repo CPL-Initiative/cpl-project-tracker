@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8619,
+  "input_tokens": 8387,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8619,
-    "output_tokens": 1809,
+    "input_tokens": 8387,
+    "output_tokens": 1625,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1809,
+  "output_tokens": 1625,
   "output_tokens_details": {
-   "thinking_tokens": 728
+   "thinking_tokens": 491
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07066,
- "ms": 15247,
- "seconds": 15.8,
+ "cost_usd": 0.06605,
+ "ms": 13983,
+ "seconds": 15.3,
  "parts": null,
  "error": null,
  "score": {
@@ -132,8 +133,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 12,
-     "max": 12
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -248,13 +249,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Elective block says 'Select 12 units from the following not already used above'; courses used in Required (RE-506 or ACCT-124/124H) cannot be double counted.",
-   "The requirements table prints no units beside the elective courses or beside the ACCT-124/124H alternatives; units left null.",
-   "The page says an Associate Degree in this program requires an overall total of 60 degree applicable units; read as general degree boilerplate, so degree_total left null. The program map shows Total Units 60-61, which is a suggested sequence, not a requirement total.",
-   "Electives are '(as needed to reach 60 units)' with no units printed, so electives_fill_degree is true.",
-   "No program learning outcomes are printed on the page.",
-   "Program map courses (SOCI-105, COMM-C1004, BADM-103, DIG-110, etc.) are GE/elective suggestions and were not placed in blocks."
+   "The Requirements tab prints Total Units 24 for the major (Required Real Estate Courses 12 + Real Estate Electives 12) and MSJC Local General Education 27.",
+   "The page says students must complete 'an overall total of 60 degree applicable units'; read as the generic associate degree requirement, so degree_total left null. The Program Map tab shows 'Total Units 60-61' for a sample plan, not a requirement.",
+   "'Electives (as needed to reach 60 units)' is printed with no units, so electives_fill_degree is true.",
+   "In Required Courses, ACCT-124 or ACCT-124H is printed as an alternative to RE-506; no units printed beside the alternatives.",
+   "Elective list prints no units beside the courses; units left null. Electives must be 'not already used above' (e.g., RE-506 or ACCT-124 counts in only one block).",
+   "Program Map courses (GE and others such as BADM-103, DIG-181) are a suggested sequence, not requirements, and were not placed in blocks.",
+   "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

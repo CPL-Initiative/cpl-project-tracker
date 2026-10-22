@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10065,
+  "input_tokens": 10246,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10065,
-    "output_tokens": 2042,
+    "input_tokens": 10246,
+    "output_tokens": 1977,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2042,
+  "output_tokens": 1977,
   "output_tokens_details": {
-   "thinking_tokens": 604
+   "thinking_tokens": 464
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0811,
- "ms": 16064,
- "seconds": 16.6,
+ "cost_usd": 0.08052,
+ "ms": 15785,
+ "seconds": 16.2,
  "parts": null,
  "error": null,
  "score": {
@@ -121,7 +122,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts in Music for Transfer (A.A.-T) — Requirements",
+   "section_heading": "Music, A.A.-T",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -334,12 +335,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requirements table prints no units beside the courses in the Applied Music, Ensemble and List A choice lists; units left null. The program map shows MUS-118 and MUS-151 at 0.5 units, and the ensembles and MUS-111 at 1 unit.",
-   "List A reads 'Select 3-4 units from the following: 3-4'; minimum recorded as 3, stated 3-4.",
-   "Degree total of 60 units is printed as 'Total Units for A.A.-T Degree: 60 units', with 'Transferable Electives (as needed to reach 60 transferable units)' and 'Possible double counting: 0 units'.",
-   "The program maps (Instrumental Focus and Vocal Focus, each 64 total units) are advisory sequences and were not recorded as requirements.",
-   "No program learning outcomes are printed in the text; the Career Exploration section is cut off."
+   "The Requirements tab prints no units beside the courses in the Applied Music, Ensemble and List A choice lists; their units are left null (the closed list stores 0.5 for MUS-118/MUS-151, 1 for ensembles, etc.).",
+   "Applied Music says 'Select two units' though each applied course is 0.5 units in the state file, implying repeated enrollment; Ensemble likewise 'Select four units' from 1-unit courses.",
+   "Blocks are taken from the Requirements tab only; the Program Map tab (Instrumental and Vocal Focus, Total Units 64) is a recommended sequence including Cal-GETC courses and was not used for blocks.",
+   "Degree total of 60 units and Cal-GETC Pattern 34 are printed on the page; 'Transferable Electives (as needed to reach 60 transferable units)' prints no units, so electives_fill_degree is true. 'Possible double counting: 0 units' is printed.",
+   "No program learning outcomes are printed in the provided text.",
+   "Career fields taken from the overview: 'careers in performance, education, composition, and other related fields'; 'other related fields' not recorded as a career."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

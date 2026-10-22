@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8907,
+  "input_tokens": 8660,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8907,
-    "output_tokens": 3798,
+    "input_tokens": 8660,
+    "output_tokens": 3519,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3798,
+  "output_tokens": 3519,
   "output_tokens_details": {
-   "thinking_tokens": 1659
+   "thinking_tokens": 1380
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.11159,
- "ms": 31426,
- "seconds": 31.9,
+ "cost_usd": 0.10502,
+ "ms": 27417,
+ "seconds": 27.8,
  "parts": null,
  "error": null,
  "score": {
@@ -82,7 +83,28 @@
    "against": "program",
    "why": [
     "the blocks sum to 39.0-45.0; the catalog states 39.0-44.0"
-   ]
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     66.0,
+     72.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     27.0
+    ],
+    "why": [
+     "the blocks and general education come to 66.0-72.0, past the 60.0-60.0 the catalog prints for the degree"
+    ],
+    "fill": null
+   }
   },
   "repeated": {
    "codes": [],
@@ -110,7 +132,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "AS.ENGR2",
+   "section_heading": "Requirements",
    "measure": "units",
    "total_units": {
     "min": 39,
@@ -123,8 +145,8 @@
    },
    "ge_pattern": "MSJC Local General Education",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": 27,
@@ -405,24 +427,24 @@
   "missing_explained": [
    {
     "code": "MATH 211",
-    "why": "not in the text; requirement names MATH-C2210 instead"
+    "why": "not in the text"
    },
    {
     "code": "MATH 212",
-    "why": "not in the text; requirement names MATH-C2220 instead"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The section heading itself is not in the extracted text; 'AS.ENGR2' is the program code printed above the program map.",
-   "The summary table prints 'Required Courses 25-26' and 'Major Electives 15-21', but the listed required courses sum to 21-22 and Lists A-D to 14-18; the course list prints 'Total Units 39-44'. Reviewer should check these figures.",
-   "PHY-203 row prints '4-5' (footnote 1 plus 4-5) with alternatives CHEM-101 or CHEM-101H; individual alternative units are not printed.",
-   "Footnote 1: CHEM-101/CHEM-101H and PHY-203 'Only counts once for requirement or elective' - they appear both in Required Courses and in List D.",
-   "List D: 'Select two of the following. At least one must be ENGR.'",
-   "MATH-C2210 and MATH-C2220 are not in the closed list (closed list has MATH C2210H and MATH C2220H, and MATH 211/212).",
-   "Additional Electives are 'as needed to reach 60 units'; no degree total is printed beyond that phrase, so degree_total is null.",
-   "The program map (Plan of Study Grid, Total Units 68) is a recommended sequence including Cal-GETC courses and was not used as the requirement list.",
-   "No program learning outcomes are printed in the extracted text; the text begins mid-description and may omit earlier content."
+   "The page's program heading is not in the extracted text; section_heading uses the 'Requirements' tab. Program code printed: AS.ENGR2.",
+   "Total Units 39-44 printed at the end of the major course list is recorded as total_units. The summary table prints Required Courses 25-26 and Major Electives 15-21, but Lists A-D sum to 14-18; reviewer should check the 15-21 figure.",
+   "degree_total recorded as 60 from 'Additional Electives (as needed to reach 60 units)'; no explicit degree total line is printed. The Program Map's 'Total Units 68' is a sample plan, not recorded.",
+   "Program Map notes it includes Cal-GETC courses, but the Requirements tab names MSJC Local General Education 27.",
+   "List D: 'Select two of the following. At least one must be ENGR.' Footnote 1 on PHY-203 and CHEM-101: only counts once for requirement or elective (they appear both as Required Courses options and in List D).",
+   "PHY-203's 4-5 range appears to reflect the CHEM-101/CHEM-101H alternatives; units for the alternatives are not printed separately.",
+   "MATH-C2210 and MATH-C2220 are not on the closed list (only honors versions are); marked catalog additions. Closed list's MATH 211/212 appear to be predecessors not named in the text.",
+   "Course units within Lists A-D are not printed beside each course; left null.",
+   "No program learning outcomes printed in the text."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }
