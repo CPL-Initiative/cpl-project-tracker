@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Fire Science Technical Rescue Cert",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-technical-rescue-certificate-2020-21-summer-2021su",
- "record_shape": 4,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=149&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9130,
+  "input_tokens": 10584,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9130,
-    "output_tokens": 4494,
+    "input_tokens": 10584,
+    "output_tokens": 4401,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,51 +30,59 @@
     "model": null
    }
   ],
-  "output_tokens": 4494,
+  "output_tokens": 4401,
   "output_tokens_details": {
-   "thinking_tokens": 813
+   "thinking_tokens": 737
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.1264,
- "ms": 32841,
- "seconds": 33.3,
+ "cost_usd": 0.13036,
+ "ms": 31028,
+ "seconds": 31.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 70,
+   "placed": 69,
    "listed": 70,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.986,
+   "missing": [
+    "FST277"
+   ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
+   "count": 2,
    "codes": [
-    "FST242"
+    "FST242",
+    "FST279"
    ],
    "flagged": [
-    "FST242"
+    "FST242",
+    "FST279"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    30.0,
-    30.0
+    21.75,
+    34.0
    ],
    "stated": [
     30.0,
     30.0
    ],
-   "why": []
+   "against": "program",
+   "why": [
+    "the blocks sum to 21.75-34.0; the catalog states 30.0-30.0"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -95,18 +103,34 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": true
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Fire Science Technical Rescue Certificate",
+   "section_heading": "Fire Science Technical Rescue, Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 30,
     "max": 30
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Successfully complete a written test with a minimum 80% passing score.",
     "Demonstration of the proper techniques required to perform on a Hazardous Materials incident with an 80% success rate.",
@@ -122,8 +146,8 @@
   "blocks": [
    {
     "name": "Required Courses",
-    "rule": "choose_units",
-    "minimum": 17.25,
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 17.25,
@@ -131,81 +155,81 @@
     },
     "courses": [
      {
-      "code": "EMS161",
+      "code": "EMS 161",
       "units": 1,
       "units_max": 1.5,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST090",
+      "code": "FST 090",
       "units": 0.25,
       "units_max": 12,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST120",
+      "code": "FST 120",
       "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST156",
+      "code": "FST 156",
       "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST165",
+      "code": "FST 165",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST166",
+      "code": "FST 166",
       "units": 0.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST173",
+      "code": "FST 173",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST174",
+      "code": "FST 174",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST175",
+      "code": "FST 175",
       "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST219",
+      "code": "FST 219",
       "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST277",
-      "units": 1,
+      "code": "FST 279",
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      }
     ]
    },
@@ -220,427 +244,427 @@
     },
     "courses": [
      {
-      "code": "FST106",
+      "code": "FST 106",
       "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST111",
+      "code": "FST 111",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FST 112",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FST 113",
       "units": 0.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST112",
-      "units": 0.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "FST113",
-      "units": 0.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "FST115",
+      "code": "FST 115",
       "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST116",
+      "code": "FST 116",
       "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST119",
+      "code": "FST 119",
       "units": 0.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST123",
+      "code": "FST 123",
       "units": 0.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST124",
+      "code": "FST 124",
       "units": 0.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST125",
+      "code": "FST 125",
       "units": 0.25,
       "units_max": 0.75,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST126",
+      "code": "FST 126",
       "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST148",
+      "code": "FST 148",
       "units": 0.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST150",
+      "code": "FST 150",
       "units": 0.75,
       "units_max": 1,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST151",
+      "code": "FST 151",
       "units": 0.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST152",
+      "code": "FST 152",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST153",
+      "code": "FST 153",
       "units": 1.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST154",
+      "code": "FST 154",
       "units": 1.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST155",
+      "code": "FST 155",
       "units": 1.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST156",
+      "code": "FST 156",
       "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST157",
+      "code": "FST 157",
       "units": 1.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST158",
+      "code": "FST 158",
       "units": 1.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST223",
+      "code": "FST 223",
       "units": 0.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST183",
+      "code": "FST 183",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST167",
+      "code": "FST 167",
       "units": 0.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST163",
+      "code": "FST 163",
       "units": 0.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST162",
+      "code": "FST 162",
       "units": 1,
       "units_max": 1.25,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST161",
+      "code": "FST 161",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST159",
+      "code": "FST 159",
       "units": 0.5,
       "units_max": 0.75,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST253",
+      "code": "FST 253",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST252",
+      "code": "FST 252",
       "units": 1.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST249",
+      "code": "FST 249",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST248",
+      "code": "FST 248",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST247",
+      "code": "FST 247",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST246",
+      "code": "FST 246",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST245",
+      "code": "FST 245",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST243",
+      "code": "FST 243",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST242",
+      "code": "FST 242",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "FST241",
+      "code": "FST 241",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST240",
+      "code": "FST 240",
       "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST226",
+      "code": "FST 226",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST224",
+      "code": "FST 224",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST266",
+      "code": "FST 266",
       "units": 0.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST254",
+      "code": "FST 254",
       "units": 1.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST256",
+      "code": "FST 256",
       "units": 1.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST257",
+      "code": "FST 257",
       "units": 1.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST258",
+      "code": "FST 258",
       "units": 1.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST259",
+      "code": "FST 259",
       "units": 1.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST261",
+      "code": "FST 261",
       "units": 0.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST263",
+      "code": "FST 263",
       "units": 0.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST268",
+      "code": "FST 268",
       "units": 0.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST272",
+      "code": "FST 272",
       "units": 1.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST273",
+      "code": "FST 273",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST274",
+      "code": "FST 274",
       "units": 1.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST276",
+      "code": "FST 276",
       "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST275",
+      "code": "FST 275",
       "units": 0.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST080",
+      "code": "FST 080",
       "units": 0.25,
       "units_max": 24,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST110",
+      "code": "FST 110",
       "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST260",
+      "code": "FST 260",
       "units": 0.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST262",
+      "code": "FST 262",
       "units": 1.25,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST264",
+      "code": "FST 264",
       "units": 1.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FST290",
+      "code": "FST 290",
       "units": 0.25,
       "units_max": 6,
       "alternatives": [],
@@ -650,16 +674,20 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "FST 277",
+    "why": "not in the text"
+   }
+  ],
   "notes": [
-   "The 'Required Courses' block is headed as required but the catalog states 'Complete the following number of credits: 17.25'; recorded as choose_units 17.25. The listed courses total 9.5 units at their low ends, so variable-unit courses (FST090 0.25-12, EMS161 1-1.5) must make up the difference; reviewer should confirm whether all listed courses are required.",
-   "FST156 (Trench Rescue Technician) is printed in both the Required Courses list and the Electives list; recorded in both blocks as printed.",
-   "FST242 (Fire Investigation 1B) is in the Electives list but not in the closed list; marked catalog_addition.",
-   "Catalog prints codes without spaces and with leading zeros (FST090, FST080); matched to closed-list FST 90 and FST 80.",
-   "Catalog titles differ slightly from the closed list for some courses (e.g., FST167 'Confined Space Refresher' vs 'Confined Space III'; FST112 'Personal Water Craft Rescue').",
-   "Careers taken from the description: 'entry level employment in the fire service' and 'Opportunities also exist with private industry safety programs, insurance companies and fire equipment manufacturing firms'; these are employment fields/employers rather than job titles—reviewer may wish to confirm.",
-   "Source URL slug references a 2020-21 summer 2021 version of the program though listed under the 2025-2026 catalog."
+   "FST 090 and FST 080 are printed with a leading zero; they are matched to closed-list FST 90 and FST 80.",
+   "FST 156 (Trench Rescue Technician) is printed in both the Required Courses and the Electives lists; it is recorded in both blocks as printed. A reviewer should check whether it can count toward the elective units when it is already required.",
+   "The Electives heading reads 'Electives - Total 12.75 Credits' with no explicit selection rule. It is read as choose 12.75 units from the list.",
+   "FST 279 and FST 242 are not in the closed list and are marked as catalog additions.",
+   "Several catalog unit values differ slightly from the state file: for example, FST 113 is printed as 0.75 versus 0.5, and FST 125 is printed as 0.25-0.75. Catalog values are recorded as printed.",
+   "The certificate total is 'Credits: 30.0' as printed, which matches 17.25 required plus 12.75 elective credits."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "39852997888"
 }

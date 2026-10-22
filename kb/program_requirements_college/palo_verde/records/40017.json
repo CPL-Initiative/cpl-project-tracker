@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Law, Public Policy, and Society",
  "award": "A.A- T Degree",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/law-public-policy-and-society-2025-2026-fall-2025fa",
- "record_shape": 5,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=114&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7245,
+  "input_tokens": 7550,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7245,
-    "output_tokens": 3643,
+    "input_tokens": 7550,
+    "output_tokens": 2898,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,47 +30,37 @@
     "model": null
    }
   ],
-  "output_tokens": 3643,
+  "output_tokens": 2898,
   "output_tokens_details": {
-   "thinking_tokens": 1152
+   "thinking_tokens": 678
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.10184,
- "ms": 28106,
- "seconds": 28.7,
+ "cost_usd": 0.08816,
+ "ms": 22375,
+ "seconds": 22.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 21,
    "listed": 21,
-   "share": 0.81,
-   "missing": [
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 1,
    "codes": [
-    "ECO105",
-    "ECO106",
-    "HIS130",
-    "HIS140"
+    "COMMC1004"
    ],
    "flagged": [
-    "ECO105",
-    "ECO106",
-    "HIS130",
-    "HIS140"
+    "COMMC1004"
    ],
    "pass": true
   },
@@ -79,7 +69,7 @@
    "status": "equal",
    "computed": [
     65.0,
-    69.0
+    70.0
    ],
    "stated": [
     60.0,
@@ -91,8 +81,7 @@
     38.0
    ],
    "why": [],
-   "overlap": true,
-   "rescored": "Open Asks Sheet 82"
+   "overlap": true
   },
   "repeated": {
    "codes": [],
@@ -113,17 +102,24 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Law, Public Policy, and Society",
+   "section_heading": "Law, Public Policy, and Society, AA-T",
    "measure": "units",
    "total_units": {
     "min": null,
     "max": null
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "CalGETC",
    "degree_total": {
     "min": 60,
@@ -143,8 +139,8 @@
   "blocks": [
    {
     "name": "Understanding the Law",
-    "rule": "choose_units",
-    "minimum": 3,
+    "rule": "choose_courses",
+    "minimum": 1,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -152,21 +148,21 @@
     },
     "courses": [
      {
-      "code": "CRJ103",
+      "code": "CRJ 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ115",
+      "code": "CRJ 115",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS135",
+      "code": "BUS 135",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -185,7 +181,7 @@
     },
     "courses": [
      {
-      "code": "PHI120",
+      "code": "PHI 120",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -195,8 +191,8 @@
    },
    {
     "name": "Oral Communication",
-    "rule": "choose_units",
-    "minimum": 3,
+    "rule": "choose_courses",
+    "minimum": 1,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -204,18 +200,18 @@
     },
     "courses": [
      {
-      "code": "COMMC1000",
+      "code": "COMM C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SPE103",
+      "code": "COMM C1004",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      }
     ]
    },
@@ -230,7 +226,7 @@
     },
     "courses": [
      {
-      "code": "ENGLC1000",
+      "code": "ENGL C1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -240,8 +236,8 @@
    },
    {
     "name": "Critical Thinking",
-    "rule": "choose_units",
-    "minimum": 3,
+    "rule": "choose_courses",
+    "minimum": 1,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -249,14 +245,14 @@
     },
     "courses": [
      {
-      "code": "SPE103",
+      "code": "SPE 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENGLC1001",
+      "code": "ENGL C1001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -266,8 +262,8 @@
    },
    {
     "name": "Quantitative Reasoning",
-    "rule": "choose_units",
-    "minimum": 3,
+    "rule": "choose_courses",
+    "minimum": 1,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -275,14 +271,14 @@
     },
     "courses": [
      {
-      "code": "PSY155",
+      "code": "PSY 155",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "STATC1000",
+      "code": "STAT C1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -292,8 +288,8 @@
    },
    {
     "name": "US History",
-    "rule": "choose_units",
-    "minimum": 3,
+    "rule": "choose_courses",
+    "minimum": 1,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -301,18 +297,18 @@
     },
     "courses": [
      {
-      "code": "HIS130",
+      "code": "HIST C1001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "HIS140",
+      "code": "HIST C1002",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      }
     ]
    },
@@ -327,7 +323,7 @@
     },
     "courses": [
      {
-      "code": "POLSC1000",
+      "code": "POLS C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -337,8 +333,8 @@
    },
    {
     "name": "List A: Select two courses from below that have not been used in the required courses.",
-    "rule": "choose_units",
-    "minimum": 6,
+    "rule": "choose_courses",
+    "minimum": 2,
     "option_group": null,
     "stated": {
      "min": 6,
@@ -346,77 +342,77 @@
     },
     "courses": [
      {
-      "code": "CRJ115",
+      "code": "CRJ 115",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ103",
+      "code": "CRJ 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ206",
+      "code": "CRJ 206",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ120",
+      "code": "CRJ 120",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS135",
+      "code": "BUS 135",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ECO105",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ECO106",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ANT101",
+      "code": "ECON C2002",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SPE105",
+      "code": "ECON C2001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SOC115",
+      "code": "ANT 101",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GES115",
+      "code": "SPE 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GES 115",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -426,35 +422,17 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ECONC2001",
-    "why": "not in the text; catalog lists ECO106 - Principles of Microeconomics instead"
-   },
-   {
-    "code": "ECONC2002",
-    "why": "not in the text; catalog lists ECO105 - Principles of Macroeconomics instead"
-   },
-   {
-    "code": "HISTC1001",
-    "why": "not in the text; catalog lists HIS130 - American History I instead"
-   },
-   {
-    "code": "HISTC1002",
-    "why": "not in the text; catalog lists HIS140 - American History II instead"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The page prints 'Law, Public Policy, and Society (Total 60) Complete the following number of credits: 60' over the major and CalGETC 34 - 38; recorded 60 as degree_total, not total_units.",
-   "The 'Required course' heading prints Total 24, but its sub-blocks as printed sum to 25 (3+3+3+4+3+3+3+3, Written Communication is 4); with List A (6) the major would be 30-31. No major total was recorded in total_units because the printed 24 appears to cover only the required core and does not match its sub-blocks; reviewer should check.",
-   "It is unclear whether List A is nested inside 'Required course' or is a separate block at the program level.",
-   "List A heading says 'Select two courses' while its rule says 'Complete the following number of credits: 6'; recorded as choose_units 6. Courses used in required blocks (e.g., CRJ103, CRJ115, BUS135) may not be reused in List A.",
-   "SPE103 appears in both Oral Communication and Critical Thinking blocks as printed.",
-   "Catalog uses older codes HIS130/HIS140 and ECO105/ECO106 rather than the closed list's HISTC1001/HISTC1002 and ECONC2001/ECONC2002; marked as catalog additions. STATC1000 is printed with 4 units in a 3-unit block.",
-   "Ethics and Written Communication blocks say 'Complete at least one of the following rules' with a single course each; recorded as 'all'.",
-   "Generic AA-T requirement of 60 CSU-transferable units is a standard statement; no unit figure is printed for open electives.",
-   "Program Outcomes are printed under 'Associate in Arts in Law, Public Policy, and Society' and recorded for this award."
+   "The page prints 'Required Courses - Total 24 Credits' for the required core only (excluding List A's 6 credits); no total for the whole major is printed, so total_units is left null. The listed sub-block totals sum to 25, not 24, because Written Communication is 4 credits; reviewer should check.",
+   "Sub-blocks listing several courses with a 3-credit total (Understanding the Law, Oral Communication, Critical Thinking, Quantitative Reasoning, US History) are read as choose one course; the page does not print 'select one' explicitly.",
+   "STAT C1000 is 4 credits within a Quantitative Reasoning block stated as 3 credits.",
+   "'Credits: 60.0' printed at the top of the page is recorded as degree_total; CalGETC is printed as 34 - 38 credits.",
+   "Catalog codes ECON C2001/C2002 and HIST C1001/C1002 match closed-list entries ECONC2001/ECONC2002 and HISTC1001/HISTC1002 (spacing difference only).",
+   "COMM C1004 is not in the closed list and is recorded as a catalog addition.",
+   "CRJ 103, CRJ 115 and BUS 135 appear both in Understanding the Law and List A; List A requires courses not already used in the required courses.",
+   "No careers are named in the text."
   ]
  },
- "extracted_run": "38567765687"
+ "extracted_run": "39852997888"
 }

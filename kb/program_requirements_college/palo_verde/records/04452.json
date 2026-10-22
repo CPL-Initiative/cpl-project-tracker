@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Child Development",
  "award": "A.S. Degree",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-development-associate-of-science-2025-2026-fall-2025fa",
- "record_shape": 5,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=125&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6764,
+  "input_tokens": 7146,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6764,
-    "output_tokens": 2339,
+    "input_tokens": 7146,
+    "output_tokens": 1860,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,34 @@
     "model": null
    }
   ],
-  "output_tokens": 2339,
+  "output_tokens": 1860,
   "output_tokens_details": {
-   "thinking_tokens": 742
+   "thinking_tokens": 382
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07384,
- "ms": 22526,
- "seconds": 23.4,
+ "cost_usd": 0.06578,
+ "ms": 14532,
+ "seconds": 15.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 22,
    "listed": 22,
-   "share": 0.955,
-   "missing": [
-    "CDEVC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CHD101"
-   ],
-   "flagged": [
-    "CHD101"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -102,18 +97,25 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Child Development Associate of Science",
+   "section_heading": "Child Development , AS",
    "measure": "units",
    "total_units": {
     "min": null,
     "max": null
    },
    "open_elective_units": null,
-   "ge_pattern": "General Education Requirements",
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CalGETC",
    "degree_total": {
     "min": 67,
     "max": 71
@@ -145,63 +147,63 @@
     },
     "courses": [
      {
-      "code": "CHD101",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CHD102",
+      "code": "CDEV C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD103",
+      "code": "CHD 102",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD104",
+      "code": "CHD 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD105",
+      "code": "CHD 104",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD106",
+      "code": "CHD 105",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD107",
+      "code": "CHD 106",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD108",
+      "code": "CHD 107",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD145",
+      "code": "CHD 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHD 145",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -210,7 +212,7 @@
     ]
    },
    {
-    "name": "Child Development Electives – (Choose a minimum of 6 units from the list below)",
+    "name": "Child Development Electives",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": null,
@@ -220,91 +222,91 @@
     },
     "courses": [
      {
-      "code": "CHD111",
+      "code": "CHD 111",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD130",
+      "code": "CHD 130",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD131",
+      "code": "CHD 131",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD135",
+      "code": "CHD 135",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD215",
+      "code": "CHD 215",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD216",
+      "code": "CHD 216",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD205",
+      "code": "CHD 205",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD220",
+      "code": "CHD 220",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD221",
+      "code": "CHD 221",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD232",
+      "code": "CHD 232",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD231",
+      "code": "CHD 231",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD250",
+      "code": "CHD 250",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD251",
+      "code": "CHD 251",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -314,19 +316,13 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "CDEVC1000",
-    "why": "not in the text; catalog prints CHD101 Child Growth and Development instead (likely the same course under a common course number)"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The page's 'Units: 67.0 - 71.0' and '(Total 67 - 71)' equals core 27 + electives 6 + GE 34-38, so it is recorded as degree_total; no separate major total is printed (block totals 27 and 6 only).",
-   "GE units 34 - 38 are printed after the sentence on Associate Degree and General Education Requirements; the page does not name a specific GE pattern (presumably Palo Verde College local GE), so ge_pattern records the generic wording.",
-   "CHD101 is recorded as a catalog addition because the closed list stores Child Growth and Development as CDEVC1000; reviewer should confirm these are the same course.",
-   "Catalog prints codes without a space (e.g., CHD102); these are treated as matching closed-list codes like CHD 102.",
-   "Outcomes are printed under 'Program Outcomes' for Child Development Associate of Science."
+   "The page prints 'Credits: 67.0 - 71.0' for the whole A.S. degree (27 core + 6 electives + CalGETC 34-38); recorded as degree_total. No separate major total is printed, so total_units is null.",
+   "CDEV C1000 in the catalog matches closed-list code CDEVC1000 (spacing difference only); treated as the same course.",
+   "Catalog prints CHD 215 as 'Administration II: Programs in Early Childhood Education' while the closed list titles it 'Administration I'; likely a catalog typo. CHD 216 title also printed with duplicated text.",
+   "The outcomes listed are printed under 'Program Outcomes' for this AS program."
   ]
  },
- "extracted_run": "38567765687"
+ "extracted_run": "39852997888"
 }

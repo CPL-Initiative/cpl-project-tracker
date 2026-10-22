@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Criminal Justice",
  "award": "A.S. Degree",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/criminal-justice-associate-of-science-2025-2026-fall-2025fa",
- "record_shape": 5,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=127&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6545,
+  "input_tokens": 6845,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6545,
-    "output_tokens": 1699,
+    "input_tokens": 6845,
+    "output_tokens": 1580,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1699,
+  "output_tokens": 1580,
   "output_tokens_details": {
-   "thinking_tokens": 524
+   "thinking_tokens": 350
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06016,
- "ms": 16301,
- "seconds": 17.0,
+ "cost_usd": 0.05898,
+ "ms": 13433,
+ "seconds": 14.5,
  "parts": null,
  "error": null,
  "score": {
@@ -96,17 +97,24 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Criminal Justice Associate of Science",
+   "section_heading": "Criminal Justice , AS",
    "measure": "units",
    "total_units": {
     "min": null,
     "max": null
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "CalGETC",
    "degree_total": {
     "min": 64,
@@ -128,7 +136,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core Courses (21 units)",
+    "name": "Required Core Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -138,49 +146,49 @@
     },
     "courses": [
      {
-      "code": "CRJ103",
+      "code": "CRJ 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ115",
+      "code": "CRJ 115",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ120",
+      "code": "CRJ 120",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ125",
+      "code": "CRJ 125",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ130",
+      "code": "CRJ 130",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ206",
+      "code": "CRJ 206",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSYCC1000",
+      "code": "PSYC C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -189,7 +197,7 @@
     ]
    },
    {
-    "name": "Electives- Select Nine (9) units from the List below:",
+    "name": "Electives- Select From the List Below",
     "rule": "choose_units",
     "minimum": 9,
     "option_group": null,
@@ -199,42 +207,42 @@
     },
     "courses": [
      {
-      "code": "CRJ104",
+      "code": "CRJ 104",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ155",
+      "code": "CRJ 155",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ220",
+      "code": "CRJ 220",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSY210",
+      "code": "PSY 210",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSY220",
+      "code": "PSY 220",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SPA101",
+      "code": "SPA 101",
       "units": 5,
       "units_max": null,
       "alternatives": [],
@@ -246,12 +254,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page prints 64-68 as the total for the whole degree (including CalGETC 34-38); no separate major total is printed, so total_units is null (core 21 + electives 9 are printed only per block).",
-   "Outcome 2 is printed as a single numbered item containing 'Or:' followed by an alternate wording; recorded as one outcome as printed.",
-   "Codes recorded as printed without spaces (e.g., CRJ103, PSYCC1000); all match closed-list courses.",
-   "Academy training may be awarded up to 12 units toward the degree (including credit for CRJ 115 and CRJ elective credit); not modeled as a block.",
-   "SPA101 (5 units) in the electives list could make the elective block exceed 9 units."
+   "'Credits: 64.0 - 68.0' at the top is read as the whole-degree total including CalGETC (34-38); no major total is printed, so total_units is null (core 21 + electives 9 would be 30, not recorded).",
+   "The second program outcome prints an 'Or:' alternative within the same line ('...law enforcement and corrections. Or: Student will demonstrate skill in advising suspects of their Miranda rights.'); recorded as one entry as printed. Reviewer may check whether it was meant as two outcomes.",
+   "Academy training (peace officer/correctional officer) may be awarded up to 12 units toward the degree, including credit for CRJ 115 and CRJ elective credit; not modeled in blocks.",
+   "Electives block: selecting SPA 101 (5 units) may yield more than 9 units; the degree total range 64-68 likely reflects this and the CalGETC range."
   ]
  },
- "extracted_run": "38567765687"
+ "extracted_run": "39852997888"
 }

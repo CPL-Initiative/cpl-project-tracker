@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Computer Information Systems",
  "award": "A.S. Degree",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/computer-information-systems-associate-of-science-2025-2026-fall-2025fa",
- "record_shape": 4,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=126&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5639,
+  "input_tokens": 6808,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5639,
-    "output_tokens": 1641,
+    "input_tokens": 6808,
+    "output_tokens": 1499,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1641,
+  "output_tokens": 1499,
   "output_tokens_details": {
-   "thinking_tokens": 451
+   "thinking_tokens": 397
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05538,
- "ms": 13950,
- "seconds": 14.6,
+ "cost_usd": 0.05721,
+ "ms": 12532,
+ "seconds": 13.6,
  "parts": null,
  "error": null,
  "score": {
@@ -70,7 +71,26 @@
     27.0,
     27.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     61.0,
+     65.0
+    ],
+    "stated": [
+     61.0,
+     65.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     38.0
+    ],
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -91,18 +111,34 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Computer Information Systems Associate of Science",
+   "section_heading": "Computer Information Systems , AS",
    "measure": "units",
    "total_units": {
     "min": 27,
     "max": 27
    },
    "open_elective_units": null,
-   "ge_pattern": "General Education Requirements",
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 61,
+    "max": 65
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 38
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Acquired fundamental grounding in communications, science, mathematics, humanities, the social sciences and self-development.",
     "Demonstrated knowledge of technology applicable to the field, and a proficiency in appropriate software; be competent evaluators and users of hardware; adapt to technological changes and select a current solution for a given problem."
@@ -115,7 +151,7 @@
   },
   "blocks": [
    {
-    "name": "Required Courses (24 units):",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -125,56 +161,56 @@
     },
     "courses": [
      {
-      "code": "CIS101",
+      "code": "CIS 101",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CIS123",
+      "code": "CIS 123",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CIS130",
+      "code": "CIS 130",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CIS131",
+      "code": "CIS 131",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CIS201",
+      "code": "CIS 201",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CIS202",
+      "code": "CIS 202",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CIS260",
+      "code": "CIS 260",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CIS265",
+      "code": "CIS 265",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -183,7 +219,7 @@
     ]
    },
    {
-    "name": "Computer Information Systems Electives (3 units):",
+    "name": "Computer Information Systems Electives",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -193,35 +229,35 @@
     },
     "courses": [
      {
-      "code": "CIS124",
+      "code": "CIS 124",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CIS132",
+      "code": "CIS 132",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CIS133",
+      "code": "CIS 133",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CIS203",
+      "code": "CIS 203",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CIS204",
+      "code": "CIS 204",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -233,12 +269,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints codes without a space (e.g. CIS101); these match the closed list's CIS 101 etc., so none are marked as catalog additions.",
-   "total_units is the 27 units the description states for the degree's major requirements (24 required + 3 electives). The page's 'Units: 61.0 - 65.0' and '(Total 61 - 65)' are the full degree total including 34-38 units of General Education and were not used for total_units.",
-   "GE pattern is named only as 'the General Education Requirements' (34 - 38 units); no specific pattern (CSU GE, IGETC, Cal-GETC) is named.",
-   "Careers were read from the description: 'a vocational field related to computer programming' and 'employment in computer information systems or computer applications'. These are broad career fields; a reviewer may wish to confirm they qualify.",
-   "The description repeats a phrase ('programming and/or further study in computer science, or computational science. The curriculum in this') which appears to be a copy error on the page."
+   "Major total of 27 units taken from the description sentence 'This degree requires 27 units (24 units from required courses, 3 units from electives.)'.",
+   "Degree total 61.0 - 65.0 printed as 'Credits' at top of page; matches 27 major units plus CalGETC 34 - 38.",
+   "The description repeats a sentence fragment ('The curriculum in this programming and/or further study...'), apparently a catalog editing error.",
+   "Electives block read as choose 3 units from the listed CIS electives (equivalent to one course)."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "39852997888"
 }
