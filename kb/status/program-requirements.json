@@ -1,187 +1,192 @@
 {
- "schema": 1,
- "project": "program-requirements",
- "written_at": "2026-10-22T10:38:44Z",
- "session": 446,
- "moniker": "SkyMadrone",
- "run": "the CPL Queue routine",
- "decider": "Sam",
- "handoff": "docs/session_447_handoff.md",
- "next_step": {
-  "title": "Confirm the S446 display build on main, then Saddleback's capture",
-  "text": "Confirm display build 0ad3c75bfa19 applied on main (91 new records at Palomar, MiraCosta, Grossmont and Pasadena City); then read Saddleback's free capture and extract it only if programs move to their own pages."
- },
- "calls": [
-  {
-   "title": "The second reader waits on a new xAI subscription",
-   "text": "Sam, 2026-10-20 about 16:30 UTC: the API is paid for separately from the Grok subscription, and the account is moving to the RCCD district credit card. When the key exists: Sam sets XAI_API_KEY and XAI_MODEL as Edge Function secrets on the Work Plan project, a session deploys program-requirements-extract with cpl-chat-deploy.yml, then runs second-reader.yml for Canada College.",
-   "no_reply": "The second reader stays built and unrun; the records that fail a machine check are read by one model and Jev's sittings, whose verdicts files carry each college's next fix.",
-   "link": "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu",
-   "answer": {
-    "by": "Sam",
-    "at": "2026-10-21",
-    "words": "Later, on Open Asks Sheet 98 card 2: \"I need to get a new subscription first which will take a few days, so keep this on ice for now.\""
-   },
-   "link_text": "Open Sheet 98"
+  "schema": 1,
+  "project": "program-requirements",
+  "written_at": "2026-10-22T14:26:52Z",
+  "session": 447,
+  "moniker": "SkyBrittlebush",
+  "run": "Sam's session",
+  "decider": "Sam",
+  "handoff": "docs/session_448_handoff.md",
+  "next_step": {
+    "title": "Confirm build be2635ed5b73 on main, then Berkeley City's Multimedia Arts codes",
+    "text": "Confirm display build be2635ed5b73 applied on main (Mt. San Jacinto and Santa Barbara City reread); then read one Berkeley City credit page's Requirements node and compare its course codes with the state's file."
   },
-  {
-   "title": "Ask Program Mapper's vendor to share the 63 community colleges' program maps",
-   "text": "Sam pasted the vendor's member list on 2026-10-21; 37 map hosts are now on the registry (#2330). Every mapper host the reader has reached answers 403, so the maps are known and unread. A request to the vendor is outward, so it waits on Sam.",
-   "if_no_reply": "The maps stay unread; the reader asks each recorded host once a run whether it has opened.",
-   "link": "https://claude.ai/artifact/AKsM96ZjKRmrYPHGWiDffG",
-   "link_text": "Open Sheet 112"
+  "calls": [
+    {
+      "title": "The second reader waits on a new xAI subscription",
+      "text": "Sam, 2026-10-20 about 16:30 UTC: the API is paid for separately from the Grok subscription, and the account is moving to the RCCD district credit card. When the key exists: Sam sets XAI_API_KEY and XAI_MODEL as Edge Function secrets on the Work Plan project, a session deploys program-requirements-extract with cpl-chat-deploy.yml, then runs second-reader.yml for Canada College.",
+      "no_reply": "The second reader stays built and unrun; the records that fail a machine check are read by one model and Jev's sittings, whose verdicts files carry each college's next fix.",
+      "link": "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-21",
+        "words": "Later, on Open Asks Sheet 98 card 2: \"I need to get a new subscription first which will take a few days, so keep this on ice for now.\""
+      },
+      "link_text": "Open Sheet 98"
+    },
+    {
+      "title": "Ask Program Mapper's vendor to share the 63 community colleges' program maps",
+      "text": "Sam pasted the vendor's member list on 2026-10-21; 37 map hosts are now on the registry (#2330). Every mapper host the reader has reached answers 403, so the maps are known and unread. A request to the vendor is outward, so it waits on Sam.",
+      "if_no_reply": "The maps stay unread; the reader asks each recorded host once a run whether it has opened.",
+      "link": "https://claude.ai/artifact/AKsM96ZjKRmrYPHGWiDffG",
+      "link_text": "Open Sheet 112",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-22",
+        "words": "Later"
+      }
+    }
+  ],
+  "notes": {
+    "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
+  },
+  "changes": [
+    {
+      "at": "2026-10-22T12:33:00Z",
+      "text": "An Administration of Justice address is a program page again, and a code printed as ANTH-102 names a course."
+    },
+    {
+      "at": "2026-10-22T14:24:00Z",
+      "text": "Mt. San Jacinto 115 programs found and Santa Barbara City 254, 24 new records loaded and 93 reread."
+    }
+  ],
+  "headline": [
+    {
+      "day": "2026-10-08",
+      "active": 20282,
+      "checked": 20,
+      "colleges": 5
+    },
+    {
+      "day": "2026-10-09",
+      "active": 20282,
+      "checked": 20,
+      "colleges": 5
+    },
+    {
+      "day": "2026-10-10",
+      "active": 20282,
+      "checked": 27,
+      "colleges": 6
+    },
+    {
+      "day": "2026-10-11",
+      "active": 20282,
+      "checked": 29,
+      "colleges": 6
+    },
+    {
+      "day": "2026-10-12",
+      "active": 20282,
+      "checked": 31,
+      "colleges": 6
+    },
+    {
+      "day": "2026-10-13",
+      "active": 20282,
+      "checked": 31,
+      "colleges": 6
+    },
+    {
+      "day": "2026-10-14",
+      "active": 20282,
+      "checked": 31,
+      "colleges": 6
+    },
+    {
+      "day": "2026-10-15",
+      "active": 20282,
+      "checked": 32,
+      "colleges": 7
+    },
+    {
+      "day": "2026-10-16",
+      "active": 20282,
+      "checked": 32,
+      "colleges": 7
+    },
+    {
+      "day": "2026-10-17",
+      "active": 20282,
+      "checked": 32,
+      "colleges": 7
+    },
+    {
+      "day": "2026-10-18",
+      "active": 20282,
+      "complete": 11621,
+      "colleges": 113
+    },
+    {
+      "day": "2026-10-19",
+      "active": 20282,
+      "complete": 11687,
+      "colleges": 113
+    },
+    {
+      "day": "2026-10-20",
+      "active": 20282,
+      "complete": 11687,
+      "colleges": 113
+    },
+    {
+      "day": "2026-10-21",
+      "active": 20282,
+      "complete": 12463,
+      "colleges": 114
+    },
+    {
+      "day": "2026-10-22",
+      "active": 20282,
+      "complete": 12892,
+      "colleges": 114
+    }
+  ],
+  "next_run": {
+    "name": "CPL Queue",
+    "every_hours": 24,
+    "at": "2026-10-23T05:12:00Z"
+  },
+  "harvest": {
+    "day": "2026-10-22",
+    "gaps": 3137,
+    "parts": {
+      "links": {
+        "catalog": [
+          118,
+          118
+        ],
+        "cms": [
+          118,
+          118
+        ],
+        "ppm": [
+          112,
+          118
+        ]
+      },
+      "roep": [
+        19156,
+        20282
+      ],
+      "coci": [
+        16043,
+        20282
+      ],
+      "outcomes": {
+        "slo": [
+          6458,
+          89192
+        ],
+        "plo": [
+          16043,
+          20282
+        ]
+      },
+      "careers": [
+        14993,
+        20282
+      ]
+    }
   }
- ],
- "notes": {
-  "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
- },
- "changes": [
-  {
-   "at": "2026-10-22T09:13:00Z",
-   "text": "A degree-and-certificate page now serves the degree too: Grossmont 139 to 144 programs found."
-  },
-  {
-   "at": "2026-10-22T10:35:00Z",
-   "text": "91 new records loaded at Palomar, MiraCosta, Grossmont and Pasadena City, and 6 replaced by rereads."
-  }
- ],
- "headline": [
-  {
-   "day": "2026-10-08",
-   "active": 20282,
-   "checked": 20,
-   "colleges": 5
-  },
-  {
-   "day": "2026-10-09",
-   "active": 20282,
-   "checked": 20,
-   "colleges": 5
-  },
-  {
-   "day": "2026-10-10",
-   "active": 20282,
-   "checked": 27,
-   "colleges": 6
-  },
-  {
-   "day": "2026-10-11",
-   "active": 20282,
-   "checked": 29,
-   "colleges": 6
-  },
-  {
-   "day": "2026-10-12",
-   "active": 20282,
-   "checked": 31,
-   "colleges": 6
-  },
-  {
-   "day": "2026-10-13",
-   "active": 20282,
-   "checked": 31,
-   "colleges": 6
-  },
-  {
-   "day": "2026-10-14",
-   "active": 20282,
-   "checked": 31,
-   "colleges": 6
-  },
-  {
-   "day": "2026-10-15",
-   "active": 20282,
-   "checked": 32,
-   "colleges": 7
-  },
-  {
-   "day": "2026-10-16",
-   "active": 20282,
-   "checked": 32,
-   "colleges": 7
-  },
-  {
-   "day": "2026-10-17",
-   "active": 20282,
-   "checked": 32,
-   "colleges": 7
-  },
-  {
-   "day": "2026-10-18",
-   "active": 20282,
-   "complete": 11621,
-   "colleges": 113
-  },
-  {
-   "day": "2026-10-19",
-   "active": 20282,
-   "complete": 11687,
-   "colleges": 113
-  },
-  {
-   "day": "2026-10-20",
-   "active": 20282,
-   "complete": 11687,
-   "colleges": 113
-  },
-  {
-   "day": "2026-10-21",
-   "active": 20282,
-   "complete": 12463,
-   "colleges": 114
-  },
-  {
-   "day": "2026-10-22",
-   "active": 20282,
-   "complete": 12868,
-   "colleges": 114
-  }
- ],
- "next_run": {
-  "name": "CPL Queue",
-  "every_hours": 24,
-  "at": "2026-10-22T11:12:00Z"
- },
- "harvest": {
-  "day": "2026-10-22",
-  "gaps": 3245,
-  "parts": {
-   "links": {
-    "catalog": [
-     118,
-     118
-    ],
-    "cms": [
-     118,
-     118
-    ],
-    "ppm": [
-     112,
-     118
-    ]
-   },
-   "roep": [
-    19261,
-    20282
-   ],
-   "coci": [
-    16019,
-    20282
-   ],
-   "outcomes": {
-    "slo": [
-     6458,
-     89192
-    ],
-    "plo": [
-     16019,
-     20282
-    ]
-   },
-   "careers": [
-    14969,
-    20282
-   ]
-  }
- }
 }

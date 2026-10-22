@@ -13372,7 +13372,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 83,
+   "count": 84,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14338,6 +14338,21 @@
      "title": "Program requirements harvest lessons \u2014 archive 2 (S360-S371)",
      "type": null,
      "updated": "2026-10-15"
+    },
+    {
+     "created": "2026-10-22",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_3.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 3 (S399-S403)",
+     "type": null,
+     "updated": "2026-10-22"
     },
     {
      "created": "2026-07-16",
@@ -15923,8 +15938,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 418,
+   "count": 419,
    "docs": [
+    {
+     "created": "2026-10-22",
+     "governs": [],
+     "n": 448,
+     "path": "docs/session_448_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "decision-sheets"
+     ],
+     "title": "Session 448 handoff: an Administration of Justice address, a hyphenated code, Mt. San Jacinto and Santa Barbara City reread",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-22",
      "governs": [],
@@ -23136,5 +23166,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1217
+ "total": 1219
 }
