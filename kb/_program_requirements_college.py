@@ -365,6 +365,27 @@ SLUG_AWARD = [
 ]
 
 
+# Grossmont addresses a degree and its certificate on one page as
+# law-enforcement-as-certificate-achievement and arabic-aa-certificate-achievement: one course
+# list under "Associate Degree Major Requirements", then "Any student who chooses to complete
+# only the courses required for the above major qualifies for a Certificate of Achievement"
+# (page read 39750446541, S446). SLUG_AWARD read the certificate alone, so the A.S. scored no
+# award on its own page and lost it to the certificate: 6 of Grossmont's 15 page-claimed. Such
+# an address names both awards.
+SLUG_DEGREE_CERT = re.compile(r"-(a[as])-cert\w*-(?:of-)?achievement/?$")
+
+
+def slug_awards(url: str) -> set[str]:
+    """Every award an address names: both for a degree-and-certificate address
+    (SLUG_DEGREE_CERT), else slug_award()'s one, else none."""
+    path = urllib.parse.unquote(urllib.parse.urlparse(url or "").path).lower()
+    m = SLUG_DEGREE_CERT.search(path)
+    if m:
+        return {m.group(1), "coa"}
+    one = slug_award(url)
+    return {one} if one else set()
+
+
 def slug_award(url: str) -> str | None:
     """The award an address names in its last segment, or None."""
     path = urllib.parse.unquote(urllib.parse.urlparse(url or "").path).lower()
@@ -382,9 +403,9 @@ def label_score(page: dict, program: dict) -> tuple[int, float]:
     words = " ".join([page.get("h1") or "", page.get("title") or "",
                       urllib.parse.unquote(urllib.parse.urlparse(page.get("url") or "").path).replace("-", " ")]).lower()
     kind = P.award_kind(program.get("award"))
-    named = slug_award(page.get("url") or "")
+    named = slug_awards(page.get("url") or "")
     if named:
-        award_hit = int(named == kind)
+        award_hit = int(kind in named)
     else:
         award_hit = int(any(re.search(p, words) for p in P.AWARD_WORDS.get(kind, [])))
     tokens = P.title_tokens(program.get("title") or "")
