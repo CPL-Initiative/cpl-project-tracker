@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7787,
+  "input_tokens": 8507,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7787,
-    "output_tokens": 2108,
+    "input_tokens": 8507,
+    "output_tokens": 2403,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 2108,
+  "output_tokens": 2403,
   "output_tokens_details": {
-   "thinking_tokens": 870
+   "thinking_tokens": 735
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07331,
- "ms": 18075,
- "seconds": 18.5,
+ "cost_usd": 0.08209,
+ "ms": 19725,
+ "seconds": 20.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 15,
    "listed": 15,
-   "share": 0.0,
-   "missing": [
-    "BIOLA180",
-    "BIOLA182",
-    "BIOLA182H",
-    "BIOLA182L",
-    "BIOLA183",
-    "BIOLA183L",
-    "BIOLA185",
-    "CHEMA180",
-    "CHEMA185",
-    "MATHA180",
-    "MATHA180H",
-    "PHYSA120",
-    "PHYSA125",
-    "PHYSA130",
-    "PHYSA135"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -76,17 +61,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    32.0,
+    35.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    32.0,
+    35.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     67.0,
+     73.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -108,34 +113,31 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Biology Associate in Science Degree for Transfer (AS-T)",
+   "section_heading": "Associate Degree for Transfer Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 32,
+    "max": 35
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 1,
+    "max": 4
    },
    "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -151,77 +153,194 @@
     "education"
    ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "BIOL A180",
-    "why": "requirements table not in the text; appears only in the Program Sequence plan"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL A180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BIOL A182",
-    "why": "not in the text"
+    "name": "and either",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Biology second part",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL A185",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BIOL A182H",
-    "why": "not in the text"
+    "name": "Or the following group",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Biology second part",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOL A182",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL A182H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A182L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A183",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A183L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BIOL A182L",
-    "why": "not in the text"
+    "name": "List A - Complete the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM A180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A185",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH A180H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BIOL A183",
-    "why": "not in the text"
+    "name": "List A - Physics: PHYS A120 & PHYS A125",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "PHYS A120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS A125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BIOL A183L",
-    "why": "not in the text"
-   },
-   {
-    "code": "BIOL A185",
-    "why": "requirements table not in the text; appears only in the Program Sequence plan"
-   },
-   {
-    "code": "CHEM A180",
-    "why": "requirements table not in the text; appears only in the Program Sequence plan"
-   },
-   {
-    "code": "CHEM A185",
-    "why": "requirements table not in the text; appears only in the Program Sequence plan"
-   },
-   {
-    "code": "MATH A180H",
-    "why": "not in the text"
-   },
-   {
-    "code": "MATHA180",
-    "why": "requirements table not in the text; MATH A180 appears only in the Program Sequence plan"
-   },
-   {
-    "code": "PHYS A120",
-    "why": "requirements table not in the text; appears only in the Program Sequence plan"
-   },
-   {
-    "code": "PHYS A125",
-    "why": "requirements table not in the text; appears only in the Program Sequence plan"
-   },
-   {
-    "code": "PHYS A130",
-    "why": "requirements table not in the text; appears only in the Program Sequence plan"
-   },
-   {
-    "code": "PHYS A135",
-    "why": "requirements table not in the text; appears only in the Program Sequence plan"
+    "name": "List A - Physics: Or PHYS A130 & PHYS A135",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS A130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS A135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text begins mid-sentence and contains no Program Requirements table; only the description, Program Learning Outcomes and the Program Sequence - Cal-GETC plan of study are present. No blocks were recorded because the plan of study is a suggested curriculum map, not a statement of requirement rules. A reviewer should retrieve the requirements tab.",
-   "The section heading is not printed in the supplied text; it was taken from the page URL/program title.",
-   "The plan of study shows MATH A180, CHEM A180, CHEM A185, BIOL A180, BIOL A185, PHYS A120/A130/A185 then PHYS A125/A135/A280, with Total Units 60-65 for the plan; this plan total was not recorded as the degree total. PHYS A185, PHYS A280 and MATH A185 (not in the closed list) appear only in the plan.",
-   "The description states the degree requires two semesters of biology, two of chemistry, two of physics and one of mathematics, and strongly recommends additional mathematics and two semesters of organic chemistry (no course codes given).",
-   "ge_pattern set to Cal-GETC because the page's program sequence is titled Program Sequence - Cal-GETC; no GE unit total is printed."
+   "Closed list stores 'MATHA180' (no space, units not stored); recorded as the catalog's 'MATH A180' and treated as the same closed-list course.",
+   "BIOL A182/A182H, A182L, A183, A183L group prints only a group total of 8 units; individual units not printed beside these courses.",
+   "Physics pairs print 8 units only beside the first pair (PHYS A120 & A125); individual course units not printed.",
+   "Footnote 1: PHYS A185 and A280, if already completed, may be substituted as a qualifying Physics pair in List A (not in closed list; not recorded as a block).",
+   "Page also prints 'Major units that double count for Cal-GETC -10' and 'Transferable electives as needed to satisfy unit requirement 1-4', recorded as degree_elective_units.",
+   "Description strongly recommends an additional mathematics class and two semesters of organic chemistry, but names no course codes; no recommended block recorded. MATH A185 appears only in the program sequence map.",
+   "Program sequence (Cal-GETC) map courses such as HIST A170, POLS C1000 are GE/American Institutions items and not placed in blocks."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

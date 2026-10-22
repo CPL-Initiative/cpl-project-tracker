@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Chemistry Skills",
  "award": "Noncredit program",
- "source_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/chemistry/",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/chemistry/chemistry-skills-certificate-competency/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8540,
+  "input_tokens": 6973,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8540,
-    "output_tokens": 780,
+    "input_tokens": 6973,
+    "output_tokens": 632,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,35 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 780,
+  "output_tokens": 632,
   "output_tokens_details": {
-   "thinking_tokens": 217
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04976,
- "ms": 7445,
- "seconds": 7.8,
+ "cost_usd": 0.04053,
+ "ms": 6412,
+ "seconds": 6.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 6,
    "listed": 6,
-   "share": 0.0,
-   "missing": [
-    "CHEMA10N",
-    "CHEMA30N",
-    "CHEMA80N",
-    "CHEMA81N",
-    "CHEMA85N",
-    "CHEMA86N"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -68,25 +62,29 @@
   },
   "arithmetic": {
    "pass": true,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "against": null,
-   "why": [
-    "the catalog prints no total, no hours and no units"
-   ]
+   "status": "equal",
+   "computed": [
+    54.0,
+    54.0
+   ],
+   "stated": [
+    54.0,
+    54.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -98,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Noncredit Courses",
+   "section_heading": "Chemistry Skills, Certificate of Competency",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 54,
+    "max": 54
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -123,38 +121,75 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Explain and give examples of common problem-solving skill strategies in chemistry.",
+    "Employ critical thinking and common problem-solving strategies to solve chemistry problems.",
+    "Learn how to make and record proper observations and measurements with standard laboratory equipment."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CHEM A010N",
-    "why": "Only its course description (18 hours) is in the text; it says the course is part of the Chemistry Skills Certificate of Competency, but no requirements section states how it counts."
-   },
-   {
-    "code": "CHEM A030N",
-    "why": "Only its course description (18 hours) is in the text; it says the course is part of the Chemistry Skills Certificate of Competency, but no requirements section states how it counts."
-   },
-   {
-    "code": "CHEM A080N",
-    "why": "Only its course description (18 hours) is in the text; it says the course is part of the Chemistry Skills Certificate of Competency, but no requirements section states how it counts."
-   },
-   {
-    "code": "CHEM A081N",
-    "why": "Only its course description (18 hours) is in the text; it says the course is part of the Chemistry Skills Certificate of Competency, but no requirements section states how it counts."
-   },
-   {
-    "code": "CHEM A085N",
-    "why": "Only its course description (18 hours) is in the text; it says the course is part of the Chemistry Skills Certificate of Competency, but no requirements section states how it counts."
-   },
-   {
-    "code": "CHEM A086N",
-    "why": "Only its course description (18 hours) is in the text; it says the course is part of the 'new Chemistry Skills Certificate', but no requirements section states how it counts."
+    "name": "Required Courses",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM A010N",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A030N",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A080N",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A081N",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A085N",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A086N",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; 'Total Hours 54' recorded as total_units (three courses of 18 hours each).",
+   "The catalog prints 'Select three courses from the following' under the 'Required Courses' heading, so the block is choose_courses with minimum 3."
+  ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

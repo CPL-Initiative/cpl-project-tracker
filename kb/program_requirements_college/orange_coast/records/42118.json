@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7169,
+  "input_tokens": 7433,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7169,
-    "output_tokens": 1390,
+    "input_tokens": 7433,
+    "output_tokens": 1173,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1390,
+  "output_tokens": 1173,
   "output_tokens_details": {
-   "thinking_tokens": 557
+   "thinking_tokens": 384
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05648,
- "ms": 11858,
- "seconds": 12.1,
+ "cost_usd": 0.05319,
+ "ms": 10603,
+ "seconds": 11.0,
  "parts": null,
  "error": null,
  "score": {
@@ -78,13 +79,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -99,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Working with Exceptional Children Specialization",
+   "section_heading": "Working with Exceptional Children Specialization, Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 11,
@@ -120,9 +121,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Pathway for future Special Education teachers, and satisfies the specialization unit requirement for the Child Development Permit at the Master Teacher level. In conjunction with core units, the holder can be employed as a Preschool teacher, if paired with Child Development Lead Teacher certificate, holder can be employed as Lead Preschool Teacher or Mentor Teacher."
-   ],
+   "outcomes": [],
    "careers": [
     "Special Education teachers",
     "Preschool teacher",
@@ -201,11 +200,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page's own heading is not in the extracted text; the section heading is taken from the program title.",
-   "Under the 'Program Learning Outcomes' heading the page prints a single paragraph that reads as a pathway/career statement rather than measurable outcomes; it is recorded verbatim as one entry and should be reviewed.",
-   "Restricted Electives: 'Select one course: 2' — units are printed only on the selection line, not beside each course; the three A112 courses are cross-listed versions of the same course.",
-   "Plan of Study Grid confirms total of 11 units."
+   "The page prints 'Program Outcome' and 'Program Learning Outcomes' headings; the only text under them is a descriptive paragraph about the pathway and employment (Special Education pathway, Child Development Permit at Master Teacher level), not a list of learning outcomes, so program.outcomes is left empty. Reviewer may check.",
+   "Restricted Electives: 'Select one course: 2' — units are printed only for the block (2), not beside each course; the three courses are cross-listed versions of the same course (ALH/CDE/SLPA A112).",
+   "Careers taken from the program outcome paragraph: 'Pathway for future Special Education teachers', employment as Preschool teacher, Lead Preschool Teacher or Mentor Teacher."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

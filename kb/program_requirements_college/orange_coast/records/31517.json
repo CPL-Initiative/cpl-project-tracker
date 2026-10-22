@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7151,
+  "input_tokens": 7256,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7151,
-    "output_tokens": 957,
+    "input_tokens": 7256,
+    "output_tokens": 577,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 957,
+  "output_tokens": 577,
   "output_tokens_details": {
-   "thinking_tokens": 302
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04774,
- "ms": 9215,
- "seconds": 9.5,
+ "cost_usd": 0.04056,
+ "ms": 5340,
+ "seconds": 5.7,
  "parts": null,
  "error": null,
  "score": {
@@ -103,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Requirements",
+   "section_heading": "Digital Fabrication for Architecture, Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 12,
@@ -188,11 +189,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page prints no explicit program title heading; section_heading uses the 'Requirements' tab name.",
-   "ARCH A105 (Architectural Drawing and Design Visualization 1, 2 units) is required by the catalog but absent from the closed list; recorded as a catalog addition.",
-   "Course list text runs titles into units (e.g. 'Design Fabrication 12'); read as title ending in '1' followed by 2 units, consistent with the Program Sequence grid and the 12-unit total.",
-   "The page's description calls this the 'Digital Fabrication specialization certificate'."
+   "ARCH A105 is required in the catalog but absent from the closed list; recorded as a catalog addition.",
+   "Overview calls this a 'specialization certificate' though the heading and award are Certificate of Achievement.",
+   "Total Units 12 printed in requirements and program sequence."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

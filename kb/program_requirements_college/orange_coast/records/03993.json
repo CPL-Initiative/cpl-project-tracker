@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Dance",
  "award": "A.A. Degree",
- "source_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/dance-associate-arts-degree/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13163,
+  "input_tokens": 10130,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13163,
-    "output_tokens": 2083,
+    "input_tokens": 10130,
+    "output_tokens": 4214,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,133 +30,96 @@
     "model": null
    }
   ],
-  "output_tokens": 2083,
+  "output_tokens": 4214,
   "output_tokens_details": {
-   "thinking_tokens": 329
+   "thinking_tokens": 917
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09431,
- "ms": 16249,
- "seconds": 16.6,
+ "cost_usd": 0.1248,
+ "ms": 31006,
+ "seconds": 31.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 60,
    "listed": 60,
-   "share": 0.0,
-   "missing": [
-    "DANCA101",
-    "DANCA102",
-    "DANCA108",
-    "DANCA110",
-    "DANCA111",
-    "DANCA113",
-    "DANCA115",
-    "DANCA116",
-    "DANCA119",
-    "DANCA120",
-    "DANCA121",
-    "DANCA125",
-    "DANCA126",
-    "DANCA130",
-    "DANCA135",
-    "DANCA138",
-    "DANCA143",
-    "DANCA144",
-    "DANCA145",
-    "DANCA146",
-    "DANCA147",
-    "DANCA148",
-    "DANCA149",
-    "DANCA150",
-    "DANCA154",
-    "DANCA155",
-    "DANCA156",
-    "DANCA157",
-    "DANCA158",
-    "DANCA159",
-    "DANCA160",
-    "DANCA165",
-    "DANCA168",
-    "DANCA169",
-    "DANCA170",
-    "DANCA171",
-    "DANCA172",
-    "DANCA173",
-    "DANCA174",
-    "DANCA175",
-    "DANCA176",
-    "DANCA180",
-    "DANCA191",
-    "DANCA200",
-    "DANCA203",
-    "DANCA205",
-    "DANCA206",
-    "DANCA211",
-    "DANCA230",
-    "DANCA243",
-    "DANCA244",
-    "DANCA245",
-    "DANCA246",
-    "DANCA247",
-    "DANCA248",
-    "DANCA250",
-    "DANCA257",
-    "DANCA264",
-    "DANCA267",
-    "DANCA269"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "DANCA210",
+    "DANCA256"
+   ],
+   "flagged": [
+    "DANCA210",
+    "DANCA256"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    21.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
-   ]
+    "the blocks sum to 18.0-21.0; the catalog states 20.0-20.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     18.0,
+     21.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the OCC AA General Education pattern, but no units for it"
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
@@ -165,277 +128,500 @@
    "section_heading": "Dance, Associate in Arts Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 20,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "OCC AA General Education",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Develop an understanding and appreciation of the art of dance and its relevance to the multicultural world we live in.",
+    "Acquire the dance technical skills necessary to transfer to a university program or a similar advanced dance study program.",
+    "Implement critical thinking skills and kinesthetic awareness in their observation, analysis, and interpretation of dance performances on stage or in media.",
+    "Develop dance composition and performance skills necessary to successfully transfer to a university program or a similar advanced dance study program."
+   ],
+   "careers": [
+    "dance-related careers"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "DANC A101",
-    "why": "requirements section not in the text; course description only"
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANC A150",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A250",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A170",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A143",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC A243",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A144",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC A244",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A145",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC A245",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A211",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "DANC A203",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC A102",
-    "why": "requirements section not in the text; course description only"
-   },
-   {
-    "code": "DANC A108",
-    "why": "requirements section not in the text; course description only"
-   },
-   {
-    "code": "DANC A110",
-    "why": "requirements section not in the text; course description only"
-   },
-   {
-    "code": "DANC A111",
-    "why": "requirements section not in the text; course description only"
-   },
-   {
-    "code": "DANC A113",
-    "why": "requirements section not in the text; course description only"
-   },
-   {
-    "code": "DANC A116",
-    "why": "requirements section not in the text; course description only"
-   },
-   {
-    "code": "DANC A119",
-    "why": "requirements section not in the text; course description only"
-   },
-   {
-    "code": "DANC A120",
-    "why": "requirements section not in the text; course description only"
-   },
-   {
-    "code": "DANC A121",
-    "why": "requirements section not in the text; course description only"
-   },
-   {
-    "code": "DANC A125",
-    "why": "requirements section not in the text; course description only"
-   },
-   {
-    "code": "DANC A126",
-    "why": "requirements section not in the text; course description only"
-   },
-   {
-    "code": "DANC A130",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A135",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A138",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A143",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A144",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A145",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A146",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A147",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A148",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A149",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A150",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A154",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A155",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A156",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A157",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A158",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A159",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A160",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A165",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A168",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A169",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A170",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A171",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A172",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A173",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A174",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A175",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A176",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A180",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A191",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A200",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A203",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A205",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A206",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A211",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A230",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A243",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A244",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A245",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A246",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A247",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A248",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A250",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A257",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC A267",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANCA115",
-    "why": "requirements section not in the text; DANC A115 appears only as a course description"
-   },
-   {
-    "code": "DANCA264",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANCA269",
-    "why": "not in the text"
+    "name": "Restricted Electives",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "DANC A101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A119",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A126",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A138",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A146",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A147",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A148",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A149",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A154",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A157",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A158",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A159",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A165",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A168",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A169",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC A269",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A171",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A172",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A173",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A174",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A175",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A176",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A191",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A205",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A206",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC A230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A246",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A247",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC A267",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A248",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC A264",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A256",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC A257",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text is the Dance pathway overview page with course descriptions; it names 'Dance, Associate in Arts Degree' only as a link and does not print the degree's requirements, totals, GE pattern or outcomes. No blocks could be recorded; the program's own requirements page should be retrieved.",
-   "Course descriptions list 'Dance, Associate in Arts Degree' under 'Catalog Program Pages Referencing' for several courses (e.g., DANC A101, A102, A108, A110, A111, A113, A115, A116, A119, A120, A121, A125, A126), suggesting they belong to the degree, but the rule under which they count is not stated.",
-   "The text is cut off mid-word ('Catalog P') in the DANC A129 description.",
-   "The overview says the programs 'prepare students for a variety of job opportunities' but names no specific careers for the Dance A.A.; careers left empty."
+   "Program Major Units printed as 20; Total Minimum Degree Units - OCC AA GE printed as 60.",
+   "OCC AA General Education and Multicultural Requirements printed as 'up to 27' units (Cal-GETC up to 34 may be substituted); ge_units left null because only an upper bound is printed.",
+   "Degree-applicable electives printed as 'Varies' to satisfy the unit requirement; electives_fill_degree set true.",
+   "DANC A115, DANC A264 and DANC A269 match closed-list entries written without a space (DANCA115, DANCA264, DANCA269); treated as on the closed list.",
+   "DANC A210 (Dance Methodology) and DANC A256 (Preparation for Audition - Tap) are not on the closed list; recorded as catalog additions.",
+   "No units are printed beside the restricted elective courses or beside the 'or' alternatives in the core; those units left null.",
+   "Catalog title for DANC A150 is 'Dance Improvisation I' (closed list: Dance Improvisation Workshop I).",
+   "The Program Sequence tab offers further alternatives not in the Requirements tab (DANC A253, A255, A254, A162, A262, A212, A213, A214, A201, A202, A204, A207); these were not recorded as requirements. Sequence total prints 60-64 units.",
+   "Breadcrumb places the program under Kinesiology, Fitness and Wellness pathway while the source URL is under Visual Arts, Design and Performing Arts."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }
