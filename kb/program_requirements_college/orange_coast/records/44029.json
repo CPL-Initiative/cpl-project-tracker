@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Primary English Language Skills",
  "award": "Noncredit program",
- "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/emergent-english-language-skills,certificate-competency/",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/primary-english-language-skills-certificate-competency/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6949,
+  "input_tokens": 6735,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6949,
-    "output_tokens": 1037,
+    "input_tokens": 6735,
+    "output_tokens": 602,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,31 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1037,
+  "output_tokens": 602,
   "output_tokens_details": {
-   "thinking_tokens": 511
+   "thinking_tokens": 131
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04854,
- "ms": 10354,
- "seconds": 10.7,
+ "cost_usd": 0.03898,
+ "ms": 5729,
+ "seconds": 6.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 2,
    "listed": 2,
-   "share": 0.0,
-   "missing": [
-    "ELLA17N",
-    "ELLA6N"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -64,26 +62,30 @@
   },
   "arithmetic": {
    "pass": true,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "against": null,
-   "why": [
-    "the catalog prints no total, no hours and no units"
-   ]
+   "status": "equal",
+   "computed": [
+    108.0,
+    108.0
+   ],
+   "stated": [
+    108.0,
+    108.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -94,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "English Language Learning - Beginning, Certificate of Competency",
+   "section_heading": "English Language Learning - Basic, Certificate of Competency",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 108,
+    "max": 108
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -119,26 +121,45 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Students will demonstrate the ability to recognize and produce basic literacy elements of English."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ELL A006N",
-    "why": "not in the text"
-   },
-   {
-    "code": "ELL A017N",
-    "why": "named only in the English Language Learning - Beginning certificate section, not in a section for Primary English Language Skills"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ELL A006N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELL A017N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied page does not print a section for Primary English Language Skills. Its only program section is 'English Language Learning - Beginning, Certificate of Competency' (heading cut off at the start as 'ish Language Learning - Beginning'; Control Number 36913). The URL slug names 'emergent-english-language-skills', which matches neither title. No requirements were recorded because they belong to a different award.",
-   "For reference, the Beginning certificate's printed requirements are: ELL A016N (90 hours) or ELL A026N; ELL A025N (36 hours) or ELL A028N; and ELL A027N (54 hours) or ELL A017N. Its total is 180 hours. Its program learning outcomes were not copied because they belong to that award.",
-   "Please check the correct catalog page for Primary English Language Skills. Basic Literacy (ELL A006N) in the closed list suggests a literacy-level program that is not on this page."
+   "The page heading is 'English Language Learning - Basic, Certificate of Competency' (Banner Code 1_NCG_ELLPR), not the program title 'Primary English Language Skills'. The section was matched by the banner code suffix 'PR' and by its courses, which match the closed list exactly. A reviewer should confirm this is the same program.",
+   "This is a noncredit program counted in hours. Course hours (54 each) and the total (Total Hours 108) are taken as printed."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

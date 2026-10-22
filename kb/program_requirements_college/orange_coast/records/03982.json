@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7381,
+  "input_tokens": 8177,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7381,
-    "output_tokens": 2216,
+    "input_tokens": 8177,
+    "output_tokens": 1910,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,58 +30,79 @@
     "model": null
    }
   ],
-  "output_tokens": 2216,
+  "output_tokens": 1910,
   "output_tokens_details": {
-   "thinking_tokens": 847
+   "thinking_tokens": 572
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07384,
- "ms": 18985,
- "seconds": 19.3,
+ "cost_usd": 0.07091,
+ "ms": 15628,
+ "seconds": 16.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 13,
    "listed": 13,
-   "share": 0.538,
-   "missing": [
-    "WELDA130",
-    "WELDA131",
-    "WELDA250",
-    "WELDA251",
-    "WELDA252",
-    "WELDA253"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
+   "count": 4,
    "codes": [
-    "MACHA100"
+    "MACHA100",
+    "WELDA115",
+    "WELDA215",
+    "WELDA255"
    ],
    "flagged": [
-    "MACHA100"
+    "MACHA100",
+    "WELDA115",
+    "WELDA215",
+    "WELDA255"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    26.0,
-    26.0
+    29.0,
+    29.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     62.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
+   }
   },
   "repeated": {
    "codes": [],
@@ -103,34 +124,31 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Welding Technology, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 29
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 10,
+    "max": 12
    },
    "ge_pattern": "OCC AS GE",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -143,11 +161,12 @@
     "welding engineers",
     "welding supervisors",
     "advanced welders"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
-    "name": "Program Sequence (major courses from Plan of Study Grid)",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -199,11 +218,37 @@
       "catalog_addition": false
      },
      {
-      "code": "MACH A100",
+      "code": "WELD A130",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
+      "alternatives": [
+       {
+        "code": "WELD A131",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD A250",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD A251",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD A252",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD A253",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
      },
      {
       "code": "WELD A210",
@@ -213,43 +258,78 @@
       "catalog_addition": false
      }
     ]
+   },
+   {
+    "name": "Restricted Electives - Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MACH A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Welding Technology Suggested Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WELD A115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WELD A215",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WELD A255",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "WELD A130",
-    "why": "not in the text; Requirements tab content missing (may be among AS restricted electives)"
-   },
-   {
-    "code": "WELD A131",
-    "why": "not in the text; Requirements tab content missing (may be among AS restricted electives)"
-   },
-   {
-    "code": "WELD A250",
-    "why": "not in the text; Requirements tab content missing (may be among AS restricted electives)"
-   },
-   {
-    "code": "WELD A251",
-    "why": "not in the text; Requirements tab content missing (may be among AS restricted electives)"
-   },
-   {
-    "code": "WELD A252",
-    "why": "not in the text; Requirements tab content missing (may be among AS restricted electives)"
-   },
-   {
-    "code": "WELD A253",
-    "why": "not in the text; Requirements tab content missing (may be among AS restricted electives)"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The REQUIREMENTS tab content is not in the extracted text; only the Overview and Program Sequence tabs appear. The block was built from the Plan of Study Grid, a sample curriculum map, not from the official requirements list. Reviewer should verify against the Requirements tab.",
-   "The Plan of Study includes 'AS RESTRICTED ELECTIVES - CHOOSE ONE (See Requirements)' for 3 units; the list of restricted electives is not in the text, so no block was recorded for it. The unplaced WELD courses (A130, A131, A250-A253) are likely in that list.",
-   "The Plan of Study prints 'Total Units 62-65' including OCC AS GE and degree-applicable electives. It was not recorded as degree_total because it is the sample plan's total, not a stated award total. No major total is printed in the text.",
-   "Degree-applicable electives appear in the plan (6, 3, 3 units) with footnote 'VARIES TO REACH MINIMUM 60 DEGREE APPLICABLE UNITS'. electives_fill_degree was left false because units are printed beside them; a reviewer may consider it true.",
-   "MACH A100 (Introduction to Machine Shop, 3) appears in the plan but is not on the closed list; it is marked as a catalog addition.",
-   "The plan prints slightly different titles from the closed list (e.g., 'Welding Specifications and Codes', 'Mathematics & Fabrication Layout for Welders')."
+   "The 'or' alternatives to WELD A130 (WELD A131, A250, A251, A252, A253) are printed without units; units left null.",
+   "Restricted Electives says 'Select one of the following:' but lists only MACH A100; the list may be incomplete.",
+   "Transfer elective units printed as '12 - 10'; recorded as degree_elective_units min 10, max 12.",
+   "GE pattern is General Education Breadth for OCC AS (21 units); footnote says Cal-GETC pattern (up to 34 units) may be substituted.",
+   "Program Sequence grid lists both 'AS RESTRICTED ELECTIVES - CHOOSE ONE' and MACH A100 separately, totaling 62-65 units; requirements table totals major at 29 and degree at 60.",
+   "Required core sums to 26 units plus 3-unit restricted elective = 29, matching Program Major Units."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292",
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  }
+ ]
 }

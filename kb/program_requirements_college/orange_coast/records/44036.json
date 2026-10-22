@@ -1,15 +1,15 @@
 {
  "college": "Orange Coast College",
- "control_number": "40981",
- "shape": "certificate",
- "title": "Non-Profit Accounting Competency",
- "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/non-profit-accounting-competency-certification-specialization/",
+ "control_number": "44036",
+ "shape": "noncredit",
+ "title": "Math Skills for College Success",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/mathematics/math-skills-for-college-success-certificate-competency/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7335,
+  "input_tokens": 6989,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7335,
-    "output_tokens": 864,
+    "input_tokens": 6989,
+    "output_tokens": 596,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,23 +30,24 @@
     "model": null
    }
   ],
-  "output_tokens": 864,
+  "output_tokens": 596,
   "output_tokens_details": {
-   "thinking_tokens": 250
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04662,
- "ms": 7246,
- "seconds": 7.6,
+ "cost_usd": 0.03988,
+ "ms": 5051,
+ "seconds": 5.4,
  "parts": null,
  "error": null,
  "score": {
-  "measure": "units",
+  "measure": "hours",
   "coverage": {
-   "placed": 4,
-   "listed": 4,
+   "placed": 6,
+   "listed": 6,
    "share": 1.0,
    "missing": [],
    "unexplained": [],
@@ -54,27 +55,21 @@
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ACCTA101H",
-    "ACCTA102H"
-   ],
-   "flagged": [
-    "ACCTA101H",
-    "ACCTA102H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
-    14.0,
-    14.0
+    108.0,
+    216.0
    ],
    "stated": [
-    14.0,
-    14.0
+    108.0,
+    216.0
    ],
    "against": "program",
    "why": []
@@ -84,9 +79,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 2,
    "courses": 0,
-   "count": 1,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -94,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
@@ -105,11 +100,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Non-Profit Accounting Competency, Certificate of Achievement",
-   "measure": "units",
+   "section_heading": "Math Skills for College Success, Certificate of Competency",
+   "measure": "hours",
    "total_units": {
-    "min": 14,
-    "max": 14
+    "min": 108,
+    "max": 216
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -127,17 +122,23 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Demonstrate generally accepted accounting practices in the area of non-profit accounting using various forms of technology."
+    "Perform operations on real numbers and algebraic expressions.",
+    "Translate real life problems into algebraic expressions or equations and simplify or solve."
    ],
    "careers": [
-    "entry-level positions in accounting"
+    "technology",
+    "the health field",
+    "education",
+    "research",
+    "engineering",
+    "business"
    ]
   },
   "blocks": [
    {
     "name": "Required Courses",
-    "rule": "all",
-    "minimum": null,
+    "rule": "choose_courses",
+    "minimum": 2,
     "option_group": null,
     "stated": {
      "min": null,
@@ -145,41 +146,43 @@
     },
     "courses": [
      {
-      "code": "ACCT A101",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ACCT A101H",
-        "units": 4,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "ACCT A102",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ACCT A102H",
-        "units": 4,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "ACCT A110",
-      "units": 3,
+      "code": "MATH A060N",
+      "units": 54,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ACCT A216",
-      "units": 3,
+      "code": "MATH A061N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A062N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A064N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A067N",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A068N",
+      "units": 108,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -190,9 +193,9 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Honors twins ACCT A101H and ACCT A102H are printed as 'ACCT A101/A101H' and 'ACCT A102/A102H'; recorded as alternatives with catalog_addition true since they are not in the closed list. Their units (4) come from the shared row and the Program Sequence grid.",
-   "The career entry is taken from the description sentence 'apply for entry-level positions in accounting with various non-profit agencies'."
+   "Noncredit certificate counted in hours; Total Hours printed as 108 - 216.",
+   "The careers are drawn from the overview sentence 'prepare students for a wide range of careers in technology, the health field, education, research, engineering and business.'"
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

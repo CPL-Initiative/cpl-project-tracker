@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Aviation Science",
  "award": "A.S. Degree",
- "source_url": "https://catalog.cccd.edu/orange-coast/pathways/computers-computing/aviation-science/",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/aviation-science-associate-science-degree/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12047,
+  "input_tokens": 9125,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12047,
-    "output_tokens": 1679,
+    "input_tokens": 9125,
+    "output_tokens": 3242,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,242 +30,457 @@
     "model": null
    }
   ],
-  "output_tokens": 1679,
+  "output_tokens": 3242,
   "output_tokens_details": {
-   "thinking_tokens": 450
+   "thinking_tokens": 955
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08177,
- "ms": 14910,
- "seconds": 15.3,
+ "cost_usd": 0.10134,
+ "ms": 25884,
+ "seconds": 26.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 22,
    "listed": 26,
-   "share": 0.0,
+   "share": 0.846,
    "missing": [
-    "ACCTA101",
-    "ACCTA101H",
-    "ACCTA102",
-    "ACCTA102H",
-    "APTA110",
-    "APTA115",
-    "APTA120",
-    "APTA121",
-    "APTA122",
-    "APTA123",
-    "APTA124",
-    "APTA126",
-    "APTA132",
-    "APTA133",
-    "APTA134",
-    "APTA138",
-    "APTA139",
-    "APTA140",
-    "APTA145",
-    "APTA146",
-    "APTA180",
-    "APTA192",
     "ECONC2001",
     "ECONC2001H",
     "ECONC2002",
     "ECONC2002H"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 5,
+   "codes": [
+    "APTA130",
+    "ECONA170",
+    "ECONA170H",
+    "ECONA175",
+    "ECONA175H"
+   ],
+   "flagged": [
+    "APTA130",
+    "ECONA170",
+    "ECONA170H",
+    "ECONA175",
+    "ECONA175H"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    32.0,
+    32.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     53.0,
+     53.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     7.0,
+     7.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Aviation Science, Associate in Science Degree",
+   "section_heading": "REQUIREMENTS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 32,
+    "max": 32
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "OCC AS GE",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 21
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Students will develop the analytical and critical thinking skills necessary for completion of aviation flight training and successful completion of federally administered knowledge and practical tests.",
+    "Students will develop the analytical and critical thinking skills necessary for completion of aviation ground school academic courses giving them the background knowledge necessary to enter the air transportation industry as professionals in non-flying capacities such as: ground operations, customer services, gate attendants, aviation sales, flight crew attendants, and charter flight coordinators."
+   ],
+   "careers": [
+    "ground operations",
+    "customer services",
+    "gate attendants",
+    "aviation sales",
+    "flight crew attendants",
+    "charter flight coordinators"
+   ],
+   "degree_total_minimum": true
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "APT A130",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "APT A132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Track 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select a Track",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "APT A134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Track 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select a Track",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "APT A110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "APT A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A123",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A124",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A126",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A145",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A192",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT A101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT A101H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT A102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT A102H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON A170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON A170H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON A175",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON A175H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ACCT A101",
-    "why": "not in the text; degree requirements section absent from excerpt"
-   },
-   {
-    "code": "ACCT A101H",
-    "why": "not in the text; degree requirements section absent from excerpt"
-   },
-   {
-    "code": "ACCT A102",
-    "why": "not in the text; degree requirements section absent from excerpt"
-   },
-   {
-    "code": "ACCT A102H",
-    "why": "not in the text; degree requirements section absent from excerpt"
-   },
-   {
-    "code": "APT A110",
-    "why": "appears only in course descriptions; degree requirements not in text"
-   },
-   {
-    "code": "APT A115",
-    "why": "appears only in course descriptions; degree requirements not in text"
-   },
-   {
-    "code": "APT A120",
-    "why": "appears only in course descriptions; degree requirements not in text"
-   },
-   {
-    "code": "APT A121",
-    "why": "appears only in course descriptions; degree requirements not in text"
-   },
-   {
-    "code": "APT A122",
-    "why": "appears only in course descriptions; degree requirements not in text"
-   },
-   {
-    "code": "APT A123",
-    "why": "appears only in course descriptions; degree requirements not in text"
-   },
-   {
-    "code": "APT A124",
-    "why": "appears only in course descriptions; degree requirements not in text"
-   },
-   {
-    "code": "APT A126",
-    "why": "appears only in course descriptions; degree requirements not in text"
-   },
-   {
-    "code": "APT A132",
-    "why": "appears only in course descriptions; degree requirements not in text"
-   },
-   {
-    "code": "APT A133",
-    "why": "appears only in course descriptions; degree requirements not in text"
-   },
-   {
-    "code": "APT A134",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
-    "code": "APT A138",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
-    "code": "APT A139",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
-    "code": "APT A140",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
-    "code": "APT A145",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
-    "code": "APT A146",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
-    "code": "APT A180",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
-    "code": "APT A192",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
     "code": "ECON C2001",
-    "why": "not in the text; degree requirements section absent from excerpt"
+    "why": "not in the text; catalog lists ECON A170 (Principles of Microeconomics) instead"
    },
    {
     "code": "ECON C2001H",
-    "why": "not in the text; degree requirements section absent from excerpt"
+    "why": "not in the text; catalog lists ECON A170H instead"
    },
    {
     "code": "ECON C2002",
-    "why": "not in the text; degree requirements section absent from excerpt"
+    "why": "not in the text; catalog lists ECON A175 (Principles of Macroeconomics) instead"
    },
    {
     "code": "ECON C2002H",
-    "why": "not in the text; degree requirements section absent from excerpt"
+    "why": "not in the text; catalog lists ECON A175H instead"
    }
   ],
   "notes": [
-   "The supplied text begins mid-page (flight simulators, financial aid, contact info) and then shows the COURSES tab; it does not include the A.S. degree requirements table, total units, outcomes, or careers. No blocks could be recorded.",
-   "Section heading is taken from the program page name as printed in the 'Catalog Program Pages Referencing' lists; the degree's own heading is not in the excerpt.",
-   "Course descriptions list APT A130 (Private Pilot Aviation Ground School, 5 units) as referencing the Aviation Science A.S. Degree, but it is not in the closed list; it was not placed because the requirements section is absent.",
-   "The course listing is truncated at APT A133; reviewer should obtain the Program Requirements tab for the A.S. degree."
+   "The requirements table prints no units beside track courses; the 3 units recorded for Track 1 and Track 2 courses come from the Program Sequence grid for this award. Restricted elective courses have no printed units and are left null.",
+   "'Select a Track: 9' recorded as stated 9 on each track block.",
+   "Restricted electives: 'courses used above may not fulfill elective units' — APT A110, A115, A145 count only once if used in Track 2.",
+   "GE is printed as 'OCC AS General Education up to 21'; not a fixed figure, so ge_units left null. Cal-GETC pattern (up to 34 units) may be substituted.",
+   "Degree total 60 is 'Total Minimum Degree Units - OCC AS GE'; transferable electives 'as needed' with units 'varies'.",
+   "Catalog prints ECON A170/A170H/A175/A175H, which are not in the closed list; the closed list's ECON C2001/C2002 (Common Course Numbering) are likely the same courses renumbered—reviewer should check.",
+   "APT A130 is not in the closed list; recorded as catalog addition.",
+   "Careers taken from the program learning outcome text naming non-flying capacities.",
+   "Program sequence lists 'OCC AS GE AREA B' in Track 2, apparently a typo."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292",
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 21
+   },
+   "words": "OCC AS General Education   1,2\tup to 21"
+  }
+ ]
 }

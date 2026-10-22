@@ -39,11 +39,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "horticulture, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 35,
-  "text_chars": 4819
+  "text_chars": 7061
  },
  {
   "control_number": "03955",
@@ -85,7 +88,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "architectural design 1, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -97,11 +103,10 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 0.867,
   "codes_found": [
    "BIOLA180",
    "BIOLA182",
-   "BIOLA182H",
    "BIOLA182L",
    "BIOLA183",
    "BIOLA183L",
@@ -118,20 +123,30 @@
    "CHEMA180",
    "CHEMA185",
    "CHEMA220",
-   "CHEMA225"
+   "CHEMA220L",
+   "CHEMA225",
+   "CHEMA225L",
+   "MATHA180",
+   "MATHA180H",
+   "MATHA185",
+   "MATHA280",
+   "MATHA285"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/biology/",
-   "title": "Biology < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/biology/biology-associate-science-degree/",
+   "title": "Biology, Associate in Science Degree < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biology biology, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
-  "text_chars": 16000
+  "text_chars": 5638
  },
  {
   "control_number": "03960",
@@ -139,24 +154,35 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.593,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTA101",
    "ACCTA101H",
    "ACCTA102",
    "ACCTA102H",
+   "ACCTA107",
    "ACCTA110",
    "ACCTA111",
+   "ACCTA112",
    "ACCTA116",
+   "ACCTA118",
+   "ACCTA119",
    "ACCTA210",
    "ACCTA212",
    "ACCTA213",
+   "ACCTA215",
+   "ACCTA216",
    "ACCTA218",
+   "ACCTA220",
    "BUSA100",
    "BUSA100H",
+   "BUSA110",
+   "BUSA110H",
    "BUSA139",
+   "BUSA240",
    "CISA111",
-   "CISA111H"
+   "CISA111H",
+   "MGMTA100"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-associate-science-degree/",
@@ -165,11 +191,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
-  "text_chars": 3607
+  "text_chars": 5363
  },
  {
   "control_number": "03961",
@@ -200,7 +229,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "management management and leadership studies, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -223,51 +255,114 @@
   "title": "Display and Visual Presentation",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.556,
-  "codes_found": [
-   "DVPA180",
-   "FASHA175",
-   "FASHA181",
-   "FASHA200",
-   "FASHA255"
-  ],
-  "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/",
-   "title": "Fashion < Orange Coast College",
-   "h1": "Academic Catalogs",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.333
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "03966",
   "title": "Mass Communications/Media Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "CMSTA180",
+   "CMSTA185",
+   "ENGLA148",
+   "JOURA115",
+   "JOURA116",
+   "JOURA185",
+   "MKTGA130",
+   "PHOTA120",
+   "PHOTA123"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/communication-studies/mass-communications-media-studies-associate-arts-degree/",
+   "title": "Mass Communications/Media Studies, Associate in Arts Degree < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "mass communications/​media studies, associate in arts degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 5057
  },
  {
   "control_number": "03967",
   "title": "Film & Television",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.956,
+  "codes_found": [
+   "BRCTA105",
+   "BRCTA205",
+   "DMADA263",
+   "ENGLA127",
+   "ENGLA148",
+   "FILMA100",
+   "FILMA100H",
+   "FILMA102",
+   "FILMA104",
+   "FILMA106",
+   "FILMA107",
+   "FILMA108",
+   "FILMA109",
+   "FILMA110",
+   "FILMA113",
+   "FILMA117",
+   "FILMA120",
+   "FILMA150",
+   "FILMA151",
+   "FILMA155",
+   "FILMA193",
+   "FILMA194",
+   "FILMA196",
+   "FILMA197",
+   "FILMA198",
+   "FILMA205",
+   "FILMA210",
+   "FILMA219",
+   "FILMA220",
+   "FILMA222",
+   "FILMA240",
+   "FILMA253",
+   "FILMA255",
+   "FILMA258",
+   "FILMA260",
+   "FILMA261",
+   "FILMA262",
+   "FILMA265",
+   "FILMA270",
+   "FILMA271",
+   "PHOTA120",
+   "PHOTA123",
+   "THEAA275"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-associate-arts-degree/",
+   "title": "Film & Television, Associate in Arts Degree < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "film &​ television film &​ television, associate in arts degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 45,
-  "text_chars": 0
+  "text_chars": 6778
  },
  {
   "control_number": "03968",
@@ -302,7 +397,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer information systems computer information systems, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -356,7 +454,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.286
+    "title": 0.286,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 36,
@@ -367,12 +468,63 @@
   "title": "Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMTA151",
+   "AMTA152",
+   "APTA131",
+   "ARCHA171",
+   "ARCHA172",
+   "ASTRA200",
+   "BIOLA100",
+   "BIOLA114",
+   "BIOLA125",
+   "BIOLA281",
+   "CHEMA180",
+   "CHEMA185",
+   "CHEMA220",
+   "CHEMA225",
+   "CNSTA116",
+   "CNSTA155",
+   "CNSTA157",
+   "CSA150",
+   "CSA200",
+   "CSA220",
+   "ELECA111",
+   "ENGRA110",
+   "ENGRA110H",
+   "ENGRA210",
+   "ENGRA220",
+   "ENGRA230",
+   "ENGRA240",
+   "ENGRA280",
+   "ENGRA285",
+   "GEOLA105",
+   "MACHA100",
+   "MATHA185",
+   "MATHA280",
+   "MATHA280H",
+   "MATHA285",
+   "MATHA285H",
+   "PHYSA185",
+   "PHYSA280"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/engineering/engineering-associate-science-degree/",
+   "title": "Engineering, Associate in Science Degree < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering engineering, associate in science degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 38,
-  "text_chars": 0
+  "text_chars": 6063
  },
  {
   "control_number": "03975",
@@ -410,11 +562,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "heating, ventilation, air conditioning and refrigeration (hvacr), associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3621
+  "text_chars": 5044
  },
  {
   "control_number": "03977",
@@ -449,11 +604,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "airframe &​ powerplant, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 3901
+  "text_chars": 5826
  },
  {
   "control_number": "03978",
@@ -461,8 +619,12 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.692,
+  "coverage": 0.846,
   "codes_found": [
+   "ACCTA101",
+   "ACCTA101H",
+   "ACCTA102",
+   "ACCTA102H",
    "APTA110",
    "APTA115",
    "APTA120",
@@ -483,17 +645,20 @@
    "APTA192"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/computers-computing/aviation-science/",
-   "title": "Aviation and Aerospace Sciences < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/aviation-science-associate-science-degree/",
+   "title": "Aviation Science, Associate in Science Degree < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "aviation science, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
-  "text_chars": 16000
+  "text_chars": 6499
  },
  {
   "control_number": "03979",
@@ -530,11 +695,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "manufacturing technology› machinist, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 3309
+  "text_chars": 4464
  },
  {
   "control_number": "03982",
@@ -542,15 +710,21 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.538,
+  "coverage": 1.0,
   "codes_found": [
    "WELDA101",
    "WELDA120",
+   "WELDA130",
+   "WELDA131",
    "WELDA180",
    "WELDA201",
    "WELDA210",
    "WELDA220",
-   "WELDA230"
+   "WELDA230",
+   "WELDA250",
+   "WELDA251",
+   "WELDA252",
+   "WELDA253"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/welding-technology/welding-technology-associate-science-degree/",
@@ -559,11 +733,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "welding technology, associate in science degree",
+    "section_fit": 0.5
    }
   },
   "listed": 13,
-  "text_chars": 3374
+  "text_chars": 5056
  },
  {
   "control_number": "03988",
@@ -582,12 +759,44 @@
   "title": "Business Employee",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTA100",
+   "BUSA240",
+   "MKTGA200",
+   "MUSA110",
+   "MUSA116",
+   "MUSA139",
+   "MUSA140",
+   "MUSA141",
+   "MUSA142",
+   "MUSA148",
+   "MUSA151",
+   "MUSA161",
+   "MUSA162",
+   "MUSA180",
+   "MUSA181",
+   "MUSA241",
+   "MUSA242",
+   "MUSA261",
+   "MUSA262"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/business-employee-associate-arts-degree/",
+   "title": "Business Employee, Associate in Arts Degree < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "business employee, associate in arts degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 5508
  },
  {
   "control_number": "03991",
@@ -607,15 +816,17 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.533,
+  "coverage": 1.0,
   "codes_found": [
    "DANCA101",
    "DANCA102",
    "DANCA108",
    "DANCA110",
    "DANCA111",
+   "DANCA113",
    "DANCA115",
    "DANCA116",
+   "DANCA119",
    "DANCA120",
    "DANCA121",
    "DANCA125",
@@ -632,28 +843,57 @@
    "DANCA149",
    "DANCA150",
    "DANCA154",
+   "DANCA155",
    "DANCA156",
+   "DANCA157",
+   "DANCA158",
+   "DANCA159",
    "DANCA160",
+   "DANCA165",
+   "DANCA168",
+   "DANCA169",
+   "DANCA170",
+   "DANCA171",
+   "DANCA172",
+   "DANCA173",
+   "DANCA174",
+   "DANCA175",
+   "DANCA176",
+   "DANCA180",
+   "DANCA191",
+   "DANCA200",
    "DANCA203",
+   "DANCA205",
+   "DANCA206",
    "DANCA211",
+   "DANCA230",
    "DANCA243",
    "DANCA244",
    "DANCA245",
    "DANCA246",
-   "DANCA247"
+   "DANCA247",
+   "DANCA248",
+   "DANCA250",
+   "DANCA257",
+   "DANCA264",
+   "DANCA267",
+   "DANCA269"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/",
-   "title": "Dance < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/dance-associate-arts-degree/",
+   "title": "Dance, Associate in Arts Degree < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance, associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 60,
-  "text_chars": 16000
+  "text_chars": 6876
  },
  {
   "control_number": "03995",
@@ -696,11 +936,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "graphic design, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 3421
+  "text_chars": 4745
  },
  {
   "control_number": "03998",
@@ -720,12 +963,15 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.571,
+  "coverage": 1.0,
   "codes_found": [
    "ALHA10",
    "ALHA120",
+   "ALHA130",
+   "BUSA138",
    "MAA150",
-   "MAA289"
+   "MAA289",
+   "PHILA120"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/medical-assisting/ccma-eligible-program-associate-science-degree/",
@@ -734,11 +980,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
-  "text_chars": 3418
+  "text_chars": 5033
  },
  {
   "control_number": "04006",
@@ -771,7 +1020,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "dental assisting dental assisting -​ registered, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -822,11 +1074,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "respiratory care respiratory care, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
-  "text_chars": 4119
+  "text_chars": 6362
  },
  {
   "control_number": "04008",
@@ -869,11 +1124,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "radiologic technology, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
-  "text_chars": 3956
+  "text_chars": 6127
  },
  {
   "control_number": "04009",
@@ -913,11 +1171,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "diagnostic medical sonography diagnostic medical sonography, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
-  "text_chars": 5541
+  "text_chars": 6978
  },
  {
   "control_number": "04013",
@@ -945,7 +1206,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "food science food science, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -969,14 +1233,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/nutrition-dietetics/dietetic-service-supervisor-certified-dietary-manager-certificate-achievement/",
    "title": "Dietetic Service Supervisor/Certified Dietary Manager, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dietetic service supervisor/​certified dietary manager, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 3378
+  "text_chars": 3852
  },
  {
   "control_number": "04016",
@@ -1009,11 +1276,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "hotel management, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 3435
+  "text_chars": 5139
  },
  {
   "control_number": "04017",
@@ -1071,7 +1341,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "english english, associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 41,
@@ -1083,13 +1356,16 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.556,
+  "coverage": 0.889,
   "codes_found": [
+   "ENGLA141",
    "PHILA115",
    "PHILA120",
    "RLSTA100",
    "RLSTA110",
-   "RLSTA115"
+   "RLSTA115",
+   "RLSTA150",
+   "RLSTA151"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/social-science-humanities/religious-studies/religious-studies-associate-arts-degree/",
@@ -1098,11 +1374,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "religious studies religious studies, associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 3872
+  "text_chars": 4813
  },
  {
   "control_number": "04026",
@@ -1133,12 +1412,44 @@
   "title": "Anthropology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.679,
+  "codes_found": [
+   "ANTHA100",
+   "ANTHA100H",
+   "ANTHA102",
+   "ANTHA187",
+   "ANTHA188",
+   "ANTHA190",
+   "ANTHA220",
+   "ANTHA280",
+   "GEOGA100",
+   "GEOGA180",
+   "GEOGA180L",
+   "GEOGA185",
+   "HISTA161",
+   "HISTA162",
+   "HISTA180",
+   "HISTA185",
+   "PSYCA130",
+   "SOCA100",
+   "SOCA110"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/social-science-humanities/anthropology/anthropology-associate-arts-degree/",
+   "title": "Anthropology, Associate in Arts Degree < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "anthropology anthropology, associate in arts degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 28,
-  "text_chars": 0
+  "text_chars": 5113
  },
  {
   "control_number": "04035",
@@ -1199,11 +1510,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cardiovascular technology cardiovascular technology, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 5476
+  "text_chars": 6787
  },
  {
   "control_number": "08617",
@@ -1231,11 +1545,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "marketing› international business, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3539
+  "text_chars": 4803
  },
  {
   "control_number": "08624",
@@ -1243,14 +1560,17 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.636,
+  "coverage": 0.909,
   "codes_found": [
+   "CSA100",
+   "CSA122",
    "CSA131",
    "CSA150",
    "CSA200",
    "CSA250",
    "CSA262",
    "MATHA180",
+   "MATHA185",
    "MATHA185H"
   ],
   "source": {
@@ -1260,11 +1580,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer science, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 3249
+  "text_chars": 4520
  },
  {
   "control_number": "08625",
@@ -1294,11 +1617,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "airframe, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 3602
+  "text_chars": 5269
  },
  {
   "control_number": "08626",
@@ -1328,11 +1654,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "powerplant, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 3901
+  "text_chars": 5826
  },
  {
   "control_number": "08628",
@@ -1377,7 +1706,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 27,
@@ -1417,11 +1749,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "master construction specialist, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 3598
+  "text_chars": 5099
  },
  {
   "control_number": "08633",
@@ -1451,11 +1786,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "tooling, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 3411
+  "text_chars": 4799
  },
  {
   "control_number": "08634",
@@ -1510,12 +1848,46 @@
   "title": "Music: Music Entertainer-Vocal",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSA116",
+   "MUSA120",
+   "MUSA127",
+   "MUSA129",
+   "MUSA132",
+   "MUSA133",
+   "MUSA141",
+   "MUSA143",
+   "MUSA144",
+   "MUSA150",
+   "MUSA180",
+   "MUSA181",
+   "MUSA187",
+   "MUSA230",
+   "MUSA233",
+   "MUSA234",
+   "MUSA240",
+   "MUSA247",
+   "MUSA261",
+   "MUSA262",
+   "MUSA290"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/",
+   "title": "Music < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "08645",
@@ -1534,12 +1906,69 @@
   "title": "World Dance",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANCA101",
+   "DANCA102",
+   "DANCA110",
+   "DANCA111",
+   "DANCA116",
+   "DANCA119",
+   "DANCA120",
+   "DANCA121",
+   "DANCA125",
+   "DANCA126",
+   "DANCA130",
+   "DANCA135",
+   "DANCA138",
+   "DANCA143",
+   "DANCA144",
+   "DANCA145",
+   "DANCA147",
+   "DANCA148",
+   "DANCA150",
+   "DANCA154",
+   "DANCA155",
+   "DANCA156",
+   "DANCA157",
+   "DANCA158",
+   "DANCA160",
+   "DANCA162",
+   "DANCA165",
+   "DANCA168",
+   "DANCA170",
+   "DANCA175",
+   "DANCA176",
+   "DANCA180",
+   "DANCA200",
+   "DANCA203",
+   "DANCA205",
+   "DANCA211",
+   "DANCA230",
+   "DANCA247",
+   "DANCA248",
+   "DANCA250",
+   "DANCA257",
+   "DANCA262",
+   "DANCA264",
+   "DANCA267"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/world-dance-aa/",
+   "title": "World Dance, Associate in Arts Degree < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "world dance, associate in arts degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 44,
-  "text_chars": 0
+  "text_chars": 6465
  },
  {
   "control_number": "08648",
@@ -1559,13 +1988,17 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.516,
+  "coverage": 0.935,
   "codes_found": [
+   "ARTA102",
    "ARTA110",
+   "ARTA111",
+   "ARTA118",
    "ARTA120",
    "ARTA121",
    "ARTA124",
    "ARTA125",
+   "ARTA129",
    "ARTA130",
    "ARTA135",
    "ARTA142",
@@ -1574,9 +2007,18 @@
    "ARTA180",
    "ARTA220",
    "ARTA236",
+   "ARTA251",
+   "ARTA263",
+   "ARTA269",
+   "BUSA100",
+   "DMADA117",
    "DMADA181",
    "DMADA190",
-   "DMADA193"
+   "DMADA193",
+   "DMADA280",
+   "DMADA281",
+   "ENGLA143",
+   "MKTGA100"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/art/narrative-illustration-associate-science-degree/",
@@ -1585,11 +2027,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "narrative illustration, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 31,
-  "text_chars": 3602
+  "text_chars": 5786
  },
  {
   "control_number": "08651",
@@ -1620,11 +2065,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "ux/​ui design, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 3481
+  "text_chars": 4888
  },
  {
   "control_number": "08657",
@@ -1667,11 +2115,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "neurodiagnostic technology neurodiagnostic technology, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
-  "text_chars": 4078
+  "text_chars": 6231
  },
  {
   "control_number": "08658",
@@ -1709,11 +2160,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "polysomnographic technology polysomnographic technology, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 3872
+  "text_chars": 5566
  },
  {
   "control_number": "08659",
@@ -1750,11 +2204,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fashion merchandising, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 3781
+  "text_chars": 5864
  },
  {
   "control_number": "08661",
@@ -1798,14 +2255,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/",
    "title": "Food and Beverage Management, Advanced, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "food and beverage management, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 4041
+  "text_chars": 5187
  },
  {
   "control_number": "08664",
@@ -1841,11 +2301,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "food and beverage management, advanced, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 3939
+  "text_chars": 5907
  },
  {
   "control_number": "08667",
@@ -1882,7 +2345,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nutrition and dietetics technician, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1916,11 +2382,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nutrition education, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 3384
+  "text_chars": 4846
  },
  {
   "control_number": "08670",
@@ -1928,7 +2397,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.941,
+  "coverage": 1.0,
   "codes_found": [
    "CAA120",
    "CAA122",
@@ -1945,20 +2414,24 @@
    "FBMA220",
    "FBMA222",
    "FBMA270",
+   "FNA140",
    "FNA170"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/advanced-culinary-arts-associate-science-degree/",
    "title": "Advanced Culinary Arts, Associate in Science Degree < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "advanced culinary arts, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 4957
+  "text_chars": 5109
  },
  {
   "control_number": "08673",
@@ -1993,7 +2466,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "sales and marketing specialist, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -2034,7 +2510,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "level 2 -​ interior design assistant, associate in science degree",
+    "section_fit": 0.667
    }
   },
   "listed": 19,
@@ -2078,11 +2557,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fashion design, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
-  "text_chars": 4036
+  "text_chars": 5945
  },
  {
   "control_number": "11635",
@@ -2118,11 +2600,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apparel construction, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 3718
+  "text_chars": 5448
  },
  {
   "control_number": "11641",
@@ -2171,11 +2656,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "speech-​language pathology assistant, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 4231
+  "text_chars": 6100
  },
  {
   "control_number": "14409",
@@ -2206,12 +2694,120 @@
   "title": "Natural Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTRA100",
+   "ASTRA100H",
+   "ASTRA100L",
+   "ASTRA100M",
+   "ASTRA101",
+   "ASTRA102",
+   "ASTRA103",
+   "ASTRA104",
+   "ASTRA110",
+   "ASTRA200",
+   "ASTRA200H",
+   "BIOLA100",
+   "BIOLA100H",
+   "BIOLA114",
+   "BIOLA125",
+   "BIOLA172",
+   "BIOLA180",
+   "BIOLA182",
+   "BIOLA182H",
+   "BIOLA182L",
+   "BIOLA183",
+   "BIOLA183L",
+   "BIOLA185",
+   "BIOLA210",
+   "BIOLA220",
+   "BIOLA221",
+   "BIOLA225",
+   "BIOLA280",
+   "BIOLA281",
+   "BIOLA282",
+   "BIOLA283",
+   "CHEMA100",
+   "CHEMA110",
+   "CHEMA130",
+   "CHEMA180",
+   "CHEMA185",
+   "CHEMA220",
+   "CHEMA220L",
+   "CHEMA225",
+   "CHEMA225L",
+   "ESECA100",
+   "ESECA100H",
+   "ESECA110",
+   "ESECA121",
+   "ESECA124",
+   "ESECA140",
+   "ESECA141",
+   "GEOLA101",
+   "GEOLA105",
+   "GEOLA105H",
+   "GEOLA105L",
+   "GEOLA105M",
+   "GEOLA106",
+   "GEOLA110",
+   "GEOLA115",
+   "GEOLA131",
+   "GEOLA137",
+   "GEOLA160",
+   "GEOLA165",
+   "GEOLA185",
+   "GEOLA185H",
+   "GEOLA185L",
+   "GEOLA185M",
+   "GEOLA250",
+   "GEOLA280",
+   "GEOLA285",
+   "HORTA100",
+   "MRSCA100",
+   "MRSCA100H",
+   "MRSCA100L",
+   "MRSCA100M",
+   "MRSCA119",
+   "MRSCA120",
+   "MRSCA121",
+   "MRSCA124",
+   "MRSCA180",
+   "MRSCA180L",
+   "MRSCA185",
+   "MRSCA185L",
+   "MRSCA187",
+   "MRSCA190",
+   "MRSCA195",
+   "MRSCA287",
+   "MRSCA288",
+   "PHYSA110",
+   "PHYSA111",
+   "PHYSA112",
+   "PHYSA115",
+   "PHYSA120",
+   "PHYSA125",
+   "PHYSA130",
+   "PHYSA135",
+   "PHYSA185",
+   "PHYSA280",
+   "PHYSA285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/natural-science/natural-science-associate-science-degree/",
+   "title": "Natural Science, Associate in Science Degree < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "natural science natural science, associate in science degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 95,
-  "text_chars": 0
+  "text_chars": 7337
  },
  {
   "control_number": "16229",
@@ -2219,16 +2815,21 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.6,
+  "coverage": 0.933,
   "codes_found": [
    "ACCTA100",
    "ACCTA101",
+   "ACCTA102",
+   "BUSA110",
+   "BUSA138",
    "BUSA139",
+   "BUSA240",
    "CISA100",
    "LEADA200",
    "MGMTA100",
    "MGMTA115",
    "MKTGA100",
+   "MKTGA110",
    "MKTGA200"
   ],
   "source": {
@@ -2238,11 +2839,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "retail, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 3381
+  "text_chars": 4913
  },
  {
   "control_number": "16568",
@@ -2268,11 +2872,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "real estate real estate-​broker, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3356
+  "text_chars": 4717
  },
  {
   "control_number": "16634",
@@ -2304,11 +2911,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "advanced baking and pastry, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 3530
+  "text_chars": 5160
  },
  {
   "control_number": "16773",
@@ -2351,14 +2961,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/front-office-specialist-certificate-achievement/",
    "title": "Front Office Specialist, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "front office specialist, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 4198
+  "text_chars": 4363
  },
  {
   "control_number": "16886",
@@ -2366,10 +2979,11 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 0.875,
   "codes_found": [
    "HTTA130",
    "HTTA150",
+   "HTTA199",
    "HTTA227",
    "HTTA285",
    "HTTA288",
@@ -2382,11 +2996,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "human resource management, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 3346
+  "text_chars": 4895
  },
  {
   "control_number": "16887",
@@ -2420,7 +3037,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "architectural design 1, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -2464,11 +3084,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "technical design and product development, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
-  "text_chars": 4100
+  "text_chars": 6011
  },
  {
   "control_number": "16910",
@@ -2494,7 +3117,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2542,11 +3168,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "flight attendant and airline and travel careers, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 3438
+  "text_chars": 5283
  },
  {
   "control_number": "17649",
@@ -2590,11 +3219,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "travel specialist, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 3540
+  "text_chars": 5254
  },
  {
   "control_number": "17711",
@@ -2602,7 +3234,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.812,
+  "coverage": 1.0,
   "codes_found": [
    "HTTA105",
    "HTTA125",
@@ -2610,8 +3242,11 @@
    "HTTA128",
    "HTTA130",
    "HTTA131",
+   "HTTA135",
    "HTTA138",
    "HTTA150",
+   "HTTA156",
+   "HTTA157",
    "HTTA158",
    "HTTA185",
    "HTTA240",
@@ -2622,14 +3257,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/travel-specialist-certificate-achievement/",
    "title": "Travel Specialist, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "travel specialist, associate in science degree travel specialist, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 3637
+  "text_chars": 4499
  },
  {
   "control_number": "18193",
@@ -2664,7 +3302,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer information systems, associate in science degree computer information systems, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -2676,7 +3317,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.955,
+  "coverage": 1.0,
   "codes_found": [
    "ARTA110",
    "FASHA100",
@@ -2690,6 +3331,7 @@
    "FASHA150",
    "FASHA155",
    "FASHA170",
+   "FASHA175",
    "FASHA180",
    "FASHA181",
    "FASHA182",
@@ -2704,14 +3346,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-design-coa/",
    "title": "Fashion Design, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fashion design, associate in science degree fashion design, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
-  "text_chars": 5296
+  "text_chars": 5339
  },
  {
   "control_number": "18196",
@@ -2748,7 +3393,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -2760,7 +3408,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.955,
+  "coverage": 1.0,
   "codes_found": [
    "ARTA110",
    "FASHA100",
@@ -2773,6 +3421,7 @@
    "FASHA150",
    "FASHA155",
    "FASHA170",
+   "FASHA175",
    "FASHA180",
    "FASHA181",
    "FASHA182",
@@ -2788,14 +3437,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/apparel-production-product-development-certificate-achievement/",
    "title": "Technical Design and Product Development, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "technical design and product development, associate in science degree technical design and product development, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
-  "text_chars": 5268
+  "text_chars": 5303
  },
  {
   "control_number": "18199",
@@ -2828,14 +3480,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/apparel-construction-certificate-achievement/",
    "title": "Apparel Construction, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "apparel construction, associate in science degree apparel construction, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 4082
+  "text_chars": 4928
  },
  {
   "control_number": "18200",
@@ -2866,14 +3521,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/airline-travel-management-certificate-achievement/",
    "title": "Airline Travel Management, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "airline travel management, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 3670
+  "text_chars": 4611
  },
  {
   "control_number": "18201",
@@ -2902,14 +3560,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/flight-attendant-airline-travel-careers-certificate-achievement/",
    "title": "Flight Attendant and Airline and Travel Careers, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "flight attendant and airline and travel careers, associate in science degree flight attendant and airline and travel careers, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 3621
+  "text_chars": 4558
  },
  {
   "control_number": "18202",
@@ -2934,14 +3595,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/human-resource-management-certificate-achievement/",
    "title": "Human Resource Management, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "human resource management, associate in science degree human resource management, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3397
+  "text_chars": 3928
  },
  {
   "control_number": "18203",
@@ -2971,14 +3635,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/sales-marketing-specialist-certificate-achievement/",
    "title": "Sales and Marketing Specialist, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "sales and marketing specialist, associate in science degree sales and marketing specialist, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 4181
+  "text_chars": 4402
  },
  {
   "control_number": "18204",
@@ -3004,26 +3671,77 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/medical-assisting/ccma-eligible-program-certificate-achievement/",
    "title": "Medical Assisting CCMA Eligible Program, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical assisting ccma eligible program, associate in science degree medical assisting ccma eligible program, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 4640
+  "text_chars": 4229
  },
  {
   "control_number": "18205",
   "title": "World Dance Instructor",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANCA101",
+   "DANCA102",
+   "DANCA106",
+   "DANCA107",
+   "DANCA108",
+   "DANCA110",
+   "DANCA111",
+   "DANCA116",
+   "DANCA118",
+   "DANCA130",
+   "DANCA135",
+   "DANCA138",
+   "DANCA147",
+   "DANCA148",
+   "DANCA155",
+   "DANCA156",
+   "DANCA157",
+   "DANCA158",
+   "DANCA165",
+   "DANCA168",
+   "DANCA170",
+   "DANCA171",
+   "DANCA172",
+   "DANCA175",
+   "DANCA176",
+   "DANCA203",
+   "DANCA205",
+   "DANCA211",
+   "DANCA218",
+   "DANCA219",
+   "DANCA230",
+   "DANCA247",
+   "DANCA248",
+   "DANCA264",
+   "DANCA267"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/world-dance-certificate-achievement/",
+   "title": "World Dance Instructor, Certificate of Achievement < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "world dance instructor, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 35,
-  "text_chars": 0
+  "text_chars": 5013
  },
  {
   "control_number": "18436",
@@ -3063,14 +3781,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/nutrition-dietetics/nutrition-fitness-education-certificate-achievement/",
    "title": "Nutrition and Fitness Education, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "nutrition and fitness education, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 4714
+  "text_chars": 4537
  },
  {
   "control_number": "18998",
@@ -3119,7 +3840,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 53,
@@ -3169,7 +3893,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 30,
@@ -3221,7 +3948,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "building construction second award, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
@@ -3274,7 +4004,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "building construction third award, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 31,
@@ -3297,17 +4030,20 @@
    "MACHA130"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-operator-associate-science-degree/",
-   "title": "CNC Machine Operator, Associate in Science Degree < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/machinist-certificate-achievement/",
+   "title": "Machinist, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.667
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "manufacturing technology› machinist, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 3399
+  "text_chars": 3748
  },
  {
   "control_number": "19542",
@@ -3331,14 +4067,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-operator-certificate-achievement/",
    "title": "CNC Machine Operator, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "manufacturing technology› cnc machine operator, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 3434
+  "text_chars": 3975
  },
  {
   "control_number": "19543",
@@ -3366,14 +4105,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-programmer-certificate-achievement/",
    "title": "CNC Machine Programmer, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "manufacturing technology› cnc machine programmer, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 3540
+  "text_chars": 4219
  },
  {
   "control_number": "19544",
@@ -3399,14 +4141,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/tooling-certificate-achievement/",
    "title": "Tooling, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "tooling, associate in science degree tooling, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 3468
+  "text_chars": 3841
  },
  {
   "control_number": "19545",
@@ -3429,14 +4174,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/heating-ventilation-air-conditioning-refrigeration/heating-ventilation-air-conditioning-refrigeration-certificate-achievement/",
    "title": "Heating, Ventilation, Air Conditioning and Refrigeration (HVACR), Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "heating, ventilation, air conditioning and refrigeration (hvacr), associate in science degree heating, ventilation, air conditioning and refrigeration (hvacr), certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3583
+  "text_chars": 4174
  },
  {
   "control_number": "19547",
@@ -3484,7 +4232,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "level 3 -​ interior design professional, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 32,
@@ -3514,7 +4265,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "interior design foundation -​ level 1, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3555,29 +4309,69 @@
    "PHOTA290"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/photography/",
-   "title": "Photography < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/photography-digital-technician-certificate-achievement/",
+   "title": "Photography Digital Technician, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.333
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography digital technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
-  "text_chars": 16000
+  "text_chars": 4947
  },
  {
   "control_number": "22368",
   "title": "Horticulture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.727,
+  "codes_found": [
+   "BIOLA183",
+   "HORTA105",
+   "HORTA109",
+   "HORTA111",
+   "HORTA115",
+   "HORTA116",
+   "HORTA150",
+   "HORTA151",
+   "HORTA170",
+   "HORTA181",
+   "HORTA182",
+   "HORTA183",
+   "HORTA184",
+   "HORTA185",
+   "HORTA186",
+   "HORTA189",
+   "HORTA190",
+   "HORTA191",
+   "HORTA200",
+   "HORTA283",
+   "HORTA285",
+   "HORTA287",
+   "HORTA288",
+   "HORTA289"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/horticulture-certificate-achievement/",
+   "title": "Horticulture, Certificate of Achievement < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "horticulture, associate in science degree horticulture, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 33,
-  "text_chars": 0
+  "text_chars": 4618
  },
  {
   "control_number": "22369",
@@ -3620,7 +4414,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "architectural design 1, associate in science degree architectural design 1, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -3663,7 +4460,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "architectural design 1, associate in science degree architectural design 1, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -3675,7 +4475,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.926,
+  "coverage": 0.963,
   "codes_found": [
    "ACCTA101",
    "ACCTA101H",
@@ -3683,6 +4483,7 @@
    "ACCTA102H",
    "ACCTA107",
    "ACCTA110",
+   "ACCTA111",
    "ACCTA112",
    "ACCTA116",
    "ACCTA118",
@@ -3707,14 +4508,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-certificate-achievement/",
    "title": "Accounting, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting, associate in science degree accounting, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
-  "text_chars": 4892
+  "text_chars": 4482
  },
  {
   "control_number": "22372",
@@ -3744,7 +4548,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration, associate in science degree business administration, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3779,7 +4586,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "management and leadership studies, associate in science degree management and leadership studies, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3791,8 +4601,9 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.933,
+  "coverage": 1.0,
   "codes_found": [
+   "ACCTA100",
    "ACCTA101",
    "ACCTA102",
    "BUSA110",
@@ -3812,14 +4623,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/retail-certificate-achievement/",
    "title": "Retail, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "retail, associate in science degree retail, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 4404
+  "text_chars": 3888
  },
  {
   "control_number": "22375",
@@ -3827,27 +4641,32 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "BUSA100",
    "BUSA118",
+   "BUSA239",
    "MGMTA239",
    "MKTGA100",
    "MKTGA110",
-   "MKTGA130"
+   "MKTGA130",
+   "MKTGA150"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/marketing/international-business-certificate-achievement/",
    "title": "International Business, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "marketing› international business, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 4289
+  "text_chars": 3872
  },
  {
   "control_number": "22376",
@@ -3890,12 +4709,69 @@
   "title": "Film & Television",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "BRCTA105",
+   "BRCTA205",
+   "DMADA263",
+   "ENGLA127",
+   "ENGLA148",
+   "FILMA100",
+   "FILMA100H",
+   "FILMA102",
+   "FILMA104",
+   "FILMA106",
+   "FILMA107",
+   "FILMA108",
+   "FILMA109",
+   "FILMA110",
+   "FILMA113",
+   "FILMA117",
+   "FILMA120",
+   "FILMA150",
+   "FILMA151",
+   "FILMA155",
+   "FILMA193",
+   "FILMA194",
+   "FILMA196",
+   "FILMA197",
+   "FILMA198",
+   "FILMA205",
+   "FILMA210",
+   "FILMA219",
+   "FILMA220",
+   "FILMA222",
+   "FILMA240",
+   "FILMA253",
+   "FILMA255",
+   "FILMA258",
+   "FILMA260",
+   "FILMA261",
+   "FILMA262",
+   "FILMA264",
+   "FILMA265",
+   "FILMA270",
+   "FILMA271",
+   "PHOTA120",
+   "PHOTA123",
+   "THEAA275"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-certificate-achievement/",
+   "title": "Film & Television, Certificate of Achievement < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "film &​ television, associate in arts degree film &​ television, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 46,
-  "text_chars": 0
+  "text_chars": 5224
  },
  {
   "control_number": "22384",
@@ -3923,14 +4799,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/ux-design-certificate-achievement/",
    "title": "UX/UI Design, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ux/​ui design, associate in science degree ux/​ui design, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 3580
+  "text_chars": 4116
  },
  {
   "control_number": "22385",
@@ -3958,14 +4837,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/graphic-design-certificate-achievement/",
    "title": "Graphic Design, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "graphic design, associate in science degree graphic design, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 3498
+  "text_chars": 3952
  },
  {
   "control_number": "22387",
@@ -3973,29 +4855,36 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
    "CSA100",
    "CSA122",
+   "CSA131",
    "CSA150",
    "CSA170",
+   "CSA200",
    "CSA250",
    "CSA262",
+   "MATHA180",
    "MATHA180H",
+   "MATHA185",
    "MATHA185H"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/computers-computing/computer-science/computer-science-certificate-achievement/",
    "title": "Computer Science, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 4322
+  "text_chars": 3931
  },
  {
   "control_number": "22389",
@@ -4042,7 +4931,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "fitness specialist: health fitness instructor/​personal trainer, associate in science degree fitness specialist: health fitness instructor/​personal trainer, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 36,
@@ -4090,14 +4982,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-certificate-achievement/",
    "title": "Airframe & Powerplant, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "airframe &​ powerplant, associate in science degree airframe &​ powerplant, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 4068
+  "text_chars": 5281
  },
  {
   "control_number": "22393",
@@ -4123,14 +5018,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-certificate-achievement/",
    "title": "Airframe, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "airframe, associate in science degree airframe, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 3741
+  "text_chars": 4662
  },
  {
   "control_number": "22394",
@@ -4153,17 +5051,20 @@
    "AMTA180"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/powerplant-certificate-achievement/",
-   "title": "Powerplant, Certificate of Achievement < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-certificate-achievement/",
+   "title": "Airframe & Powerplant, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "powerplant, associate in science degree powerplant, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 3695
+  "text_chars": 5281
  },
  {
   "control_number": "22395",
@@ -4222,7 +5123,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welding technology, associate in science degree welding technology, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -4233,12 +5137,44 @@
   "title": "Business Employee",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTA100",
+   "BUSA240",
+   "MKTGA200",
+   "MUSA110",
+   "MUSA116",
+   "MUSA139",
+   "MUSA140",
+   "MUSA141",
+   "MUSA142",
+   "MUSA148",
+   "MUSA151",
+   "MUSA161",
+   "MUSA162",
+   "MUSA180",
+   "MUSA181",
+   "MUSA241",
+   "MUSA242",
+   "MUSA261",
+   "MUSA262"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/business-employee-certificate-achievement/",
+   "title": "Business Employee, Certificate of Achievement < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business employee, associate in arts degree business employee, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 3945
  },
  {
   "control_number": "22403",
@@ -4246,28 +5182,38 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
    "CISA100",
+   "CSA150",
+   "FILMA110",
    "MUSA110",
    "MUSA111",
    "MUSA112",
    "MUSA113",
    "MUSA115",
+   "MUSA141",
+   "MUSA142",
+   "MUSA180",
+   "MUSA241",
+   "MUSA242",
    "MUSA261"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/midi-applications-certificate-achievement/",
    "title": "MIDI Applications, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "midi applications, associate in arts degree midi applications, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 3436
+  "text_chars": 3700
  },
  {
   "control_number": "22404",
@@ -4298,12 +5244,52 @@
   "title": "Dance Instructor",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANCA106",
+   "DANCA107",
+   "DANCA108",
+   "DANCA111",
+   "DANCA119",
+   "DANCA126",
+   "DANCA143",
+   "DANCA144",
+   "DANCA145",
+   "DANCA146",
+   "DANCA150",
+   "DANCA154",
+   "DANCA159",
+   "DANCA160",
+   "DANCA169",
+   "DANCA170",
+   "DANCA180",
+   "DANCA203",
+   "DANCA205",
+   "DANCA211",
+   "DANCA220",
+   "DANCA221",
+   "DANCA243",
+   "DANCA244",
+   "DANCA245",
+   "DANCA246",
+   "DANCA257"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/dance-instructor-certificate-achievement/",
+   "title": "Dance Instructor, Certificate of Achievement < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dance instructor, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 27,
-  "text_chars": 0
+  "text_chars": 4836
  },
  {
   "control_number": "22408",
@@ -4346,11 +5332,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography-​still, associate in science degree photography-​still, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 37,
-  "text_chars": 4417
+  "text_chars": 6018
  },
  {
   "control_number": "22409",
@@ -4358,36 +5347,52 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 0.933,
   "codes_found": [
+   "ARTA102",
    "ARTA110",
+   "ARTA111",
    "ARTA120",
    "ARTA121",
    "ARTA124",
    "ARTA125",
    "ARTA129",
+   "ARTA130",
    "ARTA135",
    "ARTA142",
    "ARTA143",
    "ARTA144",
    "ARTA180",
+   "ARTA220",
    "ARTA236",
+   "ARTA251",
+   "ARTA263",
+   "ARTA269",
    "BUSA100",
+   "DMADA117",
    "DMADA181",
-   "ENGLA143"
+   "DMADA190",
+   "DMADA193",
+   "DMADA280",
+   "DMADA281",
+   "ENGLA143",
+   "MKTGA100"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/art/narrative-illustration-certificate-achievement/",
    "title": "Narrative Illustration, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "narrative illustration, associate in science degree narrative illustration, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
-  "text_chars": 5150
+  "text_chars": 4987
  },
  {
   "control_number": "22416",
@@ -4411,14 +5416,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/cardiovascular-technology/electrocardiography-technician-certificate-achievement/",
    "title": "Electrocardiography Technician, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrocardiography technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 3560
+  "text_chars": 3769
  },
  {
   "control_number": "22420",
@@ -4451,11 +5459,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dental assisting -​ registered, associate in science degree dental assisting -​ registered, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 3653
+  "text_chars": 4750
  },
  {
   "control_number": "22421",
@@ -4463,9 +5474,10 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 0.583,
   "codes_found": [
    "ARTA110",
+   "FASHA175",
    "FASHA177",
    "FASHA181",
    "FASHA182",
@@ -4476,14 +5488,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-merchandising-certificate-achievement/",
    "title": "Fashion Merchandising, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fashion merchandising, associate in science degree fashion merchandising, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 5148
+  "text_chars": 4780
  },
  {
   "control_number": "22423",
@@ -4544,14 +5559,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/nutrition-dietetics/nutrition-education-certificate-achievement/",
    "title": "Nutrition Education, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "nutrition education, associate in science degree nutrition education, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3442
+  "text_chars": 4033
  },
  {
   "control_number": "22430",
@@ -4559,7 +5577,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 0.889,
   "codes_found": [
    "CAA120",
    "CAA122",
@@ -4575,20 +5593,24 @@
    "FBMA220",
    "FBMA222",
    "FBMA270",
+   "FNA140",
    "FNA170"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/advanced-culinary-arts-certificate-achievement/",
    "title": "Advanced Culinary Arts, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced culinary arts, associate in science degree advanced culinary arts, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 4299
+  "text_chars": 4438
  },
  {
   "control_number": "22431",
@@ -4608,14 +5630,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/culinary-arts-basic-certificate-achievement/",
    "title": "Culinary Arts-Cook, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "culinary arts-​cook, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 3160
+  "text_chars": 3322
  },
  {
   "control_number": "22432",
@@ -4623,7 +5648,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.938,
+  "coverage": 1.0,
   "codes_found": [
    "CAA120",
    "CAA124",
@@ -4639,20 +5664,24 @@
    "FBMA220",
    "FBMA221",
    "FBMA222",
+   "FNA140",
    "FNA170"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/advanced-baking-pastry-certificate-achievement/",
    "title": "Advanced Baking and Pastry, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced baking and pastry, associate in science degree advanced baking and pastry, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 4675
+  "text_chars": 4447
  },
  {
   "control_number": "22433",
@@ -4684,8 +5713,12 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 0.857,
   "codes_found": [
+   "ACCTA101",
+   "ACCTA101H",
+   "ACCTA102",
+   "ACCTA102H",
    "APTA110",
    "APTA115",
    "APTA121",
@@ -4702,17 +5735,20 @@
    "APTA192"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/",
-   "title": "Aviation and Aerospace Sciences < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/aviation-science-certificate-achievement/",
+   "title": "Aviation Science, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "aviation science, associate in science degree aviation science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
-  "text_chars": 16000
+  "text_chars": 5364
  },
  {
   "control_number": "30591",
@@ -4747,7 +5783,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology sociology, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
@@ -4782,7 +5821,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology psychology, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
@@ -4812,7 +5854,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies communications studies 2.0, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -4823,38 +5868,54 @@
   "title": "Hospitality, Travel & Tourism - Meeting & Event Management",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.895,
+  "codes_found": [
+   "HTTA105",
+   "HTTA138",
+   "HTTA158",
+   "HTTA185",
+   "HTTA199",
+   "HTTA221",
+   "HTTA265",
+   "HTTA266",
+   "HTTA267",
+   "HTTA269",
+   "HTTA270",
+   "HTTA273",
+   "HTTA275",
+   "HTTA276",
+   "HTTA278",
+   "HTTA284",
+   "HTTA299"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/",
+   "title": "Hospitality, Travel, and Tourism < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "31075",
   "title": "Food Service Management Commercial: Catering",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.5,
-  "codes_found": [
-   "FBMA215",
-   "FBMA220",
-   "FBMA221",
-   "FBMA222"
-  ],
-  "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/",
-   "title": "Food and Beverage Management < Orange Coast College",
-   "h1": "Academic Catalogs",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.4
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 6992
+  "text_chars": 0
  },
  {
   "control_number": "31217",
@@ -4881,11 +5942,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education, associate in science degree for transfer (as-​t)",
+    "section_fit": 0.75
    }
   },
   "listed": 9,
-  "text_chars": 4364
+  "text_chars": 5667
  },
  {
   "control_number": "31334",
@@ -4945,7 +6009,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 45,
@@ -4983,7 +6050,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science political science, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.667
    }
   },
   "listed": 20,
@@ -5011,7 +6081,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "architectural technology› design/build, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -5035,14 +6108,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/architectural-technology/digital-fabrication-architecture-certificate-achievement/",
    "title": "Digital Fabrication for Architecture, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital fabrication for architecture, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 3170
+  "text_chars": 3406
  },
  {
   "control_number": "31518",
@@ -5066,7 +6142,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "architectural technology› integrated project design, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -5096,7 +6175,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics physics 2.0, associate in science degree for transfer (as-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -5125,17 +6207,20 @@
    "THEAA178"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/theatre-arts/",
-   "title": "Theatre Arts < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/theatre-arts/theatre-arts-associate-arts-degree-transfer-aat/",
+   "title": "Theatre Arts, Associate in Arts Degree for Transfer (AA-T) < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts, associate in arts degree theatre arts, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
-  "text_chars": 16000
+  "text_chars": 3593
  },
  {
   "control_number": "32086",
@@ -5163,7 +6248,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business business administration 2.0, associate in science degree for transfer (as-​t)",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -5213,7 +6301,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism, associate in arts degree journalism, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 32,
@@ -5281,7 +6372,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english, associate in arts degree english, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 49,
@@ -5320,7 +6414,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs, associate in arts degree for transfer",
+    "section_fit": 0.6
    }
   },
   "listed": 27,
@@ -5369,7 +6466,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography, associate in arts degree geography, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 27,
@@ -5410,7 +6510,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history history, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 23,
@@ -5445,17 +6548,20 @@
    "MUSA290"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/",
-   "title": "Music < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/music-associate-arts-degree-transfer-aat/",
+   "title": "Music, Associate in Arts Degree for Transfer (AA-T) < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music, associate in arts degree music, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 19,
-  "text_chars": 16000
+  "text_chars": 5920
  },
  {
   "control_number": "32235",
@@ -5479,7 +6585,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -5523,7 +6632,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology, associate in arts degree anthropology, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 23,
@@ -5593,7 +6705,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art art history, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.667
    }
   },
   "listed": 53,
@@ -5641,7 +6756,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.667
    }
   },
   "listed": 28,
@@ -5653,7 +6771,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.646,
+  "coverage": 1.0,
   "codes_found": [
    "ANTHA100",
    "ANTHA100H",
@@ -5661,19 +6779,31 @@
    "ANTHA190",
    "ARTA114",
    "CMSTA155",
+   "DANCA116",
+   "DANCA135",
+   "DANCA147",
+   "DANCA155",
+   "DANCA165",
+   "DANCA247",
    "ENGLA152",
    "ENGLA152H",
    "ETHSA150",
+   "FRENA180",
+   "FRENA180H",
+   "FRENA190",
+   "FRENA199",
    "GEOGA100",
    "GEOGA100H",
    "GEOGA185",
    "GLSTA101",
    "GNDRA100",
+   "GRMNA180",
    "GRMNA185",
    "HISTA140",
    "HISTA150",
    "HISTA161",
    "HISTA161H",
+   "ITALA199",
    "PSYCA190",
    "PSYCA190H",
    "PUBHA203",
@@ -5681,24 +6811,32 @@
    "SOCA100",
    "SOCA100H",
    "SOCA150",
+   "SPANA160",
+   "SPANA165",
+   "SPANA180",
+   "SPANA180H",
    "SPANA185",
    "SPANA185H",
+   "SPANA199",
    "SPANA280",
    "SPANA280H",
    "SPANA285"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/general-education-patterns/associate-degree-general-education-calgetc/",
-   "title": "Associate Degree California General Education Transfer Curriculum (Cal-GETC) 2026-2027 < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/foreign-languages/spanish-associate-arts-degree-transfer-aat/",
+   "title": "Spanish, Associate in Arts Degree for Transfer (AA-T) < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 48,
-  "text_chars": 12717
+  "text_chars": 7386
  },
  {
   "control_number": "32789",
@@ -5749,14 +6887,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/digital-slr-photography-videography-technician-certificate-achievement/",
    "title": "Digital SLR Photography and Videography Technician, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital slr photography and videography technician, certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 12,
-  "text_chars": 3584
+  "text_chars": 4097
  },
  {
   "control_number": "32804",
@@ -5795,7 +6936,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy philosophy, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 22,
@@ -5835,7 +6979,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics economics, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 18,
@@ -5874,11 +7021,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "athletic training level 1, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 3341
+  "text_chars": 4078
  },
  {
   "control_number": "33518",
@@ -6017,7 +7167,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "athletics athletics, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 132,
@@ -6046,11 +7199,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology, associate in science degree for transfer (as-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
-  "text_chars": 3817
+  "text_chars": 4916
  },
  {
   "control_number": "33763",
@@ -6058,14 +7214,20 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.6,
+  "coverage": 1.0,
   "codes_found": [
+   "DANCA106",
+   "DANCA107",
    "DANCA108",
+   "DANCA115",
+   "DANCA118",
    "DANCA119",
    "DANCA129",
+   "DANCA139",
    "DANCA151",
    "DANCA152",
    "DANCA153",
+   "DANCA208",
    "DANCA215",
    "DANCA217",
    "DANCA229"
@@ -6074,14 +7236,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/comprehensive-pilates-instructor-coa/",
    "title": "Comprehensive Pilates Instructor, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "comprehensive pilates instructor, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 3437
+  "text_chars": 3974
  },
  {
   "control_number": "33902",
@@ -6103,11 +7268,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "professional mariner professional mariner, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3417
+  "text_chars": 4549
  },
  {
   "control_number": "35182",
@@ -6115,7 +7283,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.882,
+  "coverage": 1.0,
   "codes_found": [
    "ASTRA100",
    "ASTRA100H",
@@ -6128,10 +7296,12 @@
    "ASTRA200",
    "ASTRA200H",
    "MATHA180",
+   "MATHA180H",
    "MATHA185",
    "MATHA185H",
    "PHYSA185",
-   "PHYSA280"
+   "PHYSA280",
+   "PHYSA285"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/astronomy/astronomy-associate-science-degree/",
@@ -6140,11 +7310,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "astronomy astronomy, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 4381
+  "text_chars": 5581
  },
  {
   "control_number": "35498",
@@ -6152,11 +7325,17 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.538,
+  "coverage": 1.0,
   "codes_found": [
+   "CMSTA180",
    "FILMA100",
    "FILMA100H",
+   "FILMA106",
+   "FILMA110",
+   "FILMA150",
    "FILMA155",
+   "FILMA193",
+   "FILMA194",
    "FILMA196",
    "FILMA240",
    "FILMA262",
@@ -6166,14 +7345,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-electronic-media-associate-science-degree-transfer/",
    "title": "Film, Television, and Electronic Media, Associate in Science for Transfer < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "film &​ television, certificate of achievement film, television, and electronic media, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 3844
+  "text_chars": 3454
  },
  {
   "control_number": "35503",
@@ -6202,7 +7384,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health public health, associate in science degree for transfer (as-​t)",
+    "section_fit": 0.667
    }
   },
   "listed": 17,
@@ -6235,7 +7420,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "nutrition and dietetics, associate in science degree for transfer (as-​t)",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -6247,9 +7435,13 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.6,
+  "coverage": 0.867,
   "codes_found": [
    "BIOLA180",
+   "BIOLA182",
+   "BIOLA182L",
+   "BIOLA183",
+   "BIOLA183L",
    "BIOLA185",
    "CHEMA180",
    "CHEMA185",
@@ -6266,11 +7458,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology, associate in science degree biology, associate in science degree for transfer (as-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 15,
-  "text_chars": 4341
+  "text_chars": 6038
  },
  {
   "control_number": "35944",
@@ -6289,12 +7484,28 @@
   "title": "Lifeguard Training, Professional Rescue",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINA1N",
+   "KINA2N",
+   "KINA3N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/kinesiology/lifeguard-training-professional-rescue-certificate-completion/",
+   "title": "Lifeguard Training, Professional Rescue, Certificate of Completion < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2867
  },
  {
   "control_number": "36032",
@@ -6350,7 +7561,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "global studies global studies, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.667
    }
   },
   "listed": 38,
@@ -6361,12 +7575,27 @@
   "title": "Yoga Instructor Training",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINA84N",
+   "KINA85N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/kinesiology/yoga-instructor-training-certificate-completion/",
+   "title": "Yoga Instructor Training, Certificate of Completion < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2593
  },
  {
   "control_number": "36517",
@@ -6374,8 +7603,12 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.706,
+  "coverage": 1.0,
   "codes_found": [
+   "ASTRA100",
+   "ASTRA100H",
+   "ASTRA100L",
+   "ASTRA100M",
    "GEOLA105",
    "GEOLA105H",
    "GEOLA105L",
@@ -6399,39 +7632,88 @@
    "GEOLA185L",
    "GEOLA185M",
    "GEOLA280",
-   "GEOLA285"
+   "GEOLA285",
+   "MRSCA100",
+   "MRSCA100H",
+   "MRSCA100L",
+   "MRSCA100M",
+   "MRSCA185",
+   "MRSCA185L"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/geology/",
-   "title": "Geology < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/geology/earth-science-associate-science-degree/",
+   "title": "Earth Science, Associate in Science Degree < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.5
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "earth science, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 34,
-  "text_chars": 16000
+  "text_chars": 5967
  },
  {
   "control_number": "36732",
   "title": "Marine Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.692,
+  "codes_found": [
+   "ASTRA101",
+   "BIOLA182",
+   "BIOLA182L",
+   "BIOLA281",
+   "GEOLA105",
+   "GEOLA105L",
+   "GEOLA110",
+   "GEOLA131",
+   "GEOLA137",
+   "GEOLA160",
+   "GEOLA185",
+   "GEOLA185L",
+   "MARAA156",
+   "MRSCA100",
+   "MRSCA100H",
+   "MRSCA100L",
+   "MRSCA100M",
+   "MRSCA121",
+   "MRSCA124",
+   "MRSCA180",
+   "MRSCA180L",
+   "MRSCA185",
+   "MRSCA185L",
+   "MRSCA187",
+   "MRSCA188",
+   "MRSCA291",
+   "MRSCA292"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/marine-science-associate-science-degree/",
+   "title": "Marine Science, Associate in Science Degree < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "marine science, associate in science degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 39,
-  "text_chars": 0
+  "text_chars": 6619
  },
  {
   "control_number": "36809",
   "title": "Personal Care Aide Noncredit",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ALHA1N",
@@ -6439,26 +7721,47 @@
    "ALHA9N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/adult-education-noncredit/",
-   "title": "Adult Education/Noncredit < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/allied-health/personal-care-aide-noncredit-certificate-completion/",
+   "title": "Personal Care Aide Noncredit, Certificate of Completion < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
-   "label": null
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 3,
-  "text_chars": 10928
+  "text_chars": 2775
  },
  {
   "control_number": "36847",
   "title": "Customer Service for the Retail Industry",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSA1N",
+   "COSA2N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/consumer-health-sciences/customer-service-retail-industry-certificate-completion/",
+   "title": "Customer Service for the Retail Industry, Certificate of Completion < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2450
  },
  {
   "control_number": "36892",
@@ -6466,8 +7769,9 @@
   "award": "Noncredit program",
   "shape": "noncredit",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
+   "ELLA17N",
    "ELLA27N",
    "ELLA37N",
    "ELLA45N",
@@ -6478,14 +7782,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/grammar-review-certificate-competency/",
    "title": "English Language Learning: Grammar, Certificate of Competency < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
-  "text_chars": 3289
+  "text_chars": 2888
  },
  {
   "control_number": "36893",
@@ -6493,8 +7800,11 @@
   "award": "Noncredit program",
   "shape": "noncredit",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
+   "ELLA35N",
+   "ELLA36N",
+   "ELLA37N",
    "ELLA45N",
    "ELLA46N",
    "ELLA48N"
@@ -6503,38 +7813,73 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/developmental-english-language-skills-certificate-competency/",
    "title": "English Language Learning - Intermediate, Certificate of Competency < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
-  "text_chars": 3182
+  "text_chars": 2798
  },
  {
   "control_number": "36913",
   "title": "Emergent English Language Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELLA16N",
+   "ELLA25N",
+   "ELLA26N",
+   "ELLA27N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/emergent-english-language-skills,certificate-competency/",
+   "title": "English Language Learning - Beginning, Certificate of Competency < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2787
  },
  {
   "control_number": "36917",
   "title": "Tutoring Skills and Strategies",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "TUTRA90N",
+   "TUTRA91N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/tutoring/tutoring-skills-strategies-certificate-completion/",
+   "title": "Tutoring Skills and Strategies, Certificate of Completion < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2598
  },
  {
   "control_number": "36920",
@@ -6542,25 +7887,31 @@
   "award": "Noncredit program",
   "shape": "noncredit",
   "method": "sitemap_page",
-  "coverage": 0.571,
+  "coverage": 1.0,
   "codes_found": [
+   "ELLA47N",
+   "ELLA49N",
    "ELLA55N",
    "ELLA57N",
    "ELLA58N",
-   "ELLA59N"
+   "ELLA59N",
+   "ELLA64N"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/English-language-learning-transition-to-academics-certificate-competency/",
    "title": "English Language Learning: Transition to Academics, Certificate of Competency < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
-  "text_chars": 3245
+  "text_chars": 2879
  },
  {
   "control_number": "36921",
@@ -6568,16 +7919,19 @@
   "award": "Noncredit program",
   "shape": "noncredit",
   "method": "sitemap_page",
-  "coverage": 0.688,
+  "coverage": 0.875,
   "codes_found": [
    "CHTA15N",
    "CHTA1N",
    "CHTA20N",
    "CHTA2N",
    "CHTA30N",
+   "CHTA40N",
    "ELLA25N",
    "ELLA28N",
+   "ELLA34N",
    "ELLA35N",
+   "ELLA43N",
    "ELLA48N",
    "ELLA49N",
    "ELLA55N"
@@ -6586,14 +7940,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/english-language-learning-career-development-certificate-competency/",
    "title": "English Language Learning - Workplace, Certificate of Competency < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
-  "text_chars": 3479
+  "text_chars": 3150
  },
  {
   "control_number": "37713",
@@ -6610,14 +7967,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/aquarium-science-certificate-achievement/",
    "title": "Aquarium Science, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "aquarium science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 3409
+  "text_chars": 3687
  },
  {
   "control_number": "37880",
@@ -6637,14 +7997,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/aircraft-dispatcher-certificate-achievement/",
    "title": "Aircraft Dispatcher, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "aircraft dispatcher, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 3224
+  "text_chars": 3560
  },
  {
   "control_number": "37914",
@@ -6663,12 +8026,31 @@
   "title": "Academic Preparation in English",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLA10N",
+   "ENGLA1N",
+   "ENGLA2N",
+   "ENGLA3N",
+   "ENGLA4N",
+   "ENGLA6N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english/academic-preparation-english-certificate-competency/",
+   "title": "Academic Preparation in English, Certificate of Competency < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2817
  },
  {
   "control_number": "37987",
@@ -6686,17 +8068,20 @@
    "CHEMA86N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/chemistry/",
-   "title": "Chemistry < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/chemistry/chemistry-skills-certificate-competency/",
+   "title": "Chemistry Skills, Certificate of Competency < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.5
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
-  "text_chars": 6362
+  "text_chars": 2881
  },
  {
   "control_number": "38099",
@@ -6704,23 +8089,27 @@
   "award": "Noncredit program",
   "shape": "noncredit",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "ACCTA7N",
    "BUSA86N",
    "BUSA87N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/",
-   "title": "Business < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/business/not-for-profit-management-certificate-completion/",
+   "title": "Not-for-Profit Management, Certificate of Completion < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.333
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
-  "text_chars": 3431
+  "text_chars": 2680
  },
  {
   "control_number": "38178",
@@ -6728,8 +8117,10 @@
   "award": "Noncredit program",
   "shape": "noncredit",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
+   "ELLA20N",
+   "ELLA28N",
    "ELLA48N",
    "ELLA49N"
   ],
@@ -6737,14 +8128,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/english-language-support-us-citizenship-certificate-competency/",
    "title": "English Language Learning for U.S. Citizenship, Certificate of Competency < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
-  "text_chars": 3043
+  "text_chars": 2707
  },
  {
   "control_number": "38181",
@@ -6764,9 +8158,11 @@
   "award": "Noncredit program",
   "shape": "noncredit",
   "method": "sitemap_page",
-  "coverage": 0.714,
+  "coverage": 1.0,
   "codes_found": [
+   "ELLA25N",
    "ELLA28N",
+   "ELLA30N",
    "ELLA35N",
    "ELLA48N",
    "ELLA49N",
@@ -6776,14 +8172,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/english-language-support-parents-certificate-competency/",
    "title": "English Language Learning for Parents, Certificate of Competency < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
-  "text_chars": 3162
+  "text_chars": 2827
  },
  {
   "control_number": "38208",
@@ -6806,33 +8205,50 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/communication-studies/social-media-strategist-certificate-achievement/",
    "title": "Social Media Strategist, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "social media strategist, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 3830
+  "text_chars": 3175
  },
  {
   "control_number": "38209",
   "title": "Unmanned Aircraft Systems",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APTA151"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/unmanned-aircraft-systems-certificate-achievement/",
+   "title": "Unmanned Aircraft Systems, Certificate of Achievement < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "unmanned aircraft systems, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 3495
  },
  {
   "control_number": "38242",
   "title": "Meeting and Event Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -6860,7 +8276,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -6871,12 +8290,30 @@
   "title": "Skills Enhancement for Consumer and Health Science Students",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALHA4N",
+   "ALHA5N",
+   "ALHA6N",
+   "ALHA7N",
+   "ALHA8N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/allied-health/skills-enhancement-consumer-health-sciences-certificate-completion/",
+   "title": "Skills Enhancement for Consumer and Health Sciences, Certificate of Completion < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2929
  },
  {
   "control_number": "38324",
@@ -6884,41 +8321,86 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.571,
+  "coverage": 1.0,
   "codes_found": [
+   "ARTA135",
+   "ARTA143",
    "DMADA281",
+   "FILMA193",
    "FILMA194",
    "FILMA196",
    "FILMA220",
    "FILMA222",
    "FILMA223",
+   "FILMA225",
    "FILMA226",
-   "FILMA231"
+   "FILMA229",
+   "FILMA231",
+   "FILMA262"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/immersive-media-vr-ar-certificate-achievement/",
    "title": "Immersive Media (VR/AR), Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "immersive media (vr/​ar), certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
-  "text_chars": 3660
+  "text_chars": 4535
  },
  {
   "control_number": "38420",
   "title": "Animation",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTA110",
+   "ARTA111",
+   "ARTA120",
+   "ARTA121",
+   "ARTA135",
+   "ARTA143",
+   "ARTA220",
+   "ARTA251",
+   "ARTA269",
+   "ARTA270",
+   "DMADA117",
+   "DMADA181",
+   "DMADA190",
+   "DMADA202",
+   "DMADA263",
+   "DMADA280",
+   "DMADA281",
+   "DMADA288",
+   "FILMA106",
+   "FILMA193",
+   "FILMA194",
+   "FILMA196",
+   "FILMA220"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/animation-certificate-achievement/",
+   "title": "Animation, Certificate of Achievement < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "animation, associate in science degree animation, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 4896
  },
  {
   "control_number": "38587",
@@ -6949,24 +8431,78 @@
   "title": "Animation",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTA110",
+   "ARTA111",
+   "ARTA120",
+   "ARTA121",
+   "ARTA135",
+   "ARTA143",
+   "ARTA220",
+   "ARTA251",
+   "ARTA269",
+   "ARTA270",
+   "DMADA117",
+   "DMADA181",
+   "DMADA190",
+   "DMADA202",
+   "DMADA263",
+   "DMADA280",
+   "DMADA281",
+   "DMADA288",
+   "FILMA106",
+   "FILMA193",
+   "FILMA194",
+   "FILMA196",
+   "FILMA220"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/animation-associate-science-degree/",
+   "title": "Animation, Associate in Science Degree < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "animation, associate in science degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 5640
  },
  {
   "control_number": "38798",
   "title": "English Language Learning--Advanced",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELLA47N",
+   "ELLA49N",
+   "ELLA55N",
+   "ELLA56N",
+   "ELLA57N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/advanced-english-language-skills-certificate-competency/",
+   "title": "English Language Learning - Advanced, Certificate of Competency < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2728
  },
  {
   "control_number": "39134",
@@ -6974,8 +8510,12 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
+   "FILMA102",
+   "FILMA110",
+   "FILMA194",
+   "FILMA240",
    "THEAA106",
    "THEAA107",
    "THEAA110",
@@ -6990,17 +8530,20 @@
    "THEAA275"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/theatre-arts/",
-   "title": "Theatre Arts < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/media-arts-creative-entertainment-certificate-achievement/",
+   "title": "Media Arts and Creative Entertainment, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.25
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "media arts and creative entertainment, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 16000
+  "text_chars": 4008
  },
  {
   "control_number": "39359",
@@ -7008,7 +8551,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
    "ARTA110",
    "ARTA111",
@@ -7031,20 +8574,25 @@
    "ARTA256",
    "ARTA257",
    "ARTA258",
-   "ARTA269"
+   "ARTA269",
+   "DMADA280",
+   "DMADA281"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/art/",
-   "title": "Art < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/art/entertainment-art-certificate-achievement/",
+   "title": "Entertainment Art, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.5
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entertainment art, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
-  "text_chars": 16000
+  "text_chars": 4531
  },
  {
   "control_number": "39515",
@@ -7082,11 +8630,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "public health, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 4055
+  "text_chars": 4754
  },
  {
   "control_number": "39639",
@@ -7106,7 +8657,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -7134,14 +8688,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/kinesiology/athletics-coaching-certificate-achievement/",
    "title": "Athletics Coaching, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "athletics coaching, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 3469
+  "text_chars": 3825
  },
  {
   "control_number": "39979",
@@ -7160,14 +8717,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/governmental-accounting-competency-certificate-achievement/",
    "title": "Governmental Accounting Competency, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "governmental accounting competency, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3809
+  "text_chars": 3381
  },
  {
   "control_number": "40077",
@@ -7188,14 +8748,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/avionics-certificate-achievement/",
    "title": "Avionics, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "avionics, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3308
+  "text_chars": 3683
  },
  {
   "control_number": "40078",
@@ -7203,10 +8766,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTA101",
    "ACCTA102",
+   "ACCTA110",
    "ACCTA212",
    "ACCTA213"
   ],
@@ -7214,38 +8778,75 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/financial-accounting-competency-certificate-achievement/",
    "title": "Financial Accounting Competency, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "financial accounting competency, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 3913
+  "text_chars": 3488
  },
  {
   "control_number": "40256",
   "title": "FrameCAD Steel Design NC",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCHA21N",
+   "ARCHA22N",
+   "ARCHA41N",
+   "ARCHA4N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/architecture/framecad-steel-design-nc-certificate-completion/",
+   "title": "FrameCAD Steel Design NC, Certificate of Completion < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2706
  },
  {
   "control_number": "40257",
   "title": "FrameCAD Steel Production NC",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCHA41N",
+   "ARCHA42N",
+   "ARCHA43N",
+   "ARCHA4N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/architecture/framecad-steel-production-nc-certificate-completion/",
+   "title": "FrameCAD Steel Production NC, Certificate of Completion < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2710
  },
  {
   "control_number": "40561",
@@ -7268,14 +8869,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/drone-videography-certificate-achievement/",
    "title": "Drone Videography, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "drone videography, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 3374
+  "text_chars": 3723
  },
  {
   "control_number": "40562",
@@ -7302,34 +8906,44 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/drone-photography-certificate-achievement/",
    "title": "Drone Photography, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "drone photography, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 4156
+  "text_chars": 4312
  },
  {
   "control_number": "40741",
   "title": "Allied Health Program Readiness",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 0.5,
+  "method": "sitemap_page",
+  "coverage": 1.0,
   "codes_found": [
-   "ALHA11N"
+   "ALHA11N",
+   "ELLA61N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/",
-   "title": "Noncredit Certificate Programs (Tuition Free) < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/allied-health/allied-health-program-readiness-certificate-competency/",
+   "title": "Allied Health Program Readiness, Certificate of Competency < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
-   "label": null
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 2,
-  "text_chars": 4000
+  "text_chars": 2633
  },
  {
   "control_number": "40747",
@@ -7349,14 +8963,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/basic-drone-imaging-skills-certificate-achievement/",
    "title": "Basic Drone Imaging Skills, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic drone imaging skills, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 3196
+  "text_chars": 3463
  },
  {
   "control_number": "40979",
@@ -7374,14 +8991,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/entry-level-accounting-coa/",
    "title": "Entry-Level Accounting, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entry-​level accounting, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 3737
+  "text_chars": 3306
  },
  {
   "control_number": "40980",
@@ -7400,40 +9020,29 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/individual-taxation-competency-coa/",
    "title": "Individual Taxation Competency, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "individual taxation competency, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3804
+  "text_chars": 3376
  },
  {
   "control_number": "40981",
   "title": "Non-Profit Accounting Competency",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ACCTA101",
-   "ACCTA102",
-   "ACCTA110",
-   "ACCTA216"
-  ],
-  "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/non-profit-accounting-competency-certification-specialization/",
-   "title": "Non-Profit Accounting Competency, Certificate of Achievement < Orange Coast College",
-   "h1": "Academic Catalogs",
-   "text_from": "textContent",
-   "label": {
-    "award": 0,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 3813
+  "text_chars": 0
  },
  {
   "control_number": "41015",
@@ -7454,14 +9063,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/business-taxation-competency-coa/",
    "title": "Business Taxation Competency, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business taxation competency, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3797
+  "text_chars": 3369
  },
  {
   "control_number": "41016",
@@ -7481,7 +9093,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "interior design interior design -​ digital design communication, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -7504,14 +9119,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/cost-accounting-competency-coa/",
    "title": "Cost Accounting Competency, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cost accounting competency, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3810
+  "text_chars": 3382
  },
  {
   "control_number": "41018",
@@ -7530,14 +9148,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/payroll-accounting-competency-coa/",
    "title": "Payroll Accounting Competency, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "payroll accounting competency, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3777
+  "text_chars": 3349
  },
  {
   "control_number": "41019",
@@ -7545,25 +9166,29 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "CAA124",
    "CAA126",
    "FBMA220",
+   "FNA140",
    "FNA170"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/baking-pastry-basic-coa/",
    "title": "Baking and Pastry-Basic, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "baking and pastry-​basic, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 3791
+  "text_chars": 3431
  },
  {
   "control_number": "41020",
@@ -7582,14 +9207,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/basic-landscape-design-coa/",
    "title": "Basic Landscape Design, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic landscape design, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3135
+  "text_chars": 3261
  },
  {
   "control_number": "41021",
@@ -7606,14 +9234,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/carpentry-coa/",
    "title": "Carpentry, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "carpentry, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 3047
+  "text_chars": 3097
  },
  {
   "control_number": "41022",
@@ -7631,14 +9262,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-programmer-certificate-achievement/",
    "title": "CNC Machine Programmer, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cnc programmer, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 3118
+  "text_chars": 3840
  },
  {
   "control_number": "41042",
@@ -7658,14 +9292,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-operator-coa/",
    "title": "CNC Operator, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cnc operator, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 3735
+  "text_chars": 3458
  },
  {
   "control_number": "41043",
@@ -7683,14 +9320,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/concrete-masonry-coa/",
    "title": "Concrete & Masonry, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "concrete &​ masonry, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 3115
+  "text_chars": 3201
  },
  {
   "control_number": "41044",
@@ -7709,14 +9349,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/intermediate-landscape-design-specialist-coa/",
    "title": "Intermediate Landscape Design and Construction Specialist, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "intermediate landscape design and construction specialist, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3200
+  "text_chars": 3463
  },
  {
   "control_number": "41369",
@@ -7735,14 +9378,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/automation-fundamentals-certificate-achievement/",
    "title": "Automation Fundamentals, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automation fundamentals, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3127
+  "text_chars": 3275
  },
  {
   "control_number": "41373",
@@ -7775,7 +9421,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business business administration 2.0, associate in science degree for transfer (as-​t)",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -7787,8 +9436,9 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
+   "ELECA100",
    "ELECA111",
    "ELECA121",
    "ELECA122",
@@ -7799,14 +9449,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/robotics-technician-certificate-achievement/",
    "title": "Robotics Technician, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "robotics technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 4000
+  "text_chars": 3616
  },
  {
   "control_number": "41431",
@@ -7814,9 +9467,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.818,
+  "coverage": 1.0,
   "codes_found": [
+   "ELECA100",
    "ELECA102",
+   "ELECA103",
    "ELECA111",
    "ELECA112",
    "ELECA131",
@@ -7830,14 +9485,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/industrial-plc-technician-coa/",
    "title": "Industrial PLC Technician, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial plc technician, associate in science degree industrial plc technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 4562
+  "text_chars": 4168
  },
  {
   "control_number": "41436",
@@ -7845,9 +9503,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.818,
+  "coverage": 1.0,
   "codes_found": [
+   "ELECA100",
    "ELECA102",
+   "ELECA103",
    "ELECA111",
    "ELECA121",
    "ELECA122",
@@ -7861,14 +9521,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/embedded-systems-technician-certificate-achievement/",
    "title": "Embedded Systems Technician, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "embedded systems technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 4545
+  "text_chars": 4159
  },
  {
   "control_number": "41469",
@@ -7876,8 +9539,9 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
+   "ELECA100",
    "ELECA111",
    "ELECA112",
    "ELECA131",
@@ -7888,14 +9552,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/industrial-electronics-technician-certificate-achievement/",
    "title": "Industrial Electronics Technician, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial electronics technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3767
+  "text_chars": 3382
  },
  {
   "control_number": "41471",
@@ -7903,9 +9570,10 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "CNSTA189",
+   "CNSTA190",
    "CNSTA265",
    "CNSTA266"
   ],
@@ -7913,14 +9581,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/plumbing-coa/",
    "title": "Plumbing, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "plumbing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3688
+  "text_chars": 3302
  },
  {
   "control_number": "41480",
@@ -7949,11 +9620,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "industrial plc technician, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 3630
+  "text_chars": 5060
  },
  {
   "control_number": "41487",
@@ -7961,7 +9635,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
    "ELECA100",
    "ELECA102",
@@ -7972,7 +9646,8 @@
    "ELECA223",
    "ELECA224",
    "ELECA290",
-   "MATHA115"
+   "MATHA115",
+   "MATHA120"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/embedded-systems-associate-science/",
@@ -7981,11 +9656,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "embedded systems, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 3512
+  "text_chars": 4913
  },
  {
   "control_number": "41593",
@@ -8004,29 +9682,57 @@
    "CNSTA8N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/architectural-technology/",
-   "title": "Architectural Technology < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/architecture/micro-structure-design-technology-noncredit-certificate-completion/",
+   "title": "Micro-Structure Design Technology Noncredit, Certificate of Completion < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.2
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
-  "text_chars": 12798
+  "text_chars": 2927
  },
  {
   "control_number": "41824",
   "title": "Marine Mammal Field Studies and Conservation",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOGA190",
+   "MARAA152",
+   "MRSCA124",
+   "MRSCA180",
+   "MRSCA180L",
+   "MRSCA187",
+   "MRSCA188",
+   "MRSCA195",
+   "MRSCA287",
+   "MRSCA288",
+   "MRSCA291",
+   "MRSCA292"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/marine-mammal-field-studies-and-conservation-certificate-achievement/",
+   "title": "Marine Mammal Field Studies and Conservation, Certificate of Achievement < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "marine mammal field studies and conservation, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3238
  },
  {
   "control_number": "41910",
@@ -8047,14 +9753,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/retrofitting-california-urban-gardens-coa/",
    "title": "Retrofitting California Urban Gardens, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "retrofitting california urban gardens, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3267
+  "text_chars": 3603
  },
  {
   "control_number": "41911",
@@ -8072,14 +9781,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/emergency-medical-services/emergency-medical-services-coa/",
    "title": "Emergency Medical Services, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "emergency medical services emergency medical services, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3920
+  "text_chars": 4021
  },
  {
   "control_number": "41921",
@@ -8087,11 +9799,56 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "GEOGA190",
    "MARAA152",
-   "MRSCA190"
+   "MRSCA190",
+   "MRSCA195"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/marine-conservation-monitoring-certificate-achievement/",
+   "title": "Marine Conservation & Monitoring, Certificate of Achievement < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "marine conservation &​ monitoring, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2701
+ },
+ {
+  "control_number": "41928",
+  "title": "Applied Ocean Science and Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSA131",
+   "ELECA100",
+   "ELECA121",
+   "ELECA140",
+   "EMSA100",
+   "ENGRA110",
+   "ENGRA220",
+   "GEOGA190",
+   "HVACA100",
+   "MARAA152",
+   "MARAA156",
+   "MARAA200",
+   "MARAA201",
+   "MRSCA100",
+   "MRSCA100H",
+   "MRSCA100L",
+   "MRSCA100M",
+   "MRSCA190",
+   "MRSCA195"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/applied-ocean-science-and-technology-associate-science-degree/",
@@ -8099,36 +9856,42 @@
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.333
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "applied ocean science and technology, associate in science degree",
+    "section_fit": 1.0
    }
   },
-  "listed": 4,
-  "text_chars": 3486
- },
- {
-  "control_number": "41928",
-  "title": "Applied Ocean Science and Technology",
-  "award": "A.S. Degree",
-  "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 5392
  },
  {
   "control_number": "41964",
   "title": "Hospitality and Tourism",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSA1N",
+   "HTTA3N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/consumer-health-sciences/hospitality-and-tourism-certificate-completion/",
+   "title": "Hospitality and Tourism, Certificate of Completion < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2618
  },
  {
   "control_number": "41995",
@@ -8189,7 +9952,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "environmental science, associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 43,
@@ -8252,7 +10018,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "environmental science, associate in arts degree environmental science, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 41,
@@ -8277,14 +10046,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-administration-specialization-coa/",
    "title": "Child Development Administration Specialization, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development administration specialization, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3314
+  "text_chars": 3562
  },
  {
   "control_number": "42087",
@@ -8292,13 +10064,14 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
    "CDEA126",
    "CDEA130",
    "CDEA131",
    "CDEA132",
    "CDEA155",
+   "CDEA156",
    "CDEA157",
    "CDEA180",
    "CDEA190"
@@ -8307,14 +10080,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-assistant-teacher-coa/",
    "title": "Child Development Assistant Teacher, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development assistant teacher, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 3360
+  "text_chars": 3813
  },
  {
   "control_number": "42109",
@@ -8332,14 +10108,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/infant-toddler-specialization-coa/",
    "title": "Infant and Toddler Specialization, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "infant and toddler specialization, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 3092
+  "text_chars": 3189
  },
  {
   "control_number": "42115",
@@ -8387,7 +10166,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "child development lead teacher, associate in science degree child development lead teacher, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
@@ -8398,12 +10180,55 @@
   "title": "Child Development Lead Teacher",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALHA112",
+   "CDEA102",
+   "CDEA112",
+   "CDEA126",
+   "CDEA127",
+   "CDEA130",
+   "CDEA131",
+   "CDEA132",
+   "CDEA155",
+   "CDEA156",
+   "CDEA157",
+   "CDEA165",
+   "CDEA174",
+   "CDEA175",
+   "CDEA180",
+   "CDEA182",
+   "CDEA184",
+   "CDEA190",
+   "CDEA200",
+   "CDEA201",
+   "CDEA210",
+   "CDEA211",
+   "CDEA220",
+   "CDEA261",
+   "CDEA262",
+   "CDEA264",
+   "CDEA275",
+   "CDEA276",
+   "CDEA277",
+   "SLPAA112"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/",
+   "title": "Child Development and Education < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "as",
+    "section_line": "child development lead teacher, associate in science degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 30,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "42118",
@@ -8411,8 +10236,10 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "ALHA112",
+   "CDEA112",
    "CDEA174",
    "CDEA210",
    "CDEA211",
@@ -8422,14 +10249,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/working-with-exceptional-children-specialization-coa/",
    "title": "Working with Exceptional Children Specialization, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "working with exceptional children specialization, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3399
+  "text_chars": 3994
  },
  {
   "control_number": "42119",
@@ -8447,14 +10277,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-curriculum-specialization-coa/",
    "title": "Child Development Curriculum Specialization, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development curriculum specialization, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 3090
+  "text_chars": 3185
  },
  {
   "control_number": "42120",
@@ -8473,14 +10306,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-core-coa/",
    "title": "Child Development Core, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development core, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3259
+  "text_chars": 3430
  },
  {
   "control_number": "42131",
@@ -8488,8 +10324,9 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
+   "CDEA130",
    "CDEA131",
    "CDEA132",
    "CDEA155",
@@ -8504,14 +10341,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-associate-teacher-coa/",
    "title": "Child Development Associate Teacher, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development associate teacher, associate in science degree child development associate teacher, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3511
+  "text_chars": 4035
  },
  {
   "control_number": "42132",
@@ -8539,11 +10379,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development associate teacher, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3565
+  "text_chars": 4958
  },
  {
   "control_number": "42134",
@@ -8551,25 +10394,29 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "CDEA102",
    "CDEA175",
    "CDEA182",
+   "CDEA190",
    "CDEA210"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/elementary-education-specialization-coa/",
    "title": "Elementary Education Specialization, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "elementary education specialization, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 3208
+  "text_chars": 3456
  },
  {
   "control_number": "42175",
@@ -8588,14 +10435,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/kinesiology/yoga-instructor-training-coa/",
    "title": "Yoga Instructor Training, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "yoga instructor training, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3109
+  "text_chars": 3322
  },
  {
   "control_number": "42294",
@@ -8615,14 +10465,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/finance-coa/",
    "title": "Finance, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "finance, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 3754
+  "text_chars": 3323
  },
  {
   "control_number": "42331",
@@ -8630,7 +10483,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "CNSTA150",
    "CNSTA155",
@@ -8640,6 +10493,7 @@
    "CNSTA165",
    "CNSTA170",
    "CNSTA189",
+   "CNSTA190",
    "CNSTA250",
    "CNSTA275",
    "EMSA100",
@@ -8649,14 +10503,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/residential-electrical-certificate-specialization/",
    "title": "Residential Electrical, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "residential electrical, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 4242
+  "text_chars": 3884
  },
  {
   "control_number": "42953",
@@ -8677,14 +10534,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-data-analytics-coa/",
    "title": "Accounting Data Analytics, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting accounting data analytics, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3821
+  "text_chars": 3393
  },
  {
   "control_number": "42955",
@@ -8692,8 +10552,9 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
+   "ACCTA107",
    "ACCTA216",
    "BUSA186",
    "BUSA187"
@@ -8702,14 +10563,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/not-for-profit-management-coa/",
    "title": "Not for Profit Management, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "not for profit management, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3743
+  "text_chars": 3367
  },
  {
   "control_number": "42976",
@@ -8717,9 +10581,11 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
    "ARTA120",
+   "ARTA120H",
+   "CMSTA180",
    "DMADA182",
    "FILMA150",
    "MKTGA130"
@@ -8728,14 +10594,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/marketing/advertising-coa/",
    "title": "Advertising, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advertising, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3812
+  "text_chars": 3383
  },
  {
   "control_number": "42986",
@@ -8752,14 +10621,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/marketing/entry-level-marketing-coa/",
    "title": "Entry Level Marketing, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entry level marketing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 3079
+  "text_chars": 3180
  },
  {
   "control_number": "43100",
@@ -8799,7 +10671,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "athletic training level 1, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -8824,14 +10699,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/flight-operations-coa/",
    "title": "Flight Operations, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "flight operations, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 4064
+  "text_chars": 3845
  },
  {
   "control_number": "43173",
@@ -8855,14 +10733,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/bar-beverage-management-coa/",
    "title": "Bar and Beverage Management, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "bar and beverage management, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 3396
+  "text_chars": 3789
  },
  {
   "control_number": "43182",
@@ -8883,7 +10764,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "sales, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -8895,24 +10779,28 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.6,
+  "coverage": 0.8,
   "codes_found": [
    "LEADA200",
    "MGMTA100",
+   "MGMTA115",
    "MGMTA239"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/management-institute-coa/",
    "title": "Management Institute, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "management institute, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 3671
+  "text_chars": 3163
  },
  {
   "control_number": "43362",
@@ -8920,7 +10808,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
    "FBMA100",
    "FBMA102",
@@ -8934,20 +10822,24 @@
    "FBMA222",
    "FBMA270",
    "FBMA280",
+   "FNA140",
    "FNA170"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/",
    "title": "Food and Beverage Management, Advanced, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "food and beverage management, advanced, associate in science degree food and beverage management, advanced, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 5100
+  "text_chars": 5187
  },
  {
   "control_number": "43370",
@@ -8955,33 +10847,45 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.571,
+  "coverage": 1.0,
   "codes_found": [
+   "DANCA102",
+   "DANCA116",
+   "DANCA125",
    "DANCA126",
+   "DANCA130",
+   "DANCA135",
+   "DANCA138",
    "DANCA143",
    "DANCA144",
    "DANCA145",
    "DANCA146",
    "DANCA150",
    "DANCA154",
+   "DANCA156",
    "DANCA160",
    "DANCA169",
+   "DANCA175",
    "DANCA203",
    "DANCA205",
-   "DANCA206"
+   "DANCA206",
+   "DANCA211"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/commercial-dance-coa/",
    "title": "Commercial Dance, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dance commercial dance, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
-  "text_chars": 4413
+  "text_chars": 4106
  },
  {
   "control_number": "43378",
@@ -9007,36 +10911,46 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/polysomnographic-technology/polysomnographic-technology-coa/",
    "title": "Polysomnography, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "polysomnography, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 3468
+  "text_chars": 4073
  },
  {
   "control_number": "43393",
   "title": "Community Health Worker",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 0.75,
+  "method": "sitemap_page",
+  "coverage": 1.0,
   "codes_found": [
    "PUBHA1N",
    "PUBHA2N",
-   "PUBHA3N"
+   "PUBHA3N",
+   "PUBHA4N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/",
-   "title": "Noncredit Certificate Programs (Tuition Free) < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/public-health/community-health-worker-certificate-completion/",
+   "title": "Community Health Worker, Certificate of Completion < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
-   "label": null
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 4,
-  "text_chars": 5185
+  "text_chars": 2710
  },
  {
   "control_number": "43421",
@@ -9056,11 +10970,16 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.583,
+  "coverage": 1.0,
   "codes_found": [
+   "DANCA106",
+   "DANCA107",
    "DANCA108",
+   "DANCA115",
+   "DANCA118",
    "DANCA119",
    "DANCA129",
+   "DANCA139",
    "DANCA151",
    "DANCA209",
    "DANCA215",
@@ -9070,14 +10989,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/pilates-mat-coa/",
    "title": "Pilates Mat Instructor, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pilates mat instructor, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 3947
+  "text_chars": 3874
  },
  {
   "control_number": "43567",
@@ -9098,14 +11020,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/computers-computing/computer-information-systems/office-assistant-coa/",
    "title": "Office Assistant, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "office assistant, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 3813
+  "text_chars": 3323
  },
  {
   "control_number": "44007",
@@ -9124,14 +11049,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/heating-ventilation-air-conditioning-refrigeration/air-conditioning-heating-service-installation-coa/",
    "title": "Air Conditioning and Heating Service and Installation, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "air conditioning and heating service and installation, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3207
+  "text_chars": 3417
  },
  {
   "control_number": "44008",
@@ -9150,46 +11078,75 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/heating-ventilation-air-conditioning-refrigeration/refrigeration-service-coa/",
    "title": "Refrigeration Service, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "refrigeration service, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3221
+  "text_chars": 3496
  },
  {
   "control_number": "44029",
   "title": "Primary English Language Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 0.5,
+  "method": "sitemap_page",
+  "coverage": 1.0,
   "codes_found": [
-   "ELLA17N"
+   "ELLA17N",
+   "ELLA6N"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/emergent-english-language-skills,certificate-competency/",
-   "title": "English Language Learning - Beginning, Certificate of Competency < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/primary-english-language-skills-certificate-competency/",
+   "title": "English Language Learning - Basic, Certificate of Competency < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
-   "label": null
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 2,
-  "text_chars": 2998
+  "text_chars": 2583
  },
  {
   "control_number": "44036",
   "title": "Math Skills for College Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHA60N",
+   "MATHA61N",
+   "MATHA62N",
+   "MATHA64N",
+   "MATHA67N",
+   "MATHA68N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/mathematics/math-skills-for-college-success-certificate-competency/",
+   "title": "Math Skills for College Success, Certificate of Competency < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2811
  },
  {
   "control_number": "44116",
@@ -9216,7 +11173,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies communications studies 2.0, associate in arts degree for transfer (aa-​t)",
+    "section_fit": 0.5
    }
   },
   "listed": 16,
@@ -9228,7 +11188,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "ARTA110",
    "CMSTA109",
@@ -9240,6 +11200,7 @@
    "FASHA120",
    "FASHA121",
    "FASHA170",
+   "FASHA175",
    "FASHA177",
    "FASHA181",
    "FASHA182",
@@ -9247,20 +11208,24 @@
    "FASHA200",
    "FASHA225",
    "FASHA255",
-   "PHOTA109"
+   "PHOTA109",
+   "PHOTA123"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-media-events-promotion-coa/",
    "title": "Fashion Media, Events, & Promotions, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fashion design, certificate of achievement fashion media, events, &​ promotion, associate in science degree",
+    "section_fit": 0.8
    }
   },
   "listed": 20,
-  "text_chars": 4119
+  "text_chars": 5045
  },
  {
   "control_number": "44118",
@@ -9278,14 +11243,17 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/speech-language-pathology-assistant/professional-advancement-speech-language-pathology-assistant-coa/",
    "title": "Professional Advancement - Speech-Language Pathology Assistant, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "speech-​language pathology assistant professional advancement -​ speech-​language pathology assistant, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 3260
+  "text_chars": 3581
  },
  {
   "control_number": "44119",
@@ -9323,11 +11291,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fashion media, events, &​ promotion, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 3886
+  "text_chars": 5760
  },
  {
   "control_number": "44120",
@@ -9335,7 +11306,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "ARTA110",
    "FASHA110",
@@ -9347,6 +11318,7 @@
    "FASHA120",
    "FASHA121",
    "FASHA170",
+   "FASHA175",
    "FASHA177",
    "FASHA181",
    "FASHA182",
@@ -9354,20 +11326,24 @@
    "FASHA200",
    "FASHA225",
    "FASHA255",
-   "PHOTA109"
+   "PHOTA109",
+   "PHOTA123"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-styling-visual-display-coa/",
    "title": "Fashion Styling & Visual Display, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "textContent",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fashion styling &​ visual display, associate in science degree fashion styling &​ visual display, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 4153
+  "text_chars": 5061
  },
  {
   "control_number": "44121",
@@ -9405,11 +11381,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fashion styling &​ visual display, associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 3923
+  "text_chars": 5618
  },
  {
   "control_number": "44129",
@@ -9441,7 +11420,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -9466,7 +11448,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -9477,24 +11462,60 @@
   "title": "MESA (Math, Engineering, Science Achievement) Program",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NSA10N",
+   "NSA11N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/mesa/mesa-certificate-of-competency/",
+   "title": "MESA (Math, Engineering, Science Achievement), Certificate of Competency < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2675
  },
  {
   "control_number": "45349",
   "title": "Pharmacy Technician",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITRNA99N",
+   "PHMTA30N",
+   "PHMTA40N",
+   "PHMTA50N",
+   "PHMTA60N",
+   "PHMTA70N",
+   "PHMTA80N",
+   "PHMTA90N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/allied-health/pharmacy-technician-noncredit-certificate-completion/",
+   "title": "Pharmacy Technician, Certificate of Completion < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2938
  },
  {
   "control_number": "45785",
@@ -9538,7 +11559,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs, associate in arts degree for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 33,

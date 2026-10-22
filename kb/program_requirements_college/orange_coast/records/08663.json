@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7405,
+  "input_tokens": 7950,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7405,
-    "output_tokens": 2830,
+    "input_tokens": 7950,
+    "output_tokens": 2876,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,49 +30,63 @@
     "model": null
    }
   ],
-  "output_tokens": 2830,
+  "output_tokens": 2876,
   "output_tokens_details": {
-   "thinking_tokens": 1647
+   "thinking_tokens": 1173
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08622,
- "ms": 34117,
- "seconds": 34.5,
+ "cost_usd": 0.08932,
+ "ms": 23753,
+ "seconds": 24.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 3,
+   "placed": 5,
    "listed": 5,
-   "share": 0.6,
-   "missing": [
-    "FBMA222",
-    "FBMA280"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 14,
    "codes": [
     "COUNA100",
     "FBMA102",
     "FBMA115",
+    "FBMA140",
+    "FBMA145",
+    "FBMA146",
+    "FBMA147",
+    "FBMA175",
     "FBMA190",
     "FBMA195",
-    "FBMA270"
+    "FBMA221",
+    "FBMA270",
+    "FNA140",
+    "FNA170"
    ],
    "flagged": [
     "COUNA100",
     "FBMA102",
     "FBMA115",
+    "FBMA140",
+    "FBMA145",
+    "FBMA146",
+    "FBMA147",
+    "FBMA175",
     "FBMA190",
     "FBMA195",
-    "FBMA270"
+    "FBMA221",
+    "FBMA270",
+    "FNA140",
+    "FNA170"
    ],
    "pass": true
   },
@@ -80,16 +94,16 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    22.0,
-    22.0
+    40.0,
+    41.5
    ],
    "stated": [
-    20.5,
-    20.5
+    38.5,
+    40.0
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 22.0-22.0; the catalog states 20.5-20.5"
+    "the blocks sum to 40.0-41.5; the catalog states 38.5-40.0"
    ]
   },
   "repeated": {
@@ -100,15 +114,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "Prepare students with the operational and managerial capabilities needed to advance within the food & beverage industry while upholding industry standards.."
-   ],
-   "why": [
-    "not in the catalog text as printed: Prepare students with the operational and managerial capabilities needed to adva"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -122,11 +132,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Food and Beverage Management Certificate of Achievement (20.5 Units)",
+   "section_heading": "Food and Beverage Management, Advanced, Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": 20.5,
-    "max": 20.5
+    "min": 38.5,
+    "max": 40
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -144,7 +154,7 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Prepare students with the operational and managerial capabilities needed to advance within the food & beverage industry while upholding industry standards.."
+    "Prepare students with the operational and managerial capabilities needed to advance within the food &amp; beverage industry while upholding industry standards.."
    ],
    "careers": []
   },
@@ -169,7 +179,7 @@
     ]
    },
    {
-    "name": "Required Courses",
+    "name": "Required Prerequisites: Food and Beverage Management Certificate of Achievement (20.5 Units) - Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -235,26 +245,99 @@
       "catalog_addition": true
      }
     ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FN A140",
+      "units": 2,
+      "units_max": 3,
+      "alternatives": [
+       {
+        "code": "FN A170",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "FBM A221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FBM A140",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FBM A145",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FBM A175",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FBM A222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FBM A280",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FBM A147",
+      "units": 2.5,
+      "units_max": 3,
+      "alternatives": [
+       {
+        "code": "FBM A146",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "FBM A222",
-    "why": "named only in the Advanced certificate's second Required Courses list on this page"
-   },
-   {
-    "code": "FBM A280",
-    "why": "named only in the Advanced certificate's second Required Courses list on this page"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The page (URL food-beverage-management-advanced-coa) is for the Advanced Food and Beverage Management Certificate of Achievement (Total Certificate Units 38.5-40); its footnote says the prerequisite is the 'Food and Beverage Management, Certificate of Achievement'. This record reads the prerequisite section headed 'Food and Beverage Management Certificate of Achievement (20.5 Units)', which matches the named program title and the 16-<30 unit band.",
-   "The heading states 20.5 units but the course list prints 'Total Units 22' (sum of listed courses is 22); total_units records the heading's 20.5 and the block's stated records 22. Reviewer should check.",
-   "The closed list mixes courses from both certificates (FBM A222 and FBM A280 appear only in the advanced list) and uses older titles (e.g., FBM A100 'Introduction to the Food and Service Industry', FBM A215 'Quantity Food Production Management'); the state file may reflect an older version of this program.",
-   "The single program learning outcome is printed once for the page (apparently the advanced certificate); it is recorded here as shared by this award. The '&amp;' entity was rendered as '&'; the double period is as printed.",
-   "COUN A100 is listed as Recommended Preparation with no units printed; it does not count toward the total."
+   "The award is described as requiring 16 to fewer than 30 semester units, but the page prints 'Total Certificate Units 38.5-40'. That total appears to include the prerequisite Food and Beverage Management Certificate of Achievement courses. The Program Sequence prints 'Total Units 40-41.5'.",
+   "The prerequisite certificate heading says 20.5 Units, but its list prints 'Total Units 22'. The listed courses sum to 22. The second Required Courses list sums to 18-19.5. 22 + 18-19.5 = 40-41.5, which matches the program sequence but not the printed 38.5-40.",
+   "The prerequisite certificate courses (FBM A100, A215, A220 and others) are placed in their own 'all' block because the page lists them as required prerequisites for this certificate. A reviewer should check whether they count toward this award.",
+   "The ranges '2-3' (FN A140 or FN A170) and '2.5-3' (FBM A147 or FBM A146) are printed beside the paired rows. They are recorded on the first-listed course, and the alternatives' units are left null. The sequence suggests FN A140 is 2 units and FN A170 is 3.",
+   "Catalog titles differ from closed-list titles for FBM A100 ('Introduction to the Hospitality Industry') and FBM A215 ('Foodservice Systems and Operations Management'). The codes match.",
+   "The Overview text describes the Advanced Associate in Science Degree rather than this certificate. The single Program Learning Outcome is printed for the program as a whole and is recorded as shared by this award. It is copied as printed, including '&amp;' and the double period.",
+   "No specific careers or job titles are named. The text only mentions 'managerial career advancement within the food and beverage industry'."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Allied Health Program Readiness",
  "award": "Noncredit program",
- "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/allied-health/allied-health-program-readiness-certificate-competency/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7165,
+  "input_tokens": 6753,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7165,
-    "output_tokens": 711,
+    "input_tokens": 6753,
+    "output_tokens": 425,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,31 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 711,
+  "output_tokens": 425,
   "output_tokens_details": {
-   "thinking_tokens": 226
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04288,
- "ms": 7006,
- "seconds": 7.3,
+ "cost_usd": 0.03551,
+ "ms": 4532,
+ "seconds": 4.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 2,
    "listed": 2,
-   "share": 0.0,
-   "missing": [
-    "ALHA11N",
-    "ELLA61N"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -64,25 +62,29 @@
   },
   "arithmetic": {
    "pass": true,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "against": null,
-   "why": [
-    "the catalog prints no total, no hours and no units"
-   ]
+   "status": "equal",
+   "computed": [
+    54.0,
+    54.0
+   ],
+   "stated": [
+    54.0,
+    54.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -94,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "(no program section in text; only the course listing for ELL A061N, which names 'Allied Health Program Readiness, Certificate of Competency' among referencing pages)",
+   "section_heading": "Allied Health Program Readiness, Certificate of Competency",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 54,
+    "max": 54
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -119,26 +121,46 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Students will apply pronunciation and word part knowledge to be better prepared to enter Allied Health Programs.",
+    "Students will apply various language forms to self-advocate in the classroom and in LMS settings."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ALH A011N",
-    "why": "not in the text as a program requirement; named only as an advisory for ELL A061N"
-   },
-   {
-    "code": "ELL A061N",
-    "why": "only its course description appears (18 hours); the text prints no requirements section for this program"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ALH A011N",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELL A061N",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text is an excerpt of course descriptions (ELL A057N–A064N) and does not include the Allied Health Program Readiness, Certificate of Competency requirements section, so no blocks, total hours, outcomes or careers could be recorded.",
-   "ELL A061N is listed at 18 Hours (18 lecture hours), and its 'Catalog Program Pages Referencing' list names Allied Health Program Readiness, Certificate of Competency, which suggests it is part of the program. The required structure is not shown.",
-   "ALH A011N appears only as an advisory for ELL A061N. A reviewer should check the program page itself for the requirement list and total hours."
+   "Noncredit Certificate of Competency counted in hours; Total Hours 54 as printed.",
+   "The text names no specific careers; the general statement that a certificate of competency is 'in a recognized career field' was not treated as a career."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

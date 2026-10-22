@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7400,
+  "input_tokens": 8100,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7400,
-    "output_tokens": 2255,
+    "input_tokens": 8100,
+    "output_tokens": 2104,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,30 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 2255,
+  "output_tokens": 2104,
   "output_tokens_details": {
-   "thinking_tokens": 950
+   "thinking_tokens": 733
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0747,
- "ms": 19515,
- "seconds": 19.9,
+ "cost_usd": 0.07448,
+ "ms": 17603,
+ "seconds": 18.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 14,
    "listed": 15,
-   "share": 0.6,
+   "share": 0.933,
    "missing": [
-    "ACCTA102",
-    "BUSA110",
-    "BUSA138",
-    "BUSA240",
-    "MKTGA110",
     "MKTGA220"
    ],
    "unexplained": [],
@@ -61,27 +57,53 @@
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "ACCTA102H",
+    "BUSA110H"
+   ],
+   "flagged": [
+    "ACCTA102H",
+    "BUSA110H"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     24.0,
     25.0
    ],
    "stated": [
-    60.0,
-    60.0
+    24.0,
+    25.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the OCC AS GE pattern, but no units for it"
-   ]
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     59.0,
+     61.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     18.0,
+     18.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.0,
+     1.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -105,20 +127,20 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Retail, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 17,
+    "max": 18
    },
    "ge_pattern": "OCC AS GE",
    "degree_total": {
@@ -126,8 +148,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -136,11 +158,12 @@
     "Analyze the ethical dimensions of effective retail managers in everyday conduct and decision making.",
     "Demonstrate effective written and/or oral skills."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
-    "name": "Plan of Study Grid (major courses)",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -150,7 +173,20 @@
     },
     "courses": [
      {
-      "code": "LEAD A200",
+      "code": "ACCT A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT A101",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A139",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -164,7 +200,7 @@
       "catalog_addition": false
      },
      {
-      "code": "BUS A139",
+      "code": "LEAD A200",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -178,14 +214,14 @@
       "catalog_addition": false
      },
      {
-      "code": "MKTG A100",
+      "code": "MGMT A115",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MGMT A115",
+      "code": "MKTG A100",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -197,18 +233,64 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Retail Suggested Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT A102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT A102H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
      },
      {
-      "code": "ACCT A100",
+      "code": "BUS A110",
       "units": 3,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ACCT A101",
-        "units": 4,
-        "catalog_addition": false
+        "code": "BUS A110H",
+        "units": 3,
+        "catalog_addition": true
        }
       ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKTG A110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
       "catalog_addition": false
      }
     ]
@@ -217,38 +299,26 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ACCT A102",
-    "why": "not in the text; requirements tab not captured"
-   },
-   {
-    "code": "BUS A110",
-    "why": "not in the text; requirements tab not captured"
-   },
-   {
-    "code": "BUS A138",
-    "why": "not in the text; requirements tab not captured"
-   },
-   {
-    "code": "BUS A240",
-    "why": "not in the text; requirements tab not captured"
-   },
-   {
-    "code": "MKTG A110",
-    "why": "not in the text; requirements tab not captured"
-   },
-   {
     "code": "MKTG A220",
-    "why": "not in the text; requirements tab not captured"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The REQUIREMENTS tab content is not in the captured text; the overview says only 'Complete the Retail Certificate of Achievement and the Associate in Science graduation requirements.' The single block is built from the Plan of Study Grid (a suggested two-year sequence), not from a printed requirements list; the actual certificate requirements may include choice lists (likely involving ACCT A102, BUS A110, BUS A138, BUS A240, MKTG A110, MKTG A220). Reviewer should check against the certificate's requirements.",
-   "ACCT A100 or ACCT A101 printed with a combined '3-4' units; recorded ACCT A100 at 3 and ACCT A101 at 4 per the course titles' closed-list units.",
-   "BUS A139 carries footnote 1 'OCC AS GE AREA 1B', indicating it also satisfies local GE Area 1B.",
-   "degree_total 60 is the 'Total Units 60' printed at the bottom of the Plan of Study Grid; footnote 2 says electives 'VARIES TO REACH MINIMUM 60 DEGREE APPLICABLE UNITS', but the grid prints elective units (3, 6, 9-5), so electives_fill_degree left false and no open elective units recorded.",
-   "No major/certificate total is printed in the captured text; total_units null.",
-   "Program Learning Outcomes are printed for this A.S. degree section."
+   "The row 'ACCT A100 or ACCT A101' prints 3-4 units for the pair; recorded ACCT A100 at 3 units with ACCT A101 (4 units, per the state file) as its alternative rather than as a variable-unit range.",
+   "GE line reads 'General Education Breadth for AS Degree: 21 Units' with 18.0 in the units column; footnote says 3 units double-counted are subtracted from GE units. Recorded ge_units as the printed 18.",
+   "Footnote: Cal-GETC pattern (up to 34 units) may be substituted for OCC AS GE.",
+   "Transferable electives printed as '18.0 - 17.0' units toward the 60-unit degree; recorded as degree_elective_units 17-18.",
+   "Page states the degree is completed by completing the Retail Certificate of Achievement plus AS graduation requirements; the major list is printed directly on this page.",
+   "Suggested electives ACCT A102/A102H and BUS A110/A110H list honors twins (ACCT A102H, BUS A110H) not in the closed list; recorded as catalog additions."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292",
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  }
+ ]
 }
