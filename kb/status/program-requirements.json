@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-22T14:26:52Z",
-  "session": 447,
-  "moniker": "SkyBrittlebush",
+  "written_at": "2026-10-22T19:38:10Z",
+  "session": 448,
+  "moniker": "SkyDeergrass",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_448_handoff.md",
+  "handoff": "docs/session_449_handoff.md",
   "next_step": {
-    "title": "Confirm build be2635ed5b73 on main, then Berkeley City's Multimedia Arts codes",
-    "text": "Confirm display build be2635ed5b73 applied on main (Mt. San Jacinto and Santa Barbara City reread); then read one Berkeley City credit page's Requirements node and compare its course codes with the state's file."
+    "title": "Berkeley City's Multimedia Arts codes, then Mt. San Jacinto's remaining pages",
+    "text": "Read one Berkeley City credit page's Requirements node and compare its course codes with the state's file; then give Mt. San Jacinto's Public Health Science and Chemistry transfer degrees their own pages."
   },
   "calls": [
     {
@@ -42,12 +42,16 @@
   },
   "changes": [
     {
-      "at": "2026-10-22T12:33:00Z",
-      "text": "An Administration of Justice address is a program page again, and a code printed as ANTH-102 names a course."
+      "at": "2026-10-22T16:16:00Z",
+      "text": "CPL Pathways reads its record list six pages at a time after the first, about 3 seconds instead of 10, and its Pathway list can be cleared."
     },
     {
-      "at": "2026-10-22T14:24:00Z",
-      "text": "Mt. San Jacinto 115 programs found and Santa Barbara City 254, 24 new records loaded and 93 reread."
+      "at": "2026-10-22T18:30:00Z",
+      "text": "CPL Pathways gained a search box after the college, an alphabetical Pathway list, and a My College section for the chosen college."
+    },
+    {
+      "at": "2026-10-22T19:35:00Z",
+      "text": "My College left the side menu; a college picked after a search redraws the matches for that college."
     }
   ],
   "headline": [
@@ -166,7 +170,7 @@
         ]
       },
       "roep": [
-        19156,
+        19180,
         20282
       ],
       "coci": [
