@@ -2,34 +2,65 @@
  "college": "Citrus College",
  "programs": 193,
  "with_closed_list": 185,
- "found": 148,
- "extracted": 148,
+ "found": 175,
+ "extracted": 175,
  "errors": 0,
- "passed_machine_checks": 122,
+ "passed_machine_checks": 145,
  "failed": {
-  "coverage": 5,
+  "coverage": 7,
   "invented": 0,
-  "arithmetic": 25,
+  "arithmetic": 29,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 9.33,
- "cost_per_program": 0.063,
+ "cost_usd": 11.56,
+ "cost_per_program": 0.0661,
  "not_found": [
   {
    "control_number": "02356",
    "title": "Criminal Justice",
    "award": "A.S. Degree",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "20037",
-   "title": "Criminal Justice",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-justice-studies-adt/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5728,
+     "content": 26866,
+     "tabs": 5577
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      353
+     ],
+     [
+      "Requirements",
+      2910
+     ],
+     [
+      "Curriculum Map",
+      2623
+     ],
+     [
+      "Career Information",
+      600
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
    }
   },
   {
@@ -37,7 +68,7 @@
    "title": "Administration of Justice",
    "award": "A.S. T Degree",
    "near_miss": {
-    "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-administration-certificate-achievement/",
+    "url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
     "label": {
      "award": 0,
      "title": 0.5
@@ -51,65 +82,22 @@
     "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
     "error": null,
     "chars": {
-     "body": 5210,
-     "content": 21788,
-     "tabs": 354
+     "body": 5410,
+     "content": 24275,
+     "tabs": 3898
     },
     "tab_panels": [
      [
       "Learning Outcomes",
-      1153
+      384
      ],
      [
       "Requirements",
-      334
-     ],
-     [
-      "Career Information",
-      162
-     ],
-     [
-      "Close this window",
-      147
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "33599",
-   "title": "Correctional Science",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/physical-science-as/",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 9,
-    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4853,
-     "content": 23912,
-     "tabs": 3543
-    },
-    "tab_panels": [
-     [
-      "Learning Outcomes",
-      422
-     ],
-     [
-      "Requirements",
-      1523
+      1723
      ],
      [
       "Curriculum Map",
-      1976
+      2131
      ],
      [
       "Career Information",
@@ -209,5 +197,5 @@
    }
   }
  ],
- "run": "38675245799"
+ "run": "39726639865"
 }

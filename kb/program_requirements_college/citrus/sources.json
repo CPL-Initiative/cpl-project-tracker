@@ -22,7 +22,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -72,7 +75,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in business",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -137,7 +143,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in kinesiology",
+    "section_fit": 1.0
    }
   },
   "listed": 43,
@@ -168,7 +177,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in medium and heavy-duty diesel truck technology",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -200,7 +212,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in automotive technology",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -228,7 +243,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in design and engineering drawing technology",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -301,7 +319,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in visual arts",
+    "section_fit": 1.0
    }
   },
   "listed": 54,
@@ -333,7 +354,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in photography",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -375,7 +399,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in vocational nursing",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -409,7 +436,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in dental assisting",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -438,7 +468,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in public works administration",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -494,7 +527,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in cosmetology",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -535,7 +571,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -567,7 +606,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -600,7 +642,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "the ceramics – one year certificate of achievement provides the student with skills to work as a studio potter or in a retail ceramic shop.",
+    "section_fit": 0.231
    }
   },
   "listed": 11,
@@ -632,7 +677,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "the ceramics – two year certificate of achievement provides the student with skills to work as a studio potter or in a retail ceramic shop.",
+    "section_fit": 0.231
    }
   },
   "listed": 17,
@@ -671,7 +719,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -706,7 +757,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -742,7 +796,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -784,7 +841,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -814,7 +874,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -848,7 +911,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in water technology",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -860,29 +926,39 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.533,
+  "coverage": 1.0,
   "codes_found": [
    "CHLD110",
    "CHLD112",
    "CHLD114",
+   "CHLD120",
    "CHLD150",
    "CHLD154",
    "CHLD156",
    "CHLD156L",
+   "CHLD160",
+   "CHLD164",
+   "CHLD166",
+   "CHLD168",
+   "CHLD169",
+   "CHLD194",
    "PSY206"
   ],
   "source": {
-   "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-as/",
-   "title": "A.S. in Child Development | Citrus College Academic Catalog",
-   "h1": "A.S. in Child Development",
+   "url": "https://catalog.citruscollege.edu/disciplines/child-development/",
+   "title": "Child Development | Citrus College Academic Catalog",
+   "h1": "Child Development",
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.143
+    "title": 0.143,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
-  "text_chars": 5653
+  "text_chars": 16839
  },
  {
   "control_number": "11242",
@@ -913,7 +989,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -925,26 +1004,31 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.556,
+  "coverage": 0.778,
   "codes_found": [
-   "ITIS130",
+   "PUB155",
+   "PUB159",
    "PUB160",
+   "PUB161",
    "PUB164",
    "PUB165",
    "PUB166"
   ],
   "source": {
-   "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-supervision-management-skill-award/",
-   "title": "Skill Award in Public Works Supervision and Management | Citrus College Academic Catalog",
-   "h1": "Skill Award in Public Works Supervision and Management",
-   "text_from": "innerText",
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/",
+   "title": "Public Works | Citrus College Academic Catalog",
+   "h1": "Public Works",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
-  "text_chars": 4150
+  "text_chars": 8325
  },
  {
   "control_number": "11247",
@@ -967,7 +1051,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -1015,7 +1102,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 26,
@@ -1059,7 +1149,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1091,7 +1184,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1118,7 +1214,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -1147,7 +1246,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -1193,7 +1295,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 24,
@@ -1227,7 +1332,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -1261,7 +1369,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in registered nursing",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1296,7 +1407,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -1408,7 +1522,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in liberal arts - humanities",
+    "section_fit": 1.0
    }
   },
   "listed": 91,
@@ -1446,7 +1563,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -1479,7 +1599,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -1511,7 +1634,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1553,7 +1679,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -1587,7 +1716,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -1615,7 +1747,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -1626,7 +1761,7 @@
   "title": "Criminal Justice",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1658,7 +1793,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -1709,7 +1847,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in english literature",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -1740,7 +1881,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -1772,7 +1916,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1938,7 +2085,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in music",
+    "section_fit": 1.0
    }
   },
   "listed": 142,
@@ -1983,7 +2133,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in biological sciences",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -2037,7 +2190,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in theatre arts",
+    "section_fit": 1.0
    }
   },
   "listed": 32,
@@ -2079,7 +2235,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in theatre arts - acting emphasis",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -2114,7 +2273,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in dance",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2125,24 +2287,82 @@
   "title": "Sociology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ANTH210",
+   "ANTH210H",
+   "ANTH212",
+   "ANTH216",
+   "ANTH216H",
+   "PHIL110",
+   "PSY203",
+   "PSY220",
+   "PSYCC1000",
+   "SOC114",
+   "SOC118",
+   "SOC201",
+   "SOC201H",
+   "SOC202"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/sociology/sociology-adt/",
+   "title": "ADT in Sociology | Citrus College Academic Catalog",
+   "h1": "ADT in Sociology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 6689
  },
  {
   "control_number": "30877",
   "title": "Psychology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "ANTH210",
+   "ANTH210H",
+   "ANTH212",
+   "MATH190",
+   "PSY102",
+   "PSY103",
+   "PSY203",
+   "PSY205",
+   "PSY206",
+   "PSY212",
+   "PSY220",
+   "PSY225",
+   "PSY226",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC201",
+   "SOC201H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/psychology/psychology-adt/",
+   "title": "ADT in Psychology | Citrus College Academic Catalog",
+   "h1": "ADT in Psychology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 6499
  },
  {
   "control_number": "30937",
@@ -2161,12 +2381,31 @@
   "title": "Mathematics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH190",
+   "MATH191",
+   "MATH210",
+   "MATH211",
+   "MATH212",
+   "PHYS201"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-adt/",
+   "title": "ADT in Mathematics | Citrus College Academic Catalog",
+   "h1": "ADT in Mathematics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 4146
  },
  {
   "control_number": "31179",
@@ -2174,26 +2413,33 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.556,
+  "coverage": 1.0,
   "codes_found": [
    "CHLD112",
    "CHLD114",
    "CHLD116",
    "CHLD144",
+   "CHLD150",
+   "CHLD154",
+   "CHLD156",
+   "CHLD156L",
    "PSY206"
   ],
   "source": {
-   "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-associate-teacher-skill-award/",
-   "title": "Skill Award in Child Development Associate Teacher | Citrus College Academic Catalog",
-   "h1": "Skill Award in Child Development Associate Teacher",
-   "text_from": "innerText",
+   "url": "https://catalog.citruscollege.edu/disciplines/child-development/early-childhood-education-adt/",
+   "title": "ADT in Early Childhood Education | Citrus College Academic Catalog",
+   "h1": "ADT in Early Childhood Education",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
-  "text_chars": 4409
+  "text_chars": 6158
  },
  {
   "control_number": "31205",
@@ -2223,7 +2469,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in recording technology",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2235,9 +2484,8 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.969,
   "codes_found": [
-   "COMM101",
    "ENGL202",
    "ENGL204",
    "ENGL210",
@@ -2271,77 +2519,234 @@
    "ENGLC1003H"
   ],
   "source": {
-   "url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-   "title": "General Education Requirements: Option I | Citrus College Academic Catalog",
-   "h1": "General Education Requirements: Option I",
-   "text_from": "innerText",
+   "url": "https://catalog.citruscollege.edu/disciplines/english/",
+   "title": "English | Citrus College Academic Catalog",
+   "h1": "English",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 32,
-  "text_chars": 13517
+  "text_chars": 16418
  },
  {
   "control_number": "31431",
   "title": "Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH191",
+   "MATH210",
+   "PHYS201",
+   "PHYS202",
+   "PHYS203"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/physics/",
+   "title": "Physics | Citrus College Academic Catalog",
+   "h1": "Physics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 8079
  },
  {
   "control_number": "31539",
   "title": "Theatre Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "THEA101",
+   "THEA120",
+   "THEA122",
+   "THEA125",
+   "THEA200",
+   "THEA201",
+   "THEA202",
+   "THEA210"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-adt/",
+   "title": "ADT in Theatre Arts | Citrus College Academic Catalog",
+   "h1": "ADT in Theatre Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 5261
  },
  {
   "control_number": "31572",
   "title": "History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.971,
+  "codes_found": [
+   "ANTH210",
+   "ANTH210H",
+   "ANTH216",
+   "ANTH216H",
+   "GER202",
+   "HIST103",
+   "HIST103H",
+   "HIST104",
+   "HIST109",
+   "HIST111",
+   "HIST112",
+   "HIST130",
+   "HIST131",
+   "HIST132",
+   "HIST139",
+   "HIST140",
+   "HIST145",
+   "HIST155",
+   "HIST222",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTC1002H",
+   "HUM101",
+   "HUM101H",
+   "HUM102",
+   "HUM120",
+   "HUM127",
+   "POLI116",
+   "POLSC1000",
+   "POLSC1000H",
+   "SOC118",
+   "SPAN201",
+   "SPAN202"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/history/history-adt/",
+   "title": "ADT in History | Citrus College Academic Catalog",
+   "h1": "ADT in History",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 34,
-  "text_chars": 0
+  "text_chars": 8221
  },
  {
   "control_number": "31840",
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL200",
+   "BIOL201",
+   "CHEM104",
+   "CHEM111",
+   "DANC161",
+   "DANC261",
+   "KIN100",
+   "KIN101",
+   "KIN103",
+   "KIN104",
+   "KIN105",
+   "KIN108",
+   "KIN109",
+   "KIN116",
+   "KIN120",
+   "KIN122",
+   "KIN130",
+   "KIN133",
+   "KIN134",
+   "KIN135",
+   "KIN142",
+   "KIN143",
+   "KIN145",
+   "KIN146",
+   "KIN147",
+   "KIN151",
+   "KIN152",
+   "KIN153",
+   "KIN159",
+   "PHYS111",
+   "PHYS201",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/kinesiology-adt/",
+   "title": "ADT in Kinesiology | Citrus College Academic Catalog",
+   "h1": "ADT in Kinesiology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 32,
-  "text_chars": 0
+  "text_chars": 7056
  },
  {
   "control_number": "32305",
   "title": "Journalism",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM100",
+   "COMM101",
+   "COMM104",
+   "COMM150",
+   "COMM200",
+   "COMM230",
+   "COMM240A",
+   "COMM240B",
+   "COMM250",
+   "PHTO101",
+   "PHTO202"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/journalism-adt/",
+   "title": "ADT in Journalism | Citrus College Academic Catalog",
+   "h1": "ADT in Journalism",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 5677
  },
  {
   "control_number": "32404",
@@ -2361,7 +2766,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -2385,7 +2793,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -2410,7 +2821,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -2459,7 +2873,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in pre-engineering",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2470,12 +2887,47 @@
   "title": "Spanish",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT101H",
+   "ANTH210",
+   "ANTH210H",
+   "COMMC1004",
+   "ENGL271",
+   "ENGL272",
+   "ETHN116",
+   "HIST130",
+   "HIST131",
+   "HIST145",
+   "HUM127",
+   "SOC118",
+   "SOC201",
+   "SOC201H",
+   "SPAN101",
+   "SPAN102",
+   "SPAN127",
+   "SPAN201",
+   "SPAN202",
+   "SPAN210",
+   "SPAN211"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/foreign-languages/spanish-adt/",
+   "title": "ADT in Spanish | Citrus College Academic Catalog",
+   "h1": "ADT in Spanish",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 6436
  },
  {
   "control_number": "33327",
@@ -2510,7 +2962,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2521,7 +2976,7 @@
   "title": "Correctional Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2560,7 +3015,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in pre-allied health",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2571,24 +3029,94 @@
   "title": "Art History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH250",
+   "ARCH251",
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART104",
+   "ART106",
+   "ART106H",
+   "ART108",
+   "ART109",
+   "ART111",
+   "ART115",
+   "ART116",
+   "ART120",
+   "ART121",
+   "ART130",
+   "ART140",
+   "ART141",
+   "ART150",
+   "ART180",
+   "ART181",
+   "ART199",
+   "ART200",
+   "ART201",
+   "ART206",
+   "ART207",
+   "ART230",
+   "ARTHC1100",
+   "ARTHC1100H",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "PHTO101",
+   "PHTO102"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/art-history-adt/",
+   "title": "ADT in Art History | Citrus College Academic Catalog",
+   "h1": "ADT in Art History",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 33,
-  "text_chars": 0
+  "text_chars": 7658
  },
  {
   "control_number": "33609",
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART111",
+   "ART112",
+   "ART116",
+   "ART121",
+   "ART130",
+   "ART140",
+   "ART141",
+   "ARTHC1100",
+   "ARTHC1200",
+   "PHTO101",
+   "PHTO102"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/studio-arts-adt/",
+   "title": "ADT in Studio Arts | Citrus College Academic Catalog",
+   "h1": "ADT in Studio Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 6557
  },
  {
   "control_number": "33688",
@@ -2619,7 +3147,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in physical science",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2648,11 +3179,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "students completing the automotive general service and repair certificate of achievement will:",
+    "section_fit": 0.571
    }
   },
   "listed": 7,
-  "text_chars": 4081
+  "text_chars": 3710
  },
  {
   "control_number": "33960",
@@ -2681,7 +3215,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in biotechnology",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2692,12 +3229,34 @@
   "title": "Biology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL124",
+   "BIOL125",
+   "CHEM111",
+   "CHEM112",
+   "MATH190",
+   "PHYS111",
+   "PHYS112",
+   "PHYS201",
+   "PHYS202"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/biology/biology-adt/",
+   "title": "ADT in Biology | Citrus College Academic Catalog",
+   "h1": "ADT in Biology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 6728
  },
  {
   "control_number": "35368",
@@ -2719,7 +3278,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2793,7 +3355,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in social sciences",
+    "section_fit": 1.0
    }
   },
   "listed": 55,
@@ -2825,7 +3390,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -2855,7 +3423,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2892,7 +3463,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -2927,7 +3501,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in architecture",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2963,7 +3540,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -2996,7 +3576,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in water efficiency management",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3024,7 +3607,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -3063,7 +3649,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in esthetician",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -3095,7 +3684,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -3129,7 +3721,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in peace studies",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3140,48 +3735,153 @@
   "title": "Philosophy",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "ENGLC1001",
+   "HIST103",
+   "HIST103H",
+   "HIST104",
+   "PHIL101",
+   "PHIL106",
+   "PHIL106H",
+   "PHIL108",
+   "PHIL110",
+   "PHIL130",
+   "PHIL131",
+   "PHIL140",
+   "PHIL210"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/philosophy/philosophy-adt/",
+   "title": "ADT in Philosophy | Citrus College Academic Catalog",
+   "h1": "ADT in Philosophy",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 6476
  },
  {
   "control_number": "37131",
   "title": "Economics",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.7,
+  "codes_found": [
+   "ACCT101",
+   "ACCT101H",
+   "ACCT102",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH191",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/economics/economics-adt/",
+   "title": "ADT in Economics | Citrus College Academic Catalog",
+   "h1": "ADT in Economics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 6406
  },
  {
   "control_number": "37315",
   "title": "Global Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH210",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL271",
+   "ENGL272",
+   "GEOG102",
+   "GEOG103",
+   "GEOG104",
+   "GEOG105",
+   "GEOG118",
+   "POLI116"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/geography/global-studies-adt/",
+   "title": "ADT in Global Studies | Citrus College Academic Catalog",
+   "h1": "ADT in Global Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 6195
  },
  {
   "control_number": "37384",
   "title": "Anthropology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH210",
+   "ANTH210H",
+   "ANTH212",
+   "ANTH216",
+   "ANTH216H",
+   "ANTH220",
+   "ANTH222",
+   "ANTH224",
+   "ETHN101",
+   "ETHN116",
+   "GEOG102",
+   "HIST111",
+   "HIST112",
+   "HIST145",
+   "PHIL101",
+   "PSY103",
+   "PSY203",
+   "SOC118",
+   "SOC201",
+   "SOC201H",
+   "SPCH150",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/anthropology/anthropology-adt/",
+   "title": "ADT in Anthropology | Citrus College Academic Catalog",
+   "h1": "ADT in Anthropology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 6826
  },
  {
   "control_number": "37501",
@@ -3208,7 +3908,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in construction management",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3246,7 +3949,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in real estate",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -3257,12 +3963,35 @@
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH210",
+   "BIOL200",
+   "BIOL201",
+   "BIOL220",
+   "CHEM111",
+   "CHEM112",
+   "KIN173",
+   "PSYCC1000",
+   "SOC201",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/nutrition-dietetics-adt/",
+   "title": "ADT in Nutrition and Dietetics | Citrus College Academic Catalog",
+   "h1": "ADT in Nutrition and Dietetics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 6234
  },
  {
   "control_number": "37571",
@@ -3287,7 +4016,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -3316,7 +4048,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -3327,12 +4062,33 @@
   "title": "Computer Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL124",
+   "BIOL125",
+   "CS225",
+   "CS232",
+   "CS242",
+   "CS252",
+   "MATH191",
+   "PHYS201"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/computer-science/computer-science-adt/",
+   "title": "ADT in Computer Science | Citrus College Academic Catalog",
+   "h1": "ADT in Computer Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 5346
  },
  {
   "control_number": "37635",
@@ -3354,7 +4110,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -3390,7 +4149,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -3414,7 +4176,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -3438,7 +4203,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -3462,7 +4230,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -3506,7 +4277,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in wildland resources and forestry",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -3532,7 +4306,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -3560,7 +4337,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -3585,7 +4365,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -3596,24 +4379,71 @@
   "title": "Environmental Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL124",
+   "BIOL125",
+   "BIOL145",
+   "CHEM111",
+   "ECONC2001",
+   "ESCI120",
+   "MATH180",
+   "MATH190",
+   "PHYS111",
+   "PHYS112",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/biology/environmental-science-adt/",
+   "title": "ADT in Environmental Science | Citrus College Academic Catalog",
+   "h1": "ADT in Environmental Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 6311
  },
  {
   "control_number": "40210",
   "title": "Music",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSE101",
+   "MUSE102",
+   "MUSE103",
+   "MUSE104",
+   "MUSE109",
+   "MUSE201",
+   "MUSE202",
+   "MUSP215",
+   "MUSP295"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/music/music-adt/",
+   "title": "ADT in Music | Citrus College Academic Catalog",
+   "h1": "ADT in Music",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 5650
  },
  {
   "control_number": "40284",
@@ -3635,7 +4465,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -3659,7 +4492,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -3741,7 +4577,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in film studies",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -3767,7 +4606,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -3792,7 +4634,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -3818,7 +4663,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -3846,7 +4694,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -3857,12 +4708,31 @@
   "title": "Geology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM111",
+   "CHEM112",
+   "ESCI120",
+   "ESCI121",
+   "MATH190",
+   "MATH191"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/earth-science/geology-adt/",
+   "title": "ADT in Geology | Citrus College Academic Catalog",
+   "h1": "ADT in Geology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 6260
  },
  {
   "control_number": "40975",
@@ -3893,7 +4763,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -3921,7 +4794,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -3946,7 +4822,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -3972,7 +4851,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -3997,7 +4879,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -4022,7 +4907,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -4033,12 +4921,35 @@
   "title": "Geography",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH210",
+   "ANTH210H",
+   "ESCI120",
+   "GEOG102",
+   "GEOG103",
+   "GEOG104",
+   "GEOG105",
+   "GEOG118",
+   "GEOG130",
+   "GEOG140"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/geography/geography-adt/",
+   "title": "ADT in Geography | Citrus College Academic Catalog",
+   "h1": "ADT in Geography",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 6048
  },
  {
   "control_number": "41616",
@@ -4058,7 +4969,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -4069,12 +4983,37 @@
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ACCT101",
+   "ACCT101H",
+   "ACCT102",
+   "ACCT102H",
+   "BUS152",
+   "BUS160",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH180",
+   "MATH190",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
+   "title": "ADT in Business Administration 2.0 | Citrus College Academic Catalog",
+   "h1": "ADT in Business Administration 2.0",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 6129
  },
  {
   "control_number": "41841",
@@ -4102,7 +5041,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -4166,7 +5108,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 43,
@@ -4264,7 +5209,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 77,
@@ -4291,7 +5239,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -4315,7 +5266,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -4340,7 +5294,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -4365,7 +5322,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -4390,7 +5350,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -4416,7 +5379,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -4442,7 +5408,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -4467,7 +5436,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -4515,7 +5487,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in business - accounting emphasis",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -4560,7 +5535,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in accounting",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -4592,7 +5570,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -4618,7 +5599,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -4649,7 +5633,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -4680,7 +5667,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -4706,7 +5696,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -4731,7 +5724,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -4758,7 +5754,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -4793,7 +5792,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in public relations",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -4830,7 +5832,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -4857,7 +5862,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -4868,24 +5876,96 @@
   "title": "Film, Television and Electronic Media",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART110",
+   "ART153",
+   "ART199",
+   "ART200",
+   "ART201",
+   "COMM100",
+   "COMM136",
+   "COMM202",
+   "ENGL291",
+   "ENGL291H",
+   "PHTO204",
+   "PHTO207",
+   "REC107",
+   "THEA155",
+   "THEA204A"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/film-television-electronic-media-adt/",
+   "title": "ADT in Film, Television and Electronic Media | Citrus College Academic Catalog",
+   "h1": "ADT in Film, Television and Electronic Media",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 4029
  },
  {
   "control_number": "42837",
   "title": "Law, Public Policy, and Society",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.939,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ103",
+   "AJ108",
+   "AJ109",
+   "AJ112",
+   "AJ131",
+   "ANTH210",
+   "BUS160",
+   "COMM104",
+   "COMMC1000",
+   "COUN160",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOG103",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTC1002H",
+   "PHIL108",
+   "POLI108",
+   "POLI116",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSY103",
+   "SOC118",
+   "SOC220",
+   "SPCH103",
+   "SPCH150",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+   "title": "ADT in Law, Public Policy, and Society | Citrus College Academic Catalog",
+   "h1": "ADT in Law, Public Policy, and Society",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 33,
-  "text_chars": 0
+  "text_chars": 9070
  },
  {
   "control_number": "42975",
@@ -4906,7 +5986,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -4931,7 +6014,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -4955,7 +6041,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -4984,7 +6073,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -5022,7 +6114,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -5061,7 +6156,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -5088,7 +6186,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in barbering",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5099,24 +6200,290 @@
   "title": "Cal-GETC",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.979,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "ANTH210",
+   "ANTH210H",
+   "ANTH212",
+   "ANTH212L",
+   "ANTH216",
+   "ANTH216H",
+   "ANTH220",
+   "ANTH222",
+   "ANTH224",
+   "ARCH250",
+   "ARCH251",
+   "ART100",
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART104",
+   "ART105",
+   "ART106",
+   "ART106H",
+   "ART108",
+   "ART109",
+   "ART110",
+   "ART199",
+   "ART199H",
+   "ART200",
+   "ART201",
+   "ART206",
+   "ART206H",
+   "ART207",
+   "ART207H",
+   "ARTHC1100",
+   "ARTHC1100H",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "ASL102",
+   "ASTR115",
+   "ASTR115H",
+   "ASTR116",
+   "ASTR117",
+   "BIOL102",
+   "BIOL108",
+   "BIOL110",
+   "BIOL117",
+   "BIOL124",
+   "BIOL125",
+   "BIOL145",
+   "BIOL200",
+   "BIOL201",
+   "BIOL220",
+   "BIOT108",
+   "BUS132",
+   "CHEM103",
+   "CHEM104",
+   "CHEM110",
+   "CHEM111",
+   "CHEM112",
+   "CHEM210",
+   "CHEM220",
+   "CHIN102",
+   "CHIN201",
+   "COMM100",
+   "COMM111",
+   "COMM136",
+   "COMM150",
+   "COMMC1000",
+   "COMMC1000H",
+   "COUN130",
+   "COUN212",
+   "DANC102",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL204",
+   "ENGL213",
+   "ENGL213H",
+   "ENGL216",
+   "ENGL224",
+   "ENGL224H",
+   "ENGL233",
+   "ENGL243",
+   "ENGL251",
+   "ENGL252",
+   "ENGL261",
+   "ENGL262",
+   "ENGL271",
+   "ENGL272",
+   "ENGL280",
+   "ENGL290",
+   "ENGL291",
+   "ENGL291H",
+   "ENGL293",
+   "ENGL293H",
+   "ENGL294",
+   "ENGL294H",
+   "ENGL295",
+   "ENGL298",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1000H",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "ESCI110",
+   "ESCI119",
+   "ESCI120",
+   "ESCI121",
+   "ESCI122",
+   "ESCI124",
+   "ESCI130",
+   "ETHN101",
+   "ETHN116",
+   "FOR102",
+   "FREN102",
+   "GEOG102",
+   "GEOG103",
+   "GEOG104",
+   "GEOG105",
+   "GEOG118",
+   "GEOG130",
+   "GER102",
+   "GER201",
+   "GER202",
+   "HIST102",
+   "HIST103",
+   "HIST103H",
+   "HIST104",
+   "HIST104H",
+   "HIST109",
+   "HIST111",
+   "HIST112",
+   "HIST130",
+   "HIST131",
+   "HIST132",
+   "HIST139",
+   "HIST140",
+   "HIST145",
+   "HIST155",
+   "HIST160",
+   "HIST222",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTC1002H",
+   "HUM101",
+   "HUM101H",
+   "HUM102",
+   "HUM102H",
+   "HUM110",
+   "HUM111",
+   "HUM115",
+   "HUM120",
+   "HUM123",
+   "HUM125",
+   "HUM127",
+   "HUM129",
+   "HUM162",
+   "HUM169",
+   "ITAL102",
+   "JPN102",
+   "KIN166",
+   "KIN167",
+   "KIN178",
+   "KIN179",
+   "MATH160",
+   "MATH170",
+   "MATH175",
+   "MATH180",
+   "MATH189",
+   "MATH190",
+   "MATH191",
+   "MATH210",
+   "MATH211",
+   "MATH212",
+   "MUSE109",
+   "MUSE112",
+   "MUSE113",
+   "MUSE114",
+   "PHIL101",
+   "PHIL106",
+   "PHIL106H",
+   "PHIL108",
+   "PHIL130",
+   "PHIL131",
+   "PHIL140",
+   "PHTO108",
+   "PHYS110",
+   "PHYS110H",
+   "PHYS111",
+   "PHYS112",
+   "PHYS201",
+   "PHYS201H",
+   "PHYS202",
+   "PHYS203",
+   "POLI105",
+   "POLI108",
+   "POLI116",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSY102",
+   "PSY103",
+   "PSY205",
+   "PSY206",
+   "PSY212",
+   "PSY220",
+   "PSY225",
+   "PSY226",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC114",
+   "SOC118",
+   "SOC130",
+   "SOC201",
+   "SOC201H",
+   "SOC202",
+   "SOC220",
+   "SPAN102",
+   "SPAN127",
+   "SPAN130",
+   "SPAN201",
+   "SPAN202",
+   "SPAN210",
+   "SPAN211",
+   "SPCH106",
+   "SPCH150",
+   "STATC1000",
+   "STATC1000H",
+   "THEA101",
+   "THEA101H",
+   "THEA200"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
+   "title": "General Education Requirements: Option I | Citrus College Academic Catalog",
+   "h1": "General Education Requirements: Option I",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 235,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "45069",
   "title": "Communication Studies 2.0",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM100",
+   "COMM101",
+   "COMM150",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004",
+   "COMMC1004H",
+   "SPCH103",
+   "SPCH106",
+   "SPCH150"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/communication-studies-adt/",
+   "title": "ADT in Communication Studies 2.0 | Citrus College Academic Catalog",
+   "h1": "ADT in Communication Studies 2.0",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 5832
  },
  {
   "control_number": "45304",
@@ -5180,7 +6547,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in kinesiology - human performance",
+    "section_fit": 1.0
    }
   },
   "listed": 46,
@@ -5250,7 +6620,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in kinesiology - sport management",
+    "section_fit": 1.0
    }
   },
   "listed": 48,
@@ -5275,7 +6648,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5300,7 +6676,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5325,7 +6704,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5351,7 +6733,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -5375,7 +6760,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5400,7 +6788,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5424,7 +6815,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5461,7 +6855,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in drone technology",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -5486,11 +6883,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "students completing the automotive undercar service and repair certificate of achievement will:",
+    "section_fit": 0.571
    }
   },
   "listed": 3,
-  "text_chars": 3033
+  "text_chars": 2694
  },
  {
   "control_number": "45837",
@@ -5512,11 +6912,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "students completing the automotive underhood service and repair certificate of achievement will:",
+    "section_fit": 0.571
    }
   },
   "listed": 4,
-  "text_chars": 3794
+  "text_chars": 3408
  },
  {
   "control_number": "45946",
@@ -5538,7 +6941,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -5623,7 +7029,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 52,
@@ -5650,7 +7059,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -5689,7 +7101,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in mathematics",
+    "section_fit": 1.0
    }
   },
   "listed": 18,

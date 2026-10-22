@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Child Develop. Master Teacher: Early Intervention Specialty",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-as/",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/child-development/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8334,
+  "input_tokens": 11851,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8334,
-    "output_tokens": 1208,
+    "input_tokens": 11851,
+    "output_tokens": 1596,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1208,
+  "output_tokens": 1596,
   "output_tokens_details": {
-   "thinking_tokens": 392
+   "thinking_tokens": 388
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0575,
- "ms": 10931,
- "seconds": 11.2,
+ "cost_usd": 0.07932,
+ "ms": 14541,
+ "seconds": 15.3,
  "parts": null,
  "error": null,
  "score": {
@@ -93,13 +94,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -114,7 +115,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Not found: the text holds only the Child Development A.S. section",
+   "section_heading": "Child Development Master Teacher-Early Intervention",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -135,7 +136,14 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Acquire knowledge, communication, and foundational teaching skills necessary to work in the teaching profession.",
+    "Demonstrate the ability to identify, analyze, and apply theories of early childhood education and child development.",
+    "Demonstrate global consciousness to work with diverse cultures, families, and individuals and teach children.",
+    "Acquire knowledge and foundational teaching skills necessary to work in the teaching profession.",
+    "Apply effective guidance and teaching strategies that support social growth, learning, and identity development and promote self-confidence.",
+    "Design, implement and evaluate environments and activities that support positive relationships, social skills and learning out comes for children."
+   ],
    "careers": []
   },
   "blocks": [],
@@ -143,70 +151,71 @@
   "missing_explained": [
    {
     "code": "CHLD 110",
-    "why": "named only in the Child Development A.S. section"
-   },
-   {
-    "code": "PSY 206",
-    "why": "named only in the Child Development A.S. section"
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
    },
    {
     "code": "CHLD 112",
-    "why": "named only in the Child Development A.S. section"
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
    },
    {
     "code": "CHLD 114",
-    "why": "named only in the Child Development A.S. section"
-   },
-   {
-    "code": "CHLD 150",
-    "why": "named only in the Child Development A.S. section"
-   },
-   {
-    "code": "CHLD 154",
-    "why": "named only in the Child Development A.S. section"
-   },
-   {
-    "code": "CHLD 156",
-    "why": "named only in the Child Development A.S. section"
-   },
-   {
-    "code": "CHLD 156L",
-    "why": "named only in the Child Development A.S. section"
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
    },
    {
     "code": "CHLD 120",
-    "why": "not in the text"
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CHLD 150",
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CHLD 154",
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CHLD 156",
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CHLD 156L",
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
    },
    {
     "code": "CHLD 160",
-    "why": "not in the text"
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
    },
    {
     "code": "CHLD 164",
-    "why": "not in the text"
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
    },
    {
     "code": "CHLD 166",
-    "why": "not in the text"
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
    },
    {
     "code": "CHLD 168",
-    "why": "not in the text"
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
    },
    {
     "code": "CHLD 169",
-    "why": "not in the text"
+    "why": "requirements section for this certificate not in the text; appears only in course descriptions"
    },
    {
     "code": "CHLD 194",
-    "why": "not in the text"
+    "why": "not in the text (course list cut off before CHLD 194)"
+   },
+   {
+    "code": "PSY 206",
+    "why": "requirements section not in the text; named only as a prerequisite alternative in course descriptions"
    }
   ],
   "notes": [
-   "The source page (child-development-as) is the Child Development A.S. degree page. It prints no section for the Child Development Master Teacher: Early Intervention Specialty Certificate of Achievement, so no blocks, totals, outcomes or careers were recorded for this award.",
-   "The A.S. section requires CHLD 110 or PSY 206, plus CHLD 112, 114, 116, 144, 150 and 154, plus CHLD 156 and 156L, for 24 total units. It also lists A.S.-level outcomes and a career description (teacher or assistant teacher in preschools and children's centers). None of these were applied to the certificate.",
-   "Early intervention courses on the closed list (CHLD 164, 166, 168, 169, 160, 120, 194) do not appear anywhere in the text. A reviewer should locate the certificate's own catalog page."
+   "The catalog text does not include the program requirements for the Child Development Master Teacher-Early Intervention certificate; only the discipline introduction (which names the certificate), contact/footer content, a truncated course descriptions tab (cut off at CHLD 181), and a discipline-level outcomes tab are present. No blocks or totals could be recorded; the program requirements tab should be retrieved and reviewed.",
+   "section_heading uses the certificate name as printed in the discipline introduction, since no section heading for this award appears in the text.",
+   "The outcomes recorded are printed once for the discipline as a whole ('This discipline prepares students to do the following:'), not specifically for this certificate; recorded on the assumption the award shares them. Reviewer should verify.",
+   "No careers are named in the text for this program."
   ]
  },
- "extracted_run": "38675245799"
+ "extracted_run": "39726639865"
 }

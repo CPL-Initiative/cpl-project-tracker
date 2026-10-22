@@ -1,0 +1,272 @@
+{
+ "college": "Citrus College",
+ "control_number": "40957",
+ "shape": "adt",
+ "title": "Geology",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/earth-science/geology-adt/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8182,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8182,
+    "output_tokens": 2011,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2011,
+  "output_tokens_details": {
+   "thinking_tokens": 586
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07295,
+ "ms": 15942,
+ "seconds": 16.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "BIOL124",
+    "BIOL125",
+    "PHYS201",
+    "PHYS202",
+    "PHYS203"
+   ],
+   "flagged": [
+    "BIOL124",
+    "BIOL125",
+    "PHYS201",
+    "PHYS202",
+    "PHYS203"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geology A.S.-Transfer Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate scientific literacy by defining and explaining the major steps in the scientific method such as empirical data, testable hypothesis, and theory, applying general math skills such as metric unit conversion, solving rate problems, and producing and interpreting data in tables and graphs.",
+    "Identify and classify the earth materials, such as most common minerals, rocks, and major groups of fossils in the lab and the field and their basic relationship to common natural resources.",
+    "List, explain, and evaluate global and local geological hazards such as earthquakes, volcanoes, landslides, and seismic sea waves in terms of appropriate geological processes and the theory of plate tectonics.",
+    "Demonstrate an understanding of the geologic time scale and relative and numerical methods of measuring geologic time, age of the Earth, and major events in its history"
+   ],
+   "careers": [
+    "geotechnician",
+    "engineering geology",
+    "environmental geology",
+    "petroleum and mining geology",
+    "hydrogeology",
+    "seismology",
+    "paleontology",
+    "geophysics",
+    "marine geology",
+    "volcanology"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESCI 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESCI 121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 111",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 112",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 190",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 191",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Additional recommended preparation for transfer-bound students (not part of the Geology Degree)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS 201",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 202",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 203",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 124",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 125",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog text begins mid-sentence ('r geotechnician in fields such as...'); the program description and page heading are cut off. Section heading taken from the outcomes lead-in 'Students completing the Geology A.S.-Transfer Degree will'. 'geotechnician' is recorded from the truncated fragment; earlier careers may be missing.",
+   "Total Units 28 under the required courses recorded as the major total. The generic 60-unit ADT requirement is not recorded as degree_total; the curriculum map's 'Total Units 64-65' is an example pathway, not a printed degree total, so degree_total is null.",
+   "Footnote: MATH 190 is degree applicable with or without MATH 090; if taken with MATH 090, only MATH 190 units count.",
+   "The curriculum map lists CHEM 110 (Beginning General Chemistry) and gives MATH 190/191 the titles 'Calculus I/II: Late Transcendentals', differing from the requirements tab; CHEM 110 is not a requirement and was not placed in a block.",
+   "Recommended physics and biology courses are explicitly 'not part of the Geology Degree' and are not counted toward the total."
+  ]
+ },
+ "extracted_run": "39726639865"
+}

@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "English",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/english/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12679,
+  "input_tokens": 12945,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12679,
-    "output_tokens": 2065,
+    "input_tokens": 12945,
+    "output_tokens": 2408,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2065,
+  "output_tokens": 2408,
   "output_tokens_details": {
-   "thinking_tokens": 313
+   "thinking_tokens": 578
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09202,
- "ms": 16371,
- "seconds": 16.7,
+ "cost_usd": 0.09994,
+ "ms": 19591,
+ "seconds": 20.2,
  "parts": null,
  "error": null,
  "score": {
@@ -110,17 +111,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "pass": true
   },
@@ -134,7 +135,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "General Education Requirements: Option I",
+   "section_heading": "English",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -155,148 +156,160 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Become college level writers who critically analyze and synthesize source material by producing argumentative essays in response to readings.",
+    "Become informed, thoughtful writers who are respectful of diverse perspectives and demonstrate cultural awareness, personal responsibility, and ethical behavior."
+   ],
+   "careers": [
+    "Research",
+    "Sales",
+    "Screenwriting",
+    "Teaching domestically and abroad",
+    "Technical Writing",
+    "Theater",
+    "Tutoring",
+    "University or College Teacher Assisting"
+   ]
   },
   "blocks": [],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "COMM 101",
-    "why": "not in an English A.A.-T section; listed only as a GE Area A2 course"
+    "why": "not in the text; degree requirements section not in provided text"
    },
    {
     "code": "ENGL 202",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "ENGL 204",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list and course descriptions; degree requirements not in text"
    },
    {
     "code": "ENGL 210",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "ENGL 213",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list and course descriptions; degree requirements not in text"
    },
    {
     "code": "ENGL 213H",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list and course descriptions; degree requirements not in text"
    },
    {
     "code": "ENGL 216",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list and course descriptions; degree requirements not in text"
    },
    {
     "code": "ENGL 224",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list and course descriptions; degree requirements not in text"
    },
    {
     "code": "ENGL 224H",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 233",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 243",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 251",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 252",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 261",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 262",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 271",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 272",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 280",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 290",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C1/C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 291",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 291H",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 293",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 293H",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 294",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 294H",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 295",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL 298",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list; degree requirements not in text"
    },
    {
     "code": "ENGL C1002",
-    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+    "why": "only in GE for Transfer list and course descriptions; degree requirements not in text"
    },
    {
     "code": "ENGL C1003",
-    "why": "not in an English A.A.-T section; listed only as a GE Area A2 course"
+    "why": "only in GE for Transfer list and course descriptions; degree requirements not in text"
    },
    {
     "code": "ENGL C1003H",
-    "why": "not in an English A.A.-T section; listed only as a GE Area A2 course"
+    "why": "only in GE for Transfer list and course descriptions; degree requirements not in text"
    },
    {
     "code": "ENGLC1001",
-    "why": "not in an English A.A.-T section; listed only as GE Area A2 course ENGL C1001"
+    "why": "appears as ENGL C1001 only in GE for Transfer list and course descriptions; degree requirements not in text"
    },
    {
     "code": "ENGLC1001H",
-    "why": "not in an English A.A.-T section; listed only as GE Area A2 course ENGL C1001H"
+    "why": "appears as ENGL C1001H only in GE for Transfer list and course descriptions; degree requirements not in text"
    }
   ],
   "notes": [
-   "The supplied text is the Citrus College 'General Education Requirements: Option I' page, not the English A.A.-T program page. It contains no section for the English A.A.-T, so no requirement blocks, totals, outcomes or careers could be recorded.",
-   "section_heading records the heading of the page actually supplied; it is not the award's own section.",
-   "Closed-list courses appear on this page only as general education course options (Areas A2, C1, C2). GE courses are never placed in blocks.",
-   "The text is cut off partway through Area C2 (at 'PHIL 130 Histor'), and Areas D, E and F are missing.",
-   "Reviewer should fetch the English A.A.-T page under Associate Degrees for the 2026-2027 catalog."
+   "The provided text does not contain the A.A-T in English requirements section; it starts mid-way through a careers list and contains only faculty, footer, the GE for Transfer tab, a truncated Courses tab, and the outcomes tab. No blocks, totals, or GE pattern could be recorded; a reviewer should fetch the degree's requirements tab.",
+   "Careers are taken from the tail of a career list at the start of the text, apparently from the English discipline overview; the first item is cut off as 'aw,' (likely 'Law') and is not recorded. Earlier items in the list are missing from the text.",
+   "Outcomes are printed once for the English discipline as a whole ('This discipline prepares students to do the following:'); recorded on the assumption the A.A-T shares them.",
+   "The GE for Transfer tab lists Cal-GETC courses; these are general education listings, not degree requirements, and were not placed in blocks.",
+   "The Courses tab is truncated mid-description of ENGL 224."
   ]
  },
- "extracted_run": "38675245799"
+ "extracted_run": "39726639865"
 }
