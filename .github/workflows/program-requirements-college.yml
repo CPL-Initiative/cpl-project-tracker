@@ -85,6 +85,10 @@ on:
         description: "read: control numbers to extract again though their page is unchanged (comma-separated), or 'incomplete'. reread: an extraction run id to post instead of the newest"
         required: false
         default: ""
+      route:
+        description: "read: 'site' reads a Coursedog catalog from its program search instead of its PDF procedure step (S449)"
+        required: false
+        default: ""
   push:
     branches: ['claude/**']
     paths:
@@ -139,6 +143,7 @@ jobs:
       - name: Capture
         env:
           CENSUS_DELAY_MS: '4000'
+          CAPTURE_ROUTE: ${{ github.event.inputs.route || '' }}
         run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit "$LIMIT"
       - name: Extract and score
         if: env.EXTRACT == 'true'
