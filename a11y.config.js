@@ -744,6 +744,61 @@ async function seedFundingCurator(page, theme) {
   await page.waitForTimeout(200);
 }
 
+// The funding tab under the noncredit outcomes lane (Scenario 4, 2026-10-22): the
+// shared config switched to the outcomes lane with the two outcomes and the
+// reported line, a feed carrying the count measures for two institutions and one
+// standalone, the attestation read for one of them, signed in as a curator, with
+// Mt San Antonio's and NOCE's drill-ins open. What this measures that no committed
+// config paints yet: the outcome cards' section, the noncredit conditions on the
+// Minimum Conditions line and the outcome rows in the institution table.
+async function seedFundingNcOutcomes(page, theme) {
+  await seedFundingCurator(page, theme);
+  await page.evaluate(() => {
+    const T = window.CPL_FUNDING_TAB;
+    if (!T || !T._setShared) return;
+    window.CPL_FUNDING_PERF = {
+      as_of: "2026-10-22", suppress_below: 10,
+      statewide: { pe: 1, pa_u: 10, p3_u: 10, nc_exh: 12, nc_cdcp: 500, nc_course: 1 },
+      colleges: { "Mt San Antonio": { pa_u: 100, p3_u: 50, nc_exh: 5, nc_cdcp: 196, nc_course: 0 },
+        "Santa Barbara": { pa_u: 20, p3_u: 5, nc_exh: 7, nc_cdcp: 310, nc_course: 1 } },
+      feeders: {}, unmatched: {}, vet_star: {},
+      origination: { in_scope: { "NOCE": { nc_exh: 3, nc_cdcp: 120, nc_course: 0 } } }
+    };
+    const sh = T._getShared();
+    T._setShared(Object.assign({}, sh, {
+      ncLane: "outcomes",
+      pool: Object.assign({}, sh.pool, { nc_portion_pct: 15 }),
+      ncOutcomes: { "1": [
+        { key: "exh", title: "Exhibits built or adopted", share: 0.5, goals: ["A"], unit_word: "exhibits",
+          metric: "Exhibits in MAP built or adopted for the noncredit program's learning", metric_src: "nc_exh",
+          target_rule: { kind: "pct_floor_cap", of: "nc_cdcp", pct: 0.05, floor: 2, cap: 10 },
+          description: "Standing CPL opportunities for what the noncredit program teaches.",
+          strategies: ["Adopt a statewide exhibit for a course the program mirrors"] },
+        { key: "course", title: "Noncredit CPL portfolio-development course", share: 0.5, goals: ["A"], unit_word: "courses",
+          metric: "A noncredit CPL portfolio-development course chaptered in a CDCP program", metric_src: "nc_course",
+          target_rule: { kind: "fixed", n: 1 }, description: "The program's own course." }
+      ] },
+      ncReported: [{ key: "students", title: "Former noncredit students awarded CPL credit",
+        text: "Reported on the annual attestation from the college's SIS." }]
+    }));
+    T._setElig({ coordOk: true, coord: { "Mt San Antonio": true, "Santa Barbara": true },
+      optin: { "Mt San Antonio": { status: "self_attested" }, "Santa Barbara": { status: "self_attested" } },
+      ncAttest: { "Mt San Antonio": { college: "Mt San Antonio", fiscal_year: "2026-27", status: "self_attested",
+        coordinator_name: "Jane Doe", coordinator_title: "Dean" } } });
+    T.render();
+  });
+  await page.waitForTimeout(500);
+  await page.evaluate(() => {
+    ["c:Mt San Antonio", "c:NOCE"].forEach((id) => {
+      const tr = document.querySelector('#cplFundTable tbody tr[data-id="' + id + '"]');
+      const open = tr && tr.nextElementSibling && tr.nextElementSibling.classList.contains("cplfund-detail");
+      const caret = tr && tr.querySelector(".cplfund-caret");
+      if (caret && !open) caret.click();
+    });
+  });
+  await page.waitForTimeout(400);
+}
+
 // The Budget editor as a signed-in editor sees it mid-save (S364): the auth widget,
 // the editable cells, and one cell in each save state (saving, saved, failed), which
 // show only while a write is in flight and never in the signed-out sweep. The session
@@ -2391,6 +2446,24 @@ module.exports = {
     routes: [{ hash: "implementation-funding", name: "curator" }],
     widths: [390, 1440],
     seed: (page) => seedFundingCurator(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* The noncredit outcomes lane (Scenario 4, 2026-10-22): no committed config
+     paints it yet, so this target seeds it (seedFundingNcOutcomes). */
+  "funding-curator-nc": {
+    file: "index.html",
+    title: "Implementation Funding, signed in, the noncredit outcomes lane",
+    routes: [{ hash: "implementation-funding", name: "curator-nc" }],
+    widths: [390, 1440],
+    seed: (page) => seedFundingNcOutcomes(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "funding-curator-nc-dark": {
+    file: "index.html",
+    title: "Implementation Funding, signed in, the noncredit outcomes lane, dark",
+    routes: [{ hash: "implementation-funding", name: "curator-nc" }],
+    widths: [390, 1440],
+    seed: (page) => seedFundingNcOutcomes(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "funding-curator-dark": {

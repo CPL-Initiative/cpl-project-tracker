@@ -97,6 +97,7 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "reads": [
         "budget_funding",
+        "cpl_funding_nc_attestation_pub",
         "map_ace_exhibit_titles",
         "map_college_contacts",
         "map_college_contacts_pub",
@@ -165,6 +166,7 @@ window.COBI_ADMIN_SURFACE = {
         "coci_college_programs",
         "coci_program_courses",
         "course_outcomes",
+        "cpl_funding_nc_attestation_pub",
         "map_ace_exhibit_titles",
         "map_college_contacts",
         "map_college_contacts_pub",
@@ -288,6 +290,7 @@ window.COBI_ADMIN_SURFACE = {
       "reads": [
         "budget_funding",
         "chatbox_credentials",
+        "cpl_funding_nc_attestation_pub",
         "map_ace_exhibit_titles",
         "map_college_contacts",
         "map_college_contacts_pub",

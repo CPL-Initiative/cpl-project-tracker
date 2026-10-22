@@ -343,6 +343,15 @@
     // twice as wide as the two Access cards above it. A fixed pair keeps every
     // card the same width; a band with one card leaves its second column empty.
     ".cplfund-prio { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }",
+    // The noncredit outcome cards (Scenario 4): a heading and the rule, then
+    // the same card grid; the rows they add to the drill-in take the lighter
+    // noncredit band's color on their name cell.
+    ".cplfund-ncout { margin-top: 18px; }",
+    ".cplfund-ncout-h { margin: 0 0 4px; color: var(--navy-primary); font-size: 1rem; }",
+    ".cplfund-ncout-rule { margin: 0 0 10px; font-size: .85rem; }",
+    ".cplfund-ncreported { margin: 10px 0 0; font-size: .85rem; }",
+    ".cplfund-ncoutrow .cf-subname { color: var(--text-muted); }",
+    ".cf-conds-nc { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; margin-left: 10px; }",
     "@media (max-width: 560px) { .cplfund-prio { grid-template-columns: minmax(0, 1fr); } }",
     // ── the statutory goal spine (§78093.2(d)(1)) ─────────────────────────
     // First Light: warm monochrome base, tokens only, no raw hex. Colour is
@@ -639,7 +648,13 @@
     ".cplfund-onemember-h { margin: 0 0 8px; font-size: 1rem; color: var(--text-strong, #1C1C1A); }",
     ".cplfund-onemember + .cplfund-onemember { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border, rgba(28,28,26,.14)); }",
     ".cplfund-toolbar #cplFundOnePdf[disabled] { opacity: .55; cursor: not-allowed; }",
+    // position: relative so an absolutely positioned descendant (the visually
+    // hidden "Current" word in a header band's th, which is not sticky) stays
+    // inside this scrolling box: positioned against the page instead, it sat at
+    // the table's own width and made the whole page scroll sideways by 488px at
+    // 390px whenever an institution's drill-in was open (measured 2026-10-22).
     ".cplfund-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); }",
+    ".cplfund-tablewrap { position: relative; }",
     "table.cplfund-table { border-collapse: collapse; width: 100%; font-size: .82rem; }",
     // FIXED LAYOUT (Sam's College Dashboard mockup, 2026-09-28): tableHtml()
     // emits one <col> per shown column and a min-width below which the wrap
@@ -1941,7 +1956,215 @@
   // The noncredit lane's priorities for a year slot — credit's three, re-pointed
   // at the noncredit measures. `key` is namespaced so an NC priority can never
   // be read off a credit college object (or vice versa) by accident.
+  // ── THE NONCREDIT OUTCOMES LANE (Sam's Sheet 113 and 114 rulings, 2026-10-22; built as Scenario 4) ──
+  // MAP will not carry a reliable noncredit-origin flag (LocID2) for a while
+  // (Sam, 2026-10-22), so a scenario may release the noncredit share of each
+  // award on outcomes a noncredit program controls instead of on origination.
+  // The share keeps its FTES sizing (nc_portion_pct and the lane split are
+  // untouched); what changes is what RELEASES it:
+  //   • its own minimum conditions — a noncredit CPL coordinator named and
+  //     published, and a strike-team attestation renewed each year (COBI takes
+  //     the attestation until MAP carries the role; Sheet 113 card 5);
+  //   • its own outcomes, counted rather than priced in FTES, each releasing
+  //     toward its target as the credit priorities do (frontloaded, the
+  //     remainder rolling forward): NC-1 exhibits built or adopted for the
+  //     program's learning (the greater of 2 and 5% of its CDCP noncredit
+  //     courses, capped at 10; Sheet 113 card 2) and NC-2 a noncredit CPL
+  //     portfolio-development course chaptered in a CDCP program (Sheet 114
+  //     cards 1 and 3), 50/50;
+  //   • a REPORTED figure, never funded: former noncredit students awarded CPL
+  //     credit, the college's own SIS count on the annual attestation.
+  // The mode is a SCENARIO setting (`ncLane: "outcomes"`), so Scenarios 1 to 3
+  // keep the origination twins below unchanged, and the public page keeps
+  // reading Scenario 3 until Sam publishes 4. ⚠️ NEVER AN ADVANCE: a count
+  // outcome whose measure the daily feed does not carry yet reads TBA and $0,
+  // exactly as the origination sources do (N2 b).
+  var NC_OUTCOMES_RULE = "The noncredit share releases on the noncredit outcomes: exhibits built or adopted for the " +
+    "noncredit program's learning, and a noncredit CPL portfolio-development course.";
+  var NC_COORD_REQ = "Noncredit CPL coordinator named and published";
+  var NC_TEAM_REQ = "Strike-team attestation on file for the year";
+  function ncLaneMode() {
+    var v = firstDefined(SCENARIO.ncLane, SHARED.ncLane, base().nc_lane);
+    return v === "outcomes" ? "outcomes" : "origination";
+  }
+  function ncOutcomesMode() { return ncLaneMode() === "outcomes"; }
+  function ncLaneRule() { return ncOutcomesMode() ? NC_OUTCOMES_RULE : NC_LANE_RULE; }
+  // The stored outcome rows for a year (Year 2 mirrors Year 1 under
+  // mirrorYears, through prioSlot, as the credit priorities do).
+  function ncOutcomeRows(slot) {
+    var sl = prioSlot(slot);
+    var v = firstDefined(SCENARIO.ncOutcomes && SCENARIO.ncOutcomes[sl],
+      SHARED.ncOutcomes && SHARED.ncOutcomes[sl],
+      base().nc_outcomes && base().nc_outcomes[sl]);
+    return Array.isArray(v) ? v : [];
+  }
+  // The outcomes as the model scores them. `src` is a string key ("nc:exh"),
+  // never a credit slot index, so sysTarget()'s twin pairing finds no twin and
+  // cardRowsOn() reads no card toggle for them; `unit: "count"` is the seam
+  // every shared helper branches on (prioTarget, earnFraction, prioUnitLabel).
+  // ⚠️ AN OUTCOME WITHOUT A PIN IS PINNED TO AN UNKNOWN KEY, so it lands in
+  // earnFraction()'s loud bad_src branch ($0) and never in the prose path,
+  // where a wording could resolve the noncredit share onto a credit measure.
+  function ncOutcomes(slot) {
+    if (!ncOutcomesMode()) return [];
+    return ncOutcomeRows(slot).map(function (o, i) {
+      o = isPlainObj(o) ? o : {};
+      var key = String(o.key || ("o" + (i + 1)));
+      return {
+        key: "nc_" + key, ncKey: key, label: "NC-" + (i + 1), pos: i, src: "nc:" + key, lane: "nc", outcome: true,
+        title: String(o.title || ""), description: String(o.description || ""),
+        metric: String(o.metric || ""), metric_src: String(o.metric_src || "").trim() || "nc_unmapped",
+        unit: "count", unit_word: String(o.unit_word || ""),
+        target_rule: isPlainObj(o.target_rule) ? o.target_rule : { kind: "fixed", n: 1 },
+        goals: Array.isArray(o.goals) ? o.goals.slice() : [],
+        strategies: Array.isArray(o.strategies) ? o.strategies.slice() : null,
+        share: Number(o.share) || 0,
+        // Counts carry no price: the factor, the rate and the per-student
+        // fossil never read on this lane.
+        factor: 1, target_rate: null, per_student: null
+      };
+    });
+  }
+  // "exhibits" / "exhibit"; the stored word is the plural.
+  function ncUnitWord(p, n) {
+    var w = String((p && p.unit_word) || "").trim() || "count";
+    if (n === 1 && /s$/.test(w)) return w.slice(0, -1);
+    return w;
+  }
+  function ncReportedList() {
+    var v = firstDefined(SCENARIO.ncReported, SHARED.ncReported, base().nc_reported);
+    return Array.isArray(v) ? v.filter(isPlainObj) : [];
+  }
+  function ncCoordShown() { return !firstDefined(SCENARIO.ncCoordHidden, SHARED.ncCoordHidden, base().nc_coord_req_hidden); }
+  function ncTeamShown() { return !firstDefined(SCENARIO.ncTeamHidden, SHARED.ncTeamHidden, base().nc_team_req_hidden); }
+  // The noncredit lane's conditions in one sentence, for the section and the rules.
+  function ncCondWords() {
+    var parts = [];
+    if (partShown()) parts.push("the institution's confirmation");
+    if (ncCoordShown()) parts.push("a noncredit CPL coordinator named and published");
+    if (ncTeamShown()) parts.push("a strike-team attestation renewed each year");
+    if (!parts.length) return "none";
+    return parts.length === 1 ? parts[0] : parts.slice(0, -1).join(", ") + " and " + parts[parts.length - 1];
+  }
+  // ── the target of a count outcome ──
+  // pct_floor_cap: the greater of `floor` and pct × the institution's own
+  // denominator (a per-institution count the daily feed carries, nc_cdcp),
+  // capped at `cap`. fixed: n. Statewide (c null) the institutions' targets
+  // are summed, as sysTarget() sums the FTES targets (Sam's "sum" ruling).
+  function countDenominator(c, src) {
+    if (!c || !src) return null;
+    var rec = perfFor(c.college);
+    if (!rec || rec[src] == null) return null;
+    return Number(rec[src]) || 0;
+  }
+  // The rule waits on a denominator the feed has not carried yet: the target
+  // is unknown, which is NOT a target of zero and NOT a target met.
+  function countTargetPending(c, p) {
+    var rule = (p && p.target_rule) || {};
+    if (rule.kind !== "pct_floor_cap") return false;
+    if (!c) return !oneRoster().some(function (col) { return instSplit(col).nc > 0 && countDenominator(col, rule.of) != null; });
+    return countDenominator(c, rule.of) == null;
+  }
+  function countTarget(c, p) {
+    var rule = (p && p.target_rule) || {};
+    if (!c) {
+      var t = 0;
+      oneRoster().forEach(function (col) { if (instSplit(col).nc > 0) t += countTarget(col, p); });
+      return t;
+    }
+    if (rule.kind === "pct_floor_cap") {
+      var denom = countDenominator(c, rule.of);
+      if (denom == null) return 0;   // not yet delivered: earnFraction reads this as undelivered, never as met
+      var n = Math.ceil(denom * (Number(rule.pct) || 0));
+      var floor = Math.max(0, Number(rule.floor) || 0);
+      var cap = rule.cap == null ? Infinity : Number(rule.cap);
+      return Math.max(floor, Math.min(cap, n));
+    }
+    return Math.max(0, Number(rule.n) || 0);
+  }
+  // How a count target was reached, for the hovers and the card.
+  function countTargetWords(c, p) {
+    var rule = (p && p.target_rule) || {};
+    var w = ncUnitWord(p, 2);
+    if (rule.kind === "pct_floor_cap") {
+      var denom = c ? countDenominator(c, rule.of) : null;
+      if (c && denom == null) {
+        return "The target waits on the count of the institution's CDCP noncredit courses, which the daily data refresh has not carried yet.";
+      }
+      var bounds = "the greater of " + fmtInt(rule.floor || 0) + " and " + fmtPctTrim(Number(rule.pct) || 0) +
+        " of its CDCP noncredit courses" + (rule.cap != null ? ", capped at " + fmtInt(rule.cap) : "");
+      return c
+        ? "Target " + fmtInt(countTarget(c, p)) + " " + w + ": " + bounds + " (" + fmtInt(denom) + " courses in COCI)."
+        : "The institutions' targets added up; each is " + bounds + ".";
+    }
+    var n1 = countTarget(c || null, p);
+    return c
+      ? "Target " + fmtInt(n1) + " " + ncUnitWord(p, n1 === 1 ? 1 : 2) + ", the same for every institution with a noncredit share."
+      : "The institutions' targets added up; each is " + fmtInt(Math.max(0, Number(rule.n) || 0)) + ".";
+  }
+  // Actual for a count outcome, in the drill-in's shape (actualFtesOf's twin).
+  function actualCountOf(f, p) {
+    var fr = f.fr || {};
+    var unit = function (v) { return fmtInt(v) + " " + ncUnitWord(p, v === 1 ? 1 : 2); };
+    if (fr.status === "earned") {
+      return { text: "Actual " + unit(fr.actual), val: fr.actual, measured: true,
+        tip: fmtPctTrim(f.target > 0 ? fr.actual / f.target : 0) + " of the target" };
+    }
+    if (fr.status === "none") return { text: "Actual " + unit(0), val: 0, measured: true, tip: "0% of the target" };
+    if (fr.status === "suppressed") return { text: maskLt(true) + " (privacy)", val: null, measured: false, tip: "" };
+    if (fr.status === "bad_src") return { text: "awaiting a known measure", val: null, measured: false, tip: "" };
+    return { text: "TBA", val: null, measured: false, tip: TBA_TIP };
+  }
+  // ── the noncredit lane's own minimum conditions ──
+  // Read from the attestation COBI takes (ELIG.ncAttest, one row an
+  // institution, the latest standing one). Until the attestation surface
+  // loads, both read pending — the noncredit share is held, never advanced.
+  function ncAttestOf(college) { return (ELIG.ncAttest && ELIG.ncAttest[college]) || null; }
+  function ncCondList(college) {
+    if (!ncOutcomesMode()) return [];
+    var att = ncAttestOf(college), pending = !ELIG.ncAttestOk;
+    var standing = !!(att && att.status !== "revoked" && att.status !== "rejected");
+    var list = [];
+    if (ncCoordShown()) {
+      list.push({ kind: "nc_coord", met: standing && !!String(att.coordinator_name || "").trim(),
+        pending: pending, label: NC_COORD_REQ, auto: "nc" });
+    }
+    if (ncTeamShown()) list.push({ kind: "nc_team", met: standing, pending: pending, label: NC_TEAM_REQ, auto: "nc" });
+    return list;
+  }
+  // The gate on the NONCREDIT share alone (Sheet 113 card 1): the
+  // institution's confirmation, then the two noncredit conditions. The credit
+  // share keeps the credit conditions (baselineGate): a credit college's
+  // noncredit share never waits on the veteran JSTs, and its credit share never
+  // waits on a strike team. Origination mode: the one gate, as before.
+  function ncLaneGate(college) {
+    if (!ncOutcomesMode()) return baselineGate(college);
+    if (!ELIG.coordOk) return { pending: true, blocked: false, missing: [] };
+    var missing = [], anyPending = false;
+    if (partShown() && !ELIG.optin[college]) missing.push(partReqText());
+    ncCondList(college).forEach(function (r) {
+      if (r.pending) anyPending = true;
+      else if (!r.met) missing.push(r.label);
+    });
+    if (anyPending && !missing.length) return { pending: true, blocked: false, missing: [] };
+    return { pending: false, blocked: missing.length > 0, missing: missing };
+  }
+  // The curator's edits on a noncredit outcome card. The override holds the
+  // WHOLE list for the year (an array has no per-field layering), so the first
+  // edit copies the resolved list into this layer and later ones edit it.
+  function setNcOutcome(slot, idx, field, value) {
+    slot = prioSlot(slot);
+    var rows = clone(ncOutcomeRows(slot));
+    if (!rows[idx] || !isPlainObj(rows[idx])) return;
+    rows[idx][field] = value;
+    var ov = activeOverride();
+    ov.ncOutcomes = isPlainObj(ov.ncOutcomes) ? ov.ncOutcomes : {};
+    ov.ncOutcomes[slot] = rows;
+    persistActive();
+  }
   function ncPriorities(slot) {
+    // The outcomes lane (Scenario 4): the scenario's own list, never the twins.
+    if (ncOutcomesMode()) return ncOutcomes(slot);
     var byMs = ncSourceByMilestone();
     return priorities(slot).map(function (p) {
       // The rung this priority sits on, taken from the CREDIT resolution so the
@@ -2350,6 +2573,7 @@
   //
   // c = a base-college or shaped row; pass null for the statewide total.
   function prioTarget(c, p) {
+    if (p && p.unit === "count") return countTarget(c, p);   // the noncredit outcomes lane (Scenario 4)
     if (prioIsFtes(p)) {
       var r = ftesRate(), fac = prioFactor(p);
       // target = pot ÷ price, price = factor × rate. The × nYears() makes it the
@@ -2404,7 +2628,7 @@
     return t;
   }
   // What a target is counted in — drives every label and the actual's conversion.
-  function prioUnitLabel(p) { return prioIsFtes(p) ? "FTES" : "students"; }
+  function prioUnitLabel(p) { return p && p.unit === "count" ? ncUnitWord(p, 2) : (prioIsFtes(p) ? "FTES" : "students"); }
   // ── CPL FTES ──────────────────────────────────────────────────────────
   // NOTE ON NAMING. Two quantities in this tab are called FTES and they differ by
   // ~500x. `credit_ftes` / sizeOf / totalSize are the college's ENROLMENT FTES
@@ -3549,6 +3773,24 @@
     "statewide. The receiving college counts the same CPL under its own measures &mdash; the same " +
     "CPL credits both institutions by design (ruled 2026-08-31).</li>" +
     "</ul>";
+  // The outcomes lane's rules (Scenario 4; Sam's Sheet 113 and 114 rulings,
+  // 2026-10-22), in place of the origination rules above when the scenario
+  // releases the noncredit share on outcomes.
+  var NC_OUTCOMES_RULES_HTML = "<ul>" +
+    "<li>The noncredit share of an award counts toward <strong>the noncredit outcomes alone</strong>: it is never " +
+    "available to the credit program, and the credit share never counts toward it.</li>" +
+    "<li><strong>Its own minimum conditions:</strong> a noncredit CPL coordinator named and published, and a " +
+    "strike-team attestation renewed each year. COBI takes the attestation until the MAP platform carries the role.</li>" +
+    "<li><strong>Two outcomes release it, 50/50</strong>, each toward its target, the remainder rolling forward: " +
+    "exhibits built or adopted for the program&rsquo;s learning (the greater of 2 and 5% of its CDCP noncredit " +
+    "courses, capped at 10; an adopted statewide exhibit counts), and a noncredit CPL portfolio-development course " +
+    "chaptered in a CDCP program by the end of Year 1 and offered with enrollment attested in Year 2.</li>" +
+    "<li>An exhibit counts through any of four channels: the exhibit names the noncredit course; its target credit " +
+    "course mirrors a noncredit course at the college (for a standalone, at the district&rsquo;s credit colleges); " +
+    "its credential is one the program&rsquo;s courses name; or the strike team lists it on the attestation.</li>" +
+    "<li><strong>Reported, not funded:</strong> the count of former noncredit students awarded CPL credit, from the " +
+    "college&rsquo;s own student information system, on the annual attestation.</li>" +
+    "</ul>";
   // Sam's College Dashboard intro (mockup rounds, 2026-09-28). The pie has no
   // column header to name it any more, so the intro names it once.
   var COLLEGE_INTRO_DEFAULT_HTML =
@@ -3562,7 +3804,7 @@
     if (isRich(key)) return richPlainToHtml(richDefaultPlain(key), "tab");
     if (key === "about") return ABOUT_DEFAULT_HTML;
     if (key === "reading") return READING_DEFAULT_HTML;
-    if (key === "nc_rules") return NC_RULES_DEFAULT_HTML;
+    if (key === "nc_rules") return ncOutcomesMode() ? NC_OUTCOMES_RULES_HTML : NC_RULES_DEFAULT_HTML;
     if (key === "college_intro" || key === "x_table_intro") return COLLEGE_INTRO_DEFAULT_HTML;
     if (key === "timing_note" || key === "x_timing_note") return TIMING_NOTE_DEFAULT_HTML;
     if (key === "faq" || key === "x_faq") return plainToHtml(FAQ_DEFAULT_PLAIN);
@@ -3972,7 +4214,14 @@
     }).join("<br><br>");
   }
   function isRich(key) { return !!(TEXT_BLOCKS[key] && TEXT_BLOCKS[key].rich); }
+  // My CPL Funding's noncredit sentence under the outcomes lane (Scenario 4);
+  // the stored passage, when a curator saves one, still wins.
+  var MC_NC_OUTCOMES_PLAIN = "Noncredit portion of the max funding is {noncredit portion}. It releases on the noncredit " +
+    "outcomes: exhibits built or adopted for the noncredit program's learning, and a noncredit CPL portfolio-development " +
+    "course. Its own minimum conditions are a noncredit CPL coordinator named and published and a strike-team attestation " +
+    "renewed each year.";
   function richDefaultPlain(key) {
+    if (key === "mc_nc" && ncOutcomesMode()) return plainNormalize(MC_NC_OUTCOMES_PLAIN);
     var b = EXPLAINER_BY_KEY[key] || MC_BY_KEY[key] || MEMO_BY_KEY[key];
     if (b && b.follows) return plainNormalize(memoLeadDefaultPlain());
     return plainNormalize(b ? b.plain : "");
@@ -4688,7 +4937,10 @@
   // optinReview — the PII rows (name/title/email) for the CO confirm lane, from
   //          the reviewer-gated RPC; [] for a non-reviewer / public page.
   var ELIG = { loaded: false, coordOk: false, coord: {}, coordN: 0,
-    optin: {}, optinRow: {}, optinReview: [], asOf: null, contact: {} };
+    optin: {}, optinRow: {}, optinReview: [], asOf: null, contact: {},
+    // The noncredit attestation COBI takes (Scenario 4): the latest row an
+    // institution, from the published view; ncAttestOk once it has been read.
+    ncAttestOk: false, ncAttest: {} };
   // WHO STANDS BEHIND THE FIRST CONDITION (Sam, 2026-09-29): "The condition is
   // to have a CPL Coordinator assigned (so we should have that name listed); a
   // CPL Primary contact (need that name listed as well--it's OK is the same name
@@ -4700,6 +4952,10 @@
   // primary contact), so nothing reaches a new audience.
   var CONTACTS_URL = SUPABASE_URL + "/rest/v1/map_college_contacts?select=college,cpl_coordinator,primary_contact,landing_page_url";
   var CONTACTS_PUB_URL = SUPABASE_URL + "/rest/v1/map_college_contacts_pub?select=college,cpl_coordinator,landing_page_url";
+  // The noncredit attestation's published view (name and title, never an
+  // email; the attestor rides the reviewer RPC, as the confirmation's does).
+  var NC_ATTEST_URL = SUPABASE_URL + "/rest/v1/cpl_funding_nc_attestation_pub" +
+    "?select=college,fiscal_year,status,coordinator_name,coordinator_title,requested_at,revoked_at&order=requested_at.desc";
   // Directory text is hand-typed in MAP: runs of spaces, a trailing space, two
   // names on two lines. One line, single-spaced, comma-joined.
   function contactText(v) {
@@ -4828,10 +5084,21 @@
         .then(function (rows) {
           if (Array.isArray(rows) && rows.length) return rows;
           return fetch(CONTACTS_PUB_URL, { headers: h }).then(function (r) { return r.ok ? r.json() : null; });
-        }).catch(function () { return null; })
+        }).catch(function () { return null; }),
+      // The noncredit attestation (Scenario 4). Fail-soft: a view not yet
+      // there leaves the noncredit conditions pending, the share held.
+      fetch(NC_ATTEST_URL, { headers: h }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
     ]).then(function (res) {
-      var coord = res[0], part = res[1], review = res[2], contacts = res[3];
+      var coord = res[0], part = res[1], review = res[2], contacts = res[3], attest = res[4];
       if (Array.isArray(contacts)) ELIG.contact = ingestContacts(contacts, roster);
+      if (Array.isArray(attest)) {
+        ELIG.ncAttest = {};
+        attest.forEach(function (row) {
+          var key = roster[shortName(row.college)] || row.college;
+          if (!ELIG.ncAttest[key]) ELIG.ncAttest[key] = row;   // newest first (the order clause)
+        });
+        ELIG.ncAttestOk = true;
+      }
       if (Array.isArray(coord)) {
         ingestCoord(coord, roster);
         ELIG.coordOk = true;
@@ -4922,6 +5189,18 @@
   // a curator can hide either built-in and the numbering shifts under it.
   function eligReqList(college) {
     var list = [];
+    // THE NONCREDIT OUTCOMES LANE (Scenario 4): a standalone noncredit
+    // institution's whole award is its noncredit share, so its conditions are
+    // the noncredit lane's — the confirmation, then the noncredit coordinator
+    // and the strike team. The attested noncredit coordinator stands in for
+    // the MAP coordinator condition there (COBI takes the attestation until
+    // MAP carries the role), and the certificates-posted condition retires,
+    // NC-1 carrying it with a target. A credit college's list is unchanged:
+    // the noncredit conditions gate its noncredit share alone (ncLaneGate).
+    if (ncOutcomesMode() && isNcOnlyName(college)) {
+      if (partShown()) list.push({ met: !!ELIG.optin[college], label: partReqText(), kind: "part" });
+      return list.concat(ncCondList(college));
+    }
     if (coordShown()) list.push({ met: !!ELIG.coord[college], label: coordLabel(), kind: "coord", pending: !ELIG.coordOk });
     if (partShown()) list.push({ met: !!ELIG.optin[college], label: partReqText(), kind: "part" });
     var vs = vetStar();
@@ -4954,6 +5233,16 @@
       if (r.met) return { text: "Confirmation on file" };
       var row = ELIG.optinRow[college];
       return { text: (row && row.status === "revoked" ? "Confirmation withdrawn" : "Confirmation not yet on file") + due };
+    }
+    if (r.kind === "nc_coord") {
+      if (r.pending) return { text: "Noncredit coordinator status pending", pending: true };
+      return { text: r.met ? "Noncredit CPL coordinator published" : "Noncredit CPL coordinator not yet attested" };
+    }
+    if (r.kind === "nc_team") {
+      if (r.pending) return { text: "Strike-team attestation status pending", pending: true };
+      var att = ncAttestOf(college);
+      return { text: r.met ? "Strike team attested" + (att && att.fiscal_year ? " for " + att.fiscal_year : "")
+        : "Strike-team attestation not yet on file" };
     }
     var pctWords = fmtPctTrim((perf() && perf().vet_star_threshold) || 0.75);
     if (r.kind === "exhibits") {
@@ -5027,16 +5316,15 @@
   // A condition already known to be missing still blocks while the third pends.
   function baselineGate(college) {
     if (!ELIG.coordOk) return { pending: true, blocked: false, missing: [] };
-    var missing = [];
-    if (coordShown() && !ELIG.coord[college]) missing.push(coordLabel());
-    if (partShown() && !ELIG.optin[college]) missing.push(partReqText());
-    var thirdPending = false;
+    // One reading of the institution's list (eligReqList), so the gate and
+    // the pie can never name different conditions: a standalone noncredit
+    // institution's list under the outcomes lane is the noncredit lane's.
+    var missing = [], anyPending = false;
     eligReqList(college).forEach(function (r) {
-      if (!r.auto) return;               // the coordinator and confirmation, counted above
-      if (r.pending) thirdPending = true;
+      if (r.pending) anyPending = true;
       else if (!r.met) missing.push(r.label);
     });
-    if (thirdPending && !missing.length) return { pending: true, blocked: false, missing: [] };
+    if (anyPending && !missing.length) return { pending: true, blocked: false, missing: [] };
     return { pending: false, blocked: missing.length > 0, missing: missing };
   }
   function eligScore(college) {
@@ -5218,6 +5506,14 @@
   // hold says so. The primary contact reads from the directory alone, so a
   // public rendering (the explainer, and the tab's public preview) names the
   // coordinator and the page, as the published mirror does.
+  // The published noncredit CPL coordinator (name and title alone; the
+  // attestation's emails stay with the reviewer, as the directory's do).
+  function ncCoordWhoHtml(college) {
+    var att = ncAttestOf(college);
+    if (!att || !String(att.coordinator_name || "").trim()) return "";
+    return '<span class="cf-cond-who">Noncredit CPL Coordinator: ' + esc(att.coordinator_name) +
+      (att.coordinator_title ? " (" + esc(att.coordinator_title) + ")" : "") + "</span>";
+  }
   function coordWhoHtml(college) {
     var k = ELIG.contact[college];
     if (!k) return "";
@@ -5233,11 +5529,12 @@
   function baselineStatusHtml(c) {
     var college = c.college;
     var row = ELIG.optinRow[college];
-    var items = eligReqList(college).map(function (r) {
+    var one = function (r) {
       var w = eligReqWords(r, college);
       var tip = ' title="' + esc(stripTags(r.label)) + '"';
       if (w.pending) return '<span class="cf-cond cf-pending"' + tip + "><span>" + esc(w.text) + "</span></span>";
-      var who = r.kind === "coord" && r.met ? coordWhoHtml(college) : "";
+      var who = r.kind === "coord" && r.met ? coordWhoHtml(college)
+        : r.kind === "nc_coord" && r.met ? ncCoordWhoHtml(college) : "";
       // The veteran counts sit NEXT TO the condition, in the small muted type
       // of the coordinator's name, on the same line (his words: "next to").
       var vc = w.counts ? ' <span class="cf-cond-who cf-vetcount">' + esc(w.counts) + "</span>" : "";
@@ -5249,7 +5546,15 @@
              : "<span>" + esc(w.text) + "</span>") +
         (w.star ? '<span class="cplfund-vstar" role="img" aria-label="Veteran Star" title="Veteran Star">★</span>' : "") +
         vc + "</span>";
-    }).join("");
+    };
+    var items = eligReqList(college).map(one).join("");
+    // The noncredit share's own conditions (Scenario 4), after the
+    // institution's: a credit college with a noncredit share meets these for
+    // that share alone; a standalone's list above already is this list.
+    var ncItems = (!c.nco && ncOutcomesMode() && (c.nc_award || 0) > 0.5) ? ncCondList(college) : [];
+    if (ncItems.length) {
+      items += '<span class="cf-conds-nc"><strong class="cf-conds-h">Noncredit share:</strong>' + ncItems.map(one).join("") + "</span>";
+    }
     // The CO's controls ride the same line, for a signed-in reviewer only and
     // never in the public preview (the preview is what a college reads). A
     // self-attestation stands until the CO rejects it (attest-first), so the
@@ -6211,8 +6516,10 @@
     return '<p class="nums cplfund-earned-line" title="' +
       esc("Demonstrated: what institutions have demonstrated statewide on this priority to date, whether or not " +
         "each has met its minimum conditions. The Curr columns show what each qualifies for: $0 until it meets them. " +
-        "Total Possible: the ceiling — the priority's credit and noncredit shares together" +
-        (pp.ncCap > 0 ? " (" + fmtMoney(pp.ncCap) + " of it is the noncredit share)" : "") + ".") +
+        "Total Possible: the ceiling — " + (ncOutcomesMode()
+          ? "the priority's credit share; the noncredit share rides the noncredit outcomes below"
+          : "the priority's credit and noncredit shares together" +
+            (pp.ncCap > 0 ? " (" + fmtMoney(pp.ncCap) + " of it is the noncredit share)" : "")) + ".") +
       '">Demonstrated: <strong>' + fmtMoney(pp.earned) + "</strong> of " +
       fmtMoney(pp.cap) + (frontloaded() ? " full-window" : "") + " Total Possible <strong>(" + fmtPctTrim(pct) + ")</strong></p>";
   }
@@ -8167,7 +8474,74 @@
           cardDesignateHtml(gres.keys), true)) +
         "</div>";
     });
-    return outcomeGridHtml(slot, ps, cards);
+    return outcomeGridHtml(slot, ps, cards) + ncOutcomesSectionHtml(slot);
+  }
+
+  // ── the noncredit outcome cards (Scenario 4) ──────────────────────────
+  // Their own small card family under the priority cards: the noncredit share
+  // releases on these, so they stand apart from the credit priorities ("I
+  // don't want the NCs to get lost") and never enter the credit sequence, the
+  // credit share sums or the totals row. A curator edits the title, the
+  // description, the metric's words and the share in place; the measure pin
+  // and the target rule are the scenario's (Sam's Sheet 113 and 114 rulings).
+  function ncOutcomesSectionHtml(slot) {
+    if (!ncOutcomesMode()) return "";
+    var ps = ncOutcomes(slot);
+    if (!ps.length) return "";
+    var agg = earnAgg();
+    var ro = publicMode() || !unlocked();
+    var ss = ncShareSum(slot);
+    var cards = ps.map(function (p, i) {
+      var q = (agg.perNc || [])[i] || emptyPrioFigs();
+      var pending = countTargetPending(null, p);
+      var tgt = pending ? null : sysTarget(p, slot);
+      var fr = earnFraction(null, p);
+      var act = actualCountOf({ fr: fr, target: tgt }, p);
+      var keys = (p.goals || []).filter(function (k) { return !!goalByKey(k); });
+      var titleHtml = ro ? esc(p.title)
+        : edText("nc-title", p.title, { slot: slot, idx: i, cls: "cplfund-prio-title-input", label: p.label + " title", placeholder: "Title" });
+      var head = '<span class="cplfund-prio-num">' + esc(p.label) + "</span> &middot; " +
+        (keys.length ? '<span class="cplfund-cardgoal-key">(' + keys.map(esc).join(") + (") + ")</span> " : "") +
+        '<span class="cplfund-cardhead-name">' + titleHtml + "</span>";
+      var law = keys.length
+        ? '<p class="cplfund-cardgoal-quote"><span class="cplfund-cardgoal-cite">' + goalCite(keys) + ":</span> " + goalQuote(keys) + "</p>"
+        : "";
+      var strat = p.strategies && p.strategies.length
+        ? cardSectionHtml("Recommended strategies", fmtInt(p.strategies.length) + " for Year " + esc(slot),
+          "<ul>" + p.strategies.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>", publicMode(), "cplfund-strat")
+        : "";
+      return '<div class="p cplfund-nccard" data-nccard="' + i + '">' +
+        '<div class="cplfund-cardhead">' + head + "</div>" + law +
+        '<p class="desc">' + (ro ? esc(p.description)
+          : edArea("nc-description", p.description, { slot: slot, idx: i, rows: 2, label: p.label + " description" })) + "</p>" +
+        '<p class="nums">Allocation share ' + (ro ? esc(fmtRatePct(p.share))
+          : edNum("nc-share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, label: p.label + " allocation share percent" })) +
+        "% of each institution&#39;s noncredit share &mdash; statewide " + fmtMoney(q.ncCap) + "</p>" +
+        '<div class="metric"' + (p.metric_src ? ' title="' + esc("Measured from the daily feed key " + p.metric_src) + '"' : "") + ">" +
+          "METRIC (Year " + slot + mirroredNote(slot) + "): " +
+          (ro ? esc(p.metric) : edArea("nc-metric", p.metric, { slot: slot, idx: i, rows: 2, label: p.label + " metric" })) + "</div>" +
+        cardSectionHtml("Target", tgt == null ? "TBA" : fmtInt(tgt) + " " + ncUnitWord(p, tgt === 1 ? 1 : 2),
+          '<p class="nums">' + esc(countTargetWords(null, p)) + "</p>") +
+        cardSectionHtml("Progress", q.ncCap > 0 ? fmtMoney(q.ncEarned) + " &middot; " + fmtPctTrim(q.ncEarned / q.ncCap) : "TBA",
+          '<p class="nums dk"' + (act.measured ? "" : ' title="' + esc(TBA_TIP) + '"') + ">" +
+            (act.measured ? esc(act.text) + " statewide." : "Actual: TBA.") + "</p>" +
+          (q.ncCap > 0
+            ? '<p class="nums cplfund-earned-line" title="' + esc("Demonstrated: what institutions have demonstrated statewide on this outcome to date, whether or not each has met the noncredit share's minimum conditions. Total Possible: the noncredit funding on this outcome, every institution's share added up.") + '">' +
+              "Demonstrated: <strong>" + fmtMoney(q.ncEarned) + "</strong> of " + fmtMoney(q.ncCap) +
+              (frontloaded() ? " full-window" : "") + " Total Possible <strong>(" + fmtPctTrim(q.ncEarned / q.ncCap) + ")</strong></p>"
+            : "")) +
+        strat +
+        "</div>";
+    });
+    var rep = ncReportedList().map(function (r) {
+      return '<p class="nums cplfund-ncreported"><span class="dk">Reported, not funded:</span> <strong>' + esc(r.title || "") + "</strong>" +
+        (r.text ? " &mdash; " + esc(r.text) : "") + "</p>";
+    }).join("");
+    return '<section class="cplfund-ncout" aria-labelledby="cplFundNcOutH">' +
+      '<h3 id="cplFundNcOutH" class="cplfund-ncout-h">Noncredit outcomes</h3>' +
+      '<p class="dk cplfund-ncout-rule">' + esc(NC_OUTCOMES_RULE) + " The noncredit share of an award waits on its own minimum conditions: " +
+      esc(ncCondWords()) + ".</p>" +
+      '<div class="cplfund-prio"' + cardGridStyle() + ">" + cards.join("") + "</div>" + rep + "</section>";
   }
 
   // ── the statutory bands (Sam, 2026-09-01) ─────────────────────────────
@@ -9340,7 +9714,25 @@
     // pairs lanes by milestone, so declaring the `career` rung here is the
     // whole of the wiring.
     nc_ca_u: { unit: "units", lane: "nc", milestone: "career", origin: "co",
-               basis: "units of CPL for noncredit-origin students who reach a career outcome in EDD wage records, per the Chancellor's Office import" }
+               basis: "units of CPL for noncredit-origin students who reach a career outcome in EDD wage records, per the Chancellor's Office import" },
+    // ── THE NONCREDIT OUTCOMES LANE (Sam's Sheet 113 and 114 rulings, 2026-10-22;
+    //    Scenario 4) ──────────────────────────────────────────────────────────
+    // COUNTS, not units: a scenario in outcomes mode (ncLane: "outcomes")
+    // releases the noncredit share on outcomes a noncredit program controls,
+    // because the origination flag (LocID2) is not coming for a while. Declared
+    // before they are delivered, on this lane's own pattern: srcDelivered()
+    // asks the daily artifact whether the key is there, and until the builder
+    // emits it every outcome reads TBA and $0 — never an advance (N2 b). The
+    // milestones "exhibit" and "course" are deliberately NOT a credit rung, so
+    // ncSourceByMilestone() never pairs an origination twin onto them, and
+    // prioGoals() reads the outcome's own stored goals instead.
+    nc_exh:    { label: "Exhibits built or adopted for the noncredit program", unit: "count", lane: "nc", milestone: "exhibit", outcome: true,
+                 basis: "MAP exhibits credited to the institution's noncredit program: the exhibit names a noncredit course, its target course mirrors a noncredit course, its credential is one the program's courses name, or the strike team lists it on the attestation; an adopted statewide exhibit counts" },
+    nc_course: { label: "Noncredit CPL portfolio-development course", unit: "count", lane: "nc", milestone: "course", outcome: true,
+                 basis: "a noncredit CPL portfolio-development course chaptered in a CDCP program in COCI (the strike team attests its control number; the COCI sync confirms it)" },
+    // The denominator of NC-1's target rule, never a measure a priority pins.
+    nc_cdcp:   { label: "CDCP noncredit courses in COCI", unit: "count", lane: "nc", denominator: true,
+                 basis: "the institution's CDCP noncredit courses in COCI (enhanced funding: ESL, basic skills, short-term vocational, workforce preparation)" }
   };
   // A measure the Chancellor's Office takes and imports (career attainment,
   // from EDD wage records) rather than one MAP's daily feed carries. Every
@@ -9494,6 +9886,10 @@
     // and "this college posted nothing" are two different zeros and this tab
     // must not print them the same way.
     if (meas.undelivered) return { f: 0, status: "undelivered", target: prioTarget(c, p), meas: meas };
+    // A count outcome whose target rule waits on a denominator the feed has not
+    // carried yet (the institution's CDCP noncredit courses) is not met and not
+    // "none": it is undelivered, TBA on every surface, $0 (Scenario 4).
+    if (p && p.unit === "count" && countTargetPending(c, p)) return { f: 0, status: "undelivered", target: 0, meas: meas };
     var rec = c ? perfFor(c.college) : pf.statewide;
     var target = prioTarget(c, p);
     if (target <= 0) return { f: 0, status: "none", target: target, meas: meas };
@@ -9556,10 +9952,14 @@
   // noncredit priorities (f = 0 until their feeds report — F1 — and never an
   // advance). Position i pairs the two lanes: ncPs is the same three
   // priorities re-pointed at the noncredit measures.
-  function addInstPrios(perPrio, col, slot, ps, ncPs, gateBlocked) {
+  function addInstPrios(perPrio, col, slot, ps, ncPs, gateBlocked, perNc, ncGateBlocked) {
     var sp = instSplit(col);
+    var outcomes = ncOutcomesMode();
+    if (ncGateBlocked == null) ncGateBlocked = gateBlocked;
     ps.forEach(function (p, i) {
-      perPrio[i].cap += prioCap(sp.w, slot, p);
+      // Under the outcomes lane a credit card's Total Possible is the credit
+      // slice alone; the noncredit funding rides the noncredit outcome cards.
+      perPrio[i].cap += prioCap(outcomes ? sp.cr : sp.w, slot, p);
       perPrio[i].crCap += prioCap(sp.cr, slot, p);
       var fr = earnFraction(col, p);
       perPrio[i].earned += prioCap(sp.cr, slot, p) * fr.f;
@@ -9576,13 +9976,25 @@
     ncPs.forEach(function (p, i) {
       if (!(sp.nc > 0)) return;
       var capNc = ncPrioCap(sp.nc, slot, p);
-      perPrio[i].ncCap += capNc;
-      perPrio[i].ncTarget += prioTarget(col, p);
       var fr = earnFraction(col, p);
       var paid = capNc * fr.f;
+      if (outcomes) {
+        // The outcomes lane: its own figures (perNc), never folded into a
+        // credit priority's — the two lists are not twins here.
+        var q = perNc && perNc[i];
+        if (!q) return;
+        q.cap += capNc; q.ncCap += capNc;
+        q.ncTarget += prioTarget(col, p);
+        q.earned += paid; q.ncEarned += paid;
+        if (!ncGateBlocked) q.ncReleased += paid;
+        q.statuses[fr.status] = (q.statuses[fr.status] || 0) + 1;
+        return;
+      }
+      perPrio[i].ncCap += capNc;
+      perPrio[i].ncTarget += prioTarget(col, p);
       perPrio[i].earned += paid;
       perPrio[i].ncEarned += paid;
-      if (!gateBlocked) perPrio[i].ncReleased += paid;
+      if (!ncGateBlocked) perPrio[i].ncReleased += paid;
     });
   }
   function earnAgg() {
@@ -9591,13 +10003,15 @@
     var ps = priorities(slot);
     var ncPs = ncPriorities(slot);
     var perPrio = ps.map(function () { return emptyPrioFigs(); });
+    // The noncredit outcomes' own figures (Scenario 4); empty under origination.
+    var perNc = ncOutcomesMode() ? ncPs.map(function () { return emptyPrioFigs(); }) : [];
     var winCap = 0, winEarned = 0, winHeld = 0, gatedN = 0;
     var winMeasured = 0, winAdvance = 0;
     oneRoster().forEach(function (col) {
       var a = collegeAlloc(col);
       // winCap/winEarned below read collegeAlloc to match the distribution
       // surfaces (Sam, 2026-07-28).
-      addInstPrios(perPrio, col, slot, ps, ncPs, !!a.gate_blocked);
+      addInstPrios(perPrio, col, slot, ps, ncPs, !!a.gate_blocked, perNc, !!a.nc_gate_blocked);
       winCap += a.total;
       winEarned += a.earned_total;
       winMeasured += a.earned_measured || 0;
@@ -9605,7 +10019,7 @@
       winHeld += a.earned_withheld || 0;
       if (a.gate_blocked) gatedN++;
     });
-    _earnCache = { perPrio: perPrio, ps: ps, winCap: winCap, winEarned: winEarned, winUnearned: winCap - winEarned,
+    _earnCache = { perPrio: perPrio, perNc: perNc, ncPs: ncPs, ps: ps, winCap: winCap, winEarned: winEarned, winUnearned: winCap - winEarned,
       winMeasured: winMeasured, winAdvance: winAdvance,
       winHeld: winHeld, gatedN: gatedN };
     return _earnCache;
@@ -9634,18 +10048,25 @@
   // the CSV's does (curPct), so the line hands back nothing the rule withholds.
   function scopeProgress(sc, slot) {
     var ps = priorities(slot), ncPs = ncPriorities(slot);
+    var outcomes = ncOutcomesMode();
     var tot = ps.map(function () { return emptyPrioFigs(); });
+    var totNc = outcomes ? ncPs.map(function () { return emptyPrioFigs(); }) : [];
     var units = ps.map(function () { return 0; });
     var cal = {}, am = allocModel(), atMax = 0;
     sc.rows.forEach(function (col) {
       var one = ps.map(function () { return emptyPrioFigs(); });
-      addInstPrios(one, col, slot, ps, ncPs, !!collegeAlloc(col).gate_blocked);
+      var oneNc = outcomes ? ncPs.map(function () { return emptyPrioFigs(); }) : [];
+      var a = collegeAlloc(col);
+      addInstPrios(one, col, slot, ps, ncPs, !!a.gate_blocked, oneNc, !!a.nc_gate_blocked);
       var upf = unitsPerCplFtes(col);
       cal[col.quarter ? "quarter" : "semester"] = true;
       if (am.capped[col.college]) atMax++;
       one.forEach(function (f, i) {
         Object.keys(f).forEach(function (k) { if (k !== "statuses") tot[i][k] += f[k]; });
         units[i] += (f.crTarget + f.ncTarget) * upf;
+      });
+      oneNc.forEach(function (f, i) {
+        Object.keys(f).forEach(function (k) { if (k !== "statuses") totNc[i][k] += f[k]; });
       });
     });
     var unitWord = cal.quarter && cal.semester ? "" : (cal.quarter ? "quarter" : "semester");
@@ -9660,7 +10081,20 @@
                demonstrated: cap > 0 ? shown : null, under: cap > 0 && under,
                pct: cap > 0 ? shown / cap : null };
     });
-    return { prios: prios, atMax: atMax };
+    // The noncredit outcomes (Scenario 4): a count target, the members'
+    // targets added up, TBA while every member's denominator is still to come.
+    var ncPrios = totNc.map(function (f, i) {
+      var p = ncPs[i], cap = f.ncCap || 0;
+      var a = Math.abs(f.ncEarned), under = a >= 0.5 && a < PUBLIC_MONEY_FLOOR;
+      var shown = a < 0.5 ? 0 : (under ? PUBLIC_MONEY_FLOOR : coarseDollars(f.ncEarned));
+      var pending = sc.rows.every(function (col) { return !(instSplit(col).nc > 0) || countTargetPending(col, p); });
+      return { label: p.label, title: p.title || "", count: true, unitWord: ncUnitWord(p, 2),
+               target: pending ? null : f.ncTarget, rule: countTargetWords(null, p), metric: p.metric || "",
+               description: p.description || "", share: p.share,
+               totalPossible: cap, demonstrated: cap > 0 ? shown : null, under: cap > 0 && under,
+               pct: cap > 0 ? shown / cap : null };
+    });
+    return { prios: prios, ncPrios: ncPrios, atMax: atMax };
   }
 
   // `target` is whatever prioTarget() returned for this priority — CPL FTES for
@@ -9884,7 +10318,9 @@
       ncSentence = " <strong>The noncredit share:</strong> the Chancellor&#39;s Office divides every award into a credit share and " +
         "a noncredit share by the institution&#39;s own FTES split. College awards carry " + fmtMoney(ncFace) +
         " restricted to the noncredit measures, and the " + trioN + " noncredit-only institutions qualify for " +
-        fmtMoney(trioHeld) + " by origination: CPL from their programs that a credit college transcribes.";
+        fmtMoney(trioHeld) + (ncOutcomesMode()
+          ? " on the noncredit outcomes: exhibits built or adopted for their learning, and a noncredit CPL portfolio-development course."
+          : " by origination: CPL from their programs that a credit college transcribes.");
     })();
     // Disbursement cadence — RESPONSIVE to the Even ⇄ Front-load toggle (Sam,
     // 2026-07-27: the box read as an even-tranche explainer even when front-load
@@ -9963,6 +10399,8 @@
   function prioCsvHead() {
     var h = [];
     priorities(state.viewSlot).forEach(function (p, i) { h.push("P" + (i + 1) + " target", "P" + (i + 1) + " actual"); });
+    // The noncredit outcomes (Scenario 4): a count target and actual each.
+    ncOutcomes(state.viewSlot).forEach(function (p) { h.push(p.label + " target (" + ncUnitWord(p, 2) + ")", p.label + " actual"); });
     return h;
   }
   function prioCsvCells(c, isSystem) {
@@ -9974,6 +10412,14 @@
       out.push(fr.status === "earned" ? fr.actual :
         fr.status === "suppressed" ? maskLt(false) :
         !earnIsMeasured(fr) ? "" : 0);
+    });
+    ncOutcomes(state.viewSlot).forEach(function (p) {
+      var pend = countTargetPending(isSystem ? null : c, p);
+      out.push(pend ? "" : Math.round(isSystem ? sysTarget(p, state.viewSlot) : prioTarget(c, p)));
+      var fr2 = earnFraction(isSystem ? null : c, p);
+      out.push(fr2.status === "earned" ? fr2.actual :
+        fr2.status === "suppressed" ? maskLt(false) :
+        !earnIsMeasured(fr2) ? "" : 0);
     });
     return out;
   }
@@ -10510,9 +10956,14 @@
     // earns NOTHING; the cap is untouched. What it could have earned is tracked
     // as WITHHELD and held in reserve (never redistributed).
     var gate = baselineGate(c.college);
+    // The noncredit share's own gate under the outcomes lane (Scenario 4); the
+    // institution's gate otherwise, as before (one gate held everything).
+    var ncGate = ncOutcomesMode() ? ncLaneGate(c.college) : gate;
     out.gate_blocked = !!gate.blocked;
     out.gate_pending = !!gate.pending;
     out.gate_missing = gate.missing;
+    out.nc_gate_blocked = !!ncGate.blocked;
+    out.nc_gate_pending = !!ncGate.pending;
     selectedYears().forEach(function (_, i) {
       var slot = String(i + 1);
       var v = W * shareSum(slot) / ny;
@@ -10533,7 +10984,7 @@
       // Year 1 against the Year-1 targets and later years carry nothing.
       var ey = 0, hy = 0, ecy = 0, eny = 0, hcy = 0, hny = 0;
       var pay = function (paid, fr, lane) {
-        if (gate.blocked) {   // held in reserve
+        if (lane === "nc" ? ncGate.blocked : gate.blocked) {   // held in reserve
           earnWithheld += paid; hy += paid;
           if (lane === "nc") { heldNc += paid; hny += paid; } else { heldCr += paid; hcy += paid; }
           return;
@@ -10769,7 +11220,9 @@
   function crAwardCellHtml(row) {
     var cap = (row.cr_award || 0) / awardDivisor();
     if (row.nco) {
-      return '<td class="cf-award dk c" title="A noncredit-only institution: its whole award is the noncredit share, qualified by origination (N2 b).">$0</td>';
+      return '<td class="cf-award dk c" title="' + (ncOutcomesMode()
+        ? "A noncredit-only institution: its whole award is the noncredit share, released on the noncredit outcomes."
+        : "A noncredit-only institution: its whole award is the noncredit share, qualified by origination (N2 b).") + '">$0</td>';
     }
     return '<td class="cf-award c" title="' +
       esc(awardCellTitle("Credit share of the max award" + awardSpanWords(), cap, cellFig(row, "earned_cr"))) + '">' +
@@ -10881,7 +11334,12 @@
     // by the name (an identity); the bound word sits in Total Funds. The space
     // before it is text, not margin: the print copy has no .cplfund-chip rule,
     // and without it the page printed "CalbrightNC only" (2026-09-29).
-    if (c.nco) chips += ' <span class="cplfund-chip" title="A standalone noncredit institution. It holds the same award window as every college and qualifies by origination: CPL from its programs, transcribed at a credit college.">NC only</span>';
+    if (c.nco) {
+      chips += ' <span class="cplfund-chip" title="' + (ncOutcomesMode()
+        ? "A standalone noncredit institution. It holds the same award window as every college; its whole award is its noncredit share, released on the noncredit outcomes."
+        : "A standalone noncredit institution. It holds the same award window as every college and qualifies by origination: CPL from its programs, transcribed at a credit college.") +
+        '">NC only</span>';
+    }
     // One-click entry (Sam, 2026-08-05): opens THIS row's drill-in with the
     // attestation form focused. Public + private; hidden once opted in. The
     // words carry the deadline (Sam, 2026-09-28: "Confirm by MM-DD-YY", and
@@ -11049,7 +11507,7 @@
     var ss = shareSum(slot);
     if (ss > 0) lines.push("Share: " + fmtPctTrim(p.share / ss) + " of each institution's credit funding.");
     if (prioIsFtes(p)) lines.push("Price: " + priceWords(p) + ".");
-    if (np) lines.push("Noncredit: " + NC_LANE_RULE);
+    if (np) lines.push("Noncredit: " + ncLaneRule());
     return lines.join("\n");
   }
   // A Max cell: the lane's funding times the priority's share, then the target
@@ -11343,8 +11801,8 @@
     var HEAD_TIP = {
       cr_award: "This priority's credit funding " + when + ", with its Max FTES beneath: the credit measure's target at the priority's FTES reimbursement rate.",
       cr_current: "Credit funding this priority has qualified for so far, with the Actual FTES beneath. Hover a figure for what remains." + GRAY_WORDS,
-      nc_award: "This priority's noncredit funding " + when + ", with its Max FTES beneath. " + NC_LANE_RULE,
-      nc_current: "Noncredit funding this priority has qualified for so far, with the Actual FTES beneath. " + NC_LANE_RULE + GRAY_WORDS,
+      nc_award: "This priority's noncredit funding " + when + ", with its Max FTES beneath. " + ncLaneRule(),
+      nc_current: "Noncredit funding this priority has qualified for so far, with the Actual FTES beneath. " + ncLaneRule() + GRAY_WORDS,
       total: "This priority's funding, credit and noncredit together.",
       current_total: "Funding this priority has qualified for so far, credit and noncredit together." + GRAY_WORDS
     };
@@ -11363,6 +11821,9 @@
       return money + ' <span class="cf-ftes"' + (lineTip ? ' title="' + esc(lineTip) + '"' : "") + ">" + line + "</span>";
     };
     var ncPs = ncOn ? (o.nc.prios || []) : [];
+    // The outcomes lane (Scenario 4): the credit rows' noncredit cells read a
+    // dash, and the noncredit outcomes follow as rows of their own.
+    var ncOut = o.ncOut && o.ncOut.prios && o.ncOut.prios.length ? o.ncOut : null;
     var body = (o.cr.prios || []).map(function (p, i) {
       if (!cardRowsOn("m" + p.src)) return "";
       var isF = prioIsFtes(p);
@@ -11389,7 +11850,9 @@
           fig(earnedMoney(f.actualFunds), a.text, a.tip === TBA_TIP ? TBA_TIP : "") +
           (o.college && linkP ? srcLinkHtml(o.college.college, linkP) : "") + "</td>";
       };
-      var dash = '<td class="c" title="Credit only: no noncredit share.">&mdash;</td>';
+      var dash = ncOut
+        ? '<td class="c" title="A credit priority: the noncredit share releases on the noncredit outcomes below.">&mdash;</td>'
+        : '<td class="c" title="Credit only: no noncredit share.">&mdash;</td>';
       // The Total cells add the lanes that count in FTES; a headcount lane (a
       // legacy measure) keeps its own unit and stands alone only without one.
       var ftesLanes = (isF ? [[crF, crA]] : []).concat(ncF ? [[ncF, ncA]] : []);
@@ -11426,9 +11889,54 @@
       return '<tr class="cplfund-detail cplfund-subnote"><td colspan="' + cols.length + '">' +
         esc(r.label) + ' <span class="dk">' + esc(r.note) + "</span></td></tr>";
     }).join("");
+    // ── the noncredit outcome rows (Scenario 4) ──
+    // One row an outcome, in the table's own columns: the credit cells a dash,
+    // Max NC Funds with its target beneath (a count, never FTES), Curr NC
+    // Funds with its actual beneath, gray while the noncredit share's own
+    // conditions hold. Total and Curr Total repeat the noncredit cells, since
+    // an outcome counts toward that share alone.
+    var ncGateCls = o.ncGated ? " cf-gated" : "";
+    var ncGray = o.ncGated ? "." + GATED_CELL_WORDS : "";
+    var outRows = ncOut ? ncOut.prios.map(function (p, i) {
+      var f = ncOut.figures(p, i);
+      var tgtLine = f.target == null ? "Target TBA" : "Target " + fmtInt(f.target) + " " + ncUnitWord(p, f.target === 1 ? 1 : 2);
+      var act = actualCountOf(f, p);
+      var remain = f.target != null && act.measured ? Math.max(0, f.target - (act.val || 0)) : null;
+      var curTip = diffMoney(f.maxFunds, f.actualFunds) + " still to qualify for" +
+        (remain == null ? "" : " · " + (remain <= 0 ? "target met" : fmtInt(remain) + " " + ncUnitWord(p, remain === 1 ? 1 : 2) + " to the target")) +
+        (act.measured ? " · " + act.tip : "") + ncGray;
+      var maxTip = (o.college
+        ? "Max Funds " + fmtMoney(f.maxFunds) + ": this institution's noncredit funding × this outcome's " +
+          fmtPctTrim(ncShareSum(slot) > 0 ? p.share / ncShareSum(slot) : 0) + " share.\n" + countTargetWords(o.college, p)
+        : "Max Funds " + fmtMoney(f.maxFunds) + ": the institutions' noncredit funding for this outcome, added up.\n" + countTargetWords(null, p));
+      var dashT = '<td class="c" title="A noncredit outcome: it counts toward the noncredit share alone.">&mdash;</td>';
+      var nameTip = [p.label + (p.title ? ": " + p.title : "")];
+      (p.goals || []).forEach(function (k) { var g = goalByKey(k); if (g) nameTip.push("Goal (" + g.key + "): " + g.text + "."); });
+      if (p.metric) nameTip.push("Counts: " + p.metric);
+      if (ncShareSum(slot) > 0) nameTip.push("Share: " + fmtPctTrim(p.share / ncShareSum(slot)) + " of each institution's noncredit share.");
+      var CELL = {
+        college: '<td class="t cf-subname" title="' + esc(nameTip.join("\n")) + '">' + esc(p.label) + (p.title ? ": " + esc(p.title) : "") + "</td>",
+        cr_award: dashT, cr_current: dashT,
+        nc_award: '<td class="c" title="' + esc(maxTip) + '">' + fig(fmtMoney(f.maxFunds), tgtLine, f.target == null ? TBA_TIP : "") + "</td>",
+        nc_current: '<td class="c' + ncGateCls + '" title="' + esc(curTip) + '">' +
+          fig(earnedMoney(f.actualFunds), act.text, act.tip === TBA_TIP ? TBA_TIP : "") + "</td>",
+        total: '<td class="c">' + fig(fmtMoney(f.maxFunds), tgtLine, f.target == null ? TBA_TIP : "") + "</td>",
+        current_total: '<td class="c' + ncGateCls + '" title="' + esc(curTip) + '">' +
+          fig(earnedMoney(f.actualFunds), act.text, act.tip === TBA_TIP ? TBA_TIP : "") + "</td>"
+      };
+      return '<tr class="cplfund-subrow cplfund-ncoutrow">' + cols.map(function (col) {
+        return CELL[col.key] || "<td></td>";
+      }).join("") + "</tr>";
+    }).join("") : "";
+    // The reported line of the noncredit lane: a count the college reports on
+    // its attestation, funded by nothing here.
+    var ncRep = ncOut ? ncReportedList().map(function (r) {
+      return '<tr class="cplfund-detail cplfund-subnote"><td colspan="' + cols.length + '">Reported, not funded: ' +
+        esc(r.title || "") + ' <span class="dk">' + esc(r.text || "") + "</span></td></tr>";
+    }).join("") : "";
     // No priority row to show (every card switched off the college rows): no
     // header band over nothing.
-    return body || reported ? head + body + reported : "";
+    return body || outRows || reported ? head + body + outRows + reported + ncRep : "";
   }
   // Max Funds less Actual Funds, as hover text, printed so that it never
   // undoes the public coarsening of Actual Funds (the ADR: demonstrated figures
@@ -11489,6 +11997,8 @@
       var pp0 = { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0, crReleased: 0, ncReleased: 0, crTarget: 0, ncTarget: 0 };
       var ncFunds = 0;
       agg.perPrio.forEach(function (pp) { ncFunds += pp.ncCap; });
+      (agg.perNc || []).forEach(function (q) { ncFunds += q.ncCap; });
+      var outcomes = ncOutcomesMode();
       prio = "";
       subRows = prioSubRowsHtml({
         head: "Statewide priority outcomes",
@@ -11496,14 +12006,21 @@
           var pp = agg.perPrio[i] || pp0;
           return { maxFtes: pp.crTarget, maxFunds: pp.crCap, fr: earnFraction(null, p), actualFunds: pp.crReleased };
         } },
-        nc: ncFunds > 0.5 ? { prios: ncPriorities(slot), figures: function (p, i) {
+        nc: ncFunds > 0.5 && !outcomes ? { prios: ncPriorities(slot), figures: function (p, i) {
           var pp = agg.perPrio[i] || pp0;
           return { maxFtes: pp.ncTarget, maxFunds: pp.ncCap, fr: earnFraction(null, p), actualFunds: pp.ncReleased };
+        } } : null,
+        // The outcomes lane (Scenario 4): the statewide figures are the
+        // institutions' summed, the target TBA while no denominator has landed.
+        ncOut: ncFunds > 0.5 && outcomes ? { prios: agg.ncPs, figures: function (p, i) {
+          var q = agg.perNc[i] || pp0;
+          return { target: countTargetPending(null, p) ? null : q.ncTarget, fr: earnFraction(null, p),
+            maxFunds: q.ncCap, actualFunds: q.ncReleased };
         } } : null,
         gated: false,
         reported: reportedDetailRows(slot, true)
       });
-      laneWords = ncFunds > 0.5 ? NC_LANE_RULE : "Credit only: this institution has no noncredit share.";
+      laneWords = ncFunds > 0.5 ? ncLaneRule() : "Credit only: this institution has no noncredit share.";
     }
     var ncols = COLS_COLLEGE().length;
     return '<tr class="cplfund-detail"><td colspan="' + ncols + '">' +
@@ -11520,10 +12037,11 @@
   function collegeDetailHtml(c, alt) {
     var slot = state.viewSlot;
     var prio, subRows = "", laneWords = "";
-    if (c.nco) {
+    if (c.nco && !ncOutcomesMode()) {
       // A noncredit-only institution's expand: the origination rule in words
       // (the locked mock), never a priority table scored on measures that do
-      // not describe it.
+      // not describe it. Under the outcomes lane (Scenario 4) its noncredit
+      // outcomes are rows like any institution's, below.
       var scopeWords = c.feeder && c.feeder.origin_scope === "statewide"
         ? "anywhere in the state" : "across its district&#39;s credit campuses";
       // Its figures read on its row (Total Funds, Curr Total Funds), so the
@@ -11541,6 +12059,7 @@
       // The priority rows alone (Sam, 2026-09-28 and 09-29): the row above
       // carries the totals, and the header band names each lane.
       var ncPs = ncPriorities(slot);
+      var outcomes = ncOutcomesMode();
       var crFig = function (p) {
         var fr = earnFraction(c, p), m = c[p.key] || 0;
         // The gate holds the FUNDING, never the measurement: an institution yet
@@ -11554,18 +12073,27 @@
         // The target reads the ROSTER row, as _ncPrios() does — never a copy.
         return { maxFtes: prioTarget(rosterRow(c.college) || c, p), maxFunds: m, fr: fr, actualFunds: m * fr.f };
       };
+      // A noncredit outcome's figures (Scenario 4): a count target from the
+      // roster row, TBA while its denominator is still to come.
+      var ncOutFig = function (p) {
+        var fr = earnFraction(c, p), m = c[p.key] || 0, row = rosterRow(c.college) || c;
+        return { target: countTargetPending(row, p) ? null : prioTarget(row, p), fr: fr, maxFunds: m, actualFunds: m * fr.f };
+      };
       // The priority rows sit in the college table's own columns (Sam,
       // 2026-09-29), gray in the Curr columns while the gate holds.
       var hasNc = (c.nc_award || 0) > 0.5;
       prio = "";
       subRows = prioSubRowsHtml({
-        cr: { prios: priorities(slot), figures: crFig },
-        nc: hasNc ? { prios: ncPs, figures: ncFig } : null,
+        head: c.nco ? "Noncredit outcomes" : undefined,
+        cr: { prios: c.nco ? [] : priorities(slot), figures: crFig },
+        nc: hasNc && !outcomes ? { prios: ncPs, figures: ncFig } : null,
+        ncOut: hasNc && outcomes ? { prios: ncPs, figures: ncOutFig } : null,
+        ncGated: !!c.nc_gate_blocked,
         college: rosterRow(c.college) || c, slot: slot,
         gated: !!c.gate_blocked,
         reported: reportedDetailRows(slot, false)
       });
-      laneWords = hasNc ? NC_LANE_RULE
+      laneWords = hasNc ? ncLaneRule()
         : "Credit only: " + esc(dispName(c.college)) + " reports no noncredit FTES, so its whole award is the credit share.";
     }
     // ONE FOOTER LINE (2026-09-23): the noncredit share, the county and the
@@ -11942,6 +12470,14 @@
     }
     if (partShown()) list.push({ text: partReqText(), kind: "part" });
     extraReqs().forEach(function (t) { if (String(t).trim()) list.push({ text: String(t).trim() }); });
+    // The noncredit share's own conditions (Scenario 4), after the institution's.
+    if (ncOutcomesMode()) {
+      if (ncCoordShown()) {
+        list.push({ text: "For the noncredit share of an award: a noncredit CPL coordinator named and published " +
+          "(attested in COBI until the MAP platform carries the role)", kind: "nc_coord" });
+      }
+      if (ncTeamShown()) list.push({ text: "For the noncredit share of an award: a strike-team attestation renewed each year", kind: "nc_team" });
+    }
     return list;
   }
   function buildRequirementsText() {
@@ -12410,7 +12946,8 @@
         grp.map(function (it) {
           return "<tr><td class='t' style='padding-left:1.5em;'>" + esc(it.name) +
             // Calbright is a noncredit COLLEGE (Sam, 2026-09-24), so its flag says so.
-            (it.nco ? " <em>(" + (it.ncCollege ? "noncredit college" : "noncredit-only") + " &mdash; qualifies by origination)</em>" : "") +
+            (it.nco ? " <em>(" + (it.ncCollege ? "noncredit college" : "noncredit-only") +
+              (ncOutcomesMode() ? " &mdash; qualifies on the noncredit outcomes)" : " &mdash; qualifies by origination)") + "</em>" : "") +
             (it.placeholder ? " <em class='dk'>(size is a stand-in; disbursement waits for a measured figure)</em>" : "") +
             "</td><td>" + cell(it.cr) + "</td><td>" + cell(it.nc) + "</td><td>" + cell(it.total) + "</td></tr>";
         }).join("");
@@ -14578,6 +15115,17 @@
       setPrio(slot, Number(idx), edit, raw);
       return;
     }
+    // The noncredit outcome cards (Scenario 4): their own list, their own setter.
+    if (edit === "nc-title" || edit === "nc-description" || edit === "nc-metric") {
+      setNcOutcome(slot, Number(idx), edit.slice(3), raw);
+      return;
+    }
+    if (edit === "nc-share") {
+      var ncs = parseNum(raw);
+      if (ncs == null) { render(); return; }
+      setNcOutcome(slot, Number(idx), "share", Math.max(0, ncs) / 100);
+      return;
+    }
     if (edit === "feeder-ftes") {
       var list = feeders();
       var fn = parseNum(raw);
@@ -15982,6 +16530,17 @@
                  demonstrated: pp.cap > 0 ? pp.earned : null,
                  pct: pp.cap > 0 ? pp.earned / pp.cap : null };
       });
+      // The noncredit outcomes (Scenario 4): the institutions' count targets
+      // summed, TBA while no denominator has landed; a scope's are its own.
+      var ncPrios = scoped ? (scoped.ncPrios || []) : (agg.perNc || []).map(function (q, i) {
+        var p = agg.ncPs[i], pend = countTargetPending(null, p);
+        return { label: p.label, title: p.title || "", count: true, unitWord: ncUnitWord(p, 2),
+                 target: pend ? null : sysTarget(p, state.viewSlot), rule: countTargetWords(null, p),
+                 metric: p.metric || "", description: p.description || "", share: p.share,
+                 totalPossible: q.ncCap || 0,
+                 demonstrated: q.ncCap > 0 ? q.ncEarned : null,
+                 pct: q.ncCap > 0 ? q.ncEarned / q.ncCap : null };
+      });
       var cols = eligColleges(), total = cols.length, optN = 0;
       cols.forEach(function (c) { if (ELIG.optin[c.college]) optN++; });
       var conditions = [];
@@ -16003,7 +16562,26 @@
         conditions.push({ kind: "jst", n: metN, of: total, star: starN,
           asOf: pfv && pfv.vet_star_as_of ? String(pfv.vet_star_as_of).slice(0, 10) : "" });
       });
-      return { prios: prios, conditions: conditions,
+      // The noncredit share's conditions (Scenario 4), in requirementsList()'s
+      // order after the institution's: the count among institutions that
+      // carry a noncredit share, null until the attestation has been read.
+      if (ncOutcomesMode()) {
+        var ncCols = oneRoster().filter(function (c) { return instSplit(c).nc > 0; });
+        var kinds = [];
+        if (ncCoordShown()) kinds.push("nc_coord");
+        if (ncTeamShown()) kinds.push("nc_team");
+        kinds.forEach(function (k) {
+          if (!ELIG.ncAttestOk) { conditions.push(null); return; }
+          var n = 0;
+          ncCols.forEach(function (c) {
+            ncCondList(c.college).forEach(function (r) { if (r.kind === k && r.met) n++; });
+          });
+          conditions.push({ kind: k, n: n, of: ncCols.length });
+        });
+      }
+      return { prios: prios, ncPrios: ncPrios, ncMode: ncLaneMode(), ncRule: ncLaneRule(),
+               ncReported: ncReportedList(), ncCondWords: ncOutcomesMode() ? ncCondWords() : "",
+               conditions: conditions,
                scope: sc ? { kind: sc.district ? "district" : "college", name: sc.name,
                              members: sc.rows.length, atMax: scoped.atMax } : null };
     },
@@ -16068,6 +16646,11 @@
           unit: prioUnitLabel(p),
           cap: cap,
           target: prioTarget(inst, p),
+          // A count outcome whose target waits on its denominator (Scenario 4),
+          // and its measured actual, for My CPL Funding's line.
+          targetPending: p.unit === "count" ? countTargetPending(inst, p) : false,
+          count: p.unit === "count",
+          actual: fr.status === "earned" ? fr.actual : (fr.status === "none" ? 0 : null),
           status: fr.status,
           // $0 until the noncredit feeds report (F1) — every NC priority
           // resolves `undelivered` while the daily feed carries no nc_*
@@ -16156,6 +16739,9 @@
       }
       ELIG.optinReview = o.optinReview || [];
       ELIG.asOf = o.asOf || null;
+      // The noncredit attestation (Scenario 4): rows by institution key.
+      ELIG.ncAttest = o.ncAttest || {};
+      ELIG.ncAttestOk = !!(o.ncAttestOk || o.ncAttest);
       // Contacts as PostgREST returns them (the directory's rows or the
       // mirror's), through the same ingest the load uses.
       ELIG.contact = o.contacts ? ingestContacts(o.contacts, rosterByShortName()) : {};
@@ -16180,8 +16766,31 @@
           return { kind: r.kind, met: !!r.met, pending: !!r.pending,
                    counts: r.kind === "vetstar" ? jstNeedWords(college) : "",
                    missing: r.kind === "coord" && !r.met ? ((ELIG.coordMissing || {})[college] || "coord") : "" };
-        })
+        }),
+        // The noncredit share's own conditions (Scenario 4), for a credit
+        // college with a noncredit share; a standalone's are in `items`.
+        ncMode: ncLaneMode(),
+        ncItems: (!c.nco && ncOutcomesMode() && instSplit(c).nc > 0) ? ncCondList(college).map(function (r) {
+          return { kind: r.kind, met: !!r.met, pending: !!r.pending };
+        }) : [],
+        ncPending: !!ncLaneGate(college).pending, ncBlocked: !!ncLaneGate(college).blocked
       };
+    },
+    // The noncredit outcomes lane (Scenario 4), for the explainer's payload,
+    // My CPL Funding and the tests.
+    _ncLaneMode: ncLaneMode,
+    _ncLaneRule: ncLaneRule,
+    _ncReported: ncReportedList,
+    _ncCondWords: ncCondWords,
+    _ncOutcomes: function (slot) {
+      slot = String(slot || "1");
+      return ncOutcomes(slot).map(function (p) {
+        return { key: p.key, label: p.label, title: p.title, description: p.description, metric: p.metric,
+                 metric_src: p.metric_src, share: p.share, unit: prioUnitLabel(p), goals: p.goals.slice(),
+                 target_rule: clone(p.target_rule), rule: countTargetWords(null, p),
+                 strategies: (p.strategies || []).slice(),
+                 statewideTarget: countTargetPending(null, p) ? null : sysTarget(p, slot) };
+      });
     },
     _optinActive: function (c) { return optinActive(c); },
     _submitOptin: function (c, form) { return submitOptIn(c, form); },
