@@ -1753,34 +1753,23 @@
   }
 
   // ── Create Handout (Sam, 2026-09-24) ──
-  // The handout lives on My College: its Report button builds the college's
-  // briefing document and its occupation opportunity register is the port of
-  // the per-college handout page kb/_build_regional_cpl_opportunity.py writes.
-  // This button hands the reader over there. When exactly one college is in
-  // the College filter it travels as My College's REMEMBERED choice — that tab
-  // always asks first (Sam, 2026-08-21) and offers "open it again", so the
-  // hand-off is one click and can never land on someone else's college.
-  // ⚠️ MY_COLLEGE_SCOPE_KEY mirrors SCOPE_KEY in college_briefing.js;
-  // tests/eacr_handout.test.js fails if the two literals drift.
-  var MY_COLLEGE_SCOPE_KEY = "cplMyCollegeScope.v1";
+  // Create Handout opens CPL Pathways' My College section (S448, step 3 of folding My College
+  // into CPL Pathways; Sam, 2026-10-22: "go on step 3"). One college picked in the College
+  // filter travels as the page's shared college choice, in memory only (tabs never remember a
+  // choice, Sam 2026-10-21), and asks CPL Pathways to open its My College section, where
+  // Create a briefing builds the handout. Two or none carry nothing: no silent pick.
   function buildHandoutRow() {
     return '<div class="sw-handout">' +
       '<button class="sw-action-btn primary" id="sw-handout" type="button">Create Handout</button>' +
-      '<span class="sw-handout-hint" id="sw-handout-hint">Opens My College, where the handout is built for one college: ' +
+      '<span class="sw-handout-hint" id="sw-handout-hint">Opens CPL Pathways at My College, where the handout is built for one college: ' +
       'its briefing report and its occupation opportunity register. Pick one college in the College filter first and it carries over.</span>' +
       '</div>';
   }
   function openHandout() {
     var one = state.filters.college.length === 1 ? state.filters.college[0] : "";
-    if (one) {
-      try {
-        localStorage.setItem(MY_COLLEGE_SCOPE_KEY, JSON.stringify({
-          scope: "college", college: one, district: "", swpRegion: "", handoff: true
-        }));
-      } catch (e) { /* storage unavailable — the tab still opens and asks */ }
-    }
-    if (window.CPL_TABS && typeof CPL_TABS.navigate === "function") CPL_TABS.navigate("college-briefing", "");
-    else location.hash = "#college-briefing";
+    if (one) window.CPL_COLLEGE_CHOICE = { college: one, by: "statewide-handout", open: "my-college" };
+    if (window.CPL_TABS && typeof CPL_TABS.navigate === "function") CPL_TABS.navigate("cpl-pathways", "");
+    else location.hash = "#cpl-pathways";
   }
 
   // Complete the ARIA tab pattern. A PARTIAL one is worse than none: it

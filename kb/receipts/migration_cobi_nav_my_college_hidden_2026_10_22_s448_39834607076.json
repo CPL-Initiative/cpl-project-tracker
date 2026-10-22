@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cobi_nav_my_college_hidden_2026-10-22_s448.sql",
+ "name": "cobi_nav_my_college_hidden_2026_10_22_s448",
+ "version": "20261022185237",
+ "sha256": "b6bf43f643b59ecb5172f355a7e9900f1143d73e6e8ac4313a1b3f93c19896cf",
+ "run": "39834607076",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

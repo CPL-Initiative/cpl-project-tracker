@@ -7,7 +7,7 @@
 //   (b) CPL Pathways keeps the reader's college when the table's list lands and the tab
 //       re-renders (it used to fall back to All colleges), and shares the pick;
 //   (c) a college My College picked opens CPL Pathways on it, on the first visit and on a return;
-//   (d) CPL Pathways' "Open My College" shares the college and opens the tab;
+//   (d) "Open My College" is gone (step 3, S448); a hand-off asking for My College opens the section;
 //   (e) a college CPL Pathways picked opens My College on it, in My College's own spelling;
 //   (f) My College's "Open CPL Pathways" shares its college and opens the tab;
 //   (g) a cleared choice, or a tab's own, moves nothing; the choice is never written to storage.
@@ -101,21 +101,18 @@ const pick = (w, sel, v) => { sel.value = v; sel.dispatchEvent(new w.Event("chan
   w3.dispatchEvent(new w3.CustomEvent("cpl-tab-activated", { detail: { tab: "cpl-pathways" } }));
   check("(c) and a return after My College picked one shows it", w3.document.querySelector("#cpl-pathways-root select.cplpw-colsel").value === "Cerritos College");
 
-  // ── (d) ──
-  const nav4 = [];
-  const w4 = pathways({ nav: nav4 });
+  // ── (d) step 3 (S448): My College is off the menu, its sections are folded into this tab,
+  //     so "Open My College" is gone; a hand-off asking for the section opens it ──
+  const w4 = pathways();
   w4.CPL_PATHWAYS_TAB.activate();
   const r4 = w4.document.getElementById("cpl-pathways-root");
   pick(w4, r4.querySelector("select.cplpw-colsel"), "Cerritos College");
-  const mine = [...r4.querySelectorAll("button.cplpw-oppact")].filter((b) => b.textContent === "Open My College")[0];
-  check("(d) Open My College is a button beside the college's links", !!mine && mine.type === "button");
-  w4.CPL_COLLEGE_CHOICE = null;
-  mine && mine.click();
-  check("(d) it shares the college and opens My College",
-    w4.CPL_COLLEGE_CHOICE && w4.CPL_COLLEGE_CHOICE.college === "Cerritos College" && nav4.join() === "college-briefing", nav4.join());
-  const w4b = pathways();
-  w4b.CPL_PATHWAYS_TAB.activate();
-  check("(d) without the tab router it is not offered", ![...w4b.document.querySelectorAll("button.cplpw-oppact")].some((b) => b.textContent === "Open My College"));
+  check("(d) no Open My College link any more", ![...r4.querySelectorAll("button.cplpw-oppact")].some((b) => b.textContent === "Open My College"));
+  w4.CPL_COLLEGE_CHOICE = { college: MTSAC_CAT, by: "statewide-handout", open: "my-college" };
+  w4.dispatchEvent(new w4.CustomEvent("cpl-tab-activated", { detail: { tab: "cpl-pathways" } }));
+  const sec4 = r4.querySelector("details.cplpw-mycollege");
+  check("(d) a hand-off asking for My College picks the college and opens its section",
+    r4.querySelector("select.cplpw-colsel").value === MTSAC_CAT && !!sec4 && sec4.open && !sec4.hidden);
 
   // ── (e) ──
   const nav5 = [];

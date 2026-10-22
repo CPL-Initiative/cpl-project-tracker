@@ -25,15 +25,11 @@ const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 function val(fn) { try { return fn(); } catch (e) { return undefined; } }
 
-// ── 1. The key literal is in lockstep across the two files ──────────────────
-const eacrKey = val(() => src.match(/MY_COLLEGE_SCOPE_KEY = "([^"]+)"/)[1]);
-const briefingKey = val(() => briefingSrc.match(/var SCOPE_KEY = "([^"]+)"/)[1]);
-check("the EACR names My College's storage key", !!eacrKey);
-check("college_briefing.js still declares SCOPE_KEY", !!briefingKey);
-check("⭐ the two literals are identical (a rename on either side breaks the hand-off)",
-  !!eacrKey && eacrKey === briefingKey);
+// ── 1. My College still reads a stored hand-off only once ──────────────────
+// Since S448 (step 3 of the fold) Create Handout hands over in memory, so no key is shared.
 check("My College reads only a hand-off, once (Sam, 2026-10-21: tabs never remember a choice)",
   /r\.handoff !== true/.test(briefingSrc) && /localStorage\.removeItem\(SCOPE_KEY\)/.test(briefingSrc));
+check("the handout writes nothing to storage", !/localStorage\.setItem/.test(src.slice(src.indexOf("function openHandout"), src.indexOf("function openHandout") + 800)));
 
 // ── 2. Behaviour ────────────────────────────────────────────────────────────
 const exhibits = [
@@ -79,7 +75,7 @@ function setCollegeFilter(values) {
     .dispatchEvent(new window.Event("change", { bubbles: true }));
   return true;
 }
-function stored() { return val(() => JSON.parse(window.localStorage.getItem(eacrKey))); }
+function stored() { return window.CPL_COLLEGE_CHOICE || null; }
 
 setTimeout(function () {
   try { run(); } catch (e) { check("the harness ran to completion (it threw: " + e.message + ")", false); }
@@ -94,39 +90,38 @@ function run() {
     val(() => btn().tagName) === "BUTTON" && val(() => btn().getAttribute("type")) === "button"
     && /^Create Handout$/.test(val(() => btn().textContent.trim()) || ""));
   check("...with a sentence beside it saying where it goes and what carries over",
-    /My College/.test(val(() => doc.getElementById("sw-handout-hint").textContent) || "")
+    /CPL Pathways at My College/.test(val(() => doc.getElementById("sw-handout-hint").textContent) || "")
     && /one college/i.test(val(() => doc.getElementById("sw-handout-hint").textContent) || ""));
   check("...visible on every sub-tab (it lives outside the three panels)",
     !val(() => btn().closest(".sw-view")));
 
-  // Zero colleges selected: navigate, write nothing.
-  window.localStorage.clear();
-  check("with no college filtered, the button still opens My College", click(btn()) && navs.length === 1
-    && navs[0][0] === "college-briefing");
-  check("...and writes no remembered college", stored() === null);
+  // Zero colleges selected: navigate, carry nothing.
+  window.CPL_COLLEGE_CHOICE = null;
+  check("with no college filtered, the button still opens CPL Pathways", click(btn()) && navs.length === 1
+    && navs[0][0] === "cpl-pathways");
+  check("...and carries no college", stored() === null);
 
-  // Exactly one: carry it.
+  // Exactly one: carry it, asking for the My College section.
   setCollegeFilter(["Norco College"]);
   click(btn());
-  check("with ONE college filtered, it is handed over as My College's remembered choice",
-    val(() => stored().college) === "Norco College" && val(() => stored().scope) === "college");
-  check("...in the shape My College restores (district and swpRegion blank)",
-    val(() => stored().district) === "" && val(() => stored().swpRegion) === "" && val(() => stored().handoff) === true);
+  check("with ONE college filtered, it travels as the page's shared choice",
+    val(() => stored().college) === "Norco College" && val(() => stored().open) === "my-college");
+  check("...in memory only (no storage written)", window.localStorage.length === 0);
   check("...and the tab is opened by the router, not a hash guess",
-    navs.length === 2 && navs[1][0] === "college-briefing");
+    navs.length === 2 && navs[1][0] === "cpl-pathways");
 
   // Two: never pick one silently.
-  window.localStorage.clear();
+  window.CPL_COLLEGE_CHOICE = null;
   setCollegeFilter(["Norco College", "Chaffey College"]);
   click(btn());
   check("with TWO colleges filtered, nothing is carried (no silent pick)", stored() === null);
-  check("...but My College still opens", navs.length === 3);
+  check("...but CPL Pathways still opens", navs.length === 3);
 
   // No router at all: the hash still gets there.
   window.CPL_TABS = null;
   click(btn());
   check("without tabs.js the button falls back to the tab's hash",
-    window.location.hash === "#college-briefing");
+    window.location.hash === "#cpl-pathways");
 }
 
 function report() {
