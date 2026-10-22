@@ -35,6 +35,18 @@ opening line; the CPL Queue routine had already run S446, so 447 took handoff 44
 
 ## Open work, in order
 
+0. **Sam's asks first (2026-10-22 ~14:45Z, with a screenshot of the CPL Pathways tab).** S447 had too little context
+   left to do them. His words: *"fix a couple things on the CPL Pathways tab and update me on where we're at with the
+   consolidation of My College into CPL Pathways"*:
+   1. *"There's no way I can see to clear the pathways filter"* (the Pathway dropdown; add a clear choice).
+   2. *"The college and pathway filters are slow to load; would it help to use a lazy load?"* (measure first, then answer).
+   3. *"Just checking to see if the pathways listed on the filter are up to date based on the most recent harvest
+      data"* (the subtitle read 17,439 catalog records; compare with build be2635ed5b73 once applied).
+   4. *"The COBI header needs a little attention as when the window is resized or zoomed a bit, the elements overlap.
+      Can you vertically center the beta chip with respect to the COBI logo?"* (his screenshot circles the search box,
+      Signed in, Theme and Light overlapping, and the ALPHA chip sitting low beside the logo). Run `npm run a11y`.
+   Then give him the consolidation status: read the My College lane (`docs/reference/lanes/my-college-action-page.md`)
+   and the CPL Pathways notes before answering.
 1. **Confirm be2635ed5b73's Applied record on main**, as above.
 2. **Berkeley City's 27 Multimedia Arts credit certificates** (lessons S447): the capture reads their own pages and
    finds few listed courses. Read one credit page's Requirements node: `_getNavigation?id=10327&parentId=40048` gives
