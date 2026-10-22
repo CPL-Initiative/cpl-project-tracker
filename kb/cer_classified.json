@@ -86,6 +86,24 @@
    "hints": "e7e40608ef",
    "asked": "2026-10-21"
   },
+  "ADM JUS 004 - Principles and Procedures of the Justice System": {
+   "raw_title": "ADM JUS 004 - Principles and Procedures of the Justice System",
+   "unified_title": "Principles and Procedures of the Justice System",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.92,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": "Course code stripped from the cx hint. Joins the existing house family by title. The issuer is CCC for credit by exam.",
+   "rules": "575c290d755b",
+   "hints": "75bb10f770",
+   "asked": "2026-10-22"
+  },
   "AGBUS 015: Computer Application to Agriculture": {
    "raw_title": "AGBUS 015: Computer Application to Agriculture",
    "unified_title": "Agricultural Computer Applications",
@@ -6012,6 +6030,78 @@
    "hints": "7c0f5725e7",
    "asked": "2026-10-18"
   },
+  "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 1": {
+   "raw_title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 1",
+   "unified_title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 4"
+   ],
+   "_notes": "The 'unit N' suffix reads as a repeatable course level, kept as a trailing number like the Music Keyboards 1-4 family. Faculty may decide to collapse the units.",
+   "rules": "575c290d755b",
+   "hints": "038e921204",
+   "asked": "2026-10-22"
+  },
+  "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 2": {
+   "raw_title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 2",
+   "unified_title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion 2",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 4"
+   ],
+   "_notes": "The 'unit N' suffix reads as a repeatable course level, kept as a trailing number. Faculty may decide to collapse the units.",
+   "rules": "575c290d755b",
+   "hints": "709c0ebc52",
+   "asked": "2026-10-22"
+  },
+  "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 3": {
+   "raw_title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 3",
+   "unified_title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion 3",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 4"
+   ],
+   "_notes": "The 'unit N' suffix reads as a repeatable course level, kept as a trailing number. Faculty may decide to collapse the units.",
+   "rules": "575c290d755b",
+   "hints": "710f4681e1",
+   "asked": "2026-10-22"
+  },
+  "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 4": {
+   "raw_title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 4",
+   "unified_title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion 4",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 4"
+   ],
+   "_notes": "The 'unit N' suffix reads as a repeatable course level, kept as a trailing number. Faculty may decide to collapse the units.",
+   "rules": "575c290d755b",
+   "hints": "196a80f23c",
+   "asked": "2026-10-22"
+  },
   "Arc Welding High School Articulation": {
    "raw_title": "Arc Welding High School Articulation",
    "unified_title": "Arc Welding",
@@ -8727,6 +8817,24 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "Cal EMA- Incident Commander": {
+   "raw_title": "Cal EMA- Incident Commander",
+   "unified_title": "Incident Commander",
+   "issuing_agency": "California Governor's Office of Emergency Services (Cal OES)",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.65,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "issuer-issues-the-card",
+    "Rule 6",
+    "Rule 4"
+   ],
+   "_notes": "Cal EMA is the former name of Cal OES. The scope is unclear: it could be the CSTI hazmat Incident Commander or an all-hazards IC. It is not joined to the NASP 'Incident Commander HAZMAT' or FEMA ICT3 families without confirmation.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-22"
+  },
   "Cal Fire I-300 Intermediate ICS": {
    "raw_title": "Cal Fire I-300 Intermediate ICS",
    "unified_title": "ICS 300 — Intermediate Incident Command System",
@@ -9231,6 +9339,23 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "Class Piano II": {
+   "raw_title": "Class Piano II",
+   "unified_title": "Class Piano II",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "ebbdac7fb7",
+   "asked": "2026-10-22"
   },
   "Clinical Psychology Ph.D.": {
    "raw_title": "Clinical Psychology Ph.D.",
@@ -11314,6 +11439,23 @@
    "_notes": "The hint 'Kaiser High School' was set aside because the strip removed the course and kept the school. This is the multi-school EMT-405 identity (Rule 5f-5), so it joins the house family 'Emergency Medical Technician'. The issuer and trainer are set for this variant only, and that per-variant judgment needs review.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "ENV DES 101 - Foundations of Design I": {
+   "raw_title": "ENV DES 101 - Foundations of Design I",
+   "unified_title": "Foundations of Design I",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Course code stripped from the cx hint. No CCN or C-ID anchor was confirmed, so the local course title is used.",
+   "rules": "575c290d755b",
+   "hints": "b27793868c",
+   "asked": "2026-10-22"
   },
   "ES 003: Introduction to American Indian Studies": {
    "raw_title": "ES 003: Introduction to American Indian Studies",
@@ -16851,6 +16993,24 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "NUTR 071A  Rotations in Supervised Practice, Level A": {
+   "raw_title": "NUTR 071A  Rotations in Supervised Practice, Level A",
+   "unified_title": "Rotations in Supervised Practice Level A",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "The row is typed Industry Certification but is a course (Merritt dietetics supervised practice). The course title is used without the code; the comma was dropped to clear the dangling-word flag. The issuer is CCC as a course-as-exhibit.",
+   "rules": "575c290d755b",
+   "hints": "f913412730",
+   "asked": "2026-10-22"
+  },
   "NVC Administered Calculus I Exam": {
    "raw_title": "NVC Administered Calculus I Exam",
    "unified_title": "Calculus 1",
@@ -17022,6 +17182,24 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "National US&R Response System- Structural Collapse Technician": {
+   "raw_title": "National US&R Response System- Structural Collapse Technician",
+   "unified_title": "Rescue Systems 3: Structural Collapse Technician",
+   "issuing_agency": "Federal Emergency Management Agency (FEMA)",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "join-when-likely-one",
+    "Rule 4",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "FEMA National US&R Structural Collapse Technician covers the same competency as SFT Rescue Systems 3, so it joins the house title and FEMA discriminates as issuer. Faculty may split it later.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-22"
   },
   "Network Fundamentals": {
    "raw_title": "Network Fundamentals",
@@ -18967,6 +19145,24 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "Rescue International-- Swiftwater Operations": {
+   "raw_title": "Rescue International-- Swiftwater Operations",
+   "unified_title": "Swiftwater & Flood Rescue Operations (NFPA 1670)",
+   "issuing_agency": "Rescue International",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "join-when-likely-one",
+    "Rule 4",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "Swiftwater Operations-level rescue likely matches the existing NFPA 1670 operations family. Rescue International issues its own course certificate, which makes it the issuer discriminator.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-22"
+  },
   "Rescue Systems 3: Structural Collapse Technician": {
    "raw_title": "Rescue Systems 3: Structural Collapse Technician",
    "unified_title": "Rescue Systems 3: Structural Collapse Technician",
@@ -19500,6 +19696,23 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "University of California Master Gardener Certification": {
+   "raw_title": "University of California Master Gardener Certification",
+   "unified_title": "University of California Master Gardener Certification",
+   "issuing_agency": "University of California Agriculture and Natural Resources (UC ANR)",
+   "training_agency": null,
+   "confidence_title": 0.92,
+   "confidence_issuer": 0.88,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "issuer-issues-the-card",
+    "Rule 6"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-22"
   },
   "Video Editing High School Articulation": {
    "raw_title": "Video Editing High School Articulation",

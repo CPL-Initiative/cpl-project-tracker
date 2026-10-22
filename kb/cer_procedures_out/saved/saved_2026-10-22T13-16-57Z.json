@@ -1,0 +1,496 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-10-22T13-16-57Z",
+ "run_id": "39784894383",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "575c290d755b",
+ "cohorts": [
+  "cer-procedure-brand-family@bot",
+  "cer-procedure-classifier@bot",
+  "cer-procedure-course-identity@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 001 - Introduction to Administration of Justice",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Criminal Justice",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 001 - Introduction to Administration of Justice",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 002 - Concepts of Criminal Law",
+   "field": "unified_title_assignment",
+   "value": "Concepts of Criminal Law",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 002 - Concepts of Criminal Law",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 008 - Juvenile Procedures",
+   "field": "unified_title_assignment",
+   "value": "Juvenile Procedures",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 008 - Juvenile Procedures",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ARC 201 - Architectural Design I",
+   "field": "unified_title_assignment",
+   "value": "Architectural Design I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ARC 201 - Architectural Design I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 101 Theory and Practice of Microscopy",
+   "field": "unified_title_assignment",
+   "value": "Theory and Practice of Microscopy",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 101 Theory and Practice of Microscopy",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 102 Fluorescence Microscopy and Specimen Prep",
+   "field": "unified_title_assignment",
+   "value": "Fluorescence Microscopy and Specimen Prep",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 102 Fluorescence Microscopy and Specimen Prep",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 103 Confocal Microscopy and Research Design",
+   "field": "unified_title_assignment",
+   "value": "Confocal Microscopy and Research Design",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 103 Confocal Microscopy and Research Design",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 104  Bioscience Practicum Research",
+   "field": "unified_title_assignment",
+   "value": "Bioscience Practicum Research",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 104  Bioscience Practicum Research",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CIS 072 Systems and Network Administration Certification",
+   "field": "unified_title_assignment",
+   "value": "Systems and Network Administration",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CIS 072 Systems and Network Administration Certification",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CIS 205 Computer Literacy",
+   "field": "unified_title_assignment",
+   "value": "Computer Literacy",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CIS 205 Computer Literacy",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Class Piano I",
+   "field": "unified_title_assignment",
+   "value": "Class Piano I",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Class Piano I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Class Piano II",
+   "field": "unified_title_assignment",
+   "value": "Class Piano II",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Class Piano II",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENV 102 - Foundations of Design II",
+   "field": "unified_title_assignment",
+   "value": "Foundations of Design II",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENV 102 - Foundations of Design II",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENV DES 101 - Foundations of Design I",
+   "field": "unified_title_assignment",
+   "value": "Foundations of Design I",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENV DES 101 - Foundations of Design I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::MATH 203 Intermediate Algebra",
+   "field": "unified_title_assignment",
+   "value": "Algebra Intermediate",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::MATH 203 Intermediate Algebra",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RLEST 08  Property Management",
+   "field": "unified_title_assignment",
+   "value": "Property Management",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RLEST 08  Property Management",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::University of California Master Gardener Certification",
+   "field": "unified_title_assignment",
+   "value": "University of California Master Gardener Certification",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::University of California Master Gardener Certification",
+   "field": "issuing_agency_assignment",
+   "value": "University of California Agriculture and Natural Resources (UC ANR)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 001 - Introduction to Administration of Justice",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Criminal Justice",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 001 - Introduction to Administration of Justice",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 002 - Concepts of Criminal Law",
+   "field": "unified_title_assignment",
+   "value": "Concepts of Criminal Law",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 002 - Concepts of Criminal Law",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 008 - Juvenile Procedures",
+   "field": "unified_title_assignment",
+   "value": "Juvenile Procedures",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 008 - Juvenile Procedures",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ARC 201 - Architectural Design I",
+   "field": "unified_title_assignment",
+   "value": "Architectural Design I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ARC 201 - Architectural Design I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 101 Theory and Practice of Microscopy",
+   "field": "unified_title_assignment",
+   "value": "Theory and Practice of Microscopy",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 101 Theory and Practice of Microscopy",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 102 Fluorescence Microscopy and Specimen Prep",
+   "field": "unified_title_assignment",
+   "value": "Fluorescence Microscopy and Specimen Prep",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 102 Fluorescence Microscopy and Specimen Prep",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 103 Confocal Microscopy and Research Design",
+   "field": "unified_title_assignment",
+   "value": "Confocal Microscopy and Research Design",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 103 Confocal Microscopy and Research Design",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 104  Bioscience Practicum Research",
+   "field": "unified_title_assignment",
+   "value": "Bioscience Practicum Research",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOSC 104  Bioscience Practicum Research",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CIS 072 Systems and Network Administration Certification",
+   "field": "unified_title_assignment",
+   "value": "Systems and Network Administration",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CIS 072 Systems and Network Administration Certification",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CIS 205 Computer Literacy",
+   "field": "unified_title_assignment",
+   "value": "Computer Literacy",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CIS 205 Computer Literacy",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Class Piano I",
+   "field": "unified_title_assignment",
+   "value": "Class Piano I",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Class Piano I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Class Piano II",
+   "field": "unified_title_assignment",
+   "value": "Class Piano II",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Class Piano II",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENV 102 - Foundations of Design II",
+   "field": "unified_title_assignment",
+   "value": "Foundations of Design II",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENV 102 - Foundations of Design II",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENV DES 101 - Foundations of Design I",
+   "field": "unified_title_assignment",
+   "value": "Foundations of Design I",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENV DES 101 - Foundations of Design I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::MATH 203 Intermediate Algebra",
+   "field": "unified_title_assignment",
+   "value": "Algebra Intermediate",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::MATH 203 Intermediate Algebra",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RLEST 08  Property Management",
+   "field": "unified_title_assignment",
+   "value": "Property Management",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RLEST 08  Property Management",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::University of California Master Gardener Certification",
+   "field": "unified_title_assignment",
+   "value": "University of California Master Gardener Certification",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::University of California Master Gardener Certification",
+   "field": "issuing_agency_assignment",
+   "value": "University of California Agriculture and Natural Resources (UC ANR)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}
