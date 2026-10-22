@@ -1,0 +1,10 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_2026-10-22_cpl_opportunity.sql",
+ "name": "cpl_memory_2026_10_22_cpl_opportunity",
+ "version": "20261022155410",
+ "sha256": "0841af5efb7857fd01628fbc122411d88f21a6a2b355e5828f66d91d73e8d8a7",
+ "run": "39808534033",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"cpl_memory\\\" violates check constraint \\\"cpl_memory_kind_check\\\"\\nDETAIL:  Failing row contains (2ddd0b11-8459-4c6c-ae6e-8cb33bb5377b, 2026-10-22 15:54:10.90666+00, 2026-10-22 15:54:10.90666+00, finding, MAP's api/cpl-courses?college=<id> returns 10 courses per page (..., Found 2026-10-21 building Norco's CPL opportunity workbook: ever..., cpl, t, null, {my-college,cpl-opportunity,map,military}, Measured by the side session, 2026-10-21, {}, {cpl-opportunity-analysis-any-college-2026-10-20}, verified, null, internal, 2026-10-22, cpl-opportunity-side-2026-10-22, 2026-10-22 15:54:10.90666+00, measurement, null, map-landing-api-pages-at-ten-2026-10-21, MAP's public college page shows more credit, mostly military, th..., MAP's landing-page API returns 10 courses unless asked for more,...).\\n\"}"
+}
