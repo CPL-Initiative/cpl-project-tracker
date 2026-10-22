@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7518,
+  "input_tokens": 7685,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7518,
-    "output_tokens": 1933,
+    "input_tokens": 7685,
+    "output_tokens": 1859,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1933,
+  "output_tokens": 1859,
   "output_tokens_details": {
-   "thinking_tokens": 597
+   "thinking_tokens": 633
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06873,
- "ms": 15629,
- "seconds": 16.0,
+ "cost_usd": 0.06792,
+ "ms": 15316,
+ "seconds": 15.5,
  "parts": null,
  "error": null,
  "score": {
@@ -82,9 +83,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 2,
    "courses": 0,
-   "count": 4,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -103,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Drone Photography Certificate of Achievement",
+   "section_heading": "Drone Photography, Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -126,9 +127,7 @@
    "electives_fill_degree": false,
    "outcomes": [
     "Students will be able to design and execute drone projects utilizing principles of visual communication and post-production editing.",
-    "Students will be able to deploy and pilot UAS while capturing appropriate imagery for various industries.",
-    "Students may seek employment as a producer, production assistant, content creator, director, photographer, and visual communicator.",
-    "Students will be prepared for entry level positions as a drone photographer."
+    "Students will be able to deploy and pilot UAS while capturing appropriate imagery for various industries."
    ],
    "careers": [
     "UAS image capture specialist",
@@ -264,15 +263,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The award is labeled 8S/12Q to fewer than 16S/24Q units, but the catalog prints Total Units 18-19; a reviewer should check the award category.",
-   "The closed list's 'FILMA196' (no space) was matched to the catalog's FILM A196 Introduction to Visual Effects.",
-   "The closed list titles FILM A220 'Introduction to Virtual Reality (VR)'; the catalog titles it 'Introduction to Immersive Media (VR/AR)'. It was treated as the same course.",
-   "The catalog prints no units beside the courses in the 'Select one of the following' list, so their units are null.",
-   "PHOT A123 is not in the closed list, so it is recorded as a catalog addition. The catalog notes it is a prerequisite to PHOT A180.",
-   "All four sentences under 'Program Learning Outcomes' were recorded as printed. Two of them describe employment and entry-level positions rather than skills.",
-   "The catalog names the Basic Drone Imaging Skills Certificate of Achievement as a required prerequisite. It is not counted as a block.",
-   "The Program Sequence section repeats the same requirements; it was not recorded separately."
+   "The catalog prints no units beside the individual elective courses; only the block total 3-4 is printed.",
+   "FILM A196 matched to closed-list entry 'FILMA196' (code printed without a space in the state file); treated as the same course.",
+   "FILM A220 is titled 'Introduction to Immersive Media (VR/AR)' in the catalog but 'Introduction to Virtual Reality (VR)' in the closed list.",
+   "PHOT A123 is not in the closed list; recorded as a catalog addition.",
+   "The second outcome line continues with career sentences ('Students may seek employment as a producer, ... Students will be prepared for entry level positions as a drone photographer.'); these were read as career text, not part of the outcome, and recorded in careers. Reviewer should check.",
+   "Catalog total of 18-19 units exceeds the award category stated (8 to fewer than 16 semester units).",
+   "Program requires completion of the Basic Drone Imaging Skills Certificate of Achievement as a prerequisite."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

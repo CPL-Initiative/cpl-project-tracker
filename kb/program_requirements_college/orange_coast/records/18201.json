@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7397,
+  "input_tokens": 7869,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7397,
-    "output_tokens": 1800,
+    "input_tokens": 7869,
+    "output_tokens": 1900,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1800,
+  "output_tokens": 1900,
   "output_tokens_details": {
-   "thinking_tokens": 449
+   "thinking_tokens": 542
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06559,
- "ms": 13680,
- "seconds": 13.9,
+ "cost_usd": 0.06948,
+ "ms": 14873,
+ "seconds": 15.4,
  "parts": null,
  "error": null,
  "score": {
@@ -113,7 +114,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Review Certificate Requirements.",
+   "section_heading": "Flight Attendant and Airline and Travel Careers, Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 43,
@@ -140,8 +141,8 @@
    "careers": [
     "flight attendant",
     "customer service career in the airline and travel industry",
-    "careers in the travel industry",
-    "ground customer service agent"
+    "ground customer service agent",
+    "careers in the travel industry"
    ]
   },
   "blocks": [
@@ -151,8 +152,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 43,
-     "max": 43
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -313,12 +314,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The 'Total Units 43' is printed after the Required Courses list; recorded as both the certificate total and the block's stated total.",
-   "Suggested Electives are printed without units and are not required; recorded as a recommended block. None of them are on the closed list.",
-   "Catalog prints HTT A127 as 'Destination Eastern Europe' while the closed list names it 'Destination Europe'; code matches.",
-   "Section heading taken from the line 'Review Certificate Requirements.'; the page's program title heading is not in the extracted text.",
-   "The single Program Learning Outcome is printed for the Certificate of Achievement."
+   "The 'Total Units 43' printed under the required course list is recorded as total_units; since the required list is the only counted block, it equals that block's sum (13 x 3 + 4 = 43).",
+   "Suggested electives are printed without units and are recorded as a recommended block; they do not count toward the 43-unit total.",
+   "Catalog titles HTT A127 as 'Destination Eastern Europe' while the state file says 'Destination Europe'; code matches.",
+   "The outcomes list is printed under 'Program Outcome / Program Learning Outcomes' and refers specifically to the Certificate of Achievement."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

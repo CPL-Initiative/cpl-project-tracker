@@ -1,0 +1,292 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "03966",
+ "shape": "degree",
+ "title": "Mass Communications/Media Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/communication-studies/mass-communications-media-studies-associate-arts-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8213,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8213,
+    "output_tokens": 2001,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2001,
+  "output_tokens_details": {
+   "thinking_tokens": 826
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07287,
+ "ms": 17563,
+ "seconds": 18.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "BUSA185",
+    "CMSTA240",
+    "JOURA110",
+    "PHOTA120H"
+   ],
+   "flagged": [
+    "BUSA185",
+    "CMSTA240",
+    "JOURA110",
+    "PHOTA120H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     59.0,
+     61.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     18.0,
+     18.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mass Communications/Media Studies, Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 23,
+    "max": 24
+   },
+   "ge_pattern": "OCC AA General Education Breadth",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 18,
+    "max": 18
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to access, analyze, evaluate and create media texts.",
+    "Students will be able to understand the historical, economic, cultural, and aesthetic influences on media industries and media institutions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CMST A180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST A240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOUR A110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CMST A185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS A185",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A148",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A148H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR A115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR A116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR A185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKTG A130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT A120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHOT A120H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT A123",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Restricted elective courses print no units beside them; only the block total 9-10 is printed.",
+   "BUS/CMST A185 is printed as a cross-listed course; recorded as CMST A185 (closed list) with BUS A185 as alternative.",
+   "GE line reads 'OCC AA General Education Breadth: 24' but the units column prints 18.0 (footnote: up to 6 major units may double count); ge_units recorded as the column value 18. Footnote says Cal-GETC (up to 34 units) may be substituted.",
+   "Electives to satisfy the 60-unit degree printed as '24.0 - 23.0'; recorded as degree_elective_units 23-24.",
+   "Program sequence totals 60-66 units; the requirements tab prints Total Units 60, used as degree_total.",
+   "Program learning outcomes are printed under the program overview and apply to this A.A. degree."
+  ]
+ },
+ "extracted_run": "39726645292"
+}

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7477,
+  "input_tokens": 7324,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7477,
-    "output_tokens": 1781,
+    "input_tokens": 7324,
+    "output_tokens": 1495,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1781,
+  "output_tokens": 1495,
   "output_tokens_details": {
-   "thinking_tokens": 648
+   "thinking_tokens": 478
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06553,
- "ms": 14787,
- "seconds": 15.1,
+ "cost_usd": 0.0592,
+ "ms": 12202,
+ "seconds": 12.6,
  "parts": null,
  "error": null,
  "score": {
@@ -102,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Competency",
+   "section_heading": "English Language Learning - Workplace, Certificate of Competency",
    "measure": "hours",
    "total_units": {
     "min": 90,
@@ -233,14 +234,13 @@
    }
   ],
   "notes": [
-   "The page URL and context describe the 'English Language Learning Career Development' Certificate of Competency, while the program is titled 'English Language Learning - Workplace'; the description and outcomes concern the workplace, so this section was read as the award. Reviewer should confirm.",
-   "The catalog prints ELL A043N with the title 'ELL for the Workplace'; the closed list titles it 'Intermediate English Skills for Career Preparation'.",
-   "The catalog prints ELL A049N as 'Speaking About U.S. Culture 3'; the closed list titles ELL A049N 'Speaking about Fiction--Intermediate'.",
-   "Catalog codes ELL A028N, ELL A048N and CHT A030N match closed-list codes ELLA028N, ELLA048N and CHTA030N apart from spacing; treated as closed-list courses.",
-   "Hours are printed only for the first course of each 'or' group (36, 36, 18-36); alternative courses have no hours printed, so their hours are null.",
-   "The second and third rows are read as one choice each: ELL A034N or one of the listed pronunciation/U.S. culture courses, and one of the listed CHT computer courses (18-36 hours).",
-   "The page lists the outcomes under 'Program Outcome'/'Program Learning Outcomes' for the program as a whole; the certificate shares them."
+   "Award is a noncredit Certificate of Competency counted in hours; Total Hours printed as 90-108.",
+   "Hours are printed only on the first course of each 'or' group (36 for ELL A034N group, 18-36 for CHT A040N group); alternatives have no hours printed beside them.",
+   "Catalog prints ELL A028N, ELL A048N and CHT A030N with a space; closed list stores them as ELLA028N, ELLA048N and CHTA030N. Treated as the same courses.",
+   "Catalog title for ELL A043N is 'ELL for the Workplace' while the closed list title is 'Intermediate English Skills for Career Preparation'; reviewer may check.",
+   "Catalog title for ELL A049N is 'Speaking About U.S. Culture 3' while the closed list title is 'Speaking about Fiction--Intermediate'; reviewer may check.",
+   "Program Learning Outcomes are printed for this certificate's page."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

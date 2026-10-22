@@ -1,0 +1,309 @@
+{
+ "college": "Sierra College",
+ "control_number": "38746",
+ "shape": "certificate",
+ "title": "Film and Video Production",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12351,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12351,
+    "output_tokens": 1955,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1955,
+  "output_tokens_details": {
+   "thinking_tokens": 498
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0885,
+ "ms": 15876,
+ "seconds": 16.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 10,
+   "share": 0.9,
+   "missing": [
+    "COMM12"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "AAD28",
+    "AAD95",
+    "AAD97",
+    "ART4A",
+    "BUS242",
+    "BUS280",
+    "PHOT88"
+   ],
+   "flagged": [
+    "AAD28",
+    "AAD95",
+    "AAD97",
+    "ART4A",
+    "BUS242",
+    "BUS280",
+    "PHOT88"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Applied Art and Design—Film and Video Production Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Generate informed design solutions by applying the elements and principles of design to enhance the concepts and content through the application of the design process.",
+    "Prove a command of industry-standard software, tools, and practices in preparation for entry into the industry.",
+    "Optimize designs for various delivery methods such as print or screen, utilizing the appropriate formats and technologies as required.",
+    "Critique the application of the elements and principles of design as applied to course-related creative projects as well as to contemporary and historical works, using relevant terminology.",
+    "Develop a portfolio consisting of work samples that illustrate the styles, mediums, skills, talents, and subject area of interest to the student.",
+    "Explain the key principles of ethical imaging including the use and application of Artificial Intelligence, copyright, Creative Commons, fair use, and public domain; apply these principles appropriately in creative projects."
+   ],
+   "careers": [
+    "filmmaking",
+    "video production",
+    "commercial video production"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AAD 0012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AAD 0044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 0004A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AAD 0079",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AAD 0082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AAD 0088",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AAD 0089",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AAD 0093",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 0060A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 0010A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "AAD 0028",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AAD 0095",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AAD 0097",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0242",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0280",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT 0088",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 12",
+    "why": "cross-listed twin of AAD 12; not printed in the certificate section (named as 'also COMM 0012' only in other programs' sections)"
+   }
+  ],
+  "notes": [
+   "Catalog prints a certificate total of 33 units, which does not match the award band of 16 to fewer than 30 semester units; the state record may be out of date or the catalog program changed.",
+   "Catalog codes use zero-padded numbers (AAD 0012) while the closed list uses AAD 12; treated as the same courses.",
+   "The outcomes (PSLOs) are printed once on the department page's outcomes tab, not specifically for this certificate; recorded as shared by this award.",
+   "ART 0004A is printed as an 'or' alternative to AAD 0044 with no units beside it.",
+   "Elective block courses are printed without units."
+  ]
+ },
+ "extracted_run": "39726642315"
+}

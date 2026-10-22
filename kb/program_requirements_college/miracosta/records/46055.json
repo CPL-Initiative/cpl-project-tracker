@@ -1,0 +1,191 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "46055",
+ "shape": "certificate",
+ "title": "Family Child Care Entrepreneurship",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11622,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11622,
+    "output_tokens": 1041,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1041,
+  "output_tokens_details": {
+   "thinking_tokens": 374
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06731,
+ "ms": 10304,
+ "seconds": 10.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 12,
+   "share": 0.0,
+   "missing": [
+    "CDEV104",
+    "CDEV105",
+    "CDEV106",
+    "CDEV109",
+    "CDEV111",
+    "CDEV112",
+    "CDEV200",
+    "CDEV205",
+    "CDEV210",
+    "CDEV235",
+    "CDEV240",
+    "CDEVC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 60 units, 60 units, 16 units, 3 units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEV104",
+    "why": "Family Child Care Entrepreneurship section not in the text"
+   },
+   {
+    "code": "CDEV105",
+    "why": "Family Child Care Entrepreneurship section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CDEV106",
+    "why": "Family Child Care Entrepreneurship section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CDEV109",
+    "why": "Family Child Care Entrepreneurship section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CDEV111",
+    "why": "Family Child Care Entrepreneurship section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CDEV112",
+    "why": "Family Child Care Entrepreneurship section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CDEV200",
+    "why": "Family Child Care Entrepreneurship section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CDEV205",
+    "why": "Family Child Care Entrepreneurship section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CDEV210",
+    "why": "Family Child Care Entrepreneurship section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CDEV235",
+    "why": "Family Child Care Entrepreneurship section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CDEV240",
+    "why": "Family Child Care Entrepreneurship section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "CDEVC1000",
+    "why": "Family Child Care Entrepreneurship section not in the text; named only in other awards' sections"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39726634443"
+}

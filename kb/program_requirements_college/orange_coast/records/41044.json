@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7063,
+  "input_tokens": 7205,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7063,
-    "output_tokens": 998,
+    "input_tokens": 7205,
+    "output_tokens": 671,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 998,
+  "output_tokens": 671,
   "output_tokens_details": {
-   "thinking_tokens": 314
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04821,
- "ms": 8655,
- "seconds": 9.0,
+ "cost_usd": 0.04224,
+ "ms": 6126,
+ "seconds": 6.5,
  "parts": null,
  "error": null,
  "score": {
@@ -103,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Requirements",
+   "section_heading": "Intermediate Landscape Design and Construction Specialist, Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 11.5,
@@ -134,7 +135,7 @@
   },
   "blocks": [
    {
-    "name": "Course List",
+    "name": "Certificate Requirements",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -184,12 +185,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "HORT A286 Landscape Design Elements (1.5 units) is listed in the catalog requirements but is not on the closed list; recorded as a catalog addition.",
-   "Catalog prints the HORT A190 title as 'California Friendly Landscape' while the state file says 'California Friendly Landscapes'.",
-   "Catalog total of 11.5 units matches the award band of 8 to fewer than 16 semester units.",
-   "The page prints no distinct program title heading in the extracted text; section_heading uses the 'Requirements' tab name.",
-   "Careers drawn from the program description: 'work in the field of landscape design/build' and 'becoming licensed landscape contractors and related specialties'."
+   "HORT A286 Landscape Design Elements (1.5 units) is in the catalog requirements but not in the closed list; recorded as catalog addition.",
+   "Total of 11.5 units is consistent with the award range (8 to fewer than 16 semester units).",
+   "The block has no printed name; 'Certificate Requirements' is taken from the line 'Review Certificate Requirements.'",
+   "Careers were read from the description: 'work in the field of landscape design/build' and 'becoming licensed landscape contractors'; reviewer may check whether these count as careers."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

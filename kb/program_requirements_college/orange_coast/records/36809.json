@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Personal Care Aide Noncredit",
  "award": "Noncredit program",
- "source_url": "https://catalog.cccd.edu/orange-coast/adult-education-noncredit/",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/allied-health/personal-care-aide-noncredit-certificate-completion/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10024,
+  "input_tokens": 6871,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10024,
-    "output_tokens": 1391,
+    "input_tokens": 6871,
+    "output_tokens": 718,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1391,
+  "output_tokens": 718,
   "output_tokens_details": {
-   "thinking_tokens": 602
+   "thinking_tokens": 244
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06792,
- "ms": 12625,
- "seconds": 13.0,
+ "cost_usd": 0.04184,
+ "ms": 6944,
+ "seconds": 7.4,
  "parts": null,
  "error": null,
  "score": {
@@ -60,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     81.0,
     81.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    81.0,
+    81.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Allied Health Noncredit Courses",
+   "section_heading": "Personal Care Aide Noncredit, Certificate of Completion",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 81,
+    "max": 81
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -119,12 +121,17 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "The graduates of the program will be prepared for entry-level employment as professional and competent Personal Care Aides to meet the needs of the local health care community and its consumers."
+   ],
+   "careers": [
+    "Personal Care Aides",
+    "health care field"
+   ]
   },
   "blocks": [
    {
-    "name": "Personal Care Aide Noncredit, Certificate of Completion courses",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -160,14 +167,9 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The text is the Allied Health noncredit course listing, not the program's own requirements page. No requirements table, block name, total hours or outcomes for the Personal Care Aide certificate are printed.",
-   "The block is built from course entries. ALH A001N, ALH A002N and ALH A009N each list 'Personal Care Aide Noncredit, Certificate of Completion' among the program pages referencing them.",
-   "The ALH A009N description says it 'is part of the Personal Care Aide Certification Program' and that students completing the program 'should also register for ALH A001N and ALH A002N'. The 'all' rule is inferred from this; a reviewer should confirm it against the program page.",
-   "Hours are those printed beside each course: ALH A001N 36 (18 lecture, 18 lab), ALH A002N 27 (12 lecture, 15 lab), ALH A009N 18 (18 lecture). No program total is printed, so total_units is null and none was computed.",
-   "ALH A003N (First Aid and CPR/AED for Personal Care Aid Noncredit, 9 hours) does not list the Personal Care Aide certificate among its referencing program pages, so it was not placed.",
-   "The certificate is named 'Certificate of Completion' in the referencing lists.",
-   "'Personal Care Aide' appears as a job role only in the ALH A009N course description. It was not recorded as a career, because careers come only from the program's own section."
+   "Noncredit program counted in hours; course hours and the 81 total hours are recorded in the units fields.",
+   "'health care field' is taken from the overview sentence about moving upward in the health care field; a reviewer may judge whether it counts as a career field."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

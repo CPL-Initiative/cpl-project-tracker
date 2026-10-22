@@ -5,28 +5,28 @@
  "catalog_year": "2026-2027",
  "programs": 193,
  "with_closed_list": 185,
- "started": "2026-10-15T03:15:48Z",
+ "started": "2026-10-22T05:13:06Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.citruscollege.edu/sitemap.xml",
   "status": 200,
   "listed": 1787,
   "nested": 0,
-  "program_pages": 194,
+  "program_pages": 280,
   "refused": null,
   "errors": null
  },
- "pages_read": 206,
- "child_pages": 12,
+ "pages_read": 348,
+ "child_pages": 68,
  "banner_h1": null,
- "loads": 212,
- "seconds": 1073.5,
- "found": 148,
+ "loads": 352,
+ "seconds": 1804.6,
+ "found": 175,
  "by_method": {
   "no_closed_list": 8,
-  "not_found": 6,
-  "page_claimed": 31,
-  "sitemap_page": 148
+  "not_found": 4,
+  "page_claimed": 6,
+  "sitemap_page": 175
  },
  "shared_pages": {},
  "not_found": [
@@ -35,15 +35,46 @@
    "title": "Criminal Justice",
    "award": "A.S. Degree",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "20037",
-   "title": "Criminal Justice",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-justice-studies-adt/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5728,
+     "content": 26866,
+     "tabs": 5577
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      353
+     ],
+     [
+      "Requirements",
+      2910
+     ],
+     [
+      "Curriculum Map",
+      2623
+     ],
+     [
+      "Career Information",
+      600
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
    }
   },
   {
@@ -51,7 +82,7 @@
    "title": "Administration of Justice",
    "award": "A.S. T Degree",
    "near_miss": {
-    "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-administration-certificate-achievement/",
+    "url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
     "label": {
      "award": 0,
      "title": 0.5
@@ -65,65 +96,22 @@
     "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
     "error": null,
     "chars": {
-     "body": 5210,
-     "content": 21788,
-     "tabs": 354
+     "body": 5410,
+     "content": 24275,
+     "tabs": 3898
     },
     "tab_panels": [
      [
       "Learning Outcomes",
-      1153
+      384
      ],
      [
       "Requirements",
-      334
-     ],
-     [
-      "Career Information",
-      162
-     ],
-     [
-      "Close this window",
-      147
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "33599",
-   "title": "Correctional Science",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/physical-science-as/",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 9,
-    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4853,
-     "content": 23912,
-     "tabs": 3543
-    },
-    "tab_panels": [
-     [
-      "Learning Outcomes",
-      422
-     ],
-     [
-      "Requirements",
-      1523
+      1723
      ],
      [
       "Curriculum Map",
-      1976
+      2131
      ],
      [
       "Career Information",
@@ -231,94 +219,17 @@
    "pages": [
     "https://catalog.citruscollege.edu/disciplines/architecture/computer-aided-design-cad-architecture-drafting-certificate-achievement/",
     "https://catalog.citruscollege.edu/disciplines/drafting-design-technology/design-engineering-drawing-technology-as/",
+    "https://catalog.citruscollege.edu/disciplines/architecture/architecture-as/",
     "https://catalog.citruscollege.edu/disciplines/architecture/architecture-as/"
    ]
   },
   {
-   "control_number": "30830",
-   "title": "Sociology",
-   "award": "A.A- T Degree",
+   "control_number": "20037",
+   "title": "Criminal Justice",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-sciences-aa/"
-   ]
-  },
-  {
-   "control_number": "30877",
-   "title": "Psychology",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
-   ]
-  },
-  {
-   "control_number": "30940",
-   "title": "Mathematics",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
-    "https://catalog.citruscollege.edu/disciplines/engineering/pre-engineering-as/",
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/biology/biological-sciences-as/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/physical-science-as/",
-    "https://catalog.citruscollege.edu/disciplines/engineering/engineering-fundamentals-certificate-achievement/"
-   ]
-  },
-  {
-   "control_number": "31431",
-   "title": "Physics",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/biology/biological-sciences-as/",
-    "https://catalog.citruscollege.edu/disciplines/engineering/pre-engineering-as/",
-    "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/physical-science-as/",
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
-   ]
-  },
-  {
-   "control_number": "31539",
-   "title": "Theatre Arts",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-aa/",
-    "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-acting-emphasis-aa/"
-   ]
-  },
-  {
-   "control_number": "31572",
-   "title": "History",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/liberal-arts-humanities-aa/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-sciences-aa/"
-   ]
-  },
-  {
-   "control_number": "31840",
-   "title": "Kinesiology",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
-   ]
-  },
-  {
-   "control_number": "32305",
-   "title": "Journalism",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/communications-journalism/public-relations-aa/"
-   ]
-  },
-  {
-   "control_number": "33308",
-   "title": "Spanish",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-sciences-aa/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/liberal-arts-humanities-aa/"
+    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/"
    ]
   },
   {
@@ -326,34 +237,18 @@
    "title": "Correctional Science",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
+    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
     "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
    ]
   },
   {
-   "control_number": "33607",
-   "title": "Art History",
-   "award": "A.A- T Degree",
+   "control_number": "33599",
+   "title": "Correctional Science",
+   "award": "A.S. Degree",
    "pages": [
-    "https://catalog.citruscollege.edu/disciplines/visual-arts/visual-arts-aa/",
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
-   ]
-  },
-  {
-   "control_number": "33609",
-   "title": "Studio Arts",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/visual-arts/visual-arts-aa/"
-   ]
-  },
-  {
-   "control_number": "35078",
-   "title": "Biology",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/biology/biological-sciences-as/",
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/physical-science-as/"
+    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/"
    ]
   },
   {
@@ -364,151 +259,9 @@
     "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/it-technican-computer-retail-certificate-achievement/",
     "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-business-related-subjects-requirement-certificate-achievement/",
     "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/",
-    "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/information-technology-certificate-achievement/"
-   ]
-  },
-  {
-   "control_number": "37121",
-   "title": "Philosophy",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/liberal-arts-humanities-aa/"
-   ]
-  },
-  {
-   "control_number": "37131",
-   "title": "Economics",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/business/business-accounting-emphasis-as/",
-    "https://catalog.citruscollege.edu/disciplines/business/business-as/",
-    "https://catalog.citruscollege.edu/disciplines/biology/biological-sciences-as/"
-   ]
-  },
-  {
-   "control_number": "37315",
-   "title": "Global Studies",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-sciences-aa/"
-   ]
-  },
-  {
-   "control_number": "37384",
-   "title": "Anthropology",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-sciences-aa/"
-   ]
-  },
-  {
-   "control_number": "37537",
-   "title": "Nutrition and Dietetics",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/biology/pre-allied-health-as/"
-   ]
-  },
-  {
-   "control_number": "37629",
-   "title": "Computer Science",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/computer-science/gaming-applications-development-certificate-achievement/",
-    "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
-    "https://catalog.citruscollege.edu/disciplines/biology/biological-sciences-as/",
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
-   ]
-  },
-  {
-   "control_number": "38754",
-   "title": "Environmental Science",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/biology/biological-sciences-as/",
-    "https://catalog.citruscollege.edu/disciplines/forestry-wildland-resources/wildland-resources-forestry-as/"
-   ]
-  },
-  {
-   "control_number": "40210",
-   "title": "Music",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/music/music-aa/"
-   ]
-  },
-  {
-   "control_number": "40957",
-   "title": "Geology",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/biology/biological-sciences-as/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/physical-science-as/",
-    "https://catalog.citruscollege.edu/disciplines/engineering/pre-engineering-as/",
-    "https://catalog.citruscollege.edu/disciplines/forestry-wildland-resources/wildland-resources-forestry-as/"
-   ]
-  },
-  {
-   "control_number": "41356",
-   "title": "Geography",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
-   ]
-  },
-  {
-   "control_number": "41679",
-   "title": "Business Administration 2.0",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/business/business-accounting-emphasis-as/",
-    "https://catalog.citruscollege.edu/disciplines/business/business-as/",
     "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-business-related-subjects-requirement-certificate-achievement/",
-    "https://catalog.citruscollege.edu/disciplines/accounting/accounting-as/",
-    "https://catalog.citruscollege.edu/disciplines/accounting/accounting-certificate-achievement/",
-    "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/"
-   ]
-  },
-  {
-   "control_number": "42822",
-   "title": "Film, Television and Electronic Media",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/visual-arts/film-studies-aa/",
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
-   ]
-  },
-  {
-   "control_number": "42837",
-   "title": "Law, Public Policy, and Society",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
-   ]
-  },
-  {
-   "control_number": "45031",
-   "title": "Cal-GETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
-   ]
-  },
-  {
-   "control_number": "45069",
-   "title": "Communication Studies 2.0",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "https://catalog.citruscollege.edu/disciplines/communications-journalism/public-relations-aa/"
+    "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/",
+    "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/information-technology-certificate-achievement/"
    ]
   },
   {
@@ -518,1501 +271,331 @@
    "pages": [
     "https://catalog.citruscollege.edu/disciplines/biotechnology/biomanufacturing-certificate-achievement/",
     "https://catalog.citruscollege.edu/disciplines/biotechnology/biotechnology-as/",
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
+    "https://catalog.citruscollege.edu/disciplines/biotechnology/biotechnology-as/"
    ]
   }
  ],
  "coverage_bands": {
-  "0.5-0.8": 8,
-  "0.8-1.0": 17,
-  "1.0": 123
+  "0.5-0.8": 7,
+  "0.8-1.0": 26,
+  "1.0": 142
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 148,
+  "against": "kb/program_requirements_college/citrus",
+  "kept": 144,
+  "programs": 31,
   "list": [
-   {
-    "control_number": "02310",
-    "title": "Wildland Resources and Forestry",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/forestry-wildland-resources/wildland-resources-forestry-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02312",
-    "title": "Business",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/business/business-as/",
-    "coverage": 0.966,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02323",
-    "title": "Kinesiology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education-competitive-athletics/kinesiology-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02327",
-    "title": "Medium and Heavy-Duty Diesel Truck Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/medium-heavy-diesel-truck-technology-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02328",
-    "title": "Automotive Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-technology-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02331",
-    "title": "Design and Engineering Drawing Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/drafting-design-technology/design-engineering-drawing-technology-as/",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02333",
-    "title": "Visual Arts",
-    "award": "A.A. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/visual-arts-aa/",
-    "coverage": 0.944,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02337",
-    "title": "Photography",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/photography-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02341",
-    "title": "Vocational Nursing",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/vocational-nursing/vocational-nursing-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02343",
-    "title": "Dental Assisting",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/dental-assisting-registered/dental-assisting-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02355",
-    "title": "Public Works Administration",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02362",
-    "title": "Cosmetology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/cosmetology-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02369",
-    "title": "Child Development Teacher",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-teacher-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07092",
-    "title": "Audio Recording Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/recording-technology/audio-recording-technology-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07412",
-    "title": "Ceramics - One Year",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/ceramics-one-year-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07413",
-    "title": "Ceramics - Two Year",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/ceramics-two-year-certificate-achievement/",
-    "coverage": 0.588,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11207",
-    "title": "Accounting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/accounting/accounting-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11219",
-    "title": "Administrative Office Occupations",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/office-technology/administrative-office-occupations-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11231",
-    "title": "Toyota/Lexus Technician",
-    "award": "Certificate of Achievement requiring 60+S/90+Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/toyota-lexus-technician-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11235",
-    "title": "Computer Aided Design (CAD) Architecture and Drafting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/architecture/computer-aided-design-cad-architecture-drafting-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11236",
-    "title": "Computer Generated Imagery (CGI)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/drafting-design-technology/computer-generated-imagery-cgi-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11237",
-    "title": "Water Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/water-technology/water-technology-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "11240",
     "title": "Child Develop. Master Teacher: Early Intervention Specialty",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-as/",
-    "coverage": 0.533,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11242",
-    "title": "Child Development Master Teacher",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-master-teacher-early-intervention-certificate-achievement/",
-    "coverage": 0.65,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.citruscollege.edu/disciplines/child-development/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-as/",
+    "was_coverage": 0.533,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "11244",
     "title": "Public Works Administration",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-supervision-management-skill-award/",
-    "coverage": 0.556,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.citruscollege.edu/disciplines/public-works/",
+    "coverage": 0.778,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-supervision-management-skill-award/",
+    "was_coverage": 0.556,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "11247",
-    "title": "Esthetician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/esthetician/certificate-achievement-esthetician/",
+    "control_number": "30830",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/sociology/sociology-adt/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30877",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/psychology/psychology-adt/",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30940",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-adt/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12397",
-    "title": "Commercial Dance",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/dance/commercial-dance-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14643",
-    "title": "Digital and Web Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/digital-web-design-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14897",
-    "title": "Information Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/information-technology-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15315",
-    "title": "Automobile Fundamentals",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automobile-fundamentals-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15322",
-    "title": "Automobile Service",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automobile-service-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15941",
-    "title": "Automotive Research and Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-research-development-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17394",
-    "title": "Emerging Theatre Technologies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/theatre/emerging-theatre-technologies-certificate-achievement/",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17502",
-    "title": "Registered Nursing",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/registered-nursing/registered-nursing-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18962",
-    "title": "Automobile Diagnostic Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automobile-diagnostic-technician-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19636",
-    "title": "Liberal Arts - Humanities",
-    "award": "A.A. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/liberal-arts-humanities-aa/",
-    "coverage": 0.989,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20027",
-    "title": "Medium and Heavy-Duty Truck Service, Diagnosis and Repair Master Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/medium-heavy-truck-service-diagnosis-repair-technician-certificate-achievement/",
-    "coverage": 0.762,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20031",
-    "title": "Water Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/water-technology/water-technology-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20032",
-    "title": "Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/photography-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20033",
-    "title": "Vocational Nursing",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/vocational-nursing/vocational-nursing-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20034",
-    "title": "Dental Assisting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/dental-assisting-registered/dental-assisting-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20036",
-    "title": "Public Works Maintenance Services",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-maintenance-services-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20038",
-    "title": "Cosmetology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/cosmetology-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30174",
-    "title": "English Literature",
-    "award": "A.A. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/english/english-literature-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30175",
-    "title": "Literature",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/english/literature-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30176",
-    "title": "Writing Competency",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/english/writing-competency-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30365",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/music/music-aa/",
-    "coverage": 0.93,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30454",
-    "title": "Biological Sciences",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/biology/biological-sciences-as/",
-    "coverage": 0.958,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30507",
-    "title": "Theatre Arts",
-    "award": "A.A. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30508",
-    "title": "Theatre Arts - Acting Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-acting-emphasis-aa/",
-    "coverage": 0.69,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30560",
-    "title": "Dance",
-    "award": "A.A. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/dance/dance-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "31179",
     "title": "Early Childhood Education",
     "award": "A.S. T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-associate-teacher-skill-award/",
-    "coverage": 0.556,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31205",
-    "title": "Recording Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/recording-technology/recording-technology-as/",
+    "url": "https://catalog.citruscollege.edu/disciplines/child-development/early-childhood-education-adt/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-associate-teacher-skill-award/",
+    "was_coverage": 0.556,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "31430",
     "title": "English",
     "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/english/",
+    "coverage": 0.969,
+    "was_url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31431",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/physics/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31539",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-adt/",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31572",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/history/history-adt/",
+    "coverage": 0.971,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31840",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/kinesiology-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32305",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/journalism-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33308",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/foreign-languages/spanish-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33607",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/art-history-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33609",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/studio-arts-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "35078",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/biology/biology-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37121",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/philosophy/philosophy-adt/",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37131",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/economics/economics-adt/",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37315",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/geography/global-studies-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37384",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/anthropology/anthropology-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37537",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/nutrition-dietetics-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37629",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/computer-science/computer-science-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38754",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/biology/environmental-science-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "40210",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/music/music-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "40957",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/earth-science/geology-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41356",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/geography/geography-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41679",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "42822",
+    "title": "Film, Television and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/film-television-electronic-media-adt/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "42837",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+    "coverage": 0.939,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45031",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32404",
-    "title": "English as a Second Language - Beginning",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-beginning-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32405",
-    "title": "English as a Second Language - Intermediate",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-intermediate-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32406",
-    "title": "English as a Second Language - Program Completion",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-program-completion-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33165",
-    "title": "Pre-Engineering",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/engineering/pre-engineering-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33350",
-    "title": "Biomanufacturing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/biotechnology/biomanufacturing-certificate-achievement/",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33602",
-    "title": "Pre-Allied Health",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/biology/pre-allied-health-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33688",
-    "title": "Physical Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/physical-science-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33909",
-    "title": "Automotive General Service and Repair",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-general-service-repair-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33960",
-    "title": "Biotechnology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/biotechnology/biotechnology-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35368",
-    "title": "Website Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/website-development-certificate-achievement/",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35453",
-    "title": "Social Sciences",
-    "award": "A.A. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-sciences-aa/",
-    "coverage": 0.945,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35598",
-    "title": "Database Administrator",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/database-administrator-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35599",
-    "title": "Business Information Professional",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/office-technology/business-information-professional-certificate-of-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35775",
-    "title": "Real Estate Broker",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36306",
-    "title": "Architecture",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/architecture/architecture-as/",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36540",
-    "title": "Water Efficiency Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/water-technology/water-efficiency-management-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36541",
-    "title": "Water Efficiency Management",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/water-technology/water-efficiency-management-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36542",
-    "title": "IT Technician: Computer Retail Sales and Support",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/it-technican-computer-retail-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36626",
-    "title": "Esthetician",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/esthetician/esthetician-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36663",
-    "title": "Gaming and Applications Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/computer-science/gaming-applications-development-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36924",
-    "title": "Peace Studies",
-    "award": "A.A. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/peace-studies-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37501",
-    "title": "Construction Management",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-management-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37502",
-    "title": "Real Estate",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-as/",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37571",
-    "title": "Construction Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-management-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37572",
-    "title": "Construction Quality Control",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-quality-control-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37635",
-    "title": "Construction Inspection",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-inspection-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37814",
-    "title": "English as a Second Language - Pronunciation",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-pronunciation-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37815",
-    "title": "English as a Second Language - Intermediate Grammar",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-intermediate-grammar-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37816",
-    "title": "English as a Second Language - Computer Literacy",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-computer-literacy-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37817",
-    "title": "English as a Second Language - Beginning Grammar",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-beginning-grammar-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37962",
-    "title": "Wildland Resources and Forestry",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/forestry-wildland-resources/wildland-resources-forestry-as/",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38167",
-    "title": "Stationary Power Generation Service, Diagnosis and Repair Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/stationary-power-generation-service-diagnosis-repair-technician-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38207",
-    "title": "Diesel Engine Service, Diagnosis and Repair Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/diesel-engine-service-diagnosis-repair-technician-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38431",
-    "title": "Clean Energy and Vehicle Electrification Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/clean-energy-vehicle-electrification-technology-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40284",
-    "title": "Workforce Readiness",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/workforce-readiness-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40285",
-    "title": "Business Information Worker",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/business-information-worker-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40436",
-    "title": "Film Studies",
-    "award": "A.A. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/film-studies-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40641",
-    "title": "Payroll Accounting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/accounting/payroll-accounting-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40680",
-    "title": "Real Estate Appraisal",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-appraisal-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40681",
-    "title": "Income Tax II (Income Tax Preparer)",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/accounting/income-tax-preparer-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40716",
-    "title": "Income Tax I (Income Tax Assistant)",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/accounting/income-tax-assistant-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40975",
-    "title": "Real Estate Sales",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-sales-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40977",
-    "title": "Media Arts",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/media-arts-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40990",
-    "title": "Hardscape Maintenance Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/public-works/hardscape-maintenance-technology-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41006",
-    "title": "Public Works Inspection",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-inspection-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41080",
-    "title": "Greenscape Maintenance Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/public-works/greenscape-maintenance-technology-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41167",
-    "title": "Business Entrepreneurship",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/business-entrepreneurship-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41616",
-    "title": "Medical Terminology",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/medical-terminology-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41841",
-    "title": "CPA Exam Preparation: Accounting Subjects Requirement",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-accounting-subjects-requirement-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41842",
-    "title": "CPA Exam Preparation: Business-Related Subjects Requirement",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-business-related-subjects-requirement-certificate-achievement/",
-    "coverage": 0.977,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41843",
-    "title": "CPA Licensure: Accounting Study and Ethics",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/",
-    "coverage": 0.987,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41913",
-    "title": "Small Business Management",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/small-business-management-certificate-completion/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41914",
-    "title": "Introduction to Automotive Service",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/introduction-automotive-service-certificate-completion/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41931",
-    "title": "English as a Second Language - Noncredit to Credit Transition",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-noncredit-credit-transition-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41932",
-    "title": "Introduction to American Sign Language (ASL)",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/introduction-american-sign-language-asl-certificate-completion/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41966",
-    "title": "Introduction to Careers in Health",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/introduction-careers-health-certificate-completion/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41987",
-    "title": "Special Inspection - Reinforced Concrete",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/construction-management/special-inspection-reinforced-concrete-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42009",
-    "title": "Human Resources Management",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/human-resources-management-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42060",
-    "title": "Drone Technology",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/drone-technology-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42170",
-    "title": "Business - Accounting Emphasis",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/business/business-accounting-emphasis-as/",
-    "coverage": 0.963,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42172",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/accounting/accounting-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42353",
-    "title": "Management - Level II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/business/management-level-ii-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42354",
-    "title": "Small Business Management/Entrepreneurship - Level I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/business/small-business-management-entrepreneurship-level-i-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42355",
-    "title": "Small Business Management/Entrepreneurship - Level II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/business/small-business-management-entrepreneurship-level-ii-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42356",
-    "title": "Human Resources Management - Level II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/business/human-resources-management-level-ii-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42357",
-    "title": "Management - Level I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/business/management-level-i-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42358",
-    "title": "Marketing",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/business/marketing-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42396",
-    "title": "Human Resources Management - Level I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/business/human-resources-management-level-i-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42707",
-    "title": "Public Relations",
-    "award": "A.A. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/public-relations-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42713",
-    "title": "Educational Teaching Studies",
-    "award": "A.A. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/counseling-instruction/teacher-education-studies-aa/",
-    "coverage": 0.833,
+    "coverage": 0.979,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "42808",
-    "title": "Quickbooks",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/accounting/quickbooks-certificate-achievement/",
+    "control_number": "45069",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/communication-studies-adt/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42975",
-    "title": "Real Estate Investing II",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-investing-ii-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43033",
-    "title": "Real Estate Investing I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-investing-i-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44264",
-    "title": "Basic Still-life and Portrait Drawing for Older Adults",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/basic-still-life-portrait-drawing-older-adults-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44270",
-    "title": "Engineering Fundamentals",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/engineering/engineering-fundamentals-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44427",
-    "title": "Construction Health and Safety Specialist",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-health-safety-specialist-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44940",
-    "title": "Barbering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/barbering-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45010",
-    "title": "Barbering",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/barbering-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45304",
-    "title": "Kinesiology - Human Performance",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/kinesiology-human-performance-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45347",
-    "title": "Kinesiology - Sport Management",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/kinesiology-sport-management-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45514",
-    "title": "Drone Operations",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/drone-operations-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45728",
-    "title": "Automotive Basic Service and Repair",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-basic-service-repair-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45759",
-    "title": "English as a Second Language - Grammar Completion",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-grammar-completion-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45761",
-    "title": "Medical Front Office Clerk",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/medical-front-office-clerk-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45762",
-    "title": "Life Skills",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/life-skills-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45763",
-    "title": "Entry Level Healthcare Skills",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/entry-level-healthcare-skills-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45764",
-    "title": "Health and Wellness for Healthcare",
-    "award": "Noncredit program",
-    "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/health-wellness-healthcare-certificate-competency/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45819",
-    "title": "Drone Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/uas/drone-technology-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45836",
-    "title": "Automotive Undercar Service and Repair",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-undercar-service-repair-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45837",
-    "title": "Automotive Underhood Service and Repair",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-underhood-service-repair-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45946",
-    "title": "Heavy Truck Maintenance",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/heavy-truck-maintenance-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46195",
-    "title": "Athletics",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education-competitive-athletics/athletics-skill-award/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46376",
-    "title": "Essentials for Computer-Aided Design (CAD) Architecture and Drafting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/architecture/essentials-computer-aided-design-cad-architecture-drafting-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46565",
-    "title": "Mathematics",
-    "award": "A.S. Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
-    "coverage": 0.944,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    }
   ]
  },
- "run": "38675245799"
+ "run": "39726639865"
 }

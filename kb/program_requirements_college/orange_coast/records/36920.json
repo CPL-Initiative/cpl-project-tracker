@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7167,
+  "input_tokens": 6989,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7167,
-    "output_tokens": 1417,
+    "input_tokens": 6989,
+    "output_tokens": 1020,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1417,
+  "output_tokens": 1020,
   "output_tokens_details": {
-   "thinking_tokens": 535
+   "thinking_tokens": 249
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05701,
- "ms": 13051,
- "seconds": 13.3,
+ "cost_usd": 0.04836,
+ "ms": 9459,
+ "seconds": 9.9,
  "parts": null,
  "error": null,
  "score": {
@@ -99,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Competency",
+   "section_heading": "English Language Learning: Transition to Academics, Certificate of Competency",
    "measure": "hours",
    "total_units": {
     "min": 189,
@@ -188,12 +189,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The alternative to ELL A064N is the pair ELL A058N & ELL A059N taken together (both required), not either one alone; the schema records them as two alternatives of the same entry.",
-   "Hours read from run-together text: 'ELL A064N...99' read as 99 hours; 'Speaking About U.S. Culture 336' read as 36 hours (leading '3' appears to be stray/footnote); 'Advanced Grammar Review 154' read as title 'Advanced Grammar Review 1' plus 54 hours. 99+36+54 matches the printed Total Hours 189. Reviewer should verify.",
-   "Hours for the alternatives (ELL A058N, ELL A059N, ELL A055N, ELL A057N) are not printed separately and are left null.",
-   "Catalog titles ELL A049N 'Speaking About U.S. Culture', while the closed list titles it 'Speaking about Fiction--Intermediate'; code matched as printed.",
-   "Section heading on the page is the award type 'Certificate of Competency'; the program outcomes are printed once for the program and recorded for this award."
+   "The alternative to ELL A064N is the pair ELL A058N & ELL A059N taken together (both required), not either one alone; the schema records them as two alternatives on the same entry. The 99 hours printed apply to the row; no separate hours are printed for the alternatives.",
+   "The catalog prints ELL A049N with the title 'Speaking About U.S. Culture 3', while the state closed list titles it 'Speaking about Fiction--Intermediate'; reviewer should check the code/title match.",
+   "Hours for 'or' alternatives (ELL A055N, ELL A057N) are not printed; recorded as null.",
+   "The program is noncredit and counted in hours; Total Hours 189 recorded as total_units."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

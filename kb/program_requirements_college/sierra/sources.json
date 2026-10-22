@@ -125,7 +125,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -181,7 +183,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "studio art aa degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -344,25 +348,12 @@
   "title": "Photography",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "AAD75",
-   "PHOT75"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/photography/",
-   "title": "Photography | Sierra College Catalog",
-   "h1": " Photography",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 1.0,
-    "section": "as"
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 16989
+  "text_chars": 0
  },
  {
   "control_number": "07986",
@@ -876,7 +867,9 @@
    "label": {
     "award": 0,
     "title": 0.4,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "deaf studies—american sign language aa degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -983,7 +976,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "(formerly nutrition and fitness trainer) certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 13,
@@ -1009,7 +1004,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -1048,7 +1045,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "arts and cultures aa degree",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1120,7 +1119,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "environmental sciences as degree",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -1155,7 +1156,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "sustainable agriculture certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -1192,7 +1195,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "general business certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -1245,12 +1250,28 @@
   "title": "Interdisciplinary Entrepreneurship",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS28",
+   "BUS95",
+   "IT60"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/business/",
+   "title": "Business | Sierra College Catalog",
+   "h1": " Business",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement (formerly interdisciplinary entrepreneurship)",
+    "section_fit": 0.667
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 16644
  },
  {
   "control_number": "21526",
@@ -1307,7 +1328,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "information technology—it technician certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -1397,7 +1420,9 @@
    "label": {
     "award": 0,
     "title": 0.4,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "deaf studies - american sign language certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1427,7 +1452,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "mechatronics technology certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1498,7 +1525,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement photography",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -1550,7 +1579,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "fire technology certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1585,7 +1616,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement recreation specialist",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1629,7 +1662,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "sociology for transfer: aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -1662,7 +1697,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "political science for transfer aa-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -1715,7 +1752,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "english for transfer aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 18,
@@ -1752,7 +1791,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "history for transfer aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
@@ -1778,7 +1819,9 @@
    "label": {
     "award": 0,
     "title": 0.333,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -1811,7 +1854,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "geology for transfer as-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -1846,7 +1891,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "philosophy for transfer aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -1880,7 +1927,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "as"
+    "section": "as",
+    "section_line": "fashion industries as degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1914,7 +1963,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "fashion industries certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1964,7 +2015,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "studio arts for transfer aa-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 31,
@@ -2002,7 +2055,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "anthropology for transfer aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 16,
@@ -2059,7 +2114,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "geography for transfer aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -2098,7 +2155,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "economics for transfer aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
@@ -2129,7 +2188,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "computer science for transfer as-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 8,
@@ -2163,7 +2224,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "theatre arts for transfer aa-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -2186,12 +2249,43 @@
   "title": "Journalism",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM10",
+   "COMM12",
+   "COMM2",
+   "COMM7",
+   "COMM70",
+   "COMM71",
+   "COMM72",
+   "COMM73",
+   "COMM78",
+   "COMM79",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1001",
+   "MATH11",
+   "POLSC1000",
+   "PSYC142",
+   "SOC15",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/communication-studies/",
+   "title": "Communication Studies | Sierra College Catalog",
+   "h1": " Communication Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "adt",
+    "section_line": "journalism for transfer aa-t degree",
+    "section_fit": 0.5
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 16176
  },
  {
   "control_number": "32752",
@@ -2221,7 +2315,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "lesbian, gay, bisexual and transgender studies aa degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2249,7 +2345,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "construction management as degree",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -2288,7 +2386,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "music for transfer aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 16,
@@ -2323,7 +2423,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "chemistry for transfer as-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -2362,7 +2464,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "biology for transfer as-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 16,
@@ -2394,7 +2498,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "nutrition and dietetics for transfer as-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 9,
@@ -2426,7 +2532,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "spanish aa degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2463,7 +2571,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "as"
+    "section": "as",
+    "section_line": "health science as degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -2486,24 +2596,71 @@
   "title": "Photography and Video",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AAD75",
+   "AAD76",
+   "AAD79",
+   "AAD82",
+   "AAD89",
+   "AAD93",
+   "PHOT60A",
+   "PHOT70A",
+   "PHOT75",
+   "PHOT76",
+   "PHOT89"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/photography/",
+   "title": "Photography | Sierra College Catalog",
+   "h1": " Photography",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "photography and video certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 16989
  },
  {
   "control_number": "36314",
   "title": "Photography and Video",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AAD75",
+   "AAD76",
+   "AAD79",
+   "AAD82",
+   "AAD89",
+   "AAD93",
+   "PHOT60A",
+   "PHOT70A",
+   "PHOT76",
+   "PHOT89"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/photography/",
+   "title": "Photography | Sierra College Catalog",
+   "h1": " Photography",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "as",
+    "section_line": "photography and video as degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 16989
  },
  {
   "control_number": "36718",
@@ -2511,12 +2668,14 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.882,
+  "coverage": 1.0,
   "codes_found": [
+   "ALH20",
    "ANTH2",
    "BIOL4",
    "BIOL5",
    "BIOL6",
+   "CHEM2A",
    "COMMC1000",
    "HDEV1",
    "MATH16A",
@@ -2530,30 +2689,53 @@
    "SOC1"
   ],
   "source": {
-   "url": "https://catalog.sierracollege.edu/departments/nursing-registered/",
-   "title": "Nursing, Registered | Sierra College Catalog",
-   "h1": " Nursing, Registered",
+   "url": "https://catalog.sierracollege.edu/departments/alh/",
+   "title": "Allied Health | Sierra College Catalog",
+   "h1": " Allied Health",
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.25,
-    "section": null
+    "title": 0.5,
+    "section": "as",
+    "section_line": "allied health - pre-nursing option as degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 14765
+  "text_chars": 16416
  },
  {
   "control_number": "36719",
   "title": "Medical Assisting",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALH1",
+   "ALH2",
+   "ALH3",
+   "ALH4",
+   "ALH5",
+   "ALH6",
+   "ALH7",
+   "ALH8"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/alh/",
+   "title": "Allied Health | Sierra College Catalog",
+   "h1": " Allied Health",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "medical assisting certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 14095
  },
  {
   "control_number": "36922",
@@ -2601,7 +2783,9 @@
    "label": {
     "award": 0,
     "title": 0.667,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "allied health - general option certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 31,
@@ -2652,7 +2836,9 @@
    "label": {
     "award": 0,
     "title": 0.667,
-    "section": "as"
+    "section": "as",
+    "section_line": "allied health - general option as degree",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
@@ -2684,7 +2870,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement media and public event production",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2729,7 +2917,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "fashion media certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2808,7 +2998,9 @@
    "label": {
     "award": 0,
     "title": 0.333,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement emergency medical sciences",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2819,12 +3011,29 @@
   "title": "Paramedicine",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSCI53",
+   "HSCI54",
+   "HSCI55",
+   "HSCI56"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/health-sciences/",
+   "title": "Health Sciences | Sierra College Catalog",
+   "h1": " Health Sciences",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as",
+    "section_line": "paramedicine as degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 17072
  },
  {
   "control_number": "38522",
@@ -2869,7 +3078,9 @@
    "label": {
     "award": 0,
     "title": 0.333,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "chicana and chicano studies aa degree",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -2880,24 +3091,72 @@
   "title": "Film and Video Production",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AAD12",
+   "AAD44",
+   "AAD75",
+   "AAD79",
+   "AAD82",
+   "AAD88",
+   "AAD89",
+   "AAD93",
+   "COMM12",
+   "PHOT60A",
+   "PHOT75",
+   "THEA10A"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
+   "title": "Applied Art and Design | Sierra College Catalog",
+   "h1": " Applied Art and Design",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as",
+    "section_line": "applied art and design—film and video production as degree",
+    "section_fit": 0.5
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 17084
  },
  {
   "control_number": "38746",
   "title": "Film and Video Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AAD12",
+   "AAD44",
+   "AAD79",
+   "AAD82",
+   "AAD88",
+   "AAD89",
+   "AAD93",
+   "COMM12",
+   "PHOT60A",
+   "THEA10A"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
+   "title": "Applied Art and Design | Sierra College Catalog",
+   "h1": " Applied Art and Design",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "applied art and design—film and video production certificate of achievement",
+    "section_fit": 0.5
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 17084
  },
  {
   "control_number": "38749",
@@ -2946,7 +3205,9 @@
    "label": {
     "award": 0,
     "title": 0.333,
-    "section": "as"
+    "section": "as",
+    "section_line": "fire company officer as degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -3002,7 +3263,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -3025,12 +3288,39 @@
   "title": "UCTP: Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM3A",
+   "CHEM3B",
+   "MATH30",
+   "MATH31",
+   "MATH32",
+   "MATH33",
+   "PHYS205",
+   "PHYS205L",
+   "PHYS210",
+   "PHYS210L",
+   "PHYS215",
+   "PHYS215L"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/natural-science/",
+   "title": "Natural Science | Sierra College Catalog",
+   "h1": " Natural Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 4653
  },
  {
   "control_number": "39209",
@@ -3058,18 +3348,20 @@
    "PHYS215L"
   ],
   "source": {
-   "url": "https://catalog.sierracollege.edu/departments/natural-science/",
-   "title": "Natural Science | Sierra College Catalog",
-   "h1": " Natural Science",
+   "url": "https://catalog.sierracollege.edu/departments/chemistry/",
+   "title": "Chemistry | Sierra College Catalog",
+   "h1": " Chemistry",
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.0,
-    "section": null
+    "title": 0.5,
+    "section": "adt",
+    "section_line": "uc transfer pathway (uctp): chemistry as-t degree",
+    "section_fit": 0.4
    }
   },
   "listed": 16,
-  "text_chars": 4653
+  "text_chars": 16356
  },
  {
   "control_number": "39514",
@@ -3092,7 +3384,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement advanced manufacturing - cnc programming and operation",
+    "section_fit": 0.4
    }
   },
   "listed": 4,
@@ -3123,7 +3417,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "information technology—data analytics certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -3154,7 +3450,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "information technology—data analytics as degree",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -3185,7 +3483,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "advanced manufacturing -  cnc programming and operation as degree",
+    "section_fit": 0.4
    }
   },
   "listed": 12,
@@ -3219,7 +3519,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "information technology—network technician as degree",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -3253,7 +3555,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "information technology—network technician certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -3292,7 +3596,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "environmental science for transfer as-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 17,
@@ -3363,7 +3669,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "environmental studies aa degree",
+    "section_fit": 1.0
    }
   },
   "listed": 49,
@@ -3388,7 +3696,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -3421,7 +3731,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "business administration for transfer 2.0 as-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -3458,7 +3770,9 @@
    "label": {
     "award": 0,
     "title": 0.333,
-    "section": "as"
+    "section": "as",
+    "section_line": "applied art and design—web and interaction design as degree",
+    "section_fit": 0.6
    }
   },
   "listed": 15,
@@ -3495,7 +3809,9 @@
    "label": {
     "award": 0,
     "title": 0.333,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "applied art and design—web and interaction design certificate of achievement",
+    "section_fit": 0.6
    }
   },
   "listed": 14,
@@ -3532,7 +3848,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "communication studies for transfer 2.0 aa-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
@@ -3567,7 +3885,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "information technology - cloud computing certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -3602,7 +3922,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "information technology - cloud computing as degree",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -3625,24 +3947,61 @@
   "title": "Surgical Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALH22",
+   "ALH23",
+   "ALH24",
+   "ALH25",
+   "ALH26",
+   "ALH27",
+   "ALH29"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/alh/",
+   "title": "Allied Health | Sierra College Catalog",
+   "h1": " Allied Health",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "surgical technology certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 16416
  },
  {
   "control_number": "44616",
   "title": "Paramedicine",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSCI53",
+   "HSCI54",
+   "HSCI55",
+   "HSCI56"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/health-sciences/",
+   "title": "Health Sciences | Sierra College Catalog",
+   "h1": " Health Sciences",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "paramedicine certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 17072
  },
  {
   "control_number": "44673",
@@ -3677,7 +4036,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "astronomy as degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3707,7 +4068,9 @@
    "label": {
     "award": 0,
     "title": 0.25,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "facilities automation and building energy certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3741,7 +4104,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "hospitality management for transfer as-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -3804,7 +4169,9 @@
    "label": {
     "award": 0,
     "title": 0.25,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs for transfer aa-t degree",
+    "section_fit": 0.8
    }
   },
   "listed": 20,
@@ -3834,7 +4201,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "chicana/o studies, latina/o studies for transfer aa-t degree",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -3873,7 +4242,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "mathematics for transfer 2.0 as-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 16,
@@ -3905,7 +4276,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "data science as degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3939,7 +4312,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "forest science and management as degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3950,12 +4325,36 @@
   "title": "Forest Science and Management",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRI163",
+   "AGRI221",
+   "AGRI260",
+   "AGRI264",
+   "AGRI265",
+   "AGRI266",
+   "BIOL2",
+   "CHEM2A",
+   "ESS1",
+   "GEOG90",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/agriculture/",
+   "title": "Agriculture | Sierra College Catalog",
+   "h1": " Agriculture",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement forest science and management",
+    "section_fit": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 16465
  },
  {
   "control_number": "46074",
@@ -3991,7 +4390,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "physics for transfer 2.0 as-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
@@ -4034,7 +4435,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "public health for transfer as-t",
+    "section_fit": 0.667
    }
   },
   "listed": 20,

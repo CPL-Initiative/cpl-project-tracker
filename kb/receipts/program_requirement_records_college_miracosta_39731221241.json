@@ -1,0 +1,189 @@
+{
+ "college": "MiraCosta College",
+ "load_run": "39731221241",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-22T06:01:21Z",
+ "records": 119,
+ "posted": 104,
+ "batches": 5,
+ "inserted": 49,
+ "kept": 55,
+ "skipped": [
+  {
+   "control_number": "05130",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "05143",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07862",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07863",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22006",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31821",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32467",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36100",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36171",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37386",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37408",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38751",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39491",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40264",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46055",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38748842603",
+  "39709840590",
+  "39726634443"
+ ],
+ "machine_pass": 82,
+ "inserted_keys": [
+  "05110",
+  "07077",
+  "07872",
+  "07876",
+  "11747",
+  "12111",
+  "12306",
+  "12880",
+  "15309",
+  "17752",
+  "18313",
+  "20767",
+  "21974",
+  "21979",
+  "21980",
+  "21982",
+  "21991",
+  "21992",
+  "21995",
+  "21996",
+  "21998",
+  "22003",
+  "22005",
+  "30238",
+  "33310",
+  "35549",
+  "35650",
+  "35669",
+  "35670",
+  "35671",
+  "35677",
+  "35678",
+  "35767",
+  "35768",
+  "36143",
+  "36147",
+  "36148",
+  "36153",
+  "36160",
+  "36162",
+  "36170",
+  "36315",
+  "36418",
+  "40670",
+  "41652",
+  "41653",
+  "41672",
+  "41718",
+  "43720"
+ ],
+ "kept_keys": [
+  "05136",
+  "07866",
+  "07877",
+  "07879",
+  "07881",
+  "11750",
+  "15310",
+  "16232",
+  "17628",
+  "18311",
+  "18340",
+  "18345",
+  "18844",
+  "18974",
+  "18975",
+  "18986",
+  "18987",
+  "19039",
+  "20765",
+  "21976",
+  "21978",
+  "21984",
+  "21985",
+  "21999",
+  "22000",
+  "22002",
+  "30674",
+  "30724",
+  "31734",
+  "35028",
+  "36097",
+  "36121",
+  "36150",
+  "36272",
+  "36413",
+  "36417",
+  "36422",
+  "36427",
+  "36545",
+  "37240",
+  "37407",
+  "38711",
+  "38712",
+  "39140",
+  "39489",
+  "39582",
+  "40327",
+  "40575",
+  "40576",
+  "41723",
+  "42705",
+  "42807",
+  "43788",
+  "44000",
+  "45045"
+ ],
+ "rollback": "delete from public.program_requirement_records where college = 'MiraCosta College' and checked = false and control_number in ('05110', '07077', '07872', '07876', '11747', '12111', '12306', '12880', '15309', '17752', '18313', '20767', '21974', '21979', '21980', '21982', '21991', '21992', '21995', '21996', '21998', '22003', '22005', '30238', '33310', '35549', '35650', '35669', '35670', '35671', '35677', '35678', '35767', '35768', '36143', '36147', '36148', '36153', '36160', '36162', '36170', '36315', '36418', '40670', '41652', '41653', '41672', '41718', '43720');"
+}

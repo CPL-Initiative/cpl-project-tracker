@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7880,
+  "input_tokens": 8463,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7880,
-    "output_tokens": 1748,
+    "input_tokens": 8463,
+    "output_tokens": 1690,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1748,
+  "output_tokens": 1690,
   "output_tokens_details": {
-   "thinking_tokens": 490
+   "thinking_tokens": 402
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06648,
- "ms": 14660,
- "seconds": 15.0,
+ "cost_usd": 0.06765,
+ "ms": 13698,
+ "seconds": 14.1,
  "parts": null,
  "error": null,
  "score": {
@@ -78,9 +79,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 2,
    "courses": 0,
-   "count": 3,
+   "count": 2,
    "not_verbatim": [
     "Have the necessary skills and training for proficiency in taking written, oral and practical exams for Airframe & Powerplant certification which may be required for employment."
    ],
@@ -92,7 +93,7 @@
    "pass": false
   },
   "careers": {
-   "count": 8,
+   "count": 12,
    "not_verbatim": [],
    "pass": true
   },
@@ -103,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Review Certificate Requirements.",
+   "section_heading": "Airframe & Powerplant, Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 63,
@@ -126,10 +127,13 @@
    "electives_fill_degree": false,
    "outcomes": [
     "Have the necessary skills and training for proficiency in taking written, oral and practical exams for Airframe & Powerplant certification which may be required for employment.",
-    "Be able to improve or develop additional proficiencies required for professional growth or advancement in their current employment.",
-    "All qualification training and tests are prescribed and follow the guide of the Federal Aviation."
+    "Be able to improve or develop additional proficiencies required for professional growth or advancement in their current employment. All qualification training and tests are prescribed and follow the guide of the Federal Aviation."
    ],
    "careers": [
+    "Airframe and Powerplant Certificated Mechanics",
+    "airframe inspection",
+    "powerplant inspection",
+    "maintenance",
     "aircraft manufacturing",
     "electronics",
     "hydraulics",
@@ -276,12 +280,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog text begins mid-description; the page title heading is cut off, so section_heading uses the requirements link text printed on the page.",
-   "The third entry under Program Learning Outcomes reads as a statement rather than an outcome and appears truncated ('Federal Aviation.' presumably 'Federal Aviation Administration'); copied as printed for reviewer check.",
-   "Careers taken from the partially truncated description ('related fields of ...'); earlier description text may name more careers.",
-   "Total Units 63 printed for the certificate; the award title states 60+ semester units, consistent with 63.",
-   "Plan of Study Grid repeats the same 17 courses with the same units totaling 63."
+   "The first outcome's source text shows the HTML entity '&amp;'; recorded as '&' as it displays on the page.",
+   "The second outcome ends with 'the Federal Aviation.' as printed (apparently truncated, likely 'Federal Aviation Administration'); copied unchanged.",
+   "Required courses sum to 63 units, matching the printed Total Units 63 and the Program Sequence total.",
+   "Careers include the fields named in the description (entry-level positions such as airframe inspection, powerplant inspection, maintenance, and related fields); reviewer may judge whether functions like 'maintenance' count as careers."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

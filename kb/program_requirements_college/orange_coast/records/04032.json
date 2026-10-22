@@ -1,0 +1,399 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "04032",
+ "shape": "degree",
+ "title": "Anthropology",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/social-science-humanities/anthropology/anthropology-associate-arts-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8635,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8635,
+    "output_tokens": 2762,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2762,
+  "output_tokens_details": {
+   "thinking_tokens": 827
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08978,
+ "ms": 22675,
+ "seconds": 23.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 25,
+   "listed": 28,
+   "share": 0.893,
+   "missing": [
+    "ANTHC1001",
+    "ANTHC1001H",
+    "ANTHC1001L"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ANTHA185",
+    "ANTHA185H",
+    "ANTHA185L"
+   ],
+   "flagged": [
+    "ANTHA185",
+    "ANTHA185H",
+    "ANTHA185L"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     12.0,
+     12.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Anthropology, Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 29,
+    "max": 29
+   },
+   "ge_pattern": "OCC AA GE Breadth",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 12,
+    "max": 12
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Gain an understanding of and an appreciation for human diversity across time and space."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH A100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH A185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH A185H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH A185L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH A280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives - Select a minimum of nine units of the following:",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ANTH A102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH A187",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH A188",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH A190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH A220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG A100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG A180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG A180H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG A180L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG A185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST A161H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A162",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST A162H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST A180H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST A185H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC A130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC A100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC A100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH C1001",
+    "why": "not in the text; catalog prints ANTH A185 Introduction to Biological Anthropology instead"
+   },
+   {
+    "code": "ANTH C1001H",
+    "why": "not in the text; catalog prints ANTH A185H instead"
+   },
+   {
+    "code": "ANTH C1001L",
+    "why": "not in the text; catalog prints ANTH A185L Biological Anthropology Lab instead"
+   }
+  ],
+  "notes": [
+   "The catalog prints ANTH A185/A185H/A185L (Biological Anthropology and lab), while the closed list holds ANTH C1001/C1001H/C1001L with the same titles; likely a common-course renumbering. Recorded the codes as printed, flagged as catalog additions.",
+   "Units for honors alternatives and for each restricted elective course are not printed beside them; recorded as null.",
+   "GE line reads 'OCC AA GE Breadth: 24 Units' with 12 units in the units column; footnote says 12 of the 24 units are double-counted. ge_units recorded as the 12 counted toward the 60-unit total; the pattern itself is 24 units. Cal-GETC (up to 34 units) may be substituted.",
+   "Major total 19 recorded in total_units; 'Electives to Satisfy 60-Unit Degree Requirement 29' recorded as degree_elective_units; Total Units 60 recorded as degree_total.",
+   "The single Program Learning Outcome is printed for the program page and recorded for this award.",
+   "The Program Sequence tab shows a total of 60-70 units; this is a sample plan and was not used for totals.",
+   "SOC A110 is titled 'Introduction to Dating, Relationships, and Marriage' in the catalog vs 'Intro to Marriage and Family' in the closed list; same code."
+  ]
+ },
+ "extracted_run": "39726645292"
+}

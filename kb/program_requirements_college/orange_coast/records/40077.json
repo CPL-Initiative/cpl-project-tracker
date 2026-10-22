@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7072,
+  "input_tokens": 7305,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7072,
-    "output_tokens": 1180,
+    "input_tokens": 7305,
+    "output_tokens": 884,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1180,
+  "output_tokens": 884,
   "output_tokens_details": {
-   "thinking_tokens": 420
+   "thinking_tokens": 208
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05189,
- "ms": 9936,
- "seconds": 10.2,
+ "cost_usd": 0.0469,
+ "ms": 9392,
+ "seconds": 9.8,
  "parts": null,
  "error": null,
  "score": {
@@ -78,9 +79,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 2,
    "courses": 0,
-   "count": 3,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -99,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Required Courses",
+   "section_heading": "Avionics, Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 17,
@@ -122,8 +123,7 @@
    "electives_fill_degree": false,
    "outcomes": [
     "Have the necessary skills and training for Avionics proficiency which may be required for employment.",
-    "Be able to improve or develop additional proficiencies required for professional growth or advancement in their current employment.",
-    "All qualification training and tests are prescribed and follow the guide of the Federal Aviation."
+    "Be able to improve or develop additional proficiencies required for professional growth or advancement in their current employment. All qualification training and tests are prescribed and follow the guide of the Federal Aviation."
    ],
    "careers": [
     "installation, maintenance, and repair technicians for avionic equipment"
@@ -188,11 +188,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page text prints no explicit award heading in the extracted text; the requirements list is under 'Review Certificate Requirements.' with the block 'Required Courses'. The source URL identifies it as the Avionics Certificate of Achievement.",
-   "The third program learning outcome appears truncated as printed ('follow the guide of the Federal Aviation.'), likely missing 'Administration'; recorded exactly as printed.",
-   "Total Units 17 printed for the certificate; the Program Sequence plan of study also totals 17 (8.5 + 8.5).",
-   "The career entry is recorded as one phrase as printed; it names installation, maintenance, and repair technician roles."
+   "The second program learning outcome appears to end mid-phrase ('follow the guide of the Federal Aviation.'); copied as printed.",
+   "Career entry is a single phrase naming technician roles; it could alternatively be split into installation, maintenance, and repair technicians.",
+   "Total Units 17 printed under the course list is recorded as the certificate total; the program sequence also totals 17."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }
