@@ -4,7 +4,7 @@ insert into public.cpl_memory (slug, kind, title, summary, detail, plain, tags, 
 select x.slug, x.kind, x.title, x.summary, x.detail, x.plain, x.tags, x.status, x.source, x.verified_by,
        now(), '2026-10-22'::date, 'cpl-opportunity-side-2026-10-22', x.related
 from jsonb_to_recordset($json$[
- {"slug":"map-landing-api-pages-at-ten-2026-10-21","kind":"finding",
+ {"slug":"map-landing-api-pages-at-ten-2026-10-21","kind":"pitfall",
   "title":"MAP's landing-page API returns 10 courses unless asked for more, and carries military CPL its export lacks",
   "summary":"MAP's api/cpl-courses?college=<id> returns 10 courses per page (metadata.total, hasMore) unless &limit= is given; read in full, college landing pages show military articulations absent from MAP's articulation export that COBI reads: Bakersfield 2,310 on 60 courses, Norco 354, San Bernardino Valley 294, Riverside City 205, Moreno Valley 152.",
   "detail":"Found 2026-10-21 building Norco's CPL opportunity workbook: every college had returned exactly 10 courses. With &limit=1000 the totals were 255 (Norco), 173 (Moreno Valley), 130 (Bakersfield), 41 (Cerritos, Foothill). The vault scripts under CPLBrain/04-projects/cpl-initiative/*-cpl-analysis/ read it in full and add landing-only lines to Tab 3. The live cpl-opportunity page reads only statewide_data.js; Sam ruled to build a nightly landing snapshot for it (CPL Opportunity Asks card 2, 2026-10-21).",
