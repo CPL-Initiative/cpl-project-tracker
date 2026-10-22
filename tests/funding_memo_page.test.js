@@ -40,6 +40,14 @@ check("the page uses tokens, no raw hex outside :root",
 const link = /<a id="memo-link" href="memo\/">([^<]+)<\/a>/.exec(page);
 check("the funding page's Contents links the memo", !!link);
 check("the Contents link does not call it a draft", link && !/draft/i.test(link[1]));
+// The memo in Word from the Contents (Sam, 2026-10-22): the memo page's own
+// export, run once the live figures are in, and a Word button on the memo page.
+const wordLink = /<a id="memo-word-link" href="memo\/\?download=word">([^<]+)<\/a>/.exec(page);
+check("the funding page's Contents offers the memo in Word", !!wordLink && /Word/.test(wordLink[1]) && !/draft/i.test(wordLink[1]));
+check("a tabled memo takes the Word link out of the Contents too", /memo-word-link"\)\]\.forEach/.test(page));
+check("the memo page carries a Word button wired to the tab's export",
+  !!doc.getElementById("word-btn") && typeof w.CPL_FUNDING_TAB._downloadMemoDocx === "function" &&
+  /download=word/.test(html) && /T\._downloadMemoDocx\(box\)/.test(html));
 
 // The memo's status (Sam, 2026-10-21): set in the tab's Report view and saved
 // with the scenario. Draft is the default; a tabled memo leaves this page.

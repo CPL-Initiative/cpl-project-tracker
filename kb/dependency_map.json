@@ -619,7 +619,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 14020,
+     "line": 14189,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5406,14 +5406,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1547
+     "line": 1548
     },
     {
      "id": "page:funding-model/memo/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 105
+     "line": 106
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -5669,14 +5669,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1552
+     "line": 1553
     },
     {
      "id": "page:funding-model/memo/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 106
+     "line": 107
     }
    ],
    "served": true,
@@ -5699,7 +5699,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 15446,
+     "line": 15615,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5727,14 +5727,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1538
+     "line": 1539
     },
     {
      "id": "page:funding-model/memo/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 104
+     "line": 105
     },
     {
      "id": "script:excel_to_dashboard.py",
@@ -5784,7 +5784,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 15373,
+     "line": 15542,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5827,7 +5827,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 15358,
+     "line": 15527,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -6081,7 +6081,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1551
+     "line": 1552
     },
     {
      "id": "page:prototype/ccr_atlas_v1.html",
@@ -6910,17 +6910,6 @@
      ]
     },
     {
-     "id": "module:cpl_funding.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "literal",
-     "line": 12790,
-     "tabs": [
-      "college-briefing",
-      "implementation-funding"
-     ]
-    },
-    {
      "id": "module:master_report.js",
      "kind": "module",
      "direction": "read",
@@ -7157,7 +7146,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1566
+     "line": 1567
     }
    ],
    "served": true,
@@ -7430,7 +7419,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1539
+     "line": 1540
     }
    ],
    "served": true,
