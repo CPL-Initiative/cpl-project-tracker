@@ -26,7 +26,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship-sheet metal - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 11,
@@ -61,7 +64,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 1,
@@ -105,7 +111,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "real estate broker license preparation - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.455
    }
   },
   "listed": 10,
@@ -136,7 +145,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "administrative assistant - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 9,
@@ -195,7 +207,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "radio and television - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.286
    }
   },
   "listed": 26,
@@ -227,7 +242,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer science - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 10,
@@ -269,7 +287,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "kinesiology - a.a. degree major (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 20,
@@ -312,7 +333,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering - a.s. degree major (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 21,
@@ -359,7 +383,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "diesel technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 13,
@@ -388,7 +415,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -423,7 +453,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "auto collision repair - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 13,
@@ -457,7 +490,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cabinetmaking and millwork - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 12,
@@ -486,7 +522,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "architectural building information modeling, b.i.m - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.4
    }
   },
   "listed": 8,
@@ -517,7 +556,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "welding technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 9,
@@ -565,7 +607,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "wastewater technology education - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 14,
@@ -605,7 +650,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "pictorial arts: painting - a.a. degree major (18 units or more)",
+    "section_fit": 0.375
    }
   },
   "listed": 18,
@@ -671,7 +719,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music - a.a. degree major (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 44,
@@ -726,7 +777,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theatre arts - a.a. degree major (18 units or more)",
+    "section_fit": 0.286
    }
   },
   "listed": 21,
@@ -763,7 +817,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "photography - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 15,
@@ -811,7 +868,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "registered dental assisting - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 14,
@@ -844,7 +904,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "interior design - a.s. degree major (18 units or more)",
+    "section_fit": 0.286
    }
   },
   "listed": 11,
@@ -876,7 +939,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fashion design - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 10,
@@ -915,7 +981,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "graphic communications - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 17,
@@ -942,7 +1011,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "speech communication   - a.a. degree major (18 units or more)",
+    "section_fit": 0.286
    }
   },
   "listed": 5,
@@ -972,7 +1044,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "library and information technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 8,
@@ -1010,7 +1085,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "mathematics - a.s. degree major (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 16,
@@ -1037,7 +1115,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "chemistry - a.s. degree major (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 6,
@@ -1093,7 +1174,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "geology - a.s. degree major (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 34,
@@ -1104,28 +1188,12 @@
   "title": "Administration of Justice-Law Enforcement",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.667,
-  "codes_found": [
-   "AJ100",
-   "AJ101",
-   "AJ102",
-   "AJ103",
-   "AJ104",
-   "AJ106"
-  ],
-  "source": {
-   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33527",
-   "title": "Forensic Technology - A.S. Degree Major (18 units or more)",
-   "h1": "Forensic Technology - A.S. Degree Major (18 units or more)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 2740
+  "text_chars": 0
  },
  {
   "control_number": "05208",
@@ -1154,7 +1222,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "as",
+    "section_line": "child development  department - child development teacher - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.3
    }
   },
   "listed": 11,
@@ -1184,7 +1255,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "american sign language/english translation & interpreting studies - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.538
    }
   },
   "listed": 8,
@@ -1222,7 +1296,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fire technology - general - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 16,
@@ -1262,7 +1339,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "american indian studies - certificate of achievement (18 units or more)",
+    "section_fit": 0.429
    }
   },
   "listed": 18,
@@ -1307,7 +1387,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "archaeology - a.a. degree major (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 23,
@@ -1345,7 +1428,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "economics - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 16,
@@ -1397,7 +1483,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biology-preprofessional - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 6,
@@ -1445,7 +1534,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "general business - a.s. degree major (18 units or more)",
+    "section_fit": 0.286
    }
   },
   "listed": 27,
@@ -1474,7 +1566,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "medical office specialist - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 7,
@@ -1509,7 +1604,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "cinema studies - a.a. degree major (18 units or more)",
+    "section_fit": 0.286
    }
   },
   "listed": 14,
@@ -1543,7 +1641,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "information technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 12,
@@ -1583,7 +1684,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "adult fitness and health - certificate of achievement (18 units or more)",
+    "section_fit": 0.429
    }
   },
   "listed": 18,
@@ -1708,7 +1812,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship-carpentry - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 68,
@@ -1750,7 +1857,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "drafting and design cadd/cam technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.455
    }
   },
   "listed": 8,
@@ -1794,7 +1904,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "mechanical engineering drafting and design technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.455
    }
   },
   "listed": 10,
@@ -1822,7 +1935,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "electrical engineering drafting and design technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.455
    }
   },
   "listed": 6,
@@ -1855,7 +1971,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "water technology education - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 11,
@@ -1892,7 +2011,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "three-dimensional arts: sculpture - a.a. degree major (18 units or more)",
+    "section_fit": 0.444
    }
   },
   "listed": 15,
@@ -1931,7 +2053,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "three-dimensional arts: ceramics - a.a. degree major (18 units or more)",
+    "section_fit": 0.444
    }
   },
   "listed": 17,
@@ -1978,7 +2103,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "three-dimensional arts: jewelry and metalsmithing - a.a. degree major (18 units or more)",
+    "section_fit": 0.5
    }
   },
   "listed": 13,
@@ -2015,7 +2143,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "illustration - a.s. degree major (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 15,
@@ -2053,7 +2184,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "graphic design - a.s. degree major (18 units or more)",
+    "section_fit": 0.286
    }
   },
   "listed": 16,
@@ -2084,7 +2218,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "screen printing - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 9,
@@ -2117,7 +2254,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "interactive media design: emphasis in 3d modeling and animation - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.538
    }
   },
   "listed": 11,
@@ -2152,7 +2292,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "paramedic training - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 13,
@@ -2181,7 +2324,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fashion merchandising - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 7,
@@ -2233,7 +2379,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "gender, sexuality and women's studies - a.a. degree major (18 units or more)",
+    "section_fit": 0.444
    }
   },
   "listed": 18,
@@ -2272,7 +2421,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "three-dimensional arts: crafts - a.a. degree major (18 units or more)",
+    "section_fit": 0.444
    }
   },
   "listed": 17,
@@ -2312,7 +2464,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "three-dimensional arts: glass - a.a. degree major (18 units or more)",
+    "section_fit": 0.444
    }
   },
   "listed": 18,
@@ -2379,7 +2534,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship-drywall/lather - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 45,
@@ -2419,7 +2577,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "multimedia design - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 19,
@@ -2454,7 +2615,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "archaeological field technician - certificate of achievement (18 units or more)",
+    "section_fit": 0.429
    }
   },
   "listed": 13,
@@ -2483,7 +2647,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -2519,7 +2686,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "digital imaging - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 14,
@@ -2552,7 +2722,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "web: front end design - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.4
    }
   },
   "listed": 11,
@@ -2703,7 +2876,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies: emphasis in arts and humanities - a.a. degree major (18 units or more)",
+    "section_fit": 0.5
    }
   },
   "listed": 130,
@@ -2728,7 +2904,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "retail management - certificate of achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 3,
@@ -2775,7 +2954,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "digital video - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 26,
@@ -2886,7 +3068,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "general studies: emphasis in science and mathematics - a.s. degree major (18 units or more)",
+    "section_fit": 0.5
    }
   },
   "listed": 77,
@@ -2996,7 +3181,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies: emphasis in social and behavioral sciences - a.a. degree major (18 units or more)",
+    "section_fit": 0.545
    }
   },
   "listed": 88,
@@ -3033,7 +3221,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "new media compositing, authoring, and distribution - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.455
    }
   },
   "listed": 15,
@@ -3063,7 +3254,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship-sound technician - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 8,
@@ -3103,7 +3297,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer network administration with emphasis: cisco - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.455
    }
   },
   "listed": 6,
@@ -3135,7 +3332,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer network administration - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 10,
@@ -3176,7 +3376,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "english - a.a. degree major (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 19,
@@ -3211,7 +3414,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "administration of justice: general - a.s. degree major (18 units or more)",
+    "section_fit": 0.375
    }
   },
   "listed": 13,
@@ -3222,57 +3428,24 @@
   "title": "Administration of Justice- Homeland Security",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.545,
-  "codes_found": [
-   "AJ100",
-   "AJ101",
-   "AJ102",
-   "AJ103",
-   "AJ104",
-   "AJ106"
-  ],
-  "source": {
-   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33527",
-   "title": "Forensic Technology - A.S. Degree Major (18 units or more)",
-   "h1": "Forensic Technology - A.S. Degree Major (18 units or more)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 2740
+  "text_chars": 0
  },
  {
   "control_number": "16856",
   "title": "Administration of Justice- Investigations",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.778,
-  "codes_found": [
-   "AJ100",
-   "AJ101",
-   "AJ102",
-   "AJ103",
-   "AJ104",
-   "AJ106",
-   "AJ210"
-  ],
-  "source": {
-   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33527",
-   "title": "Forensic Technology - A.S. Degree Major (18 units or more)",
-   "h1": "Forensic Technology - A.S. Degree Major (18 units or more)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 2740
+  "text_chars": 0
  },
  {
   "control_number": "16857",
@@ -3305,7 +3478,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fire technology - emergency management - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.4
    }
   },
   "listed": 15,
@@ -3350,7 +3526,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship-acoustical installer - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 23,
@@ -3384,7 +3563,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship-inside wireman - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 12,
@@ -3410,7 +3592,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "french - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 4,
@@ -3451,7 +3636,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "alcohol and other drug studies - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.4
    }
   },
   "listed": 19,
@@ -3492,7 +3680,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship-plasterer - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 28,
@@ -3539,24 +3730,66 @@
   "title": "Computer Network Administration with Emphasis: Cisco",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSNT110",
+   "CSNT111",
+   "CSNT160",
+   "CSNT161",
+   "CSNT260",
+   "CSNT261"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerNetworkAdministrationEmphasisCisco-AS-CA",
+   "title": "Computer Network Administration with Emphasis: Cisco - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Computer Network Administration with Emphasis: Cisco - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 1986
  },
  {
   "control_number": "18663",
   "title": "Computer Network Administration",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSNT110",
+   "CSNT111",
+   "CSNT120",
+   "CSNT121",
+   "CSNT122",
+   "CSNT130",
+   "CSNT160",
+   "CSNT181",
+   "CSNT250",
+   "CSNT280"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerNetworkAdministrationEmphasisMicrosoft-AS-CA",
+   "title": "Computer Network Administration - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Computer Network Administration - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2143
  },
  {
   "control_number": "18664",
@@ -3610,7 +3843,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 24,
@@ -3654,7 +3890,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 24,
@@ -3680,7 +3919,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development: infant/toddler - certificate of achievement (12-17 units)",
+    "section_fit": 0.571
    }
   },
   "listed": 4,
@@ -3751,12 +3993,29 @@
   "title": "Computer Science with Emphasis in Video Gaming",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI160",
+   "CSCI210",
+   "CSCI212",
+   "CSCI222"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerScienceEmphasisinVideoGaming-AS-CA",
+   "title": "Computer Science with Emphasis in Video Gaming - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Computer Science with Emphasis in Video Gaming - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1899
  },
  {
   "control_number": "18900",
@@ -3778,7 +4037,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer science with emphasis in video gaming - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.455
    }
   },
   "listed": 4,
@@ -3905,7 +4167,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "university studies: elementary education preparation - a.a. degree major (18 units or more)",
+    "section_fit": 0.5
    }
   },
   "listed": 105,
@@ -4075,7 +4340,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "university studies: emphasis in arts and humanities - a.a. degree major (18 units or more)",
+    "section_fit": 0.5
    }
   },
   "listed": 148,
@@ -4132,7 +4400,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "university studies: emphasis in health and fitness - a.s. degree major (18 units or more)",
+    "section_fit": 0.5
    }
   },
   "listed": 35,
@@ -4258,7 +4529,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "university studies: emphasis in scientific studies - a.s. degree major (18 units or more)",
+    "section_fit": 0.444
    }
   },
   "listed": 104,
@@ -4385,7 +4659,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "university studies: emphasis in social sciences - a.a. degree major (18 units or more)",
+    "section_fit": 0.5
    }
   },
   "listed": 107,
@@ -4420,24 +4697,68 @@
   "title": "Biology-Preprofessional",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM110",
+   "CHEM110L",
+   "CHEM115",
+   "CHEM115L",
+   "MATHC2210",
+   "MATHC2220"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Biology-Preprofessional-AS-CA",
+   "title": "Biology-Preprofessional - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Biology-Preprofessional - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 3343
  },
  {
   "control_number": "22488",
   "title": "Accounting",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT104",
+   "ACCT105",
+   "ACCT107",
+   "ACCT110",
+   "ACCT201",
+   "ACCT202",
+   "BUS110",
+   "BUS117",
+   "BUS125",
+   "BUS205",
+   "MATH130",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Accounting-AS-CA",
+   "title": "Accounting - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Accounting - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2110
  },
  {
   "control_number": "22489",
@@ -4481,53 +4802,101 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT201",
    "BUS117",
    "RE100",
    "RE105",
    "RE110",
+   "RE111",
    "RE115",
    "RE120",
-   "RE140"
+   "RE140",
+   "RE150"
   ],
   "source": {
-   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RealEstateSalespersonLicensePreparation-CP",
-   "title": "Real Estate Salesperson License Preparation - Certificate of Proficiency (Less than 18 units)",
-   "h1": "Real Estate Salesperson License Preparation - Certificate of Proficiency (Less than 18 units)",
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RealEstateBrokerLicensePreparation-AS-CA",
+   "title": "Real Estate Broker License Preparation - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Real Estate Broker License Preparation - A.S. Degree Major/Cert. Achievement (18 units or more)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
-  "text_chars": 2271
+  "text_chars": 3028
  },
  {
   "control_number": "22496",
   "title": "Administrative Assistant",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "BUS100",
+   "BUS110",
+   "BUS152",
+   "BUS166",
+   "BUS171",
+   "BUS173",
+   "BUS176",
+   "BUS205",
+   "CSIT105"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdministrativeAssistant-AS-CA",
+   "title": "Administrative Assistant - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Administrative Assistant - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2069
  },
  {
   "control_number": "22500",
   "title": "Medical Office Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS166",
+   "BUS80",
+   "BUS82",
+   "BUS84",
+   "BUS86",
+   "BUS88",
+   "CE150"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MedicalOfficeSpecialist-AS-CA",
+   "title": "Medical Office Specialist - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Medical Office Specialist - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 1197
  },
  {
   "control_number": "22502",
@@ -4556,7 +4925,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "multimedia journalism - certificate of achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 11,
@@ -4603,7 +4975,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "radio and television - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.286
    }
   },
   "listed": 26,
@@ -4614,120 +4989,391 @@
   "title": "Digital Video",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "ARTI246",
+   "ARTI247",
+   "CINE125",
+   "CINE225",
+   "CINE270",
+   "CINE275",
+   "DBA110",
+   "DBA120",
+   "DBA125",
+   "DBA170",
+   "DBA225",
+   "DBA230",
+   "DBA240A",
+   "DBA270",
+   "DBA275",
+   "GCIP140",
+   "GCIP141",
+   "GCIP152",
+   "GCIP168",
+   "GCIP240",
+   "GCMW101",
+   "GCMW165",
+   "GCMW201",
+   "GCMW204",
+   "GCMW205"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalVideo-AS-CA",
+   "title": "Digital Video - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Digital Video - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 26,
-  "text_chars": 0
+  "text_chars": 2361
  },
  {
   "control_number": "22506",
   "title": "Multimedia Design",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "ARTD220",
+   "ARTI246",
+   "ARTI247",
+   "DBA170",
+   "DBA270",
+   "GCIP140",
+   "GCIP141",
+   "GCIP152",
+   "GCIP168",
+   "GCIP268",
+   "GCMW102",
+   "GCMW106",
+   "GCMW115",
+   "GCMW165",
+   "GCMW201",
+   "GCMW204",
+   "GCMW205",
+   "MUS180"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaDesign-AS-CA",
+   "title": "Multimedia Design - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Multimedia Design - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 2100
  },
  {
   "control_number": "22507",
   "title": "New Media Compositing, Authoring, and Distribution",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTD220",
+   "ARTI246",
+   "ARTI247",
+   "DBA230",
+   "DBA270",
+   "GCIP141",
+   "GCIP168",
+   "GCIP240",
+   "GCMW101",
+   "GCMW115",
+   "GCMW165",
+   "GCMW201",
+   "GCMW202",
+   "GCMW204",
+   "GCMW205"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/NewMediaCompositingAuthoringDistribution-AS-CA",
+   "title": "New Media Compositing, Authoring, and Distribution - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "New Media Compositing, Authoring, and Distribution - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 1906
  },
  {
   "control_number": "22509",
   "title": "Interactive Media Design: Emphasis in 3D Modeling and Animation",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART120",
+   "ART121",
+   "ARTD220",
+   "ARTI100",
+   "ARTI246",
+   "ARTI247",
+   "ARTI248",
+   "GCIP140",
+   "GCIP141",
+   "GCIP240",
+   "GCMW204"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InteractiveMediaDesignEmphasisin3DModelingAnimation-AS-CA",
+   "title": "Interactive Media Design: Emphasis in 3D Modeling and Animation - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Interactive Media Design: Emphasis in 3D Modeling and Animation - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 1939
  },
  {
   "control_number": "22510",
   "title": "Graphic Communications",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GCIP105",
+   "GCIP140",
+   "GCIP141",
+   "GCIP149",
+   "GCIP152",
+   "GCIP170",
+   "GCIP172",
+   "GCIP252",
+   "GCIP270",
+   "GCMW101",
+   "GCMW102",
+   "GCMW106",
+   "GCMW115",
+   "GCMW165",
+   "GCMW201",
+   "GCMW204",
+   "GCMW205"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicCommunications-AS-CA",
+   "title": "Graphic Communications - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Graphic Communications - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2202
  },
  {
   "control_number": "22511",
   "title": "Digital Imaging",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GCIP140",
+   "GCIP141",
+   "GCIP152",
+   "GCIP168",
+   "GCIP170",
+   "GCIP240",
+   "GCMW101",
+   "GCMW102",
+   "GCMW115",
+   "GCMW165",
+   "GCMW201",
+   "GCMW204",
+   "GCMW205",
+   "PHOT130"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalImaging-AS-CA",
+   "title": "Digital Imaging - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Digital Imaging - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 1853
  },
  {
   "control_number": "22512",
   "title": "Web: Front End Design",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS157",
+   "CSIT152",
+   "GC115",
+   "GCIP140",
+   "GCIP152",
+   "GCMW102",
+   "GCMW115",
+   "GCMW165",
+   "GCMW177",
+   "GCMW202",
+   "GCMW215"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WebFrontEndDesign-AS-CA",
+   "title": "Web: Front End Design - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Web: Front End Design - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2240
  },
  {
   "control_number": "22513",
   "title": "Information Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIT105",
+   "CSIT125",
+   "CSIT150",
+   "CSIT152",
+   "CSIT155",
+   "CSIT165",
+   "CSIT175",
+   "CSIT180",
+   "CSIT230",
+   "CSIT275",
+   "CSNT111",
+   "CSNT150"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InformationTechnology-AS-CA",
+   "title": "Information Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Information Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2142
  },
  {
   "control_number": "22514",
   "title": "Computer Science",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI112",
+   "CSCI114",
+   "CSCI130",
+   "CSCI210",
+   "CSCI212",
+   "CSCI222",
+   "CSCI250",
+   "CSCI290",
+   "CSIT175",
+   "MATH245"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerScience-AS-CA",
+   "title": "Computer Science - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Computer Science - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2162
  },
  {
   "control_number": "22518",
   "title": "American Sign Language/English Translation & Interpreting Studies",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL110",
+   "ASL115",
+   "ASL210",
+   "ASL211",
+   "ASL216",
+   "ASL220",
+   "ASL298",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AmericanSignLanguageEnglishTranslationInterpretingStudies-AS-CA",
+   "title": "American Sign Language/English Translation & Interpreting Studies - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "American Sign Language/English Translation & Interpreting Studies - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2918
  },
  {
   "control_number": "22521",
@@ -4758,12 +5404,38 @@
   "title": "Diesel Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT160",
+   "DMT100",
+   "DMT105",
+   "DMT110",
+   "DMT115",
+   "DMT120",
+   "DMT125",
+   "DMT130",
+   "DMT135",
+   "DMT200",
+   "DMT201",
+   "MATH100",
+   "WELD100"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DieselTechnology-AS-CA",
+   "title": "Diesel Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Diesel Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2118
  },
  {
   "control_number": "22524",
@@ -4806,24 +5478,130 @@
   "title": "Auto Collision Repair",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AB105",
+   "AB50",
+   "AB51",
+   "AB55",
+   "AB56",
+   "AB97",
+   "AT100",
+   "AT105",
+   "AT170",
+   "CE100",
+   "IT108",
+   "WELD100",
+   "WELD108"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AutoCollisionRepair-AS-CA",
+   "title": "Auto Collision Repair - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Auto Collision Repair - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 1394
  },
  {
   "control_number": "22528",
   "title": "Apprenticeship-Carpentry",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.985,
+  "codes_found": [
+   "APAC774",
+   "APC701",
+   "APC702",
+   "APC703",
+   "APC704",
+   "APC705",
+   "APC707",
+   "APC708",
+   "APC709",
+   "APC710",
+   "APC712",
+   "APC713",
+   "APC714",
+   "APC716",
+   "APC717",
+   "APC718",
+   "APC719",
+   "APC721",
+   "APC723",
+   "APC725",
+   "APC726",
+   "APC727",
+   "APC728",
+   "APC729",
+   "APC735",
+   "APC736",
+   "APC737",
+   "APC739",
+   "APC745",
+   "APC747",
+   "APC748",
+   "APC749",
+   "APC750",
+   "APC751",
+   "APC752",
+   "APC753",
+   "APC754",
+   "APC755",
+   "APC756",
+   "APC757",
+   "APC758",
+   "APC761",
+   "APC764",
+   "APC765",
+   "APC770",
+   "APC771",
+   "APC772",
+   "APC773",
+   "APC774",
+   "APC775",
+   "APC776",
+   "APC777",
+   "APC778",
+   "APC779",
+   "APC780",
+   "APC781",
+   "APC782",
+   "APC783",
+   "APC797",
+   "APDL774",
+   "APPL774",
+   "APPL783",
+   "APWE711",
+   "APWE730",
+   "APWE731",
+   "APWE732",
+   "APWE733"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-Carpentry-AS-CA",
+   "title": "Apprenticeship-Carpentry - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Apprenticeship-Carpentry - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 68,
-  "text_chars": 0
+  "text_chars": 4383
  },
  {
   "control_number": "22529",
@@ -4842,12 +5620,36 @@
   "title": "Apprenticeship-Inside Wireman",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APIW701",
+   "APIW702",
+   "APIW703",
+   "APIW704",
+   "APIW705",
+   "APIW706",
+   "APIW713",
+   "APIW714",
+   "APIW716",
+   "APIW725",
+   "APIW726"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-InsideWireman-AS-CA",
+   "title": "Apprenticeship-Inside Wireman - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Apprenticeship-Inside Wireman - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 1920
  },
  {
   "control_number": "22531",
@@ -4866,72 +5668,263 @@
   "title": "Apprenticeship-Sound Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APSC701",
+   "APSC702",
+   "APSC703",
+   "APSC704",
+   "APSC705",
+   "APSC706",
+   "APSC707",
+   "APWE713"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-SoundTechnician-AS-CA",
+   "title": "Apprenticeship-Sound Technician - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Apprenticeship-Sound Technician - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 1804
  },
  {
   "control_number": "22535",
   "title": "Cabinetmaking and Millwork",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFT100",
+   "CFT105",
+   "CFT108",
+   "CFT163",
+   "CFT165A",
+   "CFT165B",
+   "CFT167A",
+   "CFT167B",
+   "CFT168",
+   "CFT169"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CabinetmakingMillwork-AS-CA",
+   "title": "Cabinetmaking and Millwork - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Cabinetmaking and Millwork - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2150
  },
  {
   "control_number": "22537",
   "title": "Apprenticeship-Drywall/Lather",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "APAC701",
+   "APAC702",
+   "APAC703",
+   "APAC704",
+   "APAC705",
+   "APAC706",
+   "APAC711",
+   "APAC774",
+   "APC739",
+   "APC774",
+   "APDL701",
+   "APDL702",
+   "APDL703",
+   "APDL704",
+   "APDL705",
+   "APDL706",
+   "APDL707",
+   "APDL708",
+   "APDL709",
+   "APDL710",
+   "APDL712",
+   "APDL713",
+   "APDL714",
+   "APDL715",
+   "APDL716",
+   "APDL717",
+   "APDL718",
+   "APDL720",
+   "APDL721",
+   "APDL722",
+   "APDL723",
+   "APDL724",
+   "APDL726",
+   "APDL728",
+   "APDL729",
+   "APDL730",
+   "APDL731",
+   "APDL732",
+   "APDL774",
+   "APDL797",
+   "APPL701",
+   "APPL702",
+   "APPL703",
+   "APPL774",
+   "APWE712"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-DrywallLather-AS-CA",
+   "title": "Apprenticeship-Drywall/Lather - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Apprenticeship-Drywall/Lather - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 47,
-  "text_chars": 0
+  "text_chars": 3185
  },
  {
   "control_number": "22538",
   "title": "Apprenticeship-Plasterer",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.679,
+  "codes_found": [
+   "APAC701",
+   "APAC702",
+   "APAC703",
+   "APAC774",
+   "APC783",
+   "APDL701",
+   "APDL702",
+   "APDL703",
+   "APDL705",
+   "APDL715",
+   "APDL716",
+   "APDL774",
+   "APPL701",
+   "APPL702",
+   "APPL703",
+   "APPL717",
+   "APPL718",
+   "APPL774",
+   "APPL783"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-Plasterer-AS-CA",
+   "title": "Apprenticeship-Plasterer - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Apprenticeship-Plasterer - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 28,
-  "text_chars": 0
+  "text_chars": 1726
  },
  {
   "control_number": "22539",
   "title": "Apprenticeship-Acoustical Installer",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APAC701",
+   "APAC702",
+   "APAC703",
+   "APAC704",
+   "APAC705",
+   "APAC706",
+   "APAC707",
+   "APAC708",
+   "APAC709",
+   "APAC710",
+   "APAC711",
+   "APAC712",
+   "APAC713",
+   "APAC714",
+   "APAC715",
+   "APDL701",
+   "APDL702",
+   "APDL703",
+   "APDL704",
+   "APPL701",
+   "APPL702",
+   "APPL703",
+   "APWE712"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-AcousticalInstaller-AS-CA",
+   "title": "Apprenticeship-Acoustical Installer - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Apprenticeship-Acoustical Installer - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 1690
  },
  {
   "control_number": "22540",
   "title": "Drafting and Design CADD/CAM Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DT101",
+   "DT102",
+   "DT103",
+   "DT104",
+   "DT114",
+   "DT115",
+   "MACH190",
+   "MACH191"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DraftingDesignCADDCAMTechnology-AS-CA",
+   "title": "Drafting and Design CADD/CAM Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Drafting and Design CADD/CAM Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2095
  },
  {
   "control_number": "22541",
@@ -4950,60 +5943,168 @@
   "title": "Mechanical Engineering Drafting and Design Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DT101",
+   "DT102",
+   "DT103",
+   "DT104",
+   "DT110",
+   "DT111",
+   "DT114",
+   "DT115",
+   "IT108",
+   "MACH228"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MechanicalEngineeringDraftingDesignTechnology-AS-CA",
+   "title": "Mechanical Engineering Drafting and Design Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Mechanical Engineering Drafting and Design Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3003
  },
  {
   "control_number": "22543",
   "title": "Architectural Building Information Modeling, B.I.M",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ARCH105",
+   "ARCH135",
+   "ARCH150",
+   "ARCH202",
+   "ARCH204",
+   "ARCH295",
+   "ID150"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ArchitecturalDrafting-AS-CA",
+   "title": "Architectural Building Information Modeling, B.I.M - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Architectural Building Information Modeling, B.I.M - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 1661
  },
  {
   "control_number": "22544",
   "title": "Electrical Engineering Drafting and Design Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DT101",
+   "DT226",
+   "DT227",
+   "IT108",
+   "MACH228",
+   "WELD108"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ElectricalEngineeringDraftingDesignTechnology-AS-CA",
+   "title": "Electrical Engineering Drafting and Design Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Electrical Engineering Drafting and Design Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2192
  },
  {
   "control_number": "22545",
   "title": "Apprenticeship-Sheet Metal",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APSM701",
+   "APSM702",
+   "APSM703",
+   "APSM704",
+   "APSM705",
+   "APSM706",
+   "APSM709",
+   "APSM710",
+   "APSM711",
+   "APSM712",
+   "APWE710"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-SheetMetal-AS-CA",
+   "title": "Apprenticeship-Sheet Metal - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Apprenticeship-Sheet Metal - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 1610
  },
  {
   "control_number": "22546",
   "title": "Welding Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD100",
+   "WELD110",
+   "WELD115",
+   "WELD120",
+   "WELD135",
+   "WELD140",
+   "WELD145",
+   "WELD150",
+   "WELD160"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WeldingTechnology-AS-CA",
+   "title": "Welding Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Welding Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1214
  },
  {
   "control_number": "22547",
@@ -5022,12 +6123,39 @@
   "title": "Wastewater Technology Education",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CE100",
+   "WTE102",
+   "WTE149",
+   "WTE153",
+   "WTE155",
+   "WTE156",
+   "WTE158",
+   "WTE160",
+   "WTE162",
+   "WTE164",
+   "WTE166",
+   "WTE197",
+   "WTE263",
+   "WTE51"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WastewaterTechnologyEducation-AS-CA",
+   "title": "Wastewater Technology Education - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Wastewater Technology Education - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2696
  },
  {
   "control_number": "22549",
@@ -5072,7 +6200,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 15,
@@ -5083,12 +6214,34 @@
   "title": "Screen Printing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS152",
+   "GCIP105",
+   "GCIP140",
+   "GCIP141",
+   "GCIP152",
+   "GCIP170",
+   "GCIP172",
+   "GCIP252",
+   "GCIP270"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ScreenPrinting-AS-CA",
+   "title": "Screen Printing - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Screen Printing - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1578
  },
  {
   "control_number": "22553",
@@ -5110,7 +6263,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "french - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 4,
@@ -5121,24 +6277,77 @@
   "title": "Registered Dental Assisting",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DA50",
+   "DA57",
+   "DA60",
+   "DA65",
+   "DA70",
+   "DA71",
+   "DA75",
+   "DA82",
+   "DA83",
+   "DA85",
+   "DA91",
+   "DA92",
+   "ENGLC1000",
+   "ESL110"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RegisteredDentalAssisting-AS-CA",
+   "title": "Registered Dental Assisting - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Registered Dental Assisting - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2648
  },
  {
   "control_number": "22557",
   "title": "Paramedic Training",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL145",
+   "EME106",
+   "EME106L",
+   "EME175",
+   "EME175L",
+   "EME206",
+   "EME206L",
+   "EME207",
+   "EME207L",
+   "EME208",
+   "EME208L",
+   "EME209",
+   "EME209L"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ParamedicTraining-AS-CA",
+   "title": "Paramedic Training - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Paramedic Training - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2862
  },
  {
   "control_number": "22559",
@@ -5168,7 +6377,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "interior design - certificate of achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 12,
@@ -5179,24 +6391,69 @@
   "title": "Child Development Teacher",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CHDV104",
+   "CHDV105",
+   "CHDV105A",
+   "CHDV106",
+   "CHDV115",
+   "CHDV120",
+   "CHDV182",
+   "CHDV184",
+   "CHDV185",
+   "CHDV201"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA",
+   "title": "Child Development - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Child Development - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2842
  },
  {
   "control_number": "22565",
   "title": "Library and Information Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIT105",
+   "LT100",
+   "LT105",
+   "LT110",
+   "LT115",
+   "LT120",
+   "LT130",
+   "LT140"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/LibraryInformationTechnology-AS-CA",
+   "title": "Library and Information Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Library and Information Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2378
  },
  {
   "control_number": "22567",
@@ -5224,7 +6481,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "astronomy - certificate of achievement (18 units or more)",
+    "section_fit": 0.2
    }
   },
   "listed": 10,
@@ -5247,36 +6507,125 @@
   "title": "Alcohol and Other Drug Studies",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AODS150",
+   "AODS155",
+   "AODS160",
+   "AODS165",
+   "AODS250",
+   "AODS255",
+   "AODS260",
+   "AODS270",
+   "AODS298",
+   "AODS298L",
+   "AODS299",
+   "AODS299L",
+   "PSYC150",
+   "PSYC155",
+   "PSYCC1000",
+   "SOC110",
+   "SOC150",
+   "SOC155",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AlcoholOtherDrugStudies-AS-CA",
+   "title": "Alcohol and Other Drug Studies - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Alcohol and Other Drug Studies - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 2339
  },
  {
   "control_number": "22572",
   "title": "Fire Technology - General",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EME106",
+   "FIRE100",
+   "FIRE101",
+   "FIRE115",
+   "FIRE118",
+   "FIRE120",
+   "FIRE130",
+   "FIRE131",
+   "FIRE132",
+   "FIRE133",
+   "FIRE142",
+   "FIRE151",
+   "FIRE160",
+   "FIRE165",
+   "FIRE173",
+   "FIRE51"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FireTechnology-General-AS-CA",
+   "title": "Fire Technology - General - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Fire Technology - General - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 1791
  },
  {
   "control_number": "22573",
   "title": "Fire Technology - Emergency Management",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE100",
+   "FIRE101",
+   "FIRE115",
+   "FIRE118",
+   "FIRE120",
+   "FIRE130",
+   "FIRE131",
+   "FIRE132",
+   "FIRE133",
+   "FIRE142",
+   "FIRE151",
+   "FIRE160",
+   "FIRE165",
+   "FIRE173",
+   "FIRE51"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FireTechnology-EmergencyManagement-AS-CA",
+   "title": "Fire Technology - Emergency Management - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Fire Technology - Emergency Management - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 1676
  },
  {
   "control_number": "22574",
@@ -5310,7 +6659,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "economics - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 16,
@@ -5336,7 +6688,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -5360,7 +6715,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5371,12 +6729,40 @@
   "title": "Advanced Geographic Information Systems",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIT150",
+   "CSIT155",
+   "CSIT165",
+   "CSIT175",
+   "DT101",
+   "GEOG120",
+   "GEOG132",
+   "GEOG134",
+   "GEOG136",
+   "GEOG138",
+   "GEOG140",
+   "GEOG142",
+   "GEOG143",
+   "GEOG144",
+   "GEOG145"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdvancedGeographicInformationSystems-AS-CA",
+   "title": "Advanced Geographic Information Systems - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Advanced Geographic Information Systems - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 2431
  },
  {
   "control_number": "30041",
@@ -5409,7 +6795,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "advanced geographic information systems - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.4
    }
   },
   "listed": 15,
@@ -5432,12 +6821,35 @@
   "title": "Architecture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH105",
+   "ARCH120",
+   "ARCH121",
+   "ARCH122",
+   "ARCH135",
+   "ARCH145",
+   "ARCH215",
+   "ARCH216",
+   "ARCH217",
+   "ARCH218"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Architecture-AS-CA",
+   "title": "Architecture - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Architecture - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 1882
  },
  {
   "control_number": "30574",
@@ -5465,7 +6877,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "architecture - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 10,
@@ -5508,7 +6923,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology - aa-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 21,
@@ -5547,7 +6965,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology - aa-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 17,
@@ -5558,12 +6979,41 @@
   "title": "E-Marketing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS100",
+   "BUS125",
+   "BUS145",
+   "BUS150",
+   "BUS152",
+   "BUS155",
+   "BUS157",
+   "BUS205",
+   "FASH125",
+   "GCIP140",
+   "GCIP141",
+   "GCIP240",
+   "GCMW102",
+   "GCMW115",
+   "GCMW177",
+   "JOUR200"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/E-Marketing-AS-CA",
+   "title": "E-Marketing - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "E-Marketing - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 2075
  },
  {
   "control_number": "31243",
@@ -5597,7 +7047,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "e-marketing - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 16,
@@ -5650,7 +7103,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dance: emphasis in world dance - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.375
    }
   },
   "listed": 31,
@@ -5720,7 +7176,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dance: emphasis in general dance - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.375
    }
   },
   "listed": 48,
@@ -5789,7 +7248,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dance: emphasis in euro-western dance - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.444
    }
   },
   "listed": 47,
@@ -5859,7 +7321,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance: emphasis in general dance - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.375
    }
   },
   "listed": 48,
@@ -5911,7 +7376,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance: emphasis in world dance - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.375
    }
   },
   "listed": 30,
@@ -5979,7 +7447,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance: emphasis in euro-western dance - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.444
    }
   },
   "listed": 46,
@@ -6007,7 +7478,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics 2.0 - as-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 9,
@@ -6018,12 +7492,37 @@
   "title": "Lathe Turning Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFT100",
+   "CFT105",
+   "CFT108",
+   "CFT118",
+   "CFT143",
+   "CFT153",
+   "CFT155",
+   "CFT176",
+   "CFT177",
+   "CFT178",
+   "CFT185",
+   "CFT195"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/LatheTurningTechnology-AS-CA",
+   "title": "Lathe Turning Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Lathe Turning Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2367
  },
  {
   "control_number": "31622",
@@ -6053,7 +7552,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "lathe turning technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 12,
@@ -6090,7 +7592,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "woodworking skills technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 15,
@@ -6129,7 +7634,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "case furniture construction/manufacturing - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.4
    }
   },
   "listed": 17,
@@ -6180,7 +7688,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "table and chair manufacturing - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 17,
@@ -6214,7 +7725,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "guitar making technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 12,
@@ -6252,7 +7766,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "veneering technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 16,
@@ -6263,12 +7780,42 @@
   "title": "Case Furniture Construction/Manufacturing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFT100",
+   "CFT105",
+   "CFT108",
+   "CFT110A",
+   "CFT110B",
+   "CFT111A",
+   "CFT111B",
+   "CFT118",
+   "CFT142",
+   "CFT143",
+   "CFT148",
+   "CFT153",
+   "CFT169",
+   "CFT170",
+   "CFT175",
+   "CFT185",
+   "CFT195"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CaseFurnitureConstructionManufacturing-AS-CA",
+   "title": "Case Furniture Construction/Manufacturing - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Case Furniture Construction/Manufacturing - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2838
  },
  {
   "control_number": "31640",
@@ -6287,48 +7834,162 @@
   "title": "Table and Chair Manufacturing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFT100",
+   "CFT108",
+   "CFT118",
+   "CFT142",
+   "CFT149",
+   "CFT153",
+   "CFT155",
+   "CFT156",
+   "CFT159A",
+   "CFT159B",
+   "CFT160A",
+   "CFT160B",
+   "CFT170",
+   "CFT180",
+   "CFT185",
+   "CFT195",
+   "CFT198"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/TableChairManufacturing-AS-CA",
+   "title": "Table and Chair Manufacturing - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Table and Chair Manufacturing - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2747
  },
  {
   "control_number": "31643",
   "title": "Guitar Making Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFT100",
+   "CFT128",
+   "CFT132A",
+   "CFT132B",
+   "CFT133A",
+   "CFT133B",
+   "CFT134A",
+   "CFT134B",
+   "CFT135A",
+   "CFT135B",
+   "CFT149",
+   "CFT195"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GuitarMakingTechnology-AS-CA",
+   "title": "Guitar Making Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Guitar Making Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2120
  },
  {
   "control_number": "31646",
   "title": "Veneering Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFT100",
+   "CFT105",
+   "CFT108",
+   "CFT110A",
+   "CFT111A",
+   "CFT118",
+   "CFT142",
+   "CFT143",
+   "CFT144",
+   "CFT145",
+   "CFT148",
+   "CFT151",
+   "CFT152",
+   "CFT153",
+   "CFT180",
+   "CFT195"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/VeneeringTechnology-AS-CA",
+   "title": "Veneering Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Veneering Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 3117
  },
  {
   "control_number": "31649",
   "title": "Woodworking Skills Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFT100",
+   "CFT108",
+   "CFT118",
+   "CFT142",
+   "CFT143",
+   "CFT144",
+   "CFT145",
+   "CFT149",
+   "CFT151",
+   "CFT153",
+   "CFT155",
+   "CFT156",
+   "CFT175",
+   "CFT176",
+   "CFT180",
+   "CFT187",
+   "CFT195"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WoodworkingSkillsTechnology-AS-CA",
+   "title": "Woodworking Skills Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Woodworking Skills Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2819
  },
  {
   "control_number": "31979",
@@ -6350,7 +8011,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire academy - certificate of achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 4,
@@ -6383,7 +8047,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 - as-t transfer major (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 13,
@@ -6415,7 +8082,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education - as-t transfer major (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 10,
@@ -6444,7 +8114,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism - aa-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 9,
@@ -6482,7 +8155,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts - aa-t transfer major (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 16,
@@ -6524,7 +8200,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fashion: visual merchandising - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 8,
@@ -6558,7 +8237,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology - as-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 12,
@@ -6590,7 +8272,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography - aa-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 11,
@@ -6601,24 +8286,65 @@
   "title": "Fashion: Visual Merchandising",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH150",
+   "BUS145",
+   "FASH115",
+   "FASH116",
+   "FASH126",
+   "FASH148",
+   "FASH195",
+   "ID150"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionVisualMerchandising-AS-CA",
+   "title": "Fashion: Visual Merchandising - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Fashion: Visual Merchandising - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 1844
  },
  {
   "control_number": "32601",
   "title": "Fashion Merchandising",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS145",
+   "FASH110",
+   "FASH115",
+   "FASH120",
+   "FASH126",
+   "FASH148",
+   "FASH175"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionMerchandising-AS-CA",
+   "title": "Fashion Merchandising - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Fashion Merchandising - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2248
  },
  {
   "control_number": "32787",
@@ -6662,7 +8388,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice - as-t transfer major (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 14,
@@ -6703,7 +8432,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english - aa-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 19,
@@ -6714,12 +8446,35 @@
   "title": "Fashion Design",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASH100",
+   "FASH105",
+   "FASH110",
+   "FASH130",
+   "FASH135",
+   "FASH136",
+   "FASH139",
+   "FASH141",
+   "FASH145",
+   "FASH148"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionDesign-AS-CA",
+   "title": "Fashion Design - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Fashion Design - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2144
  },
  {
   "control_number": "33389",
@@ -6749,7 +8504,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy - aa-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 12,
@@ -6775,7 +8533,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "woodworking fundamentals - certificate of achievement (12-17 units)",
+    "section_fit": 0.4
    }
   },
   "listed": 4,
@@ -6786,24 +8547,83 @@
   "title": "CIS: Data Analytics",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI250",
+   "CSCI290",
+   "CSIT125",
+   "CSIT128",
+   "CSIT150",
+   "CSIT165",
+   "CSIT175",
+   "CSIT226",
+   "CSIT230",
+   "CSIT275",
+   "CSNT150",
+   "GEOG120",
+   "JOUR200"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CISDataAnalytics-AS-CA",
+   "title": "CIS: Data Analytics - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "CIS: Data Analytics - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2711
  },
  {
   "control_number": "33775",
   "title": "Management Information Systems",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201",
+   "ACCT202",
+   "BUS204",
+   "BUS205",
+   "CSIT105",
+   "CSIT110",
+   "CSIT125",
+   "CSIT128",
+   "CSIT150",
+   "CSIT175",
+   "CSIT226",
+   "CSIT230",
+   "CSNT181",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH130",
+   "MATH130E",
+   "PSYC205",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ManagementInformationSystems-AS-CA",
+   "title": "Management Information Systems - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Management Information Systems - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 2798
  },
  {
   "control_number": "33808",
@@ -6841,7 +8661,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "management information systems - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 20,
@@ -6897,7 +8720,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish - aa-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 34,
@@ -6932,7 +8758,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cis: data analytics - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 13,
@@ -6994,7 +8823,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology - aa-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 40,
@@ -7032,7 +8864,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics - aa-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 16,
@@ -7062,7 +8897,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "social media - certificate of achievement (12-17 units)",
+    "section_fit": 0.4
    }
   },
   "listed": 8,
@@ -7106,7 +8944,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts - aa-t transfer major (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 22,
@@ -7137,7 +8978,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 - aa-t transfer major (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 16,
@@ -7166,7 +9010,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history - aa-t transfer major (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 7,
@@ -7214,7 +9061,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology - as-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 14,
@@ -7253,7 +9103,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music - aa-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 17,
@@ -7282,7 +9135,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "child and adolescent development - aa-t transfer major (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 7,
@@ -7328,7 +9184,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "nutrition and dietetics - as-t transfer major (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 12,
@@ -7387,7 +9246,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history - aa-t transfer major (18 units or more)",
+    "section_fit": 0.143
    }
   },
   "listed": 13,
@@ -7415,7 +9277,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "drone operations - certificate of achievement (12-17 units)",
+    "section_fit": 0.4
    }
   },
   "listed": 6,
@@ -7442,7 +9307,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -7470,7 +9338,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "air conditioning/heating/refrigeration - a.s. degree major (18 units or more)",
+    "section_fit": 0.444
    }
   },
   "listed": 6,
@@ -7496,7 +9367,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "german - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 4,
@@ -7522,7 +9396,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "german - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 4,
@@ -7533,12 +9410,32 @@
   "title": "Apprenticeship-Intelligent Transportation Systems",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "APIT701",
+   "APIT702",
+   "APIT703",
+   "APIT704",
+   "APIT706",
+   "APIT707",
+   "APIT708"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-IntelligentTransportationSystems-AS-CA",
+   "title": "Apprenticeship-Intelligent Transportation Systems - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Apprenticeship-Intelligent Transportation Systems - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2948
  },
  {
   "control_number": "36765",
@@ -7563,7 +9460,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship-intelligent transportation systems - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.4
    }
   },
   "listed": 8,
@@ -7589,7 +9489,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "italian - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 4,
@@ -7615,7 +9518,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "italian - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 4,
@@ -7652,7 +9558,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "drone applications and technologies - a.s. degree major (18 units or more)",
+    "section_fit": 0.375
    }
   },
   "listed": 15,
@@ -7694,7 +9603,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "spanish - certificate of achievement (18 units or more)",
+    "section_fit": 0.2
    }
   },
   "listed": 8,
@@ -7720,7 +9632,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -7749,7 +9664,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "deaf studies - a.a. degree major (18 units or more)",
+    "section_fit": 0.286
    }
   },
   "listed": 7,
@@ -7792,7 +9710,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "film, television, and electronic media - as-t transfer major (18 units or more)",
+    "section_fit": 0.4
    }
   },
   "listed": 22,
@@ -7824,7 +9745,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cybersecurity - a.s. degree major (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 10,
@@ -7851,7 +9775,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "japanese - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 5,
@@ -7878,7 +9805,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "japanese - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.167
    }
   },
   "listed": 5,
@@ -7903,7 +9833,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -7942,7 +9875,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "musical theatre preparation - certificate of achievement (12-17 units)",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
@@ -7988,7 +9924,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "law, public policy and society - aa-t transfer major (18 units or more)",
+    "section_fit": 0.4
    }
   },
   "listed": 24,
@@ -8012,7 +9951,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -8036,7 +9978,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -8060,7 +10005,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -8083,7 +10031,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -8129,7 +10080,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science - aa-t transfer major (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 24,
@@ -8152,7 +10106,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -8179,7 +10136,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "environmental studies - certificate of achievement (16 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 5,
@@ -8209,7 +10169,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "military leadership - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 8,
@@ -8220,12 +10183,33 @@
   "title": "Military Leadership",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CE100",
+   "MIL100",
+   "MIL101",
+   "MIL102",
+   "MIL103",
+   "MIL195",
+   "MIL198",
+   "MIL199"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MilitaryLeadership-AS-CA",
+   "title": "Military Leadership - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Military Leadership - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2114
  },
  {
   "control_number": "39850",
@@ -8253,7 +10237,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "pre-allied health - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 10,
@@ -8264,12 +10251,35 @@
   "title": "Pre-Allied Health",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH105",
+   "BIOL102",
+   "BIOLC1000",
+   "BIOLC1001",
+   "BIOLC1001L",
+   "CHEM104",
+   "NUTR165",
+   "PSYC110",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Pre-AlliedHealth-AS-CA",
+   "title": "Pre-Allied Health - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Pre-Allied Health - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2307
  },
  {
   "control_number": "40023",
@@ -8293,7 +10303,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies: chicana and chicano studies - aa-t transfer major (18 units or more)",
+    "section_fit": 0.364
    }
   },
   "listed": 6,
@@ -8318,7 +10331,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entry level mastercam programmer - certificate of achievement (8-15 units)",
+    "section_fit": 0.6
    }
   },
   "listed": 3,
@@ -8348,7 +10364,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "machining technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 8,
@@ -8359,12 +10378,33 @@
   "title": "Machining Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT108",
+   "MACH117",
+   "MACH120",
+   "MACH125",
+   "MACH190",
+   "MACH191",
+   "MACH228",
+   "WELD108"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MachiningTechnology-AS-CA",
+   "title": "Machining Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Machining Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 1709
  },
  {
   "control_number": "40046",
@@ -8386,7 +10426,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "quality control/inspection technician - certificate of achievement (8-15 units)",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -8436,7 +10479,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "social work and human services - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.444
    }
   },
   "listed": 28,
@@ -8486,7 +10532,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "social work and human services - a.a. degree major or certificate of achievement (18 units or more)",
+    "section_fit": 0.444
    }
   },
   "listed": 28,
@@ -8512,7 +10561,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development: preschool - certificate of achievement (8-15 units)",
+    "section_fit": 0.6
    }
   },
   "listed": 4,
@@ -8545,7 +10597,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -8571,7 +10626,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development: school age - certificate of achievement (12-17 units)",
+    "section_fit": 0.571
    }
   },
   "listed": 4,
@@ -8617,7 +10675,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic dance - certificate of achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 24,
@@ -8641,7 +10702,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "solidworks drafting and design - certificate of achievement (8-15 units)",
+    "section_fit": 0.6
    }
   },
   "listed": 2,
@@ -8665,7 +10729,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "creo parametric drafting and design - certificate of achievement (8-15 units)",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -8689,7 +10756,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "autocad drafting and design - certificate of achievement (8-15 units)",
+    "section_fit": 0.6
    }
   },
   "listed": 2,
@@ -8737,7 +10807,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -8767,7 +10840,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cyber defense infrastructure support specialist - certificate of achievement (18 units or more)",
+    "section_fit": 0.556
    }
   },
   "listed": 8,
@@ -8793,7 +10869,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cybersecurity specialist - certificate of achievement (8-15 units)",
+    "section_fit": 0.5
    }
   },
   "listed": 4,
@@ -8824,7 +10903,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cloud computing and virtualization - a.s. degree major (18 units or more)",
+    "section_fit": 0.375
    }
   },
   "listed": 9,
@@ -8849,7 +10931,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cloud computing technician - certificate of achievement (8-15 units)",
+    "section_fit": 0.6
    }
   },
   "listed": 3,
@@ -8875,7 +10960,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "web designer i - certificate of achievement (8-15 units)",
+    "section_fit": 0.5
    }
   },
   "listed": 4,
@@ -8905,7 +10993,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cinema studies - certificate of achievement (8-15 units)",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -8932,7 +11023,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advertising and marketing - certificate of achievement (8-15 units)",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -8962,7 +11056,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "journalism - certificate of achievement (18 units or more)",
+    "section_fit": 0.2
    }
   },
   "listed": 8,
@@ -8992,7 +11089,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "public relations - certificate of achievement (16 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 8,
@@ -9020,7 +11120,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business management - certificate of achievement (8-15 units)",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -9047,7 +11150,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "small business entrepreneurship - certificate of achievement (8-15 units)",
+    "section_fit": 0.6
    }
   },
   "listed": 5,
@@ -9074,7 +11180,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "drone operator i - certificate of achievement (8-15 units)",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -9095,17 +11204,20 @@
    "GEOG138"
   ],
   "source": {
-   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeographicInformationSystems-CA",
-   "title": "Geographic Information Systems - Certificate of Achievement (8-15 units)",
-   "h1": "Geographic Information Systems - Certificate of Achievement (8-15 units)",
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdvancedGeographicInformationSystems-AS-CA",
+   "title": "Advanced Geographic Information Systems - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Advanced Geographic Information Systems - A.S. Degree Major/Cert. Achievement (18 units or more)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
-  "text_chars": 1320
+  "text_chars": 2431
  },
  {
   "control_number": "41586",
@@ -9137,7 +11249,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 - as-t transfer major (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 14,
@@ -9163,7 +11278,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "international business - certificate of achievement (12-17 units)",
+    "section_fit": 0.4
    }
   },
   "listed": 4,
@@ -9203,7 +11321,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biliteracy - certificate of achievement (16 units or more)",
+    "section_fit": 0.2
    }
   },
   "listed": 18,
@@ -9226,7 +11347,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -9251,7 +11375,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "screen printer i - certificate of achievement (8-15 units)",
+    "section_fit": 0.5
    }
   },
   "listed": 3,
@@ -9276,7 +11403,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "graphic designer i - certificate of achievement (8-15 units)",
+    "section_fit": 0.5
    }
   },
   "listed": 3,
@@ -9301,7 +11431,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "multimedia production i - certificate of achievement (8-15 units)",
+    "section_fit": 0.5
    }
   },
   "listed": 3,
@@ -9343,7 +11476,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "global studies - aa-t transfer major (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 20,
@@ -9385,7 +11521,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "coaching - certificate of achievement (12-17 units)",
+    "section_fit": 0.25
    }
   },
   "listed": 8,
@@ -9417,7 +11556,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "composites technology - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.25
    }
   },
   "listed": 10,
@@ -9428,24 +11570,68 @@
   "title": "Composites Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMPST110",
+   "CMPST111",
+   "CMPST130",
+   "CMPST210",
+   "CMPST211",
+   "IT108",
+   "MACH120",
+   "MACH190",
+   "MACH228",
+   "WELD108"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CompositesTechnology-AS-CA",
+   "title": "Composites Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Composites Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2415
  },
  {
   "control_number": "43519",
   "title": "Medium/ Heavy Duty Zero Emissions Vehicle Technologies",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMT100",
+   "DMT110",
+   "DMT120",
+   "DMT125",
+   "ZEVTEC205",
+   "ZEVTEC210",
+   "ZEVTEC215",
+   "ZEVTEC225"
+  ],
+  "source": {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MediumHeavyDutyZeroEmissionsVehicleTechnologies-ASCA",
+   "title": "Medium/ Heavy Duty Zero Emissions Vehicle Technologies - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "h1": "Medium/ Heavy Duty Zero Emissions Vehicle Technologies - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2163
  },
  {
   "control_number": "43522",
@@ -9471,7 +11657,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "medium/ heavy duty zero emissions vehicle technologies - a.s. degree major/cert. achievement (18 units or more)",
+    "section_fit": 0.538
    }
   },
   "listed": 8,
@@ -9497,7 +11686,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "bookkeeping/accounting clerk - certificate of achievement (8-15 units)",
+    "section_fit": 0.6
    }
   },
   "listed": 4,
@@ -9522,7 +11714,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -9568,7 +11763,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "data science - a.s. degree major (18 units or more)",
+    "section_fit": 0.286
    }
   },
   "listed": 24,
@@ -9594,7 +11792,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "glassblowing - certificate of achievement (12-17 units)",
+    "section_fit": 0.25
    }
   },
   "listed": 4,
@@ -9643,7 +11844,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pathway to law - certificate of achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 27,
@@ -9671,7 +11875,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -9707,7 +11914,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "regular basic course: police academy module iii - certificate of achievement (8-15 units)",
+    "section_fit": 0.778
    }
   },
   "listed": 2,
@@ -9731,7 +11941,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "regular basic course: police academy module ii - certificate of achievement (8-15 units)",
+    "section_fit": 0.778
    }
   },
   "listed": 2,
@@ -9763,7 +11976,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administration of justice  - certificate of achievement (18 units or more)",
+    "section_fit": 0.333
    }
   },
   "listed": 10,
@@ -9787,7 +12003,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "regular basic course: police academy module i - certificate of achievement (16 units or more)",
+    "section_fit": 0.6
    }
   },
   "listed": 2,
@@ -9821,7 +12040,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administration of justice: emergency management for public safety personnel - certificate of achievement (18 units or more)",
+    "section_fit": 0.636
    }
   },
   "listed": 12,
@@ -9868,7 +12090,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "administration of justice: modern policing - a.s. degree major (18 units or more)",
+    "section_fit": 0.444
    }
   },
   "listed": 25,
