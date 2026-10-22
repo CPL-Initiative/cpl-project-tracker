@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_2026-10-22_cpl_opportunity.sql",
+ "name": "cpl_memory_2026_10_22_cpl_opportunity_b",
+ "version": "20261022155907",
+ "sha256": "c04a340e745015e0189538d4f1d781f74793bef8d60b3f2d4ed4c0ac60979981",
+ "run": "39809281772",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
