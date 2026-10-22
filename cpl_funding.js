@@ -12096,17 +12096,10 @@
       laneWords = hasNc ? ncLaneRule()
         : "Credit only: " + esc(dispName(c.college)) + " reports no noncredit FTES, so its whole award is the credit share.";
     }
-    // ONE FOOTER LINE (2026-09-23): the noncredit share, the county and the
-    // district were three grid cells that each wrapped to three or four lines.
-    // They are context for the rows above, so they read as one sentence run,
-    // after the lane's rule in the drill-in's closing row (2026-09-29).
-    var foot = [];
-    foot.push(c.working_adults == null
-      ? "County context not estimated (county under 65K people)"
-      : esc(c.county) + " County: " + fmtInt(c.working_adults) +
-        " working adults with some college and no degree (" + fmtPct(c.county_pop_pct, 1) + " of its people)");
-    if (c.district) foot.push(esc(c.district));
-    var county = '<p class="cplfund-dtl-foot dk">' + foot.join(" &middot; ") + "</p>";
+    // The county and district line that closed the drill-in (one footer line
+    // since 2026-09-23) is GONE (Sam, 2026-10-22: "you can delete the line
+    // about county residents"). The county keeps its hidden Working adults
+    // column, the search and the CSV; the closing line is the lane's rule alone.
     // The base and cap cells, the FTES-share cell and the baseline paragraph
     // are GONE (Sam, 2026-09-23, funding review item 3). Their figures ride
     // the row: the bound word's hover (boundWordHtml) and the CR FTES hover
@@ -12139,13 +12132,13 @@
     var top = '<tr class="cplfund-detail' + (alt || "") + '"><td colspan="' + ncols + '">' +
       '<div class="cplfund-detail-grid">' +
       eligLine + noteLine +
-      prio + (subRows ? "" : county) +
+      prio +
       "</div></td></tr>";
     if (!subRows) return top;
-    // The priority rows, then one closing line: the lane's rule and the context.
+    // The priority rows, then one closing line: the lane's rule.
     return top + subRows +
       '<tr class="cplfund-detail cplfund-detail-foot' + (alt || "") + '"><td colspan="' + ncols + '">' +
-      '<div class="cplfund-detail-grid"><p class="cplfund-dtl-foot dk">' + laneWords + "</p>" + county +
+      '<div class="cplfund-detail-grid"><p class="cplfund-dtl-foot dk">' + laneWords + "</p>" +
       "</div></td></tr>";
   }
   function baseCollege(name) {
