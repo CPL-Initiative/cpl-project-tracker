@@ -35,7 +35,8 @@ S444.
 
 1. **#2335 (Sierra 57 and MiraCosta 39 new records, build 65f1d116887b; loads 39712290404, 39713281347):** the
    display job was dispatched on `claude/harvest-wave2-s444` at 02:56Z. When its "Applied record" commit lands, merge
-   main into the branch to start CI, then merge on `test`.
+   main into the branch to start CI, and in the same push `git rm kb/college_reads/department_award_sections.json`
+   (a two-college plan the read branches carried in; `lints` fails on it), then merge on `test`.
 2. **MiraCosta's discipline pages still give one claimant the page** (page_claimed 82: Horticulture 11, Computer
    Studies 17). The two-line rule did not split them in the capture. Look at the text the capture keeps from the
    hidden tabs (`textContent` may run "Certificate of Achievement" into the title); a page read with `"network"` or
