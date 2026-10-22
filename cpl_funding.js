@@ -653,7 +653,8 @@
     // inside this scrolling box: positioned against the page instead, it sat at
     // the table's own width and made the whole page scroll sideways by 488px at
     // 390px whenever an institution's drill-in was open (measured 2026-10-22).
-    ".cplfund-tablewrap { position: relative; overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); }",
+    ".cplfund-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); }",
+    ".cplfund-tablewrap { position: relative; }",
     "table.cplfund-table { border-collapse: collapse; width: 100%; font-size: .82rem; }",
     // FIXED LAYOUT (Sam's College Dashboard mockup, 2026-09-28): tableHtml()
     // emits one <col> per shown column and a min-width below which the wrap
