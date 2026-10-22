@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-10-22T14:37:12Z",
- "count": 18,
+ "_generated_at": "2026-10-22T17:21:50Z",
+ "count": 29,
  "suggestions": {
   "ADJUS 23 Principles and Procedures of the Justice System": [
    {
@@ -29,6 +29,90 @@
     "id": "AJ 122",
     "title": "Criminal Court Process",
     "code": "ADM JUS 4"
+   }
+  ],
+  "ADM JUS 005 - Criminal Investigation": [
+   {
+    "kind": "cid",
+    "id": "AJ 140",
+    "title": "Criminal Investigation",
+    "code": "ADM JUS 5"
+   }
+  ],
+  "ADM JUS 067 - Community Relations": [
+   {
+    "kind": "cid",
+    "id": "AJ 160",
+    "title": "Community and the Justice System",
+    "code": "ADM JUS 67"
+   }
+  ],
+  "ADM JUS 067 - Community Relations I": [
+   {
+    "kind": "cid",
+    "id": "AJ 160",
+    "title": "Community and the Justice System",
+    "code": "ADM JUS 67"
+   }
+  ],
+  "ADM JUS 097 -  Career Exploration in Criminal Justice": [
+   {
+    "kind": "course",
+    "title": "Career Exploration in Criminal Justice",
+    "code": "ADM JUS 97",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ADM JUS 104 - Introduction to Forensic Science": [
+   {
+    "kind": "course",
+    "title": "Introduction to Forensic Science",
+    "code": "ADM JUS 104",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "ADM JUS 160 - Police Organization and Administration": [
+   {
+    "kind": "course",
+    "title": "Police Organization and Administration",
+    "code": "ADM JUS 160",
+    "share": 1.0,
+    "colleges": 5,
+    "scoped": true
+   }
+  ],
+  "ADM JUS 174 -  Offender Profiling in Criminal Investigations": [
+   {
+    "kind": "course",
+    "title": "Offender Profiling in Criminal Investigations",
+    "code": "ADM JUS 174",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "ADM JUS 305 - Criminal Intelligence and Data Analysis": [
+   {
+    "kind": "course",
+    "title": "Criminal Intelligence and Data Analysis",
+    "code": "ADM JUS 305",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ADM JUS 383 - Applications in Crime Analysis": [
+   {
+    "kind": "course",
+    "title": "Applications in Crime Analysis",
+    "code": "ADM JUS 383",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
    }
   ],
   "AGBUS 015: Computer Application to Agriculture": [
@@ -167,6 +251,26 @@
     "id": "13375-A",
     "title": "Qualified Water Efficient Landscaper",
     "org": "Environmental Protection Agency"
+   }
+  ],
+  "TECTHTR 342 - Technical Stage Production": [
+   {
+    "kind": "course",
+    "title": "Technical Stage Production",
+    "code": "TECTHTR 342",
+    "share": 1.0,
+    "colleges": 3,
+    "scoped": true
+   }
+  ],
+  "THEATER 342": [
+   {
+    "kind": "course",
+    "title": "Technical Stage Production",
+    "code": "THEATER 342",
+    "share": 1.0,
+    "colleges": 4,
+    "scoped": true
    }
   ]
  }

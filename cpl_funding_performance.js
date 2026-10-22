@@ -8,8 +8,8 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 49336,
-  "pa": 45198,
+  "pe": 49345,
+  "pa": 45207,
   "ppa": 120,
   "p2": 3596,
   "p3": 16767,
@@ -17,8 +17,8 @@ window.CPL_FUNDING_PERF = {
   "ppe": 130,
   "pac": 5284,
   "ptc": 4621,
-  "pe_u": 1508498.95,
-  "pa_u": 275913.9,
+  "pe_u": 1508831.95,
+  "pa_u": 275962.9,
   "ppa_u": 734.5,
   "ppe_u": 6963.5,
   "pac_u": 37793.2,
@@ -938,10 +938,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "LA Pierce": {
-   "pe": 2650,
-   "pe_u": 43180.0,
-   "pa": 2624,
-   "pa_u": 37622.0,
+   "pe": 2651,
+   "pe_u": 43192.0,
+   "pa": 2625,
+   "pa_u": 37625.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 9.0,
@@ -1296,10 +1296,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2529,
-   "pe_u": 54728.0,
-   "pa": 2200,
-   "pa_u": 13266.0,
+   "pe": 2537,
+   "pe_u": 55049.0,
+   "pa": 2208,
+   "pa_u": 13312.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
@@ -2784,8 +2784,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 150,
-    "pa": 124,
+    "pe": 151,
+    "pa": 125,
     "p3": 20
    },
    "Standardized Assessment": {
@@ -3176,8 +3176,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1034,
-    "pa": 1034,
+    "pe": 1042,
+    "pa": 1042,
     "p3": 981
    },
    "Standardized Assessment": {
@@ -4010,8 +4010,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28636,
-   "pa": 26280,
+   "pe": 28645,
+   "pa": 26289,
    "p3": 2584
   },
   "Military | Other": {
@@ -4067,13 +4067,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1508498.95,
-   "pa_u": 275913.9,
+   "pe_u": 1508831.95,
+   "pa_u": 275962.9,
    "p3_u": 83983.85
   },
   "map": {
-   "pe_u": 1515462.45,
-   "pa_u": 276648.4,
+   "pe_u": 1515795.45,
+   "pa_u": 276697.4,
    "p3_u": 84057.35
   },
   "ratio": {
@@ -4205,8 +4205,8 @@ window.CPL_FUNDING_PERF = {
  "vet_jst": {
   "LA Pierce": {
    "vets": 296,
-   "jst": 152,
-   "pct": 0.5135
+   "jst": 153,
+   "pct": 0.5169
   },
   "Santiago Canyon": {
    "vets": 288,
@@ -4240,8 +4240,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Moreno Valley": {
    "vets": 916,
-   "jst": 1054,
-   "pct": 1.1507
+   "jst": 1062,
+   "pct": 1.1594
   },
   "Bakersfield": {
    "vets": 416,
@@ -4270,8 +4270,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Long Beach": {
    "vets": 307,
-   "jst": 818,
-   "pct": 2.6645
+   "jst": 819,
+   "pct": 2.6678
   },
   "De Anza": {
    "vets": 903,

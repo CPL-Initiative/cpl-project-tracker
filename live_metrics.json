@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-22T14:34:14.252Z",
+  "scraped_at": "2026-10-22T17:19:44.578Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -18,17 +18,17 @@
       "colleges": [
         {
           "college": "Moreno Valley College",
-          "students": 2576,
-          "units": 13319.5,
-          "avgUnits": 5.170613354037267,
-          "transcriptionRate": 95.7,
-          "avgTranscribed": 4.947204968944099,
+          "students": 2584,
+          "units": 13365.5,
+          "avgUnits": 5.172407120743034,
+          "transcriptionRate": 95.3,
+          "avgTranscribed": 4.931888544891641,
           "criteriaMetCount": 5,
-          "militaryStudents": 1054,
+          "militaryStudents": 1062,
           "nonMilitaryStudents": 1539,
           "apprenticeStudents": 0,
-          "savings": 17760460,
-          "yearImpact": 71722650,
+          "savings": 17840040,
+          "yearImpact": 72001732,
           "transcribedUnits": 12744
         },
         {
@@ -163,7 +163,7 @@
           "nonMilitaryStudents": 1922,
           "apprenticeStudents": 14,
           "savings": 18322435.5,
-          "yearImpact": 73564825.8,
+          "yearImpact": 73564825.80000001,
           "transcribedUnits": 6290.700000000001
         },
         {
@@ -183,17 +183,17 @@
         },
         {
           "college": "Los Angeles Pierce College",
-          "students": 2654,
-          "units": 37631,
-          "avgUnits": 14.178975131876413,
+          "students": 2655,
+          "units": 37634,
+          "avgUnits": 14.174764595103579,
           "transcriptionRate": 3.1,
-          "avgTranscribed": 0.4351921627731726,
+          "avgTranscribed": 0.4350282485875706,
           "criteriaMetCount": 3,
-          "militaryStudents": 152,
+          "militaryStudents": 153,
           "nonMilitaryStudents": 2502,
           "apprenticeStudents": 0,
-          "savings": 36567105,
-          "yearImpact": 178177298,
+          "savings": 36572295,
+          "yearImpact": 178195499,
           "transcribedUnits": 1155
         },
         {
@@ -213,13 +213,13 @@
         },
         {
           "college": "Long Beach City College",
-          "students": 825,
+          "students": 826,
           "units": 5695.5,
-          "avgUnits": 6.903636363636363,
+          "avgUnits": 6.895278450363196,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 3,
-          "militaryStudents": 818,
+          "militaryStudents": 819,
           "nonMilitaryStudents": 7,
           "apprenticeStudents": 0,
           "savings": 9860135,
@@ -243,14 +243,14 @@
         },
         {
           "college": "Modesto Junior College",
-          "students": 400,
+          "students": 401,
           "units": 2262,
-          "avgUnits": 5.655,
+          "avgUnits": 5.640897755610973,
           "transcriptionRate": 63.1,
-          "avgTranscribed": 3.56875,
+          "avgTranscribed": 3.5598503740648377,
           "criteriaMetCount": 3,
           "militaryStudents": 151,
-          "nonMilitaryStudents": 253,
+          "nonMilitaryStudents": 254,
           "apprenticeStudents": 38,
           "savings": 3035137.5,
           "yearImpact": 12761205.5,
@@ -1027,6 +1027,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Los Medanos College",
+          "students": 240,
+          "units": 105,
+          "avgUnits": 0.4375,
+          "transcriptionRate": 8.6,
+          "avgTranscribed": 0.0375,
+          "criteriaMetCount": 0,
+          "militaryStudents": 230,
+          "nonMilitaryStudents": 11,
+          "apprenticeStudents": 3,
+          "savings": 181650,
+          "yearImpact": 637035,
+          "transcribedUnits": 9
+        },
+        {
           "college": "East Los Angeles College",
           "students": 239,
           "units": 708,
@@ -1040,21 +1055,6 @@
           "savings": 1224840,
           "yearImpact": 4295436,
           "transcribedUnits": 78
-        },
-        {
-          "college": "Los Medanos College",
-          "students": 239,
-          "units": 105,
-          "avgUnits": 0.4393305439330544,
-          "transcriptionRate": 8.6,
-          "avgTranscribed": 0.03765690376569038,
-          "criteriaMetCount": 0,
-          "militaryStudents": 230,
-          "nonMilitaryStudents": 10,
-          "apprenticeStudents": 3,
-          "savings": 181650,
-          "yearImpact": 637035,
-          "transcribedUnits": 9
         },
         {
           "college": "Citrus College",
@@ -1772,15 +1772,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "57,506",
+      "value": "57,518",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "29,227"
+          "value": "29,237"
         },
         {
           "label": "Workforce/Other",
-          "value": "28,374"
+          "value": "28,376"
         },
         {
           "label": "Apprentice",
@@ -1850,7 +1850,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$783M"
+          "value": "$784M"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 57506,
-    "Units": 276648.4,
+    "Students": 57518,
+    "Units": 276697.4,
     "TranscribedUnits": 84057.34999999999,
-    "Savings": 391556575.25,
-    "YearImpact": 1591253373.3999999,
-    "MilitaryStudents": 29227,
-    "NonMilitaryStudents": 28374,
+    "Savings": 391641345.25,
+    "YearImpact": 1591550656.3999999,
+    "MilitaryStudents": 29237,
+    "NonMilitaryStudents": 28376,
     "AprenticeStudents": 952,
-    "AverageUnits": 4.810774527875353,
-    "TranscribedAverage": 1.4617144297986295
+    "AverageUnits": 4.810622761570292,
+    "TranscribedAverage": 1.461409471817518
   }
 }

@@ -1,22 +1,22 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-10-22T14:34:14.252Z",
+ "_as_of": "2026-10-22T17:19:44.578Z",
  "credit_recommendations": {
-  "total": "14,564",
+  "total": "14,583",
   "ccc": "1,485",
-  "local": "13,079",
+  "local": "13,098",
   "by_type": [
    "Standardized Assessment: 7,558",
-   "Industry Certification: 4,047",
-   "Credit By Exam: 2,276",
+   "Industry Certification: 4,055",
+   "Credit By Exam: 2,287",
    "Portfolio Review: 432",
    "Military: 156"
   ]
  },
  "map_exhibits": {
-  "total": "2,603",
+  "total": "2,622",
   "ccc": "164",
-  "local": "2,439",
+  "local": "2,458",
   "originating_colleges": "87"
  },
  "statewide_exhibits": {
