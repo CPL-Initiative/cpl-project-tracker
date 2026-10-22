@@ -301,6 +301,16 @@ check("shipped HTML og:title carries (Alpha)", /og:title" content="[^"]*\(Alpha\
   check("the search slot is capped, not fixed-width (so it follows its track down)",
     /\.cobi-qs-slot\{[^}]*max-width:360px/.test(css) &&
     !/\.cobi-qs-slot\{[^}]*width:min\(/.test(css));
+  // S448 (Sam: "the elements overlap" when resized or zoomed): the search box
+  // follows its slot down, and the brand cluster wraps its site picker.
+  check("the search box follows its slot down (wrapper shrinks, input fills it)",
+    /#cobiQsSlot \.qs-suggest\{[^}]*flex:1 1 auto;min-width:0/.test(css) &&
+    /#cobiQsSlot \.qs-input\{[^}]*width:100%/.test(css));
+  check("the brand cluster wraps rather than overrunning its track",
+    /\.cobi-brand\{[^}]*flex-wrap:wrap/.test(css));
+  check("the chip is centered on the wordmark by flex, with no vertical-align nudge",
+    /\.header h1\{[^}]*display:flex;align-items:center/.test(css) &&
+    !/\.cobi-alpha\{[^}]*vertical-align/.test(css));
   // Presentation rule: single column below ~560px.
   check("a single-column mobile breakpoint exists",
     /@media \(max-width:560px\)/.test(css));

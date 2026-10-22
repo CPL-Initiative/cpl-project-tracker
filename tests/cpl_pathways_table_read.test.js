@@ -257,7 +257,7 @@ function pickRecord(w, root, title) {
     const pending = hold.length;
     check("(f) a third read in flight", pending === 3, pending);
     const sel = root.querySelector("select.cplpw-select");
-    change(w, sel, sel.options[0].value);
+    change(w, sel, sel.options[1].value);
     if (hold[2]) hold[2]();
     await settle();
     check("(f) a featured map picked meanwhile stays on screen", !root.querySelector(".cplpw-rprog") && !!root.querySelector(".cplpw-hero, .cplpw-ladder"),
@@ -298,8 +298,8 @@ function pickRecord(w, root, title) {
     const sel0 = root.querySelector("select.cplpw-select");
     check("(h) meanwhile the file's programs stand in", recordOptions(sel0).length === FILE.length);
     // the reader moves to the second pathway before the list lands
-    const second = sel0.options[1] ? sel0.options[1].value : "";
-    const secondText = sel0.options[1] ? sel0.options[1].textContent : "";
+    const second = sel0.options[2] ? sel0.options[2].value : "";
+    const secondText = sel0.options[2] ? sel0.options[2].textContent : "";
     change(w, sel0, second);
     await settle();
     indexHold.forEach((go) => go());
@@ -335,9 +335,36 @@ function pickRecord(w, root, title) {
     const opts = recordOptions(root.querySelector("select.cplpw-select")).map((o) => o.textContent);
     check("(i) all 1,300 programs reach the list, past the 1,000-row cap", opts.length === 1300, opts.length);
     check("(i) the last one included", opts.some((t) => /Paged Program 1299\b/.test(t)), opts.slice(-1));
-    check("(i) each page asks for a range under the cap, over the stable order", ranges.length === 3 && ranges.every((r) => {
+    check("(i) each page asks for a range under the cap, over the stable order", ranges.length >= 3 && ranges.every((r) => {
       const m = /^(\d+)-(\d+)$/.exec(r.range || ""); return r.unit === "items" && m && (+m[2] - +m[1] + 1) <= 1000 && /order=college,control_number/.test(r.url); }),
       ranges.map((r) => r.range));
+  }
+
+  // ── (j) the pages after the first are read side by side (S448) ──
+  // One after another, 17,439 records took 35 round trips. A short list still costs one.
+  {
+    const many = [];
+    for (let i = 0; i < 2600; i++) many.push({ college: "Norco College", control_number: String(60000 + i), program_title: "Wave Program " + i, award: "Associate in Science", checked: true });
+    let open = 0, most = 0, indexReads = 0;
+    const f = function (url, init) {
+      const h = (init && init.headers) || {};
+      if (/program_source_registry/.test(url)) return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) });
+      if (/program_requirement_records/.test(url) && !/college=eq\./.test(url)) {
+        indexReads++; open++; most = Math.max(most, open);
+        const m = /^(\d+)-(\d+)$/.exec(h.Range || "");
+        const from = m ? +m[1] : 0, to = m ? +m[2] : 999;
+        return new Promise((res) => setTimeout(() => { open--; res({ ok: true, status: 200, json: () => Promise.resolve(many.slice(from, to + 1)) }); }, 5));
+      }
+      return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) });
+    };
+    const w = freshWindow(f);
+    w.CPL_PATHWAYS_TAB.activate();
+    await settle(60);
+    const root = w.document.getElementById("cpl-pathways-root");
+    const opts = recordOptions(root.querySelector("select.cplpw-select")).map((o) => o.textContent);
+    check("(j) all 2,600 programs arrive, in order", opts.length === 2600 && /Wave Program 0\b/.test(opts[0]) && /Wave Program 2599\b/.test(opts[2599]), opts.length);
+    check("(j) the pages after the first are read side by side", most > 1, most);
+    check("(j) and the read stops at the short page", indexReads <= 7, indexReads);
   }
 
   let failed = 0;
