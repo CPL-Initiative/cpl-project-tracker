@@ -1,0 +1,21 @@
+{
+ "_readme": "S444 (SkyBlueOak): with department and discipline pages as candidates (421bb4f7), Sierra's Information Technology page drew 11 claimants and MiraCosta's Computer Studies and IT 17; page_winners() keeps one program per award kind, so all but one certificate lose. How does each page's Degrees and Certificates tab head each award? Each department page has a PDF that prints every tab.",
+ "college": "Sierra College",
+ "questions": {
+  "award_headings": "In the degrees and certificates tab, what line heads each award (title and award words on one line?), and does each award's course list sit beneath its own heading?"
+ },
+ "keywords": [
+  "associate in (?:arts|science)[^\\n]{0,80}",
+  "certificate of (?:achievement|accomplishment|competency|proficiency)[^\\n]{0,80}",
+  "\\bA\\.[AS]\\.[^\\n]{0,60}",
+  "skills certificate[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "award_headings"
+   ],
+   "url": "https://catalog.sierracollege.edu/departments/infotech/infotech.pdf"
+  }
+ ]
+}
