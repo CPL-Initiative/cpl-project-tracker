@@ -33,11 +33,9 @@ S444.
 
 ## Open work, in order
 
-1. **Sierra and MiraCosta, mid-flight at this writing.** Sierra: extraction 39709837031 (81 for $7.28, 57 passing);
-   load dispatched on `claude/harvest-sierra-read2-s444` (read its receipt). MiraCosta: extraction dispatched on
-   `claude/harvest-miracosta-read2-s444` (read `summary.json`; its run id replaces 38748842603), then load. Then one
-   wave branch off main merging both, `python3 kb/_build_roep_display.py`, commit, push, dispatch `step=display`
-   (separate turn), PR; after the job's Applied record, merge main in to start CI, then merge.
+1. **#2335 (Sierra 57 and MiraCosta 39 new records, build 65f1d116887b; loads 39712290404, 39713281347):** the
+   display job was dispatched on `claude/harvest-wave2-s444` at 02:56Z. When its "Applied record" commit lands, merge
+   main into the branch to start CI, then merge on `test`.
 2. **MiraCosta's discipline pages still give one claimant the page** (page_claimed 82: Horticulture 11, Computer
    Studies 17). The two-line rule did not split them in the capture. Look at the text the capture keeps from the
    hidden tabs (`textContent` may run "Certificate of Achievement" into the title); a page read with `"network"` or
