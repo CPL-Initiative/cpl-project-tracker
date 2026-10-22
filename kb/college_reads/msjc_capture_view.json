@@ -1,0 +1,27 @@
+{
+ "_readme": "S447 SkyBrittlebush, 2026-10-22. The sitemap read (run 39770285975) shows both catalogs list the missing programs' own pages. Two causes are suspected. (1) NOT_PROGRAM_PATH's '/administration' drops every /administration-justice/ address at both colleges. (2) At Mt. San Jacinto the capture keeps no hidden tab panel ('tabs': 0 on nearly every near miss) while each page has a Requirements tab: SUBJECT_TOKEN reads 'ANTH 101' but not 'ANTH-101', and the catalog prints its codes with a hyphen (sources: BADM-103, ECON-C2001H). Read four pages as the capture does, to see the tab panels it leaves out and how their codes are printed. Santa Barbara City's Philosophy AA-T and Film, Television, and Electronic Media AS-T pages are read the same way, since they too were never candidates. Four loads, no model call. Run 39773199040 read this plan with all four pages; S447 split it by college for the one-college rule (tests/college_page_read_test.py), and this file keeps the two Mt. San Jacinto pages.",
+ "college": "Mt. San Jacinto College",
+ "questions": {
+  "capture_tabs": "Which tab panels the capture leaves out, and how each prints its course codes."
+ },
+ "keywords": [
+  "\\b[A-Z]{2,5}-[A-Z]?\\d{1,4}[A-Z]?\\b",
+  "Requirements"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "capture_tabs"
+   ],
+   "capture_view": true,
+   "url": "https://catalog.msjc.edu/instructional-programs/anthropology/anthropology-aat/"
+  },
+  {
+   "answers": [
+    "capture_tabs"
+   ],
+   "capture_view": true,
+   "url": "https://catalog.msjc.edu/instructional-programs/kinesiology/kinesiology-aat/"
+  }
+ ]
+}
