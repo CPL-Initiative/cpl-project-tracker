@@ -15938,8 +15938,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 420,
+   "count": 421,
    "docs": [
+    {
+     "created": "2026-10-22",
+     "governs": [],
+     "n": 450,
+     "path": "docs/session_450_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "my-college-action-page"
+     ],
+     "title": "Session 450 handoff: the harvest queue after S448, Palo Verde's new catalog, a curriQunet view, Hartnell by its site",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-22",
      "governs": [],
@@ -23182,5 +23197,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1220
+ "total": 1221
 }
