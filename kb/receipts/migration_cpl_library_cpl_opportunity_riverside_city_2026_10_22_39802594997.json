@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_cpl_opportunity_riverside_city_2026-10-22.sql",
+ "name": "cpl_library_cpl_opportunity_riverside_city_2026_10_22",
+ "version": "20261022151626",
+ "sha256": "709eea5c73a345d4e77972c45118a13ead1a9ee6d698d184cbdd504ed599a231",
+ "run": "39802594997",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
