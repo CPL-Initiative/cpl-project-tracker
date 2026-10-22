@@ -1,0 +1,321 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "22003",
+ "shape": "certificate",
+ "title": "Child Development Associate Teacher",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11362,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11362,
+    "output_tokens": 2081,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2081,
+  "output_tokens_details": {
+   "thinking_tokens": 727
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08707,
+ "ms": 17894,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 2,
+   "share": 0.5,
+   "missing": [
+    "CDEV212"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 15,
+   "codes": [
+    "CDEV105",
+    "CDEV106",
+    "CDEV109",
+    "CDEV111",
+    "CDEV112",
+    "CDEV130",
+    "CDEV140",
+    "CDEV150",
+    "CDEV160",
+    "CDEV200",
+    "CDEV205",
+    "CDEV210",
+    "CDEV230",
+    "CDEV235",
+    "CDEV240"
+   ],
+   "flagged": [
+    "CDEV105",
+    "CDEV106",
+    "CDEV109",
+    "CDEV111",
+    "CDEV112",
+    "CDEV130",
+    "CDEV140",
+    "CDEV150",
+    "CDEV160",
+    "CDEV200",
+    "CDEV205",
+    "CDEV210",
+    "CDEV230",
+    "CDEV235",
+    "CDEV240"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement: Child Development Associate Teacher",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completion of this program, the student will be able to design and implement curriculum based on observation and assessment of young children to support play and learning in an early childhood classroom."
+   ],
+   "careers": [
+    "teachers",
+    "aides",
+    "directors",
+    "entrepreneurs"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV C1000",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select at least 6 elective units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CDEV 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 109",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 235",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEV212",
+    "why": "named only in the Early Intervention and Inclusion and Master Teacher certificate sections, not in the Associate Teacher certificate"
+   }
+  ],
+  "notes": [
+   "Read only the 'Certificate of Achievement — Child Development Associate Teacher' section under the CERTIFICATES tab; an A.A. degree of the same name (certificate plus local GE) is listed under DEGREES but not recorded here.",
+   "CDEV C1000 is the closed-list course CDEVC1000; the catalog prints no units beside it as the 'or' alternative to CDEV 112.",
+   "Elective courses are printed without units beside them; units left null.",
+   "Careers taken from the shared certificates introduction ('employment as teachers, aides, directors, and entrepreneurs'). The same paragraph says courses are also appropriate for parents, nannies, camp counselors, recreation leaders, elementary school teaching assistants, social service and health care practitioners, and administrators; these were not recorded as careers—reviewer may wish to check.",
+   "Certificate also notes a permit experience requirement of 50 days of 3+ hours per day within 2 years (not a course requirement)."
+  ]
+ },
+ "extracted_run": "39726634443"
+}
