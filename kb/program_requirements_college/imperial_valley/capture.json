@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 149,
  "with_closed_list": 142,
- "started": "2026-10-16T16:52:04Z",
+ "started": "2026-10-21T23:10:18Z",
  "curriqunet": {
   "catalog": 15,
   "view_prefix": "https://imperial.curriqunet.com/catalog/iq/",
@@ -18,26 +18,35 @@
   ],
   "nodes_read": 9,
   "calls": 20,
-  "entries": 85,
+  "entries": 133,
   "stopped_at_cap": false,
   "same_title_entries": 0,
-  "entries_read": 85
+  "entries_read": 133
  },
- "pages_read": 85,
+ "pages_read": 133,
  "banner_h1": null,
- "loads": 106,
- "seconds": 594.6,
- "found": 84,
+ "loads": 154,
+ "seconds": 839.9,
+ "found": 131,
  "by_method": {
   "no_closed_list": 7,
-  "not_found": 9,
-  "page_claimed": 49,
-  "sitemap_page": 84
+  "not_found": 3,
+  "page_claimed": 8,
+  "sitemap_page": 131
  },
  "shared_pages": {
-  "https://imperial.curriqunet.com/catalog/iq/8518/8606/8615": [
-   "21473",
-   "41270"
+  "https://imperial.curriqunet.com/catalog/iq/8518/8606/8639": [
+   "08983",
+   "36695",
+   "40055"
+  ],
+  "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287": [
+   "16811",
+   "30337"
+  ],
+  "https://imperial.curriqunet.com/catalog/iq/8518/8270/8285": [
+   "21468",
+   "30336"
   ],
   "https://imperial.curriqunet.com/catalog/iq/8518/8580/8313": [
    "31457",
@@ -46,39 +55,13 @@
  },
  "not_found": [
   {
-   "control_number": "01893",
-   "title": "Medical Assistant",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8307",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5580,
-     "content": 5580,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
    "control_number": "24051",
    "title": "ESL Civics",
    "award": "Noncredit program",
    "near_miss": {
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8653",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8598",
     "label": {
-     "award": 0,
+     "award": 1,
      "title": 0.5
     },
     "field": "innerText",
@@ -90,8 +73,8 @@
     "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
     "error": null,
     "chars": {
-     "body": 3593,
-     "content": 3593,
+     "body": 1326,
+     "content": 1326,
      "tabs": 0
     },
     "tab_panels": []
@@ -112,91 +95,15 @@
    "near_miss": {
     "why": "no page read names the program"
    }
-  },
-  {
-   "control_number": "36071",
-   "title": "Academic Preparedness in English",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41181",
-   "title": "Fundamentals of English II",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41182",
-   "title": "Fundamentals of English III",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42238",
-   "title": "Care of the Elderly for the Health Assistant",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42535",
-   "title": "Computer Fundamentals for ESL Students",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8653",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3593,
-     "content": 3593,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
   }
  ],
  "page_claimed": [
-  {
-   "control_number": "08983",
-   "title": "Agriculture Plant Science",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8297",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8296",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8350"
-   ]
-  },
   {
    "control_number": "08995",
    "title": "Child Development - Infant/Toddler Specialization",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "pages": [
     "https://imperial.curriqunet.com/catalog/iq/8518/8580/8312"
-   ]
-  },
-  {
-   "control_number": "10943",
-   "title": "Emergency Medical Services",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8323"
    ]
   },
   {
@@ -208,253 +115,12 @@
    ]
   },
   {
-   "control_number": "15735",
-   "title": "Air Conditioning and Refrigeration",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8298"
-   ]
-  },
-  {
-   "control_number": "16782",
-   "title": "Firefighter I",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8326"
-   ]
-  },
-  {
-   "control_number": "19712",
-   "title": "Digital Design and Production",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8318"
-   ]
-  },
-  {
-   "control_number": "21456",
-   "title": "Business Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8308"
-   ]
-  },
-  {
-   "control_number": "21459",
-   "title": "Accounting Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8265",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8309",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8307",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8308"
-   ]
-  },
-  {
-   "control_number": "21460",
-   "title": "Business Office Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8309",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8307"
-   ]
-  },
-  {
-   "control_number": "21462",
-   "title": "Administrative Assistant",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8307",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8308",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8309"
-   ]
-  },
-  {
-   "control_number": "21466",
-   "title": "Apprenticeship: Electrician",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8277",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290"
-   ]
-  },
-  {
-   "control_number": "21467",
-   "title": "Apprenticeship: Generation Mechanic",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294"
-   ]
-  },
-  {
-   "control_number": "21468",
-   "title": "Apprenticeship: Meter Technician",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294"
-   ]
-  },
-  {
-   "control_number": "21469",
-   "title": "Apprenticeship: Power Lineman",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8277",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291"
-   ]
-  },
-  {
-   "control_number": "21470",
-   "title": "Apprenticeship: Relays Technician",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294"
-   ]
-  },
-  {
-   "control_number": "21471",
-   "title": "Apprenticeship: SCADA/Telecommunications Technician",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294"
-   ]
-  },
-  {
-   "control_number": "21472",
-   "title": "Apprenticeship: Substation - Electrician",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290"
-   ]
-  },
-  {
-   "control_number": "21475",
-   "title": "Welding Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8352"
-   ]
-  },
-  {
-   "control_number": "21480",
-   "title": "Addiction Disorder Studies",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8271"
-   ]
-  },
-  {
-   "control_number": "21481",
-   "title": "Administration of Justice",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8272",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8273",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8316"
-   ]
-  },
-  {
-   "control_number": "21482",
-   "title": "Correctional Science",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8316",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8272"
-   ]
-  },
-  {
-   "control_number": "21483",
-   "title": "Fire Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8326"
-   ]
-  },
-  {
-   "control_number": "30183",
-   "title": "Child Development Associate Teacher",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8312",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8319"
-   ]
-  },
-  {
    "control_number": "30263",
    "title": "Building Construction Technology: Carpentry Specialization",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "pages": [
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8616",
     "https://imperial.curriqunet.com/catalog/iq/8518/8580/8305"
-   ]
-  },
-  {
-   "control_number": "30275",
-   "title": "Building Construction Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8305"
-   ]
-  },
-  {
-   "control_number": "30336",
-   "title": "Electrical Trades",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8277"
-   ]
-  },
-  {
-   "control_number": "30337",
-   "title": "Electrical Trades",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8277"
-   ]
-  },
-  {
-   "control_number": "30362",
-   "title": "Water Treatment Systems Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8351"
    ]
   },
   {
@@ -462,68 +128,8 @@
    "title": "Water Treatment Systems Technology: Wastewater Treatment Specialization",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "pages": [
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8644",
     "https://imperial.curriqunet.com/catalog/iq/8518/8580/8351"
-   ]
-  },
-  {
-   "control_number": "30807",
-   "title": "Apprenticeship: Control Operator",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294"
-   ]
-  },
-  {
-   "control_number": "30808",
-   "title": "Apprenticeship: Instrument Technician",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294"
-   ]
-  },
-  {
-   "control_number": "30809",
-   "title": "Apprenticeship: Telecommunications Technician",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294"
-   ]
-  },
-  {
-   "control_number": "30810",
-   "title": "Apprenticeship: Hydro Operator",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294"
-   ]
-  },
-  {
-   "control_number": "31278",
-   "title": "Computer Networking",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8314",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8317"
    ]
   },
   {
@@ -531,6 +137,7 @@
    "title": "Diesel Farm Machinery and Heavy Equipment Technician",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8638",
     "https://imperial.curriqunet.com/catalog/iq/8518/8580/8334"
    ]
   },
@@ -547,44 +154,10 @@
    "title": "Retail Management",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8618",
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8617",
     "https://imperial.curriqunet.com/catalog/iq/8518/8580/8308",
     "https://imperial.curriqunet.com/catalog/iq/8518/8580/8307"
-   ]
-  },
-  {
-   "control_number": "36695",
-   "title": "Public Health Science",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8335",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8345",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8350"
-   ]
-  },
-  {
-   "control_number": "38184",
-   "title": "Computer Information Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8314",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8317"
-   ]
-  },
-  {
-   "control_number": "38185",
-   "title": "Cybersecurity",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8317",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8314"
-   ]
-  },
-  {
-   "control_number": "38186",
-   "title": "Microsoft Office & Windows",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8309"
    ]
   },
   {
@@ -593,916 +166,514 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
     "https://imperial.curriqunet.com/catalog/iq/8518/8606/8633",
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8655",
     "https://imperial.curriqunet.com/catalog/iq/8518/8606/8635",
     "https://imperial.curriqunet.com/catalog/iq/8518/8580/8650",
     "https://imperial.curriqunet.com/catalog/iq/8518/8580/8321"
    ]
-  },
-  {
-   "control_number": "40055",
-   "title": "Nutrition and Dietetics",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8335",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8603",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8350",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8328",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8345",
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8602"
-   ]
-  },
-  {
-   "control_number": "42287",
-   "title": "Agriculture Service Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8334"
-   ]
-  },
-  {
-   "control_number": "43102",
-   "title": "Building Construction Drafting Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8305"
-   ]
-  },
-  {
-   "control_number": "43284",
-   "title": "Plant Operator Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8650"
-   ]
-  },
-  {
-   "control_number": "43909",
-   "title": "Chemical Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8650"
-   ]
-  },
-  {
-   "control_number": "45382",
-   "title": "Instrumentation Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8650"
-   ]
   }
  ],
  "coverage_bands": {
-  "0.5-0.8": 13,
-  "0.8-1.0": 34,
-  "1.0": 37
+  "0.5-0.8": 14,
+  "0.8-1.0": 43,
+  "1.0": 74
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 84,
+  "against": "kb/program_requirements_college/imperial_valley",
+  "kept": 82,
+  "programs": 49,
   "list": [
    {
-    "control_number": "01864",
-    "title": "Accounting Technician",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8265",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01868",
-    "title": "Business Office Technician",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8309",
+    "control_number": "01893",
+    "title": "Medical Assistant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8640",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "01873",
-    "title": "Exercise Science",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8325",
+    "control_number": "08983",
+    "title": "Agriculture Plant Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8639",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "10943",
+    "title": "Emergency Medical Services",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8636",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "01877",
-    "title": "Automotive Technology",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8302",
+    "control_number": "15735",
+    "title": "Air Conditioning and Refrigeration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8612",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "01880",
-    "title": "Welding Technology",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8352",
+    "control_number": "16782",
+    "title": "Firefighter I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8649",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "01887",
-    "title": "French",
-    "award": "A.A. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8327",
+    "control_number": "19712",
+    "title": "Digital Design and Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8632",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "01889",
-    "title": "Nursing - R.N.",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8338",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01890",
-    "title": "Nursing - Vocational (V.N.)",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8339",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01906",
-    "title": "Administration of Justice",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8272",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01908",
-    "title": "Child Development",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8312",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01911",
-    "title": "Fire Technology",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8326",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01912",
-    "title": "Social Science",
-    "award": "A.A. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8346",
-    "coverage": 0.812,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01922",
-    "title": "Addiction Disorder Studies",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8271",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08984",
+    "control_number": "21456",
     "title": "Business Management",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8308",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8618",
     "coverage": 0.857,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "08988",
+    "control_number": "21459",
+    "title": "Accounting Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8608",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "21460",
+    "title": "Business Office Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8619",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "21462",
     "title": "Administrative Assistant",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8307",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8617",
     "coverage": 0.933,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "08997",
-    "title": "Behavioral Science",
-    "award": "A.A. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8303",
-    "coverage": 0.852,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08998",
-    "title": "Correctional Science",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8316",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09001",
-    "title": "General Science",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8328",
-    "coverage": 0.848,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09002",
-    "title": "Humanities",
-    "award": "A.A. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8333",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11793",
-    "title": "Emergency Medical Services",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8323",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15827",
-    "title": "Water Treatment Systems Technology",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8351",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16809",
+    "control_number": "21466",
     "title": "Apprenticeship: Electrician",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8277",
-    "coverage": 0.889,
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8281",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "16810",
+    "control_number": "21467",
     "title": "Apprenticeship: Generation Mechanic",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8282",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "16811",
+    "control_number": "21468",
     "title": "Apprenticeship: Meter Technician",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8285",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "16812",
+    "control_number": "21469",
     "title": "Apprenticeship: Power Lineman",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8286",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "16813",
+    "control_number": "21470",
     "title": "Apprenticeship: Relays Technician",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8288",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "16814",
+    "control_number": "21471",
     "title": "Apprenticeship: SCADA/Telecommunications Technician",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8292",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "16815",
+    "control_number": "21472",
     "title": "Apprenticeship: Substation - Electrician",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8293",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19340",
-    "title": "Air Conditioning and Refrigeration",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8298",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19711",
-    "title": "Digital Design and Production",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8318",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "21473",
     "title": "Automotive Technology",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8615",
-    "coverage": 0.636,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21477",
-    "title": "Nursing - Vocational (V.N.)",
-    "award": "Certificate of Achievement requiring 60+S/90+Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8642",
-    "coverage": 0.95,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30262",
-    "title": "Building Construction Technology",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8305",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8613",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8615",
+    "was_coverage": 0.636,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "30322",
-    "title": "Electrical Technology",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8321",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30438",
-    "title": "Electrical Technology: Residential Electrician",
+    "control_number": "21475",
+    "title": "Welding Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8635",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8646",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "30900",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8347",
-    "coverage": 0.846,
+    "control_number": "21480",
+    "title": "Addiction Disorder Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8609",
+    "coverage": 0.944,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "30901",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8319",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31380",
+    "control_number": "21481",
     "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8273",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8610",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "21482",
+    "title": "Correctional Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8628",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "21483",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8637",
     "coverage": 0.909,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "31457",
-    "title": "Communication Studies",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8313",
-    "coverage": 0.7,
+    "control_number": "30183",
+    "title": "Child Development Associate Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8622",
+    "coverage": 0.833,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "31458",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8324",
-    "coverage": 0.812,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31459",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8342",
+    "control_number": "30275",
+    "title": "Building Construction Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8616",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "31688",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8335",
-    "coverage": 0.962,
+    "control_number": "30336",
+    "title": "Electrical Trades",
+    "award": "A.S. Degree",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8285",
+    "coverage": 0.8,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "32350",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8300",
-    "coverage": 0.9,
+    "control_number": "30337",
+    "title": "Electrical Trades",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
+    "coverage": 0.8,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "32451",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8332",
-    "coverage": 0.794,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32588",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8349",
-    "coverage": 0.765,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32596",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8344",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32662",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8337",
+    "control_number": "30362",
+    "title": "Water Treatment Systems Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8644",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "33202",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8348",
-    "coverage": 0.81,
+    "control_number": "30807",
+    "title": "Apprenticeship: Control Operator",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8280",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30808",
+    "title": "Apprenticeship: Instrument Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8284",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30809",
+    "title": "Apprenticeship: Telecommunications Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8295",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30810",
+    "title": "Apprenticeship: Hydro Operator",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8283",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31278",
+    "title": "Computer Networking",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8627",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "33272",
     "title": "Elementary Teacher Education",
     "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8322",
-    "coverage": 0.593,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33926",
-    "title": "Agriculture Business",
-    "award": "A.S. T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8296",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35417",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8304",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35426",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8315",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8690",
     "coverage": 0.778,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8322",
+    "was_coverage": 0.593,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "35440",
-    "title": "Agriculture Plant Science",
-    "award": "A.S. T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8297",
+    "control_number": "36071",
+    "title": "Academic Preparedness in English",
+    "award": "Noncredit program",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8583",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "35587",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8329",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36151",
-    "title": "Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8310",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36755",
-    "title": "Administration of Justice: Law Enforcement",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8274",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36756",
-    "title": "Administration of Justice: Law Enforcement",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8611",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36786",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8320",
-    "coverage": 0.769,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37392",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8341",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37751",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8301",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38183",
-    "title": "Computer Information Technology",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8314",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38210",
-    "title": "Correctional Science: Corrections Officer",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8629",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39569",
-    "title": "American Sign Language",
-    "award": "A.A. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8299",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39802",
-    "title": "Chicana/o Studies",
-    "award": "A.A. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8350",
-    "coverage": 0.895,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40053",
-    "title": "Global Studies",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8331",
-    "coverage": 0.913,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41064",
-    "title": "Pre-Engineering",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8343",
-    "coverage": 0.895,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41191",
-    "title": "Automotive Technology: Fundamentals of Automotive Service",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8614",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41193",
-    "title": "Electrical Technology: General Electrician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8633",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41270",
-    "title": "Automotive Technology: Maintenance and Basic Repair",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8615",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41288",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8306",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42241",
-    "title": "Pre-Nursing and Allied Health",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8597",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42286",
-    "title": "Agriculture Service Technology",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8334",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42288",
-    "title": "Cybersecurity",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8317",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42408",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8330",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43019",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8313",
-    "coverage": 0.7,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43146",
-    "title": "Kinesiology: Pre-Athletic Training",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8602",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43147",
-    "title": "Kinesiology: Pre-Physical Therapy",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8603",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45007",
+    "control_number": "36695",
     "title": "Public Health Science",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8345",
-    "coverage": 0.812,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45112",
-    "title": "ESL Milestone Pathway: Public Health, Nutrition, and Kinesiology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8651",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45113",
-    "title": "ESL Milestone Pathway: Social Sciences & Humanities",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8652",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45114",
-    "title": "ESL Milestone Pathway: Business and Computer Information Systems",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8653",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45115",
-    "title": "ESL Milestone Pathway: Childhood Development/Early Childhood Education/Elementary Education",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8659",
+    "award": "A.S. T Degree",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8639",
     "coverage": 0.833,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "45116",
-    "title": "ESL Milestone Pathway: Science, Technology, Engineering, and Mathematics",
+    "control_number": "38184",
+    "title": "Computer Information Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8654",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45375",
-    "title": "Industrial Automation Systems Technology",
-    "award": "A.S. Degree",
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8650",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8626",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38185",
+    "title": "Cybersecurity",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8630",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38186",
+    "title": "Microsoft Office & Windows",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8641",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "40055",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8639",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41181",
+    "title": "Fundamentals of English II",
+    "award": "Noncredit program",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8660",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "41182",
+    "title": "Fundamentals of English III",
+    "award": "Noncredit program",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8661",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42238",
+    "title": "Care of the Elderly for the Health Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8620",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42287",
+    "title": "Agriculture Service Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8638",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "42535",
+    "title": "Computer Fundamentals for ESL Students",
+    "award": "Noncredit program",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8598",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43102",
+    "title": "Building Construction Drafting Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8648",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "43284",
+    "title": "Plant Operator Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8643",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "43909",
+    "title": "Chemical Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8621",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45382",
+    "title": "Instrumentation Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8655",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    }
   ]
  },
- "run": "38935136329"
+ "run": "39691376155"
 }

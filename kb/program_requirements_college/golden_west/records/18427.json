@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Dance",
  "award": "A.A. Degree",
- "source_url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/dance/",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/dance/dance-aa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12726,
+  "input_tokens": 8138,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12726,
-    "output_tokens": 1434,
+    "input_tokens": 8138,
+    "output_tokens": 3470,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,171 +30,513 @@
     "model": null
    }
   ],
-  "output_tokens": 1434,
+  "output_tokens": 3470,
   "output_tokens_details": {
-   "thinking_tokens": 363
+   "thinking_tokens": 730
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07958,
- "ms": 12334,
- "seconds": 13.0,
+ "cost_usd": 0.10195,
+ "ms": 25114,
+ "seconds": 25.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 24,
    "listed": 26,
-   "share": 0.0,
+   "share": 0.923,
    "missing": [
-    "DANCG100",
-    "DANCG105",
-    "DANCG106",
-    "DANCG108",
-    "DANCG112",
-    "DANCG113",
-    "DANCG115",
-    "DANCG120",
-    "DANCG125",
-    "DANCG130",
     "DANCG135",
-    "DANCG136",
-    "DANCG145",
-    "DANCG150",
-    "DANCG155",
-    "DANCG160",
-    "DANCG200",
-    "DANCG215",
-    "DANCG220",
-    "DANCG225",
-    "DANCG230",
-    "DANCG231",
-    "DANCG235",
-    "DANCG240",
-    "DANCG245",
-    "DANCG260"
+    "DANCG136"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 11,
+   "codes": [
+    "DANCG101",
+    "DANCG119",
+    "DANCG201",
+    "DANCG212",
+    "DANCG213",
+    "DANCG219",
+    "DANCG232",
+    "DANCG250",
+    "DANCG251",
+    "DANCG255",
+    "DANCG261"
+   ],
+   "flagged": [
+    "DANCG101",
+    "DANCG119",
+    "DANCG201",
+    "DANCG212",
+    "DANCG213",
+    "DANCG219",
+    "DANCG232",
+    "DANCG250",
+    "DANCG251",
+    "DANCG255",
+    "DANCG261"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    22.0,
+    22.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     46.0,
+     56.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     4.0,
+     14.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 10,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Dance, Associate in Arts Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 22,
+    "max": 22
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Local or Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 34
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Examine dance from a historical, cultural, and scientific point of view.",
+    "Practice the fundamental skills and techniques necessary for the public performance of dance.",
+    "Employ practical skills in the production aspects of dance.",
+    "Demonstrate the craft and aesthetic qualities of dance orally, practically, and in writing.",
+    "Practice technique in modern dance, ballet, and jazz dance to facilitate careers in education, health and fitness, or performance arenas, or to further academic preparation in dance studies."
+   ],
+   "careers": [
+    "Commercial or concert dancer",
+    "Dance teacher",
+    "Fitness instructor",
+    "Choreographer",
+    "Stage manager",
+    "Costume designer",
+    "Arts administrator",
+    "education",
+    "health and fitness",
+    "performance arenas"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Modern Dance",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "DANC G100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G145",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G200",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G201",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Ballet",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "DANC G120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G155",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G220",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Jazz Dance",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "DANC G125",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G225",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G119",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Conditioning for Dance",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "DANC G105",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G106",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G108",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choreography, Performance and Production Dance",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "DANC G230",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G235",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G240",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G245",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G250",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC G260",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G261",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC G231",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G251",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC G255",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Dance Electives",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "DANC G112",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G113",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G115",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G119",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC G130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G150",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G215",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G219",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC G230",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G212",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC G213",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Dance Lecture",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "DANC G232",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC G101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
-   {
-    "code": "DANC G100",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G105",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G106",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G108",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G112",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G113",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G115",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G120",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G125",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G130",
-    "why": "only in course descriptions; no requirements section in text"
-   },
    {
     "code": "DANC G135",
     "why": "not in the text"
@@ -202,69 +544,17 @@
    {
     "code": "DANC G136",
     "why": "not in the text"
-   },
-   {
-    "code": "DANC G145",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G150",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G155",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G160",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G200",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G215",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G220",
-    "why": "only in course descriptions; no requirements section in text"
-   },
-   {
-    "code": "DANC G225",
-    "why": "only in course descriptions (cut off); no requirements section in text"
-   },
-   {
-    "code": "DANC G230",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC G231",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC G235",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC G240",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANCG245",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANCG260",
-    "why": "not in the text"
    }
   ],
   "notes": [
-   "The supplied text is the DANC course description listing, not the program requirements page; 'Dance, Associate in Arts Degree' appears only in 'Catalog Program Pages Referencing' link lists, so no blocks, totals, outcomes or careers could be recorded.",
-   "The text begins mid-description (DANC G100) and is cut off mid-description at DANC G225; the requirements section for the A.A. degree needs to be retrieved from the program page itself.",
-   "Courses described in the text but absent from the closed list (DANC G101, G119, G201, G212, G213, G219) were not placed because no requirement rule for them is printed."
+   "Closed list stores DANCG245 and DANCG260 without a space; matched to catalog's DANC G245 and DANC G260 and marked catalog_addition false.",
+   "DANC G106 is titled 'Strength and Stretch 2 - Intermediate' in the catalog but 'Dance Conditionig,Intermediate' in the closed list; treated as the same course.",
+   "DANC G240 Tap Dance Ensemble is printed at 2 units in the catalog; the closed list stores 1.",
+   "DANC G260 is titled 'Dance Production and Performance' in both sources.",
+   "DANC G119 appears in both the Jazz Dance block and the Dance Electives block; DANC G230 appears in both the Choreography block and the Dance Electives block, as printed.",
+   "Major Total 22 equals the sum of block minimums (4+4+4+1+4+2+3). Total Units 60 recorded as degree_total; GE Pattern (Local or Cal-GETC) 24-34 recorded as ge_units; electives as needed to reach 60 units, no units printed.",
+   "Careers 'education', 'health and fitness', 'performance arenas' taken from the fifth program learning outcome's phrase 'careers in education, health and fitness, or performance arenas'."
   ]
  },
- "extracted_run": "38748828247"
+ "extracted_run": "39688079435"
 }

@@ -1,0 +1,188 @@
+{
+ "college": "Golden West College",
+ "control_number": "46485",
+ "shape": "noncredit",
+ "title": "Esthetician",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/cosmetology/esthetician-nc/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6589,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6589,
+    "output_tokens": 1339,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1339,
+  "output_tokens_details": {
+   "thinking_tokens": 527
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05314,
+ "ms": 14409,
+ "seconds": 15.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    684.0,
+    684.0
+   ],
+   "stated": [
+    684.0,
+    684.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 18,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Esthetician",
+   "measure": "hours",
+   "total_units": {
+    "min": 684,
+    "max": 684
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Evaluate and assess the skin care regime for the client",
+    "Obtain basic knowledge and information to pass the State Board Examination through continued assessment by instructors, by completing State Board assignments and procedures in the prescribed time and passing with a 75% or greater.",
+    "Analyze, evaluate and demonstrate skills necessary for a successful career as an Esthetician, including proper hygiene and good grooming, professional ethics, customer relations and general salon management practices."
+   ],
+   "careers": [
+    "skin care",
+    "Licensed Esthetician",
+    "Aesthetician",
+    "Salon or day spa esthetician",
+    "Medical aesthetician",
+    "Makeup artistry",
+    "Camouflage therapy",
+    "Manufacturer’s representative",
+    "Salesperson or sales manager",
+    "Cosmetics buyer",
+    "Esthetics writer or beauty editor",
+    "Travel industry (cruise ships)",
+    "Educator",
+    "Skin care company owner",
+    "Product development",
+    "Mobile esthetician",
+    "State licensing inspector or examiner",
+    "State Board member"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COSM G071N",
+      "units": 342,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM G072N",
+      "units": 342,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours; the course list prints 342 hours per course and Total Hours 684.",
+   "The description says the program is 'a minimum of 600 hours of training'; total_units records the printed course-list total of 684 hours. A reviewer may want to check this discrepancy.",
+   "The catalog text begins with a truncated tab label ('UIREMENTS'); no explicit section heading is printed in the excerpt, so section_heading uses the program title 'Esthetician'.",
+   "Careers 'skin care' (from 'prepare the student for a career in skin care') and 'Licensed Esthetician' (from 'to become a Licensed Esthetician') are taken from the program description; the rest come from the potential careers list."
+  ]
+ },
+ "extracted_run": "39688079435"
+}

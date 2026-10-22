@@ -1,0 +1,207 @@
+{
+ "college": "Golden West College",
+ "control_number": "46486",
+ "shape": "noncredit",
+ "title": "Cosmetology",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/cosmetology/cosmetology-nc/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6702,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6702,
+    "output_tokens": 1029,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1029,
+  "output_tokens_details": {
+   "thinking_tokens": 112
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04739,
+ "ms": 8569,
+ "seconds": 9.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    1116.0,
+    1116.0
+   ],
+   "stated": [
+    1116.0,
+    1116.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 21,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cosmetology",
+   "measure": "hours",
+   "total_units": {
+    "min": 1116,
+    "max": 1116
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate all areas of cosmetology while observing the safety and sanitation rules set forth by the California Board of Barbering and Cosmetology.",
+    "Review the written California State Board Cosmetology Licensure Examinations.",
+    "Demonstrate the skills necessary to build and maintain an ongoing clientele in the cosmetology salon environment and industry.",
+    "Apply work ethics within the cosmetology industry.",
+    "Recall industry requirements regarding resumes, hiring, and keeping records of business transactions."
+   ],
+   "careers": [
+    "Beauty salon",
+    "Self-employed cosmetologist",
+    "Personal care services",
+    "Resorts",
+    "Cruise ships",
+    "Nursing homes and retirement communities",
+    "Military bases",
+    "Public institutions",
+    "Hospitals",
+    "Prisons",
+    "Educational instructors",
+    "Beauty salon managers/directors",
+    "Beauty salon owners",
+    "Trichologist",
+    "Celebrity hairdresser",
+    "Sales – hair/wig products",
+    "Video/television",
+    "Film print commercial photo shoots",
+    "Distributors",
+    "Entrepreneurial avenues",
+    "Licensed Cosmetologist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COSM G021N",
+      "units": 279,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM G022N",
+      "units": 279,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM G023N",
+      "units": 279,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM G024N",
+      "units": 279,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-description; the program heading is not printed, so section_heading is taken from the program title and URL (Cosmetology NC).",
+   "Noncredit program counted in hours: each course 279 hours, Total Hours 1116.",
+   "Catalog codes 'COSM G021N' etc. match closed-list codes COSMG021N etc. (spacing difference only).",
+   "Some 'careers' entries are workplaces or settings (e.g., Resorts, Cruise ships, Prisons) as printed under 'Potential careers students may enter'; 'Licensed Cosmetologist' is taken from the description's licensure sentence; reviewer may wish to confirm inclusion."
+  ]
+ },
+ "extracted_run": "39688079435"
+}

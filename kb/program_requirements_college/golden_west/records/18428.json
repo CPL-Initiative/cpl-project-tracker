@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Theater Arts",
  "award": "A.A. Degree",
- "source_url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/theater-arts-aa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12254,
+  "input_tokens": 7669,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12254,
-    "output_tokens": 1435,
+    "input_tokens": 7669,
+    "output_tokens": 2596,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,237 +30,398 @@
     "model": null
    }
   ],
-  "output_tokens": 1435,
+  "output_tokens": 2596,
   "output_tokens_details": {
-   "thinking_tokens": 293
+   "thinking_tokens": 596
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07772,
- "ms": 11907,
- "seconds": 12.4,
+ "cost_usd": 0.0826,
+ "ms": 18654,
+ "seconds": 19.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 25,
    "listed": 25,
-   "share": 0.0,
-   "missing": [
-    "THEAG100",
-    "THEAG102",
-    "THEAG106",
-    "THEAG107",
-    "THEAG108",
-    "THEAG110",
-    "THEAG111",
-    "THEAG112",
-    "THEAG115",
-    "THEAG119",
-    "THEAG125",
-    "THEAG135",
-    "THEAG160",
-    "THEAG161",
-    "THEAG166",
-    "THEAG170",
-    "THEAG174",
-    "THEAG175",
-    "THEAG176",
-    "THEAG177",
-    "THEAG178",
-    "THEAG188",
-    "THEAG206",
-    "THEAG207",
-    "THEAG210"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "THEAG146",
+    "THEAG182"
+   ],
+   "flagged": [
+    "THEAG146",
+    "THEAG182"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    21.0,
+    26.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    21.0,
+    26.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     45.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     15.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 16,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Theater Arts",
+   "section_heading": "Theater Arts, Associate in Arts Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 26
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Local or Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 34
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Examine the historical context of theater and drama, including its relationship to contemporary society and culture.",
+    "Produce a play on stage, including all related performance, script, design, and technical aspects.",
+    "Assess what students and others have created.",
+    "Identify the individual and collaborative processes required to produce live theatrical productions.",
+    "Analyze performance, technical, directing, or theatre management responsibilities to identify and resolve specific problems pertaining to that area."
+   ],
+   "careers": [
+    "Actor",
+    "Director",
+    "Producer",
+    "Dramaturg",
+    "Designer",
+    "Technician and Craftsperson",
+    "Stage Manager",
+    "Arts Manager",
+    "Choreographer",
+    "Playwright",
+    "Screenwriter",
+    "Journalist",
+    "Art Consultant",
+    "Communications",
+    "Public Relations and Marketing",
+    "Teaching in Secondary and Postsecondary Education"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "THEA G100",
-    "why": "only in the Courses tab; A.A. requirements not in the text"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "THEA G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "THEA G102",
-    "why": "only in the Courses tab; A.A. requirements not in the text"
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "THEA G111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "THEA G106",
-    "why": "only in the Courses tab; A.A. requirements not in the text"
+    "name": "Select a minimum of three units from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "THEA G125",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G115",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G135",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G210",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G170",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G146",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA G188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "THEA G107",
-    "why": "only in the Courses tab; A.A. requirements not in the text"
-   },
-   {
-    "code": "THEA G108",
-    "why": "only in the Courses tab; A.A. requirements not in the text"
-   },
-   {
-    "code": "THEA G110",
-    "why": "only in the Courses tab; A.A. requirements not in the text"
-   },
-   {
-    "code": "THEA G111",
-    "why": "only in the Courses tab; A.A. requirements not in the text"
-   },
-   {
-    "code": "THEA G112",
-    "why": "only in the Courses tab; A.A. requirements not in the text"
-   },
-   {
-    "code": "THEA G115",
-    "why": "only in the Courses tab; A.A. requirements not in the text"
-   },
-   {
-    "code": "THEA G119",
-    "why": "only in the Courses tab; A.A. requirements not in the text"
-   },
-   {
-    "code": "THEA G125",
-    "why": "only in the Courses tab; A.A. requirements not in the text"
-   },
-   {
-    "code": "THEA G135",
-    "why": "only in the Courses tab, entry cut off; A.A. requirements not in the text"
-   },
-   {
-    "code": "THEA G160",
-    "why": "not in the text"
-   },
-   {
-    "code": "THEA G161",
-    "why": "not in the text"
-   },
-   {
-    "code": "THEA G166",
-    "why": "not in the text"
-   },
-   {
-    "code": "THEA G170",
-    "why": "not in the text"
-   },
-   {
-    "code": "THEA G174",
-    "why": "not in the text"
-   },
-   {
-    "code": "THEA G175",
-    "why": "not in the text"
-   },
-   {
-    "code": "THEA G176",
-    "why": "not in the text"
-   },
-   {
-    "code": "THEA G177",
-    "why": "not in the text"
-   },
-   {
-    "code": "THEA G178",
-    "why": "not in the text"
-   },
-   {
-    "code": "THEA G188",
-    "why": "not in the text"
-   },
-   {
-    "code": "THEA G206",
-    "why": "not in the text"
-   },
-   {
-    "code": "THEA G207",
-    "why": "not in the text"
-   },
-   {
-    "code": "THEA G210",
-    "why": "not in the text"
+    "name": "Select nine units from the following:",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "THEA G161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G166",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G176",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G177",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G178",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text holds only the Theater Arts landing page navigation and the COURSES tab; the 'Theater Arts, Associate in Arts Degree' requirements section appears only as a link title, so no blocks, totals, outcomes or careers could be recorded.",
-   "Course descriptions list 'Theater Arts, Associate in Arts Degree' under 'Catalog Program Pages Referencing' for THEA G100, G102, G106, G107, G108, G110, G111, G112, G115, G119, G125, but this does not show how they count (required vs. elective), so they were not placed.",
-   "The courses listing is cut off mid-entry at THEA G135; the remaining courses are not in the text.",
-   "Reviewer should fetch the program page https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/theater-arts-associate-arts-degree/ (or equivalent) to read the requirements."
+   "The 'Required Courses 9' total printed by the catalog includes THEA G100, THEA G106 and the nested 'Select one of the following' (3 units), which is recorded as its own block.",
+   "The overview text describes the Associate in Arts in Theater Arts for Transfer degree and CSU transfer, although the page is for the A.A. (2_AA_THEA); the description and outcomes may be shared with or copied from the AA-T page. Reviewer should check.",
+   "THEA G146 (Voice for Musical Theater 1) and THEA G182 (Advanced Make-up) are not in the closed list and are recorded as catalog additions.",
+   "Electives are 'as needed to reach 60 units' with no units printed; GE pattern is Local or Cal-GETC at 24-34 units."
   ]
  },
- "extracted_run": "38748828247"
+ "extracted_run": "39688079435"
 }

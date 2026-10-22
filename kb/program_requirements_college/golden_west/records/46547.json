@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Mathematics 2.0",
  "award": "A.S. T Degree",
- "source_url": "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-math-aa/",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/stem/mathematics/mathematics-ast/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6981,
+  "input_tokens": 6891,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6981,
-    "output_tokens": 2352,
+    "input_tokens": 6891,
+    "output_tokens": 1018,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,84 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 2352,
+  "output_tokens": 1018,
   "output_tokens_details": {
-   "thinking_tokens": 740
+   "thinking_tokens": 117
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07496,
- "ms": 21020,
- "seconds": 21.4,
+ "cost_usd": 0.04792,
+ "ms": 8090,
+ "seconds": 8.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 6,
    "listed": 6,
-   "share": 0.667,
-   "missing": [
-    "CSG175",
-    "PHYSG185"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 17,
-   "codes": [
-    "CSG262",
-    "ECONG105",
-    "ECONG115",
-    "ECONG160",
-    "MATHG100",
-    "MATHG103",
-    "MATHG104",
-    "MATHG115",
-    "MATHG115S",
-    "MATHG120",
-    "MATHG140",
-    "MATHG140S",
-    "MATHG170",
-    "PSYCG140",
-    "SOCG125",
-    "STATC1000",
-    "STATC1000E"
-   ],
-   "flagged": [
-    "CSG262",
-    "ECONG105",
-    "ECONG115",
-    "ECONG160",
-    "MATHG100",
-    "MATHG103",
-    "MATHG104",
-    "MATHG115",
-    "MATHG115S",
-    "MATHG120",
-    "MATHG140",
-    "MATHG140S",
-    "MATHG170",
-    "PSYCG140",
-    "SOCG125",
-    "STATC1000",
-    "STATC1000E"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
-    18.0,
-    18.0
+    20.0,
+    21.0
    ],
    "stated": [
-    18.0,
-    18.0
+    20.0,
+    21.0
    ],
    "against": "program",
    "why": [],
@@ -115,8 +77,8 @@
     "pass": true,
     "status": "equal",
     "computed": [
-     42.0,
-     52.0
+     54.0,
+     55.0
     ],
     "stated": [
      60.0,
@@ -124,13 +86,13 @@
     ],
     "against": "degree",
     "ge": [
-     24.0,
+     34.0,
      34.0
     ],
     "why": [],
     "fill": [
-     8.0,
-     18.0
+     5.0,
+     6.0
     ]
    }
   },
@@ -160,158 +122,48 @@
  },
  "record": {
   "program": {
-   "section_heading": "Liberal Arts: Emphasis in Mathematics, Associate in Arts Degree",
+   "section_heading": "Mathematics 2.0, Associate in Science Degree for Transfer",
    "measure": "units",
    "total_units": {
-    "min": 18,
-    "max": 18
+    "min": 20,
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": "Local or Cal-GETC",
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": 60,
     "max": 60
    },
    "ge_units": {
-    "min": 24,
+    "min": 34,
     "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
-    "Solve linear and nonlinear equations in the real and complex number system.",
-    "Calculate probabilities of independent and mutually exclusive events and conditional probability using appropriate formulas and theorems.",
-    "Compute derivatives of basic functions and the derivatives of their sums, differences, products, quotients, and compositions.",
-    "Solve right and oblique triangles and use appropriate laws to solve applied problems.",
-    "Perform matrix operations, evaluate determinants, and solve systems of linear equations using appropriate computational techniques.",
-    "Solve first-order differential equations."
+    "State the definition of derivatives and compute the derivatives of basic and transcendental functions of one or more variables.",
+    "Apply concepts of differential and integral calculus of one or more variables to solve problems involving rates, area, volume, and lengths of arcs.",
+    "State the definition of integrals and calculate definite and indefinite integrals involving basic and transcendental functions.",
+    "Graph equations in the rectangular, polar, cylindrical, and spherical coordinate systems, curves defined parametrically, conic sections, vectors, and vector-valued functions.",
+    "Solve first-order differential equations and compute partial derivatives.",
+    "Perform matrix operations, eigenvalue and eigenvector computations, and applications."
    ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Select at least 18 units of the following",
-    "rule": "choose_units",
-    "minimum": 18,
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 18,
-     "max": 18
+     "min": null,
+     "max": null
     },
     "courses": [
-     {
-      "code": "CS G262",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ECON G105",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ECON G115",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH G100",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH G103",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH G104",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH G115",
-      "units": 4,
-      "units_max": 6,
-      "alternatives": [
-       {
-        "code": "MATH G115S",
-        "units": null,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH G120",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH G140",
-      "units": 4,
-      "units_max": 6,
-      "alternatives": [
-       {
-        "code": "MATH G140S",
-        "units": null,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "STAT C1000",
-      "units": 4,
-      "units_max": 6,
-      "alternatives": [
-       {
-        "code": "STAT C1000E",
-        "units": null,
-        "catalog_addition": true
-       },
-       {
-        "code": "ECON G160",
-        "units": null,
-        "catalog_addition": true
-       },
-       {
-        "code": "PSYC G140",
-        "units": null,
-        "catalog_addition": true
-       },
-       {
-        "code": "SOC G125",
-        "units": null,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH G170",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
      {
       "code": "MATH G180",
       "units": 4,
@@ -341,27 +193,42 @@
       "catalog_addition": false
      }
     ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CS G175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS G185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "CS G175",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHYS G185",
-    "why": "not in the text; the page only refers generically to one science class from the Science Area of Emphasis list"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "MISMATCH: the requested award is the Mathematics 2.0 A.S.-T degree, but the source page is the Liberal Arts: Emphasis in Mathematics, Associate in Arts Degree (Banner Code 2_AA_LAMA, Control Number 19437). The requirements recorded here are those of that A.A. emphasis, not the A.S.-T; a reviewer should locate the correct A.S.-T page.",
-   "The list also allows 'One science class from the list identified for the Science Area of Emphasis'; no specific courses are printed, so none were recorded for it.",
-   "Footnote 1: selections must include one math course at the level of MATH G180 or above.",
-   "Units 4-6 printed beside MATH G115, MATH G140 and STAT C1000 apparently cover their support/alternate versions; the alternatives have no units printed.",
-   "Electives are 'as needed to reach 60 units' with no units printed; electives_fill_degree set true.",
-   "The Program Learning Outcomes are printed for this Liberal Arts emphasis program on the page; they were recorded as printed."
+   "Major Total printed as 20-21; Total Units 60 recorded as degree_total; Cal-GETC printed as 34 units.",
+   "Transferable electives are 'as needed to reach 60 units' with no units printed, so electives_fill_degree is true.",
+   "Catalog titles for MATH G180 and MATH G185 read 'Calculus I/II: Early Transcendentals', differing slightly from the state file titles; codes match.",
+   "No careers are named in the text."
   ]
  },
- "extracted_run": "38748828247"
+ "extracted_run": "39688079435"
 }

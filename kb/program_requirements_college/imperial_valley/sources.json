@@ -28,7 +28,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 14,
@@ -62,7 +63,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 12,
@@ -130,7 +132,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 46,
@@ -163,7 +166,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 11,
@@ -191,7 +195,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 6,
@@ -217,7 +222,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 4,
@@ -248,7 +254,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 9,
@@ -290,7 +297,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 20,
@@ -301,12 +309,33 @@
   "title": "Medical Assistant",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AHP100",
+   "BIOL90",
+   "MA71",
+   "MA73",
+   "MA75",
+   "MA77",
+   "MA81",
+   "MA83",
+   "MA85",
+   "MA87"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8640",
+   "title": "MEDICAL ASSISTANT (CERTIFICATE)",
+   "h1": "MEDICAL ASSISTANT (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2355
  },
  {
   "control_number": "01906",
@@ -337,7 +366,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 13,
@@ -373,7 +403,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 15,
@@ -417,7 +448,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 22,
@@ -465,7 +497,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 32,
@@ -507,7 +540,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 21,
@@ -518,12 +552,26 @@
   "title": "Agriculture Plant Science",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "AG120",
+   "AG140",
+   "AG170"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8639",
+   "title": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
+   "h1": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 5101
  },
  {
   "control_number": "08984",
@@ -559,7 +607,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 21,
@@ -595,11 +644,12 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 15,
-  "text_chars": 3127
+  "text_chars": 3105
  },
  {
   "control_number": "08995",
@@ -652,7 +702,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 27,
@@ -685,7 +736,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 11,
@@ -735,7 +787,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 33,
@@ -792,7 +845,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 40,
@@ -803,12 +857,30 @@
   "title": "Emergency Medical Services",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMTP200",
+   "EMTP202",
+   "EMTP204",
+   "EMTP206",
+   "EMTP225",
+   "EMTP235",
+   "EMTP245"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8636",
+   "title": "EMERGENCY MEDICAL SERVICES (CERTIFICATE)",
+   "h1": "EMERGENCY MEDICAL SERVICES (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2373
  },
  {
   "control_number": "11793",
@@ -833,7 +905,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 7,
@@ -856,12 +929,29 @@
   "title": "Air Conditioning and Refrigeration",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACR101",
+   "ACR102",
+   "ACR103",
+   "ACR104",
+   "ACR105",
+   "ACR106"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8612",
+   "title": "AIR CONDITIONING AND REFRIGERATION TECHNOLOGY (CERTIFICATE)",
+   "h1": "AIR CONDITIONING AND REFRIGERATION TECHNOLOGY (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2136
  },
  {
   "control_number": "15827",
@@ -884,7 +974,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 5,
@@ -895,12 +986,26 @@
   "title": "Firefighter I",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE140",
+   "FIRE142",
+   "FIRE144"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8649",
+   "title": "FIREFIGHTER I (CERTIFICATE)",
+   "h1": "FIREFIGHTER I (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1856
  },
  {
   "control_number": "16809",
@@ -926,7 +1031,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "as"
    }
   },
   "listed": 9,
@@ -956,7 +1062,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "as"
    }
   },
   "listed": 8,
@@ -986,7 +1093,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "as"
    }
   },
   "listed": 8,
@@ -1016,7 +1124,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "as"
    }
   },
   "listed": 8,
@@ -1047,7 +1156,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "as"
    }
   },
   "listed": 9,
@@ -1077,7 +1187,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "as"
    }
   },
   "listed": 8,
@@ -1108,7 +1219,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "as"
    }
   },
   "listed": 9,
@@ -1199,7 +1311,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 9,
@@ -1227,7 +1340,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 6,
@@ -1238,144 +1352,395 @@
   "title": "Digital Design and Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART160",
+   "CIS137",
+   "CIS149",
+   "CIS150",
+   "CIS151",
+   "CIS180"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8632",
+   "title": "DIGITAL DESIGN AND PRODUCTION (CERTIFICATE)",
+   "h1": "DIGITAL DESIGN AND PRODUCTION (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2010
  },
  {
   "control_number": "21456",
   "title": "Business Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ACCT210",
+   "ACCT220",
+   "ACCT240",
+   "BUS124",
+   "BUS126",
+   "BUS132",
+   "BUS136",
+   "BUS144",
+   "BUS145",
+   "BUS148",
+   "BUS260",
+   "BUS58",
+   "BUS63",
+   "CIS101",
+   "CIS124",
+   "CIS125",
+   "WE201",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8618",
+   "title": "BUSINESS MANAGEMENT (CERTIFICATE)",
+   "h1": "BUSINESS MANAGEMENT (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 2885
  },
  {
   "control_number": "21459",
   "title": "Accounting Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "ACCT210",
+   "ACCT240",
+   "BUS105",
+   "BUS108",
+   "BUS169",
+   "BUS180",
+   "BUS260",
+   "CIS125",
+   "WE201",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8608",
+   "title": "ACCOUNTING TECHNICIAN (CERTIFICATE)",
+   "h1": "ACCOUNTING TECHNICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2507
  },
  {
   "control_number": "21460",
   "title": "Business Office Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS105",
+   "BUS154",
+   "BUS156",
+   "BUS164",
+   "BUS169",
+   "BUS172",
+   "BUS180",
+   "BUS58",
+   "BUS59",
+   "BUS63",
+   "WE201",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8619",
+   "title": "BUSINESS OFFICE TECHNICIAN (CERTIFICATE)",
+   "h1": "BUSINESS OFFICE TECHNICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3106
  },
  {
   "control_number": "21462",
   "title": "Administrative Assistant",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ACCT210",
+   "BUS105",
+   "BUS136",
+   "BUS145",
+   "BUS154",
+   "BUS156",
+   "BUS169",
+   "BUS172",
+   "BUS180",
+   "BUS260",
+   "BUS63",
+   "CIS101",
+   "WE201",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8617",
+   "title": "ADMINISTRATIVE ASSISTANT (CERTIFICATE)",
+   "h1": "ADMINISTRATIVE ASSISTANT (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3124
  },
  {
   "control_number": "21466",
   "title": "Apprenticeship: Electrician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APEL105",
+   "APEL106",
+   "APEL107",
+   "APEL108",
+   "APLN106",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8281",
+   "title": "ELECTRICIAN (CERTIFICATE)",
+   "h1": "ELECTRICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5,
+    "section": null
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2161
  },
  {
   "control_number": "21467",
   "title": "Apprenticeship: Generation Mechanic",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APGN105",
+   "APGN106",
+   "APGN107",
+   "APGN108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8282",
+   "title": "GENERATION MECHANIC (CERTIFICATE)",
+   "h1": "GENERATION MECHANIC (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2098
  },
  {
   "control_number": "21468",
   "title": "Apprenticeship: Meter Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APMT105",
+   "APMT106",
+   "APMT107",
+   "APMT108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8285",
+   "title": "METER TECHNICIAN (CERTIFICATE)",
+   "h1": "METER TECHNICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2071
  },
  {
   "control_number": "21469",
   "title": "Apprenticeship: Power Lineman",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APLN105",
+   "APLN106",
+   "APLN107",
+   "APLN108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8286",
+   "title": "POWER LINEMAN (CERTIFICATE)",
+   "h1": "POWER LINEMAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2088
  },
  {
   "control_number": "21470",
   "title": "Apprenticeship: Relays Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APLN106",
+   "APRL105",
+   "APRL106",
+   "APRL107",
+   "APRL108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8288",
+   "title": "RELAYS TECHNICIAN (CERTIFICATE)",
+   "h1": "RELAYS TECHNICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2192
  },
  {
   "control_number": "21471",
   "title": "Apprenticeship: SCADA/Telecommunications Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APSC105",
+   "APSC106",
+   "APSC107",
+   "APSC108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8292",
+   "title": "SCADA/TELECOMMUNICATIONS TECHNICIAN (CERTIFICATE)",
+   "h1": "SCADA/TELECOMMUNICATIONS TECHNICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2186
  },
  {
   "control_number": "21472",
   "title": "Apprenticeship: Substation - Electrician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APLN106",
+   "APSB105",
+   "APSB106",
+   "APSB107",
+   "APSB108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8293",
+   "title": "SUBSTATION-ELECTRICIAN (CERTIFICATE)",
+   "h1": "SUBSTATION-ELECTRICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2217
  },
  {
   "control_number": "21473",
@@ -1383,40 +1748,62 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.636,
+  "coverage": 1.0,
   "codes_found": [
+   "AUT110",
    "AUT125",
    "AUT130",
+   "AUT150",
    "AUT155",
    "AUT160",
+   "AUT170",
    "AUT180",
    "AUT210",
-   "AUT220"
+   "AUT220",
+   "AUT230"
   ],
   "source": {
-   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8615",
-   "title": "AUTOMOTIVE TECHNOLOGY: MAINTENANCE AND BASIC REPAIR (CERTIFICATE)",
-   "h1": "AUTOMOTIVE TECHNOLOGY: MAINTENANCE AND BASIC REPAIR (CERTIFICATE)",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8613",
+   "title": "AUTOMOTIVE TECHNOLOGY (CERTIFICATE)",
+   "h1": "AUTOMOTIVE TECHNOLOGY (CERTIFICATE)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 11,
-  "text_chars": 2110
+  "text_chars": 2300
  },
  {
   "control_number": "21475",
   "title": "Welding Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD100",
+   "WELD115",
+   "WELD125",
+   "WELD135",
+   "WELD225",
+   "WELD230"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8646",
+   "title": "WELDING TECHNOLOGY (CERTIFICATE)",
+   "h1": "WELDING TECHNOLOGY (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2046
  },
  {
   "control_number": "21477",
@@ -1453,7 +1840,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 20,
@@ -1464,48 +1852,152 @@
   "title": "Addiction Disorder Studies",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ADS101",
+   "ADS110",
+   "ADS200",
+   "ADS220",
+   "ADS221",
+   "ADS230",
+   "ADS235",
+   "ADS240",
+   "ADS251",
+   "PSY120",
+   "PSY130",
+   "PSY204",
+   "PSY208",
+   "PSY210",
+   "PSYCC1000",
+   "SOC150",
+   "SW220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8609",
+   "title": "ADDICTION DISORDER STUDIES (CERTIFICATE)",
+   "h1": "ADDICTION DISORDER STUDIES (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 2970
  },
  {
   "control_number": "21481",
   "title": "Administration of Justice",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ100",
+   "AJ102",
+   "AJ104",
+   "AJ106",
+   "AJ110",
+   "AJ223",
+   "ENGL105",
+   "ENGLC1000",
+   "ESL108"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8610",
+   "title": "ADMINISTRATION OF JUSTICE (CERTIFICATE)",
+   "h1": "ADMINISTRATION OF JUSTICE (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2250
  },
  {
   "control_number": "21482",
   "title": "Correctional Science",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ100",
+   "AJ102",
+   "AJ108",
+   "AJ110",
+   "AJ141",
+   "AJ222",
+   "AJ223",
+   "CSI100",
+   "CSI104",
+   "CSI206",
+   "CSI208",
+   "ENGL105",
+   "ENGLC1000",
+   "ESL108"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8628",
+   "title": "CORRECTIONAL SCIENCE (CERTIFICATE)",
+   "h1": "CORRECTIONAL SCIENCE (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2733
  },
  {
   "control_number": "21483",
   "title": "Fire Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "AJ108",
+   "CIS101",
+   "EMT105",
+   "FIRE100",
+   "FIRE101",
+   "FIRE102",
+   "FIRE103",
+   "FIRE104",
+   "FIRE108",
+   "FIRE140",
+   "FIRE220",
+   "FIRE221",
+   "FIRE222",
+   "FIRE223",
+   "FIRE231",
+   "FIRE246",
+   "FIRE247",
+   "FIRE248",
+   "FIRE249",
+   "FIRE250"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8637",
+   "title": "FIRE TECHNOLOGY (CERTIFICATE)",
+   "h1": "FIRE TECHNOLOGY (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 3088
  },
  {
   "control_number": "24051",
@@ -1548,12 +2040,28 @@
   "title": "Child Development Associate Teacher",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "CDEV101",
+   "CDEV102",
+   "CDEV103",
+   "CDEV105",
+   "CDEV106"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8622",
+   "title": "CHILD DEVELOPMENT ASSOCIATE TEACHER (CERTIFICATE)",
+   "h1": "CHILD DEVELOPMENT ASSOCIATE TEACHER (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2087
  },
  {
   "control_number": "30262",
@@ -1579,7 +2087,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 8,
@@ -1602,12 +2111,31 @@
   "title": "Building Construction Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDC101",
+   "BLDC110",
+   "BLDC130",
+   "BLDC135",
+   "BLDC140",
+   "BLDC145",
+   "BLDC180",
+   "BLDC185"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8616",
+   "title": "BUILDING CONSTRUCTION TECHNOLOGY (CERTIFICATE)",
+   "h1": "BUILDING CONSTRUCTION TECHNOLOGY (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2254
  },
  {
   "control_number": "30322",
@@ -1633,7 +2161,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 8,
@@ -1644,36 +2173,82 @@
   "title": "Electrical Trades",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8285",
+   "title": "METER TECHNICIAN (CERTIFICATE)",
+   "h1": "METER TECHNICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 1894
  },
  {
   "control_number": "30337",
   "title": "Electrical Trades",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
+   "title": "METER TECHNICIAN (MAJOR - A.S.)",
+   "h1": "METER TECHNICIAN (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 1884
  },
  {
   "control_number": "30362",
   "title": "Water Treatment Systems Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WT105",
+   "WT110",
+   "WT140",
+   "WT205",
+   "WT210"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8644",
+   "title": "WATER TREATMENT SYSTEMS TECHNOLOGY (CERTIFICATE)",
+   "h1": "WATER TREATMENT SYSTEMS TECHNOLOGY (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2009
  },
  {
   "control_number": "30438",
@@ -1697,7 +2272,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 6,
@@ -1720,48 +2296,124 @@
   "title": "Apprenticeship: Control Operator",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APPL105",
+   "APPL106",
+   "APPL107",
+   "APPL108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8280",
+   "title": "CONTROL OPERATOR (CERTIFICATE)",
+   "h1": "CONTROL OPERATOR (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2111
  },
  {
   "control_number": "30808",
   "title": "Apprenticeship: Instrument Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APIN105",
+   "APIN106",
+   "APIN107",
+   "APIN108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8284",
+   "title": "INSTRUMENT TECHNICIAN (CERTIFICATE)",
+   "h1": "INSTRUMENT TECHNICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2128
  },
  {
   "control_number": "30809",
   "title": "Apprenticeship: Telecommunications Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APTL105",
+   "APTL106",
+   "APTL107",
+   "APTL108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8295",
+   "title": "TELECOMMUNICATIONS TECHNICIAN (CERTIFICATE)",
+   "h1": "TELECOMMUNICATIONS TECHNICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2156
  },
  {
   "control_number": "30810",
   "title": "Apprenticeship: Hydro Operator",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APHY105",
+   "APHY106",
+   "APHY107",
+   "APHY108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8283",
+   "title": "HYDRO OPERATOR (CERTIFICATE)",
+   "h1": "HYDRO OPERATOR (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2081
  },
  {
   "control_number": "30900",
@@ -1790,7 +2442,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 13,
@@ -1819,7 +2472,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 8,
@@ -1830,12 +2484,26 @@
   "title": "Computer Networking",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS160",
+   "CIS162",
+   "CIS163"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8627",
+   "title": "COMPUTER NETWORKING (CERTIFICATE)",
+   "h1": "COMPUTER NETWORKING (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1876
  },
  {
   "control_number": "31380",
@@ -1863,7 +2531,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 11,
@@ -1904,7 +2573,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 10,
@@ -1939,7 +2609,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 16,
@@ -1968,7 +2639,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 7,
@@ -2015,7 +2687,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 26,
@@ -2067,7 +2740,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 20,
@@ -2116,7 +2790,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 34,
@@ -2151,7 +2826,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 17,
@@ -2184,7 +2860,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 13,
@@ -2236,7 +2913,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 30,
@@ -2275,7 +2953,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 21,
@@ -2287,15 +2966,19 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.593,
+  "coverage": 0.778,
   "codes_found": [
    "COMMC1000",
    "EDUC200",
    "ENGL105",
    "ENGLC1000",
+   "ENGLC1001",
    "ES211",
    "ESL108",
+   "GEOG108",
+   "GEOL100",
    "GEOL110",
+   "HE102",
    "HIST100",
    "MATH110",
    "MATH112",
@@ -2304,20 +2987,22 @@
    "MUS102",
    "POLS110",
    "POLSC1000",
+   "READ111",
    "THEA100"
   ],
   "source": {
-   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8322",
-   "title": "ELEMENTARY TEACHER EDUCATION - INTEGRATED PROGRAMS FOR TRANSFER (MAJOR - A.A.-T)",
-   "h1": "ELEMENTARY TEACHER EDUCATION - INTEGRATED PROGRAMS FOR TRANSFER (MAJOR - A.A.-T)",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8690",
+   "title": "ELEMENTARY TEACHER EDUCATION (MAJOR - A.A.-T)",
+   "h1": "ELEMENTARY TEACHER EDUCATION (MAJOR - A.A.-T)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 27,
-  "text_chars": 3924
+  "text_chars": 4086
  },
  {
   "control_number": "33926",
@@ -2344,7 +3029,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 10,
@@ -2384,7 +3070,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 7,
@@ -2413,7 +3100,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 9,
@@ -2446,7 +3134,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 11,
@@ -2477,7 +3166,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 9,
@@ -2500,12 +3190,27 @@
   "title": "Academic Preparedness in English",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL892",
+   "ESL893",
+   "ESL894",
+   "ESL895"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8583",
+   "title": "ACADEMIC PREPAREDNESS IN ENGLISH (NONCREDIT CERTIFICATE OF COMPETENCY)",
+   "h1": "ACADEMIC PREPAREDNESS IN ENGLISH (NONCREDIT CERTIFICATE OF COMPETENCY)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1336
  },
  {
   "control_number": "36151",
@@ -2529,7 +3234,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 8,
@@ -2540,12 +3246,38 @@
   "title": "Public Health Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "ANTH102",
+   "BIOL100",
+   "BIOL200",
+   "BIOL202",
+   "BIOL204",
+   "BIOL206",
+   "BIOL220",
+   "CHEM100",
+   "CHEM200",
+   "ECON101",
+   "ECON102",
+   "PSY146",
+   "PSYCC1000",
+   "SOC101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8639",
+   "title": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
+   "h1": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 11325
  },
  {
   "control_number": "36755",
@@ -2566,7 +3298,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 3,
@@ -2591,7 +3324,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
@@ -2623,7 +3357,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 13,
@@ -2649,7 +3384,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 6,
@@ -2679,7 +3415,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 12,
@@ -2715,7 +3452,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 15,
@@ -2726,36 +3464,94 @@
   "title": "Computer Information Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "CIS159",
+   "CIS160",
+   "CIS161",
+   "CIS162",
+   "CIS163",
+   "CIS166",
+   "CIS167",
+   "CIS202",
+   "CIS210"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8626",
+   "title": "COMPUTER INFORMATION TECHNOLOGY (CERTIFICATE)",
+   "h1": "COMPUTER INFORMATION TECHNOLOGY (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2380
  },
  {
   "control_number": "38185",
   "title": "Cybersecurity",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "CIS159",
+   "CIS160",
+   "CIS161",
+   "CIS162",
+   "CIS166",
+   "CIS167"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8630",
+   "title": "CYBERSECURITY (CERTIFICATE)",
+   "h1": "CYBERSECURITY (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2092
  },
  {
   "control_number": "38186",
   "title": "Microsoft Office & Windows",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS115",
+   "CIS120",
+   "CIS121",
+   "CIS124",
+   "CIS125",
+   "CIS130",
+   "CIS131",
+   "CIS159"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8641",
+   "title": "MICROSOFT OFFICE AND WINDOWS (CERTIFICATE)",
+   "h1": "MICROSOFT OFFICE AND WINDOWS (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 1900
  },
  {
   "control_number": "38199",
@@ -2788,7 +3584,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
@@ -2820,7 +3617,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 10,
@@ -2859,7 +3657,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null
    }
   },
   "listed": 19,
@@ -2902,7 +3701,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 23,
@@ -2913,12 +3713,35 @@
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BIOL200",
+   "BIOL202",
+   "BIOL204",
+   "BIOL206",
+   "BIOL220",
+   "CHEM200",
+   "CHEM202",
+   "CHEM204",
+   "PSY214",
+   "PSYCC1000",
+   "SOC101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8639",
+   "title": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
+   "h1": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 11325
  },
  {
   "control_number": "41064",
@@ -2953,7 +3776,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 19,
@@ -2964,24 +3788,49 @@
   "title": "Fundamentals of English II",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL880",
+   "ESL881"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8660",
+   "title": "FUNDAMENTALS OF ENGLISH II (NONCREDIT CERTIFICATE OF COMPETENCY)",
+   "h1": "FUNDAMENTALS OF ENGLISH II (NONCREDIT CERTIFICATE OF COMPETENCY)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 901
  },
  {
   "control_number": "41182",
   "title": "Fundamentals of English III",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL890"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8661",
+   "title": "FUNDAMENTALS OF ENGLISH III (NONCREDIT CERTIFICATE OF COMPETENCY)",
+   "h1": "FUNDAMENTALS OF ENGLISH III (NONCREDIT CERTIFICATE OF COMPETENCY)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 1013
  },
  {
   "control_number": "41191",
@@ -3005,7 +3854,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 6,
@@ -3035,7 +3885,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 8,
@@ -3064,7 +3915,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 7,
@@ -3095,7 +3947,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 11,
@@ -3106,12 +3959,27 @@
   "title": "Care of the Elderly for the Health Assistant",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AHP32",
+   "AHP33",
+   "AHP60",
+   "AHP62"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8620",
+   "title": "CARE OF THE ELDERLY FOR THE HEALTH ASSISTANT (CERTIFICATE)",
+   "h1": "CARE OF THE ELDERLY FOR THE HEALTH ASSISTANT (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1927
  },
  {
   "control_number": "42241",
@@ -3145,7 +4013,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 18,
@@ -3174,7 +4043,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "as"
    }
   },
   "listed": 7,
@@ -3185,12 +4055,30 @@
   "title": "Agriculture Service Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT140",
+   "AUT240",
+   "AUT245",
+   "AUT255",
+   "BLDC101",
+   "EWIR165",
+   "WELD100"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8638",
+   "title": "AGRICULTURE SERVICE TECHNOLOGY (CERTIFICATE)",
+   "h1": "AGRICULTURE SERVICE TECHNOLOGY (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2094
  },
  {
   "control_number": "42288",
@@ -3219,7 +4107,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 12,
@@ -3245,7 +4134,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 6,
@@ -3256,12 +4146,25 @@
   "title": "Computer Fundamentals for ESL Students",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS805",
+   "CIS806"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8598",
+   "title": "COMPUTER FUNDAMENTALS FOR ESL STUDENTS (NONCREDIT CERTIFICATE OF COMPLETION)",
+   "h1": "COMPUTER FUNDAMENTALS FOR ESL STUDENTS (NONCREDIT CERTIFICATE OF COMPLETION)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1326
  },
  {
   "control_number": "43019",
@@ -3286,7 +4189,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 10,
@@ -3297,12 +4201,31 @@
   "title": "Building Construction Drafting Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACR105",
+   "BLDC110",
+   "BLDC120",
+   "BLDC130",
+   "BLDC135",
+   "BLDC185",
+   "BLDC220",
+   "EWIR110"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8648",
+   "title": "BUILDING CONSTRUCTION DRAFTING TECHNOLOGY (CERTIFICATE)",
+   "h1": "BUILDING CONSTRUCTION DRAFTING TECHNOLOGY (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2323
  },
  {
   "control_number": "43146",
@@ -3335,7 +4258,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 16,
@@ -3373,7 +4297,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 17,
@@ -3384,24 +4309,65 @@
   "title": "Plant Operator Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDC15",
+   "CIS120",
+   "CIS124",
+   "MATH105",
+   "PLNT100",
+   "PLNT150",
+   "PLNT200",
+   "WE201",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8643",
+   "title": "PLANT OPERATOR TECHNOLOGY (CERTIFICATE)",
+   "h1": "PLANT OPERATOR TECHNOLOGY (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2086
  },
  {
   "control_number": "43909",
   "title": "Chemical Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDC15",
+   "CHEM82",
+   "CHEM85",
+   "CIS120",
+   "CIS124",
+   "MATH105",
+   "WE201",
+   "WE220",
+   "WT105",
+   "WT110"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8621",
+   "title": "CHEMICAL TECHNICIAN (CERTIFICATE)",
+   "h1": "CHEMICAL TECHNICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2216
  },
  {
   "control_number": "45007",
@@ -3432,7 +4398,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 16,
@@ -3473,7 +4440,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 7,
@@ -3503,7 +4471,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 12,
@@ -3531,7 +4500,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 7,
@@ -3558,7 +4528,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 6,
@@ -3588,7 +4559,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.857
+    "title": 0.857,
+    "section": null
    }
   },
   "listed": 9,
@@ -3622,7 +4594,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 12,
@@ -3633,11 +4606,33 @@
   "title": "Instrumentation Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDC101",
+   "CIS120",
+   "CIS124",
+   "ELTR120",
+   "EWIR110",
+   "INST80",
+   "INST85",
+   "INST90",
+   "MATH105",
+   "WE201",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8655",
+   "title": "INSTRUMENTATION TECHNOLOGY (CERTIFICATE)",
+   "h1": "INSTRUMENTATION TECHNOLOGY (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2198
  }
 ]

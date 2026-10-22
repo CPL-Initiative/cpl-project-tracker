@@ -1,0 +1,309 @@
+{
+ "college": "Golden West College",
+ "control_number": "11434",
+ "shape": "degree",
+ "title": "Computer Aided Design and Drafting",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/career-education/computer-aided-design-drafting-cadd/cadd-computer-aided-design-drafting-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7281,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7281,
+    "output_tokens": 1898,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1898,
+  "output_tokens_details": {
+   "thinking_tokens": 596
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06708,
+ "ms": 15512,
+ "seconds": 16.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 14,
+   "share": 0.929,
+   "missing": [
+    "DARTG105"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "DRAFG101"
+   ],
+   "flagged": [
+    "DRAFG101"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    15.5,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 15.5-22.0; the catalog states 18.0-20.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     39.5,
+     56.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     4.0,
+     20.5
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Aided Design and Drafting, Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Operate 2D CAD computer software and apply the principles of drafting to create industry standard manufacturing prints.",
+    "Identify dimensioning standards and apply Geometric Dimensioning and Tolerancing.",
+    "Design solid models, assemblies, and detail drawings using a feature-based parametric design CAD program.",
+    "Assess cost-efficient use of 3D printing technology.",
+    "Apply mathematics, measuring conventions, scale and mass property analysis."
+   ],
+   "careers": [
+    "engineering and architectural drafting disciplines",
+    "Mechanical drafting",
+    "Civil drafting",
+    "Electrical drafting",
+    "Industrial drafting",
+    "Architectural drafting",
+    "3D printing"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DRAF G101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRAF G105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAF G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAF G170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Electives",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ART G107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS G139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G115",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "MATH G115S",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WORK G100",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DART G105",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The block headed 'Recommended Electives' says 'Select two of the following: 6-8' and its units are counted in the Major Total 18-20 (12 required + 6-8), so it is recorded as a required choose_courses block (minimum 2) rather than 'recommended'; reviewer should confirm.",
+   "MATH G115 row prints '4-6' covering MATH G115 or MATH G115S; no units are printed separately for MATH G115S (state file lists 6).",
+   "DRAF G101 is not in the closed list and is recorded as a catalog addition.",
+   "Degree total 60 printed as 'Total Units 60'; electives 'as needed to reach 60 units' with no units printed, so electives_fill_degree is true."
+  ]
+ },
+ "extracted_run": "39688079435"
+}

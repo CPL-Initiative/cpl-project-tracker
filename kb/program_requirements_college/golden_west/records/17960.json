@@ -9,29 +9,25 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 37610,
+  "input_tokens": 40112,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
-  "output_tokens": 21209
+  "output_tokens": 23723
  },
- "cost_usd": 0.57462,
- "ms": 99170,
- "seconds": 100.7,
+ "cost_usd": 0.63491,
+ "ms": 100422,
+ "seconds": 101.8,
  "parts": 2,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 167,
+   "placed": 203,
    "listed": 290,
-   "share": 0.576,
+   "share": 0.7,
    "missing": [
-    "ANTHG185",
-    "ANTHG185L",
     "ARTG105",
     "ARTG106",
-    "ASTRG100",
-    "ASTRG100L",
     "ATHLG235",
     "ATHLG236",
     "ATHLG239",
@@ -50,26 +46,6 @@
     "ATHLG263",
     "ATHLG264",
     "ATHLG279",
-    "BIOLG100",
-    "BIOLG101",
-    "BIOLG104",
-    "BIOLG104L",
-    "BIOLG110",
-    "BIOLG120",
-    "BIOLG160",
-    "BIOLG180",
-    "BIOLG182",
-    "BIOLG183",
-    "BIOLG186",
-    "BIOLG210",
-    "BIOLG220",
-    "BIOLG225",
-    "CHEMG110",
-    "CHEMG130",
-    "CHEMG180",
-    "CHEMG185",
-    "CHEMG220",
-    "CHEMG225",
     "CMSTG260",
     "COLLG100",
     "COUNG104",
@@ -104,13 +80,6 @@
     "ETHSG135",
     "ETHSG150",
     "ETHSG255",
-    "GEOGG130",
-    "GEOGG180",
-    "GEOGG180L",
-    "GEOLG105",
-    "GEOLG106",
-    "GEOLG110",
-    "GEOLG120",
     "GLSTG230",
     "HISTG170",
     "HISTG175",
@@ -138,12 +107,7 @@
     "PEG192",
     "PEG195",
     "PEG196",
-    "PHSCG100",
-    "PHYSG110",
-    "PHYSG111",
-    "PHYSG120",
     "PHYSG125",
-    "PHYSG185",
     "PHYSG280",
     "PHYSG285",
     "PSYCG167",
@@ -155,8 +119,9 @@
    "pass": true
   },
   "invented": {
-   "count": 61,
+   "count": 63,
    "codes": [
+    "ACCTG100",
     "AFSG100",
     "ARTG108",
     "ARTG109",
@@ -168,6 +133,7 @@
     "ARTHC1100",
     "ARTHC1200",
     "ASAMG100",
+    "BIOLG221",
     "BUSG139",
     "CJG150",
     "DANCG232",
@@ -220,6 +186,7 @@
     "THEAG188"
    ],
    "flagged": [
+    "ACCTG100",
     "AFSG100",
     "ARTG108",
     "ARTG109",
@@ -231,6 +198,7 @@
     "ARTHC1100",
     "ARTHC1200",
     "ASAMG100",
+    "BIOLG221",
     "BUSG139",
     "CJG150",
     "DANCG232",
@@ -288,8 +256,8 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    16.0,
-    19.0
+    25.0,
+    28.0
    ],
    "stated": null,
    "against": null,
@@ -831,7 +799,7 @@
       "alternatives": [
        {
         "code": "HIST G110",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -1201,7 +1169,7 @@
       "alternatives": [
        {
         "code": "PSCI G150",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -1653,7 +1621,7 @@
       "alternatives": [
        {
         "code": "HIST G110",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -1701,7 +1669,7 @@
       "alternatives": [
        {
         "code": "PSCI G103",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -1714,7 +1682,7 @@
       "alternatives": [
        {
         "code": "GEOG G120",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -1727,7 +1695,7 @@
       "alternatives": [
        {
         "code": "SOC G133",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -1740,7 +1708,7 @@
       "alternatives": [
        {
         "code": "SOC G134",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -1760,7 +1728,7 @@
       "alternatives": [
        {
         "code": "PSCI G181",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -1955,7 +1923,7 @@
       "alternatives": [
        {
         "code": "PHIL G150",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -2109,185 +2077,484 @@
       "catalog_addition": false
      }
     ]
+   },
+   {
+    "name": "AREA 5: Natural Sciences",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH G185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH G185L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR G100L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G104L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G182",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G183",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G186",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL G221",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL G225",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM G110",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM G130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM G180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM G185",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM G220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM G225",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG G180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG G180L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL G105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL G106",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL G110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL G120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHSC G100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS G111",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS G120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS G185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC G250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AREA 6: Ethnic Studies",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AFS G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASAM G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHS G167",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS G120",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS G103",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS G181",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS G133",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS G134",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AREA 7E: Lifelong Understanding and Self-Development",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT G100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ANTH G185",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "ANTH G185L",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
     "code": "ART G105",
-    "why": "not in the text; Area 3 lists ARTH C1100 instead"
+    "why": "not in the text; page prints ARTH C1100 instead"
    },
    {
     "code": "ART G106",
-    "why": "not in the text; Area 3 lists ARTH C1200 instead"
-   },
-   {
-    "code": "ASTR G100",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "ASTR G100L",
-    "why": "not in the text; Area 5 tab not printed"
+    "why": "not in the text; page prints ARTH C1200 instead"
    },
    {
     "code": "ATHL G235",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G236",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G239",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G240",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G243",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G244",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G246",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G249",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G250",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G253",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G254",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G255",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G256",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G259",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G260",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G263",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G264",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "ATHL G279",
-    "why": "not in the text; Area 7E tab not printed"
-   },
-   {
-    "code": "BIOL G100",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G101",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G104",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G104L",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G110",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G120",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G160",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G180",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G182",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G183",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G186",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G210",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G220",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "BIOL G225",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "CHEM G110",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "CHEM G130",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "CHEM G180",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "CHEM G185",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "CHEM G220",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "CHEM G225",
-    "why": "not in the text; Area 5 tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "CMST G260",
@@ -2295,51 +2562,51 @@
    },
    {
     "code": "COLL G100",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "COUN G104",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "COUN G105",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "COUN G150",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "COUN G151",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "COUN G152",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "COUN G153",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "COUN G154",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "COUN G155",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "COUN G156",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "DANC G105",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "DANC G106",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "DANC G115",
@@ -2387,19 +2654,19 @@
    },
    {
     "code": "ECON G170",
-    "why": "not in the text; Area 4 lists ECON C2001 instead"
+    "why": "not in the text; page prints ECON C2001 instead"
    },
    {
     "code": "ECON G175",
-    "why": "not in the text; Area 4 lists ECON C2002 instead"
+    "why": "not in the text; page prints ECON C2002 instead"
    },
    {
     "code": "ENGL G110",
-    "why": "not in the text; text lists ENGL C1003 instead"
+    "why": "not in the text; page prints ENGL C1003 instead"
    },
    {
     "code": "ENGL G112",
-    "why": "not in the text; Area 3 lists ENGL C1002 instead"
+    "why": "not in the text; page prints ENGL C1002 instead"
    },
    {
     "code": "ENGL G281",
@@ -2407,51 +2674,23 @@
    },
    {
     "code": "ETHS G101",
-    "why": "not in the text; Area 6 tab not printed"
+    "why": "not in the text"
    },
    {
     "code": "ETHS G111",
-    "why": "not in the text; Area 6 tab not printed"
+    "why": "not in the text"
    },
    {
     "code": "ETHS G135",
-    "why": "not in the text; Area 6 tab not printed"
+    "why": "not in the text"
    },
    {
     "code": "ETHS G150",
-    "why": "not in the text; Area 6 tab not printed"
+    "why": "not in the text"
    },
    {
     "code": "ETHS G255",
     "why": "not in the text"
-   },
-   {
-    "code": "GEOG G130",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "GEOG G180",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "GEOG G180L",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "GEOL G105",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "GEOL G106",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "GEOL G110",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "GEOL G120",
-    "why": "not in the text; Area 5 tab not printed"
    },
    {
     "code": "GLST G230",
@@ -2459,171 +2698,154 @@
    },
    {
     "code": "HIST G170",
-    "why": "not in the text; text lists HIST C1001 instead"
+    "why": "not in the text; page prints HIST C1001 instead"
    },
    {
     "code": "HIST G175",
-    "why": "not in the text; text lists HIST C1002 instead"
+    "why": "not in the text; page prints HIST C1002 instead"
    },
    {
     "code": "HLED G100",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "HLED G107",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "HLED G135",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "KIN G100",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "KIN G101",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "KIN G110",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G101",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G103",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G105",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G108",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G111",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G114",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G126",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G132",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G150",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G158",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G166",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G173",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G176",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G178",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G186",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G192",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G195",
-    "why": "not in the text; Area 7E tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PE G196",
-    "why": "not in the text; Area 7E tab not printed"
-   },
-   {
-    "code": "PHSC G100",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "PHYS G110",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "PHYS G111",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "PHYS G120",
-    "why": "not in the text; Area 5 tab not printed"
+    "why": "not in the text; Area 7E list cut off"
    },
    {
     "code": "PHYS G125",
-    "why": "not in the text; Area 5 tab not printed"
-   },
-   {
-    "code": "PHYS G185",
-    "why": "not in the text; Area 5 tab not printed"
+    "why": "not in the text"
    },
    {
     "code": "PHYS G280",
-    "why": "not in the text; Area 5 tab not printed"
+    "why": "not in the text"
    },
    {
     "code": "PHYS G285",
-    "why": "not in the text; Area 5 tab not printed"
+    "why": "not in the text"
    },
    {
     "code": "PSYC G167",
-    "why": "not in the text; Area 4 lists ETHS G167 alone"
+    "why": "not in the text; page prints ETHS G167 only"
    },
    {
     "code": "SOC G101",
-    "why": "not in the text; Area 6 tab not printed"
+    "why": "not in the text"
    },
    {
     "code": "SOC G135",
-    "why": "not in the text; Area 6 tab not printed"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The source page is the Golden West College 2026-2027 Local General Education (Associate Degree Graduation Requirements) page, not a section titled CSU General Education Breadth; the closed list matches this local GE course list, so its Areas are recorded as the blocks. A reviewer should confirm this page is the right source for the CSU GE Breadth certificate.",
-   "The page states 'Completion of a minimum of 24 units as listed under Areas 1 through 7E' for local GE; this is a minimum for the GE pattern used for the associate degree, not a stated total for this certificate, so total_units is left null. The 60-unit and 18-unit major sentences apply to all associate degrees and are not recorded as totals.",
-   "Area tabs for AREA 5: Natural Sciences, AREA 6: Ethnic Studies and AREA 7E: Lifelong Understanding and Self-Development are named on the page but their course lists are not in the provided text (cut off); no blocks were recorded for them. Closed-list courses from those areas (e.g., ANTH G185, ASTR, BIOL, CHEM, GEOL, PHYS, PE, ATHL, COUN, KIN, HLED G100) are not in this part.",
-   "Area 2 and Areas 3 and 4 print 'Select a minimum of 3 semester units' with no block total; stated left null.",
-   "ENGL C1000/C1000E, MATH G115/G115S, MATH G140/G140S and STAT C1000/C1000E print a single range 4-6 on the first row; the alternatives have no units printed beside them.",
-   "The catalog prints reciprocal 'or' pairs as two rows (ECON G120 or HIST G110 and HIST G110 or ECON G120; PHIL G150 or PSCI G150 and PSCI G150 or PHIL G150 in Area 3; ETHS G120/GEOG G120, ETHS G103/PSCI G103, ETHS G133/SOC G133, ETHS G134/SOC G134, ETHS G181/PSCI G181, ECON G120/HIST G110 in Area 4). Each pair is recorded once, under the first-printed row.",
-   "ART G139 matches the closed-list entry 'ARTG139' (History of Graphic Design) printed without a space; treated as the same course, catalog_addition false.",
-   "THEA G115, G125 and G135 print units '1,2'; recorded as 1 to 2.",
-   "The 1A and 1B headings say '(3 units)'; recorded as stated 3 although ENGL C1000 is printed at 4-6 units and ENGL C1003 at 4.",
-   "Closed-list ART G105/G106, ECON G170/G175, ENGL G110/G112 appear to correspond to catalog C-ID codes ARTH C1100/C1200, ECON C2001/C2002, ENGL C1003/C1002 printed in the text; the C codes are recorded as catalog additions.",
-   "Part 2: The source page is the Golden West College Local General Education / Associate Degree Graduation Requirements page, not a section for the CSU General Education Breadth Certificate of Achievement; the award named may not match this page. Reviewer should verify the correct source (CSU GE Breadth pattern).",
-   "Part 2: Only the tabs for Areas 1-4 are printed in the text; Areas 5 (Natural Sciences), 6 (Ethnic Studies) and 7E (Lifelong Understanding) are listed by heading but their course lists are missing, so many closed-list courses could not be placed.",
-   "Part 2: The page states 'Completion of a minimum of 24 units as listed under Areas 1 through 7E' and 'additional elective units to total 60 units' as general associate degree rules; not recorded as this certificate's total_units or degree_total.",
-   "Part 2: ge_pattern left null because the page itself is a GE pattern (local GE) rather than a degree naming one; the award is a GE certificate.",
-   "Part 2: No program outcomes or careers printed.",
+   "The catalog text is the 2026-2027 Local General Education (Associate Degree Graduation Requirements) page, not a page for a CSU General Education Breadth certificate; the areas (1-7E) were read as this award's requirements, but a reviewer should confirm whether a separate CSU GE Breadth page exists.",
+   "The page says 'Completion of a minimum of 24 units as listed under Areas 1 through 7E' and 'additional elective units to total 60 units' as general associate degree requirements; neither was recorded as this certificate's total_units or degree_total.",
+   "The text is cut off in AREA 7E after 'ACCT G100 Introduct'; the rest of Area 7E and any later sections (Notes) are missing, and ACCT G100's units are not printed.",
+   "AREA 7E rule reads 'Select a minimum of 3 semester units, or an additional 3 units from Areas 1-6'.",
+   "AREA 6 also allows 'a course from any Area with an *'; no asterisks appear in the text as captured.",
+   "Area 1A states '(3 units)' though ENGL C1000/C1000E prints 4-6 units.",
+   "Rows printed twice as mirrored 'or' pairs within one area (e.g., ECON G120 or HIST G110 / HIST G110 or ECON G120; PHIL G150 or PSCI G150 / PSCI G150 or PHIL G150; ETHS/GEOG G120, ETHS/PSCI G103, ETHS/SOC G133, ETHS/SOC G134, ETHS/PSCI G181) were recorded once at their first occurrence.",
+   "ART G139 as printed was matched to closed-list code ARTG139.",
+   "THEA G115, G125 and G135 print units '1,2'; recorded as units 1, units_max 2.",
+   "No program learning outcomes or careers are printed in the text.",
+   "Part 2: The text is the 2026-2027 Local General Education page (Associate Degree Graduation Requirements, Areas 1-7E), not a section for the CSU General Education Breadth Certificate of Achievement; the blocks record the GE areas this page prints. A reviewer should confirm the source matches this award.",
+   "Part 2: No certificate total is printed; 'a minimum of 24 units as listed under Areas 1 through 7E' and 'additional elective units to total 60 units' describe the associate degree, so total_units and degree_total stay null.",
+   "Part 2: The Area 7E list is cut off after 'ACCT G100 Introduct'; its courses (likely ATHL, COUN, HLED, KIN, PE and others) are missing from the text.",
+   "Part 2: Area 6 also allows 'a course from any Area with an *'; no asterisks appear in the extracted text.",
+   "Part 2: BIOL G221 (Area 5) is printed but is not in the closed list and not among this part's courses; it is a catalog addition not recorded here.",
+   "Part 2: PSYC G250 is listed in both Area 4 and Area 5 and is recorded in each.",
+   "Part 2: Page also lists Cal-GETC (34 units) as an alternative method; that pattern is not part of this record.",
+   "Part 2: No program outcomes or careers are printed.",
    "Read in 2 parts, because one reply could not hold the whole record."
   ]
  },
- "extracted_run": "38748828247"
+ "extracted_run": "39688079435"
 }
