@@ -83,10 +83,16 @@ HAND_FILED_KEYS = ("college", "url", "fetched_by", "fetched_at", "sha256", "file
 COPY_UA = "CPL Initiative program requirements harvest (a hand-filed copy; cpl-initiative.github.io)"
 
 # A sitemap address names the program pages by their path. These words mark a
-# catalog's program sections; these mark everything else it lists.
+# catalog's program sections; these mark everything else it lists. Some CourseLeaf
+# catalogs print each program under its department or discipline, in a Degrees tab
+# (Sierra's /departments/psychology/, MiraCosta's /disciplines/psychology/; page read
+# 39698876304, S444): neither path names a program, so Sierra's index found 3 pages
+# and MiraCosta's 286 sitemap pages left out every discipline, and 90 programs had a
+# general education page as their only candidate.
 PROGRAM_PATH = re.compile(
     r"degree|certificate|program|major|pathway|noncredit|award|transfer|career|"
-    r"academic-and-career|areas-of-study|aos|-a-?a|-a-?s|-ast?\b|-aat?\b", re.I)
+    r"academic-and-career|areas-of-study|aos|-a-?a|-a-?s|-ast?\b|-aat?\b|"
+    r"/departments?/[^/]+|/disciplines?/[^/]+", re.I)
 NOT_PROGRAM_PATH = re.compile(
     r"course-?descriptions?|/courses?/|coursesaz|/archive|/previous|/policies|/policy|"
     r"/services|/student-services|/admission|/calendar|/faculty|/staff|/search|/pdf/|"

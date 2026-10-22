@@ -80,6 +80,16 @@ check(not any("course-descriptions" in u or "archive" in u or u.endswith(".pdf")
       "course descriptions, archives, policies and PDFs are never read as program pages")
 check(not any("elsewhere.example.edu" in u for u in cand), "another host's page is never read")
 check(len(set(cand)) == len(cand), "a page the sitemap lists twice is read once")
+# A program printed under its department or discipline (S444, page read 39698876304):
+# the page names no program in its path, and its Degrees tab holds the lists.
+DEPTS = ["https://catalog.sierracollege.edu/departments/psychology/",
+         "https://catalog.miracosta.edu/disciplines/gerontology/",
+         "https://catalog.sierracollege.edu/departments/"]
+check(C.program_candidates(DEPTS[:1], "https://catalog.sierracollege.edu/") == DEPTS[:1]
+      and C.program_candidates(DEPTS[1:2], "https://catalog.miracosta.edu/") == DEPTS[1:2],
+      "a department or discipline page is a program candidate")
+check(C.program_candidates(DEPTS[2:], "https://catalog.sierracollege.edu/") == [],
+      "the department index itself is not")
 
 # ── a district catalog: one host, several colleges ───────────────────────────
 DISTRICT = ["https://catalog.nocccd.edu/fullerton-college/programs/accounting-aa/",
