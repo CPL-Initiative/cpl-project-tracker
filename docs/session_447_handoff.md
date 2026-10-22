@@ -24,15 +24,16 @@ worked the harvest queue on its own, with no new words from Sam. Read, in order:
 
 ## State at sign-off
 
-- **#2346:** test passed on aee89de3 or was still running; see the PR. If it is open and green, merge it (squash),
-  then dispatch `program-requirements-college.yml` on `main` with `step=display`, `college=Palomar College`,
-  `extract=0`. Build 1b3616641146 already applied on the branch (run 39757574337); 0ad3c75bfa19 adds Pasadena City.
+- **#2346 merged** (856885cc) on a green test. Its display build 0ad3c75bfa19 was dispatched on `main` at 10:53Z
+  (`step=display`). Confirm its Applied record landed on main
+  (`kb/receipts/program_requirement_records_display_2026-10-18_0ad3c75bfa19.applied_<run>.json`); if the run
+  failed, dispatch it again. Build 1b3616641146 applied earlier on the wave branch (run 39757574337).
 - **Saddleback's free capture** (run 39748152661, `claude/s446-saddleback`) was still reading after two hours. It
   files `capture_preview.json` on that branch; compare it with main's 321 found and 19 page-claimed.
 
 ## Open work, in order
 
-1. **#2346 and its display step**, as above.
+1. **Confirm build 0ad3c75bfa19's Applied record on main**, as above.
 2. **Saddleback's capture**: read its `page_claimed`. Extract (about $25) only if programs move to their own pages.
 3. **Mt. San Jacinto and Santa Barbara City** did not move under the sharing rules. Their losers never had their own
    page found (Mt. San Jacinto 28 not found, its losers falling back to general education and C-ID chart pages; Santa
@@ -59,4 +60,4 @@ are still open; neither is this queue's.
 
 ## Let go
 
-S446 drops its PR subscription (#2346) at sign-off; it set no check-ins and watches no artifact.
+S446 drops its PR subscription (#2347, this checkpoint) at sign-off; it set no check-ins and watches no artifact.
