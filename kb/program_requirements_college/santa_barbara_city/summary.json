@@ -2,18 +2,18 @@
  "college": "Santa Barbara City College",
  "programs": 319,
  "with_closed_list": 287,
- "found": 249,
- "extracted": 249,
+ "found": 254,
+ "extracted": 254,
  "errors": 0,
- "passed_machine_checks": 206,
+ "passed_machine_checks": 210,
  "failed": {
   "coverage": 8,
   "invented": 0,
-  "arithmetic": 42,
+  "arithmetic": 43,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 18.02,
+ "cost_usd": 18.39,
  "cost_per_program": 0.0724,
  "not_found": [
   {
@@ -368,5 +368,5 @@
    }
   }
  ],
- "run": "38670933359"
+ "run": "39782741424"
 }

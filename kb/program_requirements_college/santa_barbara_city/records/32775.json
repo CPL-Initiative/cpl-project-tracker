@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 10061,
-    "output_tokens": 5102,
+    "output_tokens": 5565,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 5102,
+  "output_tokens": 5565,
   "output_tokens_details": {
-   "thinking_tokens": 1498
+   "thinking_tokens": 1923
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.14228,
- "ms": 37558,
- "seconds": 37.9,
+ "cost_usd": 0.15154,
+ "ms": 41770,
+ "seconds": 42.1,
  "parts": null,
  "error": null,
  "score": {
@@ -104,7 +105,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Anthropology Transfer (AA-T)",
+   "section_heading": "Associate Degree for Transfer Graduation Requirements",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -154,7 +155,7 @@
       "alternatives": [
        {
         "code": "ANTH 101H",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -167,7 +168,7 @@
       "alternatives": [
        {
         "code": "ANTH 102H",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -180,7 +181,7 @@
       "alternatives": [
        {
         "code": "ANTH 103H",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -189,7 +190,7 @@
     ]
    },
    {
-    "name": "List A - Complete one course from the following",
+    "name": "List A - Complete one course from the following:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -529,7 +530,7 @@
     ]
    },
    {
-    "name": "List B - Complete two courses from the following",
+    "name": "List B - Complete two courses from the following:",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -624,14 +625,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Required Core rows print a 3-4 range beside each course and its honors twin; recorded the range on the regular course and the honors twin's units as 4 (the range's high end, matching the state file).",
-   "Course units in Lists A, B and C are not printed beside individual courses; only the list totals (3-5, 6-10, 3-5) are printed.",
-   "List A: ERTH 171 & ERTH 172 (or GEOG 171 & GEOG 172) count together as one choice; recorded as two entries with GEOG alternatives. GEOG 101/ERTH 141 and MATH/CS 118 are cross-listed courses recorded as alternatives.",
-   "List B also allows any course not taken in List A, or any Cal-GETC Area 4 or Area 6 course not taken in the Required Core or List A.",
-   "List C allows any course not taken in List A or List B; BMS 107 and ERTH 115 & 115L (or ENVS 115 & 115L) are listed. ERTH 115 and 115L are taken together as one choice. Read List C as one course (3-5 units).",
-   "The 60 CSU transferable units and Cal-GETC are general ADT graduation requirements; no degree total or GE units printed for this award.",
-   "Learning outcomes come from the page's outcomes tab for this program; recorded as this award's outcomes."
+   "The section heading of the page is not printed in the extracted text; the requirements tab heading is used. Page source is the Anthropology Transfer (AA-T) page.",
+   "Required Core: the range 3-4 is printed once per or-row, covering the regular course (3) and its honors twin (4); no units are printed beside the honors alternatives.",
+   "List A: ERTH 171 & ERTH 172 (or GEOG 171 & GEOG 172) is a single paired choice; recorded as two entries with GEOG alternatives, but both courses of the pair must be taken together to count as the one List A course.",
+   "List C: ERTH 115 & 115L (or ENVS 115 & 115L) is a single paired choice (lecture and lab together); recorded as two entries with ENVS alternatives.",
+   "List B also allows 'Any course not taken in List A' and 'Any Cal-GETC course from Area 4 or Area 6 not taken in the Required Core or in List A'; List C allows any course not taken in List A or List B. These open options are not recorded as courses.",
+   "'At least 60 CSU transferable semester units' is the generic ADT graduation requirement, not recorded as degree_total; no GE unit figure is printed.",
+   "The outcomes are printed in the page's single learning outcomes tab for the program, which this AA-T page shares; recorded as program outcomes.",
+   "Total Units 21.00-32.00 printed for the major requirements."
   ]
  },
- "extracted_run": "38670933359"
+ "extracted_run": "39782741424"
 }

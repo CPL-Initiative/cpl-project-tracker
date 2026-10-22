@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8960,
-    "output_tokens": 5491,
+    "output_tokens": 5264,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 5491,
+  "output_tokens": 5264,
   "output_tokens_details": {
-   "thinking_tokens": 2205
+   "thinking_tokens": 2130
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.14566,
- "ms": 42235,
- "seconds": 42.6,
+ "cost_usd": 0.14112,
+ "ms": 40792,
+ "seconds": 41.7,
  "parts": null,
  "error": null,
  "score": {
@@ -72,7 +73,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'List A - ERTH/GEOG 152' has no units",
+    "a required course in 'List A - Complete one combination from the following: ERTH/GEOG 152' has no units",
     "'List C - Complete one course from Cal-GETC Area 3A' chooses 1 courses but 0 carry units"
    ]
   },
@@ -174,7 +175,7 @@
       "alternatives": [
        {
         "code": "ERTH 115",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -187,7 +188,7 @@
       "alternatives": [
        {
         "code": "ERTH 115L",
-        "units": 1,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -200,7 +201,7 @@
       "alternatives": [
        {
         "code": "ERTH 116",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -213,7 +214,7 @@
       "alternatives": [
        {
         "code": "ENVS 112",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -338,7 +339,7 @@
     ]
    },
    {
-    "name": "List A - ERTH 111 & 111L (or ERTH 111H & ERTH 111L)",
+    "name": "List A - Complete one combination from the following: ERTH 111 & 111L",
     "rule": "all",
     "minimum": null,
     "option_group": "List A",
@@ -370,7 +371,7 @@
     ]
    },
    {
-    "name": "List A - ERTH 151 & 151L",
+    "name": "List A - Complete one combination from the following: ERTH 151 & 151L",
     "rule": "all",
     "minimum": null,
     "option_group": "List A",
@@ -396,7 +397,7 @@
     ]
    },
    {
-    "name": "List A - ERTH 141 & 141L",
+    "name": "List A - Complete one combination from the following: ERTH 141 & 141L / GEOG 101 & 101L",
     "rule": "all",
     "minimum": null,
     "option_group": "List A",
@@ -409,46 +410,32 @@
       "code": "ERTH 141",
       "units": null,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "GEOG 101",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
      {
       "code": "ERTH 141L",
       "units": null,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "GEOG 101L",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      }
     ]
    },
    {
-    "name": "List A - GEOG 101 & 101L",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "List A",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "GEOG 101",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOG 101L",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List A - ERTH/GEOG 152",
+    "name": "List A - Complete one combination from the following: ERTH/GEOG 152",
     "rule": "all",
     "minimum": null,
     "option_group": "List A",
@@ -473,7 +460,7 @@
     ]
    },
    {
-    "name": "List B - Complete two courses from the following",
+    "name": "List B - Complete two courses from the following:",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -600,17 +587,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints 'List A - Complete one combination from the following: 3-5'. Each combination is recorded as its own block in option_group 'List A'. The 3-5 unit total is not stored on any single block.",
-   "ERTH 111H & ERTH 111L is printed as its own List A combination. It is recorded as an honors alternative inside the ERTH 111 & 111L block.",
-   "Footnote 1 says ERTH 141/141L are the same as GEOG 101/101L. The catalog prints them as separate combinations, so they are kept as separate List A blocks.",
-   "Cross-listed courses (ENVS/ERTH 115, 115L, 116; HIST/ENVS 112; ERTH 142/GEOG 105; ERTH/GEOG 152) are recorded as one entry, with the cross-listed code as an alternative.",
-   "The closed list stores 'ERTH152' and 'GEOG152' without a space. They are matched to the catalog's ERTH/GEOG 152 and not flagged as catalog additions.",
-   "List C has no printed course list. It is a single course from the Cal-GETC Area 3A list, which the page only links to, so the block holds no courses.",
-   "Units for 'or' alternatives and List A/B courses are not printed beside each course and are left null. Range rows such as 'BIOL 100 4-5' record the printed range on the first course only.",
-   "The 'Total Units 54.00-62.00' figure is the major total. The 60-unit statement is the generic associate degree requirement, so degree_total is null.",
-   "The GE options are the SBCC General Education pattern or the Cal-GETC pattern. No GE units are printed.",
-   "The outcomes come from the page's Learning Outcomes tab for this AA."
+   "List A prints a single total of 3-5 units for the whole list ('Complete one combination from the following'); each combination is recorded as its own block in option_group 'List A' with stated null. No units are printed beside individual List A or List B courses.",
+   "ERTH 111H & ERTH 111L is printed as a separate combination; recorded as an honors alternative to ERTH 111 within the ERTH 111 & 111L combination.",
+   "ERTH 141/141L and GEOG 101/101L are printed as separate combinations but footnote 1 says they are the same courses; recorded as one combination with GEOG codes as alternatives.",
+   "Cross-listed courses (ENVS/ERTH 115, 115L, 116; HIST/ENVS 112; ERTH/GEOG 152; ERTH 142/GEOG 105) recorded with the first-printed code as the course and the other as an alternative.",
+   "Closed list stores 'ERTH152' and 'GEOG152' without a space; treated as matching ERTH 152 / GEOG 152.",
+   "List C requires one course from Cal-GETC Area 3A; the page links to an external list and names no courses, so the block has no courses.",
+   "Total Units 54.00-62.00 is the major total. The 60-unit minimum is a general associate degree graduation requirement, not recorded as a degree total.",
+   "Outcomes are from the page's Learning Outcomes tab for this AA."
   ]
  },
- "extracted_run": "38670933359"
+ "extracted_run": "39782741424"
 }
