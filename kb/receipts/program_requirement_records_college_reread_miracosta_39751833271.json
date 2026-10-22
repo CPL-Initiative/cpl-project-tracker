@@ -1,0 +1,115 @@
+{
+ "college": "MiraCosta College",
+ "reread_run": "39751833271",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39746427354",
+ "at": "2026-10-22T09:00:17Z",
+ "posted": 21,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "05130",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "05143",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07862",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07863",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15183",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22006",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31821",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31936",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36100",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36144",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36171",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37386",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37408",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38751",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39491",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40264",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46055",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 0,
+ "absent": 0,
+ "held": 0,
+ "kept": 21,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "05113",
+  "31937",
+  "32467",
+  "35580",
+  "36145",
+  "36146",
+  "36154",
+  "36168",
+  "36169",
+  "36174",
+  "36253",
+  "36305",
+  "37409",
+  "38727",
+  "38729",
+  "38730",
+  "40577",
+  "41547",
+  "41895",
+  "43613",
+  "43719"
+ ],
+ "carried_keys": [],
+ "machine_pass": 18,
+ "rollback": null,
+ "before": []
+}
