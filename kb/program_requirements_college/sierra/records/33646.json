@@ -1,0 +1,237 @@
+{
+ "college": "Sierra College",
+ "control_number": "33646",
+ "shape": "adt",
+ "title": "Nutrition and Dietetics",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.sierracollege.edu/departments/nutrition-food-science/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8116,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8116,
+    "output_tokens": 1873,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1873,
+  "output_tokens_details": {
+   "thinking_tokens": 716
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06992,
+ "ms": 17298,
+ "seconds": 17.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    27.0,
+    30.0
+   ],
+   "stated": [
+    29.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 27.0-30.0; the catalog states 29.0-30.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     27.0,
+     30.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nutrition and Dietetics for Transfer AS-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Evaluate personal energy and nutrient requirements and food sources using current dietary assessment tools.",
+    "Demonstrate the understanding the physiological processing of nutrients as they relate to energy balance, metabolism and physical activity.",
+    "Evaluate the impact of external variables on food safety, food choices, food beliefs, and disease risk.",
+    "Identify dietary and lifestyle modifications for improving health throughout the life cycle."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "BIOL 0004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 0006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 0001A",
+      "units": 5,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "CHEM 0003A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 0003B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 0001B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTF 0005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTF 0010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints zero-padded codes (BIOL 0004, BIOL 0006, NUTF 0005, NUTF 0010) matching closed-list BIOL 4, BIOL 6, NUTF 5, NUTF 10; treated as the same courses, not catalog additions.",
+   "CHEM 0001A row prints '5-6' covering the option; the alternative is the pair CHEM 0003A & CHEM 0003B taken together (both required). Individual units for CHEM 0003A/0003B are not printed beside them (closed list stores 3 each), so recorded as null.",
+   "degree_total 60 taken from 'To earn the Associate in Science in Nutrition and Dietetics for Transfer degree, students must complete 60 CSU-transferable semester units'; this is standard ADT wording—reviewer should confirm it is meant as this award's total.",
+   "No Cal-GETC unit figure is printed, so ge_units is null.",
+   "The PSLOs come from the page's outcomes tab for the program as a whole; the AS-T is the only award in the section, so it shares that list. The second outcome is copied as printed ('the understanding the physiological processing'), which differs slightly from the description's wording.",
+   "The catalog highly recommends courses satisfying the CSU US History, Constitution and American Ideals requirement, but names no specific courses."
+  ]
+ },
+ "extracted_run": "39709837031"
+}

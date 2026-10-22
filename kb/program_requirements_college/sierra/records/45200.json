@@ -1,0 +1,152 @@
+{
+ "college": "Sierra College",
+ "control_number": "45200",
+ "shape": "noncredit",
+ "title": "Welding Industry Training",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.sierracollege.edu/departments/welding-technology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7131,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7131,
+    "output_tokens": 1330,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1330,
+  "output_tokens_details": {
+   "thinking_tokens": 528
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05512,
+ "ms": 12345,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "WELD810",
+    "WELD811"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 1\nUnits, 54 hours, 16 units, 0\nHours"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Welding Technology",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Be aware of and demonstrate a high level of understanding of safety practices expected with metal-working equipment in a welding environment.",
+    "Accept personal responsibility in developing manipulative skills of the craft with the knowledge and creativity to recognize, analyze, problem solve to successful completion.",
+    "Apply reading, writing, and listening practice to interpret welding terminology, blueprints, procedures, and directions along with active verbal communication to facilitate mutual understanding in the workforce."
+   ],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "WELD 810",
+    "why": "Appears only as a course description (WELD 0810, 42 hours). The text prints no requirements section for the Welding Industry Training program."
+   },
+   {
+    "code": "WELD 811",
+    "why": "Appears only as a course description (WELD 0811, 42 hours). The text prints no requirements section for the Welding Industry Training program."
+   }
+  ],
+  "notes": [
+   "The excerpt holds only the department's course descriptions and an outcomes tab. It prints no heading, requirement list or total hours for the Welding Industry Training noncredit program, so no blocks were recorded. A reviewer should check the program's own page for its requirements.",
+   "If the program consists of WELD 0810 and WELD 0811, the course descriptions print 42 hours each (6 lecture, 36 laboratory). No program total is printed, and none was computed.",
+   "The text prints the codes as WELD 0810 and WELD 0811. They correspond to closed-list WELD 810 and WELD 811; the catalog names the second course 'Welding Technology Industry Training 2', while the closed list calls it 'Part 2'.",
+   "The PSLOs come from the department page's outcomes tab, which prints one list without naming a program. They were recorded on the assumption that this award shares that list. A reviewer should verify that they apply to this noncredit program rather than to the credit welding awards.",
+   "section_heading 'Welding Technology' is taken from the department page, as given in the source URL; it is not a heading printed in the excerpt.",
+   "No careers are named for this program. Career-like phrases appear only in course descriptions and were not recorded."
+  ]
+ },
+ "extracted_run": "39709837031"
+}
