@@ -254,6 +254,21 @@ check(read[0]["bytes"] == 4000 and len(read[0]["body"]) == cpr.NETWORK_BODY,
       "a body prints its opening and reports its whole length")
 check(read[1]["error"] == "body gone", "an unreadable body is reported, never raised")
 
+print("capture view")
+# S445: the capture's text for one page, innerText then its hidden tab panels, printed so a
+# blank line between two short heading lines stays visible (section_award() needs them adjacent).
+got = {"body": "Horticulture\n\nOverview text",
+       "tabPanels": [{"label": "Degrees and Certificates", "text": "Certificate of Achievement\nLandscape Architecture\nHORT 100\tIntro\t3"},
+                     {"label": "Search", "text": "Search the catalog for anything at all"}]}
+ct = cpr.capture_text(got)
+check(ct.startswith("Horticulture\n\nOverview text\n\n[Tab: Degrees and Certificates]\nCertificate of Achievement")
+      and "Search the catalog" not in ct,
+      "the capture view is the visible text with the course-bearing tab panels appended, as best_text reads it")
+check(cpr.unfolded("A\n\n\n  \nB\nC") == "A\n(blank)\nB\nC",
+      "a run of blank lines prints once as (blank), short lines stay one a line")
+check(cpr.unfolded("\n".join("x%d" % i for i in range(5)), cap=3).endswith("x2\n(2 more lines)"),
+      "a long page prints its first CAPTURE_LINES lines and says how many it left")
+
 if FAILS:
     print("\n%d FAILED" % len(FAILS))
     sys.exit(1)

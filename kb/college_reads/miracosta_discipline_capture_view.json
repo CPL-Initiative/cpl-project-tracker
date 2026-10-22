@@ -1,0 +1,17 @@
+{
+ "_readme": "S445 (SkyCurrant): MiraCosta's discipline pages still give one claimant the page (page_claimed 82 after #2333). On Horticulture no claimant read a section (Nursery/Horticulture Crop Production A.A. kept it on the fallback, section None), and Computer Studies and IT went to Information Technology A.S. alone; on Business Administration, Entrepreneurship A.A. and two certificates read their sections. The capture keeps none of the text it read, so this reads the three pages as the capture does (capture_view: PAGE_JS, innerText plus the hidden tab panels, line for line) to see where each award's heading lines fall.",
+ "college": "MiraCosta College",
+ "questions": {
+  "capture_headings": "In the capture's own text of each discipline page, which lines head each award, are the award and title lines adjacent (no blank line between), and is the Degrees tab visible text or a hidden panel?"
+ },
+ "keywords": [
+  "associate in (?:arts|science)[^\\n]{0,80}",
+  "certificate of (?:achievement|accomplishment|competency|proficiency)[^\\n]{0,80}",
+  "\\bA\\.[AS]\\.[^\\n]{0,60}"
+ ],
+ "pages": [
+  {"answers": ["capture_headings"], "capture_view": true, "url": "https://catalog.miracosta.edu/disciplines/horticulture/"},
+  {"answers": ["capture_headings"], "capture_view": true, "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"},
+  {"answers": ["capture_headings"], "capture_view": true, "url": "https://catalog.miracosta.edu/disciplines/businessadministration/"}
+ ]
+}
