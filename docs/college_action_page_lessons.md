@@ -1721,3 +1721,27 @@ converted to underlined words (Sam, 2026-10-09). Clean light and dark at 320, 39
   values from earlier builds are cleared once. The rule is in CLAUDE.md beside the UI practices.
 - **Sheet 111 (answered 21:58Z):** the combined tab is CPL Pathways; the public funding page forgets its chosen
   institution too, reversing call 9 (Sam picked *forget* over the recommended *keep*; #2327).
+
+## S448 SkyDeergrass (2026-10-22): the fold done, steps 2 and 3
+
+- **Sam's go, twice.** *"go on step 2"*, then *"go on step 3."* Step 2 is #2355, step 3 is #2356.
+- **One renderer, a second host.** `CPL_COLLEGE_BRIEFING.mountInto(host, college)` draws My College into a host
+  another tab owns, marked `data-cb-embed`. `render(root)` asks the root, never a flag in `state`: `state` is shared
+  with the tab, and the async loads (roster, live metrics, the funding model) render into whichever root they were
+  handed, so a module-level "embedded" switch would paint the embedded layout into the tab or the reverse.
+- **The host's picker chooses the college.** The embedded view drops the scope question, the picker, *Welcome*,
+  *Choose another college*, *Change view* and its second copy of the CPL Visual, the extract and *Open CPL Pathways*.
+  The catalog's spelling finds MAP's name through `choiceKey`; a college My College does not hold says so.
+- **Load on open.** CPL Pathways' section is a `<details>` that loads `college_briefing.js` on its first open, so
+  the tab's own load is unchanged. Its open state survives the re-render the table's list causes (`mineOpen`).
+- **The admin surface tells the truth about a fold.** Loading My College's module credits CPL Pathways with its
+  reads (and `cpl_funding.js`'s writes, whose editor runs only on Implementation Funding). S442's pitfall was a
+  module loaded for one call; here the tab really draws the data, so the credit stands, and `tab:cpl-pathways` maps
+  to My College's own DR-09/CA-06. `admin_tab.test.js`'s all-public example now makes every table the tab reads public.
+- **Off the menu is a `cobi_nav` flag.** `hidden` takes a tab off the menu and leaves it routable, the switch the
+  Admin tab offers. Applied through `supabase-migrate.yml` like S417's unified-courses (receipt
+  `kb/receipts/cobi_nav_my_college_hidden_2026-10-22_s448.sql`), then `.apply` restored to main's.
+- **The hand-offs that pointed at the tab.** CPL Pathways' *Open My College* is gone. The statewide map's *Create
+  Handout* now hands the college over in memory with `open: "my-college"`, and CPL Pathways opens the section; the
+  old stored-key hand-off and its two lockstep checks retired (check floor 16 to 14). Sierra Training's *Try it in:
+  My College* still opens the tab by address: cpl_chat.js delivers it only into a dock inside `#tab-college-briefing`.

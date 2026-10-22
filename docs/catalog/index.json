@@ -15938,8 +15938,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 419,
+   "count": 420,
    "docs": [
+    {
+     "created": "2026-10-22",
+     "governs": [],
+     "n": 449,
+     "path": "docs/session_449_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "my-college-action-page",
+      "cpl-pathways",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 449 handoff: My College folded into CPL Pathways, a search box, a faster list and the COBI header",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-22",
      "governs": [],
@@ -23166,5 +23182,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1219
+ "total": 1220
 }

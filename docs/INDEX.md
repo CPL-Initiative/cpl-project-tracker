@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 90 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 84 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 61 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 419 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1219** | |
+| Session handoffs | 420 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1220** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-22 (S448 SkyDeergrass, opened by Sam): CPL Pathways' clear, faster list and the COBI header (#2353); My College folded into CPL Pathways, search box and alphabetical list (#2355); My College off the menu, the search redraws on a college change (#2356); handoff 449.
 - 2026-10-22 (S447 SkyBrittlebush, opened by Sam): Sheet 112 answered, later (#2348); an Administration of Justice address and a hyphenated course code (#2349); Mt. San Jacinto and Santa Barbara City reread, build be2635ed5b73 (#2350); the harvest lessons' S399-S403 to archive 3; handoff 448.
 - 2026-10-22 (S446 SkyMadrone, the CPL Queue routine): the CPL opportunity visual's UI pass (#2344); a degree-and-certificate address names both awards (#2345); 91 new records at Palomar, MiraCosta, Grossmont and Pasadena City, display build 0ad3c75bfa19 (#2346); handoff 447.
 - 2026-10-22 (S445 SkyCurrant, opened by Sam): a page read's capture view (#2336, #2341); a shared page per section heading and MiraCosta's listed degrees (#2337, #2342); Palomar's "Cert. Achievement" (#2339); 185 new records at five colleges, build 82d6298a0c67 (#2340).
@@ -129,5 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-21 (S443 SkyToyon, opened by Sam): funding off My College (#2316, #2320); Reedley loaded (#2317); a page heading a section per award serves each sibling (#2322) and Foothill re-read and loaded (#2326); tabs never remember a filter (#2325, a CLAUDE.md rule); Open Asks Sheet 111.
 - 2026-10-21 (S442, the CPL Queue routine's run beside SkyManzanita): the harvest keeps a Requirements tab whose numbers carry a campus letter (#2309); Moorpark, Oxnard and Ventura re-read; one display build with Reedley.
 - 2026-10-21 (S442 SkyManzanita, opened by Sam): Sheet 109 applied (#2310); CPL Pathways' college line and the name CPL Pathways (#2312); one college choice for My College and CPL Pathways (#2313); My CPL Funding and the expenditure reports leave My College; Reedley re-read and loaded; KB note methodology-hand-another-tab-a-request.
-- 2026-10-21 (S441 SkyIronbark, the CPL Queue routine): S440's harvest PR #2306 merged; the CLAUDE.md pass sent as Open Asks Sheet 109 (five cards, nothing applied); the two Python tests failing on main fixed.
-- 2026-10-20 (S439 SkySaltbush, opened by Sam): the funding page prints JST counts and the 75% need, office hours and the MAP Dashboard chat as help, the landing page and its training video in the Contents, Funding Model Numbers; the introduction is always the published two-priority film, rebuilt from Scenario 3 with a new MP4 (#2296-#2298); S438's memory rows written; handoff 440 (SkyChaparral); no KB note.

@@ -106,7 +106,7 @@ The whole ecosystem, end-to-end:
    carries both layers separately so it doubles as the correction list to work
    through in MAP — nothing here writes to MAP, which has no write API, and
    these proposals are deliberately invisible to Sierra, who answers only from
-   what MAP holds), a **🤝 Noncredit & Learning Partners** tab (the noncredit / not-for-credit / adult-school / ROP / high-school-Cx / apprenticeship register — the six modes of Learning Partner CPL, a self-refreshing dormant-statewide-exhibit worklist, and an in-place ✎ Add insight affordance), a **🎓 CPL Pathways** tab (audience-facing; it also lists each harvested catalog record, Beta draft, laid out by requirement or by term
+   what MAP holds), a **🤝 Noncredit & Learning Partners** tab (the noncredit / not-for-credit / adult-school / ROP / high-school-Cx / apprenticeship register — the six modes of Learning Partner CPL, a self-refreshing dormant-statewide-exhibit worklist, and an in-place ✎ Add insight affordance), a **🎓 CPL Pathways** tab (audience-facing; a College filter, a Search box and an alphabetical Pathway list, and for a chosen college its My College sections; it also lists each harvested catalog record, Beta draft, laid out by requirement or by term
    apprenticeship-to-baccalaureate course maps with CPL check-offs derived
    live from the MAP articulation data — Cerritos's Field Ironworker
    Supervisor BS (31.5 units of journeyworker CPL) plus Foothill's Dental
@@ -163,7 +163,7 @@ The whole ecosystem, end-to-end:
    (Career Passport, CA Master Plan, workforce/upskilling) and CA budget
    items; harvested daily from free sources + a suggest-a-story queue and
    Claude-triaged, read live so it never goes stale), a **My College** tab
-   (open to colleges and the public since 2026-09-17, reading published
+   (off the menu since 2026-10-22: its sections now open inside CPL Pathways' college view, and `#college-briefing` still opens it; open to colleges and the public since 2026-09-17, reading published
    copies with small student counts removed before publication, while the
    protected tables behind it keep their protection: one page, not 123 — pick a college and get where it stands
    against the goals, what its already-articulated-and-waiting credit actually

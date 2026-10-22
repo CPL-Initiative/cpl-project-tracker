@@ -642,3 +642,25 @@ Plus the **transfer-mobility callout** in Sam's framing.
   File** option would sidestep even that (handoff step 2).
 
 Side-lane: left `kb/cpl_todos.json` + the numbered handoff to the CCR mainline.
+
+## S448 SkyDeergrass (2026-10-22): clear, search, sort, a faster list, the header
+
+Sam's asks (2026-10-22): no way to clear the Pathway filter; the filters slow to load; are the pathways current;
+the header overlaps when resized or zoomed and the chip sits low; a search box after the college ("drone"); the
+list sorted alpha; then: a college picked after a search left the old matches on screen.
+
+- **Measure before answering "lazy load?"** In Chromium with 17,439 stub records at a 250 ms round trip, drawing the
+  full list cost ~0.26 s; the wait was the table read, 35 pages of 500 one after another (~10.4 s). `roepGetAll`
+  reads the first page alone, then six at a time: ~3.1 s. A short list still costs one request (#2353).
+- **The list is current by construction:** it reads the table live. 17,414 of 17,439 rows carried the latest display
+  build (be2635ed5b73); 25 at 13 colleges kept an older build's CPL marks.
+- **A cleared pathway is a state, not a fallback.** "No pathway chosen" is the list's first entry and Clear its control;
+  a college change keeps it cleared. The view under a cleared pathway is the search's matches or a prompt, so every
+  input that changes the list (the college, the words, Enter on the same words) must redraw that view: the first build
+  redrew it only on typing, which is the fault Sam found (#2356).
+- **Search matches words, not meanings:** "drone" finds 35 catalog records and Fullerton's baccalaureate; "unmanned"
+  finds four titles "drone" does not.
+- **The header overlap was a width the search box kept for itself.** Its wrapper sized to the input's default width,
+  painting over Sign in and Theme at 1,024 to 1,180 px (or 125% zoom); the chip sat 6 px low on a `vertical-align`
+  nudge. `cobi_brand.js`: the box follows its slot, its own row below 1,180 px, one column below 760 px, the chip
+  centered by flex (#2353).
