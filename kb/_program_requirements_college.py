@@ -562,8 +562,11 @@ def choose_page(program: dict, pages: list[dict]) -> dict | None:
 SECTION_AWARD = {
     "adt": re.compile(r"associate (?:in|of) (?:arts|science)(?: degree)? for transfer|"
                       r"\ba\.?\s?[as]\.?\s?-\s?t\b", re.I),
-    "as": re.compile(r"associate (?:in|of) science(?! (?:degree )?for transfer)|\ba\.\s?s\.(?!\s?-\s?t)", re.I),
-    "aa": re.compile(r"associate (?:in|of) arts(?! (?:degree )?for transfer)|\ba\.\s?a\.(?!\s?-\s?t)", re.I),
+    # Sierra heads a degree "AS Degree" or "AA Degree", no periods (page read 39704788066, S444).
+    "as": re.compile(r"associate (?:in|of) science(?! (?:degree )?for transfer)|\ba\.\s?s\.(?!\s?-\s?t)|"
+                     r"^as degree$", re.I),
+    "aa": re.compile(r"associate (?:in|of) arts(?! (?:degree )?for transfer)|\ba\.\s?a\.(?!\s?-\s?t)|"
+                     r"^aa degree$", re.I),
     "coa": re.compile(r"certificate of achievement", re.I),
 }
 SECTION_LINE = 140     # characters: a heading, not a paragraph that mentions the award
@@ -581,18 +584,28 @@ SEGMENT = re.compile(r"\n| \u00b7 ")   # a line, or the " · " a page read joins
 
 def section_award(text: str, program: dict, title_share: float = 0.0) -> str | None:
     """The program's award kind when the page heads a section for it, else None: one short
-    line naming that award and every word of the program's title, or, for an A.A. or A.S. on
-    a page whose label names the title in full, the generic degree heading beside an award
-    line naming that award."""
+    line, or two adjacent short lines, naming that award and every word of the program's
+    title, or, for an A.A. or A.S. on a page whose label names the title in full, the generic
+    degree heading beside an award line naming that award. Two lines: Sierra heads a section
+    "Information Technology - Cloud Computing" then "AS Degree", MiraCosta "Certificate of
+    Achievement" then "Landscape Architecture" (page read 39704788066, S444)."""
     kind = P.award_kind(program.get("award"))
     pat = SECTION_AWARD.get(kind)
     tokens = P.title_tokens(program.get("title") or "")
     if not pat or not tokens:
         return None
     lines = [ln.strip() for ln in SEGMENT.split(text or "")]
-    for ln in (x.lower() for x in lines):
-        if not ln or len(ln) > SECTION_LINE or not pat.search(ln):
+    short = [x.lower() if x and len(x) <= SECTION_LINE else "" for x in lines]
+    heads = []
+    for i, ln in enumerate(short):
+        if not ln:
             continue
+        nxt = next((x for x in short[i + 1:i + 2] if x), "")
+        if pat.search(ln):
+            heads.append(ln)
+        if nxt and (pat.search(ln) or pat.search(nxt)):
+            heads.append(ln + " " + nxt)
+    for ln in heads:
         if kind in ("aa", "as") and (SECTION_AWARD["adt"].search(ln) or "transfer" in ln):
             continue   # "Associate in Arts in Anthropology for Transfer" is the A.A.-T's section
         if all(re.search(r"\b" + re.escape(w) + r"\b", ln) for w in tokens):

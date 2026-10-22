@@ -275,6 +275,25 @@ check(C.section_award(FH, {"award": "A.A. Degree", "title": "Accounting"}) == "a
       C.section_award(FH, {"award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
                            "title": "Accounting"}) == "coa",
       "a section heading names the award and the title together, on one line")
+# Two adjacent lines head a section (page read 39704788066, S444): Sierra prints the title
+# then "AS Degree"; MiraCosta "Certificate of Achievement" then the title.
+SIERRA_IT = ("Certificates of Achievement\n• Information Technology—Cloud Computing (https://catalog.sierracollege.edu/"
+             "departments/infotech/#cloudcoa)\nSkills Certificates\nInformation Technology - Cloud Computing\nAS Degree\n"
+             + "Successful completion of the curriculum in Cloud Computing prepares students to advance their careers. " * 2)
+check(C.section_award(SIERRA_IT, {"award": "A.S. Degree", "title": "Information Technology - Cloud Computing"}) == "as",
+      "Sierra's title line then 'AS Degree' heads the A.S. section")
+check(C.section_award(SIERRA_IT, {"award": "A.S. Degree", "title": "Information Technology - Cybersecurity"}) is None,
+      "another program's title does not borrow that heading")
+MC_HORT = ("Total Units 26-28 · Certificate of Achievement · Nursery/Horticulture Crop Production · Course Requirements · "
+           "Total Units 25 · Certificate of Achievement · Pest Control Adviser")
+coa = "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+check(C.section_award(MC_HORT, {"award": coa, "title": "Pest Control Adviser"}) == "coa"
+      and C.section_award(MC_HORT, {"award": coa, "title": "Nursery/Horticulture Crop Production"}) == "coa",
+      "MiraCosta's 'Certificate of Achievement' then the title heads each certificate")
+check(C.section_award(MC_HORT, {"award": "A.S. Degree", "title": "Pest Control Adviser"}) is None,
+      "a certificate's heading is never an A.S. section")
+check(C.section_award("Psychology courses meet requirements as degree electives", {"award": "A.S. Degree", "title": "Psychology"}) is None,
+      "'as degree' inside a sentence is not Sierra's award line")
 check(C.section_award("Associate in Arts in Anthropology for Transfer", {"award": "A.A. Degree", "title": "Anthropology"}) is None and
       C.section_award("Anthropology A.A.-T", {"award": "A.A. Degree", "title": "Anthropology"}) is None,
       "an A.A. does not read an A.A.-T section as its own")
