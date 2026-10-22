@@ -40,12 +40,39 @@
   "title": "Bookkeeping",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "ACCT104",
+   "ACCT145",
+   "ACCT146",
+   "ACCT147",
+   "ACCT148",
+   "ACCT149",
+   "ACCT158",
+   "ACCT201",
+   "ACCT202",
+   "BUS204",
+   "CSIT110",
+   "CSIT128"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/accounting/",
+   "title": "Accounting | MiraCosta College Catalog",
+   "h1": "Accounting",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "aa",
+    "section_line": "bookkeeping",
+    "section_fit": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "05120",
@@ -327,7 +354,7 @@
     "title": 0.5,
     "section": "aa",
     "section_line": "associate in arts degrees architectural design",
-    "section_fit": 0.667
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -387,7 +414,7 @@
     "title": 0.0,
     "section": "aa",
     "section_line": "associate in arts degrees entrepreneurship",
-    "section_fit": 0.5
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -596,7 +623,7 @@
     "title": 0.5,
     "section": "aa",
     "section_line": "associate in arts degrees hospitality management",
-    "section_fit": 0.667
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -632,7 +659,7 @@
     "title": 0.0,
     "section": "aa",
     "section_line": "associate in arts degrees graphic design",
-    "section_fit": 0.667
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -802,7 +829,7 @@
     "title": 0.0,
     "section": "aa",
     "section_line": "associate in arts degrees landscape architecture",
-    "section_fit": 0.667
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -825,12 +852,26 @@
   "title": "Child Development Teacher",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEV212"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
+   "title": "Child Development | MiraCosta College Catalog",
+   "h1": "Child Development",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.667,
+    "section": "aa",
+    "section_line": "child development teacher",
+    "section_fit": 1.0
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "15309",
@@ -886,7 +927,7 @@
     "title": 0.5,
     "section": "aa",
     "section_line": "associate in arts degrees child development associate teacher",
-    "section_fit": 0.8
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2581,9 +2622,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "adt",
+    "section_line": "associate in arts degree sociology for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 19,
@@ -2654,44 +2695,25 @@
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
-  "listed": 21,
-  "text_chars": 0
- },
- {
-  "control_number": "31937",
-  "title": "Psychology",
-  "award": "A.A- T Degree",
-  "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
-  "listed": 18,
-  "text_chars": 0
- },
- {
-  "control_number": "32467",
-  "title": "Theatre Arts",
-  "award": "A.A- T Degree",
-  "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 0.762,
   "codes_found": [
-   "DRAM107",
-   "DRAM123",
-   "DRAM130",
-   "DRAM141",
-   "DRAM146",
-   "DRAM201",
-   "DRAM204",
-   "DRAM210",
-   "DRAM231",
-   "DRAM253",
-   "DRAM256"
+   "ART100",
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART203",
+   "ART204",
+   "ART207",
+   "ART210",
+   "ART216",
+   "ART223",
+   "ART225",
+   "ART232",
+   "ART234",
+   "ART244",
+   "ART245",
+   "ART251"
   ],
   "source": {
    "url": "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/",
@@ -2706,8 +2728,88 @@
     "section_fit": 0.0
    }
   },
+  "listed": 21,
+  "text_chars": 5177
+ },
+ {
+  "control_number": "31937",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO110",
+   "BIO111",
+   "CDEVC1000",
+   "PSYC100",
+   "PSYC103",
+   "PSYC104",
+   "PSYC104H",
+   "PSYC114",
+   "PSYC115",
+   "PSYC125",
+   "PSYC145",
+   "PSYC170",
+   "PSYC205",
+   "PSYC260",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI103",
+   "SOCI145"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/psychology/",
+   "title": "Psychology | MiraCosta College Catalog",
+   "h1": "Psychology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "associate in arts degree psychology for transfer",
+    "section_fit": 0.5
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32467",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM105",
+   "DRAM107",
+   "DRAM123",
+   "DRAM130",
+   "DRAM141",
+   "DRAM146",
+   "DRAM201",
+   "DRAM204",
+   "DRAM210",
+   "DRAM231",
+   "DRAM253",
+   "DRAM256"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/dramaticarts/",
+   "title": "Dramatic Arts | MiraCosta College Catalog",
+   "h1": "Dramatic Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "adt",
+    "section_line": "associate in arts degree theatre arts for transfer",
+    "section_fit": 0.667
+   }
+  },
   "listed": 12,
-  "text_chars": 4890
+  "text_chars": 16000
  },
  {
   "control_number": "33310",
@@ -2847,12 +2949,32 @@
   "title": "Early Childhood Education for Transfer",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEV105",
+   "CDEV106",
+   "CDEV200",
+   "CDEV205",
+   "CDEV210",
+   "CDEV270",
+   "CDEVC1000"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
+   "title": "Child Development | MiraCosta College Catalog",
+   "h1": "Child Development",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "adt",
+    "section_line": "associate in science degree early childhood education for transfer",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "35650",
@@ -3006,7 +3128,7 @@
     "title": 0.0,
     "section": "as",
     "section_line": "associate in science degrees pest control adviser",
-    "section_fit": 0.75
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -3291,9 +3413,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "adt",
+    "section_line": "associate in arts degree spanish for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 18,
@@ -3345,36 +3467,126 @@
   "title": "Tech Support",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS136",
+   "BUS290",
+   "CS101",
+   "CS111",
+   "CSIT110",
+   "CSIT137",
+   "CSIT146",
+   "CSIT149",
+   "CSIT150",
+   "CSIT151",
+   "CSIT152",
+   "CSIT155",
+   "CSIT180",
+   "CSIT181",
+   "CSIT182",
+   "CSIT191",
+   "CSIT195",
+   "CSIT286"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "title": "Computer Studies & Information Technology | MiraCosta College Catalog",
+   "h1": "Computer Studies & Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as",
+    "section_line": "tech support",
+    "section_fit": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "36145",
   "title": "Internet and E-Commerce",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS130",
+   "BUS132",
+   "BUS133",
+   "CS101",
+   "CSIT120",
+   "CSIT123",
+   "CSIT150",
+   "CSIT151",
+   "CSIT152",
+   "CSIT155",
+   "CSIT180",
+   "CSIT195",
+   "CSIT286",
+   "MAT125",
+   "MAT145",
+   "MAT165",
+   "MAT225"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "title": "Computer Studies & Information Technology | MiraCosta College Catalog",
+   "h1": "Computer Studies & Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as",
+    "section_line": "internet and e-commerce",
+    "section_fit": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "36146",
   "title": "Management Information Systems (MIS)",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201",
+   "ACCT202",
+   "BUS140",
+   "CS101",
+   "CSIT150",
+   "CSIT151",
+   "CSIT152",
+   "CSIT160",
+   "CSIT165",
+   "CSIT180",
+   "CSIT181",
+   "CSIT191",
+   "CSIT195",
+   "CSIT286",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "title": "Computer Studies & Information Technology | MiraCosta College Catalog",
+   "h1": "Computer Studies & Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.25,
+    "section": "as",
+    "section_line": "management information systems (mis)",
+    "section_fit": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "36147",
@@ -3478,9 +3690,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "adt",
+    "section_line": "associate in science degree nutrition and dietetics for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 16,
@@ -3533,12 +3745,45 @@
   "title": "Executive Administrative Professional",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.952,
+  "codes_found": [
+   "BUS133",
+   "BUS136",
+   "BUS290",
+   "CSIT101",
+   "CSIT110",
+   "CSIT120",
+   "CSIT125",
+   "CSIT128",
+   "CSIT131",
+   "CSIT134",
+   "CSIT137",
+   "CSIT149",
+   "CSIT150",
+   "CSIT151",
+   "CSIT152",
+   "CSIT195",
+   "CSIT286",
+   "CSIT292",
+   "CSIT299",
+   "MAT110"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "title": "Computer Studies & Information Technology | MiraCosta College Catalog",
+   "h1": "Computer Studies & Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as",
+    "section_line": "executive administrative professional",
+    "section_fit": 1.0
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "36160",
@@ -3619,24 +3864,69 @@
   "title": "Cyber Security",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADM100",
+   "CSIT180",
+   "CSIT181",
+   "CSIT182",
+   "CSIT183",
+   "CSIT184",
+   "CSIT186",
+   "CSIT188",
+   "CSIT191",
+   "CSIT195",
+   "CSIT286"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "title": "Computer Studies & Information Technology | MiraCosta College Catalog",
+   "h1": "Computer Studies & Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as",
+    "section_line": "cybersecurity",
+    "section_fit": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "36169",
   "title": "Systems Administration",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIT180",
+   "CSIT181",
+   "CSIT182",
+   "CSIT183",
+   "CSIT184",
+   "CSIT191",
+   "CSIT195",
+   "CSIT286"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "title": "Computer Studies & Information Technology | MiraCosta College Catalog",
+   "h1": "Computer Studies & Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as",
+    "section_line": "systems administration",
+    "section_fit": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "36170",
@@ -3674,7 +3964,7 @@
     "title": 0.0,
     "section": "as",
     "section_line": "associate in science degrees engineering technology",
-    "section_fit": 0.667
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -3728,24 +4018,80 @@
   "title": "Cyber Security",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADM100",
+   "CSIT180",
+   "CSIT181",
+   "CSIT182",
+   "CSIT183",
+   "CSIT184",
+   "CSIT186",
+   "CSIT188",
+   "CSIT191",
+   "CSIT195",
+   "CSIT286"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "title": "Computer Studies & Information Technology | MiraCosta College Catalog",
+   "h1": "Computer Studies & Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement cybersecurity",
+    "section_fit": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "36253",
   "title": "Computer Applications",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIT101",
+   "CSIT110",
+   "CSIT125",
+   "CSIT128",
+   "CSIT131",
+   "CSIT134",
+   "CSIT137",
+   "CSIT149",
+   "CSIT150",
+   "CSIT151",
+   "CSIT152",
+   "CSIT155",
+   "CSIT195",
+   "CSIT286",
+   "CSIT292",
+   "CSIT299",
+   "MAT110",
+   "MAT170",
+   "MAT180"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "title": "Computer Studies & Information Technology | MiraCosta College Catalog",
+   "h1": "Computer Studies & Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "as",
+    "section_line": "computer applications",
+    "section_fit": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "36272",
@@ -3795,12 +4141,48 @@
   "title": "Information Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS101",
+   "CSIT101",
+   "CSIT110",
+   "CSIT120",
+   "CSIT123",
+   "CSIT125",
+   "CSIT128",
+   "CSIT131",
+   "CSIT134",
+   "CSIT137",
+   "CSIT146",
+   "CSIT149",
+   "CSIT150",
+   "CSIT151",
+   "CSIT152",
+   "CSIT155",
+   "CSIT160",
+   "CSIT165",
+   "CSIT180",
+   "CSIT181",
+   "CSIT191",
+   "CSIT195",
+   "CSIT286"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "title": "Computer Studies & Information Technology | MiraCosta College Catalog",
+   "h1": "Computer Studies & Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "information technology",
+    "section_fit": 1.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "36315",
@@ -3880,9 +4262,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "adt",
+    "section_line": "associate in arts degree english for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 13,
@@ -4111,9 +4493,9 @@
    "label": {
     "award": 0,
     "title": 0.25,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "adt",
+    "section_line": "associate in science degree film, television, and electronic media for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 13,
@@ -4147,9 +4529,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "adt",
+    "section_line": "associate in science degree biology for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -4223,9 +4605,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "adt",
+    "section_line": "associate in arts degree anthropology for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 20,
@@ -4266,12 +4648,40 @@
   "title": "Child and Adolescent Development",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BTEC180",
+   "BUS204",
+   "CDEV200",
+   "CDEV210",
+   "CDEVC1000",
+   "PSYC104",
+   "PSYC104H",
+   "PSYC205",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI125",
+   "SOCI205",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
+   "title": "Child Development | MiraCosta College Catalog",
+   "h1": "Child Development",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.667,
+    "section": "adt",
+    "section_line": "associate in arts degree child and adolescent development for transfer",
+    "section_fit": 0.75
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "38711",
@@ -4343,36 +4753,141 @@
   "title": "Art History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART100",
+   "ART101",
+   "ART103",
+   "ART203",
+   "ART216",
+   "ART225",
+   "ART245",
+   "ART259",
+   "ART270",
+   "ART271",
+   "ARTH158",
+   "ARTH159",
+   "ARTH260",
+   "ARTH260H",
+   "ARTHC1100"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/art/",
+   "title": "Art | MiraCosta College Catalog",
+   "h1": "Art",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "adt",
+    "section_line": "associate in arts degree art history for transfer",
+    "section_fit": 0.667
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "38729",
   "title": "Computer Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO204",
+   "CHEM150",
+   "CS111",
+   "CS113",
+   "CS220",
+   "CS226",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2210H",
+   "MATHC2220",
+   "PHYS151",
+   "PHYS152"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerscience/",
+   "title": "Computer Science | MiraCosta College Catalog",
+   "h1": "Computer Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "associate in science degree computer science for transfer",
+    "section_fit": 0.667
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "38730",
   "title": "Law, Public Policy, and Society",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADM100",
+   "ADM200",
+   "ADM270",
+   "ANTH102",
+   "BTEC180",
+   "BUS140",
+   "BUS204",
+   "COMM106",
+   "COMM212",
+   "COMM215",
+   "COMMC1000",
+   "COUN100",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ETHN207",
+   "GEOG102",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "PHIL102",
+   "PHIL110",
+   "POLS101",
+   "POLS101H",
+   "POLS103",
+   "POLS150",
+   "POLSC1000",
+   "PSYC104",
+   "PSYC104H",
+   "SOCI102",
+   "SOCI125",
+   "SOCI130",
+   "SOCI207",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/politicalscience/",
+   "title": "Political Science | MiraCosta College Catalog",
+   "h1": "Political Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "adt",
+    "section_line": "associate in arts degree law, public policy, and society for transfer",
+    "section_fit": 0.8
+   }
+  },
   "listed": 39,
-  "text_chars": 0
+  "text_chars": 13417
  },
  {
   "control_number": "38751",
@@ -4588,9 +5103,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "adt",
+    "section_line": "associate in arts degree social work and human services for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 26,
@@ -4689,9 +5204,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "adt",
+    "section_line": "associate in arts degree political science for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 21,
@@ -4764,12 +5279,37 @@
   "title": "Spanish",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "COMM215",
+   "HIST141",
+   "HIST142",
+   "HIST150",
+   "SPAN101",
+   "SPAN102",
+   "SPAN121",
+   "SPAN201",
+   "SPAN202",
+   "SPAN221",
+   "SPAN222"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/spanish/",
+   "title": "Spanish | MiraCosta College Catalog",
+   "h1": "Spanish",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement spanish",
+    "section_fit": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 13427
  },
  {
   "control_number": "40670",
@@ -4818,12 +5358,41 @@
   "title": "Hospitality Management",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201",
+   "BTEC180",
+   "BUS140",
+   "BUS204",
+   "ECONC2001",
+   "HOSP100",
+   "HOSP114",
+   "HOSP133",
+   "HOSP150",
+   "HOSP153",
+   "PSYC104",
+   "PSYC104H",
+   "SOCI125",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/hospitality/",
+   "title": "Hospitality | MiraCosta College Catalog",
+   "h1": "Hospitality",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "adt",
+    "section_line": "associate in science degree hospitality management for transfer",
+    "section_fit": 0.667
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 13691
  },
  {
   "control_number": "41611",
@@ -5073,12 +5642,44 @@
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201",
+   "ACCT202",
+   "BTEC180",
+   "BUS120",
+   "BUS140",
+   "BUS204",
+   "BUS290",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH115",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2210H",
+   "PSYC104",
+   "PSYC104H",
+   "SOCI125",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/businessadministration/",
+   "title": "Business Administration | MiraCosta College Catalog",
+   "h1": "Business Administration",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "associate in science degree business administration 2.0 for transfer",
+    "section_fit": 0.667
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "42105",
@@ -5179,24 +5780,73 @@
   "title": "Global Health",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ANTH120",
+   "ANTHC1001",
+   "ANTHC1001H",
+   "BTEC180",
+   "CSIT160",
+   "GEOG104",
+   "PSYC104",
+   "PSYC104H",
+   "PSYC260",
+   "SOCI125",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/anthropology/",
+   "title": "Anthropology | MiraCosta College Catalog",
+   "h1": "Anthropology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement global health",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 13161
  },
  {
   "control_number": "43719",
   "title": "Artificial Intelligence",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIT110",
+   "CSIT120",
+   "CSIT123",
+   "CSIT150",
+   "CSIT151",
+   "CSIT152",
+   "CSIT155",
+   "CSIT160",
+   "CSIT165",
+   "CSIT195"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "title": "Computer Studies & Information Technology | MiraCosta College Catalog",
+   "h1": "Computer Studies & Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as",
+    "section_line": "associate in science degrees artificial intelligence",
+    "section_fit": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "43720",
@@ -5264,9 +5914,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "adt",
+    "section_line": "associate in arts degree geography for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
@@ -5313,9 +5963,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "adt",
+    "section_line": "associate in science degree public health for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 24,

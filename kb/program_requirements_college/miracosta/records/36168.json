@@ -1,0 +1,262 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "36168",
+ "shape": "degree",
+ "title": "Cyber Security",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11934,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11934,
+    "output_tokens": 1540,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1540,
+  "output_tokens_details": {
+   "thinking_tokens": 518
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07854,
+ "ms": 18162,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CSIT120",
+    "CSIT292",
+    "CSIT299"
+   ],
+   "flagged": [
+    "CSIT120",
+    "CSIT292",
+    "CSIT299"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement Cybersecurity",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "MiraCosta College Associate in Science general education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completion of this program, the student will be able to demonstrate cybersecurity related skills and techniques required of a cybersecurity worker."
+   ],
+   "careers": [
+    "cybersecurity analyst",
+    "ethical hacker",
+    "forensics",
+    "cyber related law enforcement",
+    "cyber technical support specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADM 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIT 120",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIT 191",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 183",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 184",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 186",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 195",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIT 286",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CSIT 292",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "CSIT 299",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page states that each A.S. degree (including Cybersecurity) is earned by completing the respective certificate of achievement requirements plus MiraCosta's A.S. general education; the requirements, total (26 units), outcome and careers were read from the Certificate of Achievement Cybersecurity section, which the degree shares.",
+   "Program title in the state file is 'Cyber Security'; the catalog prints 'Cybersecurity'.",
+   "No degree total or GE unit figure is printed on the page.",
+   "Units for 'or' alternatives are not printed beside them in the catalog; recorded as null.",
+   "The catalog also mentions demand for 'cybersecurity professionals'; not recorded as a separate career."
+  ]
+ },
+ "extracted_run": "39746427354"
+}

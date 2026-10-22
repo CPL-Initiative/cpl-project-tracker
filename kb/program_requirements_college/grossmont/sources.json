@@ -16,7 +16,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biological sciences associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -69,7 +72,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "marketing associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -117,7 +123,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business office technology executive assistant associate in science and certificate of achievement",
+    "section_fit": 0.4
    }
   },
   "listed": 26,
@@ -216,7 +225,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 42,
@@ -261,7 +273,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "photography associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -290,7 +305,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "french associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -341,7 +359,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "spanish associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -383,7 +404,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -417,7 +441,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "respiratory therapy associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -459,7 +486,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "orthopedic technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -503,7 +533,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "english associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -541,7 +574,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "communication associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -579,7 +615,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "philosophy associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -611,7 +650,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "mathematics associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -641,7 +683,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "physics associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -674,7 +719,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "chemistry associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -723,7 +771,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "geology associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -734,24 +785,78 @@
   "title": "Law Enforcement",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOJ110",
+   "AOJ143",
+   "AOJ144",
+   "AOJ155",
+   "AOJ200",
+   "AOJ202",
+   "AOJ204",
+   "AOJ206",
+   "AOJ208",
+   "AOJ210",
+   "AOJ214",
+   "AOJ215",
+   "AOJ230",
+   "AOJ240",
+   "AOJ264"
+  ],
+  "source": {
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/law-enforcement-as-certificate-achievement/",
+   "title": "Law Enforcement Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "law enforcement associate in science and certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3662
  },
  {
   "control_number": "05030",
   "title": "Corrections",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "AOJ110",
+   "AOJ125",
+   "AOJ140",
+   "AOJ143",
+   "AOJ144",
+   "AOJ200",
+   "AOJ202",
+   "AOJ204",
+   "AOJ208",
+   "AOJ210",
+   "AOJ214",
+   "AOJ230",
+   "AOJ240"
+  ],
+  "source": {
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/corrections-as-certificate-achievement/",
+   "title": "Corrections Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "corrections associate in science and certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3449
  },
  {
   "control_number": "05036",
@@ -781,7 +886,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "economics associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -811,7 +919,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "geography associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -845,7 +956,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "political science associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -888,7 +1002,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "culinary arts associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -911,7 +1028,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -964,7 +1084,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "international business associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1019,7 +1142,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business office technology administrative assistant associate in science and certificate of achievement",
+    "section_fit": 0.4
    }
   },
   "listed": 33,
@@ -1047,7 +1173,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1085,7 +1214,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer programming associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1127,7 +1259,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -1179,7 +1314,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theatre arts technical training program associate in arts and certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 34,
@@ -1216,7 +1354,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "telemetry /​ ecg technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1252,7 +1393,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -1290,7 +1434,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development master teacher associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1325,12 +1472,39 @@
   "title": "Forensic Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOJ110",
+   "AOJ148",
+   "AOJ150",
+   "AOJ200",
+   "AOJ206",
+   "AOJ218",
+   "AOJ220",
+   "AOJ240",
+   "AOJ252",
+   "AOJ254",
+   "BIOLC1000",
+   "CHEM113",
+   "CHEM115",
+   "CHEM120"
+  ],
+  "source": {
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/forensic-technology-as-certificate-achievement/",
+   "title": "Forensic Technology Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "forensic technology associate in science and certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3627
  },
  {
   "control_number": "11831",
@@ -1376,7 +1550,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "occupational therapy assistant associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 28,
@@ -1387,12 +1564,33 @@
   "title": "Security Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOJ110",
+   "AOJ111",
+   "AOJ201",
+   "AOJ207",
+   "AOJ230",
+   "AOJ240",
+   "AOJ260",
+   "AOJ264"
+  ],
+  "source": {
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/security-management-as-certificate-achievement/",
+   "title": "Security Management Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "security management associate in science and certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3304
  },
  {
   "control_number": "12295",
@@ -1419,7 +1617,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "as",
+    "section_line": "retail management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1466,7 +1667,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "web design and development associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -1532,7 +1736,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "exercise science and wellness associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 44,
@@ -1583,7 +1790,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "culinary entrepreneurship associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -1624,7 +1834,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "pastry arts associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1659,12 +1872,26 @@
   "title": "Arabic",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARBC122"
+  ],
+  "source": {
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/arabic-aa-certificate-achievement/",
+   "title": "Arabic Associate in Arts and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "arabic associate in arts and certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 3099
  },
  {
   "control_number": "14600",
@@ -1735,7 +1962,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "oceanography associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -1957,7 +2187,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 164,
@@ -2052,7 +2285,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.4
+    "title": 0.4,
+    "section": "as",
+    "section_line": "general studies as -​ science and quantitative reasoning geology associate in science",
+    "section_fit": 0.833
    }
   },
   "listed": 82,
@@ -2187,7 +2423,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 119,
@@ -2341,7 +2580,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 135,
@@ -2387,7 +2629,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 40,
@@ -2723,7 +2968,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 392,
@@ -2868,7 +3116,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 117,
@@ -2903,7 +3154,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -2946,7 +3200,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "coa",
+    "section_line": "retail management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2975,7 +3232,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "international business associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3016,7 +3276,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "marketing associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -3070,7 +3333,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business office technology administrative assistant associate in science and certificate of achievement",
+    "section_fit": 0.4
    }
   },
   "listed": 32,
@@ -3105,7 +3371,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -3167,7 +3436,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer programming associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3202,7 +3474,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "web design and development associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3301,7 +3576,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 42,
@@ -3341,7 +3619,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "theatre arts technical training program associate in arts and certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 34,
@@ -3382,7 +3663,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "french associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3433,7 +3717,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "spanish associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -3468,7 +3755,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "arabic associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -3534,7 +3824,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "orthopedic technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3571,7 +3864,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development master teacher associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3625,7 +3921,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pastry arts associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -3651,7 +3950,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pastry cook certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -3674,7 +3976,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality and tourism management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -3718,7 +4023,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "english associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -3763,7 +4071,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "chemistry associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3810,7 +4121,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "corrections associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3840,7 +4154,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "security management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3876,7 +4193,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "forensic technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3913,7 +4233,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "law enforcement associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3947,7 +4270,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -3980,7 +4306,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -4006,7 +4335,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "line cook certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4062,7 +4394,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 34,
@@ -4094,7 +4429,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics for transfer (as-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -4123,7 +4461,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology for transfer (as-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -4158,7 +4499,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -4186,7 +4530,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics for transfer (as-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -4215,7 +4562,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -4253,7 +4603,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 16,
@@ -4293,7 +4646,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "visual & performing arts› studio art for transfer (aa-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 18,
@@ -4323,7 +4679,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -4380,7 +4739,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 35,
@@ -4402,17 +4764,20 @@
    "PHOT252"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/photography-cert-achievement/",
-   "title": "Photography Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/photography-aa-cert-achievement/",
+   "title": "Photography Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography associate in arts photography certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3073
+  "text_chars": 2989
  },
  {
   "control_number": "33211",
@@ -4486,7 +4851,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 62,
@@ -4521,7 +4889,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 13,
@@ -4556,7 +4927,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 13,
@@ -4591,7 +4965,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 13,
@@ -4621,7 +4998,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education for transfer (as-t)",
+    "section_fit": 0.75
    }
   },
   "listed": 8,
@@ -4651,7 +5031,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information worker certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -4689,7 +5072,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 16,
@@ -4731,7 +5117,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 20,
@@ -4763,7 +5152,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology for transfer (as-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -4821,7 +5213,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 37,
@@ -4851,7 +5246,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science for transfer (as-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 8,
@@ -4888,7 +5286,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cybersecurity and networking associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -4925,7 +5326,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cybersecurity and networking associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -4997,7 +5401,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 50,
@@ -5029,7 +5436,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "data science certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -5057,7 +5467,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -5085,7 +5498,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -5121,7 +5537,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "global studies for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
@@ -5149,7 +5568,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "programmable logic controllers certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -5197,7 +5619,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business office technology executive assistant associate in science and certificate of achievement",
+    "section_fit": 0.4
    }
   },
   "listed": 26,
@@ -5229,7 +5654,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business› business administration for transfer 2.0 (as-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 12,
@@ -5271,7 +5699,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "latin american studies associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -5299,7 +5730,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "global trade operations, supply chain management certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -5338,7 +5772,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "culinary entrepreneurship associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -5393,7 +5830,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "culinary arts associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -5420,7 +5860,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "banquet cook certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5453,7 +5896,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "interfaith religious literacy certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5477,7 +5923,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5501,7 +5950,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5533,7 +5985,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies for transfer 2.0 (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -5563,7 +6018,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "jewelry design certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -5609,7 +6067,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "humanities associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -5645,7 +6106,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nutrition associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -5680,7 +6144,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "nutrition associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -5746,7 +6213,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "exercise science and wellness associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 53,
@@ -5786,7 +6256,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -5829,7 +6302,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biological sciences associate in science biological sciences: pre-​allied health associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -5863,7 +6339,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.833
+    "title": 0.833,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -5894,7 +6373,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -5925,7 +6407,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.857
+    "title": 0.857,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -5952,7 +6437,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.833
+    "title": 0.833,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -5986,7 +6474,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.833
+    "title": 0.833,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -6021,7 +6512,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.857
+    "title": 0.857,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -6058,7 +6552,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.889
+    "title": 0.889,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -6084,7 +6581,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "war on drugs certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -6117,7 +6617,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "chemistry associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -6147,7 +6650,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "killer robots, drugs, and mirror molecules: ethical decision-​making in a rapidly changing world certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -6172,7 +6678,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical office assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -6206,7 +6715,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "applied artificial intelligence associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -6240,7 +6752,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "applied artificial intelligence associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -6264,7 +6779,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -6288,7 +6806,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -6316,7 +6837,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "sculpture certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -6347,7 +6871,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics for transfer 2.0 (as-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -6380,7 +6907,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics for transfer 2.0 (as-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -6405,7 +6935,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "queer studies certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
