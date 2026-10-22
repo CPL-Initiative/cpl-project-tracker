@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-10-22T12:02:57Z",
- "count": 31,
+ "_generated_at": "2026-10-22T14:37:12Z",
+ "count": 18,
  "suggestions": {
   "ADJUS 23 Principles and Procedures of the Justice System": [
    {
@@ -23,36 +23,12 @@
     "scoped": true
    }
   ],
-  "ADM JUS 001 - Introduction to Administration of Justice": [
-   {
-    "kind": "cid",
-    "id": "AJ 110",
-    "title": "Introduction to Criminal Justice",
-    "code": "ADM JUS 1"
-   }
-  ],
-  "ADM JUS 002 - Concepts of Criminal Law": [
-   {
-    "kind": "cid",
-    "id": "AJ 120",
-    "title": "Concepts of Criminal Law",
-    "code": "ADM JUS 2"
-   }
-  ],
   "ADM JUS 004 - Principles and Procedures of the Justice System": [
    {
     "kind": "cid",
     "id": "AJ 122",
     "title": "Criminal Court Process",
     "code": "ADM JUS 4"
-   }
-  ],
-  "ADM JUS 008 - Juvenile Procedures": [
-   {
-    "kind": "cid",
-    "id": "AJ 220",
-    "title": "Juvenile Procedures",
-    "code": "ADM JUS 8"
    }
   ],
   "AGBUS 015: Computer Application to Agriculture": [
@@ -69,16 +45,6 @@
     "id": "AJ 122",
     "title": "Criminal Court Process",
     "code": "AJ 111"
-   }
-  ],
-  "ARC 201 - Architectural Design I": [
-   {
-    "kind": "course",
-    "title": "Architectural Design I",
-    "code": "ARC 201",
-    "share": 1.0,
-    "colleges": 4,
-    "scoped": true
    }
   ],
   "ARCH 101 Portfolio review": [
@@ -135,66 +101,6 @@
     "org": "Autodesk, Inc."
    }
   ],
-  "BIOSC 101 Theory and Practice of Microscopy": [
-   {
-    "kind": "course",
-    "title": "Theory and Practice of Microscopy",
-    "code": "BIOSC 101",
-    "share": 1.0,
-    "colleges": 2,
-    "scoped": true
-   }
-  ],
-  "BIOSC 102 Fluorescence Microscopy and Specimen Prep": [
-   {
-    "kind": "course",
-    "title": "Fluorescence Microscopy and Specimen Prep",
-    "code": "BIOSC 102",
-    "share": 1.0,
-    "colleges": 2,
-    "scoped": true
-   }
-  ],
-  "BIOSC 103 Confocal Microscopy and Research Design": [
-   {
-    "kind": "course",
-    "title": "Confocal Microscopy and Research Design",
-    "code": "BIOSC 103",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "BIOSC 104  Bioscience Practicum Research": [
-   {
-    "kind": "course",
-    "title": "Bioscience Practicum Research",
-    "code": "BIOSC 104",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "CIS 072 Systems and Network Administration Certification": [
-   {
-    "kind": "course",
-    "title": "Systems and Network Administration",
-    "code": "CIS 72",
-    "share": 1.0,
-    "colleges": 2,
-    "scoped": true
-   }
-  ],
-  "CIS 205 Computer Literacy": [
-   {
-    "kind": "course",
-    "title": "Computer Literacy",
-    "code": "CIS 205",
-    "share": 1.0,
-    "colleges": 5,
-    "scoped": true
-   }
-  ],
   "CISCYBR 1 Introduction to Systems & Network Cybersecurity (HSA)": [
    {
     "kind": "course",
@@ -225,16 +131,6 @@
     "scoped": true
    }
   ],
-  "ENV 102 - Foundations of Design II": [
-   {
-    "kind": "course",
-    "title": "Foundations of Design II",
-    "code": "ENV 102",
-    "share": 1.0,
-    "colleges": 2,
-    "scoped": true
-   }
-  ],
   "FIRE 33 -Fire Protection Organization and System": [
    {
     "kind": "course",
@@ -255,16 +151,6 @@
     "scoped": true
    }
   ],
-  "MATH 203 Intermediate Algebra": [
-   {
-    "kind": "course",
-    "title": "Intermediate Algebra",
-    "code": "MATH 203",
-    "share": 1.0,
-    "colleges": 5,
-    "scoped": true
-   }
-  ],
   "NUTR 071A  Rotations in Supervised Practice, Level A": [
    {
     "kind": "course",
@@ -281,16 +167,6 @@
     "id": "13375-A",
     "title": "Qualified Water Efficient Landscaper",
     "org": "Environmental Protection Agency"
-   }
-  ],
-  "RLEST 08  Property Management": [
-   {
-    "kind": "course",
-    "title": "PROPERTY MANAGEMENT",
-    "code": "RLEST 8",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
    }
   ]
  }

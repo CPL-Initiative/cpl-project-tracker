@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-22T12:04:22Z",
+ "written_at": "2026-10-22T14:39:01Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 12862,
+     "n": 12885,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements"
@@ -26,13 +26,13 @@
    ],
    "issues": [
     {
-     "n": 3957,
+     "n": 3954,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "open": "#program-requirements"
     },
     {
-     "n": 3463,
+     "n": 3443,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "open": "#program-requirements"
@@ -50,17 +50,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-22T09:54:20Z",
+    "at": "2026-10-22T13:05:28Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 12862,
-    "failing": 3957,
-    "unread": 3463,
-    "records": 18425,
+    "complete": 12885,
+    "failing": 3954,
+    "unread": 3443,
+    "records": 18446,
     "colleges": 114,
-    "outside_active": 1606
+    "outside_active": 1607
    },
    "sources": [
     "coci_programs_data.js",
@@ -82,9 +82,9 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 1737,
-     "of": 4923,
-     "words": "titles carry a review stamp (645 a person's, 1,092 a cohort's); 2,443 credentials, 1,829 of 2,648 records stamped",
+     "n": 1754,
+     "of": 4940,
+     "words": "titles carry a review stamp (645 a person's, 1,109 a cohort's); 2,455 credentials, 1,841 of 2,660 records stamped",
      "open": "#credential-reference/progress"
     }
    ],
@@ -94,9 +94,9 @@
    ],
    "issues": [
     {
-     "n": 413,
+     "n": 422,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 370, the classifier's title has a course code left in 23, the classifier's title has a dangling word 10, a merge would join two issuers 8, the classifier's title has a method word left in 2)",
+     "owner": "a curator (the classifier is unsure 377, the classifier's title has a course code left in 23, the classifier's title has a dangling word 11, a merge would join two issuers 9, the classifier's title has a method word left in 2)",
      "open": "#credential-reference/held",
      "error": null
     },
@@ -128,21 +128,21 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-22T12:00:19Z",
+    "at": "2026-10-22T14:34:32Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 4923,
-    "stamped": 1737,
+    "titles": 4940,
+    "stamped": 1754,
     "person": 645,
-    "cohort": 1092,
-    "credentials": 2443,
-    "records": 2648,
-    "records_stamped": 1829,
-    "saved_at": "2026-10-21T13:18:47Z",
-    "fold_at": "2026-10-22T12:00:19Z",
+    "cohort": 1109,
+    "credentials": 2455,
+    "records": 2660,
+    "records_stamped": 1841,
+    "saved_at": "2026-10-22T13:16:57Z",
+    "fold_at": "2026-10-22T14:34:32Z",
     "map_titles": 4757,
-    "unclassified": 439,
+    "unclassified": 422,
     "left_map": 605,
     "below_80": 1151,
     "below_60": 245
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-22T12:02:27+00:00",
+    "at": "2026-10-22T14:36:43+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-22T12:00:17Z",
+    "at": "2026-10-22T14:34:29Z",
     "every_hours": 24
    },
    "facts": {

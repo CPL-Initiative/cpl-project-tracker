@@ -56316,5 +56316,153 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
     "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "ADM JUS 001 - Introduction to Administration of Justice": {
+    "unified_title": "Introduction to Criminal Justice",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "AJ 110"
+    }
+  },
+  "ADM JUS 002 - Concepts of Criminal Law": {
+    "unified_title": "Concepts of Criminal Law",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "AJ 120"
+    }
+  },
+  "ADM JUS 008 - Juvenile Procedures": {
+    "unified_title": "Juvenile Procedures",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "AJ 220"
+    }
+  },
+  "ARC 201 - Architectural Design I": {
+    "unified_title": "Architectural Design I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "BIOSC 101 Theory and Practice of Microscopy": {
+    "unified_title": "Theory and Practice of Microscopy",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "BIOSC 102 Fluorescence Microscopy and Specimen Prep": {
+    "unified_title": "Fluorescence Microscopy and Specimen Prep",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "BIOSC 103 Confocal Microscopy and Research Design": {
+    "unified_title": "Confocal Microscopy and Research Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "BIOSC 104  Bioscience Practicum Research": {
+    "unified_title": "Bioscience Practicum Research",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "CIS 072 Systems and Network Administration Certification": {
+    "unified_title": "Systems and Network Administration",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "CIS 205 Computer Literacy": {
+    "unified_title": "Computer Literacy",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Class Piano I": {
+    "unified_title": "Class Piano I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "Class Piano II": {
+    "unified_title": "Class Piano II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "ENV 102 - Foundations of Design II": {
+    "unified_title": "Foundations of Design II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "ENV DES 101 - Foundations of Design I": {
+    "unified_title": "Foundations of Design I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "MATH 203 Intermediate Algebra": {
+    "unified_title": "Algebra Intermediate",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "RLEST 08  Property Management": {
+    "unified_title": "Property Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "University of California Master Gardener Certification": {
+    "unified_title": "University of California Master Gardener Certification",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }

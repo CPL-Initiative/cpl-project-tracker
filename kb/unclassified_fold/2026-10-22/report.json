@@ -1,12 +1,132 @@
 {
-  "_generated_at": "2026-10-22T12:00:19Z",
+  "_generated_at": "2026-10-22T14:34:32Z",
   "mode": "apply",
   "gates": {
     "V2_target_credential": true,
     "V3_additive_plus_declared": true
   },
   "apply_safe": true,
-  "clean": [],
+  "clean": [
+    {
+      "raw": "ADM JUS 001 - Introduction to Administration of Justice",
+      "assigned": "Introduction to Criminal Justice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "ADM JUS 002 - Concepts of Criminal Law",
+      "assigned": "Concepts of Criminal Law",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "ADM JUS 008 - Juvenile Procedures",
+      "assigned": "Juvenile Procedures",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "ARC 201 - Architectural Design I",
+      "assigned": "Architectural Design I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "BIOSC 101 Theory and Practice of Microscopy",
+      "assigned": "Theory and Practice of Microscopy",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "BIOSC 102 Fluorescence Microscopy and Specimen Prep",
+      "assigned": "Fluorescence Microscopy and Specimen Prep",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "BIOSC 103 Confocal Microscopy and Research Design",
+      "assigned": "Confocal Microscopy and Research Design",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "BIOSC 104  Bioscience Practicum Research",
+      "assigned": "Bioscience Practicum Research",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "CIS 072 Systems and Network Administration Certification",
+      "assigned": "Systems and Network Administration",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "CIS 205 Computer Literacy",
+      "assigned": "Computer Literacy",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "Class Piano I",
+      "assigned": "Class Piano I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "Class Piano II",
+      "assigned": "Class Piano II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "ENV 102 - Foundations of Design II",
+      "assigned": "Foundations of Design II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "ENV DES 101 - Foundations of Design I",
+      "assigned": "Foundations of Design I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "MATH 203 Intermediate Algebra",
+      "assigned": "Algebra Intermediate",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "RLEST 08  Property Management",
+      "assigned": "Property Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "University of California Master Gardener Certification",
+      "assigned": "University of California Master Gardener Certification",
+      "issuer": "University of California Agriculture and Natural Resources (UC ANR)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    }
+  ],
   "skip": [
     {
       "raw": "A S T 025 - Fundamentals of Auto Mechanics",
@@ -13928,7 +14048,92 @@
       "why": "human-reviewed classification stands: 'PLNT SC 827 - Sustainable Gardening for Landscapes' -> 'Sustainable Gardening for Landscapes (Horticulture)'"
     }
   ],
-  "credential_adds": [],
+  "credential_adds": [
+    {
+      "raw": "ARC 201 - Architectural Design I",
+      "assigned": "Architectural Design I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "BIOSC 101 Theory and Practice of Microscopy",
+      "assigned": "Theory and Practice of Microscopy",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "BIOSC 102 Fluorescence Microscopy and Specimen Prep",
+      "assigned": "Fluorescence Microscopy and Specimen Prep",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "BIOSC 103 Confocal Microscopy and Research Design",
+      "assigned": "Confocal Microscopy and Research Design",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "BIOSC 104  Bioscience Practicum Research",
+      "assigned": "Bioscience Practicum Research",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "CIS 205 Computer Literacy",
+      "assigned": "Computer Literacy",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "Class Piano II",
+      "assigned": "Class Piano II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "ENV 102 - Foundations of Design II",
+      "assigned": "Foundations of Design II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "ENV DES 101 - Foundations of Design I",
+      "assigned": "Foundations of Design I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "MATH 203 Intermediate Algebra",
+      "assigned": "Algebra Intermediate",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "RLEST 08  Property Management",
+      "assigned": "Property Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    },
+    {
+      "raw": "University of California Master Gardener Certification",
+      "assigned": "University of California Master Gardener Certification",
+      "issuer": "University of California Agriculture and Natural Resources (UC ANR)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-22T13:16:58.077091+00:00"
+    }
+  ],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [],
   "credential_prunes": [],
