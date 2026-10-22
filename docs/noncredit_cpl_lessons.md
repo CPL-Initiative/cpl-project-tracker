@@ -156,3 +156,7 @@ carries it.
   tracker's lanes and states that boundary in its own text.
 - Post-squash merge conflicts (twice) resolved by **rebuilding on current `main`**,
   never by force-resolving.
+
+## 2026-10-22 — the funding metric comes off the shelf
+
+Sam un-parked §11 of the thinking doc: with no reliable noncredit-origin flag coming, the noncredit share of each award keeps its FTES sizing and releases on outcomes a noncredit program controls. The measurement of his 5% rule, the proposed shape (conditions gate, two outcomes release: exhibits built or adopted, then students awarded credit through them) and his five calls are the funding lane's (`docs/cpl_funding_lessons.md` 2026-10-22; Open Asks Sheet 113). Two things are this lane's: the tagging convention that makes a noncredit-sourced exhibit countable (the exhibit's training agency names the noncredit program, as the 67 high-school, ROP and adult-school trainers already do), and the mirroring playbook, since the title-identical credit and noncredit pairs (1,212 CDCP statewide, median 4 per institution) are the cheapest exhibits a strike team can build.

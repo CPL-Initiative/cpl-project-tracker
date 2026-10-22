@@ -47,106 +47,7 @@ the two consolidations (Session 219) on **2026-09-30** (S306), and the 2026-09-0
 > budget and the checkpoint needed to append. Those phases are shipped and settled; read the archive only for the
 > reasoning behind a decision you are about to change.
 
-## 2026-09-14 — S262 (SkySave): the band wrapper retires, and a double claim surfaces
-
-**PR #1574.** Sam's asks arrived as a marked-up screenshot and four numbered lines, after
-S261 "went off the rails a little" by building past the brief. The corrective was to build
-the mockup FIRST and let him rule on it — which he did, five times, mid-turn.
-
-- **VERIFY AN ASK AGAINST THE SCREEN, NOT YOUR READING OF IT.** The red arrow ran from the
-  `(A) Access` band head into the top of the Priority 1 card. I read that as "put a picker
-  on the card" and moved the band's other content — the citation, the statute quote — off
-  to a totals row and a fold. His one-line correction ("The bands are included on the
-  priority cards and illustrated on the screenshot") was the whole design: the band goes
-  **on** the card, all four pieces. One mockup round cost minutes; building it would have
-  cost the session.
-- **A FIGURE TAGGED TO TWO OWNERS IS CLAIMED TWICE.** The project allocation was tagged to
-  (C) AND (D), and `goalFunding()` pushed its FULL amount into each — $17.9M of reporting
-  against an $8.96M allocation. Every row was correct in isolation and nothing ever summed
-  the goals, which is precisely why it survived. Found only because Sam asked for a
-  split — the feature request exposed the defect, not an audit.
-  → [`methodology-a-figure-tagged-to-two-owners-is-claimed-twice`](kb-notes/methodology-a-figure-tagged-to-two-owners-is-claimed-twice.md)
-- **A SUITE WRITTEN AGAINST A STRUCTURE IS PROTECTING AN INVARIANT.** `cpl_funding_statutory_bands.test.js`
-  was 26 assertions of `.cplfund-band`, and its header said what it was really for: no
-  priority may go missing, because an invisible priority still qualifies for funding
-  against a target nobody can see. Rewritten, not deleted. One inherited check had become
-  VACUOUS while still passing — "the account and the band agree" is trivially true once
-  there is one renderer — which is the harder failure to notice.
-  → [`methodology-retiring-a-structure-means-rewriting-its-guard`](kb-notes/methodology-retiring-a-structure-means-rewriting-its-guard.md)
-- **MEASURE A11Y AGAINST THE BASE, DON'T CLAIM IT.** Sam asked for AA and mobile "as you
-  build". The tab reported FAIL — but a worktree run of `main` reported the same findings
-  plus three more. Every finding was pre-existing; this PR removed three (the raised-letter
-  goal markers) and added none. A baseline turns "the sweep fails" into "the sweep fails
-  identically, minus three", which is a completely different report to give.
-- **THE DEPENDENCY MAP RECORDS LINE NUMBERS.** CI went red on `dependency map is STALE`
-  while all 331 files passed locally. Several hundred lines moved in `cpl_funding.js`. The
-  standing note says rebuild it as the genuinely LAST step, and it was right. The diff was
-  15 line numbers and nothing else — which doubles as proof the rework added no new data
-  dependency.
-- **`unlocked()` DECIDES WHERE A WRITE LANDS, NOT WHETHER A CONTROL RENDERS.** I added
-  `!unlocked()` gates to the Add-strategy button and the outcome picker, which would have
-  taken a control away from signed-out viewers who have it today. `edText`/`edNum` gate on
-  `publicMode()` alone. Caught by a crash in `cpl_funding_render`, not by review.
-- **A GUARD CATCHES THE PROSE YOU CANNOT SEE.** Two of my own rendered sentences broke
-  house rules — one opened with "No" (positive-first), and the totals row borrowed the
-  account's phrase for a goal's evidence state. Both were caught by `cpl_funding_calm`,
-  neither by re-reading. The second is the subtler: two different claims wearing one
-  phrase, which is how near-duplicates drift.
-- **THE LANE FILE FIGHTS BACK.** `oversized_doc` flagged it at 1.19x. Two rounds of
-  "compaction" REWROTE text at the same length and one actually grew the file. What worked
-  was deleting settled history outright and pointing at the KB notes instead of retelling
-  them. Ended at 1.09x while absorbing a run's worth of new state.
-
-## 2026-09-15 — S263 SkyOrder: a column-hide rule that reached into the drill-in, and two builds Sam stopped
-
-**Shipped:** #1577 (statewide expand, one detail renderer, true-ratio percent, printed names, parity guard) ·
-#1578 (the column-hide CSS leak) · #1580 (revert the target rate, correct a stale MEASURES comment).
-#1579 was built and reverted the same day.
-
-**⚠️ THE DEFECT THAT MATTERED FIRED ON THE SHIPPED DEFAULT.** `colHideStyleHtml()` emitted DESCENDANT
-combinators, so hiding the main table's District column (main col 3) also hid NC funding (detail col 3)
-inside the nested per-priority table. `COL_PREFS` defaults to `{district:true, working_adults:true}`, so
-this was never a setting anyone chose — **every reader** of COBI and the public explainer saw the
-noncredit cell vanish, later cells slide one column left under the wrong headers, and Total Possible
-render empty. Reported as "NC funding shows FTES" because the Target cell landed under that header.
-The `:not(.cplfund-detail)` looked like it covered this: it excludes the detail ROW, while the damage
-is to rows INSIDE it. Note: `methodology-a-guard-on-the-wrong-generation-of-descendant-is-not-a-guard`.
-
-**⚠️ AND NO DOM-READING TEST COULD HAVE CAUGHT IT.** The markup was always correct — every row emits all
-eight cells, and the parity guard written the day before passes on this exact defect because it counts
-`<td>`s. The corruption is at PAINT and jsdom does no layout. The guard asks the one question jsdom can
-answer: `Element.matches()` against the generated selector.
-
-**TWO BUILDS SAM STOPPED, both of which I had justified to myself first.**
-1. The per-priority target rate (#1579). He asked *"why do I need the Target factor when I can adjust
-   the FTES factor and get the same effect"* — and the maths is exact: `rate = k/factor` reproduces
-   every target because `prioEntitlement` is proportional to size share. One degree of freedom, two
-   parameterizations, and this repo already rules against a second dial over one number.
-2. A combined `pa_u + ppa_u` source to match the MAP dashboard's 84. **Awards is already pinned to
-   `ppa_u`**, so that would have counted portal-origin units twice — re-creating the double claim S262
-   fixed. Note: `methodology-before-building-a-whole-check-whether-the-halves-are-already-assigned`.
-
-His tell both times was the same sentence: *"This was not an issue in any of the previous dozens of
-funding sessions."* A problem appearing suddenly in a mature system, with no corresponding change, is
-usually a problem in the current reading. It was said twice before it landed.
-
-**⚠️ A STALE CAUSAL CLAIM I REPEATED AS JUSTIFICATION.** The `MEASURES` comment said eligible is
-"inflated upstream by the ACE/JST skill-level duplication". `roadmap_archive` records that exact claim
-being corrected — the gap is mostly correct applicability filtering, and a producer cross-check against
-MAP's own totals measured 1.0054. The correction never reached the file. Corrected in #1580.
-
-**THE VOCABULARY COLLISION, measured from Sam's spot-check.** MAP's dashboard labels its APPLIED column
-"Eligible": Alameda 84 = `pa_u` 78 + `ppa_u` 6, 14 students = `pa` 13 + 1 portal-origin; statewide 220k =
-220,020. Our `pe_u` is 1,407,508 / 529. Same word, 6.4x apart — and `live_metrics.json` already carries
-the scraped figure per college (115 colleges, fractional precision, Σ 220,370.65), rendered on College
-Activity as "Eligible Units". So COBI itself carried both readings.
-
-**Patterns that worked.** Reproducing the screenshot cell-for-cell before theorizing — it killed three
-wrong hypotheses (stale cache, truncated git history, a missing data field) and found the CSS. Mutating
-every new guard to prove it fails on the real defect. Baselining a11y against a `main` worktree before
-reporting. And treating the user's "this was never a problem" as evidence.
-
----
+*The S262 and S263 sections (2026-09-14 to 09-15) moved verbatim to the [archive](cpl_funding_lessons_archive.md) at the 2026-10-22 side session.*
 
 ## 2026-09-15 — S264 (SkyMantis): the counselor step becomes a measure, and the last dial gets a control
 
@@ -1077,3 +978,21 @@ renders it. Sam had S263's wiring (#1579) REVERTED (#1580): `rate = k/factor` re
 - **The film is built, not live.** `funding_in_motion_s2.html` and its MP4 carried Scenario 2's figures (Completion "with the MAP counselor step checked", 34.5 FTES) until `build.py s2` and `render.sh s2` ran (5 minutes in the cloud sandbox with `/opt/pw-browsers/chromium` and the system ffmpeg). Three tests pinned the old numbers; they now read the film's config or `figures.json`.
 - **A Supabase MCP write hangs on the English word for removing a table.** S438's three timed-out `cpl_memory` writes and S439's first two all carried it in prose; rephrased, they landed at once (`cpl_memory` `supabase-mcp-write-hangs-on-the-word-2026-10-20`).
 
+
+## 2026-10-22 — the side session beside S448: the noncredit share without LocID2
+
+**What Sam asked** (verbatim: `cpl_memory` `sam-noncredit-funding-outcomes-2026-10-22`; the vault braindump of the same hour). The team's feedback moved him off the `LocID2` plan: *"turns out we don't have a reliable way to do that...and won't for a while...so...the idea is to continue using the same funding based on their share of the FTES but ask them to achieve basic outcomes that aren't measured in FTES and set their current funding based on their outcomes."* Two outcomes of his (a noncredit CPL coordinator leading a strike team, attested, the coordinator on the landing page; exhibits for the program's mirrored courses, industry certifications, portfolios and noncredit credit, at least 5% of its noncredit courses), a third asked of us, and *"Is there any analysis you might be able to do on the second metric to see if it is feasible or appropriate? 5% is just my guestimate."*
+
+**What the model does today, which is what changes.**
+- `METRIC_SOURCES` pins the noncredit lane to the origination rungs (`nc_pe_u` / `nc_pa_u` / `nc_pt_u` / `nc_ca_u`), `ncPriorities()` re-points credit's two priorities at them by milestone, and `earnFraction()` answers `undelivered` (f = 0, never an advance, N2 b) while the daily pull carries no `LocID2`. So every noncredit share reads $0 released and the whole $3,786,046 held (Scenario 3, 15%, config 9c944a82 of 17:32Z).
+- The noncredit-only three carry a third condition in place of the veteran JSTs, *noncredit certificates posted as exhibits* (N1 a), scored by the builder's F1 feeder count.
+- The words that say origination: the explainer's *How noncredit funding is calculated* (`nc-body`), `nc_rules`, the FAQ, `mc_nc` on My CPL Funding, the NC-only chip and expand, the CSV header, the film's figures. The drill-in's noncredit table is in FTES columns (`prioDetailTableHtml`).
+- The builder emits `nc_*` only when `LocID2` is in the pull; the `pool.nc_threshold_ftes` dial (300) is stored and read by nothing since one-pool.
+
+**The measurement** (`funding/nc_outcome_feasibility/2026-10-22/`; the model under config 9c944a82 joined to `chatbox_college_courses` by COCI funding category, `coci_college_programs`, `chatbox_exhibits`): 111 of 118 institutions carry a noncredit share; 45 hold under $10,000 ($204,308 together), 10 hold over $100,000 ($1,979,638). COCI noncredit courses at the 111: 11,390 (median 75, p90 225, max 460 at Santa Barbara City); CDCP (enhanced funding: ESL, basic skills, short-term vocational, workforce preparation) 7,129 (median 39, max 310 at SD Cont. Ed); non-enhanced (parenting, older adults, home economics, health and safety, disabilities, immigrant education) 4,261, where a credit counterpart rarely exists. Title-identical credit and noncredit courses at the same college, CDCP: 1,212 (median 4, p90 31, max 80 at Long Beach; Saddleback's are ESL levels, Canyons' are fire officer courses, Monterey's the bakeshop series). Credential-like CDCP titles: 991 (median 5). MAP exhibits: 2,301 rows at the 111, median 1; 56 institutions hold none ($1,703,114 of noncredit share). Exhibits each rule requires per institution and statewide: 5% of all noncredit courses, median 4, p90 12, max 23, 623, 17 institutions above their own mirrored plus credential-like supply; 5% of CDCP, median 2, p90 9, max 16, 406, 6 above; 10% of CDCP, 759, 14 above; the greater of 2 and 5% of CDCP capped at 10, median 2, max 10, 428, 19 above (the floor at the smallest programs). Threshold 300 noncredit FTES: 42 institutions at or above hold $3,246,934 and need 235 exhibits under the capped rule, 37 have the supply in their own catalog, 16 hold no exhibit of any kind; 69 below hold $539,112, the largest $27,623. `map_coordinator_summary()` at 17:42Z: 55 of 124 rows with a coordinator, 49 with all three parts; NOCE has a primary contact and a landing page and no coordinator. Trainer tags: 67 of 2,446 unified titles name a high school, ROP or adult school; none names a college noncredit program.
+
+**The proposal (Open Asks Sheet 113, five cards).** The noncredit lane takes the credit lane's shape: conditions gate it (a noncredit CPL coordinator named and published; a strike-team attestation renewed each year, the Confirm flow's shape with the reviewer's Confirm and Reject), two outcomes split it 50/50 and release toward their targets as the credit priorities do, frontloaded, the remainder rolling forward: NC-1 exhibits built or adopted for the program's own learning (the greater of 2 and 5% of CDCP noncredit courses, capped at 10; adopted statewide exhibits count; the same target both years), NC-2 students awarded credit through those exhibits (one by the end of Year 1, ten in Year 2, ten being the smallest count the public page prints), measured from MAP's per-exhibit transcriptions, so no `LocID2`. Programs under 300 noncredit FTES ride the credit lane (the dormant dial). COBI takes the attestation now and publishes the coordinator beside the CPL coordinator; *Noncredit CPL Coordinator* joins the standing request to Pedro and the check cuts over to `map_coordinator_summary()` when MAP carries the role. Built as Scenario 4, a copy of 3, published when he says. The thinking doc's §11 ladder of 2026-08-05 (NC-1 standing articulations, NC-2 credit awarded through them, NC-3 landing-page requests) is the same order; this run read it before proposing.
+
+**Build notes for the session that gets the rulings.** (1) Two new sources in `METRIC_SOURCES`, `nc_exh` (count, lane nc) and `nc_exh_used` (students, masked under 10), emitted by `_build_funding_performance.py` from the daily exhibit pull where the exhibit's training agency names the noncredit program (the F1 resolver's convention, extended to in-college programs as *<College> Noncredit*), with the CDCP course count per college from the COCI sync as the denominator. (2) `ncPriorities()` takes its own `src`, `unit: "count"` and a `target_rule` per scenario instead of the milestone pairing; `prioTarget()` and `prioDetailTableHtml()` learn a count lane (Outcome · Target · Actual · Max Funds · Actual Funds · Difference). (3) The attestation: a `kind` on `cpl_funding_participation` or a sibling table, through the Governance map and the privacy ADRs first (Rule 10 a3; names publish as the CPL coordinator's does). (4) The words: `nc-body`, `nc_rules`, the FAQ, `mc_nc`, the NC-only chip and expand, the CSV, the film (`figures.json` re-filed). (5) Guards to extend: `cpl_funding_nc_portion`, `cpl_funding_outcome_cards`, `cpl_funding_statewide_expand`, `my_cpl_funding_words`, `funding_model_page.test.js`, `funding_origination_test.py`. (6) The open-asks series record in `cpl_library` still reads version 61, last edited by Sam; sheets 62 to 113 never updated it, and this run did not either.
+
+**What bit.** The MCP's result file is the tool text wrapped in JSON with a `result` key, and the block inside the untrusted tags is JSON-escaped: parse the wrapper, then the block. `scripts/funding_effective.js` needs `npm install` first in a fresh container (jsdom), and a script outside the repo must require the repo's `node_modules/jsdom` by path. The roster's short names join COCI's spellings by token subset with four overrides (West Hills Coalinga and Lemoore, LA Swest, Calbright).

@@ -1,0 +1,4272 @@
+{
+ "scenario": "Scenario 3",
+ "window": "2026–2028",
+ "pool": {
+  "net_college": 25240308,
+  "floor_window": 150000,
+  "cap_window": 400000,
+  "institutions": 118,
+  "at_floor": 52,
+  "at_cap": 7,
+  "unspent": 0,
+  "floor_infeasible": false,
+  "cap_below_floor": false,
+  "nc_college_shares": 3056605.262214815,
+  "nc_only_held_by_origination": 729440.9377851861,
+  "nc_portion_set": 15,
+  "nc_weight": 2.7236188223117908,
+  "nc_portion_natural": 0.07180591250442166,
+  "nc_portion_reached": 0.15000000000000002,
+  "nc_portion_unreachable": null
+ },
+ "rows": [
+  {
+   "college": "Alameda",
+   "nc_only": false,
+   "credit_ftes": 3111.6,
+   "noncredit_ftes": 43.38,
+   "district": "Peralta Community College District",
+   "award": 150000,
+   "cr_award": 144512.70703014324,
+   "nc_award": 5487.292969856758,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 2743.646484928379,
+     "target": 0.39355793731897654,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 2743.646484928379,
+     "target": 0.39355793731897654,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Berkeley City",
+   "nc_only": false,
+   "credit_ftes": 3833,
+   "noncredit_ftes": 62.17,
+   "district": "Peralta Community College District",
+   "award": 150000,
+   "cr_award": 143653.91560906888,
+   "nc_award": 6346.084390931138,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 3173.042195465569,
+     "target": 0.5640271314688975,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 3173.042195465569,
+     "target": 0.5640271314688975,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Chabot",
+   "nc_only": false,
+   "credit_ftes": 9957.77,
+   "noncredit_ftes": 277.68,
+   "district": "Chabot-Las Positas Community College District",
+   "award": 184397.59854126992,
+   "cr_award": 171381.16717356798,
+   "nc_award": 13016.431367701962,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 6508.215683850981,
+     "target": 2.5192062709712633,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 6508.215683850981,
+     "target": 2.5192062709712633,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Laney",
+   "nc_only": false,
+   "credit_ftes": 5604.23,
+   "noncredit_ftes": 110.62,
+   "district": "Peralta Community College District",
+   "award": 150000,
+   "cr_award": 142347.3238149454,
+   "nc_award": 7652.676185054586,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 3826.338092527293,
+     "target": 1.0035818124994282,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 3826.338092527293,
+     "target": 1.0035818124994282,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Las Positas",
+   "nc_only": false,
+   "credit_ftes": 6958.96,
+   "noncredit_ftes": 126.59,
+   "district": "Chabot-Las Positas Community College District",
+   "award": 150000,
+   "cr_award": 142919.05031871967,
+   "nc_award": 7080.949681280346,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 3540.474840640173,
+     "target": 1.148467019022804,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 3540.474840640173,
+     "target": 1.148467019022804,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Merritt",
+   "nc_only": false,
+   "credit_ftes": 3887.04,
+   "noncredit_ftes": 17.33,
+   "district": "Peralta Community College District",
+   "award": 150000,
+   "cr_award": 148200.4029842656,
+   "nc_award": 1799.5970157344032,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 899.7985078672016,
+     "target": 0.1572235835347594,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 899.7985078672016,
+     "target": 0.1572235835347594,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Ohlone",
+   "nc_only": false,
+   "credit_ftes": 7585,
+   "noncredit_ftes": 185.6,
+   "district": "Ohlone Community College District",
+   "award": 150000,
+   "cr_award": 140627.83341293005,
+   "nc_award": 9372.166587069945,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 4686.083293534973,
+     "target": 1.6838255686123114,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 4686.083293534973,
+     "target": 1.6838255686123114,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Butte",
+   "nc_only": false,
+   "credit_ftes": 10844.47,
+   "noncredit_ftes": 428.83,
+   "district": "Butte-Glenn Community College District",
+   "award": 206743.6680284107,
+   "cr_award": 186641.98168653648,
+   "nc_award": 20101.686341874218,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 10050.843170937109,
+     "target": 3.89048986308199,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 10050.843170937109,
+     "target": 3.89048986308199,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Contra Costa",
+   "nc_only": false,
+   "credit_ftes": 5369.82,
+   "noncredit_ftes": 173.71,
+   "district": "Contra Costa Community College District",
+   "award": 150000,
+   "cr_award": 137854.06388538482,
+   "nc_award": 12145.936114615175,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 6072.9680573075875,
+     "target": 1.575955493123085,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 6072.9680573075875,
+     "target": 1.575955493123085,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Diablo Valley",
+   "nc_only": false,
+   "credit_ftes": 14707.67,
+   "noncredit_ftes": 77.47,
+   "district": "Contra Costa Community College District",
+   "award": 256762.1930491491,
+   "cr_award": 253130.73619933682,
+   "nc_award": 3631.4568498122694,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 1815.7284249061347,
+     "target": 0.7028338728469596,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 1815.7284249061347,
+     "target": 0.7028338728469596,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Los Medanos",
+   "nc_only": false,
+   "credit_ftes": 7917.15,
+   "noncredit_ftes": 60.67,
+   "district": "Contra Costa Community College District",
+   "award": 150000,
+   "cr_award": 146933.29731672612,
+   "nc_award": 3066.7026832738584,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 1533.3513416369292,
+     "target": 0.5504186274122248,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 1533.3513416369292,
+     "target": 0.5504186274122248,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Lake Tahoe",
+   "nc_only": false,
+   "credit_ftes": 5513.51,
+   "noncredit_ftes": 92.21,
+   "district": "Lake Tahoe Community College District",
+   "award": 150000,
+   "cr_award": 143465.0496084919,
+   "nc_award": 6534.950391508089,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 3267.4751957540443,
+     "target": 0.8365601060438642,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 3267.4751957540443,
+     "target": 0.8365601060438642,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Clovis",
+   "nc_only": false,
+   "credit_ftes": 7590,
+   "noncredit_ftes": 34.53,
+   "district": "State Center Community College District",
+   "award": 150000,
+   "cr_award": 148164.12048211796,
+   "nc_award": 1835.879517882055,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 917.9397589410275,
+     "target": 0.3132677633846072,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 917.9397589410275,
+     "target": 0.3132677633846072,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Fresno City",
+   "nc_only": false,
+   "credit_ftes": 21916.87,
+   "noncredit_ftes": 370.58,
+   "district": "State Center Community College District",
+   "award": 394578.00008796056,
+   "cr_award": 377206.82054228574,
+   "nc_award": 17371.179545674848,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 8685.589772837424,
+     "target": 3.3620262888811965,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 8685.589772837424,
+     "target": 3.3620262888811965,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Reedley College",
+   "nc_only": false,
+   "credit_ftes": 7356.47,
+   "noncredit_ftes": 284.64,
+   "district": "State Center Community College District",
+   "award": 150000,
+   "cr_award": 135699.50552695326,
+   "nc_award": 14300.49447304675,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 7150.247236523375,
+     "target": 2.582349729794225,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 7150.247236523375,
+     "target": 2.582349729794225,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "West Hills Coalinga",
+   "nc_only": false,
+   "credit_ftes": 2242.89,
+   "noncredit_ftes": 84.72,
+   "district": "West Hills Community College District",
+   "award": 150000,
+   "cr_award": 136007.73833606526,
+   "nc_award": 13992.261663934727,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 6996.1308319673635,
+     "target": 0.7686083091208782,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 6996.1308319673635,
+     "target": 0.7686083091208782,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Redwoods",
+   "nc_only": false,
+   "credit_ftes": 4296.33,
+   "noncredit_ftes": 148.34,
+   "district": "Redwoods Community College District",
+   "award": 150000,
+   "cr_award": 137106.65767904374,
+   "nc_award": 12893.342320956273,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 6446.671160478137,
+     "target": 1.3457903278445595,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 6446.671160478137,
+     "target": 1.3457903278445595,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Imperial",
+   "nc_only": false,
+   "credit_ftes": 8158.61,
+   "noncredit_ftes": 132.49,
+   "district": "Imperial Community College District",
+   "award": 150000,
+   "cr_award": 143646.56629403346,
+   "nc_award": 6353.433705966517,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 3176.7168529832584,
+     "target": 1.2019938016457172,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 3176.7168529832584,
+     "target": 1.2019938016457172,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Bakersfield",
+   "nc_only": false,
+   "credit_ftes": 21292.84,
+   "noncredit_ftes": 315.39,
+   "district": "Kern Community College District",
+   "award": 381250.8785662908,
+   "cr_award": 366466.7663181652,
+   "nc_award": 14784.11224812562,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 7392.05612406281,
+     "target": 2.861324062956017,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 7392.05612406281,
+     "target": 2.861324062956017,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Cerro Coso",
+   "nc_only": false,
+   "credit_ftes": 3686.49,
+   "noncredit_ftes": 29.54,
+   "district": "Kern Community College District",
+   "award": 150000,
+   "cr_award": 146796.24927918977,
+   "nc_award": 3203.7507208102347,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 1601.8753604051174,
+     "target": 0.2679968065560758,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 1601.8753604051174,
+     "target": 0.2679968065560758,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Taft",
+   "nc_only": false,
+   "credit_ftes": 2434.52,
+   "noncredit_ftes": 0,
+   "district": "West Kern Community College District",
+   "award": 150000,
+   "cr_award": 150000,
+   "nc_award": 0,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "West Hills Lemoore",
+   "nc_only": false,
+   "credit_ftes": 3361.17,
+   "noncredit_ftes": 243.72,
+   "district": "West Hills Community College District",
+   "award": 150000,
+   "cr_award": 125261.91561152192,
+   "nc_award": 24738.08438847808,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 12369.04219423904,
+     "target": 2.211109739128192,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 12369.04219423904,
+     "target": 2.211109739128192,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Lassen",
+   "nc_only": false,
+   "credit_ftes": 1633.16,
+   "noncredit_ftes": 60.76,
+   "district": "Lassen Community College District",
+   "award": 150000,
+   "cr_award": 136199.03691642085,
+   "nc_award": 13800.96308357915,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 6900.481541789575,
+     "target": 0.5512351376556252,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 6900.481541789575,
+     "target": 0.5512351376556252,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Antelope Valley",
+   "nc_only": false,
+   "credit_ftes": 11698.64,
+   "noncredit_ftes": 115.67,
+   "district": "Antelope Valley Community College District",
+   "award": 206765.03574354755,
+   "cr_award": 201342.92894326634,
+   "nc_award": 5422.106800281208,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 2711.053400140604,
+     "target": 1.0493971094902264,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 2711.053400140604,
+     "target": 1.0493971094902264,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Canyons",
+   "nc_only": false,
+   "credit_ftes": 13528.6,
+   "noncredit_ftes": 2022.5,
+   "district": "Santa Clarita Community College District",
+   "award": 327644.0092026178,
+   "cr_award": 232838.00069938667,
+   "nc_award": 94806.00850323112,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 47403.00425161556,
+     "target": 18.348799636413787,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 47403.00425161556,
+     "target": 18.348799636413787,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Cerritos",
+   "nc_only": false,
+   "credit_ftes": 17753.91,
+   "noncredit_ftes": 640.59,
+   "district": "Cerritos Community College District",
+   "award": 335587.03189958585,
+   "cr_award": 305558.95724589744,
+   "nc_award": 30028.074653688418,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 15014.037326844209,
+     "target": 5.811647742442675,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 15014.037326844209,
+     "target": 5.811647742442675,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Citrus",
+   "nc_only": false,
+   "credit_ftes": 9532.72,
+   "noncredit_ftes": 225.61,
+   "district": "Citrus Community College District",
+   "award": 174641.33362695616,
+   "cr_award": 164065.71751896405,
+   "nc_award": 10575.616107992075,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 5287.808053996037,
+     "target": 2.0468097334839626,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 5287.808053996037,
+     "target": 2.0468097334839626,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Compton",
+   "nc_only": false,
+   "credit_ftes": 4197.13,
+   "noncredit_ftes": 47.36,
+   "district": "Compton Community College District",
+   "award": 150000,
+   "cr_award": 145527.49681320813,
+   "nc_award": 4472.503186791901,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 2236.2515933959503,
+     "target": 0.4296658347493483,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 2236.2515933959503,
+     "target": 0.4296658347493483,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "East LA",
+   "nc_only": false,
+   "credit_ftes": 19208.87,
+   "noncredit_ftes": 1215.14,
+   "district": "Los Angeles Community College District",
+   "award": 387560.46095626836,
+   "cr_award": 330599.9797831577,
+   "nc_award": 56960.48117311063,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 28480.240586555316,
+     "target": 11.024158412950234,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 28480.240586555316,
+     "target": 11.024158412950234,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "El Camino",
+   "nc_only": false,
+   "credit_ftes": 21095.9,
+   "noncredit_ftes": 76.42,
+   "district": "El Camino Community College District",
+   "award": 366659.50919039996,
+   "cr_award": 363077.271776399,
+   "nc_award": 3582.2374140009506,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 1791.1187070004753,
+     "target": 0.6933079200072889,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 1791.1187070004753,
+     "target": 0.6933079200072889,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Glendale",
+   "nc_only": false,
+   "credit_ftes": 10663.48,
+   "noncredit_ftes": 2911.05,
+   "district": "Glendale Community College District",
+   "award": 319984.36948444135,
+   "cr_award": 183526.99937154588,
+   "nc_award": 136457.3701128954,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 68228.6850564477,
+     "target": 26.410023822784847,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 68228.6850564477,
+     "target": 26.410023822784847,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "LA City",
+   "nc_only": false,
+   "credit_ftes": 9616.42,
+   "noncredit_ftes": 795.49,
+   "district": "Los Angeles Community College District",
+   "award": 202795.37463180046,
+   "cr_award": 165506.26130461364,
+   "nc_award": 37289.11332718681,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 18644.556663593405,
+     "target": 7.216952594695082,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 18644.556663593405,
+     "target": 7.216952594695082,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "LA Harbor",
+   "nc_only": false,
+   "credit_ftes": 6407.87,
+   "noncredit_ftes": 94.57,
+   "district": "Los Angeles Community College District",
+   "award": 150000,
+   "cr_award": 144203.55152135482,
+   "nc_award": 5796.448478645168,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 2898.224239322584,
+     "target": 0.8579708190930292,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 2898.224239322584,
+     "target": 0.8579708190930292,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "LA Mission",
+   "nc_only": false,
+   "credit_ftes": 6802.09,
+   "noncredit_ftes": 694.74,
+   "district": "Los Angeles Community College District",
+   "award": 150000,
+   "cr_award": 117354.34238896311,
+   "nc_award": 32645.657611036884,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 16322.828805518442,
+     "target": 6.302914738888561,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 16322.828805518442,
+     "target": 6.302914738888561,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "LA Pierce",
+   "nc_only": false,
+   "credit_ftes": 12229.9,
+   "noncredit_ftes": 612.3,
+   "district": "Los Angeles Community College District",
+   "award": 239188.29987060255,
+   "cr_award": 210486.33744463054,
+   "nc_award": 28701.96242597202,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 14350.98121298601,
+     "target": 5.554991355933826,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 14350.98121298601,
+     "target": 5.554991355933826,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "LA Swest",
+   "nc_only": false,
+   "credit_ftes": 3009.05,
+   "noncredit_ftes": 249.38,
+   "district": "Los Angeles Community College District",
+   "award": 150000,
+   "cr_award": 122376.61069562087,
+   "nc_award": 27623.389304379132,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 13811.694652189566,
+     "target": 2.262459161102037,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 13811.694652189566,
+     "target": 2.262459161102037,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "LA Trade",
+   "nc_only": false,
+   "credit_ftes": 10576.93,
+   "noncredit_ftes": 241.58,
+   "district": "Los Angeles Community College District",
+   "award": 193361.62510068866,
+   "cr_award": 182037.404811833,
+   "nc_award": 11324.22028885566,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 5662.11014442783,
+     "target": 2.1916949400073387,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 5662.11014442783,
+     "target": 2.1916949400073387,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "LA Valley",
+   "nc_only": false,
+   "credit_ftes": 10940.45,
+   "noncredit_ftes": 1000.69,
+   "district": "Los Angeles Community College District",
+   "award": 235201.8714249195,
+   "cr_award": 188293.87407060637,
+   "nc_award": 46907.99735431315,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 23453.998677156575,
+     "target": 9.078595949647918,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 23453.998677156575,
+     "target": 9.078595949647918,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Long Beach",
+   "nc_only": false,
+   "credit_ftes": 22535.85,
+   "noncredit_ftes": 518.14,
+   "district": "Long Beach Community College District",
+   "award": 400000,
+   "cr_award": 376427.74500986934,
+   "nc_award": 23572.25499013063,
+   "floored": false,
+   "capped": true,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 11786.127495065315,
+     "target": 4.562185357456765,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 11786.127495065315,
+     "target": 4.562185357456765,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Mt San Antonio",
+   "nc_only": false,
+   "credit_ftes": 26804.41,
+   "noncredit_ftes": 10829.3,
+   "district": "Mt. San Antonio Community College District",
+   "award": 400000,
+   "cr_award": 190442.24160345548,
+   "nc_award": 209557.75839654452,
+   "floored": false,
+   "capped": true,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 104778.87919827226,
+     "target": 40.55790747633007,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 104778.87919827226,
+     "target": 40.55790747633007,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Pasadena",
+   "nc_only": false,
+   "credit_ftes": 23347.4,
+   "noncredit_ftes": 1470.35,
+   "district": "Pasadena Area Community College District",
+   "award": 400000,
+   "cr_award": 341435.1819718178,
+   "nc_award": 58564.8180281822,
+   "floored": false,
+   "capped": true,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 29282.4090140911,
+     "target": 11.334662525166083,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 29282.4090140911,
+     "target": 11.334662525166083,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Rio Hondo",
+   "nc_only": false,
+   "credit_ftes": 11693.54,
+   "noncredit_ftes": 1568.27,
+   "district": "Rio Hondo Community College District",
+   "award": 274768.8344451444,
+   "cr_award": 201255.15387388988,
+   "nc_award": 73513.68057125453,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 36756.840285627266,
+     "target": 14.227872437972138,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 36756.840285627266,
+     "target": 14.227872437972138,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Santa Monica",
+   "nc_only": false,
+   "credit_ftes": 19453.51,
+   "noncredit_ftes": 877.74,
+   "district": "Santa Monica Community College District",
+   "award": 375955.0651846363,
+   "cr_award": 334810.42938556283,
+   "nc_award": 41144.63579907346,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 20572.31789953673,
+     "target": 7.9631522338026395,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 20572.31789953673,
+     "target": 7.9631522338026395,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "West LA",
+   "nc_only": false,
+   "credit_ftes": 6027.19,
+   "noncredit_ftes": 240.36,
+   "district": "Los Angeles Community College District",
+   "award": 150000,
+   "cr_award": 135303.8433395682,
+   "nc_award": 14696.156660431807,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 7348.078330215903,
+     "target": 2.180626690041245,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 7348.078330215903,
+     "target": 2.180626690041245,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Madera",
+   "nc_only": false,
+   "credit_ftes": 4234.67,
+   "noncredit_ftes": 46.54,
+   "district": "State Center Community College District",
+   "award": 150000,
+   "cr_award": 145640.51352011313,
+   "nc_award": 4359.486479886853,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 2179.7432399434265,
+     "target": 0.42222651919836723,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 2179.7432399434265,
+     "target": 0.42222651919836723,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Marin",
+   "nc_only": false,
+   "credit_ftes": 3374.55,
+   "noncredit_ftes": 366.48,
+   "district": "Marin Community College District",
+   "award": 150000,
+   "cr_award": 115759.66533783602,
+   "nc_award": 34240.33466216398,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 17120.16733108199,
+     "target": 3.324829711126292,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 17120.16733108199,
+     "target": 3.324829711126292,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Mendocino",
+   "nc_only": false,
+   "credit_ftes": 3729.36,
+   "noncredit_ftes": 145.91,
+   "district": "Mendocino-Lake Community College District",
+   "award": 150000,
+   "cr_award": 135555.1481530393,
+   "nc_award": 14444.851846960682,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 7222.425923480341,
+     "target": 1.3237445512727495,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 7222.425923480341,
+     "target": 1.3237445512727495,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Merced",
+   "nc_only": false,
+   "credit_ftes": 11311.3,
+   "noncredit_ftes": 508.8,
+   "district": "Merced Community College District",
+   "award": 218526.83080268156,
+   "cr_award": 194676.498478111,
+   "nc_award": 23850.33232457058,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 11925.16616228529,
+     "target": 4.616004576023403,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 11925.16616228529,
+     "target": 4.616004576023403,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Hartnell",
+   "nc_only": false,
+   "credit_ftes": 8301.22,
+   "noncredit_ftes": 109.44,
+   "district": "Hartnell Community College District",
+   "award": 150000,
+   "cr_award": 144800.6275168644,
+   "nc_award": 5199.372483135607,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 2599.6862415678033,
+     "target": 0.9928764559748454,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 2599.6862415678033,
+     "target": 0.9928764559748454,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Monterey",
+   "nc_only": false,
+   "credit_ftes": 5681.07,
+   "noncredit_ftes": 178.69,
+   "district": "Monterey Peninsula Community College District",
+   "award": 150000,
+   "cr_award": 138163.839925363,
+   "nc_award": 11836.160074637004,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 5918.080037318502,
+     "target": 1.6211357265912385,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 5918.080037318502,
+     "target": 1.6211357265912385,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Napa",
+   "nc_only": false,
+   "credit_ftes": 3722.51,
+   "noncredit_ftes": 29.33,
+   "district": "Napa Valley Community College District",
+   "award": 150000,
+   "cr_award": 146848.6795876703,
+   "nc_award": 3151.3204123296996,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 1575.6602061648498,
+     "target": 0.26609161598814157,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 1575.6602061648498,
+     "target": 0.26609161598814157,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Coastline",
+   "nc_only": false,
+   "credit_ftes": 5342.65,
+   "noncredit_ftes": 325.38,
+   "district": "Coast Community College District",
+   "award": 150000,
+   "cr_award": 128658.7528781652,
+   "nc_award": 21341.247121834796,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 10670.623560917398,
+     "target": 2.9519566999734574,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 10670.623560917398,
+     "target": 2.9519566999734574,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Cypress",
+   "nc_only": false,
+   "credit_ftes": 12850.71,
+   "noncredit_ftes": 41.62,
+   "district": "North Orange County Community College District",
+   "award": 223121.93758371295,
+   "cr_award": 221170.97289945857,
+   "nc_award": 1950.964684254378,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 975.482342127189,
+     "target": 0.3775906258924805,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 975.482342127189,
+     "target": 0.3775906258924805,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Fullerton",
+   "nc_only": false,
+   "credit_ftes": 15875.04,
+   "noncredit_ftes": 0,
+   "district": "North Orange County Community College District",
+   "award": 273222.10536365863,
+   "cr_award": 273222.10536365863,
+   "nc_award": 0,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Golden West",
+   "nc_only": false,
+   "credit_ftes": 8832.52,
+   "noncredit_ftes": 242.16,
+   "district": "Coast Community College District",
+   "award": 163366.12498519337,
+   "cr_award": 152014.7168175086,
+   "nc_award": 11351.408167684769,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 5675.7040838423845,
+     "target": 2.196956894909252,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 5675.7040838423845,
+     "target": 2.196956894909252,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Irvine",
+   "nc_only": false,
+   "credit_ftes": 9722.81,
+   "noncredit_ftes": 1485.05,
+   "district": "South Orange County Community College District",
+   "award": 236950.00681080788,
+   "cr_award": 167337.31809499903,
+   "nc_award": 69612.68871580884,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 34806.34435790442,
+     "target": 13.472872632907935,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 34806.34435790442,
+     "target": 13.472872632907935,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Orange Coast",
+   "nc_only": false,
+   "credit_ftes": 13996.65,
+   "noncredit_ftes": 256.49,
+   "district": "Coast Community College District",
+   "award": 252916.65094179622,
+   "cr_award": 240893.51466441984,
+   "nc_award": 12023.136277376392,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 6011.568138688196,
+     "target": 2.326963470330666,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 6011.568138688196,
+     "target": 2.326963470330666,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Saddleback",
+   "nc_only": false,
+   "credit_ftes": 14515.6,
+   "noncredit_ftes": 4686.07,
+   "district": "South Orange County Community College District",
+   "award": 400000,
+   "cr_award": 212849.09890848666,
+   "nc_award": 187150.90109151334,
+   "floored": false,
+   "capped": true,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 93575.45054575667,
+     "target": 36.22127373694296,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 93575.45054575667,
+     "target": 36.22127373694296,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Santa Ana",
+   "nc_only": false,
+   "credit_ftes": 16043.58,
+   "noncredit_ftes": 7817.68,
+   "district": "Rancho Santiago Community College District",
+   "award": 400000,
+   "cr_award": 171883.4049570076,
+   "nc_award": 228116.59504299238,
+   "floored": false,
+   "capped": true,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 114058.29752149619,
+     "target": 44.149793481097376,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 114058.29752149619,
+     "target": 44.149793481097376,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Santiago Canyon",
+   "nc_only": false,
+   "credit_ftes": 7047.05,
+   "noncredit_ftes": 3577.32,
+   "district": "Rancho Santiago Community College District",
+   "award": 288974.56500028307,
+   "cr_award": 121285.35346071381,
+   "nc_award": 167689.21153956925,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 83844.60576978463,
+     "target": 32.45464915467777,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 83844.60576978463,
+     "target": 32.45464915467777,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Sierra",
+   "nc_only": false,
+   "credit_ftes": 14544.06,
+   "noncredit_ftes": 294.98,
+   "district": "Sierra Joint Community College District",
+   "award": 264142.25771940284,
+   "cr_award": 250314.87755214298,
+   "nc_award": 13827.380167259884,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 6913.690083629942,
+     "target": 2.6761576844248895,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 6913.690083629942,
+     "target": 2.6761576844248895,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Feather River",
+   "nc_only": false,
+   "credit_ftes": 1879.21,
+   "noncredit_ftes": 48.58,
+   "district": "Feather River Community College District",
+   "award": 150000,
+   "cr_award": 140133.3435471716,
+   "nc_award": 9866.65645282842,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 4933.32822641421,
+     "target": 0.44073408471544223,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 4933.32822641421,
+     "target": 0.44073408471544223,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Desert",
+   "nc_only": false,
+   "credit_ftes": 8658.49,
+   "noncredit_ftes": 907.26,
+   "district": "Desert Community College District",
+   "award": 191547.92673618888,
+   "cr_award": 149019.52165602005,
+   "nc_award": 42528.405080168835,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 21264.202540084418,
+     "target": 8.23096759363796,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 21264.202540084418,
+     "target": 8.23096759363796,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Moreno Valley",
+   "nc_only": false,
+   "credit_ftes": 9743.03,
+   "noncredit_ftes": 62.84,
+   "district": "Riverside Community College District",
+   "award": 170630.98647305454,
+   "cr_award": 167685.32042887996,
+   "nc_award": 2945.666044174559,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 1472.8330220872795,
+     "target": 0.5701055966142116,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 1472.8330220872795,
+     "target": 0.5701055966142116,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Mt. San Jacinto",
+   "nc_only": false,
+   "credit_ftes": 13978.27,
+   "noncredit_ftes": 319.32,
+   "district": "Mt. San Jacinto Community College District",
+   "award": 255545.51376372555,
+   "cr_award": 240577.18019870616,
+   "nc_award": 14968.333565019413,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 7484.1667825097065,
+     "target": 2.8969783435844993,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 7484.1667825097065,
+     "target": 2.8969783435844993,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Norco College",
+   "nc_only": false,
+   "credit_ftes": 8008.4,
+   "noncredit_ftes": 100.91,
+   "district": "Riverside Community College District",
+   "award": 150000,
+   "cr_award": 145022.9554575575,
+   "nc_award": 4977.044542442517,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 2488.5222712212585,
+     "target": 0.9154894295725663,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 2488.5222712212585,
+     "target": 0.9154894295725663,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Palo Verde",
+   "nc_only": false,
+   "credit_ftes": 2260.65,
+   "noncredit_ftes": 18.8,
+   "district": "Palo Verde Community College District",
+   "award": 150000,
+   "cr_award": 146677.72923098566,
+   "nc_award": 3322.270769014371,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 1661.1353845071856,
+     "target": 0.17055991751029875,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 1661.1353845071856,
+     "target": 0.17055991751029875,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Riverside",
+   "nc_only": false,
+   "credit_ftes": 18650.89,
+   "noncredit_ftes": 208.81,
+   "district": "Riverside Community College District",
+   "award": 330784.80389646324,
+   "cr_award": 320996.69876145234,
+   "nc_award": 9788.10513501097,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 4894.052567505485,
+     "target": 1.8943944880492276,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 4894.052567505485,
+     "target": 1.8943944880492276,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "American River",
+   "nc_only": false,
+   "credit_ftes": 20752.09,
+   "noncredit_ftes": 0,
+   "district": "Los Rios Community College District",
+   "award": 357160.0273445689,
+   "cr_award": 357160.0273445689,
+   "nc_award": 0,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Cosumnes River",
+   "nc_only": false,
+   "credit_ftes": 11371.56,
+   "noncredit_ftes": 0,
+   "district": "Los Rios Community College District",
+   "award": 195713.62116058703,
+   "cr_award": 195713.62116058703,
+   "nc_award": 0,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Folsom Lake",
+   "nc_only": false,
+   "credit_ftes": 7841.07,
+   "noncredit_ftes": 3.7,
+   "district": "Los Rios Community College District",
+   "award": 150000,
+   "cr_award": 149807.46655598682,
+   "nc_award": 192.53344401318958,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 96.26672200659479,
+     "target": 0.03356764333979284,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 96.26672200659479,
+     "target": 0.03356764333979284,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Sacramento City",
+   "nc_only": false,
+   "credit_ftes": 14395.16,
+   "noncredit_ftes": 1.51,
+   "district": "Los Rios Community College District",
+   "award": 247822.97197856964,
+   "cr_award": 247752.18974230764,
+   "nc_award": 70.78223626199208,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 35.39111813099604,
+     "target": 0.013699227417050592,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 35.39111813099604,
+     "target": 0.013699227417050592,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Barstow",
+   "nc_only": false,
+   "credit_ftes": 3019.15,
+   "noncredit_ftes": 43.22,
+   "district": "Barstow Community College District",
+   "award": 150000,
+   "cr_award": 144371.06094145775,
+   "nc_award": 5628.939058542274,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 2814.469529271137,
+     "target": 0.3921063635529315,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 2814.469529271137,
+     "target": 0.3921063635529315,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Chaffey",
+   "nc_only": false,
+   "credit_ftes": 17951,
+   "noncredit_ftes": 229.53,
+   "district": "Chaffey Community College District",
+   "award": 319710.40207570547,
+   "cr_award": 308951.0334073511,
+   "nc_award": 10759.368668354335,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 5379.684334177167,
+     "target": 2.0823732907520673,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 5379.684334177167,
+     "target": 2.0823732907520673,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Copper Mountain",
+   "nc_only": false,
+   "credit_ftes": 1687.97,
+   "noncredit_ftes": 66.95,
+   "district": "Copper Mountain Community College District",
+   "award": 150000,
+   "cr_award": 135375.76648757112,
+   "nc_award": 14624.233512428886,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 7312.116756214443,
+     "target": 0.6073928977294948,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 7312.116756214443,
+     "target": 0.6073928977294948,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Crafton Hills",
+   "nc_only": false,
+   "credit_ftes": 5038.88,
+   "noncredit_ftes": 57.39,
+   "district": "San Bernardino Community College District",
+   "award": 150000,
+   "cr_award": 145486.92550749192,
+   "nc_award": 4513.074492508084,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 2256.537246254042,
+     "target": 0.5206613652083003,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 2256.537246254042,
+     "target": 0.5206613652083003,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "San Bernardino",
+   "nc_only": false,
+   "credit_ftes": 11992.67,
+   "noncredit_ftes": 274.36,
+   "district": "San Bernardino Community College District",
+   "award": 219264.224054022,
+   "cr_award": 206403.41985479012,
+   "nc_award": 12860.804199231887,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 6430.402099615943,
+     "target": 2.489086115325828,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 6430.402099615943,
+     "target": 2.489086115325828,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Victor Valley",
+   "nc_only": false,
+   "credit_ftes": 13946.87,
+   "noncredit_ftes": 621.33,
+   "district": "Victor Valley Community College District",
+   "award": 269162.010718063,
+   "cr_award": 240036.7611441136,
+   "nc_award": 29125.24957394937,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 14562.624786974686,
+     "target": 5.636914550354996,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 14562.624786974686,
+     "target": 5.636914550354996,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Cuyamaca",
+   "nc_only": false,
+   "credit_ftes": 4901.4,
+   "noncredit_ftes": 2.89,
+   "district": "Grossmont-Cuyamaca Community College District",
+   "award": 150000,
+   "cr_award": 149759.49816228778,
+   "nc_award": 240.50183771222507,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 120.25091885611253,
+     "target": 0.02621905114918954,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 120.25091885611253,
+     "target": 0.02621905114918954,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Grossmont",
+   "nc_only": false,
+   "credit_ftes": 9099.42,
+   "noncredit_ftes": 95.68,
+   "district": "Grossmont-Cuyamaca Community College District",
+   "award": 161093.34127528526,
+   "cr_award": 156608.27878154526,
+   "nc_award": 4485.0624937400025,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 2242.5312468700013,
+     "target": 0.8680411120949673,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 2242.5312468700013,
+     "target": 0.8680411120949673,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "MiraCosta",
+   "nc_only": false,
+   "credit_ftes": 9580.73,
+   "noncredit_ftes": 1046.76,
+   "district": "MiraCosta Community College District",
+   "award": 213959.56662205854,
+   "cr_award": 164892.0079269573,
+   "nc_award": 49067.558695101216,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 24533.779347550608,
+     "target": 9.496558470908528,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 24533.779347550608,
+     "target": 9.496558470908528,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Palomar",
+   "nc_only": false,
+   "credit_ftes": 15488.86,
+   "noncredit_ftes": 476.72,
+   "district": "Palomar Community College District",
+   "award": 288922.20079548884,
+   "cr_award": 266575.63942408696,
+   "nc_award": 22346.561371401902,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 11173.280685700951,
+     "target": 4.324964035931362,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 11173.280685700951,
+     "target": 4.324964035931362,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "San Diego City",
+   "nc_only": false,
+   "credit_ftes": 8921.87,
+   "noncredit_ftes": 0,
+   "district": "San Diego Community College District",
+   "award": 153552.501611389,
+   "cr_award": 153552.501611389,
+   "nc_award": 0,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "San Diego Mesa",
+   "nc_only": false,
+   "credit_ftes": 16729.3,
+   "noncredit_ftes": 0,
+   "district": "San Diego Community College District",
+   "award": 287924.6015922009,
+   "cr_award": 287924.6015922009,
+   "nc_award": 0,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "San Diego Miramar",
+   "nc_only": false,
+   "credit_ftes": 11276.51,
+   "noncredit_ftes": 0,
+   "district": "San Diego Community College District",
+   "award": 194077.73481857998,
+   "cr_award": 194077.73481857998,
+   "nc_award": 0,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 0,
+     "target": 0,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Southwestern",
+   "nc_only": false,
+   "credit_ftes": 16346.82,
+   "noncredit_ftes": 230.43,
+   "district": "Southwestern Community College District",
+   "award": 292143.37236111466,
+   "cr_award": 281341.81560492207,
+   "nc_award": 10801.556756192607,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 5400.778378096304,
+     "target": 2.0905383931860713,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 5400.778378096304,
+     "target": 2.0905383931860713,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "San Francisco",
+   "nc_only": false,
+   "credit_ftes": 12951.79,
+   "noncredit_ftes": 3896.56,
+   "district": "San Francisco Community College District",
+   "award": 400000,
+   "cr_award": 219852.25615768984,
+   "nc_award": 180147.74384231013,
+   "floored": false,
+   "capped": true,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 90073.87192115506,
+     "target": 34.86587937727484,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 90073.87192115506,
+     "target": 34.86587937727484,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "San Joaquin Delta",
+   "nc_only": false,
+   "credit_ftes": 17033.3,
+   "noncredit_ftes": 183.08,
+   "district": "San Joaquin Delta Community College District",
+   "award": 301738.6787383247,
+   "cr_award": 293156.6841589568,
+   "nc_award": 8581.99457936789,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 4290.997289683945,
+     "target": 1.660963281797101,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 4290.997289683945,
+     "target": 1.660963281797101,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Cuesta",
+   "nc_only": false,
+   "credit_ftes": 7616.77,
+   "noncredit_ftes": 510.61,
+   "district": "San Luis Obispo County Community College District",
+   "award": 155025.866506743,
+   "cr_award": 131090.68924996437,
+   "nc_award": 23935.17725677867,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 11967.588628389334,
+     "target": 4.63242550425179,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 11967.588628389334,
+     "target": 4.63242550425179,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Canada",
+   "nc_only": false,
+   "credit_ftes": 4631.23,
+   "noncredit_ftes": 1.43,
+   "district": "San Mateo County Community College District",
+   "award": 150000,
+   "cr_award": 149873.95889738557,
+   "nc_award": 126.04110261443358,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 63.02055130721679,
+     "target": 0.012973440534028042,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 63.02055130721679,
+     "target": 0.012973440534028042,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "San Mateo",
+   "nc_only": false,
+   "credit_ftes": 8117.66,
+   "noncredit_ftes": 0.26,
+   "district": "San Mateo County Community College District",
+   "award": 150000,
+   "cr_award": 149986.91595007436,
+   "nc_award": 13.084049925637556,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 6.542024962818778,
+     "target": 0.00235880736982328,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 6.542024962818778,
+     "target": 0.00235880736982328,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Skyline",
+   "nc_only": false,
+   "credit_ftes": 9029.24,
+   "noncredit_ftes": 1.04,
+   "district": "San Mateo County Community College District",
+   "award": 155449.17566301278,
+   "cr_award": 155400.424983733,
+   "nc_award": 48.75067927978263,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 24.375339639891315,
+     "target": 0.009435229479293124,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 24.375339639891315,
+     "target": 0.009435229479293124,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Allan Hancock",
+   "nc_only": false,
+   "credit_ftes": 8995.56,
+   "noncredit_ftes": 764.94,
+   "district": "Allan Hancock Joint Community College District",
+   "award": 190677.82743323297,
+   "cr_award": 154820.76530988977,
+   "nc_award": 35857.062123343196,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 17928.531061671598,
+     "target": 6.939792728740846,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 17928.531061671598,
+     "target": 6.939792728740846,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Santa Barbara",
+   "nc_only": false,
+   "credit_ftes": 10973.65,
+   "noncredit_ftes": 1232.6,
+   "district": "Santa Barbara Community College District",
+   "award": 246644.20263862255,
+   "cr_award": 188865.2725614494,
+   "nc_award": 57778.930077173136,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 28889.465038586568,
+     "target": 11.182561400169906,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 28889.465038586568,
+     "target": 11.182561400169906,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "De Anza",
+   "nc_only": false,
+   "credit_ftes": 16628.07,
+   "noncredit_ftes": 364.64,
+   "district": "Foothill-De Anza Community College District",
+   "award": 303275.0906850093,
+   "cr_award": 286182.3525190671,
+   "nc_award": 17092.73816594225,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 8546.369082971125,
+     "target": 3.308136612816773,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 8546.369082971125,
+     "target": 3.308136612816773,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Evergreen Valley",
+   "nc_only": false,
+   "credit_ftes": 5595.29,
+   "noncredit_ftes": 86.39,
+   "district": "San Jose-Evergreen Community College District",
+   "award": 150000,
+   "cr_award": 143946.7439352691,
+   "nc_award": 6053.256064730915,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 3026.6280323654573,
+     "target": 0.7837591103039737,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 3026.6280323654573,
+     "target": 0.7837591103039737,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Foothill",
+   "nc_only": false,
+   "credit_ftes": 11018.64,
+   "noncredit_ftes": 242.66,
+   "district": "Foothill-De Anza Community College District",
+   "award": 201014.43235399504,
+   "cr_award": 189639.58635973345,
+   "nc_award": 11374.84599426159,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 5687.422997130795,
+     "target": 2.201493062928143,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 5687.422997130795,
+     "target": 2.201493062928143,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Gavilan",
+   "nc_only": false,
+   "credit_ftes": 5026.01,
+   "noncredit_ftes": 1591.4,
+   "district": "Gavilan Joint Community College District",
+   "award": 161099.55686731887,
+   "cr_award": 86501.64243862072,
+   "nc_award": 74597.91442869815,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 37298.95721434907,
+     "target": 14.437715570526034,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 37298.95721434907,
+     "target": 14.437715570526034,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Mission",
+   "nc_only": false,
+   "credit_ftes": 5128.5,
+   "noncredit_ftes": 254.1,
+   "district": "West Valley-Mission Community College District",
+   "award": 150000,
+   "cr_award": 132164.85603690776,
+   "nc_award": 17835.14396309224,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 8917.57198154612,
+     "target": 2.3052805872003677,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 8917.57198154612,
+     "target": 2.3052805872003677,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "San Jose City",
+   "nc_only": false,
+   "credit_ftes": 4787.9,
+   "noncredit_ftes": 172.65,
+   "district": "San Jose-Evergreen Community College District",
+   "award": 150000,
+   "cr_award": 136585.55778785917,
+   "nc_award": 13414.442212140822,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 6707.221106070411,
+     "target": 1.5663388169230361,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 6707.221106070411,
+     "target": 1.5663388169230361,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "West Valley",
+   "nc_only": false,
+   "credit_ftes": 6222.71,
+   "noncredit_ftes": 924.09,
+   "district": "West Valley-Mission Community College District",
+   "award": 150415.12662859142,
+   "cr_award": 107097.8043058469,
+   "nc_award": 43317.322322744534,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 21658.661161372267,
+     "target": 8.383655009153827,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 21658.661161372267,
+     "target": 8.383655009153827,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Cabrillo",
+   "nc_only": false,
+   "credit_ftes": 7616.71,
+   "noncredit_ftes": 782.32,
+   "district": "Cabrillo Community College District",
+   "award": 167761.41757724274,
+   "cr_award": 131089.65660208932,
+   "nc_award": 36671.76097515341,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 18335.880487576705,
+     "target": 7.097469929077494,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 18335.880487576705,
+     "target": 7.097469929077494,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Shasta",
+   "nc_only": false,
+   "credit_ftes": 7241.94,
+   "noncredit_ftes": 132.67,
+   "district": "Shasta-Tehama-Trinity Joint Community College District",
+   "award": 150000,
+   "cr_award": 142871.31889310377,
+   "nc_award": 7128.681106896243,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 3564.3405534481217,
+     "target": 1.2036268221325177,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 3564.3405534481217,
+     "target": 1.2036268221325177,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Siskiyous",
+   "nc_only": false,
+   "credit_ftes": 1725.39,
+   "noncredit_ftes": 328.56,
+   "district": "Siskiyou Joint Community College District",
+   "award": 150000,
+   "cr_award": 98771.98548085819,
+   "nc_award": 51228.0145191418,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 25614.0072595709,
+     "target": 2.9808067285736044,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 25614.0072595709,
+     "target": 2.9808067285736044,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Solano",
+   "nc_only": false,
+   "credit_ftes": 7328.71,
+   "noncredit_ftes": 8.43,
+   "district": "Solano County Community College District",
+   "award": 150000,
+   "cr_award": 149531.53284208337,
+   "nc_award": 468.4671579166216,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 234.2335789583108,
+     "target": 0.07647979279850098,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 234.2335789583108,
+     "target": 0.07647979279850098,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Santa Rosa",
+   "nc_only": false,
+   "credit_ftes": 13640.19,
+   "noncredit_ftes": 3009.62,
+   "district": "Sonoma County Junior College District",
+   "award": 375836.4568831897,
+   "cr_award": 234758.5536389403,
+   "nc_award": 141077.90324424944,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 70538.95162212472,
+     "target": 27.304283986029006,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 70538.95162212472,
+     "target": 27.304283986029006,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Modesto",
+   "nc_only": false,
+   "credit_ftes": 15549.98,
+   "noncredit_ftes": 924.67,
+   "district": "Yosemite Community College District",
+   "award": 310972.0735943451,
+   "cr_award": 267627.5633927715,
+   "nc_award": 43344.51020157365,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 21672.255100786824,
+     "target": 8.38891696405574,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 21672.255100786824,
+     "target": 8.38891696405574,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Porterville",
+   "nc_only": false,
+   "credit_ftes": 3558.3,
+   "noncredit_ftes": 45.46,
+   "district": "Kern Community College District",
+   "award": 150000,
+   "cr_award": 144956.06379492086,
+   "nc_award": 5043.936205079115,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 2521.9681025395575,
+     "target": 0.4124283962775628,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 2521.9681025395575,
+     "target": 0.4124283962775628,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Sequoias",
+   "nc_only": false,
+   "credit_ftes": 11473.97,
+   "noncredit_ftes": 224.92,
+   "district": "Sequoias Community College District",
+   "award": 208019.45088257897,
+   "cr_award": 197476.1789752629,
+   "nc_award": 10543.271907316066,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 5271.635953658033,
+     "target": 2.0405498216178932,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 5271.635953658033,
+     "target": 2.0405498216178932,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Columbia",
+   "nc_only": false,
+   "credit_ftes": 2077.98,
+   "noncredit_ftes": 36.6,
+   "district": "Yosemite Community College District",
+   "award": 150000,
+   "cr_award": 143133.62196730167,
+   "nc_award": 6866.378032698294,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 3433.189016349147,
+     "target": 0.3320474989828156,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 3433.189016349147,
+     "target": 0.3320474989828156,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Moorpark",
+   "nc_only": false,
+   "credit_ftes": 12728.22,
+   "noncredit_ftes": 14.6,
+   "district": "Ventura County Community College District",
+   "award": 219747.20679865323,
+   "cr_award": 219062.82226261013,
+   "nc_award": 684.3845360431023,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 342.1922680215512,
+     "target": 0.13245610615161496,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 342.1922680215512,
+     "target": 0.13245610615161496,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Oxnard",
+   "nc_only": false,
+   "credit_ftes": 5628.96,
+   "noncredit_ftes": 74.42,
+   "district": "Ventura County Community College District",
+   "award": 150000,
+   "cr_award": 144786.42442809814,
+   "nc_award": 5213.575571901841,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 2606.7877859509204,
+     "target": 0.6751632479317253,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 2606.7877859509204,
+     "target": 0.6751632479317253,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Ventura",
+   "nc_only": false,
+   "credit_ftes": 9996.28,
+   "noncredit_ftes": 150.72,
+   "district": "Ventura County Community College District",
+   "award": 179109.0534446663,
+   "cr_award": 172043.9550013501,
+   "nc_award": 7065.098443316189,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 3532.5492216580947,
+     "target": 1.3673824876144798,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 3532.5492216580947,
+     "target": 1.3673824876144798,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Woodland",
+   "nc_only": false,
+   "credit_ftes": 2752.41,
+   "noncredit_ftes": 53.07,
+   "district": "Yuba Community College District",
+   "award": 150000,
+   "cr_award": 142515.80134555657,
+   "nc_award": 7484.198654443425,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 3742.0993272217124,
+     "target": 0.48146887352508266,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 3742.0993272217124,
+     "target": 0.48146887352508266,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Yuba",
+   "nc_only": false,
+   "credit_ftes": 4403.73,
+   "noncredit_ftes": 81.53,
+   "district": "Yuba Community College District",
+   "award": 150000,
+   "cr_award": 142799.38765855785,
+   "nc_award": 7200.612341442165,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 3600.3061707210827,
+     "target": 0.739667557160354,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 3600.3061707210827,
+     "target": 0.739667557160354,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "NOCE",
+   "nc_only": true,
+   "credit_ftes": 0,
+   "noncredit_ftes": null,
+   "district": null,
+   "award": 179440.93778518605,
+   "cr_award": 0,
+   "nc_award": 179440.93778518605,
+   "floored": false,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 89720.46889259302,
+     "target": 34.72908379934967,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 89720.46889259302,
+     "target": 34.72908379934967,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "SD Cont. Ed",
+   "nc_only": true,
+   "credit_ftes": 0,
+   "noncredit_ftes": null,
+   "district": null,
+   "award": 400000,
+   "cr_award": 0,
+   "nc_award": 400000,
+   "floored": false,
+   "capped": true,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 200000,
+     "target": 77.41618880954559,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 200000,
+     "target": 77.41618880954559,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  },
+  {
+   "college": "Calbright",
+   "nc_only": true,
+   "credit_ftes": 0,
+   "noncredit_ftes": null,
+   "district": null,
+   "award": 150000,
+   "cr_award": 0,
+   "nc_award": 150000,
+   "floored": true,
+   "capped": false,
+   "nc_prios": [
+    {
+     "key": "nc_p1",
+     "label": "Priority 1",
+     "title": "Access",
+     "src": 0,
+     "share": 0.5,
+     "cap": 75000,
+     "target": 9.072336037781849,
+     "status": "undelivered",
+     "earned": 0
+    },
+    {
+     "key": "nc_p3",
+     "label": "Priority 2",
+     "title": "Completion",
+     "src": 2,
+     "share": 0.5,
+     "cap": 75000,
+     "target": 9.072336037781849,
+     "status": "undelivered",
+     "earned": 0
+    }
+   ]
+  }
+ ]
+}
