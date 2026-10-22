@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9387,
+  "input_tokens": 9131,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9387,
-    "output_tokens": 3023,
+    "input_tokens": 9131,
+    "output_tokens": 2527,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3023,
+  "output_tokens": 2527,
   "output_tokens_details": {
-   "thinking_tokens": 1172
+   "thinking_tokens": 858
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09801,
- "ms": 25578,
- "seconds": 26.3,
+ "cost_usd": 0.08706,
+ "ms": 20624,
+ "seconds": 21.0,
  "parts": null,
  "error": null,
  "score": {
@@ -132,7 +133,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "A.S.-T in Environmental Science for Transfer",
+   "section_heading": "Environmental Science, A.S.-T",
    "measure": "units",
    "total_units": {
     "min": 37,
@@ -165,8 +166,8 @@
     "minimum": null,
     "option_group": "Required Core Courses",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 13,
+     "max": 14
     },
     "courses": [
      {
@@ -216,8 +217,8 @@
     "minimum": null,
     "option_group": "Required Core Courses",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 13,
+     "max": 14
     },
     "courses": [
      {
@@ -360,27 +361,27 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ECON 202",
-    "why": "not in the text; requirements list ECON-C2001 instead"
-   },
-   {
     "code": "MATH 211",
-    "why": "not in the text; requirements list MATH-C2220 (Calculus II) instead"
+    "why": "not in the text"
    },
    {
     "code": "MATH C2210H",
-    "why": "not in the requirements; only MATH-C2210 appears, in the program map"
+    "why": "not in the requirements; catalog requires MATH-C2220 (Calculus II) or alternatives"
+   },
+   {
+    "code": "ECON 202",
+    "why": "not in the text; catalog lists ECON-C2001 instead"
    }
   ],
   "notes": [
-   "Catalog prints 'Select Option 1 or Option 2: 13-14' for the choice as a whole; no per-option total printed, so stated left null on each option block. Courses inside the options have no units printed beside them.",
-   "GEOG-101 & GEOG-104 together form a single alternative to GEOL-100 (Physical Geography and Physical Geography Lab); recorded as two alternatives on GEOL-100 because the schema has no paired alternative.",
-   "MATH-C2220 row prints 3-4 units covering MATH-C2220/MATH-C2220H (Calculus II) or MATH-135; MATH-C2220 and MATH-C2220H are not in the closed list.",
-   "ECON-C2001 is not in the closed list (closed list has ECON 202 and ECON C2001H).",
-   "Page prints 'Units for Major 37-39', 'Cal-GETC Pattern 34', 'Possible double counting: 13', and 'Transferable Electives (as needed to reach 60 transferable units)', with 'Total Units for A.S.-T Degree: 60 units'.",
-   "Program map (Plan of Study, Total Units 70) lists additional courses (e.g., CHEM-100, MATH-C2210, GE courses) that are recommendations/GE, not major requirements; not placed in blocks. CHEM-101 is marked optional there but is required in the requirements list.",
-   "URL refers to environmental-studies while the page text names the A.S.-T in Environmental Science for Transfer; no program learning outcomes printed. Career Exploration tab names no specific careers; 'Environmental Science' taken from overview phrase 'career in Environmental Science'."
+   "The 13-14 units printed for 'Select Option 1 or Option 2' are recorded as stated on both option blocks; no units are printed beside the courses within the options.",
+   "GEOL-100 alternative is the pair 'GEOG-101 & GEOG-104' (taken together); both recorded as alternatives on GEOL-100.",
+   "MATH-C2220 and MATH-C2220H (Calculus II) and ECON-C2001 are not in the closed list; closed list has MATH 211, MATH C2210H (Calculus I) and ECON 202, possibly older numbering or a different calculus course. Reviewer should check.",
+   "Degree total 60 units, Cal-GETC 34 units with possible double counting of 13; transferable electives fill to 60 with no units printed.",
+   "Program Map tab courses (e.g., CHEM-100, MATH-C2210) are a recommended sequence, not requirements, and were not recorded as blocks.",
+   "Career Exploration tab content is not present in the text; career field taken from overview sentence 'career in Environmental Science'.",
+   "No program learning outcomes printed in the text."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

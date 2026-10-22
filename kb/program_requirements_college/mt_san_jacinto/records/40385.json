@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7445,
+  "input_tokens": 7124,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7445,
-    "output_tokens": 1026,
+    "input_tokens": 7124,
+    "output_tokens": 653,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1026,
+  "output_tokens": 653,
   "output_tokens_details": {
-   "thinking_tokens": 341
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0503,
- "ms": 8255,
- "seconds": 8.6,
+ "cost_usd": 0.04156,
+ "ms": 5650,
+ "seconds": 6.0,
  "parts": null,
  "error": null,
  "score": {
@@ -190,12 +191,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "BIOL-100 Human Biology (4 units) is a required course in the catalog but is not in the state's closed list; recorded as a catalog addition.",
-   "Catalog total of 20 units matches the sum of the six required courses and the program map (9 + 11).",
-   "No program learning outcomes are printed in the provided text.",
-   "Careers taken from the overview description; 'Certified Administrative Medical Assistants' and 'Certified Billing and Coding Specialists' are named as certifications students may sit for, which reviewer may judge as job titles or credentials.",
-   "The catalog text is cut off at the end of the Gainful Employment Disclosures section."
+   "BIOL-100 Human Biology (4 units) is required in the catalog but is not in the closed list; recorded as a catalog addition.",
+   "Total of 20 units is stated in the overview and in the Requirements tab; it matches the sum of the six required courses.",
+   "No program learning outcomes are printed in the text.",
+   "Careers are taken from the overview: 'Administrative Medical Assistants' is the stated career; the two certifications are recorded as job titles named in the text. A reviewer may want to confirm whether the certification titles should count as careers."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

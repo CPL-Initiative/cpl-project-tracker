@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7854,
+  "input_tokens": 7461,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7854,
-    "output_tokens": 1033,
+    "input_tokens": 7461,
+    "output_tokens": 1242,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1033,
+  "output_tokens": 1242,
   "output_tokens_details": {
-   "thinking_tokens": 213
+   "thinking_tokens": 373
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05208,
- "ms": 8455,
- "seconds": 9.1,
+ "cost_usd": 0.05468,
+ "ms": 11652,
+ "seconds": 12.9,
  "parts": null,
  "error": null,
  "score": {
@@ -227,15 +228,15 @@
   "missing_explained": [
    {
     "code": "ECON 201",
-    "why": "not in the text; catalog lists ECON-C2002 in its place"
+    "why": "not in the text; requirements list ECON-C2002 instead"
    }
   ],
   "notes": [
-   "Honors alternatives are printed without their own units.",
-   "ECON-C2002 is not in the closed list (closed list has ECON 201 and ECON C2002H); recorded as a catalog addition.",
-   "The Program Map tab totals 27 units because it includes ENGL-C1000, which is not in the Requirements list; the Requirements total of 24 was recorded.",
-   "No program learning outcomes or named careers appear in the text; the Career Exploration tab contains only generic links."
+   "Honors alternatives are printed without their own units; the row's 3 units are printed only beside the primary course, so alternative units are left null.",
+   "ECON-C2002 is not in the closed list (closed list has ECON 201 and ECON C2002H); recorded as a catalog addition, likely the Cal-GETC common-course renumbering of ECON 201.",
+   "The Program Map tab totals 27 units because it adds ENGL-C1000, which is not among the certificate requirements; total_units uses the Requirements tab's 24.",
+   "No program learning outcomes or careers are printed in the text; the Career Exploration tab content was not included."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

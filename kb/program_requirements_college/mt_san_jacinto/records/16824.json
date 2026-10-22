@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8868,
+  "input_tokens": 9027,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8868,
-    "output_tokens": 2771,
+    "input_tokens": 9027,
+    "output_tokens": 2520,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2771,
+  "output_tokens": 2520,
   "output_tokens_details": {
-   "thinking_tokens": 1060
+   "thinking_tokens": 870
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09089,
- "ms": 24015,
- "seconds": 24.4,
+ "cost_usd": 0.08651,
+ "ms": 20344,
+ "seconds": 20.9,
  "parts": null,
  "error": null,
  "score": {
@@ -87,7 +88,7 @@
    "pass": true
   },
   "careers": {
-   "count": 2,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -98,7 +99,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "AS.DMS",
+   "section_heading": "Requirements",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -121,7 +122,6 @@
    "electives_fill_degree": false,
    "outcomes": [],
    "careers": [
-    "Diagnostic Medical Sonography",
     "entry-level sonographers"
    ]
   },
@@ -332,14 +332,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page's heading is not captured in the text; the program code 'AS.DMS' is used as section heading.",
-   "The course list summary prints three components: MSJC Local General Education 27, Program Prerequisites 20-21, DMS Program Courses 58. 'Total Units 58' is printed for the DMS Program Courses list and the plan of study only; no overall major or degree total is printed, so total_units and degree_total are left null. A reviewer may decide whether 58 should be treated as the award total.",
-   "The range 3-4 is printed beside MATH-105 (or STAT-C1000), reflecting the choice between the two (state file: MATH 105 4 units, STAT C1000 3 units); MATH-105 and PHY-100 are marked '(or higher)'.",
-   "Units for COMM-C1004, COMM-C1004H and STAT-C1000 are not printed beside them; recorded as null.",
-   "DMS courses are printed under Semester One/Two/Summer/Three/Four subheadings; recorded as one required block. Sonography courses must be taken in sequence with a minimum grade of C.",
-   "Admission is via a Multi-Criteria Point System; prerequisites are enforced.",
-   "No program learning outcomes are printed in the supplied text; the text is cut off at the careers section."
+   "The Requirements tab summarizes the degree as MSJC Local General Education 27, Program Prerequisites 20-21, and DMS Program Courses 58, but prints no single major total and no overall degree total; total_units and degree_total are left null rather than computed.",
+   "Program Prerequisites are listed as part of the degree requirements and recorded as a required block (stated 20-21).",
+   "MATH-105 and PHY-100 carry '(or higher)', meaning higher-level courses may substitute; MATH-105 is printed at 3-4 units with STAT-C1000 as an alternative.",
+   "Units for the 'or' alternatives (COMM-C1004, COMM-C1004H, STAT-C1000) are not printed beside them, so they are left null.",
+   "The DMS Program Courses are printed under semester subheadings (Semester One through Semester Four, plus Summer) and are recorded as one required block. The catalog says they must be taken in a specific sequence with a grade of C or better.",
+   "The page names a Multi-Criteria Point System for admission.",
+   "The program description text is truncated at the start.",
+   "No program learning outcomes appear in the supplied text."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

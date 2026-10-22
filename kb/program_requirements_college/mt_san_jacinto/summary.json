@@ -2,59 +2,20 @@
  "college": "Mt. San Jacinto College",
  "programs": 174,
  "with_closed_list": 152,
- "found": 99,
- "extracted": 99,
+ "found": 115,
+ "extracted": 115,
  "errors": 0,
- "passed_machine_checks": 74,
+ "passed_machine_checks": 93,
  "failed": {
-  "coverage": 5,
+  "coverage": 3,
   "invented": 0,
-  "arithmetic": 25,
+  "arithmetic": 22,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 7.92,
- "cost_per_program": 0.08,
+ "cost_usd": 9.18,
+ "cost_per_program": 0.0799,
  "not_found": [
-  {
-   "control_number": "04392",
-   "title": "Business, Clerical",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/accounting-certificate/",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "textContent",
-    "coverage": 0.308,
-    "body": 0.0,
-    "content": 0.308,
-    "net": 4,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 4 of 13 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2994,
-     "content": 15440,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Program Map",
-      892
-     ],
-     [
-      "Requirements",
-      831
-     ],
-     [
-      "Career Exploration",
-      1844
-     ]
-    ]
-   }
-  },
   {
    "control_number": "08689",
    "title": "Humanities",
@@ -67,22 +28,6 @@
    "control_number": "12877",
    "title": "Horticulture",
    "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "16038",
-   "title": "Business Clerical: Tech Prep",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "16774",
-   "title": "Advanced Audio Technology",
-   "award": "A.A. Degree",
    "near_miss": {
     "why": "no page read names the program"
    }
@@ -128,84 +73,6 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "22125",
-   "title": "Office Administration Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.msjc.edu/instructional-programs/business-office-administration/",
-    "label": {
-     "award": 0,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3370,
-     "content": 13752,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Degrees/Certificates",
-      75
-     ],
-     [
-      "Program Learning Outcomes",
-      424
-     ],
-     [
-      "Careers and Salaries",
-      971
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "22126",
-   "title": "Office Administration: Tech Prep",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.msjc.edu/instructional-programs/business-office-administration/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3370,
-     "content": 13752,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Degrees/Certificates",
-      75
-     ],
-     [
-      "Program Learning Outcomes",
-      424
-     ],
-     [
-      "Careers and Salaries",
-      971
-     ]
-    ]
    }
   },
   {
@@ -268,7 +135,7 @@
      "award": 0,
      "title": 0.5
     },
-    "field": "innerText",
+    "field": "innerText+tabs",
     "coverage": 0.0,
     "body": 0.0,
     "content": 0.0,
@@ -279,7 +146,7 @@
     "chars": {
      "body": 2238,
      "content": 12529,
-     "tabs": 0
+     "tabs": 847
     },
     "tab_panels": [
      [
@@ -307,7 +174,7 @@
      "award": 0,
      "title": 0.5
     },
-    "field": "innerText",
+    "field": "innerText+tabs",
     "coverage": 0.0,
     "body": 0.0,
     "content": 0.0,
@@ -318,7 +185,7 @@
     "chars": {
      "body": 2238,
      "content": 12529,
-     "tabs": 0
+     "tabs": 847
     },
     "tab_panels": [
      [
@@ -362,7 +229,7 @@
      "award": 0,
      "title": 0.5
     },
-    "field": "innerText",
+    "field": "innerText+tabs",
     "coverage": 0.0,
     "body": 0.0,
     "content": 0.0,
@@ -373,7 +240,7 @@
     "chars": {
      "body": 2247,
      "content": 14398,
-     "tabs": 0
+     "tabs": 2726
     },
     "tab_panels": [
      [
@@ -401,7 +268,7 @@
      "award": 0,
      "title": 1.0
     },
-    "field": "innerText",
+    "field": "innerText+tabs",
     "coverage": 0.0,
     "body": 0.0,
     "content": 0.0,
@@ -412,7 +279,7 @@
     "chars": {
      "body": 2418,
      "content": 14372,
-     "tabs": 0
+     "tabs": 1276
     },
     "tab_panels": [
      [
@@ -440,7 +307,7 @@
      "award": 0,
      "title": 0.5
     },
-    "field": "innerText",
+    "field": "innerText+tabs",
     "coverage": 0.0,
     "body": 0.0,
     "content": 0.0,
@@ -451,7 +318,7 @@
     "chars": {
      "body": 2475,
      "content": 18981,
-     "tabs": 0
+     "tabs": 7057
     },
     "tab_panels": [
      [
@@ -518,7 +385,7 @@
      "award": 1,
      "title": 0.5
     },
-    "field": "innerText",
+    "field": "innerText+tabs",
     "coverage": 0.0,
     "body": 0.0,
     "content": 0.0,
@@ -529,7 +396,7 @@
     "chars": {
      "body": 2479,
      "content": 15563,
-     "tabs": 0
+     "tabs": 3668
     },
     "tab_panels": [
      [
@@ -581,7 +448,7 @@
      "award": 0,
      "title": 0.667
     },
-    "field": "textContent",
+    "field": "innerText+tabs",
     "coverage": 0.222,
     "body": 0.0,
     "content": 0.222,
@@ -592,7 +459,7 @@
     "chars": {
      "body": 2824,
      "content": 14499,
-     "tabs": 0
+     "tabs": 922
     },
     "tab_panels": [
      [
@@ -617,46 +484,7 @@
    "near_miss": {
     "why": "no page read names the program"
    }
-  },
-  {
-   "control_number": "46231",
-   "title": "Administrative Professional",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.msjc.edu/instructional-programs/medical-assisting/medical-assisting-administrative-certificate/",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2432,
-     "content": 14272,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Program Map",
-      784
-     ],
-     [
-      "Requirements",
-      315
-     ],
-     [
-      "Career Exploration",
-      1860
-     ]
-    ]
-   }
   }
  ],
- "run": "38748837644"
+ "run": "39779328144"
 }

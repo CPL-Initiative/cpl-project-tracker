@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8861,
+  "input_tokens": 8614,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8861,
-    "output_tokens": 2573,
+    "input_tokens": 8614,
+    "output_tokens": 2545,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2573,
+  "output_tokens": 2545,
   "output_tokens_details": {
-   "thinking_tokens": 1280
+   "thinking_tokens": 1314
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0869,
- "ms": 23053,
- "seconds": 23.6,
+ "cost_usd": 0.08536,
+ "ms": 22258,
+ "seconds": 22.7,
  "parts": null,
  "error": null,
  "score": {
@@ -123,7 +124,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Requirements",
+   "section_heading": "Science, A.S.",
    "measure": "units",
    "total_units": {
     "min": 19,
@@ -178,7 +179,7 @@
     "name": "Pre-Nursing Option",
     "rule": "all",
     "minimum": null,
-    "option_group": "Choose one option",
+    "option_group": "Option",
     "stated": {
      "min": 11,
      "max": 12
@@ -203,7 +204,7 @@
     "name": "Pre-Nursing Option: Select one of the following",
     "rule": "choose_courses",
     "minimum": 1,
-    "option_group": "Choose one option",
+    "option_group": "Option",
     "stated": {
      "min": null,
      "max": null
@@ -242,7 +243,7 @@
     "name": "Pre-Diagnostic Medical Sonograhy Option",
     "rule": "all",
     "minimum": null,
-    "option_group": "Choose one option",
+    "option_group": "Option",
     "stated": {
      "min": 12,
      "max": 12
@@ -268,15 +269,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The two 'Pre-Nursing Option' blocks together form one option (BIOL-125 plus one chemistry course plus one additional Local GE Area A science course of 3+ units); the Pre-Diagnostic Medical Sonography Option is the alternative. All three blocks share option_group 'Choose one option' but the two Pre-Nursing blocks are completed together.",
-   "Pre-Nursing Option also requires 'One additional Local General Education, Area A science course totaling 3 units or more' — not a named course, not recorded as a block.",
-   "Pre-Diagnostic Medical Sonography Option also requires 'Two additional Local General Education, Area A science courses totaling 6 units or more' — not named courses, not recorded as a block.",
-   "The requirements list prints no units beside the option courses; the program maps show BIOL-125 4, CHEM-107 5, AH-105 3, PHY-100 3. Units left null.",
-   "total_units 19-20 taken from the overview ('for a total of 19-20 units'); summary table prints Required Science Courses 8, Pre-Nursing Option 11-12, Pre-DMS Option 12.",
-   "degree_total 60 taken from the overview ('MSJC Local General Education requirements (a total of 60 units)') and the summary row 'Electives (as needed to reach 60 units)'; reviewer may check whether this is a generic degree statement.",
-   "Option heading spelled 'Sonograhy' in the catalog.",
-   "No program learning outcomes or named careers printed on the page."
+   "The 'Pre-Nursing Option: Select one of the following' block is a nested choice inside the Pre-Nursing Option, not a separate third option; it shares option_group 'Option' only because it belongs to the Pre-Nursing path. The two whole options are Pre-Nursing and Pre-Diagnostic Medical Sonography.",
+   "Pre-Nursing Option also requires 'One additional Local General Education, Area A science course totaling 3 units or more'; Pre-Diagnostic Medical Sonography Option requires 'Two additional Local General Education, Area A science courses totaling 6 units or more.' These unspecified course requirements count toward the option totals (11-12 and 12) and are not recorded as courses.",
+   "The Requirements list prints no units beside the option courses; units left null. The Program Map shows BIOL-125 4, CHEM-107 5, AH-105 3, PHY-100 3.",
+   "total_units 19-20 is taken from the overview sentence 'for a total of 19-20 units' (required core 8 plus option 11-12).",
+   "degree_total 60 is from the overview '(a total of 60 units) for the Associate of Science degree in Science' and the requirements text; electives are 'as needed to reach 60 units' with no units printed.",
+   "No Career Exploration content or program learning outcomes appear in the supplied text."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

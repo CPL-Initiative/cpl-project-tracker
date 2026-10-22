@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9592,
+  "input_tokens": 9663,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9592,
-    "output_tokens": 2509,
+    "input_tokens": 9663,
+    "output_tokens": 2222,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2509,
+  "output_tokens": 2222,
   "output_tokens_details": {
-   "thinking_tokens": 836
+   "thinking_tokens": 646
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08855,
- "ms": 19946,
- "seconds": 20.3,
+ "cost_usd": 0.08309,
+ "ms": 17601,
+ "seconds": 18.4,
  "parts": null,
  "error": null,
  "score": {
@@ -121,7 +122,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Requirements",
+   "section_heading": "Sociology, A.A.-T",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -163,7 +164,7 @@
       "alternatives": [
        {
         "code": "SOCI-C1000H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -183,17 +184,17 @@
       "alternatives": [
        {
         "code": "SOCI-121",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "STAT-C1000",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "STAT-C1000H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -213,22 +214,22 @@
     "courses": [
      {
       "code": "PSYC-105",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "SOCI-105",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "PSYC-105H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "SOCI-105H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -236,12 +237,12 @@
      },
      {
       "code": "PSYC-124",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [
        {
         "code": "PSYC-124H",
-        "units": null,
+        "units": 4,
         "catalog_addition": false
        }
       ],
@@ -249,19 +250,19 @@
      },
      {
       "code": "SOCI-103",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOCI-112",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "PSYC-112",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -269,7 +270,7 @@
      },
      {
       "code": "SOCI-125",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -288,12 +289,12 @@
     "courses": [
      {
       "code": "ANTH-102",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "ANTH-102H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -301,19 +302,19 @@
      },
      {
       "code": "GEOG-102",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYC-C1000",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "PSYC-C1000H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -321,28 +322,28 @@
      },
      {
       "code": "SOCI-106",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOCI-108",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOCI-110",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOCI-115",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -353,14 +354,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page prints no award heading in the extracted text; section_heading uses the 'Requirements' tab. The page is the Sociology AA-T page (Associate in Arts in Sociology for Transfer, AAT.SOCI.CG).",
-   "Cross-listed courses are printed as 'PSYC/SOCI-121', 'PSYC/SOCI-105', 'SOCI/PSYC-112'; recorded with the first-printed subject as code and the other subject as an alternative.",
-   "Units are printed only on some rows (e.g., List A and List B rows show no per-course units; block totals 6-7 and 3 are printed). Alternative units left null since not printed beside them.",
-   "List B also allows 'any course from List A not already used above'; those List A courses are not repeated in the List B block.",
-   "Degree: Units for Major 18-19, Cal-GETC Pattern 34, 'Possible double counting: 9 units', Transferable Electives as needed to reach 60 transferable units; Total Units for A.A.-T Degree: 60.",
-   "Program map courses (e.g., ETHS, language, ENVS, MUS courses) are a suggested sequence, not requirements, and were not recorded as blocks.",
-   "No program learning outcomes or careers are printed in the extracted text; the Career Exploration tab text is cut off."
+   "The Requirements tab does not print units beside each course; per-course units were taken from the closed list, and PSYC-124/124H were recorded at 4 units (consistent with the List A range 6-7).",
+   "Cross-listed codes printed as PSYC/SOCI-121, PSYC/SOCI-105(H) and SOCI/PSYC-112 were recorded as one entry with the other subject's code as an alternative.",
+   "List B also allows any course from List A not already used; those courses are not repeated in the List B block.",
+   "The page notes 'Possible double counting: 9 units' between the major and Cal-GETC; transferable electives are 'as needed to reach 60 transferable units' with no units printed.",
+   "Program Map tab courses (ENGL, COMM, CSCR, LOTE, etc.) are a recommended sequence including GE and were not recorded as blocks.",
+   "No program learning outcomes or careers are printed in the text; a 'Career Exploration' tab heading appears but its content is not in the text."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

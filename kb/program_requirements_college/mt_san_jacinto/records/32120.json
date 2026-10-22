@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9216,
+  "input_tokens": 9381,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9216,
-    "output_tokens": 2310,
+    "input_tokens": 9381,
+    "output_tokens": 2252,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2310,
+  "output_tokens": 2252,
   "output_tokens_details": {
-   "thinking_tokens": 797
+   "thinking_tokens": 823
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08306,
- "ms": 18747,
- "seconds": 20.1,
+ "cost_usd": 0.08256,
+ "ms": 18619,
+ "seconds": 19.1,
  "parts": null,
  "error": null,
  "score": {
@@ -135,7 +136,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Communication Studies A.A.-T (Requirements)",
+   "section_heading": "Communication Studies 2.0, A.A.-T",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -283,12 +284,12 @@
       "catalog_addition": false
      },
      {
-      "code": "COMM-111",
+      "code": "JOUR-111",
       "units": null,
       "units_max": null,
       "alternatives": [
        {
-        "code": "JOUR-111",
+        "code": "COMM-111",
         "units": null,
         "catalog_addition": true
        }
@@ -322,12 +323,12 @@
       "catalog_addition": true
      },
      {
-      "code": "COMM-150",
+      "code": "JOUR-150",
       "units": null,
       "units_max": null,
       "alternatives": [
        {
-        "code": "JOUR-150",
+        "code": "COMM-150",
         "units": null,
         "catalog_addition": true
        }
@@ -340,14 +341,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "List A reads 'Select three to four of the following: 9-10'; recorded as choose_courses minimum 3 with stated 9-10.",
-   "List B allows 'Any List A course not used above or one of the following'; only the three named List B courses are listed in the block, but any unused List A course also satisfies it.",
-   "Cross-listed courses printed as COMM/THA-113, JOUR/COMM-111 and JOUR/COMM-150 are recorded as one entry with the other subject as an alternative. COMM-111, JOUR-111, COMM-150, JOUR-150, COMM-160 and COMM-516 are not in the closed list.",
-   "Units are printed only for the core courses; List A and List B courses carry block totals only, so their individual units are null.",
-   "Page prints 'Units for Major 18-19', 'Cal-GETC Pattern 34', 'Possible double counting: 3 units', 'Transferable Electives (as needed to reach 60 transferable units)' and 'Total Units for A.A.-T Degree: 60 units'.",
-   "The Program Map (Total Units 63-66) is a recommended sequence, not the requirements, and was not used for blocks.",
-   "No program learning outcomes or careers appear in the supplied text; the Career Exploration tab content is not included and the text is cut off at the end."
+   "List A is headed 'Select three' but the line reads 'Select three to four of the following: 9-10'; recorded as choose 3 courses with stated 9-10 (COMM-160 appears to be variable-unit, 1-4 in the program map, which may require a fourth course).",
+   "List B also allows 'Any List A course not used above'; only the extra List B courses are listed in that block.",
+   "Cross-listed codes COMM/THA-113, JOUR/COMM-111 and JOUR/COMM-150 recorded as one entry with the other subject as an alternative.",
+   "Units are printed only on the core rows and block totals; individual List A/B course units are not printed in the Requirements tab.",
+   "Degree total 60 units with Cal-GETC 34; page notes possible double counting of 3 units and transferable electives as needed to reach 60.",
+   "The Program Map tab is a recommended sequence (63-66 units) including GE courses; it was not used for blocks.",
+   "No program learning outcomes or careers appear in the provided text; the Career Exploration tab content was not included."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

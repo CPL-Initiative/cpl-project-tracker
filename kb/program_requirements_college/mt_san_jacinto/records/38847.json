@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9989,
+  "input_tokens": 9706,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9989,
-    "output_tokens": 3252,
+    "input_tokens": 9706,
+    "output_tokens": 2823,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3252,
+  "output_tokens": 2823,
   "output_tokens_details": {
-   "thinking_tokens": 1210
+   "thinking_tokens": 920
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.105,
- "ms": 26138,
- "seconds": 26.6,
+ "cost_usd": 0.09528,
+ "ms": 23275,
+ "seconds": 23.7,
  "parts": null,
  "error": null,
  "score": {
@@ -69,24 +70,26 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     30.0,
-    35.0
+    30.0
    ],
    "stated": [
     30.0,
     35.0
    ],
    "against": "program",
-   "why": [],
+   "why": [
+    "the blocks sum to 30.0-30.0; the catalog states 30.0-35.0"
+   ],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
      64.0,
-     69.0
+     64.0
     ],
     "stated": [
      60.0,
@@ -123,11 +126,11 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "A.S.-T in Biology for Transfer (Requirements tab)",
+   "section_heading": "Biology, A.S.-T",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -239,7 +242,7 @@
     "name": "Complete one of the following physics sequences: PHY-201 & PHY-202",
     "rule": "all",
     "minimum": null,
-    "option_group": "physics",
+    "option_group": "physics sequence",
     "stated": {
      "min": 8,
      "max": 8
@@ -265,7 +268,7 @@
     "name": "Complete one of the following physics sequences: PHY-101 & PHY-102",
     "rule": "all",
     "minimum": null,
-    "option_group": "physics",
+    "option_group": "physics sequence",
     "stated": {
      "min": 8,
      "max": 8
@@ -289,8 +292,8 @@
    },
    {
     "name": "List B: Optional courses that may be required for major prep at transfer institutions",
-    "rule": "choose_units",
-    "minimum": 0,
+    "rule": "recommended",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 0,
@@ -413,15 +416,14 @@
    }
   ],
   "notes": [
-   "The page prints no explicit section heading for the award; the heading recorded is taken from the description ('A.S.-T in Biology for Transfer') and the Requirements tab.",
-   "List B is printed as 'Optional courses that may be required for major prep at transfer institutions' with 0-5 units; recorded as choose_units with minimum 0 and stated 0-5 because the major total 30-35 counts up to 5 units from it. A reviewer may prefer to treat it as 'recommended'.",
-   "Units for individual List B courses, physics sequence courses and honors alternatives are not printed beside them; recorded as null. Each physics sequence block carries the printed 8 units.",
-   "MATH-C2210 and MATH-C2220 (non-honors) are not in the closed list and are marked catalog additions; the closed list's MATH 211/212 do not appear in the text.",
-   "Degree summary: Units for Major 30-35, Cal-GETC Pattern 34, 'Possible double counting: 10', Transferable Electives (as need to reach 60 transferable units), Total Units for A.S.-T Degree: 60 units.",
-   "Footnote 1: most transfer schools require the calculus-based physics series PHY-201 and PHY-202.",
-   "The Program Map tab lists a suggested sequence (Total Units 62-72) including GE courses; it was not used for blocks.",
-   "No program learning outcomes or named careers are printed; the Career Exploration tab contains only generic links."
+   "List B is printed as optional courses that 'may be required for major prep at transfer institutions' with 0-5 units; recorded as 'recommended' though the printed major total 30-35 includes its 0-5 units at the high end. Reviewer may prefer choose_units with minimum 0.",
+   "The physics sequence choice prints 8 units for the whole choice; recorded as stated on each sequence block. Per-course units are not printed for the physics or List B courses.",
+   "Units are printed only on the main row of each 'or' pair; honors alternatives' units left null.",
+   "MATH-C2210 and MATH-C2220 are not in the closed list (only their honors versions are); marked as catalog additions.",
+   "Page prints 'Possible double counting: 10' between the Cal-GETC pattern (34) and transferable electives; electives fill to 60 units with no units printed.",
+   "No program learning outcomes or careers appear in the supplied text; the Career Exploration tab content was not included.",
+   "Program Map tab (recommended sequence, Total Units 62-72) was not used for requirements."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }
