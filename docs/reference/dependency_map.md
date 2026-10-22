@@ -81,6 +81,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_document_sections` | `edgefn:cpl-chat` | — |
 | `cpl_documents` | `edgefn:cpl-chat` | — |
 | `cpl_funding_config` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · scripts: `kb/_funding_config_edit_apply.py` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
+| `cpl_funding_nc_attestation_pub` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | — |
 | `cpl_funding_notes` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
 | `cpl_funding_participation` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
 | `cpl_funding_reports` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
@@ -262,7 +263,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_coci_course_keys.js` | `CPL_COCI_COURSE_KEYS` | `kb/_build_coci_lookup.py` | tabs: `cpl-pathways` · scripts: `kb/_build_coci_lookup.py` |
 | `cpl_funding_data.js` | `CPL_FUNDING` | not stated in header | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `prototype/build_funding_model_explainer.js` · pages: `funding-model/index.html`, `funding-model/memo/index.html` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `funding/_build_funding_performance.py` |
 | `cpl_funding_ess.js` | `CPL_FUNDING_ESS` | not stated in header | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · scripts: `funding/_build_funding_ess.py` |
-| `cpl_funding_performance.js` | `CPL_FUNDING_PERF` | not stated in header | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · scripts: `funding/_build_funding_performance.py` |
+| `cpl_funding_performance.js` | `CPL_FUNDING_PERF` | not stated in header | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `a11y.config.js` · scripts: `funding/_build_funding_performance.py` |
 | `cpl_pathways_ccr_data.js` | `CPL_PATHWAY_CCR` | `kb/_build_cpl_pathway_ccr.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_ccr.py` |
 | `cpl_pathways_data.js` | `CPL_PATHWAYS` | not stated in header | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` |
 | `cpl_pathways_membership_data.js` | `CPL_PATHWAY_MEMBERSHIP` | `kb/_build_cpl_pathway_membership.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_membership.py` |
@@ -1189,5 +1190,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 41 RPCs · 9 edge functions · 712 file
+Coverage: 100 Supabase tables · 41 RPCs · 9 edge functions · 712 file
 datasets · 184 external services · 470 consumers · 58 workflows · 39 tabs.

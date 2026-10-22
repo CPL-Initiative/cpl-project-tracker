@@ -676,6 +676,7 @@ section[hidden], #contents[hidden]{display:none}
       award and one measure of that institution&rsquo;s CPL outcomes. The Chancellor&rsquo;s Office sets the
       shares and measures below and recommends the strategies under each.</p>
     <div id="prios"></div>
+    <div id="nc-outcomes"></div>
     <div id="reported"></div>
     </div>
     </details>
@@ -963,7 +964,7 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // (The page's own every-college table, whose draw() cleared itself, is
   // retired — the institution table is the tab's embed now, and the tab owns
   // its rendering. The milestone list joins the emptied set.)
-  ["prios", "workedbody", "cards", "nc-list", "timing-list", "reported", "req-list"].forEach(function (id) {
+  ["prios", "nc-outcomes", "workedbody", "cards", "nc-list", "timing-list", "reported", "req-list"].forEach(function (id) {
     var el = document.getElementById(id);
     if (el) el.textContent = "";
   });
@@ -1220,7 +1221,12 @@ window.CPL_PAINT_EXPLAINER = function (D) {
       if (c.kind === "coord") return c.n + " of " + c.of + " colleges have one on file in MAP" + (c.asOf ? " (as of " + c.asOf + ")" : "") + ".";
       if (c.kind === "part") return c.n + " of " + c.of + " colleges have confirmed so far.";
       if (c.kind === "jst") return c.n + " of " + c.of + " colleges meet this; " + c.star + " hold the Veteran Star" +
-        (c.asOf ? " (as of " + c.asOf + ")" : "") + ", and the three noncredit-only institutions meet it with noncredit certificates posted as exhibits in MAP.";
+        (c.asOf ? " (as of " + c.asOf + ")" : "") + (D.ncMode === "outcomes" ? "." :
+          ", and the three noncredit-only institutions meet it with noncredit certificates posted as exhibits in MAP.");
+      // The noncredit share's own conditions (Scenario 4), counted among the
+      // institutions whose award carries a noncredit share.
+      if (c.kind === "nc_coord") return c.n + " of " + c.of + " institutions with a noncredit share have one published.";
+      if (c.kind === "nc_team") return c.n + " of " + c.of + " institutions with a noncredit share have attested.";
       return "";
     };
     // How to meet it after each condition a passage covers (Sam, 2026-10-15,
@@ -1437,7 +1443,20 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     var n = D.nc, body = document.getElementById("nc-body"), list = document.getElementById("nc-list");
     if (!n || !body || !list) return;
     while (list.firstChild) list.removeChild(list.firstChild);
-    body.textContent = "The Chancellor\u2019s Office calculates noncredit funding from the noncredit FTES each " +
+    // THE NONCREDIT OUTCOMES LANE (Scenario 4; Sam's Sheet 113 and 114 rulings,
+    // 2026-10-22): the published scenario decides which words this passage
+    // prints. Under the outcomes lane the share releases on the noncredit
+    // outcomes and waits on its own conditions; under origination, as before.
+    var outcomes = D.ncMode === "outcomes";
+    body.textContent = outcomes
+      ? "The Chancellor\u2019s Office calculates noncredit funding from the noncredit FTES each institution reports to " +
+        "MIS. Each institution's award is sized by its combined credit and noncredit instruction, and that award is " +
+        "then divided into a credit share and a noncredit share in proportion to the institution's own instructional " +
+        "mix. The noncredit share is restricted: only the noncredit outcomes count toward it, and it is not available " +
+        "to the credit program. " + (D.ncRule || "") + " The noncredit share of an award waits on its own minimum " +
+        "conditions: " + (D.ncCondWords || "its own minimum conditions") + ". The noncredit share is reported " +
+        "separately on every screen and in every export rather than being combined with the credit figure."
+      : "The Chancellor\u2019s Office calculates noncredit funding from the noncredit FTES each " +
       "institution reports to MIS, and that funding counts toward the priorities on this page. Each institution's award is " +
       "sized by its combined credit and noncredit instruction, and that award is then divided into a " +
       "credit share and a noncredit share in proportion to the institution's own instructional mix. The " +
@@ -1446,21 +1465,88 @@ window.CPL_PAINT_EXPLAINER = function (D) {
       "the noncredit program and the credit is awarded at a credit college in the district. The noncredit " +
       "share is reported separately on every screen and in every export rather than being combined with " +
       "the credit figure.";
-    [
+    var rows = [
       ["Colleges\u2019 noncredit shares", money(n.collegeShares) + " carried within " + n.ncColleges +
         " college awards, restricted to noncredit outcomes. No figure is published on funding that " +
         "cannot be measured."],
       ["The noncredit-only institutions", money(n.trioHeld) + " allocated to NOCE, San Diego College of " +
         "Continuing Education, and Calbright — ordinary awards subject to the same minimum and maximum, " +
-        "qualified for as CPL originating in their programs is recorded at a credit college."],
+        (outcomes ? "released on the same noncredit outcomes."
+          : "qualified for as CPL originating in their programs is recorded at a credit college.")],
       ["A single window", "The " + money(D.pool.floor) + " minimum and the " + money(D.pool.cap) +
         " maximum apply to the combined award, credit and noncredit together, across all " +
         n.institutions + " institutions in one allocation."]
-    ].forEach(function (r) {
+    ];
+    if (outcomes) {
+      (D.ncReported || []).forEach(function (r) {
+        rows.push(["Reported, not funded", String(r.title || "") + (r.text ? ": " + r.text : "")]);
+      });
+    }
+    rows.forEach(function (r) {
       var li = document.createElement("li");
       var b = document.createElement("strong"); b.textContent = r[0] + " — ";
       li.appendChild(b); li.appendChild(document.createTextNode(r[1]));
       list.appendChild(li);
+    });
+  })();
+
+  // THE NONCREDIT OUTCOMES (Scenario 4), under the priority cards: one block an
+  // outcome in the cards' own shape, its target the institutions' targets
+  // added up (or the chosen institution's own), its progress what MAP
+  // records demonstrate against the noncredit funding on it. Painted from the
+  // payload alone; under origination the container stays empty.
+  (function () {
+    var host = document.getElementById("nc-outcomes");
+    if (!host) return;
+    while (host.firstChild) host.removeChild(host.firstChild);
+    if (D.ncMode !== "outcomes" || !D.ncOutcomes || !D.ncOutcomes.length) return;
+    var SC = (D.progress && D.progress.scope) || null;
+    var h = document.createElement("h3"); h.className = "nc-h"; h.textContent = "Noncredit outcomes";
+    host.appendChild(h);
+    var lead = document.createElement("p"); lead.className = "aim";
+    lead.textContent = (D.ncRule || "") + (D.ncCondWords ? " The noncredit share of an award waits on its own minimum conditions: " + D.ncCondWords + "." : "");
+    host.appendChild(lead);
+    var pint = function (v) { return Math.round(v).toLocaleString("en-US"); };
+    D.ncOutcomes.forEach(function (p) {
+      var el = document.createElement("div"); el.className = "prio";
+      var top = document.createElement("div"); top.className = "top";
+      var name = document.createElement("div"); name.className = "name";
+      name.textContent = p.label + (p.title ? " · " + p.title : "");
+      var pct = document.createElement("div"); pct.className = "pct num";
+      pct.textContent = Math.round((p.share || 0) * 100) + "% of the noncredit share";
+      top.appendChild(name); top.appendChild(pct);
+      var m = document.createElement("p"); m.className = "metric";
+      m.textContent = p.description || p.metric;
+      var a = document.createElement("p"); a.className = "aim";
+      a.textContent = "Measured as: " + p.metric;
+      el.appendChild(top); el.appendChild(m); el.appendChild(a);
+      var pr = ((D.progress && D.progress.ncPrios) || []).filter(function (x) { return x.label === p.label; })[0];
+      var tl = document.createElement("p"); tl.className = "aim prog";
+      if (pr && pr.target != null) {
+        tl.textContent = "Target: " + pint(pr.target) + " " + (pr.unitWord || "") +
+          (SC ? " for " + SC.name : " statewide") + ". " + (pr.rule || p.rule || "");
+      } else {
+        tl.textContent = "Target: TBA. " + (p.rule || "");
+      }
+      el.appendChild(tl);
+      var pl = document.createElement("p"); pl.className = "aim prog";
+      pl.textContent = !pr || pr.demonstrated == null
+        ? "Progress: TBA."
+        : "Progress: MAP records demonstrate " + (pr.under ? "less than " : "") + money(pr.demonstrated) +
+          " of the " + money(pr.totalPossible) + " Total Possible (" + (pr.under ? "under " : "") + pct2(pr.pct) + ").";
+      el.appendChild(pl);
+      if (p.strategies && p.strategies.length) {
+        var sh = document.createElement("p"); sh.className = "aim"; sh.textContent = "Recommended strategies";
+        var ul = document.createElement("ul");
+        p.strategies.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
+        el.appendChild(sh); el.appendChild(ul);
+      }
+      host.appendChild(el);
+    });
+    (D.ncReported || []).forEach(function (r) {
+      var rp = document.createElement("p"); rp.className = "aim";
+      rp.textContent = "Reported, not funded: " + String(r.title || "") + (r.text ? ". " + r.text : "");
+      host.appendChild(rp);
     });
   })();
 
