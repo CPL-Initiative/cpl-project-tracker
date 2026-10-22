@@ -1,0 +1,16 @@
+{
+ "_readme": "S446 (SkyMadrone): Grossmont's free capture under #2337/#2339 still has 15 page-claimed. Most are an A.S. or A.A. whose own combined page (law-enforcement-as-certificate-achievement, arabic-aa-certificate-achievement, media-communications-as-cert-achievement) went to its certificate alone. Read two as the capture does, to see how the page heads its degree and its certificate and whether they share one requirement list.",
+ "college": "Grossmont College",
+ "questions": {
+  "capture_headings": "How does each page head its degree and its certificate (one shared list, or a section each), and how is each title spelled?"
+ },
+ "keywords": [
+  "associate in (?:arts|science)[^\\n]{0,80}",
+  "certificate of (?:achievement|accomplishment|competency|proficiency)[^\\n]{0,80}",
+  "\\bA\\.[AS]\\.[^\\n]{0,60}"
+ ],
+ "pages": [
+  {"answers": ["capture_headings"], "capture_view": true, "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/law-enforcement-as-certificate-achievement/"},
+  {"answers": ["capture_headings"], "capture_view": true, "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/arabic-aa-certificate-achievement/"}
+ ]
+}
