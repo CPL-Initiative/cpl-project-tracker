@@ -2,19 +2,19 @@
  "college": "Foothill College",
  "programs": 209,
  "with_closed_list": 190,
- "found": 144,
- "extracted": 144,
+ "found": 185,
+ "extracted": 185,
  "errors": 0,
- "passed_machine_checks": 97,
+ "passed_machine_checks": 138,
  "failed": {
-  "coverage": 22,
+  "coverage": 21,
   "invented": 0,
   "arithmetic": 45,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 11.85,
- "cost_per_program": 0.0823,
+ "cost_usd": 14.82,
+ "cost_per_program": 0.0801,
  "not_found": [
   {
    "control_number": "36414",
@@ -25,5 +25,5 @@
    }
   }
  ],
- "run": "39671107254"
+ "run": "39726637264"
 }
