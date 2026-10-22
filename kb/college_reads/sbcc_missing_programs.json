@@ -1,0 +1,31 @@
+{
+ "_readme": "S447 SkyBrittlebush, 2026-10-22. Santa Barbara City's capture finds 249 of 319 programs: 18 not found and 20 page-claimed, and S446's free capture under the per-heading rules moved neither (248 found, 21 page-claimed). Ten of the page-claimed are Administration of Justice programs (Law Enforcement, Criminology, Legal Studies; A.S., A.S.-T and certificates) that fall back to the Liberal Arts and Political Science pages; their own pages were never captured. Found pages sit at /academic-departments/<department>/<program>/; Law, Public Policy, and Society AA-T is under /academic-departments/justice-studies/. This read asks the sitemap whether it lists the missing programs' pages, and the Justice Studies department which programs it links. Two loads, no model call.",
+ "college": "Santa Barbara City College",
+ "questions": {
+  "sitemap_program_pages": "Whether the sitemap lists the missing programs' pages (Administration of Justice, Engineering A.S., French, Philosophy AA-T, Film/TV AS-T, Screenwriting, Technical Writing, CIS System Administration), and at which addresses.",
+  "justice_links": "Which programs the Justice Studies department page links, and under what titles."
+ },
+ "keywords": [
+  "justice[^<\\s]{0,60}",
+  "crimin[^<\\s]{0,60}",
+  "law-enforcement[^<\\s]{0,60}",
+  "legal[^<\\s]{0,60}",
+  "/french[^<\\s]{0,60}",
+  "philosophy-aat[^<\\s]{0,40}",
+  "screenwrit[^<\\s]{0,60}",
+  "technical-writ[^<\\s]{0,60}",
+  "system-admin[^<\\s]{0,60}",
+  "engineering-as[^<\\s]{0,40}"
+ ],
+ "pages": [
+  {
+   "answers": ["sitemap_program_pages"],
+   "url": "https://catalog.sbcc.edu/sitemap.xml"
+  },
+  {
+   "answers": ["justice_links"],
+   "url": "https://catalog.sbcc.edu/academic-departments/justice-studies/",
+   "links": "justice|law|crimin|legal|enforcement|correction|forensic"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "_readme": "S447 SkyBrittlebush, 2026-10-22. Mt. San Jacinto's capture finds 99 of 174 programs: 28 not found and 25 page-claimed, and S446's free capture under the per-heading rules moved neither (100 found, 24 page-claimed). The losers fall back to the general education and C-ID chart pages because their own page was never a candidate: Anthropology, History and Kinesiology AA-T, Administration of Justice A.S., A.S.-T and certificate, Chemistry and Public Health Science AS-T, Studio Arts AA-T, Alcohol & Drug Studies, Interpreter Preparation, Aviation Science, Horticulture. Found pages sit at /instructional-programs/<discipline>/<program>/. This read asks the sitemap whether it lists those programs' pages, and the program index which addresses it links. Two loads, no model call.",
+ "college": "Mt. San Jacinto College",
+ "questions": {
+  "sitemap_program_pages": "Whether the sitemap lists the missing programs' pages, and at which addresses.",
+  "index_links": "Which program addresses the instructional programs index links for the missing disciplines."
+ },
+ "keywords": [
+  "anthropolog[^<\\s]{0,60}",
+  "/history[^<\\s]{0,60}",
+  "kinesiolog[^<\\s]{0,60}",
+  "justice[^<\\s]{0,60}",
+  "alcohol[^<\\s]{0,60}",
+  "chemistry[^<\\s]{0,60}",
+  "public-health[^<\\s]{0,60}",
+  "studio-art[^<\\s]{0,60}",
+  "interpret[^<\\s]{0,60}",
+  "aviation[^<\\s]{0,60}",
+  "horticult[^<\\s]{0,60}"
+ ],
+ "pages": [
+  {
+   "answers": ["sitemap_program_pages"],
+   "url": "https://catalog.msjc.edu/sitemap.xml"
+  },
+  {
+   "answers": ["index_links"],
+   "url": "https://catalog.msjc.edu/instructional-programs/",
+   "links": "anthropolog|histor|kinesiolog|justice|alcohol|social-behavioral|chemistry|public-health|studio|crime-scene|interpret|aviation|pilot|flight|horticult|humanities|audio|clerical|office|administrative-prof|preschool|laborator"
+  }
+ ]
+}
