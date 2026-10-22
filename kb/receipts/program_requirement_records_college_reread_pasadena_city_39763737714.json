@@ -1,0 +1,1011 @@
+{
+ "college": "Pasadena City College",
+ "reread_run": "39763737714",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39758679671",
+ "at": "2026-10-22T10:33:07Z",
+ "posted": 8,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "31599",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33404",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33423",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33699",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 5,
+ "absent": 0,
+ "held": 0,
+ "kept": 3,
+ "carried": 0,
+ "replaced_keys": [
+  "03143",
+  "22637",
+  "32543",
+  "41367",
+  "45510"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "39717",
+  "41037",
+  "41845"
+ ],
+ "carried_keys": [],
+ "machine_pass": 7,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Pasadena City College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 39758679671;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 5,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Requirements for the Certificate of Achievement",
+      "rule": "all",
+      "stated": {
+       "max": 34,
+       "min": 34
+      },
+      "courses": [
+       {
+        "code": "DA 100",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA 108",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 110",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 123A",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 123B",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 124",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA 125",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 127",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 135",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA 140",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Recommended Electives",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "DA 200A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 200B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 160",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate technical skills and abilities, safety and infection control procedures as outlined by the California Dental Practice Act. (DA 100, 108, 110, 111, 123A, 123B, 124,125, 127, 135, 140, 142)",
+      "Exhibit professional growth, behavior, knowledge and development; foster empathy and concern; and work toward a commitment of excellence at all times. (All DA courses)",
+      "Exhibit communication and conflict skills and strategies that are effective with individuals and groups who are diverse in age, gender, or culture. (All DA courses)."
+     ],
+     "ge_pattern": "PCC Local Gen Ed or Cal-GETC",
+     "total_units": {
+      "max": 34,
+      "min": 34
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Requirements for the Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 34,
+   "total_min": 34,
+   "source_url": "https://curriculum.pasadena.edu/academic-programs/dental/registered-dental-assisting-as-cert-achievement/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39061730187,
+   "program_title": "DENTAL ASSISTING",
+   "control_number": "03143"
+  },
+  {
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "checks": {
+    "listed": 5,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Requirements for the Certificate of Achievement",
+      "rule": "all",
+      "stated": {
+       "max": 34,
+       "min": 34
+      },
+      "courses": [
+       {
+        "code": "DA 100",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA 108",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 110",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 123A",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 123B",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 124",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA 125",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 127",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 135",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA 140",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Recommended Electives",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "DA 200A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 200B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DA 160",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate technical skills and abilities, safety and infection control procedures as outlined by the California Dental Practice Act. (DA 100, 108, 110, 111, 123A, 123B, 124,125, 127, 135, 140, 142)",
+      "Exhibit professional growth, behavior, knowledge and development; foster empathy and concern; and work toward a commitment of excellence at all times. (All DA courses)",
+      "Exhibit communication and conflict skills and strategies that are effective with individuals and groups who are diverse in age, gender, or culture. (All DA courses)."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 34,
+      "min": 34
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Requirements for the Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 34,
+   "total_min": 34,
+   "source_url": "https://curriculum.pasadena.edu/academic-programs/dental/registered-dental-assisting-as-cert-achievement/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39061730187,
+   "program_title": "Dental Assisting",
+   "control_number": "22637"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 10,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "REQUIRED CORE",
+      "rule": "all",
+      "stated": {
+       "max": 25,
+       "min": 25
+      },
+      "courses": [
+       {
+        "code": "PSYC 021",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 021H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 013A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 013AF",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 014",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 015",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 016",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 017",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 020",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "child advocacy",
+      "social work",
+      "community and social services"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Interpret historical, theoretical, and ethical teaching practices as defined within the fields of child development, early childhood education, special education, and education inclusive of the diverse population as represented in Los Angeles County.",
+      "Identify the underlying theoretical perspective in forming a teaching and professional philosophy.",
+      "Integrate understanding of children's development to maintain healthy, safe, respectful, supportive, and challenging learning environments.",
+      "Evaluate the effectiveness of classroom teaching strategies to improve teaching practices for all children, including the application of a variety of effective approaches, strategies, and techniques supporting positive relationships."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 25,
+      "min": 25
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Associate in Science in Early Childhood Education for Transfer Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 25,
+   "total_min": 25,
+   "source_url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-early-childhood-education-ast/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39061730187,
+   "program_title": "EARLY CHILDHOOD EDUCATION",
+   "control_number": "32543"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 6,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Requirements for the Certificate of Achievement",
+      "rule": "all",
+      "stated": {
+       "max": 18,
+       "min": 18
+      },
+      "courses": [
+       {
+        "code": "TECH 107A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD 200A",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DT 008A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "WELD 200C",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Recommended Electives",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIT 010",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DT 017",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DT 118",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "KINA 032A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "WELD 044A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "WELD 044B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "WELD 044C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "WELD 145",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "WELD 150D",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "welders",
+      "welder’s helpers",
+      "cutting torch operators",
+      "apprentice fitters"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Perform shielded metal arc (SMAW), gas metal arc, gas tungsten arc welding and oxy-acetylene welding and cutting.",
+      "Select appropriate equipment and processes for metal/welding operations and demonstrate safe set-up and operations of welding equipment.",
+      "Evaluate welds to industry standards and prepare inspections reports including welding defects and solutions.",
+      "Fabricate a part from a blueprint including the layout, assembly, cutting of material guided by welding symbols.",
+      "Develop Welding Procedure Specification (WPS) sheet."
+     ],
+     "ge_pattern": "PCC Local Gen Ed or Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Requirements for the Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://curriculum.pasadena.edu/academic-programs/welding/gas-tungsten-gas-metal-welding-as-cert-achievement/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39061730187,
+   "program_title": "Welding Fabrication",
+   "control_number": "41367"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 32,
+    "placed": 32,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "REQUIRED CORE",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "EDUC 013",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 011",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BIOL 011H",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1000H",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 002A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL 059",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 007A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 007AH",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 021",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 021H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM C1000H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "LIST A - SELECT ONE",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "GEOL 003",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHSC 003",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHSC 003L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "LIST B - SELECT ONE",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ART 005",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 021A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 021B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSC 021",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THRT 001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "LIST C - Up to 12 additional units (not required)",
+      "rule": "recommended",
+      "stated": {
+       "max": 12,
+       "min": 0
+      },
+      "courses": [
+       {
+        "code": "HIST 002B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 008",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 038",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PHIL 001H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 007",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 025",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PHIL 025H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "RELG 001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "elementary or special education teachers"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Demonstrate competence of disciplines taught in elementary schools.",
+      "Demonstrate reading, writing, and critical thinking skills, specifically in relation to liberal arts and education.",
+      "Develop a career path in education and gain experience in working in TK-8th grade school settings."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 45,
+      "min": 33
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Elementary Teacher Education: Integrated Programs Associate in Arts Degree for Transfer",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 45,
+   "total_min": 33,
+   "source_url": "https://curriculum.pasadena.edu/academic-programs/education/elementary-teacher-education--integrated-programs-aat/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39061730187,
+   "program_title": "Elementary Teacher Education: Integrated Programs",
+   "control_number": "45510"
+  }
+ ]
+}

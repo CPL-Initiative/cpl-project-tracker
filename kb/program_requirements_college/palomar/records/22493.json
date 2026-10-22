@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Real Estate Broker License Preparation",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RealEstateSalespersonLicensePreparation-CP",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RealEstateBrokerLicensePreparation-AS-CA",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6881,
+  "input_tokens": 7089,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6881,
-    "output_tokens": 1281,
+    "input_tokens": 7089,
+    "output_tokens": 1339,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1281,
+  "output_tokens": 1339,
   "output_tokens_details": {
-   "thinking_tokens": 408
+   "thinking_tokens": 248
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05314,
- "ms": 11790,
- "seconds": 12.3,
+ "cost_usd": 0.05514,
+ "ms": 23896,
+ "seconds": 24.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "ACCT201",
-    "BUS117",
-    "RE100",
-    "RE105",
-    "RE110",
-    "RE111",
-    "RE115",
-    "RE120",
-    "RE140",
-    "RE150"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -72,30 +61,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    25.0,
+    25.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -106,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Real Estate Salesperson License Preparation - Certificate of Proficiency (Less than 18 units)",
+   "section_heading": "Business Administration  Department - Real Estate Broker License Preparation - A.S. Degree Major/Cert. Achievement (18 units or more)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -131,58 +121,118 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Distinguish, Compare, and Assess methods of financing real estate purchases and obtaining real estate loans.",
+    "Manage and Explain real estate marketing and sales cycles and the transaction fulfillment process including listing, pricing, and marketing properties.",
+    "Explain, Evaluate, and Recommend methods of holding title, agency relationships for real estate transactions, and contract contingencies to hypothetical clients.",
+    "Identify, Interpret, and Apply industry ethics, state and federal laws, and Standards of Practice to real estate dealings and transactions."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ACCT 201",
-    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "RE 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BUS 117",
-    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
-   },
-   {
-    "code": "RE 100",
-    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
-   },
-   {
-    "code": "RE 105",
-    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
-   },
-   {
-    "code": "RE 110",
-    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
-   },
-   {
-    "code": "RE 111",
-    "why": "not in the text"
-   },
-   {
-    "code": "RE 115",
-    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
-   },
-   {
-    "code": "RE 120",
-    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
-   },
-   {
-    "code": "RE 140",
-    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
-   },
-   {
-    "code": "RE 150",
-    "why": "not in the text"
+    "name": "Electives (Select 6 units)",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "RE 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source page (alias RealEstateSalespersonLicensePreparation-CP) prints only the Real Estate Salesperson License Preparation Certificate of Proficiency (Less than 18 units), not the Real Estate Broker License Preparation Certificate of Achievement named for this record. Because no section for the named award appears in the text, no blocks, totals, outcomes or careers were recorded; section_heading gives the only heading the page prints.",
-   "For reference, the Salesperson section prints a required block RE 100 (3) and RE 115 (3), Units: 6.0; Electives (Select 3-7 units) RE 105, RE 110, RE 120, RE 140 (3 each), ACCT 201 (4), BUS 117 (3); Total: 9.0-13.0, plus three learning outcomes. These belong to a different award and were not recorded.",
-   "Reviewer should locate the Broker License Preparation Certificate of Achievement page (likely including RE 111 and RE 150) and re-extract."
+   "The catalog prints a single section for both the A.S. Degree Major and the Certificate of Achievement; the requirements (Total 25.0 units) and the learning outcomes are shared by both awards and were recorded for the certificate.",
+   "The section heading says '(18 units or more)'; the award named is a Certificate of Achievement of 16S to fewer than 30S units, and the 25-unit total falls in that range.",
+   "The learning outcomes appear before the section heading in the extracted text (apparently part of the preceding program summary for this same program); recorded as this program's outcomes.",
+   "The text begins mid-heading ('or more)'), so part of the preceding content was cut off."
   ]
  },
- "extracted_run": "38843467865"
+ "extracted_run": "39746422049"
 }

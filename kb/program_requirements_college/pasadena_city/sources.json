@@ -35,7 +35,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration/ business administration – financial investments – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -65,7 +68,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration/ business administration – management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -94,7 +100,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration/ business administration – marketing management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -128,7 +137,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business information technology/ business information technology – administrative assistant – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -159,7 +171,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "journalism/ journalism – printed media – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -189,7 +204,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "television & radio/ broadcast journalism – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -223,7 +241,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer information systems/ computer information systems – system and network administration – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -255,7 +276,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology/ automotive technology – all automotive systems – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -298,7 +322,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "photography/ photography – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -337,7 +364,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nursing/ nursing – registered nursing – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -381,7 +411,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "medical assisting/ medical assisting – administrative & clinical – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -393,9 +426,10 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "DA100",
+   "DA111",
    "DA124",
    "DA135",
    "DA140"
@@ -407,7 +441,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "dental/ registered dental assisting - associate in science degree, certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -450,7 +487,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "dental/ dental hygiene – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -494,7 +534,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "dental/ restorative dental technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -536,7 +579,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "radiologic technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -609,7 +655,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -661,7 +710,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration/ business administration – entrepreneurship and small business management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -686,7 +738,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration/ business administration – retail management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -719,7 +774,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration/ business administration – international business – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -750,7 +808,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business information technology/ business information technology – business software specialist – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -773,7 +834,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business information technology/ business information technology – office assistant – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -801,7 +865,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "journalism/ journalism – photojournalism – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -833,7 +900,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "television operations – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -860,7 +930,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "video production – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -892,7 +965,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "television & radio/ television and radio – radio production – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -919,7 +995,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer information systems/ computer information systems – software development – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -946,7 +1025,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer information systems/ computer information systems – full stack web development – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -1003,7 +1085,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "theater arts/ theatre technology – associate in science degree, certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -1034,7 +1119,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "design media art/ design media art – graphic design – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1067,7 +1155,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "product design – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1149,7 +1240,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "speech-language pathology/ speech-language pathology assistant – associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -1188,7 +1282,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development/ child development – infant/toddler – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -1227,7 +1324,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development/ child development – administration – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -1266,7 +1366,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development/ child development – special education – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -1314,7 +1417,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biological technology/ biological technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -1344,7 +1450,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "product design – technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1373,7 +1482,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "product design – graphics – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1403,7 +1515,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "library/ library technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1433,7 +1548,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "hospitality/ hospitality management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1471,7 +1589,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology/ automotive technology – undercar technician – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1498,7 +1619,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology/ automotive technology – engine performance technician – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -1570,7 +1694,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biological technology/ biological technology – laboratory assistant – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -1612,7 +1739,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biological technology/ biological technology – computational biology – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1654,7 +1784,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biological technology/ biological technology – stem cell culture – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -1695,7 +1828,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business – associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1785,7 +1921,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "english/ english literature – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 51,
@@ -1981,7 +2120,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "humanities/ humanities – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 169,
@@ -2084,7 +2226,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "natural sciences/ natural sciences – associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 72,
@@ -2193,7 +2338,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "social & behavioral sciences/ social and behavioral sciences – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 89,
@@ -2222,7 +2370,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "speech communication – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2336,7 +2487,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "kinesiology/ kinesiology & wellness – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 92,
@@ -2360,7 +2514,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology/ automotive technology – automotive electrical systems technician – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2434,7 +2591,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "linguistics/ linguistics – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 52,
@@ -2471,7 +2631,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "chinese – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2509,7 +2672,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "french – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2544,7 +2710,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "german – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2578,7 +2747,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "italian – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2611,7 +2783,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "japanese – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2638,7 +2813,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "russian – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -2681,7 +2859,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "spanish – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -2726,7 +2907,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration/ business administration – financial investments – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2756,7 +2940,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration/ business administration – management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2784,7 +2971,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration/ business administration – entrepreneurship and small business management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2809,7 +2999,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration/ business administration – retail management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2842,7 +3035,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration/ business administration – international business – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2871,7 +3067,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration/ business administration – marketing management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2905,7 +3104,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information technology/ business information technology – administrative assistant – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2936,7 +3138,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information technology/ business information technology – business software specialist – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2960,7 +3165,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information technology/ business information technology – office assistant – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2988,7 +3196,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "journalism/ journalism – photojournalism – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3014,7 +3225,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "journalism/ journalism – printed media – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -3046,7 +3260,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "television & radio/ television and radio – radio production – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3078,7 +3295,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "television operations – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3120,7 +3340,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "television & radio/ broadcast journalism – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3147,7 +3370,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer information systems/ computer information systems – full stack web development – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -3181,7 +3407,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer information systems/ computer information systems – system and network administration – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3224,7 +3453,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology/ automotive technology – all automotive systems – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3250,7 +3482,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology/ automotive technology – engine performance technician – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -3275,7 +3510,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology/ automotive technology – powertrain technician – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3301,7 +3539,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology/ automotive technology – undercar technician – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -3339,7 +3580,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cad designer – mechanical design and fabrication – level 2 – associate in science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3390,7 +3634,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "building construction/ building construction inspection – certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -3423,7 +3670,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "theater arts/ theatre technology – associate in science degree, certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -3454,7 +3704,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography/ photography – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3487,7 +3740,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "product design – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3516,7 +3772,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "product design – graphics – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3546,7 +3805,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "product design – technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3577,7 +3839,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "design media art/ design media art – graphic design – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3609,7 +3874,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical assisting/ medical assisting – administrative & clinical – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3677,7 +3945,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "radiologic technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -3717,7 +3988,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "nursing/ nursing – registered nursing – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -3741,9 +4015,10 @@
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "DA100",
+   "DA111",
    "DA124",
    "DA135",
    "DA140"
@@ -3755,7 +4030,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dental/ registered dental assisting - associate in science degree, certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -3798,7 +4076,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dental/ dental hygiene – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -3842,7 +4123,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dental/ restorative dental technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -3892,7 +4176,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development/ child development – language & literacy – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -3929,7 +4216,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3968,7 +4258,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development/ child development – special education – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -4019,7 +4312,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development/ child development – administration – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -4058,7 +4354,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development/ child development – infant/toddler – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -4088,7 +4387,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality/ hospitality management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -4174,7 +4476,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "anesthesia/ anesthesia technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4200,7 +4505,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "anesthesia/ anesthesia technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4248,7 +4556,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology/ sociology – associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 26,
@@ -4294,7 +4605,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology/ psychology – associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 24,
@@ -4335,7 +4649,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies/ communication studies 2.0 – associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 25,
@@ -4372,7 +4689,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics/ mathematics 2.0 – associate in science degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 20,
@@ -4402,7 +4722,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -4445,7 +4768,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts – associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 23,
@@ -4480,7 +4806,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts – associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
@@ -4636,7 +4965,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history/ history – associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 145,
@@ -4666,7 +4998,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology/ geology – associate in science degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -4807,7 +5142,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art/ art history – associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 125,
@@ -4818,31 +5156,12 @@
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.562,
-  "codes_found": [
-   "AJ10",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "SOC1",
-   "SOC1H",
-   "STAT15",
-   "STAT18",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://curriculum.pasadena.edu/academic-programs/social-work-and-human-services/social-work-and-human-services-aat/",
-   "title": "Social Work and Human Services – Associate in Arts Degree for Transfer | Pasadena City College Academic Catalog",
-   "h1": "2026-2027 ACADEMIC CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 16,
-  "text_chars": 4674
+  "text_chars": 0
  },
  {
   "control_number": "31426",
@@ -4869,7 +5188,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration/ business administration 2.0 – associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -4900,7 +5222,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics/ physics – associate in science degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -4992,7 +5317,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english/ english – associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 71,
@@ -5057,7 +5385,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
@@ -5117,7 +5448,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism/ journalism – associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 26,
@@ -5156,7 +5490,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science/ political science – associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 17,
@@ -5168,10 +5505,11 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "CHDV10",
    "CHDV13A",
+   "CHDV13AF",
    "CHDV14",
    "CHDV15",
    "CHDV16",
@@ -5187,7 +5525,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education – associate in science degree for transfer to csu",
+    "section_fit": 0.6
    }
   },
   "listed": 10,
@@ -5316,7 +5657,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology/ kinesiology – associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 95,
@@ -5340,7 +5684,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5364,7 +5711,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5388,7 +5738,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5412,7 +5765,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5436,7 +5792,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5461,7 +5820,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5509,7 +5871,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5533,7 +5898,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5619,7 +5987,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -5667,7 +6038,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5691,7 +6065,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5728,7 +6105,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.333
+    "title": 0.333,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5768,7 +6148,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish – associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 18,
@@ -5847,7 +6230,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music/ music – associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 34,
@@ -5894,7 +6280,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -5918,7 +6307,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5969,7 +6361,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "gerontology/ gerontology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5996,7 +6391,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "gerontology/ gerontology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -6049,7 +6447,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "art/ studio art – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 34,
@@ -6073,7 +6474,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "photovoltaic design & installation – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -6097,7 +6501,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photovoltaic design & installation – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -6150,7 +6557,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "art/ studio art – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 34,
@@ -6184,7 +6594,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information technology/ business information technology – business information worker – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -6217,7 +6630,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business information technology/ business information technology – business information worker – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -6252,7 +6668,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biological technology/ biological technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -6296,7 +6715,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology/ anthropology – associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 24,
@@ -6326,7 +6748,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business information technology/ business information technology – business information worker ii – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -6356,7 +6781,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information technology/ business information technology – business information worker ii – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -6380,7 +6808,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -6404,7 +6835,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -6441,7 +6875,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -6466,7 +6903,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -6499,7 +6939,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer information systems/ computer information systems - help desk/user support - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -6533,7 +6976,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer information systems/ computer information systems - help desk/user support - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -6566,7 +7012,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer information systems/ computer information systems – cybersecurity – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -6600,7 +7049,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer information systems/ computer information systems – cybersecurity – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -6627,7 +7079,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer information systems/ computer information systems – computer retail sales & support – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -6654,7 +7109,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer information systems/ computer information systems – computer retail sales & support – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -6700,7 +7158,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography/ geography – associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -6742,7 +7203,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music/ music entrepreneurship – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -6784,7 +7248,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "music/ music entrepreneurship – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -6814,7 +7281,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "library/ library technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -6853,7 +7323,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering/ engineering: civil engineering emphasis – associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -6887,7 +7360,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering/ engineering: electrical engineering emphasis – associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -6924,7 +7400,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering/ engineering: mechanical, aerospace, and manufacturing engineering emphasis – associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -6962,7 +7441,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development/ child development – multicultural awareness – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -7003,7 +7485,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development/ child development – early intervention – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -7044,7 +7529,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development/ child development – early intervention – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -7083,7 +7571,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development/ child development – science and math integration – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -7121,7 +7612,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development/ child development – multicultural awareness – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -7160,7 +7654,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development/ child development – science and math integration – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -7187,7 +7684,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "engineering/ mechanical engineering technician – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -7233,7 +7733,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "design media art/ design media art – animation & motion arts – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -7264,7 +7767,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "design media art/ design media art – web design & development – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -7303,7 +7809,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "design media art/ design media art – interactive art & design – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -7342,7 +7851,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "design media art/ design media art – interactive art & design – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -7373,7 +7885,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "design media art/ design media art – web design & development – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -7409,7 +7924,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "design media art/ design media art – animation & motion arts – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -7436,7 +7954,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer information systems/ computer information systems – software development – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -7483,7 +8004,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "nutrition and dietetics – associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
@@ -7521,7 +8045,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development/ child development – language & literacy – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -7572,7 +8099,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "film, television & electronic media – associate in science degree for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 29,
@@ -7610,7 +8140,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "yoga teacher training – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -7655,7 +8188,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health/ public health - associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 18,
@@ -7693,7 +8229,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics/ economics – associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 22,
@@ -7725,7 +8264,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy/ philosophy – associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -7781,7 +8323,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance/ dance – associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 34,
@@ -7814,7 +8359,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "design media art/ design media art – game design & development – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -7847,7 +8395,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "design media art/ design media art – game design & development – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -7876,7 +8427,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "design media art/ design media art – design/media arts foundation – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -7932,7 +8486,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music/ music – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 35,
@@ -7961,7 +8518,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "design media art/ design media art – design/media arts foundation – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -7990,7 +8550,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology/ biology 2.0 – associate in science degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -8025,7 +8588,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture plant science – associate in science degree for transfer",
+    "section_fit": 0.75
    }
   },
   "listed": 15,
@@ -8106,7 +8672,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies/ social justice studies: general – associate in arts degree for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 59,
@@ -8130,7 +8699,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -8181,7 +8753,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "global studies/ global studies – associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 29,
@@ -8228,7 +8803,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "child development/ child and adolescent development – associate in arts degree for transfer",
+    "section_fit": 0.75
    }
   },
   "listed": 34,
@@ -8255,7 +8833,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american sign language – associate in arts degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -8294,7 +8875,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "french – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -8322,7 +8906,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "jewelry/metalworking – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -8350,7 +8937,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "jewelry/metalworking – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -8380,7 +8970,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.714
+    "title": 0.714,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -8410,7 +9003,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.714
+    "title": 0.714,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -8439,7 +9035,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "machine shop technology/ machine shop technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -8468,7 +9067,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "machine shop technology/ machine shop technology – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -8507,7 +9109,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "american sign language – associate in arts degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -8571,7 +9176,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "law, public policy, and society – associate in arts degree for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 51,
@@ -8600,7 +9208,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "laser technology/ laser technology – associate in science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -8626,7 +9237,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "laser technology/ laser technology essentials– certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -8637,12 +9251,32 @@
   "title": "Laser Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTN117",
+   "ELTN130",
+   "ELTN131",
+   "LASR215",
+   "LASR230",
+   "LASR245",
+   "LASR260"
+  ],
+  "source": {
+   "url": "https://curriculum.pasadena.edu/academic-programs/laser-technology/laser-technology-as-certificate-of-achievement/",
+   "title": "Laser Technology – Associate in Science, Certificate of Achievement | Pasadena City College Academic Catalog",
+   "h1": "2026-2027 ACADEMIC CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "laser technology/ laser technology – associate in science, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3675
  },
  {
   "control_number": "40759",
@@ -8672,7 +9306,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "italian – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -8701,7 +9338,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biological technology/ biological technology – laboratory skills – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -8729,7 +9369,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "certified culinarian – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -8753,7 +9396,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "geographic information systems – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -8793,7 +9439,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certified baker – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -8821,7 +9470,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "geographic information systems and technology – associate in science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -8833,25 +9485,30 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.571,
+  "coverage": 0.857,
   "codes_found": [
+   "CIS12",
    "GEOG11",
    "GEOG113",
    "GEOG114",
+   "GEOG115",
    "GEOG12"
   ],
   "source": {
-   "url": "https://curriculum.pasadena.edu/academic-programs/geography/geotech-gis-occupational-skills-cert/",
-   "title": "Geographic Information Systems – Certificate of Achievement | Pasadena City College Academic Catalog",
+   "url": "https://curriculum.pasadena.edu/academic-programs/geography/geographic-information-systems-and-technology-as-certificate-of-achievement/",
+   "title": "Geographic Information Systems and Technology – Associate in Science, Certificate of Achievement | Pasadena City College Academic Catalog",
    "h1": "2026-2027 ACADEMIC CATALOG",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 0.75
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "geographic information systems and technology – associate in science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 2942
+  "text_chars": 3815
  },
  {
   "control_number": "41120",
@@ -8872,7 +9529,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration/ business administration – entrepreneurship – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -8900,7 +9560,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certified culinarian – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -8928,7 +9591,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "certified baker – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -8940,24 +9606,30 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
+   "DT150",
+   "MACH101",
+   "MACH110",
    "TECH107A",
    "WELD200A",
    "WELD200C"
   ],
   "source": {
-   "url": "https://curriculum.pasadena.edu/academic-programs/welding/gas-tungsten-gas-metal-welding-as-cert-achievement/",
-   "title": "Gas Tungsten & Gas Metal Welding – Associate in Science Degree, Certificate of Achievement | Pasadena City College Academic Catalog",
+   "url": "https://curriculum.pasadena.edu/academic-programs/welding/welding-fabrication-as-certificate-achievement/",
+   "title": "Welding Fabrication – Associate in Science Degree, Certificate of Achievement | Pasadena City College Academic Catalog",
    "h1": "2026-2027 ACADEMIC CATALOG",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 1.0,
+    "section": "as",
+    "section_line": "welding/ welding fabrication – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 4100
+  "text_chars": 3595
  },
  {
   "control_number": "41517",
@@ -8987,7 +9659,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration/ business administration 2.0 – associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 16,
@@ -9023,7 +9698,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "hospitality/ hospitality management – associate of science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 16,
@@ -9047,7 +9725,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality/ medical sector hospitality food and beverage leadership – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -9072,7 +9753,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business data analytics – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -9097,7 +9781,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business data analytics – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -9122,7 +9809,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality/ hospitality service leadership – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -9150,7 +9840,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced materials nanotechnology - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -9161,12 +9854,31 @@
   "title": "Advanced Materials Nanotechnology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS70A",
+   "BUS70B",
+   "CHEM22",
+   "CHEM240",
+   "CHEM241",
+   "CHEM242"
+  ],
+  "source": {
+   "url": "https://curriculum.pasadena.edu/academic-programs/natural-sciences/advanced-materials-nanotechnology-as-certificate-achievement/",
+   "title": "Advanced Materials Nanotechnology – Associate in Science Degree, Certificate of Achievement | Pasadena City College Academic Catalog",
+   "h1": "2026-2027 ACADEMIC CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "advanced materials nanotechnology - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 3752
  },
  {
   "control_number": "41846",
@@ -9188,7 +9900,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality/ cruiseline sector hospitality leadership – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -9212,7 +9927,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -9236,7 +9954,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -9260,7 +9981,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -9285,7 +10009,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -9314,7 +10041,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration/ business administration – human resource management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -9341,7 +10071,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -9370,7 +10103,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration/ business administration – human resource management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -9397,7 +10133,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "building construction/ sustainable building construction – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -9425,7 +10164,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "building construction/ building construction project management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -9452,7 +10194,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "building construction/ building construction inspection – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -9479,7 +10224,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "building construction/ sustainable building construction – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -9507,7 +10255,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "building construction/ building construction project management – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -9535,7 +10286,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welding/ welding fabrication – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -9559,7 +10313,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -9608,7 +10365,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -9632,7 +10392,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -9658,7 +10421,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electronics technology – basic digital technician – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -9685,7 +10451,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "global trade and logistics - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -9717,7 +10486,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "supply chain management – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -9760,7 +10532,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "health sciences/ health sciences – associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -9784,7 +10559,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "emergency medical technician – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -9822,7 +10600,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality/ certified hospitality entrepreneur – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -9847,7 +10628,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cad/bim technician – building design and environment – level 1 – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -9872,7 +10656,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cad/bim modeler - building design and fabrication - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -9899,7 +10686,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cad technician – mechanical design and fabrication – level 1 – certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -9927,7 +10717,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire academy preparation - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -9960,7 +10753,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "culinary management and operations – associate in science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -9993,7 +10789,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "culinary management and operations – associate in science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -10021,7 +10820,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fire academy preparation - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -10054,7 +10856,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cad/bim designer – building design and environment – level 2 – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -10099,7 +10904,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "data science - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -10132,7 +10940,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "data science - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -10200,7 +11011,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "applied sciences – associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 50,
@@ -10243,7 +11057,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies/ communication studies 2.0 – associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 21,
@@ -10283,7 +11100,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health/ public health - associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 18,
@@ -10316,7 +11136,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "honda pact - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -10350,7 +11173,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biological technology/ biological technology – stem cell-based biomanufacturing – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -10384,7 +11210,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biological technology/ biological technology – stem cell-based biomanufacturing – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -10426,7 +11255,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biological technology/ biological technology – stem cell culture – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -10452,7 +11284,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -10478,7 +11313,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -10505,7 +11343,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire technology/ wildland fire technology - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -10532,7 +11373,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -10577,7 +11421,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agricultural entrepreneurship - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -10622,7 +11469,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agricultural entrepreneurship - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -10658,7 +11508,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music/ popular music - associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -10692,7 +11545,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "educational aide - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -10716,7 +11572,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -10739,7 +11598,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -10766,7 +11628,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "urban forestry/arborist - associate in science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -10794,7 +11659,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "urban forestry/arborist - associate in science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -10819,7 +11687,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality/ first time hospitality manager - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -10842,7 +11713,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "telemetry technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -10870,7 +11744,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting - taxation for enrolled agents - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -10907,7 +11784,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science/ computer science - associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -10919,7 +11799,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.969,
+  "coverage": 1.0,
   "codes_found": [
    "ART5",
    "BIOL11",
@@ -10946,6 +11826,7 @@
    "PHIL25H",
    "PHIL7",
    "PHSC3",
+   "PHSC3L",
    "POLSC1000",
    "PSYC21",
    "PSYC21H",
@@ -10960,7 +11841,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "education/ elementary teacher education: integrated programs – associate in arts degree for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 32,
@@ -10987,7 +11871,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cinema/ virtual production in cinema - associate in science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -11014,7 +11901,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cinema/ virtual production in cinema - associate in science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -11039,7 +11929,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -11067,7 +11960,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -11093,7 +11989,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -11120,7 +12019,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "patient intake specialist - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -11149,7 +12051,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fire technology/ wildland fire technology - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -11193,7 +12098,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "personal training - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -11222,7 +12130,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire technology/ wildland fire technology - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -11266,7 +12177,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "personal training - associate in science degree, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,

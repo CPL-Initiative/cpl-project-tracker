@@ -2,18 +2,18 @@
  "college": "MiraCosta College",
  "programs": 187,
  "with_closed_list": 161,
- "found": 119,
- "extracted": 119,
+ "found": 142,
+ "extracted": 142,
  "errors": 0,
- "passed_machine_checks": 80,
+ "passed_machine_checks": 98,
  "failed": {
-  "coverage": 15,
+  "coverage": 17,
   "invented": 0,
-  "arithmetic": 36,
+  "arithmetic": 41,
   "repeated": 0,
   "outcomes": 2
  },
- "cost_usd": 10.02,
+ "cost_usd": 11.96,
  "cost_per_program": 0.0842,
  "not_found": [
   {
@@ -144,5 +144,5 @@
    }
   }
  ],
- "run": "39726634443"
+ "run": "39746427354"
 }

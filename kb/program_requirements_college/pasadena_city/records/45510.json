@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8733,
-    "output_tokens": 3881,
+    "output_tokens": 3819,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3881,
+  "output_tokens": 3819,
   "output_tokens_details": {
-   "thinking_tokens": 1585
+   "thinking_tokens": 1461
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11255,
- "ms": 30537,
- "seconds": 30.9,
+ "cost_usd": 0.11131,
+ "ms": 31343,
+ "seconds": 31.6,
  "parts": null,
  "error": null,
  "score": {
@@ -176,7 +176,7 @@
       "alternatives": [
        {
         "code": "BIOL 011H",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -189,7 +189,7 @@
       "alternatives": [
        {
         "code": "ENGL C1000H",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -202,7 +202,7 @@
       "alternatives": [
        {
         "code": "ENGL 059",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -215,7 +215,7 @@
       "alternatives": [
        {
         "code": "HIST 007AH",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -235,7 +235,7 @@
       "alternatives": [
        {
         "code": "PSYC 021H",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -248,7 +248,7 @@
       "alternatives": [
        {
         "code": "COMM C1000H",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -420,15 +420,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes with leading zeros (e.g., EDUC 013, BIOL 011, ENGL 059, PSYC 021, GEOL 003, PHSC 003, ART 005, MUSC 021, THRT 001, HIST 008, MATH 038, SOC 002, PHIL 001/007/025, RELG 001); these were matched to the closed-list codes without leading zeros (EDUC 13, BIOL 11, etc.) and not flagged as catalog additions.",
-   "List A: 'PHSC 003 & 003L' is printed as a single selection; PHSC 003 and PHSC 003L together count as one choice, the alternative being GEOL 003. Units are not printed beside individual List A/B/C courses; only list totals are printed.",
-   "Alternative (or/honors) units were taken from the units printed on the shared row.",
-   "List C is labeled 'Up to 12 additional units (not required)' and recorded as recommended; the printed Required Subtotal of 33-45 includes these optional 0-12 units, so the major total range reflects them.",
-   "total_units uses the printed 'Required Subtotal 33-45'; the general statement 'A minimum of 18 semester or 27 quarter units in the major' was not used as the total.",
-   "Degree Total 60 includes Cal-GETC Pattern 34 and 'Transferable Electives (as needed to reach 60 transferable units)' with no printed units. IGETC-CSU or CSU GE may substitute for students with catalog rights.",
-   "Footnote markers 1-3 appear after the table but their attachment points in the table are not visible in the text.",
-   "The catalog text begins mid-sentence ('or future elementary or special education teachers...'); the description is cut off at the start."
+   "Catalog prints codes with leading zeros (EDUC 013, BIOL 011, ENGL 059, GEOL 003, PHSC 003, ART 005, MUSC 021, THRT 001, HIST 008, MATH 038, SOC 002, PHIL 001/007/025, RELG 001, PSYC 021); these were matched to closed-list codes without zeros (EDUC 13, BIOL 11, etc.) and not flagged as additions.",
+   "List A: PHSC 003 and PHSC 003L are printed as a single paired option ('PHSC 003 & 003L'); selecting one option means either GEOL 003 alone or PHSC 003 together with PHSC 003L (block total 4 units).",
+   "List C is labeled 'Up to 12 additional units (not required)', 0-12, preparing for CSULA Urban Learning B.A., Liberal Studies B.A., and CSULB Liberal Studies B.A.; recorded as recommended. The Required Subtotal of 33-45 appears to include these optional 0-12 units; the required portion alone would be 33 units. SOC 002 is marked 'Liberal Studies B.A. only'.",
+   "HIST 002A may be replaced by ENGL 059 (Children's Literature), recorded as an alternative.",
+   "Units are printed only beside the first course of each 'or' pair and not beside list courses; alternative and list-course units left null.",
+   "Text states 'A minimum of 18 semester ... units in the major' as a general AA-T rule; total_units taken from the printed 'Required Subtotal 33-45'.",
+   "Degree Total 60 includes Cal-GETC Pattern 34 and transferable electives as needed to reach 60 units; CSU GE-Breadth or IGETC-CSU allowed for students with catalog rights.",
+   "Catalog text begins mid-sentence ('or future elementary...'); the description's opening appears cut off."
   ]
  },
- "extracted_run": "39061730187"
+ "extracted_run": "39758679671"
 }

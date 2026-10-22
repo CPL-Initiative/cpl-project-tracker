@@ -1,0 +1,192 @@
+{
+ "college": "Palomar College",
+ "reread_run": "39754162247",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39746422049",
+ "at": "2026-10-22T09:18:21Z",
+ "posted": 63,
+ "batches": 3,
+ "skipped": [
+  {
+   "control_number": "10888",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 1,
+ "absent": 0,
+ "held": 0,
+ "kept": 62,
+ "carried": 0,
+ "replaced_keys": [
+  "41244"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "18662",
+  "18663",
+  "18899",
+  "22487",
+  "22488",
+  "22493",
+  "22496",
+  "22500",
+  "22505",
+  "22506",
+  "22507",
+  "22509",
+  "22510",
+  "22511",
+  "22512",
+  "22513",
+  "22514",
+  "22518",
+  "22523",
+  "22527",
+  "22528",
+  "22530",
+  "22533",
+  "22535",
+  "22537",
+  "22538",
+  "22539",
+  "22540",
+  "22542",
+  "22543",
+  "22544",
+  "22545",
+  "22546",
+  "22548",
+  "22552",
+  "22556",
+  "22557",
+  "22562",
+  "22565",
+  "22571",
+  "22572",
+  "22573",
+  "30040",
+  "30573",
+  "31228",
+  "31621",
+  "31639",
+  "31642",
+  "31643",
+  "31646",
+  "31649",
+  "32548",
+  "32601",
+  "33248",
+  "33767",
+  "33775",
+  "36764",
+  "39740",
+  "39851",
+  "40045",
+  "43518",
+  "43519"
+ ],
+ "carried_keys": [],
+ "machine_pass": 59,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Palomar College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 39746422049;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Program Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 14,
+       "min": 14
+      },
+      "courses": [
+       {
+        "code": "GEOG 120",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 132",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 134",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 136",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 138",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Design and execute tasks and workflows for GIS projects.",
+      "Perform GIS analyses and expand the basic GIS program interface."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 14,
+      "min": 14
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Geographic Information Systems - Certificate of Achievement (8-15 units)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 14,
+   "total_min": 14,
+   "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeographicInformationSystems-CA",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38843467865,
+   "program_title": "Geographic Information Systems",
+   "control_number": "41244"
+  }
+ ]
+}
