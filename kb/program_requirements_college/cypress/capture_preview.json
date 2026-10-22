@@ -1,0 +1,370 @@
+{
+ "college": "Cypress College",
+ "catalog_url": "https://catalog.nocccd.edu/cypress-college/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 282,
+ "with_closed_list": 282,
+ "started": "2026-10-22T20:23:15Z",
+ "scope": "/cypress-college/",
+ "sitemap": {
+  "url": "https://catalog.nocccd.edu/sitemap.xml",
+  "status": 200,
+  "listed": 1347,
+  "nested": 0,
+  "program_pages": 383,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 383,
+ "child_pages": 3,
+ "banner_h1": null,
+ "loads": 394,
+ "seconds": 1959.3,
+ "found": 274,
+ "by_method": {
+  "link_search": 11,
+  "not_found": 5,
+  "page_claimed": 3,
+  "sitemap_page": 263
+ },
+ "shared_pages": {
+  "https://catalog.nocccd.edu/cypress-college/degrees-certificates/communication-studies/communication-studies-2-associate-in-arts-degree-for-transfer-aa-t/": [
+   "31002",
+   "43849"
+  ],
+  "https://catalog.nocccd.edu/cypress-college/degrees-certificates/public-health-science/public-health-science-associate-in-science-degree-for-transfer/": [
+   "37128",
+   "46294"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "33913",
+   "title": "Solar Energy",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35041",
+   "title": "Sustainability",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35056",
+   "title": "CSU General Education (CSU GE Breadth)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/cypress-college/programs-study/transfer-programs/general-education-certification-ge-transfer-of-credit/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 330,
+    "why": "coarse net: the page's code tokens name 0 of 330 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2593,
+     "content": 3514,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35090",
+   "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/cypress-college/programs-study/transfer-programs/california-general-education-transfer-curriculum/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "textContent",
+    "coverage": 0.008,
+    "body": 0.0,
+    "content": 0.008,
+    "net": 2,
+    "listed": 264,
+    "why": "coarse net: the page's code tokens name 2 of 264 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3717,
+     "content": 34117,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Requirements",
+      28824
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "45943",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/cypress-college/programs-study/transfer-programs/california-general-education-transfer-curriculum/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 0.007,
+    "body": 0.0,
+    "content": 0.007,
+    "net": 2,
+    "listed": 285,
+    "why": "coarse net: the page's code tokens name 2 of 285 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3717,
+     "content": 34117,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Requirements",
+      28824
+     ]
+    ]
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "30328",
+   "title": "Computer Forensics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/system-administration-and-technical-support-certificate/",
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/"
+   ]
+  },
+  {
+   "control_number": "42351",
+   "title": "Auto Collision I-CAR Gold",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/collision-repair-i-car-gold-certificate/",
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/auto-collision-repair-fundamentals-associate-in-science-degree/",
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/"
+   ]
+  },
+  {
+   "control_number": "43079",
+   "title": "UCTP Physics",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/physics/physics-2-0-associate-in-science-degree-for-transfer-as-t/",
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/chemistry/chemistry-associate-in-science-degree-for-uc-transfer/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 13,
+  "0.8-1.0": 37,
+  "1.0": 224
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/cypress",
+  "kept": 256,
+  "programs": 18,
+  "list": [
+   {
+    "control_number": "03774",
+    "title": "Air Conditioning and  Refrigeration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/air-conditioning-and-refrigeration-associate-in-science-degree/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31106",
+    "title": "HVAC Codes and Estimating",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/hvac-codes-and-estimating-certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31171",
+    "title": "Commercial Refrigeration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/commercial-refrigeration-certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31173",
+    "title": "Air Conditioning and Refrigeration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/air-conditioning-refrigeration-certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31185",
+    "title": "HVAC Building Commissioning",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/hvac-building-commissioning-certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31186",
+    "title": "Commercial Air Conditioning",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/commercial-air-conditioning-certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31188",
+    "title": "Air Conditioning Customer Service",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/air-conditioning-customer-service-certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31189",
+    "title": "Automated Building Controls",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/automated_building_controls_certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31192",
+    "title": "Heat Pump",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/heat-pump-certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "32097",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/art/associate-arts-studio-arts-transfer-degree-aa-t/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/art/associate-arts-studio-arts-transfer-degree-aa-t/",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37048",
+    "title": "Associate in Science in Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/administration-justice/associate-in-science-in-administration-of-justice-for-transfer-degree-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37208",
+    "title": "Air Conditioning and Refrigeration Project Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/air-conditioning-and-refrigeration-project-management-certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37218",
+    "title": "Career Technical Education-Homeland Security",
+    "award": "A.S. Degree",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/administration-justice/career-technical-education-homeland-security-associate-in-science-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/",
+    "was_coverage": 0.778,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39278",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/administration-justice/administration-of-justice-certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "39650",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/administration-justice/law-public-policy-and-society-associate-in-arts-degree-for-transfer/",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "40708",
+    "title": "Administration of Local Anesthesia, Nitrous Oxide-Oxygen Analgesia and Periodontal Soft Tissue Curettage",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dental-hygiene/administration-of-local-anesthesia-nitrous-oxide-oxygen-analgesia-and-periodontal-soft-tissue-curettage-certificate/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dental-hygiene/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41721",
+    "title": "Automated Building Controls",
+    "award": "A.S. Degree",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/automated_building_controls_associate_in_science_degree/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44261",
+    "title": "Law, Public Policy and Society",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/administration-justice/law-public-policy-and-society-certificate/",
+    "coverage": 0.926,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   }
+  ]
+ },
+ "run": "39848037321"
+}
