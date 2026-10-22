@@ -6074,3 +6074,11 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 ## INDEX update history (moved 2026-10-20, S438)
 - 2026-10-20 (S428 SkyPinyon): the CTDL partner exchange scoped on Sam's ask (Credential Engine and WestEd, COBI authoritative): the strategy as a Claude Doc, the lane `ctdl-partner-exchange`, CE's xTRA code and ten Ready to Publish extracts read, Open Asks Sheet 102; handoff 430; KB note reference-ctdl-classes-for-cobi-records.
+
+## INDEX update history, moved S444 (2026-10-22)
+
+- 2026-10-20 (S437 SkySagebrush, opened by Sam): the CR Progress view (#2287), the C-ID site found and baselined (#2289), Open Asks Sheet 108 answered, the auto-mark rule drafted and waiting on Sam's word; handoff 438 (SkySumac); no KB note.
+- 2026-10-20 (S436 SkyTanbark): the Exhibit Progress view (#2285), the Fact Sheet's UI pass, Open Asks Sheet 107; handoff 437 (SkySagebrush).
+- 2026-10-20 (S434 SkyElderberry, the routine): Sierra's third UI pass, Copy, Helpful, Not helpful and the note's Send as underlined words (#2281); Sheet 105 still open; the strays wait on a curator's discipline calls; handoff 435; no KB note.
+- 2026-10-20 (S433 SkyCoffeeberry, the routine): the two ENVR forestry pairs queued for a faculty reviewer as `surfaced` pairs (#2278); the CSR quarterly routine compares the handbook with the accepted 19th edition on a quarterly cron (#2279); the CSR lane compacted under its budget; Sheet 105 still open; handoff 434; no KB note.
+- 2026-10-20 (S432 SkyYerbaSanta, the routine): Sheet 104 applied, ten forestry identities to ENVR and four wine to AGPR, each discipline following its code (#2276), re-keyed live and read back; the quarterly probe read a second time; Open Asks Sheet 105 asks about the two forestry stragglers (the permission check held their apply); handoff 433; no KB note.

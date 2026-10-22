@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-21",
+  "generated": "2026-10-22",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -10,33 +10,33 @@
     "other": 150000
   },
   "summary": {
-    "files": 1227,
-    "bytes": 12594463,
+    "files": 1228,
+    "bytes": 12606227,
     "over_budget": 8,
-    "handoff_max": 444,
+    "handoff_max": 445,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59832,
+    "always_loaded_bytes": 59782,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59832,
+        "bytes": 59782,
         "over": 0
       },
       "other": {
         "files": 123,
-        "bytes": 3860706,
+        "bytes": 3862241,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10410,
+        "bytes": 9397,
         "over": 0
       },
       "lessons": {
         "files": 84,
-        "bytes": 2327072,
+        "bytes": 2333369,
         "over": 1
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 41,
-        "bytes": 420989,
+        "bytes": 421578,
         "over": 4
       },
       "handoff": {
-        "files": 415,
-        "bytes": 3145025,
+        "files": 416,
+        "bytes": 3149431,
         "over": 0
       }
     },
@@ -62,10 +62,10 @@
       "vault_heavy_path": 64
     },
     "vault": {
-      "files": 23878,
-      "bytes": 3352907832,
-      "heavy_bytes": 2255702742,
-      "heavy_share": 0.673,
+      "files": 24020,
+      "bytes": 3389811641,
+      "heavy_bytes": 2292552201,
+      "heavy_share": 0.676,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -419,13 +419,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 22177,
+        "bytes": 22625,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 2177,
-        "ratio": 1.11
+        "over_by": 2625,
+        "ratio": 1.13
       },
-      "message": "22,177 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "22,625 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
@@ -457,13 +457,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 739749,
+        "bytes": 741120,
         "limit": 150000,
         "lane": "other",
-        "over_by": 589749,
-        "ratio": 4.93
+        "over_by": 591120,
+        "ratio": 4.94
       },
-      "message": "739,749 B is 4.9× the other budget (150,000 B) — candidate for compaction",
+      "message": "741,120 B is 4.9× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -531,20 +531,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1251387626,
+        "bytes": 1287584617,
         "kind": "dir"
       },
-      "message": "directory totals 1,251,387,626 B inside the vault"
+      "message": "directory totals 1,287,584,617 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 142072879,
+        "bytes": 142725347,
         "kind": "dir"
       },
-      "message": "directory totals 142,072,879 B inside the vault"
+      "message": "directory totals 142,725,347 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

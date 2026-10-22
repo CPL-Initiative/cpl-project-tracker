@@ -68,7 +68,9 @@ stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
   `tests/commons_status_build_test.py` (66 checks).
 - **The session side** is each project's run log, `kb/status/<project>.json`: today Program Requirements
   alone has one, so four rows read *no run log*. The tab reads a run log's session stamp, next step and
-  calls as its last checkpoint left them.
+  calls as its last checkpoint left them. A call Sam answered on its sheet carries `answer` {by, at, words}: listed
+  with his words, counted answered (Sam, 2026-10-21: *"the open asks on The Commons doesn't seem to record that I
+  responded"*; #2329).
 - **The tab** is `commons.js` (jsdom guard `tests/commons.test.js`, 77 checks), booted after
   `commons_progress.js` (step 1's shared module, whose date helpers it reuses); `npm run a11y -- cobi:commons`
   passes at both widths; UI pass ledger `cobi:commons`.
