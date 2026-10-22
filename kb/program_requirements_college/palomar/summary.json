@@ -2,19 +2,19 @@
  "college": "Palomar College",
  "programs": 342,
  "with_closed_list": 331,
- "found": 224,
- "extracted": 224,
+ "found": 282,
+ "extracted": 282,
  "errors": 0,
- "passed_machine_checks": 196,
+ "passed_machine_checks": 254,
  "failed": {
-  "coverage": 5,
+  "coverage": 3,
   "invented": 1,
   "arithmetic": 27,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 15.13,
- "cost_per_program": 0.0675,
+ "cost_usd": 18.76,
+ "cost_per_program": 0.0665,
  "not_found": [
   {
    "control_number": "14584",
@@ -103,5 +103,5 @@
    }
   }
  ],
- "run": "38843467865"
+ "run": "39746422049"
 }
