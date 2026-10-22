@@ -1,0 +1,19 @@
+{
+ "_readme": "S449 SkyBuckwheat, 2026-10-22. After #2349 Mt. San Jacinto's capture (run 39779328144) leaves 15 programs page-claimed and 22 not found. Two transfer degrees lose their own pages though the sitemap lists them (page read 39770285975): Chemistry A.S.-T (40010) is on biology-as-t at 0.0 and its chemistry-ast page is among none of its candidates; Public Health Science A.S.-T (39455) is on kinesiology-aat, and its address public-health-a.s.-t names the award with dots, which SLUG_AWARD (-as-t) does not read. Musical Theater A.A. (08681) lost its department page and sits on the C-ID chart; five office administration certificates sit on office-administration-as or business-administration-certificate; Environmental Studies A.S., Mathematics A.S., Advanced Audio Technology A.A. and Culinary Arts & Hospitality A.A. sit on sibling pages. This read prints the sitemap's addresses for those programs' words, then the capture's own view of the two transfer degrees' pages, before any reader change. Three loads, no model call.",
+ "college": "Mt. San Jacinto College",
+ "questions": {
+  "remaining_pages": "Which addresses the sitemap lists for the page-claimed programs' words (musical theater, office administration, environmental studies, mathematics, audio, culinary, humanities, horticulture, aviation, interpreter, medical laboratory).",
+  "capture_view": "What the capture reads on chemistry-ast and public-health-a.s.-t: whether the Requirements tab is kept and which course codes it prints."
+ },
+ "keywords": [
+  "musical", "theat", "office-admin", "clerical", "administrative", "business-office",
+  "environmental-studies", "mathematics", "culinary", "audio", "humanities", "horticulture",
+  "aviation", "interpret", "medical-lab", "public-health", "chemistry",
+  "\\bCHEM[ \\-]?\\d", "\\bHS[ \\-]?\\d", "\\bKINE?[ \\-]?\\d", "\\bMATH[ \\-]?\\d", "\\bPHYS?[ \\-]?\\d", "\\bBIOL?[ \\-]?\\d"
+ ],
+ "pages": [
+  {"url": "https://catalog.msjc.edu/sitemap.xml", "answers": ["remaining_pages"]},
+  {"url": "https://catalog.msjc.edu/instructional-programs/chemistry/chemistry-ast/", "answers": ["capture_view"], "capture_view": true},
+  {"url": "https://catalog.msjc.edu/instructional-programs/public-health/public-health-a.s.-t/", "answers": ["capture_view"], "capture_view": true}
+ ]
+}
