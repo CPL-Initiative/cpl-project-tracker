@@ -868,7 +868,7 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
-## S446 SkyMadrone (2026-10-22, the CPL Queue routine): a degree-and-certificate address, 88 records, the page-claimed that remain
+## S446 SkyMadrone (2026-10-22, the CPL Queue routine): a degree-and-certificate address, 91 records, the page-claimed that remain
 
 - **A degree-and-certificate address names both awards (#2345).** Grossmont addresses a degree and its certificate
   on one page (`law-enforcement-as-certificate-achievement`, `arabic-aa-certificate-achievement`). The capture view
@@ -889,7 +889,14 @@ the weekly apply.
 - **Loads and rereads.** Palomar 282 found (from 224), 254 passing (from 196), $18.76; 62 inserted, 1 replaced by
   the reread. MiraCosta 142 (from 119), 98 passing (from 80), $11.96; 21 inserted, the reread replaced none (the
   extraction re-wrote only its 21 new records). Grossmont 144 (from 139), 97 passing (from 93), $10.61; 5 inserted.
-  Display build 1b3616641146 covers 17,390 rows (from 17,302). Receipts are under `kb/receipts/`.
+  Pasadena City, the other college main's captures named with the shape: 296 to 297 found, 238 to 242 passing,
+  $20.91; eight programs moved to their own degree-and-certificate page (Dental Assisting A.S. had read a sibling's),
+  3 inserted, 5 replaced by the reread. Build 1b3616641146 (the first three, 17,390 rows) applied on the wave branch
+  (run 39757574337); build 0ad3c75bfa19 (17,393 rows) supersedes it and applies on `main` after #2346 merges.
+  Receipts are under `kb/receipts/`.
+- **A display job's Applied record cannot carry a PR to merge.** The bot's commit becomes the head, and its test run
+  stops at `action_required`, so no test has run on that head. Run `step=display` on `main` after the merge (the
+  S420 order) whenever main has not moved, rather than holding the PR for a base merge that is not there.
 - **A capture-only run's push can lag the run's "completed" state by a minute.** Read the branch head again before
   concluding that a run filed nothing.
 - **The UI pass, CPL opportunity visual (#2344):** the page painted no `h1` until a college loaded, and at 360px the
