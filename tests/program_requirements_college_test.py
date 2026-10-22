@@ -411,6 +411,23 @@ pt = P.hidden_tabs_text({"tabPanels": [{"label": "DEGREES", "text": MC_DEG.split
 check(pt.startswith("[Tab: DEGREES]\nAssociate Degrees") and "Search the whole" not in pt,
       "a tab naming no course stays when it says its degrees are certificates plus general education")
 
+# Palomar heads a page serving a degree and its certificate "... - A.S. Degree Major/Cert.
+# Achievement": the certificate reads its award there too, and both keep the page (S445).
+PAL = "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/"
+PAL_GC = page(PAL + "GraphicCommunications-AS-CA",
+              "Graphic Communications - A.S. Degree Major/Cert. Achievement (18 units or more)",
+              "GC 100 GC 101 GC 102 GC 103")
+gc_list = [{"code": "GC %d" % i} for i in (100, 101, 102, 103)]
+gc_as = {"control_number": "05195", "title": "Graphic Communications", "award": "A.S. Degree", "closed_list": gc_list}
+gc_coa = dict(gc_as, control_number="22510",
+              award="Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u")
+gc_mgmt = dict(gc_coa, control_number="22521", title="Graphic Communications: Emphasis in Management")
+check(C.label_score(PAL_GC, gc_coa)[0] == 1 and C.label_score(PAL_GC, gc_as)[0] == 1,
+      "'Cert. Achievement' names the certificate, as 'A.S. Degree' names the degree")
+gpal = C.assign([gc_as, gc_coa, gc_mgmt], [PAL_GC])
+check(gpal["05195"]["best"] is not None and gpal["22510"]["best"] is not None and gpal["22521"]["best"] is None,
+      "Palomar's degree and its certificate share their page; a longer title the heading does not name does not")
+
 # assign(): a loser moves to its next page; one with none left reads no page
 PG = [page(start + "degrees/x-aa-t/", "X, A.A.-T", "X AA-T ABC 101 ABC 102 ABC 103"),
       page(start + "degrees/x-aa/", "X, A.A.", "X A.A. ABC 101 ABC 102 ABC 103 ABC 104"),
