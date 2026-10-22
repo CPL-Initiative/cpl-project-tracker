@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1228,
-    "bytes": 12606227,
+    "files": 1229,
+    "bytes": 12614722,
     "over_budget": 8,
-    "handoff_max": 445,
+    "handoff_max": 446,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59782,
     "superseded_files": 0,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 84,
-        "bytes": 2333369,
+        "bytes": 2337734,
         "over": 1
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 41,
-        "bytes": 421578,
+        "bytes": 421682,
         "over": 4
       },
       "handoff": {
-        "files": 416,
-        "bytes": 3149431,
+        "files": 417,
+        "bytes": 3153457,
         "over": 0
       }
     },
@@ -62,10 +62,10 @@
       "vault_heavy_path": 64
     },
     "vault": {
-      "files": 24020,
-      "bytes": 3389811641,
-      "heavy_bytes": 2292552201,
-      "heavy_share": 0.676,
+      "files": 24111,
+      "bytes": 3408672694,
+      "heavy_bytes": 2311401154,
+      "heavy_share": 0.678,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -419,13 +419,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 22625,
+        "bytes": 22754,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 2625,
-        "ratio": 1.13
+        "over_by": 2754,
+        "ratio": 1.14
       },
-      "message": "22,625 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "22,754 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
@@ -531,20 +531,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1287584617,
+        "bytes": 1305809146,
         "kind": "dir"
       },
-      "message": "directory totals 1,287,584,617 B inside the vault"
+      "message": "directory totals 1,305,809,146 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 142725347,
+        "bytes": 143349771,
         "kind": "dir"
       },
-      "message": "directory totals 142,725,347 B inside the vault"
+      "message": "directory totals 143,349,771 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

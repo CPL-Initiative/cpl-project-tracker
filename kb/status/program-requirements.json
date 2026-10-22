@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-22T02:40:09Z",
-  "session": 444,
-  "moniker": "SkyBlueOak",
+  "written_at": "2026-10-22T07:34:57Z",
+  "session": 445,
+  "moniker": "SkyCurrant",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_445_handoff.md",
+  "handoff": "docs/session_446_handoff.md",
   "next_step": {
-    "title": "MiraCosta's discipline pages, then the rest of the page-claimed sweep",
-    "text": "Load Sierra and MiraCosta and build their display; then read the text MiraCosta's hidden tabs give the reader, so each program on a discipline page keeps it; then Ventura, Moorpark, Orange Coast, Oxnard and Citrus."
+    "title": "Palomar and MiraCosta extracted under the new readers, then the next page-claimed colleges",
+    "text": "Extract and load Palomar (282 programs found, from 224) and MiraCosta (142, from 119) and build their display; then a free capture of Mt. San Jacinto, Santa Barbara City, Saddleback and Grossmont under the per-heading rule."
   },
   "calls": [
     {
@@ -37,18 +37,6 @@
   },
   "changes": [
     {
-      "at": "2026-10-21T22:56:00Z",
-      "text": "Foothill's 29 new records merged into the page's build."
-    },
-    {
-      "at": "2026-10-21T23:08:00Z",
-      "text": "The Procedures view flags a catalog that blocks the reader and whether a hand-filed copy carries the read."
-    },
-    {
-      "at": "2026-10-21T23:24:00Z",
-      "text": "37 Program Mapper hosts from Sam's list recorded on the registry."
-    },
-    {
       "at": "2026-10-21T23:27:00Z",
       "text": "A call Sam answered on its sheet counts as answered."
     },
@@ -59,6 +47,26 @@
     {
       "at": "2026-10-22T02:36:00Z",
       "text": "The reader takes department and discipline pages and reads a section heading over two lines: Sierra 35 to 81 programs found, MiraCosta 29 to 68."
+    },
+    {
+      "at": "2026-10-22T03:46:00Z",
+      "text": "A page read can show a catalog page exactly as the harvest's reader sees it."
+    },
+    {
+      "at": "2026-10-22T04:30:00Z",
+      "text": "Sierra's 57 and MiraCosta's 39 new records merged into the page's build."
+    },
+    {
+      "at": "2026-10-22T05:11:00Z",
+      "text": "A catalog page holding several programs now serves each program its own section: MiraCosta 68 to 122 programs found, Foothill 144 to 185, Citrus 148 to 178, Sierra 81 to 92, Orange Coast 242 to 277."
+    },
+    {
+      "at": "2026-10-22T06:07:00Z",
+      "text": "185 new records loaded at MiraCosta, Orange Coast, Foothill, Citrus and Sierra; display build 82d6298a0c67 on 17,302 records."
+    },
+    {
+      "at": "2026-10-22T07:30:00Z",
+      "text": "Palomar's degree-and-certificate pages serve both (224 to 282 found), and MiraCosta's listed degrees read their certificate (119 to 142)."
     }
   ],
   "headline": [
@@ -149,18 +157,18 @@
     {
       "day": "2026-10-22",
       "active": 20282,
-      "complete": 12607,
+      "complete": 12791,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-22T05:12:00Z"
+    "at": "2026-10-22T08:12:00Z"
   },
   "harvest": {
     "day": "2026-10-22",
-    "gaps": 3492,
+    "gaps": 3407,
     "parts": {
       "links": {
         "catalog": [
@@ -177,11 +185,11 @@
         ]
       },
       "roep": [
-        19166,
+        19344,
         20282
       ],
       "coci": [
-        15731,
+        15937,
         20282
       ],
       "outcomes": {
@@ -190,12 +198,12 @@
           89192
         ],
         "plo": [
-          15731,
+          15937,
           20282
         ]
       },
       "careers": [
-        14681,
+        14887,
         20282
       ]
     }
