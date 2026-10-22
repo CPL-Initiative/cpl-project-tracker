@@ -1,0 +1,665 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "36732",
+ "shape": "degree",
+ "title": "Marine Science",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/marine-science-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9384,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9384,
+    "output_tokens": 4930,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4930,
+  "output_tokens_details": {
+   "thinking_tokens": 1522
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13614,
+ "ms": 37681,
+ "seconds": 38.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 32,
+   "listed": 39,
+   "share": 0.821,
+   "missing": [
+    "BIOLA180",
+    "BIOLA185",
+    "BIOLA210",
+    "BIOLA280",
+    "BIOLA282",
+    "BIOLA283",
+    "GEOLA105M"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 25,
+   "codes": [
+    "ESECA100",
+    "ESECA100H",
+    "ESECA110",
+    "ESECA121",
+    "ESECA124",
+    "GEOGA190",
+    "ITRNA100",
+    "MARAA138",
+    "MARAA150",
+    "MARAA152",
+    "MRSCA119",
+    "MRSCA120",
+    "MRSCA125",
+    "MRSCA130",
+    "MRSCA135",
+    "MRSCA140",
+    "MRSCA190",
+    "MRSCA195",
+    "MRSCA199",
+    "MRSCA220",
+    "MRSCA221",
+    "MRSCA222",
+    "MRSCA223",
+    "MRSCA287",
+    "MRSCA288"
+   ],
+   "flagged": [
+    "ESECA100",
+    "ESECA100H",
+    "ESECA110",
+    "ESECA121",
+    "ESECA124",
+    "GEOGA190",
+    "ITRNA100",
+    "MARAA138",
+    "MARAA150",
+    "MARAA152",
+    "MRSCA119",
+    "MRSCA120",
+    "MRSCA125",
+    "MRSCA130",
+    "MRSCA135",
+    "MRSCA140",
+    "MRSCA190",
+    "MRSCA195",
+    "MRSCA199",
+    "MRSCA220",
+    "MRSCA221",
+    "MRSCA222",
+    "MRSCA223",
+    "MRSCA287",
+    "MRSCA288"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    15.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [
+    "'Related Fields' chooses units but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Marine Science, Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 23,
+    "max": 24
+   },
+   "ge_pattern": "OCC AS General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 18,
+    "max": 18
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe how the ocean influences and is influenced by terrestrial, atmospheric, geological and biological processes.",
+    "Describe how the physical and chemical properties of water molecules affect the way that the ocean is structured and how the large scale movement of this water in waves, currents and tides influences oceanographic processes.",
+    "Describe the diversity of life in the ocean.",
+    "Identify how humans have influenced the ocean (chemically, physically and biologically) and explain the potential challenges associated with those changes."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "MRSC A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MRSC A100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A100L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MRSC A100M",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A180L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A185L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives - Marine Science",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "MRSC A119",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ESEC A121",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A124",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ESEC A124",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A187",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A188",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A195",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A199",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A221",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A222",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A223",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A287",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A288",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A291",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MRSC A291H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A292",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MRSC A292H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Related Fields",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ASTR A101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A182",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A182L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A281",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESEC A100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ESEC A100H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESEC A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG A190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL A105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL A105H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A105L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A137",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL A185H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A185L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL A185M",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITRN A100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARA A138",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARA A150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARA A152",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARA A156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL A180",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A185",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A210",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A280",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A282",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A283",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL A105M",
+    "why": "not in the text (only GEOL A105L listed for the lab)"
+   }
+  ],
+  "notes": [
+   "Related Fields courses may fulfill up to three units of the 3-7 unit restricted elective requirement; they are a sub-list of the Restricted Electives, not a separate minimum. Minimum left null because the catalog states only a cap ('up to three units').",
+   "No units are printed beside the restricted elective and related field courses; units left null.",
+   "Overview text says 18 major units with 6 additional elective units, but the requirements table prints Restricted Electives 3.0-7.0 and Total Major Units 18.0-19.0; 12 core + 3-7 does not match 18-19. Reviewer should check.",
+   "The Plan of Study footnote says restricted electives 'Units vary by course, 3 units required'.",
+   "GE row reads 'OCC AS General Education : 21 Units' with 18.0 in the units column; footnote says up to 3 major units may double count (21 - 3 = 18). ge_units recorded as 18 per the units column. Cal-GETC pattern (up to 34 units) may be substituted.",
+   "Electives row printed as '24.0 - 23.0'; recorded as degree_elective_units 23-24.",
+   "ESEC/MRSC A121 and ESEC/MRSC A124 are cross-listed; recorded under MRSC codes with ESEC codes as alternatives (catalog additions).",
+   "Catalog lists 'BIOL A182 & A182L' as one row and also BIOL A182L alone; each recorded once. ESEC A100H appears both as the honors twin of ESEC A100 and on its own row; recorded once as an alternative.",
+   "Plan of Study total shows 60-62 units while the requirements table shows Total Units 60.0."
+  ]
+ },
+ "extracted_run": "39726645292"
+}

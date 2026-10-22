@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7093,
+  "input_tokens": 6906,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7093,
-    "output_tokens": 1234,
+    "input_tokens": 6906,
+    "output_tokens": 990,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1234,
+  "output_tokens": 990,
   "output_tokens_details": {
-   "thinking_tokens": 473
+   "thinking_tokens": 265
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05305,
- "ms": 11395,
- "seconds": 11.7,
+ "cost_usd": 0.04742,
+ "ms": 8740,
+ "seconds": 9.1,
  "parts": null,
  "error": null,
  "score": {
@@ -99,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Competency",
+   "section_heading": "English Language Learning - Intermediate, Certificate of Competency",
    "measure": "hours",
    "total_units": {
     "min": 180,
@@ -182,13 +183,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Noncredit program counted in hours; total printed as 'Total Hours 180'.",
-   "ELL A037N row prints 'Intermediate Grammar Review 154'; read as title 'Intermediate Grammar Review 1' with 54 hours, consistent with 90+36+54=180. Reviewer should confirm.",
-   "Hours are printed only for the first course of each 'or' pair; alternatives' hours left null.",
-   "Catalog prints 'ELL A048N'; closed list stores it as 'ELLA048N' (same course, spacing difference), so treated as not a catalog addition.",
-   "Page header shows Control Number 36893, Not Financial Aid Eligible; the URL refers to a 'developmental English language skills' certificate while the text describes the intermediate program.",
-   "Program learning outcomes are printed once for the program and recorded for this award."
+   "Noncredit Certificate of Competency counted in hours; total 180 hours as printed.",
+   "Hours are printed only on the first course of each 'or' pair (90, 36, 54); the alternatives' hours are not printed, so recorded as null (presumably the same hours).",
+   "Catalog prints 'ELL A048N'; the closed list stores it as 'ELLA048N' (no space). Treated as the same closed-list course, not a catalog addition.",
+   "Catalog title for ELL A037N is 'Intermediate Grammar Review 1' vs closed list 'Intermediate Grammar Review'.",
+   "Outcomes are listed under 'Program Learning Outcomes' for this certificate."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

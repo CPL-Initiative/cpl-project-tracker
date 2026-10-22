@@ -1,0 +1,167 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "45181",
+ "shape": "noncredit",
+ "title": "MESA (Math, Engineering, Science Achievement) Program",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/mesa/mesa-certificate-of-competency/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6789,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6789,
+    "output_tokens": 510,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 510,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.03736,
+ "ms": 4660,
+ "seconds": 5.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    126.0,
+    126.0
+   ],
+   "stated": [
+    126.0,
+    126.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "MESA (Math, Engineering, Science Achievement), Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 126,
+    "max": 126
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Produce higher rates of persistence in MESA students compared to other calculus-based STEM major students.",
+    "Progress at the institution (re-enrolling, graduating and transferring to a four-year institution) at higher rates compared to students with similar characteristics who do not participate in the MESA program.",
+    "Demonstrate improvement in content mastery through the completion of writing and discussion exercises and use of appropriate college resources."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 126,
+     "max": 126
+    },
+    "courses": [
+     {
+      "code": "NS A010N",
+      "units": 63,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS A011N",
+      "units": 63,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; course hours (63 each) and Total Hours 126 recorded in units fields.",
+   "The 'Total Hours 126' is printed for the course list, so it is recorded both as total_units and as the block's stated total."
+  ]
+ },
+ "extracted_run": "39726645292"
+}

@@ -1,0 +1,412 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "41928",
+ "shape": "degree",
+ "title": "Applied Ocean Science and Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/applied-ocean-science-and-technology-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8421,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8421,
+    "output_tokens": 2632,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2632,
+  "output_tokens_details": {
+   "thinking_tokens": 753
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08632,
+ "ms": 20717,
+ "seconds": 21.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "KINA232",
+    "MARAA150",
+    "MARAA153",
+    "MARAA154",
+    "MRSCA120",
+    "MRSCA135",
+    "MRSCA140",
+    "WELDA100"
+   ],
+   "flagged": [
+    "KINA232",
+    "MARAA150",
+    "MARAA153",
+    "MARAA154",
+    "MRSCA120",
+    "MRSCA135",
+    "MRSCA140",
+    "WELDA100"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    30.0
+   ],
+   "stated": [
+    28.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     49.0,
+     51.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     9.0,
+     11.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Applied Ocean Science and Technology, Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OCC AS General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Utilize scientific equipment and monitoring studies to illustrate the influence and interactions between the geologic, physical, chemical and biological processes and characteristics of the world ocean.",
+    "Demonstrate the ability to safely operate a vessel and identify potential hazards when working on the water.",
+    "Demonstrate the ability to design, construct and maintain aquarium systems intended to support a variety of marine life.",
+    "Demonstrate a basic understanding of data collection methods and analysis as well as the role that monitoring programs contribute to our understanding of marine characteristics and processes."
+   ],
+   "careers": [
+    "deckhands",
+    "naturalist",
+    "environmental education positions"
+   ],
+   "degree_total_minimum": true
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MARA A150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARA A152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MARA A153",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARA A156",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MRSC A100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A100L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MRSC A100M",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A140",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG A190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives - Select two-four units from the following:",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CS A131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC A100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC A121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC A140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMS A100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR A220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HVAC A100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A232",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARA A154",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARA A200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MARA A201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A195",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD A100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The restricted electives list prints no units beside individual courses; units left null.",
+   "MARA A200 & MARA A201 are printed as a single paired choice (internship plus lecture) in the restricted electives; recorded as two entries but they are taken together.",
+   "OCC AS General Education is printed as 'up to 21' units; recorded as 21. Footnote says some major units may also meet GE and that the Cal-GETC pattern (up to 34 units) may be substituted.",
+   "Degree total 60 is printed as 'Total Minimum Degree Units - OCC AS GE'; transferable electives 'as needed to satisfy unit requirement' (Varies).",
+   "Overview states 26 required core units plus at least 2 restricted elective units; the required list as printed sums to 26.",
+   "Program sequence tab totals 60-61 units and refers to 'the certificate' though this is the A.S. degree page.",
+   "Program learning outcomes are printed once on the degree page and recorded for this award."
+  ]
+ },
+ "extracted_run": "39726645292",
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  }
+ ]
+}

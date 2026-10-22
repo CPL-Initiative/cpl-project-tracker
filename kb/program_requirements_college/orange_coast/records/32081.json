@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Theatre Arts",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/theatre-arts/",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/theatre-arts/theatre-arts-associate-arts-degree-transfer-aat/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12150,
+  "input_tokens": 7317,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12150,
-    "output_tokens": 1352,
+    "input_tokens": 7317,
+    "output_tokens": 2236,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1352,
+  "output_tokens": 2236,
   "output_tokens_details": {
-   "thinking_tokens": 451
+   "thinking_tokens": 636
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07564,
- "ms": 12308,
- "seconds": 12.6,
+ "cost_usd": 0.07399,
+ "ms": 18621,
+ "seconds": 19.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 13,
    "listed": 13,
-   "share": 0.0,
-   "missing": [
-    "THEAA100",
-    "THEAA101",
-    "THEAA106",
-    "THEAA107",
-    "THEAA120",
-    "THEAA123",
-    "THEAA126",
-    "THEAA129",
-    "THEAA131",
-    "THEAA175",
-    "THEAA176",
-    "THEAA177",
-    "THEAA178"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -74,138 +61,258 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     31.0,
+     31.0
+    ],
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 2,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Theatre Arts",
+   "section_heading": "Associate Degree for Transfer Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 11,
+    "max": 11
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 31,
+    "max": 31
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": [
-    "theatre",
-    "entertainment industry"
-   ]
+   "outcomes": [
+    "Understand and demonstrate the fundamental performance and technical production processes for the theatre arts.",
+    "Demonstrate knowledge of the historical and cultural dimensions of theatre, including the works of leading playwrights, actors, directors and designers, past and present.",
+    "Develop a clear understanding of the interaction between script, actor, and audience and the areas of scenery, lighting, sound and costume."
+   ],
+   "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "THEA A100",
-    "why": "AA-T requirements section not in the text; appears only in the course listing"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THEA A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THEA A101",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "THEA A101",
-    "why": "AA-T requirements section not in the text; appears only in the course listing"
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "THEA A120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A123",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A126",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A129",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "THEA A106",
-    "why": "AA-T requirements section not in the text; appears only in the course listing"
-   },
-   {
-    "code": "THEA A107",
-    "why": "AA-T requirements section not in the text; appears only in the course listing"
-   },
-   {
-    "code": "THEA A120",
-    "why": "AA-T requirements section not in the text; appears only in the course listing"
-   },
-   {
-    "code": "THEA A123",
-    "why": "AA-T requirements section not in the text; appears only in the course listing"
-   },
-   {
-    "code": "THEA A126",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
-    "code": "THEA A129",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
-    "code": "THEA A131",
-    "why": "AA-T requirements section not in the text; named only in department contact information"
-   },
-   {
-    "code": "THEA A175",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
-    "code": "THEA A176",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
-    "code": "THEA A178",
-    "why": "not in the text (course listing cut off)"
-   },
-   {
-    "code": "THEAA177",
-    "why": "not in the text (course listing cut off)"
+    "name": "List A - Select three courses from above not yet taken or the following:",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "THEA A107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A175",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A176",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A177",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A178",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A123",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A126",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A129",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text holds only the Theatre Arts overview page and part of the Courses tab; the section 'Theatre Arts, Associate in Arts Degree for Transfer (AA-T)' appears only as a navigation link, so its requirements, totals, GE pattern and outcomes are not in the text. A reviewer should fetch that program page.",
-   "Section heading recorded is the overview heading 'Theatre Arts', the only section actually read.",
-   "The overview says the AA-T is offered with an emphasis in Acting or in Technical Theatre, suggesting option blocks on the program page that are not shown here.",
-   "The THEA A101 course description states it is 'Required for Theatre Arts majors working towards an AA-T degree', but no requirements list was printed, so no block was recorded.",
-   "Course listing is cut off mid-description at THEA A125.",
-   "Careers taken from the overview sentence 'next steps toward a degree or career in theatre or in the entertainment industry'; certificate-specific career fields were not included."
+   "The page prints one Program Learning Outcomes list on the overview tab for this program; recorded for this AA-T.",
+   "List A says 'Select three courses from above not yet taken or the following'; courses from above (e.g., THEA A100/A101 alternative, THEA A131 if not used in the core) may also count but are listed only in their original blocks. The production courses THEA A120, A123, A126, A129 are listed under List A with the restriction 'One of the following production courses not selected from the Required Core (3 units maximum)'.",
+   "THEA A177 is printed as 'THEA A177' in the catalog; the closed list stores it as 'THEAA177' (no space). Treated as the same course, not a catalog addition.",
+   "Cal-GETC line reads 'California General Education Transfer Curriculum (Cal-GETC): 34 Units 1' with 31 in the units column (footnote 1 not shown, likely double-counting of 3 major units); ge_units recorded as the 31 printed in the units column.",
+   "The 18-unit major minimum sentence in the general ADT requirements is generic; the page also prints 'Total Major Units 18' for this award, used as total_units.",
+   "Transferable electives printed as 11.0 units toward the 60-unit degree, recorded as degree_elective_units.",
+   "Individual course units are not printed beside courses in the 'Select one' and List A lists, so units are null there."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

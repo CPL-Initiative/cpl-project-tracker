@@ -1,0 +1,1314 @@
+{
+ "college": "Citrus College",
+ "control_number": "45031",
+ "shape": "certificate",
+ "title": "Cal-GETC",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 18019,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 18019,
+    "output_tokens": 8087,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 8087,
+  "output_tokens_details": {
+   "thinking_tokens": 866
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.23382,
+ "ms": 57139,
+ "seconds": 57.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 235,
+   "share": 0.0,
+   "missing": [
+    "AJ101",
+    "AJ102",
+    "ANTH210",
+    "ANTH210H",
+    "ANTH212",
+    "ANTH212L",
+    "ANTH216",
+    "ANTH216H",
+    "ANTH220",
+    "ANTH222",
+    "ANTH224",
+    "ARCH250",
+    "ARCH251",
+    "ART100",
+    "ART101",
+    "ART102",
+    "ART103",
+    "ART104",
+    "ART105",
+    "ART106",
+    "ART106H",
+    "ART108",
+    "ART109",
+    "ART110",
+    "ART199",
+    "ART199H",
+    "ART200",
+    "ART201",
+    "ART206",
+    "ART206H",
+    "ART207",
+    "ART207H",
+    "ARTHC1100",
+    "ARTHC1100H",
+    "ARTHC1200",
+    "ARTHC1200H",
+    "ASL102",
+    "ASTR115",
+    "ASTR115H",
+    "ASTR116",
+    "ASTR117",
+    "BIOL102",
+    "BIOL108",
+    "BIOL110",
+    "BIOL117",
+    "BIOL124",
+    "BIOL125",
+    "BIOL145",
+    "BIOL200",
+    "BIOL201",
+    "BIOL220",
+    "BIOLC1000",
+    "BIOLC1000H",
+    "BIOT108",
+    "BUS132",
+    "CHEM103",
+    "CHEM104",
+    "CHEM110",
+    "CHEM111",
+    "CHEM112",
+    "CHEM210",
+    "CHEM220",
+    "CHIN102",
+    "CHIN201",
+    "COMM100",
+    "COMM111",
+    "COMM136",
+    "COMM150",
+    "COMMC1000",
+    "COMMC1000H",
+    "COUN130",
+    "COUN212",
+    "DANC102",
+    "ECON101H",
+    "ECONC2001",
+    "ECONC2002",
+    "ENGL204",
+    "ENGL213",
+    "ENGL213H",
+    "ENGL216",
+    "ENGL224",
+    "ENGL224H",
+    "ENGL233",
+    "ENGL243",
+    "ENGL251",
+    "ENGL252",
+    "ENGL261",
+    "ENGL262",
+    "ENGL271",
+    "ENGL272",
+    "ENGL280",
+    "ENGL290",
+    "ENGL291",
+    "ENGL291H",
+    "ENGL293",
+    "ENGL293H",
+    "ENGL294",
+    "ENGL294H",
+    "ENGL295",
+    "ENGL298",
+    "ENGLC1000",
+    "ENGLC1000E",
+    "ENGLC1000H",
+    "ENGLC1001H",
+    "ENGLC1002",
+    "ENGLC1003",
+    "ENGLC1003H",
+    "ESCI110",
+    "ESCI119",
+    "ESCI120",
+    "ESCI121",
+    "ESCI122",
+    "ESCI124",
+    "ESCI130",
+    "ETHN101",
+    "ETHN116",
+    "FOR102",
+    "FREN102",
+    "GEOG102",
+    "GEOG103",
+    "GEOG104",
+    "GEOG105",
+    "GEOG118",
+    "GEOG130",
+    "GER102",
+    "GER201",
+    "GER202",
+    "HIST102",
+    "HIST103",
+    "HIST103H",
+    "HIST104",
+    "HIST104H",
+    "HIST107H",
+    "HIST109",
+    "HIST111",
+    "HIST112",
+    "HIST130",
+    "HIST131",
+    "HIST132",
+    "HIST139",
+    "HIST140",
+    "HIST145",
+    "HIST155",
+    "HIST160",
+    "HIST222",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTC1002H",
+    "HUM101",
+    "HUM101H",
+    "HUM102",
+    "HUM102H",
+    "HUM110",
+    "HUM111",
+    "HUM115",
+    "HUM120",
+    "HUM123",
+    "HUM125",
+    "HUM127",
+    "HUM129",
+    "HUM162",
+    "HUM169",
+    "ITAL102",
+    "JPN102",
+    "KIN166",
+    "KIN167",
+    "KIN178",
+    "KIN179",
+    "MATH160",
+    "MATH170",
+    "MATH175",
+    "MATH180",
+    "MATH189",
+    "MATH190",
+    "MATH191",
+    "MATH210",
+    "MATH211",
+    "MATH212",
+    "MUSE109",
+    "MUSE112",
+    "MUSE113",
+    "MUSE114",
+    "PHIL101",
+    "PHIL106",
+    "PHIL106H",
+    "PHIL108",
+    "PHIL130",
+    "PHIL131",
+    "PHIL140",
+    "PHTO108",
+    "PHYS110",
+    "PHYS110H",
+    "PHYS111",
+    "PHYS112",
+    "PHYS201",
+    "PHYS201H",
+    "PHYS202",
+    "PHYS203",
+    "POLI105",
+    "POLI108",
+    "POLI116",
+    "POLSC1000",
+    "POLSC1000H",
+    "PSY102",
+    "PSY103",
+    "PSY203",
+    "PSY205",
+    "PSY206",
+    "PSY212",
+    "PSY220",
+    "PSY225",
+    "PSY226",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SOC114",
+    "SOC118",
+    "SOC130",
+    "SOC201",
+    "SOC201H",
+    "SOC202",
+    "SOC220",
+    "SPAN102",
+    "SPAN127",
+    "SPAN130",
+    "SPAN201",
+    "SPAN202",
+    "SPAN210",
+    "SPAN211",
+    "SPCH106",
+    "SPCH150",
+    "STATC1000",
+    "STATC1000H",
+    "THEA101",
+    "THEA101H",
+    "THEA200"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "General Education Requirements: Option I",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AJ 101",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "AJ 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ANTH 210",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ANTH 210H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ANTH 212",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ANTH 212L",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ANTH 216",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ANTH 216H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ANTH 220",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ANTH 222",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ANTH 224",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ARCH 250",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ARCH 251",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 100",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 101",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 103",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 104",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 105",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 106",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 106H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 108",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 109",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 110",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 199",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 199H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 200",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 201",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 206",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 206H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 207",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ART 207H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ARTHC1100H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ARTHC1200H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ASL 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ASTR 115",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ASTR 115H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ASTR 116",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ASTR 117",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOL 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOL 108",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOL 110",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOL 117",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOL 124",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOL 125",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOL 145",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOL 200",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOL 201",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOL 220",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOL C1000",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOL C1000H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BIOT 108",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "BUS 132",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "CHEM 103",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "CHEM 104",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "CHEM 110",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "CHEM 111",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "CHEM 112",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "CHEM 210",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "CHEM 220",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "CHIN 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "CHIN 201",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "COMM 100",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "COMM 111",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "COMM 136",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "COMM 150",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "COMM C1000H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "COUN 130",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "COUN 212",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "DANC 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ECON 101H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 204",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 213",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 213H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 216",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 224",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 224H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 233",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 243",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 251",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 252",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 261",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 262",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 271",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 272",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 280",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 290",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 291",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 291H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 293",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 293H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 294",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 294H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 295",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL 298",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL C1000E",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL C1000H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL C1002",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL C1003",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGL C1003H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ENGLC1001H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ESCI 110",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ESCI 119",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ESCI 120",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ESCI 121",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ESCI 122",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ESCI 124",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ESCI 130",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ETHN 101",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ETHN 116",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "FOR 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "FREN 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "GEOG 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "GEOG 103",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "GEOG 104",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "GEOG 105",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "GEOG 118",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "GEOG 130",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "GER 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "GER 201",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "GER 202",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 103",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 103H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 104",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 104H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 107H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 109",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 111",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 112",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 130",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 131",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 132",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 139",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 140",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 145",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 155",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 160",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST 222",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HIST C1002H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 101",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 101H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 102H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 110",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 111",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 115",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 120",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 123",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 125",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 127",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 129",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 162",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "HUM 169",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "ITAL 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "JPN 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "KIN 166",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "KIN 167",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "KIN 178",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "KIN 179",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MATH 160",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MATH 170",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MATH 175",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MATH 180",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MATH 189",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MATH 190",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MATH 191",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MATH 210",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MATH 211",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MATH 212",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MUSE 109",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MUSE 112",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MUSE 113",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "MUSE 114",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHIL 101",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHIL 106",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHIL 106H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHIL 108",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHIL 130",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHIL 131",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHIL 140",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHTO 108",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHYS 110",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHYS 110H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHYS 111",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHYS 112",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHYS 201",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHYS 201H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHYS 202",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PHYS 203",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "POLI 105",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "POLI 108",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "POLI 116",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "POLS C1000H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PSY 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PSY 103",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PSY 203",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PSY 205",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PSY 206",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PSY 212",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PSY 220",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PSY 225",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PSY 226",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SOC 114",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SOC 118",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SOC 130",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SOC 201",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SOC 201H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SOC 202",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SOC 220",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SPAN 102",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SPAN 127",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SPAN 130",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SPAN 201",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SPAN 202",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SPAN 210",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SPAN 211",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SPCH 106",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "SPCH 150",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "THEA 101",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "THEA 101H",
+    "why": "Cal-GETC section not in the text"
+   },
+   {
+    "code": "THEA 200",
+    "why": "Cal-GETC section not in the text"
+   }
+  ],
+  "notes": [
+   "The source page is 'General Education Requirements: Option I' (Citrus College's local associate-degree GE pattern), not the Cal-GETC pattern. The Cal-GETC pattern is a separate page linked in the navigation as 'General Education Requirements for Transfer to CSU or UC (Cal-GETC): Option II', and its text is not supplied. No blocks are recorded because the section for this award is not in the text.",
+   "Option I prints areas A1/A2 (total minimum 6 semester units), A3, B, C and D (each a minimum of 3 semester units), with Areas E and F listed under 'On This Page'. Many of its courses overlap the closed list, but its unit rules differ from Cal-GETC, so they were not used.",
+   "The supplied text is cut off partway through Area D1 (at 'HIST 103H History of W'). Areas E and F are not included.",
+   "No program learning outcomes, total units or careers appear in the supplied text. A reviewer should fetch the Option II (Cal-GETC) page to record this certificate."
+  ]
+ },
+ "extracted_run": "39726639865"
+}

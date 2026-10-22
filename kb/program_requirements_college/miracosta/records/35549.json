@@ -1,0 +1,292 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "35549",
+ "shape": "certificate",
+ "title": "Computer Applications",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12199,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12199,
+    "output_tokens": 1578,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1578,
+  "output_tokens_details": {
+   "thinking_tokens": 371
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08036,
+ "ms": 13459,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    24.5,
+    25.0
+   ],
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 24.5-25.0; the catalog states 25.0-25.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement Computer Applications",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completion of this program, the student will be able to successfully use, integrate, and collaborate with a range of business productivity software applications to solve business problems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CSIT 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 149",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 195",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIT 286",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CSIT 292",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CSIT 299",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select at least 6 elective units from the following courses:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CSIT 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIT 151",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CSIT 152",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no units beside the elective-list courses or beside the 'or' alternatives (CSIT 286, 292, 299); those units are recorded as null.",
+   "CSIT 195 slot printed as 1 unit; closed list stores CSIT 292 and CSIT 299 at 0.5 units (variable-unit courses), so a reviewer may check how they satisfy the 1-unit slot.",
+   "Required courses (19 units) plus 6 elective units match the printed Total Units 25.",
+   "The page lists several certificates in a row; only the Computer Applications Certificate of Achievement section was read."
+  ]
+ },
+ "extracted_run": "39726634443"
+}

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7311,
+  "input_tokens": 7153,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7311,
-    "output_tokens": 591,
+    "input_tokens": 7153,
+    "output_tokens": 1080,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 591,
+  "output_tokens": 1080,
   "output_tokens_details": {
-   "thinking_tokens": 0
+   "thinking_tokens": 472
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04106,
- "ms": 5201,
- "seconds": 5.5,
+ "cost_usd": 0.05021,
+ "ms": 9918,
+ "seconds": 10.1,
  "parts": null,
  "error": null,
  "score": {
@@ -132,8 +133,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 9,
-     "max": 9
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -180,12 +181,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requirements list prints 'ART A120/A120H' as one entry and 'or DMAD A182'. These were recorded as alternatives on ART A120.",
-   "The requirements list prints no units beside DMAD A182 or FILM A150, so their units are null.",
-   "The Program Sequence grid gives 3 units for each choice row.",
-   "The overview text describes the Marketing certificate programs generally. It names no specific careers.",
-   "The page states that all courses must be completed with a grade of C or better."
+   "ART A120/A120H printed as one row with 3 units; ART A120H is the honors twin. DMAD A182 and FILM A150 are printed as 'or' rows with no units beside them in the requirements table; the program sequence grid shows 3 units for each grouped row.",
+   "The overview paragraph describes the Marketing certificate programs collectively; it mentions career paths involving sales presentations, advertising, and marketing but names no specific careers or job titles, so careers is left empty.",
+   "Total Units 9 is the certificate total; no separate block total is printed."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

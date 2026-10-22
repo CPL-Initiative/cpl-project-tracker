@@ -1,0 +1,224 @@
+{
+ "college": "Citrus College",
+ "control_number": "35078",
+ "shape": "adt",
+ "title": "Biology",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/biology/biology-adt/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8435,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8435,
+    "output_tokens": 1596,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1596,
+  "output_tokens_details": {
+   "thinking_tokens": 381
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06566,
+ "ms": 13161,
+ "seconds": 13.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    35.0
+   ],
+   "stated": [
+    33.0,
+    35.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biology A.S.-Transfer Degree (Associate in Science in Biology for Transfer, AS-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding of biological concepts.",
+    "Acquire scientific information from multiple sources including textbooks, the Internet, personal communication with professionals in the field, and educational computer software.",
+    "Estimate and/or calculate the characteristics of biological systems and demonstrate an understanding of these calculations in order to better understand the natural processes that produce these characteristics.",
+    "Formulate scientific hypotheses in order to distinguish between scientific and non-scientific questions and methods.",
+    "Develop an understanding of relevant biological processes as well as processes from related sciences (e.g. physics, geology, chemistry) and apply these processes to predict the properties of biological systems.",
+    "Examine how human activity has contributed to positive and negative changes in the environment to better understand and discuss past, current, and future environmental issues."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 124",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 125",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 111",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 112",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 201",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "PHYS 111",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 202",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "PHYS 112",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 190",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 4-5 range is printed once beside each PHYS 201/PHYS 111 and PHYS 202/PHYS 112 'or' pair; recorded on the first course, with no units printed beside the alternatives (closed list stores PHYS 201/202 at 5 and PHYS 111/112 at 4).",
+   "Footnote 1 on MATH 190: degree applicable with or without MATH 090; if taken with MATH 090, only MATH 190 units count.",
+   "The 60-unit figure is the generic ADT requirement, not printed as this award's total, so degree_total is null. The curriculum map's 'Total Units 64-70' is a sample pathway and was not recorded as degree_total.",
+   "Curriculum map lists honors variants (PHYS 111H, PHYS 201H) and CHEM 110, which do not appear in the Requirements course list; not recorded in blocks.",
+   "The page has a Career Information tab but its content is not in the supplied text; the description names baccalaureate areas (microbiology, organismal biology, cell and molecular biology), not careers, so careers is empty.",
+   "Outcomes are the A.S.-Transfer Degree level student learning outcomes printed on the outcomes tab."
+  ]
+ },
+ "extracted_run": "39726639865"
+}

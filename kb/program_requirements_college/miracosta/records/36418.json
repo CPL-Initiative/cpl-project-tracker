@@ -1,0 +1,383 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "36418",
+ "shape": "degree",
+ "title": "Computer-Aided Design & Drafting",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.miracosta.edu/disciplines/design/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11502,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11502,
+    "output_tokens": 2470,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2470,
+  "output_tokens_details": {
+   "thinking_tokens": 756
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09541,
+ "ms": 19884,
+ "seconds": 20.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 12,
+   "codes": [
+    "DESN100",
+    "DESN109",
+    "DESN110",
+    "DESN111",
+    "DESN120",
+    "DESN200",
+    "DESN201",
+    "DESN203",
+    "DESN207",
+    "DESN290",
+    "DESN292",
+    "DESN299"
+   ],
+   "flagged": [
+    "DESN100",
+    "DESN109",
+    "DESN110",
+    "DESN111",
+    "DESN120",
+    "DESN200",
+    "DESN201",
+    "DESN203",
+    "DESN207",
+    "DESN290",
+    "DESN292",
+    "DESN299"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement Computer-Aided Drafting and Design",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "MiraCosta College Associate in Arts general education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completion of this program, the student will be able to design and create graphical representations of the built environment based on industry standards."
+   ],
+   "careers": [
+    "designer",
+    "CAD technician",
+    "design drafter",
+    "architectural and civil designer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DESN 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DESN 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DESN 286",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DESN 290",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DESN 292",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "DESN 299",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Architecture Emphasis",
+    "rule": "choose_units",
+    "minimum": 11,
+    "option_group": "Area of emphasis",
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "DESN 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DESN 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DESN 200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 207",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Engineering Emphasis",
+    "rule": "choose_units",
+    "minimum": 11,
+    "option_group": "Area of emphasis",
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "BUS 133",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DESN 109",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Landscape Emphasis",
+    "rule": "choose_units",
+    "minimum": 11,
+    "option_group": "Area of emphasis",
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "DESN 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 117",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 126",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 127",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no separate section for the A.A. degree; the Degrees tab lists 'Computer-Aided Drafting and Design' as an A.A. earned by completing the certificate of achievement plus MiraCosta's A.A. general education. The record reads the Certificate of Achievement 'Computer-Aided Drafting and Design' section, which matches the closed list (BUS 133, HORT 117, HORT 126). Program title in the request ('Computer-Aided Design & Drafting') differs slightly from the catalog title.",
+   "Total Units 29 is the certificate (major) total; no degree total or GE unit figure is printed.",
+   "The printed '11' applies to the selected emphasis ('Select at least 11 units from one of the three areas of emphasis'); recorded on each emphasis block as stated and minimum.",
+   "Units are not printed beside the emphasis courses, so their units are null.",
+   "Units are not printed beside DESN 292 or DESN 299 alternatives.",
+   "The program student learning outcome is printed identically for several certificates on this page; recorded here as printed in this section."
+  ]
+ },
+ "extracted_run": "39726634443"
+}

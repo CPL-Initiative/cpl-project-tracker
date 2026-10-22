@@ -1,0 +1,233 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "30921",
+ "shape": "certificate",
+ "title": "Hospitality, Travel & Tourism - Meeting & Event Management",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12108,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12108,
+    "output_tokens": 1047,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1047,
+  "output_tokens_details": {
+   "thinking_tokens": 205
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06937,
+ "ms": 9101,
+ "seconds": 9.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 19,
+   "share": 0.0,
+   "missing": [
+    "COMMC1004",
+    "HTTA105",
+    "HTTA138",
+    "HTTA158",
+    "HTTA185",
+    "HTTA199",
+    "HTTA221",
+    "HTTA265",
+    "HTTA266",
+    "HTTA267",
+    "HTTA269",
+    "HTTA270",
+    "HTTA273",
+    "HTTA275",
+    "HTTA276",
+    "HTTA278",
+    "HTTA284",
+    "HTTA299",
+    "SPANA180"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No section for this award in the text (department page: Hospitality, Travel & Tourism)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM C1004",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A105",
+    "why": "appears only in the course descriptions tab; no requirements section for this award in the text"
+   },
+   {
+    "code": "HTT A138",
+    "why": "appears only in the course descriptions tab; no requirements section for this award in the text"
+   },
+   {
+    "code": "HTT A158",
+    "why": "appears only as a truncated course description; no requirements section for this award in the text"
+   },
+   {
+    "code": "HTT A185",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A199",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A221",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A265",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A266",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A267",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A269",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A270",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A273",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A275",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A276",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A278",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A284",
+    "why": "not in the text"
+   },
+   {
+    "code": "HTT A299",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN A180",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text is the Hospitality, Travel & Tourism department overview page plus a partial course list (cut off mid-description at HTT A158). It contains no requirements section for the Meeting & Event Management Certificate of Achievement; this award is not even listed among the department's programs (Airline Travel, Flight Attendant, Hotel Management, Travel & Tourism). The certificate may be on a different catalog page or may have been discontinued for 2026-2027; a reviewer should locate the correct source.",
+   "No blocks, totals, outcomes, or careers were recorded because the text for this award is absent.",
+   "Course descriptions show HTT A105, A138 as 3 units each, matching the closed list, but no program requirements for this award reference them in the text."
+  ]
+ },
+ "extracted_run": "39726645292"
+}

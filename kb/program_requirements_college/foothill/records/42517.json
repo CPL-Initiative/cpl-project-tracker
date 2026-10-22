@@ -1,0 +1,231 @@
+{
+ "college": "Foothill College",
+ "control_number": "42517",
+ "shape": "certificate",
+ "title": "Financial Accounting",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12127,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12127,
+    "output_tokens": 1963,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1963,
+  "output_tokens_details": {
+   "thinking_tokens": 870
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08777,
+ "ms": 17092,
+ "seconds": 17.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ACTG1AH"
+   ],
+   "flagged": [
+    "ACTG1AH"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Financial Accounting",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate the ability to use methods and/or procedures to solve accounting problems."
+   ],
+   "careers": [
+    "bookkeeper",
+    "tax preparer",
+    "general ledger accountant",
+    "junior accountant",
+    "senior accountant",
+    "accountants",
+    "General accountants",
+    "Corporate accountants",
+    "controller",
+    "treasurer",
+    "chief financial officer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "ACTG 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACTG 1AH",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACTG 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACTG 1BH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACTG 1C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACTG 1CH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACTG 64A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACTG 64B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACTG 67",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-list: only the last program learning outcome survives ('demonstrate the ability to use methods and/or procedures to solve accounting problems.'); earlier outcomes and the lead-in are cut off. It appears to be the single outcomes list for the Accounting page as a whole, shared by this certificate; reviewer should check the full outcomes list.",
+   "Careers combine the certificate's own description (bookkeeper, tax preparer, general ledger accountant, junior accountant, senior accountant) with the page-wide Career Opportunities section (accountants, general/corporate accountants, controller, treasurer, chief financial officer). 'Certified Public Accountants' and 'Certified Management Accountants' were left out as they are described as professional certifications.",
+   "Closed-list codes are zero-padded (ACTG 001A, 01BH, 01CH, 064A, 064B); matched to catalog codes ACTG 1A, 1BH, 1CH, 64A, 64B. ACTG 1AH (honors twin of ACTG 1A) is not in the closed list and is marked a catalog addition.",
+   "Honors alternatives print no units beside them; units left null.",
+   "The page header 'Units Required ... Certificate(s): 15-48' covers all accounting certificates; the Financial Accounting certificate itself states 28 units.",
+   "Units are quarter units (Foothill is on the quarter system)."
+  ]
+ },
+ "extracted_run": "39726637264"
+}

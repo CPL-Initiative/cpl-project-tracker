@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7439,
+  "input_tokens": 7880,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7439,
-    "output_tokens": 1805,
+    "input_tokens": 7880,
+    "output_tokens": 1706,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1805,
+  "output_tokens": 1706,
   "output_tokens_details": {
-   "thinking_tokens": 483
+   "thinking_tokens": 376
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06586,
- "ms": 14211,
- "seconds": 14.5,
+ "cost_usd": 0.06564,
+ "ms": 13333,
+ "seconds": 13.9,
  "parts": null,
  "error": null,
  "score": {
@@ -94,7 +95,7 @@
    "pass": true
   },
   "careers": {
-   "count": 8,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -105,7 +106,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Travel Specialist Certificate of Achievement",
+   "section_heading": "Travel Specialist, Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 48,
@@ -130,14 +131,8 @@
     "The outcome of this certificate of achievement is to prepare students for employment with a retail or home-based agency, independent contractor, tour operator, cruise line, adventure company, receptive operator, or tourism/convention bureau."
    ],
    "careers": [
-    "home based agent",
-    "retail or home-based agency",
-    "independent contractor",
-    "tour operator",
-    "cruise line",
-    "adventure company",
-    "receptive operator",
-    "tourism/convention bureau"
+    "independent contractor of travel",
+    "home based agent"
    ]
   },
   "blocks": [
@@ -295,11 +290,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The Requirements table lists all 16 courses as required with Total Units 48, but the Program Sequence map totals 39 units, omits HTT A135 and HTT A156, and treats HTT A157 or HTT A158 as alternatives. Recorded the Requirements table; reviewer should check which is current.",
-   "Catalog prints HTT A127 as 'Destination Eastern Europe' while the closed list titles it 'Destination Europe'.",
-   "Suggested electives HTT A199 and HTT A225 are printed without units and are not in the closed list.",
-   "Program Learning Outcomes section prints a single sentence describing employment preparation; recorded it as the one outcome."
+   "The Requirements tab lists 16 required courses totaling 48 units. The Program Sequence tab totals only 39 units: it omits HTT A135 and HTT A156 and offers HTT A157 or HTT A158 as a choice. The requirements list was used; a reviewer should check this discrepancy.",
+   "Suggested electives HTT A199 and HTT A225 print no units and are not in the closed list.",
+   "The program learning outcome names employers or agency types (retail or home-based agency, independent contractor, tour operator, cruise line, etc.). Only the job roles named in the overview were recorded as careers; a reviewer may want to add the outcome's terms.",
+   "Catalog titles differ slightly from the state file: HTT A127 'Destination Eastern Europe' vs 'Destination Europe'."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

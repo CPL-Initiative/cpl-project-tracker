@@ -1,0 +1,215 @@
+{
+ "college": "Foothill College",
+ "control_number": "42901",
+ "shape": "certificate",
+ "title": "Tax Specialist",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12017,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12017,
+    "output_tokens": 1585,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1585,
+  "output_tokens_details": {
+   "thinking_tokens": 762
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07977,
+ "ms": 14800,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ACTG1AH",
+    "ACTG57"
+   ],
+   "flagged": [
+    "ACTG1AH",
+    "ACTG57"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Tax Specialist",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate the ability to use methods and/or procedures to solve accounting problems."
+   ],
+   "careers": [
+    "accountants",
+    "General accountants",
+    "Corporate accountants",
+    "senior accountant",
+    "controller",
+    "treasurer",
+    "chief financial officer",
+    "Certified Public Accountants",
+    "Certified Management Accountants"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "ACTG 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACTG 1AH",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ACTG 60",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACTG 65",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACTG 67",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACTG 68A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACTG 57",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Foothill College is on the quarter system; the 19 units are quarter units.",
+   "ACTG 1A matches closed-list ACTG 001A and ACTG 68A matches ACTG 068A.",
+   "Units for the alternatives ACTG 1AH, ACTG 60 and ACTG 57 are not printed beside them in this section.",
+   "The catalog text begins mid-way through a program-wide outcomes list for Accounting; only one outcome survives the cut and it is shared by all accounting awards, not printed specifically for the Tax Specialist certificate. Reviewer should check the full outcomes list on the page.",
+   "Careers are taken from the program-wide Career Opportunities section; the Tax Specialist section itself names no specific careers. Careers named in the Financial Accounting certificate section (bookkeeper, tax preparer, etc.) were not included as they belong to another award."
+  ]
+ },
+ "extracted_run": "39726637264"
+}

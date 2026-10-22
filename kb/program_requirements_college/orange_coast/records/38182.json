@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7106,
+  "input_tokens": 6941,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7106,
-    "output_tokens": 1143,
+    "input_tokens": 6941,
+    "output_tokens": 1150,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1143,
+  "output_tokens": 1150,
   "output_tokens_details": {
    "thinking_tokens": 402
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05128,
- "ms": 9739,
- "seconds": 10.1,
+ "cost_usd": 0.05076,
+ "ms": 10305,
+ "seconds": 15.3,
  "parts": null,
  "error": null,
  "score": {
@@ -99,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Competency",
+   "section_heading": "English Language Learning for Parents, Certificate of Competency",
    "measure": "hours",
    "total_units": {
     "min": 72,
@@ -132,8 +133,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 72,
+     "max": 72
     },
     "courses": [
      {
@@ -182,13 +183,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Noncredit program counted in hours; the catalog prints 'Total Hours 72'.",
-   "Hours are printed only beside ELL A030N (36) and ELL A025N (36); the alternatives to ELL A025N (A035N, A055N, A028N, A048N, A049N) have no hours printed.",
-   "The catalog prints ELL A049N as 'Speaking About U.S. Culture 3', while the closed list titles ELL A049N 'Speaking about Fiction--Intermediate'; a reviewer should check whether the code or title is correct.",
-   "Closed list writes ELLA028N and ELLA048N without a space; the catalog prints ELL A028N and ELL A048N, treated as the same courses.",
-   "The page title refers to the English Language Support for Parents Certificate of Competency; the printed section heading is 'Certificate of Competency'.",
-   "The program outcome is printed once for the program as a whole; this award shares it."
+   "Program is noncredit and counted in hours; total 72 hours as printed ('Total Hours 72').",
+   "The catalog prints 36 hours only beside ELL A025N; the 'or' alternatives (ELL A035N, A055N, A028N, A048N, A049N) have no hours printed, so their units are null.",
+   "Catalog prints 'ELL A028N' and 'ELL A048N'; the closed list stores them as 'ELLA028N' and 'ELLA048N' (no space). Treated as the same courses, not catalog additions.",
+   "Catalog titles ELL A049N 'Speaking About U.S. Culture 3', while the closed list titles ELL A049N 'Speaking about Fiction--Intermediate'. Code matches; reviewer should check the title discrepancy.",
+   "Stated block total of 72 is the printed 'Total Hours' for the whole certificate."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

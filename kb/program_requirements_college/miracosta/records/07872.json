@@ -1,0 +1,268 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "07872",
+ "shape": "degree",
+ "title": "Mechanical Design",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.miracosta.edu/disciplines/design/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11361,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11361,
+    "output_tokens": 1586,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1586,
+  "output_tokens_details": {
+   "thinking_tokens": 558
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07716,
+ "ms": 13644,
+ "seconds": 14.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "DESN109",
+    "DESN110",
+    "DESN111",
+    "DESN120",
+    "DESN203",
+    "DESN290",
+    "DESN292",
+    "DESN299"
+   ],
+   "flagged": [
+    "DESN109",
+    "DESN110",
+    "DESN111",
+    "DESN120",
+    "DESN203",
+    "DESN290",
+    "DESN292",
+    "DESN299"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    23.0
+   ],
+   "stated": [
+    23.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement Mechanical Design",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "MiraCosta College Associate in Arts general education (local GE)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completion of this program, the student will be able to design and create graphical representations of the built environment based on industry standards."
+   ],
+   "careers": [
+    "drafter",
+    "designer",
+    "mechanical designer",
+    "engineering assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DESN 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DESN 109",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DESN 286",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one unit from the following list of courses",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "DESN 290",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 292",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DESN 299",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no separate section for the Mechanical Design A.A.; the DEGREES tab states the associate degree is earned by completing the certificate of achievement plus MiraCosta's Associate in Arts general education. Requirements are therefore read from the Certificate of Achievement Mechanical Design section, and its 23-unit total is recorded as the major total.",
+   "No degree total or GE unit count is printed for the A.A.",
+   "The program student learning outcome is printed under the Mechanical Design certificate, which the degree shares; its wording (\"built environment\") is identical to the Architectural Design and CAD certificates' outcome and may be a catalog copy error—reviewer should check.",
+   "The one-unit choice list (DESN 290, 292, 299) prints no units beside each course."
+  ]
+ },
+ "extracted_run": "39726634443"
+}

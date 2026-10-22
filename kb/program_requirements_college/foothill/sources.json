@@ -18,7 +18,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -54,7 +56,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -80,7 +84,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -113,7 +119,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -143,7 +151,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -203,7 +213,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -247,7 +259,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -296,7 +310,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 28,
@@ -356,7 +372,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -386,7 +404,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -413,7 +433,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -439,7 +461,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -463,7 +487,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -499,7 +525,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -523,7 +551,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -571,7 +601,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -582,24 +614,12 @@
   "title": "Child Development Teacher",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "CHLD59"
-  ],
-  "source": {
-   "url": "https://catalog.foothill.edu/degrees-certificates/child-development/",
-   "title": "Child Development < Foothill College",
-   "h1": "Academic Catalog",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.667,
-    "section": null
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 8037
+  "text_chars": 0
  },
  {
   "control_number": "06093",
@@ -632,7 +652,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -657,7 +679,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -696,7 +720,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -759,7 +785,9 @@
    "label": {
     "award": 0,
     "title": 0.667,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -788,7 +816,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -825,7 +855,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -856,7 +888,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -909,7 +943,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -956,7 +992,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in plumbing and pipefitting apprenticeship",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -1010,7 +1048,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in sheet metal building trades",
+    "section_fit": 1.0
    }
   },
   "listed": 32,
@@ -1021,12 +1061,52 @@
   "title": "Program Supervision and Mentoring",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.964,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "CHLD1",
+   "CHLD2",
+   "CHLD51A",
+   "CHLD53NC",
+   "CHLD53NP",
+   "CHLD56",
+   "CHLD56N",
+   "CHLD59",
+   "CHLD63N",
+   "CHLD71",
+   "CHLD72",
+   "CHLD73",
+   "CHLD74",
+   "CHLD8",
+   "CHLD82",
+   "CHLD86A",
+   "CHLD86B",
+   "CHLD88B",
+   "CHLD89",
+   "CHLD90B",
+   "CHLD90C",
+   "CHLD95",
+   "ENGL8",
+   "PSYC14",
+   "SOC40"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/child-development/",
+   "title": "Child Development < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in program supervision and mentoring",
+    "section_fit": 1.0
+   }
+  },
   "listed": 28,
-  "text_chars": 0
+  "text_chars": 9353
  },
  {
   "control_number": "15549",
@@ -1049,7 +1129,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1099,7 +1181,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -1176,7 +1260,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in environmental horticulture and design",
+    "section_fit": 1.0
    }
   },
   "listed": 42,
@@ -1238,7 +1324,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in accounting",
+    "section_fit": 1.0
    }
   },
   "listed": 39,
@@ -1287,7 +1375,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
@@ -1327,7 +1417,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in theatre technology",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -1352,7 +1444,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in photography",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -1395,7 +1489,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in dental assisting",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -1445,7 +1541,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in inside wireman",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -1490,7 +1588,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in art",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -1549,7 +1649,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in music technology",
+    "section_fit": 1.0
    }
   },
   "listed": 56,
@@ -1605,7 +1707,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in graphic and interactive design",
+    "section_fit": 1.0
    }
   },
   "listed": 33,
@@ -1616,12 +1720,40 @@
   "title": "Advanced-Level Pharmacy Technician (ASHP/ACPE Accredited)",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AHS50A",
+   "AHS50B",
+   "PHT50",
+   "PHT51",
+   "PHT52A",
+   "PHT52B",
+   "PHT53",
+   "PHT54A",
+   "PHT54B",
+   "PHT55A",
+   "PHT55B",
+   "PHT56",
+   "PHT63",
+   "PHT64A",
+   "PHT64B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/pharmacy-technician/",
+   "title": "Pharmacy Technician < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": "coa",
+    "section_line": "certificate of achievement in advanced-level pharmacy technician (ashp/acpe accredited)",
+    "section_fit": 0.5
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 4301
  },
  {
   "control_number": "20091",
@@ -1652,7 +1784,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in paramedic",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1700,7 +1834,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -1754,7 +1890,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "sociology, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 31,
@@ -1818,7 +1956,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "psychology, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 41,
@@ -1865,7 +2005,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "mathematics 2.0, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -1937,7 +2079,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "history, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 49,
@@ -2006,7 +2150,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "english, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 46,
@@ -2049,7 +2195,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "computer science, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -2082,7 +2230,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "physics 2.0, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2171,7 +2321,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "anthropology, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 66,
@@ -2214,7 +2366,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "philosophy, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -2262,7 +2416,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "studio arts, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -2304,7 +2460,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "geography, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -2380,7 +2538,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "art history, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 53,
@@ -2467,7 +2627,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "kinesiology, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 73,
@@ -2536,7 +2698,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "economics, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 50,
@@ -2567,7 +2731,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "spanish, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2603,7 +2769,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "theatre arts, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2663,7 +2831,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "political science, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 37,
@@ -2695,7 +2865,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "early childhood education, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2706,24 +2878,73 @@
   "title": "Geographic Information Systems Technology II",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "GIST11",
+   "GIST12",
+   "GIST52",
+   "GIST53",
+   "GIST54A",
+   "GIST58"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/geographic-information-systems-technology/",
+   "title": "Geographic Information Systems Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.8,
+    "section": "coa",
+    "section_line": "certificate of achievement in geographic information systems technology i certificate of achievement in geographic information systems technology ii",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 5972
  },
  {
   "control_number": "33359",
   "title": "Geographic Information Systems Technology III",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "CS22A",
+   "CS31A",
+   "CS3A",
+   "CS3B",
+   "CS48A",
+   "GEOG1",
+   "GEOG10",
+   "GEOG11",
+   "GEOG12",
+   "GEOG2",
+   "GEOG20",
+   "GIST11",
+   "GIST12",
+   "GIST52",
+   "GIST53",
+   "GIST54A",
+   "GIST58"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/geographic-information-systems-technology/",
+   "title": "Geographic Information Systems Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.8,
+    "section": "coa",
+    "section_line": "certificate of achievement in geographic information systems technology iii",
+    "section_fit": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 5972
  },
  {
   "control_number": "33360",
@@ -2754,7 +2975,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in geographic information systems technology i",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2787,7 +3010,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2831,7 +3056,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in air conditioning and refrigeration technology",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -2869,7 +3096,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in plumbing technology",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2880,12 +3109,33 @@
   "title": "Residential Plumbing",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APPT121",
+   "APPT122",
+   "APPT123",
+   "APPT124",
+   "APPT125",
+   "APPT126",
+   "APPT127",
+   "APPT128"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-technology/",
+   "title": "Apprenticeship - Plumbing Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "certificate of achievement in residential plumbing",
+    "section_fit": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2969
  },
  {
   "control_number": "33524",
@@ -2920,7 +3170,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in steamfitting and pipefitting technology",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2963,7 +3215,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -3001,7 +3255,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3038,7 +3294,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3070,7 +3328,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in personal trainer",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3114,7 +3374,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -3153,7 +3415,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "biology, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3196,7 +3460,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "global studies, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -3225,7 +3491,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -3251,7 +3519,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -3277,7 +3547,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -3303,7 +3575,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -3337,7 +3611,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -3431,7 +3707,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "social justice studies, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 72,
@@ -3459,7 +3737,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -3482,12 +3762,32 @@
   "title": "Game Audio II",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUMN13",
+   "MDIA13",
+   "MTEC55A",
+   "MTEC55B",
+   "MTEC55C",
+   "MTEC70A",
+   "MTEC70B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/music-technology/",
+   "title": "Music Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in game audio i certificate of achievement in game audio ii",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 7280
  },
  {
   "control_number": "36459",
@@ -3509,7 +3809,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -3559,7 +3861,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "child and adolescent development, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -3570,12 +3874,39 @@
   "title": "Makerspace Coordinator",
   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LINC57",
+   "LINC58A",
+   "LINC59",
+   "LINC73H",
+   "LINC75A",
+   "LINC77A",
+   "LINC77B",
+   "LINC77C",
+   "LINC77D",
+   "LINC78A",
+   "LINC78B",
+   "LINC78C",
+   "LINC80",
+   "LINC84A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/",
+   "title": "Learning in New Media Classrooms < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in makerspace coordinator",
+    "section_fit": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 9614
  },
  {
   "control_number": "37294",
@@ -3619,7 +3950,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "film, television, and electronic media, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -3661,7 +3994,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs, aa-t",
+    "section_fit": 0.75
    }
   },
   "listed": 33,
@@ -3709,7 +4044,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "nutrition and dietetics, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -3740,7 +4077,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in acting",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3751,12 +4090,31 @@
   "title": "Digital Marketing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI57",
+   "BUSI59",
+   "BUSI59A",
+   "BUSI59C",
+   "BUSI59D",
+   "BUSI59E"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/business-administration/",
+   "title": "Business Administration < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in digital marketing",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 5325
  },
  {
   "control_number": "39211",
@@ -3778,7 +4136,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in veterinary assisting",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3811,7 +4171,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -3822,48 +4184,116 @@
   "title": "Graphic Design",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GID33",
+   "GID34",
+   "GID35",
+   "GID60"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/",
+   "title": "Graphic and Interactive Design < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in graphic design",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 6067
  },
  {
   "control_number": "39458",
   "title": "Illustration",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART15A",
+   "GID31",
+   "GID43",
+   "GID60"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/",
+   "title": "Graphic and Interactive Design < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in illustration",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 6099
  },
  {
   "control_number": "39459",
   "title": "Web Design",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GID55",
+   "GID56",
+   "GID57",
+   "GID58"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/",
+   "title": "Graphic and Interactive Design < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "certificate of achievement in web design",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 6034
  },
  {
   "control_number": "39460",
   "title": "Game Design",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GID49",
+   "GID60",
+   "GID67",
+   "GID68B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/",
+   "title": "Graphic and Interactive Design < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "certificate of achievement in game design",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 5970
  },
  {
   "control_number": "39512",
@@ -3887,7 +4317,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -3928,7 +4360,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "environmental science, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -3957,7 +4391,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -3968,12 +4404,31 @@
   "title": "Residential Wireman",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APEL112",
+   "APEL113",
+   "APEL135",
+   "APEL136",
+   "APEL137",
+   "APEL138"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-inside-wireman/",
+   "title": "Apprenticeship - Inside Wireman (formerly General Electrician) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "certificate of achievement in residential wireman",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 5822
  },
  {
   "control_number": "39843",
@@ -3998,7 +4453,9 @@
    "label": {
     "award": 0,
     "title": 0.667,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in sound and communication installer",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4009,12 +4466,40 @@
   "title": "Online and Blended Instruction",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LINC57",
+   "LINC58",
+   "LINC66C",
+   "LINC67",
+   "LINC70",
+   "LINC75A",
+   "LINC75C",
+   "LINC80",
+   "LINC81",
+   "LINC83F",
+   "LINC90C",
+   "LINC91B",
+   "LINC93B",
+   "LINC95B",
+   "LINC98"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/",
+   "title": "Learning in New Media Classrooms < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in online and blended instruction",
+    "section_fit": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 9614
  },
  {
   "control_number": "39889",
@@ -4045,7 +4530,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -4082,7 +4569,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in software development in python",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -4113,7 +4602,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -4124,36 +4615,92 @@
   "title": "Early Childhood Education Fundamentals",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHLD1",
+   "CHLD56N",
+   "CHLD8",
+   "CHLD88B",
+   "CHLD89"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/child-development/",
+   "title": "Child Development < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in early childhood education fundamentals",
+    "section_fit": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 9353
  },
  {
   "control_number": "39974",
   "title": "Early Childhood Special Education",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHLD1",
+   "CHLD53NC",
+   "CHLD53NP",
+   "CHLD56N",
+   "CHLD8",
+   "CHLD88B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/child-development/",
+   "title": "Child Development < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in early childhood special education",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 9353
  },
  {
   "control_number": "39975",
   "title": "Elementary After Care Education",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHLD2",
+   "CHLD53NC",
+   "CHLD56N",
+   "CHLD59",
+   "CHLD8",
+   "CHLD88B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/child-development/",
+   "title": "Child Development < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in elementary after care education",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 9283
  },
  {
   "control_number": "39983",
@@ -4178,7 +4725,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in cloud computing",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4209,7 +4758,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -4241,7 +4792,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -4273,7 +4826,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -4284,60 +4839,171 @@
   "title": "Audio Post Production",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTEC57A",
+   "MTEC57B",
+   "MTEC70A",
+   "MTEC70B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/music-technology/",
+   "title": "Music Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in audio post production",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 7242
  },
  {
   "control_number": "40361",
   "title": "Songwriting",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTEC54A",
+   "MTEC88A",
+   "MTEC88B",
+   "MTEC88C",
+   "MUS10"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/music-technology/",
+   "title": "Music Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in songwriting",
+    "section_fit": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 6518
  },
  {
   "control_number": "40363",
   "title": "Electronic Music",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTEC52A",
+   "MTEC62A",
+   "MTEC62B",
+   "MTEC70A",
+   "MTEC72B",
+   "MTEC72C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/music-technology/",
+   "title": "Music Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "certificate of achievement in electronic music",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 7312
  },
  {
   "control_number": "40369",
   "title": "Game Audio I",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MDIA13",
+   "MTEC55A",
+   "MTEC55B",
+   "MTEC55C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/music-technology/",
+   "title": "Music Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in game audio i",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 6714
  },
  {
   "control_number": "40491",
   "title": "Child Development Teacher",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.964,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "CHLD1",
+   "CHLD2",
+   "CHLD51A",
+   "CHLD53NC",
+   "CHLD53NP",
+   "CHLD56",
+   "CHLD56N",
+   "CHLD59",
+   "CHLD63N",
+   "CHLD71",
+   "CHLD72",
+   "CHLD73",
+   "CHLD74",
+   "CHLD8",
+   "CHLD82",
+   "CHLD86A",
+   "CHLD86B",
+   "CHLD88B",
+   "CHLD89",
+   "CHLD90B",
+   "CHLD90C",
+   "CHLD95",
+   "ENGL8",
+   "PSYC14",
+   "SOC40"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/child-development/",
+   "title": "Child Development < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667,
+    "section": "coa",
+    "section_line": "certificate of achievement in child development teacher",
+    "section_fit": 1.0
+   }
+  },
   "listed": 28,
-  "text_chars": 0
+  "text_chars": 9353
  },
  {
   "control_number": "40689",
@@ -4387,7 +5053,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in air conditioning mechanic",
+    "section_fit": 1.0
    }
   },
   "listed": 31,
@@ -4442,7 +5110,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in test, adjust and balancing (tab) technician",
+    "section_fit": 0.8
    }
   },
   "listed": 33,
@@ -4453,12 +5123,29 @@
   "title": "Pharmacy Assistant (Aide/Clerk)",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AHS51",
+   "PHT101",
+   "PHT102",
+   "PHT103"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/pharmacy-technician/",
+   "title": "Pharmacy Technician < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.25,
+    "section": "coa",
+    "section_line": "certificate of achievement in pharmacy assistant (aide/clerk)",
+    "section_fit": 0.5
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 3048
  },
  {
   "control_number": "40694",
@@ -4483,7 +5170,9 @@
    "label": {
     "award": 0,
     "title": 0.667,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in basic pharmacy technician",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4494,36 +5183,122 @@
   "title": "Emerging Educational Technology Leadership",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LINC50",
+   "LINC50A",
+   "LINC50F",
+   "LINC57",
+   "LINC58",
+   "LINC62",
+   "LINC66E",
+   "LINC75B",
+   "LINC79",
+   "LINC80",
+   "LINC80A",
+   "LINC80B",
+   "LINC81",
+   "LINC82A",
+   "LINC82B",
+   "LINC82C",
+   "LINC83F",
+   "LINC87",
+   "LINC90C",
+   "LINC95C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/",
+   "title": "Learning in New Media Classrooms < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in emerging educational technology leadership",
+    "section_fit": 1.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 9298
  },
  {
   "control_number": "40841",
   "title": "STEAM Instructional Leadership",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LINC50A",
+   "LINC53",
+   "LINC53B",
+   "LINC63",
+   "LINC78A",
+   "LINC79",
+   "LINC88",
+   "LINC91A",
+   "LINC91B",
+   "LINC91C",
+   "LINC96B",
+   "LINC98A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/",
+   "title": "Learning in New Media Classrooms < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in steam instructional leadership",
+    "section_fit": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 9437
  },
  {
   "control_number": "40842",
   "title": "Education Technology Specialist",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LINC50",
+   "LINC50A",
+   "LINC50F",
+   "LINC57",
+   "LINC58",
+   "LINC62",
+   "LINC66E",
+   "LINC75B",
+   "LINC79",
+   "LINC80A",
+   "LINC80B",
+   "LINC81",
+   "LINC82B",
+   "LINC82C",
+   "LINC90C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/",
+   "title": "Learning in New Media Classrooms < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in education technology specialist",
+    "section_fit": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 9298
  },
  {
   "control_number": "40962",
@@ -4548,7 +5323,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4577,7 +5354,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4619,7 +5398,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -4631,25 +5412,29 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.6,
+  "coverage": 1.0,
   "codes_found": [
+   "BUSI11",
+   "BUSI12",
    "CS31A",
    "CS48A",
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
-   "title": "General Studies: Science < Foothill College",
+   "url": "https://catalog.foothill.edu/degrees-certificates/business-administration/",
+   "title": "Business Administration < Foothill College",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": null
+    "section": "coa",
+    "section_line": "certificate of achievement in data analytics",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 5411
+  "text_chars": 5526
  },
  {
   "control_number": "41328",
@@ -4674,7 +5459,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in cybersecurity",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4715,7 +5502,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "business administration 2.0, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -4754,7 +5543,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -4780,7 +5571,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in network computing",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4815,7 +5608,9 @@
    "label": {
     "award": 0,
     "title": 0.667,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in introduction to sports medicine",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4842,7 +5637,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in it support",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4884,7 +5681,9 @@
    "label": {
     "award": 0,
     "title": 0.667,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in advanced sports medicine",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -4930,7 +5729,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
@@ -4979,7 +5780,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
@@ -4990,96 +5793,250 @@
   "title": "Infant and Toddler Development and Care",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHLD1",
+   "CHLD50D",
+   "CHLD53NC",
+   "CHLD56N",
+   "CHLD8",
+   "CHLD88B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/child-development/",
+   "title": "Child Development < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.25,
+    "section": "coa",
+    "section_line": "certificate of achievement in infant and toddler development and care",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 9353
  },
  {
   "control_number": "42516",
   "title": "Nanny, Child, and Family Studies",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHLD1",
+   "CHLD50D",
+   "CHLD8",
+   "CHLD80A",
+   "CHLD80B",
+   "CHLD80C",
+   "CHLD88B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/child-development/",
+   "title": "Child Development < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.25,
+    "section": "coa",
+    "section_line": "certificate of achievement in nanny, child, and family studies",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 9353
  },
  {
   "control_number": "42517",
   "title": "Financial Accounting",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG1A",
+   "ACTG1B",
+   "ACTG1BH",
+   "ACTG1C",
+   "ACTG1CH",
+   "ACTG64A",
+   "ACTG64B",
+   "ACTG67"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+   "title": "Accounting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "certificate of achievement in accounting certificate of achievement in financial accounting",
+    "section_fit": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 13822
  },
  {
   "control_number": "42518",
   "title": "CPA Exam Preparation - Audit",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG51A",
+   "ACTG51B",
+   "ACTG51C",
+   "ACTG52",
+   "ACTG53",
+   "ACTG58"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+   "title": "Accounting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in cpa exam preparation - audit",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 13515
  },
  {
   "control_number": "42519",
   "title": "CPA Exam Preparation - Business Environment and Concepts",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG1A",
+   "ACTG1B",
+   "ACTG1BH",
+   "ACTG51A",
+   "ACTG54",
+   "ACTG59"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+   "title": "Accounting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in cpa exam preparation - business environment and concepts",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 13822
  },
  {
   "control_number": "42520",
   "title": "CPA Exam Preparation - Regulations",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG57",
+   "ACTG67",
+   "ACTG68A",
+   "ACTG68B",
+   "ACTG68C",
+   "BUSI18"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+   "title": "Accounting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in cpa exam preparation - regulations",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 13570
  },
  {
   "control_number": "42521",
   "title": "Bookkeeping",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG1A",
+   "ACTG1B",
+   "ACTG1BH",
+   "ACTG60",
+   "ACTG64A",
+   "ACTG64B",
+   "ACTG65"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+   "title": "Accounting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in bookkeeping",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 13822
  },
  {
   "control_number": "42522",
   "title": "Payroll Preparation",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG1A",
+   "ACTG60",
+   "ACTG64A",
+   "ACTG65"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+   "title": "Accounting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in payroll preparation",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 13822
  },
  {
   "control_number": "42889",
@@ -5100,7 +6057,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in community health worker",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -5111,36 +6070,90 @@
   "title": "Tax Specialist",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG1A",
+   "ACTG60",
+   "ACTG65",
+   "ACTG67",
+   "ACTG68A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+   "title": "Accounting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in tax specialist",
+    "section_fit": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 13822
  },
  {
   "control_number": "42902",
   "title": "CPA Exam Preparation - Financial Accounting Reporting",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG1A",
+   "ACTG1B",
+   "ACTG1BH",
+   "ACTG1C",
+   "ACTG1CH",
+   "ACTG67",
+   "ACTG75"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+   "title": "Accounting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.167,
+    "section": "coa",
+    "section_line": "certificate of achievement in cpa exam preparation - financial accounting reporting",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 13822
  },
  {
   "control_number": "42903",
   "title": "Accounting Ethics",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG58",
+   "ACTG59",
+   "ACTG76"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+   "title": "Accounting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "certificate of achievement in accounting ethics",
+    "section_fit": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 13153
  },
  {
   "control_number": "43189",
@@ -5194,7 +6207,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "social work and human services, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 36,
@@ -5245,7 +6260,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "communication studies 2.0, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -5276,7 +6293,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -5287,12 +6306,36 @@
   "title": "Research, Design and Development for Global Good",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LINC58",
+   "LINC63",
+   "LINC64",
+   "LINC66C",
+   "LINC66E",
+   "LINC67",
+   "LINC70",
+   "LINC77",
+   "LINC77B",
+   "LINC79",
+   "LINC90C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/",
+   "title": "Learning in New Media Classrooms < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in research, design and development for global good",
+    "section_fit": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 8456
  },
  {
   "control_number": "43399",
@@ -5321,7 +6364,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -5357,7 +6402,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -5368,24 +6415,63 @@
   "title": "Commercial Photography",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOT5",
+   "PHOT6A",
+   "PHOT6B",
+   "PHOT72",
+   "PHOT74A",
+   "PHOT74B",
+   "PHOT74C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/photography/",
+   "title": "Photography < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "certificate of achievement in commercial photography",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 8793
  },
  {
   "control_number": "43426",
   "title": "Digital Photography Techniques",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOT5",
+   "PHOT6A",
+   "PHOT6B",
+   "PHOT6C",
+   "PHOT72",
+   "PHOT74A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/photography/",
+   "title": "Photography < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": "coa",
+    "section_line": "certificate of achievement in digital photography techniques",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 8793
  },
  {
   "control_number": "43445",
@@ -5416,7 +6502,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in non-destructive testing (ndt) technician",
+    "section_fit": 0.8
    }
   },
   "listed": 12,
@@ -5444,7 +6532,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -5481,7 +6571,9 @@
    "label": {
     "award": 0,
     "title": 0.333,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in educational immersive media",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -5519,7 +6611,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in advanced web applications development",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -5545,7 +6639,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in spanish",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5571,7 +6667,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in semiconductor processing",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5603,7 +6701,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -5641,7 +6741,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in archaeological field work",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -5667,7 +6769,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5693,7 +6797,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in retail operations specialist",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5704,12 +6810,30 @@
   "title": "Visual Storytelling and Comic Arts",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GID37",
+   "GID44A",
+   "GID60",
+   "GID61",
+   "GID71"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/",
+   "title": "Graphic and Interactive Design < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in visual storytelling and comic arts",
+    "section_fit": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 5970
  },
  {
   "control_number": "44600",
@@ -5733,7 +6857,9 @@
    "label": {
     "award": 0,
     "title": 0.5,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in business and marketing",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5783,7 +6909,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "public health, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -5811,7 +6939,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -5841,7 +6971,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -5871,7 +7003,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -5894,12 +7028,39 @@
   "title": "Artificial Intelligence Empowered Instruction",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LINC51C",
+   "LINC51D",
+   "LINC75A",
+   "LINC75C",
+   "LINC77A",
+   "LINC77C",
+   "LINC78A",
+   "LINC78C",
+   "LINC78D",
+   "LINC82B",
+   "LINC82C",
+   "LINC84",
+   "LINC91A",
+   "LINC91C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/",
+   "title": "Learning in New Media Classrooms < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in artificial intelligence empowered instruction",
+    "section_fit": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 10207
  },
  {
   "control_number": "45656",
@@ -5921,7 +7082,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5959,7 +7122,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "associate degree requirements",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -5985,7 +7150,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in emergency medical technician",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -6011,7 +7178,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -6037,7 +7206,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -6080,7 +7251,9 @@
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": "coa"
+    "section": "coa",
+    "section_line": "certificate of achievement in independence and career readiness",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -6116,7 +7289,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "mathematics 2.0, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -6154,7 +7329,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "physics 2.0, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -6208,7 +7385,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 31,
@@ -6239,7 +7418,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,

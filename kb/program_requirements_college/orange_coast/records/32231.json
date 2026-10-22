@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Music",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/music-associate-arts-degree-transfer-aat/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12482,
+  "input_tokens": 8585,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12482,
-    "output_tokens": 1140,
+    "input_tokens": 8585,
+    "output_tokens": 2203,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,48 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1140,
+  "output_tokens": 2203,
   "output_tokens_details": {
-   "thinking_tokens": 225
+   "thinking_tokens": 566
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07273,
- "ms": 10682,
- "seconds": 11.0,
+ "cost_usd": 0.0784,
+ "ms": 17592,
+ "seconds": 18.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 19,
    "listed": 19,
-   "share": 0.0,
-   "missing": [
-    "MUSA120",
-    "MUSA122",
-    "MUSA127",
-    "MUSA129",
-    "MUSA132",
-    "MUSA133",
-    "MUSA150",
-    "MUSA180",
-    "MUSA181",
-    "MUSA185",
-    "MUSA186",
-    "MUSA230",
-    "MUSA233",
-    "MUSA234",
-    "MUSA280",
-    "MUSA281",
-    "MUSA285",
-    "MUSA286",
-    "MUSA290"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -80,29 +61,49 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    21.0,
+    24.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    21.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     57.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     31.0,
+     31.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -112,124 +113,222 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Music (MUS)",
+   "section_heading": "Associate Degree for Transfer Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 24
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 5,
+    "max": 8
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 31,
+    "max": 31
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate competence in the technical skills of music performance by presenting public performances of music compositions.",
+    "Demonstrate ability to analyze and critique music techniques, style, and aesthetic strategies.",
+    "Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MUS A120",
-    "why": "course description only; AA-T requirements not in the text"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS A180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A181",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A186",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A281",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A290",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS A122",
-    "why": "course description only; AA-T requirements not in the text"
+    "name": "Large Ensemble Elective Courses",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "MUS A120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A127",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A129",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A132",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A133",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A233",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A234",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS A127",
-    "why": "course description only; AA-T requirements not in the text"
-   },
-   {
-    "code": "MUS A129",
-    "why": "course description only; AA-T requirements not in the text"
-   },
-   {
-    "code": "MUS A132",
-    "why": "course description only; AA-T requirements not in the text"
-   },
-   {
-    "code": "MUS A133",
-    "why": "course description only; AA-T requirements not in the text"
-   },
-   {
-    "code": "MUS A150",
-    "why": "course description only; AA-T requirements not in the text"
-   },
-   {
-    "code": "MUS A180",
-    "why": "not in the text (excerpt cut off)"
-   },
-   {
-    "code": "MUS A181",
-    "why": "not in the text (excerpt cut off)"
-   },
-   {
-    "code": "MUS A185",
-    "why": "not in the text (excerpt cut off)"
-   },
-   {
-    "code": "MUS A186",
-    "why": "not in the text (excerpt cut off)"
-   },
-   {
-    "code": "MUS A230",
-    "why": "not in the text (excerpt cut off)"
-   },
-   {
-    "code": "MUS A233",
-    "why": "not in the text (excerpt cut off)"
-   },
-   {
-    "code": "MUS A234",
-    "why": "not in the text (excerpt cut off)"
-   },
-   {
-    "code": "MUS A280",
-    "why": "not in the text (excerpt cut off)"
-   },
-   {
-    "code": "MUS A281",
-    "why": "not in the text (excerpt cut off)"
-   },
-   {
-    "code": "MUS A285",
-    "why": "not in the text (excerpt cut off)"
-   },
-   {
-    "code": "MUS A286",
-    "why": "not in the text (excerpt cut off)"
-   },
-   {
-    "code": "MUS A290",
-    "why": "not in the text (excerpt cut off)"
+    "name": "List A: Select 3-4 Units",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MUS A285",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A286",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text contains only course descriptions from the Music (MUS) course listing (MUS A110 through MUS A161, cut off mid-entry); it contains no program section, requirement list, totals, outcomes or careers for the Music, Associate in Arts Degree for Transfer (AA-T).",
-   "Several course entries (MUS A120, A122, A127, A129, A132, A133, A150) list 'Music, Associate in Arts Degree for Transfer (AA-T)' among program pages referencing them, but the text does not state how they count, so no blocks were recorded.",
-   "A reviewer should fetch the actual AA-T program page to record requirements."
+   "MUS A290 is printed with 2 units in the requirements list; footnote 1 says it is a 0.5-unit course taken each semester for a total of two units.",
+   "Large Ensemble block reads 'Complete four semesters of one-unit courses of the following' with a printed total of 4-6; recorded as choose_units 4. No units are printed beside the individual ensemble courses (closed list stores MUS A150 at 2 units, which may explain the 6-unit high end).",
+   "List A prints 'Select 3-4 Units' with no units beside MUS A285 or MUS A286; recorded as choose_units with minimum 3.",
+   "GE line prints 'California General Education Transfer Curriculum (Cal-GETC) 34 Units' with 31 in the units column; footnote 2 says MUS A180 may double-count (34 - 3 = 31). ge_units recorded as the printed 31.",
+   "Transferable electives printed as '8.0 - 5.0' units toward the 60-unit degree total, outside the major; recorded as degree_elective_units 5-8.",
+   "Total Degree Units printed as 60 in the requirements tab; the Program Sequence tab prints Total Units 60-64 for the sample plan.",
+   "Program learning outcomes are printed once on the program overview page for this award."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

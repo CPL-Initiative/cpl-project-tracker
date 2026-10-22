@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Not-for-Profit Management",
  "award": "Noncredit program",
- "source_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/business/not-for-profit-management-certificate-completion/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7039,
+  "input_tokens": 6826,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7039,
-    "output_tokens": 757,
+    "input_tokens": 6826,
+    "output_tokens": 586,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 757,
+  "output_tokens": 586,
   "output_tokens_details": {
-   "thinking_tokens": 251
+   "thinking_tokens": 103
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0433,
- "ms": 7316,
- "seconds": 7.6,
+ "cost_usd": 0.03902,
+ "ms": 5355,
+ "seconds": 5.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 3,
    "listed": 3,
-   "share": 0.0,
-   "missing": [
-    "ACCTA7N",
-    "BUSA86N",
-    "BUSA87N"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -65,25 +62,29 @@
   },
   "arithmetic": {
    "pass": true,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "against": null,
-   "why": [
-    "the catalog prints no total, no hours and no units"
-   ]
+   "status": "equal",
+   "computed": [
+    162.0,
+    162.0
+   ],
+   "stated": [
+    162.0,
+    162.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -95,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Noncredit Courses",
+   "section_heading": "Not-for-Profit Management, Certificate of Completion",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 162,
+    "max": 162
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -120,30 +121,52 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Students who complete this certificate will be equipped with the knowledge, skills, and resources to take on the challenges and opportunities of an evolving not-for-profit industry that demands strong management, communication, and critical thinking skills."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "BUS A086N",
-    "why": "Appears only as a course description (54 hours) that references the Not-for-Profit Management Certificate of Completion. The text prints no requirements list for the program."
-   },
-   {
-    "code": "BUS A087N",
-    "why": "Appears only as a course description (54 hours) that references the Not-for-Profit Management Certificate of Completion. The text prints no requirements list for the program."
-   },
-   {
-    "code": "ACCT A007N",
-    "why": "Not in the text."
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT A007N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A086N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A087N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text is the Business course-description page (course listings), not the program page for the Not-for-Profit Management Certificate of Completion. No requirements section, total hours, outcomes or careers for this award are printed.",
-   "BUS A086N and BUS A087N (54 hours each) list 'Not-for-Profit Management, Certificate of Completion' among their referencing program pages, so they likely belong to the program. Their rule (all required or a choice) is not stated, so they were not placed in a block.",
-   "A reviewer should check the program page itself, likely under Adult Education/Noncredit or Noncredit Certificate Programs, for the required courses and the total hours."
+   "Noncredit certificate counted in hours; course hours (54 each) and Total Hours 162 are as printed.",
+   "The description mentions potential, new or mid-level professionals in the not-for-profit industry but names no specific career or job title, so careers is left empty."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "39726645292"
 }

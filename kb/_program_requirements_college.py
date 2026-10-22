@@ -561,8 +561,11 @@ def choose_page(program: dict, pages: list[dict]) -> dict | None:
 # extraction is told the program's award and records the section it read
 # (section_heading), so each sibling reads its own section of the shared page.
 SECTION_AWARD = {
+    # MiraCosta heads a transfer degree over two lines, "Associate in Arts Degree" then
+    # "Psychology for Transfer" (page read 39732553097, S445): read on the joined pair.
     "adt": re.compile(r"associate (?:in|of) (?:arts|science)(?: degree)? for transfer|"
-                      r"\ba\.?\s?[as]\.?\s?-\s?t\b", re.I),
+                      r"\ba\.?\s?[as]\.?\s?-\s?t\b|"
+                      r"^associate (?:in|of) (?:arts|science) degree .*\bfor transfer$", re.I),
     # Sierra heads a degree "AS Degree" or "AA Degree", no periods (page read 39704788066, S444).
     "as": re.compile(r"associate (?:in|of) science(?! (?:degree )?for transfer)|\ba\.\s?s\.(?!\s?-\s?t)|"
                      r"^as degree$", re.I),
@@ -601,10 +604,22 @@ def section_tokens(title: str) -> list[str]:
 
 
 def heading_fit(line: str, tokens: list[str]) -> float:
-    """The share of a heading's own words, the award's words set aside, that the title names:
-    1.0 when the heading is the program's, less when it names a longer title."""
-    own = set(P.title_tokens(HEADING_AWARD.sub(" ", line)))
+    """The share of a heading's own words, the award's words and a list's "Degrees" set aside,
+    that the title names: 1.0 when the heading is the program's, less when it names a longer
+    title. A heading spelling the title as one word ("Cybersecurity" for Cyber Security) fits."""
+    words = P.title_tokens(HEADING_AWARD.sub(" ", re.sub(r"\bdegrees\b", " ", line)))
+    if words and "".join(words) == "".join(tokens):
+        return 1.0
+    own = set(words)
     return round(len(own & set(tokens)) / len(own), 3) if own else 0.0
+
+
+def names_title(line: str, tokens: list[str]) -> bool:
+    """Every word of the title, each as a word, or all of them run together as one word:
+    MiraCosta heads Cyber Security's certificate "Cybersecurity" (page read 39732553097)."""
+    if all(re.search(r"\b" + re.escape(w) + r"\b", line) for w in tokens):
+        return True
+    return len(tokens) > 1 and "".join(tokens) in re.sub(r"[^a-z0-9]", "", line)
 
 
 def degree_list_line(lines: list[str], kind: str, tokens: list[str]) -> str | None:
@@ -621,7 +636,8 @@ def degree_list_line(lines: list[str], kind: str, tokens: list[str]) -> str | No
                 continue
             if len(item) > LIST_ITEM or any(p.match(item) for p in DEGREE_LIST.values()):
                 break
-            if set(section_tokens(item)) == set(tokens):
+            words = section_tokens(item)
+            if set(words) == set(tokens) or "".join(words) == "".join(tokens):
                 return item.lower()
     return None
 
@@ -652,23 +668,26 @@ def section_match(text: str, program: dict, title_share: float = 0.0) -> tuple[s
             nxt = next((x for x in short[i + 1:i + 2] if x), "")
             if p.search(ln):
                 out.append(ln)
-            if nxt and (p.search(ln) or p.search(nxt)):
+            if nxt and (p.search(ln) or p.search(nxt) or p.search(ln + " " + nxt)):
                 out.append(ln + " " + nxt)
-        return [h for h in out if all(re.search(r"\b" + re.escape(w) + r"\b", h) for w in tokens)]
+        return [h for h in out if names_title(h, tokens)]
 
     # "Associate in Arts in Anthropology for Transfer" is the A.A.-T's section, never the A.A.'s
-    heads = [h for h in heads_for(pat)
+    heads = [(h, heading_fit(h, tokens)) for h in heads_for(pat)
              if not (kind in ("aa", "as") and (SECTION_AWARD["adt"].search(h) or "transfer" in h))]
-    if heads:
-        best = max(heads, key=lambda h: heading_fit(h, tokens))
-        return kind, best, heading_fit(best, tokens)
-    if kind in AWARD_TYPE_KEY and title_share >= 1.0 and AWARD_TYPE_KEY[kind].search(text or "") \
-            and any(DEGREE_HEADING.match(ln) for ln in lines):
-        return kind, "associate degree requirements", 1.0
+    # A degree a MiraCosta list names exactly outranks a two-line pair that only contains its
+    # words: "Associate in Arts Degrees" then "Child Development Associate Teacher" names every
+    # word of Child Development Teacher, whose own line comes three below (page read 39732553097).
     if DEGREE_FROM_CERT.search(text or "") and heads_for(SECTION_AWARD["coa"]):
         item = degree_list_line([x.lower() for x in lines], kind, tokens)
         if item:
-            return kind, item, 1.0
+            heads.append((item, 1.0))
+    if heads:
+        best = max(heads, key=lambda h: h[1])
+        return kind, best[0], best[1]
+    if kind in AWARD_TYPE_KEY and title_share >= 1.0 and AWARD_TYPE_KEY[kind].search(text or "") \
+            and any(DEGREE_HEADING.match(ln) for ln in lines):
+        return kind, "associate degree requirements", 1.0
     return None, None, 0.0
 
 

@@ -1,0 +1,168 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "41964",
+ "shape": "noncredit",
+ "title": "Hospitality and Tourism",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/consumer-health-sciences/hospitality-and-tourism-certificate-completion/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6772,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6772,
+    "output_tokens": 803,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 803,
+  "output_tokens_details": {
+   "thinking_tokens": 321
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04315,
+ "ms": 6845,
+ "seconds": 7.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Hospitality and Tourism, Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "The outcome of this certificate is to prepare students for entry-level employment in the hospitality and tourism sector and/or prepare students to transition to college credit programs."
+   ],
+   "careers": [
+    "hospitality and tourism"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COS A001N",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTT A003N",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; Total Hours printed as 24.",
+   "Catalog prints COS A001N title as 'Introduction to the Customer Service', slightly different from the state file title 'Introduction to Customer Service'.",
+   "The career entry 'hospitality and tourism' is a career field drawn from the overview's 'entry-level career opportunities in hospitality and tourism'; no specific job titles are named."
+  ]
+ },
+ "extracted_run": "39726645292"
+}

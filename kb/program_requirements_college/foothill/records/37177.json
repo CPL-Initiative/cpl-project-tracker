@@ -1,0 +1,339 @@
+{
+ "college": "Foothill College",
+ "control_number": "37177",
+ "shape": "certificate",
+ "title": "Makerspace Coordinator",
+ "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11877,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11877,
+    "output_tokens": 2593,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2593,
+  "output_tokens_details": {
+   "thinking_tokens": 832
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09937,
+ "ms": 21151,
+ "seconds": 21.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 14,
+   "share": 0.714,
+   "missing": [
+    "LINC57",
+    "LINC58A",
+    "LINC75A",
+    "LINC80"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "LINC60C",
+    "LINC60K",
+    "LINC78D",
+    "LINC84",
+    "LINC84B",
+    "LINC84D",
+    "LINC84E",
+    "LINC84F"
+   ],
+   "flagged": [
+    "LINC60C",
+    "LINC60K",
+    "LINC78D",
+    "LINC84",
+    "LINC84B",
+    "LINC84D",
+    "LINC84E",
+    "LINC84F"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Makerspace Coordinator",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to facilitate professional development for their peers/staff to incorporate STEAM into all subject areas.",
+    "Students will be able to influence curriculum decisions around STEAM based on best practices and high content knowledge.",
+    "Students will be able to facilitate interactions and collaboration to build a community that fosters active learning.",
+    "Students will be able to identify technology that will facilitate the learning of STEAM in engaging and meaningful ways.",
+    "Students will be able to curate and create STEAM instructional materials, tools, strategies, and resources to engage all learners and ensure achievement of academic goals."
+   ],
+   "careers": [
+    "classified personnel"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LINC 77B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LINC 77D",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LINC 84",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LINC 84A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LINC 84D",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "And six units from the following:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "LINC 59",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LINC 60C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LINC 60K",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LINC 73H",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LINC 77A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LINC 77C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LINC 78A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LINC 78B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LINC 78C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LINC 78D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LINC 84B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LINC 84E",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LINC 84F",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "LINC 058A",
+    "why": "named only in the Online and Blended Instruction certificate section"
+   },
+   {
+    "code": "LINC 075A",
+    "why": "named only in other certificate sections (AI Empowered Instruction, Educational Immersive Media, Online and Blended Instruction)"
+   },
+   {
+    "code": "LINC 57",
+    "why": "named only in other certificate sections (Education Technology Specialist, Emerging Educational Technology Leadership)"
+   },
+   {
+    "code": "LINC 80",
+    "why": "named only in the Online and Blended Instruction certificate section"
+   }
+  ],
+  "notes": [
+   "Closed-list codes use zero-padded numbers (e.g., LINC 077B); matched to catalog codes without the leading zero (LINC 77B).",
+   "LINC 84 (Fundamentals of Makerspace Design & Instruction) is not in the closed list; only LINC 084A is, so LINC 84 is marked as a catalog addition.",
+   "The elective list prints no units beside individual courses; units left null.",
+   "The outcomes list is printed once for the whole Learning in New Media Classrooms page, not specifically under this certificate; recorded on the assumption this award shares it. The text is cut off at the start, so the first outcome ('...ill be able to identify emerging STEAM fields that will influence instruction and workforce development.') is truncated and was not recorded. The outcomes are STEAM-focused and may belong to the STEAM Instructional Leadership certificate; reviewer should check.",
+   "Career entry 'classified personnel' taken from the Makerspace Coordinator career opportunities paragraph ('hire individuals as classified personnel'); the paragraph names no other job titles explicitly.",
+   "Page header lists Certificate(s): 12-18 units for all certificates; this certificate's own total is 16."
+  ]
+ },
+ "extracted_run": "39726637264"
+}

@@ -1,0 +1,531 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "03974",
+ "shape": "degree",
+ "title": "Engineering",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/engineering/engineering-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9078,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9078,
+    "output_tokens": 3449,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3449,
+  "output_tokens_details": {
+   "thinking_tokens": 963
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10529,
+ "ms": 25993,
+ "seconds": 27.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 38,
+   "listed": 38,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "CSA170",
+    "ENGRA180",
+    "GEOLA110",
+    "HVACA100",
+    "MATHA185H",
+    "PHYSA285"
+   ],
+   "flagged": [
+    "CSA170",
+    "ENGRA180",
+    "GEOLA110",
+    "HVACA100",
+    "MATHA185H",
+    "PHYSA285"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.0,
+    47.0
+   ],
+   "stated": [
+    41.0,
+    47.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     62.0,
+     68.0
+    ],
+    "stated": [
+     60.0,
+     62.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering, Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 47
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OCC AS General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 62
+   },
+   "ge_units": {
+    "min": null,
+    "max": 21
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "An ability to apply engineering, science, and mathematics knowledge utilizing critical thinking and problem-solving skills to find solutions to problems of engineering nature and design.",
+    "Skills to use the state of the art laboratory equipment and simulation tools for engineering and engineering related practices and research.",
+    "An understanding of the ethical and professional role and responsibility as a member of the society in finding the ways for the betterment of the environment and all humanity and life."
+   ],
+   "careers": [
+    "engineering technicians"
+   ],
+   "degree_total_minimum": true
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGR A110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGR A110H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR A180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGR A280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS A185",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS A280",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A185",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH A185H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A280",
+      "units": 5,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "MATH A280H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A285",
+      "units": 5,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "MATH A285H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives - Select six-ten units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "AMT A151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A152",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH A171",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH A172",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR A200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A114",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A281",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A225",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNST A116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNST A155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNST A157",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS A150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS A170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS A200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS A220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC A111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR A210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR A220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR A230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR A240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR A285",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HVAC A100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MACH A100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS A285",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Closed list writes MATHA185, MATHA280, MATHA285 and PHYSA280 without a space; treated as the same courses as MATH A185, MATH A280, MATH A285 and PHYS A280 printed in the catalog (catalog_addition false).",
+   "Restricted elective courses print no units beside them in the requirements table; units left null.",
+   "GE line reads 'OCC AS General Education 1, 2 up to 21'; 'up to 21' is not a fixed figure, so ge_units left null. Footnote says Cal-GETC pattern (up to 34 units) may be substituted.",
+   "'Transferable electives as needed to satisfy unit requirements varies' recorded as electives_fill_degree true.",
+   "MATH A180 (Calculus 1) appears only in the Program Sequence, not in the requirements; not recorded as a requirement.",
+   "Alternatives (honors twins) print no units of their own; units left null.",
+   "The program learning outcomes are printed once for the program page and recorded for this A.S. degree."
+  ]
+ },
+ "extracted_run": "39726645292",
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 21
+   },
+   "words": "OCC AS General Education 1, 2\tup to 21"
+  }
+ ]
+}

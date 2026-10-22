@@ -1,0 +1,329 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "35768",
+ "shape": "degree",
+ "title": "Biomanufacturing",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.miracosta.edu/disciplines/biotechnology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11942,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11942,
+    "output_tokens": 2296,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2296,
+  "output_tokens_details": {
+   "thinking_tokens": 739
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09369,
+ "ms": 18912,
+ "seconds": 19.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BTEC292",
+    "BTEC299"
+   ],
+   "flagged": [
+    "BTEC292",
+    "BTEC299"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    39.0,
+    39.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science Degree – Biomanufacturing",
+   "measure": "units",
+   "total_units": {
+    "min": 39,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completion of this program, students will be able to successfully perform a technical laboratory task common to the biomanufacturing environment by employing the appropriate equipment and tools, safely and effectively."
+   ],
+   "careers": [
+    "quality control",
+    "quality assurance",
+    "production",
+    "process development",
+    "analytical testing"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 110",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 210",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 211",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 221",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 222",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 151",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "BTEC 201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 203",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 204",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 206",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 207",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 231",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 232",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 292",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BTEC 299",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The A.S. Degree section prints no course list; it states the degree is earned by completing the Certificate of Achievement in Biomanufacturing plus a general education pattern. Blocks, total_units (39), outcome and careers are taken from the Certificate of Achievement – Biomanufacturing section; reviewer should confirm this reading.",
+   "The A.S. section names no specific GE pattern for the degree itself ('a general education (GE) pattern of courses'); it says Cal-GETC is required only for eligibility for the bachelor's program, so ge_pattern is left null.",
+   "The program learning outcome and careers are printed under the certificate, which the A.S. degree incorporates; recorded as shared by the degree.",
+   "Units are not printed beside the individual elective courses (BTEC 201–299); the block total of 2 is printed.",
+   "BTEC 292 and BTEC 299 are not on the closed list and are marked catalog additions.",
+   "A separate Bachelor of Science in Biomanufacturing section on the page (120 units, upper-division BTEC 300–470 courses) was not used."
+  ]
+ },
+ "extracted_run": "39726634443"
+}

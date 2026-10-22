@@ -1,0 +1,251 @@
+{
+ "college": "Citrus College",
+ "control_number": "45069",
+ "shape": "adt",
+ "title": "Communication Studies 2.0",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/communication-studies-adt/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8087,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8087,
+    "output_tokens": 1704,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1704,
+  "output_tokens_details": {
+   "thinking_tokens": 561
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06643,
+ "ms": 14957,
+ "seconds": 15.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Communication Studies A.A.-Transfer Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Interpret and critically assess a variety of media messages, including those that reflect multicultural perspectives in order to make connections, critically compare and contrast ideas, and produce written, oral, and visual messages.",
+    "Research, organize, compose, and deliver public presentations on socially significant and intellectually challenging topics in order to demonstrate college-level public speaking skills and critical thinking.",
+    "Effectively listen to and critically evaluate others’ messages in order to appreciate audience needs."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1004H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select nine (9) units",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPCH 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select three (3) units",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page's main heading is not in the extracted text; section_heading taken from the outcomes lead-in ('Communication Studies A.A.-Transfer Degree'). The description calls it 'Associate in Arts in Human Communication Studies for Transfer'.",
+   "Honors alternatives COMM C1000H and COMM C1004H print no units of their own in the course list.",
+   "List A requires 9 units from three 3-unit courses, so effectively all three SPCH courses are required.",
+   "The 60-unit requirement is the generic ADT rule, and 'Total Units 60-62' belongs to the example curriculum map, so degree_total is left null. The curriculum map also names courses (ENGL C1000, POLS C1000, HIST courses, UC/CSU electives) that are GE or electives, not major requirements; they were not placed in blocks.",
+   "Outcomes are printed as A.A.-Transfer degree level outcomes for this award."
+  ]
+ },
+ "extracted_run": "39726639865"
+}

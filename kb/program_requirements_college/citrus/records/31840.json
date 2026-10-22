@@ -1,0 +1,420 @@
+{
+ "college": "Citrus College",
+ "control_number": "31840",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/kinesiology-adt/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9187,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9187,
+    "output_tokens": 2990,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2990,
+  "output_tokens_details": {
+   "thinking_tokens": 787
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09655,
+ "ms": 22980,
+ "seconds": 23.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 32,
+   "listed": 32,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "KIN177"
+   ],
+   "flagged": [
+    "KIN177"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    24.0
+   ],
+   "stated": [
+    21.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Exhibit awareness and identify the dimensions of wellness and recognize positive characteristics of each dimension to live a healthier lifestyle.",
+    "Demonstrate competency in fundamental techniques to improve individual sport specific and movement skills.",
+    "Determine current level of fitness."
+   ],
+   "careers": [
+    "personal trainers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select three (3) of the following movement based courses with not more than one from each area",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIN 142",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 143",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 146",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 147",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 104",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 105",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 109",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 130",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 133",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 134",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 135",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 120",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 122",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 145",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 151",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 152",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 153",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 159",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 101",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 103",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 108",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 116",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 161",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 261",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two (2) of the following courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 104",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 111",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 177",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 111",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "PHYS 201",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Movement block: 'not more than one from each area'; areas are Aquatics (KIN 142, 143, 146, 147), Combatives (KIN 104), Team Sports (KIN 105, 109, 130, 133, 134, 135), Fitness (KIN 120, 122, 145, 151, 152, 153, 159), Individual Sports (KIN 101, 103, 108, 116), Dance (DANC 161, 261). Recorded as one choose-3 block with this constraint.",
+   "The 4-5 range is printed on the PHYS 111 / PHYS 201 row as a whole; likely PHYS 111 is 4 and PHYS 201 is 5. Units for alternatives CHEM 111 and PHYS 201 are not printed beside them, left null.",
+   "KIN 177 (First-Aid Responding To Emergencies, 3 units) is not in the closed list; recorded as a catalog addition.",
+   "Footnote: STAT C1000 is degree applicable with or without STAT 1000S/S1000; if taken with the support course only STAT C1000 units count.",
+   "The 60-unit figure appears only in the generic ADT requirements sentence and as the total of the sample curriculum map, not as this award's printed degree total, so degree_total is null. Cal-GETC is named without printed units.",
+   "Outcomes are from the page's A.A.-Transfer Degree Level Student Learning Outcomes tab, specific to this award.",
+   "No section title heading is printed in the text; section_heading uses the 'Requirements' tab name."
+  ]
+ },
+ "extracted_run": "39726639865"
+}

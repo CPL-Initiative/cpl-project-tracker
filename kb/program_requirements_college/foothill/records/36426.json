@@ -1,0 +1,235 @@
+{
+ "college": "Foothill College",
+ "control_number": "36426",
+ "shape": "certificate",
+ "title": "Game Audio II",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/music-technology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9923,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9923,
+    "output_tokens": 1665,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1665,
+  "output_tokens_details": {
+   "thinking_tokens": 665
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07299,
+ "ms": 14709,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 7,
+   "share": 0.857,
+   "missing": [
+    "MTEC70B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "MTEC57A",
+    "MTEC72B",
+    "MTEC72C"
+   ],
+   "flagged": [
+    "MTEC57A",
+    "MTEC72B",
+    "MTEC72C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Game Audio II",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Evaluate merits of professional media productions with an understanding of technical and aesthetic considerations appropriate for various genres.",
+    "Distinguish between related career paths associated with the discipline of Music Technology, including digital media content creation, technical support, marketing, entrepreneurship, and business administrative positions."
+   ],
+   "careers": [
+    "Music Production",
+    "Audio Post-Production",
+    "Game Audio",
+    "Video Production",
+    "Podcasting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "MTEC 55A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 55B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 55C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 57A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MTEC 70A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MTEC 72B",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MTEC 72C",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MDIA 13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMN 13",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MTEC 070B",
+    "why": "not in the Game Audio II section; named only in the support course list and Pro Tools certificates"
+   }
+  ],
+  "notes": [
+   "Catalog prints MTEC 55A/55B/55C/70A without the leading zero used in the closed list (MTEC 055A etc.); treated as the same courses.",
+   "Program learning outcomes are printed once for the Music Technology program as a whole; the Game Audio II certificate is assumed to share them. The excerpt begins mid-outcome ('y with audio-video equipment, including live content acquisition...'); that truncated first outcome (and any earlier ones) was cut off and not recorded.",
+   "Careers taken from the program-wide Career Opportunities section.",
+   "Alternatives MTEC 72B, MTEC 72C and HUMN 13 have no units printed beside them on the 'or' rows; the row's 4 units apply to the choice.",
+   "Award title in the request says 16S/24Q to fewer than 30S/45Q units; catalog states 24 quarter units for this certificate."
+  ]
+ },
+ "extracted_run": "39726637264"
+}

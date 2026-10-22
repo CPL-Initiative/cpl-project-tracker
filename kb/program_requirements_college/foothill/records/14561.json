@@ -1,0 +1,446 @@
+{
+ "college": "Foothill College",
+ "control_number": "14561",
+ "shape": "certificate",
+ "title": "Program Supervision and Mentoring",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/child-development/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11149,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11149,
+    "output_tokens": 4085,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4085,
+  "output_tokens_details": {
+   "thinking_tokens": 1655
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1263,
+ "ms": 34873,
+ "seconds": 36.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 27,
+   "listed": 28,
+   "share": 0.964,
+   "missing": [
+    "CHLD91"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "CHLD50D",
+    "CHLD80A",
+    "CHLD80B",
+    "CHLD80C"
+   ],
+   "flagged": [
+    "CHLD50D",
+    "CHLD80A",
+    "CHLD80B",
+    "CHLD80C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    85.0,
+    85.0
+   ],
+   "stated": [
+    85.0,
+    85.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Program Supervision and Mentoring",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "24 units of general education courses (at least one course from each of: Humanities and/or Fine Arts; Social Sciences; English/Language Arts; Mathematics or Science)",
+   "degree_total": {
+    "min": 85,
+    "max": 85
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to demonstrate an understanding of the needs and characteristics of children from birth through middle childhood, and the multiple influences on their development as related to the high-quality care and education of young children.",
+    "Students will be able to demonstrate an understanding of ethical standards and professional behaviors that deepen knowledge and commitment to the field of early care and education as related to National Association for the Education of Young Children Code of Ethical Conduct."
+   ],
+   "careers": [
+    "early childhood educators",
+    "director",
+    "human development",
+    "child psychology",
+    "social work",
+    "primary education"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHLD 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 51A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 56",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 56N",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 86A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 86B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 88B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 89",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 95",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Support Courses",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHLD 50D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHLD 53NC",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 53NP",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 59",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 63N",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 71",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 72",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 73",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 74",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 80A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHLD 80B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHLD 80C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHLD 82",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 90B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 90C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 2A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 2AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHLD 90B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 90C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 86A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHLD 91",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "This certificate is awarded on completion of the Certificate of Achievement in Child Development Teacher (73 units: the core and support courses plus 24 units of general education) and CHLD 90B, CHLD 90C and CHLD 86A. The Core Courses and Support Courses blocks are taken from the shared 'Core and Support Courses' list, which the Teacher certificate incorporates by reference.",
+   "'Units: 85' includes the 24 GE units, so it is recorded as degree_total, not total_units. No total without GE is printed.",
+   "CHLD 86A appears both in Core Courses and in this certificate's own list. CHLD 90B and CHLD 90C appear both in the Support Courses list and in this certificate's own list. The catalog's 85 = 73 + 12 appears to count CHLD 86A twice; a reviewer should check this.",
+   "Support course units are not printed in the shared list. Units for CHLD 50D, 80A, 80B and 80C appear in other certificate sections (5, 2, 2, 1).",
+   "Program Learning Outcomes are printed once for the Child Development program as a whole; this award shares them.",
+   "The catalog prints codes without leading zeros (CHLD 51A, ANTH 2A, ANTH 2AH) where the closed list uses CHLD 051A, ANTH 002A and ANTH 02AH; these were treated as the same courses.",
+   "The GE requirement is described only by categories, not by a named pattern; ge_pattern records the description."
+  ]
+ },
+ "extracted_run": "39726637264"
+}

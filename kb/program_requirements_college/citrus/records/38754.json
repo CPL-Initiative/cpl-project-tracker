@@ -1,0 +1,255 @@
+{
+ "college": "Citrus College",
+ "control_number": "38754",
+ "shape": "adt",
+ "title": "Environmental Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/biology/environmental-science-adt/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8370,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8370,
+    "output_tokens": 1709,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1709,
+  "output_tokens_details": {
+   "thinking_tokens": 538
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06766,
+ "ms": 14923,
+ "seconds": 15.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.0,
+    42.0
+   ],
+   "stated": [
+    41.0,
+    42.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of the physical, biological, ecological, and social sciences required to effectively address current environmental issues and be prepared to pursue further study in an Environmental Science Program at the baccalaureate level.",
+    "Be proficient in the research, analytical and communication skills necessary to present critical analysis in natural and social systems and the behaviors that impact and effect the environment.",
+    "Facilitate habits of independent and objective thought with an integrated approach to the physical and natural sciences to understand long-term sustainability."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 124",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 125",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 111",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESCI 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) of the following math options:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 190",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Total Units 41-42 is the major total printed in the course list; the 60-unit sentence is the generic ADT requirement and the 67-68 figure is the curriculum map's sample plan total, so degree_total is left null.",
+   "The catalog prints MATH 190 as 'Calculus I: Late Transcendentals'; the closed list titles it 'Calculus with Analytic Geometry l'.",
+   "STAT C1000H is printed as an 'or' row without its own units.",
+   "Footnoted support courses STAT 1000S, MATH 080 and MATH 090 are optional companions and not recorded as requirements.",
+   "Curriculum map courses (ENGL C1000 variants, CHEM 110/110H, HIST, POLS C1000/H) are a sample pathway including GE and are not major requirements.",
+   "No Career Information tab content was present in the text, so careers is empty."
+  ]
+ },
+ "extracted_run": "39726639865"
+}
