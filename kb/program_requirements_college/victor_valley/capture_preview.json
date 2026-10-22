@@ -1,0 +1,649 @@
+{
+ "college": "Victor Valley College",
+ "catalog_url": "https://catalog.vvc.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 219,
+ "with_closed_list": 201,
+ "started": "2026-10-22T20:23:18Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.vvc.edu/sitemap.xml",
+  "status": 200,
+  "listed": 419,
+  "nested": 0,
+  "program_pages": 307,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 307,
+ "child_pages": 0,
+ "banner_h1": null,
+ "loads": 356,
+ "seconds": 1655.9,
+ "found": 176,
+ "by_method": {
+  "no_closed_list": 18,
+  "not_found": 16,
+  "page_claimed": 9,
+  "sitemap_page": 176
+ },
+ "shared_pages": {
+  "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/building-inspection-ca/": [
+   "07565",
+   "36761"
+  ],
+  "https://catalog.vvc.edu//degrees-certificates/communication-studies/communication-studies-2-aat/": [
+   "31612",
+   "44287"
+  ],
+  "https://catalog.vvc.edu//degrees-certificates/business-administration/business-administration-2-ast/": [
+   "37582",
+   "41784"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "04946",
+   "title": "Automotive Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-service-management-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.023,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 5,
+    "listed": 43,
+    "why": "coarse net: the page's code tokens name 5 of 43 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2837,
+     "content": 6783,
+     "tabs": 1019
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      999
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "07595",
+   "title": "Fine Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/fine-arts/fine-arts-aa/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 158,
+    "why": "coarse net: the page's code tokens name 0 of 158 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3182,
+     "content": 7008,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      866
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "17586",
+   "title": "Aviation Airframe Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/aviation/aviation-airframe-technician-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2904,
+     "content": 6033,
+     "tabs": 200
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      180
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35957",
+   "title": "GENERAL AIRCRAFT MAINTENANCE TECHNICIAN",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/aviation/general-aircraft-maintenance-technician-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2961,
+     "content": 6032,
+     "tabs": 140
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      120
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36999",
+   "title": "Automotive Service Advisor and Manager",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-service-advisor-manager-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 3,
+    "listed": 6,
+    "why": "coverage 0.00 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2915,
+     "content": 6341,
+     "tabs": 506
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      486
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37007",
+   "title": "Automotive Brake and Suspension Specialist Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-brake-suspension-specialist-technician-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.333,
+    "body": 0.0,
+    "content": 0.333,
+    "net": 2,
+    "listed": 3,
+    "why": "coverage 0.33 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2920,
+     "content": 6099,
+     "tabs": 250
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      230
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37008",
+   "title": "Automotive Transmission Specialist Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-transmission-specialist-technician-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.25,
+    "body": 0.0,
+    "content": 0.25,
+    "net": 2,
+    "listed": 4,
+    "why": "coverage 0.25 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2917,
+     "content": 6192,
+     "tabs": 349
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      329
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37067",
+   "title": "Business",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/business-administration-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.019,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 52,
+    "why": "coarse net: the page's code tokens name 1 of 52 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2607,
+     "content": 6718,
+     "tabs": 1171
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1151
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37434",
+   "title": "Network Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/animal-science-specialist-ca/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3769,
+     "content": 6983,
+     "tabs": 289
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      269
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38355",
+   "title": "Automotive Emission Testing Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-brake-suspension-specialist-technician-ca/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2920,
+     "content": 6099,
+     "tabs": 250
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      230
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38356",
+   "title": "Automotive Heating and Air Conditioning Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-heating-air-conditioning-specialist-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.4,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 3,
+    "listed": 5,
+    "why": "coverage 0.40 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2916,
+     "content": 6238,
+     "tabs": 397
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      377
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38848",
+   "title": "IFSAC / Pro-Board I",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40630",
+   "title": "Automotive Dealership Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-dealership-technician-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.364,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 6,
+    "listed": 11,
+    "why": "coverage 0.36 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2882,
+     "content": 6507,
+     "tabs": 714
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      694
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "41279",
+   "title": "Automotive Service Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-service-management-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.143,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 4,
+    "listed": 7,
+    "why": "coverage 0.14 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2837,
+     "content": 6783,
+     "tabs": 1019
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      999
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "42106",
+   "title": "Corrections Officer Core",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "42122",
+   "title": "ESL Level 2 High Beginning Language Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-2-high-beginning-language-skills-ccy/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 2,
+    "why": "coverage 0.00 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3283,
+     "content": 6434,
+     "tabs": 220
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      200
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "07589",
+   "title": "Level II: Teacher (pre-school)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/"
+   ]
+  },
+  {
+   "control_number": "20545",
+   "title": "Nursing Licensure",
+   "award": "Certificate of Achievement requiring 60+S/90+Q units",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/nursing/nursing-as/",
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/",
+    "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/bachelor-science-respiratory-therapy-bs/"
+   ]
+  },
+  {
+   "control_number": "33082",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/"
+   ]
+  },
+  {
+   "control_number": "36902",
+   "title": "California State University (CSU) General Education (GE) Requirements",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/"
+   ]
+  },
+  {
+   "control_number": "37010",
+   "title": "Pathway to Law",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/"
+   ]
+  },
+  {
+   "control_number": "37514",
+   "title": "Agricultural Animal Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/agricultural-plant-sciences-ast/",
+    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/"
+   ]
+  },
+  {
+   "control_number": "38852",
+   "title": "Irrigation and Water Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/natural-resource-environmental-technology-ca/"
+   ]
+  },
+  {
+   "control_number": "39102",
+   "title": "Geospatial Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/natural-resource-environmental-technology-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/"
+   ]
+  },
+  {
+   "control_number": "45047",
+   "title": "Full Cal-GETC Certification",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 25,
+  "0.8-1.0": 36,
+  "1.0": 115
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/victor_valley",
+  "kept": 176,
+  "programs": 0,
+  "list": []
+ },
+ "run": "39848031807"
+}
