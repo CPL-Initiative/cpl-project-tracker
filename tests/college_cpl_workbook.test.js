@@ -186,6 +186,8 @@ check("the CPL Pathways college picker links the college's visual", /"cpl-opport
 check("…and offers the extract", /textContent = "Download CPL Extract"/.test(pw));
 check("…and hides both until a college is chosen", /opp\.hidden = !col\.value/.test(pw) && /\.cplpw-oppacts\[hidden\] \{ display:none; \}/.test(pw));
 const page = fs.readFileSync("cpl-opportunity/index.html", "utf8");
+check("…and names itself in an h1 before a college is chosen (UI pass S446)",
+  /<div id="cpo-root"><h1>CPL opportunity analysis<\/h1><\/div>/.test(page) && /root\.innerHTML = '<h1>CPL opportunity analysis<\/h1><p class="cpo-note">/.test(page));
 check("the shareable page reads its college from ?college=", /get\("college"\)/.test(page) && /\.\.\/college_cpl_workbook\.js/.test(page));
 
 // the My College controls

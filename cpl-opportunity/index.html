@@ -39,7 +39,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
   body { margin: 0; background: var(--paper); color: var(--text-body); font: 16px/1.55 var(--body); }
   .skip { position: absolute; left: -999px; top: 8px; background: var(--surface); color: var(--cobalt); padding: 8px 12px; }
   .skip:focus { left: 16px; }
-  main { max-width: 1180px; margin: 0 auto; padding: 28px 16px 64px; display: grid; gap: 30px; }
+  main { max-width: 1180px; margin: 0 auto; padding: 28px 16px 64px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 30px; }
   h1, h2 { font-family: var(--display); color: var(--text-strong); margin: 0; text-wrap: balance; }
   h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.15; }
   h2 { font-size: clamp(1.2rem, 2.4vw, 1.5rem); }
@@ -167,7 +167,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
     <select id="cpo-college" disabled><option value="">Loading the college list…</option></select>
     <span class="cpo-status" id="cpo-status" role="status">The first build reads about 45 MB of COBI data.</span>
   </div>
-  <div id="cpo-root"></div>
+  <div id="cpo-root"><h1>CPL opportunity analysis</h1></div>
 </main>
 <script src="../college_cpl_workbook.js"></script>
 <script>
@@ -184,7 +184,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
     try { return new URLSearchParams(location.search).get("college") || ""; } catch (e) { return ""; }
   }
   function show(college) {
-    if (!college) { root.innerHTML = '<p class="cpo-note">Choose a college to see its CPL opportunities.</p>'; return; }
+    if (!college) { root.innerHTML = '<h1>CPL opportunity analysis</h1><p class="cpo-note">Choose a college to see its CPL opportunities.</p>'; return; }
     status.textContent = "Building " + college + "…";
     W.prepare({ college: college, loadScript: loadScript, base: "../" }, function (err, b) {
       if (err || !b) { status.textContent = "Could not build it: " + (err && err.message || "no data"); return; }

@@ -382,8 +382,8 @@
    "name": "cpl-opportunity/index.html",
    "page": "cpl-opportunity/index.html",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-22",
+   "outcome": "First pass (S446): the page painted no heading until a college loaded, so it now carries an h1 (CPL opportunity analysis) that the college's own replaces; at 360px the college picker's longest option widened main's grid track 16px past the viewport, now minmax(0, 1fr). Sweeps clean light and a new dark target at nine widths; First Light held (no raw hex outside :root and the public header's tokens). Wiring: it reads no shared dataset the ledger maps."
   },
   {
    "id": "library",
