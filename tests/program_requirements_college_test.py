@@ -463,6 +463,30 @@ gpal = C.assign([gc_as, gc_coa, gc_mgmt], [PAL_GC])
 check(gpal["05195"]["best"] is not None and gpal["22510"]["best"] is not None and gpal["22521"]["best"] is None,
       "Palomar's degree and its certificate share their page; a longer title the heading does not name does not")
 
+# Grossmont addresses a degree and its certificate on one page, law-enforcement-as-certificate-achievement:
+# one major list, then the certificate as "only the courses required for the above major" (page read
+# 39750446541, S446). The address names both awards, so each degree keeps its page beside its certificate.
+GRO = "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/"
+AOJ = "AOJ-110 AOJ-200 AOJ-202 AOJ-204 AOJ-230 AOJ-240"
+GRO_LE = page(GRO + "law-enforcement-as-certificate-achievement/",
+              "Law Enforcement Associate in Science and Certificate of Achievement", AOJ + " AOJ-120 AOJ-122")
+GRO_CO = page(GRO + "corrections-as-certificate-achievement/",
+              "Corrections Associate in Science and Certificate of Achievement", AOJ + " AOJ-144 AOJ-208")
+le_list = [{"code": c} for c in AOJ.split() + ["AOJ-120", "AOJ-122"]]
+co_list = [{"code": c} for c in AOJ.split() + ["AOJ-144", "AOJ-208"]]
+le_as = {"control_number": "05029", "title": "Law Enforcement", "award": "A.S. Degree", "closed_list": le_list}
+le_coa = dict(le_as, control_number="21410", award="Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units")
+co_as = dict(le_as, control_number="05030", title="Corrections", closed_list=co_list)
+co_coa = dict(co_as, control_number="21407", award=le_coa["award"])
+check(getattr(C, "slug_awards", lambda u: set())(GRO_LE["url"]) == {"as", "coa"}
+      and C.slug_awards(GRO + "arabic-aa-certificate-achievement/") == {"aa", "coa"}
+      and C.slug_awards(GRO + "pastry-cook-cert-achievement/") == set() and C.slug_awards(GRO + "x-certificate-achievement/") == {"coa"},
+      "a degree-and-certificate address names both awards; a certificate's address names the certificate")
+gro = C.assign([le_as, le_coa, co_as, co_coa], [GRO_LE, GRO_CO])
+check(all(gro[cn]["best"] is not None for cn in ("05029", "21410", "05030", "21407"))
+      and gro["05029"]["best"]["url"] == GRO_LE["url"] and gro["05030"]["best"]["url"] == GRO_CO["url"],
+      "Grossmont's degree and its certificate share their page, and each degree reads its own")
+
 # assign(): a loser moves to its next page; one with none left reads no page
 PG = [page(start + "degrees/x-aa-t/", "X, A.A.-T", "X AA-T ABC 101 ABC 102 ABC 103"),
       page(start + "degrees/x-aa/", "X, A.A.", "X A.A. ABC 101 ABC 102 ABC 103 ABC 104"),
