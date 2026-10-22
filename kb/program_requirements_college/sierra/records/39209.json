@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "UCTP: Chemistry",
  "award": "A.S. T Degree",
- "source_url": "https://catalog.sierracollege.edu/departments/natural-science/",
+ "source_url": "https://catalog.sierracollege.edu/departments/chemistry/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8242,
+  "input_tokens": 13209,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8242,
-    "output_tokens": 1484,
+    "input_tokens": 13209,
+    "output_tokens": 14454,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,59 +30,436 @@
     "model": null
    }
   ],
-  "output_tokens": 1484,
+  "output_tokens": 14454,
   "output_tokens_details": {
-   "thinking_tokens": 332
+   "thinking_tokens": 3238
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06265,
- "ms": 13219,
- "seconds": 13.9,
+ "cost_usd": 0.34192,
+ "ms": 98730,
+ "seconds": 99.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 16,
    "listed": 16,
-   "share": 0.0,
-   "missing": [
-    "CHEM12A",
-    "CHEM12B",
-    "CHEM1A",
-    "CHEM1B",
-    "CHEM3A",
-    "CHEM3B",
-    "MATH30",
-    "MATH31",
-    "MATH32",
-    "MATH33",
-    "PHYS205",
-    "PHYS205L",
-    "PHYS210",
-    "PHYS210L",
-    "PHYS215",
-    "PHYS215L"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 196,
+   "codes": [
+    "AAD12",
+    "ADMJ50",
+    "AGRI156",
+    "AGRI198",
+    "AGRI200",
+    "AGRI215",
+    "ANTH1",
+    "ANTH10",
+    "ANTH2",
+    "ANTH27",
+    "ANTH4",
+    "ANTH5",
+    "ANTH6",
+    "ANTH7",
+    "ANTH9",
+    "ARTH101",
+    "ARTH120",
+    "ARTH130",
+    "ARTH132",
+    "ARTH134",
+    "ARTH140",
+    "ARTH142",
+    "ARTH150",
+    "ARTH155",
+    "ARTHC1100",
+    "BIOL1",
+    "BIOL10",
+    "BIOL11",
+    "BIOL14",
+    "BIOL15",
+    "BIOL2",
+    "BIOL21",
+    "BIOL3",
+    "BIOL30",
+    "BIOL35",
+    "BIOL4",
+    "BIOL5",
+    "BIOL55",
+    "BIOL56",
+    "BIOL6",
+    "BUS271",
+    "COMM10",
+    "COMM12",
+    "COMM6",
+    "COMM7",
+    "COMM70",
+    "COMM8",
+    "DFST1",
+    "DFST10",
+    "DFST2",
+    "DFST3",
+    "DFST4",
+    "ECONC2001",
+    "ECONC2002",
+    "ENGL16",
+    "ENGL24",
+    "ENGL27",
+    "ENGL29",
+    "ENGL30A",
+    "ENGL30B",
+    "ENGL32",
+    "ENGL33",
+    "ENGL34",
+    "ENGL35",
+    "ENGL37",
+    "ENGL38",
+    "ENGL40",
+    "ENGL42",
+    "ENGL45",
+    "ENGL46A",
+    "ENGL46B",
+    "ENGL47A",
+    "ENGL47B",
+    "ENGL48",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLC1002",
+    "ESS1",
+    "ESS14",
+    "ETHN11",
+    "ETHN20",
+    "ETHN45",
+    "ETHN50",
+    "ETHN53",
+    "FREN1",
+    "FREN2",
+    "FREN3",
+    "FREN4",
+    "GEOG2",
+    "GEOG3",
+    "GEOG5",
+    "GER1",
+    "GER2",
+    "HDEV1",
+    "HDEV21",
+    "HDEV22",
+    "HDEV4",
+    "HDEV9",
+    "HIST18A",
+    "HIST18B",
+    "HIST19A",
+    "HIST19B",
+    "HIST20",
+    "HIST21",
+    "HIST22",
+    "HIST23",
+    "HIST24",
+    "HIST25",
+    "HIST27",
+    "HIST4A",
+    "HIST4B",
+    "HIST50",
+    "HIST51",
+    "HISTC1001",
+    "HISTC1002",
+    "HUM1",
+    "HUM10",
+    "HUM15",
+    "HUM17",
+    "HUM2",
+    "HUM20",
+    "HUM21",
+    "HUM3",
+    "HUM5",
+    "HUM9",
+    "ITAL1",
+    "ITAL2",
+    "JPN1",
+    "JPN2",
+    "LGBT1",
+    "LGBT2",
+    "MUS10",
+    "MUS11",
+    "MUS12A",
+    "MUS12B",
+    "MUS13",
+    "MUS2",
+    "MUS6A",
+    "MUS9A",
+    "PHIL10",
+    "PHIL13",
+    "PHIL2",
+    "PHIL20",
+    "PHIL21",
+    "PHIL27",
+    "PHIL30",
+    "PHIL4",
+    "PHIL6",
+    "PHIL60",
+    "PHIL65",
+    "PHOT10",
+    "POLS12",
+    "POLS16",
+    "POLS17",
+    "POLS2",
+    "POLS27",
+    "POLS3",
+    "POLS4",
+    "POLS5",
+    "POLS7",
+    "POLS8",
+    "POLS9",
+    "POLSC1000",
+    "PSYC103",
+    "PSYC104",
+    "PSYC105",
+    "PSYC106",
+    "PSYC107",
+    "PSYC108",
+    "PSYC110",
+    "PSYC127",
+    "PSYC130",
+    "PSYC140",
+    "PSYC160",
+    "PSYC180",
+    "PSYCC1000",
+    "SOC1",
+    "SOC10",
+    "SOC110",
+    "SOC2",
+    "SOC27",
+    "SOC3",
+    "SOC4",
+    "SOC47",
+    "SOC5",
+    "SOC9",
+    "SPAN1",
+    "SPAN2",
+    "SPAN3",
+    "SPAN4",
+    "THEA13",
+    "THEA16A",
+    "WMST1",
+    "WMST2",
+    "WMST3",
+    "WMST4"
+   ],
+   "flagged": [
+    "AAD12",
+    "ADMJ50",
+    "AGRI156",
+    "AGRI198",
+    "AGRI200",
+    "AGRI215",
+    "ANTH1",
+    "ANTH10",
+    "ANTH2",
+    "ANTH27",
+    "ANTH4",
+    "ANTH5",
+    "ANTH6",
+    "ANTH7",
+    "ANTH9",
+    "ARTH101",
+    "ARTH120",
+    "ARTH130",
+    "ARTH132",
+    "ARTH134",
+    "ARTH140",
+    "ARTH142",
+    "ARTH150",
+    "ARTH155",
+    "ARTHC1100",
+    "BIOL1",
+    "BIOL10",
+    "BIOL11",
+    "BIOL14",
+    "BIOL15",
+    "BIOL2",
+    "BIOL21",
+    "BIOL3",
+    "BIOL30",
+    "BIOL35",
+    "BIOL4",
+    "BIOL5",
+    "BIOL55",
+    "BIOL56",
+    "BIOL6",
+    "BUS271",
+    "COMM10",
+    "COMM12",
+    "COMM6",
+    "COMM7",
+    "COMM70",
+    "COMM8",
+    "DFST1",
+    "DFST10",
+    "DFST2",
+    "DFST3",
+    "DFST4",
+    "ECONC2001",
+    "ECONC2002",
+    "ENGL16",
+    "ENGL24",
+    "ENGL27",
+    "ENGL29",
+    "ENGL30A",
+    "ENGL30B",
+    "ENGL32",
+    "ENGL33",
+    "ENGL34",
+    "ENGL35",
+    "ENGL37",
+    "ENGL38",
+    "ENGL40",
+    "ENGL42",
+    "ENGL45",
+    "ENGL46A",
+    "ENGL46B",
+    "ENGL47A",
+    "ENGL47B",
+    "ENGL48",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLC1002",
+    "ESS1",
+    "ESS14",
+    "ETHN11",
+    "ETHN20",
+    "ETHN45",
+    "ETHN50",
+    "ETHN53",
+    "FREN1",
+    "FREN2",
+    "FREN3",
+    "FREN4",
+    "GEOG2",
+    "GEOG3",
+    "GEOG5",
+    "GER1",
+    "GER2",
+    "HDEV1",
+    "HDEV21",
+    "HDEV22",
+    "HDEV4",
+    "HDEV9",
+    "HIST18A",
+    "HIST18B",
+    "HIST19A",
+    "HIST19B",
+    "HIST20",
+    "HIST21",
+    "HIST22",
+    "HIST23",
+    "HIST24",
+    "HIST25",
+    "HIST27",
+    "HIST4A",
+    "HIST4B",
+    "HIST50",
+    "HIST51",
+    "HISTC1001",
+    "HISTC1002",
+    "HUM1",
+    "HUM10",
+    "HUM15",
+    "HUM17",
+    "HUM2",
+    "HUM20",
+    "HUM21",
+    "HUM3",
+    "HUM5",
+    "HUM9",
+    "ITAL1",
+    "ITAL2",
+    "JPN1",
+    "JPN2",
+    "LGBT1",
+    "LGBT2",
+    "MUS10",
+    "MUS11",
+    "MUS12A",
+    "MUS12B",
+    "MUS13",
+    "MUS2",
+    "MUS6A",
+    "MUS9A",
+    "PHIL10",
+    "PHIL13",
+    "PHIL2",
+    "PHIL20",
+    "PHIL21",
+    "PHIL27",
+    "PHIL30",
+    "PHIL4",
+    "PHIL6",
+    "PHIL60",
+    "PHIL65",
+    "PHOT10",
+    "POLS12",
+    "POLS16",
+    "POLS17",
+    "POLS2",
+    "POLS27",
+    "POLS3",
+    "POLS4",
+    "POLS5",
+    "POLS7",
+    "POLS8",
+    "POLS9",
+    "POLSC1000",
+    "PSYC103",
+    "PSYC104",
+    "PSYC105",
+    "PSYC106",
+    "PSYC107",
+    "PSYC108",
+    "PSYC110",
+    "PSYC127",
+    "PSYC130",
+    "PSYC140",
+    "PSYC160",
+    "PSYC180",
+    "PSYCC1000",
+    "SOC1",
+    "SOC10",
+    "SOC110",
+    "SOC2",
+    "SOC27",
+    "SOC3",
+    "SOC4",
+    "SOC47",
+    "SOC5",
+    "SOC9",
+    "SPAN1",
+    "SPAN2",
+    "SPAN3",
+    "SPAN4",
+    "THEA13",
+    "THEA16A",
+    "WMST1",
+    "WMST2",
+    "WMST3",
+    "WMST4"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
    "status": "incomplete",
    "computed": [
-    0.0,
-    0.0
+    65.0,
+    77.0
    ],
    "stated": null,
    "against": null,
@@ -95,12 +472,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -119,7 +496,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "UC Transfer Pathway (UCTP): Chemistry",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -130,7 +507,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -140,82 +517,1777 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate proficiency in chemistry concepts by scoring above the national median in the subject matter ACS (American Chemical Society) exams.",
+    "Demonstrate proficiency in scientific communication.",
+    "Apply critical thinking skills to problem solving."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CHEM 0001A",
-    "why": "UCTP: Chemistry section not in text; named only in the Natural Science AA/AS list"
+    "name": "Required Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 0001A",
+      "units": 5,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "CHEM 0003A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 0003B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 0001B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 0012A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 0012B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 0030",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 0031",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 0032",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 0033",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0205",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0205L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0210L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0215L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHEM 0001B",
-    "why": "UCTP: Chemistry section not in text; named only in the Natural Science AA/AS list"
+    "name": "Select 3 units from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 0004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "CHEM 0003A",
-    "why": "UCTP: Chemistry section not in text; named only in the Natural Science AA/AS list"
+    "name": "Select 3-4 units from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "AAD 0012",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH C1100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 0101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 0120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 0130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 0132",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 0134",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 0140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 0142",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 0150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 0155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 0006",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 0012",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DFST 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DFST 0004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DFST 0010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0016",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0024",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0027",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0029",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0030A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0030B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0032",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0033",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0034",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0035",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0037",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0038",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0040",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0042",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0045",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0046A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0046B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0047A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0047B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 0048",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 0050",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FREN 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FREN 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FREN 0004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0004A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0004B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0018A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0018B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0019A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0019B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0020",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0021",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0022",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0023",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0024",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0025",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0027",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0050",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0051",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 0005",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 0009",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 0010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 0015",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 0017",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 0020",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 0021",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JPN 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LGBT 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 0006",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 0010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 0013",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 0020",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 0021",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 0027",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 0030",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 0060",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 0065",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 0006A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 0009A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 0010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 0011",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 0012A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 0012B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 0013",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT 0010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 0004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 0013",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 0016A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WMST 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "CHEM 0003B",
-    "why": "UCTP: Chemistry section not in text; named only in the Natural Science AA/AS list"
+    "name": "Select 3-4 units from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ADMJ 0050",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGRI 0198",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGRI 0215",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 0004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 0005",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 0006",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 0007",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 0009",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 0027",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0271",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 0132",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 0007",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 0008",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 0010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 0070",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESS 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 0011",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 0020",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 0045",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 0050",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 0053",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 0005",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HDEV 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HDEV 0004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HDEV 0009",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HDEV 0021",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HDEV 0022",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0004A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0004B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0018A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0018B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0019A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0019B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0020",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0021",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0022",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0023",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0024",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0025",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0027",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0050",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 0051",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 0009",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LGBT 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 0004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 0005",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 0007",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 0008",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 0009",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 0012",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 0016",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 0017",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 0027",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 0103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 0104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 0105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 0106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 0107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 0108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 0110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 0127",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 0130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 0160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 0180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 0004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 0005",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 0009",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 0010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 0027",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 0047",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 0110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WMST 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WMST 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WMST 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WMST 0004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "CHEM 0012A",
-    "why": "UCTP: Chemistry section not in text; named only in the Natural Science AA/AS list"
+    "name": "Select 3-5 units from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "AGRI 0156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGRI 0200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 0010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0005",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0006",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0011",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0014",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0015",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0021",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0030",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0035",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0055",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0056",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESS 0014",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 0140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "CHEM 0012B",
-    "why": "UCTP: Chemistry section not in text; named only in the Natural Science AA/AS list"
-   },
-   {
-    "code": "MATH 30",
-    "why": "UCTP: Chemistry section not in text; MATH 0030 named only in the Natural Science AA/AS list"
-   },
-   {
-    "code": "MATH 31",
-    "why": "UCTP: Chemistry section not in text; MATH 0031 named only in the Natural Science AA/AS list"
-   },
-   {
-    "code": "MATH 32",
-    "why": "UCTP: Chemistry section not in text; MATH 0032 named only in the Natural Science AA/AS list"
-   },
-   {
-    "code": "MATH 33",
-    "why": "UCTP: Chemistry section not in text; MATH 0033 named only in the Natural Science AA/AS list"
-   },
-   {
-    "code": "PHYS 0205L",
-    "why": "UCTP: Chemistry section not in text; named only in the Natural Science AA/AS list"
-   },
-   {
-    "code": "PHYS 0210L",
-    "why": "UCTP: Chemistry section not in text; named only in the Natural Science AA/AS list"
-   },
-   {
-    "code": "PHYS 0215L",
-    "why": "UCTP: Chemistry section not in text; named only in the Natural Science AA/AS list"
-   },
-   {
-    "code": "PHYS 205",
-    "why": "UCTP: Chemistry section not in text; PHYS 0205 named only in the Natural Science AA/AS list"
-   },
-   {
-    "code": "PHYS 210",
-    "why": "UCTP: Chemistry section not in text; PHYS 0210 named only in the Natural Science AA/AS list"
-   },
-   {
-    "code": "PHYS 215",
-    "why": "UCTP: Chemistry section not in text; PHYS 0215 named only in the Natural Science AA/AS list"
+    "name": "Select one of the following Language Other Than English options:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "DFST 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DFST 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DFST 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FREN 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FREN 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FREN 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FREN 0004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GER 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GER 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ITAL 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ITAL 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JPN 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JPN 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 0001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 0003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 0004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text is the Natural Science department page and prints only the interdisciplinary Natural Science AA or AS Degree (Select 18 units from a long list, Total Units 18). It contains no section for the UCTP: Chemistry A.S.-T degree, so no blocks, totals, GE pattern, outcomes or careers were recorded for this award.",
-   "The Natural Science degree's requirements were deliberately not recorded because they belong to a different award; the UCTP: Chemistry requirements likely appear on the Chemistry department page and should be checked there.",
-   "section_heading left empty because no heading for this award appears in the text."
+   "Read only the 'UC Transfer Pathway (UCTP): Chemistry' section; the Chemistry for Transfer AS-T and Chemistry AS sections on the same page were ignored.",
+   "The catalog text is cut off inside the Language Other Than English list ('SPAN 0004 In...'); further courses, the rest of the course list and any total units for this pathway may be missing. No total for the major or for the degree is visible, so total_units and degree_total are null.",
+   "The 60-unit figure is the generic minimum for the degree ('complete a minimum of 60 degree-applicable semester units'), not recorded as a degree total.",
+   "CHEM 0001A row prints 5-6 units, covering the choice of CHEM 0001A (5) or CHEM 0003A & CHEM 0003B; no units are printed beside CHEM 0003A/0003B individually, so their alternative units are null.",
+   "Catalog codes MATH 0030/0031/0032/0033 and PHYS 0205/0210/0215 were matched to closed-list MATH 30/31/32/33 and PHYS 205/210/215 (same courses, zero-padded numbering).",
+   "The 'Select ... units' lists (English/critical thinking, arts & humanities, social & behavioral sciences, biological sciences, language other than English) are printed inside this pathway's Required Courses list and are recorded as blocks; they mirror Cal-GETC areas and a reviewer may wish to confirm they belong to the major rather than GE. No units are printed beside courses in these lists.",
+   "Language Other Than English block prints 0-5 units, suggesting the requirement may be met without coursework (e.g., prior proficiency); recorded as choose 1 course.",
+   "The page prints one Program Student Learning Outcomes list on its outcomes tab for the Chemistry department as a whole; it is recorded here as shared by this award.",
+   "The section labels the award 'AS-T Degree' although it is a UC Transfer Pathway, not an associate degree for transfer."
   ]
  },
- "extracted_run": "39709837031"
+ "extracted_run": "39726642315"
 }

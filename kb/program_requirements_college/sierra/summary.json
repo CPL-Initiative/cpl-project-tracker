@@ -2,19 +2,19 @@
  "college": "Sierra College",
  "programs": 190,
  "with_closed_list": 125,
- "found": 81,
- "extracted": 81,
+ "found": 92,
+ "extracted": 92,
  "errors": 0,
- "passed_machine_checks": 57,
+ "passed_machine_checks": 66,
  "failed": {
-  "coverage": 12,
+  "coverage": 11,
   "invented": 2,
-  "arithmetic": 22,
+  "arithmetic": 24,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 7.28,
- "cost_per_program": 0.0898,
+ "cost_usd": 8.48,
+ "cost_per_program": 0.0921,
  "not_found": [
   {
    "control_number": "04305",
@@ -81,5 +81,5 @@
    }
   }
  ],
- "run": "39709837031"
+ "run": "39726642315"
 }
