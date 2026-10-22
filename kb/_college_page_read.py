@@ -25,6 +25,8 @@ A page with "network": true also prints the data its own scripts fetched from
 its own host while it loaded (no request of the reader's own), and from each
 vendor host its "network_hosts" names (a catalog on the college's domain whose
 scripts call the vendor's: Merced's catalog.mccd.edu calls app.coursedog.com).
+A page with "cq_view": true and "cq_catalog" reads a curriQunet entry through the
+catalog's own JSON exactly as the harvest's capture reads it (cq_view_read).
 
 Usage (runner): python3 kb/_college_page_read.py kb/college_reads/cerritos_ironworker_ladder.json
 """
@@ -453,13 +455,71 @@ def unfolded(text: str, cap: int = CAPTURE_LINES) -> str:
     return "\n".join(out)
 
 
+# "cq_view": true reads a curriQunet entry as the capture reads it (S449). A rendered
+# view of an iq address shows the Summary tab alone, because the catalog draws its other
+# tabs from JSON on a click (S447, read 39793778941), so capture_view cannot show what
+# cq_pages() reads. This view makes the capture's own calls: the entry's navigation
+# record under its section (its title, whether it has child pages, the siblings whose
+# title key is the same, which cq_distinct() would fold into one), its page, its child
+# pages as cq_children() takes them (a Requirements tab first, CQ_MAX_CHILDREN), and the
+# text cq_page() joins, with the codes the coarse net reads from it. The address is the
+# entry's iq view, .../iq/<root>/<section>/<node>; the plan's page names the catalog id
+# ("cq_catalog", the capture's curriqunet.catalog). No browser render, no model call.
+CQ_VIEW_PATH = re.compile(r"/iq/(\d+)/(\d+)/(\d+)/?$")
+
+
+def cq_view_ids(url: str) -> tuple[int, int] | None:
+    """(section, node) of an entry's iq address, or None when it names no entry."""
+    m = CQ_VIEW_PATH.search(urllib.parse.urlparse(url or "").path)
+    return (int(m.group(2)), int(m.group(3))) if m else None
+
+
+def cq_view_read(reader, url: str, catalog: int, errors: list) -> dict:
+    """The capture's reading of one curriQunet entry, as cq_pages() would make it."""
+    import _program_requirements_college as C
+    ids = cq_view_ids(url)
+    if not ids:
+        return {"error": "cq_view needs an entry's iq address, .../iq/<root>/<section>/<node>"}
+    section, node = ids
+    root, prefix = C.cq_base(url)
+    get = lambda u: C.cq_json(reader, u, errors)  # noqa: E731
+    siblings = (get("%s/Catalog/_getNavigation?id=%d&parentId=%d" % (root, catalog, section)) or {}).get("navs") or []
+    entry = next((n for n in siblings if n.get("id") == node), None)
+    out = {"section": section, "node": node, "siblings": len(siblings), "entry_listed": entry is not None}
+    entry = entry or {"id": node, "text": ""}
+    key = C.cq_title_key(entry)
+    out["entry"] = {"id": entry.get("id"), "text": entry.get("text"), "aliaspath": entry.get("aliaspath"),
+                    "haschildbodynavs": bool(entry.get("haschildbodynavs")), "is_program": C.cq_is_program(entry),
+                    "hidden": C.cq_hidden(entry), "title_key": key}
+    out["twins"] = [{"id": n.get("id"), "text": n.get("text"), "aliaspath": n.get("aliaspath")}
+                    for n in siblings if n.get("id") != node and C.cq_title_key(n) == key]
+    page = get("%s/Catalog/_getPage?catalogId=%d&id=%d" % (root, catalog, node))
+    out["page_read"] = page is not None
+    out["lists"] = [{"id": nl.get("id"), "text": nl.get("text")} for nl in C.cq_lists(page)] if page else []
+    children, more = C.cq_children(get, catalog, root, page) if page else ([], [])
+    out["children"] = [C.cq_page_text(c)[0] for c in children]
+    out["more_programs"] = [{"id": m.get("id"), "text": m.get("text")} for m in more]
+    pg = C.cq_page(entry, page, prefix, children) if page else None
+    out["text"] = pg["body"] if pg else ""
+    out["codes"] = sorted(pg["codes"]) if pg else []
+    return out
+
+
 def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = False,
              rows: str | None = None, network: bool = False, network_hosts: tuple = (),
-             capture_view: bool = False) -> dict:
+             capture_view: bool = False, cq_catalog: int = 0) -> dict:
     """One page through the census's Reader (or the pilot's PDF reader), with
     its text, its links and the excerpts around the plan's keywords."""
     from _program_requirements_pilot import read_pdf, pdfminer_pages
     out = {"url": url}
+    if cq_catalog:
+        errors: list = []
+        view = cq_view_read(reader, url, cq_catalog, errors)
+        out.update(kind="html", status=200 if view.get("page_read") else None,
+                   access="ok" if view.get("page_read") else "unreached",
+                   error=view.get("error") or ("; ".join(errors[:6]) or None),
+                   text=view.get("text") or "", cq_view=view, links=[])
+        return finish(out, pattern)
     if not is_pdf(url):
         heard, listener = network_listen(reader.page, url, network_hosts) if network else ([], None)
         got = reader.load(url)
@@ -581,6 +641,26 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
         return
     if not text:
         return
+    if rec.get("cq_view"):
+        v = rec["cq_view"]
+        e = v.get("entry") or {}
+        print("--- the entry, as its section lists it (%d siblings%s) ---" % (
+            v.get("siblings") or 0, "" if v.get("entry_listed") else "; this node is not among them"))
+        print("id %s · %s · aliaspath %s · child pages: %s · a program entry: %s · hidden: %s · title key: %s" % (
+            e.get("id"), e.get("text") or "(no title)", e.get("aliaspath"),
+            "yes" if e.get("haschildbodynavs") else "no (the capture reads no child page)",
+            e.get("is_program"), e.get("hidden"), e.get("title_key")))
+        for t in v.get("twins") or []:
+            print("twin (one title key, folded by cq_distinct): id %s · %s · aliaspath %s" % (t.get("id"), t.get("text"), t.get("aliaspath")))
+        print("--- lists on its page: %s ---" % (", ".join("%s (%s)" % (l.get("text") or "(no title)", l.get("id")) for l in v.get("lists") or []) or "none"))
+        print("--- child pages read, in the capture's order: %s ---" % (", ".join(v.get("children") or []) or "none"))
+        for m in v.get("more_programs") or []:
+            print("a program entry among its children: id %s · %s" % (m.get("id"), m.get("text")))
+        print("--- the capture's text, as cq_page joins it ---")
+        print(unfolded(text))
+        print("--- codes the coarse net reads from it (%d) ---" % len(v.get("codes") or []))
+        print(", ".join(v.get("codes") or []) or "none")
+        return
     if rec.get("capture_view"):
         print("--- tab panels the capture reads (label, characters) ---")
         for label, n in rec.get("tab_panels") or []:
@@ -637,7 +717,8 @@ def main(argv: list[str] | None = None) -> int:
                                    rows=None if parent else target.get("rows"),
                                    network=bool(target.get("network")) and not parent,
                                    network_hosts=tuple(h.lower() for h in target.get("network_hosts") or ()),
-                                   capture_view=bool(target.get("capture_view")) and not parent)
+                                   capture_view=bool(target.get("capture_view")) and not parent,
+                                   cq_catalog=int(target.get("cq_catalog") or 0) if target.get("cq_view") and not parent else 0)
                 rec["answers"] = target.get("answers") or []
                 if parent:
                     rec["from"] = parent
