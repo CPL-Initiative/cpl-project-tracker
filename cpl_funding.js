@@ -827,6 +827,7 @@
     ".cplfund-reptoolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 12px; }",
     ".cplfund-reptoolbar .dk { font-size: .82rem; }",
     ".cplfund-repnote { font-size: .82rem; color: var(--text-muted); margin: 0 0 10px; }",
+    ".cplfund-memowarn { font-size: .85rem; color: var(--text-strong); margin: 0 0 10px; padding: 6px 10px; border-left: 3px solid var(--gold-accent); background: var(--surface-opaque); }",
     // The editable memo surface — a print-faithful page the curator edits inline.
     ".cplfund-memo { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 40px 48px; max-width: 820px; margin: 0 auto; color: var(--text-strong); line-height: 1.5; font-size: .95rem; box-shadow: 0 1px 4px rgba(0,0,0,.06); }",
     ".cplfund-memo:focus { outline: 2px solid var(--gold-accent); outline-offset: 4px; }",
@@ -12500,6 +12501,9 @@
           }).join("") + "</select>"
         : '<span class="cplfund-ctl-lbl">Status: ' + esc(DOC_STATUS.filter(function (d) { return d.val === docStatus(state.docType); })[0].label) + "</span>") +
       '<button type="button" class="cplfund-optbtn" id="cplFundMemoRegen" title="Regenerate from the current model (discards inline edits)">Regenerate</button>' +
+      // The editor that saves, named in the toolbar (Sam, 2026-10-22: "I didn't
+      // see it when looking how to edit").
+      (unlocked() ? '<button type="button" class="cplfund-optbtn" data-memoedit="1" title="Open the memo&rsquo;s passages under the document; a save keeps the change for everyone">Edit the memo&rsquo;s text</button>' : "") +
       (state.memoRegenAt ? '<span class="dk" role="status" id="cplFundMemoRegenAt">Regenerated from the current model at ' +
         esc(state.memoRegenAt) + ".</span>" : "") +
       '<span style="flex:1 1 auto;"></span>' +
@@ -12518,6 +12522,12 @@
         : "edited under the document by a signed-in curator") +
       " and saved for everyone; the figures are the model&rsquo;s. Text typed directly into the document below " +
       "is for this export only and resets when you regenerate or switch document type.</div>" +
+      // Typing into the document saves nothing; the first keystroke says so
+      // and points at the editor that does.
+      '<p class="cplfund-memowarn" id="cplFundMemoWarn" role="status" hidden>What you type in the document goes into this ' +
+      "download only and is not saved. " + (unlocked()
+        ? 'To keep a change, <button type="button" class="cplfund-textbtn" data-memoedit="1">edit the memo&rsquo;s text</button> instead.'
+        : "A signed-in curator saves wording under the document.") + "</p>" +
       '<div class="cplfund-memo" id="cplFundMemo" contenteditable="true" spellcheck="true" aria-label="Editable ' +
       esc(state.docType) + '">' + buildMemo(state.docType) + "</div>" +
       memoTextSectionHtml();
@@ -14829,13 +14839,19 @@
     });
     var memoCopy = document.getElementById("cplFundMemoCopy");
     if (memoCopy) memoCopy.addEventListener("click", copyMemo);
-    var memoEdit = document.getElementById("cplFundMemoEdit");
-    if (memoEdit) memoEdit.addEventListener("click", function () {
+    var openMemoText = function () {
       SEC_STATE.memo_text = true;
       render();
-      var first = document.querySelector('#cplFundingMount [data-sec="memo_text"] [data-textedit]');
+      var sec = document.querySelector('#cplFundingMount [data-sec="memo_text"]');
+      if (sec && typeof sec.scrollIntoView === "function") sec.scrollIntoView({ block: "start" });
+      var first = sec && sec.querySelector("[data-textedit]");
       if (first && typeof first.focus === "function") first.focus();
-    });
+    };
+    var memoEdit = document.getElementById("cplFundMemoEdit");
+    if (memoEdit) memoEdit.addEventListener("click", openMemoText);
+    document.querySelectorAll("#cplFundingMount [data-memoedit]").forEach(function (b) { b.addEventListener("click", openMemoText); });
+    var memoDocEl = document.getElementById("cplFundMemo"), memoWarn = document.getElementById("cplFundMemoWarn");
+    if (memoDocEl && memoWarn) memoDocEl.addEventListener("input", function () { memoWarn.hidden = false; });
     var memoPdf = document.getElementById("cplFundMemoPdf");
     if (memoPdf) memoPdf.addEventListener("click", exportMemoPdf);
     var memoDocx = document.getElementById("cplFundMemoDocx");
