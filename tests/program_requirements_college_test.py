@@ -339,6 +339,78 @@ check(C.page_winners([("06027", sclaim(0, 1.0, "as")), ("20101", sclaim(0, 0.0, 
 check(C.page_winners([("1", sclaim(0, 1.0, "aa")), ("2", sclaim(0, 0.5, "aa")), ("3", sclaim(0, 1.0, "coa"))]) == {"1", "3"},
       "within one award, the title the page names more fully keeps its section")
 
+# MiraCosta's Horticulture page as the capture reads it (capture view 39718674469, S445): the
+# Degrees tab lists each degree by title and names no course; the Certificates tab heads each
+# certificate "Certificate of Achievement" then the title. Grouped by award alone, the page went
+# to the one A.A. whose title shares "Horticulture" with the page heading.
+MC_DEG = ("[Tab: DEGREES]\nAssociate Degrees\nAssociate in Arts Degrees\nLandscape Architecture\n"
+          "Sustainable Landscape and Turf Management\nNursery/Horticulture Crop Production\n"
+          "Associate in Science Degrees\nPest Control Adviser\nSustainable Agriculture\nViticulture and Enology\n"
+          "Students may earn one of the above-named associate degrees by completing a certificate of "
+          "achievement and the general education courses required for MiraCosta College's Associate in "
+          "Arts degree (see Associate Degrees).")
+MC_CERT = ("[Tab: CERTIFICATES]\nCertificates\nCertificate of Achievement\nLandscape Architecture\n"
+           "This certificate is designed to provide employable technical skill training in the field of "
+           "professional residential landscape design development.\nRequired courses:\nHORT 127\tLandscape Design\t3\n"
+           "HORT 230\tLandscape Architecture\t3\nTotal Units\t26-28\nCertificate of Achievement\n"
+           "Nursery/Horticulture Crop Production\nThis certificate provides students with the practical, hands-on "
+           "experience they need to pursue employment in the areas of plant production.\nHORT 144\tNursery Management "
+           "and Production\t3\nTotal Units\t25\nCertificate of Achievement\nSustainable Landscape and Turf Management\n"
+           "HORT 121\tSustainable Landscape and Turf Management\t3\nTotal Units\t24\nCertificate of Achievement\n"
+           "Pest Control Adviser\nHORT 115\tSoil Science\t3")
+MC_TEXT = "Horticulture\nOVERVIEW\nDEGREES\nCERTIFICATES\nCOURSES\n\n" + MC_DEG + "\n\n" + MC_CERT
+coa16 = "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+la, nur, slt = ("Landscape Architecture", "Nursery/Horticulture Crop Production",
+                "Sustainable Landscape and Turf Management")
+got = {t: C.section_match(MC_TEXT, {"award": coa16, "title": t}) for t in (la, nur, slt)}
+check(all(k == "coa" and fit == 1.0 for k, _, fit in got.values()) and len({h for _, h, _ in got.values()}) == 3,
+      "each MiraCosta certificate reads its own heading, the title naming every one of its words")
+check(C.section_match(MC_TEXT, {"award": "A.A. Degree", "title": slt}) ==
+      ("aa", "sustainable landscape and turf management", 1.0),
+      "a degree the Degrees tab lists by title reads its certificate's section (certificate plus general education)")
+check(C.section_match(MC_TEXT, {"award": "A.S. Degree", "title": "Sustainable Agriculture"})[0] is None,
+      "a listed degree whose certificate the page does not head has no section here")
+check(C.section_match(MC_TEXT.replace("by completing a certificate", "by completing the coursework"),
+                      {"award": "A.A. Degree", "title": slt})[0] is None,
+      "a degree list reads as the certificate's section only where the page says the degree is the certificate")
+check(C.section_match("Certificate of Achievement\nSupply Chain Management\nBUS 101",
+                      {"award": coa16, "title": "Supply Chain Management (SCM)"})[0] == "coa",
+      "a title's parenthesized acronym may be missing from its heading")
+SIERRA_TWO = ("Information Technology - Cloud Computing\nAS Degree\nCIS 1\nInformation Technology\nAS Degree\nCIS 2")
+check(C.section_match(SIERRA_TWO, {"award": "A.S. Degree", "title": "Information Technology"})[1:] ==
+      ("information technology as degree", 1.0),
+      "of two headings naming every title word, the program reads the one that is its own")
+
+
+def hclaim(title, section, line, fit, cov=1.0):
+    c = sclaim(0, title, section, cov)
+    c["label"].update(section_line=line, section_fit=fit)
+    return c
+
+
+check(C.page_winners([("07862", hclaim(.25, "coa", "certificate of achievement nursery/horticulture crop production", 1.0)),
+                      ("21979", hclaim(0.0, "coa", "certificate of achievement landscape architecture", 1.0)),
+                      ("21974", hclaim(0.0, "coa", "certificate of achievement sustainable landscape and turf management", 1.0)),
+                      ("36418", claim(0, 0.0))]) == {"07862", "21979", "21974"},
+      "a page heading a section per certificate goes to each certificate, and not to a claimant it heads none for")
+check(C.page_winners([("1", hclaim(0.0, "as", "information technology - cloud computing as degree", .5)),
+                      ("2", hclaim(0.0, "as", "information technology - cloud computing as degree", 1.0)),
+                      ("3", hclaim(0.0, "coa", "certificate of achievement cloud computing", 1.0))]) == {"2", "3"},
+      "two claimants reading one heading: the title naming more of the heading's words keeps it")
+check(C.page_winners([("1", hclaim(0.0, "coa", "certificate of achievement a", 1.0)),
+                      ("2", hclaim(0.0, "coa", "certificate of achievement b", 1.0), )]) == {"1", "2"} and
+      len(C.page_winners([("1", hclaim(0.0, "coa", "certificate of achievement a", 1.0)),
+                          ("2", claim(0, 0.0))])) == 1,
+      "two headings share a page within one award; one heading alone still does not")
+check(C.page_winners([("1", hclaim(0.0, "coa", "certificate of achievement a", 1.0, cov=.6)),
+                      ("2", hclaim(0.0, "coa", "certificate of achievement b", 1.0, cov=.6))]) in ({"1"}, {"2"}),
+      "a heading counts only for a claimant the page carries SECTION_COVERAGE of, or whose title the label names")
+
+pt = P.hidden_tabs_text({"tabPanels": [{"label": "DEGREES", "text": MC_DEG.split("\n", 1)[1]},
+                                       {"label": "Search", "text": "Search the whole catalog by keyword or title"}]})
+check(pt.startswith("[Tab: DEGREES]\nAssociate Degrees") and "Search the whole" not in pt,
+      "a tab naming no course stays when it says its degrees are certificates plus general education")
+
 # assign(): a loser moves to its next page; one with none left reads no page
 PG = [page(start + "degrees/x-aa-t/", "X, A.A.-T", "X AA-T ABC 101 ABC 102 ABC 103"),
       page(start + "degrees/x-aa/", "X, A.A.", "X A.A. ABC 101 ABC 102 ABC 103 ABC 104"),
@@ -358,6 +430,22 @@ progs4 = progs3[:1] + [dict(progs3[1], control_number="4")]
 got4 = C.assign(progs4, PG[:1])
 check(got4["4"]["best"] is None and got4["4"]["lost"] == [PG[0]["url"]],
       "a program that loses its only page reads no page, and names the page it lost")
+# A loser's fallback must name it, carry most of its courses, or head its section (S445: Sierra's
+# Mathematics A.S.-T lost eleven pages and ended on the Nursing page at coverage 0.50).
+PGF = [page(start + "departments/mathematics/", "Mathematics", "Mathematics MATH 1 MATH 2 MATH 3 MATH 4"),
+       page(start + "departments/nursing/", "Nursing", "Nursing NURS 1 MATH 1 MATH 2")]
+mprog = {"control_number": "31226", "title": "Mathematics", "award": "A.S. Degree",
+         "closed_list": [{"code": "MATH %d" % i} for i in (1, 2, 3, 4)]}
+mrival = dict(mprog, control_number="45833", award="A.A. Degree")
+gf = C.assign([mprog, mrival], PGF)
+won = [cn for cn in gf if gf[cn]["best"]]
+lose = [cn for cn in gf if not gf[cn]["best"]]
+check(len(won) == 1 and gf[won[0]]["best"]["url"].endswith("mathematics/") and len(lose) == 1
+      and gf[lose[0]]["lost"] == [PGF[0]["url"]],
+      "a program that lost its page falls back to no page rather than one that neither names it nor carries most of its courses")
+gs = C.assign([mprog], PGF[1:])
+check(gs["31226"]["best"] is not None and gs["31226"]["best"]["url"].endswith("nursing/"),
+      "a program that lost nothing still reads its only candidate (the guard is for fallbacks)")
 tiny = {"control_number": "5", "title": "Automotive Electrical", "award": "Certificate of Achievement",
         "closed_list": [{"code": "ABC 101"}]}
 check(C.candidates(tiny, PG) == [], "a one-course list takes no page whose label does not name the program")
