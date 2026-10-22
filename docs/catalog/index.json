@@ -15923,8 +15923,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 417,
+   "count": 418,
    "docs": [
+    {
+     "created": "2026-10-22",
+     "governs": [],
+     "n": 447,
+     "path": "docs/session_447_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "ui-pass",
+      "decision-sheets"
+     ],
+     "title": "Session 447 handoff: a degree-and-certificate address names both awards, 91 new records at four colleges",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-22",
      "governs": [],
@@ -23120,5 +23136,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1216
+ "total": 1217
 }
