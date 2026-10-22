@@ -891,6 +891,12 @@ the weekly apply.
 - **Mt. San Jacinto, after #2349:** free capture 39775680177 found 115 (from 99), page-claimed 25 to 15, not found 28
   to 22 (17 gained their page; Musical Theater A.A. lost its department page). Extraction 39779328144: 115 for
   $9.18, 93 passing (from 74). Load 39782892386: 18 inserted, 94 kept, 3 placing none.
+- **Santa Barbara City, after #2349:** free capture 39775686975 found 254 (from 249), page-claimed 20 to 15 (six
+  Administration of Justice programs gained their pages; Physics A.S. lost one and keeps its loaded record).
+  Extraction 39782741424 re-extracted all 254 for $18.39, 210 passing (from 206); load 39788639887: 6 inserted, 241
+  kept, 7 placing none; reread 39789668568 replaced 8. Mt. San Jacinto's reread 39785231446 replaced 85.
+- **Display build be2635ed5b73** covers both colleges (17,414 statements in its receipt, against 17,391 for
+  0ad3c75bfa19 by the same count).
 - **Saddleback's free capture (39748152661) moved nothing:** 314 found and 26 page-claimed against main's 321 and
   19, with six pages lost to ECONNRESET; the seven newly page-claimed were never loaded. No extraction.
 - **Display build 0ad3c75bfa19 applied on main** (run 39766423451, 78 minutes; S446's build).
