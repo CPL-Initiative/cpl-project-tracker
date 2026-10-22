@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8986,
+  "input_tokens": 8996,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8986,
-    "output_tokens": 1637,
+    "input_tokens": 8996,
+    "output_tokens": 1587,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1637,
+  "output_tokens": 1587,
   "output_tokens_details": {
-   "thinking_tokens": 483
+   "thinking_tokens": 509
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06868,
- "ms": 13848,
- "seconds": 14.3,
+ "cost_usd": 0.06772,
+ "ms": 13209,
+ "seconds": 13.6,
  "parts": null,
  "error": null,
  "score": {
@@ -125,7 +126,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Requirements",
+   "section_heading": "Geography, A.A.-T",
    "measure": "units",
    "total_units": {
     "min": 19,
@@ -272,15 +273,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page prints no distinct program heading in the extracted text; section_heading uses the 'Requirements' tab, which holds the A.A.-T course list.",
-   "Units are not printed beside List A and List B courses or beside the GEOG-108 and ANTH-102H alternatives in the requirements table, so they are null.",
-   "List A says 'Select two to three' and 'Select 6-10 units'; recorded as choose_units with minimum 6.",
-   "List B also allows any course from List A not used above; those List A courses are not repeated in the List B block.",
+   "List B allows 'any course from List A not used above' in addition to ANTH-102/102H and GEOG-107; List A courses are not repeated in the List B block.",
+   "Units are not printed beside the courses in List A, List B, or beside the GEOG-108 alternative; units left null. List A stated 6-10 units, List B stated 6 units.",
    "GEOG-115 (Introduction to Geographic Information Science) is not in the closed list; recorded as catalog addition.",
-   "Degree total of 60 units and Cal-GETC 34 units printed; 'Possible double counting: 10 units' and transferable electives 'as needed to reach 60 transferable units' are printed without elective units.",
-   "No program learning outcomes are printed in the text; the Career Exploration section is cut off and names no specific careers.",
-   "The Program Map tab (plan of study) was not used for requirements; it lists GEOG-115 at 2 units and other GE courses."
+   "Requirements tab prints 'Possible double counting: 10 units' with Cal-GETC; transferable electives fill to 60 units with no units printed.",
+   "No program learning outcomes or careers appear in the provided text; the Career Exploration tab content was not included.",
+   "Program Map (recommended sequence) courses such as GE and LOTE courses are not requirements of the major and were not placed in blocks."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

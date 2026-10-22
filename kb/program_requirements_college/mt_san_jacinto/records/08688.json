@@ -1,0 +1,167 @@
+{
+ "college": "Mt. San Jacinto College",
+ "control_number": "08688",
+ "shape": "degree",
+ "title": "Alcohol & Drug Studies",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-option-a/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12910,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12910,
+    "output_tokens": 1051,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1051,
+  "output_tokens_details": {
+   "thinking_tokens": 403
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07266,
+ "ms": 10269,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 5,
+   "share": 0.0,
+   "missing": [
+    "HS121",
+    "PSYC102",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SOCI106"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "None found: the text holds only General Education Option A area course lists (AREA B through F), not the Alcohol & Drug Studies A.S. section",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HS 121",
+    "why": "Appears only as HS-121 in the AREA E general education list; the program's requirements are not in the text."
+   },
+   {
+    "code": "PSYC 102",
+    "why": "Appears only as PSYC-102 in general education area lists; the program's requirements are not in the text."
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "Appears only as PSYC-C1000 in a general education area list; the program's requirements are not in the text."
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "Appears only as PSYC-C1000H in a general education area list; the program's requirements are not in the text."
+   },
+   {
+    "code": "SOCI 106",
+    "why": "Appears only as SOCI-106 in a general education area list; the program's requirements are not in the text."
+   }
+  ],
+  "notes": [
+   "The source page is the General Education Option A page (catalog.msjc.edu/.../general-education-option-a/), not the Alcohol & Drug Studies program page. The text contains no requirements, totals, outcomes or careers for the Alcohol & Drug Studies A.S. Degree.",
+   "All five closed-list courses appear only as general education choices (AREA B, AREA E). General education courses never go in a block, so no blocks were recorded.",
+   "The text begins mid-list and ends mid-list, so it is truncated at both ends.",
+   "The GE pattern this degree uses is not stated in a program section, so ge_pattern is left null. A reviewer should fetch the actual Alcohol & Drug Studies program page."
+  ]
+ },
+ "extracted_run": "39779328144"
+}

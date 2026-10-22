@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7913,
-    "output_tokens": 3230,
+    "output_tokens": 3603,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3230,
+  "output_tokens": 3603,
   "output_tokens_details": {
-   "thinking_tokens": 1187
+   "thinking_tokens": 1591
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09625,
- "ms": 27485,
- "seconds": 27.8,
+ "cost_usd": 0.10371,
+ "ms": 29493,
+ "seconds": 29.8,
  "parts": null,
  "error": null,
  "score": {
@@ -195,7 +196,7 @@
       "alternatives": [
        {
         "code": "MATH 150",
-        "units": null,
+        "units": 5,
         "catalog_addition": false
        }
       ],
@@ -208,12 +209,12 @@
       "alternatives": [
        {
         "code": "PSY 150",
-        "units": null,
+        "units": 4,
         "catalog_addition": false
        },
        {
         "code": "SOC 125",
-        "units": null,
+        "units": 4,
         "catalog_addition": false
        }
       ],
@@ -222,7 +223,7 @@
     ]
    },
    {
-    "name": "ERTH 111 & 111L",
+    "name": "Required Core: ERTH 111 & 111L",
     "rule": "all",
     "minimum": null,
     "option_group": "Earth science with lab",
@@ -233,14 +234,14 @@
     "courses": [
      {
       "code": "ERTH 111",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ERTH 111L",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -248,7 +249,7 @@
     ]
    },
    {
-    "name": "ERTH 111H & ERTH 111L",
+    "name": "Required Core: ERTH 111H & ERTH 111L",
     "rule": "all",
     "minimum": null,
     "option_group": "Earth science with lab",
@@ -259,14 +260,14 @@
     "courses": [
      {
       "code": "ERTH 111H",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ERTH 111L",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -274,7 +275,7 @@
     ]
    },
    {
-    "name": "ERTH 141 & 141L",
+    "name": "Required Core: ERTH 141 & 141L",
     "rule": "all",
     "minimum": null,
     "option_group": "Earth science with lab",
@@ -285,14 +286,14 @@
     "courses": [
      {
       "code": "ERTH 141",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ERTH 141L",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -300,7 +301,7 @@
     ]
    },
    {
-    "name": "GEOG 101 & 101L",
+    "name": "Required Core: GEOG 101 & 101L",
     "rule": "all",
     "minimum": null,
     "option_group": "Earth science with lab",
@@ -311,14 +312,14 @@
     "courses": [
      {
       "code": "GEOG 101",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOG 101L",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -326,7 +327,7 @@
     ]
    },
    {
-    "name": "PHYS 105 & PHYS 106",
+    "name": "Required Core: PHYS 105 & PHYS 106",
     "rule": "all",
     "minimum": null,
     "option_group": "Physics sequence",
@@ -337,14 +338,14 @@
     "courses": [
      {
       "code": "PHYS 105",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHYS 106",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -352,7 +353,7 @@
     ]
    },
    {
-    "name": "PHYS 121 & PHYS 122",
+    "name": "Required Core: PHYS 121 & PHYS 122",
     "rule": "all",
     "minimum": null,
     "option_group": "Physics sequence",
@@ -363,14 +364,14 @@
     "courses": [
      {
       "code": "PHYS 121",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHYS 122",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -381,14 +382,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page's top heading is cut off in the text; section_heading uses the printed 'Major Requirements' heading of the Environmental Science AS-T requirements tab.",
-   "The Earth science lab choice (ERTH 111 & 111L or ERTH 111H & ERTH 111L or ERTH 141 & 141L or GEOG 101 & 101L) prints a single unit range 4-5 for the whole choice; recorded as four option blocks with stated null and per-course units null because no units are printed beside individual courses.",
-   "The physics sequence choice (PHYS 105 & PHYS 106 or PHYS 121 & PHYS 122) prints 8-10 units for the whole choice; recorded as two option blocks with per-course units null.",
-   "Alternatives MATH 150, PSY 150 and SOC 125 have no units printed beside them; units left null.",
-   "'At least 60-66 CSU transferable semester units' appears in the generic Associate Degree for Transfer graduation requirements list, not as this award's printed total; degree_total left null for reviewer check.",
-   "Cal-GETC pattern named without a unit figure; ge_units null.",
-   "Outcomes taken from the page's learning outcomes tab for this program."
+   "The page heading is cut off in the text; section_heading uses the 'Major Requirements' heading of the course list.",
+   "The ERTH/GEOG lecture-and-lab choice prints '4-5' units for the whole choice and the physics choice prints '8-10'; the catalog prints no units beside individual pair members or 'or' alternatives (MATH 150, PSY 150, SOC 125), so those units come from the closed list and match the printed ranges.",
+   "The ERTH/GEOG choice (four lecture+lab pairs) and the physics choice (two two-course sequences) are recorded as option_group blocks; ERTH 111L appears in two option blocks because it pairs with both ERTH 111 and ERTH 111H.",
+   "'At least 60-66 CSU transferable semester units' appears under the generic 'Associate Degree for Transfer Graduation Requirements' list, not as this award's printed total; degree_total left null. Reviewer may check.",
+   "Program learning outcomes taken from the page's outcomes tab."
   ]
  },
- "extracted_run": "38670933359"
+ "extracted_run": "39782741424"
 }

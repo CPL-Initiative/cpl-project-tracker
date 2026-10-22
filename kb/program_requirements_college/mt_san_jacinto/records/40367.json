@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8911,
+  "input_tokens": 8530,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8911,
-    "output_tokens": 2330,
+    "input_tokens": 8530,
+    "output_tokens": 2022,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2330,
+  "output_tokens": 2022,
   "output_tokens_details": {
-   "thinking_tokens": 1081
+   "thinking_tokens": 762
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08224,
- "ms": 19077,
- "seconds": 19.7,
+ "cost_usd": 0.07456,
+ "ms": 24527,
+ "seconds": 24.9,
  "parts": null,
  "error": null,
  "score": {
@@ -71,29 +72,7 @@
     18.0
    ],
    "against": "program",
-   "why": [],
-   "degree": {
-    "pass": true,
-    "status": "equal",
-    "computed": [
-     45.0,
-     45.0
-    ],
-    "stated": [
-     60.0,
-     60.0
-    ],
-    "against": "degree",
-    "ge": [
-     27.0,
-     27.0
-    ],
-    "why": [],
-    "fill": [
-     15.0,
-     15.0
-    ]
-   }
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -134,8 +113,8 @@
    },
    "ge_pattern": "MSJC Local General Education",
    "degree_total": {
-    "min": 60,
-    "max": 60
+    "min": null,
+    "max": null
    },
    "ge_units": {
     "min": 27,
@@ -152,8 +131,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 12,
-     "max": 12
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -303,12 +282,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Major total 'Total Units 18' recorded in total_units; summary table prints MSJC Local General Education 27, Required 12, Electives 6, and 'Electives (as needed to reach 60 units)'.",
-   "degree_total 60 taken from 'An Associate Degree in this program requires ... an overall total of 60 degree applicable units'; reviewer may judge this boilerplate. Program map separately shows 'Total Units 60-61' (a sample plan, not recorded).",
-   "Cross-listed codes printed as LIT/ETHS-240, LIT/ETHS-240H and ANTH/HIST-121 were split into separate codes recorded as alternatives.",
-   "Units are not printed beside the elective courses or honors alternatives; left null.",
-   "No program learning outcomes or careers are printed; Career Exploration tab contains only generic links."
+   "Major total of 18 units printed as 'Total Units 18'; summary table lists Required American Indian Studies Courses 12 and American Indian Studies Electives 6.",
+   "The requirements text says the degree requires 'an overall total of 60 degree applicable units' and lists 'Electives (as needed to reach 60 units)' with no units; degree_total left null because no total line prints 60 for this award, but a reviewer may consider 60 the degree total.",
+   "The Program Map tab (total 60-61) is a recommended sequence including GE courses and was not recorded as blocks.",
+   "Cross-listed codes LIT/ETHS-240 and ANTH/HIST-121 recorded as one entry with the cross-listed twin as an alternative; honors versions recorded as alternatives.",
+   "Elective courses have no units printed beside them; units left null.",
+   "No program learning outcomes or careers are printed in the text (Career Exploration tab content not included)."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

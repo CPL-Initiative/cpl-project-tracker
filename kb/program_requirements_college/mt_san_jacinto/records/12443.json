@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8330,
+  "input_tokens": 8447,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8330,
-    "output_tokens": 2242,
+    "input_tokens": 8447,
+    "output_tokens": 1776,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,28 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 2242,
+  "output_tokens": 1776,
   "output_tokens_details": {
-   "thinking_tokens": 1030
+   "thinking_tokens": 668
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07816,
- "ms": 18590,
- "seconds": 19.1,
+ "cost_usd": 0.06931,
+ "ms": 15038,
+ "seconds": 15.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 12,
    "listed": 12,
-   "share": 0.833,
-   "missing": [
-    "DIG110",
-    "GIS585"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -242,30 +240,33 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "GIS-585",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIG-110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "GIS-585",
-    "why": "requirements text cut off after GIS-584; appears only in the program map"
-   },
-   {
-    "code": "DIG-110",
-    "why": "requirements text cut off after GIS-584; appears only in the program map"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The requirements text is truncated in the middle of the elective list (after 'GIS-584 Water Management with GI'); further elective courses, likely GIS-585 and DIG-110 from the program map, are not visible.",
-   "No units are printed beside the elective courses GIS-552 and GIS-584 in the visible text, so their units are recorded as null.",
-   "The elective block is labeled 'Optional ... 0-6', so it is recorded as choose_units with minimum 0 and stated 0-6. A reviewer should confirm the rule.",
-   "total_units 24-30 comes from the overview sentence '24-30 units of Geographic Information Science courses'. The required courses listed sum to 24.",
-   "The summary course list reads 'MSJC Local General Education 27, Required Geographic Information Science Courses 14, Geographic Information Science Electives 6, Electives (as needed to reach 60 units)'. The figure 14 conflicts with the 24 units of listed required courses, and the alignment of these figures may be garbled. ge_units 27 is read from this list and should be checked.",
-   "degree_total 60 is taken from the overview, which describes this degree as 'a total of 60 units', and from the requirements text ('overall total of 60 degree applicable units'). Electives are 'as needed to reach 60 units'.",
-   "No program learning outcomes are printed in the provided text."
+   "The elective block is labeled 'Optional ... 0-6' and the requirements total is 24-30; recorded as choose_units with minimum 0. The catalog prints no units beside the elective courses.",
+   "The summary table lists 'Required Geographic Information Science Courses 14' and 'Geographic Information Science Electives 6', which conflicts with the detailed list (required courses sum to 24; electives 0-6). Reviewer should check.",
+   "degree_total 60 taken from the overview ('a total of 60 units' for this A.S.) and the summary table 'Electives (as needed to reach 60 units)'; ge_units 27 from 'MSJC Local General Education 27'.",
+   "Program Map courses such as CSIS-116E/CSIS-514A, GEOG-105, GEOG-111, ART-131, ENVS-101 and ETHS options appear only in the recommended sequence (GE or general electives), not in the major requirements, so they are not recorded.",
+   "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

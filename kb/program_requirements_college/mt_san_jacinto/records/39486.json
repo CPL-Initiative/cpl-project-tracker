@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Social Justice Studies: General",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-option-a/",
+ "source_url": "https://catalog.msjc.edu/instructional-programs/social-justice-studies/social-justice-studies-aa-t/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 14473,
+  "input_tokens": 10972,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 14473,
-    "output_tokens": 2696,
+    "input_tokens": 10972,
+    "output_tokens": 4792,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,79 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 2696,
+  "output_tokens": 4792,
   "output_tokens_details": {
-   "thinking_tokens": 557
+   "thinking_tokens": 1508
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.11181,
- "ms": 21299,
- "seconds": 21.8,
+ "cost_usd": 0.13973,
+ "ms": 35349,
+ "seconds": 35.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 50,
    "listed": 50,
-   "share": 0.0,
-   "missing": [
-    "ANTH102",
-    "ANTH102H",
-    "COMM108",
-    "COMM108H",
-    "ETHS103",
-    "ETHS103H",
-    "ETHS160",
-    "ETHS160H",
-    "ETHS240",
-    "ETHS240H",
-    "ETHS275",
-    "ETHS275H",
-    "ETHS280",
-    "ETHS280H",
-    "GEOG108",
-    "HIST115",
-    "HIST115H",
-    "HIST118",
-    "HIST120",
-    "HIST120H",
-    "HIST160",
-    "HIST160H",
-    "LIT240",
-    "LIT240H",
-    "LIT255",
-    "LIT255H",
-    "LIT260",
-    "LIT260H",
-    "LIT275",
-    "LIT275H",
-    "LIT280",
-    "LIT280H",
-    "PS103",
-    "PS103H",
-    "PSYC104",
-    "PSYC104H",
-    "PSYC112",
-    "PSYC121",
-    "PSYC124",
-    "PSYC124H",
-    "SJS101",
-    "SJS101H",
-    "SOCI102",
-    "SOCI106",
-    "SOCI112",
-    "SOCI115",
-    "SOCI121",
-    "SOCIC1000",
-    "SOCIC1000H",
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -111,17 +61,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    19.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     53.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     7.0,
+     8.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -143,248 +116,542 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "No Social Justice Studies section in the text (text is the General Education Option A page: AREA B - Social and Behavioral Sciences, AREA C - Arts and Humanities, AREA D, AREA E)",
+   "section_heading": "Social Justice Studies: General, A.A.-T",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ANTH 102",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SOCI-112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC-112",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SJS-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SJS-101H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ANTH 102H",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTH-102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH-102H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM-108H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG-108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-120H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS-160",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST-160H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHS-160H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT-260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LIT-260H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT-280",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS-280",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "LIT-280H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHS-280H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI-C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "COMM 108",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "COMM 108H",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "ETHS 103",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "ETHS 103H",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "ETHS 160",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "ETHS 160H",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "ETHS 240",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "ETHS 240H",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "ETHS 275",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "ETHS 275H",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "ETHS 280",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "ETHS 280H",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "GEOG 108",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "HIST 115",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "HIST 115H",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "HIST 118",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "HIST 120",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "HIST 120H",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "HIST 160",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "HIST 160H",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "LIT 240",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "LIT 240H",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "LIT 255",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "LIT 255H",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "LIT 260",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "LIT 260H",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "LIT 275",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "LIT 275H",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "LIT 280",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "LIT 280H",
-    "why": "appears only in GE Option A Area C list, not program requirements"
-   },
-   {
-    "code": "PS 103",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "PS 103H",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "PSYC 104",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "PSYC 104H",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "PSYC 112",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "PSYC 121",
-    "why": "not in the text"
-   },
-   {
-    "code": "PSYC 124",
-    "why": "not in the text"
-   },
-   {
-    "code": "PSYC 124H",
-    "why": "not in the text"
-   },
-   {
-    "code": "SJS 101",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "SJS 101H",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "SOCI 102",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "SOCI 106",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "SOCI 112",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "SOCI 115",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "SOCI 121",
-    "why": "not in the text"
-   },
-   {
-    "code": "SOCI C1000",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "SOCI C1000H",
-    "why": "appears only in GE Option A Area B2 list, not program requirements"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "not in the text"
+    "name": "List A: Select three",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "HIST-115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-115H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS-160",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST-160H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHS-160H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PS-103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS-103",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PS-103H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHS-103H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT-240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS-240",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "LIT-240H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHS-240H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT-255",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LIT-255H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT-260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LIT-260H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT-275",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS-275",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "LIT-275H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHS-275H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT-280",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS-280",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "LIT-280H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHS-280H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC-104H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI-112",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI-121",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-124",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC-124H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH-102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH-102H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM-108H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG-108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-120H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI-C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source text is the MSJC General Education Option A page (Areas A-E course lists), not the Social Justice Studies A.A-T program page; no requirements, totals, outcomes or careers for the named award are printed, so no blocks are recorded.",
-   "Many closed-list codes appear in the GE area lists, but GE courses never go in a block; the correct program page should be fetched and reviewed.",
-   "The text begins and ends mid-list (cut off at 'emistry' and 'Intermediate Bal')."
+   "Cross-listed codes (SOCI/PSYC-112, HIST/ETHS-160, PS/ETHS-103, LIT/ETHS-240/275/280, PSYC/SOCI-121) are recorded as one course with the other subject as an alternative.",
+   "List A requires three courses not already used above, drawn from at least two of five areas (Area 1 History or Government; Area 2 Arts and Humanities; Area 3 Social Science; Area 4 Quantitative Reasoning and Research Methods; Area 5 Major Preparation), and courses must relate to social justice, gender/women, or ethnicity/race. Areas are merged into one block; courses printed in more than one area (HIST/ETHS-160, LIT-260, LIT/ETHS-280) are listed once. Area 5 repeats the 'Select one of the following' list.",
+   "PSYC/SOCI-112 appears both in the required core and in List A Area 3; it can only count once.",
+   "Units are not printed beside individual list courses, only block totals (3 and 9-10); PSYC-124 is 4 units per closed list, explaining 9-10.",
+   "Degree total of 60 units printed as 'Total Units for A.A.-T Degree: 60 units'; Cal-GETC Pattern 34; possible double counting 18; transferable electives as needed to reach 60 units.",
+   "No program learning outcomes or careers are printed; the Career Exploration tab has no content in the text. The Program Map (62 units) is a recommended sequence, not requirements; it names ETHS-113 and SJS-130, which are not in the Requirements tab and are not recorded."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

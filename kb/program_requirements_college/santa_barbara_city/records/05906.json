@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7552,
-    "output_tokens": 2419,
+    "output_tokens": 2336,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2419,
+  "output_tokens": 2336,
   "output_tokens_details": {
-   "thinking_tokens": 772
+   "thinking_tokens": 703
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07859,
- "ms": 29145,
- "seconds": 30.1,
+ "cost_usd": 0.07693,
+ "ms": 19967,
+ "seconds": 20.8,
  "parts": null,
  "error": null,
  "score": {
@@ -168,7 +169,7 @@
       "alternatives": [
        {
         "code": "BLAW 110",
-        "units": null,
+        "units": 4,
         "catalog_addition": false
        }
       ],
@@ -181,7 +182,7 @@
       "alternatives": [
        {
         "code": "ECON C2001H",
-        "units": null,
+        "units": 4,
         "catalog_addition": false
        }
       ],
@@ -323,14 +324,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "ACCT 210 is added as an alternative to ACCT 230 from footnote 1 ('ACCT 210 will also satisfy this requirement'); it is not in the closed list and no units are printed for it.",
-   "Units are printed only on the first course of each 'or' row in the Required Core and not at all for List A courses; those units are left null rather than taken from the state file.",
-   "ERTH 141 & 141L or GEOG 101 & 101L is recorded as two entries (ERTH 141 / GEOG 101 and ERTH 141L / GEOG 101L); the student takes one lecture+lab pair. Footnote 3 says they are the same courses.",
-   "The 60-unit minimum is the generic associate degree requirement and is not recorded as degree_total. Footnote 2 says List A support courses may double count in general education.",
-   "BUS 290 is listed under 'Optional' and recorded as a recommended block; it does not count toward the total.",
-   "The learning outcomes are printed on the page's outcomes tab for the program as a whole and are recorded for this award. Their content reads like general business/management outcomes rather than finance-specific ones; a reviewer may wish to check.",
-   "No careers are named in the text."
+   "ACCT 210 is added as an alternative to ACCT 230 from footnote 1 ('ACCT 210 will also satisfy this requirement'); no units printed for it.",
+   "The BLAW 110 and ECON C2001H alternatives share their row's printed units (4 and 3-4); units on the alternatives are inferred from those rows.",
+   "List A prints no units beside individual courses; units left null.",
+   "ERTH 141 & 141L or GEOG 101 & 101L is recorded as two paired entries (ERTH 141 or GEOG 101; ERTH 141L or GEOG 101L); the student takes the lecture and lab together from one subject (footnote 3 says they are the same courses).",
+   "The 60-unit minimum is a generic associate degree requirement, not recorded as degree_total.",
+   "BUS 290 is listed under 'Optional' and recorded as recommended; it does not count toward the total.",
+   "Footnote 2 notes List A support courses may double count in general education areas.",
+   "The learning outcomes appear on the page's outcomes tab for this program and read as general business/management outcomes; reviewer may verify they belong to the Finance AA."
   ]
  },
- "extracted_run": "38670933359"
+ "extracted_run": "39782741424"
 }

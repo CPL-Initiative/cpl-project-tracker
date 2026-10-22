@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8534,
+  "input_tokens": 8141,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8534,
-    "output_tokens": 1822,
+    "input_tokens": 8141,
+    "output_tokens": 1795,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1822,
+  "output_tokens": 1795,
   "output_tokens_details": {
-   "thinking_tokens": 644
+   "thinking_tokens": 676
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07058,
- "ms": 15800,
- "seconds": 16.3,
+ "cost_usd": 0.06846,
+ "ms": 14692,
+ "seconds": 16.0,
  "parts": null,
  "error": null,
  "score": {
@@ -127,7 +128,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Requirements",
+   "section_heading": "Management/Supervision, A.S.",
    "measure": "units",
    "total_units": {
     "min": 24,
@@ -281,18 +282,17 @@
   "missing_explained": [
    {
     "code": "ECON 202",
-    "why": "not in the text; catalog lists ECON-C2001 (Principles of Microeconomics) in its place"
+    "why": "not in the text; catalog lists ECON-C2001 in its place"
    }
   ],
   "notes": [
-   "No award-specific heading is printed in the extracted text; section_heading uses the 'Requirements' tab name (page code AS.MGT).",
-   "MGT/ENGR-505 is printed as a cross-listed course; recorded as MGT-505 with ENGR-505 as alternative.",
-   "ECON-C2001 is not on the closed list (closed list has the older ECON 202 and the honors ECON C2001H); flagged as catalog addition.",
-   "Elective courses print no units beside individual courses; units left null. Required block stated 18 taken from the summary table 'Required Management/Supervision Courses 18'.",
-   "Degree total 60 taken from the overview ('The Associate degree in Management/Supervision requires completing 60 units') and requirements text; GE 27 from the summary table; remaining electives 'as needed to reach 60 units'.",
-   "Description states the certificate shares the same required coursework.",
-   "No program learning outcomes or careers are printed in the text."
+   "MGT/ENGR-505 is printed as one cross-listed course; recorded as MGT-505 with ENGR-505 as alternative.",
+   "ECON-C2001 is not in the closed list (closed list has ECON 202 and ECON C2001H); recorded as catalog addition.",
+   "Required block stated 18 and elective 6 taken from the summary table; Total Units 24 is the major total; degree total 60 includes MSJC Local General Education 27 and electives as needed to reach 60 units.",
+   "The description says the degree and certificate share the same required coursework; only the A.S. section was read.",
+   "Program Map tab shows a recommended sequence (including GE courses) and was not used for requirement blocks.",
+   "Career Exploration tab content not present in text; no careers or outcomes printed."
   ]
  },
- "extracted_run": "38748837644"
+ "extracted_run": "39779328144"
 }

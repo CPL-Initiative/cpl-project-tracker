@@ -868,6 +868,39 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S447 SkyBrittlebush (2026-10-22): an Administration of Justice address, a hyphenated code, Mt. San Jacinto and Santa Barbara City
+
+- **Read the sitemap before calling a program's page missing.** Both colleges' sitemaps (page read 39770285975)
+  list every missing program's own page: Mt. San Jacinto's `administration-justice-as`, `anthropology-aat`,
+  `history-aat`, `kinesiology-aat`; Santa Barbara City's seven `/justice-studies/administration-justice-*` pages.
+  The capture read the sitemap and dropped them itself, so the fault was the reader's filter, not the finding.
+- **`/administration` in `NOT_PROGRAM_PATH` dropped every Administration of Justice program (#2349).** The pattern
+  was meant for the college's administrators section and matched any address beginning with the word. Only a
+  whole `/administration/` segment is dropped now.
+- **A hyphen joins subject and number at Mt. San Jacinto (#2349).** The catalog prints `ANTH-102` and
+  `ANTH-C1001L`; `SUBJECT_TOKEN` read only a space, so every Requirements tab read as naming no course and was
+  dropped, while the Program Map tab (a sample sequence that mentions `ANTH 105` once in prose) was kept. 85 of 99
+  found programs had read the whole hidden page (textContent), and the transfer degrees lost their pages to the
+  general education pages. The capture view (page read 39773199040) showed it in one read.
+- **A transfer degree whose state list is far wider than its page loses on coverage.** Santa Barbara City's
+  Philosophy AA-T and Film, Television, and Electronic Media AS-T keep their Requirements tabs, but the state's file
+  lists 130 and 193 courses (the whole CSU humanities list), so their own pages name too small a share. No reader
+  change was made; it is the coverage gate, worth a rule only if it recurs.
+- **A plan reads one college.** `tests/college_page_read_test.py` fails a plan whose pages span two college
+  domains; split the capture view by college before committing it.
+- **Mt. San Jacinto, after #2349:** free capture 39775680177 found 115 (from 99), page-claimed 25 to 15, not found 28
+  to 22 (17 gained their page; Musical Theater A.A. lost its department page). Extraction 39779328144: 115 for
+  $9.18, 93 passing (from 74). Load 39782892386: 18 inserted, 94 kept, 3 placing none.
+- **Santa Barbara City, after #2349:** free capture 39775686975 found 254 (from 249), page-claimed 20 to 15 (six
+  Administration of Justice programs gained their pages; Physics A.S. lost one and keeps its loaded record).
+  Extraction 39782741424 re-extracted all 254 for $18.39, 210 passing (from 206); load 39788639887: 6 inserted, 241
+  kept, 7 placing none; reread 39789668568 replaced 8. Mt. San Jacinto's reread 39785231446 replaced 85.
+- **Display build be2635ed5b73** covers both colleges (17,414 statements in its receipt, against 17,391 for
+  0ad3c75bfa19 by the same count).
+- **Saddleback's free capture (39748152661) moved nothing:** 314 found and 26 page-claimed against main's 321 and
+  19, with six pages lost to ECONNRESET; the seven newly page-claimed were never loaded. No extraction.
+- **Display build 0ad3c75bfa19 applied on main** (run 39766423451, 78 minutes; S446's build).
+
 ## S446 SkyMadrone (2026-10-22, the CPL Queue routine): a degree-and-certificate address, 91 records, the page-claimed that remain
 
 - **A degree-and-certificate address names both awards (#2345).** Grossmont addresses a degree and its certificate
