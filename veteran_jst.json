@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-21T17:23:20.210388+00:00",
+  "scraped_at": "2026-10-22T12:00:09.287258+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29187,
+    "jst": 29227,
     "star_colleges": 63
   },
   "computed_star_colleges": 63,
@@ -32,17 +32,17 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1638,
+      "jst": 1648,
       "star": true
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1536,
+      "jst": 1546,
       "star": true
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1680,
+      "jst": 1692,
       "star": true
     },
     "Moreno Valley College": {
@@ -57,7 +57,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 573,
+      "jst": 574,
       "star": false
     },
     "Cabrillo College": {
@@ -125,14 +125,14 @@
       "jst": 410,
       "star": true
     },
+    "Santa Ana College": {
+      "vets": 334,
+      "jst": 389,
+      "star": true
+    },
     "Modesto Junior College": {
       "vets": 80,
       "jst": 151,
-      "star": true
-    },
-    "Santa Ana College": {
-      "vets": 334,
-      "jst": 387,
       "star": true
     },
     "Cypress College": {
@@ -192,7 +192,7 @@
     },
     "Antelope Valley College": {
       "vets": 281,
-      "jst": 283,
+      "jst": 282,
       "star": true
     },
     "Shasta College": {
@@ -210,14 +210,14 @@
       "jst": 345,
       "star": true
     },
+    "Mission College": {
+      "vets": 158,
+      "jst": 169,
+      "star": true
+    },
     "Cerro Coso Community College": {
       "vets": 115,
       "jst": 185,
-      "star": true
-    },
-    "Mission College": {
-      "vets": 158,
-      "jst": 168,
       "star": true
     },
     "Ventura College": {
@@ -365,14 +365,14 @@
       "jst": 75,
       "star": false
     },
+    "Coalinga College": {
+      "vets": 17,
+      "jst": 9,
+      "star": false
+    },
     "Pasadena City College": {
       "vets": 404,
       "jst": 141,
-      "star": false
-    },
-    "Coalinga College": {
-      "vets": 17,
-      "jst": 4,
       "star": false
     },
     "Hartnell College": {

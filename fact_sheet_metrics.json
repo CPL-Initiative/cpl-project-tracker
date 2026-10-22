@@ -1,30 +1,30 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-10-21T17:23:19.671Z",
+ "_as_of": "2026-10-22T12:00:09.006Z",
  "credit_recommendations": {
-  "total": "14,529",
-  "ccc": "1,474",
-  "local": "13,055",
+  "total": "14,564",
+  "ccc": "1,485",
+  "local": "13,079",
   "by_type": [
    "Standardized Assessment: 7,558",
-   "Industry Certification: 4,036",
-   "Credit By Exam: 2,256",
+   "Industry Certification: 4,047",
+   "Credit By Exam: 2,276",
    "Portfolio Review: 432",
-   "Military: 152"
+   "Military: 156"
   ]
  },
  "map_exhibits": {
-  "total": "2,585",
+  "total": "2,607",
   "ccc": "164",
-  "local": "2,421",
+  "local": "2,443",
   "originating_colleges": "87"
  },
  "statewide_exhibits": {
   "total": "164",
   "program_areas": "12",
-  "distinct_credit_recs": "1,266",
-  "adoptions": "1,461",
-  "adopting_colleges": "66",
+  "distinct_credit_recs": "1,276",
+  "adoptions": "1,472",
+  "adopting_colleges": "67",
   "by_sector": [
    {
     "sector": "Construction Technology",
@@ -43,15 +43,15 @@
    {
     "sector": "Fire Technology",
     "exhibits": 18,
-    "credit_recs": 301,
-    "adoptions": 359,
+    "credit_recs": 304,
+    "adoptions": 362,
     "could_adopt": 45
    },
    {
     "sector": "Computer Information Systems",
     "exhibits": 14,
-    "credit_recs": 120,
-    "adoptions": 124,
+    "credit_recs": 123,
+    "adoptions": 128,
     "could_adopt": 74
    },
    {
@@ -106,8 +106,8 @@
    {
     "sector": "Kinesiology/Health",
     "exhibits": 1,
-    "credit_recs": 29,
-    "adoptions": 37,
+    "credit_recs": 33,
+    "adoptions": 41,
     "could_adopt": 40
    },
    {
@@ -126,7 +126,7 @@
  "articulating_colleges": {
   "total": "101",
   "originating": "87",
-  "adopting_ccc": "66"
+  "adopting_ccc": "67"
  },
  "veteran_sprint": {
   "star_colleges": "63",

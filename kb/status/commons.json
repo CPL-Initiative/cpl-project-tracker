@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-21T17:28:03Z",
+ "written_at": "2026-10-22T12:04:22Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 12134,
+     "n": 12862,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements"
@@ -26,13 +26,13 @@
    ],
    "issues": [
     {
-     "n": 3993,
+     "n": 3957,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "open": "#program-requirements"
     },
     {
-     "n": 4155,
+     "n": 3463,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "open": "#program-requirements"
@@ -50,17 +50,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-21T08:13:16Z",
+    "at": "2026-10-22T09:54:20Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 12134,
-    "failing": 3993,
-    "unread": 4155,
-    "records": 17689,
+    "complete": 12862,
+    "failing": 3957,
+    "unread": 3463,
+    "records": 18425,
     "colleges": 114,
-    "outside_active": 1562
+    "outside_active": 1606
    },
    "sources": [
     "coci_programs_data.js",
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-21T17:23:37Z",
+    "at": "2026-10-22T12:00:19Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,9 +140,9 @@
     "records": 2648,
     "records_stamped": 1829,
     "saved_at": "2026-10-21T13:18:47Z",
-    "fold_at": "2026-10-21T17:23:37Z",
-    "map_titles": 4734,
-    "unclassified": 416,
+    "fold_at": "2026-10-22T12:00:19Z",
+    "map_titles": 4757,
+    "unclassified": 439,
     "left_map": 605,
     "below_80": 1151,
     "below_60": 245
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-21T17:25:48+00:00",
+    "at": "2026-10-22T12:02:27+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-21T17:23:34Z",
+    "at": "2026-10-22T12:00:17Z",
     "every_hours": 24
    },
    "facts": {
@@ -414,7 +414,7 @@
     "modal": 11,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-10-21",
+    "scanned_at": "2026-10-22",
     "procedures_on": 6
    },
    "sources": [
