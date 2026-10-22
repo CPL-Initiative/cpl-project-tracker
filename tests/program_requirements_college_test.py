@@ -406,6 +406,41 @@ check(C.page_winners([("1", hclaim(0.0, "coa", "certificate of achievement a", 1
                       ("2", hclaim(0.0, "coa", "certificate of achievement b", 1.0, cov=.6))]) in ({"1"}, {"2"}),
       "a heading counts only for a claimant the page carries SECTION_COVERAGE of, or whose title the label names")
 
+# MiraCosta's Computer Studies, Child Development and Psychology pages (page read 39732553097, S445).
+CSIT = ("[Tab: DEGREES]\nAssociate Degrees\nAssociate in Science Degrees\nArtificial Intelligence\nCybersecurity\n"
+        "Information Technology\nStudents may earn one of the above-named associate degrees by completing its respective "
+        "certificate of achievement requirements and the general education courses required for MiraCosta College's "
+        "Associate in Science degree (see Associate Degrees).\n\n[Tab: CERTIFICATES]\nCertificates\n"
+        "Certificate of Achievement\nArtificial Intelligence\nCSIT 101\tIntro\t3\nTotal Units\t25\n"
+        "Certificate of Achievement\nCybersecurity\nCSIT 145\tSecurity\t3\nTotal Units\t26\n"
+        "Certificate of Achievement\nInformation Technology\nCSIT 110\tSupport\t3")
+check(C.section_match(CSIT, {"award": coa16, "title": "Cyber Security"})[1:] == ("certificate of achievement cybersecurity", 1.0),
+      "a certificate titled in two words reads the heading that runs them together")
+check(C.section_match(CSIT, {"award": "A.S. Degree", "title": "Cyber Security"}) == ("as", "cybersecurity", 1.0)
+      and C.section_match(CSIT, {"award": "A.S. Degree", "title": "Information Technology"})[1] == "information technology",
+      "'by completing its respective certificate of achievement' makes each listed degree read its certificate's section")
+CDEV = ("[Tab: DEGREES]\nAssociate Degrees\nAssociate in Arts Degrees\nChild Development Associate Teacher\n"
+        "Child Development Master Teacher\nChild Development Teacher\nStudents may earn one of the above-named associate "
+        "degrees by completing a certificate of achievement and the general education courses required for MiraCosta "
+        "College's Associate in Arts degree (see Associate Degrees).\nAssociate in Arts Degree\n"
+        "Child and Adolescent Development for Transfer\nStudents completing this associate degree will have completed "
+        "lower-division major preparation requirements for a child and adolescent development degree.\n"
+        "CDEV C1000\tChild Growth and Development\t3\n[Tab: CERTIFICATES]\nCertificate of Achievement\n"
+        "Child Development Associate Teacher\nCDEV 106\tObservation\t3\nCertificate of Achievement\n"
+        "Child Development Teacher\nCDEV 115\tCurriculum\t3")
+cdt = C.section_match(CDEV, {"award": "A.A. Degree", "title": "Child Development Teacher"})
+cdat = C.section_match(CDEV, {"award": "A.A. Degree", "title": "Child Development Associate Teacher"})
+check(cdt == ("aa", "child development teacher", 1.0) and cdat[1] != cdt[1] and cdat[2] == 1.0,
+      "a listed degree reads its own list line, never a neighbor's pair that holds all its words")
+check(C.section_match(CDEV, {"award": "A.A- T Degree", "title": "Child and Adolescent Development"})[:1] == ("adt",),
+      "'Associate in Arts Degree' then 'Child and Adolescent Development for Transfer' heads the transfer degree")
+PSY = ("Associate in Arts Degree\nPsychology\nPSYC C1000\tIntro\t3\nTotal Units\t19-20\n"
+       "Associate in Arts Degree\nPsychology for Transfer\nPSYC C1000\tIntro\t3")
+check(C.section_match(PSY, {"award": "A.A. Degree", "title": "Psychology"})[1] == "associate in arts degree psychology"
+      and C.section_match(PSY, {"award": "A.A- T Degree", "title": "Psychology"})[1] ==
+      "associate in arts degree psychology for transfer",
+      "the local A.A. and the transfer degree each read their own two-line heading")
+
 pt = P.hidden_tabs_text({"tabPanels": [{"label": "DEGREES", "text": MC_DEG.split("\n", 1)[1]},
                                        {"label": "Search", "text": "Search the whole catalog by keyword or title"}]})
 check(pt.startswith("[Tab: DEGREES]\nAssociate Degrees") and "Search the whole" not in pt,

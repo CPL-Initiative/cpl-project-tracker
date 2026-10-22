@@ -654,7 +654,9 @@ SUBJECT_TOKEN = re.compile(r"\b([A-Z][A-Z&]{1,7})[ \u00a0]?[A-Z]?\d{1,4}[A-Z]?\b
 # MiraCosta's Degrees tab names no course: it lists each degree by title and says the degree
 # is earned "by completing a certificate of achievement and the general education courses"
 # (capture view 39718674469, S445). The college reader reads that list (section_match()).
-DEGREE_FROM_CERT = re.compile(r"degrees? by completing (?:a|the) certificate of achievement", re.I)
+# Computer Studies says "by completing its respective certificate of achievement requirements"
+# (page read 39732553097, S445).
+DEGREE_FROM_CERT = re.compile(r"degrees? by completing (?:a|the|its|their)(?: respective)? certificate of achievement", re.I)
 
 
 def hidden_tabs_text(got: dict) -> str:
