@@ -1,0 +1,12 @@
+{
+ "_readme": "S449 SkyBuckwheat, 2026-10-22. A free capture of Victor Valley under the S443-S447 rules (run 39848031807, preview on claude/harvest-victor-valley-s449) found 176 where main's capture of 2026-10-15 found 178: Nursing Licensure (20545) had read degrees-certificates/nursing/ at 0.867 and Irrigation and Water Management (38852) degrees-certificates/agriculture-natural-resources/ at 0.769; both pages are now out of their candidates and each is page-claimed. This read prints the capture's own view of the two department pages, to see how they head their sections and which award each heading names, before any reader change. Two loads, no model call.",
+ "college": "Victor Valley College",
+ "questions": {
+  "department_page_headings": "How the two department pages head each award's section, and whether a heading names the certificate the capture no longer gives the page to."
+ },
+ "keywords": ["Nursing", "Licensure", "Irrigation", "Water Management", "Certificate", "Associate", "\\bNURS[ \\-]?\\d", "\\bAGNR[ \\-]?\\d", "\\bAGRI[ \\-]?\\d"],
+ "pages": [
+  {"url": "https://catalog.vvc.edu/degrees-certificates/nursing/", "answers": ["department_page_headings"], "capture_view": true},
+  {"url": "https://catalog.vvc.edu/degrees-certificates/agriculture-natural-resources/", "answers": ["department_page_headings"], "capture_view": true}
+ ]
+}
