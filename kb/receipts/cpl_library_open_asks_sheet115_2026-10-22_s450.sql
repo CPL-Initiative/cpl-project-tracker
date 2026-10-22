@@ -14,6 +14,10 @@
 -- ROLLBACK: set those values back where slug = 'open-asks-sheets', drop the first entry of versions and set status
 -- 'Current' on the new first; cpl_library_history_trg files the prior row either way.
 -- A good result is one row: version 115, extent '3 cards (sheet 115)', n_versions 35.
+-- EXECUTED 2026-10-22 23:05:27Z by supabase-migrate run 39869030204 (its receipt:
+-- kb/receipts/migration_cpl_library_open_asks_sheet115_2026_10_22_s450_39869030204.json). Read back through the MCP at
+-- 23:10Z: version 115, extent '3 cards (sheet 115)', updated_by 'S450 SkyMariposa', 35 versions, Sheet 115 first and
+-- Current, Sheet 61 second and Earlier.
 update public.cpl_library
 set version = '115',
     url = 'https://claude.ai/artifact/QTC1MKB7AbWBMQtL9iPba9',
