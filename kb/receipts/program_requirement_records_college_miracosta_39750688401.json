@@ -1,0 +1,219 @@
+{
+ "college": "MiraCosta College",
+ "load_run": "39750688401",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-22T08:51:34Z",
+ "records": 142,
+ "posted": 125,
+ "batches": 5,
+ "inserted": 21,
+ "kept": 104,
+ "skipped": [
+  {
+   "control_number": "05130",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "05143",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07862",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07863",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15183",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22006",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31821",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31936",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36100",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36144",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36171",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37386",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37408",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38751",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39491",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40264",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46055",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38748842603",
+  "39709840590",
+  "39726634443",
+  "39746427354"
+ ],
+ "machine_pass": 100,
+ "inserted_keys": [
+  "05113",
+  "31937",
+  "32467",
+  "35580",
+  "36145",
+  "36146",
+  "36154",
+  "36168",
+  "36169",
+  "36174",
+  "36253",
+  "36305",
+  "37409",
+  "38727",
+  "38729",
+  "38730",
+  "40577",
+  "41547",
+  "41895",
+  "43613",
+  "43719"
+ ],
+ "kept_keys": [
+  "05110",
+  "05136",
+  "07077",
+  "07866",
+  "07872",
+  "07876",
+  "07877",
+  "07879",
+  "07881",
+  "11747",
+  "11750",
+  "12111",
+  "12306",
+  "12880",
+  "15309",
+  "15310",
+  "16232",
+  "17628",
+  "17752",
+  "18311",
+  "18313",
+  "18340",
+  "18345",
+  "18844",
+  "18974",
+  "18975",
+  "18986",
+  "18987",
+  "19039",
+  "20765",
+  "20767",
+  "21974",
+  "21976",
+  "21978",
+  "21979",
+  "21980",
+  "21982",
+  "21984",
+  "21985",
+  "21991",
+  "21992",
+  "21995",
+  "21996",
+  "21998",
+  "21999",
+  "22000",
+  "22002",
+  "22003",
+  "22005",
+  "30238",
+  "30674",
+  "30724",
+  "31734",
+  "33310",
+  "35028",
+  "35549",
+  "35650",
+  "35669",
+  "35670",
+  "35671",
+  "35677",
+  "35678",
+  "35767",
+  "35768",
+  "36097",
+  "36121",
+  "36143",
+  "36147",
+  "36148",
+  "36150",
+  "36153",
+  "36160",
+  "36162",
+  "36170",
+  "36272",
+  "36315",
+  "36413",
+  "36417",
+  "36418",
+  "36422",
+  "36427",
+  "36545",
+  "37240",
+  "37407",
+  "38711",
+  "38712",
+  "39140",
+  "39489",
+  "39582",
+  "40327",
+  "40575",
+  "40576",
+  "40670",
+  "41652",
+  "41653",
+  "41672",
+  "41718",
+  "41723",
+  "42705",
+  "42807",
+  "43720",
+  "43788",
+  "44000",
+  "45045"
+ ],
+ "rollback": "delete from public.program_requirement_records where college = 'MiraCosta College' and checked = false and control_number in ('05113', '31937', '32467', '35580', '36145', '36146', '36154', '36168', '36169', '36174', '36253', '36305', '37409', '38727', '38729', '38730', '40577', '41547', '41895', '43613', '43719');"
+}
