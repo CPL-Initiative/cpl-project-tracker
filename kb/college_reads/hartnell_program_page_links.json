@@ -1,0 +1,15 @@
+{
+ "_readme": "S449 SkyBuckwheat, 2026-10-22. Hartnell read through its Coursedog site (route=site, run 39850594534) listed 100 programs from the vendor's search and loaded each program's page, but found a Requisites link on none (coursedog.requisites_suffix null, program_pages 0, missed 60), so every program read as not found. Merced's pages on its own domain link a Requisites tab (requisites-ojrrt, S414); the vendor-hosted catalog may name the tab otherwise or draw the requirements from a data call. This read loads two program pages, prints the links their tab bars carry and the data their scripts fetch from app.coursedog.com, before any reader change. Two loads, no model call.",
+ "college": "Hartnell College",
+ "outside_hosts": {
+  "coursedog.com": "Hartnell's catalog vendor hosts the catalog itself (hartnell.catalog.prod.coursedog.com) and its data (app.coursedog.com); the registry's catalog address is on this host."
+ },
+ "questions": {
+  "program_page_links": "What a program page on the vendor-hosted catalog links (the tab naming its requirements) and which data calls it makes, beside Merced's Requisites tab."
+ },
+ "keywords": ["[Rr]equisites", "[Rr]equirements", "Total Credits", "\\bABT\\d", "\\bADJ\\d", "\\bPSY\\d", "listLength"],
+ "pages": [
+  {"url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.ADD", "answers": ["program_page_links"], "links": "[Rr]equi|[Oo]verview|[Cc]ourse|[Mm]ap|[Pp]rogram", "network": true, "network_hosts": ["app.coursedog.com"]},
+  {"url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ADJ", "answers": ["program_page_links"], "links": "[Rr]equi|[Oo]verview|[Cc]ourse|[Mm]ap|[Pp]rogram", "network": true, "network_hosts": ["app.coursedog.com"]}
+ ]
+}
