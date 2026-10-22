@@ -12784,70 +12784,239 @@
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () {}, function () { fallbackCopy(text); });
     else fallbackCopy(text);
   }
+  // The library sits beside this file, so a page in a subfolder (the public
+  // memo, funding-model/memo/) finds it through this script's own address.
+  function docxSrc() {
+    var own = document.querySelector('script[src$="cpl_funding.js"]');
+    return own ? own.getAttribute("src").replace(/cpl_funding\.js$/, "docx.min.js") : "docx.min.js";
+  }
   function ensureDocx(cb) {
     if (window.docx) { cb(); return; }
     var s = document.createElement("script");
-    s.src = "docx.min.js";
+    s.src = docxSrc();
     s.onload = cb; s.onerror = function () { cb(); };
     document.head.appendChild(s);
   }
-  function memoInlineRuns(node) {
-    var d = window.docx, runs = [];
-    (function walk(n, bold) {
-      Array.prototype.forEach.call(n.childNodes, function (c) {
-        if (c.nodeType === 3) { if (c.textContent) runs.push(new d.TextRun({ text: c.textContent, bold: bold })); }
-        else if (c.nodeType === 1) {
-          if (c.tagName === "BR") runs.push(new d.TextRun({ text: "", break: 1 }));
-          else walk(c, bold || c.tagName === "STRONG" || c.tagName === "B");
-        }
-      });
-    })(node, false);
-    if (!runs.length) runs.push(new d.TextRun(""));
+  // The Word export reads the document as the browser holds it, edits and all
+  // (Sam, 2026-10-22: "line breaks don't work on many of the paragraphs and the
+  // style shifts to a different Word style"). Typing into the document leaves
+  // Chrome's markup: a new line is a <div>, Shift+Enter a <br>, a label a <span>
+  // beside its text. So the walk keeps inline content together until a block
+  // ends it, a <br> stays a line break wherever it sits, and the file carries
+  // the memo's own styles (font, navy headings, spacing) instead of Word's.
+  var MEMO_DOCX_BLOCK = /^(P|DIV|H[1-6]|UL|OL|LI|TABLE|BLOCKQUOTE|SECTION|ARTICLE|HEADER|FOOTER|FIGURE|PRE|HR|DETAILS|SUMMARY|DL|DT|DD)$/;
+  var MEMO_DOCX_INK = { navy: "002F6D", muted: "555555", rule: "999999", grid: "CCCCCC" };
+  var MEMO_DOCX_FONT = "Arial";
+  function memoDocxStyles() {
+    var ink = MEMO_DOCX_INK;
+    return {
+      default: {
+        document: { run: { font: MEMO_DOCX_FONT, size: 22, color: "1C1C1A" }, paragraph: { spacing: { after: 160, line: 276 } } },
+        heading1: { run: { font: MEMO_DOCX_FONT, size: 30, bold: true, color: ink.navy, characterSpacing: 20 },
+          paragraph: { alignment: "center", spacing: { before: 120, after: 160 } } },
+        heading2: { run: { font: MEMO_DOCX_FONT, size: 24, bold: true, color: ink.navy },
+          paragraph: { spacing: { before: 280, after: 120 }, keepNext: true,
+            border: { bottom: { style: "single", size: 6, color: ink.rule, space: 2 } } } },
+        heading3: { run: { font: MEMO_DOCX_FONT, size: 22, bold: true, color: ink.navy },
+          paragraph: { spacing: { before: 200, after: 80 }, keepNext: true } }
+      },
+      paragraphStyles: [
+        { id: "MemoMasthead", name: "Memo Masthead", basedOn: "Normal", run: { size: 18, color: ink.muted },
+          paragraph: { alignment: "center", spacing: { after: 240 },
+            border: { bottom: { style: "single", size: 12, color: ink.navy, space: 6 } } } },
+        { id: "MemoField", name: "Memo Field", basedOn: "Normal", paragraph: { spacing: { after: 40 } } },
+        { id: "MemoSub", name: "Memo Subtitle", basedOn: "Normal", run: { color: ink.muted }, paragraph: { alignment: "center" } },
+        { id: "MemoQuote", name: "Memo Quote", basedOn: "Normal",
+          paragraph: { indent: { left: 360 }, border: { left: { style: "single", size: 8, color: ink.rule, space: 8 } } } },
+        { id: "MemoCc", name: "Memo cc", basedOn: "Normal", run: { size: 19, color: ink.muted }, paragraph: { spacing: { before: 240 } } },
+        { id: "MemoCell", name: "Memo Table Cell", basedOn: "Normal", run: { size: 17 }, paragraph: { spacing: { after: 0, line: 240 } } }
+      ]
+    };
+  }
+  function memoDocxNumbering() {
+    var d = window.docx, levels = [];
+    for (var i = 0; i < 3; i++) {
+      levels.push({ level: i, format: d.LevelFormat.DECIMAL, text: "%" + (i + 1) + ".", alignment: d.AlignmentType.LEFT,
+        style: { paragraph: { indent: { left: 720 * (i + 1), hanging: 360 } } } });
+    }
+    return { config: [{ reference: "memo-ol", levels: levels }] };
+  }
+  // A block's paragraph settings from its tag and class: the memo's masthead,
+  // its TO/FROM/RE fields, the cc line and the report's subtitle each keep the
+  // look they have on screen.
+  function memoDocxParaOpts(el, base) {
+    var o = {}, k;
+    for (k in base) if (Object.prototype.hasOwnProperty.call(base, k)) o[k] = base[k];
+    var cls = " " + (el.getAttribute && el.getAttribute("class") || "") + " ";
+    if (/ masthead /.test(cls)) o.style = "MemoMasthead";
+    else if (/ fld /.test(cls)) o.style = "MemoField";
+    else if (/ cc /.test(cls)) o.style = "MemoCc";
+    else if (/ memo-sub /.test(cls)) o.style = "MemoSub";
+    var align = el.style && el.style.textAlign;
+    if (align === "center" || align === "right") o.alignment = align;
+    return o;
+  }
+  function memoDocxRunFmt(el, fmt) {
+    var t = el.tagName, cls = " " + (el.getAttribute("class") || "") + " ", f = {};
+    for (var k in fmt) if (Object.prototype.hasOwnProperty.call(fmt, k)) f[k] = fmt[k];
+    var st = el.style || {};
+    if (t === "STRONG" || t === "B" || / lab /.test(cls) || st.fontWeight === "bold" || parseInt(st.fontWeight, 10) >= 600) f.bold = true;
+    if (t === "EM" || t === "I" || st.fontStyle === "italic") f.italics = true;
+    if (t === "U") f.underline = {};
+    if (t === "SUP") f.superScript = true;
+    if (t === "SUB") f.subScript = true;
+    if (/ lab /.test(cls)) f.color = MEMO_DOCX_INK.navy;
+    if ((t === "STRONG" || t === "B") && el.closest && el.closest(".masthead")) f.color = MEMO_DOCX_INK.navy;
+    return f;
+  }
+  // Inline content → runs. Whitespace collapses as the browser shows it; a <br>
+  // is a line break; a link stays a link.
+  function memoInlineRuns(node, fmt, runs) {
+    runs = runs || [];
+    Array.prototype.forEach.call(node.childNodes, function (c) {
+      if (c.nodeType === 3) {
+        var t = c.textContent.replace(/[ \t\r\n\f]+/g, " ");
+        var prev = runs[runs.length - 1];
+        if (t.charAt(0) === " " && (!prev || prev.br || (prev.text != null && / $/.test(prev.text)))) t = t.slice(1);
+        if (t) runs.push({ text: t, fmt: fmt });
+      } else if (c.nodeType === 1) {
+        if (c.tagName === "BR") runs.push({ br: true });
+        else if (c.tagName === "A" && /^(https?:|mailto:)/i.test(c.getAttribute("href") || "")) {
+          var inner = memoInlineRuns(c, memoDocxRunFmt(c, fmt), []);
+          runs.push({ link: c.getAttribute("href"), runs: inner });
+        } else memoInlineRuns(c, memoDocxRunFmt(c, fmt || {}), runs);
+      }
+    });
     return runs;
   }
+  // Runs → docx children, trimming the edges a browser leaves (leading space,
+  // the trailing <br> Chrome parks in a line). Null when nothing shows.
+  function memoDocxChildren(runs) {
+    var d = window.docx, flat = runs.slice();
+    while (flat.length && (flat[0].br || (flat[0].text != null && !flat[0].text.trim()))) flat.shift();
+    while (flat.length && (flat[flat.length - 1].br || (flat[flat.length - 1].text != null && !flat[flat.length - 1].text.trim()))) flat.pop();
+    if (!flat.length) return null;
+    if (flat[0].text != null) flat[0] = { text: flat[0].text.replace(/^ +/, ""), fmt: flat[0].fmt };
+    var last = flat[flat.length - 1];
+    if (last.text != null) flat[flat.length - 1] = { text: last.text.replace(/ +$/, ""), fmt: last.fmt };
+    var toRun = function (r, extra) {
+      if (r.br) return new d.TextRun({ text: "", break: 1 });
+      var o = { text: r.text }, f = r.fmt || {}, k;
+      for (k in f) if (Object.prototype.hasOwnProperty.call(f, k)) o[k] = f[k];
+      for (k in extra || {}) o[k] = extra[k];
+      return new d.TextRun(o);
+    };
+    return flat.map(function (r) {
+      if (r.link) {
+        return new d.ExternalHyperlink({ link: r.link, children: r.runs.filter(function (x) { return x.br || x.text; })
+          .map(function (x) { return toRun(x, { style: "Hyperlink" }); }) });
+      }
+      return toRun(r);
+    });
+  }
   function memoTableToDocx(tableEl) {
-    var d = window.docx, rows = [];
+    var d = window.docx, rows = [], ink = MEMO_DOCX_INK;
+    var line = { style: d.BorderStyle.SINGLE, size: 4, color: ink.grid };
+    var none = { style: d.BorderStyle.NONE, size: 0, color: "FFFFFF" };
     Array.prototype.forEach.call(tableEl.querySelectorAll("tr"), function (tr) {
-      var cells = [];
+      var cells = [], head = tr.parentNode && tr.parentNode.tagName === "THEAD" ||
+        Array.prototype.every.call(tr.children, function (c) { return c.tagName === "TH"; });
       Array.prototype.forEach.call(tr.children, function (cell) {
-        cells.push(new d.TableCell({ children: [new d.Paragraph({ children: memoInlineRuns(cell) })] }));
+        var th = cell.tagName === "TH";
+        var left = / t /.test(" " + (cell.getAttribute("class") || "") + " ") ||
+          cell.style.textAlign === "left" || (!th && cell === tr.children[0] && !/^[\s$0-9.,%()–-]*$/.test(cell.textContent));
+        var pad = parseFloat(cell.style.paddingLeft) || 0;
+        var kids = memoDocxChildren(memoInlineRuns(cell, th ? { bold: true, color: "FFFFFF" } : {})) || [new d.TextRun("")];
+        cells.push(new d.TableCell({
+          children: [new d.Paragraph({ style: "MemoCell", children: kids,
+            alignment: left ? d.AlignmentType.LEFT : d.AlignmentType.RIGHT, indent: pad ? { left: Math.round(pad * 15) } : undefined })],
+          shading: th ? { type: d.ShadingType.CLEAR, color: "auto", fill: ink.navy } : undefined,
+          margins: { top: 40, bottom: 40, left: 90, right: 90 },
+          columnSpan: parseInt(cell.getAttribute("colspan"), 10) || undefined,
+          borders: { top: th ? none : line, bottom: line, left: none, right: none }
+        }));
       });
-      if (cells.length) rows.push(new d.TableRow({ children: cells }));
+      if (cells.length) rows.push(new d.TableRow({ children: cells, tableHeader: !!head, cantSplit: true }));
     });
     return rows.length ? new d.Table({ rows: rows, width: { size: 100, type: d.WidthType.PERCENTAGE } }) : null;
   }
-  function memoDocxBlocks(root) {
-    var d = window.docx, out = [];
+  // Blocks → paragraphs and tables. Inline content gathers until a block
+  // child ends it, so a label and its text stay one line and a line typed
+  // into the document (Chrome's <div>) stays its own paragraph.
+  function memoDocxBlocks(root, opts, out, list) {
+    var d = window.docx, buf = [];
+    out = out || []; opts = opts || {};
+    var flush = function () {
+      var kids = memoDocxChildren(buf);
+      var only = buf.length && buf.every(function (r) { return r.br || (r.text != null && !r.text.trim()); }) &&
+        buf.some(function (r) { return r.br; });
+      buf = [];
+      if (!kids && !only) return;      // nothing typed: no paragraph
+      var p = { children: kids || [] }, k;
+      for (k in opts) if (Object.prototype.hasOwnProperty.call(opts, k)) p[k] = opts[k];
+      out.push(new d.Paragraph(p));    // a lone <br> line is a deliberate blank line
+    };
     Array.prototype.forEach.call(root.childNodes, function (node) {
-      if (node.nodeType === 3) {
-        var t = node.textContent.replace(/\s+/g, " ").trim();
-        if (t) out.push(new d.Paragraph({ children: [new d.TextRun(t)] }));
+      if (node.nodeType !== 1 || !MEMO_DOCX_BLOCK.test(node.tagName)) {
+        if (node.nodeType === 1 || node.nodeType === 3) {
+          var one = document.createElement("span"); one.appendChild(node.cloneNode(true));
+          memoInlineRuns(one, opts.runFmt || {}, buf);
+        }
         return;
       }
-      if (node.nodeType !== 1) return;
-      var tag = node.tagName.toLowerCase();
-      if (tag === "h1") out.push(new d.Paragraph({ heading: d.HeadingLevel.HEADING_1, alignment: d.AlignmentType.CENTER, children: memoInlineRuns(node) }));
-      else if (tag === "h2") out.push(new d.Paragraph({ heading: d.HeadingLevel.HEADING_2, children: memoInlineRuns(node) }));
-      else if (tag === "p") out.push(new d.Paragraph({ children: memoInlineRuns(node) }));
-      else if (tag === "li") out.push(new d.Paragraph({ bullet: { level: 0 }, children: memoInlineRuns(node) }));
-      else if (tag === "ul" || tag === "ol") Array.prototype.forEach.call(node.children, function (li) { out.push(new d.Paragraph({ bullet: { level: 0 }, children: memoInlineRuns(li) })); });
-      else if (tag === "table") { var tb = memoTableToDocx(node); if (tb) out.push(tb); }
-      else if (tag === "br") { /* skip */ }
-      else out = out.concat(memoDocxBlocks(node));   // div/span containers → recurse
+      flush();
+      var tag = node.tagName;
+      var o = memoDocxParaOpts(node, opts);
+      if (tag === "H1") memoDocxBlocks(node, { heading: d.HeadingLevel.HEADING_1, alignment: d.AlignmentType.CENTER }, out);
+      else if (tag === "H2") memoDocxBlocks(node, { heading: d.HeadingLevel.HEADING_2 }, out);
+      else if (/^H[3-6]$/.test(tag)) memoDocxBlocks(node, { heading: d.HeadingLevel.HEADING_3 }, out);
+      else if (tag === "TABLE") { var tb = memoTableToDocx(node); if (tb) out.push(tb, new d.Paragraph({ spacing: { after: 0 }, children: [] })); }
+      else if (tag === "UL" || tag === "OL") {
+        var lvl = list ? Math.min(list.level + 1, 2) : 0;
+        var inst = tag === "OL" ? (memoDocxBlocks.olCount = (memoDocxBlocks.olCount || 0) + 1) : 0;
+        Array.prototype.forEach.call(node.childNodes, function (li) {
+          var lo = { spacing: { after: 80 } };
+          if (tag === "OL") lo.numbering = { reference: "memo-ol", level: lvl, instance: inst };
+          else lo.bullet = { level: lvl };
+          if (li.nodeType === 1 && li.tagName === "LI") memoDocxBlocks(li, lo, out, { level: lvl });
+          else if (li.nodeType === 1) memoDocxBlocks(li, lo, out, { level: lvl });
+        });
+      }
+      else if (tag === "LI") memoDocxBlocks(node, { bullet: { level: 0 }, spacing: { after: 80 } }, out, { level: 0 });
+      else if (tag === "BLOCKQUOTE") memoDocxBlocks(node, { style: "MemoQuote" }, out);
+      else if (tag === "HR") out.push(new d.Paragraph({ border: { bottom: { style: d.BorderStyle.SINGLE, size: 6, color: MEMO_DOCX_INK.rule, space: 1 } }, children: [] }));
+      else {
+        memoDocxBlocks(node, o, out, list);   // p, div and the other containers
+        // The TO/FROM/RE block sits tight; the body opens a line below it.
+        if (/(^| )fields( |$)/.test(node.getAttribute("class") || "")) out.push(new d.Paragraph({ spacing: { after: 0 }, children: [] }));
+      }
     });
+    flush();
     return out;
   }
-  function exportMemoDocx() {
-    var memo = document.getElementById("cplFundMemo");
+  function memoDocxDocument(memo) {
+    var d = window.docx;
+    memoDocxBlocks.olCount = 0;
+    return new d.Document({
+      creator: "California Community Colleges Chancellor's Office",
+      title: memoFilename().replace(/_/g, " "),
+      styles: memoDocxStyles(),
+      numbering: memoDocxNumbering(),
+      sections: [{ properties: { page: { margin: { top: 1080, bottom: 1080, left: 1260, right: 1260 } } },
+        children: memoDocxBlocks(memo) }]
+    });
+  }
+  function exportMemoDocx(el) {
+    var memo = el && el.nodeType === 1 ? el : document.getElementById("cplFundMemo");
     if (!memo) return;
+    var name = memoFilename();
     ensureDocx(function () {
       var d = window.docx;
       if (!d || !d.Document) return;
-      var doc = new d.Document({ sections: [{ children: memoDocxBlocks(memo) }] });
-      d.Packer.toBlob(doc).then(function (blob) {
+      d.Packer.toBlob(memoDocxDocument(memo)).then(function (blob) {
         var a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
-        a.download = memoFilename() + ".docx";
+        a.download = name + ".docx";
         document.body.appendChild(a); a.click(); a.remove();
         setTimeout(function () { URL.revokeObjectURL(a.href); }, 500);
       }).catch(function () { /* export failed silently — PDF path still works */ });
@@ -15926,6 +16095,9 @@
       var h = buildMemo(state.docType); state.docType = prev; return h;
     },
     _memoModel: memoModel,
+    _memoDocxDocument: memoDocxDocument,
+    // The public memo page's Word download: the same export, from its own element.
+    _downloadMemoDocx: function (el) { var prev = state.docType; state.docType = "memo"; exportMemoDocx(el); state.docType = prev; },
     _setSubview: function (v) { state.subview = v; render(); },
     // `loaded` says whether the shared config has been read (a subscriber must
     // not adopt the default config it holds before then); `published` names the
