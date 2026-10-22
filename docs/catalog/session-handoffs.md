@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-418 document(s).
+419 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 448 | [Session 448 handoff: an Administration of Justice address, a hyphenated code, Mt. San Jacinto and Santa Barbara City reread](../session_448_handoff.md) | 2026-10-22 |
 | 447 | [Session 447 handoff: a degree-and-certificate address names both awards, 91 new records at four colleges](../session_447_handoff.md) | 2026-10-22 |
 | 446 | [Session 446 handoff: a shared page per section heading, MiraCosta's degree lists, Palomar's Cert. Achievement, 185 new records](../session_446_handoff.md) | 2026-10-22 |
 | 445 | [Session 445 handoff: department pages and two-line headings, Golden West and Imperial Valley loaded, Program Mapper hosts, answered calls](../session_445_handoff.md) | 2026-10-22 |
