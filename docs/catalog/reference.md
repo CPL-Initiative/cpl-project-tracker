@@ -37,7 +37,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Excel→Supabase Phase 2-4 — lane state](../reference/lanes/excel-to-supabase.md) | lanes | `excel-to-supabase.md` | 2026-08-28 | 2026-08-28 |
 | [Governance & team enablement — lane state](../reference/lanes/governance-team-enablement.md) | lanes | `governance-team-enablement.md` | 2026-08-28 | 2026-10-21 |
 | [GR register / CO policy & regulation review — lane state](../reference/lanes/gr-register.md) | lanes | `gr-register.md` | 2026-08-28 | 2026-08-30 |
-| [Implementation Funding tab / the $35M model — lane state](../reference/lanes/implementation-funding.md) | lanes | `implementation-funding.md` | 2026-08-28 | 2026-10-20 |
+| [Implementation Funding tab / the $35M model — lane state](../reference/lanes/implementation-funding.md) | lanes | `implementation-funding.md` | 2026-08-28 | 2026-10-22 |
 | [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-10-20 |
 | [Local course ↔ CR alignment — lane state](../reference/lanes/local-course-cr-alignment.md) | lanes | `local-course-cr-alignment.md` | 2026-08-28 | 2026-08-28 |
 | [MAP Custom Reports (3 new) / ITPI automation — lane state](../reference/lanes/map-custom-reports.md) | lanes | `map-custom-reports.md` | 2026-08-28 | 2026-09-10 |
@@ -45,7 +45,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Memory tab / Autogenerate + the Briefing — lane state](../reference/lanes/memory-tab.md) | lanes | `memory-tab.md` | 2026-08-28 | 2026-09-24 |
 | [Military (ACE) CR Reference — lane state](../reference/lanes/military-ace-cr-reference.md) | lanes | `military-ace-cr-reference.md` | 2026-08-28 | 2026-08-28 |
 | [My College (college action page) / MAP-team queue — lane state](../reference/lanes/my-college-action-page.md) | lanes | `my-college-action-page.md` | 2026-08-28 | 2026-10-21 |
-| [NC / Learning Partners — lane state](../reference/lanes/nc-learning-partners.md) | lanes | `nc-learning-partners.md` | 2026-08-28 | 2026-08-28 |
+| [NC / Learning Partners — lane state](../reference/lanes/nc-learning-partners.md) | lanes | `nc-learning-partners.md` | 2026-08-28 | 2026-10-22 |
 | [Noncredit CIP categories — lane state](../reference/lanes/noncredit-cip-categories.md) | lanes | `noncredit-cip-categories.md` | 2026-08-28 | 2026-08-28 |
 | [Org & phrase scope / auth model — lane state](../reference/lanes/org-phrase-scope-auth.md) | lanes | `org-phrase-scope-auth.md` | 2026-08-28 | 2026-09-19 |
 | [Partner crosswalks — lane state](../reference/lanes/partner-crosswalks.md) | lanes | `partner-crosswalks.md` | 2026-08-28 | 2026-10-05 |

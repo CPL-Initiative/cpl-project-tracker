@@ -749,7 +749,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 112](https://claude.ai/artifact/AKsM96ZjKRmrYPHGWiDffG), 2026-10-22, answered: the Program Mapper request waits, later; no card open). Answering
+> (latest: [Open Asks Sheet 114](https://claude.ai/artifact/1imsehXf94RDWe3pTUtTb4), 2026-10-22, four cards open: the noncredit share released on outcomes, after his Sheet 113 notes; 113 is answered). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

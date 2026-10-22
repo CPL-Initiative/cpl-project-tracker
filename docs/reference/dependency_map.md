@@ -270,6 +270,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `credential_reference_data.js` | `CPL_CREDENTIAL_REFERENCE` | `excel_to_dashboard.py:export_credential_reference()` | tabs: `cpl-pathways`, `credential-reference`, `map-export`, `nc-learning-partners` · modules: `kb/_carp_apprentice_plan_s109.js`, `kb/_college_apprenticeship_cpl_roster.js` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `kb/_build_baccalaureate_pathways.py`, `kb/_build_ccr_cpl.py`, `kb/_build_ccr_cpl_universe.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_build_partner_crosswalk.py`, `kb/_build_peer_articulations.py`, `kb/_build_roep_display.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_college_short_names.py`, `kb/_sync_credential_catalog.py`, `kb/_trail_crew.py`, `kb/_trail_crew_assemble.py`, `kb/_verify_issuer_preseed.py` |
 | `fact-sheet/cpl_stories.js` | `CPL_STORIES` | `tools/source_cpl_stories.mjs` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · pages: `fact-sheet/index.html` · scripts: `tools/source_cpl_stories.mjs` |
 | `fact-sheet/statewide_recs.js` | `CPL_STATEWIDE_RECS` | `fact-sheet/_build_statewide_recs.py` | pages: `fact-sheet/index.html` · scripts: `fact-sheet/_build_statewide_recs.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_build_occupation_cpl_crosswalk.py` |
+| `funding/nc_outcome_feasibility/2026-10-22/nc_shares_dump.js` | `CPL_FUNDING_NO_REMOTE` | not stated in header | none found |
 | `regional_cpl_opportunity_bay.js` | `CPL_REGIONAL_OPPS_BAY` | `kb/_emit_regional_opps_data.py` | none found |
 | `regional_cpl_opportunity_cvml.js` | `CPL_REGIONAL_OPPS_CVML` | `kb/_emit_regional_opps_data.py` | none found |
 | `regional_cpl_opportunity_fn.js` | `CPL_REGIONAL_OPPS_FN` | `kb/_emit_regional_opps_data.py` | none found |
@@ -426,6 +427,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `funding-model/index.html` | scripts: `scripts/ui_pass.py` | — |
 | `funding/_build_funding_ess.py` | workflows: `daily-dashboard.yml` | — |
 | `funding/_build_funding_performance.py` | workflows: `daily-dashboard.yml` | — |
+| `funding/nc_outcome_feasibility/2026-10-22/nc_courses.json` | scripts: `funding/nc_outcome_feasibility/2026-10-22/nc_outcome_feasibility.py` | — |
+| `funding/nc_outcome_feasibility/2026-10-22/nc_shares.json` | scripts: `funding/nc_outcome_feasibility/2026-10-22/nc_outcome_feasibility.py` | — |
+| `funding/nc_outcome_feasibility/2026-10-22/summary.json` | none found | scripts: `funding/nc_outcome_feasibility/2026-10-22/nc_outcome_feasibility.py` |
 | `funding_model_payload.js` | pages: `funding-model/index.html` | — |
 | `generate_reports.js` | scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` | — |
 | `governance.js` | pages: `CPL_Dashboard.html` | — |
@@ -1185,5 +1189,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 41 RPCs · 9 edge functions · 709 file
-datasets · 184 external services · 469 consumers · 58 workflows · 39 tabs.
+Coverage: 99 Supabase tables · 41 RPCs · 9 edge functions · 712 file
+datasets · 184 external services · 470 consumers · 58 workflows · 39 tabs.

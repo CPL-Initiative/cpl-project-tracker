@@ -4,11 +4,11 @@
   "supabase_tables": 99,
   "rpcs": 41,
   "edge_functions": 9,
-  "file_datasets": 709,
+  "file_datasets": 712,
   "external_services": 184,
-  "consumers": 469,
+  "consumers": 470,
   "workflows": 58,
-  "data_js_files": 70,
+  "data_js_files": 71,
   "tabs": 39
  },
  "datasets": {
@@ -7438,6 +7438,45 @@
      "direction": "run",
      "how": "yaml",
      "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:funding/nc_outcome_feasibility/2026-10-22/nc_courses.json": {
+   "consumers": [
+    {
+     "id": "script:funding/nc_outcome_feasibility/2026-10-22/nc_outcome_feasibility.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 84
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:funding/nc_outcome_feasibility/2026-10-22/nc_shares.json": {
+   "consumers": [
+    {
+     "id": "script:funding/nc_outcome_feasibility/2026-10-22/nc_outcome_feasibility.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 83
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:funding/nc_outcome_feasibility/2026-10-22/summary.json": {
+   "consumers": [
+    {
+     "id": "script:funding/nc_outcome_feasibility/2026-10-22/nc_outcome_feasibility.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 136
     }
    ],
    "served": true,
@@ -26149,6 +26188,10 @@
   "fact-sheet/statewide_recs.js": {
    "global": "CPL_STATEWIDE_RECS",
    "producer": "fact-sheet/_build_statewide_recs.py"
+  },
+  "funding/nc_outcome_feasibility/2026-10-22/nc_shares_dump.js": {
+   "global": "CPL_FUNDING_NO_REMOTE",
+   "producer": null
   },
   "regional_cpl_opportunity_bay.js": {
    "global": "CPL_REGIONAL_OPPS_BAY",
