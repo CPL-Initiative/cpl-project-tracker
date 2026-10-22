@@ -90,6 +90,14 @@ check(C.program_candidates(DEPTS[:1], "https://catalog.sierracollege.edu/") == D
       "a department or discipline page is a program candidate")
 check(C.program_candidates(DEPTS[2:], "https://catalog.sierracollege.edu/") == [],
       "the department index itself is not")
+# An Administration of Justice address begins with "administration" (sitemap read 39770285975, S447).
+AJ = ["https://catalog.msjc.edu/instructional-programs/administration-justice/administration-justice-as/",
+      "https://catalog.sbcc.edu/academic-departments/justice-studies/administration-justice-ast/"]
+check(C.program_candidates(AJ[:1], "https://catalog.msjc.edu/") == AJ[:1]
+      and C.program_candidates(AJ[1:], "https://catalog.sbcc.edu/") == AJ[1:],
+      "an Administration of Justice program page is a program candidate")
+check(C.program_candidates(["https://catalog.msjc.edu/administration/degree-programs/"], "https://catalog.msjc.edu/") == [],
+      "the college's administration section is not")
 
 # ── a district catalog: one host, several colleges ───────────────────────────
 DISTRICT = ["https://catalog.nocccd.edu/fullerton-college/programs/accounting-aa/",

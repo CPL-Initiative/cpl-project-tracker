@@ -1464,6 +1464,14 @@ vcccd = {"tabPanels": [{"label": "REQUIREMENTS", "id": "requirementstextcontaine
                         "text": "Course ID\tTitle\tUnits\nANCT M01A\tAnimal Care & Handling I\t1\nANCT M09\tAnimal Behavior\t3"}]}
 check("ANCT M01A" in P.hidden_tabs_text(vcccd),
       "a Requirements tab whose numbers carry a campus letter (Moorpark's ANCT M01A) is kept")
+# Mt. San Jacinto joins subject and number with a hyphen: its Requirements tab was dropped and
+# its Program Map tab, a sample sequence, read in its place (page read 39773199040, S447).
+msjc = {"tabPanels": [{"label": "Requirements", "id": "requirementstextcontainer",
+                       "text": "Course List\nCourse \tTitle \tCredits\nRequired Core Courses\n"
+                               "ANTH-C1001\tIntroduction to Biological Anthropology\t3\n"
+                               "ANTH-102\tCultural Anthropology\t3\nANTH-115\tIntroduction to Archaeology\t3"}]}
+check("ANTH-115" in P.hidden_tabs_text(msjc),
+      "a Requirements tab whose codes join subject and number with a hyphen (Mt. San Jacinto's ANTH-102) is kept")
 lbt_req = "Program Requirements\nRequired Courses\nHORT 11A\tIntro to Horticulture\t3\nHORT 19\tSoils\t3\nHORT 21\tPests\t3\nMKTG 47\tSales\t3\nTotal Units\t12"
 lbt_got = {"body": "Horticulture - Associate in Science\nOverview\nProgram Requirements\nStudents enrolling in HORT 11A learn plant care.",
            "content": lb_index + "Horticulture - Associate in ScienceStudents enrolling in HORT 11A learn plant care.HORT 19Soils3",

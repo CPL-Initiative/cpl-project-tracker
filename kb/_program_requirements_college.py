@@ -93,10 +93,15 @@ PROGRAM_PATH = re.compile(
     r"degree|certificate|program|major|pathway|noncredit|award|transfer|career|"
     r"academic-and-career|areas-of-study|aos|-a-?a|-a-?s|-ast?\b|-aat?\b|"
     r"/departments?/[^/]+|/disciplines?/[^/]+", re.I)
+# "/administration" is a section of its own (the college's administrators), never a word that
+# begins a program's address: Mt. San Jacinto's /administration-justice/administration-justice-as/
+# and Santa Barbara City's /justice-studies/administration-justice-ast/ were both dropped, so
+# every Administration of Justice program at the two colleges lost its own page to a C-ID chart
+# or another degree (sitemap read 39770285975, S447).
 NOT_PROGRAM_PATH = re.compile(
     r"course-?descriptions?|/courses?/|coursesaz|/archive|/previous|/policies|/policy|"
     r"/services|/student-services|/admission|/calendar|/faculty|/staff|/search|/pdf/|"
-    r"\.pdf$|/general-information|/administration|/glossary|/index\.html?$|/addend", re.I)
+    r"\.pdf$|/general-information|/administration(?=/|$)|/glossary|/index\.html?$|/addend", re.I)
 
 
 # ── the college's programs, from the state's files ─────────────────────────

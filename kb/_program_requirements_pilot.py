@@ -651,7 +651,12 @@ INDEX_SUBJECTS = 40   # a tab panel naming courses in more subjects than this is
 # its Requirements tab read as naming no course and was dropped (S382). The Ventura district
 # letters each number by campus (Moorpark's ANCT M01A, Oxnard's R, Ventura's V), and its tabs
 # were dropped the same way (page read 39595760314, S442), so any one letter may lead.
-SUBJECT_TOKEN = re.compile(r"\b([A-Z][A-Z&]{1,7})[ \u00a0]?[A-Z]?\d{1,4}[A-Z]?\b")
+# Mt. San Jacinto joins subject and number with a hyphen (ANTH-102, ANTH-C1001L): its
+# Requirements tab read as naming no course and was dropped, while its Program Map tab, a
+# sample sequence, was kept, so 85 of its 99 found programs read the whole hidden page and
+# Anthropology AA-T lost its own page to the general education pages (page read
+# 39773199040, S447).
+SUBJECT_TOKEN = re.compile(r"\b([A-Z][A-Z&]{1,7})[ \u00a0-]?[A-Z]?\d{1,4}[A-Z]?\b")
 
 
 # MiraCosta's Degrees tab names no course: it lists each degree by title and says the degree
