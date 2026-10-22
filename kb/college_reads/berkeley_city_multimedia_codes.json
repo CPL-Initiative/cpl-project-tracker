@@ -1,5 +1,5 @@
 {
- "_readme": "S447 SkyBrittlebush, 2026-10-22. Berkeley City's capture (run on main, 2026-10-16) found 67 of 97 programs; all 27 not found are Multimedia Arts programs under one section (39966), and each near miss says the page's code tokens name few or none of the listed courses (Digital Photography 0 of 15, Motion Graphics 0 of 16). The state's file lists them as MMDI005, MMDI015A, MM/DI 22, MMART 197. This read loads two of those pages as the capture does (the catalog's own _getPage JSON) to see how the catalog prints the codes. Two loads, no model call. Read 1 (run 39786898807) showed each program page holds only its header and a tab list (Digital Photography's child 40322, Motion Graphics's 40272); read 2 loads those children and their navigation, where the course lists sit.",
+ "_readme": "S447 SkyBrittlebush, 2026-10-22. Berkeley City's capture (run on main, 2026-10-16) found 67 of 97 programs; all 27 not found are Multimedia Arts programs under one section (39966), and each near miss says the page's code tokens name few or none of the listed courses (Digital Photography 0 of 15, Motion Graphics 0 of 16). The state's file lists them as MMDI005, MMDI015A, MM/DI 22, MMART 197. This read loads two of those pages as the capture does (the catalog's own _getPage JSON) to see how the catalog prints the codes. Two loads, no model call. Read 1 (run 39786898807) showed each program page holds only its header and a tab list (Digital Photography's child 40322, Motion Graphics's 40272); read 2 loads those children and their navigation, where the course lists sit. Read 2 (run 39787382470) found each page's tab list holds Summary and Requirements (40324 for Digital Photography, 40274 for Motion Graphics); read 3 loads the two Requirements tabs.",
  "college": "Berkeley City College",
  "questions": {
   "printed_codes": "How the Multimedia Arts program pages print their course codes, beside the state's MMDI005 and MM/DI 22."
@@ -14,19 +14,13 @@
    "answers": [
     "printed_codes"
    ],
-   "url": "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40322"
+   "url": "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40324"
   },
   {
    "answers": [
     "printed_codes"
    ],
-   "url": "https://bcc.curriqunet.com/Catalog/_getNavigation?id=10327&parentId=40322"
-  },
-  {
-   "answers": [
-    "printed_codes"
-   ],
-   "url": "https://bcc.curriqunet.com/Catalog/_getNavigation?id=10327&parentId=40272"
+   "url": "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40274"
   }
  ]
 }
