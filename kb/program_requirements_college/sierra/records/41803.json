@@ -1,0 +1,215 @@
+{
+ "college": "Sierra College",
+ "control_number": "41803",
+ "shape": "certificate",
+ "title": "Web and Interaction Design",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12420,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12420,
+    "output_tokens": 1637,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1637,
+  "output_tokens_details": {
+   "thinking_tokens": 522
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08242,
+ "ms": 14188,
+ "seconds": 14.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 14,
+   "share": 0.0,
+   "missing": [
+    "AAD12",
+    "AAD13",
+    "AAD44",
+    "AAD52",
+    "AAD60",
+    "AAD62",
+    "AAD75",
+    "AAD85",
+    "AAD86",
+    "AAD87",
+    "AAD90",
+    "AAD95",
+    "COMM12",
+    "PHOT75"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Applied Art and Design—Web and Interaction Design",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Generate informed design solutions by applying the elements and principles of design to enhance the concepts and content through the application of the design process.",
+    "Prove a command of industry-standard software, tools, and practices in preparation for entry into the industry.",
+    "Optimize designs for various delivery methods such as print or screen, utilizing the appropriate formats and technologies as required.",
+    "Critique the application of the elements and principles of design as applied to course-related creative projects as well as to contemporary and historical works, using relevant terminology.",
+    "Develop a portfolio consisting of work samples that illustrate the styles, mediums, skills, talents, and subject area of interest to the student.",
+    "Explain the key principles of ethical imaging including the use and application of Artificial Intelligence, copyright, Creative Commons, fair use, and public domain; apply these principles appropriately in creative projects."
+   ],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AAD 12",
+    "why": "certificate section cut off; named only in the AS degree and other sections"
+   },
+   {
+    "code": "AAD 13",
+    "why": "certificate section cut off; named only in the AS degree and other sections"
+   },
+   {
+    "code": "AAD 44",
+    "why": "certificate section cut off; named only in the AS degree and other sections"
+   },
+   {
+    "code": "AAD 52",
+    "why": "certificate section cut off; named only in the AS degree and other sections"
+   },
+   {
+    "code": "AAD 60",
+    "why": "certificate section cut off; named only in the AS degree and other sections"
+   },
+   {
+    "code": "AAD 62",
+    "why": "certificate section cut off; named only in the AS degree and other sections"
+   },
+   {
+    "code": "AAD 75",
+    "why": "certificate section cut off; named only in the AS degree and other sections"
+   },
+   {
+    "code": "AAD 85",
+    "why": "certificate section cut off; named only in the AS degree and other sections"
+   },
+   {
+    "code": "AAD 86",
+    "why": "certificate section cut off; named only in the AS degree and other sections"
+   },
+   {
+    "code": "AAD 87",
+    "why": "certificate section cut off; named only in the AS degree and other sections"
+   },
+   {
+    "code": "AAD 90",
+    "why": "certificate section cut off; named only in the AS degree and other sections"
+   },
+   {
+    "code": "AAD 95",
+    "why": "certificate section cut off; named only in other certificates' sections"
+   },
+   {
+    "code": "COMM 12",
+    "why": "certificate section cut off; named only as cross-listing in other sections"
+   },
+   {
+    "code": "PHOT 75",
+    "why": "certificate section cut off; named only as cross-listing in other sections"
+   }
+  ],
+  "notes": [
+   "The catalog text is truncated in the middle of the Illustration Certificate of Achievement section; the Web and Interaction Design Certificate of Achievement section (listed under Certificates of Achievement) does not appear in the text, so no blocks or total could be recorded. A reviewer should obtain the full page.",
+   "The AS Degree in Web and Interaction Design (27 units) is printed but was not used, since it is a different award.",
+   "The Program Student Learning Outcomes are printed once on the department's outcomes tab for the department's programs as a whole; they were recorded on the assumption this certificate shares them."
+  ]
+ },
+ "extracted_run": "39709837031"
+}

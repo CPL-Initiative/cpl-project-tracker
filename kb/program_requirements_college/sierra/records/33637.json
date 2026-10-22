@@ -1,0 +1,244 @@
+{
+ "college": "Sierra College",
+ "control_number": "33637",
+ "shape": "adt",
+ "title": "Chemistry",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.sierracollege.edu/departments/chemistry/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13087,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13087,
+    "output_tokens": 1909,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1909,
+  "output_tokens_details": {
+   "thinking_tokens": 732
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09053,
+ "ms": 16602,
+ "seconds": 17.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    35.0,
+    38.0
+   ],
+   "stated": [
+    37.0,
+    38.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 35.0-38.0; the catalog states 37.0-38.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate proficiency in chemistry concepts by scoring above the national median in the subject matter ACS (American Chemical Society) exams.",
+    "Demonstrate proficiency in scientific communication.",
+    "Apply critical thinking skills to problem solving."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 37,
+     "max": 38
+    },
+    "courses": [
+     {
+      "code": "CHEM 0001A",
+      "units": 5,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "CHEM 0003A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 0003B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 0001B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 0012A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 0012B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0205",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0205L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0210L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 0030",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 0031",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CHEM 0001A row prints 5-6 units; the alternative is the pair CHEM 0003A & CHEM 0003B (both required together). The catalog prints no individual units for CHEM 0003A/0003B, so their units are null (closed list stores 3 each).",
+   "Catalog codes PHYS 0205, PHYS 0210, MATH 0030, MATH 0031 were matched to closed-list PHYS 205, PHYS 210, MATH 30, MATH 31 (zero-padding difference only); not flagged as catalog additions.",
+   "The page's 'Total Units 37-38' is recorded as the major total and the block's stated total.",
+   "The sentence 'students must complete 60 CSU-transferable semester units' is the standard ADT requirement, not a printed degree total line; degree_total left null. Reviewer may check.",
+   "CSU GE is stated as NOT an option; only Cal-GETC applies. No GE units printed.",
+   "The PSLOs come from the page's single outcomes tab shared by the department page (which also lists the Chemistry AS and UCTP); recorded for this award as the shared program outcomes list.",
+   "Other sections on the page (Chemistry AS Degree, UC Transfer Pathway) were not read for this record."
+  ]
+ },
+ "extracted_run": "39709837031"
+}
