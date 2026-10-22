@@ -97,36 +97,39 @@
   "title": "IT: IT Technician",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "IT100",
-   "IT105",
-   "IT110",
-   "IT15",
-   "IT95"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/infotech/",
-   "title": "Information Technology | Sierra College Catalog",
-   "h1": " Information Technology",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 16979
+  "text_chars": 0
  },
  {
   "control_number": "04281",
   "title": "Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHYS210",
+   "PHYS210L",
+   "PHYS215",
+   "PHYS215L"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/engineering/",
+   "title": "Engineering | Sierra College Catalog",
+   "h1": " Engineering",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 15914
  },
  {
   "control_number": "04288",
@@ -157,12 +160,32 @@
   "title": "Studio Art",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART12A",
+   "ART12B",
+   "ART2",
+   "ART3",
+   "ART7A",
+   "ART7B",
+   "ART8A",
+   "ART9A",
+   "ART9B"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/art/",
+   "title": "Art | Sierra College Catalog",
+   "h1": " Art",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "aa"
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 17001
  },
  {
   "control_number": "04292",
@@ -253,24 +276,12 @@
   "title": "Fire Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 0.714,
-  "codes_found": [
-   "FIRE1",
-   "FIRE170",
-   "FIRE241",
-   "FIRE4",
-   "FIRE75"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/fire-technology/",
-   "title": "Fire Technology | Sierra College Catalog",
-   "h1": " Fire Technology",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 16576
+  "text_chars": 0
  },
  {
   "control_number": "04311",
@@ -289,24 +300,12 @@
   "title": "IT: Business Information Worker",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "IT15",
-   "IT55",
-   "IT60",
-   "IT65",
-   "IT95"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/infotech/",
-   "title": "Information Technology | Sierra College Catalog",
-   "h1": " Information Technology",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 16979
+  "text_chars": 0
  },
  {
   "control_number": "07964",
@@ -345,7 +344,7 @@
   "title": "Photography",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "AAD75",
@@ -356,7 +355,11 @@
    "title": "Photography | Sierra College Catalog",
    "h1": " Photography",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
   },
   "listed": 2,
   "text_chars": 16989
@@ -378,21 +381,12 @@
   "title": "Applied Art and Design: Graphic Design",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "AAD44",
-   "AAD86"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
-   "title": "Applied Art and Design | Sierra College Catalog",
-   "h1": " Applied Art and Design",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 17084
+  "text_chars": 0
  },
  {
   "control_number": "09789",
@@ -423,20 +417,12 @@
   "title": "Computer Science: Computer Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "CSCI50"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/computer-science/",
-   "title": "Computer Science | Sierra College Catalog",
-   "h1": " Computer Science",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 9206
+  "text_chars": 0
  },
  {
   "control_number": "10509",
@@ -551,20 +537,12 @@
   "title": "Computer Science: Computer Science",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "CSCI50"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/computer-science/",
-   "title": "Computer Science | Sierra College Catalog",
-   "h1": " Computer Science",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 9206
+  "text_chars": 0
  },
  {
   "control_number": "10827",
@@ -639,22 +617,12 @@
   "title": "Fire Technology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 0.6,
-  "codes_found": [
-   "FIRE170",
-   "FIRE4",
-   "FIRE75"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/fire-technology/",
-   "title": "Fire Technology | Sierra College Catalog",
-   "h1": " Fire Technology",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 16576
+  "text_chars": 0
  },
  {
   "control_number": "10855",
@@ -817,31 +785,12 @@
   "title": "IT: Cybersecurity",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "IT100",
-   "IT105",
-   "IT110",
-   "IT115",
-   "IT120",
-   "IT140",
-   "IT145",
-   "IT150",
-   "IT165",
-   "IT60",
-   "IT75",
-   "IT95"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/infotech/",
-   "title": "Information Technology | Sierra College Catalog",
-   "h1": " Information Technology",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 16979
+  "text_chars": 0
  },
  {
   "control_number": "12058",
@@ -908,12 +857,30 @@
   "title": "Deaf Studies - American Sign Language",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFST1",
+   "DFST10",
+   "DFST2",
+   "DFST28",
+   "DFST3",
+   "DFST4",
+   "DFST95"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/deaf-studies/",
+   "title": "Deaf Studies | Sierra College Catalog",
+   "h1": " Deaf Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.4,
+    "section": "aa"
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 8682
  },
  {
   "control_number": "15070",
@@ -932,22 +899,12 @@
   "title": "Interdisciplinary Entrepreneurship",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "BUS28",
-   "BUS95",
-   "IT60"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/business/",
-   "title": "Business | Sierra College Catalog",
-   "h1": " Business",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 16644
+  "text_chars": 0
  },
  {
   "control_number": "15562",
@@ -1002,7 +959,7 @@
   "title": "Nutrition and Fitness",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 0.923,
   "codes_found": [
    "KIN10",
@@ -1023,7 +980,11 @@
    "title": "Kinesiology | Sierra College Catalog",
    "h1": " Kinesiology",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
   },
   "listed": 13,
   "text_chars": 16702
@@ -1033,12 +994,26 @@
   "title": "Psychology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYC107",
+   "PSYC142",
+   "PSYC160"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/psychology/",
+   "title": "Psychology | Sierra College Catalog",
+   "h1": " Psychology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 15924
  },
  {
   "control_number": "17909",
@@ -1057,12 +1032,27 @@
   "title": "Arts and Cultures",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FREN3",
+   "FREN4",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/liberal-arts/",
+   "title": "Liberal Arts | Sierra College Catalog",
+   "h1": " Liberal Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "aa"
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 4033
  },
  {
   "control_number": "19205",
@@ -1117,7 +1107,7 @@
   "title": "Environmental Sciences",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ESS13"
@@ -1127,7 +1117,11 @@
    "title": "Environmental Sciences and Sustainability | Sierra College Catalog",
    "h1": " Environmental Sciences and Sustainability",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
   },
   "listed": 1,
   "text_chars": 14024
@@ -1137,7 +1131,7 @@
   "title": "Sustainable Agriculture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 0.923,
   "codes_found": [
    "AGRI156",
@@ -1158,7 +1152,11 @@
    "title": "Agriculture | Sierra College Catalog",
    "h1": " Agriculture",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa"
+   }
   },
   "listed": 13,
   "text_chars": 16465
@@ -1180,7 +1178,7 @@
   "title": "General Business",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS28",
@@ -1191,7 +1189,11 @@
    "title": "Business | Sierra College Catalog",
    "h1": " Business",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa"
+   }
   },
   "listed": 2,
   "text_chars": 16644
@@ -1243,22 +1245,12 @@
   "title": "Interdisciplinary Entrepreneurship",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "BUS28",
-   "BUS95",
-   "IT60"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/business/",
-   "title": "Business | Sierra College Catalog",
-   "h1": " Business",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 16644
+  "text_chars": 0
  },
  {
   "control_number": "21526",
@@ -1298,7 +1290,7 @@
   "title": "IT: IT Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "IT100",
@@ -1312,7 +1304,11 @@
    "title": "Information Technology | Sierra College Catalog",
    "h1": " Information Technology",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
   },
   "listed": 5,
   "text_chars": 16979
@@ -1322,66 +1318,24 @@
   "title": "Applied Art and Design: Digital Media",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 0.958,
-  "codes_found": [
-   "AAD12",
-   "AAD28",
-   "AAD44",
-   "AAD52",
-   "AAD54",
-   "AAD60",
-   "AAD62",
-   "AAD70",
-   "AAD71",
-   "AAD73",
-   "AAD75",
-   "AAD76",
-   "AAD79",
-   "AAD82",
-   "AAD83",
-   "AAD85",
-   "AAD86",
-   "AAD89",
-   "AAD93",
-   "AAD95",
-   "ART4A",
-   "ART5A",
-   "ART6C"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
-   "title": "Applied Art and Design | Sierra College Catalog",
-   "h1": " Applied Art and Design",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 24,
-  "text_chars": 17084
+  "text_chars": 0
  },
  {
   "control_number": "21537",
   "title": "IT: Business Information Worker",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "IT15",
-   "IT55",
-   "IT60",
-   "IT65",
-   "IT95"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/infotech/",
-   "title": "Information Technology | Sierra College Catalog",
-   "h1": " Information Technology",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 16979
+  "text_chars": 0
  },
  {
   "control_number": "21545",
@@ -1400,78 +1354,61 @@
   "title": "IT: Cybersecurity",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "CSCI12",
-   "CSCI50",
-   "IT100",
-   "IT105",
-   "IT110",
-   "IT115",
-   "IT120",
-   "IT125",
-   "IT140",
-   "IT145",
-   "IT15",
-   "IT150",
-   "IT165",
-   "IT55",
-   "IT60",
-   "IT75",
-   "IT95"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/infotech/",
-   "title": "Information Technology | Sierra College Catalog",
-   "h1": " Information Technology",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 16979
+  "text_chars": 0
  },
  {
   "control_number": "21568",
   "title": "Computer Science - Embedded Systems",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 0.8,
-  "codes_found": [
-   "CSCI12",
-   "CSCI26",
-   "CSCI39",
-   "CSCI46"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/computer-science/",
-   "title": "Computer Science | Sierra College Catalog",
-   "h1": " Computer Science",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 11253
+  "text_chars": 0
  },
  {
   "control_number": "21569",
   "title": "Deaf Studies - American Sign Language",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFST1",
+   "DFST10",
+   "DFST2",
+   "DFST28",
+   "DFST3",
+   "DFST4",
+   "DFST95"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/deaf-studies/",
+   "title": "Deaf Studies | Sierra College Catalog",
+   "h1": " Deaf Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.4,
+    "section": "coa"
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 8682
  },
  {
   "control_number": "21570",
   "title": "Mechatronics Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "MECH10",
@@ -1487,7 +1424,11 @@
    "title": "Mechatronics | Sierra College Catalog",
    "h1": " Mechatronics",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa"
+   }
   },
   "listed": 7,
   "text_chars": 10055
@@ -1497,24 +1438,12 @@
   "title": "Drafting and Engineering Support: Architectural/Civil",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 0.625,
-  "codes_found": [
-   "DES10",
-   "DES20",
-   "DES21",
-   "DES22",
-   "DES40"
-  ],
-  "source": {
-   "url": "https://catalog.sierracollege.edu/departments/buildingindustries/",
-   "title": "Building Industries | Sierra College Catalog",
-   "h1": " Building Industries",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 7094
+  "text_chars": 0
  },
  {
   "control_number": "21575",
@@ -1533,7 +1462,7 @@
   "title": "Photography",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 0.96,
   "codes_found": [
    "AAD76",
@@ -1566,7 +1495,11 @@
    "title": "Photography | Sierra College Catalog",
    "h1": " Photography",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "coa"
+   }
   },
   "listed": 25,
   "text_chars": 16989
@@ -1600,7 +1533,7 @@
   "title": "Fire Technology",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 0.714,
   "codes_found": [
    "FIRE170",
@@ -1614,7 +1547,11 @@
    "title": "Fire Technology | Sierra College Catalog",
    "h1": " Fire Technology",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "coa"
+   }
   },
   "listed": 8,
   "text_chars": 16576
@@ -1624,7 +1561,7 @@
   "title": "Recreation Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "COMM3",
@@ -1645,7 +1582,11 @@
    "title": "Recreation Management | Sierra College Catalog",
    "h1": " Recreation Management",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa"
+   }
   },
   "listed": 12,
   "text_chars": 12807
@@ -1667,7 +1608,7 @@
   "title": "Sociology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "SOC1",
@@ -1685,7 +1626,11 @@
    "title": "Sociology | Sierra College Catalog",
    "h1": " Sociology",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
   },
   "listed": 9,
   "text_chars": 14063
@@ -1695,12 +1640,33 @@
   "title": "Political Science",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLS12",
+   "POLS16",
+   "POLS2",
+   "POLS27",
+   "POLS3",
+   "POLS4",
+   "POLS7",
+   "POLS8",
+   "POLS9",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/political-science/",
+   "title": "Political Science | Sierra College Catalog",
+   "h1": " Political Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 9496
  },
  {
   "control_number": "31226",
@@ -1719,67 +1685,179 @@
   "title": "English",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL19",
+   "ENGL20",
+   "ENGL21",
+   "ENGL24",
+   "ENGL29",
+   "ENGL30A",
+   "ENGL30B",
+   "ENGL32",
+   "ENGL33",
+   "ENGL34",
+   "ENGL40",
+   "ENGL46A",
+   "ENGL46B",
+   "ENGL47A",
+   "ENGL47B",
+   "ENGL48",
+   "ENGLC1001",
+   "ENGLC1002"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/english/",
+   "title": "English | Sierra College Catalog",
+   "h1": " English",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 16505
  },
  {
   "control_number": "31259",
   "title": "History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST19A",
+   "HIST19B",
+   "HIST20",
+   "HIST21",
+   "HIST22",
+   "HIST23",
+   "HIST24",
+   "HIST27",
+   "HIST4A",
+   "HIST4B",
+   "HIST50",
+   "HIST51",
+   "HISTC1001",
+   "HISTC1002"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/history/",
+   "title": "History | Sierra College Catalog",
+   "h1": " History",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 16607
  },
  {
   "control_number": "31260",
   "title": "Early Childhood Education",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "HDEV25",
+   "HDEV4",
+   "HDEV9"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/student-resources/general-education/associate-degree-requirements/",
+   "title": "Sierra College Associate Degree Requirements 2026-2027 | Sierra College Catalog",
+   "h1": "Sierra College Associate Degree Requirements 2026-2027",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": null
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 4169
  },
  {
   "control_number": "31261",
   "title": "Geology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM3A",
+   "CHEM3B",
+   "ESCI1",
+   "ESCI1L",
+   "ESCI3",
+   "ESCI3L",
+   "MATH30",
+   "MATH31"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/earth-science/",
+   "title": "Earth Science | Sierra College Catalog",
+   "h1": " Earth Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "adt"
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 11236
  },
  {
   "control_number": "31837",
   "title": "Philosophy",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHIL10",
+   "PHIL12",
+   "PHIL13",
+   "PHIL2",
+   "PHIL20",
+   "PHIL21",
+   "PHIL27",
+   "PHIL30",
+   "PHIL4",
+   "PHIL6",
+   "PHIL60",
+   "PHIL65"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/philosophy/",
+   "title": "Philosophy | Sierra College Catalog",
+   "h1": " Philosophy",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 11606
  },
  {
   "control_number": "31922",
   "title": "Fashion Industries",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "FASH1",
@@ -1799,7 +1877,11 @@
    "title": "Fashion | Sierra College Catalog",
    "h1": " Fashion",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "as"
+   }
   },
   "listed": 11,
   "text_chars": 15372
@@ -1809,7 +1891,7 @@
   "title": "Fashion Industries",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "FASH1",
@@ -1829,7 +1911,11 @@
    "title": "Fashion | Sierra College Catalog",
    "h1": " Fashion",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa"
+   }
   },
   "listed": 11,
   "text_chars": 15372
@@ -1839,24 +1925,88 @@
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.871,
+  "codes_found": [
+   "ART12A",
+   "ART12B",
+   "ART17",
+   "ART18A",
+   "ART18B",
+   "ART19",
+   "ART2",
+   "ART20",
+   "ART22",
+   "ART3",
+   "ART32A",
+   "ART40A",
+   "ART40B",
+   "ART41",
+   "ART4A",
+   "ART4B",
+   "ART5A",
+   "ART5B",
+   "ART6C",
+   "ART73",
+   "ART7A",
+   "ART7B",
+   "ART8A",
+   "ART8B",
+   "ART9A",
+   "ARTHC1100",
+   "PHOT60A"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/art/",
+   "title": "Art | Sierra College Catalog",
+   "h1": " Art",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "adt"
+   }
+  },
   "listed": 31,
-  "text_chars": 0
+  "text_chars": 17001
  },
  {
   "control_number": "32008",
   "title": "Anthropology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ANTH1",
+   "ANTH10",
+   "ANTH1L",
+   "ANTH2",
+   "ANTH27",
+   "ANTH5",
+   "ANTH6",
+   "ANTH7",
+   "ANTH9",
+   "ESCI1",
+   "ESCI10",
+   "ESCI10L",
+   "ESCI1L",
+   "PHIL65",
+   "SOC15"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/anthropology/",
+   "title": "Anthropology | Sierra College Catalog",
+   "h1": " Anthropology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 11089
  },
  {
   "control_number": "32010",
@@ -1887,48 +2037,137 @@
   "title": "Geography",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ANTH2",
+   "ESCI1",
+   "GEOG1",
+   "GEOG16",
+   "GEOG1L",
+   "GEOG2",
+   "GEOG3",
+   "GEOG4",
+   "GEOG5",
+   "GEOG90"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/geography/",
+   "title": "Geography | Sierra College Catalog",
+   "h1": " Geography",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 13756
  },
  {
   "control_number": "32653",
   "title": "Economics",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "BUS201",
+   "BUS203",
+   "BUS265",
+   "BUS270",
+   "CSCI10",
+   "CSCI12",
+   "CSCI66",
+   "ECONC2001",
+   "ECONC2002",
+   "IT15",
+   "MATH16A",
+   "MATH16B",
+   "MATH30",
+   "MATH31",
+   "MATH32",
+   "MATH42"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/economics/",
+   "title": "Economics | Sierra College Catalog",
+   "h1": " Economics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 5214
  },
  {
   "control_number": "32722",
   "title": "Computer Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI12",
+   "CSCI13",
+   "CSCI26",
+   "CSCI39",
+   "PHYS205",
+   "PHYS205L",
+   "PHYS210",
+   "PHYS210L"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/computer-science/",
+   "title": "Computer Science | Sierra College Catalog",
+   "h1": " Computer Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 11253
  },
  {
   "control_number": "32725",
   "title": "Theatre Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA10A",
+   "THEA10B",
+   "THEA13",
+   "THEA14",
+   "THEA15",
+   "THEA17",
+   "THEA21",
+   "THEA22A",
+   "THEA22B",
+   "THEA22C",
+   "THEA22D"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/thea/",
+   "title": "Theatre Arts | Sierra College Catalog",
+   "h1": " Theatre Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 17119
  },
  {
   "control_number": "32726",
@@ -1959,96 +2198,276 @@
   "title": "Lesbian, Gay, Bisexual, and Transgender Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH27",
+   "ENGL16",
+   "HIST51",
+   "LGBT1",
+   "LGBT2",
+   "PSYC130",
+   "PSYCC1000",
+   "SOC1",
+   "SOC27",
+   "SOC3",
+   "WMST1"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/lesbian-gay-bisexual-transgender-studies/",
+   "title": "Lesbian, Gay, Bisexual and Transgender Studies | Sierra College Catalog",
+   "h1": " Lesbian, Gay, Bisexual and Transgender Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 5744
  },
  {
   "control_number": "33224",
   "title": "Construction Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "MATH16A",
+   "MATH30",
+   "PHYS105L"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/buildingindustries/",
+   "title": "Building Industries | Sierra College Catalog",
+   "h1": " Building Industries",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as"
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 4756
  },
  {
   "control_number": "33293",
   "title": "Music",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS3A",
+   "MUS3B",
+   "MUS42",
+   "MUS46",
+   "MUS47",
+   "MUS48",
+   "MUS49",
+   "MUS4A",
+   "MUS4B",
+   "MUS50",
+   "MUS51",
+   "MUS54",
+   "MUS6A",
+   "MUS6B",
+   "MUS9A",
+   "MUS9B"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/music/",
+   "title": "Music | Sierra College Catalog",
+   "h1": " Music",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 16535
  },
  {
   "control_number": "33637",
   "title": "Chemistry",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM3A",
+   "CHEM3B",
+   "MATH30",
+   "MATH31",
+   "PHYS205",
+   "PHYS205L",
+   "PHYS210",
+   "PHYS210L"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/chemistry/",
+   "title": "Chemistry | Sierra College Catalog",
+   "h1": " Chemistry",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 16356
  },
  {
   "control_number": "33639",
   "title": "Biology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1",
+   "BIOL2",
+   "BIOL3",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM3A",
+   "CHEM3B",
+   "MATH16A",
+   "MATH30",
+   "PHYS105L",
+   "PHYS110",
+   "PHYS110L",
+   "PHYS205",
+   "PHYS205L",
+   "PHYS210",
+   "PHYS210L"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/biological-sciences/",
+   "title": "Biological Sciences | Sierra College Catalog",
+   "h1": " Biological Sciences",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "adt"
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 16558
  },
  {
   "control_number": "33646",
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL4",
+   "BIOL6",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM3A",
+   "CHEM3B",
+   "NUTF10",
+   "NUTF5",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/nutrition-food-science/",
+   "title": "Nutrition and Food Science | Sierra College Catalog",
+   "h1": " Nutrition and Food Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "adt"
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 6300
  },
  {
   "control_number": "33752",
   "title": "Spanish",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH6",
+   "COMM7",
+   "HIST23",
+   "SOC3",
+   "SPAN1",
+   "SPAN17",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/spanish/",
+   "title": "Spanish | Sierra College Catalog",
+   "h1": " Spanish",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 10375
  },
  {
   "control_number": "35101",
   "title": "Health Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "BIOL4",
+   "BIOL6",
+   "CHEM2A",
+   "CHEM2B",
+   "ECONC2002",
+   "HSCI3",
+   "HSCI50",
+   "HSCI7",
+   "NUTF10",
+   "PHYS10",
+   "PHYS105L",
+   "PSYC108",
+   "PSYC150",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/health-sciences/",
+   "title": "Health Sciences | Sierra College Catalog",
+   "h1": " Health Sciences",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "as"
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 17072
  },
  {
   "control_number": "35832",
@@ -2067,7 +2486,7 @@
   "title": "Photography and Video",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2079,7 +2498,7 @@
   "title": "Photography and Video",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2091,19 +2510,45 @@
   "title": "Allied Health - Pre-Nursing Option",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "ANTH2",
+   "BIOL4",
+   "BIOL5",
+   "BIOL6",
+   "COMMC1000",
+   "HDEV1",
+   "MATH16A",
+   "MATH16B",
+   "MATH24",
+   "MATH30",
+   "MATH31",
+   "MATH42",
+   "NUTF10",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/nursing-registered/",
+   "title": "Nursing, Registered | Sierra College Catalog",
+   "h1": " Nursing, Registered",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.25,
+    "section": null
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 14765
  },
  {
   "control_number": "36719",
   "title": "Medical Assisting",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2116,8 +2561,9 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.742,
+  "coverage": 0.935,
   "codes_found": [
+   "ALH20",
    "ANTH2",
    "BIOL1",
    "BIOL4",
@@ -2136,48 +2582,113 @@
    "COMM7",
    "COMM8",
    "COMMC1000",
+   "CSCI10",
    "HDEV1",
+   "HSCI3",
    "NUTF10",
+   "NUTF5",
    "PHYS10",
    "PHYS105",
-   "PSYCC1000"
+   "PHYS105L",
+   "PSYCC1000",
+   "SOC1"
   ],
   "source": {
-   "url": "https://catalog.sierracollege.edu/student-resources/general-education/associate-degree-requirements/",
-   "title": "Sierra College Associate Degree Requirements 2026-2027 | Sierra College Catalog",
-   "h1": "Sierra College Associate Degree Requirements 2026-2027",
-   "text_from": "innerText",
+   "url": "https://catalog.sierracollege.edu/departments/alh/",
+   "title": "Allied Health | Sierra College Catalog",
+   "h1": " Allied Health",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.333
+    "title": 0.667,
+    "section": "coa"
    }
   },
   "listed": 31,
-  "text_chars": 16000
+  "text_chars": 16416
  },
  {
   "control_number": "36923",
   "title": "Allied Health - General Option",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ALH20",
+   "ANTH2",
+   "BIOL1",
+   "BIOL4",
+   "BIOL55",
+   "BIOL56",
+   "BIOL6",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM2A",
+   "CHEM2B",
+   "CHEM3A",
+   "CHEM3B",
+   "COMM3",
+   "COMM5",
+   "COMM7",
+   "COMM8",
+   "COMMC1000",
+   "CSCI10",
+   "HDEV1",
+   "HSCI3",
+   "NUTF10",
+   "NUTF5",
+   "PHYS10",
+   "PHYS105",
+   "PHYS105L",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/alh/",
+   "title": "Allied Health | Sierra College Catalog",
+   "h1": " Allied Health",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.667,
+    "section": "as"
+   }
+  },
   "listed": 30,
-  "text_chars": 0
+  "text_chars": 16416
  },
  {
   "control_number": "37168",
   "title": "Media and Public Event Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS15",
+   "MUS16",
+   "MUS18",
+   "MUS25",
+   "MUS29",
+   "MUS7",
+   "THEA14",
+   "THEA15",
+   "THEA22A"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/music/",
+   "title": "Music | Sierra College Catalog",
+   "h1": " Music",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 16446
  },
  {
   "control_number": "37688",
@@ -2196,12 +2707,33 @@
   "title": "Fashion Media",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AAD12",
+   "AAD70",
+   "AAD75",
+   "COMM12",
+   "FASH1",
+   "FASH2",
+   "FASH7",
+   "FASH8",
+   "PHOT60A",
+   "PHOT75"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/fashion/",
+   "title": "Fashion | Sierra College Catalog",
+   "h1": " Fashion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa"
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 11685
  },
  {
   "control_number": "37742",
@@ -2232,7 +2764,7 @@
   "title": "Entrepreneurship for Makers",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2256,19 +2788,38 @@
   "title": "Emergency Medical Sciences",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ALH20",
+   "BIOL55",
+   "HSCI3",
+   "HSCI30",
+   "HSCI50",
+   "HSCI7",
+   "PSYC108",
+   "PSYC150"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/health-sciences/",
+   "title": "Health Sciences | Sierra College Catalog",
+   "h1": " Health Sciences",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": "coa"
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 17072
  },
  {
   "control_number": "38372",
   "title": "Paramedicine",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2280,12 +2831,49 @@
   "title": "Chicana and Chicano Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.897,
+  "codes_found": [
+   "ADMJ58",
+   "ANTH2",
+   "ANTH27",
+   "ANTH4",
+   "ANTH7",
+   "HDEV25",
+   "HIST23",
+   "HIST27",
+   "HUM9",
+   "LGBT1",
+   "POLS27",
+   "POLS7",
+   "POLS8",
+   "PSYC127",
+   "PSYC130",
+   "SOC110",
+   "SOC27",
+   "SOC3",
+   "SPAN1",
+   "SPAN17",
+   "SPAN2",
+   "SPAN20",
+   "SPAN3",
+   "SPAN4",
+   "WMST1",
+   "WMST4"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/ethnic-studies/",
+   "title": "Ethnic Studies | Sierra College Catalog",
+   "h1": " Ethnic Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": "aa"
+   }
+  },
   "listed": 29,
-  "text_chars": 0
+  "text_chars": 13993
  },
  {
   "control_number": "38745",
@@ -2316,7 +2904,7 @@
   "title": "Construction Fundamentals",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2328,19 +2916,48 @@
   "title": "Fire Company Officer",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ77",
+   "BUS265",
+   "BUS276",
+   "BUS277",
+   "ENGL12",
+   "ENGLC1000",
+   "FIRE172",
+   "FIRE173",
+   "FIRE174",
+   "FIRE175",
+   "FIRE176",
+   "FIRE177",
+   "FIRE178",
+   "FIRE179",
+   "FIRE241",
+   "FIRE78",
+   "FIRE97",
+   "SPAN19"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/fire-technology/",
+   "title": "Fire Technology | Sierra College Catalog",
+   "h1": " Fire Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": "as"
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 16576
  },
  {
   "control_number": "38765",
   "title": "Fire Company Officer",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2364,19 +2981,39 @@
   "title": "ESL Intermediate-High Oral Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL810O",
+   "ESL812G",
+   "ESL812P",
+   "ESL812T",
+   "ESL820O",
+   "ESL822F",
+   "ESL822G",
+   "ESL830O",
+   "ESL832G"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/english-second-language/",
+   "title": "English as a Second Language | Sierra College Catalog",
+   "h1": " English as a Second Language",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 16914
  },
  {
   "control_number": "38991",
   "title": "ESL Intermediate-High Writing and Reading Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2400,199 +3037,583 @@
   "title": "UCTP: Chemistry",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM3A",
+   "CHEM3B",
+   "MATH30",
+   "MATH31",
+   "MATH32",
+   "MATH33",
+   "PHYS205",
+   "PHYS205L",
+   "PHYS210",
+   "PHYS210L",
+   "PHYS215",
+   "PHYS215L"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/natural-science/",
+   "title": "Natural Science | Sierra College Catalog",
+   "h1": " Natural Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 4653
  },
  {
   "control_number": "39514",
   "title": "Advanced Manufacturing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM4A",
+   "ADVM66",
+   "ADVM67",
+   "ADVM68"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/advanced-manufacturing/",
+   "title": "Advanced Manufacturing | Sierra College Catalog",
+   "h1": " Advanced Manufacturing",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 16590
  },
  {
   "control_number": "39602",
   "title": "Data Analytics",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BUS252",
+   "IT15",
+   "IT55",
+   "IT60",
+   "IT65",
+   "IT75",
+   "IT80",
+   "IT95"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/infotech/",
+   "title": "Information Technology | Sierra College Catalog",
+   "h1": " Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 16979
  },
  {
   "control_number": "39603",
   "title": "Data Analytics",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BUS252",
+   "IT15",
+   "IT55",
+   "IT60",
+   "IT65",
+   "IT75",
+   "IT80",
+   "IT95"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/infotech/",
+   "title": "Information Technology | Sierra College Catalog",
+   "h1": " Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as"
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 16979
  },
  {
   "control_number": "39604",
   "title": "Advanced Manufacturing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ADVM4A",
+   "ADVM66",
+   "ADVM67",
+   "ADVM68",
+   "DES3D",
+   "MECH4",
+   "WELD1A",
+   "WELD2A"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/advanced-manufacturing/",
+   "title": "Advanced Manufacturing | Sierra College Catalog",
+   "h1": " Advanced Manufacturing",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 16590
  },
  {
   "control_number": "39607",
   "title": "Network Technician",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT100",
+   "IT105",
+   "IT110",
+   "IT115",
+   "IT125",
+   "IT130",
+   "IT140",
+   "IT15",
+   "IT75",
+   "IT80",
+   "IT95"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/infotech/",
+   "title": "Information Technology | Sierra College Catalog",
+   "h1": " Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as"
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 16979
  },
  {
   "control_number": "39657",
   "title": "Network Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT100",
+   "IT105",
+   "IT110",
+   "IT115",
+   "IT125",
+   "IT130",
+   "IT140",
+   "IT15",
+   "IT75",
+   "IT80",
+   "IT95"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/infotech/",
+   "title": "Information Technology | Sierra College Catalog",
+   "h1": " Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 16979
  },
  {
   "control_number": "40181",
   "title": "Environmental Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "BIOL1",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM3A",
+   "CHEM3B",
+   "ECONC2001",
+   "ESCI1",
+   "ESCI1L",
+   "ESS1",
+   "GEOG1",
+   "GEOG1L",
+   "MATH30",
+   "PHYS105",
+   "PHYS105L",
+   "PHYS110L",
+   "PSYC142"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/environmental-studies-sustainability/",
+   "title": "Environmental Sciences and Sustainability | Sierra College Catalog",
+   "h1": " Environmental Sciences and Sustainability",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "adt"
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 16809
  },
  {
   "control_number": "40717",
   "title": "Environmental Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.98,
+  "codes_found": [
+   "AGRI198",
+   "ANTH2",
+   "BIOL14",
+   "BIOL16A",
+   "BIOL16B",
+   "BIOL16C",
+   "BIOL16D",
+   "BIOL16E",
+   "BIOL16G",
+   "BIOL16H",
+   "BIOL16I",
+   "BIOL16J",
+   "BIOL16K",
+   "BIOL16L",
+   "BIOL16M",
+   "BIOL16N",
+   "BIOL16O",
+   "BIOL16P",
+   "BIOL16Q",
+   "BIOL16R",
+   "BIOL16T",
+   "BIOL16U",
+   "BIOL16V",
+   "BIOL16W",
+   "BIOL16Y",
+   "BIOL16Z",
+   "BIOL17B",
+   "BIOL23",
+   "ECONC2001",
+   "ECONC2002",
+   "ESCI1",
+   "ESCI54B",
+   "ESCI54C",
+   "ESCI54D",
+   "ESCI54E",
+   "ESCI55C",
+   "ESCI55F",
+   "ESS1",
+   "ESS10",
+   "ESS1L",
+   "ESS6",
+   "ESS6F",
+   "ESS7",
+   "ESS8",
+   "GEOG1",
+   "GEOG2",
+   "PHIL60",
+   "SOC110"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/environmental-studies-sustainability/",
+   "title": "Environmental Sciences and Sustainability | Sierra College Catalog",
+   "h1": " Environmental Sciences and Sustainability",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 49,
-  "text_chars": 0
+  "text_chars": 16809
  },
  {
   "control_number": "40822",
   "title": "Automotive Basics",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO800",
+   "AUTO840"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/automotive-technology/",
+   "title": "Automotive Technology | Sierra College Catalog",
+   "h1": " Automotive Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": null
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 7114
  },
  {
   "control_number": "41040",
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "BUS201",
+   "BUS203",
+   "BUS260",
+   "BUS265",
+   "BUS270",
+   "BUS271",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH24",
+   "MATH42"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/business/",
+   "title": "Business | Sierra College Catalog",
+   "h1": " Business",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "adt"
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 16644
  },
  {
   "control_number": "41575",
   "title": "Web and Interaction Design",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "AAD12",
+   "AAD13",
+   "AAD28",
+   "AAD44",
+   "AAD60",
+   "AAD62",
+   "AAD70",
+   "AAD75",
+   "AAD85",
+   "AAD86",
+   "AAD87",
+   "AAD90",
+   "COMM12",
+   "PHOT75"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
+   "title": "Applied Art and Design | Sierra College Catalog",
+   "h1": " Applied Art and Design",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": "as"
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 17084
  },
  {
   "control_number": "41803",
   "title": "Web and Interaction Design",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AAD12",
+   "AAD13",
+   "AAD44",
+   "AAD52",
+   "AAD60",
+   "AAD62",
+   "AAD75",
+   "AAD85",
+   "AAD86",
+   "AAD87",
+   "AAD90",
+   "AAD95",
+   "COMM12",
+   "PHOT75"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
+   "title": "Applied Art and Design | Sierra College Catalog",
+   "h1": " Applied Art and Design",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": "coa"
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 17084
  },
  {
   "control_number": "42805",
   "title": "Communication Studies 2.0",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AAD12",
+   "COMM10",
+   "COMM12",
+   "COMM2",
+   "COMM3",
+   "COMM5",
+   "COMM6",
+   "COMM7",
+   "COMM70",
+   "COMM71",
+   "COMM72",
+   "COMM73",
+   "COMM8",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/communication-studies/",
+   "title": "Communication Studies | Sierra College Catalog",
+   "h1": " Communication Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 15145
  },
  {
   "control_number": "43870",
   "title": "Cloud Computing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT105",
+   "IT110",
+   "IT115",
+   "IT120",
+   "IT170",
+   "IT171",
+   "IT175",
+   "IT176",
+   "IT55",
+   "IT60",
+   "IT65",
+   "IT75"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/infotech/",
+   "title": "Information Technology | Sierra College Catalog",
+   "h1": " Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 16979
  },
  {
   "control_number": "43871",
   "title": "Cloud Computing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT105",
+   "IT110",
+   "IT115",
+   "IT120",
+   "IT170",
+   "IT171",
+   "IT175",
+   "IT176",
+   "IT55",
+   "IT60",
+   "IT65",
+   "IT75"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/infotech/",
+   "title": "Information Technology | Sierra College Catalog",
+   "h1": " Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as"
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 16979
  },
  {
   "control_number": "44028",
   "title": "ACE - Advanced ESL",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2604,7 +3625,7 @@
   "title": "Surgical Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2616,7 +3637,7 @@
   "title": "Paramedicine",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2628,108 +3649,301 @@
   "title": "Astronomy",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTR10",
+   "ASTR11",
+   "ASTR14",
+   "ASTR2",
+   "ASTR5",
+   "ASTR7",
+   "PHYS105",
+   "PHYS105L",
+   "PHYS110",
+   "PHYS110L",
+   "PHYS205",
+   "PHYS205L",
+   "PHYS210",
+   "PHYS210L",
+   "PHYS215",
+   "PHYS215L"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/astronomy/",
+   "title": "Astronomy | Sierra College Catalog",
+   "h1": " Astronomy",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 9773
  },
  {
   "control_number": "44981",
   "title": "Facilities Automation and Building Energy",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BI34",
+   "BI95",
+   "IT105",
+   "IT80",
+   "MECH25",
+   "MECH4",
+   "MECH54"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/buildingindustries/",
+   "title": "Building Industries | Sierra College Catalog",
+   "h1": " Building Industries",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.25,
+    "section": "coa"
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 16543
  },
  {
   "control_number": "45004",
   "title": "Hospitality Management",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS270",
+   "ECONC2001",
+   "MATH11",
+   "PSYC142",
+   "RECM10",
+   "RECM100",
+   "RECM120",
+   "RECM20",
+   "RECM40",
+   "RECM84",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/recreation-management/",
+   "title": "Recreation Management | Sierra College Catalog",
+   "h1": " Recreation Management",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "adt"
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 13044
  },
  {
   "control_number": "45200",
   "title": "Welding Industry Training",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD810",
+   "WELD811"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/welding-technology/",
+   "title": "Welding Technology | Sierra College Catalog",
+   "h1": " Welding Technology",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3885
  },
  {
   "control_number": "45624",
   "title": "Elementary Teacher Education: Integrated Programs",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "BIOL11",
+   "BIOL56",
+   "BIOL56L",
+   "COMMC1000",
+   "EDU10",
+   "ENGL44",
+   "ENGLC1000",
+   "ENGLC1002",
+   "ESCI10",
+   "ESCI10L",
+   "HDEV9",
+   "HIST50",
+   "HISTC1001",
+   "MATH17",
+   "MATH18",
+   "MATH19",
+   "MUS2",
+   "POLSC1000",
+   "THEA13"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/education/",
+   "title": "Education | Sierra College Catalog",
+   "h1": " Education",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.25,
+    "section": "adt"
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 8163
  },
  {
   "control_number": "45800",
   "title": "Chicana/o Studies, Latina/o Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETHN11",
+   "ETHN30",
+   "ETHN49",
+   "ETHN8",
+   "POLSC1000",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/ethnic-studies/",
+   "title": "Ethnic Studies | Sierra College Catalog",
+   "h1": " Ethnic Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "adt"
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 16575
  },
  {
   "control_number": "45833",
   "title": "Mathematics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI10",
+   "CSCI12",
+   "CSCI13",
+   "CSCI14",
+   "CSCI26",
+   "CSCI39",
+   "CSCI46",
+   "CSCI66",
+   "ENGR220",
+   "IT75",
+   "MATH30",
+   "MATH31",
+   "MATH32",
+   "MATH33",
+   "PHYS205",
+   "PHYS205L"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/mathematics/",
+   "title": "Mathematics | Sierra College Catalog",
+   "h1": " Mathematics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 16532
  },
  {
   "control_number": "45908",
   "title": "Data Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI12",
+   "CSCI13",
+   "CSCI14",
+   "CSCI52",
+   "CSCI66",
+   "MATH11",
+   "MATH30",
+   "MATH31",
+   "MATH34"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/mathematics/",
+   "title": "Mathematics | Sierra College Catalog",
+   "h1": " Mathematics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as"
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 16532
  },
  {
   "control_number": "46006",
   "title": "Forest Science and Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRI163",
+   "AGRI221",
+   "AGRI260",
+   "AGRI264",
+   "AGRI265",
+   "AGRI266",
+   "BIOL2",
+   "CHEM2A",
+   "ESS1",
+   "GEOG90",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/agriculture/",
+   "title": "Agriculture | Sierra College Catalog",
+   "h1": " Agriculture",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as"
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 16465
  },
  {
   "control_number": "46007",
@@ -2748,23 +3962,82 @@
   "title": "Physics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI12",
+   "CSCI13",
+   "CSCI14",
+   "CSCI27",
+   "CSCI46",
+   "CSCI66",
+   "ENGR220",
+   "MATH30",
+   "MATH31",
+   "MATH32",
+   "MATH33",
+   "PHYS205",
+   "PHYS205L",
+   "PHYS210",
+   "PHYS210L",
+   "PHYS215",
+   "PHYS215L"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/physics/",
+   "title": "Physics | Sierra College Catalog",
+   "h1": " Physics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt"
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 14064
  },
  {
   "control_number": "46286",
   "title": "Public Health",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL11",
+   "BIOL4",
+   "BIOL5",
+   "BIOL56",
+   "BIOL56L",
+   "BIOL6",
+   "CHEM1A",
+   "CHEM2A",
+   "CHEM3A",
+   "CHEM3B",
+   "HED101",
+   "HED102",
+   "HED113",
+   "HED2",
+   "MATH11",
+   "PSYC130",
+   "PSYC142",
+   "SOC15",
+   "SOC2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/health-education/",
+   "title": "Health Education | Sierra College Catalog",
+   "h1": " Health Education",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "adt"
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 7622
  }
 ]

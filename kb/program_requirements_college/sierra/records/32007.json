@@ -1,0 +1,400 @@
+{
+ "college": "Sierra College",
+ "control_number": "32007",
+ "shape": "adt",
+ "title": "Studio Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.sierracollege.edu/departments/art/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12658,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12658,
+    "output_tokens": 3368,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3368,
+  "output_tokens_details": {
+   "thinking_tokens": 1204
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11799,
+ "ms": 26534,
+ "seconds": 27.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 27,
+   "listed": 31,
+   "share": 0.871,
+   "missing": [
+    "ARHI120",
+    "ARHI130",
+    "ARHI140",
+    "ARHI150"
+   ],
+   "unexplained": [
+    "ARHI120",
+    "ARHI130",
+    "ARHI140",
+    "ARHI150"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ARTH120",
+    "ARTH130",
+    "ARTH140",
+    "ARTH150"
+   ],
+   "flagged": [],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Studio Arts for Transfer AA-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Differentiate and evaluate verbally or in written form a work of art (his or her own art, the work of other students, and/or historical works of art) in terms of technical and aesthetic success and historical/cultural references.",
+    "Analyze problem, formulate/invent idea then execute and use  appropriate techniques to build or construct a solution/project that meets assignment criteria.",
+    "Practice and demonstrate appropriate, safe and sustainable studio/lab practices, when inventing and producing solutions, to meet assigned project criteria.",
+    "Use both pre-compiled knowledge and devise alternative knowledge structures to demonstrate understanding of works of art.  Identify, analyze, and/or create images and objects which may contain multiple meanings and ways of communicating.",
+    "Identify and analyze the achievements and contributions of significant artists and cultures throughout history."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARTH 0120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 0130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 0002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 0003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 0004A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTH C1100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 0140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 0150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 9 units from the following",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ART 0004B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 0005A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 0006C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 0007A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 0008A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 0009A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 0012A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 0017",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 0018A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 0022",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 0032A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 0041",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 0040A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 0073",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 0060A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 0005B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 0007B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 0008B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 0012B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 0018B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 0019",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 0020",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 0040B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes differ in format from the closed list: catalog prints ARTH 0120/0130/0140/0150 where the closed list has ARHI 120/130/140/150 (same titles), ART 0002/0003/0017/0019/0020/0022/0041/0073 for ART 2/3/17/19/20/22/41/73, and ARTH C1100 for ARTHC1100. Treated as the same courses (catalog_addition false); reviewer should confirm the ARTH vs ARHI subject prefix.",
+   "Courses in the two choose lists print no units beside them, so units are null; the course descriptions give 3 units for the ART courses.",
+   "ART 0073 is printed as 'also AAD 0073' (cross-listed); AAD 0073 not recorded as a separate alternative.",
+   "ART 0032A is titled 'Fiber Arts I' in the catalog vs 'Introduction to Fiber Arts' in the closed list.",
+   "The page states students must complete 60 CSU-transferable semester units including Cal-GETC; this is the standard ADT requirement sentence, not a printed degree total, so degree_total is left null.",
+   "The Program Student Learning Outcomes come from the page's single outcomes tab for the department/program as a whole; recorded as shared by this award.",
+   "Careers named (fine artist, graphic designer, crafts person, illustrator, computer artist) appear only in the Studio Art AA section, not the AA-T section, so careers is empty."
+  ]
+ },
+ "extracted_run": "39709837031"
+}

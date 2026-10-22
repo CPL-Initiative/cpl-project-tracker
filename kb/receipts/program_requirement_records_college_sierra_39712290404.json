@@ -1,0 +1,135 @@
+{
+ "college": "Sierra College",
+ "load_run": "39712290404",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-22T02:37:28Z",
+ "records": 81,
+ "posted": 71,
+ "batches": 3,
+ "inserted": 57,
+ "kept": 14,
+ "skipped": [
+  {
+   "control_number": "07964",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "10827",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21523",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21524",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21526",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31260",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36718",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39209",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41803",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45200",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38675248607",
+  "39709837031"
+ ],
+ "machine_pass": 57,
+ "inserted_keys": [
+  "04281",
+  "04291",
+  "15053",
+  "17046",
+  "17979",
+  "21569",
+  "31176",
+  "31258",
+  "31259",
+  "31261",
+  "31837",
+  "32007",
+  "32008",
+  "32640",
+  "32653",
+  "32722",
+  "32725",
+  "32752",
+  "33224",
+  "33293",
+  "33637",
+  "33639",
+  "33646",
+  "33752",
+  "35101",
+  "36922",
+  "36923",
+  "37168",
+  "37741",
+  "38371",
+  "38522",
+  "38757",
+  "38990",
+  "39514",
+  "39602",
+  "39603",
+  "39604",
+  "39607",
+  "39657",
+  "40181",
+  "40717",
+  "40822",
+  "41040",
+  "41575",
+  "42805",
+  "43870",
+  "43871",
+  "44673",
+  "44981",
+  "45004",
+  "45624",
+  "45800",
+  "45833",
+  "45908",
+  "46006",
+  "46074",
+  "46286"
+ ],
+ "kept_keys": [
+  "04271",
+  "07978",
+  "16874",
+  "19209",
+  "21515",
+  "21522",
+  "21529",
+  "21570",
+  "21584",
+  "21608",
+  "30471",
+  "30557",
+  "31922",
+  "31923"
+ ],
+ "rollback": "delete from public.program_requirement_records where college = 'Sierra College' and checked = false and control_number in ('04281', '04291', '15053', '17046', '17979', '21569', '31176', '31258', '31259', '31261', '31837', '32007', '32008', '32640', '32653', '32722', '32725', '32752', '33224', '33293', '33637', '33639', '33646', '33752', '35101', '36922', '36923', '37168', '37741', '38371', '38522', '38757', '38990', '39514', '39602', '39603', '39604', '39607', '39657', '40181', '40717', '40822', '41040', '41575', '42805', '43870', '43871', '44673', '44981', '45004', '45624', '45800', '45833', '45908', '46006', '46074', '46286');"
+}

@@ -1,0 +1,229 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "22002",
+ "shape": "certificate",
+ "title": "Licensed Vocational Nursing",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.miracosta.edu/disciplines/nursing/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11599,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11599,
+    "output_tokens": 1629,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1629,
+  "output_tokens_details": {
+   "thinking_tokens": 424
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07898,
+ "ms": 13577,
+ "seconds": 14.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    51.0,
+    51.0
+   ],
+   "stated": [
+    51.0,
+    51.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement: Licensed Vocational Nursing",
+   "measure": "units",
+   "total_units": {
+    "min": 51,
+    "max": 51
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "apply the knowledge, skills and attitudes of a new graduate vocational nurse to successfully pass the National Council Licensure Exam for Vocational/Practical Nurses (NCLEX-PN) exam;",
+    "consistently implement therapeutic communication with patients, support persons, and members of the interdisciplinary team, using verbal, nonverbal, and written methods;",
+    "use the nursing process and clinical reasoning skills to recognize and report on basic and evolving patient needs, and contribute to the development and implementation of a plan of care under the direction of a registered nurse or other licensed healthcare provider;",
+    "demonstrate competence in using electronic-based resources to support evidence-based learning, assist in informed clinical decision-making, and promote safe and effective patient care;",
+    "apply the nursing process and clinical reasoning skills to recognize and report patient needs, and to contribute to the prioritization, development, and implementation of a plan of care under the supervision of a registered nurse or other licensed healthcare provider;",
+    "provide safe, patient-centered nursing care by applying the nursing process, demonstrating clinical judgment, and utilizing skills competency while assisting in the care of diverse patients and families across the lifespan, under the direction of a registered nurse or other licensed healthcare provider."
+   ],
+   "careers": [
+    "licensed vocational nurse",
+    "private-duty nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Prerequisites",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS 170",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 171",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 172",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 173",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 274",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 275",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The prerequisites NURS 100 and NURS 151 are listed under Course Requirements and the printed Total Units of 51 includes them (6 + 45), so they are recorded as a required block.",
+   "The text also states a valid California CNA License is required before applying; this is not a course and is not recorded.",
+   "Careers: 'licensed vocational nurse' and 'private-duty nurse' come from the program description. Employment settings (hospitals, skilled nursing facilities, clinics, etc.) are not recorded as careers.",
+   "Outcome text is copied with its trailing semicolons and final period as printed."
+  ]
+ },
+ "extracted_run": "39709840590"
+}

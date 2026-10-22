@@ -1,0 +1,420 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "37407",
+ "shape": "adt",
+ "title": "Anthropology",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.miracosta.edu/disciplines/anthropology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10957,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10957,
+    "output_tokens": 4344,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4344,
+  "output_tokens_details": {
+   "thinking_tokens": 2117
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13071,
+ "ms": 37527,
+ "seconds": 38.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 20,
+   "share": 0.9,
+   "missing": [
+    "GEOG101",
+    "GEOG101L"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "GEOL101",
+    "GEOL101L"
+   ],
+   "flagged": [
+    "GEOL101",
+    "GEOL101L"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    22.0,
+    26.0
+   ],
+   "stated": [
+    22.0,
+    27.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 22.0-26.0; the catalog states 22.0-27.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts Degree – Anthropology for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an appreciation for the biological and cultural diversity of humans around the world.",
+    "Evaluate how biological and cultural processes have shaped the human species.",
+    "Compare and contrast methods for collecting and analyzing evidence across the subfields of anthropology as a science."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ANTH C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH C1001H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Optional lab: ANTH C1001 or ANTH C1001H may be taken with or without the lab",
+    "rule": "choose_courses",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH C1001L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A (3 units minimum):",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ANTH 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 204",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 104",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 104H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 125",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select two courses not used from List A (minimum 6 units).",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ANTH 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 204",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 104",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 104H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 125",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C: Select one option (4 units).",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIO 210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL 101L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "GEOG 101",
+    "why": "not in the text; List C prints GEOL 101 (Physical Geology) instead"
+   },
+   {
+    "code": "GEOG 101L",
+    "why": "not in the text; List C prints GEOL 101L (Physical Geology Laboratory) instead"
+   }
+  ],
+  "notes": [
+   "The degree table in the text prints no units beside individual courses (only block totals), so all course units are null.",
+   "The required block header reads 'Students may choose to take ANTH C1001 or ANTH 1001H with or without the lab. 9-10'; 'ANTH 1001H' appears to be a typo for ANTH C1001H. ANTH C1001L is optional, so it is recorded in its own block with minimum 0; its 1 unit accounts for the 9-10 range.",
+   "List B has no separate course list: it is two courses not used from List A, so List A's courses are repeated in the List B block. A course may count in only one of List A or List B.",
+   "List C option 'GEOL 101 & 101L' is one option taken together (GEOL 101 and GEOL 101L); recorded as choose_units 4 with both codes. GEOL 101/101L are not in the closed list, which instead names GEOG 101/GEOG 101L — possible mismatch between the state file and the catalog.",
+   "SOCI 125 is printed with a space in the catalog; the closed list stores it as 'SOCI125'. Treated as the same course.",
+   "The statistics courses in List A are printed as one row of 'or' options (BTEC 180 or BUS 204 or PSYC 104 ...), recorded as one entry with alternatives.",
+   "'Complete a minimum of 60 CSU-transferable semester units' is a general graduation requirement and was not recorded as degree_total; no GE unit figure is printed.",
+   "The Global Health Certificate of Achievement section on the same page was not read for this record."
+  ]
+ },
+ "extracted_run": "39709840590"
+}
