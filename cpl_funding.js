@@ -14840,6 +14840,10 @@
     var memoCopy = document.getElementById("cplFundMemoCopy");
     if (memoCopy) memoCopy.addEventListener("click", copyMemo);
     var openMemoText = function () {
+      // Open the fold on screen too: every redraw first reads the live
+      // <details>, so setting SEC_STATE alone left a closed fold closed.
+      var live = document.querySelector('#cplFundingMount [data-sec="memo_text"]');
+      if (live) live.open = true;
       SEC_STATE.memo_text = true;
       render();
       var sec = document.querySelector('#cplFundingMount [data-sec="memo_text"]');
