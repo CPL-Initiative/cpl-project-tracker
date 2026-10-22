@@ -1,0 +1,146 @@
+{
+ "college": "MiraCosta College",
+ "load_run": "39713281347",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-22T02:48:26Z",
+ "records": 68,
+ "posted": 50,
+ "batches": 2,
+ "inserted": 39,
+ "kept": 11,
+ "skipped": [
+  {
+   "control_number": "05130",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "05143",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07862",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07863",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15183",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22006",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31821",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32467",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36100",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36305",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37386",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37408",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37409",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38729",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38751",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39491",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40264",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41547",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38748842603",
+  "39709840590"
+ ],
+ "machine_pass": 43,
+ "inserted_keys": [
+  "05136",
+  "07866",
+  "11750",
+  "18311",
+  "18844",
+  "18975",
+  "18986",
+  "18987",
+  "21984",
+  "21985",
+  "21999",
+  "22000",
+  "22002",
+  "30674",
+  "30724",
+  "31734",
+  "34012",
+  "35028",
+  "36121",
+  "36150",
+  "36413",
+  "36417",
+  "36422",
+  "36427",
+  "36545",
+  "37240",
+  "37407",
+  "38711",
+  "38712",
+  "39140",
+  "39582",
+  "40327",
+  "40575",
+  "40576",
+  "41723",
+  "42705",
+  "42807",
+  "43788",
+  "44000"
+ ],
+ "kept_keys": [
+  "07877",
+  "07881",
+  "17628",
+  "18340",
+  "18345",
+  "19039",
+  "20765",
+  "36097",
+  "36272",
+  "39489",
+  "45045"
+ ],
+ "rollback": "delete from public.program_requirement_records where college = 'MiraCosta College' and checked = false and control_number in ('05136', '07866', '11750', '18311', '18844', '18975', '18986', '18987', '21984', '21985', '21999', '22000', '22002', '30674', '30724', '31734', '34012', '35028', '36121', '36150', '36413', '36417', '36422', '36427', '36545', '37240', '37407', '38711', '38712', '39140', '39582', '40327', '40575', '40576', '41723', '42705', '42807', '43788', '44000');"
+}

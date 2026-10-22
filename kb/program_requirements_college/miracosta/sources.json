@@ -4,7 +4,7 @@
   "title": "Sustainable Landscape and Turf Management",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -16,7 +16,7 @@
   "title": "Bookkeeping",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -40,7 +40,7 @@
   "title": "Licensed Vocational Nursing",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "NURS100",
@@ -57,7 +57,11 @@
    "title": "Nursing | MiraCosta College Catalog",
    "h1": "Nursing",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": "aa"
+   }
   },
   "listed": 8,
   "text_chars": 16000
@@ -67,12 +71,47 @@
   "title": "Psychology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO110",
+   "BIO111",
+   "BIO220",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "PSYC100",
+   "PSYC103",
+   "PSYC104",
+   "PSYC104H",
+   "PSYC114",
+   "PSYC115",
+   "PSYC125",
+   "PSYC145",
+   "PSYC170",
+   "PSYC205",
+   "PSYC211",
+   "PSYC260",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI103",
+   "SOCI145",
+   "SOCIC1000",
+   "SOCIC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/psychology/",
+   "title": "Psychology | MiraCosta College Catalog",
+   "h1": "Psychology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 24,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "05137",
@@ -91,7 +130,7 @@
   "title": "Music Technology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 0.978,
   "codes_found": [
    "BUS130",
@@ -145,7 +184,11 @@
    "title": "Music Technology | MiraCosta College Catalog",
    "h1": "Music Technology",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
   },
   "listed": 46,
   "text_chars": 15938
@@ -155,7 +198,7 @@
   "title": "Web Development and Design",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -167,7 +210,7 @@
   "title": "Nursery/Horticulture Crop Production",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "HORT115",
@@ -186,7 +229,11 @@
    "title": "Horticulture | MiraCosta College Catalog",
    "h1": "Horticulture",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.25,
+    "section": null
+   }
   },
   "listed": 10,
   "text_chars": 16000
@@ -196,7 +243,7 @@
   "title": "Architectural Design",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS133",
@@ -214,7 +261,11 @@
    "title": "Design | MiraCosta College Catalog",
    "h1": "Design",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": null
+   }
   },
   "listed": 9,
   "text_chars": 16000
@@ -236,12 +287,46 @@
   "title": "Entrepreneurship",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT201",
+   "BUS120",
+   "BUS130",
+   "BUS132",
+   "BUS134",
+   "BUS135",
+   "BUS136",
+   "BUS138",
+   "BUS144",
+   "BUS147",
+   "BUS152",
+   "BUS153",
+   "BUS154",
+   "BUS155",
+   "BUS160",
+   "BUS289",
+   "CSIT146",
+   "CSIT155",
+   "HOSP100",
+   "HOSP130",
+   "MAT125",
+   "MTEC160"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/businessadministration/",
+   "title": "Business Administration | MiraCosta College Catalog",
+   "h1": "Business Administration",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "aa"
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "07867",
@@ -260,29 +345,19 @@
   "title": "Mechanical Design",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "DESN101",
-   "DESN204",
-   "DESN286"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/design/",
-   "title": "Design | MiraCosta College Catalog",
-   "h1": "Design",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "07876",
   "title": "Design & Technology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -294,7 +369,7 @@
   "title": "Dance",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "DNCE100",
@@ -353,7 +428,11 @@
    "title": "Dance | MiraCosta College Catalog",
    "h1": "Dance",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
   },
   "listed": 50,
   "text_chars": 16000
@@ -363,28 +442,19 @@
   "title": "Child Development Master Teacher",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "CDEV212",
-   "CDEVC1000"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
-   "title": "Child Development | MiraCosta College Catalog",
-   "h1": "Child Development",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "07881",
   "title": "Hospitality Management",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS117",
@@ -401,7 +471,11 @@
    "title": "Hospitality | MiraCosta College Catalog",
    "h1": "Hospitality",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "aa"
+   }
   },
   "listed": 8,
   "text_chars": 14192
@@ -411,7 +485,7 @@
   "title": "Graphic Design",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -423,12 +497,41 @@
   "title": "Software Development",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS133",
+   "CS101",
+   "CS111",
+   "CS112",
+   "CS113",
+   "CS134",
+   "CS138",
+   "CS139",
+   "CS150",
+   "CS151",
+   "CS155",
+   "CS210",
+   "CS220",
+   "CS226",
+   "MAT145",
+   "MAT150",
+   "MAT190",
+   "MATH226"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerscience/",
+   "title": "Computer Science | MiraCosta College Catalog",
+   "h1": "Computer Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "aa"
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "11824",
@@ -459,7 +562,7 @@
   "title": "Restaurant Management",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -471,7 +574,7 @@
   "title": "Retail Management",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -483,7 +586,7 @@
   "title": "Landscape Architecture",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -507,7 +610,7 @@
   "title": "Child Development Teacher",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "CDEV212"
@@ -517,7 +620,11 @@
    "title": "Child Development | MiraCosta College Catalog",
    "h1": "Child Development",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.667,
+    "section": "aa"
+   }
   },
   "listed": 1,
   "text_chars": 16000
@@ -527,7 +634,7 @@
   "title": "Bioprocess Technology",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -539,21 +646,12 @@
   "title": "Child Development Associate Teacher",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "CDEV212",
-   "CDEVC1000"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
-   "title": "Child Development | MiraCosta College Catalog",
-   "h1": "Child Development",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "15546",
@@ -572,24 +670,12 @@
   "title": "Automotive Electronics, Computers and Emissions and or HVAC",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "AUTO125",
-   "AUTO130",
-   "AUTO135",
-   "AUTO220",
-   "AUTO235"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/automotivetechnology/",
-   "title": "Automotive Technology | MiraCosta College Catalog",
-   "h1": "Automotive Technology",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "16844",
@@ -608,7 +694,7 @@
   "title": "Personal Fitness Trainer",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -632,7 +718,7 @@
   "title": "Video and Media Design",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ART251",
@@ -658,7 +744,11 @@
    "title": "Media Arts & Technologies | MiraCosta College Catalog",
    "h1": "Media Arts & Technologies",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": "coa"
+   }
   },
   "listed": 17,
   "text_chars": 16000
@@ -668,36 +758,48 @@
   "title": "Business of Music and Media",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 0.714,
-  "codes_found": [
-   "BUS130",
-   "BUS131",
-   "BUS136",
-   "BUS140",
-   "MTEC160"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/businessadministration/",
-   "title": "Business Administration | MiraCosta College Catalog",
-   "h1": "Business Administration",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "18311",
   "title": "Gerontology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "BIO111",
+   "BIO111L",
+   "BIO220",
+   "COMM215",
+   "COMMC1004",
+   "HEAL101",
+   "PSYC104",
+   "PSYC104H",
+   "PSYC170",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI103",
+   "SOCI145"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/gerontology/",
+   "title": "Gerontology | MiraCosta College Catalog",
+   "h1": "Gerontology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 6188
  },
  {
   "control_number": "18313",
@@ -716,7 +818,7 @@
   "title": "Dramatic Arts",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "DRAM105",
@@ -734,7 +836,11 @@
    "title": "Dramatic Arts | MiraCosta College Catalog",
    "h1": "Dramatic Arts",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
   },
   "listed": 9,
   "text_chars": 16000
@@ -744,7 +850,7 @@
   "title": "Music",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "MUS110",
@@ -813,7 +919,11 @@
    "title": "Music | MiraCosta College Catalog",
    "h1": "Music",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
   },
   "listed": 60,
   "text_chars": 16000
@@ -823,77 +933,161 @@
   "title": "Yoga Instructor (300 Hours)",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEAL108",
+   "HEAL205",
+   "KINE149",
+   "KINE154",
+   "KINE155",
+   "KINE159"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/kinesiology/",
+   "title": "Kinesiology | MiraCosta College Catalog",
+   "h1": "Kinesiology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "18974",
   "title": "Mechanical Design",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "DESN101",
-   "DESN204",
-   "DESN286"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/design/",
-   "title": "Design | MiraCosta College Catalog",
-   "h1": "Design",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "18975",
   "title": "Software Development",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS133",
+   "CS101",
+   "CS111",
+   "CS112",
+   "CS113",
+   "CS134",
+   "CS138",
+   "CS139",
+   "CS150",
+   "CS151",
+   "CS155",
+   "CS210",
+   "CS220",
+   "CS226",
+   "MAT145",
+   "MAT150",
+   "MAT190",
+   "MATH226"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerscience/",
+   "title": "Computer Science | MiraCosta College Catalog",
+   "h1": "Computer Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "18986",
   "title": "Digital Photography",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART207",
+   "ART210",
+   "ART244",
+   "ART245",
+   "ART251",
+   "ART253",
+   "ART254",
+   "ART268",
+   "ART269",
+   "ART295",
+   "BUS130",
+   "MAT110",
+   "MAT210"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/art/",
+   "title": "Art | MiraCosta College Catalog",
+   "h1": "Art",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "18987",
   "title": "Digital Photography",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART207",
+   "ART210",
+   "ART244",
+   "ART245",
+   "ART251",
+   "ART253",
+   "ART254",
+   "ART268",
+   "ART269",
+   "ART295",
+   "BUS130",
+   "MAT110",
+   "MAT210"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/art/",
+   "title": "Art | MiraCosta College Catalog",
+   "h1": "Art",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "aa"
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "19039",
   "title": "Dance Instructor",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "DNCE134",
@@ -928,7 +1122,11 @@
    "title": "Dance | MiraCosta College Catalog",
    "h1": "Dance",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa"
+   }
   },
   "listed": 26,
   "text_chars": 16000
@@ -938,45 +1136,19 @@
   "title": "Registered Nursing: Track I: Generic ADN",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "BIO110",
-   "BIO111",
-   "BIO210",
-   "BIO220",
-   "BIO230",
-   "COMMC1000",
-   "COMMC1004",
-   "ENGLC1000",
-   "NURS180",
-   "NURS181",
-   "NURS182",
-   "NURS183",
-   "NURS201",
-   "NURS281",
-   "NURS282",
-   "NURS283",
-   "NURS284",
-   "PSYCC1000",
-   "PSYCC1000H"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/nursing/",
-   "title": "Nursing | MiraCosta College Catalog",
-   "h1": "Nursing",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "20765",
   "title": "Hospitality Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS117",
@@ -993,7 +1165,11 @@
    "title": "Hospitality | MiraCosta College Catalog",
    "h1": "Hospitality",
    "text_from": "innerText+tabs",
-   "label": null
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa"
+   }
   },
   "listed": 8,
   "text_chars": 14192
@@ -1003,7 +1179,7 @@
   "title": "Restaurant Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1015,7 +1191,7 @@
   "title": "Sustainable Landscape and Turf Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1027,64 +1203,31 @@
   "title": "Nursery/Horticulture Crop Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "HORT115",
-   "HORT116",
-   "HORT117",
-   "HORT122",
-   "HORT126",
-   "HORT134",
-   "HORT140",
-   "HORT144",
-   "HORT292",
-   "HORT299"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/horticulture/",
-   "title": "Horticulture | MiraCosta College Catalog",
-   "h1": "Horticulture",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "21978",
   "title": "Architectural Design",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "BUS133",
-   "DESN101",
-   "DESN102",
-   "DESN103",
-   "DESN105",
-   "DESN107",
-   "DESN204",
-   "HORT127",
-   "MAT110"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/design/",
-   "title": "Design | MiraCosta College Catalog",
-   "h1": "Design",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "21979",
   "title": "Landscape Architecture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1096,7 +1239,7 @@
   "title": "Research and Development",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1120,7 +1263,7 @@
   "title": "Bookkeeping",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1144,24 +1287,76 @@
   "title": "Entrepreneurship",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT201",
+   "BUS120",
+   "BUS130",
+   "BUS132",
+   "BUS134",
+   "BUS135",
+   "BUS136",
+   "BUS138",
+   "BUS144",
+   "BUS147",
+   "BUS152",
+   "BUS153",
+   "BUS154",
+   "BUS155",
+   "BUS160",
+   "BUS289",
+   "CSIT146",
+   "CSIT155",
+   "HOSP100",
+   "HOSP130",
+   "MAT125",
+   "MTEC160"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/businessadministration/",
+   "title": "Business Administration | MiraCosta College Catalog",
+   "h1": "Business Administration",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "21985",
   "title": "Retail Management",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT201",
+   "BUS117",
+   "BUS131",
+   "BUS132",
+   "BUS134",
+   "BUS136"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/businessadministration/",
+   "title": "Business Administration | MiraCosta College Catalog",
+   "h1": "Business Administration",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "21986",
@@ -1180,7 +1375,7 @@
   "title": "Web Development and Design",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1192,7 +1387,7 @@
   "title": "Graphic Design",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1216,7 +1411,7 @@
   "title": "Computer-Aided Design & Drafting",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1228,7 +1423,7 @@
   "title": "Computer-Aided Drafting",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1240,7 +1435,7 @@
   "title": "Music Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1252,43 +1447,95 @@
   "title": "Design and Technology",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM105",
+   "DRAM107",
+   "DRAM123",
+   "DRAM139",
+   "DRAM141",
+   "DRAM146",
+   "DRAM210",
+   "DRAM253",
+   "DRAM256"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/dramaticarts/",
+   "title": "Dramatic Arts | MiraCosta College Catalog",
+   "h1": "Dramatic Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "22000",
   "title": "Medical Office Professional",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MAP70",
+   "NURS155"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/medicaladministrativeprofessional/",
+   "title": "Medical Administrative Professional | MiraCosta College Catalog",
+   "h1": "Medical Administrative Professional",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.667,
+    "section": "coa"
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 13848
  },
  {
   "control_number": "22002",
   "title": "Licensed Vocational Nursing",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS100",
+   "NURS151",
+   "NURS170",
+   "NURS171",
+   "NURS172",
+   "NURS173",
+   "NURS274",
+   "NURS275"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/nursing/",
+   "title": "Nursing | MiraCosta College Catalog",
+   "h1": "Nursing",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": "coa"
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "22003",
   "title": "Child Development Associate Teacher",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1300,7 +1547,7 @@
   "title": "Child Development Master Teacher",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1312,12 +1559,24 @@
   "title": "Child Development Teacher",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEV212"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
+   "title": "Child Development | MiraCosta College Catalog",
+   "h1": "Child Development",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.667,
+    "section": "coa"
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "22007",
@@ -1408,7 +1667,7 @@
   "title": "Internet and E-Commerce",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1444,24 +1703,79 @@
   "title": "Mathematics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS111",
+   "CS150",
+   "MATH260",
+   "MATH265",
+   "MATH270",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2210H",
+   "MATHC2220",
+   "PHYS151"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/mathematics/",
+   "title": "Mathematics | MiraCosta College Catalog",
+   "h1": "Mathematics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "30724",
   "title": "Liberal Arts: Health Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.535,
+  "codes_found": [
+   "BIO110",
+   "BIO111",
+   "BIO202",
+   "BIO204",
+   "BIO210",
+   "BIO220",
+   "BIO230",
+   "BTEC180",
+   "BUS204",
+   "CHEM112",
+   "CHEM115",
+   "CHEM140",
+   "CHEM150",
+   "CHEM151",
+   "NUTR100",
+   "PHYS111",
+   "PHYS112",
+   "PSYC104",
+   "PSYC104H",
+   "SOCI125",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/liberalartsmathematicsandsciences/",
+   "title": "Liberal Arts: Mathematics and Sciences | MiraCosta College Catalog",
+   "h1": "Liberal Arts: Mathematics and Sciences",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.75,
+    "section": null
+   }
+  },
   "listed": 43,
-  "text_chars": 0
+  "text_chars": 7393
  },
  {
   "control_number": "30725",
@@ -1492,12 +1806,42 @@
   "title": "Sociology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLST100",
+   "CCS100",
+   "CCS232",
+   "ETHN207",
+   "PSYC103",
+   "PSYC145",
+   "SOCI102",
+   "SOCI103",
+   "SOCI105",
+   "SOCI120",
+   "SOCI125",
+   "SOCI130",
+   "SOCI140",
+   "SOCI145",
+   "SOCI205",
+   "SOCI207",
+   "SOCI250",
+   "SOCIC1000",
+   "SOCIC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/sociology/",
+   "title": "Sociology | MiraCosta College Catalog",
+   "h1": "Sociology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "31741",
@@ -1550,7 +1894,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 22,
@@ -1561,7 +1906,7 @@
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1585,19 +1930,41 @@
   "title": "Theatre Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "DRAM107",
+   "DRAM123",
+   "DRAM130",
+   "DRAM141",
+   "DRAM146",
+   "DRAM201",
+   "DRAM204",
+   "DRAM210",
+   "DRAM231",
+   "DRAM253",
+   "DRAM256"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/",
+   "title": "Liberal Arts: Creative and Applied Arts | MiraCosta College Catalog",
+   "h1": "Liberal Arts: Creative and Applied Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": null
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 4890
  },
  {
   "control_number": "33310",
   "title": "Master Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1609,31 +1976,90 @@
   "title": "Biomanufacturing",
   "award": "Baccalaureate of Science (B.S.) Degree.",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO105",
+   "BTEC107",
+   "BTEC110",
+   "BTEC120",
+   "BTEC180",
+   "BTEC210",
+   "BTEC211",
+   "BTEC221",
+   "BTEC222",
+   "BTEC300",
+   "BTEC310",
+   "BTEC320",
+   "BTEC330",
+   "BTEC340",
+   "BTEC360",
+   "BTEC400",
+   "BTEC410",
+   "BTEC460",
+   "BTEC470",
+   "BUS302",
+   "CHEM150",
+   "CHEM151",
+   "ENGLC1000",
+   "PHIL302"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/biotechnology/",
+   "title": "Biotechnology | MiraCosta College Catalog",
+   "h1": "Biotechnology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 24,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "35028",
   "title": "Museum Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ART101",
+   "ART201",
+   "ART224",
+   "ART259",
+   "ARTH158",
+   "ARTH159",
+   "ARTH260H",
+   "BUS130",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/art/",
+   "title": "Art | MiraCosta College Catalog",
+   "h1": "Art",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "35549",
   "title": "Computer Applications",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1645,7 +2071,7 @@
   "title": "Early Childhood Education for Transfer",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1657,7 +2083,7 @@
   "title": "Viticulture and Enology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1681,7 +2107,7 @@
   "title": "Sustainable Agriculture",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1693,7 +2119,7 @@
   "title": "Pest Control Adviser",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1705,7 +2131,7 @@
   "title": "Sustainable Agriculture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1717,7 +2143,7 @@
   "title": "Viticulture and Enology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1729,7 +2155,7 @@
   "title": "Biomanufacturing",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1741,7 +2167,7 @@
   "title": "Biomanufacturing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1781,7 +2207,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": null
    }
   },
   "listed": 5,
@@ -1822,7 +2249,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 38,
@@ -1856,24 +2284,25 @@
    "SPAN222"
   ],
   "source": {
-   "url": "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-   "title": "MCGE | MiraCosta College Catalog",
-   "h1": "MCGE",
-   "text_from": "innerText",
+   "url": "https://catalog.miracosta.edu/disciplines/spanish/",
+   "title": "Spanish | MiraCosta College Catalog",
+   "h1": "Spanish",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 18,
-  "text_chars": 14901
+  "text_chars": 13427
  },
  {
   "control_number": "36143",
   "title": "Management Information Systems (MIS)",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1885,7 +2314,7 @@
   "title": "Tech Support",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1897,7 +2326,7 @@
   "title": "Internet and E-Commerce",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1909,7 +2338,7 @@
   "title": "Management Information Systems (MIS)",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1921,7 +2350,7 @@
   "title": "Medical Assistant",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1933,7 +2362,7 @@
   "title": "Systems Administration",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1945,19 +2374,46 @@
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO230",
+   "BTEC180",
+   "BUS204",
+   "CHEM150",
+   "CHEM151",
+   "NUTR100",
+   "NUTR108",
+   "NUTR120",
+   "PSYC104",
+   "PSYC104H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI125",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/nutrition/",
+   "title": "Nutrition | MiraCosta College Catalog",
+   "h1": "Nutrition",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": null
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 11241
  },
  {
   "control_number": "36153",
   "title": "Engineering Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1969,7 +2425,7 @@
   "title": "Executive Administrative Professional",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1981,7 +2437,7 @@
   "title": "Executive Administrative Professional",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1993,7 +2449,7 @@
   "title": "Computer-Aided Drafting",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2005,7 +2461,7 @@
   "title": "Cyber Security",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2017,7 +2473,7 @@
   "title": "Systems Administration",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2029,7 +2485,7 @@
   "title": "Engineering Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2041,7 +2497,7 @@
   "title": "Tech Support",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2053,7 +2509,7 @@
   "title": "Cyber Security",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2065,7 +2521,7 @@
   "title": "Computer Applications",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2094,7 +2550,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": null
    }
   },
   "listed": 6,
@@ -2117,19 +2574,53 @@
   "title": "Information Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS101",
+   "CSIT101",
+   "CSIT110",
+   "CSIT120",
+   "CSIT123",
+   "CSIT125",
+   "CSIT128",
+   "CSIT131",
+   "CSIT134",
+   "CSIT137",
+   "CSIT146",
+   "CSIT149",
+   "CSIT150",
+   "CSIT151",
+   "CSIT152",
+   "CSIT155",
+   "CSIT160",
+   "CSIT165",
+   "CSIT180",
+   "CSIT181",
+   "CSIT191",
+   "CSIT195",
+   "CSIT286"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "title": "Computer Studies & Information Technology | MiraCosta College Catalog",
+   "h1": "Computer Studies & Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "36315",
   "title": "Information Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2141,31 +2632,76 @@
   "title": "English",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL280",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "LIT250",
+   "LIT251",
+   "LIT260",
+   "LIT261",
+   "LIT265",
+   "LIT270",
+   "LIT271"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/english/",
+   "title": "English | MiraCosta College Catalog",
+   "h1": "English",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 11767
  },
  {
   "control_number": "36417",
   "title": "French",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "COMM215",
+   "FREN101",
+   "FREN102",
+   "FREN121",
+   "FREN201",
+   "FREN202",
+   "ITAL101",
+   "ITAL102",
+   "SPAN101",
+   "SPAN102"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/french/",
+   "title": "French | MiraCosta College Catalog",
+   "h1": "French",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 10069
  },
  {
   "control_number": "36418",
   "title": "Computer-Aided Design & Drafting",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2177,31 +2713,114 @@
   "title": "Italian",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "HIST103",
+   "HIST104",
+   "ITAL101",
+   "ITAL102",
+   "ITAL121",
+   "ITAL201",
+   "ITAL202"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/italian/",
+   "title": "Italian | MiraCosta College Catalog",
+   "h1": "Italian",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 9636
  },
  {
   "control_number": "36427",
   "title": "Global Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ANTH120",
+   "ARTH158",
+   "ARTHC1200",
+   "BUS160",
+   "COMM215",
+   "DESN107",
+   "DNCE105",
+   "FREN101",
+   "FREN102",
+   "FREN121",
+   "FREN201",
+   "FREN202",
+   "GEOG102",
+   "GEOG104",
+   "GRMN101",
+   "GRMN102",
+   "GRMN121",
+   "HIST100",
+   "HIST100H",
+   "HIST101",
+   "HIST101H",
+   "HIST102",
+   "HIST104",
+   "HIST117",
+   "HIST150",
+   "ITAL101",
+   "ITAL102",
+   "ITAL121",
+   "ITAL201",
+   "ITAL202",
+   "JAPN101",
+   "JAPN102",
+   "JAPN121",
+   "JAPN123",
+   "JAPN201",
+   "JAPN202",
+   "JAPN210",
+   "JAPN211",
+   "LIT271",
+   "MUS113",
+   "MUS116",
+   "NUTR108",
+   "POLS150",
+   "RELG101",
+   "RELG101H",
+   "RELG105",
+   "SPAN101",
+   "SPAN102",
+   "SPAN121",
+   "SPAN201",
+   "SPAN202",
+   "SPAN221",
+   "SPAN222"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/interdisciplinarystudies/",
+   "title": "Interdisciplinary Studies | MiraCosta College Catalog",
+   "h1": "Interdisciplinary Studies",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa"
+   }
+  },
   "listed": 54,
-  "text_chars": 0
+  "text_chars": 6315
  },
  {
   "control_number": "36442",
   "title": "Research and Development",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2213,96 +2832,262 @@
   "title": "Film, Television, and Electronic Media",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM220",
+   "FILM101",
+   "FILM101H",
+   "FILM105",
+   "FILM106",
+   "FILM111",
+   "FILM112",
+   "FILM211",
+   "FILM212",
+   "FILM292",
+   "MAT160",
+   "MAT200",
+   "MTEC125"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/film/",
+   "title": "Film | MiraCosta College Catalog",
+   "h1": "Film",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.25,
+    "section": null
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 10503
  },
  {
   "control_number": "37240",
   "title": "Biology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO202",
+   "BIO204",
+   "CHEM150",
+   "CHEM151",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2210H",
+   "PHYS111",
+   "PHYS112",
+   "PHYS151",
+   "PHYS152"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/biology/",
+   "title": "Biology | MiraCosta College Catalog",
+   "h1": "Biology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "37386",
   "title": "Social Justice Studies: Gender Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ANTH107",
+   "ETHN207",
+   "PSYC104",
+   "PSYC104H",
+   "SOCI105",
+   "SOCI125",
+   "SOCI130",
+   "SOCI140"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/liberalartssocialandbehavioralsciences/",
+   "title": "Liberal Arts: Social and Behavioral Sciences | MiraCosta College Catalog",
+   "h1": "Liberal Arts: Social and Behavioral Sciences",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.2,
+    "section": null
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 7617
  },
  {
   "control_number": "37407",
   "title": "Anthropology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ANTH102",
+   "ANTH103",
+   "ANTH105",
+   "ANTH107",
+   "ANTH120",
+   "ANTHC1001",
+   "ANTHC1001H",
+   "ANTHC1001L",
+   "BIO210",
+   "BTEC180",
+   "BUS204",
+   "GEOG155",
+   "PSYC104",
+   "PSYC104H",
+   "SOCI125",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/anthropology/",
+   "title": "Anthropology | MiraCosta College Catalog",
+   "h1": "Anthropology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 13161
  },
  {
   "control_number": "37408",
   "title": "Social Justice Studies: LGBTQ Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.625,
+  "codes_found": [
+   "ETHN207",
+   "FILM211",
+   "SOCI105",
+   "SOCI130",
+   "SOCI140"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/liberalartsmulticulturalstudies/",
+   "title": "Liberal Arts: Multicultural Studies | MiraCosta College Catalog",
+   "h1": "Liberal Arts: Multicultural Studies",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.4,
+    "section": null
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 6768
  },
  {
   "control_number": "37409",
   "title": "Child and Adolescent Development",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.533,
+  "codes_found": [
+   "BTEC180",
+   "BUS204",
+   "PSYC104",
+   "PSYC104H",
+   "SOCI125",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/hospitality/",
+   "title": "Hospitality | MiraCosta College Catalog",
+   "h1": "Hospitality",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 4315
  },
  {
   "control_number": "38711",
   "title": "Japanese",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JAPN101",
+   "JAPN102",
+   "JAPN121",
+   "JAPN201",
+   "JAPN202",
+   "JAPN210",
+   "JAPN211"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/japanese/",
+   "title": "Japanese | MiraCosta College Catalog",
+   "h1": "Japanese",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 11780
  },
  {
   "control_number": "38712",
   "title": "Japanese",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JAPN101",
+   "JAPN102",
+   "JAPN121",
+   "JAPN123",
+   "JAPN201",
+   "JAPN202",
+   "JAPN210",
+   "JAPN211"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/japanese/",
+   "title": "Japanese | MiraCosta College Catalog",
+   "h1": "Japanese",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 11780
  },
  {
   "control_number": "38727",
@@ -2321,12 +3106,29 @@
   "title": "Computer Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2210H",
+   "MATHC2220",
+   "PHYS151",
+   "PHYS152"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/physics/",
+   "title": "Physics | MiraCosta College Catalog",
+   "h1": "Physics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 7164
  },
  {
   "control_number": "38730",
@@ -2345,12 +3147,36 @@
   "title": "Social Justice Studies: Chicana and Chicano Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CCS100",
+   "CCS232",
+   "ETHN207",
+   "HIST141",
+   "HIST142",
+   "LIT100",
+   "SOCI120",
+   "SOCI125",
+   "SOCI130",
+   "SOCI207",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
+   "title": "MCGE | MiraCosta College Catalog",
+   "h1": "MCGE",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "38963",
@@ -2369,12 +3195,26 @@
   "title": "Automotive/Motorcycle Maintenance and Light Repair",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO102",
+   "AUTO105",
+   "AUTO135"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/automotivetechnology/",
+   "title": "Automotive Technology | MiraCosta College Catalog",
+   "h1": "Automotive Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.2,
+    "section": "coa"
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "39489",
@@ -2397,7 +3237,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 5,
@@ -2445,7 +3286,8 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 27,
@@ -2468,60 +3310,204 @@
   "title": "Social Work and Human Services",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADM100",
+   "ANTH102",
+   "BIO103",
+   "BIO111",
+   "BTEC180",
+   "BUS204",
+   "CDEV210",
+   "CDEVC1000",
+   "COMM215",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHN207",
+   "PSYC104",
+   "PSYC104H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI102",
+   "SOCI125",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H",
+   "SWHS110",
+   "SWHS120A",
+   "SWHS120B"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/swhs/",
+   "title": "Social Work and Human Services | MiraCosta College Catalog",
+   "h1": "Social Work and Human Services",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 26,
-  "text_chars": 0
+  "text_chars": 6941
  },
  {
   "control_number": "40264",
   "title": "Liberal Arts: Elementary Subject Matter Education",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.612,
+  "codes_found": [
+   "ART100",
+   "ART101",
+   "ART103",
+   "ARTH157",
+   "CCS232",
+   "COMM106",
+   "COMM212",
+   "COMMC1000",
+   "COMMC1004",
+   "DNCE101",
+   "DRAM105",
+   "DRAM130",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "FREN101",
+   "GRMN101",
+   "HIST100",
+   "HIST100H",
+   "HISTC1001",
+   "HISTC1001H",
+   "ITAL101",
+   "JAPN101",
+   "MUS116",
+   "PHIL100",
+   "READ100",
+   "SPAN101"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/liberalartsartsandhumanities/",
+   "title": "Liberal Arts: Arts and Humanities | MiraCosta College Catalog",
+   "h1": "Liberal Arts: Arts and Humanities",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": null
+   }
+  },
   "listed": 49,
-  "text_chars": 0
+  "text_chars": 9248
  },
  {
   "control_number": "40327",
   "title": "Political Science",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADM100",
+   "ADM200",
+   "ADM270",
+   "ANTH102",
+   "BTEC180",
+   "BUS140",
+   "BUS204",
+   "ECONC2001",
+   "ECONC2002",
+   "PHIL102",
+   "POLS101",
+   "POLS101H",
+   "POLS103",
+   "POLS150",
+   "POLSC1000",
+   "PSYC104",
+   "PSYC104H",
+   "SOCI125",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/politicalscience/",
+   "title": "Political Science | MiraCosta College Catalog",
+   "h1": "Political Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 13417
  },
  {
   "control_number": "40575",
   "title": "French",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FREN101",
+   "FREN102",
+   "FREN201",
+   "FREN202"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/french/",
+   "title": "French | MiraCosta College Catalog",
+   "h1": "French",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 10069
  },
  {
   "control_number": "40576",
   "title": "Italian Language and Culture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "FILM112",
+   "HIST103",
+   "HIST104",
+   "ITAL101",
+   "ITAL102",
+   "ITAL121",
+   "ITAL201",
+   "ITAL202"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/italian/",
+   "title": "Italian | MiraCosta College Catalog",
+   "h1": "Italian",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": "coa"
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 9636
  },
  {
   "control_number": "40577",
@@ -2540,7 +3526,7 @@
   "title": "Laboratory Skills",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2564,12 +3550,31 @@
   "title": "Hospitality Management",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "BTEC180",
+   "BUS204",
+   "PSYC104",
+   "PSYC104H",
+   "SOCI125",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/psychology/",
+   "title": "Psychology | MiraCosta College Catalog",
+   "h1": "Psychology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "41611",
@@ -2636,7 +3641,7 @@
   "title": "Supply Chain Management (SCM)",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2648,7 +3653,7 @@
   "title": "Supply Chain Management (SCM)",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2660,7 +3665,7 @@
   "title": "Electric, Hybrid, and Alternative-Fuel Vehicle Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2672,7 +3677,7 @@
   "title": "Patient Care Coordinator",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2684,12 +3689,30 @@
   "title": "Professional Accounting: Preparing for the CPA Exam",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT145",
+   "ACCT146",
+   "ACCT147",
+   "ACCT201",
+   "ACCT202",
+   "ACCT204",
+   "CSIT123"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/accounting/",
+   "title": "Accounting | MiraCosta College Catalog",
+   "h1": "Accounting",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.2,
+    "section": "coa"
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "41895",
@@ -2720,24 +3743,66 @@
   "title": "Sustainability Studies",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "BIO102",
+   "BIO108",
+   "BIO108L",
+   "DESN107",
+   "EART106",
+   "GEOG101",
+   "GEOG108",
+   "HORT115",
+   "PHSN106"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/physicalscience/",
+   "title": "Physical Science | MiraCosta College Catalog",
+   "h1": "Physical Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 4951
  },
  {
   "control_number": "42807",
   "title": "Communication Studies 2.0",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM106",
+   "COMM111",
+   "COMM120",
+   "COMM135",
+   "COMM144",
+   "COMM186",
+   "COMM212",
+   "COMM215",
+   "COMM220",
+   "COMMC1000",
+   "COMMC1004"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/communication/",
+   "title": "Communication Studies | MiraCosta College Catalog",
+   "h1": "Communication Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 12635
  },
  {
   "control_number": "42864",
@@ -2768,7 +3833,7 @@
   "title": "Artificial Intelligence",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2780,7 +3845,7 @@
   "title": "Artificial Intelligence",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2792,24 +3857,84 @@
   "title": "Geography",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BTEC180",
+   "BUS204",
+   "GEOG101",
+   "GEOG101L",
+   "GEOG102",
+   "GEOG104",
+   "GEOG108",
+   "GEOG155",
+   "PSYC104",
+   "PSYC104H",
+   "SOCI125",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/geography/",
+   "title": "Geography | MiraCosta College Catalog",
+   "h1": "Geography",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 8319
  },
  {
   "control_number": "44000",
   "title": "Public Health",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH120",
+   "BIO110",
+   "BIO111",
+   "BIO111L",
+   "BIO210",
+   "BIO220",
+   "BIO230",
+   "BTEC180",
+   "BUS204",
+   "CHEM150",
+   "HEAL101",
+   "HEAL180",
+   "HEAL205",
+   "NUTR100",
+   "PSYC104",
+   "PSYC104H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI125",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.miracosta.edu/disciplines/healtheducation/",
+   "title": "Health Education | MiraCosta College Catalog",
+   "h1": "Health Education",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": null
+   }
+  },
   "listed": 24,
-  "text_chars": 0
+  "text_chars": 9669
  },
  {
   "control_number": "44614",
@@ -3056,7 +4181,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.286
+    "title": 0.286,
+    "section": null
    }
   },
   "listed": 224,
@@ -3067,7 +4193,7 @@
   "title": "Family Child Care Entrepreneurship",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,

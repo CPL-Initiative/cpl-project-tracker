@@ -1,0 +1,362 @@
+{
+ "college": "Sierra College",
+ "control_number": "44673",
+ "shape": "degree",
+ "title": "Astronomy",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.sierracollege.edu/departments/astronomy/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9687,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9687,
+    "output_tokens": 3081,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3081,
+  "output_tokens_details": {
+   "thinking_tokens": 956
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10037,
+ "ms": 24183,
+ "seconds": 24.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ASTR13",
+    "ASTR25"
+   ],
+   "flagged": [
+    "ASTR13",
+    "ASTR25"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    24.0
+   ],
+   "stated": [
+    21.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 12,
+   "courses": 0,
+   "count": 12,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Astronomy AS Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Sierra College Associate Degree Requirements; California General Education Transfer Curriculum",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge and skill in Observational Astronomy, correlating the observable sky to events in the cosmos.",
+    "Explain knowledge and skill in Celestial Navigation, evaluating the significance of important astronomical phenomena.",
+    "Operate a variety of Optical Systems, demonstrating proficiency in their use.",
+    "Use various Imaging Systems to produce high quality image data products, demonstrating overall mastery of image reduction skills.",
+    "Analyze basic science and core physics, to discover how they apply to astronomy.",
+    "Use concepts from planetary astronomy to investigate the types of different planetary classes and other objects in the solar system.",
+    "Develop an understanding of solar physics - the sun's method of energy production, its anatomy, solar phenomena, and life history.",
+    "Relate core concepts in basic science to stellar astronomy, assessing the various factors that are important to stellar evolution.",
+    "Synthesize information from various sources (classroom instruction, online resources, etc.) to produce a coherent understanding of galactic/extragalactic astronomy.",
+    "Evaluate concepts in cosmology, relating concepts in underlying physics and observations to scientific frameworks of our universe's formation and evolution.",
+    "Critique new findings in the frontiers of astrophysics, assessing and appraising their conceptual frameworks.",
+    "Investigate astrobiology, and relate concepts of life, evolution, and the universe to what can be observed."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ASTR 0007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 2 units from the following",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "ASTR 0011",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 0013",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASTR 0014",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ASTR 0002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 0005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 0010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select a Physics Sequence: General Physics (PHYS 0105 sequence)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics Sequence",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS 0105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0105L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0110L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select a Physics Sequence: Principles of Physics (PHYS 0205 sequence)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics Sequence",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS 0205",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0205L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0210L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0215",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 0215L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Optional Recommended Elective",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ASTR 0025",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (ASTR 0007, PHYS 0105); these were matched to closed-list codes without zeros (ASTR 7, PHYS 105) and not flagged as additions.",
+   "Units for ASTR courses are not printed beside them in the requirement list; they were taken from the course descriptions on the same page. PHYS course units are not printed anywhere in the text, so they are null.",
+   "The catalog prints 10-13 units for 'Select a Physics Sequence' as a whole, not per sequence; each sequence's stated is left null.",
+   "ASTR 0013 (Laboratory Astronomy) and ASTR 0025 (Frontiers in Astronomy, recommended only) are not in the closed list.",
+   "The page states a minimum of 60 degree-applicable units as a general degree requirement; not recorded as degree_total.",
+   "The Program Student Learning Outcomes are printed once for the Astronomy department page; the AS degree is the only award shown and is assumed to share them.",
+   "No careers are named; the text mentions transfer fields (Astronomy, Physics, Planetary Sciences) only."
+  ]
+ },
+ "extracted_run": "39709837031"
+}

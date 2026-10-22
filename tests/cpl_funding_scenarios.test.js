@@ -474,6 +474,19 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
   check("choosing Final saves the memo's status", T._docStatus("memo") === "final" &&
     doc.getElementById("cplFundDocStatus").value === "final");
   check("the status is the document's own: the letter stays a draft", T._docStatus("letter") === "draft");
+  // Where the memo's lasting edits go (Sam, 2026-10-22: "I didn't see it when
+  // looking how to edit"): a toolbar button opens the passages, and typing into
+  // the document says it saves nothing.
+  const top = doc.querySelector(".cplfund-reptoolbar [data-memoedit]");
+  check("the Report toolbar names the editor that saves", !!top && /Edit the memo.s text/.test(top.textContent));
+  const warn = doc.getElementById("cplFundMemoWarn");
+  check("the not-saved line waits until the document is typed in", !!warn && warn.hidden === true);
+  doc.getElementById("cplFundMemo").dispatchEvent(new window.Event("input", { bubbles: true }));
+  check("typing into the document shows that it is not saved, with a way to the editor",
+    !warn.hidden && /not saved/.test(warn.textContent) && !!warn.querySelector("[data-memoedit]"));
+  click(window, top);
+  const sec = doc.querySelector('#cplFundingMount [data-sec="memo_text"]');
+  check("the toolbar button opens the memo's text", !!sec && sec.open === true);
 }
 
 finish();

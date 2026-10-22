@@ -411,8 +411,39 @@ def network_read(got: list) -> list[dict]:
     return out
 
 
+# "capture_view": true reads a page as the harvest's capture reads it: the pilot's PAGE_JS,
+# then the visible text with the hidden tab panels appended, as best_text() composes
+# "innerText+tabs". The log prints it line for line, a run of blank lines as one
+# "(blank)", because section_award() reads a heading over two ADJACENT short lines and
+# fold() drops the blank line that parts them. MiraCosta's discipline pages kept one
+# claimant each (page_claimed 82, S444) and the capture keeps none of the text it read.
+CAPTURE_LINES = 1400     # lines of one page's capture view printed
+
+
+def capture_text(got: dict) -> str:
+    from _program_requirements_pilot import hidden_tabs_text
+    tabs = hidden_tabs_text(got)
+    return (got.get("body") or "") + ("\n\n" + tabs if tabs else "")
+
+
+def unfolded(text: str, cap: int = CAPTURE_LINES) -> str:
+    """Every line as the capture splits it; a run of blank lines prints once as (blank)."""
+    out: list[str] = []
+    for line in (text or "").split("\n"):
+        t = line.strip()
+        if not t:
+            if out and out[-1] != "(blank)":
+                out.append("(blank)")
+            continue
+        out.append(t)
+    if len(out) > cap:
+        out = out[:cap] + ["(%d more lines)" % (len(out) - cap)]
+    return "\n".join(out)
+
+
 def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = False,
-             rows: str | None = None, network: bool = False, network_hosts: tuple = ()) -> dict:
+             rows: str | None = None, network: bool = False, network_hosts: tuple = (),
+             capture_view: bool = False) -> dict:
     """One page through the census's Reader (or the pilot's PDF reader), with
     its text, its links and the excerpts around the plan's keywords."""
     from _program_requirements_pilot import read_pdf, pdfminer_pages
@@ -434,8 +465,16 @@ def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = 
                     opened = reader.page.evaluate(EXPAND_JS)
                     out["expanded"] = opened.get("opened", 0)
                     reader.page.wait_for_timeout(1200)
-                page = reader.page.evaluate(TEXT_JS)
-                out["text"], out["links"] = page.get("text") or "", page.get("links") or []
+                if capture_view:
+                    from _program_requirements_pilot import PAGE_JS
+                    page = reader.page.evaluate(PAGE_JS)
+                    out["text"], out["capture_view"] = capture_text(page), True
+                    out["tab_panels"] = [[(t.get("label") or t.get("id") or "")[:60], len(t.get("text") or "")]
+                                         for t in page.get("tabPanels") or []]
+                else:
+                    page = reader.page.evaluate(TEXT_JS)
+                    out["text"] = page.get("text") or ""
+                out["links"] = page.get("links") or []
                 if rows:
                     out["rows"] = reader.page.evaluate(ROWS_JS, rows)
                     out["rows_pattern"] = rows
@@ -529,6 +568,13 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
         return
     if not text:
         return
+    if rec.get("capture_view"):
+        print("--- tab panels the capture reads (label, characters) ---")
+        for label, n in rec.get("tab_panels") or []:
+            print("- %s: %d" % (label or "(no label)", n))
+        print("--- the capture's text, innerText+tabs, line for line ---")
+        print(unfolded(text))
+        return
     if len(text) <= HTML_FULL_CAP:
         print("--- text (whole page) ---")
         print(fold(text))
@@ -574,7 +620,8 @@ def main(argv: list[str] | None = None) -> int:
                                    expand=bool(target.get("expand")) and not parent,
                                    rows=None if parent else target.get("rows"),
                                    network=bool(target.get("network")) and not parent,
-                                   network_hosts=tuple(h.lower() for h in target.get("network_hosts") or ()))
+                                   network_hosts=tuple(h.lower() for h in target.get("network_hosts") or ()),
+                                   capture_view=bool(target.get("capture_view")) and not parent)
                 rec["answers"] = target.get("answers") or []
                 if parent:
                     rec["from"] = parent
