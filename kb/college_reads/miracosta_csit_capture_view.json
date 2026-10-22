@@ -1,0 +1,17 @@
+{
+ "_readme": "S445 (SkyCurrant): after #2337 MiraCosta still has 31 page-claimed. Ten are A.S. degrees on the Computer Studies and Information Technology page (Tech Support, Cyber Security, Information Technology ...), whose Degrees tab (689 characters, no course named) the capture drops; Cyber Security's certificate lost too. Child Development and Psychology carry the other clusters. Read the three as the capture does, with the panels it leaves out.",
+ "college": "MiraCosta College",
+ "questions": {
+  "capture_headings": "What does each page's Degrees tab say (a title list, and the sentence that makes a degree its certificate plus general education?), and how does each certificate's heading spell its title?"
+ },
+ "keywords": [
+  "associate in (?:arts|science)[^\\n]{0,80}",
+  "certificate of (?:achievement|accomplishment|competency|proficiency)[^\\n]{0,80}",
+  "\\bA\\.[AS]\\.[^\\n]{0,60}"
+ ],
+ "pages": [
+  {"answers": ["capture_headings"], "capture_view": true, "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"},
+  {"answers": ["capture_headings"], "capture_view": true, "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/"},
+  {"answers": ["capture_headings"], "capture_view": true, "url": "https://catalog.miracosta.edu/disciplines/psychology/"}
+ ]
+}

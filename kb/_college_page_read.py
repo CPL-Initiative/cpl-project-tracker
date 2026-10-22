@@ -426,6 +426,18 @@ def capture_text(got: dict) -> str:
     return (got.get("body") or "") + ("\n\n" + tabs if tabs else "")
 
 
+DROPPED_CAP = 3000       # characters of each tab panel the capture leaves out, printed
+
+
+def dropped_panels(got: dict) -> list[list]:
+    """The tab panels hidden_tabs_text() leaves out (no course named, or a course index),
+    so a read shows what the capture never sees: MiraCosta's Computer Studies Degrees tab
+    (689 characters, S445) was one."""
+    from _program_requirements_pilot import hidden_tabs_text
+    return [[(t.get("label") or t.get("id") or "")[:60], (t.get("text") or "")[:DROPPED_CAP]]
+            for t in got.get("tabPanels") or [] if not hidden_tabs_text({"tabPanels": [t]})]
+
+
 def unfolded(text: str, cap: int = CAPTURE_LINES) -> str:
     """Every line as the capture splits it; a run of blank lines prints once as (blank)."""
     out: list[str] = []
@@ -471,6 +483,7 @@ def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = 
                     out["text"], out["capture_view"] = capture_text(page), True
                     out["tab_panels"] = [[(t.get("label") or t.get("id") or "")[:60], len(t.get("text") or "")]
                                          for t in page.get("tabPanels") or []]
+                    out["dropped_panels"] = dropped_panels(page)
                 else:
                     page = reader.page.evaluate(TEXT_JS)
                     out["text"] = page.get("text") or ""
@@ -574,6 +587,9 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
             print("- %s: %d" % (label or "(no label)", n))
         print("--- the capture's text, innerText+tabs, line for line ---")
         print(unfolded(text))
+        for label, body in rec.get("dropped_panels") or []:
+            print("--- a tab panel the capture leaves out: %s ---" % (label or "(no label)"))
+            print(unfolded(body))
         return
     if len(text) <= HTML_FULL_CAP:
         print("--- text (whole page) ---")

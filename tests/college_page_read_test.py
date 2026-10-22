@@ -268,6 +268,9 @@ check(cpr.unfolded("A\n\n\n  \nB\nC") == "A\n(blank)\nB\nC",
       "a run of blank lines prints once as (blank), short lines stay one a line")
 check(cpr.unfolded("\n".join("x%d" % i for i in range(5)), cap=3).endswith("x2\n(2 more lines)"),
       "a long page prints its first CAPTURE_LINES lines and says how many it left")
+dp = cpr.dropped_panels(got)
+check([d[0] for d in dp] == ["Search"] and dp[0][1].startswith("Search the catalog"),
+      "the capture view lists each tab panel the capture leaves out, with its text")
 
 if FAILS:
     print("\n%d FAILED" % len(FAILS))
