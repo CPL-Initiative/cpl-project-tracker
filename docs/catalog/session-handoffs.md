@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-420 document(s).
+421 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 450 | [Session 450 handoff: the harvest queue after S448, Palo Verde's new catalog, a curriQunet view, Hartnell by its site](../session_450_handoff.md) | 2026-10-22 |
 | 449 | [Session 449 handoff: My College folded into CPL Pathways, a search box, a faster list and the COBI header](../session_449_handoff.md) | 2026-10-22 |
 | 448 | [Session 448 handoff: an Administration of Justice address, a hyphenated code, Mt. San Jacinto and Santa Barbara City reread](../session_448_handoff.md) | 2026-10-22 |
 | 447 | [Session 447 handoff: a degree-and-certificate address names both awards, 91 new records at four colleges](../session_447_handoff.md) | 2026-10-22 |
