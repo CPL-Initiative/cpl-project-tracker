@@ -430,6 +430,22 @@ progs4 = progs3[:1] + [dict(progs3[1], control_number="4")]
 got4 = C.assign(progs4, PG[:1])
 check(got4["4"]["best"] is None and got4["4"]["lost"] == [PG[0]["url"]],
       "a program that loses its only page reads no page, and names the page it lost")
+# A loser's fallback must name it, carry most of its courses, or head its section (S445: Sierra's
+# Mathematics A.S.-T lost eleven pages and ended on the Nursing page at coverage 0.50).
+PGF = [page(start + "departments/mathematics/", "Mathematics", "Mathematics MATH 1 MATH 2 MATH 3 MATH 4"),
+       page(start + "departments/nursing/", "Nursing", "Nursing NURS 1 MATH 1 MATH 2")]
+mprog = {"control_number": "31226", "title": "Mathematics", "award": "A.S. Degree",
+         "closed_list": [{"code": "MATH %d" % i} for i in (1, 2, 3, 4)]}
+mrival = dict(mprog, control_number="45833", award="A.A. Degree")
+gf = C.assign([mprog, mrival], PGF)
+won = [cn for cn in gf if gf[cn]["best"]]
+lose = [cn for cn in gf if not gf[cn]["best"]]
+check(len(won) == 1 and gf[won[0]]["best"]["url"].endswith("mathematics/") and len(lose) == 1
+      and gf[lose[0]]["lost"] == [PGF[0]["url"]],
+      "a program that lost its page falls back to no page rather than one that neither names it nor carries most of its courses")
+gs = C.assign([mprog], PGF[1:])
+check(gs["31226"]["best"] is not None and gs["31226"]["best"]["url"].endswith("nursing/"),
+      "a program that lost nothing still reads its only candidate (the guard is for fallbacks)")
 tiny = {"control_number": "5", "title": "Automotive Electrical", "award": "Certificate of Achievement",
         "closed_list": [{"code": "ABC 101"}]}
 check(C.candidates(tiny, PG) == [], "a one-course list takes no page whose label does not name the program")

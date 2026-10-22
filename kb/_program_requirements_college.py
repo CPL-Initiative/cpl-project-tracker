@@ -745,6 +745,14 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     out = {}
     for cn, cands in ranked.items():
         best = cands[pos[cn]] if pos[cn] < len(cands) else None
+        # A program that lost a page to a sibling falls back only to a page that names it at
+        # least halfway, carries SECTION_COVERAGE of its listed courses, or heads its section.
+        # With a page shared per heading, Sierra's Mathematics A.S.-T lost its eleven pages and
+        # ended on the Nursing page at coverage 0.50, and Early Childhood Education A.S. on the
+        # general education requirements page (capture-only run 39721267663, S445).
+        if best and lost.get(cn) and best["label"]["title"] < 0.5 and best["coverage"] < SECTION_COVERAGE \
+                and not best["label"].get("section"):
+            best = None
         out[cn] = {"best": best, "lost": lost.get(cn, [])}
     return out
 
