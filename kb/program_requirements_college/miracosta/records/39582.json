@@ -1,0 +1,356 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "39582",
+ "shape": "adt",
+ "title": "Social Work and Human Services",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.miracosta.edu/disciplines/swhs/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8756,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8756,
+    "output_tokens": 2446,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2446,
+  "output_tokens_details": {
+   "thinking_tokens": 823
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08394,
+ "ms": 21196,
+ "seconds": 21.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 26,
+   "listed": 26,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "PSYC121",
+    "SOCI207"
+   ],
+   "flagged": [
+    "PSYC121",
+    "SOCI207"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    29.0
+   ],
+   "stated": [
+    27.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts Degree Social Work and Human Services for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Prepared for entry-level positions in the field of social work.",
+    "Able to analyze the skills and knowledge necessary for a career in social work.",
+    "Able to identify and implement industry-recognized effective practices for human service delivery in culturally relevant and culturally sustaining ways."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SWHS 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWHS 120A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWHS 120B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 111",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 180",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "BUS 204",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 104",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 104H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 125",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select two courses.",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ADM 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 215",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCI 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 207",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN 207",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The statistics choice prints a 3-5 unit range beside BTEC 180 for the whole group; recorded as units 3, units_max 5 on BTEC 180, alternatives have no printed units.",
+   "List A courses print no individual units; block total 6 is printed.",
+   "Graduation Requirements say 'Complete a minimum of 60 CSU-transferable semester units'; read as the generic ADT requirement, not a printed degree total, so degree_total left null.",
+   "PSYC 121 and SOCI 207 are not in the closed list (catalog additions); ETHN 207 is its alternative and is on the list.",
+   "Closed-list codes without spaces (SWHS110, SOCI125, CDEVC1000, etc.) matched to catalog codes with spaces.",
+   "No careers named in the program description; the outcome mentioning 'entry-level positions in the field of social work' was not recorded as a career."
+  ]
+ },
+ "extracted_run": "39709840590"
+}

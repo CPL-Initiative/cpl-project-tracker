@@ -1,15 +1,15 @@
 {
  "college": "MiraCosta College",
- "control_number": "21976",
+ "control_number": "40576",
  "shape": "certificate",
- "title": "Nursery/Horticulture Crop Production",
+ "title": "Italian Language and Culture",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.miracosta.edu/disciplines/horticulture/",
+ "source_url": "https://catalog.miracosta.edu/disciplines/italian/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11770,
+  "input_tokens": 9271,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11770,
-    "output_tokens": 1364,
+    "input_tokens": 9271,
+    "output_tokens": 1171,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,59 +30,66 @@
     "model": null
    }
   ],
-  "output_tokens": 1364,
+  "output_tokens": 1171,
   "output_tokens_details": {
-   "thinking_tokens": 439
+   "thinking_tokens": 228
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07436,
- "ms": 12588,
- "seconds": 13.1,
+ "cost_usd": 0.0605,
+ "ms": 9994,
+ "seconds": 10.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
-   "listed": 10,
-   "share": 1.0,
-   "missing": [],
+   "placed": 8,
+   "listed": 9,
+   "share": 0.889,
+   "missing": [
+    "ART259"
+   ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "flagged": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    24.5,
-    25.0
+    18.0,
+    19.0
    ],
    "stated": [
-    25.0,
-    25.0
+    18.0,
+    19.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 24.5-25.0; the catalog states 25.0-25.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 2,
    "courses": 0,
-   "count": 1,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -90,22 +97,22 @@
    "pass": true
   },
   "careers": {
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement Nursery/Horticulture Crop Production",
+   "section_heading": "Certificate of Achievement Italian Language and Culture",
    "measure": "units",
    "total_units": {
-    "min": 25,
-    "max": 25
+    "min": 18,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -123,13 +130,10 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Upon completion of this program, the student will be able to integrate concepts and skills learned in core courses to manage environmental and other growth factors to produce healthy and marketable crops."
+    "Communicate in the Italian language at the Intermediate High level of ACTFL (American Council on the Teaching of Foreign Languages).",
+    "Demonstrate awareness and appreciation of cultural differences within Italian speaking communities."
    ],
-   "careers": [
-    "plant production",
-    "maintenance",
-    "sales of ornamental and/or food crops"
-   ]
+   "careers": []
   },
   "blocks": [
    {
@@ -143,84 +147,103 @@
     },
     "courses": [
      {
-      "code": "HORT 115",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "HORT 116",
+      "code": "ITAL 101",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "HORT 117",
+      "code": "ITAL 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 121",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one elective course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ARTH C1100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
      },
      {
-      "code": "HORT 122",
-      "units": 2,
+      "code": "ARTH C1200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FILM 112",
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "HORT 126",
-      "units": 3,
+      "code": "HIST 103",
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "HORT 134",
-      "units": 3,
+      "code": "HIST 104",
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "HORT 140",
-      "units": 3,
+      "code": "ITAL 202",
+      "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "HORT 144",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "HORT 292",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "HORT 299",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
       "catalog_addition": false
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "ART 259",
+    "why": "not in the text; the certificate's elective list names ARTH C1200 (Survey of Art from the Renaissance to Contemporary) instead"
+   }
+  ],
   "notes": [
-   "The page prints several certificates in a row; only the Nursery/Horticulture Crop Production section was read.",
-   "HORT 292 is printed with 1 unit and 'or HORT 299' with no units beside it; the 1 unit presumably applies to either choice.",
-   "Careers are taken from the certificate's own description ('employment in the areas of plant production, maintenance, or sales of ornamental and/or food crops'). A general Certificates introduction shared by all horticulture certificates names further jobs (park and grounds supervision, state or county agriculture inspection, agri-sales and services, organic food production, retail and wholesale nurseries and greenhouses, landscape and irrigation design, landscape contracting, water management); these were not recorded as specific to this award but a reviewer may wish to include them."
+   "The elective list prints no units beside each course; only the block total 3-4 is printed, so course units are left null.",
+   "ARTH C1200 appears to replace ART 259 (History of Renaissance to Modern Art) from the state file; reviewer should confirm.",
+   "Catalog note: students who have successfully challenged ITAL 101 may substitute another course from the elective list with departmental approval.",
+   "The A.A. degree section on the same page was not used."
   ]
  },
- "extracted_run": "38748842603"
+ "extracted_run": "39709840590"
 }

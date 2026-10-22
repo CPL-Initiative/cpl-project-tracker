@@ -1,15 +1,15 @@
 {
  "college": "MiraCosta College",
- "control_number": "21978",
- "shape": "certificate",
- "title": "Architectural Design",
- "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
- "source_url": "https://catalog.miracosta.edu/disciplines/design/",
+ "control_number": "11750",
+ "shape": "degree",
+ "title": "Software Development",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.miracosta.edu/disciplines/computerscience/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11568,
+  "input_tokens": 11484,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11568,
-    "output_tokens": 1556,
+    "input_tokens": 11484,
+    "output_tokens": 1892,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,23 +30,24 @@
     "model": null
    }
   ],
-  "output_tokens": 1556,
+  "output_tokens": 1892,
   "output_tokens_details": {
-   "thinking_tokens": 408
+   "thinking_tokens": 601
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07739,
- "ms": 17567,
- "seconds": 18.3,
+ "cost_usd": 0.08378,
+ "ms": 16691,
+ "seconds": 18.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
-   "listed": 9,
+   "placed": 18,
+   "listed": 18,
    "share": 1.0,
    "missing": [],
    "unexplained": [],
@@ -54,39 +55,21 @@
    "pass": true
   },
   "invented": {
-   "count": 8,
-   "codes": [
-    "DESN100",
-    "DESN108",
-    "DESN200",
-    "DESN201",
-    "DESN207",
-    "DESN290",
-    "DESN292",
-    "DESN299"
-   ],
-   "flagged": [
-    "DESN100",
-    "DESN108",
-    "DESN200",
-    "DESN201",
-    "DESN207",
-    "DESN290",
-    "DESN292",
-    "DESN299"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
-    32.0,
-    32.0
+    24.0,
+    25.0
    ],
    "stated": [
-    32.0,
-    32.0
+    24.0,
+    25.0
    ],
    "against": "program",
    "why": []
@@ -106,29 +89,32 @@
    "pass": true
   },
   "careers": {
-   "count": 4,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "n/a"
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement Architectural Design",
+   "section_heading": "Associate in Arts Degree: Software Development",
    "measure": "units",
    "total_units": {
-    "min": 32,
-    "max": 32
+    "min": 24,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "MiraCosta Associate in Arts general education",
    "degree_total": {
     "min": null,
     "max": null
@@ -139,13 +125,10 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Upon completion of this program, the student will be able to design and create graphical representations of the built environment based on industry standards."
+    "Upon completion of this program, the student will be able to analyze, collaborate, design, develop and discuss mature software solutions to complex and abstract programming problems utilizing efficient and appropriate algorithms."
    ],
    "careers": [
-    "detailing",
-    "revisions",
-    "design update",
-    "general office practice"
+    "computer programming professionals"
    ]
   },
   "blocks": [
@@ -160,78 +143,52 @@
     },
     "courses": [
      {
-      "code": "DESN 100",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "DESN 101",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "DESN 102",
+      "code": "CS 111",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "DESN 103",
+      "code": "CS 112",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "DESN 105",
+      "code": "CS 113",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "DESN 200",
+      "code": "CS 138",
       "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "DESN 201",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "DESN 207",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "DESN 290",
-      "units": 1,
       "units_max": null,
       "alternatives": [
        {
-        "code": "DESN 292",
+        "code": "CS 150",
         "units": null,
-        "catalog_addition": true
-       },
-       {
-        "code": "DESN 299",
-        "units": null,
-        "catalog_addition": true
+        "catalog_addition": false
        }
       ],
-      "catalog_addition": true
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    },
@@ -242,7 +199,7 @@
     "option_group": null,
     "stated": {
      "min": 6,
-     "max": 6
+     "max": 7
     },
     "courses": [
      {
@@ -253,38 +210,83 @@
       "catalog_addition": false
      },
      {
-      "code": "DESN 107",
+      "code": "CS 101",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "DESN 108",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "DESN 204",
+      "code": "CS 134",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "HORT 127",
+      "code": "CS 138",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MAT 110",
+      "code": "CS 139",
       "units": null,
       "units_max": null,
       "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 226",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 226",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT 145",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MAT 150",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MAT 190",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      }
     ]
@@ -293,11 +295,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside the elective courses or beside the DESN 292 and DESN 299 alternatives; those units are null.",
-   "Careers are read from 'qualify for entry-level positions in detailing, revisions, design update, and general office practice'; a reviewer should confirm these count as career fields.",
-   "The same program student learning outcome is printed for several Design certificates (Computer-Aided Drafting, CADD, Mechanical Design); it was recorded here from the Architectural Design section.",
-   "The required courses (26 units) plus 6 elective units match the printed total of 32."
+   "The A.A. section states the degree is earned by completing the Software Development Certificate of Achievement plus MiraCosta's A.A. general education; course requirements, total (24-25 units) and outcome were read from the Certificate of Achievement section.",
+   "The A.A. section prints no outcomes of its own; the certificate's Program Student Learning Outcome is recorded as shared by the degree.",
+   "Elective list prints no units beside individual courses; units left null.",
+   "CS 138 and CS 150 appear both as an either/or in required courses and in the elective list; presumably the one not used for the requirement may count as an elective.",
+   "No degree total or GE unit figure is printed for the A.A."
   ]
  },
- "extracted_run": "38748842603"
+ "extracted_run": "39709840590"
 }

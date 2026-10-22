@@ -1,0 +1,960 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "30724",
+ "shape": "degree",
+ "title": "Liberal Arts: Health Sciences",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.miracosta.edu/disciplines/liberalartsmathematicsandsciences/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9959,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9959,
+    "output_tokens": 6203,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 6203,
+  "output_tokens_details": {
+   "thinking_tokens": 1746
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1639,
+ "ms": 47074,
+ "seconds": 47.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 43,
+   "share": 0.535,
+   "missing": [
+    "ANTH102",
+    "COMM106",
+    "COMMC1000",
+    "COMMC1004",
+    "GERO101",
+    "HEAL101",
+    "HEAL200",
+    "HEAL201",
+    "KINE190",
+    "KINE200",
+    "KINE203",
+    "KINE204",
+    "NURS155",
+    "NUTR105",
+    "NUTR108",
+    "NUTR125",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SOCIC1000",
+    "SOCIC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 62,
+   "codes": [
+    "ANTH105",
+    "ANTH190",
+    "ANTHC1001",
+    "ANTHC1001H",
+    "ANTHC1001L",
+    "ASTR120",
+    "ASTRC1001",
+    "ASTRC1001L",
+    "BIO102",
+    "BIO103",
+    "BIO104",
+    "BIO105",
+    "BIO107",
+    "BIO108",
+    "BIO108L",
+    "BIO111L",
+    "BUS147",
+    "CHEM103",
+    "CHEM103L",
+    "CHEM210",
+    "CHEM211",
+    "CSIT123",
+    "EART106",
+    "EE100",
+    "EE110",
+    "EE210",
+    "ENGR130",
+    "ENGR230",
+    "GEOG101",
+    "GEOG101L",
+    "GEOL101",
+    "GEOL101L",
+    "HORT115",
+    "HORT116",
+    "MATH102",
+    "MATH102A",
+    "MATH112",
+    "MATH115",
+    "MATH126",
+    "MATH126S",
+    "MATH131",
+    "MATH135",
+    "MATH210",
+    "MATH212",
+    "MATH226",
+    "MATH260",
+    "MATH265",
+    "MATH270",
+    "MATHC2210",
+    "MATHC2210E",
+    "MATHC2210H",
+    "MATHC2220",
+    "NUTR120",
+    "OCEA101",
+    "OCEA101H",
+    "OCEA101L",
+    "PHSN106",
+    "PHYS151",
+    "PHYS152",
+    "PHYS253",
+    "PHYS280",
+    "PSYC260"
+   ],
+   "flagged": [
+    "ANTH105",
+    "ANTH190",
+    "ANTHC1001",
+    "ANTHC1001H",
+    "ANTHC1001L",
+    "ASTR120",
+    "ASTRC1001",
+    "ASTRC1001L",
+    "BIO102",
+    "BIO103",
+    "BIO104",
+    "BIO105",
+    "BIO107",
+    "BIO108",
+    "BIO108L",
+    "BIO111L",
+    "BUS147",
+    "CHEM103",
+    "CHEM103L",
+    "CHEM210",
+    "CHEM211",
+    "CSIT123",
+    "EART106",
+    "EE100",
+    "EE110",
+    "EE210",
+    "ENGR130",
+    "ENGR230",
+    "GEOG101",
+    "GEOG101L",
+    "GEOL101",
+    "GEOL101L",
+    "HORT115",
+    "HORT116",
+    "MATH102",
+    "MATH102A",
+    "MATH112",
+    "MATH115",
+    "MATH126",
+    "MATH126S",
+    "MATH131",
+    "MATH135",
+    "MATH210",
+    "MATH212",
+    "MATH226",
+    "MATH260",
+    "MATH265",
+    "MATH270",
+    "MATHC2210",
+    "MATHC2210E",
+    "MATHC2210H",
+    "MATHC2220",
+    "NUTR120",
+    "OCEA101",
+    "OCEA101H",
+    "OCEA101L",
+    "PHSN106",
+    "PHYS151",
+    "PHYS152",
+    "PHYS253",
+    "PHYS280",
+    "PSYC260"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Course Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completion of this program, the student will be able to develop communication, critical thinking, and intellectual skills that effectively prepare them for lifelong learning and advanced study in a wide range of majors at the university level."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Course Requirements",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH C1001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH C1001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASTR C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASTR C1001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASTR 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 107",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 108L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 111",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO 111L",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 204",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 230",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 147",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 103L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 112",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 140",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 151",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIT 123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EART 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EE 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EE 110",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EE 210",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGR 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGR 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 101L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL 101L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HORT 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HORT 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 102A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 115",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 126",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MATH 126S",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 131",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 135",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 212",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 226",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 260",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 265",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 270",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2210E",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH C2210H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BTEC 180",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 204",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 104",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 104H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 125",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "OCEA 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "OCEA 101H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "OCEA 101L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHSN 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 151",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 152",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 253",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 106",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM C1004",
+    "why": "not in the text"
+   },
+   {
+    "code": "GERO 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "HEAL 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "HEAL 200",
+    "why": "not in the text"
+   },
+   {
+    "code": "HEAL 201",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINE 190",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINE 200",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINE 203",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINE 204",
+    "why": "not in the text"
+   },
+   {
+    "code": "NURS 155",
+    "why": "not in the text"
+   },
+   {
+    "code": "NUTR 105",
+    "why": "not in the text"
+   },
+   {
+    "code": "NUTR108",
+    "why": "not in the text"
+   },
+   {
+    "code": "NUTR125",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIC1000H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The source page is the Liberal Arts: Mathematics and Sciences discipline page; the text begins mid-sentence and prints no program title. It names preparation for nursing, kinesiology, public health and other health science majors, but it may be the Mathematics and Sciences emphasis rather than a distinct Health Sciences emphasis. Twenty closed-list courses (COMM, GERO, HEAL, KINE, NURS, PSYC C1000, SOCI C1000 and others) do not appear, which suggests a separate Health Sciences section may exist. A reviewer should verify that this is the correct section.",
+   "The section heading is recorded as 'Course Requirements' because no program heading is visible in the excerpt.",
+   "The major is a single selection: 'Select a minimum of 18 units from the following courses.' total_units was left null because the page prints no separate major total; the 18 units is recorded as the block minimum.",
+   "Constraint: at least one course must be a mathematics course. Courses outside MATH approved for Cal-GETC Area 2 may be used in lieu of a MATH-prefix course.",
+   "The 60-unit figure is a general graduation requirement, not a printed degree total. The GE pattern is unnamed ('see Associate Degrees').",
+   "BIO 110 has as its alternative the pair BIO 111 & BIO 111L, both required together.",
+   "The statistics row (STAT C1000 3-5) offers seven alternatives. SOCI 125 and NUTR 100 match the closed-list codes SOCI125 and NUTR100.",
+   "The single Program Student Learning Outcome appears to apply to the area of emphasis as a whole."
+  ]
+ },
+ "extracted_run": "39709840590"
+}
