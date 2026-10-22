@@ -69,6 +69,17 @@ The funding side session finished (Sheet 114 answered, #2359 and CPLBrain#437). 
 (session_01FQcwC1NjSSdGHGPHWMcUgQ) took the noncredit funding lane's build only. The CPL Queue routine's next
 firing is 05:12Z on 2026-10-23.
 
+## Emergency close (21:20Z)
+
+S449 closed at the context meter's EMERGENCY line (49,592 tokens left) after a light checkpoint. Refreshed: the
+harvest lane, lessons S449, this handoff, INDEX and catalog, the status file, seven cpl_memory rows, the vault note.
+Not refreshed: kb/README, README, kb-notes, the pipeline view, the four other references' run logs. **Sheet 115 is
+built in the vault (`decision-sheets/open-asks/2026-10-22-open-asks-115.html`, chips injected, on CPLBrain#438) and
+NOT published**: publish it as a Claude artifact with `capabilities: {db: {}, comments: {}}`, record it in
+`decision_sheets.md`, the Library and `kb/status/program-requirements.json` `calls`, and move CLAUDE.md's pointer line
+from Sheet 114 to 115. The vault's coverage check reads the tracker's main, so merge cpl-project-tracker#2361 before
+CPLBrain#438. PRs left open at close: #2361 and CPLBrain#438 (both subscribed by S449; take them over).
+
 ## Let go
 
 At this checkpoint S449 still holds the harvest branches' runs and no PR subscription (#2360 merged and
