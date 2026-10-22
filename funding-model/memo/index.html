@@ -95,6 +95,7 @@ main{max-width:880px; margin:0 auto; padding:12px clamp(16px,4vw,28px) 40px}
 <nav class="bar" aria-label="Memo actions">
   <a href="../">The funding page</a>
   <button type="button" id="print-btn">PDF</button>
+  <button type="button" id="word-btn">Word</button>
   <span class="ver">As of: <span id="as-of">TBA</span></span>
 </nav>
 <main>
@@ -109,6 +110,10 @@ main{max-width:880px; margin:0 auto; padding:12px clamp(16px,4vw,28px) 40px}
   "use strict";
   var T = window.CPL_FUNDING_TAB;
   var box = document.getElementById("memo"), status = document.getElementById("memo-status");
+  var wantWord = /[?&]download=word\b/.test(location.search);
+  // Word (Sam, 2026-10-22): the tab's own export, so the file keeps the memo's
+  // styles and line breaks.
+  function word() { if (!box.hidden && T && typeof T._downloadMemoDocx === "function") T._downloadMemoDocx(box); }
   function asOf() {
     var s = T && typeof T._scenario === "function" ? T._scenario() : null;
     var t = s && s.savedAt ? new Date(s.savedAt) : null;
@@ -142,6 +147,9 @@ main{max-width:880px; margin:0 auto; padding:12px clamp(16px,4vw,28px) 40px}
       var s = T._scenario && T._scenario();
       status.textContent = s && s.loaded ? "" : "Loading the current figures.";
       asOf();
+      // The Contents' Word link (?download=word) downloads once the live
+      // figures are in, never the baked defaults.
+      if (wantWord && s && s.loaded) { wantWord = false; word(); }
     } catch (e) {
       status.textContent = "The memo could not be built from the current model. The funding page carries the same figures.";
     }
@@ -150,6 +158,7 @@ main{max-width:880px; margin:0 auto; padding:12px clamp(16px,4vw,28px) 40px}
   if (T && typeof T.ensureLoaded === "function") T.ensureLoaded();
   paint();
   document.getElementById("print-btn").addEventListener("click", function () { window.print(); });
+  document.getElementById("word-btn").addEventListener("click", word);
 })();
 </script>
 </body>

@@ -487,6 +487,7 @@ section[hidden], #contents[hidden]{display:none}
       <!-- The guidance memo (Sam, 2026-10-21), built from the published
            scenario by memo/; never called a draft on this page. -->
       <li class="toc-tail"><a id="memo-link" href="memo/">Read the funding guidance memo</a></li>
+      <li class="toc-tail"><a id="memo-word-link" href="memo/?download=word">Download the funding guidance memo in Word</a></li>
       <li class="toc-video toc-tail"><a id="video-link" href="../prototype/funding_video/funding_in_motion_s2.html">Watch the 100-second introduction</a></li>
       <!-- Help, after the video (Sam, 2026-10-20): the MAP team's office hours,
            the chosen college's CPL landing page (its hover recommends office
@@ -1766,7 +1767,8 @@ window.CPL_SIERRA_SUGGESTED = [
       contentsFromSections();
       // A tabled memo leaves the Contents (its status, set in the tab's Report view).
       var memoLi = document.getElementById("memo-link");
-      if (memoLi && memoLi.parentNode) memoLi.parentNode.hidden = typeof T._docStatus === "function" && T._docStatus("memo") === "tabled";
+      var tabled = typeof T._docStatus === "function" && T._docStatus("memo") === "tabled";
+      [memoLi, document.getElementById("memo-word-link")].forEach(function (a) { if (a && a.parentNode) a.parentNode.hidden = tabled; });
       painted = true;
       if (status) status.textContent = "";
     } catch (e) {
