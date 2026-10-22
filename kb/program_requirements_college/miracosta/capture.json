@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 187,
  "with_closed_list": 161,
- "started": "2026-10-22T05:13:46Z",
+ "started": "2026-10-22T08:18:02Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.miracosta.edu/sitemap.xml",
@@ -20,13 +20,13 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 367,
- "seconds": 1755.1,
- "found": 119,
+ "seconds": 1735.1,
+ "found": 142,
  "by_method": {
   "no_closed_list": 26,
   "not_found": 11,
-  "page_claimed": 31,
-  "sitemap_page": 119
+  "page_claimed": 8,
+  "sitemap_page": 142
  },
  "shared_pages": {
   "https://catalog.miracosta.edu/disciplines/horticulture/": [
@@ -43,13 +43,19 @@
    "35677",
    "35678"
   ],
+  "https://catalog.miracosta.edu/disciplines/accounting/": [
+   "05113",
+   "21982",
+   "41723"
+  ],
   "https://catalog.miracosta.edu/disciplines/nursing/": [
    "05130",
    "22002"
   ],
   "https://catalog.miracosta.edu/disciplines/psychology/": [
    "05136",
-   "18313"
+   "18313",
+   "31937"
   ],
   "https://catalog.miracosta.edu/disciplines/musictechnology/": [
    "05143",
@@ -81,12 +87,14 @@
    "21984",
    "21985",
    "41652",
-   "41653"
+   "41653",
+   "41895"
   ],
   "https://catalog.miracosta.edu/disciplines/dramaticarts/": [
    "07876",
    "18340",
-   "21999"
+   "21999",
+   "32467"
   ],
   "https://catalog.miracosta.edu/disciplines/dance/": [
    "07877",
@@ -94,21 +102,26 @@
   ],
   "https://catalog.miracosta.edu/disciplines/childdevelopment/": [
    "07879",
+   "15183",
    "15310",
    "22003",
    "22005",
    "22006",
+   "35580",
+   "37409",
    "46055"
   ],
   "https://catalog.miracosta.edu/disciplines/hospitality/": [
    "07881",
    "12111",
    "20765",
-   "20767"
+   "20767",
+   "41547"
   ],
   "https://catalog.miracosta.edu/disciplines/computerscience/": [
    "11750",
-   "18975"
+   "18975",
+   "38729"
   ],
   "https://catalog.miracosta.edu/disciplines/biotechnology/": [
    "15309",
@@ -126,11 +139,8 @@
   "https://catalog.miracosta.edu/disciplines/art/": [
    "18986",
    "18987",
-   "35028"
-  ],
-  "https://catalog.miracosta.edu/disciplines/accounting/": [
-   "21982",
-   "41723"
+   "35028",
+   "38727"
   ],
   "https://catalog.miracosta.edu/disciplines/medicaladministrativeprofessional/": [
    "22000",
@@ -141,10 +151,20 @@
    "30238",
    "35549",
    "36143",
+   "36144",
+   "36145",
+   "36146",
    "36148",
+   "36154",
    "36160",
+   "36168",
+   "36169",
    "36171",
+   "36174",
+   "36253",
+   "36305",
    "36315",
+   "43719",
    "43720"
   ],
   "https://catalog.miracosta.edu/continuingeducation/noncreditesl/": [
@@ -156,6 +176,10 @@
    "39489",
    "39491"
   ],
+  "https://catalog.miracosta.edu/disciplines/spanish/": [
+   "36121",
+   "40577"
+  ],
   "https://catalog.miracosta.edu/disciplines/french/": [
    "36417",
    "40575"
@@ -164,9 +188,17 @@
    "36422",
    "40576"
   ],
+  "https://catalog.miracosta.edu/disciplines/anthropology/": [
+   "37407",
+   "43613"
+  ],
   "https://catalog.miracosta.edu/disciplines/japanese/": [
    "38711",
    "38712"
+  ],
+  "https://catalog.miracosta.edu/disciplines/politicalscience/": [
+   "38730",
+   "40327"
   ]
  },
  "not_found": [
@@ -300,23 +332,6 @@
  ],
  "page_claimed": [
   {
-   "control_number": "05113",
-   "title": "Bookkeeping",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/accounting/",
-    "https://catalog.miracosta.edu/disciplines/businessadministration/"
-   ]
-  },
-  {
-   "control_number": "15183",
-   "title": "Child Development Teacher",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/childdevelopment/"
-   ]
-  },
-  {
    "control_number": "17363",
    "title": "Personal Fitness Trainer",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -356,28 +371,6 @@
    ]
   },
   {
-   "control_number": "31936",
-   "title": "Studio Arts",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/",
-    "https://catalog.miracosta.edu/disciplines/art/"
-   ]
-  },
-  {
-   "control_number": "31937",
-   "title": "Psychology",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/psychology/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
-    "https://catalog.miracosta.edu/disciplines/liberalartssocialandbehavioralsciences/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-    "https://catalog.miracosta.edu/disciplines/gerontology/",
-    "https://catalog.miracosta.edu/disciplines/sociology/"
-   ]
-  },
-  {
    "control_number": "34012",
    "title": "Biomanufacturing",
    "award": "Baccalaureate of Science (B.S.) Degree.",
@@ -386,193 +379,11 @@
    ]
   },
   {
-   "control_number": "35580",
-   "title": "Early Childhood Education for Transfer",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/childdevelopment/"
-   ]
-  },
-  {
-   "control_number": "36144",
-   "title": "Tech Support",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
-   ]
-  },
-  {
-   "control_number": "36145",
-   "title": "Internet and E-Commerce",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
-   ]
-  },
-  {
-   "control_number": "36146",
-   "title": "Management Information Systems (MIS)",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
-   ]
-  },
-  {
-   "control_number": "36154",
-   "title": "Executive Administrative Professional",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
-   ]
-  },
-  {
-   "control_number": "36168",
-   "title": "Cyber Security",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
-   ]
-  },
-  {
-   "control_number": "36169",
-   "title": "Systems Administration",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
-   ]
-  },
-  {
-   "control_number": "36174",
-   "title": "Cyber Security",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
-   ]
-  },
-  {
-   "control_number": "36253",
-   "title": "Computer Applications",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
-   ]
-  },
-  {
-   "control_number": "36305",
-   "title": "Information Technology",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
-   ]
-  },
-  {
    "control_number": "36442",
    "title": "Research and Development",
    "award": "A.S. Degree",
    "pages": [
     "https://catalog.miracosta.edu/disciplines/biotechnology/"
-   ]
-  },
-  {
-   "control_number": "37409",
-   "title": "Child and Adolescent Development",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/childdevelopment/",
-    "https://catalog.miracosta.edu/disciplines/psychology/",
-    "https://catalog.miracosta.edu/disciplines/sociology/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
-    "https://catalog.miracosta.edu/disciplines/swhs/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-    "https://catalog.miracosta.edu/disciplines/healtheducation/",
-    "https://catalog.miracosta.edu/disciplines/nutrition/",
-    "https://catalog.miracosta.edu/disciplines/liberalartssocialandbehavioralsciences/",
-    "https://catalog.miracosta.edu/disciplines/anthropology/",
-    "https://catalog.miracosta.edu/disciplines/businessadministration/",
-    "https://catalog.miracosta.edu/disciplines/geography/"
-   ]
-  },
-  {
-   "control_number": "38727",
-   "title": "Art History",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/art/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-    "https://catalog.miracosta.edu/disciplines/liberalartsartsandhumanities/",
-    "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/"
-   ]
-  },
-  {
-   "control_number": "38729",
-   "title": "Computer Science",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/computerscience/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
-    "https://catalog.miracosta.edu/disciplines/liberalartsmathematicsandsciences/",
-    "https://catalog.miracosta.edu/disciplines/biology/",
-    "https://catalog.miracosta.edu/disciplines/mathematics/"
-   ]
-  },
-  {
-   "control_number": "38730",
-   "title": "Law, Public Policy, and Society",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/politicalscience/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
-    "https://catalog.miracosta.edu/disciplines/liberalartssocialandbehavioralsciences/"
-   ]
-  },
-  {
-   "control_number": "40577",
-   "title": "Spanish",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/spanish/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-    "https://catalog.miracosta.edu/disciplines/liberalartsmulticulturalstudies/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
-    "https://catalog.miracosta.edu/disciplines/interdisciplinarystudies/",
-    "https://catalog.miracosta.edu/disciplines/liberalartsartsandhumanities/"
-   ]
-  },
-  {
-   "control_number": "41547",
-   "title": "Hospitality Management",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/hospitality/",
-    "https://catalog.miracosta.edu/disciplines/businessadministration/",
-    "https://catalog.miracosta.edu/disciplines/politicalscience/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
-    "https://catalog.miracosta.edu/disciplines/swhs/",
-    "https://catalog.miracosta.edu/disciplines/anthropology/",
-    "https://catalog.miracosta.edu/disciplines/childdevelopment/",
-    "https://catalog.miracosta.edu/disciplines/geography/",
-    "https://catalog.miracosta.edu/disciplines/healtheducation/",
-    "https://catalog.miracosta.edu/disciplines/liberalartsmathematicsandsciences/",
-    "https://catalog.miracosta.edu/disciplines/nutrition/"
-   ]
-  },
-  {
-   "control_number": "41895",
-   "title": "Business Administration 2.0",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/businessadministration/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
-    "https://catalog.miracosta.edu/disciplines/liberalartsmathematicsandsciences/",
-    "https://catalog.miracosta.edu/disciplines/hospitality/",
-    "https://catalog.miracosta.edu/disciplines/mathematics/",
-    "https://catalog.miracosta.edu/disciplines/politicalscience/",
-    "https://catalog.miracosta.edu/disciplines/biotechnology/",
-    "https://catalog.miracosta.edu/disciplines/swhs/"
    ]
   },
   {
@@ -588,31 +399,6 @@
    ]
   },
   {
-   "control_number": "43613",
-   "title": "Global Health",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/healtheducation/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
-    "https://catalog.miracosta.edu/disciplines/anthropology/",
-    "https://catalog.miracosta.edu/disciplines/liberalartsmathematicsandsciences/",
-    "https://catalog.miracosta.edu/disciplines/liberalartssocialandbehavioralsciences/",
-    "https://catalog.miracosta.edu/disciplines/psychology/",
-    "https://catalog.miracosta.edu/disciplines/geography/",
-    "https://catalog.miracosta.edu/disciplines/politicalscience/",
-    "https://catalog.miracosta.edu/disciplines/swhs/"
-   ]
-  },
-  {
-   "control_number": "43719",
-   "title": "Artificial Intelligence",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
-   ]
-  },
-  {
    "control_number": "44614",
    "title": "Data Science",
    "award": "A.S. Degree",
@@ -625,229 +411,19 @@
   }
  ],
  "coverage_bands": {
-  "0.5-0.8": 6,
+  "0.5-0.8": 7,
   "0.8-1.0": 13,
-  "1.0": 100
+  "1.0": 122
  },
  "would_extract": {
   "against": "kb/program_requirements_college/miracosta",
-  "kept": 62,
-  "programs": 57,
+  "kept": 118,
+  "programs": 24,
   "list": [
    {
-    "control_number": "05110",
-    "title": "Sustainable Landscape and Turf Management",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/horticulture/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "07077",
-    "title": "Web Development and Design",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/mediaarts/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "07872",
-    "title": "Mechanical Design",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "07876",
-    "title": "Design & Technology",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/dramaticarts/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "07879",
-    "title": "Child Development Master Teacher",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "11747",
-    "title": "Graphic Design",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/mediaarts/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "12111",
-    "title": "Restaurant Management",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/hospitality/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "12306",
-    "title": "Retail Management",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/businessadministration/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "12880",
-    "title": "Landscape Architecture",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/horticulture/",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "15309",
-    "title": "Bioprocess Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/biotechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "15310",
-    "title": "Child Development Associate Teacher",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "16232",
-    "title": "Automotive Electronics, Computers and Emissions and or HVAC",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/automotivetechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "17752",
-    "title": "Business of Music and Media",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/musictechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "18313",
-    "title": "Human Development",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/psychology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "18974",
-    "title": "Mechanical Design",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.miracosta.edu/disciplines/design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "20767",
-    "title": "Restaurant Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/hospitality/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "21974",
-    "title": "Sustainable Landscape and Turf Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/horticulture/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "21976",
-    "title": "Nursery/Horticulture Crop Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/horticulture/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "21978",
-    "title": "Architectural Design",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.miracosta.edu/disciplines/design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "21979",
-    "title": "Landscape Architecture",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/horticulture/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "21980",
-    "title": "Research and Development",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/biotechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "21982",
+    "control_number": "05113",
     "title": "Bookkeeping",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "award": "A.A. Degree",
     "url": "https://catalog.miracosta.edu/disciplines/accounting/",
     "coverage": 1.0,
     "was_url": null,
@@ -855,258 +431,118 @@
     "was_method": "page_claimed"
    },
    {
-    "control_number": "21991",
-    "title": "Web Development and Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/mediaarts/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "21992",
-    "title": "Graphic Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/mediaarts/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "21995",
-    "title": "Computer-Aided Design & Drafting",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.miracosta.edu/disciplines/design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "21996",
-    "title": "Computer-Aided Drafting",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.miracosta.edu/disciplines/design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "21998",
-    "title": "Music Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/musictechnology/",
-    "coverage": 0.977,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "22003",
-    "title": "Child Development Associate Teacher",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "22005",
-    "title": "Child Development Master Teacher",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "30238",
-    "title": "Internet and E-Commerce",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "33310",
-    "title": "Master Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/automotivetechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35549",
-    "title": "Computer Applications",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35650",
-    "title": "Viticulture and Enology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/horticulture/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35669",
-    "title": "Pest Control Adviser",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/horticulture/",
-    "coverage": 0.95,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35670",
-    "title": "Sustainable Agriculture",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/horticulture/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35671",
-    "title": "Pest Control Adviser",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/horticulture/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35677",
-    "title": "Sustainable Agriculture",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/horticulture/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35678",
-    "title": "Viticulture and Enology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/horticulture/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35767",
-    "title": "Biomanufacturing",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/biotechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35768",
-    "title": "Biomanufacturing",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/biotechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36143",
-    "title": "Management Information Systems (MIS)",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36147",
-    "title": "Medical Assistant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/medicaladministrativeprofessional/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36148",
-    "title": "Systems Administration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36153",
-    "title": "Engineering Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36160",
-    "title": "Executive Administrative Professional",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36162",
-    "title": "Computer-Aided Drafting",
+    "control_number": "15183",
+    "title": "Child Development Teacher",
     "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/design/",
+    "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "page_claimed"
    },
    {
-    "control_number": "36170",
-    "title": "Engineering Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/design/",
+    "control_number": "31936",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/",
+    "coverage": 0.762,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31937",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/psychology/",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "page_claimed"
    },
    {
-    "control_number": "36171",
+    "control_number": "32467",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/dramaticarts/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35580",
+    "title": "Early Childhood Education for Transfer",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36144",
     "title": "Tech Support",
+    "award": "A.S. Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36145",
+    "title": "Internet and E-Commerce",
+    "award": "A.S. Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36146",
+    "title": "Management Information Systems (MIS)",
+    "award": "A.S. Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36154",
+    "title": "Executive Administrative Professional",
+    "award": "A.S. Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36168",
+    "title": "Cyber Security",
+    "award": "A.S. Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36169",
+    "title": "Systems Administration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36174",
+    "title": "Cyber Security",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
     "coverage": 1.0,
@@ -1115,9 +551,19 @@
     "was_method": "page_claimed"
    },
    {
-    "control_number": "36315",
+    "control_number": "36253",
+    "title": "Computer Applications",
+    "award": "A.S. Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36305",
     "title": "Information Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "award": "A.S. Degree",
     "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
     "coverage": 1.0,
     "was_url": null,
@@ -1125,80 +571,90 @@
     "was_method": "page_claimed"
    },
    {
-    "control_number": "36418",
-    "title": "Computer-Aided Design & Drafting",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "40670",
-    "title": "Laboratory Skills",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/biotechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "41652",
-    "title": "Supply Chain Management (SCM)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/businessadministration/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "41653",
-    "title": "Supply Chain Management (SCM)",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/businessadministration/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "41672",
-    "title": "Electric, Hybrid, and Alternative-Fuel Vehicle Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/automotivetechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "41718",
-    "title": "Patient Care Coordinator",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/medicaladministrativeprofessional/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "43720",
-    "title": "Artificial Intelligence",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "46055",
-    "title": "Family Child Care Entrepreneurship",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "control_number": "37409",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
     "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38727",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/art/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38729",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/computerscience/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38730",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/politicalscience/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "40577",
+    "title": "Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.miracosta.edu/disciplines/spanish/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41547",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/hospitality/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41895",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/businessadministration/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "43613",
+    "title": "Global Health",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.miracosta.edu/disciplines/anthropology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "43719",
+    "title": "Artificial Intelligence",
+    "award": "A.S. Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
@@ -1206,5 +662,5 @@
    }
   ]
  },
- "run": "39726634443"
+ "run": "39746427354"
 }

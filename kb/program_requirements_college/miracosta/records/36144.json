@@ -1,0 +1,231 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "36144",
+ "shape": "degree",
+ "title": "Tech Support",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12063,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12063,
+    "output_tokens": 1169,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1169,
+  "output_tokens_details": {
+   "thinking_tokens": 235
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07163,
+ "ms": 10658,
+ "seconds": 11.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 18,
+   "share": 0.0,
+   "missing": [
+    "BUS136",
+    "BUS290",
+    "CS101",
+    "CS111",
+    "CSIT110",
+    "CSIT137",
+    "CSIT146",
+    "CSIT149",
+    "CSIT150",
+    "CSIT151",
+    "CSIT152",
+    "CSIT155",
+    "CSIT180",
+    "CSIT181",
+    "CSIT182",
+    "CSIT191",
+    "CSIT195",
+    "CSIT286"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science Degrees: Tech Support",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "MiraCosta College Associate in Science degree general education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 136",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "BUS 290",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CS 101",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CS 111",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 110",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 137",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 146",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 149",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 150",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 151",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 152",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 155",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 180",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 181",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 182",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 191",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 195",
+    "why": "Tech Support section not in the text (text cut off)"
+   },
+   {
+    "code": "CSIT 286",
+    "why": "Tech Support section not in the text (text cut off)"
+   }
+  ],
+  "notes": [
+   "The degree tab lists Tech Support among the Associate in Science degrees and states the degree is earned by completing the respective certificate of achievement requirements plus MiraCosta's A.S. general education courses.",
+   "The catalog text is cut off in the middle of the Systems Administration certificate; the Tech Support certificate of achievement section (which defines the degree's major requirements) does not appear, so no blocks, totals, outcomes or careers could be recorded. A reviewer should fetch the full page.",
+   "No unit total for the degree or for general education is printed in the provided text."
+  ]
+ },
+ "extracted_run": "39746427354"
+}
