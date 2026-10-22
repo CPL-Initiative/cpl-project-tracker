@@ -61,7 +61,10 @@
       ".header{display:grid;grid-template-columns:auto minmax(0,1fr) auto;",
       "position:relative;z-index:150;",
       "align-items:center;column-gap:1.1rem;row-gap:.5rem;padding:.6rem 1.5rem;}",
-      ".cobi-brand{grid-column:1;justify-self:start;display:flex;align-items:center;gap:.7rem;min-width:0;}",
+      // flex-wrap: when the track is narrower than the wordmark and the site
+      // picker together, the picker drops under the wordmark rather than
+      // painting over the utility cluster (S448, Sam: "the elements overlap").
+      ".cobi-brand{grid-column:1;justify-self:start;display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .7rem;min-width:0;}",
       // The seal is hidden (Sam, 2026-09-08: "hide the CO logo on the COBI
       // header ... We'll just leave it plain COBI for now"). Hidden here rather
       // than deleted from the two HTMLs: this file is one static asset that
@@ -72,8 +75,12 @@
       ".cobi-seal{display:none;}",
       ".cobi-brandtext{display:flex;flex-direction:column;line-height:1.12;min-width:0;}",
       ".header h1{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;font-weight:800;",
-      "letter-spacing:.08em;color:var(--seal-blue-text,#002F6D);margin:0;white-space:nowrap;}",
-      ".cobi-alpha{display:inline-block;margin-left:.5rem;padding:.08rem .38rem;vertical-align:.18em;",
+      "letter-spacing:.08em;color:var(--seal-blue-text,#002F6D);margin:0;white-space:nowrap;",
+      // The chip is centered on the wordmark by flex, not nudged by a
+      // vertical-align offset, which left it 6px low (S448, Sam: "vertically
+      // center the beta chip with respect to the COBI logo").
+      "display:flex;align-items:center;}",
+      ".cobi-alpha{display:inline-block;margin-left:.5rem;padding:.08rem .38rem;line-height:1.3;",
       "font-family:'Source Sans 3',Arial,sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.10em;",
       // ⚠️ --seal-blue, NOT the text grade: this ink sits on the MUSTARD FILL, not
       // on the page ground, so it stays navy in both themes (5.2:1 either way).
@@ -104,6 +111,11 @@
       "font-size:.85rem;font-weight:700;color:var(--text-strong,#1C1C1A);white-space:nowrap;",
       "overflow:hidden;text-overflow:ellipsis;}",
       "#cobiQsSlot .qs-row{display:flex;align-items:center;gap:.5rem;min-width:0;}",
+      // The box follows its slot down. Without these the wrapper sized itself
+      // to the input's own default width and the box painted over Sign in and
+      // Theme at 1,024 to 1,180px wide, or at 125% zoom (S448).
+      "#cobiQsSlot .qs-suggest{flex:1 1 auto;min-width:0;}",
+      "#cobiQsSlot .qs-input{width:100%;box-sizing:border-box;}",
       "#cobiQsSlot .qs-status{font-size:.72rem;margin:.15rem 0 0;min-height:0;}",
       // ── utility cluster (right) ──
       ".cobi-utility{grid-column:3;justify-self:end;display:flex;align-items:center;justify-content:flex-end;",
@@ -178,11 +190,13 @@
       "padding:.3rem 0!important;text-decoration:none!important;}",
       ".cobi-about-panel .attach-btn:hover{text-decoration:underline!important;background:none!important;}",
       ".cobi-about-panel>div[style]{margin-top:.1rem!important;}",
-      // ── responsive: search drops to its own row under ~1000px ──
-      // Below ~1000px the search takes its own full-width row. minmax(0,…) on
+      // ── responsive: search drops to its own row under ~1180px ──
+      // Below ~1180px the search takes its own full-width row. The brand
+      // cluster (wordmark and site picker, ~420px) and the utility cluster
+      // (~450px) leave the search under ~230px below that width (S448). minmax(0,…) on
       // both tracks again — the brand and the utility cluster must be able to
       // shrink past their content rather than push the row wide.
-      "@media (max-width:1000px){.header{grid-template-columns:minmax(0,1fr) minmax(0,auto);",
+      "@media (max-width:1180px){.header{grid-template-columns:minmax(0,1fr) minmax(0,auto);",
       "padding:.6rem 1rem;}",
       // justify-self:stretch, NOT the wide layout's `start`: a non-stretch
       // justification sizes the item to its own content, which is how the brand
@@ -192,7 +206,9 @@
       ".cobi-qs-slot{grid-column:1 / -1;order:5;justify-self:stretch;width:auto;max-width:none;",
       "border-top:1px solid var(--border,rgba(28,28,26,.14));padding-top:.5rem;}}",
       // Single column below ~560px (presentation rule: mobile-friendly, always).
-      "@media (max-width:560px){.header{grid-template-columns:minmax(0,1fr);}",
+      // One column from ~760px: below it the utility cluster, beside the brand,
+      // wrapped to two lines and sat on the chip (S448, measured at 600px).
+      "@media (max-width:760px){.header{grid-template-columns:minmax(0,1fr);}",
       ".cobi-brand{grid-column:1;justify-self:stretch;}",
       ".cobi-utility{grid-column:1;justify-self:stretch;justify-content:flex-start;}",
       ".header h1{font-size:1.35rem;}}",

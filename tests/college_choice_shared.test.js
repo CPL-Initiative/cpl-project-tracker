@@ -87,7 +87,7 @@ const pick = (w, sel, v) => { sel.value = v; sel.dispatchEvent(new w.Event("chan
   check("(b) the list landing re-renders the tab", !!releaseIndex);
   check("(b) and the reader's college stays picked", col1.value === MTSAC_CAT, col1.value);
   check("(b) the pathways shown are still the college's",
-    [...r1.querySelectorAll("select.cplpw-select option")].every((o) => o.textContent.startsWith(MTSAC_CAT + " — ")));
+    [...r1.querySelectorAll("select.cplpw-select option")].filter((o) => o.value !== "").every((o) => o.textContent.startsWith(MTSAC_CAT + " — ")));
 
   // ── (c) ──
   const w2 = pathways({ choice: { college: MTSAC_MAP, by: "college-briefing" } });

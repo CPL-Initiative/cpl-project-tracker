@@ -129,7 +129,7 @@ function ladderOf(w) { return w.CPL_PATHWAYS.programs.find((p) => p.kind === "la
   check("(f) the tab loads the display build when a ladder is listed", loads.includes("cpl_pathways_roep_data.js"), loads.join(","));
   check("(f) the tab opens on the ladder", !!root.querySelector(".cplpw-lmap") && /From high school to the job site/.test(root.textContent));
   const sel = root.querySelector("select.cplpw-select");
-  check("(f) the selector lists the ladder first", sel && /Field Ironworkers, high school to career/.test(sel.options[0].textContent));
+  check("(f) the selector lists the ladder first", sel && /Field Ironworkers, high school to career/.test(sel.options[1].textContent));
   const open2 = root.querySelector("#cplpw-step-bachelor button.cplpw-lopen");
   if (open2) open2.dispatchEvent(new w.Event("click", { bubbles: true }));
   check("(f) the open button switches the view to the B.S. course map",

@@ -598,7 +598,7 @@ check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_cours
   check("dropdown has a Featured optgroup + field optgroups",
     !!sel && sel.querySelectorAll("optgroup").length >= 2 &&
     /Featured/.test(sel.querySelectorAll("optgroup")[0].label));
-  check("dropdown lists every baccalaureate + featured", sel.querySelectorAll("option").length === 1 + BACC_STUB.length);
+  check("dropdown lists every baccalaureate + featured", sel.querySelectorAll("option").length === 2 + BACC_STUB.length);
   check("directory option shows current/potential CPL courses", (function () {
     var o = Array.from(sel.options).find(x => /Foothill College — Respiratory Care/.test(x.textContent));
     return !!o && /1\/2 courses/.test(o.textContent);

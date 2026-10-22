@@ -36,7 +36,7 @@ const root = w.document.getElementById("cpl-pathways-root");
 const col = root.querySelector("select.cplpw-colsel");
 const sel = root.querySelector("select.cplpw-select");
 const change = (s, v) => { s.value = v; s.dispatchEvent(new w.Event("change", { bubbles: true })); };
-const texts = () => [...sel.querySelectorAll("option")].map((o) => o.textContent);
+const texts = () => [...sel.querySelectorAll("option")].filter((o) => o.value !== "").map((o) => o.textContent);
 const groups = () => [...sel.querySelectorAll("optgroup")].map((g) => g.label);
 
 // ── (a) ──
@@ -74,7 +74,7 @@ check("(c) it holds every catalog record the college has",
 check("(c) the groups stay", groups().includes("Catalog records, Beta draft"));
 check("(c) the caption names the college", /^Mt\. San Antonio College: /.test(root.querySelector(".cplpw-selcount").textContent));
 check("(c) the pathway shown is the college's first",
-  sel.value === sel.options[0].value && /Mt\. San Antonio College|Fire Technology|Nursing|Early Childhood/.test(root.textContent));
+  sel.value === sel.options[1].value && /Mt\. San Antonio College|Fire Technology|Nursing|Early Childhood/.test(root.textContent));
 change(col, "Cerritos College");
 const cer = texts();
 check("(c) Cerritos lists its featured maps and its catalog records",
@@ -92,6 +92,21 @@ check("(d) and keeps the pathway shown", picked && sel.value === picked.value);
 // ── (e) ──
 check("(e) the selects leave location.hash alone", w.location.hash === "#cpl-pathways", w.location.hash);
 check("(e) the first view is unchanged by the new select", before === "0");
+
+// ── (f) the pathway clears (Sam, S448: "no way I can see to clear the pathways filter") ──
+const clearBtn = root.querySelector(".cplpw-clear");
+check("(f) the Pathway list opens with a no-pathway choice", sel.options[0].value === "" && /No pathway chosen/.test(sel.options[0].textContent));
+check("(f) a Clear control shows while a pathway is chosen", !!clearBtn && !clearBtn.hidden && clearBtn.tagName === "BUTTON");
+clearBtn.click();
+check("(f) Clear empties the Pathway list", sel.value === "");
+check("(f) and the view says no pathway is chosen", !!root.querySelector(".cplpw-nopath") && !root.querySelector(".cplpw-hero, .cplpw-rprog, .cplpw-ladder"));
+check("(f) and Clear hides itself", clearBtn.hidden);
+change(col, "Mt. San Antonio College");
+check("(f) picking a college keeps the pathway cleared", sel.value === "" && !!root.querySelector(".cplpw-nopath"));
+change(sel, sel.options[1].value);
+check("(f) choosing a pathway brings Clear back", !root.querySelector(".cplpw-clear").hidden && !root.querySelector(".cplpw-nopath"));
+change(sel, "");
+check("(f) the no-pathway choice in the list clears it too", !!root.querySelector(".cplpw-nopath"));
 
 let failed = 0;
 for (const [name, ok, why] of results) {

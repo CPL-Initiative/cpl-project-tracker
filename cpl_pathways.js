@@ -276,7 +276,8 @@
     ".cplpw-select { font-family:inherit; font-size:.86rem; font-weight:600; color: var(--text-body); background: var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; padding:7px 12px; max-width:100%; min-width:min(340px, 100%); cursor:pointer; }",
     ".cplpw-selcount { font-size:.76rem; color: var(--text-muted); }",
     ".cplpw-oppacts { display:inline-flex; flex-wrap:wrap; gap:12px; align-items:center; }",
-    ".cplpw-oppacts[hidden] { display:none; }",
+    ".cplpw-oppacts[hidden], .cplpw-clear[hidden] { display:none; }",
+    ".cplpw-nopath { margin:18px 0; color: var(--text-muted); }",
     ".cplpw-oppact { font:inherit; font-size:.85rem; font-weight:600; color: var(--cobalt); background:none; border:0; padding:0; min-height:24px; text-decoration:underline; cursor:pointer; }",
     ".cplpw-select, .cplpw-colsel { min-height:40px; }",
     /* The chosen college's program data, one quiet line under the selectors (Sam, 2026-10-21). */
@@ -1555,16 +1556,31 @@
   // the one-shot index stopped at the 1,000th of 2,840 records (2026-10-13) and the
   // programs after it were missing from the list. Pages run under that cap over the path's
   // own stable order until a short page; a failed page fails the read.
+  // The first page is read alone, so a short list costs one request; a full first page
+  // means more, and the rest are read ROEP_WAVE at a time. One after another, the
+  // 17,439-record list took 35 round trips, about ten seconds (S448, Sam: "slow to load").
   var ROEP_PAGE = 500;
+  var ROEP_WAVE = 6;
   function roepGetAll(path) {
-    var out = [];
     function page(from) {
-      return roepGet(path, { "Range-Unit": "items", Range: from + "-" + (from + ROEP_PAGE - 1) }).then(function (rows) {
-        out = out.concat(rows || []);
-        return (rows || []).length < ROEP_PAGE ? out : page(from + ROEP_PAGE);
+      return roepGet(path, { "Range-Unit": "items", Range: from + "-" + (from + ROEP_PAGE - 1) }).then(function (rows) { return rows || []; });
+    }
+    var out = [];
+    function wave(from) {
+      var reads = [];
+      for (var k = 0; k < ROEP_WAVE; k++) reads.push(page(from + k * ROEP_PAGE));
+      return Promise.all(reads).then(function (got) {
+        for (var j = 0; j < got.length; j++) {
+          out = out.concat(got[j]);
+          if (got[j].length < ROEP_PAGE) return out;
+        }
+        return wave(from + ROEP_WAVE * ROEP_PAGE);
       });
     }
-    return page(0);
+    return page(0).then(function (rows) {
+      out = rows;
+      return rows.length < ROEP_PAGE ? out : wave(ROEP_PAGE);
+    });
   }
   // The list of programs, and each college's catalog platform for the record's
   // provenance line. Resolves either way; a failure leaves the index null.
@@ -2839,6 +2855,8 @@
     caption.setAttribute("aria-live", "polite");
     function fill(college) {
       clearNode(sel);
+      // The way back to no pathway (Sam, S448: "no way I can see to clear the pathways filter").
+      sel.appendChild(option("", "No pathway chosen"));
       function mine(it) { return !college || (it.prog && it.prog.college) === college; }
       // Featured group
       var fg = document.createElement("optgroup");
@@ -2886,24 +2904,29 @@
     function has(value) {
       return Array.prototype.some.call(sel.options, function (o) { return o.value === String(value); });
     }
+    function firstPathway() {
+      var o = Array.prototype.filter.call(sel.options, function (x) { return x.value !== ""; })[0];
+      return o ? o.value : "";
+    }
     takeShared(colleges);
     if (pickedCollege && colleges.indexOf(pickedCollege) < 0) pickedCollege = "";
     col.value = pickedCollege;
     fill(pickedCollege);
     sel.addEventListener("change", function () {
       var i = parseInt(sel.value, 10);
-      onChange(isNaN(i) ? 0 : i);
+      onChange(isNaN(i) ? -1 : i);
+      syncClear();
     });
     col.addEventListener("change", function () {
       var keep = sel.value;
       pickedCollege = col.value;
       shareChoice(col.value);
       fill(col.value);
-      if (has(keep)) { sel.value = keep; return; }
-      if (sel.options.length) {
-        sel.value = sel.options[0].value;
-        onChange(parseInt(sel.value, 10));
-      }
+      if (has(keep)) { sel.value = keep; syncClear(); return; }
+      var first = firstPathway();
+      sel.value = first;
+      onChange(first === "" ? -1 : parseInt(first, 10));
+      syncClear();
     });
     var colWrap = el("span", "cplpw-selpair");
     var colLabel = el("label", "cplpw-sellabel", "College:");
@@ -2915,6 +2938,17 @@
     selLabel.setAttribute("for", sel.id);
     selWrap.appendChild(selLabel);
     selWrap.appendChild(sel);
+    var clear = document.createElement("button");
+    clear.type = "button"; clear.className = "cplpw-oppact cplpw-clear"; clear.textContent = "Clear";
+    clear.setAttribute("aria-label", "Clear the pathway");
+    clear.addEventListener("click", function () {
+      sel.value = "";
+      onChange(-1);
+      syncClear();
+      sel.focus();
+    });
+    function syncClear() { clear.hidden = sel.value === ""; }
+    selWrap.appendChild(clear);
     row.appendChild(colWrap);
     row.appendChild(selWrap);
     row.appendChild(caption);
@@ -2983,10 +3017,12 @@
     row.appendChild(stat);
     // Opening a pathway another college offers (a ladder's link) widens to All colleges.
     function show(value) {
+      if (value === -1) { sel.value = ""; syncClear(); return; }
       if (!has(value)) { col.value = ""; pickedCollege = ""; fill(""); syncOpp(); syncStat(); }
       sel.value = String(value);
+      syncClear();
     }
-    return { row: row, select: sel, college: col, show: show, has: has };
+    return { row: row, select: sel, college: col, show: show, has: has, first: firstPathway };
   }
 
   /* ── one college choice for CPL Pathways and My College (Sam, 2026-10-21, step 1 of folding
@@ -3289,6 +3325,13 @@
       }
     }
     function show(i) {
+      if (i === -1) {
+        shownIdent = "none";
+        roepOpening++;
+        clearNode(body);
+        body.appendChild(el("p", "cplpw-nopath", "No pathway chosen. Choose one from the Pathway list above."));
+        return;
+      }
       var it = items[i] || items[0];
       shownIdent = itemIdent(it, items[i] ? i : 0);
       roepOpening++; // a record read still in flight no longer owns the view
@@ -3308,9 +3351,11 @@
     root.removeAttribute("style");
     root.appendChild(container);
     var start = 0;
-    if (shownIdent) items.forEach(function (it, j) { if (itemIdent(it, j) === shownIdent) start = j; });
-    if (selector && selector.college.value && !selector.has(start) && selector.select.options.length) {
-      start = parseInt(selector.select.options[0].value, 10) || 0;
+    if (shownIdent === "none" && selector) start = -1;
+    else if (shownIdent) items.forEach(function (it, j) { if (itemIdent(it, j) === shownIdent) start = j; });
+    if (start !== -1 && selector && selector.college.value && !selector.has(start)) {
+      var first = selector.first();
+      start = first === "" ? -1 : parseInt(first, 10);
     }
     if (selector) selector.show(start);
     show(start);
