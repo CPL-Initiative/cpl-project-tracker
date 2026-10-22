@@ -1,0 +1,211 @@
+{
+ "college": "Sierra College",
+ "control_number": "39208",
+ "shape": "adt",
+ "title": "UCTP: Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.sierracollege.edu/departments/natural-science/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8198,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8198,
+    "output_tokens": 1360,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1360,
+  "output_tokens_details": {
+   "thinking_tokens": 299
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05999,
+ "ms": 11234,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 14,
+   "share": 0.0,
+   "missing": [
+    "CHEM1A",
+    "CHEM1B",
+    "CHEM3A",
+    "CHEM3B",
+    "MATH30",
+    "MATH31",
+    "MATH32",
+    "MATH33",
+    "PHYS205",
+    "PHYS205L",
+    "PHYS210",
+    "PHYS210L",
+    "PHYS215",
+    "PHYS215L"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(not found: the text has no UCTP: Physics A.S. T Degree section; only 'Natural Science AA or AS Degree' is printed)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM 0001A",
+    "why": "UCTP: Physics section not in text; named only in Natural Science AA/AS section"
+   },
+   {
+    "code": "CHEM 0001B",
+    "why": "UCTP: Physics section not in text; named only in Natural Science AA/AS section"
+   },
+   {
+    "code": "CHEM 0003A",
+    "why": "UCTP: Physics section not in text; named only in Natural Science AA/AS section"
+   },
+   {
+    "code": "CHEM 0003B",
+    "why": "UCTP: Physics section not in text; named only in Natural Science AA/AS section"
+   },
+   {
+    "code": "MATH 30",
+    "why": "UCTP: Physics section not in text; named only (as MATH 0030) in Natural Science AA/AS section"
+   },
+   {
+    "code": "MATH 31",
+    "why": "UCTP: Physics section not in text; named only (as MATH 0031) in Natural Science AA/AS section"
+   },
+   {
+    "code": "MATH 32",
+    "why": "UCTP: Physics section not in text; named only (as MATH 0032) in Natural Science AA/AS section"
+   },
+   {
+    "code": "MATH 33",
+    "why": "UCTP: Physics section not in text; named only (as MATH 0033) in Natural Science AA/AS section"
+   },
+   {
+    "code": "PHYS 0205L",
+    "why": "UCTP: Physics section not in text; named only in Natural Science AA/AS section"
+   },
+   {
+    "code": "PHYS 0210L",
+    "why": "UCTP: Physics section not in text; named only in Natural Science AA/AS section"
+   },
+   {
+    "code": "PHYS 0215L",
+    "why": "UCTP: Physics section not in text; named only in Natural Science AA/AS section"
+   },
+   {
+    "code": "PHYS 205",
+    "why": "UCTP: Physics section not in text; named only (as PHYS 0205) in Natural Science AA/AS section"
+   },
+   {
+    "code": "PHYS 210",
+    "why": "UCTP: Physics section not in text; named only (as PHYS 0210) in Natural Science AA/AS section"
+   },
+   {
+    "code": "PHYS 215",
+    "why": "UCTP: Physics section not in text; named only (as PHYS 0215) in Natural Science AA/AS section"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text (Natural Science department page) prints only the interdisciplinary Natural Science AA or AS Degree (select 18 units, Total Units 18). It contains no section for UCTP: Physics A.S. T Degree, so no blocks, totals, outcomes or careers were recorded for this award.",
+   "The UCTP: Physics requirements are likely on the Physics department page; a reviewer should fetch that page.",
+   "The Natural Science section mentions a 60-unit minimum and Local GE / Cal-GETC patterns, but these belong to that degree, not this award."
+  ]
+ },
+ "extracted_run": "39726642315"
+}

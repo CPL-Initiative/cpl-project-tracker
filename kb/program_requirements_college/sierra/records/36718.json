@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Allied Health - Pre-Nursing Option",
  "award": "A.S. Degree",
- "source_url": "https://catalog.sierracollege.edu/departments/nursing-registered/",
+ "source_url": "https://catalog.sierracollege.edu/departments/alh/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11251,
+  "input_tokens": 12296,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11251,
-    "output_tokens": 1555,
+    "input_tokens": 12296,
+    "output_tokens": 3165,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,60 +30,68 @@
     "model": null
    }
   ],
-  "output_tokens": 1555,
+  "output_tokens": 3165,
   "output_tokens_details": {
-   "thinking_tokens": 585
+   "thinking_tokens": 1155
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0761,
- "ms": 14208,
- "seconds": 14.7,
+ "cost_usd": 0.11248,
+ "ms": 25756,
+ "seconds": 26.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 17,
    "listed": 17,
-   "share": 0.0,
-   "missing": [
-    "ALH20",
-    "ANTH2",
-    "BIOL4",
-    "BIOL5",
-    "BIOL6",
-    "CHEM2A",
-    "COMMC1000",
-    "HDEV1",
-    "MATH16A",
-    "MATH16B",
-    "MATH24",
-    "MATH30",
-    "MATH31",
-    "MATH42",
-    "NUTF10",
-    "PSYCC1000",
-    "SOC1"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 12,
+   "codes": [
+    "CHEM1A",
+    "CHEM3A",
+    "CHEM3B",
+    "ENGLC1000",
+    "MATH12",
+    "MATH29",
+    "MATH32",
+    "MATH33",
+    "PSYC104",
+    "PSYC142",
+    "SOC15",
+    "STATC1000"
+   ],
+   "flagged": [
+    "CHEM1A",
+    "CHEM3A",
+    "CHEM3B",
+    "ENGLC1000",
+    "MATH12",
+    "MATH29",
+    "MATH32",
+    "MATH33",
+    "PSYC104",
+    "PSYC142",
+    "SOC15",
+    "STATC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
    "status": "incomplete",
    "computed": [
-    0.0,
-    0.0
+    40.0,
+    46.0
    ],
    "stated": null,
    "against": null,
@@ -96,13 +104,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -120,7 +128,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "None: the text has no Allied Health - Pre-Nursing Option section (it prints Registered Nursing, AS Degree)",
+   "section_heading": "Allied Health - Pre-Nursing Option AS Degree",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -131,7 +139,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
     "min": null,
     "max": null
@@ -141,86 +149,247 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate an understanding of the functions of the organ systems of the human body.",
+    "Use the Scientific Method to investigate biological questions and critically evaluate and effectively communicate scientific data.",
+    "Understand and apply foundational knowledge for a future allied health career or program of study."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ALH 20",
-    "why": "not in the text"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ALH 0020",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 0002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 0001",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 0004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 0005",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 0006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 0002A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 0001A",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "CHEM 0003A",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "CHEM 0003B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HDEV 0001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 0104",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTF 0010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ANTH 2",
-    "why": "named only in the Registered Nursing AS section, not this award's"
-   },
-   {
-    "code": "BIOL 4",
-    "why": "named only in Registered Nursing prerequisites/AS section, not this award's"
-   },
-   {
-    "code": "BIOL 5",
-    "why": "named only in Registered Nursing prerequisites/AS section, not this award's"
-   },
-   {
-    "code": "BIOL 6",
-    "why": "named only in Registered Nursing prerequisites/AS section, not this award's"
-   },
-   {
-    "code": "CHEM 0002A",
-    "why": "not in the text"
-   },
-   {
-    "code": "COMM C1000",
-    "why": "named only in Registered Nursing corequisites/AS section, not this award's"
-   },
-   {
-    "code": "HDEV 1",
-    "why": "named only in Registered Nursing prerequisites/AS section, not this award's"
-   },
-   {
-    "code": "MATH 0016A",
-    "why": "named only in Registered Nursing math options, not this award's"
-   },
-   {
-    "code": "MATH 0016B",
-    "why": "named only in Registered Nursing math options, not this award's"
-   },
-   {
-    "code": "MATH 24",
-    "why": "named only in Registered Nursing math options, not this award's"
-   },
-   {
-    "code": "MATH 30",
-    "why": "named only in Registered Nursing math options, not this award's"
-   },
-   {
-    "code": "MATH 31",
-    "why": "named only in Registered Nursing math options, not this award's"
-   },
-   {
-    "code": "MATH 42",
-    "why": "named only in Registered Nursing math options, not this award's"
-   },
-   {
-    "code": "NUTF 10",
-    "why": "named only in Registered Nursing prerequisites/AS section, not this award's"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "named only in Registered Nursing prerequisites, not this award's"
-   },
-   {
-    "code": "SOC 1",
-    "why": "named only in the Registered Nursing AS section, not this award's"
+    "name": "Demonstrate mathematics proficiency by one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "MATH 0012",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 0016A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 0016B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 0024",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 0029",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 0030",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 0031",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 0032",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 0033",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 0042",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 0142",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 0015",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text is the Sierra College Registered Nursing department page; it contains no section for the Allied Health - Pre-Nursing Option A.S. Degree, so no blocks, totals or outcomes were recorded for this award.",
-   "The Registered Nursing AS Degree section (Total Units 85-88) and its PSLOs belong to a different award and were not recorded here.",
-   "Reviewer should locate the Allied Health - Pre-Nursing Option section (likely on an Allied Health department page) and re-extract; closed list includes ALH 20 and CHEM 0002A, which do not appear in this text."
+   "Catalog prints codes with leading zeros (e.g. ALH 0020, MATH 0024); these were matched to the closed-list codes (ALH 20, MATH 24, etc.) and not treated as additions.",
+   "CHEM 0003A and CHEM 0003B are printed together ('CHEM 0003A & CHEM 0003B') as one alternative path to CHEM 0002A; they are listed as separate alternatives but must be taken together.",
+   "Footnote: CHEM 0002A is preferred for most Nursing programs.",
+   "The math proficiency requirement (0-6 units) can also be met by completing one year of Algebra I or higher in high school with grades of 'C' or better, which is why the stated range begins at 0.",
+   "No major total is printed for the Pre-Nursing Option (the 'Total Units' lines on the page belong to other sections); total_units left null. The 60-unit sentence is a general degree minimum, not a printed degree total.",
+   "Text says 'one of the following three general education patterns' but lists only two (Local GE and Cal-GETC); a third pattern may have been cut from the page.",
+   "The Program Student Learning Outcomes come from the page's single outcomes tab for the department page as a whole; recorded here on the assumption that this award shares them.",
+   "No careers are named in the Pre-Nursing section itself (it refers to nursing programs and majors, not occupations); the 'alternative healthcare careers' fragment at the top belongs to the department introduction."
   ]
  },
- "extracted_run": "39709837031"
+ "extracted_run": "39726642315"
 }
