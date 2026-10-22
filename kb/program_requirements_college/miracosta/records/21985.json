@@ -1,15 +1,15 @@
 {
  "college": "MiraCosta College",
- "control_number": "18974",
+ "control_number": "21985",
  "shape": "certificate",
- "title": "Mechanical Design",
+ "title": "Retail Management",
  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
- "source_url": "https://catalog.miracosta.edu/disciplines/design/",
+ "source_url": "https://catalog.miracosta.edu/disciplines/businessadministration/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11456,
+  "input_tokens": 11367,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11456,
-    "output_tokens": 1173,
+    "input_tokens": 11367,
+    "output_tokens": 1311,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,23 +30,24 @@
     "model": null
    }
   ],
-  "output_tokens": 1173,
+  "output_tokens": 1311,
   "output_tokens_details": {
-   "thinking_tokens": 224
+   "thinking_tokens": 418
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06928,
- "ms": 10026,
- "seconds": 10.5,
+ "cost_usd": 0.07169,
+ "ms": 12146,
+ "seconds": 12.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 3,
-   "listed": 3,
+   "placed": 7,
+   "listed": 7,
    "share": 1.0,
    "missing": [],
    "unexplained": [],
@@ -54,26 +55,14 @@
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 2,
    "codes": [
-    "DESN109",
-    "DESN110",
-    "DESN111",
-    "DESN120",
-    "DESN203",
-    "DESN290",
-    "DESN292",
-    "DESN299"
+    "BUS290",
+    "CSIT110"
    ],
    "flagged": [
-    "DESN109",
-    "DESN110",
-    "DESN111",
-    "DESN120",
-    "DESN203",
-    "DESN290",
-    "DESN292",
-    "DESN299"
+    "BUS290",
+    "CSIT110"
    ],
    "pass": true
   },
@@ -81,12 +70,12 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    23.0,
-    23.0
+    25.0,
+    25.0
    ],
    "stated": [
-    23.0,
-    23.0
+    25.0,
+    25.0
    ],
    "against": "program",
    "why": []
@@ -106,7 +95,7 @@
    "pass": true
   },
   "careers": {
-   "count": 4,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -117,11 +106,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement Mechanical Design",
+   "section_heading": "Certificate of Achievement Retail Management",
    "measure": "units",
    "total_units": {
-    "min": 23,
-    "max": 23
+    "min": 25,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -139,13 +128,10 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Upon completion of this program, the student will be able to design and create graphical representations of the built environment based on industry standards."
+    "Upon completion of this program, the student will be able to develop communication, marketing, and management skills that effectively prepare them for a career in retail."
    ],
    "careers": [
-    "drafter",
-    "designer",
-    "mechanical designer",
-    "engineering assistant"
+    "retail managers"
    ]
   },
   "blocks": [
@@ -160,90 +146,63 @@
     },
     "courses": [
      {
-      "code": "DESN 101",
+      "code": "BUS 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 290",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCT 101",
       "units": 4,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "ACCT 201",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
      {
-      "code": "DESN 109",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "DESN 110",
+      "code": "CSIT 110",
       "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "DESN 111",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "DESN 120",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "DESN 203",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "DESN 204",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "DESN 286",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Select one unit from the following list of courses",
-    "rule": "choose_units",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 1,
-     "max": 1
-    },
-    "courses": [
-     {
-      "code": "DESN 290",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "DESN 292",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "DESN 299",
-      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -254,11 +213,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the Certificate of Achievement: Mechanical Design section of the Design certificates tab.",
-   "Units for DESN 290, DESN 292 and DESN 299 are not printed beside them in this section's elective list; recorded as null.",
-   "The program student learning outcome printed for Mechanical Design is identical to the one printed for Architectural Design and Computer-Aided Drafting (refers to 'the built environment'); it may be a copy error in the catalog, reviewer should check.",
-   "Required courses sum to 22 units plus 1 elective unit, consistent with the printed Total Units 23."
+   "The page prints several certificates in a row; only the Certificate of Achievement in Retail Management section was read.",
+   "The program student learning outcome is a single sentence that includes its own lead-in ('Upon completion of this program, the student will be able to'); it was copied whole to avoid altering the printed wording.",
+   "ACCT 201 is printed as an 'or' option to ACCT 101 with no units beside it; its units are left null.",
+   "BUS 290 and CSIT 110 are required in the catalog but are not on the closed list.",
+   "An Associate in Arts in Retail Management is earned by completing this certificate plus MiraCosta's A.A. general education; no degree total is printed for it.",
+   "The career named, 'retail managers', comes from the program description ('Strong retail managers are essential to business success'). The outcome's 'a career in retail' and the description's 'expanding career path' were not recorded as separate careers; a reviewer may wish to check this."
   ]
  },
- "extracted_run": "38748842603"
+ "extracted_run": "39709840590"
 }
