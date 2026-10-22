@@ -1,0 +1,15 @@
+{
+ "_readme": "S449 SkyBuckwheat, 2026-10-22, after read 39850460662: its keywords were the state's program titles, which the guide prints on other pages first (Art, Business Administration 2.0, Ceramics), so the fourteen-page cap filled before pages 22, 66, 87, 88 and 89, where the capture's near misses sit. Page 10 showed the pattern for Fine Arts A.A.: the guide's Associate in Arts in Art lists about eighteen ART courses where the state's file lists 72 (art, music and theater), so coverage reads 0.25. This read keeps to pages 20 to 92 and names the course codes the state lists for the other low-coverage programs, as the guide prints them (BSM-101, CS-101, ID-150A, KIN-257, JOUR-101A, CNET-160A, BA-121A), so the pages printed are the program pages themselves. One load, no model call.",
+ "college": "Ohlone College",
+ "questions": {
+  "low_coverage_pages": "What the curriculum guide prints for Business Supervision/Management, Computer Studies, Interior Design, Kinesiology: Athletic Training, Journalism, Entrepreneurship and Technical Support Specialist, beside the courses the state's file lists for them."
+ },
+ "keywords": [
+  "\\bBSM-10[1368]\\b", "\\bCS-1(?:01|02|46|52|70|75)\\b", "\\bID-15[0-9]", "\\bKIN-25[78]\\b", "\\bKIN-38[12]\\b",
+  "\\bJOUR-1(?:01A|55|72)\\b", "\\bCNET-16[0-6]", "\\bBA-121[AB]\\b", "\\bBA-141A\\b"
+ ],
+ "pdf_span": [20, 92],
+ "pages": [
+  {"url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf", "answers": ["low_coverage_pages"]}
+ ]
+}
