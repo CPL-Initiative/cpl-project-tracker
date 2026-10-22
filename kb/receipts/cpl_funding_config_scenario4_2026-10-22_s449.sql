@@ -27,6 +27,10 @@
 --    jsonb_set(config, '{projects,cpl-implementation,published}', '"Scenario 3"') in the same statement.)
 --
 -- A good result is one row: rows_updated = 1, scenarios listing four names, published still Scenario 3.
+--
+-- EXECUTED 2026-10-22 21:49:51.960463+00 by supabase-migrate run 39859904983 (its receipt:
+-- kb/receipts/migration_cpl_funding_config_scenario4_2026_10_22_s449_39859904983.json). Read back through the MCP at
+-- 21:55Z: four scenarios, Scenario 4 ncLane outcomes with two outcomes and no docStatus, published still Scenario 3.
 -- rows_updated = 0 means the config was saved after the guard time, or Scenario 4 already exists: re-read and retry.
 with old as (
   select id, config, updated_at from public.cpl_funding_config where id = 'default'
