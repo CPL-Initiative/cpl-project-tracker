@@ -1,0 +1,2090 @@
+{
+ "college": "Orange Coast College",
+ "catalog_url": "https://catalog.cccd.edu/orange-coast/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 328,
+ "with_closed_list": 301,
+ "started": "2026-10-22T04:18:38Z",
+ "scope": "/orange-coast/",
+ "sitemap": {
+  "url": "https://catalog.cccd.edu/sitemap.xml",
+  "status": 200,
+  "listed": 4742,
+  "nested": 0,
+  "program_pages": 466,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 466,
+ "child_pages": 2,
+ "banner_h1": "Academic Catalogs",
+ "loads": 480,
+ "seconds": 2305.8,
+ "found": 277,
+ "by_method": {
+  "no_closed_list": 27,
+  "not_found": 5,
+  "page_claimed": 19,
+  "sitemap_page": 277
+ },
+ "shared_pages": {
+  "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-associate-science-degree/": [
+   "03977",
+   "08626"
+  ],
+  "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/": [
+   "08663",
+   "43362"
+  ],
+  "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-programmer-certificate-achievement/": [
+   "19543",
+   "41022"
+  ],
+  "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/retail-certificate-achievement/": [
+   "22374",
+   "40981"
+  ],
+  "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-certificate-achievement/": [
+   "22392",
+   "22394"
+  ],
+  "https://catalog.cccd.edu/orange-coast/pathways/language-communication/communication-studies/communications-studies-2-aat/": [
+   "30642",
+   "44116"
+  ],
+  "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/business-administration-associate-science-degree-transfer/": [
+   "32086",
+   "41373"
+  ],
+  "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/elementary-teacher-education-integrated-programs-aat/": [
+   "32202",
+   "45785"
+  ],
+  "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/": [
+   "42115",
+   "42117"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "08661",
+   "title": "Early Childhood Administration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/early-childhood-education-ast/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3464,
+     "content": 9921,
+     "tabs": 3982
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1506
+     ],
+     [
+      "PROGRAM SEQUENCE - CAL-GETC",
+      2419
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22424",
+   "title": "Early Childhood Administration",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/early-childhood-education-ast/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3464,
+     "content": 9921,
+     "tabs": 3982
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1506
+     ],
+     [
+      "PROGRAM SEQUENCE - CAL-GETC",
+      2419
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38181",
+   "title": "Speaking about Reading",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38587",
+   "title": "Integrative Health Coach",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38598",
+   "title": "Integrative Health Coach",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "03975",
+   "title": "Electronics Engineering Technician",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/"
+   ]
+  },
+  {
+   "control_number": "04035",
+   "title": "Geography",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/environmental-science/environmental-science-associate-arts-degree/",
+    "https://catalog.cccd.edu/orange-coast/pathways/social-science-humanities/geography/geography-associate-arts-degree-transfer-aat/",
+    "https://catalog.cccd.edu/orange-coast/general-education-patterns/associate-degree-general-education-calgetc/",
+    "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/athletics/athletics-certificate-achievement/"
+   ]
+  },
+  {
+   "control_number": "08642",
+   "title": "Music: Musical Entertainer-Instrumental",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/music-associate-arts-degree-transfer-aat/"
+   ]
+  },
+  {
+   "control_number": "08645",
+   "title": "Music: Studio Guitar Performer",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/"
+   ]
+  },
+  {
+   "control_number": "08673",
+   "title": "Public Health",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/public-health/public-health-coa/",
+    "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/public-health/public-health-ast/",
+    "https://catalog.cccd.edu/orange-coast/general-education-patterns/associate-degree-general-education-calgetc/",
+    "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/athletics/athletics-certificate-achievement/"
+   ]
+  },
+  {
+   "control_number": "16773",
+   "title": "Level 1 - Culinary Food Science Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinology-food-science/level-2-culinology-professional-level-associate-science-degree/"
+   ]
+  },
+  {
+   "control_number": "17033",
+   "title": "Industrial Automation Technician",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/"
+   ]
+  },
+  {
+   "control_number": "17649",
+   "title": "Spa Management",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/hotel-management-associate-science-degree/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/human-resource-management-associate-science-degree/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/sales-marketing-specialist-associate-science-degree/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/flight-attendant-airline-travel-careers-associate-science-degree/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/human-resource-management-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/airline-travel-management-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/sales-marketing-specialist-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/flight-attendant-airline-travel-careers-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/front-office-specialist-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/"
+   ]
+  },
+  {
+   "control_number": "18196",
+   "title": "Electronics Technology:Industrial Automation Technician",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/automation-fundamentals-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/industrial-plc-technician-coa/",
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/industrial-plc-technician-as/",
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/"
+   ]
+  },
+  {
+   "control_number": "18436",
+   "title": "Music: Musical Entertainer-Instrumental",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/music-associate-arts-degree-transfer-aat/"
+   ]
+  },
+  {
+   "control_number": "22379",
+   "title": "Display and Visual Presentation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-styling-visual-display-coa/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-media-events-promotion-coa/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/apparel-production-product-development-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-design-coa/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-merchandising-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-styling-visual-display-as-degree/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-media-events-promotion-as-degree/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/apparel-production-product-dev-as/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-design-as/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-merchandising-associate-science-degree/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/"
+   ]
+  },
+  {
+   "control_number": "22390",
+   "title": "Electronic-Mechanical Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/industrial-plc-technician-coa/",
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/embedded-systems-technician-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/industrial-electronics-technician-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/robotics-technician-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/automation-fundamentals-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/industrial-plc-technician-as/",
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/embedded-systems-associate-science/",
+    "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/"
+   ]
+  },
+  {
+   "control_number": "22404",
+   "title": "Music: Music Entertainer-Vocal",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/",
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/music-associate-arts-degree-transfer-aat/"
+   ]
+  },
+  {
+   "control_number": "22406",
+   "title": "Music: Studio Guitar Performer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/"
+   ]
+  },
+  {
+   "control_number": "22434",
+   "title": "Spa Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/human-resource-management-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/airline-travel-management-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/sales-marketing-specialist-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/flight-attendant-airline-travel-careers-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/front-office-specialist-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/hotel-management-associate-science-degree/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/human-resource-management-associate-science-degree/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/sales-marketing-specialist-associate-science-degree/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/flight-attendant-airline-travel-careers-associate-science-degree/",
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/"
+   ]
+  },
+  {
+   "control_number": "32789",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/general-education-patterns/associate-degree-general-education-calgetc/"
+   ]
+  },
+  {
+   "control_number": "32790",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/general-education-patterns/associate-degree-general-education-calgetc/"
+   ]
+  },
+  {
+   "control_number": "38242",
+   "title": "Meeting and Event Management",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/"
+   ]
+  },
+  {
+   "control_number": "43421",
+   "title": "Imaging Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/athletics/athletics-certificate-achievement/",
+    "https://catalog.cccd.edu/orange-coast/general-education-patterns/associate-degree-general-education-calgetc/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 21,
+  "0.8-1.0": 50,
+  "1.0": 206
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/orange_coast",
+  "kept": 106,
+  "programs": 171,
+  "list": [
+   {
+    "control_number": "03957",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/biology/biology-associate-science-degree/",
+    "coverage": 0.867,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/biology/",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "03960",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-associate-science-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-associate-science-degree/",
+    "was_coverage": 0.593,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "03966",
+    "title": "Mass Communications/Media Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/communication-studies/mass-communications-media-studies-associate-arts-degree/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "03967",
+    "title": "Film & Television",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-associate-arts-degree/",
+    "coverage": 0.956,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "03974",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/engineering/engineering-associate-science-degree/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "03978",
+    "title": "Aviation Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/aviation-science-associate-science-degree/",
+    "coverage": 0.846,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/computers-computing/aviation-science/",
+    "was_coverage": 0.692,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "03982",
+    "title": "Welding",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/welding-technology/welding-technology-associate-science-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/welding-technology/welding-technology-associate-science-degree/",
+    "was_coverage": 0.538,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "03990",
+    "title": "Business Employee",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/business-employee-associate-arts-degree/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "03993",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/dance-associate-arts-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/",
+    "was_coverage": 0.533,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04005",
+    "title": "Medical Assisting: CMA Eligible",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/medical-assisting/ccma-eligible-program-associate-science-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/medical-assisting/ccma-eligible-program-associate-science-degree/",
+    "was_coverage": 0.571,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04015",
+    "title": "Dietetic Service Supervisor/Certified Dietary Manager",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/nutrition-dietetics/dietetic-service-supervisor-certified-dietary-manager-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/nutrition-dietetics/dietetic-service-supervisor-certified-dietary-manager-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04022",
+    "title": "Religious Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/social-science-humanities/religious-studies/religious-studies-associate-arts-degree/",
+    "coverage": 0.889,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/social-science-humanities/religious-studies/religious-studies-associate-arts-degree/",
+    "was_coverage": 0.556,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04032",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/social-science-humanities/anthropology/anthropology-associate-arts-degree/",
+    "coverage": 0.679,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "08624",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/computers-computing/computer-science/computer-science-associate-science-degree/",
+    "coverage": 0.909,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/computers-computing/computer-science/computer-science-associate-science-degree/",
+    "was_coverage": 0.636,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08643",
+    "title": "Music: Music Entertainer-Vocal",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "08647",
+    "title": "World Dance",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/world-dance-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "08649",
+    "title": "Narrative Illustration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/art/narrative-illustration-associate-science-degree/",
+    "coverage": 0.935,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/art/narrative-illustration-associate-science-degree/",
+    "was_coverage": 0.516,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08663",
+    "title": "Food and Beverage Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08670",
+    "title": "Advanced Culinary Arts",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/advanced-culinary-arts-associate-science-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/advanced-culinary-arts-associate-science-degree/",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "14412",
+    "title": "Natural Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/natural-science/natural-science-associate-science-degree/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "16229",
+    "title": "Retail",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/retail-associate-science-degree/",
+    "coverage": 0.933,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/retail-associate-science-degree/",
+    "was_coverage": 0.6,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "16884",
+    "title": "Front Office Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/front-office-specialist-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/front-office-specialist-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "16886",
+    "title": "Human Resource Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/human-resource-management-associate-science-degree/",
+    "coverage": 0.875,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/human-resource-management-associate-science-degree/",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "17711",
+    "title": "Travel Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/travel-specialist-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/travel-specialist-certificate-achievement/",
+    "was_coverage": 0.812,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18194",
+    "title": "Fashion Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-design-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-design-coa/",
+    "was_coverage": 0.955,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18198",
+    "title": "Technical Design and Product Development",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/apparel-production-product-development-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/apparel-production-product-development-certificate-achievement/",
+    "was_coverage": 0.955,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18199",
+    "title": "Apparel Construction",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/apparel-construction-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/apparel-construction-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18200",
+    "title": "Airline Travel Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/airline-travel-management-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/airline-travel-management-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18201",
+    "title": "Flight Attendant and Airline and Travel Careers",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/flight-attendant-airline-travel-careers-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/flight-attendant-airline-travel-careers-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18202",
+    "title": "Human Resource Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/human-resource-management-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/human-resource-management-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18203",
+    "title": "Sales and Marketing Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/sales-marketing-specialist-certificate-achievement/",
+    "coverage": 0.938,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/sales-marketing-specialist-certificate-achievement/",
+    "was_coverage": 0.938,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18204",
+    "title": "Medical Assisting: CCMA Eligible Program",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/medical-assisting/ccma-eligible-program-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/medical-assisting/ccma-eligible-program-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18205",
+    "title": "World Dance Instructor",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/world-dance-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18842",
+    "title": "Nutrition and Fitness Education",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/nutrition-dietetics/nutrition-fitness-education-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/nutrition-dietetics/nutrition-fitness-education-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19541",
+    "title": "Manufacturing Technology: Machinist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/machinist-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-operator-associate-science-degree/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19542",
+    "title": "Manufacturing Technology: CNC Machine Operator",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-operator-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-operator-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19543",
+    "title": "Manufacturing Technology: CNC Machine Programmer",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-programmer-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-programmer-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19544",
+    "title": "Tooling",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/tooling-certificate-achievement/",
+    "coverage": 0.917,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/tooling-certificate-achievement/",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19545",
+    "title": "Heating, Ventilation, Air Conditioning & Refrigeration HVACR",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/heating-ventilation-air-conditioning-refrigeration/heating-ventilation-air-conditioning-refrigeration-certificate-achievement/",
+    "coverage": 0.8,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/heating-ventilation-air-conditioning-refrigeration/heating-ventilation-air-conditioning-refrigeration-certificate-achievement/",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19809",
+    "title": "Photography Digital Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/photography-digital-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/photography/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22368",
+    "title": "Horticulture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/horticulture-certificate-achievement/",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "22371",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-certificate-achievement/",
+    "coverage": 0.963,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-certificate-achievement/",
+    "was_coverage": 0.926,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22374",
+    "title": "Retail",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/retail-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/retail-certificate-achievement/",
+    "was_coverage": 0.933,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22375",
+    "title": "Marketing: International Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/marketing/international-business-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/marketing/international-business-certificate-achievement/",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22383",
+    "title": "Film & Television",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-certificate-achievement/",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "22384",
+    "title": "UX/UI Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/ux-design-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/ux-design-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22385",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/graphic-design-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/graphic-design-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22387",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/computers-computing/computer-science/computer-science-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/computers-computing/computer-science/computer-science-certificate-achievement/",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22392",
+    "title": "Airframe & Powerplant",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22393",
+    "title": "Airframe",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22394",
+    "title": "Powerplant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/powerplant-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22401",
+    "title": "Business Employee",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/business-employee-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "22403",
+    "title": "MIDI Applications",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/midi-applications-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/midi-applications-certificate-achievement/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22407",
+    "title": "Dance Instructor",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/dance-instructor-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "22409",
+    "title": "Narrative Illustration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/art/narrative-illustration-certificate-achievement/",
+    "coverage": 0.933,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/art/narrative-illustration-certificate-achievement/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22416",
+    "title": "Electrocardiography Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/cardiovascular-technology/electrocardiography-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/cardiovascular-technology/electrocardiography-technician-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22421",
+    "title": "Fashion: Fashion Merchandising",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-merchandising-certificate-achievement/",
+    "coverage": 0.583,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-merchandising-certificate-achievement/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22428",
+    "title": "Nutrition Education",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/nutrition-dietetics/nutrition-education-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/nutrition-dietetics/nutrition-education-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22430",
+    "title": "Advanced Culinary Arts",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/advanced-culinary-arts-certificate-achievement/",
+    "coverage": 0.889,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/advanced-culinary-arts-certificate-achievement/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22431",
+    "title": "Culinary Arts -  Cook",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/culinary-arts-basic-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/culinary-arts-basic-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22432",
+    "title": "Advanced Baking and Pastry",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/advanced-baking-pastry-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/advanced-baking-pastry-certificate-achievement/",
+    "was_coverage": 0.938,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22436",
+    "title": "Aviation Science",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/aviation-science-certificate-achievement/",
+    "coverage": 0.857,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30921",
+    "title": "Hospitality, Travel & Tourism - Meeting & Event Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31517",
+    "title": "Digital Fabrication for Architecture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/architectural-technology/digital-fabrication-architecture-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/architectural-technology/digital-fabrication-architecture-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32081",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/theatre-arts/theatre-arts-associate-arts-degree-transfer-aat/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/theatre-arts/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32231",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/music-associate-arts-degree-transfer-aat/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32737",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/foreign-languages/spanish-associate-arts-degree-transfer-aat/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/general-education-patterns/associate-degree-general-education-calgetc/",
+    "was_coverage": 0.646,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32791",
+    "title": "Digital SLR Photography and Videography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/digital-slr-photography-videography-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/digital-slr-photography-videography-technician-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33763",
+    "title": "Comprehensive Pilates Instructor",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/comprehensive-pilates-instructor-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/comprehensive-pilates-instructor-coa/",
+    "was_coverage": 0.6,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35182",
+    "title": "Astronomy",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/astronomy/astronomy-associate-science-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/astronomy/astronomy-associate-science-degree/",
+    "was_coverage": 0.882,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35498",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-electronic-media-associate-science-degree-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-electronic-media-associate-science-degree-transfer/",
+    "was_coverage": 0.538,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35918",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/biology/biology-associate-science-degree-transfer-ast/",
+    "coverage": 0.867,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/biology/biology-associate-science-degree-transfer-ast/",
+    "was_coverage": 0.6,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35945",
+    "title": "Lifeguard Training, Professional Rescue",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/kinesiology/lifeguard-training-professional-rescue-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36374",
+    "title": "Yoga Instructor Training",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/kinesiology/yoga-instructor-training-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36517",
+    "title": "Earth Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/geology/earth-science-associate-science-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/geology/",
+    "was_coverage": 0.706,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36732",
+    "title": "Marine Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/marine-science-associate-science-degree/",
+    "coverage": 0.692,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36809",
+    "title": "Personal Care Aide Noncredit",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/allied-health/personal-care-aide-noncredit-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/adult-education-noncredit/",
+    "was_coverage": 1.0,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "36847",
+    "title": "Customer Service for the Retail Industry",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/consumer-health-sciences/customer-service-retail-industry-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36892",
+    "title": "English Language Learning: Grammar",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/grammar-review-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/grammar-review-certificate-competency/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36893",
+    "title": "English Language Learning - Intermediate",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/developmental-english-language-skills-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/developmental-english-language-skills-certificate-competency/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36913",
+    "title": "Emergent English Language Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/emergent-english-language-skills,certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36917",
+    "title": "Tutoring Skills and Strategies",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/tutoring/tutoring-skills-strategies-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36920",
+    "title": "English Language Learning: Transition to Academics",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/English-language-learning-transition-to-academics-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/English-language-learning-transition-to-academics-certificate-competency/",
+    "was_coverage": 0.571,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36921",
+    "title": "English Language Learning - Workplace",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/english-language-learning-career-development-certificate-competency/",
+    "coverage": 0.875,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/english-language-learning-career-development-certificate-competency/",
+    "was_coverage": 0.688,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37713",
+    "title": "Aquarium Science",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/aquarium-science-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/aquarium-science-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37880",
+    "title": "Aircraft Dispatcher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/aircraft-dispatcher-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/aircraft-dispatcher-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37986",
+    "title": "Academic Preparation in English",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english/academic-preparation-english-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37987",
+    "title": "Chemistry Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/chemistry/chemistry-skills-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/chemistry/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38099",
+    "title": "Not-for-Profit Management",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/business/not-for-profit-management-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38178",
+    "title": "English Language Support for U.S. Citizenship",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/english-language-support-us-citizenship-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/english-language-support-us-citizenship-certificate-competency/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38182",
+    "title": "English Language Learning for Parents",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/english-language-support-parents-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/english-language-support-parents-certificate-competency/",
+    "was_coverage": 0.714,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38208",
+    "title": "Social Media Strategist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/communication-studies/social-media-strategist-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/communication-studies/social-media-strategist-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38209",
+    "title": "Unmanned Aircraft Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/unmanned-aircraft-systems-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38321",
+    "title": "Skills Enhancement for Consumer and Health Science Students",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/allied-health/skills-enhancement-consumer-health-sciences-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38324",
+    "title": "Immersive Media (VR/AR)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/immersive-media-vr-ar-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/immersive-media-vr-ar-certificate-achievement/",
+    "was_coverage": 0.571,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38420",
+    "title": "Animation",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/animation-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38663",
+    "title": "Animation",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/animation-associate-science-degree/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38798",
+    "title": "English Language Learning--Advanced",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/advanced-english-language-skills-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39134",
+    "title": "Media Arts and Creative Entertainment",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/media-arts-creative-entertainment-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/theatre-arts/",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39359",
+    "title": "Entertainment Art",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/art/entertainment-art-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/art/",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39968",
+    "title": "Athletics Coaching",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/kinesiology/athletics-coaching-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/kinesiology/athletics-coaching-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39979",
+    "title": "Governmental Accounting Competency",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/governmental-accounting-competency-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/governmental-accounting-competency-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40077",
+    "title": "Avionics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/avionics-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/avionics-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40078",
+    "title": "Financial Accounting Competency",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/financial-accounting-competency-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/financial-accounting-competency-certificate-achievement/",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40256",
+    "title": "FrameCAD Steel Design NC",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/architecture/framecad-steel-design-nc-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "40257",
+    "title": "FrameCAD Steel Production NC",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/architecture/framecad-steel-production-nc-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "40561",
+    "title": "Drone Videography",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/drone-videography-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/drone-videography-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40562",
+    "title": "Drone Photography",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/drone-photography-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/drone-photography-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40741",
+    "title": "Allied Health Program Readiness",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/allied-health/allied-health-program-readiness-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/",
+    "was_coverage": 0.5,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "40747",
+    "title": "Basic Drone Imaging Skills",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/basic-drone-imaging-skills-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/basic-drone-imaging-skills-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40979",
+    "title": "Entry-Level Accounting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/entry-level-accounting-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/entry-level-accounting-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40980",
+    "title": "Individual Taxation Competency",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/individual-taxation-competency-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/individual-taxation-competency-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40981",
+    "title": "Non-Profit Accounting Competency",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/retail-certificate-achievement/",
+    "coverage": 0.5,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/non-profit-accounting-competency-certification-specialization/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41015",
+    "title": "Business Taxation Competency",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/business-taxation-competency-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/business-taxation-competency-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41017",
+    "title": "Cost Accounting Competency",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/cost-accounting-competency-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/cost-accounting-competency-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41018",
+    "title": "Payroll Accounting Competency",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/payroll-accounting-competency-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/payroll-accounting-competency-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41019",
+    "title": "Baking and Pastry - Basic",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/baking-pastry-basic-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/baking-pastry-basic-coa/",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41020",
+    "title": "Basic Landscape Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/basic-landscape-design-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/basic-landscape-design-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41021",
+    "title": "Carpentry",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/carpentry-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/carpentry-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41022",
+    "title": "CNC Programmer",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-programmer-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-programmer-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41042",
+    "title": "CNC Operator",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-operator-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-operator-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41043",
+    "title": "Concrete & Masonry",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/concrete-masonry-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/concrete-masonry-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41044",
+    "title": "Intermediate Landscape Design and Construction Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/intermediate-landscape-design-specialist-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/intermediate-landscape-design-specialist-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41369",
+    "title": "Automation Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/automation-fundamentals-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/automation-fundamentals-certificate-achievement/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41397",
+    "title": "Robotics Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/robotics-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/robotics-technician-certificate-achievement/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41431",
+    "title": "Industrial PLC Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/industrial-plc-technician-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/industrial-plc-technician-coa/",
+    "was_coverage": 0.818,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41436",
+    "title": "Embedded Systems Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/embedded-systems-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/embedded-systems-technician-certificate-achievement/",
+    "was_coverage": 0.818,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41469",
+    "title": "Industrial Electronics Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/industrial-electronics-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/industrial-electronics-technician-certificate-achievement/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41471",
+    "title": "Plumbing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/plumbing-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/plumbing-coa/",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41487",
+    "title": "Embedded Systems",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/embedded-systems-associate-science/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/embedded-systems-associate-science/",
+    "was_coverage": 0.909,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41593",
+    "title": "Micro-Structure Design Technology Noncredit",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/architecture/micro-structure-design-technology-noncredit-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/architectural-technology/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41824",
+    "title": "Marine Mammal Field Studies and Conservation",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/marine-mammal-field-studies-and-conservation-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "41910",
+    "title": "Retrofitting California Urban Gardens",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/retrofitting-california-urban-gardens-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/retrofitting-california-urban-gardens-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41911",
+    "title": "Emergency Medical Services",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/emergency-medical-services/emergency-medical-services-coa/",
+    "coverage": 0.5,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/emergency-medical-services/emergency-medical-services-coa/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41921",
+    "title": "Marine Conservation & Monitoring",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/marine-conservation-monitoring-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/applied-ocean-science-and-technology-associate-science-degree/",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41928",
+    "title": "Applied Ocean Science and Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/applied-ocean-science-and-technology-associate-science-degree/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "41964",
+    "title": "Hospitality and Tourism",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/consumer-health-sciences/hospitality-and-tourism-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42081",
+    "title": "Child Development Administration Specialization",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-administration-specialization-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-administration-specialization-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42087",
+    "title": "Child Development Assistant Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-assistant-teacher-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-assistant-teacher-coa/",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42109",
+    "title": "Infant and Toddler Specialization",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/infant-toddler-specialization-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/infant-toddler-specialization-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42117",
+    "title": "Child Development Lead Teacher",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "42118",
+    "title": "Working with Exceptional Children Specialization",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/working-with-exceptional-children-specialization-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/working-with-exceptional-children-specialization-coa/",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42119",
+    "title": "Child Development Curriculum Specialization",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-curriculum-specialization-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-curriculum-specialization-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42120",
+    "title": "Child Development Core",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-core-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-core-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42131",
+    "title": "Child Development Associate Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-associate-teacher-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-associate-teacher-coa/",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42134",
+    "title": "Elementary Education Specialization",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/elementary-education-specialization-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/elementary-education-specialization-coa/",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42175",
+    "title": "Yoga Instructor Training",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/kinesiology/yoga-instructor-training-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/kinesiology/yoga-instructor-training-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42294",
+    "title": "Finance",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/finance-coa/",
+    "coverage": 0.556,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/finance-coa/",
+    "was_coverage": 0.556,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42331",
+    "title": "Residential Electrical",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/residential-electrical-certificate-specialization/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/residential-electrical-certificate-specialization/",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42953",
+    "title": "Accounting Data Analytics",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-data-analytics-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-data-analytics-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42955",
+    "title": "Not for Profit Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/not-for-profit-management-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/not-for-profit-management-coa/",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42976",
+    "title": "Advertising",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/marketing/advertising-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/marketing/advertising-coa/",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42986",
+    "title": "Entry Level Marketing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/marketing/entry-level-marketing-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/marketing/entry-level-marketing-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43124",
+    "title": "Flight Operations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/flight-operations-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/flight-operations-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43173",
+    "title": "Bar and Beverage Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/bar-beverage-management-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/bar-beverage-management-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43205",
+    "title": "Management Institute",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/management-institute-coa/",
+    "coverage": 0.8,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/management-institute-coa/",
+    "was_coverage": 0.6,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43362",
+    "title": "Food and Beverage Management, Advanced",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43370",
+    "title": "Commercial Dance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/commercial-dance-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/commercial-dance-coa/",
+    "was_coverage": 0.571,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43378",
+    "title": "Polysomnography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/polysomnographic-technology/polysomnographic-technology-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/polysomnographic-technology/polysomnographic-technology-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43393",
+    "title": "Community Health Worker",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/public-health/community-health-worker-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/",
+    "was_coverage": 0.75,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "43444",
+    "title": "Pilates Mat Instructor",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/pilates-mat-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/pilates-mat-coa/",
+    "was_coverage": 0.583,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43567",
+    "title": "Office Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/computers-computing/computer-information-systems/office-assistant-coa/",
+    "coverage": 0.857,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/computers-computing/computer-information-systems/office-assistant-coa/",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44007",
+    "title": "Air Conditioning and Heating Service and Installation",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/heating-ventilation-air-conditioning-refrigeration/air-conditioning-heating-service-installation-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/heating-ventilation-air-conditioning-refrigeration/air-conditioning-heating-service-installation-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44008",
+    "title": "Refrigeration Service",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/heating-ventilation-air-conditioning-refrigeration/refrigeration-service-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/heating-ventilation-air-conditioning-refrigeration/refrigeration-service-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44029",
+    "title": "Primary English Language Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/primary-english-language-skills-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/emergent-english-language-skills,certificate-competency/",
+    "was_coverage": 0.5,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "44036",
+    "title": "Math Skills for College Success",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/mathematics/math-skills-for-college-success-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44117",
+    "title": "Fashion Media, Events, & Promotion",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-media-events-promotion-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-media-events-promotion-coa/",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44118",
+    "title": "Professional Advancement - Speech-Language Pathology Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/speech-language-pathology-assistant/professional-advancement-speech-language-pathology-assistant-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/speech-language-pathology-assistant/professional-advancement-speech-language-pathology-assistant-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44120",
+    "title": "Fashion Styling & Visual Display",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-styling-visual-display-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-styling-visual-display-coa/",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45181",
+    "title": "MESA (Math, Engineering, Science Achievement) Program",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/mesa/mesa-certificate-of-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45349",
+    "title": "Pharmacy Technician",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/allied-health/pharmacy-technician-noncredit-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ]
+ },
+ "run": "39721483522"
+}
