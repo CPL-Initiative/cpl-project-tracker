@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-10-21T13:18:45Z",
+ "_generated_at": "2026-10-22T13:16:56Z",
  "procedures_hash": "575c290d755b",
- "queue": 421,
+ "queue": 439,
  "saved_not_folded": 0,
- "waiting": 421,
- "proposed": 386,
- "needs_you_count": 431,
+ "waiting": 439,
+ "proposed": 403,
+ "needs_you_count": 440,
  "not_yet_asked": 0,
  "fold_held": 18,
  "procedures": [
@@ -21,16 +21,12 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 3,
-   "held": 92,
+   "settled": 1,
+   "held": 93,
    "sample": [
     [
-     "FAA Private Pilot Certificate",
-     "FAA Private Pilot Certificate"
-    ],
-    [
-     "Fire Inspector 1 Certificate",
-     "Fire Inspector I"
+     "Class Piano I",
+     "Class Piano I"
     ]
    ]
   },
@@ -45,14 +41,9 @@
     "words": "use the MAP statewide CRs to match some of the exhibits",
     "skill": "Rule 5e"
    },
-   "settled": 1,
+   "settled": 0,
    "held": 1,
-   "sample": [
-    [
-     "Firefighter 1 Certificate",
-     "Firefighter 1"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "nccer-verbatim",
@@ -125,12 +116,28 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 4,
-   "held": 167,
+   "settled": 15,
+   "held": 173,
    "sample": [
     [
-     "ADJUS 57 Report Writing for Public Safety Personnel",
-     "Report Writing for Public Safety Personnel"
+     "ADM JUS 001 - Introduction to Administration of Justice",
+     "Introduction to Criminal Justice"
+    ],
+    [
+     "ADM JUS 002 - Concepts of Criminal Law",
+     "Concepts of Criminal Law"
+    ],
+    [
+     "ADM JUS 008 - Juvenile Procedures",
+     "Juvenile Procedures"
+    ],
+    [
+     "ARC 201 - Architectural Design I",
+     "Architectural Design I"
+    ],
+    [
+     "BIOSC 101 Theory and Practice of Microscopy",
+     "Theory and Practice of Microscopy"
     ]
    ]
   },
@@ -146,8 +153,8 @@
     "skill": null,
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
-   "settled": 0,
-   "held": 48,
+   "settled": 1,
+   "held": 51,
    "sample": []
   },
   {
@@ -191,7 +198,7 @@
     "words": "the credential-merge doctrine: what folds and what stays distinct",
     "skill": "Rule 8c"
    },
-   "settled": 3,
+   "settled": 0,
    "held": 53,
    "sample": []
   },
@@ -207,7 +214,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 85,
+   "held": 87,
    "sample": []
   },
   {
@@ -220,24 +227,20 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 4,
-   "held": 413,
+   "settled": 3,
+   "held": 422,
    "sample": [
     [
-     "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
-     "Introduction to Administration of Justice"
+     "Class Piano II",
+     "Class Piano II"
     ],
     [
-     "Credit by Exam for ADJUS 22 Concepts of Criminal Law",
-     "Concepts of Criminal Law"
+     "ENV DES 101 - Foundations of Design I",
+     "Foundations of Design I"
     ],
     [
-     "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
-     "FAA Private Pilot Ground School"
-    ],
-    [
-     "Portfolio for BUSN 20",
-     "International Business"
+     "University of California Master Gardener Certification",
+     "University of California Master Gardener Certification"
     ]
    ]
   }
@@ -246,7 +249,7 @@
   "calls": 1,
   "answered": 1,
   "errors": [],
-  "cost_usd": 0.5
+  "cost_usd": 0.51
  },
  "needs_you": [
   {
@@ -312,6 +315,19 @@
    },
    "colleges": [
     "Merritt College"
+   ]
+  },
+  {
+   "raw_title": "ADM JUS 004 - Principles and Procedures of the Justice System",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has California Commission on Peace Officer Standards and Training (POST))",
+   "proposal": {
+    "title": "Principles and Procedures of the Justice System",
+    "issuer": "California Community Colleges",
+    "confidence": 0.9,
+    "note": "Course code stripped from the cx hint. Joins the existing house family by title. The issuer is CCC for credit by exam."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
    ]
   },
   {
@@ -952,6 +968,58 @@
    ]
   },
   {
+   "raw_title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 1",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "The 'unit N' suffix reads as a repeatable course level, kept as a trailing number like the Music Keyboards 1-4 family. Faculty may decide to collapse the units."
+   },
+   "colleges": [
+    "Cabrillo College"
+   ]
+  },
+  {
+   "raw_title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 2",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion 2",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "The 'unit N' suffix reads as a repeatable course level, kept as a trailing number. Faculty may decide to collapse the units."
+   },
+   "colleges": [
+    "Cabrillo College"
+   ]
+  },
+  {
+   "raw_title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 3",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion 3",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "The 'unit N' suffix reads as a repeatable course level, kept as a trailing number. Faculty may decide to collapse the units."
+   },
+   "colleges": [
+    "Cabrillo College"
+   ]
+  },
+  {
+   "raw_title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 4",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion 4",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "The 'unit N' suffix reads as a repeatable course level, kept as a trailing number. Faculty may decide to collapse the units."
+   },
+   "colleges": [
+    "Cabrillo College"
+   ]
+  },
+  {
    "raw_title": "Arc Welding High School Articulation",
    "why": "the classifier is unsure (0.80)",
    "proposal": {
@@ -1583,6 +1651,19 @@
     "issuer": "California Governor's Office of Emergency Services (Cal OES)",
     "confidence": 0.7,
     "note": "Cal EMA is now Cal OES, and the course is delivered through CSTI. This includes the Specialist level and WMD scope, which is broader than the NFPA Hazardous Materials Technician family, so it is not folded into that family."
+   },
+   "colleges": [
+    "Palo Verde College"
+   ]
+  },
+  {
+   "raw_title": "Cal EMA- Incident Commander",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Incident Commander",
+    "issuer": "California Governor's Office of Emergency Services (Cal OES)",
+    "confidence": 0.6,
+    "note": "Cal EMA is the former name of Cal OES. The scope is unclear: it could be the CSTI hazmat Incident Commander or an all-hazards IC. It is not joined to the NASP 'Incident Commander HAZMAT' or FEMA ICT3 families without confirmation."
    },
    "colleges": [
     "Palo Verde College"
@@ -4215,6 +4296,19 @@
    ]
   },
   {
+   "raw_title": "NUTR 071A  Rotations in Supervised Practice, Level A",
+   "why": "the classifier's title has a dangling word",
+   "proposal": {
+    "title": "Rotations in Supervised Practice Level A",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "The row is typed Industry Certification but is a course (Merritt dietetics supervised practice). The course title is used without the code; the comma was dropped to clear the dangling-word flag. The issuer is CCC as a course-as-exhibit."
+   },
+   "colleges": [
+    "Merritt College"
+   ]
+  },
+  {
    "raw_title": "NVC Administered Calculus I Exam",
    "why": "the classifier is unsure (0.75)",
    "proposal": {
@@ -4277,6 +4371,19 @@
    },
    "colleges": [
     "Napa Valley College"
+   ]
+  },
+  {
+   "raw_title": "National US&R Response System- Structural Collapse Technician",
+   "why": "the classifier is unsure (0.70)",
+   "proposal": {
+    "title": "Rescue Systems 3: Structural Collapse Technician",
+    "issuer": "Federal Emergency Management Agency (FEMA)",
+    "confidence": 0.7,
+    "note": "FEMA National US&R Structural Collapse Technician covers the same competency as SFT Rescue Systems 3, so it joins the house title and FEMA discriminates as issuer. Faculty may split it later."
+   },
+   "colleges": [
+    "Palo Verde College"
    ]
   },
   {
@@ -5294,6 +5401,19 @@
    ]
   },
   {
+   "raw_title": "Rescue International-- Swiftwater Operations",
+   "why": "the classifier is unsure (0.70)",
+   "proposal": {
+    "title": "Swiftwater & Flood Rescue Operations (NFPA 1670)",
+    "issuer": "Rescue International",
+    "confidence": 0.7,
+    "note": "Swiftwater Operations-level rescue likely matches the existing NFPA 1670 operations family. Rescue International issues its own course certificate, which makes it the issuer discriminator."
+   },
+   "colleges": [
+    "Palo Verde College"
+   ]
+  },
+  {
    "raw_title": "Research Institutes Fire Service Considerations with Lithium-Ion Battery Energy Storage Systems",
    "why": "the classifier is unsure (0.65)",
    "proposal": {
@@ -5630,7 +5750,7 @@
     "Juvenile Law and Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5645,7 +5765,7 @@
     "Automotive Technology Maintenance and Light Repair (MLR)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5660,7 +5780,7 @@
     "Business Management and Entrepreneurship"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5675,7 +5795,7 @@
     "Center for Financial Training (CFT) — Human Resources Management"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5690,7 +5810,7 @@
     "Anatomy and Physiology Honors"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5705,7 +5825,7 @@
     "History of Architecture 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5720,7 +5840,7 @@
     "Modern Dance Techniques 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5735,7 +5855,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5750,7 +5870,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5765,7 +5885,7 @@
     "Construction Inspection: Uniform Plumbing Code (UPC) Advanced"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5780,7 +5900,7 @@
     "Medical Assisting Clinical Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5795,7 +5915,7 @@
     "Medical Assisting Laboratory Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5810,7 +5930,7 @@
     "McDonald's Business Leadership Practices"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5825,7 +5945,7 @@
     "McDonald's Mid-Management Foundations Curriculum"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5840,7 +5960,7 @@
     "Music Skills 2"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5855,7 +5975,7 @@
     "Pharmacology"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5870,7 +5990,7 @@
     "Landscape Installation and Maintenance 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   },
   {
@@ -5885,7 +6005,7 @@
     "Sustainable Gardening for Landscapes (Horticulture)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-21",
+   "fold_report": "2026-10-22",
    "colleges": []
   }
  ]

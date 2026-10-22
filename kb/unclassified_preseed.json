@@ -1,10 +1,10 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-10-21T13:18:45Z",
- "_queue_count": 421,
+ "_generated_at": "2026-10-22T13:16:56Z",
+ "_queue_count": 439,
  "_counts": {
-  "staged": 386,
-  "needs_you": 431,
+  "staged": 403,
+  "needs_you": 440,
   "not_yet_asked": 0
  },
  "_residual": [],
@@ -73,12 +73,41 @@
     "Rule 5c"
    ]
   },
-  "ADJUS 57 Report Writing for Public Safety Personnel": {
-   "title": "Report Writing for Public Safety Personnel",
+  "ADM JUS 001 - Introduction to Administration of Justice": {
+   "title": "Introduction to Criminal Justice",
    "issuer": "California Community Colleges",
    "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ADJUS 57; issuer = CCC.",
+   "confidence": 0.85,
+   "note": "Rule 5c: title anchored to C-ID AJ 110; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "ADM JUS 002 - Concepts of Criminal Law": {
+   "title": "Concepts of Criminal Law",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.85,
+   "note": "Rule 5c: title anchored to C-ID AJ 120; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "ADM JUS 004 - Principles and Procedures of the Justice System": {
+   "title": "Principles and Procedures of the Justice System",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Course code stripped from the cx hint. Joins the existing house family by title. The issuer is CCC for credit by exam.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ]
+  },
+  "ADM JUS 008 - Juvenile Procedures": {
+   "title": "Juvenile Procedures",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.85,
+   "note": "Rule 5c: title anchored to C-ID AJ 220; issuer = CCC.",
    "procedure": "course-identity"
   },
   "AGBUS 015: Computer Application to Agriculture": {
@@ -348,6 +377,14 @@
    ],
    "trainer": "U.S. Army"
   },
+  "ARC 201 - Architectural Design I": {
+   "title": "Architectural Design I",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ARC 201; issuer = CCC.",
+   "procedure": "course-identity"
+  },
   "ART 140 Beginning Design: Two-Dimensional Media - Portfolio Review": {
    "title": "Two-Dimensional Design",
    "issuer": "California Community Colleges",
@@ -608,6 +645,58 @@
    ],
    "trainer": "Alvord Unified School District (AUSD)"
   },
+  "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 1": {
+   "title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "The 'unit N' suffix reads as a repeatable course level, kept as a trailing number like the Music Keyboards 1-4 family. Faculty may decide to collapse the units.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 4"
+   ]
+  },
+  "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 2": {
+   "title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion 2",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "The 'unit N' suffix reads as a repeatable course level, kept as a trailing number. Faculty may decide to collapse the units.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 4"
+   ]
+  },
+  "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 3": {
+   "title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion 3",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "The 'unit N' suffix reads as a repeatable course level, kept as a trailing number. Faculty may decide to collapse the units.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 4"
+   ]
+  },
+  "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion - unit 4": {
+   "title": "Applied Music: Winds, Strings, Brass, Piano, Voice, and Percussion 4",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "The 'unit N' suffix reads as a repeatable course level, kept as a trailing number. Faculty may decide to collapse the units.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 4"
+   ]
+  },
   "Arc Welding High School Articulation": {
    "title": "Arc Welding",
    "issuer": "Local High School",
@@ -774,6 +863,38 @@
     "course-identity"
    ],
    "trainer": "Moreno Valley Unified School District"
+  },
+  "BIOSC 101 Theory and Practice of Microscopy": {
+   "title": "Theory and Practice of Microscopy",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for BIOSC 101; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "BIOSC 102 Fluorescence Microscopy and Specimen Prep": {
+   "title": "Fluorescence Microscopy and Specimen Prep",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for BIOSC 102; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "BIOSC 103 Confocal Microscopy and Research Design": {
+   "title": "Confocal Microscopy and Research Design",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for BIOSC 103; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "BIOSC 104  Bioscience Practicum Research": {
+   "title": "Bioscience Practicum Research",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for BIOSC 104; issuer = CCC.",
+   "procedure": "course-identity"
   },
   "Basic Automotive Painting - Refinishing - Credit by Exam (ACRP 2A )": {
    "title": "Basic Automotive Painting and Refinishing",
@@ -1054,6 +1175,22 @@
     "Rule 9"
    ]
   },
+  "CIS 072 Systems and Network Administration Certification": {
+   "title": "Systems and Network Administration",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for CIS 72; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "CIS 205 Computer Literacy": {
+   "title": "Computer Literacy",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for CIS 205; issuer = CCC.",
+   "procedure": "course-identity"
+  },
   "CISCYBR 1 Introduction to Systems & Network Cybersecurity (HSA)": {
    "title": "Introduction to Systems and Network Cybersecurity",
    "issuer": "Local High School",
@@ -1235,6 +1372,19 @@
     "mechanism-collapses"
    ],
    "trainer": "California Specialized Training Institute (CSTI)"
+  },
+  "Cal EMA- Incident Commander": {
+   "title": "Incident Commander",
+   "issuer": "California Governor's Office of Emergency Services (Cal OES)",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Cal EMA is the former name of Cal OES. The scope is unclear: it could be the CSTI hazmat Incident Commander or an all-hazards IC. It is not joined to the NASP 'Incident Commander HAZMAT' or FEMA ICT3 families without confirmation.",
+   "procedure": "classifier",
+   "rests_on": [
+    "issuer-issues-the-card",
+    "Rule 6",
+    "Rule 4"
+   ]
   },
   "Cal Fire I-300 Intermediate ICS": {
    "title": "ICS 300 — Intermediate Incident Command System",
@@ -1520,6 +1670,26 @@
     "Rule 5c",
     "issuer-issues-the-card",
     "Rule 9"
+   ]
+  },
+  "Class Piano I": {
+   "title": "Class Piano I",
+   "issuer": "California Community Colleges",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'Class Piano I'; issuer from the curated credential KB.",
+   "procedure": "brand-family"
+  },
+  "Class Piano II": {
+   "title": "Class Piano II",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
    ]
   },
   "Clinical Psychology Ph.D.": {
@@ -1923,32 +2093,6 @@
    ],
    "trainer": "Long Beach Unified School District"
   },
-  "Credit by Exam for ADJUS 21 Introduction to Administration of Justice": {
-   "title": "Introduction to Administration of Justice",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "The cx hint 'for ADJUS 21 ...' was set aside because it kept a dangling word and the course code. The mechanism and code are stripped, and the title joins the house family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "mechanism-collapses",
-    "Rule 5c"
-   ]
-  },
-  "Credit by Exam for ADJUS 22 Concepts of Criminal Law": {
-   "title": "Concepts of Criminal Law",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "The cx hint was set aside because it kept a dangling 'for' and the course code. The title joins the house family 'Concepts of Criminal Law'.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "mechanism-collapses",
-    "Rule 5c"
-   ]
-  },
   "Credit by Exam: Introduction to Criminal Justice": {
    "title": "Introduction to Criminal Justice",
    "issuer": "California Community Colleges",
@@ -2287,6 +2431,26 @@
    ],
    "trainer": "Kaiser High School"
   },
+  "ENV 102 - Foundations of Design II": {
+   "title": "Foundations of Design II",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ENV 102; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "ENV DES 101 - Foundations of Design I": {
+   "title": "Foundations of Design I",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Course code stripped from the cx hint. No CCN or C-ID anchor was confirmed, so the local course title is used.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
   "ESRI Technical Certification - GEOG 025": {
    "title": "Esri Technical Certification",
    "issuer": "Environmental Systems Research Institute (Esri)",
@@ -2532,14 +2696,6 @@
     "issuer-issues-the-card"
    ]
   },
-  "FAA Private Pilot Certificate": {
-   "title": "FAA Private Pilot Certificate",
-   "issuer": "Federal Aviation Administration (FAA)",
-   "via": "family",
-   "confidence": 0.8,
-   "note": "Matched the existing house family 'FAA Private Pilot Certificate'; issuer from the curated credential KB.",
-   "procedure": "brand-family"
-  },
   "FIRE 33 -Fire Protection Organization and System": {
    "title": "Fire Protection Organization",
    "issuer": "California Community Colleges",
@@ -2578,14 +2734,6 @@
     "Rule 8b",
     "Rule 6"
    ]
-  },
-  "Fire Inspector 1 Certificate": {
-   "title": "Fire Inspector I",
-   "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
-   "via": "family",
-   "confidence": 0.8,
-   "note": "Matched the existing house family 'Fire Inspector I'; issuer from the curated credential KB.",
-   "procedure": "brand-family"
   },
   "Fire Investigator 1A, 1B, 1C": {
    "title": "Fire Investigator 1A–1C (Full Series)",
@@ -2652,14 +2800,6 @@
     "Rule 4",
     "Rule 8"
    ]
-  },
-  "Firefighter 1 Certificate": {
-   "title": "Firefighter 1",
-   "issuer": "California State Fire Training (SFT)",
-   "via": "statewide",
-   "confidence": 0.85,
-   "note": "Matched the statewide CCC-collaborative catalog entry 'Firefighter 1'; issuer from the curated credential KB.",
-   "procedure": "statewide-catalog"
   },
   "Fitness for Life Military Training": {
    "title": "Fitness for Life (Military)",
@@ -3634,6 +3774,14 @@
    ],
    "trainer": "Northern California Laborers' Training Center"
   },
+  "MATH 203 Intermediate Algebra": {
+   "title": "Algebra Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for MATH 203; issuer = CCC.",
+   "procedure": "course-identity"
+  },
   "MIG Welding (GMAW/FCAW)-Credit by Exam": {
    "title": "MIG Welding (GMAW/FCAW)",
    "issuer": "California Community Colleges",
@@ -3887,6 +4035,19 @@
     "level-words-last",
     "Rule 5c",
     "Rule 5g"
+   ]
+  },
+  "National US&R Response System- Structural Collapse Technician": {
+   "title": "Rescue Systems 3: Structural Collapse Technician",
+   "issuer": "Federal Emergency Management Agency (FEMA)",
+   "via": "classifier",
+   "confidence": 0.7,
+   "note": "FEMA National US&R Structural Collapse Technician covers the same competency as SFT Rescue Systems 3, so it joins the house title and FEMA discriminates as issuer. Faculty may split it later.",
+   "procedure": "classifier",
+   "rests_on": [
+    "join-when-likely-one",
+    "Rule 4",
+    "issuer-issues-the-card"
    ]
   },
   "Network Fundamentals": {
@@ -4377,19 +4538,6 @@
     "issuer-issues-the-card"
    ]
   },
-  "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements": {
-   "title": "FAA Private Pilot Ground School",
-   "issuer": "Federal Aviation Administration (FAA)",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "The evidence is knowledge-test and ground-school completion, not the full Private Pilot Certificate. As a narrower competency it joins the FAA Private Pilot Ground School family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "mechanism-collapses",
-    "Rule 8c"
-   ]
-  },
   "Personal Money Management High School to College Articulation": {
    "title": "Personal Money Management",
    "issuer": "Local High School",
@@ -4439,18 +4587,6 @@
     "course-identity",
     "Rule 5c",
     "mechanism-collapses"
-   ]
-  },
-  "Portfolio for BUSN 20": {
-   "title": "International Business",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "The cx hint 'for BUSN 20' was set aside as a dangling-word and course-code proposal. The catalog course title is used instead.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c"
    ]
   },
   "Portfolio for BUSN 52": {
@@ -4751,6 +4887,14 @@
    ],
    "trainer": "Riverside County Office of Education (RCOE)"
   },
+  "RLEST 08  Property Management": {
+   "title": "Property Management",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for RLEST 8; issuer = CCC.",
+   "procedure": "course-identity"
+  },
   "Recording I High School Articulation": {
    "title": "Recording 1",
    "issuer": "Local High School",
@@ -4800,6 +4944,19 @@
    "rests_on": [
     "Rule 1",
     "Rule 6"
+   ]
+  },
+  "Rescue International-- Swiftwater Operations": {
+   "title": "Swiftwater & Flood Rescue Operations (NFPA 1670)",
+   "issuer": "Rescue International",
+   "via": "classifier",
+   "confidence": 0.7,
+   "note": "Swiftwater Operations-level rescue likely matches the existing NFPA 1670 operations family. Rescue International issues its own course certificate, which makes it the issuer discriminator.",
+   "procedure": "classifier",
+   "rests_on": [
+    "join-when-likely-one",
+    "Rule 4",
+    "issuer-issues-the-card"
    ]
   },
   "Research Institutes Fire Service Considerations with Lithium-Ion Battery Energy Storage Systems": {
@@ -4963,6 +5120,18 @@
    "procedure": "classifier",
    "rests_on": [
     "Rule 8",
+    "Rule 6"
+   ]
+  },
+  "University of California Master Gardener Certification": {
+   "title": "University of California Master Gardener Certification",
+   "issuer": "University of California Agriculture and Natural Resources (UC ANR)",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "issuer-issues-the-card",
     "Rule 6"
    ]
   },
