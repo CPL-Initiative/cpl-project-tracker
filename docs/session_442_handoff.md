@@ -4,6 +4,8 @@ date: 2026-10-21
 session: 441 (SkyIronbark)
 tags: [handoff, claude-md-pass, governance-team-enablement, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_445_handoff.md
 ---
 
 # You are Session 442

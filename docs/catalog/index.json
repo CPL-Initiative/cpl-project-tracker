@@ -15923,8 +15923,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 415,
+   "count": 416,
    "docs": [
+    {
+     "created": "2026-10-22",
+     "governs": [],
+     "n": 445,
+     "path": "docs/session_445_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "commons",
+      "decision-sheets"
+     ],
+     "title": "Session 445 handoff: department pages and two-line headings, Golden West and Imperial Valley loaded, Program Mapper hosts, answered calls",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-21",
      "governs": [],
@@ -23089,5 +23105,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1214
+ "total": 1215
 }

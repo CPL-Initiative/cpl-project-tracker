@@ -868,6 +868,45 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S444 SkyBlueOak (2026-10-21/22): the page-claimed sweep, department pages, two-line headings, Program Mapper
+
+- **Golden West and Imperial Valley loaded** under the section-per-award rule (#2331). Golden West: extraction
+  39688079435, 135 extracted for $8.72, 102 passing; load 39691321331 inserted 79, kept 50, skipped 6. Imperial Valley:
+  free capture first (found 84 → 131, page_claimed 49 → 8), extraction 39691376155, 131 for $8.02 (an extraction run
+  re-extracts every found program, never only the new ones), 109 passing; load 39694352034 inserted 42, kept 83,
+  skipped 6 as another program's page. Display build 4bcc9b504482 (16,917 → 17,038 records). Foothill (#2326) merged
+  after a main merge started its CI.
+- **A general education page as a program's only candidate means the program's own page never reached the reader.**
+  121 of 648 page-claimed statewide named only a GE page (Sierra 47, MiraCosta 43, nine colleges with 1 to 6). The fix
+  was never at the GE page.
+- **A department or discipline page names no program in its path.** Sierra (`/departments/psychology/`, no sitemap,
+  its index fallback read 3 pages) and MiraCosta (`/disciplines/psychology/`) print each award in a Degrees tab;
+  `PROGRAM_PATH` kept neither (page read 39698876304). Where the link search had reached a MiraCosta discipline page,
+  coverage was 1.0. Now a candidate (the department index itself is not).
+- **A department page holds many awards, and its heading spans two short lines.** Sierra: the title, then "AS Degree"
+  (no periods); MiraCosta: "Certificate of Achievement", then the title (page read 39704788066, from each department's
+  PDF, which prints every tab). `section_award()` reads two adjacent short lines; the award pattern still tests one
+  line alone, so an anchored "AS Degree" holds. Captures: Sierra 35 → 81 found, page_claimed 47 → 36; MiraCosta 29 →
+  68, page_claimed 43 → 82: its discipline pages (Horticulture 11 claimants, Computer Studies 17) still give one
+  claimant the page. Next look: the text the capture keeps from MiraCosta's hidden tabs (`textContent` may run the two
+  heading lines together). Sierra extraction 39709837031: 81 for $7.28, 57 passing.
+- **One college per page-read plan.** `college_page_read_test` (lints) holds a plan to one college's domain; a plan
+  reading two colleges' PDFs failed CI until split.
+- **Program Mapper (Sam, 2026-10-21, pasted programmapper.org/ppm-schools; non-CCCs set aside).** 63 community colleges;
+  the registry held a map host for 26. A guarded UPDATE through `supabase-migrate.yml` (the repo's guard holds an
+  UPDATE from the session) wrote `sequence_host` and `sequence_note` on the 37 empty rows (run 39689748697, #2330); the
+  census never writes those fields. Six list a second host for a mapper that refused the reader (Cañada, Canyons, Las
+  Positas, LA Harbor, LA Mission, Oxnard): not written, since asking it retries a refusal another way. Every mapper
+  host reached so far answers 403; the list names each college's account manager, so one request to the vendor could
+  open the maps for all 63. That ask is Sam's.
+- **Blocked catalogs, on Sam's ask:** the Procedures view's closed card says *Catalog blocked (robots.txt), read from a
+  hand-filed copy* or *needs a hand-filed copy*, with a Show filter and two glance counts (#2328). Eight catalogs block
+  the reader; all eight read from Sam's hand-filed copies. The Catalogs view now names a 404 address.
+
+### Moved from the lane (S444 compaction)
+
+**S440 (#2306):** Santa Monica, Irvine Valley and West LA loaded (a PDF may wait 2,400 s). **S442 (two runs):** Reedley 196 of 200 found, 159 loaded; a number led by a campus letter (the Ventura district's ANCT M01A) now keeps its Requirements tab (#2309), so Moorpark, Oxnard and Ventura re-read, 100, 86 and 121 passing. **S443 (#2322):** a page heading a section per award now serves each sibling: Foothill 116 → 144 found, 97 passing, 29 loaded; Golden West 81 → 95 on capture (extraction next); Palomar unchanged (its own reader look); 842 page-claimed statewide is the next sweep (lessons S443).
+
 ## S443 SkyToyon (2026-10-21): a page heading a section per award serves each sibling; Foothill loaded
 
 - **Page-claimed was 842 programs statewide** (Palomar 103, Foothill 73, Imperial Valley 49, Sierra 47, Golden West 43).

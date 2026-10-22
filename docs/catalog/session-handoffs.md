@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-415 document(s).
+416 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 445 | [Session 445 handoff: department pages and two-line headings, Golden West and Imperial Valley loaded, Program Mapper hosts, answered calls](../session_445_handoff.md) | 2026-10-22 |
 | 444 | [Session 444 handoff: funding moved off My College, a section per award in the harvest reader, Foothill loaded, tabs never remember a filter](../session_444_handoff.md) | 2026-10-21 |
 | 443 | [Session 443 handoff: My College folding into CPL Pathways (step 1 open, funding moved out), Reedley loaded, Sheet 109 applied](../session_443_handoff.md) | 2026-10-21 |
 | 442 | [Session 442 handoff: the CLAUDE.md pass waits on Sheet 109; S440's harvest PR merged; two tests fixed](../session_442_handoff.md) | 2026-10-21 |
