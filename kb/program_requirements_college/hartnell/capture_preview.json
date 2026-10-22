@@ -1,0 +1,1350 @@
+{
+ "college": "Hartnell College",
+ "catalog_url": "https://hartnell.catalog.prod.coursedog.com/",
+ "platform": "coursedog",
+ "catalog_year": "2026-2027",
+ "programs": 112,
+ "with_closed_list": 105,
+ "started": "2026-10-22T20:41:08Z",
+ "route": "site (CAPTURE_ROUTE=site; the PDF procedure step set aside for this run)",
+ "coursedog": {
+  "root": "https://hartnell.catalog.prod.coursedog.com",
+  "search": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/programs/search/%24filters?catalogId=Kh0H2wSLmm8kmYgkuvWr&skip=0&limit=250&sortBy=name&effectiveDatesRange=2026-08-24%2C2026-08-24&columns=name%2Ctype%2CdegreeDesignation%2Ccontacts%2ClongName%2CcatalogDisplayName%2CtranscriptDescription%2CcatalogDescription%2CcatalogImageUrl%2CcipCode%2Ccampus%2Clevel",
+  "listed": 100,
+  "programs": 100,
+  "errors": [],
+  "requisites_suffix": null,
+  "program_pages": 0,
+  "direct": 0,
+  "missed": [
+   "CT.ADD",
+   "AA.ADD",
+   "CT.ADJ",
+   "AS.ADJ",
+   "AST.ADJ",
+   "AS.AAT",
+   "AS.ADT",
+   "AS.MECHA",
+   "CT.AGR",
+   "AST.AGR",
+   "AST.APS",
+   "AS.AGRI",
+   "CT.AGFS",
+   "CT.AGRP",
+   "AS.AST",
+   "NCCT.BCL",
+   "AS.BIO",
+   "AST.BIO",
+   "AST.BUS2",
+   "CT.BIW1",
+   "CT.BIW2",
+   "CT.BOTB",
+   "CT.BST",
+   "AS.BST",
+   "AS.DWMD",
+   "CT.MD",
+   "CT.WD",
+   "CT.CALGETC",
+   "AST.CHM",
+   "AA.CHCX",
+   "CT.CCN",
+   "AAT.COM2",
+   "AS.PCN",
+   "AS.CISCS",
+   "CT.CISC",
+   "CT.PCN",
+   "AST.CS",
+   "AS.CMA",
+   "CT.CS",
+   "AA.DA",
+   "CT.DA",
+   "AS.ECE",
+   "CT.ECE",
+   "AST.ECE",
+   "AAT.ECO",
+   "AAT.ETP",
+   "CT.EMT",
+   "AS.EGN",
+   "CT.EGN",
+   "NCCT.ENGM.ADV",
+   "NCCT.ENGM.BEG",
+   "NCCT.ENGM.HIGH",
+   "NCCT.ENGM.INT",
+   "NCCT.ENGM.LOW",
+   "AAT.ENG",
+   "AST.ES",
+   "AST.FTVE",
+   "CT.FS",
+   "CT.MECHA",
+   "AA.GAH"
+  ],
+  "catalog": [
+   {
+    "code": "CT.ADD",
+    "name": "Addiction Studies"
+   },
+   {
+    "code": "AA.ADD",
+    "name": "Addiction Studies"
+   },
+   {
+    "code": "CT.ADJ",
+    "name": "Administration of Justice"
+   },
+   {
+    "code": "AS.ADJ",
+    "name": "Administration of Justice"
+   },
+   {
+    "code": "AST.ADJ",
+    "name": "Administration of Justice for Transfer (AS-T)"
+   },
+   {
+    "code": "AS.AAT",
+    "name": "Advanced Automotive Technology"
+   },
+   {
+    "code": "AS.ADT",
+    "name": "Advanced Diesel Technology"
+   },
+   {
+    "code": "AS.MECHA",
+    "name": "Agricultural Mechatronics"
+   },
+   {
+    "code": "CT.AGR",
+    "name": "Agriculture Business"
+   },
+   {
+    "code": "AST.AGR",
+    "name": "Agriculture Business for Transfer Degree (AS-T)"
+   },
+   {
+    "code": "AST.APS",
+    "name": "Agriculture Plant Science for Transfer (AS-T)"
+   },
+   {
+    "code": "AS.AGRI",
+    "name": "Agriculture With an Area of Emphasis"
+   },
+   {
+    "code": "CT.AGFS",
+    "name": "Agriculture-Food Safety"
+   },
+   {
+    "code": "CT.AGRP",
+    "name": "Agriculture-Production"
+   },
+   {
+    "code": "AS.AST",
+    "name": "Astronomy"
+   },
+   {
+    "code": "NCCT.BCL",
+    "name": "Basic Computer Literacy"
+   },
+   {
+    "code": "AS.BIO",
+    "name": "Biology"
+   },
+   {
+    "code": "AST.BIO",
+    "name": "Biology for Transfer Degree (AS-T)"
+   },
+   {
+    "code": "AST.BUS2",
+    "name": "Business Administration 2.0 for Transfer (AS-T)"
+   },
+   {
+    "code": "CT.BIW1",
+    "name": "Business Information Worker Level -1"
+   },
+   {
+    "code": "CT.BIW2",
+    "name": "Business Information Worker Level -2"
+   },
+   {
+    "code": "CT.BOTB",
+    "name": "Business Office Technology - Bookkeeping"
+   },
+   {
+    "code": "CT.BST",
+    "name": "Business Office Technology-Information Processing"
+   },
+   {
+    "code": "AS.BST",
+    "name": "Business Office Technology-Information Processing"
+   },
+   {
+    "code": "AS.DWMD",
+    "name": "CSIS - Digital Web & Mobile Development"
+   },
+   {
+    "code": "CT.MD",
+    "name": "CSIS-Mobile Development Option"
+   },
+   {
+    "code": "CT.WD",
+    "name": "CSIS-Web Development Option"
+   },
+   {
+    "code": "CT.CALGETC",
+    "name": "Calgetc"
+   },
+   {
+    "code": "AST.CHM",
+    "name": "Chemistry for Transfer Degree (AS-T)"
+   },
+   {
+    "code": "AA.CHCX",
+    "name": "Chicanx Studies"
+   },
+   {
+    "code": "CT.CCN",
+    "name": "Cisco Certified Network"
+   },
+   {
+    "code": "AAT.COM2",
+    "name": "Communication Studies 2.0 for Transfer Degree (AA-T)"
+   },
+   {
+    "code": "AS.PCN",
+    "name": "Computer Science Info Systems-Network & Security Option"
+   },
+   {
+    "code": "AS.CISCS",
+    "name": "Computer Science and Info Systems-Computer Science Option"
+   },
+   {
+    "code": "CT.CISC",
+    "name": "Computer Science and Info Systems-Computer Science Option"
+   },
+   {
+    "code": "CT.PCN",
+    "name": "Computer Science and Info Systems-Network & Security Option"
+   },
+   {
+    "code": "AST.CS",
+    "name": "Computer Science for Transfer (AS-T)"
+   },
+   {
+    "code": "AS.CMA",
+    "name": "Construction Management and Architecture"
+   },
+   {
+    "code": "CT.CS",
+    "name": "Cybersecurity"
+   },
+   {
+    "code": "AA.DA",
+    "name": "Digital Arts"
+   },
+   {
+    "code": "CT.DA",
+    "name": "Digital Arts"
+   },
+   {
+    "code": "AS.ECE",
+    "name": "Early Childhood Education"
+   },
+   {
+    "code": "CT.ECE",
+    "name": "Early Childhood Education"
+   },
+   {
+    "code": "AST.ECE",
+    "name": "Early Childhood Education for Transfer (AS-T)"
+   },
+   {
+    "code": "AAT.ECO",
+    "name": "Economics for Transfer Degree (AA-T)"
+   },
+   {
+    "code": "AAT.ETP",
+    "name": "Elementary Teacher Education for Transfer (AA-T)"
+   },
+   {
+    "code": "CT.EMT",
+    "name": "Emergency Medical Technician"
+   },
+   {
+    "code": "AS.EGN",
+    "name": "Engineering"
+   },
+   {
+    "code": "CT.EGN",
+    "name": "Engineering Fundamentals"
+   },
+   {
+    "code": "NCCT.ENGM.ADV",
+    "name": "English for Multilingual Speakers-Advanced"
+   },
+   {
+    "code": "NCCT.ENGM.BEG",
+    "name": "English for Multilingual Speakers-Beginning"
+   },
+   {
+    "code": "NCCT.ENGM.HIGH",
+    "name": "English for Multilingual Speakers-High Intermediate"
+   },
+   {
+    "code": "NCCT.ENGM.INT",
+    "name": "English for Multilingual Speakers-Intermediate"
+   },
+   {
+    "code": "NCCT.ENGM.LOW",
+    "name": "English for Multilingual Speakers-Low Intermediate"
+   },
+   {
+    "code": "AAT.ENG",
+    "name": "English for Transfer (AA-T)"
+   },
+   {
+    "code": "AST.ES",
+    "name": "Environmental Science for Transfer (AS-T)"
+   },
+   {
+    "code": "AST.FTVE",
+    "name": "Film, Television and Electronic Media (AS-T)"
+   },
+   {
+    "code": "CT.FS",
+    "name": "First Line Supervisor"
+   },
+   {
+    "code": "CT.MECHA",
+    "name": "Foundations of Agricultural Mechatronics"
+   },
+   {
+    "code": "AA.GAH",
+    "name": "General Studies: Arts and Humanities"
+   },
+   {
+    "code": "AA.GSTEM",
+    "name": "General Studies: STEM"
+   },
+   {
+    "code": "AA.GSB",
+    "name": "General Studies: Social and Behavioral Sciences"
+   },
+   {
+    "code": "AST.GEL",
+    "name": "Geology for Transfer Degree (AS-T)"
+   },
+   {
+    "code": "AAT.HIS",
+    "name": "History for Transfer (AA-T)"
+   },
+   {
+    "code": "AS.KIN",
+    "name": "Kinesiology"
+   },
+   {
+    "code": "AAT.KIN",
+    "name": "Kinesiology for Transfer (AA-T)"
+   },
+   {
+    "code": "AAT.LAW",
+    "name": "Law, Public Policy and Society (AA-T)"
+   },
+   {
+    "code": "AA.LPHS",
+    "name": "Liberal Arts: Pathway to Health Sciences"
+   },
+   {
+    "code": "AST.MAT",
+    "name": "Mathematics for Transfer Degree (AS-T)"
+   },
+   {
+    "code": "AA.MUS",
+    "name": "Music"
+   },
+   {
+    "code": "CT.MUS",
+    "name": "Music"
+   },
+   {
+    "code": "AAT.MUS",
+    "name": "Music for Transfer (AA-T)"
+   },
+   {
+    "code": "AS.NRN",
+    "name": "Nursing-Registered Nursing"
+   },
+   {
+    "code": "AS.NVN",
+    "name": "Nursing-Vocational Nursing"
+   },
+   {
+    "code": "CT.NVN",
+    "name": "Nursing-Vocational Nursing"
+   },
+   {
+    "code": "CT.PHO",
+    "name": "Photography"
+   },
+   {
+    "code": "AA.PHO",
+    "name": "Photography"
+   },
+   {
+    "code": "AST.PHY",
+    "name": "Physics for Transfer (AS-T)"
+   },
+   {
+    "code": "AAT.POL",
+    "name": "Political Science for Transfer (AA-T)"
+   },
+   {
+    "code": "AAT.PSY",
+    "name": "Psychology for Transfer (AA-T)"
+   },
+   {
+    "code": "AST.PH2",
+    "name": "Public Health for Transfer Degree (AS-T)"
+   },
+   {
+    "code": "AS.RCP",
+    "name": "Respiratory Care"
+   },
+   {
+    "code": "BS.RC",
+    "name": "Respiratory Care"
+   },
+   {
+    "code": "CT.AGSF",
+    "name": "Small Farm"
+   },
+   {
+    "code": "AAT.SJ",
+    "name": "Social Justice for Transfer (AA-T)"
+   },
+   {
+    "code": "AAT-SOC",
+    "name": "Sociology for Transfer (AA-T)"
+   },
+   {
+    "code": "CT.SPA",
+    "name": "Spanish"
+   },
+   {
+    "code": "AA.SPA",
+    "name": "Spanish"
+   },
+   {
+    "code": "AAT.SPA",
+    "name": "Spanish for Transfer (AA-T)"
+   },
+   {
+    "code": "AAT.SART",
+    "name": "Studio Arts for Transfer (AA-T)"
+   },
+   {
+    "code": "CT.AGSC",
+    "name": "Sustainable Crop Management"
+   },
+   {
+    "code": "CT.TS",
+    "name": "Technical Support"
+   },
+   {
+    "code": "AA.TAC",
+    "name": "Theater Arts & Cinema"
+   },
+   {
+    "code": "AAT.THA",
+    "name": "Theatre Arts for Transfer (AA-T)"
+   },
+   {
+    "code": "NCCT.TPER",
+    "name": "Theatre Performance"
+   },
+   {
+    "code": "NCCT.TPRO",
+    "name": "Theatre Production"
+   },
+   {
+    "code": "NCCT.TRPE",
+    "name": "Theatre Production and Performance"
+   },
+   {
+    "code": "CT.WLD",
+    "name": "Welding Technology"
+   },
+   {
+    "code": "AS.WLD",
+    "name": "Welding Technology"
+   },
+   {
+    "code": "NCCT.WAR",
+    "name": "Workforce and Academic Readiness"
+   }
+  ]
+ },
+ "pages_read": 0,
+ "child_pages": 0,
+ "banner_h1": null,
+ "loads": 101,
+ "seconds": 795.1,
+ "found": 0,
+ "by_method": {
+  "no_closed_list": 7,
+  "not_found": 105
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "03537",
+   "title": "Biology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "03539",
+   "title": "Business Office Technology: Bookkeeping",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "03545",
+   "title": "Business Office Technology--Information Processing",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "03547",
+   "title": "Kinesiology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "03562",
+   "title": "Welding Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "03570",
+   "title": "Nursing-Registered Nursing",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "03571",
+   "title": "Nursing--Vocational Nursing",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "03585",
+   "title": "Administration of Justice",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "03588",
+   "title": "Early Childhood Education",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "08871",
+   "title": "Computer Science and Information Systems-Computer Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "08872",
+   "title": "Computer Science and Information Systems-Network and Security",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "08886",
+   "title": "Photography",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "08904",
+   "title": "Chicanx Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "08909",
+   "title": "Digital Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "11803",
+   "title": "Agriculture Business with an Area of Emphasis",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "12331",
+   "title": "Agriculture Production",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "15426",
+   "title": "Computer Science and Information Systems - Digital Web and Mobile Development Option",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "17910",
+   "title": "General Studies: STEM",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "17911",
+   "title": "General Studies: Social and Behavioral Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "17912",
+   "title": "General Studies: Arts and Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "17913",
+   "title": "General Studies: Ethnic Groups in the United States",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "17914",
+   "title": "General Studies: Language and Rationality",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "17924",
+   "title": "Liberal Arts: Pathway to Health Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "17977",
+   "title": "Agriculture Business",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "18353",
+   "title": "Psychology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "19106",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "19107",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "19518",
+   "title": "Spanish",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "19718",
+   "title": "Addiction Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "19719",
+   "title": "Addiction Studies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21422",
+   "title": "Business Office Technology--Information Processing",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21423",
+   "title": "Digital Arts",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21424",
+   "title": "Computer Science and Information Systems - Web Development Option",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21439",
+   "title": "Welding Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21444",
+   "title": "Photography",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21450",
+   "title": "Administration of Justice",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30621",
+   "title": "Construction - Sustainable Construction: Construction Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30822",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31146",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31268",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31392",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31406",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31591",
+   "title": "Agriculture Production",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31592",
+   "title": "Computer Science and Information Systems-Network and Security",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31593",
+   "title": "Computer Science and Information Systems: Computer Science",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31778",
+   "title": "Astronomy",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31804",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31971",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32036",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32037",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32365",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32375",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32529",
+   "title": "Automotive Technology - Advanced Diesel Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32930",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32981",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "33050",
+   "title": "Theatre Arts",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "33051",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "33176",
+   "title": "Music",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "33385",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "33851",
+   "title": "Engineering",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35065",
+   "title": "Theatre Arts & Cinema",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35105",
+   "title": "Geology",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35107",
+   "title": "Biology",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35108",
+   "title": "Chemistry",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35458",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35613",
+   "title": "Agriculture Business",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36694",
+   "title": "Construction Management and Architecture",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36985",
+   "title": "Manufacturing Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "37130",
+   "title": "Computer Science and Information Systems - Mobile Development Option",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "37916",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "37950",
+   "title": "Agriculture Plant Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38211",
+   "title": "Social Justice",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38224",
+   "title": "Business Information Worker Level 1",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38232",
+   "title": "Business Information Worker Level 2",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38501",
+   "title": "Engineering Fundamentals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38517",
+   "title": "Film, Television, and Electronic Media",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "39248",
+   "title": "Vocational Nursing",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "39564",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40051",
+   "title": "Advanced Automotive Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40261",
+   "title": "Basic Computer Literacy",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40742",
+   "title": "High School Equivalency Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41819",
+   "title": "Technical Support",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41922",
+   "title": "Cisco Certified Network Associate",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41985",
+   "title": "Cybersecurity",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "42135",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "42385",
+   "title": "Food Safety",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43066",
+   "title": "Emergency Medical Technician - Level 1",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43119",
+   "title": "Sustainable Crop Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43121",
+   "title": "Small Farm",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43559",
+   "title": "First Line Supervisor",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43607",
+   "title": "English for Multilingual Speakers–Beginning",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43608",
+   "title": "English for Multilingual Speakers–Advanced",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43609",
+   "title": "English for Multilingual Speakers–High Intermediate",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43610",
+   "title": "English for Multilingual Speakers–Low Intermediate",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43620",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43776",
+   "title": "English for Multilingual Speakers-Intermediate",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43809",
+   "title": "Agricultural Mechatronics",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43821",
+   "title": "Foundations of Agricultural Mechatronics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43887",
+   "title": "Music",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44161",
+   "title": "Theatre Performance",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44525",
+   "title": "Spanish",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44537",
+   "title": "Respiratory Care",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44574",
+   "title": "Workforce and Academic Readiness",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44729",
+   "title": "Public Health",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45096",
+   "title": "CalGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 0,
+  "1.0": 0
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/hartnell",
+  "kept": 0,
+  "programs": 0,
+  "list": []
+ },
+ "run": "39850594534"
+}
