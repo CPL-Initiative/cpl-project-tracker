@@ -108,6 +108,54 @@ check("(f) choosing a pathway brings Clear back", !root.querySelector(".cplpw-cl
 change(sel, "");
 check("(f) the no-pathway choice in the list clears it too", !!root.querySelector(".cplpw-nopath"));
 
+// ── (g) the search box (Sam, 2026-10-22: search for something like "drone" and pull up a short list) ──
+{
+  const find = root.querySelector("#cplpw-path-find");
+  const fl = find && root.querySelector('label[for="cplpw-path-find"]');
+  check("(g) a labeled search box sits after the College select", !!find && !!fl && fl.textContent === "Search:"
+    && (col.compareDocumentPosition(find) & w.Node.DOCUMENT_POSITION_FOLLOWING) && (find.compareDocumentPosition(sel) & w.Node.DOCUMENT_POSITION_FOLLOWING));
+  change(col, "");
+  const typeIn = (v) => { find.value = v; find.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Enter", bubbles: true })); };
+  typeIn("nursing");
+  const hits = texts();
+  check("(g) typing narrows the Pathway list to the matches", hits.length > 0 && hits.length < all && hits.every((t) => /nursing/i.test(t)), hits.length);
+  const found = [...root.querySelectorAll(".cplpw-found-go")];
+  check("(g) and lists every match below, none chosen yet", sel.value === "" && found.length === Math.min(hits.length, 100), found.length + " vs " + hits.length);
+  check("(g) the caption counts the matches", /pathways? match(es)? “nursing”/.test(root.querySelector(".cplpw-selcount").textContent));
+  found[0].click();
+  check("(g) a match opens its pathway", sel.value !== "" && !root.querySelector(".cplpw-found"));
+  typeIn("nursing zzzqqq");
+  check("(g) words that match nothing say so", texts().length === 0 && /No pathway matches/.test(root.textContent));
+  typeIn("");
+  check("(g) clearing the search brings every pathway back", texts().length === all);
+}
+
+// ── (h) each group lists alphabetically (Sam, 2026-10-22: "sorted alpha") ──
+{
+  const sorted = [...sel.querySelectorAll("optgroup")].every((g) => {
+    const t = [...g.querySelectorAll("option")].map((o) => o.textContent);
+    return t.every((x, i) => i === 0 || t[i - 1].localeCompare(x, "en", { sensitivity: "base" }) <= 0);
+  });
+  check("(h) every group of the Pathway list is in alphabetical order", sorted);
+}
+
+// ── (i) My College's sections, folded under the college line (step 2 of the fold) ──
+{
+  const loads = [];
+  w.CPL_TABS = { loadScript: (src, g, cb) => { loads.push(src); w.CPL_COLLEGE_BRIEFING = { mountInto: (host, c) => { host.setAttribute("data-mounted-for", c); } }; cb(); } };
+  change(col, "");
+  const box = () => root.querySelector("details.cplpw-mycollege");
+  check("(i) no My College section until a college is chosen", box() && box().hidden);
+  change(col, "Mt. San Antonio College");
+  check("(i) a chosen college shows it, folded, named", box() && !box().hidden && !box().open && /My College: Mt\. San Antonio College/.test(box().querySelector("summary").textContent));
+  check("(i) nothing loads while it is folded", loads.length === 0, loads);
+  box().open = true; box().dispatchEvent(new w.Event("toggle"));
+  const host = box().querySelector(".cplpw-mycollege-b");
+  check("(i) opening it loads My College and mounts it for the college", loads[0] === "college_briefing.js" && host.getAttribute("data-mounted-for") === "Mt. San Antonio College", loads);
+  change(col, "Cerritos College");
+  check("(i) another college remounts it while open", box().querySelector(".cplpw-mycollege-b").getAttribute("data-mounted-for") === "Cerritos College");
+}
+
 let failed = 0;
 for (const [name, ok, why] of results) {
   if (!ok) { failed++; console.log("FAIL " + name + (why !== undefined ? "  [" + why + "]" : "")); }

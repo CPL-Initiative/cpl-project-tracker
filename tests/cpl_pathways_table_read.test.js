@@ -362,7 +362,7 @@ function pickRecord(w, root, title) {
     await settle(60);
     const root = w.document.getElementById("cpl-pathways-root");
     const opts = recordOptions(root.querySelector("select.cplpw-select")).map((o) => o.textContent);
-    check("(j) all 2,600 programs arrive, in order", opts.length === 2600 && /Wave Program 0\b/.test(opts[0]) && /Wave Program 2599\b/.test(opts[2599]), opts.length);
+    check("(j) all 2,600 programs arrive, the first and the last included", opts.length === 2600 && opts.some((t) => /Wave Program 0\b/.test(t)) && opts.some((t) => /Wave Program 2599\b/.test(t)), opts.length);
     check("(j) the pages after the first are read side by side", most > 1, most);
     check("(j) and the read stops at the short page", indexReads <= 7, indexReads);
   }

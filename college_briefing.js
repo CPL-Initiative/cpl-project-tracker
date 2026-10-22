@@ -615,7 +615,7 @@
     var s = document.createElement("style");
     s.id = "cpl-briefing-css";
     s.textContent = [
-      "#college-briefing-root{text-align:left;color:var(--text,var(--text-strong));}",
+      "#college-briefing-root,[data-cb-embed]{text-align:left;color:var(--text,var(--text-strong));}",
       ".cb-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:18px;}",
       ".cb-bar label{display:block;font-size:.75rem;color:var(--text-muted);margin-bottom:4px;}",
       ".cb-bar select{padding:7px 10px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);color:var(--text,var(--text-strong));min-width:220px;}",
@@ -841,6 +841,7 @@
 
       /* ── The welcome header, which only exists after a choice ───────────── */
       ".cb-welcome{margin:2px 0 14px;}",
+      ".cb-embed-none{margin:8px 0;color:var(--text-muted);}",
       ".cb-welcome-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;}",
       ".cb-welcome-t{margin:0;font-size:1.45rem;letter-spacing:-.015em;color:var(--text-strong);font-weight:650;}",
       ".cb-welcome-acts{display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;}",
@@ -1629,9 +1630,18 @@
    * nothing else — no prose. The one sentence it used to carry was struck on
    * 2026-08-21 for describing the assistant that describes itself directly
    * below; see the note where it used to be. */
-  function welcomeHead() {
+  function welcomeHead(embed) {
     var name = scopeLabel();
     if (!name) return "";
+    /* Embedded in CPL Pathways: its own college line already names the college and carries
+       the CPL Visual, the extract and the way to another college. */
+    if (embed) {
+      return '<div class="cb-welcome cb-welcome-embed"><div class="cb-welcome-row">'
+        + '<div class="cb-welcome-acts"><button type="button" class="cb-act" id="cb-report">Create a briefing</button></div></div>'
+        + '<div class="cb-allctl"><button type="button" class="cb-act cb-act-q" data-all="open">Expand all</button>'
+        + '<button type="button" class="cb-act cb-act-q" data-all="close">Collapse all</button></div>'
+        + "</div>";
+    }
     var title = state.scope === "statewide" ? "Statewide CPL view" : "Welcome, " + name;
     return '<div class="cb-welcome">'
       + '<div class="cb-welcome-row">'
@@ -2989,7 +2999,14 @@
      * reader at the `_pub` mirrors, which carry suppression applied at build
      * time; the bases keep exactly the RLS they had. A reader who holds the team
      * phrase still reads the bases and still sees more. */
+    lastRoot = root;
     if (state.loading) { root.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-muted);">Measuring…</div>'; return; }
+    /* Inside CPL Pathways (step 2 of the fold) the host's picker chooses the college, so the
+       scope question and the college picker never show here. */
+    if (embedded(root) && (state.scope !== "college" || !state.college)) {
+      root.innerHTML = '<p class="cb-embed-none">' + esc(embedNote || "Choose a college above to see its My College sections.") + "</p>";
+      return;
+    }
 
     var names = (state.data && state.data.colleges) || [];
     var dIdx = districtIndex(names);
@@ -3007,7 +3024,7 @@
     if (!scopeReady()) { root.innerHTML = entityPicker(names, dIdx); wire(root); return; }
 
     // Step 3 — the title arrives now that there is something to welcome.
-    var h = welcomeHead();
+    var h = welcomeHead(embedded(root));
 
     // ── Sierra AI, first on the tab, holding the pickers ──────────────────
     // Sam, 2026-08-11: the assistant leads and the pickers live inside it.
@@ -4418,7 +4435,7 @@
      * anything already on screen does not wait for one. */
     state.open.sierra = true;
     try {
-      var d = document.querySelector('#college-briefing-root details[data-sec="sierra"]');
+      var d = lastRoot && lastRoot.querySelector('details[data-sec="sierra"]');
       if (d && !d.open) d.open = true;
     } catch (e) { /* not mounted — the state flag still lands */ }
     var C = chatModule();
@@ -4877,6 +4894,54 @@
     });
   }
 
+  /* ── My College inside CPL Pathways (Sam, 2026-10-22: "go on step 2") ─────────────────
+   * Step 2 of folding My College into CPL Pathways. The one renderer draws into a host the
+   * other tab owns, marked data-cb-embed, for the college that tab's picker names. The data
+   * loads when the host first asks, which CPL Pathways does only when its My College section
+   * is opened. The names are matched through choiceKey, as the shared choice is. */
+  var lastRoot = null;
+  var embedNote = "";
+  var loadingP = null;
+  function embedded(root) {
+    return !!(root && root.getAttribute && root.getAttribute("data-cb-embed") === "1");
+  }
+  function embedSelect(host, college) {
+    if (!state.data) return;
+    var k = choiceKey(college), names = state.data.colleges || [], m = "";
+    for (var i = 0; i < names.length; i++) if (choiceKey(names[i]) === k) { m = names[i]; break; }
+    if (!m) {
+      embedNote = college ? "My College holds no record for " + college + "." : "";
+      state.scope = null; state.college = null;
+      render(host);
+      return;
+    }
+    embedNote = "";
+    state.district = ""; state.swpRegion = "";
+    if (state.scope === "college" && state.college === m && state.detailFor === m) { render(host); return; }
+    state.scope = "college";
+    selectCollege(m, host);
+  }
+  function mountInto(host, college) {
+    if (!host) return;
+    host.setAttribute("data-cb-embed", "1");
+    if (state.data && state.loadedSignedIn === signedIn()) {
+      loadRoster(host); loadSwp(host); loadLive(host);
+      embedSelect(host, college);
+      return Promise.resolve();
+    }
+    if (!loadingP) {
+      state.loading = true;
+      loadingP = loadAll().then(function () {
+        state.loading = false; state.loadedSignedIn = signedIn();
+      }, function (e) {
+        state.loading = false; state.error = String(e && e.message || e); state.loadedSignedIn = signedIn();
+      }).then(function () { loadingP = null; });
+    }
+    render(host);
+    loadRoster(host); loadSwp(host); loadLive(host);
+    return loadingP.then(function () { embedSelect(host, college); });
+  }
+
   function activate() {
     var root = document.getElementById("college-briefing-root");
     if (!root) return;
@@ -4903,6 +4968,8 @@
 
   window.CPL_COLLEGE_BRIEFING = {
     activate: activate,
+    // Public: My College's sections in another tab's host (step 2 of the fold).
+    mountInto: mountInto,
     render: render,
     // exposed for tests — all three are pure
     _collectPrograms: collectPrograms,
