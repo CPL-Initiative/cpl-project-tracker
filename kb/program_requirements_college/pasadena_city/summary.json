@@ -2,19 +2,19 @@
  "college": "Pasadena City College",
  "programs": 367,
  "with_closed_list": 318,
- "found": 296,
- "extracted": 296,
+ "found": 297,
+ "extracted": 297,
  "errors": 0,
- "passed_machine_checks": 238,
+ "passed_machine_checks": 242,
  "failed": {
-  "coverage": 6,
+  "coverage": 4,
   "invented": 0,
-  "arithmetic": 58,
+  "arithmetic": 55,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 20.86,
- "cost_per_program": 0.0705,
+ "cost_usd": 20.91,
+ "cost_per_program": 0.0704,
  "not_found": [
   {
    "control_number": "16745",
@@ -105,8 +105,8 @@
      "title": 1.0
     },
     "field": "innerText",
-    "coverage": 0.319,
-    "body": 0.319,
+    "coverage": 0.33,
+    "body": 0.33,
     "content": 0.099,
     "net": 29,
     "listed": 91,
@@ -251,5 +251,5 @@
    }
   }
  ],
- "run": "39061730187"
+ "run": "39758679671"
 }
