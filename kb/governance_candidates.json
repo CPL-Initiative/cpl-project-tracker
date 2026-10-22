@@ -3,9 +3,9 @@
   "_generated_by": "kb/_build_governance_candidates.py",
   "_counts": {
     "candidates": 11,
-    "already_mapped": 44,
+    "already_mapped": 45,
     "dismissed": 8,
-    "scanned": 63
+    "scanned": 64
   },
   "candidates": [
     {
