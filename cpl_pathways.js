@@ -279,6 +279,16 @@
     ".cplpw-oppacts[hidden] { display:none; }",
     ".cplpw-clear[hidden] { display:none; }",
     ".cplpw-nopath { margin:18px 0; color: var(--text-muted); }",
+    ".cplpw-find { font-family:inherit; font-size:.86rem; color: var(--text-body); background: var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; padding:7px 12px; min-height:40px; width:260px; max-width:100%; box-sizing:border-box; }",
+    ".cplpw-find:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    ".cplpw-found { margin:14px 0; }",
+    ".cplpw-found-h { font-size:1rem; margin:0 0 8px; color: var(--text-strong); }",
+    ".cplpw-found-list { list-style:none; margin:0; padding:0; display:grid; gap:4px; }",
+    ".cplpw-found-go { text-align:left; white-space:normal; }",
+    ".cplpw-mycollege { flex-basis:100%; margin:4px 0 6px; border-top:1px solid var(--border); padding-top:8px; }",
+    ".cplpw-mycollege[hidden] { display:none; }",
+    ".cplpw-mycollege > summary { cursor:pointer; font-weight:700; color: var(--text-strong); min-height:24px; }",
+    ".cplpw-mycollege-b { margin-top:10px; }",
     ".cplpw-oppact { font:inherit; font-size:.85rem; font-weight:600; color: var(--cobalt); background:none; border:0; padding:0; min-height:24px; text-decoration:underline; cursor:pointer; }",
     ".cplpw-select, .cplpw-colsel { min-height:40px; }",
     /* The chosen college's program data, one quiet line under the selectors (Sam, 2026-10-21). */
@@ -2828,6 +2838,7 @@
   // pathways one college offers, featured maps, baccalaureates and catalog records
   // alike, groups kept; All colleges is the pathway-first view. Nothing goes in the
   // URL: the dashboard routes tabs on location.hash.
+  var mineOpen = false;
   function buildSelector(items, directory, dir, onChange) {
     var row = el("div", "cplpw-selrow");
     var sel = document.createElement("select");
@@ -2854,22 +2865,46 @@
     directory.forEach(function (p) { if (!seen[p.field]) { seen[p.field] = true; fields.push(p.field); } });
     var caption = el("span", "cplpw-selcount");
     caption.setAttribute("aria-live", "polite");
+    /* A typed search narrows the list (Sam, 2026-10-22: search for something like "drone" and
+       pull up a short list). Every word must appear in the entry's words or its field. */
+    function words(q) { return String(q || "").toLowerCase().split(/\s+/).filter(Boolean); }
+    function matchesQuery(it, label, ws) {
+      if (!ws.length) return true;
+      var hay = (label + " " + ((it.prog && it.prog.field) || "")).toLowerCase();
+      return ws.every(function (w) { return hay.indexOf(w) >= 0; });
+    }
+    // Each group lists its entries alphabetically (Sam, 2026-10-22: "sorted alpha").
+    function addSorted(group, entries) {
+      entries.sort(function (x, y) { return x.text.localeCompare(y.text, "en", { sensitivity: "base" }); });
+      entries.forEach(function (e) { group.appendChild(option(e.i, e.text)); });
+    }
+    var matched = [];
     function fill(college) {
       clearNode(sel);
       // The way back to no pathway (Sam, S448: "no way I can see to clear the pathways filter").
       sel.appendChild(option("", "No pathway chosen"));
       function mine(it) { return !college || (it.prog && it.prog.college) === college; }
+      var ws = words(pickedQuery);
+      matched = [];
+      function keep(it, i, text, list) {
+        if (!matchesQuery(it, text, ws)) return;
+        list.push({ i: i, text: text });
+        matched.push({ i: i, text: text });
+      }
       // Featured group
       var fg = document.createElement("optgroup");
       fg.label = "★ Featured — full course maps";
+      var fe = [];
       items.forEach(function (it, i) {
-        if (it.kind === "featured" && mine(it)) fg.appendChild(option(i, (it.prog.college ? it.prog.college + " — " : "") + (it.prog.program || ("Program " + (i + 1)))));
+        if (it.kind === "featured" && mine(it)) keep(it, i, (it.prog.college ? it.prog.college + " — " : "") + (it.prog.program || ("Program " + (i + 1))), fe);
       });
+      addSorted(fg, fe);
       if (fg.children.length) sel.appendChild(fg);
-      // Directory groups, by field (preserve the data-file order)
+      // Directory groups, by field (preserve the data-file order of the fields)
       fields.forEach(function (f) {
         var og = document.createElement("optgroup");
         og.label = f;
+        var de = [];
         items.forEach(function (it, i) {
           if (it.kind === "directory" && it.prog.field === f && mine(it)) {
             var bits = [];
@@ -2879,18 +2914,21 @@
             }
             if (it.prog.status && it.prog.status !== "Active") bits.push(it.prog.status);
             var suffix = bits.length ? " (" + bits.join(" · ") + ")" : "";
-            og.appendChild(option(i, (it.prog.college || "") + " — " + (it.prog.program || "") + suffix));
+            keep(it, i, (it.prog.college || "") + " — " + (it.prog.program || "") + suffix, de);
           }
         });
+        addSorted(og, de);
         if (og.children.length) sel.appendChild(og);
       });
-      // Catalog records, by college (the harvest's ROEP records, Beta draft)
+      // Catalog records (the harvest's ROEP records, Beta draft)
       var rg = document.createElement("optgroup");
       rg.label = "Catalog records, Beta draft";
+      var re = [];
       items.forEach(function (it, i) {
-        if (it.kind === "roep" && mine(it)) rg.appendChild(option(i, it.prog.college + " — " + it.prog.title + " · " + roepAward(it.prog)
-          + (roepChecked(it.prog) ? "" : " (not yet confirmed)")));
+        if (it.kind === "roep" && mine(it)) keep(it, i, it.prog.college + " — " + it.prog.title + " · " + roepAward(it.prog)
+          + (roepChecked(it.prog) ? "" : " (not yet confirmed)"), re);
       });
+      addSorted(rg, re);
       if (rg.children.length) sel.appendChild(rg);
       var shown = items.filter(mine);
       var nDir = shown.filter(function (it) { return it.kind === "directory"; }).length;
@@ -2899,6 +2937,7 @@
       var text = nDir + " CCC baccalaureate degree" + (nDir === 1 ? "" : "s") + " + " + nFeat + " featured course map" + (nFeat === 1 ? "" : "s")
         + (nRoep ? " + " + nRoep + " catalog record" + (nRoep === 1 ? "" : "s") : "");
       if (college) text = college + ": " + text;
+      if (ws.length) text = matched.length + (matched.length === 1 ? " pathway matches" : " pathways match") + " “" + pickedQuery.trim() + "” · " + text;
       if (dir) text += " · courses = CPL articulated now / potential with adoption";
       caption.textContent = text;
     }
@@ -2950,7 +2989,39 @@
     });
     function syncClear() { clear.hidden = sel.value === ""; }
     selWrap.appendChild(clear);
+    /* The search box, after the college (Sam, 2026-10-22). Typing narrows the Pathway list
+       and lists every match below, each one a click from its map. */
+    var findWrap = el("span", "cplpw-selpair");
+    var findLabel = el("label", "cplpw-sellabel", "Search:");
+    var find = document.createElement("input");
+    find.type = "search"; find.id = "cplpw-path-find"; find.className = "cplpw-find";
+    find.placeholder = "e.g. drone, nursing, welding";
+    find.setAttribute("autocomplete", "off");
+    find.value = pickedQuery;
+    findLabel.setAttribute("for", find.id);
+    findWrap.appendChild(findLabel);
+    findWrap.appendChild(find);
+    var findTimer = null;
+    function runFind() {
+      findTimer = null;
+      if (find.value === pickedQuery) return;
+      pickedQuery = find.value;
+      var keep = sel.value;
+      fill(col.value);
+      if (words(pickedQuery).length) { sel.value = ""; onChange(-1); }
+      else if (has(keep)) sel.value = keep;
+      else { sel.value = ""; onChange(-1); }
+      syncClear();
+    }
+    find.addEventListener("input", function () {
+      if (findTimer) clearTimeout(findTimer);
+      findTimer = setTimeout(runFind, 200);
+    });
+    find.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); if (findTimer) clearTimeout(findTimer); runFind(); }
+    });
     row.appendChild(colWrap);
+    row.appendChild(findWrap);
     row.appendChild(selWrap);
     row.appendChild(caption);
     /* The chosen college's CPL opportunity analysis (Ashley and Sam, 2026-10-20):
@@ -3016,14 +3087,52 @@
     col.addEventListener("change", syncStat);
     syncStat();
     row.appendChild(stat);
+    /* My College's sections for the chosen college (Sam, 2026-10-22: "go on step 2" of folding
+       My College into CPL Pathways). Folded until opened: college_briefing.js and its data load
+       on the first open, never on the tab's own load, and its own renderer draws them. */
+    var myCol = document.createElement("details");
+    myCol.className = "cplpw-mycollege";
+    var mineSum = document.createElement("summary");
+    var mineHost = el("div", "cplpw-mycollege-b");
+    myCol.appendChild(mineSum);
+    myCol.appendChild(mineHost);
+    var mineFor = null;
+    function mountMine() {
+      var college = col.value;
+      if (!myCol.open || !college || mineFor === college) return;
+      mineFor = college;
+      var T = window.CPL_TABS;
+      if (!(T && typeof T.loadScript === "function")) { mineHost.textContent = "My College could not be loaded on this page."; return; }
+      mineHost.textContent = "Loading " + college + "'s My College sections…";
+      T.loadScript("college_briefing.js", "CPL_COLLEGE_BRIEFING", function () {
+        var B = window.CPL_COLLEGE_BRIEFING;
+        if (mineFor !== college) return;
+        if (!B || typeof B.mountInto !== "function") { mineHost.textContent = "My College could not be loaded just now."; mineFor = null; return; }
+        B.mountInto(mineHost, college);
+      });
+    }
+    function syncMine() {
+      myCol.hidden = !col.value;
+      mineSum.textContent = col.value ? "My College: " + col.value : "My College";
+      if (col.value !== mineFor) { mineFor = null; if (myCol.open) mountMine(); }
+    }
+    myCol.addEventListener("toggle", function () { mineOpen = myCol.open; mountMine(); });
+    col.addEventListener("change", syncMine);
+    // A re-render (the table's list landing) keeps the section as the reader left it.
+    myCol.open = mineOpen && !!col.value;
+    syncMine();
+    mountMine();
+    row.appendChild(myCol);
     // Opening a pathway another college offers (a ladder's link) widens to All colleges.
     function show(value) {
       if (value === -1) { sel.value = ""; syncClear(); return; }
-      if (!has(value)) { col.value = ""; pickedCollege = ""; fill(""); syncOpp(); syncStat(); }
+      if (!has(value)) { col.value = ""; pickedCollege = ""; fill(""); syncOpp(); syncStat(); syncMine(); }
       sel.value = String(value);
       syncClear();
     }
-    return { row: row, select: sel, college: col, show: show, has: has, first: firstPathway };
+    return { row: row, select: sel, college: col, show: show, has: has, first: firstPathway,
+      query: function () { return words(pickedQuery).length ? pickedQuery.trim() : ""; },
+      results: function () { return matched.slice(); } };
   }
 
   /* ── one college choice for CPL Pathways and My College (Sam, 2026-10-21, step 1 of folding
@@ -3056,6 +3165,8 @@
   /* The college this tab shows, kept across a re-render (the table's list landing re-renders the
      tab, and used to drop the reader's college back to All colleges). */
   var pickedCollege = "";
+  // The words typed in the search box, kept across the same re-render, never stored.
+  var pickedQuery = "";
   /* A choice My College made since this tab last looked, applied once a college of that name is
      listed here (a college may join the list only when the table's records land). The tab's own
      writes are never applied back to it, and a cleared choice leaves this tab's college alone. */
@@ -3330,7 +3441,35 @@
         shownIdent = "none";
         roepOpening++;
         clearNode(body);
-        body.appendChild(el("p", "cplpw-nopath", "No pathway chosen. Choose one from the Pathway list above."));
+        var q = selector && selector.query();
+        if (!q) {
+          body.appendChild(el("p", "cplpw-nopath", "No pathway chosen. Choose one from the Pathway list above."));
+          return;
+        }
+        var found = selector.results();
+        if (!found.length) {
+          body.appendChild(el("p", "cplpw-nopath", "No pathway matches “" + q + "”" + (selector.college.value ? " at " + selector.college.value : "") + "."));
+          return;
+        }
+        var LIMIT = 100;
+        var box = el("section", "cplpw-found");
+        box.setAttribute("aria-label", "Pathways matching " + q);
+        box.appendChild(el("h3", "cplpw-found-h", found.length + (found.length === 1 ? " pathway matches" : " pathways match") + " “" + q + "”"));
+        var ul = el("ul", "cplpw-found-list");
+        found.slice(0, LIMIT).forEach(function (f) {
+          var li = document.createElement("li");
+          var b = document.createElement("button");
+          b.type = "button"; b.className = "cplpw-oppact cplpw-found-go"; b.textContent = f.text;
+          b.addEventListener("click", function () {
+            selector.show(f.i);
+            show(f.i);
+          });
+          li.appendChild(b);
+          ul.appendChild(li);
+        });
+        box.appendChild(ul);
+        if (found.length > LIMIT) box.appendChild(el("p", "cplpw-nopath", "The first " + LIMIT + " are listed; more words narrow the list."));
+        body.appendChild(box);
         return;
       }
       var it = items[i] || items[0];

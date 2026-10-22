@@ -797,10 +797,15 @@ BLOCKS.push((async function () {
   })());
 
   // The teaching moment, on the control rather than only in the header.
+  // Every table CPL Pathways touches is made public here. Since S448 the tab draws My College's
+  // sections (step 2 of the fold), so its surface carries My College's reads as well.
+  const SURF = (function () { const x = {}; new Function("window", fs.readFileSync("cobi_admin_surface.js", "utf8"))(x); return x.COBI_ADMIN_SURFACE; })();
+  const cpwTabs = (SURF.tabs || SURF)["cpl-pathways"] || {};
+  const cpwTables = [].concat(cpwTabs.reads || [], cpwTabs.writes || []);
   const w2 = makeWin({
     nav: [{ kind: "tab", key: "cpl-pathways", audience: "magic_link" }],
-    gates: DEFAULT_GATES.map((g) => (g.tbl === "cpl_adoption_interest"
-      ? { tbl: g.tbl, kind: "table", rls_enabled: true, select_gate: "true", policy_count: 1 } : g)),
+    gates: DEFAULT_GATES.filter((g) => cpwTables.indexOf(g.tbl) < 0).concat(cpwTables.map((t) =>
+      ({ tbl: t, kind: "table", rls_enabled: true, select_gate: "true", policy_count: 1 }))),
   });
   const api2 = w2.CPL_ADMIN_TAB;
   const root2 = w2.document.getElementById("admin-root");

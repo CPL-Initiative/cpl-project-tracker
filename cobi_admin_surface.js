@@ -150,24 +150,48 @@ window.COBI_ADMIN_SURFACE = {
     },
     "cpl-pathways": {
       "modules": [
+        "college_briefing.js",
         "college_cpl_workbook.js",
         "cpl_baccalaureates_data.js",
+        "cpl_funding.js",
         "cpl_pathways.js",
         "cpl_pathways_ccr_data.js",
         "cpl_pathways_data.js",
         "cpl_pathways_membership_data.js"
       ],
       "reads": [
+        "budget_funding",
+        "chatbox_credentials",
         "coci_college_programs",
         "coci_program_courses",
         "course_outcomes",
+        "map_ace_exhibit_titles",
+        "map_college_contacts",
+        "map_college_contacts_pub",
+        "map_college_cr_unit",
+        "map_college_cr_waiting_pub",
+        "map_college_credit_summary",
+        "map_college_credit_summary_pub",
+        "map_college_goal2",
+        "map_college_goal2_pub",
+        "map_colleges",
+        "map_credential_student_rollup",
+        "program_record_college_items",
         "program_requirement_records",
         "program_source_registry"
       ],
       "writes": [
-        "cpl_adoption_interest"
+        "cpl_adoption_interest",
+        "cpl_funding_config",
+        "cpl_funding_notes",
+        "cpl_funding_participation",
+        "cpl_funding_reports"
       ],
-      "rpcs": [],
+      "rpcs": [
+        "cpl_funding_my_reports",
+        "cpl_funding_optin_review",
+        "map_coordinator_summary"
+      ],
       "measured": true
     },
     "nc-learning-partners": {
