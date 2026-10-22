@@ -1,0 +1,19 @@
+{
+ "_readme": "S449 SkyBuckwheat, 2026-10-22. Ohlone's capture (run 39063337090, chapter 7 of its PDF catalog, 100 pages) found 146 of 179 programs with a closed list. Of the 33 not found, 18 are noncredit programs no page names (chapter 7 is the credit curriculum guides), and 15 are credit programs whose best page names a fifth to two fifths of the state's listed courses (Business Supervision/Management A.A. and certificate on page 89 at 0.2; Computer Studies A.A. and certificate on page 22 at 0.25; Interior Design on page 10 at 0.18; Fine Arts A.A. on page 10, 72 listed; Kinesiology: Athletic Training A.S. on page 88 at 0.4; Journalism A.A.-T on page 87 at 0.44; Entrepreneurship on page 66 at 0.25). This read prints those pages and the page after each, to see whether the guide lists other courses than the state's file (the college's to settle), prints them in a form the code finder misses, or runs past the page the capture read; and it lists the catalog page's chapter links, for where the noncredit certificates are printed. Two loads, no model call.",
+ "college": "Ohlone College",
+ "questions": {
+  "low_coverage_pages": "What the curriculum guide prints for the credit programs the capture found at low coverage: other courses than the state lists, codes in another form, or a list running onto the next page.",
+  "noncredit_chapter": "Which chapter of the catalog prints the noncredit certificates, so their pages can be read."
+ },
+ "keywords": [
+  "Business Supervision", "Computer Studies", "Interior Design", "Fine Arts", "Athletic Training",
+  "Administrative Assistant", "Language Emphasis", "Physical Science", "Technical Support Specialist",
+  "Personal Development Studies", "Journalism", "Entrepreneurship", "[Nn]oncredit", "Certificate of Completion"
+ ],
+ "pdf_span": [5, 96],
+ "pdf_after": 1,
+ "pages": [
+  {"url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf", "answers": ["low_coverage_pages"]},
+  {"url": "https://www.ohlone.edu/catalog", "answers": ["noncredit_chapter"], "links": "[Cc]hapter|[Nn]oncredit|\\.pdf"}
+ ]
+}
