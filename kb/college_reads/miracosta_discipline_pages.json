@@ -1,0 +1,18 @@
+{
+ "_readme": "S444 (SkyBlueOak): MiraCosta's sitemap lists 286 program pages, yet the capture read 48 pages in 1,427 s and found 29 of 161 programs with a course list; the 43 page-claimed all had only the general education plan pages as candidates. How does a discipline page print each award, and where do the degree pages sit?",
+ "college": "MiraCosta College",
+ "questions": {
+  "discipline_awards": "On a discipline page, how is each award headed, and does a tab or a child page hold its course list?",
+  "program_addresses": "What addresses do the discipline page's award links take (a child page per award, or an anchor)?"
+ },
+ "keywords": [
+  "associate in (?:arts|science)[^\\n]{0,60}",
+  "certificate of achievement[^\\n]{0,60}",
+  "\\bA\\.[AS]\\.[^\\n]{0,40}",
+  "\\bA\\.[AS]\\.?-T[^\\n]{0,40}"
+ ],
+ "pages": [
+  {"answers": ["discipline_awards", "program_addresses"], "url": "https://catalog.miracosta.edu/disciplines/psychology/", "links": "psychology|degree|certificate|#"},
+  {"answers": ["discipline_awards"], "url": "https://catalog.miracosta.edu/disciplines/gerontology/"}
+ ]
+}

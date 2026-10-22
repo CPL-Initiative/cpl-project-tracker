@@ -1,0 +1,18 @@
+{
+ "_readme": "S444 (SkyBlueOak): Sierra College's catalog has no sitemap (404) and the index fallback read 3 pages, so 125 programs with a course list found 35; the 47 page-claimed all had only the associate-degree general education page as a candidate. Where do the program pages live, and how does a department page print each award?",
+ "college": "Sierra College",
+ "questions": {
+  "program_index": "Which page lists every program or department, and what addresses do its links take?",
+  "department_awards": "On a department page, how is each award headed (A.A., A.S., Certificate of Achievement), and do its course lists sit under that heading?"
+ },
+ "keywords": [
+  "associate in (?:arts|science)[^\\n]{0,60}",
+  "certificate of achievement[^\\n]{0,60}",
+  "\\bA\\.[AS]\\.[^\\n]{0,40}",
+  "\\bA\\.[AS]\\.?-T[^\\n]{0,40}"
+ ],
+ "pages": [
+  {"answers": ["program_index"], "url": "https://catalog.sierracollege.edu/", "links": "departments/|programs|degrees|certificates"},
+  {"answers": ["department_awards"], "url": "https://catalog.sierracollege.edu/departments/psychology/"}
+ ]
+}
