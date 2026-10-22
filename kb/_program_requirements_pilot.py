@@ -264,11 +264,14 @@ def award_kind(award: str | None) -> str:
     return "other"
 
 
+# Palomar heads a page that serves a degree and its certificate "Accounting - A.S. Degree
+# Major/Cert. Achievement (18 units or more)": with "Cert. Achievement" unread, the A.S. alone
+# kept 63 such pages and 60 certificates read no page (capture 39721488513, S445).
 AWARD_WORDS = {
     "adt": [r"for transfer", r"\ba\.?[as]\.?\s*-\s*t\b", r"\ba[as]-?t\b", r"\btransfer\b"],
     "as": [r"\ba\.\s?s\.", r"associate (?:in|of) science", r"\bas degree\b"],
     "aa": [r"\ba\.\s?a\.", r"associate (?:in|of) arts", r"\baa degree\b"],
-    "coa": [r"certificate of achievement", r"\bcertificate\b", r"\bcoa\b"],
+    "coa": [r"certificate of achievement", r"\bcertificate\b", r"\bcoa\b", r"\bcert\.?\s*(?:of\s+)?achievement\b"],
     "noncredit": [r"noncredit", r"non-credit", r"certificate of (?:competency|completion)"],
     "bs": [r"bachelor", r"\bb\.\s?s\."],
 }
