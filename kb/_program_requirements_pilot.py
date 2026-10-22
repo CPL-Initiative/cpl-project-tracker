@@ -651,16 +651,23 @@ INDEX_SUBJECTS = 40   # a tab panel naming courses in more subjects than this is
 SUBJECT_TOKEN = re.compile(r"\b([A-Z][A-Z&]{1,7})[ \u00a0]?[A-Z]?\d{1,4}[A-Z]?\b")
 
 
+# MiraCosta's Degrees tab names no course: it lists each degree by title and says the degree
+# is earned "by completing a certificate of achievement and the general education courses"
+# (capture view 39718674469, S445). The college reader reads that list (section_match()).
+DEGREE_FROM_CERT = re.compile(r"degrees? by completing (?:a|the) certificate of achievement", re.I)
+
+
 def hidden_tabs_text(got: dict) -> str:
     """The hidden tab panels PAGE_JS read cell by cell, each under a line
     naming its tab, leaving out any panel that reads as a catalog-wide course
     index (courses in more than INDEX_SUBJECTS subjects) and any that names
-    no course at all (the search dialog every Long Beach City page hides)."""
+    no course at all (the search dialog every Long Beach City page hides),
+    unless it says its degrees are certificates plus general education."""
     parts = []
     for t in got.get("tabPanels") or []:
         text = (t.get("text") or "").strip()
         subjects = {m.group(1) for m in SUBJECT_TOKEN.finditer(text)}
-        if not subjects or len(subjects) > INDEX_SUBJECTS:
+        if (not subjects and not DEGREE_FROM_CERT.search(text)) or len(subjects) > INDEX_SUBJECTS:
             continue
         parts.append("[Tab: %s]\n%s" % ((t.get("label") or t.get("id") or "").strip(), text))
     return "\n\n".join(parts)

@@ -489,10 +489,11 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
         award_hit, title = label_score(pg, program)
         if len(want) < SMALL_LIST and title < 0.5:
             continue   # a list this short names its courses on many pages; the page must name the program too
+        section, heading, fit = section_match(text, program, title)
         out.append({"url": pg["url"], "group": pg.get("group") or pg["url"], "coverage": cov, "found": found,
                     "text": text, "field": field,
-                    "got": pg["got"], "label": {"award": award_hit, "title": title,
-                                                "section": section_award(text, program, title)},
+                    "got": pg["got"], "label": {"award": award_hit, "title": title, "section": section,
+                                                "section_line": heading, "section_fit": fit},
                     "key": (award_hit, title, round(cov, 3))})
     out.sort(key=lambda c: c["key"], reverse=True)
     return out
@@ -582,38 +583,98 @@ SECTION_COVERAGE = 0.8   # a section on a page whose label does not name the pro
 SEGMENT = re.compile(r"\n| \u00b7 ")   # a line, or the " · " a page read joins short lines with
 
 
-def section_award(text: str, program: dict, title_share: float = 0.0) -> str | None:
-    """The program's award kind when the page heads a section for it, else None: one short
-    line, or two adjacent short lines, naming that award and every word of the program's
-    title, or, for an A.A. or A.S. on a page whose label names the title in full, the generic
-    degree heading beside an award line naming that award. Two lines: Sierra heads a section
-    "Information Technology - Cloud Computing" then "AS Degree", MiraCosta "Certificate of
-    Achievement" then "Landscape Architecture" (page read 39704788066, S444)."""
+# MiraCosta lists a discipline's associate degrees by title alone under "Associate in Arts
+# Degrees" and "Associate in Science Degrees", then says "Students may earn one of the
+# above-named associate degrees by completing a certificate of achievement and the general
+# education courses" (capture view 39718674469, S445). A degree named in that list reads its
+# certificate's section of the page: Entrepreneurship A.A. read it so and placed 23 of 23.
+DEGREE_LIST = {"aa": re.compile(r"^associate (?:in|of) arts degrees?$", re.I),
+               "as": re.compile(r"^associate (?:in|of) science degrees?$", re.I)}
+DEGREE_FROM_CERT = P.DEGREE_FROM_CERT
+LIST_ITEM = 80      # characters: a degree list names a title a line
+
+
+def section_tokens(title: str) -> list[str]:
+    """The title's words a section heading must name. A parenthesized acronym may be left
+    out: MiraCosta heads "Supply Chain Management" for Supply Chain Management (SCM)."""
+    return P.title_tokens(re.sub(r"\([^)]*\)", " ", title or "")) or P.title_tokens(title or "")
+
+
+def heading_fit(line: str, tokens: list[str]) -> float:
+    """The share of a heading's own words, the award's words set aside, that the title names:
+    1.0 when the heading is the program's, less when it names a longer title."""
+    own = set(P.title_tokens(HEADING_AWARD.sub(" ", line)))
+    return round(len(own & set(tokens)) / len(own), 3) if own else 0.0
+
+
+def degree_list_line(lines: list[str], kind: str, tokens: list[str]) -> str | None:
+    """The line naming the program in a degree list headed by its award (DEGREE_LIST), its
+    words exactly the title's, the list running until a long line or another list."""
+    pat = DEGREE_LIST.get(kind)
+    if not pat:
+        return None
+    for i, ln in enumerate(lines):
+        if not pat.match(ln):
+            continue
+        for item in lines[i + 1:]:
+            if not item:
+                continue
+            if len(item) > LIST_ITEM or any(p.match(item) for p in DEGREE_LIST.values()):
+                break
+            if set(section_tokens(item)) == set(tokens):
+                return item.lower()
+    return None
+
+
+def section_match(text: str, program: dict, title_share: float = 0.0) -> tuple[str | None, str | None, float]:
+    """(award kind, heading, fit) when the page heads a section for the program, else
+    (None, None, 0.0). A heading is one short line, or two adjacent short lines, naming the
+    program's award and every word of its title; of several, the one whose own words the title
+    names most fully (heading_fit), so Information Technology A.S. never takes Cloud Computing's
+    heading when its own is on the page. Two lines: Sierra heads a section "Information
+    Technology - Cloud Computing" then "AS Degree", MiraCosta "Certificate of Achievement" then
+    "Landscape Architecture" (page read 39704788066, S444). Also, for an A.A. or A.S. on a page
+    whose label names the title in full, the generic degree heading beside an award line naming
+    that award; and a degree a MiraCosta degree list names, on a page heading its certificate."""
     kind = P.award_kind(program.get("award"))
     pat = SECTION_AWARD.get(kind)
-    tokens = P.title_tokens(program.get("title") or "")
+    tokens = section_tokens(program.get("title") or "")
     if not pat or not tokens:
-        return None
+        return None, None, 0.0
     lines = [ln.strip() for ln in SEGMENT.split(text or "")]
     short = [x.lower() if x and len(x) <= SECTION_LINE else "" for x in lines]
-    heads = []
-    for i, ln in enumerate(short):
-        if not ln:
-            continue
-        nxt = next((x for x in short[i + 1:i + 2] if x), "")
-        if pat.search(ln):
-            heads.append(ln)
-        if nxt and (pat.search(ln) or pat.search(nxt)):
-            heads.append(ln + " " + nxt)
-    for ln in heads:
-        if kind in ("aa", "as") and (SECTION_AWARD["adt"].search(ln) or "transfer" in ln):
-            continue   # "Associate in Arts in Anthropology for Transfer" is the A.A.-T's section
-        if all(re.search(r"\b" + re.escape(w) + r"\b", ln) for w in tokens):
-            return kind
+
+    def heads_for(p):
+        out = []
+        for i, ln in enumerate(short):
+            if not ln:
+                continue
+            nxt = next((x for x in short[i + 1:i + 2] if x), "")
+            if p.search(ln):
+                out.append(ln)
+            if nxt and (p.search(ln) or p.search(nxt)):
+                out.append(ln + " " + nxt)
+        return [h for h in out if all(re.search(r"\b" + re.escape(w) + r"\b", h) for w in tokens)]
+
+    # "Associate in Arts in Anthropology for Transfer" is the A.A.-T's section, never the A.A.'s
+    heads = [h for h in heads_for(pat)
+             if not (kind in ("aa", "as") and (SECTION_AWARD["adt"].search(h) or "transfer" in h))]
+    if heads:
+        best = max(heads, key=lambda h: heading_fit(h, tokens))
+        return kind, best, heading_fit(best, tokens)
     if kind in AWARD_TYPE_KEY and title_share >= 1.0 and AWARD_TYPE_KEY[kind].search(text or "") \
             and any(DEGREE_HEADING.match(ln) for ln in lines):
-        return kind
-    return None
+        return kind, "associate degree requirements", 1.0
+    if DEGREE_FROM_CERT.search(text or "") and heads_for(SECTION_AWARD["coa"]):
+        item = degree_list_line([x.lower() for x in lines], kind, tokens)
+        if item:
+            return kind, item, 1.0
+    return None, None, 0.0
+
+
+def section_award(text: str, program: dict, title_share: float = 0.0) -> str | None:
+    """The program's award kind when the page heads a section for it, else None (section_match)."""
+    return section_match(text, program, title_share)[0]
 
 
 def page_winners(claims: list[tuple[str, dict]]) -> set[str]:
@@ -623,24 +684,29 @@ def page_winners(claims: list[tuple[str, dict]]) -> set[str]:
     every title word named) share it; Culinary Arts: Professional Cooking A.S.
     loses the Culinary Arts Management A.S. page. When the page names no
     claimant's award, the one it names most fully keeps it, more listed courses
-    breaking a tie, unless its text heads a section for two or more of the
-    claimants' awards (section_award()): then each award's claimant keeps it."""
+    breaking a tie, unless its text heads two or more of the claimants' sections
+    (section_match()): then each heading's claimant keeps it."""
     named = [(cn, c) for cn, c in claims if c["label"]["award"]]
-    # A page naming no claimant's award in its label, whose text heads a section for two
-    # or more of the claimants' awards, goes to each award's fullest-named claimant.
+    # A page naming no claimant's award in its label, whose text heads two or more of the
+    # claimants' sections, goes to each heading's fullest-named claimant: the title naming the
+    # most of the heading's own words (section_fit), then the label's share. Grouped by award
+    # alone, a discipline page heading six certificates kept one: MiraCosta's Horticulture page
+    # went to the A.A. whose title shares "Horticulture" with the page heading, and 15 of its 16
+    # claimants read no page (capture 39709840590, S445).
     # A section counts for a claimant the label names at least halfway, or one whose listed courses
     # the page carries at least SECTION_COVERAGE of: Golden West's Physics hub lists "Computer
     # Science, Associate in Science Degree" among its degrees, and Computer Science A.S. found 67% of
     # its courses there, the physics it requires (capture-only run 39661010112, S443).
-    by_kind: dict[str, list[tuple[str, dict]]] = {}
+    by_head: dict[tuple, list[tuple[str, dict]]] = {}
     for cn, c in claims:
         if c["label"].get("section") and (c["label"]["title"] >= 0.5 or c.get("coverage", 0) >= SECTION_COVERAGE):
-            by_kind.setdefault(c["label"]["section"], []).append((cn, c))
-    if not named and len(by_kind) >= 2:
+            by_head.setdefault((c["label"]["section"], c["label"].get("section_line")), []).append((cn, c))
+    if not named and len(by_head) >= 2:
         keep = set()
-        for group in by_kind.values():
-            top = max(c["label"]["title"] for _, c in group)
-            keep |= {cn for cn, c in group if c["label"]["title"] == top}
+        for group in by_head.values():
+            fit = lambda c: (c["label"].get("section_fit", 0.0), c["label"]["title"])
+            top = max(fit(c) for _, c in group)
+            keep |= {cn for cn, c in group if fit(c) == top}
         return keep
     if named:
         top = max(c["label"]["title"] for _, c in named)
