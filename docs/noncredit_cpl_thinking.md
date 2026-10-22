@@ -1203,8 +1203,13 @@ apportionment mechanism, at no new cost and requiring no new appropriation.** Th
 student pays nothing. The college gets FTES for instruction it is currently providing
 for free as counseling overhead, or not providing at all.
 
-⟨**NEEDS VERIFICATION** before printing: (a) CDCP category eligibility for a
-portfolio-development course; (b) the current CDCP rate relative to the credit base
+⟨**(a) verified 2026-10-22** against the PCAH 8th edition (pp. 117 and 140) and 5 CCR §55151: enhanced
+funding attaches to the courses of a chaptered CDCP program; Workforce Preparation covers decision-making and
+problem-solving "necessary to participate in job-specific technical training"; a Certificate of Competency may
+be designed to prepare students for degree-applicable credit coursework leading to a credit certificate, an
+associate degree or transfer (§55151(b)(2)), so the course qualifies required in a short-term vocational
+Certificate of Completion or as a two-course Certificate of Competency. Open Asks Sheet 114 card 3.⟩
+⟨**NEEDS VERIFICATION** before printing: (b) the current CDCP rate relative to the credit base
 rate — SB 860 equalized them, but I will not print a specific figure without checking
 the 2025-26 SCFF rates; (c) whether a course whose output is a CPL petition raises any
 conflict-of-interest or self-dealing concern.⟩
