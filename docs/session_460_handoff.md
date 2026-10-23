@@ -51,8 +51,13 @@ are recorded in `cpl_memory` `sam-kb-tab-and-library-consolidation-2026-10-23` a
 
 ## Open work, in order
 
-0. **Land the PRs on green `test`, then the two dispatches:** #2393 (code, the Library build), #2387 (the rescore, then
-   `step=display` on `main`), #2394 (the receipt). The bot's receipt commit on a head starts no `test`; each branch
+0. **End state at sign-off (S459 closed at its context line, 48,000 tokens left):** #2387 merged (4ec34b89) and
+   `step=display` dispatched on `main` (check the run's log, not its exit code: lessons S458). **Still open: #2393 (the
+   Library build and this checkpoint; its `kb/migrations/.apply` still points at the open-asks series receipt, whose
+   migrate run 40026872611 was in progress at sign-off: read the row back, version 121; then set `.apply` back to
+   `main`'s content before any further push, or the receipt re-applies) and #2394 (the receipt).** Each merges on a green
+   `test` on its head; the bot's receipt commit starts none, so a session commit must sit on top (a merge of `main`
+   does). Then the backfill branch once Pages serves #2393. The bot's receipt commit on a head starts no `test`; each branch
    already carries a session commit after it. Then the backfill branch (above) once Pages serves #2393.
 1. **Sheet 121 is answered** ([link](https://claude.ai/artifact/NsRnyxTJ3pZmHBWk2qSoLN); 21:27Z, all three his own call: 1 fold-rule, 2 attached, 3 text).
    Build in that order: (a) fold the Knowledge Base tab into the Library as a second view (Pieces and Knowledge; the
