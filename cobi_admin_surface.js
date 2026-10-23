@@ -595,7 +595,9 @@ window.COBI_ADMIN_SURFACE = {
       "modules": [
         "library.js"
       ],
-      "reads": [],
+      "reads": [
+        "map_colleges"
+      ],
       "writes": [
         "cpl_library"
       ],
