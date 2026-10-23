@@ -42,16 +42,16 @@ of the funding lane** (S450's standing note) and the communications files. The C
 
 ## Decisions Sam made this run
 
-None in session. He wrote once, 16:46Z: *"keep rolling, merge the wave when test is green."*
+At 16:46Z: *"keep rolling, merge the wave when test is green."* At 18:44Z he answered Open Asks Sheet 118 (all eight his own call): **card 1 standing** (remove the older-build rows at each wave with a receipt by the S456 method), **card 2 keep** (Hartnell's Local GE 23), **card 3 keep** (Cal-GETC 34 on the local degree); cards 4 to 8 are the communications lane's, recorded by the side session. The harvest lane records the three; the store is Sheet 118's `replies`.
 
 ## Open work, in order
 
 0. **The display applies on `main`.** Run 39990555422 (build 14291ca32973) committed its applied record (0ba83966)
    and then concluded failure after 87 minutes; run 39999773855 (build d45e5d0fcf78) was still running at 18:30Z.
    Read both runs' middle logs before any new display dispatch; if the second failed, read why before re-dispatching.
-1. **Read Sheet 119's `replies`** (`ArtifactData`, collection `replies`; and 117's and 118's: a reply there counts).
-   Card 1 *standing* means remove the six older-build rows (Hartnell 18353, 19518, 12331; Long Beach City 43802, 46290;
-   Palo Verde 04436) at each wave with a receipt by the S456 method; card 9 *narrow* means: on #2387 write the receipt's
+1. **Card 1 is ruled standing: remove the six older-build rows** (Hartnell 18353, 19518, 12331; Long Beach City 43802,
+   46290; Palo Verde 04436) with a before-values receipt by the S456 method (lessons S456), through supabase-migrate.
+   **Then read Sheet 119's `replies`** (`ArtifactData`, collection `replies`) for card 9: *narrow* means: on #2387 write the receipt's
    `apply` to a `.sql` beside it, point `kb/migrations/.apply` at it, push, then merge #2387 on green and dispatch
    `step=display` on `main` after a display build on the branch; *wide* means widen the rule first (738 records);
    *exact* means close #2387 and revert the scorer change.
