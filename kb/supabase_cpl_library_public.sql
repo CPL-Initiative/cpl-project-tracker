@@ -20,14 +20,17 @@
 -- is its own column because the internal one is written for the team.
 --
 -- ── Who decides ──────────────────────────────────────────────────────────────
--- Listing is a reviewer's call (a personal sign-in), never the shared team phrase:
--- a phrase holder able to publish to the world is a wider power than the phrase
--- carries (the Admin tab's reasoning, admin.js header). The phrase can still edit
--- every other field; a trigger refuses a change to the four public columns unless
--- it comes through cpl_library_set_public(), which checks is_allowed_reviewer().
--- The history trigger files every prior row, so a listing is reversible from the
--- database (Rule 10 a2). Governance: kb/governance_surface_map.json,
--- "function:cpl_library_public".
+-- Listing takes the team phrase or a reviewer sign-in (Sam, 2026-10-23 18:50Z, his
+-- own call, reversing his 2026-10-20 reviewer-only call: "can you set the Library
+-- page to be editable with Team phrase and not just magic link? I want the team to
+-- be able to make their artifacts public on the public library"). A trigger still
+-- refuses a change to the four public columns unless it comes through
+-- cpl_library_set_public(), which checks team_pass_ok() or is_allowed_reviewer()
+-- and records who listed (the sign-in's email, else the name given, else "team
+-- phrase"). The history trigger files every prior row, so a listing is reversible
+-- from the database (Rule 10 a2). Governance: kb/governance_surface_map.json,
+-- "rpc:cpl_library_set_public". Re-runnable: applied 2026-10-20, and again on
+-- 2026-10-23 for the phrase.
 
 alter table public.cpl_library
   add column if not exists public_listed  boolean not null default false,
@@ -56,7 +59,7 @@ begin
       or new.listed_by is distinct from old.listed_by)
      and coalesce(current_setting('cpl.library_public', true), '') <> 'on'
      and coalesce(auth.role(), '') <> 'service_role' then
-    raise exception 'Listing in the public library needs a reviewer sign-in (cpl_library_set_public)';
+    raise exception 'Listing in the public library needs the team phrase or a reviewer sign-in (cpl_library_set_public)';
   end if;
   -- Retiring a piece, or setting its audience to anything but Public, takes it off
   -- the public list in the same write. Unlisting is the safe direction, so any
@@ -80,8 +83,8 @@ create or replace function public.cpl_library_set_public(
 returns table (slug text, public_listed boolean, public_summary text, public_topics text[], listed_at timestamptz)
   language plpgsql security definer set search_path = public as $$
 begin
-  if not public.is_allowed_reviewer() then
-    raise exception 'Listing in the public library needs a reviewer sign-in';
+  if not (public.is_allowed_reviewer() or public.team_pass_ok()) then
+    raise exception 'Listing in the public library needs the team phrase or a reviewer sign-in';
   end if;
   perform set_config('cpl.library_public', 'on', true);
   update public.cpl_library l set
@@ -90,15 +93,19 @@ begin
     public_summary = coalesce(nullif(btrim(p_summary), ''), l.public_summary),
     public_topics  = coalesce(p_topics, l.public_topics),
     listed_at      = case when p_listed then now() else l.listed_at end,
-    listed_by      = left(coalesce(nullif(btrim(p_by), ''), auth.jwt() ->> 'email', 'reviewer'), 120),
-    updated_by     = left(coalesce(nullif(btrim(p_by), ''), auth.jwt() ->> 'email', 'reviewer'), 120)
+    listed_by      = left(coalesce(nullif(btrim(p_by), ''), auth.jwt() ->> 'email',
+                          case when public.is_allowed_reviewer() then 'reviewer' else 'team phrase' end), 120),
+    updated_by     = left(coalesce(nullif(btrim(p_by), ''), auth.jwt() ->> 'email',
+                          case when public.is_allowed_reviewer() then 'reviewer' else 'team phrase' end), 120)
   where l.slug = p_slug and l.retired_at is null;
   if not found then raise exception 'No current Library piece with slug %', p_slug; end if;
   return query select l.slug, l.public_listed, l.public_summary, l.public_topics, l.listed_at
     from public.cpl_library l where l.slug = p_slug;
 end $$;
-revoke execute on function public.cpl_library_set_public(text, boolean, text, text[], text) from public, anon;
-grant execute on function public.cpl_library_set_public(text, boolean, text, text[], text) to authenticated, service_role;
+-- anon holds EXECUTE on purpose (Sam, 2026-10-23): a phrase holder calls it with the
+-- anon key and the x-team-pass header, and the gate inside refuses everyone else.
+revoke execute on function public.cpl_library_set_public(text, boolean, text, text[], text) from public;
+grant execute on function public.cpl_library_set_public(text, boolean, text, text[], text) to anon, authenticated, service_role;
 
 -- The public read: listed pieces only, public fields only. Open to anon on purpose,
 -- because the public page and Sierra both read it.

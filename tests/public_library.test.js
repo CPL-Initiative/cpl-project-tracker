@@ -6,12 +6,14 @@
 // the public one... Copy or move...to save space", and "We need to ensure everything
 // public is a11y and mobile friendly". These checks guard what can go wrong:
 //   - the public read returns public fields only, listed and current rows only;
-//   - listing needs a reviewer sign-in, never the shared phrase, and the public
-//     columns cannot be written around the function;
+//   - listing needs the team phrase or a reviewer sign-in (Sam, 2026-10-23, reversing
+//     his reviewer-only call of 2026-10-20), and the public columns cannot be written
+//     around the function;
 //   - one record and a switch: unlisting by retiring or narrowing the audience;
 //   - the page paints the listed pieces, filters them, and on a failed read paints
 //     no list; links are https only;
-//   - the Library tab's switch sends the reviewer token, asks for a summary, and asks
+//   - the Library tab's switch sends the reviewer token when there is one, else the
+//     phrase, asks for a summary, and asks
 //     a Claude page's owner to confirm its link is public;
 //   - the Admin panel reads the same function and offers Remove;
 //   - the page is in the a11y sweep, light and dark.
@@ -60,8 +62,9 @@ block("(1)", function () {
     check("(1) the public read never returns " + c, body.indexOf(c) === -1);
   });
   check("(1) anon may run the public read", /grant execute on function public\.cpl_library_public\(\) to anon/.test(SQL));
-  check("(1) listing checks the reviewer sign-in", /cpl_library_set_public[\s\S]*?if not public\.is_allowed_reviewer\(\)/.test(SQL));
-  check("(1) anon may not list", /revoke execute on function public\.cpl_library_set_public\([^)]*\) from public, anon;/.test(SQL));
+  check("(1) listing checks the team phrase or the reviewer sign-in", /cpl_library_set_public[\s\S]*?if not \(public\.is_allowed_reviewer\(\) or public\.team_pass_ok\(\)\)/.test(SQL));
+  check("(1) anon may call the listing function; the gate is inside it", /grant execute on function public\.cpl_library_set_public\([^)]*\) to anon, authenticated, service_role;/.test(SQL));
+  check("(1) the history says who listed when no sign-in names them", /case when public\.is_allowed_reviewer\(\) then 'reviewer' else 'team phrase' end/.test(SQL));
   check("(1) a trigger refuses the public columns outside the function", /before update on public\.cpl_library/.test(SQL) && /current_setting\('cpl\.library_public', true\)/.test(SQL));
   check("(1) a listed piece must be Public, linked, current and summarized",
     /not public_listed or \(\s*url is not null and retired_at is null and seen_by = 'public'/.test(SQL));
@@ -163,8 +166,11 @@ block("(3b)", function () {
     m.root.querySelector('[data-pubform="r1"]').dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
     return settle();
   }).then(function () {
-    check("(3b) without a reviewer sign-in nothing is sent", !m.calls.some(function (c) { return /set_public/.test(c.url); }));
-    check("(3b) and it says to sign in", /reviewer sign-in/.test(m.root.textContent));
+    const call = m.calls.filter(function (c) { return /rpc\/cpl_library_set_public$/.test(c.url); })[0];
+    check("(3b) with the phrase and no sign-in the call is sent", !!call);
+    const h = call ? call.init.headers : {};
+    check("(3b) with the phrase and the anon key, never a reviewer token", h["x-team-pass"] === "phrase" && h.Authorization === "Bearer " + h.apikey);
+    check("(3b) and it does not ask for a sign-in", !/needs the team phrase or your reviewer sign-in/.test(m.root.textContent));
   });
 });
 block("(3c)", function () {
