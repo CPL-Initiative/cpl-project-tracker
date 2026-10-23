@@ -47,7 +47,7 @@
 // map_colleges so the filter matches the CPL Pathways pick). Both libraries filter on
 // them. Make a visual, beside Start a piece, writes a college's record pair in one step
 // (the live CPL Opportunity page and its workbook); for any other entity it opens Start
-// a piece with the entity set, and the brief's paste names the agency template. Kind
+// a piece with the entity set, and the brief's paste names the agency template (the vault builder). Kind
 // gained `visual` the same day (Sam, ~20:08Z): a page opened in a browser; `document`
 // stays for Word and PDF.
 //
@@ -78,6 +78,7 @@
   var NAMES_URL = SUPABASE_URL + "/rest/v1/map_colleges?select=college_name,entity_kind,district&entity_kind=in.(college,continuing_education)&order=college_name.asc";
   var OPPORTUNITY_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/cpl-opportunity/?college=";
   var DSP_TEMPLATE = "CPLBrain/04-projects/cpl-initiative/dsp-training/20261020_DSP_Credit_Starting_Points.html";
+  var AGENCY_BUILDER = "CPLBrain/04-projects/cpl-initiative/agency-visual/build.py";
   var STATUS = { requested: "Requested", draft: "Draft", approved: "Approved", presented: "Presented" };
   var STEPS = ["requested", "draft", "approved", "presented"];
   var SEEN = { team: "Team", colleges: "Colleges", "public": "Public" };
@@ -618,10 +619,10 @@
       "Length, template or style: " + (b.shape || "your call") + "\n" +
       "Requested by " + (b.requested_by || r.added_by || "the team") + (b.requested_on ? " on " + fmtDate(b.requested_on) : "") + ".\n\n" +
       (r.kind === "visual" && r.for_kind && r.for_kind !== "college"
-        ? "Build the page on the agency template: the DSP page's shape (" + DSP_TEMPLATE + "): the meeting, the training facts, " +
-          "colleges tiered by fit, what to confirm, next steps, sources. The entity's own facts come from what was uploaded or a web search, never guessed. " +
-          "Publish it as a Claude page with the public header (CPLBrain/04-projects/cpl-initiative/public-header/apply.py), commit its source to the vault beside the work, " +
-          "and file its link here with File it on record " + r.slug + ", which moves the record to Draft.\n"
+        ? "Build the page with the agency template: " + AGENCY_BUILDER + " paints a JSON brief in the DSP page's shape (" + DSP_TEMPLATE + "): the meeting, " +
+          "the training facts, colleges tiered by fit, what to confirm, next steps, sources; the ELL IET page (CPLBrain/04-projects/cpl-initiative/ell-iet/) is the worked example. " +
+          "The entity's own facts come from what was uploaded or a web search, never guessed. Publish it as a Claude page (the builder applies the public header), " +
+          "commit the brief and the page's source to the vault beside the work, and file its link here with File it on record " + r.slug + ", which moves the record to Draft.\n"
         : "") +
       "Build it from source in the tracker repo and name the file with today's date code (YYYYMMDD_Title). " +
       "Send me the file. I put it in the Drafts folder of the Library's SharePoint folder (CPLLibrary) " +
