@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-10-23T11:48:02Z",
- "count": 34,
+ "_generated_at": "2026-10-23T14:20:20Z",
+ "count": 23,
  "suggestions": {
   "ADJUS 23 Principles and Procedures of the Justice System": [
    {
@@ -31,14 +31,6 @@
     "code": "ADM JUS 4"
    }
   ],
-  "ADM JUS 005 - Criminal Investigation": [
-   {
-    "kind": "cid",
-    "id": "AJ 140",
-    "title": "Criminal Investigation",
-    "code": "ADM JUS 5"
-   }
-  ],
   "ADM JUS 067 - Community Relations": [
    {
     "kind": "cid",
@@ -55,26 +47,6 @@
     "code": "ADM JUS 67"
    }
   ],
-  "ADM JUS 097 -  Career Exploration in Criminal Justice": [
-   {
-    "kind": "course",
-    "title": "Career Exploration in Criminal Justice",
-    "code": "ADM JUS 97",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "ADM JUS 104 - Introduction to Forensic Science": [
-   {
-    "kind": "course",
-    "title": "Introduction to Forensic Science",
-    "code": "ADM JUS 104",
-    "share": 1.0,
-    "colleges": 2,
-    "scoped": true
-   }
-  ],
   "ADM JUS 160 - Police Organization and Administration": [
    {
     "kind": "course",
@@ -82,36 +54,6 @@
     "code": "ADM JUS 160",
     "share": 1.0,
     "colleges": 5,
-    "scoped": true
-   }
-  ],
-  "ADM JUS 174 -  Offender Profiling in Criminal Investigations": [
-   {
-    "kind": "course",
-    "title": "Offender Profiling in Criminal Investigations",
-    "code": "ADM JUS 174",
-    "share": 1.0,
-    "colleges": 2,
-    "scoped": true
-   }
-  ],
-  "ADM JUS 305 - Criminal Intelligence and Data Analysis": [
-   {
-    "kind": "course",
-    "title": "Criminal Intelligence and Data Analysis",
-    "code": "ADM JUS 305",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "ADM JUS 383 - Applications in Crime Analysis": [
-   {
-    "kind": "course",
-    "title": "Applications in Crime Analysis",
-    "code": "ADM JUS 383",
-    "share": 1.0,
-    "colleges": 1,
     "scoped": true
    }
   ],
@@ -215,16 +157,6 @@
     "scoped": true
    }
   ],
-  "ENV 101 - Foundations of Design I": [
-   {
-    "kind": "course",
-    "title": "Foundations of Design I",
-    "code": "ENV 101",
-    "share": 1.0,
-    "colleges": 4,
-    "scoped": true
-   }
-  ],
   "FIRE 33 -Fire Protection Organization and System": [
    {
     "kind": "course",
@@ -232,42 +164,6 @@
     "code": "FIRE 33",
     "share": 1.0,
     "colleges": 2,
-    "scoped": true
-   }
-  ],
-  "HLTH 101 - First Aid - Credit by Exam": [
-   {
-    "kind": "course",
-    "title": "FIRST AID",
-    "code": "HLTH 101",
-    "share": 1.0,
-    "colleges": 4,
-    "scoped": true
-   }
-  ],
-  "HLTH 102 - Standard First Aid and CPR - Credit by Exam": [
-   {
-    "kind": "cid",
-    "id": "KIN 101",
-    "title": "First Aid, CPR and AED",
-    "code": "HLTH 102"
-   }
-  ],
-  "HLTH 104 - Personal Health and Wellness - Credit by Exam": [
-   {
-    "kind": "cid",
-    "id": "PH 100",
-    "title": "Personal Health and Wellness",
-    "code": "HLTH 104"
-   }
-  ],
-  "HLTH 106 - Women's Health Education - Credit by Exam": [
-   {
-    "kind": "course",
-    "title": "WOMEN'S HEALTH EDUCATION",
-    "code": "HLTH 106",
-    "share": 1.0,
-    "colleges": 3,
     "scoped": true
    }
   ],

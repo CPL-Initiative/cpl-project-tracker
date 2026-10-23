@@ -1,0 +1,393 @@
+{
+  "folded": [
+    {
+      "raw": "ADM JUS 005 - Criminal Investigation",
+      "assigned": "Criminal Investigation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 097 -  Career Exploration in Criminal Justice",
+      "assigned": "Career Exploration in Criminal Justice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 104 - Introduction to Forensic Science",
+      "assigned": "Introduction to Forensic Science",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 174 -  Offender Profiling in Criminal Investigations",
+      "assigned": "Offender Profiling in Criminal Investigations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 305 - Criminal Intelligence and Data Analysis",
+      "assigned": "Criminal Intelligence and Data Analysis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 383 - Applications in Crime Analysis",
+      "assigned": "Applications in Crime Analysis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "Automotive Service Excellence (ASE) A1",
+      "assigned": "ASE A1 — Engine Repair",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "Automotive Service Excellence (ASE) A2",
+      "assigned": "ASE A2 — Automatic Transmission/Transaxle",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "Automotive Service Excellence (ASE) A6",
+      "assigned": "ASE A6 — Electrical/Electronic Systems",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "Automotive Service Excellence (ASE) A8",
+      "assigned": "ASE A8 — Engine Performance",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ENGL C1000 - Academic Reading and Writing - Credit by Exam",
+      "assigned": "Academic Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ENV 101 - Foundations of Design I",
+      "assigned": "Foundations of Design I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 101 - First Aid - Credit by Exam",
+      "assigned": "First Aid",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 102 - Standard First Aid and CPR - Credit by Exam",
+      "assigned": "First Aid, CPR and AED",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 104 - Personal Health and Wellness - Credit by Exam",
+      "assigned": "Personal Health and Wellness",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 106 - Women's Health Education - Credit by Exam",
+      "assigned": "Women's Health Education",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    }
+  ],
+  "superseded": [],
+  "held": [
+    {
+      "raw": "ADJU 232 - Juvenile Justice Procedures - Credit by Exam",
+      "assigned": "Juvenile Justice Procedures",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Juvenile Law and Procedures"
+      ],
+      "why": "human-reviewed classification stands: 'ADJU 232 - Juvenile Justice Procedures - Credit by Exam' -> 'Juvenile Law and Procedures'"
+    },
+    {
+      "raw": "Automotive Technology MLR I & II - Irvine High School",
+      "assigned": "Automotive Technology MLR I and II — Irvine High School",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Automotive Technology Maintenance and Light Repair (MLR)"
+      ],
+      "why": "human-reviewed classification stands: 'Automotive Technology MLR I & II - Irvine High School' -> 'Automotive Technology Maintenance and Light Repair (MLR)'"
+    },
+    {
+      "raw": "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)",
+      "assigned": "Business Management and Entrepreneurship — Cajon High School",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Business Management and Entrepreneurship"
+      ],
+      "why": "human-reviewed classification stands: 'CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)' -> 'Business Management and Entrepreneurship'"
+    },
+    {
+      "raw": "Center for Financial Training: CFTA-0025 Human Resources Management;",
+      "assigned": "Center for Financial Training (CFT) — Human Resources Management (CFTA-0025)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Center for Financial Training (CFT) — Human Resources Management"
+      ],
+      "why": "human-reviewed classification stands: 'Center for Financial Training: CFTA-0025 Human Resources Management;' -> 'Center for Financial Training (CFT) — Human Resources Management'"
+    },
+    {
+      "raw": "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors",
+      "assigned": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Anatomy and Physiology Honors"
+      ],
+      "why": "human-reviewed classification stands: 'Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors' -> 'Anatomy and Physiology Honors'"
+    },
+    {
+      "raw": "Credit by Exam: History Of Architecture I",
+      "assigned": "History of Architecture I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "History of Architecture 1"
+      ],
+      "why": "human-reviewed classification stands: 'Credit by Exam: History Of Architecture I' -> 'History of Architecture 1'"
+    },
+    {
+      "raw": "DANCETQ 141 - Modern Dance Techniques I",
+      "assigned": "Modern Dance Techniques I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Modern Dance Techniques 1"
+      ],
+      "why": "human-reviewed classification stands: 'DANCETQ 141 - Modern Dance Techniques I' -> 'Modern Dance Techniques 1'"
+    },
+    {
+      "raw": "GEOG 025 - Introduction to Geographic Information Systems and Laboratory",
+      "assigned": "Introduction to Geographic Information Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Introduction to Geographic Information Systems and Laboratory"
+      ],
+      "why": "human-reviewed classification stands: 'GEOG 025 - Introduction to Geographic Information Systems and Laboratory' -> 'Introduction to Geographic Information Systems and Laboratory'"
+    },
+    {
+      "raw": "GIS 025 - Introduction to Geographic Information Systems and Laboratory",
+      "assigned": "Introduction to Geographic Information Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Introduction to Geographic Information Systems and Laboratory"
+      ],
+      "why": "human-reviewed classification stands: 'GIS 025 - Introduction to Geographic Information Systems and Laboratory' -> 'Introduction to Geographic Information Systems and Laboratory'"
+    },
+    {
+      "raw": "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "assigned": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Construction Inspection: Uniform Plumbing Code (UPC) Advanced"
+      ],
+      "why": "human-reviewed classification stands: 'INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)' -> 'Construction Inspection: Uniform Plumbing Code (UPC) Advanced'"
+    },
+    {
+      "raw": "MDAST 323 - Medical Assisting Clinical - Indsutry Certification",
+      "assigned": "Medical Assisting Clinical",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Medical Assisting Clinical Procedures"
+      ],
+      "why": "human-reviewed classification stands: 'MDAST 323 - Medical Assisting Clinical - Indsutry Certification' -> 'Medical Assisting Clinical Procedures'"
+    },
+    {
+      "raw": "MDAST 325 - Medical Assisting Lab Procedures - Industry Certification",
+      "assigned": "Medical Assisting Lab Procedures",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Medical Assisting Laboratory Procedures"
+      ],
+      "why": "human-reviewed classification stands: 'MDAST 325 - Medical Assisting Lab Procedures - Industry Certification' -> 'Medical Assisting Laboratory Procedures'"
+    },
+    {
+      "raw": "McDonald's Corporation MCD-0051 Business Leadership Practices;",
+      "assigned": "McDonald's MCD-0051 Business Leadership Practices",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "McDonald's Business Leadership Practices"
+      ],
+      "why": "human-reviewed classification stands: \"McDonald's Corporation MCD-0051 Business Leadership Practices;\" -> \"McDonald's Business Leadership Practices\""
+    },
+    {
+      "raw": "McDonald's Corporation: MCD-0074 Mid Management Foundations Curriculum: Getting Started & Transition to the Role;",
+      "assigned": "McDonald's MCD-0074 Mid-Management Foundations Curriculum",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "McDonald's Mid-Management Foundations Curriculum"
+      ],
+      "why": "human-reviewed classification stands: \"McDonald's Corporation: MCD-0074 Mid Management Foundations Curriculum: Getting Started & Transition to the Role;\" -> \"McDonald's Mid-Management Foundations Curriculum\""
+    },
+    {
+      "raw": "Music Skills II - Credit by Exam",
+      "assigned": "Music Skills II",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Music Skills 2"
+      ],
+      "why": "human-reviewed classification stands: 'Music Skills II - Credit by Exam' -> 'Music Skills 2'"
+    },
+    {
+      "raw": "NURSING 402 - Pharmacology",
+      "assigned": "Pharmacology (Nursing)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Pharmacology"
+      ],
+      "why": "human-reviewed classification stands: 'NURSING 402 - Pharmacology' -> 'Pharmacology'"
+    },
+    {
+      "raw": "PLNT SC 812 - Landscape Installation and Maintenance I",
+      "assigned": "Landscape Installation and Maintenance I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Landscape Installation and Maintenance 1"
+      ],
+      "why": "human-reviewed classification stands: 'PLNT SC 812 - Landscape Installation and Maintenance I' -> 'Landscape Installation and Maintenance 1'"
+    },
+    {
+      "raw": "PLNT SC 827 - Sustainable Gardening for Landscapes",
+      "assigned": "Sustainable Gardening for Landscapes",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "kind": "conflict",
+      "standing": [
+        "Sustainable Gardening for Landscapes (Horticulture)"
+      ],
+      "why": "human-reviewed classification stands: 'PLNT SC 827 - Sustainable Gardening for Landscapes' -> 'Sustainable Gardening for Landscapes (Horticulture)'"
+    }
+  ],
+  "credential_added": [
+    {
+      "raw": "ADM JUS 097 -  Career Exploration in Criminal Justice",
+      "assigned": "Career Exploration in Criminal Justice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 174 -  Offender Profiling in Criminal Investigations",
+      "assigned": "Offender Profiling in Criminal Investigations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 305 - Criminal Intelligence and Data Analysis",
+      "assigned": "Criminal Intelligence and Data Analysis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 383 - Applications in Crime Analysis",
+      "assigned": "Applications in Crime Analysis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 101 - First Aid - Credit by Exam",
+      "assigned": "First Aid",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 102 - Standard First Aid and CPR - Credit by Exam",
+      "assigned": "First Aid, CPR and AED",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 106 - Women's Health Education - Credit by Exam",
+      "assigned": "Women's Health Education",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 3,
+  "audit_pruned": 16,
+  "unified_titles_count": 4956
+}
