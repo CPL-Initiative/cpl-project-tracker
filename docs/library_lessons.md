@@ -86,3 +86,19 @@ of the repo until it is applied, so a committed receipt always means a write tha
 - **A compound command that pushes a branch carrying a data delete is refused whole** by the session's permission
   check; the same push alone, or a push whose `.apply` points at an additive schema file, went through. One step per
   command when a push carries a write.
+
+## S459 (SkyBuckeye), 2026-10-23, later: the agency template built
+
+- **The template is a builder, and the brief is data.** `agency-visual/build.py` paints the DSP page's shape from a
+  JSON brief; the page's counts come from `ell-iet/make_brief.py`, never typed. A hand-written page was the right
+  first instance (DSP) and the wrong second: the eight ELL IET projects each needed the same three reads (credit
+  articulated nearby in MAP, the program taught nearby in COCI, a precedent elsewhere), which is a loop.
+- **COCI names colleges in MIS short form, in capitals** (`CANYONS`, `EAST L.A.`, `SAN FRANCISCO CTRS`); the
+  first match against MAP's names found 0 of 121. A hand map for the irregular thirty and a normalized compare
+  (drop Community and Junior) map all but Calbright and the CCCCO row.
+- **A sentence-long line needs its own row.** The DSP shell's three-column line (code, title, units) fit course
+  rows; a line that says where credit exists wrapped into a thin column at three cards across. The template puts
+  the label and the count on one row and the sentence under it, full width.
+- **Name the exit credential, not the training.** The summaries say "Nurse Assistant training" and "Clinical
+  Medical Assistant course"; MAP articulates the CDPH certificate and the CCBMA or NHA credential. The page's
+  "what we still need to confirm" leads with that question, because the match hangs on it.
