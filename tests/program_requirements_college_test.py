@@ -2383,6 +2383,46 @@ check((hn_given["31971"]["best"] or {}).get("url", "").endswith("AST.ADJ/require
 check(C.candidates(hn_as, [hn]) == [] and len(C.candidates(hn_adt, [hn])) == 1 and len(C.candidates(hn_other, [hn])) == 1,
       "the gate reads the code's letters; an award the codes cannot name is gated by nothing")
 
+# A short function word between the spelled words (S457): Sierra's ESL department page heads
+# "English as a Second Language Intermediate-High Oral Skills" then "Noncredit Certificate of
+# Competency" where the state names "ESL Intermediate-High Oral Skills" (page read 39990920770),
+# so the two ESL noncredit certificates lost the page to a sibling that took it on coverage alone.
+esl_tokens = C.section_tokens("ESL Intermediate-High Writing and Reading Skills")
+check(C.with_acronyms("english as a second language intermediate-high writing and reading skills", esl_tokens)
+      == "esl intermediate-high writing and reading skills"
+      and C.with_acronyms("intro to cybersecurity", ["it", "cybersecurity"]) == "intro to cybersecurity",
+      "with_acronyms skips a short function word between the spelled words, and still never reads intro to as IT")
+esl_text = ("Degrees/Certificates\nNoncredit Certificates\nACE - Advanced Certificate for ESL\n"
+            "ESL Intermediate-High Oral Skills\nESL Intermediate-High Writing and Reading Skills\n"
+            "ACE - Advanced Certificate for ESL Noncredit\nNoncredit Certificate of Competency\nRequired Courses:\n"
+            "ESL 0840C\tAdvanced Reading and Writing\t0\nESL 0840L\tAcademic Listening and Speaking\t0\n"
+            "ESL 0842G\tAcademic Grammar and Editing\t0\nTotal Units\t0\n"
+            "English as a Second Language Intermediate-High Oral Skills\nNoncredit Certificate of Competency\n"
+            "Required Courses:\nESL 0830O\tIntermediate-High Integrated Listening, Speaking, and Vocabulary\t0\n"
+            "ESL 0832G\tIntermediate-High Grammar\t0\nESL 0822G\tIntermediate Grammar\t0\nTotal Units\t0\n"
+            "English as a Second Language Intermediate-High Writing and Reading Skills\nNoncredit Certificate of Competency\n"
+            "Required Courses\nESL 0830C\tIntermediate-High Integrated Writing and Reading\t0\nOptional Recommended Electives:\n"
+            "ESL 0810C\nNovice-High Integrated Writing and Reading\nESL 0820C\nIntermediate Integrated Writing and Reading\nTotal Units\t0\n")
+esl_wr = {"control_number": "38991", "title": "ESL Intermediate-High Writing and Reading Skills", "award": "Noncredit program",
+          "closed_list": [{"code": "ESL0830C"}, {"code": "ESL 0810C"}, {"code": "ESL 0820C"}]}
+esl_or = {"control_number": "38990", "title": "ESL Intermediate-High Oral Skills", "award": "Noncredit program",
+          "closed_list": [{"code": "ESL 0830O"}, {"code": "ESL 0832G"}, {"code": "ESL 0822G"}]}
+esl_ace = {"control_number": "44028", "title": "ACE - Advanced ESL", "award": "Noncredit program",
+           "closed_list": [{"code": "ESL 0840C"}, {"code": "ESL 0840L"}, {"code": "ESL 0842G"}]}
+check(C.section_match(esl_text, esl_wr)[1] == "esl intermediate-high writing and reading skills noncredit certificate of competency"
+      and C.section_match(esl_text, esl_or)[1] == "esl intermediate-high oral skills noncredit certificate of competency"
+      and C.section_match(esl_text, esl_ace)[1] == "ace - advanced certificate for esl noncredit",
+      "each ESL noncredit certificate reads its own two-line heading, the department spelled out: %r"
+      % [C.section_match(esl_text, p)[1] for p in (esl_wr, esl_or, esl_ace)])
+esl_page = {"url": "https://catalog.sierracollege.edu/departments/english-second-language/", "h1": "English as a Second Language",
+            "title": "English as a Second Language | Sierra College Catalog", "body": esl_text, "content": esl_text,
+            "got": {"body": esl_text, "content": esl_text, "h1": "English as a Second Language"}, "codes": C.page_codes(esl_text)}
+esl_given = C.assign([esl_or, esl_wr, esl_ace], [esl_page])
+check(all(((esl_given[k]["best"] or {}).get("label") or {}).get("section") == "noncredit" and not esl_given[k]["lost"]
+          for k in ("38990", "38991", "44028")),
+      "the three ESL noncredit certificates each take the department page by their own section: %r"
+      % {k: ((v["best"] or {}).get("label") or {}).get("section_line") for k, v in esl_given.items()})
+
 # ── a Coursedog catalog reads from its site (S449, default since S451) ─────
 # Hartnell's procedure step names its whole-catalog PDF (S410), which prints 79
 # program codes where the site's program search lists 100 (S411). Read by its site
