@@ -40,7 +40,7 @@
     {hash: 'credential-reference', label: 'Common Exhibit Reference',     desc: 'Curate exhibit/credential identities — unified credential names, issuing agencies'},
     {hash: 'exhibit-adoption',     label: 'Exhibit Adoption',     desc: 'Statewide CPL exhibit adoption & credit recommendations by unified credential identity'},
     {hash: 'pipeline',             label: 'Pipeline',                 desc: 'Data pipeline reference / methodology'},
-    {hash: 'letters',              label: 'Letters',                  desc: 'Budget support letter curator — edits campaign letter blocks (passcode-gated)'},
+    {hash: 'letters',              label: 'Letters, Memos & Reports', desc: 'Every communication the Initiative sends: email, CO memo, MAP Team note, report, flyer; recipients by MAP roster role, figures from the daily feeds, Claude drafts on request (team phrase)'},
     // Not a tab since S398: "chatbot" (the retired CPL Assistant tab's key, kept
     // so the router's vocabulary does not change) opens Sierra AI over the
     // current tab — see navigateTo().
@@ -168,7 +168,7 @@
       '  "title-keyword Generated rows in CCR" → {"tab":"unified-courses","filter_hint":{"status":"Generated","prov":"by title-keyword"},"message":"Opening the Common Course Reference with title-keyword Generated rows."}',
       '  "subjects needing review" → {"tab":"canonical-subj4","filter_hint":{"status":"needs_review"},"message":"Opening Common Subjects Reference filtered to needs-review."}',
       '  "show me the budget" → {"tab":"budget","message":"Opening the Budget tab."}',
-      '  "draft a support letter" → {"tab":"letters","message":"Opening the Letters tab."}',
+      '  "draft a letter to the CEOs" → {"tab":"letters","message":"Opening Letters, Memos & Reports."}',
       '',
       'Only include filter_hint when the user clearly indicates a specific filter intent. When in doubt, omit it.',
       'Respond with the JSON object only — no preamble, no code fences.',
