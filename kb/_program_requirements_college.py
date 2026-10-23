@@ -1691,9 +1691,15 @@ def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
 # Accounting (Total Credits 4.0 - 4.0)"; page read 39090533458, S411). The tab's
 # suffix is the catalog's template, so the reader learns it from the first
 # program and goes straight to it after, back to the overview when it misses.
+# Hartnell's vendor-hosted catalog names the same tab Requirements
+# (/programs/AA.ADD/requirements-ipyf8) and prints its list as "ADJ1: Introduction
+# to Administration of Justice" with one "Total Required Credits 60" at the foot
+# (page reads 39853502958 and 39891644835, S449 and S451), so the tab is known by
+# either name and the direct read by either total.
 CD_SEARCH = re.compile(r"/programs/search/", re.I)
 CD_LIMIT = 250
-CD_REQUISITES = re.compile(r"^\s*requisites\b", re.I)
+CD_REQUISITES = re.compile(r"^\s*requi(?:site|rement)s\b", re.I)
+CD_TOTAL = re.compile(r"Total (?:Required )?Credits", re.I)
 # The award a program's name ends in, "Accounting (AA)", in the words the award
 # matcher reads (P.AWARD_WORDS); a certificate's letters vary by college.
 CD_AWARD_WORDS = {"AA": "associate in arts", "AS": "associate in science",
@@ -1701,12 +1707,13 @@ CD_AWARD_WORDS = {"AA": "associate in arts", "AS": "associate in science",
                   "CT": "certificate of achievement", "CA": "certificate of achievement",
                   "CN": "certificate", "CM": "certificate", "CP": "certificate",
                   "NC": "noncredit certificate of completion"}
-CD_AWARD = re.compile(r"\(([A-Z]{2,4})\)\s*$")
+# Hartnell writes a transfer degree's letters with a hyphen, "(AS-T)" (S451).
+CD_AWARD = re.compile(r"\(([A-Z]{2,4}(?:-[A-Z])?)\)\s*$")
 
 
 def cd_award_words(name: str) -> str:
     m = CD_AWARD.search(name or "")
-    return CD_AWARD_WORDS.get(m.group(1), "") if m else ""
+    return CD_AWARD_WORDS.get(m.group(1).replace("-", ""), "") if m else ""
 
 
 def cd_search_url(url: str, skip: int, limit: int) -> str:
@@ -1820,7 +1827,7 @@ def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
         if suffix:
             got = P.load(reader, base + "/" + suffix, cache, True)
             if got.get("access") == "ok" and (got.get("final_url") or "").rstrip("/").endswith(suffix) \
-                    and "Total Credits" in (got.get("body") or ""):
+                    and CD_TOTAL.search(got.get("body") or ""):
                 direct += 1
             else:
                 got = None
