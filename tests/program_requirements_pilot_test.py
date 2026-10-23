@@ -1742,7 +1742,23 @@ def floor_rec(lo, hi, m):
 a = prog_lo_hi(floor_rec(24, 25, True))
 check(a["pass"] and a.get("minimum") and a["computed"] == [24.0, 25.0],
       "a 24-25 sum meets a floor of 24: %s" % json.dumps(a))
-check(not prog_lo_hi(floor_rec(24, 25, None))["pass"], "without the floor, a 24-25 sum against a printed 24 still fails")
+# S457 (Sam's Sheet 120 card 1 "narrow", 2026-10-23): without the floor, a 24-25 sum against a printed 24 passes as
+# meets: the low end meets the total exactly and a choice carries the high end past it (Hartnell's ABT 99 at 1-8
+# units carried six records' sums past their tabs' totals). Past or short, the sum still fails.
+m = prog_lo_hi(floor_rec(24, 25, None))
+check(m["pass"] and m.get("meets") and not m.get("minimum") and m["status"] == "equal",
+      "without the floor, a 24-25 sum against a printed 24 passes as meets: %s" % json.dumps(m))
+check(not prog_lo_hi(floor_rec(25, 26, None))["pass"], "a low end past a printed total is still a misread")
+check(not prog_lo_hi(floor_rec(23, 25, None))["pass"], "a low end short of a printed total still fails")
+dm = S.degree_verdict({"electives_fill_degree": True}, (60.0, 60.0), 60.0, 62.0)
+check(dm["pass"] and dm.get("meets") and dm["fill"] is None,
+      "an electives-filled degree whose low end meets its total passes as meets, nothing left to fill: %s" % json.dumps(dm))
+check(not S.degree_verdict({"electives_fill_degree": True}, (60.0, 60.0), 61.0, 62.0)["pass"],
+      "an electives-filled degree whose low end runs past its total still fails")
+check(not S.degree_verdict({"electives_fill_degree": True}, (60.0, 60.0), 58.0, 62.0)["pass"],
+      "an electives-filled degree whose span straddles its total still fails: only a sum that fits is filled")
+pm = S.program_verdict({}, (24.0, 24.0), 24.0, 24.0)
+check(pm["pass"] and not pm.get("meets") and not pm.get("minimum"), "the exact sum reads as equal, with no note")
 check(not prog_lo_hi(floor_rec(26, 28, True))["pass"], "a low end past the floor is still a misread")
 check(not prog_lo_hi(floor_rec(22, 25, True))["pass"], "a low end short of the floor fails")
 e = prog_lo_hi(floor_rec(24, 24, True))
