@@ -780,6 +780,31 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S454 SkyBlazingStar (2026-10-23, the CPL Queue routine): Hartnell's GE units, Sierra's "AA or AS", the vendor's course units
+
+- **Hartnell's arithmetic failures were mostly GE, not course units.** Of the 85 records failing arithmetic after S451,
+  41 degrees failed only because the record names its GE pattern without units (28 Cal-GETC, 13 Local GE); about 22
+  lack a course's units. Count the `why` of each failure before choosing a fix (`score.arithmetic.why` in the records).
+- **Hartnell's reconcile steps** (`kb/program_requirements_reconcile.json`): transfer degrees set Cal-GETC to the
+  statewide 34 (Taft's step, Sheet 94 card 4 kept it); local degrees set Local GE to 23, the sum of the seven areas the
+  catalog PDF prints on pages 58-59 (Area 1 6 units, Areas 2-6 3 each, Area 7 2; read 39931207783), no total printed,
+  as Monterey's 24 is a sum. Reconcile run 39931703521 changed 50 records, 32 more now equal; reread 39933892215
+  replaced 50, 34 pass the machine checks (receipt with before-values under `kb/receipts/`).
+- **A Coursedog tab's own scripts carry the course units.** Page read 39930495321 (`network`, `network_hosts:
+  ["app.coursedog.com"]`): the Requirements tab POSTs `api/v1/cm/hartnell_colleague/courses/search/$filters?catalogId=...`
+  and each course carries `credits.creditHours.min` (ADJ1: 3); it also GETs the Cal-GETC requisite set with each area's
+  credits. The tab's course lines are not links (read 39924074351). NEXT for the ~22 records lacking a course's units:
+  have `cd_pages` keep that answer per page (a code to units map) and a reconcile kind fill an empty course unit from
+  it, citing the call.
+- **Sierra heads one section for two degrees "AA or AS".** Fire Technology's department page prints "Fire Technology"
+  then "AA or AS" (page read 39930677707, the capture view in the log; a read without `capture_view` prints only the
+  visible tab and found no heading, run 39931100230). `SECTION_AWARD` now reads that line for both the A.A. and the
+  A.S. Free capture 39931621162: found 92 to 105 of 125 with a closed list, page-claimed 25 to 17, not found 8 to 3;
+  13 programs to extract (Fire Technology, Computer Science, Photography, IT Technician, Graphic Design, Psychology
+  AA-T and the five Administration of Justice degrees).
+- **A long page-read log comes whole through `get_job_logs` with a large `tail_lines`:** the tool saves an oversize
+  answer to a file the session can grep, so `capture_view` on a 49,000-character page is readable.
+
 ## S453 SkyFiddleneck (2026-10-23, the CPL Queue routine): San Mateo landed, the thin list re-measured, Hartnell's course pages
 
 - **San Mateo landed.** S452's branch (load 39917453080, 1 inserted, 55 kept; reread 39917922958) merged with display
