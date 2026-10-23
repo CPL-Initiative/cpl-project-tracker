@@ -1,0 +1,2889 @@
+{
+ "college": "Mt. San Antonio College",
+ "reread_run": "39898856949",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39891607837",
+ "at": "2026-10-23T04:13:44Z",
+ "posted": 31,
+ "batches": 2,
+ "skipped": [
+  {
+   "control_number": "14039",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31598",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36115",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38084",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39517",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41116",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41569",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42726",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42727",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42754",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42755",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42756",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42757",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42758",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 15,
+ "absent": 0,
+ "held": 1,
+ "kept": 15,
+ "carried": 0,
+ "replaced_keys": [
+  "03007",
+  "08053",
+  "08063",
+  "08078",
+  "12010",
+  "16544",
+  "18237",
+  "19250",
+  "22167",
+  "36375",
+  "36803",
+  "38731",
+  "40141",
+  "40186",
+  "42652"
+ ],
+ "absent_keys": [],
+ "held_keys": [
+  "33876"
+ ],
+ "kept_keys": [
+  "24058",
+  "24171",
+  "30805",
+  "32542",
+  "32892",
+  "36843",
+  "36870",
+  "36871",
+  "38082",
+  "38094",
+  "38097",
+  "42753",
+  "43373",
+  "43729",
+  "43747"
+ ],
+ "carried_keys": [],
+ "machine_pass": 28,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Mt. San Antonio College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 39891607837;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUSO 25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSO 26",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISB 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISB 15",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISB 16",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISB 21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISB 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISB 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Choose one from the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3.5,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "CISD 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 11L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Create and present a visual slide presentation to include text, graphic objects, design theme, slide transition, and object animation.",
+      "Create a document in which text, paragraphs, and layout are formatted effectively and efficiently using word processing software (Word)."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 27,
+      "min": 25.5
+     },
+     "section_heading": "Administrative Assistant (AS Degree S0514)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 27,
+   "total_min": 25.5,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Administrative Assistant",
+   "control_number": "03007"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUSA 7",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BUSA 72",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSA 75",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSA 76",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISB 15",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Choose a minimum of 6 units from the following:",
+      "rule": "choose_units",
+      "stated": {
+       "max": 7,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "CISB 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISB 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISB 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISB 51",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISD 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 11L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Process collections from customers and update accounts receivable.",
+      "Prepare financial statements.",
+      "Solve managerial accounting problems with Excel software."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 21.5,
+      "min": 20.5
+     },
+     "section_heading": "Accounting - Computerized (Certificate N0460)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 21.5,
+   "total_min": 20.5,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-computerized-certificate/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Accounting - Computerized",
+   "control_number": "08053"
+  },
+  {
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Administrative Assistant - Level I Coursework",
+      "rule": "all",
+      "stated": {
+       "max": 9.5,
+       "min": 9.5
+      },
+      "courses": [
+       {
+        "code": "CISB 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISB 15",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISB 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Administrative Assistant - Level II Coursework",
+      "rule": "all",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "BUSO 25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISB 21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISB 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Administrative Assistant - Level III Coursework",
+      "rule": "all",
+      "stated": {
+       "max": 8.5,
+       "min": 7
+      },
+      "courses": [
+       {
+        "code": "BUSO 26",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISB 16",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Choose one course or any lecture-lab combination from the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3.5,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "CISD 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 11L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Touch type effectively.",
+      "Effectively use formulas and functions in worksheets.",
+      "Use Microsoft Word to create professional looking reports.",
+      "Design and create visual presentations utilizing desktop presentation software (i.e. Power Point).",
+      "Demonstrate ability to effectively produce a variety of professional-looking business publications (at least five) i.e. newsletter, flyer, brochure, letterhead, business card, event program, etc."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 27,
+      "min": 25.5
+     },
+     "section_heading": "Administrative Assistant - Level III (Certificate N0464)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 27,
+   "total_min": 25.5,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-level-iii-certificate/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Administrative Assistant Level III",
+   "control_number": "08063"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 67.5,
+       "min": 67.5
+      },
+      "courses": [
+       {
+        "code": "AIRM 65A",
+        "units": 13,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AIRM 65B",
+        "units": 13,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AIRM 66A",
+        "units": 13,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AIRM 66B",
+        "units": 13,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AIRM 70A",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AIRM 70B",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AIRM 71",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AIRM 72",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Connect learned theory with real-world problems and develop a logical solution to the problem.",
+      "Locate, interpret, and apply technical data from industry manuals and apply that technical data to a maintenance situation.",
+      "Determine several possible solutions for dealing with a given situation and then decide which solution(s) are ethical and which are not.",
+      "Demonstrate proper use of aircraft repair equipment.",
+      "Apply knowledge of aeronautics, aircraft maintenance, and aviation regulations.",
+      "Inspect an aircraft/aircraft component and determine if the unit conforms to industry established standards."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 67.5,
+      "min": 67.5
+     },
+     "section_heading": "Airframe and Aircraft Powerplant Maintenance Technology - Day (AS Degree S0911)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 67.5,
+   "total_min": 67.5,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/airframe-and-aircraft-powerplant-maintenance-technology-day/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38064250199,
+   "program_title": "Airframe and Aircraft Powerplant Maintenance Technology",
+   "control_number": "08078"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 5,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 39.5,
+       "min": 39.5
+      },
+      "courses": [
+       {
+        "code": "AIRM 70A",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AIRM 70B",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AIRM 71",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AIRM 72",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AIRM 95A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AIRM 95B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AIRM 96A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AIRM 96B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AIRM 97A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AIRM 97B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AIRM 98A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AIRM 98B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Connect learned theory with real-world problems and develop a logical solution to the problem.",
+      "Locate, interpret, and apply technical data from industry manuals and apply that technical data to a maintenance situation.",
+      "Determine several possible solutions for dealing with a given situation and then decide which solution(s) are ethical and which are not.",
+      "Demonstrate proper use of aircraft repair equipment.",
+      "Apply knowledge of aeronautics, aircraft maintenance, and aviation regulations.",
+      "Inspect an aircraft/aircraft component and determine if the unit conforms to industry established standards."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 39.5,
+      "min": 39.5
+     },
+     "section_heading": "Aircraft Powerplant Maintenance Technology- Evening (Certificate T0952)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 39.5,
+   "total_min": 39.5,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/aircraft-powerplant-maintenance-technology-evening-certificate/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Aircraft Powerplant Maintenance Technology",
+   "control_number": "12010"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 19,
+    "placed": 19,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISN 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 11L",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 24",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISN 24L",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISN 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 51L",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 21L",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 23",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 23L",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 25L",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 29",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 1
+      },
+      "courses": [
+       {
+        "code": "CISN 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 31L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 34",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 34L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 27",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Administer and install virtual operating system on private or public network.",
+      "Manage and implement network and Cyber security."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 26,
+      "min": 23
+     },
+     "section_heading": "Cloud and Network Cyber Security Administration (AS Degree S0884)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 26,
+   "total_min": 23,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/computer-network-administration-and-security-management/cloud-network-cyber-security-management/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Cloud and Network Cyber Security Administration",
+   "control_number": "16544"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 27,
+    "placed": 27,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Information Technology Basics - Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 7,
+       "min": 7
+      },
+      "courses": [
+       {
+        "code": "CISB 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISB 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Software Development: CISP 21 & 21L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISP 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 21L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Software Development"
+     },
+     {
+      "name": "Software Development: CISP 31 & 31L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISP 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 31L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Software Development"
+     },
+     {
+      "name": "Software Development: CISP 41 & 41L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISP 41",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 41L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Software Development"
+     },
+     {
+      "name": "Software Development: CISP 71 & 71L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISP 71",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 71L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Software Development"
+     },
+     {
+      "name": "Software Development: CISW 24 & 24L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISW 24",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISW 24L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Software Development"
+     },
+     {
+      "name": "Database Technology: CISD 11 & 11L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISD 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 11L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Database Technology"
+     },
+     {
+      "name": "Database Technology: CISD 21 & 21L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISD 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 21L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Database Technology"
+     },
+     {
+      "name": "Database Technology: CISD 31 & 31L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISD 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 31L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Database Technology"
+     },
+     {
+      "name": "Operating Systems and Networking: CISN 11 & 11L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CISN 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 11L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Operating Systems and Networking"
+     },
+     {
+      "name": "Operating Systems and Networking: CISN 21",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CISN 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Operating Systems and Networking"
+     },
+     {
+      "name": "Operating Systems and Networking: CISN 31 & 31L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CISN 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 31L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Operating Systems and Networking"
+     },
+     {
+      "name": "Security: CISS 13",
+      "rule": "all",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CISS 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Security"
+     },
+     {
+      "name": "Security: CISS 15",
+      "rule": "all",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CISS 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Security"
+     },
+     {
+      "name": "Security: CISS 21 & 21L",
+      "rule": "all",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CISS 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 21L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Security"
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Know the four primary operations of a computer and the hardware that performs these operations.",
+      "Be able to create effective queries that answer needed questions.",
+      "Be able to identify four types of common transmission media and be able to describe the basic characteristics of each.",
+      "Be able to use decision making statements and loops in order to create a business application.",
+      "Be able to understand the need for security."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 21.5,
+      "min": 20
+     },
+     "section_heading": "Information Technology Emphasis (AA Degree A8985)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 21.5,
+   "total_min": 20,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/computer-database-management-systems/information_technology_aa/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Liberal Arts and Sciences: Information Technology",
+   "control_number": "18237"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 30,
+    "placed": 30,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISB 11",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISB 15",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISM 11",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 10",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Choose from one of the following: CISN 21",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISN 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Operating system"
+     },
+     {
+      "name": "Choose from one of the following: CISN 31 & 31L",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISN 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 31L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Operating system"
+     },
+     {
+      "name": "Choose from one of the following groups: CISD 11 & 11L",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISD 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 11L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Database"
+     },
+     {
+      "name": "Choose from one of the following groups: CISD 21 & 21L",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISD 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 21L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Database"
+     },
+     {
+      "name": "Choose from one of the following groups: CISD 31 & 31L",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISD 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 31L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Database"
+     },
+     {
+      "name": "C++",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISP 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 31L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 34",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 34L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "Java",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISP 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 21L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 24",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 24L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "Python",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISP 71",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 71L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 74",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 74L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "Web",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISW 17",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISW 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CISW 24",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISW 31L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CISW 24L",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration"
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Display data from related database tables.",
+      "Update a SQL Server database."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 27,
+      "min": 26
+     },
+     "section_heading": "Computer Programming (AS Degree S7302)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 27,
+   "total_min": 26,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/computer-programming/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Computer Programming",
+   "control_number": "19250"
+  },
+  {
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "checks": {
+    "listed": 6,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISP 10",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISP 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 31L",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISP 34L",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Choose one from the following sequences: CISD 11 & 11L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISD 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 11L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Database sequence"
+     },
+     {
+      "name": "Choose one from the following sequences: CISD 21 & 21L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISD 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISD 21L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": "Database sequence"
+     },
+     {
+      "name": "Choose one from the following sequences: CISD 31 & 31L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISD 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CISD 31L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": "Database sequence"
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Create event-driven program, using Windows Forms.",
+      "Connect C++ program to the database and incorporate SQL statements into C++ code."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 13,
+      "min": 13
+     },
+     "section_heading": "CIS Professional in C++ Programming (Certificate E0714)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 13,
+   "total_min": 13,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-in-c-programming/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Programming in C++",
+   "control_number": "22167"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 4,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unstated"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "VOC CPBC1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VOC CPBC2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "VOC CPNET",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VOC CPDI",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Students will be able to execute commands in Windows.",
+      "Students will be able to demonstrate basic operations in a word processing application.",
+      "Students will be able to create, format and edit word processing documents.",
+      "Students will be able to perform routine computer maintenance operations.",
+      "Students will be able to discuss problem solving techniques."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Office Computer Applications - Level 1",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/officecomputerapplicationslevel1text/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Office Computer Applications - Level 1",
+   "control_number": "36375"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unstated"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "VOC ESD09",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VOC ST1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VOC ST2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Students will be able to observe and practice safety precautions in a professional setting.",
+      "Students will be able to select and handle tools correctly.",
+      "Students will be able to use the types of sewing machines effectively.",
+      "Students will be measuring to create proper sizing.",
+      "Students will be able to demonstrate marking and tailoring techniques.",
+      "Students will be able to apply various seam finishes.",
+      "Students will be able to construct haute couture decorative techniques and embellishments.",
+      "Students will be able to apply basic principles and processes of assembling garments correctly.",
+      "Students will be able to make patterns correctly.",
+      "Students will be able to identify fabric type.",
+      "Students will be able to demonstrate coordination of fabric, textures and color.",
+      "Students will be able to adapt, lay out patterns and cut garments.",
+      "Students will be able to apply trade drawings, science and calculations when necessary.",
+      "Students will be able to describe Cost analysis.",
+      "Students will be able to display final product."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Sewing and Tailoring",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/sewingandtailoringtext/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Sewing and Tailoring",
+   "control_number": "36803"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 25,
+    "placed": 25,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIOL 2",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 4",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BIOL 4H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 50",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CHEM 50H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 51",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CHEM 51H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 180",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Biodiversity Track Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 15,
+       "min": 11
+      },
+      "courses": [
+       {
+        "code": "BIOL 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 25",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 34",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 34L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BTNY 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MICR 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MICR 22",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ZOOL 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": "Required Electives track"
+     },
+     {
+      "name": "Cell and Molecular Biology Track Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 15,
+       "min": 11
+      },
+      "courses": [
+       {
+        "code": "BIOL 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 34",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 34L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 80",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 81",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MICR 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MICR 22",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MICR 26",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": "Required Electives track"
+     },
+     {
+      "name": "Pre-Health Professions Track Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 15,
+       "min": 11
+      },
+      "courses": [
+       {
+        "code": "ANAT 35",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANAT 36",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANAT 38",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 34",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 34L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MICR 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MICR 22",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": "Required Electives track"
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 37,
+      "min": 33
+     },
+     "section_heading": "Biology (AS Degree S0652)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 37,
+   "total_min": 33,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/biology-as-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Biology",
+   "control_number": "38731"
+  },
+  {
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "checks": {
+    "listed": 11,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISP 10",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 21L",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 24",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 24L",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Choose one from the following sequences: CISD 11 & 11L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISD 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 11L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Database sequence"
+     },
+     {
+      "name": "Choose one from the following sequences: CISD 21 & 21L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISD 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 21L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Database sequence"
+     },
+     {
+      "name": "Choose one from the following sequences: CISD 31 & 31L",
+      "rule": "all",
+      "stated": {
+       "max": 3.5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "CISD 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISD 31L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Database sequence"
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Develop a dynamic web page programming Java Server Pages.",
+      "Create an object oriented program that will use remote method invocation using the Java programming Language."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 13,
+      "min": 13
+     },
+     "section_heading": "CIS Professional in Java Programming (Certificate M0689)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 13,
+   "total_min": 13,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-java-programming/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "CIS Professional in JAVA Programming",
+   "control_number": "40141"
+  },
+  {
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "checks": {
+    "listed": 7,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISW 17",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISW 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISW 31L",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISW 24",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISW 24L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Know how to install and configure a secure web server.",
+      "Know how to access a database from a program in a web server."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 10,
+      "min": 10
+     },
+     "section_heading": "CIS Professional in Web Programming (Certificate M0812)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 10,
+   "total_min": 10,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-web-programming/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "CIS Professional in Web Programming",
+   "control_number": "40186"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 20,
+    "placed": 18,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 15,
+       "min": 14
+      },
+      "courses": [
+       {
+        "code": "ASCI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 40",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CHEM 50",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "CHEM 50H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2001H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ECON 17",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 10",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Area 1: Animal Production",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ASCI 14",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASCI 16",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASCI 17",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASCI 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Area 2: Animal Health",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 3.5
+      },
+      "courses": [
+       {
+        "code": "ASCI 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASCI 2L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASCI 96",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASCI 96L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 80",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 24,
+      "min": 20.5
+     },
+     "section_heading": "Agriculture Animal Science (AS-T Degree S0878)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 20.5,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/agriculture-animal-science-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Agriculture Animal Sciences",
+   "control_number": "42652"
+  }
+ ]
+}
