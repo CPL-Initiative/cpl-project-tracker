@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Administration of Justice",
  "award": "A.S. Degree",
- "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ADJ/requirements-ipyf8",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ADJ/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6895,
+  "input_tokens": 7300,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6895,
-    "output_tokens": 1684,
+    "input_tokens": 7300,
+    "output_tokens": 1793,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,68 +30,56 @@
     "model": null
    }
   ],
-  "output_tokens": 1684,
+  "output_tokens": 1793,
   "output_tokens_details": {
-   "thinking_tokens": 431
+   "thinking_tokens": 454
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06126,
- "ms": 13419,
- "seconds": 13.9,
+ "cost_usd": 0.06506,
+ "ms": 14185,
+ "seconds": 15.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 16,
    "listed": 16,
-   "share": 0.5,
-   "missing": [
-    "ADJ102",
-    "ADJ11",
-    "ADJ21A",
-    "ADJ25",
-    "ADJ30",
-    "ADJ33",
-    "ADJ34",
-    "ADJ36"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "PSYCC1000",
-    "SOC1",
-    "STATC1000"
-   ],
-   "flagged": [
-    "PSYCC1000",
-    "SOC1",
-    "STATC1000"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    18.0,
-    19.0
+    53.0,
+    53.5
    ],
    "stated": [
     60.0,
     60.0
    ],
    "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   "ge": [
+    23.0,
+    23.0
+   ],
+   "why": [],
+   "fill": [
+    6.5,
+    7.0
    ]
   },
   "repeated": {
@@ -116,11 +104,11 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Administration of Justice for Transfer (AS-T) - AST.ADJ",
+   "section_heading": "Administration of Justice - AS.ADJ",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -131,14 +119,14 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Cal-GETC",
+   "ge_pattern": "Local GE",
    "degree_total": {
     "min": 60,
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 23,
+    "max": 23
    },
    "electives_fill_degree": true,
    "outcomes": [],
@@ -146,7 +134,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "Required Major Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -163,26 +151,14 @@
       "catalog_addition": false
      },
      {
-      "code": "ADJ3",
+      "code": "ADJ2",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Major Electives - List A",
-    "rule": "choose_courses",
-    "minimum": 2,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
-      "code": "ADJ5",
+      "code": "ADJ3",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -196,14 +172,40 @@
       "catalog_addition": false
      },
      {
-      "code": "ADJ8",
+      "code": "ADJ5",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ADJ2",
+      "code": "ADJ11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ21A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Electives",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADJ8",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -215,43 +217,52 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Major Electives - List B",
-    "rule": "choose_courses",
-    "minimum": 2,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
-      "code": "SOC1",
+      "code": "ADJ25",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "STATC1000",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PSYCC1000",
+      "code": "ADJ30",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      },
      {
       "code": "ADJ51",
       "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ102",
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -260,53 +271,31 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ADJ 102",
-    "why": "not in the text"
-   },
-   {
-    "code": "ADJ 11",
-    "why": "not in the text"
-   },
-   {
-    "code": "ADJ 21A",
-    "why": "not in the text"
-   },
-   {
-    "code": "ADJ 25",
-    "why": "not in the text"
-   },
-   {
-    "code": "ADJ 30",
-    "why": "not in the text"
-   },
-   {
-    "code": "ADJ 33",
-    "why": "not in the text"
-   },
-   {
-    "code": "ADJ 34",
-    "why": "not in the text"
-   },
-   {
-    "code": "ADJ 36",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The page is for the Administration of Justice for Transfer (AS-T) degree, while the program is named A.S. Degree; a reviewer should confirm this is the correct award page.",
-   "The catalog prints no units beside any course and no total for the major; total_units left null.",
-   "'Total Required Credits 60' recorded as degree_total; Cal-GETC is named but no GE units are printed.",
-   "Electives (courses numbered 1-99) are required when degree units plus GE units total fewer than 60; no elective units are printed, so electives_fill_degree is true.",
-   "List B: any List A course not already used may be taken for List B.",
-   "ADJ2 is printed with title 'Community Relations and the Justice System', differing from the closed-list title 'Community Relations- Multicultural Diversity Discrimination'.",
-   "Codes recorded as printed without a space (e.g., 'ADJ1'). SOC1, STATC1000 and PSYCC1000 are not in the closed list.",
-   "No program learning outcomes or careers appear in the text."
+   "The page prints no units beside any course and no total for the major; course units are null and total_units is null.",
+   "'Total Required Credits 60' is recorded as degree_total. The GE pattern is named only as 'Local GE', with no units printed.",
+   "Electives (courses numbered 1-199) are required when degree units plus GE units total fewer than 60, with no units printed, so electives_fill_degree is true.",
+   "Above the rules, the page describes two suggested paths through the Major Electives. Criminal Justice: complete 3 courses from ADJ-8, ADJ-10, ADJ-30, ADJ-33, ADJ-51. Paralegal/Legal Assistant: complete ADJ-25, ADJ-34 and ADJ-36, plus BUS-18 Legal Environment of Business as a general elective. BUS-18 is not on the closed list and is not placed in a block because it is described as a general elective.",
+   "ADJ102 appears in the Major Electives rule but in neither suggested path.",
+   "Students who completed a California POST Basic Police Academy, a California Basic Correctional Officer Academy or a California Highway Patrol Academy receive credit for ADJ 1 and all major elective courses.",
+   "The catalog title for ADJ2 is 'Community Relations and the Justice System', while the state file title is 'Community Relations- Multicultural Diversity Discrimination'."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": "39969050595",
  "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 23,
+    "max": 23
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
+  },
   {
    "field": "course_units",
    "was": null,
@@ -315,11 +304,11 @@
      3,
      3
     ],
-    "ADJ3": [
+    "ADJ2": [
      3,
      3
     ],
-    "ADJ5": [
+    "ADJ3": [
      3,
      3
     ],
@@ -327,11 +316,19 @@
      3,
      3
     ],
-    "ADJ8": [
+    "ADJ5": [
      3,
      3
     ],
-    "ADJ2": [
+    "ADJ11": [
+     3,
+     3
+    ],
+    "ADJ21A": [
+     3,
+     3
+    ],
+    "ADJ8": [
      3,
      3
     ],
@@ -339,25 +336,36 @@
      3,
      3
     ],
-    "SOC1": [
+    "ADJ25": [
      3,
      3
     ],
-    "STATC1000": [
-     4,
-     4
+    "ADJ30": [
+     3,
+     3
     ],
-    "PSYCC1000": [
+    "ADJ33": [
+     3,
+     3
+    ],
+    "ADJ34": [
+     3,
+     3
+    ],
+    "ADJ36": [
      3,
      3
     ],
     "ADJ51": [
      3,
      3
+    ],
+    "ADJ102": [
+     3.5,
+     3.5
     ]
    },
    "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
- ],
- "read_run": "39895340003"
+ ]
 }

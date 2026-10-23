@@ -5,7 +5,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "BIO1",
    "BIO2",
@@ -18,15 +18,16 @@
    "PHY2A",
    "PHY2B",
    "PHY4A",
-   "PHY4B"
+   "PHY4B",
+   "PHY4C"
   ],
   "source": {
-   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.BIO/requirements-ipyf8",
-   "title": "AST.BIO Program | Hartnell College Catalog",
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.BIO/requirements-ipyf8",
+   "title": "AS.BIO Program | Hartnell College Catalog",
    "h1": "Hartnell College",
    "text_from": "innerText",
    "label": {
-    "award": 1,
+    "award": 0,
     "title": 1.0,
     "section": null,
     "section_line": null,
@@ -34,7 +35,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 2290
+  "text_chars": 2179
  },
  {
   "control_number": "03539",
@@ -301,24 +302,32 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
    "ADJ1",
    "ADJ10",
+   "ADJ102",
+   "ADJ11",
    "ADJ2",
+   "ADJ21A",
+   "ADJ25",
    "ADJ3",
+   "ADJ30",
+   "ADJ33",
+   "ADJ34",
+   "ADJ36",
    "ADJ4",
    "ADJ5",
    "ADJ51",
    "ADJ8"
   ],
   "source": {
-   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ADJ/requirements-ipyf8",
-   "title": "AST.ADJ Program | Hartnell College Catalog",
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ADJ/requirements-ipyf8",
+   "title": "AS.ADJ Program | Hartnell College Catalog",
    "h1": "Hartnell College",
    "text_from": "innerText",
    "label": {
-    "award": 1,
+    "award": 0,
     "title": 1.0,
     "section": null,
     "section_line": null,
@@ -326,7 +335,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 2291
+  "text_chars": 3361
  },
  {
   "control_number": "03588",
@@ -404,7 +413,7 @@
   "title": "Computer Science and Information Systems-Network and Security",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
+  "method": "not_found",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -607,44 +616,12 @@
   "title": "Agriculture Production",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ABT101",
-   "ABT102",
-   "ABT103",
-   "ABT104",
-   "ABT105",
-   "ABT110",
-   "ABT130",
-   "ABT57",
-   "ABT58",
-   "ABT80",
-   "ABT83",
-   "ABT90",
-   "ABT92",
-   "ABT95",
-   "ABT99",
-   "BUS43",
-   "BUS50",
-   "MFGT70",
-   "MFGT71"
-  ],
-  "source": {
-   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGRP/requirements-ipyf8",
-   "title": "CT.AGRP Program | Hartnell College Catalog",
-   "h1": "Hartnell College",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 2642
+  "text_chars": 0
  },
  {
   "control_number": "15426",
@@ -1102,30 +1079,12 @@
   "title": "Psychology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.833,
-  "codes_found": [
-   "PSY10",
-   "PSY14",
-   "PSY15",
-   "PSY22",
-   "PSYCC1000"
-  ],
-  "source": {
-   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.PSY/requirements-ipyf8",
-   "title": "AAT.PSY Program | Hartnell College Catalog",
-   "h1": "Hartnell College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 2268
+  "text_chars": 0
  },
  {
   "control_number": "19106",
@@ -1156,35 +1115,12 @@
   "title": "Spanish",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.667,
-  "codes_found": [
-   "ETH4",
-   "SPA1",
-   "SPA1S",
-   "SPA1X",
-   "SPA2",
-   "SPA2S",
-   "SPA2X",
-   "SPA3",
-   "SPA3S",
-   "SPA4S"
-  ],
-  "source": {
-   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.SPA/requirements-ipyf8",
-   "title": "AAT.SPA Program | Hartnell College Catalog",
-   "h1": "Hartnell College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 2534
+  "text_chars": 0
  },
  {
   "control_number": "19718",
@@ -1456,8 +1392,8 @@
    "ADJ5"
   ],
   "source": {
-   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ADJ/requirements-ipyf8",
-   "title": "AS.ADJ Program | Hartnell College Catalog",
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.ADJ/requirements-ipyf8",
+   "title": "CT.ADJ Program | Hartnell College Catalog",
    "h1": "Hartnell College",
    "text_from": "innerText",
    "label": {
@@ -1469,7 +1405,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3259
+  "text_chars": 1592
  },
  {
   "control_number": "24159",
@@ -1488,7 +1424,7 @@
   "title": "Construction - Sustainable Construction: Construction Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
+  "method": "not_found",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1688,12 +1624,49 @@
   "title": "Agriculture Production",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.96,
+  "codes_found": [
+   "ABT101",
+   "ABT102",
+   "ABT103",
+   "ABT104",
+   "ABT105",
+   "ABT110",
+   "ABT130",
+   "ABT57",
+   "ABT58",
+   "ABT80",
+   "ABT81",
+   "ABT83",
+   "ABT90",
+   "ABT92",
+   "ABT93",
+   "ABT95",
+   "ABT96",
+   "ABT97",
+   "ABT98",
+   "ABT99",
+   "BUS43",
+   "BUS50",
+   "MFGT70",
+   "MFGT71"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGRP/requirements-ipyf8",
+   "title": "CT.AGRP Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 25,
-  "text_chars": 0
+  "text_chars": 2642
  },
  {
   "control_number": "31592",
@@ -1713,8 +1686,8 @@
    "CSS55"
   ],
   "source": {
-   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.PCN/requirements-ipyf8",
-   "title": "AS.PCN Program | Hartnell College Catalog",
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.PCN/requirements-ipyf8",
+   "title": "CT.PCN Program | Hartnell College Catalog",
    "h1": "Hartnell College",
    "text_from": "innerText",
    "label": {
@@ -1726,7 +1699,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 2051
+  "text_chars": 1797
  },
  {
   "control_number": "31593",

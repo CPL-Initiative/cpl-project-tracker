@@ -2358,6 +2358,30 @@ check(C.cd_award_words("Agriculture Business (AST)") == "associate in science fo
       and C.cd_award_words("Adult Literacy (NC)").startswith("noncredit") and C.cd_award_words("Accounting") == ""
       and C.cd_award_words("Administration of Justice for Transfer (AS-T)") == "associate in science for transfer",
       "a program's letters name its award in words")
+# The code's letters name the award (S456): Hartnell's site read filed Biology A.S. 03537 from
+# "Biology for Transfer Degree (AS-T) - AST.BIO" (and Psychology A.A. 18353, Spanish A.A. 19518,
+# Administration of Justice A.S. 03585 from AAT/AST tabs; two certificates from AS tabs), since
+# "associate in science for transfer" names an A.S. too. A tab whose code names another award is
+# no candidate; an award the codes cannot name reads as before.
+check(C.cd_code_kind("AST.ADJ") == "adt" and C.cd_code_kind("AAT.PSY") == "adt" and C.cd_code_kind("AS.EGN") == "as"
+      and C.cd_code_kind("CT.NVN") == "coa" and C.cd_code_kind("NCCT.BCL") == "noncredit" and C.cd_code_kind("BS.RC") == "bs"
+      and C.cd_code_kind("05000.AA") == "aa" and C.cd_code_kind("13012.CT") == "coa" and C.cd_code_kind("AAT-SOC") == "adt"
+      and C.cd_code_kind("12345") is None and C.cd_code_kind(None) is None,
+      "a Coursedog code's letters name its award, as a prefix or a suffix, or none")
+check(hn["code_kind"] == "adt" and hn["code"] == "AST.ADJ", "a Coursedog tab carries its code's award kind")
+hn_courses = [{"code": c} for c in ("ADJ 1", "ADJ 3", "ADJ 5", "STATC 1000")]
+hn_adt = {"control_number": "31971", "title": "Administration of Justice", "award": "A.S. T Degree", "closed_list": hn_courses}
+hn_as = {"control_number": "03585", "title": "Administration of Justice", "award": "A.S. Degree", "closed_list": hn_courses}
+hn_ct = {"control_number": "21450", "title": "Administration of Justice",
+         "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units", "closed_list": hn_courses}
+hn_other = {"control_number": "9", "title": "Administration of Justice", "award": "Certificate of Competency", "closed_list": hn_courses}
+hn_given = C.assign([hn_adt, hn_as, hn_ct, hn_other], [hn])
+check((hn_given["31971"]["best"] or {}).get("url", "").endswith("AST.ADJ/requirements-ipyf8")
+      and hn_given["03585"]["best"] is None and hn_given["21450"]["best"] is None,
+      "an AST tab goes to the A.S.-T alone; the local A.S. and the certificate read no page from it: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in hn_given.items()})
+check(C.candidates(hn_as, [hn]) == [] and len(C.candidates(hn_adt, [hn])) == 1 and len(C.candidates(hn_other, [hn])) == 1,
+      "the gate reads the code's letters; an award the codes cannot name is gated by nothing")
 
 # ── a Coursedog catalog reads from its site (S449, default since S451) ─────
 # Hartnell's procedure step names its whole-catalog PDF (S410), which prints 79
