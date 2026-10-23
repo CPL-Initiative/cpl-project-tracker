@@ -36,8 +36,8 @@ None. Sheet 115 has no replies, and no Library brief is requested.
 0. **The display apply on `main`.** Read the newest `program-requirements-college.yml` run on `main` with
    `step=display` (dispatched about 07:22Z). Its applied record for 504ae8333118 commits to `main`. If it was
    canceled at the limit, dispatch it again (lessons S398).
-1. **San Mateo's one record.** On `claude/harvest-san-mateo-s452`: the load filed (1 inserted, 55 kept); S452 dispatched
-   `step=reread` at about 07:28Z, so check that its receipt filed. Then open a wave branch off `main` and merge San Mateo in. Run
+1. **San Mateo's one record.** On `claude/harvest-san-mateo-s452`: the load (1 inserted, 55 kept) and the reread both
+   filed. Then open a wave branch off `main` and merge San Mateo in. Run
    `python3 kb/_build_roep_display.py` there (it needs `openpyxl`), commit its two outputs, open a PR, merge it on a
    green `test`, and run `step=display` on `main`.
 2. **Hartnell's course units.** The Requirements tab prints none, so 85 of 96 records fail the arithmetic check. A
@@ -66,5 +66,5 @@ and stood down. The next firing is hourly through 13:12Z.
 ## Let go
 
 S452 holds no PR subscription (#2369 and #2370 merged), no check-in and no artifact watch. Harvest branches left on
-the remote: `claude/harvest-san-mateo-s452` (loaded, its reread in flight), plus `claude/harvest-east-la-s452` and
+the remote: `claude/harvest-san-mateo-s452` (loaded and reread, awaiting its display build), plus `claude/harvest-east-la-s452` and
 `claude/harvest-marin-s452`, whose captures moved nothing (each holds a filed capture only, with nothing to load).
