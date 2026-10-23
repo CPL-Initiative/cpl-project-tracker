@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Early Childhood Education",
  "award": "A.S. Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=183",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ECE/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10634,
+  "input_tokens": 7627,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10634,
-    "output_tokens": 2768,
+    "input_tokens": 7627,
+    "output_tokens": 2070,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2768,
+  "output_tokens": 2070,
   "output_tokens_details": {
-   "thinking_tokens": 1159
+   "thinking_tokens": 790
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0979,
- "ms": 22492,
- "seconds": 23.1,
+ "cost_usd": 0.07191,
+ "ms": 17423,
+ "seconds": 18.0,
  "parts": null,
  "error": null,
  "score": {
@@ -90,17 +90,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 0,
    "courses": 0,
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
@@ -132,14 +132,14 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "plan and organize activities, providing a safe and healthy learning environment, for optimum development of all young children in groups of 12 to 24 children.",
-    "assess and evaluate all children and learning environments to write reports according to state and federally mandated guidelines.",
-    "work with families and their children to build respectful, supportive relationships for optimum growth and development of young children",
-    "connect with community agencies and programs to support children, families, and the early education and care profession."
-   ],
+   "outcomes": [],
    "careers": [
-    "early education and care of young children"
+    "Teacher Assistant",
+    "Associate Teacher",
+    "Teacher",
+    "Master Teacher",
+    "Site Supervisor",
+    "Program Director"
    ]
   },
   "blocks": [
@@ -298,18 +298,16 @@
   "missing_explained": [
    {
     "code": "ECE 11",
-    "why": "not in the text; catalog prints 'Cognitive Activities and Materials' as ECE8, recorded as a catalog addition"
+    "why": "not in the text; catalog lists ECE8 with the same title (Cognitive Activities and Materials), possibly a renumbering"
    }
   ],
   "notes": [
-   "The Major Electives list breaks across pages 183-184; its remaining courses (ECE9 through ECE71) print under the AS-T heading on page 184 but belong to the A.S. section.",
-   "No units are printed beside any course; 'Total Required Credits 60' covers the whole degree with Local GE, so it is recorded as degree_total and total_units is null.",
-   "Electives (courses numbered 1-199) are required when degree units plus GE units total fewer than 60; no units printed, so electives_fill_degree is true.",
-   "The Child Development Permit table (Teacher Assistant, Associate Teacher, Teacher, Master Teacher, Site Supervisor, Program Director) is informational and not a degree requirement; its course mentions were not recorded as blocks. Permit level names were not recorded as careers.",
-   "ECE8 carries the closed list's ECE 11 title (Cognitive Activities and Materials) and may be a renumbering; ECE9 (Creative Expressions and Play in Early Childhood) is not in the closed list.",
-   "ECE12 is printed as 'Practicum: Field Teaching Experience' vs. closed-list title 'Preschool Theory and Practicum'.",
-   "Program outcomes lead-in says 'Upon completion of this course' though printed as Program Outcomes; the same outcomes list appears for the CT.ECE certificate (with a final period on the third outcome there)."
+   "The catalog prints no units beside any course and no total for the major; units are null and total_units is null.",
+   "Total Required Credits 60 recorded as degree_total; electives (courses numbered 1-199) fill the degree to 60 with no units printed, so electives_fill_degree is true.",
+   "ECE8 and ECE9 are not in the closed list; ECE8 carries the same title as closed-list ECE 11 and may be a renumbered course.",
+   "The Child Development Permit table (Teacher Assistant through Program Director) is informational and not recorded as requirement blocks; its permit levels were recorded as careers since they name job roles—reviewer should confirm.",
+   "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "39090050931"
+ "extracted_run": "39895340003"
 }

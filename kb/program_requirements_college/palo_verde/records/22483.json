@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Building Construction Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/building-construction-technology-certificate-of-achievement-2021-22-summer-2022su",
- "record_shape": 4,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=133&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5224,
+  "input_tokens": 6388,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5224,
-    "output_tokens": 1225,
+    "input_tokens": 6388,
+    "output_tokens": 790,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1225,
+  "output_tokens": 790,
   "output_tokens_details": {
-   "thinking_tokens": 333
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0454,
- "ms": 10278,
- "seconds": 10.8,
+ "cost_usd": 0.04135,
+ "ms": 7018,
+ "seconds": 7.6,
  "parts": null,
  "error": null,
  "score": {
@@ -70,6 +71,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -87,27 +89,42 @@
    "pass": true
   },
   "careers": {
-   "count": 5,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Building Construction Technology Certificate of Achievement",
+   "section_heading": "Building Construction Technology, Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 18,
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Acquired fundamental understanding of the principles and practices of building construction technology."
    ],
    "careers": [
-    "construction industry",
     "contractors",
     "site superintendents",
     "project managers",
@@ -126,28 +143,28 @@
     },
     "courses": [
      {
-      "code": "BCT100",
+      "code": "BCT 100",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BCT110",
+      "code": "BCT 110",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BCT200",
+      "code": "BCT 200",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BCT201",
+      "code": "BCT 201",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -156,7 +173,7 @@
     ]
    },
    {
-    "name": "Electives: Choose a minimum of 6 units from electives",
+    "name": "Electives",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": null,
@@ -166,42 +183,42 @@
     },
     "courses": [
      {
-      "code": "BCT101",
+      "code": "BCT 101",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BCT102",
+      "code": "BCT 102",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BCT112",
+      "code": "BCT 112",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BCT113",
+      "code": "BCT 113",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BCT202",
+      "code": "BCT 202",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BCT210",
+      "code": "BCT 210",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -213,11 +230,9 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints codes without a space (e.g., BCT100); these match closed-list codes (BCT 100, etc.) and are not treated as catalog additions.",
-   "Required Core Courses is worded 'Complete the following number of credits: 12' over four 3-unit courses totaling exactly 12 units, so it is recorded as 'all'.",
-   "The description says 'Building Technology program' and describes construction management, which differs somewhat from the course content (carpentry, cabinetry); careers were taken from that description.",
-   "Source URL slug references 2021-22 Summer 2022 although the catalog path is 2025-2026; reviewer may verify the catalog year."
+   "Catalog states 'Credits: 18.0' as the certificate total; core 12 plus electives minimum 6.",
+   "Careers taken from the description's list of roles for those already employed in construction (contractors, site superintendents, project managers, estimators)."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "39852997888"
 }

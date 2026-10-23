@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Liberal Arts with Emphasis in Mathematics and Science",
  "award": "A.A. Degree",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-mathematics-and-science-2025-2026-fall-2025fa",
- "record_shape": 4,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=118&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6339,
+  "input_tokens": 7541,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6339,
-    "output_tokens": 2597,
+    "input_tokens": 7541,
+    "output_tokens": 2507,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,62 +30,69 @@
     "model": null
    }
   ],
-  "output_tokens": 2597,
+  "output_tokens": 2507,
   "output_tokens_details": {
-   "thinking_tokens": 579
+   "thinking_tokens": 595
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0773,
- "ms": 19544,
- "seconds": 20.0,
+ "cost_usd": 0.0803,
+ "ms": 19839,
+ "seconds": 20.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 26,
+   "placed": 30,
    "listed": 30,
-   "share": 0.867,
-   "missing": [
-    "ANTHC1001",
-    "ASTRC1001",
-    "BIOLC1001",
-    "BIOLC1001L"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "ANT100",
-    "AST101",
-    "BIO100",
-    "BIO101"
-   ],
-   "flagged": [
-    "ANT100",
-    "AST101",
-    "BIO100",
-    "BIO101"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    18.0,
-    18.0
+    52.0,
+    56.0
    ],
    "stated": [
-    18.0,
-    18.0
+    60.0,
+    61.0
    ],
-   "why": []
+   "against": "degree",
+   "ge": [
+    34.0,
+    38.0
+   ],
+   "why": [
+    "the blocks and general education sum to 52.0-56.0; the catalog prints 60.0-61.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.0,
+     18.0
+    ],
+    "stated": [
+     18.0,
+     18.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -106,21 +113,37 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": true
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Associate of Arts in Liberal Arts, Emphasis in Mathematics and Science",
+   "section_heading": "Liberal Arts, AA - Emphasis in Mathematics and Science",
    "measure": "units",
    "total_units": {
     "min": 18,
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 61
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 38
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Acquired fundamental grounding in communication, critical thinking, scientific inquiry, and quantitative reasoning, the arts, literature and humanities, social, political and economic institutions, and self-development.",
-    "Acquired fundamental knowledge and skills in various disciplines constituting the Mathematics and Science."
+    "Acquired fundamental knowledge and skills in various disciplines constituting the Mathematics and Science"
    ],
    "careers": []
   },
@@ -136,210 +159,210 @@
     },
     "courses": [
      {
-      "code": "ANT100",
+      "code": "ANTH C1001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "AST101",
+      "code": "ASTR C1001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "AST105",
+      "code": "AST 105",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AST110",
+      "code": "AST 110",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BIO100",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "BIO101",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "BIO111",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO190",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO191",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO210",
+      "code": "BIOL C1001",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BIO211",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHE101",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHE109",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHE210",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHE211",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GGR101",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GGR102",
+      "code": "BIOL C1001L",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GGR103",
-      "units": 3,
+      "code": "BIO 111",
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEL101",
+      "code": "BIO 190",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 191",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 210",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEL102",
+      "code": "BIO 211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE 109",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE 210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE 211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GGR 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GGR 102",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEL103",
+      "code": "GGR 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEL 101",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEL104",
+      "code": "GEL 102",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEL105",
+      "code": "GEL 103",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEL106",
+      "code": "GEL 104",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "STATC1000",
+      "code": "GEL 105",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MAT108",
-      "units": 3,
+      "code": "GEL 106",
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MAT110",
+      "code": "STAT C1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHY100",
+      "code": "MAT 108",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSY155",
+      "code": "MAT 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY 100",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SOC120",
+      "code": "PSY 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 120",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -349,32 +372,15 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ANTHC1001",
-    "why": "not in the text; catalog prints ANT100 Introduction to Biological Anthropology (same title), likely the local code for this course"
-   },
-   {
-    "code": "ASTRC1001",
-    "why": "not in the text; catalog prints AST101 Introductory Astronomy, likely the local code for this course"
-   },
-   {
-    "code": "BIOLC1001",
-    "why": "not in the text; catalog prints BIO100 Introduction to Biology, likely the local code for this course"
-   },
-   {
-    "code": "BIOLC1001L",
-    "why": "not in the text; catalog prints BIO101 Introduction to Biology Laboratory, likely the local code for this course"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "total_units records the 18-unit Area of Emphasis; the 60 (60.0-61.0) figure is the full degree total including CalGETC general education (34-38 units).",
-   "Area of Emphasis rule also requires depth of study: 2 or more courses in one discipline.",
-   "The Area of Emphasis instruction text is cut off: 'Courses selected may also be used to fulf' (likely 'fulfill' general education); reviewer should check.",
-   "GEL105 is printed as 'Natural Hazards and Disasters' with 4 units; the closed list stores GEL 105 'Natural Disasters' at 3 units.",
-   "ANT100, AST101, BIO100 and BIO101 are marked catalog additions because their codes are not in the closed list, though they appear to correspond to the closed-list C-ID-style codes ANTHC1001, ASTRC1001, BIOLC1001 and BIOLC1001L.",
-   "Catalog codes are printed without spaces (e.g., AST105); matched to closed-list codes with spaces (AST 105)."
+   "Area of Emphasis requires 18 minimum credits; the catalog adds 'For depth of study, 2 or more courses in one discipline is required.'",
+   "total_units recorded as the Area of Emphasis total (18 minimum); 'Credits: 60.0 - 61.0' recorded as degree_total; CalGETC printed as 34 - 38.",
+   "Catalog prints ANTH C1001, ASTR C1001, BIOL C1001, BIOL C1001L with a space; matched to closed-list ANTHC1001, ASTRC1001, BIOLC1001, BIOLC1001L.",
+   "MAT 108 printed as 'Credits: 3 -4 units effective Spring 2027', read as 3 units now, becoming 4 units in Spring 2027; reviewer should check.",
+   "GEL 105 printed as 'Natural Hazards and Disasters' with 4 credits; closed list stores 'Natural Disasters' at 3 units.",
+   "The page prints no figure for electives between the emphasis and CalGETC and the 60-61 degree total; no electives statement recorded."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "39852997888"
 }

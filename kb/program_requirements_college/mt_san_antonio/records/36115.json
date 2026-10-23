@@ -1,0 +1,140 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "36115",
+ "shape": "noncredit",
+ "title": "Financial and Database Management",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9992,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9992,
+    "output_tokens": 804,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 804,
+  "output_tokens_details": {
+   "thinking_tokens": 341
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05605,
+ "ms": 8691,
+ "seconds": 9.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 1,
+   "share": 0.0,
+   "missing": [
+    "BSABE5"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Financial and Database Management",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BS ABE05",
+    "why": "Financial and Database Management section not in the text; course named only under other certificates (required in Basic Career Readiness, recommended in College Readiness certificates)"
+   }
+  ],
+  "notes": [
+   "The heading 'Financial and Database Management' appears only in the page's navigation list of Adult Basic Education programs. The captured text contains tabs for Courses, ASVAB Test Preparation, Basic Career Readiness, Basic Skills, College Readiness for Healthcare Programs, College Readiness for Math and English and Engineering Topics, but no tab or section for Financial and Database Management. The text likely was cut off before that tab. No requirements, totals, outcomes or careers could be recorded for this award.",
+   "No hours are printed for any course or certificate in the captured text. measure is left as 'units' and all totals are null.",
+   "Reviewer should check the live catalog page for the Financial and Database Management tab. It may include BS ABE05 Career Development, as the other ABE certificates do."
+  ]
+ },
+ "extracted_run": "39891607837"
+}

@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Political Science",
  "award": "A.A- T Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40071",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40071",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6825,
+  "input_tokens": 6827,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6825,
-    "output_tokens": 1554,
+    "input_tokens": 6827,
+    "output_tokens": 1572,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,7 +30,7 @@
     "model": null
    }
   ],
-  "output_tokens": 1554,
+  "output_tokens": 1572,
   "output_tokens_details": {
    "thinking_tokens": 515
   },
@@ -38,9 +38,9 @@
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05838,
- "ms": 12469,
- "seconds": 13.0,
+ "cost_usd": 0.05875,
+ "ms": 14206,
+ "seconds": 15.1,
  "parts": null,
  "error": null,
  "score": {
@@ -240,14 +240,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints POSCI codes with leading zeros (POSCI 002, 003, 004, 006, 019, 020); treated as the closed-list courses POSCI 2, 3, 4, 6, 19, 20, so catalog_addition is false.",
-   "The second block also allows any course not selected from the Required Courses list (POLS C1000, POSCI 002, 003, 004) to count toward its 2 courses.",
-   "The page prints 'General Education (Cal-GETC) and Elective Courses 41-42' as a combined figure; ge_units left null because no figure for Cal-GETC alone is printed, and degree_elective_units left null because electives are not separated.",
+   "Catalog prints POSCI codes zero-padded (POSCI 002, 003, 004, 006, 019, 020); treated as matching closed-list POSCI 2, 3, 4, 6, 19, 20, so catalog_addition is false.",
+   "The second block also allows any course not already selected from the Required Courses list (POLS C1000, POSCI 002, 003, 004); those courses are recorded once in the first block.",
+   "The 'Select 1 course from the following' block is read as a separate list (List C) because Major Requirements 18-19 = 9 + 6-7 + 3; reviewer may check it is not nested inside the second list.",
+   "The page prints 'General Education (Cal-GETC) and Elective Courses 41-42' as one combined figure, so ge_units is left null and no elective units are recorded separately.",
    "Total Units 60 recorded as degree_total; Major Requirements 18-19 recorded as total_units.",
-   "Career Opportunities section is cut off ('Transfer to a 4-year university in Political Science or a rela') and names no career; careers left empty.",
-   "No program learning outcomes printed in the text.",
-   "Several POSCI courses are marked '( Historical )' in the catalog listing; reviewer may check their current status."
+   "No program learning outcomes are printed in the text.",
+   "Career Opportunities section is cut off ('Transfer to a 4-year university in Political Science or a rela') and names transfer rather than a career; careers left empty."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "ESL Written Communication - Advanced Level",
  "award": "Noncredit program",
- "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
- "record_shape": 3,
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7136,
+  "input_tokens": 7237,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7136,
-    "output_tokens": 864,
+    "input_tokens": 7237,
+    "output_tokens": 737,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,18 @@
     "model": null
    }
   ],
-  "output_tokens": 864,
+  "output_tokens": 737,
   "output_tokens_details": {
-   "thinking_tokens": 392
+   "thinking_tokens": 246
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04582,
- "ms": 8974,
- "seconds": 9.5,
+ "cost_usd": 0.04369,
+ "ms": 7343,
+ "seconds": 7.8,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
@@ -52,7 +54,8 @@
     "ESLWRTC"
    ],
    "unexplained": [],
-   "pass": true
+   "none_placed": true,
+   "pass": false
   },
   "invented": {
    "count": 0,
@@ -61,12 +64,13 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
+   "pass": true,
    "status": "unstated",
    "computed": null,
    "stated": null,
+   "against": null,
    "why": [
-    "the record states no figure, but the catalog text names 0 Units, 0 Units, 0 Units, 0 Units"
+    "the catalog prints no total, no hours and no units"
    ]
   },
   "repeated": {
@@ -79,43 +83,63 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "(no section for this program in the text)",
+   "section_heading": "(section for ESL Written Communication - Advanced Level not found in text)",
    "measure": "hours",
    "total_units": {
     "min": null,
     "max": null
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
-   "outcomes": []
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "ESL WRTC",
-    "why": "appears only as a course description (0 Units, Lecture: 4-100); no program requirements section in text"
+    "why": "The ESL Written Communication - Advanced Level section is not in the text. The code appears only as a recommended elective in the ESL - Advanced Level certificate (#38094), a different award."
    },
    {
     "code": "ESLREADC",
-    "why": "printed as ESL READC only in a course description (0 Units, Lecture: 4-100); no program requirements section in text"
+    "why": "The ESL Written Communication - Advanced Level section is not in the text. ESL READC appears only as a recommended elective in the ESL - Advanced Level certificate (#38094), a different award."
    }
   ],
   "notes": [
-   "The supplied text is a run of noncredit ESL course descriptions. It has no section for 'ESL Written Communication - Advanced Level': no requirements list, no total hours and no program learning outcomes. No blocks were recorded.",
-   "The closed list suggests the program is ESL WRTC plus ESL READC (the closed list prints the latter as ESLREADC). The text never states this, so neither course was placed. A reviewer should find the program's own page or section.",
-   "Each course description prints 'Lecture: 4-100' (a range of hours) and 0 Units, but no program hour total.",
-   "Measure is set to 'hours' because this is a noncredit program. The text states no hours for the award itself.",
-   "The text starts mid-sentence and ends mid-sentence ('accelerate'), so it appears truncated at both ends."
+   "The catalog text holds the Intermediate Level (#38097), ESL - Advanced Level (#38094) and ESL Oral Communication - Literacy Level (#42753) certificates. It ends mid-section and does not include the ESL Written Communication - Advanced Level program, so no requirements, outcomes or careers were recorded.",
+   "Measure is set to hours because this is a noncredit program; the text prints no hours for any course.",
+   "A reviewer should fetch the ESL Written Communication - Advanced Level tab of the catalog page to record its requirements."
   ]
  },
- "extracted_run": "38064250199"
+ "extracted_run": "39891607837"
 }

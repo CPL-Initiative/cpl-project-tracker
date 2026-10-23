@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Studio Arts",
  "award": "A.A- T Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39976",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39976",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6868,
+  "input_tokens": 6870,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,7 +18,7 @@
   },
   "iterations": [
    {
-    "input_tokens": 6868,
+    "input_tokens": 6870,
     "output_tokens": 1577,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
@@ -32,15 +32,15 @@
   ],
   "output_tokens": 1577,
   "output_tokens_details": {
-   "thinking_tokens": 429
+   "thinking_tokens": 480
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05901,
- "ms": 18840,
- "seconds": 19.3,
+ "cost_usd": 0.05902,
+ "ms": 12859,
+ "seconds": 13.3,
  "parts": null,
  "error": null,
  "score": {
@@ -243,21 +243,21 @@
   "missing_explained": [
    {
     "code": "ART 2",
-    "why": "not in the text; the art history elective list prints ARTH C1100 (Survey of Art from Prehistory to the Medieval Era) instead"
+    "why": "not in the text; the catalog lists ARTH C1100 (Survey of Art from Prehistory to the Medieval Era) in its place"
    },
    {
     "code": "ART 3",
-    "why": "not in the text; the required list prints ARTH C1200 (Survey of Art from the Renaissance to Contemporary) instead"
+    "why": "not in the text; the catalog lists ARTH C1200 (Survey of Art from the Renaissance to Contemporary) in its place"
    }
   ],
   "notes": [
-   "The catalog prints codes with leading zeros (ART 020, ART 022, ART 046, ART 047, ART 050, ART 004, MMART 003); these were matched to closed-list ART 20, ART 22, ART 46, ART 47, ART 50, ART 4 and MMART 3 and not flagged as catalog additions.",
-   "ARTH C1200 and ARTH C1100 (common course numbering) are not in the closed list and appear to replace ART 3 and ART 2 respectively.",
-   "The page prints 'General Education (Cal-GETC) and Elective Courses 36' as one combined figure for GE and electives, so ge_units was left null and no elective units were recorded separately; electives_fill_degree left false because a combined figure is printed.",
-   "Major Requirements 24 recorded as total_units; Total Units 60 recorded as degree_total.",
-   "ART 020 and ART 022 are marked '( Historical )' in the catalog listing while still printed under Required Courses; a reviewer may want to check whether they are current.",
-   "The catalog text is cut off mid-sentence ('The California General Education Transfer Curricul'); no program learning outcomes or careers appear in the supplied text."
+   "The page prints 'General Education (Cal-GETC) and Elective Courses 36' as one combined figure, so ge_units and degree_elective_units are left null and electives_fill_degree is false.",
+   "Major Requirements 24 is recorded as total_units, and Total Units 60 as degree_total.",
+   "ART 020 and ART 022 are marked '( Historical )' in the catalog table. They are matched to the closed-list entries ART 20 and ART 22 despite the leading zeros, as are ART 046, 047, 050, 004 and MMART 003.",
+   "ARTH C1100 and ARTH C1200 are not on the closed list and appear to replace ART 2 and ART 3 (C-ID common course numbering).",
+   "'A minimum of 18 semester units in the major' is a generic ADT requirement, not this award's total.",
+   "The catalog text is cut off mid-sentence ('The California General Education Transfer Curricul'). No program outcomes or careers appear in the supplied text; any outcomes after the cutoff were not captured."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

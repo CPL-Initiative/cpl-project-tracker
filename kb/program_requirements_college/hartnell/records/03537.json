@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Biology",
  "award": "A.S. Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=113",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.BIO/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10511,
+  "input_tokens": 6839,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10511,
-    "output_tokens": 2280,
+    "input_tokens": 6839,
+    "output_tokens": 1984,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,34 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 2280,
+  "output_tokens": 1984,
   "output_tokens_details": {
-   "thinking_tokens": 745
+   "thinking_tokens": 639
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08764,
- "ms": 19501,
- "seconds": 20.2,
+ "cost_usd": 0.06704,
+ "ms": 16136,
+ "seconds": 17.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 12,
    "listed": 13,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.923,
+   "missing": [
+    "PHY4C"
+   ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "MAT3B",
+    "MAT3C",
+    "STATC1000"
+   ],
+   "flagged": [
+    "MAT3B",
+    "MAT3C",
+    "STATC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -65,16 +75,16 @@
    "status": "incomplete",
    "computed": [
     37.0,
-    41.0
+    37.0
    ],
    "stated": [
-    60.0,
-    60.0
+    71.0,
+    71.0
    ],
    "against": "degree",
    "ge": null,
    "why": [
-    "the record names the degree total and the Local GE pattern, but no units for it"
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
    ]
   },
   "repeated": {
@@ -82,17 +92,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 6,
+   "program": 0,
    "courses": 0,
-   "count": 6,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -103,7 +113,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Biology - AS.BIO",
+   "section_heading": "Biology for Transfer Degree (AS-T) - AST.BIO",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -114,30 +124,18 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Local GE",
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": 60,
-    "max": 60
+    "min": 71,
+    "max": 71
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Apply the scientific method to problem solving, devising a research plan, and evaluating data and findings, incorporating principles of mathematics, physics, and chemistry.",
-    "Describe the structure and function of biological molecules, cells and organelles, tissues and organ systems of plants and animals.",
-    "Apply the principles of heredity at the molecular, cellular, and organismal levels.",
-    "Explain the mechanism and evidence of evolution through natural selection.",
-    "Apply taxonomic principles to the classification of organisms.",
-    "Describe the flow of energy within organisms and within ecosystems."
-   ],
-   "careers": [
-    "agriculture",
-    "health",
-    "research",
-    "teaching"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -195,13 +193,13 @@
     ]
    },
    {
-    "name": "Major Electives - Series: PHY2A and PHY2B",
+    "name": "Required Courses (Select 1 series, 8 units): PHY2A and PHY2B",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major Electives series",
+    "option_group": "physics series",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 8,
+     "max": 8
     },
     "courses": [
      {
@@ -221,13 +219,13 @@
     ]
    },
    {
-    "name": "Major Electives - Series: PHY4A, PHY4B and PHY4C",
+    "name": "Required Courses (Select 1 series, 8 units): PHY4A and PHY4B",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major Electives series",
+    "option_group": "physics series",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 8,
+     "max": 8
     },
     "courses": [
      {
@@ -243,21 +241,14 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "PHY4C",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Major Electives - Series: CHM12A and CHM12B",
-    "rule": "all",
+    "name": "Recommended Major Electives (None Required)",
+    "rule": "recommended",
     "minimum": null,
-    "option_group": "Major Electives series",
+    "option_group": null,
     "stated": {
      "min": null,
      "max": null
@@ -276,22 +267,47 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAT3B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAT3C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "PHY 4C",
+    "why": "not in the text"
+   }
+  ],
   "notes": [
-   "Read only the Biology - AS.BIO section (page 113); the AS-T in Biology (page 114) and Environmental Science AS-T (page 115) were ignored.",
-   "The requirement lists print no units beside any course, so every units field is null. The course pages show BIO1 and BIO2 at 4.5 credits, while the state file stores 5 units.",
-   "Major Electives reads 'Select 1 series (8-12 units)'. Each of the three series is recorded as its own block in one option_group. The 8-12 unit total applies to the choice as a whole, so it is not entered as stated on any single block.",
-   "'Total Required Credits 60' is recorded as degree_total. No major total is printed, so total_units is null.",
-   "Electives (Courses Numbered 1-199) are required when degree units plus GE units total fewer than 60. No elective units are printed, so electives_fill_degree is true.",
-   "The GE pattern is Local GE, and no GE units are printed. Required courses may double-count for GE.",
-   "Codes are written as the catalog prints them, without a space (e.g., BIO1 = closed-list BIO 1). The PHY4C title in the catalog adds 'Sound' to the state title.",
-   "The outcomes lead-in reads 'Upon completion of this course', but the outcomes are printed as Program Outcomes for this award."
+   "The page is for 'Biology for Transfer Degree (AS-T)', while the program is named as an A.S. Degree; reviewer should confirm this is the intended award.",
+   "Codes are written as the catalog prints them, without spaces (e.g., BIO1 = BIO 1).",
+   "The catalog prints no units beside individual courses, so course units are null.",
+   "'Total Required Credits 71' is recorded as degree_total; the page states that required courses may double-count with Cal-GETC, and prints no separate major total or GE unit figure.",
+   "Electives (courses numbered 1-99) are required only when degree units plus GE units total fewer than 60; no elective units printed.",
+   "The physics requirement 'Select 1 series, 8 units' is recorded as two option blocks (PHY2A/PHY2B or PHY4A/PHY4B), each with stated 8 units.",
+   "No program learning outcomes or careers are printed on this requirements page."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39895340003"
 }

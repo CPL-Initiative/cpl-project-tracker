@@ -1,0 +1,382 @@
+{
+ "college": "Berkeley City College",
+ "control_number": "43827",
+ "shape": "certificate",
+ "title": "Advanced Virtual Production",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41176",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7568,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7568,
+    "output_tokens": 2840,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2840,
+  "output_tokens_details": {
+   "thinking_tokens": 937
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08707,
+ "ms": 21195,
+ "seconds": 21.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "DIGITALSCULPTING",
+    "INTERMEDIATEVIRTUALPRODUCTION",
+    "INTRODUCTIONTOPYTHON",
+    "INTRODUCTIONTOSTUDIOPRODUCTION"
+   ],
+   "flagged": [
+    "DIGITALSCULPTING",
+    "INTERMEDIATEVIRTUALPRODUCTION",
+    "INTRODUCTIONTOPYTHON",
+    "INTRODUCTIONTOSTUDIOPRODUCTION"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    28.0
+   ],
+   "stated": [
+    25.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 15,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Advanced Virtual Production - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "virtual production",
+    "Technical Art: Modeling",
+    "Technical Artist: Environment",
+    "Technical Artist: Lighting",
+    "Technical Artist",
+    "Engine Operator",
+    "Real-Time Compositor",
+    "Virtual Camera Operator",
+    "Modeler",
+    "Animator",
+    "World Builder",
+    "VAD Artist",
+    "Production Assistant",
+    "Camera Operator",
+    "Virtual Production Stage Technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "Intermediate Virtual Production",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "Introduction to Python",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MM/AN 041A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MMART 468",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 055A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Animation:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "specialization",
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "MM/AN 003A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 020B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMART 005A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 022A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Film Production:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "specialization",
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "MM/VI 009B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/VI 009C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMART 005A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/VI 020A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/VI 020LA",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "Introduction to Studio Production",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Modeling:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "specialization",
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "MM/AN 021A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 021B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 023",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "Digital Sculpting",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Four courses are printed only by title with an asterisk ('This course is available at partner colleges'): Intermediate Virtual Production, Introduction to Python, Introduction to Studio Production, Digital Sculpting. No subject/number is printed, so the title is recorded as the code and flagged catalog_addition true; reviewer should confirm.",
+   "The catalog prints MM/AN 050, MM/AN 023, MM/AN 024, MM/AN 030 with leading zeros; these were treated as the closed list's MM/AN 50, 23, 24, 30 (catalog_addition false).",
+   "'Choose a specialization from one of the following three areas' (0.0 units) introduces the Animation, Film Production and Modeling blocks, recorded as one option_group 'specialization', each 15 units.",
+   "Total Units 25-28 matches Required Courses 10-13 plus one 15-unit specialization.",
+   "'Virtual Camera Operator' appears twice in the Career Opportunities list; recorded once. 'virtual production' taken from the description's 'entry-level careers in virtual production'.",
+   "No program learning outcomes are printed in the text.",
+   "Completion of the Virtual Production Fundamental Certificate is recommended (not required); no specific courses named for it."
+  ]
+ },
+ "extracted_run": "39891604919"
+}

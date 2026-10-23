@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Geology",
  "award": "A.S. T Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=241",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.GEL/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7749,
+  "input_tokens": 6482,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7749,
-    "output_tokens": 1678,
+    "input_tokens": 6482,
+    "output_tokens": 1019,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1678,
+  "output_tokens": 1019,
   "output_tokens_details": {
-   "thinking_tokens": 730
+   "thinking_tokens": 294
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06456,
- "ms": 13914,
- "seconds": 14.2,
+ "cost_usd": 0.04631,
+ "ms": 9014,
+ "seconds": 9.4,
  "parts": null,
  "error": null,
  "score": {
@@ -82,17 +82,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 5,
+   "program": 0,
    "courses": 0,
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 2,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -124,17 +124,8 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Examine the various earth system components and their complex interaction through inquiry-based, interdisciplinary curricula in the physical sciences.",
-    "Use observing systems, geospatial technology, computers, information processing, and data analysis.",
-    "Explain the significance of geological resources and their economic and sustainable value for long-term habitation of the planet by humans.",
-    "Apply the scientific method to knowledge acquisition and transfer of information.",
-    "Demonstrate proficiency in the areas of graphical presentation, oral communication and scientific writing."
-   ],
-   "careers": [
-    "field technician/geologist in industry (mining, oil, environmental consulting)",
-    "governmental agencies (Department of Natural Resources, Geological Surveys, National Parks)"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -195,13 +186,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requirements list prints no units beside courses; units left null. The course listing on page 242 prints Credits 4 for GEL1 and GEL6.",
-   "MAT3B is printed as 'AND MAT3B' after MAT3A under 'Complete ALL of the following Courses'; read as a required course, not an alternative.",
-   "Degree total 60 taken from 'Total Required Credits 60'; no major total is printed. Electives are required when degree units plus GE units total fewer than 60, with no units printed, so electives_fill_degree is true.",
-   "No units are printed for Cal-GETC; ge_units is null.",
-   "The outcomes lead-in reads 'Upon completion of this course' although the outcomes are printed under Program Outcomes for this degree.",
-   "GEL2 appears in the course listing on page 242 but is not part of the requirements; not recorded."
+   "Codes are printed without a space (e.g. 'GEL1'); they match the closed list's GEL 1, GEL 6, CHM 1A, CHM 1B, MAT 3A, MAT 3B.",
+   "The catalog text prints no units beside the courses, so course units are null.",
+   "MAT3A is printed with 'AND MAT3B'; both are required and recorded as separate entries.",
+   "'Total Required Credits 60' is recorded as degree_total; no major total is printed, so total_units is null.",
+   "Electives (courses numbered 1-99) are required when degree units plus GE units total fewer than 60; no elective units printed, so electives_fill_degree is true.",
+   "Cal-GETC is named as the GE pattern with no units printed; the page notes required courses may double-count for GE.",
+   "No program learning outcomes or careers appear in the text provided."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39895340003"
 }

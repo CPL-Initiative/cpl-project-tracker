@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Elementary Teacher Education",
  "award": "A.A- T Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41010",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41010",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7356,
+  "input_tokens": 7358,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7356,
-    "output_tokens": 3025,
+    "input_tokens": 7358,
+    "output_tokens": 2969,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3025,
+  "output_tokens": 2969,
   "output_tokens_details": {
-   "thinking_tokens": 1096
+   "thinking_tokens": 985
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08992,
- "ms": 23741,
- "seconds": 24.3,
+ "cost_usd": 0.08881,
+ "ms": 22883,
+ "seconds": 23.5,
  "parts": null,
  "error": null,
  "score": {
@@ -391,7 +391,7 @@
   "missing_explained": [
    {
     "code": "MATH 18",
-    "why": "not in the text; catalog prints EDUC 018 with the same title (Mathematical Concepts for Teachers), recorded as a catalog addition"
+    "why": "not in the text; catalog prints EDUC 018 Mathematical Concepts for Teachers (same title) instead"
    },
    {
     "code": "ENGL 001B",
@@ -407,13 +407,13 @@
    }
   ],
   "notes": [
-   "The 'Required Courses' heading prints 29.0-30.0 units, which matches neither the eight required courses alone (26 units) nor the full major (39-44); recorded as printed on the required-courses block. Reviewer should check.",
-   "The page prints 'General Education (Cal-GETC) and Elective Requirements 16-21' as a combined figure for GE and electives; ge_units left null because no separate GE figure is printed, and no elective units are recorded.",
-   "Catalog codes use leading zeros (BIOL 010, CHDEV 051, ART 001, etc.) and were matched to the closed list's codes without zeros.",
-   "EDUC 018 'Mathematical Concepts for Teachers' appears in the closed list as MATH 18; marked catalog_addition because the subject differs. Reviewer should confirm whether this is the same course renumbered.",
-   "The science requirement 'Select one set of courses from the following: 4.0-8.0' is recorded as two blocks in option_group 'Science set'.",
-   "Catalog text is cut off mid-sentence in the Program Description; no program learning outcomes appear in the supplied text."
+   "The 'Required Courses' header prints 29.0-30.0 units, but its listed required courses sum to 26; the figure appears to include the following 'Select one course' (3-4 units) block. Recorded as printed on the Required Courses block.",
+   "Major Requirements 39-44 recorded as total_units; Total Units 60 recorded as degree_total.",
+   "The page prints 'General Education (Cal-GETC) and Elective Requirements 16-21', a combined figure for GE and electives; ge_units left null and no elective units recorded because the figure is not split.",
+   "EDUC 018 (Mathematical Concepts for Teachers) is not in the closed list; the closed list has MATH 18 with the same title, likely a renumbered course. Reviewer should check.",
+   "Closed-list codes without leading zeros (BIOL 10, CHDEV 51, EDUC 1, ART 1, GEOL 10, PHYS 10) were matched to catalog codes BIOL 010, CHDEV 051, EDUC 001, ART 001, GEOL 010, PHYS 010.",
+   "The catalog text is cut off mid-sentence in the Program Description ('60 units that are eligible for transfer to the Cal'); any outcomes, careers or elective wording after that point is not available. No program learning outcomes appear in the text provided."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

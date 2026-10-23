@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Mathematics 2.0",
  "award": "A.S. T Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40030",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40030",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6739,
+  "input_tokens": 6741,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6739,
-    "output_tokens": 1436,
+    "input_tokens": 6741,
+    "output_tokens": 1394,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1436,
+  "output_tokens": 1394,
   "output_tokens_details": {
-   "thinking_tokens": 518
+   "thinking_tokens": 525
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05568,
- "ms": 13086,
- "seconds": 13.6,
+ "cost_usd": 0.05484,
+ "ms": 12056,
+ "seconds": 12.6,
  "parts": null,
  "error": null,
  "score": {
@@ -223,12 +223,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "CIS 006 in the catalog is taken as the closed list's CIS 6 (same title and units); not marked as a catalog addition.",
-   "Major Requirements printed as 26 units, recorded as total_units; Total Units 60 recorded as degree_total.",
-   "The page prints 34 units for 'General Education (CalGETC) and Elective Courses' combined; recorded as ge_units, but that figure includes unspecified electives, so the GE pattern alone may be fewer units. No separate elective units are printed.",
-   "The third learning outcome is cut off in the text ('Representation/Communication: Represent relevant informatio'); it was not recorded because it is incomplete, and further outcomes may follow. Reviewer should check the source page.",
-   "The Career Opportunities section names only transfer to a 4-year university, not a career, so careers is empty."
+   "CIS 006 as printed in the catalog is treated as the closed-list course CIS 6 (same title and units); not marked as a catalog addition.",
+   "The 34 units are printed as 'General Education (CalGETC) and Elective Courses 34', a combined figure for GE and electives; recorded in ge_units but a reviewer should check, since no separate GE or elective figure is printed.",
+   "The third learning outcome ('Representation/Communication: Represent relevant informatio...') is cut off in the text and was not recorded; there may be further outcomes beyond the truncation.",
+   "The 'Career Opportunities' section names only transfer to a 4-year university, not a career, so careers is empty."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

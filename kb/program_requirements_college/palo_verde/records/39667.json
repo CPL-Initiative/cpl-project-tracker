@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "English",
  "award": "A.A- T Degree",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/english-2025-2026-fall-2025fa",
- "record_shape": 5,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=111&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6383,
+  "input_tokens": 6645,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6383,
-    "output_tokens": 2453,
+    "input_tokens": 6645,
+    "output_tokens": 1549,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,34 @@
     "model": null
    }
   ],
-  "output_tokens": 2453,
+  "output_tokens": 1549,
   "output_tokens_details": {
-   "thinking_tokens": 1208
+   "thinking_tokens": 475
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07459,
- "ms": 21325,
- "seconds": 21.9,
+ "cost_usd": 0.05756,
+ "ms": 13552,
+ "seconds": 14.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 8,
    "listed": 8,
-   "share": 0.875,
-   "missing": [
-    "ENGLC1002"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ENG102",
-    "THA110"
-   ],
-   "flagged": [
-    "ENG102",
-    "THA110"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -75,15 +68,16 @@
     63.0
    ],
    "stated": [
-    59.0,
-    63.0
+    60.0,
+    60.0
    ],
    "against": "degree",
    "ge": [
     34.0,
     38.0
    ],
-   "why": []
+   "why": [],
+   "within": true
   },
   "repeated": {
    "codes": [],
@@ -104,21 +98,28 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "English A.A. Degree for Transfer",
+   "section_heading": "English, AA-T",
    "measure": "units",
    "total_units": {
     "min": null,
     "max": null
    },
    "open_elective_units": 7,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "CalGETC",
    "degree_total": {
-    "min": 59,
-    "max": 63
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": 34,
@@ -133,7 +134,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core: (6 units)",
+    "name": "Required Core",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -143,14 +144,14 @@
     },
     "courses": [
      {
-      "code": "ENG102",
+      "code": "ENGL C1001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "ENGLC1001",
+      "code": "ENGL C1002",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -159,7 +160,7 @@
     ]
    },
    {
-    "name": "List A: (6 units)",
+    "name": "List A",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": null,
@@ -169,21 +170,21 @@
     },
     "courses": [
      {
-      "code": "ENG140",
+      "code": "ENG 140",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENG222",
+      "code": "ENG 222",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENG122",
+      "code": "ENG 122",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -192,7 +193,7 @@
     ]
    },
    {
-    "name": "List B: (3 units)",
+    "name": "List B",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -202,7 +203,7 @@
     },
     "courses": [
      {
-      "code": "ENG120",
+      "code": "ENG 120",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -211,7 +212,7 @@
     ]
    },
    {
-    "name": "List C: (3 units)",
+    "name": "List C",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -221,21 +222,14 @@
     },
     "courses": [
      {
-      "code": "ENG125",
+      "code": "ENG 125",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "THA110",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "BUS202",
+      "code": "BUS 202",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -245,21 +239,15 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ENGL C1002",
-    "why": "not in the text; ENG102 - Composition and Introduction to Literature appears in its place in the Required Core"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The page header prints 'Units: 60.0 Units' while Program Requirements prints 'English (Total 59 - 63)'; the 59-63 figure (core, lists, 7 elective units and CalGETC 34-38) is recorded as degree_total. No separate major total is printed; total_units left null.",
-   "Electives line reads 'Electives (any GE course that has not been used) 7'; recorded as open_elective_units 7, though it is limited to GE courses not already used rather than any course.",
-   "Required Core and List B say 'Complete the following number of credits' equal to the sum of all listed courses, so they are recorded as 'all'.",
-   "ENG102 and THA110 are not in the closed list (catalog additions). ENG102 may be the local equivalent of ENGL C1002.",
-   "Codes are written as printed without spaces (e.g., ENG140 for ENG 140).",
+   "The page prints 'Credits: 60.0' for the whole degree and no total for the major; recorded as degree_total. The '18 semester units' sentence is a generic AA-T requirement, not this award's major total, so total_units is null.",
+   "Electives - Total 7 Credits ('Any GE course that has not been used') is printed outside every list; recorded as open_elective_units 7 against the degree total.",
+   "List B prints only one course (ENG 120) with Total 3 Credits; recorded as 'all'. Reviewer may check whether the catalog list is truncated.",
+   "List A and List C have no explicit 'select' wording; read 'Total N Credits' as choose N units from the list.",
    "The description mentions 'a variety of careers requiring strong skills in communication and verbal expression' but names no specific career, so careers is empty.",
-   "Program outcomes are printed under the heading 'Associate in Arts in English'."
+   "The two Program Outcomes are printed for the program page as a whole and recorded for this award."
   ]
  },
- "extracted_run": "38567765687"
+ "extracted_run": "39852997888"
 }

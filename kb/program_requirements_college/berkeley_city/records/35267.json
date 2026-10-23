@@ -1,0 +1,299 @@
+{
+ "college": "Berkeley City College",
+ "control_number": "35267",
+ "shape": "certificate",
+ "title": "Multimedia Arts Core",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39967/41007/40939/41092",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7709,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7709,
+    "output_tokens": 2898,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2898,
+  "output_tokens_details": {
+   "thinking_tokens": 1306
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0888,
+ "ms": 26261,
+ "seconds": 26.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 17,
+   "share": 0.824,
+   "missing": [
+    "MM/DI3",
+    "MM/DI3L",
+    "MM/DI4L"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MM/VI1A",
+    "MM/VI5"
+   ],
+   "flagged": [
+    "MM/VI1A",
+    "MM/VI5"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Multimedia Arts-Video Arts - A. A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "MMART 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 040A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/MW 001A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/MW 001LA",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/VI 009A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Core Electives: Select 6 units",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "MMART 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMART 197",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMART 468",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/DI 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/MW 002",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/MW 002L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/MW 004A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/MW 004LA",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/VI 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MMART 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MM/VI 001A",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MM/DI 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "MM/DI 003L",
+    "why": "not in the text"
+   },
+   {
+    "code": "MM/DI 004L",
+    "why": "not in the text; catalog prints MM/DI 004 alone at 3 units with no lab"
+   }
+  ],
+  "notes": [
+   "The supplied text is the Multimedia Arts-Video Arts A.A. Degree page, not a section for the Multimedia Arts Core Certificate of Achievement. No certificate heading, total, outcomes or careers are printed for this award.",
+   "Blocks recorded are the A.A. page's 'Required Core Courses' (13) and 'Core Electives: Select 6 units' (6), read as the likely Multimedia Arts Core; this is an inference and should be verified against the certificate's own catalog page. The A.A.-only 'Required Video Courses' and video elective blocks were not recorded.",
+   "The A.A. totals (Major Requirements 41, General Education and Elective Courses 21, Total Units 62) belong to the degree, not this certificate, and were not recorded.",
+   "In Core Electives, MM/MW 002 + MM/MW 002L and MM/MW 004A + MM/MW 004LA are printed as AND pairs forming single 3-unit choices; they are listed as separate entries.",
+   "Catalog codes MMART 003, MMART 001 and MM/DI 004 are treated as the closed list's MMART 3, MMART 1 and MM/DI 4; MM/DI 004 is printed at 3 units whereas the state file stores 2 units plus a separate 1-unit lab MM/DI 004L.",
+   "Closed-list MM/DI 3 and MM/DI 003L (Contemporary Color) do not appear in the text, suggesting the certificate's actual requirements differ from the A.A. core.",
+   "The A.A. description names 'entry-level jobs in video production and editing fields' and 'multimedia or film related jobs', but these belong to the A.A. program, so careers left empty; the Career Opportunities text is cut off."
+  ]
+ },
+ "extracted_run": "39891604919"
+}

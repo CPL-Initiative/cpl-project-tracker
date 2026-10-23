@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Social Sciences",
  "award": "A.A. Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40069",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40069",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8625,
+  "input_tokens": 8627,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8625,
-    "output_tokens": 2915,
+    "input_tokens": 8627,
+    "output_tokens": 2828,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2915,
+  "output_tokens": 2828,
   "output_tokens_details": {
-   "thinking_tokens": 411
+   "thinking_tokens": 321
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0928,
- "ms": 21462,
- "seconds": 22.1,
+ "cost_usd": 0.09107,
+ "ms": 20714,
+ "seconds": 21.3,
  "parts": null,
  "error": null,
  "score": {
@@ -491,13 +491,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes with zero padding (e.g., AFRAM 001); treated as the same courses as the closed list's unpadded codes (AFRAM 1), so not catalog additions.",
-   "Distribution rule: 9 units from one discipline, 9 more from a second discipline, and the remaining 5-6 units from two disciplines not previously selected.",
-   "POSCI 019 and POSCI 020 are printed as 'same as SOCSC 019/020'; the SOCSC cross-listings are recorded as alternatives and are not in the closed list.",
-   "The page prints 'General Education and Elective Courses 36-37' as a combined figure with no named GE pattern; ge_units left null and no separate elective units recorded.",
-   "Total Units 60 recorded as degree_total; Major Requirements 23-24 recorded as total_units.",
-   "No program learning outcomes appear in the text; the Career Opportunities section is cut off mid-sentence and names no specific careers (only 'job promotion')."
+   "Distribution rule: 9 units from one discipline, 9 units from a second discipline, and the remaining 5-6 units from two disciplines not previously selected.",
+   "Catalog prints codes with zero padding (e.g., AFRAM 001); matched to closed-list codes without padding (AFRAM 1).",
+   "POSCI 019 and POSCI 020 are printed 'same as SOCSC 019/020'; the SOCSC cross-listings are recorded as alternatives with catalog_addition true and assumed 3 units (units printed only once for the pair).",
+   "Page prints 'General Education and Elective Courses 36-37' as a combined figure; no GE pattern or separate GE units are named, so ge_units, ge_pattern and degree_elective_units are left null.",
+   "Degree total of 60 is printed as this award's 'Total Units'.",
+   "No program learning outcomes printed in the text.",
+   "Career Opportunities section names no specific careers and is cut off mid-sentence ('considering a maj')."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

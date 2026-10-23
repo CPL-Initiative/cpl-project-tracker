@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Communication Studies 2.0",
  "award": "A.A- T Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39972",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39972",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7044,
+  "input_tokens": 7046,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7044,
-    "output_tokens": 1900,
+    "input_tokens": 7046,
+    "output_tokens": 1939,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1900,
+  "output_tokens": 1939,
   "output_tokens_details": {
-   "thinking_tokens": 642
+   "thinking_tokens": 523
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06618,
- "ms": 14986,
- "seconds": 15.5,
+ "cost_usd": 0.06696,
+ "ms": 14854,
+ "seconds": 15.3,
  "parts": null,
  "error": null,
  "score": {
@@ -283,20 +283,22 @@
   "missing_explained": [
    {
     "code": "COMM 20",
-    "why": "not in the text; catalog lists COMM C1004 Interpersonal Communication instead"
+    "why": "not in the text; catalog lists COMM C1004 Interpersonal Communication in the required courses instead"
    },
    {
     "code": "ENGL 001B",
-    "why": "not in the text; catalog lists ENGL C1002 Introduction to Literature instead"
+    "why": "not in the text; catalog lists ENGL C1002 Introduction to Literature in List B instead"
    }
   ],
   "notes": [
-   "Catalog prints codes zero-padded (COMM 005, ANTHR 003, MM/VI 017, SOC 001); matched to closed-list codes COMM 5, ANTHR 3, MM/VI 17, SOC 1 etc.",
-   "COMM 005, COMM 004, COMM 003 and ANTHR 003 are marked '( Historical )' in the catalog listing.",
-   "The page prints 'General Education (Cal-GETC) and Elective Units 41-42' as one combined figure; ge_units left null because it is not a GE-only total, and electives_fill_degree left false because units are printed (combined with GE).",
-   "Catalog text is cut off mid-sentence ('A grade of “C” or \"P\" or b'); any outcomes or careers sections after that point are not in the text.",
-   "Degree total 60 is printed as 'Total Units 60' for this award."
+   "Catalog codes printed with leading zeros (COMM 005, COMM 004, COMM 006, COMM 019, COMM 003, COMM 010, ANTHR 003, MM/VI 017, SOC 001) were matched to closed-list codes without the zeros (COMM 5, COMM 4, etc.).",
+   "COMM C1004 (Interpersonal Communication) appears to replace closed-list COMM 20 (Interpersonal Communication Skills); recorded as a catalog addition.",
+   "ENGL C1002 appears in List B in place of closed-list ENGL 001B; recorded as a catalog addition.",
+   "The page prints 'General Education (Cal-GETC) and Elective Units 41-42' as a combined figure for GE and electives; ge_units and degree_elective_units left null because no separate GE or elective figure is printed.",
+   "Total Units 60 recorded as degree_total; Major Requirements 18-19 recorded as total_units.",
+   "Several courses are marked '( Historical )' (COMM 005, COMM 004, ANTHR 003, COMM 003) though still listed in requirements for 2026-2027; reviewer may want to check.",
+   "Catalog text is cut off mid-sentence at the end ('A grade of “C” or \"P\" or b'); no outcomes or careers section appears in the text provided."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Liberal Studies - Teacher Preparation",
  "award": "A.A. Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40021",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40021",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6776,
+  "input_tokens": 6778,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6776,
-    "output_tokens": 1548,
+    "input_tokens": 6778,
+    "output_tokens": 1503,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,7 +30,7 @@
     "model": null
    }
   ],
-  "output_tokens": 1548,
+  "output_tokens": 1503,
   "output_tokens_details": {
    "thinking_tokens": 452
   },
@@ -38,8 +38,8 @@
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05806,
- "ms": 12752,
+ "cost_usd": 0.05717,
+ "ms": 12824,
  "seconds": 13.2,
  "parts": null,
  "error": null,
@@ -237,12 +237,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes with leading zeros (BIOL 010, CHDEV 051, EDUC 001, etc.); these match closed-list codes BIOL 10, CHDEV 51, EDUC 1, etc.",
-   "EDUC 097 is printed as 4.0 units in the catalog, while the state file stores EDUC 97 at 2 units; listed course units sum to 32, matching the printed Required Courses and Major Requirements total of 32.",
-   "ENGL 047 and SOC 013 are marked '( Historical )' in the catalog listing; reviewer may wish to confirm they remain required for 2026-2027.",
-   "Page prints 'General Education and Elective Courses 28' as a combined figure; no GE pattern is named and no separate GE or elective units are printed, so ge_units, ge_pattern and degree_elective_units are left null.",
-   "Careers: text also mentions work in after-school programs and Head Start programs and qualifying for California's Associate Teacher permits; only 'para-educators' was recorded as a named job title."
+   "Catalog prints codes with leading zeros (e.g., BIOL 010); matched to closed-list codes without zeros (BIOL 10, etc.).",
+   "EDUC 097 is printed at 4.0 units in the catalog; the state file stores 2 units.",
+   "ENGL 047 and SOC 013 are marked '( Historical )' in the catalog listing but are still printed as required courses.",
+   "The page prints 'General Education and Elective Courses 28' as a combined figure; no GE pattern is named and GE units are not separated from electives, so ge_units and degree_elective_units are left null.",
+   "Major Requirements 32 recorded as total_units; Total Units 60 recorded as degree_total.",
+   "Careers: only 'para-educators' is named as an occupation; the text also mentions working in after-school programs and Head Start programs and qualifying for Associate Teacher permits, which were not recorded as job titles."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

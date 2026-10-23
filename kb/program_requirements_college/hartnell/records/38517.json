@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Film, Television, and Electronic Media",
  "award": "A.S. T Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=392",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.FTVE/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8537,
+  "input_tokens": 6704,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8537,
-    "output_tokens": 2779,
+    "input_tokens": 6704,
+    "output_tokens": 1536,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2779,
+  "output_tokens": 1536,
   "output_tokens_details": {
-   "thinking_tokens": 1414
+   "thinking_tokens": 604
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08973,
- "ms": 23549,
- "seconds": 24.0,
+ "cost_usd": 0.05754,
+ "ms": 12868,
+ "seconds": 13.4,
  "parts": null,
  "error": null,
  "score": {
@@ -82,17 +82,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 0,
    "courses": 0,
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 19,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -124,39 +124,14 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Demonstrate proficiency in theatre, film, television, and electronic media terminology and performance skills, its basic theories, history and techniques, culminating in media production or live performance on stage.",
-    "Conduct and apply analysis and research skills of dramatic texts and instructional materials.",
-    "Work effectively as an ensemble member in a fully produced production formulating alternative solutions to theatrical, film, television, & electronic media production situations.",
-    "Analyze, interpret, and evaluate their own and others' work in theatre, film, television & electronic media as a patron and participant."
-   ],
-   "careers": [
-    "camera operator",
-    "production technician",
-    "documentary filmmaker",
-    "video producer",
-    "radio DJ",
-    "radio technician",
-    "production assistant",
-    "video editor",
-    "actor",
-    "teacher",
-    "commercial production technician",
-    "media technician",
-    "concert venue technician",
-    "theme park technician",
-    "stage manager",
-    "designer",
-    "art director",
-    "facilities manager",
-    "technical director"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
     "name": "Required Core",
-    "rule": "all",
-    "minimum": null,
+    "rule": "choose_courses",
+    "minimum": 2,
     "option_group": null,
     "stated": {
      "min": null,
@@ -181,8 +156,8 @@
    },
    {
     "name": "Major Electives - List A",
-    "rule": "all",
-    "minimum": null,
+    "rule": "choose_courses",
+    "minimum": 2,
     "option_group": null,
     "stated": {
      "min": null,
@@ -247,14 +222,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The PDF layout appears offset: the requirements table printed directly under the FTVE (AS-T) heading on page 392 lists theatre courses (TAC1, TAC3, TAC10, TAC20-29, TAC40, TAC11, TAC30, TAC2) and seems to belong to the preceding Theatre Arts AA-T program, while the requirements printed after the FTVE outcomes on page 393 (under a misplaced 'Theatre Performance - NCCT.TPER' heading) list exactly the closed-list FTVE courses with Cal-GETC and a 60-credit total. This record uses the page 393 FTVE course set; a reviewer should confirm.",
-   "No units are printed beside any course in the requirements; units left null.",
-   "Required Core and List A say 'Complete at least 2 of the following courses' with exactly two entries each (List A entries have OR alternatives), so they were recorded as 'all'.",
-   "'Contemporary Cinematic Arts' printed after TAC57 and TAC59 titles appears to be a layout artifact.",
-   "'Total Required Credits 60' is recorded as degree_total; electives are required when degree plus GE units total fewer than 60, with no units printed, so electives_fill_degree is true.",
-   "The catalog description calls the degree 'AA-T in FTVE' although the heading and program type say AS-T.",
-   "The fourth program outcome continues across the page break onto page 393. The outcomes lead-in says 'Upon completion of this course' but they are printed as Program Outcomes for this award."
+   "The page prints no units beside any course; units are null throughout.",
+   "Required Core says 'Complete at least 2 of the following Courses' over exactly two courses (TAC57, TAC58), so both are effectively required; recorded as choose_courses with minimum 2.",
+   "List A says 'Complete at least 2 of the following Courses' over two 'or' pairs (TAC59 or TAC61; TAC54 or TAC51); read as one course from each pair.",
+   "List B is headed 'Select one of the following' with 'Complete ANY of the following Courses'; recorded as choose 1 course.",
+   "'Total Required Credits 60' recorded as degree_total; no major total is printed. Cal-GETC units are not printed.",
+   "Electives (courses numbered 1-99) are required when degree units plus GE units total fewer than 60; electives_fill_degree set true.",
+   "Course codes are printed without a space (e.g., TAC57) and match closed-list codes such as TAC 57.",
+   "No program learning outcomes or careers appear in the text."
   ]
  },
- "extracted_run": "39090050931"
+ "extracted_run": "39895340003"
 }

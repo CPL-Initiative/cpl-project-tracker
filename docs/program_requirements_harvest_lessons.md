@@ -780,6 +780,59 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S451 (2026-10-23): Hartnell by its site, the S449 queue landed, one display build
+
+Sam opened S451 with the harvest queue ("keep going with the Commons PR harvest"); the Sheet 115 session (S450) had
+published the sheet and stopped. No decision from Sam this run; Sheet 115 card 1 had no reply, so the 25 older-build
+rows stand.
+
+- **Hartnell's vendor-hosted Coursedog catalog names the tab Requirements, and the site now reads 96 of 112.** Page read
+  39853502958 (S449) showed the tab link (`/programs/AA.ADD/requirements-ipyf8`) where Merced's catalog says Requisites;
+  page read 39891644835 showed the tab as the capture reads it: one course a line (`ADJ1: Introduction to
+  Administration of Justice`, `STATC1000: Introduction to Statistics`), no credits on the line, one "Total Required
+  Credits 60" at the foot, and a transfer degree's letters written `(AS-T)`. `CD_REQUISITES` knows either name,
+  `CD_TOTAL` trusts either total line for the direct read, and `cd_award_words` reads the hyphen. The free site read
+  (run 39892327918) listed 100, read 99 program pages (98 direct; `AA.SPA`, Spanish, missed) and found 96 of 112 where
+  the PDF found 73 (S410), page-claimed 8, not found 1 (High School Equivalency Preparation, noncredit). **So a Coursedog
+  catalog reads from its site by default** (`prefer_site`), and `route=pdf` keeps the PDF procedure step for one run;
+  Hartnell's procedure record still names the PDF step, set aside, not rewritten. Extraction 39895340003: 96 for $6.46,
+  10 passing the machine checks, 85 failing arithmetic because the tab prints no course units; the display builder
+  fills a course's units from the state's file (`units_from_state_file`), so the records place their courses and show
+  units. Load 39897654311: 24 inserted, 70 kept, 2 placing none. NEXT: a reconcile step that reads each course's units
+  from the catalog's course pages, so Hartnell's arithmetic check can pass.
+- **The S449 free captures, measured against main before any spend** (found / page-claimed / not found, main's in
+  parentheses): Berkeley City 90 / 6 / 1 (67 / 3 / 27), every one of the 23 regained a Multimedia Arts program, so
+  `cq_pages` on the current reader does read the Requirements child; Mt. San Antonio 397 / 11 / 20 (382 / 11 / 35),
+  16 new pages (noncredit ESL, HSE and vocational programs on `adult-basic-education/` and `esl/` pages, Administration
+  of Justice AS-T, Dance Teacher), 12 moved, 12 changed, 1 newly page-claimed (CIS Professional in Excel and Access);
+  Long Beach City 368 / 15 / 2 (367 / 14 / 4), 4 new, 4 moved (the Administration of Justice pages), 3 newly
+  page-claimed (two Computer Support Specialist awards, Business Information Worker, each keeping its loaded record);
+  Victor Valley 176 / 9 / 16 (178 / 7 / 16), nothing moved, the two department-list losses S449 explained. A preview's
+  `found` is a count and its `would_extract` list is the measure of what an extraction sends.
+- **An extraction sends only what moved; the summary's `cost_usd` sums the kept records' stored costs too.** Mt. San
+  Antonio's extraction (39891607837) kept 357 records filed from the same page and sent 40 (the log's line), in 95
+  seconds, yet its summary reads 397 extracted and $22.47: the kept records carry their 2026-10-15 costs. Read the
+  job log's `kept N records ...; M to extract` line for the spend, never the summary.
+- **Berkeley City extracted all 90 ($5.81), 34 passing; load 39895334688 inserted 23 and kept 66 (1 placing none);
+  reread 39895712663 replaced 66.** 56 fail arithmetic: a curriQunet Requirements tab prints codes without a total the
+  record can reconcile, as at the other curriQunet colleges.
+- **Palo Verde on its Acalog catalog:** load 39891599387 inserted 15 and kept 51 (the catalog moved, so every page
+  moved); reread 39891946981 replaced 51; 38 of 66 pass. **Cypress:** load 39891601778 inserted 17, kept 251, 6
+  placing none (the HVAC and Administration of Justice programs on department pages); reread 39891949270 replaced 1.
+- **The builder's dated registry read was five days behind the census.** The 2026-10-18 census had moved every row's
+  `census_run_id` and six catalogs (Palo Verde to Acalog; Miramar, Merritt, Berkeley City and Butte an `/iq/` tail;
+  College of the Desert from a custom page to CourseLeaf 2026-2027), and S444's mapper hosts sat on 37 rows. Re-read
+  through the Supabase MCP, all 114 rows, before the build. Four registry colleges hold no records and stay out of the
+  read (Diablo Valley, North Orange Continuing Education, San Jose City, Santiago Canyon).
+- **Mt. San Antonio:** extraction 39891607837 sent 40 (357 kept); load 39898177865 inserted 15, kept 368, 14 placing
+  none (the regained noncredit ESL, HSE and vocational programs read `adult-basic-education/` and `esl/` department
+  pages that list no course of theirs, so the load leaves them out); reread 39898856949 replaced 15, held 1. Long
+  Beach City's extraction (39891611701) was still running at the wave; it joins the next.
+- **Display build 25fe751ccd0a** covers Palo Verde, Cypress, Berkeley City, Hartnell and Mt. San Antonio: 17505 programs
+  (17,414 in be2635ed5b73). A PR that loads records without a build fails `tests/roep_display_test.py` (#2366, closed
+  into the wave PR for that reason): a college's load and its build travel together.
+- **#2365:** the page reader's `cq_view` and three S449 plans, merged on test green.
+
 ## S449 SkyBuckwheat (2026-10-22): the queue after S448, Palo Verde's new catalog, a reader view for curriQunet
 
 Sam opened S449 with the standard line and said nothing more in session; the funding side session and a second

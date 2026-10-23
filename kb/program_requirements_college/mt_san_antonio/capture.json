@@ -5,26 +5,29 @@
  "catalog_year": "2026-2027",
  "programs": 469,
  "with_closed_list": 428,
- "started": "2026-10-10T15:36:42Z",
+ "started": "2026-10-23T02:51:00Z",
+ "scope": null,
  "sitemap": {
   "url": "https://catalog.mtsac.edu/sitemap.xml",
   "status": 200,
   "listed": 741,
   "nested": 0,
-  "program_pages": 565,
+  "program_pages": 569,
   "refused": null,
   "errors": null
  },
- "pages_read": 564,
- "loads": 575,
- "seconds": 2803.0,
- "found": 382,
+ "pages_read": 568,
+ "child_pages": 9,
+ "banner_h1": null,
+ "loads": 580,
+ "seconds": 2866.0,
+ "found": 397,
  "by_method": {
-  "link_search": 19,
+  "link_search": 25,
   "no_closed_list": 41,
-  "not_found": 35,
+  "not_found": 20,
   "page_claimed": 11,
-  "sitemap_page": 363
+  "sitemap_page": 372
  },
  "shared_pages": {
   "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/": [
@@ -41,6 +44,13 @@
    "14039",
    "22172"
   ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/": [
+   "24058",
+   "30805",
+   "36115",
+   "36870",
+   "43729"
+  ],
   "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-international-business/international-business--level-2/": [
    "24107",
    "24431"
@@ -49,24 +59,35 @@
    "24171",
    "41569"
   ],
-  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/college-readiness-healthcare-programs/": [
-   "30805",
-   "38783"
-  ],
   "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/": [
    "30847",
    "45123"
+  ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/": [
+   "36375",
+   "36803"
+  ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-equivalency-ged/": [
+   "36843",
+   "36871"
   ],
   "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-generalist/": [
    "38020",
    "41228"
   ],
-  "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/": [
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/": [
    "38082",
    "38094",
    "38097",
    "42726",
-   "42727"
+   "42727",
+   "42753",
+   "42754",
+   "42755",
+   "42756",
+   "42757",
+   "42758",
+   "43747"
   ],
   "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/baking-and-pastry-advanced-certificate/": [
    "38084",
@@ -85,177 +106,474 @@
   {
    "control_number": "15574",
    "title": "Radio Broadcasting On-the-Air",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/radio-broadcasting/audio-media-degree/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.875,
+    "body": 0.875,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2838,
+     "content": 48596,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      83
+     ]
+    ]
+   }
   },
   {
    "control_number": "22151",
    "title": "Landscape Equipment Technology",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   },
   {
    "control_number": "22161",
    "title": "Radio Broadcasting: On-Air",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/radio-broadcasting/audio-media-certificate/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.875,
+    "body": 0.875,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2840,
+     "content": 48596,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      83
+     ]
+    ]
+   }
   },
   {
    "control_number": "24056",
    "title": "Health Care Interpreting",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/care-coordinator-level-1/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2680,
+     "content": 47070,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   },
   {
    "control_number": "24075",
    "title": "Sports Turf Management",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/park-sports-turf-management/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4169,
+     "content": 50605,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      423
+     ]
+    ]
+   }
   },
   {
    "control_number": "24088",
    "title": "Landscape Irrigation",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-irrigation-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2973,
+     "content": 49326,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      324
+     ]
+    ]
+   }
   },
   {
    "control_number": "24111",
    "title": "Landscape Equipment Technology",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   },
   {
    "control_number": "24113",
    "title": "Landscape and Park Maintenance",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-park-maintenance-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2861,
+     "content": 49232,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      342
+     ]
+    ]
+   }
   },
   {
    "control_number": "24215",
    "title": "Tree Care and Maintenance",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/tree-care-maintenance-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2867,
+     "content": 49211,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      313
+     ]
+    ]
+   }
   },
   {
    "control_number": "24248",
    "title": "Landscape Design and Construction",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-construction-certificate/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2862,
+     "content": 49322,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      430
+     ]
+    ]
+   }
   },
   {
    "control_number": "24284",
    "title": "Computer Systems Technology",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-computer-systems-technology/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3280,
+     "content": 50769,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      363
+     ]
+    ]
+   }
   },
   {
    "control_number": "24342",
    "title": "Interior Landscaping",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/interior-landscaping-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2933,
+     "content": 49270,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      308
+     ]
+    ]
+   }
   },
   {
    "control_number": "24374",
    "title": "Park Management",
-   "award": null
-  },
-  {
-   "control_number": "35611",
-   "title": "VESL Career Paths",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "36115",
-   "title": "Financial and Database Management",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "36843",
-   "title": "HSE Reading and Language Arts",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "36870",
-   "title": "ASVAB Test Preparation",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "36871",
-   "title": "HSE Mathematics",
-   "award": "Noncredit program"
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2558,
+     "content": 47250,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   },
   {
    "control_number": "39518",
    "title": "iOS Programming",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-in-c-programming/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.429,
+    "body": 0.429,
+    "content": 0.0,
+    "net": 3,
+    "listed": 7,
+    "why": "coverage 0.43 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3871,
+     "content": 50131,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      286
+     ]
+    ]
+   }
   },
   {
    "control_number": "40187",
    "title": "Android Programming",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
-  },
-  {
-   "control_number": "42033",
-   "title": "College Readiness for Math and English",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42753",
-   "title": "ESL Oral Communication - Literacy Level",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42754",
-   "title": "ESL Oral Communication - Advanced Level",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42755",
-   "title": "ESL Written Communication - Beginning Level",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42756",
-   "title": "ESL Oral Communication - Beginning Level",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42757",
-   "title": "ESL Oral Communication - Intermediate Level",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42758",
-   "title": "ESL Written Communication - Literacy Level",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "43373",
-   "title": "Post Production for Film and Television",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
-  },
-  {
-   "control_number": "43729",
-   "title": "Engineering Topics",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "43747",
-   "title": "ESL - Literacy Level",
-   "award": "Noncredit program"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-in-c-programming/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.143,
+    "body": 0.143,
+    "content": 0.0,
+    "net": 1,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 1 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3871,
+     "content": 50131,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      286
+     ]
+    ]
+   }
   },
   {
    "control_number": "43754",
    "title": "Registered Behavior Technician",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-registered-behavior-technician/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3484,
+     "content": 51212,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      556
+     ]
+    ]
+   }
   },
   {
    "control_number": "43777",
    "title": "Digital Media Specialist",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   },
   {
    "control_number": "43999",
    "title": "Regenerative Communities",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   },
   {
    "control_number": "44367",
    "title": "Dietary Manager",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   },
   {
    "control_number": "45423",
    "title": "Speech Language Pathology Assistant",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   }
  ],
  "page_claimed": [
@@ -300,32 +618,6 @@
    ]
   },
   {
-   "control_number": "31598",
-   "title": "Adult High School Diploma",
-   "award": "Noncredit program",
-   "pages": [
-    "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/"
-   ]
-  },
-  {
-   "control_number": "32542",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://catalog.mtsac.edu/programs/programsaz/social-justice/aa-social-justice-transfer/"
-   ]
-  },
-  {
-   "control_number": "32892",
-   "title": "Dance Teacher",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "pages": [
-    "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/dance-aa/",
-    "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/aa-liberal-arts-sciences-emphasis-kinesiology-wellness/",
-    "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/kinesiology-aa-t/"
-   ]
-  },
-  {
    "control_number": "33436",
    "title": "Landscape Design -  Level II",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
@@ -336,10 +628,19 @@
    ]
   },
   {
+   "control_number": "35611",
+   "title": "VESL Career Paths",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/"
+   ]
+  },
+  {
    "control_number": "37544",
    "title": "HS English Competency",
    "award": "Noncredit program",
    "pages": [
+    "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/",
     "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/"
    ]
   },
@@ -353,6 +654,26 @@
    ]
   },
   {
+   "control_number": "40142",
+   "title": "CIS Professional in Excel and Acces",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-computerized-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-level-iii-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/computer-software/microcomputer-productivity-software/",
+    "https://catalog.mtsac.edu/programs/programsaz/computer-programming/programming-in-c/",
+    "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-degree/"
+   ]
+  },
+  {
+   "control_number": "42033",
+   "title": "College Readiness for Math and English",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/"
+   ]
+  },
+  {
    "control_number": "46551",
    "title": "Spanish",
    "award": "A.A- T Degree",
@@ -362,9 +683,416 @@
   }
  ],
  "coverage_bands": {
-  "0.5-0.8": 15,
-  "0.8-1.0": 54,
-  "1.0": 313
+  "0.5-0.8": 10,
+  "0.8-1.0": 44,
+  "1.0": 343
  },
- "run": "38064250199"
+ "would_extract": {
+  "against": "kb/program_requirements_college/mt_san_antonio",
+  "kept": 357,
+  "programs": 40,
+  "list": [
+   {
+    "control_number": "03007",
+    "title": "Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-degree/",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08053",
+    "title": "Accounting - Computerized",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-computerized-certificate/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-computerized-certificate/",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08063",
+    "title": "Administrative Assistant Level III",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-level-iii-certificate/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-level-iii-certificate/",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08078",
+    "title": "Airframe and Aircraft Powerplant Maintenance Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/airframe-aircraft-powerplant-maintenance-technology-evening/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/airframe-and-aircraft-powerplant-maintenance-technology-day/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "12010",
+    "title": "Aircraft Powerplant Maintenance Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/aircraft-powerplant-maintenance-technology-day-certificate/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/aircraft-powerplant-maintenance-technology-evening-certificate/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "16544",
+    "title": "Cloud and Network Cyber Security Administration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-network-administration-and-security-management/cloud-network-cyber-security-management/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/computer-network-administration-and-security-management/cloud-network-cyber-security-management/",
+    "was_coverage": 0.895,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18237",
+    "title": "Liberal Arts and Sciences: Information Technology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-database-management-systems/information_technology_aa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/computer-database-management-systems/information_technology_aa/",
+    "was_coverage": 0.593,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19250",
+    "title": "Computer Programming",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/computer-programming/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/computer-programming/",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22167",
+    "title": "Programming in C++",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/programming-in-c/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-in-c-programming/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "24058",
+    "title": "Basic Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/bs/",
+    "was_coverage": 1.0,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "24171",
+    "title": "Electronics and Computer Engineering Technology",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30805",
+    "title": "Basic Career Readiness",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/college-readiness-healthcare-programs/",
+    "was_coverage": 0.5,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "31598",
+    "title": "Adult High School Diploma",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32542",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/administration-justice/as-administration-justice-transfer/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32892",
+    "title": "Dance Teacher",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/dance-teacher-certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33876",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/as-early-childhood-education-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/child-development/as-early-childhood-education-transfer/",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36115",
+    "title": "Financial and Database Management",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36375",
+    "title": "Office Computer Applications - Level 1",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/officecomputerapplicationslevel1text/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36803",
+    "title": "Sewing and Tailoring",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/sewingandtailoringtext/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36843",
+    "title": "HSE Reading and Language Arts",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-equivalency-ged/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36870",
+    "title": "ASVAB Test Preparation",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36871",
+    "title": "HSE Mathematics",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-equivalency-ged/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38082",
+    "title": "ESL - Beginning Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
+    "was_coverage": 0.909,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "38094",
+    "title": "ESL - Advanced Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
+    "was_coverage": 0.938,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "38097",
+    "title": "ESL - Intermediate Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
+    "was_coverage": 0.909,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "38731",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/biology-as-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/biology-as-degree/",
+    "was_coverage": 0.96,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40141",
+    "title": "CIS Professional in JAVA Programming",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-java-programming/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-java-programming/",
+    "was_coverage": 0.727,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40186",
+    "title": "CIS Professional in Web Programming",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-web-programming/",
+    "coverage": 0.714,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-web-programming/",
+    "was_coverage": 0.571,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42652",
+    "title": "Agriculture Animal Sciences",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/agriculture-animal-science-degree/",
+    "coverage": 0.9,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/agriculture-animal-science-degree/",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42726",
+    "title": "ESL Written Communication - Advanced Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
+    "was_coverage": 1.0,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "42727",
+    "title": "ESL Written Communication - Intermediate Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
+    "was_coverage": 1.0,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "42753",
+    "title": "ESL Oral Communication - Literacy Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42754",
+    "title": "ESL Oral Communication - Advanced Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42755",
+    "title": "ESL Written Communication - Beginning Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42756",
+    "title": "ESL Oral Communication - Beginning Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42757",
+    "title": "ESL Oral Communication - Intermediate Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42758",
+    "title": "ESL Written Communication - Literacy Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43373",
+    "title": "Post Production for Film and Television",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/television/post-production-for-film-and-television-certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43729",
+    "title": "Engineering Topics",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43747",
+    "title": "ESL - Literacy Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ]
+ },
+ "run": "39891607837"
 }

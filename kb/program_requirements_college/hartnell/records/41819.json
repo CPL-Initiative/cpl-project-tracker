@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Technical Support",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=159",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.TS/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6446,
+  "input_tokens": 13958,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6446,
-    "output_tokens": 1196,
+    "input_tokens": 13958,
+    "output_tokens": 1827,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,56 @@
     "model": null
    }
   ],
-  "output_tokens": 1196,
+  "output_tokens": 1827,
   "output_tokens_details": {
-   "thinking_tokens": 456
+   "thinking_tokens": 956
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0497,
- "ms": 10937,
- "seconds": 11.1,
+ "cost_usd": 0.09237,
+ "ms": 16875,
+ "seconds": 17.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 1,
    "listed": 5,
-   "share": 1.0,
-   "missing": [],
-   "unexplained": [],
+   "share": 0.2,
+   "missing": [
+    "CSS169",
+    "CSS50",
+    "CSS53",
+    "CSS57"
+   ],
+   "unexplained": [
+    "CSS169",
+    "CSS50",
+    "CSS53",
+    "CSS57"
+   ],
    "none_placed": false,
-   "pass": true
+   "pass": false
   },
   "invented": {
-   "count": 0,
-   "codes": [],
+   "count": 4,
+   "codes": [
+    "CIS50",
+    "CIS53",
+    "CIS57",
+    "CIS59"
+   ],
    "flagged": [],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
+    16.0,
     16.0
    ],
    "stated": [
@@ -72,9 +87,7 @@
     16.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 15.0-16.0; the catalog states 16.0-16.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -86,7 +99,7 @@
    "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -102,7 +115,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Program Requirements",
+   "section_heading": "Technical Support - CT.TS",
    "measure": "units",
    "total_units": {
     "min": 16,
@@ -139,38 +152,38 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 16,
+     "max": 16
     },
     "courses": [
      {
-      "code": "CSS50",
+      "code": "CIS50",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CSS169",
+      "code": "CIS59",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CSS53",
+      "code": "CIS53",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS43",
+      "code": "CIS57",
       "units": null,
       "units_max": null,
       "alternatives": [
        {
-        "code": "CSS57",
+        "code": "BUS43",
         "units": null,
         "catalog_addition": false
        }
@@ -183,12 +196,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The extracted text begins mid-section on page 159; the program's own title heading (Technical Support Certificate of Achievement) is not in the text, so 'Program Requirements' is used as the section heading.",
-   "The catalog prints no units beside individual courses; course units are left null. 'Total Required Credits 16' is recorded as total_units.",
-   "BUS43 'OR' CSS57 is read as one required choice; the 16-unit total matches four 4-unit courses, though CSS 57 is 3 units in the state file (15 units if chosen).",
-   "Outcomes lead-in reads 'Upon completion of this course' although printed under Program Outcomes; recorded as program outcomes.",
-   "Codes are printed without a space (e.g., CSS50) and are matched to closed-list codes (CSS 50)."
+   "The rendered page prints the computer courses with prefix CIS (CIS50, CIS59, CIS53, CIS57) while the closed list and the page's embedded degree-map data use CSS (CSS 50, CSS 169, CSS 53, CSS 57). Titles match exactly, so these were treated as the closed-list courses (catalog_addition false); reviewer should confirm.",
+   "'CIS59: IT Essentials' appears to correspond to CSS 169 IT Essentials (the page's requisite data lists CIS169 and the degree map CSS169); the printed '59' may be a display error.",
+   "The page prints no units beside individual courses; units left null. 'Total Required Credits 16' recorded as total_units and as the block's stated total.",
+   "CIS57 (3 units in state file) OR BUS43 (4 units) recorded as one entry with an alternative; with CIS57 the sum would be 15, not 16.",
+   "Program learning outcomes were taken from the page's embedded learningOutcomes data (not visible as a rendered heading); trailing whitespace trimmed.",
+   "Career taken from the description: 'entry-level computer technical support careers'."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39895340003"
 }

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "American Sign Language",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/american-sign-language-certificate-of-career-preparation-2019-20-fall-2019fa",
- "record_shape": 4,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=231&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5220,
+  "input_tokens": 6420,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5220,
-    "output_tokens": 1526,
+    "input_tokens": 6420,
+    "output_tokens": 1441,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1526,
+  "output_tokens": 1441,
   "output_tokens_details": {
-   "thinking_tokens": 532
+   "thinking_tokens": 587
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0514,
- "ms": 13195,
- "seconds": 13.8,
+ "cost_usd": 0.0545,
+ "ms": 12094,
+ "seconds": 12.6,
  "parts": null,
  "error": null,
  "score": {
@@ -54,30 +55,23 @@
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "SOC101",
-    "SPE101",
-    "THA151"
-   ],
-   "flagged": [
-    "SOC101",
-    "SPE101",
-    "THA151"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
-    15.0,
-    15.0
+    16.0,
+    16.0
    ],
    "stated": [
-    15.0,
-    15.0
+    16.0,
+    16.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -85,9 +79,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 3,
    "courses": 0,
-   "count": 2,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -95,104 +89,90 @@
    "pass": true
   },
   "careers": {
-   "count": 4,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "American Sign Language Certificate of Career Preparation",
+   "section_heading": "American Sign Language, Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": 15,
-    "max": 15
+    "min": 16,
+    "max": 16
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
-    "Acquired fundamental understanding of the principles and practices of American Sign Language",
-    "Acquired fundamental knowledge of the Code of Professional Conduct per the National Association of the Deaf (NAD) and the Registry of Interpreters for the Deaf, Inc. (RID), which will assist students in their participation in an Interpreters Training Program."
+    "Upon successful completion of the Certificate of Achievement in American Sign Language, students will be able to demonstrate conversational proficiency in ASL, apply knowledge of Deaf culture and community norms in appropriate contexts, and effectively communicate with Deaf and Hard of Hearing individuals in educational, professional, and community settings.",
+    "Students will also be able to recognize the ethical considerations and professional standards relevant to sign language interpretation and related fields.",
+    "Acquired fundamental understanding of the principles and practices of American Sign Language"
    ],
    "careers": [
-    "sign language interpreter",
+    "working with Deaf and Hard of Hearing individuals",
+    "sign language interpreters",
     "teachers",
     "nurses",
-    "emergency services personnel"
+    "emergency service personnel",
+    "entry-level positions assisting Deaf and Hard of Hearing individuals"
    ]
   },
   "blocks": [
    {
-    "name": "Required Core Courses: 12 units",
+    "name": "Required Core Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 12,
-     "max": 12
+     "min": 16,
+     "max": 16
     },
     "courses": [
      {
-      "code": "ASL131",
-      "units": 3,
+      "code": "ASL 131",
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ASL132",
-      "units": 3,
+      "code": "ASL 132",
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ASL134",
-      "units": 3,
+      "code": "ASL 134",
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ASL135",
-      "units": 3,
+      "code": "ASL 135",
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Electives: Choose a minimum of one course from the list below",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 3
-    },
-    "courses": [
-     {
-      "code": "SOC101",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPE101",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THA151",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      }
     ]
    }
@@ -200,13 +180,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog text is for the 'American Sign Language Certificate of Career Preparation' (15 units), not a Certificate of Achievement of 16 to fewer than 30 units as the program record states; the source URL also references 2019-20 Fall 2019. A reviewer should confirm this is the correct award and catalog year.",
-   "Catalog prints ASL codes without a space (ASL131, ASL134); these are treated as matching closed-list ASL 131 and ASL 134.",
-   "Catalog lists each ASL course at 3 units, while the state file stores 4 units for ASL 131 and ASL 134.",
-   "Core block reads 'Complete the following number of credits: 12' with four 3-unit courses, so all four are required; recorded as 'all'.",
-   "Electives block says 'Choose a minimum of one course' and 'Complete the following number of credits: 3'; recorded as choose 1 course (3 units).",
-   "The description also mentions qualifying for 'an entry level position assisting the deaf or hard of hearing'; not recorded as a career title."
+   "The closed list writes ASL132 and ASL135 without a space; they were matched to the catalog's ASL 132 and ASL 135 and not flagged as catalog additions.",
+   "The page states 'Credits: 16' and 'Required Core Courses - Total 16 Credits'; recorded as 16 units.",
+   "The first outcome embeds its lead-in ('Upon successful completion ... students will be able to') in the same sentence, and the second begins 'Students will also be able to'. Both were kept whole as printed rather than cut mid-sentence.",
+   "Careers include occupations named as professionals who might take the program for continuing education (teachers, nurses, emergency service personnel). A reviewer may wish to confirm whether these should count as careers."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "39852997888"
 }
