@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 112,
  "with_closed_list": 105,
- "started": "2026-10-22T20:41:08Z",
+ "started": "2026-10-23T02:59:19Z",
  "route": "site (CAPTURE_ROUTE=site; the PDF procedure step set aside for this run)",
  "coursedog": {
   "root": "https://hartnell.catalog.prod.coursedog.com",
@@ -13,86 +13,27 @@
   "listed": 100,
   "programs": 100,
   "errors": [],
-  "requisites_suffix": null,
-  "program_pages": 0,
-  "direct": 0,
+  "requisites_suffix": "requirements-ipyf8",
+  "program_pages": 99,
+  "direct": 98,
   "missed": [
-   "CT.ADD",
-   "AA.ADD",
-   "CT.ADJ",
-   "AS.ADJ",
-   "AST.ADJ",
-   "AS.AAT",
-   "AS.ADT",
-   "AS.MECHA",
-   "CT.AGR",
-   "AST.AGR",
-   "AST.APS",
-   "AS.AGRI",
-   "CT.AGFS",
-   "CT.AGRP",
-   "AS.AST",
-   "NCCT.BCL",
-   "AS.BIO",
-   "AST.BIO",
-   "AST.BUS2",
-   "CT.BIW1",
-   "CT.BIW2",
-   "CT.BOTB",
-   "CT.BST",
-   "AS.BST",
-   "AS.DWMD",
-   "CT.MD",
-   "CT.WD",
-   "CT.CALGETC",
-   "AST.CHM",
-   "AA.CHCX",
-   "CT.CCN",
-   "AAT.COM2",
-   "AS.PCN",
-   "AS.CISCS",
-   "CT.CISC",
-   "CT.PCN",
-   "AST.CS",
-   "AS.CMA",
-   "CT.CS",
-   "AA.DA",
-   "CT.DA",
-   "AS.ECE",
-   "CT.ECE",
-   "AST.ECE",
-   "AAT.ECO",
-   "AAT.ETP",
-   "CT.EMT",
-   "AS.EGN",
-   "CT.EGN",
-   "NCCT.ENGM.ADV",
-   "NCCT.ENGM.BEG",
-   "NCCT.ENGM.HIGH",
-   "NCCT.ENGM.INT",
-   "NCCT.ENGM.LOW",
-   "AAT.ENG",
-   "AST.ES",
-   "AST.FTVE",
-   "CT.FS",
-   "CT.MECHA",
-   "AA.GAH"
+   "AA.SPA"
   ],
   "catalog": [
-   {
-    "code": "CT.ADD",
-    "name": "Addiction Studies"
-   },
    {
     "code": "AA.ADD",
     "name": "Addiction Studies"
    },
    {
-    "code": "CT.ADJ",
-    "name": "Administration of Justice"
+    "code": "CT.ADD",
+    "name": "Addiction Studies"
    },
    {
     "code": "AS.ADJ",
+    "name": "Administration of Justice"
+   },
+   {
+    "code": "CT.ADJ",
     "name": "Administration of Justice"
    },
    {
@@ -168,11 +109,11 @@
     "name": "Business Office Technology - Bookkeeping"
    },
    {
-    "code": "CT.BST",
+    "code": "AS.BST",
     "name": "Business Office Technology-Information Processing"
    },
    {
-    "code": "AS.BST",
+    "code": "CT.BST",
     "name": "Business Office Technology-Information Processing"
    },
    {
@@ -372,19 +313,19 @@
     "name": "Nursing-Registered Nursing"
    },
    {
-    "code": "AS.NVN",
-    "name": "Nursing-Vocational Nursing"
-   },
-   {
     "code": "CT.NVN",
     "name": "Nursing-Vocational Nursing"
    },
    {
-    "code": "CT.PHO",
-    "name": "Photography"
+    "code": "AS.NVN",
+    "name": "Nursing-Vocational Nursing"
    },
    {
     "code": "AA.PHO",
+    "name": "Photography"
+   },
+   {
+    "code": "CT.PHO",
     "name": "Photography"
    },
    {
@@ -424,11 +365,11 @@
     "name": "Sociology for Transfer (AA-T)"
    },
    {
-    "code": "CT.SPA",
+    "code": "AA.SPA",
     "name": "Spanish"
    },
    {
-    "code": "AA.SPA",
+    "code": "CT.SPA",
     "name": "Spanish"
    },
    {
@@ -481,658 +422,45 @@
    }
   ]
  },
- "pages_read": 0,
+ "pages_read": 99,
  "child_pages": 0,
  "banner_h1": null,
- "loads": 101,
- "seconds": 795.1,
- "found": 0,
+ "loads": 103,
+ "seconds": 927.4,
+ "found": 96,
  "by_method": {
   "no_closed_list": 7,
-  "not_found": 105
+  "not_found": 1,
+  "page_claimed": 8,
+  "sitemap_page": 96
  },
- "shared_pages": {},
+ "shared_pages": {
+  "https://hartnell.catalog.prod.coursedog.com/programs/AST.BIO/requirements-ipyf8": [
+   "03537",
+   "35107"
+  ],
+  "https://hartnell.catalog.prod.coursedog.com/programs/AST.ADJ/requirements-ipyf8": [
+   "03585",
+   "31971"
+  ],
+  "https://hartnell.catalog.prod.coursedog.com/programs/AAT.PSY/requirements-ipyf8": [
+   "18353",
+   "32037"
+  ],
+  "https://hartnell.catalog.prod.coursedog.com/programs/AAT.SPA/requirements-ipyf8": [
+   "19518",
+   "33051"
+  ],
+  "https://hartnell.catalog.prod.coursedog.com/programs/AAT.COM2/requirements-ipyf8": [
+   "31146",
+   "43620"
+  ],
+  "https://hartnell.catalog.prod.coursedog.com/programs/AST.PH2/requirements-ipyf8": [
+   "35458",
+   "44729"
+  ]
+ },
  "not_found": [
-  {
-   "control_number": "03537",
-   "title": "Biology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "03539",
-   "title": "Business Office Technology: Bookkeeping",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "03545",
-   "title": "Business Office Technology--Information Processing",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "03547",
-   "title": "Kinesiology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "03562",
-   "title": "Welding Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "03570",
-   "title": "Nursing-Registered Nursing",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "03571",
-   "title": "Nursing--Vocational Nursing",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "03585",
-   "title": "Administration of Justice",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "03588",
-   "title": "Early Childhood Education",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "08871",
-   "title": "Computer Science and Information Systems-Computer Science",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "08872",
-   "title": "Computer Science and Information Systems-Network and Security",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "08886",
-   "title": "Photography",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "08904",
-   "title": "Chicanx Studies",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "08909",
-   "title": "Digital Arts",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "11803",
-   "title": "Agriculture Business with an Area of Emphasis",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "12331",
-   "title": "Agriculture Production",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "15426",
-   "title": "Computer Science and Information Systems - Digital Web and Mobile Development Option",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "17910",
-   "title": "General Studies: STEM",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "17911",
-   "title": "General Studies: Social and Behavioral Sciences",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "17912",
-   "title": "General Studies: Arts and Humanities",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "17913",
-   "title": "General Studies: Ethnic Groups in the United States",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "17914",
-   "title": "General Studies: Language and Rationality",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "17924",
-   "title": "Liberal Arts: Pathway to Health Sciences",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "17977",
-   "title": "Agriculture Business",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18353",
-   "title": "Psychology",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19106",
-   "title": "CSU General Education Breadth",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19107",
-   "title": "IGETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19518",
-   "title": "Spanish",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19718",
-   "title": "Addiction Studies",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19719",
-   "title": "Addiction Studies",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21422",
-   "title": "Business Office Technology--Information Processing",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21423",
-   "title": "Digital Arts",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21424",
-   "title": "Computer Science and Information Systems - Web Development Option",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21439",
-   "title": "Welding Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21444",
-   "title": "Photography",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21450",
-   "title": "Administration of Justice",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30621",
-   "title": "Construction - Sustainable Construction: Construction Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30822",
-   "title": "Mathematics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31146",
-   "title": "Communication Studies",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31268",
-   "title": "Early Childhood Education",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31392",
-   "title": "English",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31406",
-   "title": "Political Science",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31591",
-   "title": "Agriculture Production",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31592",
-   "title": "Computer Science and Information Systems-Network and Security",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31593",
-   "title": "Computer Science and Information Systems: Computer Science",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31778",
-   "title": "Astronomy",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31804",
-   "title": "Elementary Teacher Education",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31971",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32036",
-   "title": "Sociology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32037",
-   "title": "Psychology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32365",
-   "title": "Physics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32375",
-   "title": "Studio Arts",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32529",
-   "title": "Automotive Technology - Advanced Diesel Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32930",
-   "title": "History",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32981",
-   "title": "Kinesiology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33050",
-   "title": "Theatre Arts",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33051",
-   "title": "Spanish",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33176",
-   "title": "Music",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33385",
-   "title": "Economics",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33851",
-   "title": "Engineering",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35065",
-   "title": "Theatre Arts & Cinema",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35105",
-   "title": "Geology",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35107",
-   "title": "Biology",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35108",
-   "title": "Chemistry",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35458",
-   "title": "Public Health Science",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35613",
-   "title": "Agriculture Business",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36694",
-   "title": "Construction Management and Architecture",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36985",
-   "title": "Manufacturing Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37130",
-   "title": "Computer Science and Information Systems - Mobile Development Option",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37916",
-   "title": "Computer Science",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37950",
-   "title": "Agriculture Plant Science",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38211",
-   "title": "Social Justice",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38224",
-   "title": "Business Information Worker Level 1",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38232",
-   "title": "Business Information Worker Level 2",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38501",
-   "title": "Engineering Fundamentals",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38517",
-   "title": "Film, Television, and Electronic Media",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39248",
-   "title": "Vocational Nursing",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39564",
-   "title": "Law, Public Policy, and Society",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40051",
-   "title": "Advanced Automotive Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40261",
-   "title": "Basic Computer Literacy",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
   {
    "control_number": "40742",
    "title": "High School Equivalency Preparation",
@@ -1140,211 +468,1051 @@
    "near_miss": {
     "why": "no page read names the program"
    }
-  },
-  {
-   "control_number": "41819",
-   "title": "Technical Support",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41922",
-   "title": "Cisco Certified Network Associate",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41985",
-   "title": "Cybersecurity",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42135",
-   "title": "Business Administration 2.0",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42385",
-   "title": "Food Safety",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43066",
-   "title": "Emergency Medical Technician - Level 1",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43119",
-   "title": "Sustainable Crop Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43121",
-   "title": "Small Farm",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43559",
-   "title": "First Line Supervisor",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43607",
-   "title": "English for Multilingual Speakers–Beginning",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43608",
-   "title": "English for Multilingual Speakers–Advanced",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43609",
-   "title": "English for Multilingual Speakers–High Intermediate",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43610",
-   "title": "English for Multilingual Speakers–Low Intermediate",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43620",
-   "title": "Communication Studies 2.0",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43776",
-   "title": "English for Multilingual Speakers-Intermediate",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43809",
-   "title": "Agricultural Mechatronics",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43821",
-   "title": "Foundations of Agricultural Mechatronics",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43887",
-   "title": "Music",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44161",
-   "title": "Theatre Performance",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44525",
-   "title": "Spanish",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44537",
-   "title": "Respiratory Care",
-   "award": "Baccalaureate of Science (B.S.) Degree.",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44574",
-   "title": "Workforce and Academic Readiness",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44729",
-   "title": "Public Health",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45096",
-   "title": "CalGETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
   }
  ],
- "page_claimed": [],
+ "page_claimed": [
+  {
+   "control_number": "08872",
+   "title": "Computer Science and Information Systems-Network and Security",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://hartnell.catalog.prod.coursedog.com/programs/CT.CS/requirements-ipyf8"
+   ]
+  },
+  {
+   "control_number": "17913",
+   "title": "General Studies: Ethnic Groups in the United States",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://hartnell.catalog.prod.coursedog.com/programs/AA.GSB/requirements-ipyf8",
+    "https://hartnell.catalog.prod.coursedog.com/programs/CT.CALGETC/requirements-ipyf8"
+   ]
+  },
+  {
+   "control_number": "17914",
+   "title": "General Studies: Language and Rationality",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://hartnell.catalog.prod.coursedog.com/programs/AA.GAH/requirements-ipyf8",
+    "https://hartnell.catalog.prod.coursedog.com/programs/CT.CALGETC/requirements-ipyf8"
+   ]
+  },
+  {
+   "control_number": "19106",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://hartnell.catalog.prod.coursedog.com/programs/CT.CALGETC/requirements-ipyf8"
+   ]
+  },
+  {
+   "control_number": "19107",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://hartnell.catalog.prod.coursedog.com/programs/CT.CALGETC/requirements-ipyf8"
+   ]
+  },
+  {
+   "control_number": "30621",
+   "title": "Construction - Sustainable Construction: Construction Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://hartnell.catalog.prod.coursedog.com/programs/AS.CMA/requirements-ipyf8"
+   ]
+  },
+  {
+   "control_number": "31591",
+   "title": "Agriculture Production",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGRP/requirements-ipyf8",
+    "https://hartnell.catalog.prod.coursedog.com/programs/AS.AGRI/requirements-ipyf8",
+    "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGSF/requirements-ipyf8",
+    "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGSC/requirements-ipyf8"
+   ]
+  },
+  {
+   "control_number": "36985",
+   "title": "Manufacturing Technology",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://hartnell.catalog.prod.coursedog.com/programs/AS.WLD/requirements-ipyf8",
+    "https://hartnell.catalog.prod.coursedog.com/programs/AS.MECHA/requirements-ipyf8"
+   ]
+  }
+ ],
  "coverage_bands": {
-  "0.5-0.8": 0,
-  "0.8-1.0": 0,
-  "1.0": 0
+  "0.5-0.8": 5,
+  "0.8-1.0": 18,
+  "1.0": 73
  },
  "would_extract": {
   "against": "kb/program_requirements_college/hartnell",
   "kept": 0,
-  "programs": 0,
-  "list": []
+  "programs": 96,
+  "list": [
+   {
+    "control_number": "03537",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.BIO/requirements-ipyf8",
+    "coverage": 0.923,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=113",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "03539",
+    "title": "Business Office Technology: Bookkeeping",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.BOTB/requirements-ipyf8",
+    "coverage": 0.889,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=128",
+    "was_coverage": 0.889,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "03545",
+    "title": "Business Office Technology--Information Processing",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.BST/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=124",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "03547",
+    "title": "Kinesiology",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.KIN/requirements-ipyf8",
+    "coverage": 0.915,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "03562",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.WLD/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=408",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "03570",
+    "title": "Nursing-Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.NRN/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=292",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "03571",
+    "title": "Nursing--Vocational Nursing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.NVN/requirements-ipyf8",
+    "coverage": 0.938,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=304",
+    "was_coverage": 0.938,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "03585",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ADJ/requirements-ipyf8",
+    "coverage": 0.5,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=61",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "03588",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ECE/requirements-ipyf8",
+    "coverage": 0.941,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=183",
+    "was_coverage": 0.941,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "08871",
+    "title": "Computer Science and Information Systems-Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.CISCS/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=153",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "08886",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.PHO/requirements-ipyf8",
+    "coverage": 0.941,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=97",
+    "was_coverage": 0.941,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "08904",
+    "title": "Chicanx Studies",
+    "award": "A.A. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.CHCX/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=234",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "08909",
+    "title": "Digital Arts",
+    "award": "A.A. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.DA/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=96",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "11803",
+    "title": "Agriculture Business with an Area of Emphasis",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.AGRI/requirements-ipyf8",
+    "coverage": 0.972,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "12331",
+    "title": "Agriculture Production",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGRP/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "15426",
+    "title": "Computer Science and Information Systems - Digital Web and Mobile Development Option",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.DWMD/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "17910",
+    "title": "General Studies: STEM",
+    "award": "A.A. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.GSTEM/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "17911",
+    "title": "General Studies: Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.GSB/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "17912",
+    "title": "General Studies: Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.GAH/requirements-ipyf8",
+    "coverage": 0.989,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "17924",
+    "title": "Liberal Arts: Pathway to Health Sciences",
+    "award": "A.A. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.LPHS/requirements-ipyf8",
+    "coverage": 0.897,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "17977",
+    "title": "Agriculture Business",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGR/requirements-ipyf8",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18353",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.PSY/requirements-ipyf8",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19518",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.SPA/requirements-ipyf8",
+    "coverage": 0.667,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=382",
+    "was_coverage": 0.667,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "19718",
+    "title": "Addiction Studies",
+    "award": "A.A. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.ADD/requirements-ipyf8",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19719",
+    "title": "Addiction Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.ADD/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21422",
+    "title": "Business Office Technology--Information Processing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.BST/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=129",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21423",
+    "title": "Digital Arts",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.DA/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=99",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21424",
+    "title": "Computer Science and Information Systems - Web Development Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.WD/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21439",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.WLD/requirements-ipyf8",
+    "coverage": 0.917,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=409",
+    "was_coverage": 0.917,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21444",
+    "title": "Photography",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.PHO/requirements-ipyf8",
+    "coverage": 0.9,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=100",
+    "was_coverage": 0.9,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21450",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ADJ/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=63",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "30822",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.MAT/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=270",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31146",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.COM2/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=148",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31268",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ECE/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=184",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31392",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.ENG/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=210",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31406",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.POL/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=343",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31592",
+    "title": "Computer Science and Information Systems-Network and Security",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.PCN/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=158",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31593",
+    "title": "Computer Science and Information Systems: Computer Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.CISC/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=156",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31778",
+    "title": "Astronomy",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.AST/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=109",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31804",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.ETP/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31971",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ADJ/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=62",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32036",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT-SOC/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=378",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32037",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.PSY/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=347",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32365",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.PHY/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=338",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32375",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.SART/requirements-ipyf8",
+    "coverage": 0.917,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=98",
+    "was_coverage": 0.917,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32529",
+    "title": "Automotive Technology - Advanced Diesel Technology",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ADT/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=77",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32930",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.HIS/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=252",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32981",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.KIN/requirements-ipyf8",
+    "coverage": 0.968,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "33050",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.THA/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=391",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33051",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.SPA/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=383",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33176",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.MUS/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=280",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33385",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.ECO/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=194",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33851",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.EGN/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=202",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35065",
+    "title": "Theatre Arts & Cinema",
+    "award": "A.A. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.TAC/requirements-ipyf8",
+    "coverage": 0.96,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=390",
+    "was_coverage": 0.96,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35105",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.GEL/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=241",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35107",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.BIO/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=114",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35108",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.CHM/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=143",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35458",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.PH2/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35613",
+    "title": "Agriculture Business",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.AGR/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=82",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36694",
+    "title": "Construction Management and Architecture",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.CMA/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=173",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "37130",
+    "title": "Computer Science and Information Systems - Mobile Development Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.MD/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37916",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.CS/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=155",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "37950",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.APS/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38211",
+    "title": "Social Justice",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.SJ/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=374",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38224",
+    "title": "Business Information Worker Level 1",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.BIW1/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=126",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38232",
+    "title": "Business Information Worker Level 2",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.BIW2/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=127",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38501",
+    "title": "Engineering Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.EGN/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=204",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38517",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.FTVE/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=392",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39248",
+    "title": "Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.NVN/requirements-ipyf8",
+    "coverage": 0.667,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=302",
+    "was_coverage": 0.667,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39564",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.LAW/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40051",
+    "title": "Advanced Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.AAT/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=71",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40261",
+    "title": "Basic Computer Literacy",
+    "award": "Noncredit program",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.BCL/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=131",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41819",
+    "title": "Technical Support",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.TS/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=159",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41922",
+    "title": "Cisco Certified Network Associate",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.CCN/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=156",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41985",
+    "title": "Cybersecurity",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.CS/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=157",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42135",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.BUS2/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=125",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42385",
+    "title": "Food Safety",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGFS/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43066",
+    "title": "Emergency Medical Technician - Level 1",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.EMT/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=199",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43119",
+    "title": "Sustainable Crop Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGSC/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43121",
+    "title": "Small Farm",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGSF/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43559",
+    "title": "First Line Supervisor",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.FS/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=130",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43607",
+    "title": "English for Multilingual Speakers–Beginning",
+    "award": "Noncredit program",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.BEG/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=221",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43608",
+    "title": "English for Multilingual Speakers–Advanced",
+    "award": "Noncredit program",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.ADV/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=220",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43609",
+    "title": "English for Multilingual Speakers–High Intermediate",
+    "award": "Noncredit program",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.HIGH/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=222",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43610",
+    "title": "English for Multilingual Speakers–Low Intermediate",
+    "award": "Noncredit program",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.LOW/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=224",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43620",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.COM2/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=148",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43776",
+    "title": "English for Multilingual Speakers-Intermediate",
+    "award": "Noncredit program",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.INT/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=223",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43809",
+    "title": "Agricultural Mechatronics",
+    "award": "A.S. Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.MECHA/requirements-ipyf8",
+    "coverage": 0.696,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=260",
+    "was_coverage": 0.826,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43821",
+    "title": "Foundations of Agricultural Mechatronics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.MECHA/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=261",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43887",
+    "title": "Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.MUS/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=281",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44161",
+    "title": "Theatre Performance",
+    "award": "Noncredit program",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.TPER/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=393",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44525",
+    "title": "Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.SPA/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=384",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44537",
+    "title": "Respiratory Care",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/BS.RC/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=355",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44574",
+    "title": "Workforce and Academic Readiness",
+    "award": "Noncredit program",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.WAR/requirements-ipyf8",
+    "coverage": 0.75,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=131",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44729",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.PH2/requirements-ipyf8",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=247",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45096",
+    "title": "CalGETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.CALGETC/requirements-ipyf8",
+    "coverage": 0.987,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ]
  },
- "run": "39850594534"
+ "run": "39892327918"
 }
