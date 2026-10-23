@@ -4,6 +4,8 @@ date: 2026-10-22
 session: 447 (SkyBrittlebush)
 tags: [handoff, program-requirements-harvest, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_452_handoff.md
 ---
 
 # You are Session 448

@@ -831,7 +831,9 @@ rows stand.
 - **Display build 25fe751ccd0a** covers Palo Verde, Cypress, Berkeley City, Hartnell and Mt. San Antonio: 17505 programs
   (17,414 in be2635ed5b73). A PR that loads records without a build fails `tests/roep_display_test.py` (#2366, closed
   into the wave PR for that reason): a college's load and its build travel together.
-- **#2365:** the page reader's `cq_view` and three S449 plans, merged on test green.
+- **#2365:** the page reader's `cq_view` and three S449 plans, merged on test green. **#2367**, the wave, merged on
+  test green after two lint rounds: a course outcomes test pinned Palo Verde's eLumen address (now Modesto Junior,
+  and Palo Verde's Acalog catalog is asserted refused), and the dependency map's line numbers had moved.
 
 ## S449 SkyBuckwheat (2026-10-22): the queue after S448, Palo Verde's new catalog, a reader view for curriQunet
 

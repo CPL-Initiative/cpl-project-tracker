@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-22T21:10:00Z",
-  "session": 449,
-  "moniker": "SkyBuckwheat",
+  "written_at": "2026-10-23T04:58:52Z",
+  "session": 451,
+  "moniker": "SkyLupine",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_450_handoff.md",
+  "handoff": "docs/session_452_handoff.md",
   "next_step": {
-    "title": "Land Palo Verde's and Cypress's new records, then Berkeley City's Multimedia Arts and Hartnell by its site",
-    "text": "Load and reread Palo Verde's 66 records from its new 2026-2027 catalog and Cypress's 18 new ones, then one display build; read Berkeley City's free capture and make the curriQunet reader read each entry's child pages; teach the Coursedog site reader the tab Hartnell's catalog names."
+    "title": "Land Long Beach City, then the next thin colleges",
+    "text": "Load and reread Long Beach City's extraction (run 39891611701, 13 programs moved) and build its display; then a free capture at Canada, San Mateo, East LA and Marin, the colleges under 60 percent that no S443 to S447 rule has reached; Hartnell's course units want a reconcile step from the catalog's course pages."
   },
   "calls": [
     {
@@ -49,20 +49,28 @@
   },
   "changes": [
     {
-      "at": "2026-10-22T16:16:00Z",
-      "text": "CPL Pathways reads its record list six pages at a time after the first, about 3 seconds instead of 10, and its Pathway list can be cleared."
+      "at": "2026-10-23T02:50:00Z",
+      "text": "Palo Verde loaded and reread on its Acalog 2026-2027 catalog: 15 inserted, 51 replaced."
     },
     {
-      "at": "2026-10-22T18:30:00Z",
-      "text": "CPL Pathways gained a search box after the college, an alphabetical Pathway list, and a My College section for the chosen college."
+      "at": "2026-10-23T02:54:00Z",
+      "text": "Cypress loaded and reread: 17 inserted, 251 kept, 1 replaced."
     },
     {
-      "at": "2026-10-22T19:35:00Z",
-      "text": "My College left the side menu; a college picked after a search redraws the matches for that college."
+      "at": "2026-10-23T03:35:00Z",
+      "text": "Berkeley City extracted, loaded and reread: 23 inserted (the Multimedia Arts programs), 66 replaced."
     },
     {
-      "at": "2026-10-22T21:05:00Z",
-      "text": "Palo Verde reads its new 2026-2027 catalog (66 of 68 programs found, from 54) and Cypress 274 of 282 (from 260); both extractions are running. Mt. San Jacinto's remaining gaps, Ohlone's low-coverage programs and Hartnell's 31 unprinted programs are the catalogs' own."
+      "at": "2026-10-23T04:05:00Z",
+      "text": "Hartnell read from its Coursedog site under the tab name Requirements: 96 of 112 found where the PDF found 73; 24 inserted, 70 replaced. A Coursedog catalog reads from its site by default."
+    },
+    {
+      "at": "2026-10-23T04:10:00Z",
+      "text": "Mt. San Antonio reread after a free capture: 40 sent, 15 inserted, 15 replaced, 14 placing none."
+    },
+    {
+      "at": "2026-10-23T04:57:31Z",
+      "text": "Display build 25fe751ccd0a merged (#2367) and its apply dispatched on main; the builder's registry read re-read after the census of 2026-10-18."
     }
   ],
   "headline": [
@@ -155,6 +163,12 @@
       "active": 20282,
       "complete": 12892,
       "colleges": 114
+    },
+    {
+      "day": "2026-10-23",
+      "active": 20282,
+      "complete": 12914,
+      "colleges": 114
     }
   ],
   "next_run": {
@@ -163,8 +177,8 @@
     "at": "2026-10-23T05:12:00Z"
   },
   "harvest": {
-    "day": "2026-10-22",
-    "gaps": 3137,
+    "day": "2026-10-23",
+    "gaps": 3050,
     "parts": {
       "links": {
         "catalog": [
@@ -181,11 +195,11 @@
         ]
       },
       "roep": [
-        19180,
+        19093,
         20282
       ],
       "coci": [
-        16043,
+        16118,
         20282
       ],
       "outcomes": {
@@ -194,12 +208,12 @@
           89192
         ],
         "plo": [
-          16043,
+          16118,
           20282
         ]
       },
       "careers": [
-        14993,
+        15082,
         20282
       ]
     }

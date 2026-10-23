@@ -4,6 +4,8 @@ date: 2026-10-22
 session: 446 (SkyMadrone)
 tags: [handoff, program-requirements-harvest, ui-pass, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_452_handoff.md
 ---
 
 # You are Session 447

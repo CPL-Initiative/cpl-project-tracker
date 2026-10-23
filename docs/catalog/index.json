@@ -15938,8 +15938,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 421,
+   "count": 422,
    "docs": [
+    {
+     "created": "2026-10-23",
+     "governs": [],
+     "n": 452,
+     "path": "docs/session_452_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 452 handoff: the S449 queue landed, Hartnell by its site, Long Beach City waiting, the next thin colleges",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-22",
      "governs": [],
@@ -23197,5 +23211,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1221
+ "total": 1222
 }
