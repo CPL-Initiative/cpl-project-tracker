@@ -2757,7 +2757,7 @@
     if (it.kind === "vetstar") return "At least " + (cond.vetPct || "75%") + " of enrolled veteran JSTs on file in MAP";
     if (it.kind === "exhibits") return "Noncredit certificates posted as exhibits in MAP";
     // The noncredit share's own conditions (Scenario 4).
-    if (it.kind === "nc_coord") return "A noncredit CPL coordinator is named and published (attested in COBI until MAP carries the role)";
+    if (it.kind === "nc_coord") return "A noncredit CPL coordinator is assigned, published and on the college CPL Strike Team (attested in COBI until MAP carries the role)";
     if (it.kind === "nc_team") return "The noncredit strike team's attestation is on file for the year";
     return "";
   }
