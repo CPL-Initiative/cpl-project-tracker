@@ -1,0 +1,150 @@
+{
+ "college": "College of San Mateo",
+ "catalog_url": "https://catalog.collegeofsanmateo.edu/current/",
+ "platform": "custom_html",
+ "catalog_year": "2026-2027",
+ "programs": 98,
+ "with_closed_list": 64,
+ "started": "2026-10-23T06:32:26Z",
+ "scope": "/current/",
+ "sitemap": {
+  "url": "https://catalog.collegeofsanmateo.edu/sitemap.xml",
+  "status": 200,
+  "listed": 1165,
+  "nested": 0,
+  "program_pages": 198,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 241,
+ "child_pages": 79,
+ "banner_h1": null,
+ "loads": 295,
+ "seconds": 1426.2,
+ "found": 61,
+ "by_method": {
+  "link_search": 5,
+  "no_closed_list": 34,
+  "not_found": 3,
+  "sitemap_page": 56
+ },
+ "shared_pages": {
+  "http://catalog.collegeofsanmateo.edu/current/programs/biology-as-t.php": [
+   "05745",
+   "33912"
+  ],
+  "http://catalog.collegeofsanmateo.edu/current/programs/business-administration-2-0-as-t.php": [
+   "10927",
+   "41976"
+  ],
+  "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php": [
+   "30818",
+   "31255",
+   "31435"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "10926",
+   "title": "Addiction Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/addiction-studies-aa.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.143,
+    "body": 0.143,
+    "content": 0.143,
+    "net": 2,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 2 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6886,
+     "content": 21516,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41970",
+   "title": "International Business",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/international-business-ca.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.2,
+    "body": 0.2,
+    "content": 0.2,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3437,
+     "content": 14577,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42023",
+   "title": "International Business",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/international-business-as.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.462,
+    "body": 0.462,
+    "content": 0.462,
+    "net": 5,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 5 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3711,
+     "content": 15523,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 11,
+  "0.8-1.0": 12,
+  "1.0": 38
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/college_of_san_mateo",
+  "kept": 60,
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "31224",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/administration-of-justice-as-t.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   }
+  ]
+ },
+ "run": "39911877190"
+}
