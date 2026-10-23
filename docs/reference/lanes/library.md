@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-10-20
+updated: 2026-10-23
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -229,6 +229,12 @@ name lives in the title alone. Mock-up: https://claude.ai/artifact/LRFiSDUY4bGTo
    them blank and set the columns only on new pieces.
 
 ## Next
+
+- **The team phrase lists publicly too (Sam, 2026-10-23 18:50Z, his own call, reversing 2026-10-20):** *"can you set the
+  Library page to be editable with Team phrase and not just magic link? I want the team to be able to make their
+  artifacts public on the public library."* Not built yet; the exact change (the function's gate, its anon grant, the
+  trigger's message, `library.js` `setPublic`, the public-library test, the governance dismissal) is in
+  `docs/session_457b_handoff.md`.
 
 - **The open-asks series record reads version 57 (Sam pasted it, ~15:31Z 2026-10-09, "success").** It sits at [Sheet 57](https://claude.ai/artifact/XGgsHHu54rJmNGeEuT1teL) with sheet 56 Earlier, 30 versions (read back by S352; receipt `kb/receipts/cpl_library_open_asks_sheet57_2026-10-09_s352.sql`). `made_by` is capped at 300 characters (`cpl_library_text_ck`): the per-session list reached 281 and failed the first paste, so it is now a range (*sheets 46 to 57 by S341 SkyTerrace through S352 SkyMeridian*) that a later sheet extends by changing its two ends. This table's writes go to Sam as a paste: `apply_migration` times out on `cpl_library`, and the repo's Supabase guard blocks an `update` through `execute_sql`.
 - **PR 2, the move (call 5):** once a session with the Microsoft 365 connector has read the SharePoint copies,
