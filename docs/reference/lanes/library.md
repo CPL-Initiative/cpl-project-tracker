@@ -172,7 +172,9 @@ its log row read back 1, 1, 1).
    reply chips, and some of the 11 others are early sheets), with their builders in `kb/`
    and the template tests that read them; and a Library record per sheet linking its artifact.
 
-## NEEDS SAM ([Open Asks Sheet 120](https://claude.ai/artifact/NWy1GvYEEQgS8oKrYWHpTk), cards 2 to 7)
+## Sam's rulings ([Open Asks Sheet 120](https://claude.ai/artifact/NWy1GvYEEQgS8oKrYWHpTk) cards 2 to 7, 2026-10-23 ~20:02Z, all his own call)
+
+**Rulings, in the cards' order:** 1 the Library tab makes it and the Letters tab attaches it (*library*); 2 five types, and his note *"Add an \"Other\" choice with the ability to type in the new entity category"* (*five*); 3 show who a piece is for on the public page and filter by it (*show*); 4 a college's record pair in one step from the tab (*onestep*); 5 the agency template, ELL IET first (*template*); 6 backfill the 26 (*backfill*). `cpl_memory` `sam-sheet-120-rulings-2026-10-23`. **Build in that order (NEXT):** the columns with a check that admits `other` plus a typed category, the tab's filters and the public read, *Make a visual*, the backfill receipt, the vault template and the ELL IET page. The six asks as put to him:
 
 Sam, 2026-10-23 ~19:28Z: *"Ashley and I have been working on the CPL Pathways tab to add the visuals
 you create there so the colleges can see their CPL opportunities as the MAP Customer Success Managers

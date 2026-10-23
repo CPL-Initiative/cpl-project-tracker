@@ -88,7 +88,7 @@ standing note).
    check, and Sierra already reads the KB); a rendered page listed in the Library; the draft split into a field core, a
    "your college's own process" template, and the dropped Chaffey-only parts. The Canvas Commons link
    (lor.instructure.com) and edd.ca.gov are unreachable from the sandbox.
-2. **Read Sheet 120's `replies`** (`ArtifactData`, collection `replies`) before any build. Then, per his cards: the
+2. **Sam answered Sheet 120 at ~20:02Z, all seven his own call** (1 narrow, 2 library, 3 five with his note *"Add an \"Other\" choice with the ability to type in the new entity category"*, 4 show, 5 onestep, 6 template, 7 backfill; `cpl_memory` `sam-sheet-120-rulings-2026-10-23`; the lanes record them and the sheet's store holds them). **Card 1 narrow:** on #2387 write the receipt's `apply` to a `.sql` beside it, point `kb/migrations/.apply` at it, push, merge #2387 on green and dispatch `step=display` on `main` after a display build on the branch. Then build, in the cards' order: the
    two columns (`for_kind`, `for_name`) with a check, the tab's filters and the public read, *Make a visual* for a
    college (the record pair in one step), the backfill receipt (24 college pieces, the DSP page, the ELL IET doc), the
    agency template in the vault with the ELL IET grantees page first (it needs the award notice's text from Sam: search

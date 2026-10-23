@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-23T19:55:42Z",
+  "written_at": "2026-10-23T20:03:37Z",
   "session": 458,
   "moniker": "SkyLarkspur",
   "run": "Sam's session",
@@ -89,7 +89,12 @@
       "text": "Built in #2387 and 267 filed records rescored (258 program totals, 9 degrees; 738 under the wide reading); the live apply of the receipt's guarded UPDATE was refused by the session's permission check, so it waits. Open Asks Sheet 120 card 1. On no reply the live rows keep unequal and #2387 stays a draft.",
       "link": "https://claude.ai/artifact/NWy1GvYEEQgS8oKrYWHpTk",
       "asked": "2026-10-23",
-      "by": "S457 SkyColumbine"
+      "by": "S457 SkyColumbine",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-23T20:02:00Z",
+        "words": "narrow"
+      }
     }
   ],
   "notes": {
@@ -139,6 +144,10 @@
     {
       "at": "2026-10-23T19:48:00Z",
       "text": "Open Asks Sheet 120 published: card 1 the scorer's low-end-meets apply (held), cards 2 to 7 the Library's entity-visuals asks. The six older-build rows were read live but not removed (the permission check refused the receipt's push); Victor Valley 20545's filed record leaves the display build in #2391 after both applies failed on that one missing row."
+    },
+    {
+      "at": "2026-10-23T20:02:00Z",
+      "text": "Sam answered Open Asks Sheet 120, all seven his own call: narrow (the scorer's meets reading; the apply is next), and the six Library rulings (library, five types with an Other choice, show, onestep, template, backfill)."
     }
   ],
   "headline": [
