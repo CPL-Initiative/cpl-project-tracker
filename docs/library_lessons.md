@@ -102,3 +102,10 @@ of the repo until it is applied, so a committed receipt always means a write tha
 - **Name the exit credential, not the training.** The summaries say "Nurse Assistant training" and "Clinical
   Medical Assistant course"; MAP articulates the CDPH certificate and the CCBMA or NHA credential. The page's
   "what we still need to confirm" leads with that question, because the match hangs on it.
+- **A folded tab keeps its frame and its links.** The Knowledge Base portal signs in on its own (a magic link,
+  Sam and Malone), so its frame must not be repainted by the tab that now holds it: it sits as a static sibling
+  of the Library's root and the view control only hides or shows it. `tabs.js` maps the old hash
+  (`FOLDED`), so a bookmark or a Sierra answer naming `#knowledge-base` still lands on the portal.
+- **The knowledge rule is a flag and a link, and the check is a count.** `knowledge` says whether a piece's
+  substance is knowledge; `kb_note` links the note once the curation pipeline has it; Needs attention counts
+  the pieces with the first and not the second. Nothing copies a deck into the KB; the join is at the record.

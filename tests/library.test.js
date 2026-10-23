@@ -103,7 +103,7 @@ block("(1)", function () {
   ['data-tab="library"', 'id="library-root"', "onActivate('library'", "loadScript('library.js', 'CPL_LIBRARY'"].forEach(function (f) {
     check("(1) the shell carries " + f, DASH.indexOf(f) >= 0);
   });
-  check("(1) the Library sits in the team tools group", /'knowledge-base', 'library'/.test(NAV));
+  check("(1) the Library sits in the team tools group, and the Knowledge Base tab is gone (folded into it, S459)", /'team-phrases', 'library'/.test(NAV) && !/'knowledge-base'/.test(NAV));
   check("(1) RLS gates read, insert and update on the team phrase or a reviewer",
     (SQL.match(/team_pass_ok\(\) or public\.is_allowed_reviewer\(\)/g) || []).length >= 5);
   check("(1) no delete policy, and delete is revoked", !/for delete/i.test(SQL) && /revoke delete on public\.cpl_library from anon, authenticated/.test(SQL));
@@ -514,4 +514,62 @@ Promise.all(pending).then(function () {
   }
   console.log("\nlibrary.test.js: " + pass + "/" + results.length + " checks passed");
   if (pass !== results.length) process.exit(1);
+});
+
+// (12) The Knowledge Base fold and the knowledge rule (Sam, Open Asks Sheet 121 card 1,
+// 2026-10-23: fold-rule). The portal is a static frame beside the root; the tab shows it
+// on the Knowledge Base view and hides it otherwise. A piece whose substance is
+// knowledge without a KB note is a Needs attention flag; a typed note says knowledge.
+const KB_ROWS = [
+  Object.assign({}, FOR_ROWS[1], { id: "k1", knowledge: true, kb_note: null }),
+  Object.assign({}, FOR_ROWS[0], { id: "k2", knowledge: true, kb_note: "methodology/cpl-opportunity-pages.md" }),
+  Object.assign({}, FOR_ROWS[2], { id: "k3", knowledge: false, kb_note: null }),
+  Object.assign({}, ROWS[4], { id: "k4" })
+];
+block("(12)", function () {
+  const writes = [];
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (init && init.method) { writes.push({ url: url, body: JSON.parse(init.body) }); return response(201, [{ id: "new" }]); }
+    if (/map_colleges/.test(url)) return response(200, MAP_NAMES);
+    return response(200, KB_ROWS);
+  } });
+  const w = m.w, doc = w.document, M = m.M;
+  const kb = doc.createElement("div"); kb.id = "library-kb"; kb.hidden = true; kb.innerHTML = '<iframe src="kb-portal/"></iframe>'; doc.body.appendChild(kb);
+  check("(12) no hash means Pieces", M._viewFromHash() === "pieces");
+  check("(12) a typed note says knowledge; otherwise the choice", M._knowledgeValue("", "a/note.md") === true && M._knowledgeValue("no", "") === false && M._knowledgeValue("yes", "") === true && M._knowledgeValue("", "") === null);
+  check("(12) the flag reads a knowledge piece without a note, and only that",
+    M._flagsOf(KB_ROWS[0]).indexOf("kb_note") >= 0 && M._flagsOf(KB_ROWS[1]).indexOf("kb_note") < 0 && M._flagsOf(KB_ROWS[2]).indexOf("kb_note") < 0 && M._flagsOf(KB_ROWS[3]).indexOf("kb_note") < 0);
+  return Promise.resolve(M.activate()).then(settle).then(function () {
+    check("(12) two views, Pieces pressed", m.root.querySelector('[data-view="pieces"]').getAttribute("aria-pressed") === "true" && m.root.querySelector('[data-view="kb"]').getAttribute("aria-pressed") === "false");
+    check("(12) the portal stays hidden on Pieces", kb.hidden === true && !!m.root.querySelector("#lib-register"));
+    const flag = m.root.querySelector('[data-flag="kb_note"]');
+    check("(12) Needs attention counts the one knowledge piece without a note", !!flag && /^1/.test(flag.textContent.trim()) && /knowledge pieces with no KB note/.test(flag.textContent), flag && flag.textContent);
+    click(w, m.root.querySelector('[data-view="kb"]'));
+    check("(12) Knowledge Base shows the portal and hides the register", kb.hidden === false && !m.root.querySelector("#lib-register") && m.root.querySelector('[data-view="kb"]').getAttribute("aria-pressed") === "true");
+    check("(12) the hash carries the view", /#library\/knowledge-base$/.test(w.location.hash), w.location.hash);
+    click(w, m.root.querySelector('[data-view="pieces"]'));
+    check("(12) back to Pieces hides the portal again", kb.hidden === true && !!m.root.querySelector("#lib-register") && w.location.hash === "#library");
+    M._state.open.k1 = true; M._state.open.k2 = true; M._state.open.k3 = true; M.render();
+    const t = function (id) { return doc.getElementById("lib-t-" + id).closest("article").textContent; };
+    check("(12) a knowledge piece without a note says what to do", /Its substance is knowledge and no KB note links it yet/.test(t("k1")));
+    check("(12) a knowledge piece links its note", /KB note/.test(t("k2")) && /methodology\/cpl-opportunity-pages\.md/.test(t("k2")));
+    check("(12) a deck, film or data piece needs none", /no KB note needed/.test(t("k3")));
+    M._state.open = { k1: true }; M._state.edit = "k1"; M.render();
+    check("(12) Edit offers Knowledge and KB note", !!doc.getElementById("le-knowledge") && !!doc.getElementById("le-kbnote") && doc.getElementById("le-knowledge").value === "yes");
+    doc.getElementById("le-kbnote").value = "reference/dsp-training.md";
+    submit(m, 'form[data-editform="k1"]');
+    return settle();
+  }).then(function () {
+    const e = writes.filter(function (x) { return /id=eq\.k1/.test(x.url); })[0];
+    check("(12) Save writes the note and knowledge true", !!e && e.body.kb_note === "reference/dsp-training.md" && e.body.knowledge === true, e && JSON.stringify(e.body));
+    click(w, doc.getElementById("lib-add"));
+    doc.getElementById("la-url").value = "https://studentrcc.sharepoint.com/x/deck.pptx";
+    doc.getElementById("la-title").value = "A deck";
+    doc.getElementById("la-knowledge").value = "no";
+    submit(m, "#lib-addform");
+    return settle();
+  }).then(function () {
+    const a = writes.filter(function (x) { return !/id=eq\./.test(x.url); })[0];
+    check("(12) Add writes knowledge false and no note", !!a && a.body.knowledge === false && a.body.kb_note === null, a && JSON.stringify(a.body));
+  });
 });

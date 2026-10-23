@@ -218,3 +218,22 @@ create index if not exists cpl_library_for_idx
 -- Applied 2026-10-23 by supabase-migrate.yml as cpl_library_made_for_2026_10_23_s459
 -- (this whole file, re-runnable), then the public read in
 -- kb/supabase_cpl_library_public.sql as cpl_library_public_made_for_2026_10_23_s459.
+
+-- ── The knowledge rule (Sam, Open Asks Sheet 121 card 1, 2026-10-23: fold-rule) ──
+-- Sam, ~20:18Z: "ensure that whatever is in the library is also in the KB, since the
+-- knowledge helps us build our unified knowledge informing all the COBI work." His
+-- call (21:27Z): fold the Knowledge Base tab into the Library as a second view, and
+-- one rule with a check: a piece whose substance is knowledge gets a KB note through
+-- the curation pipeline (cpl-knowledge-base/CURATION.md), the record links it, and
+-- Needs attention names a piece without one.
+-- knowledge  true = the piece's substance is knowledge (a training-facts page, a guide,
+--            an explainer's argument); false = a deck, a film or a data piece; null = not set.
+-- kb_note    the note's path in cpl-knowledge-base or its link, once promoted; a note
+--            says knowledge on its own.
+-- Re-runnable; the columns ride the table-level grants above.
+alter table public.cpl_library
+  add column if not exists knowledge boolean,
+  add column if not exists kb_note   text;
+alter table public.cpl_library drop constraint if exists cpl_library_kb_note_ck;
+alter table public.cpl_library add constraint cpl_library_kb_note_ck check (
+  kb_note is null or (char_length(kb_note) between 1 and 300 and knowledge is true));
