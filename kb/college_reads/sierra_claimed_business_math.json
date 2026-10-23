@@ -1,0 +1,22 @@
+{
+ "_readme": "S456 SkyYarrow, 2026-10-23. Sierra's capture 39951768339 leaves 15 programs page-claimed. Two sit on the Business department page (Interdisciplinary Entrepreneurship A.S. 15307 and the noncredit Entrepreneurship for Makers 37810) and two are AS-T degrees on their department page (Mathematics 31226, Physics 32010), each page given to a sibling by page_winners(). This reads the Business and Mathematics pages as the capture reads them (capture_view, hidden tab panels included), to see how each page heads those awards and whether each award's course list sits beneath its own heading. Two loads, no model call.",
+ "college": "Sierra College",
+ "questions": {
+  "award_headings": "On the Business page as the capture reads it, what line heads Interdisciplinary Entrepreneurship and Entrepreneurship for Makers (title and award words on one line or adjacent short lines)? On the Mathematics page, what line heads the Mathematics AS-T, and does the AS-T course list sit beneath its own heading?"
+ },
+ "keywords": [
+  "Entrepreneurship",
+  "Interdisciplinary",
+  "Makers",
+  "Mathematics",
+  "\\b(?:AS-T|AA-T|A\\.S\\.-T|A\\.A\\.-T|AS|AA)(?: Degree)?\\b",
+  "Associate in (?:Arts|Science)",
+  "for Transfer",
+  "Certificate of (?:Achievement|Accomplishment)",
+  "Noncredit"
+ ],
+ "pages": [
+  {"answers": ["award_headings"], "url": "https://catalog.sierracollege.edu/departments/business/", "capture_view": true},
+  {"answers": ["award_headings"], "url": "https://catalog.sierracollege.edu/departments/mathematics/", "capture_view": true}
+ ]
+}
