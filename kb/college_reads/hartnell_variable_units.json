@@ -1,0 +1,49 @@
+{
+ "_readme": "S457 SkyColumbine, 2026-10-23. Hartnell's filed records (reconcile 39949570443 and the S456 reread) carry ABT 99, a work experience course, at 1-8 units from the vendor's courses/search answer (credits.creditHours min and max), so six records' sums run past the total their tab prints (Agriculture Business certificate CT.AGR: 27-35 against 27; Sustainable Crop Management CT.AGSC: 25-33 against 27; Small Farm CT.AGSF, Agriculture Production CT.AGRP, Agriculture Business A.S. AS.AGRI, Agricultural Mechatronics AS.MECHA). The tab prints no units per line. This reads one such Requirements tab with its network calls, to see whether the requirement set the tab fetches names a credit figure for ABT 99 in this program (a per-entry credits field beside the course id), and how the tab's own text prints the ABT 99 line. Seven noncredit records (43607 and six more) are measured in hours and their courses carry 0 credit hours; the second page is one noncredit tab, to see whether a course entry in courses/search carries hours (lecture, lab, contact, total) the reader could keep beside creditHours. Two loads, no model call.",
+ "college": "Hartnell College",
+ "outside_hosts": {
+  "coursedog.com": "Hartnell's catalog vendor hosts the catalog itself (hartnell.catalog.prod.coursedog.com) and its data (app.coursedog.com); the registry's catalog address is on this host."
+ },
+ "questions": {
+  "variable_units": "In the Requirements tab's own requirement-set data (the requisite set or requirement group the tab fetches from app.coursedog.com), what does the entry for ABT 99 carry beside the course id: a credits or units figure for this program, a min and max, or nothing? And how does the tab's text print the ABT 99 line?",
+  "course_hours": "In the courses/search answer the noncredit tab fetches, what fields does a course entry carry beside credits.creditHours: any hours (lecture, lab, contact, total, weekly, semester), and their values for the listed noncredit courses?"
+ },
+ "keywords": [
+  "ABT ?99",
+  "[Cc]redit",
+  "[Uu]nits?",
+  "[Hh]ours",
+  "lecture",
+  "lab",
+  "contact",
+  "creditHours",
+  "minCredits",
+  "maxCredits",
+  "Total Required Credits",
+  "Work Experience"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "variable_units"
+   ],
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGR/requirements-ipyf8",
+   "capture_view": true,
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ]
+  },
+  {
+   "answers": [
+    "course_hours"
+   ],
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.BEG/requirements-ipyf8",
+   "capture_view": true,
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ]
+  }
+ ]
+}
