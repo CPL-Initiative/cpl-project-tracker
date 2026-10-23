@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Spanish Language for Heritage Speakers",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41855",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7919,
+  "input_tokens": 7921,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7919,
-    "output_tokens": 605,
+    "input_tokens": 7921,
+    "output_tokens": 834,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 605,
+  "output_tokens": 834,
   "output_tokens_details": {
-   "thinking_tokens": 239
+   "thinking_tokens": 242
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04378,
- "ms": 6605,
- "seconds": 7.2,
+ "cost_usd": 0.04836,
+ "ms": 8841,
+ "seconds": 9.4,
  "parts": null,
  "error": null,
  "score": {
@@ -106,7 +106,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "(no section for this award in the text)",
+   "section_heading": "",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -147,18 +147,23 @@
    },
    {
     "code": "SPAN 38",
-    "why": "appears only as SPAN 038 in a general education area list (Area 3B: Humanities), not in program requirements"
+    "why": "appears only as SPAN 038 in a general education Area 3B: Humanities list, not in this certificate's requirements"
    },
    {
     "code": "SPAN 39",
-    "why": "appears only as SPAN 039 in a general education area list (Area 3B: Humanities), not in program requirements"
+    "why": "appears only as SPAN 039 in a general education Area 3B: Humanities list, not in this certificate's requirements"
    },
    {
     "code": "SPAN 40",
-    "why": "appears only as SPAN 040 in a general education area list (Area 3B: Humanities), not in program requirements"
+    "why": "appears only as SPAN 040 in a general education Area 3B: Humanities list, not in this certificate's requirements"
    }
   ],
-  "notes": []
+  "notes": [
+   "The supplied catalog text does not contain the section for the Spanish Language for Heritage Speakers Certificate of Achievement. It is a fragment of a general education pattern listing: the end of Area 3A, all of Area 3B: Humanities, and the start of Area 4: Social and Behavioral Sciences. The fragment is cut off at both ends.",
+   "section_heading is left empty because no heading for this award appears in the text.",
+   "No blocks, total, outcomes or careers were recorded. The certificate's own requirements page should be retrieved and reviewed.",
+   "SPAN 038, SPAN 039 and SPAN 040 appear only as general education options under Area 3B: Humanities. They were not placed as program requirements."
+  ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

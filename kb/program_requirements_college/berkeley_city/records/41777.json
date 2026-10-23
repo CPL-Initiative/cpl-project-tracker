@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Philosophy",
  "award": "A.A- T Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39975",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39975",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6892,
+  "input_tokens": 6894,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6892,
-    "output_tokens": 1452,
+    "input_tokens": 6894,
+    "output_tokens": 1418,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,7 +30,7 @@
     "model": null
    }
   ],
-  "output_tokens": 1452,
+  "output_tokens": 1418,
   "output_tokens_details": {
    "thinking_tokens": 485
   },
@@ -38,9 +38,9 @@
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05661,
- "ms": 18148,
- "seconds": 18.6,
+ "cost_usd": 0.05594,
+ "ms": 17073,
+ "seconds": 17.6,
  "parts": null,
  "error": null,
  "score": {
@@ -232,13 +232,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints codes with leading zeros (PHIL 001, PHIL 011, PHIL 002, PHIL 035, WS 035); these were matched to closed-list PHIL 1, PHIL 11, PHIL 2, PHIL 35 and WS 35.",
-   "PHIL 035 and WS 035 are printed as cross-listed ('same as') rows; recorded as one choice with WS 035 as the alternative.",
+   "Catalog prints codes with leading zeros (PHIL 001, PHIL 011, PHIL 002, PHIL 035, WS 035); matched to closed-list PHIL 1, PHIL 11, PHIL 2, PHIL 35, WS 35.",
+   "PHIL 035 and WS 035 are printed as separate rows but marked 'same as' each other (cross-listed); recorded as one choice with WS 035 as alternative.",
    "HUMAN 030B is marked '( Historical )' in the catalog.",
-   "The page prints 'General Education (Cal-GETC) and Elective Courses 42' as one combined figure; it is not a units figure for Cal-GETC alone, so ge_units is null and no elective units were split out.",
-   "Major Requirements 18 recorded as total_units; Total Units 60 recorded as degree_total.",
-   "The text is cut off in the Career Opportunities section ('transfer to a 4-year college or university w'); no careers or program learning outcomes appear in the supplied text."
+   "The page prints 'General Education (Cal-GETC) and Elective Courses 42' as a combined figure; no separate GE-only units are printed, so ge_units is null.",
+   "Career Opportunities text is cut off ('This degree prepares students to transfer to a 4-year college or university w...'); no careers named in the visible text.",
+   "No program learning outcomes appear in the text."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

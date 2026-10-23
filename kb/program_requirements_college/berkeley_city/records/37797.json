@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Research Skills",
  "award": "Noncredit program",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40029",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40029",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6423,
+  "input_tokens": 6425,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6423,
-    "output_tokens": 973,
+    "input_tokens": 6425,
+    "output_tokens": 992,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 973,
+  "output_tokens": 992,
   "output_tokens_details": {
-   "thinking_tokens": 352
+   "thinking_tokens": 319
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04515,
- "ms": 8630,
- "seconds": 9.2,
+ "cost_usd": 0.04554,
+ "ms": 8985,
+ "seconds": 9.5,
  "parts": null,
  "error": null,
  "score": {
@@ -174,10 +174,10 @@
   "missing_explained": [],
   "notes": [
    "Noncredit Certificate of Competency counted in hours: the description states 'three courses for a total of nine (9) instructional hours', recorded as total_units 9 hours.",
-   "The table prints 0.0 in the UNITS column beside each course and beside the Required Courses heading; these are units, not hours, so per-course hours and block stated are left null. The catalog does not print hours per course (presumably 3 each, not recorded).",
-   "Career Opportunities reads 'Any occupations in the educational, financial, legal, and medical fields that involve observing, receiving, and otherwise obtaining information.'; recorded the four fields named.",
-   "Each course must be completed with a grade of Pass."
+   "The catalog prints 0.0 in the UNITS column beside each course and beside the Required Courses block; these are units, not hours, so course units and block stated are left null. Per-course hours are not printed (not computed from the 9-hour total).",
+   "Careers come from the Career Opportunities sentence 'Any occupations in the educational, financial, legal, and medical fields that involve observing, receiving, and otherwise obtaining information.'; recorded as four career fields - reviewer may prefer a different split.",
+   "Learning outcomes are printed for the program as a whole under 'Learning Outcome(s)'; the certificate is the only award in the section, so they are recorded for it."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

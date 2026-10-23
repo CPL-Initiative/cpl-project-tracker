@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Teacher's Aide",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40022",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40022",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6701,
+  "input_tokens": 6703,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6701,
-    "output_tokens": 1345,
+    "input_tokens": 6703,
+    "output_tokens": 1243,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1345,
+  "output_tokens": 1243,
   "output_tokens_details": {
-   "thinking_tokens": 359
+   "thinking_tokens": 264
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0537,
- "ms": 10755,
- "seconds": 11.3,
+ "cost_usd": 0.05167,
+ "ms": 9735,
+ "seconds": 10.4,
  "parts": null,
  "error": null,
  "score": {
@@ -222,11 +222,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints course numbers with leading zeros (EDUC 001, EDUC 018, EDUC 097, EDUC 098, EDUC 099, CHDEV 051, PSYCH 021); these were matched to closed-list codes EDUC 1, EDUC 18, EDUC 97, EDUC 98, EDUC 99, CHDEV 51, PSYCH 21 and not flagged as catalog additions.",
-   "PSYCH 021 is marked '( Historical )' in the catalog, though still listed as an option.",
-   "EDUC 097 is printed with a 2.0-4.0 unit range; the closed list stores 2 units.",
-   "Required courses block states 21.0-23.0 units; certificate total stated as 24-26."
+   "The catalog prints codes with leading zeros (EDUC 001, EDUC 018, EDUC 097, EDUC 098, EDUC 099, CHDEV 051, PSYCH 021); these were matched to the closed-list codes EDUC 1, EDUC 18, EDUC 97, EDUC 98, EDUC 99, CHDEV 51 and PSYCH 21 and not marked as catalog additions.",
+   "EDUC 097 is printed as 2.0-4.0 units, while the state file stores 2 units.",
+   "PSYCH 021 is marked '( Historical )' in the catalog but is still listed as an option.",
+   "The required block states 21.0-23.0 units, and the total is 24-26 units."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

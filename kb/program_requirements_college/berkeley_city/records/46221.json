@@ -1,0 +1,380 @@
+{
+ "college": "Berkeley City College",
+ "control_number": "46221",
+ "shape": "degree",
+ "title": "Virtual Production",
+ "award": "A.A. Degree",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41941",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7800,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7800,
+    "output_tokens": 3580,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3580,
+  "output_tokens_details": {
+   "thinking_tokens": 1422
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1028,
+ "ms": 29121,
+ "seconds": 29.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 23,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    31.0,
+    33.0
+   ],
+   "stated": [
+    37.0,
+    39.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 31.0-33.0; the catalog states 37.0-39.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     31.0,
+     33.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the blocks and general education sum to 31.0-33.0; the catalog prints 60.0-60.0 for the degree"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 21,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Virtual Production - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "Technical Artist in real-time Animation/Modeling",
+    "Engine Operator",
+    "Real-time Compositor",
+    "Virtual Camera Operator",
+    "3D Modeler",
+    "3D Animator",
+    "World Builder",
+    "Virtual Art Department Artist",
+    "Production Assistant",
+    "Camera Operator",
+    "Virtual Production Stage Technician",
+    "Production Coordinator",
+    "Editor",
+    "Motion Graphics Designer",
+    "Lighting Technician",
+    "Grips",
+    "Gaffer",
+    "Rigger",
+    "Producer",
+    "Content Creator",
+    "Motion Capture"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 31,
+     "max": 33
+    },
+    "courses": [
+     {
+      "code": "CIS 005",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMART 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 020A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 022B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 040A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 041A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/VI 009A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select up to 3 units from the following:",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MMART 468",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 055A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "MM/AN 003A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMART 005A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 020B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 021A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 021B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 023",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 022A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/AN 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/VI 009C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/VI 009B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/VI 020A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MM/VI 020LA",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Several courses are printed with titles but no codes, so they are not recorded in blocks: in Required Courses, 'Introduction to Virtual Production *' (3.0) and 'Intermediate Virtual Production*' (3.0); in Electives, 'Digital Sculpting*' (3.0) and 'Introduction to Studio Production' (3.0, 'This course can be completed at Diablo Valley College or Santa Rosa Junior College'). The asterisk marks courses available at partner colleges. Without the two required uncoded courses the Required block's coded courses total 24 units; with them and the 1-3 unit choice it reaches the printed 31-33.",
+   "The Required Courses stated total (31.0-33.0) includes the nested 'Select up to 3 units from the following' choice (1.0-3.0), recorded as its own block. 'Up to 3 units' with a printed range of 1.0-3.0 was read as a minimum of 1 unit; reviewer should check.",
+   "In Electives, MM/VI 020A (2.0) AND MM/VI 020LA (1.0) are printed as a paired 3.0-unit choice taken together; recorded as two entries.",
+   "Catalog codes differ in zero-padding from the closed list (CIS 005 = CIS 5, MMART 003 = MMART 3, MM/AN 050 = MM/AN 50, MM/AN 023 = MM/AN 23, MM/AN 024 = MM/AN 24, MM/AN 030 = MM/AN 30); treated as the same courses.",
+   "Page prints 'Major Requirements 37-39', 'General Education and Elective Courses 21-23', and 'Total units 60'. The GE figure combines general education and electives, so ge_units and degree_elective_units are left null; no GE pattern is named.",
+   "The Learning Outcome(s) section is cut off mid-word ('Demonstrate enhanced collaborative skills and the ability to engage in effecti'); the outcome was not recorded because the full text is not available.",
+   "Career list prints 'Virtual Camera Operator' twice; recorded once."
+  ]
+ },
+ "extracted_run": "39891604919"
+}

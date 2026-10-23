@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Mobile and Web Design Level I",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40032",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40032",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7005,
+  "input_tokens": 7007,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7005,
-    "output_tokens": 1222,
+    "input_tokens": 7007,
+    "output_tokens": 1095,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1222,
+  "output_tokens": 1095,
   "output_tokens_details": {
-   "thinking_tokens": 278
+   "thinking_tokens": 141
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05246,
- "ms": 10184,
- "seconds": 10.8,
+ "cost_usd": 0.04993,
+ "ms": 9126,
+ "seconds": 9.6,
  "parts": null,
  "error": null,
  "score": {
@@ -233,10 +233,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints 'MM/MW 002' (Fundamentals of Graphic Visualization, 2 units); the closed list stores it as 'MM/MW 2' with the same title and units. Treated as the same course (not a catalog addition); reviewer may confirm.",
-   "MM/MW 002L is marked '( Historical )' in the catalog while still listed as required.",
-   "Outcomes are printed under 'Learning Outcome(s)' for this certificate section."
+   "The catalog prints MM/MW 002 (Fundamentals of Graphic Visualization, 2 units); the closed list stores it as MM/MW 2 with the same title and units, so it was treated as the closed-list course rather than a catalog addition.",
+   "MM/MW 002L is marked '( Historical )' in the catalog but is still listed as a required course.",
+   "Total of 19 units falls below the 16S lower bound? No - 19 units is within the 16-to-under-30 range of the award type."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

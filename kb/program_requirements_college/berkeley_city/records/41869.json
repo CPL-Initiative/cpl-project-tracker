@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Community Health Worker",
  "award": "Noncredit program",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40066",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40066",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6539,
+  "input_tokens": 6541,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6539,
-    "output_tokens": 1019,
+    "input_tokens": 6541,
+    "output_tokens": 945,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1019,
+  "output_tokens": 945,
   "output_tokens_details": {
-   "thinking_tokens": 377
+   "thinking_tokens": 303
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04654,
- "ms": 13350,
- "seconds": 13.8,
+ "cost_usd": 0.04506,
+ "ms": 8573,
+ "seconds": 8.9,
  "parts": null,
  "error": null,
  "score": {
@@ -91,7 +91,7 @@
    "pass": true
   },
   "careers": {
-   "count": 12,
+   "count": 11,
    "not_verbatim": [],
    "pass": true
   },
@@ -127,8 +127,7 @@
    "careers": [
     "Peer Health Educator",
     "Peer Health Promoter",
-    "Health Aide",
-    "Community Health Aide",
+    "Health Aide (or Community Health Aide)",
     "Public Health Aide",
     "Family Support Worker",
     "Community Health Outreach Worker",
@@ -170,13 +169,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The 138-hour total comes from the program description ('a 138-hour non-credit certificate option'), not from a requirements table.",
-   "The requirements table prints 0.0 units beside the block heading and beside each course. These are noncredit units, not hours, so the course units and the block's stated total are left null. The text prints no hours for the individual courses.",
-   "Both courses are marked '( Historical )' in the catalog; a reviewer should check whether they are still current for 2026-2027.",
-   "The career list is cut off at 'Community Health N'. That truncated entry was omitted; more careers may follow it.",
-   "'Health Aide (or Community Health Aide)' was recorded as two entries: 'Health Aide' and 'Community Health Aide'.",
-   "No program learning outcomes appear in the text."
+   "Noncredit certificate counted in hours: total_units of 138 comes from the description's '138-hour non-credit certificate'.",
+   "The requirements table prints 0.0 in a UNITS column beside each course and beside the Required Courses block. These are noncredit units, not hours, so the per-course hours and the block's stated total are left null. The catalog prints no hours for the individual courses.",
+   "Both courses are marked '( Historical )' in the catalog table. A reviewer should check that they are still active for 2026-2027.",
+   "The text names a Certificate of Completion, while the award is listed as 'Noncredit program'.",
+   "The Career Opportunities list is cut off at 'Community Health N', so that truncated entry was not recorded.",
+   "The text prints no program learning outcomes."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }
