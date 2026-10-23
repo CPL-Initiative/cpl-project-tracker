@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-22
+updated: 2026-10-23
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 90 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 84 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 61 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 421 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1221** | |
+| Session handoffs | 422 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1222** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-23 S451 SkyLupine (opened by Sam): the page reader's `cq_view` (#2365); the S449 queue landed, Palo Verde, Cypress, Berkeley City, Hartnell by its Coursedog site (96 of 112, from 73) and Mt. San Antonio, display build 25fe751ccd0a (#2367); lessons S451; handoff 452.
 - 2026-10-22 S449 SkyBuckwheat: the harvest queue after S448 (Mt. San Jacinto settled, Berkeley City's codes read through `cq_view`, Palo Verde's new Acalog catalog, Cypress, Hartnell by its site); lessons S449; handoff 450.
 - 2026-10-22 (S448 SkyDeergrass, opened by Sam): CPL Pathways' clear, faster list and the COBI header (#2353); My College folded into CPL Pathways, search box and alphabetical list (#2355); My College off the menu, the search redraws on a college change (#2356); handoff 449.
 - 2026-10-22 (S447 SkyBrittlebush, opened by Sam): Sheet 112 answered, later (#2348); an Administration of Justice address and a hyphenated course code (#2349); Mt. San Jacinto and Santa Barbara City reread, build be2635ed5b73 (#2350); the harvest lessons' S399-S403 to archive 3; handoff 448.

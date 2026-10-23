@@ -4,6 +4,8 @@ date: 2026-10-22
 session: 449 (SkyBuckwheat)
 tags: [handoff, program-requirements-harvest, my-college-action-page]
 status: current
+superseded: true
+superseded_by: session_452_handoff.md
 ---
 
 # You are Session 450

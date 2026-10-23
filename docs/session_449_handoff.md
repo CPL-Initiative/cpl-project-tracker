@@ -4,6 +4,8 @@ date: 2026-10-22
 session: 448 (SkyDeergrass)
 tags: [handoff, my-college-action-page, cpl-pathways, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_452_handoff.md
 ---
 
 # You are Session 449
