@@ -1,0 +1,172 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "36843",
+ "shape": "noncredit",
+ "title": "HSE Reading and Language Arts",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-equivalency-ged/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7098,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7098,
+    "output_tokens": 865,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 865,
+  "output_tokens_details": {
+   "thinking_tokens": 273
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04569,
+ "ms": 7946,
+ "seconds": 8.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BSABE2"
+   ],
+   "flagged": [
+    "BSABE2"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "HSE Reading and Language Arts",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify main idea and details in a reading sample.",
+    "Summarize workplace documents and literature.",
+    "Identify author’s point of view, tone, and style.",
+    "Compare and contrast texts in similar and different genres.",
+    "Edit sample texts.",
+    "Construct thesis and cite supporting evidence."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BS ABE02",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BS HSERL",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is a noncredit Certificate of Competency (#36843). The catalog prints no units or hours beside the courses and no program total, so measure defaults to 'units' and all unit fields are null.",
+   "The outcomes lead-in reads 'School Equivalency Certificate for Math, students will be prepared to:' even in the Reading and Language Arts section, which looks like a copy error on the page. The outcomes themselves are reading and language arts outcomes.",
+   "The text says 'Students must pass both core courses'. BS ABE02 is required but is not in the closed list, so it is recorded as a catalog addition.",
+   "No specific careers are named. 'Additional work opportunities' and 'increase employability' are general statements, not careers."
+  ]
+ },
+ "extracted_run": "39891607837"
+}

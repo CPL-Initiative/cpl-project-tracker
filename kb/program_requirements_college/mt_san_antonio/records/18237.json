@@ -5,11 +5,11 @@
  "title": "Liberal Arts and Sciences: Information Technology",
  "award": "A.A. Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/computer-database-management-systems/information_technology_aa/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6714,
+  "input_tokens": 8327,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6714,
-    "output_tokens": 3564,
+    "input_tokens": 8327,
+    "output_tokens": 3343,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,18 @@
     "model": null
    }
   ],
-  "output_tokens": 3564,
+  "output_tokens": 3343,
   "output_tokens_details": {
-   "thinking_tokens": 874
+   "thinking_tokens": 876
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09814,
- "ms": 26873,
- "seconds": 27.2,
+ "cost_usd": 0.10017,
+ "ms": 25494,
+ "seconds": 25.9,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
@@ -49,6 +51,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +71,7 @@
     20.0,
     21.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -84,6 +88,17 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -95,13 +110,31 @@
     "max": 21.5
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Know the four primary operations of a computer and the hardware that performs these operations.",
     "Be able to create effective queries that answer needed questions.",
     "Be able to identify four types of common transmission media and be able to describe the basic characteristics of each.",
     "Be able to use decision making statements and loops in order to create a business application.",
     "Be able to understand the need for security."
+   ],
+   "careers": [
+    "Information Technology",
+    "technical support",
+    "systems analyst"
    ]
   },
   "blocks": [
@@ -137,8 +170,8 @@
     "minimum": null,
     "option_group": "Software Development",
     "stated": {
-     "min": 3.5,
-     "max": 3.5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -163,8 +196,8 @@
     "minimum": null,
     "option_group": "Software Development",
     "stated": {
-     "min": 3.5,
-     "max": 3.5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -189,8 +222,8 @@
     "minimum": null,
     "option_group": "Software Development",
     "stated": {
-     "min": 3.5,
-     "max": 3.5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -215,8 +248,8 @@
     "minimum": null,
     "option_group": "Software Development",
     "stated": {
-     "min": 3.5,
-     "max": 3.5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -241,8 +274,8 @@
     "minimum": null,
     "option_group": "Software Development",
     "stated": {
-     "min": 3.5,
-     "max": 3.5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -267,8 +300,8 @@
     "minimum": null,
     "option_group": "Database Technology",
     "stated": {
-     "min": 3.5,
-     "max": 3.5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -293,8 +326,8 @@
     "minimum": null,
     "option_group": "Database Technology",
     "stated": {
-     "min": 3.5,
-     "max": 3.5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -319,8 +352,8 @@
     "minimum": null,
     "option_group": "Database Technology",
     "stated": {
-     "min": 3.5,
-     "max": 3.5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -345,8 +378,8 @@
     "minimum": null,
     "option_group": "Operating Systems and Networking",
     "stated": {
-     "min": 3,
-     "max": 3.5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -371,8 +404,8 @@
     "minimum": null,
     "option_group": "Operating Systems and Networking",
     "stated": {
-     "min": 3,
-     "max": 3.5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -390,8 +423,8 @@
     "minimum": null,
     "option_group": "Operating Systems and Networking",
     "stated": {
-     "min": 3,
-     "max": 3.5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -416,8 +449,8 @@
     "minimum": null,
     "option_group": "Security",
     "stated": {
-     "min": 3,
-     "max": 4
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -435,8 +468,8 @@
     "minimum": null,
     "option_group": "Security",
     "stated": {
-     "min": 3,
-     "max": 4
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -454,8 +487,8 @@
     "minimum": null,
     "option_group": "Security",
     "stated": {
-     "min": 3,
-     "max": 4
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -478,12 +511,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside individual courses, only group totals (Required Core 7; Software Development 3.5; Database Technology 3.5; Operating Systems and Networking 3-3.5; Security 3-4), so course units are null.",
-   "Each 'Choose one of the following sequences/options' group is recorded as separate option blocks sharing an option_group; the group total printed by the catalog is copied into stated on each option block in that group, even where a single option (e.g., CISN 21 alone, CISS 13 alone) may carry a different unit value.",
-   "The degree requires 'General Education coursework' but the text does not name a specific GE pattern, so ge_pattern is null.",
-   "Program Learning Outcomes are printed on the page's Outcomes tab for this program (Information Technology Emphasis AA); recorded as the award's outcomes. The tab also links to SLOs not included in the text.",
-   "Program title in the catalog is 'Information Technology Emphasis (AA Degree A8985)', the A.A. in Liberal Arts and Sciences with an emphasis in Information Technology."
+   "The catalog prints no units beside individual courses, only group totals; course units are left null.",
+   "Each 'Choose one of the following sequences/options' group is recorded as one block per option sharing an option_group. Printed group totals not attached to any single option block: Software Development 3.5, Database Technology 3.5, Operating Systems and Networking 3-3.5, Security 3-4.",
+   "The degree requires General Education coursework, but the page names no GE pattern and prints no degree total or GE units.",
+   "The Program Learning Outcomes come from the page's outcomes tab for this program and are recorded as this award's outcomes.",
+   "'Information Technology' is recorded as a career field from 'prepare students for a career in Information Technology'."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "39891607837"
 }

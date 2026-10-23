@@ -1,0 +1,200 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "31598",
+ "shape": "noncredit",
+ "title": "Adult High School Diploma",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7423,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7423,
+    "output_tokens": 1597,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1597,
+  "output_tokens_details": {
+   "thinking_tokens": 498
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06163,
+ "ms": 13976,
+ "seconds": 14.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 13,
+   "share": 0.0,
+   "missing": [
+    "BSHSALG1",
+    "BSHSALG2",
+    "BSHSECON",
+    "BSHSENG1",
+    "BSHSENG2",
+    "BSHSENG3",
+    "BSHSENG4",
+    "BSHSGEOM",
+    "BSHSPREA",
+    "BSHSPSY",
+    "BSHSSOC",
+    "BSHSUSH",
+    "BSHSWHS"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "High School Diploma/Secondary Education",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BSHS ALG1",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   },
+   {
+    "code": "BSHS ALG2",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   },
+   {
+    "code": "BSHS ECON",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   },
+   {
+    "code": "BSHS ENG1",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   },
+   {
+    "code": "BSHS ENG2",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   },
+   {
+    "code": "BSHS ENG3",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   },
+   {
+    "code": "BSHS ENG4",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   },
+   {
+    "code": "BSHS GEOM",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   },
+   {
+    "code": "BSHS PREA",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   },
+   {
+    "code": "BSHS PSY",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   },
+   {
+    "code": "BSHS SOC",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   },
+   {
+    "code": "BSHS USH",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   },
+   {
+    "code": "BSHS WHS",
+    "why": "listed only in the page's general Courses tab, with no requirement rule; diploma requirements are on a linked page not in the text"
+   }
+  ],
+  "notes": [
+   "The page is an overview of High School Programs; it prints no requirements for the Adult High School Diploma and says 'For more information on the requirements for the diploma, please visit: Adult High School Diploma' (a linked page not included in the text). The diploma's requirements should be read from that page.",
+   "The Courses tab lists 36 BSHS courses (including all 13 closed-list courses and many not on the closed list, e.g., BSHS ART1, BIO, CHEM, CIV, INMA1-3, SPN1/SPNS1) with no units, hours, or requirement rules, so no blocks were recorded.",
+   "No total hours/units, outcomes, or careers are printed for this award."
+  ]
+ },
+ "extracted_run": "39891607837"
+}

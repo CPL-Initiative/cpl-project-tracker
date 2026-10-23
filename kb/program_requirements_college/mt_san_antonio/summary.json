@@ -2,195 +2,492 @@
  "college": "Mt. San Antonio College",
  "programs": 469,
  "with_closed_list": 428,
- "found": 382,
- "extracted": 382,
- "errors": 1,
- "passed_machine_checks": 346,
+ "found": 397,
+ "extracted": 397,
+ "errors": 0,
+ "passed_machine_checks": 359,
  "failed": {
-  "coverage": 0,
+  "coverage": 9,
   "invented": 0,
-  "arithmetic": 35,
+  "arithmetic": 29,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 21.42,
- "cost_per_program": 0.0561,
+ "cost_usd": 22.47,
+ "cost_per_program": 0.0566,
  "not_found": [
   {
    "control_number": "15574",
    "title": "Radio Broadcasting On-the-Air",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/radio-broadcasting/audio-media-degree/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.875,
+    "body": 0.875,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2838,
+     "content": 48596,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      83
+     ]
+    ]
+   }
   },
   {
    "control_number": "22151",
    "title": "Landscape Equipment Technology",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   },
   {
    "control_number": "22161",
    "title": "Radio Broadcasting: On-Air",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/radio-broadcasting/audio-media-certificate/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.875,
+    "body": 0.875,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2840,
+     "content": 48596,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      83
+     ]
+    ]
+   }
   },
   {
    "control_number": "24056",
    "title": "Health Care Interpreting",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/care-coordinator-level-1/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2680,
+     "content": 47070,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   },
   {
    "control_number": "24075",
    "title": "Sports Turf Management",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/park-sports-turf-management/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4169,
+     "content": 50605,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      423
+     ]
+    ]
+   }
   },
   {
    "control_number": "24088",
    "title": "Landscape Irrigation",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-irrigation-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2973,
+     "content": 49326,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      324
+     ]
+    ]
+   }
   },
   {
    "control_number": "24111",
    "title": "Landscape Equipment Technology",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   },
   {
    "control_number": "24113",
    "title": "Landscape and Park Maintenance",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-park-maintenance-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2861,
+     "content": 49232,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      342
+     ]
+    ]
+   }
   },
   {
    "control_number": "24215",
    "title": "Tree Care and Maintenance",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/tree-care-maintenance-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2867,
+     "content": 49211,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      313
+     ]
+    ]
+   }
   },
   {
    "control_number": "24248",
    "title": "Landscape Design and Construction",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-construction-certificate/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2862,
+     "content": 49322,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      430
+     ]
+    ]
+   }
   },
   {
    "control_number": "24284",
    "title": "Computer Systems Technology",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-computer-systems-technology/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3280,
+     "content": 50769,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      363
+     ]
+    ]
+   }
   },
   {
    "control_number": "24342",
    "title": "Interior Landscaping",
-   "award": null
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/interior-landscaping-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2933,
+     "content": 49270,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      308
+     ]
+    ]
+   }
   },
   {
    "control_number": "24374",
    "title": "Park Management",
-   "award": null
-  },
-  {
-   "control_number": "35611",
-   "title": "VESL Career Paths",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "36115",
-   "title": "Financial and Database Management",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "36843",
-   "title": "HSE Reading and Language Arts",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "36870",
-   "title": "ASVAB Test Preparation",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "36871",
-   "title": "HSE Mathematics",
-   "award": "Noncredit program"
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2558,
+     "content": 47250,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   },
   {
    "control_number": "39518",
    "title": "iOS Programming",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-in-c-programming/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.429,
+    "body": 0.429,
+    "content": 0.0,
+    "net": 3,
+    "listed": 7,
+    "why": "coverage 0.43 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3871,
+     "content": 50131,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      286
+     ]
+    ]
+   }
   },
   {
    "control_number": "40187",
    "title": "Android Programming",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
-  },
-  {
-   "control_number": "42033",
-   "title": "College Readiness for Math and English",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42753",
-   "title": "ESL Oral Communication - Literacy Level",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42754",
-   "title": "ESL Oral Communication - Advanced Level",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42755",
-   "title": "ESL Written Communication - Beginning Level",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42756",
-   "title": "ESL Oral Communication - Beginning Level",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42757",
-   "title": "ESL Oral Communication - Intermediate Level",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42758",
-   "title": "ESL Written Communication - Literacy Level",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "43373",
-   "title": "Post Production for Film and Television",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
-  },
-  {
-   "control_number": "43729",
-   "title": "Engineering Topics",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "43747",
-   "title": "ESL - Literacy Level",
-   "award": "Noncredit program"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-in-c-programming/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.143,
+    "body": 0.143,
+    "content": 0.0,
+    "net": 1,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 1 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3871,
+     "content": 50131,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      286
+     ]
+    ]
+   }
   },
   {
    "control_number": "43754",
    "title": "Registered Behavior Technician",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-registered-behavior-technician/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3484,
+     "content": 51212,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      556
+     ]
+    ]
+   }
   },
   {
    "control_number": "43777",
    "title": "Digital Media Specialist",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   },
   {
    "control_number": "43999",
    "title": "Regenerative Communities",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   },
   {
    "control_number": "44367",
    "title": "Dietary Manager",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   },
   {
    "control_number": "45423",
    "title": "Speech Language Pathology Assistant",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   }
  ],
- "run": "38064250199"
+ "run": "39891607837"
 }

@@ -35,7 +35,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -62,7 +65,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -96,7 +102,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -139,7 +148,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -198,7 +210,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -210,13 +225,14 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "BUSO25",
    "BUSO26",
    "CISB10",
    "CISB31",
    "CISD11",
+   "CISD11L",
    "CISN21"
   ],
   "source": {
@@ -226,7 +242,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -294,7 +313,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 34,
@@ -328,7 +350,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -368,7 +393,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -402,7 +430,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -434,7 +465,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -477,7 +511,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -514,7 +551,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -566,7 +606,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
@@ -599,7 +642,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -649,7 +695,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 28,
@@ -685,7 +734,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -711,7 +763,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -757,7 +812,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -789,7 +847,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -800,7 +861,7 @@
   "title": "Administration of Justice",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 0.944,
   "codes_found": [
    "ADJU1",
@@ -826,7 +887,13 @@
    "title": "Administration of Justice (AS Degree S0404) < Mt. San Antonio College",
    "h1": "Administration of Justice (AS Degree S0404)",
    "text_from": "innerText",
-   "label": null
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 18,
   "text_chars": 4222
@@ -865,7 +932,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -902,7 +972,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -939,7 +1012,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -989,7 +1065,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 28,
@@ -1030,7 +1109,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -1057,7 +1139,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -1084,7 +1169,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -1111,7 +1199,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -1162,7 +1253,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -1190,7 +1284,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -1202,14 +1299,15 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "BUSA7",
    "BUSA72",
    "BUSA75",
    "BUSA76",
    "CISB31",
-   "CISD11"
+   "CISD11",
+   "CISD11L"
   ],
   "source": {
    "url": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-computerized-certificate/",
@@ -1218,7 +1316,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -1255,7 +1356,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -1267,13 +1371,14 @@
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "BUSO25",
    "BUSO26",
    "CISB10",
    "CISB31",
    "CISD11",
+   "CISD11L",
    "CISN21"
   ],
   "source": {
@@ -1283,7 +1388,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -1323,7 +1431,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -1351,7 +1462,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -1377,7 +1491,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -1401,17 +1518,20 @@
    "AIRM72"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/airframe-and-aircraft-powerplant-maintenance-technology-day/",
-   "title": "Airframe and Aircraft Powerplant Maintenance Technology - Day (AS Degree S0911) < Mt. San Antonio College",
-   "h1": "Airframe and Aircraft Powerplant Maintenance Technology - Day (AS Degree S0911)",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/airframe-aircraft-powerplant-maintenance-technology-evening/",
+   "title": "Airframe and Aircraft Powerplant Maintenance Technology - Evening (AS Degree S0951) < Mt. San Antonio College",
+   "h1": "Airframe and Aircraft Powerplant Maintenance Technology - Evening (AS Degree S0951)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
-  "text_chars": 5391
+  "text_chars": 5737
  },
  {
   "control_number": "08079",
@@ -1445,7 +1565,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -1493,7 +1616,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 27,
@@ -1540,7 +1666,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 26,
@@ -1593,7 +1722,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
@@ -1625,7 +1757,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1661,7 +1796,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -1695,7 +1833,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -1737,7 +1878,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -1779,7 +1923,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -1817,7 +1964,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -1923,7 +2073,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 94,
@@ -1967,7 +2120,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -2004,7 +2160,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -2112,7 +2271,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -2152,7 +2314,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2173,17 +2338,20 @@
    "AIRM72"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/aircraft-powerplant-maintenance-technology-evening-certificate/",
-   "title": "Aircraft Powerplant Maintenance Technology- Evening (Certificate T0952) < Mt. San Antonio College",
-   "h1": "Aircraft Powerplant Maintenance Technology- Evening (Certificate T0952)",
-   "text_from": "innerText",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/aircraft-powerplant-maintenance-technology-day-certificate/",
+   "title": "Aircraft Powerplant Maintenance Technology - Day (Certificate T0982) < Mt. San Antonio College",
+   "h1": "Aircraft Powerplant Maintenance Technology - Day (Certificate T0982)",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
-  "text_chars": 5702
+  "text_chars": 5443
  },
  {
   "control_number": "12073",
@@ -2233,7 +2401,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 32,
@@ -2261,7 +2432,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2292,7 +2466,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -2332,7 +2509,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -2358,7 +2538,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -2387,7 +2570,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -2411,7 +2597,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -2444,7 +2633,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -2470,7 +2662,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -2497,7 +2692,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -2529,7 +2727,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -2556,7 +2757,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -2580,7 +2784,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -2619,7 +2826,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2653,7 +2863,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -2681,7 +2894,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2705,7 +2921,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -2736,7 +2955,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -2766,7 +2988,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2823,7 +3048,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2887,7 +3115,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -2920,7 +3151,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -2957,7 +3191,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -3002,7 +3239,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -3014,13 +3254,15 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.895,
+  "coverage": 1.0,
   "codes_found": [
    "CISN11",
    "CISN11L",
    "CISN21",
    "CISN31",
+   "CISN31L",
    "CISN34",
+   "CISN34L",
    "CISN51",
    "CISN51L",
    "CISS13",
@@ -3041,7 +3283,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -3071,7 +3316,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -3101,7 +3349,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -3132,7 +3383,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -3163,7 +3417,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -3196,7 +3453,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -3223,7 +3483,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -3252,7 +3515,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -3315,7 +3581,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 29,
@@ -3403,7 +3672,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 69,
@@ -3493,7 +3765,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 84,
@@ -3505,24 +3780,35 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.593,
+  "coverage": 1.0,
   "codes_found": [
    "CISB11",
    "CISB15",
    "CISD11",
+   "CISD11L",
    "CISD21",
+   "CISD21L",
    "CISD31",
+   "CISD31L",
    "CISN11",
+   "CISN11L",
    "CISN21",
    "CISN31",
+   "CISN31L",
    "CISP21",
+   "CISP21L",
    "CISP31",
+   "CISP31L",
    "CISP41",
+   "CISP41L",
    "CISP71",
+   "CISP71L",
    "CISS13",
    "CISS15",
    "CISS21",
-   "CISW24"
+   "CISS21L",
+   "CISW24",
+   "CISW24L"
   ],
   "source": {
    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-database-management-systems/information_technology_aa/",
@@ -3531,7 +3817,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.4
+    "title": 0.4,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 27,
@@ -3711,7 +4000,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 161,
@@ -3816,7 +4108,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 86,
@@ -3851,7 +4146,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -3954,7 +4252,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 73,
@@ -3978,16 +4279,20 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "CISB11",
    "CISB15",
    "CISD11",
+   "CISD11L",
    "CISD21",
+   "CISD21L",
    "CISD31",
+   "CISD31L",
    "CISM11",
    "CISN21",
    "CISN31",
+   "CISN31L",
    "CISP10",
    "CISP21",
    "CISP21L",
@@ -4003,7 +4308,9 @@
    "CISP74L",
    "CISW17",
    "CISW24",
-   "CISW31"
+   "CISW24L",
+   "CISW31",
+   "CISW31L"
   ],
   "source": {
    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/computer-programming/",
@@ -4012,7 +4319,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 30,
@@ -4052,7 +4362,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4080,7 +4393,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4107,7 +4423,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -4151,7 +4470,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -4176,7 +4498,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -4202,7 +4527,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -4240,7 +4568,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -4288,7 +4619,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -4366,24 +4700,30 @@
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
    "CISD11",
+   "CISD11L",
+   "CISM11",
+   "CISN21",
    "CISP31",
    "CISP31L"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-in-c-programming/",
-   "title": "CIS Professional in C++ Programming (Certificate E0714) < Mt. San Antonio College",
-   "h1": "CIS Professional in C++ Programming (Certificate E0714)",
-   "text_from": "innerText",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/programming-in-c/",
+   "title": "Programming In C++ (Certificate N0634) < Mt. San Antonio College",
+   "h1": "Programming In C++ (Certificate N0634)",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
-  "text_chars": 4070
+  "text_chars": 3197
  },
  {
   "control_number": "22172",
@@ -4412,7 +4752,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -4468,7 +4811,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 34,
@@ -4502,7 +4848,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -4530,7 +4879,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4561,7 +4913,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -4589,7 +4944,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4626,7 +4984,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -4661,7 +5022,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -4687,7 +5051,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -4733,7 +5100,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -4763,7 +5133,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -4794,7 +5167,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -4848,7 +5224,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 32,
@@ -4859,7 +5238,7 @@
   "title": "Administration of Justice",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 0.929,
   "codes_found": [
    "ADJU1",
@@ -4881,7 +5260,13 @@
    "title": "Administration of Justice (Certificate T0406) < Mt. San Antonio College",
    "h1": "Administration of Justice (Certificate T0406)",
    "text_from": "innerText",
-   "label": null
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 14,
   "text_chars": 3820
@@ -4908,7 +5293,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4933,7 +5321,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -4972,7 +5363,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -4983,7 +5377,7 @@
   "title": "Basic Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BSABE1",
@@ -4991,14 +5385,20 @@
    "BSLRN1"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/bs/",
-   "title": "Basic Skills (BS) < Mt. San Antonio College",
-   "h1": "Basic Skills (BS)",
-   "text_from": "innerText",
-   "label": null
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
+   "title": "< Mt. San Antonio College",
+   "h1": "",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 3,
-  "text_chars": 7017
+  "text_chars": 12463
  },
  {
   "control_number": "24066",
@@ -5018,7 +5418,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5055,7 +5458,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5104,7 +5510,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5141,7 +5550,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5166,7 +5578,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5193,7 +5608,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -5242,7 +5660,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5277,7 +5698,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -5305,7 +5729,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -5367,7 +5794,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -5396,7 +5826,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -5450,7 +5883,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -5475,7 +5911,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5498,7 +5937,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -5528,7 +5970,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -5570,7 +6015,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -5643,7 +6091,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5668,7 +6119,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5705,7 +6159,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5744,7 +6201,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -5804,7 +6264,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5863,7 +6326,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -5890,7 +6356,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -5916,7 +6385,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -5941,7 +6413,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5995,7 +6470,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 32,
@@ -6033,7 +6511,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -6058,7 +6539,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -6118,7 +6602,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology/ psychology (aa-t degree a0324)",
+    "section_fit": 0.5
    }
   },
   "listed": 38,
@@ -6130,19 +6617,20 @@
   "award": "Noncredit program",
   "shape": "noncredit",
   "method": "link_search",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
-   "BSABE5"
+   "BSABE5",
+   "BSLRN6"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/college-readiness-healthcare-programs/",
-   "title": "College Readiness for Healthcare Programs < Mt. San Antonio College",
-   "h1": "College Readiness for Healthcare Programs",
-   "text_from": "innerText",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
+   "title": "< Mt. San Antonio College",
+   "h1": "",
+   "text_from": "innerText+tabs",
    "label": null
   },
   "listed": 2,
-  "text_chars": 2653
+  "text_chars": 12391
  },
  {
   "control_number": "30847",
@@ -6191,7 +6679,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication/ communication studies 2.0 (aa-t degree a0976)",
+    "section_fit": 0.667
    }
   },
   "listed": 33,
@@ -6230,7 +6721,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -6255,7 +6749,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -6288,7 +6785,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -6319,7 +6819,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -6347,7 +6850,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -6358,12 +6864,38 @@
   "title": "Adult High School Diploma",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSHSALG1",
+   "BSHSALG2",
+   "BSHSECON",
+   "BSHSENG1",
+   "BSHSENG2",
+   "BSHSENG3",
+   "BSHSENG4",
+   "BSHSGEOM",
+   "BSHSPREA",
+   "BSHSPSY",
+   "BSHSSOC",
+   "BSHSUSH",
+   "BSHSWHS"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/",
+   "title": "High School Programs < Mt. San Antonio College",
+   "h1": "High School Programs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3339
  },
  {
   "control_number": "31604",
@@ -6408,7 +6940,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english (aa-t degree a0332)",
+    "section_fit": 0.5
    }
   },
   "listed": 29,
@@ -6462,7 +6997,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history/ art history (aa-t degree a0330)",
+    "section_fit": 0.667
    }
   },
   "listed": 45,
@@ -6495,7 +7033,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -6539,7 +7080,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history/ history (aa-t degree a0334)",
+    "section_fit": 0.5
    }
   },
   "listed": 26,
@@ -6575,7 +7119,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics/ mathematics (as-t degree s0333)",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
@@ -6624,7 +7171,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science/ political science (aa-t degree a0345)",
+    "section_fit": 0.667
    }
   },
   "listed": 31,
@@ -6658,7 +7208,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theater arts/ theater arts (aa-t degree a0346)",
+    "section_fit": 0.667
    }
   },
   "listed": 12,
@@ -6708,7 +7261,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music / music (aa-t degree a0347)",
+    "section_fit": 0.5
    }
   },
   "listed": 28,
@@ -6762,7 +7318,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography/ geography (aa-t degree a0356)",
+    "section_fit": 0.5
    }
   },
   "listed": 34,
@@ -6790,7 +7349,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -6801,24 +7363,83 @@
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU1",
+   "ADJU10",
+   "ADJU2",
+   "ADJU20",
+   "ADJU3",
+   "ADJU4",
+   "ADJU5",
+   "ADJU50",
+   "ADJU59",
+   "ADJU9",
+   "CISB11",
+   "ECON17",
+   "GEOG10",
+   "PHIL3",
+   "PHIL3H",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC10",
+   "PSYC3",
+   "PSYC3H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC12",
+   "SOC1H",
+   "SOC23",
+   "SOC5",
+   "SOC5H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/administration-justice/as-administration-justice-transfer/",
+   "title": "Administration of Justice (AS-T Degree S0362) < Mt. San Antonio College",
+   "h1": "Administration of Justice (AS-T Degree S0362)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice / administration of justice (as-t degree s0362)",
+    "section_fit": 0.667
+   }
+  },
   "listed": 30,
-  "text_chars": 0
+  "text_chars": 5610
  },
  {
   "control_number": "32892",
   "title": "Dance Teacher",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DNCE32",
+   "DNCE39",
+   "DNT38"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/dance-teacher-certificate/",
+   "title": "Dance Teacher (Certificate N0649) < Mt. San Antonio College",
+   "h1": "Dance Teacher (Certificate N0649)",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3800
  },
  {
   "control_number": "33309",
@@ -6842,7 +7463,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -6869,7 +7493,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -6908,7 +7535,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "programs a-z/ studio arts, aa-t/",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -6946,7 +7576,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -7015,7 +7648,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 57,
@@ -7027,7 +7663,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
    "CHLD1",
    "CHLD11",
@@ -7038,6 +7674,7 @@
    "CHLD66",
    "CHLD66L",
    "CHLD67",
+   "CHLD67L",
    "CHLD86",
    "CHLD87"
   ],
@@ -7048,7 +7685,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education (as-t degree s0401)",
+    "section_fit": 0.75
    }
   },
   "listed": 12,
@@ -7120,7 +7760,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 55,
@@ -7153,7 +7796,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -7206,7 +7852,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology (aa-t degree a0419)",
+    "section_fit": 0.5
    }
   },
   "listed": 31,
@@ -7243,7 +7892,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "plant science/ agriculture plant science (as-t degree s0847)",
+    "section_fit": 0.75
    }
   },
   "listed": 17,
@@ -7254,7 +7906,7 @@
   "title": "VESL Career Paths",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -7305,7 +7957,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "nutrition/ nutrition and dietetics (as-t degree s0422)",
+    "section_fit": 0.667
    }
   },
   "listed": 28,
@@ -7350,7 +8005,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy/ philosophy (aa-t degree a0424)",
+    "section_fit": 0.5
    }
   },
   "listed": 23,
@@ -7403,7 +8061,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
@@ -7514,7 +8175,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 94,
@@ -7541,7 +8205,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -7564,12 +8231,20 @@
   "title": "Financial and Database Management",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSABE5"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
+   "title": "< Mt. San Antonio College",
+   "h1": "",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 12391
  },
  {
   "control_number": "36278",
@@ -7590,7 +8265,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -7610,17 +8288,20 @@
    "VOCCPNET"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/officecomputerapplicationslevel1text/",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/",
    "title": "Vocational Re-Entry < Mt. San Antonio College",
    "h1": "Vocational Re-Entry",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
-  "text_chars": 2633
+  "text_chars": 4179
  },
  {
   "control_number": "36441",
@@ -7644,7 +8325,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -7669,7 +8353,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -7762,7 +8449,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 40,
@@ -7781,17 +8471,20 @@
    "VOCST2"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/sewingandtailoringtext/",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/",
    "title": "Vocational Re-Entry < Mt. San Antonio College",
    "h1": "Vocational Re-Entry",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
-  "text_chars": 3274
+  "text_chars": 2589
  },
  {
   "control_number": "36834",
@@ -7820,36 +8513,61 @@
   "title": "HSE Reading and Language Arts",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSHSERL"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-equivalency-ged/",
+   "title": "High School Equivalency GED < Mt. San Antonio College",
+   "h1": "High School Equivalency GED",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 4000
  },
  {
   "control_number": "36870",
   "title": "ASVAB Test Preparation",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSASVB1",
+   "BSASVB2"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
+   "title": "< Mt. San Antonio College",
+   "h1": "",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 6676
  },
  {
   "control_number": "36871",
   "title": "HSE Mathematics",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSHSEMA"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-equivalency-ged/",
+   "title": "High School Equivalency GED < Mt. San Antonio College",
+   "h1": "High School Equivalency GED",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 4000
  },
  {
   "control_number": "36872",
@@ -7871,7 +8589,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -7935,7 +8656,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -7979,7 +8703,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -8007,7 +8734,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -8035,7 +8765,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -8077,7 +8810,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -8109,7 +8845,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -8144,7 +8883,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -8167,7 +8909,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -8208,7 +8953,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -8232,7 +8980,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -8259,7 +9010,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -8282,7 +9036,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -8305,7 +9062,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -8340,7 +9100,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -8366,7 +9129,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -8407,7 +9173,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "hospitality / hospitality management (as-t degree s0451)",
+    "section_fit": 0.667
    }
   },
   "listed": 23,
@@ -8443,7 +9212,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -8468,7 +9240,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -8588,7 +9363,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology (aa-t degree a0454)",
+    "section_fit": 0.5
    }
   },
   "listed": 98,
@@ -8617,7 +9395,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -8628,9 +9409,10 @@
   "title": "ESL - Beginning Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 0.909,
+  "method": "sitemap_page",
+  "coverage": 1.0,
   "codes_found": [
+   "BSLRN50",
    "ESLCULTR",
    "ESLGVRA",
    "ESLLANG1",
@@ -8643,14 +9425,20 @@
    "ESLWRTA"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
-   "title": "English as a Second Language (ESL) < Mt. San Antonio College",
-   "h1": "English as a Second Language (ESL)",
-   "text_from": "innerText",
-   "label": null
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+   "title": "English as Second Language < Mt. San Antonio College",
+   "h1": "English as Second Language",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 11,
-  "text_chars": 15860
+  "text_chars": 10335
  },
  {
   "control_number": "38083",
@@ -8671,7 +9459,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -8701,7 +9492,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -8736,7 +9530,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -8780,7 +9577,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -8822,7 +9622,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -8833,9 +9636,10 @@
   "title": "ESL - Advanced Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 0.938,
+  "method": "sitemap_page",
+  "coverage": 1.0,
   "codes_found": [
+   "BSLRN50",
    "ESL72",
    "ESL80",
    "ESL81",
@@ -8853,14 +9657,20 @@
    "ESLWRTC"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
-   "title": "English as a Second Language (ESL) < Mt. San Antonio College",
-   "h1": "English as a Second Language (ESL)",
-   "text_from": "innerText",
-   "label": null
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+   "title": "English as Second Language < Mt. San Antonio College",
+   "h1": "English as Second Language",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 16,
-  "text_chars": 16000
+  "text_chars": 10335
  },
  {
   "control_number": "38095",
@@ -8880,7 +9690,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -8904,7 +9717,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -8915,9 +9731,10 @@
   "title": "ESL - Intermediate Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 0.909,
+  "method": "sitemap_page",
+  "coverage": 1.0,
   "codes_found": [
+   "BSLRN50",
    "ESLCULTR",
    "ESLGVRB",
    "ESLLANG1",
@@ -8930,14 +9747,20 @@
    "ESLWRTB"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
-   "title": "English as a Second Language (ESL) < Mt. San Antonio College",
-   "h1": "English as a Second Language (ESL)",
-   "text_from": "innerText",
-   "label": null
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+   "title": "English as Second Language < Mt. San Antonio College",
+   "h1": "English as Second Language",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 11,
-  "text_chars": 16000
+  "text_chars": 10335
  },
  {
   "control_number": "38102",
@@ -8957,7 +9780,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -8981,7 +9807,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -9006,7 +9835,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -9052,7 +9884,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -9075,7 +9910,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -9101,7 +9939,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -9125,7 +9966,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -9148,7 +9992,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -9182,7 +10029,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -9194,7 +10044,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.96,
+  "coverage": 1.0,
   "codes_found": [
    "ANAT35",
    "ANAT36",
@@ -9205,6 +10055,7 @@
    "BIOL25",
    "BIOL3",
    "BIOL34",
+   "BIOL34L",
    "BIOL4",
    "BIOL4H",
    "BIOL8",
@@ -9228,7 +10079,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -9257,7 +10111,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -9282,7 +10139,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -9311,7 +10171,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -9355,7 +10218,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -9382,7 +10248,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -9408,7 +10277,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -9446,7 +10318,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -9471,7 +10346,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -9533,7 +10411,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -9615,7 +10496,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "programs a-z/ anthropology aa-t /",
+    "section_fit": 1.0
    }
   },
   "listed": 69,
@@ -9721,7 +10605,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice / social justice studies: general (aa-t degree a0978)",
+    "section_fit": 0.8
    }
   },
   "listed": 92,
@@ -9751,7 +10638,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology / geology (as-t degree s0670)",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -9763,11 +10653,14 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.727,
+  "coverage": 1.0,
   "codes_found": [
    "CISD11",
+   "CISD11L",
    "CISD21",
+   "CISD21L",
    "CISD31",
+   "CISD31L",
    "CISP10",
    "CISP21",
    "CISP21L",
@@ -9781,7 +10674,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -9792,24 +10688,12 @@
   "title": "CIS Professional in Excel and Acces",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.5,
-  "codes_found": [
-   "CISD11",
-   "CISD40"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-database-management-systems/computer-database-management-systems/",
-   "title": "Computer - Database Management Systems (AS Degree S0706) < Mt. San Antonio College",
-   "h1": "Computer - Database Management Systems (AS Degree S0706)",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 4196
+  "text_chars": 0
  },
  {
   "control_number": "40143",
@@ -9833,7 +10717,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -9860,7 +10747,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -9888,7 +10778,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -9914,7 +10807,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -9941,7 +10837,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -9970,7 +10869,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -9995,7 +10897,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -10030,7 +10935,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -10042,10 +10950,11 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.571,
+  "coverage": 0.714,
   "codes_found": [
    "CISW17",
    "CISW24",
+   "CISW24L",
    "CISW31",
    "CISW31L"
   ],
@@ -10056,7 +10965,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -10103,7 +11015,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -10127,7 +11042,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -10155,7 +11073,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -10180,7 +11101,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -10207,7 +11131,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -10251,7 +11178,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -10277,7 +11207,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -10304,7 +11237,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -10349,7 +11285,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -10374,7 +11313,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -10399,7 +11341,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -10435,7 +11380,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -10467,7 +11415,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -10495,7 +11446,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -10533,7 +11487,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -10570,7 +11527,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -10607,7 +11567,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -10644,7 +11607,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -10699,7 +11665,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -10745,7 +11714,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 24,
@@ -10777,7 +11749,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -10802,7 +11777,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -10841,7 +11819,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -10866,7 +11847,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -10892,7 +11876,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -10933,7 +11920,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -10967,7 +11957,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -11007,7 +12000,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -11049,7 +12045,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -11088,7 +12087,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -11124,7 +12126,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -11168,7 +12173,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -11214,7 +12222,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 24,
@@ -11253,7 +12264,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -11290,7 +12304,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -11333,7 +12350,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -11371,7 +12391,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -11409,7 +12432,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -11439,7 +12465,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -11474,7 +12503,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -11508,7 +12540,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -11534,7 +12569,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -11563,7 +12601,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -11620,7 +12661,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 35,
@@ -11649,7 +12693,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -11684,7 +12731,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -11788,7 +12838,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health/ public health (as-t degree s1014)",
+    "section_fit": 0.667
    }
   },
   "listed": 86,
@@ -11824,7 +12877,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -11853,7 +12909,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -11882,7 +12941,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -11914,7 +12976,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -11944,7 +13009,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -11955,7 +13023,7 @@
   "title": "College Readiness for Math and English",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -11980,7 +13048,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -12024,7 +13095,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -12049,7 +13123,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -12076,7 +13153,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -12107,7 +13187,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -12158,7 +13241,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 29,
@@ -12224,7 +13310,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 44,
@@ -12258,7 +13347,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -12284,7 +13376,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -12296,15 +13391,17 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 0.9,
   "codes_found": [
    "ASCI1",
    "ASCI14",
    "ASCI16",
    "ASCI17",
    "ASCI2",
+   "ASCI2L",
    "ASCI30",
    "ASCI96",
+   "ASCI96L",
    "CHEM20",
    "CHEM40",
    "CHEM50",
@@ -12322,7 +13419,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "adt",
+    "section_line": "animal sciences overview/ agriculture animal science (as-t degree s0878)",
+    "section_fit": 0.5
    }
   },
   "listed": 20,
@@ -12356,7 +13456,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business/ business administration 2.0 (as-t degree s0872)",
+    "section_fit": 0.667
    }
   },
   "listed": 16,
@@ -12374,14 +13477,14 @@
    "ESLWRTC"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
-   "title": "English as a Second Language (ESL) < Mt. San Antonio College",
-   "h1": "English as a Second Language (ESL)",
-   "text_from": "innerText",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+   "title": "English as Second Language < Mt. San Antonio College",
+   "h1": "English as Second Language",
+   "text_from": "innerText+tabs",
    "label": null
   },
   "listed": 2,
-  "text_chars": 8711
+  "text_chars": 4025
  },
  {
   "control_number": "42727",
@@ -12395,14 +13498,14 @@
    "ESLWRTB"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
-   "title": "English as a Second Language (ESL) < Mt. San Antonio College",
-   "h1": "English as a Second Language (ESL)",
-   "text_from": "innerText",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+   "title": "English as Second Language < Mt. San Antonio College",
+   "h1": "English as Second Language",
+   "text_from": "innerText+tabs",
    "label": null
   },
   "listed": 2,
-  "text_chars": 8750
+  "text_chars": 4025
  },
  {
   "control_number": "42732",
@@ -12423,7 +13526,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -12434,72 +13540,126 @@
   "title": "ESL Oral Communication - Literacy Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLPRONP",
+   "ESLSPKP1"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+   "title": "English as Second Language < Mt. San Antonio College",
+   "h1": "English as Second Language",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 8640
  },
  {
   "control_number": "42754",
   "title": "ESL Oral Communication - Advanced Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLPRONC",
+   "ESLSPKC"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+   "title": "English as Second Language < Mt. San Antonio College",
+   "h1": "English as Second Language",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4077
  },
  {
   "control_number": "42755",
   "title": "ESL Written Communication - Beginning Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLREADA",
+   "ESLWRTA"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+   "title": "English as Second Language < Mt. San Antonio College",
+   "h1": "English as Second Language",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4025
  },
  {
   "control_number": "42756",
   "title": "ESL Oral Communication - Beginning Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLPRONA",
+   "ESLSPKA"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+   "title": "English as Second Language < Mt. San Antonio College",
+   "h1": "English as Second Language",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4077
  },
  {
   "control_number": "42757",
   "title": "ESL Oral Communication - Intermediate Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLPRONB",
+   "ESLSPKB"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+   "title": "English as Second Language < Mt. San Antonio College",
+   "h1": "English as Second Language",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4077
  },
  {
   "control_number": "42758",
   "title": "ESL Written Communication - Literacy Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLREADP",
+   "ESLWRTP1"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+   "title": "English as Second Language < Mt. San Antonio College",
+   "h1": "English as Second Language",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4048
  },
  {
   "control_number": "42788",
@@ -12524,7 +13684,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -12564,7 +13727,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -12589,7 +13755,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -12630,7 +13799,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -12658,7 +13830,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -12691,7 +13866,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -12717,7 +13895,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -12758,7 +13939,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -12786,7 +13970,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -12820,7 +14007,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -12854,7 +14044,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -12896,7 +14089,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -12928,7 +14124,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -12939,12 +14138,25 @@
   "title": "Post Production for Film and Television",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "RTV19A",
+   "RTV20",
+   "RTV22",
+   "RTV29",
+   "RTV41A",
+   "RTV42"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/television/post-production-for-film-and-television-certificate/",
+   "title": "Post Production for Film and Television (Certificate N0935) < Mt. San Antonio College",
+   "h1": "Post Production for Film and Television (Certificate N0935)",
+   "text_from": "innerText",
+   "label": null
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2874
  },
  {
   "control_number": "43411",
@@ -12978,7 +14190,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -13031,7 +14246,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 32,
@@ -13057,7 +14275,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -13093,7 +14314,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -13118,7 +14342,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -13147,7 +14374,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -13209,7 +14439,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 40,
@@ -13245,7 +14478,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -13281,7 +14517,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -13310,7 +14549,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -13362,7 +14604,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "child development / child and adolescent development (aa-t degree a0940)",
+    "section_fit": 0.75
    }
   },
   "listed": 30,
@@ -13373,24 +14618,59 @@
   "title": "Engineering Topics",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSCNSL4",
+   "BSTE"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
+   "title": "< Mt. San Antonio College",
+   "h1": "",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 12275
  },
  {
   "control_number": "43747",
   "title": "ESL - Literacy Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSLRN50",
+   "ESLCULTR",
+   "ESLFDN",
+   "ESLGVRP1",
+   "ESLLANG1",
+   "ESLLANG3",
+   "ESLPLVL1",
+   "ESLPRONP",
+   "ESLREADP",
+   "ESLSPKFD",
+   "ESLSPKP1",
+   "ESLWRTFD",
+   "ESLWRTP1"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
+   "title": "English as Second Language < Mt. San Antonio College",
+   "h1": "English as Second Language",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 10335
  },
  {
   "control_number": "43751",
@@ -13410,7 +14690,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -13434,7 +14717,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -13460,7 +14746,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -13516,7 +14805,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -13573,7 +14865,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -13598,7 +14893,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -13622,7 +14920,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -13646,7 +14947,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -13717,7 +15021,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 37,
@@ -13747,7 +15054,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -13792,7 +15102,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -13821,7 +15134,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -13860,7 +15176,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -13897,7 +15216,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -13934,7 +15256,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -13964,7 +15289,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -13989,7 +15317,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -14025,7 +15356,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -14081,7 +15415,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication/ communication studies 2.0 (aa-t degree a0976)",
+    "section_fit": 0.667
    }
   },
   "listed": 37,
@@ -14105,7 +15442,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -14150,7 +15490,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "programs a-z/ biology (as-t degree s0979)",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -14179,7 +15522,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -14232,7 +15578,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 32,
@@ -14263,7 +15612,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -14292,7 +15644,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -14363,7 +15718,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 50,
@@ -14394,7 +15752,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -14418,7 +15779,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -14446,7 +15810,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
