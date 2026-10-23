@@ -172,7 +172,7 @@ its log row read back 1, 1, 1).
    reply chips, and some of the 11 others are early sheets), with their builders in `kb/`
    and the template tests that read them; and a Library record per sheet linking its artifact.
 
-## NEEDS SAM ([Open Asks Sheet 120](https://claude.ai/artifact/LRFiSDUY4bGTokJdaKgHUJ), cards 2 to 7; the mock-up is the link)
+## NEEDS SAM ([Open Asks Sheet 120](https://claude.ai/artifact/NWy1GvYEEQgS8oKrYWHpTk), cards 2 to 7)
 
 Sam, 2026-10-23 ~19:28Z: *"Ashley and I have been working on the CPL Pathways tab to add the visuals
 you create there so the colleges can see their CPL opportunities as the MAP Customer Success Managers
