@@ -62,20 +62,24 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    36.0,
-    53.0
+    70.0,
+    87.0
    ],
    "stated": [
     71.0,
     71.0
    ],
    "against": "degree",
-   "ge": null,
+   "ge": [
+    34.0,
+    34.0
+   ],
    "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ]
+    "the blocks and general education come to 70.0-87.0, past the 71.0-71.0 the catalog prints for the degree"
+   ],
+   "fill": null
   },
   "repeated": {
    "codes": [],
@@ -120,8 +124,8 @@
     "max": 71
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [],
@@ -803,127 +807,20 @@
    "No program learning outcomes or careers appear in the provided text (General tab content not included)."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": 39966331452,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "EGN1R": [
-     2,
-     2
-    ],
-    "MAT3A": [
-     4,
-     4
-    ],
-    "MAT3B": [
-     4,
-     4
-    ],
-    "PHY4A": [
-     4,
-     4
-    ],
-    "PHY4B": [
-     4,
-     4
-    ],
-    "EGN5": [
-     3,
-     3
-    ],
-    "CSS2A": [
-     4,
-     4
-    ],
-    "CSS1": [
-     4,
-     4
-    ],
-    "EGN8": [
-     3,
-     3
-    ],
-    "EGN6": [
-     4,
-     4
-    ],
-    "EGN4": [
-     4,
-     4
-    ],
-    "EGN1L": [
-     1,
-     1
-    ],
-    "EGN2": [
-     3,
-     3
-    ],
-    "CHM1A": [
-     5,
-     5
-    ],
-    "PHY4C": [
-     4,
-     4
-    ],
-    "MAT3C": [
-     4,
-     4
-    ],
-    "MAT4": [
-     3,
-     3
-    ],
-    "MAT5": [
-     3,
-     3
-    ],
-    "EGN11": [
-     3,
-     3
-    ],
-    "CSS2B": [
-     4,
-     4
-    ],
-    "CSS3": [
-     4,
-     4
-    ],
-    "CSS7": [
-     4,
-     4
-    ],
-    "BIO1": [
-     4.5,
-     4.5
-    ],
-    "BIO2": [
-     4.5,
-     4.5
-    ],
-    "BIO3": [
-     4.5,
-     4.5
-    ],
-    "CHM1B": [
-     5,
-     5
-    ],
-    "CHM12A": [
-     5,
-     5
-    ],
-    "CHM12B": [
-     5,
-     5
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39949570443
 }

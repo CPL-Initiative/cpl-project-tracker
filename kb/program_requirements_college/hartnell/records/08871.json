@@ -61,20 +61,25 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    20.0,
-    20.0
+    54.0,
+    54.0
    ],
    "stated": [
     60.0,
     60.0
    ],
    "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [],
+   "fill": [
+    6.0,
+    6.0
    ]
   },
   "repeated": {
@@ -99,7 +104,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -120,8 +125,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [],
@@ -187,35 +192,20 @@
    "The page prints no program learning outcomes and names no careers."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": 39966331452,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "CSS1": [
-     4,
-     4
-    ],
-    "CSS2A": [
-     4,
-     4
-    ],
-    "CSS2B": [
-     4,
-     4
-    ],
-    "CSS3": [
-     4,
-     4
-    ],
-    "CSS7": [
-     4,
-     4
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39949570443
 }
