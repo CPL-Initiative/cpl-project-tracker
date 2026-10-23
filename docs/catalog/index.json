@@ -15938,8 +15938,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 422,
+   "count": 423,
    "docs": [
+    {
+     "created": "2026-10-23",
+     "governs": [],
+     "n": 453,
+     "path": "docs/session_453_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 453 handoff: Long Beach City landed, San Mateo's one record waiting for its display build, the thin colleges measured",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-23",
      "governs": [],
@@ -23211,5 +23225,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1222
+ "total": 1223
 }

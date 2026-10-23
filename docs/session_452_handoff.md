@@ -4,6 +4,7 @@ date: 2026-10-23
 session: 451 (SkyLupine)
 tags: [handoff, program-requirements-harvest]
 status: current
+superseded: true
 ---
 
 # You are Session 452

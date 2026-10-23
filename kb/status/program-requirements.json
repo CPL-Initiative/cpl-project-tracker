@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-23T04:58:52Z",
-  "session": 451,
-  "moniker": "SkyLupine",
-  "run": "Sam's session",
+  "written_at": "2026-10-23T07:25:33Z",
+  "session": 452,
+  "moniker": "SkyPoppy",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_452_handoff.md",
+  "handoff": "docs/session_453_handoff.md",
   "next_step": {
-    "title": "Land Long Beach City, then the next thin colleges",
-    "text": "Load and reread Long Beach City's extraction (run 39891611701, 13 programs moved) and build its display; then a free capture at Canada, San Mateo, East LA and Marin, the colleges under 60 percent that no S443 to S447 rule has reached; Hartnell's course units want a reconcile step from the catalog's course pages."
+    "title": "Land San Mateo's one record, then the next thin colleges",
+    "text": "Confirm the display apply of build 504ae8333118 on main; reread San Mateo's Administration of Justice transfer degree and build its display on a wave branch; then list the colleges under 60 percent live, leaving out East LA, Marin and San Mateo (measured S452) and Canada (hand-filed). Hartnell's course units want a reconcile step from the catalog's course pages."
   },
   "calls": [
     {
@@ -49,28 +49,16 @@
   },
   "changes": [
     {
-      "at": "2026-10-23T02:50:00Z",
-      "text": "Palo Verde loaded and reread on its Acalog 2026-2027 catalog: 15 inserted, 51 replaced."
+      "at": "2026-10-23T06:20:00Z",
+      "text": "Long Beach City loaded and reread: 7 inserted, 4 replaced."
     },
     {
-      "at": "2026-10-23T02:54:00Z",
-      "text": "Cypress loaded and reread: 17 inserted, 251 kept, 1 replaced."
+      "at": "2026-10-23T06:55:00Z",
+      "text": "Free captures: East LA and Marin moved nothing; San Mateo found one more program, its Administration of Justice transfer degree, extracted for the next wave."
     },
     {
-      "at": "2026-10-23T03:35:00Z",
-      "text": "Berkeley City extracted, loaded and reread: 23 inserted (the Multimedia Arts programs), 66 replaced."
-    },
-    {
-      "at": "2026-10-23T04:05:00Z",
-      "text": "Hartnell read from its Coursedog site under the tab name Requirements: 96 of 112 found where the PDF found 73; 24 inserted, 70 replaced. A Coursedog catalog reads from its site by default."
-    },
-    {
-      "at": "2026-10-23T04:10:00Z",
-      "text": "Mt. San Antonio reread after a free capture: 40 sent, 15 inserted, 15 replaced, 14 placing none."
-    },
-    {
-      "at": "2026-10-23T04:57:31Z",
-      "text": "Display build 25fe751ccd0a merged (#2367) and its apply dispatched on main; the builder's registry read re-read after the census of 2026-10-18."
+      "at": "2026-10-23T07:21:00Z",
+      "text": "Display build 504ae8333118 merged with 17,510 programs; its apply runs on main."
     }
   ],
   "headline": [
@@ -167,18 +155,18 @@
     {
       "day": "2026-10-23",
       "active": 20282,
-      "complete": 12914,
+      "complete": 12919,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-23T05:12:00Z"
+    "at": "2026-10-23T08:12:00Z"
   },
   "harvest": {
     "day": "2026-10-23",
-    "gaps": 3050,
+    "gaps": 3049,
     "parts": {
       "links": {
         "catalog": [
@@ -195,11 +183,11 @@
         ]
       },
       "roep": [
-        19093,
+        19167,
         20282
       ],
       "coci": [
-        16118,
+        16123,
         20282
       ],
       "outcomes": {
@@ -208,12 +196,12 @@
           89192
         ],
         "plo": [
-          16118,
+          16123,
           20282
         ]
       },
       "careers": [
-        15082,
+        15087,
         20282
       ]
     }
