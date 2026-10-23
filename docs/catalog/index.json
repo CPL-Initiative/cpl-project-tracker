@@ -16002,8 +16002,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 428,
+   "count": 429,
    "docs": [
+    {
+     "created": "2026-10-23",
+     "governs": [],
+     "n": 459,
+     "path": "docs/session_459_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "program-requirements-harvest",
+      "communications"
+     ],
+     "title": "Session 459 handoff: the team phrase lists publicly, Sheet 120 carries the entity-visuals asks, the Coordinator Guide audit",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-23",
      "governs": [],
@@ -23359,5 +23375,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1232
+ "total": 1233
 }
