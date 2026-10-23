@@ -26,3 +26,4 @@ where r.college = t.college and r.control_number = t.control_number
                   where v.college = r.college and v.control_number = r.control_number)
 returning 1)
 select count(*) as removed from gone;
+-- Applied 2026-10-23 21:17Z by supabase-migrate.yml run 40025041285: removed 6 (receipt kb/receipts/migration_program_requirement_records_older_build_removed_2026_10_23_s459_40025041285.json); the six keys read 0 live, the table 17,529.
