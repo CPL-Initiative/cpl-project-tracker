@@ -1,0 +1,29 @@
+{
+ "_readme": "S453 SkyFiddleneck, 2026-10-23. Hartnell's Requirements tab prints one course a line with no units (page read 39891644835, S451), so 85 of 96 extracted records fail the arithmetic check. Before a reconcile step reads each course's units from the catalog's course pages, this read loads one Requirements tab, prints the course links it carries and follows up to the cap, to see whether a course page prints its units as the capture reads it. One tab plus the followed course pages, no model call. S454 SkyBlazingStar: run 39924074351 showed the tab's course lines carry no links (only the department, the PDF and the sign-in), so this read records the data the tab's own scripts fetch from app.coursedog.com while it loads, to see whether the course objects carry credits.",
+ "college": "Hartnell College",
+ "outside_hosts": {
+  "coursedog.com": "Hartnell's catalog vendor hosts the catalog itself (hartnell.catalog.prod.coursedog.com) and its data (app.coursedog.com); the registry's catalog address is on this host."
+ },
+ "questions": {
+  "course_units": "Whether a Requirements tab links each course to a course page on the vendor host, the address shape of that link, and whether the course page prints the course's units (Units, Credits, Credit Hours) as the capture reads it."
+ },
+ "keywords": [
+  "[Uu]nits?",
+  "[Cc]redits?",
+  "Credit Hours",
+  "\\bADJ[ -]?\\d",
+  "/courses/"
+ ],
+ "pages": [
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ADJ/requirements-ipyf8",
+   "answers": [
+    "course_units"
+   ],
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ]
+  }
+ ]
+}
