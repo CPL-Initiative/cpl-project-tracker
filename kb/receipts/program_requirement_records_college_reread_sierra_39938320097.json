@@ -1,0 +1,1747 @@
+{
+ "college": "Sierra College",
+ "reread_run": "39938320097",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39933862802",
+ "at": "2026-10-23T10:21:55Z",
+ "posted": 13,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "07964",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "10827",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21523",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21524",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21526",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31260",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39208",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41803",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45200",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 7,
+ "absent": 0,
+ "held": 0,
+ "kept": 6,
+ "carried": 0,
+ "replaced_keys": [
+  "04279",
+  "04310",
+  "07978",
+  "08307",
+  "10506",
+  "10825",
+  "10854"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "04305",
+  "07986",
+  "10801",
+  "10803",
+  "30554",
+  "32011"
+ ],
+ "carried_keys": [],
+ "machine_pass": 13,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Sierra College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 39933862802;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUS 0250",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "IT 0015",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IT 0100",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IT 0105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IT 0110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select 6 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "BUS 0261",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BUS 0265",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BUS 0266",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "IT 0095",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "computer retail",
+      "helpdesk",
+      "system administration",
+      "computer application installation",
+      "technically oriented administrative roles"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Design LAN and WAN logical topologies that support various sized organizations.",
+      "Assess security risks and identify ways to minimize their threat and/or impact.",
+      "Analyze various operating system options and make recommendations based on organization needs.",
+      "Demonstrate digital literacy and work habits required for a successful virtual business.",
+      "Evaluate effectiveness of web-based business tools for successful operation of a virtual business.",
+      "Develop and implement common deliverables for virtual office entrepreneur.",
+      "Diagnose common software and hardware problems.",
+      "Analyze and integrate software solutions for the business environment.",
+      "Demonstrate professional communication and customer services skills.",
+      "Demonstrate computer literacy.",
+      "Analyze scenarios, investigate options, and appropriately apply workplace computer programs.",
+      "Demonstrate file management proficiency."
+     ],
+     "ge_pattern": "Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 22,
+      "min": 22
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Information Technology—IT Technician (AA or AS Degree)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 22,
+   "total_min": 22,
+   "source_url": "https://catalog.sierracollege.edu/departments/infotech/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675248607,
+   "program_title": "IT: IT Technician",
+   "control_number": "04279"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 7,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "FIRE 0001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 0003",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 0005",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0008",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select 12 units from the following:",
+      "rule": "choose_units",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "HSCI 0002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HSCI 0007",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0011",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0012",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ADMJ 0077",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0050",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0073",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0074",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0075",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 0078",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0079",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0080",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ADMJ 0078",
+          "units": null,
+          "catalog_addition": true
+         },
+         {
+          "code": "HSCI 0080",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0095",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0100A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0170",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 0171",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0172",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0173",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0174",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0175",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0176",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0177",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0178",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0179",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0180",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0181",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0182",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0183",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0191",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0192",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0193",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0241",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 0242",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "SPAN 0019",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 12,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "fire service"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Analyze and apply measures to resolve problems in areas of fire suppression, fire prevention and EMS.",
+      "Recognize the importance of ethics, professionalism and diversity within the fire technology field.",
+      "Communicate effectively in both oral presentations and written reports.",
+      "Demonstrate technical, cognitive, and psycho‐motor skills necessary to achieve and maintain employment in the fire service.",
+      "Demonstrate knowledge and understanding of the fire service industry."
+     ],
+     "ge_pattern": "Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 30,
+      "min": 30
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Fire Technology (AA or AS)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 30,
+   "total_min": 30,
+   "source_url": "https://catalog.sierracollege.edu/departments/fire-technology/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675248607,
+   "program_title": "Fire Technology",
+   "control_number": "04310"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PHOT 0010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARHI 0134",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0060A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0060B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0063",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0065",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0070A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0075",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "AAD 0075",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select 4 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "AAD 0079",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0028",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0070B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0076",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "AAD 0076",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0080",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0088",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0090I",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PHOT 0090J",
+          "units": null,
+          "catalog_addition": true
+         },
+         {
+          "code": "PHOT 0090L",
+          "units": null,
+          "catalog_addition": true
+         },
+         {
+          "code": "PHOT 0090N",
+          "units": null,
+          "catalog_addition": true
+         },
+         {
+          "code": "PHOT 0090P",
+          "units": null,
+          "catalog_addition": true
+         },
+         {
+          "code": "PHOT 0090T",
+          "units": null,
+          "catalog_addition": true
+         },
+         {
+          "code": "PHOT 0090U",
+          "units": null,
+          "catalog_addition": true
+         },
+         {
+          "code": "PHOT 0090W",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0092",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0093",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHOT 0095",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "professional photographer",
+      "commercial photographer",
+      "advertising",
+      "photographic journalism"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Analyze the major historical and contemporary trends and influences within the medium of photography.",
+      "Critique photographs orally and in writing for content, composition, craftsmanship, and originality with terminology commonly used in art and photography.",
+      "Create photographs demonstrating good exposure control under a wide variety of lighting situations, including both natural and studio lighting.",
+      "Utilize the darkroom or computer to produce final images that have appropriate contrast, density and color as well as incorporate the elements of design, design, principles and compositional conventions.",
+      "Distinguish between the key principles of copyright laws and understand industry business practices, and other legal and ethical considerations.",
+      "Develop a portfolio of images that illustrates the student photographer's style, skill with the medium and subject area interests."
+     ],
+     "ge_pattern": "Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 25,
+      "min": 25
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Photography AA or AS Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 25,
+   "total_min": 25,
+   "source_url": "https://catalog.sierracollege.edu/departments/photography/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675248607,
+   "program_title": "Photography",
+   "control_number": "07978"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 2,
+    "placed": 1,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "AAD 0052",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AAD 0053",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AAD 0054",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AAD 0061",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AAD 0062",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AAD 0075",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select 9 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "AAD 0012",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "AAD 0013",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "AAD 0044",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ART 0004A",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "AAD 0060",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AAD 0070",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AAD 0085",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AAD 0096",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 9,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Generate informed design solutions by applying the elements and principles of design to enhance the concepts and content through the application of the design process.",
+      "Prove a command of industry-standard software, tools, and practices in preparation for entry into the industry.",
+      "Optimize designs for various delivery methods such as print or screen, utilizing the appropriate formats and technologies as required.",
+      "Critique the application of the elements and principles of design as applied to course-related creative projects as well as to contemporary and historical works, using relevant terminology.",
+      "Develop a portfolio consisting of work samples that illustrate the styles, mediums, skills, talents, and subject area of interest to the student.",
+      "Explain the key principles of ethical imaging including the use and application of Artificial Intelligence, copyright, Creative Commons, fair use, and public domain; apply these principles appropriately in creative projects."
+     ],
+     "ge_pattern": "Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 27,
+      "min": 27
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Applied Art and Design—Graphic Design AA or AS Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 27,
+   "total_min": 27,
+   "source_url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675248607,
+   "program_title": "Applied Art and Design: Graphic Design",
+   "control_number": "08307"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 1,
+    "placed": 1,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CSCI 0012",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0013",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0026",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0039",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0050",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select 9 units from the following:",
+      "rule": "choose_units",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "CSCI 0014",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0027",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0046",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0052",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0066",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 9,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Engage in continuous learning as well as research and assess new ideas and information to provide the capabilities for lifelong learning.",
+      "Read and interpret technical information, as well as listen effectively to, communicate orally with, and write clearly for a wide range of audiences.",
+      "Analyze a problem and craft an appropriate algorithmic solution.",
+      "Apply knowledge of computing and mathematics appropriate to the discipline.",
+      "Interpret data, think critically and apply the scientific method."
+     ],
+     "ge_pattern": "Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Computer Science—Computer Science AA or AS Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://catalog.sierracollege.edu/departments/computer-science/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675248607,
+   "program_title": "Computer Science: Computer Science",
+   "control_number": "10506"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 1,
+    "placed": 1,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CSCI 0012",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0013",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0026",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0039",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0050",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select 9 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "CSCI 0014",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0027",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0046",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0052",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CSCI 0066",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 9,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Engage in continuous learning as well as research and assess new ideas and information to provide the capabilities for lifelong learning.",
+      "Read and interpret technical information, as well as listen effectively to, communicate orally with, and write clearly for a wide range of audiences.",
+      "Analyze a problem and craft an appropriate algorithmic solution.",
+      "Apply knowledge of computing and mathematics appropriate to the discipline.",
+      "Interpret data, think critically and apply the scientific method."
+     ],
+     "ge_pattern": "Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Computer Science—Computer Science AA or AS Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://catalog.sierracollege.edu/departments/computer-science/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675248607,
+   "program_title": "Computer Science: Computer Science",
+   "control_number": "10825"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 5,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "FIRE 0001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0003",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 0005",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0008",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select 12 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "HSCI 0002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HSCI 0007",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0011",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0012",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ADMJ 0077",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0050",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0073",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0074",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0075",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 0078",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0079",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0080",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ADMJ 0078",
+          "units": null,
+          "catalog_addition": true
+         },
+         {
+          "code": "HSCI 0080",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0095",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0100A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0170",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 0171",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0172",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0173",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0174",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0175",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0176",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0177",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0178",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0179",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0180",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0181",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0182",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0183",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0191",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0192",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0193",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0241",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 0242",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "SPAN 0019",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 12,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Analyze and apply measures to resolve problems in areas of fire suppression, fire prevention and EMS.",
+      "Recognize the importance of ethics, professionalism and diversity within the fire technology field.",
+      "Communicate effectively in both oral presentations and written reports.",
+      "Demonstrate technical, cognitive, and psycho‐motor skills necessary to achieve and maintain employment in the fire service.",
+      "Demonstrate knowledge and understanding of the fire service industry."
+     ],
+     "ge_pattern": "Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 30,
+      "min": 30
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Fire Technology AA or AS",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 30,
+   "total_min": 30,
+   "source_url": "https://catalog.sierracollege.edu/departments/fire-technology/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675248607,
+   "program_title": "Fire Technology",
+   "control_number": "10854"
+  }
+ ]
+}
