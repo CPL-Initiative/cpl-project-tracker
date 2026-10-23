@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 49376,
-  "pa": 45221,
+  "pe": 49390,
+  "pa": 45235,
   "ppa": 121,
-  "p2": 3605,
-  "p3": 16799,
+  "p2": 3606,
+  "p3": 16800,
   "pp": 7,
   "ppe": 131,
   "pac": 5285,
-  "ptc": 4621,
-  "pe_u": 1509886.45,
-  "pa_u": 275998.4,
+  "ptc": 4622,
+  "pe_u": 1510397.45,
+  "pa_u": 276068.4,
   "ppa_u": 737.5,
   "ppe_u": 6983.5,
   "pac_u": 37796.2,
-  "ptc_u": 31533.15,
-  "p3_u": 84218.85,
+  "ptc_u": 31582.45,
+  "p3_u": 84268.15,
   "pp_u": 73.5
  },
  "colleges": {
@@ -1496,10 +1496,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Porterville": {
-   "pe": 30,
-   "pe_u": 863.0,
-   "pa": 30,
-   "pa_u": 150.0,
+   "pe": 44,
+   "pe_u": 1374.0,
+   "pa": 44,
+   "pa_u": 220.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 5.0,
@@ -1812,16 +1812,16 @@ window.CPL_FUNDING_PERF = {
    "ppa_u": 38.0,
    "p2": null,
    "p2_suppressed": true,
-   "p3": 24,
-   "p3_u": 300.9,
+   "p3": 25,
+   "p3_u": 350.2,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": 12,
    "ppe_u": 62.0,
    "pac": 30,
    "pac_u": 377.2,
-   "ptc": 24,
-   "ptc_u": 300.9
+   "ptc": 25,
+   "ptc_u": 350.2
   },
   "Santa Barbara": {
    "pe": 86,
@@ -3335,8 +3335,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Porterville": {
    "Military": {
-    "pe": 30,
-    "pa": 30,
+    "pe": 44,
+    "pa": 44,
     "p3": 0
    }
   },
@@ -3648,7 +3648,7 @@ window.CPL_FUNDING_PERF = {
    "Industry Certification": {
     "pe": 15,
     "pa": 14,
-    "p3": 10
+    "p3": 11
    },
    "Industry Certification | Other": {
     "pe": null,
@@ -3963,7 +3963,7 @@ window.CPL_FUNDING_PERF = {
   "Industry Certification": {
    "pe": 1437,
    "pa": 1414,
-   "p3": 1201
+   "p3": 1202
   },
   "Industry Certification | Military": {
    "pe": 56,
@@ -4008,8 +4008,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28678,
-   "pa": 26305,
+   "pe": 28692,
+   "pa": 26319,
    "p3": 2615
   },
   "Military | Other": {
@@ -4065,14 +4065,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1509886.45,
-   "pa_u": 275998.4,
-   "p3_u": 84218.85
+   "pe_u": 1510397.45,
+   "pa_u": 276068.4,
+   "p3_u": 84268.15
   },
   "map": {
-   "pe_u": 1516869.95,
-   "pa_u": 276735.9,
-   "p3_u": 84292.35
+   "pe_u": 1517380.95,
+   "pa_u": 276805.9,
+   "p3_u": 84341.65
   },
   "ratio": {
    "pe_u": 1.0046,
@@ -4154,10 +4154,10 @@ window.CPL_FUNDING_PERF = {
   "Foothill": false,
   "West Hills Coalinga": false,
   "Pasadena": false,
+  "Porterville": true,
   "Hartnell": false,
   "Alameda": true,
   "Redwoods": false,
-  "Porterville": false,
   "Crafton Hills": false,
   "American River": false,
   "Madera": true,
@@ -4186,20 +4186,20 @@ window.CPL_FUNDING_PERF = {
   "Taft": false,
   "Feather River": true,
   "Imperial": false,
-  "Contra Costa": false,
   "Grossmont": false,
+  "Contra Costa": false,
   "Marin": false,
   "Yuba": false,
   "Orange Coast": false,
   "Palomar": false,
-  "Lake Tahoe": false,
-  "LA Swest": false,
   "Cosumnes River": false,
-  "Folsom Lake": false
+  "Folsom Lake": false,
+  "Lake Tahoe": false,
+  "LA Swest": false
  },
  "vet_star_as_of": "2026-10-23",
  "vet_star_threshold": 0.75,
- "vet_star_n": 63,
+ "vet_star_n": 64,
  "vet_jst": {
   "LA Pierce": {
    "vets": 296,
@@ -4566,6 +4566,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 141,
    "pct": 0.349
   },
+  "Porterville": {
+   "vets": 52,
+   "jst": 45,
+   "pct": 0.8654
+  },
   "Hartnell": {
    "vets": 106,
    "jst": 63,
@@ -4580,11 +4585,6 @@ window.CPL_FUNDING_PERF = {
    "vets": 98,
    "jst": 54,
    "pct": 0.551
-  },
-  "Porterville": {
-   "vets": 52,
-   "jst": 31,
-   "pct": 0.5962
   },
   "Crafton Hills": {
    "vets": 577,
@@ -4725,13 +4725,13 @@ window.CPL_FUNDING_PERF = {
    "jst": null,
    "jst_suppressed": true
   },
-  "Contra Costa": {
-   "vets": 60,
+  "Grossmont": {
+   "vets": 415,
    "jst": null,
    "jst_suppressed": true
   },
-  "Grossmont": {
-   "vets": 415,
+  "Contra Costa": {
+   "vets": 60,
    "jst": null,
    "jst_suppressed": true
   },
@@ -4755,16 +4755,6 @@ window.CPL_FUNDING_PERF = {
    "jst": 0,
    "pct": 0.0
   },
-  "Lake Tahoe": {
-   "vets": 92,
-   "jst": 0,
-   "pct": 0.0
-  },
-  "LA Swest": {
-   "vets": 67,
-   "jst": 0,
-   "pct": 0.0
-  },
   "Cosumnes River": {
    "vets": 115,
    "jst": 0,
@@ -4772,6 +4762,16 @@ window.CPL_FUNDING_PERF = {
   },
   "Folsom Lake": {
    "vets": 65,
+   "jst": 0,
+   "pct": 0.0
+  },
+  "Lake Tahoe": {
+   "vets": 92,
+   "jst": 0,
+   "pct": 0.0
+  },
+  "LA Swest": {
+   "vets": 67,
    "jst": 0,
    "pct": 0.0
   }
