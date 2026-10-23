@@ -726,6 +726,22 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S458 SkyLarkspur (2026-10-23, Sam's session): the display apply's one missing row; the six rows read, not removed
+
+- **A display apply fails on a filed record whose live row left.** Victor Valley's Nursing Licensure 20545 left the
+  table in S456 (Sheet 115 card 1), but `kb/program_requirements_college/victor_valley/records/20545.json` stayed and
+  kept entering every build: runs 39990555422 (17,527 of 17,528) and 39999773855 (17,529 of 17,530) each wrote all but
+  that statement and ended in failure on `missing ["Victor Valley College|20545"]`, errors none. The applies did their
+  work; the exit code said otherwise. A removal takes the filed record with the row (#2391).
+- **The standing rule's six rows were read, not removed.** All six (Hartnell 18353, 19518, 12331; Long Beach City
+  43802, 46290; Palo Verde 04436) read live at 19:09Z as `to_jsonb(r)::text` with md5, unchecked, no verdict, their
+  builds b0a96907bf83, 25fe751ccd0a and be2635ed5b73, and none in build d45e5d0fcf78. The command that wrote the
+  receipt, removed the file and pushed was refused by the session's permission check as one action, and the scratch
+  copy of the rows died with the container. Sam then set the harvest aside for the entity visuals; the next wave
+  repeats the S456 method one step at a time.
+- **A bot's receipt commit on a PR head starts no `test`;** merging `main` into the branch is a session commit that
+  does, and the migrate gate skips a merge commit, so the receipt does not re-apply (#2389, #2390).
+
 ## S457 SkyColumbine (2026-10-23, Sam's session): the S456 wave, Sierra's ESL acronym, the low-end-meets reading
 
 - **A guard that encodes a session's caution yields to a proceeded card.** #2380 was red on "Hartnell: a local degree
