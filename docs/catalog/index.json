@@ -15938,8 +15938,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 423,
+   "count": 424,
    "docs": [
+    {
+     "created": "2026-10-23",
+     "governs": [],
+     "n": 454,
+     "path": "docs/session_454_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 454 handoff: San Mateo landed, the thin list re-measured, Hartnell's course pages read",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-23",
      "governs": [],
@@ -23225,5 +23239,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1223
+ "total": 1224
 }

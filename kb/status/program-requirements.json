@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-23T07:25:33Z",
-  "session": 452,
-  "moniker": "SkyPoppy",
+  "written_at": "2026-10-23T08:25:15Z",
+  "session": 453,
+  "moniker": "SkyFiddleneck",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_453_handoff.md",
+  "handoff": "docs/session_454_handoff.md",
   "next_step": {
-    "title": "Land San Mateo's one record, then the next thin colleges",
-    "text": "Confirm the display apply of build 504ae8333118 on main; reread San Mateo's Administration of Justice transfer degree and build its display on a wave branch; then list the colleges under 60 percent live, leaving out East LA, Marin and San Mateo (measured S452) and Canada (hand-filed). Hartnell's course units want a reconcile step from the catalog's course pages."
+    "title": "Read Hartnell's course pages, then its units reconcile",
+    "text": "Read the job log of page read run 39924074351 to see whether a Hartnell course page prints its units; if it does, add a reconcile step that fills each course's units from its course page, verified on one program before any dispatch. Confirm the display apply of build 2ab793e383e1 on main."
   },
   "calls": [
     {
@@ -49,16 +49,12 @@
   },
   "changes": [
     {
-      "at": "2026-10-23T06:20:00Z",
-      "text": "Long Beach City loaded and reread: 7 inserted, 4 replaced."
+      "at": "2026-10-23T08:20:00Z",
+      "text": "San Mateo's Administration of Justice transfer degree landed with display build 2ab793e383e1."
     },
     {
-      "at": "2026-10-23T06:55:00Z",
-      "text": "Free captures: East LA and Marin moved nothing; San Mateo found one more program, its Administration of Justice transfer degree, extracted for the next wave."
-    },
-    {
-      "at": "2026-10-23T07:21:00Z",
-      "text": "Display build 504ae8333118 merged with 17,510 programs; its apply runs on main."
+      "at": "2026-10-23T08:22:00Z",
+      "text": "The thin colleges measured against the programs the state file gives a course list: only Canyons, Calbright and Sierra sit under 80 percent, and Canyons is explained."
     }
   ],
   "headline": [
@@ -155,18 +151,18 @@
     {
       "day": "2026-10-23",
       "active": 20282,
-      "complete": 12919,
+      "complete": 12920,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-23T08:12:00Z"
+    "at": "2026-10-23T09:12:00Z"
   },
   "harvest": {
     "day": "2026-10-23",
-    "gaps": 3049,
+    "gaps": 3048,
     "parts": {
       "links": {
         "catalog": [
@@ -183,11 +179,11 @@
         ]
       },
       "roep": [
-        19167,
+        19171,
         20282
       ],
       "coci": [
-        16123,
+        16124,
         20282
       ],
       "outcomes": {
@@ -196,12 +192,12 @@
           89192
         ],
         "plo": [
-          16123,
+          16124,
           20282
         ]
       },
       "careers": [
-        15087,
+        15088,
         20282
       ]
     }
