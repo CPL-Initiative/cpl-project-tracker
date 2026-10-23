@@ -1,15 +1,15 @@
 {
  "college": "Hartnell College",
- "control_number": "12331",
- "shape": "degree",
+ "control_number": "31591",
+ "shape": "certificate",
  "title": "Agriculture Production",
- "award": "A.S. Degree",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
  "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGRP/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7186,
+  "input_tokens": 7339,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7186,
-    "output_tokens": 2039,
+    "input_tokens": 7339,
+    "output_tokens": 2082,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,52 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 2039,
+  "output_tokens": 2082,
   "output_tokens_details": {
-   "thinking_tokens": 415
+   "thinking_tokens": 522
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06952,
- "ms": 15572,
- "seconds": 15.9,
+ "cost_usd": 0.071,
+ "ms": 16090,
+ "seconds": 17.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
-   "listed": 19,
-   "share": 1.0,
-   "missing": [],
+   "placed": 24,
+   "listed": 25,
+   "share": 0.96,
+   "missing": [
+    "ABT94"
+   ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 9,
+   "count": 4,
    "codes": [
     "ABT160",
     "ABT41",
-    "ABT81",
     "ABT82",
-    "ABT93",
-    "ABT96",
-    "ABT97",
-    "ABT98",
     "MFGT75"
    ],
    "flagged": [
     "ABT160",
     "ABT41",
-    "ABT81",
     "ABT82",
-    "ABT93",
-    "ABT96",
-    "ABT97",
-    "ABT98",
     "MFGT75"
    ],
    "pass": true
@@ -116,10 +108,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "n/a"
   },
   "pass": false
  },
@@ -237,21 +226,21 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "ABT97",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "ABT98",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      }
     ]
    },
@@ -284,7 +273,7 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "ABT82",
@@ -305,7 +294,7 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "ABT160",
@@ -381,17 +370,21 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "ABT 94",
+    "why": "not in the text"
+   }
+  ],
   "notes": [
-   "The page read is coded CT.AGRP (program code suggests a certificate), while the requested award is an A.S. Degree; no separate A.S. section, general education pattern, or degree total appears in the text. Reviewer should confirm this page corresponds to the A.S. award.",
-   "No units are printed beside individual courses on the requirements page, so all course units are null.",
-   "Total Required Credits 27 is recorded as total_units (major/program requirements); no GE or 60-unit degree total is printed.",
-   "ABT41, ABT82, ABT160 and MFGT75 are printed as bare codes without titles; recorded as catalog additions since they are not in the closed list.",
-   "Catalog prints codes without a space (e.g., ABT110); these match closed-list codes such as ABT 110.",
-   "No program learning outcomes or careers are printed in the text."
+   "The catalog page prints no units beside any course; all course units are null. Only the program total (Total Required Credits 27) is printed.",
+   "Codes are written as the catalog prints them, without a space (e.g., ABT110 = ABT 110 on the closed list).",
+   "ABT41, ABT82, ABT160 and MFGT75 appear in List B with no title and are not on the closed list; they may be inactive or renumbered courses.",
+   "List A and List B are under the heading 'Major Electives'; each requires at least 2 courses.",
+   "The page prints no program learning outcomes or careers."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": "39969050595",
  "reconciled": [
   {
    "field": "course_units",
@@ -496,6 +489,5 @@
    },
    "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
- ],
- "read_run": "39895340003"
+ ]
 }
