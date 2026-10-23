@@ -230,7 +230,8 @@ create index if not exists cpl_library_for_idx
 --            an explainer's argument); false = a deck, a film or a data piece; null = not set.
 -- kb_note    the note's path in cpl-knowledge-base or its link, once promoted; a note
 --            says knowledge on its own.
--- Re-runnable; the columns ride the table-level grants above.
+-- Re-runnable; the columns ride the table-level grants above. APPLIED by supabase-migrate.yml run 40041338652
+-- (2026-10-23, cpl_library_knowledge_2026_10_23_s459); both columns read back live.
 alter table public.cpl_library
   add column if not exists knowledge boolean,
   add column if not exists kb_note   text;
