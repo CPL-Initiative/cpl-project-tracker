@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-22T19:38:10Z",
-  "session": 448,
-  "moniker": "SkyDeergrass",
+  "written_at": "2026-10-22T21:10:00Z",
+  "session": 449,
+  "moniker": "SkyBuckwheat",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_449_handoff.md",
+  "handoff": "docs/session_450_handoff.md",
   "next_step": {
-    "title": "Berkeley City's Multimedia Arts codes, then Mt. San Jacinto's remaining pages",
-    "text": "Read one Berkeley City credit page's Requirements node and compare its course codes with the state's file; then give Mt. San Jacinto's Public Health Science and Chemistry transfer degrees their own pages."
+    "title": "Land Palo Verde's and Cypress's new records, then Berkeley City's Multimedia Arts and Hartnell by its site",
+    "text": "Load and reread Palo Verde's 66 records from its new 2026-2027 catalog and Cypress's 18 new ones, then one display build; read Berkeley City's free capture and make the curriQunet reader read each entry's child pages; teach the Coursedog site reader the tab Hartnell's catalog names."
   },
   "calls": [
     {
@@ -35,6 +35,13 @@
         "at": "2026-10-22",
         "words": "Later"
       }
+    },
+    {
+      "title": "Remove the 25 live program records the newer reads no longer file, and Victor Valley's two department-list records?",
+      "text": "Open Asks Sheet 115 card 1 (built by S449, published by S450 on 2026-10-22): 19 page-claimed rows with no filed record, 6 filed records that place none of their listed courses, and Victor Valley's two department-list records keep an older display build's marks. Recommended: remove all 27 through supabase-migrate.yml with a receipt that carries every row's before-values.",
+      "if_no_reply": "The 27 rows keep showing on CPL Pathways and in Sierra with marks from the build they were last in.",
+      "link": "https://claude.ai/artifact/QTC1MKB7AbWBMQtL9iPba9",
+      "link_text": "Open Sheet 115"
     }
   ],
   "notes": {
@@ -52,6 +59,10 @@
     {
       "at": "2026-10-22T19:35:00Z",
       "text": "My College left the side menu; a college picked after a search redraws the matches for that college."
+    },
+    {
+      "at": "2026-10-22T21:05:00Z",
+      "text": "Palo Verde reads its new 2026-2027 catalog (66 of 68 programs found, from 54) and Cypress 274 of 282 (from 260); both extractions are running. Mt. San Jacinto's remaining gaps, Ohlone's low-coverage programs and Hartnell's 31 unprinted programs are the catalogs' own."
     }
   ],
   "headline": [

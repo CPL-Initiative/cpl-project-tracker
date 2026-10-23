@@ -68,13 +68,15 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
   }
   check("floor note: funding raised, targets not (formula)",
     /targets stay proportional[^.]* before the base/.test(doc.querySelector(".cplfund-formula").textContent));
-  // Drill-in county context survives the hidden column.
+  // The drill-in's county and district line is gone (Sam, 2026-10-22: "you can
+  // delete the line about county residents"); the county keeps its hidden
+  // Working adults column, the search and the CSV. The closing line states the
+  // lane's rule alone.
   click(window, doc.querySelector("tr.cplfund-row"));
-  // The county rides the drill-in's one footer line since 2026-09-23:
-  // "<County> County: N working adults ..." or "County context not estimated".
-  // Since round 8 (2026-09-29) the footer rides the drill-in's closing row.
-  check("drill-in still shows the county context",
-    Array.from(doc.querySelectorAll("tr.cplfund-detail .cplfund-dtl-foot")).some(function (p) { return /\bCounty(:| context)/.test(p.textContent); }));
+  check("the drill-in prints no county line (Sam, 2026-10-22)",
+    !Array.from(doc.querySelectorAll("tr.cplfund-detail .cplfund-dtl-foot")).some(function (p) {
+      return /\bCounty(:| context)|working adults/.test(p.textContent);
+    }));
   // Priority actuals render from the perf artifact. P1's live metric is the
   // ELIGIBLE headcount → `pe` (Sam's 2026-07-30 wording), so the fixture's pe
   // value is what the surfaces must show — the per-college figure in the

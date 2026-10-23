@@ -265,6 +265,15 @@
              colleges: rows.filter(function (r) { return r[1]; }).length },
     effRate: Math.round(effRate),
     prios: prios,
+    // The noncredit outcomes lane (Scenario 4): the mode, the outcomes with
+    // their statewide targets, the rule, the reported figure and the
+    // conditions in words. An engine without the hooks paints the origination
+    // words, as before.
+    ncMode: typeof T._ncLaneMode === "function" ? T._ncLaneMode() : "origination",
+    ncRule: typeof T._ncLaneRule === "function" ? String(T._ncLaneRule() || "") : "",
+    ncOutcomes: typeof T._ncOutcomes === "function" ? T._ncOutcomes("1") : [],
+    ncReported: typeof T._ncReported === "function" ? T._ncReported() : [],
+    ncCondWords: typeof T._ncCondWords === "function" ? String(T._ncCondWords() || "") : "",
     timing: timing,
     requirements: requirements,
     // The Public view's progress lines (sheet 14 card 6): each priority's

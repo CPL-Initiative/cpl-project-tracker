@@ -2330,6 +2330,11 @@
       // combined award, restricted to noncredit outcomes — never a second
       // pot's figure).
       nc: (typeof M._ncAward === "function") ? M._ncAward(key) : null,
+      // The noncredit outcomes lane (Scenario 4): this institution's outcomes
+      // with their targets and actuals, and the lane's mode. Null from an
+      // older module, which renders the one noncredit line as before.
+      ncPrios: (typeof M._ncPrios === "function") ? M._ncPrios(key, "1") : null,
+      ncMode: (typeof M._ncLaneMode === "function") ? M._ncLaneMode() : "origination",
       // The three minimum conditions, each with this institution's state, and the
       // funding its outcomes have demonstrated (Sam's card 8, 2026-10-01). Null
       // from a module that predates the export, so the block shows no list rather
@@ -2751,6 +2756,9 @@
     if (it.kind === "part") return "College confirmation is recorded";
     if (it.kind === "vetstar") return "At least " + (cond.vetPct || "75%") + " of enrolled veteran JSTs on file in MAP";
     if (it.kind === "exhibits") return "Noncredit certificates posted as exhibits in MAP";
+    // The noncredit share's own conditions (Scenario 4).
+    if (it.kind === "nc_coord") return "A noncredit CPL coordinator is named and published (attested in COBI until MAP carries the role)";
+    if (it.kind === "nc_team") return "The noncredit strike team's attestation is on file for the year";
     return "";
   }
   function conditionsHtml(cond) {
@@ -2775,6 +2783,16 @@
         + (it.counts ? '<div class="cb-d">' + esc(it.counts) + "</div>" : "") + "</div></li>";
     });
     h += "</ol>";
+    // The noncredit share's own conditions (Scenario 4), for a credit college
+    // whose award carries one; a standalone's list above already is this list.
+    if (cond.ncItems && cond.ncItems.length) {
+      h += '<div class="cb-lab cb-flagp">The noncredit share of the award also requires:</div><ol class="cb-ess-list cb-conds">';
+      cond.ncItems.forEach(function (it, i) {
+        var st = it.pending ? "pending" : it.met ? "met" : "not";
+        h += "<li>" + essMark({ state: st }) + "<div>" + (i + 1) + ". " + esc(condText(it, cond)) + "</div></li>";
+      });
+      h += "</ol>";
+    }
     if (cond.pending) return h + '<div class="cb-lab cb-flagp">The minimum conditions are still loading.</div>';
     // The demonstrated figure is the public one ($1,000 rounding, the funding
     // counts ADR) wherever the block renders: it is a college-facing view.
@@ -2922,6 +2940,27 @@
           fundBody += '<div class="cb-note cb-ncline">' + mcText("mc_nc", { "noncredit portion": money(f.nc) },
             "Noncredit portion of the max funding is " + money(f.nc) + ", which is based on CPL FTES that originate "
             + "from the college or district's noncredit program.") + "</div>";
+          // The noncredit outcomes (Scenario 4): what releases that share, each
+          // with this institution's own target and actual, from the funding
+          // module; nothing here multiplies a share by a total.
+          if (f.ncMode === "outcomes" && f.ncPrios && f.ncPrios.length) {
+            fundBody += '<div class="cb-prios cb-ncprios"><div class="cb-plab">Noncredit outcomes</div>';
+            f.ncPrios.forEach(function (p) {
+              var one = p.target === 1;
+              var unitWord = one && /s$/.test(p.unit || "") ? p.unit.slice(0, -1) : p.unit;
+              var tgt = p.targetPending || p.target == null ? "TBA" : fmt(p.target) + " " + unitWord;
+              // `actual` is the measured count (0 included) or null while the
+              // feed does not carry the measure for this institution.
+              var act = p.actual != null
+                ? "Actual " + fmt(p.actual) + " " + (p.actual === 1 && /s$/.test(p.unit || "") ? p.unit.slice(0, -1) : p.unit)
+                : "Actual: TBA";
+              fundBody += '<div class="cb-prow"><div class="cb-whead"><b>' + esc(p.label + (p.title ? " · " + p.title : "")) + "</b>"
+                + '<span class="v">' + money(p.cap) + "</span></div>"
+                + '<div class="cb-ptarget">Your target: <b>' + esc(tgt) + "</b> · " + esc(act)
+                + (p.metric ? " · " + esc(p.metric) : "") + "</div></div>";
+            });
+            fundBody += "</div>";
+          }
         }
 
         // ── What the max award is FOR — the priorities, each with this
