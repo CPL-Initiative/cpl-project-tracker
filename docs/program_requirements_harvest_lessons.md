@@ -780,6 +780,20 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S453 SkyFiddleneck (2026-10-23, the CPL Queue routine): San Mateo landed, the thin list re-measured, Hartnell's course pages
+
+- **San Mateo landed.** S452's branch (load 39917453080, 1 inserted, 55 kept; reread 39917922958) merged with display
+  build 2ab793e383e1 (#2372); `step=display` on `main` dispatched after the merge, queued behind Long Beach City's
+  504ae8333118 apply (run 39917479288).
+- **A thin college is measured against the programs with a closed list.** Records against `capture.json`'s
+  `programs` called Skyline thin (53 of 144, 37%), but 86 of its programs have no course list in the state's file
+  (`by_method.no_closed_list`), so it found 53 of 58 (91%). On `with_closed_list` only Canyons (160 of 264; its
+  missing 100 are noncredit programs its credit catalog does not carry, S442), Calbright (12 of 19) and Sierra (92 of
+  125, 25 page-claimed, CourseLeaf reader work) sit under 80 percent. No shared cause remains to fix by a re-run.
+- **Hartnell's course units:** page read plan `kb/college_reads/hartnell_course_units.json` (branch
+  `claude/hartnell-course-units-read-s453`) loads one Requirements tab and follows its `/courses/` links to see
+  whether a course page prints units (run 39924074351, still running at checkpoint; its job log is the answer, and S454 reads it before any reconcile code).
+
 ## S452 SkyPoppy (2026-10-23, the CPL Queue routine): Long Beach City landed, three free captures, a display step that built nothing
 
 - **Long Beach City landed.** Its extraction (run 39891611701, started 02:48Z on `claude/harvest-long-beach-city-s449`)

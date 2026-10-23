@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-423 document(s).
+424 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 454 | [Session 454 handoff: San Mateo landed, the thin list re-measured, Hartnell's course pages read](../session_454_handoff.md) | 2026-10-23 |
 | 453 | [Session 453 handoff: Long Beach City landed, San Mateo's one record waiting for its display build, the thin colleges measured](../session_453_handoff.md) | 2026-10-23 |
 | 452 | [Session 452 handoff: the S449 queue landed, Hartnell by its site, Long Beach City waiting, the next thin colleges](../session_452_handoff.md) | 2026-10-23 |
 | 450 | [Session 450 handoff: the harvest queue after S448, Palo Verde's new catalog, a curriQunet view, Hartnell by its site](../session_450_handoff.md) | 2026-10-22 |
