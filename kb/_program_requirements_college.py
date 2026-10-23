@@ -592,11 +592,12 @@ SECTION_AWARD = {
     "adt": re.compile(r"associate (?:in|of) (?:arts|science)(?: degree)? for transfer|"
                       r"\ba\.?\s?[as]\.?\s?-\s?t\b|"
                       r"^associate (?:in|of) (?:arts|science) degree .*\bfor transfer$", re.I),
-    # Sierra heads a degree "AS Degree" or "AA Degree", no periods (page read 39704788066, S444).
+    # Sierra heads a degree "AS Degree" or "AA Degree", no periods (page read 39704788066, S444),
+    # and one section serving both awards "AA or AS" (Fire Technology, page read 39930677707, S454).
     "as": re.compile(r"associate (?:in|of) science(?! (?:degree )?for transfer)|\ba\.\s?s\.(?!\s?-\s?t)|"
-                     r"^as degree$", re.I),
+                     r"^as degree$|^(?:aa or as|as or aa)(?: degrees?)?$", re.I),
     "aa": re.compile(r"associate (?:in|of) arts(?! (?:degree )?for transfer)|\ba\.\s?a\.(?!\s?-\s?t)|"
-                     r"^aa degree$", re.I),
+                     r"^aa degree$|^(?:aa or as|as or aa)(?: degrees?)?$", re.I),
     "coa": re.compile(r"certificate of achievement", re.I),
 }
 SECTION_LINE = 140     # characters: a heading, not a paragraph that mentions the award

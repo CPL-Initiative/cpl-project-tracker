@@ -292,6 +292,16 @@ check(C.section_award(SIERRA_IT, {"award": "A.S. Degree", "title": "Information 
       "Sierra's title line then 'AS Degree' heads the A.S. section")
 check(C.section_award(SIERRA_IT, {"award": "A.S. Degree", "title": "Information Technology - Cybersecurity"}) is None,
       "another program's title does not borrow that heading")
+# One section can serve both degrees: Sierra heads Fire Technology "Fire Technology" then "AA or AS" (page read
+# 39930677707, S454), and its A.A. 10854 and A.S. 04310 both lost the page to the certificates beside it.
+SIERRA_FIRE = ("Fire Company Officer\nAS Degree\nSuccessful completion of the Degree prepares the student.\n"
+               "Total Units\t19.5\nFire Technology\nAA or AS\nFor the degree, students must fulfill the following major "
+               "requirements.\nTotal Units\t30\nFire Academy\nCertificate of Achievement")
+check(C.section_award(SIERRA_FIRE, {"award": "A.S. Degree", "title": "Fire Technology"}) == "as"
+      and C.section_award(SIERRA_FIRE, {"award": "A.A. Degree", "title": "Fire Technology"}) == "aa",
+      "Sierra's 'AA or AS' heads the section for both the A.A. and the A.S.")
+check(C.section_award("Students may choose AA or AS coursework in Fire Technology", {"award": "A.S. Degree",
+                      "title": "Fire Technology"}) is None, "'AA or AS' inside a sentence is no heading")
 MC_HORT = ("Total Units 26-28 · Certificate of Achievement · Nursery/Horticulture Crop Production · Course Requirements · "
            "Total Units 25 · Certificate of Achievement · Pest Control Adviser")
 coa = "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
