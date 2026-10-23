@@ -1,5 +1,6 @@
 -- S459 SkyBuckeye, 2026-10-23, the later checkpoint: Rule 8 ingest of this run's durable learnings. INSERT-only,
 -- idempotent on slug, author s459-skybuckeye-later. Rollback: delete the log rows (actor s459-skybuckeye-later), then the rows by slug.
+-- APPLIED: run 40041963738, 2026-10-23 (kb/receipts/migration_cpl_memory_2026_10_23_s459_later_40041963738.json): the three rows read back as proposed.
 insert into public.cpl_memory (slug, kind, title, summary, detail, plain, tags, status, source, verified_by, verified_at, event_date, author, related)
 select x.slug, x.kind, x.title, x.summary, x.detail, x.plain, x.tags, x.status, x.source, x.verified_by, now(), '2026-10-23'::date, 's459-skybuckeye-later', x.related
 from jsonb_to_recordset($json$[
