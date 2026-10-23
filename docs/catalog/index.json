@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 560,
+   "count": 561,
    "docs": [
     {
      "created": "2026-08-14",
@@ -531,6 +531,21 @@
      "title": "A bug report is evidence, not diagnosis \u2014 and the control that kills your favorite hypothesis",
      "type": "methodology",
      "updated": "2026-09-08"
+    },
+    {
+     "created": "2026-10-23",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-bulk-delete-receipt-reads-the-rows-outside-the-context.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "data-write-rollback",
+      "receipts"
+     ],
+     "title": "A bulk delete's receipt reads the rows outside the session's context",
+     "type": "methodology",
+     "updated": "2026-10-23"
     },
     {
      "created": "2026-08-15",
@@ -15938,8 +15953,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 426,
+   "count": 427,
    "docs": [
+    {
+     "created": "2026-10-23",
+     "governs": [],
+     "n": 457,
+     "path": "docs/session_457_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 457 handoff: card 1 carried out, Hartnell's code-kind gate, Sierra's noncredit sections, two extractions filing",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-23",
      "governs": [],
@@ -23267,5 +23296,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1226
+ "total": 1228
 }

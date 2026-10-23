@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 560 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 561 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 90 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 84 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 61 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 426 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1226** | |
+| Session handoffs | 427 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1228** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-23 (S456 SkyYarrow): Sheet 115 card 1 carried out (17 older-build program records removed with a receipt); Hartnell's Coursedog code-kind gate and Sierra's noncredit section; KB note on a bulk delete's receipt; Open Asks Sheet 117; handoff 457.
 - 2026-10-23 S455 SkyMonkeyflower (the CPL Queue routine): Hartnell's course units from its vendor's own course data (59 of 96 pass), Sierra's IT Cybersecurity read through `with_acronyms`, display build b0a96907bf83 (#2376); lessons S455; handoff 456.
 - 2026-10-23 S452 SkyPoppy (the CPL Queue routine): Long Beach City loaded, display build 504ae8333118 (#2370); the UI pass on the Funding model page (#2369); free captures at East LA, Marin and San Mateo; lessons S452; handoff 453.
 - 2026-10-23 S451 SkyLupine (opened by Sam): the page reader's `cq_view` (#2365); the S449 queue landed, Palo Verde, Cypress, Berkeley City, Hartnell by its Coursedog site (96 of 112, from 73) and Mt. San Antonio, display build 25fe751ccd0a (#2367); lessons S451; handoff 452.

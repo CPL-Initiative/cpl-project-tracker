@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-23T12:37:33Z",
-  "session": 455,
-  "moniker": "SkyMonkeyflower",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-10-23T14:31:07Z",
+  "session": 456,
+  "moniker": "SkyYarrow",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_456_handoff.md",
+  "handoff": "docs/session_457_handoff.md",
   "next_step": {
-    "title": "Apply display build b0a96907bf83, then Sierra's last 15 page-claimed",
-    "text": "Once the wave PR merges, apply display build b0a96907bf83 on main (Hartnell's 86 records with their course units, Sierra's two Cybersecurity awards). Then read Sierra's next department pages for the 15 programs still page-claimed, starting with Business and Mathematics."
+    "title": "Load, reread and build the Hartnell and Sierra extractions, then Sheet 117 card 1's rows",
+    "text": "Two extractions filed on their branches on 2026-10-23 (Hartnell with the code-kind gate, 4 programs; Sierra with the noncredit section, 2 programs): load each, reread each, one display build on the branch that carries both, one PR, then the display apply on main. After the build, the older-build rows (Long Beach City 43802 and 46290, Palo Verde 04436, Hartnell 18353, 19518 and 12331) wait on Sheet 117 card 1."
   },
   "calls": [
     {
@@ -50,10 +50,24 @@
     },
     {
       "title": "Keep Hartnell's Local GE at 23 units, the sum of the seven areas its catalog prints?",
-      "text": "Open Asks Sheet 116 card 4, proceeded on the recommendation (S454): the catalog prints Local GE's seven areas (6, five of 3, and 2 units) and no total, so the reconcile step sets 23; 50 Hartnell records changed and 34 now pass the machine checks.",
+      "text": "Open Asks Sheet 116 card 4, proceeded on the recommendation (S454): the catalog prints Local GE's seven areas (6, five of 3, and 2 units) and no total, so the reconcile step sets 23; 50 Hartnell records changed and 34 now pass the machine checks. Carried to Open Asks Sheet 117 card 2 (S456).",
       "if_no_reply": "The 23 stays; Hartnell's local degrees add up against their 60 with it.",
-      "link": "https://claude.ai/artifact/4oL4YfC4b43iVjUq1bSS8J",
-      "link_text": "Open Sheet 116"
+      "link": "https://claude.ai/artifact/UkzrGukGumwJxrdyDGgb5Y",
+      "link_text": "Open Sheet 117"
+    },
+    {
+      "title": "A standing rule for the older-build program records each wave leaves behind",
+      "text": "Sam's Sheet 115 card 1 ruling removed 17 rows on 2026-10-23 with a receipt. Each wave leaves rows of the same kind: programs whose page a newer read gives to someone else or finds nowhere, so the display build leaves them out while the live row keeps an older build's marks. Five remain today (Hartnell 21450 and 31592, re-read by the S456 wave; Long Beach City 43802 and 46290; Palo Verde 04436) and Hartnell's 18353, 19518 and 12331 join after the wave's build. Sheet 117 card 1 asks whether they leave at each wave with a receipt, or are asked each time.",
+      "no_reply": "The rows stay live and show on CPL Pathways and in Sierra with marks from the build they were last in; each wave's leftovers come back as a card.",
+      "link": "https://claude.ai/artifact/UkzrGukGumwJxrdyDGgb5Y",
+      "link_text": "Open Sheet 117"
+    },
+    {
+      "title": "Keep Cal-GETC at 34 units on a Hartnell local degree whose own tab names the pattern?",
+      "text": "Three of Hartnell's local degrees name Cal-GETC without units. Since the reader reads a Coursedog tab by its code's award (S456), a second reconcile step fills the statewide 34 for an associate degree whose own tab prints the pattern; reconcile 39966331452 changed 08871, 17924 and 33851. Proceeded on the recommendation; Sheet 117 card 3; reply to reverse.",
+      "no_reply": "The figure stands; git revert of the step and the reread receipt's before-values undo it.",
+      "link": "https://claude.ai/artifact/UkzrGukGumwJxrdyDGgb5Y",
+      "link_text": "Open Sheet 117"
     }
   ],
   "notes": {
@@ -67,6 +81,18 @@
     {
       "at": "2026-10-23T12:25:52Z",
       "text": "Sierra's IT: Cybersecurity degree and certificate read from the Information Technology page; 107 of 125 programs with a course list found, from 105."
+    },
+    {
+      "at": "2026-10-23T14:19:34Z",
+      "text": "Sheet 115 card 1 carried out: 17 older-build program records removed with a before-values receipt (supabase-migrate run 39968114807); the table holds 17,530."
+    },
+    {
+      "at": "2026-10-23T14:20:24Z",
+      "text": "Hartnell: a Coursedog tab's code names its award, so a local degree never reads its transfer sibling's tab; 94 of 105 found, 60 pass; 4 programs re-read on their own tabs and extracting."
+    },
+    {
+      "at": "2026-10-23T14:20:56Z",
+      "text": "Sierra: a department page heads a noncredit program's section; 109 of 125 found, from 107; Entrepreneurship for Makers and Construction Fundamentals extracting."
     }
   ],
   "headline": [
@@ -163,14 +189,14 @@
     {
       "day": "2026-10-23",
       "active": 20282,
-      "complete": 12972,
+      "complete": 12964,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-23T13:12:00Z"
+    "at": "2026-10-24T05:12:00Z"
   },
   "harvest": {
     "day": "2026-10-23",
@@ -191,11 +217,11 @@
         ]
       },
       "roep": [
-        19163,
+        19150,
         20282
       ],
       "coci": [
-        16130,
+        16117,
         20282
       ],
       "outcomes": {
@@ -204,12 +230,12 @@
           89192
         ],
         "plo": [
-          16130,
+          16117,
           20282
         ]
       },
       "careers": [
-        15094,
+        15081,
         20282
       ]
     }

@@ -726,6 +726,53 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S456 SkyYarrow (2026-10-23, Sam's session): card 1 carried out, a Coursedog tab's code names its award, a noncredit section
+
+- **A bulk delete's before-values receipt reads the rows outside the session's context.** Sheet 115 card 1's 17 rows
+  run to 779 KB of `to_jsonb(r)::text`; the migrate runner records at most 4,000 characters of a response, and a row
+  retyped by a model is no receipt. The rows were read through the Supabase MCP in queries whose answers exceed the
+  tool-result cap, which the harness saves to a file instead of the context; a script parsed each file, checked every
+  `md5(row_text)` against Postgres's `row_md5`, and wrote the receipt and the md5-guarded delete
+  (`kb/receipts/program_requirement_records_older_build_removed_2026-10-23_s456.{json,sql}`). The apply (run
+  39968114807) returned `removed 17`; a live count of the keys reads 0; the table holds 17,530. Victor Valley's
+  second department-list row (Irrigation and Water Management 38852) was already gone; Sierra 11965 and 21557 were
+  re-extracted by S455 and stay. No display rebuild: the build already left the rows out.
+- **A Coursedog tab's code names its award.** Hartnell's site read filed 7 of 96 records from a tab whose code names
+  another award: `label_score` reads "associate in science for transfer" as naming an A.S., so Biology A.S. 03537
+  shared "Biology for Transfer Degree (AS-T) - AST.BIO" with the A.S.-T. `cd_page` keeps the code's kind
+  (`cd_code_kind`, the letters `PDF_CODE_AWARD` already reads; a prefix at Hartnell, a suffix at Merced) and
+  `candidates()` turns the tab away, as `pdf_code_match` does; an award the codes cannot name reads as before. The
+  capture (39966331452): Biology and Administration of Justice A.S. read their own AS tabs, both certificates and
+  Agriculture Production's certificate their own CT tabs, and Psychology A.A., Spanish A.A. and Agriculture
+  Production A.S. read no page, which is right (S411 found the PDF prints none). Found 96 to 94, passing 59 to 60.
+- **A local degree may name Cal-GETC on its own tab.** With the gate, a Hartnell tab is one program's, so the
+  transfer-only restriction on the Cal-GETC step (S421's caution about a page spanning the sibling section) no longer
+  protects anything there; a second step, `awards: associate`, fills the figure where the tab prints the pattern.
+  Three records changed: Computer Science A.S. 08871 passes; Engineering A.S. 33851 now reads 70-87 against the
+  printed 71 and 17924 17-18 against 18, failures of the blocks, not the pattern. Proceeded on the recommendation;
+  Sheet 117 card 3.
+- **A department page heads a noncredit program's section.** `SECTION_AWARD` had no noncredit pattern, so
+  `section_match()` read no section for Sierra's Entrepreneurship for Makers 37810 though `candidates()` took the
+  Business page at coverage 1.0, and `page_winners()` gave the page to the credit awards. The pattern
+  (`\bnoncredit\b|certificate of (?:completion|competency)`) reads "Entrepreneurship for Makers" then "Noncredit
+  Certificate of Completion". Free capture 39967799242: found 107 to 109, page-claimed 15 to 13; 37810 and
+  Construction Fundamentals 38749 to extract; the two ESL noncredit (38991, 44028) still read no page.
+- **Run the capture's gates on a page read before changing the reader.** A `capture_view` log is the capture's own
+  text, so a page dict built from it (`body` and `content` the text, `codes` from `page_net`) runs
+  `C.candidates()`, `label_score()` and `section_match()` locally and names the gate that refuses the page; the
+  closed list comes from `coci_program_courses` through the Supabase MCP, since the sandbox cannot reach the
+  database. One run found the missing section pattern in a minute where the first reading of the log did not.
+- **A renamed program prints its old name under the new heading.** Sierra heads "Innovation and Entrepreneurship,
+  AA or AS Degree (formerly Business Entrepreneurship)" and its certificate "(formerly Interdisciplinary
+  Entrepreneurship)"; COCI's Interdisciplinary Entrepreneurship A.S. 15307 lists BUS 28, BUS 95 and IT 60, which no
+  section lists. The Mathematics and Physics A.S.-T (31226, 32010) lost their pages to the "2.0" transfer degrees
+  the catalog prints alone (45833, 46074). Reading no page is right for all three; the college's to settle in COCI.
+- **Hartnell's 37 arithmetic failures by `why`:** 8 name a GE pattern without units (the wrong-tab rows above, and
+  three own-tab local degrees naming Cal-GETC), 9 list a required course without units (7 noncredit programs whose
+  courses carry 0 credit hours, so the hours-measured record wants hours the vendor's `creditHours` cannot give;
+  HES 120 and the ABT courses the vendor did not price), 2 name no total (the two certificates on A.S. tabs), 18
+  sum against a stated total. Counting first kept a course-units fix from being written for a tab-assignment fault.
+
 ## S455 SkyMonkeyflower (2026-10-23, the CPL Queue routine): Hartnell's course units from the vendor, Sierra's IT
 
 - **A Coursedog tab's course data is now a source field.** `cd_pages` listens for the `courses/search` POST each
