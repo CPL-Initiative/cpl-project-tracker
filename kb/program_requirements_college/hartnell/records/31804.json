@@ -76,11 +76,13 @@
     60.0
    ],
    "against": "degree",
-   "ge": null,
+   "ge": [
+    34.0,
+    34.0
+   ],
    "why": [
     "a required course in 'Required Core' has no units",
-    "a required course in 'Required Core: Chemistry and Physics' has no units",
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    "a required course in 'Required Core: Chemistry and Physics' has no units"
    ]
   },
   "repeated": {
@@ -126,8 +128,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [],
@@ -364,5 +366,20 @@
    "No program learning outcomes or careers appear in the text."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39931703521,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
+  }
+ ],
+ "read_run": "39895340003"
 }
