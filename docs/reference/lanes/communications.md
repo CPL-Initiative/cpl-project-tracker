@@ -65,9 +65,12 @@ post refreshes that row. Retire sets `retired_at`; a trigger files every prior r
 tab and loads only when opened.
 
 **The first record is Sam's CEO email** (receipt
-`kb/receipts/cpl_comms_seed_2026-10-23.sql`, cohort `comms-seed-s457side@bot`): his draft
-of 2026-10-23 with merge fields, status draft, To the CEO, Cc the CIO and CSSO, and a
-JST-figures sentence from the feed. Its note names what he decides before it goes
+`kb/receipts/cpl_comms_seed_2026-10-23.sql`, cohort `comms-seed-s457side@bot`, applied by
+`supabase-migrate.yml` run 40000312732 after the session's insert was held by the Supabase
+guard, which passes `cpl_memory` writes alone): his draft of 2026-10-23 with merge fields, status
+draft, To the CEO, Cc the CIO and CSSO, and a JST-figures sentence from the feed. The Library's
+open-asks series record moved to Sheet 118 the same way (run 40001082184; version 118, 37
+versions). Its note names what he decides before it goes
 ([Open Asks Sheet 118](https://claude.ai/artifact/D3uYDvJ3MigHaM8CgpKWse)).
 
 ## Measured 2026-10-23
