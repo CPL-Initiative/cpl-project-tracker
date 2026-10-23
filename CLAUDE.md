@@ -749,7 +749,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 118](https://claude.ai/artifact/D3uYDvJ3MigHaM8CgpKWse), 2026-10-23, eight cards open: Sheet 117’s three carried at the same positions; then from the communications register, the $150,000 to $400,000 range in the CEO email under the sunshine rule, one writer module for the twelve surfaces that draft prose, the JST-figures sentence, the salutation default, and the May 2026 budget-support curator’s future). Answering
+> (latest: [Open Asks Sheet 119](https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM), 2026-10-23, nine cards: a standing rule for the older-build program records each wave leaves behind; Hartnell’s Local GE at 23 and Cal-GETC 34 on a local degree whose own tab names it, both proceeded, reply to reverse; five from the communications register (the side session's Sheet 118); and the scorer's low-end-meets apply, held). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
@@ -793,7 +793,6 @@ stays here.
 | **The Commons** | One tracking system for every common reference, aligned dashes, and a Commons dash in Sam's order. | ✅ live · open work (the tab, 2026-10-18; the Subjects, Exhibit and CR Progress views; Course next) — [lane state](docs/reference/lanes/commons.md) |
 | **Common Subjects Reference (CSR)** | One Common SUBJ per MQ discipline, the key every M-ID is minted under; the Commons' dash with a card per step, a procedure per card, a daily scan. | ✅ live · open work — [lane state](docs/reference/lanes/common-subjects-reference.md) |
 | **CTDL and the partner exchange** | Credential Engine and WestEd plug into COBI through one exchange; COBI's records carry their CTDL identity. | 🔨 seed drafted, waits on Malone · open work — [lane state](docs/reference/lanes/ctdl-partner-exchange.md) |
-| **Letters, Memos & Reports / the communications register** | One register for every communication the Initiative sends, recipients by MAP roster role, figures from the daily feeds, Claude's draft on request, Post to the Library. | ✅ live · open work (Sheet 118: the dollar range, one writer module) — [lane state](docs/reference/lanes/communications.md) |
 | Parked | Seven parked phases with no lane file (1b, PR-D, 2, 4, 5, 6, 7). | parked — [the rows](docs/reference/mid_lifecycle.md#parked-roadmap-rows) |
 
 
