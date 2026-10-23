@@ -74,8 +74,8 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    56.5,
-    56.5
+    60.0,
+    60.0
    ],
    "stated": [
     60.0,
@@ -88,8 +88,8 @@
    ],
    "why": [],
    "fill": [
-    3.5,
-    3.5
+    0.0,
+    0.0
    ]
   },
   "repeated": {
@@ -155,77 +155,77 @@
     "courses": [
      {
       "code": "CMA74",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT110",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD150",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD151",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD152",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD153",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD154",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD155",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD156",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD157",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD158",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -244,21 +244,21 @@
     "courses": [
      {
       "code": "CMA75",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CMA81",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT130",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -272,8 +272,8 @@
      },
      {
       "code": "WLD99",
-      "units": null,
-      "units_max": null,
+      "units": 1,
+      "units_max": 8,
       "alternatives": [],
       "catalog_addition": true
      }
@@ -294,20 +294,75 @@
    "No program learning outcomes or careers appear in the text (only the Requirements tab was captured)."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 23,
-    "max": 23
+    "CMA74": [
+     3,
+     3
+    ],
+    "MFGT110": [
+     2,
+     2
+    ],
+    "WLD150": [
+     3,
+     3
+    ],
+    "WLD151": [
+     3,
+     3
+    ],
+    "WLD152": [
+     2,
+     2
+    ],
+    "WLD153": [
+     3,
+     3
+    ],
+    "WLD154": [
+     3,
+     3
+    ],
+    "WLD155": [
+     2,
+     2
+    ],
+    "WLD156": [
+     2,
+     2
+    ],
+    "WLD157": [
+     3,
+     3
+    ],
+    "WLD158": [
+     2,
+     2
+    ],
+    "CMA75": [
+     3,
+     3
+    ],
+    "CMA81": [
+     3,
+     3
+    ],
+    "MFGT130": [
+     3,
+     3
+    ],
+    "WLD99": [
+     1,
+     8
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

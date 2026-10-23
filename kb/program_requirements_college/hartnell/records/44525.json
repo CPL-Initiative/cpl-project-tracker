@@ -141,17 +141,17 @@
     "courses": [
      {
       "code": "SPA1",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [
        {
         "code": "SPA1S",
-        "units": null,
+        "units": 5,
         "catalog_addition": false
        },
        {
         "code": "SPA1X",
-        "units": null,
+        "units": 5,
         "catalog_addition": false
        }
       ],
@@ -159,17 +159,17 @@
      },
      {
       "code": "SPA2",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [
        {
         "code": "SPA2S",
-        "units": null,
+        "units": 5,
         "catalog_addition": false
        },
        {
         "code": "SPA2X",
-        "units": null,
+        "units": 5,
         "catalog_addition": false
        }
       ],
@@ -177,12 +177,12 @@
      },
      {
       "code": "SPA3",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [
        {
         "code": "SPA3S",
-        "units": null,
+        "units": 5,
         "catalog_addition": false
        }
       ],
@@ -195,7 +195,7 @@
       "alternatives": [
        {
         "code": "SPA4S",
-        "units": null,
+        "units": 5,
         "catalog_addition": false
        }
       ],
@@ -214,5 +214,51 @@
    "No program learning outcomes or careers are printed in the provided text. The 'General' tab content was not included."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39949570443,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "SPA1": [
+     5,
+     5
+    ],
+    "SPA1S": [
+     5,
+     5
+    ],
+    "SPA1X": [
+     5,
+     5
+    ],
+    "SPA2": [
+     5,
+     5
+    ],
+    "SPA2S": [
+     5,
+     5
+    ],
+    "SPA2X": [
+     5,
+     5
+    ],
+    "SPA3": [
+     5,
+     5
+    ],
+    "SPA3S": [
+     5,
+     5
+    ],
+    "SPA4S": [
+     5,
+     5
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

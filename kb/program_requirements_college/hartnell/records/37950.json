@@ -145,19 +145,19 @@
     "courses": [
      {
       "code": "ABT90",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM22",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [
        {
         "code": "CHM1A",
-        "units": null,
+        "units": 5,
         "catalog_addition": false
        }
       ],
@@ -165,12 +165,12 @@
      },
      {
       "code": "ABT53",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "ECONC2001",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -178,14 +178,14 @@
      },
      {
       "code": "STATC1000",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT92",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -204,14 +204,14 @@
     "courses": [
      {
       "code": "MFGT71",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM12A",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -230,20 +230,51 @@
    "No program learning outcomes or careers appear in the provided text (General and Degree Map tabs not included)."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 34,
-    "max": 34
+    "ABT90": [
+     3,
+     3
+    ],
+    "CHM22": [
+     4,
+     4
+    ],
+    "CHM1A": [
+     5,
+     5
+    ],
+    "ABT53": [
+     3,
+     3
+    ],
+    "ECONC2001": [
+     3,
+     3
+    ],
+    "STATC1000": [
+     4,
+     4
+    ],
+    "ABT92": [
+     3,
+     3
+    ],
+    "MFGT71": [
+     3,
+     3
+    ],
+    "CHM12A": [
+     5,
+     5
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

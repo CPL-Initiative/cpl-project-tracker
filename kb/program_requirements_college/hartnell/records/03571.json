@@ -92,8 +92,8 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    4.0,
-    9.0
+    48.0,
+    53.0
    ],
    "stated": [
     57.0,
@@ -101,10 +101,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Required General Education Courses' has no units",
-    "a required course in '1st Semester' has no units",
-    "a required course in '2nd Semester' has no units",
-    "a required course in '3rd Semester' has no units"
+    "a required course in 'Required General Education Courses' has no units"
    ]
   },
   "repeated": {
@@ -170,12 +167,12 @@
     "courses": [
      {
       "code": "ENGLC1000",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "ENGLC1000E",
-        "units": null,
+        "units": 4,
         "catalog_addition": true
        }
       ],
@@ -183,7 +180,7 @@
      },
      {
       "code": "STATC1000",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -197,7 +194,7 @@
      },
      {
       "code": "PSYCC1000",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -216,7 +213,7 @@
     "courses": [
      {
       "code": "BIO11",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -235,21 +232,21 @@
     "courses": [
      {
       "code": "BIO5",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO6L",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -268,12 +265,12 @@
     "courses": [
      {
       "code": "NUTR51",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "NUTR1",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -281,17 +278,17 @@
      },
      {
       "code": "NRN70",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "NVN70",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "PSY25",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -299,28 +296,28 @@
      },
      {
       "code": "NVN110",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN119",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN119.1",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NVN130A",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -339,21 +336,21 @@
     "courses": [
      {
       "code": "NVN121",
-      "units": null,
+      "units": 6.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN121.1",
-      "units": null,
+      "units": 6.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN130B",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -372,21 +369,21 @@
     "courses": [
      {
       "code": "NVN123",
-      "units": null,
+      "units": 6.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN123.1",
-      "units": null,
+      "units": 6.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN130C",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -405,21 +402,21 @@
     "courses": [
      {
       "code": "NVN225",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN226",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN227",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -444,5 +441,119 @@
    "No program learning outcomes or careers are printed in this text."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39949570443,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ENGLC1000": [
+     3,
+     3
+    ],
+    "ENGLC1000E": [
+     4,
+     4
+    ],
+    "STATC1000": [
+     4,
+     4
+    ],
+    "PSYCC1000": [
+     3,
+     3
+    ],
+    "BIO11": [
+     4,
+     4
+    ],
+    "BIO5": [
+     4,
+     4
+    ],
+    "BIO6": [
+     3,
+     3
+    ],
+    "BIO6L": [
+     2,
+     2
+    ],
+    "NUTR51": [
+     3,
+     3
+    ],
+    "NUTR1": [
+     3,
+     3
+    ],
+    "NRN70": [
+     3,
+     3
+    ],
+    "NVN70": [
+     3,
+     3
+    ],
+    "PSY25": [
+     3,
+     3
+    ],
+    "NVN110": [
+     1,
+     1
+    ],
+    "NVN119": [
+     4,
+     4
+    ],
+    "NVN119.1": [
+     4,
+     4
+    ],
+    "NVN130A": [
+     1,
+     1
+    ],
+    "NVN121": [
+     6.5,
+     6.5
+    ],
+    "NVN121.1": [
+     6.5,
+     6.5
+    ],
+    "NVN130B": [
+     1,
+     1
+    ],
+    "NVN123": [
+     6.5,
+     6.5
+    ],
+    "NVN123.1": [
+     6.5,
+     6.5
+    ],
+    "NVN130C": [
+     1,
+     1
+    ],
+    "NVN225": [
+     0.5,
+     0.5
+    ],
+    "NVN226": [
+     0.5,
+     0.5
+    ],
+    "NVN227": [
+     0.5,
+     0.5
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

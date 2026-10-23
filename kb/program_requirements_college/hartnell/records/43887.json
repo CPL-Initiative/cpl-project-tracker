@@ -72,8 +72,8 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    18.5,
-    18.5
+    18.0,
+    19.0
    ],
    "stated": [
     19.5,
@@ -81,7 +81,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 18.5-18.5; the catalog states 19.5-19.5"
+    "the blocks sum to 18.0-19.0; the catalog states 19.5-19.5"
    ]
   },
   "repeated": {
@@ -147,40 +147,40 @@
     "courses": [
      {
       "code": "MUS 2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS 46",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS 47",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS 13A",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS 13B",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [
        {
         "code": "MUS 17A",
-        "units": null,
+        "units": 1.5,
         "catalog_addition": true
        }
       ],
@@ -188,12 +188,12 @@
      },
      {
       "code": "MUS 10",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [
        {
         "code": "MUS 11",
-        "units": null,
+        "units": 0.5,
         "catalog_addition": true
        }
       ],
@@ -213,42 +213,42 @@
     "courses": [
      {
       "code": "MUS 1A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS 5",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS 6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS 7",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS 8",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS 42",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -267,35 +267,35 @@
     "courses": [
      {
       "code": "MUS 20",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS 21",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS 25",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS 26",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUS 37",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -314,5 +314,91 @@
    "No program learning outcomes or careers appear in the provided text (General tab content not included)."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39949570443,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "MUS 2": [
+     3,
+     3
+    ],
+    "MUS 46": [
+     4,
+     4
+    ],
+    "MUS 47": [
+     4,
+     4
+    ],
+    "MUS 13A": [
+     1.5,
+     1.5
+    ],
+    "MUS 13B": [
+     1,
+     1
+    ],
+    "MUS 17A": [
+     1.5,
+     1.5
+    ],
+    "MUS 10": [
+     1,
+     1
+    ],
+    "MUS 11": [
+     0.5,
+     0.5
+    ],
+    "MUS 1A": [
+     3,
+     3
+    ],
+    "MUS 5": [
+     3,
+     3
+    ],
+    "MUS 6": [
+     3,
+     3
+    ],
+    "MUS 7": [
+     3,
+     3
+    ],
+    "MUS 8": [
+     3,
+     3
+    ],
+    "MUS 42": [
+     3,
+     3
+    ],
+    "MUS 20": [
+     1,
+     1
+    ],
+    "MUS 21": [
+     1,
+     1
+    ],
+    "MUS 25": [
+     1,
+     1
+    ],
+    "MUS 26": [
+     1,
+     1
+    ],
+    "MUS 37": [
+     1,
+     1
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

@@ -76,8 +76,8 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    9.0,
-    9.0
+    20.0,
+    20.0
    ],
    "stated": [
     60.0,
@@ -86,7 +86,6 @@
    "against": "degree",
    "ge": null,
    "why": [
-    "a required course in 'Required Core' has no units",
     "the record names the degree total and the Cal-GETC pattern, but no units for it"
    ]
   },
@@ -153,21 +152,21 @@
     "courses": [
      {
       "code": "STATC1000",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "PSYCC1000",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY9",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -186,7 +185,7 @@
     "courses": [
      {
       "code": "PSY10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -205,14 +204,14 @@
     "courses": [
      {
       "code": "PSY25",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "PSY14",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -231,21 +230,21 @@
     "courses": [
      {
       "code": "PSY22",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY15",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -272,5 +271,51 @@
    "No program learning outcomes or careers appear in the text."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39949570443,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "STATC1000": [
+     4,
+     4
+    ],
+    "PSYCC1000": [
+     3,
+     3
+    ],
+    "PSY9": [
+     4,
+     4
+    ],
+    "PSY10": [
+     3,
+     3
+    ],
+    "PSY25": [
+     3,
+     3
+    ],
+    "PSY14": [
+     3,
+     3
+    ],
+    "PSY22": [
+     3,
+     3
+    ],
+    "PSY15": [
+     3,
+     3
+    ],
+    "PSY6": [
+     3,
+     3
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

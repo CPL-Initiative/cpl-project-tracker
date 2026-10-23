@@ -177,210 +177,210 @@
     "courses": [
      {
       "code": "AOD1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADJ1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADJ3",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADJ51",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT53",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANT1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANT2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANT10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANT20",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS32",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COM4",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECE2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECE6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECE53",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECONC2002",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECONC2001",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECO10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EDU1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH3",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH4",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH5",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH7",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH8",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH12",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH13",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH21",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH56",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -394,152 +394,152 @@
      },
      {
       "code": "GEG10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HED2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HED7",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HES1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HES2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "HIS4A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS4B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS5A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS5B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HISTC1001",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HISTC1002",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "HIS40",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS46A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS46B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS47",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS49A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS49B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS55",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NRN70",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "NVN70",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -547,147 +547,147 @@
      },
      {
       "code": "PHL2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHL5",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "PHL10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHL15",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PETH5",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POLSC1000",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL3",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL5",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYCC1000",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY9",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY12",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY14",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY15",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY22",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY25",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY33",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY41",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -701,7 +701,7 @@
      },
      {
       "code": "SJS20",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -715,63 +715,63 @@
      },
      {
       "code": "SJS22",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC5",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC8",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC15",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC20",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC30",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC41",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC42",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -785,7 +785,7 @@
      },
      {
       "code": "TAC23",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -808,20 +808,351 @@
    "No program learning outcomes or careers are printed in this text."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 23,
-    "max": 23
+    "AOD1": [
+     3,
+     3
+    ],
+    "ADJ1": [
+     3,
+     3
+    ],
+    "ADJ3": [
+     3,
+     3
+    ],
+    "ADJ51": [
+     3,
+     3
+    ],
+    "ABT53": [
+     3,
+     3
+    ],
+    "ANT1": [
+     3,
+     3
+    ],
+    "ANT2": [
+     3,
+     3
+    ],
+    "ANT10": [
+     3,
+     3
+    ],
+    "ANT20": [
+     3,
+     3
+    ],
+    "BUS32": [
+     3,
+     3
+    ],
+    "COM4": [
+     3,
+     3
+    ],
+    "ECE2": [
+     3,
+     3
+    ],
+    "ECE6": [
+     3,
+     3
+    ],
+    "ECE53": [
+     3,
+     3
+    ],
+    "ECONC2002": [
+     3,
+     3
+    ],
+    "ECONC2001": [
+     3,
+     3
+    ],
+    "ECO10": [
+     3,
+     3
+    ],
+    "EDU1": [
+     3,
+     3
+    ],
+    "ETH1": [
+     3,
+     3
+    ],
+    "ETH2": [
+     3,
+     3
+    ],
+    "ETH3": [
+     3,
+     3
+    ],
+    "ETH4": [
+     3,
+     3
+    ],
+    "ETH5": [
+     3,
+     3
+    ],
+    "ETH6": [
+     3,
+     3
+    ],
+    "ETH7": [
+     3,
+     3
+    ],
+    "ETH8": [
+     3,
+     3
+    ],
+    "ETH12": [
+     3,
+     3
+    ],
+    "ETH13": [
+     3,
+     3
+    ],
+    "ETH21": [
+     3,
+     3
+    ],
+    "ETH56": [
+     3,
+     3
+    ],
+    "GEG10": [
+     3,
+     3
+    ],
+    "HED2": [
+     3,
+     3
+    ],
+    "HED7": [
+     3,
+     3
+    ],
+    "HES1": [
+     3,
+     3
+    ],
+    "HES2": [
+     3,
+     3
+    ],
+    "HIS4A": [
+     3,
+     3
+    ],
+    "HIS4B": [
+     3,
+     3
+    ],
+    "HIS5A": [
+     3,
+     3
+    ],
+    "HIS5B": [
+     3,
+     3
+    ],
+    "HIS6": [
+     3,
+     3
+    ],
+    "HIS10": [
+     3,
+     3
+    ],
+    "HISTC1001": [
+     3,
+     3
+    ],
+    "HISTC1002": [
+     3,
+     3
+    ],
+    "HIS40": [
+     3,
+     3
+    ],
+    "HIS46A": [
+     3,
+     3
+    ],
+    "HIS46B": [
+     3,
+     3
+    ],
+    "HIS47": [
+     3,
+     3
+    ],
+    "HIS49A": [
+     3,
+     3
+    ],
+    "HIS49B": [
+     3,
+     3
+    ],
+    "HIS55": [
+     3,
+     3
+    ],
+    "NRN70": [
+     3,
+     3
+    ],
+    "NVN70": [
+     3,
+     3
+    ],
+    "PHL2": [
+     3,
+     3
+    ],
+    "PHL5": [
+     3,
+     3
+    ],
+    "PHL10": [
+     3,
+     3
+    ],
+    "PHL15": [
+     3,
+     3
+    ],
+    "PETH5": [
+     3,
+     3
+    ],
+    "POLSC1000": [
+     3,
+     3
+    ],
+    "POL2": [
+     3,
+     3
+    ],
+    "POL3": [
+     3,
+     3
+    ],
+    "POL5": [
+     3,
+     3
+    ],
+    "POL6": [
+     3,
+     3
+    ],
+    "PSYCC1000": [
+     3,
+     3
+    ],
+    "PSY6": [
+     3,
+     3
+    ],
+    "PSY9": [
+     4,
+     4
+    ],
+    "PSY10": [
+     3,
+     3
+    ],
+    "PSY12": [
+     3,
+     3
+    ],
+    "PSY14": [
+     3,
+     3
+    ],
+    "PSY15": [
+     3,
+     3
+    ],
+    "PSY22": [
+     3,
+     3
+    ],
+    "PSY25": [
+     3,
+     3
+    ],
+    "PSY33": [
+     3,
+     3
+    ],
+    "PSY41": [
+     3,
+     3
+    ],
+    "SJS20": [
+     3,
+     3
+    ],
+    "SJS22": [
+     3,
+     3
+    ],
+    "SOC1": [
+     3,
+     3
+    ],
+    "SOC5": [
+     3,
+     3
+    ],
+    "SOC8": [
+     3,
+     3
+    ],
+    "SOC15": [
+     3,
+     3
+    ],
+    "SOC20": [
+     3,
+     3
+    ],
+    "SOC30": [
+     3,
+     3
+    ],
+    "SOC41": [
+     3,
+     3
+    ],
+    "SOC42": [
+     3,
+     3
+    ],
+    "TAC23": [
+     3,
+     3
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

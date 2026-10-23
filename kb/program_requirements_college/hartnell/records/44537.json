@@ -140,28 +140,28 @@
     "courses": [
      {
       "code": "PHL700",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RCP701",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RCP702",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RCP703",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -180,35 +180,35 @@
     "courses": [
      {
       "code": "COM700",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RCP704",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RCP705",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RCP801",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RCP802",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -227,28 +227,28 @@
     "courses": [
      {
       "code": "PSY700",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RCP803",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RCP804",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RCP805",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -267,5 +267,67 @@
    "Admission prerequisites (a CoARC-accredited A.S. in Respiratory Care and an RCP license) are not recorded as blocks."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39949570443,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "PHL700": [
+     3,
+     3
+    ],
+    "RCP701": [
+     3,
+     3
+    ],
+    "RCP702": [
+     3,
+     3
+    ],
+    "RCP703": [
+     3,
+     3
+    ],
+    "COM700": [
+     3,
+     3
+    ],
+    "RCP704": [
+     3,
+     3
+    ],
+    "RCP705": [
+     3,
+     3
+    ],
+    "RCP801": [
+     3,
+     3
+    ],
+    "RCP802": [
+     3,
+     3
+    ],
+    "PSY700": [
+     3,
+     3
+    ],
+    "RCP803": [
+     3,
+     3
+    ],
+    "RCP804": [
+     3,
+     3
+    ],
+    "RCP805": [
+     4,
+     4
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

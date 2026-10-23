@@ -172,35 +172,35 @@
     "courses": [
      {
       "code": "NRN110",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NRN46",
-      "units": null,
+      "units": 6.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NRN47",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NRN48",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NRN49",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -219,21 +219,21 @@
     "courses": [
      {
       "code": "NRN56",
-      "units": null,
+      "units": 8,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NRN57",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NRN58",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -252,7 +252,7 @@
     "courses": [
      {
       "code": "NRN66",
-      "units": null,
+      "units": 8,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -271,14 +271,14 @@
     "courses": [
      {
       "code": "NRN76",
-      "units": null,
+      "units": 7,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NRN77",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -297,105 +297,105 @@
     "courses": [
      {
       "code": "NRN50.41",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NRN50.42",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NRN50.43",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NRN50.44",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NRN225",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NRN226",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NRN227",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NRN228",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "BIO18",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "HES1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "HES2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "HES3",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "HES80",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "LIB6",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NUTR1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -416,5 +416,119 @@
    "The section heading is taken from the major-course heading because the program's own heading is not in the text."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39949570443,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "NRN110": [
+     1,
+     1
+    ],
+    "NRN46": [
+     6.5,
+     6.5
+    ],
+    "NRN47": [
+     1.5,
+     1.5
+    ],
+    "NRN48": [
+     1,
+     1
+    ],
+    "NRN49": [
+     1.5,
+     1.5
+    ],
+    "NRN56": [
+     8,
+     8
+    ],
+    "NRN57": [
+     0.5,
+     0.5
+    ],
+    "NRN58": [
+     0.5,
+     0.5
+    ],
+    "NRN66": [
+     8,
+     8
+    ],
+    "NRN76": [
+     7,
+     7
+    ],
+    "NRN77": [
+     1,
+     1
+    ],
+    "NRN50.41": [
+     0.5,
+     0.5
+    ],
+    "NRN50.42": [
+     0.5,
+     0.5
+    ],
+    "NRN50.43": [
+     0.5,
+     0.5
+    ],
+    "NRN50.44": [
+     0.5,
+     0.5
+    ],
+    "NRN225": [
+     1,
+     1
+    ],
+    "NRN226": [
+     1,
+     1
+    ],
+    "NRN227": [
+     0.5,
+     0.5
+    ],
+    "NRN228": [
+     0.5,
+     0.5
+    ],
+    "BIO18": [
+     3,
+     3
+    ],
+    "HES1": [
+     3,
+     3
+    ],
+    "HES2": [
+     3,
+     3
+    ],
+    "HES3": [
+     3,
+     3
+    ],
+    "HES80": [
+     3,
+     3
+    ],
+    "LIB6": [
+     1,
+     1
+    ],
+    "NUTR1": [
+     3,
+     3
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

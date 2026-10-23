@@ -145,82 +145,82 @@
     "courses": [
      {
       "code": "AAT100",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AAT101",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AAT110",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AAT120",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AAT121",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AAT130",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AAT140",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AAT141",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AAT150",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AAT151",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS43",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [
        {
         "code": "BUS50",
-        "units": null,
+        "units": 4,
         "catalog_addition": false
        }
       ],
@@ -239,20 +239,63 @@
    "No program learning outcomes or careers appear in the Requirements tab text provided; the General tab was not included."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 23,
-    "max": 23
+    "AAT100": [
+     4,
+     4
+    ],
+    "AAT101": [
+     4,
+     4
+    ],
+    "AAT110": [
+     4,
+     4
+    ],
+    "AAT120": [
+     4,
+     4
+    ],
+    "AAT121": [
+     4,
+     4
+    ],
+    "AAT130": [
+     4,
+     4
+    ],
+    "AAT140": [
+     4,
+     4
+    ],
+    "AAT141": [
+     4,
+     4
+    ],
+    "AAT150": [
+     4,
+     4
+    ],
+    "AAT151": [
+     4,
+     4
+    ],
+    "BUS43": [
+     4,
+     4
+    ],
+    "BUS50": [
+     4,
+     4
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }
