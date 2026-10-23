@@ -641,6 +641,19 @@ def heading_fit(line: str, tokens: list[str]) -> float:
     return round(len(own & set(tokens)) / len(own), 3) if own else 0.0
 
 
+def with_acronyms(line: str, tokens: list[str]) -> str:
+    """The heading with each run of words a short title word abbreviates written as that word:
+    the state names Sierra's "IT: Cybersecurity" where the page heads "Information
+    Technology—Cybersecurity" (page read 39946962141, S455)."""
+    for t in tokens:
+        if not (2 <= len(t) <= 4 and t.isalpha()) or re.search(r"\b" + re.escape(t) + r"\b", line):
+            continue
+        # each spelled word four letters or more, so "intro to" never reads as IT
+        pat = r"\b" + r"[\W_]+".join(c + r"[a-z]{3,}" for c in t) + r"\b"
+        line = re.sub(pat, t, line, count=1)
+    return line
+
+
 def names_title(line: str, tokens: list[str]) -> bool:
     """Every word of the title, each as a word, or all of them run together as one word:
     MiraCosta heads Cyber Security's certificate "Cybersecurity" (page read 39732553097)."""
@@ -697,6 +710,7 @@ def section_match(text: str, program: dict, title_share: float = 0.0) -> tuple[s
                 out.append(ln)
             if nxt and (p.search(ln) or p.search(nxt) or p.search(ln + " " + nxt)):
                 out.append(ln + " " + nxt)
+        out = [with_acronyms(h, tokens) for h in out]
         return [h for h in out if names_title(h, tokens)]
 
     # "Associate in Arts in Anthropology for Transfer" is the A.A.-T's section, never the A.A.'s

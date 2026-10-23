@@ -302,6 +302,15 @@ check(C.section_award(SIERRA_FIRE, {"award": "A.S. Degree", "title": "Fire Techn
       "Sierra's 'AA or AS' heads the section for both the A.A. and the A.S.")
 check(C.section_award("Students may choose AA or AS coursework in Fire Technology", {"award": "A.S. Degree",
                       "title": "Fire Technology"}) is None, "'AA or AS' inside a sentence is no heading")
+# A short title word may abbreviate the heading's words: the state's "IT: Cybersecurity" is Sierra's
+# "Information Technology\u2014Cybersecurity" (page read 39946962141, S455), never a program the page omits.
+IT_PAGE = ("Information Technology\u2014Cybersecurity\nAA or AS Degree\nRequired Courses:\nTotal Units\t30\n"
+           "Information Technology\u2014Cybersecurity\nCertificate of Achievement\nRequired Courses:\n")
+check(C.section_award(IT_PAGE, {"award": "A.S. Degree", "title": "IT: Cybersecurity"}) == "as"
+      and C.section_award(IT_PAGE, {"award": "Certificate of Achievement", "title": "IT: Cybersecurity"}) == "coa"
+      and C.section_award(IT_PAGE, {"award": "A.S. Degree", "title": "IT: Business Information Worker"}) is None
+      and C.with_acronyms("intro to cybersecurity", ["it", "cybersecurity"]) == "intro to cybersecurity",
+      "'IT' reads 'Information Technology' in a heading, and only where the heading spells it out")
 MC_HORT = ("Total Units 26-28 · Certificate of Achievement · Nursery/Horticulture Crop Production · Course Requirements · "
            "Total Units 25 · Certificate of Achievement · Pest Control Adviser")
 coa = "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
@@ -1288,7 +1297,10 @@ check(all("- '%s'" % k in BASIS for k in ("outcomes", "careers", "total_units", 
       "the carry basis leaves out exactly the totals, the degree's figures, outcomes and careers, keeps every "
       "block, compares as jsonb (3 and 3.0 alike), and is closed to the API roles")
 steps_fields = {st["field"] for c in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb",
-                "program_requirements_reconcile.json")))["colleges"].values() for st in c["steps"]}
+                "program_requirements_reconcile.json")))["colleges"].values() for st in c["steps"]
+                if st["kind"] != "course_units"}
+# course_units fills a course's units inside a block (S455): the basis keeps every block, so a confirm of
+# the record before the fill does not carry, and the curator sees the priced course list again.
 check(all("- '%s'" % f in BASIS for f in steps_fields),
       "every field a college's reconcile steps fill or clear is one a confirm carries across: %s" % sorted(steps_fields))
 VF = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "chatbox",
