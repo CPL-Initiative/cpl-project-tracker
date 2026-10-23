@@ -1,0 +1,64 @@
+{
+ "college": "Sierra College",
+ "reread_run": "39995147379",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39993005180",
+ "at": "2026-10-23T17:31:47Z",
+ "posted": 2,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "07964",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "10827",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21523",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21524",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21526",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31260",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39208",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41803",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45200",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 0,
+ "absent": 0,
+ "held": 0,
+ "kept": 2,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "38991",
+  "44028"
+ ],
+ "carried_keys": [],
+ "machine_pass": 2,
+ "rollback": null,
+ "before": []
+}
