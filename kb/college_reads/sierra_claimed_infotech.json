@@ -1,0 +1,23 @@
+{
+ "_readme": "S455 SkyMonkeyflower, 2026-10-23. Sierra's capture 39933862802 leaves 17 programs page-claimed; four are IT awards on the Information Technology department page (IT: Business Information Worker A.S. 07963 and certificate 21537, IT: Cybersecurity A.S. 11965 and certificate 21557), which page_winners() gave to a sibling. This read prints the page as the capture reads it (capture_view, the hidden Degrees tab included), to see how the page heads each of the four awards and whether each course list sits beneath its own heading. One load, no model call.",
+ "college": "Sierra College",
+ "questions": {
+  "award_headings": "On the Information Technology department page as the capture reads it, what line heads each of the IT: Business Information Worker and IT: Cybersecurity awards (title and award words on one line or adjacent short lines), and does each award's course list sit beneath its own heading?"
+ },
+ "keywords": [
+  "Business Information Worker",
+  "Cybersecurity",
+  "\\b(?:AS|AA|A\\.S\\.|A\\.A\\.)(?: Degree)?\\b",
+  "Certificate of (?:Achievement|Accomplishment)",
+  "Skills Certificate"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "award_headings"
+   ],
+   "url": "https://catalog.sierracollege.edu/departments/infotech/",
+   "capture_view": true
+  }
+ ]
+}
