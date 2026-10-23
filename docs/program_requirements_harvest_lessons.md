@@ -726,6 +726,23 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S459 SkyBuckeye (2026-10-23, Sam's session): the meets reading rebuilt and applied; the six rows removed
+
+- **A measured count verifies a rebuild.** S457's scorer change, rescore and receipt died with its container; the PR body
+  and lessons S457 kept the rule and its counts (258 program totals, 9 electives-filled degrees, 738 under the wide
+  reading). The rebuild was accepted when its own count matched: 258 and 9, Hartnell 7. KB note
+  `methodology-a-measured-count-verifies-a-rebuild`.
+- **Shape 6 keeps a failing record failing.** 28 of the 258 program totals carry a degree check that still fails
+  (`arithmetic.degree`), so their major's meets reading changes nothing the live row says; the rescorer skips them and
+  239 moved to equal (run 40024250589; 238 by the proxy count of rows whose check reads equal while the applied display
+  still reads unequal). `program_verdict()` now holds the exact, floor and meets readings in one place for the scorer and
+  the rescorer.
+- **A display build on the branch, the apply on `main`.** `kb/_build_roep_display.py` ran in about two minutes over
+  18,550 records (openpyxl present); its receipt names 17,529 programs, Victor Valley 20545 gone with its file.
+- **The S456 method, one step per command.** The six rows read in one query whose answer the harness saved to a file
+  (101,836 characters); a script checked each `md5(row_text)` and wrote the receipt and the guarded delete; the push went
+  through alone (run 40025041285). The filed records placing none (Long Beach City) stay, as S456 left Citrus 11244's.
+
 ## S458 SkyLarkspur (2026-10-23, Sam's session): the display apply's one missing row; the six rows read, not removed
 
 - **A display apply fails on a filed record whose live row left.** Victor Valley's Nursing Licensure 20545 left the

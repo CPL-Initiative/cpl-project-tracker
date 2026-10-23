@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 562 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 563 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 90 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 85 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 429 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1233** | |
+| Session handoffs | 430 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1235** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-23 (S459 SkyBuckeye): the Library's Made-for build; the meets reading rebuilt and applied; the six older-build rows removed; KB note `methodology-a-measured-count-verifies-a-rebuild`; handoff 460.
 - 2026-10-23 (S458 SkyLarkspur): the team phrase lists a Library piece publicly (#2390, applied live); Open Asks Sheet 120 with six cards on visuals made for an entity and the Made-for mock-up; S457's checkpoint merged (#2388); the Coordinator Guide audit started; handoff 459.
 - 2026-10-23 (S457 SkyColumbine): the S456 wave and Sierra's ESL certificates landed; the scorer's low-end-meets reading built and held on Open Asks Sheet 119; handoff 458.
 - 2026-10-23 (S456 SkyYarrow): Sheet 115 card 1 carried out (17 older-build program records removed with a receipt); Hartnell's Coursedog code-kind gate and Sierra's noncredit section; KB note on a bulk delete's receipt; Open Asks Sheet 117; handoff 457.

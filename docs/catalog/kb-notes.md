@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-562 document(s).
+563 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -145,6 +145,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A manager must show everything it manages, or say what it cannot see](../kb-notes/methodology-a-manager-must-show-everything-it-manages.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [A materialized view cannot carry RLS — its suppression has no backstop](../kb-notes/methodology-a-materialized-view-cannot-carry-rls.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A measure everyone already clears incentivizes nothing — the same failure as one nobody can measure](../kb-notes/methodology-a-measure-everyone-clears-incentivizes-nothing.md) | methodology | published | 2026-09-01 | 2026-09-01 |
+| [A measured count verifies a rebuild of lost work](../kb-notes/methodology-a-measured-count-verifies-a-rebuild.md) | methodology | published | 2026-10-23 | 2026-10-23 |
 | [A mechanism that looks redundant may be carrying a second job the table cannot show](../kb-notes/methodology-a-mechanism-that-looks-redundant-may-be-carrying-a-second-job.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A memory table goes stale in its claims, not its links — lint the structure, read the claims](../kb-notes/methodology-a-memory-table-goes-stale-in-its-claims-not-its-links.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A memory-bound suite scales across machines, and the check keeps its name](../kb-notes/methodology-a-memory-bound-suite-scales-across-machines-not-workers.md) | methodology | published | 2026-09-24 | 2026-09-24 |

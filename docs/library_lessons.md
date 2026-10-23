@@ -50,6 +50,23 @@ of the repo until it is applied, so a committed receipt always means a write tha
 - **Both Summit v2 cuts went to Sam in chat for Drafts** (10,048,927 and 17,230,551 bytes), the documented fallback
   while the filer cannot sign in. Their Library record waits on Sam confirming the files are in Drafts.
 
+## S459 SkyBuckeye (2026-10-23): who a piece is made for, built; the KB tab and the Library
+
+- **Three applies, one build, in order.** The columns rode the whole schema file (re-runnable), then the public read's
+  file, each a push of `kb/migrations/.apply` on the build's own branch (#2393); the backfill waits for Pages, because the
+  live page names a kind only after the deploy. A migrate run's receipt commit starts no `test`: a merge of `main` after
+  it does. The bot's push also needs no re-apply, so the trigger returns to `main`'s content in the checkpoint commit.
+- **A college's name is MAP's.** `map_colleges` (116 colleges and 2 continuing-education campuses; 8 test rows and 2
+  partners left out) is the datalist behind For; `mapCollege()` folds case and spacing to MAP's spelling, and a name MAP
+  does not list is refused, so the Library filter and the CPL Pathways pick agree.
+- **The pair's slug is the college's.** `cpl-opportunity-<college>-visual` and `-workbook`, as the first twelve were
+  filed, so a second Make is refused by the table's unique slug before any write.
+- **Sam's words on the tabs (20:18Z): consolidate wherever possible; the team is overwhelmed by the tab count.** The KB
+  tab is a reader of the public repo, the Library the register of pieces; the recommendation is one menu entry and a
+  rule that joins a knowledge-bearing piece to a KB note (Sheet 121 card 1).
+- **The harness can ignore `cd`.** An edit meant for the tracker landed in the #2389 worktree once; every command
+  since names the repo by absolute path (`git -C`, absolute file paths in scripts).
+
 ## S458 SkyLarkspur (2026-10-23): the team phrase lists publicly; a piece records who it is made for
 
 - **The gate moved in one re-runnable file.** `cpl_library_set_public()` reads `team_pass_ok()` or

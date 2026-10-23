@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 562,
+   "count": 563,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2528,6 +2528,21 @@
      "title": "A measure everyone already clears incentivizes nothing \u2014 the same failure as one nobody can measure",
      "type": "methodology",
      "updated": "2026-09-01"
+    },
+    {
+     "created": "2026-10-23",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-measured-count-verifies-a-rebuild.md",
+     "status": "published",
+     "tags": [
+      "kb-note",
+      "methodology",
+      "sessions",
+      "harvest"
+     ],
+     "title": "A measured count verifies a rebuild of lost work",
+     "type": "methodology",
+     "updated": "2026-10-23"
     },
     {
      "created": "2026-08-22",
@@ -16002,8 +16017,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 429,
+   "count": 430,
    "docs": [
+    {
+     "created": "2026-10-23",
+     "governs": [],
+     "n": 460,
+     "path": "docs/session_460_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 460 handoff: the Made-for Library built and applied, the meets reading rebuilt and applied, the six rows removed, Sheet 121",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-23",
      "governs": [],
@@ -23375,5 +23405,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1233
+ "total": 1235
 }

@@ -230,6 +230,12 @@ name lives in the title alone. Mock-up: https://claude.ai/artifact/LRFiSDUY4bGTo
    take their type and name by a guarded UPDATE with a before-values receipt (reversible). Or leave
    them blank and set the columns only on new pieces.
 
+## NEEDS SAM (Open Asks Sheet 121, S459, 2026-10-23)
+
+1. **The Knowledge Base tab and the Library.** Sam, 2026-10-23 ~20:18Z (vault braindump `03-professional/braindumps/braindump-2026-10-23-2020-consolidate-the-kb-tab-and-the-library.md`): *"our KB tab might be a consolidation into the Library or vice versa ... ensure that whatever is in the library is also in the KB, since the knowledge helps us build our unified knowledge informing all the COBI work."* Measured: the Knowledge Base tab is an iframe over `kb-portal/`, a reader of the public `cpl-knowledge-base` repo behind its own magic-link sign-in (Sam and Malone); the Library is `cpl_library` behind the team phrase, 40 live records, none linked to a KB note. Recommended: fold the tab into the Library as a second view (the side menu loses one entry; the portal keeps its sign-in) and one rule with a check: a piece whose substance is knowledge gets a KB note through the curation pipeline, the record links it, and Needs attention names a piece without one. It might be wrong if the KB reader should stay its own door for Malone, or if no rule is wanted.
+2. **The CPL Coordinator Guide's four files.** The audit (S458, `CPLBrain/04-projects/cpl-initiative/coordinator-guide/audit_workflow.js`) needs `CPL_Coordinator_Guide.docx`, `.pdf`, `CPL_Coordinator_Quick_Reference.docx` and `.pdf` attached again: the uploads died with S458's container and no report was committed. Recommended: attach them in the next session; the audit runs as he asked ("ultracode").
+3. **The ELL IET award notice's text.** Card 5's build (the agency template, the ELL IET grantees page first) needs the notice's text and its eight grantees; the sandbox cannot read edd.ca.gov, and search found five grantees and the $17.97 million total. Recommended: paste the text or attach the PDF.
+
 ## Next
 
 - **The team phrase lists publicly too (Sam, 2026-10-23 18:50Z, his own call, reversing 2026-10-20):** *"can you set the
