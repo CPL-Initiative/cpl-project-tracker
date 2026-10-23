@@ -74,8 +74,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     60.0,
     63.0
@@ -89,9 +89,7 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the blocks and general education come to 60.0-63.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
+   "why": [],
    "fill": null,
    "major": {
     "pass": true,
@@ -106,7 +104,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "meets": true,
+   "rescored": "Open Asks Sheet 120 card 1"
   },
   "repeated": {
    "codes": [],
@@ -130,7 +130,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
