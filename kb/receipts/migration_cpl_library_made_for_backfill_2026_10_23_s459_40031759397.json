@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_made_for_backfill_2026-10-23_s459.sql",
+ "name": "cpl_library_made_for_backfill_2026_10_23_s459",
+ "version": "20261023221422",
+ "sha256": "3cd6fe3bb2c768fda950e0d3af00c1da17a4cc37fde649374455f84a96b0112d",
+ "run": "40031759397",
+ "status": 201,
+ "response": "[{\"slug\":\"ell-iet-cpl-ideas-mvlcfx9k\",\"kind\":\"document\",\"for_kind\":\"agency\",\"for_name\":\"EDD ELL IET Fund grantees\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
