@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-10-22T17:21:50Z",
- "count": 29,
+ "_generated_at": "2026-10-23T11:48:02Z",
+ "count": 34,
  "suggestions": {
   "ADJUS 23 Principles and Procedures of the Justice System": [
    {
@@ -215,6 +215,16 @@
     "scoped": true
    }
   ],
+  "ENV 101 - Foundations of Design I": [
+   {
+    "kind": "course",
+    "title": "Foundations of Design I",
+    "code": "ENV 101",
+    "share": 1.0,
+    "colleges": 4,
+    "scoped": true
+   }
+  ],
   "FIRE 33 -Fire Protection Organization and System": [
    {
     "kind": "course",
@@ -222,6 +232,42 @@
     "code": "FIRE 33",
     "share": 1.0,
     "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "HLTH 101 - First Aid - Credit by Exam": [
+   {
+    "kind": "course",
+    "title": "FIRST AID",
+    "code": "HLTH 101",
+    "share": 1.0,
+    "colleges": 4,
+    "scoped": true
+   }
+  ],
+  "HLTH 102 - Standard First Aid and CPR - Credit by Exam": [
+   {
+    "kind": "cid",
+    "id": "KIN 101",
+    "title": "First Aid, CPR and AED",
+    "code": "HLTH 102"
+   }
+  ],
+  "HLTH 104 - Personal Health and Wellness - Credit by Exam": [
+   {
+    "kind": "cid",
+    "id": "PH 100",
+    "title": "Personal Health and Wellness",
+    "code": "HLTH 104"
+   }
+  ],
+  "HLTH 106 - Women's Health Education - Credit by Exam": [
+   {
+    "kind": "course",
+    "title": "WOMEN'S HEALTH EDUCATION",
+    "code": "HLTH 106",
+    "share": 1.0,
+    "colleges": 3,
     "scoped": true
    }
   ],

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-22T17:23:01Z",
+ "written_at": "2026-10-23T11:49:16Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 12885,
+     "n": 12954,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements"
@@ -26,13 +26,13 @@
    ],
    "issues": [
     {
-     "n": 3954,
+     "n": 3968,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "open": "#program-requirements"
     },
     {
-     "n": 3443,
+     "n": 3360,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "open": "#program-requirements"
@@ -50,17 +50,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-22T13:05:28Z",
+    "at": "2026-10-23T10:00:33Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 12885,
-    "failing": 3954,
-    "unread": 3443,
-    "records": 18446,
+    "complete": 12954,
+    "failing": 3968,
+    "unread": 3360,
+    "records": 18547,
     "colleges": 114,
-    "outside_active": 1607
+    "outside_active": 1625
    },
    "sources": [
     "coci_programs_data.js",
@@ -108,7 +108,7 @@
      "error": null
     },
     {
-     "n": 605,
+     "n": 606,
      "words": "titles in the reference that have left MAP",
      "owner": "a curator (retire or keep)",
      "open": "#credential-reference/all",
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-22T17:19:54Z",
+    "at": "2026-10-23T11:45:57Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,10 +140,10 @@
     "records": 2660,
     "records_stamped": 1841,
     "saved_at": "2026-10-22T13:16:57Z",
-    "fold_at": "2026-10-22T17:19:54Z",
-    "map_titles": 4776,
-    "unclassified": 441,
-    "left_map": 605,
+    "fold_at": "2026-10-23T11:45:57Z",
+    "map_titles": 4782,
+    "unclassified": 448,
+    "left_map": 606,
     "below_80": 1151,
     "below_60": 245
    },
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-22T17:21:30+00:00",
+    "at": "2026-10-23T11:47:39+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-22T17:19:53Z",
+    "at": "2026-10-23T11:45:55Z",
     "every_hours": 24
    },
    "facts": {
@@ -414,7 +414,7 @@
     "modal": 11,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-10-22",
+    "scanned_at": "2026-10-23",
     "procedures_on": 6
    },
    "sources": [
