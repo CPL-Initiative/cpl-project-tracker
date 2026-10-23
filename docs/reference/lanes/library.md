@@ -60,6 +60,21 @@ Being You and the CPL Library, and Light and Dark controls on COBI's `cpl_theme`
 embeds the logos for a claude.ai page); `library/index.html` carries a copy. **Next:** Sierra links
 listed pieces (a separate PR, A/B first); YouTube training videos become film records.
 
+✅ **The team phrase lists publicly too (Sam, 2026-10-23 18:50Z, his own call, reversing
+2026-10-20; built S458):** *"can you set the Library page to be editable with Team phrase and not
+just magic link? I want the team to be able to make their artifacts public on the public library."*
+`cpl_library_set_public()` takes `team_pass_ok()` or `is_allowed_reviewer()`, anon holds EXECUTE on
+it, the tab's switch sends the phrase when there is no reviewer token, and `listed_by` reads the
+name given, else the sign-in's email, else *team phrase*. The guard trigger and the governance
+dismissal say the same. Applied by `supabase-migrate.yml` run 40011678930 (19:32Z; the schema file
+is re-runnable; receipt `kb/receipts/migration_cpl_library_public_team_phrase_2026_10_23_s458_40011678930.json`),
+and read back live: anon, authenticated and service_role hold EXECUTE, the function reads
+`team_pass_ok()`, the trigger's message names the phrase, the ledger holds the row. The tab's
+`library.js` reaches COBI with the merge of #2390 (Pages serves `main`); until then the page still
+asks for a sign-in. `cpl_memory` `sam-library-public-listing-with-team-phrase-2026-10-23`. The
+workflow it serves (Sam, 2026-10-23): Ashley makes a college's CPL Pathways visual, files it here,
+lists it publicly and gives the college the link as the CSM team meets with them.
+
 ## Sam's rulings (2026-10-05, all in `cpl_memory`)
 
 His ask: *"I think I may need a COBI tab to store and retrieve artifacts like this
