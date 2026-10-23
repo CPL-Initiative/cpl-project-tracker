@@ -2,6 +2,9 @@
 -- INSERT-only, ON CONFLICT DO NOTHING, author 'S450' (Rule 10 a). Rollback: delete from public.cpl_memory where slug =
 -- 'sam-sheet-115-rulings-2026-10-23' and author = 'S450'.
 -- First push failed the 400-character summary check (run 39954700191); the summary is cut to 372 and the rest rides detail.
+-- EXECUTED 2026-10-23 12:46:49Z by supabase-migrate run 39955409800 as cpl_memory_2026_10_23_s450_sheet115_v3 (its receipt:
+-- kb/receipts/migration_cpl_memory_2026_10_23_s450_sheet115_v3_39955409800.json). Read back through the MCP at 12:52Z: the row
+-- is present, verified, author S450, summary 396 characters.
 -- A good result: one row inserted (rows_inserted 1); 0 means the slug exists, re-read before retrying.
 insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, source, related, status, verified_by, verified_at, event_date, author)
 select x.slug, x.kind, 'cpl', x.title, x.summary, x.detail, x.plain, x.tags, x.source, '{}'::text[], x.status, x.verified_by,
