@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-23T08:25:15Z",
-  "session": 453,
-  "moniker": "SkyFiddleneck",
+  "written_at": "2026-10-23T10:31:58Z",
+  "session": 454,
+  "moniker": "SkyBlazingStar",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_454_handoff.md",
+  "handoff": "docs/session_455_handoff.md",
   "next_step": {
-    "title": "Read Hartnell's course pages, then its units reconcile",
-    "text": "Read the job log of page read run 39924074351 to see whether a Hartnell course page prints its units; if it does, add a reconcile step that fills each course's units from its course page, verified on one program before any dispatch. Confirm the display apply of build 2ab793e383e1 on main."
+    "title": "Apply display build b2864d4d6992, then Hartnell's course units from the vendor's data",
+    "text": "Confirm the step=display run on main that applies b2864d4d6992 (Hartnell's 50 reconciled records and Sierra's 13 newly read programs). Then teach the Coursedog reader to keep the course units the Requirements tab's own courses/search call returns, and fill an empty course unit from them in a reconcile step, for Hartnell's remaining arithmetic failures."
   },
   "calls": [
     {
@@ -38,10 +38,17 @@
     },
     {
       "title": "Remove the 25 live program records the newer reads no longer file, and Victor Valley's two department-list records?",
-      "text": "Open Asks Sheet 115 card 1 (built by S449, published by S450 on 2026-10-22): 19 page-claimed rows with no filed record, 6 filed records that place none of their listed courses, and Victor Valley's two department-list records keep an older display build's marks. Recommended: remove all 27 through supabase-migrate.yml with a receipt that carries every row's before-values.",
+      "text": "Open Asks Sheet 116 card 1 (first asked on Sheet 115, 2026-10-22): page-claimed rows with no filed record, filed records that place none of their listed courses, and Victor Valley's two department-list records keep an older display build's marks. Sierra's S454 re-read files records for 13 of its page-claimed programs. Recommended: remove the rest through supabase-migrate.yml with a receipt that carries every row's before-values.",
       "if_no_reply": "The 27 rows keep showing on CPL Pathways and in Sierra with marks from the build they were last in.",
-      "link": "https://claude.ai/artifact/QTC1MKB7AbWBMQtL9iPba9",
-      "link_text": "Open Sheet 115"
+      "link": "https://claude.ai/artifact/4oL4YfC4b43iVjUq1bSS8J",
+      "link_text": "Open Sheet 116"
+    },
+    {
+      "title": "Keep Hartnell's Local GE at 23 units, the sum of the seven areas its catalog prints?",
+      "text": "Open Asks Sheet 116 card 4, proceeded on the recommendation (S454): the catalog prints Local GE's seven areas (6, five of 3, and 2 units) and no total, so the reconcile step sets 23; 50 Hartnell records changed and 34 now pass the machine checks.",
+      "if_no_reply": "The 23 stays; Hartnell's local degrees add up against their 60 with it.",
+      "link": "https://claude.ai/artifact/4oL4YfC4b43iVjUq1bSS8J",
+      "link_text": "Open Sheet 116"
     }
   ],
   "notes": {
@@ -49,12 +56,12 @@
   },
   "changes": [
     {
-      "at": "2026-10-23T08:20:00Z",
-      "text": "San Mateo's Administration of Justice transfer degree landed with display build 2ab793e383e1."
+      "at": "2026-10-23T09:44:59Z",
+      "text": "Hartnell's 50 degree records reread with their general education units: Cal-GETC 34 on transfer degrees and Local GE 23 on local degrees; 34 now pass the machine checks."
     },
     {
-      "at": "2026-10-23T08:22:00Z",
-      "text": "The thin colleges measured against the programs the state file gives a course list: only Canyons, Calbright and Sierra sit under 80 percent, and Canyons is explained."
+      "at": "2026-10-23T10:21:55Z",
+      "text": "Sierra read again with its AA or AS degree heading: 105 of 125 programs with a course list found, from 92; 6 new records loaded and 7 replaced."
     }
   ],
   "headline": [
@@ -151,18 +158,18 @@
     {
       "day": "2026-10-23",
       "active": 20282,
-      "complete": 12920,
+      "complete": 12957,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-23T09:12:00Z"
+    "at": "2026-10-23T11:12:00Z"
   },
   "harvest": {
     "day": "2026-10-23",
-    "gaps": 3048,
+    "gaps": 3035,
     "parts": {
       "links": {
         "catalog": [
@@ -179,11 +186,11 @@
         ]
       },
       "roep": [
-        19171,
+        19159,
         20282
       ],
       "coci": [
-        16124,
+        16130,
         20282
       ],
       "outcomes": {
@@ -192,12 +199,12 @@
           89192
         ],
         "plo": [
-          16124,
+          16130,
           20282
         ]
       },
       "careers": [
-        15088,
+        15094,
         20282
       ]
     }

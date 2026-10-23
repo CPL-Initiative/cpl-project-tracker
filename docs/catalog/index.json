@@ -15938,8 +15938,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 424,
+   "count": 425,
    "docs": [
+    {
+     "created": "2026-10-23",
+     "governs": [],
+     "n": 455,
+     "path": "docs/session_455_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 455 handoff: Hartnell's GE units, Sierra's AA or AS, display build b2864d4d6992",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-23",
      "governs": [],
@@ -23239,5 +23253,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1224
+ "total": 1225
 }
