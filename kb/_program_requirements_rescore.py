@@ -14,7 +14,11 @@ A filed record keeps the scorer's sum ("computed": blocks, open electives and
 general education) beside the printed degree total ("stated"), so the rescore
 re-reads only how the two meet; it never re-adds the blocks, because the closed
 list and the page text stay with the run that read them. It touches records
-whose arithmetic is "against": "degree" and "unequal", and nothing else.
+whose arithmetic is "unequal" against the degree total or the program total
+(S457, Sam's Sheet 120 card 1 "narrow" of 2026-10-23: a printed total the low end
+meets exactly with the high end carried past it passes as "meets", for program
+totals and electives-filled degrees; kb/_program_requirements_score.py), and
+nothing else. A program record whose degree check also fails stays failing.
 
     python3 kb/_program_requirements_rescore.py           # rewrite the records it passes, write the receipt
     python3 kb/_program_requirements_rescore.py --check   # fail when a filed record would change
@@ -36,7 +40,7 @@ import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from _program_requirements_score import degree_verdict  # noqa: E402
+from _program_requirements_score import degree_verdict, program_verdict  # noqa: E402
 
 ROOT = os.path.dirname(HERE)
 GLOBS = [os.path.join(HERE, "program_requirements_college", "*", "records", "*.json")]
@@ -53,21 +57,36 @@ def rescore(filed: dict) -> dict | None:
     score = filed.get("score") or {}
     arith = score.get("arithmetic") or {}
     comp, stated = arith.get("computed"), arith.get("stated")
-    if arith.get("against") != "degree" or arith.get("status") != "unequal" or not comp or not stated:
+    against = arith.get("against")
+    if against not in ("degree", "program") or arith.get("status") != "unequal" or not comp or not stated:
         return None
     prog = (filed.get("record") or {}).get("program") or {}
-    v = degree_verdict(prog, (float(stated[0]), float(stated[1])), float(comp[0]), float(comp[1]),
-                       filed.get("award"))
+    if against == "degree":
+        v = degree_verdict(prog, (float(stated[0]), float(stated[1])), float(comp[0]), float(comp[1]),
+                           filed.get("award"))
+    else:
+        # Record shape 6 (a page printing the major's total and the degree's): the degree check
+        # rides as `degree`; where it fails, a passing major still leaves the record failing.
+        deg = arith.get("degree")
+        if deg and not deg.get("pass"):
+            return None
+        v = program_verdict(prog, (float(stated[0]), float(stated[1])), float(comp[0]), float(comp[1]))
     if not v["pass"]:
         return None
     new = dict(arith)
     new.update(v)
-    new["rescored"] = "Open Asks Sheet 82" if v.get("overlap") else "Open Asks Sheet 81"
+    new.setdefault("why", [])
+    new["rescored"] = ("Open Asks Sheet 120 card 1" if v.get("meets")
+                       else "Open Asks Sheet 82" if v.get("overlap") else "Open Asks Sheet 81")
     return new
 
 
+def arith_against(filed: dict) -> str | None:
+    return (((filed.get("score") or {}).get("arithmetic") or {}).get("against"))
+
+
 def how(new: dict) -> str:
-    for k in ("within", "overlap", "transfer"):
+    for k in ("meets", "within", "overlap", "transfer", "minimum"):
         if new.get(k):
             return k
     return "fill"
@@ -87,7 +106,7 @@ def run(write: bool) -> list[dict]:
             continue
         changed.append({"college": filed["college"], "control_number": filed["control_number"],
                         "award": filed.get("award"), "extracted_run": filed.get("extracted_run"),
-                        "how": how(new),
+                        "against": arith_against(filed), "how": how(new),
                         "computed": new.get("computed"), "stated": new.get("stated"),
                         "path": os.path.relpath(path, ROOT)})
         if write:
@@ -133,7 +152,8 @@ def main(argv=None) -> int:
         return 0
     path = os.path.join(RECEIPTS, "program_requirement_records_rescore_%s_%s.json"
                         % (time.strftime("%Y-%m-%d", time.gmtime()), args.tag))
-    receipt = {"rule": "Open Asks Sheet 81 cards 1 (count) and 2 (adt) and Sheet 82 card 2 (overlap), Sam, 2026-10-14",
+    receipt = {"rule": "Open Asks Sheet 81 cards 1 (count) and 2 (adt) and Sheet 82 card 2 (overlap), Sam, 2026-10-14; "
+                       "Sheet 120 card 1 (narrow: a printed total the low end meets exactly passes as meets), Sam, 2026-10-23",
                "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                "rescored": len(changed), "records": changed,
                "apply": update_sql(changed, "equal", "unequal"),

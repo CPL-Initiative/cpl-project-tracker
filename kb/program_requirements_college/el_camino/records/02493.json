@@ -76,8 +76,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     25.0,
     29.0
@@ -89,7 +89,9 @@
    "against": "program",
    "why": [
     "the blocks sum to 25.0-29.0; the catalog states 25.0-28.0"
-   ]
+   ],
+   "meets": true,
+   "rescored": "Open Asks Sheet 120 card 1"
   },
   "repeated": {
    "codes": [],
@@ -110,7 +112,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

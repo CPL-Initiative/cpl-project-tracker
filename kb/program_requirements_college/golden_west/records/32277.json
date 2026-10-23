@@ -76,8 +76,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     49.0,
     64.0
@@ -108,7 +108,9 @@
     ],
     "why": [],
     "overlap": true
-   }
+   },
+   "meets": true,
+   "rescored": "Open Asks Sheet 120 card 1"
   },
   "repeated": {
    "codes": [],
@@ -132,7 +134,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
