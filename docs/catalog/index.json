@@ -13406,7 +13406,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 84,
+   "count": 85,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14535,6 +14535,20 @@
      "updated": "2026-06-11"
     },
     {
+     "created": "2026-10-23",
+     "governs": [],
+     "path": "docs/session_457b_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "communications",
+      "library"
+     ],
+     "title": "Session 457b (the side session beside S457) handoff: the communications register shipped; the Library team-phrase listing is next",
+     "type": null,
+     "updated": ""
+    },
+    {
      "created": "2026-07-03",
      "governs": [
       "sierra/index.html",
@@ -15394,7 +15408,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-10-20"
+     "updated": "2026-10-23"
     },
     {
      "created": "2026-08-28",
@@ -23345,5 +23359,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1231
+ "total": 1232
 }
