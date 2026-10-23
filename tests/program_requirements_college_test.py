@@ -2337,17 +2337,18 @@ check(C.cd_award_words("Agriculture Business (AST)") == "associate in science fo
       and C.cd_award_words("Administration of Justice for Transfer (AS-T)") == "associate in science for transfer",
       "a program's letters name its award in words")
 
-# ── a Coursedog catalog read from its site on request (S449) ───────────────
+# ── a Coursedog catalog reads from its site (S449, default since S451) ─────
 # Hartnell's procedure step names its whole-catalog PDF (S410), which prints 79
-# program codes where the site's program search lists 100 (S411). route=site sets
-# the PDF step aside for one run, on a platform whose site reader exists, and
-# nowhere else.
-check(C.prefer_site("coursedog", "site") and C.prefer_site("coursedog", " Site "),
-      "route=site on a Coursedog catalog reads the site")
-check(not C.prefer_site("coursedog", "") and not C.prefer_site("coursedog", None),
-      "no route keeps the PDF procedure step")
-check(not C.prefer_site("courseleaf", "site") and not C.prefer_site(None, "site"),
-      "route=site on another platform changes nothing")
+# program codes where the site's program search lists 100 (S411). Read by its site
+# the capture found 96 of 112 where the PDF found 73 (run 39892327918), so the
+# site is the default on a platform whose site reader exists, and route=pdf keeps
+# the PDF step for one run; on any other platform the route changes nothing.
+check(C.prefer_site("coursedog", "site") and C.prefer_site("coursedog", "") and C.prefer_site("coursedog", None),
+      "a Coursedog catalog reads from its site by default")
+check(not C.prefer_site("coursedog", "pdf") and not C.prefer_site("coursedog", " PDF "),
+      "route=pdf keeps the PDF procedure step for one run")
+check(not C.prefer_site("courseleaf", "site") and not C.prefer_site(None, "site") and not C.prefer_site("courseleaf", None),
+      "the route on another platform changes nothing")
 
 if failures:
     print("FAIL: %d" % len(failures))

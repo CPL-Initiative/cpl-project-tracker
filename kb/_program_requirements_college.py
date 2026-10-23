@@ -2370,18 +2370,20 @@ def reads_as_pdf(reg: dict) -> bool:
     return is_pdf_catalog(reg) or (P.procedure_catalog(reg.get("procedure")) or {}).get("format") == "pdf"
 
 
-# Hartnell's Coursedog catalog reads from its whole-catalog PDF (a procedure step
+# Hartnell's Coursedog catalog read from its whole-catalog PDF (a procedure step
 # naming the file, S410), written before the Coursedog site reader existed (S414,
 # Merced). The PDF prints 79 program codes where the site's own program search
-# lists 100 (S411, run 39077713662), so a dispatch with route=site reads such a
-# catalog from its site instead, for the comparison; the procedure step stands.
+# lists 100 (S411, run 39077713662); read by its site under S451's tab names, the
+# capture found 96 of 112 where the PDF found 73 (run 39892327918). So a Coursedog
+# catalog reads from its site by default, and its PDF procedure step is set aside;
+# a dispatch with route=pdf keeps the step for one run (the comparison the other way).
 SITE_ROUTE_PLATFORMS = ("coursedog",)
 
 
 def prefer_site(platform: str | None, route: str | None) -> bool:
-    """Whether a run asked for the catalog's site (route=site) on a platform whose
-    site reader exists, so a PDF procedure step is set aside for this run."""
-    return (route or "").strip().lower() == "site" and (platform or "") in SITE_ROUTE_PLATFORMS
+    """Whether the catalog reads from its site: a platform whose site reader exists,
+    unless the run asked for the PDF procedure step (route=pdf)."""
+    return (route or "").strip().lower() != "pdf" and (platform or "") in SITE_ROUTE_PLATFORMS
 
 
 def hand_filed_meta(college: str) -> tuple[str, dict] | None:
@@ -2595,7 +2597,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         recs = capture_pdf(college, out_dir, programs, reg, report, hf)
         return finish_capture(college, out_dir, recs, report, t0)
     if prefer_site(platform, os.environ.get("CAPTURE_ROUTE")) and start:
-        report["route"] = "site (CAPTURE_ROUTE=site; the PDF procedure step set aside for this run)"
+        report["route"] = "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)"
     elif reads_as_pdf(reg) and (start or reg.get("procedure")):
         year = (P.procedure_catalog(reg.get("procedure")) or {}).get("catalog_year")
         if year and not reg.get("catalog_year"):
