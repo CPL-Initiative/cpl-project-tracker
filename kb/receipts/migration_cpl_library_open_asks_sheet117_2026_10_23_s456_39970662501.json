@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_open_asks_sheet117_2026-10-23_s456.sql",
+ "name": "cpl_library_open_asks_sheet117_2026_10_23_s456",
+ "version": "20261023143842",
+ "sha256": "f1d1ee206fb2a08ba70bce1f2e5527927e2c298ef3783f16011d88b40f7b06e2",
+ "run": "39970662501",
+ "status": 201,
+ "response": "[{\"version\":\"117\",\"extent\":\"3 cards (sheet 117)\",\"updated_by\":\"S456 SkyYarrow\",\"n_versions\":36}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
