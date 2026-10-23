@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 561,
+   "count": 562,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2320,6 +2320,25 @@
      "title": "A lead-in sentence is not a section heading",
      "type": "methodology",
      "updated": "2026-10-12"
+    },
+    {
+     "created": "2026-10-23",
+     "governs": [
+      "comms.js",
+      "kb/supabase_cpl_comms.sql"
+     ],
+     "path": "docs/kb-notes/methodology-a-letter-holds-roles-never-addresses.md",
+     "status": "internal",
+     "tags": [
+      "methodology",
+      "communications",
+      "contacts",
+      "privacy",
+      "roster"
+     ],
+     "title": "A letter holds roles, never addresses",
+     "type": "methodology",
+     "updated": "2026-10-23"
     },
     {
      "created": "2026-08-12",
@@ -15082,7 +15101,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 61,
+   "count": 62,
    "docs": [
     {
      "created": "2026-08-28",
@@ -15344,6 +15363,22 @@
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
      "updated": "2026-10-22"
+    },
+    {
+     "created": "2026-10-23",
+     "governs": [],
+     "path": "docs/reference/lanes/communications.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "communications",
+      "letters",
+      "library"
+     ],
+     "title": "Letters, Memos & Reports / the communications register \u2014 lane state",
+     "type": null,
+     "updated": "2026-10-23"
     },
     {
      "created": "2026-10-05",
@@ -23296,5 +23331,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1228
+ "total": 1230
 }

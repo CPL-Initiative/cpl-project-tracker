@@ -15,7 +15,6 @@ window.COBI_ADMIN_SURFACE = {
     "activities-projects",
     "military-partnerships",
     "exhibit-adoption",
-    "letters",
     "knowledge-base"
   ],
   "tabs": {
@@ -539,11 +538,19 @@ window.COBI_ADMIN_SURFACE = {
       "measured": true
     },
     "letters": {
-      "modules": [],
-      "reads": [],
+      "modules": [
+        "comms.js",
+        "docx.min.js"
+      ],
+      "reads": [
+        "cpl_comms",
+        "cpl_library",
+        "map_college_contacts",
+        "map_colleges"
+      ],
       "writes": [],
       "rpcs": [],
-      "measured": false
+      "measured": true
     },
     "cpl-news": {
       "modules": [
