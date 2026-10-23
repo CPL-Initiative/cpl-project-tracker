@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-23T18:47:26Z",
-  "session": 457,
-  "moniker": "SkyColumbine",
+  "written_at": "2026-10-23T20:04:12Z",
+  "session": 458,
+  "moniker": "SkyLarkspur",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_458_handoff.md",
+  "handoff": "docs/session_459_handoff.md",
   "next_step": {
-    "title": "Read Sheet 119's replies, then the display applies on main",
-    "text": "Card 1 standing means remove the six older-build rows at each wave with a receipt; card 9 narrow means apply the rescore receipt through supabase-migrate on #2387, then a display build. Read both display apply runs (39990555422 ended in failure after committing its applied record; 39999773855 applies build d45e5d0fcf78) before any new dispatch."
+    "title": "Land the four PRs, then read Sheet 120's replies before building",
+    "text": "Merge #2390 (the team phrase lists publicly), #2389, #2391 and #2392 on green test, then the vault's Sheet 120 PR. The harvest waits on Sam's word (2026-10-23): the six older-build rows still leave by the S456 method at the next wave."
   },
   "calls": [
     {
@@ -86,10 +86,15 @@
     },
     {
       "title": "Count a printed total that the requirements' low end meets as adding up (the scorer's meets reading)?",
-      "text": "Built in #2387 and 267 filed records rescored (258 program totals, 9 degrees; 738 under the wide reading); the live apply of the receipt's guarded UPDATE was refused by the session's permission check, so it waits. Open Asks Sheet 119 card 9. On no reply the live rows keep unequal and #2387 stays a draft.",
-      "link": "https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM",
+      "text": "Built in #2387 and 267 filed records rescored (258 program totals, 9 degrees; 738 under the wide reading); the live apply of the receipt's guarded UPDATE was refused by the session's permission check, so it waits. Open Asks Sheet 120 card 1. On no reply the live rows keep unequal and #2387 stays a draft.",
+      "link": "https://claude.ai/artifact/NWy1GvYEEQgS8oKrYWHpTk",
       "asked": "2026-10-23",
-      "by": "S457 SkyColumbine"
+      "by": "S457 SkyColumbine",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-23",
+        "words": "narrow"
+      }
     }
   ],
   "notes": {
@@ -135,6 +140,14 @@
     {
       "at": "2026-10-23T18:44:00Z",
       "text": "Sam answered Sheet 118 cards 1 to 3 (standing, keep, keep): the older-build rows leave at each wave with a receipt; the two Hartnell GE figures stay."
+    },
+    {
+      "at": "2026-10-23T19:48:00Z",
+      "text": "Open Asks Sheet 120 published: card 1 the scorer's low-end-meets apply (held), cards 2 to 7 the Library's entity-visuals asks. The six older-build rows were read live but not removed (the permission check refused the receipt's push); Victor Valley 20545's filed record leaves the display build in #2391 after both applies failed on that one missing row."
+    },
+    {
+      "at": "2026-10-23T20:02:00Z",
+      "text": "Sam answered Open Asks Sheet 120, all seven his own call: narrow (the scorer's meets reading; the apply is next), and the six Library rulings (library, five types with an Other choice, show, onestep, template, backfill)."
     }
   ],
   "headline": [
@@ -259,7 +272,7 @@
         ]
       },
       "roep": [
-        19151,
+        19153,
         20282
       ],
       "coci": [
