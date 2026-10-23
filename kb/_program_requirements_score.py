@@ -538,6 +538,11 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
     fits = lo <= degree[0] + TOL and hi <= degree[1] + TOL
     fill = [round(max(0.0, degree[0] - hi), 2), round(max(0.0, degree[1] - lo), 2)]
     if prog.get("electives_fill_degree"):
+        if not fits and abs(lo - degree[0]) <= TOL and hi > degree[1] + TOL:
+            # S457 (Sheet 120 card 1 "narrow", Sam, 2026-10-23): the low end meets the total the
+            # electives fill, and a choice or a variable-unit course carries the high end past it. A
+            # student taking each choice at its least reaches the total; nothing is left to fill.
+            return {"pass": True, "status": "equal", "meets": True, "fill": None, "why": []}
         return {"pass": fits, "status": "equal" if fits else "unequal", "fill": fill if fits else None,
                 "why": [] if fits else ["the blocks and general education come to %s-%s, past the %s-%s the "
                                         "catalog prints for the degree" % (lo, hi, degree[0], degree[1])]}
@@ -552,6 +557,29 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
     return {"pass": False, "status": "unequal",
             "why": ["the blocks and general education sum to %s-%s; the catalog prints %s-%s "
                     "for the degree" % (lo, hi, degree[0], degree[1])]}
+
+
+def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: float) -> dict:
+    """How the blocks' sum (lo-hi) meets the program total the page prints: pass,
+    status and how. The rescorer reads it too (kb/_program_requirements_rescore.py),
+    so it never re-adds the blocks."""
+    if abs(lo - stated[0]) <= TOL and abs(hi - stated[1]) <= TOL:
+        return {"pass": True, "status": "equal"}
+    # The page prints the program total as a floor (San Joaquin Delta, S422: "Minimum Units
+    # Required: 24", "Minimum Major Units Required: 18"): a one-unit alternative, a block printed
+    # as a range or a variable-unit course carries the sum's high end past it, and the low end
+    # meets it. Only the low end meeting the floor passes; a low end past it is still a misread.
+    if prog.get("total_units_minimum") and abs(lo - stated[0]) <= TOL and hi >= stated[1] - TOL:
+        return {"pass": True, "status": "equal", "minimum": True}
+    # S457 (Sheet 120 card 1 "narrow", Sam, 2026-10-23): a printed total the requirements' low end
+    # meets exactly, a choice or a variable-unit course carrying the high end past it (Hartnell's
+    # ABT 99 at 1-8 units), passes as meets: the printed total is one the requirements allow, as
+    # Sheet 81 card 1 reads a degree's span, and a student taking each choice at its least reaches
+    # it. A low end short of or past the total stays a misread. Measured 2026-10-23: 258 program
+    # totals and 9 electives-filled degrees read so; any total inside the span would pass 738.
+    if abs(lo - stated[0]) <= TOL and hi > stated[1] + TOL:
+        return {"pass": True, "status": "equal", "meets": True}
+    return {"pass": False, "status": "unequal"}
 
 
 def degree_check(prog: dict, degree: tuple[float, float], lo: float, hi: float,
@@ -652,14 +680,8 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         arith = {"pass": False, "status": "incomplete", "computed": [lo, hi],
                  "stated": list(stated), "against": "program", "why": reasons}
     else:
-        ok = abs(lo - stated[0]) <= TOL and abs(hi - stated[1]) <= TOL
-        # The page prints the program total as a floor (San Joaquin Delta, S422: "Minimum Units
-        # Required: 24", "Minimum Major Units Required: 18"): a one-unit alternative, a block printed
-        # as a range or a variable-unit course carries the sum's high end past it, and the low end
-        # meets it. Only the low end meeting the floor passes; a low end past it is still a misread.
-        floor = (not ok and bool(prog.get("total_units_minimum"))
-                 and abs(lo - stated[0]) <= TOL and hi >= stated[1] - TOL)
-        ok = ok or floor
+        pv = program_verdict(prog, stated, lo, hi)
+        ok = pv["pass"]
         # A certificate whose printed total includes the general education units it names
         # (San Joaquin Delta 05630, S424: "Minimum Units Required: 51" over a 35-unit major and
         # "16 units of courses from the ... General Education Pattern areas", recorded in
@@ -681,8 +703,10 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
                  "computed": [round(lo, 2), round(hi, 2)], "stated": list(stated), "against": "program",
                  "why": [] if ok else ["the blocks sum to %s-%s; the catalog states %s-%s"
                                        % (round(lo, 2), round(hi, 2), stated[0], stated[1])]}
-        if floor:
+        if pv.get("minimum"):
             arith["minimum"] = True
+        if pv.get("meets"):
+            arith["meets"] = True
         if ge_included:
             arith["ge_included"] = list(ge)
             arith["computed"] = [round(lo + ge[0], 2), round(hi + ge[1], 2)]

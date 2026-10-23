@@ -92,8 +92,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     48.0,
     49.0
@@ -105,7 +105,9 @@
    "against": "program",
    "why": [
     "the blocks sum to 48.0-49.0; the catalog states 48.0-48.0"
-   ]
+   ],
+   "meets": true,
+   "rescored": "Open Asks Sheet 120 card 1"
   },
   "repeated": {
    "codes": [],
@@ -129,7 +131,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

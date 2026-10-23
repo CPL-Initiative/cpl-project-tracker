@@ -68,8 +68,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     33.0,
     35.3
@@ -81,7 +81,9 @@
    "against": "program",
    "why": [
     "the blocks sum to 33.0-35.3; the catalog states 33.0-35.0"
-   ]
+   ],
+   "meets": true,
+   "rescored": "Open Asks Sheet 120 card 1"
   },
   "repeated": {
    "codes": [],
@@ -108,7 +110,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
