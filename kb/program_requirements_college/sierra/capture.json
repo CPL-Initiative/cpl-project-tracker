@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 190,
  "with_closed_list": 125,
- "started": "2026-10-23T12:16:13Z",
+ "started": "2026-10-23T14:27:06Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.sierracollege.edu/sitemap.xml",
@@ -23,14 +23,14 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 59,
- "seconds": 286.9,
- "found": 107,
+ "seconds": 290.5,
+ "found": 109,
  "by_method": {
   "link_search": 7,
   "no_closed_list": 65,
   "not_found": 3,
-  "page_claimed": 15,
-  "sitemap_page": 100
+  "page_claimed": 13,
+  "sitemap_page": 102
  },
  "shared_pages": {
   "https://catalog.sierracollege.edu/departments/business/": [
@@ -40,6 +40,7 @@
    "21524",
    "21525",
    "21526",
+   "37810",
    "41040"
   ],
   "https://catalog.sierracollege.edu/departments/infotech/": [
@@ -124,6 +125,7 @@
   ],
   "https://catalog.sierracollege.edu/departments/buildingindustries/": [
    "33224",
+   "38749",
    "44981"
   ],
   "https://catalog.sierracollege.edu/departments/music/": [
@@ -284,28 +286,12 @@
    ]
   },
   {
-   "control_number": "37810",
-   "title": "Entrepreneurship for Makers",
-   "award": "Noncredit program",
-   "pages": [
-    "https://catalog.sierracollege.edu/departments/business/"
-   ]
-  },
-  {
    "control_number": "38370",
    "title": "Emergency Medical Sciences",
    "award": "A.S. Degree",
    "pages": [
     "https://catalog.sierracollege.edu/departments/health-sciences/",
     "https://catalog.sierracollege.edu/student-resources/general-education/associate-degree-requirements/"
-   ]
-  },
-  {
-   "control_number": "38749",
-   "title": "Construction Fundamentals",
-   "award": "Noncredit program",
-   "pages": [
-    "https://catalog.sierracollege.edu/departments/buildingindustries/"
    ]
   },
   {
@@ -336,28 +322,28 @@
  "coverage_bands": {
   "0.5-0.8": 5,
   "0.8-1.0": 21,
-  "1.0": 81
+  "1.0": 83
  },
  "would_extract": {
   "against": "kb/program_requirements_college/sierra",
-  "kept": 105,
+  "kept": 107,
   "programs": 2,
   "list": [
    {
-    "control_number": "11965",
-    "title": "IT: Cybersecurity",
-    "award": "A.S. Degree",
-    "url": "https://catalog.sierracollege.edu/departments/infotech/",
+    "control_number": "37810",
+    "title": "Entrepreneurship for Makers",
+    "award": "Noncredit program",
+    "url": "https://catalog.sierracollege.edu/departments/business/",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "page_claimed"
    },
    {
-    "control_number": "21557",
-    "title": "IT: Cybersecurity",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.sierracollege.edu/departments/infotech/",
+    "control_number": "38749",
+    "title": "Construction Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://catalog.sierracollege.edu/departments/buildingindustries/",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
@@ -365,5 +351,5 @@
    }
   ]
  },
- "run": "39951768339"
+ "run": "39969391317"
 }
