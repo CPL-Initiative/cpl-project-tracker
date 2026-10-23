@@ -1,10 +1,10 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-10-22T13:16:56Z",
- "_queue_count": 439,
+ "_generated_at": "2026-10-23T12:57:51Z",
+ "_queue_count": 448,
  "_counts": {
-  "staged": 403,
-  "needs_you": 440,
+  "staged": 412,
+  "needs_you": 450,
   "not_yet_asked": 0
  },
  "_residual": [],
@@ -73,22 +73,6 @@
     "Rule 5c"
    ]
   },
-  "ADM JUS 001 - Introduction to Administration of Justice": {
-   "title": "Introduction to Criminal Justice",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.85,
-   "note": "Rule 5c: title anchored to C-ID AJ 110; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "ADM JUS 002 - Concepts of Criminal Law": {
-   "title": "Concepts of Criminal Law",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.85,
-   "note": "Rule 5c: title anchored to C-ID AJ 120; issuer = CCC.",
-   "procedure": "course-identity"
-  },
   "ADM JUS 004 - Principles and Procedures of the Justice System": {
    "title": "Principles and Procedures of the Justice System",
    "issuer": "California Community Colleges",
@@ -102,12 +86,91 @@
     "Rule 5c"
    ]
   },
-  "ADM JUS 008 - Juvenile Procedures": {
-   "title": "Juvenile Procedures",
+  "ADM JUS 005 - Criminal Investigation": {
+   "title": "Criminal Investigation",
    "issuer": "California Community Colleges",
    "via": "identity",
    "confidence": 0.85,
-   "note": "Rule 5c: title anchored to C-ID AJ 220; issuer = CCC.",
+   "note": "Rule 5c: title anchored to C-ID AJ 140; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "ADM JUS 067 - Community Relations": {
+   "title": "Community Relations",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The cx hint was mended by stripping the course code ADM JUS 067. The title joins the existing Community Relations family. The issuer is CCC because this is a Credit By Exam row.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ]
+  },
+  "ADM JUS 067 - Community Relations I": {
+   "title": "Community Relations",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "This row has the same course code (ADM JUS 067) at the same college as the plain Community Relations row. The trailing 'I' looks like a local variant, so it converges on one title. Review whether Pierce has a separate Community Relations II course.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ]
+  },
+  "ADM JUS 097 -  Career Exploration in Criminal Justice": {
+   "title": "Career Exploration in Criminal Justice",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ADM JUS 97; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "ADM JUS 104 - Introduction to Forensic Science": {
+   "title": "Introduction to Forensic Science",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ADM JUS 104; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "ADM JUS 160 - Police Organization and Administration": {
+   "title": "Police Organization and Administration",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ]
+  },
+  "ADM JUS 174 -  Offender Profiling in Criminal Investigations": {
+   "title": "Offender Profiling in Criminal Investigations",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ADM JUS 174; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "ADM JUS 305 - Criminal Intelligence and Data Analysis": {
+   "title": "Criminal Intelligence and Data Analysis",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ADM JUS 305; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "ADM JUS 383 - Applications in Crime Analysis": {
+   "title": "Applications in Crime Analysis",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ADM JUS 383; issuer = CCC.",
    "procedure": "course-identity"
   },
   "AGBUS 015: Computer Application to Agriculture": {
@@ -377,14 +440,6 @@
    ],
    "trainer": "U.S. Army"
   },
-  "ARC 201 - Architectural Design I": {
-   "title": "Architectural Design I",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ARC 201; issuer = CCC.",
-   "procedure": "course-identity"
-  },
   "ART 140 Beginning Design: Two-Dimensional Media - Portfolio Review": {
    "title": "Two-Dimensional Design",
    "issuer": "California Community Colleges",
@@ -532,6 +587,20 @@
     "Rule 8b",
     "brand-family",
     "issuer-issues-the-card"
+   ]
+  },
+  "American Council on Exercise (ACE) Personal Trainer Certification": {
+   "title": "Personal Training Certification",
+   "issuer": "American Council on Exercise (ACE)",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Joins the existing multi-issuer Personal Training Certification family; the issuer is the discriminator.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 4",
+    "Rule 6"
    ]
   },
   "American Government and Politics Military Training": {
@@ -785,6 +854,71 @@
     "Rule 5c"
    ]
   },
+  "Automotive Service Excellence (ASE) A1": {
+   "title": "ASE A1 — Engine Repair",
+   "issuer": "National Institute for Automotive Service Excellence (ASE)",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 8b",
+    "Rule 6"
+   ]
+  },
+  "Automotive Service Excellence (ASE) A2": {
+   "title": "ASE A2 — Automatic Transmission/Transaxle",
+   "issuer": "National Institute for Automotive Service Excellence (ASE)",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 8b",
+    "Rule 6"
+   ]
+  },
+  "Automotive Service Excellence (ASE) A4 and A5": {
+   "title": "ASE A4 + A5 — Suspension and Steering, and Brakes",
+   "issuer": "National Institute for Automotive Service Excellence (ASE)",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "No house family exists for the A4+A5 pair; the A4/A5/A6 bundle adds A6, so it is not the same credential. This is a new combined title in the house combined-cert shape.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 8b",
+    "Rule 4",
+    "Rule 6"
+   ]
+  },
+  "Automotive Service Excellence (ASE) A6": {
+   "title": "ASE A6 — Electrical/Electronic Systems",
+   "issuer": "National Institute for Automotive Service Excellence (ASE)",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 8b",
+    "Rule 6"
+   ]
+  },
+  "Automotive Service Excellence (ASE) A8": {
+   "title": "ASE A8 — Engine Performance",
+   "issuer": "National Institute for Automotive Service Excellence (ASE)",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 8b",
+    "Rule 6"
+   ]
+  },
   "Automotive Service Excellence MIL3 - Drive Train": {
    "title": "ASE MIL3 — Drive Train",
    "issuer": "National Institute for Automotive Service Excellence (ASE)",
@@ -864,38 +998,6 @@
    ],
    "trainer": "Moreno Valley Unified School District"
   },
-  "BIOSC 101 Theory and Practice of Microscopy": {
-   "title": "Theory and Practice of Microscopy",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for BIOSC 101; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "BIOSC 102 Fluorescence Microscopy and Specimen Prep": {
-   "title": "Fluorescence Microscopy and Specimen Prep",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for BIOSC 102; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "BIOSC 103 Confocal Microscopy and Research Design": {
-   "title": "Confocal Microscopy and Research Design",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for BIOSC 103; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "BIOSC 104  Bioscience Practicum Research": {
-   "title": "Bioscience Practicum Research",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for BIOSC 104; issuer = CCC.",
-   "procedure": "course-identity"
-  },
   "Basic Automotive Painting - Refinishing - Credit by Exam (ACRP 2A )": {
    "title": "Basic Automotive Painting and Refinishing",
    "issuer": "California Community Colleges",
@@ -921,6 +1023,19 @@
     "local-trainer-is-agency",
     "Rule 5f",
     "Rule 1"
+   ]
+  },
+  "Basic Conventional Machining Concepts and Operations": {
+   "title": "Basic Machining Concepts and Operations",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.7,
+   "note": "Joined to the existing Basic Machining Concepts and Operations family because the two likely name one course. Faculty may split it if 'Conventional' marks a distinct scope. The cx hint kept the verbatim title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "join-when-likely-one",
+    "course-identity",
+    "Rule 5c"
    ]
   },
   "Basic Finish Carpentry High School Articulation": {
@@ -1174,22 +1289,6 @@
     "Rule 1",
     "Rule 9"
    ]
-  },
-  "CIS 072 Systems and Network Administration Certification": {
-   "title": "Systems and Network Administration",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for CIS 72; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "CIS 205 Computer Literacy": {
-   "title": "Computer Literacy",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for CIS 205; issuer = CCC.",
-   "procedure": "course-identity"
   },
   "CISCYBR 1 Introduction to Systems & Network Cybersecurity (HSA)": {
    "title": "Introduction to Systems and Network Cybersecurity",
@@ -1672,26 +1771,6 @@
     "Rule 9"
    ]
   },
-  "Class Piano I": {
-   "title": "Class Piano I",
-   "issuer": "California Community Colleges",
-   "via": "family",
-   "confidence": 0.8,
-   "note": "Matched the existing house family 'Class Piano I'; issuer from the curated credential KB.",
-   "procedure": "brand-family"
-  },
-  "Class Piano II": {
-   "title": "Class Piano II",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c"
-   ]
-  },
   "Clinical Psychology Ph.D.": {
    "title": "Clinical Psychology Ph.D.",
    "issuer": "",
@@ -1700,6 +1779,18 @@
    "note": "A doctoral degree, not an industry certification; the awarding university varies per holder, so issuer left null for review.",
    "procedure": "classifier",
    "rests_on": [
+    "Rule 9"
+   ]
+  },
+  "Clinical Psychology Psy.D.": {
+   "title": "Doctor of Psychology (Psy.D.) — Clinical Psychology",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.7,
+   "note": "This is a doctoral degree conferred by an unnamed university, not an industry certification. The issuer is unknown and left null for review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 1",
     "Rule 9"
    ]
   },
@@ -2431,25 +2522,26 @@
    ],
    "trainer": "Kaiser High School"
   },
-  "ENV 102 - Foundations of Design II": {
-   "title": "Foundations of Design II",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ENV 102; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "ENV DES 101 - Foundations of Design I": {
-   "title": "Foundations of Design I",
+  "ENGL C1000 - Academic Reading and Writing - Credit by Exam": {
+   "title": "Academic Reading and Writing",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.85,
-   "note": "Course code stripped from the cx hint. No CCN or C-ID anchor was confirmed, so the local course title is used.",
+   "confidence": 0.92,
+   "note": "Title anchored to CCN ENGL C1000.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
+    "brand-family",
     "Rule 5c"
    ]
+  },
+  "ENV 101 - Foundations of Design I": {
+   "title": "Foundations of Design I",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ENV 101; issuer = CCC.",
+   "procedure": "course-identity"
   },
   "ESRI Technical Certification - GEOG 025": {
    "title": "Esri Technical Certification",
@@ -2908,6 +3000,38 @@
     "issuer-issues-the-card",
     "join-when-likely-one"
    ]
+  },
+  "HLTH 101 - First Aid - Credit by Exam": {
+   "title": "First Aid",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for HLTH 101; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "HLTH 102 - Standard First Aid and CPR - Credit by Exam": {
+   "title": "First Aid, CPR and AED",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.85,
+   "note": "Rule 5c: title anchored to C-ID KIN 101; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "HLTH 104 - Personal Health and Wellness - Credit by Exam": {
+   "title": "Personal Health and Wellness",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.85,
+   "note": "Rule 5c: title anchored to C-ID PH 100; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "HLTH 106 - Women's Health Education - Credit by Exam": {
+   "title": "Women's Health Education",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for HLTH 106; issuer = CCC.",
+   "procedure": "course-identity"
   },
   "HVACR DAS Journeyman": {
    "title": "HVACR Apprenticeship Journeyman Certificate",
@@ -3774,14 +3898,6 @@
    ],
    "trainer": "Northern California Laborers' Training Center"
   },
-  "MATH 203 Intermediate Algebra": {
-   "title": "Algebra Intermediate",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for MATH 203; issuer = CCC.",
-   "procedure": "course-identity"
-  },
   "MIG Welding (GMAW/FCAW)-Credit by Exam": {
    "title": "MIG Welding (GMAW/FCAW)",
    "issuer": "California Community Colleges",
@@ -4035,6 +4151,20 @@
     "level-words-last",
     "Rule 5c",
     "Rule 5g"
+   ]
+  },
+  "National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)": {
+   "title": "Personal Training Certification",
+   "issuer": "National Academy of Sports Medicine (NASM)",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Joins the existing multi-issuer Personal Training Certification family; NASM is the discriminating issuer.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 4",
+    "Rule 6"
    ]
   },
   "National US&R Response System- Structural Collapse Technician": {
@@ -4887,14 +5017,6 @@
    ],
    "trainer": "Riverside County Office of Education (RCOE)"
   },
-  "RLEST 08  Property Management": {
-   "title": "Property Management",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for RLEST 8; issuer = CCC.",
-   "procedure": "course-identity"
-  },
   "Recording I High School Articulation": {
    "title": "Recording 1",
    "issuer": "Local High School",
@@ -5123,16 +5245,28 @@
     "Rule 6"
    ]
   },
-  "University of California Master Gardener Certification": {
-   "title": "University of California Master Gardener Certification",
-   "issuer": "University of California Agriculture and Natural Resources (UC ANR)",
+  "TECTHTR 342 - Technical Stage Production": {
+   "title": "Technical Stage Production",
+   "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.88,
+   "confidence": 0.9,
    "note": "",
    "procedure": "classifier",
    "rests_on": [
-    "issuer-issues-the-card",
-    "Rule 6"
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "THEATER 342": {
+   "title": "Technical Stage Production",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "The raw title is code-only; the course-identity lookup resolved it to Pierce's 342 course, Technical Stage Production.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
    ]
   },
   "Video Editing High School Articulation": {

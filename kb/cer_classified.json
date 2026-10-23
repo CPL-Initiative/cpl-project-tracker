@@ -104,6 +104,60 @@
    "hints": "75bb10f770",
    "asked": "2026-10-22"
   },
+  "ADM JUS 067 - Community Relations": {
+   "raw_title": "ADM JUS 067 - Community Relations",
+   "unified_title": "Community Relations",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": "The cx hint was mended by stripping the course code ADM JUS 067. The title joins the existing Community Relations family. The issuer is CCC because this is a Credit By Exam row.",
+   "rules": "575c290d755b",
+   "hints": "f81cfa455f",
+   "asked": "2026-10-23"
+  },
+  "ADM JUS 067 - Community Relations I": {
+   "raw_title": "ADM JUS 067 - Community Relations I",
+   "unified_title": "Community Relations",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ],
+   "_notes": "This row has the same course code (ADM JUS 067) at the same college as the plain Community Relations row. The trailing 'I' looks like a local variant, so it converges on one title. Review whether Pierce has a separate Community Relations II course.",
+   "rules": "575c290d755b",
+   "hints": "d6e1a8de3e",
+   "asked": "2026-10-23"
+  },
+  "ADM JUS 160 - Police Organization and Administration": {
+   "raw_title": "ADM JUS 160 - Police Organization and Administration",
+   "unified_title": "Police Organization and Administration",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.92,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "9742847302",
+   "asked": "2026-10-23"
+  },
   "AGBUS 015: Computer Application to Agriculture": {
    "raw_title": "AGBUS 015: Computer Application to Agriculture",
    "unified_title": "Agricultural Computer Applications",
@@ -5841,6 +5895,25 @@
    "hints": "2ed0f74427",
    "asked": "2026-10-18"
   },
+  "American Council on Exercise (ACE) Personal Trainer Certification": {
+   "raw_title": "American Council on Exercise (ACE) Personal Trainer Certification",
+   "unified_title": "Personal Training Certification",
+   "issuing_agency": "American Council on Exercise (ACE)",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 4",
+    "Rule 6"
+   ],
+   "_notes": "Joins the existing multi-issuer Personal Training Certification family; the issuer is the discriminator.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-23"
+  },
   "American Government and Politics Military Training": {
    "raw_title": "American Government and Politics Military Training",
    "unified_title": "American Government and Politics",
@@ -6416,6 +6489,96 @@
    "hints": "660cbb67f0",
    "asked": "2026-10-18"
   },
+  "Automotive Service Excellence (ASE) A1": {
+   "raw_title": "Automotive Service Excellence (ASE) A1",
+   "unified_title": "ASE A1 — Engine Repair",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 8b",
+    "Rule 6"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-23"
+  },
+  "Automotive Service Excellence (ASE) A2": {
+   "raw_title": "Automotive Service Excellence (ASE) A2",
+   "unified_title": "ASE A2 — Automatic Transmission/Transaxle",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 8b",
+    "Rule 6"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-23"
+  },
+  "Automotive Service Excellence (ASE) A4 and A5": {
+   "raw_title": "Automotive Service Excellence (ASE) A4 and A5",
+   "unified_title": "ASE A4 + A5 — Suspension and Steering, and Brakes",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "Rule 8b",
+    "Rule 4",
+    "Rule 6"
+   ],
+   "_notes": "No house family exists for the A4+A5 pair; the A4/A5/A6 bundle adds A6, so it is not the same credential. This is a new combined title in the house combined-cert shape.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-23"
+  },
+  "Automotive Service Excellence (ASE) A6": {
+   "raw_title": "Automotive Service Excellence (ASE) A6",
+   "unified_title": "ASE A6 — Electrical/Electronic Systems",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 8b",
+    "Rule 6"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-23"
+  },
+  "Automotive Service Excellence (ASE) A8": {
+   "raw_title": "Automotive Service Excellence (ASE) A8",
+   "unified_title": "ASE A8 — Engine Performance",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 8b",
+    "Rule 6"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-23"
+  },
   "Automotive Service Excellence 1 (A1) - Engine Repair": {
    "raw_title": "Automotive Service Excellence 1 (A1) - Engine Repair",
    "unified_title": "ASE A1 — Engine Repair",
@@ -6791,6 +6954,24 @@
    "_notes": "'Past' read as a truncation of 'Pastry'. The row names an unnamed high school, so the issuer is Local High School. Not folded into 'Introduction to Baking & Pastry' because the level match is uncertain.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "Basic Conventional Machining Concepts and Operations": {
+   "raw_title": "Basic Conventional Machining Concepts and Operations",
+   "unified_title": "Basic Machining Concepts and Operations",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "join-when-likely-one",
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Joined to the existing Basic Machining Concepts and Operations family because the two likely name one course. Faculty may split it if 'Conventional' marks a distinct scope. The cx hint kept the verbatim title.",
+   "rules": "575c290d755b",
+   "hints": "fb85b78d1d",
+   "asked": "2026-10-23"
   },
   "Basic Correctional Officer Academy - CDCR": {
    "raw_title": "Basic Correctional Officer Academy - CDCR",
@@ -9372,6 +9553,23 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "Clinical Psychology Psy.D.": {
+   "raw_title": "Clinical Psychology Psy.D.",
+   "unified_title": "Doctor of Psychology (Psy.D.) — Clinical Psychology",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.4,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "This is a doctoral degree conferred by an unnamed university, not an industry certification. The issuer is unknown and left null for review.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-23"
+  },
   "Clothing Construction I - Credit by Exam (FASH 10 )": {
    "raw_title": "Clothing Construction I - Credit by Exam (FASH 10 )",
    "unified_title": "Clothing Construction 1",
@@ -11439,6 +11637,24 @@
    "_notes": "The hint 'Kaiser High School' was set aside because the strip removed the course and kept the school. This is the multi-school EMT-405 identity (Rule 5f-5), so it joins the house family 'Emergency Medical Technician'. The issuer and trainer are set for this variant only, and that per-variant judgment needs review.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "ENGL C1000 - Academic Reading and Writing - Credit by Exam": {
+   "raw_title": "ENGL C1000 - Academic Reading and Writing - Credit by Exam",
+   "unified_title": "Academic Reading and Writing",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": "Title anchored to CCN ENGL C1000.",
+   "rules": "575c290d755b",
+   "hints": "025c900eea",
+   "asked": "2026-10-23"
   },
   "ENV DES 101 - Foundations of Design I": {
    "raw_title": "ENV DES 101 - Foundations of Design I",
@@ -17183,6 +17399,25 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)": {
+   "raw_title": "National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+   "unified_title": "Personal Training Certification",
+   "issuing_agency": "National Academy of Sports Medicine (NASM)",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.93,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 4",
+    "Rule 6"
+   ],
+   "_notes": "Joins the existing multi-issuer Personal Training Certification family; NASM is the discriminating issuer.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-23"
+  },
   "National US&R Response System- Structural Collapse Technician": {
    "raw_title": "National US&R Response System- Structural Collapse Technician",
    "unified_title": "Rescue Systems 3: Structural Collapse Technician",
@@ -19614,6 +19849,40 @@
    "rules": "575c290d755b",
    "hints": "f35deaa9a2",
    "asked": "2026-10-18"
+  },
+  "TECTHTR 342 - Technical Stage Production": {
+   "raw_title": "TECTHTR 342 - Technical Stage Production",
+   "unified_title": "Technical Stage Production",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.92,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "91c6204507",
+   "asked": "2026-10-23"
+  },
+  "THEATER 342": {
+   "raw_title": "THEATER 342",
+   "unified_title": "Technical Stage Production",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The raw title is code-only; the course-identity lookup resolved it to Pierce's 342 course, Technical Stage Production.",
+   "rules": "575c290d755b",
+   "hints": "8d2c653f7a",
+   "asked": "2026-10-23"
   },
   "TIG Welding (GTAW)-Credit by Exam": {
    "raw_title": "TIG Welding (GTAW)-Credit by Exam",

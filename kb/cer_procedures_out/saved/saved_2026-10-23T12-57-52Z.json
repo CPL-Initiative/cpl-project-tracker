@@ -1,0 +1,467 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-10-23T12-57-52Z",
+ "run_id": "39956623945",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "575c290d755b",
+ "cohorts": [
+  "cer-procedure-classifier@bot",
+  "cer-procedure-course-identity@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 005 - Criminal Investigation",
+   "field": "unified_title_assignment",
+   "value": "Criminal Investigation",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 005 - Criminal Investigation",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 097 -  Career Exploration in Criminal Justice",
+   "field": "unified_title_assignment",
+   "value": "Career Exploration in Criminal Justice",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 097 -  Career Exploration in Criminal Justice",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 104 - Introduction to Forensic Science",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Forensic Science",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 104 - Introduction to Forensic Science",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 174 -  Offender Profiling in Criminal Investigations",
+   "field": "unified_title_assignment",
+   "value": "Offender Profiling in Criminal Investigations",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 174 -  Offender Profiling in Criminal Investigations",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 305 - Criminal Intelligence and Data Analysis",
+   "field": "unified_title_assignment",
+   "value": "Criminal Intelligence and Data Analysis",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 305 - Criminal Intelligence and Data Analysis",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 383 - Applications in Crime Analysis",
+   "field": "unified_title_assignment",
+   "value": "Applications in Crime Analysis",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 383 - Applications in Crime Analysis",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A1",
+   "field": "unified_title_assignment",
+   "value": "ASE A1 — Engine Repair",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A1",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A2",
+   "field": "unified_title_assignment",
+   "value": "ASE A2 — Automatic Transmission/Transaxle",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A2",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A6",
+   "field": "unified_title_assignment",
+   "value": "ASE A6 — Electrical/Electronic Systems",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A6",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A8",
+   "field": "unified_title_assignment",
+   "value": "ASE A8 — Engine Performance",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A8",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENGL C1000 - Academic Reading and Writing - Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "Academic Reading and Writing",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENGL C1000 - Academic Reading and Writing - Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENV 101 - Foundations of Design I",
+   "field": "unified_title_assignment",
+   "value": "Foundations of Design I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENV 101 - Foundations of Design I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 101 - First Aid - Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "First Aid",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 101 - First Aid - Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 102 - Standard First Aid and CPR - Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "First Aid, CPR and AED",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 102 - Standard First Aid and CPR - Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 104 - Personal Health and Wellness - Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "Personal Health and Wellness",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 104 - Personal Health and Wellness - Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 106 - Women's Health Education - Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "Women's Health Education",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 106 - Women's Health Education - Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 005 - Criminal Investigation",
+   "field": "unified_title_assignment",
+   "value": "Criminal Investigation",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 005 - Criminal Investigation",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 097 -  Career Exploration in Criminal Justice",
+   "field": "unified_title_assignment",
+   "value": "Career Exploration in Criminal Justice",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 097 -  Career Exploration in Criminal Justice",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 104 - Introduction to Forensic Science",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Forensic Science",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 104 - Introduction to Forensic Science",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 174 -  Offender Profiling in Criminal Investigations",
+   "field": "unified_title_assignment",
+   "value": "Offender Profiling in Criminal Investigations",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 174 -  Offender Profiling in Criminal Investigations",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 305 - Criminal Intelligence and Data Analysis",
+   "field": "unified_title_assignment",
+   "value": "Criminal Intelligence and Data Analysis",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 305 - Criminal Intelligence and Data Analysis",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 383 - Applications in Crime Analysis",
+   "field": "unified_title_assignment",
+   "value": "Applications in Crime Analysis",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADM JUS 383 - Applications in Crime Analysis",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A1",
+   "field": "unified_title_assignment",
+   "value": "ASE A1 — Engine Repair",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A1",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A2",
+   "field": "unified_title_assignment",
+   "value": "ASE A2 — Automatic Transmission/Transaxle",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A2",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A6",
+   "field": "unified_title_assignment",
+   "value": "ASE A6 — Electrical/Electronic Systems",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A6",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A8",
+   "field": "unified_title_assignment",
+   "value": "ASE A8 — Engine Performance",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A8",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENGL C1000 - Academic Reading and Writing - Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "Academic Reading and Writing",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENGL C1000 - Academic Reading and Writing - Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENV 101 - Foundations of Design I",
+   "field": "unified_title_assignment",
+   "value": "Foundations of Design I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ENV 101 - Foundations of Design I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 101 - First Aid - Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "First Aid",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 101 - First Aid - Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 102 - Standard First Aid and CPR - Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "First Aid, CPR and AED",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 102 - Standard First Aid and CPR - Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 104 - Personal Health and Wellness - Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "Personal Health and Wellness",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 104 - Personal Health and Wellness - Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 106 - Women's Health Education - Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "Women's Health Education",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HLTH 106 - Women's Health Education - Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  }
+ ],
+ "skipped_as_duplicate": []
+}

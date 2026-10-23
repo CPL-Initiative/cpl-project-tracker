@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-10-22T13:16:56Z",
+ "_generated_at": "2026-10-23T12:57:51Z",
  "procedures_hash": "575c290d755b",
- "queue": 439,
+ "queue": 448,
  "saved_not_folded": 0,
- "waiting": 439,
- "proposed": 403,
- "needs_you_count": 440,
+ "waiting": 448,
+ "proposed": 412,
+ "needs_you_count": 450,
  "not_yet_asked": 0,
  "fold_held": 18,
  "procedures": [
@@ -21,14 +21,9 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 1,
-   "held": 93,
-   "sample": [
-    [
-     "Class Piano I",
-     "Class Piano I"
-    ]
-   ]
+   "settled": 5,
+   "held": 97,
+   "sample": []
   },
   {
    "id": "statewide-catalog",
@@ -116,28 +111,28 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 15,
-   "held": 173,
+   "settled": 12,
+   "held": 179,
    "sample": [
     [
-     "ADM JUS 001 - Introduction to Administration of Justice",
-     "Introduction to Criminal Justice"
+     "ADM JUS 005 - Criminal Investigation",
+     "Criminal Investigation"
     ],
     [
-     "ADM JUS 002 - Concepts of Criminal Law",
-     "Concepts of Criminal Law"
+     "ADM JUS 097 -  Career Exploration in Criminal Justice",
+     "Career Exploration in Criminal Justice"
     ],
     [
-     "ADM JUS 008 - Juvenile Procedures",
-     "Juvenile Procedures"
+     "ADM JUS 104 - Introduction to Forensic Science",
+     "Introduction to Forensic Science"
     ],
     [
-     "ARC 201 - Architectural Design I",
-     "Architectural Design I"
+     "ADM JUS 174 -  Offender Profiling in Criminal Investigations",
+     "Offender Profiling in Criminal Investigations"
     ],
     [
-     "BIOSC 101 Theory and Practice of Microscopy",
-     "Theory and Practice of Microscopy"
+     "ADM JUS 305 - Criminal Intelligence and Data Analysis",
+     "Criminal Intelligence and Data Analysis"
     ]
    ]
   },
@@ -153,7 +148,7 @@
     "skill": null,
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
-   "settled": 1,
+   "settled": 0,
    "held": 51,
    "sample": []
   },
@@ -214,7 +209,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 87,
+   "held": 91,
    "sample": []
   },
   {
@@ -227,20 +222,28 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 3,
-   "held": 422,
+   "settled": 5,
+   "held": 432,
    "sample": [
     [
-     "Class Piano II",
-     "Class Piano II"
+     "Automotive Service Excellence (ASE) A1",
+     "ASE A1 — Engine Repair"
     ],
     [
-     "ENV DES 101 - Foundations of Design I",
-     "Foundations of Design I"
+     "Automotive Service Excellence (ASE) A2",
+     "ASE A2 — Automatic Transmission/Transaxle"
     ],
     [
-     "University of California Master Gardener Certification",
-     "University of California Master Gardener Certification"
+     "Automotive Service Excellence (ASE) A6",
+     "ASE A6 — Electrical/Electronic Systems"
+    ],
+    [
+     "Automotive Service Excellence (ASE) A8",
+     "ASE A8 — Engine Performance"
+    ],
+    [
+     "ENGL C1000 - Academic Reading and Writing - Credit by Exam",
+     "Academic Reading and Writing"
     ]
    ]
   }
@@ -325,6 +328,45 @@
     "issuer": "California Community Colleges",
     "confidence": 0.9,
     "note": "Course code stripped from the cx hint. Joins the existing house family by title. The issuer is CCC for credit by exam."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
+   ]
+  },
+  {
+   "raw_title": "ADM JUS 067 - Community Relations",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has California Commission on Peace Officer Standards and Training (POST))",
+   "proposal": {
+    "title": "Community Relations",
+    "issuer": "California Community Colleges",
+    "confidence": 0.88,
+    "note": "The cx hint was mended by stripping the course code ADM JUS 067. The title joins the existing Community Relations family. The issuer is CCC because this is a Credit By Exam row."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
+   ]
+  },
+  {
+   "raw_title": "ADM JUS 067 - Community Relations I",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Community Relations",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "This row has the same course code (ADM JUS 067) at the same college as the plain Community Relations row. The trailing 'I' looks like a local variant, so it converges on one title. Review whether Pierce has a separate Community Relations II course."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
+   ]
+  },
+  {
+   "raw_title": "ADM JUS 160 - Police Organization and Administration",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has California Commission on Peace Officer Standards and Training (POST))",
+   "proposal": {
+    "title": "Police Organization and Administration",
+    "issuer": "California Community Colleges",
+    "confidence": 0.9,
+    "note": ""
    },
    "colleges": [
     "Los Angeles Pierce College"
@@ -851,6 +893,19 @@
    ]
   },
   {
+   "raw_title": "American Council on Exercise (ACE) Personal Trainer Certification",
+   "why": "a merge would join two issuers (American Council on Exercise (ACE); the reference has American Council on Exercise, California Community Colleges, National Academy of Sports Medicine)",
+   "proposal": {
+    "title": "Personal Training Certification",
+    "issuer": "American Council on Exercise (ACE)",
+    "confidence": 0.85,
+    "note": "Joins the existing multi-issuer Personal Training Certification family; the issuer is the discriminator."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
+   ]
+  },
+  {
    "raw_title": "American Government and Politics Military Training",
    "why": "the classifier is unsure (0.65)",
    "proposal": {
@@ -1111,6 +1166,19 @@
    ]
   },
   {
+   "raw_title": "Automotive Service Excellence (ASE) A4 and A5",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "ASE A4 + A5 — Suspension and Steering, and Brakes",
+    "issuer": "National Institute for Automotive Service Excellence (ASE)",
+    "confidence": 0.8,
+    "note": "No house family exists for the A4+A5 pair; the A4/A5/A6 bundle adds A6, so it is not the same credential. This is a new combined title in the house combined-cert shape."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
+   ]
+  },
+  {
    "raw_title": "Automotive Service Excellence MIL3 - Drive Train",
    "why": "the classifier is unsure (0.75)",
    "proposal": {
@@ -1225,6 +1293,19 @@
    },
    "colleges": [
     "Cabrillo College"
+   ]
+  },
+  {
+   "raw_title": "Basic Conventional Machining Concepts and Operations",
+   "why": "the classifier is unsure (0.70)",
+   "proposal": {
+    "title": "Basic Machining Concepts and Operations",
+    "issuer": "California Community Colleges",
+    "confidence": 0.7,
+    "note": "Joined to the existing Basic Machining Concepts and Operations family because the two likely name one course. Faculty may split it if 'Conventional' marks a distinct scope. The cx hint kept the verbatim title."
+   },
+   "colleges": [
+    "Santa Ana College"
    ]
   },
   {
@@ -1963,6 +2044,19 @@
     "issuer": "",
     "confidence": 0.75,
     "note": "A doctoral degree, not an industry certification; the awarding university varies per holder, so issuer left null for review."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
+   ]
+  },
+  {
+   "raw_title": "Clinical Psychology Psy.D.",
+   "why": "the classifier is unsure (0.70)",
+   "proposal": {
+    "title": "Doctor of Psychology (Psy.D.) — Clinical Psychology",
+    "issuer": "",
+    "confidence": 0.7,
+    "note": "This is a doctoral degree conferred by an unnamed university, not an industry certification. The issuer is unknown and left null for review."
    },
    "colleges": [
     "Los Angeles Pierce College"
@@ -4374,6 +4468,19 @@
    ]
   },
   {
+   "raw_title": "National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+   "why": "a merge would join two issuers (National Academy of Sports Medicine (NASM); the reference has American Council on Exercise, California Community Colleges, National Academy of Sports Medicine)",
+   "proposal": {
+    "title": "Personal Training Certification",
+    "issuer": "National Academy of Sports Medicine (NASM)",
+    "confidence": 0.85,
+    "note": "Joins the existing multi-issuer Personal Training Certification family; NASM is the discriminating issuer."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
+   ]
+  },
+  {
    "raw_title": "National US&R Response System- Structural Collapse Technician",
    "why": "the classifier is unsure (0.70)",
    "proposal": {
@@ -5583,6 +5690,32 @@
    ]
   },
   {
+   "raw_title": "TECTHTR 342 - Technical Stage Production",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has Birmingham Community Charter High School)",
+   "proposal": {
+    "title": "Technical Stage Production",
+    "issuer": "California Community Colleges",
+    "confidence": 0.9,
+    "note": ""
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
+   ]
+  },
+  {
+   "raw_title": "THEATER 342",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has Birmingham Community Charter High School)",
+   "proposal": {
+    "title": "Technical Stage Production",
+    "issuer": "California Community Colleges",
+    "confidence": 0.85,
+    "note": "The raw title is code-only; the course-identity lookup resolved it to Pierce's 342 course, Technical Stage Production."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
+   ]
+  },
+  {
    "raw_title": "Video Editing High School Articulation",
    "why": "the classifier is unsure (0.80)",
    "proposal": {
@@ -5750,7 +5883,7 @@
     "Juvenile Law and Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5765,7 +5898,7 @@
     "Automotive Technology Maintenance and Light Repair (MLR)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5780,7 +5913,7 @@
     "Business Management and Entrepreneurship"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5795,7 +5928,7 @@
     "Center for Financial Training (CFT) — Human Resources Management"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5810,7 +5943,7 @@
     "Anatomy and Physiology Honors"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5825,7 +5958,7 @@
     "History of Architecture 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5840,7 +5973,7 @@
     "Modern Dance Techniques 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5855,7 +5988,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5870,7 +6003,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5885,7 +6018,7 @@
     "Construction Inspection: Uniform Plumbing Code (UPC) Advanced"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5900,7 +6033,7 @@
     "Medical Assisting Clinical Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5915,7 +6048,7 @@
     "Medical Assisting Laboratory Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5930,7 +6063,7 @@
     "McDonald's Business Leadership Practices"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5945,7 +6078,7 @@
     "McDonald's Mid-Management Foundations Curriculum"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5960,7 +6093,7 @@
     "Music Skills 2"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5975,7 +6108,7 @@
     "Pharmacology"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -5990,7 +6123,7 @@
     "Landscape Installation and Maintenance 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   },
   {
@@ -6005,7 +6138,7 @@
     "Sustainable Gardening for Landscapes (Horticulture)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-22",
+   "fold_report": "2026-10-23",
    "colleges": []
   }
  ]
