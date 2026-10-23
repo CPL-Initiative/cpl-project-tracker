@@ -172,6 +172,45 @@ its log row read back 1, 1, 1).
    reply chips, and some of the 11 others are early sheets), with their builders in `kb/`
    and the template tests that read them; and a Library record per sheet linking its artifact.
 
+## NEEDS SAM ([Open Asks Sheet 120](https://claude.ai/artifact/LRFiSDUY4bGTokJdaKgHUJ), cards 2 to 7; the mock-up is the link)
+
+Sam, 2026-10-23 ~19:28Z: *"Ashley and I have been working on the CPL Pathways tab to add the visuals
+you create there so the colleges can see their CPL opportunities as the MAP Customer Success Managers
+(CSM team) meet with them. She puts them in the Library and then sets them as publicly available and
+gives them the link... This is the type of visual I'd like to be able to generate from the Library tab
+or the Report tab (whichever you recommend). I think we would want to be able to sort on the libraries
+for the type (college, agency, vendor, CO) and add the name of the entity we are making this for and
+have it filterable by whatever entities we've created something for. Give it a good think and
+recommend."* Measured 2026-10-23: 40 live records; 24 are the twelve colleges' CPL Opportunity pairs
+(11 pages listed publicly), 2 are agency pieces (DSP Credit Starting Points for DDS, Aging and LWDA;
+the ELL IET doc for EDD's grantees), none is a vendor's; no column holds who a piece is for, so the
+name lives in the title alone. Mock-up: https://claude.ai/artifact/LRFiSDUY4bGTokJdaKgHUJ.
+
+1. **Where the visual is made.** Recommended: the Library tab, a *Make a visual* control beside
+   *Start a piece*; the Letters tab attaches a Library piece to a send; the Report tabs stay docx. It
+   might be wrong if he wants the email and its visual drafted in one place (the Letters tab). Or both.
+2. **The entity types on a record.** Recommended: `for_kind` in college, district, agency, vendor,
+   co (his four and district, since My College already scopes by district and the CSM team meets
+   districts) and `for_name`, a college's name from MAP's list so the filter matches the Pathways
+   pick. It might be wrong if district is noise. Or his four alone.
+3. **The public page shows who a piece is for.** Recommended: `cpl_library_public()` returns the two
+   columns and the page filters by them; each title already carries the name, so nothing new is
+   disclosed. It might be wrong if the public page should list colleges only by name and keep agencies
+   and vendors to the private tab. Or a private filter only.
+4. **A college visual in one step.** Recommended: *Make a visual* for a college writes the record
+   pair now (the live `cpl-opportunity/?college=` page and the CPL extract), no session; Ashley lists
+   it with the phrase. It might be wrong if each college still wants the five-tab workbook a session
+   builds. Or keep the session build.
+5. **The agency template, ELL IET first.** Recommended: generalize the DSP page into a vault builder
+   (a JSON brief to a page: the meeting, the training facts, colleges tiered by fit, what to confirm,
+   next steps, sources) and build the ELL IET grantees page as its first instance from his uploaded
+   doc, filed Made for Agency, For EDD ELL IET Fund grantees; *Make a visual* for an agency, vendor or
+   the CO captures the brief and hands over the paste. It might be wrong if the ELL IET meeting wants a
+   grantee-by-grantee shape rather than colleges tiered. Or hand-build ELL IET alone.
+6. **Backfill today's records.** Recommended: the 24 college pieces, the DSP page and the ELL IET doc
+   take their type and name by a guarded UPDATE with a before-values receipt (reversible). Or leave
+   them blank and set the columns only on new pieces.
+
 ## Next
 
 - **The open-asks series record reads version 57 (Sam pasted it, ~15:31Z 2026-10-09, "success").** It sits at [Sheet 57](https://claude.ai/artifact/XGgsHHu54rJmNGeEuT1teL) with sheet 56 Earlier, 30 versions (read back by S352; receipt `kb/receipts/cpl_library_open_asks_sheet57_2026-10-09_s352.sql`). `made_by` is capped at 300 characters (`cpl_library_text_ck`): the per-session list reached 281 and failed the first paste, so it is now a range (*sheets 46 to 57 by S341 SkyTerrace through S352 SkyMeridian*) that a later sheet extends by changing its two ends. This table's writes go to Sam as a paste: `apply_migration` times out on `cpl_library`, and the repo's Supabase guard blocks an `update` through `execute_sql`.
