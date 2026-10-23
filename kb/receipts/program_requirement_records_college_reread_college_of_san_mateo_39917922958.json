@@ -1,0 +1,47 @@
+{
+ "college": "College of San Mateo",
+ "reread_run": "39917922958",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39914644770",
+ "at": "2026-10-23T07:29:36Z",
+ "posted": 1,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "30818",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31255",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31435",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32203",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42137",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 0,
+ "absent": 0,
+ "held": 0,
+ "kept": 1,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "31224"
+ ],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": null,
+ "before": []
+}

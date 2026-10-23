@@ -21,7 +21,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "architecture associate in science degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -48,7 +51,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -107,7 +113,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -154,7 +163,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -213,7 +225,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art: photography associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -262,7 +277,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nursing associate in science degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -317,7 +335,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "communication studies associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -451,7 +472,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "cosmetology associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -480,7 +504,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biology: pre-nursing associate in science degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -557,7 +584,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -619,7 +649,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cosmetology certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -751,7 +784,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art: art history associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -787,7 +823,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "art history certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -818,7 +857,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -847,7 +889,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -858,12 +903,38 @@
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ100",
+   "ADMJ102",
+   "ADMJ104",
+   "ADMJ106",
+   "ADMJ108",
+   "ADMJ120",
+   "ADMJ125",
+   "ADMJ185",
+   "COMMC1004",
+   "PSYC121",
+   "PSYCC1000",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "http://catalog.collegeofsanmateo.edu/current/programs/administration-of-justice-as-t.php",
+   "title": "Administration of Justice Associate in Science Degree for Transfer",
+   "h1": " Administration of Justice Associate in Science Degree for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice associate in science degree for transfer",
+    "section_fit": 0.667
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 4336
  },
  {
   "control_number": "31254",
@@ -889,7 +960,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology associate in science degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -921,7 +995,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -955,7 +1032,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 13,
@@ -988,7 +1068,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio art associate in arts degree for transfer",
+    "section_fit": 0.333
    }
   },
   "listed": 11,
@@ -1043,7 +1126,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 43,
@@ -1068,7 +1154,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "digital media: broadcast and electronic media associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1092,7 +1181,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -1121,7 +1213,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital media: mobile app and web design certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1148,7 +1243,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "digital media: graphic design associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1174,7 +1272,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital media: graphic production certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -1247,7 +1348,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "web and mobile application development associate in science degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -1285,7 +1389,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 16,
@@ -1317,7 +1424,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "web and mobile application development certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -1411,7 +1521,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 38,
@@ -1444,7 +1557,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 16,
@@ -1476,7 +1592,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology associate in science degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -1509,7 +1628,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "nutrition and dietetics associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -1540,7 +1662,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -1596,7 +1721,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 51,
@@ -1631,7 +1759,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "critical pacific islands and oceania studies certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -1725,7 +1856,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "kinesiology associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 76,
@@ -1779,7 +1913,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "law, public policy, and society associate in arts degree for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 33,
@@ -1812,7 +1949,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "astronomy associate in science degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1855,7 +1995,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -1950,7 +2093,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business analytics associate in science degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1978,7 +2124,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "leadership certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2055,7 +2204,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "public and non-profit administration associate in science degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2086,7 +2238,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "public and non-profit administration certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2121,7 +2276,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
@@ -2156,7 +2314,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music and technology certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2191,7 +2352,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music and technology associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2215,7 +2379,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "esthetics certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2301,7 +2468,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "interdisciplinary studies: business and public service associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 87,
@@ -2424,7 +2594,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "interdisciplinary studies: stem associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 101,
@@ -2553,7 +2726,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "interdisciplinary studies: arts and media associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 110,
@@ -2691,7 +2867,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.833
+    "title": 0.833,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 120,
@@ -2895,7 +3074,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "interdisciplinary studies: health and wellness associate in arts degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 184,
@@ -2947,7 +3129,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "modern policing associate in science degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -2983,7 +3168,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "mental imagery certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3024,7 +3212,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "proficiency in english for academic and career success (peacs) certificate of achievement",
+    "section_fit": 0.833
    }
   },
   "listed": 19,
