@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Advanced Computer Programming",
  "award": "A.S. Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39981",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39981",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6792,
+  "input_tokens": 6794,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6792,
-    "output_tokens": 1522,
+    "input_tokens": 6794,
+    "output_tokens": 1699,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1522,
+  "output_tokens": 1699,
   "output_tokens_details": {
-   "thinking_tokens": 463
+   "thinking_tokens": 538
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05761,
- "ms": 12612,
- "seconds": 13.2,
+ "cost_usd": 0.06116,
+ "ms": 13391,
+ "seconds": 13.9,
  "parts": null,
  "error": null,
  "score": {
@@ -106,7 +106,7 @@
    "pass": true
   },
   "careers": {
-   "count": 4,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
@@ -148,7 +148,8 @@
     "Computer Programmer",
     "Software Developer",
     "Web Programmer",
-    "software engineering"
+    "software engineering",
+    "programming related fields"
    ]
   },
   "blocks": [
@@ -250,11 +251,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes with leading zeros (CIS 006, CIS 020, CIS 025, CIS 027, CIS 080, CIS 082); matched to closed-list CIS 6, 20, 25, 27, 80, 82.",
-   "Page prints 'General Education and Elective Courses 23-24' as one combined figure; no GE pattern is named and GE and elective units are not separated, so ge_units and degree_elective_units are left null.",
+   "Catalog prints zero-padded codes (CIS 006, CIS 020, CIS 025, CIS 027, CIS 080, CIS 082) that match closed-list CIS 6, CIS 20, CIS 25, CIS 27, CIS 80, CIS 82; treated as the same courses, not catalog additions.",
+   "Page prints 'General Education and Elective Courses 23-24' as a single combined figure; no GE pattern is named and GE units are not printed separately, so ge_units and degree_elective_units are left null.",
    "Major Requirements 36-37 recorded as total_units; Total Units 60 recorded as degree_total.",
-   "Career 'software engineering' taken from the program description ('entry-level careers in software engineering and other programming related fields')."
+   "Careers 'software engineering' and 'programming related fields' taken from the program description ('entry-level careers in software engineering and other programming related fields'); reviewer may check whether to include them.",
+   "Outcomes are printed under 'Learning Outcome(s)' for this degree; first outcome is printed without a final period and copied as printed."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

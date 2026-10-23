@@ -1,14 +1,14 @@
 {
  "college": "Berkeley City College",
- "catalog_url": "https://bcc.curriqunet.com/catalog/view/",
+ "catalog_url": "https://bcc.curriqunet.com/catalog/view//iq/40258",
  "platform": "curriqunet",
  "catalog_year": "2026-2027",
  "programs": 99,
  "with_closed_list": 97,
- "started": "2026-10-16T18:33:55Z",
+ "started": "2026-10-23T02:50:54Z",
  "curriqunet": {
   "catalog": 10327,
-  "view_prefix": "https://bcc.curriqunet.com/catalog/iq/",
+  "view_prefix": "https://bcc.curriqunet.com/catalog/view//iq/",
   "errors": [],
   "sections": [
    "Degree and Certificate Requirements",
@@ -24,57 +24,31 @@
  "pages_read": 96,
  "banner_h1": null,
  "loads": 428,
- "seconds": 2034.7,
- "found": 67,
+ "seconds": 1981.4,
+ "found": 90,
  "by_method": {
   "no_closed_list": 2,
-  "not_found": 27,
-  "page_claimed": 3,
-  "sitemap_page": 67
+  "not_found": 1,
+  "page_claimed": 6,
+  "sitemap_page": 90
  },
  "shared_pages": {
-  "https://bcc.curriqunet.com/catalog/iq/39711/39966/41010": [
+  "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41010": [
    "31835",
    "46229"
   ],
-  "https://bcc.curriqunet.com/catalog/iq/39711/39966/40030": [
+  "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40030": [
    "41778",
    "46230"
   ]
  },
  "not_found": [
   {
-   "control_number": "09073",
-   "title": "Digital Imaging and Motion Graphic Design",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40051",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.323,
-    "body": 0.323,
-    "content": 0.323,
-    "net": 10,
-    "listed": 31,
-    "why": "coarse net: the page's code tokens name 10 of 31 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4694,
-     "content": 4694,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
    "control_number": "11744",
    "title": "Digital Imaging: Digital Printmaking",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40045",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40045",
     "label": {
      "award": 1,
      "title": 0.75
@@ -94,656 +68,6 @@
     },
     "tab_panels": []
    }
-  },
-  {
-   "control_number": "11745",
-   "title": "Digital Illustration",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40050",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.429,
-    "body": 0.429,
-    "content": 0.429,
-    "net": 9,
-    "listed": 21,
-    "why": "coverage 0.43 in innerText, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 2992,
-     "content": 2992,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "16645",
-   "title": "Multimedia Arts - Animation and Game Design",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40044",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.269,
-    "body": 0.269,
-    "content": 0.269,
-    "net": 7,
-    "listed": 26,
-    "why": "coarse net: the page's code tokens name 7 of 26 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3523,
-     "content": 3523,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "16646",
-   "title": "Animation Level I",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40037",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.077,
-    "body": 0.077,
-    "content": 0.077,
-    "net": 1,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 1 of 13 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2265,
-     "content": 2265,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "16647",
-   "title": "Animation Level II",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40038",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2120,
-     "content": 2120,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "35046",
-   "title": "Game Design Level I",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40040",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.125,
-    "body": 0.125,
-    "content": 0.125,
-    "net": 1,
-    "listed": 8,
-    "why": "coarse net: the page's code tokens name 1 of 8 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1954,
-     "content": 1954,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "35070",
-   "title": "Game Design Level II",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40041",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.125,
-    "body": 0.125,
-    "content": 0.125,
-    "net": 1,
-    "listed": 8,
-    "why": "coarse net: the page's code tokens name 1 of 8 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2241,
-     "content": 2241,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "35267",
-   "title": "Multimedia Arts Core",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40044",
-    "label": {
-     "award": 0,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.294,
-    "body": 0.294,
-    "content": 0.294,
-    "net": 5,
-    "listed": 17,
-    "why": "coarse net: the page's code tokens name 5 of 17 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3523,
-     "content": 3523,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "36612",
-   "title": "Digital Imaging",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40045",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 3,
-    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1441,
-     "content": 1441,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "36966",
-   "title": "Introduction to Animation and Game Design",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40042",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 4,
-    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1691,
-     "content": 1691,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37820",
-   "title": "Introduction to Motion Graphics",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40031",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.25,
-    "body": 0.25,
-    "content": 0.25,
-    "net": 1,
-    "listed": 4,
-    "why": "coarse net: the page's code tokens name 1 of 4 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1425,
-     "content": 1425,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37877",
-   "title": "Film, Television, And Electronic Media",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40052",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.273,
-    "body": 0.273,
-    "content": 0.273,
-    "net": 3,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 3 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2976,
-     "content": 2976,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37921",
-   "title": "Video Arts Level II: Directing And Producing",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40057",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.333,
-    "body": 0.333,
-    "content": 0.333,
-    "net": 4,
-    "listed": 12,
-    "why": "coarse net: the page's code tokens name 4 of 12 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2426,
-     "content": 2426,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37934",
-   "title": "Video Arts Level I",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40056",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.308,
-    "body": 0.308,
-    "content": 0.308,
-    "net": 4,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 4 of 13 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2332,
-     "content": 2332,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37935",
-   "title": "Video Arts Level II: Editing and Post-Production",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40058",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.286,
-    "body": 0.286,
-    "content": 0.286,
-    "net": 4,
-    "listed": 14,
-    "why": "coarse net: the page's code tokens name 4 of 14 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2503,
-     "content": 2503,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37936",
-   "title": "Multimedia Arts--Video Arts",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40054",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.2,
-    "body": 0.2,
-    "content": 0.2,
-    "net": 6,
-    "listed": 30,
-    "why": "coarse net: the page's code tokens name 6 of 30 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4071,
-     "content": 4071,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "38243",
-   "title": "Digital Photography",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40046",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 15,
-    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1602,
-     "content": 1602,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "38245",
-   "title": "Social Media Storytelling",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40053",
-    "label": {
-     "award": 1,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.048,
-    "body": 0.048,
-    "content": 0.048,
-    "net": 1,
-    "listed": 21,
-    "why": "coarse net: the page's code tokens name 1 of 21 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2008,
-     "content": 2008,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "39254",
-   "title": "Digital Imaging: Beginning Digital Photography",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40046",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 5,
-    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1602,
-     "content": 1602,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "39287",
-   "title": "Digital Imaging: Beginning Digital Photography",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40046",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 4,
-    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1602,
-     "content": 1602,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "39315",
-   "title": "Introduction to Social Media",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40053",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.167,
-    "body": 0.167,
-    "content": 0.167,
-    "net": 1,
-    "listed": 6,
-    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2008,
-     "content": 2008,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "39333",
-   "title": "Motion Graphics",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40031",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 16,
-    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1425,
-     "content": 1425,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "43424",
-   "title": "Virtual Production Fundamentals",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41162",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.273,
-    "body": 0.273,
-    "content": 0.273,
-    "net": 3,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 3 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4058,
-     "content": 4058,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "43827",
-   "title": "Advanced Virtual Production",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41176",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.118,
-    "body": 0.118,
-    "content": 0.118,
-    "net": 2,
-    "listed": 17,
-    "why": "coarse net: the page's code tokens name 2 of 17 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3887,
-     "content": 3887,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "46221",
-   "title": "Virtual Production",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41941",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.174,
-    "body": 0.174,
-    "content": 0.174,
-    "net": 4,
-    "listed": 23,
-    "why": "coarse net: the page's code tokens name 4 of 23 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3923,
-     "content": 3923,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "46474",
-   "title": "Digital Imaging Fundamentals",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40045",
-    "label": {
-     "award": 1,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1441,
-     "content": 1441,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
   }
  ],
  "page_claimed": [
@@ -752,7 +76,7 @@
    "title": "Art Figure Studies",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
-    "https://bcc.curriqunet.com/catalog/iq/39711/39966/39969"
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39969"
    ]
   },
   {
@@ -760,7 +84,7 @@
    "title": "Applied Computer Information Systems",
    "award": "A.S. Degree",
    "pages": [
-    "https://bcc.curriqunet.com/catalog/iq/39711/39966/39978"
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39978"
    ]
   },
   {
@@ -768,76 +92,111 @@
    "title": "Applied Computer Information Systems",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "pages": [
-    "https://bcc.curriqunet.com/catalog/iq/39711/39966/39978"
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39978"
+   ]
+  },
+  {
+   "control_number": "38245",
+   "title": "Social Media Storytelling",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40054",
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39967/41007/40939/41092"
+   ]
+  },
+  {
+   "control_number": "39254",
+   "title": "Digital Imaging: Beginning Digital Photography",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40051"
+   ]
+  },
+  {
+   "control_number": "46474",
+   "title": "Digital Imaging Fundamentals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40051"
    ]
   }
  ],
  "coverage_bands": {
-  "0.5-0.8": 8,
+  "0.5-0.8": 4,
   "0.8-1.0": 12,
-  "1.0": 47
+  "1.0": 74
  },
  "would_extract": {
   "against": "kb/program_requirements_college/berkeley_city",
   "kept": 0,
-  "programs": 67,
+  "programs": 90,
   "list": [
    {
     "control_number": "01101",
     "title": "American Sign Language",
     "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39977",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39977",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39977",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "01102",
     "title": "Art",
     "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39969",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39969",
     "coverage": 0.92,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39969",
+    "was_coverage": 0.92,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "09056",
     "title": "Biotechnology",
     "award": "A.S. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40062",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40062",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40062",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "09057",
     "title": "General Business",
     "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39987",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39987",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39987",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "09058",
     "title": "Accounting",
     "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39978",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39978",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39978",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "09065",
     "title": "English Literature/Writing",
     "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40020",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40020",
     "coverage": 0.944,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40020",
+    "was_coverage": 0.944,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "09073",
+    "title": "Digital Imaging and Motion Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40051",
+    "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
@@ -846,18 +205,28 @@
     "control_number": "11676",
     "title": "Creative Writing/Fiction",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40016",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40016",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40016",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "11677",
     "title": "Creative Writing/Poetry",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40018",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40018",
     "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40018",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "11745",
+    "title": "Digital Illustration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40050",
+    "coverage": 0.952,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
@@ -866,37 +235,67 @@
     "control_number": "11960",
     "title": "Multimedia Arts--Mobile and Web Design",
     "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40035",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40035",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40035",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "11961",
     "title": "Mobile and Web Design Level I",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40032",
-    "coverage": 0.545,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40032",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40032",
+    "was_coverage": 0.545,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "11962",
     "title": "Mobile and Web Design Level II",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40033",
-    "coverage": 0.769,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40033",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40033",
+    "was_coverage": 0.769,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "15570",
     "title": "Advanced Computer Programming",
     "award": "A.S. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39981",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39981",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39981",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "16645",
+    "title": "Multimedia Arts - Animation and Game Design",
+    "award": "A.A. Degree",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40044",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "16646",
+    "title": "Animation Level I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40037",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "16647",
+    "title": "Animation Level II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40038",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
@@ -906,138 +305,168 @@
     "control_number": "18597",
     "title": "Social Sciences",
     "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40069",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40069",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40069",
+    "was_coverage": 0.933,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19267",
     "title": "Arts and Humanities",
     "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39974",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39974",
     "coverage": 0.962,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39974",
+    "was_coverage": 0.962,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19969",
     "title": "Biotechnology Research Laboratory Assistant",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40064",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40064",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40064",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19970",
     "title": "General Business",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39986",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39986",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39986",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19972",
     "title": "Advanced Computer Programming",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39980",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39980",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39980",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19975",
     "title": "American Sign Language",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40987",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40987",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40987",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19976",
     "title": "Spanish Language for Heritage Speakers",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41855",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
     "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41855",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "31138",
     "title": "English",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40014",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40014",
     "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40014",
+    "was_coverage": 0.875,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "31835",
     "title": "Elementary Teacher Education",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41010",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41010",
     "coverage": 0.765,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41010",
+    "was_coverage": 0.765,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "31984",
     "title": "Political Science",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40071",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40071",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40071",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "33181",
     "title": "Teacher's Aide",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40022",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40022",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40022",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "33548",
     "title": "Economics",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39985",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39985",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39985",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "33774",
     "title": "Analytical Chemistry",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40059",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40059",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40059",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33788",
+    "title": "Analytical Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40060",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40060",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35046",
+    "title": "Game Design Level I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40040",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
    },
    {
-    "control_number": "33788",
-    "title": "Analytical Chemistry",
-    "award": "A.S. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40060",
+    "control_number": "35070",
+    "title": "Game Design Level II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40041",
     "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35267",
+    "title": "Multimedia Arts Core",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39967/41007/40939/41092",
+    "coverage": 0.824,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
@@ -1046,7 +475,27 @@
     "control_number": "35507",
     "title": "Academic Composition Skills",
     "award": "Noncredit program",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39989",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39989",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39989",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36612",
+    "title": "Digital Imaging",
+    "award": "Noncredit program",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40045",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36966",
+    "title": "Introduction to Animation and Game Design",
+    "award": "Noncredit program",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40042",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
@@ -1056,37 +505,47 @@
     "control_number": "37668",
     "title": "Gender Studies",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39973",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39973",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39973",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "37789",
     "title": "ESOL Advanced",
     "award": "Noncredit program",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40026",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40026",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "37790",
     "title": "ESOL High Intermediate",
     "award": "Noncredit program",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40028",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40028",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40028",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "37797",
     "title": "Research Skills",
     "award": "Noncredit program",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40029",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40029",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40029",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37820",
+    "title": "Introduction to Motion Graphics",
+    "award": "Noncredit program",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40031",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
@@ -1096,18 +555,68 @@
     "control_number": "37850",
     "title": "Studio Arts",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39976",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39976",
     "coverage": 0.778,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39976",
+    "was_coverage": 0.778,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "37851",
     "title": "Art History",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39970",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39970",
     "coverage": 0.846,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39970",
+    "was_coverage": 0.846,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37877",
+    "title": "Film, Television, And Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40052",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37921",
+    "title": "Video Arts Level II: Directing And Producing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40057",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37934",
+    "title": "Video Arts Level I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40056",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37935",
+    "title": "Video Arts Level II: Editing and Post-Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40058",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37936",
+    "title": "Multimedia Arts--Video Arts",
+    "award": "A.A. Degree",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40054",
+    "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
@@ -1116,7 +625,17 @@
     "control_number": "38228",
     "title": "Biotechnology Laboratory Assistant",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40063",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40063",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40063",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38243",
+    "title": "Digital Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40048",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
@@ -1126,8 +645,38 @@
     "control_number": "39163",
     "title": "Management and Entrepreneurship",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39988",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39988",
     "coverage": 0.8,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39988",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39287",
+    "title": "Digital Imaging: Beginning Digital Photography",
+    "award": "Noncredit program",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40046",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39315",
+    "title": "Introduction to Social Media",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40053",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39333",
+    "title": "Motion Graphics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40043",
+    "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
@@ -1136,217 +685,237 @@
     "control_number": "39347",
     "title": "Liberal Studies - Teacher Preparation",
     "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40021",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40021",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40021",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39386",
     "title": "Sociology",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40073",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40073",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40073",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39856",
     "title": "Anthropology",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40065",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40065",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40065",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "40244",
     "title": "Spanish",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40036",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40036",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40036",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41766",
     "title": "Business Administration 2.0",
     "award": "A.S. T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39984",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39984",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39984",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41777",
     "title": "Philosophy",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39975",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39975",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39975",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41778",
     "title": "Mathematics",
     "award": "A.S. T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40030",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40030",
     "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40030",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41794",
     "title": "History",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40068",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40068",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40068",
+    "was_coverage": 0.933,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41795",
     "title": "Psychology",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40072",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40072",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40072",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41796",
     "title": "Global Studies",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40067",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40067",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40067",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41834",
     "title": "Child and Adolescent Development",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40015",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40015",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40015",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41867",
     "title": "Social and Human Service Work Readiness",
     "award": "Noncredit program",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40074",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40074",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40074",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41868",
     "title": "Tutor Training",
     "award": "Noncredit program",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40023",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40023",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40023",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41869",
     "title": "Community Health Worker",
     "award": "Noncredit program",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40066",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40066",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40066",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41876",
     "title": "Social Work and Human Services",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40070",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40070",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40070",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41902",
     "title": "Biology",
     "award": "A.S. T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40061",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40061",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40061",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "42381",
     "title": "Social Work and Human Services",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40797",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40797",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40797",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "42838",
     "title": "Physics",
     "award": "A.S. T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40911",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40911",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40911",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43006",
     "title": "Communication Studies 2.0",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39972",
-    "coverage": 0.769,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39972",
+    "coverage": 0.846,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39972",
+    "was_coverage": 0.769,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43023",
     "title": "ESOL Intermediate",
     "award": "Noncredit program",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40917",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40917",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40917",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43097",
     "title": "Law, Public Policy, and Society",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40931",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40931",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40931",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43214",
+    "title": "Film Studies",
+    "award": "A.A. Degree",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41244",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41244",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43424",
+    "title": "Virtual Production Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41162",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
    },
    {
-    "control_number": "43214",
-    "title": "Film Studies",
-    "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41244",
+    "control_number": "43827",
+    "title": "Advanced Virtual Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41176",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
@@ -1356,77 +925,87 @@
     "control_number": "43931",
     "title": "ESOL Pathway to Business",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41189",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41189",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41189",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43932",
     "title": "ESOL Pathway to Humanities",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41198",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41198",
     "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41198",
+    "was_coverage": 0.875,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43933",
     "title": "ESOL Pathway to Social Sciences",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41207",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41207",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41207",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43934",
     "title": "ESOL Pathway to STEM",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41216",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41216",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41216",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43935",
     "title": "ESOL Pathway to Teaching and Social Work",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41225",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41225",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41225",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43936",
     "title": "ESOL Pathway to the Arts",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41234",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41234",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41234",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "45941",
     "title": "Fundamentals of Data Science",
     "award": "A.S. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41937",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41937",
     "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41937",
+    "was_coverage": 0.947,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "46177",
     "title": "Data Science Analytics",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41925",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41925",
+    "coverage": 1.0,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41925",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46221",
+    "title": "Virtual Production",
+    "award": "A.A. Degree",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41941",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
@@ -1436,23 +1015,23 @@
     "control_number": "46229",
     "title": "Elementary Teacher Education: Integrated Programs",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41010",
-    "coverage": 0.905,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41010",
+    "coverage": 0.952,
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41010",
+    "was_coverage": 0.905,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "46230",
     "title": "Mathematics 2.0",
     "award": "A.S. T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40030",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40030",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40030",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    }
   ]
  },
- "run": "38948136325"
+ "run": "39891604919"
 }

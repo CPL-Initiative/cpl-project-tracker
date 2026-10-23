@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "English Literature/Writing",
  "award": "A.A. Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40020",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40020",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7312,
+  "input_tokens": 7314,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7312,
-    "output_tokens": 2538,
+    "input_tokens": 7314,
+    "output_tokens": 2626,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,7 +30,7 @@
     "model": null
    }
   ],
-  "output_tokens": 2538,
+  "output_tokens": 2626,
   "output_tokens_details": {
    "thinking_tokens": 729
   },
@@ -38,9 +38,9 @@
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08001,
- "ms": 19890,
- "seconds": 20.7,
+ "cost_usd": 0.08178,
+ "ms": 20318,
+ "seconds": 21.4,
  "parts": null,
  "error": null,
  "score": {
@@ -361,13 +361,13 @@
    }
   ],
   "notes": [
-   "The 'Required Courses 7.0-8.0' total covers ENGL C1000 plus the nested 'Select one course' choice (3.0-4.0); the nested choice is recorded as its own block.",
-   "ENGL 023, ENGL 044B and ENGL 050 appear under the Literature Electives as 'or any of the following if not taken as a required course' (printed 9.0); they are included in the Literature Electives block and may count only if not used for the 'Select one course' requirement.",
-   "Catalog codes ENGL 020, 023, 047, 050, 086 are printed with a leading zero; matched to closed-list ENGL 20, 23, 47, 50, 86.",
-   "ENGL C1002 (Introduction to Literature) is not in the closed list; recorded as catalog addition.",
-   "Page prints 'General Education and Elective Course 38-41' combined, with no GE pattern named and no separate GE units; ge_units and degree_elective_units left null.",
-   "Career Opportunities heading reads 'N/A'; careers taken from the Program Description ('careers in education, editing, advertising, business, and all fields in which strong writing and analytical skills are valued'); the final generic phrase was not recorded as a career."
+   "The catalog prints codes with zero-padded numbers (ENGL 020, ENGL 023, ENGL 047, ENGL 050, ENGL 086); these were matched to closed-list entries ENGL 20, ENGL 23, ENGL 47, ENGL 50, ENGL 86 and not flagged as additions.",
+   "The 'Required Courses 7.0-8.0' heading covers ENGL C1000 plus the nested 'Select one course' list; the 7-8 stated total was recorded on the Required Courses block.",
+   "ENGL 023, ENGL 044B and ENGL 050 appear under the Literature Electives list as 'or any of the following if not taken as a required course' (sub-list printed with 9.0 units); they were included in the Literature Electives block and may only count there if not used for the 'Select one course' requirement.",
+   "ENGL C1002 (Introduction to Literature) is not in the closed list; recorded as a catalog addition.",
+   "Major Requirements printed as 19-22 (total_units); Total Units 60 recorded as degree_total. 'General Education and Elective Course 38-41' combines GE and electives, so it was not recorded as ge_units or as elective units; no GE pattern is named.",
+   "Careers taken from the program description ('careers in education, editing, advertising, business, and all fields in which strong writing and analytical skills are valued'); the final general phrase was not recorded as a career. The Career Opportunities heading reads 'N/A'."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

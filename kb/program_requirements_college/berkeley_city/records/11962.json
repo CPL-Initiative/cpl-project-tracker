@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Mobile and Web Design Level II",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40033",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40033",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7164,
+  "input_tokens": 7166,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7164,
-    "output_tokens": 1252,
+    "input_tokens": 7166,
+    "output_tokens": 1275,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1252,
+  "output_tokens": 1275,
   "output_tokens_details": {
-   "thinking_tokens": 143
+   "thinking_tokens": 155
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0537,
- "ms": 14556,
- "seconds": 15.1,
+ "cost_usd": 0.05416,
+ "ms": 10708,
+ "seconds": 11.1,
  "parts": null,
  "error": null,
  "score": {
@@ -260,10 +260,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints ART 046 and CIS 006; the closed list stores these as ART 46 and CIS 6. Treated as the same courses (leading zero formatting), so catalog_addition is false.",
-   "CIS 006 and MM/AN 040A are marked '( Historical )' in the catalog but remain listed as options.",
-   "Required Courses block total of 15.0 plus one elective of 3.0-5.0 matches the printed Total Units 18-20."
+   "Catalog prints ART 046 and CIS 006 with zero-padded numbers; treated as the closed-list courses ART 46 and CIS 6 (not catalog additions).",
+   "CIS 006 and MM/AN 040A are marked '( Historical )' in the catalog but still listed as options.",
+   "Required Courses block states 15.0 units, but the listed courses sum to 15 units (10 courses: 5x2 + 5x1); consistent.",
+   "Total Units printed as 18-20."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

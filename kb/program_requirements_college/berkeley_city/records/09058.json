@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Accounting",
  "award": "A.A. Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39978",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39978",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6818,
+  "input_tokens": 6820,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6818,
-    "output_tokens": 1510,
+    "input_tokens": 6820,
+    "output_tokens": 1376,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1510,
+  "output_tokens": 1376,
   "output_tokens_details": {
-   "thinking_tokens": 407
+   "thinking_tokens": 311
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05747,
- "ms": 12554,
- "seconds": 13.4,
+ "cost_usd": 0.0548,
+ "ms": 11774,
+ "seconds": 12.8,
  "parts": null,
  "error": null,
  "score": {
@@ -248,13 +248,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog codes BUS 002, BUS 005, BUS 019, BUS 056 and CIS 001 were matched to closed-list BUS 2, BUS 5, BUS 19, BUS 56 and CIS 1 (same course, zero-padded numbering); marked catalog_addition false.",
-   "BUS 010 (Introduction to Business) and BUS 024 (Computerized Accounting Principles) are not in the closed list; marked catalog_addition true.",
-   "The page prints 'General Education and Electives 26' as a combined figure; no GE pattern is named and no separate GE or elective units are printed, so ge_units, ge_pattern and elective fields were left null.",
-   "Major Requirements 34 recorded as total_units; Total Units 60 recorded as degree_total.",
-   "The last learning outcome is cut off in the source text ('improvemen'); copied as printed without completing it.",
-   "The Program Description is a shared Business Department description; the learning outcomes appear to be department/program-wide and are recorded as shared by this award."
+   "Catalog codes BUS 002, BUS 005, BUS 019, BUS 056 and CIS 001 are matched to closed-list BUS 2, BUS 5, BUS 19, BUS 56 and CIS 1 (zero-padded numbering); not marked as catalog additions.",
+   "BUS 010 (Introduction to Business) and BUS 024 (Computerized Accounting Principles) are not in the closed list and are recorded as catalog additions.",
+   "The page prints 'General Education and Electives 26' as a combined figure; no GE pattern is named and no separate GE or elective units are printed, so ge_units and degree_elective_units are left null.",
+   "The fourth learning outcome is cut off in the source text ('improvemen'); recorded exactly as printed, not completed.",
+   "The learning outcomes appear under the program summary, which describes the Business Department generally; they are recorded as this award's outcomes."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }

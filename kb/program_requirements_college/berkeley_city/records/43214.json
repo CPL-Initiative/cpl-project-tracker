@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Film Studies",
  "award": "A.A. Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41244",
+ "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41244",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7116,
+  "input_tokens": 7118,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7116,
-    "output_tokens": 1966,
+    "input_tokens": 7118,
+    "output_tokens": 1926,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1966,
+  "output_tokens": 1926,
   "output_tokens_details": {
-   "thinking_tokens": 609
+   "thinking_tokens": 614
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06778,
- "ms": 16350,
- "seconds": 17.0,
+ "cost_usd": 0.06699,
+ "ms": 15662,
+ "seconds": 16.2,
  "parts": null,
  "error": null,
  "score": {
@@ -98,9 +98,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 1,
    "courses": 0,
-   "count": 2,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -141,8 +141,7 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Demonstrate comprehensive knowledge of major historical developments, both artistic and technological, that have influenced cinema throughout the 20th and 21st centuries.",
-    "Demonstrate the ability to critically analyze, interpret and write about film using the specialized vocabulary of film studies as it has developed in the academic context and in the film i"
+    "Demonstrate comprehensive knowledge of major historical developments, both artistic and technological, that have influenced cinema throughout the 20th and 21st centuries."
    ],
    "careers": []
   },
@@ -262,14 +261,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints course numbers zero-padded (HUMAN 021, HUMAN 055, WS 052, etc.); treated as the same courses as the closed list's HUMAN 21, HUMAN 55, WS 52, etc.",
-   "HUMAN 052/WS 052 and ART 182/HUMAN 182 are cross-listed pairs printed under 'Only one of the following courses may be taken'; each pair recorded as one entry with the twin as an alternative.",
-   "Page prints 'General Education and Elective Courses 37-41' as a combined figure; no separate GE units or elective units printed, and no GE pattern named, so ge_units, degree_elective_units and ge_pattern left null.",
-   "Degree total 60 recorded from 'Total Units 60'; major total 19-23 from 'Major Requirements 19-23'. Sum of block minimums (3+6+9=18) is below the printed 19 minimum; printed figure kept.",
-   "MMART 123 is marked '( In Review )' and HUMAN 015 '( Historical )' in the catalog; reviewer may wish to check whether HUMAN 015 is still offered.",
-   "Career Opportunities section names only transfer majors (Film, Cinema, Media Studies, etc.), not careers or occupations, so careers left empty.",
-   "The second learning outcome is cut off in the source text ('...in the film i'); recorded as printed without completing it. Further outcomes may have been truncated."
+   "Catalog prints codes with zero-padded numbers (HUMAN 021, HUMAN 055, WS 052, etc.); these were matched to the closed list's HUMAN 21, HUMAN 55, WS 52, etc., so catalog_addition is false.",
+   "HUMAN 052/WS 052 and ART 182/HUMAN 182 are cross-listed ('Only one of the following courses may be taken'); recorded as one entry with the twin as alternative. The '8.0', '24.0' and '6.0' figures beside those sub-headings appear to be sums of listed course units, not requirements.",
+   "Major Requirements 19-23 recorded as total_units; Total Units 60 recorded as degree_total. The page prints 'General Education and Elective Courses 37-41' as a combined figure for GE and electives, so ge_units and elective fields were left null; no GE pattern is named.",
+   "MMART 123 is marked '( In Review )' and HUMAN 015 '( Historical )' in the catalog; both are listed as options in Group 3.",
+   "Learning outcomes: the second outcome is cut off mid-word in the text ('...in the film i'), so it was not recorded; only the first complete outcome is recorded. Reviewer should check the full page for the remaining outcome(s).",
+   "Career Opportunities section names only transfer majors (Film, Cinema, or Media Studies, Theater and Performance Studies, etc.), not careers or occupations, so careers is empty."
   ]
  },
- "extracted_run": "38948136325"
+ "extracted_run": "39891604919"
 }
