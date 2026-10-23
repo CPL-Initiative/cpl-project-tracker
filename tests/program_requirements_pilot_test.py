@@ -1546,6 +1546,35 @@ read_already = {"program": {"total_units": {"min": None, "max": None}, "degree_t
                             "ge_units": {"min": 34, "max": 34}, "open_elective_units": 5}, "blocks": []}
 check(RC.reconcile(read_already, BIO_TEXT, "Cabrillo College", "A.A- T Degree")[1] == [],
       "a step never overwrites a figure the reading holds")
+# Hartnell's Requirements tab lists courses without units; the tab's own courses/search answer
+# prices them (page read 39930495321, S455), and the course_units step fills only the empty ones.
+import _program_requirements_college as PRC  # noqa: E402
+cd_units = PRC.cd_course_units({"data": [
+    {"code": "AOD1", "credits": {"creditHours": {"min": 3, "operator": ""}}},
+    {"code": "AOD 2", "credits": {"creditHours": {"min": 1, "max": 3, "operator": "-"}}},
+    {"code": "AOD3", "credits": {"creditHours": {"operator": ""}}}]})
+check(cd_units == {"AOD1": [3, 3], "AOD2": [1, 3]},
+      "a courses/search answer reads as each course's credit hours, a course with none left out: %s" % cd_units)
+hart_steps = {"Hartnell College": {"steps": [{"kind": "course_units", "field": "units", "source_words": "creditHours"}]}}
+hart = {"program": {"degree_total": {"min": 60, "max": 60}}, "blocks": [{"name": "Required Major Courses", "rule": "all",
+        "courses": [{"code": "AOD1", "units": None, "units_max": None, "alternatives": []},
+                    {"code": "AOD2", "units": None, "units_max": None,
+                     "alternatives": [{"code": "AOD9", "units": None}]},
+                    {"code": "AOD4", "units": 4, "units_max": None, "alternatives": []},
+                    {"code": "AOD5", "units": None, "units_max": None, "alternatives": []}]}]}
+cu = {"call": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters",
+      "units": dict(cd_units, AOD4=[2, 2], AOD9=[3, 3])}
+new, notes = RC.reconcile(hart, "Required Major Courses AOD1 AOD2 AOD4 AOD5", "Hartnell College", "A.A. Degree",
+                          steps=hart_steps, course_units=cu)
+cs = new["blocks"][0]["courses"]
+check([(c["units"], c.get("units_max")) for c in cs] == [(3, None), (1, 3), (4, None), (None, None)]
+      and cs[1]["alternatives"][0]["units"] == 3 and hart["blocks"][0]["courses"][0]["units"] is None
+      and notes[0]["field"] == "course_units" and sorted(notes[0]["now"]) == ["AOD1", "AOD2", "AOD9"]
+      and notes[0]["words"].startswith(cu["call"]),
+      "Hartnell: the vendor's units fill the empty courses and alternatives, never a course the reading priced or one "
+      "the answer omits, and the note names the call: %s" % json.dumps(notes))
+check(RC.reconcile(hart, "AOD1", "Hartnell College", "A.A. Degree", steps=hart_steps)[1] == [],
+      "a page the reader kept no course data for changes nothing")
 both = {"program": {"total_units": {"min": 36, "max": 36}}, "blocks": []}
 new, notes = RC.reconcile(both, BIO_TEXT.replace("at least 30 units", "at least 18 units"), "Cabrillo College", "A.S. Degree")
 check(new["program"]["total_units"] == {"min": 36, "max": 36} and new["program"]["degree_elective_units"] == {"min": 6, "max": 6}
