@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-23T14:31:07Z",
-  "session": 456,
-  "moniker": "SkyYarrow",
+  "written_at": "2026-10-23T18:29:28Z",
+  "session": 457,
+  "moniker": "SkyColumbine",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_457_handoff.md",
+  "handoff": "docs/session_458_handoff.md",
   "next_step": {
-    "title": "Load, reread and build the Hartnell and Sierra extractions, then Sheet 117 card 1's rows",
-    "text": "Two extractions filed on their branches on 2026-10-23 (Hartnell with the code-kind gate, 4 programs; Sierra with the noncredit section, 2 programs): load each, reread each, one display build on the branch that carries both, one PR, then the display apply on main. After the build, the older-build rows (Long Beach City 43802 and 46290, Palo Verde 04436, Hartnell 18353, 19518 and 12331) wait on Sheet 117 card 1."
+    "title": "Read Sheet 119's replies, then the display applies on main",
+    "text": "Card 1 standing means remove the six older-build rows at each wave with a receipt; card 9 narrow means apply the rescore receipt through supabase-migrate on #2387, then a display build. Read both display apply runs (39990555422 ended in failure after committing its applied record; 39999773855 applies build d45e5d0fcf78) before any new dispatch."
   },
   "calls": [
     {
@@ -52,22 +52,29 @@
       "title": "Keep Hartnell's Local GE at 23 units, the sum of the seven areas its catalog prints?",
       "text": "Open Asks Sheet 116 card 4, proceeded on the recommendation (S454): the catalog prints Local GE's seven areas (6, five of 3, and 2 units) and no total, so the reconcile step sets 23; 50 Hartnell records changed and 34 now pass the machine checks. Carried to Open Asks Sheet 117 card 2 (S456).",
       "if_no_reply": "The 23 stays; Hartnell's local degrees add up against their 60 with it.",
-      "link": "https://claude.ai/artifact/UkzrGukGumwJxrdyDGgb5Y",
+      "link": "https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM",
       "link_text": "Open Sheet 117"
     },
     {
       "title": "A standing rule for the older-build program records each wave leaves behind",
-      "text": "Sam's Sheet 115 card 1 ruling removed 17 rows on 2026-10-23 with a receipt. Each wave leaves rows of the same kind: programs whose page a newer read gives to someone else or finds nowhere, so the display build leaves them out while the live row keeps an older build's marks. Five remain today (Hartnell 21450 and 31592, re-read by the S456 wave; Long Beach City 43802 and 46290; Palo Verde 04436) and Hartnell's 18353, 19518 and 12331 join after the wave's build. Sheet 117 card 1 asks whether they leave at each wave with a receipt, or are asked each time.",
+      "text": "Six rows today: Hartnell's Psychology A.A. 18353, Spanish A.A. 19518 and Agriculture Production A.S. 12331 (left out of build 14291ca32973), Long Beach City 43802 and 46290, Palo Verde 04436. Open Asks Sheet 119 card 1 (carried from 117 and 118). Standing means each wave removes them with a before-values receipt; on no reply they stay and come back as a card.",
       "no_reply": "The rows stay live and show on CPL Pathways and in Sierra with marks from the build they were last in; each wave's leftovers come back as a card.",
-      "link": "https://claude.ai/artifact/UkzrGukGumwJxrdyDGgb5Y",
+      "link": "https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM",
       "link_text": "Open Sheet 117"
     },
     {
       "title": "Keep Cal-GETC at 34 units on a Hartnell local degree whose own tab names the pattern?",
       "text": "Three of Hartnell's local degrees name Cal-GETC without units. Since the reader reads a Coursedog tab by its code's award (S456), a second reconcile step fills the statewide 34 for an associate degree whose own tab prints the pattern; reconcile 39966331452 changed 08871, 17924 and 33851. Proceeded on the recommendation; Sheet 117 card 3; reply to reverse.",
       "no_reply": "The figure stands; git revert of the step and the reread receipt's before-values undo it.",
-      "link": "https://claude.ai/artifact/UkzrGukGumwJxrdyDGgb5Y",
+      "link": "https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM",
       "link_text": "Open Sheet 117"
+    },
+    {
+      "title": "Count a printed total that the requirements' low end meets as adding up (the scorer's meets reading)?",
+      "text": "Built in #2387 and 267 filed records rescored (258 program totals, 9 degrees; 738 under the wide reading); the live apply of the receipt's guarded UPDATE was refused by the session's permission check, so it waits. Open Asks Sheet 119 card 9. On no reply the live rows keep unequal and #2387 stays a draft.",
+      "link": "https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM",
+      "asked": "2026-10-23",
+      "by": "S457 SkyColumbine"
     }
   ],
   "notes": {
@@ -93,6 +100,22 @@
     {
       "at": "2026-10-23T14:20:56Z",
       "text": "Sierra: a department page heads a noncredit program's section; 109 of 125 found, from 107; Entrepreneurship for Makers and Construction Fundamentals extracting."
+    },
+    {
+      "at": "2026-10-23T16:53:19Z",
+      "text": "The S456 wave merged (#2381): Hartnell's code-kind gate and Sierra's noncredit section with their loads and rereads; display build 14291ca32973 applied on main by run 39990555422 (its applied record committed; the run then ended in failure)."
+    },
+    {
+      "at": "2026-10-23T18:00:30Z",
+      "text": "Sierra's two ESL noncredit certificates read their own sections (with_acronyms skips a function word between the spelled words): 111 of 125 found, 11 page-claimed; loaded and posted; display build d45e5d0fcf78 (#2385), apply run 39999773855 on main."
+    },
+    {
+      "at": "2026-10-23T18:22:00Z",
+      "text": "The scorer's meets reading built and 267 filed records rescored in #2387 (draft); the live apply held for Sam (Sheet 119 card 9)."
+    },
+    {
+      "at": "2026-10-23T18:26:00Z",
+      "text": "Open Asks Sheet 119 published: Sheet 118's eight cards, card 1's rows now six, card 9 the held apply."
     }
   ],
   "headline": [
@@ -189,7 +212,7 @@
     {
       "day": "2026-10-23",
       "active": 20282,
-      "complete": 12964,
+      "complete": 12970,
       "colleges": 114
     }
   ],
@@ -200,7 +223,7 @@
   },
   "harvest": {
     "day": "2026-10-23",
-    "gaps": 3033,
+    "gaps": 3031,
     "parts": {
       "links": {
         "catalog": [
@@ -217,11 +240,11 @@
         ]
       },
       "roep": [
-        19150,
+        19151,
         20282
       ],
       "coci": [
-        16117,
+        16122,
         20282
       ],
       "outcomes": {
@@ -230,12 +253,12 @@
           89192
         ],
         "plo": [
-          16117,
+          16122,
           20282
         ]
       },
       "careers": [
-        15081,
+        15086,
         20282
       ]
     }

@@ -15953,8 +15953,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 427,
+   "count": 428,
    "docs": [
+    {
+     "created": "2026-10-23",
+     "governs": [],
+     "n": 458,
+     "path": "docs/session_458_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 458 handoff: the S456 wave and Sierra's ESL certificates landed, the low-end-meets reading held on Sheet 119",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-23",
      "governs": [],
@@ -23296,5 +23310,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1228
+ "total": 1229
 }

@@ -749,7 +749,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 117](https://claude.ai/artifact/UkzrGukGumwJxrdyDGgb5Y), 2026-10-23, three cards open: a standing rule for the older-build program records each wave leaves behind; Hartnell’s Local GE at 23 and Cal-GETC 34 on a local degree whose own tab names it, both proceeded on the recommendation, reply to reverse). Answering
+> (latest: [Open Asks Sheet 119](https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM), 2026-10-23, nine cards: a standing rule for the older-build program records each wave leaves behind; Hartnell’s Local GE at 23 and Cal-GETC 34 on a local degree whose own tab names it, both proceeded, reply to reverse; five from the communications register (the side session's Sheet 118); and the scorer's low-end-meets apply, held). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

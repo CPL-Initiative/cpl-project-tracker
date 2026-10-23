@@ -726,6 +726,44 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S457 SkyColumbine (2026-10-23, Sam's session): the S456 wave, Sierra's ESL acronym, the low-end-meets reading
+
+- **A guard that encodes a session's caution yields to a proceeded card.** #2380 was red on "Hartnell: a local degree
+  never takes Cal-GETC's 34" (S421's caution, written when a local degree's page could span its transfer sibling's
+  section). Sheet 117 card 3 had already proceeded on the second step, the tabs print the set in the catalog's own
+  words, and the code-kind gate removes the caution's premise, so the guard was rewritten to the new rule rather than
+  the step dropped. A branch that files a load without its build fails `tests/roep_display_test.py` by design, so the
+  Hartnell branch merged through the wave PR (#2381) and never on its own.
+- **A heading can spell an acronym out with function words between the spelled words.** `with_acronyms` read a run of
+  four-letter-or-longer words only, so "English as a Second Language" never read as ESL and the two ESL noncredit
+  certificates lost the department page to the sibling that took it on coverage alone (`label.section` null; with one
+  section among the claimants, `page_winners()` keeps the coverage winner). The run now skips `a an as and of for the in
+  to on` between the spelled words; "intro to" still never reads as IT. Running the capture's gates on the page dict
+  built from the `capture_view` log (lessons S456) named the gate in one run; a fixture needs at least `SMALL_LIST`
+  listed courses printed on the page, or the label gate refuses it before the section is read, and a candidate's
+  section sits under its `label`.
+- **A variable-unit course widens a sum past a printed total.** ABT 99 sits in six Hartnell records at 1-8 units from
+  the vendor's `creditHours`; the Requirements tab prints no figure for it in the program (page read 40000266982), and
+  the vendor's own "Total Required Credits" is a precise figure, not a floor. The doctrine passed only a floor the low
+  end meets (S422). The new `meets` reading passes a program total, or an electives-filled degree total, that the low
+  end meets exactly with the high end carried past it by a choice or a variable-unit course, as Sheet 81 card 1 reads
+  a degree's span. **Measure the blast radius before proposing a scoring rule:** 258 program totals and 9 degrees
+  statewide read so, 738 under any total inside the span (Mt. San Jacinto 04395 reads 9-24 against 18, the kind a wide
+  rule would hide). The rescorer (`kb/_program_requirements_rescore.py`) now covers program totals and its `--check`
+  guards both; the receipt carries the guarded UPDATE and rollback. The session's permission check refused the live
+  apply, and a permission-check denial is on Sam's hold list: Sheet 119 card 9, #2387 a draft until his reply.
+- **The vendor's course data carries hours.** Each `courses/search` entry carries `credits.creditHours`,
+  `billingHours`, `lectureHours {min,max}` and `labHours {min,max}` (ENGM 620: lecture 80-90, lab 48-54), so the
+  seven hours-measured noncredit records can be priced from it (a `course_hours` field in `cd_pages`, a reconcile
+  kind for `measure: hours`). The page reader prints 1,500 characters of each fetched body (`NETWORK_BODY`), which hid
+  ABT 99's and ENGM 622's entries: a plan that needs one course's entry needs a longer print or a filter.
+- **A display apply can commit its applied record and still end in failure.** Run 39990555422 (build 14291ca32973)
+  committed its applied record to `main` at 18:20Z and concluded failure after 87 minutes; the second apply (run
+  39999773855, build d45e5d0fcf78) queued behind it. The failure's cause was not read this run (the log's tail shows
+  only cleanup); read the job's middle before trusting the apply's row counts.
+- **The Rule 8 memory read, the handoff and the open PRs together told the state in one pass:** S456's comment on
+  #2384 said which PR merged on green and which waited on what; nothing had to be re-derived.
+
 ## S456 SkyYarrow (2026-10-23, Sam's session): card 1 carried out, a Coursedog tab's code names its award, a noncredit section
 
 - **A bulk delete's before-values receipt reads the rows outside the session's context.** Sheet 115 card 1's 17 rows
