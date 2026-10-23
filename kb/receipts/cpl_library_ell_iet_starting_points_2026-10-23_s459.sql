@@ -2,6 +2,8 @@
 -- artifact made to share gets a record, Sam 2026-10-20), and Rule 8 ingest of the agency template's existence.
 -- Sam's calls: Open Asks Sheet 120 card 5 (template, ~20:02Z) and Sheet 121 card 3 (text, 21:27Z), both his own.
 -- INSERT-only, idempotent on slug, cohort library-s459@bot. Seen by the team until Sam lists it (anything outward is his).
+-- APPLIED: run 40037603941, 2026-10-23 (kb/receipts/migration_cpl_library_ell_iet_starting_points_2026_10_23_s459_40037603941.json); read back:
+--   visual, agency, EDD ELL IET Fund grantees, seen by team, draft.
 -- Rollback: delete from public.cpl_library where slug = 'ell-iet-cpl-starting-points' and added_by = 'library-s459@bot';
 --           delete the memory log row (actor library-s459-2026-10-23), then the memory row by slug.
 insert into public.cpl_library (slug, title, kind, occasion, made_on, version, summary, extent, file_type,
