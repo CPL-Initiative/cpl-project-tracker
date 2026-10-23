@@ -142,6 +142,12 @@ check("tr.querySelector('tr')" in cpr.ROWS_JS and "%d" not in cpr.ROWS_JS,
       "rows skips a layout row that wraps a whole table, and carries its cap")
 
 print("committed plans")
+print("cq_view_ids")
+check(cpr.cq_view_ids("https://bcc.curriqunet.com/catalog/iq/39711/39966/40048") == (39966, 40048),
+      "an entry's iq address gives (section, node)")
+check(cpr.cq_view_ids("https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40048") is None,
+      "a JSON call's address names no entry")
+
 plans = sorted(glob.glob(os.path.join(ROOT, "kb", "college_reads", "*.json")))
 check(len(plans) >= 1, "at least one plan is committed")
 OUTSIDE = {"regionalcte.org"}   # the regional program record, named on purpose
