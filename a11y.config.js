@@ -1000,6 +1000,65 @@ async function seedRaciEditor(page, theme, view) {
   await page.waitForTimeout(300);
 }
 
+// Letters, Memos & Reports with the team phrase (the side session beside S457, 2026-10-23):
+// the register, one record open with its composer and its recipients table. The seed holds
+// the phrase, stubs the four reads (cpl_comms, map_college_contacts, map_colleges, the JST
+// feed) with synthetic rows (never a live row: the roster is gated), and opens one record.
+async function seedCommsRegister(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "letters") location.hash = "letters"; });
+  await page.waitForFunction(() => !!window.CPL_COMMS, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      localStorage.setItem("cpl_team_pass", "seed-phrase");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const C = [
+      { id: "c1", slug: "jst-upload-ceos-seed", title: "JST uploads and the 2026-2028 funding, to the CEOs", comm_type: "email",
+        audience: "ceos", status: "draft", to_roles: ["ceo"], cc_roles: ["vpaa", "vpss"], colleges: null,
+        subject: "CPL Initiative: {college} and the Joint Services Transcript upload",
+        body: "Dear {salutation},\n\nMAP holds {jst} JSTs against {vets} enrolled veterans at {college} ({jst_pct}).\n\nSincerely,\n{sender}",
+        sender: "Seed Sender, MAP team", occasion: "7th Annual CPL Summit", note: null, library_id: null, made_by: "Seed Author",
+        added_by: "Seed Author", updated_by: null, created_at: "2026-10-23T17:00:00Z", updated_at: "2026-10-23T17:00:00Z", retired_at: null },
+      { id: "c2", slug: "team-note-seed", title: "What changed in the funding model", comm_type: "team_note", audience: "map_team",
+        status: "final", to_roles: [], cc_roles: [], colleges: null, subject: null, body: "A seeded note.", sender: null, occasion: null,
+        note: null, library_id: "lib9", made_by: "Seed Author", added_by: "Seed Author", updated_by: "Seed Author",
+        created_at: "2026-10-22T10:00:00Z", updated_at: "2026-10-22T12:00:00Z", retired_at: null },
+    ];
+    const K = [
+      { college: "Alpha College", ceo: "Dr. Jennifer Seed", ceo_email: "ceo@alpha.example", vpaa: "Kathryn Seed", vpaa_email: "cio@alpha.example",
+        vpss: "Idania Seed", vpss_email: "csso@alpha.example", primary_contact: "", primary_contact_email: "", cpl_coordinator: "Pat Seed",
+        cpl_coordinator_email: "pat@alpha.example", landing_page_url: "https://map.rccd.edu/alpha", synced_at: "2026-10-22T17:42:15Z" },
+      { college: "Beta Community College", ceo: "Kevin Seed", ceo_email: "ceo@beta.example", vpaa: "", vpaa_email: "", vpss: "", vpss_email: "",
+        primary_contact: "", primary_contact_email: "", cpl_coordinator: "", cpl_coordinator_email: "", landing_page_url: "", synced_at: "2026-10-22T17:42:15Z" },
+      { college: "Gamma College", ceo: "", ceo_email: "", vpaa: "Angela Seed", vpaa_email: "cio@gamma.example", vpss: "", vpss_email: "",
+        primary_contact: "", primary_contact_email: "", cpl_coordinator: "", cpl_coordinator_email: "", landing_page_url: "", synced_at: "2026-10-22T17:42:15Z" },
+    ];
+    const G = [
+      { college_id: 1, college_name: "Alpha College", variants: ["ALPHA"], entity_kind: "college", district: "Alpha CCD" },
+      { college_id: 2, college_name: "Beta Community College", variants: ["Beta College"], entity_kind: "college", district: "Beta CCD" },
+      { college_id: 3, college_name: "Gamma College", variants: [], entity_kind: "continuing_education", district: "Gamma CCD" },
+    ];
+    const J = { scraped_at: "2026-10-23T14:17:45Z", star_threshold: 0.75, statewide: { vets: 33435, jst: 29272, star_colleges: 63 },
+      colleges: { "Alpha College": { vets: 100, jst: 52, star: false }, "Beta College": { vets: 80, jst: 70, star: true } } };
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/cpl_comms\?/.test(u) ? C : /\/map_college_contacts\?/.test(u) ? K : /\/map_colleges\?/.test(u) ? G : /veteran_jst\.json/.test(u) ? J : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_COMMS.activate();
+  });
+  await page.waitForFunction(() => !!document.querySelector("#letters-root .cm-item"), null, { timeout: 20000 });
+  await page.evaluate(() => { const b = document.querySelector('#letters-root [data-open="c1"]'); if (b) b.click(); });
+  await page.waitForFunction(() => !!document.querySelector("#letters-root table.cm-t"), null, { timeout: 20000 });
+  await page.evaluate(() => { const b = document.querySelector('#letters-root [data-preview="0"]'); if (b) b.click(); });
+  await page.waitForTimeout(300);
+}
+
 // Noncredit & Learning Partners with the team phrase (S365): notes, artifacts and Revise
 // controls render only for a team-phrase holder, so the unseeded sweep never painted them.
 // The seed holds the phrase, stubs the three reads (nc_partner_notes, nc_artifacts,
@@ -2160,6 +2219,22 @@ module.exports = {
     routes: [{ hash: "nc-learning-partners", name: "editor" }],
     widths: [390, 1440],
     seed: (page) => seedNcPartnersEditor(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "letters-register": {
+    file: "index.html",
+    title: "Letters, Memos & Reports with the team phrase: the register, a record open, its recipients",
+    routes: [{ hash: "letters", name: "register" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommsRegister(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "letters-register-dark": {
+    file: "index.html",
+    title: "Letters, Memos & Reports with the team phrase: the register, a record open, its recipients, dark",
+    routes: [{ hash: "letters", name: "register" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommsRegister(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "governance-editor": {

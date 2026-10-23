@@ -15,10 +15,12 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-427 document(s).
+429 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 459 | [Session 459 handoff: the team phrase lists publicly, Sheet 120 carries the entity-visuals asks, the Coordinator Guide audit](../session_459_handoff.md) | 2026-10-23 |
+| 458 | [Session 458 handoff: the S456 wave and Sierra's ESL certificates landed, the low-end-meets reading held on Sheet 119](../session_458_handoff.md) | 2026-10-23 |
 | 457 | [Session 457 handoff: card 1 carried out, Hartnell's code-kind gate, Sierra's noncredit sections, two extractions filing](../session_457_handoff.md) | 2026-10-23 |
 | 456 | [Session 456 handoff: Hartnell's vendor course units, Sierra's IT Cybersecurity, display build b0a96907bf83](../session_456_handoff.md) | 2026-10-23 |
 | 455 | [Session 455 handoff: Hartnell's GE units, Sierra's AA or AS, display build b2864d4d6992](../session_455_handoff.md) | 2026-10-23 |
