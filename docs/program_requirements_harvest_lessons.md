@@ -780,6 +780,73 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S449 SkyBuckwheat (2026-10-22): the queue after S448, Palo Verde's new catalog, a reader view for curriQunet
+
+Sam opened S449 with the standard line and said nothing more in session; the funding side session and a second
+side session (Scenario 4) ran beside it, one writer per file.
+
+- **Read the catalog as the capture reads it, for curriQunet too.** S447's rendered view of a Berkeley City iq
+  address showed the Summary tab alone, because the catalog draws its other tabs from JSON on a click. The page
+  reader's `cq_view` (a plan page with `cq_catalog`) now makes the capture's own calls through `cq_json`,
+  `cq_children` and `cq_page`, and prints the entry's navigation record, the child pages read and the joined text
+  with the coarse net's codes (page read 39849599506). The three credit Multimedia Arts certificates print every
+  code the state lists on a Requirements tab (Digital Photography 15 of 15, Animation Level I 13 of 13, Motion
+  Graphics 16 of 16, as `MM/DI 011`, `MM/AN 003A`, `MMART 197`); the noncredit twin prints `MM/DI 510`-`550`.
+  Main's capture of 2026-10-16 read Animation Level I's own page at 1 of 13, so it never read the Requirements
+  child. The entries sit under an untitled, hidden node (39968) inside section 39966, and `cq_pages` reads an
+  entry's children only when its navigation record says `haschildbodynavs`. The free capture on the current
+  reader (run 39853098819) is the test; its preview is on `claude/harvest-berkeley-city-s449`.
+- **Mt. San Jacinto's remaining gaps are the catalog's.** The capture view (page read 39849099432) of
+  `chemistry-ast` and `public-health-a.s.-t` shows Overview and Career Exploration alone: "The Chemistry, A.S.-T
+  is being revised [and] is not available to new students in the 2026-2027 academic year"; "The Public Health,
+  A.S.-T is currently being revised and is expected to be available shortly." The sitemap lists no own page for
+  Musical Theater (the theater-arts department prints Technical Theater and Theatre Arts), the office
+  administration certificates, Environmental Studies A.S., Mathematics A.S. or Culinary Arts & Hospitality A.A.;
+  Advanced Audio Technology reads the catalog's Audio Production. Five other MSJC transfer degrees with dotted
+  award slugs (`geology-a.s.-t`, `journalism-a.a.-t`) were found, so the slug reader needs no change. No reader
+  change; the 15 page-claimed and 22 not found stand.
+- **Palo Verde moved to an Acalog catalog, 2026-2027.** The census had moved its registry row from
+  `pvc.elumenapp.com` (2025-2026) to `catalog.paloverde.edu`; a free capture (run 39850074235) found 66 of 68
+  from 54, every program on a `preview_program.php` page, 13 gaining a page (Communication Studies 2.0, Alcohol
+  and Drug Studies A.A., the two Anthropology awards, the noncredit certificates). Extraction of all 66 runs
+  under the $40 go (run 39852997888); load, reread and display follow.
+- **A free capture under the S443-S447 rules at five colleges last captured 2026-10-10 to 10-15** (branches
+  `claude/harvest-<college>-s449`): Cypress 260 to 274 found (run 39848037321; HVAC and Administration of
+  Justice programs on department pages; 18 extracted, run 39853370754); Victor Valley 178 to 176 (below);
+  Mt. San Antonio and Long Beach City still capturing at the checkpoint.
+- **A department's course list is not a program's page, and the heading rules now refuse it.** Victor Valley's
+  Nursing Licensure certificate had read `degrees-certificates/nursing/` at 0.867 and Irrigation and Water
+  Management `agriculture-natural-resources/` at 0.769 (main's capture, 2026-10-15); the capture view (page read
+  39853165646) shows both pages print the department's course descriptions and a PROGRAMS tab the capture leaves
+  out, and the agriculture department lists no Irrigation and Water Management award at all. Under the
+  section-heading rules each page goes to a program a heading names, so both are page-claimed now: a correction,
+  not a loss. Their loaded records read a course list; they belong with the 25 below.
+- **Hartnell by its site: 0 of 105.** S411 had measured that the PDF prints 79 program codes where the site's
+  search lists 100, so the reader gained `route=site` (a dispatch input; `prefer_site()`; the procedure step
+  stands). The run (39850594534) listed 100 programs and loaded each program's page, but found a Requisites link
+  on none (`requisites_suffix` null, 60 missed): the vendor-hosted catalog names the tab otherwise or draws the
+  requirements from a data call. Page read 39853502958 prints two program pages' tab links and data calls.
+- **Ohlone's 15 low-coverage credit programs are not in the 2026-2027 guide under the state's lists.** The
+  guide's Associate in Arts in Art names about 18 ART courses where the state's Fine Arts A.A. lists 72 (art,
+  music and theater); its Computer Science A.S. (CS-102, CS-113, CS-116) is the near-miss page of the state's
+  Computer Studies A.A. (CNET 160A, CS 101, CS 146); page reads 39850460662 and 39853324740. The college's to
+  settle in COCI. The 18 noncredit certificates are on the college's noncredit web page (`/noncredit`), which
+  the chapter PDF does not carry. A keyword that the guide prints on earlier pages fills the fourteen-page cap
+  before the pages wanted: name the course codes the state lists, as the guide prints them, with `pdf_span`.
+- **Twenty-five live rows carry an older display build.** 19 are rows whose program is page-claimed in the
+  latest capture and whose filed record the newer extraction replaced (Sierra 11, Oxnard 2, MiraCosta 2,
+  Foothill, Orange Coast, Palomar, Ventura); 6 are filed records that place none of their listed courses
+  (Citrus 11244, Grossmont 32879, Moorpark 39413 and 45352, Orange Coast 22394, Santa Barbara City 32629), which
+  the builder leaves out under Sheet 62 card 1. Removing live rows is Sam's: Sheet 115 card 1.
+- **The Canonical SUBJ4 scope note is a paragraph** (#2360): its handbook link measured 15 px as a control inside
+  a div; as prose the engine reads it as an inline text link, which WCAG 2.2 exempts.
+
+## Moved from the lane (S449 compaction)
+
+**RULED (Sam, Open Asks Sheet 97 card 1, 2026-10-19 03:11Z, his own call: Build with Grok; `cpl_memory` `sam-sheet-97-second-reader-grok-2026-10-19`; https://claude.ai/artifact/1eWaN6UmVnKaJhGYTqQtfN):** a second reader, xAI's Grok, over the records that fail a machine check: the same text read by a second model, both readings scored by the scorer, agreement evidence and disagreement a known issue carrying both; first the 93 failing records at Cañada, Taft and San Joaquin Delta; public catalog text only. **Built (S421, #2246):** the function's version 11 takes `provider` (`anthropic` or `xai`; the same prompt, message and schema), `kb/_second_reader.py` reads a college's failing records from the page the first reading came from and scores both readings (`agree` · `second_passes` · `both_fail_same_checks` · `disagree`), and `second-reader.yml` runs it and uploads the comparison; nothing is written. **Waits on** two secrets only Sam sets on the Edge Function (`XAI_API_KEY`, `XAI_MODEL`; Sam's call 6, sheet 23: no model key in GitHub) and one deploy (`cpl-chat-deploy.yml`, `program-requirements-extract`; live is v10 of 2026-10-15). Then dispatch `second-reader.yml` with `college=Cañada College`. **Jev's sittings (S420-S421):** lessons, *Moved from the lane (S447 compaction)*.
+
+**S424 (#2256, #2258; Taft's renumbered BUSN 550/555; the four wrong-page rows; a Jev sitting asks only about the gating checks):** lessons S424. **A renumbered course (Merced, S423, #2253):** a college's `course_renumbers` (`kb/program_requirements_reconcile.json`) maps a catalog code to the state file's where both print the same title and units, each pair cited; the capture looks for the listed course by its printed code and the scorer reads it as the listed one, never where the file lists the printed code. Fable's advice: lessons S423. **NEXT:** Merced's last nine (each the college's to settle in COCI; the list is in lessons S423); Taft 30284 is on its own page in build e0407fdcb54b (its two footnote courses without units are a second-reader row); ✅ Sheet 98 card 1: Sam deleted Taft 38661 on 2026-10-21 (lessons S440). Card 2 *later*: **the second reader waits on the xAI API billing moving to the RCCD district card** (Sam, 2026-10-20), so the model rows wait (steps: lessons S424; `cpl_memory` `sam-sheet-98-rulings-2026-10-19`); Orange Coast 10278 passes (read live 2026-10-21).
+
 ## S447 SkyBrittlebush (2026-10-22): an Administration of Justice address, a hyphenated code, Mt. San Jacinto and Santa Barbara City
 
 - **Read the sitemap before calling a program's page missing.** Both colleges' sitemaps (page read 39770285975)
