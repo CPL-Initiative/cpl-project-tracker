@@ -1,10 +1,10 @@
 {
-  "scraped_at": "2026-10-23T14:17:44.897Z",
+  "scraped_at": "2026-10-23T17:17:34.833Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
   "active_college_count": 104,
-  "star_college_count": 63,
+  "star_college_count": 64,
   "tiers": {
     "criteria": [
       "Students >= 500",
@@ -461,15 +461,15 @@
           "students": 604,
           "units": 2176.7,
           "avgUnits": 3.603807947019867,
-          "transcriptionRate": 13.8,
-          "avgTranscribed": 0.49817880794701985,
+          "transcriptionRate": 16.1,
+          "avgTranscribed": 0.5798013245033112,
           "criteriaMetCount": 1,
           "militaryStudents": 389,
           "nonMilitaryStudents": 215,
           "apprenticeStudents": 10,
           "savings": 3327131,
           "yearImpact": 12520304.600000001,
-          "transcribedUnits": 300.9
+          "transcribedUnits": 350.2
         },
         {
           "college": "Fullerton College",
@@ -848,17 +848,17 @@
         },
         {
           "college": "Porterville College",
-          "students": 31,
-          "units": 155,
+          "students": 45,
+          "units": 225,
           "avgUnits": 5,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 31,
+          "militaryStudents": 45,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 259500,
-          "yearImpact": 910050,
+          "savings": 380600,
+          "yearImpact": 1334740,
           "transcribedUnits": 0
         },
         {
@@ -1602,6 +1602,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Grossmont College",
+          "students": 2,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 2,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Contra Costa College",
           "students": 2,
           "units": 0,
@@ -1611,21 +1626,6 @@
           "criteriaMetCount": 0,
           "militaryStudents": 1,
           "nonMilitaryStudents": 1,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Grossmont College",
-          "students": 1,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 1,
-          "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 0,
           "yearImpact": 0,
@@ -1707,36 +1707,6 @@
           "transcribedUnits": 0
         },
         {
-          "college": "Lake Tahoe Community College",
-          "students": 0,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 0,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Los Angeles Southwest College",
-          "students": 0,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 0,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
-          "transcribedUnits": 0
-        },
-        {
           "college": "Cosumnes River College",
           "students": 0,
           "units": 0,
@@ -1765,6 +1735,36 @@
           "savings": 0,
           "yearImpact": 0,
           "transcribedUnits": 0
+        },
+        {
+          "college": "Lake Tahoe Community College",
+          "students": 0,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 0,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
+          "college": "Los Angeles Southwest College",
+          "students": 0,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 0,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
         }
       ]
     }
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "57,552",
+      "value": "57,567",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "29,272"
+          "value": "29,287"
         },
         {
           "label": "Workforce/Other",
@@ -1850,7 +1850,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$784M"
+          "value": "$785M"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 57552,
-    "Units": 276735.9,
-    "TranscribedUnits": 84292.34999999999,
-    "Savings": 391742227.75,
-    "YearImpact": 1591859226.3999999,
-    "MilitaryStudents": 29272,
+    "Students": 57567,
+    "Units": 276805.9,
+    "TranscribedUnits": 84341.65,
+    "Savings": 391863327.75,
+    "YearImpact": 1592283916.3999999,
+    "MilitaryStudents": 29287,
     "NonMilitaryStudents": 28375,
     "AprenticeStudents": 953,
-    "AverageUnits": 4.808449749791493,
-    "TranscribedAverage": 1.464629378648874
+    "AverageUnits": 4.808412805947852,
+    "TranscribedAverage": 1.4651041395243802
   }
 }

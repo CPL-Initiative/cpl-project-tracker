@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-10-23T14:17:45.203723+00:00",
+  "scraped_at": "2026-10-23T17:17:35.675303+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29272,
-    "star_colleges": 63
+    "jst": 29287,
+    "star_colleges": 64
   },
-  "computed_star_colleges": 63,
+  "computed_star_colleges": 64,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
@@ -375,6 +375,11 @@
       "jst": 141,
       "star": false
     },
+    "Porterville College": {
+      "vets": 52,
+      "jst": 45,
+      "star": true
+    },
     "Hartnell College": {
       "vets": 106,
       "jst": 63,
@@ -388,11 +393,6 @@
     "College of the Redwoods": {
       "vets": 98,
       "jst": 54,
-      "star": false
-    },
-    "Porterville College": {
-      "vets": 52,
-      "jst": 31,
       "star": false
     },
     "Crafton Hills College": {
@@ -535,13 +535,13 @@
       "jst": 1,
       "star": false
     },
-    "Contra Costa College": {
-      "vets": 60,
-      "jst": 1,
-      "star": false
-    },
     "Grossmont College": {
       "vets": 415,
+      "jst": 2,
+      "star": false
+    },
+    "Contra Costa College": {
+      "vets": 60,
       "jst": 1,
       "star": false
     },
@@ -570,16 +570,6 @@
       "jst": 0,
       "star": false
     },
-    "Lake Tahoe Community College": {
-      "vets": 92,
-      "jst": 0,
-      "star": false
-    },
-    "Los Angeles Southwest College": {
-      "vets": 67,
-      "jst": 0,
-      "star": false
-    },
     "Cosumnes River College": {
       "vets": 115,
       "jst": 0,
@@ -587,6 +577,16 @@
     },
     "Folsom Lake College": {
       "vets": 65,
+      "jst": 0,
+      "star": false
+    },
+    "Lake Tahoe Community College": {
+      "vets": 92,
+      "jst": 0,
+      "star": false
+    },
+    "Los Angeles Southwest College": {
+      "vets": 67,
       "jst": 0,
       "star": false
     }
