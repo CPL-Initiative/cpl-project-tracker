@@ -2,10 +2,10 @@
  "college": "College of San Mateo",
  "programs": 98,
  "with_closed_list": 64,
- "found": 60,
- "extracted": 60,
+ "found": 61,
+ "extracted": 61,
  "errors": 0,
- "passed_machine_checks": 51,
+ "passed_machine_checks": 52,
  "failed": {
   "coverage": 5,
   "invented": 0,
@@ -13,8 +13,8 @@
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 4.98,
- "cost_per_program": 0.083,
+ "cost_usd": 5.05,
+ "cost_per_program": 0.0828,
  "not_found": [
   {
    "control_number": "10926",
@@ -95,5 +95,5 @@
    }
   }
  ],
- "run": "39025870196"
+ "run": "39914644770"
 }
