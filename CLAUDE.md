@@ -749,7 +749,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 115](https://claude.ai/artifact/QTC1MKB7AbWBMQtL9iPba9), 2026-10-22, three cards open: the 25 older-build program records; Scenario 4’s two noncredit-gate calls, proceeded on the recommendation, reply to reverse). Answering
+> (latest: [Open Asks Sheet 116](https://claude.ai/artifact/4oL4YfC4b43iVjUq1bSS8J), 2026-10-23, four cards open: the older-build program records; Scenario 4’s two noncredit-gate calls and Hartnell’s Local GE at 23, proceeded on the recommendation, reply to reverse). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

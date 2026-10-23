@@ -1629,6 +1629,28 @@ deg = S.degree_check(new["program"], (60.0, 60.0), 24.0, 24.0, [], TAFT_ECE, "A.
 check([n["field"] for n in notes] == ["ge_units"] and new["program"]["ge_units"] == {"min": 34, "max": 34}
       and "catalog.mpc.edu" in notes[0]["words"] and deg["pass"] and deg["fill"] == [2.0, 2.0],
       "Taft ECE AS-T reconciled: Cal-GETC 34, electives make up 2: %s" % json.dumps(deg))
+# Hartnell (S454): a Coursedog Requirements tab names its GE pattern as a requirement set and prints no units for
+# it (college-page-read 39930495321). A transfer degree takes the statewide Cal-GETC 34; a local degree's Local GE
+# is no Cal-GETC page.
+HART_PHY = ("Required Core\nComplete ALL of the following Courses:\nPHY4A: Physics for Scientists I\nGeneral Education\n"
+            "Complete ALL of the following Requirement Sets:\nCal-GETC\nStudents can double-count required courses and "
+            "courses for General Education.\nElectives (Courses Numbered 1-99) required when degree units plus GE units "
+            "total fewer than 60.\nTotal Required Credits\n60")
+hart = {"program": {"total_units": {"min": None, "max": None}, "degree_total": {"min": 60, "max": 60}, "ge_pattern": "Cal-GETC",
+                    "ge_units": {"min": None, "max": None}, "electives_fill_degree": True}, "blocks": []}
+new, notes = RC.reconcile(hart, HART_PHY, "Hartnell College", "A.S. T Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 24.0, 24.0, [], HART_PHY, "A.S. T Degree")
+check([n["field"] for n in notes] == ["ge_units"] and new["program"]["ge_units"] == {"min": 34, "max": 34}
+      and deg["pass"] and deg["fill"] == [2.0, 2.0],
+      "Hartnell Physics AS-T reconciled: Cal-GETC 34, electives make up 2: %s" % json.dumps(deg))
+hart_tac = dict(hart, program=dict(hart["program"], ge_pattern="Local GE"))
+new, notes = RC.reconcile(hart_tac, HART_PHY.replace("Cal-GETC", "Local GE"), "Hartnell College", "A.A. Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 30.0, 30.0, [], HART_PHY, "A.A. Degree")
+check(new["program"]["ge_units"] == {"min": 23, "max": 23} and "#page=58" in notes[0]["words"] and deg["pass"]
+      and deg["fill"] == [7.0, 7.0],
+      "Hartnell Theater Arts A.A. reconciled: Local GE 23 (its seven areas), electives make up 7: %s" % json.dumps(deg))
+check(RC.reconcile(hart, HART_PHY, "Hartnell College", "A.A. Degree")[0]["program"]["ge_units"]
+      == {"min": None, "max": None}, "Hartnell: a local degree never takes Cal-GETC's 34")
 # San Joaquin Delta (S415): every degree page prints "Minimum Major Units Required: N", two GE patterns (27 and
 # Cal-GETC 34), advises double-counting, then "Minimum Degree Units Required: 60" (college-page-read 39122473643).
 SJD_DRAFT = ("Major Requirements - Restricted Electives \u00b7 Complete 3 units selected from: \u00b7 E TECH 80 Applied "

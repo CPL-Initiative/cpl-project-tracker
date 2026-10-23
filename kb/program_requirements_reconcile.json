@@ -443,6 +443,35 @@
      "units": 3
     }
    ]
+  },
+  "Hartnell College": {
+   "why": "S454 SkyBlazingStar, 2026-10-23. Of Hartnell's 96 records from its Coursedog site (extraction 39895340003, S451), 41 degrees fail arithmetic only because the record names the degree total and its general education pattern without units: 28 transfer degrees name Cal-GETC, 13 local degrees Local GE. Each Requirements tab prints \"General Education\", \"Complete ALL of the following Requirement Sets:\" and the pattern's name, and no units (college-page-read 39930495321, Administration of Justice AS-T). The 2026-2027 catalog PDF (read 39930823888, page 58) lists Cal-GETC's areas without a unit figure, so the step sets the statewide 34 as Taft's does, cited from Monterey Peninsula's GE page (read 38759288106). The tab's own scripts fetch the Cal-GETC requisite set from app.coursedog.com with each area's credits (1A, 1B, 1C 3 each; read 39930495321). Local GE: the catalog PDF (read 39931207783, pages 58-59) prints Hartnell College Local General Education area by area, \"Area 1: English Communication · 6 units required\", then Areas 2 to 6 \"3 units required\" each and \"Area 7: Lifelong Learning & Self-Development · 2 units required\", and no total. The step sets their sum, 23, a sum of the page's own figures as Monterey Peninsula's 24 is; S454 proceeded on it and put it on the standing sheet.",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "awards": "transfer",
+     "pattern": "Complete ALL of the following Requirement Sets?:\\s*(?:\\u2022\\s*)?Cal-GETC",
+     "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+     "source_words": "Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 23,
+      "max": 23
+     },
+     "awards": "associate",
+     "pattern": "Complete ALL of the following Requirement Sets?:\\s*(?:\\u2022\\s*)?Local GE",
+     "source": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58",
+     "source_words": "Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required"
+    }
+   ]
   }
  }
 }

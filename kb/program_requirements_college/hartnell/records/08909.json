@@ -65,20 +65,25 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    27.0,
-    27.0
+    50.0,
+    50.0
    ],
    "stated": [
     60.0,
     60.0
    ],
    "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Local GE pattern, but no units for it"
+   "ge": [
+    23.0,
+    23.0
+   ],
+   "why": [],
+   "fill": [
+    10.0,
+    10.0
    ]
   },
   "repeated": {
@@ -103,7 +108,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -124,8 +129,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 23,
+    "max": 23
    },
    "electives_fill_degree": true,
    "outcomes": [],
@@ -273,5 +278,20 @@
    "No program learning outcomes or careers appear in the text."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39931703521,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 23,
+    "max": 23
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
+  }
+ ],
+ "read_run": "39895340003"
 }

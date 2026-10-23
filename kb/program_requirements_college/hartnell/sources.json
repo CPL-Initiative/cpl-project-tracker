@@ -1456,8 +1456,8 @@
    "ADJ5"
   ],
   "source": {
-   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ADJ/requirements-ipyf8",
-   "title": "AS.ADJ Program | Hartnell College Catalog",
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.ADJ/requirements-ipyf8",
+   "title": "CT.ADJ Program | Hartnell College Catalog",
    "h1": "Hartnell College",
    "text_from": "innerText",
    "label": {
@@ -1469,7 +1469,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3259
+  "text_chars": 1592
  },
  {
   "control_number": "24159",

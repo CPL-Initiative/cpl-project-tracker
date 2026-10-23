@@ -2,10 +2,10 @@
  "college": "Sierra College",
  "programs": 190,
  "with_closed_list": 125,
- "found": 92,
- "extracted": 92,
+ "found": 105,
+ "extracted": 105,
  "errors": 0,
- "passed_machine_checks": 66,
+ "passed_machine_checks": 79,
  "failed": {
   "coverage": 11,
   "invented": 2,
@@ -13,41 +13,9 @@
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 8.48,
- "cost_per_program": 0.0921,
+ "cost_usd": 9.74,
+ "cost_per_program": 0.0928,
  "not_found": [
-  {
-   "control_number": "04305",
-   "title": "Administration of Justice - Law Enforcement",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "07986",
-   "title": "Administration of Justice - Courts",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "10801",
-   "title": "Administration of Justice - Courts",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "10803",
-   "title": "Administration of Justice - Law Enforcement",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
   {
    "control_number": "14578",
    "title": "Watershed Ecology",
@@ -65,14 +33,6 @@
    }
   },
   {
-   "control_number": "32011",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "37688",
    "title": "Taxation",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -81,5 +41,5 @@
    }
   }
  ],
- "run": "39726642315"
+ "run": "39933862802"
 }
