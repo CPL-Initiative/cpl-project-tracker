@@ -56464,5 +56464,145 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
     "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "ADM JUS 005 - Criminal Investigation": {
+    "unified_title": "Criminal Investigation",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "AJ 140"
+    }
+  },
+  "ADM JUS 097 -  Career Exploration in Criminal Justice": {
+    "unified_title": "Career Exploration in Criminal Justice",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "ADM JUS 104 - Introduction to Forensic Science": {
+    "unified_title": "Introduction to Forensic Science",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "ADM JUS 174 -  Offender Profiling in Criminal Investigations": {
+    "unified_title": "Offender Profiling in Criminal Investigations",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "ADM JUS 305 - Criminal Intelligence and Data Analysis": {
+    "unified_title": "Criminal Intelligence and Data Analysis",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "ADM JUS 383 - Applications in Crime Analysis": {
+    "unified_title": "Applications in Crime Analysis",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Automotive Service Excellence (ASE) A1": {
+    "unified_title": "ASE A1 — Engine Repair",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Automotive Service Excellence (ASE) A2": {
+    "unified_title": "ASE A2 — Automatic Transmission/Transaxle",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Automotive Service Excellence (ASE) A6": {
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Automotive Service Excellence (ASE) A8": {
+    "unified_title": "ASE A8 — Engine Performance",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "ENGL C1000 - Academic Reading and Writing - Credit by Exam": {
+    "unified_title": "Academic Reading and Writing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "ENV 101 - Foundations of Design I": {
+    "unified_title": "Foundations of Design I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "HLTH 101 - First Aid - Credit by Exam": {
+    "unified_title": "First Aid",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "HLTH 102 - Standard First Aid and CPR - Credit by Exam": {
+    "unified_title": "First Aid, CPR and AED",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "KIN 101"
+    }
+  },
+  "HLTH 104 - Personal Health and Wellness - Credit by Exam": {
+    "unified_title": "Personal Health and Wellness",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "PH 100"
+    }
+  },
+  "HLTH 106 - Women's Health Education - Credit by Exam": {
+    "unified_title": "Women's Health Education",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
   }
 }

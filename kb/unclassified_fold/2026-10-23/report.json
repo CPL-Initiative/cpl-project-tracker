@@ -1,12 +1,125 @@
 {
-  "_generated_at": "2026-10-23T11:45:57Z",
+  "_generated_at": "2026-10-23T14:17:56Z",
   "mode": "apply",
   "gates": {
     "V2_target_credential": true,
     "V3_additive_plus_declared": true
   },
   "apply_safe": true,
-  "clean": [],
+  "clean": [
+    {
+      "raw": "ADM JUS 005 - Criminal Investigation",
+      "assigned": "Criminal Investigation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 097 -  Career Exploration in Criminal Justice",
+      "assigned": "Career Exploration in Criminal Justice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 104 - Introduction to Forensic Science",
+      "assigned": "Introduction to Forensic Science",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 174 -  Offender Profiling in Criminal Investigations",
+      "assigned": "Offender Profiling in Criminal Investigations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 305 - Criminal Intelligence and Data Analysis",
+      "assigned": "Criminal Intelligence and Data Analysis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 383 - Applications in Crime Analysis",
+      "assigned": "Applications in Crime Analysis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "Automotive Service Excellence (ASE) A1",
+      "assigned": "ASE A1 — Engine Repair",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "Automotive Service Excellence (ASE) A2",
+      "assigned": "ASE A2 — Automatic Transmission/Transaxle",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "Automotive Service Excellence (ASE) A6",
+      "assigned": "ASE A6 — Electrical/Electronic Systems",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "Automotive Service Excellence (ASE) A8",
+      "assigned": "ASE A8 — Engine Performance",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ENGL C1000 - Academic Reading and Writing - Credit by Exam",
+      "assigned": "Academic Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ENV 101 - Foundations of Design I",
+      "assigned": "Foundations of Design I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 101 - First Aid - Credit by Exam",
+      "assigned": "First Aid",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 102 - Standard First Aid and CPR - Credit by Exam",
+      "assigned": "First Aid, CPR and AED",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 104 - Personal Health and Wellness - Credit by Exam",
+      "assigned": "Personal Health and Wellness",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 106 - Women's Health Education - Credit by Exam",
+      "assigned": "Women's Health Education",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    }
+  ],
   "skip": [
     {
       "raw": "A S T 025 - Fundamentals of Auto Mechanics",
@@ -14064,7 +14177,57 @@
       "why": "human-reviewed classification stands: 'PLNT SC 827 - Sustainable Gardening for Landscapes' -> 'Sustainable Gardening for Landscapes (Horticulture)'"
     }
   ],
-  "credential_adds": [],
+  "credential_adds": [
+    {
+      "raw": "ADM JUS 097 -  Career Exploration in Criminal Justice",
+      "assigned": "Career Exploration in Criminal Justice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 174 -  Offender Profiling in Criminal Investigations",
+      "assigned": "Offender Profiling in Criminal Investigations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 305 - Criminal Intelligence and Data Analysis",
+      "assigned": "Criminal Intelligence and Data Analysis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "ADM JUS 383 - Applications in Crime Analysis",
+      "assigned": "Applications in Crime Analysis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 101 - First Aid - Credit by Exam",
+      "assigned": "First Aid",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 102 - Standard First Aid and CPR - Credit by Exam",
+      "assigned": "First Aid, CPR and AED",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    },
+    {
+      "raw": "HLTH 106 - Women's Health Education - Credit by Exam",
+      "assigned": "Women's Health Education",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00"
+    }
+  ],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [],
   "credential_prunes": [],

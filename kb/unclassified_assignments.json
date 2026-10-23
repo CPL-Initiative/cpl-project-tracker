@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-10-22T14:34:32Z",
-  "count": 1720,
+  "_synced_at": "2026-10-23T14:17:55Z",
+  "count": 1736,
   "assignments": {
     "A S T 025 - Fundamentals of Auto Mechanics": {
       "unified_title": "Fundamentals of Auto Mechanics",
@@ -68,6 +68,12 @@
       "reviewed_at": "2026-07-07T15:55:46.862459+00:00",
       "unified_title": "Legal Aspects of Evidence"
     },
+    "ADM JUS 005 - Criminal Investigation": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "Criminal Investigation"
+    },
     "ADM JUS 008 - Juvenile Procedures": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
@@ -85,11 +91,41 @@
       "reviewed_at": "2026-07-07T15:55:47.737539+00:00",
       "unified_title": "Introduction to Corrections"
     },
+    "ADM JUS 097 -  Career Exploration in Criminal Justice": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "Career Exploration in Criminal Justice"
+    },
+    "ADM JUS 104 - Introduction to Forensic Science": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "Introduction to Forensic Science"
+    },
+    "ADM JUS 174 -  Offender Profiling in Criminal Investigations": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "Offender Profiling in Criminal Investigations"
+    },
+    "ADM JUS 305 - Criminal Intelligence and Data Analysis": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "Criminal Intelligence and Data Analysis"
+    },
     "ADM JUS 319 - Research Methods & Statistics in Criminal Justice": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T15:55:48.600531+00:00",
       "unified_title": "Research Methods & Statistics in Criminal Justice"
+    },
+    "ADM JUS 383 - Applications in Crime Analysis": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "Applications in Crime Analysis"
     },
     "AERO 040 - Instrument Ground School - Training Log": {
       "unified_title": "FAA Instrument Ground School",
@@ -2990,6 +3026,18 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Automotive Repair Fraud"
     },
+    "Automotive Service Excellence (ASE) A1": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "ASE A1 — Engine Repair"
+    },
+    "Automotive Service Excellence (ASE) A2": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "ASE A2 — Automatic Transmission/Transaxle"
+    },
     "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering": {
       "unified_title": "ASE A4 — Suspension and Steering",
       "reviewed_by": "map@rccd.edu",
@@ -2999,6 +3047,18 @@
       "unified_title": "ASE A5 — Brakes",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "Automotive Service Excellence (ASE) A6": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "ASE A6 — Electrical/Electronic Systems"
+    },
+    "Automotive Service Excellence (ASE) A8": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "ASE A8 — Engine Performance"
     },
     "Automotive Service Excellence (ASE) L3: Light Duty Hybrid/Electric Vehicle Specialist Certiication": {
       "unified_title": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
@@ -6374,6 +6434,18 @@
       "reviewed_at": "2026-07-07T20:44:39.696096+00:00",
       "unified_title": "Emergency Medical Responder"
     },
+    "ENGL C1000 - Academic Reading and Writing - Credit by Exam": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "Academic Reading and Writing"
+    },
+    "ENV 101 - Foundations of Design I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "Foundations of Design I"
+    },
     "ENV 102 - Foundations of Design II": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
@@ -7128,6 +7200,30 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-09T23:38:18.385505+00:00",
       "unified_title": "Medical Terminology"
+    },
+    "HLTH 101 - First Aid - Credit by Exam": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "First Aid"
+    },
+    "HLTH 102 - Standard First Aid and CPR - Credit by Exam": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "First Aid, CPR and AED"
+    },
+    "HLTH 104 - Personal Health and Wellness - Credit by Exam": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "Personal Health and Wellness"
+    },
+    "HLTH 106 - Women's Health Education - Credit by Exam": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
+      "unified_title": "Women's Health Education"
     },
     "HLTH 3: Personal Training": {
       "issuing_agency": "California Community Colleges",
