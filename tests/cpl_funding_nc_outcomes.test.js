@@ -225,7 +225,7 @@ const cards = doc.querySelectorAll("[data-nccard]");
 const section = doc.querySelector(".cplfund-ncout");
 check("D10: the outcome cards stand in their own section under the priority cards, two of them, with the rule and the conditions in words",
   cards.length === 2 && !!section && /Noncredit outcomes/.test(flat(section)) &&
-  /waits on its own minimum conditions: the institution's confirmation, a noncredit CPL coordinator named and published and a strike-team attestation renewed each year/.test(flat(section)) &&
+  /waits on its own minimum conditions: the institution's confirmation, a noncredit CPL coordinator assigned, published and on the college CPL Strike Team, which meets regularly to support CPL procedures and students and a strike-team attestation renewed each year/.test(flat(section)) &&
   /Reported, not funded: Former noncredit students awarded CPL credit/.test(flat(section)));
 check("D11: NC-1's card names its target as the institutions' sum and its share of the noncredit share; NC-2 counts courses",
   /NC-1/.test(flat(cards[0])) && /28 exhibits/.test(flat(cards[0])) && /50% of each institution's noncredit share/.test(flat(cards[0])) &&
@@ -236,6 +236,8 @@ const head = csv.split("\n")[1] || "";
 const line = csv.split("\n").find((l) => /^\d+,Mt San Antonio,/.test(l)) || "";
 check("D13: the CSV carries a target and an actual per outcome, in the outcome's unit, after the credit priorities' columns",
   /NC-1 target \(exhibits\),NC-1 actual,NC-2 target \(courses\),NC-2 actual/.test(head) && /,10,5,1,0,/.test(line));
+check("D13b: the Noncredit Funding Rules fold is gone under the outcomes lane; the cards carry the rules (Sam, 2026-10-23)",
+  !doc.querySelector(".cplfund-ncrules") && /releases on the noncredit outcomes/.test(flat(section)));
 check("D14: no origination sentence anywhere on the tab under the outcomes lane",
   !/originat/i.test(doc.body.textContent));
 
@@ -315,12 +317,12 @@ check("F2: the committed Scenario 3 is origination: twins pinned to the nc_* uni
     /Progress: MAP records demonstrate/.test(flat(blocks[0])) && /Target: 1[0-9][0-9] courses statewide/.test(flat(blocks[1])));
   check("G4: the noncredit passage follows the mode — the outcomes rule and the conditions, no origination sentence, the reported line in its list",
     /releases on the noncredit outcomes/.test(flat(doc2.getElementById("nc-body"))) &&
-    /waits on its own minimum conditions: the institution's confirmation, a noncredit CPL coordinator named and published and a strike-team attestation renewed each year/.test(flat(doc2.getElementById("nc-body"))) &&
+    /waits on its own minimum conditions: the institution's confirmation, a noncredit CPL coordinator assigned, published and on the college CPL Strike Team, which meets regularly to support CPL procedures and students and a strike-team attestation renewed each year/.test(flat(doc2.getElementById("nc-body"))) &&
     !/originat/i.test(flat(doc2.getElementById("nc-body"))) && !/originat/i.test(flat(doc2.getElementById("nc-list"))) &&
     /Reported, not funded — Former noncredit students awarded CPL credit/.test(flat(doc2.getElementById("nc-list"))));
   const reqs = Array.from(doc2.querySelectorAll("#req-list li")).map(flat);
   check("G5: the minimum conditions list ends with the noncredit share's two, each with its count line once the attestation is read",
-    reqs.length >= 2 && /For the noncredit share of an award: a noncredit CPL coordinator named and published/.test(reqs[reqs.length - 2]) &&
+    reqs.length >= 2 && /For the noncredit share of an award: a noncredit CPL coordinator assigned, published and on the college CPL Strike Team/.test(reqs[reqs.length - 2]) &&
     /For the noncredit share of an award: a strike-team attestation renewed each year/.test(reqs[reqs.length - 1]));
   T2._setElig({ coordOk: true, coord: {}, optin: {}, ncAttest: { "Mt San Antonio": { status: "self_attested", coordinator_name: "Jane Doe" } } });
   paint();
