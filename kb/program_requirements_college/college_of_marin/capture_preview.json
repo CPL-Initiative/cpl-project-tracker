@@ -1,0 +1,117 @@
+{
+ "college": "College of Marin",
+ "catalog_url": "https://marin.elumenapp.com/catalog/current/home",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 155,
+ "with_closed_list": 94,
+ "started": "2026-10-23T06:32:45Z",
+ "elumen": {
+  "catalog": "current",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [
+   "https://api-prod.elumenapp.com/catalog/sites/publish/current,program,a-a-in-art-fall-2025-credit-noncredit?tenant=marin.elumenapp.com&api=https://api-prod.elumenapp.com:443: HTTP 404",
+   "https://api-prod.elumenapp.com/catalog/sites/publish/current,program,as-t-business-administration-fall-2020-credit-noncredit?tenant=marin.elumenapp.com&api=https://api-prod.elumenapp.com:443: HTTP 404",
+   "https://api-prod.elumenapp.com/catalog/sites/publish/current,program,aa-t-communication-studies-2-0-fall-2025-credit-noncredit?tenant=marin.elumenapp.com&api=https://api-prod.elumenapp.com:443: HTTP 404",
+   "https://api-prod.elumenapp.com/catalog/sites/publish/current,program,a-s-in-dental-assisting-registered-spring-2020-credit-noncredit?tenant=marin.elumenapp.com&api=https://api-prod.elumenapp.com:443: HTTP 404",
+   "https://api-prod.elumenapp.com/catalog/sites/publish/current,program,certificate-of-achievement-in-dental-assisting-registered-spring-2020-credit-noncredit?tenant=marin.elumenapp.com&api=https://api-prod.elumenapp.com:443: HTTP 404",
+   "https://api-prod.elumenapp.com/catalog/sites/publish/current,program,a-s-in-geology-fall-2023-credit-noncredit?tenant=marin.elumenapp.com&api=https://api-prod.elumenapp.com:443: HTTP 404",
+   "https://api-prod.elumenapp.com/catalog/sites/publish/current,program,aa-t-psychology-fall-2025-credit-noncredit?tenant=marin.elumenapp.com&api=https://api-prod.elumenapp.com:443: HTTP 404"
+  ],
+  "menu_departments": 0,
+  "department_programs": 0,
+  "menu_hubs": [
+   "associates-degrees",
+   "transfer-degrees",
+   "interdisciplinary-degrees",
+   "physical-science-degree"
+  ],
+  "hub_programs": 1,
+  "walk_pages": 250,
+  "walk_menus": 86,
+  "walk_programs": 142,
+  "walk_stopped_at_cap": true,
+  "program_pages": 143
+ },
+ "pages_read": 143,
+ "banner_h1": null,
+ "loads": 398,
+ "seconds": 1650.0,
+ "found": 89,
+ "by_method": {
+  "no_closed_list": 61,
+  "not_found": 3,
+  "page_claimed": 2,
+  "sitemap_page": 89
+ },
+ "shared_pages": {
+  "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-multimedia-studies-graphic-design-fall-2020-credit-noncredit": [
+   "21945",
+   "40777"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "44296",
+   "title": "CSU GE Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44299",
+   "title": "IGETC General Education for UC and CSU",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45592",
+   "title": "Cal-GETC for CSU and UC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "07645",
+   "title": "Court Reporting",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://marin.elumenapp.com/catalog/current/program/a-s-in-court-reporting-spring-2023-credit-noncredit",
+    "https://marin.elumenapp.com/catalog/current/program/stackable-coa-2-certificate-of-achievement-in-court-reporting-scopist-fall-2022-credit-noncredit",
+    "https://marin.elumenapp.com/catalog/current/program/stackable-coa-3-certificate-of-achievement-in-court-reporting-communication-access-realtime-translation-c-a-r-t-fall-2022-credit-noncredit",
+    "https://marin.elumenapp.com/catalog/current/program/stackable-coa-4-certificate-of-achievement-in-court-reporting-csr-ready-fall-2022-credit-noncredit",
+    "https://marin.elumenapp.com/catalog/current/program/stackable-coa-1-certificate-of-achievement-in-court-reporting-proofreading-fall-2022-credit-noncredit"
+   ]
+  },
+  {
+   "control_number": "46346",
+   "title": "Mathematics 2.0",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://marin.elumenapp.com/catalog/current/program/as-t-in-mathematics-fall-2025-credit-noncredit",
+    "https://marin.elumenapp.com/catalog/current/program/a-s-in-computer-science-fall-2024-credit-noncredit",
+    "https://marin.elumenapp.com/catalog/current/program/a-a-in-liberal-arts-natural-science-emphasis-fall-2026-credit-noncredit",
+    "https://marin.elumenapp.com/catalog/current/program/aa-t-economics-fall-2026-credit-noncredit"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 3,
+  "0.8-1.0": 18,
+  "1.0": 68
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/college_of_marin",
+  "kept": 89,
+  "programs": 0,
+  "list": []
+ },
+ "run": "39911883069"
+}
