@@ -35,7 +35,7 @@ create table if not exists public.cpl_library (
   id            uuid primary key default gen_random_uuid(),
   slug          text        not null unique,
   title         text        not null,
-  kind          text        not null,             -- deck | film | document | spreadsheet
+  kind          text        not null,             -- deck | film | document | spreadsheet | visual
   occasion      text,                             -- groups the list: "Vision 2030 Noncredit Summit"
   made_on       date,
   version       text,                             -- "v1", "3", "4 cuts"
@@ -63,7 +63,7 @@ create table if not exists public.cpl_library (
   retired_at    timestamptz,
   constraint cpl_library_slug_ck     check (slug ~ '^[a-z0-9][a-z0-9-]{1,80}$'),
   constraint cpl_library_title_ck    check (char_length(title) between 1 and 300),
-  constraint cpl_library_kind_ck     check (kind in ('deck', 'film', 'document', 'spreadsheet')),
+  constraint cpl_library_kind_ck     check (kind in ('deck', 'film', 'document', 'spreadsheet', 'visual')),
   constraint cpl_library_status_ck   check (status is null or status in ('requested', 'draft', 'approved', 'presented')),
   constraint cpl_library_seen_ck     check (seen_by is null or seen_by in ('team', 'colleges', 'public')),
   constraint cpl_library_home_ck     check (home in ('drive', 'public_repo', 'vault', 'web', 'not_filed')),
@@ -168,7 +168,7 @@ revoke truncate, references, trigger on public.cpl_library_history from anon, au
 alter table public.cpl_library add column if not exists brief jsonb;
 alter table public.cpl_library drop constraint if exists cpl_library_kind_ck;
 alter table public.cpl_library add constraint cpl_library_kind_ck
-  check (kind in ('deck', 'film', 'document', 'spreadsheet'));
+  check (kind in ('deck', 'film', 'document', 'spreadsheet', 'visual'));
 alter table public.cpl_library drop constraint if exists cpl_library_status_ck;
 alter table public.cpl_library add constraint cpl_library_status_ck
   check (status is null or status in ('requested', 'draft', 'approved', 'presented'));
@@ -180,3 +180,41 @@ alter table public.cpl_library add constraint cpl_library_brief_ck
 -- cpl_library_register_policies, cpl_library_register_triggers,
 -- cpl_library_register_revoke_truncate and cpl_library_register_explicit_grants;
 -- the Start a piece block on 2026-10-06 as cpl_library_start_a_piece.
+
+-- ── Made for an entity (Sam, Open Asks Sheet 120, 2026-10-23, cards 2 to 7) ──
+-- Sam, 2026-10-23 ~19:28Z: "I think we would want to be able to sort on the
+-- libraries for the type (college, agency, vendor, CO) and add the name of the
+-- entity we are making this for and have it filterable by whatever entities we've
+-- created something for." His rulings (~20:02Z, each his own call): the Library
+-- tab makes the visual; five types, "Add an \"Other\" choice with the ability to
+-- type in the new entity category"; the public page shows who a piece is for and
+-- filters by it; a college's record pair in one step; the backfill of today's
+-- records. And on the mock-up (~20:08Z): Kind gains `visual`, a page opened in a
+-- browser (a CPL Opportunity page, the DSP page, a Claude artifact); `document`
+-- stays for Word and PDF.
+--
+-- for_kind      who the piece is made for: college | district | agency | vendor |
+--               co (the Chancellor's Office) | other; null = made for no one entity.
+-- for_category  the typed category, only when for_kind is other ("Foundation").
+-- for_name      the entity's name: a college's from MAP's list (map_colleges), so the
+--               filter matches the CPL Pathways pick; any other typed once.
+-- Both libraries filter on for_kind and for_name; cpl_library_public() returns them
+-- (kb/supabase_cpl_library_public.sql). They name an organization, never a person.
+-- Re-runnable; the columns ride the table-level grants above.
+alter table public.cpl_library
+  add column if not exists for_kind     text,
+  add column if not exists for_category text,
+  add column if not exists for_name     text;
+alter table public.cpl_library drop constraint if exists cpl_library_for_ck;
+alter table public.cpl_library add constraint cpl_library_for_ck check (
+  (for_kind is null or for_kind in ('college', 'district', 'agency', 'vendor', 'co', 'other'))
+  and ((for_kind is not distinct from 'other') = (for_category is not null))
+  and (for_name is null or for_kind is not null)
+  and (for_category is null or (btrim(for_category) <> '' and char_length(for_category) <= 80))
+  and (for_name is null or (btrim(for_name) <> '' and char_length(for_name) <= 200)));
+create index if not exists cpl_library_for_idx
+  on public.cpl_library (for_kind, for_name) where retired_at is null;
+
+-- Applied 2026-10-23 by supabase-migrate.yml as cpl_library_made_for_2026_10_23_s459
+-- (this whole file, re-runnable), then the public read in
+-- kb/supabase_cpl_library_public.sql as cpl_library_public_made_for_2026_10_23_s459.

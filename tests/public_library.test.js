@@ -200,6 +200,49 @@ block("(4)", function () {
   check("(4) Admin's Remove unlists through the function", /data-pubremove/.test(ADMIN) && /p_listed: false/.test(ADMIN));
 });
 
+// ── (5) Who a piece is made for (Sam, Open Asks Sheet 120 card 4, 2026-10-23) ──
+const LISTED_FOR = [
+  Object.assign({}, LISTED[0], { kind: "visual", for_kind: "agency", for_category: null, for_name: "DDS, Aging and LWDA" }),
+  { slug: "cpl-opportunity-bakersfield-visual", title: "Bakersfield College: CPL Opportunity Analysis", kind: "visual", occasion: "CPL college workgroup meeting",
+    made_on: "2026-10-21", summary: "Bakersfield's programs.", topics: [], url: "https://cpl-initiative.github.io/cpl-project-tracker/cpl-opportunity/?college=Bakersfield%20College",
+    for_kind: "college", for_category: null, for_name: "Bakersfield College" },
+  Object.assign({}, LISTED[1], { url: "https://example.org/film", for_kind: null, for_category: null, for_name: null })
+];
+block("(5)", function () {
+  const fn = /create or replace function public\.cpl_library_public\(\)[\s\S]*?\$\$;/.exec(SQL);
+  const body = fn ? fn[0] : "";
+  check("(5) the public read returns who a piece is made for", /for_kind text, for_category text, for_name text\)/.test(body) && /l\.for_kind, l\.for_category, l\.for_name/.test(body));
+  check("(5) the kind check takes visual", /'spreadsheet', 'visual'\)/.test(fs.readFileSync("kb/supabase_cpl_library.sql", "utf8")));
+  const m = loadPage(function () { return response(200, LISTED_FOR); });
+  return settle().then(function () {
+    const cards = m.d.querySelectorAll("#lib-grid .piece");
+    check("(5) a card says who it is for", cards.length === 3 && /For Bakersfield College/.test(cards[1].textContent) && /For DDS, Aging and LWDA/.test(cards[0].textContent));
+    check("(5) a piece made for no one says nothing of it", cards.length === 3 && !/Made for|For /.test(cards[2].querySelector(".meta").textContent));
+    const kinds = Array.prototype.map.call(m.d.querySelectorAll("#lib-kinds button"), function (b) { return b.textContent; });
+    check("(5) Visual is a kind chip, first after All", kinds[0] === "All" && kinds[1] === "Visual", kinds.join(","));
+    const chips = Array.prototype.map.call(m.d.querySelectorAll("#lib-for button"), function (b) { return b.getAttribute("data-madefor"); });
+    check("(5) a Made for chip appears only for a type with a listed piece", chips.join(",") === "all,college,agency", chips.join(","));
+    const ent = m.d.getElementById("lib-ent");
+    check("(5) For lists the names present", Array.prototype.map.call(ent.options, function (o) { return o.value; }).join("|") === "all|Bakersfield College|DDS, Aging and LWDA");
+    check("(5) the For list is labeled and shown", !m.d.getElementById("lib-for-wrap").hidden && !!m.d.querySelector('label[for="lib-ent"]'));
+    click(m.w, m.d.querySelector('#lib-for [data-madefor="college"]'));
+    check("(5) Colleges narrows to the college pieces", m.d.querySelectorAll("#lib-grid .piece").length === 1 && /1 of 3/.test(m.d.getElementById("lib-state").textContent));
+    click(m.w, m.d.querySelector('#lib-for [data-madefor="all"]'));
+    ent.value = "DDS, Aging and LWDA"; ent.dispatchEvent(new m.w.Event("change"));
+    check("(5) picking a name shows that entity's pieces", m.d.querySelectorAll("#lib-grid .piece").length === 1 && /DSP Credit/.test(m.d.getElementById("lib-grid").textContent));
+    ent.value = "all"; ent.dispatchEvent(new m.w.Event("change"));
+    const q = m.d.getElementById("lib-q"); q.value = "aging and lwda"; q.dispatchEvent(new m.w.Event("input"));
+    check("(5) search finds a piece by who it is for", m.d.querySelectorAll("#lib-grid .piece").length === 1);
+  });
+});
+block("(5b)", function () {
+  const m = loadPage(function () { return response(200, LISTED); });
+  return settle().then(function () {
+    check("(5b) with no piece made for anyone, no Made for chips and no For list paint", m.d.querySelectorAll("#lib-for button").length === 0 && m.d.getElementById("lib-for-wrap").hidden === true);
+    check("(5b) the page's search says who it is for", /placeholder="Title, topic or who it is for"/.test(PAGE));
+  });
+});
+
 Promise.all(pending).then(function () {
   let fail = 0;
   results.forEach(function (r) { if (!r[1]) fail++; console.log((r[1] ? "  ok   " : "  FAIL ") + r[0] + (r[1] || !r[2] ? "" : "  — " + r[2])); });

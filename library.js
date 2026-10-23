@@ -37,9 +37,19 @@
 // Public library (Sam, 2026-10-20: "Maybe give me a toggle to copy over from the
 // Private library to the public one... Copy or move...to save space"). A piece is
 // listed, never copied: the same record carries public_listed, and the public page
-// (library/index.html) and Sierra read it through cpl_library_public(). Listing is a
-// reviewer's call: the switch calls cpl_library_set_public() with the reviewer
-// sign-in, and the database refuses the shared phrase (kb/supabase_cpl_library_public.sql).
+// (library/index.html) and Sierra read it through cpl_library_public(). Listing takes
+// the team phrase or a reviewer sign-in (Sam, 2026-10-23): the switch calls
+// cpl_library_set_public(), whose gate is inside it (kb/supabase_cpl_library_public.sql).
+//
+// Made for an entity (Sam, Open Asks Sheet 120, 2026-10-23): a record says who it is
+// made for (for_kind: college, district, agency, vendor, the Chancellor's Office, or a
+// typed Other category; for_name: the entity's name, a college's from MAP's list in
+// map_colleges so the filter matches the CPL Pathways pick). Both libraries filter on
+// them. Make a visual, beside Start a piece, writes a college's record pair in one step
+// (the live CPL Opportunity page and its workbook); for any other entity it opens Start
+// a piece with the entity set, and the brief's paste names the agency template. Kind
+// gained `visual` the same day (Sam, ~20:08Z): a page opened in a browser; `document`
+// stays for Word and PDF.
 //
 // STATIC module, lazy-loaded on first #library open (both HTMLs, Rule 4). It
 // injects its own CSS (the ensureCerScopeCss pattern). Tests: tests/library.test.js
@@ -58,7 +68,16 @@
   // place the whole team can open; drafts go in a Drafts folder inside it.
   var LIBRARY_FOLDER = "https://studentrcc.sharepoint.com/:f:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/AI/CPLLibrary";
 
-  var KIND = { deck: "Deck", film: "Film", document: "Document", spreadsheet: "Spreadsheet" };
+  var KIND = { visual: "Visual", deck: "Deck", film: "Film", document: "Document", spreadsheet: "Spreadsheet" };
+  var FOR_KIND = { college: "College", district: "District", agency: "Agency", vendor: "Vendor", co: "Chancellor's Office", other: "Other" };
+  var FOR_PLURAL = { college: "Colleges", district: "Districts", agency: "Agencies", vendor: "Vendors", co: "Chancellor's Office", other: "Other" };
+  var MAKE_WORDS = { college: "A college", district: "A district", agency: "An agency", vendor: "A vendor", co: "The Chancellor's Office", other: "Other" };
+  var FOR_ORDER = ["college", "district", "agency", "vendor", "co", "other"];
+  // MAP's list of colleges (map_colleges, the college and district identity lane): the
+  // For picker offers these names, so a piece's college matches the CPL Pathways pick.
+  var NAMES_URL = SUPABASE_URL + "/rest/v1/map_colleges?select=college_name,entity_kind,district&entity_kind=in.(college,continuing_education)&order=college_name.asc";
+  var OPPORTUNITY_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/cpl-opportunity/?college=";
+  var DSP_TEMPLATE = "CPLBrain/04-projects/cpl-initiative/dsp-training/20261020_DSP_Credit_Starting_Points.html";
   var STATUS = { requested: "Requested", draft: "Draft", approved: "Approved", presented: "Presented" };
   var STEPS = ["requested", "draft", "approved", "presented"];
   var SEEN = { team: "Team", colleges: "Colleges", "public": "Public" };
@@ -83,7 +102,8 @@
     rows: null, loading: false, error: null,
     q: "", kind: "all", seen: "all", status: "all", flag: null,
     open: {}, edit: null, form: null, formFor: null, message: "", msgErr: false, busy: false,
-    retireAsk: null, start: null, briefShown: {}, pub: null
+    retireAsk: null, start: null, briefShown: {}, pub: null,
+    madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {}
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -158,6 +178,18 @@
   function say(text, isErr) { state.message = text; state.msgErr = !!isErr; }
   function statusWord(r) { return r.status ? STATUS[r.status] || r.status : "Not set"; }
   function seenWord(r) { return r.seen_by ? SEEN[r.seen_by] || r.seen_by : "Not set"; }
+  // Who a piece is made for, in words: the type (or the typed Other category) and the name.
+  function forKindWord(r) { return r.for_kind === "other" ? (r.for_category || "Other") : (FOR_KIND[r.for_kind] || r.for_kind || ""); }
+  function forLine(r) {
+    if (!r || !r.for_kind) return "";
+    return "Made for " + forKindWord(r) + (r.for_name ? " \u00b7 For " + r.for_name : "");
+  }
+  // The slug a college's CPL Opportunity pair carries (cpl-opportunity-<college>-visual
+  // and -workbook, as the first twelve were filed), so a second Make is refused by the
+  // table's unique slug rather than filed twice.
+  function collegeSlug(name) {
+    return String(name || "").toLowerCase().replace(/\s+college$/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "college";
+  }
   function byId(id) {
     var rows = state.rows || [];
     for (var i = 0; i < rows.length; i++) if (rows[i].id === id) return rows[i];
@@ -223,6 +255,8 @@
       R + " .lib-kicker{margin:0;font-size:.76rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-variant-numeric:tabular-nums;}",
       R + " h3.lib-title{margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.15rem;line-height:1.25;color:var(--text-strong);text-wrap:balance;overflow-wrap:anywhere;}",
       R + " .lib-summary{margin:0;font-size:.95rem;}",
+      R + " .lib-for{margin:0;font-size:.92rem;color:var(--text-body);}",
+      R + " .lib-for b{font-weight:600;color:var(--text-strong);}",
       R + " .lib-chips{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px;}",
       R + " .lib-chip{border-radius:10px;font-size:.74rem;font-weight:600;padding:2px 8px;border:1px solid var(--border-strong);color:var(--text-body);background:var(--surface-subtle);}",
       R + " .lib-chip.unset{color:var(--text-muted);border-style:dashed;background:transparent;}",
@@ -284,6 +318,36 @@
     });
   }
 
+  // MAP's college list, read once when the For picker first needs it. A failed read
+  // leaves the picker as a plain field: the name is still typed, only unchecked.
+  function loadNames() {
+    if (state.names || state.namesLoading) return Promise.resolve(state.names || []);
+    state.namesLoading = true;
+    return window.fetch(NAMES_URL, { headers: headers() }).then(function (res) {
+      if (!res.ok) throw new Error("map_colleges answered " + res.status);
+      return res.json();
+    }).then(function (rows) {
+      state.namesLoading = false;
+      state.names = (Array.isArray(rows) ? rows : []).map(function (r) { return { name: r.college_name, district: r.district || "" }; });
+      render();
+      return state.names;
+    }).catch(function () { state.namesLoading = false; state.names = []; render(); return []; });
+  }
+  function collegeNames() { return (state.names || []).map(function (n) { return n.name; }); }
+  function districtNames() {
+    var seen = {}, out = [];
+    (state.names || []).forEach(function (n) { if (n.district && !seen[n.district]) { seen[n.district] = true; out.push(n.district); } });
+    return out.sort();
+  }
+  // The college as MAP spells it: an exact match, else one ignoring case and spacing.
+  function mapCollege(name) {
+    var want = String(name || "").trim(), fold = function (x) { return String(x).toLowerCase().replace(/[^a-z0-9]+/g, ""); };
+    var names = collegeNames();
+    for (var i = 0; i < names.length; i++) if (names[i] === want) return names[i];
+    for (var j = 0; j < names.length; j++) if (fold(names[j]) === fold(want)) return names[j];
+    return null;
+  }
+
   // write(url, { method, body }): each caller names its method beside the table
   // address, which is also how kb/_build_dependency_map.py sees the write edge.
   function write(url, req) {
@@ -312,8 +376,10 @@
     if (state.seen !== "all" && (r.seen_by || "unset") !== state.seen) return false;
     if (state.status !== "all" && (r.status || "unset") !== state.status) return false;
     if (state.flag && flagsOf(r).indexOf(state.flag) < 0) return false;
+    if (state.madeFor !== "all" && (r.for_kind || "unset") !== state.madeFor) return false;
+    if (state.forName !== "all" && (r.for_name || "") !== state.forName) return false;
     if (state.q.trim()) {
-      var hay = [r.title, r.occasion, r.file_name, r.summary, KIND[r.kind], r.made_by, r.version].join(" ").toLowerCase();
+      var hay = [r.title, r.occasion, r.file_name, r.summary, KIND[r.kind], r.made_by, r.version, r.for_name, forKindWord(r)].join(" ").toLowerCase();
       var words = state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
       for (var i = 0; i < words.length; i++) if (hay.indexOf(words[i]) < 0) return false;
     }
@@ -359,6 +425,7 @@
       ["Where it lives", where],
       ["Who can open it now", esc(home.reach)],
       ["Seen by", esc(r.seen_by ? seenWord(r) : "Not set. Sam decides who this is for.")],
+      ["Made for", esc(r.for_kind ? forLine(r) : "Not set. Say who this piece is made for with Edit.")],
       ["Made by", esc(r.made_by || "Not recorded.")],
       ["Approved", esc(r.ruling || "None recorded.")],
       ["Figures", esc(r.figures || "Not recorded.")]
@@ -425,6 +492,42 @@
 
   function opt(v, label, cur) { return '<option value="' + esc(v) + '"' + (v === cur ? " selected" : "") + ">" + esc(label) + "</option>"; }
 
+  // The Made for fields every form shares: the type, the typed category when it is
+  // Other, and the name (a college's offered from MAP's list). `p` prefixes the ids
+  // (la- add, ls- start, le- edit); the type picked since the form opened lives in
+  // state.forPick[p], so a repaint shows the fields that type needs.
+  function forKindPicked(p, r) { return state.forPick[p] != null ? state.forPick[p] : ((r && r.for_kind) || ""); }
+  function forFields(p, r) {
+    r = r || {};
+    var kind = forKindPicked(p, r);
+    var sel = '<div class="lib-field"><label for="' + p + '-forkind">Made for</label><select id="' + p + '-forkind">' + opt("", "Not set", kind) +
+      FOR_ORDER.map(function (k) { return opt(k, FOR_KIND[k], kind); }).join("") + "</select></div>";
+    var cat = kind === "other"
+      ? '<div class="lib-field"><label for="' + p + '-forcat">Other: the category</label><input id="' + p + '-forcat" type="text" required maxlength="80" value="' + esc(r.for_category || "") + '" placeholder="Foundation, union, school district"></div>'
+      : "";
+    var list = kind === "college" ? ' list="lib-names-colleges"' : kind === "district" ? ' list="lib-names-districts"' : "";
+    var name = kind
+      ? '<div class="lib-field"><label for="' + p + '-forname">For</label><input id="' + p + '-forname" type="text" maxlength="200"' + list + ' value="' + esc(r.for_name || "") + '" placeholder="' + (kind === "college" ? "Start typing the college\'s name" : "The entity\'s name") + '"></div>'
+      : "";
+    return sel + cat + name;
+  }
+  function readFor(p) {
+    var g = function (id) { var n = document.getElementById(id); return n ? n.value.trim() : ""; };
+    var kind = g(p + "-forkind") || null;
+    var out = { for_kind: kind, for_category: kind === "other" ? (g(p + "-forcat") || null) : null, for_name: kind ? (g(p + "-forname") || null) : null };
+    if (kind === "college" && out.for_name && state.names && state.names.length) out.for_name = mapCollege(out.for_name) || out.for_name;
+    return out;
+  }
+  function forProblem(f) {
+    if (f.for_kind === "other" && !f.for_category) return "Type the category for Other, so the filter can offer it again.";
+    return "";
+  }
+  function datalists() {
+    if (!state.names || !state.names.length) return "";
+    var list = function (id, names) { return '<datalist id="' + id + '">' + names.map(function (n) { return '<option value="' + esc(n) + '">'; }).join("") + "</datalist>"; };
+    return list("lib-names-colleges", collegeNames()) + list("lib-names-districts", districtNames());
+  }
+
   function editForm(r) {
     var ask = state.retireAsk === r.id;
     return '<form class="lib-form" data-editform="' + esc(r.id) + '"><h3 class="lib-title">Edit this record</h3>' +
@@ -434,6 +537,7 @@
       opt("", "Not set", r.status || "") + opt("requested", "Requested", r.status) + opt("draft", "Draft", r.status) + opt("approved", "Approved", r.status) + opt("presented", "Presented", r.status) + "</select></div>" +
       '<div class="lib-field"><label for="le-seen">Seen by</label><select id="le-seen">' +
       opt("", "Not set", r.seen_by || "") + opt("team", "Team", r.seen_by) + opt("colleges", "Colleges", r.seen_by) + opt("public", "Public", r.seen_by) + "</select></div>" +
+      forFields("le", r) +
       '<div class="lib-field wide"><label for="le-url">Link to the file</label><input id="le-url" type="url" value="' + esc(r.url || "") + '" placeholder="https://studentrcc.sharepoint.com/..."></div>' +
       '<div class="lib-field wide"><label for="le-refresh">Figures to refresh</label><input id="le-refresh" type="text" value="' + esc(r.refresh_note || "") + '" placeholder="Leave empty when the figures are current"></div>' +
       '<div class="lib-field"><label for="le-by">Your name</label><input id="le-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
@@ -467,6 +571,7 @@
     return '<article class="lib-item" aria-labelledby="lib-t-' + esc(r.id) + '">' + thumb(r) +
       '<div class="lib-body"><p class="lib-kicker">' + esc(kicker.filter(Boolean).join(" · ")) + "</p>" +
       '<h3 class="lib-title" id="lib-t-' + esc(r.id) + '">' + esc(r.title) + "</h3>" +
+      (r.for_kind ? '<p class="lib-for">Made for <b>' + esc(forKindWord(r)) + "</b>" + (r.for_name ? " \u00b7 For <b>" + esc(r.for_name) + "</b>" : "") + "</p>" : "") +
       (r.summary ? '<p class="lib-summary">' + esc(r.summary) + "</p>" : "") +
       '<ul class="lib-chips" aria-label="Record">' + chips + "</ul>" +
       (fl.length ? '<ul class="lib-flags" aria-label="Needs attention">' + fl.map(function (f) {
@@ -488,8 +593,9 @@
       '<div class="lib-field wide"><label for="la-url">Link to the file</label><input id="la-url" type="url" required placeholder="https://studentrcc.sharepoint.com/..." value="' + esc(f.url || "") + '"></div>' +
       (filing ? "" :
         '<div class="lib-field wide"><label for="la-title">Title</label><input id="la-title" type="text" required value="' + esc(f.title || "") + '"></div>' +
-        '<div class="lib-field"><label for="la-kind">Kind</label><select id="la-kind">' + opt("deck", "Deck", f.kind) + opt("spreadsheet", "Spreadsheet", f.kind) + opt("film", "Film", f.kind) + opt("document", "Document", f.kind) + "</select></div>" +
+        '<div class="lib-field"><label for="la-kind">Kind</label><select id="la-kind">' + opt("visual", "Visual (a page opened in a browser)", f.kind) + opt("deck", "Deck", f.kind) + opt("spreadsheet", "Spreadsheet", f.kind) + opt("film", "Film", f.kind) + opt("document", "Document (Word, PDF)", f.kind) + "</select></div>" +
         '<div class="lib-field"><label for="la-occasion">Occasion</label><input id="la-occasion" type="text" placeholder="Vision 2030 Noncredit Summit" value="' + esc(f.occasion || "") + '"></div>' +
+        forFields("la", f) +
         '<div class="lib-field"><label for="la-seen">Seen by</label><select id="la-seen">' + opt("", "Not set", f.seen_by || "") + opt("team", "Team", f.seen_by) + opt("colleges", "Colleges", f.seen_by) + opt("public", "Public", f.seen_by) + "</select></div>" +
         '<div class="lib-field"><label for="la-status">Status</label><select id="la-status">' + opt("draft", "Draft", f.status || "draft") + opt("approved", "Approved", f.status) + opt("presented", "Presented", f.status) + "</select></div>") +
       '<div class="lib-field"><label for="la-by">Your name</label><input id="la-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
@@ -506,14 +612,47 @@
     return "Start a new piece for the CPL Library: record " + r.slug + ".\n" +
       "Kind: " + (KIND[r.kind] || r.kind) + ". Working title: " + r.title + ".\n" +
       "Occasion: " + (r.occasion || "none") + ". Needed by: " + (b.due || "not set") + ". For: " + seenWord(r) + ".\n" +
+      "Made for: " + (r.for_kind ? forLine(r) : "no one entity") + ".\n" +
       "It must say: " + (b.say || "") + "\n" +
       "Data and sources: " + (b.sources || "your call; fetch live data first for any CPL figure") + "\n" +
       "Length, template or style: " + (b.shape || "your call") + "\n" +
       "Requested by " + (b.requested_by || r.added_by || "the team") + (b.requested_on ? " on " + fmtDate(b.requested_on) : "") + ".\n\n" +
+      (r.kind === "visual" && r.for_kind && r.for_kind !== "college"
+        ? "Build the page on the agency template: the DSP page's shape (" + DSP_TEMPLATE + "): the meeting, the training facts, " +
+          "colleges tiered by fit, what to confirm, next steps, sources. The entity's own facts come from what was uploaded or a web search, never guessed. " +
+          "Publish it as a Claude page with the public header (CPLBrain/04-projects/cpl-initiative/public-header/apply.py), commit its source to the vault beside the work, " +
+          "and file its link here with File it on record " + r.slug + ", which moves the record to Draft.\n"
+        : "") +
       "Build it from source in the tracker repo and name the file with today's date code (YYYYMMDD_Title). " +
       "Send me the file. I put it in the Drafts folder of the Library's SharePoint folder (CPLLibrary) " +
       "and paste its link with File it on record " + r.slug + ", which moves the record to Draft.\n" +
       "A good result: the draft opens from the Library, under In development, at step 2, Draft.";
+  }
+
+  // Make a visual (Sam, Sheet 120 cards 1 and 4): for a college the record pair is
+  // written now; for any other entity the brief is written with the entity set.
+  function makeForm() {
+    var f = state.make || {};
+    var kind = f.for_kind || "college", college = kind === "college";
+    var names = college ? collegeNames() : kind === "district" ? districtNames() : [];
+    var seg = FOR_ORDER.map(function (k) {
+      return '<button type="button" data-makefor="' + k + '" aria-pressed="' + (kind === k) + '">' + esc(MAKE_WORDS[k]) + "</button>";
+    }).join("");
+    return '<form class="lib-form" id="lib-makeform"><h2 class="lib-h">Make a visual</h2>' +
+      "<p>" + (college
+        ? "For a college the record pair is written as you press Make: the live CPL Opportunity page and its workbook, Made for College. List the page publicly when it is ready; the public link is the college's."
+        : "For a district, an agency, a vendor or the Chancellor's Office, a brief: name the meeting, say what the visual must show, and link what you uploaded. The brief files as Requested with the entity set, and Copy the brief starts the session that builds the page on the agency template and files it here.") + "</p>" +
+      '<div class="lib-grid">' +
+      '<div class="lib-field wide"><span class="lib-seglabel" id="lm-for-l">Made for</span><div class="lib-seg" role="group" aria-labelledby="lm-for-l">' + seg + "</div></div>" +
+      (kind === "other" ? '<div class="lib-field"><label for="lm-forcat">Other: the category</label><input id="lm-forcat" type="text" required maxlength="80" value="' + esc(f.for_category || "") + '" placeholder="Foundation, union, school district"></div>' : "") +
+      '<div class="lib-field wide"><label for="lm-forname">For</label><input id="lm-forname" type="text" required maxlength="200"' +
+      (names.length ? ' list="lib-names-' + (college ? "colleges" : "districts") + '"' : "") + ' value="' + esc(f.for_name || "") + '" placeholder="' + (college ? "Start typing the college\'s name" : "The entity\'s name") + '"></div>' +
+      '<div class="lib-field wide"><label for="lm-occasion">Occasion</label><input id="lm-occasion" type="text" value="' + esc(f.occasion || "") + '" placeholder="CSM meeting, 2026-10-28"></div>' +
+      '<div class="lib-field"><label for="lm-by">Your name</label><input id="lm-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
+      "</div>" +
+      (college ? '<p class="lib-line">A college\'s name comes from MAP\'s list, so the filter matches the CPL Pathways pick.' + (state.names === null ? " Loading the list\u2026" : "") + "</p>" : "") +
+      '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">" + (college ? "Make the pair" : "Write the brief") + "</button>" +
+      '<button type="button" class="lib-btn" data-makecancel="1">Cancel</button></div></form>';
   }
 
   function startForm() {
@@ -523,10 +662,11 @@
       "Claude starts the draft from it, in a new session you paste the brief into or in the next scheduled run, and hands each draft over for the " +
       '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>\'s Drafts folder.</p>' +
       '<div class="lib-grid">' +
-      '<div class="lib-field"><label for="ls-kind">Kind</label><select id="ls-kind">' + opt("deck", "Deck", f.kind) + opt("spreadsheet", "Spreadsheet", f.kind) +
-      opt("film", "Film", f.kind) + opt("document", "Document", f.kind) + "</select></div>" +
-      '<div class="lib-field wide"><label for="ls-title">Working title</label><input id="ls-title" type="text" required placeholder="What colleges can expect from the 2026-27 funding"></div>' +
-      '<div class="lib-field"><label for="ls-occasion">Occasion</label><input id="ls-occasion" type="text" placeholder="Vision 2030 Noncredit Summit"></div>' +
+      '<div class="lib-field"><label for="ls-kind">Kind</label><select id="ls-kind">' + opt("visual", "Visual (a page opened in a browser)", f.kind) + opt("deck", "Deck", f.kind) + opt("spreadsheet", "Spreadsheet", f.kind) +
+      opt("film", "Film", f.kind) + opt("document", "Document (Word, PDF)", f.kind) + "</select></div>" +
+      '<div class="lib-field wide"><label for="ls-title">Working title</label><input id="ls-title" type="text" required placeholder="What colleges can expect from the 2026-27 funding" value="' + esc(f.title || "") + '"></div>' +
+      '<div class="lib-field"><label for="ls-occasion">Occasion</label><input id="ls-occasion" type="text" placeholder="Vision 2030 Noncredit Summit" value="' + esc(f.occasion || "") + '"></div>' +
+      forFields("ls", f) +
       '<div class="lib-field"><label for="ls-due">Needed by</label><input id="ls-due" type="text" placeholder="The week of the summit"></div>' +
       '<div class="lib-field"><label for="ls-seen">For</label><select id="ls-seen">' + opt("team", "Team", f.seen_by) + opt("colleges", "Colleges", f.seen_by) + opt("public", "Public", f.seen_by) + "</select></div>" +
       '<div class="lib-field wide"><label for="ls-say">What it must say</label><input id="ls-say" type="text" required placeholder="Three points, in the order the audience needs them"></div>' +
@@ -601,7 +741,7 @@
     if (!root) return;
     ensureCss();
     root.style.cssText = "";
-    var head = '<h2 class="lib-h lib-top">Library</h2><p class="lib-lede">Every deck, film and document the CPL Initiative has made: what it is, where the file lives, who may see it, and how to rebuild it.</p>';
+    var head = '<h2 class="lib-h lib-top">Library</h2><p class="lib-lede">Every visual, deck, film and document the CPL Initiative has made: what it is, who it is made for, where the file lives, who may see it, and how to rebuild it.</p>';
 
     if (!teamPhrase()) {
       root.innerHTML = head;
@@ -626,17 +766,25 @@
       (flagBtns ? '<div class="lib-flagrow">' + flagBtns + "</div>" : '<p class="lib-clear">Nothing. Every piece is filed and has an audience.</p>') + "</section>";
 
     var segBtn = function (k, label) { return '<button type="button" data-kind="' + k + '" aria-pressed="' + (state.kind === k) + '">' + label + "</button>"; };
+    var forBtn = function (k, label) { return '<button type="button" data-madefor="' + k + '" aria-pressed="' + (state.madeFor === k) + '">' + esc(label) + "</button>"; };
+    var presentFor = {}, forNames = {};
+    rows.forEach(function (r) { if (r.for_kind) presentFor[r.for_kind] = true; if (r.for_name) forNames[r.for_name] = true; });
+    var nameOpts = Object.keys(forNames).sort().map(function (n) { return opt(n, n, state.forName); }).join("");
     var controls = '<section aria-label="Find in the Library"><div class="lib-controls">' +
-      '<div class="lib-field grow"><label for="lib-q">Search</label><input id="lib-q" type="search" autocomplete="off" placeholder="Title, occasion or file name" value="' + esc(state.q) + '"></div>' +
+      '<div class="lib-field grow"><label for="lib-q">Search</label><input id="lib-q" type="search" autocomplete="off" placeholder="Title, occasion, entity or file name" value="' + esc(state.q) + '"></div>' +
       '<div class="lib-field"><span class="lib-seglabel" id="lib-kind-l">Kind</span><div class="lib-seg" role="group" aria-labelledby="lib-kind-l">' +
-      segBtn("all", "All") + segBtn("deck", "Decks") + segBtn("spreadsheet", "Spreadsheets") + segBtn("film", "Films") + segBtn("document", "Documents") + "</div></div>" +
+      segBtn("all", "All") + segBtn("visual", "Visuals") + segBtn("deck", "Decks") + segBtn("spreadsheet", "Spreadsheets") + segBtn("film", "Films") + segBtn("document", "Documents") + "</div></div>" +
+      '<div class="lib-field"><span class="lib-seglabel" id="lib-for-l">Made for</span><div class="lib-seg" role="group" aria-labelledby="lib-for-l">' +
+      forBtn("all", "All") + FOR_ORDER.filter(function (k) { return k !== "other" || presentFor.other; }).map(function (k) { return forBtn(k, FOR_PLURAL[k]); }).join("") + "</div></div>" +
+      '<div class="lib-field"><label for="lib-for">For</label><select id="lib-for">' + opt("all", "Anyone we made something for", state.forName) + nameOpts + "</select></div>" +
       '<div class="lib-field"><label for="lib-seen">Seen by</label><select id="lib-seen">' + opt("all", "Anyone", state.seen) + opt("team", "Team", state.seen) +
       opt("colleges", "Colleges", state.seen) + opt("public", "Public", state.seen) + opt("unset", "Not set", state.seen) + "</select></div>" +
       '<div class="lib-field"><label for="lib-status">Status</label><select id="lib-status">' + opt("all", "Any", state.status) + opt("draft", "Draft", state.status) +
       opt("approved", "Approved", state.status) + opt("presented", "Presented", state.status) + opt("unset", "Not set", state.status) + "</select></div>" +
-      '<button type="button" class="lib-btn primary" id="lib-start" aria-expanded="' + (state.start ? "true" : "false") + '">Start a piece</button>' +
+      '<button type="button" class="lib-btn primary" id="lib-make" aria-expanded="' + (state.make ? "true" : "false") + '">Make a visual</button>' +
+      '<button type="button" class="lib-btn" id="lib-start" aria-expanded="' + (state.start ? "true" : "false") + '">Start a piece</button>' +
       '<button type="button" class="lib-btn" id="lib-add" aria-expanded="' + (state.form ? "true" : "false") + '">Add to the Library</button>' +
-      "</div>" + (state.start ? startForm() : "") + (state.form ? addForm() : "") +
+      "</div>" + datalists() + (state.make ? makeForm() : "") + (state.start ? startForm() : "") + (state.form ? addForm() : "") +
       (state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "");
 
     controls += '<p class="lib-line" role="status" id="lib-count">' + countLine(state.rows) + "</p></section>";
@@ -655,13 +803,13 @@
     // typed into an open form. Restore only into the SAME form: the edit ids are
     // shared by every record, so a value typed for one must not land in another.
     var typed = {};
-    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],input[id^='ls-'],select[id^='ls-']"), function (n) { typed[n.id] = n.value; });
+    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],input[id^='ls-'],select[id^='ls-'],input[id^='lm-'],select[id^='lm-']"), function (n) { typed[n.id] = n.value; });
     var sameAdd = painted.formFor === state.formFor && painted.form === !!state.form;
     var sameEdit = painted.edit === state.edit;
     var focusId = document.activeElement && document.activeElement.id;
     root.innerHTML = head + attention + controls + list + how;
     Object.keys(typed).forEach(function (id) {
-      if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || (id.indexOf("ls-") === 0 && !state.start)) return;
+      if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || (id.indexOf("ls-") === 0 && !state.start) || (id.indexOf("lm-") === 0 && !state.make)) return;
       var n = document.getElementById(id); if (n) n.value = typed[id];
     });
     painted = { form: !!state.form, formFor: state.formFor, edit: state.edit };
@@ -687,15 +835,18 @@
         body: { url: f.url, home: homeForUrl(f.url), updated_by: f.by } });
     } else {
       if (!f.title) { say("Add a title.", true); render(); return; }
+      var madeFor = readFor("la"), fp = forProblem(madeFor);
+      if (fp) { say(fp, true); render(); return; }
       p = write(TABLE_URL, { method: "POST", body: {
         slug: slugFor(f.title), title: f.title, kind: f.kind || "deck", occasion: f.occasion || null,
         made_on: today(), seen_by: f.seen_by || null, status: f.status || null,
-        url: f.url, home: homeForUrl(f.url), added_by: f.by
+        url: f.url, home: homeForUrl(f.url), added_by: f.by,
+        for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name
       } });
     }
     p.then(function () {
       say(filing ? "Filed. The record now links to the file." : "Added to the Library.");
-      state.form = null; state.formFor = null;
+      state.form = null; state.formFor = null; delete state.forPick.la;
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
@@ -707,6 +858,8 @@
     if (!f.title) { say("Add a working title.", true); render(); return; }
     if (!f.say) { say("Say what the piece must say.", true); render(); return; }
     if (!f.by) { say("Add your name, so the brief says who asked for it.", true); render(); return; }
+    var madeFor = readFor("ls"), fp = forProblem(madeFor);
+    if (fp) { say(fp, true); render(); return; }
     rememberAuthor(f.by);
     var brief = { say: f.say, requested_by: f.by, requested_on: today() };
     if (f.sources) brief.sources = f.sources;
@@ -714,12 +867,70 @@
     if (f.due) brief.due = f.due;
     write(TABLE_URL, { method: "POST", body: {
       slug: slugFor(f.title), title: f.title, kind: f.kind || "deck", occasion: f.occasion || null,
-      status: "requested", seen_by: f.seen_by || "team", home: "not_filed", url: null, added_by: f.by, brief: brief
+      status: "requested", seen_by: f.seen_by || "team", home: "not_filed", url: null, added_by: f.by, brief: brief,
+      for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name
     } }).then(function (saved) {
       var row = Array.isArray(saved) ? saved[0] : saved;
       if (row && row.id) state.briefShown[row.id] = true;
       say("Saved as Requested. Copy the brief into a new session, or the next scheduled run picks it up.");
-      state.start = null;
+      state.start = null; delete state.forPick.ls;
+      return load();
+    }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+  }
+
+  // The record pair a college's visual is (the first twelve were filed this way by the
+  // CPL Opportunity side sessions, 2026-10-21): the live page, and the workbook its
+  // Download CPL Extract makes, which is filed once the .xlsx is in SharePoint.
+  function collegePair(name, occasion, by) {
+    var base = collegeSlug(name), when = today();
+    var made = by + ", from the Library tab's Make a visual, " + when;
+    return [{
+      slug: "cpl-opportunity-" + base + "-visual", title: name + ": CPL Opportunity Analysis", kind: "visual",
+      occasion: occasion || null, made_on: when, version: "1", status: "draft", seen_by: "colleges",
+      home: "web", url: OPPORTUNITY_PAGE + encodeURIComponent(name), file_type: "html", extent: "One page",
+      summary: name + "'s COCI programs and courses, its MAP exhibits (AP and IB excluded), and the statewide credit recommendations it could adopt, each with a Could Adopt link to MAP.",
+      rebuild_from: "cpl-project-tracker/college_cpl_workbook.js and cpl-opportunity/index.html (built in the browser from published data)",
+      note: "Live page: it rebuilds from the current data on each visit.",
+      for_kind: "college", for_name: name, made_by: made, added_by: by
+    }, {
+      slug: "cpl-opportunity-" + base + "-workbook", title: name + ": CPL Opportunity Analysis (workbook)", kind: "spreadsheet",
+      occasion: occasion || null, made_on: when, version: "1", status: "draft", seen_by: "colleges",
+      home: "not_filed", url: null, file_type: "xlsx", extent: "Six tabs",
+      summary: "The Excel analysis for " + name + ": Download CPL Extract on its CPL Opportunity page, then file the .xlsx here.",
+      rebuild_from: "Download CPL Extract on the " + name + " page (cpl-project-tracker/college_cpl_workbook.js)",
+      note: "File it once the .xlsx is in SharePoint CPLLibrary.",
+      for_kind: "college", for_name: name, made_by: made, added_by: by
+    }];
+  }
+
+  function submitMake() {
+    var g = function (id) { var n = document.getElementById(id); return n ? n.value.trim() : ""; };
+    var f = state.make || {}, kind = f.for_kind || "college";
+    var name = g("lm-forname"), cat = kind === "other" ? g("lm-forcat") : "", occasion = g("lm-occasion"), by = g("lm-by");
+    state.make = { for_kind: kind, for_name: name, for_category: cat, occasion: occasion };
+    if (!name) { say("Name who the visual is for.", true); render(); return; }
+    if (kind === "other" && !cat) { say("Type the category for Other, so the filter can offer it again.", true); render(); return; }
+    if (!by) { say("Add your name, so the record says who made it.", true); render(); return; }
+    rememberAuthor(by);
+    if (kind !== "college") {
+      // Not a college: the brief, with the entity set, so Copy the brief hands the paste over.
+      state.forPick.ls = kind;
+      state.start = { kind: "visual", for_kind: kind, for_category: cat || null, for_name: name, occasion: occasion,
+        title: name + ": CPL " + (kind === "co" ? "visual" : "opportunities") };
+      state.make = null; say(""); render();
+      var st = document.getElementById("ls-say"); if (st) st.focus();
+      return;
+    }
+    var college = state.names && state.names.length ? mapCollege(name) : name;
+    if (!college) { say("Pick the college from MAP's list (start typing its name), so the filter matches the CPL Pathways pick.", true); render(); return; }
+    var pair = collegePair(college, occasion, by);
+    var have = (state.rows || []).filter(function (r) { return r.slug === pair[0].slug || r.slug === pair[1].slug; });
+    if (have.length) { say(college + "'s pair is already in the Library: " + have.map(function (r) { return r.title; }).join("; ") + ".", true); render(); return; }
+    write(TABLE_URL, { method: "POST", body: pair[0] }).then(function () {
+      return write(TABLE_URL, { method: "POST", body: pair[1] });
+    }).then(function () {
+      say("Made. " + college + "'s CPL Opportunity page and its workbook are in the Library, Made for College. List the page publicly when it is ready.");
+      state.make = null;
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
@@ -745,12 +956,15 @@
     var by = g("le-by"), url = g("le-url");
     if (!by) { say("Add your name, so the history says who changed it.", true); render(); return; }
     if (url && !/^https:\/\//.test(url)) { say("The link must start with https://.", true); render(); return; }
+    var madeFor = readFor("le"), fp = forProblem(madeFor);
+    if (fp) { say(fp, true); render(); return; }
     rememberAuthor(by);
     var body = { status: g("le-status") || null, seen_by: g("le-seen") || null, refresh_note: g("le-refresh") || null,
-      url: url || null, home: url ? homeForUrl(url) : "not_filed", updated_by: by };
+      url: url || null, home: url ? homeForUrl(url) : "not_filed", updated_by: by,
+      for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name };
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
       say("Saved. The earlier version is in the history.");
-      state.edit = null; state.retireAsk = null;
+      state.edit = null; state.retireAsk = null; delete state.forPick.le;
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
@@ -826,10 +1040,20 @@
     root.addEventListener("change", function (e) {
       if (e.target.id === "lib-seen") { state.seen = e.target.value; render(); }
       else if (e.target.id === "lib-status") { state.status = e.target.value; render(); }
+      else if (e.target.id === "lib-for") { state.forName = e.target.value; render(); }
+      else if (/^(la|ls|le)-forkind$/.test(e.target.id || "")) {
+        // The type picked decides which fields follow it; repaint, keeping the caret's owner.
+        var pfx = e.target.id.slice(0, 2);
+        state.forPick[pfx] = e.target.value;
+        if (e.target.value === "college" || e.target.value === "district") loadNames();
+        render();
+        var again = document.getElementById(pfx + "-forkind"); if (again) again.focus();
+      }
     });
     root.addEventListener("submit", function (e) {
       e.preventDefault();
       if (e.target.id === "lib-addform") submitAdd();
+      else if (e.target.id === "lib-makeform") submitMake();
       else if (e.target.id === "lib-startform") submitStart();
       else if (e.target.getAttribute("data-editform")) submitEdit(e.target.getAttribute("data-editform"));
       else if (e.target.getAttribute("data-pubform")) setPublic(e.target.getAttribute("data-pubform"), true);
@@ -839,16 +1063,29 @@
       if (!b || !root.contains(b)) return;
       var v;
       if ((v = b.getAttribute("data-kind"))) { state.kind = v; render(); }
+      else if ((v = b.getAttribute("data-madefor"))) { state.madeFor = v; render(); }
       else if ((v = b.getAttribute("data-flag"))) { state.flag = state.flag === v ? null : v; render(); }
+      else if (b.id === "lib-make") {
+        state.make = state.make ? null : { for_kind: "college" }; state.start = null; state.form = null; state.formFor = null;
+        say(""); render();
+        if (state.make) { loadNames(); var mn = document.getElementById("lm-forname"); if (mn) mn.focus(); }
+      }
+      else if ((v = b.getAttribute("data-makefor"))) {
+        state.make = state.make || {}; state.make.for_kind = v;
+        if (v === "college" || v === "district") loadNames();
+        render();
+        var mb = root.querySelector('[data-makefor="' + v + '"]'); if (mb) mb.focus();
+      }
+      else if (b.getAttribute("data-makecancel")) { state.make = null; render(); var mk = document.getElementById("lib-make"); if (mk) mk.focus(); }
       else if (b.id === "lib-start") {
-        state.start = state.start ? null : {}; state.form = null; state.formFor = null;
+        state.start = state.start ? null : {}; state.form = null; state.formFor = null; state.make = null; delete state.forPick.ls;
         say(""); render();
         var st = document.getElementById("ls-title"); if (st) st.focus();
       }
       else if (b.getAttribute("data-startcancel")) { state.start = null; render(); var sb = document.getElementById("lib-start"); if (sb) sb.focus(); }
       else if ((v = b.getAttribute("data-brief"))) copyBrief(v);
       else if (b.id === "lib-add") {
-        state.start = null;
+        state.start = null; state.make = null; delete state.forPick.la;
         if (state.form && !state.formFor) { state.form = null; } else { state.form = {}; state.formFor = null; }
         say(""); render();
         var u = document.getElementById("la-url"); if (u) u.focus();
@@ -904,6 +1141,9 @@
     _briefText: briefText,
     _homeForUrl: homeForUrl,
     _homeOf: homeOf,
-    _slugFor: slugFor
+    _slugFor: slugFor,
+    _forLine: forLine,
+    _collegeSlug: collegeSlug,
+    _collegePair: collegePair
   };
 })();

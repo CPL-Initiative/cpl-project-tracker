@@ -15,7 +15,8 @@
 --
 -- ── What goes public ─────────────────────────────────────────────────────────
 -- Only what cpl_library_public() returns: title, kind, occasion, made_on, the
--- public summary, topics and the link. Notes, briefs, made_by, rebuild_from,
+-- public summary, topics, the link, and who the piece is made for (for_kind,
+-- for_category, for_name; Sam, Sheet 120, 2026-10-23). Notes, briefs, made_by, rebuild_from,
 -- versions and the internal summary stay behind the team phrase. The public summary
 -- is its own column because the internal one is written for the team.
 --
@@ -29,8 +30,10 @@
 -- and records who listed (the sign-in's email, else the name given, else "team
 -- phrase"). The history trigger files every prior row, so a listing is reversible
 -- from the database (Rule 10 a2). Governance: kb/governance_surface_map.json,
--- "rpc:cpl_library_set_public". Re-runnable: applied 2026-10-20, and again on
--- 2026-10-23 for the phrase.
+-- "rpc:cpl_library_set_public". Re-runnable: applied 2026-10-20, again on
+-- 2026-10-23 for the phrase, and again on 2026-10-23 for the made-for columns
+-- (cpl_library_public_made_for_2026_10_23_s459; the columns themselves ride
+-- kb/supabase_cpl_library.sql, applied first).
 
 alter table public.cpl_library
   add column if not exists public_listed  boolean not null default false,
@@ -109,11 +112,17 @@ grant execute on function public.cpl_library_set_public(text, boolean, text, tex
 
 -- The public read: listed pieces only, public fields only. Open to anon on purpose,
 -- because the public page and Sierra both read it.
+-- Who a piece is made for travels with it (Sam, Open Asks Sheet 120 card 4,
+-- 2026-10-23: show it on the public page and filter by it): for_kind, for_category
+-- and for_name name an organization the title already names, never a person.
+drop function if exists public.cpl_library_public();
 create or replace function public.cpl_library_public()
 returns table (slug text, title text, kind text, occasion text, made_on date,
-               summary text, topics text[], url text, listed_at timestamptz)
+               summary text, topics text[], url text, listed_at timestamptz,
+               for_kind text, for_category text, for_name text)
   language sql stable security definer set search_path = public as $$
-  select l.slug, l.title, l.kind, l.occasion, l.made_on, l.public_summary, l.public_topics, l.url, l.listed_at
+  select l.slug, l.title, l.kind, l.occasion, l.made_on, l.public_summary, l.public_topics, l.url, l.listed_at,
+         l.for_kind, l.for_category, l.for_name
   from public.cpl_library l
   where l.public_listed and l.retired_at is null and l.url is not null
   order by l.made_on desc nulls last, l.title
