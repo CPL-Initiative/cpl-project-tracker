@@ -1,0 +1,417 @@
+{
+ "college": "Long Beach City College",
+ "catalog_url": "https://lbcc-public.courseleaf.com/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 391,
+ "with_closed_list": 385,
+ "started": "2026-10-22T20:38:13Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://lbcc-public.courseleaf.com/sitemap.xml",
+  "status": 200,
+  "listed": 2504,
+  "nested": 0,
+  "program_pages": 635,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 635,
+ "child_pages": 0,
+ "banner_h1": null,
+ "loads": 645,
+ "seconds": 15541.5,
+ "found": 368,
+ "by_method": {
+  "link_search": 5,
+  "no_closed_list": 6,
+  "not_found": 2,
+  "page_claimed": 15,
+  "sitemap_page": 363
+ },
+ "shared_pages": {
+  "https://lbcc-public.courseleaf.com//degrees-certificates/registered-nursing/registered-nursing-as/": [
+   "02677",
+   "43021"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-general-industrial-electrician/-electrical-technology-general-industrial-electrician-as/": [
+   "08810",
+   "37659"
+  ],
+  "https://lbcc-public.courseleaf.com/": [
+   "08835",
+   "12778",
+   "12779",
+   "20751",
+   "20888"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/medical-assisting-program/medical-assisting-administrative-clinical-certificate-achievement/": [
+   "11314",
+   "11315",
+   "20936"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-general-industrial-electrician/electrical-technology-general-industrial-electrician-certificate-achievement/": [
+   "20897",
+   "37496",
+   "37497"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/baking-pastry-arts/advanced-baking-pastry-arts-certificate-achievement/": [
+   "21014",
+   "42166"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/communication-studies/communication-studies-2.0-aat/": [
+   "30676",
+   "43106"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-administration-2.0-ast/": [
+   "31215",
+   "41830"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-high-voltage-test-technician/electrical-technology-high-voltage-test-technician-certificate-achievement/": [
+   "37308",
+   "37498"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-technology-advanced-certificate-achievement/": [
+   "37346",
+   "43482"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-traffic-signal-technician/electrical-technology-traffic-signal-technician-certificate-achievement/": [
+   "37767",
+   "37873"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-solar-installation-maintenance/electrical-technology-solar-installation-maintenance-certificate-achievement/": [
+   "37770",
+   "37883"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/physical-sciences/physics-uctp/": [
+   "39570",
+   "42047"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/trauma-studies/": [
+   "43802",
+   "46290"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "43258",
+   "title": "Barbering",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43837",
+   "title": "Barbering",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "02684",
+   "title": "Family and Consumer Studies",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-as/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-patternmakertechnical-design-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/fashion-merchandising-as/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/fashion-merchandising-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/"
+   ]
+  },
+  {
+   "control_number": "02696",
+   "title": "Physical Sciences",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-a/",
+    "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-c/"
+   ]
+  },
+  {
+   "control_number": "10082",
+   "title": "Physical Sciences",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-a/",
+    "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-c/"
+   ]
+  },
+  {
+   "control_number": "11308",
+   "title": "Digital Design and Publication",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/journalism/journalism-aa/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/journalism/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/journalism/journalism-aat/"
+   ]
+  },
+  {
+   "control_number": "11312",
+   "title": "Journalism- Publications Specialist",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/journalism/journalism-aa/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/journalism/"
+   ]
+  },
+  {
+   "control_number": "13842",
+   "title": "Fashion Design: Assistant Designer/Stylist",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-as/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-patternmakertechnical-design-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-custom-apparel-design-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/fashion-merchandising-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/fashion-merchandising-as/"
+   ]
+  },
+  {
+   "control_number": "20872",
+   "title": "Computer Support Specialist",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/administrative-assistant-customer-support-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-support/administrative-assistant-office-support-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/computer-security-networking-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/administrative-assistant-customer-support-as/"
+   ]
+  },
+  {
+   "control_number": "20934",
+   "title": "Foreign Languages",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-a/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/linguistics/linguistics-aa/"
+   ]
+  },
+  {
+   "control_number": "20941",
+   "title": "Family and Consumer Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-patternmakertechnical-design-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/fashion-merchandising-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-as/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/fashion-merchandising-as/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/"
+   ]
+  },
+  {
+   "control_number": "32811",
+   "title": "Database Management",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/computer-technology/"
+   ]
+  },
+  {
+   "control_number": "33841",
+   "title": "Database Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/computer-technology/"
+   ]
+  },
+  {
+   "control_number": "35192",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-support/administrative-assistant-office-support-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-support/administrative-assistant-office-support-as/"
+   ]
+  },
+  {
+   "control_number": "36433",
+   "title": "Computer Support Specialist",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/administrative-assistant-customer-support-as/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-support/administrative-assistant-office-support-as/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/computer-security-networking-as/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/administrative-assistant-customer-support-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-support/administrative-assistant-office-support-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/computer-security-networking-certificate-achievement/"
+   ]
+  },
+  {
+   "control_number": "37214",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-c/",
+    "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-a/"
+   ]
+  },
+  {
+   "control_number": "38542",
+   "title": "Advanced Arc Welding (SMAW and FCAW)",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/shielded-metal-arc-welding-smaw-certificate-achievement/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 35,
+  "0.8-1.0": 56,
+  "1.0": 277
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/long_beach_city",
+  "kept": 355,
+  "programs": 13,
+  "list": [
+   {
+    "control_number": "02701",
+    "title": "Administration of Justice",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administration-justice/administration-justice-aa/",
+    "coverage": 1.0,
+    "was_url": "https://lbcc-public.courseleaf.com/",
+    "was_coverage": 1.0,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "21028",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administration-justice/administration-justice-certificate-achievement/",
+    "coverage": 0.737,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31223",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/geology/geology-ast/",
+    "coverage": 0.667,
+    "was_url": "https://lbcc-public.courseleaf.com//degrees-certificates/geology/geology-ast/",
+    "was_coverage": 0.583,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33811",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administration-justice/administration-justice-ast/",
+    "coverage": 0.769,
+    "was_url": "https://lbcc-public.courseleaf.com/",
+    "was_coverage": 1.0,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "38669",
+    "title": "Security Guard Training",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administration-justice/security-guard-training-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": "https://lbcc-public.courseleaf.com/",
+    "was_coverage": 1.0,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "39497",
+    "title": "GED/HiSET Preparation Spanish",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/ged-hiset-preparation/ged-hiset-preparation-spanish-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39500",
+    "title": "GED/HiSET Preparation",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/ged-hiset-preparation/ged-hiset-preparation-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40029",
+    "title": "Educational Aide II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/elementary-teacher-education/educational-aide2-certificate-achievement/",
+    "coverage": 0.95,
+    "was_url": "https://lbcc-public.courseleaf.com//degrees-certificates/elementary-teacher-education/educational-aide2-certificate-achievement/",
+    "was_coverage": 0.85,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42401",
+    "title": "Criminal Forensics",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administration-justice/criminal-forensics-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://lbcc-public.courseleaf.com/",
+    "was_coverage": 1.0,
+    "was_method": "link_search"
+   },
+   {
+    "control_number": "43802",
+    "title": "Trauma Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/trauma-studies/",
+    "coverage": 0.778,
+    "was_url": "https://lbcc-public.courseleaf.com//degrees-certificates/trauma-studies/",
+    "was_coverage": 0.778,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44747",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/social-work-and-human-services-aat/",
+    "coverage": 0.722,
+    "was_url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/social-work-and-human-services-aat/",
+    "was_coverage": 0.694,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44848",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-c/",
+    "coverage": 0.836,
+    "was_url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-c/",
+    "was_coverage": 0.825,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46290",
+    "title": "Trauma Studies",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/trauma-studies/",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   }
+  ]
+ },
+ "run": "39848042355"
+}
