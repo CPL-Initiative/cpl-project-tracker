@@ -107,6 +107,11 @@ def fill_course_units(out: dict, units: dict) -> dict:
     empty and whose code the vendor's answer prices, filled in place."""
     from _program_requirements_pilot import norm_code
     filled = {}
+    # A noncredit course carries 0 credit hours (Hartnell's BUS 650, run 39946676559): no units,
+    # and a program measured in hours never takes a unit figure.
+    if (out.get("program") or {}).get("measure") not in (None, "units"):
+        return filled
+    units = {k: v for k, v in units.items() if v and (v[0] or v[1])}
     for block in out.get("blocks") or []:
         for course in block.get("courses") or []:
             for entry in [course] + [a for a in course.get("alternatives") or [] if isinstance(a, dict)]:

@@ -1575,6 +1575,15 @@ check([(c["units"], c.get("units_max")) for c in cs] == [(3, None), (1, 3), (4, 
       "the answer omits, and the note names the call: %s" % json.dumps(notes))
 check(RC.reconcile(hart, "AOD1", "Hartnell College", "A.A. Degree", steps=hart_steps)[1] == [],
       "a page the reader kept no course data for changes nothing")
+nc = {"program": {"measure": "hours"}, "blocks": [{"name": "Required", "rule": "all",
+      "courses": [{"code": "BUS650", "units": None, "alternatives": []}]}]}
+zero = {"program": {"measure": "units"}, "blocks": [{"name": "Required", "rule": "all",
+        "courses": [{"code": "BUS650", "units": None, "alternatives": []}]}]}
+check(RC.reconcile(nc, "BUS650", "Hartnell College", "Certificate", steps=hart_steps,
+                   course_units={"call": "x", "units": {"BUS650": [3, 3]}})[1] == []
+      and RC.reconcile(zero, "BUS650", "Hartnell College", "Certificate", steps=hart_steps,
+                       course_units={"call": "x", "units": {"BUS650": [0, 0]}})[1] == [],
+      "a program measured in hours takes no unit figure, and a noncredit course's 0 credit hours fill nothing")
 both = {"program": {"total_units": {"min": 36, "max": 36}}, "blocks": []}
 new, notes = RC.reconcile(both, BIO_TEXT.replace("at least 30 units", "at least 18 units"), "Cabrillo College", "A.S. Degree")
 check(new["program"]["total_units"] == {"min": 36, "max": 36} and new["program"]["degree_elective_units"] == {"min": 6, "max": 6}
