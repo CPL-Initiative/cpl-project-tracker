@@ -189,8 +189,16 @@ def _():
                                           "2026-2027,course,astro8a?tenant=cabrillo.elumenapp.com"), want["ASTRO 8A"]
     assert want["ASTRO 8A"]["named_by"] == ["cabrillo"]
     assert reader.host_slug(ix["url"]) == "cabrillo"
-    pv = {c["code"]: c for c in reader.wanted_courses(reader.elumen_index("palo_verde"), ["palo_verde"])}
-    assert pv["ACC 101"]["report"].endswith("/2025-2026,course,acc101?tenant=pvc.elumenapp.com"), pv["ACC 101"]
+    mjc = {c["code"]: c for c in reader.wanted_courses(reader.elumen_index("modesto_junior"), ["modesto_junior"])}
+    assert mjc["AG 115"]["report"].endswith("/2026-2027,course,ag115?tenant=mjc.elumenapp.com"), mjc["AG 115"]
+    # Palo Verde moved to an Acalog catalog for 2026-2027 (the census of 2026-10-18; S449,
+    # S451), so its course pages are no longer eLumen's and the reader says so.
+    try:
+        reader.elumen_index("palo_verde")
+    except SystemExit as exc:
+        assert "names no eLumen catalog" in str(exc), exc
+    else:
+        raise AssertionError("palo_verde reads an Acalog catalog now; the eLumen index must refuse it")
 
 
 EL_MJC = os.path.join(ROOT, "kb", "course_outcomes", "trial_38505894485")   # Modesto: SLO: over a list

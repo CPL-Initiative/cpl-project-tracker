@@ -306,7 +306,8 @@ def host_slug(url: str) -> str:
 
 # An eLumen catalog prints each course's SLOs on the course's own catalog page, which
 # loads through the same light call the program read uses (college page read
-# 38504338656, S387: Cabrillo ASTRO 3, Modesto AG 115, Palo Verde ACC 101). A program
+# 38504338656, S387: Cabrillo ASTRO 3, Modesto AG 115, Palo Verde ACC 101; Palo Verde
+# moved to Acalog for 2026-2027, S451). A program
 # page links its courses at <catalog>/course/<code in lower case, no space>, so the
 # index is built from the codes, with no listing to read.
 EL_COURSE = "https://api-prod.elumenapp.com/catalog/sites/publish/content/%s,course,%s?tenant=%s"
