@@ -824,6 +824,13 @@ rows stand.
   College of the Desert from a custom page to CourseLeaf 2026-2027), and S444's mapper hosts sat on 37 rows. Re-read
   through the Supabase MCP, all 114 rows, before the build. Four registry colleges hold no records and stay out of the
   read (Diablo Valley, North Orange Continuing Education, San Jose City, Santiago Canyon).
+- **Mt. San Antonio:** extraction 39891607837 sent 40 (357 kept); load 39898177865 inserted 15, kept 368, 14 placing
+  none (the regained noncredit ESL, HSE and vocational programs read `adult-basic-education/` and `esl/` department
+  pages that list no course of theirs, so the load leaves them out); reread 39898856949 replaced 15, held 1. Long
+  Beach City's extraction (39891611701) was still running at the wave; it joins the next.
+- **Display build 25fe751ccd0a** covers Palo Verde, Cypress, Berkeley City, Hartnell and Mt. San Antonio: 17505 programs
+  (17,414 in be2635ed5b73). A PR that loads records without a build fails `tests/roep_display_test.py` (#2366, closed
+  into the wave PR for that reason): a college's load and its build travel together.
 - **#2365:** the page reader's `cq_view` and three S449 plans, merged on test green.
 
 ## S449 SkyBuckwheat (2026-10-22): the queue after S448, Palo Verde's new catalog, a reader view for curriQunet
