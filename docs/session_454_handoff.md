@@ -29,7 +29,7 @@ four other Commons run logs.
   `harvest-thin-list-denominator-closed-list-2026-10-23` (proposed).
 - **Hartnell's course pages:** plan `kb/college_reads/hartnell_course_units.json` on branch
   `claude/hartnell-course-units-read-s453` (no PR), page read run 39924074351. It loads the AST.ADJ Requirements tab,
-  lists its course links and follows the `/courses/` ones. Still running at checkpoint.
+  lists its course links and follows the `/courses/` ones. Started 08:21Z, a few minutes before the checkpoint.
 
 ## Decisions Sam made this run
 
@@ -55,8 +55,9 @@ None. Sheet 115 has no replies, and no Library brief is requested.
 
 - Measure a thin college against `with_closed_list`, and read `not_found` for the cause.
 - `step=display` applies the committed build. Build it on the branch first.
-- The sandbox clock can stall: S453's timed waits ended with `date` still reading 08:23. Do not use it to judge how
-  long a run has taken; read the run's own timestamps.
+- A background `until` timer in the sandbox can end early: S453's two five-minute waits ended within about a minute
+  (the clock itself was right, by the PR events' times). Judge a run's progress by its own timestamps, and let a PR
+  event or the next firing bring the session back.
 
 ## Other sessions and the routine
 
