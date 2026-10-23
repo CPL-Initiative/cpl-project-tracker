@@ -1,0 +1,21 @@
+{
+ "_readme": "S454 SkyBlazingStar, 2026-10-23. Of Hartnell's 96 extracted records (run 39895340003), 41 degrees fail the arithmetic check only because the record names the degree total and a general education pattern (Cal-GETC 28, Local GE 13) without its units; the Requirements tab prints the pattern's name and no units. A reconcile step can set the pattern's units from the catalog's own words, as Monterey Peninsula, Taft and Cañada's steps do. This read searches the front of the 2026-2027 catalog PDF (427 pages, generated 2026-08-21) for the sentences that state each pattern's units. No model call.",
+ "college": "Hartnell College",
+ "outside_hosts": {
+  "amazonaws.com": "Coursedog's public bucket for generated catalog PDFs (coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com), linked from Hartnell's catalog page as Download Catalog as PDF."
+ },
+ "questions": {
+  "ge_units": "How many units the catalog states for Cal-GETC and for Hartnell's local general education pattern (the associate degree's GE), in its own words, and on which page."
+ },
+ "keywords": [
+  "Cal-GETC[^\\n]{0,80}\\b\\d+(?:\\.\\d+)?\\s*(?:semester\\s+)?units",
+  "\\b\\d+(?:\\.\\d+)?\\s*(?:semester\\s+)?units[^\\n]{0,60}(?:general education|Cal-GETC)",
+  "[Ll]ocal (?:GE|[Gg]eneral [Ee]ducation)[^\\n]{0,80}",
+  "Hartnell College General Education[^\\n]{0,80}",
+  "minimum of \\d+[^\\n]{0,40}general education"
+ ],
+ "pdf_span": [1, 160],
+ "pages": [
+  {"answers": ["ge_units"], "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf"}
+ ]
+}
