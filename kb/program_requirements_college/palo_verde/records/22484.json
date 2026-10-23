@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Child Development-Teacher",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-development-teacher-2025-2026-fall-2025fa",
- "record_shape": 4,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=135&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5569,
+  "input_tokens": 6793,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5569,
-    "output_tokens": 1976,
+    "input_tokens": 6793,
+    "output_tokens": 2266,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,45 +30,34 @@
     "model": null
    }
   ],
-  "output_tokens": 1976,
+  "output_tokens": 2266,
   "output_tokens_details": {
-   "thinking_tokens": 474
+   "thinking_tokens": 748
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0618,
- "ms": 16054,
- "seconds": 16.5,
+ "cost_usd": 0.07249,
+ "ms": 18029,
+ "seconds": 18.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 18,
    "listed": 18,
-   "share": 0.833,
-   "missing": [
-    "CDEVC1000",
-    "HISTC1001",
-    "HISTC1002"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "CHD101",
-    "HIS130",
-    "HIS140"
-   ],
-   "flagged": [
-    "CHD101",
-    "HIS130",
-    "HIS140"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -82,6 +71,7 @@
     42.0,
     44.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 43.0-44.0; the catalog states 42.0-44.0"
    ]
@@ -105,18 +95,34 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Child Development - Teacher Certificate of Achievement",
+   "section_heading": "Child Development - Teacher, Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 42,
     "max": 44
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Met the course requirements for the Child Development Permit Matrix."
    ],
@@ -124,7 +130,7 @@
   },
   "blocks": [
    {
-    "name": "Required courses",
+    "name": "Required Courses - Total 33 Credits",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -134,77 +140,77 @@
     },
     "courses": [
      {
-      "code": "CHD101",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CHD102",
+      "code": "CDEV C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD103",
+      "code": "CHD 102",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD104",
+      "code": "CHD 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD105",
+      "code": "CHD 104",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD106",
+      "code": "CHD 105",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD107",
+      "code": "CHD 106",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD108",
+      "code": "CHD 107",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD145",
+      "code": "CHD 108",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "HEA140",
+      "code": "CHD 145",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSYCC1000",
+      "code": "HEA 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -213,7 +219,7 @@
     ]
    },
    {
-    "name": "Required courses: choose one",
+    "name": "Required Courses: Choose One - Total 3-9 Credits",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -223,21 +229,21 @@
     },
     "courses": [
      {
-      "code": "HIS130",
+      "code": "HIST C1001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "HIS140",
+      "code": "HIST C1002",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "POLSC1000",
+      "code": "POLS C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -246,9 +252,9 @@
     ]
    },
    {
-    "name": "Required courses: choose one",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "name": "Required Course - Total 4 Credits",
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 4,
@@ -256,7 +262,7 @@
     },
     "courses": [
      {
-      "code": "ENGLC1000",
+      "code": "ENGL C1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -265,7 +271,7 @@
     ]
    },
    {
-    "name": "Required courses: choose one",
+    "name": "Required Courses: Choose One - Total 3-11 Credits",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -275,21 +281,21 @@
     },
     "courses": [
      {
-      "code": "MAT108",
+      "code": "MAT 108",
       "units": 3,
-      "units_max": null,
+      "units_max": 4,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MAT110",
+      "code": "MAT 110",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "STATC1000",
+      "code": "STAT C1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -299,28 +305,15 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "CDEVC1000",
-    "why": "not in the text; catalog prints CHD101 - Child Growth and Development instead"
-   },
-   {
-    "code": "HISTC1001",
-    "why": "not in the text; catalog prints HIS130 - American History I instead"
-   },
-   {
-    "code": "HISTC1002",
-    "why": "not in the text; catalog prints HIS140 - American History II instead"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "CHD101 (Child Growth and Development) appears to correspond to closed-list CDEVC1000; recorded as catalog addition since the code differs.",
-   "HIS130 and HIS140 (American History I/II) appear to correspond to closed-list HISTC1001/HISTC1002; recorded as catalog additions.",
-   "The 'choose one' blocks print totals of 3-9 and 3-11 units, which exceed a single course; the rule 'Complete at least one of the following rules' was read as choose at least 1 course. Reviewer should check.",
-   "The English block lists only ENGLC1000 under 'choose one' (Total 4); effectively required.",
-   "The text names the Child Development Permit Matrix 'Teacher' permit level but no explicit career list; careers left empty.",
-   "Course codes in the catalog are printed without spaces (e.g., CHD102) while the closed list uses 'CHD 102'; treated as the same courses."
+   "Closed list stores CDEVC1000, HISTC1001 and HISTC1002 without a space; the catalog prints CDEV C1000, HIST C1001 and HIST C1002. Treated as the same courses (catalog_addition false).",
+   "MAT 108 is printed as 'Credits: 3 -4 units effective Spring 2027' — read as 3 units now, 4 units effective Spring 2027; recorded as units 3, units_max 4. Reviewer should check.",
+   "Block stated totals 'Choose One - Total 3-9 Credits' and 'Choose One - Total 3-11 Credits' are recorded as printed though only one course is chosen from each.",
+   "Printed program total is 42.0-44.0 credits; summing the minimum choices gives 43 (33+3+4+3), which does not match the printed minimum of 42. Recorded as printed.",
+   "The one Program Outcome printed applies to this certificate.",
+   "The text names the Child Development Permit Matrix 'Teacher' permit level but no career or job title list; careers left empty."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "39852997888"
 }

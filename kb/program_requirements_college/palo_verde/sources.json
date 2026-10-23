@@ -4,40 +4,12 @@
   "title": "Business Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.9,
-  "codes_found": [
-   "ACC101",
-   "ACC102",
-   "BUS101",
-   "BUS103",
-   "BUS105",
-   "BUS115",
-   "BUS135",
-   "BUS201",
-   "BUS202",
-   "BUS206",
-   "BUS210",
-   "BUS221",
-   "MAN105",
-   "MAN106",
-   "MAN107",
-   "MAN145",
-   "MAN205",
-   "PSY145"
-  ],
-  "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/business-management-associate-of-science-2025-2026-fall-2025fa",
-   "title": "Business Management Associate of Science",
-   "h1": "Business Management Associate of Science",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 20,
-  "text_chars": 2182
+  "text_chars": 0
  },
  {
   "control_number": "04442",
@@ -60,17 +32,20 @@
    "WEL102"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/automotive-technology-associate-of-science-2025-2026-fall-2025fa",
-   "title": "Automotive Technology Associate of Science",
-   "h1": "Automotive Technology Associate of Science",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=121&print",
+   "title": "Program: Automotive Technology, AS - Palo Verde College",
+   "h1": "Automotive Technology, AS",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
-  "text_chars": 2080
+  "text_chars": 2061
  },
  {
   "control_number": "04451",
@@ -95,17 +70,20 @@
    "SPA101"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/criminal-justice-associate-of-science-2025-2026-fall-2025fa",
-   "title": "Criminal Justice Associate of Science",
-   "h1": "Criminal Justice Associate of Science",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=127&print",
+   "title": "Program: Criminal Justice , AS - Palo Verde College",
+   "h1": "Criminal Justice , AS",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
-  "text_chars": 2200
+  "text_chars": 2204
  },
  {
   "control_number": "04452",
@@ -113,8 +91,9 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.955,
+  "coverage": 1.0,
   "codes_found": [
+   "CDEVC1000",
    "CHD102",
    "CHD103",
    "CHD104",
@@ -138,17 +117,20 @@
    "CHD251"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-development-associate-of-science-2025-2026-fall-2025fa",
-   "title": "Child Development Associate of Science",
-   "h1": "Child Development Associate of Science",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=125&print",
+   "title": "Program: Child Development , AS - Palo Verde College",
+   "h1": "Child Development , AS",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
-  "text_chars": 2339
+  "text_chars": 2498
  },
  {
   "control_number": "09813",
@@ -173,17 +155,20 @@
    "CIS265"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/computer-information-systems-associate-of-science-2025-2026-fall-2025fa",
-   "title": "Computer Information Systems Associate of Science",
-   "h1": "Computer Information Systems Associate of Science",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=126&print",
+   "title": "Program: Computer Information Systems , AS - Palo Verde College",
+   "h1": "Computer Information Systems , AS",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
-  "text_chars": 2295
+  "text_chars": 2278
  },
  {
   "control_number": "09815",
@@ -203,17 +188,20 @@
    "WEL203"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/welding-technology-certificate-of-achievement-2020-21-summer-2021su",
-   "title": "Welding Technology Certificate of Achievement",
-   "h1": "Welding Technology Certificate of Achievement",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=154&print",
+   "title": "Program: Welding Technology, Certificate of Achievement - Palo Verde College",
+   "h1": "Welding Technology, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welding technology, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 1650
+  "text_chars": 1601
  },
  {
   "control_number": "09816",
@@ -312,17 +300,20 @@
    "FST290"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/hazardous-materials-specialist-associate-of-science-2025-2026-fall-2025fa",
-   "title": "Hazardous Materials Specialist Associate of Science",
-   "h1": "Hazardous Materials Specialist Associate of Science",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=129&print",
+   "title": "Program: Hazardous Materials Specialist , AS - Palo Verde College",
+   "h1": "Hazardous Materials Specialist , AS",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 75,
-  "text_chars": 6224
+  "text_chars": 6820
  },
  {
   "control_number": "16369",
@@ -344,17 +335,20 @@
    "BCT210"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/building-construction-technology-associate-of-science-2025-2026-fall-2025fa",
-   "title": "Building Construction Technology Associate of Science",
-   "h1": "Building Construction Technology Associate of Science",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=123&print",
+   "title": "Program: Building Construction Technology , AS - Palo Verde College",
+   "h1": "Building Construction Technology , AS",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
-  "text_chars": 1860
+  "text_chars": 1853
  },
  {
   "control_number": "16691",
@@ -379,17 +373,20 @@
    "ADS151"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/alcohol-and-drug-studies-certificate-of-achievement-2025-2026-fall-2025fa",
-   "title": "Alcohol and Drug Studies Certificate of Achievement",
-   "h1": "Alcohol and Drug Studies Certificate of Achievement",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=131&print",
+   "title": "Program: Alcohol and Drug Studies, Certificate of Achievement - Palo Verde College",
+   "h1": "Alcohol and Drug Studies, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "alcohol and drug studies, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 2601
+  "text_chars": 2566
  },
  {
   "control_number": "17998",
@@ -397,7 +394,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "ART101",
    "ART105",
@@ -405,6 +402,8 @@
    "ART107",
    "ART120",
    "ART125",
+   "ARTHC1100",
+   "ARTHC1200",
    "ASL131",
    "ASL132",
    "ASL134",
@@ -416,6 +415,7 @@
    "ENG140",
    "ENG222",
    "ENGLC1000",
+   "ENGLC1002",
    "HIS110",
    "HIS120",
    "PHI100",
@@ -428,17 +428,20 @@
    "SPE105"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-arts-and-humanities-2025-2026-fall-2025fa",
-   "title": "Associate of Arts in Liberal Arts, Emphasis in Arts and Humanities",
-   "h1": "Associate of Arts in Liberal Arts, Emphasis in Arts and Humanities",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=116&print",
+   "title": "Program: Liberal Arts, AA - Emphasis in Arts and Humanities - Palo Verde College",
+   "h1": "Liberal Arts, AA - Emphasis in Arts and Humanities",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 30,
-  "text_chars": 3743
+  "text_chars": 2981
  },
  {
   "control_number": "17999",
@@ -446,16 +449,23 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.581,
+  "coverage": 0.968,
   "codes_found": [
    "ANT101",
    "ANT102",
    "ANT107",
    "ANT201",
+   "ANTHC1001",
+   "ANTHC1001L",
+   "CDEVC1000",
+   "ECONC2001",
+   "ECONC2002",
    "GGR103",
    "HIS110",
    "HIS120",
    "HIS125",
+   "HISTC1001",
+   "HISTC1002",
    "PSY115",
    "PSY150",
    "PSY155",
@@ -465,20 +475,28 @@
    "PSY215",
    "PSYCC1000",
    "SOC115",
-   "SOC120"
+   "SOC120",
+   "SOC121",
+   "SOC140",
+   "SOC160",
+   "SOCIC1000",
+   "STATC1000"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-social-and-behavior-science-2025-2026-fall-2025fa",
-   "title": "Associate of Arts in Liberal Arts, Emphasis in Social and Behavior Science",
-   "h1": "Associate of Arts in Liberal Arts, Emphasis in Social and Behavior Science",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=119&print",
+   "title": "Program: Liberal Arts, AA - Emphasis in Social and Behavior Science - Palo Verde College",
+   "h1": "Liberal Arts, AA - Emphasis in Social and Behavior Science",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 0.667
+    "award": 0,
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
-  "text_chars": 5409
+  "text_chars": 3297
  },
  {
   "control_number": "18000",
@@ -486,15 +504,19 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.867,
+  "coverage": 1.0,
   "codes_found": [
+   "ANTHC1001",
    "AST105",
    "AST110",
+   "ASTRC1001",
    "BIO111",
    "BIO190",
    "BIO191",
    "BIO210",
    "BIO211",
+   "BIOLC1001",
+   "BIOLC1001L",
    "CHE101",
    "CHE109",
    "CHE210",
@@ -516,17 +538,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-mathematics-and-science-2025-2026-fall-2025fa",
-   "title": "Associate of Arts in Liberal Arts, Emphasis in Mathematics and Science",
-   "h1": "Associate of Arts in Liberal Arts, Emphasis in Mathematics and Science",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=118&print",
+   "title": "Program: Liberal Arts, AA - Emphasis in Mathematics and Science - Palo Verde College",
+   "h1": "Liberal Arts, AA - Emphasis in Mathematics and Science",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 30,
-  "text_chars": 2916
+  "text_chars": 3007
  },
  {
   "control_number": "18045",
@@ -534,7 +559,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "ACC100",
    "ACC101",
@@ -550,23 +575,28 @@
    "BUS210",
    "BUS221",
    "CIS101",
+   "ECONC2001",
+   "ECONC2002",
    "MAN105",
    "MAN106",
    "MAN107",
    "MAN145"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-business-and-technology-2025-2026-fall-2025fa",
-   "title": "Associate of Arts in Liberal Arts, Emphasis in Business and Technology",
-   "h1": "Associate of Arts in Liberal Arts, Emphasis in Business and Technology",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=117&print",
+   "title": "Program: Liberal Arts, AA - Emphasis in Business and Technology - Palo Verde College",
+   "h1": "Liberal Arts, AA - Emphasis in Business and Technology",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
-  "text_chars": 3212
+  "text_chars": 2432
  },
  {
   "control_number": "22479",
@@ -574,7 +604,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.824,
+  "coverage": 1.0,
   "codes_found": [
    "ACC101",
    "ACC102",
@@ -586,23 +616,29 @@
    "BUS202",
    "BUS206",
    "BUS210",
+   "ECONC2001",
+   "ECONC2002",
    "MAN105",
    "MAN106",
    "MAN107",
-   "MAN145"
+   "MAN145",
+   "PSY145"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/business-literacy-certificate-of-career-preparation-2019-20-fall-2019fa",
-   "title": "Business Literacy Certificate of Career Preparation",
-   "h1": "Business Literacy Certificate of Career Preparation",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=134&print",
+   "title": "Program: Business Management, Certificate of Achievement - Palo Verde College",
+   "h1": "Business Management, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business management, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 1561
+  "text_chars": 1574
  },
  {
   "control_number": "22482",
@@ -636,17 +672,20 @@
    "BCT210"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/building-construction-technology-certificate-of-achievement-2021-22-summer-2022su",
-   "title": "Building Construction Technology Certificate of Achievement",
-   "h1": "Building Construction Technology Certificate of Achievement",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=133&print",
+   "title": "Program: Building Construction Technology, Certificate of Achievement - Palo Verde College",
+   "h1": "Building Construction Technology, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "building construction technology, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 1309
+  "text_chars": 1291
  },
  {
   "control_number": "22484",
@@ -654,8 +693,9 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
+   "CDEVC1000",
    "CHD102",
    "CHD103",
    "CHD104",
@@ -666,6 +706,8 @@
    "CHD145",
    "ENGLC1000",
    "HEA140",
+   "HISTC1001",
+   "HISTC1002",
    "MAT108",
    "MAT110",
    "POLSC1000",
@@ -673,17 +715,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-development-teacher-2025-2026-fall-2025fa",
-   "title": "Child Development - Teacher",
-   "h1": "Child Development - Teacher",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=135&print",
+   "title": "Program: Child Development - Teacher, Certificate of Achievement - Palo Verde College",
+   "h1": "Child Development - Teacher, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development - teacher, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 1650
+  "text_chars": 1734
  },
  {
   "control_number": "22485",
@@ -701,17 +746,20 @@
    "CRJ206"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/criminal-justice-certificate-of-achievement-2019-20-fall-2019fa",
-   "title": "Criminal Justice Certificate of Achievement",
-   "h1": "Criminal Justice Certificate of Achievement",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=136&print",
+   "title": "Program: Criminal Justice, Certificate of Achievement - Palo Verde College",
+   "h1": "Criminal Justice, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "criminal justice, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 1314
+  "text_chars": 1391
  },
  {
   "control_number": "30514",
@@ -738,17 +786,20 @@
    "WEL253"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/welding-technology-associate-of-science-2025-2026-fall-2025fa",
-   "title": "Welding Technology Associate of Science",
-   "h1": "Welding Technology Associate of Science",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=130&print",
+   "title": "Program: Welding Technology , AS - Palo Verde College",
+   "h1": "Welding Technology , AS",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
-  "text_chars": 2181
+  "text_chars": 2207
  },
  {
   "control_number": "30594",
@@ -756,8 +807,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.812,
+  "coverage": 1.0,
   "codes_found": [
+   "BIOLC1001",
+   "BIOLC1001L",
+   "CDEVC1000",
    "PSY110",
    "PSY115",
    "PSY145",
@@ -773,17 +827,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/psychology-2025-2026-fall-2025fa",
-   "title": "Psychology",
-   "h1": "Psychology",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=115&print",
+   "title": "Program: Psychology, AA-T - Palo Verde College",
+   "h1": "Psychology, AA-T",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 2778
+  "text_chars": 2802
  },
  {
   "control_number": "30710",
@@ -791,7 +848,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "ANT101",
    "PSY215",
@@ -799,20 +856,24 @@
    "SOC111",
    "SOC120",
    "SOC121",
+   "SOCIC1000",
    "STATC1000"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/aa-t-in-sociology-for-transfer-2025-2026-fall-2025fa",
-   "title": "AA-T in Sociology for Transfer",
-   "h1": "AA-T in Sociology for Transfer",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=105&print",
+   "title": "Program: Sociology, AA-T - Palo Verde College",
+   "h1": "Sociology, AA-T",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2250
+  "text_chars": 2155
  },
  {
   "control_number": "32242",
@@ -826,17 +887,20 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/as-t-administration-of-justice-for-transfer-2025-2026-fall-2025fa",
-   "title": "AS-T Administration of Justice For Transfer",
-   "h1": "AS-T Administration of Justice For Transfer",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=106&print",
+   "title": "Program: Administration of Justice, AS-T - Palo Verde College",
+   "h1": "Administration of Justice, AS-T",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 2301
+  "text_chars": 2240
  },
  {
   "control_number": "32252",
@@ -844,26 +908,32 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.625,
+  "coverage": 1.0,
   "codes_found": [
    "ACC101",
    "ACC102",
    "BUS101",
    "BUS135",
-   "BUS202"
+   "BUS202",
+   "ECONC2001",
+   "ECONC2002",
+   "STATC1000"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/business-management-2020-21-fall-2020fa",
-   "title": "Business Management",
-   "h1": "Business Management",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=108&print",
+   "title": "Program: Business Administration 2.0, AS-T - Palo Verde College",
+   "h1": "Business Administration 2.0, AS-T",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 0.5
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 1441
+  "text_chars": 3058
  },
  {
   "control_number": "32534",
@@ -871,8 +941,9 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
+   "CDEVC1000",
    "CHD102",
    "CHD103",
    "CHD104",
@@ -882,17 +953,20 @@
    "CHD108"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/as-t-early-childhood-education-for-transfer-2025-2026-fall-2025fa",
-   "title": "AS-T Early Childhood Education for Transfer",
-   "h1": "AS-T Early Childhood Education for Transfer",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=107&print",
+   "title": "Program: Early Childhood Education, AS-T - Palo Verde College",
+   "h1": "Early Childhood Education, AS-T",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 1941
+  "text_chars": 1921
  },
  {
   "control_number": "33848",
@@ -907,17 +981,20 @@
    "NBE16"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/english-as-a-second-language-non-credit-cert-of-completion-2019-20-fall-2019fa",
-   "title": "English As a Second Language - Non-Credit Cert of Completion",
-   "h1": "English As a Second Language - Non-Credit Cert of Completion",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=186&print",
+   "title": "Program: English As a Second Language, Non-Credit Certificate of Completion - Palo Verde College",
+   "h1": "English As a Second Language, Non-Credit Certificate of Completion",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
-  "text_chars": 804
+  "text_chars": 795
  },
  {
   "control_number": "39494",
@@ -933,17 +1010,20 @@
    "ABE54"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/non-credit-english-as-a-second-language-ii-2020-21-fall-2020fa",
-   "title": "NON-CREDIT English as a Second Language II",
-   "h1": "NON-CREDIT English as a Second Language II",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=188&print",
+   "title": "Program: English as a Second Language II, Non Credit Certificate of Completion - Palo Verde College",
+   "h1": "English as a Second Language II, Non Credit Certificate of Completion",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
-  "text_chars": 813
+  "text_chars": 827
  },
  {
   "control_number": "39667",
@@ -951,7 +1031,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "BUS202",
    "ENG120",
@@ -959,20 +1039,24 @@
    "ENG125",
    "ENG140",
    "ENG222",
-   "ENGLC1001"
+   "ENGLC1001",
+   "ENGLC1002"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/english-2025-2026-fall-2025fa",
-   "title": "English",
-   "h1": "English",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=111&print",
+   "title": "Program: English, AA-T - Palo Verde College",
+   "h1": "English, AA-T",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2312
+  "text_chars": 2194
  },
  {
   "control_number": "39852",
@@ -980,13 +1064,15 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
    "ANT101",
    "HIS110",
    "HIS115",
    "HIS120",
    "HIS125",
+   "HISTC1001",
+   "HISTC1002",
    "POLSC1000",
    "SOC115",
    "SPA101",
@@ -994,17 +1080,20 @@
    "SPE105"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/history-2025-2026-fall-2025fa",
-   "title": "History",
-   "h1": "History",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=112&print",
+   "title": "Program: History, AA-T - Palo Verde College",
+   "h1": "History, AA-T",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 2651
+  "text_chars": 2673
  },
  {
   "control_number": "39853",
@@ -1012,28 +1101,34 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.7,
+  "coverage": 1.0,
   "codes_found": [
    "ANT101",
    "COMMC1000",
+   "COMMC1004",
    "ENGLC1001",
+   "ENGLC1002",
    "PSYCC1000",
+   "SOCIC1000",
    "SPE101",
    "SPE103",
    "SPE105"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/communication-studies-2-0-2025-2026-fall-2025fa",
-   "title": "Communication Studies 2.0",
-   "h1": "Communication Studies 2.0",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=110&print",
+   "title": "Program: Communication Studies 2.0, AA-T - Palo Verde College",
+   "h1": "Communication Studies 2.0, AA-T",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2600
+  "text_chars": 2610
  },
  {
   "control_number": "40016",
@@ -1041,7 +1136,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.938,
+  "coverage": 1.0,
   "codes_found": [
    "BIO210",
    "BIO211",
@@ -1057,20 +1152,24 @@
    "PHE176",
    "PHE177",
    "PSYCC1000",
+   "SOCIC1000",
    "STATC1000"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/kinesiology-2025-2026-fall-2025fa",
-   "title": "Kinesiology",
-   "h1": "Kinesiology",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=113&print",
+   "title": "Program: Kinesiology, AA-T - Palo Verde College",
+   "h1": "Kinesiology, AA-T",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 3026
+  "text_chars": 3041
  },
  {
   "control_number": "40017",
@@ -1078,7 +1177,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.81,
+  "coverage": 1.0,
   "codes_found": [
    "ANT101",
    "BUS135",
@@ -1087,9 +1186,13 @@
    "CRJ115",
    "CRJ120",
    "CRJ206",
+   "ECONC2001",
+   "ECONC2002",
    "ENGLC1000",
    "ENGLC1001",
    "GES115",
+   "HISTC1001",
+   "HISTC1002",
    "PHI120",
    "POLSC1000",
    "PSY155",
@@ -1099,17 +1202,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/law-public-policy-and-society-2025-2026-fall-2025fa",
-   "title": "Law, Public Policy, and Society",
-   "h1": "Law, Public Policy, and Society",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=114&print",
+   "title": "Program: Law, Public Policy, and Society, AA-T - Palo Verde College",
+   "h1": "Law, Public Policy, and Society, AA-T",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "law, public policy, and society, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
-  "text_chars": 3677
+  "text_chars": 3582
  },
  {
   "control_number": "40020",
@@ -1117,11 +1223,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.882,
+  "coverage": 1.0,
   "codes_found": [
    "ANT101",
    "BIO190",
    "BIO191",
+   "CDEVC1000",
    "CHD102",
    "CHD103",
    "CHD104",
@@ -1133,20 +1240,24 @@
    "PSY201",
    "PSYCC1000",
    "SOC111",
+   "SOCIC1000",
    "STATC1000"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-and-adolescent-development-2025-2026-fall-2025fa",
-   "title": "Child and Adolescent Development",
-   "h1": "Child and Adolescent Development",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=109&print",
+   "title": "Program: Child and Adolescent Development, AA-T - Palo Verde College",
+   "h1": "Child and Adolescent Development, AA-T",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "child and adolescent development, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 3253
+  "text_chars": 3317
  },
  {
   "control_number": "41189",
@@ -1228,17 +1339,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-aircraft-rescue-firefighting-certificate-2021-22-fall-2021fa",
-   "title": "Fire Science Aircraft Rescue Firefighting Certificate",
-   "h1": "Fire Science Aircraft Rescue Firefighting Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=139&print",
+   "title": "Program: Fire Science Aircraft Rescue Firefighting, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Aircraft Rescue Firefighting, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.833
+    "title": 0.833,
+    "section": "coa",
+    "section_line": "fire science aircraft rescue firefighting, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 71,
-  "text_chars": 5658
+  "text_chars": 6229
  },
  {
   "control_number": "41208",
@@ -1322,17 +1436,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-chief-officer-certificate-2020-21-summer-2021su",
-   "title": "Fire Science Chief Officer Certificate",
-   "h1": "Fire Science Chief Officer Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=140&print",
+   "title": "Program: Fire Science Chief Officer, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Chief Officer, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": "coa",
+    "section_line": "fire science chief officer, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 72,
-  "text_chars": 6070
+  "text_chars": 6739
  },
  {
   "control_number": "41221",
@@ -1415,17 +1532,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-company-officer-certificate-2020-21-summer-2021su",
-   "title": "Fire Science Company Officer Certificate",
-   "h1": "Fire Science Company Officer Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=141&print",
+   "title": "Program: Fire Science Company Officer, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Company Officer, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": "coa",
+    "section_line": "fire science company officer, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 71,
-  "text_chars": 5705
+  "text_chars": 6316
  },
  {
   "control_number": "41222",
@@ -1509,17 +1629,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-fire-apparatus-driver-operator-certificate-2020-21-summer-2021su",
-   "title": "Fire Science Fire Apparatus Driver/Operator Certificate",
-   "h1": "Fire Science Fire Apparatus Driver/Operator Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=142&print",
+   "title": "Program: Fire Science Fire Apparatus Driver/Operator, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Fire Apparatus Driver/Operator, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.857
+    "title": 0.857,
+    "section": "coa",
+    "section_line": "fire science fire apparatus driver/operator, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 72,
-  "text_chars": 5774
+  "text_chars": 6355
  },
  {
   "control_number": "41223",
@@ -1601,17 +1724,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-fire-command-certificate-2020-21-spring-2021sp",
-   "title": "Fire Science Fire Command Certificate",
-   "h1": "Fire Science Fire Command Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=143&print",
+   "title": "Program: Fire Science Fire Command, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Fire Command, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": "coa",
+    "section_line": "fire science fire command, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 70,
-  "text_chars": 5607
+  "text_chars": 6215
  },
  {
   "control_number": "41224",
@@ -1694,17 +1820,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-fire-investigator-i-certificate-2020-21-summer-2021su",
-   "title": "Fire Science Fire Investigator I Certificate",
-   "h1": "Fire Science Fire Investigator I Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=146&print",
+   "title": "Program: Fire Science Fire Investigator I, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Fire Investigator I, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 71,
-  "text_chars": 5641
+  "text_chars": 6239
  },
  {
   "control_number": "41225",
@@ -1787,17 +1916,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-fire-inspector-ii-certificate-2020-21-spring-2021sp",
-   "title": "Fire Science Fire Inspector II Certificate",
-   "h1": "Fire Science Fire Inspector II Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=145&print",
+   "title": "Program: Fire Science Fire Inspector II, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Fire Inspector II, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.833
+    "title": 0.833,
+    "section": "coa",
+    "section_line": "fire science fire inspector ii, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 72,
-  "text_chars": 5701
+  "text_chars": 6316
  },
  {
   "control_number": "41226",
@@ -1881,17 +2013,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-fire-inspector-i-certificate-2020-21-fall-2020fa",
-   "title": "Fire Science Fire Inspector I Certificate",
-   "h1": "Fire Science Fire Inspector I Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=144&print",
+   "title": "Program: Fire Science Fire Inspector I, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Fire Inspector I, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 72,
-  "text_chars": 5691
+  "text_chars": 6301
  },
  {
   "control_number": "41227",
@@ -1975,17 +2110,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-hazardous-materials-specialist-certificate-2020-21-summer-2021su",
-   "title": "Fire Science Hazardous Materials Specialist Certificate",
-   "h1": "Fire Science Hazardous Materials Specialist Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=147&print",
+   "title": "Program: Fire Science Hazardous Materials Specialist, Certificate - Palo Verde College",
+   "h1": "Fire Science Hazardous Materials Specialist, Certificate",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.833
+    "title": 0.833,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 72,
-  "text_chars": 5782
+  "text_chars": 6322
  },
  {
   "control_number": "41241",
@@ -2069,17 +2207,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-instructor-certificate-2020-21-summer-2021su",
-   "title": "Fire Science Instructor Certificate",
-   "h1": "Fire Science Instructor Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=148&print",
+   "title": "Program: Fire Science Instructor, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Instructor, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "coa",
+    "section_line": "fire science instructor, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 72,
-  "text_chars": 5659
+  "text_chars": 6285
  },
  {
   "control_number": "41242",
@@ -2087,7 +2228,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.986,
   "codes_found": [
    "EMS161",
    "FST106",
@@ -2155,23 +2296,25 @@
    "FST274",
    "FST275",
    "FST276",
-   "FST277",
    "FST290",
    "FST80",
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-technical-rescue-certificate-2020-21-summer-2021su",
-   "title": "Fire Science Technical Rescue Certificate",
-   "h1": "Fire Science Technical Rescue Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=149&print",
+   "title": "Program: Fire Science Technical Rescue, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Technical Rescue, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": "coa",
+    "section_line": "fire science technical rescue, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 70,
-  "text_chars": 5673
+  "text_chars": 6278
  },
  {
   "control_number": "41243",
@@ -2255,17 +2398,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-technology-certificate-2021-22-fall-2021fa",
-   "title": "Fire Science Technology Certificate",
-   "h1": "Fire Science Technology Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=150&print",
+   "title": "Program: Fire Science Technology, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Technology, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "coa",
+    "section_line": "fire science technology, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 72,
-  "text_chars": 5612
+  "text_chars": 6222
  },
  {
   "control_number": "41250",
@@ -2349,17 +2495,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-water-boat-rescue-certificate-2021-22-fall-2021fa",
-   "title": "Fire Science Water & Boat Rescue Certificate",
-   "h1": "Fire Science Water & Boat Rescue Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=151&print",
+   "title": "Program: Fire Science Water & Boat Rescue, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Water & Boat Rescue, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.833
+    "title": 0.833,
+    "section": "coa",
+    "section_line": "fire science water & boat rescue, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 72,
-  "text_chars": 5720
+  "text_chars": 6327
  },
  {
   "control_number": "41260",
@@ -2442,17 +2591,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-wildland-firefighting-certificate-2020-21-summer-2021su",
-   "title": "Fire Science Wildland Firefighting Certificate",
-   "h1": "Fire Science Wildland Firefighting Certificate",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=152&print",
+   "title": "Program: Fire Science Wildland Firefighting, Certificate of Achievement - Palo Verde College",
+   "h1": "Fire Science Wildland Firefighting, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": "coa",
+    "section_line": "fire science wildland firefighting, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 71,
-  "text_chars": 5672
+  "text_chars": 6260
  },
  {
   "control_number": "41266",
@@ -2536,17 +2688,20 @@
    "FST90"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-technology-associates-degree-2025-2026-fall-2025fa",
-   "title": "Fire Science Technology Associates Degree",
-   "h1": "Fire Science Technology Associates Degree",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=128&print",
+   "title": "Program: Fire Science Technology, AS - Palo Verde College",
+   "h1": "Fire Science Technology, AS",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 72,
-  "text_chars": 5898
+  "text_chars": 6505
  },
  {
   "control_number": "41693",
@@ -2571,17 +2726,20 @@
    "NUR267"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/adn-associate-degree-in-nursing-2025-2026-fall-2025fa",
-   "title": "ADN (Associate Degree in Nursing)",
-   "h1": "ADN (Associate Degree in Nursing)",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=120&print",
+   "title": "Program: Associate Degree in Nursing, AS - Palo Verde College",
+   "h1": "Associate Degree in Nursing, AS",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
-  "text_chars": 1596
+  "text_chars": 1738
  },
  {
   "control_number": "42787",
@@ -2601,29 +2759,55 @@
    "SPE101"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/english-as-a-second-language-2025-2026-fall-2025fa",
-   "title": "English as a Second Language",
-   "h1": "English as a Second Language",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=137&print",
+   "title": "Program: English as a Second Language, Certificate of Achievement - Palo Verde College",
+   "h1": "English as a Second Language, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "english as a second language, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 878
+  "text_chars": 1024
  },
  {
   "control_number": "43010",
   "title": "Communication Studies 2.0",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT101",
+   "COMMC1000",
+   "COMMC1004",
+   "ENGLC1001",
+   "ENGLC1002",
+   "PSYCC1000",
+   "SOCIC1000",
+   "SPE101",
+   "SPE103",
+   "SPE105"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=110&print",
+   "title": "Program: Communication Studies 2.0, AA-T - Palo Verde College",
+   "h1": "Communication Studies 2.0, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0, aa-t",
+    "section_fit": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2610
  },
  {
   "control_number": "43196",
@@ -2631,28 +2815,33 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
    "ACC101",
    "ACC102",
    "BUS101",
    "BUS135",
    "BUS202",
+   "ECONC2001",
+   "ECONC2002",
    "MAT130",
    "STATC1000"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/business-administration-2-0-2025-2026-fall-2025fa",
-   "title": "Business Administration 2.0",
-   "h1": "Business Administration 2.0",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=108&print",
+   "title": "Program: Business Administration 2.0, AS-T - Palo Verde College",
+   "h1": "Business Administration 2.0, AS-T",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 2977
+  "text_chars": 3058
  },
  {
   "control_number": "43202",
@@ -2671,29 +2860,49 @@
    "NUR145"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fast-track-vocational-nursing-2025-2026-fall-2025fa",
-   "title": "Fast Track Vocational Nursing",
-   "h1": "Fast Track Vocational Nursing",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=138&print",
+   "title": "Program: Fast Track Vocational Nursing, Certificate of Achievement - Palo Verde College",
+   "h1": "Fast Track Vocational Nursing, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fast track vocational nursing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 1129
+  "text_chars": 1268
  },
  {
   "control_number": "43203",
   "title": "High School Equivalency Program",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GED31",
+   "GED32",
+   "GED33",
+   "GED34"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=187&print",
+   "title": "Program: High School Equivalency Program, Non-Credit Certificate of Completion - Palo Verde College",
+   "h1": "High School Equivalency Program, Non-Credit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1619
  },
  {
   "control_number": "45190",
@@ -2716,17 +2925,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/biological-sciences-associate-of-science-emphasis-health-science-2025-2026-fall-2025fa",
-   "title": "Biological Sciences Associate of Science (Emphasis Health Science)",
-   "h1": "Biological Sciences Associate of Science (Emphasis Health Science)",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=122&print",
+   "title": "Program: Biological Sciences , AS (Emphasis Health Science) - Palo Verde College",
+   "h1": "Biological Sciences , AS (Emphasis Health Science)",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 0.833
+    "award": 0,
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
-  "text_chars": 2765
+  "text_chars": 2648
  },
  {
   "control_number": "45191",
@@ -2743,77 +2955,243 @@
    "CHE109"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/science-core-for-nursing-certificate-of-achievement-2025-2026-fall-2025fa",
-   "title": "Science Core for Nursing Certificate of Achievement",
-   "h1": "Science Core for Nursing Certificate of Achievement",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=153&print",
+   "title": "Program: Science Core for Nursing, Certificate of Achievement - Palo Verde College",
+   "h1": "Science Core for Nursing, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "science core for nursing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 1630
+  "text_chars": 1530
  },
  {
   "control_number": "45359",
   "title": "California General Education Transfer Curriculum (Cal-GETC)",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT101",
+   "ANT102",
+   "ANT107",
+   "ANT115",
+   "ANT120",
+   "ANT201",
+   "ANTHC1001",
+   "ANTHC1001L",
+   "ART101",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASL125",
+   "AST105",
+   "AST110",
+   "ASTRC1001",
+   "BIO111",
+   "BIO190",
+   "BIO191",
+   "BIO210",
+   "BIO211",
+   "BIOLC1001",
+   "BIOLC1001L",
+   "CDEVC1000",
+   "CHE101",
+   "CHE109",
+   "CHE210",
+   "CHE211",
+   "COMMC1000",
+   "ECONC2001",
+   "ECONC2002",
+   "ENG122",
+   "ENG125",
+   "ENG140",
+   "ENG222",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ETH101",
+   "ETH210",
+   "GEL101",
+   "GEL102",
+   "GEL103",
+   "GEL104",
+   "GEL105",
+   "GEL106",
+   "GGR101",
+   "GGR102",
+   "GGR103",
+   "GGR120",
+   "HIS110",
+   "HIS120",
+   "HIS125",
+   "HISTC1001",
+   "HISTC1002",
+   "MAT108",
+   "MAT110",
+   "MAT130",
+   "PHI100",
+   "PHI120",
+   "PHY100",
+   "POLSC1000",
+   "PSY115",
+   "PSY150",
+   "PSY155",
+   "PSY201",
+   "PSY205",
+   "PSY210",
+   "PSY215",
+   "PSYCC1000",
+   "SOC115",
+   "SOC120",
+   "SOC121",
+   "SOC140",
+   "SOC160",
+   "SOCIC1000",
+   "SPE105",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=192&print",
+   "title": "Program: California General Education Transfer Curriculum (CalGETC) Certificate of Achievement - Palo Verde College",
+   "h1": "California General Education Transfer Curriculum (CalGETC) Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.714,
+    "section": "coa",
+    "section_line": "california general education transfer curriculum (calgetc) certificate of achievement",
+    "section_fit": 0.833
+   }
+  },
   "listed": 78,
-  "text_chars": 0
+  "text_chars": 6972
  },
  {
   "control_number": "45376",
   "title": "Alcohol and Drug Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADS101",
+   "ADS102",
+   "ADS103",
+   "ADS104",
+   "ADS105",
+   "ADS106",
+   "ADS107",
+   "ADS108",
+   "ADS109",
+   "ADS110",
+   "ADS111",
+   "ADS150",
+   "ADS151"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=193&print",
+   "title": "Program: Alcohol and Drug Studies, AA - Palo Verde College",
+   "h1": "Alcohol and Drug Studies, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2862
  },
  {
   "control_number": "45471",
   "title": "Child Care",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NBE100",
+   "NBE111",
+   "NBE145"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=191&print",
+   "title": "Program: Child Care Certificate of Completion (Non-Credit) - Palo Verde College",
+   "h1": "Child Care Certificate of Completion (Non-Credit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1289
  },
  {
   "control_number": "45472",
   "title": "Developing Capable Youth",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NBE120",
+   "NBE227"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=189&print",
+   "title": "Program: Developing Capable Youth Certificate of Completion (Non-Credit) - Palo Verde College",
+   "h1": "Developing Capable Youth Certificate of Completion (Non-Credit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 733
  },
  {
   "control_number": "45473",
   "title": "Arts - Early Childhood Education",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NBE130",
+   "NBE131",
+   "NBE135"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=190&print",
+   "title": "Program: Arts - Early Childhood Education Certificate of Completion (Non-Credit) - Palo Verde College",
+   "h1": "Arts - Early Childhood Education Certificate of Completion (Non-Credit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 987
  },
  {
   "control_number": "45958",
@@ -2829,41 +3207,84 @@
    "ASL135"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/american-sign-language-certificate-of-career-preparation-2019-20-fall-2019fa",
-   "title": "American Sign Language Certificate of Career Preparation",
-   "h1": "American Sign Language Certificate of Career Preparation",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=231&print",
+   "title": "Program: American Sign Language, Certificate of Achievement - Palo Verde College",
+   "h1": "American Sign Language, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "american sign language, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 1719
+  "text_chars": 1963
  },
  {
   "control_number": "45959",
   "title": "Umoja Scholars",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ETH101",
+   "ETH210",
+   "MAT108",
+   "MAT110",
+   "MAT130",
+   "PSY155",
+   "STATC1000",
+   "UMJ200"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=232&print",
+   "title": "Program: Umoja Scholars, Certificate of Achievement - Palo Verde College",
+   "h1": "Umoja Scholars, Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "umoja scholars, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 1853
  },
  {
   "control_number": "46108",
   "title": "Microsoft Word Specialist",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABE100",
+   "ABE101",
+   "ABE40"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=233&print",
+   "title": "Program: Microsoft Word Specialist, Certificate of Completion (Non-Credit) - Palo Verde College",
+   "h1": "Microsoft Word Specialist, Certificate of Completion (Non-Credit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 822
  },
  {
   "control_number": "46524",
@@ -2871,73 +3292,187 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.625,
+  "coverage": 1.0,
   "codes_found": [
    "ACC100",
+   "BUS104",
    "BUS115",
    "BUS135",
    "BUS206",
+   "BUS210",
+   "ECONC2001",
    "MAN107"
   ],
   "source": {
-   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/small-business-management-certificate-of-career-preparation-2019-20-fall-2019fa",
-   "title": "Small Business Management Certificate of Career Preparation",
-   "h1": "Small Business Management Certificate of Career Preparation",
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=615&print",
+   "title": "Program: Small Business, Certificate of Achievement - Palo Verde College",
+   "h1": "Small Business, Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "small business, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 1248
+  "text_chars": 1806
  },
  {
   "control_number": "46554",
   "title": "Anthropology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT101",
+   "ANT102",
+   "ANT107",
+   "ANT201",
+   "ANTHC1001",
+   "ANTHC1001L",
+   "BIO210",
+   "GEL101",
+   "GEL102",
+   "GEL103",
+   "GEL104",
+   "PSY155",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=616&print",
+   "title": "Program: Anthropology, AA-T - Palo Verde College",
+   "h1": "Anthropology, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology, aa-t",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2543
  },
  {
   "control_number": "46555",
   "title": "Anthropology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ANT101",
+   "ANT201",
+   "ANTHC1001",
+   "ANTHC1001L",
+   "BIO210",
+   "COMMC1000",
+   "GEL101",
+   "PSY155",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=617&print",
+   "title": "Program: Anthropology, Certificate of Achievement - Palo Verde College",
+   "h1": "Anthropology, Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "anthropology, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2058
  },
  {
   "control_number": "46556",
   "title": "Cross-Cultural Awareness",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT101",
+   "ANT102",
+   "ANT107",
+   "ANT201",
+   "ANTHC1001",
+   "ANTHC1001L",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ENG122",
+   "ENG125",
+   "ENG140",
+   "ENG222",
+   "ETH101",
+   "ETH210",
+   "GGR103",
+   "GGR120",
+   "HIS110",
+   "HIS120",
+   "HIS125",
+   "HISTC1001",
+   "HISTC1002",
+   "SOC115",
+   "SOC121",
+   "SOC140",
+   "SOCIC1000",
+   "SPE105"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=618&print",
+   "title": "Program: Cross-Cultural Awareness, Certificate of Achievement - Palo Verde College",
+   "h1": "Cross-Cultural Awareness, Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cross-cultural awareness, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 26,
-  "text_chars": 0
+  "text_chars": 2960
  },
  {
   "control_number": "46557",
   "title": "Emphasis on Studies of the Americas",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT102",
+   "ANT107",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ETH210",
+   "HISTC1001",
+   "HISTC1002",
+   "SOC115"
+  ],
+  "source": {
+   "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=619&print",
+   "title": "Program: Emphasis on Studies of the Americas, Certificate of Achievement - Palo Verde College",
+   "h1": "Emphasis on Studies of the Americas, Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "emphasis on studies of the americas, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2267
  }
 ]

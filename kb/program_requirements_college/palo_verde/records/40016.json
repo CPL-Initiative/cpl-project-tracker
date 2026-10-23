@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Kinesiology",
  "award": "A.A- T Degree",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/kinesiology-2025-2026-fall-2025fa",
- "record_shape": 5,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=113&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6836,
+  "input_tokens": 7161,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6836,
-    "output_tokens": 2723,
+    "input_tokens": 7161,
+    "output_tokens": 2265,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,34 @@
     "model": null
    }
   ],
-  "output_tokens": 2723,
+  "output_tokens": 2265,
   "output_tokens_details": {
-   "thinking_tokens": 1032
+   "thinking_tokens": 683
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0818,
- "ms": 22061,
- "seconds": 22.6,
+ "cost_usd": 0.07394,
+ "ms": 18275,
+ "seconds": 18.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 16,
-   "share": 0.938,
-   "missing": [
-    "SOCIC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "SOC101"
-   ],
-   "flagged": [
-    "SOC101"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -70,7 +65,7 @@
    "status": "equal",
    "computed": [
     58.0,
-    62.0
+    69.0
    ],
    "stated": [
     60.0,
@@ -82,8 +77,7 @@
     38.0
    ],
    "why": [],
-   "within": true,
-   "rescored": "Open Asks Sheet 81"
+   "within": true
   },
   "repeated": {
    "codes": [],
@@ -100,21 +94,28 @@
    "pass": true
   },
   "careers": {
-   "count": 5,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Kinesiology A.A. Degree for Transfer",
+   "section_heading": "Kinesiology, AA-T",
    "measure": "units",
    "total_units": {
     "min": null,
     "max": null
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "CalGETC",
    "degree_total": {
     "min": 60,
@@ -127,14 +128,13 @@
    "electives_fill_degree": false,
    "outcomes": [
     "Acquire fundamental grounding in communication, critical thinking, scientific inquiry, and quantitative reasoning, the arts, literature and humanities, social, political and economic institutions, and self-development.",
-    "Identify and apply basic physiological principles of human movement in exercise and sports settings."
+    "Identify and apply basic physiological principles of human movement in exercise and sports setting"
    ],
    "careers": [
     "health care",
     "coaching",
     "sports officiating",
-    "athletic training",
-    "kinesiologists"
+    "athletic training"
    ]
   },
   "blocks": [
@@ -149,21 +149,21 @@
     },
     "courses": [
      {
-      "code": "BIO210",
+      "code": "BIO 210",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BIO211",
+      "code": "BIO 211",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KIN100",
+      "code": "KIN 100",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -172,7 +172,7 @@
     ]
    },
    {
-    "name": "Required Courses: Movement Based Courses (Select a maximum of one (1) course from any three (3) of the following areas for a minimum of three units: Aquatics, Combatives, Team Sports, Individual Sports, Fitness, Dance)",
+    "name": "Required Courses: Movement Based Courses",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -182,42 +182,42 @@
     },
     "courses": [
      {
-      "code": "PHE100",
+      "code": "PHE 100",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHE135",
+      "code": "PHE 135",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHE176",
+      "code": "PHE 176",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHE177",
+      "code": "PHE 177",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHE155",
+      "code": "PHE 155",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHE156",
+      "code": "PHE 156",
       "units": 1,
       "units_max": null,
       "alternatives": [],
@@ -226,9 +226,9 @@
     ]
    },
    {
-    "name": "List A: Select two (6 units)",
-    "rule": "choose_units",
-    "minimum": 6,
+    "name": "List A: Select Two",
+    "rule": "choose_courses",
+    "minimum": 2,
     "option_group": null,
     "stated": {
      "min": 6,
@@ -236,35 +236,35 @@
     },
     "courses": [
      {
-      "code": "CHE210",
+      "code": "CHE 210",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHE211",
+      "code": "CHE 211",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KIN101",
+      "code": "KIN 101",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "HEA140",
+      "code": "HEA 140",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "STATC1000",
+      "code": "STAT C1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -274,8 +274,8 @@
    },
    {
     "name": "List A: PSY 101 or SOC 101",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "rule": "choose_units",
+    "minimum": 3,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -283,14 +283,14 @@
     },
     "courses": [
      {
-      "code": "SOC101",
+      "code": "SOCI C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "PSYCC1000",
+      "code": "PSYC C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -300,21 +300,15 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "SOCIC1000",
-    "why": "not in the text; catalog prints SOC101 - Introduction to Sociology instead (likely the same course under a different code)"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The 60 total ('Kinesiology (Total 60) Complete the following number of credits: 60') sits over the major blocks and the CalGETC 34-38, so it is recorded as degree_total; no separate major total is printed.",
-   "Required Courses block states 15 units but its three listed courses (BIO210 4, BIO211 5, KIN100 3) total 12; a course may be missing from the printed list.",
-   "Movement Based Courses: at most one course from any three of the areas (Aquatics, Combatives, Team Sports, Individual Sports, Fitness, Dance); the listed PHE courses are not labeled by area.",
-   "'List A: Select two (6 units)' is recorded as choose_units 6 per 'Complete the following number of credits: 6'; heading also says select two courses.",
-   "Block 'List A: PSY 101 or SOC 101' heading uses old codes; courses printed are SOC101 and PSYCC1000. SOC101 is flagged as a catalog addition since the closed list names SOCIC1000.",
-   "Program Outcomes are printed under the heading 'Associate in Arts in Kinesiology'.",
-   "Description also mentions advanced degrees in Physical Therapy, Occupation Therapy or Medical School; not recorded as careers."
+   "'Credits: 60.0' at the top of the page is recorded as degree_total; the page prints no total for the major itself. The 18-unit minimum is a generic AA-T rule, not this award's total.",
+   "Required Courses block states 'Total 15 Credits' but its listed courses (BIO 210 4, BIO 211 5, KIN 100 3) sum to 12; reviewer should check.",
+   "Movement Based Courses: catalog says select a maximum of one course from any three of the areas (Aquatics, Combatives, Team Sports, Individual Sports, Fitness, Dance) for a minimum of three units; only Fitness, golf and basketball courses are listed.",
+   "List A: Select Two states 'Total 6 Credits', but CHE 210/211 (5 units each) and STAT C1000 (4) would exceed 6; read as choose two courses.",
+   "Block 'List A: PSY 101 or SOC 101 - Total 3-6 Credits' lists SOCI C1000 and PSYC C1000; heading uses old codes. Read as at least one course (3 units), up to both (6); ambiguous.",
+   "Catalog code 'SOCI C1000' matches closed-list 'SOCIC1000' (same title, missing space in state file); treated as the same course, not a catalog addition."
   ]
  },
- "extracted_run": "38567765687"
+ "extracted_run": "39852997888"
 }

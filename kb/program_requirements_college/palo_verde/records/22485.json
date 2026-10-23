@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Criminal Justice",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/criminal-justice-certificate-of-achievement-2019-20-fall-2019fa",
- "record_shape": 4,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=136&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5210,
+  "input_tokens": 6395,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5210,
-    "output_tokens": 1124,
+    "input_tokens": 6395,
+    "output_tokens": 861,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1124,
+  "output_tokens": 861,
   "output_tokens_details": {
-   "thinking_tokens": 390
+   "thinking_tokens": 175
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04332,
- "ms": 11935,
- "seconds": 12.4,
+ "cost_usd": 0.0428,
+ "ms": 7204,
+ "seconds": 7.7,
  "parts": null,
  "error": null,
  "score": {
@@ -70,6 +71,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,18 +93,34 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Criminal Justice Certificate of Achievement",
+   "section_heading": "Criminal Justice, Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 18,
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "The ability to recognize the key differences between felony and manslaughter, and will be able to explain the reasoning behind them."
    ],
@@ -113,7 +131,7 @@
   },
   "blocks": [
    {
-    "name": "Program Requirements",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -123,42 +141,42 @@
     },
     "courses": [
      {
-      "code": "CRJ103",
+      "code": "CRJ 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ115",
+      "code": "CRJ 115",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ120",
+      "code": "CRJ 120",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ125",
+      "code": "CRJ 125",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ130",
+      "code": "CRJ 130",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CRJ206",
+      "code": "CRJ 206",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -170,11 +188,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints the block as 'Complete the following number of credits: 18'; the six listed 3-unit courses total exactly 18 units, so the block is recorded as 'all' (equivalent to choose_units 18).",
-   "Course codes are printed without a space (e.g., 'CRJ103'); they match the closed-list codes (CRJ 103, etc.) and are not catalog additions.",
-   "The catalog notes that academy training (peace officer/correctional officer) may be awarded up to 12 units for the certificate and/or degree, including 3 units for CRJ 115 plus CRJ elective credit, and PE/Health Education units; this substitution rule is not modeled in the blocks.",
-   "The program URL references 2019-20 Fall 2019, though the catalog page is under the 2025-2026 catalog; reviewer may wish to confirm currency."
+   "The page states 'Credits: 18.0' and 'Required Courses - Total 18 Credits'; both are recorded as the certificate total.",
+   "The description says academy training may be awarded up to 12 units toward the certificate and/or degree, including credit for CRJ 115 and CRJ elective credit. This is a credit-for-prior-learning provision and is not modeled as a block.",
+   "The award type is listed as requiring 16 to fewer than 30 semester units; the 18-unit total is consistent with this.",
+   "The single program outcome is printed for the program and recorded as given."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "39852997888"
 }

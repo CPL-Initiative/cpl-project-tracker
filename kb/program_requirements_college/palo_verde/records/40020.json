@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Child and Adolescent Development",
  "award": "A.A- T Degree",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-and-adolescent-development-2025-2026-fall-2025fa",
- "record_shape": 5,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=109&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7010,
+  "input_tokens": 7359,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7010,
-    "output_tokens": 2694,
+    "input_tokens": 7359,
+    "output_tokens": 2402,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,37 @@
     "model": null
    }
   ],
-  "output_tokens": 2694,
+  "output_tokens": 2402,
   "output_tokens_details": {
-   "thinking_tokens": 727
+   "thinking_tokens": 501
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08192,
- "ms": 20347,
- "seconds": 20.9,
+ "cost_usd": 0.07748,
+ "ms": 19089,
+ "seconds": 19.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 17,
    "listed": 17,
-   "share": 0.882,
-   "missing": [
-    "CDEVC1000",
-    "SOCIC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "BIO100",
-    "CHD101",
-    "SOC101"
+    "BIOLC1001"
    ],
    "flagged": [
-    "BIO100",
-    "CHD101",
-    "SOC101"
+    "BIOLC1001"
    ],
    "pass": true
   },
@@ -87,8 +81,7 @@
     38.0
    ],
    "why": [],
-   "within": true,
-   "rescored": "Open Asks Sheet 81"
+   "within": true
   },
   "repeated": {
    "codes": [],
@@ -109,17 +102,24 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Child and Adolescent Development A.A. Degree for Transfer",
+   "section_heading": "Child and Adolescent Development, AA-T",
    "measure": "units",
    "total_units": {
     "min": null,
     "max": null
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "CalGETC",
    "degree_total": {
     "min": 60,
@@ -148,14 +148,14 @@
     },
     "courses": [
      {
-      "code": "CHD101",
+      "code": "CDEV C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "PSYCC1000",
+      "code": "PSYC C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -174,14 +174,14 @@
     },
     "courses": [
      {
-      "code": "STATC1000",
+      "code": "STAT C1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSY155",
+      "code": "PSY 155",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -200,98 +200,98 @@
     },
     "courses": [
      {
-      "code": "ANT101",
+      "code": "ANT 101",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BIO100",
+      "code": "BIOL C1001",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BIO190",
+      "code": "BIO 190",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BIO191",
+      "code": "BIO 191",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD102",
+      "code": "CHD 102",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD103",
+      "code": "CHD 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD104",
+      "code": "CHD 104",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD105",
+      "code": "CHD 105",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD106",
+      "code": "CHD 106",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD107",
+      "code": "CHD 107",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD108",
+      "code": "CHD 108",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSY201",
+      "code": "PSY 201",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SOC101",
+      "code": "SOCI C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "SOC111",
+      "code": "SOC 111",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -300,7 +300,7 @@
     ]
    },
    {
-    "name": "Select one course not used in list A, not to exceed 6 units",
+    "name": "Select one course not used in list A, not to exceed 6 credits",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -310,49 +310,49 @@
     },
     "courses": [
      {
-      "code": "CHD102",
+      "code": "CHD 102",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD103",
+      "code": "CHD 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD104",
+      "code": "CHD 104",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD105",
+      "code": "CHD 105",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD106",
+      "code": "CHD 106",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD107",
+      "code": "CHD 107",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD108",
+      "code": "CHD 108",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -362,24 +362,16 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "CDEVC1000",
-    "why": "not in the text; catalog prints local CHD101 Child Growth and Development instead"
-   },
-   {
-    "code": "SOCIC1000",
-    "why": "not in the text; catalog prints local SOC101 Introduction to Sociology instead"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The 60 printed as 'Child and Adolescent Development (Total 60) / Complete the following number of credits: 60' is recorded as degree_total (it includes CalGETC 34-38); no separate major total is printed, so total_units is null.",
-   "The 'Required Courses' block states 9-10 units, which appears to include the nested 'Take one of the following' statistics choice (STATC1000 or PSY155); that choice is recorded as its own block.",
-   "CHD101 (Child Growth and Development) and SOC101 (Introduction to Sociology) are marked catalog additions because the closed list stores them as CDEVC1000 and SOCIC1000; reviewer should confirm these are the same courses.",
-   "PSYCC1000 and STATC1000 are treated as matching closed-list PSYC C1000 and STAT C1000 (spacing differs only).",
-   "The final block heading says 'Select one course not used in list A, not to exceed 6 units' with 'Complete the following number of credits: 3-6'; recorded as choose 1 course.",
-   "Program outcomes are listed under 'Associate in Arts in Child and Adolescent Development', which matches this award."
+   "Closed list stores 'CDEVC1000' and 'SOCIC1000' without a space; matched to catalog's 'CDEV C1000' and 'SOCI C1000' as the same courses.",
+   "'Credits: 60.0' at the top is recorded as degree_total; the page prints no major-only total (the 18-unit figure is the generic AA-T/AS-T minimum, not this award's total).",
+   "'Required Courses - Total 9-10 Credits' lists only two 3-unit courses; the 9-10 figure appears to include the statistics choice. Recorded as printed.",
+   "List A 'Total 9 Credits' read as choose 9 units from the list; the rule wording is not printed explicitly.",
+   "Last block 'Select one course not used in list A, not to exceed 6 credits' printed as Total 3-6 Credits; read as choose one course, but stated range suggests up to 6 units may be allowed.",
+   "BIOL C1001 is not in the closed list (catalog_addition true).",
+   "Catalog prints CHD 108 as 'Practicum-Field Experience'; closed list title spelled 'Practicum - Field Expereince'."
   ]
  },
- "extracted_run": "38567765687"
+ "extracted_run": "39852997888"
 }

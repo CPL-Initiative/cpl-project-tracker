@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Fast Track Vocational Nursing",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fast-track-vocational-nursing-2025-2026-fall-2025fa",
- "record_shape": 4,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=138&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5201,
+  "input_tokens": 6411,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5201,
-    "output_tokens": 1011,
+    "input_tokens": 6411,
+    "output_tokens": 1039,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1011,
+  "output_tokens": 1039,
   "output_tokens_details": {
-   "thinking_tokens": 233
+   "thinking_tokens": 226
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04102,
- "ms": 8573,
- "seconds": 9.0,
+ "cost_usd": 0.04642,
+ "ms": 8451,
+ "seconds": 8.9,
  "parts": null,
  "error": null,
  "score": {
@@ -63,13 +64,14 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    47.5,
-    47.5
+    48.25,
+    48.25
    ],
    "stated": [
-    47.5,
-    47.5
+    48.25,
+    48.25
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,18 +93,34 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Fast Track Vocational Nursing Certificate of Achievement",
+   "section_heading": "Fast Track Vocational Nursing, Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": 47.5,
-    "max": 47.5
+    "min": 48.25,
+    "max": 48.25
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Successfully pass the NCLEX-PN licensure examination on the first attempt.",
     "Demonstrate entry level competence in delivering patient care for clients in hospitals, long-term care and subacute facilities, and/or community-based health care agencies."
@@ -118,54 +136,54 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 47.5,
-     "max": 47.5
+     "min": 48.25,
+     "max": 48.25
     },
     "courses": [
      {
-      "code": "NUR115",
+      "code": "NUR 115",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "NUR116",
+      "code": "NUR 116",
       "units": 11,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "NUR141",
-      "units": 5.25,
+      "code": "NUR 141",
+      "units": 5.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "NUR143",
+      "code": "NUR 143",
       "units": 15.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "NUR144",
-      "units": 8,
+      "code": "NUR 144",
+      "units": 7.75,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "NUR145",
-      "units": 4.25,
+      "code": "NUR 145",
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "NUR119",
+      "code": "NUR 119",
       "units": 1.5,
       "units_max": null,
       "alternatives": [],
@@ -177,11 +195,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints codes without a space (NUR141, NUR144, NUR145, NUR119) while the closed list stores some as 'NUR 141', 'NUR 144', 'NUR 145', 'NUR 119'; treated as the same courses (catalog_addition false).",
-   "Catalog units differ slightly from the state file: NUR141 5.25 vs 5.3, NUR145 4.25 vs 4.3 (state file likely rounded).",
-   "The catalog states all courses (general education and nursing) must be passed with a 'C' or better; no GE pattern is named for this certificate.",
-   "Career entry 'nursing profession' taken from the description's 'entry level employment in the nursing profession'."
+   "Closed list writes NUR115, NUR116 and NUR143 without a space; the catalog prints NUR 115, NUR 116 and NUR 143. These were treated as the same courses (catalog_addition false).",
+   "Catalog units differ from the state file for several courses: NUR 141 is 5.5 in the catalog vs 5.3 in the state file, NUR 144 is 7.75 vs 8, and NUR 145 is 5 vs 4.3. Catalog values were recorded.",
+   "The course units sum to 48.25, which matches the printed total.",
+   "The page mentions general education courses must be passed with a C or better but lists no GE requirement for this certificate."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "39852997888"
 }

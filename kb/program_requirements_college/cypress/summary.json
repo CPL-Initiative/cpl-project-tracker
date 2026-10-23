@@ -2,299 +2,20 @@
  "college": "Cypress College",
  "programs": 282,
  "with_closed_list": 282,
- "found": 260,
- "extracted": 260,
+ "found": 274,
+ "extracted": 274,
  "errors": 0,
- "passed_machine_checks": 224,
+ "passed_machine_checks": 240,
  "failed": {
-  "coverage": 9,
+  "coverage": 6,
   "invented": 0,
-  "arithmetic": 36,
+  "arithmetic": 34,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 17.18,
- "cost_per_program": 0.0661,
+ "cost_usd": 18.14,
+ "cost_per_program": 0.0662,
  "not_found": [
-  {
-   "control_number": "03774",
-   "title": "Air Conditioning and  Refrigeration",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/air-conditioning-and-refrigeration-associate-in-science-degree/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 16,
-    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5291,
-     "content": 9335,
-     "tabs": 1547
-    },
-    "tab_panels": [
-     [
-      "Program Student Learning Outcomes",
-      1506
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "31106",
-   "title": "HVAC Codes and Estimating",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/hvac-codes-and-estimating-certificate/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 8,
-    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4099,
-     "content": 6976,
-     "tabs": 364
-    },
-    "tab_panels": [
-     [
-      "Program Student Learning Outcomes",
-      323
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "31171",
-   "title": "Commercial Refrigeration",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/commercial-air-conditioning-certificate/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3931,
-     "content": 6782,
-     "tabs": 343
-    },
-    "tab_panels": [
-     [
-      "Program Student Learning Outcomes",
-      302
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "31173",
-   "title": "Air Conditioning and Refrigeration",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/air-conditioning-and-refrigeration-project-management-certificate/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 17,
-    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3858,
-     "content": 6681,
-     "tabs": 315
-    },
-    "tab_panels": [
-     [
-      "Program Student Learning Outcomes",
-      274
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "31185",
-   "title": "HVAC Building Commissioning",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/hvac-building-commissioning-certificate/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3998,
-     "content": 6873,
-     "tabs": 360
-    },
-    "tab_panels": [
-     [
-      "Program Student Learning Outcomes",
-      319
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "31186",
-   "title": "Commercial Air Conditioning",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/commercial-air-conditioning-certificate/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3931,
-     "content": 6782,
-     "tabs": 343
-    },
-    "tab_panels": [
-     [
-      "Program Student Learning Outcomes",
-      302
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "31188",
-   "title": "Air Conditioning Customer Service",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/air-conditioning-customer-service-certificate/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 8,
-    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4064,
-     "content": 8117,
-     "tabs": 1547
-    },
-    "tab_panels": [
-     [
-      "Program Student Learning Outcomes",
-      1506
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "31189",
-   "title": "Automated Building Controls",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/automated_building_controls_certificate/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 16,
-    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4790,
-     "content": 7556,
-     "tabs": 335
-    },
-    "tab_panels": [
-     [
-      "Program Student Learning Outcomes",
-      294
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "31192",
-   "title": "Heat Pump",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/heat-pump-certificate/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 8,
-    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3993,
-     "content": 6873,
-     "tabs": 374
-    },
-    "tab_panels": [
-     [
-      "Program Student Learning Outcomes",
-      333
-     ]
-    ]
-   }
-  },
   {
    "control_number": "33913",
    "title": "Solar Energy",
@@ -357,75 +78,13 @@
     "error": null,
     "chars": {
      "body": 3717,
-     "content": 34106,
+     "content": 34117,
      "tabs": 0
     },
     "tab_panels": [
      [
       "Requirements",
-      28808
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "37208",
-   "title": "Air Conditioning and Refrigeration Project Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/air-conditioning-and-refrigeration-project-management-certificate/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3858,
-     "content": 6681,
-     "tabs": 315
-    },
-    "tab_panels": [
-     [
-      "Program Student Learning Outcomes",
-      274
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "41721",
-   "title": "Automated Building Controls",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/automated_building_controls_associate_in_science_degree/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 16,
-    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5117,
-     "content": 8103,
-     "tabs": 489
-    },
-    "tab_panels": [
-     [
-      "Program Student Learning Outcomes",
-      448
+      28824
      ]
     ]
    }
@@ -450,17 +109,17 @@
     "error": null,
     "chars": {
      "body": 3717,
-     "content": 34106,
+     "content": 34117,
      "tabs": 0
     },
     "tab_panels": [
      [
       "Requirements",
-      28808
+      28824
      ]
     ]
    }
   }
  ],
- "run": "38748866826"
+ "run": "39853370754"
 }

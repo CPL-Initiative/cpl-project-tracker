@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Early Childhood Education",
  "award": "A.S. T Degree",
- "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/as-t-early-childhood-education-for-transfer-2025-2026-fall-2025fa",
- "record_shape": 4,
+ "source_url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=107&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5421,
+  "input_tokens": 6560,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5421,
-    "output_tokens": 1359,
+    "input_tokens": 6560,
+    "output_tokens": 1268,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,34 @@
     "model": null
    }
   ],
-  "output_tokens": 1359,
+  "output_tokens": 1268,
   "output_tokens_details": {
-   "thinking_tokens": 411
+   "thinking_tokens": 371
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04886,
- "ms": 11323,
- "seconds": 11.7,
+ "cost_usd": 0.0516,
+ "ms": 11446,
+ "seconds": 12.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 8,
    "listed": 8,
-   "share": 0.875,
-   "missing": [
-    "CDEVC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CHD101"
-   ],
-   "flagged": [
-    "CHD101"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -76,7 +71,27 @@
     24.0,
     24.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     58.0,
+     62.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     38.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -97,18 +112,34 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "AS-T Early Childhood Education for Transfer",
+   "section_heading": "Early Childhood Education, AS-T",
    "measure": "units",
    "total_units": {
     "min": 24,
     "max": 24
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 38
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Interpret the processes of child growth and development",
     "Examine practices that respect and support inclusion",
@@ -133,56 +164,56 @@
     },
     "courses": [
      {
-      "code": "CHD101",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CHD102",
+      "code": "CDEV C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD103",
+      "code": "CHD 102",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD104",
+      "code": "CHD 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD105",
+      "code": "CHD 104",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD107",
+      "code": "CHD 105",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD106",
+      "code": "CHD 107",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHD108",
+      "code": "CHD 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHD 108",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -192,19 +223,14 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "CDEVC1000",
-    "why": "C-ID style code not printed in the text; the catalog prints CHD101 - Child Growth and Development instead, recorded as a catalog addition"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The catalog prints codes without a space (CHD102, etc.); these were matched to closed-list codes CHD 102 through CHD 108 as the same courses.",
-   "CHD101 (Child Growth and Development) is not in the closed list by code; the closed list carries CDEVC1000 with the same title, likely the same course under a C-ID/state code. Reviewer should confirm.",
-   "total_units recorded as 24 from 'Required Core Courses (Total 24)'; the program requirements heading states 'Total 60', which includes CalGETC general education (34-38) and is the degree total.",
-   "GE pattern listed as 'CalGETC' as printed (also 'CalGETC Education-Breadth pattern').",
-   "Closed-list title for CHD 108 is spelled 'Practicum - Field Expereince'; catalog prints 'Practicum-Field Experience'."
+   "CDEV C1000 in the catalog matched to closed-list CDEVC1000 (same course, spacing differs); treated as not a catalog addition.",
+   "total_units set to 24 from 'Required Core Courses - Total 24 Credits', the only major block; the page also prints 'Credits: 60.0', recorded as degree_total.",
+   "The sentence requiring 'a minimum of 18 semester units' in an AA-T/AS-T major is a general rule, not this award's total.",
+   "CalGETC 34-38 recorded as ge_units. The page does not state how remaining units to 60 are filled, so electives_fill_degree is false.",
+   "Career 'child development careers' taken from 'and/or other child development careers'."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "39852997888"
 }
