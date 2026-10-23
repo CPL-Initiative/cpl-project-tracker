@@ -1,0 +1,28 @@
+{
+ "_readme": "S457 SkyColumbine, 2026-10-23. Sierra's capture 39969391317 still leaves the two ESL noncredit programs page-claimed: ESL Intermediate-High Writing and Reading Skills 38991 (COCI lists ESL 0822F, 0812P, 0812T, 0830C) and ACE - Advanced ESL 44028 (ESL 0840C, 0840L, 0842G). Their sibling ESL Intermediate-High Oral Skills 38990 took the English as a Second Language department page on coverage 1.0 with no section matched (label.section null), so page_winners() kept one noncredit program and the other two read no page. This reads the ESL page as the capture reads it (capture_view, hidden tab panels included) to see how the page heads each noncredit certificate (title and award words on one line or adjacent short lines; whether the title carries the ESL prefix COCI uses, and whether ACE is spelled out) and whether each certificate's course list sits beneath its own heading. One load, no model call.",
+ "college": "Sierra College",
+ "questions": {
+  "noncredit_headings": "On the English as a Second Language page as the capture reads it, what line heads each noncredit certificate (Intermediate-High Oral Skills, Intermediate-High Writing and Reading Skills, ACE / Advanced ESL)? Does the heading carry the ESL prefix and the award words (Noncredit Certificate of Completion or Competency) on the same or the next line, and does each certificate's course list sit beneath its own heading?"
+ },
+ "keywords": [
+  "ESL",
+  "Intermediate-High",
+  "Oral Skills",
+  "Writing and Reading",
+  "\\bACE\\b",
+  "Advanced",
+  "Academic",
+  "Noncredit",
+  "Certificate of (?:Completion|Competency|Achievement)",
+  "ESL ?0?8[1-4]\\d[A-Z]"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "noncredit_headings"
+   ],
+   "url": "https://catalog.sierracollege.edu/departments/english-second-language/",
+   "capture_view": true
+  }
+ ]
+}

@@ -3646,9 +3646,9 @@
    "label": {
     "award": 0,
     "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl intermediate-high oral skills noncredit certificate of competency",
+    "section_fit": 0.833
    }
   },
   "listed": 9,
@@ -3659,12 +3659,29 @@
   "title": "ESL Intermediate-High Writing and Reading Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL812P",
+   "ESL812T",
+   "ESL822F",
+   "ESL830C"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/english-second-language/",
+   "title": "English as a Second Language | Sierra College Catalog",
+   "h1": " English as a Second Language",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "noncredit",
+    "section_line": "esl intermediate-high writing and reading skills noncredit certificate of competency",
+    "section_fit": 0.857
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 16914
  },
  {
   "control_number": "39208",
@@ -4318,12 +4335,28 @@
   "title": "ACE - Advanced ESL",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL840C",
+   "ESL840L",
+   "ESL842G"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/english-second-language/",
+   "title": "English as a Second Language | Sierra College Catalog",
+   "h1": " English as a Second Language",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "noncredit",
+    "section_line": "ace - advanced certificate for esl noncredit",
+    "section_fit": 0.75
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 16914
  },
  {
   "control_number": "44605",

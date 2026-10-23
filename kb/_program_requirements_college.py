@@ -655,12 +655,16 @@ def heading_fit(line: str, tokens: list[str]) -> float:
 def with_acronyms(line: str, tokens: list[str]) -> str:
     """The heading with each run of words a short title word abbreviates written as that word:
     the state names Sierra's "IT: Cybersecurity" where the page heads "Information
-    Technology—Cybersecurity" (page read 39946962141, S455)."""
+    Technology—Cybersecurity" (page read 39946962141, S455), and "ESL Intermediate-High Oral
+    Skills" where it heads "English as a Second Language Intermediate-High Oral Skills"."""
     for t in tokens:
         if not (2 <= len(t) <= 4 and t.isalpha()) or re.search(r"\b" + re.escape(t) + r"\b", line):
             continue
-        # each spelled word four letters or more, so "intro to" never reads as IT
-        pat = r"\b" + r"[\W_]+".join(c + r"[a-z]{3,}" for c in t) + r"\b"
+        # each spelled word four letters or more, so "intro to" never reads as IT; a short
+        # function word between them is skipped, so "English as a Second Language" reads as
+        # ESL (Sierra's ESL department page, page read 39990920770, S457)
+        gap = r"(?:[\W_]+(?:a|an|as|and|of|for|the|in|to|on))*[\W_]+"
+        pat = r"\b" + gap.join(c + r"[a-z]{3,}" for c in t) + r"\b"
         line = re.sub(pat, t, line, count=1)
     return line
 

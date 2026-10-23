@@ -5,32 +5,30 @@
  "catalog_year": "2026-2027",
  "programs": 190,
  "with_closed_list": 125,
- "started": "2026-10-23T14:27:06Z",
+ "started": "2026-10-23T17:14:18Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.sierracollege.edu/sitemap.xml",
-  "status": null,
+  "status": 404,
   "listed": 0,
   "nested": 0,
   "program_pages": 0,
   "refused": null,
-  "errors": [
-   "https://catalog.sierracollege.edu/sitemap.xml: APIRequestContext.get: unable to get local issuer certificate"
-  ]
+  "errors": null
  },
  "index_fallback": 57,
  "pages_read": 57,
  "child_pages": 0,
  "banner_h1": null,
  "loads": 59,
- "seconds": 290.5,
- "found": 109,
+ "seconds": 293.1,
+ "found": 111,
  "by_method": {
   "link_search": 7,
   "no_closed_list": 65,
   "not_found": 3,
-  "page_claimed": 13,
-  "sitemap_page": 102
+  "page_claimed": 11,
+  "sitemap_page": 104
  },
  "shared_pages": {
   "https://catalog.sierracollege.edu/departments/business/": [
@@ -152,6 +150,11 @@
   "https://catalog.sierracollege.edu/departments/ethnic-studies/": [
    "38522",
    "45800"
+  ],
+  "https://catalog.sierracollege.edu/departments/english-second-language/": [
+   "38990",
+   "38991",
+   "44028"
   ],
   "https://catalog.sierracollege.edu/departments/advanced-manufacturing/": [
    "39514",
@@ -301,49 +304,33 @@
    "pages": [
     "https://catalog.sierracollege.edu/departments/fire-technology/"
    ]
-  },
-  {
-   "control_number": "38991",
-   "title": "ESL Intermediate-High Writing and Reading Skills",
-   "award": "Noncredit program",
-   "pages": [
-    "https://catalog.sierracollege.edu/departments/english-second-language/"
-   ]
-  },
-  {
-   "control_number": "44028",
-   "title": "ACE - Advanced ESL",
-   "award": "Noncredit program",
-   "pages": [
-    "https://catalog.sierracollege.edu/departments/english-second-language/"
-   ]
   }
  ],
  "coverage_bands": {
   "0.5-0.8": 5,
   "0.8-1.0": 21,
-  "1.0": 83
+  "1.0": 85
  },
  "would_extract": {
   "against": "kb/program_requirements_college/sierra",
-  "kept": 107,
+  "kept": 109,
   "programs": 2,
   "list": [
    {
-    "control_number": "37810",
-    "title": "Entrepreneurship for Makers",
+    "control_number": "38991",
+    "title": "ESL Intermediate-High Writing and Reading Skills",
     "award": "Noncredit program",
-    "url": "https://catalog.sierracollege.edu/departments/business/",
+    "url": "https://catalog.sierracollege.edu/departments/english-second-language/",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "page_claimed"
    },
    {
-    "control_number": "38749",
-    "title": "Construction Fundamentals",
+    "control_number": "44028",
+    "title": "ACE - Advanced ESL",
     "award": "Noncredit program",
-    "url": "https://catalog.sierracollege.edu/departments/buildingindustries/",
+    "url": "https://catalog.sierracollege.edu/departments/english-second-language/",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
@@ -351,5 +338,5 @@
    }
   ]
  },
- "run": "39969391317"
+ "run": "39993005180"
 }
