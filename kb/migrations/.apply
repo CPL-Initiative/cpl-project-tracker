@@ -1,2 +1,2 @@
-file=kb/supabase_cpl_comms.sql
-name=cpl_comms
+file=kb/receipts/cpl_comms_seed_2026-10-23.sql
+name=cpl_comms_seed_2026_10_23
