@@ -102,10 +102,35 @@ def awards_match(kind: str | None, award: str | None) -> bool:
     return False
 
 
+def fill_course_units(out: dict, units: dict) -> dict:
+    """{code: [min, max]} for each course (and alternative) in the record whose units are
+    empty and whose code the vendor's answer prices, filled in place."""
+    from _program_requirements_pilot import norm_code
+    filled = {}
+    # A noncredit course carries 0 credit hours (Hartnell's BUS 650, run 39946676559): no units,
+    # and a program measured in hours never takes a unit figure.
+    if (out.get("program") or {}).get("measure") not in (None, "units"):
+        return filled
+    units = {k: v for k, v in units.items() if v and (v[0] or v[1])}
+    for block in out.get("blocks") or []:
+        for course in block.get("courses") or []:
+            for entry in [course] + [a for a in course.get("alternatives") or [] if isinstance(a, dict)]:
+                span = units.get(norm_code(entry.get("code")))
+                if not span or entry.get("units") is not None or entry.get("units_max") is not None:
+                    continue
+                entry["units"] = span[0]
+                if span[1] is not None and span[1] != span[0]:
+                    entry["units_max"] = span[1]
+                filled[entry["code"]] = list(span)
+    return filled
+
+
 def reconcile(record: dict, text: str | None, college: str, award: str | None = None,
-              steps: dict | None = None) -> tuple[dict, list[dict]]:
+              steps: dict | None = None, course_units: dict | None = None) -> tuple[dict, list[dict]]:
     """The record with the college's reconcile steps applied to its page text, and
-    a note per change: the field, what it was, what it is now, and the words."""
+    a note per change: the field, what it was, what it is now, and the words.
+    course_units is the page's own course data where the reader kept it
+    ({"call": the vendor's address, "units": {code: [min, max]}}, cd_pages)."""
     conf = (steps if steps is not None else load_steps()).get(college)
     if not conf or not text or not isinstance(record, dict) or not awards_match(conf.get("awards"), award):
         return record, []
@@ -114,6 +139,16 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
     notes = []
     for st in conf.get("steps") or []:
         if not awards_match(st.get("awards"), award):
+            continue
+        if st["kind"] == "course_units":
+            # A course the page lists without units, priced by the course data the page's own
+            # scripts fetched (Hartnell's Coursedog Requirements tab, S455): never a course the
+            # reading gave units, and only from the call the page made, which the note names.
+            units = {k: v for k, v in ((course_units or {}).get("units") or {}).items() if v}
+            filled = fill_course_units(out, units) if units else {}
+            if filled:
+                notes.append({"field": "course_units", "was": None, "now": filled,
+                              "words": "%s (%s)" % ((course_units or {}).get("call"), st.get("source_words", ""))})
             continue
         field = st["field"]
         m = re.search(st["pattern"], text)

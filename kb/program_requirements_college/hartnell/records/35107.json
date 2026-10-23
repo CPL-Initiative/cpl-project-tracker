@@ -76,8 +76,8 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    71.0,
-    71.0
+    69.5,
+    69.5
    ],
    "stated": [
     71.0,
@@ -90,8 +90,8 @@
    ],
    "why": [],
    "fill": [
-    0.0,
-    0.0
+    1.5,
+    1.5
    ]
   },
   "repeated": {
@@ -157,42 +157,42 @@
     "courses": [
      {
       "code": "BIO1",
-      "units": null,
+      "units": 4.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO2",
-      "units": null,
+      "units": 4.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO3",
-      "units": null,
+      "units": 4.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM1A",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM1B",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT3A",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -211,14 +211,14 @@
     "courses": [
      {
       "code": "PHY2A",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY2B",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -237,14 +237,14 @@
     "courses": [
      {
       "code": "PHY4A",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY4B",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -263,35 +263,35 @@
     "courses": [
      {
       "code": "CHM12A",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CHM12B",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "STATC1000",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MAT3B",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MAT3C",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -310,20 +310,75 @@
    "No program learning outcomes or careers appear in the provided text."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 34,
-    "max": 34
+    "BIO1": [
+     4.5,
+     4.5
+    ],
+    "BIO2": [
+     4.5,
+     4.5
+    ],
+    "BIO3": [
+     4.5,
+     4.5
+    ],
+    "CHM1A": [
+     5,
+     5
+    ],
+    "CHM1B": [
+     5,
+     5
+    ],
+    "MAT3A": [
+     4,
+     4
+    ],
+    "PHY2A": [
+     4,
+     4
+    ],
+    "PHY2B": [
+     4,
+     4
+    ],
+    "PHY4A": [
+     4,
+     4
+    ],
+    "PHY4B": [
+     4,
+     4
+    ],
+    "CHM12A": [
+     5,
+     5
+    ],
+    "CHM12B": [
+     5,
+     5
+    ],
+    "STATC1000": [
+     4,
+     4
+    ],
+    "MAT3B": [
+     4,
+     4
+    ],
+    "MAT3C": [
+     4,
+     4
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

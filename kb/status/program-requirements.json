@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-23T10:31:58Z",
-  "session": 454,
-  "moniker": "SkyBlazingStar",
+  "written_at": "2026-10-23T12:37:33Z",
+  "session": 455,
+  "moniker": "SkyMonkeyflower",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_455_handoff.md",
+  "handoff": "docs/session_456_handoff.md",
   "next_step": {
-    "title": "Apply display build b2864d4d6992, then Hartnell's course units from the vendor's data",
-    "text": "Confirm the step=display run on main that applies b2864d4d6992 (Hartnell's 50 reconciled records and Sierra's 13 newly read programs). Then teach the Coursedog reader to keep the course units the Requirements tab's own courses/search call returns, and fill an empty course unit from them in a reconcile step, for Hartnell's remaining arithmetic failures."
+    "title": "Apply display build b0a96907bf83, then Sierra's last 15 page-claimed",
+    "text": "Once the wave PR merges, apply display build b0a96907bf83 on main (Hartnell's 86 records with their course units, Sierra's two Cybersecurity awards). Then read Sierra's next department pages for the 15 programs still page-claimed, starting with Business and Mathematics."
   },
   "calls": [
     {
@@ -41,7 +41,12 @@
       "text": "Open Asks Sheet 116 card 1 (first asked on Sheet 115, 2026-10-22): page-claimed rows with no filed record, filed records that place none of their listed courses, and Victor Valley's two department-list records keep an older display build's marks. Sierra's S454 re-read files records for 13 of its page-claimed programs. Recommended: remove the rest through supabase-migrate.yml with a receipt that carries every row's before-values.",
       "if_no_reply": "The 27 rows keep showing on CPL Pathways and in Sierra with marks from the build they were last in.",
       "link": "https://claude.ai/artifact/4oL4YfC4b43iVjUq1bSS8J",
-      "link_text": "Open Sheet 116"
+      "link_text": "Open Sheet 116",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-23",
+        "words": "Remove, on Open Asks Sheet 115 card 1 (12:23 UTC); the removal runs with a before-values receipt."
+      }
     },
     {
       "title": "Keep Hartnell's Local GE at 23 units, the sum of the seven areas its catalog prints?",
@@ -56,12 +61,12 @@
   },
   "changes": [
     {
-      "at": "2026-10-23T09:44:59Z",
-      "text": "Hartnell's 50 degree records reread with their general education units: Cal-GETC 34 on transfer degrees and Local GE 23 on local degrees; 34 now pass the machine checks."
+      "at": "2026-10-23T12:15:46Z",
+      "text": "Hartnell's course units read from its catalog vendor's own course data: 86 records reread, 59 now pass the machine checks, from 44."
     },
     {
-      "at": "2026-10-23T10:21:55Z",
-      "text": "Sierra read again with its AA or AS degree heading: 105 of 125 programs with a course list found, from 92; 6 new records loaded and 7 replaced."
+      "at": "2026-10-23T12:25:52Z",
+      "text": "Sierra's IT: Cybersecurity degree and certificate read from the Information Technology page; 107 of 125 programs with a course list found, from 105."
     }
   ],
   "headline": [
@@ -158,18 +163,18 @@
     {
       "day": "2026-10-23",
       "active": 20282,
-      "complete": 12957,
+      "complete": 12972,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-23T11:12:00Z"
+    "at": "2026-10-23T13:12:00Z"
   },
   "harvest": {
     "day": "2026-10-23",
-    "gaps": 3035,
+    "gaps": 3033,
     "parts": {
       "links": {
         "catalog": [
@@ -186,7 +191,7 @@
         ]
       },
       "roep": [
-        19159,
+        19163,
         20282
       ],
       "coci": [

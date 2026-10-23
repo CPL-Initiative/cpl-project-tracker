@@ -69,20 +69,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    26.0,
+    26.0
    ],
    "stated": [
     26.0,
     26.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Major Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -106,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -147,70 +145,70 @@
     "courses": [
      {
       "code": "BUS 50",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS 42",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "BUS 110A",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS 110B",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "BUS 135",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS 152",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS 154",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS 172",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS 173",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS 190",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -233,5 +231,55 @@
    "Only the Requirements tab text was provided; no program learning outcomes or careers appear in the text."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39949570443,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "BUS 50": [
+     4,
+     4
+    ],
+    "BUS 42": [
+     3,
+     3
+    ],
+    "BUS 110A": [
+     1,
+     1
+    ],
+    "BUS 110B": [
+     1,
+     1
+    ],
+    "BUS 135": [
+     4,
+     4
+    ],
+    "BUS 152": [
+     4,
+     4
+    ],
+    "BUS 154": [
+     3,
+     3
+    ],
+    "BUS 172": [
+     1,
+     1
+    ],
+    "BUS 173": [
+     3,
+     3
+    ],
+    "BUS 190": [
+     2,
+     2
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

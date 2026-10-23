@@ -139,40 +139,40 @@
     "courses": [
      {
       "code": "MAT3A",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT3B",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY4A",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EGN1R",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGLC1000",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "ENGLC1000E",
-        "units": null,
+        "units": 4,
         "catalog_addition": false
        }
       ],
@@ -192,28 +192,28 @@
     "courses": [
      {
       "code": "EGN5",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CSS1",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CSS2A",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM1A",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -230,5 +230,55 @@
    "The page prints no program learning outcomes and no careers."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39949570443,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "MAT3A": [
+     4,
+     4
+    ],
+    "MAT3B": [
+     4,
+     4
+    ],
+    "PHY4A": [
+     4,
+     4
+    ],
+    "EGN1R": [
+     2,
+     2
+    ],
+    "ENGLC1000": [
+     3,
+     3
+    ],
+    "ENGLC1000E": [
+     4,
+     4
+    ],
+    "EGN5": [
+     3,
+     3
+    ],
+    "CSS1": [
+     4,
+     4
+    ],
+    "CSS2A": [
+     4,
+     4
+    ],
+    "CHM1A": [
+     5,
+     5
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

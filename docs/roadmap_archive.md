@@ -12,6 +12,7 @@ status: archive
 
 ## INDEX update-history entries rotated out (2026-10-23)
 
+- 2026-10-22 (S444 SkyBlueOak, opened by Sam): Foothill merged (#2326); blocked catalogs flagged on Procedures (#2328); a call carries Sam's sheet answer (#2329); 37 Program Mapper hosts recorded (#2330); Golden West and Imperial Valley loaded (#2331); department pages and two-line award headings (#2333).
 - 2026-10-21 (S443 SkyToyon, opened by Sam): funding off My College (#2316, #2320); Reedley loaded (#2317); a page heading a section per award serves each sibling (#2322) and Foothill re-read and loaded (#2326); tabs never remember a filter (#2325, a CLAUDE.md rule); Open Asks Sheet 111.
 - 2026-10-21 (S442, the CPL Queue routine's run beside SkyManzanita): the harvest keeps a Requirements tab whose numbers carry a campus letter (#2309); Moorpark, Oxnard and Ventura re-read; one display build with Reedley.
 - 2026-10-21 (S442 SkyManzanita, opened by Sam): Sheet 109 applied (#2310); CPL Pathways' college line and the name CPL Pathways (#2312); one college choice for My College and CPL Pathways (#2313); My CPL Funding and the expenditure reports leave My College; Reedley re-read and loaded; KB note methodology-hand-another-tab-a-request.

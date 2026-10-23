@@ -145,28 +145,28 @@
     "courses": [
      {
       "code": "MUS2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS46",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS47",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS48",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -185,14 +185,14 @@
     "courses": [
      {
       "code": "MUS10",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS11",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -211,35 +211,35 @@
     "courses": [
      {
       "code": "MUS20",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS21",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS25",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS26",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS37",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -258,14 +258,14 @@
     "courses": [
      {
       "code": "MUS1A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS49",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -287,20 +287,67 @@
    "No program learning outcomes or careers are printed in this text."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 34,
-    "max": 34
+    "MUS2": [
+     3,
+     3
+    ],
+    "MUS46": [
+     4,
+     4
+    ],
+    "MUS47": [
+     4,
+     4
+    ],
+    "MUS48": [
+     4,
+     4
+    ],
+    "MUS10": [
+     1,
+     1
+    ],
+    "MUS11": [
+     0.5,
+     0.5
+    ],
+    "MUS20": [
+     1,
+     1
+    ],
+    "MUS21": [
+     1,
+     1
+    ],
+    "MUS25": [
+     1,
+     1
+    ],
+    "MUS26": [
+     1,
+     1
+    ],
+    "MUS37": [
+     1,
+     1
+    ],
+    "MUS1A": [
+     3,
+     3
+    ],
+    "MUS49": [
+     4,
+     4
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

@@ -15938,8 +15938,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 425,
+   "count": 426,
    "docs": [
+    {
+     "created": "2026-10-23",
+     "governs": [],
+     "n": 456,
+     "path": "docs/session_456_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 456 handoff: Hartnell's vendor course units, Sierra's IT Cybersecurity, display build b0a96907bf83",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-23",
      "governs": [],
@@ -23253,5 +23267,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1225
+ "total": 1226
 }

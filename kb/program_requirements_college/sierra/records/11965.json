@@ -1,0 +1,297 @@
+{
+ "college": "Sierra College",
+ "control_number": "11965",
+ "shape": "degree",
+ "title": "IT: Cybersecurity",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.sierracollege.edu/departments/infotech/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12038,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12038,
+    "output_tokens": 2076,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2076,
+  "output_tokens_details": {
+   "thinking_tokens": 629
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08967,
+ "ms": 18369,
+ "seconds": 19.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CSCI12",
+    "CSCI50",
+    "IT125"
+   ],
+   "flagged": [
+    "CSCI12",
+    "CSCI50",
+    "IT125"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 12,
+   "courses": 0,
+   "count": 12,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Information Technology—Cybersecurity AA or AS Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design LAN and WAN logical topologies that support various sized organizations.",
+    "Assess security risks and identify ways to minimize their threat and/or impact.",
+    "Analyze various operating system options and make recommendations based on organization needs.",
+    "Demonstrate digital literacy and work habits required for a successful virtual business.",
+    "Evaluate effectiveness of web-based business tools for successful operation of a virtual business.",
+    "Develop and implement common deliverables for virtual office entrepreneur.",
+    "Diagnose common software and hardware problems.",
+    "Analyze and integrate software solutions for the business environment.",
+    "Demonstrate professional communication and customer services skills.",
+    "Demonstrate computer literacy.",
+    "Analyze scenarios, investigate options, and appropriately apply workplace computer programs.",
+    "Demonstrate file management proficiency."
+   ],
+   "careers": [
+    "network administrators",
+    "cyber security professionals"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "IT 0075",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 0140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CSCI 0012",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSCI 0050",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 0060",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0095",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0165",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes zero-padded (IT 0075); matched to closed-list codes without padding (IT 75).",
+   "The section heading reads 'AA or AS Degree'; the same requirements apply to the A.S. award recorded here.",
+   "No units are printed beside courses in the 'Select 6 units' list; units left null.",
+   "The text says 'one of the following three general education patterns' but lists only two (Local GE and Cal-GETC); a third pattern may be missing from the extracted text.",
+   "The 60-unit minimum is a generic degree statement, not recorded as degree_total.",
+   "The outcomes tab prints a single PSLO list for the Information Technology department as a whole, not specific to Cybersecurity (it includes virtual business outcomes); recorded on the assumption the award shares it — reviewer should verify."
+  ]
+ },
+ "extracted_run": "39951768339"
+}

@@ -67,11 +67,11 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    9.0,
-    9.0
+    58.0,
+    58.0
    ],
    "stated": [
     60.0,
@@ -82,9 +82,10 @@
     34.0,
     34.0
    ],
-   "why": [
-    "a required course in 'Required Core' has no units",
-    "a required course in 'Major Electives - List A' has no units"
+   "why": [],
+   "fill": [
+    2.0,
+    2.0
    ]
   },
   "repeated": {
@@ -109,7 +110,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -150,28 +151,28 @@
     "courses": [
      {
       "code": "ARTHC1200",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART12A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART13",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART3",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -190,7 +191,7 @@
     "courses": [
      {
       "code": "ART1A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -209,49 +210,49 @@
     "courses": [
      {
       "code": "ART15A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART72",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHO1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHO2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART70",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART71",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART6A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -275,20 +276,63 @@
    "No program learning outcomes or careers are printed in this text."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 34,
-    "max": 34
+    "ARTHC1200": [
+     3,
+     3
+    ],
+    "ART12A": [
+     3,
+     3
+    ],
+    "ART13": [
+     3,
+     3
+    ],
+    "ART3": [
+     3,
+     3
+    ],
+    "ART1A": [
+     3,
+     3
+    ],
+    "ART15A": [
+     3,
+     3
+    ],
+    "ART72": [
+     3,
+     3
+    ],
+    "PHO1": [
+     3,
+     3
+    ],
+    "PHO2": [
+     3,
+     3
+    ],
+    "ART70": [
+     3,
+     3
+    ],
+    "ART71": [
+     3,
+     3
+    ],
+    "ART6A": [
+     3,
+     3
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

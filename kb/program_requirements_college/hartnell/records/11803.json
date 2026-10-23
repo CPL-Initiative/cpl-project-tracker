@@ -81,7 +81,7 @@
    "status": "incomplete",
    "computed": [
     14.5,
-    25.0
+    32.0
    ],
    "stated": [
     60.0,
@@ -165,45 +165,45 @@
     "courses": [
      {
       "code": "ABT58",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT90",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT92",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT99",
-      "units": null,
-      "units_max": null,
+      "units": 1,
+      "units_max": 8,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT57",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "BUS43",
-        "units": null,
+        "units": 4,
         "catalog_addition": false
        },
        {
         "code": "BUS50",
-        "units": null,
+        "units": 4,
         "catalog_addition": false
        }
       ],
@@ -223,21 +223,21 @@
     "courses": [
      {
       "code": "ABT49",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT53",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT110",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -256,21 +256,21 @@
     "courses": [
      {
       "code": "ABT52",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT54",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT80",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -284,14 +284,14 @@
      },
      {
       "code": "BUS1A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "BUS1B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -310,7 +310,7 @@
     "courses": [
      {
       "code": "ABT110",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -329,28 +329,28 @@
     "courses": [
      {
       "code": "ABT95",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT96",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT97",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT98",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -376,21 +376,21 @@
      },
      {
       "code": "ABT83",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT80",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT81",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -404,56 +404,56 @@
      },
      {
       "code": "ABT93",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT94",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT101",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT102",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT103",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT104",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT105",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT130",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -467,12 +467,12 @@
      },
      {
       "code": "MFGT70",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "MFGT71",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
@@ -497,42 +497,42 @@
     "courses": [
      {
       "code": "ABT130",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT131",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT132",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT133",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT134",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT135",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -551,14 +551,14 @@
     "courses": [
      {
       "code": "ABT80",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT110",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -572,7 +572,7 @@
      },
      {
       "code": "COM2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -591,21 +591,21 @@
     "courses": [
      {
       "code": "ABT49",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT83",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT98",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -624,21 +624,21 @@
     "courses": [
      {
       "code": "ABT95",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT96",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT97",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -664,49 +664,49 @@
     "courses": [
      {
       "code": "ABT94",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT101",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT102",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT103",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT104",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT105",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT130",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -732,12 +732,12 @@
      },
      {
       "code": "MFGT70",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "MFGT71",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
@@ -750,28 +750,28 @@
      },
      {
       "code": "ABT80",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT81",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT83",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT93",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -785,14 +785,14 @@
      },
      {
       "code": "ABT131",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT135",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -818,14 +818,14 @@
      },
      {
       "code": "ABT80",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT83",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -844,7 +844,7 @@
     "courses": [
      {
       "code": "ABT81",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -858,35 +858,35 @@
      },
      {
       "code": "ABT93",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT95",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT96",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT97",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT98",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -900,21 +900,21 @@
      },
      {
       "code": "ABT101",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT102",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT70",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -941,20 +941,163 @@
    "No program learning outcomes are printed on this requirements page."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 23,
-    "max": 23
+    "ABT58": [
+     3,
+     3
+    ],
+    "ABT90": [
+     3,
+     3
+    ],
+    "ABT92": [
+     3,
+     3
+    ],
+    "ABT99": [
+     1,
+     8
+    ],
+    "ABT57": [
+     3,
+     3
+    ],
+    "BUS43": [
+     4,
+     4
+    ],
+    "BUS50": [
+     4,
+     4
+    ],
+    "ABT49": [
+     3,
+     3
+    ],
+    "ABT53": [
+     3,
+     3
+    ],
+    "ABT110": [
+     2,
+     2
+    ],
+    "ABT52": [
+     3,
+     3
+    ],
+    "ABT54": [
+     3,
+     3
+    ],
+    "ABT80": [
+     3,
+     3
+    ],
+    "BUS1A": [
+     3,
+     3
+    ],
+    "BUS1B": [
+     3,
+     3
+    ],
+    "ABT95": [
+     3,
+     3
+    ],
+    "ABT96": [
+     3,
+     3
+    ],
+    "ABT97": [
+     3,
+     3
+    ],
+    "ABT98": [
+     3,
+     3
+    ],
+    "ABT83": [
+     3,
+     3
+    ],
+    "ABT81": [
+     3,
+     3
+    ],
+    "ABT93": [
+     3,
+     3
+    ],
+    "ABT94": [
+     2,
+     2
+    ],
+    "ABT101": [
+     1.5,
+     1.5
+    ],
+    "ABT102": [
+     1.5,
+     1.5
+    ],
+    "ABT103": [
+     1.5,
+     1.5
+    ],
+    "ABT104": [
+     1.5,
+     1.5
+    ],
+    "ABT105": [
+     1.5,
+     1.5
+    ],
+    "ABT130": [
+     1.5,
+     1.5
+    ],
+    "MFGT70": [
+     3,
+     3
+    ],
+    "MFGT71": [
+     3,
+     3
+    ],
+    "ABT131": [
+     1.5,
+     1.5
+    ],
+    "ABT132": [
+     1.5,
+     1.5
+    ],
+    "ABT133": [
+     1.5,
+     1.5
+    ],
+    "ABT134": [
+     1.5,
+     1.5
+    ],
+    "ABT135": [
+     1.5,
+     1.5
+    ],
+    "COM2": [
+     3,
+     3
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

@@ -67,20 +67,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    26.5,
-    26.5
+    30.0,
+    30.0
    ],
    "stated": [
     30.0,
     30.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 26.5-26.5; the catalog states 30.0-30.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -104,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -145,63 +143,63 @@
     "courses": [
      {
       "code": "CMA74",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT110",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD150",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD151",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD153",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD154",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD155",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD156",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD157",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -220,22 +218,22 @@
     "courses": [
      {
       "code": "WLD152",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD158",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD99",
-      "units": null,
-      "units_max": null,
+      "units": 1,
+      "units_max": 8,
       "alternatives": [],
       "catalog_addition": true
      }
@@ -258,5 +256,63 @@
    "No program learning outcomes or careers appear in the provided text (only the Requirements tab was captured)."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39949570443,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "CMA74": [
+     3,
+     3
+    ],
+    "MFGT110": [
+     2,
+     2
+    ],
+    "WLD150": [
+     3,
+     3
+    ],
+    "WLD151": [
+     3,
+     3
+    ],
+    "WLD153": [
+     3,
+     3
+    ],
+    "WLD154": [
+     3,
+     3
+    ],
+    "WLD155": [
+     2,
+     2
+    ],
+    "WLD156": [
+     2,
+     2
+    ],
+    "WLD157": [
+     3,
+     3
+    ],
+    "WLD152": [
+     2,
+     2
+    ],
+    "WLD158": [
+     2,
+     2
+    ],
+    "WLD99": [
+     1,
+     8
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }
