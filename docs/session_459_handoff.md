@@ -65,10 +65,17 @@ standing note).
 
 ## Open work, in order
 
-0. **Land the PRs on green `test`:** #2390 first (then Pages deploys; tell Sam Ashley can list), #2389, #2391, #2392
-   (this checkpoint; merge before the vault PR). Then re-run samueltlee/CPLBrain#449's `coverage` check and squash-merge
-   it; it reads the tracker's `main`, so it passes only after #2389 (drops the communications marker) and #2392 (adds
-   the library markers) have merged.
+0. **Land the PRs.** #2390 merged (squash a4d88d09, 19:58Z): Pages deploys it, and **Ashley can list from COBI with the
+   phrase once the site refreshes**. Still open at sign-off: **#2392** (this checkpoint; docs only, merges on a green
+   `test`; merge it before the vault PR), **#2389** (the side session's 457b checkpoint, ready for review, `main` merged
+   in; its `lints` job reported one failure that S458 could not name: the display test, the migrate test, the verdicts
+   SQL test and the Jev harvest test pass on its tree locally, and the governance panel test and the live contrast
+   check could not run in the sandbox; read the job's log above its last 75 lines), and **#2391** (draft; standing
+   down: removing Victor Valley's filed record alone fails the display test, "the receipt writes every program ...
+   got 17530", because the committed receipt still carries the row; fold the file removal into the next wave's
+   display rebuild and close #2391; the PR comment says so). Then re-run samueltlee/CPLBrain#449's `coverage` check
+   and squash-merge it; it reads the tracker's `main`, so it passes only after #2389 (drops the communications
+   marker) and #2392 (adds the library markers) have merged.
 1. **The Coordinator Guide.** Sam, ~20:00Z: a contracted Chaffey articulation officer adapted her Canvas shell for all
    colleges and drafted a CPL Coordinator handbook written on Chaffey's assumptions; he wants it analyzed for alignment
    with what the Initiative recommends, built in as a Chancellor's Office piece of a new kind (a technical support
