@@ -45,7 +45,7 @@ Nobody live at sign-off (every other session idle). The CPL Queue routine's next
 
 ## Decisions Sam made this run
 
-None by number this run; his words of 20:18Z (consolidate wherever possible; the team is overwhelmed by the tab count)
+Sheet 121, 21:27Z, all three his own call (fold-rule, attached, text); his words of 20:18Z (consolidate wherever possible; the team is overwhelmed by the tab count)
 are recorded in `cpl_memory` `sam-kb-tab-and-library-consolidation-2026-10-23` and the braindump, and wait on
 [Open Asks Sheet 121](https://claude.ai/artifact/NsRnyxTJ3pZmHBWk2qSoLN) card 1.
 
@@ -54,10 +54,15 @@ are recorded in `cpl_memory` `sam-kb-tab-and-library-consolidation-2026-10-23` a
 0. **Land the PRs on green `test`, then the two dispatches:** #2393 (code, the Library build), #2387 (the rescore, then
    `step=display` on `main`), #2394 (the receipt). The bot's receipt commit on a head starts no `test`; each branch
    already carries a session commit after it. Then the backfill branch (above) once Pages serves #2393.
-1. **Sheet 121** ([link](https://claude.ai/artifact/NsRnyxTJ3pZmHBWk2qSoLN)): card 1 the KB-tab fold and the rule; card 2 the Coordinator Guide's four files
-   (attach, then run `CPLBrain/04-projects/cpl-initiative/coordinator-guide/audit_workflow.js` under "ultracode"); card 3
-   the ELL IET notice's text (then the agency template in the vault and the ELL IET page, card 5 of Sheet 120). Read the
-   replies first.
+1. **Sheet 121 is answered** ([link](https://claude.ai/artifact/NsRnyxTJ3pZmHBWk2qSoLN); 21:27Z, all three his own call: 1 fold-rule, 2 attached, 3 text).
+   Build in that order: (a) fold the Knowledge Base tab into the Library as a second view (Pieces and Knowledge; the
+   `kb-portal/` iframe keeps its sign-in; the side menu loses `knowledge-base`, through `nav_groups.js` and the Admin
+   menu data) and the rule with its check (a `kb_path` on `cpl_library`, Needs attention naming a knowledge-bearing
+   piece without a note); (b) ask Sam to attach the four Coordinator Guide files, then run
+   `CPLBrain/04-projects/cpl-initiative/coordinator-guide/audit_workflow.js` under "ultracode"; (c) the agency template
+   in the vault and the ELL IET grantees page from the notice filed at
+   `CPLBrain/04-projects/cpl-initiative/ell-iet/` (PDF and extracted text). Remove Sheet 121's three cards from the vault
+   builder in the same change that lands (a); the lane already records the rulings.
 2. **The Library record for the open-asks series** reads version 121 after this checkpoint's receipt applies
    (`kb/receipts/cpl_library_open_asks_sheet121_2026-10-23_s459.sql`, through `supabase-migrate.yml` on the checkpoint's
    push); read the row back (version 121, 40 versions).
