@@ -1,11 +1,11 @@
--- S459 SkyBuckeye, 2026-10-23 ~21:25Z. Rule 8 ingest through execute_sql: INSERT-only, new slugs dated today, author S459.
+-- S459 SkyBuckeye, 2026-10-23 ~21:30Z (summaries cut to the table's 400-character check on the second try). Rule 8 ingest through execute_sql: INSERT-only, new slugs dated today, author S459.
 -- Rollback: supersede by slug under actor 'S459-rollback'.
 insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, affects, source, related, author, event_date, status, verified_by)
 values
 ('sam-kb-tab-and-library-consolidation-2026-10-23', 'question', 'cpl',
  'Sam: the KB tab and the Library might consolidate; whatever is in the Library should also be in the KB; the team is overwhelmed by the tab count',
- 'Sam, 2026-10-23 ~20:18Z: "it occurs to me that our KB tab might be a consolidation into the Library or vice versa ... ensure that whatever is in the library is also in the KB, since the knowledge helps us build our unified knowledge informing all the COBI work ... I like to consolidate wherever possible because as you can see from the growing number of COBI tabs, I like to iterate with you! Team get''s a bit overwhelmed by it though:)"',
- 'S459 recommended: fold the Knowledge Base tab (an iframe over kb-portal/, the public KB reader behind its own sign-in) into the Library as a second view, and one rule with a check: a Library piece whose substance is knowledge gets a KB note through the curation pipeline, the record links it, and Needs attention names a piece without one. Open Asks Sheet 121 card 1 carries it; the braindump holds his words.',
+ 'Sam, 2026-10-23 ~20:18Z: "our KB tab might be a consolidation into the Library or vice versa ... ensure that whatever is in the library is also in the KB ... I like to consolidate wherever possible because as you can see from the growing number of COBI tabs, I like to iterate with you! Team get''s a bit overwhelmed by it though:)"',
+ 'His full words: "As you are working on this, it occurs to me that our KB tab might be a consolidation into the Library or vice versa. Wan thinking if I should ping you to ensure that whatever is in the library is also in the KB, since the knowledge helps us build our unified knowledge informing all the COBI work. Let me know what you think or if it''s better left alone." S459 recommended: fold the Knowledge Base tab (an iframe over kb-portal/, the public KB reader behind its own sign-in) into the Library as a second view, and one rule with a check: a Library piece whose substance is knowledge gets a KB note through the curation pipeline, the record links it, and Needs attention names a piece without one. Open Asks Sheet 121 card 1 carries it; the braindump holds his words.',
  'Sam wonders whether the Knowledge Base tab and the Library should be one thing, and wants knowledge in Library pieces to reach the KB; he prefers fewer tabs.',
  array['library','knowledge-base','cobi-tabs','sam-ask'], array['library.js','kb-portal/','docs/reference/lanes/library.md'],
  'Sam in chat, 2026-10-23 ~20:18Z (CPLBrain 03-professional/braindumps/braindump-2026-10-23-2020-consolidate-the-kb-tab-and-the-library.md)', array['sam-claude-artifacts-go-in-library-2026-10-20'],
@@ -20,7 +20,7 @@ values
  'S459 SkyBuckeye', '2026-10-23', 'proposed', null),
 ('rescore-meets-applied-239-2026-10-23', 'milestone', 'cpl',
  'The scorer''s meets reading applied under Sam''s narrow ruling: 239 filed records moved from unequal to equal; 28 shape-6 records keep a failing degree check',
- 'S457''s change never reached #2387; S459 rebuilt it from the PR body and the lessons'' counts and found the same 258 program totals and 9 electives-filled degrees. Of the 258, 28 carry a degree check that still fails, so 239 applied by supabase-migrate run 40024250589; the complete count on the Progress view read 13,173 from 12,970. Display build e021a2824548 on #2387 applies on main after the merge.',
+ 'S457''s change never reached #2387; S459 rebuilt it from the PR body and the lessons'' counts and found the same 258 program totals and 9 degrees. 28 of the 258 keep a failing degree check, so 239 applied by run 40024250589; the complete count read 13,173 from 12,970. Display build e021a2824548 applies on main after the merge.',
  'program_verdict() in kb/_program_requirements_score.py holds the exact, floor and meets readings; the rescorer covers program totals and skips a record whose degree sub-check fails.',
  'Programs whose printed total the requirements'' low end meets exactly now pass the arithmetic check; 239 did.',
  array['program-requirements-harvest','scorer','milestone'], array['kb/_program_requirements_score.py','kb/_program_requirements_rescore.py'],
@@ -36,7 +36,7 @@ values
  'S459 SkyBuckeye', '2026-10-23', 'proposed', null),
 ('harness-ignores-cd-address-repos-by-absolute-path-2026-10-23', 'pitfall', 'cpl',
  'The cloud harness can ignore a command''s cd: an edit meant for one checkout lands in another worktree; name every repo by absolute path',
- 'S459, 2026-10-23: a python edit and a trigger write prefixed with cd /home/user/cpl-project-tracker ran in the #2389 worktree the harness had made current. S458 saw the same. Every command since uses git -C and absolute file paths; a worktree is addressed by its path, never by the shell''s directory.',
+ 'S459, 2026-10-23: an edit and a trigger write prefixed with cd /home/user/cpl-project-tracker ran in the #2389 worktree the harness had made current; S458 saw the same. Every command since uses git -C and absolute file paths.',
  'Reproduced twice (S458, S459) in sessions holding several worktrees; the harness tracks the working directory across calls and may not honor an inline cd.',
  'When a session works in more than one checkout, it must name the full path in every command, or an edit can land in the wrong copy.',
  array['sessions','harness','pitfall'], array['docs/session_460_handoff.md'],
