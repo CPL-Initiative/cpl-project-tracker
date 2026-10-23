@@ -780,6 +780,27 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S455 SkyMonkeyflower (2026-10-23, the CPL Queue routine): Hartnell's course units from the vendor, Sierra's IT
+
+- **A Coursedog tab's course data is now a source field.** `cd_pages` listens for the `courses/search` POST each
+  Requirements tab makes as it loads and keeps `{code: [min, max]}` of `credits.creditHours` as the source's
+  `course_units` (with the call's address). A reconcile kind, `course_units`, fills a course or alternative the
+  record lists without units, and its note names the call. Hartnell's procedure takes the step.
+- **A noncredit course carries 0 credit hours.** The first reconcile (run 39946676559) wrote 0 units into Hartnell's
+  hours-measured noncredit programs (BUS 650: "the blocks sum to 0.0; the catalog states 216"). That filed run was
+  reverted; the step now skips a 0-hour course and any record whose measure is not units. Reconcile 39949570443: 86
+  records priced, none at 0; 59 pass the machine checks (44 before), arithmetic failures 51 to 37.
+- **The carry basis keeps every block,** so a curator's confirm of a record does not carry across a course_units
+  fill. That is the cautious result; the college test's carry check exempts the kind and says so.
+- **A short title word may abbreviate the heading's words.** The state names Sierra's "IT: Cybersecurity"; the IT
+  department page heads "Information Technology—Cybersecurity" then "AA or AS Degree" (page read 39946962141,
+  capture view). `with_acronyms` collapses a run of words (each four letters or more, so "intro to" never reads as
+  IT) whose initials spell a 2-4 letter title word. Free capture 39949602062: found 105 to 107 of 125, page-claimed
+  17 to 15, the two Cybersecurity awards to extract.
+- **IT: Business Information Worker (07963, 21537) is not in Sierra's 2026-2027 catalog.** The IT page lists Cloud
+  Computing, Cybersecurity, Data Analytics, IT Technician and Network Technician. Those two are the college's to
+  retire in COCI, never a reader gap.
+
 ## S454 SkyBlazingStar (2026-10-23, the CPL Queue routine): Hartnell's GE units, Sierra's "AA or AS", the vendor's course units
 
 - **Hartnell's arithmetic failures were mostly GE, not course units.** Of the 85 records failing arithmetic after S451,
