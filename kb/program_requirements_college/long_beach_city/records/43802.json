@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Trauma Studies",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/trauma-studies/trauma-studies-certificate-achievement/",
- "record_shape": 4,
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/trauma-studies/",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12238,
+  "input_tokens": 9216,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12238,
-    "output_tokens": 1505,
+    "input_tokens": 9216,
+    "output_tokens": 1050,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,72 +30,70 @@
     "model": null
    }
   ],
-  "output_tokens": 1505,
+  "output_tokens": 1050,
   "output_tokens_details": {
-   "thinking_tokens": 680
+   "thinking_tokens": 217
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07905,
- "ms": 13212,
- "seconds": 13.7,
+ "cost_usd": 0.05786,
+ "ms": 9418,
+ "seconds": 9.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 0,
    "listed": 9,
-   "share": 0.667,
+   "share": 0.0,
    "missing": [
+    "PSYCC1000",
+    "PSYCC1000H",
+    "PSYCH11",
+    "PSYCH11H",
+    "PSYCH14",
+    "PSYCH4",
     "PSYCH41",
     "PSYTS39",
     "PSYTS40"
    ],
-   "unexplained": [
-    "PSYTS39",
-    "PSYTS40"
-   ],
-   "none_placed": false,
+   "unexplained": [],
+   "none_placed": true,
    "pass": false
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "PSY_TS39",
-    "PSY_TS40",
-    "PSY_TS41"
-   ],
-   "flagged": [
-    "PSY_TS41"
-   ],
-   "pass": false
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    16.0,
-    16.0
+    0.0,
+    0.0
    ],
-   "stated": [
-    16.0,
-    16.0
-   ],
-   "why": []
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -104,6 +102,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": false
  },
  "record": {
@@ -111,102 +112,72 @@
    "section_heading": "Trauma Studies - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": 16,
-    "max": 16
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
-   "outcomes": [
-    "Analyze the types, the causes, and the impacts of trauma, and how they relate to the principles of a trauma-informed approach."
-   ],
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
    "careers": []
   },
-  "blocks": [
-   {
-    "name": "REQUIRED COURSES",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": 16,
-     "max": 16
-    },
-    "courses": [
-     {
-      "code": "PSYC C1000",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "PSYC C1000H",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSYCH 11",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "PSYCH 11H",
-        "units": 3,
-        "catalog_addition": false
-       },
-       {
-        "code": "PSYCH 4",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSYCH 14",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSY_TS 39",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSY_TS 40",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSY_TS 41",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   }
-  ],
+  "blocks": [],
   "course_outcomes": [],
   "missing_explained": [
    {
+    "code": "PSYC C1000",
+    "why": "Not in any requirements list; named only as recommended preparation in course descriptions."
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "Not in any requirements list; named only as recommended preparation in course descriptions."
+   },
+   {
+    "code": "PSYCH 11",
+    "why": "Only a course description in the Courses tab; no certificate requirements in the text."
+   },
+   {
+    "code": "PSYCH 11H",
+    "why": "Only a course description in the Courses tab; no certificate requirements in the text."
+   },
+   {
+    "code": "PSYCH 14",
+    "why": "Only a course description and recommended preparation; no certificate requirements in the text."
+   },
+   {
+    "code": "PSYCH 4",
+    "why": "Only a course description in the Courses tab; no certificate requirements in the text."
+   },
+   {
     "code": "PSYCH 41",
-    "why": "catalog prints this course (same title, Trauma-Informed Care and Frontline Work) as PSY_TS 41; recorded under that code as a catalog addition"
+    "why": "Not in the text under this code; PSY_TS 41 (formerly PSYCH 41) appears only as a course description, with no certificate requirements printed."
+   },
+   {
+    "code": "PSYTS39",
+    "why": "Appears only as course description PSY_TS 39; no certificate requirements in the text."
+   },
+   {
+    "code": "PSYTS40",
+    "why": "Appears only as course description PSY_TS 40; no certificate requirements in the text."
    }
   ],
   "notes": [
-   "PSY_TS 39 and PSY_TS 40 are treated as the closed-list entries PSYTS39 and PSYTS40 (same titles, formatting difference only).",
-   "PSY_TS 41 is printed under a different subject than the closed list's PSYCH 41 (same title); flagged as catalog addition — reviewer should confirm whether these are the same course.",
-   "PSYCH 4 appears as an 'or' option on the PSYCH 11/11H row with no units printed beside it; units left null.",
-   "The long course list at the top of the text is a site navigation menu, not part of the program requirements, and was ignored."
+   "The catalog text holds only the site navigation, the program landing page with links to 'Trauma Studies - Associate in Science' and 'Trauma Studies - Certificate of Achievement', and the Courses tab with course descriptions. The Certificate of Achievement's requirements table, total units, outcomes and careers are not in the text, so no blocks were recorded.",
+   "Courses tab lists PSY_TS 39, 40, 41, 42, 43, PSYCH 14, PSYCH 11, PSYCH 11H and PSYCH 4; PSY_TS 39/40/41 are noted as formerly PSYCH 39/40/41. PSY_TS 42 and PSY_TS 43 are not in the closed list.",
+   "A reviewer should fetch the certificate's own page (Trauma Studies - Certificate of Achievement) to read its requirements."
   ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "39891611701"
 }

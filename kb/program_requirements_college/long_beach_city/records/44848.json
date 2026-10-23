@@ -5,11 +5,11 @@
  "title": "Cal-GETC",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
  "source_url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-c/",
- "record_shape": 4,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 15332,
+  "input_tokens": 16491,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 15332,
-    "output_tokens": 13395,
+    "input_tokens": 16491,
+    "output_tokens": 13100,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,24 +30,25 @@
     "model": null
    }
   ],
-  "output_tokens": 13395,
+  "output_tokens": 13100,
   "output_tokens_details": {
-   "thinking_tokens": 3534
+   "thinking_tokens": 3122
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.32923,
- "ms": 92491,
- "seconds": 93.0,
+ "cost_usd": 0.32796,
+ "ms": 91431,
+ "seconds": 91.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 113,
+   "placed": 110,
    "listed": 189,
-   "share": 0.598,
+   "share": 0.582,
    "missing": [
     "ANAT1",
     "ANAT41",
@@ -73,13 +74,16 @@
     "CHEM2",
     "CHEM3",
     "CHEM4",
+    "COMM25",
     "COMM30",
     "COMM60",
-    "COMMC1000",
-    "COMMC1000H",
     "ECON3",
     "ECON4",
     "ECON5",
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H",
     "FREN2",
     "GEOG2",
     "GEOG40",
@@ -131,7 +135,7 @@
    "pass": true
   },
   "invented": {
-   "count": 58,
+   "count": 56,
    "codes": [
     "ANTHR3H",
     "ARCHT80",
@@ -141,9 +145,7 @@
     "ASL24",
     "ASL3",
     "ASL4",
-    "CDECE47",
     "CDEVC1000",
-    "COMM40",
     "ENGL15",
     "ENGL16",
     "ENGL17",
@@ -201,9 +203,7 @@
     "ASL24",
     "ASL3",
     "ASL4",
-    "CDECE47",
     "CDEVC1000",
-    "COMM40",
     "ENGL15",
     "ENGL16",
     "ENGL17",
@@ -258,10 +258,11 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    22.0,
-    29.0
+    25.0,
+    32.0
    ],
    "stated": null,
+   "against": null,
    "why": [
     "the record names no total"
    ]
@@ -285,18 +286,34 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Area Requirements",
+   "section_heading": "Cal-GETC",
    "measure": "units",
    "total_units": {
     "min": null,
     "max": null
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [],
    "careers": []
   },
@@ -396,6 +413,31 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Area 1C: Oral Communication",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
      }
     ]
    },
@@ -1482,57 +1524,10 @@
      },
      {
       "code": "CDEV C1000",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CDECE 47",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "COMM 25",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "COMM 40",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ECON C2001",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ECON C2001H",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "ECON C2002",
       "units": null,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "ECON C2002H",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
+      "alternatives": [],
+      "catalog_addition": true
      }
     ]
    }
@@ -1541,322 +1536,335 @@
   "missing_explained": [
    {
     "code": "ANAT 1",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "ANAT 41",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "ANTHC1001",
-    "why": "not in text (Area 4/5 lists cut off or missing)"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "ANTHC1001H",
-    "why": "not in text (Area 4/5 lists cut off or missing)"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "ANTHC1001L",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "ANTHR 11",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "ASTR C1001",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "ASTR C1001H",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "ASTR C1001L",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "BIO 1A",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "BIO 1B",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "BIO 2",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "BIO 20",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "BIO 30",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "BIO 5",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "BIO 60",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "BIO 60L",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "BIOLC1001",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "BIOLC1001L",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "CHEM 1A",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "CHEM 1B",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "CHEM 2",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "CHEM 3",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "CHEM 4",
-    "why": "Area 5 course list not in text; named only in cross-listing note"
-   },
-   {
-    "code": "COMM 30",
-    "why": "Area 1C course list not in text"
-   },
-   {
-    "code": "COMM 60",
-    "why": "Area 1C course list not in text"
-   },
-   {
-    "code": "COMM C1000",
-    "why": "Area 1C course list not in text"
-   },
-   {
-    "code": "COMM C1000H",
-    "why": "Area 1C course list not in text"
-   },
-   {
-    "code": "ECON 3",
-    "why": "Area 4 list cut off"
-   },
-   {
-    "code": "ECON 4",
-    "why": "Area 4 list cut off"
-   },
-   {
-    "code": "ECON 5",
-    "why": "Area 4 list cut off; named only in cross-listing note"
-   },
-   {
-    "code": "FREN 2",
-    "why": "not in text (LOTE option list missing)"
-   },
-   {
-    "code": "GEOG 2",
-    "why": "Area 4 list cut off"
-   },
-   {
-    "code": "GEOG 40",
-    "why": "Area 4 list cut off"
-   },
-   {
-    "code": "GEOG 5",
-    "why": "Area 4 list cut off; named only in cross-listing note"
-   },
-   {
-    "code": "GEOL 1",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "GEOL 10",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "GEOL 18",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "GEOL 2",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "GEOL 2L",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "GEOL 3",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "GEOL 3H",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "GEOL 5",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "GER 2",
-    "why": "not in text (LOTE option list missing)"
-   },
-   {
-    "code": "JAPAN 2",
-    "why": "not in text (LOTE option list missing)"
-   },
-   {
-    "code": "PGEOG 1",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "PGEOG 1L",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "PGEOG 2",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "PHYS 2A",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "PHYS 2B",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "PHYS 3A",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "PHYS 3B",
-    "why": "Area 5 course list not in text"
-   },
-   {
-    "code": "PHYS 3C",
-    "why": "Area 5 course list not in text"
+    "why": "named only in cross-listing note; Area 5 list not in the text"
    },
    {
     "code": "PHYS 4",
-    "why": "Area 5 course list not in text; named only in cross-listing note"
+    "why": "named only in cross-listing note; Area 5 list not in the text"
+   },
+   {
+    "code": "PHYS 2A",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "PHYS 2B",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "PHYS 3A",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "PHYS 3B",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "PHYS 3C",
+    "why": "Area 5 course lists not in the text"
    },
    {
     "code": "PHYSI 1",
-    "why": "Area 5 course list not in text"
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "GEOL 1",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "GEOL 10",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "GEOL 18",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "GEOL 2",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "GEOL 2L",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "GEOL 3",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "GEOL 3H",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "GEOL 5",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "PGEOG 1",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "PGEOG 1L",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "PGEOG 2",
+    "why": "Area 5 course lists not in the text"
+   },
+   {
+    "code": "COMM 25",
+    "why": "not in the text (likely in truncated Area 4 list)"
+   },
+   {
+    "code": "COMM 30",
+    "why": "not in the text (likely in truncated Area 4 list)"
+   },
+   {
+    "code": "COMM 60",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON 3",
+    "why": "Area 4 list cut off in the text"
+   },
+   {
+    "code": "ECON 4",
+    "why": "Area 4 list cut off in the text"
+   },
+   {
+    "code": "ECON 5",
+    "why": "named only in cross-listing note; Area 4 list cut off"
+   },
+   {
+    "code": "GEOG 5",
+    "why": "named only in cross-listing note; Area 4 list cut off"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "Area 4 list cut off in the text"
+   },
+   {
+    "code": "ECON C2001H",
+    "why": "Area 4 list cut off in the text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "Area 4 list cut off in the text"
+   },
+   {
+    "code": "ECON C2002H",
+    "why": "Area 4 list cut off in the text"
+   },
+   {
+    "code": "GEOG 2",
+    "why": "Area 4 list cut off in the text"
+   },
+   {
+    "code": "GEOG 40",
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "POLS C1000",
-    "why": "Area 4 list cut off; Option 1 course list not in text"
+    "why": "Area 4 / CSU American Institutions list not in the text"
    },
    {
     "code": "POLS C1000H",
-    "why": "Area 4 list cut off; Option 1 course list not in text"
+    "why": "Area 4 / CSU American Institutions list not in the text"
    },
    {
     "code": "POLSC 10",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "POLSC 11",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "POLSC 2",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "POLSC 2H",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "POLSC 3",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "POLSC 4",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "POLSC 4H",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "POLSC 9",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "PSYC C1000",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "PSYC C1000H",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "PSYCH 11",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "PSYCH 14",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "SOCIC1000",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "SOCIC1000H",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "SOCIO 11",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "SOCIO 13",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "SOCIO 2",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
    },
    {
     "code": "SOCIO 40",
-    "why": "Area 4 list cut off"
+    "why": "Area 4 list cut off in the text"
+   },
+   {
+    "code": "FREN 2",
+    "why": "LOTE option list not in the text"
+   },
+   {
+    "code": "GER 2",
+    "why": "LOTE option list not in the text"
+   },
+   {
+    "code": "JAPAN 2",
+    "why": "LOTE option list not in the text"
    },
    {
     "code": "SPAN 2",
-    "why": "not in text (LOTE option list missing)"
+    "why": "LOTE option list not in the text"
    }
   ],
   "notes": [
-   "This award is the Cal-GETC general education pattern itself, so its area lists are recorded as blocks; ge_pattern left null because the certificate is the pattern rather than a degree naming one.",
-   "The text is incomplete: Area 1C, Area 5 (5A/5B/5C), Area 6, and the Optional Requirements (Option 1 U.S. History/Constitution, Option 2 LOTE) tabs are not included, and the Area 4 list is cut off mid-entry at ECON C2002/C2002H (units not shown).",
-   "The text footer reads '2025-2026 Cal-GETC: Published: June 2025', which may not match the 2026-2027 catalog year.",
-   "No total units for the certificate is stated; '30 units of Cal-GETC' appears only as a CSU admission requirement and was not used.",
-   "Each area states a minimum ('One class required (3 units minimum)', 'Two classes required (6 units minimum)'); these were read as minimums, not block totals, so stated is null.",
-   "Area 3 requires two classes: one from Area 3A and one from Area 3B, recorded as two choose-1 blocks.",
-   "Area 4 heading says two classes (6 units minimum) from at least two disciplines for students starting Fall 2023 or later, but the list header says 'Complete three of the following' (the pre-Fall 2023 rule of 3 courses/9 units). Recorded minimum 2; reviewer should check.",
-   "Catalog prints ARTH C1100/C1100H and ARTH C1200/C1200H; closed list stores them as ARTHC1100/ARTHC1100H/ARTHC1200/ARTHC1200H, treated as the same courses.",
-   "Trailing footnote numbers after units (e.g. '(4) 2') are course-limitation/UC-eligibility/cross-listing footnotes, not units.",
-   "Cross-listed pairs (HUMAN 1/SOCSC 1, HUMAN 7/SOCSC 7) both appear in Area 3B and may count only once.",
-   "No program outcomes or careers are printed."
+   "This award is the Cal-GETC general education pattern itself, so its area lists are recorded as blocks; ge_pattern left null because the award does not name a separate GE pattern.",
+   "The page prints no total units for the pattern; total_units is null. '30 units of Cal-GETC' appears only under CSU admission requirements.",
+   "Catalog text is cut off partway through the Area 4 list (last item 'CDEV C1000 Child...', units not shown); Areas 5A, 5B, 5C, 6, and the optional U.S. History/Constitution and LOTE lists are not in the text.",
+   "Area 4 heading says two classes (6 units) are required for students starting Fall 2023 or later, but the list says 'Complete three of the following' (the pre-Fall 2023 rule of 3 courses/9 units). Minimum recorded as 2; reviewer should check.",
+   "Each area also states a unit minimum (e.g., 'One class required (3 units minimum)', Area 3 and 4 '6 units minimum'); these are minimums, not block totals, so stated is null.",
+   "Area 3 requires one class from 3A and one from 3B; recorded as two choose-1 blocks.",
+   "Closed-list codes ARTHC1100/ARTHC1200 and their honors versions are printed as 'ARTH C1100/C1100H' etc.; treated as the same courses (catalog_addition false).",
+   "Honors twins printed with a slash (e.g., ENGL C1003/C1003H, HIST 1A/1AH) are recorded as alternatives; honors versions not in the closed list are flagged as catalog additions.",
+   "Embedded-support versions (ENGL C1000E, MATH C2210E, STAT C1000E) are listed as separate entries because the catalog prints them as separate rows with different units.",
+   "Cross-listed pairs (HUMAN 1/SOCSC 1, HUMAN 7/SOCSC 7) are printed as separate rows and recorded separately; the catalog says a cross-listed course cannot certify more than one area.",
+   "The footer reads '2025-2026 Cal-GETC: Published: June 2025' while the requested catalog year is 2026-2027; the content may belong to the prior year.",
+   "No program learning outcomes or careers are printed for this award."
   ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "39891611701"
 }
