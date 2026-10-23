@@ -104,7 +104,8 @@
     return h;
   }
 
-  // The reviewer sign-in (reviewer_signin.js), which listing needs. Never the phrase.
+  // The reviewer sign-in (reviewer_signin.js). Listing sends it when there is one, else
+  // the team phrase (Sam, 2026-10-23: the team lists its own pieces publicly).
   function reviewerToken() {
     try {
       var s = window.CPL_REVIEWER_SIGNIN && window.CPL_REVIEWER_SIGNIN.getSession();
@@ -758,7 +759,7 @@
     var r = byId(id);
     if (!r) return;
     var token = reviewerToken();
-    if (!token) { say("Listing in the public library needs your reviewer sign-in. Sign in from About in the header, then try again.", true); render(); return; }
+    if (!token && !teamPhrase()) { say("Listing in the public library needs the team phrase or your reviewer sign-in. Enter the phrase, or sign in from About in the header, then try again.", true); render(); return; }
     var body = { p_slug: r.slug, p_listed: listed, p_by: storedAuthor() || null };
     if (listed) {
       var sum = ((document.getElementById("lp-sum") || {}).value || "").trim();
@@ -772,12 +773,13 @@
     state.busy = true; render();
     window.fetch(SET_PUBLIC_URL, {
       method: "POST",
-      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + token, "Content-Type": "application/json" },
+      headers: token ? { apikey: SUPABASE_ANON, Authorization: "Bearer " + token, "Content-Type": "application/json" }
+                     : headers({ "Content-Type": "application/json" }),
       body: JSON.stringify(body)
     }).then(function (res) {
       state.busy = false;
       if (!res.ok) return res.text().then(function (t) {
-        throw new Error(/reviewer/i.test(t) ? "The database wants a reviewer sign-in for this. Sign in from About and try again." : "The listing was refused (" + res.status + "). " + String(t || "").slice(0, 200));
+        throw new Error(/reviewer|team phrase/i.test(t) ? "The database wants the team phrase or a reviewer sign-in for this. Enter the phrase, or sign in from About, and try again." : "The listing was refused (" + res.status + "). " + String(t || "").slice(0, 200));
       });
       say(listed ? "Listed. It is on the public library now, and Sierra can link it." : "Removed from the public library. The record stays here.");
       state.pub = null;
