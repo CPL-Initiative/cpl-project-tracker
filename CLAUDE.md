@@ -749,7 +749,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 120](https://claude.ai/artifact/NWy1GvYEEQgS8oKrYWHpTk), 2026-10-23, seven cards: the scorer’s low-end-meets apply, held (Sheet 119’s card 9); then six on visuals made for an entity from the Library, Sam’s ask of 2026-10-23: where the visual is made, the entity types and name on a record, the public page’s filter, a college’s record pair in one step, the agency template with the ELL IET grantees first, and the backfill of today’s 26 records). Answering
+> (latest: [Open Asks Sheet 121](https://claude.ai/artifact/NsRnyxTJ3pZmHBWk2qSoLN), 2026-10-23, three cards: the Knowledge Base tab folded into the Library with a rule joining a knowledge-bearing piece to a KB note; the CPL Coordinator Guide's four files to attach again; the ELL IET award notice's text). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

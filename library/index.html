@@ -9,8 +9,9 @@
 <!-- The public library (Sam, 2026-10-20; mock-up https://claude.ai/artifact/Ebz253XFREqAni5D3sgVP9,
      "Mock up looks great!"). It lists only the Library pieces a reviewer has listed,
      read live through cpl_library_public() (kb/supabase_cpl_library_public.sql): title,
-     kind, occasion, date, public summary, topics and link. Nothing is copied here; the
-     switch lives on each record in COBI's Library tab. Test: tests/public_library.test.js -->
+     kind, occasion, date, public summary, topics, link, and who the piece is made for
+     (Sam, Open Asks Sheet 120, 2026-10-23: shown and filterable). Nothing is copied here;
+     the switch lives on each record in COBI's Library tab. Test: tests/public_library.test.js -->
 <script>(function(){function a(t){var r=document.documentElement;if(t==="light"||t==="dark")r.setAttribute("data-theme",t);else r.removeAttribute("data-theme")}
 try{a(localStorage.getItem("cpl_theme"))}catch(e){}
 window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newValue)})})()</script>
@@ -47,7 +48,9 @@ p { margin: 0; max-width: var(--cpl-measure, none); }
 .eyebrow { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
 .filters { display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; align-items: center; }
 .filters label { color: var(--text-muted); font-size: .92rem; }
-.filters input { font: inherit; padding: .35rem .55rem; border: 1px solid var(--border); background: var(--surface); color: var(--text-body); width: min(280px, 100%); }
+.filters input, .filters select { font: inherit; padding: .35rem .55rem; border: 1px solid var(--border); background: var(--surface); color: var(--text-body); width: min(280px, 100%); min-height: 24px; }
+.filters select { width: auto; max-width: 100%; }
+.piece .meta b { font-weight: 600; color: var(--text-body); }
 .word { background: none; border: 0; padding: 0 2px; min-height: 24px; min-width: 24px; font: inherit; font-weight: 600; color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .word[aria-pressed="true"] { color: var(--text-strong); text-decoration-thickness: 2px; }
 .word:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
@@ -146,11 +149,13 @@ p { margin: 0; max-width: var(--cpl-measure, none); }
   <header style="display:grid;gap:.5rem">
     <div class="eyebrow">California Community Colleges · CPL Initiative</div>
     <h1>CPL Library</h1>
-    <p>Presentations, films and briefs from the Credit for Prior Learning Initiative, for colleges, partners and the public. Each piece opens where it lives.</p>
+    <p>Visuals, presentations, films and briefs from the Credit for Prior Learning Initiative, for colleges, partners and the public. Each piece says who it was made for and opens where it lives.</p>
   </header>
   <div class="filters">
-    <label for="lib-q">Search</label><input id="lib-q" type="search" placeholder="Title, occasion or topic">
+    <label for="lib-q">Search</label><input id="lib-q" type="search" placeholder="Title, topic or who it is for">
     <div class="kinds" role="group" aria-label="Kind" id="lib-kinds"></div>
+    <div class="kinds" role="group" aria-label="Made for" id="lib-for"></div>
+    <span id="lib-for-wrap" hidden><label for="lib-ent">For</label> <select id="lib-ent"><option value="all">Everyone</option></select></span>
   </div>
   <section id="pieces" aria-labelledby="lib-h" style="display:grid;gap:.8rem">
     <h2 id="lib-h" class="eyebrow">The library</h2>

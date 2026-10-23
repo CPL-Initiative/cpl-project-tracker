@@ -344,12 +344,166 @@ block("(9)", function () {
 
 // ── (10) The schema takes the new kind, the new status and the brief ─────
 block("(10)", function () {
-  check("(10) kind accepts spreadsheet", /add constraint cpl_library_kind_ck\s+check \(kind in \('deck', 'film', 'document', 'spreadsheet'\)\)/.test(SQL));
+  check("(10) kind accepts spreadsheet and visual", /add constraint cpl_library_kind_ck\s+check \(kind in \('deck', 'film', 'document', 'spreadsheet', 'visual'\)\)/.test(SQL));
   check("(10) status accepts requested", /add constraint cpl_library_status_ck\s+check \(status is null or status in \('requested', 'draft', 'approved', 'presented'\)\)/.test(SQL));
   check("(10) the brief is one bounded jsonb object", /add column if not exists brief jsonb/.test(SQL) && /jsonb_typeof\(brief\) = 'object'/.test(SQL));
   const M = loadModule({}).M;
   check("(10) a Requested record is in development, an approved one is not",
     M._isDev({ status: "requested" }) && M._isDev({ status: "draft", brief: {} }) && !M._isDev({ status: "approved", brief: {} }) && !M._isDev({ status: "draft" }));
+});
+
+// ── (11) Made for an entity (Sam, Open Asks Sheet 120, 2026-10-23) ───────
+// Sam: "sort on the libraries for the type (college, agency, vendor, CO) and add the
+// name of the entity we are making this for and have it filterable by whatever
+// entities we've created something for"; his rulings: five types with a typed Other,
+// a college's record pair in one step from the tab, and Kind gains visual.
+const FOR_ROWS = [
+  Object.assign({}, ROWS[2], { id: "f1", slug: "cpl-opportunity-bakersfield-visual", title: "Bakersfield College: CPL Opportunity Analysis", kind: "visual",
+    occasion: "CPL college workgroup meeting", made_on: "2026-10-21", status: "draft", seen_by: "public", home: "web",
+    url: "https://cpl-initiative.github.io/cpl-project-tracker/cpl-opportunity/?college=Bakersfield%20College", for_kind: "college", for_name: "Bakersfield College", versions: [] }),
+  Object.assign({}, ROWS[3], { id: "f2", slug: "dsp-credit-starting-points", title: "DSP Credit Starting Points", kind: "visual", for_kind: "agency", for_name: "DDS, Aging and LWDA" }),
+  Object.assign({}, ROWS[4], { id: "f3", slug: "ironworker-union-brief", title: "Ironworker union brief", kind: "document", for_kind: "other", for_category: "Union", for_name: "Ironworkers Local 433" }),
+  ROWS[4]
+];
+const MAP_NAMES = [
+  { college_name: "Bakersfield College", entity_kind: "college", district: "Kern Community College District" },
+  { college_name: "Norco College", entity_kind: "college", district: "Riverside Community College District" },
+  { college_name: "Riverside City College", entity_kind: "college", district: "Riverside Community College District" }
+];
+function loadFor(author) {
+  const writes = [];
+  const m = loadModule({ phrase: "p", author: author, fetch: function (url, init) {
+    if (init && init.method) { writes.push({ url: url, init: init, body: JSON.parse(init.body) }); return response(201, [{ id: "new" }]); }
+    if (/map_colleges/.test(url)) return response(200, MAP_NAMES);
+    return response(200, FOR_ROWS);
+  } });
+  m.writes = writes;
+  return m;
+}
+function submit(m, sel) { m.root.querySelector(sel).dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true })); }
+function change(m, id, value) { const n = m.w.document.getElementById(id); n.value = value; n.dispatchEvent(new m.w.Event("change", { bubbles: true })); }
+block("(11)", function () {
+  const m = loadFor("Ashley"), doc = m.w.document;
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    check("(11) the Kind filter offers Visuals", !!m.root.querySelector('[data-kind="visual"]'));
+    check("(11) a record says who it is made for, type and name", /Made for College · For Bakersfield College/.test(doc.getElementById("lib-t-f1").closest("article").textContent));
+    check("(11) an Other record shows its typed category", /Made for Union · For Ironworkers Local 433/.test(doc.getElementById("lib-t-f3").closest("article").textContent));
+    check("(11) a record made for no one entity says nothing of it", !/Made for/.test(doc.getElementById("lib-t-a5").closest("article").textContent));
+    const forBtns = Array.prototype.map.call(m.root.querySelectorAll("[data-madefor]"), function (b) { return b.getAttribute("data-madefor"); });
+    check("(11) Made for offers the five types, and Other because an Other piece exists", forBtns.join(",") === "all,college,district,agency,vendor,co,other", forBtns.join(","));
+    click(m.w, m.root.querySelector('[data-madefor="agency"]'));
+    check("(11) Agencies shows the agency piece alone", m.root.querySelectorAll(".lib-item").length === 1 && /Showing 1 of 4/.test(m.root.textContent));
+    click(m.w, m.root.querySelector('[data-madefor="all"]'));
+    const names = Array.prototype.map.call(doc.getElementById("lib-for").options, function (o) { return o.value; });
+    check("(11) For lists the names present, sorted, after Anyone", names.join("|") === "all|Bakersfield College|DDS, Aging and LWDA|Ironworkers Local 433", names.join("|"));
+    change(m, "lib-for", "Bakersfield College");
+    check("(11) picking a name shows that entity's pieces", m.root.querySelectorAll(".lib-item").length === 1);
+    change(m, "lib-for", "all");
+    const q = doc.getElementById("lib-q"); q.value = "ironworkers local"; q.dispatchEvent(new m.w.Event("input", { bubbles: true }));
+    check("(11) search finds a piece by the entity's name", m.root.querySelectorAll(".lib-item").length === 1);
+    q.value = ""; q.dispatchEvent(new m.w.Event("input", { bubbles: true }));
+    click(m.w, m.root.querySelector("#lib-make"));
+    return settle();
+  }).then(function () {
+    check("(11) Make a visual reads MAP's college list, with the phrase, once it opens",
+      m.calls.some(function (c) { return /map_colleges\?select=college_name/.test(c.url) && c.init.headers["x-team-pass"] === "p"; }));
+    check("(11) and offers the names as a datalist on the For field",
+      !!doc.querySelector('#lib-names-colleges option[value="Riverside City College"]') && doc.getElementById("lm-forname").getAttribute("list") === "lib-names-colleges");
+    doc.getElementById("lm-forname").value = "riverside city college";
+    doc.getElementById("lm-occasion").value = "CSM meeting, 2026-10-28";
+    submit(m, "#lib-makeform");
+    return settle();
+  }).then(settle).then(function () {
+    const w = m.writes;
+    check("(11) Make writes the pair: two POSTs to cpl_library", w.length === 2 && w.every(function (x) { return x.init.method === "POST" && /cpl_library$/.test(x.url); }), String(w.length));
+    const v = w[0] ? w[0].body : {}, wb = w[1] ? w[1].body : {};
+    check("(11) the page record: kind visual, the college as MAP spells it, the live page's link",
+      v.kind === "visual" && v.for_kind === "college" && v.for_name === "Riverside City College" && v.home === "web" &&
+      v.url === "https://cpl-initiative.github.io/cpl-project-tracker/cpl-opportunity/?college=Riverside%20City%20College", JSON.stringify(v));
+    check("(11) its slug follows the first twelve", v.slug === "cpl-opportunity-riverside-city-visual" && wb.slug === "cpl-opportunity-riverside-city-workbook", v.slug + " " + wb.slug);
+    check("(11) the workbook record: a spreadsheet, not filed yet, made for the same college",
+      wb.kind === "spreadsheet" && wb.home === "not_filed" && wb.url === null && wb.for_name === "Riverside City College" && /Download CPL Extract/.test(wb.rebuild_from), JSON.stringify(wb));
+    check("(11) both say who made them and carry the occasion", v.added_by === "Ashley" && wb.added_by === "Ashley" && v.occasion === "CSM meeting, 2026-10-28" && /Ashley/.test(v.made_by));
+    check("(11) and the tab says so in words", /Riverside City College's CPL Opportunity page and its workbook are in the Library/.test(m.root.textContent), m.root.textContent.slice(0, 400));
+  });
+});
+block("(11b)", function () {
+  const m = loadFor("Ashley"), doc = m.w.document;
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    click(m.w, m.root.querySelector("#lib-make"));
+    return settle();
+  }).then(function () {
+    doc.getElementById("lm-forname").value = "Bakersfield College";
+    submit(m, "#lib-makeform");
+    return settle();
+  }).then(function () {
+    check("(11b) a college whose pair exists is refused, and nothing is written", m.writes.length === 0 && /Bakersfield College's pair is already in the Library/.test(m.root.textContent));
+    doc.getElementById("lm-forname").value = "Nowhere College";
+    submit(m, "#lib-makeform");
+    return settle();
+  }).then(function () {
+    check("(11b) a name MAP does not list is refused", m.writes.length === 0 && /Pick the college from MAP's list/.test(m.root.textContent));
+    click(m.w, m.root.querySelector('[data-makefor="agency"]'));
+    doc.getElementById("lm-forname").value = "EDD ELL IET Fund grantees";
+    doc.getElementById("lm-occasion").value = "Grantees meeting";
+    submit(m, "#lib-makeform");
+    return settle();
+  }).then(function () {
+    check("(11b) for an agency, Make opens Start a piece with kind Visual and the entity set",
+      !!doc.getElementById("lib-startform") && doc.getElementById("ls-kind").value === "visual" && doc.getElementById("ls-forkind").value === "agency" &&
+      doc.getElementById("ls-forname").value === "EDD ELL IET Fund grantees" && doc.getElementById("ls-occasion").value === "Grantees meeting");
+    doc.getElementById("ls-say").value = "What the grantees' training could earn as credit";
+    submit(m, "#lib-startform");
+    return settle();
+  }).then(function () {
+    const b = m.writes[0] ? m.writes[0].body : {};
+    check("(11b) the brief saves Requested, kind visual, with the entity", b.status === "requested" && b.kind === "visual" && b.for_kind === "agency" && b.for_name === "EDD ELL IET Fund grantees" && b.for_category === null, JSON.stringify(b));
+    const text = m.M._briefText({ slug: "ell-iet-grantees", title: "ELL IET grantees", kind: "visual", for_kind: "agency", for_name: "EDD ELL IET Fund grantees", brief: { say: "x" } });
+    check("(11b) the paste names who it is made for and the agency template", /Made for: Made for Agency · For EDD ELL IET Fund grantees/.test(text) && /agency template/.test(text) && /20261020_DSP_Credit_Starting_Points\.html/.test(text), text);
+    check("(11b) a college's paste names no agency template", !/agency template/.test(m.M._briefText({ slug: "s", title: "t", kind: "visual", for_kind: "college", for_name: "Norco College", brief: {} })));
+  });
+});
+block("(11c)", function () {
+  const m = loadFor("Sam"), doc = m.w.document;
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    click(m.w, m.root.querySelector('[data-edittop="a5"]'));
+    check("(11c) Edit offers Made for, unset for an older record, and no name field yet", doc.getElementById("le-forkind").value === "" && !doc.getElementById("le-forname"));
+    change(m, "le-forkind", "other");
+    check("(11c) choosing Other asks for the category and the name", !!doc.getElementById("le-forcat") && !!doc.getElementById("le-forname"));
+    doc.getElementById("le-forname").value = "Ironworkers Local 433";
+    submit(m, '[data-editform="a5"]');
+    check("(11c) Other without a category is refused in words, and nothing is written", m.writes.length === 0 && /Type the category for Other/.test(m.root.textContent));
+    check("(11c) the typed name survives that repaint", doc.getElementById("le-forname").value === "Ironworkers Local 433");
+    doc.getElementById("le-forcat").value = "Union";
+    submit(m, '[data-editform="a5"]');
+    return settle();
+  }).then(function () {
+    const b = m.writes[0] ? m.writes[0].body : {};
+    check("(11c) Save PATCHes the type, the category and the name", m.writes[0] && m.writes[0].init.method === "PATCH" && b.for_kind === "other" && b.for_category === "Union" && b.for_name === "Ironworkers Local 433", JSON.stringify(b));
+    click(m.w, m.root.querySelector("#lib-add"));
+    check("(11c) Add offers Visual first among the kinds", doc.getElementById("la-kind").options[0].value === "visual");
+    doc.getElementById("la-url").value = "https://claude.ai/artifact/abc";
+    doc.getElementById("la-title").value = "Ventura visual";
+    change(m, "la-forkind", "college");
+    return settle();
+  }).then(function () {
+    check("(11c) a college picked in Add offers MAP's names", doc.getElementById("la-forname").getAttribute("list") === "lib-names-colleges");
+    doc.getElementById("la-forname").value = "bakersfield college";
+    submit(m, "#lib-addform");
+    return settle();
+  }).then(function () {
+    const b = m.writes[1] ? m.writes[1].body : {};
+    check("(11c) Add writes kind visual with the college as MAP spells it", b.kind === "visual" && b.for_kind === "college" && b.for_name === "Bakersfield College" && b.for_category === null, JSON.stringify(b));
+  });
+});
+block("(11d)", function () {
+  check("(11d) the schema holds the three made-for columns under one check", /add column if not exists for_kind/.test(SQL) && /add column if not exists for_category/.test(SQL) && /add column if not exists for_name/.test(SQL) && /cpl_library_for_ck/.test(SQL));
+  check("(11d) Other needs its category, a name needs a type, and the five types are named",
+    /\(for_kind is not distinct from 'other'\) = \(for_category is not null\)/.test(SQL) && /for_name is null or for_kind is not null/.test(SQL) &&
+    /for_kind in \('college', 'district', 'agency', 'vendor', 'co', 'other'\)/.test(SQL));
+  const M = loadModule({}).M;
+  check("(11d) the pair's slug follows the first twelve", M._collegeSlug("Mt San Antonio College") === "mt-san-antonio" && M._collegeSlug("San Bernardino Valley College") === "san-bernardino-valley" && M._collegeSlug("College of Alameda") === "college-of-alameda");
+  check("(11d) who a piece is made for reads in words", M._forLine({ for_kind: "co" }) === "Made for Chancellor's Office" && M._forLine({ for_kind: "other", for_category: "Union", for_name: "Local 433" }) === "Made for Union · For Local 433" && M._forLine({}) === "");
 });
 
 Promise.all(pending).then(function () {

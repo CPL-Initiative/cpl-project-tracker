@@ -150,8 +150,11 @@ function chromiumPath() {
   try {
     const dir = fs.readdirSync(root).filter((f) => /^chromium-\d+$/.test(f)).sort().pop();
     if (dir) {
-      const p = path.join(root, dir, "chrome-linux", "chrome");
-      if (fs.existsSync(p)) return p;
+      // Older builds unpack to chrome-linux/, the ones since 2026-10 to chrome-linux64/.
+      for (const sub of ["chrome-linux", "chrome-linux64"]) {
+        const p = path.join(root, dir, sub, "chrome");
+        if (fs.existsSync(p)) return p;
+      }
     }
   } catch (e) { /* fall through to playwright's own resolution */ }
   return undefined;

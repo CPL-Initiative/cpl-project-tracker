@@ -262,7 +262,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 596
+     "line": 599
     },
     {
      "id": "module:scripts/check_memory_briefing_layout.js",
@@ -963,7 +963,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 53,
+     "line": 63,
      "tabs": [
       "library"
      ]
@@ -2541,7 +2541,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 59,
+     "line": 69,
      "tabs": [
       "library"
      ]
@@ -16467,7 +16467,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 162
+     "line": 167
     }
    ],
    "served": true,
@@ -21179,7 +21179,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 10,
+     "line": 13,
      "pages": [
       "library/index.html"
      ]
@@ -21204,7 +21204,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 52,
+     "line": 62,
      "tabs": [
       "library"
      ]
@@ -22483,7 +22483,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 51,
+     "line": 61,
      "tabs": [
       "library"
      ]
@@ -22493,7 +22493,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 686,
+     "line": 834,
      "tabs": [
       "library"
      ]
@@ -23785,6 +23785,16 @@
       "college-briefing",
       "cpl-pathways",
       "implementation-funding"
+     ]
+    },
+    {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 78,
+     "tabs": [
+      "library"
      ]
     },
     {
