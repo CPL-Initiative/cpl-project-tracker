@@ -137,49 +137,49 @@
     "courses": [
      {
       "code": "ABT58",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT130",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT131",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT132",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT133",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT134",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT135",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -196,5 +196,43 @@
    "The text prints no program outcomes and names no careers."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39946676559,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ABT58": [
+     3,
+     3
+    ],
+    "ABT130": [
+     1.5,
+     1.5
+    ],
+    "ABT131": [
+     1.5,
+     1.5
+    ],
+    "ABT132": [
+     1.5,
+     1.5
+    ],
+    "ABT133": [
+     1.5,
+     1.5
+    ],
+    "ABT134": [
+     1.5,
+     1.5
+    ],
+    "ABT135": [
+     1.5,
+     1.5
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

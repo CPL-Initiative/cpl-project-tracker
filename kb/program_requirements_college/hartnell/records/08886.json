@@ -67,11 +67,11 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    6.0,
-    6.0
+    50.0,
+    50.0
    ],
    "stated": [
     60.0,
@@ -82,8 +82,10 @@
     23.0,
     23.0
    ],
-   "why": [
-    "a required course in 'Required Major Courses' has no units"
+   "why": [],
+   "fill": [
+    10.0,
+    10.0
    ]
   },
   "repeated": {
@@ -108,7 +110,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -149,49 +151,49 @@
     "courses": [
      {
       "code": "PHO1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHO2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHO3",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHO4",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART12A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART72",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART80",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -210,21 +212,21 @@
     "courses": [
      {
       "code": "ART1A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ARTHC1200",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART3",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -243,49 +245,49 @@
     "courses": [
      {
       "code": "ART6A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART6B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART6C",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART70",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART71",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART77",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -309,20 +311,83 @@
    "No program learning outcomes or careers are printed in the requirements text."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39946676559,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 23,
-    "max": 23
+    "PHO1": [
+     3,
+     3
+    ],
+    "PHO2": [
+     3,
+     3
+    ],
+    "PHO3": [
+     3,
+     3
+    ],
+    "PHO4": [
+     3,
+     3
+    ],
+    "ART12A": [
+     3,
+     3
+    ],
+    "ART72": [
+     3,
+     3
+    ],
+    "ART80": [
+     3,
+     3
+    ],
+    "ART1A": [
+     3,
+     3
+    ],
+    "ARTHC1200": [
+     3,
+     3
+    ],
+    "ART3": [
+     3,
+     3
+    ],
+    "ART6A": [
+     3,
+     3
+    ],
+    "ART6B": [
+     3,
+     3
+    ],
+    "ART6C": [
+     3,
+     3
+    ],
+    "ART10": [
+     3,
+     3
+    ],
+    "ART70": [
+     3,
+     3
+    ],
+    "ART71": [
+     3,
+     3
+    ],
+    "ART77": [
+     3,
+     3
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

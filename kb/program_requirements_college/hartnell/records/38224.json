@@ -61,20 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    14.5,
-    14.5
+    16.0,
+    16.0
    ],
    "stated": [
     16.0,
     16.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 14.5-14.5; the catalog states 16.0-16.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -139,49 +137,49 @@
     "courses": [
      {
       "code": "BUS50",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS110A",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS110B",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS135",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS172",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS175",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS190",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -199,5 +197,43 @@
    "The catalog's titles differ slightly from the state file for BUS172 ('Business Machine Calculations Microcomputer') and BUS190 ('Career Management')."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39946676559,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "BUS50": [
+     4,
+     4
+    ],
+    "BUS110A": [
+     1,
+     1
+    ],
+    "BUS110B": [
+     1,
+     1
+    ],
+    "BUS135": [
+     4,
+     4
+    ],
+    "BUS172": [
+     1,
+     1
+    ],
+    "BUS175": [
+     3,
+     3
+    ],
+    "BUS190": [
+     2,
+     2
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

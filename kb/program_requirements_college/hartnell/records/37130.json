@@ -137,28 +137,28 @@
     "courses": [
      {
       "code": "BUS32",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CID25",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CID27",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CID64",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -177,14 +177,14 @@
     "courses": [
      {
       "code": "CID65",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CID76",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -201,5 +201,39 @@
    "The text prints no program learning outcomes and names no careers."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39946676559,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "BUS32": [
+     3,
+     3
+    ],
+    "CID25": [
+     3,
+     3
+    ],
+    "CID27": [
+     4,
+     4
+    ],
+    "CID64": [
+     4,
+     4
+    ],
+    "CID65": [
+     4,
+     4
+    ],
+    "CID76": [
+     4,
+     4
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

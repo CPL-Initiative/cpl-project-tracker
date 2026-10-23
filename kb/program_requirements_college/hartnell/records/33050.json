@@ -149,12 +149,12 @@
     "courses": [
      {
       "code": "TAC1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "TAC3",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -162,59 +162,59 @@
      },
      {
       "code": "TAC10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC20",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "TAC21",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC22",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC24",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC25",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC26",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC27",
-        "units": null,
+        "units": 3,
         "catalog_addition": true
        },
        {
         "code": "TAC28",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC29",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC40",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -234,73 +234,73 @@
     "courses": [
      {
       "code": "TAC11",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC30",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC20",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "TAC21",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC22",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC24",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC25",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC26",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC27",
-        "units": null,
+        "units": 3,
         "catalog_addition": true
        },
        {
         "code": "TAC28",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC29",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "TAC40",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -321,20 +321,79 @@
    "Only the Requirements tab was provided; it has no program learning outcomes or careers."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39946676559,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 34,
-    "max": 34
+    "TAC1": [
+     3,
+     3
+    ],
+    "TAC3": [
+     3,
+     3
+    ],
+    "TAC10": [
+     3,
+     3
+    ],
+    "TAC20": [
+     3,
+     3
+    ],
+    "TAC21": [
+     3,
+     3
+    ],
+    "TAC22": [
+     3,
+     3
+    ],
+    "TAC24": [
+     3,
+     3
+    ],
+    "TAC25": [
+     3,
+     3
+    ],
+    "TAC26": [
+     3,
+     3
+    ],
+    "TAC27": [
+     3,
+     3
+    ],
+    "TAC28": [
+     3,
+     3
+    ],
+    "TAC29": [
+     3,
+     3
+    ],
+    "TAC40": [
+     3,
+     3
+    ],
+    "TAC11": [
+     3,
+     3
+    ],
+    "TAC30": [
+     3,
+     3
+    ],
+    "TAC2": [
+     3,
+     3
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

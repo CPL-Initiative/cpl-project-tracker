@@ -62,7 +62,7 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     0.0,
     0.0
@@ -73,7 +73,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Required Courses' has no units"
+    "the blocks sum to 0.0-0.0; the catalog states 144.0-144.0"
    ]
   },
   "repeated": {
@@ -139,14 +139,14 @@
     "courses": [
      {
       "code": "ENGM660",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGM662",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -163,5 +163,23 @@
    "The page shows only the Requirements tab. It prints no program outcomes and no careers."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39946676559,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ENGM660": [
+     0,
+     0
+    ],
+    "ENGM662": [
+     0,
+     0
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

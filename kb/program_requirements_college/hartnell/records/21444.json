@@ -67,20 +67,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    3.0,
-    3.0
+    24.0,
+    24.0
    ],
    "stated": [
     24.0,
     24.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Major Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -104,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -145,49 +143,49 @@
     "courses": [
      {
       "code": "PHO1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHO2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHO3",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHO4",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART12A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART70",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART80",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -206,21 +204,21 @@
     "courses": [
      {
       "code": "ART1A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ARTHC1200",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART77",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -242,5 +240,55 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39946676559,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "PHO1": [
+     3,
+     3
+    ],
+    "PHO2": [
+     3,
+     3
+    ],
+    "PHO3": [
+     3,
+     3
+    ],
+    "PHO4": [
+     3,
+     3
+    ],
+    "ART12A": [
+     3,
+     3
+    ],
+    "ART70": [
+     3,
+     3
+    ],
+    "ART80": [
+     3,
+     3
+    ],
+    "ART1A": [
+     3,
+     3
+    ],
+    "ARTHC1200": [
+     3,
+     3
+    ],
+    "ART77": [
+     3,
+     3
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

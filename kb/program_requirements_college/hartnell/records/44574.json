@@ -68,7 +68,7 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     0.0,
     0.0
@@ -79,7 +79,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Complete ALL of the following Courses' has no units"
+    "the blocks sum to 0.0-0.0; the catalog states 432.0-432.0"
    ]
   },
   "repeated": {
@@ -145,28 +145,28 @@
     "courses": [
      {
       "code": "BUS650",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS660",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "BUS690",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS699",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -189,5 +189,31 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39946676559,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "BUS650": [
+     0,
+     0
+    ],
+    "BUS660": [
+     0,
+     0
+    ],
+    "BUS690": [
+     0,
+     0
+    ],
+    "BUS699": [
+     0,
+     0
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

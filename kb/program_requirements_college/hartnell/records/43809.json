@@ -94,10 +94,10 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    9.0,
-    9.0
+    70.0,
+    79.0
    ],
    "stated": [
     60.0,
@@ -109,9 +109,9 @@
     23.0
    ],
    "why": [
-    "a required course in 'Required Major Courses' has no units",
-    "a required course in 'Restricted General Education Courses' has no units"
-   ]
+    "the blocks and general education come to 70.0-79.0, past the 60.0-60.0 the catalog prints for the degree"
+   ],
+   "fill": null
   },
   "repeated": {
    "codes": [],
@@ -176,70 +176,70 @@
     "courses": [
      {
       "code": "MFGT110",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT111A",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT111B",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT112A",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT112B",
-      "units": null,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT113",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT114",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT130",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WLD150",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EGN2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -258,7 +258,7 @@
     "courses": [
      {
       "code": "MFGT71",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -272,70 +272,70 @@
      },
      {
       "code": "MFGT131",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT132",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT93",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT96",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ABT98",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CMA74",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CSS1",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "EGN6",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "EGN11",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "WLD151",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -354,12 +354,12 @@
     "courses": [
      {
       "code": "STATC1000",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [
        {
         "code": "MAT2",
-        "units": null,
+        "units": 4,
         "catalog_addition": true
        }
       ],
@@ -367,22 +367,22 @@
      },
      {
       "code": "ABT53",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ABT90",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ABT99",
-      "units": null,
-      "units_max": null,
+      "units": 1,
+      "units_max": 8,
       "alternatives": [],
       "catalog_addition": false
      }
@@ -430,20 +430,119 @@
    "No program learning outcomes or careers appear in the provided text (only the Requirements tab was captured)."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39946676559,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 23,
-    "max": 23
+    "MFGT110": [
+     2,
+     2
+    ],
+    "MFGT111A": [
+     2,
+     2
+    ],
+    "MFGT111B": [
+     2,
+     2
+    ],
+    "MFGT112A": [
+     2,
+     2
+    ],
+    "MFGT112B": [
+     2,
+     2
+    ],
+    "MFGT113": [
+     4,
+     4
+    ],
+    "MFGT114": [
+     4,
+     4
+    ],
+    "MFGT130": [
+     3,
+     3
+    ],
+    "WLD150": [
+     3,
+     3
+    ],
+    "EGN2": [
+     3,
+     3
+    ],
+    "MFGT71": [
+     3,
+     3
+    ],
+    "MFGT131": [
+     3,
+     3
+    ],
+    "MFGT132": [
+     3,
+     3
+    ],
+    "ABT93": [
+     3,
+     3
+    ],
+    "ABT96": [
+     3,
+     3
+    ],
+    "ABT98": [
+     3,
+     3
+    ],
+    "CMA74": [
+     3,
+     3
+    ],
+    "CSS1": [
+     4,
+     4
+    ],
+    "EGN6": [
+     4,
+     4
+    ],
+    "EGN11": [
+     3,
+     3
+    ],
+    "WLD151": [
+     3,
+     3
+    ],
+    "STATC1000": [
+     4,
+     4
+    ],
+    "MAT2": [
+     4,
+     4
+    ],
+    "ABT53": [
+     3,
+     3
+    ],
+    "ABT90": [
+     3,
+     3
+    ],
+    "ABT99": [
+     1,
+     8
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

@@ -163,14 +163,14 @@
     "courses": [
      {
       "code": "ASL1",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ASL2",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -196,14 +196,14 @@
     "courses": [
      {
       "code": "ANT2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANT20",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -222,77 +222,77 @@
     "courses": [
      {
       "code": "ART1A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ARTHC1200",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART3",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART12A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART15A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART15B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART19",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART70",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART72",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART80",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -311,98 +311,98 @@
     "courses": [
      {
       "code": "ENGLC1002",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG17",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG22",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG24",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG26",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG31",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG41",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG44A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG44B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG46A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG46B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG47A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG47B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENG48",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -421,91 +421,91 @@
     "courses": [
      {
       "code": "HIS4A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS4B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS5A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS5B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HISTC1001",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HISTC1002",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS40",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS47",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS49A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS49B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS55",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -524,112 +524,112 @@
     "courses": [
      {
       "code": "MUS1A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS5",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS7",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS8",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS20",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS21",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS25",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS26",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS42",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS43",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS46",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS47",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS48",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS49",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -648,21 +648,21 @@
     "courses": [
      {
       "code": "PHL2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHL5",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHL10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -681,21 +681,21 @@
     "courses": [
      {
       "code": "PHO1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHO2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHO4",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -714,56 +714,56 @@
     "courses": [
      {
       "code": "SPA1",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPA1S",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPA1X",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPA2",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPA2S",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPA2X",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPA3",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPA3S",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -777,7 +777,7 @@
      },
      {
       "code": "SPA4S",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -796,21 +796,21 @@
     "courses": [
      {
       "code": "TAC1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC3",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -824,77 +824,77 @@
      },
      {
       "code": "TAC20",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC21",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC23",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC24",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC25",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC26",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC29",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC40",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC50",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC53",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC92",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -913,28 +913,28 @@
     "courses": [
      {
       "code": "ETH6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH7",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH12",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH56",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -958,20 +958,379 @@
    "No program learning outcomes or careers are printed in this text."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39946676559,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 23,
-    "max": 23
+    "ASL1": [
+     5,
+     5
+    ],
+    "ASL2": [
+     5,
+     5
+    ],
+    "ANT2": [
+     3,
+     3
+    ],
+    "ANT20": [
+     3,
+     3
+    ],
+    "ART1A": [
+     3,
+     3
+    ],
+    "ARTHC1200": [
+     3,
+     3
+    ],
+    "ART3": [
+     3,
+     3
+    ],
+    "ART10": [
+     3,
+     3
+    ],
+    "ART12A": [
+     3,
+     3
+    ],
+    "ART15A": [
+     3,
+     3
+    ],
+    "ART15B": [
+     3,
+     3
+    ],
+    "ART19": [
+     3,
+     3
+    ],
+    "ART70": [
+     3,
+     3
+    ],
+    "ART72": [
+     3,
+     3
+    ],
+    "ART80": [
+     3,
+     3
+    ],
+    "ENGLC1002": [
+     3,
+     3
+    ],
+    "ENG17": [
+     3,
+     3
+    ],
+    "ENG22": [
+     3,
+     3
+    ],
+    "ENG24": [
+     3,
+     3
+    ],
+    "ENG26": [
+     3,
+     3
+    ],
+    "ENG31": [
+     3,
+     3
+    ],
+    "ENG41": [
+     3,
+     3
+    ],
+    "ENG44A": [
+     3,
+     3
+    ],
+    "ENG44B": [
+     3,
+     3
+    ],
+    "ENG46A": [
+     3,
+     3
+    ],
+    "ENG46B": [
+     3,
+     3
+    ],
+    "ENG47A": [
+     3,
+     3
+    ],
+    "ENG47B": [
+     3,
+     3
+    ],
+    "ENG48": [
+     3,
+     3
+    ],
+    "HIS4A": [
+     3,
+     3
+    ],
+    "HIS4B": [
+     3,
+     3
+    ],
+    "HIS5A": [
+     3,
+     3
+    ],
+    "HIS5B": [
+     3,
+     3
+    ],
+    "HIS6": [
+     3,
+     3
+    ],
+    "HIS10": [
+     3,
+     3
+    ],
+    "HISTC1001": [
+     3,
+     3
+    ],
+    "HISTC1002": [
+     3,
+     3
+    ],
+    "HIS40": [
+     3,
+     3
+    ],
+    "HIS47": [
+     3,
+     3
+    ],
+    "HIS49A": [
+     3,
+     3
+    ],
+    "HIS49B": [
+     3,
+     3
+    ],
+    "HIS55": [
+     3,
+     3
+    ],
+    "MUS1A": [
+     3,
+     3
+    ],
+    "MUS2": [
+     3,
+     3
+    ],
+    "MUS5": [
+     3,
+     3
+    ],
+    "MUS6": [
+     3,
+     3
+    ],
+    "MUS7": [
+     3,
+     3
+    ],
+    "MUS8": [
+     3,
+     3
+    ],
+    "MUS20": [
+     1,
+     1
+    ],
+    "MUS21": [
+     1,
+     1
+    ],
+    "MUS25": [
+     1,
+     1
+    ],
+    "MUS26": [
+     1,
+     1
+    ],
+    "MUS42": [
+     3,
+     3
+    ],
+    "MUS43": [
+     3,
+     3
+    ],
+    "MUS46": [
+     4,
+     4
+    ],
+    "MUS47": [
+     4,
+     4
+    ],
+    "MUS48": [
+     4,
+     4
+    ],
+    "MUS49": [
+     4,
+     4
+    ],
+    "PHL2": [
+     3,
+     3
+    ],
+    "PHL5": [
+     3,
+     3
+    ],
+    "PHL10": [
+     3,
+     3
+    ],
+    "PHO1": [
+     3,
+     3
+    ],
+    "PHO2": [
+     3,
+     3
+    ],
+    "PHO4": [
+     3,
+     3
+    ],
+    "SPA1": [
+     5,
+     5
+    ],
+    "SPA1S": [
+     5,
+     5
+    ],
+    "SPA1X": [
+     5,
+     5
+    ],
+    "SPA2": [
+     5,
+     5
+    ],
+    "SPA2S": [
+     5,
+     5
+    ],
+    "SPA2X": [
+     5,
+     5
+    ],
+    "SPA3": [
+     5,
+     5
+    ],
+    "SPA3S": [
+     5,
+     5
+    ],
+    "SPA4S": [
+     5,
+     5
+    ],
+    "TAC1": [
+     3,
+     3
+    ],
+    "TAC2": [
+     3,
+     3
+    ],
+    "TAC3": [
+     3,
+     3
+    ],
+    "TAC20": [
+     3,
+     3
+    ],
+    "TAC21": [
+     3,
+     3
+    ],
+    "TAC23": [
+     3,
+     3
+    ],
+    "TAC24": [
+     3,
+     3
+    ],
+    "TAC25": [
+     3,
+     3
+    ],
+    "TAC26": [
+     3,
+     3
+    ],
+    "TAC29": [
+     3,
+     3
+    ],
+    "TAC40": [
+     3,
+     3
+    ],
+    "TAC50": [
+     3,
+     3
+    ],
+    "TAC53": [
+     3,
+     3
+    ],
+    "TAC92": [
+     3,
+     3
+    ],
+    "ETH6": [
+     3,
+     3
+    ],
+    "ETH7": [
+     3,
+     3
+    ],
+    "ETH12": [
+     3,
+     3
+    ],
+    "ETH56": [
+     3,
+     3
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

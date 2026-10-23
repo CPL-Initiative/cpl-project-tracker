@@ -71,7 +71,7 @@
    "status": "unequal",
    "computed": [
     25.0,
-    26.0
+    33.0
    ],
    "stated": [
     27.0,
@@ -79,7 +79,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 25.0-26.0; the catalog states 27.0-27.0"
+    "the blocks sum to 25.0-33.0; the catalog states 27.0-27.0"
    ]
   },
   "repeated": {
@@ -145,59 +145,59 @@
     "courses": [
      {
       "code": "ABT58",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT80",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT83",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT90",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT92",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT99",
-      "units": null,
-      "units_max": null,
+      "units": 1,
+      "units_max": 8,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT57",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "BUS43",
-        "units": null,
+        "units": 4,
         "catalog_addition": false
        },
        {
         "code": "BUS50",
-        "units": null,
+        "units": 4,
         "catalog_addition": false
        }
       ],
@@ -217,7 +217,7 @@
     "courses": [
      {
       "code": "ABT81",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -231,35 +231,35 @@
      },
      {
       "code": "ABT93",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT95",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT96",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT97",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT98",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -273,21 +273,21 @@
      },
      {
       "code": "ABT101",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT102",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MFGT70",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -306,5 +306,87 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39946676559,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ABT58": [
+     3,
+     3
+    ],
+    "ABT80": [
+     3,
+     3
+    ],
+    "ABT83": [
+     3,
+     3
+    ],
+    "ABT90": [
+     3,
+     3
+    ],
+    "ABT92": [
+     3,
+     3
+    ],
+    "ABT99": [
+     1,
+     8
+    ],
+    "ABT57": [
+     3,
+     3
+    ],
+    "BUS43": [
+     4,
+     4
+    ],
+    "BUS50": [
+     4,
+     4
+    ],
+    "ABT81": [
+     3,
+     3
+    ],
+    "ABT93": [
+     3,
+     3
+    ],
+    "ABT95": [
+     3,
+     3
+    ],
+    "ABT96": [
+     3,
+     3
+    ],
+    "ABT97": [
+     3,
+     3
+    ],
+    "ABT98": [
+     3,
+     3
+    ],
+    "ABT101": [
+     1.5,
+     1.5
+    ],
+    "ABT102": [
+     1.5,
+     1.5
+    ],
+    "MFGT70": [
+     3,
+     3
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }

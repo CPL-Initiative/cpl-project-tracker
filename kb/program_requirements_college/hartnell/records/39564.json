@@ -61,11 +61,11 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    6.0,
-    7.0
+    65.0,
+    67.0
    ],
    "stated": [
     60.0,
@@ -76,9 +76,8 @@
     34.0,
     34.0
    ],
-   "why": [
-    "a required course in 'Required Core' has no units"
-   ]
+   "why": [],
+   "overlap": true
   },
   "repeated": {
    "codes": [],
@@ -102,7 +101,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -143,26 +142,26 @@
     "courses": [
      {
       "code": "LAW41",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHL10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COMMC1000",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "COM2",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -170,12 +169,12 @@
      },
      {
       "code": "ENGLC1000",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "ENGLC1000E",
-        "units": null,
+        "units": 4,
         "catalog_addition": false
        }
       ],
@@ -183,26 +182,26 @@
      },
      {
       "code": "ENGLC1001",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "STATC1000",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HISTC1001",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "HISTC1002",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -210,7 +209,7 @@
      },
      {
       "code": "POLSC1000",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -229,17 +228,17 @@
     "courses": [
      {
       "code": "ADJ3",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "ADJ4",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "ADJ5",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -247,19 +246,19 @@
      },
      {
       "code": "BUS18",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECONC2002",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "ECONC2001",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -267,28 +266,28 @@
      },
      {
       "code": "SOC30",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SJS20",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COU1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "LAW42",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -307,20 +306,99 @@
    "No program learning outcomes or careers are printed in the text (General and Degree Map tabs were not included)."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39946676559,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 34,
-    "max": 34
+    "LAW41": [
+     3,
+     3
+    ],
+    "PHL10": [
+     3,
+     3
+    ],
+    "COMMC1000": [
+     3,
+     3
+    ],
+    "COM2": [
+     3,
+     3
+    ],
+    "ENGLC1000": [
+     3,
+     3
+    ],
+    "ENGLC1000E": [
+     4,
+     4
+    ],
+    "ENGLC1001": [
+     3,
+     3
+    ],
+    "STATC1000": [
+     4,
+     4
+    ],
+    "HISTC1001": [
+     3,
+     3
+    ],
+    "HISTC1002": [
+     3,
+     3
+    ],
+    "POLSC1000": [
+     3,
+     3
+    ],
+    "ADJ3": [
+     3,
+     3
+    ],
+    "ADJ4": [
+     3,
+     3
+    ],
+    "ADJ5": [
+     3,
+     3
+    ],
+    "BUS18": [
+     4,
+     4
+    ],
+    "ECONC2002": [
+     3,
+     3
+    ],
+    "ECONC2001": [
+     3,
+     3
+    ],
+    "SOC30": [
+     3,
+     3
+    ],
+    "SJS20": [
+     3,
+     3
+    ],
+    "COU1": [
+     3,
+     3
+    ],
+    "LAW42": [
+     3,
+     3
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

@@ -76,10 +76,10 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    9.0,
-    9.0
+    63.0,
+    63.0
    ],
    "stated": [
     60.0,
@@ -91,8 +91,9 @@
     23.0
    ],
    "why": [
-    "a required course in 'Required Major Courses' has no units"
-   ]
+    "the blocks and general education come to 63.0-63.0, past the 60.0-60.0 the catalog prints for the degree"
+   ],
+   "fill": null
   },
   "repeated": {
    "codes": [],
@@ -157,70 +158,70 @@
     "courses": [
      {
       "code": "AOD1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AOD2",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AOD3",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AOD4",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AOD5",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AOD6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AOD9",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AOD10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AOD11",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "AOD99",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -239,49 +240,49 @@
     "courses": [
      {
       "code": "PSYCC1000",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY6",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "PSY22",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY33",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "PSY41",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC1",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "SOC41",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -304,20 +305,83 @@
    "The text shows only the Requirements tab; no program learning outcomes or careers are printed in it."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39946676559,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 23,
-    "max": 23
+    "AOD1": [
+     3,
+     3
+    ],
+    "AOD2": [
+     3,
+     3
+    ],
+    "AOD3": [
+     3,
+     3
+    ],
+    "AOD4": [
+     3,
+     3
+    ],
+    "AOD5": [
+     3,
+     3
+    ],
+    "AOD6": [
+     3,
+     3
+    ],
+    "AOD9": [
+     3,
+     3
+    ],
+    "AOD10": [
+     3,
+     3
+    ],
+    "AOD11": [
+     3,
+     3
+    ],
+    "AOD99": [
+     4,
+     4
+    ],
+    "PSYCC1000": [
+     3,
+     3
+    ],
+    "PSY6": [
+     3,
+     3
+    ],
+    "PSY22": [
+     3,
+     3
+    ],
+    "PSY33": [
+     3,
+     3
+    ],
+    "PSY41": [
+     3,
+     3
+    ],
+    "SOC1": [
+     3,
+     3
+    ],
+    "SOC41": [
+     3,
+     3
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

@@ -65,11 +65,11 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    12.0,
-    12.0
+    52.0,
+    52.0
    ],
    "stated": [
     60.0,
@@ -80,8 +80,10 @@
     34.0,
     34.0
    ],
-   "why": [
-    "a required course in 'Required Core' has no units"
+   "why": [],
+   "fill": [
+    8.0,
+    8.0
    ]
   },
   "repeated": {
@@ -106,7 +108,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -147,14 +149,14 @@
     "courses": [
      {
       "code": "HISTC1001",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HISTC1002",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -173,12 +175,12 @@
     "courses": [
      {
       "code": "HIS5A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIS4A",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -186,12 +188,12 @@
      },
      {
       "code": "HIS5B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIS4B",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -211,17 +213,17 @@
     "courses": [
      {
       "code": "HIS5A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIS5B",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "HIS6",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -229,42 +231,42 @@
      },
      {
       "code": "HIS40",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS47",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS46A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS46B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS49A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS49B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -283,35 +285,35 @@
     "courses": [
      {
       "code": "HIS10",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS40",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS46A",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS46B",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS55",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -331,20 +333,75 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": 39931703521,
+ "extracted_run": 39946676559,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 34,
-    "max": 34
+    "HISTC1001": [
+     3,
+     3
+    ],
+    "HISTC1002": [
+     3,
+     3
+    ],
+    "HIS5A": [
+     3,
+     3
+    ],
+    "HIS4A": [
+     3,
+     3
+    ],
+    "HIS5B": [
+     3,
+     3
+    ],
+    "HIS4B": [
+     3,
+     3
+    ],
+    "HIS6": [
+     3,
+     3
+    ],
+    "HIS40": [
+     3,
+     3
+    ],
+    "HIS47": [
+     3,
+     3
+    ],
+    "HIS46A": [
+     3,
+     3
+    ],
+    "HIS46B": [
+     3,
+     3
+    ],
+    "HIS49A": [
+     3,
+     3
+    ],
+    "HIS49B": [
+     3,
+     3
+    ],
+    "HIS10": [
+     3,
+     3
+    ],
+    "HIS55": [
+     3,
+     3
+    ]
    },
-   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39931703521
 }

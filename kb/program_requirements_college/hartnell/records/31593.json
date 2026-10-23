@@ -141,35 +141,35 @@
     "courses": [
      {
       "code": "CSS1",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CSS2A",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CSS2B",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CSS3",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CSS7",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -188,28 +188,28 @@
     "courses": [
      {
       "code": "CSS50",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CSS53",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CSS56",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MAT3B",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -227,5 +227,51 @@
    "The page shows no program learning outcomes or careers in the provided text (the General tab content was not included)."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 39946676559,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "CSS1": [
+     4,
+     4
+    ],
+    "CSS2A": [
+     4,
+     4
+    ],
+    "CSS2B": [
+     4,
+     4
+    ],
+    "CSS3": [
+     4,
+     4
+    ],
+    "CSS7": [
+     4,
+     4
+    ],
+    "CSS50": [
+     4,
+     4
+    ],
+    "CSS53": [
+     4,
+     4
+    ],
+    "CSS56": [
+     4,
+     4
+    ],
+    "MAT3B": [
+     4,
+     4
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+  }
+ ],
+ "read_run": "39895340003"
 }
