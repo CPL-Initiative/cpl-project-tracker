@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 90 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 84 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 61 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 425 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1225** | |
+| Session handoffs | 426 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1226** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-23 S455 SkyMonkeyflower (the CPL Queue routine): Hartnell's course units from its vendor's own course data (59 of 96 pass), Sierra's IT Cybersecurity read through `with_acronyms`, display build b0a96907bf83 (#2376); lessons S455; handoff 456.
 - 2026-10-23 S452 SkyPoppy (the CPL Queue routine): Long Beach City loaded, display build 504ae8333118 (#2370); the UI pass on the Funding model page (#2369); free captures at East LA, Marin and San Mateo; lessons S452; handoff 453.
 - 2026-10-23 S451 SkyLupine (opened by Sam): the page reader's `cq_view` (#2365); the S449 queue landed, Palo Verde, Cypress, Berkeley City, Hartnell by its Coursedog site (96 of 112, from 73) and Mt. San Antonio, display build 25fe751ccd0a (#2367); lessons S451; handoff 452.
 - 2026-10-22 S449 SkyBuckwheat: the harvest queue after S448 (Mt. San Jacinto settled, Berkeley City's codes read through `cq_view`, Palo Verde's new Acalog catalog, Cypress, Hartnell by its site); lessons S449; handoff 450.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-22 (S447 SkyBrittlebush, opened by Sam): Sheet 112 answered, later (#2348); an Administration of Justice address and a hyphenated course code (#2349); Mt. San Jacinto and Santa Barbara City reread, build be2635ed5b73 (#2350); the harvest lessons' S399-S403 to archive 3; handoff 448.
 - 2026-10-22 (S446 SkyMadrone, the CPL Queue routine): the CPL opportunity visual's UI pass (#2344); a degree-and-certificate address names both awards (#2345); 91 new records at Palomar, MiraCosta, Grossmont and Pasadena City, display build 0ad3c75bfa19 (#2346); handoff 447.
 - 2026-10-22 (S445 SkyCurrant, opened by Sam): a page read's capture view (#2336, #2341); a shared page per section heading and MiraCosta's listed degrees (#2337, #2342); Palomar's "Cert. Achievement" (#2339); 185 new records at five colleges, build 82d6298a0c67 (#2340).
-- 2026-10-22 (S444 SkyBlueOak, opened by Sam): Foothill merged (#2326); blocked catalogs flagged on Procedures (#2328); a call carries Sam's sheet answer (#2329); 37 Program Mapper hosts recorded (#2330); Golden West and Imperial Valley loaded (#2331); department pages and two-line award headings (#2333).

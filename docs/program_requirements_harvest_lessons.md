@@ -689,61 +689,7 @@ sharing pages 148-154 and two on the course availability table.
   Irvine Valley 144 of 146 found (curriQunet, 78 minutes of capture), 122 passing, $11.02, load 39548442445 inserted
   143 and kept 1. Both were already in the dated reads (pilot colleges).
 
-## S424 SkyBuckthorn (2026-10-19): the verdict rows worked, Taft's four wrong pages settled, the Jev sitting's selection
-
-- **A check that holds no record back is not a failure to ask about.** S421's Cañada sitting asked Jev about 22
-  records; five failed only the careers check, which the scorer reports beside the checks and leaves out of its `pass`
-  (as `program_record_machine_pass` does), and the verdicts could only read "unverified". `failing()` in
-  `kb/_jev_harvest.py` now reads the five checks the scorer's gate reads (#2256). The next Cañada sitting asks about 17.
-- **Two certificate rules in the scorer (#2256), each from an owner_differs row at San Joaquin Delta.** A certificate
-  with no degree total whose `ge_units` make the printed total exact passes with them named (`ge_included`; 05630,
-  "Minimum Units Required: 51" over a 35-unit major and 16 GE units). One whose page says electives make up its total
-  passes a short sum with the fill named (`electives_fill_degree`; 11970, "Complete elective units to meet the minimum
-  60 unit requirement for this certificate"), under the degree check's guard that a text naming no electives keeps it
-  failing. Both records rescore equal locally; the rules take effect on their next rescore.
-- **A second capture that reads the same 168 pages rules out a missed page.** Taft's Administrative Services II (30284)
-  took the General Business A.S. page at title 0.0 in both captures (runs 39126711681, 39252972758), while the group
-  page's children (college-page-read 39252547290) are absolute links beneath its path that `child_pages()` returns
-  locally. The cause was in the codes, not the pages: the state's file lists BUSN 550 Business Mathematics and BUSN 555
-  Office Procedures, the catalog prints BUSN 1050 and 1055 (same titles, 3.00 units), and the General Business page won
-  on the old codes in its "previous versions of required computer courses" note. Taft's `course_renumbers` maps the two
-  pairs, cited (Merced's pattern, S423); the capture-only read then named 30284 moving to its own page (run 39256247313).
-- **An award the catalog no longer lists is the college's to settle, and a loaded row that reads a sibling's text is
-  removed, not re-read.** Taft's 2026-2027 index (college-page-read 39250246074) lists Cal-GETC alone: no CSU GE-Breadth
-  (38661), no IGETC (38662), and no Speech Language Pathology Aide (46186) or Assistant (46198). 38661's loaded row is
-  the Cal-GETC certificate's section under the wrong number (45358 holds the Cal-GETC record from its own page); its
-  removal follows the S411 Hartnell receipt, and waits on Sam: the session's auto-mode classifier refused to write the
-  delete migration file, twice, so the row stands until a session with the permission (or Sam) files it.
-- **Left as read, with the reason in the verdicts file:** Delta's 07304, 16764 and 45621 are the model's reading of a
-  choice, a waivable block and an area minimum (the second reader's to re-read), 22244 a non-course requirement line,
-  44197 a repeat count the record shape has no field for, 19752 Delta's page assignment (the GE page handed the model).
-
-## S423 SkyLaurel (2026-10-19): Merced's renumbered courses, the Knowledge Base portal's UI pass
-
-- **Read the page before naming a cause.** Merced's eight near misses (coverage 0.08-0.18) and ten page-claimed
-  programs looked like a reader fault. Two free page reads (college-page-read 39229076688, 39234806863) showed the
-  catalog printing MECH12, MECH22A ... where the state's file lists AGMA 2, AGMA 11 ..., ANSC and AGBS for AGAS and
-  AGAB, LAND for AGEH, CPSC-17 and -18 for DRON 10 and 11: the same title and units for every course, the numbers not
-  derivable from each other. The college renumbered after the file was written.
-- **A cited map, never a title rule (Fable, asked once).** `course_renumbers` in `kb/program_requirements_reconcile.json`
-  maps the catalog's code to the file's for one college, each pair in `course_renumbers_cited` with its title and units.
-  A title match alone is weaker evidence than a prefix swap (colleges reuse titles across levels); a general rule would
-  relabel courses statewide with no receipt. The capture looks for the listed course by its printed code, the scorer
-  renames on its own copy, and a pair retires once the file lists the printed code. Held out: Agriculture Systems
-  44160 (AGT-701 to 705 at 0 credits against AGAT 51 to 55 at 2-3 units), since the units disagree.
-- **A printed code needs its subject spaced from its number.** `code_pattern("CPSC17")` reads the letters C-P-S then
-  `C17` and never matches the page's `CPSC-17`; Drone Technology stayed below the gate and Equine read ANSC-14 missing
-  (0.917) until `course_renumbers()` handed the capture `CPSC 17`.
-- **The account keeps the catalog's own list** (`coursedog.catalog`, 188 programs), so a program read from no page is
-  checked against what the catalog offers: Biological Science A.S. and International Studies A.A. are not in it.
-- **What stays unread at Merced, the college's to settle:** Small Business Entrepreneurship (two awards), HVAC
-  Technician and Engineering print revised, shorter lists than the file keeps; Child Development A.A.'s Requisites tab
-  prints no courses; Communication Studies AA-T prints the 2.0 pattern (6 of 15 listed).
-- **Counts:** reads 39230479383, 39235509270 and 39239492986, 154 to 163 of 172 found, 125 to 134 passing, $0.55 in
-  extraction; loads 39239250159 and 39243215660 inserted 9; display build 93edc84cde30.
-- **The UI pass reached a frame's contents (#2254).** The Knowledge Base tab passed the cobi sweep on its shell; the
-  portal inside the iframe (`kb-portal/`) had never been measured and said "MAP Initiative" in its header. Three
-  seeded targets now measure it. A sweep that passes a tab built around an iframe has measured only the shell.
+*S424 and S423 moved verbatim to `program_requirements_harvest_lessons_archive_3.md` (S455).*
 
 ## Moved from the lane (S423 compaction)
 
