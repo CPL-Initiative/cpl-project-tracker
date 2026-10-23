@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-23T20:03:37Z",
+  "written_at": "2026-10-23T20:04:12Z",
   "session": 458,
   "moniker": "SkyLarkspur",
   "run": "Sam's session",
@@ -92,7 +92,7 @@
       "by": "S457 SkyColumbine",
       "answer": {
         "by": "Sam",
-        "at": "2026-10-23T20:02:00Z",
+        "at": "2026-10-23",
         "words": "narrow"
       }
     }
