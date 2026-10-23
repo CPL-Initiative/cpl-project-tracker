@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Nursing--Vocational Nursing",
  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=304",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.NVN/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10234,
+  "input_tokens": 7743,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10234,
-    "output_tokens": 3645,
+    "input_tokens": 7743,
+    "output_tokens": 2936,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3645,
+  "output_tokens": 2936,
   "output_tokens_details": {
-   "thinking_tokens": 1354
+   "thinking_tokens": 1004
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11384,
- "ms": 29249,
- "seconds": 29.8,
+ "cost_usd": 0.08969,
+ "ms": 22708,
+ "seconds": 23.2,
  "parts": null,
  "error": null,
  "score": {
@@ -57,9 +57,10 @@
    "pass": true
   },
   "invented": {
-   "count": 11,
+   "count": 12,
    "codes": [
     "ENGLC1000E",
+    "HES120",
     "NVN110",
     "NVN119",
     "NVN121",
@@ -73,6 +74,7 @@
    ],
    "flagged": [
     "ENGLC1000E",
+    "HES120",
     "NVN110",
     "NVN119",
     "NVN121",
@@ -90,8 +92,8 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    20.0,
-    25.0
+    4.0,
+    9.0
    ],
    "stated": [
     57.0,
@@ -99,9 +101,10 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Required General Education Courses (must be completed before acceptance into program)' has no units",
-    "a required course in 'Required Major Courses - After acceptance to the program: 2nd Semester' has no units",
-    "a required course in 'Required Major Courses - After acceptance to the program: 3rd Semester' has no units"
+    "a required course in 'Required General Education Courses' has no units",
+    "a required course in '1st Semester' has no units",
+    "a required course in '2nd Semester' has no units",
+    "a required course in '3rd Semester' has no units"
    ]
   },
   "repeated": {
@@ -109,17 +112,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 5,
+   "program": 0,
    "courses": 0,
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -151,20 +154,12 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "articulate the role of the vocational nurse as a member of the health care team, committed to provide safe, quality care for diverse persons and their families.",
-    "provide rationale for judgments used in the provision of safe, quality care and for decisions that promote the health of persons.",
-    "promote the human dignity, integrity, self-determination, and personal growth of persons, oneself, and members of the health care team.",
-    "achieve quality care through effective communication, mutual respect, and shared decision making with the health care team.",
-    "question the basis for nursing actions, considering research, evidence, tradition and personal preferences."
-   ],
-   "careers": [
-    "vocational nurses"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required General Education Courses (must be completed before acceptance into program)",
+    "name": "Required General Education Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -194,6 +189,13 @@
       "catalog_addition": true
      },
      {
+      "code": "HES120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
       "code": "PSYCC1000",
       "units": null,
       "units_max": null,
@@ -203,7 +205,7 @@
     ]
    },
    {
-    "name": "Required General Education Courses: Complete at least 1 of the following - BIO11",
+    "name": "Required General Education Courses - Anatomy and Physiology (BIO 11)",
     "rule": "all",
     "minimum": null,
     "option_group": "Anatomy and Physiology",
@@ -222,7 +224,7 @@
     ]
    },
    {
-    "name": "Required General Education Courses: Complete at least 1 of the following - BIO5 AND BIO6 AND BIO6L",
+    "name": "Required General Education Courses - Anatomy and Physiology (BIO 5, BIO 6, BIO 6L)",
     "rule": "all",
     "minimum": null,
     "option_group": "Anatomy and Physiology",
@@ -255,7 +257,7 @@
     ]
    },
    {
-    "name": "Required Major Courses - After acceptance to the program: 1st Semester",
+    "name": "1st Semester",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -279,12 +281,12 @@
      },
      {
       "code": "NRN70",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "NVN70",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        },
        {
@@ -297,14 +299,14 @@
      },
      {
       "code": "NVN110",
-      "units": 1,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN119",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -326,7 +328,7 @@
     ]
    },
    {
-    "name": "Required Major Courses - After acceptance to the program: 2nd Semester",
+    "name": "2nd Semester",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -337,7 +339,7 @@
     "courses": [
      {
       "code": "NVN121",
-      "units": 6.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -359,7 +361,7 @@
     ]
    },
    {
-    "name": "Required Major Courses - After acceptance to the program: 3rd Semester",
+    "name": "3rd Semester",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -429,18 +431,18 @@
   "missing_explained": [
    {
     "code": "NVN 120C",
-    "why": "not in the text; catalog lists NVN121.1 as Clinical II instead"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "Requirement lists print no units beside courses; units for NRN70 (3), NVN70 (3), NVN110 (1), NVN119 (4) and NVN121 (6.5) were taken from the course description entries on pages 306-307, matched by order of listing. Other course units are null.",
-   "Total Required Credits 57 recorded as total_units; it appears to include the pre-acceptance general education/prerequisite courses (ENGL, STAT, PSYC, BIO).",
-   "The anatomy/physiology requirement ('Complete at least 1 of the following') is a choice between BIO11 alone or the set BIO5 AND BIO6 AND BIO6L; recorded as two blocks in option_group 'Anatomy and Physiology'.",
-   "HES 120 (AHA BLS for Health Care Professional) is mentioned in a footnote as required before NVN 119 but 'Not required to apply'; it is not listed as a program course and was not placed in a block.",
-   "Program Outcomes lead-in reads 'Upon completion of this course' although printed under the program; recorded as program outcomes.",
-   "Closed list names NVN 119.1 but not NVN119 (theory), NVN121, NVN121.1, NVN123, NVN123.1, NVN110; these are recorded as catalog additions.",
-   "Success courses NVN225-227 are listed under 'Complete at least 0' with the comment 'These courses are recommended, not required.'"
+   "The page prints no units beside any course; all course units are null.",
+   "Courses under 'Required General Education Courses' are prerequisites that must be completed before acceptance; they are program requirements of this certificate (not a GE pattern), so they were placed in blocks. Whether the printed 'Total Required Credits 57' includes these prerequisites is not stated.",
+   "The anatomy/physiology rule ('Complete at least 1 of the following') offers BIO 11 alone or BIO 5 AND BIO 6 AND BIO 6L; recorded as two blocks in one option_group.",
+   "HES 120 note: any AHA BLS for Health Care Professional course is acceptable; not required to apply but must be completed prior to NVN 119.",
+   "The success courses block reads 'Complete at least 0' and states 'These courses are recommended, not required.'",
+   "Codes are written as printed (without a space, e.g. 'ENGLC1000', 'NRN70'); they were matched to closed-list codes ignoring spacing.",
+   "No program learning outcomes or careers are printed in this text."
   ]
  },
- "extracted_run": "39090050931"
+ "extracted_run": "39895340003"
 }

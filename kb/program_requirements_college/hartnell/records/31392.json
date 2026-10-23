@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "English",
  "award": "A.A- T Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=210",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.ENG/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9493,
+  "input_tokens": 6895,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9493,
-    "output_tokens": 2343,
+    "input_tokens": 6895,
+    "output_tokens": 2000,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2343,
+  "output_tokens": 2000,
   "output_tokens_details": {
-   "thinking_tokens": 712
+   "thinking_tokens": 682
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08483,
- "ms": 18566,
- "seconds": 18.9,
+ "cost_usd": 0.06758,
+ "ms": 15814,
+ "seconds": 16.3,
  "parts": null,
  "error": null,
  "score": {
@@ -82,17 +82,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 7,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -124,20 +124,8 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Apply appropriate interpretive strategies to read, discuss, and analyze a variety of works of literature within any given genre and expository texts.",
-    "Analyze and evaluate major themes and techniques found in literature and expository texts by applying appropriate writing strategies and skills.",
-    "Distinguish significant characteristics of literary movements and demonstrate an appreciation for and an awareness of the aesthetic value of literature and expository texts from a diversity of cultural, historical, and ethnic perspectives."
-   ],
-   "careers": [
-    "advertising",
-    "business",
-    "communications media",
-    "public relations",
-    "law",
-    "government service",
-    "teaching"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -151,14 +139,14 @@
     },
     "courses": [
      {
-      "code": "ENGLC1001",
+      "code": "ENGL C1001",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENGLC1002",
+      "code": "ENGL C1002",
       "units": null,
       "units_max": null,
       "alternatives": [],
@@ -177,42 +165,42 @@
     },
     "courses": [
      {
-      "code": "ENG44A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ENG44B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ENG46A",
+      "code": "ENG 44A",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENG46B",
+      "code": "ENG 44B",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENG47A",
+      "code": "ENG 46A",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENG47B",
+      "code": "ENG 46B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 47A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 47B",
       "units": null,
       "units_max": null,
       "alternatives": [],
@@ -231,21 +219,21 @@
     },
     "courses": [
      {
-      "code": "ENG24",
-      "units": 3,
+      "code": "ENG 24",
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENG31",
-      "units": 3,
+      "code": "ENG 31",
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENG48",
+      "code": "ENG 48",
       "units": null,
       "units_max": null,
       "alternatives": [],
@@ -264,29 +252,29 @@
     },
     "courses": [
      {
-      "code": "ENG17",
-      "units": 3,
+      "code": "ENG 17",
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENG22",
-      "units": 3,
+      "code": "ENG 22",
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENG26",
-      "units": 3,
+      "code": "ENG 26",
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENG41",
-      "units": 3,
+      "code": "ENG 41",
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -297,15 +285,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requirement list prints no units beside courses; units of 3 are taken from the 'Credits 3' printed in the course entries on pages 211-213 for ENG17, ENG22, ENG24, ENG26, ENG31, ENG41, ENG44A and ENG44B. The other courses' entries are not in the text, so their units are null.",
-   "Codes are printed without spaces (ENGLC1001, ENG44B); matched to closed-list ENGL C1001, ENGL C1002 and ENG 44b, so they are not catalog additions.",
-   "List B also allows any List A course not already used; List C allows any List A or List B course not already used.",
-   "Total Required Credits 60 is recorded as degree_total (includes Cal-GETC); no major total or Cal-GETC unit count is printed.",
-   "Electives (courses numbered 1-99) are required when degree plus GE units total fewer than 60; no units printed, so electives_fill_degree is true.",
-   "Program Outcomes lead-in says 'Upon completion of this course', but the outcomes are printed under Program Outcomes for this AA-T.",
-   "Catalog titles differ from the closed list: ENG22 'Studies in Poetry' (closed list: Introduction to Poetry) and ENG26 'Chicanx Literature' (closed list: Chicano Literature).",
-   "ENG31's course description contains an 'Upon completion, students should be able to...' sentence. It is part of the description, not a printed outcomes list, so it is not recorded in course_outcomes."
+   "The catalog prints codes without a space (e.g. 'ENGLC1001', 'ENG44A'); recorded with a space between subject and number to match the closed list. ENG44B matches closed-list 'ENG 44b'.",
+   "No units are printed beside any course and no major total is printed; total_units left null.",
+   "'Total Required Credits 60' recorded as degree_total; Cal-GETC is named but no GE units are printed.",
+   "Electives (courses numbered 1-99) are required only when degree units plus GE units total fewer than 60; no elective units printed, so electives_fill_degree is true.",
+   "List B also allows any unused List A course; List C also allows any unused List A or List B course. These courses are not repeated in those blocks.",
+   "Catalog titles differ from the state file for ENG 22 ('Studies in Poetry' vs 'Introduction to Poetry') and ENG 26 ('Chicanx Literature' vs 'Chicano Literature').",
+   "Students can double-count required courses and General Education courses.",
+   "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39895340003"
 }

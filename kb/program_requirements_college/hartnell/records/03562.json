@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Welding Technology",
  "award": "A.S. Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=408",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.WLD/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10178,
+  "input_tokens": 6804,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10178,
-    "output_tokens": 1993,
+    "input_tokens": 6804,
+    "output_tokens": 1670,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1993,
+  "output_tokens": 1670,
   "output_tokens_details": {
-   "thinking_tokens": 642
+   "thinking_tokens": 473
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08057,
- "ms": 16433,
- "seconds": 17.1,
+ "cost_usd": 0.06062,
+ "ms": 14393,
+ "seconds": 15.5,
  "parts": null,
  "error": null,
  "score": {
@@ -55,15 +55,17 @@
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 4,
    "codes": [
     "CMA75",
     "MFGT130",
+    "MFGT150",
     "WLD99"
    ],
    "flagged": [
     "CMA75",
     "MFGT130",
+    "MFGT150",
     "WLD99"
    ],
    "pass": true
@@ -90,17 +92,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 7,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -132,20 +134,8 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "demonstrate the use of welding and metal cutting processes safely and correctly.",
-    "perform welding procedures in two or more methods on steel test plates in two or more welding positions.",
-    "interpret and analyze fabrication prints, develop parts and cutting lists, and select and calibrate welding and cutting methods to fabricate assigned projects."
-   ],
-   "careers": [
-    "machine shop welder",
-    "autobody worker",
-    "sheet metal worker",
-    "structural and ironwork welder",
-    "maintenance welder",
-    "pipe welder",
-    "agricultural welding and fabrication"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -269,6 +259,13 @@
       "catalog_addition": true
      },
      {
+      "code": "MFGT150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
       "code": "WLD99",
       "units": null,
       "units_max": null,
@@ -281,13 +278,16 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requirement lists print no units beside courses, so course units are null. Separate course pages show credits for some courses (WLD150 3, WLD151 3, WLD152 2, WLD153 3, WLD154 3, WLD99 1, max 8). WLD151 shows 3 credits there, while the closed list stores 0.5.",
-   "'Total Required Credits 60' is recorded as degree_total because it includes Local GE. The page prints no major total.",
-   "Electives (courses numbered 1-199) are required when degree units plus GE units total fewer than 60. No elective units are printed, so electives_fill_degree is true.",
-   "The catalog prints CMA74 as 'Industrial Print Reading'; the closed list title is 'Industrial Drawing and Print Reading'.",
-   "The outcomes lead-in says 'Upon completion of this course' but is printed under Program Outcomes for this award. The A.S. section prints the outcomes in lowercase, and they are copied as printed.",
-   "The Certificate of Achievement (CT.WLD, page 409) is a separate award with different requirements and was not used."
+   "The catalog prints no units beside any course, so all course units are null.",
+   "No total for the major is printed; 'Total Required Credits 60' is recorded as degree_total.",
+   "Electives (courses numbered 1-199) are required when degree units plus GE units total fewer than 60; no elective units printed, so electives_fill_degree is true.",
+   "CMA74 is titled 'Industrial Print Reading' in the catalog vs 'Industrial Drawing and Print Reading' in the state file; WLD158 is titled 'Hard Facing and Surfacing'.",
+   "MFGT150 is printed without a title in the Major Electives list.",
+   "Codes are written as printed without a space (e.g., CMA74 = closed-list CMA 74).",
+   "Major Electives requires 'at least 9 credits'; recorded as minimum 9 with no separately printed block total.",
+   "Students can double-count required courses and General Education courses.",
+   "No program learning outcomes or careers appear in the text (only the Requirements tab was captured)."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39895340003"
 }

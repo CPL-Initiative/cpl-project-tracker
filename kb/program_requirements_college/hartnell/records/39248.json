@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Vocational Nursing",
  "award": "A.S. Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=302",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.NVN/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11598,
+  "input_tokens": 8591,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11598,
-    "output_tokens": 5306,
+    "input_tokens": 8591,
+    "output_tokens": 4040,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 5306,
+  "output_tokens": 4040,
   "output_tokens_details": {
-   "thinking_tokens": 2231
+   "thinking_tokens": 1560
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.15251,
- "ms": 43160,
- "seconds": 43.5,
+ "cost_usd": 0.11516,
+ "ms": 32038,
+ "seconds": 32.6,
  "parts": null,
  "error": null,
  "score": {
@@ -63,12 +63,11 @@
    "pass": true
   },
   "invented": {
-   "count": 23,
+   "count": 22,
    "codes": [
     "BIO5",
     "BIO6",
     "BIO6L",
-    "LIB6",
     "MAT10",
     "MAT12",
     "MAT16",
@@ -93,7 +92,6 @@
     "BIO5",
     "BIO6",
     "BIO6L",
-    "LIB6",
     "MAT10",
     "MAT12",
     "MAT16",
@@ -120,19 +118,21 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    23.0,
-    23.0
+    20.0,
+    20.0
    ],
    "stated": [
     63.0,
     63.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": null,
    "why": [
-    "a required course in 'Required General Education Courses - Prerequisites' has no units",
-    "a required course in 'Prerequisites - Complete at least 1: BIO 5 AND BIO 6 AND BIO 6L' has no units",
+    "a required course in 'Prerequisites' has no units",
+    "a required course in 'Prerequisite' has no units",
     "a required course in '2nd Semester' has no units",
-    "a required course in '3rd Semester' has no units"
+    "a required course in '3rd Semester' has no units",
+    "the record names the degree total and the Local GE pattern, but no units for it"
    ]
   },
   "repeated": {
@@ -140,65 +140,54 @@
    "pass": true
   },
   "outcomes": {
-   "program": 5,
+   "program": 0,
    "courses": 0,
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Nursing-Vocational Nursing - AS.NVN",
+   "section_heading": "Required Major Courses - After acceptance into the program",
    "measure": "units",
    "total_units": {
-    "min": 63,
-    "max": 63
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Local GE",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 63,
+    "max": 63
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "articulate the role of the vocational nurse as a member of the health care team, committed to provide safe, quality care for diverse persons and their families.",
-    "provide rationale for judgments used in the provision of safe, quality care and for decisions that promote the health of persons.",
-    "promote the human dignity, integrity, self-determination, and personal growth of persons, oneself, and members of the health care team.",
-    "achieve quality care through effective communication, mutual respect, and shared decision making with the health care team.",
-    "question the basis for nursing actions, considering research, evidence, tradition and personal preferences."
-   ],
-   "careers": [
-    "vocational nurses"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required General Education Courses - Prerequisites",
+    "name": "Prerequisites",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -289,21 +278,14 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "LIB 6",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      }
     ]
    },
    {
-    "name": "Prerequisites - Complete at least 1: BIO 11",
+    "name": "Prerequisite",
     "rule": "all",
     "minimum": null,
-    "option_group": "Anatomy and Physiology",
+    "option_group": "Anatomy and Physiology prerequisite",
     "stated": {
      "min": null,
      "max": null
@@ -319,10 +301,10 @@
     ]
    },
    {
-    "name": "Prerequisites - Complete at least 1: BIO 5 AND BIO 6 AND BIO 6L",
+    "name": "Prerequisite",
     "rule": "all",
     "minimum": null,
-    "option_group": "Anatomy and Physiology",
+    "option_group": "Anatomy and Physiology prerequisite",
     "stated": {
      "min": null,
      "max": null
@@ -350,17 +332,6 @@
       "catalog_addition": true
      }
     ]
-   },
-   {
-    "name": "Ethnic Studies",
-    "rule": "choose_units",
-    "minimum": 3,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": []
    },
    {
     "name": "1st Semester",
@@ -532,46 +503,45 @@
   "missing_explained": [
    {
     "code": "ETH 12",
-    "why": "not in the text; Ethnic Studies requirement only names 'Local GE - Area 6' without listing courses"
+    "why": "not in the text; likely a Local GE option"
    },
    {
     "code": "ETH 7",
-    "why": "not in the text; Ethnic Studies requirement only names 'Local GE - Area 6' without listing courses"
+    "why": "not in the text; likely a Local GE option"
    },
    {
     "code": "HIS 40",
-    "why": "not in the text; Ethnic Studies requirement only names 'Local GE - Area 6' without listing courses"
+    "why": "not in the text; likely a Local GE option"
    },
    {
     "code": "MUS 5",
-    "why": "not in the text; Ethnic Studies requirement only names 'Local GE - Area 6' without listing courses"
+    "why": "not in the text; likely a Local GE option"
    },
    {
     "code": "MUS 6",
-    "why": "not in the text; Ethnic Studies requirement only names 'Local GE - Area 6' without listing courses"
+    "why": "not in the text; likely a Local GE option"
    },
    {
     "code": "MUS 7",
-    "why": "not in the text; Ethnic Studies requirement only names 'Local GE - Area 6' without listing courses"
+    "why": "not in the text; likely a Local GE option"
    },
    {
     "code": "MUS 8",
-    "why": "not in the text; Ethnic Studies requirement only names 'Local GE - Area 6' without listing courses"
+    "why": "not in the text; likely a Local GE option"
    }
   ],
   "notes": [
-   "The catalog prints no units beside any course; all course units are null.",
-   "Codes are printed without spaces in the catalog (e.g., ENGLC1000, NVN119.1); recorded with a space between subject and number.",
-   "'Total Required Credits 63' recorded as total_units; it appears to cover the prerequisite/required GE courses plus major courses, not a full degree total with the GE pattern. Reviewer should confirm whether it should be degree_total.",
-   "Prerequisite courses are labeled 'Required General Education Courses' but are specific named program requirements, so they were recorded as blocks.",
-   "The BIO prerequisite ('Complete at least 1 of the following courses': BIO 11, or BIO 5 AND BIO 6 AND BIO 6L) was recorded as two option blocks in option_group 'Anatomy and Physiology'.",
-   "Ethnic Studies requirement: 'Earn at least 3 credits from the following: Local GE - Area 6' lists no courses; recorded as an empty choose_units block of 3. Closed-list ETH/HIS/MUS courses are likely Area 6 options but are not named.",
-   "The GE pattern is not named explicitly (only 'Local GE - Area 6' and 'courses for General Education'); ge_pattern left null.",
-   "electives_fill_degree set true based on 'Electives (Courses Numbered 1-199) required when degree units plus GE units total fewer than 60'; no degree total printed.",
-   "Program outcomes lead-in says 'Upon completion of this course' but they are listed under Program Outcomes; the identical outcomes list is shared with the Certificate of Achievement section.",
-   "Admission eligibility text mentions English 1A, Math 13, Psychology 2 and Biology 11 (older course numbers), which differ from the listed prerequisite courses.",
-   "The 'Success Courses' block reads 'Complete at least 0' and 'These courses are recommended, not required'; recorded as recommended."
+   "The page prints no units beside any course, so all course units are null.",
+   "Codes are printed without spaces on the page (e.g., 'ENGLC1000', 'NVN119.1'); recorded with a space between subject and number, as the page's own footnotes do (e.g., 'NUTR 51, NVN 70').",
+   "'Total Required Credits 63' is recorded as degree_total because it appears to cover prerequisites, Local GE and major courses; no separate major total is printed. Reviewer should confirm.",
+   "The prerequisite courses (ENGL C1000, math/statistics, PSYC C1000, BIO 11 or BIO 5/6/6L) appear under 'Required General Education Courses' and must be completed before acceptance; they are recorded as blocks because the program names them specifically.",
+   "The anatomy/physiology prerequisite is 'Complete at least 1 of': BIO 11, or BIO 5 AND BIO 6 AND BIO 6L; recorded as two option blocks.",
+   "'Local GE' is required but no GE units are printed.",
+   "Electives (courses numbered 1-199) are required only when degree units plus GE units total fewer than 60; no units printed, so electives_fill_degree is true.",
+   "NVN 225, 226, 227 are 'recommended, not required' ('Complete at least 0').",
+   "The catalog text begins mid-description; the program's opening description and any outcomes or careers may be cut off. No outcomes or careers appear in the excerpt.",
+   "Section heading chosen from the major-course heading; the page also prints 'Required General Education Courses' with prerequisites."
   ]
  },
- "extracted_run": "39090050931"
+ "extracted_run": "39895340003"
 }

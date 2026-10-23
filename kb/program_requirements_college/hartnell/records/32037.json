@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Psychology",
  "award": "A.A- T Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=347",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.PSY/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9702,
+  "input_tokens": 6697,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9702,
-    "output_tokens": 2431,
+    "input_tokens": 6697,
+    "output_tokens": 1760,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2431,
+  "output_tokens": 1760,
   "output_tokens_details": {
-   "thinking_tokens": 1012
+   "thinking_tokens": 651
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08743,
- "ms": 22011,
- "seconds": 22.3,
+ "cost_usd": 0.06199,
+ "ms": 14210,
+ "seconds": 14.7,
  "parts": null,
  "error": null,
  "score": {
@@ -82,17 +82,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 0,
    "courses": 0,
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 10,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -124,24 +124,8 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Compare and contrast the major concepts, theoretical perspectives, empirical findings, and historical trends in psychology.",
-    "Evaluate basic research methods in psychology, including research design, data analysis, and interpretation.",
-    "Demonstrate critical thinking and skeptical inquiry, and use the scientific approach to solving problems related to behavior and mental processes.",
-    "Apply psychological principles to personal, social, and organizational issues."
-   ],
-   "careers": [
-    "business",
-    "government",
-    "education",
-    "health care",
-    "social work",
-    "counseling",
-    "psychologist",
-    "clinical practice",
-    "research",
-    "teaching"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -170,7 +154,7 @@
      },
      {
       "code": "PSY9",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -189,7 +173,7 @@
     "courses": [
      {
       "code": "PSY10",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -208,15 +192,16 @@
     "courses": [
      {
       "code": "PSY25",
-      "units": 3,
+      "units": null,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "PSY14",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
       "catalog_addition": false
      }
     ]
@@ -233,21 +218,21 @@
     "courses": [
      {
       "code": "PSY22",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY15",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY6",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -258,14 +243,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requirements list prints no units beside courses; PSY units were taken from the course description pages (pp. 348-349), where the 'Credits' values follow the course headings in order (PSY6 3, PSY9 4, PSY10 3, PSY12 3, PSY14 3, PSY15 3, PSY22 3, PSY25 3). The mapping is inferred from layout order and C-ID numbers; reviewer should verify. STATC1000 and PSYCC1000 have no units printed in the text, so units are null.",
-   "Catalog prints codes without spaces (STATC1000, PSYCC1000, PSY9, etc.); treated as the closed-list courses STAT C1000, PSYC C1000, PSY 9, etc.",
-   "List C note: 'Students may choose a course from major electives list A or list B not already used.' So the unused one of PSY25/PSY14 (or any unused List A course) may also satisfy List C; recorded only the three printed List C courses.",
-   "No major total is printed; 'Total Required Credits 60' is recorded as degree_total. No unit figure is printed for Cal-GETC. Electives (courses numbered 1-99) fill the degree to 60 units when needed; no units printed.",
-   "Outcomes lead-in reads 'Upon completion of this course, students will be able to:' though it is printed under Program Outcomes for this degree.",
-   "Careers 'clinical practice', 'research', 'teaching' and 'psychologist' are named as opportunities for psychologists with graduate degrees, not directly for AA-T holders; reviewer may wish to exclude them.",
-   "PSY12 (Theories of Personality) appears in the course pages but is not part of the degree requirements."
+   "Codes are written as the catalog prints them without spaces (STATC1000, PSYCC1000, PSY9, PSY10, etc.); each matches a closed-list code (STAT C1000, PSYC C1000, PSY 9, PSY 10, ...), so none is marked as a catalog addition.",
+   "The catalog prints no units beside any course and no total for the major; course units are null and total_units is null.",
+   "'Total Required Credits 60' is recorded as degree_total; the page prints no units for Cal-GETC.",
+   "Electives (courses numbered 1-99) are required only when degree units plus GE units total fewer than 60; no units are printed, so electives_fill_degree is true.",
+   "List C also allows a course from List A or List B not already used (e.g., whichever of PSY25/PSY14 was not taken for List B); those courses are not repeated in the List C block.",
+   "List B prints PSY25 'OR' PSY14 under 'Complete one of the following'; recorded as a choose-1 block of two courses.",
+   "Catalog title for PSY10 is 'Introduction to Biological Psychology' versus 'Introduction to Biology Psychology' in the closed list.",
+   "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39895340003"
 }

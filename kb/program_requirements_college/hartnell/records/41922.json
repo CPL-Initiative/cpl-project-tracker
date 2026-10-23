@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Cisco Certified Network Associate",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=156",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.CCN/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9163,
+  "input_tokens": 14064,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9163,
-    "output_tokens": 1278,
+    "input_tokens": 14064,
+    "output_tokens": 1874,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,34 +30,48 @@
     "model": null
    }
   ],
-  "output_tokens": 1278,
+  "output_tokens": 1874,
   "output_tokens_details": {
-   "thinking_tokens": 525
+   "thinking_tokens": 784
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06221,
- "ms": 11603,
- "seconds": 11.9,
+ "cost_usd": 0.09374,
+ "ms": 15867,
+ "seconds": 16.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 2,
    "listed": 5,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.4,
+   "missing": [
+    "CSS50",
+    "CSS51",
+    "CSS52"
+   ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 4,
+   "codes": [
+    "CIS50",
+    "CIS51",
+    "CIS52",
+    "ENGLC1000E"
+   ],
+   "flagged": [
+    "CIS50",
+    "CIS51",
+    "CIS52",
+    "ENGLC1000E"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -84,12 +98,12 @@
    "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 2,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -100,7 +114,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Cisco Certified Network Associate (CCNA) Certificate of Achievement",
+   "section_heading": "Cisco Certified Network - CT.CCN",
    "measure": "units",
    "total_units": {
     "min": 15,
@@ -127,8 +141,7 @@
     "design and implement converged networks in both wired and wireless networks."
    ],
    "careers": [
-    "Information Technology with a focus in networking",
-    "IT careers related to networking"
+    "Information Technology"
    ]
   },
   "blocks": [
@@ -138,30 +151,30 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 15,
+     "max": 15
     },
     "courses": [
      {
-      "code": "CSS50",
+      "code": "CIS50",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
-      "code": "CSS51",
+      "code": "CIS51",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
-      "code": "CSS52",
+      "code": "CIS52",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "COM3",
@@ -172,6 +185,11 @@
         "code": "ENGLC1000",
         "units": null,
         "catalog_addition": false
+       },
+       {
+        "code": "ENGLC1000E",
+        "units": null,
+        "catalog_addition": true
        }
       ],
       "catalog_addition": false
@@ -180,14 +198,28 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "CSS 50",
+    "why": "requirements list prints CIS50 (Introduction to Networks: CCNA 1) instead; CSS50 appears only in the degree map"
+   },
+   {
+    "code": "CSS 51",
+    "why": "requirements list prints CIS51 (Switching Routing and Wireless Essentials: CCNA 2) instead; CSS51 appears only in the degree map"
+   },
+   {
+    "code": "CSS 52",
+    "why": "requirements list prints CIS52 (Enterprise Networking, Security, and Automation: CCNA 3) instead; CSS52 appears only in the degree map"
+   }
+  ],
   "notes": [
-   "The section's own title heading is not in the extracted text (it likely sits at the bottom of page 155); section_heading is taken from the program name in the description's first sentence.",
-   "The catalog prints no units beside individual courses, so course units are null. 'Total Required Credits 15' is recorded as total_units.",
-   "Codes are printed without spaces (CSS50, COM3, ENGLC1000); they are read as matching closed-list codes CSS 50, CSS 51, CSS 52, COM 3, ENGL C1000.",
-   "The outcomes lead-in says 'Upon completion of this course' although these are program outcomes for this certificate.",
-   "The text following this section (Computer Science, Cybersecurity, Network & Security Option, Technical Support certificates) belongs to other programs and was not read."
+   "The requirements list prints CIS50, CIS51, CIS52 with the same titles as closed-list CSS 50, 51, 52; the degree map data prints CSS50/51/52. Likely the same courses under a subject-code discrepancy; recorded as printed with catalog_addition true. Reviewer should verify.",
+   "No units are printed beside individual courses; only 'Total Required Credits 15' is printed, recorded as total_units and the block's stated total.",
+   "COM3 or ENGLC1000 or ENGLC1000E recorded as one choice with alternatives; ENGLC1000E is not in the closed list.",
+   "The degree map data lists ENG1A as the alternative to COM3 and the embedded requisite data lists ENG1A/ENG1AX; the rendered requirements print ENGLC1000/ENGLC1000E, which were used.",
+   "Program learning outcomes are taken from the page's embedded program data (learningOutcomes), copied as printed with trailing spaces trimmed; they apply to this certificate.",
+   "Career field taken from the description: 'prepares students for careers in Information Technology with a focus in networking'; the description also mentions 'IT careers related to networking'."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39895340003"
 }
