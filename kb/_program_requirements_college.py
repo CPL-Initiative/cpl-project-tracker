@@ -599,6 +599,11 @@ SECTION_AWARD = {
     "aa": re.compile(r"associate (?:in|of) arts(?! (?:degree )?for transfer)|\ba\.\s?a\.(?!\s?-\s?t)|"
                      r"^aa degree$|^(?:aa or as|as or aa)(?: degrees?)?$", re.I),
     "coa": re.compile(r"certificate of achievement", re.I),
+    # Sierra heads a noncredit program's section "Entrepreneurship for Makers" then "Noncredit
+    # Certificate of Completion" on its Business department page (page read 39964750956, S456);
+    # with no noncredit pattern the section went unread and page_winners() gave the page to the
+    # credit awards, so the four noncredit programs on department pages read no page.
+    "noncredit": re.compile(r"\bnoncredit\b|certificate of (?:completion|competency)", re.I),
 }
 SECTION_LINE = 140     # characters: a heading, not a paragraph that mentions the award
 # Foothill heads its degree section "Associate Degree Requirements", naming neither the award

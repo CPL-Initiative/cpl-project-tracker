@@ -2372,6 +2372,24 @@ check(not C.prefer_site("coursedog", "pdf") and not C.prefer_site("coursedog", "
 check(not C.prefer_site("courseleaf", "site") and not C.prefer_site(None, "site") and not C.prefer_site("courseleaf", None),
       "the route on another platform changes nothing")
 
+# A noncredit program's section on a department page (Sierra Business, page read 39964750956,
+# S456): the heading line then "Noncredit Certificate of Completion", its courses listed at 0
+# units. SECTION_AWARD read no noncredit heading, so Entrepreneurship for Makers 37810 read
+# no page though candidates() took the page at coverage 1.0.
+NC_TEXT = ("Innovation and Entrepreneurship\nSkills Certificate\nRequired Courses\nBUS 0241\tInnovation Concepts\t3\n"
+           "Total Units\t9\nEntrepreneurship for Makers\nNoncredit Certificate of Completion\n"
+           "This certificate is for existing and potential entrepreneurs with a focus on makers.\nRequired Courses\n"
+           "Course List\nCode\tTitle\tUnits\nBI 0804\tRapid Prototyping for Product Design\t0\n"
+           "BUS 0841\tInnovation Concepts for Starting a Small Business\t0\nBUS 0842\tEntrepreneurship - Small Business Management\t0\n")
+nc_prog = {"control_number": "37810", "title": "Entrepreneurship for Makers", "award": "Noncredit program",
+           "closed_list": [{"code": c} for c in ("BI 804", "BUS 841", "BUS 842")]}
+nc_kind, nc_head, nc_fit = C.section_match(NC_TEXT, nc_prog, 0.0)
+check(nc_kind == "noncredit" and "entrepreneurship for makers" in (nc_head or "") and nc_fit > 0,
+      "a department page heads a noncredit program's section with its title then 'Noncredit Certificate of Completion': %r"
+      % ((nc_kind, nc_head, nc_fit),))
+check(C.section_match(NC_TEXT, dict(nc_prog, award="Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"), 0.0)[0] is None,
+      "a noncredit section is no certificate of achievement's")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:
