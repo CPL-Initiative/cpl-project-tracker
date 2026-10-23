@@ -69,11 +69,11 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    67.0,
-    67.0
+    0.0,
+    0.0
    ],
    "stated": [
     67.0,
@@ -84,10 +84,8 @@
     23.0,
     23.0
    ],
-   "why": [],
-   "fill": [
-    0.0,
-    0.0
+   "why": [
+    "a required course in 'Required Major Courses' has no units"
    ]
   },
   "repeated": {
@@ -112,7 +110,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -153,82 +151,82 @@
     "courses": [
      {
       "code": "ADT100",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADT101",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADT110",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADT111",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADT120",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADT121",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADT130",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ADT131",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADT140",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADT141",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS43",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "BUS50",
-        "units": 4,
+        "units": null,
         "catalog_addition": true
        }
       ],
@@ -248,63 +246,20 @@
    "The text prints no program learning outcomes and names no careers."
   ]
  },
- "extracted_run": 39946676559,
+ "extracted_run": 39931703521,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ADT100": [
-     4,
-     4
-    ],
-    "ADT101": [
-     4,
-     4
-    ],
-    "ADT110": [
-     4,
-     4
-    ],
-    "ADT111": [
-     4,
-     4
-    ],
-    "ADT120": [
-     4,
-     4
-    ],
-    "ADT121": [
-     4,
-     4
-    ],
-    "ADT130": [
-     4,
-     4
-    ],
-    "ADT131": [
-     4,
-     4
-    ],
-    "ADT140": [
-     4,
-     4
-    ],
-    "ADT141": [
-     4,
-     4
-    ],
-    "BUS43": [
-     4,
-     4
-    ],
-    "BUS50": [
-     4,
-     4
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 23,
+    "max": 23
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
   }
  ],
- "read_run": 39931703521
+ "read_run": "39895340003"
 }

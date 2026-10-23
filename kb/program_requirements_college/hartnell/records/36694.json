@@ -153,42 +153,42 @@
     "courses": [
      {
       "code": "CMA51",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA55",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA57",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA61",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA62",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA81",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -207,35 +207,35 @@
     "courses": [
      {
       "code": "CMA52",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA53",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA54",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA56",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA91",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -254,7 +254,7 @@
     "courses": [
      {
       "code": "CMA63",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -268,7 +268,7 @@
      },
      {
       "code": "CMA65",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -282,21 +282,21 @@
      },
      {
       "code": "CMA84",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA90",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EGN11",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -315,35 +315,35 @@
     "courses": [
      {
       "code": "CMA70",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA71",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA72",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA82",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA83",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -362,35 +362,35 @@
     "courses": [
      {
       "code": "CMA53",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA84",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA90",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CMA91",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EGN11",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -410,99 +410,20 @@
    "No program learning outcomes or careers are printed in the Requirements tab; the General and Degree Map tabs were not included in the text."
   ]
  },
- "extracted_run": 39946676559,
+ "extracted_run": 39931703521,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "CMA51": [
-     3,
-     3
-    ],
-    "CMA55": [
-     3,
-     3
-    ],
-    "CMA57": [
-     3,
-     3
-    ],
-    "CMA61": [
-     4,
-     4
-    ],
-    "CMA62": [
-     4,
-     4
-    ],
-    "CMA81": [
-     3,
-     3
-    ],
-    "CMA52": [
-     3,
-     3
-    ],
-    "CMA53": [
-     3,
-     3
-    ],
-    "CMA54": [
-     3,
-     3
-    ],
-    "CMA56": [
-     3,
-     3
-    ],
-    "CMA91": [
-     3,
-     3
-    ],
-    "CMA63": [
-     3,
-     3
-    ],
-    "CMA65": [
-     3,
-     3
-    ],
-    "CMA84": [
-     3,
-     3
-    ],
-    "CMA90": [
-     3,
-     3
-    ],
-    "EGN11": [
-     3,
-     3
-    ],
-    "CMA70": [
-     3,
-     3
-    ],
-    "CMA71": [
-     3,
-     3
-    ],
-    "CMA72": [
-     3,
-     3
-    ],
-    "CMA82": [
-     3,
-     3
-    ],
-    "CMA83": [
-     3,
-     3
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 23,
+    "max": 23
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
   }
  ],
- "read_run": 39931703521
+ "read_run": "39895340003"
 }

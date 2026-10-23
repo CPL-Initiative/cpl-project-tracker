@@ -61,11 +61,11 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    54.0,
-    56.0
+    6.0,
+    8.0
    ],
    "stated": [
     60.0,
@@ -76,10 +76,8 @@
     34.0,
     34.0
    ],
-   "why": [],
-   "fill": [
-    4.0,
-    6.0
+   "why": [
+    "a required course in 'Required Major Courses' has no units"
    ]
   },
   "repeated": {
@@ -104,7 +102,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -145,33 +143,33 @@
     "courses": [
      {
       "code": "ECONC2002",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECONC2001",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "STATC1000",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT2",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "MAT3A",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -191,35 +189,35 @@
     "courses": [
      {
       "code": "BUS1A",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS1B",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS43",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT3B",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT16",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -238,21 +236,21 @@
     "courses": [
      {
       "code": "MAT3C",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT4",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECO10",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -271,67 +269,20 @@
    "No program learning outcomes or careers appear in the text."
   ]
  },
- "extracted_run": 39946676559,
+ "extracted_run": 39931703521,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ECONC2002": [
-     3,
-     3
-    ],
-    "ECONC2001": [
-     3,
-     3
-    ],
-    "STATC1000": [
-     4,
-     4
-    ],
-    "MAT2": [
-     4,
-     4
-    ],
-    "MAT3A": [
-     4,
-     4
-    ],
-    "BUS1A": [
-     3,
-     3
-    ],
-    "BUS1B": [
-     3,
-     3
-    ],
-    "BUS43": [
-     4,
-     4
-    ],
-    "MAT3B": [
-     4,
-     4
-    ],
-    "MAT16": [
-     3,
-     3
-    ],
-    "MAT3C": [
-     4,
-     4
-    ],
-    "MAT4": [
-     3,
-     3
-    ],
-    "ECO10": [
-     3,
-     3
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
   }
  ],
- "read_run": 39931703521
+ "read_run": "39895340003"
 }

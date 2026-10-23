@@ -145,35 +145,35 @@
     "courses": [
      {
       "code": "POLSC1000",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL2",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL3",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL6",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "STATC1000",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -192,35 +192,35 @@
     "courses": [
      {
       "code": "ECONC2002",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECONC2001",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL5",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -240,55 +240,20 @@
    "No program learning outcomes or careers appear in the provided text (only the Requirements tab was captured)."
   ]
  },
- "extracted_run": 39946676559,
+ "extracted_run": 39931703521,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "POLSC1000": [
-     3,
-     3
-    ],
-    "POL2": [
-     3,
-     3
-    ],
-    "POL3": [
-     3,
-     3
-    ],
-    "POL6": [
-     3,
-     3
-    ],
-    "STATC1000": [
-     4,
-     4
-    ],
-    "ECONC2002": [
-     3,
-     3
-    ],
-    "ECONC2001": [
-     3,
-     3
-    ],
-    "ETH1": [
-     3,
-     3
-    ],
-    "POL5": [
-     3,
-     3
-    ],
-    "SOC1": [
-     3,
-     3
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
   }
  ],
- "read_run": 39931703521
+ "read_run": "39895340003"
 }

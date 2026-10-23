@@ -145,42 +145,42 @@
     "courses": [
      {
       "code": "GEL1",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEL6",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM1A",
-      "units": 5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM1B",
-      "units": 5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT3A",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT3B",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -200,39 +200,20 @@
    "No program learning outcomes or careers appear in the text provided."
   ]
  },
- "extracted_run": 39946676559,
+ "extracted_run": 39931703521,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "GEL1": [
-     4,
-     4
-    ],
-    "GEL6": [
-     4,
-     4
-    ],
-    "CHM1A": [
-     5,
-     5
-    ],
-    "CHM1B": [
-     5,
-     5
-    ],
-    "MAT3A": [
-     4,
-     4
-    ],
-    "MAT3B": [
-     4,
-     4
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
   }
  ],
- "read_run": 39931703521
+ "read_run": "39895340003"
 }

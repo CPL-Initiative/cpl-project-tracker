@@ -89,7 +89,7 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    53.0,
+    52.0,
     56.0
    ],
    "stated": [
@@ -104,7 +104,7 @@
    "why": [],
    "fill": [
     4.0,
-    7.0
+    8.0
    ]
   },
   "repeated": {
@@ -170,52 +170,52 @@
     "courses": [
      {
       "code": "HED6",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NUTR1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PETH1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PETH2",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYCC1000",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM22",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "PHY2A",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        },
        {
         "code": "PHY10",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -235,28 +235,28 @@
     "courses": [
      {
       "code": "BIO5",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO6",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO6L",
-      "units": 2,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO11",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -282,28 +282,28 @@
      },
      {
       "code": "PETH4",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PETH5",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "PETH10A",
-      "units": 2,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PETH10B",
-      "units": 2,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -322,15 +322,15 @@
     "courses": [
      {
       "code": "PEAC58",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC59",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
@@ -350,15 +350,15 @@
      },
      {
       "code": "PEAC61",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC62",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
@@ -371,50 +371,50 @@
      },
      {
       "code": "PEAC68",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC40",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC41",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "PEAC52",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC55",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC56",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC70",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
@@ -427,106 +427,106 @@
      },
      {
       "code": "PEAC74",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEIN17",
-      "units": 1.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEIN19",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEIN20",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEIN21",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEIN22",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEIN23",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEIN24",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEIN25",
-      "units": 1.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEIN26",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC32",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC36",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC43",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC46",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC47",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
@@ -539,8 +539,8 @@
      },
      {
       "code": "PEAC50",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
@@ -553,15 +553,15 @@
      },
      {
       "code": "PEAC66",
-      "units": 1.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PEAC69",
-      "units": 1,
-      "units_max": 1.5,
+      "units": null,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      }
@@ -605,195 +605,20 @@
    "No program learning outcomes or careers appear in the text; the page shows only the Requirements tab."
   ]
  },
- "extracted_run": 39946676559,
+ "extracted_run": 39931703521,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "HED6": [
-     3,
-     3
-    ],
-    "NUTR1": [
-     3,
-     3
-    ],
-    "PETH1": [
-     3,
-     3
-    ],
-    "PETH2": [
-     4,
-     4
-    ],
-    "PSYCC1000": [
-     3,
-     3
-    ],
-    "CHM22": [
-     4,
-     4
-    ],
-    "PHY2A": [
-     4,
-     4
-    ],
-    "PHY10": [
-     4,
-     4
-    ],
-    "BIO5": [
-     4,
-     4
-    ],
-    "BIO6": [
-     3,
-     3
-    ],
-    "BIO6L": [
-     2,
-     2
-    ],
-    "BIO11": [
-     4,
-     4
-    ],
-    "PETH4": [
-     3,
-     3
-    ],
-    "PETH5": [
-     3,
-     3
-    ],
-    "PETH10A": [
-     2,
-     2
-    ],
-    "PETH10B": [
-     2,
-     2
-    ],
-    "PEAC58": [
-     1,
-     1.5
-    ],
-    "PEAC59": [
-     1,
-     1.5
-    ],
-    "PEAC61": [
-     1,
-     1.5
-    ],
-    "PEAC62": [
-     1,
-     1.5
-    ],
-    "PEAC68": [
-     1,
-     1.5
-    ],
-    "PEAC40": [
-     1,
-     1.5
-    ],
-    "PEAC41": [
-     1,
-     1.5
-    ],
-    "PEAC52": [
-     1,
-     1.5
-    ],
-    "PEAC55": [
-     1,
-     1.5
-    ],
-    "PEAC56": [
-     1,
-     1.5
-    ],
-    "PEAC70": [
-     1,
-     1.5
-    ],
-    "PEAC74": [
-     1,
-     1.5
-    ],
-    "PEIN17": [
-     1.5,
-     1.5
-    ],
-    "PEIN19": [
-     3,
-     3
-    ],
-    "PEIN20": [
-     3,
-     3
-    ],
-    "PEIN21": [
-     3,
-     3
-    ],
-    "PEIN22": [
-     3,
-     3
-    ],
-    "PEIN23": [
-     3,
-     3
-    ],
-    "PEIN24": [
-     3,
-     3
-    ],
-    "PEIN25": [
-     1.5,
-     1.5
-    ],
-    "PEIN26": [
-     3,
-     3
-    ],
-    "PEAC32": [
-     1,
-     1.5
-    ],
-    "PEAC36": [
-     1,
-     1.5
-    ],
-    "PEAC43": [
-     1,
-     1.5
-    ],
-    "PEAC46": [
-     1,
-     1.5
-    ],
-    "PEAC47": [
-     1,
-     1.5
-    ],
-    "PEAC50": [
-     1,
-     1.5
-    ],
-    "PEAC66": [
-     1.5,
-     1.5
-    ],
-    "PEAC69": [
-     1,
-     1.5
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 23,
+    "max": 23
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
   }
  ],
- "read_run": 39931703521
+ "read_run": "39895340003"
 }

@@ -137,14 +137,14 @@
     "courses": [
      {
       "code": "HES80",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EMT53",
-      "units": 9,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -160,23 +160,5 @@
    "The Requirements tab was the only source; the General tab, which may hold outcomes or careers, was not included in the text."
   ]
  },
- "extracted_run": 39946676559,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "HES80": [
-     3,
-     3
-    ],
-    "EMT53": [
-     9,
-     9
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
-  }
- ],
- "read_run": "39895340003"
+ "extracted_run": "39895340003"
 }

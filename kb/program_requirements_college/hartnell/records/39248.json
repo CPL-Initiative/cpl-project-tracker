@@ -116,10 +116,10 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
-    80.0,
-    89.0
+    20.0,
+    20.0
    ],
    "stated": [
     63.0,
@@ -131,9 +131,11 @@
     23.0
    ],
    "why": [
-    "the blocks and general education come to 80.0-89.0, past the 63.0-63.0 the catalog prints for the degree"
-   ],
-   "fill": null
+    "a required course in 'Prerequisites' has no units",
+    "a required course in 'Prerequisite' has no units",
+    "a required course in '2nd Semester' has no units",
+    "a required course in '3rd Semester' has no units"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -198,12 +200,12 @@
     "courses": [
      {
       "code": "ENGL C1000",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "ENGL C1000E",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -211,62 +213,62 @@
      },
      {
       "code": "STAT C1000",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "MAT 3A",
-        "units": 4,
+        "units": null,
         "catalog_addition": true
        },
        {
         "code": "MAT 3B",
-        "units": 4,
+        "units": null,
         "catalog_addition": true
        },
        {
         "code": "MAT 3C",
-        "units": 4,
+        "units": null,
         "catalog_addition": true
        },
        {
         "code": "MAT 4",
-        "units": 3,
+        "units": null,
         "catalog_addition": true
        },
        {
         "code": "MAT 5",
-        "units": 3,
+        "units": null,
         "catalog_addition": true
        },
        {
         "code": "MAT 10",
-        "units": 3,
+        "units": null,
         "catalog_addition": true
        },
        {
         "code": "MAT 12",
-        "units": 3,
+        "units": null,
         "catalog_addition": true
        },
        {
         "code": "MAT 16",
-        "units": 3,
+        "units": null,
         "catalog_addition": true
        },
        {
         "code": "MAT 24",
-        "units": 3,
+        "units": null,
         "catalog_addition": true
        },
        {
         "code": "MAT 25",
-        "units": 4,
+        "units": null,
         "catalog_addition": true
        },
        {
         "code": "MAT 27",
-        "units": 6,
+        "units": null,
         "catalog_addition": true
        }
       ],
@@ -274,7 +276,7 @@
      },
      {
       "code": "PSYC C1000",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -293,7 +295,7 @@
     "courses": [
      {
       "code": "BIO 11",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -312,21 +314,21 @@
     "courses": [
      {
       "code": "BIO 5",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "BIO 6",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "BIO 6L",
-      "units": 2,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -345,12 +347,12 @@
     "courses": [
      {
       "code": "NUTR 51",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "NUTR 1",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -358,12 +360,12 @@
      },
      {
       "code": "NVN 70",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "PSY 25",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -371,28 +373,28 @@
      },
      {
       "code": "NVN 110",
-      "units": 1,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NVN 119",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NVN 119.1",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NVN 130A",
-      "units": 1,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -411,21 +413,21 @@
     "courses": [
      {
       "code": "NVN 121",
-      "units": 6.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN 121.1",
-      "units": 6.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN 130B",
-      "units": 1,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -444,21 +446,21 @@
     "courses": [
      {
       "code": "NVN 123",
-      "units": 6.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN 123.1",
-      "units": 6.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN 130C",
-      "units": 1,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -477,21 +479,21 @@
     "courses": [
      {
       "code": "NVN 225",
-      "units": 0.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN 226",
-      "units": 0.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NVN 227",
-      "units": 0.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -543,159 +545,20 @@
    "Section heading chosen from the major-course heading; the page also prints 'Required General Education Courses' with prerequisites."
   ]
  },
- "extracted_run": 39946676559,
+ "extracted_run": 39931703521,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ENGL C1000": [
-     3,
-     3
-    ],
-    "ENGL C1000E": [
-     4,
-     4
-    ],
-    "STAT C1000": [
-     4,
-     4
-    ],
-    "MAT 3A": [
-     4,
-     4
-    ],
-    "MAT 3B": [
-     4,
-     4
-    ],
-    "MAT 3C": [
-     4,
-     4
-    ],
-    "MAT 4": [
-     3,
-     3
-    ],
-    "MAT 5": [
-     3,
-     3
-    ],
-    "MAT 10": [
-     3,
-     3
-    ],
-    "MAT 12": [
-     3,
-     3
-    ],
-    "MAT 16": [
-     3,
-     3
-    ],
-    "MAT 24": [
-     3,
-     3
-    ],
-    "MAT 25": [
-     4,
-     4
-    ],
-    "MAT 27": [
-     6,
-     6
-    ],
-    "PSYC C1000": [
-     3,
-     3
-    ],
-    "BIO 11": [
-     4,
-     4
-    ],
-    "BIO 5": [
-     4,
-     4
-    ],
-    "BIO 6": [
-     3,
-     3
-    ],
-    "BIO 6L": [
-     2,
-     2
-    ],
-    "NUTR 51": [
-     3,
-     3
-    ],
-    "NUTR 1": [
-     3,
-     3
-    ],
-    "NVN 70": [
-     3,
-     3
-    ],
-    "PSY 25": [
-     3,
-     3
-    ],
-    "NVN 110": [
-     1,
-     1
-    ],
-    "NVN 119": [
-     4,
-     4
-    ],
-    "NVN 119.1": [
-     4,
-     4
-    ],
-    "NVN 130A": [
-     1,
-     1
-    ],
-    "NVN 121": [
-     6.5,
-     6.5
-    ],
-    "NVN 121.1": [
-     6.5,
-     6.5
-    ],
-    "NVN 130B": [
-     1,
-     1
-    ],
-    "NVN 123": [
-     6.5,
-     6.5
-    ],
-    "NVN 123.1": [
-     6.5,
-     6.5
-    ],
-    "NVN 130C": [
-     1,
-     1
-    ],
-    "NVN 225": [
-     0.5,
-     0.5
-    ],
-    "NVN 226": [
-     0.5,
-     0.5
-    ],
-    "NVN 227": [
-     0.5,
-     0.5
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 23,
+    "max": 23
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
   }
  ],
- "read_run": 39931703521
+ "read_run": "39895340003"
 }

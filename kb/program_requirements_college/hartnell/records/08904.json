@@ -145,38 +145,38 @@
     "courses": [
      {
       "code": "ETH1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH3",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH4",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPA1",
-      "units": 5,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "SPA1X",
-        "units": 5,
+        "units": null,
         "catalog_addition": false
        },
        {
         "code": "SPA1S",
-        "units": 5,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -196,19 +196,19 @@
     "courses": [
      {
       "code": "ETH2",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH5",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "POL5",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -216,33 +216,33 @@
      },
      {
       "code": "ETH6",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH7",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH12",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS49A",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIS49B",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -262,71 +262,20 @@
    "The Requirements tab text includes no program learning outcomes or careers; the General tab content was not in the text."
   ]
  },
- "extracted_run": 39946676559,
+ "extracted_run": 39931703521,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ETH1": [
-     3,
-     3
-    ],
-    "ETH3": [
-     3,
-     3
-    ],
-    "ETH4": [
-     3,
-     3
-    ],
-    "SPA1": [
-     5,
-     5
-    ],
-    "SPA1X": [
-     5,
-     5
-    ],
-    "SPA1S": [
-     5,
-     5
-    ],
-    "ETH2": [
-     3,
-     3
-    ],
-    "ETH5": [
-     3,
-     3
-    ],
-    "POL5": [
-     3,
-     3
-    ],
-    "ETH6": [
-     3,
-     3
-    ],
-    "ETH7": [
-     3,
-     3
-    ],
-    "ETH12": [
-     3,
-     3
-    ],
-    "HIS49A": [
-     3,
-     3
-    ],
-    "HIS49B": [
-     3,
-     3
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 23,
+    "max": 23
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
   }
  ],
- "read_run": 39931703521
+ "read_run": "39895340003"
 }

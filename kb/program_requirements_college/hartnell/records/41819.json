@@ -76,10 +76,10 @@
    "pass": false
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
+    16.0,
     16.0
    ],
    "stated": [
@@ -87,9 +87,7 @@
     16.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 15.0-16.0; the catalog states 16.0-16.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -160,33 +158,33 @@
     "courses": [
      {
       "code": "CIS50",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CIS59",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CIS53",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CIS57",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "BUS43",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -206,35 +204,5 @@
    "Career taken from the description: 'entry-level computer technical support careers'."
   ]
  },
- "extracted_run": 39946676559,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "CIS50": [
-     4,
-     4
-    ],
-    "CIS59": [
-     4,
-     4
-    ],
-    "CIS53": [
-     4,
-     4
-    ],
-    "CIS57": [
-     3,
-     3
-    ],
-    "BUS43": [
-     4,
-     4
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
-  }
- ],
- "read_run": "39895340003"
+ "extracted_run": "39895340003"
 }

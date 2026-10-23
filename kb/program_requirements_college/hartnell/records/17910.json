@@ -79,7 +79,7 @@
    "status": "equal",
    "computed": [
     38.0,
-    44.0
+    42.0
    ],
    "stated": [
     60.0,
@@ -92,7 +92,7 @@
    ],
    "why": [],
    "fill": [
-    16.0,
+    18.0,
     22.0
    ]
   },
@@ -159,42 +159,42 @@
     "courses": [
      {
       "code": "MAT2",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT3A",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "STATC1000",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT24",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT25",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT27",
-      "units": 6,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -213,196 +213,196 @@
     "courses": [
      {
       "code": "ABT90",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ABT92",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANT1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AST1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AST1L",
-      "units": 1,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO1",
-      "units": 4.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO2",
-      "units": 4.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO3",
-      "units": 4.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO5",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO6",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO6L",
-      "units": 2,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO10",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO11",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO12",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO18",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO20",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO27",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO30",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO42",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO47",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO48",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO48L",
-      "units": 1,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM1A",
-      "units": 5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM1B",
-      "units": 5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM12A",
-      "units": 5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM12B",
-      "units": 5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM22",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHM23",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -423,21 +423,21 @@
      },
      {
       "code": "GEL1",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEL2",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEL6",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -451,42 +451,42 @@
      },
      {
       "code": "MAT2",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT3A",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT3B",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT3C",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT4",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT5",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -500,28 +500,28 @@
      },
      {
       "code": "STATC1000",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT24",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT25",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MAT27",
-      "units": 6,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -535,56 +535,56 @@
      },
      {
       "code": "OCN1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY2A",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY2B",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY4A",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY4B",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY4C",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY10",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY32",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -607,211 +607,20 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": 39946676559,
+ "extracted_run": 39931703521,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "MAT2": [
-     4,
-     4
-    ],
-    "MAT3A": [
-     4,
-     4
-    ],
-    "STATC1000": [
-     4,
-     4
-    ],
-    "MAT24": [
-     3,
-     3
-    ],
-    "MAT25": [
-     4,
-     4
-    ],
-    "MAT27": [
-     6,
-     6
-    ],
-    "ABT90": [
-     3,
-     3
-    ],
-    "ABT92": [
-     3,
-     3
-    ],
-    "ANT1": [
-     3,
-     3
-    ],
-    "AST1": [
-     3,
-     3
-    ],
-    "AST1L": [
-     1,
-     1
-    ],
-    "BIO1": [
-     4.5,
-     4.5
-    ],
-    "BIO2": [
-     4.5,
-     4.5
-    ],
-    "BIO3": [
-     4.5,
-     4.5
-    ],
-    "BIO5": [
-     4,
-     4
-    ],
-    "BIO6": [
-     3,
-     3
-    ],
-    "BIO6L": [
-     2,
-     2
-    ],
-    "BIO10": [
-     4,
-     4
-    ],
-    "BIO11": [
-     4,
-     4
-    ],
-    "BIO12": [
-     3,
-     3
-    ],
-    "BIO18": [
-     3,
-     3
-    ],
-    "BIO20": [
-     4,
-     4
-    ],
-    "BIO27": [
-     4,
-     4
-    ],
-    "BIO30": [
-     4,
-     4
-    ],
-    "BIO42": [
-     3,
-     3
-    ],
-    "BIO47": [
-     4,
-     4
-    ],
-    "BIO48": [
-     3,
-     3
-    ],
-    "BIO48L": [
-     1,
-     1
-    ],
-    "CHM1A": [
-     5,
-     5
-    ],
-    "CHM1B": [
-     5,
-     5
-    ],
-    "CHM12A": [
-     5,
-     5
-    ],
-    "CHM12B": [
-     5,
-     5
-    ],
-    "CHM22": [
-     4,
-     4
-    ],
-    "CHM23": [
-     4,
-     4
-    ],
-    "GEL1": [
-     4,
-     4
-    ],
-    "GEL2": [
-     3,
-     3
-    ],
-    "GEL6": [
-     4,
-     4
-    ],
-    "MAT3B": [
-     4,
-     4
-    ],
-    "MAT3C": [
-     4,
-     4
-    ],
-    "MAT4": [
-     3,
-     3
-    ],
-    "MAT5": [
-     3,
-     3
-    ],
-    "OCN1": [
-     3,
-     3
-    ],
-    "PHY2A": [
-     4,
-     4
-    ],
-    "PHY2B": [
-     4,
-     4
-    ],
-    "PHY4A": [
-     4,
-     4
-    ],
-    "PHY4B": [
-     4,
-     4
-    ],
-    "PHY4C": [
-     4,
-     4
-    ],
-    "PHY10": [
-     4,
-     4
-    ],
-    "PHY32": [
-     4,
-     4
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 23,
+    "max": 23
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
   }
  ],
- "read_run": 39931703521
+ "read_run": "39895340003"
 }

@@ -62,7 +62,7 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
     0.0,
     0.0
@@ -73,7 +73,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 0.0-0.0; the catalog states 216.0-216.0"
+    "a required course in 'Required Courses' has no units"
    ]
   },
   "repeated": {
@@ -139,14 +139,14 @@
     "courses": [
      {
       "code": "ENGM620",
-      "units": 0,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGM622",
-      "units": 0,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -163,23 +163,5 @@
    "The text prints no program learning outcomes or careers for this award."
   ]
  },
- "extracted_run": 39946676559,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ENGM620": [
-     0,
-     0
-    ],
-    "ENGM622": [
-     0,
-     0
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
-  }
- ],
- "read_run": "39895340003"
+ "extracted_run": "39895340003"
 }

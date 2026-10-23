@@ -81,8 +81,8 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    18.0,
-    19.0
+    12.0,
+    12.0
    ],
    "stated": [
     60.0,
@@ -91,6 +91,7 @@
    "against": "degree",
    "ge": null,
    "why": [
+    "'Major Electives - List B' chooses 2 courses but 1 carry units",
     "the record names the degree total and the Cal-GETC pattern, but no units for it"
    ]
   },
@@ -157,14 +158,14 @@
     "courses": [
      {
       "code": "ADJ1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADJ3",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -183,35 +184,35 @@
     "courses": [
      {
       "code": "ADJ5",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADJ4",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADJ8",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADJ2",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADJ10",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -230,28 +231,28 @@
     "courses": [
      {
       "code": "SOC1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "STATC1000",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "PSYCC1000",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ADJ51",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -305,59 +306,5 @@
    "No program learning outcomes or careers appear in the text."
   ]
  },
- "extracted_run": 39946676559,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ADJ1": [
-     3,
-     3
-    ],
-    "ADJ3": [
-     3,
-     3
-    ],
-    "ADJ5": [
-     3,
-     3
-    ],
-    "ADJ4": [
-     3,
-     3
-    ],
-    "ADJ8": [
-     3,
-     3
-    ],
-    "ADJ2": [
-     3,
-     3
-    ],
-    "ADJ10": [
-     3,
-     3
-    ],
-    "SOC1": [
-     3,
-     3
-    ],
-    "STATC1000": [
-     4,
-     4
-    ],
-    "PSYCC1000": [
-     3,
-     3
-    ],
-    "ADJ51": [
-     3,
-     3
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
-  }
- ],
- "read_run": "39895340003"
+ "extracted_run": "39895340003"
 }

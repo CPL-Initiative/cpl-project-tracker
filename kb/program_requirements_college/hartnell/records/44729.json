@@ -145,33 +145,33 @@
     "courses": [
      {
       "code": "HED2",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HES1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "STATC1000",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO10",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "BIO11",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -191,12 +191,12 @@
     "courses": [
      {
       "code": "CHM22",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "CHM1A",
-        "units": 5,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -204,28 +204,28 @@
      },
      {
       "code": "BIO5",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO6",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO6L",
-      "units": 2,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO27",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -244,21 +244,21 @@
     "courses": [
      {
       "code": "HES2",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HED6",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -277,21 +277,21 @@
     "courses": [
      {
       "code": "HES3",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HED7",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSY15",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -311,83 +311,20 @@
    "No program learning outcomes or careers appear in the provided requirements text."
   ]
  },
- "extracted_run": 39946676559,
+ "extracted_run": 39931703521,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "HED2": [
-     3,
-     3
-    ],
-    "HES1": [
-     3,
-     3
-    ],
-    "STATC1000": [
-     4,
-     4
-    ],
-    "BIO10": [
-     4,
-     4
-    ],
-    "BIO11": [
-     4,
-     4
-    ],
-    "CHM22": [
-     4,
-     4
-    ],
-    "CHM1A": [
-     5,
-     5
-    ],
-    "BIO5": [
-     4,
-     4
-    ],
-    "BIO6": [
-     3,
-     3
-    ],
-    "BIO6L": [
-     2,
-     2
-    ],
-    "BIO27": [
-     4,
-     4
-    ],
-    "HES2": [
-     3,
-     3
-    ],
-    "HED6": [
-     3,
-     3
-    ],
-    "SOC1": [
-     3,
-     3
-    ],
-    "HES3": [
-     3,
-     3
-    ],
-    "HED7": [
-     3,
-     3
-    ],
-    "PSY15": [
-     3,
-     3
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
   }
  ],
- "read_run": 39931703521
+ "read_run": "39895340003"
 }

@@ -65,11 +65,11 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    81.0,
-    87.0
+    10.0,
+    10.0
    ],
    "stated": [
     60.0,
@@ -80,8 +80,10 @@
     34.0,
     34.0
    ],
-   "why": [],
-   "overlap": true
+   "why": [
+    "a required course in 'Required Core' has no units",
+    "a required course in 'Required Core: Chemistry and Physics' has no units"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -105,7 +107,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -146,21 +148,21 @@
     "courses": [
      {
       "code": "EDU1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECE6",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIO10",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -172,12 +174,12 @@
       "alternatives": [
        {
         "code": "GEL2",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        },
        {
         "code": "GEL6",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -185,26 +187,26 @@
      },
      {
       "code": "MAT12",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COMMC1000",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGLC1000",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "ENGLC1000E",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -212,35 +214,35 @@
      },
      {
       "code": "ENGLC1002",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEG10",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS5A",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HISTC1001",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POLSC1000",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -259,7 +261,7 @@
     "courses": [
      {
       "code": "PHY32",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -278,14 +280,14 @@
     "courses": [
      {
       "code": "CHM22",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY10",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -304,7 +306,7 @@
     "courses": [
      {
       "code": "ENGLC1001",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -323,28 +325,28 @@
     "courses": [
      {
       "code": "ART10",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUS1A",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC92",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -364,103 +366,20 @@
    "No program learning outcomes or careers appear in the text."
   ]
  },
- "extracted_run": 39946676559,
+ "extracted_run": 39931703521,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "EDU1": [
-     3,
-     3
-    ],
-    "ECE6": [
-     3,
-     3
-    ],
-    "BIO10": [
-     4,
-     4
-    ],
-    "GEL2": [
-     3,
-     3
-    ],
-    "GEL6": [
-     4,
-     4
-    ],
-    "MAT12": [
-     3,
-     3
-    ],
-    "COMMC1000": [
-     3,
-     3
-    ],
-    "ENGLC1000": [
-     3,
-     3
-    ],
-    "ENGLC1000E": [
-     4,
-     4
-    ],
-    "ENGLC1002": [
-     3,
-     3
-    ],
-    "GEG10": [
-     3,
-     3
-    ],
-    "HIS5A": [
-     3,
-     3
-    ],
-    "HISTC1001": [
-     3,
-     3
-    ],
-    "POLSC1000": [
-     3,
-     3
-    ],
-    "PHY32": [
-     4,
-     4
-    ],
-    "CHM22": [
-     4,
-     4
-    ],
-    "PHY10": [
-     4,
-     4
-    ],
-    "ENGLC1001": [
-     3,
-     3
-    ],
-    "ART10": [
-     3,
-     3
-    ],
-    "MUS1A": [
-     3,
-     3
-    ],
-    "TAC1": [
-     3,
-     3
-    ],
-    "TAC92": [
-     3,
-     3
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
   }
  ],
- "read_run": 39931703521
+ "read_run": "39895340003"
 }

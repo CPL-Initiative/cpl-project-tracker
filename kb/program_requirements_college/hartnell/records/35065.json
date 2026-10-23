@@ -77,7 +77,7 @@
    "status": "equal",
    "computed": [
     53.0,
-    54.0
+    53.0
    ],
    "stated": [
     60.0,
@@ -90,7 +90,7 @@
    ],
    "why": [],
    "fill": [
-    6.0,
+    7.0,
     7.0
    ]
   },
@@ -157,12 +157,12 @@
     "courses": [
      {
       "code": "TAC1",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "TAC50",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -170,26 +170,26 @@
      },
      {
       "code": "TAC3",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC10",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC2",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "TAC53",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -197,7 +197,7 @@
      },
      {
       "code": "TAC30",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -216,49 +216,49 @@
     "courses": [
      {
       "code": "TAC20",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC21",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC22",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC24",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC25",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC53",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC54",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -277,42 +277,42 @@
     "courses": [
      {
       "code": "TAC26",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC27",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC28",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC29",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC40",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC91",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -331,7 +331,7 @@
     "courses": [
      {
       "code": "TAC2",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -343,7 +343,7 @@
       "alternatives": [
        {
         "code": "ETH7",
-        "units": 3,
+        "units": null,
         "catalog_addition": true
        }
       ],
@@ -351,42 +351,42 @@
      },
      {
       "code": "TAC11",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC15",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC23",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC53",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC55",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC92",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -405,28 +405,28 @@
     "courses": [
      {
       "code": "TAC50",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC51",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "TAC54",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC58",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -453,123 +453,20 @@
    "Requirements page only; no program outcomes or careers printed in this text."
   ]
  },
- "extracted_run": 39946676559,
+ "extracted_run": 39931703521,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "TAC1": [
-     3,
-     3
-    ],
-    "TAC50": [
-     3,
-     3
-    ],
-    "TAC3": [
-     3,
-     3
-    ],
-    "TAC10": [
-     3,
-     3
-    ],
-    "TAC2": [
-     3,
-     3
-    ],
-    "TAC53": [
-     3,
-     3
-    ],
-    "TAC30": [
-     3,
-     3
-    ],
-    "TAC20": [
-     3,
-     3
-    ],
-    "TAC21": [
-     3,
-     3
-    ],
-    "TAC22": [
-     3,
-     3
-    ],
-    "TAC24": [
-     3,
-     3
-    ],
-    "TAC25": [
-     3,
-     3
-    ],
-    "TAC54": [
-     3,
-     3
-    ],
-    "TAC26": [
-     3,
-     3
-    ],
-    "TAC27": [
-     3,
-     3
-    ],
-    "TAC28": [
-     3,
-     3
-    ],
-    "TAC29": [
-     3,
-     3
-    ],
-    "TAC40": [
-     3,
-     3
-    ],
-    "TAC91": [
-     4,
-     4
-    ],
-    "ETH7": [
-     3,
-     3
-    ],
-    "TAC11": [
-     3,
-     3
-    ],
-    "TAC15": [
-     3,
-     3
-    ],
-    "TAC23": [
-     3,
-     3
-    ],
-    "TAC55": [
-     3,
-     3
-    ],
-    "TAC92": [
-     3,
-     3
-    ],
-    "TAC51": [
-     3,
-     3
-    ],
-    "TAC58": [
-     3,
-     3
-    ]
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": {
+    "min": 23,
+    "max": 23
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
   }
  ],
- "read_run": 39931703521
+ "read_run": "39895340003"
 }

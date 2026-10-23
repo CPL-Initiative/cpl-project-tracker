@@ -75,20 +75,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     15.0,
-    16.0
+    15.0
    ],
    "stated": [
     15.0,
     15.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 15.0-16.0; the catalog states 15.0-15.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -112,7 +110,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -159,38 +157,38 @@
     "courses": [
      {
       "code": "CIS50",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CIS51",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CIS52",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "COM3",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "ENGLC1000",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        },
        {
         "code": "ENGLC1000E",
-        "units": 4,
+        "units": null,
         "catalog_addition": true
        }
       ],
@@ -223,39 +221,5 @@
    "Career field taken from the description: 'prepares students for careers in Information Technology with a focus in networking'; the description also mentions 'IT careers related to networking'."
   ]
  },
- "extracted_run": 39946676559,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "CIS50": [
-     4,
-     4
-    ],
-    "CIS51": [
-     4,
-     4
-    ],
-    "CIS52": [
-     4,
-     4
-    ],
-    "COM3": [
-     3,
-     3
-    ],
-    "ENGLC1000": [
-     3,
-     3
-    ],
-    "ENGLC1000E": [
-     4,
-     4
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
-  }
- ],
- "read_run": "39895340003"
+ "extracted_run": "39895340003"
 }
