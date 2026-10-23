@@ -1,0 +1,16 @@
+{
+ "_readme": "S454 SkyBlazingStar, 2026-10-23. Sierra's capture 39726642315 left 25 programs page-claimed, every one on a department page another program kept (shared_pages). Fire Technology's page carries five state programs: Fire Technology A.S. (04310) and A.A. (10854) and Fire Company Officer (38765) lost it, 21608 and 38757 kept it. page_winners() lets a claimant whose award the page label names win outright and skips the section headings, so this read prints the page as the capture reads it, to see how each award is headed and what the label names.",
+ "college": "Sierra College",
+ "questions": {
+  "award_headings": "On the Fire Technology department page as the capture reads it, what line heads each of the five awards (title and award words on one line or two adjacent short lines), and does each award's course list sit beneath its own heading?"
+ },
+ "keywords": [
+  "Fire Technology[^\\n]{0,60}",
+  "Fire Company Officer[^\\n]{0,60}",
+  "\\bA[AS] Degree[^\\n]{0,40}",
+  "certificate of (?:achievement|accomplishment)[^\\n]{0,80}"
+ ],
+ "pages": [
+  {"answers": ["award_headings"], "url": "https://catalog.sierracollege.edu/departments/fire-technology/", "capture_view": true}
+ ]
+}
