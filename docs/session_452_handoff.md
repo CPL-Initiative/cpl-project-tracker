@@ -37,7 +37,7 @@ None in session. Sheet 115 card 1 (the 25 older-build rows and Victor Valley's t
 ## Open work, in order
 
 0. **The display apply on `main`.** Read the newest `program-requirements-college.yml` run on `main` with
-   `step=display`; its applied record commits to `main` beside the receipt. If it was cancelled at the 120-minute
+   `step=display`; its applied record commits to `main` beside the receipt. If it was canceled at the 120-minute
    limit, dispatch it again (lessons S398).
 1. **Long Beach City.** Its extraction (run 39891611701 on `claude/harvest-long-beach-city-s449`, started 02:48Z)
    was still capturing at the checkpoint; 13 programs moved (4 new pages, 4 moved, 5 changed). When it files:
