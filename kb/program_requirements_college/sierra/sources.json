@@ -115,8 +115,8 @@
     "award": 0,
     "title": 0.0,
     "section": "as",
-    "section_line": "information technology—it technician aa or as degree",
-    "section_fit": 0.4
+    "section_line": "it—network technician as degree",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -1016,12 +1016,37 @@
   "title": "IT: Cybersecurity",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT100",
+   "IT105",
+   "IT110",
+   "IT115",
+   "IT120",
+   "IT140",
+   "IT145",
+   "IT150",
+   "IT165",
+   "IT60",
+   "IT75",
+   "IT95"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/infotech/",
+   "title": "Information Technology | Sierra College Catalog",
+   "h1": " Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "as",
+    "section_line": "it—cybersecurity aa or as degree",
+    "section_fit": 0.667
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 16979
  },
  {
   "control_number": "12058",
@@ -1569,8 +1594,8 @@
     "award": 0,
     "title": 0.0,
     "section": "coa",
-    "section_line": "information technology—it technician certificate of achievement",
-    "section_fit": 0.5
+    "section_line": "it—network technician certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -1617,12 +1642,42 @@
   "title": "IT: Cybersecurity",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI12",
+   "CSCI50",
+   "IT100",
+   "IT105",
+   "IT110",
+   "IT115",
+   "IT120",
+   "IT125",
+   "IT140",
+   "IT145",
+   "IT15",
+   "IT150",
+   "IT165",
+   "IT55",
+   "IT60",
+   "IT75",
+   "IT95"
+  ],
+  "source": {
+   "url": "https://catalog.sierracollege.edu/departments/infotech/",
+   "title": "Information Technology | Sierra College Catalog",
+   "h1": " Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa",
+    "section_line": "it—cybersecurity certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 16979
  },
  {
   "control_number": "21568",

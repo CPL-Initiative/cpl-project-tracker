@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 190,
  "with_closed_list": 125,
- "started": "2026-10-23T10:00:33Z",
+ "started": "2026-10-23T12:16:13Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.sierracollege.edu/sitemap.xml",
@@ -23,14 +23,14 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 59,
- "seconds": 298.5,
- "found": 105,
+ "seconds": 286.9,
+ "found": 107,
  "by_method": {
   "link_search": 7,
   "no_closed_list": 65,
   "not_found": 3,
-  "page_claimed": 17,
-  "sitemap_page": 98
+  "page_claimed": 15,
+  "sitemap_page": 100
  },
  "shared_pages": {
   "https://catalog.sierracollege.edu/departments/business/": [
@@ -44,7 +44,9 @@
   ],
   "https://catalog.sierracollege.edu/departments/infotech/": [
    "04279",
+   "11965",
    "21529",
+   "21557",
    "39602",
    "39603",
    "39607",
@@ -195,14 +197,6 @@
    ]
   },
   {
-   "control_number": "11965",
-   "title": "IT: Cybersecurity",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.sierracollege.edu/departments/infotech/"
-   ]
-  },
-  {
    "control_number": "15307",
    "title": "Interdisciplinary Entrepreneurship",
    "award": "A.S. Degree",
@@ -236,14 +230,6 @@
    "pages": [
     "https://catalog.sierracollege.edu/departments/infotech/",
     "https://catalog.sierracollege.edu/departments/business/"
-   ]
-  },
-  {
-   "control_number": "21557",
-   "title": "IT: Cybersecurity",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://catalog.sierracollege.edu/departments/infotech/"
    ]
   },
   {
@@ -350,16 +336,16 @@
  "coverage_bands": {
   "0.5-0.8": 5,
   "0.8-1.0": 21,
-  "1.0": 79
+  "1.0": 81
  },
  "would_extract": {
   "against": "kb/program_requirements_college/sierra",
-  "kept": 92,
-  "programs": 13,
+  "kept": 105,
+  "programs": 2,
   "list": [
    {
-    "control_number": "04279",
-    "title": "IT: IT Technician",
+    "control_number": "11965",
+    "title": "IT: Cybersecurity",
     "award": "A.S. Degree",
     "url": "https://catalog.sierracollege.edu/departments/infotech/",
     "coverage": 1.0,
@@ -368,126 +354,16 @@
     "was_method": "page_claimed"
    },
    {
-    "control_number": "04305",
-    "title": "Administration of Justice - Law Enforcement",
-    "award": "A.S. Degree",
-    "url": "https://catalog.sierracollege.edu/departments/administration-justice/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "04310",
-    "title": "Fire Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.sierracollege.edu/departments/fire-technology/",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "07978",
-    "title": "Photography",
-    "award": "A.S. Degree",
-    "url": "https://catalog.sierracollege.edu/departments/photography/",
+    "control_number": "21557",
+    "title": "IT: Cybersecurity",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sierracollege.edu/departments/infotech/",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "page_claimed"
-   },
-   {
-    "control_number": "07986",
-    "title": "Administration of Justice - Courts",
-    "award": "A.S. Degree",
-    "url": "https://catalog.sierracollege.edu/departments/administration-justice/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "08307",
-    "title": "Applied Art and Design: Graphic Design",
-    "award": "A.S. Degree",
-    "url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "10506",
-    "title": "Computer Science: Computer Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.sierracollege.edu/departments/computer-science/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "10801",
-    "title": "Administration of Justice - Courts",
-    "award": "A.A. Degree",
-    "url": "https://catalog.sierracollege.edu/departments/administration-justice/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "10803",
-    "title": "Administration of Justice - Law Enforcement",
-    "award": "A.A. Degree",
-    "url": "https://catalog.sierracollege.edu/departments/administration-justice/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "10825",
-    "title": "Computer Science: Computer Science",
-    "award": "A.A. Degree",
-    "url": "https://catalog.sierracollege.edu/departments/computer-science/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "10854",
-    "title": "Fire Technology",
-    "award": "A.A. Degree",
-    "url": "https://catalog.sierracollege.edu/departments/fire-technology/",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "30554",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.sierracollege.edu/departments/psychology/",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "32011",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.sierracollege.edu/departments/administration-justice/",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
    }
   ]
  },
- "run": "39933862802"
+ "run": "39951768339"
 }
