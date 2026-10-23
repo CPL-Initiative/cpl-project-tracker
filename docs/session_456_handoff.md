@@ -35,7 +35,15 @@ archive 3).
 
 ## Decisions Sam made this run
 
-None. Sheets 116 and 115 held no replies at 11:35Z; no Library brief was requested.
+On Open Asks Sheet 115 at 12:23-12:26Z (its `replies` store, read by S455 at 12:37Z; Complete, through card 3): **card 1
+remove** (the 25 live records the newer reads no longer file, and Victor Valley's department-list records), **cards 2
+and 3 keep** (Scenario 4's two noncredit-gate calls). Sheet 116 carries the same three cards at the same positions, so
+the rulings stand there; card 4 (Hartnell's Local GE at 23) has no reply. No Library brief was requested.
+
+**Who does what.** S450 (SkyMariposa, a session Sam opened, still live at 12:36Z) messaged S455 and took cards 2 and 3
+(the funding lane line, a `cpl_memory` row, the sheet's comment thread). S455 had no `send_message`, so it answered on
+#2376: S450 runs card 1 too, after #2376 merges and its display apply finishes. If S450 has not landed card 1 when you
+start, read #2376's comments and S450's PRs before you touch it; one writer.
 
 ## Open work, in order
 
@@ -50,8 +58,11 @@ None. Sheets 116 and 115 held no replies at 11:35Z; no Library brief was request
 2. **Hartnell's remaining failures** (37 arithmetic): 7 still list a required course without units (the vendor's
    answer did not price it; check the code's form), 8 name a GE pattern without units on a degree the GE steps do not
    reach. Count each `why` first.
-3. **Sheet 116** ([link](https://claude.ai/artifact/4oL4YfC4b43iVjUq1bSS8J), current): read its `replies` before
-   acting. Card 1's removal needs a receipt with before-values.
+3. **Sheet 116** ([link](https://claude.ai/artifact/4oL4YfC4b43iVjUq1bSS8J)): cards 1-3 are answered (above), card 4
+   open. Card 1's removal (S450's, unless #2376's comments say otherwise) goes through `supabase-migrate.yml` with a
+   before-values receipt and an md5 guard, drops the lane's NEEDS SAM, and is followed by a display rebuild. The five
+   rows of the same kind found since (Hartnell 21450, 31592; Long Beach City 43802, 46290; Palo Verde 04436) are a
+   card on the next sheet, never a delete. The next sheet goes out under a fresh `SHEET_ID`.
 4. Two standing offers from S448, neither a card: retarget Sierra Training's *Try it in: My College* to CPL
    Pathways' section, and decide whether CPL Pathways keeps My College's decision-right row.
 

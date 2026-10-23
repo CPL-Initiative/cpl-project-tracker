@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-23T12:33:13Z",
+  "written_at": "2026-10-23T12:37:33Z",
   "session": 455,
   "moniker": "SkyMonkeyflower",
   "run": "the CPL Queue routine",
@@ -41,7 +41,12 @@
       "text": "Open Asks Sheet 116 card 1 (first asked on Sheet 115, 2026-10-22): page-claimed rows with no filed record, filed records that place none of their listed courses, and Victor Valley's two department-list records keep an older display build's marks. Sierra's S454 re-read files records for 13 of its page-claimed programs. Recommended: remove the rest through supabase-migrate.yml with a receipt that carries every row's before-values.",
       "if_no_reply": "The 27 rows keep showing on CPL Pathways and in Sierra with marks from the build they were last in.",
       "link": "https://claude.ai/artifact/4oL4YfC4b43iVjUq1bSS8J",
-      "link_text": "Open Sheet 116"
+      "link_text": "Open Sheet 116",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-23",
+        "words": "Remove, on Open Asks Sheet 115 card 1 (12:23 UTC); the removal runs with a before-values receipt."
+      }
     },
     {
       "title": "Keep Hartnell's Local GE at 23 units, the sum of the seven areas its catalog prints?",
