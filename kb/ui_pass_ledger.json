@@ -46,8 +46,8 @@
    "name": "Funding model",
    "page": "funding-model/index.html",
    "audience": "public",
-   "last": "2026-10-09",
-   "outcome": "First pass (S351): AA, focus, the keyboard and the 24px targets hold at nine widths and in My CPL Funding; First Light holds (the engine's tokens, the theme's type). One fault: the Columns menu, hung from its summary's left edge, opened past the viewport where the toolbar sets it right (480 to 561px and 1024px; 53px at 560) and the page scrolled sideways. It now hangs from the right edge when it would pass the viewport and fits that way, placed on render, open and resize (tests/cpl_funding_colmenu_edge.test.js). Wiring: the explainer and COBI's Public view agree row for row (119 rows, defaults; the live config is out of the sandbox's reach); College Briefing calls the same model (college_briefing_funding_sync)."
+   "last": "2026-10-23",
+   "outcome": "S452: npm run a11y funding-model passes at all 9 widths (light-only page by design, so no dark route); wiring reads no shared dataset; First Light: the live-status line painted an undefined --ink-2 token's raw-hex fallback, now var(--text-muted) (6.3:1 on paper). The print rule's #FFFFFF stays."
   },
   {
    "id": "cobi:dashboard",
