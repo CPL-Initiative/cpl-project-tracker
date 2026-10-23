@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "History",
  "award": "A.A- T Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=252",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.HIS/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10475,
+  "input_tokens": 6936,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10475,
-    "output_tokens": 2491,
+    "input_tokens": 6936,
+    "output_tokens": 1976,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2491,
+  "output_tokens": 1976,
   "output_tokens_details": {
-   "thinking_tokens": 794
+   "thinking_tokens": 528
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09172,
- "ms": 20706,
- "seconds": 21.1,
+ "cost_usd": 0.06726,
+ "ms": 15028,
+ "seconds": 15.6,
  "parts": null,
  "error": null,
  "score": {
@@ -68,8 +68,8 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    18.0,
-    18.0
+    12.0,
+    12.0
    ],
    "stated": [
     60.0,
@@ -78,6 +78,7 @@
    "against": "degree",
    "ge": null,
    "why": [
+    "a required course in 'Required Core' has no units",
     "the record names the degree total and the Cal-GETC pattern, but no units for it"
    ]
   },
@@ -86,17 +87,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 0,
    "courses": 0,
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 6,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -128,20 +129,8 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Evaluate the role of individuals, institutions, and cultures in history and in view of historical events in contemporary contexts for greater global awareness.",
-    "Apply critical thinking skills to interpret historical events and movements both orally and in persuasive analytical essays, and in interpreting historical scholarship.",
-    "Employ historical research methods to recognize and interpret multiple forms of historical evidence (visual, oral, statistical, artifacts from material culture) and address historical questions using primary and secondary sources.",
-    "Articulate and demonstrate the range of ways that primary sources can be interpreted to arrive at different defensible interpretations of key historical events and movements."
-   ],
-   "careers": [
-    "law",
-    "journalism",
-    "government service",
-    "education",
-    "research",
-    "museum curating"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -156,14 +145,14 @@
     "courses": [
      {
       "code": "HISTC1001",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HISTC1002",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -182,12 +171,12 @@
     "courses": [
      {
       "code": "HIS5A",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIS4A",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -195,12 +184,12 @@
      },
      {
       "code": "HIS5B",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIS4B",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -220,17 +209,17 @@
     "courses": [
      {
       "code": "HIS5A",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIS5B",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        },
        {
         "code": "HIS6",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -238,42 +227,42 @@
      },
      {
       "code": "HIS40",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS47",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS46A",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS46B",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS49A",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS49B",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -292,35 +281,35 @@
     "courses": [
      {
       "code": "HIS10",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS40",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS46A",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS46B",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIS55",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -331,13 +320,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requirements list prints no units beside courses; units of 3 are taken from the 'Credits 3' printed in the course descriptions that follow on pages 253-255.",
-   "Codes are printed without a space (e.g. HIS5A); these match closed-list codes such as 'HIS 5A' and are not treated as additions. HIS55 (U.S. History Through Film) is not in the closed list.",
-   "List B, Area 1 prints 'HIS5A OR HIS5B OR HIS6' as one bullet; recorded as one entry with alternatives, though each is likely an independent choice. The text also says students may choose any course from Major Electives List A not already used (so HIS4A/HIS4B also count).",
-   "Program outcomes are introduced with 'Upon completion of this course' but are printed under Program Outcomes for this award.",
-   "Total Required Credits 60 recorded as degree_total; no major total is printed. Electives (courses numbered 1-99) are required when degree units plus GE units total fewer than 60, so electives_fill_degree is true.",
-   "Careers are fields named for graduates with a baccalaureate degree in history."
+   "The catalog page prints no units beside any course; all course units are null. The closed list stores 3 units for each HIS course.",
+   "Codes are written as the catalog prints them without a space (e.g., HIS5A = closed-list HIS 5A).",
+   "List B, Area 1 prints 'HIS5A OR HIS5B OR HIS6' as one row; recorded as one entry with alternatives. The block text also says students may choose any course from Major Electives List A not already used (i.e., HIS4A/HIS4B are also eligible there).",
+   "HIS55 (U.S. History Through Film) in List B, Area 2 is not in the closed list; recorded as a catalog addition.",
+   "'Total Required Credits 60' recorded as degree_total; no major total is printed. Electives are required when degree units plus GE units total fewer than 60, with no units printed, so electives_fill_degree is true.",
+   "Cal-GETC named as the GE pattern with no units printed; students may double-count required courses and GE.",
+   "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39895340003"
 }

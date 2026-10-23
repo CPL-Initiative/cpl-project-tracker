@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Photography",
  "award": "A.A. Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=97",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.PHO/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10733,
+  "input_tokens": 6924,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10733,
-    "output_tokens": 2206,
+    "input_tokens": 6924,
+    "output_tokens": 1639,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2206,
+  "output_tokens": 1639,
   "output_tokens_details": {
-   "thinking_tokens": 633
+   "thinking_tokens": 375
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08705,
- "ms": 18047,
- "seconds": 18.7,
+ "cost_usd": 0.06048,
+ "ms": 12900,
+ "seconds": 13.3,
  "parts": null,
  "error": null,
  "score": {
@@ -89,17 +89,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 5,
+   "program": 0,
    "courses": 0,
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 12,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -131,27 +131,8 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "demonstrate effective technical proficiency with film and digital media.",
-    "structure visual information to produce images of intermediate level aesthetic quality.",
-    "interpret and produce photographs that communicate intellectually and emotionally.",
-    "demonstrate an intermediate knowledge of the history of photography.",
-    "demonstrate an awareness of the influence of photography on the lives of individuals, cultures, and societies."
-   ],
-   "careers": [
-    "advertising",
-    "photographic art",
-    "fashion photography",
-    "commercial portrait",
-    "digital effects",
-    "photojournalism",
-    "editorial, wedding, and special event photography",
-    "industrial photography",
-    "travel, adventure, and pet photography",
-    "scientific photography",
-    "forensic photography",
-    "documentary photography"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -314,19 +295,17 @@
   "missing_explained": [
    {
     "code": "ARTHC1100",
-    "why": "not in the text"
+    "why": "not in the text; List A names ART1A: Art History Survey I instead"
    }
   ],
   "notes": [
-   "The catalog prints no units beside any course, so all course units are null; the closed list stores 3 units for most of these courses.",
-   "Codes are printed without a space (e.g. PHO1, ART12A); they were matched to closed-list entries such as PHO 1 and ART 12A and not marked as catalog additions.",
-   "ART1A (Art History Survey I) is not in the closed list and is marked as a catalog addition.",
-   "'Total Required Credits 60' is recorded as degree_total; no major total is printed, so total_units is null.",
-   "Electives (courses numbered 1-199) are required when degree units plus GE units total fewer than 60; no elective units are printed, so electives_fill_degree is true.",
-   "The GE pattern is printed as 'Local GE' with no unit figure; required courses may double-count toward GE.",
-   "The outcomes are printed under 'Program Outcomes' with a lead-in that says 'Upon completion of this course'; they are recorded as program outcomes. The certificate (CT.PHO) prints the same outcomes list.",
-   "Careers are separated by semicolons in the catalog; compound items such as 'editorial, wedding, and special event photography' are kept as single entries, word for word."
+   "The catalog prints no units beside any course and no total for the major; course units are null and total_units is null.",
+   "Codes are printed without spaces (e.g., PHO1, ART12A); they are matched to closed-list entries such as PHO 1 and ART 12A.",
+   "ART1A (Art History Survey I) is not in the closed list and is recorded as a catalog addition; it may correspond to ARTHC1100 (Survey of Art from Prehistory to the Medieval Era), which the text does not name.",
+   "'Total Required Credits 60' is recorded as degree_total; GE is Local GE with no units printed. Electives (courses numbered 1-199) fill the degree to 60 units, with no units printed.",
+   "Students can double-count required courses and General Education courses.",
+   "No program learning outcomes or careers are printed in the requirements text."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39895340003"
 }

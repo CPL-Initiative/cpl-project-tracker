@@ -1,0 +1,15 @@
+{
+ "_readme": "S451, 2026-10-23. Page read 39853502958 (S449) showed that a program page on Hartnell's vendor-hosted Coursedog catalog links its requirements as a Requirements tab (/programs/AA.ADD/requirements-ipyf8), where Merced's catalog on its own domain names the tab Requisites (requisites-ojrrt, S414): cd_pages found no tab because CD_REQUISITES reads the word Requisites alone. Before the reader learns the second name, this read loads two Requirements tabs as the capture reads them, to see whether the page prints its course list with credits ('Total Credits', the words the direct-suffix check looks for) the way Merced's does. Two loads, no model call.",
+ "college": "Hartnell College",
+ "outside_hosts": {
+  "coursedog.com": "Hartnell's catalog vendor hosts the catalog itself (hartnell.catalog.prod.coursedog.com) and its data (app.coursedog.com); the registry's catalog address is on this host."
+ },
+ "questions": {
+  "requirements_tab": "What a Requirements tab on the vendor-hosted catalog prints as the capture reads it: the course list, its codes, and whether each line carries 'Total Credits' as Merced's Requisites tab does."
+ },
+ "keywords": ["Total Credits", "[Rr]equirements", "\\bAOD[ -]?\\d", "\\bADJ[ -]?\\d", "[Uu]nits"],
+ "pages": [
+  {"url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.ADD/requirements-ipyf8", "answers": ["requirements_tab"], "capture_view": true},
+  {"url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ADJ/requirements-ipyf8", "answers": ["requirements_tab"], "capture_view": true}
+ ]
+}

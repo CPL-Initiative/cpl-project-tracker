@@ -2314,9 +2314,41 @@ check((cd_given["1"]["best"] or {}).get("url", "").endswith("05000.AA/requisites
       and (cd_given["2"]["best"] or {}).get("url", "").endswith("05000.CT/requisites-ojrrt"),
       "an A.A. and its certificate naming the same courses each read their own tab: %r"
       % [(cd_given[k]["best"] or {}).get("url") for k in ("1", "2")])
+# Hartnell's vendor-hosted catalog names the tab Requirements and prints one total at the foot
+# (page reads 39853502958 and 39891644835, S449 and S451).
+check(bool(C.CD_REQUISITES.search("Requirements")) and bool(C.CD_REQUISITES.search(" Requisites "))
+      and not C.CD_REQUISITES.search("Program Requirements") and not C.CD_REQUISITES.search("Required Core"),
+      "the Coursedog tab is known as Requisites or Requirements, never a heading inside the tab")
+check(bool(C.CD_TOTAL.search("Total Required Credits\n60")) and bool(C.CD_TOTAL.search("(Total Credits 4.0 - 4.0)"))
+      and not C.CD_TOTAL.search("Total Units 60"),
+      "a direct tab read is trusted on either catalog's total line")
+HN_BODY = ("Administration of Justice for Transfer (AS-T) - AST.ADJ\nRequirements\nRequired Core\n"
+           "Complete ALL of the following Courses:\nADJ1: Introduction to Administration of Justice\n"
+           "ADJ3: Concepts of Criminal Law\nMajor Electives - List A\nComplete at least 2 of the following Courses:\n"
+           "ADJ5: Criminal Court Process\nSTATC1000: Introduction to Statistics\nTotal Required Credits\n60")
+hn = C.cd_page({"url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ADJ/requirements-ipyf8",
+                "final_url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ADJ/requirements-ipyf8",
+                "title": "AST.ADJ Program | Hartnell College Catalog", "body": HN_BODY, "content": HN_BODY},
+               {"code": "AST.ADJ", "name": "Administration of Justice for Transfer (AS-T)"})
+check({"ADJ1", "ADJ3", "ADJ5", "STATC1000"} <= hn["codes"],
+      "the net reads Hartnell's run-together codes with a colon after them: %r" % sorted(hn["codes"]))
 check(C.cd_award_words("Agriculture Business (AST)") == "associate in science for transfer"
-      and C.cd_award_words("Adult Literacy (NC)").startswith("noncredit") and C.cd_award_words("Accounting") == "",
+      and C.cd_award_words("Adult Literacy (NC)").startswith("noncredit") and C.cd_award_words("Accounting") == ""
+      and C.cd_award_words("Administration of Justice for Transfer (AS-T)") == "associate in science for transfer",
       "a program's letters name its award in words")
+
+# ── a Coursedog catalog reads from its site (S449, default since S451) ─────
+# Hartnell's procedure step names its whole-catalog PDF (S410), which prints 79
+# program codes where the site's program search lists 100 (S411). Read by its site
+# the capture found 96 of 112 where the PDF found 73 (run 39892327918), so the
+# site is the default on a platform whose site reader exists, and route=pdf keeps
+# the PDF step for one run; on any other platform the route changes nothing.
+check(C.prefer_site("coursedog", "site") and C.prefer_site("coursedog", "") and C.prefer_site("coursedog", None),
+      "a Coursedog catalog reads from its site by default")
+check(not C.prefer_site("coursedog", "pdf") and not C.prefer_site("coursedog", " PDF "),
+      "route=pdf keeps the PDF procedure step for one run")
+check(not C.prefer_site("courseleaf", "site") and not C.prefer_site(None, "site") and not C.prefer_site("courseleaf", None),
+      "the route on another platform changes nothing")
 
 if failures:
     print("FAIL: %d" % len(failures))

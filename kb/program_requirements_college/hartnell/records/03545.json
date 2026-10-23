@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Business Office Technology--Information Processing",
  "award": "A.S. Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=124",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.BST/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7014,
+  "input_tokens": 6726,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7014,
-    "output_tokens": 2056,
+    "input_tokens": 6726,
+    "output_tokens": 1452,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2056,
+  "output_tokens": 1452,
   "output_tokens_details": {
-   "thinking_tokens": 851
+   "thinking_tokens": 379
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06918,
- "ms": 16667,
- "seconds": 17.3,
+ "cost_usd": 0.05594,
+ "ms": 13432,
+ "seconds": 14.5,
  "parts": null,
  "error": null,
  "score": {
@@ -101,17 +101,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -143,18 +143,8 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "demonstrate proficiency in selecting and using appropriate business software applications and tools.",
-    "prepare and deliver business documents and presentations in appropriate form, format, and language.",
-    "solve problems and make decisions collaboratively or independently."
-   ],
-   "careers": [
-    "administrative support",
-    "bookkeeping",
-    "data entry",
-    "customer service",
-    "entry-level office positions"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -168,112 +158,112 @@
     },
     "courses": [
      {
-      "code": "BUS 50",
+      "code": "BUS50",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS 110A",
+      "code": "BUS110A",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BUS 110B",
+      "code": "BUS110B",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BUS 111A",
+      "code": "BUS111A",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BUS 111B",
+      "code": "BUS111B",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BUS 135",
+      "code": "BUS135",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BUS 140A",
+      "code": "BUS140A",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BUS 140B",
+      "code": "BUS140B",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS 150.15",
+      "code": "BUS150.15",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS 172",
+      "code": "BUS172",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS 173",
+      "code": "BUS173",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BUS 175",
+      "code": "BUS175",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS 177",
+      "code": "BUS177",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS 190",
+      "code": "BUS190",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS 194",
+      "code": "BUS194",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "COMMC 1000",
+      "code": "COMMC1000",
       "units": null,
       "units_max": null,
       "alternatives": [],
@@ -285,13 +275,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints codes without a space (e.g., BUS50, COMMC1000); recorded with a space between subject and number to match the closed list.",
-   "No units are printed beside any course and no major total is printed; total_units left null.",
-   "'Total Required Credits 60' recorded as degree_total; Local GE named without units.",
-   "Electives (Courses Numbered 1-199) are required when degree plus GE units total fewer than 60; no units printed, so electives_fill_degree is true.",
-   "Outcomes lead-in reads 'Upon completion of this course' though they are listed as Program Outcomes for this degree.",
-   "Careers taken from the shared Business Office Technology programs description ('administrative support, bookkeeping and data entry, customer service and other entry-level office positions')."
+   "The catalog prints no units beside any course and no total for the major; total_units left null and course units null.",
+   "'Total Required Credits 60' recorded as degree_total.",
+   "GE pattern is named only as 'Local GE' with no units printed.",
+   "Electives (courses numbered 1-199) are required when degree plus GE units total fewer than 60; recorded as electives_fill_degree.",
+   "Students may double-count required courses and GE courses.",
+   "Codes recorded as printed without a space (e.g., BUS50 = closed-list BUS 50).",
+   "Several closed-list titles differ slightly from the catalog (BUS 172, BUS 190), but the codes match.",
+   "No program learning outcomes or careers appear on this requirements tab."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39895340003"
 }

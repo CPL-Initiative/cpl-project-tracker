@@ -4,8 +4,8 @@
   "title": "Biology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 1.0,
+  "method": "sitemap_page",
+  "coverage": 0.923,
   "codes_found": [
    "BIO1",
    "BIO2",
@@ -18,33 +18,30 @@
    "PHY2A",
    "PHY2B",
    "PHY4A",
-   "PHY4B",
-   "PHY4C"
+   "PHY4B"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=113",
-   "title": "Biology - AS.BIO",
-   "h1": "Biology - AS.BIO",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    113,
-    114,
-    115,
-    116
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.BIO/requirements-ipyf8",
+   "title": "AST.BIO Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 13,
-  "text_chars": 11620
+  "text_chars": 2290
  },
  {
   "control_number": "03539",
   "title": "Business Office Technology: Bookkeeping",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 0.889,
   "codes_found": [
    "BUS110A",
@@ -57,27 +54,27 @@
    "BUS50"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=128",
-   "title": "Business Office Technology - Bookkeeping -",
-   "h1": "Business Office Technology - Bookkeeping -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    128,
-    129
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.BOTB/requirements-ipyf8",
+   "title": "CT.BOTB Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 9,
-  "text_chars": 4982
+  "text_chars": 1745
  },
  {
   "control_number": "03545",
   "title": "Business Office Technology--Information Processing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS140B",
@@ -90,31 +87,88 @@
    "BUS50"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=124",
-   "title": "Business Office Technology-Information Processing -",
-   "h1": "Business Office Technology-Information Processing -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    124
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.BST/requirements-ipyf8",
+   "title": "AS.BST Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 8,
-  "text_chars": 2995
+  "text_chars": 2319
  },
  {
   "control_number": "03547",
   "title": "Kinesiology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.915,
+  "codes_found": [
+   "BIO11",
+   "BIO5",
+   "BIO6",
+   "BIO6L",
+   "CHM22",
+   "HED6",
+   "NUTR1",
+   "PEAC32",
+   "PEAC36",
+   "PEAC40",
+   "PEAC43",
+   "PEAC44",
+   "PEAC46",
+   "PEAC47",
+   "PEAC50",
+   "PEAC52",
+   "PEAC55",
+   "PEAC56",
+   "PEAC58",
+   "PEAC59",
+   "PEAC61",
+   "PEAC62",
+   "PEAC66",
+   "PEAC68",
+   "PEAC70",
+   "PEAC74",
+   "PEIN17",
+   "PEIN19",
+   "PEIN20",
+   "PEIN21",
+   "PEIN22",
+   "PEIN23",
+   "PEIN24",
+   "PEIN25",
+   "PEIN26",
+   "PETH1",
+   "PETH10A",
+   "PETH10B",
+   "PETH2",
+   "PETH4",
+   "PHY10",
+   "PHY2A",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.KIN/requirements-ipyf8",
+   "title": "AS.KIN Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 49,
-  "text_chars": 0
+  "text_chars": 3635
  },
  {
   "control_number": "03556",
@@ -133,7 +187,7 @@
   "title": "Welding Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "CMA74",
@@ -150,29 +204,27 @@
    "WLD158"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=408",
-   "title": "Welding Technology - AS.WLD",
-   "h1": "Welding Technology - AS.WLD",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    408,
-    409,
-    410,
-    411
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.WLD/requirements-ipyf8",
+   "title": "AS.WLD Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 12,
-  "text_chars": 10572
+  "text_chars": 2261
  },
  {
   "control_number": "03570",
   "title": "Nursing-Registered Nursing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "NRN110",
@@ -188,29 +240,27 @@
    "NRN77"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=292",
-   "title": "Nursing-Registered Nursing - AS.NRN",
-   "h1": "Nursing-Registered Nursing - AS.NRN",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    292,
-    293,
-    294,
-    295
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.NRN/requirements-ipyf8",
+   "title": "AS.NRN Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 11,
-  "text_chars": 13270
+  "text_chars": 4873
  },
  {
   "control_number": "03571",
   "title": "Nursing--Vocational Nursing",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 0.938,
   "codes_found": [
    "BIO11",
@@ -230,69 +280,60 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=304",
-   "title": "Nursing-Vocational Nursing - CT.NVN",
-   "h1": "Nursing-Vocational Nursing - CT.NVN",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    304,
-    305,
-    306,
-    307
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.NVN/requirements-ipyf8",
+   "title": "CT.NVN Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 16,
-  "text_chars": 10269
+  "text_chars": 4342
  },
  {
   "control_number": "03585",
   "title": "Administration of Justice",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 1.0,
+  "method": "sitemap_page",
+  "coverage": 0.5,
   "codes_found": [
    "ADJ1",
    "ADJ10",
-   "ADJ102",
-   "ADJ11",
    "ADJ2",
-   "ADJ21A",
-   "ADJ25",
    "ADJ3",
-   "ADJ30",
-   "ADJ33",
-   "ADJ34",
-   "ADJ36",
    "ADJ4",
    "ADJ5",
    "ADJ51",
    "ADJ8"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=61",
-   "title": "Administration of Justice - AS.ADJ",
-   "h1": "Administration of Justice - AS.ADJ",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    61
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ADJ/requirements-ipyf8",
+   "title": "AST.ADJ Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 16,
-  "text_chars": 3798
+  "text_chars": 2291
  },
  {
   "control_number": "03588",
   "title": "Early Childhood Education",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 0.941,
   "codes_found": [
    "ECE1",
@@ -313,29 +354,27 @@
    "ECE71"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=183",
-   "title": "Early Childhood Education - AS.ECE",
-   "h1": "Early Childhood Education - AS.ECE",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    183,
-    184,
-    185,
-    186
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ECE/requirements-ipyf8",
+   "title": "AS.ECE Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 17,
-  "text_chars": 12315
+  "text_chars": 3986
  },
  {
   "control_number": "08871",
   "title": "Computer Science and Information Systems-Computer Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "CSS1",
@@ -345,29 +384,27 @@
    "CSS7"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=153",
-   "title": "Computer Science and Info Systems-Computer",
-   "h1": "Computer Science and Info Systems-Computer",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    153,
-    154,
-    155,
-    156
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.CISCS/requirements-ipyf8",
+   "title": "AS.CISCS Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.833,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 5,
-  "text_chars": 10812
+  "text_chars": 1924
  },
  {
   "control_number": "08872",
   "title": "Computer Science and Information Systems-Network and Security",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -391,7 +428,7 @@
   "title": "Photography",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 0.941,
   "codes_found": [
    "ART10",
@@ -412,29 +449,27 @@
    "PHO4"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=97",
-   "title": "Photography - AA.PHO",
-   "h1": "Photography - AA.PHO",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    97,
-    98,
-    99,
-    100
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.PHO/requirements-ipyf8",
+   "title": "AA.PHO Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 17,
-  "text_chars": 12665
+  "text_chars": 2334
  },
  {
   "control_number": "08904",
   "title": "Chicanx Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ETH1",
@@ -453,29 +488,27 @@
    "SPA1X"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=234",
-   "title": "Chicanx Studies - AA.CHCX",
-   "h1": "Chicanx Studies - AA.CHCX",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    234,
-    235,
-    236,
-    237
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.CHCX/requirements-ipyf8",
+   "title": "AA.CHCX Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 14,
-  "text_chars": 11780
+  "text_chars": 2161
  },
  {
   "control_number": "08909",
   "title": "Digital Arts",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ART12A",
@@ -494,101 +527,460 @@
    "PHO2"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=96",
-   "title": "Digital Arts - AA.DA",
-   "h1": "Digital Arts - AA.DA",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    96,
-    97,
-    98,
-    99
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.DA/requirements-ipyf8",
+   "title": "AA.DA Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 14,
-  "text_chars": 13336
+  "text_chars": 2477
  },
  {
   "control_number": "11803",
   "title": "Agriculture Business with an Area of Emphasis",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.972,
+  "codes_found": [
+   "ABT101",
+   "ABT102",
+   "ABT103",
+   "ABT104",
+   "ABT105",
+   "ABT110",
+   "ABT130",
+   "ABT131",
+   "ABT132",
+   "ABT133",
+   "ABT134",
+   "ABT135",
+   "ABT49",
+   "ABT52",
+   "ABT53",
+   "ABT54",
+   "ABT57",
+   "ABT58",
+   "ABT80",
+   "ABT81",
+   "ABT83",
+   "ABT90",
+   "ABT92",
+   "ABT93",
+   "ABT94",
+   "ABT95",
+   "ABT96",
+   "ABT97",
+   "ABT98",
+   "ABT99",
+   "BUS43",
+   "BUS50",
+   "COM2",
+   "MFGT70",
+   "MFGT71"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.AGRI/requirements-ipyf8",
+   "title": "AS.AGRI Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 36,
-  "text_chars": 0
+  "text_chars": 9142
  },
  {
   "control_number": "12331",
   "title": "Agriculture Production",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABT101",
+   "ABT102",
+   "ABT103",
+   "ABT104",
+   "ABT105",
+   "ABT110",
+   "ABT130",
+   "ABT57",
+   "ABT58",
+   "ABT80",
+   "ABT83",
+   "ABT90",
+   "ABT92",
+   "ABT95",
+   "ABT99",
+   "BUS43",
+   "BUS50",
+   "MFGT70",
+   "MFGT71"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGRP/requirements-ipyf8",
+   "title": "CT.AGRP Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 2642
  },
  {
   "control_number": "15426",
   "title": "Computer Science and Information Systems - Digital Web and Mobile Development Option",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS32",
+   "CID25",
+   "CID26",
+   "CID27",
+   "CID29",
+   "CID64",
+   "CID65",
+   "CID74",
+   "CID76",
+   "CID78",
+   "CID84",
+   "CID86"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.DWMD/requirements-ipyf8",
+   "title": "AS.DWMD Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2276
  },
  {
   "control_number": "17910",
   "title": "General Studies: STEM",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABT90",
+   "ABT92",
+   "ANT1",
+   "AST1",
+   "AST1L",
+   "BIO1",
+   "BIO10",
+   "BIO11",
+   "BIO12",
+   "BIO18",
+   "BIO2",
+   "BIO20",
+   "BIO27",
+   "BIO3",
+   "BIO30",
+   "BIO42",
+   "BIO47",
+   "BIO48",
+   "BIO48L",
+   "BIO5",
+   "BIO6",
+   "BIO6L",
+   "CHM12A",
+   "CHM12B",
+   "CHM1A",
+   "CHM1B",
+   "CHM22",
+   "CHM23",
+   "GEL1",
+   "GEL2",
+   "GEL6",
+   "MAT2",
+   "MAT24",
+   "MAT25",
+   "MAT3A",
+   "MAT3B",
+   "MAT3C",
+   "MAT4",
+   "MAT5",
+   "OCN1",
+   "PHY10",
+   "PHY2A",
+   "PHY2B",
+   "PHY32",
+   "PHY4A",
+   "PHY4B",
+   "PHY4C",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.GSTEM/requirements-ipyf8",
+   "title": "AA.GSTEM Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 48,
-  "text_chars": 0
+  "text_chars": 4555
  },
  {
   "control_number": "17911",
   "title": "General Studies: Social and Behavioral Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABT53",
+   "ADJ1",
+   "ADJ3",
+   "ADJ51",
+   "ANT1",
+   "ANT10",
+   "ANT2",
+   "ANT20",
+   "AOD1",
+   "BUS32",
+   "COM4",
+   "ECE2",
+   "ECE53",
+   "ECE6",
+   "ECO10",
+   "ECONC2001",
+   "ECONC2002",
+   "EDU1",
+   "ETH1",
+   "ETH12",
+   "ETH13",
+   "ETH2",
+   "ETH21",
+   "ETH3",
+   "ETH4",
+   "ETH5",
+   "ETH56",
+   "ETH6",
+   "ETH7",
+   "ETH8",
+   "GEG10",
+   "HED2",
+   "HED7",
+   "HES1",
+   "HIS10",
+   "HIS40",
+   "HIS46A",
+   "HIS46B",
+   "HIS47",
+   "HIS49A",
+   "HIS49B",
+   "HIS4A",
+   "HIS4B",
+   "HIS5A",
+   "HIS5B",
+   "HIS6",
+   "HISTC1001",
+   "NRN70",
+   "NVN70",
+   "PETH5",
+   "PHL10",
+   "PHL15",
+   "PHL2",
+   "POL2",
+   "POL3",
+   "POL5",
+   "POL6",
+   "POLSC1000",
+   "PSY10",
+   "PSY12",
+   "PSY14",
+   "PSY15",
+   "PSY22",
+   "PSY25",
+   "PSY33",
+   "PSY41",
+   "PSY6",
+   "PSY9",
+   "PSYCC1000",
+   "SJS20",
+   "SJS22",
+   "SOC1",
+   "SOC15",
+   "SOC20",
+   "SOC30",
+   "SOC41",
+   "SOC42",
+   "SOC5",
+   "SOC8",
+   "TAC23"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.GSB/requirements-ipyf8",
+   "title": "AA.GSB Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 81,
-  "text_chars": 0
+  "text_chars": 6341
  },
  {
   "control_number": "17912",
   "title": "General Studies: Arts and Humanities",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.989,
+  "codes_found": [
+   "ANT2",
+   "ANT20",
+   "ART10",
+   "ART12A",
+   "ART15A",
+   "ART15B",
+   "ART19",
+   "ART3",
+   "ART70",
+   "ART72",
+   "ART80",
+   "ARTHC1200",
+   "ASL1",
+   "ASL2",
+   "ENG17",
+   "ENG22",
+   "ENG24",
+   "ENG26",
+   "ENG31",
+   "ENG41",
+   "ENG44A",
+   "ENG44B",
+   "ENG46A",
+   "ENG46B",
+   "ENG47A",
+   "ENG47B",
+   "ENG48",
+   "ENGLC1002",
+   "ETH12",
+   "ETH56",
+   "ETH6",
+   "ETH7",
+   "HIS10",
+   "HIS40",
+   "HIS47",
+   "HIS49A",
+   "HIS49B",
+   "HIS4A",
+   "HIS4B",
+   "HIS5A",
+   "HIS5B",
+   "HIS6",
+   "HISTC1001",
+   "HISTC1002",
+   "MUS1A",
+   "MUS2",
+   "MUS20",
+   "MUS21",
+   "MUS25",
+   "MUS26",
+   "MUS42",
+   "MUS43",
+   "MUS46",
+   "MUS47",
+   "MUS48",
+   "MUS49",
+   "MUS5",
+   "MUS6",
+   "MUS7",
+   "MUS8",
+   "PHL10",
+   "PHL2",
+   "PHL5",
+   "PHO1",
+   "PHO2",
+   "PHO4",
+   "SPA1",
+   "SPA1S",
+   "SPA1X",
+   "SPA2",
+   "SPA2S",
+   "SPA2X",
+   "SPA3",
+   "SPA3S",
+   "SPA4S",
+   "TAC1",
+   "TAC2",
+   "TAC20",
+   "TAC21",
+   "TAC23",
+   "TAC24",
+   "TAC25",
+   "TAC26",
+   "TAC29",
+   "TAC3",
+   "TAC40",
+   "TAC50",
+   "TAC53",
+   "TAC92"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.GAH/requirements-ipyf8",
+   "title": "AA.GAH Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 90,
-  "text_chars": 0
+  "text_chars": 6005
  },
  {
   "control_number": "17913",
   "title": "General Studies: Ethnic Groups in the United States",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -600,7 +992,7 @@
   "title": "General Studies: Language and Rationality",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -612,43 +1004,135 @@
   "title": "Liberal Arts: Pathway to Health Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.897,
+  "codes_found": [
+   "ANT1",
+   "ANT2",
+   "BIO1",
+   "BIO10",
+   "BIO11",
+   "BIO12",
+   "BIO18",
+   "BIO27",
+   "BIO42",
+   "BIO5",
+   "BIO6",
+   "BIO6L",
+   "CHM12A",
+   "CHM12B",
+   "CHM1A",
+   "CHM1B",
+   "CHM22",
+   "CHM23",
+   "ECE19",
+   "HED2",
+   "HED55",
+   "HED6",
+   "HED7",
+   "HED8",
+   "NRN70",
+   "NUTR1",
+   "NUTR51",
+   "NVN70",
+   "PETH1",
+   "PETH2",
+   "PHY10",
+   "PSY25",
+   "PSYCC1000",
+   "SOC1",
+   "SOC5"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.LPHS/requirements-ipyf8",
+   "title": "AA.LPHS Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 39,
-  "text_chars": 0
+  "text_chars": 4855
  },
  {
   "control_number": "17977",
   "title": "Agriculture Business",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ABT110",
+   "ABT49",
+   "ABT52",
+   "ABT53",
+   "ABT54",
+   "ABT57",
+   "ABT58",
+   "ABT80",
+   "ABT90",
+   "ABT92",
+   "ABT99",
+   "BUS43",
+   "BUS50"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGR/requirements-ipyf8",
+   "title": "CT.AGR Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2064
  },
  {
   "control_number": "18353",
   "title": "Psychology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "PSY10",
+   "PSY14",
+   "PSY15",
+   "PSY22",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.PSY/requirements-ipyf8",
+   "title": "AAT.PSY Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2268
  },
  {
   "control_number": "19106",
   "title": "CSU General Education Breadth",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -660,7 +1144,7 @@
   "title": "IGETC",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -672,7 +1156,7 @@
   "title": "Spanish",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 0.667,
   "codes_found": [
    "ETH4",
@@ -687,53 +1171,98 @@
    "SPA4S"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=382",
-   "title": "Programs",
-   "h1": "Programs",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    382,
-    383,
-    384,
-    385
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.SPA/requirements-ipyf8",
+   "title": "AAT.SPA Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 15,
-  "text_chars": 9905
+  "text_chars": 2534
  },
  {
   "control_number": "19718",
   "title": "Addiction Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "AOD1",
+   "AOD10",
+   "AOD2",
+   "AOD3",
+   "AOD4",
+   "AOD5",
+   "AOD6",
+   "AOD9",
+   "AOD99",
+   "PSY22",
+   "PSY41",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.ADD/requirements-ipyf8",
+   "title": "AA.ADD Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2353
  },
  {
   "control_number": "19719",
   "title": "Addiction Studies",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOD1",
+   "AOD2",
+   "AOD3",
+   "AOD4",
+   "AOD5",
+   "AOD6",
+   "AOD9",
+   "PSY25",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.ADD/requirements-ipyf8",
+   "title": "CT.ADD Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1955
  },
  {
   "control_number": "21422",
   "title": "Business Office Technology--Information Processing",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS140A",
@@ -746,26 +1275,27 @@
    "BUS50"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=129",
-   "title": "Business Office Technology-Information Processing -",
-   "h1": "Business Office Technology-Information Processing -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    129
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.BST/requirements-ipyf8",
+   "title": "CT.BST Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 8,
-  "text_chars": 2570
+  "text_chars": 1904
  },
  {
   "control_number": "21423",
   "title": "Digital Arts",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ART12A",
@@ -781,34 +1311,51 @@
    "ART80"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=99",
-   "title": "Digital Arts - CT.DA",
-   "h1": "Digital Arts - CT.DA",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    99,
-    100,
-    101,
-    102
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.DA/requirements-ipyf8",
+   "title": "CT.DA Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 11,
-  "text_chars": 12504
+  "text_chars": 1926
  },
  {
   "control_number": "21424",
   "title": "Computer Science and Information Systems - Web Development Option",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS32",
+   "CID25",
+   "CID26",
+   "CID27",
+   "CID64",
+   "CID74"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.WD/requirements-ipyf8",
+   "title": "CT.WD Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 1596
  },
  {
   "control_number": "21435",
@@ -827,7 +1374,7 @@
   "title": "Welding Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 0.917,
   "codes_found": [
    "CMA74",
@@ -843,29 +1390,27 @@
    "WLD158"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=409",
-   "title": "Welding Technology - CT.WLD",
-   "h1": "Welding Technology - CT.WLD",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    409,
-    410,
-    411,
-    412
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.WLD/requirements-ipyf8",
+   "title": "CT.WLD Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 12,
-  "text_chars": 8980
+  "text_chars": 1764
  },
  {
   "control_number": "21444",
   "title": "Photography",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 0.9,
   "codes_found": [
    "ART12A",
@@ -879,29 +1424,27 @@
    "PHO4"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=100",
-   "title": "Photography - CT.PHO",
-   "h1": "Photography - CT.PHO",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    100,
-    101,
-    102,
-    103
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.PHO/requirements-ipyf8",
+   "title": "CT.PHO Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 10,
-  "text_chars": 12063
+  "text_chars": 1786
  },
  {
   "control_number": "21450",
   "title": "Administration of Justice",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ADJ1",
@@ -913,22 +1456,20 @@
    "ADJ5"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=63",
-   "title": "Administration of Justice - CT.ADJ Requirements",
-   "h1": "Administration of Justice - CT.ADJ Requirements",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    63,
-    64,
-    65,
-    66
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ADJ/requirements-ipyf8",
+   "title": "AS.ADJ Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 7,
-  "text_chars": 9856
+  "text_chars": 3259
  },
  {
   "control_number": "24159",
@@ -947,7 +1488,7 @@
   "title": "Construction - Sustainable Construction: Construction Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -959,7 +1500,7 @@
   "title": "Mathematics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "CSS2A",
@@ -972,29 +1513,27 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=270",
-   "title": "Mathematics for Transfer Degree (AS-T) - AST.MAT",
-   "h1": "Mathematics for Transfer Degree (AS-T) - AST.MAT",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    270,
-    271,
-    272,
-    273
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.MAT/requirements-ipyf8",
+   "title": "AST.MAT Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ mathematics for transfer degree (as-t) - ast.mat",
+    "section_fit": 0.333
+   }
   },
   "listed": 8,
-  "text_chars": 7831
+  "text_chars": 2207
  },
  {
   "control_number": "31146",
   "title": "Communication Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ANT2",
@@ -1009,28 +1548,27 @@
    "SOC1"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=148",
-   "title": "Communication Studies 2.0 for Transfer Degree",
-   "h1": "Communication Studies 2.0 for Transfer Degree",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    148,
-    149,
-    150
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.COM2/requirements-ipyf8",
+   "title": "AAT.COM2 Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ communication studies 2.0 for transfer degree (aa-t) - aat.com2",
+    "section_fit": 0.5
+   }
   },
   "listed": 10,
-  "text_chars": 9942
+  "text_chars": 2383
  },
  {
   "control_number": "31268",
   "title": "Early Childhood Education",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ECE1",
@@ -1043,29 +1581,27 @@
    "ECE6"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=184",
-   "title": "Early Childhood Education for Transfer (AS-T) -",
-   "h1": "Early Childhood Education for Transfer (AS-T) -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    184,
-    185,
-    186,
-    187
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ECE/requirements-ipyf8",
+   "title": "AST.ECE Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ early childhood education for transfer (as-t) - ast.ece",
+    "section_fit": 0.5
+   }
   },
   "listed": 8,
-  "text_chars": 10482
+  "text_chars": 1999
  },
  {
   "control_number": "31392",
   "title": "English",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ENG17",
@@ -1085,29 +1621,27 @@
    "ENGLC1002"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=210",
-   "title": "English for Transfer (AA-T) - AAT.ENG",
-   "h1": "English for Transfer (AA-T) - AAT.ENG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    210,
-    211,
-    212,
-    213
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.ENG/requirements-ipyf8",
+   "title": "AAT.ENG Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ english for transfer (aa-t) - aat.eng",
+    "section_fit": 0.25
+   }
   },
   "listed": 15,
-  "text_chars": 8410
+  "text_chars": 2539
  },
  {
   "control_number": "31406",
   "title": "Political Science",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ECONC2001",
@@ -1122,21 +1656,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=343",
-   "title": "Political Science for Transfer (AA-T) - AAT.POL",
-   "h1": "Political Science for Transfer (AA-T) - AAT.POL",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    343,
-    344,
-    345
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.POL/requirements-ipyf8",
+   "title": "AAT.POL Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ political science for transfer (aa-t) - aat.pol",
+    "section_fit": 0.4
+   }
   },
   "listed": 10,
-  "text_chars": 7492
+  "text_chars": 2158
  },
  {
   "control_number": "31590",
@@ -1155,7 +1688,7 @@
   "title": "Agriculture Production",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1167,7 +1700,7 @@
   "title": "Computer Science and Information Systems-Network and Security",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "CSS1",
@@ -1180,27 +1713,27 @@
    "CSS55"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=158",
-   "title": "Computer Science and Info Systems-Network &",
-   "h1": "Computer Science and Info Systems-Network &",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    158,
-    159
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.PCN/requirements-ipyf8",
+   "title": "AS.PCN Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.833,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 8,
-  "text_chars": 3932
+  "text_chars": 2051
  },
  {
   "control_number": "31593",
   "title": "Computer Science and Information Systems: Computer Science",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "CSS1",
@@ -1213,29 +1746,27 @@
    "MAT3B"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=156",
-   "title": "Computer Science and Info Systems-Computer",
-   "h1": "Computer Science and Info Systems-Computer",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    156,
-    157,
-    158,
-    159
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.CISC/requirements-ipyf8",
+   "title": "CT.CISC Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.833,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 8,
-  "text_chars": 9012
+  "text_chars": 1886
  },
  {
   "control_number": "31778",
   "title": "Astronomy",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "AST1",
@@ -1253,39 +1784,74 @@
    "PHY4C"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=109",
-   "title": "Astronomy - AS.AST",
-   "h1": "Astronomy - AS.AST",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    109,
-    110
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.AST/requirements-ipyf8",
+   "title": "AS.AST Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 13,
-  "text_chars": 4479
+  "text_chars": 2220
  },
  {
   "control_number": "31804",
   "title": "Elementary Teacher Education",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART10",
+   "BIO10",
+   "CHM22",
+   "COMMC1000",
+   "ECE6",
+   "EDU1",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "ENGLC1002",
+   "GEG10",
+   "GEL2",
+   "GEL6",
+   "HIS5A",
+   "HISTC1001",
+   "MAT12",
+   "MUS1A",
+   "PHY10",
+   "PHY32",
+   "POLSC1000",
+   "TAC1",
+   "TAC92"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.ETP/requirements-ipyf8",
+   "title": "AAT.ETP Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ elementary teacher education for transfer (aa-t) - aat.etp",
+    "section_fit": 0.5
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 2721
  },
  {
   "control_number": "31971",
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ADJ1",
@@ -1301,29 +1867,27 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=62",
-   "title": "Administration of Justice for Transfer (AS-T) -",
-   "h1": "Administration of Justice for Transfer (AS-T) -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    62,
-    63,
-    64,
-    65
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.ADJ/requirements-ipyf8",
+   "title": "AST.ADJ Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ administration of justice for transfer (as-t) - ast.adj",
+    "section_fit": 0.4
+   }
   },
   "listed": 11,
-  "text_chars": 9441
+  "text_chars": 2291
  },
  {
   "control_number": "32036",
   "title": "Sociology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ADJ51",
@@ -1338,29 +1902,27 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=378",
-   "title": "Sociology for Transfer (AA-T) - AAT-SOC",
-   "h1": "Sociology for Transfer (AA-T) - AAT-SOC",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    378,
-    379,
-    380,
-    381
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT-SOC/requirements-ipyf8",
+   "title": "AAT-SOC Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ sociology for transfer (aa-t) - aat-soc",
+    "section_fit": 0.25
+   }
   },
   "listed": 10,
-  "text_chars": 11995
+  "text_chars": 2042
  },
  {
   "control_number": "32037",
   "title": "Psychology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "PSY10",
@@ -1374,28 +1936,27 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=347",
-   "title": "Psychology for Transfer (AA-T) - AAT.PSY",
-   "h1": "Psychology for Transfer (AA-T) - AAT.PSY",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    347,
-    348,
-    349
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.PSY/requirements-ipyf8",
+   "title": "AAT.PSY Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ psychology for transfer (aa-t) - aat.psy",
+    "section_fit": 0.25
+   }
   },
   "listed": 9,
-  "text_chars": 9682
+  "text_chars": 2268
  },
  {
   "control_number": "32365",
   "title": "Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "MAT3A",
@@ -1406,28 +1967,27 @@
    "PHY4C"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=338",
-   "title": "Physics for Transfer (AS-T) - AST.PHY",
-   "h1": "Physics for Transfer (AS-T) - AST.PHY",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    338,
-    339,
-    340
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.PHY/requirements-ipyf8",
+   "title": "AST.PHY Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ physics for transfer (as-t) - ast.phy",
+    "section_fit": 0.25
+   }
   },
   "listed": 6,
-  "text_chars": 6509
+  "text_chars": 1879
  },
  {
   "control_number": "32375",
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 0.917,
   "codes_found": [
    "ART12A",
@@ -1443,29 +2003,27 @@
    "PHO2"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=98",
-   "title": "Studio Arts for Transfer (AA-T) - AAT.SART",
-   "h1": "Studio Arts for Transfer (AA-T) - AAT.SART",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    98,
-    99,
-    100,
-    101
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.SART/requirements-ipyf8",
+   "title": "AAT.SART Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ studio arts for transfer (aa-t) - aat.sart",
+    "section_fit": 0.4
+   }
   },
   "listed": 12,
-  "text_chars": 12282
+  "text_chars": 2247
  },
  {
   "control_number": "32529",
   "title": "Automotive Technology - Advanced Diesel Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ADT100",
@@ -1479,29 +2037,27 @@
    "ADT141"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=77",
-   "title": "Advanced Diesel Technology - AS.ADT",
-   "h1": "Advanced Diesel Technology - AS.ADT",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    77,
-    78,
-    79,
-    80
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ADT/requirements-ipyf8",
+   "title": "AS.ADT Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 9,
-  "text_chars": 9420
+  "text_chars": 2065
  },
  {
   "control_number": "32930",
   "title": "History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "HIS10",
@@ -1520,41 +2076,82 @@
    "HISTC1002"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=252",
-   "title": "History for Transfer (AA-T) - AAT.HIS",
-   "h1": "History for Transfer (AA-T) - AAT.HIS",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    252,
-    253,
-    254,
-    255
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.HIS/requirements-ipyf8",
+   "title": "AAT.HIS Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ history for transfer (aa-t) - aat.his",
+    "section_fit": 0.25
+   }
   },
   "listed": 14,
-  "text_chars": 11235
+  "text_chars": 2725
  },
  {
   "control_number": "32981",
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.968,
+  "codes_found": [
+   "BIO5",
+   "BIO6",
+   "BIO6L",
+   "CHM1A",
+   "HED2",
+   "PEAC32",
+   "PEAC36",
+   "PEAC40",
+   "PEAC41",
+   "PEAC43",
+   "PEAC46",
+   "PEAC47",
+   "PEAC50",
+   "PEAC52",
+   "PEAC55",
+   "PEAC56",
+   "PEAC58",
+   "PEAC59",
+   "PEAC61",
+   "PEAC64",
+   "PEAC66",
+   "PEAC68",
+   "PEAC69",
+   "PEAC70",
+   "PETH1",
+   "PHY2A",
+   "PHY4A",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.KIN/requirements-ipyf8",
+   "title": "AAT.KIN Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ kinesiology for transfer (aa-t) - aat.kin",
+    "section_fit": 0.25
+   }
+  },
   "listed": 31,
-  "text_chars": 0
+  "text_chars": 3238
  },
  {
   "control_number": "33050",
   "title": "Theatre Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "TAC1",
@@ -1574,27 +2171,27 @@
    "TAC40"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=391",
-   "title": "Theatre Arts for Transfer (AA-T) - AAT.THA Students can double-count required courses and courses for General",
-   "h1": "Theatre Arts for Transfer (AA-T) - AAT.THA Students can double-count required courses and courses for General",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    391,
-    392
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.THA/requirements-ipyf8",
+   "title": "AAT.THA Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ theatre arts for transfer (aa-t) - aat.tha",
+    "section_fit": 0.4
+   }
   },
   "listed": 15,
-  "text_chars": 6373
+  "text_chars": 2946
  },
  {
   "control_number": "33051",
   "title": "Spanish",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ANT20",
@@ -1612,29 +2209,27 @@
    "SPA4S"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=383",
-   "title": "Spanish for Transfer (AA-T) - AAT.SPA",
-   "h1": "Spanish for Transfer (AA-T) - AAT.SPA",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    383,
-    384,
-    385,
-    386
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.SPA/requirements-ipyf8",
+   "title": "AAT.SPA Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ spanish for transfer (aa-t) - aat.spa",
+    "section_fit": 0.25
+   }
   },
   "listed": 13,
-  "text_chars": 10645
+  "text_chars": 2534
  },
  {
   "control_number": "33176",
   "title": "Music",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "MUS10",
@@ -1652,29 +2247,27 @@
    "MUS49"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=280",
-   "title": "Music for Transfer (AA-T) - AAT.MUS",
-   "h1": "Music for Transfer (AA-T) - AAT.MUS",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    280,
-    281,
-    282,
-    283
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.MUS/requirements-ipyf8",
+   "title": "AAT.MUS Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ music for transfer (aa-t) - aat.mus",
+    "section_fit": 0.25
+   }
   },
   "listed": 13,
-  "text_chars": 11876
+  "text_chars": 2503
  },
  {
   "control_number": "33385",
   "title": "Economics",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS1A",
@@ -1692,27 +2285,27 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=194",
-   "title": "Economics for Transfer Degree (AA-T) - AAT.ECO",
-   "h1": "Economics for Transfer Degree (AA-T) - AAT.ECO",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    194,
-    195
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.ECO/requirements-ipyf8",
+   "title": "AAT.ECO Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ economics for transfer degree (aa-t) - aat.eco",
+    "section_fit": 0.333
+   }
   },
   "listed": 13,
-  "text_chars": 5956
+  "text_chars": 2383
  },
  {
   "control_number": "33851",
   "title": "Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BIO1",
@@ -1745,29 +2338,27 @@
    "PHY4C"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=202",
-   "title": "Engineering - AS.EGN",
-   "h1": "Engineering - AS.EGN",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    202,
-    203,
-    204,
-    205
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.EGN/requirements-ipyf8",
+   "title": "AS.EGN Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 28,
-  "text_chars": 11919
+  "text_chars": 5426
  },
  {
   "control_number": "35065",
   "title": "Theatre Arts & Cinema",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 0.96,
   "codes_found": [
    "TAC1",
@@ -1796,26 +2387,27 @@
    "TAC92"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=390",
-   "title": "Theater Arts & Cinema - AA.TAC",
-   "h1": "Theater Arts & Cinema - AA.TAC",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    390
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.TAC/requirements-ipyf8",
+   "title": "AA.TAC Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 26,
-  "text_chars": 3843
+  "text_chars": 3472
  },
  {
   "control_number": "35105",
   "title": "Geology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "CHM1A",
@@ -1826,27 +2418,27 @@
    "MAT3B"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=241",
-   "title": "Geology for Transfer Degree (AS-T) - AST.GEL",
-   "h1": "Geology for Transfer Degree (AS-T) - AST.GEL",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    241,
-    242
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.GEL/requirements-ipyf8",
+   "title": "AST.GEL Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ geology for transfer degree (as-t) - ast.gel",
+    "section_fit": 0.333
+   }
   },
   "listed": 6,
-  "text_chars": 4813
+  "text_chars": 1793
  },
  {
   "control_number": "35107",
   "title": "Biology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BIO1",
@@ -1861,29 +2453,27 @@
    "PHY4B"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=114",
-   "title": "Biology for Transfer Degree (AS-T) - AST.BIO",
-   "h1": "Biology for Transfer Degree (AS-T) - AST.BIO",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    114,
-    115,
-    116,
-    117
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.BIO/requirements-ipyf8",
+   "title": "AST.BIO Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ biology for transfer degree (as-t) - ast.bio",
+    "section_fit": 0.333
+   }
   },
   "listed": 10,
-  "text_chars": 10672
+  "text_chars": 2290
  },
  {
   "control_number": "35108",
   "title": "Chemistry",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "CHM12A",
@@ -1896,41 +2486,69 @@
    "PHY4B"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=143",
-   "title": "Chemistry for Transfer Degree (AS-T) - AST.CHM",
-   "h1": "Chemistry for Transfer Degree (AS-T) - AST.CHM",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    143,
-    144,
-    145,
-    146
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.CHM/requirements-ipyf8",
+   "title": "AST.CHM Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ chemistry for transfer degree (as-t) - ast.chm",
+    "section_fit": 0.333
+   }
   },
   "listed": 8,
-  "text_chars": 9708
+  "text_chars": 1894
  },
  {
   "control_number": "35458",
   "title": "Public Health Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO10",
+   "BIO11",
+   "BIO27",
+   "BIO5",
+   "BIO6",
+   "BIO6L",
+   "CHM1A",
+   "CHM22",
+   "HED2",
+   "HED6",
+   "HED7",
+   "HES1",
+   "HES2",
+   "HES3",
+   "PSY15",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.PH2/requirements-ipyf8",
+   "title": "AST.PH2 Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2421
  },
  {
   "control_number": "35613",
   "title": "Agriculture Business",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ABT49",
@@ -1944,29 +2562,27 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=82",
-   "title": "Agriculture Business for Transfer Degree (AS-T) -",
-   "h1": "Agriculture Business for Transfer Degree (AS-T) -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    82,
-    83,
-    84,
-    85
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.AGR/requirements-ipyf8",
+   "title": "AST.AGR Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ agriculture business for transfer degree (as-t) - ast.agr",
+    "section_fit": 0.5
+   }
   },
   "listed": 9,
-  "text_chars": 10245
+  "text_chars": 2232
  },
  {
   "control_number": "36694",
   "title": "Construction Management and Architecture",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "CMA51",
@@ -1991,22 +2607,20 @@
    "CMA91"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=173",
-   "title": "Construction Management and Architecture -",
-   "h1": "Construction Management and Architecture -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    173,
-    174,
-    175,
-    176
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.CMA/requirements-ipyf8",
+   "title": "AS.CMA Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 20,
-  "text_chars": 10600
+  "text_chars": 3692
  },
  {
   "control_number": "36881",
@@ -2025,7 +2639,7 @@
   "title": "Manufacturing Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2037,19 +2651,38 @@
   "title": "Computer Science and Information Systems - Mobile Development Option",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS32",
+   "CID25",
+   "CID27",
+   "CID64",
+   "CID65",
+   "CID76"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.MD/requirements-ipyf8",
+   "title": "CT.MD Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 1674
  },
  {
   "control_number": "37916",
   "title": "Computer Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "CSS2A",
@@ -2062,38 +2695,61 @@
    "PHY4B"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=155",
-   "title": "Computer Science for Transfer (AS-T) - AST.CS",
-   "h1": "Computer Science for Transfer (AS-T) - AST.CS",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    155
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.CS/requirements-ipyf8",
+   "title": "AST.CS Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ computer science for transfer (as-t) - ast.cs",
+    "section_fit": 0.4
+   }
   },
   "listed": 8,
-  "text_chars": 2973
+  "text_chars": 1963
  },
  {
   "control_number": "37950",
   "title": "Agriculture Plant Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABT53",
+   "ABT90",
+   "ABT92",
+   "CHM12A",
+   "CHM1A",
+   "CHM22",
+   "ECONC2001",
+   "MFGT71",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.APS/requirements-ipyf8",
+   "title": "AST.APS Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ agriculture plant science for transfer (as-t) - ast.aps",
+    "section_fit": 0.5
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2034
  },
  {
   "control_number": "38211",
   "title": "Social Justice",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ETH1",
@@ -2114,27 +2770,27 @@
    "SOC20"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=374",
-   "title": "Social Justice for Transfer (AA-T) - AAT.SJ",
-   "h1": "Social Justice for Transfer (AA-T) - AAT.SJ",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    374,
-    375
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.SJ/requirements-ipyf8",
+   "title": "AAT.SJ Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ social justice for transfer (aa-t) - aat.sj",
+    "section_fit": 0.4
+   }
   },
   "listed": 16,
-  "text_chars": 5394
+  "text_chars": 2831
  },
  {
   "control_number": "38224",
   "title": "Business Information Worker Level 1",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS110A",
@@ -2146,29 +2802,27 @@
    "BUS50"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=126",
-   "title": "Business Information Worker Level -1 - CT.BIW1",
-   "h1": "Business Information Worker Level -1 - CT.BIW1",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    126,
-    127,
-    128,
-    129
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.BIW1/requirements-ipyf8",
+   "title": "CT.BIW1 Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 7,
-  "text_chars": 8538
+  "text_chars": 1621
  },
  {
   "control_number": "38232",
   "title": "Business Information Worker Level 2",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS110A",
@@ -2185,29 +2839,27 @@
    "BUS50"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=127",
-   "title": "Business Information Worker Level -2 - CT.BIW2",
-   "h1": "Business Information Worker Level -2 - CT.BIW2",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    127,
-    128,
-    129,
-    130
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.BIW2/requirements-ipyf8",
+   "title": "CT.BIW2 Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 12,
-  "text_chars": 8531
+  "text_chars": 1900
  },
  {
   "control_number": "38501",
   "title": "Engineering Fundamentals",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "CHM1A",
@@ -2222,29 +2874,27 @@
    "PHY4A"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=204",
-   "title": "Engineering Fundamentals - CT.EGN",
-   "h1": "Engineering Fundamentals - CT.EGN",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    204,
-    205,
-    206,
-    207
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.EGN/requirements-ipyf8",
+   "title": "CT.EGN Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 10,
-  "text_chars": 8847
+  "text_chars": 1824
  },
  {
   "control_number": "38517",
   "title": "Film, Television, and Electronic Media",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "TAC50",
@@ -2257,27 +2907,27 @@
    "TAC61"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=392",
-   "title": "Film, Television and Electronic Media (AS-T) -",
-   "h1": "Film, Television and Electronic Media (AS-T) -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    392,
-    393
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.FTVE/requirements-ipyf8",
+   "title": "AST.FTVE Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ film, television and electronic media (as-t) - ast.ftve",
+    "section_fit": 0.667
+   }
   },
   "listed": 8,
-  "text_chars": 6710
+  "text_chars": 2220
  },
  {
   "control_number": "39248",
   "title": "Vocational Nursing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 0.667,
   "codes_found": [
    "BIO11",
@@ -2296,41 +2946,73 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=302",
-   "title": "Nursing-Vocational Nursing - AS.NVN",
-   "h1": "Nursing-Vocational Nursing - AS.NVN",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    302,
-    303,
-    304,
-    305
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.NVN/requirements-ipyf8",
+   "title": "AS.NVN Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 21,
-  "text_chars": 13859
+  "text_chars": 6723
  },
  {
   "control_number": "39564",
   "title": "Law, Public Policy, and Society",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ3",
+   "ADJ4",
+   "ADJ5",
+   "BUS18",
+   "COM2",
+   "COMMC1000",
+   "COU1",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "HISTC1001",
+   "HISTC1002",
+   "LAW41",
+   "LAW42",
+   "PHL10",
+   "POLSC1000",
+   "SJS20",
+   "SOC30",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.LAW/requirements-ipyf8",
+   "title": "AAT.LAW Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ law, public policy and society (aa-t) - aat.law",
+    "section_fit": 0.8
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 2511
  },
  {
   "control_number": "40051",
   "title": "Advanced Automotive Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "AAT100",
@@ -2347,29 +3029,27 @@
    "BUS50"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=71",
-   "title": "Advanced Automotive Technology - AS.AAT",
-   "h1": "Advanced Automotive Technology - AS.AAT",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    71,
-    72,
-    73,
-    74
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.AAT/requirements-ipyf8",
+   "title": "AS.AAT Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 12,
-  "text_chars": 11238
+  "text_chars": 2054
  },
  {
   "control_number": "40261",
   "title": "Basic Computer Literacy",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS600",
@@ -2377,19 +3057,20 @@
    "BUS610"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=131",
-   "title": "Basic Computer Literacy - NCCT.BCL Workforce and Academic Readiness - NCCT.WAR",
-   "h1": "Basic Computer Literacy - NCCT.BCL Workforce and Academic Readiness - NCCT.WAR",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    131
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.BCL/requirements-ipyf8",
+   "title": "NCCT.BCL Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 3,
-  "text_chars": 4020
+  "text_chars": 1455
  },
  {
   "control_number": "40742",
@@ -2408,7 +3089,7 @@
   "title": "Technical Support",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS43",
@@ -2418,26 +3099,27 @@
    "CSS57"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=159",
-   "title": "Technical Support - CT.TS",
-   "h1": "Technical Support - CT.TS",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    159
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.TS/requirements-ipyf8",
+   "title": "CT.TS Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 5,
-  "text_chars": 1705
+  "text_chars": 16000
  },
  {
   "control_number": "41922",
   "title": "Cisco Certified Network Associate",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "COM3",
@@ -2447,29 +3129,27 @@
    "ENGLC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=156",
-   "title": "Cisco Certified Network - CT.CCN Computer Science and Info Systems-Computer",
-   "h1": "Cisco Certified Network - CT.CCN Computer Science and Info Systems-Computer",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    156,
-    157,
-    158,
-    159
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.CCN/requirements-ipyf8",
+   "title": "CT.CCN Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 5,
-  "text_chars": 9044
+  "text_chars": 16000
  },
  {
   "control_number": "41985",
   "title": "Cybersecurity",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "CSS1",
@@ -2479,28 +3159,27 @@
    "CSS55"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=157",
-   "title": "Cybersecurity - CT.CS Fundamentals • CSS2A - Object Oriented Programming",
-   "h1": "Cybersecurity - CT.CS Fundamentals • CSS2A - Object Oriented Programming",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    157,
-    158,
-    159
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.CS/requirements-ipyf8",
+   "title": "CT.CS Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 5,
-  "text_chars": 5828
+  "text_chars": 16000
  },
  {
   "control_number": "42135",
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS18",
@@ -2515,89 +3194,180 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=125",
-   "title": "Business Administration 2.0 for Transfer (AS-T) -",
-   "h1": "Business Administration 2.0 for Transfer (AS-T) -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    125
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.BUS2/requirements-ipyf8",
+   "title": "AST.BUS2 Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ business administration 2.0 for transfer (as-t) - ast.bus2",
+    "section_fit": 0.4
+   }
   },
   "listed": 10,
-  "text_chars": 3110
+  "text_chars": 2027
  },
  {
   "control_number": "42385",
   "title": "Food Safety",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABT130",
+   "ABT131",
+   "ABT132",
+   "ABT133",
+   "ABT134",
+   "ABT135",
+   "ABT58"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGFS/requirements-ipyf8",
+   "title": "CT.AGFS Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 1620
  },
  {
   "control_number": "43066",
   "title": "Emergency Medical Technician - Level 1",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "EMT53",
    "HES80"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=199",
-   "title": "Emergency Medical Technician - CT.EMT",
-   "h1": "Emergency Medical Technician - CT.EMT",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    199,
-    200
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.EMT/requirements-ipyf8",
+   "title": "CT.EMT Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 2,
-  "text_chars": 3550
+  "text_chars": 1402
  },
  {
   "control_number": "43119",
   "title": "Sustainable Crop Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABT101",
+   "ABT102",
+   "ABT57",
+   "ABT58",
+   "ABT80",
+   "ABT81",
+   "ABT83",
+   "ABT90",
+   "ABT92",
+   "ABT93",
+   "ABT95",
+   "ABT96",
+   "ABT97",
+   "ABT98",
+   "ABT99",
+   "BUS43",
+   "BUS50",
+   "MFGT70"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGSC/requirements-ipyf8",
+   "title": "CT.AGSC Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 2264
  },
  {
   "control_number": "43121",
   "title": "Small Farm",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABT101",
+   "ABT102",
+   "ABT103",
+   "ABT104",
+   "ABT105",
+   "ABT130",
+   "ABT131",
+   "ABT135",
+   "ABT57",
+   "ABT58",
+   "ABT80",
+   "ABT81",
+   "ABT83",
+   "ABT90",
+   "ABT92",
+   "ABT93",
+   "ABT94",
+   "ABT95",
+   "ABT96",
+   "ABT97",
+   "ABT98",
+   "ABT99",
+   "BUS43",
+   "BUS50",
+   "MFGT70",
+   "MFGT71"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGSF/requirements-ipyf8",
+   "title": "CT.AGSF Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 26,
-  "text_chars": 0
+  "text_chars": 2705
  },
  {
   "control_number": "43559",
   "title": "First Line Supervisor",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BUS194",
@@ -2607,130 +3377,135 @@
    "COMMC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=130",
-   "title": "First Line Supervisor - CT.FS",
-   "h1": "First Line Supervisor - CT.FS",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    130
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.FS/requirements-ipyf8",
+   "title": "CT.FS Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 5,
-  "text_chars": 1692
+  "text_chars": 1519
  },
  {
   "control_number": "43607",
   "title": "English for Multilingual Speakers–Beginning",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ENGM620",
    "ENGM622"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=221",
-   "title": "English for Multilingual Speakers-Beginning -",
-   "h1": "English for Multilingual Speakers-Beginning -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    221
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.BEG/requirements-ipyf8",
+   "title": "NCCT.ENGM.BEG Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 2,
-  "text_chars": 1637
+  "text_chars": 1488
  },
  {
   "control_number": "43608",
   "title": "English for Multilingual Speakers–Advanced",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ENGM660",
    "ENGM662"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=220",
-   "title": "Programs",
-   "h1": "Programs",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    220
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.ADV/requirements-ipyf8",
+   "title": "NCCT.ENGM.ADV Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 2,
-  "text_chars": 1531
+  "text_chars": 1491
  },
  {
   "control_number": "43609",
   "title": "English for Multilingual Speakers–High Intermediate",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ENGM650",
    "ENGM658"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=222",
-   "title": "English for Multilingual Speakers-High Intermediate -",
-   "h1": "English for Multilingual Speakers-High Intermediate -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    222
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.HIGH/requirements-ipyf8",
+   "title": "NCCT.ENGM.HIGH Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 2,
-  "text_chars": 1711
+  "text_chars": 1520
  },
  {
   "control_number": "43610",
   "title": "English for Multilingual Speakers–Low Intermediate",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ENGM630",
    "ENGM632"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=224",
-   "title": "English for Multilingual Speakers-Low Intermediate -",
-   "h1": "English for Multilingual Speakers-Low Intermediate -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    224
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.LOW/requirements-ipyf8",
+   "title": "NCCT.ENGM.LOW Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 2,
-  "text_chars": 1657
+  "text_chars": 1516
  },
  {
   "control_number": "43620",
   "title": "Communication Studies 2.0",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ANT2",
@@ -2746,62 +3521,59 @@
    "SOC1"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=148",
-   "title": "Communication Studies 2.0 for Transfer Degree",
-   "h1": "Communication Studies 2.0 for Transfer Degree",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    148,
-    149,
-    150
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.COM2/requirements-ipyf8",
+   "title": "AAT.COM2 Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ communication studies 2.0 for transfer degree (aa-t) - aat.com2",
+    "section_fit": 0.5
+   }
   },
   "listed": 11,
-  "text_chars": 9942
+  "text_chars": 2383
  },
  {
   "control_number": "43776",
   "title": "English for Multilingual Speakers-Intermediate",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ENGM640",
    "ENGM642"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=223",
-   "title": "English for Multilingual Speakers-Intermediate -",
-   "h1": "English for Multilingual Speakers-Intermediate -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    223
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.INT/requirements-ipyf8",
+   "title": "NCCT.ENGM.INT Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 2,
-  "text_chars": 1574
+  "text_chars": 1498
  },
  {
   "control_number": "43809",
   "title": "Agricultural Mechatronics",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.826,
+  "method": "sitemap_page",
+  "coverage": 0.696,
   "codes_found": [
-   "ABT57",
    "ABT93",
    "ABT99",
-   "BUS50",
    "CMA74",
-   "CMA81",
    "MFGT110",
    "MFGT111A",
    "MFGT111B",
@@ -2817,29 +3589,27 @@
    "WLD151"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=260",
-   "title": "Agricultural Mechatronics - AS.MECHA",
-   "h1": "Agricultural Mechatronics - AS.MECHA",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    260,
-    261,
-    262,
-    263
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.MECHA/requirements-ipyf8",
+   "title": "AS.MECHA Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 23,
-  "text_chars": 10236
+  "text_chars": 2855
  },
  {
   "control_number": "43821",
   "title": "Foundations of Agricultural Mechatronics",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "ABT57",
@@ -2855,22 +3625,20 @@
    "WLD150"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=261",
-   "title": "Foundations of Agricultural Mechatronics -",
-   "h1": "Foundations of Agricultural Mechatronics -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    261,
-    262,
-    263,
-    264
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.MECHA/requirements-ipyf8",
+   "title": "CT.MECHA Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 11,
-  "text_chars": 8217
+  "text_chars": 1974
  },
  {
   "control_number": "43883",
@@ -2889,7 +3657,7 @@
   "title": "Music",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "MUS10",
@@ -2910,29 +3678,27 @@
    "MUS8"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=281",
-   "title": "Music - CT.MUS",
-   "h1": "Music - CT.MUS",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    281,
-    282,
-    283,
-    284
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.MUS/requirements-ipyf8",
+   "title": "CT.MUS Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 16,
-  "text_chars": 9804
+  "text_chars": 2127
  },
  {
   "control_number": "44161",
   "title": "Theatre Performance",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "TAC326",
@@ -2942,27 +3708,27 @@
    "TAC340"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=393",
-   "title": "Theatre Performance - NCCT.TPER Outcome",
-   "h1": "Theatre Performance - NCCT.TPER Outcome",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    393,
-    394
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.TPER/requirements-ipyf8",
+   "title": "NCCT.TPER Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 5,
-  "text_chars": 4511
+  "text_chars": 1566
  },
  {
   "control_number": "44525",
   "title": "Spanish",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "SPA1",
@@ -2976,29 +3742,27 @@
    "SPA4S"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=384",
-   "title": "Spanish - CT.SPA",
-   "h1": "Spanish - CT.SPA",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    384,
-    385,
-    386,
-    387
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.SPA/requirements-ipyf8",
+   "title": "CT.SPA Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 9,
-  "text_chars": 8844
+  "text_chars": 1655
  },
  {
   "control_number": "44537",
   "title": "Respiratory Care",
   "award": "Baccalaureate of Science (B.S.) Degree.",
   "shape": "degree",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "COM700",
@@ -3016,56 +3780,55 @@
    "RCP805"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=355",
-   "title": "Respiratory Care - BS.RC",
-   "h1": "Respiratory Care - BS.RC",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    355,
-    356
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/BS.RC/requirements-ipyf8",
+   "title": "BS.RC Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 13,
-  "text_chars": 7209
+  "text_chars": 4116
  },
  {
   "control_number": "44574",
   "title": "Workforce and Academic Readiness",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
+  "method": "sitemap_page",
+  "coverage": 0.75,
   "codes_found": [
-   "BUS600",
    "BUS650",
    "BUS690",
    "BUS699"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=131",
-   "title": "Workforce and Academic Readiness - NCCT.WAR",
-   "h1": "Workforce and Academic Readiness - NCCT.WAR",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    131,
-    132
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.WAR/requirements-ipyf8",
+   "title": "NCCT.WAR Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 4,
-  "text_chars": 6060
+  "text_chars": 1489
  },
  {
   "control_number": "44729",
   "title": "Public Health",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
+  "method": "sitemap_page",
   "coverage": 1.0,
   "codes_found": [
    "BIO10",
@@ -3087,32 +3850,201 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=247",
-   "title": "Public Health for Transfer Degree (AS-T) - AST.PH2",
-   "h1": "Public Health for Transfer Degree (AS-T) - AST.PH2",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    247,
-    248,
-    249
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.PH2/requirements-ipyf8",
+   "title": "AST.PH2 Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "/ public health for transfer degree (as-t) - ast.ph2",
+    "section_fit": 0.5
+   }
   },
   "listed": 17,
-  "text_chars": 7221
+  "text_chars": 2421
  },
  {
   "control_number": "45096",
   "title": "CalGETC",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.987,
+  "codes_found": [
+   "ABT53",
+   "ABT90",
+   "ABT92",
+   "ADJ1",
+   "ADJ3",
+   "ADJ51",
+   "ANT1",
+   "ANT10",
+   "ANT2",
+   "ANT20",
+   "ART10",
+   "ART19",
+   "ARTHC1200",
+   "AST1",
+   "AST1L",
+   "BIO1",
+   "BIO10",
+   "BIO11",
+   "BIO12",
+   "BIO18",
+   "BIO2",
+   "BIO20",
+   "BIO27",
+   "BIO3",
+   "BIO30",
+   "BIO42",
+   "BIO47",
+   "BIO48",
+   "BIO48L",
+   "BIO5",
+   "BIO6",
+   "BIO6L",
+   "CHM12A",
+   "CHM12B",
+   "CHM1A",
+   "CHM1B",
+   "CHM22",
+   "COM4",
+   "COMMC1000",
+   "ECE2",
+   "ECE53",
+   "ECE6",
+   "ECO10",
+   "ECONC2001",
+   "ECONC2002",
+   "ENG17",
+   "ENG22",
+   "ENG24",
+   "ENG26",
+   "ENG41",
+   "ENG44A",
+   "ENG44B",
+   "ENG46A",
+   "ENG46B",
+   "ENG47A",
+   "ENG47B",
+   "ENG48",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ETH1",
+   "ETH12",
+   "ETH13",
+   "ETH2",
+   "ETH21",
+   "ETH3",
+   "ETH4",
+   "ETH5",
+   "ETH56",
+   "ETH6",
+   "ETH7",
+   "ETH8",
+   "GEG10",
+   "GEL1",
+   "GEL2",
+   "GEL6",
+   "HED7",
+   "HES1",
+   "HES2",
+   "HIS10",
+   "HIS40",
+   "HIS46A",
+   "HIS46B",
+   "HIS47",
+   "HIS49A",
+   "HIS49B",
+   "HIS4A",
+   "HIS4B",
+   "HIS5A",
+   "HIS5B",
+   "HIS6",
+   "HISTC1001",
+   "HISTC1002",
+   "MAT10",
+   "MAT12",
+   "MAT16",
+   "MAT2",
+   "MAT25",
+   "MAT27",
+   "MAT3A",
+   "MAT3B",
+   "MAT3C",
+   "MAT4",
+   "MAT5",
+   "MUS1A",
+   "MUS42",
+   "MUS5",
+   "MUS6",
+   "MUS7",
+   "MUS8",
+   "NRN70",
+   "NVN70",
+   "OCN1",
+   "PHL10",
+   "PHL2",
+   "PHL5",
+   "PHY10",
+   "PHY2A",
+   "PHY2B",
+   "PHY32",
+   "PHY4A",
+   "PHY4B",
+   "PHY4C",
+   "POL2",
+   "POL3",
+   "POL5",
+   "POL6",
+   "POLSC1000",
+   "PSY10",
+   "PSY12",
+   "PSY14",
+   "PSY15",
+   "PSY22",
+   "PSY25",
+   "PSY6",
+   "PSY9",
+   "PSYCC1000",
+   "SJS20",
+   "SJS22",
+   "SOC1",
+   "SOC15",
+   "SOC20",
+   "SOC30",
+   "SOC41",
+   "SOC42",
+   "SOC5",
+   "SOC8",
+   "SPA3S",
+   "SPA4S",
+   "STATC1000",
+   "TAC1",
+   "TAC2",
+   "TAC23",
+   "TAC3",
+   "TAC50",
+   "TAC92"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.CALGETC/requirements-ipyf8",
+   "title": "CT.CALGETC Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 159,
-  "text_chars": 0
+  "text_chars": 10411
  }
 ]

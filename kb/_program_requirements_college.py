@@ -1691,9 +1691,15 @@ def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
 # Accounting (Total Credits 4.0 - 4.0)"; page read 39090533458, S411). The tab's
 # suffix is the catalog's template, so the reader learns it from the first
 # program and goes straight to it after, back to the overview when it misses.
+# Hartnell's vendor-hosted catalog names the same tab Requirements
+# (/programs/AA.ADD/requirements-ipyf8) and prints its list as "ADJ1: Introduction
+# to Administration of Justice" with one "Total Required Credits 60" at the foot
+# (page reads 39853502958 and 39891644835, S449 and S451), so the tab is known by
+# either name and the direct read by either total.
 CD_SEARCH = re.compile(r"/programs/search/", re.I)
 CD_LIMIT = 250
-CD_REQUISITES = re.compile(r"^\s*requisites\b", re.I)
+CD_REQUISITES = re.compile(r"^\s*requi(?:site|rement)s\b", re.I)
+CD_TOTAL = re.compile(r"Total (?:Required )?Credits", re.I)
 # The award a program's name ends in, "Accounting (AA)", in the words the award
 # matcher reads (P.AWARD_WORDS); a certificate's letters vary by college.
 CD_AWARD_WORDS = {"AA": "associate in arts", "AS": "associate in science",
@@ -1701,12 +1707,13 @@ CD_AWARD_WORDS = {"AA": "associate in arts", "AS": "associate in science",
                   "CT": "certificate of achievement", "CA": "certificate of achievement",
                   "CN": "certificate", "CM": "certificate", "CP": "certificate",
                   "NC": "noncredit certificate of completion"}
-CD_AWARD = re.compile(r"\(([A-Z]{2,4})\)\s*$")
+# Hartnell writes a transfer degree's letters with a hyphen, "(AS-T)" (S451).
+CD_AWARD = re.compile(r"\(([A-Z]{2,4}(?:-[A-Z])?)\)\s*$")
 
 
 def cd_award_words(name: str) -> str:
     m = CD_AWARD.search(name or "")
-    return CD_AWARD_WORDS.get(m.group(1), "") if m else ""
+    return CD_AWARD_WORDS.get(m.group(1).replace("-", ""), "") if m else ""
 
 
 def cd_search_url(url: str, skip: int, limit: int) -> str:
@@ -1820,7 +1827,7 @@ def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
         if suffix:
             got = P.load(reader, base + "/" + suffix, cache, True)
             if got.get("access") == "ok" and (got.get("final_url") or "").rstrip("/").endswith(suffix) \
-                    and "Total Credits" in (got.get("body") or ""):
+                    and CD_TOTAL.search(got.get("body") or ""):
                 direct += 1
             else:
                 got = None
@@ -2363,6 +2370,22 @@ def reads_as_pdf(reg: dict) -> bool:
     return is_pdf_catalog(reg) or (P.procedure_catalog(reg.get("procedure")) or {}).get("format") == "pdf"
 
 
+# Hartnell's Coursedog catalog read from its whole-catalog PDF (a procedure step
+# naming the file, S410), written before the Coursedog site reader existed (S414,
+# Merced). The PDF prints 79 program codes where the site's own program search
+# lists 100 (S411, run 39077713662); read by its site under S451's tab names, the
+# capture found 96 of 112 where the PDF found 73 (run 39892327918). So a Coursedog
+# catalog reads from its site by default, and its PDF procedure step is set aside;
+# a dispatch with route=pdf keeps the step for one run (the comparison the other way).
+SITE_ROUTE_PLATFORMS = ("coursedog",)
+
+
+def prefer_site(platform: str | None, route: str | None) -> bool:
+    """Whether the catalog reads from its site: a platform whose site reader exists,
+    unless the run asked for the PDF procedure step (route=pdf)."""
+    return (route or "").strip().lower() != "pdf" and (platform or "") in SITE_ROUTE_PLATFORMS
+
+
 def hand_filed_meta(college: str) -> tuple[str, dict] | None:
     meta_path = os.path.join(HAND_FILED_DIR, slug_of(college) + ".json")
     return (meta_path, json.load(open(meta_path))) if os.path.isfile(meta_path) else None
@@ -2573,7 +2596,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             report["catalog_year"] = reg["catalog_year"]
         recs = capture_pdf(college, out_dir, programs, reg, report, hf)
         return finish_capture(college, out_dir, recs, report, t0)
-    if reads_as_pdf(reg) and (start or reg.get("procedure")):
+    if prefer_site(platform, os.environ.get("CAPTURE_ROUTE")) and start:
+        report["route"] = "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)"
+    elif reads_as_pdf(reg) and (start or reg.get("procedure")):
         year = (P.procedure_catalog(reg.get("procedure")) or {}).get("catalog_year")
         if year and not reg.get("catalog_year"):
             # A row naming the catalog's page names no year; the step that names its file does (S407).

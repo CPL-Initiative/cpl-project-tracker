@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Physics",
  "award": "A.S. T Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=338",
+ "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AST.PHY/requirements-ipyf8",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8670,
+  "input_tokens": 6563,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8670,
-    "output_tokens": 1384,
+    "input_tokens": 6563,
+    "output_tokens": 960,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1384,
+  "output_tokens": 960,
   "output_tokens_details": {
-   "thinking_tokens": 393
+   "thinking_tokens": 214
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06236,
- "ms": 12185,
- "seconds": 12.5,
+ "cost_usd": 0.04545,
+ "ms": 8482,
+ "seconds": 8.9,
  "parts": null,
  "error": null,
  "score": {
@@ -82,17 +82,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -124,18 +124,8 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Apply appropriate physical laws and mathematical techniques to analyze various physical situations.",
-    "Collect and analyze data effectively using basic laboratory equipment, and present results and conclusions in formally structured laboratory reports.",
-    "Solve problems using a systematic approach, test the correctness of solutions, and interpret results in terms of the physical reality they represent."
-   ],
-   "careers": [
-    "research",
-    "teaching",
-    "engineering",
-    "medicine",
-    "industry"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -196,15 +186,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requirements list prints no units beside any course; units are left null. The course descriptions on pages 339-340 print Credits 4 for PHY4A, PHY4B and PHY4C. No credits are printed for the MAT courses in this text.",
-   "The catalog prints codes without a space (PHY4A, MAT3A). These match closed-list PHY 4A, MAT 3A, etc.",
-   "The page prints no major total. 'Total Required Credits 60' is recorded as degree_total.",
-   "Cal-GETC is named, but no Cal-GETC unit figure is printed, so ge_units is null.",
-   "The page says electives are required when degree units plus GE units total fewer than 60, with no units printed for them, so electives_fill_degree is true.",
-   "The outcomes lead-in reads 'Upon completion of this course' even though the list is printed under Program Outcomes for the degree.",
-   "Careers are taken from 'Some positions for which four-year graduates in physics are qualified are in research, teaching, engineering, medicine, and industry.' The specialty areas listed (condensed matter physics, etc.) are fields of study and are not recorded as careers.",
-   "PHY2A and PHY2B appear only in the course listings that follow the program. They are not part of the degree requirements and are not placed."
+   "Course codes are printed without a space (e.g. 'PHY4A'); they match the closed-list codes (e.g. 'PHY 4A') and are not marked as catalog additions.",
+   "The catalog prints no units beside the courses, so their units are null.",
+   "The page prints no total for the major. 'Total Required Credits 60' is recorded as degree_total.",
+   "The page states that electives (courses numbered 1-99) are required when degree units plus GE units total fewer than 60. It prints no elective units, so electives_fill_degree is true.",
+   "Cal-GETC is named as the GE pattern, but no GE unit total is printed. The page notes that required courses may double-count for GE.",
+   "The page title PHY 4C reads 'Waves, Heat, Light, Sound and Modern Physics', which differs slightly from the closed-list title.",
+   "No program learning outcomes or careers appear in the provided text; the General tab content was not included."
   ]
  },
- "extracted_run": "39090050931"
+ "extracted_run": "39895340003"
 }
