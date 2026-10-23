@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_comms_note_after_sheet118_2026-10-23.sql",
+ "name": "cpl_comms_note_after_sheet118_2026_10_23",
+ "version": "20261023185309",
+ "sha256": "a164a5ce90b6071c9c9d40892e1101e5d9bd33b1dbb080e3f631d41682d8c91c",
+ "run": "40006320145",
+ "status": 201,
+ "response": "[{\"slug\":\"jst-uploads-and-the-2026-2028-funding-to-the-ceos-261023\",\"updated_by\":\"the side session beside S457\",\"note_chars\":485}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

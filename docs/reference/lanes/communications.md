@@ -92,31 +92,30 @@ versions). Its note names what he decides before it goes
   Sierra (`cpl-chat`), and now this tab. The naming rule is copied into at least three of
   them by hand.
 
-## NEEDS SAM ([Open Asks Sheet 118](https://claude.ai/artifact/D3uYDvJ3MigHaM8CgpKWse), cards 4 to 8)
+## Sam's rulings ([Open Asks Sheet 118](https://claude.ai/artifact/D3uYDvJ3MigHaM8CgpKWse), 2026-10-23 18:44Z, all his own call; `cpl_memory` `sam-sheet-118-rulings-2026-10-23`)
 
-1. **The dollar range in the CEO email.** His draft names *$150,000 to $400,000*, the
-   model's max-award range. The sunshine rule (2026-09-01) keeps the model's dollar figures
-   out of outward materials until he confirms with CO leadership. Keep the range, replace
-   it with the shape ("a larger 2026-2028 award"), or confirm the rule is lifted.
-2. **Consolidate the writing layer, not the tabs.** One `cpl_writer.js` holding the naming
-   rule, the house voice, the funding vocabulary, the audience definitions, the model
-   constant and the proxy call, consumed by every surface above one PR at a time, with
-   this tab the first. The tabs keep their own data and UI. Or leave them as they are.
-3. **The JST sentence** in the email: keep it (each CEO sees their college's figure from
-   the daily feed), or drop it.
-4. **The salutation default** for a CEO without an honorific: *President {last}*, or the
-   full name.
-5. **The old curator's future:** fold it as shipped, or retire it and the KB project's
-   `letter-curator` and `generate-letter` functions.
+4. **Keep the range.** The CEO email names $150,000 to $400,000 as typed. The sunshine rule
+   stays as written for other outward materials; this email carries the figure on his call.
+5. **One writer module** (`cpl_writer.js`): the naming rule, the house voice, the funding
+   vocabulary, American spelling, the audience definitions, the model constant and the proxy
+   call, consumed by every surface one PR at a time, this tab first. To build.
+6. **Keep the JST-figures sentence.**
+7. **President {last}** stays the salutation default for a CEO without an honorific.
+8. **Keep the old curator folded** under *Earlier*; retire it and the two KB-project functions
+   in one PR if nobody opens it after the Summit and the funding memo season.
 
 ## Next
 
-- Sam answers Sheet 118; the email goes out from his mail client by mail merge (the
-  CSV) or one college at a time (the mail link). The hub records `sent_on` and status final.
-- The writer module (card 2), if he says so: extract `NAMING_RULE`, the house voice and the
-  funding words from this tab's `SYSTEM` into `cpl_writer.js`; port `activity_summaries.js`
-  and `report_generator.js` first; retire the two older model pins (`claude-sonnet-4-5`,
-  `claude-sonnet-4-5-20250929` in `raci.js`).
+- **The writer module (ruling 5), the next build.** Extract this tab's `SYSTEM` into
+  `cpl_writer.js` as named parts (`NAMING_RULE`, `HOUSE_VOICE`, `FUNDING_WORDS`, `AUDIENCES`,
+  `MODEL`, `draft(prompt, opts)` over `window.CPL_REPORT_PROXY_URL`), make `comms.js` its first
+  consumer in the same PR with `tests/cpl_writer.test.js` pinning the rules' presence, then
+  port `activity_summaries.js` and `report_generator.js` one PR each and retire the two older
+  model pins (`claude-sonnet-4-5`, `claude-sonnet-4-5-20250929` in `raci.js`). Not started
+  by the side session: its context ran to the warn line after the register shipped.
+- The email goes out from Sam's mail client by mail merge (the CSV) or one college at a time
+  (the mail link); the record then takes `sent_on` and status final. Forty-five colleges have
+  no CEO address in MAP; those need a directory MAP does not hold before they get the email.
 - A per-college salutation override and a per-record recipient exclusion list, when a
   send shows the need.
 - A send log: `sent_on` is one date per record; a per-college sent mark would need a
