@@ -780,6 +780,26 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S452 SkyPoppy (2026-10-23, the CPL Queue routine): Long Beach City landed, three free captures, a display step that built nothing
+
+- **Long Beach City landed.** Its extraction (run 39891611701, started 02:48Z on `claude/harvest-long-beach-city-s449`)
+  filed at 06:00Z after about 3 h 12 m. Load 39910674748: 368 records, 349 posted, 7 inserted, 342 kept. Reread
+  39910973351: 11 posted, 4 replaced. Display build 504ae8333118 (17,510 programs, from 17,505) on
+  `claude/harvest-wave-s452` (#2370).
+- **`step=display` applies the committed build; it never builds one.** Dispatched on the wave branch before the
+  builder ran, it re-applied 25fe751ccd0a, already live from the 04:56Z run on `main` (run 39911664916, 6,940
+  written, no change). The order is the S420 one: `python3 kb/_build_roep_display.py` on the branch (about 90 s;
+  it needs `openpyxl`, which the sandbox lacks until `python3 -m pip install openpyxl`), commit
+  `cpl_pathways_roep_data.js` and the new `.sql.gz`, merge, then `step=display` on `main`.
+- **Free captures, measured against main.** East LA 137 of 234 on both (three programs' PDF page numbers moved,
+  coverage the same): nothing to extract. Marin 89 of 155 on both, `would_extract` empty. San Mateo 61 of 98
+  (from 60): Administration of Justice A.S.-T (31224) is new, extracted on `claude/harvest-san-mateo-s452`
+  (one program, well under $1); its load, reread and display ride the next wave. Cañada was skipped: its registry
+  row records a robots.txt refusal and its records come from the hand-filed copy.
+- **UI pass, Funding model page (#2369).** `npm run a11y funding-model` passed at all 9 widths; the page is
+  light-only by design and reads no shared dataset. The `#live-status` line painted `var(--ink-2,#5b544c)`, an
+  undefined token's raw-hex fallback; it now reads `var(--text-muted)`.
+
 ## S451 (2026-10-23): Hartnell by its site, the S449 queue landed, one display build
 
 Sam opened S451 with the harvest queue ("keep going with the Commons PR harvest"); the Sheet 115 session (S450) had

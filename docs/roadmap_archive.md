@@ -10,6 +10,12 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-10-23)
+
+- 2026-10-21 (S443 SkyToyon, opened by Sam): funding off My College (#2316, #2320); Reedley loaded (#2317); a page heading a section per award serves each sibling (#2322) and Foothill re-read and loaded (#2326); tabs never remember a filter (#2325, a CLAUDE.md rule); Open Asks Sheet 111.
+- 2026-10-21 (S442, the CPL Queue routine's run beside SkyManzanita): the harvest keeps a Requirements tab whose numbers carry a campus letter (#2309); Moorpark, Oxnard and Ventura re-read; one display build with Reedley.
+- 2026-10-21 (S442 SkyManzanita, opened by Sam): Sheet 109 applied (#2310); CPL Pathways' college line and the name CPL Pathways (#2312); one college choice for My College and CPL Pathways (#2313); My CPL Funding and the expenditure reports leave My College; Reedley re-read and loaded; KB note methodology-hand-another-tab-a-request.
+
 ## INDEX update-history entries rotated out (2026-10-17)
 - 2026-10-20 (S430 SkyLupine): the CTDL exchange's seed for Malone (contract v0, the drop check, decisions) and DR-27..29 (#2267); the AGRI sitting twice over, 397 of 404 agree (#2268); Sheet 103 answered, the 44 re-keyed to their family codes (#2270); the nine MQ names renamed to the handbook's spellings (#2269); handoff 431; no KB note.
 
