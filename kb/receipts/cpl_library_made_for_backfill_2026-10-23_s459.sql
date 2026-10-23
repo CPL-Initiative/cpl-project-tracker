@@ -19,6 +19,9 @@
 -- update public.cpl_library set for_kind = null, for_name = null, updated_by = 'library-made-for-s459@bot'
 --   where slug in (the twelve -workbook slugs, 'ell-iet-cpl-ideas-mvlcfx9k').
 -- A good result: 12, 12 and 2 rows, each returning its slug, kind, for_kind and for_name.
+-- APPLIED: run 40031759397, 2026-10-23 22:14:22Z (kb/receipts/migration_cpl_library_made_for_backfill_2026_10_23_s459_40031759397.json);
+-- read back live at 22:27Z: 12 visual/college, 12 spreadsheet/college, the DSP page visual/agency, the ELL IET notice
+-- document/agency, every row updated_by library-made-for-s459@bot at 22:14:22Z.
 
 update public.cpl_library l set kind = 'visual', for_kind = 'college', for_name = v.name, updated_by = 'library-made-for-s459@bot'
 from (values
