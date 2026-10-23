@@ -5,11 +5,11 @@
  "title": "Geology",
  "award": "A.S. T Degree",
  "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/geology/geology-ast/",
- "record_shape": 4,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6258,
+  "input_tokens": 7432,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6258,
-    "output_tokens": 1466,
+    "input_tokens": 7432,
+    "output_tokens": 1692,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1466,
+  "output_tokens": 1692,
   "output_tokens_details": {
-   "thinking_tokens": 476
+   "thinking_tokens": 622
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05435,
- "ms": 12573,
- "seconds": 12.9,
+ "cost_usd": 0.06357,
+ "ms": 14589,
+ "seconds": 15.2,
  "parts": null,
  "error": null,
  "score": {
@@ -70,9 +71,29 @@
     30.0,
     30.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 27.0-30.0; the catalog states 30.0-30.0"
-   ]
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     61.0,
+     64.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -93,6 +114,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": false
  },
  "record": {
@@ -104,7 +128,20 @@
     "max": 30
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
    "outcomes": [
     "Differentiate between unsupported opinion and verifiable scientific fact supported by observations, experiments, and scientific theory.",
     "Demonstrate a basic understanding of the field of geology by applying basic geologic concepts verbally and in writing."
@@ -204,12 +241,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The first core row is 'GEOL 1/1H 4.5 OR GEOL 2 & 2L 4.5': GEOL 2 and GEOL 2L must be taken together as one path (combined 4.5 units printed); they are recorded as alternatives of GEOL 1 with null units because the catalog prints no separate units for each.",
-   "'Required Subtotal 30' is recorded as the major total; the 34 units beside 'Complete the following' refer to Cal-GETC (general education) and are not counted.",
-   "The requirements table names Cal-GETC, but the narrative paragraph says the 60 units 'consist of the IGETC pattern'; reviewer may wish to confirm the GE pattern.",
-   "Transferable electives 'as needed to reach 60 transferable units' are degree-level electives outside the major total, so open_elective_units is null.",
-   "The description mentions 'meaningful career employment' but names no specific career, so careers is empty."
+   "The first core requirement is GEOL 1/1H (4.5) OR the pair GEOL 2 & 2L; GEOL 2 and GEOL 2L must be taken together as one alternative path. The catalog prints 4.5 units for the pair combined, not per course, so their individual units are left null (state file: GEOL 2 = 3, GEOL 2L = 1.5).",
+   "The 'Required Subtotal 30' is recorded as total_units and as the block's stated total.",
+   "The page lists Cal-GETC with 34 units in the requirements table, but the closing paragraph says the degree consists of 'the IGETC pattern and the major requirements'; ge_pattern recorded as Cal-GETC per the table.",
+   "Transferable electives are 'as needed to reach 60 transferable units' with no units printed; electives_fill_degree set true.",
+   "Footnote: units for the major may be double-counted for Cal-GETC.",
+   "The Program Student Learning Outcomes are printed on the Overview tab for this award."
   ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "39891611701"
 }

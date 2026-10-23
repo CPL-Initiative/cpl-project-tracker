@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Administration of Justice",
  "award": "A.A. Degree",
- "source_url": "https://lbcc-public.courseleaf.com/",
- "record_shape": 4,
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/administration-justice/administration-justice-aa/",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13767,
+  "input_tokens": 7752,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13767,
-    "output_tokens": 1172,
+    "input_tokens": 7752,
+    "output_tokens": 1697,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,176 +30,294 @@
     "model": null
    }
   ],
-  "output_tokens": 1172,
+  "output_tokens": 1697,
   "output_tokens_details": {
-   "thinking_tokens": 141
+   "thinking_tokens": 343
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07851,
- "ms": 9344,
- "seconds": 10.4,
+ "cost_usd": 0.06495,
+ "ms": 12993,
+ "seconds": 13.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 17,
    "listed": 17,
-   "share": 0.0,
-   "missing": [
-    "ADJUS10",
-    "ADJUS14",
-    "ADJUS16",
-    "ADJUS17",
-    "ADJUS18",
-    "ADJUS19",
-    "ADJUS2",
-    "ADJUS255",
-    "ADJUS269",
-    "ADJUS3",
-    "ADJUS4",
-    "ADJUS40",
-    "ADJUS45",
-    "ADJUS5",
-    "ADJUS6",
-    "ADJUS8",
-    "PUBAD1"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ADJUS20"
+   ],
+   "flagged": [
+    "ADJUS20"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    24.0,
+    24.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     51.0,
+     58.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     2.0,
+     9.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found in text (no Administration of Justice A.A. Degree section appears)",
+   "section_heading": "Administration of Justice - Associate in Arts",
    "measure": "units",
    "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
-   "ge_pattern": null,
-   "outcomes": [],
-   "careers": []
+   "ge_pattern": "LBCC-GE or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Explore the history, development, structure and functions of the American criminal justice system.",
+    "Recognize the importance and practice of legal and ethical behavior in a professional criminal justice work setting."
+   ],
+   "careers": [
+    "Law Enforcement",
+    "Corrections",
+    "the Courts"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ADJUS 10",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ADJUS 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ADJUS 14",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 16",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 17",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 18",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 19",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 2",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 255",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 269",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 3",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 4",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 40",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 45",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 5",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 6",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "ADJUS 8",
-    "why": "not in the text as a requirement; appears only in the Course Outlines of Record index"
-   },
-   {
-    "code": "PUBAD 1",
-    "why": "not in the text"
+    "name": "IN ADDITION, complete SIX (6) units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ADJUS 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADJUS 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 255",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 269",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBAD 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied catalog text contains only site navigation (noncredit program list) and a partial Course Outlines of Record index (ACCTG through CDECE, cut off mid-entry); it does not include the Administration of Justice A.A. Degree requirements section.",
-   "No blocks, totals, GE pattern, outcomes or careers could be recorded; a reviewer should retrieve the actual program page for Administration of Justice A.A. Degree.",
-   "The COR index also lists ADJUS 20 and ADJUS 600-605, which are not on the closed list; they were not recorded because no requirements section names them."
+   "Major total taken from 'Required Subtotal 24'; degree total from 'Minimum Degree Total 60'.",
+   "GE: complete one of LBCC-GE or Cal-GETC, printed as 27-34 units; major units may be double-counted for GE per footnote 1.",
+   "Electives fill to 60 degree-applicable units (courses numbered 1-599); no units printed for them.",
+   "ADJUS 20 (Introduction to Corrections) appears in the elective list but is not in the closed list; recorded as catalog addition.",
+   "Careers read from the description 'career advancements in Law Enforcement, Corrections, and the Courts'."
   ]
  },
- "extracted_run": "38185403454"
+ "extracted_run": "39891611701"
 }
