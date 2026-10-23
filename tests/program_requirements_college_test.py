@@ -2358,6 +2358,30 @@ check(C.cd_award_words("Agriculture Business (AST)") == "associate in science fo
       and C.cd_award_words("Adult Literacy (NC)").startswith("noncredit") and C.cd_award_words("Accounting") == ""
       and C.cd_award_words("Administration of Justice for Transfer (AS-T)") == "associate in science for transfer",
       "a program's letters name its award in words")
+# The code's letters name the award (S456): Hartnell's site read filed Biology A.S. 03537 from
+# "Biology for Transfer Degree (AS-T) - AST.BIO" (and Psychology A.A. 18353, Spanish A.A. 19518,
+# Administration of Justice A.S. 03585 from AAT/AST tabs; two certificates from AS tabs), since
+# "associate in science for transfer" names an A.S. too. A tab whose code names another award is
+# no candidate; an award the codes cannot name reads as before.
+check(C.cd_code_kind("AST.ADJ") == "adt" and C.cd_code_kind("AAT.PSY") == "adt" and C.cd_code_kind("AS.EGN") == "as"
+      and C.cd_code_kind("CT.NVN") == "coa" and C.cd_code_kind("NCCT.BCL") == "noncredit" and C.cd_code_kind("BS.RC") == "bs"
+      and C.cd_code_kind("05000.AA") == "aa" and C.cd_code_kind("13012.CT") == "coa" and C.cd_code_kind("AAT-SOC") == "adt"
+      and C.cd_code_kind("12345") is None and C.cd_code_kind(None) is None,
+      "a Coursedog code's letters name its award, as a prefix or a suffix, or none")
+check(hn["code_kind"] == "adt" and hn["code"] == "AST.ADJ", "a Coursedog tab carries its code's award kind")
+hn_courses = [{"code": c} for c in ("ADJ 1", "ADJ 3", "ADJ 5", "STATC 1000")]
+hn_adt = {"control_number": "31971", "title": "Administration of Justice", "award": "A.S. T Degree", "closed_list": hn_courses}
+hn_as = {"control_number": "03585", "title": "Administration of Justice", "award": "A.S. Degree", "closed_list": hn_courses}
+hn_ct = {"control_number": "21450", "title": "Administration of Justice",
+         "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units", "closed_list": hn_courses}
+hn_other = {"control_number": "9", "title": "Administration of Justice", "award": "Certificate of Competency", "closed_list": hn_courses}
+hn_given = C.assign([hn_adt, hn_as, hn_ct, hn_other], [hn])
+check((hn_given["31971"]["best"] or {}).get("url", "").endswith("AST.ADJ/requirements-ipyf8")
+      and hn_given["03585"]["best"] is None and hn_given["21450"]["best"] is None,
+      "an AST tab goes to the A.S.-T alone; the local A.S. and the certificate read no page from it: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in hn_given.items()})
+check(C.candidates(hn_as, [hn]) == [] and len(C.candidates(hn_adt, [hn])) == 1 and len(C.candidates(hn_other, [hn])) == 1,
+      "the gate reads the code's letters; an award the codes cannot name is gated by nothing")
 
 # ── a Coursedog catalog reads from its site (S449, default since S451) ─────
 # Hartnell's procedure step names its whole-catalog PDF (S410), which prints 79
@@ -2371,6 +2395,24 @@ check(not C.prefer_site("coursedog", "pdf") and not C.prefer_site("coursedog", "
       "route=pdf keeps the PDF procedure step for one run")
 check(not C.prefer_site("courseleaf", "site") and not C.prefer_site(None, "site") and not C.prefer_site("courseleaf", None),
       "the route on another platform changes nothing")
+
+# A noncredit program's section on a department page (Sierra Business, page read 39964750956,
+# S456): the heading line then "Noncredit Certificate of Completion", its courses listed at 0
+# units. SECTION_AWARD read no noncredit heading, so Entrepreneurship for Makers 37810 read
+# no page though candidates() took the page at coverage 1.0.
+NC_TEXT = ("Innovation and Entrepreneurship\nSkills Certificate\nRequired Courses\nBUS 0241\tInnovation Concepts\t3\n"
+           "Total Units\t9\nEntrepreneurship for Makers\nNoncredit Certificate of Completion\n"
+           "This certificate is for existing and potential entrepreneurs with a focus on makers.\nRequired Courses\n"
+           "Course List\nCode\tTitle\tUnits\nBI 0804\tRapid Prototyping for Product Design\t0\n"
+           "BUS 0841\tInnovation Concepts for Starting a Small Business\t0\nBUS 0842\tEntrepreneurship - Small Business Management\t0\n")
+nc_prog = {"control_number": "37810", "title": "Entrepreneurship for Makers", "award": "Noncredit program",
+           "closed_list": [{"code": c} for c in ("BI 804", "BUS 841", "BUS 842")]}
+nc_kind, nc_head, nc_fit = C.section_match(NC_TEXT, nc_prog, 0.0)
+check(nc_kind == "noncredit" and "entrepreneurship for makers" in (nc_head or "") and nc_fit > 0,
+      "a department page heads a noncredit program's section with its title then 'Noncredit Certificate of Completion': %r"
+      % ((nc_kind, nc_head, nc_fit),))
+check(C.section_match(NC_TEXT, dict(nc_prog, award="Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"), 0.0)[0] is None,
+      "a noncredit section is no certificate of achievement's")
 
 if failures:
     print("FAIL: %d" % len(failures))

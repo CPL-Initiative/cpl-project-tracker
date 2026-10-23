@@ -1687,8 +1687,13 @@ deg = S.degree_check(new["program"], (60.0, 60.0), 30.0, 30.0, [], HART_PHY, "A.
 check(new["program"]["ge_units"] == {"min": 23, "max": 23} and "#page=58" in notes[0]["words"] and deg["pass"]
       and deg["fill"] == [7.0, 7.0],
       "Hartnell Theater Arts A.A. reconciled: Local GE 23 (its seven areas), electives make up 7: %s" % json.dumps(deg))
+# S456: a Coursedog tab is one program's (the code-kind gate keeps a local degree off its transfer sibling's tab),
+# so a local degree whose own tab prints the Cal-GETC set takes 34 too (Sheet 117 card 3); one whose tab prints
+# no Cal-GETC set still takes none of it.
 check(RC.reconcile(hart, HART_PHY, "Hartnell College", "A.A. Degree")[0]["program"]["ge_units"]
-      == {"min": None, "max": None}, "Hartnell: a local degree never takes Cal-GETC's 34")
+      == {"min": 34, "max": 34}, "Hartnell: a local degree whose own tab prints Cal-GETC takes 34 (S456)")
+check(RC.reconcile(hart, HART_PHY.replace("Cal-GETC", "Local GE"), "Hartnell College", "A.A. Degree")[0]["program"]["ge_units"]
+      != {"min": 34, "max": 34}, "Hartnell: a local degree whose tab prints no Cal-GETC set never takes its 34")
 # San Joaquin Delta (S415): every degree page prints "Minimum Major Units Required: N", two GE patterns (27 and
 # Cal-GETC 34), advises double-counting, then "Minimum Degree Units Required: 60" (college-page-read 39122473643).
 SJD_DRAFT = ("Major Requirements - Restricted Electives \u00b7 Complete 3 units selected from: \u00b7 E TECH 80 Applied "

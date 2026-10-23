@@ -2,20 +2,72 @@
  "college": "Hartnell College",
  "programs": 112,
  "with_closed_list": 105,
- "found": 96,
- "extracted": 96,
+ "found": 94,
+ "extracted": 94,
  "errors": 0,
- "passed_machine_checks": 59,
+ "passed_machine_checks": 63,
  "failed": {
-  "coverage": 3,
+  "coverage": 1,
   "invented": 1,
-  "arithmetic": 37,
+  "arithmetic": 31,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 6.46,
+ "cost_usd": 6.33,
  "cost_per_program": 0.0673,
  "not_found": [
+  {
+   "control_number": "08872",
+   "title": "Computer Science and Information Systems-Network and Security",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.PCN/requirements-ipyf8",
+    "label": {
+     "award": 0,
+     "title": 0.833
+    },
+    "field": "innerText",
+    "coverage": 0.222,
+    "body": 0.222,
+    "content": 0.222,
+    "net": 2,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 2 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2051,
+     "content": 600051,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30621",
+   "title": "Construction - Sustainable Construction: Construction Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.CMA/requirements-ipyf8",
+    "label": {
+     "award": 0,
+     "title": 0.8
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 3,
+    "listed": 3,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3692,
+     "content": 614380,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
   {
    "control_number": "40742",
    "title": "High School Equivalency Preparation",
@@ -25,5 +77,5 @@
    }
   }
  ],
- "run": "39949570443"
+ "run": "39969050595"
 }

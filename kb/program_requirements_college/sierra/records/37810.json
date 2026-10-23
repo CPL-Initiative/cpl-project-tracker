@@ -1,0 +1,188 @@
+{
+ "college": "Sierra College",
+ "control_number": "37810",
+ "shape": "noncredit",
+ "title": "Entrepreneurship for Makers",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.sierracollege.edu/departments/business/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11580,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11580,
+    "output_tokens": 1315,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1315,
+  "output_tokens_details": {
+   "thinking_tokens": 410
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07262,
+ "ms": 12584,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 3 units, 54 hours, 16 units, 2\nHours"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Entrepreneurship for Makers",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate effectively in written and oral forms.",
+    "Demonstrate and develop critical and quantitative thinking skills and problem solving skills specific to business or transfer readiness (e.g., Accounting, Management, Marketing, Real Estate, Entrepreneurship, Computer Applications).",
+    "Identify and apply ethical principles and responsible citizenship behavior.",
+    "Demonstrate the effective use of technology to support business practices and engage in the workplace OR to support transfer readiness and preparation for a bachelor’s degree."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BI 0804",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 0841",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 0842",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 0861",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 0859",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Completion; the catalog prints 0 units beside each course and states no hours, so measure is recorded as units with the printed 0 values. Hours for the noncredit courses are not in the text.",
+   "No Total Units line is printed for this section (the course table ends without a total and the Courses tab follows), so total_units is null; reviewer may check whether a total or hours line was cut off.",
+   "Catalog prints 'BUS 0842 ... or BUS 0861 Customer Service Skills' with no units beside BUS 0861; recorded as an alternative with null units.",
+   "Catalog codes carry a leading zero (BI 0804, BUS 0841, etc.); matched to closed-list BI 804, BUS 841, BUS 842, BUS 859, BUS 861.",
+   "The Program Student Learning Outcomes are printed once on the Business department page's outcomes tab, not specifically under this award; recorded on the assumption the award shares this department-wide list.",
+   "The description names the audience ('existing and potential entrepreneurs', 'makers') but no careers or job titles, so careers is empty."
+  ]
+ },
+ "extracted_run": "39969391317"
+}

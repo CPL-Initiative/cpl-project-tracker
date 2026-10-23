@@ -500,9 +500,15 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
     if not courses:
         return []
     want = {P.norm_code(c.get("code") or "") for c in courses}
+    kind = P.award_kind(program.get("award"))
     out = []
     for pg in pages:
         if net_hits(courses, pg["codes"]) < P.ACCEPT_SHARE * len(want) * 0.8:   # the coarse net, with slack
+            continue
+        # A Coursedog tab whose program code names another award is no candidate: a local
+        # degree never reads its transfer sibling's tab, nor a certificate its degree's
+        # (cd_code_kind, S456). An award the codes cannot name ("other") reads as before.
+        if pg.get("code_kind") and kind != "other" and pg["code_kind"] != kind:
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
@@ -599,6 +605,11 @@ SECTION_AWARD = {
     "aa": re.compile(r"associate (?:in|of) arts(?! (?:degree )?for transfer)|\ba\.\s?a\.(?!\s?-\s?t)|"
                      r"^aa degree$|^(?:aa or as|as or aa)(?: degrees?)?$", re.I),
     "coa": re.compile(r"certificate of achievement", re.I),
+    # Sierra heads a noncredit program's section "Entrepreneurship for Makers" then "Noncredit
+    # Certificate of Completion" on its Business department page (page read 39964750956, S456);
+    # with no noncredit pattern the section went unread and page_winners() gave the page to the
+    # credit awards, so the four noncredit programs on department pages read no page.
+    "noncredit": re.compile(r"\bnoncredit\b|certificate of (?:completion|competency)", re.I),
 }
 SECTION_LINE = 140     # characters: a heading, not a paragraph that mentions the award
 # Foothill heads its degree section "Associate Degree Requirements", naming neither the award
@@ -1736,6 +1747,25 @@ def cd_award_words(name: str) -> str:
     return CD_AWARD_WORDS.get(m.group(1).replace("-", ""), "") if m else ""
 
 
+# A Coursedog program code names the award in its letters, a prefix on Hartnell's site
+# ("AST.BIO" the A.S.-T, "AS.EGN" the A.S., "CT.NVN" the certificate, "NCCT.BCL" the
+# noncredit program) and a suffix on Merced's ("05000.AA", "13012.CT"), the letters the
+# PDF's headings carry (PDF_CODE_AWARD). The site read (S451) filed Hartnell's Biology A.S.
+# 03537 from "Biology for Transfer Degree (AS-T) - AST.BIO", three local degrees more from
+# their transfer sibling's tab and two certificates from an A.S. tab: the tab's own words
+# name the transfer degree, and "associate in science for transfer" names an A.S. too
+# (label_score). The letters settle it, as pdf_code_match() does: a tab whose code names
+# another award is no candidate (S456).
+CD_CODE_KIND = re.compile(r"(?:^|[.\-])(AAT|AST|AA|AS|CT|NCCT|BS)(?:[.\-]|$)")
+
+
+def cd_code_kind(code: str | None) -> str | None:
+    """The award kind a Coursedog program code's letters name (PDF_CODE_AWARD), or
+    None when the catalog's codes carry none."""
+    m = CD_CODE_KIND.search((code or "").strip().upper())
+    return PDF_CODE_AWARD.get(m.group(1)) if m else None
+
+
 def cd_search_url(url: str, skip: int, limit: int) -> str:
     """The program search's address with its page moved; the rest as the page asked."""
     for key, val in (("skip", skip), ("limit", limit)):
@@ -1844,7 +1874,8 @@ def cd_page(got: dict, prog: dict) -> dict:
     words as its heading, since the page's title names only the code."""
     heading = " ".join(x for x in (prog["name"], cd_award_words(prog["name"])) if x)
     return {"url": got.get("final_url") or got.get("url"), "title": got.get("title"), "h1": heading,
-            "body": got.get("body"), "content": got.get("content"), "got": got, "codes": page_net(got)}
+            "body": got.get("body"), "content": got.get("content"), "got": got, "codes": page_net(got),
+            "code": prog.get("code"), "code_kind": cd_code_kind(prog.get("code"))}
 
 
 def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:

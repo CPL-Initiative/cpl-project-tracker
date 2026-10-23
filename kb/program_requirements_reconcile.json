@@ -446,7 +446,7 @@
    ]
   },
   "Hartnell College": {
-   "why": "S454 SkyBlazingStar, 2026-10-23. Of Hartnell's 96 records from its Coursedog site (extraction 39895340003, S451), 41 degrees fail arithmetic only because the record names the degree total and its general education pattern without units: 28 transfer degrees name Cal-GETC, 13 local degrees Local GE. Each Requirements tab prints \"General Education\", \"Complete ALL of the following Requirement Sets:\" and the pattern's name, and no units (college-page-read 39930495321, Administration of Justice AS-T). The 2026-2027 catalog PDF (read 39930823888, page 58) lists Cal-GETC's areas without a unit figure, so the step sets the statewide 34 as Taft's does, cited from Monterey Peninsula's GE page (read 38759288106). The tab's own scripts fetch the Cal-GETC requisite set from app.coursedog.com with each area's credits (1A, 1B, 1C 3 each; read 39930495321). Local GE: the catalog PDF (read 39931207783, pages 58-59) prints Hartnell College Local General Education area by area, \"Area 1: English Communication · 6 units required\", then Areas 2 to 6 \"3 units required\" each and \"Area 7: Lifelong Learning & Self-Development · 2 units required\", and no total. The step sets their sum, 23, a sum of the page's own figures as Monterey Peninsula's 24 is; S454 proceeded on it and put it on the standing sheet. S455 SkyMonkeyflower, 2026-10-23: about 22 records still list a required course without units, because the Requirements tab prints none (read 39924074351); the tab's own scripts POST courses/search to app.coursedog.com and each course carries credits.creditHours (read 39930495321), so the course_units step fills an empty course's units from that answer as the reader keeps it, citing the call.",
+   "why": "S454 SkyBlazingStar, 2026-10-23. Of Hartnell's 96 records from its Coursedog site (extraction 39895340003, S451), 41 degrees fail arithmetic only because the record names the degree total and its general education pattern without units: 28 transfer degrees name Cal-GETC, 13 local degrees Local GE. Each Requirements tab prints \"General Education\", \"Complete ALL of the following Requirement Sets:\" and the pattern's name, and no units (college-page-read 39930495321, Administration of Justice AS-T). The 2026-2027 catalog PDF (read 39930823888, page 58) lists Cal-GETC's areas without a unit figure, so the step sets the statewide 34 as Taft's does, cited from Monterey Peninsula's GE page (read 38759288106). The tab's own scripts fetch the Cal-GETC requisite set from app.coursedog.com with each area's credits (1A, 1B, 1C 3 each; read 39930495321). Local GE: the catalog PDF (read 39931207783, pages 58-59) prints Hartnell College Local General Education area by area, \"Area 1: English Communication · 6 units required\", then Areas 2 to 6 \"3 units required\" each and \"Area 7: Lifelong Learning & Self-Development · 2 units required\", and no total. The step sets their sum, 23, a sum of the page's own figures as Monterey Peninsula's 24 is; S454 proceeded on it and put it on the standing sheet. S455 SkyMonkeyflower, 2026-10-23: about 22 records still list a required course without units, because the Requirements tab prints none (read 39924074351); the tab's own scripts POST courses/search to app.coursedog.com and each course carries credits.creditHours (read 39930495321), so the course_units step fills an empty course's units from that answer as the reader keeps it, citing the call. S456 SkyYarrow, 2026-10-23: the Cal-GETC step runs for local degrees too (a second step, awards associate), because a Coursedog tab is one program's and the reader's code-kind gate keeps a local degree off its transfer sibling's tab; Engineering A.S. 33851 and Computer Science A.S. 08871 name Cal-GETC on their own tabs.",
    "steps": [
     {
      "kind": "set",
@@ -459,6 +459,19 @@
      "pattern": "Complete ALL of the following Requirement Sets?:\\s*(?:\\u2022\\s*)?Cal-GETC",
      "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
      "source_words": "Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "awards": "associate",
+     "pattern": "Complete ALL of the following Requirement Sets?:\\s*(?:\\u2022\\s*)?Cal-GETC",
+     "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+     "source_words": "Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)",
+     "why": "S456 SkyYarrow, 2026-10-23: three local degrees on their own tabs (Engineering A.S. 33851 AS.EGN, Computer Science and Information Systems-Computer Science A.S. 08871 AS.CISCS, Nursing-Registered Nursing A.S. 03570 AS.NRN names Local GE) name Cal-GETC as their pattern without units, and the transfer-only step left them failing arithmetic. The transfer restriction guards a local degree whose captured page spans the sibling transfer section; a Coursedog tab is one program's, and since S456 a tab whose code names another award is no candidate (cd_code_kind), so the figure reads for every associate degree whose own tab prints the pattern. Set where empty, so a transfer degree the first step filled is not touched."
     },
     {
      "kind": "set",
