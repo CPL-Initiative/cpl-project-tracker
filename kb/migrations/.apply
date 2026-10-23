@@ -1,2 +1,2 @@
-file=kb/receipts/cpl_funding_config_scenario4_2026-10-22_s449.sql
-name=cpl_funding_config_scenario4_2026_10_22_s449
+file=kb/supabase_cpl_comms.sql
+name=cpl_comms
