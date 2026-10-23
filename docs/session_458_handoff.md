@@ -51,7 +51,9 @@ At 16:46Z: *"keep rolling, merge the wave when test is green."* At 18:44Z he ans
    Read both runs' middle logs before any new display dispatch; if the second failed, read why before re-dispatching.
 1. **Card 1 is ruled standing: remove the six older-build rows** (Hartnell 18353, 19518, 12331; Long Beach City 43802,
    46290; Palo Verde 04436) with a before-values receipt by the S456 method (lessons S456), through supabase-migrate.
-   **Then read Sheet 119's `replies`** (`ArtifactData`, collection `replies`) for card 9: *narrow* means: on #2387 write the receipt's
+   **Then Sheet 120:** the vault builder holds it built and unpublished (samueltlee/CPLBrain#449; card 9 of 119 alone, at
+   position 1): publish it with `capabilities: {db: {}, comments: {}}`, record the link in `decision_sheets.md`, file the
+   Library record for 118 to 120, and read 119's `replies` (`ArtifactData`, collection `replies`) for card 9: *narrow* means: on #2387 write the receipt's
    `apply` to a `.sql` beside it, point `kb/migrations/.apply` at it, push, then merge #2387 on green and dispatch
    `step=display` on `main` after a display build on the branch; *wide* means widen the rule first (738 records);
    *exact* means close #2387 and revert the scorer change.
