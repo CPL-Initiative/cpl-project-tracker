@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/program_requirement_records_older_build_removed_2026-10-23_s456.sql",
+ "name": "program_requirement_records_older_build_removed_2026_10_23_s456",
+ "version": "20261023141932",
+ "sha256": "04a98facf44f2d57382d5180ee0f82cb9893cd4090515ce7f70fa5bdfcc38843",
+ "run": "39968114807",
+ "status": 201,
+ "response": "[{\"removed\":17}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
