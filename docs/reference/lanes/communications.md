@@ -127,7 +127,10 @@ versions). Its note names what he decides before it goes
   `api.anthropic.com` fallback are gone (`tests/report_session97.test.js` Part C). `annual_report.js`
   ported (S461, the fifth): the AI polish's system prompt (`aiPolishSystem()`: its role line, the facts
   rule, the return format) goes through `W.system`, the call through `W.draft`, and its naming-rule
-  copy, its pin and the direct fallback are gone. Next `raci.js` (the dated `claude-sonnet-4-5-20250929` pin), `credential_reference.js` (two small
+  copy, its pin and the direct fallback are gone. `raci.js` ported (S462, the sixth): the update composer's
+  polish composes `updateSystem()` through `W.system` and drafts through `W.draft`; its dated
+  `claude-sonnet-4-5-20250929` pin is gone, and it reads the writer at call time, so a page without it loses only
+  the polish (`tests/raci_writer.test.js`). Next `credential_reference.js` (two small
   calls) and `quickstart.js` (routing; Haiku stays its own call by design, through
   `draft(..., { model })`). Each port deletes the surface's own copy of the rules and its model
   pin; `tests/cpl_writer.test.js` (6) pins that `comms.js` names no model, and each port adds
