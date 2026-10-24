@@ -1137,8 +1137,8 @@
      "id": "module:quickstart.js",
      "kind": "module",
      "direction": "read",
-     "how": "global",
-     "line": 6,
+     "how": "seeded",
+     "line": 0,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -4101,7 +4101,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 64,
+     "line": 66,
      "pages": [
       "CPL_Dashboard.html"
      ]

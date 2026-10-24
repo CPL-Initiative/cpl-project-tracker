@@ -133,8 +133,10 @@ versions). Its note names what he decides before it goes
   the polish (`tests/raci_writer.test.js`). `credential_reference.js` ported (S462, the seventh): its two
   Suggest lookups draft through `lookupDraft()`, whose `W.system` keeps the spelling and naming words and omits the
   voice, the business and the funding words (a lookup answers with a name); its two `claude-sonnet-4-5` pins are gone
-  (`tests/cer_issuer_lookup.test.js`). Next `quickstart.js` (routing; Haiku stays its own call by design, through
-  `draft(..., { model })`). Each port deletes the surface's own copy of the rules and its model
+  (`tests/cer_issuer_lookup.test.js`). `quickstart.js` ported (S462, the eighth): the Where To? router composes
+  `routingSystem()` through `W.system` (spelling and naming words, its routing table) and drafts through `W.draft`
+  with its Haiku `ROUTING_MODEL` as the override, by design (`tests/quickstart_writer.test.js`). The named consumers
+  are all ported; a new drafting surface starts as a consumer. Each port deletes the surface's own copy of the rules and its model
   pin; `tests/cpl_writer.test.js` (6) pins that `comms.js` names no model, and each port adds
   its surface to that check.
 - The email goes out from Sam's mail client by mail merge (the CSV) or one college at a time
