@@ -4,9 +4,9 @@
   "supabase_tables": 101,
   "rpcs": 41,
   "edge_functions": 9,
-  "file_datasets": 712,
+  "file_datasets": 713,
   "external_services": 184,
-  "consumers": 471,
+  "consumers": 472,
   "workflows": 58,
   "data_js_files": 71,
   "tabs": 38
@@ -941,7 +941,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 49,
+     "line": 54,
      "tabs": [
       "letters"
      ]
@@ -1130,10 +1130,20 @@
      "id": "module:comms.js",
      "kind": "module",
      "direction": "read",
-     "how": "global",
-     "line": 471,
+     "how": "seeded",
+     "line": 0,
      "tabs": [
       "letters"
+     ]
+    },
+    {
+     "id": "module:cpl_writer.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "global",
+     "line": 137,
+     "pages": [
+      "CPL_Dashboard.html"
      ]
     },
     {
@@ -6177,6 +6187,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:cpl_writer.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:cr_progress.js": {
    "consumers": [
     {
@@ -6978,7 +7001,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 401,
+     "line": 392,
      "tabs": [
       "letters"
      ]
@@ -20918,7 +20941,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 48,
+     "line": 53,
      "tabs": [
       "letters"
      ]
@@ -22203,7 +22226,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 40,
+     "line": 45,
      "tabs": [
       "letters"
      ]
@@ -22473,7 +22496,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 41,
+     "line": 46,
      "tabs": [
       "letters"
      ]
@@ -23378,7 +23401,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 46,
+     "line": 51,
      "tabs": [
       "letters"
      ]
@@ -23770,7 +23793,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 47,
+     "line": 52,
      "tabs": [
       "letters"
      ]

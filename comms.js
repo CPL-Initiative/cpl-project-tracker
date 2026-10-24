@@ -31,6 +31,11 @@
 //
 // STATIC module, lazy-loaded on first #letters open (both HTMLs, Rule 4). It injects
 // its own CSS (the ensureCerScopeCss pattern) from tokens, never a raw hex.
+//
+// THE VOICE, THE WORDS, THE AUDIENCES, THE MODEL AND THE PROXY CALL COME FROM cpl_writer.js
+// (window.CPL_WRITER, static in both HTMLs; Sam's Sheet 118 ruling 5, 2026-10-23: one writer
+// module, this tab its first consumer). This file keeps only what is its own: the merge
+// fields, the facts rule and the return format. It names no model.
 (function () {
   "use strict";
 
@@ -51,35 +56,21 @@
   var TEAM_KEY = "cpl_team_pass";
   var AUTHOR_KEY = "cpl_library_author";   // the Library's remembered name, so a person types it once
   var ROOT_ID = "letters-root";
-  // One model for every draft this tab asks for, in one place (the API skill's default
-  // on 2026-10-23). The proxy forwards the request body as it is.
-  var MODEL = "claude-opus-5-5";
+  // The writer module (cpl_writer.js) holds the one model, the voice, the words and the
+  // proxy call for every surface; it is static in both HTMLs, so it is present before any
+  // tab loads. A page missing it is a Rule 4 fault the tests catch.
+  var W = window.CPL_WRITER;
+  if (!W) throw new Error("comms.js needs cpl_writer.js loaded first (window.CPL_WRITER)");
   var STAR_THRESHOLD = 0.75;
 
   var TYPE = { email: "Email", memo: "CO memo", team_note: "MAP Team note", report: "Report", flyer: "Flyer", letter: "Letter", other: "Other" };
   var TYPE_ORDER = ["email", "letter", "memo", "team_note", "report", "flyer", "other"];
   var STATUS = { draft: "Draft", final: "Final", tabled: "Tabled" };
   var STATUS_ORDER = ["draft", "final", "tabled"];
-  var AUDIENCE = {
-    ceos: "College CEOs", cios: "Chief instructional officers", cssos: "Chief student services officers",
-    cpl_leads: "CPL leads and coordinators", vrc: "Veterans Resource Centers", faculty: "Faculty and academic senates",
-    co: "Chancellor's Office", map_team: "MAP team", colleges: "Colleges, general", "public": "Public", other: "Other"
-  };
-  var AUDIENCE_ORDER = ["ceos", "cios", "cssos", "cpl_leads", "vrc", "faculty", "co", "map_team", "colleges", "public", "other"];
-  // What the model is told about each audience, in one line.
-  var AUDIENCE_GUIDE = {
-    ceos: "a college president or superintendent/president reading between meetings: one screen, the college's own figures where they help, the ask in the last paragraph and small",
-    cios: "a chief instructional officer: curriculum, faculty governance and the catalog are theirs; name what the Chancellor's Office asks and what stays the college's call",
-    cssos: "a chief student services officer: the student's path through admissions, records and counseling; name the office that acts",
-    cpl_leads: "the people who do the CPL work at a college: practical, specific, the next step named with the person who can help",
-    vrc: "Veterans Resource Center staff: the service member is the subject; the steps in MAP, the help on offer, no jargon",
-    faculty: "faculty and academic senate members: academic judgment stays theirs; credit recommendations, rigor and transfer",
-    co: "Chancellor's Office colleagues and the Vice Chancellor: the memo register, every claim anchored to a memo, statute or dashboard",
-    map_team: "the MAP team: short and plain, first names, what changed and who does what next",
-    colleges: "college staff in general: plain words, acronyms explained on first use",
-    "public": "the public: plain words, no acronyms without their expansion, nothing a reader must already know",
-    other: "a general reader: plain words, acronyms explained on first use"
-  };
+  // The audiences are the writer's, one list for every surface; this tab reads them into
+  // its label, order and guidance maps.
+  var AUDIENCE = {}, AUDIENCE_GUIDE = {};
+  var AUDIENCE_ORDER = W.AUDIENCES.map(function (a) { AUDIENCE[a.id] = a.label; AUDIENCE_GUIDE[a.id] = a.guide; return a.id; });
   // The roster roles a record can address. `name` and `email` are map_college_contacts
   // columns; `title` is the word a salutation uses when the name carries no honorific.
   var ROLES = {
@@ -421,29 +412,23 @@
     });
   }
 
-  // ── Claude's draft, through the report proxy ───────────────────────────────
-  var SYSTEM =
+  // ── Claude's draft, through the writer ───────────────────────────────────
+  // The system prompt: this tab's role line, then the writer's shared rules (the house
+  // voice; the words: American spelling, the naming rule, the banned business words, the
+  // funding vocabulary), then this tab's own facts rule and return format.
+  var ROLE =
     "You draft communications for the CPL Initiative of the California Community Colleges Chancellor's Office, " +
     "written by the MAP team at Riverside Community College District on the Chancellor's Office's behalf. A member of " +
-    "the team reads your draft, edits it, and decides whether to send it; nothing you write is sent by itself.\n\n" +
-    "Voice, the Chancellor's Office house voice: plain language, active voice, and name the actor. State each point " +
-    "positively, as a declaration. Concede the reader's position before you argue, and preserve the reader's authority " +
-    "by saying what is theirs to decide. Keep the student as the subject of the problem. Anchor each claim to a named " +
-    "instrument, a memo number, a statute or a dashboard, rather than asserting it. Vary sentence length and let a " +
-    "short declarative land after a long qualified one. Put the ask last, and make it small. No bold, bullets, " +
-    "headings or emoji in the body of an email, a letter or a memo; a report may use headings.\n\n" +
-    "Words: American spelling. The program is the \"CPL Initiative\" of the California Community Colleges Chancellor's " +
-    "Office; the platform is the \"MAP platform\", long form \"Mapping Articulated Pathways (MAP) platform\"; never " +
-    "\"MAP Initiative\", and \"Military Articulation Platform\" only when recounting the 2017 launch. Never use leverage, " +
-    "utilize, robust, deep dive, synergy, operationalize or impactful. Funding words: say funding, never money; the " +
-    "Chancellor's Office allocates funding and a college expends it; a college qualifies for its award and a measure " +
-    "counts toward it; never say a college earns, draws or has unspent funding, and never suggest an advance.\n\n" +
+    "the team reads your draft, edits it, and decides whether to send it; nothing you write is sent by itself.";
+  var FACTS =
     "Facts: use only the facts in the brief and the merge fields listed. Invent no figure, date, name or title. Where a " +
     "value belongs to one college or one person, write the merge field in braces exactly as listed, for example " +
-    "{college} or {salutation}, rather than a literal, so the tab fills it for each recipient.\n\n" +
+    "{college} or {salutation}, rather than a literal, so the tab fills it for each recipient.";
+  var FORMAT =
     "Return only the communication. For an email or a letter, the first line is \"Subject: \" followed by the subject " +
     "line, then a blank line, then the body, ending with the signature block as {sender}. For a memo, begin with the " +
     "TO, FROM, DATE and RE lines. For a MAP Team note, a flyer or a report, begin with the title on its own line.";
+  var SYSTEM = W.system({ role: ROLE, extra: [FACTS, FORMAT] });
   function draftPrompt(rec) {
     var rows = recipients(rec);
     var sample = rows.length ? rows[0] : null;
@@ -468,25 +453,12 @@
       "\n\n" + body;
   }
   function draft(rec) {
-    var url = window.CPL_REPORT_PROXY_URL || "";
-    if (!url) { say("The drafting proxy is not configured on this page.", true); render(); return; }
+    if (!W.proxyUrl()) { say(W.NO_PROXY, true); render(); return; }
     state.drafting = true; state.draft = null; render();
-    window.fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({ model: MODEL, max_tokens: 4000, output_config: { effort: "high" }, system: SYSTEM,
-        messages: [{ role: "user", content: draftPrompt(rec) }] })
-    }).then(function (res) {
-      return res.json().then(function (j) {
-        if (!res.ok) throw new Error((j && j.error && j.error.message) || ("the proxy answered " + res.status));
-        return j;
-      });
-    }).then(function (j) {
-      var text = ((j && j.content) || []).filter(function (b) { return b.type === "text"; }).map(function (b) { return b.text; }).join("\n").trim();
-      if (!text) throw new Error(j && j.stop_reason === "refusal" ? "the model declined this request" : "the model returned no text");
-      var subject = null, m = /^Subject:\s*(.+)\n+/.exec(text);
+    W.draft(draftPrompt(rec), { system: SYSTEM, maxTokens: 4000, effort: "high" }).then(function (r) {
+      var text = r.text, subject = null, m = /^Subject:\s*(.+)\n+/.exec(text);
       if (m) { subject = m[1].trim(); text = text.slice(m[0].length); }
-      state.draft = { subject: subject, body: text, model: j.model || MODEL, when: new Date().toISOString() };
+      state.draft = { subject: subject, body: text, model: r.model, when: new Date().toISOString() };
       state.drafting = false; render();
     }).catch(function (e) {
       state.drafting = false;
@@ -979,6 +951,6 @@
   window.CPL_COMMS = {
     activate: activate,
     _salutation: salutation, _merge: merge, _mailto: mailto, _csv: csvFor, _pct: pct, _slug: slugFor,
-    _recipients: recipients, _fields: fieldsFor, _state: state, _prompt: draftPrompt, _system: SYSTEM, _model: MODEL
+    _recipients: recipients, _fields: fieldsFor, _state: state, _prompt: draftPrompt, _system: SYSTEM, _model: W.MODEL, _writer: W
   };
 })();

@@ -14,8 +14,9 @@
 //   - every write carries the team phrase, names who made it, and never deletes;
 //   - a record holds roles, never addresses; Post to the Library writes a document
 //     record linking back here and stores its id;
-//   - Claude's draft goes through the proxy under the house voice and stays beside
-//     the body until used; the model is named once;
+//   - Claude's draft goes through the writer module (cpl_writer.js: the house voice, the
+//     words, the one model, the proxy call) and stays beside the body until used; this
+//     file names no model;
 //   - tokens (no raw hex), words (no glyphs), American spelling, Rule 4;
 //   - a private window (localStorage throws) still renders.
 //
@@ -36,6 +37,7 @@ function block(label, fn) {
 }
 
 const SRC = fs.readFileSync("comms.js", "utf8");
+const WRITER = fs.readFileSync("cpl_writer.js", "utf8");   // static in both HTMLs, loaded before any tab
 const DASH = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const INDEX = fs.readFileSync("index.html", "utf8");
 const NAV = fs.readFileSync("nav_groups.js", "utf8");
@@ -114,6 +116,9 @@ function loadModule(opts) {
   }
   if (opts.proxy) w.CPL_REPORT_PROXY_URL = opts.proxy;
   w.cplCollegeShort = function (n) { return n.replace(/ (Community )?College$/, ""); };
+  const sw = w.document.createElement("script");   // the writer first, as the page loads it
+  sw.textContent = WRITER;
+  w.document.body.appendChild(sw);
   const s = w.document.createElement("script");
   s.textContent = SRC;
   w.document.body.appendChild(s);
@@ -331,7 +336,8 @@ block("(9)", function () {
     check("(9) the draft stays beside the body until used", !!m.root.querySelector("#cm-draft") && m.w.document.getElementById("ce-body").value.indexOf("The body.") < 0);
     click(m.w, m.root.querySelector("[data-usedraft]"));
     check("(9) Use this draft fills the body and the subject", m.w.document.getElementById("ce-body").value.indexOf("The body.") >= 0 && m.w.document.getElementById("ce-subject").value === "{college} and the JST upload");
-    check("(9) the model is named once in the source", (SRC.match(/claude-[a-z0-9-]+/g) || []).length === 1, (SRC.match(/claude-[a-z0-9-]+/g) || []).join());
+    check("(9) this file names no model; the writer names the one model once", (SRC.match(/claude-[a-z0-9-]+/g) || []).length === 0 && (WRITER.match(/claude-[a-z0-9-]+/g) || []).length === 1, (SRC.match(/claude-[a-z0-9-]+/g) || []).concat(WRITER.match(/claude-[a-z0-9-]+/g) || []).join());
+    check("(9) the draft goes through the writer, never a fetch of its own to the proxy", /W\.draft\(/.test(SRC) && !/CPL_REPORT_PROXY_URL/.test(SRC) && !/anthropic-version/.test(SRC));
   });
 });
 

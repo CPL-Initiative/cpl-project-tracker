@@ -1,7 +1,7 @@
 ---
 title: "Letters, Memos & Reports / the communications register — lane state"
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 tags: [reference, roadmap-lane, communications, letters, library]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -47,12 +47,19 @@ Preview (the merged text), Copy, and *Open in mail* (a `mailto:` with To, Cc, su
 body). Per record: a CSV of every recipient for a mail merge, and a Word file of the body.
 **COBI sends nothing**; a human presses send.
 
-**Claude drafts through the report proxy** (`window.CPL_REPORT_PROXY_URL`, model
-`claude-opus-5-5`, effort high, one constant in the module) under a system prompt that
-carries the house voice, the naming rule, American spelling, the banned business words
-and the funding vocabulary, with the audience's one-line guidance and the merge-field
-vocabulary; it is told to write the fields in braces, never a literal, and no address reaches
-it. The draft sits beside the body until *Use this draft*; nothing is sent.
+**Claude drafts through the writer module** (S460, 2026-10-24, Sam's Sheet 118 ruling 5):
+`cpl_writer.js` (`window.CPL_WRITER`, static in both HTMLs before `report_generator.js`) holds
+each shared rule once as a named part (`NAMING_RULE`, `HOUSE_VOICE`, `SPELLING`,
+`BUSINESS_WORDS`, `FUNDING_WORDS`, the eleven `AUDIENCES` with one line of guidance each),
+the one `MODEL` (`claude-opus-5-5`, an unversioned alias, named nowhere else) and the one
+proxy call, `draft(prompt, opts)` over `window.CPL_REPORT_PROXY_URL`, which resolves the text
+and the served model or rejects with a sentence a tab can show. `system({ role, extra, omit })`
+composes a consumer's system prompt: its role line, the voice, one Words paragraph, then its
+own paragraphs. This tab is the first consumer: it keeps its role line, its facts rule, its
+return format and the merge-field vocabulary, reads its audience maps from the writer's list,
+and names no model. The model is told to write the fields in braces, never a literal, and no
+address reaches it. The draft sits beside the body until *Use this draft*; nothing is sent.
+Tests `tests/cpl_writer.test.js` (38) and `tests/comms.test.js` (79).
 
 **Post to the Library** writes a `cpl_library` row (kind document, home web, the link
 `#letters/<slug>`, seen_by from the audience) and stores its id on the record; a second
@@ -106,13 +113,15 @@ versions). Its note names what he decides before it goes
 
 ## Next
 
-- **The writer module (ruling 5), the next build.** Extract this tab's `SYSTEM` into
-  `cpl_writer.js` as named parts (`NAMING_RULE`, `HOUSE_VOICE`, `FUNDING_WORDS`, `AUDIENCES`,
-  `MODEL`, `draft(prompt, opts)` over `window.CPL_REPORT_PROXY_URL`), make `comms.js` its first
-  consumer in the same PR with `tests/cpl_writer.test.js` pinning the rules' presence, then
-  port `activity_summaries.js` and `report_generator.js` one PR each and retire the two older
-  model pins (`claude-sonnet-4-5`, `claude-sonnet-4-5-20250929` in `raci.js`). Not started
-  by the side session: its context ran to the warn line after the register shipped.
+- **The writer's next consumers (ruling 5), one PR each:** `activity_summaries.js` and
+  `report_generator.js` first (each carries its own copy of the naming rule and a
+  `claude-sonnet-4-5` pin; the report generator's six audiences with their report prompts join
+  the writer's list at its port), then `college_report_generator.js`, `annual_report.js`,
+  `raci.js` (the dated `claude-sonnet-4-5-20250929` pin), `credential_reference.js` (two small
+  calls) and `quickstart.js` (routing; Haiku stays its own call by design, through
+  `draft(..., { model })`). Each port deletes the surface's own copy of the rules and its model
+  pin; `tests/cpl_writer.test.js` (6) pins that `comms.js` names no model, and each port adds
+  its surface to that check.
 - The email goes out from Sam's mail client by mail merge (the CSV) or one college at a time
   (the mail link); the record then takes `sent_on` and status final. Forty-five colleges have
   no CEO address in MAP; those need a directory MAP does not hold before they get the email.
