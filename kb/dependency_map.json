@@ -385,16 +385,6 @@
      "line": 440
     },
     {
-     "id": "module:annual_report.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "url",
-     "line": 301,
-     "tabs": [
-      "annual-report"
-     ]
-    },
-    {
      "id": "module:college_report_generator.js",
      "kind": "module",
      "direction": "read",
@@ -1100,8 +1090,8 @@
      "id": "module:annual_report.js",
      "kind": "module",
      "direction": "read",
-     "how": "global",
-     "line": 31,
+     "how": "seeded",
+     "line": 0,
      "tabs": [
       "annual-report"
      ]
@@ -6960,7 +6950,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 335,
+     "line": 334,
      "tabs": [
       "annual-report"
      ]
@@ -22981,7 +22971,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 83,
+     "line": 86,
      "tabs": [
       "annual-report"
      ]

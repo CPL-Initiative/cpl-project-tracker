@@ -35,8 +35,8 @@ check("dashboard_filters no longer injects the bar-level Attach Doc button",
   dfSrc.indexOf("attachDocBtn'") === -1 && dfSrc.indexOf('&#128206; Attach Doc') === -1);
 check("college report prompt carries the naming hard constraint",
   /Mapping Articulated Pathways \(MAP\) platform/.test(fs.readFileSync("college_report_generator.js", "utf8")));
-check("annual report polish prompt carries the naming rule",
-  /Mapping Articulated Pathways \(MAP\) platform/.test(fs.readFileSync("annual_report.js", "utf8")));
+check("annual report polish composes its system prompt through the writer, which carries the naming rule",
+  /W\.system\(/.test(fs.readFileSync("annual_report.js", "utf8")) && /Mapping Articulated Pathways \(MAP\)/.test(writerSrc));
 check("master_report docx footer says CPL Initiative (not MAP Initiative)",
   fs.readFileSync("master_report.js", "utf8").indexOf("|  CPL Initiative") >= 0);
 check("generate_reports docx footer says CPL Initiative (not MAP Initiative)",
