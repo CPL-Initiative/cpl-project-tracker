@@ -29,7 +29,7 @@ one writer per file with any session still working. Sam's routine fires next at 
   prompt through `W.system`, the draft goes through `W.draft` (700 tokens), the posted row's `raw.model` names the served model.
 - **The third consumer (`report_generator.js`), #2402:** `REPORT_AUDIENCES` join the writer, `buildSystem()` composes its
   system prompt, the narrative goes through `W.draft` at the altitude band's tokens, the `api.anthropic.com` fallback is gone.
-  Open with `test` running at this checkpoint; any session merges it on green (the standing authorization).
+  Merged (b80caced) before sign-off.
 - **Open Asks Sheet 122** (https://claude.ai/artifact/PKRBW9ucqKtikxhRtevHrj, current): one card, whether the ELL IET CPL
   Starting Points page lists publicly and goes to the eight projects. Vault CPLBrain#453 merged; the tracker side (the
   library lane's NEEDS SAM 1, the §11 pointer, the Library series record's receipt to version 122, applied by run
@@ -64,5 +64,5 @@ None; he wrote nothing after the greeting. Sheet 122's card waits for him.
 
 ## Let go
 
-At sign-off this session drops its watches on #2400 and #2402 (#2399 and #2401 merged), its check-in
+At sign-off this session drops its watch on #2400 (#2399, #2401 and #2402 merged), its check-in
 `trig_012MDuW9Hr3w44RhBJX3Nkou`, and the artifact watch on Sheet 122, naming each here.
