@@ -56,6 +56,36 @@ Open Asks Sheet 123, answered at 13:17Z, both his own call (`replies/done` throu
 No card is open; the builder writes no sheet. The memory correction the connector's prompt held went through a
 migrate receipt instead (`kb/receipts/cpl_memory_film_row_2026-10-24_s466.sql`).
 
+## Sam's asks for the next funding session (2026-10-24 ~13:38Z, his words)
+
+Sent with a screenshot of the tab's Noncredit outcomes section; verbatim in the vault braindump
+`03-professional/braindumps/braindump-2026-10-24-1338-noncredit-cards-and-map-cpl-roles.md` and `cpl_memory`
+`sam-nc-cards-cabrillo-map-roles-2026-10-24`.
+
+1. *"I need to be able to edit the new NC priority boxes."* Today a signed-in curator can edit an NC card's title,
+   description, share, metric and strategies (`nc-*` edits, `setNcOutcome`). The target rule (floor, percent, cap),
+   the goal keys and the measure cannot be edited. Check on the tab as a signed-in curator first: his screenshot shows
+   no edit fields at all, which may mean the page was not unlocked. Then add what the credit cards offer and the NC
+   cards lack.
+2. *"use Cabrillo College as a use case to see if you might be able to measure their data against the metrics we need
+   to count. Hoping we can find a metric that can be counted rather than attested."* The S449 read of 2026-10-22
+   (`funding/nc_outcome_feasibility/2026-10-22/`): 166 CDCP noncredit courses (target 9 exhibits), 79 exhibits (46
+   credit by exam, 26 industry certification), 51 CDCP titles mirroring a credit course, 33 exhibits whose sample
+   credit course mirrors a noncredit one. Measure each of NC-1's four channels and NC-2 against Cabrillo's records. This
+   is the dry run of the builder, so it can proceed before the attestation surface; publishing stays held.
+3. *"Assume we will add a new role 'Noncredit CPL Lead' to MAP roles later."* Name the coordinator condition's
+   source so a MAP role can replace COBI's record one for one (his Sheet 113 card 5 ruling: COBI takes it until MAP
+   carries the role).
+4. *"I expect we'll add MAP User roles for 'CPL Coordinator' and 'NC CPL Lead'. Advice welcome!"* The disconnect: the
+   qualifying condition counts a CPL Coordinator on the landing page, while MAP's roles come from its business
+   procedures and have no CPL Coordinator, and Ambassador doubles as an access level. The advice given in session:
+   make both roles designations a MAP user holds at any access level, one active per college (and per noncredit
+   program for the NC CPL Lead), with who assigned it and when; carry them in the MAP Users report so the daily pull
+   can check the landing page contact against the designated coordinator; send Pedro and the CSM team one request for
+   both, with each role defined in the MAP business procedures. Before drafting that request, find who sets MAP's
+   `cpl_coordinator_email` (the college profile already carries it, first in the landing page's contact cascade, per
+   the map-users-student-contact lane): the new role may only need to feed that field. Record his call in that lane.
+
 ## Open work, in order
 
 1. **The UI pass:** if `date -u` reads 10-25 and the ledger has no pass dated today, take the view
