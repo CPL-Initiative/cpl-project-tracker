@@ -552,24 +552,28 @@
     if (c.desc) lines.push(c.desc);
     return lines.join("\n");
   }
-  function callClaudeUpdate(braindump, name) {
-    var url = window.CPL_REPORT_PROXY_URL || "";
-    if (!url) return Promise.reject(new Error("AI proxy not configured"));
-    var prompt = "Rewrite this brain-dump into a concise, professional status update "
-      + "(1–3 sentences) for the CPL workplan item \"" + name + "\". Keep it factual — do "
-      + "NOT invent specifics, numbers, or names not present. Return ONLY the update text.\n\n"
-      + "Brain-dump:\n" + braindump;
-    return fetch(url, {
-      method: "POST", headers: { "Content-Type": "application/json", "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({ model: "claude-sonnet-4-5-20250929", max_tokens: 1024,
-        messages: [{ role: "user", content: prompt }] })
-    }).then(function (r) {
-      if (!r.ok) return r.text().then(function (t) { throw new Error("AI error (" + r.status + "): " + t.substring(0, 140)); });
-      return r.json();
-    }).then(function (j) {
-      if (j.content && j.content[0] && j.content[0].text) return j.content[0].text.trim();
-      throw new Error("Unexpected AI response");
+  // The polish drafts through the one writer module (cpl_writer.js, window.CPL_WRITER, static
+  // in both HTMLs before this lazy file): the voice, the words, the naming rule, the one model
+  // and the proxy call (Sam's Sheet 118 ruling 5). This file names no model and keeps no copy
+  // of the rules. Read at call time, so a page without the writer only loses the polish.
+  function writer() { return window.CPL_WRITER || null; }
+  function polishReady() { var W = writer(); return !!(W && W.proxyUrl()); }
+  function updateSystem() {
+    var W = writer();
+    return W.system({
+      role: "You rewrite a team member's brain-dump into a status update on one CPL Initiative "
+        + "workplan item. The MAP team reads it on the item's card and in its reports.",
+      extra: [
+        "Facts: use only what the brain-dump says. Do not invent specifics, numbers or names.",
+        "Return only the update: one to three sentences."
+      ]
     });
+  }
+  function callClaudeUpdate(braindump, name) {
+    var W = writer();
+    if (!W) return Promise.reject(new Error("The writer module is not loaded on this page."));
+    var prompt = "The workplan item: \"" + name + "\".\n\nBrain-dump:\n" + braindump;
+    return W.draft(prompt, { system: updateSystem(), maxTokens: 1024 }).then(function (r) { return r.text; });
   }
   function postUpdate(item, body, raw) {
     var row = { item_type: item.type, item_id: item.id, body: body, raw: raw || null,
@@ -685,8 +689,8 @@
       var ta = el("textarea", { "class": "raci-in raci-upd-ta", rows: "4",
         placeholder: "Brain-dump a few details — bullets, fragments, whatever. CC will write it up." }, []);
       var msg = el("div", { "class": "raci-modal-msg" }, []);
-      var polish = el("button", { "class": "raci-btn", title: window.CPL_REPORT_PROXY_URL ? "Let CC turn your brain-dump into a clean update" : "AI proxy not configured" }, ["Let CC write it up"]);
-      if (!window.CPL_REPORT_PROXY_URL) polish.disabled = true;
+      var polish = el("button", { "class": "raci-btn", title: polishReady() ? "Let CC turn your brain-dump into a clean update" : "The drafting proxy is not configured on this page." }, ["Let CC write it up"]);
+      if (!polishReady()) polish.disabled = true;
       var save = el("button", { "class": "raci-btn raci-btn-go" }, ["Save update"]);
       polish.addEventListener("click", function () {
         var raw = ta.value.trim();
@@ -695,7 +699,7 @@
         callClaudeUpdate(raw, c.name).then(function (txt) {
           ta.value = txt; msg.textContent = "Polished — edit if needed, then Save.";
         }).catch(function (e) { msg.textContent = e.message; })
-          .then(function () { polish.disabled = !window.CPL_REPORT_PROXY_URL ? true : false; });
+          .then(function () { polish.disabled = !polishReady(); });
       });
       save.addEventListener("click", function () {
         var text = ta.value.trim();
@@ -1609,6 +1613,7 @@
     _nudgeHref: buildNudgeHref, _openUpdate: openUpdate, _itemSummary: itemSummaryText,
     _itemNudgeHref: buildItemNudgeHref, _openItemNudge: openItemNudge, _consume: consumePendingFocus,
     _headersFor: headersFor, _teamSession: teamSession,
+    _polish: callClaudeUpdate, _updateSystem: updateSystem, _polishReady: polishReady,
     _buildItems: buildItems, _setTabled: function (m) { state.tabled = m || {}; },
     _itemByKey: function (k) { return state.items.filter(function (x) { return x.key === k; })[0] || null; } };
 })();

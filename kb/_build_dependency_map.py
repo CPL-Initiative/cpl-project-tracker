@@ -256,6 +256,12 @@ SEEDS = [
         "datasets": [("external:cpl-proxy.slee-548.workers.dev", "read")],
         "why": "the polish goes through cpl_writer.js draft() over window.CPL_REPORT_PROXY_URL",
     },
+    {   # raci.js (S462): the update composer's polish goes through cpl_writer.js's draft() too.
+        "file": "raci.js",
+        "anchor": r'W\.draft\(prompt, \{ system: updateSystem\(\)',
+        "datasets": [("external:cpl-proxy.slee-548.workers.dev", "read")],
+        "why": "the update polish goes through cpl_writer.js draft() over window.CPL_REPORT_PROXY_URL",
+    },
     {   # Sierra's pgvector retrieval tables: named only in docs; DDL applied live
         "file": "chatbox/supabase/functions/cpl-chat/index.ts",
         "anchor": r'match_document_sections',
