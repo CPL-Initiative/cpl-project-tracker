@@ -150,7 +150,7 @@ CONFIG = {
         'linkLabel': 'How CPL funding works',
         'kick': 'An introduction for colleges',
         'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges.',
-        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v8.mp4',
+        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v9.mp4',
         'explainer': BASE,
         'prioName': 'Two priorities',
         'prioHead': 'Two priorities carry the funding',

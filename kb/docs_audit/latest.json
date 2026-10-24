@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1255,
-    "bytes": 12852954,
+    "files": 1256,
+    "bytes": 12859035,
     "over_budget": 8,
-    "handoff_max": 466,
+    "handoff_max": 467,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59926,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 125,
-        "bytes": 3940133,
+        "bytes": 3941997,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10109,
+        "bytes": 8441,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2363203,
+        "bytes": 2364839,
         "over": 2
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 448179,
+        "bytes": 448148,
         "over": 3
       },
       "handoff": {
-        "files": 436,
-        "bytes": 3253922,
+        "files": 437,
+        "bytes": 3258202,
         "over": 0
       }
     },
@@ -59,13 +59,13 @@
       "oversized_doc": 8,
       "kb_note_dialect": 1,
       "house_voice": 1,
-      "vault_heavy_path": 64
+      "vault_heavy_path": 65
     },
     "vault": {
-      "files": 24679,
-      "bytes": 3662805356,
-      "heavy_bytes": 2543072939,
-      "heavy_share": 0.694,
+      "files": 25233,
+      "bytes": 3671865924,
+      "heavy_bytes": 2545968510,
+      "heavy_share": 0.693,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -94,7 +94,7 @@
         "cpl-project-tracker/statewide_data.js",
         "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
         "cpl-project-tracker/kb/row_audit/latest.json",
-        "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v8.mp4",
+        "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v9.mp4",
         "cpl-project-tracker/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
         "cpl-project-tracker/unified_courses_data.js",
         "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
@@ -119,6 +119,7 @@
         "cpl-project-tracker/regional_cpl_opportunity_bay.js",
         "cpl-project-tracker/credential_reference_data.js",
         "cpl-project-tracker/regional_cpl_opportunity_la.js",
+        "cpl-project-tracker/prototype/funding_video/.fonts/fontsource-source-sans-3-5.3.0.tgz",
         "cpl-project-tracker/coci_lookup_desc_B.js",
         "cpl-project-tracker/coci_lookup_desc_H.js",
         "cpl-project-tracker/coci_lookup_desc_D.js",
@@ -241,13 +242,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 743635,
+        "bytes": 745499,
         "limit": 150000,
         "lane": "other",
-        "over_by": 593635,
-        "ratio": 4.96
+        "over_by": 595499,
+        "ratio": 4.97
       },
-      "message": "743,635 B is 5.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "745,499 B is 5.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -535,12 +536,12 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v8.mp4",
+      "path": "prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v9.mp4",
       "detail": {
-        "bytes": 10445702,
+        "bytes": 10417988,
         "kind": "file"
       },
-      "message": "10,445,702 B single file inside the vault"
+      "message": "10,417,988 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -781,6 +782,16 @@
         "kind": "file"
       },
       "message": "3,039,468 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/funding_video/.fonts/fontsource-source-sans-3-5.3.0.tgz",
+      "detail": {
+        "bytes": 2923285,
+        "kind": "file"
+      },
+      "message": "2,923,285 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

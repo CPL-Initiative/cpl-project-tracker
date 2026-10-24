@@ -134,7 +134,7 @@ function boot(file, reduced) {
 }
 
 [["funding_in_motion.html", "20260926_CPL_Funding_in_Motion_v4.mp4", ""],
- ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v8.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
+ ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v9.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
   const raw = fs.readFileSync(path.join(DIR, file), "utf8");
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   check(tag + "b2 " + file + " carries the current source (the barrier layer)", raw.includes("var ENC=") && raw.includes("Play the introduction"));
@@ -287,7 +287,7 @@ NARRATED.forEach(({ tag, v, s }) => {
   // Each introduction dates its minimum conditions from its scenario's
   // participationDeadline (Scenario 1: 2026-12-01); the narrated drafts keep
   // the date their voice reads.
-  [["funding_in_motion.html", "", "December 1, 2026"], ["funding_in_motion_s2.html", "s2 ", "December 30, 2026"],
+  [["funding_in_motion.html", "", "December 1, 2026"], ["funding_in_motion_s2.html", "s2 ", "December 31, 2026"],
    ["funding_in_motion_n1.html", "n1 ", "November 1, 2026"], ["funding_in_motion_n2.html", "n2 ", "December 30, 2026"]].forEach(([file, tag, by]) => {
     const w = boot(file, false), d = w.document;
     // every scene's text, its chapter and what the page announces, second by second of the film
@@ -349,7 +349,9 @@ NARRATED.forEach(({ tag, v, s }) => {
   // The narrated cut keeps the frames its voice was read on (34.5 FTES); the
   // introduction moved to the published Scenario 3's figures on 2026-10-20
   // (S439), so only the parts no figure drives still match until a new read.
-  const PICTURE = ["split", "timing", "deadline", "close", "explainer", "kick", "titleText"];
+  // The deadline left the list with Scenario 4 (S466): the introduction reads
+  // December 31, 2026, set on the tab; the narrated cut keeps December 30.
+  const PICTURE = ["split", "timing", "close", "explainer", "kick", "titleText"];
   check("k5 the n2 picture shares the introduction's dates, closing and address, and keeps its voiced figures",
     PICTURE.every((k) => JSON.stringify(cfg[k]) === JSON.stringify(intro[k])) && cfg.how && cfg.target.ftesWords === "34.5");
   // Sierra by name, on the video (Sam, 2026-10-02): beneath the lockup as she says it, and in the closing credit
@@ -380,7 +382,7 @@ NARRATED.forEach(({ tag, v, s }) => {
   const cfgOf = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
   const stageAt = (w, t) => { w.__film.seek(t); return w.document.getElementById("stage").textContent.replace(/\s+/g, " "); };
   [["funding_in_motion.html", "", "Access", "$8,329,302", "2,948.6", "Dec 2026"],
-   ["funding_in_motion_s2.html", "s2 ", "Access", "$12,620,154", "4,268.6", "Dec 2026"]].forEach(([file, tag, first, funding, target, conf]) => {
+   ["funding_in_motion_s2.html", "s2 ", "Access", "$10,727,131", "3,598.2", "Dec 2026"]].forEach(([file, tag, first, funding, target, conf]) => {
     const raw = fs.readFileSync(path.join(DIR, file), "utf8"), cfg = cfgOf(file), w = boot(file, false);
     const how = stageAt(w, 54.5);
     check(tag + "m1 the targets slide divides the statewide funding by the FTES reimbursement rate, and never says price (Sam, 2026-10-02)",
