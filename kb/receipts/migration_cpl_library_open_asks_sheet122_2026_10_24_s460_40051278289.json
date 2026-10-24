@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_open_asks_sheet122_2026-10-24_s460.sql",
+ "name": "cpl_library_open_asks_sheet122_2026_10_24_s460",
+ "version": "20261024014955",
+ "sha256": "162833d4e9a8ab366893b3cea3a6ddba092b3ae7dbb590b16791cc0a42cbb9e2",
+ "run": "40051278289",
+ "status": 201,
+ "response": "[{\"version\":\"122\",\"extent\":\"1 card (sheet 122)\",\"updated_by\":\"S460 SkyFremontia\",\"n_versions\":41}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
