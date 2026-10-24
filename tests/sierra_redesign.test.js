@@ -281,6 +281,9 @@ function ask(w, text) {
       lib("title") && own("title") === lib("title") && own("gold") === lib("gold") && own("ink") === lib("ink") &&
       own("cobalt") === lib("link") && own("field") === lib("field") && own("heading") === lib("heading"),
       "library: title " + lib("title") + ", gold " + lib("gold") + "; sierra: " + own("title") + ", " + own("gold"));
+    check("(7) her landing takes the library's fade (\"Fades white to pale blue looks good too\"), never the conversation or the bar",
+      /:root:not\(\[data-panel\]\) body\[data-view="arriving"\] \{\s*background-image: linear-gradient\(180deg, var\(--sierra-paper\) 0, var\(--sierra-fade-mid\) 38rem, var\(--sierra-fade-end\) 100%\);/.test(CSS) &&
+      own("fade-mid") === lib("page") && own("fade-end") === lib("page-end"));
     check("(7) her headings are Georgia, as the library's are",
       /--sierra-display:\s*Georgia/.test(CSS) && /--serif:\s*Georgia/.test(LIB));
     check("(7) the page loads no web font and no file from a third party",

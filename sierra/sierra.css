@@ -51,6 +51,8 @@
   --sierra-ghost: #072C66;
   --sierra-foot-bg: #082B61;      /* the library's navy band */
   --sierra-foot-fg: #DCE9F7;      /* 11.6:1 on the band */
+  --sierra-fade-mid: #F5FAFF;     /* the library's fade: white, then its page, then its page end */
+  --sierra-fade-end: #EEF6FB;
   --sierra-display: Georgia, 'Times New Roman', serif;
   --sierra-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
@@ -66,6 +68,7 @@
     --sierra-shadow: 0 12px 24px rgba(0, 0, 0, .35);
     --sierra-ghost: #E8F0FB;
     --sierra-foot-bg: #06111F; --sierra-foot-fg: #C9D7EA;
+    --sierra-fade-mid: #0B1628; --sierra-fade-end: #0E1D33;
     color-scheme: dark;
   }
 }
@@ -80,6 +83,7 @@
   --sierra-shadow: 0 12px 24px rgba(0, 0, 0, .35);
   --sierra-ghost: #E8F0FB;
   --sierra-foot-bg: #06111F; --sierra-foot-fg: #C9D7EA;
+  --sierra-fade-mid: #0B1628; --sierra-fade-end: #0E1D33;
   color-scheme: dark;
 }
 
@@ -93,6 +97,12 @@ body {
   display: flex; flex-direction: column;
   font-family: var(--sierra-font); font-size: 16px; line-height: 1.55;
   color: var(--sierra-body); background: var(--sierra-paper);
+}
+/* Her landing takes the library's fade (Sam, 2026-10-24: "Fades white to pale blue
+   looks good too"); the conversation and the side bar read on white, so the docked
+   box and the bar's own white never sit as patches on blue. */
+:root:not([data-panel]) body[data-view="arriving"] {
+  background-image: linear-gradient(180deg, var(--sierra-paper) 0, var(--sierra-fade-mid) 38rem, var(--sierra-fade-end) 100%);
 }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--sierra-cobalt); outline-offset: 2px; }
