@@ -11246,7 +11246,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 90,
+   "count": 91,
    "docs": [
     {
      "created": "2026-08-14",
@@ -13244,6 +13244,26 @@
      "title": "The Commons \u2014 lessons",
      "type": null,
      "updated": "2026-10-20"
+    },
+    {
+     "created": "2026-10-24",
+     "governs": [
+      "cpl_writer.js",
+      "comms.js",
+      "tests/cpl_writer.test.js",
+      "tests/comms.test.js"
+     ],
+     "path": "docs/communications_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "communications",
+      "letters",
+      "writer"
+     ],
+     "title": "The communications register and the writer module \u2014 lessons",
+     "type": null,
+     "updated": ""
     },
     {
      "created": "2026-10-06",
@@ -15423,7 +15443,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-10-23"
+     "updated": "2026-10-24"
     },
     {
      "created": "2026-08-28",
@@ -16017,8 +16037,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 430,
+   "count": 431,
    "docs": [
+    {
+     "created": "2026-10-24",
+     "governs": [],
+     "n": 461,
+     "path": "docs/session_461_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "communications",
+      "library",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 461 handoff: the writer module and its first three consumers, Open Asks Sheet 122 (the ELL IET page's public listing)",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-23",
      "governs": [],
@@ -23405,5 +23441,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1235
+ "total": 1237
 }

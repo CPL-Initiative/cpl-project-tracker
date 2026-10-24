@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-23T21:22:06Z",
-  "session": 459,
-  "moniker": "SkyBuckeye",
+  "written_at": "2026-10-24T02:19:40Z",
+  "session": 460,
+  "moniker": "SkyFremontia",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_460_handoff.md",
+  "handoff": "docs/session_461_handoff.md",
   "next_step": {
-    "title": "Merge #2387 on green, then apply display build e021a2824548 on main",
-    "text": "Dispatch program-requirements-college.yml with step=display on main after the merge; the 239 rescored records' verdicts and the six removed rows then show on CPL Pathways and in Sierra."
+    "title": "The harvest queue waits on Sam's word",
+    "text": "Hartnell's noncredit hours (course_hours, a reconcile kind for measure: hours records, the arithmetic against Non Credit Total hours), its six remaining arithmetic failures (17912, 03570, 39248, 44537, 03537, 33851) and the two S448 offers. S460 worked the writer module (Sheet 118 ruling 5) and Open Asks Sheet 122 instead; no harvest table moved."
   },
   "calls": [
     {
@@ -243,6 +243,12 @@
     },
     {
       "day": "2026-10-23",
+      "active": 20282,
+      "complete": 13173,
+      "colleges": 114
+    },
+    {
+      "day": "2026-10-24",
       "active": 20282,
       "complete": 13173,
       "colleges": 114

@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-10-23
+updated: 2026-10-24
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -238,33 +238,29 @@ name lives in the title alone. Mock-up: https://claude.ai/artifact/LRFiSDUY4bGTo
 2. **The CPL Coordinator Guide's four files.** The audit (S458, `CPLBrain/04-projects/cpl-initiative/coordinator-guide/audit_workflow.js`) needs `CPL_Coordinator_Guide.docx`, `.pdf`, `CPL_Coordinator_Quick_Reference.docx` and `.pdf` attached again: the uploads died with S458's container and no report was committed. Recommended: attach them in the next session; the audit runs as he asked ("ultracode").
 3. **The ELL IET award notice's text.** Card 5's build (the agency template, the ELL IET grantees page first) needs the notice's text and its eight grantees; the sandbox cannot read edd.ca.gov, and search found five grantees and the $17.97 million total. Recommended: paste the text or attach the PDF.
 
+## NEEDS SAM (S460 SkyFremontia, 2026-10-24): the ELL IET page's public listing
+
+**NEEDS SAM 1.** *ELL IET CPL Starting Points* (https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe; Library record
+`ell-iet-cpl-starting-points`, kind visual, Made for Agency, status draft, seen by the team, not listed) is built from EDD's
+award notice as Sheet 121 card 3 asked. Listing it publicly and sending each of the eight projects its card is outward, so
+the call is his: list and send, list only, keep it on the team Library, or edit first. Recommended: read the draft, then
+list it publicly and send each project its card, with one message per project drafted in the Letters tab. Card 1 of
+[Open Asks Sheet 122](https://claude.ai/artifact/PKRBW9ucqKtikxhRtevHrj).
+
 ## Next
 
-- **The team phrase lists publicly too (Sam, 2026-10-23 18:50Z, his own call, reversing 2026-10-20):** *"can you set the
-  Library page to be editable with Team phrase and not just magic link? I want the team to be able to make their
-  artifacts public on the public library."* Not built yet; the exact change (the function's gate, its anon grant, the
-  trigger's message, `library.js` `setPublic`, the public-library test, the governance dismissal) is in
-  `docs/session_457b_handoff.md`.
-
-- **The open-asks series record reads version 57 (Sam pasted it, ~15:31Z 2026-10-09, "success").** It sits at [Sheet 57](https://claude.ai/artifact/XGgsHHu54rJmNGeEuT1teL) with sheet 56 Earlier, 30 versions (read back by S352; receipt `kb/receipts/cpl_library_open_asks_sheet57_2026-10-09_s352.sql`). `made_by` is capped at 300 characters (`cpl_library_text_ck`): the per-session list reached 281 and failed the first paste, so it is now a range (*sheets 46 to 57 by S341 SkyTerrace through S352 SkyMeridian*) that a later sheet extends by changing its two ends. This table's writes go to Sam as a paste: `apply_migration` times out on `cpl_library`, and the repo's Supabase guard blocks an `update` through `execute_sql`.
-- **PR 2, the move (call 5):** once a session with the Microsoft 365 connector has read the SharePoint copies,
-  each record points at its SharePoint link (a guarded update per record). Then remove the deliverable binaries from main (the five Title 5 files can go now; `.gitignore`
-  `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's
-  two player pages off the site, and add a guard test so a deliverable binary cannot be committed
-  again. Then the vault's binaries (29 on 2026-10-05).
-- **Sam's sheet 47 calls (2026-10-07 14:17-14:20Z):** card 3 *Shared*, which he withdrew the same day (below); card 4 *Move them* (every decision-sheet builder writes to the vault, and the public repo holds no sheet); card 5 *One per series*, as proposed (the open-asks series is one Library record, each other sheet one record under its own occasion); card 6 *Date made* (nothing changes: a file keeps the date code of its first version). Card 4 is open work: 13 builders in `kb/`, their sheets and 18 hand-made ones in `docs/visuals/` (31 carry reply chips), and the template tests that read two real sheets, which need fixtures first.
-- **Sam's sheet 48 card 1 (2026-10-07 14:52Z): *Keep it public*.** The Library records the Ironworker film's audience as Public (receipt `kb/receipts/cpl_library_ironworker_public_2026-10-07_s341.sql`); the page and the film stay.
-- **Sam, 2026-10-07 (in chat): CPLLibrary is not shared.** *"Let's give up on sharing the Drive because so many on
-  team do not have google accounts. May need to switch to sharepoint, where they all have access."* This closes sheet 48
-  card 2 and withdraws sheet 47 card 3. The Drive connector's `share_file` refused every try (S341, 10 of his 19
-  addresses; a side session the same evening, one more with his explicit go): *invalid argument*, or *the caller does
-  not have permission* for three. The connector has no way to send the invitation, which an address without a Google
-  account needs (the likely cause, unconfirmed).
-- **Sam's Open Asks Sheet 49 (2026-10-08 15:23-15:25Z, all three his own call):** 1 *I create it*: the
-  CPLLibrary folder on the MAP team's SharePoint site (link in `cpl_memory`
-  `sam-cpllibrary-sharepoint-folder-2026-10-08`); 2 *Guests allowed*; 3 *Hand and sync*, with his note *"For now by
-  hand and sync but later automatically so we avoid creating different artifact storage solutions."* He copied the
-  16 Drive files into the folder himself (2026-10-08); no session has read them yet.
-- **Next for this lane:** Sam connects the Microsoft 365 connector; the next session after that reads the folder,
-  confirms the 16 copies, and moves the three Drive-linked records (and the six repo pieces) to their SharePoint
-  links. The Summit film's v2 cuts go into the SharePoint Drafts folder.
+- **Sam connects the Microsoft 365 connector;** the next session after that reads the CPLLibrary folder, confirms the 16
+  copies he made on 2026-10-08, and moves the three Drive-linked records and the six repo pieces to their SharePoint links
+  (a guarded update per record). The Summit film's v2 cuts go into the SharePoint Drafts folder.
+- **PR 2, the move (call 5), after that:** remove the deliverable binaries from `main` (the five Title 5 files can go now;
+  `.gitignore` `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's two
+  player pages off the site, and add a guard test so a deliverable binary cannot be committed again. Then the vault's
+  binaries (29 on 2026-10-05).
+- **The open-asks series record reads version 122** (receipt `kb/receipts/cpl_library_open_asks_sheet122_2026-10-24_s460.sql`,
+  applied by `supabase-migrate.yml` run 40051278289): each new sheet is one guarded UPDATE from the version as read.
+  `made_by` is capped at 300 characters (`cpl_library_text_ck`), so it is a range (*sheets 46 to 122 by S341 SkyTerrace
+  through S460 SkyFremontia*) that each sheet extends by its two ends.
+- Sam's sheet 47, 48 and 49 calls of 2026-10-07 and 2026-10-08 (the sheets to the vault, one Library record per series,
+  the Ironworker film public, the Drive sharing dropped, the SharePoint folder with guests, hand and sync) are recorded in
+  `cpl_memory` (`sam-sheet47-rulings-2026-10-07`, `sam-drop-cpllibrary-sharing-2026-10-07`,
+  `sam-sheet49-sharepoint-rulings-2026-10-08`) and in `docs/library_lessons.md`, *Moved from the lane (S460)*.
