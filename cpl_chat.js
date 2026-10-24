@@ -896,14 +896,14 @@
       '.cplchat-avatar { background: transparent; }',
       '.cplchat-avatar svg { width:100%; height:100%; display:block; }',
       // Markdown upgrades (2026-07-02): headings, rules, ordered lists, tables
-      '.cplchat-bubble h3, .cplchat-bubble h4, .cplchat-bubble h5 { margin:13px 0 5px; line-height:1.3; color:var(--navy-primary, #0b3d61); }',
+      '.cplchat-bubble h3, .cplchat-bubble h4, .cplchat-bubble h5 { margin:13px 0 5px; line-height:1.3; color:var(--navy-primary, #1C1C1A); }',
       '.cplchat-bubble h3 { font-size:1.04rem; } .cplchat-bubble h4 { font-size:.96rem; } .cplchat-bubble h5 { font-size:.9rem; }',
       '.cplchat-bubble h3:first-child, .cplchat-bubble h4:first-child, .cplchat-bubble h5:first-child { margin-top:2px; }',
       '.cplchat-bubble hr { border:none; border-top:1px solid var(--border, #d8dde6); margin:11px 0; }',
       '.cplchat-bubble ol { margin:5px 0 9px; padding-left:21px; }',
       '.cplchat-bubble table { border-collapse:collapse; margin:8px 0 10px; font-size:.92em; display:block; max-width:100%; overflow-x:auto; }',
       '.cplchat-bubble th, .cplchat-bubble td { border:1px solid var(--border, #d8dde6); padding:4px 10px; text-align:left; vertical-align:top; }',
-      '.cplchat-bubble th { background:var(--surface-subtle, #f2f6fb); color:var(--navy-primary, #0b3d61); font-weight:700; }',
+      '.cplchat-bubble th { background:var(--surface-subtle, #f2f6fb); color:var(--navy-primary, #1C1C1A); font-weight:700; }',
       '.cplchat-bubble tbody tr:nth-child(even) { background:var(--surface-subtle, #f2f6fb); }',
       // ── The Sierra AI heading + its Whitney mark (Sam, 2026-08-17) ─────────
       // The mark is the same roundel the answer avatars carry, at heading size.
@@ -945,7 +945,7 @@
     if (document.getElementById('cplchat-dock-css')) return;
     var css = [
       '.cplchat-dockbar { display:flex; align-items:center; justify-content:flex-end; gap:12px; margin:4px 0 6px; }',
-      '.cplchat-dock-name { display:none; align-items:center; gap:8px; margin-right:auto; font-weight:700; color:var(--navy-primary, #0b3d61); }',
+      '.cplchat-dock-name { display:none; align-items:center; gap:8px; margin-right:auto; font-weight:700; color:var(--navy-primary, #1C1C1A); }',
       '.cplchat-dock-name svg { width:1.5em; height:1.5em; display:block; }',
       '.cplchat-dock-btn { font:inherit; font-size:.9rem; font-weight:600; min-height:24px; padding:2px 0; border-radius:0;'
         + ' border:0; background:none; color:var(--accent-link, var(--cobalt, #0047AB)); cursor:pointer;'
