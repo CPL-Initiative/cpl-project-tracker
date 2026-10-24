@@ -4,24 +4,24 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-10-23",
+ "as_of": "2026-10-24",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 49390,
-  "pa": 45235,
-  "ppa": 121,
+  "pe": 49463,
+  "pa": 45273,
+  "ppa": 122,
   "p2": 3606,
   "p3": 16800,
   "pp": 7,
-  "ppe": 131,
-  "pac": 5285,
+  "ppe": 132,
+  "pac": 5284,
   "ptc": 4622,
-  "pe_u": 1510397.45,
-  "pa_u": 276068.4,
-  "ppa_u": 737.5,
-  "ppe_u": 6983.5,
-  "pac_u": 37796.2,
+  "pe_u": 1513312.45,
+  "pa_u": 276231.4,
+  "ppa_u": 748.5,
+  "ppe_u": 6994.5,
+  "pac_u": 37791.2,
   "ptc_u": 31582.45,
   "p3_u": 84268.15,
   "pp_u": 73.5
@@ -445,10 +445,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Copper Mountain": {
-   "pe": 82,
-   "pe_u": 3823.0,
-   "pa": 81,
-   "pa_u": 294.0,
+   "pe": 83,
+   "pe_u": 3856.0,
+   "pa": 82,
+   "pa_u": 297.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 3.0,
@@ -720,10 +720,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Fresno City": {
-   "pe": 752,
-   "pe_u": 28617.0,
-   "pa": 752,
-   "pa_u": 2728.0,
+   "pe": 766,
+   "pe_u": 29059.0,
+   "pa": 766,
+   "pa_u": 2812.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -821,8 +821,8 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Grossmont": {
-   "pe": 0,
-   "pe_u": 0.0,
+   "pe": 35,
+   "pe_u": 1674.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -1001,10 +1001,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 945.0
   },
   "Laney": {
-   "pe": 79,
-   "pe_u": 3233.0,
-   "pa": 79,
-   "pa_u": 474.0,
+   "pe": 80,
+   "pe_u": 3373.0,
+   "pa": 80,
+   "pa_u": 480.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1232,13 +1232,13 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Modesto": {
-   "pe": 352,
-   "pe_u": 8450.0,
-   "pa": 340,
-   "pa_u": 2237.0,
+   "pe": 354,
+   "pe_u": 8503.0,
+   "pa": 342,
+   "pa_u": 2247.0,
    "ppa": null,
    "ppa_suppressed": true,
-   "ppa_u": 25.0,
+   "ppa_u": 36.0,
    "p2": 73,
    "p3": 191,
    "p3_u": 1417.5,
@@ -1247,7 +1247,7 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 10.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 35.0,
+   "ppe_u": 46.0,
    "pac": 196,
    "pac_u": 1469.0,
    "ptc": 193,
@@ -1390,8 +1390,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": 12,
    "ppe_u": 585.0,
-   "pac": 410,
-   "pac_u": 4800.5,
+   "pac": 409,
+   "pac_u": 4795.5,
    "ptc": 302,
    "ptc_u": 3249.0
   },
@@ -1517,10 +1517,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Redwoods": {
-   "pe": 53,
-   "pe_u": 2200.0,
-   "pa": 53,
-   "pa_u": 159.0,
+   "pe": 72,
+   "pe_u": 2760.0,
+   "pa": 72,
+   "pa_u": 216.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -2088,10 +2088,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Victor Valley": {
-   "pe": 342,
-   "pe_u": 13605.0,
-   "pa": 342,
-   "pa_u": 1026.0,
+   "pe": 343,
+   "pe_u": 13618.0,
+   "pa": 343,
+   "pa_u": 1029.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 6.0,
@@ -2498,7 +2498,7 @@ window.CPL_FUNDING_PERF = {
    },
    "Military": {
     "pe": null,
-    "pa": 81,
+    "pa": 82,
     "p3": 0,
     "pe_suppressed": true
    }
@@ -2672,8 +2672,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Fresno City": {
    "Military": {
-    "pe": 752,
-    "pa": 752,
+    "pe": 766,
+    "pa": 766,
     "p3": 0
    }
   },
@@ -2703,6 +2703,13 @@ window.CPL_FUNDING_PERF = {
    "Military": {
     "pe": 99,
     "pa": 99,
+    "p3": 0
+   }
+  },
+  "Grossmont": {
+   "Military": {
+    "pe": 35,
+    "pa": 0,
     "p3": 0
    }
   },
@@ -2816,8 +2823,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Laney": {
    "Military": {
-    "pe": 79,
-    "pa": 79,
+    "pe": 80,
+    "pa": 80,
     "p3": 0
    }
   },
@@ -3071,8 +3078,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 144,
-    "pa": 144,
+    "pe": 146,
+    "pa": 146,
     "p3": null,
     "p3_suppressed": true
    },
@@ -3342,8 +3349,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Redwoods": {
    "Military": {
-    "pe": 53,
-    "pa": 53,
+    "pe": 72,
+    "pa": 72,
     "p3": 0
    }
   },
@@ -3795,8 +3802,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Victor Valley": {
    "Military": {
-    "pe": 342,
-    "pa": 342,
+    "pe": 343,
+    "pa": 343,
     "p3": 0
    }
   },
@@ -4008,8 +4015,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28692,
-   "pa": 26319,
+   "pe": 28765,
+   "pa": 26357,
    "p3": 2615
   },
   "Military | Other": {
@@ -4065,13 +4072,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1510397.45,
-   "pa_u": 276068.4,
+   "pe_u": 1513312.45,
+   "pa_u": 276231.4,
    "p3_u": 84268.15
   },
   "map": {
-   "pe_u": 1517380.95,
-   "pa_u": 276805.9,
+   "pe_u": 1520306.95,
+   "pa_u": 276979.9,
    "p3_u": 84341.65
   },
   "ratio": {
@@ -4100,12 +4107,12 @@ window.CPL_FUNDING_PERF = {
   "El Camino": true,
   "Coastline": true,
   "Mt San Antonio": true,
-  "Southwestern": true,
   "Fresno City": true,
+  "Southwestern": true,
   "San Bernardino": true,
   "Desert": true,
-  "Santa Ana": true,
   "Modesto": true,
+  "Santa Ana": true,
   "Cypress": true,
   "Barstow": true,
   "LA Valley": true,
@@ -4155,9 +4162,9 @@ window.CPL_FUNDING_PERF = {
   "West Hills Coalinga": false,
   "Pasadena": false,
   "Porterville": true,
+  "Redwoods": false,
   "Hartnell": false,
   "Alameda": true,
-  "Redwoods": false,
   "Crafton Hills": false,
   "American River": false,
   "Madera": true,
@@ -4181,12 +4188,12 @@ window.CPL_FUNDING_PERF = {
   "Cuyamaca": false,
   "Santa Barbara": true,
   "Chabot": false,
+  "Grossmont": false,
   "Gavilan": false,
   "Siskiyous": false,
   "Taft": false,
   "Feather River": true,
   "Imperial": false,
-  "Grossmont": false,
   "Contra Costa": false,
   "Marin": false,
   "Yuba": false,
@@ -4197,7 +4204,7 @@ window.CPL_FUNDING_PERF = {
   "Lake Tahoe": false,
   "LA Swest": false
  },
- "vet_star_as_of": "2026-10-23",
+ "vet_star_as_of": "2026-10-24",
  "vet_star_threshold": 0.75,
  "vet_star_n": 64,
  "vet_jst": {
@@ -4296,15 +4303,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 733,
    "pct": 1.0486
   },
+  "Fresno City": {
+   "vets": 724,
+   "jst": 772,
+   "pct": 1.0663
+  },
   "Southwestern": {
    "vets": 584,
    "jst": 723,
    "pct": 1.238
-  },
-  "Fresno City": {
-   "vets": 724,
-   "jst": 758,
-   "pct": 1.047
   },
   "San Bernardino": {
    "vets": 207,
@@ -4316,15 +4323,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 422,
    "pct": 1.7957
   },
+  "Modesto": {
+   "vets": 80,
+   "jst": 153,
+   "pct": 1.9125
+  },
   "Santa Ana": {
    "vets": 334,
    "jst": 389,
    "pct": 1.1647
-  },
-  "Modesto": {
-   "vets": 80,
-   "jst": 151,
-   "pct": 1.8875
   },
   "Cypress": {
    "vets": 259,
@@ -4403,8 +4410,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Victor Valley": {
    "vets": 97,
-   "jst": 345,
-   "pct": 3.5567
+   "jst": 346,
+   "pct": 3.567
   },
   "Cerro Coso": {
    "vets": 115,
@@ -4498,8 +4505,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Laney": {
    "vets": 96,
-   "jst": 80,
-   "pct": 0.8333
+   "jst": 81,
+   "pct": 0.8438
   },
   "LA Harbor": {
    "vets": 109,
@@ -4548,8 +4555,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Copper Mountain": {
    "vets": 72,
-   "jst": 82,
-   "pct": 1.1389
+   "jst": 83,
+   "pct": 1.1528
   },
   "Foothill": {
    "vets": 915,
@@ -4571,6 +4578,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 45,
    "pct": 0.8654
   },
+  "Redwoods": {
+   "vets": 98,
+   "jst": 73,
+   "pct": 0.7449
+  },
   "Hartnell": {
    "vets": 106,
    "jst": 63,
@@ -4580,11 +4592,6 @@ window.CPL_FUNDING_PERF = {
    "vets": 30,
    "jst": 30,
    "pct": 1.0
-  },
-  "Redwoods": {
-   "vets": 98,
-   "jst": 54,
-   "pct": 0.551
   },
   "Crafton Hills": {
    "vets": 577,
@@ -4700,6 +4707,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 64,
    "pct": 0.2105
   },
+  "Grossmont": {
+   "vets": 415,
+   "jst": 57,
+   "pct": 0.1373
+  },
   "Gavilan": {
    "vets": 352,
    "jst": 46,
@@ -4722,11 +4734,6 @@ window.CPL_FUNDING_PERF = {
   },
   "Imperial": {
    "vets": 489,
-   "jst": null,
-   "jst_suppressed": true
-  },
-  "Grossmont": {
-   "vets": 415,
    "jst": null,
    "jst_suppressed": true
   },

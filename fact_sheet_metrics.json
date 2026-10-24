@@ -1,16 +1,16 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-10-23T17:17:34.833Z",
+ "_as_of": "2026-10-24T11:08:20.125Z",
  "credit_recommendations": {
-  "total": "14,593",
-  "ccc": "1,487",
-  "local": "13,106",
+  "total": "14,524",
+  "ccc": "1,478",
+  "local": "13,046",
   "by_type": [
-   "Standardized Assessment: 7,560",
-   "Industry Certification: 4,057",
-   "Credit By Exam: 2,293",
-   "Portfolio Review: 432",
-   "Military: 156"
+   "Standardized Assessment: 7,538",
+   "Industry Certification: 4,039",
+   "Credit By Exam: 2,272",
+   "Portfolio Review: 427",
+   "Military: 153"
   ]
  },
  "map_exhibits": {
@@ -22,8 +22,8 @@
  "statewide_exhibits": {
   "total": "164",
   "program_areas": "12",
-  "distinct_credit_recs": "1,277",
-  "adoptions": "1,474",
+  "distinct_credit_recs": "1,274",
+  "adoptions": "1,465",
   "adopting_colleges": "67",
   "by_sector": [
    {
@@ -43,15 +43,15 @@
    {
     "sector": "Fire Technology",
     "exhibits": 18,
-    "credit_recs": 305,
-    "adoptions": 363,
+    "credit_recs": 301,
+    "adoptions": 354,
     "could_adopt": 45
    },
    {
     "sector": "Computer Information Systems",
     "exhibits": 14,
     "credit_recs": 123,
-    "adoptions": 128,
+    "adoptions": 127,
     "could_adopt": 74
    },
    {
@@ -99,8 +99,8 @@
    {
     "sector": "Administration of Justice",
     "exhibits": 1,
-    "credit_recs": 106,
-    "adoptions": 109,
+    "credit_recs": 107,
+    "adoptions": 110,
     "could_adopt": 55
    },
    {
