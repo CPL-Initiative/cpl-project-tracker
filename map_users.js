@@ -32,7 +32,10 @@
                 lens: "all", gaps: null, gapsError: null,
                 // Curator-proposed contacts, keyed on the TRIMMED college name.
                 // `propEdit` is the college whose editor is open (one at a time).
-                proposals: {}, propEdit: null, propBusy: false, propErr: null };
+                proposals: {}, propEdit: null, propBusy: false, propErr: null,
+                // The landing pages' CPL Coordinator (and, later, NC CPL Lead),
+                // keyed by college; null until map_coordinator_summary() answers.
+                coord: null, coordError: null };
 
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ──
   // Reads-only here; the roster RLS validates the access token / x-team-pass
@@ -89,6 +92,8 @@
       "@media (max-width: 560px) { .mapu-scroll { overflow-x:auto; } }",
       ".mapu-table th { text-align:left; background: var(--seal-blue); color: var(--white); padding:7px 10px; font-size:.74rem; text-transform:uppercase; letter-spacing:.04em; position:sticky; top:0; }",
       ".mapu-table th.num, .mapu-table td.num { text-align:right; }",
+      // The landing pages' coordinator columns: a word carries the state; TBA is the quietest thing in the row.
+      ".mapu-tba { color: var(--text-muted); }",
       ".mapu-table td { padding:7px 10px; border-bottom:1px solid var(--border); vertical-align:top; }",
       ".mapu-table tr:hover { background: var(--surface-subtle); }",
       ".mapu-roles { display:flex; flex-wrap:wrap; gap:4px; }",
@@ -223,6 +228,48 @@
       return r.json();
     });
   }
+  // ── The CPL Coordinator and the NC CPL Lead (Sam, 2026-10-24) ─────────────
+  // Neither is a MAP user role: MAP's roles follow its business procedures and
+  // have no CPL Coordinator. The coordinator comes from each college's CPL
+  // landing page (map_college_contacts), read through the same booleans the
+  // funding model's first minimum condition reads, map_coordinator_summary()
+  // (anon, booleans only, never a name). The NC CPL Lead is a placeholder: it
+  // counts the day the landing pages carry the option and the RPC returns
+  // `has_nc_cpl_lead`; until then every cell and the total read TBA.
+  function loadCoordinators() {
+    return fetch(REST + "/rpc/map_coordinator_summary", {
+      method: "POST",
+      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" },
+      body: "{}",
+    }).then(function (r) {
+      if (!r.ok) throw new Error("coordinators " + r.status);
+      return r.json();
+    }).then(function (rows) {
+      rows = Array.isArray(rows) ? rows : [];
+      var by = {};
+      rows.forEach(function (row) { if (row && row.college) by[ckey(row.college)] = row; });
+      state.coord = { by: by, ncLeadKnown: rows.some(function (row) { return row && "has_nc_cpl_lead" in row; }) };
+      return state.coord;
+    });
+  }
+  // { coord: true|false|null, ncLead: true|false|null } for one college; null
+  // means no landing-page row (coord) or no NC CPL Lead option yet (ncLead).
+  function coordFor(college) {
+    if (!state.coord) return { coord: null, ncLead: null };
+    var row = pickByIdentity(state.coord.by, ckey(college));
+    if (!row) return { coord: null, ncLead: null };
+    return { coord: !!row.has_coordinator, ncLead: state.coord.ncLeadKnown ? !!row.has_nc_cpl_lead : null };
+  }
+  function coordCounts(rows) {
+    var c = { coord: 0, ncLead: 0, of: rows.length };
+    rows.forEach(function (r) { var f = coordFor(r.college); if (f.coord) c.coord++; if (f.ncLead) c.ncLead++; });
+    return c;
+  }
+  function yesNoCell(v, tba) {
+    if (v === null) return '<span class="mapu-tba">' + (tba ? "TBA" : "No landing page") + "</span>";
+    return v ? "Listed" : '<span class="mapu-notlisted">Not listed</span>';
+  }
+
   function loadRoster(college) {
     /* Every spelling of this identity, not just the one MAP happened to send.
      * All 128 names in map_college_users are canonical today (measured
@@ -1589,12 +1636,21 @@
     html += '<p class="mapu-intro">The MAP platform’s per-college user roster (names + roles). '
       + "Counts and the role mix are shown to everyone; the staff <b>names &amp; emails</b> are visible "
       + "only to a signed-in reviewer or team-phrase user. Source: MAP “College Users &amp; Roles”, "
-      + "synced into a gated store.</p>";
+      + "synced into a gated store.</p>"
+      + '<p class="mapu-intro">The <b>CPL Coordinator</b> and <b>NC CPL Lead</b> columns come from each college\u2019s '
+      + "CPL landing page, not from these MAP user roles: MAP\u2019s roles have no CPL Coordinator. The coordinator is "
+      + "the one the funding model\u2019s first minimum condition counts. The NC CPL Lead reads TBA until the landing "
+      + "pages carry it.</p>";
+    var cc = state.coord ? coordCounts(state.summary || []) : null;
 
     html += '<div class="mapu-stat">'
       + '<div class="box"><div class="n">' + totalUsers.toLocaleString() + '</div><div class="l">MAP users</div></div>'
       + '<div class="box"><div class="n">' + totalColleges + '</div><div class="l">Colleges</div></div>'
       + '<div class="box"><div class="n">' + fmtDate(lastSynced) + '</div><div class="l">Data as of</div></div>'
+      + '<div class="box"><div class="n">' + (cc ? cc.coord + " of " + cc.of : "TBA")
+      + '</div><div class="l">CPL Coordinators on landing pages</div></div>'
+      + '<div class="box"><div class="n">' + (cc && state.coord.ncLeadKnown ? cc.ncLead + " of " + cc.of : "TBA")
+      + '</div><div class="l">NC CPL Leads on landing pages</div></div>'
       + "</div>";
 
     // Lens switch. Reviewer-only: the worklist is built from gated contact rows,
@@ -1641,7 +1697,10 @@
 
     var canNudge = signedIn();
     html += '<div class="mapu-scroll" role="region" tabindex="0" aria-label="MAP users by college"><table class="mapu-table"><thead><tr>'
-      + "<th>College</th><th class=\"num\">Users</th><th>Role mix</th><th>Actions</th>"
+      + '<th scope="col">College</th><th scope="col" class="num">Users</th><th scope="col">Role mix</th>'
+      + '<th scope="col" title="From the college\u2019s CPL landing page, not a MAP user role">CPL Coordinator</th>'
+      + '<th scope="col" title="Counted once the landing pages carry a Noncredit CPL Lead">NC CPL Lead</th>'
+      + '<th scope="col">Actions</th>'
       + "</tr></thead><tbody>";
     rows.forEach(function (r) {
       var open = !!state.rosterOpen[r.college];
@@ -1663,11 +1722,13 @@
             : "")
         + "</td>"
         + '<td><div class="mapu-roles">' + roleChips(r.role_mix) + "</div></td>"
+        + "<td>" + (state.coord ? yesNoCell(coordFor(r.college).coord, false) : '<span class="mapu-tba">TBA</span>') + "</td>"
+        + "<td>" + yesNoCell(coordFor(r.college).ncLead, true) + "</td>"
         + '<td><button class="mapu-rosterbtn" data-roster="' + esc(r.college) + '">'
         + (open ? "✕ hide" : "roster") + "</button>" + nudgeBtn + nudgedLine + "</td>"
         + "</tr>";
       if (open) {
-        html += '<tr class="mapu-roster"><td colspan="4" data-roster-cell="' + esc(r.college) + '">'
+        html += '<tr class="mapu-roster"><td colspan="6" data-roster-cell="' + esc(r.college) + '">'
           + '<div class="mapu-gate">Loading roster…</div></td></tr>';
       }
     });
@@ -2181,6 +2242,10 @@
      * counts. A failure leaves every lookup at today's exact+normalized
      * behavior and is recorded on `taxonomy.status`, not swallowed. */
     loadTaxonomy().then(function () { if (state.summary) render(root); });
+    // The landing pages' coordinators, side-loaded the same way: the counts
+    // render without them and the two columns read TBA until they land.
+    loadCoordinators().then(function () { if (state.summary) render(root); })
+      .catch(function (e) { state.coordError = (e && e.message) || "error"; });
     loadSummary().then(function (data) {
       state.summary = Array.isArray(data) ? data : [];
       state.loading = false; render(root);
@@ -2201,6 +2266,9 @@
     // exposed for tests
     _state: state,
     _roleChips: roleChips,
+    _loadCoordinators: loadCoordinators,
+    _coordFor: coordFor,
+    _coordCounts: coordCounts,
     _rosterHtml: rosterHtml,
     _authHeaders: authHeaders,
     _filteredSorted: filteredSorted,

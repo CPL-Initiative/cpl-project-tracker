@@ -1,3 +1,5 @@
+-- NOT APPLIED. Sam listed the page himself from the Library tab at 2026-10-24 13:44:18Z (listed_by Sam, seen_by public,
+-- read 14:00Z), which superseded this receipt. Kept as the record of what the session staged.
 -- S466 SkyYerbaSanta, 2026-10-24: Sam, Open Asks Sheet 123 card 1, "list" (13:17:15Z, his own call: "List it, and I contact
 -- the projects myself"). ELL IET CPL Starting Points goes on the public library. This does what cpl_library_set_public()
 -- does for a reviewer or the team phrase (Listing also sets Seen by to Public), under the same session flag its guard

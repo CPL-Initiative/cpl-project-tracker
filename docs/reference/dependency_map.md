@@ -177,7 +177,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `is_allowed_reviewer` | `edgefn:cpl-chat` | — |
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
-| `map_coordinator_summary` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | — |
+| `map_coordinator_summary` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding`, `map-queue`, `map-users` | — |
 | `map_promote_custom_reports` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_users_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_users_summary` | tabs: `map-queue`, `map-users` | — |
