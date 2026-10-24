@@ -1037,3 +1037,37 @@ defect where real ones live — a defect injected into a string literal inside t
 test would have passed and proved nothing. And print the count once when you
 write a sanitizer: *how many lines does this blank?* would have caught it at any
 point in the months it was live.
+
+## Moved from the cobi-dark-mode lane (S469, 2026-10-24)
+
+The lane passed its 20 KB budget; this settled section moved verbatim.
+
+### ✅ RULED AND LANDED (Sam, open-asks sheet items 11-13, 2026-09-22)
+
+All three changed the LIGHT theme, which is why none had been swept.
+
+1. **`--surface-1`/`--surface-2` carry light values now** — aliases of
+   `--surface-subtle`/`--surface-muted`, whose dark values they were already
+   byte-identical to. Dark-only had left twelve hand-picked tints behind
+   fallbacks (`#eef3f9`, `#f4f7fb`, `#fafcff`, `#F6F2FD`, `#fdf8ec` …), cool
+   blues on a warm ground. Every ink clears AA on both (worst 5.56:1).
+   ⚠️ **`--gold-soft` sat in the same assertion and STAYS dark-only** — item 11
+   named the two surface tokens, and sweeping the gold ground in beside them is
+   how a ruling grows past what was asked.
+2. **The Implementation Funding `--text-faint` sites moved to `--text-muted`** —
+   19 of them. ⚠️ **It was never a dark-mode bug.** Measured against the real
+   grounds, `--text-faint` fails AA in BOTH themes (3.24:1 light on `--paper`,
+   4.23:1 dark) while `--text-muted` passes everywhere (6.02–7.91:1). This lane
+   recorded it as a dark finding only because that is where the a11y pass ran.
+   ⚠️ **34 sites carry the same defect on 7 other tabs** — `cpl_memory` 12,
+   `contracts` 9, `map_data_quality` 5, `cpl_todos` 3, `cr_reference` 2,
+   `cpl_news` 2, `cpl_pathways` 1. Not ruled on, not touched.
+3. **The 24 phantom-token declarations point at real roles** —
+   `var(--brand,var(--cobalt))`, `--link` → `--accent-link`, `--text` →
+   `--text-strong`. Exactly 24, matching this lane's own count.
+
+Guard: `tests/phantom_token_repair.test.js` (6 checks) + `cpl_theme` 66.
+⚠️ **`cpl_theme` had asserted the OPPOSITE of item 1**, and its comment said
+why: *"Defining them light too would repaint six tabs; that is Sam's call, not a
+tidy-up."* A guard parked awaiting a ruling. It stopped the unilateral change it
+was written to stop, and the ruling released it.

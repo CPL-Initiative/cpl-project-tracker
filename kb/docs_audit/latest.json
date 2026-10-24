@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1260,
-    "bytes": 12905490,
-    "over_budget": 5,
+    "bytes": 12906015,
+    "over_budget": 4,
     "handoff_max": 469,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59977,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 85,
-        "bytes": 2376297,
+        "bytes": 2378346,
         "over": 0
       },
       "kb_note": {
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 440503,
-        "over": 2
+        "bytes": 438979,
+        "over": 1
       },
       "handoff": {
         "files": 439,
@@ -56,14 +56,14 @@
       }
     },
     "by_rule": {
-      "oversized_doc": 5,
+      "oversized_doc": 4,
       "kb_note_dialect": 1,
       "house_voice": 1,
       "vault_heavy_path": 64
     },
     "vault": {
       "files": 24714,
-      "bytes": 3664169943,
+      "bytes": 3664170468,
       "heavy_bytes": 2543154887,
       "heavy_share": 0.694,
       "ignore_filters": [
@@ -171,19 +171,6 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 20374,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 374,
-        "ratio": 1.02
-      },
-      "message": "20,374 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/cobi-dark-mode.md"
     },
     {
       "rule": "oversized_doc",
