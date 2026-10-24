@@ -90,6 +90,10 @@ block("(3)", function () {
   check("(3) eleven audiences, each with an id, a label and one line of guidance", W.AUDIENCES.length === 11 && W.AUDIENCES.every(function (a) { return a.id && a.label && typeof a.guide === "string" && a.guide.length > 20 && a.guide.indexOf("\n") < 0; }));
   check("(3) the CEOs first and Other last, as the selector lists them", ids[0] === "ceos" && ids[ids.length - 1] === "other" && ids.indexOf("co") >= 0 && ids.indexOf("map_team") >= 0 && ids.indexOf("public") >= 0);
   check("(3) the ids are unique", new Set(ids).size === ids.length);
+  const rids = W.REPORT_AUDIENCES.map(function (a) { return a.id; });
+  check("(3) the Custom Report's six audiences, legislators first and general last, each with a distinct report title and a guide",
+    rids.length === 6 && rids[0] === "legislators" && rids[5] === "general" && new Set(rids).size === 6
+    && new Set(W.REPORT_AUDIENCES.map(function (a) { return a.title; })).size === 6 && W.REPORT_AUDIENCES.every(function (a) { return a.label && a.title && typeof a.guide === "string" && a.guide.length > 40; }));
   check("(3) audienceLabel and audienceGuide read by id; an unknown id falls back to Other", W.audienceLabel("ceos") === "College CEOs" && /superintendent\/president/.test(W.audienceGuide("ceos")) && W.audienceGuide("nobody") === W.audienceGuide("other") && W.audienceLabel("nobody") === "nobody");
 });
 
@@ -177,7 +181,7 @@ block("(6)", function () {
   check("(6) each HTML loads the writer once", DASH.split(tag).length === 2 && INDEX.split(tag).length === 2);
   check("(6) the writer loads before report_generator.js, so every consumer finds it", DASH.indexOf(tag) >= 0 && DASH.indexOf(tag) < DASH.indexOf('<script src="report_generator.js"></script>'));
   // Each port adds its surface here (the communications lane's Next).
-  ["comms.js", "activity_summaries.js"].forEach(function (f) {
+  ["comms.js", "activity_summaries.js", "report_generator.js"].forEach(function (f) {
     const src = fs.readFileSync(f, "utf8");
     check("(6) " + f + " is a consumer: it reads CPL_WRITER, composes its system prompt with W.system, drafts through W.draft and names no model",
       /window\.CPL_WRITER/.test(src) && /W\.draft\(/.test(src) && /W\.system\(/.test(src) && !/claude-[a-z0-9-]+/.test(src) && !/CPL_REPORT_PROXY_URL/.test(src) && !/anthropic-version/.test(src));

@@ -117,8 +117,11 @@ versions). Its note names what he decides before it goes
   the second consumer: its role line and facts rule compose the system prompt through
   `W.system`, the draft goes through `W.draft` at 700 tokens, the posted row's `raw.model` names
   the served model, and its own naming-rule copy and `claude-sonnet-4-5` pin are gone).
-  Next `report_generator.js` (its own copy of the naming rule and pin; its six audiences with
-  their report prompts join the writer's list at its port), then `college_report_generator.js`, `annual_report.js`,
+  `report_generator.js` ported (S460, the third consumer): its six audiences live in the writer as
+  `REPORT_AUDIENCES` (id, label, the report title the docx renders, a guide), `buildSystem()` composes
+  its system prompt through `W.system`, the narrative goes through `W.draft` at the altitude band's
+  tokens, and its naming-rule copy, its `claude-sonnet-4-5` pin and the direct `api.anthropic.com`
+  fallback are gone. Next `college_report_generator.js` (its own six audiences and pin), `annual_report.js`,
   `raci.js` (the dated `claude-sonnet-4-5-20250929` pin), `credential_reference.js` (two small
   calls) and `quickstart.js` (routing; Haiku stays its own call by design, through
   `draft(..., { model })`). Each port deletes the surface's own copy of the rules and its model

@@ -1,7 +1,9 @@
 /*
  * CPL Dashboard — Custom Report Generator
  * Multi-select activities/projects + audience picker → AI-generated .docx
- * Requires: docx library (loaded from CDN), Cloudflare Worker proxy for Claude API
+ * Requires: docx library (loaded from CDN). The narrative goes through cpl_writer.js, the
+ * one writer module (the voice, the words, the naming rule, the audiences, the one model and
+ * the proxy call; Sam's Sheet 118 ruling 5): this file names no model and keeps no copy.
  *
  * Live wiring (Sam, 2026-07-02): before building the prompt, the generator
  * fetches the SAME live overlays the card faces use — the newest item_updates
@@ -15,20 +17,12 @@
     'use strict';
 
     // ── Configuration ──
-    // Set these in the HTML or via window globals before this script loads
-    var PROXY_URL = (typeof window !== 'undefined' && window.CPL_REPORT_PROXY_URL) || '';
-    // Unversioned alias, NOT a dated snapshot — a pinned claude-*-YYYYMMDD is a
-    // latent outage on its retirement date (docs/kb-notes/playbook-edge-function-502-retired-model.md).
-    var CLAUDE_MODEL = 'claude-sonnet-4-5';
-
-    // Naming rules appended to every report prompt (Sam, 2026-07-03): the
-    // program is the CPL Initiative; MAP is the platform. The generated
-    // Legislative Report had twice expanded MAP by its 2017-era name.
-    var NAMING_RULE = 'Naming rules (STRICT): The program is the "CPL Initiative" of the '
-        + 'California Community Colleges Chancellor\'s Office — never call it the "MAP Initiative". '
-        + 'MAP is the platform, expanded as the "Mapping Articulated Pathways (MAP) platform". '
-        + 'NEVER expand MAP as "Military Articulation Platform" — that was only the platform\'s '
-        + 'original name at its 2017 launch, and it may appear only when explicitly recounting that history.';
+    // The one writer module (cpl_writer.js, window.CPL_WRITER, static in both HTMLs before this
+    // file): the voice, the words, the naming rule (Sam, 2026-07-03: the generated Legislative
+    // Report had twice expanded MAP by its 2017-era name), the audiences, the one model and the
+    // proxy call (the proxy URL the HTML sets as a window global).
+    var W = ((typeof window !== 'undefined') ? window : globalThis).CPL_WRITER;
+    if (!W) throw new Error('report_generator.js needs cpl_writer.js loaded first (window.CPL_WRITER)');
 
     // Public anon key — same one committed in card_updates.js / card_raci.js.
     var SUPABASE_URL = 'https://hvuwhnbuahrtptokpqfh.supabase.co';
@@ -134,14 +128,9 @@
     // `title` is the document title the docx template stamps (and the model is
     // told NOT to repeat) — previously every report read "Legislative Report"
     // regardless of audience because the model invented its own title.
-    var AUDIENCES = [
-        { id: 'legislators', label: 'State Legislators & Legislative Staff', title: 'Legislative Report', prompt: 'Write for California state legislators and legislative staff. Emphasize ROI, fiscal impact, student outcomes, policy alignment with AB 1071 and Vision 2030, and statewide scale. Use formal but accessible language. Lead with measurable impact.' },
-        { id: 'ccc_leaders', label: 'CCC System Leaders (Chancellor\'s Office, Presidents)', title: 'System Leadership Report', prompt: 'Write for California Community College system leaders — the Chancellor\'s Office and college presidents. Emphasize strategic alignment with Vision 2030, institutional adoption metrics, implementation progress, and scalability across all California community colleges. Professional and strategic tone.' },
-        { id: 'faculty', label: 'Faculty & Academic Senate', title: 'Faculty & Academic Senate Report', prompt: 'Write for faculty and academic senate members. Emphasize academic rigor, credit recommendation quality, faculty workgroup outcomes, discipline-specific progress, and how CPL maintains academic standards while expanding access. Collegial and evidence-based tone.' },
-        { id: 'veterans', label: 'Veterans & Military Partners', title: 'Veterans & Military Partners Report', prompt: 'Write for military service members, veterans, and military education partners. Emphasize JST credit translation, military-specific CPL pathways, Star Colleges network, and how military training translates to college credit. Warm, respectful, action-oriented tone.' },
-        { id: 'workforce', label: 'Workforce & Industry Partners', title: 'Workforce & Industry Report', prompt: 'Write for workforce development boards, employers, and industry partners. Emphasize skills-based credentials, apprenticeship pathways, industry-aligned credit recommendations, and how CPL bridges work experience to college credentials. Professional and outcome-focused.' },
-        { id: 'general', label: 'General Audience', title: 'CPL Initiative Report', prompt: 'Write for a general audience of education stakeholders. Use clear, accessible language. Explain acronyms on first use. Balance data with narrative. Highlight student impact and real-world outcomes.' },
-    ];
+    // The six report audiences live in the writer (REPORT_AUDIENCES): id, label, the report
+    // title the docx template renders, and one paragraph of guidance.
+    var AUDIENCES = W.REPORT_AUDIENCES;
 
     // ── Elevation (Sam, 2026-07-03) ──
     // A 0 → 30,000 ft slider: how much detail vs. high-altitude focus the
@@ -500,14 +489,13 @@
                 + '2. **Key Metrics & Progress** — only the headline numbers that matter to this audience\n'
                 + '3. **Highlights by Activity** — one tight paragraph per Activity rolling up its selected projects (no project-by-project narration)\n'
                 + '4. **Opportunities & Asks** — the strategic opportunities and any decisions or support needed\n')
-            : ('1. **Executive Summary** (2-3 paragraphs) — tailored to the audience, highlighting the most impactful findings\n'
+            : ('1. **Executive Summary** (2-3 paragraphs) — tailored to the audience, highlighting the findings that matter most to it\n'
                 + '2. **Key Metrics & Progress** — present headline KPIs in context for the audience\n'
                 + '3. **Project Highlights** — for each selected project, write a concise but substantive narrative paragraph (not bullet points). Group by Activity.\n'
                 + '4. **Looking Ahead** — upcoming milestones, goals, and strategic priorities\n'
                 + '5. **Recommendations** — 3-5 actionable recommendations tailored to the audience\n');
 
-        return 'You are writing a professional report about the California Community Colleges Credit for Prior Learning (CPL) Initiative.\n\n'
-            + '## Audience\n' + sel.audience.prompt + '\n\n'
+        return '## Audience\n' + (sel.audience.guide || '') + '\n\n'
             + '## Altitude\n' + elevationGuidance(elevation) + '\n\n'
             + '## Headline KPIs (as of ' + sel.lastUpdated + ')\n' + kpiSummary + '\n\n'
             + '## Selected Projects\n' + projectSummaries + '\n\n'
@@ -518,36 +506,27 @@
             + 'The document template already renders the report title ("' + (sel.audience.title || 'CPL Initiative Report')
             + '") and the audience/date line — do NOT write a document title or an opening heading of your own; '
             + 'begin directly with "## Executive Summary".\n'
-            + NAMING_RULE + '\n'
-            + 'Use the data provided. Do not invent metrics. Write in prose, not bullet lists. '
+            + 'Write in prose, not bullet lists. '
             + 'Format section headers with ## markdown. Keep paragraphs concise but substantive.\n'
             + 'Honor the Altitude section above for depth and length (target ' + band.words + ' words).';
     }
 
-    // ── Call Claude API ──
-    async function callClaude(prompt, maxTokens) {
-        var url = PROXY_URL || 'https://api.anthropic.com/v1/messages';
-        var headers = {
-            'Content-Type': 'application/json',
-            'anthropic-version': '2023-06-01',
-        };
-
-        var body = JSON.stringify({
-            model: CLAUDE_MODEL,
-            max_tokens: maxTokens || 4096,
-            messages: [{ role: 'user', content: prompt }],
+    // ── The system prompt and the call, through the writer ──
+    // This generator's role line, then the writer's shared rules (the voice; the words: American
+    // spelling, the naming rule, the banned business words, the funding vocabulary), then its own
+    // facts rule. The user prompt (buildPrompt) carries the audience, the altitude, the data and
+    // the report's structure.
+    function buildSystem() {
+        return W.system({
+            role: 'You write a professional report about the California Community Colleges Credit for Prior '
+                + 'Learning (CPL) Initiative for its MAP team, who read it, edit it and decide where it goes.',
+            extra: ['Facts: use the data provided. Do not invent metrics, dates or names.']
         });
-
-        var resp = await fetch(url, { method: 'POST', headers: headers, body: body });
-        if (!resp.ok) {
-            var errText = await resp.text();
-            throw new Error('API error (' + resp.status + '): ' + errText.substring(0, 200));
-        }
-        var json = await resp.json();
-        if (json.content && json.content[0] && json.content[0].text) {
-            return json.content[0].text;
-        }
-        throw new Error('Unexpected API response format');
+    }
+    // The one model and the proxy call are the writer's; the altitude band sets the tokens.
+    async function callClaude(prompt, maxTokens) {
+        var r = await W.draft(prompt, { system: buildSystem(), maxTokens: maxTokens || 4096 });
+        return r.text;
     }
 
     // ── Generate .docx from markdown-ish text ──
@@ -684,7 +663,7 @@
             return;
         }
 
-        if (!PROXY_URL) {
+        if (!W.proxyUrl()) {
             setStatus('Report proxy not configured. Contact your administrator.', '#c00');
             return;
         }
@@ -825,13 +804,15 @@
         applyLiveOverlay: applyLiveOverlay,
         activityUpdatesFor: activityUpdatesFor,
         buildPrompt: buildPrompt,
+        buildSystem: buildSystem,
         fetchLiveOverlay: fetchLiveOverlay,
         // Session 97 additions (elevation / audience titles / naming rule)
         AUDIENCES: AUDIENCES,
         ELEVATION_BANDS: ELEVATION_BANDS,
         elevationBand: elevationBand,
         elevationGuidance: elevationGuidance,
-        NAMING_RULE: NAMING_RULE,
+        NAMING_RULE: W.NAMING_RULE,
+        MODEL: W.MODEL,
     };
     if (typeof window !== 'undefined') window.CPL_CUSTOM_REPORT = api;
     if (typeof module !== 'undefined' && module.exports) module.exports = api;
