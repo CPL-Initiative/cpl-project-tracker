@@ -229,6 +229,13 @@ SEEDS = [
         "why": "the draft goes through cpl_writer.js draft() over window.CPL_REPORT_PROXY_URL; "
                "every later consumer of the writer needs the same seed at its port",
     },
+    {   # activity_summaries.js (S460): the Refresh summaries draft goes through cpl_writer.js's
+        # draft() the same way (the second consumer of the writer).
+        "file": "activity_summaries.js",
+        "anchor": r'W\.draft\(prompt, \{ system: SYSTEM',
+        "datasets": [("external:cpl-proxy.slee-548.workers.dev", "read")],
+        "why": "the draft goes through cpl_writer.js draft() over window.CPL_REPORT_PROXY_URL",
+    },
     {   # Sierra's pgvector retrieval tables: named only in docs; DDL applied live
         "file": "chatbox/supabase/functions/cpl-chat/index.ts",
         "anchor": r'match_document_sections',

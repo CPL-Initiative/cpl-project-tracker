@@ -14,7 +14,8 @@
  *     ("Summary posted Jun 29, 2026 · 7 sub-activity updates since");
  *   - a signed-in reviewer (magic-link session; the team phrase neither drafts
  *     nor posts) gets "Refresh summaries" above the first Activity. It drafts
- *     each Activity's summary through the report proxy from that Activity's
+ *     each Activity's summary through the writer module (cpl_writer.js: the
+ *     voice, the words, the one model, the proxy call) from that Activity's
  *     sub-activities (their newest item_updates, the creation-era latest
  *     update, status, percent complete, this fiscal year's goal and current), opens each
  *     draft in an editable field with its sources named, and posts one only on
@@ -36,13 +37,18 @@
 
   var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
-  // The report generator's model (report_generator.js): an unversioned alias
-  // the shared proxy already serves.
-  var CLAUDE_MODEL = "claude-sonnet-4-5";
-  // Same words as report_generator.js NAMING_RULE (Sam, 2026-07-03).
-  var NAMING_RULE = 'The program is the "CPL Initiative" of the California Community Colleges '
-    + 'Chancellor\'s Office; never call it the "MAP Initiative". MAP is the platform, expanded as the '
-    + '"Mapping Articulated Pathways (MAP) platform"; never expand MAP as "Military Articulation Platform".';
+  // The one writer module (cpl_writer.js, window.CPL_WRITER, static in both HTMLs before this
+  // file; Sam's Sheet 118 ruling 5): the voice, the words, the one model and the proxy call.
+  // This file names no model and carries no copy of the rules.
+  var W = ((typeof window !== "undefined") ? window : globalThis).CPL_WRITER;
+  if (!W) throw new Error("activity_summaries.js needs cpl_writer.js loaded first (window.CPL_WRITER)");
+  // What this module tells the model about its task; the shared rules follow from the writer.
+  var SYSTEM = W.system({
+    role: "You draft the status summary for one Activity of the California Community Colleges Credit for Prior "
+      + "Learning (CPL) Initiative workplan. A reviewer on the CPL team reads your draft, edits it, and decides "
+      + "whether to post it; nothing you write is posted by itself.",
+    extra: ["Facts: use only the facts in the brief. Invent no figure, date or name."]
+  });
   var UPDATES_PER_SUB = 3;     // newest updates sent per sub-activity
   var BODY_CAP = 600;          // characters of each update sent
 
@@ -171,23 +177,18 @@
       ? "The summary posted " + fmtDate(g.summary.created_at) + ":\n" + clip(g.summary.body, 1200)
       : "No summary has been posted for this Activity.";
     var prompt =
-      "You are drafting the status summary for one Activity of the California Community Colleges "
-      + "Credit for Prior Learning (CPL) Initiative workplan. A reviewer on the CPL team reads your draft, "
-      + "edits it, and decides whether to post it.\n\n"
-      + "Activity " + g.act + (g.name ? ": " + g.name : "") + "\n\n"
+      "Activity " + g.act + (g.name ? ": " + g.name : "") + "\n\n"
       + prev + "\n\n"
       + "Its sub-activities, each with its newest updates:\n"
       + (lines.length ? lines.join("\n") : "(none listed)") + "\n\n"
       + "Write one paragraph of 90 to 160 words on where this Activity stands: what moved most recently, "
       + "what comes next, and what has stalled. Name the sub-activities you draw on by number. Use only the "
-      + "facts above, and invent no figure, date or name. Write in plain language and active voice, and name "
-      + "who acts. State each point positively. No heading, title, bullets, bold or emoji, and do not open "
-      + "with the Activity's name. Never use the words leverage, utilize, robust, deep dive, synergy, "
-      + "operationalize or impactful. " + NAMING_RULE + "\nReturn only the paragraph.";
-    return { prompt: prompt, used: used };
+      + "facts above, and invent no figure, date or name. No heading, title, bullets, bold or emoji, and do "
+      + "not open with the Activity's name.\nReturn only the paragraph.";
+    return { prompt: prompt, system: SYSTEM, used: used };
   }
 
-  function postPayload(act, text, draft, used, email, draftedAt) {
+  function postPayload(act, text, draft, used, email, draftedAt, model) {
     return {
       item_type: "activity",
       item_id: String(act),
@@ -196,7 +197,7 @@
       raw: JSON.stringify({
         generated_by: "activity_summaries.js",
         drafted_by: "Claude, through the report proxy",
-        model: CLAUDE_MODEL,
+        model: model || W.MODEL,
         approved_by: email || null,
         drafted_at: draftedAt || null,
         edited: text !== draft,
@@ -238,22 +239,10 @@
     });
   }
 
+  // The draft goes through the writer: the one model, the system prompt above, 700 tokens.
+  // It resolves { text, model } or rejects with a sentence the card shows.
   function callProxy(prompt) {
-    var url = (typeof window !== "undefined" && window.CPL_REPORT_PROXY_URL) || "";
-    if (!url) return Promise.reject(new Error("The report proxy is not configured on this page."));
-    return fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({ model: CLAUDE_MODEL, max_tokens: 700,
-                             messages: [{ role: "user", content: prompt }] })
-    }).then(function (r) {
-      if (!r.ok) return r.text().then(function (t) { throw new Error("The proxy answered " + r.status + ": " + String(t).slice(0, 160)); });
-      return r.json();
-    }).then(function (j) {
-      var t = j && j.content && j.content[0] && j.content[0].text;
-      if (!t) throw new Error("The proxy returned no text.");
-      return String(t).trim();
-    });
+    return W.draft(prompt, { system: SYSTEM, maxTokens: 700 });
   }
 
   function postSummary(sess, payload) {
@@ -417,15 +406,15 @@
       el("div", { "class": "as-actions" }, [post, redraft, skip, st])
     ]);
     panel.appendChild(card);
-    var draft = "", draftedAt = null;
+    var draft = "", draftedAt = null, draftModel = null;
 
     function run() {
       card.setAttribute("data-state", "drafting");
       post.disabled = true; redraft.disabled = true; text.readOnly = true;
       st.textContent = "Drafting…";
-      return callProxy(built.prompt).then(function (t) {
-        draft = t; draftedAt = new Date().toISOString();
-        text.value = t; text.readOnly = false;
+      return callProxy(built.prompt).then(function (r) {
+        draft = r.text; draftModel = r.model; draftedAt = new Date().toISOString();
+        text.value = r.text; text.readOnly = false;
         card.setAttribute("data-state", "ready");
         post.disabled = false; redraft.disabled = false;
         st.textContent = "Draft ready. Not posted.";
@@ -444,7 +433,7 @@
       if (!body) { st.textContent = "The summary is empty."; return; }
       post.disabled = true; redraft.disabled = true; skip.disabled = true;
       st.textContent = "Posting…";
-      postSummary(sess, postPayload(h.act, body, draft, built.used, sess.email, draftedAt)).then(function () {
+      postSummary(sess, postPayload(h.act, body, draft, built.used, sess.email, draftedAt, draftModel)).then(function () {
         card.setAttribute("data-state", "posted");
         text.readOnly = true;
         st.textContent = "Posted.";
@@ -490,7 +479,7 @@
     activityOf: activityOf, gather: gather, freshnessText: freshnessText, buildPrompt: buildPrompt,
     goalFacts: goalFacts, fiscalYearSuffix: fiscalYearSuffix,
     postPayload: postPayload, reviewerSession: reviewerSession, paint: paint,
-    CLAUDE_MODEL: CLAUDE_MODEL, _state: state
+    MODEL: W.MODEL, _system: SYSTEM, _state: state
   };
   if (typeof window !== "undefined") window.CPL_ACTIVITY_SUMMARIES = api;
   if (typeof module !== "undefined" && module.exports) module.exports = api;
