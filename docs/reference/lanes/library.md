@@ -66,10 +66,14 @@ in the page for search and screen readers, and the title opens the piece. **Ligh
 query anywhere; dark only from the reader's own Dark click, here or in COBI (the shared `cpl_theme`). The header is the
 public header's copy restyled to the page; its other copies (`CPLBrain/04-projects/cpl-initiative/public-header/`) still
 follow the device setting. **The photo cycles** through every `.hero-slide` the page lists, one every seven seconds,
-with *Pause photos* beside it; with one photo, or for a reader who asks for reduced motion, nothing moves. It shows one
-today: the student from Malone's page (`library/photos/hero-student-1.jpg`, cropped clean of the arc, the black edge and
-the notice text baked into her 424 by 445 screenshot, and drawn inside a CSS arc). CLAUDE.md's First Light rule names
-this page as its one departure. `cpl_memory` `sam-public-library-malone-look-2026-10-24`.
+with *Pause photos* beside it; with one photo, or for a reader who asks for reduced motion, nothing moves. It shows
+eleven (S468): the student from Malone's page first (`library/photos/hero-student-1.jpg`), then ten Career Education
+toolkit photos Sam supplied (LATTC Architecture, Construction, Fashion, InfoCommTech and Transportation; Sequoia Welding
+twice; CCD Advanced Manufacturing, BioTech and Health). Every slide is a 4:3 JPEG at most 1,200 pixels wide with its
+people near the middle, so one `object-position: 50% 50%` serves them all; only the first loads up front, each next one
+a turn ahead. `tests/public_library.test.js` (6e) fails a slide whose file is missing, is not 4:3, or whose tag misstates
+its size. CLAUDE.md's First Light rule names this page as its one departure. `cpl_memory`
+`sam-public-library-malone-look-2026-10-24`.
 
 ✅ **The team phrase lists publicly too (Sam, 2026-10-23 18:50Z, his own call, reversing
 2026-10-20; built S458):** *"can you set the Library page to be editable with Team phrase and not
@@ -158,10 +162,9 @@ it by title and summary until someone adds them.
 them on Google Drive as zips (`CCC-LATTC-<Program>-<number>_V1.zip`, the folder 1WNtaaKMGSYsKsdJLxi4fbR24fXD4fGUZ); the Drive
 connector refuses a download over 10 MB, and the first zip is 43.8 MB, so the photos come unzipped, attached to a message or
 as JPEGs under 10 MB on Drive.
-When they arrive: resize each to about 1,200 pixels on its long side as a JPEG in `library/photos/`, add an
-`<img class="hero-slide" data-src="photos/..." alt="">` per photo after the first, and rerun the page's test and
-`npm run a11y -- public-library public-library-dark` (the pause control shows from two photos on). This waits on the
-files, which no card can supply.
+**Done (S468, 2026-10-24):** the ten JPEGs in the Drive folder *Photos* (`1Ip4KaipYU6xNCbogeEG81-ZPQkbzMJpd`) are on the
+page (Status, above). Baking and Nursing exist only as zips over 10 MB, so the page has neither; either one joins by
+syncing its JPEG into *Photos*, cropping it to 4:3 around its people, and adding a slide.
 
 **Card 2, *unlist*:** *Turning IT and AI credentials into credit* comes off the public library until it has a public
 home: its link points into the vault's private GitHub repository, so a public visitor got GitHub's 404 page. Receipt

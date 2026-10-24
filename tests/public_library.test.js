@@ -36,6 +36,9 @@ function block(label, fn) {
 }
 const SQL = fs.readFileSync("kb/supabase_cpl_library_public.sql", "utf8");
 const PAGE = fs.readFileSync("library/index.html", "utf8");
+// The page with only its first photo: windows that are not testing the cycle load this, so no
+// photo timer outlives them and keeps the process from exiting.
+const ONE = PAGE.replace(/\n\s*<img class="hero-slide" data-src[^>]*>/g, "");
 const PAGE_JS = fs.readFileSync("library/public_library.js", "utf8");
 const LIB = fs.readFileSync("library.js", "utf8");
 const ADMIN = fs.readFileSync("admin.js", "utf8");
@@ -80,7 +83,7 @@ block("(1)", function () {
 
 // ── (2) The public page ──────────────────────────────────────────────────
 function loadPage(fetcher) {
-  const dom = new JSDOM(PAGE.replace('<script src="./public_library.js"></script>', ""), { url: "https://example.org/library/", runScripts: "dangerously" });
+  const dom = new JSDOM(ONE.replace('<script src="./public_library.js"></script>', ""), { url: "https://example.org/library/", runScripts: "dangerously" });
   const w = dom.window, calls = [];
   w.fetch = function (url, init) { calls.push({ url: String(url), init: init || {} }); return fetcher(String(url), init || {}); };
   const s = w.document.createElement("script"); s.textContent = PAGE_JS; w.document.body.appendChild(s);
@@ -263,7 +266,7 @@ block("(5c)", function () {
 // the CPL Public Library based on Malone's", the student image cycling.
 function styles(html) { return (html.match(/<style>[\s\S]*?<\/style>/g) || []).join("\n"); }
 function loadThemed(opts) {
-  const dom = new JSDOM((opts.html || PAGE).replace('<script src="./public_library.js"></script>', ""), {
+  const dom = new JSDOM((opts.html || ONE).replace('<script src="./public_library.js"></script>', ""), {
     url: "https://example.org/library/", runScripts: "dangerously",
     beforeParse: function (w) {
       w.matchMedia = function (q) {
@@ -339,17 +342,42 @@ block("(6d)", function () {
     check("(6d) and Light stays Light", light.d.documentElement.getAttribute("data-theme") === "light");
   });
 });
-const THREE = PAGE.replace(/(<img class="hero-slide is-on"[^>]*>)/, '$1\n        <img class="hero-slide" data-src="photos/b.jpg" alt="" width="10" height="10">\n        <img class="hero-slide" data-src="photos/c.jpg" alt="" width="10" height="10">');
+// The cycle's checks run on fixed casts: ONE (above) keeps only the first slide, THREE adds two.
+const THREE = ONE.replace(/(<img class="hero-slide is-on"[^>]*>)/, '$1\n        <img class="hero-slide" data-src="photos/b.jpg" alt="" width="10" height="10">\n        <img class="hero-slide" data-src="photos/c.jpg" alt="" width="10" height="10">');
+// A JPEG's pixel size from its SOF marker, so the photo checks need no image library.
+function jpegSize(file) {
+  const b = fs.readFileSync(file);
+  if (b[0] !== 0xFF || b[1] !== 0xD8) return null;
+  for (let i = 2; i + 9 < b.length;) {
+    if (b[i] !== 0xFF) return null;
+    const m = b[i + 1], len = b.readUInt16BE(i + 2);
+    if (m >= 0xC0 && m <= 0xCF && m !== 0xC4 && m !== 0xC8 && m !== 0xCC) return { w: b.readUInt16BE(i + 7), h: b.readUInt16BE(i + 5) };
+    i += 2 + len;
+  }
+  return null;
+}
 block("(6e)", function () {
   const d = new JSDOM(PAGE).window.document;
   const slides = d.querySelectorAll("#lib-hero .hero-slide");
   check("(6e) the hero photo is decorative: empty alt, inside a hidden frame", slides.length >= 1 && Array.prototype.every.call(slides, function (s) { return s.getAttribute("alt") === ""; }) && d.getElementById("lib-hero").getAttribute("aria-hidden") === "true");
   const btn = d.getElementById("lib-hero-pause");
   check("(6e) Pause photos is a button outside the hidden frame", !!btn && btn.tagName === "BUTTON" && !btn.closest('[aria-hidden="true"]'));
-  check("(6e) the first photo is the student from Malone's page", /src="photos\/hero-student-1\.jpg"/.test(PAGE) && fs.existsSync("library/photos/hero-student-1.jpg"));
-  const one = loadThemed({}), m = loadThemed({ html: THREE }), still = loadThemed({ html: THREE, still: true });
+  check("(6e) the first photo is the student from Malone's page", /src="photos\/hero-student-1\.jpg"/.test(PAGE) && fs.existsSync("library/photos/hero-student-1.jpg") && slides[0].classList.contains("is-on"));
+  // The toolkit photos (Sam, Sheet 124 card 1): every slide after the first waits in data-src,
+  // so the page loads one photo up front, and each file is a 4:3 JPEG no wider than 1,200
+  // pixels whose width and height the tag states, because one object-position serves them all.
+  const rest = Array.prototype.slice.call(slides, 1);
+  check("(6e) the page lists the toolkit photos after the student", rest.length >= 10);
+  check("(6e) only the first photo loads up front", rest.every(function (s) { return !s.getAttribute("src") && /^photos\/[a-z0-9-]+\.jpg$/.test(s.getAttribute("data-src") || ""); }));
+  const bad = Array.prototype.filter.call(slides, function (s) {
+    const f = "library/" + (s.getAttribute("src") || s.getAttribute("data-src")), z = fs.existsSync(f) && jpegSize(f);
+    return !z || z.w > 1200 || Math.abs(z.w / z.h - 4 / 3) > 0.01 || +s.getAttribute("width") !== z.w || +s.getAttribute("height") !== z.h;
+  }).map(function (s) { return s.getAttribute("src") || s.getAttribute("data-src"); });
+  check("(6e) every photo is a 4:3 JPEG on disk, at most 1,200 wide, sized as its tag says" + (bad.length ? ": " + bad.join(", ") : ""), bad.length === 0);
+  check("(6e) one object-position serves every slide: the middle", /\.hero-slide\s*\{[^}]*object-position:\s*50% 50%/.test(PAGE));
+  const one = loadThemed({ html: ONE }), m = loadThemed({ html: THREE }), still = loadThemed({ html: THREE, still: true }), live = loadThemed({ html: PAGE });
   return settle().then(function () {
-    check("(6e) init ran in every window (so no check below passes vacuously)", [one, m, still].every(function (x) { return x.d.getElementById("lib-state").textContent !== "Loading the library…"; }));
+    check("(6e) init ran in every window (so no check below passes vacuously)", [one, m, still, live].every(function (x) { return x.d.getElementById("lib-state").textContent !== "Loading the library…"; }));
     check("(6e) one photo: nothing moves and no control shows", one.w.CPL_PUBLIC_LIBRARY._hero.state.live === false && one.d.getElementById("lib-hero-pause").hidden === true);
     const H = m.w.CPL_PUBLIC_LIBRARY._hero, b = m.d.getElementById("lib-hero-pause");
     const on = function () { return Array.prototype.map.call(m.d.querySelectorAll("#lib-hero .hero-slide"), function (s) { return s.classList.contains("is-on") ? 1 : 0; }).join(""); };
@@ -365,7 +393,8 @@ block("(6e)", function () {
     check("(6e) Play photos starts it again", !!H.state.timer && b.textContent === "Pause photos");
     const S = still.w.CPL_PUBLIC_LIBRARY._hero;
     check("(6e) a reader who asks for reduced motion sees one photo and no control", S.state.live === false && !S.state.timer && still.d.getElementById("lib-hero-pause").hidden === true);
-    H.pause(); [one, m, still].forEach(function (x) { x.w.close(); });
+    check("(6e) the page as shipped cycles its photos and shows Pause photos", live.w.CPL_PUBLIC_LIBRARY._hero.state.live === true && live.d.getElementById("lib-hero-pause").hidden === false);
+    H.pause(); live.w.CPL_PUBLIC_LIBRARY._hero.pause(); [one, m, still, live].forEach(function (x) { x.w.close(); });
   });
 });
 block("(6f)", function () {

@@ -20,7 +20,9 @@
      section label, moved For beside the search, added Sort (Most recent first), shortened the
      cards, and opened the page in Light: dark only when the reader picks Dark, never from the
      device setting. The photo cycles through every .hero-slide below; the first is the student
-     from Malone's page. Test: tests/public_library.test.js -->
+     from Malone's page, then ten Career Education toolkit photos Sam supplied (Sheet 124
+     card 1), each cropped to 4:3 with its people near the middle, so one object-position
+     serves every slide. Test: tests/public_library.test.js -->
 <script>(function(){function a(t){document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")}
 try{a(localStorage.getItem("cpl_theme"))}catch(e){a(null)}
 window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newValue)})})()</script>
@@ -84,7 +86,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .hero-visual { position: relative; min-width: 0; min-height: 260px; overflow: hidden; }
 .hero-visual::before { content: ""; position: absolute; inset: 0; background: var(--ring); clip-path: ellipse(calc(67% + 18px) calc(60% + 18px) at 75% 50%); }
 .hero-slides { position: absolute; inset: 0; }
-.hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 50% 20%; clip-path: ellipse(67% 60% at 75% 50%); opacity: 0; transition: opacity 1.2s ease; }
+.hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 50% 50%; clip-path: ellipse(67% 60% at 75% 50%); opacity: 0; transition: opacity 1.2s ease; }
 .hero-slide.is-on { opacity: 1; }
 .hero-visual::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, var(--wash) 0%, var(--wash-0) 38%); clip-path: ellipse(67% 60% at 75% 50%); }
 .word { background: none; border: 0; padding: 0 2px; min-height: 24px; min-width: 24px; font: inherit; font-weight: 700; color: var(--link); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
@@ -206,7 +208,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     </div>
     <div class="hero-visual">
       <div class="hero-slides" id="lib-hero" aria-hidden="true">
-        <img class="hero-slide is-on" src="photos/hero-student-1.jpg" alt="" width="634" height="826">
+        <img class="hero-slide is-on" src="photos/hero-student-1.jpg" alt="" width="598" height="448">
+        <img class="hero-slide" data-src="photos/hero-architecture.jpg" alt="" width="1001" height="750">
+        <img class="hero-slide" data-src="photos/hero-welding-2.jpg" alt="" width="1001" height="750">
+        <img class="hero-slide" data-src="photos/hero-biotech.jpg" alt="" width="1200" height="900">
+        <img class="hero-slide" data-src="photos/hero-construction.jpg" alt="" width="1001" height="750">
+        <img class="hero-slide" data-src="photos/hero-health.jpg" alt="" width="922" height="692">
+        <img class="hero-slide" data-src="photos/hero-fashion.jpg" alt="" width="1001" height="750">
+        <img class="hero-slide" data-src="photos/hero-transportation.jpg" alt="" width="1001" height="750">
+        <img class="hero-slide" data-src="photos/hero-manufacturing.jpg" alt="" width="1200" height="900">
+        <img class="hero-slide" data-src="photos/hero-ict.jpg" alt="" width="1001" height="750">
+        <img class="hero-slide" data-src="photos/hero-welding-1.jpg" alt="" width="1001" height="750">
       </div>
       <button type="button" class="word hero-pause" id="lib-hero-pause" hidden>Pause photos</button>
     </div>
