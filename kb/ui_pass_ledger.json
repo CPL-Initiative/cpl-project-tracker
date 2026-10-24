@@ -6,8 +6,8 @@
    "name": "Sierra",
    "page": "sierra/index.html",
    "audience": "public",
-   "last": "2026-10-20",
-   "outcome": "Third pass (S434): AA, targets, focus, keyboard and reduced motion clean at nine widths in all four views before and after; First Light held (no raw hex outside :root, no undefined token). The one gap was the Controls rule: Copy, Helpful, Not helpful and the note's Send were pills, now underlined words 18px apart with the pick bold (tests/sierra_feedback_words.test.js). Wiring unchanged: the chat function and feedback RPC agree with the COBI surfaces (sierra_surfaces_aligned 44/44)."
+   "last": "2026-10-24",
+   "outcome": "S461 (2026-10-24): npm run a11y sierra, sierra-dark, sierra-asking, sierra-asking-dark all pass at nine widths. Wiring: edgefn:cpl-chat and rpc:sierra_feedback_upsert carry no figure Sierra shows beside another view (answers are drafted per question), so nothing to compare. First Light: sierra.css holds tokens only; the mark's var() fallbacks named #0b3d61, a second seal blue, against the token #002F6D, and the Pathways print palette painted it. Fixed in sierra.js, factsheet_sierra.js, cpl_chat.js and cpl_pathways.js, guarded by tests/seal_blue_fallback.test.js. Left: the two HTMLs' Ask Sierra link carries the same fallback (never painted, --seal-blue is defined there) and --navy-primary fallbacks of #0b3d61 in cpl_chat.js."
   },
   {
    "id": "veteran-sprint-map",

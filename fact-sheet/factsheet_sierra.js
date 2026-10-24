@@ -41,7 +41,7 @@
   // the avatar needs no relative-path asset. Mirrors sierra/sierra.js.
   var SIERRA_MARK =
     '<svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">' +
-    '<circle cx="20" cy="20" r="19" style="fill:var(--seal-blue,#0b3d61)"/>' +
+    '<circle cx="20" cy="20" r="19" style="fill:var(--seal-blue,#002F6D)"/>' +
     '<path d="M2 30 L12 25 21 17 29 9 35 4 40 1 43 6 46 4 49 9 52 7 55 11 59 15 63 19 66 22 70 18 73 20 76 15 79 13 82 16 85 20 90 24 97 27 105 29 118 30"' +
     ' transform="translate(4 15.4) scale(0.2667)" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>' +
     '<path d="M40 5.4 L37.4 10.6 38.9 9.6 40 11 41.1 9.5 42.6 10.7 40 5.4 Z"' +
