@@ -8,8 +8,8 @@ status: current
 
 # You are Session 460
 
-Your moniker is **SkyFremontia**. Session 459 (**SkyBuckeye**) was Sam's session, 20:08Z to about 23:50Z on 2026-10-23,
-with one context compaction at 21:35Z and a second checkpoint at the 82,000-token line.
+Your moniker is **SkyFremontia**. Session 459 (**SkyBuckeye**) was Sam's session, 20:08Z on 2026-10-23 to about
+00:20Z on 2026-10-24, with one context compaction at 21:35Z and a second checkpoint at the 82,000-token line.
 Read, in order: this file, `docs/reference/lanes/library.md` (Status and the Sheet 121 section), `docs/library_lessons.md`
 (the two S459 sections), `docs/reference/lanes/program-requirements-harvest.md` (the NEXT line). Run Rule 8's memory query
 with the tags `library` and `ell-iet` before touching code.
@@ -32,14 +32,13 @@ writer per file with any session that is still working. Sam's routine: `docs/ref
   computed by `ell-iet/make_brief.py` from EDD's award notice, MAP's adoption view, COCI's programs and each college's
   county; Library record `ell-iet-cpl-starting-points` (visual, Made for Agency, seen by the team; #2396). Vault
   samueltlee/CPLBrain#451 merged.
-- **Sheet 121 card 1, the Knowledge Base fold: OPEN as #2397** (`claude/library-kb-fold-s459`, draft). The tab becomes the
-  Library's second view (Pieces / Knowledge Base), old `#knowledge-base` links route there, `cpl_library` gains
-  `knowledge` and `kb_note`, Needs attention counts knowledge pieces with no KB note. Its push runs the schema apply
-  (`cpl_library_knowledge_2026_10_23_s459`); **the bot's receipt commit starts no CI, so after it lands: a session commit
-  returning `kb/migrations/.apply` to main's content, then merge on a green `test`** (the dance #2393 to #2396 all needed).
-- **This checkpoint's PR** (the branch `claude/ecstatic-meitner-hdiswf`): the harvest lane's NEXT, the CLAUDE.md sheet
-  pointer, the memory receipt `kb/receipts/cpl_memory_2026-10-23_s459_later.sql` (its `.apply` runs on push; the same
-  receipt-then-session-commit dance), this handoff, the docs index.
+- **Sheet 121 card 1, the Knowledge Base fold: MERGED as #2397** (4c01d7370 on `main`, 2026-10-24 00:13Z). The tab is
+  the Library's second view (Pieces / Knowledge Base), old `#knowledge-base` links route there, `cpl_library` carries
+  `knowledge` and `kb_note` (schema applied by run 40041338652, receipt on `main`), Needs attention counts knowledge
+  pieces with no KB note. Pages serves it on its next deploy; open the Library once at your start and see the two views.
+- **This checkpoint's PR, #2398** (the branch `claude/ecstatic-meitner-hdiswf`): the harvest lane's NEXT, the CLAUDE.md
+  sheet pointer, the memory receipt `kb/receipts/cpl_memory_2026-10-23_s459_later.sql` (applied by run 40041963738, three
+  rows proposed), this handoff, the docs index.
 
 ## Decisions Sam made this run
 
@@ -51,16 +50,15 @@ writer per file with any session that is still working. Sam's routine: `docs/ref
 
 ## Open work, in order
 
-1. Land **#2397** (above). Then the two pending receipt PRs' pattern once more for this checkpoint's branch.
-2. **Sheet 121 card 2:** when Sam attaches `CPL_Coordinator_Guide.docx`, `.pdf`, `CPL_Coordinator_Quick_Reference.docx`
+1. **Sheet 121 card 2:** when Sam attaches `CPL_Coordinator_Guide.docx`, `.pdf`, `CPL_Coordinator_Quick_Reference.docx`
    and `.pdf`, run `CPLBrain/04-projects/cpl-initiative/coordinator-guide/audit_workflow.js` under "ultracode" and commit
    its report beside it. Ask him once, early, in one line.
-3. **The ELL IET page's next step:** Sam reads the draft; on his word, list it publicly (the Library's *Make public*, the
+2. **The ELL IET page's next step:** Sam reads the draft; on his word, list it publicly (the Library's *Make public*, the
    phrase) and send each project its card. The brief's data read is dated 2026-10-23; rebuild with `make_brief.py` after any
    MAP or COCI refresh.
-4. **The writer module** (Sheet 118 card 5): `cpl_writer.js` with `comms.js` as the first consumer.
-5. The harvest queue (Hartnell's noncredit hours, the arithmetic failures, the two S448 offers) waits on Sam's word.
-6. `kb/status/program-requirements.json` was not re-stamped at this second checkpoint (light); stamp it at yours.
+3. **The writer module** (Sheet 118 card 5): `cpl_writer.js` with `comms.js` as the first consumer.
+4. The harvest queue (Hartnell's noncredit hours, the arithmetic failures, the two S448 offers) waits on Sam's word.
+5. `kb/status/program-requirements.json` was not re-stamped at this second checkpoint (light); stamp it at yours.
 
 ## Lessons to honor
 
@@ -73,5 +71,6 @@ writer per file with any session that is still working. Sam's routine: `docs/ref
 
 ## Let go
 
-At sign-off this session dropped its watches on #2397 and its check-in `trig_01YcA2e8WSUMTiVS5TWwZkrW`; #2393, #2394,
-#2395, #2396 and CPLBrain#450, #451 are merged. The artifact watch on the ELL IET page was never registered.
+At sign-off this session dropped its watches on #2397 and #2398 and its check-ins `trig_01YcA2e8WSUMTiVS5TWwZkrW` and
+`trig_01Q5M6CFgv6wT8RzhsGwajAz`; #2393 to #2398 and CPLBrain#450, #451 are merged. The artifact watch on the ELL IET
+page was never registered.
