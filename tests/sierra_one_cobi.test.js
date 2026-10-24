@@ -402,9 +402,11 @@ const cobiWrap = (w) => w.document.querySelector("body > .cplchat.cplchat-full, 
     q.CPL_REPORT_PROXY_URL = "https://proxy.example.org/";
     q.CPL_CHAT = { open: function (o) { asked.push(o); return true; } };
     q.fetch = function () {
-      return Promise.resolve({ ok: true, json: () => Promise.resolve({ content: [{ text:
+      return Promise.resolve({ ok: true, json: () => Promise.resolve({ content: [{ type: "text", text:
         JSON.stringify({ tab: "chatbot", message: "Asking Sierra AI." }) }] }) });
     };
+    // The page loads the writer module first; the router drafts through it (Sheet 118 ruling 5).
+    const sw = q.document.createElement("script"); sw.textContent = fs.readFileSync("cpl_writer.js", "utf8"); q.document.body.appendChild(sw);
     const s = q.document.createElement("script"); s.textContent = QUICK; q.document.body.appendChild(s);
     q.document.dispatchEvent(new q.Event("DOMContentLoaded"));
     const input = q.document.getElementById("qs-input");

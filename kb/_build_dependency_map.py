@@ -268,6 +268,12 @@ SEEDS = [
         "datasets": [("external:cpl-proxy.slee-548.workers.dev", "read")],
         "why": "the Suggest lookups go through cpl_writer.js draft() over window.CPL_REPORT_PROXY_URL",
     },
+    {   # quickstart.js (S462): the Where To? router goes through cpl_writer.js's draft() with its Haiku override.
+        "file": "quickstart.js",
+        "anchor": r'W\.draft\(userPrompt, \{ system: routingSystem\(\)',
+        "datasets": [("external:cpl-proxy.slee-548.workers.dev", "read")],
+        "why": "the router goes through cpl_writer.js draft() over window.CPL_REPORT_PROXY_URL",
+    },
     {   # Sierra's pgvector retrieval tables: named only in docs; DDL applied live
         "file": "chatbox/supabase/functions/cpl-chat/index.ts",
         "anchor": r'match_document_sections',

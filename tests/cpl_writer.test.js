@@ -186,6 +186,11 @@ block("(6)", function () {
     check("(6) " + f + " is a consumer: it reads CPL_WRITER, composes its system prompt with W.system, drafts through W.draft and names no model",
       /window\.CPL_WRITER/.test(src) && /W\.draft\(/.test(src) && /W\.system\(/.test(src) && !/claude-[a-z0-9-]+/.test(src) && !/CPL_REPORT_PROXY_URL/.test(src) && !/anthropic-version/.test(src));
   });
+  // quickstart.js keeps Haiku for routing by design and passes it to draft() as the override.
+  const qs = fs.readFileSync("quickstart.js", "utf8");
+  check("(6) quickstart.js is a consumer: it composes with W.system, drafts through W.draft with its one routing model, and keeps no proxy call of its own",
+    /window\.CPL_WRITER/.test(qs) && /W\.draft\(/.test(qs) && /W\.system\(/.test(qs) && /model: ROUTING_MODEL/.test(qs)
+    && (qs.match(/claude-[a-z0-9-]+/g) || []).length === 1 && !/CPL_REPORT_PROXY_URL/.test(qs) && !/anthropic-version/.test(qs));
   check("(6) the module touches no DOM and no storage", !/document\./.test(SRC) && !/localStorage|sessionStorage/.test(SRC));
 });
 

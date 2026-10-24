@@ -2,9 +2,9 @@
  * CPL Dashboard — Quick-start chat (Tier A routing + Tier B filter hints)
  *
  * Lightweight banner at the top of every tab: "What are you working on today?"
- * Sends the user's prompt to Claude via the existing Cloudflare Worker proxy
- * (window.CPL_REPORT_PROXY_URL), gets back a structured JSON {tab, message,
- * filter_hint?}, and:
+ * Sends the user's prompt to Claude through the one writer module (cpl_writer.js,
+ * window.CPL_WRITER: the drafting proxy and the naming words), gets back a
+ * structured JSON {tab, message, filter_hint?}, and:
  *   1. stashes filter_hint into sessionStorage[`cpl_qs_hint_<tab>`] AND
  *      dispatches a `cpl-qs-hint` window event (already-mounted tabs react
  *      immediately; the sessionStorage copy survives the hashchange in case
@@ -23,9 +23,11 @@
   'use strict';
 
   // ── Config ──
-  var MODEL = 'claude-haiku-4-5-20251001'; // routing is 1-of-8 classification, Haiku is plenty
+  // Routing is a 1-of-N classification, so it keeps Haiku by design and passes it to the
+  // writer's draft() as an override (Sheet 118 ruling 5); every other surface takes the
+  // writer's one model.
+  var ROUTING_MODEL = 'claude-haiku-4-5-20251001';
   var MAX_TOKENS = 256;                     // routing JSON is small
-  var PROXY_URL = window.CPL_REPORT_PROXY_URL || '';
   var STORAGE_KEY = 'cpl_quickstart_last';  // last user input (for /reuse niceties)
 
   // Tabs known to the router — keep in sync with VALID_TABS in CPL_Dashboard.html (~line 13091).
@@ -217,33 +219,22 @@
     vocab: HINT_VOCAB,
   };
 
+  // The router's system prompt: a role line, the writer's spelling and naming words (its
+  // message is shown to the reader), then the routing table and return format. The voice,
+  // business and funding words are left out: the answer is a JSON route.
+  function routingSystem() {
+    var W = window.CPL_WRITER;
+    return W.system({
+      role: 'You route a COBI user to the tab that fits what they are working on.',
+      omit: ['HOUSE_VOICE', 'BUSINESS_WORDS', 'FUNDING_WORDS'],
+      extra: [buildSystemPrompt()]
+    });
+  }
   async function askClaude(userPrompt) {
-    if (!PROXY_URL) {
-      throw new Error('Chat proxy not configured (window.CPL_REPORT_PROXY_URL is unset).');
-    }
-    var body = JSON.stringify({
-      model: MODEL,
-      max_tokens: MAX_TOKENS,
-      system: buildSystemPrompt(),
-      messages: [{role: 'user', content: userPrompt}],
-    });
-    var resp = await fetch(PROXY_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'anthropic-version': '2023-06-01',
-      },
-      body: body,
-    });
-    if (!resp.ok) {
-      var errText = await resp.text();
-      throw new Error('API error ' + resp.status + ': ' + errText.substring(0, 200));
-    }
-    var json = await resp.json();
-    if (!(json.content && json.content[0] && json.content[0].text)) {
-      throw new Error('Unexpected API response (no content[0].text)');
-    }
-    var parsed = extractJson(json.content[0].text);
+    var W = window.CPL_WRITER;
+    if (!W) throw new Error('The writer module is not loaded on this page.');
+    var r = await W.draft(userPrompt, { system: routingSystem(), model: ROUTING_MODEL, maxTokens: MAX_TOKENS });
+    var parsed = extractJson(r.text);
     if (!parsed || !parsed.tab) {
       throw new Error('Could not parse routing JSON from response.');
     }
