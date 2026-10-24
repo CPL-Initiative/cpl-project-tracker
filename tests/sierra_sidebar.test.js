@@ -133,7 +133,7 @@ async function main() {
       !!b && !b.hidden && b.getAttribute("role") === "dialog" && !!title && title.textContent === "Ask Sierra" &&
       !!b.querySelector("button.sbar-close") && h.chip().hidden && h.chip().getAttribute("aria-expanded") === "true");
     check("(2b) the frame is sierra/ found beside the script, not beside the page, and has a title",
-      !!f && f.src === BASE + "sierra/?theme=light" && h.w.CPL_SIERRA_BAR.SIERRA_URL === BASE + "sierra/" && /Sierra/.test(f.title));
+      !!f && f.src === BASE + "sierra/?panel=1&theme=light" && h.w.CPL_SIERRA_BAR.SIERRA_URL === BASE + "sierra/" && /Sierra/.test(f.title));
     const focused = await h.loaded();
     check("(2c) once she loads, focus is in her question box", focused && h.d.activeElement === f);
     h.close();
@@ -141,7 +141,7 @@ async function main() {
     const r = host({ path: "", src: "sierra/sidebar.js" });
     await r.ready();
     r.chip().click();
-    check("(2d) a page at another depth frames the same sierra/", !!r.frame() && r.frame().src === BASE + "sierra/?theme=light");
+    check("(2d) a page at another depth frames the same sierra/", !!r.frame() && r.frame().src === BASE + "sierra/?panel=1&theme=light");
     await r.loaded();
     r.close();
   }
@@ -228,7 +228,7 @@ async function main() {
   {
     const h = host({ theme: "dark", stored: "light" });
     await h.ready();
-    check("(7a) a dark host asks for ?theme=dark", h.w.CPL_SIERRA_BAR.frameUrl() === BASE + "sierra/?theme=dark");
+    check("(7a) a dark host asks for ?theme=dark, beside panel=1", h.w.CPL_SIERRA_BAR.frameUrl() === BASE + "sierra/?panel=1&theme=dark");
     h.chip().click();
     await h.loaded();
     check("(7b) her page lets ?theme=dark beat the stored light choice", h.fdoc().documentElement.getAttribute("data-theme") === "dark");
@@ -238,8 +238,8 @@ async function main() {
     h.close();
     const g = host({ theme: null });
     await g.ready();
-    check("(7d) a host with no theme sends none, so she reads the stored choice and the device as it does",
-      g.w.CPL_SIERRA_BAR.frameUrl() === BASE + "sierra/");
+    check("(7d) a host with no theme sends none (only panel=1), so she reads the stored choice and the device as it does",
+      g.w.CPL_SIERRA_BAR.frameUrl() === BASE + "sierra/?panel=1");
     g.close();
     function sierraTheme(search, stored) {
       const dom = new JSDOM('<!doctype html><html><head></head><body></body></html>', { url: BASE + "sierra/" + search, runScripts: "dangerously",

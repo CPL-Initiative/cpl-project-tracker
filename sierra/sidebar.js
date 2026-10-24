@@ -20,7 +20,9 @@
  *     inside the frame shuts it too, unless Sierra's About panel is open: that
  *     Escape is hers, and closes About.
  *   · The frame takes the host's theme in ?theme= and follows a change of it,
- *     so Sierra never paints dark beside a page that opened Light.
+ *     so Sierra never paints dark beside a page that opened Light. ?panel=1
+ *     tells her she is in the bar: her header row keeps About Sierra alone, since
+ *     the bar names her and the page beside it carries the logo.
  *   · The look is the host's. A host maps the --sierra-bar-* tokens onto its own
  *     (library/index.html is the worked example); a host that maps none gets the
  *     browser's system colors.
@@ -73,10 +75,10 @@
     return t === 'light' || t === 'dark' ? t : null;
   }
   // With no theme on the host, Sierra reads the reader's stored choice and the
-  // device as the host does, so nothing rides the address.
+  // device as the host does, so only panel=1 rides the address.
   function frameUrl() {
     var t = hostTheme();
-    return SIERRA_URL + (t ? '?theme=' + t : '');
+    return SIERRA_URL + '?panel=1' + (t ? '&theme=' + t : '');
   }
   function frameDoc() {
     try { return frame && frame.contentDocument; } catch (e) { return null; }

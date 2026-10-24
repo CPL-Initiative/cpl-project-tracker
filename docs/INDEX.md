@@ -122,7 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- 2026-10-24 (S469 SkyLemonadeBerry, opened by hand): Ask Sierra opens in a side bar on the public library and COBI's Library tab (#2424); Open Asks Sheet 126; light checkpoint; handoff 470.
+- 2026-10-24 (S469 SkyLemonadeBerry, opened by hand): Ask Sierra opens in a side bar on the public library and COBI's Library tab (#2424); Sierra's page in the library look, no paintings (#2425); Open Asks Sheet 126; full checkpoint; handoff 470.
 - 2026-10-24 (S468 SkyMatilija, opened by hand): the toolkit photos in the library's hero (#2421); the NC cards edit like the credit cards, Cabrillo counted, the coordinator sources named (#2422); Open Asks Sheet 125; full checkpoint; handoff 469.
 - 2026-10-24 (S466 SkyYerbaSanta, opened by hand beside the routine's run): the film can carry Scenario 4's words (#2418), held on Open Asks Sheet 123 card 2; a pending noncredit gate releases; the routine check for hand-opened sessions; full checkpoint; handoff 467 rewritten.
 - 2026-10-24 (S466 SkyYerbaSanta, scheduled): the funding film rebuilt from the published Scenario 4, v9 (#2417); light checkpoint; handoff 467.

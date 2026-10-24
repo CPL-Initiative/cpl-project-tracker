@@ -586,7 +586,7 @@ file.
   contract themed components key on. **Dark is not license to invent a color**:
   add the role to the dark `:root` in both HTMLs (Rule 4), never a component
   rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
-  **One departure (Sam, 2026-10-24):** the public `library/` page takes Malone's
+  **One departure (Sam, 2026-10-24):** the public `library/` page and Sierra take Malone's
   CPL/AI look ([lane](docs/reference/lanes/library.md)).
 - **Accessible to today's standards — and verified, not claimed.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
