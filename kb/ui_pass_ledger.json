@@ -346,14 +346,6 @@
    "outcome": "S422 (2026-10-19): the cobi sweep had only ever measured the First Light greeting over the signed-out note, so the pass added a reviewer seed (seedSierraTraining, synthetic rows for the tab's six reads) and four targets (the counts and queue, the instructions editor, each in both themes). Clean in both themes at 1440 and 390 before and after. The view converts to the Controls rule: every .sit-btn, the filled lead button and the segmented toggles are underlined cobalt words, 24px both ways, the pressed toggle by weight and aria-pressed; on a phone the action words wrap in a row instead of a stretched column. The sign-in copy named an 'ℹ About' menu the header no longer prints and now says About. Kept: the five count tiles (stat tiles that filter, not word controls), the category chips, and the ⚠ and arrow glyphs Sam ruled kept (2026-09-09). Headings run h2 then h3; every control carries the focus-visible ring."
   },
   {
-   "id": "cobi:knowledge-base",
-   "name": "Knowledge Base",
-   "page": "index.html#knowledge-base",
-   "audience": "staff",
-   "last": "2026-10-19",
-   "outcome": "S423 SkyLaurel: the tab is a frame around kb-portal/, which no sweep had measured; three targets (sign-in, a reader, the composer; synthetic) now do. The portal said MAP Initiative in its header (now CPL Initiative), carried emoji controls and its own blues; it now reads First Light's light tokens, its controls are underlined words, a skip link leads, and the team-phrase field gets the field style it lacked. Clean at nine widths, light; the portal has no dark palette yet."
-  },
-  {
    "id": "cobi:library",
    "name": "Library",
    "page": "index.html#library",

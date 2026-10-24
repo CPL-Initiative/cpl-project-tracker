@@ -95,16 +95,18 @@
   var FLAGS = {
     not_filed: { word: "Not filed", count: "not filed" },
     public_unset: { word: "Public file, no audience set", count: "public files with no audience set" },
-    refresh: { word: "Refresh figures", count: "with figures to refresh" }
+    refresh: { word: "Refresh figures", count: "with figures to refresh" },
+    kb_note: { word: "No KB note yet", count: "knowledge pieces with no KB note" }
   };
-  var FLAG_ORDER = ["not_filed", "public_unset", "refresh"];
+  var FLAG_ORDER = ["not_filed", "public_unset", "refresh", "kb_note"];
 
   var state = {
     rows: null, loading: false, error: null,
     q: "", kind: "all", seen: "all", status: "all", flag: null,
     open: {}, edit: null, form: null, formFor: null, message: "", msgErr: false, busy: false,
     retireAsk: null, start: null, briefShown: {}, pub: null,
-    madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {}
+    madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {},
+    view: "pieces"
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -174,6 +176,7 @@
     if (r.home === "not_filed") f.push("not_filed");
     if (r.home === "public_repo" && !r.seen_by) f.push("public_unset");
     if (r.refresh_note) f.push("refresh");
+    if (r.knowledge === true && !r.kb_note) f.push("kb_note");
     return f;
   }
   function say(text, isErr) { state.message = text; state.msgErr = !!isErr; }
@@ -188,6 +191,39 @@
   // The slug a college's CPL Opportunity pair carries (cpl-opportunity-<college>-visual
   // and -workbook, as the first twelve were filed), so a second Make is refused by the
   // table's unique slug rather than filed twice.
+  // The knowledge rule (Sam, Open Asks Sheet 121 card 1, 2026-10-23: fold-rule): a piece
+  // whose substance is knowledge gets a note in the public CPL Knowledge Base through
+  // its curation pipeline, and the record links it; a deck, a film or a data piece
+  // does not. A typed note says knowledge on its own.
+  function knowledgeValue(sel, note) { return note ? true : sel === "yes" ? true : sel === "no" ? false : null; }
+  function knowledgeCell(r) {
+    if (r.knowledge === true) {
+      return r.kb_note
+        ? "Its substance is knowledge; KB note " + (/^https:\/\//.test(r.kb_note)
+          ? '<a href="' + esc(r.kb_note) + '" target="_blank" rel="noopener">' + esc(r.kb_note) + "</a>"
+          : "<code>" + esc(r.kb_note) + "</code>")
+        : esc("Its substance is knowledge and no KB note links it yet: promote it through the curation pipeline, then link the note with Edit.");
+    }
+    if (r.knowledge === false) return esc("A deck, film or data piece; no KB note needed.");
+    return esc("Not set. Say with Edit whether this piece's substance is knowledge.");
+  }
+  function knowledgeFields(p, r) {
+    var k = r && r.knowledge === true ? "yes" : r && r.knowledge === false ? "no" : "";
+    return '<div class="lib-field"><label for="' + p + '-knowledge">Knowledge</label><select id="' + p + '-knowledge">' +
+      opt("", "Not set", k) + opt("yes", "Yes, its substance is knowledge", k) + opt("no", "No, a deck, film or data piece", k) + "</select></div>" +
+      '<div class="lib-field wide"><label for="' + p + '-kbnote">KB note</label><input id="' + p + '-kbnote" type="text" maxlength="300" value="' + esc((r && r.kb_note) || "") +
+      '" placeholder="The note\'s path in cpl-knowledge-base, or its link"></div>';
+  }
+  var KB_HASH = "#library/knowledge-base";
+  function viewFromHash() {
+    var h = (window.location.hash || "").replace(/^#/, "").split("/");
+    return h[0] === "knowledge-base" || (h[0] === "library" && h[1] === "knowledge-base") ? "kb" : "pieces";
+  }
+  function setView(v, writeHash) {
+    state.view = v === "kb" ? "kb" : "pieces";
+    if (writeHash) { try { window.history.replaceState(null, "", state.view === "kb" ? KB_HASH : "#library"); } catch (e) { /* a sandboxed frame */ } }
+    render();
+  }
   function collegeSlug(name) {
     return String(name || "").toLowerCase().replace(/\s+college$/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "college";
   }
@@ -204,6 +240,9 @@
     var css = [
       R + "{text-align:left;color:var(--text-body);}",
       R + " .lib-lede{margin:0 0 14px;font-size:1.02rem;max-width:var(--cpl-measure,none);}",
+      R + " .lib-views{display:flex;flex-wrap:wrap;gap:4px 18px;margin:0 0 14px;}",
+      R + " .lib-views button{background:none;border:0;padding:0 2px;min-height:24px;font:inherit;font-weight:600;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;cursor:pointer;}",
+      R + " .lib-views button[aria-pressed='true']{color:var(--text-strong);text-decoration-thickness:2px;}",
       R + " h2.lib-h.lib-top{font-size:clamp(1.5rem,3vw,1.9rem);margin:0 0 6px;}",
       R + " h2.lib-h{font-family:'Playfair Display',Georgia,serif;font-weight:700;color:var(--text-strong);font-size:1.25rem;line-height:1.25;margin:0;text-wrap:balance;}",
       R + " .lib-attention{display:grid;gap:10px;margin:0 0 20px;}",
@@ -431,6 +470,7 @@
       ["Approved", esc(r.ruling || "None recorded.")],
       ["Figures", esc(r.figures || "Not recorded.")]
     ];
+    rows.push(["Knowledge", knowledgeCell(r)]);
     if (r.refresh_note) rows.push(["Refresh", esc(r.refresh_note)]);
     rows.push(["Rebuild from", r.rebuild_from ? "<code>" + esc(r.rebuild_from) + "</code>" : "Not recorded."]);
     if (r.note) rows.push(["Note", esc(r.note)]);
@@ -541,6 +581,7 @@
       forFields("le", r) +
       '<div class="lib-field wide"><label for="le-url">Link to the file</label><input id="le-url" type="url" value="' + esc(r.url || "") + '" placeholder="https://studentrcc.sharepoint.com/..."></div>' +
       '<div class="lib-field wide"><label for="le-refresh">Figures to refresh</label><input id="le-refresh" type="text" value="' + esc(r.refresh_note || "") + '" placeholder="Leave empty when the figures are current"></div>' +
+      knowledgeFields("le", r) +
       '<div class="lib-field"><label for="le-by">Your name</label><input id="le-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
       "</div>" +
       '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Save</button>" +
@@ -596,7 +637,7 @@
         '<div class="lib-field wide"><label for="la-title">Title</label><input id="la-title" type="text" required value="' + esc(f.title || "") + '"></div>' +
         '<div class="lib-field"><label for="la-kind">Kind</label><select id="la-kind">' + opt("visual", "Visual (a page opened in a browser)", f.kind) + opt("deck", "Deck", f.kind) + opt("spreadsheet", "Spreadsheet", f.kind) + opt("film", "Film", f.kind) + opt("document", "Document (Word, PDF)", f.kind) + "</select></div>" +
         '<div class="lib-field"><label for="la-occasion">Occasion</label><input id="la-occasion" type="text" placeholder="Vision 2030 Noncredit Summit" value="' + esc(f.occasion || "") + '"></div>' +
-        forFields("la", f) +
+        forFields("la", f) + knowledgeFields("la", f) +
         '<div class="lib-field"><label for="la-seen">Seen by</label><select id="la-seen">' + opt("", "Not set", f.seen_by || "") + opt("team", "Team", f.seen_by) + opt("colleges", "Colleges", f.seen_by) + opt("public", "Public", f.seen_by) + "</select></div>" +
         '<div class="lib-field"><label for="la-status">Status</label><select id="la-status">' + opt("draft", "Draft", f.status || "draft") + opt("approved", "Approved", f.status) + opt("presented", "Presented", f.status) + "</select></div>") +
       '<div class="lib-field"><label for="la-by">Your name</label><input id="la-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
@@ -743,6 +784,18 @@
     ensureCss();
     root.style.cssText = "";
     var head = '<h2 class="lib-h lib-top">Library</h2><p class="lib-lede">Every visual, deck, film and document the CPL Initiative has made: what it is, who it is made for, where the file lives, who may see it, and how to rebuild it.</p>';
+    // Two views (Sam, Open Asks Sheet 121 card 1, 2026-10-23): the pieces, and the Knowledge
+    // Base reading portal, which keeps its own sign-in and so opens without the team phrase.
+    head += '<div class="lib-views" role="group" aria-label="Library views">' +
+      '<button type="button" data-view="pieces" aria-pressed="' + (state.view !== "kb") + '">Pieces</button>' +
+      '<button type="button" data-view="kb" aria-pressed="' + (state.view === "kb") + '">Knowledge Base</button></div>';
+    var kbView = document.getElementById("library-kb");
+    if (state.view === "kb") {
+      root.innerHTML = head + '<p class="lib-line">The team reading portal over the public CPL Knowledge Base, with its own sign-in. A piece whose substance is knowledge links its KB note from its record; Pieces lists the ones still without one under Needs attention.</p>';
+      if (kbView) kbView.hidden = false;
+      return;
+    }
+    if (kbView) kbView.hidden = true;
 
     if (!teamPhrase()) {
       root.innerHTML = head;
@@ -798,7 +851,8 @@
       "The repos keep only the source that rebuilds each piece.</p>" +
       "<p>Start a piece saves a brief as a Requested record. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
       "<p>Claude hands each new piece over the day it makes it, and a session on Sam's computer saves it straight into the synced folder. Anyone on the team files one by pasting a link. A film a public page plays stays where that page serves it.</p>" +
-      "<p>Who can open a file is read from where it lives, so a file in the public repo that Sam has not cleared for an audience shows under Needs attention.</p></footer>";
+      "<p>Who can open a file is read from where it lives, so a file in the public repo that Sam has not cleared for an audience shows under Needs attention.</p>" +
+      "<p>A piece whose substance is knowledge (a training-facts page, a guide, an explainer's argument) gets a note in the public CPL Knowledge Base through its curation pipeline, and the record links it; a deck, a film or a data piece does not. Needs attention names a knowledge piece without a note. The Knowledge Base view above is the team's reading portal over that repo.</p></footer>";
 
     // A full repaint (a filter click, Retire's question) must not wipe what was
     // typed into an open form. Restore only into the SAME form: the edit ids are
@@ -821,7 +875,7 @@
   function readAddForm() {
     var g = function (id) { var n = document.getElementById(id); return n ? n.value.trim() : ""; };
     return { url: g("la-url"), title: g("la-title"), kind: g("la-kind"), occasion: g("la-occasion"),
-      seen_by: g("la-seen"), status: g("la-status"), by: g("la-by") };
+      seen_by: g("la-seen"), status: g("la-status"), by: g("la-by"), knowledge: g("la-knowledge"), kb_note: g("la-kbnote") };
   }
 
   function submitAdd() {
@@ -842,7 +896,8 @@
         slug: slugFor(f.title), title: f.title, kind: f.kind || "deck", occasion: f.occasion || null,
         made_on: today(), seen_by: f.seen_by || null, status: f.status || null,
         url: f.url, home: homeForUrl(f.url), added_by: f.by,
-        for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name
+        for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name,
+        knowledge: knowledgeValue(f.knowledge, f.kb_note), kb_note: f.kb_note || null
       } });
     }
     p.then(function () {
@@ -962,7 +1017,8 @@
     rememberAuthor(by);
     var body = { status: g("le-status") || null, seen_by: g("le-seen") || null, refresh_note: g("le-refresh") || null,
       url: url || null, home: url ? homeForUrl(url) : "not_filed", updated_by: by,
-      for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name };
+      for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name,
+      knowledge: knowledgeValue(g("le-knowledge"), g("le-kbnote")), kb_note: g("le-kbnote") || null };
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
       say("Saved. The earlier version is in the history.");
       state.edit = null; state.retireAsk = null; delete state.forPick.le;
@@ -1119,9 +1175,14 @@
       else if ((v = b.getAttribute("data-pub"))) { state.pub = v; say(""); render(); var ps = document.getElementById("lp-sum"); if (ps) ps.focus(); }
       else if (b.getAttribute("data-pubcancel")) { state.pub = null; render(); }
       else if ((v = b.getAttribute("data-unpub"))) setPublic(v, false);
+      else if ((v = b.getAttribute("data-view"))) setView(v, true);
+    });
+    window.addEventListener("hashchange", function () {
+      var v = viewFromHash();
+      if (v !== state.view && document.getElementById(ROOT_ID)) setView(v, false);
     });
     window.addEventListener("cpl-tab-activated", function (e) {
-      if (e && e.detail && e.detail.tab === "library") load();
+      if (e && e.detail && e.detail.tab === "library") { state.view = viewFromHash(); load(); }
     });
   }
 
@@ -1129,6 +1190,7 @@
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
     wire(root);
+    state.view = viewFromHash();
     return load();
   }
 
@@ -1145,6 +1207,8 @@
     _slugFor: slugFor,
     _forLine: forLine,
     _collegeSlug: collegeSlug,
-    _collegePair: collegePair
+    _collegePair: collegePair,
+    _viewFromHash: viewFromHash,
+    _knowledgeValue: knowledgeValue
   };
 })();

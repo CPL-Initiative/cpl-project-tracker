@@ -43,9 +43,13 @@
     } catch (e) { /* never let the org layer cost the router */ }
     return valid[0] || 'dashboard';
   }
+  // A tab folded into another keeps its old links: #knowledge-base opens the
+  // Library's Knowledge Base view (Sam, Open Asks Sheet 121 card 1, 2026-10-23).
+  var FOLDED = { 'knowledge-base': ['library', 'knowledge-base'] };
   function parseHash() {
     var h = (location.hash || '').replace(/^#/, '');
     var parts = h.split('/');
+    if (FOLDED[parts[0]]) parts = FOLDED[parts[0]].concat(parts.slice(1));
     return { tab: parts[0] || '', section: parts[1] || '' };
   }
   function fromHash() {
