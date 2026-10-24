@@ -22,6 +22,7 @@ const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 
 const SRC = fs.readFileSync("annual_report.js", "utf8");
+const WRITER = fs.readFileSync("cpl_writer.js", "utf8");   // static in both HTMLs, before this lazy tab
 const DATA = {
   last_updated: "October 12, 2026", data_as_of: "October 12, 2026",
   kpis: { cumulative_students: { value: "55,020", label: "Cumulative CPL Students" } },
@@ -35,6 +36,7 @@ function makeDom(proxy) {
   if (proxy) w.CPL_REPORT_PROXY_URL = proxy;
   w.CPL_DATA = DATA;
   w.confirm = () => true;
+  w.eval(WRITER);
   w.eval(SRC);
   w.CPL_ANNUAL_REPORT.boot();
   return dom;

@@ -28,6 +28,7 @@ check("lazy boot wiring present",
 
 // ── Part B — behavior, loaded into jsdom ──
 const SRC = fs.readFileSync("annual_report.js", "utf8");
+const WRITER = fs.readFileSync("cpl_writer.js", "utf8");   // static in both HTMLs, before this lazy tab
 
 const DATA = {
   last_updated: "June 26, 2026",
@@ -68,6 +69,7 @@ function makeDom(data, proxy) {
   const w = dom.window;
   if (proxy) w.CPL_REPORT_PROXY_URL = proxy;
   if (data) w.CPL_DATA = data;
+  w.eval(WRITER);
   w.eval(SRC);
   return dom;
 }
@@ -76,6 +78,13 @@ function makeDom(data, proxy) {
   const dom = makeDom(DATA);
   const T = dom.window.CPL_ANNUAL_REPORT;
   check("module exposes CPL_ANNUAL_REPORT", !!T && typeof T.boot === "function");
+  // The polish drafts through the writer module (cpl_writer.js; S461).
+  const W = dom.window.CPL_WRITER;
+  const sys = T._aiPolishSystem();
+  check("polish: the system prompt carries the writer's naming rule and house voice", sys.indexOf(W.NAMING_RULE) >= 0 && sys.indexOf(W.HOUSE_VOICE) >= 0);
+  check("polish: the prompt carries the draft and keeps no copy of the naming rule", /=== DRAFT ===\nX$/.test(T._aiPolishPrompt("X")) && !/Military Articulation/.test(T._aiPolishPrompt("X")));
+  check("polish: this file names no model and drafts through W.draft under W.system",
+    !/claude-[a-z0-9-]+/.test(SRC) && /W\.draft\(/.test(SRC) && /W\.system\(/.test(SRC) && !/CPL_REPORT_PROXY_URL/.test(SRC) && !/api\.anthropic\.com/.test(SRC));
 
   let threw = false;
   try { T.boot(); } catch (e) { threw = true; }
