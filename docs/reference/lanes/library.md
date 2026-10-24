@@ -153,8 +153,11 @@ it by title and summary until someone adds them.
 
 ## The hero photos and the deck (Sam, Open Asks Sheet 124, 16:20Z 2026-10-24, both his own call)
 
-**Card 1, *attach*:** Sam attaches the toolkit photos to a session's message, since no session can reach
-`careereducationtoolkit.cccco.edu` (the gateway refused it, CONNECT 403; Anthropic's fetcher could not resolve the name).
+**Card 1, *attach*:** Sam attaches the toolkit photos, since no session can reach
+`careereducationtoolkit.cccco.edu`: it is his local directory (Sam, ~16:30Z), which is why the name resolves nowhere else. He put
+them on Google Drive as zips (`CCC-LATTC-<Program>-<number>_V1.zip`, the folder 1WNtaaKMGSYsKsdJLxi4fbR24fXD4fGUZ); the Drive
+connector refuses a download over 10 MB, and the first zip is 43.8 MB, so the photos come unzipped, attached to a message or
+as JPEGs under 10 MB on Drive.
 When they arrive: resize each to about 1,200 pixels on its long side as a JPEG in `library/photos/`, add an
 `<img class="hero-slide" data-src="photos/..." alt="">` per photo after the first, and rerun the page's test and
 `npm run a11y -- public-library public-library-dark` (the pause control shows from two photos on). This waits on the
@@ -163,7 +166,9 @@ files, which no card can supply.
 **Card 2, *unlist*:** *Turning IT and AI credentials into credit* comes off the public library until it has a public
 home: its link points into the vault's private GitHub repository, so a public visitor got GitHub's 404 page. Receipt
 `kb/receipts/cpl_library_it_ai_deck_unlist_2026-10-24_s467.sql` (one guarded UPDATE; seen_by, summary and topics kept, so
-relisting is one switch once the deck has a link that opens without a sign-in). The file is in the vault
+relisting is one switch once the deck has a link that opens without a sign-in), applied by `supabase-migrate.yml` run
+40111416395 and read back at 16:33Z: `public_listed` false, `listed_by` *Sam, Open Asks Sheet 124 card 2 (S467
+receipt)*, and `cpl_library_public()` lists 15 pieces. The file is in the vault
 (`04-projects/cpl-initiative/20260929_CPL_IT_AI_Credentials_3.pptx`).
 
 ## Next
