@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1260,
-    "bytes": 12904387,
-    "over_budget": 4,
+    "bytes": 12905490,
+    "over_budget": 5,
     "handoff_max": 469,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59977,
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 439400,
-        "over": 1
+        "bytes": 440503,
+        "over": 2
       },
       "handoff": {
         "files": 439,
@@ -56,15 +56,15 @@
       }
     },
     "by_rule": {
-      "oversized_doc": 4,
+      "oversized_doc": 5,
       "kb_note_dialect": 1,
       "house_voice": 1,
       "vault_heavy_path": 64
     },
     "vault": {
-      "files": 24713,
-      "bytes": 3664164082,
-      "heavy_bytes": 2543150129,
+      "files": 24714,
+      "bytes": 3664169943,
+      "heavy_bytes": 2543154887,
       "heavy_share": 0.694,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -176,6 +176,19 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
+        "bytes": 20374,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 374,
+        "ratio": 1.02
+      },
+      "message": "20,374 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/cobi-dark-mode.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
         "bytes": 26819,
         "limit": 20000,
         "lane": "roadmap_lane",
@@ -215,10 +228,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1532814955,
+        "bytes": 1532819713,
         "kind": "dir"
       },
-      "message": "directory totals 1,532,814,955 B inside the vault"
+      "message": "directory totals 1,532,819,713 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

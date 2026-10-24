@@ -184,7 +184,11 @@ page narrows beside her (the library keeps two columns of cards to 1600px) and s
 as a modal and the page behind is inert. Close and Escape (in her frame too, unless her About panel is open) hand focus back
 to the chip. The frame takes the library's theme in `?theme=`, which her page lets beat a stored choice, and follows a
 switch. The library maps the `--sierra-bar-*` tokens onto its own. Test: `tests/sierra_sidebar.test.js`; sweep:
-`public-library-sierra` and `-dark`. **Other pages get it when Sam says:** one script tag and a token map each.
+`public-library-sierra` and `-dark`.
+**NEEDS SAM (Open Asks Sheet 126 card 1): which pages move onto the bar next.** He chose to see the library's first. The
+Fact Sheet and the funding model page open their own drawer (`fact-sheet/factsheet_sierra.js`, a second copy of her chat
+with each page's starter questions); COBI's header link opens `sierra/` in a new tab, and COBI also opens Sierra AI over any
+tab (`cpl_chat.js`). A page joins with one script tag and a token map.
 
 ## Next
 
