@@ -243,8 +243,9 @@ name lives in the title alone. Mock-up: https://claude.ai/artifact/LRFiSDUY4bGTo
 *ELL IET CPL Starting Points* (https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe; Library record `ell-iet-cpl-starting-points`)
 goes on the public library: Sam chose *List it, and I contact the projects myself*, so no session drafts the eight
 messages. The listing is a guarded receipt, `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, which does what
-`cpl_library_set_public()` does. The page's claude.ai link is public only once Sam sets it from the page's Share menu; a
-session cannot.
+`cpl_library_set_public()` does, with the record's summary as the public summary. It applies only after Sam sets the
+page's claude.ai link public from its Share menu (a session cannot, and the tab's dialog requires that tick), so a
+public visitor never meets a private link. Until then the record stays unlisted.
 
 ## Next
 

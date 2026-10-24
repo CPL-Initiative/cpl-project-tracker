@@ -49,21 +49,22 @@ new in S466).
 Open Asks Sheet 123, answered at 13:17Z, both his own call (`replies/done` through 2):
 
 - **Card 1, *list*:** ELL IET CPL Starting Points goes on the public library, and Sam contacts the eight projects
-  himself. The listing is the receipt `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`. Its claude.ai link
-  is public only once Sam sets it from the page's Share menu.
+  himself. The listing is the receipt `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, which applies after
+  Sam sets the page's claude.ai link public from its Share menu.
 - **Card 2, *adopt*:** the film's Scenario 4 words. v10 is rendered from them (#2418).
 
-No card is open; the builder writes no sheet. One loose end: the correction to `cpl_memory`
-`funding-film-scenario-4-words-held-2026-10-24` waited on a Supabase connector confirmation nobody answered. If the
-row still says the film stays on Scenario 3, set its summary to the v10 state and log the update.
+No card is open; the builder writes no sheet. The memory correction the connector's prompt held went through a
+migrate receipt instead (`kb/receipts/cpl_memory_film_row_2026-10-24_s466.sql`).
 
 ## Open work, in order
 
 1. **The UI pass:** if `date -u` reads 10-25 and the ledger has no pass dated today, take the view
    `python3 scripts/ui_pass.py --next` names (the Veteran map) with `/a11y-pass` and its wiring and First Light checks.
-2. **Sheet 123's listing, if it has not landed:** read the `ell-iet-cpl-starting-points` row. If `public_listed` is
-   still false and `seen_by` still `team`, point `kb/migrations/.apply` at the S466 listing receipt on a `claude/*`
-   branch. If Sam asks, confirm the page's claude.ai link is set public.
+2. **The ELL IET listing, once Sam has set the page's link public:** the receipt
+   `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql` waits on him setting
+   https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe public from its Share menu. When he says so, read the row; if it
+   still matches the receipt's guard, point `kb/migrations/.apply` at the receipt on a `claude/*` branch. If he
+   presses *List publicly* in the Library tab himself, the receipt is moot: note it in the lane.
 3. **The noncredit attestation surface, then the builder.** The builder (`nc_exh` through the four channels, `nc_cdcp`,
    `nc_course`) must not land first: with the view missing, the conditions read pending and pending releases.
    The surface is a new write surface (Rule 10 a3: Governance DR-09 and the privacy ADRs first). Call its effort.
