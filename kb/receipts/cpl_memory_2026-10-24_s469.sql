@@ -10,3 +10,11 @@ insert into public.cpl_memory_log (memory_id, actor, action, note, after)
 select id, 'SkyLemonadeBerry-S469', 'create', 'S469 (2026-10-24)', to_jsonb(m)
 from public.cpl_memory m where m.slug in ('sam-ask-sierra-library-first-bottom-right-2026-10-24','ask-sierra-sidebar-built-2026-10-24','pitfall-framed-page-keys-and-theme-2026-10-24')
   and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+-- Added ~21:10Z the same run, applied through execute_sql and read back (verified, logged): Sam's word on COBI's Library tab.
+insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, affects, source, related, author, event_date, status, verified_by)
+values ('sam-ask-sierra-cobi-library-tab-too-2026-10-24', 'decision', 'cpl', 'Sam: the Ask Sierra chip goes on COBI''s Library tab too, and above all on the public library site', 'Sam, 2026-10-24 ~21:05Z, in S469 after the public library''s side bar was built: "Library and more importantly on the public library site:)" Read as COBI''s Library tab plus the public library page (library/), the public one first in weight.', 'Built the same run: library.js loads sierra/sidebar.js on the tab''s first visit and shows the chip on the Library tab alone (setChip); any other tab hides it and shuts an open bar. The tokens map onto First Light on the bar''s own elements. cpl-project-tracker#2424.', 'Sam wants the Ask Sierra button on the team''s Library tab as well as the public library page.', array['sierra','library','public-library','cobi','sam-ruling']::text[], array['library.js','sierra/sidebar.js']::text[], 'Sam in chat, S469, 2026-10-24 ~21:05Z', array['sam-ask-sierra-library-first-bottom-right-2026-10-24','ask-sierra-sidebar-built-2026-10-24']::text[], 'SkyLemonadeBerry-S469', '2026-10-24', 'verified', 'Sam (his words in chat, 2026-10-24)')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyLemonadeBerry-S469', 'create', 'S469 (2026-10-24)', to_jsonb(m)
+from public.cpl_memory m where m.slug = 'sam-ask-sierra-cobi-library-tab-too-2026-10-24'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');

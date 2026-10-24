@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-439 document(s).
+440 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 470 | [Session 470 handoff: Ask Sierra opens in a side bar on the public library and COBI's Library tab; Open Asks Sheet 126](../session_470_handoff.md) | 2026-10-24 |
 | 469 | [Session 469 handoff: the toolkit photos live in the library's hero; the NC cards edit like the credit cards; Cabrillo counted; Open Asks Sheet 125; Sam's Ask Sierra side bar next](../session_469_handoff.md) | 2026-10-24 |
 | 468 | [Session 468 handoff: the public library in Malone's look; Open Asks Sheet 124 (the toolkit photos, a deck with no public home); oversized docs 8 to 4](../session_468_handoff.md) | 2026-10-24 |
 | 467 | [Session 467 handoff: the funding film v10 in Scenario 4's words, the ELL IET page listed; the attestation surface before the noncredit builder](../session_467_handoff.md) | 2026-10-24 |
