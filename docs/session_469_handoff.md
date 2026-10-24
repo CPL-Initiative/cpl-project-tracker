@@ -55,19 +55,17 @@ At 16:59Z `list_sessions` showed this session alone working; S467 had finished. 
    frame from the same origin, give the panel a close word and focus handling, and keep the page's own look (First
    Light in COBI, Malone's look on the library). Mock it up as an artifact first if the shape is open (Show, don't
    describe). Then the page's test and `npm run a11y` for the views it touches.
-2. **Read Sheet 125's `replies` before acting** (`ArtifactData` list on its URL). Card 1: a counted NC-2 goes into the
-   funding lane and the builder's design. Card 2: a send means Sam sends; a session may draft it in the Letters tab.
-3. **#2422** if it has not merged: `test` green on the head, then squash.
-4. **The UI pass:** if `date -u` reads 10-25 and the ledger has no pass dated today, take the view
+2. **Sheet 125 is answered** (18:12Z, both his own call): card 1 *name-then-attest* (the builder counts NC-2 from COCI by the guidance title, else the attested control number); card 2 *later*, *"I'll handle the request"* (Sam takes the MAP roles request himself; no session sends it). The lanes record both; no card is open.
+3. **The UI pass:** if `date -u` reads 10-25 and the ledger has no pass dated today, take the view
    `python3 scripts/ui_pass.py --next` names (the Veteran map).
-5. **The noncredit attestation surface, then the builder** (Governance DR-09 and the privacy ADRs first; publishing
+4. **The noncredit attestation surface, then the builder** (Governance DR-09 and the privacy ADRs first; publishing
    stays held). The builder now has its measure: emit `nc_exh` from the mirror channel
    (`funding/nc_outcome_feasibility/2026-10-24_cabrillo/nc1_mirror_channel.sql`), keying exhibits by id or title.
-6. **Waiting:** the NC CPL Lead on the landing pages; Sheet 121 card 2 on Sam's four Coordinator Guide files; Baking and
+5. **Waiting:** the NC CPL Lead on the landing pages; Sheet 121 card 2 on Sam's four Coordinator Guide files; Baking and
    Nursing until their JPEGs sync into the Drive folder *Photos* (`1Ip4KaipYU6xNCbogeEG81-ZPQkbzMJpd`).
-7. **`oversized_doc`, 4 left:** `roadmap_archive.md` 4.97x, `cpl_funding_lessons_archive.md` 2.8x,
+6. **`oversized_doc`, 4 left:** `roadmap_archive.md` 4.97x, `cpl_funding_lessons_archive.md` 2.8x,
    `ccr_atlas_lessons_archive.md` 1.11x, the harvest lane 1.34x.
-8. **The other public pages still follow the device setting.** Offer Sam the library's Light default there; do not
+7. **The other public pages still follow the device setting.** Offer Sam the library's Light default there; do not
    change them unasked.
 
 ## Lessons to honor
@@ -84,5 +82,5 @@ At 16:59Z `list_sessions` showed this session alone working; S467 had finished. 
 
 ## Let go
 
-At sign-off S468 drops its watch on #2422 (merged once green) and on the vault PR, and its artifact watch on Sheet 125.
+S468 dropped its watches on #2422 and CPLBrain#464 (both merged) and its artifact watch on Sheet 125; it came back once for Sam's Sheet 125 replies (cpl-project-tracker#2423 and the vault PR beside it), whose watches it drops at their merge.
 No check-in is armed.
