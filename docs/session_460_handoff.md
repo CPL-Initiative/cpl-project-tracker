@@ -1,5 +1,5 @@
 ---
-title: "Session 460 handoff: the Made-for Library built and applied, the meets reading rebuilt and applied, the six rows removed, Sheet 121"
+title: "Session 460 handoff: the Library's Made-for build, the agency template and the ELL IET page, the Knowledge Base fold, the meets reading applied, the six rows removed"
 date: 2026-10-23
 session: 459 (SkyBuckeye)
 tags: [handoff, library, program-requirements-harvest]
@@ -8,82 +8,69 @@ status: current
 
 # You are Session 460
 
-Your moniker is **SkyFremontia**. Session 459 (**SkyBuckeye**) was Sam's session, 20:08Z to about 21:40Z on 2026-10-23.
-Read, in order: this file, `docs/reference/lanes/library.md` (Status, the NEEDS SAM section, Next),
-`docs/reference/lanes/program-requirements-harvest.md` (the standing-rule paragraph and NEXT), `docs/library_lessons.md`
-S459 and `docs/program_requirements_harvest_lessons.md` S459.
-
-A full checkpoint: two lanes moved, three data receipts applied, a display build landed. Skipped, nothing moved there:
-`kb/README.md`, `README.md`, the pipeline viz (no M-ID re-mint), the four other Commons run logs.
+Your moniker is **SkyFremontia**. Session 459 (**SkyBuckeye**) was Sam's session, 20:08Z on 2026-10-23 to about
+00:20Z on 2026-10-24, with one context compaction at 21:35Z and a second checkpoint at the 82,000-token line.
+Read, in order: this file, `docs/reference/lanes/library.md` (Status and the Sheet 121 section), `docs/library_lessons.md`
+(the two S459 sections), `docs/reference/lanes/program-requirements-harvest.md` (the NEXT line). Run Rule 8's memory query
+with the tags `library` and `ell-iet` before touching code.
 
 ## Who else is working
 
-Nobody live at sign-off (every other session idle). The CPL Queue routine's next firing is 05:12Z on 2026-10-24.
-**Stay out of the funding lane** (S450's standing note).
+`list_sessions` at 21:35Z showed no other live session; S458 (Queue continuation) sat idle. Check again at start and agree one
+writer per file with any session that is still working. Sam's routine: `docs/reference/scheduled_sessions.md`.
 
-## What shipped
+## What shipped (all merged unless marked)
 
-- **The Library's Made-for build (#2393, Sam's Sheet 120 cards 2 to 7 and his Kind call):** `kind` admits `visual`;
-  `for_kind`, `for_category`, `for_name`; the tab's Made for and For filters, every form taking the three (a college's
-  name from MAP's list), *Make a visual* (a college's record pair in one step; any other entity opens Start a piece with
-  the entity set); the public page's chips and For list. The columns and the public read applied live (runs 40023027245
-  and 40023916366) and read back. **The backfill receipt is committed and not applied**
-  (`kb/receipts/cpl_library_made_for_backfill_2026-10-23_s459.sql`): once #2393 is on Pages, a small branch points
-  `kb/migrations/.apply` at it, pushes, and merges on green; it moves the twelve CPL Opportunity pages and the DSP page to
-  visual and sets who the 26 are made for. Tests 120/120 and 68/68; a11y light and dark pass.
-- **Sheet 120 card 1 (narrow) carried out on #2387:** S457's lost scorer change rebuilt (the same 258 and 9 measured),
-  239 records applied by run 40024250589 (28 shape-6 records keep a failing degree check), Victor Valley's 20545 file
-  removed (#2391 closed), display build e021a2824548 committed. **After #2387 merges, dispatch
-  `program-requirements-college.yml` with `step=display` on `main`.**
-- **The six older-build rows removed (#2394, the standing rule, S456 method):** run 40025041285; the receipt holds the
-  rows and the rollback.
-- **Landed:** #2392 (S458's checkpoint) and #2389 (the side session's 457b) merged; samueltlee/CPLBrain#449 merged after
-  its coverage check passed on the re-run.
-- **Sam's question on the KB tab and the Library (20:18Z)** answered in chat with a recommendation (fold the tab into the
-  Library; a rule joining a knowledge-bearing piece to a KB note); his words are in the vault braindump; the card is
-  Sheet 121 card 1.
+- **#2393** the Library's Made-for build (kind `visual`, `for_kind`/`for_category`/`for_name`, filters on both libraries,
+  *Make a visual*); **#2395** its backfill applied live (twelve CPL Opportunity pages and the DSP page to visual, the
+  workbooks and the ELL IET notice named; run 40031759397). **#2394** the six older-build program records removed
+  (run 40025041285). **#2387** the scorer's `meets` reading and the 239-record rescore; the display build e021a2824548 then
+  applied on `main` by run 40027395883 (17,529 written, none missing). The open-asks series record reads version 121.
+- **Sheet 120 card 5 and Sheet 121 card 3, the agency template:** `CPLBrain/04-projects/cpl-initiative/agency-visual/build.py`
+  paints a JSON brief in the DSP page's shape (README has the schema; the public header applies at build). First instance
+  **ELL IET CPL Starting Points**, https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe (draft, private until Sam shares it),
+  computed by `ell-iet/make_brief.py` from EDD's award notice, MAP's adoption view, COCI's programs and each college's
+  county; Library record `ell-iet-cpl-starting-points` (visual, Made for Agency, seen by the team; #2396). Vault
+  samueltlee/CPLBrain#451 merged.
+- **Sheet 121 card 1, the Knowledge Base fold: MERGED as #2397** (4c01d7370 on `main`, 2026-10-24 00:13Z). The tab is
+  the Library's second view (Pieces / Knowledge Base), old `#knowledge-base` links route there, `cpl_library` carries
+  `knowledge` and `kb_note` (schema applied by run 40041338652, receipt on `main`), Needs attention counts knowledge
+  pieces with no KB note. Pages serves it on its next deploy; open the Library once at your start and see the two views.
+- **This checkpoint's PR, #2398** (the branch `claude/ecstatic-meitner-hdiswf`): the harvest lane's NEXT, the CLAUDE.md
+  sheet pointer, the memory receipt `kb/receipts/cpl_memory_2026-10-23_s459_later.sql` (applied by run 40041963738, three
+  rows proposed), this handoff, the docs index.
 
 ## Decisions Sam made this run
 
-Sheet 121, 21:27Z, all three his own call (fold-rule, attached, text); his words of 20:18Z (consolidate wherever possible; the team is overwhelmed by the tab count)
-are recorded in `cpl_memory` `sam-kb-tab-and-library-consolidation-2026-10-23` and the braindump, and wait on
-[Open Asks Sheet 121](https://claude.ai/artifact/NsRnyxTJ3pZmHBWk2qSoLN) card 1.
+- Sheet 121 (21:27Z, all his own call): 1 **fold-rule**, 2 **attached** (he attaches the four Coordinator Guide files in a
+  session), 3 **text** (he sent the notice at 21:28Z). `cpl_memory` `sam-sheet-121-rulings-2026-10-23`. All three cards
+  are retired from the vault builder; nothing is outstanding on a sheet, so the standing sheet is Sheet 121 still.
+- Sam's words at ~20:18Z on consolidating the KB tab and the Library: vault braindump
+  `03-professional/braindumps/braindump-2026-10-23-2020-consolidate-the-kb-tab-and-the-library.md`.
 
 ## Open work, in order
 
-0. **End state at sign-off (S459 closed at its context line, 48,000 tokens left):** #2387 merged (4ec34b89) and
-   `step=display` dispatched on `main` (check the run's log, not its exit code: lessons S458). **Still open: #2393 (the
-   Library build and this checkpoint; its `kb/migrations/.apply` still points at the open-asks series receipt, whose
-   migrate run 40026872611 was in progress at sign-off: read the row back, version 121; then set `.apply` back to
-   `main`'s content before any further push, or the receipt re-applies) and #2394 (the receipt).** Each merges on a green
-   `test` on its head; the bot's receipt commit starts none, so a session commit must sit on top (a merge of `main`
-   does). Then the backfill branch once Pages serves #2393. The bot's receipt commit on a head starts no `test`; each branch
-   already carries a session commit after it. Then the backfill branch (above) once Pages serves #2393.
-1. **Sheet 121 is answered** ([link](https://claude.ai/artifact/NsRnyxTJ3pZmHBWk2qSoLN); 21:27Z, all three his own call: 1 fold-rule, 2 attached, 3 text).
-   Build in that order: (a) fold the Knowledge Base tab into the Library as a second view (Pieces and Knowledge; the
-   `kb-portal/` iframe keeps its sign-in; the side menu loses `knowledge-base`, through `nav_groups.js` and the Admin
-   menu data) and the rule with its check (a `kb_path` on `cpl_library`, Needs attention naming a knowledge-bearing
-   piece without a note); (b) ask Sam to attach the four Coordinator Guide files, then run
-   `CPLBrain/04-projects/cpl-initiative/coordinator-guide/audit_workflow.js` under "ultracode"; (c) the agency template
-   in the vault and the ELL IET grantees page from the notice filed at
-   `CPLBrain/04-projects/cpl-initiative/ell-iet/` (PDF and extracted text). Remove Sheet 121's three cards from the vault
-   builder in the same change that lands (a); the lane already records the rulings.
-2. **The Library record for the open-asks series** reads version 121 after this checkpoint's receipt applies
-   (`kb/receipts/cpl_library_open_asks_sheet121_2026-10-23_s459.sql`, through `supabase-migrate.yml` on the checkpoint's
-   push); read the row back (version 121, 40 versions).
-3. **The writer module** (Sheet 118 card 5; the communications lane's Next).
-4. The harvest queue waits on Sam's word (Hartnell's noncredit hours, the arithmetic failures, the two S448 offers).
+1. **Sheet 121 card 2:** when Sam attaches `CPL_Coordinator_Guide.docx`, `.pdf`, `CPL_Coordinator_Quick_Reference.docx`
+   and `.pdf`, run `CPLBrain/04-projects/cpl-initiative/coordinator-guide/audit_workflow.js` under "ultracode" and commit
+   its report beside it. Ask him once, early, in one line.
+2. **The ELL IET page's next step:** Sam reads the draft; on his word, list it publicly (the Library's *Make public*, the
+   phrase) and send each project its card. The brief's data read is dated 2026-10-23; rebuild with `make_brief.py` after any
+   MAP or COCI refresh.
+3. **The writer module** (Sheet 118 card 5): `cpl_writer.js` with `comms.js` as the first consumer.
+4. The harvest queue (Hartnell's noncredit hours, the arithmetic failures, the two S448 offers) waits on Sam's word.
+5. `kb/status/program-requirements.json` was not re-stamped at this second checkpoint (light); stamp it at yours.
 
 ## Lessons to honor
 
-- Address every repo by absolute path (`git -C`, absolute paths in scripts): the harness ignored a `cd` once this run.
-- A push that applies a data write goes alone in its own command; a compound command was refused for S458.
-- A measured count verifies a rebuild (KB note `methodology-a-measured-count-verifies-a-rebuild`).
-- Run the context meter before each big read; this run reached 76 percent before its checkpoint.
+- `git add`, then `bash scripts/check_generated.sh`, before **every** push: #2396 went red on a stale dependency map from a
+  receipt-only push. A bot receipt commit starts no CI; a merge commit as head skips the migrate gate.
+- The harness ignores `cd`: address every repo by absolute path (`git -C`). A push carrying a data write goes alone in its
+  own command.
+- COCI's program export names colleges in MIS short caps; map them before any join to MAP's names (`make_brief.py`).
+- A folded tab keeps its frame static and its old links routed (`tabs.js` `FOLDED`).
 
 ## Let go
 
-S459 subscribed to #2387, #2393 and #2394 and drops them at sign-off; it holds no check-in. Publishing Sheet 121 armed an
-artifact watch on this session. Branches on the remote: `claude/ecstatic-meitner-hdiswf` (#2393, this checkpoint rides
-on it), `claude/hartnell-variable-units-s457` (#2387), `claude/older-build-rows-s459` (#2394), and the vault's
-`claude/ecstatic-meitner-hdiswf` (the session note, the braindump, Sheet 121's source).
+At sign-off this session dropped its watches on #2397 and #2398 and its check-ins `trig_01YcA2e8WSUMTiVS5TWwZkrW` and
+`trig_01Q5M6CFgv6wT8RzhsGwajAz`; #2393 to #2398 and CPLBrain#450, #451 are merged. The artifact watch on the ELL IET
+page was never registered.

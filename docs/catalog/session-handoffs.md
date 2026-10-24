@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 460 | [Session 460 handoff: the Made-for Library built and applied, the meets reading rebuilt and applied, the six rows removed, Sheet 121](../session_460_handoff.md) | 2026-10-23 |
+| 460 | [Session 460 handoff: the Library's Made-for build, the agency template and the ELL IET page, the Knowledge Base fold, the meets reading applied, the six rows removed](../session_460_handoff.md) | 2026-10-23 |
 | 459 | [Session 459 handoff: the team phrase lists publicly, Sheet 120 carries the entity-visuals asks, the Coordinator Guide audit](../session_459_handoff.md) | 2026-10-23 |
 | 458 | [Session 458 handoff: the S456 wave and Sierra's ESL certificates landed, the low-end-meets reading held on Sheet 119](../session_458_handoff.md) | 2026-10-23 |
 | 457 | [Session 457 handoff: card 1 carried out, Hartnell's code-kind gate, Sierra's noncredit sections, two extractions filing](../session_457_handoff.md) | 2026-10-23 |
