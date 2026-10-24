@@ -135,7 +135,11 @@ versions). Its note names what he decides before it goes
   voice, the business and the funding words (a lookup answers with a name); its two `claude-sonnet-4-5` pins are gone
   (`tests/cer_issuer_lookup.test.js`). `quickstart.js` ported (S462, the eighth): the Where To? router composes
   `routingSystem()` through `W.system` (spelling and naming words, its routing table) and drafts through `W.draft`
-  with its Haiku `ROUTING_MODEL` as the override, by design (`tests/quickstart_writer.test.js`). The named consumers
+  with its Haiku `ROUTING_MODEL` as the override, by design (`tests/quickstart_writer.test.js`). The KB portal's
+  Polish ported (S463, the ninth): `kb-portal/index.html` loads `../cpl_writer.js`, `polishSystem(W)` composes the
+  full house voice (its drafts reach the public KB through the curation PR) with the frontmatter contract as `extra`,
+  the call goes through `W.draft` to the portal's own `PROXY_URL`, and `POLISH_MODEL`'s dated pin and the role line's
+  "MAP initiative" are gone (`tests/kb_portal_composer.test.js`). The named consumers
   are all ported; a new drafting surface starts as a consumer. Each port deletes the surface's own copy of the rules and its model
   pin; `tests/cpl_writer.test.js` (6) pins that `comms.js` names no model, and each port adds
   its surface to that check.

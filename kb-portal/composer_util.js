@@ -99,17 +99,17 @@
     return { url: base, prefilled: false };
   }
 
-  // The single user-message prompt sent to Claude (via the dashboard's shared
-  // Cloudflare Worker proxy) to format a draft into a KB Markdown file.
-  function polishPrompt(opts) {
-    opts = opts || {};
-    var date = opts.date || todayISO();
+  // Polish drafts through the writer module (cpl_writer.js, Sam's Open Asks Sheet 118
+  // ruling 5): polishSystem() composes the system prompt with W.system, whole, since a
+  // polished draft goes to the public KB through the curation PR; polishPrompt() is the
+  // user message, the target section, the proposed title and the author's draft.
+  var POLISH_ROLE =
+    "You format a document for the public CPL (Credit for Prior Learning) Knowledge Base, a curated, CC BY 4.0 " +
+    "repository of the CPL Initiative of the California Community Colleges Chancellor's Office. Convert the " +
+    "author's draft into one clean, well-structured Markdown file.";
+
+  function polishRequirements(date) {
     return [
-      "You are formatting a document for the PUBLIC CPL (Credit for Prior Learning)",
-      "Knowledge Base — a curated, CC BY 4.0 repository for the California Community",
-      "Colleges MAP initiative. Convert the author's draft into ONE clean, well-",
-      "structured Markdown file.",
-      "",
       "Requirements:",
       "- Begin with a YAML frontmatter block delimited by --- lines, EXACTLY these keys:",
       "    title: <a clear Title Case title>",
@@ -117,16 +117,27 @@
       "    last_updated: " + date,
       "    license: CC BY 4.0",
       "- Then a single H1 ('# ') matching the title.",
-      "- Then the body as clean Markdown: logical '##' section headings, tasteful",
-      "  lists/tables, corrected typos and spacing. PRESERVE all of the author's facts,",
+      "- Then the body as clean Markdown: logical '##' section headings, lists or tables",
+      "  where they help, corrected typos and spacing. PRESERVE all of the author's facts,",
       "  numbers, and meaning.",
       "- Do NOT invent facts, figures, citations, quotations, or links the author did",
       "  not provide.",
       "- Output ONLY the raw Markdown file content. No code fences, no commentary",
-      "  before or after.",
-      "",
+      "  before or after."
+    ].join("\n");
+  }
+
+  // W is window.CPL_WRITER, passed in so this file stays testable without it.
+  function polishSystem(W, opts) {
+    opts = opts || {};
+    return W.system({ role: POLISH_ROLE, extra: [polishRequirements(opts.date || todayISO())] });
+  }
+
+  function polishPrompt(opts) {
+    opts = opts || {};
+    return [
       "Target KB section: " + (opts.section || "(unspecified)"),
-      "Proposed title: " + (opts.title || "(none given — propose one)"),
+      "Proposed title: " + (opts.title || "(none given; propose one)"),
       "",
       "--- AUTHOR DRAFT BELOW ---",
       String(opts.body || "")
@@ -226,6 +237,7 @@
     docPath: docPath,
     githubNewFileUrl: githubNewFileUrl,
     polishPrompt: polishPrompt,
+    polishSystem: polishSystem,
     fileKind: fileKind,
     imageMediaType: imageMediaType,
     extractTextCap: extractTextCap,

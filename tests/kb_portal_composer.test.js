@@ -70,11 +70,25 @@ const big = K.githubNewFileUrl({ owner: "o", repo: "r", path: "x.md", content: "
 check("githubNewFileUrl DROPS value past the prefill cap (long-doc fallback)",
   big.prefilled === false && !/[?&]value=/.test(big.url));
 
-// ── polishPrompt ──
-const pp = K.polishPrompt({ title: "T", section: "Methodology", body: "draft text", date: "2026-06-19" });
-check("polishPrompt pins the frontmatter contract", /last_updated: 2026-06-19/.test(pp) && /license: CC BY 4\.0/.test(pp));
-check("polishPrompt carries the don't-invent-facts guard", /do NOT invent/i.test(pp));
+// ── polishSystem + polishPrompt (through the writer module, Sheet 118 ruling 5) ──
+require("../cpl_writer.js");
+const W = globalThis.CPL_WRITER;
+const ps = K.polishSystem(W, { date: "2026-06-19" });
+check("polishSystem pins the frontmatter contract", /last_updated: 2026-06-19/.test(ps) && /license: CC BY 4\.0/.test(ps));
+check("polishSystem carries the don't-invent-facts guard", /do NOT invent/i.test(ps));
+check("polishSystem takes the writer's rules whole (voice, naming, spelling, business and funding words)",
+  [W.HOUSE_VOICE, W.NAMING_RULE, W.SPELLING, W.BUSINESS_WORDS, W.FUNDING_WORDS].every((p) => ps.includes(p)));
+const polishRole = ps.slice(0, ps.indexOf(W.HOUSE_VOICE));
+check("the polish role line names the CPL Initiative, never a MAP initiative", /CPL Initiative/.test(polishRole) && !/MAP initiative/i.test(polishRole));
+const pp = K.polishPrompt({ title: "T", section: "Methodology", body: "draft text" });
 check("polishPrompt includes the author draft + section", pp.includes("draft text") && pp.includes("Methodology"));
+const portalSrc = ["kb-portal/app.js", "kb-portal/config.js", "kb-portal/composer_util.js"]
+  .map((f) => require("fs").readFileSync(require("path").join(__dirname, "..", f), "utf8")).join("\n");
+check("the portal drafts through W.draft and names no model of its own",
+  /W\.draft\(/.test(portalSrc) && /polishSystem\(W\)/.test(portalSrc) && !/claude-[a-z0-9-]+/.test(portalSrc) && !/POLISH_MODEL/.test(portalSrc) && !/anthropic-version/.test(portalSrc));
+const portalHtml = require("fs").readFileSync(require("path").join(__dirname, "..", "kb-portal/index.html"), "utf8");
+check("the portal loads the writer before app.js",
+  portalHtml.indexOf('<script src="../cpl_writer.js"></script>') > 0 && portalHtml.indexOf('<script src="../cpl_writer.js"></script>') < portalHtml.indexOf('src="./app.js"'));
 
 // ── attachments: fileKind routing ──
 check("fileKind: image by mime", K.fileKind("shot", "image/png") === "image");
