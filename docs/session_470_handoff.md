@@ -47,6 +47,15 @@ At 20:31Z `list_sessions` showed this session alone working; S468 had finished. 
 
 ## Open work, in order
 
+0. **Sierra in the library look, on Sam's word.** At ~21:50Z he asked to drop her paintings and align her with the
+   library look so she works as a side bar (`cpl_memory` `sam-sierra-library-look-no-paintings-2026-10-24`). S469 answered
+   with a mock-up, https://claude.ai/artifact/GzauXMFiYX6kAzpeYzdPa1 (`prototype/sierra_library_look_mockup.html`):
+   the library's tokens and Georgia headings, no paintings, starter questions in their place, the public header with Light
+   and Dark on her own page, no logo row in the bar; her name and ridge, the audience picks, the conversation and About
+   Sierra stay. Read his reply in chat or the handoff's successor before porting. The port touches `sierra/index.html`,
+   `sierra.css`, `sierra.js` (the `ART` cycle), the tests that pin the paintings (`tests/sierra_redesign.test.js`,
+   `sierra_page`, `public_pages_a11y`'s fonts), the a11y `sierra*` views, the CLAUDE.md departure line, and the vendor
+   frame on map.rccd.edu, which shows the same page.
 1. **Read Sheet 126's `replies`** before acting. Card 1, if he picks the Fact Sheet and the funding page: load
    `../sierra/sidebar.js` there in place of `../fact-sheet/factsheet_sierra.js`, map the `--sierra-bar-*` tokens onto
    the Fact Sheet's First Light tokens, and retire the drawer's copy only once neither page loads it (`grep` the HTMLs and
