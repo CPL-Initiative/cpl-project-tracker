@@ -16037,8 +16037,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 436,
+   "count": 437,
    "docs": [
+    {
+     "created": "2026-10-24",
+     "governs": [],
+     "n": 467,
+     "path": "docs/session_467_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "funding-video"
+     ],
+     "title": "Session 467 handoff: the funding film follows Scenario 4 (v9); the Veteran map's UI pass and the noncredit builder next",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-24",
      "governs": [],
@@ -23521,5 +23536,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1242
+ "total": 1243
 }

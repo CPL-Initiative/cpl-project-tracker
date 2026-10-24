@@ -6095,3 +6095,13 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ## INDEX update history, moved S448
 - 2026-10-21 (S441 SkyIronbark, the CPL Queue routine): S440's harvest PR #2306 merged; the CLAUDE.md pass sent as Open Asks Sheet 109 (five cards, nothing applied); the two Python tests failing on main fixed.
 - 2026-10-20 (S439 SkySaltbush, opened by Sam): the funding page prints JST counts and the 75% need, office hours and the MAP Dashboard chat as help, the landing page and its training video in the Contents, Funding Model Numbers; the introduction is always the published two-priority film, rebuilt from Scenario 3 with a new MP4 (#2296-#2298); S438's memory rows written; handoff 440 (SkyChaparral); no KB note.
+
+## INDEX update history, moved S466 (2026-10-24)
+
+- 2026-10-23 (S456 SkyYarrow): Sheet 115 card 1 carried out (17 older-build program records removed with a receipt); Hartnell's Coursedog code-kind gate and Sierra's noncredit section; KB note on a bulk delete's receipt; Open Asks Sheet 117; handoff 457.
+- 2026-10-23 S455 SkyMonkeyflower (the CPL Queue routine): Hartnell's course units from its vendor's own course data (59 of 96 pass), Sierra's IT Cybersecurity read through `with_acronyms`, display build b0a96907bf83 (#2376); lessons S455; handoff 456.
+- 2026-10-23 S452 SkyPoppy (the CPL Queue routine): Long Beach City loaded, display build 504ae8333118 (#2370); the UI pass on the Funding model page (#2369); free captures at East LA, Marin and San Mateo; lessons S452; handoff 453.
+- 2026-10-23 S451 SkyLupine (opened by Sam): the page reader's `cq_view` (#2365); the S449 queue landed, Palo Verde, Cypress, Berkeley City, Hartnell by its Coursedog site (96 of 112, from 73) and Mt. San Antonio, display build 25fe751ccd0a (#2367); lessons S451; handoff 452.
+- 2026-10-22 S449 SkyBuckwheat: the harvest queue after S448 (Mt. San Jacinto settled, Berkeley City's codes read through `cq_view`, Palo Verde's new Acalog catalog, Cypress, Hartnell by its site); lessons S449; handoff 450.
+- 2026-10-22 (S448 SkyDeergrass, opened by Sam): CPL Pathways' clear, faster list and the COBI header (#2353); My College folded into CPL Pathways, search box and alphabetical list (#2355); My College off the menu, the search redraws on a college change (#2356); handoff 449.
+- 2026-10-22 (S447 SkyBrittlebush, opened by Sam): Sheet 112 answered, later (#2348); an Administration of Justice address and a hyphenated course code (#2349); Mt. San Jacinto and Santa Barbara City reread, build be2635ed5b73 (#2350); the harvest lessons' S399-S403 to archive 3; handoff 448.
