@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 85 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 435 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1241** | |
+| Session handoffs | 436 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1242** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-24 (S465 SkyCoyoteBrush, scheduled): three lane files under budget, Scenario 4 found published (#2416); light checkpoint; handoff 466.
 - 2026-10-24 (S464 SkyBuckeye, scheduled): the house_voice lint backlog 23 to 1 (#2414); light checkpoint; handoff 465.
 - 2026-10-24 (S461 SkyManzanita, scheduled): the writer's fourth and fifth consumers (#2403, #2405), the Sierra UI pass, one seal blue (#2404); light checkpoint; handoff 462.
 - 2026-10-23 (S459 SkyBuckeye, later): the agency template and the ELL IET page, the Knowledge Base fold (#2397), the display apply recorded; handoff 460 rewritten; memory receipt `cpl_memory_2026-10-23_s459_later.sql`.

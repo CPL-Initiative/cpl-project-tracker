@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-435 document(s).
+436 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 466 | [Session 466 handoff: three lane files under budget, Scenario 4 found published; the Veteran map's UI pass next](../session_466_handoff.md) | 2026-10-24 |
 | 465 | [Session 465 handoff: the house_voice backlog cleared; the Veteran map's UI pass and Sheet 122 next](../session_465_handoff.md) | 2026-10-24 |
 | 464 | [Session 464 handoff: every drafting surface on the writer; the lint backlog and the next UI pass](../session_464_handoff.md) | 2026-10-24 |
 | 463 | [Session 463 handoff: the writer's last named consumers, the Sierra UI pass's leftovers](../session_463_handoff.md) | 2026-10-24 |
