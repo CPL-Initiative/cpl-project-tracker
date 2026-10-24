@@ -1,11 +1,11 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-10-23T12:57:51Z",
+ "_generated_at": "2026-10-24T12:16:16Z",
  "procedures_hash": "575c290d755b",
- "queue": 448,
+ "queue": 432,
  "saved_not_folded": 0,
- "waiting": 448,
- "proposed": 412,
+ "waiting": 432,
+ "proposed": 396,
  "needs_you_count": 450,
  "not_yet_asked": 0,
  "fold_held": 18,
@@ -21,7 +21,7 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 5,
+   "settled": 0,
    "held": 97,
    "sample": []
   },
@@ -111,30 +111,9 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 12,
+   "settled": 0,
    "held": 179,
-   "sample": [
-    [
-     "ADM JUS 005 - Criminal Investigation",
-     "Criminal Investigation"
-    ],
-    [
-     "ADM JUS 097 -  Career Exploration in Criminal Justice",
-     "Career Exploration in Criminal Justice"
-    ],
-    [
-     "ADM JUS 104 - Introduction to Forensic Science",
-     "Introduction to Forensic Science"
-    ],
-    [
-     "ADM JUS 174 -  Offender Profiling in Criminal Investigations",
-     "Offender Profiling in Criminal Investigations"
-    ],
-    [
-     "ADM JUS 305 - Criminal Intelligence and Data Analysis",
-     "Criminal Intelligence and Data Analysis"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "issuer-issues-the-card",
@@ -222,38 +201,12 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 5,
+   "settled": 0,
    "held": 432,
-   "sample": [
-    [
-     "Automotive Service Excellence (ASE) A1",
-     "ASE A1 — Engine Repair"
-    ],
-    [
-     "Automotive Service Excellence (ASE) A2",
-     "ASE A2 — Automatic Transmission/Transaxle"
-    ],
-    [
-     "Automotive Service Excellence (ASE) A6",
-     "ASE A6 — Electrical/Electronic Systems"
-    ],
-    [
-     "Automotive Service Excellence (ASE) A8",
-     "ASE A8 — Engine Performance"
-    ],
-    [
-     "ENGL C1000 - Academic Reading and Writing - Credit by Exam",
-     "Academic Reading and Writing"
-    ]
-   ]
+   "sample": []
   }
  ],
- "classifier_run": {
-  "calls": 1,
-  "answered": 1,
-  "errors": [],
-  "cost_usd": 0.51
- },
+ "classifier_run": null,
  "needs_you": [
   {
    "raw_title": "1st Receiver Ops & Decon",
@@ -5883,7 +5836,7 @@
     "Juvenile Law and Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -5898,7 +5851,7 @@
     "Automotive Technology Maintenance and Light Repair (MLR)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -5913,7 +5866,7 @@
     "Business Management and Entrepreneurship"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -5928,7 +5881,7 @@
     "Center for Financial Training (CFT) — Human Resources Management"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -5943,7 +5896,7 @@
     "Anatomy and Physiology Honors"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -5958,7 +5911,7 @@
     "History of Architecture 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -5973,7 +5926,7 @@
     "Modern Dance Techniques 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -5988,7 +5941,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -6003,7 +5956,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -6018,7 +5971,7 @@
     "Construction Inspection: Uniform Plumbing Code (UPC) Advanced"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -6033,7 +5986,7 @@
     "Medical Assisting Clinical Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -6048,7 +6001,7 @@
     "Medical Assisting Laboratory Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -6063,7 +6016,7 @@
     "McDonald's Business Leadership Practices"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -6078,7 +6031,7 @@
     "McDonald's Mid-Management Foundations Curriculum"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -6093,7 +6046,7 @@
     "Music Skills 2"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -6108,7 +6061,7 @@
     "Pharmacology"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -6123,7 +6076,7 @@
     "Landscape Installation and Maintenance 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   },
   {
@@ -6138,7 +6091,7 @@
     "Sustainable Gardening for Landscapes (Horticulture)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-23",
+   "fold_report": "2026-10-24",
    "colleges": []
   }
  ]

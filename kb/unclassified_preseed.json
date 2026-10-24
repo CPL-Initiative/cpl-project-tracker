@@ -1,9 +1,9 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-10-23T12:57:51Z",
- "_queue_count": 448,
+ "_generated_at": "2026-10-24T12:16:16Z",
+ "_queue_count": 432,
  "_counts": {
-  "staged": 412,
+  "staged": 396,
   "needs_you": 450,
   "not_yet_asked": 0
  },
@@ -86,14 +86,6 @@
     "Rule 5c"
    ]
   },
-  "ADM JUS 005 - Criminal Investigation": {
-   "title": "Criminal Investigation",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.85,
-   "note": "Rule 5c: title anchored to C-ID AJ 140; issuer = CCC.",
-   "procedure": "course-identity"
-  },
   "ADM JUS 067 - Community Relations": {
    "title": "Community Relations",
    "issuer": "California Community Colleges",
@@ -120,22 +112,6 @@
     "Rule 5c"
    ]
   },
-  "ADM JUS 097 -  Career Exploration in Criminal Justice": {
-   "title": "Career Exploration in Criminal Justice",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ADM JUS 97; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "ADM JUS 104 - Introduction to Forensic Science": {
-   "title": "Introduction to Forensic Science",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ADM JUS 104; issuer = CCC.",
-   "procedure": "course-identity"
-  },
   "ADM JUS 160 - Police Organization and Administration": {
    "title": "Police Organization and Administration",
    "issuer": "California Community Colleges",
@@ -148,30 +124,6 @@
     "brand-family",
     "Rule 5c"
    ]
-  },
-  "ADM JUS 174 -  Offender Profiling in Criminal Investigations": {
-   "title": "Offender Profiling in Criminal Investigations",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ADM JUS 174; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "ADM JUS 305 - Criminal Intelligence and Data Analysis": {
-   "title": "Criminal Intelligence and Data Analysis",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ADM JUS 305; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "ADM JUS 383 - Applications in Crime Analysis": {
-   "title": "Applications in Crime Analysis",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ADM JUS 383; issuer = CCC.",
-   "procedure": "course-identity"
   },
   "AGBUS 015: Computer Application to Agriculture": {
    "title": "Agricultural Computer Applications",
@@ -854,32 +806,6 @@
     "Rule 5c"
    ]
   },
-  "Automotive Service Excellence (ASE) A1": {
-   "title": "ASE A1 — Engine Repair",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 8b",
-    "Rule 6"
-   ]
-  },
-  "Automotive Service Excellence (ASE) A2": {
-   "title": "ASE A2 — Automatic Transmission/Transaxle",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 8b",
-    "Rule 6"
-   ]
-  },
   "Automotive Service Excellence (ASE) A4 and A5": {
    "title": "ASE A4 + A5 — Suspension and Steering, and Brakes",
    "issuer": "National Institute for Automotive Service Excellence (ASE)",
@@ -890,32 +816,6 @@
    "rests_on": [
     "Rule 8b",
     "Rule 4",
-    "Rule 6"
-   ]
-  },
-  "Automotive Service Excellence (ASE) A6": {
-   "title": "ASE A6 — Electrical/Electronic Systems",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 8b",
-    "Rule 6"
-   ]
-  },
-  "Automotive Service Excellence (ASE) A8": {
-   "title": "ASE A8 — Engine Performance",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 8b",
     "Rule 6"
    ]
   },
@@ -2522,27 +2422,6 @@
    ],
    "trainer": "Kaiser High School"
   },
-  "ENGL C1000 - Academic Reading and Writing - Credit by Exam": {
-   "title": "Academic Reading and Writing",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "Title anchored to CCN ENGL C1000.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "brand-family",
-    "Rule 5c"
-   ]
-  },
-  "ENV 101 - Foundations of Design I": {
-   "title": "Foundations of Design I",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ENV 101; issuer = CCC.",
-   "procedure": "course-identity"
-  },
   "ESRI Technical Certification - GEOG 025": {
    "title": "Esri Technical Certification",
    "issuer": "Environmental Systems Research Institute (Esri)",
@@ -3000,38 +2879,6 @@
     "issuer-issues-the-card",
     "join-when-likely-one"
    ]
-  },
-  "HLTH 101 - First Aid - Credit by Exam": {
-   "title": "First Aid",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for HLTH 101; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "HLTH 102 - Standard First Aid and CPR - Credit by Exam": {
-   "title": "First Aid, CPR and AED",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.85,
-   "note": "Rule 5c: title anchored to C-ID KIN 101; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "HLTH 104 - Personal Health and Wellness - Credit by Exam": {
-   "title": "Personal Health and Wellness",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.85,
-   "note": "Rule 5c: title anchored to C-ID PH 100; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "HLTH 106 - Women's Health Education - Credit by Exam": {
-   "title": "Women's Health Education",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for HLTH 106; issuer = CCC.",
-   "procedure": "course-identity"
   },
   "HVACR DAS Journeyman": {
    "title": "HVACR Apprenticeship Journeyman Certificate",
