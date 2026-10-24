@@ -1120,8 +1120,8 @@
      "id": "module:credential_reference.js",
      "kind": "module",
      "direction": "read",
-     "how": "global",
-     "line": 3752,
+     "how": "seeded",
+     "line": 0,
      "tabs": [
       "credential-reference"
      ]
@@ -3032,7 +3032,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3772,
+     "line": 3789,
      "tabs": [
       "credential-reference"
      ]
@@ -5490,7 +5490,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5602,
+     "line": 5603,
      "tabs": [
       "credential-reference"
      ]
@@ -6256,7 +6256,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5714,
+     "line": 5715,
      "tabs": [
       "credential-reference"
      ]
@@ -7031,7 +7031,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5603,
+     "line": 5604,
      "tabs": [
       "credential-reference"
      ]
@@ -9046,7 +9046,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5341,
+     "line": 5342,
      "tabs": [
       "credential-reference"
      ]
@@ -11343,7 +11343,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4999,
+     "line": 5000,
      "tabs": [
       "credential-reference"
      ]
@@ -13010,7 +13010,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5022,
+     "line": 5023,
      "tabs": [
       "credential-reference"
      ]

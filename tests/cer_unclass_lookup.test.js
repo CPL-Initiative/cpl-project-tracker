@@ -13,6 +13,8 @@ const { JSDOM } = require("jsdom");
 const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
+// The page loads the writer module first; Suggest drafts through it (Sheet 118 ruling 5).
+const WRITER = fs.readFileSync("cpl_writer.js", "utf8");
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 function txt(el) { return (el && el.textContent || "").trim(); }
@@ -98,6 +100,7 @@ function makeDom(opts) {
     }
     return respond([]);
   };
+  window.eval(WRITER);
   window.eval(src);
   return { window, log };
 }

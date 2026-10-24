@@ -14,6 +14,8 @@ const { JSDOM } = require("jsdom");
 const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
+// The page loads the writer module first; Suggest drafts through it (Sheet 118 ruling 5).
+const WRITER = fs.readFileSync("cpl_writer.js", "utf8");
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 function txt(el) { return (el && el.textContent || "").trim(); }
@@ -47,7 +49,7 @@ function makeDom(opts) {
     });
     if (url.indexOf("proxy.example.org") >= 0) {
       log.proxyCalls.push(JSON.parse(o.body));
-      return respond({ content: [{ text: opts.proxyAnswer || "Child Development" }] });
+      return respond({ content: [{ type: "text", text: opts.proxyAnswer || "Child Development" }] });
     }
     if (url.indexOf("exhibit_audit/latest.json") >= 0) return respond({ title_cards: [] });
     if (url.indexOf("issuer_preseed.json") >= 0) return respond({ staged: {} });
@@ -64,6 +66,7 @@ function makeDom(opts) {
   window.sessionStorage.setItem("cpl_sb", JSON.stringify({
     access_token: jwt, refresh_token: "rt", email: "map@rccd.edu",
     exp: Date.now() + 3600000 }));
+  window.eval(WRITER);
   window.eval(src);
   return { window, log };
 }
