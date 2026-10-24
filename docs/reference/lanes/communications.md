@@ -113,10 +113,12 @@ versions). Its note names what he decides before it goes
 
 ## Next
 
-- **The writer's next consumers (ruling 5), one PR each:** `activity_summaries.js` and
-  `report_generator.js` first (each carries its own copy of the naming rule and a
-  `claude-sonnet-4-5` pin; the report generator's six audiences with their report prompts join
-  the writer's list at its port), then `college_report_generator.js`, `annual_report.js`,
+- **The writer's next consumers (ruling 5), one PR each.** `activity_summaries.js` ported (S460,
+  the second consumer: its role line and facts rule compose the system prompt through
+  `W.system`, the draft goes through `W.draft` at 700 tokens, the posted row's `raw.model` names
+  the served model, and its own naming-rule copy and `claude-sonnet-4-5` pin are gone).
+  Next `report_generator.js` (its own copy of the naming rule and pin; its six audiences with
+  their report prompts join the writer's list at its port), then `college_report_generator.js`, `annual_report.js`,
   `raci.js` (the dated `claude-sonnet-4-5-20250929` pin), `credential_reference.js` (two small
   calls) and `quickstart.js` (routing; Haiku stays its own call by design, through
   `draft(..., { model })`). Each port deletes the surface's own copy of the rules and its model
