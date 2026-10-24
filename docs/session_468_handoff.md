@@ -32,9 +32,9 @@ fires at 05:12Z on 10-25. The three older open PRs (#2379, #2323, #2257) were la
 - **The same PR carries this checkpoint: oversized docs 8 to 4.** Moved verbatim: the library lane's four settled sections to
   `docs/library_lessons.md`, two September sections of `common-cr-reference` to its lessons, S404-S405 of the harvest
   lessons to archive 3, and the atlas lessons' S235 section to a new `docs/ccr_atlas_lessons_archive_2.md`.
-- **Open Asks Sheet 124** (https://claude.ai/artifact/U5EKwPSiNhUgY8QX75XDsG, two cards, the store empty at 16:25Z):
-  card 1 how the toolkit photos arrive; card 2 the listed IT and AI credentials deck, whose link is in the private
-  vault (a public 404). The vault PR carries the builder, the sheet, the braindump and the session note.
+- **Open Asks Sheet 124** (https://claude.ai/artifact/U5EKwPSiNhUgY8QX75XDsG, two cards), answered in full at 16:20Z
+  (below). The deck's unlisting rode `kb/receipts/cpl_library_it_ai_deck_unlist_2026-10-24_s467.sql` through
+  `supabase-migrate.yml`. The vault PR carries the builder, the sheet, the braindump and the session note.
 - `cpl_memory` (receipt `kb/receipts/cpl_memory_2026-10-24_s467.sql`, four rows, logged): Sam's ruling, the build, the
   unreachable photo host, and the a11y harness reading a `transparent` gradient stop as black.
 
@@ -44,14 +44,16 @@ fires at 05:12Z on 10-25. The three older open PRs (#2379, #2323, #2257) were la
   consistent with the CO webpages. Can you depart from our First Light motif and redesign the CPL Public Library based
   on Malone's."*), simplified as he marked it, Sort by Most recent, shorter cards, Light by default. `cpl_memory`
   `sam-public-library-malone-look-2026-10-24` (verified). Other public pages keep First Light.
+- **Open Asks Sheet 124, 16:20Z, both his own call** (`cpl_memory` `sam-sheet-124-rulings-2026-10-24`): card 1
+  *attach* (he attaches the toolkit photos to a session's message); card 2 *unlist* (the IT and AI credentials deck
+  comes off the public library until it has a link that opens without a sign-in).
 
 ## Open work, in order
 
-1. **Read Sheet 124's replies first** (`replies` in its store). Card 1 *attach*: crop his attached photos to about 1,200
-   pixels on the long side as JPEGs in `library/photos/`, add a `.hero-slide` per photo after the first, rerun the page's
-   test and the a11y pair (the pause control appears from two photos). *allow*: fetch from
-   `careereducationtoolkit.cccco.edu/assets/photography/` in a new session. Card 2 *unlist*: the Library tab's Remove,
-   or `cpl_library_set_public` with `p_listed false` (reversible from the history table).
+1. **When Sam attaches the toolkit photos** (Sheet 124 card 1, *attach*): size each to about 1,200 pixels on the long
+   side as a JPEG in `library/photos/`, add a `.hero-slide` per photo after the first, rerun the page's test and the
+   a11y pair (the pause control appears from two photos). The deck (card 2, *unlist*) is done; it is relisted with one
+   switch once it has a public link.
 2. **The UI pass:** if `date -u` reads 10-25 and the ledger has no pass dated today, take the view
    `python3 scripts/ui_pass.py --next` names (the Veteran map).
 3. **Sam's four funding asks of 13:38Z** (handoff 467, *Sam's asks for the next funding session*, verbatim): the NC

@@ -151,26 +151,20 @@ contacts the eight projects himself. The session's staged receipt,
 `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, was never applied. Its public topics are empty; Sierra links
 it by title and summary until someone adds them.
 
-## NEEDS SAM 1 (S467): the hero photos
+## The hero photos and the deck (Sam, Open Asks Sheet 124, 16:20Z 2026-10-24, both his own call)
 
-Sam asked for the photo to cycle through *"a selection of any images here:
-https://careereducationtoolkit.cccco.edu/assets/photography/"*. No session here can open that address: the
-environment's network gateway refused it (CONNECT 403, 2026-10-24 ~15:25Z), and Anthropic's web fetcher could not
-resolve the name at all (ENOTFOUND), so it may answer only inside his network. The cycle is built and waits on the
-photos. The ask (Open Asks Sheet 124 card 1): attach the photos to a session's message, or allow the site under the
-environment's Network access, or keep the one photo. When photos arrive: resize each to about 1,200 pixels on its long
-side as a JPEG in `library/photos/`, add an `<img class="hero-slide" data-src="photos/..." alt="">` per photo after the
-first, and rerun the page's test and `npm run a11y -- public-library public-library-dark` (the pause control shows from
-two photos on).
+**Card 1, *attach*:** Sam attaches the toolkit photos to a session's message, since no session can reach
+`careereducationtoolkit.cccco.edu` (the gateway refused it, CONNECT 403; Anthropic's fetcher could not resolve the name).
+When they arrive: resize each to about 1,200 pixels on its long side as a JPEG in `library/photos/`, add an
+`<img class="hero-slide" data-src="photos/..." alt="">` per photo after the first, and rerun the page's test and
+`npm run a11y -- public-library public-library-dark` (the pause control shows from two photos on). This waits on the
+files, which no card can supply.
 
-## NEEDS SAM 2 (S467): the IT and AI credentials deck has no public home
-
-The public library lists *Turning IT and AI credentials into credit* (deck, 2026-09-29), and its link points into the
-vault's private GitHub repository, so a public visitor gets GitHub's 404 page (anonymous read, 2026-10-24 ~16:20Z). The
-file is in the vault (`04-projects/cpl-initiative/20260929_CPL_IT_AI_Credentials_3.pptx`, 815,170 bytes). The SharePoint
-CPLLibrary folder opens for the team and invited guests, not the public. The ask (Open Asks Sheet 124 card 2): unlist it
-until it has a public home, give it one and relink the record, or leave it listed. Unlisting is the Library tab's
-*Remove* (or `cpl_library_set_public(..., p_listed false)`), reversible from the history table.
+**Card 2, *unlist*:** *Turning IT and AI credentials into credit* comes off the public library until it has a public
+home: its link points into the vault's private GitHub repository, so a public visitor got GitHub's 404 page. Receipt
+`kb/receipts/cpl_library_it_ai_deck_unlist_2026-10-24_s467.sql` (one guarded UPDATE; seen_by, summary and topics kept, so
+relisting is one switch once the deck has a link that opens without a sign-in). The file is in the vault
+(`04-projects/cpl-initiative/20260929_CPL_IT_AI_Credentials_3.pptx`).
 
 ## Next
 
