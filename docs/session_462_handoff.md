@@ -31,9 +31,9 @@ PRs (#2379, #2323, #2257) were last updated on 10-23 or earlier. Sam's routine f
   files used `#0b3d61` as the roundel's `var()` fallback, and the Pathways print palette set `--seal-blue` to it. All
   four now use `#002F6D`, guarded by `tests/seal_blue_fallback.test.js`. The ledger records the pass and what is
   still open.
-- **#2405, `annual_report.js` (the fifth consumer):** the AI polish builds its system prompt through
-  `aiPolishSystem()` with `W.system` and drafts with `W.draft`; its naming-rule copy, its pin and the fallback are
-  gone. `main` (#2403) is merged in. If it is still open, check `test` on its head and merge it.
+- **#2405, merged (efdafbe3):** `annual_report.js` is the fifth consumer. The AI polish builds its system prompt
+  through `aiPolishSystem()` with `W.system` and drafts with `W.draft`; its naming-rule copy, its pin and the
+  fallback are gone.
 
 ## Decisions Sam made this run
 
@@ -66,5 +66,5 @@ Its replies store was empty at 05:14Z.
 
 ## Let go
 
-At sign-off this session drops its watch on #2405 (or that PR is merged by then) and holds no check-in or artifact
-watch.
+At sign-off this session drops its watch on #2406 (this checkpoint; merge it if it is still open) and holds no
+check-in or artifact watch.
