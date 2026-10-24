@@ -50,10 +50,17 @@ fires at 05:12Z on 10-25. The three older open PRs (#2379, #2323, #2257) were la
 
 ## Open work, in order
 
-1. **When Sam attaches the toolkit photos** (Sheet 124 card 1, *attach*): size each to about 1,200 pixels on the long
-   side as a JPEG in `library/photos/`, add a `.hero-slide` per photo after the first, rerun the page's test and the
-   a11y pair (the pause control appears from two photos). The deck (card 2, *unlist*) is done; it is relisted with one
-   switch once it has a public link.
+1. **Add the toolkit photos to the hero** (Sheet 124 card 1). Sam put them on Google Drive (~16:35Z): eleven zips in
+   *AI Documentation* (`1WNtaaKMGSYsKsdJLxi4fbR24fXD4fGUZ`: LATTC Architecture, Baking, Construction, Fashion, Nursing,
+   InfoCommTech, Transportation; Sequoia Welding twice; CCD AdvManufac and BioTech heroes), each a JPEG of about 0.4 MB
+   beside a ~45 MB TIFF, and the unzipped JPEGs in the folder *Photos* (`1Ip4KaipYU6xNCbogeEG81-ZPQkbzMJpd`; only
+   Architecture had synced by 16:40Z). The Drive connector refuses a download over 10 MB, so read the JPEGs only: a
+   JPEG's base64 lands in a saved tool-result file; decode it with Python `-I` into its own fresh directory and check it
+   with PIL. Then crop each to 4:3 landscape around its people (the arc masks the left edge; Architecture 04903 at center
+   0.5, 0.62 frames all four), at most 1,200 pixels wide, JPEG quality 82; keep Malone's student first; add a
+   `<img class="hero-slide" data-src="photos/..." alt="">` per photo; set `.hero-slide` to `object-position: 50% 50%`
+   once every slide is 4:3 (recrop the student, face near the middle); rerun the page's test and the a11y pair (the
+   pause control appears from two photos). The deck (card 2, *unlist*) is done.
 2. **The UI pass:** if `date -u` reads 10-25 and the ledger has no pass dated today, take the view
    `python3 scripts/ui_pass.py --next` names (the Veteran map).
 3. **Sam's four funding asks of 13:38Z** (handoff 467, *Sam's asks for the next funding session*, verbatim): the NC
@@ -77,6 +84,7 @@ fires at 05:12Z on 10-25. The three older open PRs (#2379, #2323, #2257) were la
 - The local full `npm test` runs past 20 minutes (the funding tests run at full CPU for minutes each); CI's sharded
   `test` check is the gate.
 - CLAUDE.md sits just under its 60,000-byte budget: measure it before adding a line.
+- S467 reached the context warning at 16:40Z (106K left) and handed the photos on rather than start them.
 
 ## Let go
 
