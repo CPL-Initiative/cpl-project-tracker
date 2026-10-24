@@ -27,10 +27,14 @@
 // each surface's own copy and model pin as it ports.
 //
 // STATIC script in both HTMLs (Rule 4), loaded before report_generator.js so every
-// consumer, static or lazy, finds window.CPL_WRITER. No DOM, no CSS, no storage.
+// consumer, static or lazy, finds window.CPL_WRITER. No DOM, no CSS, no storage. Loaded
+// in plain node (a test requiring a consumer for its pure helpers) it attaches to
+// globalThis instead, so a consumer looks for it on whichever of the two exists.
 // Test: tests/cpl_writer.test.js.
 (function () {
   "use strict";
+
+  var root = (typeof window !== "undefined") ? window : globalThis;
 
   var MODEL = "claude-opus-5-5";
 
@@ -134,7 +138,7 @@
   // The drafting proxy (cloudflare-worker-proxy.js) forwards the request body as it is.
   var NO_PROXY = "The drafting proxy is not configured on this page.";
   function proxyUrl() {
-    return (typeof window !== "undefined" && window.CPL_REPORT_PROXY_URL) || "";
+    return root.CPL_REPORT_PROXY_URL || "";
   }
 
   // draft(prompt, opts) sends one request through the proxy and resolves
@@ -162,7 +166,7 @@
       body: JSON.stringify(body)
     };
     if (opts.signal) init.signal = opts.signal;
-    return window.fetch(url, init).then(function (res) {
+    return root.fetch(url, init).then(function (res) {
       return res.json().then(function (j) {
         if (!res.ok) throw new Error((j && j.error && j.error.message) || ("the proxy answered " + res.status));
         return j;
@@ -179,7 +183,7 @@
     });
   }
 
-  window.CPL_WRITER = {
+  root.CPL_WRITER = {
     MODEL: MODEL,
     NAMING_RULE: NAMING_RULE,
     HOUSE_VOICE: HOUSE_VOICE,

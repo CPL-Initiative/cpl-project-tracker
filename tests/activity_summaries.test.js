@@ -24,6 +24,8 @@ const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 
 const SRC = fs.readFileSync("activity_summaries.js", "utf8");
+const WRITER = fs.readFileSync("cpl_writer.js", "utf8");   // static in both HTMLs before this module
+require("../cpl_writer.js");   // in plain node the writer attaches to globalThis, where the module looks for it
 const api = require("../activity_summaries.js");
 
 const DATA = {
@@ -87,9 +89,10 @@ check("(c) three updates per sub-activity, newest first",
 check("(c) a sub-activity with no live update falls back to its creation-era update",
   built.prompt.indexOf("Kickoff set.") > 0);
 check("(c) the previous summary is in the prompt", built.prompt.indexOf("June summary.") > 0);
-check("(c) the naming rule and the no-invention instruction ride along",
-  /CPL Initiative/.test(built.prompt) && /never expand MAP as "Military Articulation Platform"/.test(built.prompt)
-    && /invent no figure, date or name/.test(built.prompt));
+check("(c) the writer's rules ride as the system prompt; the no-invention instruction stays in the prompt",
+  /CPL Initiative/.test(built.system) && /Never expand MAP as "Military Articulation Platform"/.test(built.system)
+    && /house voice/.test(built.system) && /Never use leverage/.test(built.system) && /status summary for one Activity/.test(built.system)
+    && /invent no figure, date or name/.test(built.prompt) && !/Military Articulation/.test(built.prompt));
 check("(c) the rows drawn on are listed for raw",
   built.used.item_updates.join() === "24,23,22,25" && built.used.projects.join() === "3.1,3.3,3.4");
 
@@ -115,9 +118,9 @@ function makeDom(opts) {
     dom._calls.push({ url, opts: o });
     const ok = (body) => Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(body), text: () => Promise.resolve(JSON.stringify(body)) });
     if (url.indexOf("proxy.example") >= 0) {
-      if (opts.proxyFails) return Promise.resolve({ ok: false, status: 502, text: () => Promise.resolve("bad gateway") });
+      if (opts.proxyFails) return Promise.resolve({ ok: false, status: 502, json: () => Promise.reject(new Error("not json")), text: () => Promise.resolve("bad gateway") });
       const act = /Activity (\d+)/.exec(JSON.parse(o.body).messages[0].content)[1];
-      return ok({ content: [{ text: "Draft for Activity " + act + "." }] });
+      return ok({ model: "claude-served-9", stop_reason: "end_turn", content: [{ type: "text", text: "Draft for Activity " + act + "." }] });
     }
     if (o.method === "POST" && url.indexOf("/rest/v1/item_updates") >= 0) return ok([Object.assign({ id: 99 }, JSON.parse(o.body))]);
     if (url.indexOf("item_updates?") >= 0) return ok(DATA.updates);
@@ -126,6 +129,7 @@ function makeDom(opts) {
     if (url.indexOf("project_lifecycle?") >= 0) return ok(DATA.lifecycle);
     return ok([]);
   };
+  w.eval(WRITER);   // the writer first, as the page loads it
   w.eval(SRC);
   return dom;
 }
@@ -221,6 +225,8 @@ const posts = dom => dom._calls.filter(c => c.opts.method === "POST" && c.url.in
       fs.readFileSync(f, "utf8").split('<script src="activity_summaries.js"></script>').length === 2);
   });
   check("(h) the injected CSS uses tokens, no raw hex", !/#[0-9A-Fa-f]{3,6}\b/.test(SRC.replace(/\/\/.*$/gm, "")));
+  check("(h) this file names no model and reaches the proxy through the writer alone",
+    !/claude-[a-z0-9-]+/.test(SRC) && /W\.draft\(/.test(SRC) && /W\.system\(/.test(SRC) && !/CPL_REPORT_PROXY_URL/.test(SRC) && !/anthropic-version/.test(SRC));
   check("(h) every control is 24px tall", /\.as-btn \{[^}]*min-height:24px/.test(SRC));
 
   let pass = 0;
