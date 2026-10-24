@@ -73,7 +73,7 @@ follow the device when no choice is stored: Sierra (`sierra/sierra.css`), the Fa
 veteran map and the CPL Opportunity page. Sierra, the Fact Sheet and the veteran map carry no Light and Dark words of their
 own; they read the one stored choice (`cpl_theme`) that COBI, the library and the public header write. In the library's
 side bar Sierra already matches the library (`?theme=`).
-**NEEDS SAM (Open Asks Sheet 126 card 2): should those four open Light as the library does?** The ask leaves COBI's System setting as it is.
+**Ruled (Sam, Open Asks Sheet 126 card 2, *light*, 23:08Z 2026-10-24): those four open Light unless the reader picks Dark; COBI's System setting stays.** Not yet built (handoff 470).
 
 ## ⚠️ Open — the measured remainder
 

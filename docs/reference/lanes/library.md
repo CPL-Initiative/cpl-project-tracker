@@ -187,7 +187,7 @@ switch. The library maps the `--sierra-bar-*` tokens onto its own. **COBI's Libr
 *"Library and more importantly on the public library site:)"*): `library.js` loads the bar on the tab's first visit, shows
 the chip on that tab alone (`setChip`; any other tab hides it and shuts an open bar) and maps the tokens onto First Light.
 Test: `tests/sierra_sidebar.test.js` (36); sweep: `public-library-sierra` and `-dark`, `cobi:library`.
-**NEEDS SAM (Open Asks Sheet 126 card 1): which pages move onto the bar next.** He chose to see the library's first. The
+**Ruled (Sam, Open Asks Sheet 126 card 1, *public*, 23:08Z 2026-10-24): the Fact Sheet and the funding model page move onto the bar next; COBI as it is.** Not yet built (handoff 470). The
 Fact Sheet and the funding model page open their own drawer (`fact-sheet/factsheet_sierra.js`, a second copy of her chat
 with each page's starter questions); COBI's header link opens `sierra/` in a new tab, and COBI also opens Sierra AI over any
 tab (`cpl_chat.js`). A page joins with one script tag and a token map.
