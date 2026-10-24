@@ -587,7 +587,8 @@ window.COBI_ADMIN_SURFACE = {
     },
     "library": {
       "modules": [
-        "library.js"
+        "library.js",
+        "sierra/sidebar.js"
       ],
       "reads": [
         "map_colleges"

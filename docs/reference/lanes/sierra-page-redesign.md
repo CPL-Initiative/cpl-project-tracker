@@ -1,7 +1,7 @@
 ---
 title: "Sierra's page redesign (after america.gov) — lane state"
 created: 2026-10-08
-updated: 2026-10-17
+updated: 2026-10-24
 tags: [reference, roadmap-lane, sierra, first-light]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -41,6 +41,8 @@ related:
 **My College's Sierra is in Sierra AI's format (S400; Sam, 2026-10-16: *"make sure it's integrated in the My College tab, which still has the old format"*).** S398 made one Sierra and left the dock as it was: three nested cards, a description and the Note above the role row, *Full screen* on a row of its own, the log's 240px frame. Now both boxes read the same: her name and one control on a ruled bar (My College's `<summary>` is the bar, *Full screen* placed on it by `college_briefing.js`, still a child of her wrap), the role row, the starters, the box, and Sam's Note of 2026-08-21, verbatim, under the box (`.cplchat-foot`). The Note had sat in the intro, which full screen hides, so Sierra AI over a tab showed only its privacy half; it now shows in both boxes and both states. The description (*Ask her anything about credit for prior learning.*) is gone; the box's placeholder asks. The `.cb-assist` frame that leads the tab stays (Sam, 2026-08-12); the `<details>` inside it draws no card; the log has no frame and no floor, and a rule above and below once it holds a conversation. Guard: `tests/my_college_sierra_ai_format.test.js`.
 - **The tab repainting under her.** `mountInto()` collapses, rebuilds and re-expands after the host has finished with the new box (a microtask, so My College's hoist still finds it). The turn rows move to the new log when the same tab repaints (the same nodes, so a streaming answer keeps streaming), which also closes an older gap: a docked repaint used to empty the visible log while `convo` still sent it.
 - **Verified.** `tests/cpl_chat_dock_full.test.js` (55); `npm run a11y -- sierra-dock-full sierra-dock-full-dark` (four widths, AA, 24px, rings, and the dialog, inert page, sticky box, End and Escape). The first seeded conversation the sweep measured found the answer's feedback row below AA (`--text-faint` 3.24:1, a .75 fade 2.48:1) and 23.4px tall; fixed for every COBI surface. The engine skips inert controls in its focus-ring pass.
+
+**A page can frame her in an Ask Sierra side bar (S469; Sam, 2026-10-24).** `sierra/sidebar.js` puts a chip in a host page's bottom-right corner that opens this page in a side bar; the public library is the first host (library lane). Her head script reads `?theme=` first, so a host that opens Light whatever the device says gets her Light too, and the bar sets her `data-theme` when the host switches. Nothing else in her page changed. Guard: `tests/sierra_sidebar.test.js` (7).
 
 **UI pass (S349).** The public page passed its first pass: AA, 24px targets, rings, keyboard and reduced motion at nine widths in all four views; First Light holds; the chat function and feedback RPC agree with the COBI surfaces. Nothing to fix (`kb/ui_pass_ledger.json`).
 

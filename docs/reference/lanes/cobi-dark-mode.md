@@ -66,6 +66,15 @@ this reader's own SkyView choice → an explicit global choice → where they st
 Sam's ruling 3 of 2026-09-07 still owns the *default*, because the global key
 reads `system` until someone picks.
 
+## The public pages' default theme (S469, 2026-10-24)
+
+The public library opens Light and turns dark only when a reader picks Dark (Sam, 2026-10-24). Four public pages still
+follow the device when no choice is stored: Sierra (`sierra/sierra.css`), the Fact Sheet (`fact-sheet/factsheet.css`), the
+veteran map and the CPL Opportunity page. Sierra, the Fact Sheet and the veteran map carry no Light and Dark words of their
+own; they read the one stored choice (`cpl_theme`) that COBI, the library and the public header write. In the library's
+side bar Sierra already matches the library (`?theme=`).
+**NEEDS SAM (Open Asks Sheet 126 card 2): should those four open Light as the library does?** The ask leaves COBI's System setting as it is.
+
 ## ⚠️ Open — the measured remainder
 
 ⭐ **THE REMAINDER IS NOT "A LONG TAIL OF RAW HEXES."** It is four kinds of
@@ -279,35 +288,11 @@ regressions this run.
 
 Also open: **the CIP Codes tab's palette and boxed controls** (UI pass S390, #2118; the ledger names them).
 
-## ✅ RULED AND LANDED (Sam, open-asks sheet items 11-13, 2026-09-22)
+## ✅ Ruled and landed (Sam, open-asks sheet items 11-13, 2026-09-22)
 
-All three changed the LIGHT theme, which is why none had been swept.
-
-1. **`--surface-1`/`--surface-2` carry light values now** — aliases of
-   `--surface-subtle`/`--surface-muted`, whose dark values they were already
-   byte-identical to. Dark-only had left twelve hand-picked tints behind
-   fallbacks (`#eef3f9`, `#f4f7fb`, `#fafcff`, `#F6F2FD`, `#fdf8ec` …), cool
-   blues on a warm ground. Every ink clears AA on both (worst 5.56:1).
-   ⚠️ **`--gold-soft` sat in the same assertion and STAYS dark-only** — item 11
-   named the two surface tokens, and sweeping the gold ground in beside them is
-   how a ruling grows past what was asked.
-2. **The Implementation Funding `--text-faint` sites moved to `--text-muted`** —
-   19 of them. ⚠️ **It was never a dark-mode bug.** Measured against the real
-   grounds, `--text-faint` fails AA in BOTH themes (3.24:1 light on `--paper`,
-   4.23:1 dark) while `--text-muted` passes everywhere (6.02–7.91:1). This lane
-   recorded it as a dark finding only because that is where the a11y pass ran.
-   ⚠️ **34 sites carry the same defect on 7 other tabs** — `cpl_memory` 12,
-   `contracts` 9, `map_data_quality` 5, `cpl_todos` 3, `cr_reference` 2,
-   `cpl_news` 2, `cpl_pathways` 1. Not ruled on, not touched.
-3. **The 24 phantom-token declarations point at real roles** —
-   `var(--brand,var(--cobalt))`, `--link` → `--accent-link`, `--text` →
-   `--text-strong`. Exactly 24, matching this lane's own count.
-
-Guard: `tests/phantom_token_repair.test.js` (6 checks) + `cpl_theme` 66.
-⚠️ **`cpl_theme` had asserted the OPPOSITE of item 1**, and its comment said
-why: *"Defining them light too would repaint six tabs; that is Sam's call, not a
-tidy-up."* A guard parked awaiting a ruling. It stopped the unilateral change it
-was written to stop, and the ruling released it.
+The light `--surface-1`/`--surface-2`, the funding tab's `--text-faint` sites moved to `--text-muted`, and the 24
+phantom-token declarations pointed at real roles. The detail moved verbatim to `docs/cobi_lessons.md` (*Moved from the
+cobi-dark-mode lane, S469*). Guard: `tests/phantom_token_repair.test.js` + `cpl_theme`.
 
 **Still open here, none of it ruled:** printing while in dark mode (consumer-JS
 dark rules apply to a print, so it comes out dark-on-dark; it wants `@media

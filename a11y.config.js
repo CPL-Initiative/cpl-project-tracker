@@ -59,6 +59,59 @@ async function seedPublicLibrary(page, theme) {
     api.paint();
   }, theme);
 }
+// The library with the Ask Sierra side bar open (sierra/sidebar.js, Sam 2026-10-24): the
+// pieces seeded as above, then the bar opened and her frame loaded.
+async function seedPublicLibrarySierra(page, theme) {
+  await seedPublicLibrary(page, theme);
+  await page.evaluate(() => window.CPL_SIERRA_BAR && window.CPL_SIERRA_BAR.open());
+  await page.waitForFunction(() => {
+    const f = document.querySelector(".sbar-frame");
+    try { return !!(f && f.contentDocument && f.contentDocument.getElementById("s-input")); } catch (e) { return false; }
+  }, null, { timeout: 5000 }).catch(() => {});
+  await page.waitForTimeout(150);
+}
+// What the bar must do for a keyboard: run at 1024px (she covers the page there), then 1440px
+// (she sits beside it). The seed has left her open.
+async function publicLibrarySierraChecks(page) {
+  const out = [];
+  const state = () => page.evaluate(() => {
+    const bar = document.getElementById("sbar"), chip = document.getElementById("sbar-chip"), f = document.querySelector(".sbar-frame");
+    let inFrame = null;
+    try { inFrame = f && f.contentDocument.activeElement && f.contentDocument.activeElement.id; } catch (e) { inFrame = "unreachable"; }
+    const lab = bar && document.getElementById(bar.getAttribute("aria-labelledby") || "");
+    const behind = Array.from(document.body.children).filter((k) => k !== bar && !/^(SCRIPT|STYLE|LINK|TEMPLATE)$/.test(k.tagName));
+    return {
+      open: !!bar && !bar.hidden, name: lab ? lab.textContent.trim() : "", role: bar && bar.getAttribute("role"),
+      modal: bar && bar.getAttribute("aria-modal"), active: document.activeElement === f ? "frame" : (document.activeElement === chip ? "chip" : (document.activeElement && document.activeElement.tagName)),
+      inFrame: inFrame, inert: behind.filter((k) => k.hasAttribute("inert")).length, behind: behind.length,
+      overflowY: getComputedStyle(document.documentElement).overflowY, sx: document.documentElement.scrollWidth, vw: innerWidth,
+      barLeft: bar ? Math.round(bar.getBoundingClientRect().left) : null, bodyRight: Math.round(document.body.getBoundingClientRect().right),
+    };
+  });
+  let s = await state();
+  out.push({ name: "1024px: a modal dialog named Ask Sierra, focus in her question box",
+    ok: s.open && s.role === "dialog" && s.name === "Ask Sierra" && s.modal === "true" && s.active === "frame" && s.inFrame === "s-input",
+    detail: `open=${s.open}, name="${s.name}", aria-modal=${s.modal}, focus on ${s.active}/${s.inFrame}` });
+  out.push({ name: "1024px: the page behind is inert and does not scroll",
+    ok: s.inert === s.behind && s.behind > 0 && s.overflowY === "hidden", detail: `${s.inert} of ${s.behind} inert; html overflow-y=${s.overflowY}` });
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(100);
+  s = await state();
+  out.push({ name: "Escape in her frame shuts the bar and hands focus to the chip",
+    ok: !s.open && s.active === "chip" && s.inert === 0 && s.overflowY !== "hidden", detail: `open=${s.open}, focus on ${s.active}, ${s.inert} inert` });
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(300);
+  s = await state();
+  out.push({ name: "Enter on the chip opens her again, focus back in her question box",
+    ok: s.open && s.inFrame === "s-input", detail: `open=${s.open}, focus in frame on ${s.inFrame}` });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.waitForTimeout(200);
+  s = await state();
+  out.push({ name: "1440px: beside the page, which stays in use and does not scroll sideways",
+    ok: s.open && s.modal === "false" && s.inert === 0 && s.barLeft === 1020 && s.bodyRight <= 1020 && s.sx <= s.vw,
+    detail: `aria-modal=${s.modal}, ${s.inert} inert, bar left=${s.barLeft}, body right=${s.bodyRight}, scrollWidth=${s.sx}/${s.vw}` });
+  return out;
+}
 async function seedSierraConversation(page, theme) {
   await page.evaluate((th) => {
     if (th === "dark") document.documentElement.setAttribute("data-theme", "dark");
@@ -2032,6 +2085,21 @@ module.exports = {
     file: "library/index.html",
     title: "CPL Library (public), dark",
     seed: (page) => seedPublicLibrary(page, "dark"),
+  },
+  /* The library with the Ask Sierra side bar open: the chip, Close and the page beside her (S469).
+     Her own page inside the frame is swept as "sierra". */
+  "public-library-sierra": {
+    file: "library/index.html",
+    title: "CPL Library (public), Ask Sierra open",
+    widths: [320, 390, 768, 1024, 1280, 1440],
+    seed: (page) => seedPublicLibrarySierra(page, "light"),
+    keyboard: async (page) => publicLibrarySierraChecks(page),
+  },
+  "public-library-sierra-dark": {
+    file: "library/index.html",
+    title: "CPL Library (public), Ask Sierra open, dark",
+    widths: [390, 1280],
+    seed: (page) => seedPublicLibrarySierra(page, "dark"),
   },
 
   /* The Knowledge Base portal, as a team member sees it (S423): the sign-in view, the reader

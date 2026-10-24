@@ -174,6 +174,24 @@ relisting is one switch once the deck has a link that opens without a sign-in), 
 receipt)*, and `cpl_library_public()` lists 15 pieces. The file is in the vault
 (`04-projects/cpl-initiative/20260929_CPL_IT_AI_Credentials_3.pptx`).
 
+## Ask Sierra beside the page (Sam, 2026-10-24; built S469)
+
+Sam asked at ~17:10Z for *"an Ask Sierra chat chip that opens a Sierra side bar if clicked"*; at the start of S469 he picked
+**the library first, as one script any page can load,** and **the chip in the bottom-right corner**. `sierra/sidebar.js`
+adds the chip and a side bar that frames the public `sierra/` page, so she is the same assistant with the same surface and
+logging. The frame loads on the first open and stays loaded while shut, so a reopen keeps the conversation. From 1200px the
+page narrows beside her (the library keeps two columns of cards to 1600px) and stays in use; below that she takes the screen
+as a modal and the page behind is inert. Close and Escape (in her frame too, unless her About panel is open) hand focus back
+to the chip. The frame takes the library's theme in `?theme=`, which her page lets beat a stored choice, and follows a
+switch. The library maps the `--sierra-bar-*` tokens onto its own. **COBI's Library tab carries it too** (Sam, ~21:05Z:
+*"Library and more importantly on the public library site:)"*): `library.js` loads the bar on the tab's first visit, shows
+the chip on that tab alone (`setChip`; any other tab hides it and shuts an open bar) and maps the tokens onto First Light.
+Test: `tests/sierra_sidebar.test.js` (36); sweep: `public-library-sierra` and `-dark`, `cobi:library`.
+**NEEDS SAM (Open Asks Sheet 126 card 1): which pages move onto the bar next.** He chose to see the library's first. The
+Fact Sheet and the funding model page open their own drawer (`fact-sheet/factsheet_sierra.js`, a second copy of her chat
+with each page's starter questions); COBI's header link opens `sierra/` in a new tab, and COBI also opens Sierra AI over any
+tab (`cpl_chat.js`). A page joins with one script tag and a token map.
+
 ## Next
 
 - **Sam connects the Microsoft 365 connector;** the next session after that reads the CPLLibrary folder, confirms the 16

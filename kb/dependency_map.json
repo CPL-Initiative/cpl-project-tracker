@@ -4,7 +4,7 @@
   "supabase_tables": 101,
   "rpcs": 41,
   "edge_functions": 9,
-  "file_datasets": 713,
+  "file_datasets": 714,
   "external_services": 184,
   "consumers": 472,
   "workflows": 58,
@@ -659,7 +659,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 475
+     "line": 528
     }
    ],
    "main_committers": []
@@ -1412,7 +1412,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1637
+     "line": 1690
     }
    ],
    "main_committers": []
@@ -1940,7 +1940,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 705
+     "line": 758
     }
    ],
    "main_committers": []
@@ -1959,7 +1959,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1033
+     "line": 1086
     },
     {
      "id": "module:college_briefing.js",
@@ -3787,7 +3787,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1311
+     "line": 1364
     }
    ],
    "main_committers": []
@@ -4815,7 +4815,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1202
+     "line": 1255
     },
     {
      "id": "module:admin.js",
@@ -5676,7 +5676,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1576
+     "line": 1629
     },
     {
      "id": "module:college_briefing.js",
@@ -5863,7 +5863,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 759
+     "line": 812
     },
     {
      "id": "module:cpl_funding.js",
@@ -6061,7 +6061,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 201
+     "line": 254
     },
     {
      "id": "module:cpl_pathways.js",
@@ -16468,7 +16468,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 240
+     "line": 246
     }
    ],
    "served": true,
@@ -18019,6 +18019,29 @@
    "served": true,
    "main_committers": []
   },
+  "file:sierra/sidebar.js": {
+   "consumers": [
+    {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1214,
+     "tabs": [
+      "library"
+     ]
+    },
+    {
+     "id": "page:library/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 248
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:sierra/sierra.js": {
    "consumers": [
     {
@@ -18026,7 +18049,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 124
+     "line": 126
     }
    ],
    "served": true,
@@ -25040,6 +25063,9 @@
   ],
   "raci.js": [
    "raci"
+  ],
+  "sierra/sidebar.js": [
+   "library"
   ],
   "sierra_rule_defaults.js": [
    "sierra-training"
