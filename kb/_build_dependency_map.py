@@ -219,6 +219,16 @@ SEEDS = [
         "datasets": [("file:fact-sheet/statewide_catalog.json", "read")],
         "why": "cross-service self-dependency: the Fact Sheet's statewide catalog read from main via raw.githubusercontent",
     },
+    {   # comms.js (S460): the Letters tab drafts through cpl_writer.js's draft(), the one
+        # writer module (Sam's Sheet 118 ruling 5), which fetches window.CPL_REPORT_PROXY_URL
+        # on the tab's behalf; no literal in the tab names the global or the host, so the
+        # tab's edge to the drafting proxy went invisible when the call moved (2026-10-24).
+        "file": "comms.js",
+        "anchor": r'W\.draft\(draftPrompt\(rec\)',
+        "datasets": [("external:cpl-proxy.slee-548.workers.dev", "read")],
+        "why": "the draft goes through cpl_writer.js draft() over window.CPL_REPORT_PROXY_URL; "
+               "every later consumer of the writer needs the same seed at its port",
+    },
     {   # Sierra's pgvector retrieval tables: named only in docs; DDL applied live
         "file": "chatbox/supabase/functions/cpl-chat/index.ts",
         "anchor": r'match_document_sections',
