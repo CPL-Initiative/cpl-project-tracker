@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-10-23
+updated: 2026-10-24
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -237,6 +237,15 @@ name lives in the title alone. Mock-up: https://claude.ai/artifact/LRFiSDUY4bGTo
 1. **The Knowledge Base tab and the Library.** Sam, 2026-10-23 ~20:18Z (vault braindump `03-professional/braindumps/braindump-2026-10-23-2020-consolidate-the-kb-tab-and-the-library.md`): *"our KB tab might be a consolidation into the Library or vice versa ... ensure that whatever is in the library is also in the KB, since the knowledge helps us build our unified knowledge informing all the COBI work."* Measured: the Knowledge Base tab is an iframe over `kb-portal/`, a reader of the public `cpl-knowledge-base` repo behind its own magic-link sign-in (Sam and Malone); the Library is `cpl_library` behind the team phrase, 40 live records, none linked to a KB note. Recommended: fold the tab into the Library as a second view (the side menu loses one entry; the portal keeps its sign-in) and one rule with a check: a piece whose substance is knowledge gets a KB note through the curation pipeline, the record links it, and Needs attention names a piece without one. It might be wrong if the KB reader should stay its own door for Malone, or if no rule is wanted.
 2. **The CPL Coordinator Guide's four files.** The audit (S458, `CPLBrain/04-projects/cpl-initiative/coordinator-guide/audit_workflow.js`) needs `CPL_Coordinator_Guide.docx`, `.pdf`, `CPL_Coordinator_Quick_Reference.docx` and `.pdf` attached again: the uploads died with S458's container and no report was committed. Recommended: attach them in the next session; the audit runs as he asked ("ultracode").
 3. **The ELL IET award notice's text.** Card 5's build (the agency template, the ELL IET grantees page first) needs the notice's text and its eight grantees; the sandbox cannot read edd.ca.gov, and search found five grantees and the $17.97 million total. Recommended: paste the text or attach the PDF.
+
+## NEEDS SAM (S460 SkyFremontia, 2026-10-24): the ELL IET page's public listing
+
+**NEEDS SAM 1.** *ELL IET CPL Starting Points* (https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe; Library record
+`ell-iet-cpl-starting-points`, kind visual, Made for Agency, status draft, seen by the team, not listed) is built from EDD's
+award notice as Sheet 121 card 3 asked. Listing it publicly and sending each of the eight projects its card is outward, so
+the call is his: list and send, list only, keep it on the team Library, or edit first. Recommended: read the draft, then
+list it publicly and send each project its card, with one message per project drafted in the Letters tab. Card 1 of
+[Open Asks Sheet 122](https://claude.ai/artifact/PKRBW9ucqKtikxhRtevHrj).
 
 ## Next
 
