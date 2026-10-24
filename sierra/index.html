@@ -12,8 +12,10 @@
 <!-- The theme a reader chose in COBI's one control (cpl_theme.js, key
      cpl_theme, same origin) holds here too; with no choice the page follows the
      OS, as COBI's System setting does. Set before the stylesheet paints, so a
-     dark reader never sees a white flash. -->
-<script>try{var t=localStorage.getItem("cpl_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+     dark reader never sees a white flash. A page that frames her in its Ask
+     Sierra side bar (sidebar.js) names its own theme in ?theme=, which wins: the
+     library opens Light whatever the device says, and she must match it. -->
+<script>(function(){var t=null;try{t=new URLSearchParams(location.search).get("theme")}catch(e){}if(t!=="light"&&t!=="dark"){try{t=localStorage.getItem("cpl_theme")}catch(e){}}if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)})()</script>
 <link rel="preload" href="./fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./sierra.css">

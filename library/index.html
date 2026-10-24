@@ -45,6 +45,10 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
   --gutter-l: max(16px, 5.5vw, calc((100vw - 1320px) / 2), env(safe-area-inset-left, 0px));
   --gutter-r: max(16px, 5.5vw, calc((100vw - 1320px) / 2), env(safe-area-inset-right, 0px));
   --cpl-measure: none;
+  /* The Ask Sierra chip and side bar (../sierra/sidebar.js) take this page's look. */
+  --sierra-bar-bg: var(--surface); --sierra-bar-ink: var(--ink); --sierra-bar-heading: var(--heading); --sierra-bar-link: var(--link);
+  --sierra-bar-line: var(--line); --sierra-bar-focus: var(--accent); --sierra-bar-chip-bg: var(--heading); --sierra-bar-chip-ink: var(--surface);
+  --sierra-bar-shadow: var(--shadow); --sierra-bar-head-font: var(--serif);
   color-scheme: light;
 }
 /* Dark only when the reader picks it, never from the device setting (Sam, 2026-10-24). */
@@ -112,7 +116,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .piece .go { margin-top: auto; padding-top: 6px; color: var(--link); font-size: .88rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
 .foot { background: var(--foot-bg); color: var(--foot-fg); }
-.foot-in { padding-block: 24px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; font-size: .9rem; }
+.foot-in { padding-block: 24px 88px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; font-size: .9rem; }
+/* With the Ask Sierra side bar open beside it, the page keeps two columns of cards until it is wide again. */
+@media (min-width: 1200px) and (max-width: 1599px) { html.sbar-open .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }
@@ -238,5 +244,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   </div>
 </footer>
 <script src="./public_library.js"></script>
+<!-- Ask Sierra (Sam, 2026-10-24): a chip in the bottom-right corner opens Sierra in a side bar. -->
+<script src="../sierra/sidebar.js" defer></script>
 </body>
 </html>
