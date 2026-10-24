@@ -59,3 +59,20 @@ related:
 - A lazy tab that a test `eval`s (`runScripts: "outside-only"`) needs `w.eval(WRITER)` first, the same order the page
   loads them in. The proxy check moves from a load-time constant to `W.proxyUrl()`, which reads the page global when
   it is called.
+
+## S462 SkyToyon (2026-10-24): the sixth, seventh and eighth consumers
+
+- `raci.js` (#2407), `credential_reference.js` (#2408) and `quickstart.js` (#2409) now draft through the writer. The
+  lane's named consumers are all ported; the one drafting surface left with its own pin is the KB portal's Polish
+  (`kb-portal/config.js` `POLISH_MODEL`, a separate page that does not load the writer yet).
+- **Read the writer at call time in a tab other tests load bare.** Ten tests `eval` `raci.js` without the writer; a
+  load-time `throw` would have broken all of them for a feature none of them exercise. `writer()` and `polishReady()`
+  read `window.CPL_WRITER` when called, so a page without it loses only the polish.
+- **A lookup or a router takes the words, not the voice.** `W.system({ omit: [...] })` keeps the spelling and naming
+  words and drops the house voice, the business words and the funding words where the answer is a name or a JSON
+  route. The naming rule still applies: the router's `message` is shown to the reader.
+- **A routing override is the one sanctioned second model.** `quickstart.js` keeps Haiku as `ROUTING_MODEL` and
+  passes it to `W.draft(..., { model })`; the (6) check for it allows exactly one `claude-` string, where every other
+  consumer's check allows none.
+- **A ported call changes its failure words.** The writer rejects on a non-OK answer, so a proxy error in Suggest
+  now reads "suggestion failed" where it used to read "no confident suggestion". Say it in the PR.

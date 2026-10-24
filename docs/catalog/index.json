@@ -16037,8 +16037,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 432,
+   "count": 433,
    "docs": [
+    {
+     "created": "2026-10-24",
+     "governs": [],
+     "n": 463,
+     "path": "docs/session_463_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "communications",
+      "writer",
+      "ui-pass"
+     ],
+     "title": "Session 463 handoff: the writer's last named consumers, the Sierra UI pass's leftovers",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-24",
      "governs": [],
@@ -23457,5 +23473,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1238
+ "total": 1239
 }
