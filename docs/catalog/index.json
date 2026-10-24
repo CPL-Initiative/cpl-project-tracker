@@ -15219,7 +15219,7 @@
      ],
      "title": "COBI dark mode / the one theme control \u2014 lane state",
      "type": null,
-     "updated": "2026-09-10"
+     "updated": "2026-10-24"
     },
     {
      "created": "2026-08-28",
@@ -15411,7 +15411,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-10-22"
+     "updated": "2026-10-24"
     },
     {
      "created": "2026-10-23",
@@ -15652,7 +15652,7 @@
      ],
      "title": "Sierra retrieval + corpus \u2014 lane state",
      "type": null,
-     "updated": "2026-10-03"
+     "updated": "2026-10-24"
     },
     {
      "created": "2026-10-08",
@@ -16037,8 +16037,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 435,
+   "count": 436,
    "docs": [
+    {
+     "created": "2026-10-24",
+     "governs": [],
+     "n": 466,
+     "path": "docs/session_466_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "docs-audit",
+      "oversized-doc",
+      "implementation-funding"
+     ],
+     "title": "Session 466 handoff: three lane files under budget, Scenario 4 found published; the Veteran map's UI pass next",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-24",
      "governs": [],
@@ -23505,5 +23521,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1241
+ "total": 1242
 }

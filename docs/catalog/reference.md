@@ -23,7 +23,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Admin tab / the side menu as data — lane state](../reference/lanes/admin-tab-side-menu.md) | lanes | `admin-tab-side-menu.md` | 2026-08-28 | 2026-08-30 |
 | [Annual Workplan Goals / adding, moving and counting sub-activities — lane state](../reference/lanes/workplan-annual-goals.md) | lanes | `workplan-annual-goals.md` | 2026-10-12 | 2026-10-20 |
 | [CER procedures and the simpler CER tab — lane state](../reference/lanes/cer-procedures.md) | lanes | `cer-procedures.md` | 2026-10-18 | 2026-10-18 |
-| [COBI dark mode / the one theme control — lane state](../reference/lanes/cobi-dark-mode.md) | lanes | `cobi-dark-mode.md` | 2026-09-08 | 2026-09-10 |
+| [COBI dark mode / the one theme control — lane state](../reference/lanes/cobi-dark-mode.md) | lanes | `cobi-dark-mode.md` | 2026-09-08 | 2026-10-24 |
 | [College & district identity — lane state](../reference/lanes/college-district-identity.md) | lanes | `college-district-identity.md` | 2026-08-28 | 2026-08-28 |
 | [College CR evidence ('we approved it, but we have no CR') — lane state](../reference/lanes/college-cr-evidence.md) | lanes | `college-cr-evidence.md` | 2026-08-28 | 2026-08-28 |
 | [Common CR Reference — lane state](../reference/lanes/common-cr-reference.md) | lanes | `common-cr-reference.md` | 2026-08-28 | 2026-10-20 |
@@ -37,7 +37,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Excel→Supabase Phase 2-4 — lane state](../reference/lanes/excel-to-supabase.md) | lanes | `excel-to-supabase.md` | 2026-08-28 | 2026-08-28 |
 | [Governance & team enablement — lane state](../reference/lanes/governance-team-enablement.md) | lanes | `governance-team-enablement.md` | 2026-08-28 | 2026-10-21 |
 | [GR register / CO policy & regulation review — lane state](../reference/lanes/gr-register.md) | lanes | `gr-register.md` | 2026-08-28 | 2026-08-30 |
-| [Implementation Funding tab / the $35M model — lane state](../reference/lanes/implementation-funding.md) | lanes | `implementation-funding.md` | 2026-08-28 | 2026-10-22 |
+| [Implementation Funding tab / the $35M model — lane state](../reference/lanes/implementation-funding.md) | lanes | `implementation-funding.md` | 2026-08-28 | 2026-10-24 |
 | [Letters, Memos & Reports / the communications register — lane state](../reference/lanes/communications.md) | lanes | `communications.md` | 2026-10-23 | 2026-10-24 |
 | [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-10-24 |
 | [Local course ↔ CR alignment — lane state](../reference/lanes/local-course-cr-alignment.md) | lanes | `local-course-cr-alignment.md` | 2026-08-28 | 2026-08-28 |
@@ -55,7 +55,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Reviewer session lifetime & scope — lane state](../reference/lanes/reviewer-session-lifetime.md) | lanes | `reviewer-session-lifetime.md` | 2026-08-28 | 2026-08-28 |
 | [Roadmap lanes — how the pointer index and the lane files divide](../reference/lanes/README.md) | lanes | `README.md` | 2026-09-09 | 2026-09-09 |
 | [Row-auditor rules (§11 phase 1c) — lane state](../reference/lanes/audit-rules.md) | lanes | `audit-rules.md` | 2026-08-28 | 2026-08-28 |
-| [Sierra retrieval + corpus — lane state](../reference/lanes/sierra-retrieval-corpus.md) | lanes | `sierra-retrieval-corpus.md` | 2026-08-28 | 2026-10-03 |
+| [Sierra retrieval + corpus — lane state](../reference/lanes/sierra-retrieval-corpus.md) | lanes | `sierra-retrieval-corpus.md` | 2026-08-28 | 2026-10-24 |
 | [Sierra's page redesign (after america.gov) — lane state](../reference/lanes/sierra-page-redesign.md) | lanes | `sierra-page-redesign.md` | 2026-10-08 | 2026-10-17 |
 | [Sierra: false absences + the statewide flag — lane state](../reference/lanes/sierra-false-absences.md) | lanes | `sierra-false-absences.md` | 2026-08-28 | 2026-10-07 |
 | [SkyView / the CCR curation interface — lane state](../reference/lanes/skyview-ccr-interface.md) | lanes | `skyview-ccr-interface.md` | 2026-08-28 | 2026-09-29 |

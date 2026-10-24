@@ -605,3 +605,14 @@ tracker reader cannot see) and it is the cheaper side of the trade.
   guards against an exemption that swallows the rule.
 - **The one left is correct as it stands.** The T5 amendment draft's regulation text repeats §78093.2's "Utilize";
   the regulation's wording follows the statute's.
+
+## 2026-10-24 — S465 SkyCoyoteBrush: three lane files under budget, and a lane behind the tab
+
+- **A lane file can trail a curator's action on a tab.** The funding lane said the public page reads Scenario 3
+  "until he publishes 4"; the live `cpl_funding_config` read `published = Scenario 4`, set by Sam at 2026-10-23
+  22:06Z. No session had looked. Compacting a lane is the moment to re-read the live state its "until" lines name.
+- **Grep the lessons doc before moving text into it.** Each dated funding narrative was already in
+  `cpl_funding_lessons.md`, so the lane could drop its copies; moving them would have pushed that doc (110 KB) over
+  its 120 KB budget for nothing.
+- **Removing a lane's only link to a KB note leaves the note unreferenced.** The first cut dropped the only lane link
+  to `reference-career-attainment-import`; it went back in before the push.
