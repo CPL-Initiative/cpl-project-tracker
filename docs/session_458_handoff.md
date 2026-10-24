@@ -4,6 +4,8 @@ date: 2026-10-23
 session: 457 (SkyColumbine)
 tags: [handoff, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_462_handoff.md
 ---
 
 # You are Session 458

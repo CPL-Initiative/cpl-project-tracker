@@ -4,6 +4,8 @@ date: 2026-10-23
 session: 458 (SkyLarkspur)
 tags: [handoff, library, program-requirements-harvest, communications]
 status: current
+superseded: true
+superseded_by: session_462_handoff.md
 ---
 
 # You are Session 459

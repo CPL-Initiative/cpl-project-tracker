@@ -4,6 +4,8 @@ date: 2026-10-23
 session: 456 (SkyYarrow)
 tags: [handoff, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_462_handoff.md
 ---
 
 # You are Session 457

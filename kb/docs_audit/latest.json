@@ -10,14 +10,14 @@
     "other": 150000
   },
   "summary": {
-    "files": 1250,
-    "bytes": 12832143,
+    "files": 1251,
+    "bytes": 12838889,
     "over_budget": 11,
-    "handoff_max": 461,
+    "handoff_max": 462,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59926,
-    "superseded_files": 8,
-    "superseded_bytes": 49853,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 125,
-        "bytes": 3939339,
+        "bytes": 3939457,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9669,
+        "bytes": 9844,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2355916,
+        "bytes": 2357102,
         "over": 2
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 456379,
+        "bytes": 456978,
         "over": 6
       },
       "handoff": {
-        "files": 431,
-        "bytes": 3233470,
+        "files": 432,
+        "bytes": 3238138,
         "over": 0
       }
     },
@@ -59,12 +59,11 @@
       "house_voice": 23,
       "oversized_doc": 11,
       "kb_note_dialect": 1,
-      "superseded_handoff": 8,
       "vault_heavy_path": 64
     },
     "vault": {
-      "files": 24669,
-      "bytes": 3655072045,
+      "files": 24671,
+      "bytes": 3655083046,
       "heavy_bytes": 2542499480,
       "heavy_share": 0.696,
       "ignore_filters": [
@@ -517,94 +516,6 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 453,
-        "authoritative": 461,
-        "has_frontmatter": true
-      },
-      "message": "handoff 453 is below the authoritative 461 but is not stamped `superseded: true`",
-      "path": "docs/session_453_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 454,
-        "authoritative": 461,
-        "has_frontmatter": true
-      },
-      "message": "handoff 454 is below the authoritative 461 but is not stamped `superseded: true`",
-      "path": "docs/session_454_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 455,
-        "authoritative": 461,
-        "has_frontmatter": true
-      },
-      "message": "handoff 455 is below the authoritative 461 but is not stamped `superseded: true`",
-      "path": "docs/session_455_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 456,
-        "authoritative": 461,
-        "has_frontmatter": true
-      },
-      "message": "handoff 456 is below the authoritative 461 but is not stamped `superseded: true`",
-      "path": "docs/session_456_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 457,
-        "authoritative": 461,
-        "has_frontmatter": true
-      },
-      "message": "handoff 457 is below the authoritative 461 but is not stamped `superseded: true`",
-      "path": "docs/session_457_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 458,
-        "authoritative": 461,
-        "has_frontmatter": true
-      },
-      "message": "handoff 458 is below the authoritative 461 but is not stamped `superseded: true`",
-      "path": "docs/session_458_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 459,
-        "authoritative": 461,
-        "has_frontmatter": true
-      },
-      "message": "handoff 459 is below the authoritative 461 but is not stamped `superseded: true`",
-      "path": "docs/session_459_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 460,
-        "authoritative": 461,
-        "has_frontmatter": true
-      },
-      "message": "handoff 460 is below the authoritative 461 but is not stamped `superseded: true`",
-      "path": "docs/session_460_handoff.md"
     },
     {
       "rule": "house_voice",
