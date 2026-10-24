@@ -4,8 +4,9 @@ import {spawn} from 'child_process'; import fs from 'fs';
 const CHROME = process.env.CHROME || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
 const FPS = 30, dir = process.cwd();
 const ch = spawn(CHROME, ['--headless=new','--no-sandbox','--disable-gpu','--allow-file-access-from-files','--hide-scrollbars','--remote-debugging-port=9333','--window-size=1920,1080','about:blank']);
-await new Promise(r => setTimeout(r, 2500));
-const tabs = await (await fetch('http://127.0.0.1:9333/json')).json();
+// Chromium's start-up time varies by machine; poll its debugging port for up to 30 seconds (a fixed 2.5 s wait failed on 2026-10-24).
+let tabs;
+for (let i = 0; i < 60 && !tabs; i++) { await new Promise(r => setTimeout(r, 500)); try { tabs = await (await fetch('http://127.0.0.1:9333/json')).json(); } catch (e) { if (i === 59) throw e; } }
 const ws = new WebSocket(tabs.find(t => t.type === 'page').webSocketDebuggerUrl); await new Promise(r => ws.onopen = r);
 let id = 0; const pend = {}; ws.onmessage = m => { const d = JSON.parse(m.data); if (d.id && pend[d.id]) { pend[d.id](d); delete pend[d.id]; } };
 const cmd = (method, params = {}) => new Promise(r => { const i = ++id; pend[i] = r; ws.send(JSON.stringify({id: i, method, params})); });
