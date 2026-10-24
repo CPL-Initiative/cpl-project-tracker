@@ -27,6 +27,6 @@ related:
 
 **A signed-out roster reads as signed out (S371, #2036).** Sam saw "no records" on every roster; the edge log showed his reads went out as `anon` and returned `[]` (`mcu_select` gates on a reviewer or the team phrase), and after signing in the rosters showed. The roster now says names and emails show once you sign in, and every hint points at the header's Sign in menu, which holds the team phrase and the email link.
 
-## NEEDS SAM (S468 SkyMatilija, 2026-10-24): the MAP roles request
+## The MAP roles request (Sam, Open Asks Sheet 125 card 2, 18:12Z 2026-10-24, his own call)
 
-Open Asks Sheet 125 card 2. A drafted request to Pedro and the CSM team: CPL Coordinator and Noncredit CPL Lead as designations a MAP user holds at any access level, one per college (per noncredit program for the lead), recorded with who assigned it and when, and the College Contacts CPL Coordinator fields filled from the designated user. Outward, so it waits on Sam's reply.
+*Later*, with his note *"I'll handle the request."* Sam takes the CPL Coordinator and Noncredit CPL Lead designations to Pedro and the CSM team himself; the draft stays on the sheet (https://claude.ai/artifact/5zqA3S25eECWH9NALZRamE) for his use. No session sends or follows it up unless he asks. `cpl_memory` `sam-sheet-125-rulings-2026-10-24`.
