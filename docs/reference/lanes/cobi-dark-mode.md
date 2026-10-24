@@ -1,7 +1,7 @@
 ---
 title: "COBI dark mode / the one theme control — lane state"
 created: 2026-09-08
-updated: 2026-09-10
+updated: 2026-10-24
 tags: [reference, roadmap-lane, ui, dark-mode]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -136,14 +136,6 @@ why `--brand`/`--link`/`--text` are held below rather than swept.
 - **221 raw light-hex grounds** remain (index.html 68 in hand-maintained CSS,
   tmc_builder 42, credential_reference 31, unified_courses 31). ⚠️ **Not a
   worklist** — many are data payloads, generator-owned, or unpainted.
-
-⭐ **S249 PUT A NUMBER ON "THE SWEEP UNDER-REPORTS," AND IT IS THE WHOLE
-FINDING COUNT.** The 21-token fix moved the dark sweep **66 → 67** — measured
-both ways on the same tree with `git stash`, not inferred. The diff of the two
-finding lists is EMPTY in one direction: not one of the 62 phantom uses was
-ever being sampled, so none could be reported fixed. The single extra line is
-`map_data_quality`'s primary button, which the sweep simply had not sampled on
-the earlier run (it is a pre-existing fixed-ink defect, now fixed).
 
 ⚠️ **SO A FINDING COUNT CANNOT BE THE ACCEPTANCE TEST FOR A TOKEN-LAYER FIX** —
 `.cplccr` chips, `.cplmem` cards, `.mtq` items, `.tphx` cards and `.grx` boxes
@@ -285,10 +277,6 @@ by color pair on the S249 post-sweep run:
 **re-measure both themes and diff the lists**, which is what caught the three
 regressions this run.
 
-Also open: **printing while in dark mode** — consumer-JS dark rules still apply
-to a print, so it comes out dark-on-dark in places. That wants `@media screen`
-scoping on every dark rule and is its own pass.
-
 Also open: **the CIP Codes tab's palette and boxed controls** (UI pass S390, #2118; the ledger names them).
 
 ## ✅ RULED AND LANDED (Sam, open-asks sheet items 11-13, 2026-09-22)
@@ -322,6 +310,7 @@ tidy-up."* A guard parked awaiting a ruling. It stopped the unilateral change it
 was written to stop, and the ruling released it.
 
 **Still open here, none of it ruled:** printing while in dark mode (consumer-JS
-dark rules apply to a print, so it comes out dark-on-dark); the raw light
+dark rules apply to a print, so it comes out dark-on-dark; it wants `@media
+screen` scoping on every dark rule); the raw light
 grounds `#CFCBB2` / `#F1F5F9` that stay light in dark; the near-faint grays one
 step from AA.

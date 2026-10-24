@@ -757,3 +757,10 @@ From `docs/reference/lanes/sierra-retrieval-corpus.md`, verbatim, to keep the la
 - **Where the prose is.** The run artifact (prod.log, preview.log) sits on an Azure blob host the sandbox proxy refuses (403). The `ab` job log holds both runs' answers: `get_job_logs` with `tail_lines` 6000 (380K characters, saved to a file) and a slice per `MODE:` heading reads them side by side.
 - **Deployed from main at 17:52Z (run 39151585102) after the merge; the production smoke (run 39151861384) followed.** The lane records its result.
 
+## Moved from the lane (S465, 2026-10-24)
+
+Verbatim from `docs/reference/lanes/sierra-retrieval-corpus.md`, moved to bring the lane under its size budget.
+
+✅ **The no-match fallback reads one college by equality (S400, #2173, applied by `supabase-migrate.yml` run 38967045972):** `search_college_programs`'s fuzzy fallback filtered `(college_filter is null or p.college = college_filter)`, which a cached generic plan cannot serve from `coci_programs_college`, so the smoke's 7l negative control (a nonsense phrase at Mt. San Antonio) timed out at anon's 3 s (57014, run 38957574640). One branch per scope now; rows unchanged. The 7l call measured 2,742 ms before and 204 ms after (354 ms with generic plans forced). The materialized `tv` CTE still builds every program's tsvectors per call (about 0.9 s), the next cost to cut if timings show it.
+
+**Sierra quotes complete records (S416 to S418), the A/Bs before the deploy.** Three A/Bs preceded it: run 1 (39142613772) lost 7l to the Active-only gate (COCI marks most credit programs Approved; fixed in 57b25bb4, the gate now mirrors the harvest's STATUS_FILTER); run 2 (39145439350) regressed 7c and 9 and run 3 (39147745774) 7s, place questions that `resolveAskedPlace` strips before the college matcher runs, so neither reaches this block: model variance, not the candidate (`docs/kb-notes/methodology-a-regressed-mode-must-reach-the-changed-code.md`).
