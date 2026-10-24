@@ -49,8 +49,7 @@ new in S466).
 Open Asks Sheet 123, answered at 13:17Z, both his own call (`replies/done` through 2):
 
 - **Card 1, *list*:** ELL IET CPL Starting Points goes on the public library, and Sam contacts the eight projects
-  himself. The listing is the receipt `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, which applies after
-  Sam sets the page's claude.ai link public from its Share menu.
+  himself. He listed it from the Library tab at 13:44Z, so the session's staged receipt was never applied.
 - **Card 2, *adopt*:** the film's Scenario 4 words. v10 is rendered from them (#2418).
 
 No card is open; the builder writes no sheet. The memory correction the connector's prompt held went through a
@@ -86,15 +85,18 @@ Sent with a screenshot of the tab's Noncredit outcomes section; verbatim in the 
    `cpl_coordinator_email` (the college profile already carries it, first in the landing page's contact cascade, per
    the map-users-student-contact lane): the new role may only need to feed that field. Record his call in that lane.
 
+**After sign-off (Sam, ~14:00Z):** *"add the CPL Coordinator to the MAP Users tab (noting that the role is pulled from
+the landing pages rather than MAP Users) and add a placeholder for the NC CPL Lead that we will be able to count when
+the option is added to the Landing Pages."* Built the same session: two columns and two stat boxes on the MAP Users
+tab, read from `map_coordinator_summary()`.
+
 ## Open work, in order
 
 1. **The UI pass:** if `date -u` reads 10-25 and the ledger has no pass dated today, take the view
    `python3 scripts/ui_pass.py --next` names (the Veteran map) with `/a11y-pass` and its wiring and First Light checks.
-2. **The ELL IET listing, once Sam has set the page's link public:** the receipt
-   `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql` waits on him setting
-   https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe public from its Share menu. When he says so, read the row; if it
-   still matches the receipt's guard, point `kb/migrations/.apply` at the receipt on a `claude/*` branch. If he
-   presses *List publicly* in the Library tab himself, the receipt is moot: note it in the lane.
+2. **The NC CPL Lead, when the landing pages carry it:** the MAP Users tab already has the column and stat box
+   (S466); the landing pages gain the field, the contacts sync carries it, and `map_coordinator_summary()` adds
+   `has_nc_cpl_lead`. The tab counts it with no change.
 3. **The noncredit attestation surface, then the builder.** The builder (`nc_exh` through the four channels, `nc_cdcp`,
    `nc_course`) must not land first: with the view missing, the conditions read pending and pending releases.
    The surface is a new write surface (Rule 10 a3: Governance DR-09 and the privacy ADRs first). Call its effort.

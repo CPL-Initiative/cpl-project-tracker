@@ -241,11 +241,10 @@ name lives in the title alone. Mock-up: https://claude.ai/artifact/LRFiSDUY4bGTo
 ## The ELL IET page is listed publicly (Sam, Open Asks Sheet 123 card 1, *list*, 13:17Z 2026-10-24)
 
 *ELL IET CPL Starting Points* (https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe; Library record `ell-iet-cpl-starting-points`)
-goes on the public library: Sam chose *List it, and I contact the projects myself*, so no session drafts the eight
-messages. The listing is a guarded receipt, `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, which does what
-`cpl_library_set_public()` does, with the record's summary as the public summary. It applies only after Sam sets the
-page's claude.ai link public from its Share menu (a session cannot, and the tab's dialog requires that tick), so a
-public visitor never meets a private link. Until then the record stays unlisted.
+is on the public library: Sam listed it himself from the Library tab at 13:44Z (`listed_by` Sam, `seen_by` public), and he
+contacts the eight projects himself. The session's staged receipt,
+`kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, was never applied. Its public topics are empty; Sierra links
+it by title and summary until someone adds them.
 
 ## Next
 
