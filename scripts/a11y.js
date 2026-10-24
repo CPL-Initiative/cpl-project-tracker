@@ -121,7 +121,8 @@ const PAGES = CFG.targets || {};
 function serve() {
   const MIME = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css",
                  ".json": "application/json", ".png": "image/png", ".svg": "image/svg+xml",
-                 ".geojson": "application/json", ".csv": "text/csv" };
+                 ".geojson": "application/json", ".csv": "text/csv",
+                 ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp" };
   const srv = http.createServer((req, res) => {
     let rel = decodeURIComponent(req.url.split("?")[0]);
     if (rel.endsWith("/")) rel += "index.html";

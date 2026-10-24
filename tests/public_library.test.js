@@ -16,7 +16,11 @@
 //     phrase, asks for a summary, and asks
 //     a Claude page's owner to confirm its link is public;
 //   - the Admin panel reads the same function and offers Remove;
-//   - the page is in the a11y sweep, light and dark.
+//   - the page is in the a11y sweep, light and dark;
+//   - Sam's simpler page of 2026-10-24: the struck parts stay gone, For sits beside
+//     the search, Sort opens on Most recent, cards clamp their text, the page opens
+//     Light whatever the device says, and the hero photo cycles with a pause control
+//     (or stays still for one photo or reduced motion), in Malone's look on tokens.
 // Run from repo root: `npm test` (or `node tests/public_library.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -215,32 +219,163 @@ block("(5)", function () {
   check("(5) the kind check takes visual", /'spreadsheet', 'visual'\)/.test(fs.readFileSync("kb/supabase_cpl_library.sql", "utf8")));
   const m = loadPage(function () { return response(200, LISTED_FOR); });
   return settle().then(function () {
-    const cards = m.d.querySelectorAll("#lib-grid .piece");
-    check("(5) a card says who it is for", cards.length === 3 && /For Bakersfield College/.test(cards[1].textContent) && /For DDS, Aging and LWDA/.test(cards[0].textContent));
-    check("(5) a piece made for no one says nothing of it", cards.length === 3 && !/Made for|For /.test(cards[2].querySelector(".meta").textContent));
-    const kinds = Array.prototype.map.call(m.d.querySelectorAll("#lib-kinds button"), function (b) { return b.textContent; });
-    check("(5) Visual is a kind chip, first after All", kinds[0] === "All" && kinds[1] === "Visual", kinds.join(","));
-    const chips = Array.prototype.map.call(m.d.querySelectorAll("#lib-for button"), function (b) { return b.getAttribute("data-madefor"); });
-    check("(5) a Made for chip appears only for a type with a listed piece", chips.join(",") === "all,college,agency", chips.join(","));
+    const cards = Array.prototype.slice.call(m.d.querySelectorAll("#lib-grid .piece"));
+    const card = function (re) { return cards.filter(function (c) { return re.test(c.querySelector("h2").textContent); })[0]; };
+    check("(5) a card says who it is for", cards.length === 3 && /For Bakersfield College/.test(card(/Bakersfield/).textContent) && /For DDS, Aging and LWDA/.test(card(/DSP/).textContent));
+    const film = card(/Ironworker/);
+    check("(5) a piece made for no one says nothing of it", !!film && !film.querySelector(".for") && !/Made for|For /.test(film.querySelector(".meta").textContent));
     const ent = m.d.getElementById("lib-ent");
     check("(5) For lists the names present", Array.prototype.map.call(ent.options, function (o) { return o.value; }).join("|") === "all|Bakersfield College|DDS, Aging and LWDA");
+    const groups = Array.prototype.map.call(ent.querySelectorAll("optgroup"), function (g) { return g.label + ":" + g.children.length; });
+    check("(5) and groups them by kind when there is more than one kind", groups.join(",") === "Colleges:1,Agencies:1", groups.join(","));
     check("(5) the For list is labeled and shown", !m.d.getElementById("lib-for-wrap").hidden && !!m.d.querySelector('label[for="lib-ent"]'));
-    click(m.w, m.d.querySelector('#lib-for [data-madefor="college"]'));
-    check("(5) Colleges narrows to the college pieces", m.d.querySelectorAll("#lib-grid .piece").length === 1 && /1 of 3/.test(m.d.getElementById("lib-state").textContent));
-    click(m.w, m.d.querySelector('#lib-for [data-madefor="all"]'));
     ent.value = "DDS, Aging and LWDA"; ent.dispatchEvent(new m.w.Event("change"));
     check("(5) picking a name shows that entity's pieces", m.d.querySelectorAll("#lib-grid .piece").length === 1 && /DSP Credit/.test(m.d.getElementById("lib-grid").textContent));
     ent.value = "all"; ent.dispatchEvent(new m.w.Event("change"));
     const q = m.d.getElementById("lib-q"); q.value = "aging and lwda"; q.dispatchEvent(new m.w.Event("input"));
     check("(5) search finds a piece by who it is for", m.d.querySelectorAll("#lib-grid .piece").length === 1);
+    q.value = "film"; q.dispatchEvent(new m.w.Event("input"));
+    check("(5) search finds a piece by its kind, now the kind words are gone", m.d.querySelectorAll("#lib-grid .piece").length === 1 && /Ironworker/.test(m.d.getElementById("lib-grid").textContent));
   });
 });
 block("(5b)", function () {
   const m = loadPage(function () { return response(200, LISTED); });
   return settle().then(function () {
-    check("(5b) with no piece made for anyone, no Made for chips and no For list paint", m.d.querySelectorAll("#lib-for button").length === 0 && m.d.getElementById("lib-for-wrap").hidden === true);
+    check("(5b) with no piece made for anyone, the For list does not paint", m.d.getElementById("lib-for-wrap").hidden === true);
     check("(5b) the page's search says who it is for", /placeholder="Title, topic or who it is for"/.test(PAGE));
   });
+});
+block("(5c)", function () {
+  const one = LISTED_FOR.filter(function (r) { return r.for_kind === "agency"; }).concat([Object.assign({}, LISTED_FOR[0], { slug: "x", title: "ELL IET CPL Starting Points", for_name: "EDD ELL IET Fund grantees" })]);
+  const m = loadPage(function () { return response(200, one); });
+  return settle().then(function () {
+    const ent = m.d.getElementById("lib-ent");
+    check("(5c) one kind of audience lists its names without a group", ent.querySelectorAll("optgroup").length === 0 && ent.options.length === 3);
+  });
+});
+
+// ── (6) The simpler page in Malone's look (Sam, 2026-10-24) ─────────────
+// "Simplify: cut the things I lined through on the screenshot and move the For filter
+// up to the right of the search box. Add a Sort control with 'Most recent' as the
+// default. Include less of the text descriptions in each card... use ... on the end of
+// the text if needed. Open in Light by default: dark only when the viewer clicks Dark,
+// never from the device setting." Then: "depart from our First Light motif and redesign
+// the CPL Public Library based on Malone's", the student image cycling.
+function styles(html) { return (html.match(/<style>[\s\S]*?<\/style>/g) || []).join("\n"); }
+function loadThemed(opts) {
+  const dom = new JSDOM((opts.html || PAGE).replace('<script src="./public_library.js"></script>', ""), {
+    url: "https://example.org/library/", runScripts: "dangerously",
+    beforeParse: function (w) {
+      w.matchMedia = function (q) {
+        const on = (opts.dark && /prefers-color-scheme: dark/.test(q)) || (opts.still && /prefers-reduced-motion: reduce/.test(q));
+        return { matches: !!on, media: q, addEventListener: function () {}, removeEventListener: function () {}, addListener: function () {}, removeListener: function () {} };
+      };
+      if (opts.stored) w.localStorage.setItem("cpl_theme", opts.stored);
+    }
+  });
+  const w = dom.window;
+  w.fetch = function () { return response(200, opts.rows || LISTED); };
+  const s = w.document.createElement("script"); s.textContent = PAGE_JS; w.document.body.appendChild(s);
+  return { w: w, d: w.document };
+}
+block("(6a)", function () {
+  check("(6a) the eyebrow is gone", !/class="eyebrow"/.test(PAGE) && !/California Community Colleges · CPL Initiative<\/div>/.test(PAGE));
+  check("(6a) the description is gone", !/Each piece says who it was made for/.test(PAGE) && !/Visuals, presentations, films and briefs/.test(PAGE));
+  check("(6a) the kind and audience word filters are gone", !/id="lib-kinds"/.test(PAGE) && !/id="lib-for"/.test(PAGE) && !/data-madefor|data-kind/.test(PAGE_JS));
+  check("(6a) the section label is gone", !/>The library</.test(PAGE));
+  check("(6a) the header carries no link to the page itself", !/aria-current="page"/.test(PAGE) && !/href="\.\/"/.test(PAGE));
+  const d = new JSDOM(PAGE).window.document;
+  const q = d.getElementById("lib-q"), wrap = d.getElementById("lib-for-wrap");
+  check("(6a) For sits right after the search box, in the same row", !!q && !!wrap && q.closest(".filters") === wrap.closest(".filters") && q.closest(".field").nextElementSibling === wrap);
+});
+block("(6b)", function () {
+  const d = new JSDOM(PAGE).window.document;
+  const sort = d.getElementById("lib-sort");
+  const opts = sort ? Array.prototype.map.call(sort.options, function (o) { return o.value + "=" + o.textContent; }) : [];
+  check("(6b) a labeled Sort control, Most recent first and selected", !!sort && !!d.querySelector('label[for="lib-sort"]') && opts[0] === "recent=Most recent" && sort.value === "recent", opts.join(","));
+  const ROWS = [
+    { slug: "z", title: "Zeta brief", kind: "document", made_on: "2026-10-01", summary: "z", topics: [], url: "https://example.org/z" },
+    { slug: "a", title: "Alpha film", kind: "film", made_on: "2026-10-20", summary: "a", topics: [], url: "https://example.org/a" },
+    { slug: "m", title: "Mid deck", kind: "deck", made_on: "2026-09-15", summary: "m", topics: [], url: "https://example.org/m" },
+    { slug: "n", title: "No date", kind: "visual", made_on: null, summary: "n", topics: [], url: "https://example.org/n" }
+  ];
+  const m = loadPage(function () { return response(200, ROWS); });
+  return settle().then(function () {
+    const order = function () { return Array.prototype.map.call(m.d.querySelectorAll("#lib-grid .piece h2"), function (h) { return h.textContent.replace(" (opens in a new tab)", ""); }).join("|"); };
+    check("(6b) the page opens with the most recent piece first, undated last", order() === "Alpha film|Zeta brief|Mid deck|No date", order());
+    const sel = m.d.getElementById("lib-sort");
+    sel.value = "oldest"; sel.dispatchEvent(new m.w.Event("change"));
+    check("(6b) Oldest first reverses the dates, undated still last", order() === "Mid deck|Zeta brief|Alpha film|No date", order());
+    sel.value = "title"; sel.dispatchEvent(new m.w.Event("change"));
+    check("(6b) Title A–Z reads the title", order() === "Alpha film|Mid deck|No date|Zeta brief", order());
+  });
+});
+block("(6c)", function () {
+  const css = styles(PAGE);
+  check("(6c) a card shows two lines of its summary and ends in an ellipsis", /\.piece \.sum \{[^}]*-webkit-line-clamp: 2;[^}]*overflow: hidden/.test(css));
+  check("(6c) and one line of its occasion", /\.piece \.occ \{[^}]*white-space: nowrap;[^}]*text-overflow: ellipsis/.test(css));
+  const long = Object.assign({}, LISTED_FOR[0], { summary: "A card per ELL IET Fund project, ordered by fit: where a project's completers could already turn their training into community college credit, read from the MAP platform and COCI." });
+  const m = loadPage(function () { return response(200, [long]); });
+  return settle().then(function () {
+    const sum = m.d.querySelector("#lib-grid .piece .sum");
+    check("(6c) the whole summary stays in the page for search and screen readers", !!sum && sum.textContent === long.summary);
+    const a = m.d.querySelector("#lib-grid .piece h2 a");
+    check("(6c) the title opens the piece and says it opens a new tab", !!a && a.getAttribute("target") === "_blank" && /opens in a new tab/.test(a.textContent));
+  });
+});
+block("(6d)", function () {
+  const asksDevice = /@media\s*\(prefers-color-scheme|matchMedia\(\s*["']\(prefers-color-scheme/;
+  check("(6d) the page never reads the device setting", !asksDevice.test(PAGE) && !asksDevice.test(PAGE_JS));
+  const m = loadThemed({ dark: true });
+  return settle().then(function () {
+    const root = m.d.documentElement;
+    const pressed = function (t) { return m.d.querySelector('[data-cplh-theme="' + t + '"]').getAttribute("aria-pressed"); };
+    check("(6d) a device set to dark still opens Light", root.getAttribute("data-theme") === "light" && pressed("light") === "true" && pressed("dark") === "false");
+    m.d.querySelector('[data-cplh-theme="dark"]').dispatchEvent(new m.w.MouseEvent("click", { bubbles: true }));
+    check("(6d) Dark turns it dark and remembers the reader's choice", root.getAttribute("data-theme") === "dark" && m.w.localStorage.getItem("cpl_theme") === "dark" && pressed("dark") === "true");
+    const again = loadThemed({ stored: "dark" });
+    check("(6d) a reader who picked Dark gets Dark next time", again.d.documentElement.getAttribute("data-theme") === "dark");
+    const light = loadThemed({ dark: true, stored: "light" });
+    check("(6d) and Light stays Light", light.d.documentElement.getAttribute("data-theme") === "light");
+  });
+});
+const THREE = PAGE.replace(/(<img class="hero-slide is-on"[^>]*>)/, '$1\n        <img class="hero-slide" data-src="photos/b.jpg" alt="" width="10" height="10">\n        <img class="hero-slide" data-src="photos/c.jpg" alt="" width="10" height="10">');
+block("(6e)", function () {
+  const d = new JSDOM(PAGE).window.document;
+  const slides = d.querySelectorAll("#lib-hero .hero-slide");
+  check("(6e) the hero photo is decorative: empty alt, inside a hidden frame", slides.length >= 1 && Array.prototype.every.call(slides, function (s) { return s.getAttribute("alt") === ""; }) && d.getElementById("lib-hero").getAttribute("aria-hidden") === "true");
+  const btn = d.getElementById("lib-hero-pause");
+  check("(6e) Pause photos is a button outside the hidden frame", !!btn && btn.tagName === "BUTTON" && !btn.closest('[aria-hidden="true"]'));
+  check("(6e) the first photo is the student from Malone's page", /src="photos\/hero-student-1\.jpg"/.test(PAGE) && fs.existsSync("library/photos/hero-student-1.jpg"));
+  const one = loadThemed({}), m = loadThemed({ html: THREE }), still = loadThemed({ html: THREE, still: true });
+  return settle().then(function () {
+    check("(6e) init ran in every window (so no check below passes vacuously)", [one, m, still].every(function (x) { return x.d.getElementById("lib-state").textContent !== "Loading the library…"; }));
+    check("(6e) one photo: nothing moves and no control shows", one.w.CPL_PUBLIC_LIBRARY._hero.state.live === false && one.d.getElementById("lib-hero-pause").hidden === true);
+    const H = m.w.CPL_PUBLIC_LIBRARY._hero, b = m.d.getElementById("lib-hero-pause");
+    const on = function () { return Array.prototype.map.call(m.d.querySelectorAll("#lib-hero .hero-slide"), function (s) { return s.classList.contains("is-on") ? 1 : 0; }).join(""); };
+    check("(6e) three photos: they cycle, and Pause photos shows", H.state.live === true && !!H.state.timer && !b.hidden && b.textContent === "Pause photos");
+    check("(6e) the next photo loads ahead of its turn", m.d.querySelectorAll("#lib-hero .hero-slide")[1].getAttribute("src") === "photos/b.jpg");
+    H.show(1);
+    check("(6e) the cycle moves one photo on at a time", on() === "010");
+    H.show(3);
+    check("(6e) and wraps to the first", on() === "100");
+    b.dispatchEvent(new m.w.MouseEvent("click", { bubbles: true }));
+    check("(6e) Pause photos stops the cycle and says Play photos", H.state.timer === null && H.state.paused === true && b.textContent === "Play photos");
+    b.dispatchEvent(new m.w.MouseEvent("click", { bubbles: true }));
+    check("(6e) Play photos starts it again", !!H.state.timer && b.textContent === "Pause photos");
+    const S = still.w.CPL_PUBLIC_LIBRARY._hero;
+    check("(6e) a reader who asks for reduced motion sees one photo and no control", S.state.live === false && !S.state.timer && still.d.getElementById("lib-hero-pause").hidden === true);
+    H.pause(); [one, m, still].forEach(function (x) { x.w.close(); });
+  });
+});
+block("(6f)", function () {
+  const css = styles(PAGE);
+  const outside = css.replace(/:root(\[data-theme="dark"\])? \{[\s\S]*?\n\}/g, "");
+  const raw = outside.match(/#[0-9a-fA-F]{3,8}\b|rgba?\(/g) || [];
+  check("(6f) colors live in the two :root blocks; every rule reads a token", raw.length === 0, raw.slice(0, 4).join(" "));
+  check("(6f) Malone's look: a serif title over a gold rule", /--serif: Georgia/.test(css) && /\.title-accent \{[^}]*background: var\(--gold\)/.test(css) && /class="title-accent"/.test(PAGE));
+  check("(6f) First Light's faces are gone from this page", !/Playfair Display|Source Sans 3/.test(PAGE));
+  check("(6f) the page says why it leaves First Light", /leaves First Light for the look of Malone's CPL\/AI/.test(PAGE));
 });
 
 Promise.all(pending).then(function () {

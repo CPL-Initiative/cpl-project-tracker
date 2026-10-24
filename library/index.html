@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CPL Library — Credit for Prior Learning Initiative</title>
 <meta name="description" content="Presentations, films and briefs from the California Community Colleges Credit for Prior Learning (CPL) Initiative.">
 <link rel="icon" href="../cccco_seal.png">
@@ -11,86 +11,138 @@
      read live through cpl_library_public() (kb/supabase_cpl_library_public.sql): title,
      kind, occasion, date, public summary, topics, link, and who the piece is made for
      (Sam, Open Asks Sheet 120, 2026-10-23: shown and filterable). Nothing is copied here;
-     the switch lives on each record in COBI's Library tab. Test: tests/public_library.test.js -->
-<script>(function(){function a(t){var r=document.documentElement;if(t==="light"||t==="dark")r.setAttribute("data-theme",t);else r.removeAttribute("data-theme")}
-try{a(localStorage.getItem("cpl_theme"))}catch(e){}
+     the switch lives on each record in COBI's Library tab.
+
+     The look (Sam, 2026-10-24): the page leaves First Light for the look of Malone's CPL/AI
+     page (map.rccd.edu/CPL-AI), "consistent with the CO webpages": a navy serif title over a
+     gold rule, a student photo in an arc on the right, white cards on a pale blue ground.
+     The same ask cut the eyebrow, the description, the kind and audience word filters and the
+     section label, moved For beside the search, added Sort (Most recent first), shortened the
+     cards, and opened the page in Light: dark only when the reader picks Dark, never from the
+     device setting. The photo cycles through every .hero-slide below; the first is the student
+     from Malone's page. Test: tests/public_library.test.js -->
+<script>(function(){function a(t){document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")}
+try{a(localStorage.getItem("cpl_theme"))}catch(e){a(null)}
 window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newValue)})})()</script>
 <style>
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 600; font-display: swap;
-  src: url('../sierra/fonts/playfair-display-latin-600-normal.woff2') format('woff2'); }
-@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 400; font-display: swap;
-  src: url('../sierra/fonts/source-sans-3-latin-400-normal.woff2') format('woff2'); }
-@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 600; font-display: swap;
-  src: url('../sierra/fonts/source-sans-3-latin-600-normal.woff2') format('woff2'); }
+/* Layout: a two-column hero (title, gold rule and the search on the left; the photo in an
+   arc on the right) over a three-column grid of cards, a navy band at the foot. */
 :root {
-  --paper: #F4F2ED; --surface: #FFFFFF; --surface-subtle: #F7F5F1; --border: #D9D5CB;
-  --text-strong: #1C1C1A; --text-body: #3A3A36; --text-muted: #5C5C55;
-  --seal-blue: #002F6D; --cobalt: #0047AB;
+  --page: #F5FAFF; --page-end: #EEF6FB; --surface: #FFFFFF; --hero-end: #EAF4FB; --glow: rgba(205, 226, 245, .45); --glow-0: rgba(205, 226, 245, 0);
+  --ink: #17243B; --muted: #58677D; --heading: #082B61; --title: #072C66;
+  --link: #0D5BC6; --accent: #1671D9; --gold: #F4B300;
+  --line: #D9E4EF; --line-strong: #A9C8E5; --field: #6F8399; --header-line: #E8EEF5;
+  --pill-bg: #EAF4FE; --pill-fg: #355A80;
+  --foot-bg: #082B61; --foot-fg: #DCE9F7;
+  --ring: rgba(255, 255, 255, .62); --wash: rgba(255, 255, 255, .42); --wash-0: rgba(255, 255, 255, 0); --chip: rgba(255, 255, 255, .94);
+  --shadow: rgba(8, 43, 97, .10);
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* One edge for the header, the title, the cards and the foot: 5.5% of the window, and
+     centered on a 1320px frame once the window is wider than that. */
+  --gutter-l: max(16px, 5.5vw, calc((100vw - 1320px) / 2), env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, 5.5vw, calc((100vw - 1320px) / 2), env(safe-area-inset-right, 0px));
   --cpl-measure: none;
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --paper: #15171B; --surface: #1E2127; --surface-subtle: #23262D; --border: #3A3F49;
-  --text-strong: #F2F0EA; --text-body: #D8D5CD; --text-muted: #AFAB9F;
-  --seal-blue: #9DB8E0; --cobalt: #7DA1D4; color-scheme: dark; } }
+/* Dark only when the reader picks it, never from the device setting (Sam, 2026-10-24). */
 :root[data-theme="dark"] {
-  --paper: #15171B; --surface: #1E2127; --surface-subtle: #23262D; --border: #3A3F49;
-  --text-strong: #F2F0EA; --text-body: #D8D5CD; --text-muted: #AFAB9F;
-  --seal-blue: #9DB8E0; --cobalt: #7DA1D4; color-scheme: dark; }
+  --page: #0B1628; --page-end: #0E1D33; --surface: #12233D; --hero-end: #10284A; --glow: rgba(60, 100, 160, .25); --glow-0: rgba(60, 100, 160, 0);
+  --ink: #E3EAF4; --muted: #A9B7CA; --heading: #D5E3F7; --title: #E8F0FB;
+  --link: #8DBDF5; --accent: #8DBDF5; --gold: #F2B527;
+  --line: #2A3E5C; --line-strong: #4B6B95; --field: #7F95B3; --header-line: #22344F;
+  --pill-bg: #1B3356; --pill-fg: #CFE0F6;
+  --foot-bg: #06111F; --foot-fg: #C9D7EA;
+  --ring: rgba(141, 189, 245, .22); --wash: rgba(11, 22, 40, .30); --wash-0: rgba(11, 22, 40, 0); --chip: rgba(18, 35, 61, .94);
+  --shadow: rgba(0, 0, 0, .35);
+  color-scheme: dark;
+}
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--paper); color: var(--text-body); font-family: 'Source Sans 3', Arial, sans-serif; font-size: clamp(1rem, 0.96rem + 0.2vw, 1.06rem); line-height: 1.55; }
-.skip-link { position: absolute; left: -999px; top: 8px; background: var(--surface); color: var(--cobalt); padding: 6px 10px; }
+[hidden] { display: none !important; }
+body { margin: 0; color: var(--ink); background: var(--page); background-image: linear-gradient(180deg, var(--surface) 0, var(--page) 38rem, var(--page-end) 100%); font-family: var(--sans); font-size: clamp(1rem, .97rem + .15vw, 1.06rem); line-height: 1.55; }
+.skip-link { position: absolute; left: -999px; top: 8px; z-index: 10; background: var(--surface); color: var(--link); padding: 6px 10px; }
 .skip-link:focus { left: 16px; }
-main { max-width: 1080px; margin: 0 auto; padding: clamp(1.5rem, 4vw, 3rem) max(16px, env(safe-area-inset-right, 0px)) 3rem max(16px, env(safe-area-inset-left, 0px)); display: grid; gap: 1.4rem; }
-h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; color: var(--text-strong); margin: 0; text-wrap: balance; }
-h1 { font-size: clamp(1.8rem, 1.4rem + 2vw, 2.6rem); }
-h2 { font-size: 1.15rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+h1, h2 { margin: 0; font-family: var(--serif); font-weight: 700; color: var(--heading); text-wrap: balance; }
 p { margin: 0; max-width: var(--cpl-measure, none); }
-.eyebrow { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
-.filters { display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; align-items: center; }
-.filters label { color: var(--text-muted); font-size: .92rem; }
-.filters input, .filters select { font: inherit; padding: .35rem .55rem; border: 1px solid var(--border); background: var(--surface); color: var(--text-body); width: min(280px, 100%); min-height: 24px; }
-.filters select { width: auto; max-width: 100%; }
-.piece .meta b { font-weight: 600; color: var(--text-body); }
-.word { background: none; border: 0; padding: 0 2px; min-height: 24px; min-width: 24px; font: inherit; font-weight: 600; color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
-.word[aria-pressed="true"] { color: var(--text-strong); text-decoration-thickness: 2px; }
-.word:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
-.kinds { display: flex; flex-wrap: wrap; gap: 1.1rem; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-.piece { background: var(--surface); border: 1px solid var(--border); padding: 1rem 1.1rem; display: grid; gap: .45rem; align-content: start; min-width: 0; }
-.piece .meta { font-size: .88rem; color: var(--text-muted); }
-.piece a { color: var(--cobalt); font-weight: 600; }
-.state, .foot { color: var(--text-muted); font-size: .92rem; }
-@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+a { color: var(--link); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* The hero */
+.hero { display: grid; grid-template-columns: minmax(0, 58%) minmax(0, 42%); min-height: clamp(380px, 30vw, 520px); border-bottom: 1px solid var(--line);
+  background: radial-gradient(circle at 54% 55%, var(--glow), var(--glow-0) 32%), linear-gradient(90deg, var(--surface) 0%, var(--surface) 51%, var(--page) 72%, var(--hero-end) 100%); }
+.hero-content { min-width: 0; display: grid; align-content: center; padding-block: 36px 44px; padding-left: var(--gutter-l); padding-right: 20px; }
+.hero h1 { color: var(--title); font-size: clamp(2.6rem, 1.6rem + 3.4vw, 4.1rem); line-height: .98; letter-spacing: -.035em; }
+.title-accent { width: 66px; height: 4px; margin: 18px 0 26px; background: var(--gold); }
+.filters { display: flex; flex-wrap: wrap; gap: 12px 14px; align-items: end; max-width: 680px; }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field-q { flex: 1 1 200px; }
+.field-for { flex: 1 1 200px; max-width: 280px; }
+.field label, .sort label { color: var(--heading); font-size: .88rem; font-weight: 700; }
+.field input, .field select, .sort select { width: 100%; min-height: 48px; padding: 10px 14px; border: 1px solid var(--field); border-radius: 9px; background: var(--surface); color: var(--ink); font: inherit; }
+.field input::placeholder { color: var(--muted); opacity: 1; }
+.hero-visual { position: relative; min-width: 0; min-height: 260px; overflow: hidden; }
+.hero-visual::before { content: ""; position: absolute; inset: 0; background: var(--ring); clip-path: ellipse(calc(67% + 18px) calc(60% + 18px) at 75% 50%); }
+.hero-slides { position: absolute; inset: 0; }
+.hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 50% 20%; clip-path: ellipse(67% 60% at 75% 50%); opacity: 0; transition: opacity 1.2s ease; }
+.hero-slide.is-on { opacity: 1; }
+.hero-visual::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, var(--wash) 0%, var(--wash-0) 38%); clip-path: ellipse(67% 60% at 75% 50%); }
+.word { background: none; border: 0; padding: 0 2px; min-height: 24px; min-width: 24px; font: inherit; font-weight: 700; color: var(--link); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.hero-pause { position: absolute; z-index: 2; right: var(--gutter-r); bottom: 16px; padding: 3px 12px; min-height: 28px; border-radius: 999px; background: var(--chip); color: var(--heading); font-size: .86rem; }
+
+/* The pieces */
+.results { padding-block: 26px 48px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); display: grid; gap: 16px; }
+.results-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; }
+.state { color: var(--muted); }
+.sort { display: flex; align-items: center; gap: 10px; }
+.sort select { width: auto; min-height: 40px; padding: 6px 12px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.piece { position: relative; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 18px 19px; background: var(--surface); border: 1px solid var(--line); border-radius: 11px; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.piece:hover { transform: translateY(-2px); border-color: var(--line-strong); box-shadow: 0 12px 24px var(--shadow); }
+.piece .meta { color: var(--muted); font-size: .82rem; }
+.piece h2 { font-size: 1.2rem; line-height: 1.25; }
+.piece h2 a { display: block; color: inherit; text-decoration: none; }
+.piece h2 a::after { content: ""; position: absolute; inset: 0; border-radius: 11px; }
+.piece:hover h2 a, .piece h2 a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.piece .for { align-self: flex-start; max-width: 100%; padding: 2px 9px; border-radius: 999px; background: var(--pill-bg); color: var(--pill-fg); font-size: .76rem; font-weight: 700; line-height: 1.4; }
+.piece .occ { color: var(--muted); font-size: .86rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.piece .sum { font-size: .94rem; line-height: 1.5; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
+.piece .go { margin-top: auto; padding-top: 6px; color: var(--link); font-size: .88rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+.foot { background: var(--foot-bg); color: var(--foot-fg); }
+.foot-in { padding-block: 24px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; font-size: .9rem; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-content { padding-right: var(--gutter-r); }
+  .hero-visual { min-height: 240px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .hero-visual { min-height: 200px; } .field-for { flex-basis: 100%; max-width: none; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } .piece:hover { transform: none; } }
 </style>
 </head>
 <body>
 <a class="skip-link" href="#pieces">Skip to the library</a>
-<!-- cpl-public-header:start (copied from CPLBrain/04-projects/cpl-initiative/public-header/header.html; logos from ../sierra/) -->
+<!-- cpl-public-header:start (adapted from CPLBrain/04-projects/cpl-initiative/public-header/header.html for
+     this page: the look of Malone's page, Light unless the reader picks Dark, and no link to the
+     page itself, per Sam's markup of 2026-10-24; logos from ../sierra/) -->
 <style>
-/* The public header (Sam, 2026-10-21): the CPL Initiative logo to the Chancellor's
-   Office CPL page, the way out to the public CPL pages, and a light/dark control.
-   Its own tokens, so it reads the same on any host page; First Light values. */
-:root{--cplh-bg:#FFFFFF;--cplh-line:#D9D5CB;--cplh-fg:#3A3A36;--cplh-link:#0047AB;--cplh-strong:#1C1C1A}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA}}
-:root[data-theme="dark"]{--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA}
-.cplh{background:var(--cplh-bg);border-bottom:1px solid var(--cplh-line);color:var(--cplh-fg);font-family:'Source Sans 3',Arial,sans-serif;font-size:.95rem;line-height:1.4}
-.cplh-in{max-width:1080px;margin:0 auto;padding-block:.6rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem}
-.cplh-logo{display:inline-flex;min-height:24px}
-.cplh-logo img{display:block;height:40px;width:auto;max-width:100%}
-.cplh-logo .cplh-dark{display:none}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cplh-logo .cplh-light{display:none}:root:not([data-theme="light"]) .cplh-logo .cplh-dark{display:block}}
-:root[data-theme="dark"] .cplh-logo .cplh-light{display:none}
-:root[data-theme="dark"] .cplh-logo .cplh-dark{display:block}
-.cplh-nav{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;margin:0;padding:0;list-style:none;flex:1 1 auto}
-.cplh a{color:var(--cplh-link)}
-.cplh-nav a{display:inline-flex;align-items:center;min-height:24px;text-underline-offset:3px}
-.cplh-theme{display:flex;gap:.9rem;align-items:center}
-.cplh-theme span{color:var(--cplh-fg)}
-.cplh-theme button{background:none;border:0;padding:0 2px;min-height:24px;min-width:24px;font:inherit;font-weight:600;color:var(--cplh-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-.cplh-theme button[aria-pressed="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
-.cplh a:focus-visible,.cplh button:focus-visible{outline:2px solid var(--cplh-link);outline-offset:2px}
-@media (max-width:560px){.cplh-logo img{height:32px}.cplh-nav{flex-basis:100%}}
+.cplh { background: var(--surface); border-bottom: 1px solid var(--header-line); color: var(--ink); font-size: .95rem; line-height: 1.4; }
+.cplh-in { min-height: 76px; padding-block: 10px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 32px; }
+.cplh-logo { display: inline-flex; min-height: 24px; }
+.cplh-logo img { display: block; height: 54px; width: auto; max-width: 100%; }
+.cplh-logo .cplh-dark { display: none; }
+:root[data-theme="dark"] .cplh-logo .cplh-light { display: none; }
+:root[data-theme="dark"] .cplh-logo .cplh-dark { display: block; }
+.cplh-end { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
+.cplh-nav { display: flex; flex-wrap: wrap; gap: .3rem 1.1rem; margin: 0; padding: 0; list-style: none; }
+.cplh-nav a { display: inline-flex; align-items: center; min-height: 24px; color: var(--link); font-weight: 600; text-underline-offset: 3px; }
+.cplh-theme { display: flex; gap: .9rem; align-items: center; }
+.cplh-theme span { color: var(--muted); }
+.cplh-theme button { background: none; border: 0; padding: 0 2px; min-height: 24px; min-width: 24px; font: inherit; font-weight: 700; color: var(--link); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.cplh-theme button[aria-pressed="true"] { color: var(--heading); text-decoration-thickness: 2px; }
+@media (max-width: 560px) { .cplh-logo img { height: 40px; } }
 </style>
 <header class="cplh" role="banner">
   <div class="cplh-in">
@@ -98,20 +150,21 @@ p { margin: 0; max-width: var(--cpl-measure, none); }
       <img class="cplh-light" src="../sierra/cpl-initiative-logo-navy.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
       <img class="cplh-dark" src="../sierra/cpl-initiative-logo.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
     </a>
-    <nav aria-label="CPL pages">
-      <ul class="cplh-nav">
-        <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener">CPL Fact Sheet</a></li>
-        <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener">MAP</a></li>
-        <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener">Find your college</a></li>
-        <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">MAP dashboard</a></li>
-        <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener">Credit for Being You</a></li>
-        <li><a href="./" aria-current="page">CPL Library</a></li>
-      </ul>
-    </nav>
-    <div class="cplh-theme" role="group" aria-label="Theme">
-      <span>Theme</span>
-      <button type="button" data-cplh-theme="light" aria-pressed="false">Light</button>
-      <button type="button" data-cplh-theme="dark" aria-pressed="false">Dark</button>
+    <div class="cplh-end">
+      <nav aria-label="CPL pages">
+        <ul class="cplh-nav">
+          <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener">CPL Fact Sheet</a></li>
+          <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener">MAP</a></li>
+          <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener">Find your college</a></li>
+          <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">MAP dashboard</a></li>
+          <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener">Credit for Being You</a></li>
+        </ul>
+      </nav>
+      <div class="cplh-theme" role="group" aria-label="Theme">
+        <span>Theme</span>
+        <button type="button" data-cplh-theme="light" aria-pressed="true">Light</button>
+        <button type="button" data-cplh-theme="dark" aria-pressed="false">Dark</button>
+      </div>
     </div>
   </div>
 </header>
@@ -119,51 +172,59 @@ p { margin: 0; max-width: var(--cpl-measure, none); }
 (function () {
   var KEY = "cpl_theme", root = document.documentElement;
   function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
-  function current() {
-    var t = root.getAttribute("data-theme");
-    if (t === "light" || t === "dark") return t;
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  }
+  // Light unless the reader picks Dark here or in COBI; the device setting is never read.
+  function current() { return root.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
   function paint() {
     var t = current();
     Array.prototype.forEach.call(document.querySelectorAll("[data-cplh-theme]"), function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-cplh-theme") === t));
     });
   }
-  var saved = read();
-  if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+  root.setAttribute("data-theme", read() === "dark" ? "dark" : "light");
   document.addEventListener("click", function (e) {
     var b = e.target.closest ? e.target.closest("[data-cplh-theme]") : null;
     if (!b) return;
-    var t = b.getAttribute("data-cplh-theme");
+    var t = b.getAttribute("data-cplh-theme") === "dark" ? "dark" : "light";
     root.setAttribute("data-theme", t);
     try { localStorage.setItem(KEY, t); } catch (err) { /* private window: the choice holds for this visit */ }
     paint();
   });
-  if (window.matchMedia) { try { window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint); } catch (e) {} }
+  window.addEventListener("storage", function (e) { if (e && e.key === KEY) paint(); });
   paint();
 })();
 </script>
 <!-- cpl-public-header:end -->
-<main>
-  <header style="display:grid;gap:.5rem">
-    <div class="eyebrow">California Community Colleges · CPL Initiative</div>
-    <h1>CPL Library</h1>
-    <p>Visuals, presentations, films and briefs from the Credit for Prior Learning Initiative, for colleges, partners and the public. Each piece says who it was made for and opens where it lives.</p>
-  </header>
-  <div class="filters">
-    <label for="lib-q">Search</label><input id="lib-q" type="search" placeholder="Title, topic or who it is for">
-    <div class="kinds" role="group" aria-label="Kind" id="lib-kinds"></div>
-    <div class="kinds" role="group" aria-label="Made for" id="lib-for"></div>
-    <span id="lib-for-wrap" hidden><label for="lib-ent">For</label> <select id="lib-ent"><option value="all">Everyone</option></select></span>
-  </div>
-  <section id="pieces" aria-labelledby="lib-h" style="display:grid;gap:.8rem">
-    <h2 id="lib-h" class="eyebrow">The library</h2>
-    <p class="state" id="lib-state" role="status">Loading the library…</p>
+<main id="main">
+  <section class="hero" aria-labelledby="lib-title">
+    <div class="hero-content">
+      <h1 id="lib-title">CPL Library</h1>
+      <div class="title-accent" aria-hidden="true"></div>
+      <div class="filters" role="search" aria-label="Find a piece">
+        <div class="field field-q"><label for="lib-q">Search</label><input id="lib-q" type="search" placeholder="Title, topic or who it is for" autocomplete="off"></div>
+        <div class="field field-for" id="lib-for-wrap" hidden><label for="lib-ent">For</label><select id="lib-ent"><option value="all">Everyone</option></select></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-slides" id="lib-hero" aria-hidden="true">
+        <img class="hero-slide is-on" src="photos/hero-student-1.jpg" alt="" width="634" height="826">
+      </div>
+      <button type="button" class="word hero-pause" id="lib-hero-pause" hidden>Pause photos</button>
+    </div>
+  </section>
+  <section id="pieces" class="results" aria-label="Library pieces">
+    <div class="results-bar">
+      <p class="state" id="lib-state" role="status">Loading the library…</p>
+      <div class="sort"><label for="lib-sort">Sort</label><select id="lib-sort"><option value="recent" selected>Most recent</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></div>
+    </div>
     <div class="grid" id="lib-grid"></div>
   </section>
-  <p class="foot">Published by the California Community Colleges Chancellor's Office, Credit for Prior Learning Initiative. Licensed CC BY 4.0 unless a piece says otherwise.</p>
 </main>
+<footer class="foot">
+  <div class="foot-in">
+    <p>Published by the California Community Colleges Chancellor's Office, Credit for Prior Learning Initiative.</p>
+    <p>Licensed CC BY 4.0 unless a piece says otherwise.</p>
+  </div>
+</footer>
 <script src="./public_library.js"></script>
 </body>
 </html>

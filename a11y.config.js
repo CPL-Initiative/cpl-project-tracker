@@ -45,18 +45,18 @@ async function seedPublicLibrary(page, theme) {
     if (!api) return;
     api._state.error = null;
     api._state.rows = [
-      { slug: "a", title: "DSP Credit Starting Points", kind: "document", occasion: "DDS, Aging and LWDA meeting on DSP Training", made_on: "2026-10-20",
-        summary: "Where California Community Colleges courses could award credit for the state's Direct Support Professional Training.", topics: ["DSP training"], url: "https://claude.ai/artifact/example" },
+      { slug: "a", title: "DSP Credit Starting Points", kind: "visual", occasion: "DDS, Aging and LWDA meeting on DSP Training", made_on: "2026-10-20",
+        summary: "Where California Community Colleges courses could award credit for the state's Direct Support Professional Training.", topics: ["DSP training"], url: "https://claude.ai/artifact/example",
+        for_kind: "agency", for_name: "DDS, Aging and LWDA" },
+      { slug: "d", title: "San Bernardino Valley College: CPL Opportunity Analysis", kind: "visual", occasion: "CPL college workgroup meeting, 2026-10-21", made_on: "2026-10-21",
+        summary: "San Bernardino Valley College's COCI programs and courses, its MAP exhibits (AP and IB excluded), and the statewide credit recommendations it could adopt.", topics: [], url: "https://example.org/visual",
+        for_kind: "college", for_name: "San Bernardino Valley College" },
       { slug: "b", title: "Ironworker Pathway in Motion", kind: "film", occasion: "Cerritos College ironworker pathway", made_on: "2026-10-04",
         summary: "High school to a bachelor's degree, with CPL at each step.", topics: [], url: "https://example.org/film" },
       { slug: "c", title: "Update to the Board of Governors on credit for prior learning across the California Community Colleges", kind: "deck", occasion: "Board of Governors, July 2026", made_on: "2026-07-16",
         summary: "The CPL Initiative's update to the Board.", topics: [], url: "https://example.org/deck" }
     ];
-    api.init && document.getElementById("lib-kinds") && (document.getElementById("lib-kinds").innerHTML = "");
-    api.render();
-    const kinds = document.getElementById("lib-kinds");
-    if (kinds) kinds.innerHTML = ["All", "Slides", "Film", "Document"].map((w, i) =>
-      '<button type="button" class="word" aria-pressed="' + (i === 0) + '">' + w + "</button>").join("");
+    api.paint();
   }, theme);
 }
 async function seedSierraConversation(page, theme) {
