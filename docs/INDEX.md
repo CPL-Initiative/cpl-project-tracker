@@ -68,10 +68,10 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
 | KB notes | 563 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 86 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 87 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 438 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1245** | |
+| Session handoffs | 439 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1247** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-24 (S468 SkyMatilija, opened by hand): the toolkit photos in the library's hero (#2421); the NC cards edit like the credit cards, Cabrillo counted, the coordinator sources named (#2422); Open Asks Sheet 125; full checkpoint; handoff 469.
 - 2026-10-24 (S466 SkyYerbaSanta, opened by hand beside the routine's run): the film can carry Scenario 4's words (#2418), held on Open Asks Sheet 123 card 2; a pending noncredit gate releases; the routine check for hand-opened sessions; full checkpoint; handoff 467 rewritten.
 - 2026-10-24 (S466 SkyYerbaSanta, scheduled): the funding film rebuilt from the published Scenario 4, v9 (#2417); light checkpoint; handoff 467.
 - 2026-10-24 (S465 SkyCoyoteBrush, scheduled): three lane files under budget, Scenario 4 found published (#2416); light checkpoint; handoff 466.
@@ -130,4 +131,3 @@ Authoritative external sources we've cached:
 - 2026-10-23 (S459 SkyBuckeye, later): the agency template and the ELL IET page, the Knowledge Base fold (#2397), the display apply recorded; handoff 460 rewritten; memory receipt `cpl_memory_2026-10-23_s459_later.sql`.
 - 2026-10-23 (S459 SkyBuckeye): the Library's Made-for build; the meets reading rebuilt and applied; the six older-build rows removed; KB note `methodology-a-measured-count-verifies-a-rebuild`; handoff 460.
 - 2026-10-23 (S458 SkyLarkspur): the team phrase lists a Library piece publicly (#2390, applied live); Open Asks Sheet 120 with six cards on visuals made for an entity and the Made-for mock-up; S457's checkpoint merged (#2388); the Coordinator Guide audit started; handoff 459.
-- 2026-10-23 (S457 SkyColumbine): the S456 wave and Sierra's ESL certificates landed; the scorer's low-end-meets reading built and held on Open Asks Sheet 119; handoff 458.

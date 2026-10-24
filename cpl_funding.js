@@ -4715,6 +4715,7 @@
   var CURATE_ATTRS = ["data-edit", "data-note", "data-notesave", "data-srcopen", "data-srcall",
     "data-reqdel", "data-reqhide", "data-reqshow",
     "data-stratadd", "data-stratdel", "data-ncstratadd", "data-ncstratdel", "data-timingdel",
+    "data-ncostratadd", "data-ncostratdel", "data-ncgoal",
     "data-priodrag", "data-priopos",
     "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind",
     "data-textedit", "data-textsave", "data-textcancel", "data-textreset", "data-textarea",
@@ -8478,18 +8479,87 @@
   }
 
   // ── the noncredit outcome cards (Scenario 4) ──────────────────────────
+  // The editors the credit cards have and these lacked (Sam, 2026-10-24).
+  // Each writes the outcome's own row through setNcOutcome(); none reaches a
+  // credit priority.
+  //
+  // The outcomes it serves: the credit card's Serves boxes.
+  function ncGoalsHtml(slot, i, p, keys) {
+    return '<div class="cplfund-goalmulti" role="group" aria-label="' + esc("Outcomes " + p.label + " serves") + '">' +
+      '<span class="dk">Serves</span>' +
+      STATUTORY_GOALS.map(function (g) {
+        return '<label><input type="checkbox" data-ncgoal="' + esc(slot + ":" + i) + '" value="' + esc(g.key) + '"' +
+          (keys.indexOf(g.key) >= 0 ? " checked" : "") + "> (" + esc(g.key) + ") " + esc(g.short) + "</label>";
+      }).join("") + "</div>";
+  }
+  // The measure: the noncredit outcome sources alone (lane nc, outcome true),
+  // so a count can never be pinned to a credit unit or to the denominator.
+  function ncOutcomeSources() {
+    var reg = (typeof METRIC_SOURCES === "object" && METRIC_SOURCES) || {};
+    return Object.keys(reg).filter(function (k) { return reg[k] && reg[k].lane === "nc" && reg[k].outcome === true; });
+  }
+  var NC_UNIT_WORDS = { exhibit: "exhibits", course: "courses" };
+  function ncSrcPickHtml(slot, i, p) {
+    var reg = (typeof METRIC_SOURCES === "object" && METRIC_SOURCES) || {};
+    var keys = ncOutcomeSources();
+    var known = keys.indexOf(p.metric_src) >= 0;
+    return '<p class="nums">Measured from <select class="cplfund-ed-sel" data-edit="nc-src" data-slot="' + esc(slot) +
+      '" data-idx="' + i + '" aria-label="' + esc(p.label + " measure") + '">' +
+      (known ? "" : '<option value="" selected>Not set</option>') +
+      keys.map(function (k) {
+        return '<option value="' + esc(k) + '"' + (k === p.metric_src ? " selected" : "") + ">" + esc(reg[k].label) + "</option>";
+      }).join("") + "</select></p>";
+  }
+  // The target rule: a fixed count for every institution, or the greater of a
+  // floor and a percent of its CDCP noncredit courses, capped (blank: no cap).
+  function ncRuleEditHtml(slot, i, p) {
+    var r = p.target_rule || {};
+    var share = r.kind === "pct_floor_cap";
+    var o = function (lab) { return { small: true, slot: slot, idx: i, label: p.label + " " + lab }; };
+    return '<p class="nums">Target rule <select class="cplfund-ed-sel" data-edit="nc-rule" data-slot="' + esc(slot) +
+      '" data-idx="' + i + '" aria-label="' + esc(p.label + " target rule") + '">' +
+      '<option value="fixed"' + (share ? "" : " selected") + ">The same count for every institution</option>" +
+      '<option value="pct_floor_cap"' + (share ? " selected" : "") + ">A share of its CDCP noncredit courses</option></select></p>" +
+      '<p class="nums">' + (share
+        ? "Each institution: the greater of " + edNum("nc-floor", String(Math.max(0, Number(r.floor) || 0)), o("target floor")) +
+          " and " + edNum("nc-pct", fmtRatePct(Number(r.pct) || 0), o("target percent of CDCP noncredit courses")) +
+          "% of its CDCP noncredit courses, capped at " + edNum("nc-cap", r.cap == null ? "" : String(r.cap), o("target cap, blank for none")) +
+          ' <span class="dk">(blank: no cap)</span>'
+        : "Each institution: " + edNum("nc-n", String(Math.max(0, Number(r.n) || 0)), o("target count")) + " " + esc(ncUnitWord(p, 2))) +
+      "</p>";
+  }
+  // The strategies: the credit card's list, add and remove.
+  function ncStrategiesHtml(slot, i, p) {
+    var list = p.strategies || [];
+    return (list.map(function (t, j) {
+      return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
+        edText("nco-strategy", t, { slot: slot, idx: i, sidx: j, label: "Recommended strategy", placeholder: "Add a strategy…" }) +
+        '<button type="button" class="cplfund-reqdel" data-ncostratdel="' + esc(slot + ":" + i + ":" + j) +
+        '" title="Remove this strategy" aria-label="Remove strategy ' + (j + 1) + '">Remove</button></div>';
+    }).join("") || '<p class="nums dk">Awaiting recommended strategies for this outcome.</p>') +
+      '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-ncostratadd="' + esc(slot + ":" + i) +
+      '" title="Add a recommended strategy">Add strategy</button>';
+  }
   // Their own small card family under the priority cards: the noncredit share
   // releases on these, so they stand apart from the credit priorities ("I
   // don't want the NCs to get lost") and never enter the credit sequence, the
-  // credit share sums or the totals row. A curator edits the title, the
-  // description, the metric's words and the share in place; the measure pin
-  // and the target rule are the scenario's (Sam's Sheet 113 and 114 rulings).
+  // credit share sums or the totals row.
+  //
+  // EVERY FIELD EDITS IN PLACE, AS ON A CREDIT CARD (Sam, 2026-10-24: "I need
+  // to be able to edit the new NC priority boxes"). The cards were read-only
+  // without a reviewer sign-in while the credit cards beside them edited for
+  // anyone, so a reader saw boxes he could not change. Now: the title, the
+  // outcomes it serves, the description, the share, the measure, the metric's
+  // words, the target rule and the strategies. Signed in, an edit is the
+  // team's; signed out, it is a what-if in this browser (persistActive), the
+  // credit cards' rule. The values Sam ruled on Sheets 113 and 114 stay the
+  // scenario's until someone changes them.
   function ncOutcomesSectionHtml(slot) {
     if (!ncOutcomesMode()) return "";
     var ps = ncOutcomes(slot);
     if (!ps.length) return "";
     var agg = earnAgg();
-    var ro = publicMode() || !unlocked();
+    var ro = publicMode();
     var ss = ncShareSum(slot);
     var cards = ps.map(function (p, i) {
       var q = (agg.perNc || [])[i] || emptyPrioFigs();
@@ -8506,12 +8576,16 @@
       var law = keys.length
         ? '<p class="cplfund-cardgoal-quote"><span class="cplfund-cardgoal-cite">' + goalCite(keys) + ":</span> " + goalQuote(keys) + "</p>"
         : "";
-      var strat = p.strategies && p.strategies.length
-        ? cardSectionHtml("Recommended strategies", fmtInt(p.strategies.length) + " for Year " + esc(slot),
-          "<ul>" + p.strategies.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>", publicMode(), "cplfund-strat")
-        : "";
+      var nStrat = (p.strategies || []).length;
+      var strat = ro
+        ? (nStrat
+          ? cardSectionHtml("Recommended strategies", fmtInt(nStrat) + " for Year " + esc(slot),
+            "<ul>" + p.strategies.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>", true, "cplfund-strat")
+          : "")
+        : cardSectionHtml("Recommended strategies", nStrat ? fmtInt(nStrat) + " for Year " + esc(slot) : "Awaiting",
+          ncStrategiesHtml(slot, i, p), false, "cplfund-strat");
       return '<div class="p cplfund-nccard" data-nccard="' + i + '">' +
-        '<div class="cplfund-cardhead">' + head + "</div>" + law +
+        '<div class="cplfund-cardhead">' + head + "</div>" + (ro ? "" : ncGoalsHtml(slot, i, p, keys)) + law +
         '<p class="desc">' + (ro ? esc(p.description)
           : edArea("nc-description", p.description, { slot: slot, idx: i, rows: 2, label: p.label + " description" })) + "</p>" +
         '<p class="nums">Allocation share ' + (ro ? esc(fmtRatePct(p.share))
@@ -8520,7 +8594,9 @@
         '<div class="metric"' + (p.metric_src ? ' title="' + esc("Measured from the daily feed key " + p.metric_src) + '"' : "") + ">" +
           "METRIC (Year " + slot + mirroredNote(slot) + "): " +
           (ro ? esc(p.metric) : edArea("nc-metric", p.metric, { slot: slot, idx: i, rows: 2, label: p.label + " metric" })) + "</div>" +
+        (ro ? "" : ncSrcPickHtml(slot, i, p)) +
         cardSectionHtml("Target", tgt == null ? "TBA" : fmtInt(tgt) + " " + ncUnitWord(p, tgt === 1 ? 1 : 2),
+          (ro ? "" : ncRuleEditHtml(slot, i, p)) +
           '<p class="nums">' + esc(countTargetWords(null, p)) + "</p>") +
         cardSectionHtml("Progress", q.ncCap > 0 ? fmtMoney(q.ncEarned) + " &middot; " + fmtPctTrim(q.ncEarned / q.ncCap) : "TBA",
           '<p class="nums dk"' + (act.measured ? "" : ' title="' + esc(TBA_TIP) + '"') + ">" +
@@ -15132,6 +15208,43 @@
       setNcOutcome(slot, Number(idx), "share", Math.max(0, ncs) / 100);
       return;
     }
+    // The measure: a noncredit outcome source or nothing; the unit word follows it.
+    if (edit === "nc-src") {
+      var ncreg = (typeof METRIC_SOURCES === "object" && METRIC_SOURCES) ? METRIC_SOURCES[raw] : null;
+      if (ncOutcomeSources().indexOf(raw) < 0 || !ncreg) { render(); return; }
+      setNcOutcome(slot, Number(idx), "metric_src", raw);
+      if (NC_UNIT_WORDS[ncreg.milestone]) setNcOutcome(slot, Number(idx), "unit_word", NC_UNIT_WORDS[ncreg.milestone]);
+      return;
+    }
+    // The target rule. Switching the kind carries the count across (a fixed n
+    // becomes the floor, the floor becomes n); junk or a negative reverts.
+    if (edit === "nc-rule" || edit === "nc-floor" || edit === "nc-pct" || edit === "nc-cap" || edit === "nc-n") {
+      var nco = ncOutcomes(slot)[Number(idx)];
+      if (!nco) return;
+      var rule = clone(nco.target_rule || {});
+      if (edit === "nc-rule") {
+        if (raw === rule.kind || (raw !== "fixed" && raw !== "pct_floor_cap")) return;
+        rule = raw === "pct_floor_cap"
+          ? { kind: "pct_floor_cap", of: rule.of || "nc_cdcp", pct: 0.05, floor: Math.max(0, Number(rule.n) || 0), cap: null }
+          : { kind: "fixed", n: Math.max(0, Number(rule.floor) || 0) };
+      } else if (edit === "nc-cap" && !String(raw).trim()) {
+        rule.cap = null;
+      } else {
+        var rv = /\d/.test(String(raw)) ? parseNum(raw) : null;
+        if (rv == null || rv < 0) { render(); return; }
+        if (edit === "nc-pct") rule.pct = rv / 100;
+        else rule[edit.slice(3)] = Math.round(rv);   // floor, cap, n: whole counts
+      }
+      setNcOutcome(slot, Number(idx), "target_rule", rule);
+      return;
+    }
+    if (edit === "nco-strategy") {
+      var osj = Number(el.getAttribute("data-sidx"));
+      var oc = ncOutcomes(slot)[Number(idx)];
+      var olist = (oc && oc.strategies) || [];
+      if (osj >= 0 && osj < olist.length) { olist[osj] = raw; setNcOutcome(slot, Number(idx), "strategies", olist); }
+      return;
+    }
     if (edit === "feeder-ftes") {
       var list = feeders();
       var fn = parseNum(raw);
@@ -15994,6 +16107,33 @@
         var gk2 = parts[0], rj2 = Number(parts[1]);
         var rl = reportedStrategies(gk2);
         if (rj2 >= 0 && rj2 < rl.length) { rl.splice(rj2, 1); setReportedStrategies(gk2, rl); render(); }
+      });
+    });
+    // The noncredit OUTCOME cards (Scenario 4): strategies and the outcomes
+    // served, on the outcome's own row.
+    document.querySelectorAll("#cplFundingMount [data-ncostratadd]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var parts = b.getAttribute("data-ncostratadd").split(":");
+        var oc = ncOutcomes(parts[0])[Number(parts[1])];
+        if (oc) setNcOutcome(parts[0], Number(parts[1]), "strategies", (oc.strategies || []).concat([""]));
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-ncostratdel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var parts = b.getAttribute("data-ncostratdel").split(":");
+        var oc = ncOutcomes(parts[0])[Number(parts[1])], sj = Number(parts[2]);
+        var ol = (oc && oc.strategies) || [];
+        if (sj >= 0 && sj < ol.length) { ol.splice(sj, 1); setNcOutcome(parts[0], Number(parts[1]), "strategies", ol); }
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-ncgoal]").forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        var id = cb.getAttribute("data-ncgoal"), parts = id.split(":"), keys = [];
+        document.querySelectorAll('#cplFundingMount [data-ncgoal="' + id + '"]').forEach(function (x) { if (x.checked) keys.push(x.value); });
+        savingState = "";
+        setNcOutcome(parts[0], Number(parts[1]), "goals", keys);
       });
     });
     document.querySelectorAll("#cplFundingMount [data-ncstratadd]").forEach(function (b) {
