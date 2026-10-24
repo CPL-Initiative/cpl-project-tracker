@@ -6,7 +6,7 @@
 // Run from repo root: `npm test` (or `node tests/seal_blue_fallback.test.js`).
 const fs = require("fs");
 
-const FILES = ["sierra/sierra.js", "fact-sheet/factsheet_sierra.js", "cpl_chat.js", "cpl_pathways.js"];
+const FILES = ["sierra/sierra.js", "fact-sheet/factsheet_sierra.js", "cpl_chat.js", "cpl_pathways.js", "CPL_Dashboard.html", "index.html"];
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 
@@ -15,6 +15,12 @@ FILES.forEach(function (f) {
   const bad = src.match(/--(?:seal-blue|sierra-navy)\s*[,:]\s*#(?!002F6D\b)[0-9a-fA-F]{3,6}\b/gi) || [];
   check(f + ": every seal-blue fallback or print value is #002F6D" + (bad.length ? " (found " + bad.join(", ") + ")" : ""), bad.length === 0);
 });
+
+// The ink token: --navy-primary is #1C1C1A in First Light's light :root (it was the brand navy
+// once). A fallback naming the old navy paints it wherever the token is missing (S462).
+const chat = fs.readFileSync("cpl_chat.js", "utf8");
+const navy = chat.match(/var\(--navy-primary\s*,\s*#(?!1C1C1A\b)[0-9a-fA-F]{3,6}\b/gi) || [];
+check("cpl_chat.js: every --navy-primary fallback is #1C1C1A" + (navy.length ? " (found " + navy.join(", ") + ")" : ""), navy.length === 0);
 
 let failed = 0;
 results.forEach(function (r) {
