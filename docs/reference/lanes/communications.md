@@ -121,7 +121,10 @@ versions). Its note names what he decides before it goes
   `REPORT_AUDIENCES` (id, label, the report title the docx renders, a guide), `buildSystem()` composes
   its system prompt through `W.system`, the narrative goes through `W.draft` at the altitude band's
   tokens, and its naming-rule copy, its `claude-sonnet-4-5` pin and the direct `api.anthropic.com`
-  fallback are gone. Next `college_report_generator.js` (its own six audiences and pin), `annual_report.js`,
+  fallback are gone. `college_report_generator.js` ported (S461, the fourth consumer): its audiences
+  are the writer's `REPORT_AUDIENCES`, `buildSystem()` carries its role line and facts rule, the
+  update goes through `W.draft`, and its naming-rule line, its `claude-sonnet-4-5` pin and the direct
+  `api.anthropic.com` fallback are gone (`tests/report_session97.test.js` Part C). Next `annual_report.js`,
   `raci.js` (the dated `claude-sonnet-4-5-20250929` pin), `credential_reference.js` (two small
   calls) and `quickstart.js` (routing; Haiku stays its own call by design, through
   `draft(..., { model })`). Each port deletes the surface's own copy of the rules and its model

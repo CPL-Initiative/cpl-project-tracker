@@ -33,8 +33,9 @@ check("dashboard_filters no longer injects the Master Report bar button",
   dfSrc.indexOf("masterReportBtn") === -1);
 check("dashboard_filters no longer injects the bar-level Attach Doc button",
   dfSrc.indexOf("attachDocBtn'") === -1 && dfSrc.indexOf('&#128206; Attach Doc') === -1);
-check("college report prompt carries the naming hard constraint",
-  /Mapping Articulated Pathways \(MAP\) platform/.test(fs.readFileSync("college_report_generator.js", "utf8")));
+const crSrc = fs.readFileSync("college_report_generator.js", "utf8");
+check("the college report's model is the writer's: it names no model and drafts through W.draft under W.system",
+  !/claude-[a-z0-9-]+/.test(crSrc) && /W\.draft\(/.test(crSrc) && /W\.system\(/.test(crSrc) && !/CPL_REPORT_PROXY_URL/.test(crSrc) && !/api\.anthropic\.com/.test(crSrc));
 check("annual report polish prompt carries the naming rule",
   /Mapping Articulated Pathways \(MAP\) platform/.test(fs.readFileSync("annual_report.js", "utf8")));
 check("master_report docx footer says CPL Initiative (not MAP Initiative)",
@@ -123,6 +124,30 @@ function makeWin() {
     && doc.getElementById("reportElevationRow").style.display === "none");
   check("master mode relabels the Generate button",
     doc.getElementById("reportGenBtn").textContent === "Generate Master Report");
+})();
+
+// ── Part C — the college report drafts through the writer (S461) ──
+(function () {
+  const dom = new JSDOM("<!doctype html><html><head></head><body></body></html>",
+    { url: "https://cpl-initiative.github.io/cpl-project-tracker/", runScripts: "dangerously" });
+  const w = dom.window;
+  [writerSrc, crSrc].forEach(function (src) {   // the writer first, as the page loads it
+    const el = w.document.createElement("script");
+    el.textContent = src;
+    w.document.body.appendChild(el);
+  });
+  const W = w.CPL_WRITER, CR = w.CPL_COLLEGE_REPORT;
+  check("college report: the API is exposed", CR && typeof CR.buildSystem === "function" && typeof CR.buildPrompt === "function");
+  check("college report: the audiences are the writer's six report audiences", CR.AUDIENCES === W.REPORT_AUDIENCES && CR.AUDIENCES.length === 6);
+  const sys = CR.buildSystem();
+  check("college report: the system prompt carries the naming rule (c) and the house voice",
+    sys.indexOf(W.NAMING_RULE) >= 0 && sys.indexOf(W.HOUSE_VOICE) >= 0 && /Mapping Articulated Pathways \(MAP\) platform/.test(sys));
+  const bench = { statewide: { count: 2 }, tiers: { Leading: { count: 1 } } };
+  const sel = { colleges: [{ college: "Riverside City College", district: "Riverside", tier: "Leading", students: 10 }], audience: CR.AUDIENCES[1] };
+  const prompt = CR.buildPrompt(sel, bench);
+  check("college report: the prompt carries the audience's guide and keeps no copy of the naming rule",
+    prompt.indexOf(CR.AUDIENCES[1].guide) >= 0 && !/Military Articulation Platform/.test(prompt) && prompt.indexOf("undefined\n") === -1);
+  check("college report: a single college titles its update", /Riverside City College CPL Update/.test(prompt));
 })();
 
 // ── report ──

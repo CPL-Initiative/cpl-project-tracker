@@ -243,6 +243,13 @@ SEEDS = [
         "datasets": [("external:cpl-proxy.slee-548.workers.dev", "read")],
         "why": "the narrative goes through cpl_writer.js draft() over window.CPL_REPORT_PROXY_URL",
     },
+    {   # college_report_generator.js (S461): the College Activity report's narrative goes through
+        # cpl_writer.js's draft() the same way (the fourth consumer of the writer).
+        "file": "college_report_generator.js",
+        "anchor": r'W\.draft\(prompt, \{ system: buildSystem\(\)',
+        "datasets": [("external:cpl-proxy.slee-548.workers.dev", "read")],
+        "why": "the narrative goes through cpl_writer.js draft() over window.CPL_REPORT_PROXY_URL",
+    },
     {   # Sierra's pgvector retrieval tables: named only in docs; DDL applied live
         "file": "chatbox/supabase/functions/cpl-chat/index.ts",
         "anchor": r'match_document_sections',
