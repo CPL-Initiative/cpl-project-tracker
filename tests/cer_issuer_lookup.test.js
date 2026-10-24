@@ -11,6 +11,8 @@ const { JSDOM } = require("jsdom");
 const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
+// The page loads the writer module first; Suggest drafts through it (Sheet 118 ruling 5).
+const WRITER = fs.readFileSync("cpl_writer.js", "utf8");
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 function txt(el) { return (el && el.textContent || "").trim(); }
@@ -43,7 +45,7 @@ function makeDom(opts) {
     });
     if (url.indexOf("proxy.example.org") >= 0) {
       log.proxyCalls.push(JSON.parse(o.body));
-      return respond({ content: [{ text: opts.proxyAnswer || "International Code Council (ICC)" }] });
+      return respond({ content: [{ type: "text", text: opts.proxyAnswer || "International Code Council (ICC)" }] });
     }
     if (url.indexOf("exhibit_audit/latest.json") >= 0) return respond({ title_cards: [] });
     if (url.indexOf("issuer_preseed.json") >= 0) return respond({ staged: {} });
@@ -60,6 +62,7 @@ function makeDom(opts) {
   window.sessionStorage.setItem("cpl_sb", JSON.stringify({
     access_token: jwt, refresh_token: "rt", email: "map@rccd.edu",
     exp: Date.now() + 3600000 }));
+  window.eval(WRITER);
   window.eval(src);
   return { window, log };
 }
@@ -109,6 +112,11 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       log.proxyCalls.length === 1
       && log.proxyCalls[0].messages[0].content.indexOf("Aspects of Building and Safety") >= 0
       && log.proxyCalls[0].messages[0].content.indexOf("INSPEC 030") >= 0);
+    check("✨ drafts through the writer: its model, its naming rule in the system prompt, no voice",
+      log.proxyCalls.length === 1
+      && log.proxyCalls[0].model === window.CPL_WRITER.MODEL
+      && /Mapping Articulated Pathways \(MAP\)/.test(log.proxyCalls[0].system || "")
+      && log.proxyCalls[0].max_tokens === 100);
     const chip = row.querySelector(".cr-ni-suggest-chip");
     check("✨ answer renders as a click-to-fill chip",
       !!chip && /International Code Council \(ICC\)/.test(txt(chip)));

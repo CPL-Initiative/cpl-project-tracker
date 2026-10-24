@@ -181,7 +181,7 @@ block("(6)", function () {
   check("(6) each HTML loads the writer once", DASH.split(tag).length === 2 && INDEX.split(tag).length === 2);
   check("(6) the writer loads before report_generator.js, so every consumer finds it", DASH.indexOf(tag) >= 0 && DASH.indexOf(tag) < DASH.indexOf('<script src="report_generator.js"></script>'));
   // Each port adds its surface here (the communications lane's Next).
-  ["comms.js", "activity_summaries.js", "report_generator.js", "college_report_generator.js", "annual_report.js", "raci.js"].forEach(function (f) {
+  ["comms.js", "activity_summaries.js", "report_generator.js", "college_report_generator.js", "annual_report.js", "raci.js", "credential_reference.js"].forEach(function (f) {
     const src = fs.readFileSync(f, "utf8");
     check("(6) " + f + " is a consumer: it reads CPL_WRITER, composes its system prompt with W.system, drafts through W.draft and names no model",
       /window\.CPL_WRITER/.test(src) && /W\.draft\(/.test(src) && /W\.system\(/.test(src) && !/claude-[a-z0-9-]+/.test(src) && !/CPL_REPORT_PROXY_URL/.test(src) && !/anthropic-version/.test(src));

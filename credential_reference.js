@@ -3749,13 +3749,30 @@
   // 🔎 opens that exact question in a new tab (his manual workflow, one
   // click, uses the CURRENT title input so an edited title searches right).
   // ✨ asks Claude through the existing report proxy
-  // (window.CPL_REPORT_PROXY_URL — the Custom Report path; renders only when
+  // (the writer's drafting proxy — the Custom Report path; renders only when
   // configured) and offers the answer as a click-to-fill chip. A suggestion
   // is a RECOMMENDATION for the curator's judgment, never auto-saved. ──
   // Sam (2026-07-08 late): drop course-lead decoration from the query ("
   // Introduction to Warehouse Management" searches as "Warehouse Management")
   // and scope it to California — the exact shape of his productive searches:
   // `who is the agency that issues a "Warehouse Management" certificate in CA?`
+  // The two Suggest lookups draft through the one writer module (cpl_writer.js,
+  // window.CPL_WRITER, static in both HTMLs before this file): the one model and the proxy
+  // call (Sam's Sheet 118 ruling 5). A lookup answers with a name, so its system prompt keeps
+  // the spelling and naming words and leaves out the voice, the business words and the
+  // funding words. This file names no model. Read at call time, so a page without the
+  // writer only loses Suggest.
+  function lookupReady() { var W = window.CPL_WRITER; return !!(W && W.proxyUrl()); }
+  function lookupDraft(prompt) {
+    var W = window.CPL_WRITER;
+    var system = W.system({
+      role: "You help a MAP team curator name the credential behind a credit-for-prior-learning "
+        + "exhibit. The curator reviews your answer before anything is saved.",
+      omit: ["HOUSE_VOICE", "BUSINESS_WORDS", "FUNDING_WORDS"],
+      extra: ["Return only the answer the request asks for, with no explanation."]
+    });
+    return W.draft(prompt, { system: system, maxTokens: 100 }).then(function (r) { return r.text; });
+  }
   var QUERY_LEAD_RX = /^(?:an?\s+)?(?:introduction\s+to|intro\s+to|fundamentals?\s+of|principles?\s+of|essentials?\s+of|basics?\s+of)\s+/i;
   function issuerSearchQuery(title) {
     var core = (title || "").replace(QUERY_LEAD_RX, "").trim() || title;
@@ -3773,7 +3790,7 @@
         + encodeURIComponent(issuerSearchQuery(t)), "_blank", "noopener");
     };
     wrap.appendChild(searchBtn);
-    if (window.CPL_REPORT_PROXY_URL) {
+    if (lookupReady()) {
       var aiBtn = el("button", { type: "button", class: "cr-ni-suggest",
         title: "Ask Claude (via the report proxy) who issues this credential — "
           + "the answer is a recommendation to review, never auto-saved" },
@@ -3797,17 +3814,9 @@
           + "(e.g. \"International Code Council (ICC)\"). If it is a local "
           + "college course with no external issuer, reply exactly: none. "
           + "If you are not reasonably sure, reply exactly: unknown.";
-        fetch(window.CPL_REPORT_PROXY_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json",
-                     "anthropic-version": "2023-06-01" },
-          body: JSON.stringify({ model: "claude-sonnet-4-5", max_tokens: 100,
-            messages: [{ role: "user", content: prompt }] })
-        }).then(function (resp) { return resp.ok ? resp.json() : null; })
-          .then(function (json) {
+        lookupDraft(prompt)
+          .then(function (text) {
             aiBtn.disabled = false;
-            var text = (json && json.content && json.content[0]
-                        && json.content[0].text || "").trim();
             if (!text || text.length > 120 || /^unknown\b/i.test(text)) {
               out.textContent = "no confident suggestion — try Suggest";
               return;
@@ -3876,7 +3885,7 @@
         "_blank", "noopener");
     };
     wrap.appendChild(searchBtn);
-    if (window.CPL_REPORT_PROXY_URL) {
+    if (lookupReady()) {
       var aiBtn = el("button", { type: "button", class: "cr-ni-tsuggest",
         title: "Ask Claude (via the report proxy) what course or credential "
           + "this code refers to — the answer is a recommendation to review, "
@@ -3898,17 +3907,9 @@
           + "Reply with ONLY the title (e.g. \"Child Development\") — no code, "
           + "no college name. If you are not reasonably sure, reply exactly: "
           + "unknown.";
-        fetch(window.CPL_REPORT_PROXY_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json",
-                     "anthropic-version": "2023-06-01" },
-          body: JSON.stringify({ model: "claude-sonnet-4-5", max_tokens: 100,
-            messages: [{ role: "user", content: prompt }] })
-        }).then(function (resp) { return resp.ok ? resp.json() : null; })
-          .then(function (json) {
+        lookupDraft(prompt)
+          .then(function (text) {
             aiBtn.disabled = false;
-            var text = (json && json.content && json.content[0]
-                        && json.content[0].text || "").trim();
             if (!text || text.length > 120 || /^unknown\b/i.test(text)) {
               out.textContent = "no confident suggestion — try Suggest";
               return;

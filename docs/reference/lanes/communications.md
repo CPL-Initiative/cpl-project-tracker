@@ -130,8 +130,10 @@ versions). Its note names what he decides before it goes
   copy, its pin and the direct fallback are gone. `raci.js` ported (S462, the sixth): the update composer's
   polish composes `updateSystem()` through `W.system` and drafts through `W.draft`; its dated
   `claude-sonnet-4-5-20250929` pin is gone, and it reads the writer at call time, so a page without it loses only
-  the polish (`tests/raci_writer.test.js`). Next `credential_reference.js` (two small
-  calls) and `quickstart.js` (routing; Haiku stays its own call by design, through
+  the polish (`tests/raci_writer.test.js`). `credential_reference.js` ported (S462, the seventh): its two
+  Suggest lookups draft through `lookupDraft()`, whose `W.system` keeps the spelling and naming words and omits the
+  voice, the business and the funding words (a lookup answers with a name); its two `claude-sonnet-4-5` pins are gone
+  (`tests/cer_issuer_lookup.test.js`). Next `quickstart.js` (routing; Haiku stays its own call by design, through
   `draft(..., { model })`). Each port deletes the surface's own copy of the rules and its model
   pin; `tests/cpl_writer.test.js` (6) pins that `comms.js` names no model, and each port adds
   its surface to that check.
