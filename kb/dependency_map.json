@@ -405,16 +405,6 @@
      ]
     },
     {
-     "id": "module:report_generator.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "url",
-     "line": 529,
-     "pages": [
-      "CPL_Dashboard.html"
-     ]
-    },
-    {
      "id": "worker:cloudflare-worker-proxy.js",
      "kind": "worker",
      "direction": "read",
@@ -1141,7 +1131,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 141,
+     "line": 158,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -1187,8 +1177,8 @@
      "id": "module:report_generator.js",
      "kind": "module",
      "direction": "read",
-     "how": "global",
-     "line": 19,
+     "how": "seeded",
+     "line": 0,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -4151,7 +4141,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 11,
+     "line": 13,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -7018,7 +7008,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 127,
+     "line": 121,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -16673,7 +16663,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 747,
+     "line": 726,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -22956,7 +22946,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 111,
+     "line": 105,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -23038,7 +23028,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 110,
+     "line": 104,
      "pages": [
       "CPL_Dashboard.html"
      ]
