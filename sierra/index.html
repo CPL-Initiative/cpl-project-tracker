@@ -10,14 +10,17 @@
 <meta property="og:type" content="website">
 <link rel="icon" href="../cccco_seal.png">
 <!-- The theme a reader chose in COBI's one control (cpl_theme.js, key
-     cpl_theme, same origin) holds here too; with no choice the page follows the
-     OS, as COBI's System setting does. Set before the stylesheet paints, so a
-     dark reader never sees a white flash. A page that frames her in its Ask
-     Sierra side bar (sidebar.js) names its own theme in ?theme=, which wins: the
-     library opens Light whatever the device says, and she must match it. -->
+     cpl_theme, same origin), in the library, or with this page's own Light and
+     Dark words holds here too; with no choice the page follows the OS, as COBI's
+     System setting does. Set before the stylesheet paints, so a dark reader never
+     sees a white flash. A page that frames her in its Ask Sierra side bar
+     (sidebar.js) names its own theme in ?theme=, which wins: the library opens
+     Light whatever the device says, and she must match it. -->
 <script>(function(){var t=null;try{t=new URLSearchParams(location.search).get("theme")}catch(e){}if(t!=="light"&&t!=="dark"){try{t=localStorage.getItem("cpl_theme")}catch(e){}}if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)})()</script>
-<link rel="preload" href="./fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<!-- In the side bar (sidebar.js adds ?panel=1) the bar names her and the page
+     beside it carries the logo, so her header row stands down to About Sierra
+     alone. Set before the stylesheet paints, so the row never flashes in. -->
+<script>if(/[?&]panel=1(&|$)/.test(location.search))document.documentElement.setAttribute("data-panel","")</script>
 <link rel="stylesheet" href="./sierra.css">
 </head>
 <body data-view="arriving">
@@ -25,39 +28,44 @@
 <!-- First tab stop. Off-screen until focused (.s-skip). -->
 <a class="s-skip" href="#s-main">Skip to the conversation</a>
 
-<!-- The redesign after america.gov (Sam, 2026-10-08: "fewer boxes... maximally
-     clean and simple"; the mock-up prototype/sierra_redesign_mockup.html, which he
-     approved). Two views on one page, set on <body data-view>: arriving (a
-     greeting, then a First Light painting with the question bar on its top edge)
-     and asking (the painting folds away and the conversation takes a centered
-     column on paper, the question bar docked beneath it). sierra.js moves the one
-     form between the two places, so every id the tests and the vendor embed rely
-     on stays single. -->
+<!-- The library look (Sam, 2026-10-24: "Seeing the format of Sierra next to the
+     new format is a little incongruous. Been thinking about switching the
+     paintings out and having no pics and a simpler look so it can function as a
+     sidebar better. Can you align her format with the new library look while
+     preserving her basics?", then on the mock-up "White background for her as
+     well"; prototype/sierra_library_look_mockup.html). A white page in the
+     library's navy, gold and Georgia; no paintings. Two views on one page, set on
+     <body data-view>: arriving (the greeting, the question box, starter
+     questions) and asking (the conversation in a centered column, the question
+     box docked beneath it). sierra.js moves the one form between the two places,
+     so every id the tests and the vendor embed rely on stays single. -->
 <header class="s-head">
   <!-- The logo is the link to the MAP platform (Sam: "Make the CPL Initiative
        logo a link"). It opens a new tab so the conversation survives, and says so
-       in words a screen reader hears: the ↗ the old pill carried is gone, and the
-       cue it gestured at stays. -->
+       in words a screen reader hears. -->
   <a class="s-home" href="https://map.rccd.edu" target="_blank" rel="noopener">
     <img class="s-logo s-logo-light" src="./cpl-initiative-logo-navy.png" alt="CPL Initiative" width="1115" height="209">
     <img class="s-logo s-logo-dark" src="./cpl-initiative-logo.png" alt="CPL Initiative" width="1115" height="209">
     <span class="s-sr">map.rccd.edu (opens in a new tab)</span>
   </a>
   <!-- Sierra's logo (Sam, 2026-10-08: "If you can preserve sierras logo, keep it
-       in. I like the mountain line", then "Keep the ridgeline mostly above Sierra.
-       Can you just use the current logo expanded?"): whitney-mark.svg's ridge and
-       snow, drawn as they are and scaled to the word, inline so they take the
-       page's color in light and dark, here and in the greeting. The word is set
-       with a dotless i and its own dot a little lower ("If you move the dot over
-       the i down lower it won't interfere with the ridgeline"); a screen reader
-       hears the plain word. -->
-  <span class="s-who-head" aria-hidden="true"><span class="s-peak"><span class="s-nameword">S&#305;<span class="s-tittle"></span>erra</span><svg class="s-ridge" viewBox="0 0 120 34" aria-hidden="true" focusable="false"><path d="M2 30 L12 25 21 17 29 9 35 4 40 1 43 6 46 4 49 9 52 7 55 11 59 15 63 19 66 22 70 18 73 20 76 15 79 13 82 16 85 20 90 24 97 27 105 29 118 30" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 5.4 L37.4 10.6 38.9 9.6 40 11 41.1 9.5 42.6 10.7 40 5.4 Z" fill="currentColor" stroke="none"/></svg></span></span>
+       in. I like the mountain line"): whitney-mark.svg's ridge and snow, drawn as
+       they are and set above the word, inline so they take the page's color in
+       light and dark, here and in the greeting. Shown while reading. -->
+  <span class="s-who-head" aria-hidden="true"><span class="s-peak">Sierra<svg class="s-ridge" viewBox="0 0 120 34" aria-hidden="true" focusable="false"><path d="M2 30 L12 25 21 17 29 9 35 4 40 1 43 6 46 4 49 9 52 7 55 11 59 15 63 19 66 22 70 18 73 20 76 15 79 13 82 16 85 20 90 24 97 27 105 29 118 30" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 5.4 L37.4 10.6 38.9 9.6 40 11 41.1 9.5 42.6 10.7 40 5.4 Z" fill="currentColor" stroke="none"/></svg></span></span>
   <!-- "About Sierra" holds the introduction and the beta note (Sam, 2026-09-11:
        "consolidate all this text to hover overs in the header"). Hover alone
        would fail 1.4.13 and every touch and keyboard user, so it is a real
        control: opens on hover for a mouse, on tap or Enter for everyone, stays
        open until dismissed, closes on Escape and on a click outside. -->
   <button class="s-about" id="s-about-btn" type="button" aria-expanded="false" aria-controls="s-about">About Sierra</button>
+  <!-- Light and Dark, the public header's words (Sam, 2026-10-21: "give a
+       light/dark option on each artifact"). They write the same cpl_theme choice
+       COBI and the library read. -->
+  <div class="s-theme" role="group" aria-label="Theme">
+    <button class="s-theme-btn" type="button" data-theme-pick="light" aria-pressed="false">Light</button>
+    <button class="s-theme-btn" type="button" data-theme-pick="dark" aria-pressed="false">Dark</button>
+  </div>
 </header>
 <div class="s-about-panel" id="s-about" hidden>
   <div class="s-about-inner">
@@ -72,12 +80,12 @@
 
 <main class="s-main" id="s-main" tabindex="-1">
   <section class="s-hello">
-    <h1>Hello, I'm <span class="s-peak"><span class="s-sr">Sierra</span><span class="s-nameword" aria-hidden="true">S&#305;<span class="s-tittle"></span>erra</span><svg class="s-ridge" viewBox="0 0 120 34" aria-hidden="true" focusable="false"><path d="M2 30 L12 25 21 17 29 9 35 4 40 1 43 6 46 4 49 9 52 7 55 11 59 15 63 19 66 22 70 18 73 20 76 15 79 13 82 16 85 20 90 24 97 27 105 29 118 30" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 5.4 L37.4 10.6 38.9 9.6 40 11 41.1 9.5 42.6 10.7 40 5.4 Z" fill="currentColor" stroke="none"/></svg></span></h1>
+    <h1>Hello, I'm <span class="s-peak">Sierra<svg class="s-ridge" viewBox="0 0 120 34" aria-hidden="true" focusable="false"><path d="M2 30 L12 25 21 17 29 9 35 4 40 1 43 6 46 4 49 9 52 7 55 11 59 15 63 19 66 22 70 18 73 20 76 15 79 13 82 16 85 20 90 24 97 27 105 29 118 30" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 5.4 L37.4 10.6 38.9 9.6 40 11 41.1 9.5 42.6 10.7 40 5.4 Z" fill="currentColor" stroke="none"/></svg></span></h1>
     <p>Ask how your work, training and service can count as college credit.</p>
+    <div class="s-rule" aria-hidden="true"></div>
   </section>
 
   <section class="s-frame" id="s-frame" aria-label="Ask Sierra">
-    <div class="s-arts" id="s-arts"></div>
     <form id="s-form" class="s-form" autocomplete="off">
       <div class="s-ask">
         <!-- A one-row textarea that grows, so a long question (a "Try:" starter
@@ -100,14 +108,12 @@
       <div id="s-status" class="s-status" role="status" aria-live="polite"></div>
     </form>
   </section>
-  <div class="s-under">
-    <p class="s-cap" id="s-cap"></p>
-    <div class="s-ctl" role="group" aria-label="Paintings">
-      <button class="s-word" type="button" id="s-prev">Previous</button>
-      <button class="s-word" type="button" id="s-pause">Pause</button>
-      <button class="s-word" type="button" id="s-next">Next</button>
-    </div>
-  </div>
+  <!-- Where the paintings were: a few of her starter questions, as words. Each
+       asks itself, so the audience rule still holds before the first send. -->
+  <section class="s-try" id="s-try" aria-labelledby="s-try-label">
+    <h2 class="s-try-label" id="s-try-label">Try</h2>
+    <ul class="s-try-list" id="s-try-list"></ul>
+  </section>
 
   <div id="s-log" class="s-log" aria-live="polite" aria-label="Conversation with Sierra"></div>
   <div class="s-dock" id="s-dock">
@@ -118,9 +124,23 @@
 </main>
 
 <footer class="s-foot">
-  <p>Sierra is in beta, and your college's CPL coordinator decides credit.
-    Please don't enter personal information; questions are logged anonymously.
-    Questions for the team? <a href="mailto:MAP@rccd.edu">MAP@rccd.edu</a></p>
+  <div class="s-foot-in">
+    <p>Sierra is in beta, and your college's CPL coordinator decides credit.
+      Please don't enter personal information; questions are logged anonymously.
+      Questions for the team? <a href="mailto:MAP@rccd.edu">MAP@rccd.edu</a></p>
+    <!-- The public header's links out (Sam, 2026-10-21: "so folks have a way to
+         navigate away if needed"), here rather than in the header so a phone's
+         first screen stays the question box. -->
+    <nav class="s-links" aria-label="CPL pages">
+      <ul>
+        <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener">CPL Fact Sheet<span class="s-sr"> (opens in a new tab)</span></a></li>
+        <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener">Find your college<span class="s-sr"> (opens in a new tab)</span></a></li>
+        <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">MAP dashboard<span class="s-sr"> (opens in a new tab)</span></a></li>
+        <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener">Credit for Being You<span class="s-sr"> (opens in a new tab)</span></a></li>
+        <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/" target="_blank" rel="noopener">CPL Library<span class="s-sr"> (opens in a new tab)</span></a></li>
+      </ul>
+    </nav>
+  </div>
 </footer>
 
 <script src="./sierra.js"></script>

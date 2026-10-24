@@ -97,19 +97,33 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
 }
 
 (async function () {
-  // ── (b) starter questions ride the placeholder ──
-  // The redesign (Sam, 2026-10-08: "fewer boxes") retired the row of pills; the
-  // box offers one starter at a time, "Try: …", and Next brings the next one.
+  // ── (b) starter questions: one in the placeholder, a few as words ──
+  // The library look (Sam, 2026-10-24: "switching the paintings out and having no
+  // pics") put a few starters where the paintings were, each a word that asks
+  // itself; the box's placeholder keeps the first.
   {
-    const { w, API } = loadDom();
+    const { w, API } = loadDom({ noAudience: true });
     const input = w.document.getElementById("s-input");
     check("wiring puts a starter question in the box's placeholder",
       API.SUGGESTED.length >= 3 && input.placeholder === "Try: " + API.SUGGESTED[0]);
     check("a starter references the offerings capability (NCCER/OSHA/construction)",
       API.SUGGESTED.some((q) => /NCCER|OSHA|construction|welding/i.test(q)));
-    w.document.getElementById("s-next").click();
-    check("Next brings the next starter question with the next painting",
-      input.placeholder === "Try: " + API.SUGGESTED[1]);
+    const tries = w.document.querySelectorAll("#s-try-list .s-try-q");
+    check("the landing offers its starter questions as words, one button each",
+      tries.length === 3 && API.TRIES.length === 3 &&
+      Array.prototype.every.call(tries, (b, i) => b.tagName === "BUTTON" && b.type === "button" && b.textContent === API.TRIES[i]));
+    tries[0].click();
+    check("a starter asks itself, and with no audience picked the refusal says where the words are",
+      input.value === API.TRIES[0] && /under the question box/.test(w.document.getElementById("s-status").textContent));
+    w.close();
+  }
+  {
+    const { w, API, requests } = loadDom();
+    w.document.querySelectorAll("#s-try-list .s-try-q")[1].click();
+    await drain(14);
+    check("with an audience picked, a starter sends itself to Sierra",
+      requests.length === 1 && requests[0].body && requests[0].body.query === API.TRIES[1] &&
+      w.document.body.getAttribute("data-view") === "asking");
     w.close();
   }
 

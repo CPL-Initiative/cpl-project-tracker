@@ -16068,8 +16068,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 439,
+   "count": 440,
    "docs": [
+    {
+     "created": "2026-10-24",
+     "governs": [],
+     "n": 470,
+     "path": "docs/session_470_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "public-library",
+      "sierra",
+      "dark-mode"
+     ],
+     "title": "Session 470 handoff: Ask Sierra opens in a side bar on the public library and COBI's Library tab; Open Asks Sheet 126",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-24",
      "governs": [],
@@ -23603,5 +23620,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1247
+ "total": 1248
 }

@@ -586,7 +586,7 @@ file.
   contract themed components key on. **Dark is not license to invent a color**:
   add the role to the dark `:root` in both HTMLs (Rule 4), never a component
   rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
-  **One departure (Sam, 2026-10-24):** the public `library/` page takes Malone's
+  **One departure (Sam, 2026-10-24):** the public `library/` page and Sierra take Malone's
   CPL/AI look ([lane](docs/reference/lanes/library.md)).
 - **Accessible to today's standards — and verified, not claimed.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
@@ -751,7 +751,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 125](https://claude.ai/artifact/5zqA3S25eECWH9NALZRamE), 2026-10-24, answered 18:12Z; no card is open). Answering
+> (latest: [Open Asks Sheet 126](https://claude.ai/artifact/DhHtadX92wE5LxmAWrB2z5), 2026-10-24, two cards open). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

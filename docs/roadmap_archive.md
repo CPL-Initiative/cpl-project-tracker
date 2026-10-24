@@ -6109,3 +6109,8 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ## INDEX update history, moved by S468 (2026-10-24)
 
 - 2026-10-23 (S457 SkyColumbine): the S456 wave and Sierra's ESL certificates landed; the scorer's low-end-meets reading built and held on Open Asks Sheet 119; handoff 458.
+
+## INDEX update history, moved by S469 (2026-10-24)
+
+- 2026-10-23 (S459 SkyBuckeye): the Library's Made-for build; the meets reading rebuilt and applied; the six older-build rows removed; KB note `methodology-a-measured-count-verifies-a-rebuild`; handoff 460.
+- 2026-10-23 (S458 SkyLarkspur): the team phrase lists a Library piece publicly (#2390, applied live); Open Asks Sheet 120 with six cards on visuals made for an entity and the Made-for mock-up; S457's checkpoint merged (#2388); the Coordinator Guide audit started; handoff 459.

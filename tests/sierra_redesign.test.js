@@ -1,26 +1,27 @@
-// Sierra's page after america.gov — the 2026-10-08 redesign, as ported from the
-// mock-up Sam approved (prototype/sierra_redesign_mockup.html).
+// Sierra's page in the public library's look — the 2026-10-24 port, from the
+// mock-up Sam reviewed (prototype/sierra_library_look_mockup.html), over the
+// 2026-10-08 redesign's two views.
 //
 //   Sam, 2026-10-08: "Sierra is a little busy on the UI and should have fewer
 //   boxes... maximally clean and simple... I do think it's useful to keep the
-//   chips that adjust the reposes to the audience type though. Maybe we cycle
-//   through our First Light plein air artwork". On the mock-up: "Love the Sierra
-//   mock up" and "Yes, painting folds away as you designed".
+//   chips that adjust the reposes to the audience type though."
+//   Sam, 2026-10-24: "Seeing the format of Sierra next to the new format is a
+//   little incongruous. Been thinking about switching the paintings out and
+//   having no pics and a simpler look so it can function as a sidebar better.
+//   Can you align her format with the new library look while preserving her
+//   basics?" On the mock-up: "White background for her as well".
 //
 // WHAT THIS GUARDS, and why each is here rather than left to reading:
 //
-//   (1) THE PAINTINGS ARE THE ONES ON DISK. sierra.js carries the list; the
-//       runner that fetched the files wrote art/manifest.json. A painting renamed
-//       in one and not the other is a broken image on a public page, so the two
-//       must agree, field for field, and every file the page asks for must exist.
-//   (2) TWO VIEWS, ONE FORM. Arriving, the bar rides the painting; the first
-//       question folds the landing away and docks the bar; New question starts
+//   (1) THE PAINTINGS ARE GONE. No art element, caption or control on the page,
+//       no art file asked for, no art rule in the stylesheet; starter questions
+//       stand where the painting was.
+//   (2) TWO VIEWS, ONE FORM. Arriving, the box sits under the greeting; the first
+//       question folds the landing away and docks the box; New question starts
 //       over, history included (a "new" question that still carries the last
 //       conversation would answer the wrong thing).
-//   (3) MOTION IS EARNED. The cycle runs only when the browser can say motion
-//       is welcome; it stops at reduced motion, at the reader's first keystroke
-//       or return to the box, and when the conversation starts. Pause is a word.
-//       Only the painting shown and the next one are fetched, never all seven.
+//   (3) NOTHING MOVES ON ITS OWN. With the paintings gone the page starts no
+//       timer and cross-fades nothing.
 //   (4) THE AUDIENCE ROW FOLDS WITHOUT LOSING ITS RULE. The pick is still
 //       required before the first send; when the row is folded, the refusal
 //       opens it, and a pick closes it and hands focus back to its control.
@@ -29,9 +30,13 @@
 //   (6) ONE THEME CONTROL. The reader's COBI choice (cpl_theme, same origin)
 //       holds here; with none the page follows the OS. Only light and dark are
 //       honored, so a stored "system" or garbage changes nothing.
-//   (7) FIRST LIGHT, SELF-CONTAINED. Every hex lives in a :root block, the dark
-//       palette is written twice (media query and explicit attribute) with the
-//       same values, and the page loads no font or file from a third party.
+//   (7) THE LIBRARY LOOK, SELF-CONTAINED. A white page whose navy title and gold
+//       rule are the library's own values (read from library/index.html, so the
+//       two cannot drift); every hex lives in a :root block; the dark palette is
+//       written twice with the same values; the page loads no web font and no
+//       file from a third party; every link off the site says it opens a new tab.
+//   (8) THE SIDE BAR. ?panel=1 marks the page before the stylesheet paints, and
+//       the header row keeps About Sierra alone.
 //
 // Run from repo root: `npm test` (or `node tests/sierra_redesign.test.js`).
 const fs = require("fs");
@@ -48,7 +53,7 @@ async function block(label, fn) {
 const HTML = fs.readFileSync("sierra/index.html", "utf8");
 const SRC = fs.readFileSync("sierra/sierra.js", "utf8");
 const CSS = fs.readFileSync("sierra/sierra.css", "utf8");
-const MANIFEST = JSON.parse(fs.readFileSync("sierra/art/manifest.json", "utf8"));
+const LIB = fs.readFileSync("library/index.html", "utf8");
 
 function streamResp(text) {
   const enc = new TextEncoder();
@@ -92,35 +97,33 @@ function ask(w, text) {
 }
 
 (async function () {
-  await block("(1) the paintings are the ones on disk", async () => {
-    const { w, API } = loadDom();
-    const fields = ["slug", "title", "artist", "year", "focal", "alt"];
-    const pick = (a) => fields.map((f) => a[f]);
-    check("(1) ⭐ sierra.js and art/manifest.json list the same paintings, field for field, in order",
-      API.ART.length === MANIFEST.paintings.length &&
-      JSON.stringify(API.ART.map(pick)) === JSON.stringify(MANIFEST.paintings.map(pick)),
-      "a painting renamed in one place is a broken image on a public page");
-    const missing = [];
-    API.ART.forEach((a) => ["800", "1600"].forEach((s) => {
-      const f = path.join("sierra/art", a.slug + "-" + s + ".webp");
-      if (!fs.existsSync(f)) missing.push(f);
-    }));
-    check("(1) every painting the page asks for exists in both sizes", missing.length === 0, missing.join(", "));
-    check("(1) one starter question per painting", API.SUGGESTED.length === API.ART.length);
+  await block("(1) the paintings are gone", async () => {
+    const { w, d, API } = loadDom();
+    check("(1) ⭐ no painting, caption or painting control on the page",
+      !d.getElementById("s-arts") && !d.getElementById("s-cap") && !d.getElementById("s-prev") &&
+      !d.getElementById("s-pause") && !d.getElementById("s-next") && !d.querySelector("img.s-art"),
+      "Sam, 2026-10-24: \"switching the paintings out and having no pics\"");
+    check("(1) sierra.js asks for no art file and carries no painting list",
+      !/\.\/art\//.test(SRC) && API.ART === undefined && API.showPainting === undefined);
+    check("(1) the stylesheet carries no painting rule", !/\.s-art\b|\.s-arts\b|\.s-under\b|\.s-cap\b/.test(CSS));
+    check("(1) ⭐ starter questions stand where the painting was, drawn from her own starters",
+      API.TRIES.length === 3 && API.TRIES.every((q) => API.SUGGESTED.indexOf(q) > -1) &&
+      d.querySelectorAll("#s-try-list .s-try-q").length === 3 &&
+      d.getElementById("s-try").compareDocumentPosition(d.getElementById("s-frame")) === w.Node.DOCUMENT_POSITION_PRECEDING);
     w.close();
   });
 
   await block("(2) two views, one form", async () => {
     const { w, d, API, requests } = loadDom({ audience: "student" });
     const form = d.getElementById("s-form");
-    check("(2) the page arrives on the arriving view, the bar on the painting",
+    check("(2) the page arrives on the arriving view, the box under the greeting",
       d.body.getAttribute("data-view") === "arriving" && form.parentNode.id === "s-frame" && API.getView() === "arriving");
     check("(2) there is one form, one box and one audience row on the page",
       d.querySelectorAll("form").length === 1 && d.querySelectorAll("#s-input").length === 1 &&
       d.querySelectorAll("#s-audience").length === 1);
     ask(w, "Which colleges teach welding?");
     await drain();
-    check("(2) ⭐ the first question folds the landing away and docks the bar",
+    check("(2) ⭐ the first question folds the landing away and docks the box",
       d.body.getAttribute("data-view") === "asking" && form.parentNode.id === "s-dock");
     check("(2) the docked box invites a follow-up", d.getElementById("s-input").placeholder === "Ask a follow-up");
     check("(2) the question and the answer are in the log, the answer named Sierra in words",
@@ -133,7 +136,7 @@ function ask(w, text) {
     check("(2) ⭐ her Whitney mark sits beside her name, hidden from a screen reader",
       mark && mark.getAttribute("aria-hidden") === "true" && !!mark.querySelector("svg circle"));
     d.getElementById("s-new").click();
-    check("(2) ⭐ New question brings the landing back with the bar on the painting",
+    check("(2) ⭐ New question brings the landing back with the box under the greeting",
       d.body.getAttribute("data-view") === "arriving" && form.parentNode.id === "s-frame");
     check("(2) …and clears the conversation", d.getElementById("s-log").children.length === 0);
     ask(w, "What is CPL?");
@@ -148,53 +151,14 @@ function ask(w, text) {
     w.close();
   });
 
-  await block("(3) motion is earned", async () => {
-    {
-      const { w, d, API } = loadDom();
-      check("(3) ⭐ no matchMedia (the preference cannot be read): the paintings hold still",
-        API.cycling() === false && d.getElementById("s-pause").textContent === "Play");
-      check("(3) …and only the painting shown is fetched", d.querySelectorAll("#s-arts img").length === 1);
-      const img = d.querySelector("#s-arts img.on");
-      check("(3) the shown painting carries its alt and its focal point",
-        img && img.alt === API.ART[0].alt && img.style.objectPosition === API.ART[0].focal);
-      check("(3) the caption names artist, title and year",
-        d.getElementById("s-cap").textContent === API.ART[0].artist + ", " + API.ART[0].title + ", " + API.ART[0].year &&
-        (d.querySelector("#s-cap i") || {}).textContent === API.ART[0].title);
-      d.getElementById("s-prev").click();
-      check("(3) Previous wraps from the first painting to the last",
-        API.paintingIndex() === API.ART.length - 1 &&
-        d.querySelectorAll("#s-arts img[alt]:not([alt=''])").length === 1);
-      d.getElementById("s-next").click();
-      check("(3) Next wraps back to the first", API.paintingIndex() === 0);
-      w.close();
-    }
-    {
-      const { w, d, API } = loadDom({ motion: "reduce" });
-      check("(3) ⭐ under reduced motion the paintings hold still", API.cycling() === false);
-      w.close();
-    }
-    {
-      const { w, d, API } = loadDom({ motion: "ok", audience: "student" });
-      check("(3) ⭐ when motion is welcome the paintings cycle, and Pause says Pause",
-        API.cycling() === true && d.getElementById("s-pause").textContent === "Pause");
-      check("(3) …the next painting is ready before its turn, and no more (two, never seven)",
-        d.querySelectorAll("#s-arts img").length === 2);
-      check("(3) the arrival focus does not stop the cycle", API.cycling() === true);
-      d.getElementById("s-pause").click();
-      check("(3) Pause stops it and becomes Play", API.cycling() === false && d.getElementById("s-pause").textContent === "Play");
-      d.getElementById("s-pause").click();
-      const input = d.getElementById("s-input");
-      input.dispatchEvent(new w.Event("input", { bubbles: true }));
-      check("(3) ⭐ the reader's first keystroke stops it for good", API.cycling() === false);
-      d.getElementById("s-pause").click();
-      check("(3) (Play restarts it)", API.cycling() === true);
-      ask(w, "What is CPL?");
-      await drain();
-      check("(3) ⭐ the conversation stops it", API.cycling() === false);
-      w.close();
-    }
-    check("(3) the cross-fade stands down under reduced motion",
-      /prefers-reduced-motion: reduce\)\s*\{[\s\S]*?\.s-art\s*\{\s*transition:\s*none/.test(CSS));
+  await block("(3) nothing moves on its own", async () => {
+    const timers = [];
+    const { w } = loadDom({ motion: "ok" });
+    check("(3) ⭐ the page starts no repeating timer", !/setInterval\(/.test(SRC));
+    check("(3) the stylesheet cross-fades nothing", !/transition:\s*opacity/.test(CSS));
+    check("(3) under reduced motion the two cues that animate stand down",
+      /prefers-reduced-motion: reduce\)\s*\{[\s\S]*?\.s-typing\s*\{\s*animation:\s*none[\s\S]*?\.s-audience\.s-need\s*\{\s*animation:\s*none/.test(CSS));
+    w.close();
   });
 
   await block("(4) the audience row folds without losing its rule", async () => {
@@ -261,20 +225,18 @@ function ask(w, text) {
   });
 
   await block("(2b) the mountain line is kept", async () => {
-    const ridges = (HTML.match(/<span class="s-peak">(?:<span class="s-sr">Sierra<\/span>)?<span class="s-nameword"[^>]*>S&#305;<span class="s-tittle"><\/span>erra<\/span><svg class="s-ridge"[^>]*aria-hidden="true"[\s\S]*?<\/svg><\/span>/g) || []);
+    const peak = /<span class="s-peak">Sierra<svg class="s-ridge"[^>]*aria-hidden="true"[\s\S]*?<\/svg><\/span>/g;
+    const ridges = HTML.match(peak) || [];
     check("(2b) ⭐ the logo stands over her name in the greeting and in the reading header",
-      ridges.length === 2 && /<h1>Hello, I'm <span class="s-peak"><span class="s-sr">Sierra<\/span><span class="s-nameword" aria-hidden="true">/.test(HTML),
+      ridges.length === 2 && /<h1>Hello, I'm <span class="s-peak">Sierra<svg class="s-ridge"/.test(HTML),
       "Sam, 2026-10-08: \"I like the mountain line\"");
-    // Sam, 2026-10-08: "a dark blue ghosted font with a much thicker same color
-    // mountain line... Match the font width and mountain line."
-    check("(2b) ⭐ the name and its line share one ghosted dark blue, by token in light and dark",
+    check("(2b) ⭐ the name and its line share one navy, by token in light and dark",
       /class="s-ridge"[\s\S]*?stroke="currentColor"/.test(HTML) &&
       /\.s-peak\s*\{[^}]*color:\s*var\(--sierra-ghost\)/.test(CSS) &&
       /\.s-ridge\s*\{[^}]*color:\s*inherit/.test(CSS) &&
       (CSS.match(/--sierra-ghost:\s*#[0-9A-Fa-f]{6}/g) || []).length === 3);
-    // Then: "Keep the ridgeline mostly above Sierra. Can you just use the current
-    // logo expanded?" The inline drawing IS whitney-mark.svg, path for path, at
-    // its own proportions (its stroke scales with it), so the two cannot drift.
+    // "Can you just use the current logo expanded?" The inline drawing IS
+    // whitney-mark.svg, path for path, at its own proportions.
     const logo = fs.readFileSync("sierra/whitney-mark.svg", "utf8");
     const norm = (t) => t.replace(/\s+/g, " ").trim();
     const logoPaths = (logo.match(/<path d="([^"]+)"/g) || []).map((m) => norm(m.slice(9, -1)));
@@ -283,36 +245,21 @@ function ask(w, text) {
     check("(2b) ⭐ the logo is whitney-mark.svg as drawn: its ridge and its snow, path for path",
       logoPaths.length === 2 && JSON.stringify(inlinePaths) === JSON.stringify(logoPaths) &&
       /stroke-width="3\.8"/.test(inline) && !/vector-effect/.test(inline));
-    check("(2b) ⭐ it sits mostly above the name: its foot at the letters' tops, room above the greeting",
-      /\.s-ridge\s*\{[^}]*bottom:\s*\.6\d*em/.test(CSS) && /\.s-hello h1\s*\{\s*padding-top:/.test(CSS));
-    // Sam, 2026-10-08: "Keep the ridgeline out of the S." The S's ink ends at
-    // 18.9% of the word in Playfair SemiBold (measured); the drawing is trimmed
-    // before it, square to the line, so the logo rises from just right of the S.
-    check("(2b) ⭐ the logo stays out of the S: trimmed square to the line before the S",
-      /\.s-ridge\s*\{[^}]*clip-path:\s*polygon\(3\.2% 0, 100% 0, 100% 100%, 28\.3% 100%\)/.test(CSS));
-    // Then: "If you move the dot over the i down lower it won't interfere with
-    // the ridgeline." The word carries a dotless i and its own dot, lower than
-    // the font's (0.627em) and still clear of the stem (0.528em).
-    const tittleBottom = parseFloat((CSS.match(/\.s-tittle::after\s*\{[^}]*bottom:\s*([.\d]+)em/) || [])[1]);
-    check("(2b) ⭐ the dot over the i sits lower than the font's, still clear of the stem",
-      tittleBottom > 0.528 + 0.03 && tittleBottom < 0.627 &&
-      (HTML.match(/S&#305;<span class="s-tittle"><\/span>erra/g) || []).length === 2);
-    check("(2b) the letters' halo in the page color keeps them clear where the logo meets them",
-      /\.s-ridge\s*\{[^}]*bottom:/.test(CSS) &&
-      /\.s-peak\s*\{\s*text-shadow:[^}]*var\(--sierra-paper\)/.test(CSS));
+    // "Keep the ridgeline mostly above Sierra": in Georgia it sits wholly above the
+    // word, in room the name makes for it, so no letter needs a halo or a moved dot.
+    check("(2b) ⭐ it sits above the name, in room the name makes for it",
+      /\.s-peak\s*\{[^}]*padding-top:\s*\.4\d*em/.test(CSS) &&
+      /\.s-ridge\s*\{[^}]*top:\s*0;[^}]*height:\s*\.5em/.test(CSS) && !/s-tittle|&#305;/.test(HTML + CSS));
     const { w, d } = loadDom();
-    // A screen reader hears the plain word: the dotless spelling is hidden from
-    // it, and a clipped "Sierra" stands in.
     const spoken = (el) => Array.prototype.map.call(el.childNodes, (n) =>
       n.nodeType === 3 ? n.textContent
         : (n.getAttribute && n.getAttribute("aria-hidden") === "true") ? "" : spoken(n)).join("");
-    check("(2b) ⭐ the greeting still reads as plain words to a screen reader",
-      spoken(d.querySelector("h1")) === "Hello, I'm Sierra" &&
-      !!d.querySelector("h1 .s-sr") && d.querySelector("h1 .s-nameword").getAttribute("aria-hidden") === "true");
+    check("(2b) ⭐ the greeting reads as plain words to a screen reader",
+      spoken(d.querySelector("h1")) === "Hello, I'm Sierra" && d.querySelector("h1 .s-ridge").getAttribute("aria-hidden") === "true");
     w.close();
   });
 
-  await block("(7) First Light, self-contained", async () => {
+  await block("(7) the library look, self-contained", async () => {
     const noRoot = CSS.replace(/\/\*[\s\S]*?\*\//g, "")
       .replace(/:root[^{]*\{[^}]*\}/g, "");
     const stray = noRoot.match(/#[0-9a-fA-F]{3,8}\b/g) || [];
@@ -323,15 +270,53 @@ function ask(w, text) {
     check("(7) ⭐ the dark palette is written twice with the same values (the OS, and the reader's choice)",
       lightDark.length > 100 && norm(lightDark) === norm(explicitDark),
       "an explicit choice must beat the OS in both directions — the cpl_theme.js contract");
-    check("(7) the page loads no font or file from a third party",
-      !/fonts\.googleapis|fonts\.gstatic|cdn\.|unpkg/.test(HTML + CSS) &&
-      !/url\(\s*['"]?https?:/.test(CSS));
-    const faces = CSS.match(/url\('\.\/fonts\/[^']+'\)/g) || [];
-    check("(7) the four font faces are self-hosted and on disk, with their licenses",
-      faces.length === 4 && faces.every((u) => fs.existsSync(path.join("sierra", u.slice(5, -2)))) &&
-      fs.existsSync("sierra/fonts/OFL-playfair-display.txt") && fs.existsSync("sierra/fonts/OFL-source-sans-3.txt"));
-    check("(7) the only off-site link is the logo's, to the MAP platform, and it says it opens a new tab",
-      (HTML.match(/href="https?:\/\/[^"]+"/g) || []).join() === 'href="https://map.rccd.edu"');
+    // The library's own light values, read from its page, so a change there shows here.
+    const libRoot = (LIB.match(/:root \{([\s\S]*?)\n\}/) || [])[1] || "";
+    const lib = (name) => ((libRoot.match(new RegExp("--" + name + ":\\s*(#[0-9A-Fa-f]{6})")) || [])[1] || "").toUpperCase();
+    const sierraRoot = (CSS.match(/^:root \{([\s\S]*?)\n\}/m) || [])[1] || "";
+    const own = (name) => ((sierraRoot.match(new RegExp("--sierra-" + name + ":\\s*(#[0-9A-Fa-f]{6})")) || [])[1] || "").toUpperCase();
+    check("(7) ⭐ a white page (Sam: \"White background for her as well\")", own("paper") === "#FFFFFF" &&
+      /body\s*\{[^}]*background:\s*var\(--sierra-paper\)/.test(CSS));
+    check("(7) ⭐ her title, gold rule, ink, links and field edge are the library's own values",
+      lib("title") && own("title") === lib("title") && own("gold") === lib("gold") && own("ink") === lib("ink") &&
+      own("cobalt") === lib("link") && own("field") === lib("field") && own("heading") === lib("heading"),
+      "library: title " + lib("title") + ", gold " + lib("gold") + "; sierra: " + own("title") + ", " + own("gold"));
+    check("(7) her landing takes the library's fade (\"Fades white to pale blue looks good too\"), never the conversation or the bar",
+      /:root:not\(\[data-panel\]\) body\[data-view="arriving"\] \{\s*background-image: linear-gradient\(180deg, var\(--sierra-paper\) 0, var\(--sierra-fade-mid\) 38rem, var\(--sierra-fade-end\) 100%\);/.test(CSS) &&
+      own("fade-mid") === lib("page") && own("fade-end") === lib("page-end"));
+    check("(7) her headings are Georgia, as the library's are",
+      /--sierra-display:\s*Georgia/.test(CSS) && /--serif:\s*Georgia/.test(LIB));
+    check("(7) the page loads no web font and no file from a third party",
+      !/@font-face/.test(CSS) && !/rel="preload"[^>]*as="font"/.test(HTML) &&
+      !/fonts\.googleapis|fonts\.gstatic|cdn\.|unpkg/.test(HTML + CSS) && !/url\(\s*['"]?https?:/.test(CSS));
+    const offsite = HTML.match(/<a [^>]*href="https?:\/\/[^"]+"[^>]*>[\s\S]*?<\/a>/g) || [];
+    const hosts = offsite.map((a) => (a.match(/href="([^"]+)"/) || [])[1]);
+    check("(7) ⭐ the logo goes to MAP, and the footer carries the public header's links out",
+      hosts[0] === "https://map.rccd.edu" &&
+      ["/fact-sheet/", "cpllandingpages", "insights/dashboard", "creditforbeingyou.org", "/library/"].every((k) => hosts.some((h) => h.indexOf(k) > -1)));
+    check("(7) every link off the site opens a new tab and says so",
+      offsite.length >= 6 && offsite.every((a) => /target="_blank"/.test(a) && /rel="noopener"/.test(a) && /class="s-sr">[^<]*opens in a new tab/.test(a)));
+  });
+
+  await block("(8) the side bar", async () => {
+    const head = (HTML.match(/<head>[\s\S]*?<\/head>/) || [""])[0];
+    const scripts = (head.match(/<script>[\s\S]*?<\/script>/g) || []).map((t) => t.slice(8, -9));
+    const panelScript = scripts.find((t) => /data-panel/.test(t)) || "";
+    const marks = (search) => {
+      const dom = new JSDOM("<!doctype html><html><head></head><body></body></html>",
+        { url: "https://cpl-initiative.github.io/cpl-project-tracker/sierra/" + search, runScripts: "outside-only" });
+      dom.window.eval(panelScript);
+      const on = dom.window.document.documentElement.hasAttribute("data-panel");
+      dom.window.close();
+      return on;
+    };
+    check("(8) ⭐ ?panel=1 marks the page in <head>, before the stylesheet paints",
+      panelScript.length > 0 && head.indexOf(panelScript) < head.indexOf('href="./sierra.css"') &&
+      marks("?panel=1") && marks("?theme=dark&panel=1") && !marks("") && !marks("?panel=10"));
+    check("(8) ⭐ in the bar the header keeps About Sierra alone: the logo, her name, the theme words and the links stand down",
+      /:root\[data-panel\] \.s-home, :root\[data-panel\] \.s-who-head, :root\[data-panel\] \.s-theme, :root\[data-panel\] \.s-links \{ display: none; \}/.test(CSS) &&
+      !/:root\[data-panel\][^{]*\.s-about\b[^{]*\{[^}]*display:\s*none/.test(CSS));
+    check("(8) the side bar asks for the panel", /'\?panel=1'/.test(fs.readFileSync("sierra/sidebar.js", "utf8")));
   });
 
   let pass = 0;

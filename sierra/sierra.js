@@ -32,8 +32,9 @@
 
   // Starter questions — a mix that shows off the offerings/adoption reasoning
   // (construction/NCCER, "near me") plus the classic statewide/metrics asks.
-  // Since the redesign (Sam, 2026-10-08) they ride the question box's
-  // placeholder, one per painting ("Try: …"), in place of the row of pills.
+  // The first rides the question box's placeholder ("Try: …"); TRIES picks the
+  // ones the landing offers as words where the paintings were (Sam, 2026-10-24:
+  // "switching the paintings out and having no pics and a simpler look").
   var SUGGESTED = [
     'What is Credit for Prior Learning?',
     'Where can students get college credit for NCCER or OSHA certifications?',
@@ -43,32 +44,7 @@
     'Which colleges give credit for an EMT certification?',
     'How does my Joint Services Transcript count?',
   ];
-
-  // ── The paintings the landing cycles through ──
-  // Sam, 2026-10-08: "Maybe we cycle through our First Light plein air artwork
-  // like America.gov cycles through pics of americana." Seven California works
-  // from First Light's set, public domain, copied by a runner into ./art
-  // (scripts/fetch_sierra_art.py), so the page loads nothing from a third party.
-  // This list mirrors art/manifest.json; tests/sierra_redesign.test.js fails
-  // when the two drift. focal is the object-position that keeps the subject in a
-  // phone's crop.
-  var ART = [
-    { slug: 'redmond-poppy-field', title: 'California Poppy Field', artist: 'Granville Redmond', year: '1915', focal: '50% 60%',
-      alt: 'A sunlit field of orange poppies stretching toward low green hills under a soft blue sky.' },
-    { slug: 'payne-mountain-lake', title: 'Mountain Lake', artist: 'Edgar Payne', year: 'c. 1920s', focal: '50% 45%',
-      alt: 'A glassy alpine lake mirroring granite peaks beneath a cloud-streaked sky.' },
-    { slug: 'rose-carmel-dunes', title: 'Carmel Dunes', artist: 'Guy Rose', year: 'c. 1918-20', focal: '50% 55%',
-      alt: 'Rolling sand dunes spotted with scrub under a glowing sky, with a hint of sea beyond.' },
-    { slug: 'hill-emerald-bay', title: 'Emerald Bay, Lake Tahoe', artist: 'Thomas Hill', year: '1864', focal: '50% 55%',
-      alt: 'A calm green mountain bay ringed by pine-covered slopes and distant snow peaks.' },
-    { slug: 'payne-laguna-beach', title: 'Laguna Beach', artist: 'Edgar Payne', year: 'c. 1920s', focal: '50% 50%',
-      alt: 'Rocky coastal bluffs above a blue cove, with surf breaking against the rocks.' },
-    { slug: 'redmond-coastal-wildflowers', title: 'Coastal Wildflowers', artist: 'Granville Redmond', year: 'c. 1912', focal: '50% 60%',
-      alt: 'A coastal hillside carpeted in orange and purple wildflowers sloping toward the ocean.' },
-    { slug: 'bierstadt-sierra-nevada-morning', title: 'Sierra Nevada Morning', artist: 'Albert Bierstadt', year: 'c. 1870', focal: '50% 50%',
-      alt: 'A misty Sierra valley at dawn, light breaking over a waterfall and a lake.' },
-  ];
-  var CYCLE_MS = 9000;
+  var TRIES = [SUGGESTED[1], SUGGESTED[3], SUGGESTED[6]];
 
   var convo = [];          // prior {role,content} turns → sent as history (multi-turn)
   var CONVO_MAX = 8;
@@ -708,7 +684,7 @@
     if (!audience) { needAudience(); return; }
     busy = true;
     sendBtn.disabled = true; inputEl.disabled = true;
-    setView('asking');          // the painting folds away at the first question
+    setView('asking');          // the landing folds away at the first question
     addUserMsg(q);
     inputEl.value = '';
     fitInput();
@@ -805,15 +781,17 @@
     if (!inputEl || inputEl.tagName !== 'TEXTAREA') return;
     var v = inputEl.value, h = 0;
     inputEl.style.height = 'auto';
+    // scrollHeight leaves the border out, and the box is sized border-box.
+    var edge = inputEl.offsetHeight - inputEl.clientHeight;
     if (v) h = inputEl.scrollHeight;
     else {
-      var hints = view === 'arriving'
-        ? SUGGESTED.map(function (q) { return 'Try: ' + q; }) : [inputEl.placeholder];
-      hints.forEach(function (t) { inputEl.value = t; h = Math.max(h, inputEl.scrollHeight); });
+      // An empty box fits its one placeholder, so a long "Try:" wraps whole.
+      inputEl.value = inputEl.placeholder;
+      h = inputEl.scrollHeight;
       inputEl.value = '';
     }
     // No layout (a test DOM, a hidden frame) reads 0: leave the stylesheet's size.
-    inputEl.style.height = h ? Math.min(h, INPUT_MAX_PX) + 'px' : '';
+    inputEl.style.height = h ? Math.min(h + edge, INPUT_MAX_PX) + 'px' : '';
     inputEl.style.overflowY = h > INPUT_MAX_PX ? 'auto' : 'hidden';
   }
 
@@ -827,79 +805,74 @@
     } catch (e) { return false; }
   }
 
-  // ── The paintings (arriving view) ──
-  // One <img> per painting, made on demand: the one shown and, while the cycle
-  // runs, the next one, so a phone fetches two paintings on arrival and never
-  // all seven. Previous, Pause and Next are words (WCAG 2.2.2: anything that
-  // moves on its own for more than five seconds can be paused). The cycle stops
-  // for good once the reader types or comes back to the question box, and when
-  // the conversation starts.
-  var artIdx = 0, artTimer = null, artPaused = true, artsEl, capEl, pauseBtn;
-  function artImg(k) {
-    if (!artsEl) return null;
-    var existing = artsEl.querySelector('img[data-k="' + k + '"]');
-    if (existing) return existing;
-    var a = ART[k];
-    var img = document.createElement('img');
-    img.className = 's-art';
-    img.setAttribute('data-k', String(k));
-    img.src = './art/' + a.slug + '-1600.webp';
-    img.srcset = './art/' + a.slug + '-800.webp 800w, ./art/' + a.slug + '-1600.webp 1600w';
-    img.sizes = '(max-width: 560px) 100vw, 980px';
-    img.alt = '';
-    img.decoding = 'async';
-    img.style.objectPosition = a.focal;
-    artsEl.appendChild(img);
-    return img;
-  }
-  function showPainting(k) {
-    artIdx = ((k % ART.length) + ART.length) % ART.length;
-    var cur = artImg(artIdx);
-    if (artsEl) {
-      Array.prototype.forEach.call(artsEl.querySelectorAll('img'), function (im) {
-        var on = im === cur;
-        im.classList.toggle('on', on);
-        im.alt = on ? ART[artIdx].alt : '';
+  // ── The starter questions (arriving view) ──
+  // Each is a word that asks itself: it fills the box and sends, so the audience
+  // rule still holds (no pick, and the refusal says where the words are).
+  function renderTries() {
+    var list = document.getElementById('s-try-list');
+    if (!list) return;
+    list.textContent = '';
+    TRIES.forEach(function (q) {
+      var li = document.createElement('li');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 's-try-q';
+      b.textContent = q;
+      b.addEventListener('click', function () {
+        if (!inputEl || busy) return;
+        inputEl.value = q;
+        fitInput();
+        submit();
       });
+      li.appendChild(b);
+      list.appendChild(li);
+    });
+  }
+
+  // ── Light and Dark (the public header's words) ──
+  // They set data-theme and remember the choice as cpl_theme, the key COBI and
+  // the library read. With no choice the page follows the OS, and the word
+  // pressed is the one the OS gives.
+  function themeNow() {
+    var t = document.documentElement.getAttribute('data-theme');
+    if (t === 'light' || t === 'dark') return t;
+    try { return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    catch (e) { return 'light'; }
+  }
+  function paintTheme() {
+    var t = themeNow();
+    Array.prototype.forEach.call(document.querySelectorAll('[data-theme-pick]'), function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-theme-pick') === t ? 'true' : 'false');
+    });
+  }
+  function wireTheme() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-theme-pick]'), function (b) {
+      b.addEventListener('click', function () {
+        var t = b.getAttribute('data-theme-pick') === 'dark' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        try { localStorage.setItem('cpl_theme', t); } catch (e) { /* a private window: the choice holds for this visit */ }
+        paintTheme();
+      });
+    });
+    window.addEventListener('storage', function (e) {
+      if (!e || e.key !== 'cpl_theme' || (e.newValue !== 'light' && e.newValue !== 'dark')) return;
+      document.documentElement.setAttribute('data-theme', e.newValue);
+      paintTheme();
+    });
+    try {
+      var mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+      if (mq && mq.addEventListener) mq.addEventListener('change', paintTheme);
+    } catch (e) { /* no matchMedia: the words still set the theme */ }
+    // A host that frames her (sidebar.js) sets data-theme on this page directly.
+    if (window.MutationObserver) {
+      new MutationObserver(paintTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     }
-    if (!artPaused) artImg((artIdx + 1) % ART.length);   // ready before its turn
-    var a = ART[artIdx];
-    if (capEl) {
-      capEl.textContent = '';
-      capEl.appendChild(document.createTextNode(a.artist + ', '));
-      var t = document.createElement('i');
-      t.textContent = a.title;
-      capEl.appendChild(t);
-      capEl.appendChild(document.createTextNode(', ' + a.year));
-    }
-    if (inputEl) inputEl.placeholder = 'Try: ' + SUGGESTED[artIdx % SUGGESTED.length];
-  }
-  function runCycle() {
-    if (artTimer) { clearInterval(artTimer); artTimer = null; }
-    if (!artPaused) artTimer = setInterval(function () { showPainting(artIdx + 1); }, CYCLE_MS);
-  }
-  function setArtPaused(p) {
-    artPaused = !!p;
-    if (pauseBtn) pauseBtn.textContent = artPaused ? 'Play' : 'Pause';
-    if (!artPaused) artImg((artIdx + 1) % ART.length);
-    runCycle();
-  }
-  function wireArt() {
-    artsEl = document.getElementById('s-arts');
-    capEl = document.getElementById('s-cap');
-    pauseBtn = document.getElementById('s-pause');
-    var prev = document.getElementById('s-prev'), next = document.getElementById('s-next');
-    if (prev) prev.addEventListener('click', function () { showPainting(artIdx - 1); runCycle(); });
-    if (next) next.addEventListener('click', function () { showPainting(artIdx + 1); runCycle(); });
-    if (pauseBtn) pauseBtn.addEventListener('click', function () { setArtPaused(!artPaused); });
-    artPaused = !motionOk();
-    showPainting(0);
-    setArtPaused(artPaused);
+    paintTheme();
   }
 
   // ── The two views ──
-  // arriving: the greeting and the painting, the question bar on its top edge.
-  // asking:   the conversation in a centered column, the question bar docked.
+  // arriving: the greeting, the question box and the starter questions.
+  // asking:   the conversation in a centered column, the question box docked.
   // The view lives on <body data-view>, and the one form moves between the
   // frame and the dock, so its ids (s-form, s-input, s-send, s-audience) stay
   // single for every caller: the tests, the a11y sweep and the vendor embed.
@@ -914,8 +887,7 @@
     if (document.body) document.body.setAttribute('data-view', v);
     if (inputEl) inputEl.placeholder = v === 'asking'
       ? 'Ask a follow-up'
-      : 'Try: ' + SUGGESTED[artIdx % SUGGESTED.length];
-    if (v === 'asking') setArtPaused(true);
+      : 'Try: ' + SUGGESTED[0];
     setAudienceOpen(false);
     view = v;
     fitInput();
@@ -947,7 +919,9 @@
     loadAudience();
     renderAudience();
     wireAbout();
-    wireArt();
+    wireTheme();
+    renderTries();
+    if (inputEl) inputEl.placeholder = 'Try: ' + SUGGESTED[0];
     prefillAsk();
 
     if (audToggle) audToggle.addEventListener('click', function () {
@@ -977,10 +951,6 @@
     syncScrollRegions();
 
     inputEl.focus();
-    // Attached after the arrival focus above, so the cycle runs until the reader
-    // acts: typing, or coming back to the question box, stops it for good.
-    inputEl.addEventListener('focus', function () { setArtPaused(true); });
-    inputEl.addEventListener('input', function () { setArtPaused(true); });
   }
 
   if (document.readyState === 'loading') {
@@ -997,9 +967,8 @@
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
     SIERRA_MARK: SIERRA_MARK, ctxVariant: ctxVariant, buildPayload: buildPayload,
     syncScrollRegions: syncScrollRegions,
-    ART: ART, CYCLE_MS: CYCLE_MS, setView: setView, showPainting: showPainting,
+    TRIES: TRIES, setView: setView, paintTheme: paintTheme,
     getView: function () { return view; },
-    paintingIndex: function () { return artIdx; },
-    cycling: function () { return !!artTimer; },
+    panel: function () { return document.documentElement.hasAttribute('data-panel'); },
   };
 })();
