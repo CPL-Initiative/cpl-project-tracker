@@ -11,7 +11,10 @@
  *   Claude's commentary is grounded in authoritative CPL framing.
  *
  * Requires:
- *   window.CPL_REPORT_PROXY_URL   — Cloudflare Worker proxy for Claude API
+ *   window.CPL_WRITER             — cpl_writer.js, the one writer module (the voice, the
+ *                                   words, the naming rule, the audiences, the one model and
+ *                                   the proxy call; Sam's Sheet 118 ruling 5): this file
+ *                                   names no model and keeps no copy
  *   window.COLLEGE_ACTIVITY_DATA  — per-college outcomes
  *   window.COLLEGE_DISCIPLINE_DETAIL — per-college discipline breakdown
  *   window.CPL_KB                 — KB excerpt (optional; omitted if missing)
@@ -21,18 +24,13 @@
 (function () {
     'use strict';
 
-    var PROXY_URL = window.CPL_REPORT_PROXY_URL || '';
-    var CLAUDE_MODEL = 'claude-sonnet-4-5';
+    // The one writer module (cpl_writer.js, window.CPL_WRITER, static in both HTMLs before
+    // this file): the shared rules, the one model and the proxy call.
+    var W = window.CPL_WRITER;
+    if (!W) throw new Error('college_report_generator.js needs cpl_writer.js loaded first (window.CPL_WRITER)');
 
-    // ── Audience prompts (mirrors report_generator.js) ──
-    var AUDIENCES = [
-        { id: 'legislators',  label: 'State Legislators & Legislative Staff', prompt: 'Write for California state legislators and legislative staff. Emphasize ROI, fiscal impact, student outcomes, policy alignment with AB 1071 and Vision 2030, and statewide scale. Use formal but accessible language. Lead with measurable impact.' },
-        { id: 'ccc_leaders',  label: "CCC System Leaders (Chancellor's Office, Presidents)", prompt: "Write for California Community College system leaders — the Chancellor's Office and college presidents. Emphasize strategic alignment with Vision 2030, institutional adoption metrics, implementation progress, and scalability across all California community colleges. Professional and strategic tone." },
-        { id: 'faculty',      label: 'Faculty & Academic Senate', prompt: 'Write for faculty and academic senate members. Emphasize academic rigor, credit recommendation quality, faculty workgroup outcomes, discipline-specific progress, and how CPL maintains academic standards while expanding access. Collegial and evidence-based tone.' },
-        { id: 'veterans',     label: 'Veterans & Military Partners', prompt: 'Write for military service members, veterans, and military education partners. Emphasize JST credit translation, military-specific CPL pathways, Star Colleges network, and how military training translates to college credit. Warm, respectful, action-oriented tone.' },
-        { id: 'workforce',    label: 'Workforce & Industry Partners', prompt: 'Write for workforce development boards, employers, and industry partners. Emphasize skills-based credentials, apprenticeship pathways, industry-aligned credit recommendations, and how CPL bridges work experience to college credentials. Professional and outcome-focused.' },
-        { id: 'general',      label: 'General Audience', prompt: 'Write for a general audience of education stakeholders. Use clear, accessible language. Explain acronyms on first use. Balance data with narrative. Highlight student impact and real-world outcomes.' },
-    ];
+    // ── The six report audiences, the writer's (REPORT_AUDIENCES, shared with report_generator.js) ──
+    var AUDIENCES = W.REPORT_AUDIENCES;
 
     // ── Lazy-load docx library (shared file from CDN/local) ──
     var docxLoaded = false;
@@ -402,7 +400,7 @@
             : 'The Word document is already titled "Selected Colleges CPL Update" — do NOT repeat the title in your output. Within the report, use `##` for each per-college subsection titled "[College Name] CPL Update", and start the document with a brief group-level `## Executive Summary`.';
 
         prompt += '# College-Level CPL Update Brief\n\n'
-            + '## Audience\n' + sel.audience.prompt + '\n\n'
+            + '## Audience\n' + (sel.audience.guide || '') + '\n\n'
             + benchHeader + '\n'
             + '## Selected Colleges (' + sel.colleges.length + ')\n' + collegeBlocks + '\n\n'
             + '## Instructions\n'
@@ -419,31 +417,28 @@
             + '3. **Opportunities to Maximize Funding & Student Impact** — Bullets or short paragraphs that turn any gap into an invitation: low transcription rate → "opportunity to convert eligible units into credit on transcripts, unlocking more apportionment"; thin discipline coverage → "room to expand into high-demand disciplines like X"; limited veteran reach → "opportunity to deepen JST/military outreach." Tie each opportunity, where natural, to additional CPL funding or student benefit. Ground recommendations in the KB methodology.\n'
             + '4. **Next Steps** — 2-4 concrete, audience-appropriate suggestions. Short and actionable.\n\n'
             + 'Hard constraints:\n'
-            + '- Naming (STRICT): the program is the "CPL Initiative" (never "MAP Initiative"); MAP is the platform — "Mapping Articulated Pathways (MAP) platform". NEVER expand MAP as "Military Articulation Platform" (that was only its historical 2017 launch name).\n'
-            + '- Use only the numbers provided. Do not invent metrics.\n'
             + '- Target **600-1,000 words total** (shorter is welcome for single colleges with limited data). Brevity is a feature.\n'
             + '- Use bullets for the Accomplishments and Opportunities sections. Use short paragraphs elsewhere.\n'
             + '- For multi-college reports, give each college its own `##` "[College Name] CPL Update" subsection but keep the per-college content tight — Executive Summary + Accomplishments + Opportunities only; consolidate Next Steps at the end.';
         return prompt;
     }
 
-    // ── Claude call (mirrors report_generator.js) ──
-    async function callClaude(prompt) {
-        var url = PROXY_URL || 'https://api.anthropic.com/v1/messages';
-        var headers = { 'Content-Type': 'application/json', 'anthropic-version': '2023-06-01' };
-        var body = JSON.stringify({
-            model: CLAUDE_MODEL,
-            max_tokens: 4096,
-            messages: [{ role: 'user', content: prompt }],
+    // ── The system prompt and the call, through the writer ──
+    // This generator's role line, then the writer's shared rules (the voice; the words: American
+    // spelling, the naming rule, the banned business words, the funding vocabulary), then its own
+    // facts rule. The user prompt (buildPrompt) carries the KB excerpt, the audience, the
+    // benchmarks, the colleges and the update's structure.
+    function buildSystem() {
+        return W.system({
+            role: 'You write a CPL Update about one or more California community colleges for the MAP team of the '
+                + 'CPL Initiative, who read it, edit it and send it to the college\'s leaders.',
+            extra: ['Facts: use only the numbers provided. Do not invent metrics, dates or names.']
         });
-        var resp = await fetch(url, { method: 'POST', headers: headers, body: body });
-        if (!resp.ok) {
-            var errText = await resp.text();
-            throw new Error('API error (' + resp.status + '): ' + errText.substring(0, 200));
-        }
-        var json = await resp.json();
-        if (json.content && json.content[0] && json.content[0].text) return json.content[0].text;
-        throw new Error('Unexpected API response format');
+    }
+    // The one model and the proxy call are the writer's.
+    async function callClaude(prompt) {
+        var r = await W.draft(prompt, { system: buildSystem(), maxTokens: 4096 });
+        return r.text;
     }
 
     // ── .docx builder (matches the project report styling) ──
@@ -521,7 +516,7 @@
     async function generateReport() {
         var sel = getSelected();
         if (!sel.colleges.length) { setStatus('Please select at least one college.', '#c00'); return; }
-        if (!PROXY_URL) { setStatus('Report proxy not configured. Contact your administrator.', '#c00'); return; }
+        if (!W.proxyUrl()) { setStatus('Report proxy not configured. Contact your administrator.', '#c00'); return; }
 
         var btn = document.getElementById('collegeReportGenBtn');
         btn.disabled = true;
@@ -574,4 +569,5 @@
 
     // Expose for college_activity.js
     window.openCollegeReportModal = openModal;
+    window.CPL_COLLEGE_REPORT = { buildPrompt: buildPrompt, buildSystem: buildSystem, AUDIENCES: AUDIENCES };
 })();
