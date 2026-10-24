@@ -16037,8 +16037,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 433,
+   "count": 434,
    "docs": [
+    {
+     "created": "2026-10-24",
+     "governs": [],
+     "n": 464,
+     "path": "docs/session_464_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "communications",
+      "writer",
+      "ui-pass"
+     ],
+     "title": "Session 464 handoff: every drafting surface on the writer; the lint backlog and the next UI pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-24",
      "governs": [],
@@ -23473,5 +23489,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1239
+ "total": 1240
 }
