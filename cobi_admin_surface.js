@@ -14,8 +14,7 @@ window.COBI_ADMIN_SURFACE = {
   "unmeasured": [
     "activities-projects",
     "military-partnerships",
-    "exhibit-adoption",
-    "knowledge-base"
+    "exhibit-adoption"
   ],
   "tabs": {
     "activities-projects": {
@@ -583,13 +582,6 @@ window.COBI_ADMIN_SURFACE = {
         "sierra_feedback_set_status"
       ],
       "measured": true
-    },
-    "knowledge-base": {
-      "modules": [],
-      "reads": [],
-      "writes": [],
-      "rpcs": [],
-      "measured": false
     },
     "library": {
       "modules": [
