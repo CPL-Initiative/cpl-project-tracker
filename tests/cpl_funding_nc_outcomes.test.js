@@ -107,7 +107,7 @@ const beforeSum = before.prios.reduce((s, p) => s + (p.totalPossible || 0), 0);
 
 // Switch the scenario to the outcomes lane.
 const shared = T._getShared();
-T._setShared(Object.assign({}, shared, OUTCOMES, { pool: Object.assign({}, shared.pool, { nc_portion_pct: 15 }) }));
+T._setShared(Object.assign({}, shared, JSON.parse(JSON.stringify(OUTCOMES)), { pool: Object.assign({}, shared.pool, { nc_portion_pct: 15 }) }));
 T.render();
 check("B1: the mode is read from the scenario", T._ncLaneMode() === "outcomes" && /releases on the noncredit outcomes/.test(T._ncLaneRule()));
 
@@ -228,7 +228,8 @@ check("D10: the outcome cards stand in their own section under the priority card
   /waits on its own minimum conditions: the institution's confirmation, a noncredit CPL coordinator named and published and a strike-team attestation renewed each year/.test(flat(section)) &&
   /Reported, not funded: Former noncredit students awarded CPL credit/.test(flat(section)));
 check("D11: NC-1's card names its target as the institutions' sum and its share of the noncredit share; NC-2 counts courses",
-  /NC-1/.test(flat(cards[0])) && /28 exhibits/.test(flat(cards[0])) && /50% of each institution's noncredit share/.test(flat(cards[0])) &&
+  /NC-1/.test(flat(cards[0])) && /28 exhibits/.test(flat(cards[0])) && /% of each institution's noncredit share/.test(flat(cards[0])) &&
+  (cards[0].querySelector('input[data-edit="nc-share"]') || {}).value === "50" &&
   /NC-2/.test(flat(cards[1])) && /courses/.test(flat(cards[1])));
 check("D12: the credit cards are untouched in number", doc.querySelectorAll("[data-priocard]").length === before.prios.length);
 const csv = T._csv();
@@ -240,6 +241,27 @@ check("D14: no origination sentence anywhere on the tab under the outcomes lane"
   !/originat/i.test(doc.body.textContent));
 
 // ── E. the curator's edits write the scenario's own list ─────────────────────
+// Sam, 2026-10-24: "I need to be able to edit the new NC priority boxes." The
+// cards were read-only without a reviewer sign-in while the credit cards beside
+// them edited for anyone; now they edit as the credit cards do, and carry the
+// editors the credit cards have: the outcomes served, the measure, the target
+// rule and the strategies.
+const q = (sel) => doc.querySelector(sel);
+const fire = (el, v) => { if (!el) return; el.value = v; el.dispatchEvent(new win.Event("change", { bubbles: true })); };
+const nc1 = (sel) => q('[data-nccard="0"] ' + sel), nc2 = (sel) => q('[data-nccard="1"] ' + sel);
+check("E0: signed out, an outcome card edits as a credit card does: title, description, share, metric, measure, target rule, outcomes served, strategies",
+  !!nc1('input[data-edit="nc-title"]') && !!nc1('textarea[data-edit="nc-description"]') && !!nc1('input[data-edit="nc-share"]') &&
+  !!nc1('textarea[data-edit="nc-metric"]') && !!nc1('select[data-edit="nc-src"]') && !!nc1('select[data-edit="nc-rule"]') &&
+  !!nc1('input[data-edit="nc-floor"]') && !!nc1('input[data-edit="nc-pct"]') && !!nc1('input[data-edit="nc-cap"]') &&
+  !!nc2('input[data-edit="nc-n"]') && nc1("[data-ncgoal]") !== null && !!nc1("[data-ncostratadd]") &&
+  doc.querySelectorAll('[data-nccard="0"] input[data-edit="nco-strategy"]').length === 1);
+const sharedBefore = JSON.stringify(T._getShared().ncOutcomes);
+fire(nc1('input[data-edit="nc-title"]'), "Exhibits for the program's learning");
+check("E0b: a signed-out edit is a what-if in this browser, never the team's",
+  ((((T._getScenario().ncOutcomes || {})["1"] || [])[0]) || {}).title === "Exhibits for the program's learning" &&
+  JSON.stringify(T._getShared().ncOutcomes) === sharedBefore);
+delete T._getScenario().ncOutcomes;
+T.render();
 win.CPL_SESSION = {
   get: function () { return { access_token: "header.payload.sig", email: "co@cccco.edu" }; },
   isFresh: function () { return true; },
@@ -258,6 +280,48 @@ const storedRows = (T._getShared().ncOutcomes || {})["1"] || [];
 check("E2: the edit lands on the scenario's list, the other fields and the other outcome untouched",
   storedRows.length === 2 && storedRows[0].description === "The program's standing CPL opportunities, counted in MAP." &&
   storedRows[0].metric_src === "nc_exh" && storedRows[0].target_rule.cap === 10 && storedRows[1].key === "course");
+const row = (i) => ((T._getShared().ncOutcomes || {})["1"] || [])[i] || {};
+fire(nc1('input[data-edit="nc-floor"]'), "3");
+fire(nc1('input[data-edit="nc-pct"]'), "7.5");
+fire(nc1('input[data-edit="nc-cap"]'), "");
+check("E3: NC-1's target rule edits in place: the floor, the percent, and a blank cap for none",
+  row(0).target_rule.kind === "pct_floor_cap" && row(0).target_rule.floor === 3 && row(0).target_rule.pct === 0.075 &&
+  row(0).target_rule.cap === null && row(0).target_rule.of === "nc_cdcp" && /no cap/.test(flat(q('[data-nccard="0"]'))));
+fire(nc1('input[data-edit="nc-floor"]'), "two");
+fire(nc1('input[data-edit="nc-cap"]'), "-4");
+check("E3b: junk or a negative leaves the rule as it was", row(0).target_rule.floor === 3 && row(0).target_rule.cap === null);
+fire(nc2('select[data-edit="nc-rule"]'), "pct_floor_cap");
+const flipped = JSON.parse(JSON.stringify(row(1).target_rule));
+fire(nc2('select[data-edit="nc-rule"]'), "fixed");
+check("E4: switching the rule's kind carries the count across: n becomes the floor, the floor becomes n",
+  flipped.kind === "pct_floor_cap" && flipped.floor === 1 && flipped.of === "nc_cdcp" &&
+  row(1).target_rule.kind === "fixed" && row(1).target_rule.n === 1);
+const opts = Array.from((nc2('select[data-edit="nc-src"]') || { options: [] }).options).map((o) => o.value);
+fire(nc2('select[data-edit="nc-src"]'), "nc_exh");
+const asExh = { src: row(1).metric_src, w: row(1).unit_word };
+fire(nc2('select[data-edit="nc-src"]'), "nc_cdcp");
+check("E5: the measure offers the noncredit outcome sources alone; a pick carries its unit word; the denominator is refused",
+  opts.join(",") === "nc_exh,nc_course" && asExh.src === "nc_exh" && asExh.w === "exhibits" && row(1).metric_src === "nc_exh");
+fire(nc2('select[data-edit="nc-src"]'), "nc_course");
+const box = q('[data-nccard="0"] [data-ncgoal][value="B"]');
+if (box) { box.checked = true; box.dispatchEvent(new win.Event("change", { bubbles: true })); }
+check("E6: the Serves boxes set the outcomes the card serves", JSON.stringify(row(0).goals) === '["A","B"]' && row(1).metric_src === "nc_course" && row(1).unit_word === "courses");
+const addBtn = nc1("[data-ncostratadd]");
+if (addBtn) addBtn.click();
+const added = (row(0).strategies || []).length;
+fire(q('[data-nccard="0"] input[data-edit="nco-strategy"][data-sidx="1"]'), "Invite the program's faculty to review the exhibits");
+const typed = (row(0).strategies || [])[1];
+const delBtn = q('[data-nccard="0"] [data-ncostratdel="1:0:0"]');
+if (delBtn) delBtn.click();
+check("E7: a strategy adds, edits and removes on the outcome's own row",
+  added === 2 && typed === "Invite the program's faculty to review the exhibits" && (row(0).strategies || []).length === 1 &&
+  row(0).strategies[0] === "Invite the program's faculty to review the exhibits" && row(1).strategies === undefined);
+win.CPL_FUNDING_PUBLIC = true;
+T.render();
+check("E8: the public page carries none of the editors",
+  doc.querySelectorAll('[data-nccard] [data-edit], [data-nccard] [data-ncgoal], [data-nccard] [data-ncostratadd], [data-nccard] [data-ncostratdel]').length === 0 &&
+  doc.querySelectorAll("[data-nccard]").length === 2);
+delete win.CPL_FUNDING_PUBLIC;
 win.CPL_SESSION = null;
 
 // ── F. back to origination: the mode is the scenario's, nothing leaks ────────
