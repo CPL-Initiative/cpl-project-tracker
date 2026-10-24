@@ -1113,7 +1113,8 @@
      "how": "global",
      "line": 158,
      "pages": [
-      "CPL_Dashboard.html"
+      "CPL_Dashboard.html",
+      "kb-portal/index.html"
      ]
     },
     {
@@ -1131,7 +1132,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 40
+     "line": 41
     },
     {
      "id": "module:quickstart.js",
@@ -6165,6 +6166,13 @@
      "direction": "read",
      "how": "markup",
      "line": 0
+    },
+    {
+     "id": "page:kb-portal/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 176
     }
    ],
    "served": true,
@@ -7667,7 +7675,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 177
+     "line": 179
     }
    ],
    "served": true,
@@ -7680,7 +7688,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 176
+     "line": 178
     }
    ],
    "served": true,
@@ -21646,7 +21654,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 207,
+     "line": 218,
      "pages": [
       "kb-portal/index.html"
      ]

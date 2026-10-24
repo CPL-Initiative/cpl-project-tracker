@@ -15,7 +15,7 @@ import DOMPurify        from "https://esm.sh/dompurify@3.1.6";
 import {
   SUPABASE_URL, SUPABASE_ANON, RAW_BASE, TREE_API,
   SECTIONS, TOP_LEVEL_DOCS, FALLBACK_TREE,
-  REPO_OWNER, REPO_NAME, WRITE_BRANCH, PROXY_URL, POLISH_MODEL,
+  REPO_OWNER, REPO_NAME, WRITE_BRANCH, PROXY_URL,
   TEAM_SUPABASE_URL, TEAM_SUPABASE_ANON, TEAM_PASS_KEY,
 } from "./config.js";
 
@@ -475,12 +475,16 @@ async function polishWithClaude() {
   btn.disabled = true;
   composerStatus("Asking Claude to format your draft" + (ready.length ? " + " + ready.length + " attachment(s)" : "") + "…", "info");
   try {
+    // The writer module (../cpl_writer.js) holds the rules, the model and the proxy call.
+    const W = window.CPL_WRITER;
+    if (!W) throw new Error("the writer module did not load");
+    const system = KBC.polishSystem(W);
     const prompt = KBC.polishPrompt({
       title, body,
       section: $("composer-section").selectedOptions[0]?.textContent || "",
     });
     let content = KBC.buildPolishContent({ prompt, attachments: ready });
-    const reqBody = () => JSON.stringify({ model: POLISH_MODEL, max_tokens: 8000, messages: [{ role: "user", content }] });
+    const reqBody = () => JSON.stringify({ model: W.MODEL, max_tokens: 8000, system, messages: [{ role: "user", content }] });
     // The proxy caps the request at ~256 KB. If attachments push us over, drop
     // images first (biggest), then trim the text block — never silently exceed.
     const CAP = 240000;
@@ -498,15 +502,10 @@ async function polishWithClaude() {
       }
       if (droppedImgs) composerStatus("⚠ Dropped " + droppedImgs + " image(s) to fit the size limit; formatting the rest…", "info");
     }
-    const resp = await fetch(PROXY_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "anthropic-version": "2023-06-01" },
-      body: reqBody(),
+    const { text } = await W.draft(null, {
+      system, maxTokens: 8000, url: PROXY_URL,
+      messages: [{ role: "user", content }],
     });
-    if (!resp.ok) throw new Error("proxy " + resp.status + ": " + (await resp.text()).slice(0, 160));
-    const json = await resp.json();
-    const text = json?.content?.[0]?.text;
-    if (!text) throw new Error("unexpected response shape");
     $("composer-body").value = KBC.stripCodeFences(text);
     // If the author left the title blank, adopt the one Claude wrote into the frontmatter.
     if (!title) {

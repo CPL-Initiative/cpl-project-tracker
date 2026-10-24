@@ -37,8 +37,8 @@ export const WRITE_BRANCH = "main";
 // secret of its own. Drafts are destined for the PUBLIC KB, so sending them to
 // Claude for formatting carries no privacy concern. Leave PROXY_URL "" to hide
 // the Polish button (Copy / Download / Open-in-GitHub still work without it).
+// The model and the rules come from the writer module (../cpl_writer.js).
 export const PROXY_URL    = "https://cpl-proxy.slee-548.workers.dev";
-export const POLISH_MODEL = "claude-sonnet-4-5-20250929";
 
 // ── Team-phrase access (shared with the COBI dashboard) ──────────────────────
 // As an alternative to a per-person magic-link sign-in, anyone who knows the

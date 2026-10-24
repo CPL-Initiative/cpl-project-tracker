@@ -374,7 +374,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cpl_pathways.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_session.js` | pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `funding-model/index.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `cpl_theme.js` | pages: `CPL_Dashboard.html` | — |
-| `cpl_writer.js` | pages: `CPL_Dashboard.html` | — |
+| `cpl_writer.js` | pages: `CPL_Dashboard.html`, `kb-portal/index.html` | — |
 | `cr_progress.js` | tabs: `cr-reference` | — |
 | `cr_reference.js` | pages: `CPL_Dashboard.html` | — |
 | `cr_reference_decisions_<date>_s280.json` | scripts: `kb/_jev_adjudicate.py`, `kb/_jev_battery.py`, `kb/_jev_score.py` | — |
@@ -1014,7 +1014,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
 | `cpl-initiative.github.io` | tabs: `admin`, `college-briefing`, `cpl-pathways`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users` · modules: `scripts/funding_sierra_note.js` · scripts: `chatbox/health_check.sh`, `fact-sheet/_build_statewide_catalog.py`, `kb/_build_commons_status.py`, `kb/_build_partner_crosswalk.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:workplan-rebuild`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
-| `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `letters`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` |
+| `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `letters`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` |
 | `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_verify_map_exhibit_links.py` · `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `creditforbeingyou.org` | `edgefn:cpl-chat` |
