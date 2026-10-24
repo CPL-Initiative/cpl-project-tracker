@@ -76,3 +76,19 @@ related:
   consumer's check allows none.
 - **A ported call changes its failure words.** The writer rejects on a non-OK answer, so a proxy error in Suggest
   now reads "suggestion failed" where it used to read "no confident suggestion". Say it in the PR.
+
+## S463 SkyChamise (2026-10-24): the ninth consumer, the KB portal's Polish
+
+- `kb-portal/` (#2412) now drafts through the writer. No drafting surface keeps its own model pin; a new one starts
+  as a consumer.
+- **A page outside the two HTMLs loads the writer by a relative path.** Pages ships the repo root (`git archive`), so
+  `kb-portal/index.html` loads `../cpl_writer.js` as a classic script before the `app.js` module, and the module reads
+  `window.CPL_WRITER` at call time.
+- **Pass the writer into the pure helper.** `composer_util.js` stays testable in plain node: `polishSystem(W)` takes
+  the writer as an argument, and the test `require`s `cpl_writer.js` to supply it.
+- **A surface's own proxy rides `opts.url`.** The portal keeps its `PROXY_URL` from `config.js` and passes it to
+  `W.draft`; attachments go through `opts.messages`, since `draft()`'s one-string prompt cannot carry image blocks.
+- **A test that the naming rule is honored must exclude the rule itself.** `NAMING_RULE` quotes "MAP Initiative" to
+  forbid it, so the check reads the surface's role line, the text before `HOUSE_VOICE`.
+- A port can find a stale rule: the portal's role line called the program "the California Community Colleges MAP
+  initiative" until this port.

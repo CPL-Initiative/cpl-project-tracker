@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-433 document(s).
+434 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 464 | [Session 464 handoff: every drafting surface on the writer; the lint backlog and the next UI pass](../session_464_handoff.md) | 2026-10-24 |
 | 463 | [Session 463 handoff: the writer's last named consumers, the Sierra UI pass's leftovers](../session_463_handoff.md) | 2026-10-24 |
 | 462 | [Session 462 handoff: the writer's fourth and fifth consumers, the Sierra UI pass (one seal blue)](../session_462_handoff.md) | 2026-10-24 |
 | 461 | [Session 461 handoff: the writer module and its first three consumers, Open Asks Sheet 122 (the ELL IET page's public listing)](../session_461_handoff.md) | 2026-10-24 |
