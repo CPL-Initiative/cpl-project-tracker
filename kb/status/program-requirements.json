@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-24T09:37:43Z",
-  "session": 463,
-  "moniker": "SkyChamise",
+  "written_at": "2026-10-24T10:20:49Z",
+  "session": 464,
+  "moniker": "SkyBuckeye",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_464_handoff.md",
+  "handoff": "docs/session_465_handoff.md",
   "next_step": {
     "title": "The harvest queue waits on Sam's word",
-    "text": "Hartnell's noncredit hours (course_hours, a reconcile kind for measure: hours records, the arithmetic against Non Credit Total hours), its six remaining arithmetic failures (17912, 03570, 39248, 44537, 03537, 33851) and the two S448 offers. S463 ported the KB portal's Polish to the writer module, the last drafting surface with its own model pin; no harvest table moved."
+    "text": "Hartnell's noncredit hours (course_hours, a reconcile kind for measure: hours records, the arithmetic against Non Credit Total hours), its six remaining arithmetic failures (17912, 03570, 39248, 44537, 03537, 33851) and the two S448 offers. S464 cleared the house_voice lint backlog (23 to 1); no harvest table moved."
   },
   "calls": [
     {
@@ -148,6 +148,10 @@
     {
       "at": "2026-10-24T09:36:00Z",
       "text": "No harvest table moved this run. The KB portal's Polish became the writer module's ninth consumer (#2412)."
+    },
+    {
+      "at": "2026-10-24T10:30:00Z",
+      "text": "No harvest table moved this run. The house_voice lint went from 23 findings to 1 (#2414)."
     }
   ],
   "headline": [
@@ -257,7 +261,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-24T10:12:00Z"
+    "at": "2026-10-24T11:12:00Z"
   },
   "harvest": {
     "day": "2026-10-24",
