@@ -66,7 +66,7 @@ the model carefully separated.
    the other band cannot consume, and vice versa. Neither can be starved; neither
    drowns the other.
 3. **Let the band self-empty.** Defined as *zero adopters*, the shelf shrinks as
-   adoption happens — the first adopter moves an item into the leverage band. The
+   adoption happens — the first adopter moves an item into the adoption-leverage band. The
    band emptying is a **success signal**, not a bug.
 4. **Scope the band to items where the claim is true for everyone.** Statewide
    standards are adoptable by any college by definition, so "available to you" is

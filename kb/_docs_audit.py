@@ -1463,10 +1463,18 @@ def rule_house_voice(entry):
     lane = entry.get("lane")
     if lane in ("handoff", "lessons", "roadmap_lane", "always_loaded"):
         return None
+    # An archive holds handoff and lessons text moved verbatim; same exemption.
+    if (entry.get("rel") or entry.get("path") or "").endswith("_archive.md"):
+        return None
     text = entry.get("text") or ""
     if not text:
         return None
     low = prose_only(text).lower()
+    # "Adoption leverage" is a measure (`adoption_leverage`, peer colleges that
+    # teach an identity and have not articulated it), and *"..."* is a person's
+    # words, quoted across lines; neither is our register (S464, 2026-10-24).
+    low = re.sub(r"adoption[ -]leverage", "", low)
+    low = re.sub(r'\*"[^"]*"\*', "", low)
     hits = {}
     for term in BUSINESS_REGISTER:
         n = len(re.findall(r"\b" + re.escape(term) + r"\b", low))

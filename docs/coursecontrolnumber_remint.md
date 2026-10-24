@@ -242,22 +242,22 @@ preserved. **Malformed targets remaining: 0.**
 ## The headline effect (case study)
 
 Before the re-mint, the "Articulations by Unified Course" card's top entry for
-AP US Gov was an **over-merged M-ID** (`POLS 188`, leverage 110) — a duplicate
-of the authoritative C-ID `POLS 110` (leverage 72) sitting 5 rows below. The
+AP US Gov was an **over-merged M-ID** (`POLS 188`, adoption leverage 110) — a duplicate
+of the authoritative C-ID `POLS 110` (adoption leverage 72) sitting 5 rows below. The
 M-ID's 110 came from counting the C-ID colleges via the lossy (subject,
 number) union. The user might have read the card as "AP US Gov has 110 + 72 =
 182 adoption opportunities" when the real number is closer to 72.
 
 After the re-mint:
-- `POLS 110` (C-ID) keeps leverage **72**. The authoritative signal is untouched.
+- `POLS 110` (C-ID) keeps adoption leverage **72**. The authoritative signal is untouched.
 - The minted remnant for "American Government and Politics" — only the
   1 college teaching it without C-ID alignment — becomes `POLS M10AA` with
-  leverage **1**.
+  adoption leverage **1**.
 - The duplicate row vanishes from the top-50.
 
 Total adoption leverage 64,732 → **47,994** (deflation **16,738**). Every bit
 of that deflation is double-count removal traced to real over-merged identities;
-C-ID leverage on every credential we sampled is unchanged.
+C-ID adoption leverage on every credential we sampled is unchanged.
 
 **Watch out** when communicating this externally: people who saw the OLD
 top-50 may notice the headline number "drop." It's a correction, not a
@@ -276,7 +276,7 @@ regression. Lead with the C-ID rows that now correctly anchor the table.
 | Validation diff report | `kb/remint_out/VALIDATION_1c.md` |
 | Patch artifact (1c-ii export change) | `kb/remint_out/export_1cii.patch` |
 | Re-mint generator (minted + memberships + singletons + alias + promotions) | `kb/_remint_apply.py` |
-| Re-mint generator (articulations re-key + leverage recompute) | `kb/_remint_apply_articulations.py` |
+| Re-mint generator (articulations re-key + adoption-leverage recompute) | `kb/_remint_apply_articulations.py` |
 | Re-mint generator (cluster member re-key) | `kb/_remint_apply_clusters.py` |
 | Dry-run script | `kb/_remint_dryrun.py` |
 | Dry-run report + alias | `kb/remint_dryrun/{report.md, alias_map.json}` |

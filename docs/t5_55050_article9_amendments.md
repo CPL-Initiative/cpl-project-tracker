@@ -104,7 +104,7 @@ and leadership on CA Credential Registry and Career Passport."*
 conditions every allocation on metrics that do not exist in it, so someone must
 define them — and that someone is the Chancellor's Office.
 
-That is the single highest-leverage opening in Article 9 for this project: the
+That is the single most useful opening in Article 9 for this project: the
 Implementation Funding model's measures are the only worked, college-by-college
 quantification of these four goals in existence. **Offering them as the (d)(1)
 metrics is a far stronger play than arguing for a funding mechanism** (register

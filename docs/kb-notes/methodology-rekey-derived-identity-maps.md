@@ -55,7 +55,7 @@ course.
    alias map) to the re-mint post-apply chain (`kb/_post_apply_chain.py`).
    Until then, `identities[*].colleges_offering` / `subject_spread` /
    `over_merged` remain pre-fold values — `_build_statewide_prescriptive()`
-   reads `over_merged` from it (withhold-leverage guardrail; stale flags err
+   reads `over_merged` from it (adoption-leverage guardrail; stale flags err
    in both directions but low stakes).
 
 ## How to spot it

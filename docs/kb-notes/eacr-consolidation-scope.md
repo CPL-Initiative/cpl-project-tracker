@@ -264,7 +264,7 @@ distinct call-to-action.
 | View | Centers on | Surfaces | Primary CTA | Data already available |
 |---|---|---|---|---|
 | **Student** | the credential | where to get credit (adopting colleges + award) + likely local matches at colleges that *haven't* adopted | *find / request credit (near me)* | adopters + `adoption_leverage` + CCR crosswalk; region/near-me filter |
-| **College** | the credential, *my-college* lens | my articulations + my adoption options (my courses that match the standard but aren't articulated) | *adopt / articulate* | one college's earned set + its leverage matches |
+| **College** | the credential, *my-college* lens | my articulations + my adoption options (my courses that match the standard but aren't articulated) | *adopt / articulate* | one college's earned set + its adoption-leverage matches |
 | **System** | the credential, statewide | adoption coverage + **inequitable-access gaps** (aligned-but-not-adopted, weighted by students affected) | *prioritize / drive adoption* | `adoption_leverage` aggregated × eligible students × region |
 
 The **System view is the most novel:** `adoption_leverage` (~48k
@@ -328,14 +328,14 @@ adoption-leverage data:
 The strong tier is the gold: *"you already teach the course the standard maps
 to — one articulation away."* Naming the specific recommended local course needs
 one more join (M-ID → that college's member course); the join that *produced*
-the leverage list already knows it, so it's a surfacing step, not new logic.
+the adoption-leverage list already knows it, so it's a surfacing step, not new logic.
 
 ### Data findings that shape it (`kb/coci_articulations.json`, 2026-06-01)
 
 - **CCC is "set":** all CompTIA A+ CCC articulations agree (3u → ICT Essentials).
 - **94% local-only:** only **90 of 1,726** articulated credentials (5%) have a CCC version → the synthesized-standard header is the **main** layout, not the fallback.
 - **Per-college variance is real:** of 21 CompTIA A+ colleges, **17 award 1 course, 3 award 2, 1 awards 3**; modal 3u (tail outlier 22u to cap).
-- **Prescriptive fuel exists:** **2,597** articulation records carry `adoption_leverage` (~**48,000** college×cert "should-articulate" opportunities); **413** `over_merged` records correctly **withhold** leverage.
+- **Prescriptive fuel exists:** **2,597** articulation records carry `adoption_leverage` (~**48,000** college×cert "should-articulate" opportunities); **413** `over_merged` records correctly **withhold** adoption leverage.
 - **Identity-fragmentation caveat:** CompTIA A+ resolves to **24 distinct M-IDs**, ~10 of which are the same "ICT Essentials, 3u" minted as separate single-college M-IDs. So grouping on the raw M-ID does NOT collapse them (24 rows) — **group local cards by `(normalized title, units)` today**, carry the M-ID/C-ID as enrichment, and let the EACR's visible fragmentation **feed the Suggested-merges worklist** (curation tightens identity → the EACR tightens automatically).
 
 ### Revised iteration ladder

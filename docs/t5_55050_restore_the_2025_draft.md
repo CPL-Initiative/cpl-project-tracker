@@ -85,7 +85,7 @@ footnotes, because both cut against clauses in his draft:
    opportunities **and can facilitate the awarding** of credit."* **§78093.2(a)(2)
    keeps only "visible and accessible to the public."** The awarding half is gone,
    which weakens a *"utilize the infrastructure"* mandate slightly — though (d)(2)
-   restores leverage by conditioning money on demonstrated implementation.
+   restores the incentive by conditioning funding on demonstrated implementation.
 2. **AB 123 objective 2** named foreign credentials explicitly; **§78093.1(c) does
    not**. Item 10 above.
 

@@ -1,5 +1,5 @@
 ---
-title: Methodology — Rank a cleanup queue by downstream impact, not structural leverage
+title: Methodology — Rank a cleanup queue by downstream impact, not a structural proxy
 created: 2026-06-09
 updated: 2026-06-09
 tags: [methodology, ccr, auditor, cleanup, impact, articulations, kb]
@@ -14,7 +14,7 @@ artifacts:
   - unified_courses.js (the columns + Cleanup-impact preset)
 ---
 
-# Methodology — Rank a cleanup queue by downstream impact, not structural leverage
+# Methodology — Rank a cleanup queue by downstream impact, not a structural proxy
 
 > **One-sentence summary** — a curation/cleanup queue should be ranked by the
 > **real-world payoff the data already carries** (here: CPL eligible-units +

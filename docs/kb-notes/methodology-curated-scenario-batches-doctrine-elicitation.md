@@ -19,7 +19,7 @@ react — **fails to decision fatigue.** Sam's own words (2026-07-14): *"I dropp
 off using it because there were thousands of suggested merges and I got
 overwhelmed."* The 🧠 mind-meld panel was wired and correct; the volume killed it.
 
-**The pattern that works: a few high-leverage forks at a time.** In one sitting,
+**The pattern that works: a few deciding forks at a time.** In one sitting,
 Sam took the merge/mint doctrine from v0.6 → v0.11 — nine rulings, 7 of 11 open
 questions closed, ~6,600 identities (ESL/Music/Dance/KINE) given a packaging
 policy — via **AskUserQuestion batches of 3 forks**, each a distinct open

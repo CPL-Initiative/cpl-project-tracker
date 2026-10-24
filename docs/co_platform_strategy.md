@@ -565,7 +565,7 @@ Each is framed as options + a recommendation. These are the things this document
 
 ### Sequencing traps — what NOT to do first
 - **Trap A: "Build APIs not scraping" as an engineering sprint.** It's ~80% paperwork (DSA/MOU). A pretty API over data you have no agreement to consume is *scraping with better manners.* Start the paperwork now; keep the scrape as owned, expiry-dated debt.
-- **Trap B: Enterprise procurement before institutional ownership.** Buying Enterprise tiers while the Worker/key/CPLBrain/Supabase are personally owned just gilds a personal stack. Ownership transfer is cheaper, faster, higher-leverage.
+- **Trap B: Enterprise procurement before institutional ownership.** Buying Enterprise tiers while the Worker/key/CPLBrain/Supabase are personally owned just gilds a personal stack. Ownership transfer is cheaper, faster, and worth more.
 - **Trap C: an Astro/modular rewrite before the purge + ownership move.** You'd rewrite on top of tainted history, into a personal account. Order matters.
 
 ### Force-ranked focus (drop ~14 ambitions → ~5 active lanes)
