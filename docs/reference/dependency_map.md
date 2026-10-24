@@ -988,7 +988,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `<host>` | scripts: `kb/_program_requirements_college.py` |
 | `alameda.edu` | tabs: `map-queue`, `map-users` |
 | `api-prod.elumenapp.com` | scripts: `kb/_course_outcomes_read.py`, `kb/_program_requirements_college.py` |
-| `api.anthropic.com` | pages: `CPL_Dashboard.html` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `api.anthropic.com` | `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.careeronestop.org` | scripts: `kb/_sync_cos_certifications.py`, `kb/_sync_moc_crosswalk.py` |
 | `api.gdeltproject.org` | `edgefn:cpl-news-harvest` |
 | `api.github.com/repos/` | modules: `kb-portal/config.js` · `edgefn:workplan-rebuild` |

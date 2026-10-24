@@ -385,16 +385,6 @@
      "line": 440
     },
     {
-     "id": "module:college_report_generator.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "url",
-     "line": 432,
-     "pages": [
-      "CPL_Dashboard.html"
-     ]
-    },
-    {
      "id": "worker:cloudflare-worker-proxy.js",
      "kind": "worker",
      "direction": "read",
@@ -1100,8 +1090,8 @@
      "id": "module:college_report_generator.js",
      "kind": "module",
      "direction": "read",
-     "how": "global",
-     "line": 14,
+     "how": "seeded",
+     "line": 0,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -6971,7 +6961,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 42,
+     "line": 40,
      "pages": [
       "CPL_Dashboard.html"
      ]
