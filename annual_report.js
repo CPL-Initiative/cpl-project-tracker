@@ -28,8 +28,11 @@
 (function () {
   "use strict";
 
-  var PROXY_URL = window.CPL_REPORT_PROXY_URL || "";
-  var CLAUDE_MODEL = "claude-sonnet-4-5";
+  // The one writer module (cpl_writer.js, window.CPL_WRITER, static in both HTMLs before this
+  // lazy file): the voice, the words, the naming rule, the one model and the proxy call (Sam's
+  // Sheet 118 ruling 5). This file names no model and keeps no copy of the rules.
+  var W = window.CPL_WRITER;
+  if (!W) throw new Error("annual_report.js needs cpl_writer.js loaded first (window.CPL_WRITER)");
 
   // Supabase (anon, read-only) — mirrors card_updates.js. Used to fold the newest
   // item_updates into the Activity Progress + Spotlights sections.
@@ -296,33 +299,29 @@
   // never silently rebuild over their edits.
   var state = { md: "", busy: false, userEdited: false };
 
-  // ─── Claude proxy (AI polish) ──────────────────────────────────────────────
-  function callClaude(prompt) {
-    var url = PROXY_URL || "https://api.anthropic.com/v1/messages";
-    return fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({ model: CLAUDE_MODEL, max_tokens: 4096,
-        messages: [{ role: "user", content: prompt }] })
-    }).then(function (r) {
-      if (!r.ok) return r.text().then(function (t) { throw new Error("API error (" + r.status + "): " + t.substring(0, 160)); });
-      return r.json();
-    }).then(function (j) {
-      if (j.content && j.content[0] && j.content[0].text) return j.content[0].text;
-      throw new Error("Unexpected API response");
+  // ─── AI polish, through the writer ────────────────────────────────────────
+  // This tab's role line, then the writer's shared rules (the voice; the words: American
+  // spelling, the naming rule, the banned business words, the funding vocabulary), then its own
+  // facts rule and return format. The user prompt carries the draft and how to rework it.
+  function aiPolishSystem() {
+    return W.system({
+      role: "You polish the California Community Colleges CPL Initiative Annual Report for the MAP team, "
+        + "who read the result, edit it and decide where it goes. Its readers are system leaders, "
+        + "legislators and faculty.",
+      extra: [
+        "Facts: keep every number exactly as given. Do not invent or alter figures, dates or names.",
+        "Return only the report markdown."
+      ]
     });
   }
+  function callClaude(prompt) {
+    return W.draft(prompt, { system: aiPolishSystem(), maxTokens: 4096 }).then(function (r) { return r.text; });
+  }
   function aiPolishPrompt(md) {
-    return "You are drafting the California Community Colleges CPL Initiative Annual Report. "
-      + "Below is a data-assembled draft with section headers. Rewrite it into a polished, cohesive "
-      + "annual report narrative for an audience of system leaders, legislators, and faculty. "
-      + "Keep every factual number EXACTLY as given — do not invent or alter figures. Preserve the "
-      + "section structure using ## markdown headers (and ### for sub-sections). Keep bullet lists "
-      + "where they aid scannability. Be celebratory but credible; reframe any gaps as opportunities. "
-      + "Naming (STRICT): the program is the \"CPL Initiative\" (never \"MAP Initiative\"); MAP is the "
-      + "platform — \"Mapping Articulated Pathways (MAP) platform\"; NEVER expand MAP as \"Military "
-      + "Articulation Platform\" (its historical 2017 launch name, history-only). "
-      + "Target 1,200–2,000 words. Return ONLY the report markdown.\n\n=== DRAFT ===\n" + md;
+    return "Below is a data-assembled draft of the Annual Report with section headers. Rewrite it into a "
+      + "cohesive annual report narrative. Preserve the section structure using ## markdown headers (and ### "
+      + "for sub-sections). Keep bullet lists where they aid scanning. Be celebratory but credible; reframe "
+      + "any gaps as opportunities. Target 1,200–2,000 words.\n\n=== DRAFT ===\n" + md;
   }
 
   // ─── docx export ───────────────────────────────────────────────────────────
@@ -404,8 +403,8 @@
     // Toolbar
     // Controls are underlined words (Sam, 2026-10-09; UI pass S377): no glyph, no box.
     var rebuild = el("button", { "class": "car-btn", type: "button", title: "Re-assemble the draft from the latest live data (discards edits)" }, ["Rebuild from data"]);
-    var ai = el("button", { "class": "car-btn", type: "button", title: PROXY_URL ? "Polish the draft into a cohesive narrative with AI" : "AI proxy not configured" }, ["AI polish"]);
-    if (!PROXY_URL) ai.disabled = true;
+    var ai = el("button", { "class": "car-btn", type: "button", title: W.proxyUrl() ? "Polish the draft into a cohesive narrative with AI" : "AI proxy not configured" }, ["AI polish"]);
+    if (!W.proxyUrl()) ai.disabled = true;
     var word = el("button", { "class": "car-btn", type: "button", title: "Download as a Word document" }, ["Word"]);
     var print = el("button", { "class": "car-btn", type: "button", title: "Print or save as PDF" }, ["Print"]);
     var status = el("span", { "class": "car-status", role: "status", "aria-live": "polite" }, []);
@@ -432,7 +431,7 @@
       ta.value = state.md; syncPreview(wrap); setStatus(wrap, "Rebuilt from live data.");
     });
     ai.addEventListener("click", function () {
-      if (state.busy || !PROXY_URL) return;
+      if (state.busy || !W.proxyUrl()) return;
       state.busy = true; ai.disabled = true; setStatus(wrap, "Polishing with AI — 15–30s…");
       callClaude(aiPolishPrompt(state.md)).then(function (txt) {
         state.md = txt.trim(); ta.value = state.md; syncPreview(wrap);
@@ -519,5 +518,6 @@
   window.CPL_ANNUAL_REPORT = { boot: boot, render: render,
     _assemble: assembleMarkdown, _mdToHtml: mdToHtml,
     _latestByKey: latestByKey,
+    _aiPolishSystem: aiPolishSystem, _aiPolishPrompt: aiPolishPrompt,
     _setUpdates: function (m) { _updates = m || {}; _updatesLoaded = true; } };
 })();

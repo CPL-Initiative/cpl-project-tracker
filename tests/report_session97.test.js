@@ -36,8 +36,8 @@ check("dashboard_filters no longer injects the bar-level Attach Doc button",
 const crSrc = fs.readFileSync("college_report_generator.js", "utf8");
 check("the college report's model is the writer's: it names no model and drafts through W.draft under W.system",
   !/claude-[a-z0-9-]+/.test(crSrc) && /W\.draft\(/.test(crSrc) && /W\.system\(/.test(crSrc) && !/CPL_REPORT_PROXY_URL/.test(crSrc) && !/api\.anthropic\.com/.test(crSrc));
-check("annual report polish prompt carries the naming rule",
-  /Mapping Articulated Pathways \(MAP\) platform/.test(fs.readFileSync("annual_report.js", "utf8")));
+check("annual report polish composes its system prompt through the writer, which carries the naming rule",
+  /W\.system\(/.test(fs.readFileSync("annual_report.js", "utf8")) && /Mapping Articulated Pathways \(MAP\)/.test(writerSrc));
 check("master_report docx footer says CPL Initiative (not MAP Initiative)",
   fs.readFileSync("master_report.js", "utf8").indexOf("|  CPL Initiative") >= 0);
 check("generate_reports docx footer says CPL Initiative (not MAP Initiative)",

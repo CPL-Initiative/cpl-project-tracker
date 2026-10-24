@@ -250,6 +250,12 @@ SEEDS = [
         "datasets": [("external:cpl-proxy.slee-548.workers.dev", "read")],
         "why": "the narrative goes through cpl_writer.js draft() over window.CPL_REPORT_PROXY_URL",
     },
+    {   # annual_report.js (S461): the AI polish goes through cpl_writer.js's draft() the same way.
+        "file": "annual_report.js",
+        "anchor": r'W\.draft\(prompt, \{ system: aiPolishSystem\(\)',
+        "datasets": [("external:cpl-proxy.slee-548.workers.dev", "read")],
+        "why": "the polish goes through cpl_writer.js draft() over window.CPL_REPORT_PROXY_URL",
+    },
     {   # Sierra's pgvector retrieval tables: named only in docs; DDL applied live
         "file": "chatbox/supabase/functions/cpl-chat/index.ts",
         "anchor": r'match_document_sections',
