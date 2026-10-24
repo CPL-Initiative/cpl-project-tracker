@@ -257,7 +257,7 @@ list it publicly and send each project its card, with one message per project dr
   player pages off the site, and add a guard test so a deliverable binary cannot be committed again. Then the vault's
   binaries (29 on 2026-10-05).
 - **The open-asks series record reads version 123** (receipt `kb/receipts/cpl_library_open_asks_sheet123_2026-10-24_s466.sql`,
-  applied by `supabase-migrate.yml` on the S466 branch): each new sheet is one guarded UPDATE from the version as read.
+  applied by `supabase-migrate.yml` run 40096111383): each new sheet is one guarded UPDATE from the version as read.
   `made_by` is capped at 300 characters (`cpl_library_text_ck`), so it is a range (*sheets 46 to 122 by S341 SkyTerrace
   through S460 SkyFremontia*) that each sheet extends by its two ends.
 - Sam's sheet 47, 48 and 49 calls of 2026-10-07 and 2026-10-08 (the sheets to the vault, one Library record per series,
