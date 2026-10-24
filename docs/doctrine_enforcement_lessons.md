@@ -592,3 +592,16 @@ tracker reader cannot see) and it is the cheaper side of the trade.
 - **A fixture keyed by an id rots when the ids re-key.** `kb/_test_activity_card_current.py` still named the
   Apprentice row 3.1.2a, renamed 3.1.3 in the 2026-07-21 reorg. Neither test runs in CI, which is how both rotted
   unseen; wiring them in is a small follow-up.
+
+## 2026-10-24 — S464 SkyBuckeye: the house_voice backlog, 23 to 1
+
+- **Sort a lint's hits before rewriting them.** Of 23 `house_voice` findings, 10 sat in verbatim archives, 8 named
+  the measure *adoption leverage* (`adoption_leverage`), and 2 quoted a person or a statute. Nine were the business
+  register the rule exists for. Rewriting the other fourteen would have changed a quotation or renamed a defined
+  term to satisfy a lint, the outcome the rule's own comment warns against.
+- **Teach the lint the exception in the rule, never in `prose_only()`.** The fixer shares `prose_only()`'s
+  definition of prose, so `rule_house_voice` strips the measure name and multi-line *"..."* speech after masking,
+  and skips `*_archive.md` beside the lanes it already skipped. A check that it still fires on "highest-leverage"
+  guards against an exemption that swallows the rule.
+- **The one left is correct as it stands.** The T5 amendment draft's regulation text repeats §78093.2's "Utilize";
+  the regulation's wording follows the statute's.
