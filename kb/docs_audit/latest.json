@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-23",
+  "generated": "2026-10-24",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -10,23 +10,23 @@
     "other": 150000
   },
   "summary": {
-    "files": 1248,
-    "bytes": 12819098,
-    "over_budget": 12,
-    "handoff_max": 460,
+    "files": 1250,
+    "bytes": 12832143,
+    "over_budget": 11,
+    "handoff_max": 461,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60021,
-    "superseded_files": 0,
-    "superseded_bytes": 0,
+    "always_loaded_bytes": 59926,
+    "superseded_files": 8,
+    "superseded_bytes": 49853,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60021,
-        "over": 1
+        "bytes": 59926,
+        "over": 0
       },
       "other": {
         "files": 125,
-        "bytes": 3938791,
+        "bytes": 3939339,
         "over": 3
       },
       "index": {
@@ -35,8 +35,8 @@
         "over": 0
       },
       "lessons": {
-        "files": 84,
-        "bytes": 2348259,
+        "files": 85,
+        "bytes": 2355916,
         "over": 2
       },
       "kb_note": {
@@ -46,25 +46,26 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 456213,
+        "bytes": 456379,
         "over": 6
       },
       "handoff": {
-        "files": 430,
-        "bytes": 3228701,
+        "files": 431,
+        "bytes": 3233470,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 12,
       "house_voice": 23,
+      "oversized_doc": 11,
       "kb_note_dialect": 1,
+      "superseded_handoff": 8,
       "vault_heavy_path": 64
     },
     "vault": {
-      "files": 24660,
-      "bytes": 3655008713,
-      "heavy_bytes": 2542490056,
+      "files": 24669,
+      "bytes": 3655072045,
+      "heavy_bytes": 2542499480,
       "heavy_share": 0.696,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -135,19 +136,6 @@
     }
   },
   "findings": [
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 60021,
-        "limit": 60000,
-        "lane": "always_loaded",
-        "over_by": 21,
-        "ratio": 1.0
-      },
-      "message": "60,021 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
     {
       "rule": "house_voice",
       "fixable": false,
@@ -458,13 +446,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 27422,
+        "bytes": 26589,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 7422,
-        "ratio": 1.37
+        "over_by": 6589,
+        "ratio": 1.33
       },
-      "message": "27,422 B is 1.4× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "26,589 B is 1.3× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/library.md"
     },
     {
@@ -531,6 +519,94 @@
       "path": "docs/roadmap_archive.md"
     },
     {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 453,
+        "authoritative": 461,
+        "has_frontmatter": true
+      },
+      "message": "handoff 453 is below the authoritative 461 but is not stamped `superseded: true`",
+      "path": "docs/session_453_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 454,
+        "authoritative": 461,
+        "has_frontmatter": true
+      },
+      "message": "handoff 454 is below the authoritative 461 but is not stamped `superseded: true`",
+      "path": "docs/session_454_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 455,
+        "authoritative": 461,
+        "has_frontmatter": true
+      },
+      "message": "handoff 455 is below the authoritative 461 but is not stamped `superseded: true`",
+      "path": "docs/session_455_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 456,
+        "authoritative": 461,
+        "has_frontmatter": true
+      },
+      "message": "handoff 456 is below the authoritative 461 but is not stamped `superseded: true`",
+      "path": "docs/session_456_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 457,
+        "authoritative": 461,
+        "has_frontmatter": true
+      },
+      "message": "handoff 457 is below the authoritative 461 but is not stamped `superseded: true`",
+      "path": "docs/session_457_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 458,
+        "authoritative": 461,
+        "has_frontmatter": true
+      },
+      "message": "handoff 458 is below the authoritative 461 but is not stamped `superseded: true`",
+      "path": "docs/session_458_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 459,
+        "authoritative": 461,
+        "has_frontmatter": true
+      },
+      "message": "handoff 459 is below the authoritative 461 but is not stamped `superseded: true`",
+      "path": "docs/session_459_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 460,
+        "authoritative": 461,
+        "has_frontmatter": true
+      },
+      "message": "handoff 460 is below the authoritative 461 but is not stamped `superseded: true`",
+      "path": "docs/session_460_handoff.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -583,10 +659,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1532775458,
+        "bytes": 1532784882,
         "kind": "dir"
       },
-      "message": "directory totals 1,532,775,458 B inside the vault"
+      "message": "directory totals 1,532,784,882 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

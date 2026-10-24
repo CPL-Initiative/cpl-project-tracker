@@ -109,3 +109,38 @@ of the repo until it is applied, so a committed receipt always means a write tha
 - **The knowledge rule is a flag and a link, and the check is a count.** `knowledge` says whether a piece's
   substance is knowledge; `kb_note` links the note once the curation pipeline has it; Needs attention counts
   the pieces with the first and not the second. Nothing copies a deck into the KB; the join is at the record.
+
+## S460 SkyFremontia (2026-10-24): Open Asks Sheet 122, the ELL IET page's public listing
+
+- **An outward step is a card, even when the page is done.** The ELL IET page was built under Sheet 121
+  card 3 and sat as a draft; listing it publicly and sending it to eight grantees is on the one hold list,
+  so Sheet 122 asks it as one card (list and send, list only, keep on the team Library, edit first) rather
+  than chat. The lane carries the NEEDS SAM marker until he answers; the builder refuses to build without it.
+- **A chip label carries no semicolon.** `_chips_attr` refuses `;` in a label or a value (the attribute is a
+  `;`-joined list), so a label reads *List it, and I contact the projects myself*, never *List it; I will...*.
+- **The series record moves by receipt, on the session's docs branch.** The guarded UPDATE from version 121
+  (as read, with `updated_at` as read) rode `kb/migrations/.apply`; `supabase-migrate.yml` applied it in
+  four minutes (run 40051278289) and committed the receipt to the branch; the read-back showed version 122,
+  41 versions, Sheet 122 Current and 121 Earlier.
+- **The harvest's "waits on Sam's word" items are queue order, not cards.** S449 ruled the two S448 offers
+  "neither a card", and Sam's 2026-10-17 go lets harvest calls proceed on their procedures; the NEXT line
+  names what the queue takes up next, and a sheet asks only what he alone decides.
+
+## Moved from the lane (S460 SkyFremontia, 2026-10-24)
+
+The library lane's Next section carried these settled calls as a log (the lane stood at 1.45 times its budget). They are
+recorded in `cpl_memory` and kept here verbatim; the lane states current truth.
+
+- **Sam's sheet 47 calls (2026-10-07 14:17-14:20Z):** card 3 *Shared*, which he withdrew the same day (below); card 4 *Move them* (every decision-sheet builder writes to the vault, and the public repo holds no sheet); card 5 *One per series*, as proposed (the open-asks series is one Library record, each other sheet one record under its own occasion); card 6 *Date made* (nothing changes: a file keeps the date code of its first version). Card 4 is open work: 13 builders in `kb/`, their sheets and 18 hand-made ones in `docs/visuals/` (31 carry reply chips), and the template tests that read two real sheets, which need fixtures first.
+- **Sam's sheet 48 card 1 (2026-10-07 14:52Z): *Keep it public*.** The Library records the Ironworker film's audience as Public (receipt `kb/receipts/cpl_library_ironworker_public_2026-10-07_s341.sql`); the page and the film stay.
+- **Sam, 2026-10-07 (in chat): CPLLibrary is not shared.** *"Let's give up on sharing the Drive because so many on
+  team do not have google accounts. May need to switch to sharepoint, where they all have access."* This closes sheet 48
+  card 2 and withdraws sheet 47 card 3. The Drive connector's `share_file` refused every try (S341, 10 of his 19
+  addresses; a side session the same evening, one more with his explicit go): *invalid argument*, or *the caller does
+  not have permission* for three. The connector has no way to send the invitation, which an address without a Google
+  account needs (the likely cause, unconfirmed).
+- **Sam's Open Asks Sheet 49 (2026-10-08 15:23-15:25Z, all three his own call):** 1 *I create it*: the
+  CPLLibrary folder on the MAP team's SharePoint site (link in `cpl_memory`
+  `sam-cpllibrary-sharepoint-folder-2026-10-08`); 2 *Guests allowed*; 3 *Hand and sync*, with his note *"For now by
+  hand and sync but later automatically so we avoid creating different artifact storage solutions."* He copied the
+  16 Drive files into the folder himself (2026-10-08); no session has read them yet.

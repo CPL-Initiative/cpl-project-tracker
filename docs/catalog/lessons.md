@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-90 document(s).
+91 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -102,6 +102,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Test suite speed — lessons](../test_suite_speed_lessons.md) | `test_suite_speed_lessons.md` | 2026-08-29 | 2026-08-29 |
 | [The checkpoint's UI pass — lessons](../ui_pass_lessons.md) | `ui_pass_lessons.md` | 2026-10-09 |  |
 | [The Commons — lessons](../commons_lessons.md) | `commons_lessons.md` | 2026-10-18 | 2026-10-20 |
+| [The communications register and the writer module — lessons](../communications_lessons.md) | `communications_lessons.md` | 2026-10-24 |  |
 | [The Library and its filer — lessons](../library_lessons.md) | `library_lessons.md` | 2026-10-06 |  |
 | [Title 5 §55050 — conforming the regulation to Ed. Code Article 9 (lessons)](../t5_55050_lessons.md) | `t5_55050_lessons.md` | 2026-08-26 | 2026-08-26 |
 | [TMC Builder — workstream lessons](../tmc_builder_lessons.md) | `tmc_builder_lessons.md` | 2026-06-16 |  |
