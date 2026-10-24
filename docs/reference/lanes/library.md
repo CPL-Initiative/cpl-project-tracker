@@ -43,22 +43,33 @@ Sam's routine reads Requested records as queue items (step 6 of *At the start* i
 [`scheduled_sessions`](../scheduled_sessions.md)). The versions table shows the time
 each version was filed (`filed_at`, call 8).
 
-✅ **The public library is built** (2026-10-20, DSP side session; mock-up
-https://claude.ai/artifact/Ebz253XFREqAni5D3sgVP9, Sam: *"Mock up looks great!"*). One
-record and a switch, never a copy (*"Copy or move...to save space"*): **List publicly** on a
-record in the Library tab sets `public_listed` through `cpl_library_set_public()`, which
-needs a reviewer sign-in; a trigger refuses the public columns any other way, and retiring a
-piece or narrowing its audience unlists it. `cpl_library_public()` (anon) returns the listed
-pieces' public fields only, to the page at `library/` and the Admin tab's **Public library**
-panel (Remove beside each). A Claude page also needs its claude.ai link set public, which the
-switch asks the lister to confirm. Schema `kb/supabase_cpl_library_public.sql`; test
-`tests/public_library.test.js`; in the a11y sweep light and dark. **Every public piece carries the public
-header** (Sam, 2026-10-21): the CPL Initiative logo to the Chancellor's Office CPL page, links to
-the CPL Fact Sheet, MAP, Find your college (the landing pages), the MAP dashboard, Credit for
-Being You and the CPL Library, and Light and Dark controls on COBI's `cpl_theme`. The source is
-`CPLBrain/04-projects/cpl-initiative/public-header/` (`header.html`, and `apply.py`, which
-embeds the logos for a claude.ai page); `library/index.html` carries a copy. **Next:** Sierra links
-listed pieces (a separate PR, A/B first); YouTube training videos become film records.
+✅ **The public library is built** (2026-10-20, DSP side session). One record and a switch, never a copy
+(*"Copy or move...to save space"*): **List publicly** on a record in the Library tab sets `public_listed` through
+`cpl_library_set_public()`; a trigger refuses the public columns any other way, and retiring a piece or narrowing its
+audience unlists it. `cpl_library_public()` (anon) returns the listed pieces' public fields only, to the page at
+`library/` and the Admin tab's **Public library** panel (Remove beside each). A Claude page also needs its claude.ai
+link set public, which the switch asks the lister to confirm. Schema `kb/supabase_cpl_library_public.sql`; test
+`tests/public_library.test.js`; `npm run a11y -- public-library public-library-dark` (the targets' names; a bare
+`library` is not one).
+
+✅ **The page in Malone's look (Sam, 2026-10-24, S467; built the same day, mock-up
+https://claude.ai/artifact/1eotDvtmj56cHMEFP363T2).** His words: *"see the page Malone designed with you for the AI
+Outcomes to Skills project. I like the look of it and it seems consistent with the CO webpages. Can you depart from our
+First Light motif and redesign the CPL Public Library based on Malone's."* The page takes map.rccd.edu/CPL-AI's look: a
+navy Georgia title over a gold rule, the search and **For** beside it in the hero, a photo in an arc on the right, white
+cards on a pale blue ground, a navy foot; colors only as tokens in the two `:root` blocks (the test fails a raw color
+anywhere else). From his markup of the old page: the eyebrow, the description, the kind and audience word filters, the
+*The library* label and the header's link to the page itself are gone; **For** sits right of the search and groups its
+names by kind when there is more than one; **Sort** opens on *Most recent* (then *Oldest first*, *Title A–Z*; undated
+pieces last); a card shows one line of its occasion and two of its summary, ending in an ellipsis, with the whole text
+in the page for search and screen readers, and the title opens the piece. **Light by default:** no device-setting
+query anywhere; dark only from the reader's own Dark click, here or in COBI (the shared `cpl_theme`). The header is the
+public header's copy restyled to the page; its other copies (`CPLBrain/04-projects/cpl-initiative/public-header/`) still
+follow the device setting. **The photo cycles** through every `.hero-slide` the page lists, one every seven seconds,
+with *Pause photos* beside it; with one photo, or for a reader who asks for reduced motion, nothing moves. It shows one
+today: the student from Malone's page (`library/photos/hero-student-1.jpg`, cropped clean of the arc, the black edge and
+the notice text baked into her 424 by 445 screenshot, and drawn inside a CSS arc). CLAUDE.md's First Light rule names
+this page as its one departure. `cpl_memory` `sam-public-library-malone-look-2026-10-24`.
 
 ✅ **The team phrase lists publicly too (Sam, 2026-10-23 18:50Z, his own call, reversing
 2026-10-20; built S458):** *"can you set the Library page to be editable with Team phrase and not
@@ -75,25 +86,13 @@ asks for a sign-in. `cpl_memory` `sam-library-public-listing-with-team-phrase-20
 workflow it serves (Sam, 2026-10-23): Ashley makes a college's CPL Pathways visual, files it here,
 lists it publicly and gives the college the link as the CSM team meets with them.
 
-## Sam's rulings (2026-10-05, all in `cpl_memory`)
-
-His ask: *"I think I may need a COBI tab to store and retrieve artifacts like this
-ppt and video. Advise"*. Then, by number:
-
-1. **Build the tab.**
-2. **Drive is the home for approved files.** He named
-   [the folder](https://drive.google.com/drive/folders/1WNtaaKMGSYsKsdJLxi4fbR24fXD4fGUZ)
-   and made **CPLLibrary** inside it
-   ([13WnIL1j…](https://drive.google.com/drive/folders/13WnIL1j-Qo3CJ5znVFZhs5wmAjJqOxxN));
-   the tab links there.
-3. **Drafts stop going into the public tracker repo**, and the ones there come off main.
-4. *"I think all artifacts like this created on this account should go to the
-   Drive instead of the repos"* — **drafts go to Drive too**, in
-   [CPLLibrary/Drafts](https://drive.google.com/drive/folders/15eXeJb9OIl1nOFE4Tykr1y7rBGKBUvih)
-   (created 2026-10-05), in place of private Claude players.
-5. **Move the files already in the repos to Drive**: the public tracker first,
-   then the vault.
-6. **The manual hand-off now**; an automatic upload only if it grates.
+✅ **Who a piece is made for (Sam's Open Asks Sheet 120, 2026-10-23; built S459):** `for_kind` (college, district,
+agency, vendor, co, other), `for_category` (Other's typed category) and `for_name` under one check; the tab filters on
+them and every form takes them, a college's name from MAP's `map_colleges`. **Make a visual** writes a college's CPL
+Opportunity record pair in one step, and opens Start a piece for any other entity, naming the agency template
+(`CPLBrain/04-projects/cpl-initiative/agency-visual/build.py`). The rulings, the build and the six asks as put to him
+are in `docs/library_lessons.md`, *Moved from the lane (S467)*, verbatim; Sam's 2026-10-05 rulings, his calls 7 to 9
+and the Drive filing history moved there with them.
 
 ## How a file reaches the SharePoint folder (Sam, Open Asks Sheet 49, 2026-10-08)
 
@@ -136,100 +135,6 @@ applied 2026-10-20 by `supabase-migrate.yml` run 39500044669; the record, the me
 its log row read back 1, 1, 1).
 `cpl_memory` `sam-claude-artifacts-go-in-library-2026-10-20`.
 
-## Filed in Drive so far
-
-- **The Noncredit Summit CPL slides, draft 2** (CPLLibrary/Drafts, 2026-10-06): Sam dropped the file in
-  by hand (2,039,321 bytes, matching the build), and the record links it as v2 with the CPLBrain build
-  script as its source (receipt `kb/receipts/library_filed/2026-10-06_noncredit-summit-cpl-slides__…sql`,
-  #1889). ⚠️ **`apply_migration` timed out four times from that session without writing** (no row, no
-  migration recorded), and the `execute_sql` guard refuses `UPDATE`, so **Sam ran the receipt in the
-  Supabase SQL editor**. That is the fallback when the migration path stalls; read the row back after.
-- **Both Summit film cuts, v1** (2026-10-06, by Sam by hand): the narrated cut in **CPLLibrary**, the music
-  cut in **CPLLibrary/Drafts**. Their record still links the GitHub copies.
-- **Both Summit film cuts, v2** (S339, 2026-10-06): sent to Sam in chat for **Drafts**
-  (`20261005_Noncredit_Summit_in_Motion_v2.mp4`, 10,048,927 bytes; `..._Narrated_v2.mp4`, 17,230,551 bytes). They are
-  never committed: `.gitignore` keeps v2+ film MP4s out and the page test asks git (#1891). The record
-  `noncredit-summit-in-motion` still needs its v2 rows once Sam confirms the files are in Drafts.
-- **The five Title 5 tracked-changes documents** (CPLLibrary, 2026-10-05): uploaded by the session
-  through the Drive connector, each at its exact byte size; the record links v5 and lists all five
-  (receipt `kb/receipts/cpl_library_drive_t5_2026-10-05.sql`, guarded; the history trigger holds the
-  before-row). Files keep their own date codes (the vault convention). Sam asked for titles that
-  start with *"our date code 20261005"*; if he means the filing date for every file, a Drive rename
-  keeps each link.
-- **What a session can upload:** through the Drive connector, a file up to roughly 50 KB (it travels as
-  base64 inside the tool call, and Drive reports no checksum there). The filer has no size limit and
-  checks md5, once Sam's sign-in is set.
-
-## Sam's calls 7-9 (2026-10-05, "7, 8,9 Y")
-
-7. **Build the automatic filer** (built 2026-10-06 for Drive; **parked 2026-10-08**, when the Library moved to
-   SharePoint and Sam set the automatic upload for later, into the same folder). A session files each piece to Drive the moment it makes it,
-   films included, and writes the Library record in the same step. Setup is Sam's once: a Google
-   Cloud project with the Drive API on, an OAuth client, one consent as camapinitiative, and three
-   environment secrets (`GOOGLE_DRIVE_CLIENT_ID`, `GOOGLE_DRIVE_CLIENT_SECRET`,
-   `GOOGLE_DRIVE_REFRESH_TOKEN`; read `read_documentation` topic `environment.secrets` and walk him
-   through it). Check first whether the `drive.file` scope may write into CPLLibrary, a folder the
-   app did not create; if not, use the full Drive scope. Then `scripts/library_file.py <path>`:
-   resumable upload to CPLLibrary or Drafts, the Drive link back, the Library row written.
-8. **Versions are separate files.** Each edit uploads `<date code>_<name>_vN`, keeping the original
-   date code; the record's version list gains a row with the time filed. Never rely on Drive's own
-   revision history, which drops versions after 30 days unless pinned.
-9. **Decision sheets** stay Claude pages (the reply buttons need the artifact store). Each gets a
-   Library record (kind document, occasion "Open asks") linking its artifact, with no Drive copy.
-   Their sources leave the public tracker repo for the private vault repo. **Done for the
-   open-asks sheets (2026-10-06):** the 47 sheets, their builder, its guard and the mechanics doc
-   live in `CPLBrain/decision-sheets/` (samueltlee/CPLBrain#255). The builder reads the lanes and
-   the reply-chip module from the tracker clone beside the vault, and rebuilt sheet 44
-   byte-identical from there. Its coverage check runs in `scripts/check_generated.sh`, which finds
-   the vault beside the tracker, and in the vault's own CI; the tracker's CI cannot read the
-   vault. The vault's chatbox indexer skips `decision-sheets/`. Git history keeps the old copies
-   (no rewrite, Rule 5). **Still open:** the other decision sheets in `docs/visuals/` (36 carry
-   reply chips, and some of the 11 others are early sheets), with their builders in `kb/`
-   and the template tests that read them; and a Library record per sheet linking its artifact.
-
-## Sam's rulings ([Open Asks Sheet 120](https://claude.ai/artifact/NWy1GvYEEQgS8oKrYWHpTk) cards 2 to 7, 2026-10-23 ~20:02Z, all his own call)
-
-**Rulings, in the cards' order:** 1 the Library tab makes it and the Letters tab attaches it (*library*); 2 five types, and his note *"Add an \"Other\" choice with the ability to type in the new entity category"* (*five*); 3 show who a piece is for on the public page and filter by it (*show*); 4 a college's record pair in one step from the tab (*onestep*); 5 the agency template, ELL IET first (*template*); 6 backfill the 26 (*backfill*). `cpl_memory` `sam-sheet-120-rulings-2026-10-23`. **Kind gains `visual` (Sam, 2026-10-23 ~20:08Z, on the mock-up, delegated: *"Whatever you recommend, go for it"*):** a page opened in a browser (the CPL Opportunity pages, the DSP page, a Claude artifact) is a *visual*; `document` stays for Word and PDF; the backfill moves today's pages from document to visual; the public page offers Visuals and Documents as separate chips. **Built in that order (S459, below).**
-
-✅ **Built (S459 SkyBuckeye, 2026-10-23), cards 2 to 7 and the Kind call:** `kind` admits `visual`; `for_kind` (college, district, agency, vendor, co, other), `for_category` (the typed category, only with other) and `for_name` under one check (`cpl_library_for_ck`), a name needing a type and Other its category; `cpl_library_public()` returns the three. The tab filters on Made for and For (the names present), shows *Made for College · For Bakersfield College* under each title, and every form (Add, Start a piece, Edit) takes the three, a college's name offered from MAP's list (`map_colleges`, read with the phrase) so it matches the CPL Pathways pick. **Make a visual** beside Start a piece: for a college it writes the record pair in one step (the live `cpl-opportunity/?college=` page as `visual`, the workbook as `spreadsheet` not filed, slugs as the first twelve were filed, a second Make refused); for a district, agency, vendor, the Chancellor's Office or Other it opens Start a piece with kind Visual and the entity set, and the brief's paste names the agency template (the DSP page's shape) until the vault builder exists. The public page shows *For <name>* on each card, a Made for chip per type with a listed piece, and a For list. Tests: `tests/library.test.js` (11), `tests/public_library.test.js` (5). Applied through `supabase-migrate.yml`: the columns (`cpl_library_made_for_2026_10_23_s459`), then the public read (`cpl_library_public_made_for_2026_10_23_s459`); **the backfill receipt** (`kb/receipts/cpl_library_made_for_backfill_2026-10-23_s459.sql`: the twelve pages to visual with their college, the twelve workbooks with theirs, the DSP page to visual for DDS, Aging and LWDA, the ELL IET notice for EDD ELL IET Fund grantees; the open-asks series stays a document, Sam's call 9) **applies after the build is on Pages**, so the live page never shows a kind it cannot name. **Card 5 built (S459, 2026-10-23, after Sam sent the notice):** the agency template is `CPLBrain/04-projects/cpl-initiative/agency-visual/build.py`, a JSON brief to a page in the DSP page's shape (the schema in its README; First Light, both themes, the public header applied at build). Its first instance, **ELL IET CPL Starting Points** (https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe; record `ell-iet-cpl-starting-points`, kind visual, Made for Agency, For EDD ELL IET Fund grantees, seen by the team until Sam lists it), is computed by `ell-iet/make_brief.py` from the notice's eight projects, MAP's adoption view, COCI's active programs (MIS short names mapped to MAP's) and each college's county: a card per project ordered by fit. *Make a visual*'s paste names the builder. The six asks as put to him:
-
-Sam, 2026-10-23 ~19:28Z: *"Ashley and I have been working on the CPL Pathways tab to add the visuals
-you create there so the colleges can see their CPL opportunities as the MAP Customer Success Managers
-(CSM team) meet with them. She puts them in the Library and then sets them as publicly available and
-gives them the link... This is the type of visual I'd like to be able to generate from the Library tab
-or the Report tab (whichever you recommend). I think we would want to be able to sort on the libraries
-for the type (college, agency, vendor, CO) and add the name of the entity we are making this for and
-have it filterable by whatever entities we've created something for. Give it a good think and
-recommend."* Measured 2026-10-23: 40 live records; 24 are the twelve colleges' CPL Opportunity pairs
-(11 pages listed publicly), 2 are agency pieces (DSP Credit Starting Points for DDS, Aging and LWDA;
-the ELL IET doc for EDD's grantees), none is a vendor's; no column holds who a piece is for, so the
-name lives in the title alone. Mock-up: https://claude.ai/artifact/LRFiSDUY4bGTokJdaKgHUJ.
-
-1. **Where the visual is made.** Recommended: the Library tab, a *Make a visual* control beside
-   *Start a piece*; the Letters tab attaches a Library piece to a send; the Report tabs stay docx. It
-   might be wrong if he wants the email and its visual drafted in one place (the Letters tab). Or both.
-2. **The entity types on a record.** Recommended: `for_kind` in college, district, agency, vendor,
-   co (his four and district, since My College already scopes by district and the CSM team meets
-   districts) and `for_name`, a college's name from MAP's list so the filter matches the Pathways
-   pick. It might be wrong if district is noise. Or his four alone.
-3. **The public page shows who a piece is for.** Recommended: `cpl_library_public()` returns the two
-   columns and the page filters by them; each title already carries the name, so nothing new is
-   disclosed. It might be wrong if the public page should list colleges only by name and keep agencies
-   and vendors to the private tab. Or a private filter only.
-4. **A college visual in one step.** Recommended: *Make a visual* for a college writes the record
-   pair now (the live `cpl-opportunity/?college=` page and the CPL extract), no session; Ashley lists
-   it with the phrase. It might be wrong if each college still wants the five-tab workbook a session
-   builds. Or keep the session build.
-5. **The agency template, ELL IET first.** Recommended: generalize the DSP page into a vault builder
-   (a JSON brief to a page: the meeting, the training facts, colleges tiered by fit, what to confirm,
-   next steps, sources) and build the ELL IET grantees page as its first instance from his uploaded
-   doc, filed Made for Agency, For EDD ELL IET Fund grantees; *Make a visual* for an agency, vendor or
-   the CO captures the brief and hands over the paste. It might be wrong if the ELL IET meeting wants a
-   grantee-by-grantee shape rather than colleges tiered. Or hand-build ELL IET alone.
-6. **Backfill today's records.** Recommended: the 24 college pieces, the DSP page and the ELL IET doc
-   take their type and name by a guarded UPDATE with a before-values receipt (reversible). Or leave
-   them blank and set the columns only on new pieces.
-
 ## Sam's rulings ([Open Asks Sheet 121](https://claude.ai/artifact/NsRnyxTJ3pZmHBWk2qSoLN), 2026-10-23 ~21:27Z, all three his own call: 1 fold-rule, 2 attached, 3 text)
 
 **Carried out by S459 the same day: card 3 (the ELL IET grantees page from the notice Sam sent at 21:28Z, filed at `CPLBrain/04-projects/cpl-initiative/ell-iet/`, and Sheet 120 card 5's template with it) and card 1, the fold: the Knowledge Base tab is gone from the side menu and lives inside the Library as its second view (two underlined words at the top, *Pieces* and *Knowledge Base*; the portal frame `#library-kb` sits beside `#library-root` and never re-renders, so its own magic-link sign-in holds; `#knowledge-base` links open `#library/knowledge-base` through `tabs.js` `FOLDED`; the view opens without the team phrase, since the portal gates itself). The rule: `cpl_library.knowledge` (true, false or not set) and `kb_note` (the note's path in `cpl-knowledge-base` or its link; a typed note says knowledge on its own, `cpl_library_kb_note_ck`); Add and Edit take both, the record shows them, and **Needs attention** counts *knowledge pieces with no KB note* (`flagsOf` `kb_note`). The note itself still reaches the public KB only through its curation pipeline (`CURATION.md`); the Library links it. Tests: `tests/library.test.js` (12), `tests/kb_portal_tab.test.js` rewritten. Card 2 waits on Sam attaching the four Coordinator Guide files in a session. `cpl_memory` `sam-sheet-121-rulings-2026-10-23`.** The asks as put to him:
@@ -245,6 +150,26 @@ is on the public library: Sam listed it himself from the Library tab at 13:44Z (
 contacts the eight projects himself. The session's staged receipt,
 `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, was never applied. Its public topics are empty; Sierra links
 it by title and summary until someone adds them.
+
+## The hero photos and the deck (Sam, Open Asks Sheet 124, 16:20Z 2026-10-24, both his own call)
+
+**Card 1, *attach*:** Sam attaches the toolkit photos, since no session can reach
+`careereducationtoolkit.cccco.edu`: it is his local directory (Sam, ~16:30Z), which is why the name resolves nowhere else. He put
+them on Google Drive as zips (`CCC-LATTC-<Program>-<number>_V1.zip`, the folder 1WNtaaKMGSYsKsdJLxi4fbR24fXD4fGUZ); the Drive
+connector refuses a download over 10 MB, and the first zip is 43.8 MB, so the photos come unzipped, attached to a message or
+as JPEGs under 10 MB on Drive.
+When they arrive: resize each to about 1,200 pixels on its long side as a JPEG in `library/photos/`, add an
+`<img class="hero-slide" data-src="photos/..." alt="">` per photo after the first, and rerun the page's test and
+`npm run a11y -- public-library public-library-dark` (the pause control shows from two photos on). This waits on the
+files, which no card can supply.
+
+**Card 2, *unlist*:** *Turning IT and AI credentials into credit* comes off the public library until it has a public
+home: its link points into the vault's private GitHub repository, so a public visitor got GitHub's 404 page. Receipt
+`kb/receipts/cpl_library_it_ai_deck_unlist_2026-10-24_s467.sql` (one guarded UPDATE; seen_by, summary and topics kept, so
+relisting is one switch once the deck has a link that opens without a sign-in), applied by `supabase-migrate.yml` run
+40111416395 and read back at 16:33Z: `public_listed` false, `listed_by` *Sam, Open Asks Sheet 124 card 2 (S467
+receipt)*, and `cpl_library_public()` lists 15 pieces. The file is in the vault
+(`04-projects/cpl-initiative/20260929_CPL_IT_AI_Credentials_3.pptx`).
 
 ## Next
 

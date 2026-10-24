@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_it_ai_deck_unlist_2026-10-24_s467.sql",
+ "name": "cpl_library_it_ai_deck_unlist_2026_10_24_s467",
+ "version": "20261024162833",
+ "sha256": "a8438defcbf447c5858cef39c897acb99c15ae8083af85b8f445c0093fbbe27b",
+ "run": "40111416395",
+ "status": 201,
+ "response": "[{\"slug\":\"turning-it-and-ai-credentials-into-credit\",\"public_listed\":false,\"seen_by\":\"public\",\"listed_by\":\"Sam, Open Asks Sheet 124 card 2 (S467 receipt)\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

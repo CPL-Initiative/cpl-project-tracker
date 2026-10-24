@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-437 document(s).
+438 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 468 | [Session 468 handoff: the public library in Malone's look; Open Asks Sheet 124 (the toolkit photos, a deck with no public home); oversized docs 8 to 4](../session_468_handoff.md) | 2026-10-24 |
 | 467 | [Session 467 handoff: the funding film v10 in Scenario 4's words, the ELL IET page listed; the attestation surface before the noncredit builder](../session_467_handoff.md) | 2026-10-24 |
 | 466 | [Session 466 handoff: three lane files under budget, Scenario 4 found published; the Veteran map's UI pass next](../session_466_handoff.md) | 2026-10-24 |
 | 465 | [Session 465 handoff: the house_voice backlog cleared; the Veteran map's UI pass and Sheet 122 next](../session_465_handoff.md) | 2026-10-24 |

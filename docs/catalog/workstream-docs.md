@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-85 document(s).
+86 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -67,7 +67,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Noncredit CIP categories — scope, and the pathway that does not need the TOP](../noncredit_cip_category_scope.md) | `noncredit_cip_category_scope.md` | 2026-08-14 |  |
 | [Phrase scope — the measurement, and why GR is a one-line fix](../phrase_scope_analysis.md) | `phrase_scope_analysis.md` | 2026-08-19 |  |
 | [Program requirements harvest lessons — archive 2 (S360-S371)](../program_requirements_harvest_lessons_archive_2.md) | `program_requirements_harvest_lessons_archive_2.md` | 2026-10-15 | 2026-10-15 |
-| [Program requirements harvest lessons — archive 3 (S399-S403)](../program_requirements_harvest_lessons_archive_3.md) | `program_requirements_harvest_lessons_archive_3.md` | 2026-10-22 | 2026-10-22 |
+| [Program requirements harvest lessons — archive 3 (S399-S405)](../program_requirements_harvest_lessons_archive_3.md) | `program_requirements_harvest_lessons_archive_3.md` | 2026-10-22 | 2026-10-24 |
 | [Program-Course pipeline — continuation handoff (for a fresh session)](../program_course_pipeline_handoff.md) | `program_course_pipeline_handoff.md` | 2026-07-16 |  |
 | [Public/private repo split — scope](../public_private_repo_split_scope.md) | `public_private_repo_split_scope.md` | 2026-08-19 |  |
 | [Re-loading map_student_credit with its credit columns](../map_student_credit_reload.md) | `map_student_credit_reload.md` | 2026-08-10 | 2026-08-10 |
@@ -84,6 +84,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Sierra vendor-integration lane — session handoff](../sierra_vendor_lane_handoff.md) | `sierra_vendor_lane_handoff.md` | 2026-07-03 | 2026-07-03 |
 | [Sierra — technical reference (how the CPL assistant is built)](../sierra_technical_reference.md) | `sierra_technical_reference.md` | 2026-07-02 | 2026-07-02 |
 | [Similar-course FAMILY consolidation lane — scope + measure-first](../similar_course_family_scope.md) | `similar_course_family_scope.md` | 2026-06-16 |  |
+| [SkyView / CCR Atlas lessons — archive 2](../ccr_atlas_lessons_archive_2.md) | `ccr_atlas_lessons_archive_2.md` | 2026-10-24 | 2026-10-24 |
 | [SkyView search: the deferred commit — handoff](../deferred_commit_handoff.md) | `deferred_commit_handoff.md` |  |  |
 | [SkyView troubleshooting brief — for a Claude Desktop computer-use session (observe and log only)](../skyview_troubleshooting_brief.md) | `skyview_troubleshooting_brief.md` | 2026-09-06 | 2026-09-06 |
 | [SkyView — drag any local course, queue the breakage, batch the re-mint](../skyview_drag_rehome_scope.md) | `skyview_drag_rehome_scope.md` | 2026-08-24 | 2026-08-24 |

@@ -262,7 +262,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 599
+     "line": 600
     },
     {
      "id": "module:scripts/check_memory_briefing_layout.js",
@@ -1424,7 +1424,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 51
+     "line": 52
     }
    ],
    "main_committers": []
@@ -16468,7 +16468,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 167
+     "line": 228
     }
    ],
    "served": true,
@@ -21180,7 +21180,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 13,
+     "line": 19,
      "pages": [
       "library/index.html"
      ]

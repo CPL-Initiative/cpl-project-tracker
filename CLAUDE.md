@@ -586,6 +586,8 @@ file.
   contract themed components key on. **Dark is not license to invent a color**:
   add the role to the dark `:root` in both HTMLs (Rule 4), never a component
   rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
+  **One departure (Sam, 2026-10-24):** the public `library/` page takes Malone's
+  CPL/AI look ([lane](docs/reference/lanes/library.md)).
 - **Accessible to today's standards — and verified, not claimed.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
   **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the math. **Color is
@@ -749,7 +751,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 123](https://claude.ai/artifact/4bedPAUhXKfLSEScLbEpX3), 2026-10-24, answered in full at 13:17Z: the ELL IET page listed, the film's Scenario 4 words adopted; no card is open, and Sheet 121's card 2 waits on Sam attaching the four Coordinator Guide files). Answering
+> (latest: [Open Asks Sheet 124](https://claude.ai/artifact/U5EKwPSiNhUgY8QX75XDsG), 2026-10-24, answered 16:20Z: photos to come, deck unlisted). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

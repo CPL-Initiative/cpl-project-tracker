@@ -89,75 +89,12 @@ under `community relations`, the named hard case.
 proposals. The 2026-09-20 receipt predates opt-out and is entirely his, which is
 why it is the ground truth.
 
-## The gate, the band, and the battery (2026-09-21, S281)
+## Moved to the lessons doc (S467, 2026-10-24)
 
-**The gate is empirically right.** p ≥ 0.85 folded **25/25**; sweeping it, 0.85
-is the highest-recall cut with precision 1.00 (recall 0.61), degrading at once
-below (0.94 at 0.80, 0.87 at 0.70). `kb/_jev_score.py` reproduces it from the
-committed receipt — no runner needed.
-
-⚠️ **NOTHING ORDERS THE BAND BELOW THE GATE** — 26 pairs, 838 rows, the part
-that needs a curator. Within it AUC(p_same) **0.441**, AUC(care) **0.450**
-against 0.50 for chance. The three LOWEST-scored pairs in the whole set (0.32,
-0.44, 0.48) were all folds. ⚠️ **A whole-set comparison of `care` flatters and
-must not be used** — it reports a +0.41 separation that is really "above-gate
-items are easy". The band is the only honest place to measure.
-
-**The battery** (`kb/_jev_battery.py`, six variables, selection rule fixed in
-source before any answer existed, primary gating six Holm-corrected
-secondaries) **ran and nothing passed** — receipt
-`kb/receipts/jev_battery_2026-09-21_s281.json`; the primary came back below
-chance ([lessons](../../common_cr_reference_lessons.md), moved S302).
-
-⚠️ **`units` AT 0.281 IS THE DURABLE LESSON.** Jev applies the general prior
-that an hours difference means a content difference — the prior this domain has
-overruled. **Where a domain has overruled a general prior, a general model's
-confidence runs the wrong way.** Sam's 2-unit rule (below) is what makes the
-question askable at all.
-
-## The ladder sheet, and the ranking rule that failed on it (2026-09-21, S282 SkyLedger)
-
-Sheet: **https://claude.ai/artifact/BkxGoSkJUE22BWCGcw9pwB** — ten items,
-generator `kb/_build_jev_ladder_sheet.py`.
-
-⚠️ **COLLAPSE VALUE CANNOT RANK THE FOUR CENTERS — IT IS A CONSTANT BETWEEN
-THEM.** Measured on `chatbox_peer_articulations`: the CER, CSR, CCR and CCRR
-each ride the **same 9,413 articulation rows across the same 82 colleges**,
-consolidating different COLUMNS of one corpus. The rule orders items WITHIN a
-center and is undefined between them. Third corpus to need its own rule —
-the test to run before carrying one anywhere:
-[`methodology-a-ranking-rule-is-a-claim-about-where-variance-lives`](../../kb-notes/methodology-a-ranking-rule-is-a-claim-about-where-variance-lives.md).
-
-**What ranks the centers instead: what ONE SITTING of verdicts is worth.**
-
-| Center | Judgment backlog | Reach of that backlog | Per verdict |
-|---|---|---|---|
-| **CCR** | 16,478 identities · 33,418 stand-alone | **134,485 member rows** | not yet askable |
-| **CCRR** | 2,159 groups (1,936 at rung 5) | 9,413 rows · 82 colleges | **~29 rows** (51 verdicts → 1,459 rows) |
-| **CSR** | 15 findings for Jev · 1 collision (AUTB) | identity layer, not rows | Rule 7 re-mint |
-| **CER** | 38 findings for Jev | **71 rows · 20 colleges** | **~1.2 rows** |
-
-⚠️ **THE CER's MEASURED REACH IS 71 ROWS** — only **21 of its 38** credential
-titles reach the articulated corpus at all. Caveat on the sheet: the CER governs
-3,813 unified titles across MAP, so its value may sit in **exhibit adoption**
-rather than rows, which nobody has measured.
-
-⚠️ **THE CSR's BACKLOG WAS A MISREAD (2026-09-29, #1735).** After the anchor's
-re-key to `SUBJ4 M####`, `cs9_anchor_subj_diverge` compared the `subject` field
-(the modal LOCAL code): 108 ids already carrying the canonical and 13 umbrella
-languages read as re-mint questions, and `cs2_dup` read Sam's FTVE fan-in as a
-collision. Both fixed (`tests/csr_trail_rules_test.py`). Left: 13 weak mnemonics,
-2 unused prefixes (CMUS, HIT) and **AUTB**, the `AB` short-code defect naming
-Agricultural Business. A SUBJ4 change is a re-mint: Jev ranks, a curator rules.
-
-⚠️ **THE CER's 38 JUDGMENT FINDINGS ARE JULY'S 38** (re-run 2026-09-29: 239 →
-116, the S111 renames cleared the rest); they never moved: the CER has no store to
-hold a ruling.
-
-**Only the CCRR has a decisions store.** `cr_reference_decisions` (with its
-`note` reason column) and `kb_curation` are the only decision/curation tables in
-the database. Each other center needs one before its first sheet, routed through
-Governance under Rule 10(a3).
+*The gate, the band, and the battery* (S281: p ≥ 0.85 folds 25/25; nothing orders the band below it; `units`
+at 0.281 is the durable lesson) and *The ladder sheet, and the ranking rule that failed on it* (S282: collapse
+value is a constant between the four centers; only the CCRR has a decisions store) moved verbatim to
+[`common_cr_reference_lessons.md`](../../common_cr_reference_lessons.md), *Moved from the lane (S467)*.
 
 ## RULED — a Jev next step per reference, and the unit range (Sam, 2026-09-29)
 
