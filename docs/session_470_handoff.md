@@ -8,6 +8,21 @@ status: current
 
 # You are Session 470
 
+**EMERGENCY ADDENDUM (S469, ~23:12Z, 28,879 tokens of context left):** Sam answered Open Asks Sheet 126 at 23:08Z, both his
+own call: **card 1 *public*** (the Fact Sheet and the funding model page load `../sierra/sidebar.js` in place of the
+`factsheet_sierra.js` drawer; COBI as it is) and **card 2 *light*** (Sierra, the Fact Sheet, the veteran map and the CPL
+Opportunity page open Light unless the reader picks Dark; COBI's System stays). `cpl_memory` `sam-sheet-126-rulings-2026-10-24`;
+the two lanes record both. **Build both first**; item 1 below has the how. **Then Sam's three asks of ~23:20Z** (`cpl_memory`
+`sam-sierra-sidebar-asks-resize-library-prompt-2026-10-24`, his words there): (1) make the side bar resizable
+horizontally (`sierra/sidebar.js`, a drag edge plus keyboard, width remembered per viewer); (2) Sierra answered *"What is
+one step I can take to create CPL for the ELL IET grantees?"* without naming *ELL IET CPL Starting Points* (Library
+record `ell-iet-cpl-starting-points`, listed, empty public topics): wire `cpl-chat` to read `cpl_library_public()` for
+visuals and topics, and put the CPL Initiative logo in her footer; (3) hide the audience words until the first Ask, then
+prompt gently for the population. Not refreshed by this addendum: the vault's
+sheet builder still carries both cards (drop them, and its coverage test then passes on its own), `decision_sheets.md`,
+the INDEX, the status file, the vault session note. CLAUDE.md §11's pointer still says *two cards open*: change it to
+*answered 23:08Z; no card is open*.
+
 Your moniker is **SkyBlueCurls**. Session 469 (**SkyLemonadeBerry**) was opened by hand by Sam at about 20:31Z on
 2026-10-24 with the right greeting. It ran a **light checkpoint**: no Roadmap row moved, no re-mint and no Rule 10 data
 write (its only writes were `cpl_memory` rows). It skipped `kb/README.md` and `README.md` (no KB structure or listed

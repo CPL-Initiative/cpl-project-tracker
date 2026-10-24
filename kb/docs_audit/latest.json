@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1261,
-    "bytes": 12915840,
-    "over_budget": 4,
+    "bytes": 12916835,
+    "over_budget": 5,
     "handoff_max": 470,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59969,
@@ -46,24 +46,24 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 435818,
-        "over": 1
+        "bytes": 435927,
+        "over": 2
       },
       "handoff": {
         "files": 440,
-        "bytes": 3284744,
+        "bytes": 3285630,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 4,
+      "oversized_doc": 5,
       "kb_note_dialect": 1,
       "house_voice": 1,
       "vault_heavy_path": 64
     },
     "vault": {
       "files": 24716,
-      "bytes": 3664290209,
+      "bytes": 3664291204,
       "heavy_bytes": 2543157067,
       "heavy_share": 0.694,
       "ignore_filters": [
@@ -171,6 +171,19 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20035,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 35,
+        "ratio": 1.0
+      },
+      "message": "20,035 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/library.md"
     },
     {
       "rule": "oversized_doc",
