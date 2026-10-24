@@ -238,14 +238,14 @@ name lives in the title alone. Mock-up: https://claude.ai/artifact/LRFiSDUY4bGTo
 2. **The CPL Coordinator Guide's four files.** The audit (S458, `CPLBrain/04-projects/cpl-initiative/coordinator-guide/audit_workflow.js`) needs `CPL_Coordinator_Guide.docx`, `.pdf`, `CPL_Coordinator_Quick_Reference.docx` and `.pdf` attached again: the uploads died with S458's container and no report was committed. Recommended: attach them in the next session; the audit runs as he asked ("ultracode").
 3. **The ELL IET award notice's text.** Card 5's build (the agency template, the ELL IET grantees page first) needs the notice's text and its eight grantees; the sandbox cannot read edd.ca.gov, and search found five grantees and the $17.97 million total. Recommended: paste the text or attach the PDF.
 
-## NEEDS SAM (S460 SkyFremontia, 2026-10-24): the ELL IET page's public listing
+## The ELL IET page is listed publicly (Sam, Open Asks Sheet 123 card 1, *list*, 13:17Z 2026-10-24)
 
-**NEEDS SAM 1.** *ELL IET CPL Starting Points* (https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe; Library record
-`ell-iet-cpl-starting-points`, kind visual, Made for Agency, status draft, seen by the team, not listed) is built from EDD's
-award notice as Sheet 121 card 3 asked. Listing it publicly and sending each of the eight projects its card is outward, so
-the call is his: list and send, list only, keep it on the team Library, or edit first. Recommended: read the draft, then
-list it publicly and send each project its card, with one message per project drafted in the Letters tab. Card 1 of
-[Open Asks Sheet 122](https://claude.ai/artifact/PKRBW9ucqKtikxhRtevHrj).
+*ELL IET CPL Starting Points* (https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe; Library record `ell-iet-cpl-starting-points`)
+goes on the public library: Sam chose *List it, and I contact the projects myself*, so no session drafts the eight
+messages. The listing is a guarded receipt, `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, which does what
+`cpl_library_set_public()` does, with the record's summary as the public summary. It applies only after Sam sets the
+page's claude.ai link public from its Share menu (a session cannot, and the tab's dialog requires that tick), so a
+public visitor never meets a private link. Until then the record stays unlisted.
 
 ## Next
 
@@ -256,8 +256,8 @@ list it publicly and send each project its card, with one message per project dr
   `.gitignore` `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's two
   player pages off the site, and add a guard test so a deliverable binary cannot be committed again. Then the vault's
   binaries (29 on 2026-10-05).
-- **The open-asks series record reads version 122** (receipt `kb/receipts/cpl_library_open_asks_sheet122_2026-10-24_s460.sql`,
-  applied by `supabase-migrate.yml` run 40051278289): each new sheet is one guarded UPDATE from the version as read.
+- **The open-asks series record reads version 123** (receipt `kb/receipts/cpl_library_open_asks_sheet123_2026-10-24_s466.sql`,
+  applied by `supabase-migrate.yml` run 40096111383): each new sheet is one guarded UPDATE from the version as read.
   `made_by` is capped at 300 characters (`cpl_library_text_ck`), so it is a range (*sheets 46 to 122 by S341 SkyTerrace
   through S460 SkyFremontia*) that each sheet extends by its two ends.
 - Sam's sheet 47, 48 and 49 calls of 2026-10-07 and 2026-10-08 (the sheets to the vault, one Library record per series,

@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-24 (S466 SkyYerbaSanta, opened by hand beside the routine's run): the film can carry Scenario 4's words (#2418), held on Open Asks Sheet 123 card 2; a pending noncredit gate releases; the routine check for hand-opened sessions; full checkpoint; handoff 467 rewritten.
 - 2026-10-24 (S466 SkyYerbaSanta, scheduled): the funding film rebuilt from the published Scenario 4, v9 (#2417); light checkpoint; handoff 467.
 - 2026-10-24 (S465 SkyCoyoteBrush, scheduled): three lane files under budget, Scenario 4 found published (#2416); light checkpoint; handoff 466.
 - 2026-10-24 (S464 SkyBuckeye, scheduled): the house_voice lint backlog 23 to 1 (#2414); light checkpoint; handoff 465.

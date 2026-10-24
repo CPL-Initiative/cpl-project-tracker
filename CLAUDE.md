@@ -749,7 +749,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 122](https://claude.ai/artifact/PKRBW9ucqKtikxhRtevHrj), 2026-10-24, one card: the ELL IET page's public listing; Sheet 121's card 2 waits on Sam attaching the four Coordinator Guide files). Answering
+> (latest: [Open Asks Sheet 123](https://claude.ai/artifact/4bedPAUhXKfLSEScLbEpX3), 2026-10-24, answered in full at 13:17Z: the ELL IET page listed, the film's Scenario 4 words adopted; no card is open, and Sheet 121's card 2 waits on Sam attaching the four Coordinator Guide files). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

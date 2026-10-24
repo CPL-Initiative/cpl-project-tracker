@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_film_row_2026-10-24_s466.sql",
+ "name": "cpl_memory_film_row_2026_10_24_s466",
+ "version": "20261024133026",
+ "sha256": "e6a59153d67229f2a18b23638f4024ca589188e656c302df0fcc6e94e9fd0f98",
+ "run": "40098134565",
+ "status": 201,
+ "response": "[{\"slug\":\"funding-film-scenario-4-words-held-2026-10-24\",\"status\":\"verified\",\"summary\":\"Under Scenario 4 each priority carries the credit funding alone ($10,727,131, 3,\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
