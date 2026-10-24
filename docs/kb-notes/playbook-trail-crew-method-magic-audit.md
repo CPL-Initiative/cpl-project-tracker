@@ -87,7 +87,7 @@ backlog is adjudication, not detection: 10,599 `seed_untouched_discipline`
 drafts, 4,179 `unit_anomaly` flags, 1,253 `member_top_divergence` over-merge
 candidates. Strategy:
 
-1. **Triage by leverage, not row order.** Adjudicate first the ~2,355
+1. **Triage by adoption leverage, not row order.** Adjudicate first the ~2,355
    ARTICULATED identities (they carry the adoption-leverage payoff and feed
    the CER/EACR), then corroborated multi-college M-IDs, and leave the dark
    single-college tail for last (or for a coarser pass).

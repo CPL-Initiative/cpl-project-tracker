@@ -178,7 +178,7 @@ Repo visibility itself is a toggle and reverts instantly.
    *"for any purpose, even commercially"* — the one thing actively inviting what
    this whole exercise aims to minimize. The curation pipeline is already
    human-gated, so the control point exists; nobody has been applying this lens
-   at it. **This is the highest-leverage question on the page.**
+   at it. **No question on the page decides more.**
 2. **Is the org on Free or Team?** Phase 3 cannot start on Free.
 3. **Option B or C for the Fact Sheet's data?**
 4. **Name for the private repo.** `cpl-cobi` is the obvious candidate.

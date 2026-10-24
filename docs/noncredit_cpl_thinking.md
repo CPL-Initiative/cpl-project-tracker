@@ -295,7 +295,7 @@ borne entirely by the certifying body.
 **Exemplars from the landing-page mockups:** ASE G1, CompTIA Security+, CompTIA
 Network+, AWS D1.1/D1.3/D17.1, NCCER Welding Level 2, AWS D1.1 SMAW.
 
-**Scalability: Tier 1–2.** Highest-leverage lane per unit of faculty effort. **This
+**Scalability: Tier 1–2.** The lane that returns the most per unit of faculty effort. **This
 is where CompTIA, Microsoft, and ASE enter the Learning Partner story** — not as
 teachers but as **assessors**. The recognition question (§7) has a different answer
 for them than for NOCE, and the paper must not blur the two.

@@ -560,6 +560,23 @@ check("house voice: silent on `robust`, which has a real technical sense",
       da.rule_house_voice(_tech) is None)
 _os.unlink(_tech["path"])
 
+# "Adoption leverage" names a measure (`adoption_leverage`), a quoted person's
+# *"..."* words are theirs, and an archive holds handoff text moved verbatim:
+# 20 of the 23 hits on 2026-10-24 were these three (S464).
+_metric = _entry("docs/kb-notes/z.md",
+                 "Rank by adoption leverage and the adoption-leverage list. Jessica: *\"We can\nutilize a CR twice.\"*")
+check("house voice: silent on the adoption-leverage measure and quoted speech",
+      da.rule_house_voice(_metric) is None)
+_os.unlink(_metric["path"])
+_arch = _entry("docs/roadmap_archive.md", "We should leverage this.", lane="other")
+check("house voice: does NOT scan a verbatim archive",
+      da.rule_house_voice(_arch) is None)
+_os.unlink(_arch["path"])
+_still = _entry("docs/kb-notes/w.md", "This is the highest-leverage habit.")
+check("house voice: still fires on leverage outside the measure",
+      da.rule_house_voice(_still) is not None)
+_os.unlink(_still["path"])
+
 # ── unreferenced_offload now covers .claude/skills/ ───────────────────────
 # A skill is PULL content reached by a trigger, exactly like a reference doc —
 # and `.claude/skills/` sits outside the corpus walk (0 of 732 files), so a

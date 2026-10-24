@@ -377,7 +377,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Methodology — one ranked list cannot answer two questions](../kb-notes/methodology-one-ranked-list-cannot-answer-two-questions.md) | methodology | published | 2026-08-27 | 2026-08-27 |
 | [Methodology — Parity test as the proof for a data-source cutover](../kb-notes/methodology-parity-test-cutover-proof.md) | methodology | published | 2026-05-29 | 2026-05-31 |
 | [Methodology — provenance is a field, not a footnote (and a two-state detector is wrong about the middle)](../kb-notes/methodology-provenance-is-a-field.md) | methodology | published | 2026-08-05 | 2026-08-05 |
-| [Methodology — Rank a cleanup queue by downstream impact, not structural leverage](../kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Methodology — Rank a cleanup queue by downstream impact, not a structural proxy](../kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — rebuild a flattened diagram as a built slide (and reconcile it against its own arithmetic)](../kb-notes/methodology-rebuild-a-flattened-diagram-as-a-built-slide.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [Methodology — recompute a document's figures from the live engine, don't copy them](../kb-notes/methodology-recompute-a-documents-figures-from-the-live-engine.md) | methodology | published | 2026-08-05 | 2026-08-05 |
 | [Methodology — retheming a generator-owned HTML monolith via token value-swap](../kb-notes/methodology-token-retheme-on-generated-html.md) | methodology | published | 2026-06-12 | 2026-06-12 |

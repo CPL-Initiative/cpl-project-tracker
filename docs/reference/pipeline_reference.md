@@ -238,8 +238,8 @@ properties to preserve:
   so the same course taught at many colleges collapses to one row. Columns:
   unified course, discipline, colleges earned, modal credit recommendation,
   linked credential, **adoption leverage** (peer colleges teaching the same
-  identity that haven't earned it). HTML shows the top 50 by leverage; the
-  xlsx export carries all ~2,355 identities. **Over-merge guardrail:** leverage
+  identity that haven't earned it). HTML shows the top 50 by adoption leverage; the
+  xlsx export carries all ~2,355 identities. **Over-merge guardrail:** adoption leverage
   on identities flagged `over_merged` is **withheld** (rendered as "⚠ flagged",
   exported as "over-merged (withheld)") so a conflated cluster never yields a
   bogus adoption target. Skips gracefully if `kb/coci_articulations.json` is

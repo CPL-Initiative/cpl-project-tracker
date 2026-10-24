@@ -36,7 +36,7 @@ Sessions get names too (SkyMail, SkyWalker) — that's how you and Sam refer to
 
 ## 2. Tell me what you *noticed*, not just what you want
 
-This is the highest-leverage habit on the list.
+No habit on the list pays back more.
 
 A request gets you the thing you asked for. **An observation gets you a better
 thing.** The two most valuable prompts in the session that built the contact

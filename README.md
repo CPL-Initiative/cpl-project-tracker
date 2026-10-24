@@ -243,7 +243,7 @@ The whole ecosystem, end-to-end:
    git-tracked KB. **Eligible-units + Students columns + a 🎯 Cleanup-impact
    preset** (Session 37) rank the cleanup queue by real CPL student-credit
    payoff (rolled up from the Common Exhibit Reference via the articulation
-   crosswalk), not just structural leverage. **Session 38:** the Subject
+   crosswalk), not just a structural proxy. **Session 38:** the Subject
    column/filter shows the **canonical SUBJ4** (raw local codes on hover), a
    surfaced **"⚇ Merge"** affordance leads each row's actions cell, the
    expanded member table is **click-to-sort**, and Units shows a **range**

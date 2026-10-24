@@ -13,7 +13,7 @@ related:
 # CCR Convergence Strategy
 
 *Sam's charge (2026-07-03): the Suggested-merges worklist holds 7,700+
-decisions — too many to grind through by hand. Leverage AI to decide the
+decisions — too many to grind through by hand. Use AI to decide the
 merges and mints now (faculty SMEs adjust and validate later), build a
 mind-meld process that captures the faculty/dean/VPAA judgment behind those
 decisions, and aim the whole thing at a concise crosswalk — "no more than
