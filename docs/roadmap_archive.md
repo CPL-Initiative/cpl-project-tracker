@@ -6105,3 +6105,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 - 2026-10-22 S449 SkyBuckwheat: the harvest queue after S448 (Mt. San Jacinto settled, Berkeley City's codes read through `cq_view`, Palo Verde's new Acalog catalog, Cypress, Hartnell by its site); lessons S449; handoff 450.
 - 2026-10-22 (S448 SkyDeergrass, opened by Sam): CPL Pathways' clear, faster list and the COBI header (#2353); My College folded into CPL Pathways, search box and alphabetical list (#2355); My College off the menu, the search redraws on a college change (#2356); handoff 449.
 - 2026-10-22 (S447 SkyBrittlebush, opened by Sam): Sheet 112 answered, later (#2348); an Administration of Justice address and a hyphenated course code (#2349); Mt. San Jacinto and Santa Barbara City reread, build be2635ed5b73 (#2350); the harvest lessons' S399-S403 to archive 3; handoff 448.
+
+## INDEX update history, moved by S468 (2026-10-24)
+
+- 2026-10-23 (S457 SkyColumbine): the S456 wave and Sierra's ESL certificates landed; the scorer's low-end-meets reading built and held on Open Asks Sheet 119; handoff 458.

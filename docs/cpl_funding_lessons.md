@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-10-20
+updated: 2026-10-24
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -49,81 +49,7 @@ the two consolidations (Session 219) on **2026-09-30** (S306), and the 2026-09-0
 
 *The S262 to S265 sections (2026-09-14 to 09-16) moved verbatim to the [archive](cpl_funding_lessons_archive.md) at the two 2026-10-22 side sessions.*
 
-## 2026-09-22 — S283 (SkyFund): the leadership-review pass
-
-Sam's last content edits before he reviews the tab with CO leadership, shipped in #1660; the four
-calls still his ride the [funding review sheet](https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2).
-
-### "$0 demonstrated" was true of one number and false of the program
-
-In Sam's signed-in scenario every institution was gated (0 of 118 confirmed), so `winEarned` read
-$0 while $2,174,757 sat in `winHeld`: funding MAP had demonstrated, reserved until confirmation. The
-Summary printed *"$0 demonstrated so far"* over a reserve bullet saying the opposite. The allocation
-bullet now counts `winEarned + winHeld` as demonstrated and ends on local confirmation, which is the
-one fact the reserve line carried. **A figure that excludes gated funding reads as nothing
-happened.**
-
-### One word, two figures
-
-The formula box called the per-priority ceiling *"the cap"*, and the next bullet called the
-$400,000 bound *"Cap"*. A leadership reader has no way to tell them apart. The per-priority figure is
-now the **max award**, Sam's own term for it (2026-09-01), and *cap* names the bound alone.
-
-### The fifth identity-join miss
-
-The baseline counts ran over `base().colleges` (115) and so left out Calbright, which Sam counts as a
-college (116). The coordinator match had the same blind spot: its roster came from the same list, so
-no noncredit-only row could ever match, and MAP spells the institution *"Calbright College Credit"*
-and *"Calbright College Non-Credit"*. It changed nothing today (neither has a coordinator), which is
-exactly how a join failure stays invisible. `eligColleges()` is the one list now.
-
-### Ten suites pinned phrasing, not facts
-
-A style ruling (positive-first, no "this, not that") broke ten suites, because each asserted the
-retired sentence: *"not its targets"*, *"placed on the table"*, *"rather than a carve-out line"*,
-*"the annual tranche buys"*. Each now asserts the FACT the phrase carried (*targets stay proportional
-to the pre-cap share*), so the next wording ruling costs a sentence, not a suite.
-
-### Verify against Sam's screen
-
-The local render runs on baked defaults (no remote config on localhost), so it showed $10.9M
-demonstrated where Sam's scenario showed $0 and a reserve line. His screenshots were the ground
-truth for every Summary edit; the local render verified layout only. The tab's a11y failures were
-measured against `origin/main` in a worktree before any were called pre-existing.
-
-
-## 2026-09-23 — S283 (SkyFund), second pass: a fourth priority, and a button that saved nothing
-
-Sam's P2/P3/P4 asks, shipped in #1662. The detail is in the lane file and the PR.
-
-### A count typed as three broke eighteen suites and two live surfaces
-
-Adding Priority 4 broke every test that had assumed three priorities, and it would also have broken two
-live surfaces the tests did not cover. The briefing's count gate would have sent every college's steps to
-the standalone list. The explainer typed "three" in three sentences. Sam's stored `[0, 2, 1]` failed
-`isPermutation(v, 4)` and fell back to the natural order, which swaps P2 and P3 with nothing on screen to
-say so. **An order written before a priority existed is extended, not reset**, in `cpl_funding.js` and
-`college_briefing.js` alike. Tests count from `NPRIO`.
-
-### Read the request log before the handler
-
-Sam said the (D) card's Designate button did nothing. In jsdom the code worked. The edge logs showed nine
-200 PATCHes, the last four his releases, and **no request after them**, so the click never reached a
-save. The likeliest cause is that nothing was selected in the list when he clicked, and the button returned
-without a word. It now says what it needs. The log split the problem in two (the client never sent a
-request, or the server refused it) before any code was read.
-[note](kb-notes/methodology-a-control-that-does-nothing-read-the-request-log-first.md)
-
-### A ruling superseded by the same person is replaced, and says so
-
-The (C) note quoted Sam's 2026-08-30 *"not measurable at this time, and may never be"*, and a test pinned
-it. His 2026-09-22 EDD ruling replaces it on the page with both dates named, and `cpl_memory` records the
-supersession explicitly.
-
-### Three rulings, built the same hour
-
-He held P4 at 0% until the first import, let CO research define the outcome, and took the drill-in
-consolidation as proposed. The follow-up PR shipped the one-line Baseline and the import receiver.
+*The two S283 sections (2026-09-22 and 09-23) moved verbatim to [`cpl_funding_lessons_archive_2.md`](cpl_funding_lessons_archive_2.md) at S468 (2026-10-24), the first archive being over its own budget.*
 
 ## 2026-09-23 — S284 (SkyWage): Scenario 3, a base that read $149k, and a scenario nobody published
 
@@ -763,3 +689,34 @@ renders it. Sam had S263's wiring (#1579) REVERTED (#1580): `rate = k/factor` re
 **The pending gate.** The lane said the noncredit conditions, pending until the attestation view exists, *neither hold nor release*. `ncLaneGate` returns `blocked: false` when pending, and only blocked withholds, so pending releases, as the 2026-10-22 build notes above said. The builder must land after the attestation surface, never before, or colleges would see released noncredit funding with no condition met; the lane's NEXT now puts the surface first (`cpl_memory` `pitfall-nc-pending-gate-releases-2026-10-24`).
 
 **Sam's answer (Open Asks Sheet 123, 13:17Z, both his own call).** Card 2 *adopt*: `figures.json` re-filed with the lane, s2 rebuilt in the new words and rendered as v10, v9 retired. Card 1 *list* (the library lane's ELL IET page) rode the same PR as a guarded listing receipt.
+
+## Moved from the lane (S468, 2026-10-24)
+
+Settled sections of `docs/reference/lanes/implementation-funding.md`, moved verbatim when the lane passed its 20 KB budget (the lint's `oversized_doc`).
+
+✅ **The memo's Word file keeps its format (Sam, 2026-10-22).** The export walks the document as the browser holds it (Chrome's `<div>` lines, `<br>`, label spans) and carries the memo's styles; the Contents and the memo page offer it (`memo/?download=word`). ⚠️ **Text typed into the Report view's document is export-only**; a lasting edit goes in *The memo's text* (**Edit the memo's text**). Guard `funding_memo_docx`.
+
+✅ **The funding page's help and figures (S439, 2026-10-20).** The seed JST outcome and implementation condition 3 print the JSTs in MAP, the enrolled veterans MIS reports and the JSTs that reach 75% (`jstNeedWords()` over `perf().vet_jst`; a masked count prints nothing). The Coordinator's How to meet it (`mc_how_coord`) names office hours and the MAP Dashboard chat. The Contents ends with the introduction, office hours, the college's landing page (`CPL_FUNDING_TAB.landingPage()`) and its training video. *What is a choice, and what is a given* is **Funding Model Numbers**. Guard `funding_jst_counts_and_help`.
+
+✅ **The view first, then the institution (Sam, 2026-10-20).** Step 1 is the view, *All Institutions* · *My Institution* (`VIEW_ITEMS`; hover: "An institution is a college or a district"); Step 2, the chooser, shows under My Institution alone (`.cplfund-step1-pick[hidden]`), no figures until one is chosen. With one chosen, the Funding outcomes are its own: `scopeProgress()` sums `addInstPrios()` (a district = its colleges); quarter units for De Anza and Foothill. Guards `cpl_funding_step_two_view`, `cpl_funding_outcomes_follow_institution`.
+
+## S468 SkyMatilija (2026-10-24): Sam's four funding asks
+
+- **Why Sam saw no edit fields on the NC cards.** `ncOutcomesSectionHtml()` set `ro = publicMode() || !unlocked()` while
+  `prioritiesHtml()` sets `ro = false` for the credit cards beside them, whose edits go to `activeOverride()` (the team's
+  config signed in, a what-if signed out). Two card families on one tab read as one editor; editability follows one rule.
+  The NC cards now follow the credit cards' and carry the editors they lacked (measure, target rule, Serves, strategies).
+- **An NC edit replaces the whole year's list.** `setNcOutcome()` copies `ncOutcomeRows(slot)` and writes the array into
+  the active layer, so a test that passes a fixture object to `T._setShared()` shares its arrays with the model and a
+  later edit rewrites the fixture (G2 and G3 read Sheet 113's target from the edited copy until the test cloned it).
+- **`parseNum("two")` is 0.** It strips every non-digit before `Number()`, so free text becomes zero; the target-rule
+  fields require a digit before they parse.
+- **Cabrillo, counted** (`funding/nc_outcome_feasibility/2026-10-24_cabrillo/`): NC-1's mirror channel (an exhibit whose
+  target credit course has a CDCP twin by `title_norm`) counts 33 exhibits against a target of 9, and Cabrillo numbers
+  its twins 400 above the credit course. Statewide 4 of 102 colleges meet on it. 61 exhibits carry no `exhibit_id`, so
+  a distinct count keyed by id alone drops them (29, then 33 once keyed by id or title). NC-2: COCI confirms a named
+  control number and cannot find the course by title; two Cabrillo "portfolio" courses are professional portfolios.
+- **The coordinator sources.** The credit condition, the landing page and Sierra's cascade read MAP's College Contacts
+  `CPL Coordinator` fields (56 of 124 colleges filled, 2026-10-24); the noncredit condition reads COBI's attestation row.
+- The NC outcomes test runs about 2.5 minutes locally; run it alone rather than the full `npm test`.
+

@@ -289,3 +289,19 @@ name lives in the title alone. Mock-up: https://claude.ai/artifact/LRFiSDUY4bGTo
 6. **Backfill today's records.** Recommended: the 24 college pieces, the DSP page and the ELL IET doc
    take their type and name by a guarded UPDATE with a before-values receipt (reversible). Or leave
    them blank and set the columns only on new pieces.
+
+## S468 SkyMatilija (2026-10-24): the toolkit photos in the hero
+
+- **Getting the photos.** Sam's Drive folder *Photos* (`1Ip4KaipYU6xNCbogeEG81-ZPQkbzMJpd`) held ten synced JPEGs (0.15 to
+  0.93 MB); Baking and Nursing exist only inside zips over the connector's 10 MB limit. Each download's base64 lands in a
+  saved tool-result file; decode with Python `-I` into a fresh directory and verify with PIL before cropping.
+- **One object-position serves every slide only if every slide shares an aspect.** The hero box runs from 1.13:1 (1024
+  px) to 1.40:1 (1440 px), a 3.2:1 strip at 768 px (the middle 42% of a 4:3 photo's height shows) and 1.95:1 at 390 px.
+  So every photo is cropped to 4:3 with its faces between about 30% and 45% of the height, and the arc masks the left
+  tenth. Check each slide at the four widths by eye; a crop that clears the numbers can still cut a face.
+- **A cycling page keeps a jsdom test alive.** With eleven slides the cycle's `setInterval` started in every window the
+  test opened, and the process ran to its timeout after printing 108/108. Windows that do not test the cycle load the
+  page stripped to its first slide (`ONE`); the cycle's own windows close themselves.
+- **Mutation-test the photo checks** by breaking the page, not the test: an eager slide, a changed object-position, a
+  wrong height attribute, a missing file, a portrait file and a single slide each failed a named check.
+

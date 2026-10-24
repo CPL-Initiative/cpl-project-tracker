@@ -11962,7 +11962,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-10-20"
+     "updated": "2026-10-24"
     },
     {
      "created": "2026-06-21",
@@ -13441,7 +13441,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 86,
+   "count": 87,
    "docs": [
     {
      "created": "2026-05-30",
@@ -13849,6 +13849,22 @@
      "title": "CPL Assistant (Sierra) lessons \u2014 archive 2",
      "type": null,
      "updated": "2026-10-16"
+    },
+    {
+     "created": "2026-10-24",
+     "governs": [],
+     "path": "docs/cpl_funding_lessons_archive_2.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "archive",
+      "funding",
+      "implementation-funding",
+      "dashboard-tab"
+     ],
+     "title": "CPL Implementation Funding tab \u2014 archived lessons, part 2 (2026-09-22 onward)",
+     "type": null,
+     "updated": "2026-10-24"
     },
     {
      "created": "2026-06-11",
@@ -16052,8 +16068,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 438,
+   "count": 439,
    "docs": [
+    {
+     "created": "2026-10-24",
+     "governs": [],
+     "n": 469,
+     "path": "docs/session_469_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "public-library",
+      "implementation-funding",
+      "noncredit",
+      "map-users",
+      "sierra"
+     ],
+     "title": "Session 469 handoff: the toolkit photos live in the library's hero; the NC cards edit like the credit cards; Cabrillo counted; Open Asks Sheet 125; Sam's Ask Sierra side bar next",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-24",
      "governs": [],
@@ -23568,5 +23603,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1245
+ "total": 1247
 }
