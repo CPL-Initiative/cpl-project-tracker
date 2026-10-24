@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 467 | [Session 467 handoff: the funding film follows Scenario 4 (v9); the Veteran map's UI pass and the noncredit builder next](../session_467_handoff.md) | 2026-10-24 |
+| 467 | [Session 467 handoff: the funding film v10 in Scenario 4's words, the ELL IET page listed; the attestation surface before the noncredit builder](../session_467_handoff.md) | 2026-10-24 |
 | 466 | [Session 466 handoff: three lane files under budget, Scenario 4 found published; the Veteran map's UI pass next](../session_466_handoff.md) | 2026-10-24 |
 | 465 | [Session 465 handoff: the house_voice backlog cleared; the Veteran map's UI pass and Sheet 122 next](../session_465_handoff.md) | 2026-10-24 |
 | 464 | [Session 464 handoff: every drafting surface on the writer; the lint backlog and the next UI pass](../session_464_handoff.md) | 2026-10-24 |

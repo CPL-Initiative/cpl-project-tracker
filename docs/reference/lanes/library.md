@@ -238,14 +238,13 @@ name lives in the title alone. Mock-up: https://claude.ai/artifact/LRFiSDUY4bGTo
 2. **The CPL Coordinator Guide's four files.** The audit (S458, `CPLBrain/04-projects/cpl-initiative/coordinator-guide/audit_workflow.js`) needs `CPL_Coordinator_Guide.docx`, `.pdf`, `CPL_Coordinator_Quick_Reference.docx` and `.pdf` attached again: the uploads died with S458's container and no report was committed. Recommended: attach them in the next session; the audit runs as he asked ("ultracode").
 3. **The ELL IET award notice's text.** Card 5's build (the agency template, the ELL IET grantees page first) needs the notice's text and its eight grantees; the sandbox cannot read edd.ca.gov, and search found five grantees and the $17.97 million total. Recommended: paste the text or attach the PDF.
 
-## NEEDS SAM (S460 SkyFremontia, 2026-10-24): the ELL IET page's public listing
+## The ELL IET page is listed publicly (Sam, Open Asks Sheet 123 card 1, *list*, 13:17Z 2026-10-24)
 
-**NEEDS SAM 1.** *ELL IET CPL Starting Points* (https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe; Library record
-`ell-iet-cpl-starting-points`, kind visual, Made for Agency, status draft, seen by the team, not listed) is built from EDD's
-award notice as Sheet 121 card 3 asked. Listing it publicly and sending each of the eight projects its card is outward, so
-the call is his: list and send, list only, keep it on the team Library, or edit first. Recommended: read the draft, then
-list it publicly and send each project its card, with one message per project drafted in the Letters tab. Card 1 of
-[Open Asks Sheet 123](https://claude.ai/artifact/4bedPAUhXKfLSEScLbEpX3) (S466), as it was of Sheet 122 (https://claude.ai/artifact/PKRBW9ucqKtikxhRtevHrj), whose reply still counts.
+*ELL IET CPL Starting Points* (https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe; Library record `ell-iet-cpl-starting-points`)
+goes on the public library: Sam chose *List it, and I contact the projects myself*, so no session drafts the eight
+messages. The listing is a guarded receipt, `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, which does what
+`cpl_library_set_public()` does. The page's claude.ai link is public only once Sam sets it from the page's Share menu; a
+session cannot.
 
 ## Next
 

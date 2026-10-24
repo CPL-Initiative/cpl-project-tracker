@@ -1,7 +1,7 @@
 {
- "source": "../../../tmp/claude-0/-home-user/e7cef82b-24ac-5f55-b075-3dbbe79b56a7/scratchpad/live.json",
+ "source": "tests/fixtures/cpl_funding_config_8452c29a.json",
  "config_md5": "8452c29a",
- "read_at": "2026-10-24T12:14:29.453Z",
+ "read_at": "2026-10-24T13:20:27.310Z",
  "project": "cpl-implementation",
  "published": "Scenario 4",
  "scenarios": {
@@ -67,6 +67,8 @@
     }
    ],
    "reported": [],
+   "ncLane": "origination",
+   "ncOutcomes": [],
    "deadline": "2026-12-01",
    "timeline": [
     {
@@ -166,6 +168,8 @@
      "what": "Progress on each designated activity: what it set out to do, what it produced, and what it changed for students."
     }
    ],
+   "ncLane": "origination",
+   "ncOutcomes": [],
    "deadline": "2026-12-30",
    "timeline": [
     {
@@ -265,6 +269,8 @@
      "what": "Chancellor's Office CPL Initiative reports on progress for each designated activity."
     }
    ],
+   "ncLane": "origination",
+   "ncOutcomes": [],
    "deadline": "2026-12-30",
    "timeline": [
     {
@@ -362,6 +368,23 @@
      "goal": "D",
      "title": "Innovation Projects",
      "what": "Chancellor's Office CPL Initiative reports on progress for each designated activity."
+    }
+   ],
+   "ncLane": "outcomes",
+   "ncOutcomes": [
+    {
+     "label": "NC-1",
+     "title": "Exhibits built or adopted",
+     "share": 0.5,
+     "measure": "nc_exh",
+     "funding": 1893023.1000000003
+    },
+    {
+     "label": "NC-2",
+     "title": "Noncredit Career Exploration and CPL Portfolio course",
+     "share": 0.5,
+     "measure": "nc_course",
+     "funding": 1893023.1000000003
     }
    ],
    "deadline": "2026-12-31",

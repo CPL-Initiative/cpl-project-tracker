@@ -52,6 +52,14 @@ is his standing preference there too.
    same sheet as the S336 Sam had just opened (section *A signed-off session lets
    go*). A scheduled session that finds another one working ends its turn in one
    line instead: the next firing tries again.
+   **`list_sessions` never lists a routine-fired run, so read the routine too**
+   (S466, 2026-10-24: Sam opened a session at 12:21Z while the 12:12Z firing was
+   working, and both ran as S466 on the same queue item). `get_trigger`
+   `trig_01L8K64ZKYb5eALdT4HW6NAV` gives `last_run` (`fired_at`, `finished_at`,
+   `session_id`). A run with no `finished_at` is live: `get_session` on its id
+   with `cse_` read as `session_`, and agree one writer before you write. A run
+   that finished after the handoff you read may have merged since: fetch `main`
+   and read the newest handoff again. This check is for a session Sam opens by hand.
    **When `list_sessions` is not among your tools, read the open PRs** (newest
    updated first, with their comments) and the commits on `main` since the
    handoff. On 2026-10-17 the 05:12Z and 06:12Z firings both lacked it, both ran
