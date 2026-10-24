@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-431 document(s).
+432 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 462 | [Session 462 handoff: the writer's fourth and fifth consumers, the Sierra UI pass (one seal blue)](../session_462_handoff.md) | 2026-10-24 |
 | 461 | [Session 461 handoff: the writer module and its first three consumers, Open Asks Sheet 122 (the ELL IET page's public listing)](../session_461_handoff.md) | 2026-10-24 |
 | 460 | [Session 460 handoff: the Library's Made-for build, the agency template and the ELL IET page, the Knowledge Base fold, the meets reading applied, the six rows removed](../session_460_handoff.md) | 2026-10-23 |
 | 459 | [Session 459 handoff: the team phrase lists publicly, Sheet 120 carries the entity-visuals asks, the Coordinator Guide audit](../session_459_handoff.md) | 2026-10-23 |

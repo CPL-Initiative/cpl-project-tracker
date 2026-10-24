@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-23
+updated: 2026-10-24
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 85 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 431 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1237** | |
+| Session handoffs | 432 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1238** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-24 (S461 SkyManzanita, scheduled): the writer's fourth and fifth consumers (#2403, #2405), the Sierra UI pass, one seal blue (#2404); light checkpoint; handoff 462.
 - 2026-10-23 (S459 SkyBuckeye, later): the agency template and the ELL IET page, the Knowledge Base fold (#2397), the display apply recorded; handoff 460 rewritten; memory receipt `cpl_memory_2026-10-23_s459_later.sql`.
 - 2026-10-23 (S459 SkyBuckeye): the Library's Made-for build; the meets reading rebuilt and applied; the six older-build rows removed; KB note `methodology-a-measured-count-verifies-a-rebuild`; handoff 460.
 - 2026-10-23 (S458 SkyLarkspur): the team phrase lists a Library piece publicly (#2390, applied live); Open Asks Sheet 120 with six cards on visuals made for an entity and the Made-for mock-up; S457's checkpoint merged (#2388); the Coordinator Guide audit started; handoff 459.

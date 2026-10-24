@@ -43,3 +43,19 @@ related:
 - **Rewrite the instruction that breaks its own rule.** The report structure asked for "the most impactful findings"
   while the writer bans *impactful*; the port reworded it. Read a surface's own prompt text against the rules it now
   inherits.
+
+## S461 SkyManzanita (2026-10-24): the fourth and fifth consumers
+
+- `college_report_generator.js` (#2403) and `annual_report.js` (#2405) now draft through the writer. The college
+  report reuses `REPORT_AUDIENCES` unchanged: its six audiences matched the Custom Report's word for word, apart from
+  "ROI", which the writer spells out.
+- Two ports opened in parallel conflict on the same four lines: the `(6)` consumers list in `tests/cpl_writer.test.js`,
+  the seed list in `kb/_build_dependency_map.py`, the lane's Next, and the naming check in
+  `tests/report_session97.test.js`. Merge the first, merge `main` into the second, keep both sides and regenerate the
+  map. Or run the ports one after another.
+- A source-text test cannot match a rule the writer splits across string concatenations
+  (`"... (MAP) " + "platform"`). Test the composed string from `W.system()` in jsdom, or match a fragment that sits
+  inside one literal.
+- A lazy tab that a test `eval`s (`runScripts: "outside-only"`) needs `w.eval(WRITER)` first, the same order the page
+  loads them in. The proxy check moves from a load-time constant to `W.proxyUrl()`, which reads the page global when
+  it is called.
