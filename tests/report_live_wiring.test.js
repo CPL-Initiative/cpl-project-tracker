@@ -53,6 +53,7 @@ const muSrc = fs.readFileSync("map_users.js", "utf8");
 
 // ── Part C — report_generator.js live overlay + prompt ──
 const rgSrc = fs.readFileSync("report_generator.js", "utf8");
+const writerSrc = fs.readFileSync("cpl_writer.js", "utf8");   // static in both HTMLs before the generator
 
 const DATA = {
   last_updated: "July 2, 2026",
@@ -88,6 +89,9 @@ function makeWin(opts) {
     }
     return Promise.resolve({ ok: false, json: function () { return Promise.resolve([]); } });
   };
+  const wr = w.document.createElement("script");   // the writer first, as the page loads it
+  wr.textContent = writerSrc;
+  w.document.body.appendChild(wr);
   const el = w.document.createElement("script");
   el.textContent = rgSrc;
   w.document.body.appendChild(el);

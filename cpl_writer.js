@@ -19,6 +19,7 @@
 //   FUNDING_WORDS   the funding vocabulary (Sam, 2026-08-31 to 2026-09-28;
 //                   docs/reference/funding_vocabulary.md)
 //   AUDIENCES       who a piece is written for, with one line of guidance each
+//   REPORT_AUDIENCES the Custom Report's six, each with its report title and guidance
 //   MODEL           the one model, an unversioned alias: a dated pin is a latent outage on
 //                   its retirement date (docs/kb-notes/playbook-edge-function-502-retired-model.md)
 //
@@ -106,6 +107,22 @@
     { id: "other", label: "Other",
       guide: "a general reader: plain words, acronyms explained on first use" }
   ];
+  // The Custom Report's audiences (report_generator.js; Sam, 2026-07-03, and Session 97): each
+  // carries the report title the docx template renders and one paragraph of guidance.
+  var REPORT_AUDIENCES = [
+    { id: "legislators", label: "State Legislators & Legislative Staff", title: "Legislative Report",
+      guide: "Write for California state legislators and legislative staff. Emphasize return on investment, fiscal impact, student outcomes, policy alignment with AB 1071 and Vision 2030, and statewide scale. Use formal but accessible language. Lead with measurable impact." },
+    { id: "ccc_leaders", label: "CCC System Leaders (Chancellor's Office, Presidents)", title: "System Leadership Report",
+      guide: "Write for California Community College system leaders, the Chancellor's Office and college presidents. Emphasize strategic alignment with Vision 2030, institutional adoption metrics, implementation progress, and scalability across all California community colleges. Professional and strategic tone." },
+    { id: "faculty", label: "Faculty & Academic Senate", title: "Faculty & Academic Senate Report",
+      guide: "Write for faculty and academic senate members. Emphasize academic rigor, credit recommendation quality, faculty workgroup outcomes, discipline-specific progress, and how CPL maintains academic standards while expanding access. Collegial and evidence-based tone." },
+    { id: "veterans", label: "Veterans & Military Partners", title: "Veterans & Military Partners Report",
+      guide: "Write for military service members, veterans, and military education partners. Emphasize JST credit translation, military-specific CPL pathways, the Star Colleges network, and how military training translates to college credit. Warm, respectful, action-oriented tone." },
+    { id: "workforce", label: "Workforce & Industry Partners", title: "Workforce & Industry Report",
+      guide: "Write for workforce development boards, employers, and industry partners. Emphasize skills-based credentials, apprenticeship pathways, industry-aligned credit recommendations, and how CPL bridges work experience to college credentials. Professional and outcome-focused." },
+    { id: "general", label: "General Audience", title: "CPL Initiative Report",
+      guide: "Write for a general audience of education stakeholders. Use clear, accessible language. Explain acronyms on first use. Balance data with narrative. Highlight student impact and real-world outcomes." }
+  ];
   var BY_ID = {};
   AUDIENCES.forEach(function (a) { BY_ID[a.id] = a; });
   function audience(id) { return BY_ID[id] || BY_ID.other; }
@@ -191,6 +208,7 @@
     BUSINESS_WORDS: BUSINESS_WORDS,
     FUNDING_WORDS: FUNDING_WORDS,
     AUDIENCES: AUDIENCES,
+    REPORT_AUDIENCES: REPORT_AUDIENCES,
     audience: audience,
     audienceLabel: audienceLabel,
     audienceGuide: audienceGuide,

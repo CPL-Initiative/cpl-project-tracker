@@ -22,11 +22,12 @@ const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 
 const rgSrc = fs.readFileSync("report_generator.js", "utf8");
+const writerSrc = fs.readFileSync("cpl_writer.js", "utf8");   // static in both HTMLs before the generator
 const dfSrc = fs.readFileSync("dashboard_filters.js", "utf8");
 
 // ── Part A — source-pinned invariants ──
-check("model is the unversioned alias (no dated snapshot)",
-  /CLAUDE_MODEL = 'claude-sonnet-4-5'/.test(rgSrc) && !/claude-sonnet-4-5-2025/.test(rgSrc));
+check("the model is the writer's: this file names no model and drafts through W.draft under W.system",
+  !/claude-[a-z0-9-]+/.test(rgSrc) && /W\.draft\(/.test(rgSrc) && /W\.system\(/.test(rgSrc) && !/CPL_REPORT_PROXY_URL/.test(rgSrc) && !/api\.anthropic\.com/.test(rgSrc));
 check("no 'Generating...' button label remains", rgSrc.indexOf("'Generating...'") === -1);
 check("dashboard_filters no longer injects the Master Report bar button",
   dfSrc.indexOf("masterReportBtn") === -1);
@@ -56,6 +57,9 @@ function makeWin() {
   const w = dom.window;
   w.CPL_DATA = JSON.parse(JSON.stringify(DATA));
   w.fetch = function () { return Promise.resolve({ ok: true, json: function () { return Promise.resolve([]); } }); };
+  const wr = w.document.createElement("script");   // the writer first, as the page loads it
+  wr.textContent = writerSrc;
+  w.document.body.appendChild(wr);
   const el = w.document.createElement("script");
   el.textContent = rgSrc;
   w.document.body.appendChild(el);
@@ -76,7 +80,7 @@ function makeWin() {
   // (b+c) prompt content by elevation
   const base = {
     projects: w.CPL_DATA.projects, activityUpdates: [],
-    audience: { label: "Test", title: "Legislative Report", prompt: "Test audience." },
+    audience: { label: "Test", title: "Legislative Report", guide: "Test audience." },
     kpis: {}, lastUpdated: "x",
   };
   const low = API.buildPrompt(Object.assign({}, base, { elevation: 0 }));
@@ -87,9 +91,12 @@ function makeWin() {
     high.indexOf("Highlights by Activity") >= 0 && high.indexOf("Project Highlights") === -1);
   check("prompt forbids a model-written title + names the template title",
     high.indexOf('do NOT write a document title') >= 0 && high.indexOf('Legislative Report') >= 0);
-  check("prompt carries the MAP naming rule",
-    high.indexOf("Mapping Articulated Pathways (MAP) platform") >= 0
-    && high.indexOf('never call it the "MAP Initiative"') >= 0);
+  const sys = API.buildSystem();
+  check("the system prompt carries the writer's MAP naming rule and house voice; the prompt carries the audience's guidance",
+    sys.indexOf("Mapping Articulated Pathways (MAP) platform") >= 0 && sys.indexOf('never call it the "MAP Initiative"') >= 0
+    && /house voice/.test(sys) && /professional report/.test(sys) && high.indexOf("Test audience.") >= 0 && high.indexOf("Military Articulation") === -1);
+  check("the six report audiences come from the writer, each with a title and guidance",
+    API.AUDIENCES === w.CPL_WRITER.REPORT_AUDIENCES && API.AUDIENCES.length === 6 && API.AUDIENCES.every(function (a) { return a.id && a.label && a.title && a.guide; }));
 
   // (b) audience titles are distinct + complete
   const titles = API.AUDIENCES.map(function (a) { return a.title; });
