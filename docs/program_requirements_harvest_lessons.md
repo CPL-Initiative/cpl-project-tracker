@@ -57,103 +57,11 @@ Wave 5 (ten curriQunet colleges) and its second half, Butte parked, the five rea
 outlines, eLumen links written whole, the whole-catalog PDF reader and its wave, East LA and the PDF reader merge, with
 the lane text those sessions retired: verbatim in `docs/program_requirements_harvest_lessons_archive_3.md`.
 
-## S404 SkyBuckeye (2026-10-17, the 10:12Z session): own-HTML catalogs through the sitemap road, College of San Mateo
+## S404-S405: moved to the archive (S467 compaction)
 
-- **The handoff pointed at Los Rios; the record pointed away.** Handoff 404 named American River, Folsom Lake and
-  Sacramento City as the first own-HTML shape. All four Los Rios hosts have answered the reader 404 since 2026-10-08
-  (census again on 10-11), and each procedure says the reader never works around it. The San Mateo district's catalogs
-  (`catalog.collegeofsanmateo.edu/current/`, `catalog.skylinecollege.edu/current/`) answer and file 2026-2027, so the
-  session started there. Read the registry row's `access_status` before taking a handoff's pick.
-- **The reader already existed; the gate refused it (#2194).** `capture()` sent only CourseLeaf, curriQunet, eLumen and
-  Acalog onward. The CourseLeaf branch is no CourseLeaf code at all: the sitemap, program-looking paths
-  (`PROGRAM_PATH`), each page's children and the link search. Letting `custom_html` through it was one line. Try a
-  free capture-only run on the generic path before writing a host reader.
-- **College of San Mateo, end to end on the generic path.** Capture 39024297472: a 1,165-page sitemap, 195 program
-  paths, 238 pages read in 23 minutes, 60 of the 64 programs that list courses (55 sitemap, 5 link search). Extraction
-  39025870196: $4.98 ($0.083 a program), 51 of 60 passing; 5 fail coverage, 8 arithmetic. Load 39027691727: 55
-  inserted unchecked, 5 skipped. Display build `928577b30f0f`. Not found: Addiction Studies A.A. (its page names 2 of
-  14 listed codes) and International Business A.S. and certificate (5 of 13, 0 of 10): the pages print the courses in a
-  form the net does not read, a page read's question for the next pass. Three pages each serve two or three programs
-  (Biology, Business Administration 2.0, the Cal-GETC option); check those records' awards before a person confirms.
-- **Skyline's capture ran past an hour** (run 39024299478, same commit). The same reader on a sister host took three
-  times San Mateo's time: read its capture report (sitemap size, child pages) before extracting.
-- **The MAP Data Quality UI pass (#2193)** is in `ui_pass_lessons.md`'s ledger line: a tab's private light and dark
-  palettes shadow the global tokens and drift; the fix is role names over First Light's tokens, never new hex.
-
-**Patterns that worked.** A capture-only run on two sister hosts in parallel, one branch each, while a UI pass ran in
-the session. Proving a seeded a11y target by running it on the old file (it must fail) before trusting a clean report.
-
-## Moved from the lane (S404 compaction)
-
-- The other thirteen PDF-wave colleges were reconciled on the merged reader and not reread: their pages had no hyphen
-  fault, and the moved picks only lowered their checks (S403).
-- Loaded unchecked in the PDF wave: Clovis 100, Barstow 56, Calbright College Credit 11, Compton 73, Lassen 59,
-  Mendocino 93, Woodland 64, Canyons 148, Los Angeles City 223, Harbor 107, Pierce 173, Valley 204, Santa Rosa 222,
-  Shasta 103, Yuba 89; East Los Angeles 120 (run 39012416324).
-- **Skyline's sitemap is the catalog's whole history** (capture 39024299478, 78 minutes): 48,034 pages, 3,927 on
-  program paths, so the read stopped at 900 pages and still found 54 of 58, 19 of them by link search. The registry's
-  address is `/current/`; a sitemap page outside it is another year's catalog. The next reader change: keep sitemap
-  pages under the start address's path when the host serves more than one year.
-
-## S405 SkyCholla (2026-10-17, the 12:12Z firing): the year scope, Sheet 88's colleges, ligatures and the hand-filed step
-
-- **An own-HTML catalog keeps to its own year (#S405 wave).** Skyline's capture took 40 of 62 picks from `/1718/`,
-  `/1819/` and `/1920/`. `year_scope()` scopes a `custom_html` read (sitemap, child pages, link search) through the
-  registry address's year segment (`current`, `2026-2027`, `1718`); an address naming no year keeps the whole host.
-  Skyline's next capture listed 466 program pages instead of 3,927 and ran 42 minutes instead of 78. The S404 run was
-  canceled before its extraction spent anything on the old years.
-- **A 401 from the extraction function is its caller probe, not the key.** `program-requirements-extract` answers 401
-  whenever its probe of `allowed_reviewers` fails (12 s timeout). At 13:04Z 29 calls in one minute failed that way,
-  mid-run, after Coalinga's run at 12:38Z had none (`function_edge_logs`). Re-run with `force=incomplete`.
-- **Coalinga** (own HTML, `/catalog/2026-2027/`): 53 of 62 found in six minutes through the catalog's index, $3.34,
-  42 passing, 52 loaded. **West Valley** (Sheet 88, own HTML): 134 of 142 through its index, $11.19, 90 passing, 133
-  loaded. **Copper Mountain** (Sheet 88, PDF): 48 of 48, $3.84, 32 passing, 46 loaded. **San Diego Continuing
-  Education** (PDF): 109 of 120, $4.95, 89 passing, 90 loaded (19 placed none of their listed courses and stayed out).
-  **Solano** (PDF): 162 of 163, $13.17, 144 loaded. **Porterville's robots.txt disallows its catalog PDF**: on its
-  record, with Cerro Coso's.
-- **Solano's PDF prints ligatures as stand-in glyphs with a space beside them** (*"IntroducƟ on"*, *"draŌ  landscape
-  plan"*, *"Iden Ɵ ﬁ caƟ on"*: Ɵ ti, Ʃ tt, Ō ft, and the Unicode fi, fl, ff, ffi, ffl), found by a page read of the PDF
-  (39036135577) after 135 of 162 records failed the outcomes check. Which space is the word's own cannot be told
-  (*"draŌ  landscape"* against *"aŌ er"*), so text carrying one gets a fifth reading in `_readings()`: ligatures spelled
-  out and every space dropped, compared with the outcome's letters, spaces dropped too. A free reconcile took Solano's
-  outcomes failures from 135 to 25 and its passes from 7 to 83.
-- **Santa Rosa had the same glyphs.** A free reconcile on the ligature reading took its outcomes failures from 38 to
-  1 and its passes from 147 to 180 (run 39037637820); the reread replaced 37 rows (39038350065) and Solano's 135
-  (39037608756). Skyline's rerun extracted all 53 ($3.83, 37 passing) and loaded 42.
-- **Three more registry rows name a page about the catalog** (page reads 39032643761, 39035702276): Grossmont (the
-  cover image; `catalog.gcccd.edu/grossmont/`), Ohlone (the landing page; chapter 7 of a PDF catalog), Cañada (its
-  schedule page; `catalog.canadacollege.edu/current/` refuses the reader in robots.txt). Open Asks Sheet 89 card 1.
-- **The hand-filed catalog step** (Sam's ruling 2 on the refusing hosts, 2026-10-17): `kb/hand_filed_catalogs/` holds a
-  PDF a person fetched and a provenance record (who, when, from where, sha256). The capture reads it in place of a
-  download, refuses it when the hash differs, and stamps the provenance on the report and each record. Steps in the
-  folder's README. The seven waiting: De Anza, CCSF, American River, Cosumnes River, Folsom Lake, Sacramento City, Cerro
-  Coso; Porterville and Cañada joined them this run.
-- **The display build needs the dated reads.** A college missing from `registry_read.json` and
-  `map_cr_by_course.json` builds with no registry row and no MAP credit recommendations; San Mateo went out that way in
-  `928577b30f0f`. This wave adds all seven, each matched by md5.
-
-**Patterns that worked.** Ten branches, one a college, captured in parallel while the session fixed what the first
-reports showed. A page read of the PDF around one failing outcome named the fault in one load.
-
-## Moved from the lane (S405 compaction)
-
-- Extraction spend by wave: waves 1-5 about $510; the eLumen wave $41.06; S402 $13.57; the PDF wave $149.41 for
-  fifteen; S405 $40.32 for six colleges plus Skyline's two runs ($1.29, $3.83).
-- The PDF reader (S403; #2189, merged with East LA's in #2192, build `726bde512dfa`, 11,862 programs): a page qualifies
-  for a program when it carries every title word outside its contents lines or prints the program's control number; the
-  highest-scoring page (listed codes, +5 for a heading naming title and award, +10 for the control number) whose run
-  covers the list wins, and the text opens at the heading while that keeps every listed code.
-- The spaced-hyphen reconciles took LA City's outcomes failures from 145 to 12 and Pierce's from 85 to 15; the rereads
-  replaced 156 and 94 rows (39018615618, 39018617236). 29 LA City and 20 Pierce rows had been rescored on a moved page
-  before the guard; Sam pasted the undo (Sheet 88 card 2), read back 2026-10-17: LA City 96 on run 39006380342 and 127
-  on 39018419466, Pierce 99 on 39006383070 and 74 on 39018421038.
-- Sheet 88 card 1 (Sam, 2026-10-17, applied by the hand-opened S405,
-  `kb/receipts/program_source_registry_sheet88_five_catalogs_2026-10-17_s405.sql`): Copper Mountain, San Diego Continuing
-  Education, Porterville and Solano to their 2026-2027 PDFs; West Valley to its own HTML catalog.
-- College of San Mateo loaded 55 unchecked (S404, 60 of 64 found, $4.98, build `928577b30f0f`, applied 12:24Z by run
-  39030423266).
-- Parked detail: Diablo Valley found 0 of 244 (its hubs grid departments by award, run 38999074345); Santiago
-  Canyon's eLumen host serves 2025-2026, and a narrower page read must show its Catalog Archives and printer PDF links.
+Own-HTML catalogs through the sitemap road and College of San Mateo (S404), then the year scope, Sheet 88's
+colleges, ligatures and the hand-filed step (S405), with the lane text those sessions retired: verbatim in
+`docs/program_requirements_harvest_lessons_archive_3.md`.
 
 ## S406 SkyIronwood (2026-10-17, hand-opened): the hand-filed catalogs, read from Sam's release copies
 

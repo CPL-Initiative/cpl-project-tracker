@@ -163,6 +163,15 @@ side as a JPEG in `library/photos/`, add an `<img class="hero-slide" data-src="p
 first, and rerun the page's test and `npm run a11y -- public-library public-library-dark` (the pause control shows from
 two photos on).
 
+## NEEDS SAM 2 (S467): the IT and AI credentials deck has no public home
+
+The public library lists *Turning IT and AI credentials into credit* (deck, 2026-09-29), and its link points into the
+vault's private GitHub repository, so a public visitor gets GitHub's 404 page (anonymous read, 2026-10-24 ~16:20Z). The
+file is in the vault (`04-projects/cpl-initiative/20260929_CPL_IT_AI_Credentials_3.pptx`, 815,170 bytes). The SharePoint
+CPLLibrary folder opens for the team and invited guests, not the public. The ask (Open Asks Sheet 124 card 2): unlist it
+until it has a public home, give it one and relink the record, or leave it listed. Unlisting is the Library tab's
+*Remove* (or `cpl_library_set_public(..., p_listed false)`), reversible from the history table.
+
 ## Next
 
 - **Sam connects the Microsoft 365 connector;** the next session after that reads the CPLLibrary folder, confirms the 16

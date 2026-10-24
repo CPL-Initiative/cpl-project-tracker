@@ -13441,7 +13441,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 85,
+   "count": 86,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14419,9 +14419,9 @@
       "program-requirements",
       "catalog-harvest"
      ],
-     "title": "Program requirements harvest lessons \u2014 archive 3 (S399-S403)",
+     "title": "Program requirements harvest lessons \u2014 archive 3 (S399-S405)",
      "type": null,
-     "updated": "2026-10-22"
+     "updated": "2026-10-24"
     },
     {
      "created": "2026-07-16",
@@ -14742,6 +14742,21 @@
      "title": "Similar-course FAMILY consolidation lane \u2014 scope + measure-first",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-10-24",
+     "governs": [],
+     "path": "docs/ccr_atlas_lessons_archive_2.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "ccr",
+      "skyview"
+     ],
+     "title": "SkyView / CCR Atlas lessons \u2014 archive 2",
+     "type": null,
+     "updated": "2026-10-24"
     },
     {
      "created": "",
@@ -16037,8 +16052,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 437,
+   "count": 438,
    "docs": [
+    {
+     "created": "2026-10-24",
+     "governs": [],
+     "n": 468,
+     "path": "docs/session_468_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "public-library",
+      "docs-audit"
+     ],
+     "title": "Session 468 handoff: the public library in Malone's look; Open Asks Sheet 124 (the toolkit photos, a deck with no public home); oversized docs 8 to 4",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-24",
      "governs": [],
@@ -23537,5 +23568,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1243
+ "total": 1245
 }
