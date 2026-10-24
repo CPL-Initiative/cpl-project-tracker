@@ -249,6 +249,9 @@ COUNTS = {'pa_u': 'applied CPL units from every CPL request',
 BOXES = {'pa_u': ACCESS, 'ppa_u': ACCESS_VOICED, 'ptc_u': COMPLETION,
          'pac_u': 'Accepted CPL units, with the MAP counselor step checked.', 'p3_u': 'Transcribed CPL units.',
          'ca_u': 'CPL units for students who reach a career outcome in EDD wage records, measured by the Chancellor’s Office.'}
+# Each noncredit outcome under the outcomes lane (Scenario 4), in the film's
+# words, keyed to the outcome's measure as COUNTS is.
+NC_COUNTS = {'nc_exh': 'exhibits built or adopted', 'nc_course': 'a CPL portfolio course'}
 
 def money_words(v):
     return '{:,}'.format(int(round(v)))
@@ -300,6 +303,15 @@ def live_config(typed, fig, scenario):
                    maxText='The average maximum allocation is %s dollars.' % money_words(a['max']),
                    splitText=' On average, %s dollars is credit and %s dollars noncredit.' % (money_words(a['cr']), money_words(a['nc'])))
     funded = f['priorities']
+    # Under the outcomes lane the priorities carry the credit funding alone, and
+    # the noncredit share counts its own outcomes (the scene before says which).
+    nco = f.get('ncOutcomes') or [] if f.get('ncLane') == 'outcomes' else []
+    credit = ' credit' if nco else ''
+    if nco:
+        named = [NC_COUNTS.get(o.get('measure') or '', (o.get('title') or '').lower()) for o in nco]
+        joined_nc = ', '.join(named[:-1]) + ' and ' + named[-1] if len(named) > 1 else named[0]
+        c['ncLine'] = '%s noncredit outcome%s count%s toward the noncredit share: %s.' % (
+            NUM_WORDS.get(len(nco), str(len(nco))), 's' if len(nco) > 1 else '', '' if len(nco) > 1 else 's', joined_nc)
     rows, said = [], []
     for p in funded:
         key = p.get('measure') or ''
@@ -314,14 +326,15 @@ def live_config(typed, fig, scenario):
         joined = ' and '.join(names)
         follow = ' and '.join(p['title'] for p in funded)
         rows.append([None, joined,
-                     'Reported by the Chancellor’s Office in qualitative terms. The institutions’ allocations follow %s.' % follow,
+                     ('Reported by the Chancellor’s Office in qualitative terms. The credit allocations follow %s.' if nco else
+                      'Reported by the Chancellor’s Office in qualitative terms. The institutions’ allocations follow %s.') % follow,
                      int(round(state))])
         said.append('The Chancellor’s Office reports %s, in qualitative terms, beside %s million dollars statewide for CPL '
-                    'projects and technology and two Chancellor’s Office positions; the institutions’ allocations follow %s.' % (
-                        ' together with the '.join(names), millions(state), follow))
+                    'projects and technology and two Chancellor’s Office positions; the institutions’%s allocations follow %s.' % (
+                        ' together with the '.join(names), millions(state), credit, follow))
     c['prios'] = rows
     c['prioName'] = '%s priorities' % NUM_WORDS.get(len(funded), str(len(funded)))
-    c['prioHead'] = c['prioName'] + ' carry the funding'
+    c['prioHead'] = c['prioName'] + ' carry the%s funding' % credit
     c['prioText'] = c['prioHead'] + '. ' + ' '.join(said)
     if typed.get('how') is not None and funded:
         c['how'] = {'rows': [[p['title'], int(round(p['funding'])), round(p['division'], 1), round(p['target'], 1)] for p in funded],
@@ -347,7 +360,7 @@ def flat(o, pre=''):
 
 def figure_diffs(typed, live):
     """Which figures the model moved, against the typed (voiced) values."""
-    keys = ['split.labs', 'ex.max', 'ex.cr', 'ex.nc', 'prios', 'how', 'target.ftesWords', 'target.usdWords', 'deadline', 'timing']
+    keys = ['split.labs', 'ex.max', 'ex.cr', 'ex.nc', 'prios', 'prioHead', 'ncLine', 'how', 'target.ftesWords', 'target.usdWords', 'deadline', 'timing']
     ft, fl = flat(typed), flat(live)
     diffs = []
     for k in sorted(set(ft) | set(fl)):

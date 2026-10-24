@@ -245,7 +245,7 @@ name lives in the title alone. Mock-up: https://claude.ai/artifact/LRFiSDUY4bGTo
 award notice as Sheet 121 card 3 asked. Listing it publicly and sending each of the eight projects its card is outward, so
 the call is his: list and send, list only, keep it on the team Library, or edit first. Recommended: read the draft, then
 list it publicly and send each project its card, with one message per project drafted in the Letters tab. Card 1 of
-[Open Asks Sheet 122](https://claude.ai/artifact/PKRBW9ucqKtikxhRtevHrj).
+[Open Asks Sheet 123](https://claude.ai/artifact/4bedPAUhXKfLSEScLbEpX3) (S466), as it was of Sheet 122 (https://claude.ai/artifact/PKRBW9ucqKtikxhRtevHrj), whose reply still counts.
 
 ## Next
 
@@ -256,8 +256,8 @@ list it publicly and send each project its card, with one message per project dr
   `.gitignore` `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's two
   player pages off the site, and add a guard test so a deliverable binary cannot be committed again. Then the vault's
   binaries (29 on 2026-10-05).
-- **The open-asks series record reads version 122** (receipt `kb/receipts/cpl_library_open_asks_sheet122_2026-10-24_s460.sql`,
-  applied by `supabase-migrate.yml` run 40051278289): each new sheet is one guarded UPDATE from the version as read.
+- **The open-asks series record reads version 123** (receipt `kb/receipts/cpl_library_open_asks_sheet123_2026-10-24_s466.sql`,
+  applied by `supabase-migrate.yml` on the S466 branch): each new sheet is one guarded UPDATE from the version as read.
   `made_by` is capped at 300 characters (`cpl_library_text_ck`), so it is a range (*sheets 46 to 122 by S341 SkyTerrace
   through S460 SkyFremontia*) that each sheet extends by its two ends.
 - Sam's sheet 47, 48 and 49 calls of 2026-10-07 and 2026-10-08 (the sheets to the vault, one Library record per series,

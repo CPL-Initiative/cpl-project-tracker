@@ -191,17 +191,21 @@ var S2=scene(15,25,'Maximum allocation','Every institution has a maximum allocat
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);reveal(o.l.ws,t,0.8,0.04,0.5);var p=eio(k(t,1.6,2.6));o.track.style.transform='scaleX('+p+')';o.ticks.forEach(function(d,i){d.style.opacity=eo(k(t,2.0+i*0.35,2.7+i*0.35));});
   var x=back(k(t,4.0,5.6));o.m.style.left='calc(10cqw + '+(CFG.ex.pos*x*0.8)+'%)';o.m.style.opacity=k(t,4.0,4.3);reveal(o.b.ws,t,6.2,0.06,0.5);});
 
-var S3=scene(25,32,'Credit and noncredit','Each maximum allocation splits into a credit share and a noncredit share, by the institution’s own instructional mix.'+CFG.ex.splitText+' Only noncredit outcomes count toward the noncredit share.',function(r,o){
+/* what counts toward the noncredit share: under the outcomes lane (Scenario 4)
+   build.py names the noncredit outcomes (CFG.ncLine); otherwise the original line */
+var NCLINE=CFG.ncLine||'Only noncredit outcomes count toward the noncredit share.';
+var S3=scene(25,32,'Credit and noncredit','Each maximum allocation splits into a credit share and a noncredit share, by the institution’s own instructional mix.'+CFG.ex.splitText+' '+NCLINE,function(r,o){
   o.h=words(r,CFG.ex.splitHead,'hd');
   o.a=E('div','big abs',money(CFG.ex.max),r,'left:50%;top:14cqw;transform:translateX(-50%);font-size:15cqw');
   o.c=E('div','abs',null,r,'top:14.5cqw;text-align:center;width:44cqw');o.cv=E('div','big blue',null,o.c,'font-size:11cqw');E('div','kick','credit share',o.c,'margin-top:1.2cqw;font-size:2.4cqw');
   o.n=E('div','abs',null,r,'top:14.5cqw;text-align:center;width:44cqw');o.nv=E('div','big gold',null,o.n,'font-size:11cqw');E('div','kick','noncredit share',o.n,'margin-top:1.2cqw;font-size:2.4cqw;color:var(--stage-gold-text)');
-  o.l=words(r,'The split follows each institution’s own instructional mix. <b>Only noncredit outcomes count toward the noncredit share.</b>','ln abs');o.l.style.cssText='left:4.5cqw;right:4.5cqw;top:37.5cqw;font-size:3.5cqw';
+  o.l=words(r,'The split follows each institution’s own instructional mix. <b>'+NCLINE+'</b>','ln abs');o.l.style.cssText='left:4.5cqw;right:4.5cqw;top:37.5cqw;font-size:3.5cqw';
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);var s=eio(k(t,1.8,3.0));o.a.style.opacity=1-k(t,1.8,2.2);o.a.style.transform='translateX(-50%) scale('+(1+0.12*Math.sin(Math.PI*k(t,1.2,1.8)))+')';
   o.c.style.left=(28-24*s)+'cqw';o.n.style.left=(28+24*s)+'cqw';o.c.style.opacity=o.n.style.opacity=k(t,1.9,2.3);count(o.cv,t,1.9,3.4,CFG.ex.cr);count(o.nv,t,1.9,3.4,CFG.ex.nc);reveal(o.l.ws,t,3.8,0.05,0.5);});
 
 var S4=scene(32,46,CFG.prioName,CFG.prioText,function(r,o){
-  o.h=words(r,CFG.prioHead,'hd');o.h.style.fontSize='5.6cqw';
+  /* a heading past 36 characters (Scenario 4's "carry the credit funding") shrinks to hold one line */
+  var hl=CFG.prioHead.length;o.h=words(r,CFG.prioHead,'hd');o.h.style.fontSize=hl>36?(5.6*36/hl).toFixed(2)+'cqw':'5.6cqw';
   var P=CFG.prios;
   o.cols=P.map(function(p,i){var rep=p[0]==null;var d=E('div','abs',null,r,'left:'+(4.5+i*30.8)+'cqw;top:13.2cqw;width:29.2cqw;min-height:39cqw;padding:2.2cqw 2.2cqw 2cqw;border-top:.6cqw solid '+(rep?'var(--stage-gold)':'var(--stage-blue)')+';background:var(--surface);border-radius:.5cqw;box-shadow:0 1cqw 2.5cqw -1.5cqw var(--stage-shadow)');
     var n=rep?E('div','pill','Reported',d,'background:var(--stage-gold);color:var(--stage-ink);margin:.6cqw 0 1cqw'):E('div','big blue','0%',d,'font-size:9cqw');E('div',null,p[1],d,'font:700 '+(rep?'2.9':'3.8')+'cqw/1.08 '+PF+';margin:1cqw 0 1.2cqw');E('div','ln',p[2],d,'font-size:'+(rep?'2.3':'2.45')+'cqw;line-height:1.3');

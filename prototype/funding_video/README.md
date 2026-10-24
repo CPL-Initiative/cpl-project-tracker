@@ -48,6 +48,8 @@ Refreshing a film, in order:
     python3 prototype/funding_video/build.py s2 --render               # the page and the frame page, from the filed figures
     FFMPEG=... bash prototype/funding_video/render.sh s2               # the MP4, re-versioned in build.py's `mp4` first
 
+**Under the outcomes lane (Scenario 4, S466).** When the published scenario releases the noncredit share on its own outcomes (`ncLane: "outcomes"`), `_videoFigures()` files the lane and each outcome's statewide funding (`ncOutcomes`), and each priority's funding is credit alone; the priorities and the outcomes together make the funding to institutions. `build.py` then says the priorities carry the *credit* funding (the heading shrinks past 36 characters to hold one line), ends the reported box with *The credit allocations follow …*, and gives the credit and noncredit scene its bold line from `ncLine`, naming each outcome in the film's words (`NC_COUNTS`, keyed to the outcome's measure). Under origination the film keeps its original words. The Scenario 4 words wait on Sam (Open Asks Sheet 123 card 2) before `funding_in_motion_s2.html` is rebuilt from them; `tests/fixtures/cpl_funding_config_8452c29a.json` is the live config of 2026-10-24 they were drafted from.
+
 Still typed into the source, not the figures: the Maximum allocation scene's "a base of 150 thousand and a cap of 400 thousand" (its caption) and the minimum conditions scene's three conditions. A dial that moves either takes an edit to `funding_in_motion.src.html`.
 
 ## The page

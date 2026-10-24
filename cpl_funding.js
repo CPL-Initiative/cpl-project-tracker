@@ -13626,12 +13626,19 @@
         reported.push({ goal: c.goal, title: reportedTitle(c.goal), what: reportedText(c.goal, "what") });
       });
     }
+    // Under the outcomes lane (Scenario 4) the noncredit share leaves the
+    // priorities: each priority's funding is credit alone, and the noncredit
+    // share releases on its own outcomes, each with its statewide total.
+    var ncOut = ncOutcomesMode() ? agg.ncPs.map(function (p, i) {
+      var q = agg.perNc[i] || {};
+      return { label: p.label, title: p.title, share: p.share, measure: p.metric_src || null, funding: q.ncCap || 0 };
+    }) : [];
     return { scenario: activeScenario, published: activeScenario === publishedScenario(),
       appropriation: gross, toInstitutions: net, statewide: gross - net, institutions: n,
       base: base, cap: cap, rate: ftesRate(),
       average: { max: avg, cr: avg - avgNc, nc: avgNc, pos: cap > base ? (avg - base) / (cap - base) * 100 : 0 },
       capped: am && am.cappedCount != null ? am.cappedCount : 0,
-      priorities: prios, reported: reported,
+      priorities: prios, reported: reported, ncLane: ncLaneMode(), ncOutcomes: ncOut,
       deadline: participationDeadline(), timeline: timingItems() };
   }
   // The headline figures the splash compares, filed against live. A film shows
@@ -13646,9 +13653,15 @@
       out["p" + (i + 1) + " " + (p.title || p.label) + " target"] = Math.round(p.target * 10) / 10;
     });
     out["average target"] = f.priorities && f.priorities[0] ? Math.round(f.priorities[0].avgTargetFtes * 10) / 10 : null;
+    // A file filed before the lane was named read the origination lane.
+    out.ncLane = f.ncLane || "origination";
+    (f.ncOutcomes || []).forEach(function (p, i) {
+      out["nc" + (i + 1) + " " + (p.title || p.label) + " funding"] = Math.round(p.funding);
+    });
     return out;
   }
   var VIDEO_LABEL = { appropriation: "the appropriation", toInstitutions: "to institutions", statewide: "statewide projects",
+    ncLane: "what releases the noncredit share",
     institutions: "institutions", base: "base award", cap: "cap", deadline: "confirmation deadline",
     averageMax: "average max award", averageCr: "average credit share", averageNc: "average noncredit share",
     "average target": "the average Access target (FTES)" };

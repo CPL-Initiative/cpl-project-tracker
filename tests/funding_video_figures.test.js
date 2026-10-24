@@ -32,7 +32,7 @@ const FIXTURE = path.join(ROOT, "tests", "fixtures", "cpl_funding_config_de95c29
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 
-function boot() {
+function boot(fixture) {
   const dom = new JSDOM('<!DOCTYPE html><html><head></head><body>' +
     '<div class="cpl-tab-pane" id="tab-implementation-funding"><div class="main-container">' +
     '<div><h2>x</h2><span id="cplFundTitleLink"></span></div><div id="cplFundingMount">p</div></div></div></body></html>',
@@ -44,7 +44,7 @@ function boot() {
   w.eval(read("cpl_funding_data.js"));
   w.eval(read("cpl_funding.js"));
   const T = w.CPL_FUNDING_TAB;
-  T._setConfig(JSON.parse(fs.readFileSync(FIXTURE, "utf8")));
+  T._setConfig(JSON.parse(fs.readFileSync(fixture || FIXTURE, "utf8")));
   T.boot();
   return { w, T };
 }
@@ -168,6 +168,69 @@ const out = path.join(tmp, "figures.json");
   } else {
     check("3d: (skipped: the logo asset is not in this checkout)", true);
     check("3e: (skipped)", true);
+  }
+}
+
+// ── 4. the outcomes lane (Scenario 4): the priorities carry the credit share ──
+// Under ncLane "outcomes" the noncredit share leaves the priorities and releases
+// on its own outcomes, so the film says the priorities carry the CREDIT funding
+// and names the outcomes (S466). The 2026-10-24 live config, Scenario 4 published.
+{
+  const FIX4 = path.join(ROOT, "tests", "fixtures", "cpl_funding_config_8452c29a.json");
+  const { T } = boot(FIX4);
+  const cfg = T._config();
+  const project = Object.keys(cfg.projects)[0];
+  const scen = cfg.projects[project].scenarios;
+  const outName = Object.keys(scen).find((n) => scen[n].ncLane === "outcomes");
+  const origName = Object.keys(scen).find((n) => !scen[n].ncLane);
+  const sum = (a) => a.reduce((n, p) => n + p.funding, 0);
+  T._switchScenario(outName);
+  const f = T._videoFigures();
+  check("4a: an outcomes-lane scenario names its lane and files each outcome's statewide funding; the priorities and the outcomes together are the institutions' funding",
+    !!outName && f.ncLane === "outcomes" && f.ncOutcomes.length > 0 && f.ncOutcomes.every((o) => o.funding > 0 && o.title) &&
+    near(sum(f.priorities) + sum(f.ncOutcomes), f.toInstitutions, 0.01) && sum(f.ncOutcomes) < f.toInstitutions / 2);
+  T._switchScenario(origName);
+  const g = T._videoFigures();
+  check("4b: an origination scenario files no outcomes, and its priorities alone are the institutions' funding",
+    g.ncLane === "origination" && g.ncOutcomes.length === 0 && near(sum(g.priorities), g.toInstitutions, 0.01));
+  const moved = JSON.parse(JSON.stringify(f));
+  moved.ncOutcomes[0].funding += 1000;
+  const old = JSON.parse(JSON.stringify(g));
+  delete old.ncLane; delete old.ncOutcomes;
+  check("4c: the splash names a moved outcome, and a file filed before the lane was named reads as origination",
+    T._videoDiff(moved, f).length === 1 && /funding: \$[\d,]+ in the film/.test(T._videoDiff(moved, f)[0]) &&
+    T._videoDiff(old, g).length === 0 && T._videoDiff(old, f).some((d) => /^what releases the noncredit share: origination in the film, outcomes in the model$/.test(d)));
+  // build.py composes the words from the filed figures, in a copy of the folder.
+  const logo = path.join(ROOT, "sierra", "cpl-initiative-logo-navy.png");
+  if (fs.existsSync(logo)) {
+    const t4 = fs.mkdtempSync(path.join(os.tmpdir(), "figs4-"));
+    fs.mkdirSync(path.join(t4, "sierra"));
+    fs.copyFileSync(logo, path.join(t4, "sierra", "cpl-initiative-logo-navy.png"));
+    const dir = path.join(ROOT, "prototype", "funding_video"), nest = path.join(t4, "prototype", "funding_video");
+    fs.mkdirSync(path.join(nest, "assets"), { recursive: true });
+    ["build.py", "funding_in_motion.src.html"].forEach((x) => fs.copyFileSync(path.join(dir, x), path.join(nest, x)));
+    fs.readdirSync(path.join(dir, "assets")).forEach((x) => fs.copyFileSync(path.join(dir, "assets", x), path.join(nest, "assets", x)));
+    execFileSync("node", [path.join(ROOT, "scripts", "funding_video_figures.js"), "--config", FIX4, "--write", "--out", path.join(nest, "figures.json")]);
+    const cfgOf = (v) => {
+      execFileSync("python3", [path.join(nest, "build.py"), v], { encoding: "utf8" });
+      const page = fs.readFileSync(path.join(nest, "funding_in_motion" + (v === "s1" ? "" : "_" + v) + ".html"), "utf8");
+      return { page, cfg: JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(page)[1]) };
+    };
+    const s2 = cfgOf("s2"), s1 = cfgOf("s1");
+    const filed = JSON.parse(fs.readFileSync(path.join(nest, "figures.json"), "utf8"));
+    const pub = filed.scenarios[filed.published];
+    const rep = s2.cfg.prios.find((p) => p[0] == null);
+    check("4d: under the outcomes lane the film says the priorities carry the credit funding, names every outcome, and its boxes carry the credit figures",
+      pub.ncLane === "outcomes" && /carry the credit funding$/.test(s2.cfg.prioHead) &&
+      new RegExp("^" + ["One", "Two", "Three"][pub.ncOutcomes.length - 1] + " noncredit outcomes? counts? toward the noncredit share: .+\\.$").test(s2.cfg.ncLine) &&
+      !!rep && /The credit allocations follow/.test(rep[2]) &&
+      s2.cfg.prios.filter((p) => p[0] != null).every((p, i) => p[3] === Math.round(pub.priorities[i].funding)) &&
+      /var NCLINE=CFG\.ncLine\|\|'Only noncredit outcomes count toward the noncredit share\.';/.test(s2.page));
+    check("4e: an origination scenario keeps the original words: no noncredit line, the funding heading, the institutions' allocations",
+      !s1.cfg.ncLine && /carry the funding$/.test(s1.cfg.prioHead) && !/credit funding/.test(s1.cfg.prioText));
+  } else {
+    check("4d: (skipped: the logo asset is not in this checkout)", true);
+    check("4e: (skipped)", true);
   }
 }
 
