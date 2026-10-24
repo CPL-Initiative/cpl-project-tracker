@@ -327,7 +327,7 @@
   // can't resolve there — this literal-hex block is the sanctioned exception
   // (same rule as canvas fillStyle / SVG presentation attrs: where var() can't
   // reach, use the resolved First Light literals).
-  var PRINT_TOKENS = ":root { --paper:#F4F2ED; --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55; --text-faint:#87877F; --surface-opaque:#FFFFFF; --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2; --border:rgba(28,28,26,.14); --border-strong:rgba(28,28,26,.30); --cobalt:#0047AB; --accent-link:#0047AB; --crimson:#920000; --hunter:#2C601A; --green-progress:#2C601A; --violet:#6D28D9; --mustard-fill:#E3B341; --mustard-text:#8B6800; --yellow-warning:#8B6800; --mustard-on-dark:#E3B341; --gold-accent:#E3B341; --navy-primary:#1C1C1A; --seal-blue:#0b3d61; }";
+  var PRINT_TOKENS = ":root { --paper:#F4F2ED; --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55; --text-faint:#87877F; --surface-opaque:#FFFFFF; --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2; --border:rgba(28,28,26,.14); --border-strong:rgba(28,28,26,.30); --cobalt:#0047AB; --accent-link:#0047AB; --crimson:#920000; --hunter:#2C601A; --green-progress:#2C601A; --violet:#6D28D9; --mustard-fill:#E3B341; --mustard-text:#8B6800; --yellow-warning:#8B6800; --mustard-on-dark:#E3B341; --gold-accent:#E3B341; --navy-primary:#1C1C1A; --seal-blue:#002F6D; }";
   var PRINT_CSS = [
     "@page { margin: 12mm; }",
     "body { margin: 0; padding: 10px 14px; background: var(--surface-opaque); color: var(--text-body); font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }",
