@@ -18022,6 +18022,16 @@
   "file:sierra/sidebar.js": {
    "consumers": [
     {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1214,
+     "tabs": [
+      "library"
+     ]
+    },
+    {
      "id": "page:library/index.html",
      "kind": "page",
      "direction": "read",
@@ -25053,6 +25063,9 @@
   ],
   "raci.js": [
    "raci"
+  ],
+  "sierra/sidebar.js": [
+   "library"
   ],
   "sierra_rule_defaults.js": [
    "sierra-training"

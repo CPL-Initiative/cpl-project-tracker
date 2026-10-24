@@ -1186,10 +1186,44 @@
     });
   }
 
+  // ── Ask Sierra beside the tab (Sam, 2026-10-24: "Library and more importantly on the
+  // public library site") ──────────────────────────────────────────────────────
+  // sierra/sidebar.js, the chip and side bar the public library carries, loaded on the
+  // first visit to this tab and shown on this tab alone: every other tab hides the chip
+  // and shuts an open bar. Its tokens take First Light's roles, set on the bar's own
+  // elements so no :root changes in either HTML.
+  function onLibraryTab() {
+    return !!(window.CPL_TABS && typeof window.CPL_TABS.current === "function" && window.CPL_TABS.current() === "library");
+  }
+  function showSierraBar() {
+    if (window.CPL_SIERRA_BAR && typeof window.CPL_SIERRA_BAR.setChip === "function") window.CPL_SIERRA_BAR.setChip(onLibraryTab());
+  }
+  function ensureSierraBar() {
+    if (!document.getElementById("lib-sbar-css")) {
+      var st = document.createElement("style");
+      st.id = "lib-sbar-css";
+      st.textContent = ".sbar,.sbar-chip{--sierra-bar-bg:var(--surface-opaque);--sierra-bar-ink:var(--text-body);" +
+        "--sierra-bar-heading:var(--text-strong);--sierra-bar-link:var(--accent-link);--sierra-bar-line:var(--border);" +
+        "--sierra-bar-focus:var(--focus-ring);--sierra-bar-chip-bg:var(--seal-blue);--sierra-bar-chip-ink:var(--on-seal-blue);" +
+        "--sierra-bar-shadow:color-mix(in srgb,var(--text-strong) 16%,transparent);" +
+        "--sierra-bar-head-font:'Playfair Display',Georgia,serif;}";
+      document.head.appendChild(st);
+    }
+    if (window.CPL_SIERRA_BAR) return showSierraBar();
+    if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
+      window.CPL_TABS.loadScript("sierra/sidebar.js", "CPL_SIERRA_BAR", showSierraBar);
+    }
+  }
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab === "library") ensureSierraBar();
+    else showSierraBar();
+  });
+
   function activate() {
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
     wire(root);
+    ensureSierraBar();
     state.view = viewFromHash();
     return load();
   }
@@ -1209,6 +1243,7 @@
     _collegeSlug: collegeSlug,
     _collegePair: collegePair,
     _viewFromHash: viewFromHash,
-    _knowledgeValue: knowledgeValue
+    _knowledgeValue: knowledgeValue,
+    _ensureSierraBar: ensureSierraBar
   };
 })();

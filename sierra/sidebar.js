@@ -24,6 +24,10 @@
  *   · The look is the host's. A host maps the --sierra-bar-* tokens onto its own
  *     (library/index.html is the worked example); a host that maps none gets the
  *     browser's system colors.
+ *   · A host whose pages share one document shows the chip where it belongs:
+ *     COBI's Library tab (library.js) calls setChip(true) on that tab and
+ *     setChip(false) on every other, which also shuts an open bar (Sam,
+ *     2026-10-24: "Library and more importantly on the public library site").
  *
  * Test: tests/sierra_sidebar.test.js. Sweep: public-library-sierra in a11y.config.js.
  */
@@ -38,7 +42,7 @@
   var WIDE = '(min-width: 1200px)';
 
   var CSS = [
-    'html { scroll-padding-bottom: 88px; }',
+    'html.sbar-chip-on { scroll-padding-bottom: 88px; }',
     '.sbar-chip { position:fixed; z-index:9000; right:max(16px, env(safe-area-inset-right, 0px)); bottom:max(16px, env(safe-area-inset-bottom, 0px));',
     '  min-height:48px; padding:0 22px; border:0; border-radius:999px; background:var(--sierra-bar-chip-bg, ButtonText); color:var(--sierra-bar-chip-ink, ButtonFace);',
     '  font:inherit; font-weight:700; text-decoration:underline; text-underline-offset:3px; cursor:pointer;',
@@ -62,7 +66,7 @@
     '@media print { .sbar-chip, .sbar { display:none !important; } html.sbar-open body { margin-right:0; } }'
   ].join('\n');
 
-  var chip, bar, closeBtn, frame, wideMq, observer, inerted = [], loaded = false;
+  var chip, bar, closeBtn, frame, wideMq, observer, inerted = [], loaded = false, chipOff = false;
 
   function hostTheme() {
     var t = document.documentElement.getAttribute('data-theme');
@@ -153,10 +157,19 @@
   function close() {
     if (!isOpen()) return;
     bar.hidden = true;
-    chip.hidden = false;
+    chip.hidden = chipOff;
     chip.setAttribute('aria-expanded', 'false');
     applyMode();
-    try { chip.focus(); } catch (e) { /* best effort */ }
+    if (!chipOff) { try { chip.focus(); } catch (e) { /* best effort */ } }
+  }
+  // Show or hide the chip; hiding it shuts an open bar. Focus stays where the
+  // host put it, since the chip it would return to is gone.
+  function setChip(on) {
+    build();
+    chipOff = !on;
+    if (chipOff && isOpen()) close();
+    chip.hidden = chipOff || isOpen();
+    document.documentElement.classList.toggle('sbar-chip-on', !chipOff);
   }
 
   function build() {
@@ -201,6 +214,7 @@
 
     document.body.appendChild(chip);
     document.body.appendChild(bar);
+    document.documentElement.classList.add('sbar-chip-on');
 
     try {
       wideMq = window.matchMedia(WIDE);
@@ -218,7 +232,7 @@
   else build();
 
   window.CPL_SIERRA_BAR = {
-    open: open, close: close, isOpen: isOpen, frameUrl: frameUrl,
+    open: open, close: close, isOpen: isOpen, setChip: setChip, frameUrl: frameUrl,
     SIERRA_URL: SIERRA_URL, WIDE: WIDE
   };
 })();

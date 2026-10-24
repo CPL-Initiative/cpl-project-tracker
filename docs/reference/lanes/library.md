@@ -183,8 +183,10 @@ logging. The frame loads on the first open and stays loaded while shut, so a reo
 page narrows beside her (the library keeps two columns of cards to 1600px) and stays in use; below that she takes the screen
 as a modal and the page behind is inert. Close and Escape (in her frame too, unless her About panel is open) hand focus back
 to the chip. The frame takes the library's theme in `?theme=`, which her page lets beat a stored choice, and follows a
-switch. The library maps the `--sierra-bar-*` tokens onto its own. Test: `tests/sierra_sidebar.test.js`; sweep:
-`public-library-sierra` and `-dark`.
+switch. The library maps the `--sierra-bar-*` tokens onto its own. **COBI's Library tab carries it too** (Sam, ~21:05Z:
+*"Library and more importantly on the public library site:)"*): `library.js` loads the bar on the tab's first visit, shows
+the chip on that tab alone (`setChip`; any other tab hides it and shuts an open bar) and maps the tokens onto First Light.
+Test: `tests/sierra_sidebar.test.js` (36); sweep: `public-library-sierra` and `-dark`, `cobi:library`.
 **NEEDS SAM (Open Asks Sheet 126 card 1): which pages move onto the bar next.** He chose to see the library's first. The
 Fact Sheet and the funding model page open their own drawer (`fact-sheet/factsheet_sierra.js`, a second copy of her chat
 with each page's starter questions); COBI's header link opens `sierra/` in a new tab, and COBI also opens Sierra AI over any

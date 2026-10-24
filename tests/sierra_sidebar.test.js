@@ -18,7 +18,11 @@
 //       lets ?theme= beat a stored choice;
 //   (8) the library loads it, maps every token it reads, keeps two columns of cards
 //       beside it, and leaves room in the foot for the chip;
-//   (9) a second copy of the script does nothing.
+//   (9) a second copy of the script does nothing;
+//  (10) setChip(false) hides the chip and shuts an open bar, and the chip's scroll room goes with it;
+//  (11) COBI's Library tab (library.js) loads the bar on its first visit, shows the chip on that tab alone,
+//       and maps every token onto First Light (Sam, 2026-10-24: "Library and more importantly on the public
+//       library site").
 // Run from repo root: `npm test` (or `node tests/sierra_sidebar.test.js`).
 const fs = require("fs");
 const { JSDOM, requestInterceptor } = require("jsdom");
@@ -28,6 +32,7 @@ function check(name, cond, why) { results.push([name, !!cond, why]); }
 const BAR = fs.readFileSync("sierra/sidebar.js", "utf8");
 const SIERRA = fs.readFileSync("sierra/index.html", "utf8");
 const LIBRARY = fs.readFileSync("library/index.html", "utf8");
+const LIB_TAB = fs.readFileSync("library.js", "utf8");
 // Sierra's own head script (the theme), so (7) runs the shipped words, not a copy of them.
 const HEAD_SCRIPT = (SIERRA.match(/<script>(\(function\(\)\{var t=null;[\s\S]*?)<\/script>/) || [])[1] || "";
 // A stand-in for her page: the theme script she ships, an About panel and the question box.
@@ -272,6 +277,61 @@ async function main() {
     await until(function () { return false; }, 100);
     check("(9) a second copy of the script does nothing", h.d.querySelectorAll(".sbar-chip").length === 1 && h.d.querySelectorAll(".sbar").length === 1);
     h.close();
+  }
+
+  // (10) The host hides the chip: an open bar shuts, focus stays put, the scroll room goes.
+  {
+    const h = host({ wide: true });
+    await h.ready();
+    const root = h.d.documentElement;
+    const roomRule = /html\.sbar-chip-on \{ scroll-padding-bottom: 88px; \}/.test(h.d.getElementById("sbar-css").textContent) &&
+      !/(^|\n)html \{ scroll-padding/.test(h.d.getElementById("sbar-css").textContent);
+    const onAtStart = root.classList.contains("sbar-chip-on");
+    h.chip().click();
+    await h.loaded();
+    h.d.getElementById("b").focus();
+    h.w.CPL_SIERRA_BAR.setChip(false);
+    check("(10a) setChip(false) shuts the open bar and hides the chip, leaving focus where the host put it",
+      h.bar().hidden && h.chip().hidden && h.d.activeElement === h.d.getElementById("b") &&
+      !root.classList.contains("sbar-open") && !h.d.getElementById("m").hasAttribute("inert"));
+    check("(10b) the chip's 88px of scroll room applies only while the chip shows",
+      roomRule && onAtStart && !root.classList.contains("sbar-chip-on"));
+    h.w.CPL_SIERRA_BAR.setChip(true);
+    check("(10c) setChip(true) brings the chip back, the bar still shut", !h.chip().hidden && h.bar().hidden && root.classList.contains("sbar-chip-on"));
+    h.chip().click();
+    h.w.CPL_SIERRA_BAR.setChip(true);
+    check("(10d) setChip(true) while she is open leaves the chip hidden behind her", h.chip().hidden && !h.bar().hidden);
+    h.close();
+  }
+
+  // (11) COBI's Library tab.
+  {
+    const dom = new JSDOM('<!doctype html><html><head></head><body><div id="library-root"></div></body></html>',
+      { url: "https://example.org/cpl/", runScripts: "dangerously" });
+    const w = dom.window, loads = [], chips = [];
+    let tab = "library";
+    w.fetch = function () { return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve([]); }, text: function () { return Promise.resolve("[]"); } }); };
+    w.CPL_TABS = { current: function () { return tab; },
+      loadScript: function (src, name, cb) { loads.push(src); w.CPL_SIERRA_BAR = { setChip: function (on) { chips.push(on); } }; cb(); } };
+    const sc = w.document.createElement("script"); sc.textContent = LIB_TAB; w.document.body.appendChild(sc);
+    w.CPL_LIBRARY.activate();
+    check("(11a) the Library tab loads sierra/sidebar.js on its first visit and shows the chip",
+      loads.length === 1 && loads[0] === "sierra/sidebar.js" && chips[chips.length - 1] === true, "loads " + JSON.stringify(loads) + ", chips " + JSON.stringify(chips));
+    tab = "dashboard";
+    w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab: "dashboard" } }));
+    const offElsewhere = chips[chips.length - 1] === false;
+    tab = "library";
+    w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab: "library" } }));
+    check("(11b) another tab hides the chip, and the Library tab shows it again without a second load",
+      offElsewhere && chips[chips.length - 1] === true && loads.length === 1);
+    const css = (w.document.getElementById("lib-sbar-css") || {}).textContent || "";
+    const used = Array.from(new Set((BAR.match(/var\(--sierra-bar-[a-z-]+/g) || []).map(function (t) { return t.slice(4); })))
+      .filter(function (t) { return t !== "--sierra-bar-w"; });
+    const missing = used.filter(function (t) { return css.indexOf(t + ":") < 0; });
+    check("(11c) the tab maps every --sierra-bar-* token onto First Light's roles, on the bar's own elements, never a raw hex",
+      /^\.sbar,\.sbar-chip\{/.test(css) && !missing.length && !/#[0-9a-f]{3,8}\b/i.test(css) && /--sierra-bar-chip-bg:var\(--seal-blue\)/.test(css),
+      "missing: " + missing.join(", "));
+    w.close();
   }
 }
 
