@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-445 document(s).
+446 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 476 | [Session 476 handoff: the funding lessons fit their budget; the daily run and Sheet 127 still wait](../session_476_handoff.md) | 2026-10-25 |
 | 475 | [Session 475 handoff: oversized_doc at 0; Sheet 127 still waits](../session_475_handoff.md) | 2026-10-25 |
 | 474 | [Session 474 handoff: NC-1's channel 3 is built and waits on Sheet 127](../session_474_handoff.md) | 2026-10-25 |
 | 473 | [Session 473 handoff: the funding memo prints the noncredit outcomes](../session_473_handoff.md) | 2026-10-25 |
