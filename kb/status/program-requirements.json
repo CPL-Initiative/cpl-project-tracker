@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-25T10:05:00Z",
-  "session": 473,
-  "moniker": "SkyClarkia",
+  "written_at": "2026-10-25T10:23:50Z",
+  "session": 474,
+  "moniker": "SkyMariposa",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_474_handoff.md",
+  "handoff": "docs/session_475_handoff.md",
   "next_step": {
-    "title": "Read the first daily run with the noncredit builder",
-    "text": "The next session reads the first daily run that carries the noncredit counts and checks the funding page shows each noncredit outcome against its target. Channel 3 stays off until Sam answers Sheet 127. The harvest queue still waits behind the funding lane."
+    "title": "Read Sheet 127, then the first daily run with the noncredit builder",
+    "text": "The next session reads Sam's reply on Sheet 127 and the first daily run of 2026-10-25, and checks the funding page shows each noncredit outcome against its target. The harvest queue still waits behind the funding lane."
   },
   "calls": [
     {
@@ -111,6 +111,10 @@
     {
       "at": "2026-10-25T08:35:00Z",
       "text": "No harvest table moved this run; S472 added the noncredit outcomes to the funding memo, letter, report and brief."
+    },
+    {
+      "at": "2026-10-25T10:45:00Z",
+      "text": "No harvest table moved this run; S474 moved the lane's S452-S459 history to lessons archive 3 so the lane fits its budget."
     }
   ],
   "headline": [
@@ -226,7 +230,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-25T09:12:00Z"
+    "at": "2026-10-25T11:12:00Z"
   },
   "harvest": {
     "day": "2026-10-25",
