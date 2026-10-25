@@ -66,14 +66,18 @@ this reader's own SkyView choice → an explicit global choice → where they st
 Sam's ruling 3 of 2026-09-07 still owns the *default*, because the global key
 reads `system` until someone picks.
 
-## The public pages' default theme (S469, 2026-10-24)
+## The public pages open Light (Sam, Open Asks Sheet 126 card 2, *light*, 23:08Z 2026-10-24; built S469)
 
-The public library opens Light and turns dark only when a reader picks Dark (Sam, 2026-10-24). Four public pages still
-follow the device when no choice is stored: Sierra (`sierra/sierra.css`), the Fact Sheet (`fact-sheet/factsheet.css`), the
-veteran map and the CPL Opportunity page. Sierra, the Fact Sheet and the veteran map carry no Light and Dark words of their
-own; they read the one stored choice (`cpl_theme`) that COBI, the library and the public header write. In the library's
-side bar Sierra already matches the library (`?theme=`).
-**Ruled (Sam, Open Asks Sheet 126 card 2, *light*, 23:08Z 2026-10-24): those four open Light unless the reader picks Dark; COBI's System setting stays.** Not yet built (handoff 470).
+Every public page opens Light and turns dark only when the reader picks Dark; COBI's System setting stays COBI's. Each
+page's head script sets `data-theme` to the stored `cpl_theme` when it is `dark` and to `light` otherwise (*system*, junk or
+nothing), before its styles paint: the library, Sierra (`sierra/index.html`; her stylesheet and script no longer read the
+device), the Fact Sheet, the CPL Opportunity page, the veteran map (`build_selfcontained.py`), and the Library's own pages
+(`scripts/library_page.py` writes the line). Their dark values sit under `:root[data-theme="dark"]`; a device rule a page
+still carries (the public header block, an artifact's own CSS) is written under `:not([data-theme="light"])`, so a set theme
+stands it down. **Two hosts follow COBI instead:** the veteran map inside COBI's Military Partnerships iframe (`?embed=1`)
+leaves the attribute unset under System, and the Ask Sierra side bar names its host's theme, or the device's when the host
+sets none (COBI on System), so Sierra matches the page beside her. Tests: `sierra_redesign` (6), `sierra_sidebar` (7),
+`factsheet_first_light`, `public_pages_a11y` (the map), `library_pages` (2); sweep clean on every public view, light and dark.
 
 ## ⚠️ Open — the measured remainder
 

@@ -71,25 +71,11 @@
   --font-data: var(--font-body);
 }
 
-/* COBI's dark values (index.html, :root[data-theme="dark"]), written twice so
-   an explicit choice beats the OS in both directions, and scoped to the screen
-   so paper always prints light. On #1E1E1C: ink 13.9:1, body 11.0, muted 6.9,
-   faint 6.0, the link and the seal ink 6.5, hunter 5.65, mustard 7.7. */
-@media screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #151514; --surface: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
-    --ink: #ECE9E2; --body: #D6D6D0; --muted: #ABABA3; --faint: #9C9C94;
-    --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
-    --seal-blue-text: #7DA1D4; --cobalt: #7DA1D4; --on-accent: #141413;
-    --hunter: #89A67F; --crimson: #CF8F8F; --mustard-text: #E3B341;
-    --shadow: 0 1px 3px rgba(0,0,0,.40), 0 8px 24px rgba(0,0,0,.30);
-    --bar-bg: rgba(30,30,28,.92);
-    --hunter-tint: rgba(137,166,127,.12); --hunter-edge: rgba(137,166,127,.35);
-    --mustard-tint: rgba(227,179,65,.10); --mustard-edge: rgba(227,179,65,.35);
-    --logo-plate: #FFFFFF; --logo-pad: 6px 10px;
-    color-scheme: dark;
-  }
-}
+/* COBI's dark values (index.html, :root[data-theme="dark"]), under the reader's
+   choice alone: the page opens Light unless the reader picks Dark (Sam, Open Asks
+   Sheet 126 card 2), and scoped to the screen so paper always prints light. On
+   #1E1E1C: ink 13.9:1, body 11.0, muted 6.9, faint 6.0, the link and the seal ink
+   6.5, hunter 5.65, mustard 7.7. */
 @media screen {
   :root[data-theme="dark"] {
     --paper: #151514; --surface: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
