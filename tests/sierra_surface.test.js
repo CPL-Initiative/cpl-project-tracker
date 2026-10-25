@@ -35,7 +35,9 @@ const SQL = fs.readFileSync("chatbox/supabase_sierra_guidance.sql", "utf8");
 const CHAT = fs.readFileSync("cpl_chat.js", "utf8");
 const BRIEFING = fs.readFileSync("college_briefing.js", "utf8");
 const SIERRA = fs.readFileSync("sierra/sierra.js", "utf8");
-const FACTSHEET = fs.readFileSync("fact-sheet/factsheet_sierra.js", "utf8");
+// The Fact Sheet and the funding page open Sierra in the side bar (Open Asks Sheet 126
+// card 1) and name her surface to the page she runs in; their drawer retired.
+const FACTSHEET_PAGES = ["fact-sheet/index.html", "funding-model/index.html"].map((f) => fs.readFileSync(f, "utf8"));
 const MEMORY = fs.readFileSync("cpl_memory.js", "utf8");
 
 /* ⚠ A FORBIDDEN-PATTERN CHECK MUST SCAN CODE, NOT PROSE. The first draft of (2)
@@ -143,13 +145,13 @@ block("(5)", function () {
     /C\.mountInto\(host, "my-college"\)/.test(BRIEFING));
   check("(5) the request body carries it",
     /surface: hostSurface,/.test(CHAT));
-  check("(5) the public page names itself",
-    /surface: 'public'/.test(SIERRA));
+  check("(5) the public page names itself, unless the page beside her names `fact-sheet`",
+    /surface: hostSurface\(\)/.test(SIERRA) && /return HOST_SURFACES\.indexOf\(v\) > -1 \? v : 'public';/.test(SIERRA));
   check("(5) ⚠ …and keeps `ctx` as a SEPARATE axis",
     /if \(ctxVariant\) p\.ctx = ctxVariant;/.test(SIERRA),
     "the vendor iframe is the public page with ctx=external — one surface, two gates");
-  check("(5) the Fact Sheet drawer names itself",
-    /surface: 'fact-sheet'/.test(FACTSHEET));
+  check("(5) the Fact Sheet and the funding page name themselves to her",
+    FACTSHEET_PAGES.every((h) => /window\.CPL_SIERRA_SURFACE = "fact-sheet";/.test(h)));
   check("(5) ⭐ the memory drafter names itself — it is NOT a conversation",
     /surface: "memory-autogen"/.test(MEMORY),
     "cpl_memory.js borrows the model to draft a row; it was never listed as a surface");

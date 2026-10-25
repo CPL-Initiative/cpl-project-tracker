@@ -34,7 +34,9 @@ function block(label, fn) {
 
 const SRC = fs.readFileSync("chatbox/supabase/functions/cpl-chat/index.ts", "utf8");
 const SIERRA = fs.readFileSync("sierra/sierra.js", "utf8");
-const FACTSHEET = fs.readFileSync("fact-sheet/factsheet_sierra.js", "utf8");
+// The Fact Sheet and the funding page open Sierra in the side bar (Open Asks Sheet 126
+// card 1) and name her surface to the page she runs in; their drawer retired.
+const FACTSHEET_PAGES = ["fact-sheet/index.html", "funding-model/index.html"].map((f) => fs.readFileSync(f, "utf8"));
 const MEMORY = fs.readFileSync("cpl_memory.js", "utf8");
 const GR_PRI = fs.readFileSync("gr_priorities.js", "utf8");
 /* SkyView's question box is the fourth drafting client and the first one that
@@ -188,12 +190,13 @@ block("(4)", function () {
 block("(5)", function () {
   if (!S) return;
   const drafts = [...S.DRAFTING_SURFACES];
-  check("(5) ⭐ the public Sierra page sends `public`, and no drafting surface",
-    /surface: 'public'/.test(SIERRA) && drafts.every((d) => !SIERRA.includes(d)));
-  check("(5) ⭐ the Fact Sheet drawer sends `fact-sheet`, and no drafting surface",
-    /surface: 'fact-sheet'/.test(FACTSHEET) && drafts.every((d) => !FACTSHEET.includes(d)));
+  check("(5) ⭐ the public Sierra page sends `public` unless a host names one of its own, and no drafting surface",
+    /surface: hostSurface\(\)/.test(SIERRA) && /var HOST_SURFACES = \['fact-sheet'\];/.test(SIERRA) &&
+    /return HOST_SURFACES\.indexOf\(v\) > -1 \? v : 'public';/.test(SIERRA) && drafts.every((d) => !SIERRA.includes(d)));
+  check("(5) ⭐ the Fact Sheet and the funding page name `fact-sheet`, and no drafting surface",
+    FACTSHEET_PAGES.every((h) => /window\.CPL_SIERRA_SURFACE = "fact-sheet";/.test(h) && drafts.every((d) => !h.includes('"' + d + '"'))));
   check("(5) ⚠ neither page sends `retrieval_query`",
-    !/retrieval_query/.test(SIERRA) && !/retrieval_query/.test(FACTSHEET),
+    !/retrieval_query/.test(SIERRA) && FACTSHEET_PAGES.every((h) => !/retrieval_query/.test(h)),
     "retrieval_query REPLACES the embedded search text; on a conversational caller "
     + "that would search the knowledge base for something other than the question asked");
   check("(5) the memory tab sends it", /retrieval_query/.test(MEMORY));
@@ -207,8 +210,8 @@ block("(5)", function () {
    *
    * ⭐ THE ISOLATION PROPERTY IS THE ONE ABOVE: no CONVERSATIONAL page may name
    * a drafting surface. That is what stops a caller opting itself into the
-   * drafting prompt, and it is checked against sierra.js and factsheet_sierra.js
-   * a few lines up. What belongs here is only that nothing is orphaned: a
+   * drafting prompt, and it is checked against sierra.js and the two pages that
+   * name her a surface a few lines up. What belongs here is only that nothing is orphaned: a
    * drafting surface no client sends is a prompt path with no caller, and a
    * surface sent by a file not listed here is one nobody vetted. */
   const DRAFT_OWNERS = { "memory-autogen": MEMORY, "memory-briefing": MEMORY,

@@ -13,8 +13,9 @@
    key (RLS-gated). MULTI-TURN: prior turns are sent as `history`, so Sierra can
    ask a focusing follow-up and honor "how about West LA?" / "show all".
 
-   The request/stream/markdown logic is the proven port from cpl_chat.js /
-   factsheet_sierra.js. Model output is HTML-escaped BEFORE the markdown-lite
+   The request/stream/markdown logic is the proven port from cpl_chat.js (the
+   Fact Sheet's drawer, a third copy, retired when its pages moved onto the Ask
+   Sierra side bar, which frames this page). Model output is HTML-escaped BEFORE the markdown-lite
    pass, so a crafted answer can't inject markup. Every turn logs anonymously
    server-side (no SELECT) — the intro asks visitors not to enter personal info.
 
@@ -45,6 +46,36 @@
     'How does my Joint Services Transcript count?',
   ];
   var TRIES = [SUGGESTED[1], SUGGESTED[3], SUGGESTED[6]];
+
+  // ── The page beside her (the Ask Sierra side bar, sidebar.js) ──
+  // A same-origin page that frames her can name its own starter questions
+  // (window.CPL_SIERRA_SUGGESTED, as the Fact Sheet's and the funding page's
+  // drawer read them) and the surface her questions are filed under
+  // (window.CPL_SIERRA_SURFACE). Read from the parent window, never from the
+  // address, so no link can put words in her mouth; a cross-origin parent (the
+  // vendor frame on map.rccd.edu) throws and leaves her own. Only surfaces a
+  // public page may claim are honored.
+  var HOST_SURFACES = ['fact-sheet'];
+  function hostValue(name) {
+    try {
+      if (window.parent && window.parent !== window) return window.parent[name];
+    } catch (e) { /* a cross-origin parent: her own */ }
+    return undefined;
+  }
+  function hostTries() {
+    var v = hostValue('CPL_SIERRA_SUGGESTED');
+    if (!Array.isArray(v)) return null;
+    var out = v.filter(function (q) { return typeof q === 'string' && q.trim() && q.length <= 300; })
+      .map(function (q) { return q.replace(/[\u0000-\u001f\u007f]+/g, ' ').trim(); });
+    return out.length ? out.slice(0, 3) : null;
+  }
+  function hostSurface() {
+    var v = hostValue('CPL_SIERRA_SURFACE');
+    return HOST_SURFACES.indexOf(v) > -1 ? v : 'public';
+  }
+  var HOST_TRIES = hostTries();
+  if (HOST_TRIES) TRIES = HOST_TRIES;
+  var FIRST_TRY = HOST_TRIES ? HOST_TRIES[0] : SUGGESTED[0];
 
   var convo = [];          // prior {role,content} turns → sent as history (multi-turn)
   var CONVO_MAX = 8;
@@ -615,7 +646,7 @@
     // this same public page with ctx=external, so it keeps surface 'public' —
     // two axes, deliberately not collapsed into one.
     var p = { query: query, session_id: sessionId(), history: convo.slice(),
-              audience: audience, surface: 'public' };
+              audience: audience, surface: hostSurface() };
     if (ctxVariant) p.ctx = ctxVariant;
     return p;
   }
@@ -901,7 +932,7 @@
     if (document.body) document.body.setAttribute('data-view', v);
     if (inputEl) inputEl.placeholder = v === 'asking'
       ? 'Ask a follow-up'
-      : 'Try: ' + SUGGESTED[0];
+      : 'Try: ' + FIRST_TRY;
     setAudienceOpen(false);
     view = v;
     fitInput();
@@ -936,7 +967,7 @@
     wireAbout();
     wireTheme();
     renderTries();
-    if (inputEl) inputEl.placeholder = 'Try: ' + SUGGESTED[0];
+    if (inputEl) inputEl.placeholder = 'Try: ' + FIRST_TRY;
     prefillAsk();
 
     if (audToggle) audToggle.addEventListener('click', function () {

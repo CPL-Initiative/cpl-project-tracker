@@ -42,6 +42,10 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
          RLS is_allowed_reviewer() on factsheet_overrides. -->
     <button class="btn no-print" id="btn-curate" type="button" hidden aria-pressed="false" title="Sign in to edit this fact sheet">✎ Curate</button>
     <button class="btn no-print" id="btn-word" type="button" title="Download this fact sheet as a Word document">Save as Word</button>
+    <!-- Ask Sierra opens her in the side bar (../sierra/sidebar.js; Sam, Open Asks
+         Sheet 126 card 1, "public": the Fact Sheet and the funding page move onto
+         the bar the public library carries, so every public page opens one Sierra). -->
+    <button class="btn no-print" id="btn-sierra" type="button" data-sierra-open title="Ask Sierra, the CPL assistant">Ask Sierra</button>
     <button class="btn btn-primary" id="btn-print" type="button" title="Print or save this fact sheet as a PDF">Print / Save PDF</button>
   </div>
 </div>
@@ -822,6 +826,16 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
 <script src="./statewide_recs_render.js"></script>
 <script src="./factsheet_edit.js"></script>
 <script src="./factsheet_word.js"></script>
-<script src="./factsheet_sierra.js"></script>
+<!-- Her starter questions for this page, and the surface her questions are filed
+     under (sierra.js reads both from here, never from an address). -->
+<script>
+window.CPL_SIERRA_SUGGESTED = [
+  "What is Credit for Prior Learning?",
+  "How many students has CPL served statewide?",
+  "Where can I get credit for a real estate license?"
+];
+window.CPL_SIERRA_SURFACE = "fact-sheet";
+</script>
+<script src="../sierra/sidebar.js" defer></script>
 </body>
 </html>

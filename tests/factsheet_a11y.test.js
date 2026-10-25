@@ -205,15 +205,21 @@ check("decorative mustard rules are still only decorative (no text uses --mustar
 const RECS = fs.readFileSync("fact-sheet/statewide_recs_render.js", "utf8");
 const STORIES_R = fs.readFileSync("fact-sheet/cpl_stories_render.js", "utf8");
 const EDIT = fs.readFileSync("fact-sheet/factsheet_edit.js", "utf8");
-const SRA = fs.readFileSync("fact-sheet/factsheet_sierra.js", "utf8");
+// Ask Sierra opens in the side bar (Sam, Open Asks Sheet 126 card 1); the page maps the bar's tokens.
+const BAR = fs.readFileSync("sierra/sidebar.js", "utf8");
 const HEX = /#[0-9a-fA-F]{3}(?:[0-9a-fA-F]{3})?\b/;
 const cssNoComments = CSS.replace(/\/\*[\s\S]*?\*\//g, "");
 check("factsheet.css: every color outside :root is a token (no raw hex)",
   !/:[^;{}]*#[0-9a-fA-F]{3,8}\b/.test(cssNoComments.replace(/:root[^{]*\{[^}]*\}/g, "")));
 check("the injected CSS of the recs list, the stories and the editor carries no raw hex",
   !HEX.test(RECS) && !HEX.test(STORIES_R) && !HEX.test(EDIT));
-check("Sierra's question bubble names its text color as a token",
-  /\.fs-sra-user \.fs-sra-bubble\{background:var\(--seal-blue\);color:var\(--on-seal\);/.test(SRA));
+{
+  const used = [...new Set((BAR.match(/var\(--sierra-bar-[a-z-]+/g) || []).map((s) => s.slice(4)))].filter((n) => n !== "--sierra-bar-w");
+  const root = (CSS.match(/:root \{([\s\S]*?)\n\}/) || [])[1] || "";
+  const missing = used.filter((n) => root.indexOf(n + ":") < 0);
+  check("the Ask Sierra side bar's every token maps onto the page's own, never a raw hex",
+    used.length >= 9 && !missing.length && !/--sierra-bar-[a-z-]+:\s*#/.test(root), "missing: " + missing.join(", "));
+}
 check("the recs toggle uses First Light's link blue, never the undefined --accent",
   /\.sw-rec-tg\{[^}]*color:var\(--cobalt\)/.test(RECS) && !/--accent/.test(RECS));
 check("the recs toggle reaches the 24px floor", /\.sw-rec-tg\{[^}]*min-height:24px/.test(RECS));

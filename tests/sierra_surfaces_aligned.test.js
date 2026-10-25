@@ -1,10 +1,13 @@
-// Sierra, on all three surfaces, reads the same. Sky167, 2026-08-17.
+// Sierra, on every surface, reads the same. Sky167, 2026-08-17.
 //
 // #1231 applied Sam's no-glyphs rule (cpl_memory cobi-no-cheesy-glyphs-design-rule)
 // to the My College tab. It could only reach cpl_chat.js, so the other two
 // surfaces that mount Sierra kept their emoji: the standalone public page
-// (sierra/) and the Fact Sheet drawer (fact-sheet/factsheet_sierra.js). Sam:
+// (sierra/) and the Fact Sheet drawer (a third copy, since retired). Sam:
 // "I think it's a good idea to keep all instances of Sierra aligned."
+// The drawer retired on 2026-10-25: the Fact Sheet and the funding page open the
+// public page itself in the Ask Sierra side bar (Open Asks Sheet 126 card 1), so
+// two files maintain her now, and the bar's own words are scanned in its place.
 //
 // ⭐ THE POINT OF THIS FILE IS THE CROSS-FILE ASSERTION, not the glyph scan.
 // Three files hand-maintain the same assistant, and nothing has ever compared
@@ -34,7 +37,7 @@ const CHAT = fs.readFileSync("cpl_chat.js", "utf8");
 const PAGE = fs.readFileSync("sierra/sierra.js", "utf8");
 const PAGE_HTML = fs.readFileSync("sierra/index.html", "utf8");
 const PAGE_CSS = fs.readFileSync("sierra/sierra.css", "utf8");
-const DRAWER = fs.readFileSync("fact-sheet/factsheet_sierra.js", "utf8");
+const BAR = fs.readFileSync("sierra/sidebar.js", "utf8");
 
 /* Emoji + the dingbat marks that were used as status prefixes (✓ ⚠ ↗). The
  * range is deliberately NOT "all non-ASCII": this repo's prose is full of
@@ -159,7 +162,7 @@ block("audience alignment", function () {
 block("glyph scan", function () {
   [["cpl_chat.js", stringLiterals(CHAT)], ["sierra/sierra.js", stringLiterals(PAGE)],
    ["sierra/index.html", htmlVisible(PAGE_HTML)],
-   ["fact-sheet/factsheet_sierra.js", stringLiterals(DRAWER)]].forEach(function (pair) {
+   ["sierra/sidebar.js", stringLiterals(BAR)]].forEach(function (pair) {
     const hits = glyphsIn(pair[1]);
     check(pair[0] + ": no glyphs in visible strings"
       + (hits.length ? " — found: " + String(hits[0]).trim().slice(0, 70) : ""), hits.length === 0);
@@ -186,10 +189,12 @@ block("replacement words", function () {
     check(pair[0] + ": the full-sentence aria labels survive",
       /This answer was helpful/.test(s) && /This answer was not helpful/.test(s));
   });
-  check("Fact Sheet drawer: Beta notice kept its text",
-    /Beta\. Please don/.test(DRAWER) && !/\u{1F9EA}/u.test(DRAWER));
-  check("Fact Sheet drawer: launcher still says Ask Sierra",
-    /'Ask ' \+ NAME/.test(DRAWER));
+  check("the side bar: its chip and its title say Ask Sierra, and its controls are words",
+    /chip\.textContent = 'Ask Sierra';/.test(BAR) && /title\.textContent = 'Ask Sierra';/.test(BAR) &&
+    /closeBtn\.textContent = 'Close';/.test(BAR) && /sizeButton\('Narrower'/.test(BAR) && /sizeButton\('Wider'/.test(BAR));
+  check("the Fact Sheet and the funding page: their own word still says Ask Sierra",
+    ["fact-sheet/index.html", "funding-model/index.html"].every((f) =>
+      /<button[^>]*data-sierra-open[^>]*>Ask Sierra<\/button>/.test(fs.readFileSync(f, "utf8"))));
   check("standalone page: Beta notice kept its text", /class="s-beta">Beta —/.test(PAGE_HTML));
 });
 

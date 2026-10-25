@@ -4,9 +4,9 @@
   "supabase_tables": 101,
   "rpcs": 41,
   "edge_functions": 9,
-  "file_datasets": 714,
+  "file_datasets": 713,
   "external_services": 184,
-  "consumers": 473,
+  "consumers": 472,
   "workflows": 58,
   "data_js_files": 71,
   "tabs": 38
@@ -55,17 +55,6 @@
      ]
     },
     {
-     "id": "module:fact-sheet/factsheet_sierra.js",
-     "kind": "module",
-     "direction": "call",
-     "how": "literal",
-     "line": 36,
-     "pages": [
-      "fact-sheet/index.html",
-      "funding-model/index.html"
-     ]
-    },
-    {
      "id": "module:gr_priorities.js",
      "kind": "module",
      "direction": "call",
@@ -94,7 +83,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 31,
+     "line": 32,
      "pages": [
       "sierra/index.html"
      ]
@@ -659,7 +648,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 565
+     "line": 591
     }
    ],
    "main_committers": []
@@ -1419,7 +1408,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1727
+     "line": 1753
     }
    ],
    "main_committers": []
@@ -1947,7 +1936,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 795
+     "line": 821
     }
    ],
    "main_committers": []
@@ -1966,7 +1955,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1123
+     "line": 1149
     },
     {
      "id": "module:college_briefing.js",
@@ -3794,7 +3783,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1401
+     "line": 1427
     }
    ],
    "main_committers": []
@@ -4822,7 +4811,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1292
+     "line": 1318
     },
     {
      "id": "module:admin.js",
@@ -5431,14 +5420,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1634
+     "line": 1636
     },
     {
      "id": "page:funding-model/memo/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 106
+     "line": 101
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -5683,7 +5672,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1666
+     "line": 1692
     },
     {
      "id": "module:college_briefing.js",
@@ -5708,14 +5697,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1639
+     "line": 1641
     },
     {
      "id": "page:funding-model/memo/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 107
+     "line": 102
     }
    ],
    "served": true,
@@ -5768,14 +5757,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1625
+     "line": 1627
     },
     {
      "id": "page:funding-model/memo/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 105
+     "line": 100
     },
     {
      "id": "script:excel_to_dashboard.py",
@@ -5870,7 +5859,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 849
+     "line": 875
     },
     {
      "id": "module:cpl_funding.js",
@@ -6068,7 +6057,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 291
+     "line": 317
     },
     {
      "id": "module:cpl_pathways.js",
@@ -6125,14 +6114,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 817
+     "line": 821
     },
     {
      "id": "page:funding-model/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1638
+     "line": 1640
     },
     {
      "id": "page:prototype/ccr_atlas_v1.html",
@@ -7151,7 +7140,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 819
+     "line": 823
     },
     {
      "id": "script:tools/source_cpl_stories.mjs",
@@ -7183,7 +7172,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 820
+     "line": 824
     }
    ],
    "served": true,
@@ -7196,7 +7185,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 818
+     "line": 822
     }
    ],
    "served": true,
@@ -7209,27 +7198,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 823
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:fact-sheet/factsheet_sierra.js": {
-   "consumers": [
-    {
-     "id": "page:fact-sheet/index.html",
-     "kind": "page",
-     "direction": "read",
-     "how": "markup",
-     "line": 825
-    },
-    {
-     "id": "page:funding-model/index.html",
-     "kind": "page",
-     "direction": "read",
-     "how": "markup",
-     "line": 1653
+     "line": 827
     }
    ],
    "served": true,
@@ -7242,7 +7211,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 824
+     "line": 828
     }
    ],
    "served": true,
@@ -7313,7 +7282,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 821
+     "line": 825
     },
     {
      "id": "script:fact-sheet/_build_statewide_recs.py",
@@ -7366,7 +7335,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 822
+     "line": 826
     }
    ],
    "served": true,
@@ -7541,7 +7510,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1626
+     "line": 1628
     }
    ],
    "served": true,
@@ -18046,6 +18015,20 @@
      ]
     },
     {
+     "id": "page:fact-sheet/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 839
+    },
+    {
+     "id": "page:funding-model/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 1657
+    },
+    {
      "id": "page:library/index.html",
      "kind": "page",
      "direction": "read",
@@ -21680,7 +21663,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 299,
+     "line": 330,
      "pages": [
       "sierra/index.html"
      ]

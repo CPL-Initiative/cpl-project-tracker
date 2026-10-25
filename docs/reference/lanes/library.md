@@ -169,10 +169,14 @@ switch. The library maps the `--sierra-bar-*` tokens onto its own. **COBI's Libr
 the chip on that tab alone (`setChip`; any other tab hides it and shuts an open bar) and maps the tokens onto First Light.
 Test: `tests/sierra_sidebar.test.js` (44); sweep: `public-library-sierra` and `-dark` (its keyboard checks drag the edge
 across her frame at 1440px), `cobi:library`.
-**Ruled (Sam, Open Asks Sheet 126 card 1, *public*, 23:08Z 2026-10-24): the Fact Sheet and the funding model page move onto the bar next; COBI as it is.** Not yet built (handoff 470). The
-Fact Sheet and the funding model page open their own drawer (`fact-sheet/factsheet_sierra.js`, a second copy of her chat
-with each page's starter questions); COBI's header link opens `sierra/` in a new tab, and COBI also opens Sierra AI over any
-tab (`cpl_chat.js`). A page joins with one script tag and a token map.
+**The Fact Sheet and the funding model page open her in the bar too** (Sam, Open Asks Sheet 126 card 1, *public*, 23:08Z
+2026-10-24; built S469); COBI stays as it is. Each opens her from its own *Ask Sierra* word in its action row, just ahead of
+its PDF control (Sam, 2026-10-01: *"Include an Ask Sierra link as in the Fact Sheet"*): a page with a `[data-sierra-open]`
+word shows no chip, and Close hands focus back to the word. Each names her starter questions (`CPL_SIERRA_SUGGESTED`, three
+shown) and her surface (`CPL_SIERRA_SURFACE`, `fact-sheet`, the one a host may claim); `sierra.js` reads both from the
+same-origin parent, never from the address. Their drawer (`fact-sheet/factsheet_sierra.js`, a second copy of her chat) and
+its test are gone. A page joins with one script tag and a token map. Sweep: `fact-sheet-sierra`, `-dark`,
+`funding-model-sierra`.
 
 ## Sierra reads the library (Sam, ~23:20Z 2026-10-24; built S469)
 

@@ -43,7 +43,9 @@ const SRC = fs.readFileSync("chatbox/supabase/functions/cpl-chat/index.ts", "utf
 const SQL = fs.readFileSync("chatbox/supabase_sierra_feedback.sql", "utf8");
 const CHAT = fs.readFileSync("cpl_chat.js", "utf8");
 const SIERRA = fs.readFileSync("sierra/sierra.js", "utf8");
-const FACTSHEET = fs.readFileSync("fact-sheet/factsheet_sierra.js", "utf8");
+// The Fact Sheet and the funding page open Sierra in the side bar (Open Asks Sheet 126
+// card 1) and name her surface to the page she runs in; their drawer retired.
+const FACTSHEET_PAGES = ["fact-sheet/index.html", "funding-model/index.html"].map((f) => fs.readFileSync(f, "utf8"));
 
 /* Scan CODE, not prose — the comments above the code quote the traps they
  * guard (same lesson as sierra_surface.test.js codeOnly()). */
@@ -383,8 +385,9 @@ async function widget() {
 block("(7)", function () {
   check("(7) ⭐ the public Sierra page still sends the anon key and holds no credential",
     /'Authorization': 'Bearer ' \+ SUPABASE_ANON/.test(SIERRA) && !/CPL_SESSION|credentialHeaders|x-team-pass/.test(SIERRA));
-  check("(7) ⭐ so does the Fact Sheet drawer",
-    /'Authorization': 'Bearer ' \+ SUPABASE_ANON/.test(FACTSHEET) && !/CPL_SESSION|credentialHeaders|x-team-pass/.test(FACTSHEET));
+  check("(7) ⭐ the Fact Sheet and the funding page ask through her (the side bar), with no chat call or credential of their own",
+    FACTSHEET_PAGES.every((h) => /<script src="\.\.\/sierra\/sidebar\.js" defer><\/script>/.test(h) &&
+      !/functions\/v1\/cpl-chat|CPL_SESSION|credentialHeaders|x-team-pass/.test(h)));
 });
 
 (async function main() {
