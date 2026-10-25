@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-25T16:51:33Z",
-  "session": 478,
-  "moniker": "SkyTidyTips",
+  "written_at": "2026-10-25T22:01:49Z",
+  "session": 479,
+  "moniker": "SkyMilkmaids",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_479_handoff.md",
+  "handoff": "docs/session_480_handoff.md",
   "next_step": {
-    "title": "Read Sheet 127, then the Fact Sheet's UI pass",
-    "text": "The next session reads Sam's reply on Sheet 127 and, as the first scheduled session of October 26, audits the Fact Sheet. Sam's five funding page asks shipped this run. The harvest queue still waits behind the funding lane."
+    "title": "The Fact Sheet's UI pass, then the guide's rewrite",
+    "text": "The first scheduled session of October 26 audits the Fact Sheet. Sam confirmed twelve of the noncredit credential pairs this run, and the Coordinator Guide audit report waits for him to read. The harvest queue still waits behind the funding lane."
   },
   "calls": [
     {
@@ -17,7 +17,12 @@
       "text": "NC-1's channel 3 counts an exhibit whose credential a CDCP course names. Thirteen pairs are proposed (Cabrillo 3, LA Trade-Tech 9, Saddleback 1); the builder counts none until a row reads confirmed.",
       "if_no_reply": "Channel 3 counts nothing, and LA Trade-Tech reads 0 of its NC-1 target of 4.",
       "link": "https://claude.ai/artifact/VfX9JnaA5j3ESubzHKYc3A",
-      "link_text": "Open Sheet 127"
+      "link_text": "Open Sheet 127",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-25",
+        "words": "Confirm the twelve, on Open Asks Sheet 127 card 1 (twelve): the twelve pairs count, and ServSafe stays proposed."
+      }
     },
     {
       "title": "The second reader waits on a new xAI subscription",
@@ -127,6 +132,10 @@
     {
       "at": "2026-10-25T17:05:00Z",
       "text": "No harvest table moved this run; S478 shipped Sam's funding page asks (two funding columns, the Noncredit CPL Lead, the Report fold, the library look) in PR 2446."
+    },
+    {
+      "at": "2026-10-25T21:58:00Z",
+      "text": "No harvest table moved this run; S479 confirmed twelve noncredit credential pairs on Sam's reply and ran the Coordinator Guide audit."
     }
   ],
   "headline": [

@@ -17,6 +17,11 @@ S196, and the INDEX history rotated out before 2026-09-17. New rotations keep la
 
 ## INDEX update-history entries rotated out (2026-10-25)
 
+- 2026-10-24 (S469 SkyLemonadeBerry, opened by hand): Ask Sierra opens in a side bar on the public library and COBI's Library tab (#2424); Sierra's page in the library look, no paintings (#2425); Open Asks Sheet 126; full checkpoint; handoff 470.
+- 2026-10-24 (S468 SkyMatilija, opened by hand): the toolkit photos in the library's hero (#2421); the NC cards edit like the credit cards, Cabrillo counted, the coordinator sources named (#2422); Open Asks Sheet 125; full checkpoint; handoff 469.
+- 2026-10-24 (S466 SkyYerbaSanta, opened by hand beside the routine's run): the film can carry Scenario 4's words (#2418), held on Open Asks Sheet 123 card 2; a pending noncredit gate releases; the routine check for hand-opened sessions; full checkpoint; handoff 467 rewritten.
+- 2026-10-24 (S466 SkyYerbaSanta, scheduled): the funding film rebuilt from the published Scenario 4, v9 (#2417); light checkpoint; handoff 467.
+- 2026-10-24 (S465 SkyCoyoteBrush, scheduled): three lane files under budget, Scenario 4 found published (#2416); light checkpoint; handoff 466.
 - 2026-10-23 (S459 SkyBuckeye, later): the agency template and the ELL IET page, the Knowledge Base fold (#2397), the display apply recorded; handoff 460 rewritten; memory receipt `cpl_memory_2026-10-23_s459_later.sql`.
 
 ## INDEX update-history entries rotated out (2026-10-23)

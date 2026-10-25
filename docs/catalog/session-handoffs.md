@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-449 document(s).
+450 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 480 | [Session 480 handoff: the Coordinator Guide audit ran from the Drive; Sam confirmed twelve noncredit credential pairs](../session_480_handoff.md) | 2026-10-25 |
 | 479 | [Session 479 handoff: the funding page in two columns and the library look; the Noncredit CPL Lead](../session_479_handoff.md) | 2026-10-25 |
 | 478 | [Session 478 handoff: the noncredit counts are live; a hand-opened session claims the queue with a draft PR](../session_478_handoff.md) | 2026-10-25 |
 | 477 | [Session 477 handoff: the noncredit RPC gets a retry; Sheet 127 still waits](../session_477_handoff.md) | 2026-10-25 |
