@@ -82,7 +82,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_document_sections` | `edgefn:cpl-chat` | — |
 | `cpl_documents` | `edgefn:cpl-chat` | — |
 | `cpl_funding_config` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · scripts: `kb/_funding_config_edit_apply.py` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
-| `cpl_funding_nc_attestation_pub` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | — |
+| `cpl_funding_nc_attestation` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
+| `cpl_funding_nc_attestation_pub` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
 | `cpl_funding_notes` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
 | `cpl_funding_participation` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
 | `cpl_funding_reports` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
@@ -167,6 +168,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `college_program_courses` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
 | `course_outcomes_load` | scripts: `kb/_course_outcomes_load.py` | — |
 | `cpl_funding_my_reports` | tabs: `college-briefing`, `cpl-pathways` | — |
+| `cpl_funding_nc_attestation_review` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | — |
 | `cpl_funding_optin_review` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | — |
 | `cpl_library_public` | tabs: `admin` · pages: `library/index.html` · `edgefn:cpl-chat` | — |
 | `cpl_library_set_public` | tabs: `admin`, `library` | — |
@@ -1192,5 +1194,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 101 Supabase tables · 41 RPCs · 9 edge functions · 713 file
+Coverage: 102 Supabase tables · 42 RPCs · 9 edge functions · 713 file
 datasets · 184 external services · 472 consumers · 58 workflows · 38 tabs.
