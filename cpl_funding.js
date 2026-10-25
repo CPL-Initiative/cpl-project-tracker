@@ -13022,7 +13022,17 @@
       institutionTotal: netCollege(),
       avg: s.avg, min: s.min, max: s.max, minCount: s.minCount,
       deadline: participationDeadline(), expendBy: expendYear ? "June 30, " + expendYear : "the end of the window",
-      priorities: memoPriorityList("1")
+      priorities: memoPriorityList("1"),
+      // The noncredit outcomes lane (Scenario 4): its outcomes, conditions and
+      // reported figure, from the model. Empty under origination, so Scenarios
+      // 1 to 3 print the memo they always did.
+      ncOutcomes: ncOutcomesMode() ? ncOutcomes("1").map(function (p) {
+        var t = String(p.title || "").trim();
+        return { label: p.label + (t ? ": " + t : ""), description: p.description, metric: p.metric,
+          strategies: p.strategies || [], share: p.share };
+      }) : [],
+      ncReported: ncOutcomesMode() ? ncReportedList() : [],
+      ncConditions: ncOutcomesMode() ? ncCondWords() : ""
     };
   }
   // EVERY CARD, IN THE TAB'S ORDER (Sam, 2026-09-24: "Need P4 on Reports").
@@ -13088,6 +13098,8 @@
     ["deadline", "the confirmation deadline, spelled out"], ["expend by", "the date the funds are expended by"],
     ["seed grant", "the 2025-26 seed grant per institution"], ["area", "the initiative's full name"],
     ["project", "the funding project's name"], ["scenario", "the scenario the document is drawn from"],
+    ["noncredit conditions", "what the noncredit share requires, in one phrase"],
+    ["noncredit outcome count", "how many noncredit outcomes, as a word"],
     ["date", "today's date, spelled out"]];
   var MEMO_BLOCKS = [
     { key: "memo_masthead", where: "The masthead, every document", rows: 3,
@@ -13119,6 +13131,12 @@
     { key: "memo_priorities", where: "Priority Outcomes, the sentence before the list", rows: 3,
       plain: "This funding prioritizes measurable progress on the systemwide outcomes of Education Code " +
         "section 78093.2(d)(1), which support working learners and advance Vision 2030:" },
+    { key: "memo_noncredit", where: "Noncredit Outcomes, the paragraph before the list (the noncredit outcomes scenario)",
+      rows: 5, ncOutcomesOnly: true,
+      plain: "Each award's noncredit share is restricted to noncredit outcomes and totals **{noncredit total}** " +
+        "statewide, {noncredit portion} of the funding to institutions. An institution's noncredit share requires " +
+        "{noncredit conditions}. The {noncredit outcome count} outcomes below then measure its progress, each " +
+        "counting toward the part of the share it names:" },
     { key: "memo_strategies", where: "Recommended Strategies, the sentence before the lists", rows: 2,
       plain: "Suggested approaches for advancing each priority outcome:" },
     { key: "memo_allowable", where: "Allowable Use of Funds", rows: 6,
@@ -13204,6 +13222,8 @@
       "factors": factors.length === 1 ? "Every funding factor is currently set to " + factors[0] + "."
         : "The factors currently set are " + factors.join(", ") + ".",
       "priority count": numWord(m.priorities.length), "window": m.window,
+      "noncredit conditions": m.ncConditions || "none",
+      "noncredit outcome count": numWord((m.ncOutcomes || []).length),
       "deadline": memoLongDate(m.deadline), "expend by": m.expendBy,
       "seed grant": fmtMoney(GRANT_AMOUNT), "area": m.area.full, "project": m.projectLabel,
       "scenario": activeScenario, "date": todayLong()
@@ -13225,12 +13245,33 @@
         (p.metric ? " <em>Metric: " + esc(p.metric) + ".</em>" : "") + "</li>";
     }).join("") + "</ul>";
   }
+  // The noncredit outcomes (Scenario 4, Sam's Sheets 113 and 114): the
+  // passage, then each outcome from the model with its part of the share, then
+  // the figure the attestation reports and nothing funds. Empty under
+  // origination, so the memo for Scenarios 1 to 3 is unchanged.
+  function memoShareWords(v) {
+    v = Number(v) || 0;
+    if (Math.abs(v - 0.5) < 1e-9) return "half of the noncredit share";
+    if (Math.abs(v - 1) < 1e-9) return "the whole noncredit share";
+    return Math.round(v * 1000) / 10 + "% of the noncredit share";
+  }
+  function memoNoncreditHtml(m, F) {
+    if (!(m.ncOutcomes || []).length) return "";
+    var list = "<ul>" + m.ncOutcomes.map(function (p) {
+      return "<li><strong>" + esc(p.label) + "</strong> (" + esc(memoShareWords(p.share)) + "). " +
+        esc(p.description || "") + (p.metric ? " <em>Metric: " + esc(p.metric) + (/[.!?]$/.test(p.metric.trim()) ? "" : ".") + "</em>" : "") + "</li>";
+    }).join("") + "</ul>";
+    var rep = (m.ncReported || []).map(function (r) {
+      return "<p><strong>Also reported: " + esc(r.title || "") + ".</strong> " + esc(r.text || "") + "</p>";
+    }).join("");
+    return "<h2>Noncredit Outcomes</h2>" + memoPassHtml("memo_noncredit", F) + list + rep;
+  }
   // Recommended strategies per priority (Sam, 2026-08-04) — the editable
   // per-priority strategy lists, one block per priority. Omitted entirely when
   // no priority carries a strategy, so an empty model never prints a hollow
   // header (same "no empty section" rule the rest of the memo follows).
   function memoStrategies(m, F) {
-    var blocks = (m.priorities || []).map(function (p) {
+    var blocks = (m.priorities || []).concat(m.ncOutcomes || []).map(function (p) {
       var list = (p.strategies || []).filter(function (s) { return String(s || "").trim(); });
       if (!list.length) return "";
       return "<p><strong>" + esc(p.label) + ".</strong></p><ul>" +
@@ -13299,7 +13340,7 @@
     var I = function (key) { return memoLineHtml(key, F); };
     var masthead = '<div class="masthead">' + I("memo_masthead") + "</div>";
     var overview = "<h2>Funding Overview</h2>" + P("memo_overview");
-    var prios = "<h2>Priority Outcomes</h2>" + P("memo_priorities") + memoPriorityListHtml(m);
+    var prios = "<h2>Priority Outcomes</h2>" + P("memo_priorities") + memoPriorityListHtml(m) + memoNoncreditHtml(m, F);
     var body = P("memo_lead") + P("memo_history") + overview + prios + memoStrategies(m, F) +
       "<h2>Allowable Use of Funds</h2>" + P("memo_allowable");
     var tech = "<h2>Technical Assistance</h2>" + P("memo_tech");
@@ -13340,6 +13381,7 @@
       "model fills in, so an edit never freezes a number. The priorities, their strategies and the allocation " +
       "table come from the model and have no passage.</p>";
     MEMO_BLOCKS.forEach(function (b) {
+      if (b.ncOutcomesOnly && !ncOutcomesMode()) return;
       body += '<p class="cplfund-xtext-k">' + esc(b.where) +
         (b.follows && !textIsCustom(b.key) ? ", following it now" : "") + "</p>" + proseBlockHtml(b.key, "cplfund-xtext");
     });
