@@ -92,7 +92,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Sierra credit recommendations & false absences — workstream lessons](../sierra_credit_recs_lessons.md) | `sierra_credit_recs_lessons.md` | 2026-08-13 | 2026-08-13 |
 | [Sierra rules as data — lessons](../sierra_rules_lessons.md) | `sierra_rules_lessons.md` | 2026-08-14 |  |
 | [Sierra's page redesign — lessons](../sierra_page_redesign_lessons.md) | `sierra_page_redesign_lessons.md` | 2026-10-08 |  |
-| [SkyView / CCR Atlas lessons — archive](../ccr_atlas_lessons_archive.md) | `ccr_atlas_lessons_archive.md` | 2026-09-05 | 2026-09-07 |
+| [SkyView / CCR Atlas lessons — archive](../ccr_atlas_lessons_archive.md) | `ccr_atlas_lessons_archive.md` | 2026-09-05 | 2026-10-25 |
 | [Statewide Exhibits KPI card + KPI grid UX — lessons](../statewide_kpi_lessons.md) | `statewide_kpi_lessons.md` | 2026-06-11 |  |
 | [Statewide Fire / Wildland / Cal-JAC / Electrical CPL crosswalk — lessons](../statewide_fire_electrical_crosswalk_lessons.md) | `statewide_fire_electrical_crosswalk_lessons.md` | 2026-09-09 |  |
 | [Student-detail load — lessons](../student_detail_load_lessons.md) | `student_detail_load_lessons.md` | 2026-08-08 |  |
