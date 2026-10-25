@@ -4,7 +4,7 @@
   "supabase_tables": 102,
   "rpcs": 42,
   "edge_functions": 9,
-  "file_datasets": 714,
+  "file_datasets": 715,
   "external_services": 184,
   "consumers": 472,
   "workflows": 58,
@@ -7459,6 +7459,19 @@
      "direction": "run",
      "how": "yaml",
      "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:funding/nc_credential_crosswalk.json": {
+   "consumers": [
+    {
+     "id": "script:funding/_build_funding_performance.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 692
     }
    ],
    "served": true,

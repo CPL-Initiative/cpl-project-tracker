@@ -22,7 +22,10 @@ What this pins, in order of how expensive each would be to get wrong:
      titles, and lands in origination.in_scope, never in colleges.
   5. NC-2 COUNTS ONLY A CONFIRMED COURSE: an attested control number the COCI
      read did not confirm stays 0.
-  6. NEVER GUESSED. A COCI name that does not resolve is logged and moves nothing.
+  6. CHANNEL 3 COUNTS ONLY A CONFIRMED CROSSWALK ROW (funding/nc_credential_crosswalk.json),
+     and only while one of its courses is still a CDCP title there; a proposed row
+     counts nothing, and an exhibit already counted counts once.
+  7. NEVER GUESSED. A COCI name that does not resolve is logged and moves nothing.
 
 Run: python3 tests/funding_nc_counts_test.py
 """
@@ -78,6 +81,8 @@ FIXTURE = {
         ex("Cabrillo College", "C-3", "Calculus", "calculus", ["calculus"]),                                 # none
         ex("Cabrillo College", "C-4", "QuickBooks", "quickbooks", []),                                       # attested by id
         ex("Cabrillo College", "t:French Wines", "French Wines", "french wines", [], exhibit_id=""),         # attested by title
+        ex("Cabrillo College", "C-7", "Fork Lift", "fork lift", []),                                       # proposed only
+        ex("Cabrillo College", "t:Wine Pairing", "Wine Pairing", "wine pairing", [], exhibit_id=""),        # course gone
         ex("Cabrillo College", "C-6", "Blueprint Reading", "blueprint reading", ["blueprint reading"]),      # channels 1 and 2: once
         ex("Cypress College", "CY-1", "ESL One", "esl one", ["esl level one"]),                              # NOCE's twin
         ex("Fullerton College", "CY-1", "ESL One", "esl one", ["esl level one"]),                            # same exhibit, adopted
@@ -92,7 +97,20 @@ FIXTURE = {
 }
 
 
-def run_builder(fixture=None):
+CROSSWALK = {"rows": [
+    {"college": "Cabrillo College", "exhibit": "C-3", "status": "confirmed", "confirmed_by": "test",
+     "courses": [{"code": "BP 400", "title_norm": "blueprint reading"}]},                  # counts
+    {"college": "Cabrillo College", "exhibit": "C-7", "status": "proposed", "confirmed_by": None,
+     "courses": [{"code": "BP 400", "title_norm": "blueprint reading"}]},                  # proposed: no
+    {"college": "Cabrillo College", "exhibit": "Wine Pairing", "status": "confirmed", "confirmed_by": "test",
+     "courses": [{"code": "X 1", "title_norm": "no longer offered"}]},                     # course gone: no
+    {"college": "Cabrillo College", "exhibit": "C-1", "status": "confirmed", "confirmed_by": "test",
+     "courses": [{"code": "BP 400", "title_norm": "blueprint reading"}]},                  # channel 2 already: once
+]}
+COMMITTED_XWALK = os.path.join(ROOT, "funding", "nc_credential_crosswalk.json")
+
+
+def run_builder(fixture=None, crosswalk=None):
     payload = [{"viewName": VIEW, "generatedAt": "2026-10-25T00:00:00+00:00",
                 "columnName": COLUMNS, "columnValue": MAP_ROWS}]
     env = {k: v for k, v in os.environ.items() if k != "SUPABASE_SERVICE_KEY"}
@@ -107,6 +125,11 @@ def run_builder(fixture=None):
             with open(fx, "w", encoding="utf-8") as f:
                 json.dump(fixture, f)
             argv += ["--nc-counts", fx]
+        if crosswalk is not None:
+            xw = os.path.join(td, "xwalk.json")
+            with open(xw, "w", encoding="utf-8") as f:
+                json.dump(crosswalk, f)
+            argv += ["--nc-crosswalk", xw]
         proc = subprocess.run(argv, capture_output=True, text=True, cwd=td, env=env)
         if proc.returncode != 0:
             raise AssertionError(f"builder exited {proc.returncode}\n{proc.stderr}")
@@ -136,7 +159,7 @@ def main():
     check("1c: the MAP measures still build", p["statewide"].get("pe", 0) > 0)
 
     # ── 2-6. a payload ──────────────────────────────────────────────────────
-    p, log = run_builder(FIXTURE)
+    p, log = run_builder(FIXTURE, {"rows": []})
     cols, st = p["colleges"], p["statewide"]
     og = (p.get("origination") or {}).get("in_scope") or {}
     cab, noce = cols.get("Cabrillo", {}), og.get("NOCE", {})
@@ -157,6 +180,22 @@ def main():
     check("6b: …and moves no figure", st.get("nc_cdcp") == 166 + 0 + 199, f"got {st.get('nc_cdcp')}")
     check("6c: the statewide keys srcDelivered() reads are the institutions' sums",
           st.get("nc_exh") == 6 and st.get("nc_course") == 1, f"got {st.get('nc_exh')} / {st.get('nc_course')}")
+
+    # ── channel 3: the curated crosswalk ────────────────────────────────────
+    p3, log3 = run_builder(FIXTURE, CROSSWALK)
+    cab3 = p3["colleges"].get("Cabrillo", {})
+    check("6d: a confirmed crosswalk row adds its exhibit; a proposed row, a row whose course is no longer "
+          "CDCP, and an exhibit already counted add nothing (5 + C-3 = 6)",
+          cab3.get("nc_exh") == 6, f"got {cab3.get('nc_exh')}")
+    check("6e: the run log names the confirmed rows it read", "3 confirmed crosswalk row(s)" in log3)
+    xw = json.load(open(COMMITTED_XWALK, encoding="utf-8"))
+    rows = xw.get("rows") or []
+    check("6f: every committed crosswalk row is proposed or confirmed, and a confirmed row names who confirmed it",
+          rows and all(r.get("status") in ("proposed", "confirmed") for r in rows) and
+          all(r.get("confirmed_by") for r in rows if r.get("status") == "confirmed"))
+    check("6g: every committed row names its college, exhibit and at least one course title_norm",
+          all(r.get("college") and r.get("exhibit") and r.get("courses") and
+              all(c.get("title_norm") for c in r["courses"]) for r in rows))
 
     # ── the SQL and the workflow ────────────────────────────────────────────
     sql = open(SQL, encoding="utf-8").read()

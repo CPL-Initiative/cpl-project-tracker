@@ -676,7 +676,9 @@ def read_career_attainment(resolve, path=None):
 #   1. the exhibit's own title equals a CDCP course title at the institution
 #   2. one of its target credit courses has a CDCP twin (title_norm equal), the
 #      counted channel S468 measured on Cabrillo (33 exhibits against 9)
-#   3. a credential the program's courses name: waits on a curated crosswalk
+#   3. a credential the program's courses name: a curated crosswalk,
+#      funding/nc_credential_crosswalk.json; only a 'confirmed' row counts, and
+#      only while one of its courses is still a CDCP course there
 #   4. the strike team's attested list, by MAP exhibit ID or title
 # A standalone counts at its district's credit colleges (Calbright statewide):
 # the exhibits sit there, the CDCP titles are its own.
@@ -687,6 +689,18 @@ def read_career_attainment(resolve, path=None):
 # RPC (no key, a failed call) every nc key stays absent and the outcomes read
 # TBA and $0, which is what they read before this builder existed.
 NC_COUNTS_RPC = "cpl_funding_nc_counts"
+NC_CROSSWALK = os.path.join(HERE, "nc_credential_crosswalk.json")
+
+
+def load_nc_crosswalk(argv):
+    """Channel 3's confirmed rows, from `--nc-crosswalk FILE` or the committed
+    file. A 'proposed' row counts nothing until a curator confirms it."""
+    path = argv[argv.index("--nc-crosswalk") + 1] if "--nc-crosswalk" in argv else NC_CROSSWALK
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        rows = json.load(f).get("rows") or []
+    return [r for r in rows if r.get("status") == "confirmed"]
 
 
 def fetch_nc_counts(argv):
@@ -718,7 +732,7 @@ def _loose(s):
     return re.sub(r"\s+", " ", str(s or "")).strip().lower()
 
 
-def nc_outcome_counts(data, resolve, feeder_resolve, scopes):
+def nc_outcome_counts(data, resolve, feeder_resolve, scopes, crosswalk=()):
     """Institution key -> {nc_cdcp, nc_exh, nc_course}, plus unmatched COCI names.
 
     Keys are funding-college names (resolve) or standalone shorts
@@ -759,6 +773,12 @@ def nc_outcome_counts(data, resolve, feeder_resolve, scopes):
         if k:
             confirmed.add((k, str(p.get("control_number") or "").strip()))
 
+    xwalk = {}
+    for r in crosswalk:
+        k = inst_key(r.get("college"))
+        if k:
+            xwalk.setdefault(k, []).append(r)
+
     out = {}
     for k in sorted(set(cdcp) | set(att)):
         mine, tset = pool(k), titles.get(k, set())
@@ -769,6 +789,10 @@ def nc_outcome_counts(data, resolve, feeder_resolve, scopes):
                 t = _loose(tok)
                 if t:
                     hit |= {x[1] for x in mine if t == x[2].lower() or t == x[3]}
+        for r in xwalk.get(k, []):
+            if any(c.get("title_norm") in tset for c in r.get("courses") or []):
+                t = _loose(r.get("exhibit"))
+                hit |= {x[1] for x in mine if t in (_loose(x[1]), x[2].lower(), x[3])}
         course = (a or {}).get("portfolio_course")
         rec = {"nc_exh": len(hit),
                "nc_course": 1 if course and (k, str(course).strip()) in confirmed else 0}
@@ -1455,12 +1479,13 @@ def main():
     nc_data = fetch_nc_counts(sys.argv)
     if nc_data:
         scopes = _origin_scopes()
-        nc, nc_unmatched = nc_outcome_counts(nc_data, resolve, feeder_resolve, scopes)
+        xwalk = load_nc_crosswalk(sys.argv)
+        nc, nc_unmatched = nc_outcome_counts(nc_data, resolve, feeder_resolve, scopes, xwalk)
         apply_nc_counts(payload, nc, scopes)
         sw = payload["statewide"]
         print(f"funding-performance: noncredit outcomes for {len(nc)} institutions "
               f"(FY {nc_data.get('fiscal_year')}): nc_exh={sw['nc_exh']}, nc_course={sw['nc_course']}, "
-              f"nc_cdcp={sw['nc_cdcp']:,}"
+              f"nc_cdcp={sw['nc_cdcp']:,}, {len(xwalk)} confirmed crosswalk row(s)"
               + (f"; {len(nc_unmatched)} COCI name(s) unmatched: " + ", ".join(nc_unmatched)
                  if nc_unmatched else ""))
     with open(out, "w", encoding="utf-8") as f:

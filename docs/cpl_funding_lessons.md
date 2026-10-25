@@ -734,3 +734,14 @@ From the implementation-funding lane's noncredit paragraph, verbatim:
   before its code merges, so one PR carried both.
 - **How to meet it** for the two noncredit conditions is S471's draft (`mc_how_nc_coord`, `mc_how_nc_team`), for Sam
   to curate in the text editor.
+
+## S473 SkyClarkia (2026-10-25): NC-1's channel 3, the credential crosswalk
+
+- **A curated pair is a file row with a status, and only `confirmed` counts.** `funding/nc_credential_crosswalk.json`
+  holds 13 `proposed` rows (Cabrillo 3, LA Trade-Tech 9, Saddleback 1). Counted, they move LA Trade-Tech from 0 to 9
+  of 4, a funding figure colleges read, so confirmation went to Sam (Open Asks Sheet 127), not a session.
+- **A keyword scan proposes; the eye rejects.** Exhibit titles against CDCP course titles at the same college, per
+  credential (A+, CCNA, EMT/National Registry, ASE, ServSafe ...). Rejected and recorded so no scan re-proposes them:
+  salesperson to appraiser, A9 to A1/A3/A6 courses, ASE T-series to A-series courses.
+- **A row still needs its course to be CDCP today.** The builder checks a row's `title_norm` against the RPC's CDCP
+  titles, so a retired course drops its pair with no edit. No RPC change was needed.
