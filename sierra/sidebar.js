@@ -30,6 +30,12 @@
  *     COBI's Library tab (library.js) calls setChip(true) on that tab and
  *     setChip(false) on every other, which also shuts an open bar (Sam,
  *     2026-10-24: "Library and more importantly on the public library site").
+ *   · Beside the page, the bar is as wide as the reader makes it (Sam,
+ *     2026-10-24: "Make the sidebar resizable horizontally"). Its left edge is a
+ *     separator: drag it, or focus it and use the arrow keys, Home and End. The
+ *     words Narrower and Wider in its header do the same for anyone who cannot
+ *     drag (WCAG 2.5.7). The width is remembered for this reader (KEY_W) and
+ *     held between MIN_W and maxW(), so the page always keeps 600px.
  *
  * Test: tests/sierra_sidebar.test.js. Sweep: public-library-sierra in a11y.config.js.
  */
@@ -42,6 +48,8 @@
   // Side by side from 1200px: below it the page would keep under ~780px beside
   // the bar, so she takes the screen instead.
   var WIDE = '(min-width: 1200px)';
+  var DEFAULT_W = 420, MIN_W = 340, MAX_W = 960, PAGE_KEEPS = 600, STEP = 40;
+  var KEY_W = 'cpl_sierra_bar_w';
 
   var CSS = [
     'html.sbar-chip-on { scroll-padding-bottom: 88px; }',
@@ -49,26 +57,68 @@
     '  min-height:48px; padding:0 22px; border:0; border-radius:999px; background:var(--sierra-bar-chip-bg, ButtonText); color:var(--sierra-bar-chip-ink, ButtonFace);',
     '  font:inherit; font-weight:700; text-decoration:underline; text-underline-offset:3px; cursor:pointer;',
     '  box-shadow:0 6px 18px var(--sierra-bar-shadow, color-mix(in srgb, CanvasText 20%, transparent)); }',
-    '.sbar-chip:focus-visible, .sbar-close:focus-visible { outline:2px solid var(--sierra-bar-focus, Highlight); outline-offset:3px; }',
+    '.sbar-chip:focus-visible, .sbar-close:focus-visible, .sbar-size:focus-visible { outline:2px solid var(--sierra-bar-focus, Highlight); outline-offset:3px; }',
     '.sbar { position:fixed; z-index:9001; top:0; right:0; bottom:0; width:100vw; display:flex; flex-direction:column;',
     '  background:var(--sierra-bar-bg, Canvas); color:var(--sierra-bar-ink, CanvasText); }',
     '.sbar[hidden], .sbar-chip[hidden] { display:none !important; }',
     '.sbar-head { flex:0 0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:52px;',
     '  padding:max(8px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 8px 16px; border-bottom:1px solid var(--sierra-bar-line, GrayText); }',
     '.sbar-title { margin:0; font-family:var(--sierra-bar-head-font, inherit); font-size:1.15rem; line-height:1.3; color:var(--sierra-bar-heading, inherit); }',
-    '.sbar-close { background:none; border:0; padding:0 2px; min-height:24px; min-width:24px; font:inherit; font-weight:700;',
+    '.sbar-tools { display:flex; align-items:center; gap:14px; }',
+    '.sbar-close, .sbar-size { background:none; border:0; padding:0 2px; min-height:24px; min-width:24px; font:inherit; font-weight:700;',
     '  color:var(--sierra-bar-link, LinkText); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }',
+    '.sbar-size[aria-disabled="true"] { color:var(--sierra-bar-ink, CanvasText); text-decoration:none; cursor:default; opacity:.6; }',
     '.sbar-frame { flex:1 1 auto; display:block; width:100%; min-height:0; border:0; }',
+    '.sbar-size, .sbar-grip { display:none; }',
     'html.sbar-modal { overflow:hidden; }',
+    // While the edge is dragged the frame would swallow the pointer, so it lets
+    // the pointer through to the page until the drag ends.
+    'html.sbar-resizing, html.sbar-resizing * { cursor:col-resize !important; user-select:none; }',
+    'html.sbar-resizing .sbar-frame { pointer-events:none; }',
     '@media ' + WIDE + ' {',
     '  .sbar { width:var(--sierra-bar-w, 420px); border-left:1px solid var(--sierra-bar-line, GrayText);',
     '    box-shadow:-8px 0 24px var(--sierra-bar-shadow, color-mix(in srgb, CanvasText 12%, transparent)); }',
     '  html.sbar-open body { margin-right:var(--sierra-bar-w, 420px); }',
+    '  .sbar-size { display:inline-block; }',
+    '  .sbar-grip { display:block; position:absolute; z-index:1; top:0; bottom:0; left:-6px; width:12px; cursor:col-resize; touch-action:none; }',
+    '  .sbar-grip::after { content:""; position:absolute; top:0; bottom:0; left:5px; width:2px; background:transparent; }',
+    '  .sbar-grip:hover::after, .sbar-grip:focus-visible::after, html.sbar-resizing .sbar-grip::after { background:var(--sierra-bar-focus, Highlight); }',
+    '  .sbar-grip:focus-visible { outline:2px solid var(--sierra-bar-focus, Highlight); outline-offset:-2px; }',
     '}',
     '@media print { .sbar-chip, .sbar { display:none !important; } html.sbar-open body { margin-right:0; } }'
   ].join('\n');
 
-  var chip, bar, closeBtn, frame, wideMq, observer, inerted = [], loaded = false, chipOff = false;
+  var chip, bar, closeBtn, frame, grip, narrowerBtn, widerBtn, wideMq, observer, inerted = [], loaded = false, chipOff = false;
+  var wantW = DEFAULT_W, dragging = false;
+
+  // The page keeps PAGE_KEEPS px beside the bar; the bar keeps MIN_W.
+  function maxW() { return Math.max(MIN_W, Math.min(MAX_W, (window.innerWidth || 0) - PAGE_KEEPS)); }
+  function clampW(w) { return Math.round(Math.min(maxW(), Math.max(MIN_W, w))); }
+  function storedW() {
+    try { return parseInt(window.localStorage.getItem(KEY_W), 10); } catch (e) { return NaN; }
+  }
+  // Paints the width the reader wants, held to what the window allows (so a
+  // word pressed at the limit changes nothing). save
+  // writes the reader's choice; a window resize re-holds it and saves nothing,
+  // so the bar grows back when the window does.
+  function applyWidth(save) {
+    var w = clampW(wantW);
+    if (save) {
+      wantW = w;
+      try { window.localStorage.setItem(KEY_W, String(w)); } catch (e) { /* the width lasts the visit */ }
+    }
+    document.documentElement.style.setProperty('--sierra-bar-w', w + 'px');
+    if (grip) {
+      grip.setAttribute('aria-valuemin', String(MIN_W));
+      grip.setAttribute('aria-valuemax', String(maxW()));
+      grip.setAttribute('aria-valuenow', String(w));
+      grip.setAttribute('aria-valuetext', w + ' pixels wide');
+    }
+    if (narrowerBtn) narrowerBtn.setAttribute('aria-disabled', w <= MIN_W ? 'true' : 'false');
+    if (widerBtn) widerBtn.setAttribute('aria-disabled', w >= maxW() ? 'true' : 'false');
+  }
+  function setWidth(w) { wantW = w; applyWidth(true); }
+  function width() { return clampW(wantW); }
 
   function hostTheme() {
     var t = document.documentElement.getAttribute('data-theme');
@@ -138,6 +188,41 @@
     if (isOpen()) focusSierra();
   }
 
+  function onGripKey(e) {
+    var w = width();
+    if (e.key === 'ArrowLeft') setWidth(w + STEP);
+    else if (e.key === 'ArrowRight') setWidth(w - STEP);
+    else if (e.key === 'Home') setWidth(MIN_W);
+    else if (e.key === 'End') setWidth(maxW());
+    else return;
+    e.preventDefault();
+  }
+  function onDragMove(e) {
+    if (!dragging) return;
+    wantW = (window.innerWidth || 0) - e.clientX;
+    applyWidth(false);
+    e.preventDefault();
+  }
+  function onDragEnd() {
+    if (!dragging) return;
+    dragging = false;
+    document.documentElement.classList.remove('sbar-resizing');
+    document.removeEventListener('pointermove', onDragMove);
+    document.removeEventListener('pointerup', onDragEnd);
+    document.removeEventListener('pointercancel', onDragEnd);
+    applyWidth(true);
+  }
+  function onDragStart(e) {
+    if (e.button !== undefined && e.button !== 0) return;
+    dragging = true;
+    document.documentElement.classList.add('sbar-resizing');
+    try { if (grip.setPointerCapture && e.pointerId !== undefined) grip.setPointerCapture(e.pointerId); } catch (err) { /* the document listeners still follow */ }
+    document.addEventListener('pointermove', onDragMove);
+    document.addEventListener('pointerup', onDragEnd);
+    document.addEventListener('pointercancel', onDragEnd);
+    e.preventDefault();
+  }
+
   function open() {
     build();
     if (isOpen()) { focusSierra(); return; }
@@ -174,6 +259,16 @@
     document.documentElement.classList.toggle('sbar-chip-on', !chipOff);
   }
 
+  function sizeButton(label, act) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'sbar-size';
+    b.textContent = label;
+    b.setAttribute('aria-controls', 'sbar');
+    b.addEventListener('click', act);
+    return b;
+  }
+
   function build() {
     if (chip) return;
     var style = document.createElement('style');
@@ -204,14 +299,33 @@
     title.className = 'sbar-title';
     title.id = 'sbar-title';
     title.textContent = 'Ask Sierra';
+    var tools = document.createElement('div');
+    tools.className = 'sbar-tools';
+    narrowerBtn = sizeButton('Narrower', function () { setWidth(width() - STEP); });
+    widerBtn = sizeButton('Wider', function () { setWidth(width() + STEP); });
     closeBtn = document.createElement('button');
     closeBtn.type = 'button';
     closeBtn.className = 'sbar-close';
     closeBtn.textContent = 'Close';
     closeBtn.addEventListener('click', close);
+    tools.appendChild(narrowerBtn);
+    tools.appendChild(widerBtn);
+    tools.appendChild(closeBtn);
     head.appendChild(title);
-    head.appendChild(closeBtn);
+    head.appendChild(tools);
+    grip = document.createElement('div');
+    grip.className = 'sbar-grip';
+    grip.setAttribute('role', 'separator');
+    grip.setAttribute('aria-orientation', 'vertical');
+    grip.setAttribute('aria-label', 'Resize Ask Sierra');
+    grip.setAttribute('aria-controls', 'sbar');
+    grip.tabIndex = 0;
+    grip.addEventListener('keydown', onGripKey);
+    grip.addEventListener('pointerdown', onDragStart);
+    bar.appendChild(grip);
     bar.appendChild(head);
+    wantW = storedW() || DEFAULT_W;
+    applyWidth(false);
     bar.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
 
     document.body.appendChild(chip);
@@ -224,6 +338,7 @@
       if (wideMq.addEventListener) wideMq.addEventListener('change', onChange);
       else if (wideMq.addListener) wideMq.addListener(onChange);
     } catch (e) { wideMq = null; }
+    window.addEventListener('resize', function () { applyWidth(false); });
     if (window.MutationObserver) {
       observer = new MutationObserver(syncTheme);
       observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
@@ -235,6 +350,7 @@
 
   window.CPL_SIERRA_BAR = {
     open: open, close: close, isOpen: isOpen, setChip: setChip, frameUrl: frameUrl,
-    SIERRA_URL: SIERRA_URL, WIDE: WIDE
+    width: width, setWidth: setWidth,
+    SIERRA_URL: SIERRA_URL, WIDE: WIDE, MIN_W: MIN_W, DEFAULT_W: DEFAULT_W, KEY_W: KEY_W
   };
 })();

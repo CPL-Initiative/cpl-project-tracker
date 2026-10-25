@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1261,
-    "bytes": 12916835,
+    "bytes": 12918015,
     "over_budget": 5,
     "handoff_max": 470,
     "always_loaded_files": 1,
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 440,
-        "bytes": 3285630,
+        "bytes": 3286810,
         "over": 0
       }
     },
@@ -63,8 +63,8 @@
     },
     "vault": {
       "files": 24716,
-      "bytes": 3664291204,
-      "heavy_bytes": 2543157067,
+      "bytes": 3664292693,
+      "heavy_bytes": 2543157376,
       "heavy_share": 0.694,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -228,10 +228,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1532821893,
+        "bytes": 1532822202,
         "kind": "dir"
       },
-      "message": "directory totals 1,532,821,893 B inside the vault"
+      "message": "directory totals 1,532,822,202 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

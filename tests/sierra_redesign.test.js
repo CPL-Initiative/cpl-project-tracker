@@ -22,9 +22,12 @@
 //       conversation would answer the wrong thing).
 //   (3) NOTHING MOVES ON ITS OWN. With the paintings gone the page starts no
 //       timer and cross-fades nothing.
-//   (4) THE AUDIENCE ROW FOLDS WITHOUT LOSING ITS RULE. The pick is still
-//       required before the first send; when the row is folded, the refusal
-//       opens it, and a pick closes it and hands focus back to its control.
+//   (4) THE AUDIENCE IS ASKED FOR WHEN IT IS NEEDED (Sam, 2026-10-24: "gently
+//       prompt the user to choose their population once they click Ask? I don't
+//       want to complicate the screen with all the choices initially"). With no
+//       pick the row is off the screen; the first Ask holds the question and
+//       Sierra asks who the visitor is, focus on the first word; the pick sends
+//       the held question. With a pick stored, the row is one folded control.
 //   (5) THE QUESTION BOX WRAPS. A one-row textarea: Enter sends, Shift+Enter
 //       does not, so a long question shows whole instead of running off a phone.
 //   (6) ONE THEME CONTROL. The reader's COBI choice (cpl_theme, same origin)
@@ -36,7 +39,8 @@
 //       written twice with the same values; the page loads no web font and no
 //       file from a third party; every link off the site says it opens a new tab.
 //   (8) THE SIDE BAR. ?panel=1 marks the page before the stylesheet paints, and
-//       the header row keeps About Sierra alone.
+//       the header row keeps About Sierra alone; the footer carries the CPL
+//       Initiative mark, so she keeps it in the bar.
 //
 // Run from repo root: `npm test` (or `node tests/sierra_redesign.test.js`).
 const fs = require("fs");
@@ -156,33 +160,55 @@ function ask(w, text) {
     const { w } = loadDom({ motion: "ok" });
     check("(3) ⭐ the page starts no repeating timer", !/setInterval\(/.test(SRC));
     check("(3) the stylesheet cross-fades nothing", !/transition:\s*opacity/.test(CSS));
-    check("(3) under reduced motion the two cues that animate stand down",
-      /prefers-reduced-motion: reduce\)\s*\{[\s\S]*?\.s-typing\s*\{\s*animation:\s*none[\s\S]*?\.s-audience\.s-need\s*\{\s*animation:\s*none/.test(CSS));
+    check("(3) under reduced motion the one cue that animates stands down, and the audience row has no flash left",
+      /prefers-reduced-motion: reduce\)\s*\{[\s\S]*?\.s-typing\s*\{\s*animation:\s*none/.test(CSS) &&
+      !/s-need/.test(CSS) && !/s-need/.test(SRC));
     w.close();
   });
 
-  await block("(4) the audience row folds without losing its rule", async () => {
+  await block("(4) the audience is asked for at the first Ask", async () => {
     const { w, d, API, requests } = loadDom();
-    const toggle = d.getElementById("s-aud-toggle"), row = d.getElementById("s-audience");
-    check("(4) with no pick the control says so", toggle.textContent === "Answering for: choose one");
-    check("(4) the row reads 'Answering for' and its five words",
-      /^Answering for/.test(row.textContent) && row.querySelectorAll(".s-aud-chip").length === 5);
+    const line = d.getElementById("s-aud-line"), toggle = d.getElementById("s-aud-toggle"), row = d.getElementById("s-audience");
+    check("(4) ⭐ with no pick, the row is off the screen on arrival", line.hidden && /<div class="s-aud-line" id="s-aud-line" hidden>/.test(HTML) &&
+      /\.s-aud-line\[hidden\] \{ display: none; \}/.test(CSS));
     ask(w, "hello?");
     await drain(4);
-    check("(4) ⭐ a send with no pick is refused, and the refusal opens the folded row",
-      requests.length === 0 && row.classList.contains("open") && toggle.getAttribute("aria-expanded") === "true");
-    check("(4) the refusal says where the words are", /under the question box/.test(d.getElementById("s-status").textContent));
+    const first = row.querySelectorAll(".s-aud-chip")[0];
+    check("(4) ⭐ the first Ask holds the question and Sierra asks who the visitor is, the five words open beneath",
+      requests.length === 0 && d.getElementById("s-input").value === "hello?" && !line.hidden &&
+      line.classList.contains("s-asking-who") && row.classList.contains("open") &&
+      d.getElementById("s-aud-label").textContent === API.WHO_PROMPT && /^Who are you asking as\?/.test(API.WHO_PROMPT) &&
+      row.querySelectorAll(".s-aud-chip").length === 5);
+    check("(4) focus moves to the first word, so a keyboard lands where the answer is given", d.activeElement === first);
+    check("(4) it asks; it does not scold: no error style, no flash",
+      !/s-error/.test(d.getElementById("s-status").className) && d.getElementById("s-status").textContent === "");
+    check("(4) while she asks, her question shows and the folded control does not",
+      /\.s-asking-who \.s-aud-label \{ display: block;/.test(CSS) && /\.s-asking-who \.s-aud-toggle \{ display: none; \}/.test(CSS) &&
+      /(^|\n)\.s-aud-label \{ display: none; \}/.test(CSS));
     row.querySelectorAll(".s-aud-chip")[1].click();
-    check("(4) ⭐ a pick in the open row closes it and hands focus back to its control",
-      !row.classList.contains("open") && toggle.getAttribute("aria-expanded") === "false" && d.activeElement === toggle);
-    check("(4) the control names the pick", toggle.textContent === "Answering for: " + API.AUDIENCES[1].label);
+    await drain(14);
+    check("(4) ⭐ the pick sends the held question, with the pick",
+      requests.length === 1 && requests[0].body.query === "hello?" && requests[0].body.audience === API.AUDIENCES[1].k);
+    check("(4) after the pick the row folds to one control naming it",
+      !line.hidden && !line.classList.contains("s-asking-who") && !row.classList.contains("open") &&
+      toggle.textContent === "Answering for: " + API.AUDIENCES[1].label);
     toggle.click();
     check("(4) the control opens the row", row.classList.contains("open") && toggle.getAttribute("aria-expanded") === "true");
-    toggle.click();
-    check("(4) …and closes it", !row.classList.contains("open"));
+    row.querySelectorAll(".s-aud-chip")[2].click();
+    await drain(4);
+    check("(4) a change of pick closes the row, hands focus back to its control and sends nothing",
+      !row.classList.contains("open") && toggle.getAttribute("aria-expanded") === "false" && d.activeElement === toggle &&
+      requests.length === 1 && toggle.textContent === "Answering for: " + API.AUDIENCES[2].label);
     check("(4) the toggle is a real control naming what it opens",
       /<button class="s-aud-toggle" id="s-aud-toggle" type="button" aria-expanded="false" aria-controls="s-audience">/.test(HTML));
+    check("(4) one rule for every width and view: no folding rule left keyed to a phone or to reading",
+      !/body\[data-view="asking"\] \.s-aud/.test(CSS) && /(^|\n)\.s-audience:not\(\.open\) \{ display: none; \}/.test(CSS));
     w.close();
+    const s = loadDom({ audience: "faculty" });
+    check("(4) a stored pick shows on arrival as the one folded control",
+      !s.d.getElementById("s-aud-line").hidden && !s.d.getElementById("s-audience").classList.contains("open") &&
+      s.d.getElementById("s-aud-toggle").textContent === "Answering for: Faculty");
+    s.w.close();
   });
 
   await block("(5) the question box wraps", async () => {
@@ -317,6 +343,17 @@ function ask(w, text) {
       /:root\[data-panel\] \.s-home, :root\[data-panel\] \.s-who-head, :root\[data-panel\] \.s-theme, :root\[data-panel\] \.s-links \{ display: none; \}/.test(CSS) &&
       !/:root\[data-panel\][^{]*\.s-about\b[^{]*\{[^}]*display:\s*none/.test(CSS));
     check("(8) the side bar asks for the panel", /'\?panel=1'/.test(fs.readFileSync("sierra/sidebar.js", "utf8")));
+    // The CPL Initiative mark in her footer (Sam, 2026-10-24: "Maybe put the CPL Initiative logo in her footer").
+    const foot = (HTML.match(/<footer class="s-foot">[\s\S]*?<\/footer>/) || [""])[0];
+    check("(8) ⭐ her footer carries the CPL Initiative mark, white and navy, each named, neither a link",
+      /<img class="s-foot-logo s-foot-logo-white" src="\.\/cpl-initiative-logo\.png" alt="CPL Initiative"/.test(foot) &&
+      /<img class="s-foot-logo s-foot-logo-navy" src="\.\/cpl-initiative-logo-navy\.png" alt="CPL Initiative"/.test(foot) &&
+      !/<a[^>]*>\s*<img class="s-foot-logo/.test(foot));
+    check("(8) white on her page's navy band; navy on the bar's paper, white on the dark paper, the dark rule written twice",
+      /\.s-foot-logo \{[^}]*display: none; \}/.test(CSS) &&
+      /:root:not\(\[data-panel\]\) \.s-foot-logo-white, :root\[data-panel\] \.s-foot-logo-navy \{ display: block; \}/.test(CSS) &&
+      /prefers-color-scheme: dark\) \{\s*:root\[data-panel\]:not\(\[data-theme="light"\]\) \.s-foot-logo-navy \{ display: none; \}\s*:root\[data-panel\]:not\(\[data-theme="light"\]\) \.s-foot-logo-white \{ display: block; \}/.test(CSS) &&
+      /:root\[data-panel\]\[data-theme="dark"\] \.s-foot-logo-navy \{ display: none; \}\s*:root\[data-panel\]\[data-theme="dark"\] \.s-foot-logo-white \{ display: block; \}/.test(CSS));
   });
 
   let pass = 0;

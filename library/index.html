@@ -117,8 +117,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .foot { background: var(--foot-bg); color: var(--foot-fg); }
 .foot-in { padding-block: 24px 88px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; font-size: .9rem; }
-/* With the Ask Sierra side bar open beside it, the page keeps two columns of cards until it is wide again. */
-@media (min-width: 1200px) and (max-width: 1599px) { html.sbar-open .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* With the Ask Sierra side bar open beside it, the cards fit the room the bar leaves, which the reader sets by
+   dragging its edge: three columns while each card keeps about 260px, then two, then one. */
+.results { container: lib-results / inline-size; }
+@container lib-results (max-width: 819px) { html.sbar-open .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@container lib-results (max-width: 539px) { html.sbar-open .grid { grid-template-columns: 1fr; } }
 
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }

@@ -113,8 +113,9 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
       tries.length === 3 && API.TRIES.length === 3 &&
       Array.prototype.every.call(tries, (b, i) => b.tagName === "BUTTON" && b.type === "button" && b.textContent === API.TRIES[i]));
     tries[0].click();
-    check("a starter asks itself, and with no audience picked the refusal says where the words are",
-      input.value === API.TRIES[0] && /under the question box/.test(w.document.getElementById("s-status").textContent));
+    check("a starter asks itself, and with no audience picked Sierra asks who the visitor is, the question held in the box",
+      input.value === API.TRIES[0] && !w.document.getElementById("s-aud-line").hidden &&
+      w.document.getElementById("s-aud-label").textContent === API.WHO_PROMPT);
     w.close();
   }
   {
@@ -185,16 +186,17 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
     const { w, requests, API } = loadDom({ noAudience: true });
     const chips = w.document.querySelectorAll("#s-audience .s-aud-chip");
     check("audience selector renders 5 population chips", chips.length === 5);
+    check("with no pick, the row is off the screen on arrival", w.document.getElementById("s-aud-line").hidden);
     submit(w, "hello?");
     await drain(6);
-    check("send is BLOCKED until an audience is picked (no request)", requests.length === 0);
-    check("the block explains itself (flash + status)",
-      /who you are/i.test(w.document.getElementById("s-status").textContent));
-    chips[1].click(); // 📚 Faculty
-    submit(w, "hello?");
+    check("send is HELD until an audience is picked (no request)", requests.length === 0);
+    check("the hold asks who the visitor is, in words, not as an error",
+      /who are you asking as/i.test(w.document.getElementById("s-aud-label").textContent) &&
+      !/s-error/.test(w.document.getElementById("s-status").className));
+    w.document.querySelectorAll("#s-audience .s-aud-chip")[1].click(); // Faculty
     await drain(14);
-    check("after picking, the request carries `audience`",
-      requests.length === 1 && requests[0].body.audience === API.AUDIENCES[1].k);
+    check("the pick sends the held question, carrying `audience`",
+      requests.length === 1 && requests[0].body.audience === API.AUDIENCES[1].k && requests[0].body.query === "hello?");
     check("the pick persists to the SHARED localStorage key",
       w.localStorage.getItem(API.AUD_KEY) === API.AUDIENCES[1].k &&
       API.AUD_KEY === "cplSierraAudience.v1");

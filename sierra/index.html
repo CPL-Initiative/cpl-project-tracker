@@ -96,7 +96,10 @@
                   placeholder="Ask Sierra about CPL" aria-label="Ask Sierra a question about CPL"></textarea>
         <button id="s-send" class="s-send" type="submit">Ask</button>
       </div>
-      <div class="s-aud-line">
+      <!-- Not on the screen until it is needed (Sam, 2026-10-24: "gently prompt the
+           user to choose their population once they click Ask"): sierra.js shows it
+           folded once a pick is stored, and open with her question at the first Ask. -->
+      <div class="s-aud-line" id="s-aud-line" hidden>
         <button class="s-aud-toggle" id="s-aud-toggle" type="button" aria-expanded="false" aria-controls="s-audience">Answering for: choose one</button>
         <!-- role="group", NOT "radiogroup". sierra.js builds these as <button
              aria-pressed>, and a radiogroup promises children with role="radio",
@@ -125,6 +128,13 @@
 
 <footer class="s-foot">
   <div class="s-foot-in">
+    <!-- The CPL Initiative mark (Sam, 2026-10-24: "Maybe put the CPL Initiative
+         logo in her footer"), so she carries it in the side bar, where her header
+         logo stands down. White on her page's navy band; navy on the bar's paper,
+         white again in dark. Not a link: the header's logo is the one that goes
+         somewhere. -->
+    <img class="s-foot-logo s-foot-logo-white" src="./cpl-initiative-logo.png" alt="CPL Initiative" width="1115" height="209">
+    <img class="s-foot-logo s-foot-logo-navy" src="./cpl-initiative-logo-navy.png" alt="CPL Initiative" width="1115" height="209">
     <p>Sierra is in beta, and your college's CPL coordinator decides credit.
       Please don't enter personal information; questions are logged anonymously.
       Questions for the team? <a href="mailto:MAP@rccd.edu">MAP@rccd.edu</a></p>

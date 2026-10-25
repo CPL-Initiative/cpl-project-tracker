@@ -18,7 +18,11 @@ horizontally (`sierra/sidebar.js`, a drag edge plus keyboard, width remembered p
 one step I can take to create CPL for the ELL IET grantees?"* without naming *ELL IET CPL Starting Points* (Library
 record `ell-iet-cpl-starting-points`, listed, empty public topics): wire `cpl-chat` to read `cpl_library_public()` for
 visuals and topics, and put the CPL Initiative logo in her footer; (3) hide the audience words until the first Ask, then
-prompt gently for the population. Not refreshed by this addendum: the vault's
+prompt gently for the population. **And his fourth ask, ~23:25Z** (`cpl_memory` `sam-public-urls-cplinitiative-alias-2026-10-24`):
+public library visuals open at a claude.ai/artifact address; he wants a *cplinitiative* alias on every public surface. No
+custom domain exists; at ~02:00Z 10-25 he picked **GitHub Pages now** (`sam-public-pieces-on-github-pages-2026-10-25`).
+**S469 kept going after its compaction (Sam: "We can stay here and finish this") and built his three asks and the
+Pages copies itself; see the library lane.** Not refreshed by this addendum: the vault's
 sheet builder still carries both cards (drop them, and its coverage test then passes on its own), `decision_sheets.md`,
 the INDEX, the status file, the vault session note. CLAUDE.md §11's pointer still says *two cards open*: change it to
 *answered 23:08Z; no card is open*.

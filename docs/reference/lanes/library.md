@@ -139,13 +139,9 @@ applied 2026-10-20 by `supabase-migrate.yml` run 39500044669; the record, the me
 its log row read back 1, 1, 1).
 `cpl_memory` `sam-claude-artifacts-go-in-library-2026-10-20`.
 
-## Sam's rulings ([Open Asks Sheet 121](https://claude.ai/artifact/NsRnyxTJ3pZmHBWk2qSoLN), 2026-10-23 ~21:27Z, all three his own call: 1 fold-rule, 2 attached, 3 text)
-
-**Carried out by S459 the same day: card 3 (the ELL IET grantees page from the notice Sam sent at 21:28Z, filed at `CPLBrain/04-projects/cpl-initiative/ell-iet/`, and Sheet 120 card 5's template with it) and card 1, the fold: the Knowledge Base tab is gone from the side menu and lives inside the Library as its second view (two underlined words at the top, *Pieces* and *Knowledge Base*; the portal frame `#library-kb` sits beside `#library-root` and never re-renders, so its own magic-link sign-in holds; `#knowledge-base` links open `#library/knowledge-base` through `tabs.js` `FOLDED`; the view opens without the team phrase, since the portal gates itself). The rule: `cpl_library.knowledge` (true, false or not set) and `kb_note` (the note's path in `cpl-knowledge-base` or its link; a typed note says knowledge on its own, `cpl_library_kb_note_ck`); Add and Edit take both, the record shows them, and **Needs attention** counts *knowledge pieces with no KB note* (`flagsOf` `kb_note`). The note itself still reaches the public KB only through its curation pipeline (`CURATION.md`); the Library links it. Tests: `tests/library.test.js` (12), `tests/kb_portal_tab.test.js` rewritten. Card 2 waits on Sam attaching the four Coordinator Guide files in a session. `cpl_memory` `sam-sheet-121-rulings-2026-10-23`.** The asks as put to him:
-
-1. **The Knowledge Base tab and the Library.** Sam, 2026-10-23 ~20:18Z (vault braindump `03-professional/braindumps/braindump-2026-10-23-2020-consolidate-the-kb-tab-and-the-library.md`): *"our KB tab might be a consolidation into the Library or vice versa ... ensure that whatever is in the library is also in the KB, since the knowledge helps us build our unified knowledge informing all the COBI work."* Measured: the Knowledge Base tab is an iframe over `kb-portal/`, a reader of the public `cpl-knowledge-base` repo behind its own magic-link sign-in (Sam and Malone); the Library is `cpl_library` behind the team phrase, 40 live records, none linked to a KB note. Recommended: fold the tab into the Library as a second view (the side menu loses one entry; the portal keeps its sign-in) and one rule with a check: a piece whose substance is knowledge gets a KB note through the curation pipeline, the record links it, and Needs attention names a piece without one. It might be wrong if the KB reader should stay its own door for Malone, or if no rule is wanted.
-2. **The CPL Coordinator Guide's four files.** The audit (S458, `CPLBrain/04-projects/cpl-initiative/coordinator-guide/audit_workflow.js`) needs `CPL_Coordinator_Guide.docx`, `.pdf`, `CPL_Coordinator_Quick_Reference.docx` and `.pdf` attached again: the uploads died with S458's container and no report was committed. Recommended: attach them in the next session; the audit runs as he asked ("ultracode").
-3. **The ELL IET award notice's text.** Card 5's build (the agency template, the ELL IET grantees page first) needs the notice's text and its eight grantees; the sandbox cannot read edd.ca.gov, and search found five grantees and the $17.97 million total. Recommended: paste the text or attach the PDF.
+Sheet 121's rulings (the Knowledge Base fold, the Coordinator Guide files, the ELL IET notice) and Sheet 124's (the hero
+photos, the IT and AI deck unlisted) are carried out; their text moved verbatim to `docs/library_lessons.md`
+(*Moved from the lane, S469*). Still open from them: the four Coordinator Guide files, and Baking and Nursing photos.
 
 ## The ELL IET page is listed publicly (Sam, Open Asks Sheet 123 card 1, *list*, 13:17Z 2026-10-24)
 
@@ -155,42 +151,53 @@ contacts the eight projects himself. The session's staged receipt,
 `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, was never applied. Its public topics are empty; Sierra links
 it by title and summary until someone adds them.
 
-## The hero photos and the deck (Sam, Open Asks Sheet 124, 16:20Z 2026-10-24, both his own call)
-
-**Card 1, *attach*:** Sam attaches the toolkit photos, since no session can reach
-`careereducationtoolkit.cccco.edu`: it is his local directory (Sam, ~16:30Z), which is why the name resolves nowhere else. He put
-them on Google Drive as zips (`CCC-LATTC-<Program>-<number>_V1.zip`, the folder 1WNtaaKMGSYsKsdJLxi4fbR24fXD4fGUZ); the Drive
-connector refuses a download over 10 MB, and the first zip is 43.8 MB, so the photos come unzipped, attached to a message or
-as JPEGs under 10 MB on Drive.
-**Done (S468, 2026-10-24):** the ten JPEGs in the Drive folder *Photos* (`1Ip4KaipYU6xNCbogeEG81-ZPQkbzMJpd`) are on the
-page (Status, above). Baking and Nursing exist only as zips over 10 MB, so the page has neither; either one joins by
-syncing its JPEG into *Photos*, cropping it to 4:3 around its people, and adding a slide.
-
-**Card 2, *unlist*:** *Turning IT and AI credentials into credit* comes off the public library until it has a public
-home: its link points into the vault's private GitHub repository, so a public visitor got GitHub's 404 page. Receipt
-`kb/receipts/cpl_library_it_ai_deck_unlist_2026-10-24_s467.sql` (one guarded UPDATE; seen_by, summary and topics kept, so
-relisting is one switch once the deck has a link that opens without a sign-in), applied by `supabase-migrate.yml` run
-40111416395 and read back at 16:33Z: `public_listed` false, `listed_by` *Sam, Open Asks Sheet 124 card 2 (S467
-receipt)*, and `cpl_library_public()` lists 15 pieces. The file is in the vault
-(`04-projects/cpl-initiative/20260929_CPL_IT_AI_Credentials_3.pptx`).
-
 ## Ask Sierra beside the page (Sam, 2026-10-24; built S469)
 
 Sam asked at ~17:10Z for *"an Ask Sierra chat chip that opens a Sierra side bar if clicked"*; at the start of S469 he picked
 **the library first, as one script any page can load,** and **the chip in the bottom-right corner**. `sierra/sidebar.js`
 adds the chip and a side bar that frames the public `sierra/` page, so she is the same assistant with the same surface and
 logging. The frame loads on the first open and stays loaded while shut, so a reopen keeps the conversation. From 1200px the
-page narrows beside her (the library keeps two columns of cards to 1600px) and stays in use; below that she takes the screen
-as a modal and the page behind is inert. Close and Escape (in her frame too, unless her About panel is open) hand focus back
+page narrows beside her and stays in use; below that she takes the screen as a modal and the page behind is inert. **Beside
+the page the reader sets her width** (Sam, ~23:20Z: *"Make the sidebar resizable horizontally"*; built S469): her left edge
+is a separator that drags and takes ArrowLeft and ArrowRight (40px), Home and End; the words *Narrower* and *Wider* in her
+header do the same for anyone who cannot drag (WCAG 2.5.7). She keeps 340px, the page keeps 600px, and the width is
+remembered per reader (`cpl_sierra_bar_w`). The library's cards fit the room she leaves through a container query on
+`.results`: three columns while a card keeps about 260px, then two, then one. Close and Escape (in her frame too, unless her About panel is open) hand focus back
 to the chip. The frame takes the library's theme in `?theme=`, which her page lets beat a stored choice, and follows a
 switch. The library maps the `--sierra-bar-*` tokens onto its own. **COBI's Library tab carries it too** (Sam, ~21:05Z:
 *"Library and more importantly on the public library site:)"*): `library.js` loads the bar on the tab's first visit, shows
 the chip on that tab alone (`setChip`; any other tab hides it and shuts an open bar) and maps the tokens onto First Light.
-Test: `tests/sierra_sidebar.test.js` (36); sweep: `public-library-sierra` and `-dark`, `cobi:library`.
+Test: `tests/sierra_sidebar.test.js` (44); sweep: `public-library-sierra` and `-dark` (its keyboard checks drag the edge
+across her frame at 1440px), `cobi:library`.
 **Ruled (Sam, Open Asks Sheet 126 card 1, *public*, 23:08Z 2026-10-24): the Fact Sheet and the funding model page move onto the bar next; COBI as it is.** Not yet built (handoff 470). The
 Fact Sheet and the funding model page open their own drawer (`fact-sheet/factsheet_sierra.js`, a second copy of her chat
 with each page's starter questions); COBI's header link opens `sierra/` in a new tab, and COBI also opens Sierra AI over any
 tab (`cpl_chat.js`). A page joins with one script tag and a token map.
+
+## Sierra reads the library (Sam, ~23:20Z 2026-10-24; built S469)
+
+Sam asked Ask Sierra *"What is one step I can take to create CPL for the ELL IET grantees?"* and she gave general steps,
+never naming *ELL IET CPL Starting Points*: nothing in `cpl-chat` read the library. *"Can you make sure she's wired to grab
+that info?"* (`cpl_memory` `sam-sierra-sidebar-asks-resize-library-prompt-2026-10-24`). `cpl-chat`'s LIBRARY BLOCK reads
+`cpl_library_public()` beside the other routes (cached ten minutes per instance; drafting surfaces skip it) and keeps up to
+three pieces the question names: a college's piece through the college the detection resolved, any other piece by a word
+of its title, who it is for or its topics, or two words of its summary (words every piece shares never count). A piece on
+the tracker's `library/` is read too, and its text (to 20,000 characters, a longer page losing its middle) rides beside
+the link, so she answers from what it says; a question about the library lists every piece. The rule: link the piece in
+the first paragraph, answer from its text, add nothing to it. Tests: `tests/sierra_library.test.js` (30); smoke mode 7x
+(his question). Deploy: after the Pages copies are live and the records point at them.
+
+## Public pieces live on GitHub Pages (Sam, 2026-10-25)
+
+Sam, ~23:25Z 2026-10-24: *"the url that shows for the public library visuals has a claude url. Any way we can use an alias
+for all public surfaces--with cplinitiative?"* No team-owned domain exists; at ~02:00Z he picked **GitHub Pages now**
+(`cpl_memory` `sam-public-pieces-on-github-pages-2026-10-25`). A public piece made as a Claude artifact gets a copy at
+`library/<slug>/`, written by `python3 scripts/library_page.py SLUG SOURCE.html` from its vault source (or `Artifact read`
+with `path` index.html), and its record links there; the claude.ai page stays the editable original, so an edit there is
+followed by a rerun and a commit. Pages, 2026-10-25: `ell-iet-cpl-starting-points`, `dsp-credit-starting-points`
+(their vault copies match the published artifacts byte for byte). The URL switch is one guarded UPDATE per record
+(`kb/receipts/cpl_library_pages_urls_2026-10-25_s469.sql`, before-values in the receipt). Test:
+`tests/library_pages.test.js`; sweep: `library-ell-iet`, `library-dsp` and their `-dark`.
 
 ## Next
 

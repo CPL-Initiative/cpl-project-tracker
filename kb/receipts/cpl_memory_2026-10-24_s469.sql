@@ -21,3 +21,6 @@ from public.cpl_memory m where m.slug = 'sam-ask-sierra-cobi-library-tab-too-202
 -- Added ~22:05Z the same run, applied through execute_sql and read back (logged): Sam's ask for Sierra's library look
 -- (sam-sierra-library-look-no-paintings-2026-10-24, verified) and its build (sierra-library-look-built-2026-10-24, proposed).
 -- Both rows' full text is in cpl_memory; rollback supersedes them by slug under actor 'SkyLemonadeBerry-S469-rollback'.
+-- Added ~23:27Z the same run, applied through execute_sql and read back (verified, logged): Sam's ask for a
+-- cplinitiative alias on public surfaces (sam-public-urls-cplinitiative-alias-2026-10-24). Full text is in cpl_memory;
+-- rollback supersedes it by slug under actor 'SkyLemonadeBerry-S469-rollback'.

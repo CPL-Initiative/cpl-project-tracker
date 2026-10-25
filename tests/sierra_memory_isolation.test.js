@@ -115,18 +115,21 @@ block("(2)", function () {
      * carries the reasoning and the rest of that change. */
     ["the interactions log's surface column", /surface: hostSurface,/],
     ["the meta frame", /event: meta\\ndata: \$\{JSON\.stringify\(\{ surface: hostSurface, viewer: viewer\.kind \}\)\}/],
+    /* S469 (2026-10-24): a drafting caller reads no public CPL Library, so its JSON
+     * envelope never draws a library block; tests/sierra_library.test.js (7). */
+    ["the library read", /drafting \? Promise\.resolve\(\[\]\) : fetchLibrary\(sb\)/],
   ];
   consumers.forEach(([label, re]) =>
     check("(2) consumer present — " + label, re.test(HANDLER)));
 
   // Count every mention in the handler's CODE and reconcile it against the list
-  // above: 6 consumers + 2 definitions (`hostSurface`, `drafting`) + the 1 use
-  // of hostSurface inside the derivation = 9 (7 until v66 added the log column
-  // and the meta frame).
+  // above: 7 consumers + 2 definitions (`hostSurface`, `drafting`) + the 1 use
+  // of hostSurface inside the derivation = 10 (7 until v66 added the log column
+  // and the meta frame; 9 until S469 added the library read).
   const mentions = (HANDLER_CODE.match(/hostSurface|\bdrafting\b/g) || []).length;
-  check("(2) ⭐ the surface reaches these six places and no others",
-    mentions === 9,
-    "found " + mentions + " code mentions, expected 9 (6 consumers + 2 definitions + 1 derivation). "
+  check("(2) ⭐ the surface reaches these seven places and no others",
+    mentions === 10,
+    "found " + mentions + " code mentions, expected 10 (7 consumers + 2 definitions + 1 derivation). "
     + "If you widened the surface deliberately, add it to the list above and update this count.");
   // ⚠ And prove the stripper did not simply delete everything it was counting —
   // a codeOnly() that ate the handler would make the line above read 0 and the

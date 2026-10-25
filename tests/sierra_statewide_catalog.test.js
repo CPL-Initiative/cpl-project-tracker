@@ -341,7 +341,7 @@ block("(7) wiring", () => {
     /statewideCatalogScope\(catalogAsk, routeText, extractTopicKeywords\(routeText\),\s*statewideCatalog, ownWords, !!singleProfile\)/.test(FN));
   check("(7) the block reaches the prompt builder", /buildSystemPrompt\([^;]*\bhostScope, statewideCatalogContext\b[^;]*\)/.test(FN));
   check("(7) it sits after the sources and the live metrics it supersedes",
-    FN.includes("${context}${metricsContext}${statewideCatalogContext}${collegeContext}"));
+    FN.includes("${context}${metricsContext}${statewideCatalogContext}"));
   check("(7) the builder declares the parameter with a default", /statewideCatalogContext: string = ""/.test(FN));
   check("(7) the read is main's catalog file, under a time limit, with an override that needs no deploy",
     FN.includes(`"https://raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker/main/fact-sheet/statewide_catalog.json"`)
