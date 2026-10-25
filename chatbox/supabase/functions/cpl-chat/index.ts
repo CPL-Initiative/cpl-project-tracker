@@ -6581,7 +6581,7 @@ Deno.serve(async (req: Request) => {
 
     // 2. Vector search + college detection + live metrics + topic search +
     //    course-catalog offerings + team guidance (parallel)
-    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, programsResults, teamGuidance, creditData, statewideCatalog, viewer, libraryRows] = await Promise.all([
+    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, programsResults, libraryRows, teamGuidance, creditData, statewideCatalog, viewer] = await Promise.all([
       sb.rpc("match_document_sections", {
         query_embedding: Array.from(queryEmbedding),
         match_threshold: MATCH_THRESHOLD,
@@ -6592,11 +6592,11 @@ Deno.serve(async (req: Request) => {
       searchExhibitsByTopic(routeText, sb), // earned-exhibit set (no college filter)
       searchCollegeOfferings(routeText, sb, placeAnchor), // course catalog: who TEACHES this (place-anchored v68)
       searchCollegePrograms(routeText, sb, placeAnchor),  // program catalog: who AWARDS this (v67; place-anchored v68)
+      drafting ? Promise.resolve([]) : fetchLibrary(sb), // the public CPL Library's listed pieces (S469)
       fetchTeamGuidance(sb, hostSurface),     // sierra_guidance active rows (v25; surface-scoped v56)
       fetchCreditData(sb),                    // published credit-disposition aggregates (v36)
       catalogAsk ? fetchStatewideCatalog() : Promise.resolve(null), // the Fact Sheet's statewide catalog (S398)
       deriveViewer(req.headers),              // who is asking, from the credential — never the body (v66)
-      drafting ? Promise.resolve([]) : fetchLibrary(sb), // the public CPL Library's listed pieces (S469)
     ]);
     markTiming(timings, "retrieved", Date.now());
 
@@ -6951,13 +6951,14 @@ Deno.serve(async (req: Request) => {
 
     // The public CPL Library (S469): the pieces this question names, a hosted piece's
     // page text beside its link, every piece when the visitor asks about the library.
-    // A college's piece is matched through the colleges the detection above resolved.
+    // A college's piece is matched through the colleges the detection above resolved. A
+    // drafting caller read no library above, so it gets no block here.
     const libraryColleges = (Array.isArray(resolvedProfile) ? resolvedProfile : resolvedProfile ? [resolvedProfile] : [])
       .map((p: any) => String((p && p.college) || "")).filter(Boolean);
-    const libraryMatched = drafting ? [] : matchLibrary(searchText, libraryRows || [], libraryColleges);
+    const libraryMatched = matchLibrary(searchText, libraryRows || [], libraryColleges);
     const libraryTexts = libraryMatched.length > 0 ? await fetchLibraryTexts(libraryMatched) : null;
     const libraryContext = buildLibraryContext(libraryMatched, libraryTexts,
-      !drafting && libraryAsk(trimmedQuery) ? (libraryRows || []) : null);
+      libraryAsk(trimmedQuery) ? (libraryRows || []) : null);
 
     // The curator overlay for the built-in rules. Rides the same turn; null
     // (a failed or empty read) means every rule comes from its code default,

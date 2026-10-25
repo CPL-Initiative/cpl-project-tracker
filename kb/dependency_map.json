@@ -375,7 +375,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 6982
+     "line": 6983
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -21914,7 +21914,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 7249
+     "line": 7250
     },
     {
      "id": "module:sierra_training.js",

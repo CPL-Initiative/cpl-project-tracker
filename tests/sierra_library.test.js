@@ -152,8 +152,9 @@ const slugs = (q, colleges) => L.matchLibrary(q, PIECES, colleges || []).map((p)
 // (7) The handler.
 {
   const all = FN.match(/const \[searchResult, collegeProfile[^\]]*\] = await Promise\.all\(\[([\s\S]*?)\]\);/);
-  check("(7) ⭐ the library read rides the main Promise.all, last, and drafting surfaces skip it",
-    !!all && /libraryRows\] = await Promise\.all/.test(FN) && /drafting \? Promise\.resolve\(\[\]\) : fetchLibrary\(sb\)/.test(all[1]));
+  check("(7) ⭐ the library read rides the main Promise.all in the slot its binding names, and drafting surfaces skip it",
+    !!all && /programsResults, libraryRows, teamGuidance/.test(FN) &&
+    /searchCollegePrograms\(routeText, sb, placeAnchor\),[^\n]*\n\s*drafting \? Promise\.resolve\(\[\]\) : fetchLibrary\(sb\),/.test(all[1]));
   check("(7) the match uses the colleges the detection resolved, and the question with its prior turn",
     /matchLibrary\(searchText, libraryRows \|\| \[\], libraryColleges\)/.test(FN) && /const libraryColleges = \(Array\.isArray\(resolvedProfile\)/.test(FN));
   const vol = (FN.match(/const volatilePart = `([\s\S]*?)`;/) || [])[1] || "";
