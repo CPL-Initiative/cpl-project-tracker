@@ -572,6 +572,12 @@ _arch = _entry("docs/roadmap_archive.md", "We should leverage this.", lane="othe
 check("house voice: does NOT scan a verbatim archive",
       da.rule_house_voice(_arch) is None)
 _os.unlink(_arch["path"])
+_part = _entry("docs/roadmap_archive_2.md", "We should leverage this.", lane="other")
+check("house voice: does NOT scan an archive's numbered part either",
+      da.rule_house_voice(_part) is None)
+_os.unlink(_part["path"])
+check("archive name: a part counts, a doc merely naming archives does not",
+      da.is_archive("docs/x_archive_12.md") and not da.is_archive("docs/archive_plan.md"))
 _still = _entry("docs/kb-notes/w.md", "This is the highest-leverage habit.")
 check("house voice: still fires on leverage outside the measure",
       da.rule_house_voice(_still) is not None)

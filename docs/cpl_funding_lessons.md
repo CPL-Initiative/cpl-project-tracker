@@ -49,7 +49,7 @@ the two consolidations (Session 219) on **2026-09-30** (S306), and the 2026-09-0
 
 *The S262 to S265 sections (2026-09-14 to 09-16) moved verbatim to the [archive](cpl_funding_lessons_archive.md) at the two 2026-10-22 side sessions.*
 
-*The two S283 sections (2026-09-22 and 09-23) moved verbatim to [`cpl_funding_lessons_archive_2.md`](cpl_funding_lessons_archive_2.md) at S468 (2026-10-24), the first archive being over its own budget.*
+*The two S283 sections (2026-09-22 and 09-23) moved verbatim to [`cpl_funding_lessons_archive_4.md`](cpl_funding_lessons_archive_4.md) at S468 (2026-10-24; part 2 until S474 split the first archive into three parts).*
 
 ## 2026-09-24 — S285 (SkyGrant): the config after the stale save, and the briefing's funding box
 

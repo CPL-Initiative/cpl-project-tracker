@@ -394,7 +394,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/reference/statute/t5_55050_55051_final_reg_text_<date>.txt` | scripts: `kb/_derive_55050_clean.py` | — |
 | `docs/reference/statute/t5_55050_clean_after_<date>.txt` | scripts: `kb/_verify_55050_redline.py` | scripts: `kb/_derive_55050_clean.py` |
 | `docs/research_workexp_crossdisc_remint_scope.md` | scripts: `kb/_crossdisc_dryrun.py` | — |
-| `docs/roadmap_archive.md` | scripts: `kb/_consolidation_loss_audit.py` | — |
 | `docs/session_<N>_handoff.md` | scripts: `kb/_build_docs_index.py` | — |
 | `docs/visuals/<date>-ccr-title-rung.html` | scripts: `kb/_build_ccr_title_rung_sheet.py` | scripts: `kb/_build_ccr_title_rung_sheet.py` |
 | `docs/visuals/<date>-claude-md-audit.html` | scripts: `kb/_build_claude_md_audit_decision_sheet.py` | scripts: `kb/_build_claude_md_audit_decision_sheet.py` |
@@ -828,6 +827,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `reports/projects/*.docx` | none found | committed by: `daily-dashboard.yml` |
 | `review_<date>.json` | scripts: `kb/_program_requirements_load.py` | — |
 | `reviewer_signin.js` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
+| `roadmap_archive*.md` | scripts: `kb/_consolidation_loss_audit.py` | — |
 | `scripts/catalog_framing.py` | workflows: `catalog-framing.yml` | — |
 | `scripts/fetch_gallery_thumbs.py` | workflows: `first-light-gallery-thumbs.yml` | — |
 | `scripts/fetch_sierra_art.py` | workflows: `sierra-art-fetch.yml` | — |

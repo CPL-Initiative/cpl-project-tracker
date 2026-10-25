@@ -3876,7 +3876,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 46
+     "line": 45
     },
     {
      "id": "script:kb/_doctrine_scenarios.py",
@@ -6633,19 +6633,6 @@
      "direction": "read",
      "how": "literal",
      "line": 123
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
-  "file:docs/roadmap_archive.md": {
-   "consumers": [
-    {
-     "id": "script:kb/_consolidation_loss_audit.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 45
     }
    ],
    "served": false,
@@ -17827,6 +17814,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:roadmap_archive*.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_consolidation_loss_audit.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 47
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:scripts/catalog_framing.py": {
