@@ -2,9 +2,10 @@
 -- author SkyOwlsClover-S477, logged; one guarded UPDATE of a session-sourced row (S476's), its before-value in the log.
 -- Rollback: supersede the three slugs under actor 'SkyOwlsClover-S477-rollback'; restore the S476 row's summary from
 -- the cpl_memory_log 'update' entry's before value.
--- STATUS: NOT YET APPLIED. The first apply (about 13:00Z) waited on a Supabase confirmation prompt that timed out
--- unanswered; whether any statement ran is unread. Read the four slugs back before re-running (each statement is
--- idempotent: ON CONFLICT DO NOTHING, NOT EXISTS, and the UPDATE is guarded on S476's summary text).
+-- STATUS: the first apply (about 13:00Z) waited on a Supabase confirmation prompt that timed out unanswered and wrote
+-- nothing (read back 13:04Z). Sam answered "go": the inserts and their log rows APPLIED 13:06Z (read back). The guarded
+-- UPDATE below timed out on the connector's confirmation prompt again (about 13:08Z): NOT YET APPLIED. It is guarded on
+-- S476's summary text, so re-running it is safe; read the row back first.
 
 insert into public.cpl_memory (slug, kind, org, title, summary, plain, tags, affects, source, related, author, event_date, status)
 values
@@ -25,11 +26,12 @@ values
  'cpl-project-tracker#2445', array[]::text[], 'SkyOwlsClover-S477', '2026-10-25', 'proposed')
 on conflict (slug) do nothing;
 
-insert into public.cpl_memory (slug, kind, org, title, summary, plain, tags, affects, source, related, author, event_date, status, verified_by, verified_at)
+insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, affects, source, related, author, event_date, status, verified_by, verified_at)
 values
 ('sam-supabase-no-constant-approvals-2026-10-25', 'decision', 'cpl',
  'Sam: sessions hold full Supabase permissions and should work without constant approvals (2026-10-25)',
- 'Sam, about 12:20Z on 2026-10-25, in S477 while it diagnosed the noncredit RPC: "You have all the permissions in supabase to read, write, delete...hoping you can handle this without constant approvals". S477 read it as a go to run its Supabase reads, migrations and receipts without stopping to ask; it did not read it as reversing the hold list in CLAUDE.md (deleting data stays a hold) or Rule 10''s receipts.',
+ 'Sam, about 12:20Z on 2026-10-25, in S477 while it diagnosed the noncredit RPC: "You have all the permissions in supabase to read, write, delete...hoping you can handle this without constant approvals".',
+ 'S477 read it as a go to run its Supabase reads, migrations and receipts without stopping to ask. It did not read it as reversing the hold list in CLAUDE.md (deleting data stays a hold) or Rule 10''s receipts. Its next Supabase write still waited on a confirmation prompt from the connector, which Sam answered "go".',
  'Sam does not want to be asked before each Supabase step.',
  array['supabase','governance-team-enablement','sam-ruling','decision']::text[],
  array['CLAUDE.md']::text[],
@@ -49,6 +51,6 @@ select m.id, 'SkyOwlsClover-S477', 'update', 'S477: the 60 s was a test, since r
 from public.cpl_memory m
 where m.slug = 'pitfall-postgrest-8s-ignores-function-timeout-2026-10-25' and m.summary like '%Warm 1.1 s, cold 6.1 s.%';
 update public.cpl_memory
-set summary = 'cpl_funding_nc_counts() returned HTTP 500 in the 2026-10-25 11:40Z daily run: "canceling statement due to statement timeout". The authenticator''s 8 s applies; a statement_timeout set on the function does not extend a running statement (S477 measured it with the function at 60 s, a test since reset). The RPC takes 1.1 s or about 6 s when the database stalls (pitfall-supabase-stalls-not-cold-cache-2026-10-25). The builder retries a 5xx (#2443).',
+set summary = 'cpl_funding_nc_counts() returned HTTP 500 in the 2026-10-25 11:40Z daily run (statement timeout). PostgREST applies the authenticator''s 8 s; a statement_timeout on the function does not extend it (S477 measured it with a 60 s test setting, since reset). The RPC takes 1.1 s, or about 6 s when the database stalls. The builder retries a 5xx (#2443).',
     related = array['nc-builder-counts-emitted-2026-10-25','pitfall-supabase-stalls-not-cold-cache-2026-10-25']::text[]
 where slug = 'pitfall-postgrest-8s-ignores-function-timeout-2026-10-25' and summary like '%Warm 1.1 s, cold 6.1 s.%';
