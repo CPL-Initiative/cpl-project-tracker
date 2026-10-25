@@ -619,6 +619,13 @@ jobs:
       # must pass the same checks. Pure-stdlib python; same non-required check.
       - name: Career-attainment import lint (funding/_build_funding_performance.py)
         run: python3 tests/funding_career_import_test.py
+      # Scenario 4's noncredit outcome counts (Sheets 113 and 114, S471):
+      # nc_exh / nc_cdcp / nc_course stay ABSENT without the RPC, an institution
+      # COCI does not carry gets no denominator, the channels count each
+      # exhibit once, a standalone counts at its district's colleges, and NC-2
+      # counts only a course COCI confirmed. Same non-required check.
+      - name: Noncredit outcome counts (funding/_build_funding_performance.py)
+        run: python3 tests/funding_nc_counts_test.py
       # Who CPL serves (Sam, sheets 33-34, 2026-10-04): the Active Colleges
       # card counts community colleges only and names Cal State LA beside them,
       # from kb/non_ccc_institutions.json. Imports the generator, so it installs

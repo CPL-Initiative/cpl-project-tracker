@@ -2789,7 +2789,9 @@
       h += '<div class="cb-lab cb-flagp">The noncredit share of the award also requires:</div><ol class="cb-ess-list cb-conds">';
       cond.ncItems.forEach(function (it, i) {
         var st = it.pending ? "pending" : it.met ? "met" : "not";
-        h += "<li>" + essMark({ state: st }) + "<div>" + (i + 1) + ". " + esc(condText(it, cond)) + "</div></li>";
+        h += "<li>" + essMark({ state: st }) + "<div>" + (i + 1) + ". " + esc(condText(it, cond))
+          + (kinds.indexOf(it.kind) >= 0 ? ' <button type="button" class="cb-howto" data-howto="' + esc(it.kind)
+            + '" aria-haspopup="dialog">How to meet it</button>' : "") + "</div></li>";
       });
       h += "</ol>";
     }

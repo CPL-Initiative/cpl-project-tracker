@@ -229,8 +229,12 @@ jobs:
       # suppressed counts (docs/kb-notes/adr-funding-priority-metrics-privacy.md,
       # ratified 2026-06-11). Skips gracefully (exit 0, keeps the prior
       # artifact) when the fetch fell back; non-fatal otherwise — the
-      # dashboard publish matters more than one day of actuals.
+      # dashboard publish matters more than one day of actuals. The service key
+      # reads Scenario 4's noncredit counts (cpl_funding_nc_counts, S471); a
+      # failed read leaves those keys absent, so the outcomes read TBA.
       - name: Build funding priority-metric actuals
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python3 funding/_build_funding_performance.py CustomReport_latest.json || echo "funding-performance build failed (non-fatal; prior artifact kept)"
 
       # ── Step 4a3: ESS 25-82 outcome-2 rollup ──────────────────────
