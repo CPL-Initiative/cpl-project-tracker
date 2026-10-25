@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 94 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 447 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1262** | |
+| Session handoffs | 448 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1263** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-25 S477 SkyOwlsClover (opened by hand, beside the 12:14Z firing): the noncredit counts confirmed live; the privacy screen reads only a row's own cells; a hand-opened session claims the queue with a draft PR (#2445); light checkpoint, handoff 478.
 - 2026-10-25 S473 SkyClarkia: NC-1 channel 3, the credential crosswalk (13 rows proposed, Open Asks Sheet 127); handoff 474.
 - 2026-10-25 S472 SkyBrodiaea: the funding memo prints the noncredit outcomes (#2439); light checkpoint, handoff 473.
 - 2026-10-25 (S471 SkyPenstemon, the CPL Queue routine): the noncredit builder emits nc_cdcp, nc_exh and nc_course from a service-role RPC, applied and read back, and How to meet it for the two noncredit conditions (#2437); full checkpoint; handoff 472.

@@ -66,6 +66,12 @@ is his standing preference there too.
    as S403, and each wrote a PDF reader; the 08:12Z firing found the two PRs, read
    the writer note in their comments, and merged the work (#2192). A PR updated in
    the last half hour is a live session: end in one line.
+   **So a session Sam opens by hand inside the routine's hours opens a draft PR
+   in its first minutes**, before any diagnosis, and pushes to it at least every
+   half hour while it works. A firing has no `list_sessions`, so an open PR is the
+   only sign it can read. On 2026-10-25 Sam opened S477 by hand at 11:54Z; it
+   diagnosed the noncredit RPC for 40 minutes with no PR, the 12:14Z firing saw
+   none, and both shipped the same retry (#2443 merged, #2444 closed).
 2. **Paused?** If the latest handoff carries a line `Scheduled run: paused —
    <reason>`, and nothing on the standing sheet has been answered since, end in
    one line. Sam lifts a pause by answering the sheet or by saying so.
