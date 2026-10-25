@@ -4,7 +4,7 @@
   "supabase_tables": 102,
   "rpcs": 42,
   "edge_functions": 9,
-  "file_datasets": 713,
+  "file_datasets": 714,
   "external_services": 184,
   "consumers": 472,
   "workflows": 58,
@@ -19140,6 +19140,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/funding_nc_counts_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/funding_origination_test.py": {
    "consumers": [
     {
@@ -25783,6 +25796,7 @@
     "tests/probe_lifecycle_checks_test.py",
     "tests/funding_origination_test.py",
     "tests/funding_career_import_test.py",
+    "tests/funding_nc_counts_test.py",
     "tests/active_colleges_ccc_test.py",
     "tests/doctrine_lookup_test.py",
     "tests/context_budget_test.py",

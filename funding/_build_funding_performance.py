@@ -663,6 +663,138 @@ def read_career_attainment(resolve, path=None):
             "definition": ci["definition"].strip()}
 
 
+# ── Scenario 4's noncredit outcomes: nc_cdcp, nc_exh, nc_course ─────────────
+# Sam's Open Asks Sheets 113 and 114 (2026-10-22) release each noncredit share
+# on two counts: NC-1 exhibits built or adopted for the noncredit program's
+# learning (target: the greater of 2 and 5% of nc_cdcp, capped at 10) and NC-2
+# a noncredit CPL portfolio-development course chaptered in a CDCP program.
+# The sets come from one service-role RPC (funding/supabase_cpl_funding_nc_counts.sql);
+# the matching is here so a fixture can test it. These are catalog counts, not
+# student counts, so the funding ADR's small-cell floor does not apply.
+#
+# NC-1's channels (Sheet 113), as counted:
+#   1. the exhibit's own title equals a CDCP course title at the institution
+#   2. one of its target credit courses has a CDCP twin (title_norm equal), the
+#      counted channel S468 measured on Cabrillo (33 exhibits against 9)
+#   3. a credential the program's courses name: waits on a curated crosswalk
+#   4. the strike team's attested list, by MAP exhibit ID or title
+# A standalone counts at its district's credit colleges (Calbright statewide):
+# the exhibits sit there, the CDCP titles are its own.
+#
+# ⚠️ ABSENT, NEVER ZERO, WHEN UNKNOWN. nc_cdcp is emitted only for an institution
+# whose COCI courses carry a funding category (Calbright's carry none): a
+# missing denominator reads TBA, where a 0 would set a target of 2. With no
+# RPC (no key, a failed call) every nc key stays absent and the outcomes read
+# TBA and $0, which is what they read before this builder existed.
+NC_COUNTS_RPC = "cpl_funding_nc_counts"
+
+
+def fetch_nc_counts(argv):
+    """The RPC's payload: from `--nc-counts FILE` (tests, a local run), else the
+    live RPC with SUPABASE_SERVICE_KEY, else None."""
+    if "--nc-counts" in argv:
+        with open(argv[argv.index("--nc-counts") + 1], encoding="utf-8") as f:
+            return json.load(f)
+    key = os.environ.get("SUPABASE_SERVICE_KEY", "")
+    if not key:
+        print("funding-performance: SUPABASE_SERVICE_KEY unset; the noncredit outcome counts "
+              "stay absent (TBA).")
+        return None
+    import urllib.request
+    url = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
+    req = urllib.request.Request(
+        f"{url}/rest/v1/rpc/{NC_COUNTS_RPC}", data=b"{}", method="POST",
+        headers={"apikey": key, "Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=180) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except Exception as e:  # non-fatal: the outcomes read TBA, the rest of the artifact stands
+        print(f"funding-performance: {NC_COUNTS_RPC} failed ({e}); the noncredit outcome "
+              "counts stay absent (TBA).")
+        return None
+
+
+def _loose(s):
+    return re.sub(r"\s+", " ", str(s or "")).strip().lower()
+
+
+def nc_outcome_counts(data, resolve, feeder_resolve, scopes):
+    """Institution key -> {nc_cdcp, nc_exh, nc_course}, plus unmatched COCI names.
+
+    Keys are funding-college names (resolve) or standalone shorts
+    (feeder_resolve), the same keys perfFor() reads."""
+    def inst_key(name):
+        return feeder_resolve(name) or resolve(name)
+
+    cdcp, titles, unmatched = {}, {}, []
+    for row in data.get("institutions") or []:
+        k = inst_key(row.get("college"))
+        if not k:
+            unmatched.append(row.get("college"))
+            continue
+        cdcp[k] = cdcp.get(k, 0) + int(row.get("cdcp") or 0)
+        titles.setdefault(k, set()).update(t for t in (row.get("titles") or []) if t)
+
+    exhibits = []   # (funding college, xid, exhibit_id, loose title, title_norm, targets)
+    for e in data.get("exhibits") or []:
+        exhibits.append((resolve(e.get("college")), e.get("xid"), str(e.get("exhibit_id") or ""),
+                         _loose(e.get("title")), e.get("title_norm") or "", set(e.get("targets") or [])))
+
+    def pool(k):
+        """The exhibits an institution's count reads: its own, or a standalone's
+        district colleges (None = statewide)."""
+        if k in scopes:
+            scope = scopes[k]
+            return [x for x in exhibits if x[0] and (scope is None or x[0] in scope)]
+        return [x for x in exhibits if x[0] == k]
+
+    att = {}
+    for a in data.get("attestations") or []:
+        k = inst_key(a.get("college"))
+        if k:
+            att[k] = a
+    confirmed = set()
+    for p in data.get("portfolio_courses") or []:
+        k = inst_key(p.get("college"))
+        if k:
+            confirmed.add((k, str(p.get("control_number") or "").strip()))
+
+    out = {}
+    for k in sorted(set(cdcp) | set(att)):
+        mine, tset = pool(k), titles.get(k, set())
+        hit = {x[1] for x in mine if (x[4] and x[4] in tset) or (x[5] & tset)}
+        a = att.get(k)
+        if a and a.get("exhibits"):
+            for tok in re.split(r"[,;\n]+", a["exhibits"]):
+                t = _loose(tok)
+                if t:
+                    hit |= {x[1] for x in mine if t == x[2].lower() or t == x[3]}
+        course = (a or {}).get("portfolio_course")
+        rec = {"nc_exh": len(hit),
+               "nc_course": 1 if course and (k, str(course).strip()) in confirmed else 0}
+        if k in cdcp:
+            rec["nc_cdcp"] = cdcp[k]
+        out[k] = rec
+    return out, sorted(n for n in unmatched if n)
+
+
+def apply_nc_counts(payload, counts, scopes):
+    """Merge the counts into the artifact: colleges[...] for a credit college,
+    origination.in_scope[short] for a standalone (perfFor's fallback, so the
+    colleges map never holds a standalone that would shadow its origination
+    cut), and the statewide sums srcDelivered() reads."""
+    sw = {"nc_exh": 0, "nc_course": 0, "nc_cdcp": 0}
+    for k, rec in counts.items():
+        if k in scopes:
+            dest = payload.setdefault("origination", {}).setdefault("in_scope", {}).setdefault(k, {})
+        else:
+            dest = payload["colleges"].setdefault(k, {})
+        dest.update(rec)
+        for m in sw:
+            sw[m] += rec.get(m, 0)
+    payload["statewide"].update(sw)
+
+
 def main():
     ds, src = _load_input(sys.argv[1:])
     out = OUT_JS
@@ -1319,6 +1451,18 @@ def main():
               + (f", nc_ca_u={payload['statewide']['nc_ca_u']:,.1f}" if ca["nc_units"] else "")
               + (f", {len(ca['unmatched'])} unmatched name(s): " + ", ".join(ca["unmatched"])
                  if ca["unmatched"] else ""))
+    # Scenario 4's noncredit outcomes (see nc_outcome_counts).
+    nc_data = fetch_nc_counts(sys.argv)
+    if nc_data:
+        scopes = _origin_scopes()
+        nc, nc_unmatched = nc_outcome_counts(nc_data, resolve, feeder_resolve, scopes)
+        apply_nc_counts(payload, nc, scopes)
+        sw = payload["statewide"]
+        print(f"funding-performance: noncredit outcomes for {len(nc)} institutions "
+              f"(FY {nc_data.get('fiscal_year')}): nc_exh={sw['nc_exh']}, nc_course={sw['nc_course']}, "
+              f"nc_cdcp={sw['nc_cdcp']:,}"
+              + (f"; {len(nc_unmatched)} COCI name(s) unmatched: " + ", ".join(nc_unmatched)
+                 if nc_unmatched else ""))
     with open(out, "w", encoding="utf-8") as f:
         f.write(
             "// CPL funding priority-metric actuals (P2/P3 + the PE eligible-students\n"
