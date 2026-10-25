@@ -339,9 +339,15 @@ function ask(w, text) {
     check("(8) ⭐ ?panel=1 marks the page in <head>, before the stylesheet paints",
       panelScript.length > 0 && head.indexOf(panelScript) < head.indexOf('href="./sierra.css"') &&
       marks("?panel=1") && marks("?theme=dark&panel=1") && !marks("") && !marks("?panel=10"));
-    check("(8) ⭐ in the bar the header keeps About Sierra alone: the logo, her name, the theme words and the links stand down",
-      /:root\[data-panel\] \.s-home, :root\[data-panel\] \.s-who-head, :root\[data-panel\] \.s-theme, :root\[data-panel\] \.s-links \{ display: none; \}/.test(CSS) &&
-      !/:root\[data-panel\][^{]*\.s-about\b[^{]*\{[^}]*display:\s*none/.test(CSS));
+    // Since 2026-10-25 About Sierra goes too (Sam: "No need for the About Sierra
+    // button since you include it in the footer"), so the whole header row stands down.
+    check("(8) ⭐ in the bar the header row stands down whole, About Sierra and its panel with it",
+      /:root\[data-panel\] \.s-head, :root\[data-panel\] \.s-about-panel, :root\[data-panel\] \.s-links \{ display: none; \}/.test(CSS));
+    check("(8) ⭐ the starters and the link words read in regular weight; a pick keeps its bold (Sam, 2026-10-25)",
+      [".s-try-q", ".s-aud-toggle", ".s-aud-chip", ".s-word", ".s-about"].every(function (sel) {
+        const m = new RegExp("\\" + sel + " \\{[^}]*font: (\\d+) ").exec(CSS);
+        return m && m[1] === "400";
+      }) && /\.s-aud-chip\.on \{[^}]*font-weight: 700/.test(CSS));
     check("(8) the side bar asks for the panel, with the host's theme", /'\?panel=1&theme='/.test(fs.readFileSync("sierra/sidebar.js", "utf8")));
     // The CPL Initiative mark in her footer (Sam, 2026-10-24: "Maybe put the CPL Initiative logo in her footer").
     const foot = (HTML.match(/<footer class="s-foot">[\s\S]*?<\/footer>/) || [""])[0];

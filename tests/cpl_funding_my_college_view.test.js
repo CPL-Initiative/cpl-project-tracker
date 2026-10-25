@@ -233,7 +233,7 @@ const pub = (T) => { T.__win.CPL_FUNDING_PUBLIC = true; T.render(); };
     doc.querySelector("#outcomes summary h2").textContent === "Funding outcomes");
   check("7d: Step 1's mount sits between the masthead and the Contents",
     !!doc.getElementById("cplFundStep1Mount") &&
-    !!(doc.querySelector("header.masthead").compareDocumentPosition(doc.getElementById("cplFundStep1Mount")) & 4) &&
+    !!(doc.querySelector(".masthead").compareDocumentPosition(doc.getElementById("cplFundStep1Mount")) & 4) &&
     !!(doc.getElementById("cplFundStep1Mount").compareDocumentPosition(doc.getElementById("contents")) & 4));
   check("7e: every section runs one width, the institution table's",
     /\.wrap\{width:100%; max-width:1320px;/.test(html) && /\.wrap\.wide\{max-width:1320px\}/.test(html));

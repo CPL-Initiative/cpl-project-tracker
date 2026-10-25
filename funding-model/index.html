@@ -1,28 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2026-2028 CPL Initiative Funding: How It Works</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <style>
 /* ─────────────────────────────────────────────────────────────────────────
-   FIRST LIGHT — the house palette (docs/kb-notes/reference-ui-design-system.md
-   + prototype/first_light_theme_v1.html v1.6). Warm monochrome base, five
-   accents with one job each, every accent paired with a word or a mark.
-   First Light is a LIGHT identity with no dark page palette, so this page
-   commits to one theme and paints every color explicitly — including the
-   body background, because the viewer paints its own ground behind us.
+   THE PUBLIC LIBRARY'S LOOK (Sam, 2026-10-25: "Align the formatting of the
+   public page with the new UI we are using for the public views (Public
+   Library) while preserving current items"). The public pages left First
+   Light for the look of Malone's CPL/AI page on 2026-10-24
+   (library/index.html): navy Georgia headings over a gold rule, a pale blue
+   ground, white cards, the public header, a navy band at the foot. The token
+   NAMES stay this page's own, because the embedded institution table reads
+   several of them; their VALUES are the library's. Every pair below measured
+   AA (muted 5.2:1 on the palest tint, links 5.7:1). One theme, Light, so
+   every color is painted explicitly, the body's ground included.
    ───────────────────────────────────────────────────────────────────────── */
 :root{
-  --paper:#F4F2ED; --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55;
-  --surface-opaque:#FFFFFF; --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2;
-  --border:rgba(28,28,26,.14); --border-strong:rgba(28,28,26,.30);
-  --cobalt:#0047AB; --crimson:#920000; --hunter:#2C601A; --mustard-text:#8B6800;
-  --mustard-fill:#E3B341;
-  --focus-ring:var(--cobalt);
+  --paper:#F5FAFF; --paper-end:#EEF6FB; --text-strong:#0E1A2E; --text-body:#17243B; --text-muted:#58677D;
+  --surface-opaque:#FFFFFF; --surface-subtle:#F3F8FD; --surface-muted:#EAF4FE;
+  --border:#D9E4EF; --border-strong:#A9C8E5; --header-line:#E8EEF5;
+  --cobalt:#0D5BC6; --crimson:#920000; --hunter:#2C601A; --mustard-text:#8B6800;
+  --mustard-fill:#F4B300;
+  --heading:#082B61; --title:#072C66; --foot-bg:#082B61; --foot-fg:#DCE9F7;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color-scheme:light;
+  --focus-ring:#1671D9;
   /* ⚠ THE EMBEDDED TAB'S FOCUS TOKEN, WHICH THIS PAGE NEVER DEFINED.
      cpl_funding.js writes every one of its focus rings as
      `outline: 2px solid var(--gold-accent)` — a token that lives in COBI's
@@ -35,12 +40,11 @@
      Mapped to the page's OWN focus ring rather than to the gold hex it names,
      because the gold is a dark-surface grade: prototype/check_contrast.py puts
      #E3B341 at 1.74:1 on paper and 1.95:1 on white, under the 3:1 that
-     WCAG 2.2 SC 1.4.11 asks of a focus indicator, while cobalt measures
-     7.54:1 and 8.44:1. Same maths the design system derives every token with;
-     no new color is invented here. */
+     WCAG 2.2 SC 1.4.11 asks of a focus indicator; the library's accent ring
+     measures 4.77:1 on white. */
   --gold-accent:var(--focus-ring);
   /* Derived tints get their own tokens rather than inline rgba (house rule). */
-  --tint-cobalt:#E8EEF8; --tint-hunter:#EAF0E6; --tint-crimson:#F6EAEA; --tint-mustard:#F7F0DE;
+  --tint-cobalt:#EAF4FE; --tint-hunter:#EAF0E6; --tint-crimson:#F6EAEA; --tint-mustard:#F7F0DE;
   /* Prose runs the full column width so its right edge lines up with the
      boxes and tables rather than stopping ragged short of them. */
   --measure:none;
@@ -52,7 +56,7 @@
    navy behind body-colored text, 1.13:1 (npm run a11y, 2026-10-01). So they
    are defined only where this page's own chrome and the Ask Sierra side bar read them. */
 .masthead, .sbar, .sbar-chip{
-  --seal-blue:#002F6D; --on-accent:#FFFFFF; --surface:var(--surface-opaque);
+  --seal-blue:#082B61; --on-accent:#FFFFFF; --surface:var(--surface-opaque);
 }
 /* The Ask Sierra side bar (../sierra/sidebar.js; Sam, Open Asks Sheet 126 card 1) paints with these, mapped onto
    this page's own on the bar's elements alone, so nothing reaches the embedded table. */
@@ -61,22 +65,23 @@
   --sierra-bar-heading:var(--seal-blue); --sierra-bar-link:var(--cobalt); --sierra-bar-focus:var(--focus-ring);
   --sierra-bar-chip-bg:var(--seal-blue); --sierra-bar-chip-ink:var(--on-accent);
   --sierra-bar-shadow:color-mix(in srgb, var(--text-strong) 16%, transparent);
-  --sierra-bar-head-font:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sierra-bar-head-font:var(--serif);
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0; background:var(--paper); color:var(--text-body);
-  font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  font-size:clamp(16px,.95rem + .25vw,17.5px); line-height:1.7;
+  background-image:linear-gradient(180deg, var(--surface-opaque) 0, var(--paper) 38rem, var(--paper-end) 100%);
+  font-family:var(--sans);
+  font-size:clamp(1rem,.97rem + .15vw,1.06rem); line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
 .num{font-variant-numeric:tabular-nums}
 /* One width for every section, the institution table's (Sam, 2026-10-15: "the
    width of each section should be consistently full width"). */
 .wrap{width:100%; max-width:1320px; margin:0 auto; padding:0 clamp(16px,4vw,28px)}
-h1,h2,h3{font-family:"Playfair Display",Georgia,"Times New Roman",serif; color:var(--text-strong);
-  text-wrap:balance; margin:0; font-weight:600; line-height:1.16; letter-spacing:-.005em}
+h1,h2,h3{font-family:var(--serif); color:var(--heading);
+  text-wrap:balance; margin:0; font-weight:700; line-height:1.16; letter-spacing:-.01em}
 h1{font-size:clamp(1.9rem,1.4rem + 2.2vw,3rem)}
 h2{font-size:clamp(1.35rem,1.15rem + 1vw,1.9rem)}
 h3{font-size:clamp(1.05rem,1rem + .3vw,1.2rem)}
@@ -109,20 +114,29 @@ a:hover{text-decoration-thickness:2px}
 .btn[hidden]{display:none}
 .btn.primary:hover{background:var(--cobalt); border-color:var(--cobalt)}
 
-/* ── masthead: the Fact Sheet's, logo beside the title ───────────────── */
-.masthead{background:var(--surface-opaque); border-bottom:4px solid var(--mustard-fill)}
+/* ── the public header (the library's): the CPL Initiative lockup to the
+   Chancellor's Office CPL page, and the way out to the public CPL pages ── */
+.cplh{background:var(--surface-opaque); border-bottom:1px solid var(--header-line); color:var(--text-body); font-size:.95rem; line-height:1.4}
+.cplh-in{min-height:76px; padding-block:10px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 32px}
+.cplh-logo{display:inline-flex; min-height:24px}
+.cplh-logo img{display:block; height:54px; width:auto; max-width:100%}
+.cplh-nav{display:flex; flex-wrap:wrap; gap:.3rem 1.1rem; margin:0; padding:0; list-style:none}
+.cplh-nav li{margin:0}
+.cplh-nav a{display:inline-flex; align-items:center; min-height:24px; color:var(--cobalt); font-weight:600; text-underline-offset:3px}
+@media (max-width:560px){ .cplh-logo img{height:40px} }
+
+/* ── masthead: the title over the library's gold rule, the controls beneath ── */
+.masthead{background:transparent}
 /* Block padding only: a padding shorthand with 0 sides erased the .wrap
    gutter, so the header ran flush to the screen edge on a phone (margin
    audit, 2026-09-30). */
-.head{padding-block:clamp(20px,4vw,30px); display:flex; flex-wrap:wrap; align-items:center; gap:14px 24px}
-/* The lockup is 1115 x 209; at 52px tall it reads at 277px, and below 560px
-   it shrinks so the title keeps the row. */
-.head .logo{height:52px; width:auto; max-width:100%; flex:0 0 auto}
-.mh-text{flex:1 1 320px; min-width:0}
-.masthead h1{font-size:clamp(1.5rem,1.2rem + 1.25vw,2.1rem); color:var(--seal-blue); text-wrap:pretty}
+.head{padding-block:clamp(22px,3.6vw,38px) clamp(14px,2vw,20px)}
+.mh-text{min-width:0}
+.masthead h1{font-size:clamp(2rem,1.4rem + 2.4vw,3.2rem); color:var(--title); line-height:1.04; letter-spacing:-.03em; text-wrap:pretty}
+.title-accent{width:66px; height:4px; margin:16px 0 14px; background:var(--mustard-fill)}
 .ver{margin:0; font-size:.8rem; color:var(--text-muted); white-space:nowrap; font-variant-numeric:tabular-nums}
 .ver abbr{text-decoration:none}
-.mh-row{margin-top:10px}
+.mh-row{margin-top:0}
 .mh-actions{display:flex; flex-wrap:wrap; align-items:center; gap:4px 22px}
 .mh-actions .btn, .mh-actions .btn.primary{
   background:none; border:0; border-radius:2px; padding:2px 0; min-height:24px;
@@ -130,18 +144,21 @@ a:hover{text-decoration-thickness:2px}
   text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px}
 .mh-actions .btn:hover, .mh-actions .btn.primary:hover{
   background:none; color:var(--seal-blue); text-decoration-thickness:2px}
-@media (max-width:560px){ .head .logo{height:40px} }
 
-/* ── contents (Sam, 2026-10-01: a link to each section that opens it) ───── */
-.toc-wrap{display:block; margin-top:clamp(18px,3vw,28px)}
-.toc-card{background:var(--surface-opaque); border:1px solid var(--border); border-radius:6px;
-  padding:clamp(16px,2.6vw,24px) clamp(16px,3vw,28px)}
-.toc-h{font-size:clamp(1.1rem,1rem + .4vw,1.3rem); margin:0 0 .5em}
-.toc{list-style:none; margin:0; padding:0; columns:2; column-gap:32px; max-width:none}
+/* ── contents (Sam, 2026-10-01: a link to each section that opens it) ─────
+   Tight (Sam, 2026-10-25: "tighten up the spacing more on the TOC so it
+   doesn't take up so much of the initial view"): three columns from 980px,
+   each link one 24px line (WCAG 2.5.8), the card's padding halved. */
+.toc-wrap{display:block; margin-top:clamp(12px,2vw,18px)}
+.toc-card{background:var(--surface-opaque); border:1px solid var(--border); border-radius:11px;
+  padding:12px clamp(16px,2.4vw,22px)}
+.toc-h{font-size:1.1rem; margin:0 0 .25em}
+.toc{list-style:none; margin:0; padding:0; columns:3; column-gap:28px; max-width:none; font-size:.95rem; line-height:1.3}
 .toc li{break-inside:avoid; margin:0; max-width:none}
-.toc a{display:block; padding:5px 0}   /* ≥24px target height (WCAG 2.5.8) */
-.toc-note{margin:.9em 0 0; padding-top:.8em; border-top:1px solid var(--border);
-  font-size:.84rem; color:var(--text-muted); max-width:none}
+.toc a{display:inline-flex; align-items:center; min-height:24px; padding:1px 0}
+.toc-note{margin:.45em 0 0; padding-top:.4em; border-top:1px solid var(--border);
+  font-size:.8rem; line-height:1.45; color:var(--text-muted); max-width:none}
+@media (max-width:980px){ .toc{columns:2} }
 @media (max-width:560px){ .toc{columns:1} }
 
 /* ── sections ─────────────────────────────────────────────────────────── */
@@ -189,7 +206,11 @@ details.fold > .fold-body{padding-top:1.4em}
    overflow-x remains the narrow-screen net beneath it. */
 .wrap.wide{max-width:1320px}
 .step1-wrap{padding-top:clamp(14px,2vw,22px)}
-.step1-wrap .cplfund-step1{margin:0}
+.step1-wrap .cplfund-step1{margin:0; border-color:var(--border); border-radius:11px}
+/* The table's sticky header takes a ground of its own here (the tab paints it
+   with COBI's navy token, which this page does not define), so rows never
+   scroll visibly through it. */
+#cplFundingMount .cplfund-table > thead > tr > th{background:var(--surface-opaque); box-shadow:inset 0 -1px 0 var(--border)}
 /* ⚠ AND THE TAB'S INPUTS, WHICH REMOVE THEIR OWN RING. cpl_funding.js writes
    `.cplfund-toolbar input:focus { outline: none; border-color:
    var(--navy-secondary) }` — it trades the outline for a border tint, and
@@ -202,8 +223,8 @@ details.fold > .fold-body{padding-top:1.4em}
 
 /* ── key figures ──────────────────────────────────────────────────────── */
 .figs{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:0 0 6px; max-width:none}
-.fig{background:var(--surface-opaque); border:1px solid var(--border); border-radius:4px; padding:16px 18px}
-.fig .v{font-family:"Playfair Display",Georgia,serif; font-size:clamp(1.5rem,1.2rem + 1.2vw,2.1rem);
+.fig{background:var(--surface-opaque); border:1px solid var(--border); border-radius:11px; padding:16px 18px}
+.fig .v{font-family:var(--serif); font-size:clamp(1.5rem,1.2rem + 1.2vw,2.1rem);
   color:var(--text-strong); font-variant-numeric:tabular-nums; line-height:1.1}
 .fig .k{font-size:.82rem; color:var(--text-muted); margin-top:.4em; max-width:none}
 /* Each box's words are a passage (2026-10-14), so they arrive as paragraphs. */
@@ -222,7 +243,7 @@ details.fold > .fold-body{padding-top:1.4em}
 .figs-note > p:last-child, .rng-note > p:last-child{margin-bottom:0}
 
 .range{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px; max-width:none}
-.rng{background:var(--surface-subtle); border:1px solid var(--border); border-radius:4px; padding:13px 16px}
+.rng{background:var(--surface-subtle); border:1px solid var(--border); border-radius:9px; padding:13px 16px}
 .rk{font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700;
   color:var(--text-muted); margin:0 0 .3em; max-width:none}
 .rv{font-size:1.25rem; font-weight:700; color:var(--text-strong); font-variant-numeric:tabular-nums;
@@ -239,7 +260,7 @@ details.fold > .fold-body{padding-top:1.4em}
 
 /* ── two-up cards ─────────────────────────────────────────────────────── */
 .duo{display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:none; margin-top:1.3em}
-.card{background:var(--surface-opaque); border:1px solid var(--border); border-radius:4px; padding:18px 20px}
+.card{background:var(--surface-opaque); border:1px solid var(--border); border-radius:11px; padding:18px 20px}
 .card h3{margin-bottom:.15em}
 .card .who{font-size:.82rem; color:var(--text-muted); margin-bottom:.9em; max-width:none}
 .kv{display:flex; justify-content:space-between; gap:14px; padding:7px 0; border-bottom:1px solid var(--border); font-size:.92rem}
@@ -252,7 +273,7 @@ details.fold > .fold-body{padding-top:1.4em}
 .prio{background:var(--surface-opaque); border:1px solid var(--border); border-left:4px solid var(--cobalt);
   border-radius:0 4px 4px 0; padding:16px 20px; margin-bottom:12px; max-width:none}
 .prio .top{display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; justify-content:space-between}
-.prio .name{font-family:"Playfair Display",Georgia,serif; font-size:1.15rem; color:var(--text-strong)}
+.prio .name{font-family:var(--serif); font-size:1.15rem; color:var(--heading)}
 .prio .pct{font-variant-numeric:tabular-nums; font-weight:700; color:var(--cobalt); white-space:nowrap}
 .prio .metric{margin:.5em 0 0; font-size:.94rem}
 .prio .aim{margin:.35em 0 0; font-size:.88rem; color:var(--text-muted)}
@@ -263,7 +284,7 @@ details.fold > .fold-body{padding-top:1.4em}
 
 /* ── plain tables (the page's own: the worked example and the choices table;
       scoped to .tablebox so the embedded institution table keeps its own) ── */
-.tablebox{border:1px solid var(--border); border-radius:4px; background:var(--surface-opaque);
+.tablebox{border:1px solid var(--border); border-radius:11px; background:var(--surface-opaque);
   overflow-x:auto; max-width:none; margin-top:1.2em}
 .tablebox table{width:100%; border-collapse:collapse; background:var(--surface-opaque); font-size:.92rem}
 .tablebox caption{text-align:left; padding:14px 18px 0; color:var(--text-muted); font-size:.86rem}
@@ -302,8 +323,11 @@ ul.timing li{margin:.25em 0; display:flex; flex-wrap:wrap; gap:0 12px; justify-c
 ul.timing li .when{font-variant-numeric:tabular-nums; color:var(--text-muted); white-space:nowrap}
 ul.timing li.open{font-style:italic; color:var(--text-muted)}
 
-footer{padding:34px 0 56px; color:var(--text-muted); font-size:.88rem}
+/* The library's navy band at the foot. */
+footer{margin-top:clamp(18px,3vw,28px); padding:24px 0 72px; background:var(--foot-bg); color:var(--foot-fg); font-size:.9rem}
 footer p{max-width:none}
+footer strong{color:var(--surface-opaque)}
+footer a{color:var(--foot-fg)}
 
 @media (max-width:820px){
   .figs{grid-template-columns:1fr 1fr}
@@ -345,10 +369,14 @@ footer p{max-width:none}
   @page{size:letter landscape; margin:.45in}   /* landscape (Sam, 2026-10-15) */
   /* the action bar (with Ask Sierra in it) and the Contents are screen
      navigation; the PDF opens every fold instead */
-  .skip, .mh-actions, #contents, #live-status{display:none}
-  .masthead{border-bottom-width:3px}
+  .skip, .mh-actions, #contents, #live-status, .cplh-nav{display:none}
+  .cplh-in{min-height:0; padding-block:0 4pt}
+  .cplh-logo img{height:34pt}
   .head{padding-block:4pt 10pt}
-  body{background:#FFFFFF; font-size:10.5pt; line-height:1.45}
+  .title-accent{margin:6pt 0 0}
+  body{background:#FFFFFF; background-image:none; font-size:10.5pt; line-height:1.45}
+  footer{background:none; color:inherit; padding:12pt 0 0}
+  footer strong{color:inherit}
   .wrap, .wrap.wide{max-width:none; padding:0}
   section{padding:14pt 0; break-inside:auto}
   h1{font-size:22pt} h2{font-size:14pt} h3{font-size:11.5pt}
@@ -418,12 +446,33 @@ section[hidden], #contents[hidden]{display:none}
      PDF button and opens her in the side bar ([data-sierra-open],
      ../sierra/sidebar.js). Outside <main>, so a reorder of the sections never
      moves it, and print drops the controls. -->
-<header class="masthead">
+<!-- THE PUBLIC HEADER (Sam, 2026-10-21: every public page carries the CPL
+     Initiative logo to the Chancellor's Office CPL page and the links out; the
+     library's version, 2026-10-24). The lockup moved here from beside the
+     title (Sam, 2026-10-25: the library's look). This page paints Light only
+     for now, so the header's Light and Dark words wait for its dark palette. -->
+<header class="cplh" role="banner">
+  <div class="wrap cplh-in">
+    <a class="cplh-logo" href="https://www.cccco.edu/about-us/chancellors-office/divisions/educational-services-and-support/credit-for-prior-learning/" target="_blank" rel="noopener">
+      <img src="../sierra/cpl-initiative-logo-navy.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="1115" height="209">
+    </a>
+    <nav aria-label="CPL pages">
+      <ul class="cplh-nav">
+        <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener">CPL Fact Sheet</a></li>
+        <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener">MAP</a></li>
+        <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener">Find your college</a></li>
+        <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">MAP dashboard</a></li>
+        <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener">Credit for Being You</a></li>
+        <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/" target="_blank" rel="noopener">CPL Library</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="masthead">
   <div class="wrap head">
-    <img class="logo" src="../sierra/cpl-initiative-logo-navy.png"
-         alt="California Community Colleges, Credit for Prior Learning Initiative" width="1115" height="209">
     <div class="mh-text">
       <h1>2026-2028 CPL Initiative Funding</h1>
+      <div class="title-accent" aria-hidden="true"></div>
       <div class="mh-row">
         <div class="mh-actions">
           <!-- Edit this page (Sam, 2026-10-15, call 1): a signed-in curator's
@@ -452,7 +501,7 @@ section[hidden], #contents[hidden]{display:none}
       </div>
     </div>
   </div>
-</header>
+</div>
 
 <!-- STEP 1: CHOOSE YOUR COLLEGE (Sam, 2026-10-15: "Make the College selector
      more prominent so folks see that it is an important first step"). The
@@ -488,17 +537,19 @@ section[hidden], #contents[hidden]{display:none}
            rides the rebuild to the end (contentsFromSections). -->
       <!-- The guidance memo (Sam, 2026-10-21), built from the published
            scenario by memo/; never called a draft on this page. -->
-      <li class="toc-tail"><a id="memo-link" href="memo/">Read the funding guidance memo</a></li>
-      <li class="toc-tail"><a id="memo-word-link" href="memo/?download=word">Download the funding guidance memo in Word</a></li>
-      <li class="toc-video toc-tail"><a id="video-link" href="../prototype/funding_video/funding_in_motion_s2.html">Watch the 100-second introduction</a></li>
+      <!-- Each fixed link's words are the curator's to rename on this page
+           (data-plink; Sam, 2026-10-25), stored as pubLinks. -->
+      <li class="toc-tail"><a id="memo-link" data-plink="memo" href="memo/">Read the funding guidance memo</a></li>
+      <li class="toc-tail"><a id="memo-word-link" data-plink="memo_word" href="memo/?download=word">Download the funding guidance memo in Word</a></li>
+      <li class="toc-video toc-tail"><a id="video-link" data-plink="video" href="../prototype/funding_video/funding_in_motion_s2.html">Watch the 100-second introduction</a></li>
       <!-- Help, after the video (Sam, 2026-10-20): the MAP team's office hours,
            the chosen college's CPL landing page (its hover recommends office
            hours for configuring one), and the training video on configuring a
            landing page. syncLanding() names the page for the chosen college. -->
-      <li class="toc-tail"><a href="https://map.rccd.edu/get-involved/" target="_blank" rel="noopener">MAP team office hours</a></li>
-      <li class="toc-tail"><a id="landing-link" href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener"
+      <li class="toc-tail"><a id="hours-link" data-plink="hours" href="https://map.rccd.edu/get-involved/" target="_blank" rel="noopener">MAP team office hours</a></li>
+      <li class="toc-tail"><a id="landing-link" data-plink="landing" href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener"
         title="For help configuring your landing page, the MAP team recommends its office hours.">Find your college&rsquo;s CPL landing page</a></li>
-      <li class="toc-tail"><a href="../prototype/landing_page_video/">Watch the training video on configuring a landing page</a></li>
+      <li class="toc-tail"><a id="training-link" data-plink="training" href="../prototype/landing_page_video/">Watch the training video on configuring a landing page</a></li>
     </ul>
     <p class="toc-note" id="pdf-note">PDF prints the whole page in landscape, your college first; it asks you to
       choose a college when none is chosen. Choose &ldquo;Save as PDF&rdquo; in the print dialog. The file holds the
@@ -1787,7 +1838,23 @@ window.CPL_SIERRA_SUGGESTED = [
     var lp = T && typeof T.landingPage === "function" ? T.landingPage() : null;
     var dir = "https://map.rccd.edu/cpllandingpages/";
     a.href = lp && lp.url ? lp.url : dir;
-    a.textContent = lp && lp.url ? lp.name + " CPL landing page" : "Find your college\u2019s CPL landing page";
+    a.textContent = lp && lp.url ? lp.name + " CPL landing page" : linkWords(a);
+  }
+  // The words a fixed Contents link shows: the curator's rename on this page
+  // (pubLinks), else the house words the markup carries, kept on the element
+  // the first time through so un-renaming restores them. textContent only: a
+  // curator types plain text on a page every visitor reads.
+  function linkWords(a) {
+    var T = window.CPL_FUNDING_TAB;
+    if (a.getAttribute("data-house-label") === null) a.setAttribute("data-house-label", a.textContent.replace(/\s+/g, " ").trim());
+    var own = T && typeof T.pubLinkLabel === "function" ? T.pubLinkLabel(a.getAttribute("data-plink")) : null;
+    return own || a.getAttribute("data-house-label");
+  }
+  function curateLinks() {
+    Array.prototype.forEach.call(document.querySelectorAll("#toc-list a[data-plink]"), function (a) {
+      if (a.id === "landing-link") return;    // syncLanding names it, with a college chosen
+      a.textContent = linkWords(a);
+    });
   }
   document.addEventListener("cplfund:onechoice", syncLanding);
   window.CPL_CONTENTS = { rebuild: contentsFromSections, open: openSection, sync: syncCollapseAll };
@@ -1854,6 +1921,7 @@ window.CPL_SIERRA_SUGGESTED = [
       if (faq && typeof T.publicFaqHtml === "function") faq.innerHTML = T.publicFaqHtml();
       curateSections();
       orderSections();
+      curateLinks();
       contentsFromSections();
       // A tabled memo leaves the Contents (its status, set in the tab's Report view).
       var memoLi = document.getElementById("memo-link");

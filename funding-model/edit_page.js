@@ -9,7 +9,9 @@
  * page (secHidden by the block's public id) and Position (pubSecOrder); and
  * under each passage the word Edit, opening a plain-text editor with Bold,
  * Italic, Link, Save, Cancel and Restore the default text, which saves through
- * the funding module's setText. Step 1 stays first and never moves.
+ * the funding module's setText; and beside each Contents link that names no
+ * section (the memo, the videos, the help links) a Rename of its words (Sam,
+ * 2026-10-25), saved as pubLinks. Step 1 stays first and never moves.
  *
  * Every write goes through the funding module's own setters, so the layers,
  * the save, the newer-copy check and the database's RLS are the tab's, and the
@@ -30,6 +32,7 @@
   var openKey = null;      // the passage whose editor is open
   var drafts = {};         // what the curator has typed, by passage
   var renaming = null;     // the block whose title is being edited
+  var linkRenaming = null; // the fixed Contents link whose words are being edited
 
   function may() { try { return !!T.canCurate(); } catch (e) { return false; } }
   function esc(s) {
@@ -72,6 +75,11 @@
       "  background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:4px}",
       ".pe-title{display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; margin:0 0 10px}",
       ".pe-title input{font-size:1.05rem; min-height:40px; padding:4px 10px; width:min(100%,28rem)}",
+      ".pe-linkw{margin-left:8px; font-size:.84rem}",
+      ".pe-linked{display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; margin:4px 0 8px}",
+      ".pe-linked input{font:inherit; font-size:.92rem; min-height:32px; padding:2px 8px; width:min(100%,24rem); color:var(--text-strong);",
+      "  background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:4px}",
+      ".pe-linked input:focus-visible{outline:2px solid var(--focus-ring); outline-offset:2px}",
       ".pe-hidnote{margin:0 0 10px; padding:6px 10px; border-left:3px solid var(--crimson); background:var(--tint-crimson);",
       "  color:var(--text-strong); font-size:.9rem; max-width:none}",
       "body.page-editing [data-fsec].is-curator-hidden > *:not(.pe-keep){opacity:.6}",
@@ -166,6 +174,37 @@
     var hint = make("span", "pe-hint");
     hint.textContent = "Plain text. Saves for the readers of this page, never for the Internal view.";
     box.appendChild(hint);
+    return box;
+  }
+
+  // ── the Contents' fixed links (Sam, 2026-10-25: "make them editable (e.g., I
+  //    want to edit the video title and memo titles)") ─────────────────────
+  // The page keeps each link's house words on the element (data-house-label);
+  // the landing link names the chosen college, so its editor holds the words
+  // it shows while none is chosen.
+  function fixedLinks() { return Array.prototype.slice.call(doc.querySelectorAll("#toc-list a[data-plink]")); }
+  function linkHouse(a) { return a.getAttribute("data-house-label") || a.textContent.replace(/\s+/g, " ").trim(); }
+  function linkOwn(a) { return T.pubLinkLabel(a.getAttribute("data-plink")) || linkHouse(a); }
+  function linkControls() {
+    if (typeof T.setPubLinkLabel !== "function") return;
+    fixedLinks().forEach(function (a) {
+      var id = a.getAttribute("data-plink"), li = a.parentNode;
+      if (!li) return;
+      if (linkRenaming === id) { li.appendChild(linkEditor(a)); return; }
+      var w = word("Rename", { "data-pe-linkrename": id, "aria-label": "Rename the link " + linkOwn(a) });
+      w.className += " pe-x pe-linkw";
+      li.appendChild(w);
+    });
+  }
+  function linkEditor(a) {
+    var id = a.getAttribute("data-plink");
+    var box = make("div", "pe-x pe-linked");
+    var tid = "pe-li-" + id;
+    box.innerHTML = '<label class="pe-sr" for="' + tid + '">Words of this link</label>' +
+      '<input id="' + tid + '" type="text" maxlength="160" value="' + esc(linkOwn(a)) + '">';
+    box.appendChild(word("Save", { "data-pe-linksave": id }));
+    box.appendChild(word("Cancel", { "data-pe-linkcancel": id }));
+    if (T.pubLinkLabel(id)) box.appendChild(word("Restore the default words", { "data-pe-linkreset": id }));
     return box;
   }
 
@@ -264,14 +303,14 @@
     // Remember the focused control, so a redraw under the curator keeps them in place.
     var ae = doc.activeElement, keep = null;
     if (ae && ae.closest && ae.closest(".pe-x")) {
-      keep = ["data-pe-rename", "data-pe-hide", "data-pe-pos", "data-pe-edit", "data-pe-orderreset"].reduce(function (k, a) {
+      keep = ["data-pe-rename", "data-pe-hide", "data-pe-pos", "data-pe-edit", "data-pe-orderreset", "data-pe-linkrename"].reduce(function (k, a) {
         return k || (ae.getAttribute(a) != null ? "[" + a + '="' + ae.getAttribute(a) + '"]' : null);
       }, null) || (ae.id ? "#" + ae.id : null);
       if (ae.tagName === "TEXTAREA") drafts[ae.id.replace(/^pe-ta-/, "")] = ae.value;
     }
     var sel = ae && ae.tagName === "TEXTAREA" ? [ae.selectionStart, ae.selectionEnd] : null;
     clear();
-    var masthead = doc.querySelector("header.masthead");
+    var masthead = doc.querySelector(".masthead");
     if (masthead) masthead.parentNode.insertBefore(bar(), masthead.nextSibling);
     var step = doc.querySelector(".step1-wrap");
     if (step) {
@@ -287,6 +326,7 @@
     passages().forEach(function (p) {
       placePassage(p, openKey === p.key ? editorFor(p.key) : passageWord(p));
     });
+    linkControls();
     if (keep) {
       var back = doc.querySelector(keep);
       if (back) { try { back.focus({ preventScroll: true }); } catch (e) { back.focus(); } }
@@ -299,7 +339,7 @@
     doc.body.classList.toggle("page-editing", editing);
     btn.setAttribute("aria-pressed", editing ? "true" : "false");
     btn.textContent = editing ? "Done editing" : "Edit this page";
-    if (!editing) { openKey = null; renaming = null; clear(); }
+    if (!editing) { openKey = null; renaming = null; linkRenaming = null; clear(); }
     ensureCss();
     repaint();      // a hidden block shows, or hides again
     sync();
@@ -313,7 +353,8 @@
   doc.addEventListener("click", function (e) {
     var t = e.target && e.target.closest ? e.target.closest("[data-pe-rename], [data-pe-hide], [data-pe-edit], " +
       "[data-pe-save], [data-pe-cancel], [data-pe-restore], [data-pe-mark], [data-pe-link], " +
-      "[data-pe-titlesave], [data-pe-titlecancel], [data-pe-titlereset], [data-pe-done], [data-pe-orderreset]") : null;
+      "[data-pe-titlesave], [data-pe-titlecancel], [data-pe-titlereset], [data-pe-done], [data-pe-orderreset], " +
+      "[data-pe-linkrename], [data-pe-linksave], [data-pe-linkcancel], [data-pe-linkreset]") : null;
     if (!t || !editing || !t.closest(".pe-x")) return;
     var a = function (n) { return t.getAttribute(n); };
     if (a("data-pe-done") != null) { setEditing(false); btn.focus(); return; }
@@ -327,6 +368,22 @@
       renaming = null;
       T.setPubTitle(id, a("data-pe-titlereset") != null ? "" : (inp ? inp.value : ""), sec ? houseTitle(sec) : "");
       sync(); focusSoon('[data-pe-rename="' + id + '"]');
+      return;
+    }
+    if (a("data-pe-linkrename") != null) {
+      e.preventDefault();
+      linkRenaming = a("data-pe-linkrename"); sync(); focusSoon("#pe-li-" + linkRenaming); return;
+    }
+    if (a("data-pe-linkcancel") != null) {
+      var lc = linkRenaming; linkRenaming = null; sync(); focusSoon('[data-pe-linkrename="' + lc + '"]'); return;
+    }
+    if (a("data-pe-linksave") != null || a("data-pe-linkreset") != null) {
+      var lid = a("data-pe-linksave") || a("data-pe-linkreset");
+      var link = doc.querySelector('#toc-list a[data-plink="' + lid + '"]');
+      var lin = doc.getElementById("pe-li-" + lid);
+      linkRenaming = null;
+      T.setPubLinkLabel(lid, a("data-pe-linkreset") != null ? "" : (lin ? lin.value : ""), link ? linkHouse(link) : "");
+      sync(); focusSoon('[data-pe-linkrename="' + lid + '"]');
       return;
     }
     if (a("data-pe-hide") != null) {
@@ -373,8 +430,15 @@
   // Escape leaves a title edit. A passage's editor keeps what was typed until
   // Cancel, so a stray key never throws a paragraph away.
   doc.addEventListener("keydown", function (e) {
-    if (!editing || e.key !== "Escape" || !e.target || !e.target.closest) return;
-    if (!e.target.closest(".pe-title")) return;
+    if (!editing || !e.target || !e.target.closest) return;
+    // Enter saves a link's words; Escape leaves its editor.
+    if (e.target.closest(".pe-linked")) {
+      var lk = linkRenaming;
+      if (e.key === "Enter") { e.preventDefault(); var sv = doc.querySelector('[data-pe-linksave="' + lk + '"]'); if (sv) sv.click(); }
+      else if (e.key === "Escape") { linkRenaming = null; sync(); focusSoon('[data-pe-linkrename="' + lk + '"]'); }
+      return;
+    }
+    if (e.key !== "Escape" || !e.target.closest(".pe-title")) return;
     var r = renaming; renaming = null; sync(); focusSoon('[data-pe-rename="' + r + '"]');
   });
   btn.addEventListener("click", function () { setEditing(!editing); });

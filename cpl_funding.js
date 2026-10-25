@@ -199,6 +199,10 @@
     // breaks.
     ".cplfund-table td.cf-inst { white-space: normal; }",
     ".cplfund-table td.cf-inst .cplfund-instname { white-space: nowrap; }",
+    // The Confirm word sits at the cell's right edge (Sam, 2026-10-25: "Make the
+    // Confirm by links line up right justified so they look uniform up and down
+    // the table"), whatever the length of the name before it.
+    ".cplfund-table td.cf-inst .cplfund-optin-jump { float: right; margin-left: 12px; }",
     // The same net for a header and for Total Funds' chip: at the table's
     // minimum width both fit on one line, and a wider font wraps rather than
     // painting over the next column.
@@ -214,10 +218,17 @@
     ".cf-slice { cursor: help; }",
     ".cf-slice:hover path, .cf-slice:hover circle { stroke: var(--seal-blue-text, #002F6D); stroke-width: 1.5; }",
     ".cplfund-table td.cf-cur { color: var(--text-strong); }",
-    // Total Funds' plain Base / Cap chip, its explanation on hover.
-    "td.cf-total .cf-boundchip { display: inline-block; margin-left: 6px; padding: 0 7px; font-size: .68rem; font-weight: 600;" +
+    // Max Funds' plain Base / Cap chip, its explanation on hover, to the LEFT
+    // of the amount in regular weight (Sam, 2026-10-25: "Move the base and cap
+    // chips (regular font) to the left of the amounts so the amounts line
+    // up"). It follows the amount in the markup, so a reader and a copy say
+    // "$75,000 Base", and hangs out of the flow, so a row with a chip centers
+    // its amount exactly where a row without one does.
+    "td.cf-total .cf-amt { position: relative; display: inline-block; }",
+    "td.cf-total .cf-boundchip { position: absolute; right: 100%; top: 50%; transform: translateY(-50%); margin-right: 8px;" +
+      " padding: 0 7px; font-size: .68rem; font-weight: 400; white-space: nowrap;" +
       " line-height: 1.55; color: var(--seal-blue-text, #002F6D); border: 1px solid var(--cobalt-on-dark, #7DA1D4);" +
-      " border-radius: 9px; cursor: help; vertical-align: 1px; }",
+      " border-radius: 9px; cursor: help; }",
     ".cf-sys-elig { font-weight: 400; color: var(--text-muted); margin-left: 10px; font-size: .75rem; }",
     // The drill-in's Minimum Conditions line: a box per condition, drawn in CSS
     // (a checkbox glyph is banned rendered text), checked when met. The boxes
@@ -1071,6 +1082,12 @@
     // ⚠️ `tr.cplfund-detail td` and `.cplfund-table th` reach the history
     // table's cells, so every table rule names the box (as Unit sources does).
     ".cplfund-rep { grid-column: 1 / -1; display: grid; gap: 8px; margin-top: 6px; padding: 8px 10px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface-opaque); }",
+    ".cplfund-rep[hidden] { display: none; }",
+    ".cplfund-repline { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; margin-top: 6px; }",
+    // A control is an underlined word (Sam, 2026-10-09), a <button> where it acts.
+    ".cplfund-repword { font: inherit; font-weight: 600; color: var(--cobalt, #0047AB); background: none; border: 0; padding: 0 2px; min-height: 24px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }",
+    ".cplfund-repword:hover, .cplfund-repword[aria-expanded=\"true\"] { text-decoration-thickness: 2px; }",
+    ".cplfund-repword:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 2px; }",
     ".cplfund-rep-sum { display: flex; flex-wrap: wrap; gap: 2px 18px; align-items: baseline; font-variant-numeric: tabular-nums; }",
     ".cplfund-rep-sum strong { color: var(--text-strong); font-size: 1rem; }",
     ".cplfund-rep-form { display: grid; gap: 8px; }",
@@ -3613,6 +3630,47 @@
     return Array.isArray(v) ? clone(v) : clone(DEFAULT_TIMING);
   }
   function setTiming(list) { activeOverride().timing = (list || []).slice(); persistActive(); }
+  // ── THE TIMELINE IN DATE ORDER (Sam, 2026-10-25: "I revised the timeline to
+  // add Report deadlines. There was no way to reorder them in chronological,
+  // so please do that"). Every rendering sorts the stored list by its dates,
+  // so a milestone added at the end lands in its place; two on one date keep
+  // their stored order, and a milestone with no date it can read (the
+  // contingent Year 3) follows the dated ones. Edits still address the stored
+  // position (timingOrder()'s idx), so nothing is rewritten to sort it.
+  var TL_MONTHS = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+  var TL_SEASONS = { winter: 1, spring: 3, summer: 6, fall: 9, autumn: 9 };
+  // A milestone's date as {y, m, d} (d null when only the month is given), or
+  // null. Reads "Dec 31, 2026", "December 31, 2026", "Oct 2026", "Fall 2027",
+  // "2026-12-31", "12/31/2026" and a bare "2027".
+  function timingDate(txt) {
+    var t = String(txt || "").trim().toLowerCase().replace(/\./g, "");
+    if (!t) return null;
+    var m = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(t);
+    if (m) return { y: +m[1], m: +m[2], d: +m[3] };
+    m = /^(\d{1,2})\/(\d{1,2})\/(\d{2,4})$/.exec(t);
+    if (m) return { y: m[3].length === 2 ? 2000 + +m[3] : +m[3], m: +m[1], d: +m[2] };
+    m = /^([a-z]+)\s+(?:(\d{1,2}),?\s+)?(\d{4})$/.exec(t);
+    if (m) {
+      var mo = TL_MONTHS[m[1].slice(0, 3)];
+      if (mo && (m[1].length <= 3 || "january february march april may june july august september october november december".indexOf(m[1]) >= 0 || m[1] === "sept"))
+        return { y: +m[3], m: mo, d: m[2] ? +m[2] : null };
+      if (!m[2] && TL_SEASONS[m[1]]) return { y: +m[3], m: TL_SEASONS[m[1]], d: null };
+      return null;
+    }
+    m = /^(\d{4})$/.exec(t);
+    return m ? { y: +m[1], m: 1, d: null } : null;
+  }
+  // The stored milestones in date order, each with its stored position.
+  function timingOrder() {
+    return timingItems().map(function (it, i) {
+      var dt = timingDate(it && it.date);
+      return { item: it, idx: i, key: dt ? dt.y * 10000 + dt.m * 100 + (dt.d || 0) : null };
+    }).sort(function (a, b) {
+      if (a.key == null || b.key == null) return a.key == null && b.key == null ? a.idx - b.idx : (a.key == null ? 1 : -1);
+      return a.key - b.key || a.idx - b.idx;
+    });
+  }
+  function timingSorted() { return timingOrder().map(function (o) { return o.item; }); }
 
   // ── EDITABLE PROSE (Sam, 2026-09-02: "It would be nice to be able to edit
   //    while in curate, any of the text sections") ─────────────────────────
@@ -3830,12 +3888,11 @@
   // Sam's College Dashboard intro (mockup rounds, 2026-09-28). The pie has no
   // column header to name it any more, so the intro names it once.
   var COLLEGE_INTRO_DEFAULT_HTML =
-    "<p>The Dashboard lists the potential funding and FTES for each institution. Total Funds is its " +
-    "<strong>max award</strong>: maximum funding to be awarded based on measurable outcomes and allocated as " +
-    "credit and noncredit subtotals, shown as Max CR Funds and Max NC Funds. The Curr (current) columns show the " +
-    "funding qualifying so far. The numbered pie before each name shows which of the three minimum conditions the " +
-    "institution meets, and a star marks the third, the Veteran Star. Click an institution to see its conditions " +
-    "and each priority&#39;s maximum and actual FTES and funding.</p>";
+    "<p>The Dashboard lists the potential funding and FTES for each institution. Max Funds is its " +
+    "<strong>max award</strong>: maximum funding to be awarded based on measurable outcomes, credit and noncredit " +
+    "together. Curr Funds (current) shows the funding qualifying so far. Open an institution to see each priority " +
+    "and noncredit outcome on its own row. The numbered pie before each name shows which of the three minimum conditions the " +
+    "institution meets, and a star marks the third, the Veteran Star.</p>";
   function textDefaultHtml(key) {
     if (isRich(key)) return richPlainToHtml(richDefaultPlain(key), "tab");
     if (key === "about") return ABOUT_DEFAULT_HTML;
@@ -4487,6 +4544,27 @@
     if (!Object.keys(ov.pubTitles).length) delete ov.pubTitles;
     persistActive();
   }
+  // THE PUBLIC PAGE'S FIXED LINKS (Sam, 2026-10-25: "For the TOC items that
+  // don't pull the names from the section titles, make them editable (e.g., I
+  // want to edit the video title and memo titles)"). Each Contents item that
+  // names no section is a link a curator renames on the page, under `pubLinks`
+  // beside `pubTitles`; plain text, and the page passes its house words so an
+  // unchanged label stores nothing.
+  var PUBLIC_LINK_IDS = ["memo", "memo_word", "video", "hours", "landing", "training"];
+  function pubLinkLabel(id) {
+    var v = firstDefined(SCENARIO.pubLinks && SCENARIO.pubLinks[id], SHARED.pubLinks && SHARED.pubLinks[id]);
+    return (v == null || !String(v).trim()) ? null : String(v);
+  }
+  function setPubLinkLabel(id, v, housePlain) {
+    if (PUBLIC_LINK_IDS.indexOf(id) < 0) return;
+    var ov = activeOverride();
+    var clean = oneLine(v);
+    ov.pubLinks = isPlainObj(ov.pubLinks) ? ov.pubLinks : {};
+    if (!clean || clean === oneLine(housePlain)) delete ov.pubLinks[id];
+    else ov.pubLinks[id] = clean;
+    if (!Object.keys(ov.pubLinks).length) delete ov.pubLinks;
+    persistActive();
+  }
   function secHidden(id) {
     return !!firstDefined(SCENARIO.secHidden && SCENARIO.secHidden[id],
       SHARED.secHidden && SHARED.secHidden[id]);
@@ -4768,7 +4846,7 @@
   // of the DOM after each render rather than relying on each emitter to check
   // publicMode() — a missed call site is the failure mode that matters, and a
   // declarative sweep cannot miss one. wire() reads the same list.
-  var CURATE_ATTRS = ["data-edit", "data-note", "data-notesave", "data-srcopen", "data-srcall",
+  var CURATE_ATTRS = ["data-edit", "data-note", "data-notesave", "data-srcopen", "data-srcall", "data-repopen",
     "data-reqdel", "data-reqhide", "data-reqshow",
     "data-stratadd", "data-stratdel", "data-ncstratadd", "data-ncstratdel", "data-timingdel",
     "data-ncostratadd", "data-ncostratdel", "data-ncgoal",
@@ -5627,7 +5705,7 @@
       course: t("course"), exhibits: t("exhibits"), count: null };
     var cnt = t("count");
     if (!form.coordName) return { error: "Please enter the Noncredit CPL Lead's name." };
-    if (!form.coordTitle) return { error: "Please enter the coordinator's title." };
+    if (!form.coordTitle) return { error: "Please enter the Noncredit CPL Lead's title." };
     if (!form.name) return { error: "Please enter your name." };
     if (NC_ATTEST_TITLES.map(function (o) { return o.val; }).indexOf(form.title) === -1) return { error: "Please choose your title." };
     if (!OPTIN_EMAIL_RE.test(form.email)) return { error: "Please enter a valid college email address (name@college.edu)." };
@@ -6021,6 +6099,71 @@
         render();
       }).catch(function () { /* gated or offline — fine */ });
   }
+  // ── THE REPORT DEADLINES (Sam, 2026-10-25, in the timeline: First to Fourth
+  // Report Deadline). A timeline milestone whose words name a report and a
+  // deadline (or a due date) is one; a month without a day means its last day.
+  // Each falls in a fiscal year (July to June), the year its report covers.
+  function fyOfIso(iso) {
+    var y = +iso.slice(0, 4), mo = +iso.slice(5, 7);
+    var start = mo >= 7 ? y : y - 1;
+    return start + "-" + String(start + 1).slice(2);
+  }
+  function reportDeadlines() {
+    var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+    return timingOrder().map(function (o) {
+      var it = o.item || {}, label = String(it.label || "");
+      if (!/\breport/i.test(label) || !/deadline|\bdue\b/i.test(label)) return null;
+      var dt = timingDate(it.date);
+      if (!dt) return null;
+      var d = dt.d || new Date(Date.UTC(dt.y, dt.m, 0)).getUTCDate();
+      var iso = dt.y + "-" + pad(dt.m) + "-" + pad(d);
+      return { label: label, date: String(it.date || ""), iso: iso, fy: fyOfIso(iso) };
+    }).filter(Boolean);
+  }
+  // The earliest report deadline an institution has not met, or null. A
+  // deadline is met by a report for its fiscal year submitted after the
+  // fiscal year's previous deadline (any report, for the year's first); a
+  // year whose newest row is a withdrawal meets none. The submission date is
+  // the college's Reported on, else the day COBI recorded it.
+  function nextReportDue(college, todayIso) {
+    var rows = REPORTS.filter(function (r) { return r.college === college; });
+    var newest = {};
+    rows.forEach(function (r) { newest[r.fiscal_year] = r; });
+    var prevInFy = {};
+    var dl = reportDeadlines();
+    for (var i = 0; i < dl.length; i++) {
+      var x = dl[i], after = prevInFy[x.fy] || "";
+      prevInFy[x.fy] = x.iso;
+      var met = !(newest[x.fy] && newest[x.fy].withdrawn) && rows.some(function (r) {
+        var on = String(r.reported_on || r.recorded_at || "").slice(0, 10);
+        return r.fiscal_year === x.fy && !r.withdrawn && (!after || on > after);
+      });
+      if (!met) return { label: x.label, date: x.date, iso: x.iso, fy: x.fy, overdue: x.iso < (todayIso || isoToday()) };
+    }
+    return null;
+  }
+  function isoToday() {
+    var d = new Date(), pad = function (n) { return (n < 10 ? "0" : "") + n; };
+    return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+  }
+  // The word that opens an institution's Reporting box, with the nearest
+  // deadline it has yet to meet (Sam, 2026-10-25: "Note the nearest
+  // unsubmitted report Deadline as part of the Report link"), in the Confirm
+  // chip's MM-DD-YY.
+  var REPORT_OPEN = {};
+  function reportBoxId(college) { return "cplfund-rep-" + String(college).replace(/[^A-Za-z0-9]+/g, "-"); }
+  function reportWordHtml(c) {
+    var college = c.college, open = !!REPORT_OPEN[college];
+    var nd = nextReportDue(college);
+    var mdy = nd ? nd.iso.slice(5, 7) + "-" + nd.iso.slice(8, 10) + "-" + nd.iso.slice(2, 4) : "";
+    var word = !nd ? "Report" : nd.overdue ? "Report overdue, due " + mdy : "Report by " + mdy;
+    var tip = !nd
+      ? (reportDeadlines().length ? "Every report deadline so far is met. " : "") + "Open the expenditure reporting for " + dispName(college) + "."
+      : nd.label + ", " + nd.date + ": the " + nd.fy + " expenditure report " + (nd.overdue ? "was due and is not yet on file." : "is not yet on file.");
+    return '<div class="cplfund-repline"><button type="button" class="cplfund-repword" data-repopen="' + esc(college) +
+      '" aria-expanded="' + (open ? "true" : "false") + '" aria-controls="' + esc(reportBoxId(college)) + '" title="' + esc(tip) + '">' +
+      esc(word) + '</button> <span class="dk">Expenditure reporting (internal)</span></div>';
+  }
   // The fiscal years a report can name: the window's, then its close-out year.
   function reportYears() {
     var ys = selectedYears().slice();
@@ -6122,7 +6265,9 @@
         '<thead><tr><th scope="col">Fiscal year</th><th scope="col" class="n">Expended</th><th scope="col">Reported by</th>' +
         '<th scope="col">Recorded by</th><th scope="col">Standing</th></tr></thead><tbody>' + body + "</tbody></table></div>";
     }
-    return '<section class="cplfund-rep" aria-label="Reporting for ' + name + '"><span class="dk">Reporting (internal): expenditures</span>' +
+    // Folded until its Report word opens it (Sam, 2026-10-25).
+    return reportWordHtml(c) + '<section class="cplfund-rep" id="' + esc(reportBoxId(college)) + '" aria-label="Reporting for ' + name + '"' +
+      (REPORT_OPEN[college] ? "" : " hidden") + ">" +
       sum + form + '<div><span class="dk">Reports on file</span>' + hist + "</div></section>";
   }
   // Reads a Reporting box form into a row, or returns the words that refuse it.
@@ -6783,7 +6928,7 @@
     var pct = pp.cap > 0 ? pp.earned / pp.cap : 0;
     return '<p class="nums cplfund-earned-line" title="' +
       esc("Demonstrated: what institutions have demonstrated statewide on this priority to date, whether or not " +
-        "each has met its minimum conditions. The Curr columns show what each qualifies for: $0 until it meets them. " +
+        "each has met its minimum conditions. Curr Funds shows what each qualifies for: $0 until it meets them. " +
         "Total Possible: the ceiling — " + (ncOutcomesMode()
           ? "the priority's credit share; the noncredit share rides the noncredit outcomes below"
           : "the priority's credit and noncredit shares together" +
@@ -8419,20 +8564,21 @@
   // FinalizedSep 2026" (Sam, 2026-09-30: "Fix the dates so they are
   // appropriately spaced"). Each value there gets its own span and class.
   function timingSectionHtml() {
-    var items = timingItems();
     var pub = publicMode();
     function cell(cls, edit, value, i, label, ph) {
       return pub ? '<span class="' + cls + '">' + esc(value) + "</span>"
         : edText(edit, value, { idx: i, cls: cls, label: label, placeholder: ph });
     }
-    var rows = items.map(function (it, i) {
+    // In date order; i is the stored position every edit addresses.
+    var rows = timingOrder().map(function (o) {
+      var it = o.item, i = o.idx;
       var noDate = !String(it.date || "").trim();
       return '<div class="cplfund-timing-row' + (noDate ? " nodate" : "") + '">' +
         '<span class="cplfund-bullet">&bull;</span>' +
         cell("cplfund-timing-label", "timing-label", it.label || "", i, "Timing milestone", "Milestone…") +
         cell("cplfund-timing-date", "timing-date", it.date || "", i, "Timing date", "Date") +
         '<button type="button" class="cplfund-reqdel" data-timingdel="' + i +
-        '" title="Remove this item" aria-label="Remove timing item ' + (i + 1) + '">Remove</button></div>';
+        '" title="Remove this item" aria-label="' + esc("Remove the timing item " + (String(it.label || "").trim() || "with no words")) + '">Remove</button></div>';
     }).join("");
     return "<h3>Timing</h3>" +
       '<div class="cplfund-timing">' + rows +
@@ -10682,10 +10828,10 @@
     // The College Dashboard (2026-09-28) gives the max award its own column,
     // Total Funds, and what qualifies so far the Curr columns beside it.
     var basisSentence = " That allocation is the institution&#39;s <strong>max award</strong>, the Dashboard&#39;s " +
-      "Total Funds. An institution qualifies for <code>max award &times; (actual &divide; target)</code>, up to 100%, where each " +
+      "Max Funds. An institution qualifies for <code>max award &times; (actual &divide; target)</code>, up to 100%, where each " +
       "priority&#39;s <em>target</em> is its funding &divide; the reimbursement rate and MAP actuals measure progress " +
       "toward it. An institution at half its target qualifies for half its max award, and remaining funding rolls " +
-      "forward. The Curr columns show the funding qualifying so far.";
+      "forward. Curr Funds shows the funding qualifying so far.";
     // Bulleted, left-justified explainer (Sam, 2026-07-28) — one idea per bullet
     // instead of a single running paragraph. Each variable above is one <li>.
     var trim = function (s) { return String(s).replace(/^\s+/, ""); };
@@ -10771,10 +10917,11 @@
   function currHeadHtml(rest) {
     return '<span aria-hidden="true">Curr</span><span class="cplfund-sr-only">Current</span> ' + rest;
   }
-  // THE COLLEGE DASHBOARD'S COLUMNS (Sam's mockup rounds, 2026-09-28). Each
-  // share of the max award sits beside what qualifies against it so far: Max
-  // CR Funds · Curr CR Funds · Max NC Funds · Curr NC Funds, then Total Funds
-  // (the max award, which the base and the cap bind) and Curr Total Funds.
+  // THE COLLEGE DASHBOARD'S COLUMNS (Sam's mockup rounds, 2026-09-28; two
+  // funding columns since 2026-10-25). Max Funds is the max award, which the
+  // base and the cap bind, and Curr Funds what qualifies against it so far;
+  // the credit and noncredit split (Max CR · Curr CR · Max NC · Curr NC) waits
+  // in the Columns menu.
   // The Elig column is gone: its pie leads the Institution cell, and the
   // drill-in's Minimum Conditions line spells out what each slice means.
   // #, District, the FTES pair and Working adults stay in the Columns menu,
@@ -10813,33 +10960,42 @@
       // notice that most approx 149k"). The base and the cap bind the COMBINED
       // award, so the Base / Cap chip sits with this figure (2026-09-28: Total
       // Funds on the right, a plain chip that explains itself on hover).
-      { key: "total", label: "Total Funds", cls: "c",
-        title: "The institution's max award " + awardWhen + ": Max CR Funds plus Max NC Funds. The base and the cap apply to this figure." },
-      { key: "current_total", label: currHeadHtml("Total Funds"), menu: "Current Total Funds", cls: "c",
-        title: "Funding " + q + ", credit and noncredit together." + counts },
+      // TWO FUNDING COLUMNS (Sam, 2026-10-25: "consolidating the 4 CR and NC
+      // Max and Curr columns into just 2 Max and Curr columns and show the
+      // totals on the Priority rows"). Under the outcomes lane each priority
+      // row carries one lane, so the split columns repeat the total; they stay
+      // in the Columns menu, hidden by default, and the export keeps them.
+      { key: "total", label: "Max Funds", menu: "Max Funds", cls: "c",
+        title: "The institution's max award " + awardWhen + ", credit and noncredit together. The base and the cap apply to this figure. " +
+          "On a priority or outcome row, that row's share of it." },
+      { key: "current_total", label: currHeadHtml("Funds"), menu: "Current Funds", cls: "c",
+        title: "Funding " + q + ", credit and noncredit together. On a priority or outcome row, what that row has qualified for." + counts },
       { key: "working_adults", label: "Working adults*", cls: "" }
     ];
   }
   // The columns a fresh browser hides (the Columns menu shows them). Sam's
   // mockup (2026-09-28) leads with the institution and its six funding
   // columns; the # column stays available for a reader who counts rows.
-  var COLS_DEFAULT_HIDDEN = { order: true, district: true, cr_ftes: true, nc_ftes: true, working_adults: true };
+  // Since 2026-10-25 the credit and noncredit split columns too: Max Funds and
+  // Curr Funds carry the table (Sam's two-column ask).
+  var COLS_DEFAULT_HIDDEN = { order: true, district: true, cr_ftes: true, nc_ftes: true, working_adults: true,
+    cr_award: true, cr_current: true, nc_award: true, nc_current: true };
   // Relative widths for the fixed table layout, normalized over the columns
   // actually shown (tableHtml). Institution holds the pie, the star, the name
-  // and its chips; the six funding columns share the rest, Total Funds a
-  // little more for its Base / Cap chip.
+  // and its chips; the funding columns share the rest, Max Funds a little
+  // more for the Base / Cap chip that hangs to its amount's left.
   var COL_WEIGHT = { order: 3.5, college: 30, district: 11, cr_ftes: 7, nc_ftes: 7,
     cr_award: 11.2, cr_current: 11.2, nc_award: 11.2, nc_current: 11.2, total: 12.7, current_total: 12.5,
     working_adults: 10 };
   // The narrowest each column can be before its content crowds the next:
-  // the Statewide row's figures, "$150,000 Base", the "Curr Total Funds"
-  // header. The table's minimum width is the smallest at which every shown
+  // the Statewide row's figures, the "Curr Funds" header, and Max Funds'
+  // amount with its Base / Cap chip hanging to the left (2026-10-25). The table's minimum width is the smallest at which every shown
   // column gets its own (measured in Chromium, 2026-09-28, with the Arial
   // fallback, which runs wider than Source Sans 3: the default set needs
   // 898px and fits the 902px the tab has at a 1280px window). Below it the
   // wrap scrolls inside its own container.
   var COL_MIN_PX = { order: 36, college: 240, district: 100, cr_ftes: 80, nc_ftes: 80,
-    cr_award: 98, cr_current: 98, nc_award: 98, nc_current: 98, total: 114, current_total: 112,
+    cr_award: 98, cr_current: 98, nc_award: 98, nc_current: 98, total: 170, current_total: 112,
     working_adults: 112 };
   function districtShort(name) {
     return String(name || "").replace(/\s+Community College District$/i, " CCD");
@@ -10942,12 +11098,14 @@
   // keys from the old set, and Sam's hid "total", which would have hidden the
   // new Total Funds column on arrival; every browser starts from the v2
   // default instead, and the v1 entry is cleared once.
-  var COLS_STORE = "cplfund_cols_v2";
-  var COLS_STORE_RETIRED = "cplfund_cols_v1";
+  // v3 (2026-10-25): two funding columns; a v2 store would keep showing the
+  // four split columns, so every browser starts from the v3 default.
+  var COLS_STORE = "cplfund_cols_v3";
+  var COLS_STORE_RETIRED = ["cplfund_cols_v1", "cplfund_cols_v2"];
   // The teardown for the Columns menu's dismissal listeners — see wire(). One
   // render's listeners are removed when the next render installs its own.
   var COLMENU_OFF = [];
-  try { localStorage.removeItem(COLS_STORE_RETIRED); } catch (e) {}
+  try { COLS_STORE_RETIRED.forEach(function (k) { localStorage.removeItem(k); }); } catch (e) {}
   var COL_PREFS = (function () {
     try { var r = JSON.parse(localStorage.getItem(COLS_STORE)); if (r && typeof r === "object") return r; } catch (e) {}
     // Default hidden: #, District, the FTES pair and the county context
@@ -11642,7 +11800,7 @@
   function totalFundsCellHtml(row) {
     var cap = (row.total || 0) / awardDivisor();
     return '<td class="cf-award cf-max cf-total c" title="' + esc("Max award" + awardSpanWords() + ": " + fmtMoney(cap)) + '">' +
-      fmtMoney(cap) + boundWordHtml(row) + "</td>";
+      '<span class="cf-amt">' + fmtMoney(cap) + boundWordHtml(row) + "</span></td>";
   }
   // The six funding cells, in COLS_COLLEGE's order — ONE definition for the
   // institution rows, the district subtotals and the Statewide row.
@@ -12139,15 +12297,15 @@
     var ncOn = !!o.nc;
     var when = frontloaded() ? "for the " + windowLabel() + " window" : "per year (Annual funding)";
     var HEAD = { college: o.head || "Priority outcomes", cr_award: "Max CR Funds", cr_current: currHeadHtml("CR Funds"),
-      nc_award: "Max NC Funds", nc_current: currHeadHtml("NC Funds"), total: "Total Funds",
-      current_total: currHeadHtml("Total Funds") };
+      nc_award: "Max NC Funds", nc_current: currHeadHtml("NC Funds"), total: "Max Funds",
+      current_total: currHeadHtml("Funds") };
     var HEAD_TIP = {
       cr_award: "This priority's credit funding " + when + ", with its Max FTES beneath: the credit measure's target at the priority's FTES reimbursement rate.",
       cr_current: "Credit funding this priority has qualified for so far, with the Actual FTES beneath. Hover a figure for what remains." + GRAY_WORDS,
       nc_award: "This priority's noncredit funding " + when + ", with its Max FTES beneath. " + ncLaneRule(),
       nc_current: "Noncredit funding this priority has qualified for so far, with the Actual FTES beneath. " + ncLaneRule() + GRAY_WORDS,
-      total: "This priority's funding, credit and noncredit together.",
-      current_total: "Funding this priority has qualified for so far, credit and noncredit together." + GRAY_WORDS
+      total: "This row's funding " + when + ", with its Max FTES or its target beneath. Hover a figure for how it is reached.",
+      current_total: "Funding this row has qualified for so far, with the Actual FTES or the actual count beneath. Hover a figure for what remains." + GRAY_WORDS
     };
     var head = '<tr class="cplfund-subhead">' + cols.map(function (col) {
       var lab = HEAD[col.key];
@@ -12193,6 +12351,11 @@
           fig(earnedMoney(f.actualFunds), a.text, a.tip === TBA_TIP ? TBA_TIP : "") +
           (o.college && linkP ? srcLinkHtml(o.college.college, linkP) : "") + "</td>";
       };
+      // The two columns the table shows (Sam, 2026-10-25): Max Funds and Curr
+      // Funds. A row of one lane (every credit priority under the outcomes
+      // lane) is that lane's own cell, hovers and Unit sources included; a row
+      // of two lanes (origination) adds them, its hovers naming each.
+      var laneTip = function (cell) { var m = /title="([^"]*)"/.exec(cell); return m ? m[1] : ""; };
       var dash = ncOut
         ? '<td class="c" title="A credit priority: the noncredit share releases on the noncredit outcomes below.">&mdash;</td>'
         : '<td class="c" title="Credit only: no noncredit share.">&mdash;</td>';
@@ -12213,12 +12376,18 @@
         college: '<td class="t cf-subname" title="' + esc(prioLabelTip(p, slot, np)) + '">' +
           esc(p.label) + (p.title ? ": " + esc(p.title) : "") + "</td>",
         cr_award: maxCell(crF, isF, p, "cr"),
-        cr_current: curCell(crF, crA, isF, p),
+        cr_current: curCell(crF, crA, isF, null),
         nc_award: ncF ? maxCell(ncF, true, np, "nc") : dash,
         nc_current: ncF ? curCell(ncF, ncA, true) : dash,
-        total: '<td class="c">' + fig(fmtMoney(maxTot), maxLine) + "</td>",
-        current_total: '<td class="c' + gate + '" title="' + esc(diffMoney(maxTot, actTot) + " still to qualify for" + grayWords) + '">' +
-          fig(earnedMoney(actTot), actLine, actLine === "TBA" ? TBA_TIP : "") + "</td>"
+        total: ncF
+          ? '<td class="c" title="' + [laneTip(maxCell(crF, isF, p, "cr")), laneTip(maxCell(ncF, true, np, "nc"))].filter(Boolean).join("&#10;") + '">' +
+            fig(fmtMoney(maxTot), maxLine) + "</td>"
+          : maxCell(crF, isF, p, "cr"),
+        current_total: ncF
+          ? '<td class="c' + gate + '" title="' + esc(diffMoney(maxTot, actTot) + " still to qualify for" + grayWords) + '">' +
+            fig(earnedMoney(actTot), actLine, actLine === "TBA" ? TBA_TIP : "") +
+            (o.college ? srcLinkHtml(o.college.college, p) : "") + "</td>"
+          : curCell(crF, crA, isF, p)
       };
       var srcRow = o.college && SRC_OPEN[srcKey(o.college.college, p)] && srcLinkHtml(o.college.college, p)
         ? '<tr class="cplfund-detail cplfund-srcrow"><td colspan="' + cols.length + '">' +
@@ -12263,7 +12432,7 @@
         nc_award: '<td class="c" title="' + esc(maxTip) + '">' + fig(fmtMoney(f.maxFunds), tgtLine, f.target == null ? TBA_TIP : "") + "</td>",
         nc_current: '<td class="c' + ncGateCls + '" title="' + esc(curTip) + '">' +
           fig(earnedMoney(f.actualFunds), act.text, act.tip === TBA_TIP ? TBA_TIP : "") + "</td>",
-        total: '<td class="c">' + fig(fmtMoney(f.maxFunds), tgtLine, f.target == null ? TBA_TIP : "") + "</td>",
+        total: '<td class="c" title="' + esc(maxTip) + '">' + fig(fmtMoney(f.maxFunds), tgtLine, f.target == null ? TBA_TIP : "") + "</td>",
         current_total: '<td class="c' + ncGateCls + '" title="' + esc(curTip) + '">' +
           fig(earnedMoney(f.actualFunds), act.text, act.tip === TBA_TIP ? TBA_TIP : "") + "</td>"
       };
@@ -12271,15 +12440,12 @@
         return CELL[col.key] || "<td></td>";
       }).join("") + "</tr>";
     }).join("") : "";
-    // The reported line of the noncredit lane: a count the college reports on
-    // its attestation, funded by nothing here.
-    var ncRep = ncOut ? ncReportedList().map(function (r) {
-      return '<tr class="cplfund-detail cplfund-subnote"><td colspan="' + cols.length + '">Reported, not funded: ' +
-        esc(r.title || "") + ' <span class="dk">' + esc(r.text || "") + "</span></td></tr>";
-    }).join("") : "";
+    // The noncredit lane's reported count (former noncredit students awarded
+    // CPL) left the table on 2026-10-25 (Sam struck the line): it rides the
+    // attestation, the noncredit rules and the memo, funded by nothing.
     // No priority row to show (every card switched off the college rows): no
     // header band over nothing.
-    return body || outRows || reported ? head + body + outRows + reported + ncRep : "";
+    return body || outRows || reported ? head + body + outRows + reported : "";
   }
   // Max Funds less Actual Funds, as hover text, printed so that it never
   // undoes the public coarsening of Actual Funds (the ADR: demonstrated figures
@@ -14024,7 +14190,7 @@
       average: { max: avg, cr: avg - avgNc, nc: avgNc, pos: cap > base ? (avg - base) / (cap - base) * 100 : 0 },
       capped: am && am.cappedCount != null ? am.cappedCount : 0,
       priorities: prios, reported: reported, ncLane: ncLaneMode(), ncOutcomes: ncOut,
-      deadline: participationDeadline(), timeline: timingItems() };
+      deadline: participationDeadline(), timeline: timingSorted() };
   }
   // The headline figures the splash compares, filed against live. A film shows
   // these; a difference on any of them is a frame that no longer matches.
@@ -15164,9 +15330,13 @@
       (pf && pf.suppress_below ? " (counts under " + pf.suppress_below + " read &lt;" + pf.suppress_below + ")" : ""));
     var fs = d.ftes_source || {}, hs = d.headcount_source || {};
     if (fs.name) parts.push(link(fs.url, esc(fs.name)));
-    if (hs.name) parts.push(link(hs.url, esc(hs.name)));
+    // The headcount and the Census figures size nothing on the FTES basis, and
+    // the Census feeds only the Working adults column, hidden by default (Sam
+    // struck both from the line, 2026-10-25), so each is cited only while the
+    // table reads it.
+    if (hs.name && !usesFtes()) parts.push(link(hs.url, esc(hs.name)));
     // The Census citation rides the data's footnotes as "Source: <name>: <url>".
-    (d.footnotes || []).forEach(function (f) {
+    if (!isColHidden("working_adults")) (d.footnotes || []).forEach(function (f) {
       var m = /^Source:\s*(.+?):\s*(https?:\S+)\s*$/.exec(String(f));
       if (m) parts.push(link(m[2], esc(m[1])));
     });
@@ -15421,6 +15591,16 @@
         var msg = form.querySelector("[data-repmsg]");
         if (got.error) { if (msg) msg.textContent = got.error; return; }
         saveReport(got.rec);
+      });
+    });
+    holder.querySelectorAll("[data-repopen]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var college = b.getAttribute("data-repopen");
+        REPORT_OPEN[college] = !REPORT_OPEN[college];
+        var box = document.getElementById(reportBoxId(college));
+        if (box) box.hidden = !REPORT_OPEN[college];
+        b.setAttribute("aria-expanded", REPORT_OPEN[college] ? "true" : "false");
       });
     });
     holder.querySelectorAll("[data-repwithdraw]").forEach(function (b) {
@@ -16772,6 +16952,9 @@
       return { title: PUBLIC_BY_ID[id] ? pubTitleOverride(id) : titleOverride(id), hidden: secHidden(id) };
     },
     setPubTitle: setPubTitle,
+    pubLinkLabel: pubLinkLabel,
+    setPubLinkLabel: setPubLinkLabel,
+    publicLinkIds: function () { return PUBLIC_LINK_IDS.slice(); },
     publicSections: function () { return PUBLIC_SECTIONS.map(function (x) { return { id: x.id, label: x.label, fixedTitle: !!x.fixedTitle }; }); },
     // The order the public explainer's own sections should appear in. Exposed
     // beside sectionCuration() for the same reason: the page paints its own
@@ -16982,7 +17165,7 @@
     // The timing milestones, verbatim from the same layers the tab renders
     // (SCENARIO ?? SHARED ?? baked) — so the explainer prints the list a
     // curator edited, never a typed copy of it.
-    _timing: function () { return timingItems(); },
+    _timing: function () { return timingSorted(); },
     // The BASELINE REQUIREMENTS, from the same accessors the tab's eligibility
     // section renders (coordLabel / partReqText / extraReqs) and its intro
     // prose block. Exposed 2026-09-15 because the public explainer had TYPED
@@ -17222,6 +17405,8 @@
     _setNotes: function (o) { NOTES = o || {}; },
     _setReports: function (rows) { REPORTS = Array.isArray(rows) ? rows.slice() : []; REPORT_MSG = {}; },
     _reports: function () { return REPORTS.slice(); },
+    _reportDeadlines: reportDeadlines,
+    _nextReportDue: nextReportDue,
     _setLedger: function (o) {
       if (!o) { LEDGER = { loaded: false, ok: false, pool: {} }; }
       else { LEDGER = { loaded: true, ok: true, pool: o }; }
