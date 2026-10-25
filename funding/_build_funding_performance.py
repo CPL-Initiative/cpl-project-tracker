@@ -720,11 +720,11 @@ def fetch_nc_counts(argv):
 
 # PostgREST cancels a call at the authenticator's 8 s statement_timeout, and the
 # function's own `set statement_timeout` does not lift it: Postgres arms the
-# timer when the outer statement starts. Warm, the RPC answers in about 1 s; cold,
-# while the daily run loads the database, it ran past 8 s and came back 500
-# (2026-10-25 11:40Z, "canceling statement due to statement timeout"). The first
-# call warms the cache, so a second attempt on a 5xx or a dropped connection
-# answers (S476).
+# timer when the outer statement starts. The RPC answers in about 1 s, but the
+# database stalls for 4 to 5 s at times (every slow call read from shared
+# buffers, so the cache is not the cause); on 2026-10-25 11:40Z the call ran past
+# 8 s and came back 500 ("canceling statement due to statement timeout"). A stall
+# passes, so a second attempt on a 5xx or a dropped connection answers (S476, S477).
 NC_COUNTS_ATTEMPTS = 3
 
 

@@ -563,11 +563,17 @@ From the implementation-funding lane's noncredit paragraph, verbatim:
 
 - **The RPC came back 500 and every nc key stayed absent** (run 40189454249, 11:40Z). The Postgres log at 11:40:38
   reads *canceling statement due to statement timeout*. PostgREST runs a call under the authenticator's 8 s
-  `statement_timeout`; the function's own `set statement_timeout = '60s'` does not lift it, because Postgres arms the
-  timer when the outer statement starts. Warm, the RPC answers in 1.1 s; cold, 6.1 s from the MCP, and longer while the
-  daily run loads the database.
+  `statement_timeout`; a timeout set on the function does not lift it, because Postgres arms the timer when the outer
+  statement starts. Measured by the session Sam opened by hand beside this run (S477): with the function at 60 s and
+  the session at 3 s, the call was still canceled. That `set statement_timeout = '60s'` was its test, applied about
+  12:10Z and reset at 12:32Z; the live function carries `search_path` alone, as `kb/supabase_cpl_funding_nc_counts.sql`
+  says.
+- **The slow calls are stalls on the database, not a cold cache.** Every slow call read its rows from shared buffers.
+  In one plan a seq scan read 116,815 cached rows in 4,066 ms and the next scan of the same table in 59 ms. About half
+  of S477's calls met a stall of 4 to 5 s, so the RPC took either 1.1 s or about 6 s.
 - **The fix is a retry** (#2443): `call_nc_counts_rpc()` tries up to three times on a 5xx or a dropped connection, never
-  on a 4xx. The first call warms the cache. Absent-never-zero holds on a final failure.
+  on a 4xx. A stall passes, so a later attempt answers. Absent-never-zero holds on a final failure. The 12:40Z run
+  (40194164763) carried the counts: Cabrillo `nc_exh` 34, statewide `nc_exh` 78, `origination.in_scope.NOCE` present.
 - **A function-level timeout is no protection for a PostgREST caller.** If the RPC ever runs past 8 s warm, the fix is
   in the SQL (or a role-level setting, which reaches every service-role call and is shared ground), never a longer
   client timeout.
