@@ -157,7 +157,7 @@ check("B10: the credit cards' Total Possible is the credit slice alone, and the 
   afterCredit < beforeSum && afterNc > 0 && Math.abs(afterCredit + afterNc - beforeSum) < 2);
 check("B11: the explainer's lines carry the mode, the rule, the reported figure and the conditions in words",
   after.ncMode === "outcomes" && /releases on the noncredit outcomes/.test(after.ncRule) &&
-  after.ncReported.length === 1 && /noncredit CPL coordinator/.test(after.ncCondWords) &&
+  after.ncReported.length === 1 && /Noncredit CPL Lead/.test(after.ncCondWords) && !/strike/i.test(after.ncCondWords) &&
   after.ncPrios[0].rule.indexOf("the greater of 2 and 5%") >= 0);
 
 // ── C. the gate, per lane ────────────────────────────────────────────────────
@@ -174,16 +174,17 @@ T.render();
 const a1 = T._alloc("Mt San Antonio"), a2 = T._alloc("Santa Barbara"), an = T._alloc("NOCE");
 check("C2: the confirmation, a published noncredit coordinator and a standing attestation release the noncredit share",
   a1.nc_gate_blocked === false && a1.held_nc === 0 && Math.abs(a1.earned_nc - mtsac[0].earned) < 1);
-check("C3: an institution whose credit conditions hold but whose strike team has not attested: the credit share releases, the noncredit share is held",
+check("C3: an institution whose credit conditions hold but which has not attested its Noncredit CPL Lead: the credit share releases, the noncredit share is held",
   a2.gate_blocked === false && a2.earned_cr > 0 && a2.nc_gate_blocked === true && a2.earned_nc === 0 && a2.held_nc > 0);
 check("C4: a standalone noncredit institution without the confirmation or the attestation is held whole",
   an.gate_blocked === true && an.nc_gate_blocked === true && an.earned_total === 0 && an.held_nc > 0);
 const cm = T._conditions("Mt San Antonio"), cn = T._conditions("NOCE");
 check("C5: a credit college lists the noncredit conditions beside its own, for its noncredit share alone",
-  cm.items.map((i) => i.kind).indexOf("nc_coord") < 0 && cm.ncItems.map((i) => i.kind).join(",") === "nc_coord,nc_team" &&
+  cm.items.map((i) => i.kind).indexOf("nc_coord") < 0 && // One noncredit condition since 2026-10-25 (Sam struck the strike team).
+  cm.ncItems.map((i) => i.kind).join(",") === "nc_coord" &&
   cm.ncItems.every((i) => i.met) && cm.ncBlocked === false && cm.ncMode === "outcomes");
-check("C6: a standalone's conditions ARE the noncredit lane's — the confirmation, the coordinator and the strike team; the MAP coordinator and the certificates condition retire",
-  cn.items.map((i) => i.kind).join(",") === "part,nc_coord,nc_team" && cn.ncItems.length === 0 && cn.blocked === true);
+check("C6: a standalone's conditions ARE the noncredit lane's — the confirmation and the Noncredit CPL Lead; the MAP coordinator and the certificates condition retire",
+  cn.items.map((i) => i.kind).join(",") === "part,nc_coord" && cn.ncItems.length === 0 && cn.blocked === true);
 
 // ── D. the surfaces ──────────────────────────────────────────────────────────
 const keys = colKeys(doc);
@@ -199,11 +200,12 @@ check("D2: NC-1 reads Max NC Funds with its target beneath, Curr NC Funds with i
 check("D3: the hovers say how the target was reached and what remains",
   /the greater of 2 and 5% of its CDCP noncredit courses, capped at 10 \(196 courses in COCI\)/.test(c1.nc_award.tip) &&
   /5 exhibits to the target/.test(c1.nc_current.tip));
-check("D4: the reported figure is a note under the rows, funded by nothing",
-  d1.notes.some((n) => /Reported, not funded: Former noncredit students awarded CPL credit/.test(flat(n))));
-check("D5: the conditions line shows the noncredit share's own, with the published coordinator's name and title",
-  /Noncredit share:/.test(flat(d1.first)) && /Noncredit CPL coordinator published/.test(flat(d1.first)) &&
-  /Noncredit CPL Coordinator: Jane Doe \(Dean\)/.test(flat(d1.first)) && /Strike team attested for 2026-27/.test(flat(d1.first)));
+// Sam struck the line from the table on 2026-10-25; it rides the cards, the rules and the memo (D10, G4).
+check("D4: the reported figure is not a row of the table",
+  !d1.all.some((n) => /Reported, not funded/.test(flat(n))));
+check("D5: the conditions line shows the noncredit share's own, with the published Lead's name and title",
+  /Noncredit share:/.test(flat(d1.first)) && /Noncredit CPL Lead published/.test(flat(d1.first)) &&
+  /Noncredit CPL Lead: Jane Doe \(Dean\)/.test(flat(d1.first)) && !/[Ss]trike/.test(flat(d1.first)));
 const d2 = openDrill(win, doc, "c:Santa Barbara");
 const c2 = readCells(keys, d2.rows.filter((r) => r.classList.contains("cplfund-ncoutrow"))[0]);
 check("D6: a held noncredit share reads gray in its Curr cells while the credit cells do not",
@@ -211,8 +213,8 @@ check("D6: a held noncredit share reads gray in its Curr cells while the credit 
 const dn = openDrill(win, doc, "c:NOCE");
 check("D7: a standalone's expand is its noncredit outcomes under a band of their own, its conditions the noncredit lane's",
   /^Noncredit outcomes/.test(flat(dn.band)) && dn.rows.length === 2 && dn.rows.every((r) => r.classList.contains("cplfund-ncoutrow")) &&
-  /Confirmation not yet on file/.test(flat(dn.first)) && /Noncredit CPL coordinator not yet attested/.test(flat(dn.first)) &&
-  /Strike-team attestation not yet on file/.test(flat(dn.first)));
+  /Confirmation not yet on file/.test(flat(dn.first)) && /Noncredit CPL Lead not yet attested/.test(flat(dn.first)) &&
+  !/[Ss]trike/.test(flat(dn.first)));
 const ds = openDrill(win, doc, "sys");
 const sysOut = ds.rows.filter((r) => r.classList.contains("cplfund-ncoutrow"));
 const s1 = sysOut.length ? readCells(keys, sysOut[0]) : null;
@@ -225,7 +227,7 @@ const cards = doc.querySelectorAll("[data-nccard]");
 const section = doc.querySelector(".cplfund-ncout");
 check("D10: the outcome cards stand in their own section under the priority cards, two of them, with the rule and the conditions in words",
   cards.length === 2 && !!section && /Noncredit outcomes/.test(flat(section)) &&
-  /waits on its own minimum conditions: the institution's confirmation, a noncredit CPL coordinator named and published and a strike-team attestation renewed each year/.test(flat(section)) &&
+  /waits on its own minimum conditions: the institution's confirmation and a Noncredit CPL Lead named and published/.test(flat(section)) &&
   /Reported, not funded: Former noncredit students awarded CPL credit/.test(flat(section)));
 check("D11: NC-1's card names its target as the institutions' sum and its share of the noncredit share; NC-2 counts courses",
   /NC-1/.test(flat(cards[0])) && /28 exhibits/.test(flat(cards[0])) && /% of each institution's noncredit share/.test(flat(cards[0])) &&
@@ -370,7 +372,7 @@ check("F2: the committed Scenario 3 is origination: twins pinned to the nc_* uni
   const D2 = w2.CPL_FUNDING_EXPLAINER.buildPayload(T2, w2.CPL_FUNDING);
   check("G2: the payload carries the lane: the mode, the outcomes with their statewide targets, the rule, the reported figure, the conditions in words",
     D2.ncMode === "outcomes" && D2.ncOutcomes.length === 2 && D2.ncOutcomes[0].statewideTarget === 28 &&
-    /releases on the noncredit outcomes/.test(D2.ncRule) && D2.ncReported.length === 1 && /strike-team/.test(D2.ncCondWords) &&
+    /releases on the noncredit outcomes/.test(D2.ncRule) && D2.ncReported.length === 1 && /Noncredit CPL Lead/.test(D2.ncCondWords) &&
     D2.progress.ncPrios.length === 2);
   const blocks = doc2.querySelectorAll("#nc-outcomes .prio");
   check("G3: the page paints one block an outcome under the priority cards, with the target, the rule and the progress",
@@ -379,19 +381,18 @@ check("F2: the committed Scenario 3 is origination: twins pinned to the nc_* uni
     /Progress: MAP records demonstrate/.test(flat(blocks[0])) && /Target: 1[0-9][0-9] courses statewide/.test(flat(blocks[1])));
   check("G4: the noncredit passage follows the mode — the outcomes rule and the conditions, no origination sentence, the reported line in its list",
     /releases on the noncredit outcomes/.test(flat(doc2.getElementById("nc-body"))) &&
-    /waits on its own minimum conditions: the institution's confirmation, a noncredit CPL coordinator named and published and a strike-team attestation renewed each year/.test(flat(doc2.getElementById("nc-body"))) &&
+    /waits on its own minimum conditions: the institution's confirmation and a Noncredit CPL Lead named and published/.test(flat(doc2.getElementById("nc-body"))) &&
     !/originat/i.test(flat(doc2.getElementById("nc-body"))) && !/originat/i.test(flat(doc2.getElementById("nc-list"))) &&
     /Reported, not funded — Former noncredit students awarded CPL credit/.test(flat(doc2.getElementById("nc-list"))));
   const reqs = Array.from(doc2.querySelectorAll("#req-list li")).map(flat);
-  check("G5: the minimum conditions list ends with the noncredit share's two, each with its count line once the attestation is read",
-    reqs.length >= 2 && /For the noncredit share of an award: a noncredit CPL coordinator named and published/.test(reqs[reqs.length - 2]) &&
-    /For the noncredit share of an award: a strike-team attestation renewed each year/.test(reqs[reqs.length - 1]));
+  check("G5: the minimum conditions list ends with the noncredit share's one, its count line once the attestation is read",
+    reqs.length >= 2 && /For the noncredit share of an award: a Noncredit CPL Lead named and published/.test(reqs[reqs.length - 1]) &&
+    !reqs.some((r) => /strike-team/.test(r)));
   T2._setElig({ coordOk: true, coord: {}, optin: {}, ncAttest: { "Mt San Antonio": { status: "self_attested", coordinator_name: "Jane Doe" } } });
   paint();
   const reqs2 = Array.from(doc2.querySelectorAll("#req-list li")).map(flat);
-  check("G6: the count lines name the institutions with a noncredit share — one published, one attested",
-    /1 of \d+ institutions with a noncredit share have one published\./.test(reqs2[reqs2.length - 2]) &&
-    /1 of \d+ institutions with a noncredit share have attested\./.test(reqs2[reqs2.length - 1]));
+  check("G6: the count line names the institutions with a noncredit share that have one published",
+    /1 of \d+ institutions with a noncredit share have one published\./.test(reqs2[reqs2.length - 1]));
 })();
 
 finish();

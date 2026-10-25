@@ -71,11 +71,12 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const ths = Array.from(table.querySelectorAll("thead th"));
   check("R7: no Combined column in the header (the pair's sum IS the one award)",
     !ths.some(function (th) { return (th.getAttribute("data-sort") || "") === "combined"; }));
-  // Titled Total Funds since the College Dashboard (Sam, 2026-09-28): the max
-  // award, set on the right after the two shares and their Curr columns.
-  check("2026-09-23: ONE combined column, the max award (Total Funds), sits beside the CR/NC award pair",
+  // Titled Max Funds since 2026-10-25 (Sam: two funding columns), Total Funds
+  // before (2026-09-28): the max award. The CR/NC pair stays in the markup,
+  // hidden by default and offered in the Columns menu.
+  check("2026-09-23: ONE combined column, the max award (Max Funds), beside the CR/NC award pair",
     ths.filter(function (th) { return (th.getAttribute("data-sort") || "") === "total"; }).length === 1 &&
-    /^Total Funds/.test(table.querySelector('th[data-sort="total"]').textContent.trim()) &&
+    /^Max Funds/.test(table.querySelector('th[data-sort="total"]').textContent.trim()) &&
     !!table.querySelector('th[data-sort="cr_award"]') && !!table.querySelector('th[data-sort="nc_award"]'));
   check("R7: no spanning combined cell survives anywhere", !table.querySelector("td.cf-combined"));
   check("R6: no paired NC rows and no NC SYSTEM row — one row per institution",
@@ -221,8 +222,8 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const dom = freshDom();
   // Hide the NC award column and the county column from stored prefs — the
   // adjacent-column state that used to shear the paired rows. (The store is
-  // v2 since the College Dashboard, 2026-09-28.)
-  dom.window.localStorage.setItem("cplfund_cols_v2",
+  // v3 since the two funding columns, 2026-10-25.)
+  dom.window.localStorage.setItem("cplfund_cols_v3",
     JSON.stringify({ college: { nc_award: true, working_adults: true } }));
   const doc = boot(dom.window);
   const table = doc.querySelector(".cplfund-table");

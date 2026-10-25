@@ -17,9 +17,10 @@
      that frames her in its Ask Sierra side bar (sidebar.js) names its own theme
      in ?theme=, which wins, so she matches the page beside her. -->
 <script>(function(){var t=null;try{t=new URLSearchParams(location.search).get("theme")}catch(e){}if(t!=="light"&&t!=="dark"){try{t=localStorage.getItem("cpl_theme")}catch(e){}}document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")})()</script>
-<!-- In the side bar (sidebar.js adds ?panel=1) the bar names her and the page
-     beside it carries the logo, so her header row stands down to About Sierra
-     alone. Set before the stylesheet paints, so the row never flashes in. -->
+<!-- In the side bar (sidebar.js adds ?panel=1) the bar names her, the page
+     beside it carries the logo and her footer says what About Sierra said, so her
+     header row stands down whole (Sam, 2026-10-25). Set before the stylesheet
+     paints, so the row never flashes in. -->
 <script>if(/[?&]panel=1(&|$)/.test(location.search))document.documentElement.setAttribute("data-panel","")</script>
 <link rel="stylesheet" href="./sierra.css">
 </head>

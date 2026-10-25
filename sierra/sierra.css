@@ -133,14 +133,14 @@ button { font: inherit; color: inherit; }
 .s-about {
   margin-left: auto; background: none; border: 0; padding: 8px 4px; min-height: 44px;
   cursor: pointer; white-space: nowrap;
-  font: 600 1rem var(--sierra-font); color: var(--sierra-cobalt);
+  font: 400 1rem var(--sierra-font); color: var(--sierra-cobalt);
   text-decoration: underline; text-underline-offset: 3px;
 }
 .s-about:hover, .s-about[aria-expanded="true"] { text-decoration-thickness: 2px; }
 .s-theme { display: flex; gap: 12px; flex: 0 0 auto; }
 .s-theme-btn {
   background: none; border: 0; padding: 8px 2px; min-height: 44px; min-width: 24px; cursor: pointer; white-space: nowrap;
-  font: 600 1rem var(--sierra-font); color: var(--sierra-cobalt);
+  font: 400 1rem var(--sierra-font); color: var(--sierra-cobalt);
   text-decoration: underline; text-underline-offset: 3px;
 }
 .s-theme-btn[aria-pressed="true"] { color: var(--sierra-heading); font-weight: 700; text-decoration-thickness: 2px; }
@@ -224,14 +224,14 @@ button { font: inherit; color: inherit; }
 .s-asking-who .s-aud-toggle { display: none; }
 .s-aud-chip {
   background: none; border: 0; border-radius: 0; padding: 4px 2px; min-height: 32px; cursor: pointer;
-  font: 600 .9375rem var(--sierra-font); color: var(--sierra-cobalt);
+  font: 400 .9375rem var(--sierra-font); color: var(--sierra-cobalt);
   text-decoration: underline; text-underline-offset: 3px;
 }
 .s-aud-chip:hover { text-decoration-thickness: 2px; }
 .s-aud-chip.on { color: var(--sierra-heading); font-weight: 700; text-decoration-thickness: 2px; }
 .s-aud-toggle {
   display: inline-flex; background: none; border: 0; padding: 6px 2px; min-height: 36px; cursor: pointer;
-  font: 600 .9375rem var(--sierra-font); color: var(--sierra-cobalt); text-align: left;
+  font: 400 .9375rem var(--sierra-font); color: var(--sierra-cobalt); text-align: left;
   text-decoration: underline; text-underline-offset: 3px;
 }
 .s-aud-toggle:hover { text-decoration-thickness: 2px; }
@@ -240,19 +240,20 @@ button { font: inherit; color: inherit; }
 .s-status:empty { display: none; }
 .s-status.s-error { color: var(--sierra-crimson); font-weight: 600; }
 
-/* Arriving: starter questions where the paintings were, as words. */
+/* Arriving: starter questions where the paintings were, as words. The links and
+   starters read in regular weight (Sam, 2026-10-25); a pick keeps its bold. */
 .s-try { display: grid; gap: 4px; }
 .s-try-label { margin: 0; font: 700 .875rem var(--sierra-font); color: var(--sierra-heading); }
 .s-try-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; }
 .s-try-q {
   background: none; border: 0; padding: 4px 2px; min-height: 32px; cursor: pointer; text-align: left;
-  font: 600 1rem var(--sierra-font); color: var(--sierra-cobalt);
+  font: 400 1rem var(--sierra-font); color: var(--sierra-cobalt);
   text-decoration: underline; text-underline-offset: 3px;
 }
 .s-try-q:hover { text-decoration-thickness: 2px; }
 .s-word {
   background: none; border: 0; padding: 8px 4px; min-height: 40px; cursor: pointer;
-  font: 600 1rem var(--sierra-font); color: var(--sierra-cobalt);
+  font: 400 1rem var(--sierra-font); color: var(--sierra-cobalt);
   text-decoration: underline; text-underline-offset: 3px;
 }
 .s-word:hover { text-decoration-thickness: 2px; }
@@ -382,7 +383,7 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
 .s-foot p { margin: 0; }
 .s-foot a { color: var(--sierra-cobalt); }
 .s-links ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 4px 18px; }
-.s-links a { display: inline-flex; align-items: center; min-height: 24px; font-weight: 600; text-underline-offset: 3px; }
+.s-links a { display: inline-flex; align-items: center; min-height: 24px; font-weight: 400; text-underline-offset: 3px; }
 :root:not([data-panel]) .s-foot { background: var(--sierra-foot-bg); color: var(--sierra-foot-fg); }
 :root:not([data-panel]) .s-foot a { color: var(--sierra-foot-fg); }
 /* The CPL Initiative mark: white on the band in both themes; in the side bar,
@@ -393,8 +394,10 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
 :root[data-panel][data-theme="dark"] .s-foot-logo-white { display: block; }
 
 /* ── In the side bar ── */
-:root[data-panel] .s-head { border-bottom: 0; padding-block: 4px 0; }
-:root[data-panel] .s-home, :root[data-panel] .s-who-head, :root[data-panel] .s-theme, :root[data-panel] .s-links { display: none; }
+/* The bar names her and the page beside it carries the logo; her footer says
+   what About Sierra said (Sam, 2026-10-25: "No need for the About Sierra button
+   since you include it in the footer"). So her header row stands down whole. */
+:root[data-panel] .s-head, :root[data-panel] .s-about-panel, :root[data-panel] .s-links { display: none; }
 :root[data-panel] .s-main { padding-top: 4px; }
 :root[data-panel] .s-hello h1 { font-size: 1.95rem; }
 :root[data-panel] .s-try-list li:nth-child(n+3) { display: none; }

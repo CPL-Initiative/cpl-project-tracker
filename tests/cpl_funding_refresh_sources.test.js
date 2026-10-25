@@ -181,8 +181,10 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
     check("1i: Escape closes it", !doc.getElementById("cplFundSplash"));
 
     // ── 5 (signed out / public), 6: the public view ──
-    check("5a: a signed-in reviewer gets the Unit sources word on P1's Curr credit cell only",
-      !!openDrill(w, doc, "c:" + SEM.college).cells[0].cr_current.td.querySelector("[data-srcopen]") &&
+    // In Curr Funds since 2026-10-25, the column the table shows (Sam: two funding columns).
+    check("5a: a signed-in reviewer gets the Unit sources word on P1's Curr Funds cell only",
+      !!openDrill(w, doc, "c:" + SEM.college).cells[0].current_total.td.querySelector("[data-srcopen]") &&
+      !openDrill(w, doc, "c:" + SEM.college).cells[0].cr_current.td.querySelector("[data-srcopen]") &&
       !openDrill(w, doc, "c:" + SEM.college).cells[0].nc_current.td.querySelector("[data-srcopen]"));
     click(w, doc.querySelector('[data-viewmode="public"]'));
     check("1j: the Public page view frames the page and carries no Refresh",
@@ -293,7 +295,7 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
     check("5d: the lists run by units, exhibits and recommendations apart",
       agg.exhibits.length === 14 && agg.exhibits[0].id === ex(0) && agg.crs.length === 14 && agg.crs[0].units === 100);
     let dd = openDrill(w, doc, "c:" + K);
-    click(w, dd.cells[0].cr_current.td.querySelector("[data-srcopen]"));
+    click(w, dd.cells[0].current_total.td.querySelector("[data-srcopen]"));
     await tick(30);
     dd = openDrill(w, doc, "c:" + K);
     const srow = doc.querySelector("#cplFundTable tr.cplfund-srcrow");
@@ -318,7 +320,7 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
     check("5l: the read is range-paginated and carries the reviewer's credential",
       q && q.range === "0-999" && q.auth === "Bearer header.payload.sig" && /college_id=eq\.7/.test(q.url));
     // P2 measures transcribed units with the Counselor step: the caveat says the report cannot filter it.
-    click(w, dd.cells[1].cr_current.td.querySelector("[data-srcopen]"));
+    click(w, dd.cells[1].current_total.td.querySelector("[data-srcopen]"));
     await tick(10);
     const rows2 = Array.from(doc.querySelectorAll("#cplFundTable tr.cplfund-srcrow")).map((r) => r.textContent).join(" ");
     check("5m: the transcribed panel says the report does not carry the Counselor step",

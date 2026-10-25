@@ -23,8 +23,9 @@
  *     so Sierra never paints dark beside a page that opened Light, nor light
  *     beside one that is dark. A host with no theme of its own follows the
  *     device (COBI's System), so the bar names the device's, and follows it. ?panel=1
- *     tells her she is in the bar: her header row keeps About Sierra alone, since
- *     the bar names her and the page beside it carries the logo.
+ *     tells her she is in the bar: her header row stands down whole, since the bar
+ *     names her, the page beside it carries the logo and her footer says what
+ *     About Sierra said (Sam, 2026-10-25). The bar's words read in regular weight.
  *   · The look is the host's. A host maps the --sierra-bar-* tokens onto its own
  *     (library/index.html is the worked example); a host that maps none gets the
  *     browser's system colors.
@@ -74,7 +75,7 @@
     '  padding:max(8px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 8px 16px; border-bottom:1px solid var(--sierra-bar-line, GrayText); }',
     '.sbar-title { margin:0; font-family:var(--sierra-bar-head-font, inherit); font-size:1.15rem; line-height:1.3; color:var(--sierra-bar-heading, inherit); }',
     '.sbar-tools { display:flex; align-items:center; gap:14px; }',
-    '.sbar-close, .sbar-size { background:none; border:0; padding:0 2px; min-height:24px; min-width:24px; font:inherit; font-weight:700;',
+    '.sbar-close, .sbar-size { background:none; border:0; padding:0 2px; min-height:24px; min-width:24px; font:inherit; font-weight:400;',
     '  color:var(--sierra-bar-link, LinkText); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }',
     '.sbar-size[aria-disabled="true"] { color:var(--sierra-bar-ink, CanvasText); text-decoration:none; cursor:default; opacity:.6; }',
     '.sbar-frame { flex:1 1 auto; display:block; width:100%; min-height:0; border:0; }',

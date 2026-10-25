@@ -106,7 +106,7 @@ function colOf(tbl, name) {
     !!drill0.band && drill0.band.textContent.indexOf("Max CR Funds") !== -1);
   check("drill-in lines its priorities up under the row's own columns (round 8, 2026-09-29)",
     !!drill0.band && Array.from(drill0.band.querySelectorAll("th")).map(function (h) { return h.textContent.trim(); })
-      .join("|") === "Priority outcomes|Max CR Funds|CurrCurrent CR Funds|Max NC Funds|CurrCurrent NC Funds|Total Funds|CurrCurrent Total Funds");
+      .join("|") === "Priority outcomes|Max CR Funds|CurrCurrent CR Funds|Max NC Funds|CurrCurrent NC Funds|Max Funds|CurrCurrent Funds");
   // The active year's metric moved from the drill-in to the priority CARDS —
   // still one click away, and the card is the surface the curator edits.
   check("the active year's metric shows on the priority cards (the drill-in's metric line moved there)",
