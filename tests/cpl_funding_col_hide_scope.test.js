@@ -70,9 +70,11 @@ function matchCount(els, selectors) {
   // setting Sam chose" but the state every reader gets, on the COBI tab and on
   // the public explainer that embeds the same table. The fixture therefore
   // asserts the DEFAULT rather than arranging one.
-  const DEFAULT_HIDDEN = ["cr_ftes", "district", "nc_ftes", "order", "working_adults"];
+  // Since 2026-10-25 the CR/NC split too (Sam: two funding columns, Max Funds
+  // and Curr Funds), so nine.
+  const DEFAULT_HIDDEN = ["cr_award", "cr_current", "cr_ftes", "district", "nc_award", "nc_current", "nc_ftes", "order", "working_adults"];
   const bootSels = hideSelectors(doc);
-  check("0a: the shipped default already hides five columns, with no user action",
+  check("0a: the shipped default already hides nine columns, with no user action",
     bootSels.length === DEFAULT_HIDDEN.length);
   check("0b: and District is one of them — main column 3, the position that collides",
     bootSels.join(",").indexOf("nth-child(3)") !== -1);
@@ -107,7 +109,7 @@ function matchCount(els, selectors) {
   const headKeys = Array.from(doc.querySelectorAll("#cplFundTable thead th"))
     .map((th) => th.getAttribute("data-sort") || "");
   const want = DEFAULT_HIDDEN.map((k) => headKeys.indexOf(k)).sort(function (a, b) { return a - b; }).join(",");
-  check("2b: and they are #, District, the FTES pair and the county context (" + want + ")",
+  check("2b: and they are #, District, the FTES pair, the CR/NC split and the county context (" + want + ")",
     headKeys.indexOf("district") === 2 && headKeys.indexOf("working_adults") > 2 &&
     DEFAULT_HIDDEN.every((k) => headKeys.indexOf(k) !== -1) &&
     mainCells.filter((td) => sels.some((sl) => td.matches(sl)))
