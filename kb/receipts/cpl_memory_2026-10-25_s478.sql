@@ -55,3 +55,18 @@ where m.slug in ('sam-noncredit-cpl-lead-strike-team-retired-2026-10-25',
                  'sam-funding-page-library-look-sierra-light-2026-10-25',
                  'procedure-render-funding-page-with-live-config-2026-10-25')
   and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+
+-- Applied later in S478, after Sam answered the dark-palette question.
+insert into public.cpl_memory (slug, kind, org, title, summary, plain, tags, affects, source, related, author, event_date, status, verified_by, verified_at)
+values ('sam-funding-page-light-only-2026-10-25', 'decision', 'cpl',
+ 'Sam: the public funding page stays Light only; no dark palette and no Light/Dark words in its header',
+ 'Sam, 2026-10-25 in S478, answering whether to give funding-model/ and its embedded table a dark palette: "Let''s just leave it light only". The page names data-theme="light", so the Ask Sierra side bar opens Light, and its public header carries the links without the Light and Dark words.',
+ 'The funding page has one look, the light one.',
+ array['implementation-funding','public-page','theme','sam-ruling','decision']::text[], array['funding-model/index.html']::text[],
+ 'Sam, in session S478, 2026-10-25', array['sam-funding-page-library-look-sierra-light-2026-10-25']::text[],
+ 'SkyTidyTips-S478', '2026-10-25', 'verified', 'Sam (his words, in session)', now())
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select m.id, 'SkyTidyTips-S478', 'create', 'S478 (2026-10-25)', to_jsonb(m) from public.cpl_memory m
+where m.slug = 'sam-funding-page-light-only-2026-10-25'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
