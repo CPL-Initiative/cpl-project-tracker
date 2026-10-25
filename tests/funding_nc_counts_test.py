@@ -26,6 +26,9 @@ What this pins, in order of how expensive each would be to get wrong:
      and only while one of its courses is still a CDCP title there; a proposed row
      counts nothing, and an exhibit already counted counts once.
   7. NEVER GUESSED. A COCI name that does not resolve is logged and moves nothing.
+  8. A FAILED CALL IS RETRIED. The first daily run (2026-10-25) got HTTP 500 from
+     PostgREST's 8 s statement timeout; a 500 then an answer counts, three 500s
+     leave every nc key absent.
 
 Run: python3 tests/funding_nc_counts_test.py
 """
@@ -34,6 +37,8 @@ import os
 import subprocess
 import sys
 import tempfile
+import threading
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -110,10 +115,11 @@ CROSSWALK = {"rows": [
 COMMITTED_XWALK = os.path.join(ROOT, "funding", "nc_credential_crosswalk.json")
 
 
-def run_builder(fixture=None, crosswalk=None):
+def run_builder(fixture=None, crosswalk=None, env_extra=None):
     payload = [{"viewName": VIEW, "generatedAt": "2026-10-25T00:00:00+00:00",
                 "columnName": COLUMNS, "columnValue": MAP_ROWS}]
     env = {k: v for k, v in os.environ.items() if k != "SUPABASE_SERVICE_KEY"}
+    env.update(env_extra or {})
     with tempfile.TemporaryDirectory() as td:
         src = os.path.join(td, "CustomReport_latest.json")
         out = os.path.join(td, "out.js")
@@ -147,6 +153,33 @@ def all_keys(obj, out=None):
         for v in obj:
             all_keys(v, out)
     return out
+
+
+def serve_rpc(statuses):
+    """A stand-in PostgREST: answers each POST with the next status in
+    `statuses` (the last repeats), 200 carrying FIXTURE."""
+    calls = []
+
+    class H(BaseHTTPRequestHandler):
+        def do_POST(self):
+            self.rfile.read(int(self.headers.get("Content-Length") or 0))
+            calls.append(self.path)
+            code = statuses[min(len(calls), len(statuses)) - 1]
+            body = json.dumps(FIXTURE if code == 200 else {"code": "57014"}).encode()
+            self.send_response(code)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def log_message(self, *a):
+            pass
+
+    srv = HTTPServer(("127.0.0.1", 0), H)
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    env = {"SUPABASE_SERVICE_KEY": "test", "SUPABASE_URL": f"http://127.0.0.1:{srv.server_port}",
+           "CPL_NC_COUNTS_RETRY_S": "0", "no_proxy": "127.0.0.1", "NO_PROXY": "127.0.0.1"}
+    return srv, calls, env
 
 
 def main():
@@ -196,6 +229,26 @@ def main():
     check("6g: every committed row names its college, exhibit and at least one course title_norm",
           all(r.get("college") and r.get("exhibit") and r.get("courses") and
               all(c.get("title_norm") for c in r["courses"]) for r in rows))
+
+    # ── 8. a failed call is retried ─────────────────────────────────────────
+    srv, calls, env = serve_rpc([500, 200])
+    try:
+        p8, log8 = run_builder(env_extra=env)
+    finally:
+        srv.shutdown()
+    check("8a: a 500 then an answer: the counts land", "nc_exh" in p8["statewide"] and len(calls) == 2,
+          f"calls={len(calls)} keys={sorted(k for k in all_keys(p8) if k.startswith('nc_'))}")
+    check("8b: …and the run log says it answered on the second attempt",
+          "attempt 1 failed" in log8 and "answered on attempt 2" in log8)
+    srv, calls, env = serve_rpc([500])
+    try:
+        p8b, log8b = run_builder(env_extra=env)
+    finally:
+        srv.shutdown()
+    check("8c: three 500s: three calls, and no nc key anywhere (absent, never zero)",
+          len(calls) == 3 and not any(k in all_keys(p8b) for k in NC_KEYS), f"calls={len(calls)}")
+    check("8d: …and the last line keeps the words a reader greps for",
+          "cpl_funding_nc_counts failed (" in log8b and "on all 3 attempts" in log8b)
 
     # ── the SQL and the workflow ────────────────────────────────────────────
     sql = open(SQL, encoding="utf-8").read()

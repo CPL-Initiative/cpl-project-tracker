@@ -558,3 +558,17 @@ From the implementation-funding lane's noncredit paragraph, verbatim:
   salesperson to appraiser, A9 to A1/A3/A6 courses, ASE T-series to A-series courses.
 - **A row still needs its course to be CDCP today.** The builder checks a row's `title_norm` against the RPC's CDCP
   titles, so a retired course drops its pair with no edit. No RPC change was needed.
+
+## S476 SkyFiddleneck (2026-10-25): the first daily run's noncredit call timed out
+
+- **The RPC failed on PostgREST's 8 s statement timeout, not on its query.** Run 40189454249 logged `cpl_funding_nc_counts
+  failed (HTTP Error 500)` at 11:40Z and Postgres logged `canceling statement due to statement timeout`; the artifact
+  kept every nc key absent, as designed. The service role has no timeout of its own, so the `authenticator`'s 8 s holds.
+- **The function runs in about 1.1 s; the database stalls.** About half of S476's calls took 6 s. In one plan a seq scan
+  read 116,815 cached rows in 4,066 ms and the next scan of the same table in 59 ms: a stall of 4 to 5 s, not the
+  query's cost. A rewrite cannot promise under 8 s through a stall, so the builder retries a failed call twice, 20 s
+  apart (`NC_COUNTS_ATTEMPTS`, guard 8a to 8d in `tests/funding_nc_counts_test.py`).
+- **A `statement_timeout` set on a function does not lift the caller's limit.** Measured: with the function set to
+  60 s and the session at 3 s, the call was still canceled. Postgres arms the timer when the statement starts. The
+  two map functions whose comments say otherwise (`map_clear_custom_report_staging`, `map_promote_custom_reports`)
+  were not re-measured; the promotion's 504 on 10-24 sits beside a statement-timeout cancel 20 s earlier.

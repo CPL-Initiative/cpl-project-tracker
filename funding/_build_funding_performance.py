@@ -690,6 +690,14 @@ def read_career_attainment(resolve, path=None):
 # TBA and $0, which is what they read before this builder existed.
 NC_COUNTS_RPC = "cpl_funding_nc_counts"
 NC_CROSSWALK = os.path.join(HERE, "nc_credential_crosswalk.json")
+# The first daily run (40189454249, 2026-10-25) got HTTP 500: PostgREST's 8 s
+# statement timeout. The RPC takes about 1.1 s, but about half of S476's calls
+# met a stall of 4 to 5 s on the database (one plain seq scan read 116,815
+# cached rows in 4,066 ms, the next in 59 ms), so a failed call is retried. A
+# statement_timeout set on the function does not lift the caller's: S476
+# measured it under a 3 s session limit and the call was still canceled.
+NC_COUNTS_ATTEMPTS = 3
+NC_COUNTS_RETRY_S = float(os.environ.get("CPL_NC_COUNTS_RETRY_S", "20"))
 
 
 def load_nc_crosswalk(argv):
@@ -719,13 +727,23 @@ def fetch_nc_counts(argv):
     req = urllib.request.Request(
         f"{url}/rest/v1/rpc/{NC_COUNTS_RPC}", data=b"{}", method="POST",
         headers={"apikey": key, "Authorization": f"Bearer {key}", "Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=180) as resp:
-            return json.loads(resp.read().decode("utf-8"))
-    except Exception as e:  # non-fatal: the outcomes read TBA, the rest of the artifact stands
-        print(f"funding-performance: {NC_COUNTS_RPC} failed ({e}); the noncredit outcome "
-              "counts stay absent (TBA).")
-        return None
+    import time
+    for attempt in range(1, NC_COUNTS_ATTEMPTS + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=180) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            if attempt > 1:
+                print(f"funding-performance: {NC_COUNTS_RPC} answered on attempt {attempt}.")
+            return data
+        except Exception as e:  # non-fatal: the outcomes read TBA, the rest of the artifact stands
+            if attempt < NC_COUNTS_ATTEMPTS:
+                print(f"funding-performance: {NC_COUNTS_RPC} attempt {attempt} failed ({e}); "
+                      f"retrying in {NC_COUNTS_RETRY_S:g} s.")
+                time.sleep(NC_COUNTS_RETRY_S)
+                continue
+            print(f"funding-performance: {NC_COUNTS_RPC} failed ({e}) on all {NC_COUNTS_ATTEMPTS} "
+                  "attempts; the noncredit outcome counts stay absent (TBA).")
+            return None
 
 
 def _loose(s):
