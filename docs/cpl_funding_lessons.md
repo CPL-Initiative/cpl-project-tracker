@@ -558,3 +558,16 @@ From the implementation-funding lane's noncredit paragraph, verbatim:
   salesperson to appraiser, A9 to A1/A3/A6 courses, ASE T-series to A-series courses.
 - **A row still needs its course to be CDCP today.** The builder checks a row's `title_norm` against the RPC's CDCP
   titles, so a retired course drops its pair with no edit. No RPC change was needed.
+
+## S476 SkyFiddleneck (2026-10-25): the first daily run with the noncredit builder
+
+- **The RPC came back 500 and every nc key stayed absent** (run 40189454249, 11:40Z). The Postgres log at 11:40:38
+  reads *canceling statement due to statement timeout*. PostgREST runs a call under the authenticator's 8 s
+  `statement_timeout`; the function's own `set statement_timeout = '60s'` does not lift it, because Postgres arms the
+  timer when the outer statement starts. Warm, the RPC answers in 1.1 s; cold, 6.1 s from the MCP, and longer while the
+  daily run loads the database.
+- **The fix is a retry** (#2443): `call_nc_counts_rpc()` tries up to three times on a 5xx or a dropped connection, never
+  on a 4xx. The first call warms the cache. Absent-never-zero holds on a final failure.
+- **A function-level timeout is no protection for a PostgREST caller.** If the RPC ever runs past 8 s warm, the fix is
+  in the SQL (or a role-level setting, which reaches every service-role call and is shared ground), never a longer
+  client timeout.

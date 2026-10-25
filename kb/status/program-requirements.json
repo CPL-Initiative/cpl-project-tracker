@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-25T11:19:39Z",
-  "session": 475,
-  "moniker": "SkyGoldfields",
+  "written_at": "2026-10-25T12:23:24Z",
+  "session": 476,
+  "moniker": "SkyFiddleneck",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_476_handoff.md",
+  "handoff": "docs/session_477_handoff.md",
   "next_step": {
-    "title": "Read Sheet 127, then the first daily run with the noncredit builder",
-    "text": "The next session reads Sam's reply on Sheet 127 and the first daily run of 2026-10-25, which had not fired by 11:30Z, and checks the funding page shows each noncredit outcome against its target. The harvest queue still waits behind the funding lane."
+    "title": "Read Sheet 127, then confirm the noncredit counts landed",
+    "text": "The next session reads Sam's reply on Sheet 127 and checks that the daily run now carries the noncredit counts, which a database timeout held back this morning. The harvest queue still waits behind the funding lane."
   },
   "calls": [
     {
@@ -109,16 +109,16 @@
   },
   "changes": [
     {
-      "at": "2026-10-25T08:35:00Z",
-      "text": "No harvest table moved this run; S472 added the noncredit outcomes to the funding memo, letter, report and brief."
-    },
-    {
       "at": "2026-10-25T10:45:00Z",
       "text": "No harvest table moved this run; S474 moved the lane's S452-S459 history to lessons archive 3 so the lane fits its budget."
     },
     {
       "at": "2026-10-25T11:20:00Z",
       "text": "No harvest table moved this run; S475 moved the funding lessons' S285-S303 sections to archive part 4 so the doc fits its budget."
+    },
+    {
+      "at": "2026-10-25T12:30:00Z",
+      "text": "No harvest table moved this run; S476 made the funding build retry the noncredit count call when the database answers slowly."
     }
   ],
   "headline": [
@@ -234,7 +234,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-25T12:12:00Z"
+    "at": "2026-10-25T13:12:00Z"
   },
   "harvest": {
     "day": "2026-10-25",
