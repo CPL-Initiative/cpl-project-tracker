@@ -900,7 +900,11 @@ async function seedFundingNcOutcomes(page, theme) {
     T._setElig({ coordOk: true, coord: { "Mt San Antonio": true, "Santa Barbara": true },
       optin: { "Mt San Antonio": { status: "self_attested" }, "Santa Barbara": { status: "self_attested" } },
       ncAttest: { "Mt San Antonio": { college: "Mt San Antonio", fiscal_year: "2026-27", status: "self_attested",
-        coordinator_name: "Jane Doe", coordinator_title: "Dean" } } });
+        coordinator_name: "Jane Doe", coordinator_title: "Dean" } },
+      // The CO's copy, so the signed-in line shows who attested and Reject (S470).
+      ncAttestReview: [{ key: "Mt San Antonio", college: "Mt San Antonio", fiscal_year: "2026-27", status: "self_attested",
+        attestor_name: "Sample Attester", attestor_title: "NCDEAN", attestor_email: "attester@example.edu",
+        nc_awarded_count: 12, portfolio_course: "CCC000123456", requested_at: "2026-10-25T04:00:00Z" }] });
     T.render();
   });
   await page.waitForTimeout(500);
@@ -913,6 +917,13 @@ async function seedFundingNcOutcomes(page, theme) {
     });
   });
   await page.waitForTimeout(400);
+  // NOCE has not attested: open its attestation form, so the sweep measures
+  // the form a college fills in (S470).
+  await page.evaluate(() => {
+    const b = document.querySelector('#cplFundTable [data-ncattestopen="NOCE"]');
+    if (b) b.click();
+  });
+  await page.waitForTimeout(300);
 }
 
 // The Budget editor as a signed-in editor sees it mid-save (S364): the auth widget,

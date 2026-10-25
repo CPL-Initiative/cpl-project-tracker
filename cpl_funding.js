@@ -72,6 +72,21 @@
     { val: "CEO", label: "College President / CEO" },
     { val: "Other", label: "Other senior administrator" }];
   var OPTIN_EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  // The noncredit attestation (Scenario 4; Sam's Open Asks Sheets 113 and 114,
+  // 2026-10-22): a college attests once a fiscal year, attest-first as the
+  // participation opt-in is, and the CO acts only to reject one. The table
+  // takes a write it cannot read back; the reviewer RPC reads the names and
+  // emails; the published view (NC_ATTEST_URL) carries the coordinator's name
+  // and title alone. kb/supabase_cpl_funding_nc_attestation.sql.
+  var NC_ATTEST_TABLE_URL = SUPABASE_URL + "/rest/v1/cpl_funding_nc_attestation";
+  var NC_ATTEST_REVIEW_RPC = SUPABASE_URL + "/rest/v1/rpc/cpl_funding_nc_attestation_review";
+  // MUST stay in lockstep with the cna_insert_self RLS check (attestor_title in (...)).
+  var NC_ATTEST_TITLES = [
+    { val: "VPAA", label: "VP of Academic Affairs (VPAA)" },
+    { val: "VPSS", label: "VP of Student Services (VPSS)" },
+    { val: "CEO", label: "College President / CEO" },
+    { val: "NCDEAN", label: "Dean or director of noncredit" },
+    { val: "Other", label: "Other senior administrator" }];
 
   var CSS_ID = "cpl-funding-css";
   var CSS = [
@@ -1103,6 +1118,21 @@
     ".cplfund-optin-actions { margin-top: 9px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }",
     ".cplfund-optin-err:not(:empty) { color: var(--red-alert); font-size: .8rem; margin-top: 6px; }",
     ".cplfund-optin-note { color: var(--text-muted); font-size: .76rem; margin-top: 8px; line-height: 1.4; }",
+    // The noncredit attestation's form: three short groups, one column on a phone.
+    // On a phone the drill-in is as wide as the table, which scrolls inside its
+    // wrapper; the form takes the wrapper's visible width (a size container,
+    // 100cqi) and stays in view while the table scrolls, so no field sits off
+    // screen. The wrapper holds no fixed-position element (the splash is on body).
+    ".cplfund-tablewrap { container-type: inline-size; }",
+    ".cplfund-ncattest { max-width: min(760px, calc(100cqi - 44px)); position: sticky; left: 26px; box-sizing: border-box; }",
+    ".cplfund-ncattest-intro { margin: 0 0 8px; }",
+    ".cplfund-ncattest-set { border: 0; margin: 0 0 8px; padding: 0; min-width: 0; }",
+    ".cplfund-ncattest-set legend { font-size: .8rem; font-weight: 600; color: var(--navy-secondary); padding: 0; margin-bottom: 4px; }",
+    ".cplfund-ncattest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 8px 12px; }",
+    ".cplfund-ncattest-grid label { display: flex; flex-direction: column; gap: 3px; font-size: .8rem; color: var(--text-muted); }",
+    ".cplfund-ncattest-grid .cplfund-ncattest-wide { grid-column: 1 / -1; }",
+    ".cplfund-ncattest-grid input, .cplfund-ncattest-grid select, .cplfund-ncattest-grid textarea { font-family: inherit; font-size: .86rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 5px 8px; min-height: 24px; box-sizing: border-box; width: 100%; }",
+    ".cplfund-ncattest-grid input:focus, .cplfund-ncattest-grid select:focus, .cplfund-ncattest-grid textarea:focus { border-color: var(--gold-accent); }",
     // Row-level one-click opt-in CTA (Sam, 2026-08-05) — a chip beside the college name.
     // Corners at 6px, the page's other buttons (Sam, 2026-09-28), in place of the pill.
     ".cplfund-optin-jump { margin-left: 6px; padding: 1px 8px; min-height: 24px; font-size: .68rem; font-weight: 600; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque); color: var(--navy-primary); cursor: pointer; font-family: inherit; vertical-align: middle; white-space: nowrap; }",
@@ -4732,7 +4762,9 @@
     "data-priogoalmulti", "data-stratlist",
     // 2026-09-28: the CO's opt-in controls. Their emitters already skip a
     // public rendering; the sweep is the backstop.
-    "data-optinconfirm", "data-optinrevoke", "data-optinremove"];
+    "data-optinconfirm", "data-optinrevoke", "data-optinremove",
+    // 2026-10-25: the CO's controls on the noncredit attestation.
+    "data-ncattestreject", "data-ncattestconfirm", "data-ncattestremove"];
   var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset",
     "cplFundPromote", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
@@ -4941,7 +4973,7 @@
     optin: {}, optinRow: {}, optinReview: [], asOf: null, contact: {},
     // The noncredit attestation COBI takes (Scenario 4): the latest row an
     // institution, from the published view; ncAttestOk once it has been read.
-    ncAttestOk: false, ncAttest: {} };
+    ncAttestOk: false, ncAttest: {}, ncAttestReview: [] };
   // WHO STANDS BEHIND THE FIRST CONDITION (Sam, 2026-09-29): "The condition is
   // to have a CPL Coordinator assigned (so we should have that name listed); a
   // CPL Primary contact (need that name listed as well--it's OK is the same name
@@ -4956,7 +4988,8 @@
   // The noncredit attestation's published view (name and title, never an
   // email; the attestor rides the reviewer RPC, as the confirmation's does).
   var NC_ATTEST_URL = SUPABASE_URL + "/rest/v1/cpl_funding_nc_attestation_pub" +
-    "?select=college,fiscal_year,status,coordinator_name,coordinator_title,requested_at,revoked_at&order=requested_at.desc";
+    "?select=college,fiscal_year,status,coordinator_name,coordinator_title,requested_at,revoked_at" +
+    "&order=fiscal_year.asc,requested_at.desc";
   // Directory text is hand-typed in MAP: runs of spaces, a trailing space, two
   // names on two lines. One line, single-spaced, comma-joined.
   function contactText(v) {
@@ -5088,17 +5121,31 @@
         }).catch(function () { return null; }),
       // The noncredit attestation (Scenario 4). Fail-soft: a view not yet
       // there leaves the noncredit conditions pending, the share held.
-      fetch(NC_ATTEST_URL, { headers: h }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+      fetch(NC_ATTEST_URL, { headers: h }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+      // Its names, emails and reported lists, for the CO alone (the RPC
+      // returns [] to anyone else); last, so the earlier indexes stand.
+      fetch(NC_ATTEST_REVIEW_RPC, { method: "POST", body: "{}", headers: rh })
+        .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
     ]).then(function (res) {
-      var coord = res[0], part = res[1], review = res[2], contacts = res[3], attest = res[4];
+      var coord = res[0], part = res[1], review = res[2], contacts = res[3], attest = res[4], ncReview = res[5];
       if (Array.isArray(contacts)) ELIG.contact = ingestContacts(contacts, roster);
       if (Array.isArray(attest)) {
         ELIG.ncAttest = {};
         attest.forEach(function (row) {
           var key = roster[shortName(row.college)] || row.college;
-          if (!ELIG.ncAttest[key]) ELIG.ncAttest[key] = row;   // newest first (the order clause)
+          // The view holds this fiscal year and the next; this year's row
+          // comes first (the order clause), so it is the one that stands.
+          if (!ELIG.ncAttest[key]) ELIG.ncAttest[key] = row;
         });
         ELIG.ncAttestOk = true;
+      }
+      if (Array.isArray(ncReview)) {
+        ELIG.ncAttestReview = ncReview.map(function (row) {
+          var r = {};
+          Object.keys(row).forEach(function (k) { r[k] = row[k]; });
+          r.key = roster[shortName(row.college)] || row.college;
+          return r;
+        });
       }
       if (Array.isArray(coord)) {
         ingestCoord(coord, roster);
@@ -5485,6 +5532,113 @@
     (ELIG.optinReview || []).forEach(function (x) { if (x.college === college) x.status = status; });
   }
 
+  // ── the noncredit attestation (Scenario 4) ─────────────────────────────────
+  // A college attests once each fiscal year that its noncredit CPL coordinator
+  // is published on its landing page and leads a strike team (Sam's Sheets 113
+  // and 114, 2026-10-22). Attest-first, as the opt-in: the row stands on
+  // submit, and the CO acts only to reject it. One row per college and year
+  // (cna_college_fy_uq), so a rejected one is removed before the college
+  // attests again. kb/supabase_cpl_funding_nc_attestation.sql.
+  var NCATTEST_UI = {};
+  // The fiscal year a date falls in, July to June ("2026-27"), as the SQL's
+  // cpl_funding_fy() computes it.
+  function fiscalYearOf(d) {
+    d = d || new Date();
+    var y = d.getUTCFullYear(), a = d.getUTCMonth() >= 6 ? y : y - 1;
+    return a + "-" + ("0" + ((a + 1) % 100)).slice(-2);
+  }
+  function ncAttestStanding(att) { return !!(att && att.status !== "revoked" && att.status !== "rejected"); }
+  // An institution whose award carries a noncredit share under the outcomes lane.
+  function ncAttestShown(c) {
+    return !!c && ncOutcomesMode() && (ncCoordShown() || ncTeamShown()) && (!!c.nco || (c.nc_award || 0) > 0.5);
+  }
+  // The CO's copy of the row the published view shows (same college, same year).
+  function ncAttestReviewOf(college) {
+    var att = ncAttestOf(college), list = ELIG.ncAttestReview || [];
+    if (!att) return null;
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].key === college && list[i].fiscal_year === att.fiscal_year) return list[i];
+    }
+    return null;
+  }
+  // Public write: return=minimal, because anon cannot read back the columns it
+  // wrote; the re-read of the published view is the honest confirmation.
+  function submitNcAttest(college, form) {
+    var fy = fiscalYearOf();
+    var rec = { college: college, fiscal_year: fy, status: "self_attested", source: "self",
+      coordinator_name: form.coordName, coordinator_title: form.coordTitle,
+      attestor_name: form.name, attestor_title: form.title, attestor_email: form.email,
+      nc_awarded_count: form.count == null ? null : form.count,
+      attested_exhibits: form.exhibits || null, portfolio_course: form.course || null };
+    NCATTEST_UI[college] = { open: true, submitting: true };
+    if (!remoteEnabled()) {
+      ELIG.ncAttest[college] = { college: college, fiscal_year: fy, status: "self_attested",
+        coordinator_name: rec.coordinator_name, coordinator_title: rec.coordinator_title, requested_at: nowIso() };
+      ELIG.ncAttestOk = true;
+      NCATTEST_UI[college] = { done: true };
+      render(); return;
+    }
+    refreshTable();
+    fetch(NC_ATTEST_TABLE_URL, {
+      method: "POST",
+      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
+        "Content-Type": "application/json", Prefer: "return=minimal" },
+      body: JSON.stringify(rec)
+    }).then(function (r) {
+      // 409: this college already attested for the year; the re-read shows it.
+      NCATTEST_UI[college] = (r.ok || r.status === 409) ? { done: true } : { error: true };
+      loadEligibility();
+      render();
+    }).catch(function () { NCATTEST_UI[college] = { error: true }; render(); });
+  }
+  // The form's fields into a record, or the first thing wrong with them, in the
+  // order the form asks. The same checks as cna_insert_self, so a refused
+  // insert is never the first a reader hears of a missing field.
+  function ncAttestFormRead(get) {
+    var t = function (k) { return String(get(k) == null ? "" : get(k)).trim(); };
+    var form = { coordName: t("coordName"), coordTitle: t("coordTitle"),
+      name: t("name"), title: t("title"), email: t("email"),
+      course: t("course"), exhibits: t("exhibits"), count: null };
+    var cnt = t("count");
+    if (!form.coordName) return { error: "Please enter the noncredit CPL coordinator's name." };
+    if (!form.coordTitle) return { error: "Please enter the coordinator's title." };
+    if (!form.name) return { error: "Please enter your name." };
+    if (NC_ATTEST_TITLES.map(function (o) { return o.val; }).indexOf(form.title) === -1) return { error: "Please choose your title." };
+    if (!OPTIN_EMAIL_RE.test(form.email)) return { error: "Please enter a valid college email address (name@college.edu)." };
+    if (cnt) {
+      if (!/^\d+$/.test(cnt) || Number(cnt) > 100000) return { error: "Please enter the count as a whole number, or leave it blank." };
+      form.count = Number(cnt);
+    }
+    return { form: form };
+  }
+  // The CO's writes: Reject, Re-confirm, Remove, keyed by the row's own college
+  // and year. RLS answers a refused write with 2xx and no change, so the
+  // re-read, never the status, confirms it (#598).
+  function ncAttestWrite(college, method, body) {
+    var att = ncAttestOf(college);
+    if (!att) return;
+    if (!remoteEnabled()) {
+      if (method === "DELETE") delete ELIG.ncAttest[college];
+      else Object.keys(body).forEach(function (k) { att[k] = body[k]; });
+      render(); return;
+    }
+    var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, Prefer: "return=minimal" };
+    if (body) headers["Content-Type"] = "application/json";
+    applyWriteAuth(headers);
+    var opts = { method: method, headers: headers };
+    if (body) opts.body = JSON.stringify(body);
+    fetch(NC_ATTEST_TABLE_URL + "?college=eq." + encodeURIComponent(att.college) +
+          "&fiscal_year=eq." + encodeURIComponent(att.fiscal_year), opts)
+      .then(writeResult)
+      .then(function () { loadEligibility(); })
+      .catch(function () { loadEligibility(); });
+  }
+  function rejectNcAttest(college) { ncAttestWrite(college, "PATCH", { status: "rejected", revoked_at: nowIso() }); }
+  function reconfirmNcAttest(college) {
+    ncAttestWrite(college, "PATCH", { status: "confirmed", confirmed_at: nowIso(), confirmed_by: curatorEmail() || "(CO reviewer)", revoked_at: null });
+  }
+  function removeNcAttest(college) { ncAttestWrite(college, "DELETE", null); }
+
   // Reviewer-only lookup of the PII attestation row for a college (from the gated
   // RPC feed). Null when the caller isn't a reviewer, or the active row is a
   // reviewer-created (on-behalf) one — the RPC returns only source='self' rows.
@@ -5556,6 +5710,7 @@
     if (ncItems.length) {
       items += '<span class="cf-conds-nc"><strong class="cf-conds-h">Noncredit share:</strong>' + ncItems.map(one).join("") + "</span>";
     }
+    if (ncAttestShown(c)) items += ncAttestCtlHtml(college);
     // The CO's controls ride the same line, for a signed-in reviewer only and
     // never in the public preview (the preview is what a college reads). A
     // self-attestation stands until the CO rejects it (attest-first), so the
@@ -5619,6 +5774,89 @@
       " requesting that it participate in CPL Implementation Funding. Your name and email are recorded for the Chancellor&#39;s " +
       "Office and are <strong>not shown publicly</strong>. Opting in makes the college eligible for funding — it moves no funding by itself and is reversible.</div>" +
       "</div>";
+  }
+
+  // The noncredit attestation's form, under the Minimum Conditions line, for an
+  // institution with a noncredit share under the outcomes lane. Visible to
+  // everyone, as the opt-in form is (a college attests from the public page),
+  // so it uses no CURATE_ATTRS attribute. Shown only once the published view
+  // has answered: before the table exists there is nothing to write to.
+  function ncAttestAffordanceHtml(c) {
+    var college = c.college;
+    if (!ELIG.ncAttestOk || !ncAttestShown(c)) return "";
+    var att = ncAttestOf(college), ui = NCATTEST_UI[college] || {}, fy = fiscalYearOf();
+    if (ui.done) {
+      return '<div class="cplfund-optin cplfund-optin-done">Thank you. The noncredit attestation for ' + esc(fy) +
+        " is on file from today.</div>";
+    }
+    if (ncAttestStanding(att)) return "";
+    if (att) {
+      return '<div class="cplfund-optin cplfund-optin-note cplfund-warn-text">The Chancellor&#39;s Office rejected this college&#39;s noncredit attestation for ' +
+        esc(att.fiscal_year || fy) + ". Contact the CO to re-open it.</div>";
+    }
+    if (!ui.open) {
+      return '<div class="cplfund-optin"><button type="button" class="cplfund-optbtn" data-ncattestopen="' + esc(college) +
+        '" aria-expanded="false">Attest for the noncredit share</button> <span class="dk">Once each fiscal year; ' + esc(fy) + " is open.</span></div>";
+    }
+    var titleOpts = NC_ATTEST_TITLES.map(function (o) {
+      return '<option value="' + esc(o.val) + '">' + esc(o.label) + "</option>";
+    }).join("");
+    var nm = dispName(college);
+    var f = function (key, label, attrs) {
+      return "<label>" + label + "<input " + attrs + ' data-ncattestfield="' + key + '"></label>';
+    };
+    return '<div class="cplfund-optin cplfund-optin-form cplfund-ncattest" data-ncattestwrap="' + esc(college) + '">' +
+      '<div class="cplfund-optin-head">Noncredit attestation for <strong>' + esc(nm) + "</strong>, " + esc(fy) + "</div>" +
+      '<div class="cplfund-optin-note cplfund-ncattest-intro">The noncredit share of the award waits on two conditions: a noncredit CPL coordinator named and published on the college&#39;s CPL landing page, and a strike team that coordinator leads for noncredit CPL. The college attests to both once each fiscal year.</div>' +
+      '<fieldset class="cplfund-ncattest-set"><legend>The noncredit CPL coordinator</legend><div class="cplfund-ncattest-grid">' +
+      f("coordName", "Name", 'type="text" maxlength="120" autocomplete="off" placeholder="First Last"') +
+      f("coordTitle", "Title", 'type="text" maxlength="80" autocomplete="off" placeholder="Noncredit CPL Coordinator"') +
+      "</div></fieldset>" +
+      '<fieldset class="cplfund-ncattest-set"><legend>You, attesting for the college</legend><div class="cplfund-ncattest-grid">' +
+      f("name", "Your name", 'type="text" maxlength="120" autocomplete="name" placeholder="First Last"') +
+      "<label>Your title<select data-ncattestfield=\"title\">" + titleOpts + "</select></label>" +
+      f("email", "College email", 'type="email" maxlength="160" autocomplete="email" placeholder="you@college.edu"') +
+      "</div></fieldset>" +
+      '<fieldset class="cplfund-ncattest-set"><legend>Reported this year (optional)</legend><div class="cplfund-ncattest-grid">' +
+      f("count", "Former noncredit students the college awarded CPL, from its student records", 'type="number" min="0" max="100000" step="1" inputmode="numeric"') +
+      f("course", "Control number of the CPL portfolio course, from COCI", 'type="text" maxlength="60" autocomplete="off" placeholder="CCC000000000"') +
+      '<label class="cplfund-ncattest-wide">Exhibits the strike team built or adopted for the program, by MAP exhibit ID or title' +
+      '<textarea rows="2" maxlength="2000" data-ncattestfield="exhibits"></textarea></label>' +
+      "</div></fieldset>" +
+      '<div class="cplfund-optin-err" data-ncattesterr="' + esc(college) + '" role="alert"></div>' +
+      '<div class="cplfund-optin-actions">' +
+      '<button type="button" class="cplfund-optbtn cplfund-optin-submit" data-ncattestsubmit="' + esc(college) + '"' +
+      (ui.submitting ? " disabled" : "") + ">" + (ui.submitting ? "Submitting…" : "Attest") + "</button>" +
+      '<button type="button" class="cplfund-optbtn" data-ncattestcancel="' + esc(college) + '">Cancel</button>' +
+      (ui.error ? ' <span class="cplfund-warn-text">The attestation was not recorded. Please try again.</span>' : "") +
+      "</div>" +
+      '<div class="cplfund-optin-note">By submitting, you attest that you are an administrator of ' + esc(nm) +
+      ", that the coordinator named above is published on the college&#39;s CPL landing page, and that the coordinator leads a strike team for noncredit CPL in " +
+      esc(fy) + ". The coordinator&#39;s name and title appear publicly beside the college&#39;s conditions. Your name, your email and the reported figures go to the Chancellor&#39;s Office alone. The Chancellor&#39;s Office may reject an attestation.</div>" +
+      "</div>";
+  }
+  // The CO's view of the attestation, on the Minimum Conditions line: who
+  // attested, what the college reported, and Reject (or Re-confirm and Remove
+  // once rejected). A signed-in reviewer only, never the public preview.
+  function ncAttestCtlHtml(college) {
+    if (!unlocked() || publicMode()) return "";
+    var att = ncAttestOf(college);
+    if (!att) return "";
+    var rev = ncAttestReviewOf(college), bits = [];
+    if (rev) {
+      bits.push("Noncredit attestation " + esc(att.fiscal_year || "") + " by " + esc(rev.attestor_name || "?") +
+        " (" + esc(rev.attestor_title || "?") + ") &middot; " + esc(rev.attestor_email || ""));
+      if (rev.requested_at) bits.push(esc(isoMdy(rev.requested_at)));
+      if (rev.nc_awarded_count != null) bits.push(esc(fmtInt(rev.nc_awarded_count)) + " former noncredit students awarded CPL");
+      if (rev.portfolio_course) bits.push("portfolio course " + esc(rev.portfolio_course));
+      if (rev.attested_exhibits) bits.push("exhibits: " + esc(rev.attested_exhibits));
+    }
+    var k = esc(college);
+    var btns = ncAttestStanding(att)
+      ? '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-ncattestreject="' + k + '">Reject</button>'
+      : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-ncattestconfirm="' + k + '">Re-confirm</button>' +
+        '<button type="button" class="cplfund-optbtn" data-ncattestremove="' + k + '">Remove</button>';
+    return '<span class="cplfund-corow">' + (bits.length ? '<span class="dk">' + bits.join(" &middot; ") + "</span> " : "") + btns + "</span>";
   }
 
   // The CO review lane — REVIEWER ONLY. Renders nothing on the public page or
@@ -12180,7 +12418,7 @@
     // are GONE (Sam, 2026-09-23, funding review item 3). Their figures ride
     // the row: the bound word's hover (boundWordHtml) and the CR FTES hover
     // (sizeCellTitle). The baseline is one line, with the CO's control on it.
-    var eligLine = baselineStatusHtml(c) + optinAffordanceHtml(c.college);
+    var eligLine = baselineStatusHtml(c) + optinAffordanceHtml(c.college) + ncAttestAffordanceHtml(c);
     // CO Monitor's note — internal. cpl_funding_notes opens to a signed-in
     // reviewer alone (RLS is_allowed_reviewer(); the team phrase does not open
     // it), and the public preview shows none of it: a college never reads one.
@@ -15022,6 +15260,50 @@
         submitOptIn(college, { name: name, title: title, email: email });
       });
     });
+    // The noncredit attestation (Scenario 4): open, cancel and submit, for
+    // everyone; a click inside the form never collapses the row under it.
+    holder.querySelectorAll("[data-ncattestwrap]").forEach(function (w) {
+      w.addEventListener("click", function (e) { e.stopPropagation(); });
+    });
+    holder.querySelectorAll("[data-ncattestopen]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var college = b.getAttribute("data-ncattestopen");
+        NCATTEST_UI[college] = { open: true };
+        refreshTable();
+        var first = null;
+        holder.querySelectorAll("[data-ncattestwrap]").forEach(function (w) {
+          if (w.getAttribute("data-ncattestwrap") === college) first = w.querySelector("input");
+        });
+        if (first) first.focus();
+      });
+    });
+    holder.querySelectorAll("[data-ncattestcancel]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        NCATTEST_UI[b.getAttribute("data-ncattestcancel")] = {};
+        refreshTable();
+      });
+    });
+    holder.querySelectorAll("[data-ncattestsubmit]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var college = b.getAttribute("data-ncattestsubmit");
+        var wrap = null;
+        holder.querySelectorAll("[data-ncattestwrap]").forEach(function (w) {
+          if (w.getAttribute("data-ncattestwrap") === college) wrap = w;
+        });
+        if (!wrap) return;
+        var res = ncAttestFormRead(function (k) {
+          var el = wrap.querySelector('[data-ncattestfield="' + k + '"]');
+          return el ? el.value : "";
+        });
+        var errEl = wrap.querySelector("[data-ncattesterr]");
+        if (res.error) { if (errEl) errEl.textContent = res.error; return; }
+        if (errEl) errEl.textContent = "";
+        submitNcAttest(college, res.form);
+      });
+    });
     // Unit sources (Sam, 2026-09-30): open the panel under the priority row,
     // then read the credit report once per institution.
     holder.querySelectorAll("[data-srcopen]").forEach(function (b) {
@@ -15096,6 +15378,15 @@
     // .cplfund-elig, so the two sets never double-bind the same button.
     holder.querySelectorAll("[data-optinrevoke]").forEach(function (b) {
       b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; revokeOptIn(b.getAttribute("data-optinrevoke")); });
+    });
+    holder.querySelectorAll("[data-ncattestreject]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; rejectNcAttest(b.getAttribute("data-ncattestreject")); });
+    });
+    holder.querySelectorAll("[data-ncattestconfirm]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; reconfirmNcAttest(b.getAttribute("data-ncattestconfirm")); });
+    });
+    holder.querySelectorAll("[data-ncattestremove]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; removeNcAttest(b.getAttribute("data-ncattestremove")); });
     });
     holder.querySelectorAll("[data-optinremove]").forEach(function (b) {
       b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; removeOptIn(b.getAttribute("data-optinremove")); });
@@ -16888,6 +17179,7 @@
       // The noncredit attestation (Scenario 4): rows by institution key.
       ELIG.ncAttest = o.ncAttest || {};
       ELIG.ncAttestOk = !!(o.ncAttestOk || o.ncAttest);
+      ELIG.ncAttestReview = o.ncAttestReview || [];
       // Contacts as PostgREST returns them (the directory's rows or the
       // mirror's), through the same ingest the load uses.
       ELIG.contact = o.contacts ? ingestContacts(o.contacts, rosterByShortName()) : {};
@@ -16942,6 +17234,12 @@
     _submitOptin: function (c, form) { return submitOptIn(c, form); },
     _confirmOptin: function (c) { return confirmOptIn(c); },
     _revokeOptin: function (c) { return revokeOptIn(c); },
-    _optinReview: function () { return ELIG.optinReview; }
+    _optinReview: function () { return ELIG.optinReview; },
+    // The noncredit attestation (Scenario 4).
+    _fiscalYearOf: fiscalYearOf,
+    _ncAttestFormRead: ncAttestFormRead,
+    _submitNcAttest: function (c, form) { return submitNcAttest(c, form); },
+    _rejectNcAttest: function (c) { return rejectNcAttest(c); },
+    _ncAttest: function (c) { return ncAttestOf(c); }
   };
 })();
