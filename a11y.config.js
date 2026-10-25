@@ -140,6 +140,32 @@ async function publicLibrarySierraChecks(page) {
   await page.evaluate(() => { try { localStorage.removeItem("cpl_sierra_bar_w"); } catch (e) {} window.CPL_SIERRA_BAR.setWidth(420); });
   return out;
 }
+// A page that opens Sierra from its own word (the Fact Sheet, the funding page; Open Asks
+// Sheet 126 card 1): press it and wait for her question box.
+async function seedSierraFromWord(page, theme) {
+  if (theme === "dark") await page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark"));
+  await page.evaluate(() => { const b = document.querySelector("[data-sierra-open]"); if (b) b.click(); });
+  await page.waitForFunction(() => {
+    const f = document.querySelector(".sbar-frame");
+    try { return !!(f && f.contentDocument && f.contentDocument.getElementById("s-input")); } catch (e) { return false; }
+  }, null, { timeout: 5000 }).catch(() => {});
+  await page.waitForTimeout(150);
+}
+async function sierraFromWordChecks(page) {
+  const st = () => page.evaluate(() => {
+    const bar = document.getElementById("sbar"), word = document.querySelector("[data-sierra-open]"), chip = document.getElementById("sbar-chip");
+    return { open: !!bar && !bar.hidden, chipShown: !!chip && !chip.hidden, onWord: document.activeElement === word,
+      expanded: word && word.getAttribute("aria-expanded"), sx: document.documentElement.scrollWidth, vw: innerWidth };
+  });
+  const out = [];
+  let s = await st();
+  out.push({ name: "her own word opened her; no chip shows", ok: s.open && !s.chipShown && s.expanded === "true", detail: JSON.stringify(s) });
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(150);
+  s = await st();
+  out.push({ name: "Escape shuts her and hands focus back to the page's Ask Sierra", ok: !s.open && s.onWord && s.expanded === "false", detail: JSON.stringify(s) });
+  return out;
+}
 async function seedSierraWho(page, theme) {
   await page.evaluate((th) => {
     try { localStorage.removeItem("cplSierraAudience.v1"); } catch (e) {}
@@ -2121,6 +2147,23 @@ module.exports = {
        Measured S350 at 390px: 56 figures, none without its label. */
     mayHideBelow: [".sw-head"],
   },
+  /* Ask Sierra open beside the Fact Sheet (Sam, Open Asks Sheet 126 card 1: the side bar in
+     place of the drawer), from its own word in the action bar. */
+  "fact-sheet-sierra": {
+    file: "fact-sheet/index.html",
+    title: "CPL Fact Sheet, Ask Sierra open",
+    widths: [390, 1024, 1440],
+    mayHideBelow: [".sw-head"],
+    seed: (page) => seedSierraFromWord(page, "light"),
+    keyboard: async (page) => sierraFromWordChecks(page),
+  },
+  "fact-sheet-sierra-dark": {
+    file: "fact-sheet/index.html",
+    title: "CPL Fact Sheet, Ask Sierra open, dark",
+    widths: [390, 1440],
+    mayHideBelow: [".sw-head"],
+    seed: (page) => seedSierraFromWord(page, "dark"),
+  },
   /* The same page dark (S352: First Light's port put it on the cpl_theme contract). */
   "fact-sheet-dark": {
     file: "fact-sheet/index.html",
@@ -2224,6 +2267,14 @@ module.exports = {
     file: "funding-model/index.html",
     title: "Funding model explainer (public)",
     mayHideBelow: [],
+  },
+  "funding-model-sierra": {
+    file: "funding-model/index.html",
+    title: "Funding model explainer, Ask Sierra open",
+    widths: [390, 1024, 1440],
+    mayHideBelow: [],
+    seed: (page) => seedSierraFromWord(page, "light"),
+    keyboard: async (page) => sierraFromWordChecks(page),
   },
 
   /* The guidance memo (Sam, 2026-10-21), linked from the explainer's Contents. */

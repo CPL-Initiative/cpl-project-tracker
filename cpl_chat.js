@@ -115,8 +115,8 @@
   // tables |, --- rules, and 1. numbered lists used to show as raw text — the
   // block pass below handles them. Re-runs on every streamed delta, so a
   // half-arrived table degrades to a paragraph until its separator row lands.
-  // Mirrors sierra/sierra.js + fact-sheet/factsheet_sierra.js (each surface is
-  // deliberately self-contained — keep the three in sync).
+  // Mirrors sierra/sierra.js (each surface is deliberately self-contained —
+  // keep the two in sync; tests/sierra_markdown.test.js compares them).
   function escapeHtml(s) {
     return String(s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -360,8 +360,8 @@
    *
    * ⚠ SCOPE: this changes the two COBI surfaces (My College + Sierra AI over a
    * tab, then the CPL Assistant tab), which is what Sam asked about.
-   * sierra/sierra.js and
-   * fact-sheet/factsheet_sierra.js deliberately keep the silent restore — a
+   * sierra/sierra.js (the public page, which the Fact Sheet and the funding
+   * page open in the Ask Sierra side bar) deliberately keeps the silent restore — a
    * one-visit member of the public should not be interrogated about a role they
    * picked ninety seconds ago on the same page. Same divergence shape as
    * #1274's intro wording; tests/sierra_surfaces_aligned.test.js pins that the

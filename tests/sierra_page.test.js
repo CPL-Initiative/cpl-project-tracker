@@ -60,6 +60,13 @@ function loadDom(opts) {
   if (!opts.noAudience) {
     try { w.localStorage.setItem("cplSierraAudience.v1", "student"); } catch (e) { /* ignore */ }
   }
+  // A page that frames her in the Ask Sierra side bar (the Fact Sheet, the funding page).
+  if (opts.parent !== undefined) {
+    Object.defineProperty(w, "parent", { configurable: true, get: function () {
+      if (opts.parent === "cross-origin") throw new Error("SecurityError: a cross-origin frame");
+      return opts.parent;
+    } });
+  }
   if (opts.noFetch) { try { delete w.fetch; } catch (e) { w.fetch = undefined; } }
   else w.fetch = function (url, init) {
     const body = init && init.body ? JSON.parse(init.body) : null;
@@ -179,6 +186,35 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
     await drain(14);
     const bub = lastBotBubble(w);
     check("no-fetch shows a friendly error, not a crash", bub && /couldn.t reach|something went wrong/i.test(bub.textContent));
+  }
+
+  // ── (h) the page beside her names her starters and her surface (Open Asks Sheet 126 card 1) ──
+  {
+    const host = { CPL_SIERRA_SUGGESTED: ["What is Credit for Prior Learning?", "How many students has CPL served statewide?",
+      "Which colleges award credit for an EMT license?", "A fourth that is not shown"], CPL_SIERRA_SURFACE: "fact-sheet" };
+    const { w, requests } = loadDom({ parent: host });
+    const tries = Array.prototype.map.call(w.document.querySelectorAll("#s-try-list .s-try-q"), (b) => b.textContent);
+    check("(h) ⭐ a host page's starter questions stand in for hers, three at most, the first in the box's placeholder",
+      tries.join("|") === host.CPL_SIERRA_SUGGESTED.slice(0, 3).join("|") &&
+      w.document.getElementById("s-input").placeholder === "Try: What is Credit for Prior Learning?");
+    submit(w, "hello?");
+    await drain(14);
+    check("(h) ⭐ her questions are filed under the surface the host names", requests.length === 1 && requests[0].body.surface === "fact-sheet");
+    w.close();
+    const bad = loadDom({ parent: { CPL_SIERRA_SUGGESTED: [42, "", "x".repeat(400)], CPL_SIERRA_SURFACE: "memory-autogen" } });
+    submit(bad.w, "hello?");
+    await drain(14);
+    check("(h) a surface not on her list, or starters that are not short strings, leave her own",
+      bad.requests.length === 1 && bad.requests[0].body.surface === "public" &&
+      bad.w.document.querySelectorAll("#s-try-list .s-try-q")[0].textContent === bad.API.SUGGESTED[1]);
+    bad.w.close();
+    const far = loadDom({ parent: "cross-origin" });
+    submit(far.w, "hello?");
+    await drain(14);
+    check("(h) a cross-origin parent (the vendor frame on map.rccd.edu) throws, and she keeps her own",
+      far.requests.length === 1 && far.requests[0].body.surface === "public" && far.API.TRIES[0] === far.API.SUGGESTED[1]);
+    far.w.close();
+    check("(h) nothing reads starters or a surface from the address", !/get\(["']tries["']\)|get\(["']surface["']\)/.test(SRC));
   }
 
   // ── (g) audience — required, persisted, sent ──

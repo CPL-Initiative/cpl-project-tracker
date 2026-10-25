@@ -44,23 +44,24 @@
   /* Prose runs the full column width so its right edge lines up with the
      boxes and tables rather than stopping ragged short of them. */
   --measure:none;
-  /* The names fact-sheet/factsheet_sierra.js paints its drawer with, mapped
-     onto this page's own tokens. --faint is the Fact Sheet's small-text grade
-     (4.5:1 on white). None of these is read by the embedded table. */
-  --faint:#69695F; --ink:var(--text-strong); --muted:var(--text-muted);
-  --radius-sm:4px; --font-data:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 /* ⚠ SCOPED, NEVER ON :root. The CO seal navy (design system --seal-blue
    #002F6D), --on-accent and --surface are names cpl_funding.js reads too, and
    the embedded table leans on their fallbacks here (cpl_memory
    explainer-defines-only-its-own-tokens): on :root they painted its header
    navy behind body-colored text, 1.13:1 (npm run a11y, 2026-10-01). So they
-   are defined only where this page's own chrome and the Sierra drawer read them. */
-.masthead, .fs-sra-drawer, .fs-sra-backdrop{
+   are defined only where this page's own chrome and the Ask Sierra side bar read them. */
+.masthead, .sbar, .sbar-chip{
   --seal-blue:#002F6D; --on-accent:#FFFFFF; --surface:var(--surface-opaque);
-  /* The drawer paints the reader's question white on seal blue with
-     --on-seal; undefined, it fell back to body ink, navy on navy. */
-  --on-seal:#FFFFFF;
+}
+/* The Ask Sierra side bar (../sierra/sidebar.js; Sam, Open Asks Sheet 126 card 1) paints with these, mapped onto
+   this page's own on the bar's elements alone, so nothing reaches the embedded table. */
+.sbar, .sbar-chip{
+  --sierra-bar-bg:var(--surface-opaque); --sierra-bar-ink:var(--text-body); --sierra-bar-line:var(--border);
+  --sierra-bar-heading:var(--seal-blue); --sierra-bar-link:var(--cobalt); --sierra-bar-focus:var(--focus-ring);
+  --sierra-bar-chip-bg:var(--seal-blue); --sierra-bar-chip-ink:var(--on-accent);
+  --sierra-bar-shadow:color-mix(in srgb, var(--text-strong) 16%, transparent);
+  --sierra-bar-head-font:"Playfair Display",Georgia,"Times New Roman",serif;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -91,8 +92,8 @@ a:hover{text-decoration-thickness:2px}
 
 /* ── the controls (Sam, 2026-10-01: the Fact Sheet's layout; 2026-10-09: in
    the masthead, as underlined words without boxes, "simpler and less
-   obtrusive"). Each control is a word; Ask Sierra is injected by
-   fact-sheet/factsheet_sierra.js ahead of the PDF button. The .btn rule is the
+   obtrusive"). Each control is a word; Ask Sierra, ahead of the PDF button,
+   opens her in the side bar (../sierra/sidebar.js). The .btn rule is the
    boxed form; .mh-actions turns it into a text link: the underline is the cue
    that is not color, cobalt on white reads above 4.5:1, and 24px of height
    clears WCAG 2.2 target size (2.5.8). They stay <button>s where they act, so
@@ -123,11 +124,11 @@ a:hover{text-decoration-thickness:2px}
 .ver abbr{text-decoration:none}
 .mh-row{margin-top:10px}
 .mh-actions{display:flex; flex-wrap:wrap; align-items:center; gap:4px 22px}
-.mh-actions .btn, .mh-actions .btn.primary, .mh-actions .fs-sierra-launch{
+.mh-actions .btn, .mh-actions .btn.primary{
   background:none; border:0; border-radius:2px; padding:2px 0; min-height:24px;
   color:var(--cobalt); font-size:.95rem; font-weight:600;
   text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px}
-.mh-actions .btn:hover, .mh-actions .btn.primary:hover, .mh-actions .fs-sierra-launch:hover{
+.mh-actions .btn:hover, .mh-actions .btn.primary:hover{
   background:none; color:var(--seal-blue); text-decoration-thickness:2px}
 @media (max-width:560px){ .head .logo{height:40px} }
 
@@ -413,10 +414,10 @@ section[hidden], #contents[hidden]{display:none}
      colleges' logo; the title drops "How It Works"; the eyebrow and the draft,
      scenario and window tags go; the version stays. The page's controls, which
      had their own sticky bar above the masthead, sit on the version's row, so
-     the page opens on one band. Ask Sierra is injected into that row by
-     fact-sheet/factsheet_sierra.js ([data-sierra-bar]), just ahead of the PDF
-     button ([data-sierra-before]). Outside <main>, so a reorder of the sections
-     never moves it, and print drops the controls. -->
+     the page opens on one band. Ask Sierra sits in that row just ahead of the
+     PDF button and opens her in the side bar ([data-sierra-open],
+     ../sierra/sidebar.js). Outside <main>, so a reorder of the sections never
+     moves it, and print drops the controls. -->
 <header class="masthead">
   <div class="wrap head">
     <img class="logo" src="../sierra/cpl-initiative-logo-navy.png"
@@ -424,7 +425,7 @@ section[hidden], #contents[hidden]{display:none}
     <div class="mh-text">
       <h1>2026-2028 CPL Initiative Funding</h1>
       <div class="mh-row">
-        <div class="mh-actions" data-sierra-bar>
+        <div class="mh-actions">
           <!-- Edit this page (Sam, 2026-10-15, call 1): a signed-in curator's
                words for arranging and editing this page; edit_page.js shows it
                only when the funding module says the reader may curate. -->
@@ -438,7 +439,8 @@ section[hidden], #contents[hidden]{display:none}
                committed would be stale the first time a dial moved. The print
                stylesheet at the foot of the CSS opens every fold, drops the
                controls, and repeats the table header on each page. -->
-          <button type="button" class="btn" id="pdf-btn" data-sierra-before
+          <button type="button" class="btn" id="btn-sierra" data-sierra-open title="Ask Sierra, the CPL assistant">Ask Sierra</button>
+          <button type="button" class="btn" id="pdf-btn"
                   aria-describedby="pdf-note">PDF</button>
           <!-- The version, in small type after PDF (Sam, 2026-10-09: "cut
                Version and just use Ver: 10/9/26 -- It doesn't need a chip",
@@ -1638,10 +1640,11 @@ window.CPL_TABS = {
 <script src="../cpl_session.js"></script>
 <script src="../cpl_funding.js"></script>
 <!-- ASK SIERRA (Sam, 2026-10-01: "Include an Ask Sierra link as in the Fact
-     Sheet"). The Fact Sheet's own drawer, loaded from there so the two pages
-     share one implementation. Sierra answers from the CPL knowledge base and
-     MAP's data; she does not read the funding figures on this page, so the
-     suggested questions are about CPL itself, not an institution's award. -->
+     Sheet"; Open Asks Sheet 126 card 1, 2026-10-24: the Fact Sheet and this page
+     open her in the side bar the public library carries). Sierra answers from the
+     CPL knowledge base and MAP's data; she does not read the funding figures on
+     this page, so her starter questions are about CPL itself, not an
+     institution's award. sierra.js reads the first three and the surface here. -->
 <script>
 window.CPL_SIERRA_SUGGESTED = [
   "What is Credit for Prior Learning?",
@@ -1650,7 +1653,8 @@ window.CPL_SIERRA_SUGGESTED = [
   "Which colleges award credit for an EMT license?"
 ];
 </script>
-<script src="../fact-sheet/factsheet_sierra.js"></script>
+<script>window.CPL_SIERRA_SURFACE = "fact-sheet";</script>
+<script src="../sierra/sidebar.js" defer></script>
 <script>
 (function () {
   "use strict";

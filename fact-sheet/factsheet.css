@@ -42,7 +42,7 @@
   --seal-blue:    #002F6D;   /* CCCCO seal navy as a FILL: table heads, the primary button */
   --seal-blue-text:#002F6D;  /* the same navy as INK: headings, figures, titles, rules */
   --on-seal:      #FFFFFF;   /* text on a seal-blue, cobalt or other dark fill */
-  /* The name factsheet_sierra.js and factsheet_edit.js write on their cobalt and
+  /* The name factsheet_edit.js writes on its cobalt and
      crimson fills (Ask Sierra on hover, the drawer's Send, the editor's buttons).
      The funding explainer and COBI define it; this page never did, so each of
      those labels inherited the body's ink: 1.35:1 on cobalt (S352). */
@@ -69,6 +69,12 @@
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
   --font-data: var(--font-body);
+  /* The Ask Sierra side bar (../sierra/sidebar.js; Sam, Open Asks Sheet 126 card 1)
+     paints with these, mapped onto this page's own, so dark follows the page. */
+  --sierra-bar-bg: var(--surface); --sierra-bar-ink: var(--ink); --sierra-bar-line: var(--border);
+  --sierra-bar-heading: var(--seal-blue-text); --sierra-bar-link: var(--cobalt); --sierra-bar-focus: var(--cobalt);
+  --sierra-bar-chip-bg: var(--seal-blue); --sierra-bar-chip-ink: var(--on-seal);
+  --sierra-bar-shadow: color-mix(in srgb, var(--ink) 16%, transparent); --sierra-bar-head-font: var(--font-display);
 }
 
 /* COBI's dark values (index.html, :root[data-theme="dark"]), under the reader's
@@ -129,7 +135,7 @@ a:hover { text-decoration: underline; }
   border-bottom: 1px solid var(--border);
 }
 .actionbar .wrap {
-  display: flex; align-items: center; gap: 10px 20px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px;
   min-height: 54px; padding-top: 8px; padding-bottom: 8px;
 }
 .actionbar .ab-title { font-weight: 700; color: var(--seal-blue-text); font-size: 1rem; margin-right:auto; }

@@ -209,7 +209,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 |---|---|---|
 | `FN` | none found | produced by: `cpl-chat-deploy.yml` |
 | `cer-classify` | none found | produced by: `chatbox/supabase/functions/cer-classify/index.ts` |
-| `cpl-chat` | tabs: `college-briefing`, `gr-priorities`, `memory` · modules: `prototype/ccr_universe.js`, `prototype/check_skyview_sweep.js` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `prototype/skyview.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts` |
+| `cpl-chat` | tabs: `college-briefing`, `gr-priorities`, `memory` · modules: `prototype/ccr_universe.js`, `prototype/check_skyview_sweep.js` · pages: `prototype/skyview.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts` |
 | `cpl-chat-preview` | none found | produced by: `cpl-chat-preview-ab.yml` |
 | `cpl-news-harvest` | none found | produced by: `chatbox/supabase/functions/cpl-news-harvest/index.ts` |
 | `generate-letter` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
@@ -418,7 +418,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `fact-sheet/cpl_stories_render.js` | pages: `fact-sheet/index.html` | — |
 | `fact-sheet/factsheet.js` | pages: `fact-sheet/index.html` | — |
 | `fact-sheet/factsheet_edit.js` | pages: `fact-sheet/index.html` | — |
-| `fact-sheet/factsheet_sierra.js` | pages: `fact-sheet/index.html`, `funding-model/index.html` | — |
 | `fact-sheet/factsheet_word.js` | pages: `fact-sheet/index.html` | — |
 | `fact-sheet/index.html` | scripts: `scripts/ui_pass.py` | — |
 | `fact-sheet/statewide_catalog.json` | scripts: `fact-sheet/_build_statewide_catalog.py` · `edgefn:cpl-chat` | scripts: `fact-sheet/_build_statewide_catalog.py` · committed by: `daily-dashboard.yml` |
@@ -837,7 +836,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `sierra/art/*.webp` | none found | committed by: `sierra-art-fetch.yml` |
 | `sierra/art/fetched.json` | none found | scripts: `scripts/fetch_sierra_art.py` · committed by: `sierra-art-fetch.yml` |
 | `sierra/index.html` | scripts: `scripts/ui_pass.py` | — |
-| `sierra/sidebar.js` | tabs: `library` · pages: `library/index.html` | — |
+| `sierra/sidebar.js` | tabs: `library` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `library/index.html` | — |
 | `sierra/sierra.js` | pages: `sierra/index.html` | — |
 | `sierra_training.js` | pages: `CPL_Dashboard.html` | — |
 | `statewide/_probe_exhibit_authority.py` | workflows: `statewide-probe-authority.yml` | — |
@@ -1193,5 +1192,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 101 Supabase tables · 41 RPCs · 9 edge functions · 714 file
-datasets · 184 external services · 473 consumers · 58 workflows · 38 tabs.
+Coverage: 101 Supabase tables · 41 RPCs · 9 edge functions · 713 file
+datasets · 184 external services · 472 consumers · 58 workflows · 38 tabs.

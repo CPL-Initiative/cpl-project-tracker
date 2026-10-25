@@ -72,10 +72,10 @@ check("index.html reads cpl_theme before the stylesheet, and follows a change in
 check("index.html preloads the two faces the first screen paints, and both files exist",
   [...HTML.matchAll(/<link rel="preload" href="\.\.\/(sierra\/fonts\/[\w.-]+)" as="font"/g)]
     .filter((m) => fs.existsSync(path.join(ROOT, m[1]))).length === 2);
-// The drawer and the editor write seal navy as text through the ink token, so
-// it lifts in dark; the fallback keeps the funding explainer, which hosts the
-// drawer and defines only --seal-blue, as it was.
-for (const f of ["fact-sheet/factsheet_sierra.js", "fact-sheet/factsheet_edit.js"]) {
+// The editor writes seal navy as text through the ink token, so it lifts in dark.
+// (The drawer that shared this rule retired when Ask Sierra moved onto the side
+// bar, Sam, Open Asks Sheet 126 card 1.)
+for (const f of ["fact-sheet/factsheet_edit.js"]) {
   const src = fs.readFileSync(path.join(ROOT, f), "utf8");
   check(`${f} writes no seal navy text except through --seal-blue-text`,
     !/(^|[^-\w])color:var\(--seal-blue\)/m.test(src) && /color:var\(--seal-blue-text,var\(--seal-blue\)\)/.test(src));

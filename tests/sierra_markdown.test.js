@@ -1,7 +1,8 @@
 // Sierra markdown renderer + Sierra-mark avatar — jsdom test (SkySierra, 2026-07-02).
 //
-// The three self-contained chat surfaces (sierra/sierra.js, cpl_chat.js,
-// fact-sheet/factsheet_sierra.js) each carry an identical markdown-lite
+// The two self-contained chat surfaces (sierra/sierra.js and cpl_chat.js; the
+// Fact Sheet's drawer, a third, retired when its pages moved onto the Ask Sierra
+// side bar, Open Asks Sheet 126 card 1) each carry an identical markdown-lite
 // renderer. Session 94 upgraded it: Sierra's answers routinely include
 // ## / ### headings, | pipe | tables |, --- rules, and 1. numbered lists,
 // which the old paragraph/bullet-only pass showed as RAW TEXT (Sam's POST/AJ
@@ -12,9 +13,9 @@
 //  (d) a paragraph followed by list items in the SAME block splits correctly
 //      (the old renderer required a block to be all-list);
 //  (e) XSS stays impossible — escape-first survives inside cells/headings;
-//  (f) all three surfaces expose the SAME renderer behavior (kept in sync);
+//  (f) both surfaces expose the SAME renderer behavior (kept in sync);
 //  (g) the 🏔️/🎓 emoji avatars are replaced by the inline Whitney-roundel
-//      SIERRA_MARK (safe static SVG) in all three files + both HTMLs' rail.
+//      SIERRA_MARK (safe static SVG) in both files + both HTMLs' rail.
 //
 // Run from repo root: `npm test` (or `node tests/sierra_markdown.test.js`).
 const fs = require("fs");
@@ -38,12 +39,10 @@ function loadHelpers(src, globalKey, opts) {
 
 const SIERRA = loadHelpers(fs.readFileSync("sierra/sierra.js", "utf8"), "CPL_SIERRA_PAGE");
 const CHAT = loadHelpers(fs.readFileSync("cpl_chat.js", "utf8"), "CPL_CHAT");
-const FS = loadHelpers(fs.readFileSync("fact-sheet/factsheet_sierra.js", "utf8"), "CPL_FACTSHEET_SIERRA");
 
-check("all three surfaces expose renderMarkdown",
+check("both surfaces expose renderMarkdown",
   SIERRA && typeof SIERRA.renderMarkdown === "function" &&
-  CHAT && typeof CHAT.renderMarkdown === "function" &&
-  FS && typeof FS.renderMarkdown === "function");
+  CHAT && typeof CHAT.renderMarkdown === "function");
 
 const md = (t) => SIERRA.renderMarkdown(t);
 
@@ -118,23 +117,21 @@ const md = (t) => SIERRA.renderMarkdown(t);
   check("a lone mid-sentence asterisk pair around spaces is left alone", !/<em>/.test(md("3 * 4 * 5")));
 }
 
-// ── (f) the three surfaces render identically ──
+// ── (f) the two surfaces render identically ──
 {
   const sample = "## H\n\n| a | b |\n|---|---|\n| 1 | 2 |\n\n1. one\n2. two\n\n---\n\n- bullet\n\n**bold** *em* `c` [t](https://x.example/) https://y.example/";
-  const a = SIERRA.renderMarkdown(sample), b = CHAT.renderMarkdown(sample), c = FS.renderMarkdown(sample);
+  const a = SIERRA.renderMarkdown(sample), b = CHAT.renderMarkdown(sample);
   check("sierra page + COBI tab renderers agree byte-for-byte", a === b);
-  check("fact-sheet drawer renderer agrees byte-for-byte", a === c);
 }
 
 // ── (g) the Sierra mark replaces the emoji avatars ──
 {
-  check("all three surfaces expose SIERRA_MARK (Whitney roundel SVG)",
+  check("both surfaces expose SIERRA_MARK (Whitney roundel SVG)",
     typeof SIERRA.SIERRA_MARK === "string" && /<svg/.test(SIERRA.SIERRA_MARK) && /circle/.test(SIERRA.SIERRA_MARK) &&
-    typeof CHAT.SIERRA_MARK === "string" && typeof FS.SIERRA_MARK === "string");
+    typeof CHAT.SIERRA_MARK === "string");
   const srcs = {
     "sierra/sierra.js": fs.readFileSync("sierra/sierra.js", "utf8"),
     "cpl_chat.js": fs.readFileSync("cpl_chat.js", "utf8"),
-    "fact-sheet/factsheet_sierra.js": fs.readFileSync("fact-sheet/factsheet_sierra.js", "utf8"),
   };
   Object.keys(srcs).forEach(function (f) {
     check(f + " no longer renders the \u{1F3D4} emoji avatar", srcs[f].indexOf("\u{1F3D4}") === -1);
