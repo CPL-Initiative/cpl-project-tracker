@@ -13,6 +13,9 @@
 //   - a record holds a link, never bytes (no Storage call);
 //   - tokens (no raw hex), words (no glyphs), American spelling;
 //   - a private window (localStorage throws) still renders;
+//   - Changes to make (Sam, 2026-10-25): a reader's comments on a piece save on
+//     the record, list it under Needs attention, and Copy the request hands over
+//     the paste that rebuilds it from its source and keeps its link;
 //   - Start a piece saves a Requested record with its brief, In development shows
 //     it at its step and keeps it out of the register and out of Not filed, and
 //     Copy the brief hands over the whole paste, filer command included.
@@ -133,7 +136,7 @@ block("(3)", function () {
     check("(3) Needs attention counts not filed", /1\s*not filed/.test(t));
     check("(3) a public file with no audience is counted, a public one cleared for colleges is not",
       /2\s*public files with no audience set/.test(t), t.slice(0, 800));
-    check("(3) figures to refresh are counted", /1\s*with figures to refresh/.test(t));
+    check("(3) changes to make are counted (the box held figures to refresh until S480)", /1\s*with changes to make/.test(t));
     const card = function (id) { return m.root.querySelector('#lib-t-' + id).closest("article"); };
     check("(3) a not-filed piece offers File it and no Open",
       !!card("a1").querySelector("[data-file]") && !card("a1").querySelector("a.lib-btn"));
@@ -504,6 +507,56 @@ block("(11d)", function () {
   const M = loadModule({}).M;
   check("(11d) the pair's slug follows the first twelve", M._collegeSlug("Mt San Antonio College") === "mt-san-antonio" && M._collegeSlug("San Bernardino Valley College") === "san-bernardino-valley" && M._collegeSlug("College of Alameda") === "college-of-alameda");
   check("(11d) who a piece is made for reads in words", M._forLine({ for_kind: "co" }) === "Made for Chancellor's Office" && M._forLine({ for_kind: "other", for_category: "Union", for_name: "Local 433" }) === "Made for Union · For Local 433" && M._forLine({}) === "");
+});
+
+// ── (13) Changes to make (Sam, 2026-10-25) ───────────────────────────────
+// "I'd like to request some edits from the Library edit form but there's no place
+// for me to enter my comments and then Refresh based on the input."
+block("(13)", function () {
+  const writes = [];
+  const rows = JSON.parse(JSON.stringify(ROWS));
+  rows[0].rebuild_from = "CPLBrain/04-projects/noncredit-summit/build.py";
+  rows[0].updated_by = "Sam"; rows[0].updated_at = "2026-10-25T23:10:00Z";
+  rows[0].url = "https://studentrcc.sharepoint.com/x/slides.pptx"; rows[0].home = "drive";
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (init && init.method) { writes.push({ url: url, init: init, body: JSON.parse(init.body) }); return response(204, ""); }
+    return response(200, rows);
+  } });
+  const doc = m.w.document;
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    const card = function (id) { return m.root.querySelector("#lib-t-" + id).closest("article"); };
+    check("(13) a piece with changes to make offers Copy the request; one without does not",
+      !!card("a1").querySelector('[data-request="a1"]') && !card("a5").querySelector("[data-request]"));
+    check("(13) its flag reads the changes in words", /Changes to make: students served/.test(card("a1").textContent));
+    click(m.w, card("a1").querySelector('[data-request="a1"]'));
+    const ta = doc.getElementById("lib-r-a1"), t = ta ? ta.value : "";
+    check("(13) Copy the request shows the whole paste, read-only, labeled", !!ta && ta.hasAttribute("readonly") &&
+      !!doc.querySelector('label[for="lib-r-a1"]'));
+    check("(13) ⭐ the paste names the record, its link, its source and the changes, with who asked",
+      /record noncredit-summit-cpl-slides/.test(t) && /Its link: https:\/\/studentrcc/.test(t) &&
+      /Its source: CPLBrain\/04-projects\/noncredit-summit\/build\.py/.test(t) &&
+      /Changes to make \(Sam, 25 October 2026\):\nstudents served, the week of the summit/.test(t), t);
+    check("(13) it keeps the link, holds a public copy for whoever asked, and empties the box when done",
+      /keep its link/.test(t) && /library_page\.py/.test(t) && /before it replaces a public copy/.test(t) && /empty Changes to make/.test(t));
+    check("(13) it ends with what a good result looks like", /A good result: [^\n]+$/.test(t));
+    click(m.w, card("a5").querySelector('[data-edittop="a5"]'));
+    const box = doc.getElementById("le-refresh");
+    check("(13) ⭐ Edit offers a comment box named Changes to make, with its help in words",
+      !!box && box.tagName === "TEXTAREA" && /Changes to make/.test(doc.querySelector('label[for="le-refresh"]').textContent) &&
+      box.getAttribute("aria-describedby") === "le-refresh-h" && /Copy the request/.test(doc.getElementById("le-refresh-h").textContent));
+    box.value = "Lead with the eight projects.\nCut the second table.";
+    click(m.w, m.root.querySelector('[data-retire="a5"]'));
+    check("(13) what was typed survives a repaint", doc.getElementById("le-refresh").value === "Lead with the eight projects.\nCut the second table.");
+    click(m.w, m.root.querySelector("[data-retireno]"));
+    submit({ w: m.w, root: m.root }, '[data-editform="a5"]');
+    return settle();
+  }).then(function () {
+    const w0 = writes[0] || { body: {}, init: {} };
+    check("(13) Save writes the comments, line breaks kept, with who asked",
+      w0.init.method === "PATCH" && /id=eq\.a5$/.test(w0.url) && w0.body.refresh_note === "Lead with the eight projects.\nCut the second table." &&
+      w0.body.updated_by === "Sam", JSON.stringify(w0.body));
+    check("(13) and says where the request goes next", /Copy the request on the card/.test(m.root.textContent));
+  });
 });
 
 Promise.all(pending).then(function () {

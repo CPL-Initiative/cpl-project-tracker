@@ -141,9 +141,40 @@ its log row read back 1, 1, 1).
 
 Sheet 121's rulings (the Knowledge Base fold, the Coordinator Guide files, the ELL IET notice) and Sheet 124's (the hero
 photos, the IT and AI deck unlisted) are carried out; their text moved verbatim to `docs/library_lessons.md`
-(*Moved from the lane, S469*). Still open from them: the Baking and Nursing photos. The Coordinator Guide audit ran in
-S479 from the Drive copies (folder *CPL Coordinator Getting Started Guides*); its report is
-`CPLBrain/04-projects/cpl-initiative/coordinator-guide/20261025_Coordinator_Guide_Audit.md`.
+(*Moved from the lane, S469*). Still open from them: the Baking and Nursing photos.
+
+## Changes to make: a reader's comments on a piece (Sam, 2026-10-25; built S480)
+
+Sam: *"before I send out the link to the ELL visual in the Library, I'd like to request some edits from the Library edit
+form but there's no place for me to enter my comments and then Refresh based on the input. That would be needed for the
+Coordinator Guide and other visuals as well. Advise."* The record's `refresh_note`, which held figures to refresh, is now
+**Changes to make**: a comment box in Edit (and in an In development card's Edit record). Saved, the piece lists under
+Needs attention (*with changes to make*), and **Copy the request** on its card gives the whole paste: the record, its link,
+its source (`rebuild_from`), the comments with who asked and when, and what a good result is. No schema change: the field
+was free text, written by the team-phrase PATCH, and every edit keeps the prior row in `cpl_library_history`.
+
+**The page rebuilds nothing; a session does.** It runs from the paste, or from the scheduled run, which reads open
+requests as queue items ([`scheduled_sessions`](../scheduled_sessions.md), step 6). It rebuilds from the source, keeps the
+link (republish a Claude page to the same artifact; rerun `scripts/library_page.py` for a public piece's Pages copy), shows
+the revision to whoever asked before it replaces a public copy, adds the version, and empties the box. **The advice given
+on a Refresh-now button:** the worker could fire the routine on demand, but that needs a stored trigger token and spends a
+session per press, a cost and permission call for Sam; until he asks, the queue and the paste carry it. Test:
+`tests/library.test.js` (13).
+
+## The Coordinator Guide is In development (Sam, 2026-10-25; Draft 1 by S480)
+
+Sam: *"For the Library artifact maker, that would be a good place to have the Coordinator Guide we are curating"*, then
+*"go ahead and build a draft incorporating all the analysis you got from the initial run ... I will likely like to add more
+specific MAP procedural docs later and ask for a refresh and keep iterating like that before we publish to the public
+library."* Draft 1 (https://claude.ai/artifact/7HPvgHpX8jnfpCLd7e4Tv1, private) is built from the S479 audit
+(`CPLBrain/04-projects/cpl-initiative/coordinator-guide/20261025_Coordinator_Guide_Audit.md`): every core correction, the
+three local sections as *your college's version*, the Phase 2 workflow starting from identification, and at its top the
+eleven items to confirm before release. Source: `20261025_CPL_Coordinator_Guide.html` beside the audit; a web page so a
+revision keeps its link and the public library and Sierra can read it once listed. Record
+`cpl-coordinator-getting-started-guide` (status draft with a brief, so In development at step 2; the Chaffey draft in the
+Drive folder *CPL Coordinator Getting Started Guides* is its first version), through
+`kb/receipts/cpl_library_coordinator_guide_2026-10-25_s480.sql`. Each revision comes from **Changes to make**; listing it
+publicly, and anything sent to the Chaffey drafter, are Sam's.
 
 ## The ELL IET page is listed publicly (Sam, Open Asks Sheet 123 card 1, *list*, 13:17Z 2026-10-24)
 

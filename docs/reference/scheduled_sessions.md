@@ -96,6 +96,20 @@ is his standing preference there too.
    moves to Draft ([`lanes/library.md`](lanes/library.md)). A draft is never
    outward, so it needs no hold; approving it is Sam's.
 
+   **Changes to make** are queue items too (Sam, 2026-10-25, S480): a reader's
+   comments on a piece, typed in the tab's Edit form, sit in `refresh_note`.
+
+   ```sql
+   select slug, title, url, rebuild_from, refresh_note, updated_by, updated_at from cpl_library
+   where refresh_note is not null and retired_at is null order by updated_at;
+   ```
+
+   The tab's *Copy the request* gives the same paste. Rebuild the piece from its
+   source with the changes and keep its link (republish a Claude page to the same
+   artifact; for a public piece rerun `scripts/library_page.py`). Show the revision
+   to whoever asked before it replaces a public copy, add the version to the record,
+   and empty the box through a receipt, which takes the piece off Needs attention.
+
 ## The UI pass: one view a night
 
 Sam's Sheet 109 card 2 (2026-10-21) moved the UI pass out of `/checkpoint` (his 2026-10-08 ruling put one view in

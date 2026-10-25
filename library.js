@@ -95,7 +95,7 @@
   var FLAGS = {
     not_filed: { word: "Not filed", count: "not filed" },
     public_unset: { word: "Public file, no audience set", count: "public files with no audience set" },
-    refresh: { word: "Refresh figures", count: "with figures to refresh" },
+    refresh: { word: "Changes to make", count: "with changes to make" },
     kb_note: { word: "No KB note yet", count: "knowledge pieces with no KB note" }
   };
   var FLAG_ORDER = ["not_filed", "public_unset", "refresh", "kb_note"];
@@ -104,7 +104,7 @@
     rows: null, loading: false, error: null,
     q: "", kind: "all", seen: "all", status: "all", flag: null,
     open: {}, edit: null, form: null, formFor: null, message: "", msgErr: false, busy: false,
-    retireAsk: null, start: null, briefShown: {}, pub: null,
+    retireAsk: null, start: null, briefShown: {}, requestShown: {}, pub: null,
     madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {},
     view: "pieces"
   };
@@ -256,6 +256,8 @@
       R + " .lib-controls{display:flex;flex-wrap:wrap;align-items:end;gap:12px 16px;padding:14px 0 16px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}",
       R + " .lib-field{display:grid;gap:4px;min-width:0;}",
       R + " .lib-field.grow{flex:1 1 240px;}",
+      R + " .lib-field textarea{font:inherit;color:var(--text-body);background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:6px;padding:7px 10px;width:100%;min-height:96px;resize:vertical;box-sizing:border-box;}",
+      R + " .lib-hint{margin:2px 0 0;color:var(--text-muted);font-size:.84rem;}",
       R + " .lib-field label," + R + " .lib-seglabel{font-size:.76rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);}",
       R + " input[type=search]," + R + " input[type=url]," + R + " input[type=text]," + R + " select{font:inherit;color:var(--text-body);background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:6px;padding:7px 10px;min-height:36px;width:100%;}",
       R + " .lib-seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--border-strong);border-radius:6px;overflow:hidden;}",
@@ -471,7 +473,7 @@
       ["Figures", esc(r.figures || "Not recorded.")]
     ];
     rows.push(["Knowledge", knowledgeCell(r)]);
-    if (r.refresh_note) rows.push(["Refresh", esc(r.refresh_note)]);
+    if (r.refresh_note) rows.push(["Changes to make", esc(r.refresh_note)]);
     rows.push(["Rebuild from", r.rebuild_from ? "<code>" + esc(r.rebuild_from) + "</code>" : "Not recorded."]);
     if (r.note) rows.push(["Note", esc(r.note)]);
     rows.push(["Public library", publicCell(r)]);
@@ -580,7 +582,8 @@
       opt("", "Not set", r.seen_by || "") + opt("team", "Team", r.seen_by) + opt("colleges", "Colleges", r.seen_by) + opt("public", "Public", r.seen_by) + "</select></div>" +
       forFields("le", r) +
       '<div class="lib-field wide"><label for="le-url">Link to the file</label><input id="le-url" type="url" value="' + esc(r.url || "") + '" placeholder="https://studentrcc.sharepoint.com/..."></div>' +
-      '<div class="lib-field wide"><label for="le-refresh">Figures to refresh</label><input id="le-refresh" type="text" value="' + esc(r.refresh_note || "") + '" placeholder="Leave empty when the figures are current"></div>' +
+      '<div class="lib-field wide"><label for="le-refresh">Changes to make</label><textarea id="le-refresh" rows="4" maxlength="4000" aria-describedby="le-refresh-h" placeholder="What to change: the wording, the figures, the layout, what to add or cut. Leave empty when the piece is current.">' + esc(r.refresh_note || "") + "</textarea>" +
+      '<p class="lib-hint" id="le-refresh-h">Saved, the piece lists under Needs attention and Copy the request gives the paste for a new session. The scheduled run picks it up too. The session rebuilds the piece from its source, keeps its link, and empties this box.</p></div>' +
       knowledgeFields("le", r) +
       '<div class="lib-field"><label for="le-by">Your name</label><input id="le-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
       "</div>" +
@@ -604,6 +607,7 @@
     // Edit and the public switch sit on the card itself (Sam, 2026-10-20: "move the
     // Edit button onto the top layer of the card"); each opens its form below.
     acts += '<button type="button" class="lib-btn" data-edittop="' + esc(r.id) + '">Edit</button>';
+    if (r.refresh_note) acts += requestBtn(r);
     if (r.url && !r.public_listed) acts += '<button type="button" class="lib-btn" data-pubtop="' + esc(r.id) + '">List publicly</button>';
     acts += '<button type="button" class="lib-btn" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
     var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) +
@@ -617,8 +621,9 @@
       (r.summary ? '<p class="lib-summary">' + esc(r.summary) + "</p>" : "") +
       '<ul class="lib-chips" aria-label="Record">' + chips + "</ul>" +
       (fl.length ? '<ul class="lib-flags" aria-label="Needs attention">' + fl.map(function (f) {
-        return "<li>" + esc(f === "refresh" && r.refresh_note ? "Refresh figures: " + r.refresh_note : FLAGS[f].word) + "</li>";
+        return "<li>" + esc(f === "refresh" && r.refresh_note ? "Changes to make: " + r.refresh_note : FLAGS[f].word) + "</li>";
       }).join("") + "</ul>" : "") +
+      requestBox(r) +
       '</div><div class="lib-acts">' + acts + '<span class="lib-copyslot" id="lib-c-' + esc(r.id) + '"></span></div>' +
       '<div class="lib-details" id="lib-d-' + esc(r.id) + '"' + (open ? "" : " hidden") + ">" + (open ? details(r) : "") + "</div></article>";
   }
@@ -671,6 +676,28 @@
       "A good result: the draft opens from the Library, under In development, at step 2, Draft.";
   }
 
+  // ── Changes to make ─────────────────────────────────────────────────────────
+  // Sam, 2026-10-25: "before I send out the link to the ELL visual in the Library,
+  // I'd like to request some edits from the Library edit form but there's no place
+  // for me to enter my comments and then Refresh based on the input. That would be
+  // needed for the Coordinator Guide and other visuals as well." The record's
+  // refresh_note held figures to bring up to date; it now holds any change a reader
+  // asks for. The page cannot rebuild a piece: a session does, from its source,
+  // with the paste below or in the scheduled run (scheduled_sessions.md, step 6),
+  // and empties the box when the revision is in.
+  function requestText(r) {
+    var asked = [r.updated_by, fmtDate(r.updated_at)].filter(Boolean).join(", ");
+    return "Revise a CPL Library piece: record " + r.slug + ", " + r.title + ".\n" +
+      "Its link: " + (r.url || "not filed yet") + ".\n" +
+      "Its source: " + (r.rebuild_from || "not recorded; find it from the record and the vault, and record it with the revision") + ".\n" +
+      "Changes to make" + (asked ? " (" + asked + ")" : "") + ":\n" + (r.refresh_note || "") + "\n\n" +
+      "Rebuild it from its source with these changes and keep its link: republish a Claude page to the same artifact, " +
+      "and for a piece on the public library rerun scripts/library_page.py so its Pages copy follows. Show the revision to " +
+      "whoever asked before it replaces a public copy. Add the new version to the record, then empty Changes to make with " +
+      "Edit, which takes the piece off Needs attention.\n" +
+      "A good result: the link opens the revised piece, and the record no longer lists with changes to make.";
+  }
+
   // Make a visual (Sam, Sheet 120 cards 1 and 4): for a college the record pair is
   // written now; for any other entity the brief is written with the entity set.
   function makeForm() {
@@ -720,6 +747,18 @@
       '<button type="button" class="lib-btn" data-startcancel="1">Cancel</button></div></form>';
   }
 
+  // Copy the request, beside Edit on any record with changes to make; once
+  // pressed, the paste shows under the card for a reader to select by hand.
+  function requestBtn(r) {
+    return '<button type="button" class="lib-btn primary" data-request="' + esc(r.id) + '">' +
+      (state.requestShown[r.id] ? "Copy again" : "Copy the request") + "</button>";
+  }
+  function requestBox(r) {
+    if (!r.refresh_note || !state.requestShown[r.id]) return "";
+    return '<label class="lib-vh" for="lib-r-' + esc(r.id) + '">The request to paste into a new session</label>' +
+      '<textarea class="lib-brief" id="lib-r-' + esc(r.id) + '" readonly>' + esc(requestText(r)) + "</textarea>";
+  }
+
   function devItem(r) {
     var b = r.brief || {};
     var at = STEPS.indexOf(r.status);
@@ -732,6 +771,7 @@
     var acts = '<button type="button" class="lib-btn primary" data-brief="' + esc(r.id) + '">' + (shown ? "Copy again" : "Copy the brief") + "</button>";
     if (r.url) acts += '<a class="lib-btn" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open the draft</a>';
     acts += '<button type="button" class="lib-btn" data-edit="' + esc(r.id) + '">Edit record</button>';
+    if (r.refresh_note) acts += requestBtn(r);
     return '<article class="lib-devitem" aria-labelledby="lib-t-' + esc(r.id) + '"><div>' +
       '<p class="lib-kicker">' + esc(kicker.join(" · ")) + "</p>" +
       '<h3 class="lib-title" id="lib-t-' + esc(r.id) + '">' + esc(r.title) + "</h3>" +
@@ -739,6 +779,7 @@
       (r.occasion ? '<p class="lib-line">' + esc(r.occasion) + "</p>" : "") +
       '<ol class="lib-steps" aria-label="Where this piece stands">' + steps + "</ol>" +
       (shown ? '<label class="lib-vh" for="lib-b-' + esc(r.id) + '">The brief to paste into a new session</label><textarea class="lib-brief" id="lib-b-' + esc(r.id) + '" readonly>' + esc(briefText(r)) + "</textarea>" : "") +
+      (r.refresh_note ? '<p class="lib-line"><b>Changes to make:</b> ' + esc(r.refresh_note) + "</p>" : "") + requestBox(r) +
       '</div><div class="lib-acts">' + acts + "</div>" +
       (state.edit === r.id ? '<div class="lib-details">' + editForm(r) + "</div>" : "") + "</article>";
   }
@@ -858,7 +899,7 @@
     // typed into an open form. Restore only into the SAME form: the edit ids are
     // shared by every record, so a value typed for one must not land in another.
     var typed = {};
-    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],input[id^='ls-'],select[id^='ls-'],input[id^='lm-'],select[id^='lm-']"), function (n) { typed[n.id] = n.value; });
+    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],textarea[id^='le-'],input[id^='ls-'],select[id^='ls-'],input[id^='lm-'],select[id^='lm-']"), function (n) { typed[n.id] = n.value; });
     var sameAdd = painted.formFor === state.formFor && painted.form === !!state.form;
     var sameEdit = painted.edit === state.edit;
     var focusId = document.activeElement && document.activeElement.id;
@@ -991,6 +1032,22 @@
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
 
+  function copyRequest(id) {
+    var r = byId(id);
+    if (!r) return;
+    state.requestShown[id] = true;
+    var text = requestText(r);
+    var fallback = function () {
+      say("Select the request and copy it."); render();
+      var t = document.getElementById("lib-r-" + id); if (t) { t.focus(); t.select(); }
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { say("Copied. Paste it into a new session, or leave it for the scheduled run."); render(); }, fallback);
+      } else fallback();
+    } catch (e) { fallback(); }
+  }
+
   function copyBrief(id) {
     var r = byId(id);
     if (!r) return;
@@ -1020,7 +1077,9 @@
       for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name,
       knowledge: knowledgeValue(g("le-knowledge"), g("le-kbnote")), kb_note: g("le-kbnote") || null };
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
-      say("Saved. The earlier version is in the history.");
+      say(body.refresh_note
+        ? "Saved. Copy the request on the card gives the paste for a new session; the scheduled run picks it up too."
+        : "Saved. The earlier version is in the history.");
       state.edit = null; state.retireAsk = null; delete state.forPick.le;
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
@@ -1141,6 +1200,7 @@
       }
       else if (b.getAttribute("data-startcancel")) { state.start = null; render(); var sb = document.getElementById("lib-start"); if (sb) sb.focus(); }
       else if ((v = b.getAttribute("data-brief"))) copyBrief(v);
+      else if ((v = b.getAttribute("data-request"))) copyRequest(v);
       else if (b.id === "lib-add") {
         state.start = null; state.make = null; delete state.forPick.la;
         if (state.form && !state.formFor) { state.form = null; } else { state.form = {}; state.formFor = null; }
