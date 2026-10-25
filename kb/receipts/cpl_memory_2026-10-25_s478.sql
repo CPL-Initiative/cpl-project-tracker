@@ -70,3 +70,17 @@ insert into public.cpl_memory_log (memory_id, actor, action, note, after)
 select m.id, 'SkyTidyTips-S478', 'create', 'S478 (2026-10-25)', to_jsonb(m) from public.cpl_memory m
 where m.slug = 'sam-funding-page-light-only-2026-10-25'
   and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+
+-- S478 checkpoint (applied ~17:00Z 2026-10-25; the first call timed out and wrote nothing, read back empty).
+insert into public.cpl_memory (slug, kind, org, title, summary, plain, tags, affects, source, related, author, event_date, status)
+values ('pitfall-run-js-summary-lost-on-ci-shard-2026-10-25', 'pitfall', 'cpl',
+ 'A failing CI shard can end its log mid-line with no summary: tests/run.js reports through console.log to a pipe, then process.exit drops the tail (S478)',
+ 'On #2446, shard 4''s log ended mid-sentence three times with exit 1 and no "FAILED" list, while shards 1 to 3 printed theirs. run.js writes children to files (synchronous) but its own report with console.log to the CI pipe, then calls process.exit(1). Find the names by running the shard''s likely suites locally.',
+ 'When one test group on CI fails without naming the failing test, the report was cut off; run that group''s tests here to find it.',
+ array['ci','tests','pitfall','js-tests']::text[], array['tests/run.js']::text[],
+ 'cpl-project-tracker#2446, runs 40206472598, 40208402126, 40210586884', array[]::text[], 'SkyTidyTips-S478', '2026-10-25', 'proposed')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select m.id, 'SkyTidyTips-S478', 'create', 'S478 checkpoint (2026-10-25)', to_jsonb(m) from public.cpl_memory m
+where m.slug = 'pitfall-run-js-summary-lost-on-ci-shard-2026-10-25'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
