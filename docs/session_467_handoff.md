@@ -4,6 +4,8 @@ date: 2026-10-24
 session: 466 (SkyYerbaSanta, two runs)
 tags: [handoff, implementation-funding, funding-video, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_470_handoff.md
 ---
 
 # You are Session 467

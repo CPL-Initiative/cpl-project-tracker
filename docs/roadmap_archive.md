@@ -10,6 +10,10 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-10-25)
+
+- 2026-10-23 (S459 SkyBuckeye, later): the agency template and the ELL IET page, the Knowledge Base fold (#2397), the display apply recorded; handoff 460 rewritten; memory receipt `cpl_memory_2026-10-23_s459_later.sql`.
+
 ## INDEX update-history entries rotated out (2026-10-23)
 
 - 2026-10-22 (S444 SkyBlueOak, opened by Sam): Foothill merged (#2326); blocked catalogs flagged on Procedures (#2328); a call carries Sam's sheet answer (#2329); 37 Program Mapper hosts recorded (#2330); Golden West and Imperial Valley loaded (#2331); department pages and two-line award headings (#2333).

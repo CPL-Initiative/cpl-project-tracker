@@ -4,6 +4,8 @@ date: 2026-10-24
 session: 462 (SkyToyon)
 tags: [handoff, communications, writer, ui-pass]
 status: current
+superseded: true
+superseded_by: session_470_handoff.md
 ---
 
 # You are Session 463

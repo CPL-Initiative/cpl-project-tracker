@@ -335,3 +335,31 @@ relisting is one switch once the deck has a link that opens without a sign-in), 
 40111416395 and read back at 16:33Z: `public_listed` false, `listed_by` *Sam, Open Asks Sheet 124 card 2 (S467
 receipt)*, and `cpl_library_public()` lists 15 pieces. The file is in the vault
 (`04-projects/cpl-initiative/20260929_CPL_IT_AI_Credentials_3.pptx`).
+
+## S469 SkyLemonadeBerry (2026-10-25): Sierra reads the library, the bar resizes, public pieces on Pages
+
+Sam asked Ask Sierra *"What is one step I can take to create CPL for the ELL IET grantees?"* and she answered in general
+terms, never naming *ELL IET CPL Starting Points*: nothing in `cpl-chat` read the library. The LIBRARY BLOCK now reads
+`cpl_library_public()` and the text of a piece the tracker hosts, and the production smoke's mode 7x asks his question
+on every run.
+
+- **A text cap that keeps a page's start loses its next steps.** The ELL IET page reads 17,157 characters and ends on
+  *Practical next steps*, the part a one-step question needs. A 14,000-character cap cut from the end dropped exactly
+  that. `libraryCut` keeps the opening 60% and the closing 40% of the budget and drops the middle, where a piece's tables
+  of evidence sit (`cpl_memory` `pitfall-page-text-cap-loses-next-steps-2026-10-25`).
+- **Strip the public header, never every header.** The first cut removed each `<header>` and took the page's own title
+  with the site's; the strip now takes the `cpl-public-header` markers block or `header.cplh` alone.
+- **A word every piece shares matches every piece.** *CPL*, *college*, *credit* and their kind never match alone, or a
+  question about anything names the whole shelf; a college's piece matches only through the college the detection
+  resolved.
+- **A public piece's address is the team's, not the artifact host's.** Sam's ask for a *cplinitiative* alias had no
+  domain to land on; GitHub Pages already serves the tracker, so `scripts/library_page.py` copies a piece there and its
+  record links there. The claude.ai page stays the editable original, so an edit there is followed by a rerun.
+- **The URL switch waits for the page.** The receipt was applied only once both Pages copies answered 200, so no listed
+  link pointed at a 404 for a minute.
+- **A bar beside the page is resized by words too.** Dragging is one way; *Narrower* and *Wider* and the separator's
+  arrow keys are the others (WCAG 2.5.7). During a drag the frame takes no pointer events, or the drag dies as the
+  pointer crosses into her page.
+- **A host page names its starters and its surface; the frame reads them from its parent.** The Fact Sheet's drawer
+  carried its own questions; the bar reads `CPL_SIERRA_SUGGESTED` and `CPL_SIERRA_SURFACE` from the same-origin parent,
+  never from the address, and only `fact-sheet` may be claimed, so a link cannot pick her surface.

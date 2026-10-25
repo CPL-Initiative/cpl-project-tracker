@@ -1,7 +1,7 @@
 ---
 title: Sierra — technical reference (how the CPL assistant is built)
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-10-25
 tags: [reference, sierra, cpl-assistant, chatbot, integration, vendor-facing]
 kb-status: published
 obsidian-folder: cpl-project-tracker
@@ -14,7 +14,7 @@ artifacts:
   - chatbox/supabase/functions/cpl-chat/index.ts
   - cpl_chat.js
   - sierra/sierra.js
-  - fact-sheet/factsheet_sierra.js
+  - sierra/sidebar.js
   - chatbox/smoke_test.sh
 ---
 
@@ -51,7 +51,7 @@ vanilla JS each — no frameworks, no build step, no external libraries.
 |---|---|---|---|---|
 | COBI's Sierra AI (the "CPL Assistant" tab until 2026-10-16) | `cpl_chat.js` on `cpl-initiative.github.io/cpl-project-tracker/`: `CPL_CHAT.open()` over any tab (`#chatbot` opens it) and My College's box | yes | yes | yes (`page:'cobi-sierra'` over a tab, `'cobi-tab'` in My College) |
 | Standalone Sierra page | `sierra/` — `cpl-initiative.github.io/cpl-project-tracker/sierra/` | yes | yes | yes (`page:'sierra'`) |
-| Public Fact Sheet drawer | `fact-sheet/factsheet_sierra.js` | yes | no | no |
+| Ask Sierra side bar | `sierra/sidebar.js` frames `sierra/?panel=1` on the public library, COBI's Library tab, the Fact Sheet and the funding model page (S469; the Fact Sheet's own drawer is retired) | yes | yes | yes (`page:'sierra'`) |
 | **Production widget** | `map.rccd.edu` (not in this repo) | **no** (omits `history`) | no | no |
 
 Because the function is shared, **every redeploy and every prompt/guidance
@@ -69,7 +69,7 @@ Student Portal).
 
 ```
                 Browser (any allowed origin)
-   cpl_chat.js / sierra.js / factsheet_sierra.js / map.rccd.edu widget
+   cpl_chat.js / sierra.js (also framed by sidebar.js) / map.rccd.edu widget
                           │
                           │  POST {query, session_id[, history, audience]}
                           ▼

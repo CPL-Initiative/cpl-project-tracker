@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-24T21:31:46Z",
+  "written_at": "2026-10-25T03:49:24Z",
   "session": 469,
   "moniker": "SkyLemonadeBerry",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_470_handoff.md",
   "next_step": {
-    "title": "Sheet 126, then the side bar where Sam says",
-    "text": "Read Open Asks Sheet 126's replies: which pages open Sierra in the side bar next, and whether the public pages that follow the device open Light. The harvest queue still waits on Sam's word for Hartnell's noncredit hours and its six arithmetic failures."
+    "title": "Sam looks at the Sierra work, then the noncredit attestation surface",
+    "text": "Sam sees the resizable side bar, the audience prompt and the side bar on the Fact Sheet and the funding page; then the next session takes the noncredit attestation surface through Governance and the privacy ADRs. The harvest queue still waits on Sam's word for Hartnell's noncredit hours and its six areas."
   },
   "calls": [
     {
@@ -102,8 +102,8 @@
   },
   "changes": [
     {
-      "at": "2026-10-24T21:40:00Z",
-      "text": "No harvest table moved this run; S469 built the Ask Sierra side bar on the public library and COBI's Library tab."
+      "at": "2026-10-25T03:49:00Z",
+      "text": "No harvest table moved this run; S469 made the Ask Sierra side bar resizable, had Sierra read the public library, moved two pieces to GitHub Pages, put the side bar on the Fact Sheet and the funding page, and opened the public pages Light."
     }
   ],
   "headline": [
@@ -208,6 +208,12 @@
       "active": 20282,
       "complete": 13173,
       "colleges": 114
+    },
+    {
+      "day": "2026-10-25",
+      "active": 20282,
+      "complete": 13173,
+      "colleges": 114
     }
   ],
   "next_run": {
@@ -216,7 +222,7 @@
     "at": "2026-10-25T05:12:00Z"
   },
   "harvest": {
-    "day": "2026-10-24",
+    "day": "2026-10-25",
     "gaps": 3031,
     "parts": {
       "links": {

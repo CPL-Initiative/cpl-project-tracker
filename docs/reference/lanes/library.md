@@ -167,7 +167,7 @@ to the chip. The frame takes the library's theme in `?theme=`, which her page le
 switch. The library maps the `--sierra-bar-*` tokens onto its own. **COBI's Library tab carries it too** (Sam, ~21:05Z:
 *"Library and more importantly on the public library site:)"*): `library.js` loads the bar on the tab's first visit, shows
 the chip on that tab alone (`setChip`; any other tab hides it and shuts an open bar) and maps the tokens onto First Light.
-Test: `tests/sierra_sidebar.test.js` (44); sweep: `public-library-sierra` and `-dark` (its keyboard checks drag the edge
+Test: `tests/sierra_sidebar.test.js` (51); sweep: `public-library-sierra` and `-dark` (its keyboard checks drag the edge
 across her frame at 1440px), `cobi:library`.
 **The Fact Sheet and the funding model page open her in the bar too** (Sam, Open Asks Sheet 126 card 1, *public*, 23:08Z
 2026-10-24; built S469); COBI stays as it is. Each opens her from its own *Ask Sierra* word in its action row, just ahead of
@@ -189,7 +189,8 @@ of its title, who it is for or its topics, or two words of its summary (words ev
 the tracker's `library/` is read too, and its text (to 20,000 characters, a longer page losing its middle) rides beside
 the link, so she answers from what it says; a question about the library lists every piece. The rule: link the piece in
 the first paragraph, answer from its text, add nothing to it. Tests: `tests/sierra_library.test.js` (30); smoke mode 7x
-(his question). Deploy: after the Pages copies are live and the records point at them.
+(his question). Live: `cpl-chat` deployed 03:13Z 2026-10-25 (run 40157254434); the production smoke (run
+40158212946) passed 7x, her answer linking the piece first and naming Fresno, Lemoore and Chaffey from its text.
 
 ## Public pieces live on GitHub Pages (Sam, 2026-10-25)
 
@@ -201,7 +202,11 @@ with `path` index.html), and its record links there; the claude.ai page stays th
 followed by a rerun and a commit. Pages, 2026-10-25: `ell-iet-cpl-starting-points`, `dsp-credit-starting-points`
 (their vault copies match the published artifacts byte for byte). The URL switch is one guarded UPDATE per record
 (`kb/receipts/cpl_library_pages_urls_2026-10-25_s469.sql`, before-values in the receipt). Test:
-`tests/library_pages.test.js`; sweep: `library-ell-iet`, `library-dsp` and their `-dark`.
+`tests/library_pages.test.js`; sweep: `library-ell-iet`, `library-dsp` and their `-dark`. Both records point there
+(applied 03:12Z, supabase-migrate run 40156994192, #2429). Every listed piece now opens at a cpl-initiative.github.io address
+but `ironworker-pathway-in-motion`, whose record (Sam's own edit, 2026-10-21) links the film's github.com file page. NEXT:
+its Pages address (`.../cpl-project-tracker/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4`)
+through a guarded UPDATE with a receipt, said to Sam in one line.
 
 ## Next
 
