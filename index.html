@@ -4089,6 +4089,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 /* ─── Budget inline editor (budget_editor.js) ─── */
 /* Tokens only (S364, finishing S363's Budget pass): the widget and the hover take the
@@ -4579,7 +4582,7 @@
             </div>
           </div>
         </span>
-        <div class="last-updated">Last Updated: October 25, 2026 at 4:38 AM PT</div>
+        <div class="last-updated">Last Updated: October 25, 2026 at 5:44 AM PT</div>
         <button id="refreshBtn" class="cobi-util-link" title="Re-scrape live MAP data and regenerate the dashboard now" onclick="if(!confirm('Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger?secret=CPL_SCRAPE_2026',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='Error: '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='Error: '+e.message;b.disabled=false})">Manually Refresh COBI</button>
       </div>
     </div>
@@ -4681,7 +4684,7 @@
     <div class="kpi-section-wrapper" id="kpiSectionWrapper">
         <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('kpiSectionWrapper');w.classList.toggle('collapsed');})()"> 
             <span class="kpi-section-title">KPI Metrics</span>
-            <span class="kpi-section-updated">Live data refreshed Oct 25, 2026 · 4:38 AM PT</span>
+            <span class="kpi-section-updated">Live data refreshed Oct 25, 2026 · 5:44 AM PT</span>
             <span class="kpi-toggle-arrow">&#9650;</span>
         </div>
     <div class="kpi-section">
@@ -5101,7 +5104,7 @@
 <div class="kpi-section-wrapper" id="cplAnalyticsWrapper">
     <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('cplAnalyticsWrapper');w.classList.toggle('collapsed');})()">
         <span class="kpi-section-title">CPL Analytics</span>
-        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-10-25T11:37:28</span>
+        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-10-25T12:43:30</span>
         <span class="kpi-toggle-arrow">&#9650;</span>
     </div>
     <div class="cpl-analytics-body" id="exhibitAnalysisSection">
@@ -5805,7 +5808,7 @@
                     <div style="height:100%;width:48%;background:var(--cobalt);border-radius:3px;transition:width 0.3s;"></div>
                 </div>
             </div>
-            <div style="padding:0 0.5rem 0.3rem 0.5rem;"><div style="margin-top:0.3rem;display:flex;flex-wrap:wrap;gap:0.3rem 1rem;"><span style="font-size:0.7rem;color:var(--text-muted);font-weight:600;">2026-27 goals:</span><span style="font-size:0.7rem;color:var(--text-muted);">MAP Platform Development: <strong>8</strong>/9</span><span style="font-size:0.7rem;color:var(--text-muted);">WestEd CPL Scope of Work: <strong>6</strong>/4</span><span style="font-size:0.7rem;color:var(--text-muted);">System Integration & Interop…: <strong>2</strong>/2</span><span style="font-size:0.7rem;color:var(--text-muted);">CPL Student Portal: <strong>0</strong>/1,000</span><span style="font-size:0.7rem;color:var(--text-muted);">California Credential Registry: <strong>0</strong>/50</span></div></div>
+            <div style="padding:0 0.5rem 0.3rem 0.5rem;"><div style="margin-top:0.3rem;display:flex;flex-wrap:wrap;gap:0.3rem 1rem;"><span style="font-size:0.7rem;color:var(--text-muted);font-weight:600;">2026-27 goals:</span><span style="font-size:0.7rem;color:var(--text-muted);">MAP Platform Development: <strong>8</strong>/9</span><span style="font-size:0.7rem;color:var(--text-muted);">AI Certification-to-Course M…: <strong>117</strong>/150</span><span style="font-size:0.7rem;color:var(--text-muted);">WestEd CPL Scope of Work: <strong>6</strong>/4</span><span style="font-size:0.7rem;color:var(--text-muted);">System Integration & Interop…: <strong>2</strong>/2</span><span style="font-size:0.7rem;color:var(--text-muted);">CPL Student Portal: <strong>0</strong>/1,000</span><span style="font-size:0.7rem;color:var(--text-muted);">California Credential Registry: <strong>0</strong>/50</span></div></div>
             <div class="cpl-live-update" data-update-key="activity:1" style="display:none;margin:0 0.5rem 0.4rem 0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
             <div class="activity-kpi-grid">
             <div class="activity-kpi-card has-metric" data-pid="1.1" data-activity="Activity 1" data-goal="Goal 2" data-sprint="" data-depth="0">
@@ -5909,7 +5912,7 @@
                   <tr>
                     <td style="padding:2px 4px;font-weight:600;text-align:left;color:var(--navy-primary);">GOAL</td>
                     <td style="padding:2px 4px;">117</td>
-                    <td style="padding:2px 4px;">0</td>
+                    <td style="padding:2px 4px;">150</td>
                     <td style="padding:2px 4px;">0</td>
                     <td style="padding:2px 4px;">0</td>
                     <td style="padding:2px 4px;">0</td>
@@ -5917,7 +5920,7 @@
                   <tr>
                     <td style="padding:2px 4px;font-weight:600;text-align:left;color:var(--mustard-text);">STRETCH</td>
                     <td style="padding:2px 4px;color:var(--mustard-text);">117</td>
-                    <td style="padding:2px 4px;color:var(--mustard-text);">0</td>
+                    <td style="padding:2px 4px;color:var(--mustard-text);">300</td>
                     <td style="padding:2px 4px;color:var(--mustard-text);">0</td>
                     <td style="padding:2px 4px;color:var(--mustard-text);">0</td>
                     <td style="padding:2px 4px;color:var(--mustard-text);">0</td>
@@ -5927,18 +5930,18 @@
                 <div class="akpi-progress" style="margin-top:0.5rem;">
                     <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--cobalt);font-weight:600;">Goal ✓</span>
-                        <span style="font-weight:700;color:var(--green-progress);">100%</span>
+                        <span style="color:var(--cobalt);font-weight:600;">Goal</span>
+                        <span style="font-weight:700;color:var(--cobalt);">78%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
-                        <div style="height:100%;width:100%;background:var(--green-progress);border-radius:3px;"></div>
+                        <div style="height:100%;width:78%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--mustard-text);font-weight:600;">Stretch ✓</span>
-                        <span style="font-weight:700;color:var(--green-progress);">100%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">39%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
-                        <div style="height:100%;width:100%;background:var(--green-progress);border-radius:3px;"></div>
+                        <div style="height:100%;width:39%;background:var(--gold-accent);border-radius:3px;"></div>
                     </div>
                 </div>
                 <div class="cpl-live-update" data-update-key="project:1.1.1" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
@@ -8659,7 +8662,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
 The work is intended to accelerate CPL exploration while preserving local curriculum, policy, and faculty decision-making.</div><div class="wpg-count-line"><span class="wpg-count-label">Counts:</span> <span class="wpg-unit-cell" data-unit-edit="1" data-pid="1.1.1" data-val="industry certifications matched">industry certifications matched</span></div><div class="wpg-count-line" hidden><span class="wpg-count-label">How it is counted:</span> <span class="wpg-note-cell" data-note-edit="1" data-pid="1.1.1" data-val=""></span></div><div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="1.1.1" data-assoc="[{&quot;activity_id&quot;: &quot;1&quot;, &quot;is_primary&quot;: true}, {&quot;activity_id&quot;: &quot;3&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Coordinate CPL Sprints, Targeted Projects, Professional Learning, and Strategic Partnerships&quot;}]"><span class="wpg-assoc-label">Contributes to:</span> <span class="wpg-act-chip wpg-act-chip-primary">★ Activity 1</span><span class="wpg-act-chip">Activity 3</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></div></th>
                         <th scope="row" class="wpg-type">Goal</th>
                         <td class="wpg-val" data-label="25-26" data-editable="1" data-aid="1.1.1" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="117">117</td>
-                        <td class="wpg-val" data-label="26-27" data-editable="1" data-aid="1.1.1" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="0"></td>
+                        <td class="wpg-val" data-label="26-27" data-editable="1" data-aid="1.1.1" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="150">150</td>
                         <td class="wpg-val" data-label="27-28" data-editable="1" data-aid="1.1.1" data-kind="project" data-rt="GOAL" data-yr="2027-28" data-yr-key="yr_2027_28" data-val="0"></td>
                         <td class="wpg-val" data-label="28-29" data-editable="1" data-aid="1.1.1" data-kind="project" data-rt="GOAL" data-yr="2028-29" data-yr-key="yr_2028_29" data-val="0"></td>
                         <td class="wpg-val" data-label="29-30" data-editable="1" data-aid="1.1.1" data-kind="project" data-rt="GOAL" data-yr="2029-30" data-yr-key="yr_2029_30" data-val="0"></td>
@@ -8675,7 +8678,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
                     <tr class="wpg-r wpg-r-stretch">
                         <th scope="row" class="wpg-type">Stretch</th>
                         <td class="wpg-val" data-label="25-26" data-editable="1" data-aid="1.1.1" data-kind="project" data-rt="STRETCH" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="117">117</td>
-                        <td class="wpg-val" data-label="26-27" data-editable="1" data-aid="1.1.1" data-kind="project" data-rt="STRETCH" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="0"></td>
+                        <td class="wpg-val" data-label="26-27" data-editable="1" data-aid="1.1.1" data-kind="project" data-rt="STRETCH" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="300">300</td>
                         <td class="wpg-val" data-label="27-28" data-editable="1" data-aid="1.1.1" data-kind="project" data-rt="STRETCH" data-yr="2027-28" data-yr-key="yr_2027_28" data-val="0"></td>
                         <td class="wpg-val" data-label="28-29" data-editable="1" data-aid="1.1.1" data-kind="project" data-rt="STRETCH" data-yr="2028-29" data-yr-key="yr_2028_29" data-val="0"></td>
                         <td class="wpg-val" data-label="29-30" data-editable="1" data-aid="1.1.1" data-kind="project" data-rt="STRETCH" data-yr="2029-30" data-yr-key="yr_2029_30" data-val="0"></td>
@@ -10480,8 +10483,8 @@ The work is intended to accelerate CPL exploration while preserving local curric
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "October 25, 2026 at 4:38 AM PT",
-  "data_as_of": "October 25, 2026 at 4:38 AM PT",
+  "last_updated": "October 25, 2026 at 5:44 AM PT",
+  "data_as_of": "October 25, 2026 at 5:44 AM PT",
   "kpis": {
     "cumulative_students": {
       "value": "57,664",
@@ -10679,7 +10682,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
       ],
       "live": true
     },
-    "_live_updated": "2026-10-25T11:38:16.325Z",
+    "_live_updated": "2026-10-25T12:44:16.858Z",
     "map_exhibits": {
       "value": "2,620",
       "label": "Common Exhibit Titles",
@@ -10772,7 +10775,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-10-25T11:37:28",
+    "_exhibit_updated": "2026-10-25T12:43:30",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
@@ -10827,8 +10830,8 @@ The work is intended to accelerate CPL exploration while preserving local curric
           "count_note": "",
           "goal_2526": "117",
           "stretch_2526": "117",
-          "goal_2627": "0",
-          "stretch_2627": "0",
+          "goal_2627": "150",
+          "stretch_2627": "300",
           "goal_2728": "0",
           "stretch_2728": "0",
           "goal_2829": "0",
@@ -13722,12 +13725,12 @@ The work is intended to accelerate CPL exploration while preserving local curric
       "kpi_order": null,
       "override": null,
       "kpi_goal_2526": "117",
-      "kpi_goal_2627": "0",
+      "kpi_goal_2627": "150",
       "kpi_goal_2728": "0",
       "kpi_goal_2829": "0",
       "kpi_goal_2930": "0",
       "kpi_stretch_2526": "117",
-      "kpi_stretch_2627": "0",
+      "kpi_stretch_2627": "300",
       "kpi_stretch_2728": "0",
       "kpi_stretch_2829": "0",
       "kpi_stretch_2930": "0"
@@ -14854,20 +14857,20 @@ The work is intended to accelerate CPL exploration while preserving local curric
       ],
       "goal": [
         117.0,
-        0.0,
+        150.0,
         0.0,
         0.0,
         0.0
       ],
-      "goal_total": 117.0,
+      "goal_total": 267.0,
       "stretch": [
         117.0,
-        0.0,
+        300.0,
         0.0,
         0.0,
         0.0
       ],
-      "stretch_total": 117.0,
+      "stretch_total": 417.0,
       "activity_ids": [
         "1",
         "3"
