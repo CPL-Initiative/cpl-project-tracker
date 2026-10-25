@@ -1,7 +1,7 @@
 ---
 title: "CPL Implementation Funding tab — archived lessons, part 2 (2026-09-22 onward)"
 date: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 tags: [lessons, archive, funding, implementation-funding, dashboard-tab]
 related:
   - "[[cpl_funding_lessons]]"
@@ -89,3 +89,41 @@ supersession explicitly.
 
 He held P4 at 0% until the first import, let CO research define the outcome, and took the drill-in
 consolidation as proposed. The follow-up PR shipped the one-line Baseline and the import receiver.
+
+## 2026-09-23 — S284 (SkyWage): Scenario 3, a base that read $149k, and a scenario nobody published
+
+**What Sam asked.** Scenario 3 matches the statute's four outcomes: delete the second completion priority, number
+Career attainment P3, retitle the (D) card "Innovation Projects" as P4, a per-card "show on college rows" toggle,
+an editable Measured-from list, plain-language Metric wiring, the NOCE/Calbright unmatched note, the ~$149k at the
+base, a tighter drill-in, and a check that a new scenario stays wired to every surface. Shipped as #1664.
+
+- **The ~$149k was a label on the wrong figure.** All 51 institutions at the base receive exactly $150,000; the
+  table showed only the credit share ($149,321 at Clovis) beside "(at base)" and the NC share beside it. The base
+  binds the COMBINED award, so the fix is a Max award column carrying the bound word and the one qualifying line.
+  It brings back a combined column R6/R7 retired on 2026-08-31, so it is item 4 on his sheet.
+  [note](kb-notes/methodology-label-a-bound-where-it-binds.md)
+- **A new scenario was NOT wired to the public.** Every surface read the scenario the viewer's browser had
+  selected: a college (no selection) saw Scenario 1 on the explainer, Sam's browser showed his working scenario
+  there, and `college_briefing.js` named "Scenario 1" in code. A stored `published` name per project now decides
+  what the explainer, the briefing and an unchosen browser read, with a Publish control on the strip; unset keeps
+  Scenario 1. The report writer says when it drafts from an unpublished scenario.
+- **A deleted share must move.** An award is W times the SUM of the shares, so a share deleted in place removes
+  that part of the funding from every award; Delete asks which priority takes it, and the totals row now warns
+  whenever the shares stop adding up to 100%. Sam, mid-session: *"I want to put the 33% into Career Attainment"*
+  (not into Completion). Measured on Scenario 3, the statewide Current Total goes from $2,613,990 to $1,354,241,
+  because Career attainment waits on the first EDD import; the sheet proposes holding Scenario 1 published until then.
+- **His NC base/cap idea is the live model.** Per-lane bounds proportional to each institution's NC FTES share,
+  the NC base taken from the CR base, reproduce every award to $0.00. NC gets parity (7.12% of FTES, 7.07% of the
+  funding); the cap on the combined award trims Mt. SAC's NC share to $115,102 against $237,441 proportional.
+  A weight is the clean lever (x1.25 gives $2,106,330). Calbright's data file says 21,438 NC FTES, which is 8.6 per
+  student and stays behind the 1,000 stand-in.
+- **The unmatched note was a lane-word gap in the builder.** MAP spells the credit locations "North Orange
+  Continuing Education Credit" and "Calbright College Credit"; `_feeder_resolver` now folds the trailing word, as
+  the shared identity file already does. The artifact moves on the next daily run.
+- **One numbering, two card kinds.** A reported card is still no entry in `priorities(slot)`; the label reads a
+  STORED unified order (`cardOrder` + an explicit `reportedCards`), because deriving the reported set inside
+  `priorities()` recurses. `priorityOrder()` stays the truth for the measured cards' relative order.
+- **Tests read columns by header now.** Thirteen suites indexed drill-in and row cells by position; the Max award
+  column and the six-column drill-in broke them for layout reasons alone.
+- **Supabase notice (Sam, 2026-09-23):** from 2026-10-30 a NEW table in `public` needs explicit grants for the Data
+  API. Next session: grants in every table-creating SQL file, and a lint beside the function-grants one.
