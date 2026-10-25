@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 87 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 442 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1250** | |
+| Session handoffs | 443 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1251** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-25 S472 SkyBrodiaea: the funding memo prints the noncredit outcomes (#2439); light checkpoint, handoff 473.
 - 2026-10-25 (S471 SkyPenstemon, the CPL Queue routine): the noncredit builder emits nc_cdcp, nc_exh and nc_course from a service-role RPC, applied and read back, and How to meet it for the two noncredit conditions (#2437); full checkpoint; handoff 472.
 - 2026-10-25 (S470 SkyBlueCurls, opened by hand): the ironworker film's Library link on GitHub Pages and the Veteran map's UI pass (#2432); the noncredit attestation on the funding page, applied after it reached Pages (#2433, #2436); a lessons archive within budget (#2434); full checkpoint; handoff 471.
 - 2026-10-25 (S469 SkyLemonadeBerry, continued): the Ask Sierra bar resizes, she asks who you are at the first Ask and reads the public library (#2427, cpl-chat deployed, smoke 7x green); two pieces on GitHub Pages (#2429); the public pages open Light (#2428); the Fact Sheet and the funding page on the bar (#2430); full checkpoint; handoff 470.

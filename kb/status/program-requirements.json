@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-25T06:41:17Z",
-  "session": 471,
-  "moniker": "SkyPenstemon",
+  "written_at": "2026-10-25T08:36:16Z",
+  "session": 472,
+  "moniker": "SkyBrodiaea",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_472_handoff.md",
+  "handoff": "docs/session_473_handoff.md",
   "next_step": {
     "title": "Read the first daily run with the noncredit builder",
-    "text": "The next session reads the first daily run that carries the noncredit counts and checks the funding page shows each noncredit outcome against its target, still held where no attestation is on file. The harvest queue still waits on Sam's word for Hartnell's noncredit hours and its six areas."
+    "text": "The next session reads the first daily run that carries the noncredit counts and checks the funding page shows each noncredit outcome against its target, still held where no attestation is on file. The harvest queue still waits behind the funding lane."
   },
   "calls": [
     {
@@ -102,8 +102,8 @@
   },
   "changes": [
     {
-      "at": "2026-10-25T06:40:00Z",
-      "text": "No harvest table moved this run; S471 built the noncredit builder for the funding page (exhibits, CDCP course counts and the portfolio course from COCI and MAP) and wrote How to meet it for the two noncredit conditions."
+      "at": "2026-10-25T08:35:00Z",
+      "text": "No harvest table moved this run; S472 added the noncredit outcomes to the funding memo, letter, report and brief."
     }
   ],
   "headline": [
@@ -219,7 +219,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-25T07:12:00Z"
+    "at": "2026-10-25T09:12:00Z"
   },
   "harvest": {
     "day": "2026-10-25",
