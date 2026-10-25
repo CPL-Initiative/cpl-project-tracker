@@ -25,7 +25,7 @@ window.CPL_FUNDING_PERF = {
   "ptc_u": 31582.45,
   "p3_u": 84268.15,
   "pp_u": 73.5,
-  "nc_exh": 78,
+  "nc_exh": 90,
   "nc_course": 0,
   "nc_cdcp": 7134
  },
@@ -231,7 +231,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 9342.75,
    "ptc": 1810,
    "ptc_u": 7729.5,
-   "nc_exh": 34,
+   "nc_exh": 37,
    "nc_course": 0,
    "nc_cdcp": 166
   },
@@ -1116,7 +1116,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 0,
+   "nc_exh": 8,
    "nc_course": 0,
    "nc_cdcp": 75
   },
@@ -1871,7 +1871,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 2,
+   "nc_exh": 3,
    "nc_course": 0,
    "nc_cdcp": 139
   },
