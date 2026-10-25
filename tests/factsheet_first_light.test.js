@@ -42,16 +42,13 @@ check("the screen's body face is Source Sans 3", /--font-body:\s*'Source Sans 3'
 check("the display face is Playfair Display", /--font-display:\s*'Playfair Display'/.test(code));
 
 // ── dark never reaches paper ──
-const darkOs = block(code, "@media screen and (prefers-color-scheme: dark)");
+// The page opens Light unless the reader picks Dark (Sam, Open Asks Sheet 126 card 2,
+// 2026-10-24): the dark values sit under the reader's choice alone, and the device's
+// setting never picks them.
 const darkPick = block(code, "@media screen {");
-check("the OS dark block is screen-only and yields to an explicit light choice",
-  !!darkOs && /:root:not\(\[data-theme="light"\]\)/.test(darkOs));
-check("the explicit dark block is screen-only", !!darkPick && /:root\[data-theme="dark"\]/.test(darkPick));
-check("no dark block outside @media screen",
-  (code.match(/data-theme="dark"\]/g) || []).length === 1 &&
-  (code.match(/prefers-color-scheme:\s*dark/g) || []).length === 1);
-const decls = (b) => (b || "").replace(/\s+/g, " ").match(/--[\w-]+:\s*[^;]+/g) || [];
-check("both dark blocks set the same values", JSON.stringify(decls(darkOs)) === JSON.stringify(decls(darkPick)));
+check("the dark block is the reader's choice, screen-only", !!darkPick && /:root\[data-theme="dark"\]/.test(darkPick));
+check("one dark block, and no device query anywhere in the stylesheet",
+  (code.match(/data-theme="dark"\]/g) || []).length === 1 && !/prefers-color-scheme/.test(code));
 
 // ── print keeps the document pair ──
 const print = block(code, "@media print");
@@ -65,7 +62,7 @@ check("print sets the figures back to the data face at 800",
 const screenOnly = code.replace(print || "", "");
 check("seal navy is never screen text except as --seal-blue-text",
   !/(^|[;{\s])color:\s*var\(--seal-blue\)/m.test(screenOnly));
-check("dark lifts the seal ink to the on-dark grade", /--seal-blue-text:\s*#7DA1D4/.test(darkOs || ""));
+check("dark lifts the seal ink to the on-dark grade", /--seal-blue-text:\s*#7DA1D4/.test(darkPick || ""));
 
 // ── the page follows COBI's one theme control ──
 check("index.html reads cpl_theme before the stylesheet, and follows a change in another tab",

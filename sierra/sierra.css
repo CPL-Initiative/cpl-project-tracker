@@ -56,22 +56,6 @@
   --sierra-display: Georgia, 'Times New Roman', serif;
   --sierra-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --sierra-paper: #12233D; --sierra-ink: #E3EAF4; --sierra-body: #E3EAF4;
-    --sierra-muted: #A9B7CA; --sierra-faint: #A9B7CA;
-    --sierra-surface: #12233D; --sierra-subtle: #0E1D33; --sierra-tint: #1B3356;
-    --sierra-border: #2A3E5C; --sierra-border-strong: #4B6B95; --sierra-field: #7F95B3;
-    --sierra-cobalt: #8DBDF5; --sierra-on-cobalt: #0B1628;
-    --sierra-heading: #D5E3F7; --sierra-on-heading: #0B1628; --sierra-title: #E8F0FB;
-    --sierra-gold: #F2B527; --sierra-crimson: #F0A0A0;
-    --sierra-shadow: 0 12px 24px rgba(0, 0, 0, .35);
-    --sierra-ghost: #E8F0FB;
-    --sierra-foot-bg: #06111F; --sierra-foot-fg: #C9D7EA;
-    --sierra-fade-mid: #0B1628; --sierra-fade-end: #0E1D33;
-    color-scheme: dark;
-  }
-}
 :root[data-theme="dark"] {
   --sierra-paper: #12233D; --sierra-ink: #E3EAF4; --sierra-body: #E3EAF4;
   --sierra-muted: #A9B7CA; --sierra-faint: #A9B7CA;
@@ -137,10 +121,6 @@ button { font: inherit; color: inherit; }
 .s-home:hover { opacity: .85; }
 .s-logo { height: 40px; width: auto; display: block; }
 .s-logo-dark { display: none; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .s-logo-light { display: none; }
-  :root:not([data-theme="light"]) .s-logo-dark { display: block; }
-}
 :root[data-theme="dark"] .s-logo-light { display: none; }
 :root[data-theme="dark"] .s-logo-dark { display: block; }
 .s-who-head {
@@ -409,10 +389,6 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
    navy on paper, white on the dark paper. */
 .s-foot-logo { height: 30px; width: auto; display: none; }
 :root:not([data-panel]) .s-foot-logo-white, :root[data-panel] .s-foot-logo-navy { display: block; }
-@media (prefers-color-scheme: dark) {
-  :root[data-panel]:not([data-theme="light"]) .s-foot-logo-navy { display: none; }
-  :root[data-panel]:not([data-theme="light"]) .s-foot-logo-white { display: block; }
-}
 :root[data-panel][data-theme="dark"] .s-foot-logo-navy { display: none; }
 :root[data-panel][data-theme="dark"] .s-foot-logo-white { display: block; }
 

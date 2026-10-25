@@ -16,7 +16,8 @@ returns it. Either form works: the fragment the artifact holds (a <title>, its s
 and its body, no <html>) or a whole document. The script writes
 library/<SLUG>/index.html: the page's own head lines (title, meta, font links) in a
 real <head>, the rest unchanged in <body>, with the claude.ai frame's base rules the
-page was drawn against and no color of their own. It writes nothing else and fetches
+page was drawn against and no color of their own, and a theme line that opens it
+Light unless the reader picked Dark. It writes nothing else and fetches
 nothing.
 
 Sierra reads a page there (cpl-chat's libraryHosted), so what the piece says reaches
@@ -32,6 +33,12 @@ SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 BASE = ("<style>:root{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}"
         "body{margin:0;padding:0}img{max-width:100%}"
         "[hidden]:not([hidden=until-found i]){display:none!important}</style>")
+# Light unless the reader picked Dark (Sam, Open Asks Sheet 126 card 2, 2026-10-24: the public pages open
+# Light as the library does), set before the page's own styles paint. The page's device rules are written
+# under :root:not([data-theme="light"]), so a set theme stands them down; its public header's Light and
+# Dark words write the same cpl_theme choice.
+THEME = ('<script>(function(){var t=null;try{t=localStorage.getItem("cpl_theme")}catch(e){}'
+         'document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")})()</script>')
 HEAD_LINE = re.compile(r"^\s*(<title>.*?</title>|<meta\b[^>]*>|<link\b[^>]*>)\s*$", re.I)
 
 
@@ -57,6 +64,7 @@ def build(slug, src):
         "<head>",
         '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
+        THEME,
         *head,
         '<link rel="icon" href="../../cccco_seal.png">',
         f"<!-- The CPL Library's public copy of {slug}; the claude.ai artifact is the editable"
