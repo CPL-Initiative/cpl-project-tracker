@@ -16175,8 +16175,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 448,
+   "count": 449,
    "docs": [
+    {
+     "created": "2026-10-25",
+     "governs": [],
+     "n": 479,
+     "path": "docs/session_479_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "noncredit",
+      "sierra",
+      "public-page",
+      "ci"
+     ],
+     "title": "Session 479 handoff: the funding page in two columns and the library look; the Noncredit CPL Lead",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-25",
      "governs": [],
@@ -23866,5 +23884,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1263
+ "total": 1264
 }

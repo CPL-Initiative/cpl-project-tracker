@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-25T13:19:48Z",
-  "session": 477,
-  "moniker": "SkyOwlsClover",
+  "written_at": "2026-10-25T16:51:33Z",
+  "session": 478,
+  "moniker": "SkyTidyTips",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_478_handoff.md",
+  "handoff": "docs/session_479_handoff.md",
   "next_step": {
     "title": "Read Sheet 127, then the Fact Sheet's UI pass",
-    "text": "The next session reads Sam's reply on Sheet 127 and, as the first scheduled session of October 26, audits the Fact Sheet. The noncredit counts now arrive in the daily run. The harvest queue still waits behind the funding lane."
+    "text": "The next session reads Sam's reply on Sheet 127 and, as the first scheduled session of October 26, audits the Fact Sheet. Sam's five funding page asks shipped this run. The harvest queue still waits behind the funding lane."
   },
   "calls": [
     {
@@ -123,6 +123,10 @@
     {
       "at": "2026-10-25T13:25:00Z",
       "text": "No harvest table moved this run; S477 confirmed the noncredit counts landed and fixed the privacy check the new rows tripped."
+    },
+    {
+      "at": "2026-10-25T17:05:00Z",
+      "text": "No harvest table moved this run; S478 shipped Sam's funding page asks (two funding columns, the Noncredit CPL Lead, the Report fold, the library look) in PR 2446."
     }
   ],
   "headline": [

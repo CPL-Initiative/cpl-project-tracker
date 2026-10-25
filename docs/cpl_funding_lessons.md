@@ -577,3 +577,14 @@ From the implementation-funding lane's noncredit paragraph, verbatim:
 - **A function-level timeout is no protection for a PostgREST caller.** If the RPC ever runs past 8 s warm, the fix is
   in the SQL (or a role-level setting, which reaches every service-role call and is shared ground), never a longer
   client timeout.
+
+## S478 SkyTidyTips (2026-10-25): two funding columns, the Lead, the Report fold, the library look
+
+Sam's five asks in one hand-opened session, merged as #2446 (squash 6ed85331).
+
+- **Two columns were already in the markup.** The drill-in's Total and Curr Total cells summed each row's lanes since round 8, so "consolidate to Max and Curr" was a relabel (`total` → Max Funds, `current_total` → Curr Funds) plus hiding the four split columns by default and bumping the column store to v3. The hovers and the Unit sources word lived only in the split cells, so they moved with the figures; a hidden column keeps its cells in the DOM, so every test that read `cr_current` still could.
+- **Twenty-odd test files pinned "Total Funds", the v2 store, the coordinator words and the page's exact anchor markup.** Each was a pin on a label Sam changed, never a behavior. CI's shard 4 never printed its summary: `tests/run.js` writes its own report with `console.log` to a pipe and then calls `process.exit(1)`, which drops the buffered tail. The failure names were found by running the shard's funding and Sierra suites locally.
+- **The local renders read the baked defaults** (Scenario 1, a $75,000 base, Confirm by 11-01-26) because the sandbox cannot reach Supabase; Sam caught both. Serving the newest `tests/fixtures/cpl_funding_config_*.json` to the page's config fetch (patched with values read over the MCP) renders the published scenario.
+- **The strike-team condition retired by Sam's strike-through**, his first condition now carrying "meeting regularly". `ncTeamShown()` defaults off rather than writing a curator setting by SQL; a layer can restore it.
+- **The timeline sorts at render**, not in storage: Sam's four report deadlines landed at the end of the stored list, and a render sort keeps every future milestone in place with no reorder control.
+- **Sam's saved passages keep their words.** `nc_rules` and `college_intro` still name the coordinator, the strike team and the old columns; they are his edits on the tab.
