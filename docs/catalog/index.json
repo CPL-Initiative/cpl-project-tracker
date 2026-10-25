@@ -10214,7 +10214,7 @@
      ],
      "title": "Test a database function locally with PGlite before it goes live",
      "type": "playbook",
-     "updated": "2026-10-13"
+     "updated": "2026-10-25"
     },
     {
      "created": "2026-10-13",
@@ -11962,7 +11962,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-10-24"
+     "updated": "2026-10-25"
     },
     {
      "created": "2026-06-21",
@@ -13864,7 +13864,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 archived lessons, part 2 (2026-09-22 onward)",
      "type": null,
-     "updated": "2026-10-24"
+     "updated": "2026-10-25"
     },
     {
      "created": "2026-06-11",
@@ -16068,8 +16068,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 440,
+   "count": 441,
    "docs": [
+    {
+     "created": "2026-10-25",
+     "governs": [],
+     "n": 471,
+     "path": "docs/session_471_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "noncredit",
+      "attestation",
+      "library",
+      "ui-pass"
+     ],
+     "title": "Session 471 handoff: the noncredit attestation is live on the funding page; every public Library piece opens on GitHub Pages; the Veteran map passed its UI review",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-25",
      "governs": [],
@@ -23621,5 +23639,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1248
+ "total": 1249
 }

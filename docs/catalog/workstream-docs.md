@@ -38,7 +38,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Common CR Reference — scope, measured against the CCR's actual matching factors](../common_cr_reference_scope.md) | `common_cr_reference_scope.md` | 2026-08-13 |  |
 | [CourseControlNumber Re-mint — Decisions & Lessons](../coursecontrolnumber_remint.md) | `coursecontrolnumber_remint.md` | 2026-05-22 |  |
 | [CPL Assistant (Sierra) lessons — archive 2](../cpl_assistant_lessons_archive_2.md) | `cpl_assistant_lessons_archive_2.md` | 2026-10-16 | 2026-10-16 |
-| [CPL Implementation Funding tab — archived lessons, part 2 (2026-09-22 onward)](../cpl_funding_lessons_archive_2.md) | `cpl_funding_lessons_archive_2.md` | 2026-10-24 | 2026-10-24 |
+| [CPL Implementation Funding tab — archived lessons, part 2 (2026-09-22 onward)](../cpl_funding_lessons_archive_2.md) | `cpl_funding_lessons_archive_2.md` | 2026-10-24 | 2026-10-25 |
 | [CPL Implementation Funding — next-session handoff](../cpl_funding_handoff.md) | `cpl_funding_handoff.md` | 2026-06-11 | 2026-08-05 |
 | [CPL Pathways side-lane handoff — the Common Course Reference redesign](../cpl_pathways_handoff.md) | `cpl_pathways_handoff.md` | 2026-07-16 |  |
 | [CPL presentations — workstream handoff (StarBOG)](../cpl_presentations_handoff.md) | `cpl_presentations_handoff.md` | 2026-07-20 |  |

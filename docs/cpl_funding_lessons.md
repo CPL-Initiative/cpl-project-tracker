@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-10-24
+updated: 2026-10-25
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -50,44 +50,6 @@ the two consolidations (Session 219) on **2026-09-30** (S306), and the 2026-09-0
 *The S262 to S265 sections (2026-09-14 to 09-16) moved verbatim to the [archive](cpl_funding_lessons_archive.md) at the two 2026-10-22 side sessions.*
 
 *The two S283 sections (2026-09-22 and 09-23) moved verbatim to [`cpl_funding_lessons_archive_2.md`](cpl_funding_lessons_archive_2.md) at S468 (2026-10-24), the first archive being over its own budget.*
-
-## 2026-09-23 — S284 (SkyWage): Scenario 3, a base that read $149k, and a scenario nobody published
-
-**What Sam asked.** Scenario 3 matches the statute's four outcomes: delete the second completion priority, number
-Career attainment P3, retitle the (D) card "Innovation Projects" as P4, a per-card "show on college rows" toggle,
-an editable Measured-from list, plain-language Metric wiring, the NOCE/Calbright unmatched note, the ~$149k at the
-base, a tighter drill-in, and a check that a new scenario stays wired to every surface. Shipped as #1664.
-
-- **The ~$149k was a label on the wrong figure.** All 51 institutions at the base receive exactly $150,000; the
-  table showed only the credit share ($149,321 at Clovis) beside "(at base)" and the NC share beside it. The base
-  binds the COMBINED award, so the fix is a Max award column carrying the bound word and the one qualifying line.
-  It brings back a combined column R6/R7 retired on 2026-08-31, so it is item 4 on his sheet.
-  [note](kb-notes/methodology-label-a-bound-where-it-binds.md)
-- **A new scenario was NOT wired to the public.** Every surface read the scenario the viewer's browser had
-  selected: a college (no selection) saw Scenario 1 on the explainer, Sam's browser showed his working scenario
-  there, and `college_briefing.js` named "Scenario 1" in code. A stored `published` name per project now decides
-  what the explainer, the briefing and an unchosen browser read, with a Publish control on the strip; unset keeps
-  Scenario 1. The report writer says when it drafts from an unpublished scenario.
-- **A deleted share must move.** An award is W times the SUM of the shares, so a share deleted in place removes
-  that part of the funding from every award; Delete asks which priority takes it, and the totals row now warns
-  whenever the shares stop adding up to 100%. Sam, mid-session: *"I want to put the 33% into Career Attainment"*
-  (not into Completion). Measured on Scenario 3, the statewide Current Total goes from $2,613,990 to $1,354,241,
-  because Career attainment waits on the first EDD import; the sheet proposes holding Scenario 1 published until then.
-- **His NC base/cap idea is the live model.** Per-lane bounds proportional to each institution's NC FTES share,
-  the NC base taken from the CR base, reproduce every award to $0.00. NC gets parity (7.12% of FTES, 7.07% of the
-  funding); the cap on the combined award trims Mt. SAC's NC share to $115,102 against $237,441 proportional.
-  A weight is the clean lever (x1.25 gives $2,106,330). Calbright's data file says 21,438 NC FTES, which is 8.6 per
-  student and stays behind the 1,000 stand-in.
-- **The unmatched note was a lane-word gap in the builder.** MAP spells the credit locations "North Orange
-  Continuing Education Credit" and "Calbright College Credit"; `_feeder_resolver` now folds the trailing word, as
-  the shared identity file already does. The artifact moves on the next daily run.
-- **One numbering, two card kinds.** A reported card is still no entry in `priorities(slot)`; the label reads a
-  STORED unified order (`cardOrder` + an explicit `reportedCards`), because deriving the reported set inside
-  `priorities()` recurses. `priorityOrder()` stays the truth for the measured cards' relative order.
-- **Tests read columns by header now.** Thirteen suites indexed drill-in and row cells by position; the Max award
-  column and the six-column drill-in broke them for layout reasons alone.
-- **Supabase notice (Sam, 2026-09-23):** from 2026-10-30 a NEW table in `public` needs explicit grants for the Data
-  API. Next session: grants in every table-creating SQL file, and a lint beside the function-grants one.
 
 ## 2026-09-24 — S285 (SkyGrant): the config after the stale save, and the briefing's funding box
 
@@ -720,3 +682,35 @@ Settled sections of `docs/reference/lanes/implementation-funding.md`, moved verb
   `CPL Coordinator` fields (56 of 124 colleges filled, 2026-10-24); the noncredit condition reads COBI's attestation row.
 - The NC outcomes test runs about 2.5 minutes locally; run it alone rather than the full `npm test`.
 
+
+## S470 SkyBlueCurls (2026-10-25): the noncredit attestation surface
+
+- **What shipped** (#2433, `kb/supabase_cpl_funding_nc_attestation.sql`): one row per college and fiscal year, attest-first
+  as the participation opt-in, the CO's Reject then Re-confirm or Remove; the published view carries the coordinator's
+  name and title, the year, the status and the dates; the review RPC carries the rest. The view keeps this fiscal year and
+  the next (`cpl_funding_fy()`, July to June), so *renewed each year* is the view's filter and no session has to remember it.
+- **A `security_invoker` view over column grants cannot leak a column.** Revoke table SELECT from anon and authenticated,
+  grant back the published columns, and the view runs with the reader's own grants: a view that names a hidden column
+  fails for anon instead of showing it. The test pins the view's columns against the grant list and the page's `select=`
+  against the view's.
+- **`tests/cpl_funding_equity` forbids the string `coordinator_email` anywhere in `cpl_funding.js`.** The first build
+  collected the noncredit coordinator's optional email and failed that guard. The email came out: the condition needs the
+  name, the attestor's email already reaches the CO, and MAP's directory will carry the role's contact.
+- **The order of apply.** A missing view reads the noncredit conditions *pending* (no hold, no form); an empty one reads
+  *not yet on file* (the share held). The schema applies after the code is on Pages, so the live page never shows an empty
+  view without the form that fills it; the noncredit share is $0 either way until the builder emits its measures.
+- **The award count masks for the team phrase.** It is a per-college student count: the review RPC returns it whole to a
+  signed-in reviewer (`is_allowed_reviewer()`, the student-detail ADR's gate) and null for 1 to 9 to the team phrase (the
+  funding ADR's floor of 10).
+- **A form inside the funding table on a phone.** The drill-in is as wide as the table (898 px at 390), which scrolls
+  inside `.cplfund-tablewrap` (299 px). Making the wrapper a size container (`container-type: inline-size`) lets the form
+  take `100cqi` and stay sticky at the cell's left: one column, every field in view. The wrapper holds no fixed-position
+  element (the splash attaches to `body`); a fixed child would have taken the wrapper as its containing block.
+- **Testing the SQL.** Native Postgres 16 ran this time (`su postgres`, the cluster under `/var/tmp`): seventeen cases
+  as anon, the team phrase and a reviewer. Notes on the method are in the PGlite playbook.
+
+## Moved from the lane (S470, 2026-10-25)
+
+From the implementation-funding lane's noncredit paragraph, verbatim:
+
+✅ **Sam's four asks of 10-24, worked by S468 (#2422).** (1) The NC cards edit as the credit cards do (signed in for the team, signed out a what-if; they had been read-only unsigned, so his screenshot showed no fields), with the measure, target rule, outcomes served and strategies added (`tests/cpl_funding_nc_outcomes.test.js` E0 to E8). (2) Cabrillo: NC-1's mirror channel counts from COCI and MAP, 33 exhibits against 9; 4 of 102 colleges meet on it; NC-2 is confirmable, never findable (`funding/nc_outcome_feasibility/2026-10-24_cabrillo/`). (3) The credit coordinator condition reads MAP's College Contacts; the noncredit one reads `coordinator_name` on COBI's attestation row and swaps to a `has_nc_cpl_lead` boolean from `map_coordinator_summary()` once MAP carries the role. (4) The map-users lane.
