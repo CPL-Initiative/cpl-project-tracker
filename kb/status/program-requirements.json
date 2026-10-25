@@ -1,17 +1,24 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-25T08:36:16Z",
-  "session": 472,
-  "moniker": "SkyBrodiaea",
+  "written_at": "2026-10-25T10:05:00Z",
+  "session": 473,
+  "moniker": "SkyClarkia",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_473_handoff.md",
+  "handoff": "docs/session_474_handoff.md",
   "next_step": {
     "title": "Read the first daily run with the noncredit builder",
-    "text": "The next session reads the first daily run that carries the noncredit counts and checks the funding page shows each noncredit outcome against its target, still held where no attestation is on file. The harvest queue still waits behind the funding lane."
+    "text": "The next session reads the first daily run that carries the noncredit counts and checks the funding page shows each noncredit outcome against its target. Channel 3 stays off until Sam answers Sheet 127. The harvest queue still waits behind the funding lane."
   },
   "calls": [
+    {
+      "title": "Should the thirteen credential pairs count toward NC-1?",
+      "text": "NC-1's channel 3 counts an exhibit whose credential a CDCP course names. Thirteen pairs are proposed (Cabrillo 3, LA Trade-Tech 9, Saddleback 1); the builder counts none until a row reads confirmed.",
+      "if_no_reply": "Channel 3 counts nothing, and LA Trade-Tech reads 0 of its NC-1 target of 4.",
+      "link": "https://claude.ai/artifact/VfX9JnaA5j3ESubzHKYc3A",
+      "link_text": "Open Sheet 127"
+    },
     {
       "title": "The second reader waits on a new xAI subscription",
       "text": "Sam, 2026-10-20 about 16:30 UTC: the API is paid for separately from the Grok subscription, and the account is moving to the RCCD district credit card. When the key exists: Sam sets XAI_API_KEY and XAI_MODEL as Edge Function secrets on the Work Plan project, a session deploys program-requirements-extract with cpl-chat-deploy.yml, then runs second-reader.yml for Canada College.",

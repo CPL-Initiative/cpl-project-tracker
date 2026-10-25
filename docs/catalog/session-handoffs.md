@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-443 document(s).
+444 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 474 | [Session 474 handoff: NC-1's channel 3 is built and waits on Sheet 127](../session_474_handoff.md) | 2026-10-25 |
 | 473 | [Session 473 handoff: the funding memo prints the noncredit outcomes](../session_473_handoff.md) | 2026-10-25 |
 | 472 | [Session 472 handoff: the noncredit builder counts exhibits and the portfolio course; How to meet it for the noncredit conditions](../session_472_handoff.md) | 2026-10-25 |
 | 471 | [Session 471 handoff: the noncredit attestation is live on the funding page; every public Library piece opens on GitHub Pages; the Veteran map passed its UI review](../session_471_handoff.md) | 2026-10-25 |

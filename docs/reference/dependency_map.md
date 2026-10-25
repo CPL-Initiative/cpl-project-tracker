@@ -431,6 +431,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `funding-model/index.html` | scripts: `scripts/ui_pass.py` | — |
 | `funding/_build_funding_ess.py` | workflows: `daily-dashboard.yml` | — |
 | `funding/_build_funding_performance.py` | workflows: `daily-dashboard.yml` | — |
+| `funding/nc_credential_crosswalk.json` | scripts: `funding/_build_funding_performance.py` | — |
 | `funding/nc_outcome_feasibility/2026-10-22/nc_courses.json` | scripts: `funding/nc_outcome_feasibility/2026-10-22/nc_outcome_feasibility.py` | — |
 | `funding/nc_outcome_feasibility/2026-10-22/nc_shares.json` | scripts: `funding/nc_outcome_feasibility/2026-10-22/nc_outcome_feasibility.py` | — |
 | `funding/nc_outcome_feasibility/2026-10-22/summary.json` | none found | scripts: `funding/nc_outcome_feasibility/2026-10-22/nc_outcome_feasibility.py` |
@@ -1195,5 +1196,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 102 Supabase tables · 42 RPCs · 9 edge functions · 714 file
+Coverage: 102 Supabase tables · 42 RPCs · 9 edge functions · 715 file
 datasets · 184 external services · 472 consumers · 58 workflows · 38 tabs.
