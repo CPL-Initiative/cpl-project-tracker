@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/supabase_cpl_funding_nc_counts.sql",
+ "name": "cpl_funding_nc_counts_s471",
+ "version": "20261025063225",
+ "sha256": "01cd0f48d981145d87c2e0444ddb4c4639ca0eaf533cc74ad51e8558f7001d19",
+ "run": "40169350048",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

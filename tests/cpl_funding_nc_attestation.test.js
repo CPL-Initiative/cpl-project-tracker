@@ -237,4 +237,24 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "self
   check("D5: the public page offers the college its form", !!det && !!det.querySelector("[data-ncattestopen]"));
 }
 
+// ── E. How to meet it, for the two noncredit conditions (S471) ───────────────
+{
+  const { doc, T } = setup({ elig: { ncAttestOk: true, ncAttest: {} } });
+  const kinds = T.howToKinds();
+  check("E1: both noncredit conditions carry a How to meet it passage",
+    kinds.indexOf("nc_coord") >= 0 && kinds.indexOf("nc_team") >= 0);
+  T.howToOpen("nc_team", COLLEGE, {});
+  const dlg = doc.getElementById("cplFundHowTo");
+  check("E2: the strike-team passage opens for the college, naming the button the drill-in offers",
+    !!dlg && /Attest for your noncredit CPL strike team/.test(dlg.textContent) &&
+    /Attest for the noncredit share/.test(dlg.textContent));
+  T.howToOpen("nc_coord", COLLEGE, {});
+  check("E3: the coordinator passage opens too",
+    /Name and publish your noncredit CPL coordinator/.test(doc.getElementById("cplFundHowTo").textContent));
+  const brief = fs.readFileSync(path.join(__dirname, "..", "college_briefing.js"), "utf8");
+  const ncBlock = (brief.match(/cond\.ncItems\.forEach\(function \(it, i\) \{([\s\S]*?)\}\);/) || [])[1] || "";
+  check("E4: the college panel's noncredit list offers How to meet it, as the main list does",
+    /data-howto=/.test(ncBlock) && /kinds\.indexOf\(it\.kind\)/.test(ncBlock));
+}
+
 finish();

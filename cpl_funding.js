@@ -4212,7 +4212,28 @@
         "It is met once MAP identifies students eligible for CPL against the institution's exhibits.\n\n" +
         "1. Post each noncredit certificate the institution awards as an exhibit in MAP.\n" +
         "2. Invite the credit colleges in the district to articulate the exhibits.\n\n" +
-        "The MAP team helps institutions post exhibits during its [office hours](https://map.rccd.edu/get-involved/)." }
+        "The MAP team helps institutions post exhibits during its [office hours](https://map.rccd.edu/get-involved/)." },
+    // The noncredit share's two conditions (Scenario 4, Sheets 113 and 114),
+    // both met by the one attestation (S470). S471's draft for Sam to curate.
+    { key: "mc_how_nc_coord", how: "nc_coord", title: "Name and publish your noncredit CPL coordinator", rows: 8,
+      where: "How to meet it: the noncredit CPL coordinator condition",
+      plain: "The noncredit share of the award asks the college to name a noncredit CPL coordinator and publish that " +
+        "person on its CPL landing page. Until MAP carries the role, the college names the coordinator on its noncredit " +
+        "attestation.\n\n" +
+        "1. Publish the coordinator's name on the college's CPL landing page.\n" +
+        "2. On the Implementation Funding page, open the college's row and press Attest for the noncredit share.\n" +
+        "3. Enter the coordinator's name and title, and press Attest.\n\n" +
+        "The coordinator's name and title then appear beside the college's conditions, and the condition shows as met." },
+    { key: "mc_how_nc_team", how: "nc_team", title: "Attest for your noncredit CPL strike team", rows: 10,
+      where: "How to meet it: the strike-team attestation condition",
+      plain: "An administrator attests once each fiscal year, July to June, that the noncredit CPL coordinator leads a " +
+        "strike team for noncredit CPL. Each year needs a new attestation.\n\n" +
+        "1. On the Implementation Funding page, open the college's row and press Attest for the noncredit share.\n" +
+        "2. Enter the coordinator, then your name, title and college email.\n" +
+        "3. If you can, report the former noncredit students the college awarded CPL, the control number of the CPL " +
+        "portfolio course from COCI, and the exhibits the strike team built or adopted, by MAP exhibit ID or title.\n\n" +
+        "The attestation stands once submitted, and the Chancellor's Office may reject it. The listed exhibits and a " +
+        "course COCI confirms count toward the noncredit outcomes from the next day." }
   ];
   var MC_BY_KEY = {}, HOW_BY_KIND = {};
   MC_BLOCKS.forEach(function (b) {
