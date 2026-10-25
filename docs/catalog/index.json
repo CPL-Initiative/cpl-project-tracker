@@ -10214,7 +10214,7 @@
      ],
      "title": "Test a database function locally with PGlite before it goes live",
      "type": "playbook",
-     "updated": "2026-10-13"
+     "updated": "2026-10-25"
     },
     {
      "created": "2026-10-13",
@@ -11962,7 +11962,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-10-24"
+     "updated": "2026-10-25"
     },
     {
      "created": "2026-06-21",

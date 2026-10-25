@@ -1,7 +1,7 @@
 ---
 title: Test a database function locally with PGlite before it goes live
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-25
 tags: [playbook, supabase, testing, sql]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -49,6 +49,19 @@ Postgres 16 is installed in the sandbox, but it refuses to run as root, and an u
 session's scratchpad, so `initdb` had nowhere to live. PGlite needed no server. The first run of
 `scripts/verify_workplan_move.js` passed 22 of 22, including the case the design rests on: a table the function does
 not know that still holds the old id stops the move, and a snapshot taken before and after shows nothing changed.
+
+## The native server, when its data directory is reachable (S470)
+
+The sandbox's Postgres 16 runs once its cluster lives where the `postgres` user can write: `mkdir /var/tmp/pg;
+chown postgres /var/tmp/pg`, then `su postgres -c "initdb -D /var/tmp/pg/data -A trust && pg_ctl -D /var/tmp/pg/data
+-o '-k /var/tmp/pg -p 54330 -c listen_addresses=' -l /var/tmp/pg/log start"` from `/usr/lib/postgresql/16/bin`, and
+`psql -h /var/tmp/pg -p 54330 -U postgres`. The scratchpad is the wrong home for it: its permissions were reset
+mid-run and the server lost its data directory. Stub the roles and the gate functions as step 3 does, with
+`alter default privileges ... grant all on tables to anon, authenticated` so a new table starts with Supabase's
+grants, and act as each role with `set role anon` and a setting the stubs read (`set t.reviewer = '1'`).
+S470 used it for `kb/supabase_cpl_funding_nc_attestation.sql`: the file applied twice, and seventeen cases ran as
+anon, the team phrase and a reviewer, among them the column the view must never show (`select attestor_email` as
+anon: *permission denied*) and the update RLS answers with no error and no change (`returning` counted 0 rows).
 
 ## What this does not cover
 

@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-10-24
+updated: 2026-10-25
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -720,3 +720,29 @@ Settled sections of `docs/reference/lanes/implementation-funding.md`, moved verb
   `CPL Coordinator` fields (56 of 124 colleges filled, 2026-10-24); the noncredit condition reads COBI's attestation row.
 - The NC outcomes test runs about 2.5 minutes locally; run it alone rather than the full `npm test`.
 
+
+## S470 SkyBlueCurls (2026-10-25): the noncredit attestation surface
+
+- **What shipped** (#2433, `kb/supabase_cpl_funding_nc_attestation.sql`): one row per college and fiscal year, attest-first
+  as the participation opt-in, the CO's Reject then Re-confirm or Remove; the published view carries the coordinator's
+  name and title, the year, the status and the dates; the review RPC carries the rest. The view keeps this fiscal year and
+  the next (`cpl_funding_fy()`, July to June), so *renewed each year* is the view's filter and no session has to remember it.
+- **A `security_invoker` view over column grants cannot leak a column.** Revoke table SELECT from anon and authenticated,
+  grant back the published columns, and the view runs with the reader's own grants: a view that names a hidden column
+  fails for anon instead of showing it. The test pins the view's columns against the grant list and the page's `select=`
+  against the view's.
+- **`tests/cpl_funding_equity` forbids the string `coordinator_email` anywhere in `cpl_funding.js`.** The first build
+  collected the noncredit coordinator's optional email and failed that guard. The email came out: the condition needs the
+  name, the attestor's email already reaches the CO, and MAP's directory will carry the role's contact.
+- **The order of apply.** A missing view reads the noncredit conditions *pending* (no hold, no form); an empty one reads
+  *not yet on file* (the share held). The schema applies after the code is on Pages, so the live page never shows an empty
+  view without the form that fills it; the noncredit share is $0 either way until the builder emits its measures.
+- **The award count masks for the team phrase.** It is a per-college student count: the review RPC returns it whole to a
+  signed-in reviewer (`is_allowed_reviewer()`, the student-detail ADR's gate) and null for 1 to 9 to the team phrase (the
+  funding ADR's floor of 10).
+- **A form inside the funding table on a phone.** The drill-in is as wide as the table (898 px at 390), which scrolls
+  inside `.cplfund-tablewrap` (299 px). Making the wrapper a size container (`container-type: inline-size`) lets the form
+  take `100cqi` and stay sticky at the cell's left: one column, every field in view. The wrapper holds no fixed-position
+  element (the splash attaches to `body`); a fixed child would have taken the wrapper as its containing block.
+- **Testing the SQL.** Native Postgres 16 ran this time (`su postgres`, the cluster under `/var/tmp`): seventeen cases
+  as anon, the team phrase and a reviewer. Notes on the method are in the PGlite playbook.
