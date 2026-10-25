@@ -42,8 +42,9 @@ def shingles(words, n=SHINGLE):
 def corpus_now(root):
     """Everywhere the consolidation could have put something."""
     paths = [os.path.join(root, "CLAUDE.md"),
-             os.path.join(root, "docs", "roadmap_archive.md"),
              os.path.join(root, ".claude", "commands", "checkpoint.md")]
+    # roadmap_archive.md plus its parts (split for the archive budget, S474).
+    paths += sorted(glob.glob(os.path.join(root, "docs", "roadmap_archive*.md")))
     paths += sorted(glob.glob(os.path.join(root, "docs", "reference", "**", "*.md"),
                               recursive=True))
     paths += sorted(glob.glob(os.path.join(root, "docs", "kb-notes", "*.md")))

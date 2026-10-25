@@ -11931,9 +11931,9 @@
       "implementation-funding",
       "dashboard-tab"
      ],
-     "title": "CPL Implementation Funding tab \u2014 archived lessons (2026-06-11 \u2192 2026-09-01)",
+     "title": "CPL Implementation Funding tab \u2014 archived lessons (2026-06-11 \u2192 2026-08-03)",
      "type": null,
-     "updated": "2026-09-30"
+     "updated": "2026-10-25"
     },
     {
      "created": "2026-06-11",
@@ -13441,7 +13441,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 87,
+   "count": 94,
    "docs": [
     {
      "created": "2026-05-30",
@@ -13851,7 +13851,7 @@
      "updated": "2026-10-16"
     },
     {
-     "created": "2026-10-24",
+     "created": "2026-10-25",
      "governs": [],
      "path": "docs/cpl_funding_lessons_archive_2.md",
      "status": null,
@@ -13862,7 +13862,39 @@
       "implementation-funding",
       "dashboard-tab"
      ],
-     "title": "CPL Implementation Funding tab \u2014 archived lessons, part 2 (2026-09-22 onward)",
+     "title": "CPL Implementation Funding tab \u2014 archived lessons, part 2 (2026-08-04 \u2192 2026-08-31)",
+     "type": null,
+     "updated": "2026-10-25"
+    },
+    {
+     "created": "2026-10-25",
+     "governs": [],
+     "path": "docs/cpl_funding_lessons_archive_3.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "archive",
+      "funding",
+      "implementation-funding",
+      "dashboard-tab"
+     ],
+     "title": "CPL Implementation Funding tab \u2014 archived lessons, part 3 (2026-08-31 \u2192 2026-09-16)",
+     "type": null,
+     "updated": "2026-10-25"
+    },
+    {
+     "created": "2026-10-24",
+     "governs": [],
+     "path": "docs/cpl_funding_lessons_archive_4.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "archive",
+      "funding",
+      "implementation-funding",
+      "dashboard-tab"
+     ],
+     "title": "CPL Implementation Funding tab \u2014 archived lessons, part 4 (2026-09-22 onward)",
      "type": null,
      "updated": "2026-10-25"
     },
@@ -13931,6 +13963,81 @@
       "session-history"
      ],
      "title": "CPL Project Tracker \u2014 Roadmap Archive (completed work)",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-25",
+     "governs": [],
+     "path": "docs/roadmap_archive_2.md",
+     "status": null,
+     "tags": [
+      "archive",
+      "roadmap",
+      "project-memory",
+      "session-history"
+     ],
+     "title": "CPL Project Tracker \u2014 Roadmap Archive, part 2",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-25",
+     "governs": [],
+     "path": "docs/roadmap_archive_3.md",
+     "status": null,
+     "tags": [
+      "archive",
+      "roadmap",
+      "project-memory",
+      "session-history"
+     ],
+     "title": "CPL Project Tracker \u2014 Roadmap Archive, part 3",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-25",
+     "governs": [],
+     "path": "docs/roadmap_archive_4.md",
+     "status": null,
+     "tags": [
+      "archive",
+      "roadmap",
+      "project-memory",
+      "session-history"
+     ],
+     "title": "CPL Project Tracker \u2014 Roadmap Archive, part 4",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-25",
+     "governs": [],
+     "path": "docs/roadmap_archive_5.md",
+     "status": null,
+     "tags": [
+      "archive",
+      "roadmap",
+      "project-memory",
+      "session-history"
+     ],
+     "title": "CPL Project Tracker \u2014 Roadmap Archive, part 5",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-25",
+     "governs": [],
+     "path": "docs/roadmap_archive_6.md",
+     "status": null,
+     "tags": [
+      "archive",
+      "roadmap",
+      "project-memory",
+      "session-history"
+     ],
+     "title": "CPL Project Tracker \u2014 Roadmap Archive, part 6",
      "type": null,
      "updated": ""
     },
@@ -14437,7 +14544,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 3 (S399-S405)",
      "type": null,
-     "updated": "2026-10-24"
+     "updated": "2026-10-25"
     },
     {
      "created": "2026-07-16",
@@ -15617,7 +15724,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-23"
+     "updated": "2026-10-25"
     },
     {
      "created": "2026-08-28",
@@ -16068,8 +16175,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 444,
+   "count": 445,
    "docs": [
+    {
+     "created": "2026-10-25",
+     "governs": [],
+     "n": 475,
+     "path": "docs/session_475_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "docs-lint",
+      "implementation-funding",
+      "noncredit",
+      "nc-1"
+     ],
+     "title": "Session 475 handoff: oversized_doc at 0; Sheet 127 still waits",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-25",
      "governs": [],
@@ -23690,5 +23814,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1252
+ "total": 1260
 }

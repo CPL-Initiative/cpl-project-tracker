@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1265,
-    "bytes": 12956470,
-    "over_budget": 3,
-    "handoff_max": 474,
+    "files": 1273,
+    "bytes": 12967731,
+    "over_budget": 0,
+    "handoff_max": 475,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59968,
     "superseded_files": 0,
@@ -25,9 +25,9 @@
         "over": 0
       },
       "other": {
-        "files": 127,
-        "bytes": 3971494,
-        "over": 2
+        "files": 134,
+        "bytes": 3986456,
+        "over": 0
       },
       "index": {
         "files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 85,
-        "bytes": 2394821,
+        "bytes": 2394836,
         "over": 0
       },
       "kb_note": {
@@ -46,25 +46,24 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 436913,
-        "over": 1
+        "bytes": 429377,
+        "over": 0
       },
       "handoff": {
-        "files": 444,
-        "bytes": 3305415,
+        "files": 445,
+        "bytes": 3309235,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 3,
       "kb_note_dialect": 1,
       "house_voice": 1,
       "vault_heavy_path": 64
     },
     "vault": {
-      "files": 24739,
-      "bytes": 3664586260,
-      "heavy_bytes": 2543186907,
+      "files": 24748,
+      "bytes": 3664602933,
+      "heavy_bytes": 2543188494,
       "heavy_share": 0.694,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -136,19 +135,6 @@
   },
   "findings": [
     {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 419966,
-        "limit": 150000,
-        "lane": "other",
-        "over_by": 269966,
-        "ratio": 2.8
-      },
-      "message": "419,966 B is 2.8× the other budget (150,000 B) — candidate for compaction",
-      "path": "docs/cpl_funding_lessons_archive.md"
-    },
-    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -158,32 +144,6 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 26819,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 6819,
-        "ratio": 1.34
-      },
-      "message": "26,819 B is 1.3× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/program-requirements-harvest.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 746947,
-        "limit": 150000,
-        "lane": "other",
-        "over_by": 596947,
-        "ratio": 4.98
-      },
-      "message": "746,947 B is 5.0× the other budget (150,000 B) — candidate for compaction",
-      "path": "docs/roadmap_archive.md"
     },
     {
       "rule": "house_voice",
@@ -202,10 +162,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1532851733,
+        "bytes": 1532853320,
         "kind": "dir"
       },
-      "message": "directory totals 1,532,851,733 B inside the vault"
+      "message": "directory totals 1,532,853,320 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

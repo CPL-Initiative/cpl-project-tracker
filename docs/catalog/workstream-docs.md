@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-87 document(s).
+94 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -38,11 +38,18 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Common CR Reference — scope, measured against the CCR's actual matching factors](../common_cr_reference_scope.md) | `common_cr_reference_scope.md` | 2026-08-13 |  |
 | [CourseControlNumber Re-mint — Decisions & Lessons](../coursecontrolnumber_remint.md) | `coursecontrolnumber_remint.md` | 2026-05-22 |  |
 | [CPL Assistant (Sierra) lessons — archive 2](../cpl_assistant_lessons_archive_2.md) | `cpl_assistant_lessons_archive_2.md` | 2026-10-16 | 2026-10-16 |
-| [CPL Implementation Funding tab — archived lessons, part 2 (2026-09-22 onward)](../cpl_funding_lessons_archive_2.md) | `cpl_funding_lessons_archive_2.md` | 2026-10-24 | 2026-10-25 |
+| [CPL Implementation Funding tab — archived lessons, part 2 (2026-08-04 → 2026-08-31)](../cpl_funding_lessons_archive_2.md) | `cpl_funding_lessons_archive_2.md` | 2026-10-25 | 2026-10-25 |
+| [CPL Implementation Funding tab — archived lessons, part 3 (2026-08-31 → 2026-09-16)](../cpl_funding_lessons_archive_3.md) | `cpl_funding_lessons_archive_3.md` | 2026-10-25 | 2026-10-25 |
+| [CPL Implementation Funding tab — archived lessons, part 4 (2026-09-22 onward)](../cpl_funding_lessons_archive_4.md) | `cpl_funding_lessons_archive_4.md` | 2026-10-24 | 2026-10-25 |
 | [CPL Implementation Funding — next-session handoff](../cpl_funding_handoff.md) | `cpl_funding_handoff.md` | 2026-06-11 | 2026-08-05 |
 | [CPL Pathways side-lane handoff — the Common Course Reference redesign](../cpl_pathways_handoff.md) | `cpl_pathways_handoff.md` | 2026-07-16 |  |
 | [CPL presentations — workstream handoff (StarBOG)](../cpl_presentations_handoff.md) | `cpl_presentations_handoff.md` | 2026-07-20 |  |
 | [CPL Project Tracker — Roadmap Archive (completed work)](../roadmap_archive.md) | `roadmap_archive.md` | 2026-06-04 |  |
+| [CPL Project Tracker — Roadmap Archive, part 2](../roadmap_archive_2.md) | `roadmap_archive_2.md` | 2026-10-25 |  |
+| [CPL Project Tracker — Roadmap Archive, part 3](../roadmap_archive_3.md) | `roadmap_archive_3.md` | 2026-10-25 |  |
+| [CPL Project Tracker — Roadmap Archive, part 4](../roadmap_archive_4.md) | `roadmap_archive_4.md` | 2026-10-25 |  |
+| [CPL Project Tracker — Roadmap Archive, part 5](../roadmap_archive_5.md) | `roadmap_archive_5.md` | 2026-10-25 |  |
+| [CPL Project Tracker — Roadmap Archive, part 6](../roadmap_archive_6.md) | `roadmap_archive_6.md` | 2026-10-25 |  |
 | [CPL Student Portal video — continuation capsule (SkyVid → next)](../cpl_portal_video_handoff.md) | `cpl_portal_video_handoff.md` | 2026-07-23 |  |
 | [Cross-Disciplinary Shared-COR Course Identity — Re-mint Scope](../research_workexp_crossdisc_remint_scope.md) | `research_workexp_crossdisc_remint_scope.md` | 2026-06-09 |  |
 | [Dashboard card metrics — consistency recommendations (Sam's recommend list)](../dashboard_card_metrics_recommendations.md) | `dashboard_card_metrics_recommendations.md` | 2026-06-29 |  |
@@ -68,7 +75,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Noncredit CIP categories — scope, and the pathway that does not need the TOP](../noncredit_cip_category_scope.md) | `noncredit_cip_category_scope.md` | 2026-08-14 |  |
 | [Phrase scope — the measurement, and why GR is a one-line fix](../phrase_scope_analysis.md) | `phrase_scope_analysis.md` | 2026-08-19 |  |
 | [Program requirements harvest lessons — archive 2 (S360-S371)](../program_requirements_harvest_lessons_archive_2.md) | `program_requirements_harvest_lessons_archive_2.md` | 2026-10-15 | 2026-10-15 |
-| [Program requirements harvest lessons — archive 3 (S399-S405)](../program_requirements_harvest_lessons_archive_3.md) | `program_requirements_harvest_lessons_archive_3.md` | 2026-10-22 | 2026-10-24 |
+| [Program requirements harvest lessons — archive 3 (S399-S405)](../program_requirements_harvest_lessons_archive_3.md) | `program_requirements_harvest_lessons_archive_3.md` | 2026-10-22 | 2026-10-25 |
 | [Program-Course pipeline — continuation handoff (for a fresh session)](../program_course_pipeline_handoff.md) | `program_course_pipeline_handoff.md` | 2026-07-16 |  |
 | [Public/private repo split — scope](../public_private_repo_split_scope.md) | `public_private_repo_split_scope.md` | 2026-08-19 |  |
 | [Re-loading map_student_credit with its credit columns](../map_student_credit_reload.md) | `map_student_credit_reload.md` | 2026-08-10 | 2026-08-10 |

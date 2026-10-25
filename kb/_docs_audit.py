@@ -725,12 +725,21 @@ _SUPABASE_VOCAB = re.compile(
 _RULE9_BARE = re.compile(r"\bRule 9\b(?!['’a-z0-9]| checkpoints?\b)")
 
 
+# An archive and its numbered parts (`x_archive.md`, `x_archive_2.md`): a part
+# split off for the size budget holds the same verbatim text (S474).
+_ARCHIVE_NAME = re.compile(r"_archive(?:_\d+)?\.md$")
+
+
+def is_archive(rel):
+    return bool(_ARCHIVE_NAME.search(rel))
+
+
 def rule_citation_drift(entry):
     """A living doc citing a Critical Rule by a number it no longer has."""
     if entry["lane"] in ("handoff", "lessons"):
         return None
     r = entry["rel"]
-    if (r.endswith(("_handoff.md", "_archive.md"))
+    if (r.endswith("_handoff.md") or is_archive(r)
             or r.startswith("docs/scenarios/")):
         return None
     # main() supplies "text"; other callers (the scenario harness builds bare
@@ -1464,7 +1473,7 @@ def rule_house_voice(entry):
     if lane in ("handoff", "lessons", "roadmap_lane", "always_loaded"):
         return None
     # An archive holds handoff and lessons text moved verbatim; same exemption.
-    if (entry.get("rel") or entry.get("path") or "").endswith("_archive.md"):
+    if is_archive(entry.get("rel") or entry.get("path") or ""):
         return None
     text = entry.get("text") or ""
     if not text:
