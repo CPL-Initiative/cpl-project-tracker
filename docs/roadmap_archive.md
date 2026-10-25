@@ -6122,3 +6122,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ## INDEX update history, moved by S470 (2026-10-25)
 
 - 2026-10-24 (S461 SkyManzanita, scheduled): the writer's fourth and fifth consumers (#2403, #2405), the Sierra UI pass, one seal blue (#2404); light checkpoint; handoff 462.
+
+## INDEX update history, moved by S471 (2026-10-25)
+
+- 2026-10-24 (S464 SkyBuckeye, scheduled): the house_voice lint backlog 23 to 1 (#2414); light checkpoint; handoff 465.

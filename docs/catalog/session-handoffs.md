@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-441 document(s).
+442 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 472 | [Session 472 handoff: the noncredit builder counts exhibits and the portfolio course; How to meet it for the noncredit conditions](../session_472_handoff.md) | 2026-10-25 |
 | 471 | [Session 471 handoff: the noncredit attestation is live on the funding page; every public Library piece opens on GitHub Pages; the Veteran map passed its UI review](../session_471_handoff.md) | 2026-10-25 |
 | 470 | [Session 470 handoff: Ask Sierra resizes, asks who you are at the first Ask, reads the public library and opens on the Fact Sheet and the funding page; public pieces on GitHub Pages; public pages open Light](../session_470_handoff.md) | 2026-10-25 |
 | 469 | [Session 469 handoff: the toolkit photos live in the library's hero; the NC cards edit like the credit cards; Cabrillo counted; Open Asks Sheet 125; Sam's Ask Sierra side bar next](../session_469_handoff.md) | 2026-10-24 |

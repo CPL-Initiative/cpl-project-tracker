@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 87 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 441 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1249** | |
+| Session handoffs | 442 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1250** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-25 (S471 SkyPenstemon, the CPL Queue routine): the noncredit builder emits nc_cdcp, nc_exh and nc_course from a service-role RPC, applied and read back, and How to meet it for the two noncredit conditions (#2437); full checkpoint; handoff 472.
 - 2026-10-25 (S470 SkyBlueCurls, opened by hand): the ironworker film's Library link on GitHub Pages and the Veteran map's UI pass (#2432); the noncredit attestation on the funding page, applied after it reached Pages (#2433, #2436); a lessons archive within budget (#2434); full checkpoint; handoff 471.
 - 2026-10-25 (S469 SkyLemonadeBerry, continued): the Ask Sierra bar resizes, she asks who you are at the first Ask and reads the public library (#2427, cpl-chat deployed, smoke 7x green); two pieces on GitHub Pages (#2429); the public pages open Light (#2428); the Fact Sheet and the funding page on the bar (#2430); full checkpoint; handoff 470.
 - 2026-10-24 (S469 SkyLemonadeBerry, opened by hand): Ask Sierra opens in a side bar on the public library and COBI's Library tab (#2424); Sierra's page in the library look, no paintings (#2425); Open Asks Sheet 126; full checkpoint; handoff 470.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-24 (S466 SkyYerbaSanta, opened by hand beside the routine's run): the film can carry Scenario 4's words (#2418), held on Open Asks Sheet 123 card 2; a pending noncredit gate releases; the routine check for hand-opened sessions; full checkpoint; handoff 467 rewritten.
 - 2026-10-24 (S466 SkyYerbaSanta, scheduled): the funding film rebuilt from the published Scenario 4, v9 (#2417); light checkpoint; handoff 467.
 - 2026-10-24 (S465 SkyCoyoteBrush, scheduled): three lane files under budget, Scenario 4 found published (#2416); light checkpoint; handoff 466.
-- 2026-10-24 (S464 SkyBuckeye, scheduled): the house_voice lint backlog 23 to 1 (#2414); light checkpoint; handoff 465.
