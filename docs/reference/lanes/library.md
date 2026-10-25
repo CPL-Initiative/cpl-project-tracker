@@ -141,7 +141,9 @@ its log row read back 1, 1, 1).
 
 Sheet 121's rulings (the Knowledge Base fold, the Coordinator Guide files, the ELL IET notice) and Sheet 124's (the hero
 photos, the IT and AI deck unlisted) are carried out; their text moved verbatim to `docs/library_lessons.md`
-(*Moved from the lane, S469*). Still open from them: the four Coordinator Guide files, and Baking and Nursing photos.
+(*Moved from the lane, S469*). Still open from them: the Baking and Nursing photos. The Coordinator Guide audit ran in
+S479 from the Drive copies (folder *CPL Coordinator Getting Started Guides*); its report is
+`CPLBrain/04-projects/cpl-initiative/coordinator-guide/20261025_Coordinator_Guide_Audit.md`.
 
 ## The ELL IET page is listed publicly (Sam, Open Asks Sheet 123 card 1, *list*, 13:17Z 2026-10-24)
 
