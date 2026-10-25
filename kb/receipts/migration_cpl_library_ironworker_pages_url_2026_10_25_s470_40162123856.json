@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_ironworker_pages_url_2026-10-25_s470.sql",
+ "name": "cpl_library_ironworker_pages_url_2026_10_25_s470",
+ "version": "20261025043156",
+ "sha256": "c42f9b868e03ac4507b35392752bef13775d10922bbf0372d91c62c928c778c8",
+ "run": "40162123856",
+ "status": 201,
+ "response": "[{\"slug\":\"ironworker-pathway-in-motion\",\"url\":\"https://cpl-initiative.github.io/cpl-project-tracker/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4\",\"public_listed\":true}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

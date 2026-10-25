@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-10-24
+updated: 2026-10-25
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -203,10 +203,12 @@ followed by a rerun and a commit. Pages, 2026-10-25: `ell-iet-cpl-starting-point
 (their vault copies match the published artifacts byte for byte). The URL switch is one guarded UPDATE per record
 (`kb/receipts/cpl_library_pages_urls_2026-10-25_s469.sql`, before-values in the receipt). Test:
 `tests/library_pages.test.js`; sweep: `library-ell-iet`, `library-dsp` and their `-dark`. Both records point there
-(applied 03:12Z, supabase-migrate run 40156994192, #2429). Every listed piece now opens at a cpl-initiative.github.io address
-but `ironworker-pathway-in-motion`, whose record (Sam's own edit, 2026-10-21) links the film's github.com file page. NEXT:
-its Pages address (`.../cpl-project-tracker/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4`)
-through a guarded UPDATE with a receipt, said to Sam in one line.
+(applied 03:12Z, supabase-migrate run 40156994192, #2429). **Every listed piece opens at a cpl-initiative.github.io
+address:** the last, `ironworker-pathway-in-motion`, moved from the film's github.com file page to the same file on Pages
+(`.../prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4`; receipt
+`kb/receipts/cpl_library_ironworker_pages_url_2026-10-25_s470.sql`, supabase-migrate run 40162123856, read back 04:32Z).
+Sam's edits of that record only listed it; the github.com link came from the seed. Its versions keep the github.com link
+(the team view; `cpl_library_public()` returns `url` alone).
 
 ## Next
 
