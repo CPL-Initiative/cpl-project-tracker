@@ -45,9 +45,8 @@ routine's next firing is 2026-10-26 05:12Z (`trig_01L8K64ZKYb5eALdT4HW6NAV`).
 0. **No sheet is open.** Build one only when a lane marks an ask (`CPLBrain/decision-sheets/decision_sheets.md`).
 1. **The UI pass: the Fact Sheet**, for the first scheduled session of 2026-10-26 UTC (the ledger holds a pass dated
    2026-10-25, so none ran again today).
-2. **Read the first daily run after #2449.** Its log should say `12 confirmed crosswalk row(s)`; then
-   `cpl_funding_performance.js`: LA Trade-Tech's `nc_exh` near 9. A lower figure is a course that left CDCP, which
-   the builder honors; never edit the counts.
+2. **Channel 3 is live.** The 22:16Z run after #2449 (40239431540) published Cabrillo `nc_exh` 37, LA Trade-Tech 8
+   (75 CDCP, the card's 9 less ServSafe, held) and Saddleback 3. Nothing to do; never edit the counts.
 3. **The Coordinator Guide waits on Sam.** He reads the report; the rewrite and anything sent to the Chaffey drafter
    are outward, so they wait for him. If he asks for the rewrite, start from section 8 of the report.
 4. **One memory UPDATE still waits** on a person's confirmation (handoff 478 item 2, the last statement of
