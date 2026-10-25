@@ -23,6 +23,9 @@
 //  (11) COBI's Library tab (library.js) loads the bar on its first visit, shows the chip on that tab alone,
 //       and maps every token onto First Light (Sam, 2026-10-24: "Library and more importantly on the public
 //       library site").
+//  (13) a page that names its own Ask Sierra word (the Fact Sheet's and the funding page's action rows) opens her
+//       from it, with no chip, and gets focus back on Close; the two pages load the bar in place of their drawer
+//       (Sam, Open Asks Sheet 126 card 1, "public"), name her surface and map her tokens;
 //  (12) beside the page, the reader sets the bar's width (Sam, 2026-10-24: "Make the sidebar resizable
 //       horizontally"): a separator on its left edge that drags and takes the arrow keys, Home and End; the
 //       words Narrower and Wider for anyone who cannot drag; the width held so the page keeps 600px, and
@@ -64,7 +67,8 @@ function host(opts) {
   const state = { wide: !!opts.wide, listeners: [], sierraLoads: [], iw: opts.innerWidth || 0 };
   const theme = opts.theme === undefined ? ' data-theme="light"' : (opts.theme ? ' data-theme="' + opts.theme + '"' : "");
   const html = '<!doctype html><html lang="en"' + theme + '><head></head><body>' +
-    '<header id="h"><a href="#x">Home</a></header><main id="m"><button id="b">A page control</button></main>' +
+    '<header id="h"><a href="#x">Home</a>' + (opts.launcher ? '<button type="button" id="word" data-sierra-open>Ask Sierra</button>' : '') +
+    '</header><main id="m"><button id="b">A page control</button></main>' +
     '<div id="pre" inert>Set inert by the page</div>' +
     '<script src="' + (opts.src || "../sierra/sidebar.js") + '" defer></script>' + (opts.twice ? '<script src="../sierra/sidebar.js" defer></script>' : "") +
     '</body></html>';
@@ -378,6 +382,44 @@ async function main() {
     check("(12h) a stored width that is not a number falls back to 420px",
       j.d.documentElement.style.getPropertyValue("--sierra-bar-w") === "420px");
     j.close();
+  }
+
+  // (13) The page's own word, and the two pages that moved onto the bar.
+  {
+    const h = host({ launcher: true });
+    await h.ready();
+    const word = h.d.getElementById("word");
+    check("(13a) ⭐ a page with its own Ask Sierra word shows no chip, and the word says it opens a dialog",
+      h.chip().hidden && !h.d.documentElement.classList.contains("sbar-chip-on") &&
+      word.getAttribute("aria-haspopup") === "dialog" && word.getAttribute("aria-controls") === "sbar" && word.getAttribute("aria-expanded") === "false");
+    word.click();
+    await h.loaded();
+    check("(13b) the word opens her, says so, and the chip stays hidden", !h.bar().hidden && word.getAttribute("aria-expanded") === "true" && h.chip().hidden);
+    key(h.fdoc().getElementById("s-input"), "Escape");
+    check("(13c) ⭐ Escape in her frame shuts the bar and hands focus back to the word that opened her",
+      h.bar().hidden && h.d.activeElement === word && word.getAttribute("aria-expanded") === "false" && h.chip().hidden);
+    word.click();
+    await h.loaded();
+    h.d.querySelector(".sbar-close").click();
+    check("(13d) so does Close", h.bar().hidden && h.d.activeElement === word);
+    h.close();
+    const FACT = fs.readFileSync("fact-sheet/index.html", "utf8"), FUND = fs.readFileSync("funding-model/index.html", "utf8");
+    const FCSS = fs.readFileSync("fact-sheet/factsheet.css", "utf8");
+    check("(13e) ⭐ the Fact Sheet and the funding page load the bar, deferred, and no drawer remains",
+      [FACT, FUND].every((p) => /<script src="\.\.\/sierra\/sidebar\.js" defer><\/script>/.test(p) && !/factsheet_sierra/.test(p)) &&
+      !fs.existsSync("fact-sheet/factsheet_sierra.js"));
+    check("(13f) ⭐ each opens her from its own word, just ahead of its PDF control, and names her surface",
+      /data-sierra-open[^>]*>Ask Sierra<\/button>\s*<button class="btn btn-primary" id="btn-print"/.test(FACT) &&
+      /data-sierra-open[^>]*>Ask Sierra<\/button>\s*<button type="button" class="btn" id="pdf-btn"/.test(FUND) &&
+      [FACT, FUND].every((p) => /window\.CPL_SIERRA_SURFACE = "fact-sheet";/.test(p)) &&
+      /window\.CPL_SIERRA_SUGGESTED = \[/.test(FACT) && /window\.CPL_SIERRA_SUGGESTED = \[/.test(FUND));
+    const used = Array.from(new Set((BAR.match(/var\(--sierra-bar-[a-z-]+/g) || []).map(function (s) { return s.slice(4); })))
+      .filter(function (n) { return n !== "--sierra-bar-w"; });
+    const fundMap = (FUND.match(/\.sbar, \.sbar-chip\{\s*--sierra-bar-bg[\s\S]*?\}/) || [""])[0];
+    const factRoot = (FCSS.match(/:root \{([\s\S]*?)\n\}/) || [])[1] || "";
+    check("(13g) both pages map every token the bar reads onto their own, never a raw hex (the funding page on the bar's elements alone)",
+      used.every((n) => fundMap.indexOf(n + ":") > -1 && factRoot.indexOf(n + ":") > -1) &&
+      !/--sierra-bar-[a-z-]+:\s*#/.test(fundMap + factRoot), "funding missing: " + used.filter((n) => fundMap.indexOf(n + ":") < 0).join(", "));
   }
 
   // (11) COBI's Library tab.

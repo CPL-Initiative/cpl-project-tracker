@@ -30,6 +30,13 @@
  *     COBI's Library tab (library.js) calls setChip(true) on that tab and
  *     setChip(false) on every other, which also shuts an open bar (Sam,
  *     2026-10-24: "Library and more importantly on the public library site").
+ *   · A page that names its own Ask Sierra word opens her from it, with no
+ *     chip: any element marked [data-sierra-open] (the Fact Sheet's and the
+ *     funding page's action rows, Sam, 2026-10-01: "Include an Ask Sierra link
+ *     as in the Fact Sheet"; Open Asks Sheet 126 card 1 moved both onto this
+ *     bar). Close hands focus back to the word that opened her. The page may
+ *     also name her starter questions (window.CPL_SIERRA_SUGGESTED) and its
+ *     surface (window.CPL_SIERRA_SURFACE); sierra.js reads both from here.
  *   · Beside the page, the bar is as wide as the reader makes it (Sam,
  *     2026-10-24: "Make the sidebar resizable horizontally"). Its left edge is a
  *     separator: drag it, or focus it and use the arrow keys, Home and End. The
@@ -89,7 +96,7 @@
   ].join('\n');
 
   var chip, bar, closeBtn, frame, grip, narrowerBtn, widerBtn, wideMq, observer, inerted = [], loaded = false, chipOff = false;
-  var wantW = DEFAULT_W, dragging = false;
+  var wantW = DEFAULT_W, dragging = false, launchers = [], opener = null;
 
   // The page keeps PAGE_KEEPS px beside the bar; the bar keeps MIN_W.
   function maxW() { return Math.max(MIN_W, Math.min(MAX_W, (window.innerWidth || 0) - PAGE_KEEPS)); }
@@ -223,8 +230,13 @@
     e.preventDefault();
   }
 
-  function open() {
+  function setExpanded(on) {
+    chip.setAttribute('aria-expanded', on ? 'true' : 'false');
+    launchers.forEach(function (b) { b.setAttribute('aria-expanded', on ? 'true' : 'false'); });
+  }
+  function open(from) {
     build();
+    opener = from && from.nodeType === 1 ? from : null;
     if (isOpen()) { focusSierra(); return; }
     if (!frame) {
       frame = document.createElement('iframe');
@@ -236,7 +248,7 @@
     }
     bar.hidden = false;
     chip.hidden = true;
-    chip.setAttribute('aria-expanded', 'true');
+    setExpanded(true);
     applyMode();
     if (loaded) focusSierra();
     else { try { closeBtn.focus(); } catch (e) { /* best effort */ } }
@@ -245,9 +257,11 @@
     if (!isOpen()) return;
     bar.hidden = true;
     chip.hidden = chipOff;
-    chip.setAttribute('aria-expanded', 'false');
+    setExpanded(false);
     applyMode();
-    if (!chipOff) { try { chip.focus(); } catch (e) { /* best effort */ } }
+    // Focus goes back to the page's word that opened her, else to the chip while it shows.
+    var back = opener && opener !== chip && document.contains(opener) ? opener : (chipOff ? null : chip);
+    if (back) { try { back.focus(); } catch (e) { /* best effort */ } }
   }
   // Show or hide the chip; hiding it shuts an open bar. Focus stays where the
   // host put it, since the chip it would return to is gone.
@@ -284,7 +298,7 @@
     chip.setAttribute('aria-haspopup', 'dialog');
     chip.setAttribute('aria-expanded', 'false');
     chip.setAttribute('aria-controls', 'sbar');
-    chip.addEventListener('click', open);
+    chip.addEventListener('click', function () { open(chip); });
 
     bar = document.createElement('div');
     bar.className = 'sbar';
@@ -331,6 +345,19 @@
     document.body.appendChild(chip);
     document.body.appendChild(bar);
     document.documentElement.classList.add('sbar-chip-on');
+    launchers = Array.prototype.slice.call(document.querySelectorAll('[data-sierra-open]'));
+    launchers.forEach(function (b) {
+      b.setAttribute('aria-haspopup', 'dialog');
+      b.setAttribute('aria-controls', 'sbar');
+      b.setAttribute('aria-expanded', 'false');
+      b.addEventListener('click', function () { open(b); });
+    });
+    // The page's own word stands in for the chip.
+    if (launchers.length) {
+      chipOff = true;
+      chip.hidden = true;
+      document.documentElement.classList.remove('sbar-chip-on');
+    }
 
     try {
       wideMq = window.matchMedia(WIDE);

@@ -6,7 +6,7 @@
 // Run from repo root: `npm test` (or `node tests/seal_blue_fallback.test.js`).
 const fs = require("fs");
 
-const FILES = ["sierra/sierra.js", "fact-sheet/factsheet_sierra.js", "cpl_chat.js", "cpl_pathways.js", "CPL_Dashboard.html", "index.html"];
+const FILES = ["sierra/sierra.js", "sierra/sidebar.js", "cpl_chat.js", "cpl_pathways.js", "CPL_Dashboard.html", "index.html"];
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 
