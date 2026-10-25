@@ -26,6 +26,8 @@ What this pins, in order of how expensive each would be to get wrong:
      and only while one of its courses is still a CDCP title there; a proposed row
      counts nothing, and an exhibit already counted counts once.
   7. NEVER GUESSED. A COCI name that does not resolve is logged and moves nothing.
+  8. A COLD RPC GETS A SECOND TRY. PostgREST cancels at the authenticator's 8 s and
+     answers 500 (2026-10-25 11:40Z); the retry answers warm. A 4xx is not retried.
 
 Run: python3 tests/funding_nc_counts_test.py
 """
@@ -208,6 +210,36 @@ def main():
     step = wf[wf.index("name: Build funding priority-metric actuals"):]
     step = step[:step.index("- name:", 10)]
     check("7c: the daily step hands the builder the service key", "SUPABASE_SERVICE_KEY" in step)
+
+    # ── the retry on a cold RPC (S476) ──────────────────────────────────────
+    import importlib.util
+    import io
+    import urllib.error
+    sys.dont_write_bytecode = True
+    spec = importlib.util.spec_from_file_location("bfp", BUILDER)
+    bfp = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(bfp)
+
+    def fake(codes):
+        calls = []
+        def urlopen(req, timeout=None):
+            code = codes[len(calls)]
+            calls.append(code)
+            if code != 200:
+                raise urllib.error.HTTPError(req.full_url, code, "err", {}, io.BytesIO(b""))
+            return io.BytesIO(b'{"institutions": []}')
+        return urlopen, calls
+
+    op, calls = fake([500, 200])
+    got = bfp.call_nc_counts_rpc("http://x/rpc", "k", wait=0, urlopen=op)
+    check("8a: a 500 then a 200 returns the payload on the second attempt",
+          got == {"institutions": []} and calls == [500, 200], f"{got} {calls}")
+    op, calls = fake([500, 500, 500])
+    got = bfp.call_nc_counts_rpc("http://x/rpc", "k", wait=0, urlopen=op)
+    check("8b: three 500s give up and return None (the keys stay absent)", got is None and len(calls) == 3)
+    op, calls = fake([403, 200])
+    got = bfp.call_nc_counts_rpc("http://x/rpc", "k", wait=0, urlopen=op)
+    check("8c: a 4xx is not retried", got is None and calls == [403])
 
     print(f"\n{checks[0] - len(failures)}/{checks[0]} passed")
     sys.exit(1 if failures else 0)

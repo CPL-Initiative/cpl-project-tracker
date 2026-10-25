@@ -16175,8 +16175,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 446,
+   "count": 447,
    "docs": [
+    {
+     "created": "2026-10-25",
+     "governs": [],
+     "n": 477,
+     "path": "docs/session_477_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "noncredit",
+      "nc-1",
+      "supabase"
+     ],
+     "title": "Session 477 handoff: the noncredit RPC gets a retry; Sheet 127 still waits",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-25",
      "governs": [],
@@ -23831,5 +23848,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1261
+ "total": 1262
 }

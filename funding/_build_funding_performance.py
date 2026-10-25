@@ -714,18 +714,41 @@ def fetch_nc_counts(argv):
         print("funding-performance: SUPABASE_SERVICE_KEY unset; the noncredit outcome counts "
               "stay absent (TBA).")
         return None
-    import urllib.request
     url = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
-    req = urllib.request.Request(
-        f"{url}/rest/v1/rpc/{NC_COUNTS_RPC}", data=b"{}", method="POST",
-        headers={"apikey": key, "Authorization": f"Bearer {key}", "Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=180) as resp:
-            return json.loads(resp.read().decode("utf-8"))
-    except Exception as e:  # non-fatal: the outcomes read TBA, the rest of the artifact stands
-        print(f"funding-performance: {NC_COUNTS_RPC} failed ({e}); the noncredit outcome "
-              "counts stay absent (TBA).")
-        return None
+    return call_nc_counts_rpc(f"{url}/rest/v1/rpc/{NC_COUNTS_RPC}", key)
+
+
+# PostgREST cancels a call at the authenticator's 8 s statement_timeout, and the
+# function's own `set statement_timeout` does not lift it: Postgres arms the
+# timer when the outer statement starts. Warm, the RPC answers in about 1 s; cold,
+# while the daily run loads the database, it ran past 8 s and came back 500
+# (2026-10-25 11:40Z, "canceling statement due to statement timeout"). The first
+# call warms the cache, so a second attempt on a 5xx or a dropped connection
+# answers (S476).
+NC_COUNTS_ATTEMPTS = 3
+
+
+def call_nc_counts_rpc(endpoint, key, attempts=NC_COUNTS_ATTEMPTS, wait=5, urlopen=None):
+    import time
+    import urllib.error
+    import urllib.request
+    urlopen = urlopen or urllib.request.urlopen
+    for attempt in range(1, attempts + 1):
+        req = urllib.request.Request(
+            endpoint, data=b"{}", method="POST",
+            headers={"apikey": key, "Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+        try:
+            with urlopen(req, timeout=180) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except Exception as e:  # non-fatal: the outcomes read TBA, the rest of the artifact stands
+            retry = not isinstance(e, urllib.error.HTTPError) or e.code >= 500
+            if retry and attempt < attempts:
+                print(f"funding-performance: {NC_COUNTS_RPC} attempt {attempt} failed ({e}); retrying.")
+                time.sleep(wait * attempt)
+                continue
+            print(f"funding-performance: {NC_COUNTS_RPC} failed ({e}); the noncredit outcome "
+                  "counts stay absent (TBA).")
+            return None
 
 
 def _loose(s):
