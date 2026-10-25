@@ -176,8 +176,11 @@ if (fs.existsSync("cpl_funding_performance.js")) {
   const src = fs.readFileSync("cpl_funding_performance.js", "utf8");
   const live = JSON.parse(src.match(/window\.CPL_FUNDING_PERF = (\{[\s\S]*\});\s*$/)[1]);
   const cells = [];
+  // An absent cell bakes no count: since 2026-10-25 the noncredit builder adds a
+  // row carrying only nc_* keys for a college with no MAP students (Imperial,
+  // Folsom Lake ...), and every reader treats its missing p2/p3 as a missing row.
   Object.values(live.colleges).concat(Object.values(live.unmatched || {})).forEach((r) => {
-    cells.push(r.p2, r.p3);
+    ["p2", "p3"].forEach((m) => { if (m in r) cells.push(r[m]); });
   });
   check("committed artifact: no count under its own floor baked",
     cells.every((v) => v === null || v === 0 || v >= live.suppress_below));
