@@ -140,14 +140,16 @@ HTML = r"""<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>California Community Colleges and Military Installations</title>
 <!-- The theme a reader chose in COBI's one control (cpl_theme.js, key cpl_theme,
-     same origin) holds here; with no choice the page follows the OS. Set before
-     the first paint, and followed live: the `storage` event fires in every other
-     same-origin document, so the map inside COBI's Military Partnerships iframe
-     changes when COBI's control does. ?embed=1 (that iframe's src) sets the
-     embedded layout below. -->
-<script>(function(){function a(t){var r=document.documentElement;if(t==="light"||t==="dark")r.setAttribute("data-theme",t);else r.removeAttribute("data-theme")}
+     same origin) holds here. With no choice the public page opens Light (Sam,
+     Open Asks Sheet 126 card 2, 2026-10-24: the public pages open Light as the
+     library does); inside COBI's Military Partnerships iframe (?embed=1, which
+     also sets the embedded layout below) it follows COBI, whose System setting
+     follows the OS. Set before the first paint, and followed live: the `storage`
+     event fires in every other same-origin document, so the map in that iframe
+     changes when COBI's control does. -->
+<script>(function(){var e1=/[?&]embed=1(&|$)/.test(location.search);function a(t){var r=document.documentElement;if(t==="light"||t==="dark")r.setAttribute("data-theme",t);else if(e1)r.removeAttribute("data-theme");else r.setAttribute("data-theme","light")}
 try{a(localStorage.getItem("cpl_theme"))}catch(e){}
-if(/[?&]embed=1(&|$)/.test(location.search))document.documentElement.classList.add("embed");
+if(e1)document.documentElement.classList.add("embed");
 window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newValue)})})()</script>
 <style>
 __FONTS__

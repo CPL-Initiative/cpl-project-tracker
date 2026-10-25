@@ -102,8 +102,8 @@ block("(3) the styles: the logo link, the phone row, the hidden companion", () =
   check("(3) ⭐ the logo is the link to map.rccd.edu, and says where it goes and that it opens a new tab",
     /<a class="s-home" href="https:\/\/map\.rccd\.edu" target="_blank" rel="noopener">[\s\S]*?<img class="s-logo s-logo-light"[\s\S]*?<span class="s-sr">map\.rccd\.edu \(opens in a new tab\)<\/span>\s*<\/a>/.test(HTML),
     "an image link's visible face names no destination, so the hidden words must");
-  check("(3) the light-on-dark logo shows in dark, by the OS and by the reader's explicit choice",
-    /prefers-color-scheme: dark\)\s*\{[^@]*:root:not\(\[data-theme="light"\]\) \.s-logo-dark\s*\{\s*display:\s*block/.test(CSS) &&
+  check("(3) the light-on-dark logo shows in dark, by the reader's choice (the device never picks it; Sheet 126 card 2)",
+    !/prefers-color-scheme/.test(CSS) &&
     /:root\[data-theme="dark"\] \.s-logo-dark\s*\{\s*display:\s*block/.test(CSS));
   const narrow = (CSS.match(/@media \(max-width: 560px\)\s*\{([\s\S]*?)\n\}/) || [])[1] || "";
   // The audience row folds behind its control at every width since the gentle prompt

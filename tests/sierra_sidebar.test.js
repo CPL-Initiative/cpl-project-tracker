@@ -14,8 +14,9 @@
 //       between the two;
 //   (5) Escape in her frame closes the bar, unless her About panel is open;
 //   (6) a reopen finds the same frame, the conversation unreloaded;
-//   (7) she takes the host's theme in ?theme= and follows a change of it, and her page
-//       lets ?theme= beat a stored choice;
+//   (7) she takes the host's theme in ?theme= (the device's, when the host has none) and
+//       follows a change of it, and her page lets ?theme= beat a stored choice and opens
+//       Light with none (Sam, Open Asks Sheet 126 card 2);
 //   (8) the library loads it, maps every token it reads, keeps two columns of cards
 //       beside it, and leaves room in the foot for the chip;
 //   (9) a second copy of the script does nothing;
@@ -81,7 +82,7 @@ function host(opts) {
     })] },
     beforeParse: function (w) {
       w.matchMedia = function (q) {
-        return { get matches() { return /min-width: 1200px/.test(q) ? state.wide : false; }, media: q,
+        return { get matches() { return /min-width: 1200px/.test(q) ? state.wide : /prefers-color-scheme: dark/.test(q) ? !!opts.darkDevice : false; }, media: q,
           addEventListener: function (t, f) { state.listeners.push(f); }, removeEventListener: function () {},
           addListener: function (f) { state.listeners.push(f); }, removeListener: function () {} };
       };
@@ -244,9 +245,11 @@ async function main() {
     h.close();
     const g = host({ theme: null });
     await g.ready();
-    check("(7d) a host with no theme sends none (only panel=1), so she reads the stored choice and the device as it does",
-      g.w.CPL_SIERRA_BAR.frameUrl() === BASE + "sierra/?panel=1");
-    g.close();
+    const k = host({ theme: null, darkDevice: true });
+    await k.ready();
+    check("(7d) a host with no theme of its own (COBI's System) names the device's: Light on a light device, Dark on a dark one",
+      g.w.CPL_SIERRA_BAR.frameUrl() === BASE + "sierra/?panel=1&theme=light" && k.w.CPL_SIERRA_BAR.frameUrl() === BASE + "sierra/?panel=1&theme=dark");
+    g.close(); k.close();
     function sierraTheme(search, stored) {
       const dom = new JSDOM('<!doctype html><html><head></head><body></body></html>', { url: BASE + "sierra/" + search, runScripts: "dangerously",
         beforeParse: function (w) { if (stored) w.localStorage.setItem("cpl_theme", stored); } });
@@ -255,9 +258,9 @@ async function main() {
       dom.window.close();
       return t;
     }
-    check("(7e) her head script: ?theme= wins, a stored choice holds without it, junk falls back to the stored choice",
+    check("(7e) her head script: ?theme= wins, a stored choice holds without it, junk falls back to it, and with none she opens Light",
       HEAD_SCRIPT.length > 0 && sierraTheme("?theme=light", "dark") === "light" && sierraTheme("", "dark") === "dark" &&
-      sierraTheme("?theme=pink", "dark") === "dark" && sierraTheme("", null) === null);
+      sierraTheme("?theme=pink", "dark") === "dark" && sierraTheme("", null) === "light" && sierraTheme("", "system") === "light");
   }
 
   // (8) The library: loads it, maps its tokens, two columns beside it, room for the chip.

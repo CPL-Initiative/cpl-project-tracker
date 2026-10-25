@@ -257,8 +257,25 @@ val("map: COBI's Military Partnerships iframe opens the embedded layout (both HT
   ["CPL_Dashboard.html", "index.html"].every((f) =>
     fs.readFileSync(f, "utf8").includes('src="veteran-sprint-map/ca_cpl_map_selfcontained.html?embed=1"')));
 val("map: ?embed=1 sets the embedded layout before the first paint",
-  () => /if\(\/\[\?&\]embed=1\(&\|\$\)\/\.test\(location\.search\)\)document\.documentElement\.classList\.add\("embed"\)/
-        .test(M_HTML.slice(0, M_HTML.indexOf("<style>"))));
+  () => /var e1=\/\[\?&\]embed=1\(&\|\$\)\/\.test\(location\.search\);/.test(M_HTML.slice(0, M_HTML.indexOf("<style>"))) &&
+        /if\(e1\)document\.documentElement\.classList\.add\("embed"\)/.test(M_HTML.slice(0, M_HTML.indexOf("<style>"))));
+// Sam, Open Asks Sheet 126 card 2 (2026-10-24): the public map opens Light unless the reader
+// picks Dark; inside COBI's iframe (?embed=1) it follows COBI, whose System follows the OS.
+val("map: the public page opens Light with no choice; inside COBI it follows COBI", () => {
+  const head = M_HTML.slice(0, M_HTML.indexOf("<style>"));
+  const src = (head.match(/<script>(\(function\(\)\{var e1=[\s\S]*?)<\/script>/) || [])[1] || "";
+  const run = (search, stored) => {
+    const dom = new JSDOM("<!doctype html><html><head></head><body></body></html>",
+      { url: "https://cpl-initiative.github.io/cpl-project-tracker/veteran-sprint-map/ca_cpl_map_selfcontained.html" + search, runScripts: "outside-only" });
+    if (stored) dom.window.localStorage.setItem("cpl_theme", stored);
+    dom.window.eval(src);
+    const t = dom.window.document.documentElement.getAttribute("data-theme");
+    dom.window.close();
+    return t;
+  };
+  return src.length > 0 && run("", null) === "light" && run("", "system") === "light" && run("", "dark") === "dark" &&
+    run("?embed=1", null) === null && run("?embed=1", "system") === null && run("?embed=1", "light") === "light";
+});
 val("map: above 980px a shorter map keeps the approved marker size (COBI's frame)", () => {
   const fn = GEN.slice(GEN.indexOf("function sizeFactor"), GEN.indexOf("function rescaleMarkers"));
   return /REF_PPU=0\.55/.test(GEN) && /min-width:981px/.test(GEN.slice(GEN.indexOf("const REF_PPU"))) &&

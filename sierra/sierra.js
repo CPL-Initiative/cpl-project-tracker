@@ -851,11 +851,10 @@
   // They set data-theme and remember the choice as cpl_theme, the key COBI and
   // the library read. With no choice the page follows the OS, and the word
   // pressed is the one the OS gives.
+  // Light unless the reader picked Dark (Sam, Open Asks Sheet 126 card 2): the
+  // device's setting never decides it.
   function themeNow() {
-    var t = document.documentElement.getAttribute('data-theme');
-    if (t === 'light' || t === 'dark') return t;
-    try { return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
-    catch (e) { return 'light'; }
+    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
   }
   function paintTheme() {
     var t = themeNow();
@@ -872,15 +871,12 @@
         paintTheme();
       });
     });
+    // A choice made in another tab holds here; COBI's System, or a cleared choice, reads as Light.
     window.addEventListener('storage', function (e) {
-      if (!e || e.key !== 'cpl_theme' || (e.newValue !== 'light' && e.newValue !== 'dark')) return;
-      document.documentElement.setAttribute('data-theme', e.newValue);
+      if (!e || e.key !== 'cpl_theme') return;
+      document.documentElement.setAttribute('data-theme', e.newValue === 'dark' ? 'dark' : 'light');
       paintTheme();
     });
-    try {
-      var mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
-      if (mq && mq.addEventListener) mq.addEventListener('change', paintTheme);
-    } catch (e) { /* no matchMedia: the words still set the theme */ }
     // A host that frames her (sidebar.js) sets data-theme on this page directly.
     if (window.MutationObserver) {
       new MutationObserver(paintTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });

@@ -9,13 +9,15 @@
 // These checks hold every such page to what a public page needs, and the script to its
 // contract:
 //   (1) a whole document: doctype, lang, charset, viewport, one title, the seal as its icon;
-//   (2) the public header and its Light and Dark words (Sam, 2026-10-21);
+//   (2) the public header and its Light and Dark words (Sam, 2026-10-21), and the page opens
+//       Light unless the reader picked Dark (Sam, Open Asks Sheet 126 card 2);
 //   (3) self-contained: no script from elsewhere, no Claude runtime call, no email address;
 //   (4) the address Sierra reads, and the slug a Library record can carry;
 //   (5) the script: the fragment's head lines move into <head>, the body stays as it was,
 //       a whole document gives the same page, and a page with no title or a bad slug stops.
 // Run from repo root: `node tests/library_pages.test.js`.
 const fs = require("fs");
+const { JSDOM } = require("jsdom");
 const path = require("path");
 const os = require("os");
 const { execFileSync } = require("child_process");
@@ -46,6 +48,18 @@ for (const p of pages) {
     /<!-- cpl-public-header:start/.test(h) && /<!-- cpl-public-header:end -->/.test(h) &&
     /data-cplh-theme="light"/.test(h) && /data-cplh-theme="dark"/.test(h) &&
     /href="https:\/\/cpl-initiative\.github\.io\/cpl-project-tracker\/library\/"/.test(h));
+  const theme = (stored) => {
+    const dom = new JSDOM("<!doctype html><html><head></head><body></body></html>", { url: "https://cpl-initiative.github.io/cpl-project-tracker/library/" + p.slug + "/", runScripts: "outside-only" });
+    if (stored) dom.window.localStorage.setItem("cpl_theme", stored);
+    const first = (head.match(/<script>([\s\S]*?)<\/script>/) || [])[1] || "";
+    dom.window.eval(first);
+    const t = dom.window.document.documentElement.getAttribute("data-theme");
+    dom.window.close();
+    return t;
+  };
+  check(`(2) ${p.slug}: ⭐ opens Light unless the reader picked Dark, set in <head> before its styles`,
+    head.indexOf("<script>") > -1 && head.indexOf("<script>") < head.indexOf("<style") &&
+    theme(null) === "light" && theme("system") === "light" && theme("dark") === "dark" && theme("light") === "light");
   check(`(3) ${p.slug}: self-contained — no script from elsewhere, no Claude runtime call, no email address`,
     !/<script\b[^>]*\bsrc=/i.test(h) && !/window\.claude/.test(h) && !/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i.test(h.replace(/data:[^"]+/g, "")));
   check(`(4) ${p.slug}: a Library slug, at the address Sierra reads`,
@@ -64,7 +78,7 @@ for (const p of pages) {
   const py = (code) => execFileSync("python3", ["-c", "import sys; sys.path.insert(0, 'scripts'); import library_page as m\n" + code], { cwd: ROOT, encoding: "utf8", stdio: "pipe" });
   const built = py(`print(m.build('a-piece', open(${JSON.stringify(src)}).read()), end='')`);
   check("(5) ⭐ the fragment's head lines move into <head>; the rest stays in <body> as it was",
-    /<head>\n<meta charset="utf-8">\n<meta name="viewport"[^\n]*>\n<title>A Piece<\/title>\n<meta name="claude:viewport-fit-sides" content="cover">\n<link rel="stylesheet"/.test(built) &&
+    /<head>\n<meta charset="utf-8">\n<meta name="viewport"[^\n]*>\n<script>[^\n]*data-theme[^\n]*<\/script>\n<title>A Piece<\/title>\n<meta name="claude:viewport-fit-sides" content="cover">\n<link rel="stylesheet"/.test(built) &&
     /<body>\n<style>body\{color:red\}<\/style>\n<main><h1>A Piece<\/h1><\/main>\n<\/body>/.test(built));
   const whole = path.join(tmp, "whole.html");
   fs.writeFileSync(whole, '<!doctype html><html><head><meta charset=utf8><style>:root{color-scheme:light}</style></head><body>\n' + frag + '\n\n</body></html>');

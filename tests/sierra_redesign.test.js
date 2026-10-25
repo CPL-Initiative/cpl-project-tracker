@@ -31,8 +31,8 @@
 //   (5) THE QUESTION BOX WRAPS. A one-row textarea: Enter sends, Shift+Enter
 //       does not, so a long question shows whole instead of running off a phone.
 //   (6) ONE THEME CONTROL. The reader's COBI choice (cpl_theme, same origin)
-//       holds here; with none the page follows the OS. Only light and dark are
-//       honored, so a stored "system" or garbage changes nothing.
+//       holds here; with none, or COBI's System, she opens Light (Sam, Open Asks
+//       Sheet 126 card 2, 2026-10-24). The device never decides it.
 //   (7) THE LIBRARY LOOK, SELF-CONTAINED. A white page whose navy title and gold
 //       rule are the library's own values (read from library/index.html, so the
 //       two cannot drift); every hex lives in a :root block; the dark palette is
@@ -246,8 +246,10 @@ function ask(w, text) {
     };
     check("(6) ⭐ the reader's COBI choice of dark holds here", run("dark") === "dark");
     check("(6) …and light", run("light") === "light");
-    check("(6) no choice, or System, follows the OS (no attribute)", run(null) === null && run("system") === null);
-    check("(6) a stored value that is no theme changes nothing", run("constructor") === null);
+    check("(6) ⭐ no choice, or COBI's System, opens Light (Sam, Open Asks Sheet 126 card 2)", run(null) === "light" && run("system") === "light");
+    check("(6) a stored value that is no theme opens Light too", run("constructor") === "light");
+    check("(6) the device's setting never decides it: no OS query in her page, her stylesheet or her script",
+      !/prefers-color-scheme/.test(HTML) && !/prefers-color-scheme/.test(CSS) && !/prefers-color-scheme/.test(SRC));
   });
 
   await block("(2b) the mountain line is kept", async () => {
@@ -260,7 +262,7 @@ function ask(w, text) {
       /class="s-ridge"[\s\S]*?stroke="currentColor"/.test(HTML) &&
       /\.s-peak\s*\{[^}]*color:\s*var\(--sierra-ghost\)/.test(CSS) &&
       /\.s-ridge\s*\{[^}]*color:\s*inherit/.test(CSS) &&
-      (CSS.match(/--sierra-ghost:\s*#[0-9A-Fa-f]{6}/g) || []).length === 3);
+      (CSS.match(/--sierra-ghost:\s*#[0-9A-Fa-f]{6}/g) || []).length === 2);
     // "Can you just use the current logo expanded?" The inline drawing IS
     // whitney-mark.svg, path for path, at its own proportions.
     const logo = fs.readFileSync("sierra/whitney-mark.svg", "utf8");
@@ -290,12 +292,10 @@ function ask(w, text) {
       .replace(/:root[^{]*\{[^}]*\}/g, "");
     const stray = noRoot.match(/#[0-9a-fA-F]{3,8}\b/g) || [];
     check("(7) ⭐ every hex lives in a :root block (components use tokens)", stray.length === 0, stray.join(" "));
-    const lightDark = (CSS.match(/@media \(prefers-color-scheme: dark\)\s*\{\s*:root:not\(\[data-theme="light"\]\)\s*\{([^}]*)\}/) || [])[1] || "";
     const explicitDark = (CSS.match(/:root\[data-theme="dark"\]\s*\{([^}]*)\}/) || [])[1] || "";
-    const norm = (s) => s.replace(/\s+/g, " ").trim();
-    check("(7) ⭐ the dark palette is written twice with the same values (the OS, and the reader's choice)",
-      lightDark.length > 100 && norm(lightDark) === norm(explicitDark),
-      "an explicit choice must beat the OS in both directions — the cpl_theme.js contract");
+    check("(7) ⭐ the dark palette is written once, under the reader's choice; the device never picks it",
+      explicitDark.length > 100 && /--sierra-paper:\s*#12233D/.test(explicitDark) && !/prefers-color-scheme/.test(CSS),
+      "Sam, Open Asks Sheet 126 card 2: the public pages open Light unless the reader picks Dark");
     // The library's own light values, read from its page, so a change there shows here.
     const libRoot = (LIB.match(/:root \{([\s\S]*?)\n\}/) || [])[1] || "";
     const lib = (name) => ((libRoot.match(new RegExp("--" + name + ":\\s*(#[0-9A-Fa-f]{6})")) || [])[1] || "").toUpperCase();
@@ -342,17 +342,16 @@ function ask(w, text) {
     check("(8) ⭐ in the bar the header keeps About Sierra alone: the logo, her name, the theme words and the links stand down",
       /:root\[data-panel\] \.s-home, :root\[data-panel\] \.s-who-head, :root\[data-panel\] \.s-theme, :root\[data-panel\] \.s-links \{ display: none; \}/.test(CSS) &&
       !/:root\[data-panel\][^{]*\.s-about\b[^{]*\{[^}]*display:\s*none/.test(CSS));
-    check("(8) the side bar asks for the panel", /'\?panel=1'/.test(fs.readFileSync("sierra/sidebar.js", "utf8")));
+    check("(8) the side bar asks for the panel, with the host's theme", /'\?panel=1&theme='/.test(fs.readFileSync("sierra/sidebar.js", "utf8")));
     // The CPL Initiative mark in her footer (Sam, 2026-10-24: "Maybe put the CPL Initiative logo in her footer").
     const foot = (HTML.match(/<footer class="s-foot">[\s\S]*?<\/footer>/) || [""])[0];
     check("(8) ⭐ her footer carries the CPL Initiative mark, white and navy, each named, neither a link",
       /<img class="s-foot-logo s-foot-logo-white" src="\.\/cpl-initiative-logo\.png" alt="CPL Initiative"/.test(foot) &&
       /<img class="s-foot-logo s-foot-logo-navy" src="\.\/cpl-initiative-logo-navy\.png" alt="CPL Initiative"/.test(foot) &&
       !/<a[^>]*>\s*<img class="s-foot-logo/.test(foot));
-    check("(8) white on her page's navy band; navy on the bar's paper, white on the dark paper, the dark rule written twice",
+    check("(8) white on her page's navy band; navy on the bar's paper, white on the dark paper",
       /\.s-foot-logo \{[^}]*display: none; \}/.test(CSS) &&
       /:root:not\(\[data-panel\]\) \.s-foot-logo-white, :root\[data-panel\] \.s-foot-logo-navy \{ display: block; \}/.test(CSS) &&
-      /prefers-color-scheme: dark\) \{\s*:root\[data-panel\]:not\(\[data-theme="light"\]\) \.s-foot-logo-navy \{ display: none; \}\s*:root\[data-panel\]:not\(\[data-theme="light"\]\) \.s-foot-logo-white \{ display: block; \}/.test(CSS) &&
       /:root\[data-panel\]\[data-theme="dark"\] \.s-foot-logo-navy \{ display: none; \}\s*:root\[data-panel\]\[data-theme="dark"\] \.s-foot-logo-white \{ display: block; \}/.test(CSS));
   });
 
