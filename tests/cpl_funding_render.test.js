@@ -291,11 +291,12 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   // One combined column came back on 2026-09-23 as MAX AWARD: the base and the
   // cap bind the combined award, and Clovis read $149,321 "(at base)" off the
   // credit share (item 4 on Sam's Scenario 3 sheet; it reverses part of R6/R7).
-  // Headed Total Funds since the College Dashboard (Sam, 2026-09-28).
-  check("no Yr 1 / Yr 2 / Combined columns any more; the one combined column is the max award, Total Funds",
+  // Headed Total Funds since the College Dashboard (Sam, 2026-09-28), Max Funds
+  // since the two funding columns (2026-10-25).
+  check("no Yr 1 / Yr 2 / Combined columns any more; the one combined column is the max award, Max Funds",
     !doc.querySelector('th[data-sort="y1"]') && !doc.querySelector('th[data-sort="y2"]') &&
     !doc.querySelector('th[data-sort="combined"]') &&
-    /^Total Funds/.test(((doc.querySelector('th[data-sort="total"]') || {}).textContent || "").trim()) &&
+    /^Max Funds/.test(((doc.querySelector('th[data-sort="total"]') || {}).textContent || "").trim()) &&
     /max award/.test((doc.querySelector('th[data-sort="total"]') || { getAttribute: () => "" }).getAttribute("title") || ""));
   check("no per-priority P1/P2/P3 columns in the table", !doc.querySelector('th[data-sort="p1"]'));
   check("no period toggle (funding timing is a model dial, not a view toggle)",
