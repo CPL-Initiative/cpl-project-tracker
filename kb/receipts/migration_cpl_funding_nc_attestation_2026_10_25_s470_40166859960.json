@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/supabase_cpl_funding_nc_attestation.sql",
+ "name": "cpl_funding_nc_attestation_2026_10_25_s470",
+ "version": "20261025055004",
+ "sha256": "d9006d3be006a9e26a75a6e83fa58a9ea4fb7e100e3b0f2313b4d1eca2d3a77b",
+ "run": "40166859960",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
