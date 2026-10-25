@@ -167,7 +167,7 @@ to the chip. The frame takes the library's theme in `?theme=`, which her page le
 switch. The library maps the `--sierra-bar-*` tokens onto its own. **COBI's Library tab carries it too** (Sam, ~21:05Z:
 *"Library and more importantly on the public library site:)"*): `library.js` loads the bar on the tab's first visit, shows
 the chip on that tab alone (`setChip`; any other tab hides it and shuts an open bar) and maps the tokens onto First Light.
-Test: `tests/sierra_sidebar.test.js` (44); sweep: `public-library-sierra` and `-dark` (its keyboard checks drag the edge
+Test: `tests/sierra_sidebar.test.js` (51); sweep: `public-library-sierra` and `-dark` (its keyboard checks drag the edge
 across her frame at 1440px), `cobi:library`.
 **The Fact Sheet and the funding model page open her in the bar too** (Sam, Open Asks Sheet 126 card 1, *public*, 23:08Z
 2026-10-24; built S469); COBI stays as it is. Each opens her from its own *Ask Sierra* word in its action row, just ahead of

@@ -42,9 +42,8 @@ writer with it per `docs/reference/scheduled_sessions.md`.
   Light unless the reader picked Dark; COBI's System stays, and the map inside COBI's frame (`?embed=1`) follows COBI.
 - **#2430, Sheet 126 card 1 *public*:** the Fact Sheet and the funding model page open Sierra in the bar from their own
   *Ask Sierra* word, with their starter questions (`CPL_SIERRA_SUGGESTED`) and surface (`CPL_SIERRA_SURFACE`, read from the
-  same-origin parent). The drawer `fact-sheet/factsheet_sierra.js` and its test are gone. *Merged at checkpoint time if
-  `test` passed; check the PR.*
-- **CPLBrain #466-#468:** Sheet 126, its answers, the Pages rule in the vault's `CLAUDE.md`; the builder holds no card.
+  same-origin parent). The drawer `fact-sheet/factsheet_sierra.js` and its test are gone. Merged 04:04Z (20176ce).
+- **CPLBrain #466-#469:** Sheet 126, its answers, the Pages rule in the vault's `CLAUDE.md` (the builder holds no card), the session note.
 - `cpl_memory`: receipts `kb/receipts/cpl_memory_2026-10-24_s469.sql` and `..._2026-10-25_s469.sql`.
 
 ## Decisions Sam made this run
