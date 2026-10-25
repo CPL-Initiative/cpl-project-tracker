@@ -106,10 +106,13 @@ block("(3) the styles: the logo link, the phone row, the hidden companion", () =
     /prefers-color-scheme: dark\)\s*\{[^@]*:root:not\(\[data-theme="light"\]\) \.s-logo-dark\s*\{\s*display:\s*block/.test(CSS) &&
     /:root\[data-theme="dark"\] \.s-logo-dark\s*\{\s*display:\s*block/.test(CSS));
   const narrow = (CSS.match(/@media \(max-width: 560px\)\s*\{([\s\S]*?)\n\}/) || [])[1] || "";
-  check("(3) ⭐ below 560px the header does not wrap and the audience row folds behind its control",
+  // The audience row folds behind its control at every width since the gentle prompt
+  // (Sam, 2026-10-24), so the phone needs no rule of its own for it.
+  const wide = CSS.replace(/@media[^{]*\{[\s\S]*?\n\}/g, "");
+  check("(3) ⭐ below 560px the header does not wrap, and the audience row folds behind its control at every width",
     /\.s-head\s*\{[^}]*flex-wrap:\s*nowrap/.test(narrow) &&
-    /\.s-audience:not\(\.open\)\s*\{\s*display:\s*none/.test(narrow) &&
-    /\.s-aud-toggle\s*\{\s*display:\s*inline-flex/.test(narrow),
+    /(^|\n)\.s-audience:not\(\.open\)\s*\{\s*display:\s*none/.test(wide) &&
+    /\.s-aud-toggle\s*\{\s*display:\s*inline-flex/.test(wide),
     "two header rows were 104px of a 844px phone");
   check("(3) …and About Sierra stays (it is the only way to the text)", !/\.s-about\s*\{[^}]*display:\s*none/.test(narrow));
   check("(3) the panel has the [hidden] companion rule",

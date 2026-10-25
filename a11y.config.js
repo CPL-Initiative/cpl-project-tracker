@@ -110,7 +110,44 @@ async function publicLibrarySierraChecks(page) {
   out.push({ name: "1440px: beside the page, which stays in use and does not scroll sideways",
     ok: s.open && s.modal === "false" && s.inert === 0 && s.barLeft === 1020 && s.bodyRight <= 1020 && s.sx <= s.vw,
     detail: `aria-modal=${s.modal}, ${s.inert} inert, bar left=${s.barLeft}, body right=${s.bodyRight}, scrollWidth=${s.sx}/${s.vw}` });
+  // The reader sets the width (Sam, 2026-10-24: "Make the sidebar resizable horizontally"):
+  // the edge takes the keyboard, a drag across her frame still reaches it, and the words work.
+  await page.focus(".sbar-grip");
+  await page.keyboard.press("ArrowLeft");
+  await page.waitForTimeout(100);
+  s = await state();
+  out.push({ name: "1440px: the bar's edge takes focus, and ArrowLeft widens her by 40px, the page narrowing beside her",
+    ok: s.barLeft === 980 && s.bodyRight <= 980 && s.sx <= s.vw, detail: `bar left=${s.barLeft}, body right=${s.bodyRight}` });
+  await page.keyboard.press("End");
+  await page.waitForTimeout(100);
+  const box = await page.locator(".sbar-grip").boundingBox();
+  await page.mouse.move(box.x + box.width / 2, box.y + 200);
+  await page.mouse.down();
+  await page.mouse.move(800, box.y + 220, { steps: 6 });
+  await page.mouse.move(1000, box.y + 240, { steps: 6 });
+  await page.mouse.up();
+  await page.waitForTimeout(150);
+  s = await state();
+  out.push({ name: "1440px: End takes her to 840px; a drag of the edge across her frame sets her width from the pointer",
+    ok: box && Math.abs(box.x + box.width / 2 - 600) <= 2 && Math.abs(s.barLeft - 1000) <= 2,
+    detail: `edge after End at ${box ? Math.round(box.x + box.width / 2) : "?"}, bar left after the drag=${s.barLeft}` });
+  await page.getByRole("button", { name: "Wider" }).click();
+  await page.waitForTimeout(100);
+  s = await state();
+  const saved = await page.evaluate(() => { try { return localStorage.getItem("cpl_sierra_bar_w"); } catch (e) { return null; } });
+  out.push({ name: "1440px: the word Wider widens her too, and the width is remembered",
+    ok: Math.abs(s.barLeft - 960) <= 2 && saved === String(1440 - s.barLeft), detail: `bar left=${s.barLeft}, saved=${saved}` });
+  await page.evaluate(() => { try { localStorage.removeItem("cpl_sierra_bar_w"); } catch (e) {} window.CPL_SIERRA_BAR.setWidth(420); });
   return out;
+}
+async function seedSierraWho(page, theme) {
+  await page.evaluate((th) => {
+    try { localStorage.removeItem("cplSierraAudience.v1"); } catch (e) {}
+    if (th === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    document.getElementById("s-input").value = "What is one step I can take to create CPL for the ELL IET grantees?";
+    document.getElementById("s-send").click();
+  }, theme);
+  await page.waitForTimeout(150);
 }
 async function seedSierraConversation(page, theme) {
   await page.evaluate((th) => {
@@ -1900,6 +1937,25 @@ module.exports = {
     seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")),
     keyboard: async (page) => sierraArrivingChecks(page),
   },
+  /* The gentle prompt (Sam, 2026-10-24: "gently prompt the user to choose their population
+     once they click Ask"): the first Ask with no pick, her question open under the box. */
+  "sierra-who": {
+    file: "sierra/index.html",
+    title: "Sierra, asking who the visitor is",
+    seed: (page) => seedSierraWho(page, "light"),
+    keyboard: async (page) => [await page.evaluate(() => {
+      const line = document.getElementById("s-aud-line"), a = document.activeElement;
+      return { name: "the first Ask holds the question, asks who the visitor is, focus on the first word",
+        ok: !!line && !line.hidden && line.classList.contains("s-asking-who") && !!a && a.classList.contains("s-aud-chip"),
+        detail: `line hidden=${line && line.hidden}, focus on ${a && (a.className || a.tagName)}` };
+    })],
+  },
+  "sierra-who-dark": {
+    file: "sierra/index.html",
+    title: "Sierra, asking who the visitor is, dark",
+    widths: [390, 1280],
+    seed: (page) => seedSierraWho(page, "dark"),
+  },
   "sierra-asking": {
     file: "sierra/index.html",
     title: "Sierra, a conversation",
@@ -2101,6 +2157,15 @@ module.exports = {
     widths: [390, 1280],
     seed: (page) => seedPublicLibrarySierra(page, "dark"),
   },
+
+  /* The public Library's own pages (S469; Sam, 2026-10-25: "GitHub Pages now"): a piece made
+     as a Claude artifact, copied under library/<slug>/ by scripts/library_page.py. */
+  "library-ell-iet": { file: "library/ell-iet-cpl-starting-points/index.html", title: "ELL IET CPL Starting Points (public Library page)" },
+  "library-ell-iet-dark": { file: "library/ell-iet-cpl-starting-points/index.html", title: "ELL IET CPL Starting Points, dark", widths: [390, 1280],
+    seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },
+  "library-dsp": { file: "library/dsp-credit-starting-points/index.html", title: "DSP Credit Starting Points (public Library page)" },
+  "library-dsp-dark": { file: "library/dsp-credit-starting-points/index.html", title: "DSP Credit Starting Points, dark", widths: [390, 1280],
+    seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },
 
   /* The Knowledge Base portal, as a team member sees it (S423): the sign-in view, the reader
      with a synthetic document, and the composer. Light only: the portal carries First Light's

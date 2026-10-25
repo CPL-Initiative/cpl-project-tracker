@@ -92,11 +92,10 @@ val("sierra: the reduced-motion block stands the typing pulse down",
     const i = S_CSS.indexOf("@media (prefers-reduced-motion: reduce)");
     return i !== -1 && /\.s-typing\s*\{[^}]*animation:\s*none/.test(S_CSS.slice(i));
   });
-val("sierra: the audience flash is replaced by a still outline, not deleted",
-  () => {
-    const i = S_CSS.indexOf("@media (prefers-reduced-motion: reduce)");
-    return i !== -1 && /\.s-audience\.s-need\s*\{[^}]*outline:/.test(S_CSS.slice(i));
-  });
+// The audience flash went with the gentle prompt (Sam, 2026-10-24): the first Ask
+// asks who the visitor is in words, so no animated cue is left to stand down.
+val("sierra: no audience flash is left to animate",
+  () => !/s-need/.test(S_CSS));
 
 // (c) the audience picker describes what it is
 val("sierra: the audience picker is role=group", () => {

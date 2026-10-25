@@ -58,7 +58,7 @@
   try {
     if (new URLSearchParams(location.search).get('ctx') === 'external') ctxVariant = 'external';
   } catch (e) { /* no URLSearchParams → no ctx (fail-open) */ }
-  var logEl, inputEl, sendBtn, statusEl, formEl, audEl, audToggle, wired = false;
+  var logEl, inputEl, sendBtn, statusEl, formEl, audEl, audToggle, audLine, wired = false;
 
   // ── Audience (primary population) ──
   // Required before the first question (Sam, 2026-07-01): the visitor picks who
@@ -68,6 +68,12 @@
   // SHARED with the COBI CPL Assistant tab (same origin, same key). Sent as an
   // optional `audience` field — callers that omit it (the map.rccd.edu widget)
   // are unaffected.
+  // Asked when it is needed (Sam, 2026-10-24: "Can we have her gently prompt the
+  // user to choose their population once they click Ask? I don't want to
+  // complicate the screen with all the choices initially."): with no pick the
+  // row is not on the screen at all; the first Ask holds the question, Sierra
+  // asks who the visitor is (WHO_PROMPT), and the pick sends the held question.
+  // With a pick stored, the row is one folded control, "Answering for: <pick>".
   // Text labels, no glyphs — Sam's COBI design rule (cpl_memory
   // cobi-no-cheesy-glyphs-design-rule), applied to cpl_chat.js in #1231 and
   // carried here so the three surfaces that mount Sierra read identically.
@@ -84,6 +90,8 @@
   ];
   var AUD_KEY = 'cplSierraAudience.v1';
   var audience = null;     // in-memory copy (localStorage may be unavailable)
+  var askingWho = false;   // the first Ask is held until the visitor says who they are
+  var WHO_PROMPT = 'Who are you asking as? I\u2019ll fit my answer to you.';
 
   function loadAudience() {
     try {
@@ -96,10 +104,9 @@
     try { localStorage.setItem(AUD_KEY, k); } catch (e) { /* in-memory only */ }
     renderAudience();
   }
-  // The row reads "Answering for" and its words, on the question bar (the
-  // redesign). On a phone and while reading it folds behind one control,
-  // "Answering for: <pick>", which opens it; a pick closes it again and hands
-  // focus back to that control, so focus never lands on a button that vanished.
+  // The row is folded behind one control, "Answering for: <pick>", which opens
+  // it; a pick closes it again and hands focus back to that control, so focus
+  // never lands on a button that vanished.
   function audienceLabel() {
     for (var i = 0; i < AUDIENCES.length; i++) if (AUDIENCES[i].k === audience) return AUDIENCES[i].label;
     return 'choose one';
@@ -109,12 +116,19 @@
     audEl.classList.toggle('open', !!open);
     if (audToggle) audToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
+  // Shown once there is a pick to change, or while Sierra asks for one.
+  function paintAudLine() {
+    if (!audLine) return;
+    audLine.hidden = !audience && !askingWho;
+    audLine.classList.toggle('s-asking-who', askingWho);
+  }
   function renderAudience() {
     if (!audEl) return;
     audEl.textContent = '';
     var lab = document.createElement('span');
     lab.className = 's-aud-label';
-    lab.textContent = 'Answering for';
+    lab.id = 's-aud-label';
+    lab.textContent = WHO_PROMPT;
     audEl.appendChild(lab);
     AUDIENCES.forEach(function (a) {
       var b = document.createElement('button');
@@ -123,16 +137,18 @@
       b.setAttribute('aria-pressed', audience === a.k ? 'true' : 'false');
       b.textContent = a.label;
       b.addEventListener('click', function () {
-        var wasOpen = audEl.classList.contains('open');
+        var held = askingWho;
+        askingWho = false;
         setAudience(a.k); setStatus('');
-        if (wasOpen) {
-          setAudienceOpen(false);
-          try { if (audToggle) audToggle.focus(); } catch (e) { /* focus is best effort */ }
-        }
+        setAudienceOpen(false);
+        // The pick answers Sierra's question, so the question she held goes now.
+        if (held) { submit(); return; }
+        try { if (audToggle) audToggle.focus(); } catch (e) { /* focus is best effort */ }
       });
       audEl.appendChild(b);
     });
     if (audToggle) audToggle.textContent = 'Answering for: ' + audienceLabel();
+    paintAudLine();
   }
   // ── About Sierra (the header panel) ──
   // The introduction and the beta note lived above the conversation and took
@@ -170,14 +186,16 @@
     });
   }
 
-  // Flash the selector when a send is attempted without a pick.
-  // The row opens if it was folded, so the words the message names are on screen.
-  function needAudience() {
-    setStatus('First, choose who you are under the question box, so Sierra can fit the answer to you.', 'error');
-    if (!audEl) return;
+  // The first Ask with no pick: the question stays in the box, the row opens
+  // under it with Sierra's question, and focus moves to the first word, so a
+  // keyboard and a screen reader land where the answer is given.
+  function askWho() {
+    askingWho = true;
+    setStatus('');
+    renderAudience();
     setAudienceOpen(true);
-    audEl.classList.add('s-need');
-    setTimeout(function () { audEl.classList.remove('s-need'); }, 1700);
+    var first = audEl && audEl.querySelector('.s-aud-chip');
+    try { if (first) first.focus(); } catch (e) { /* focus is best effort */ }
   }
 
   // ── Per-answer feedback (Helpful / Not helpful + note → sierra_feedback) ──
@@ -681,7 +699,7 @@
     if (busy) return;
     var q = (inputEl.value || '').trim();
     if (!q) { inputEl.focus(); return; }
-    if (!audience) { needAudience(); return; }
+    if (!audience) { askWho(); return; }
     busy = true;
     sendBtn.disabled = true; inputEl.disabled = true;
     setView('asking');          // the landing folds away at the first question
@@ -796,8 +814,8 @@
   }
 
   // ── Motion ──
-  // The paintings cycle only when the reader's browser can say motion is
-  // welcome. No matchMedia means the preference cannot be read, so the page
+  // An answer scrolls into view smoothly only when the reader's browser can say
+  // motion is welcome. No matchMedia means the preference cannot be read, so the page
   // holds still: a failure here should fail toward calm, never toward movement.
   function motionOk() {
     try {
@@ -914,6 +932,7 @@
     formEl = document.getElementById('s-form');
     audEl = document.getElementById('s-audience');
     audToggle = document.getElementById('s-aud-toggle');
+    audLine = document.getElementById('s-aud-line');
     if (!logEl || !inputEl || !sendBtn || !formEl) return;
 
     loadAudience();
@@ -967,7 +986,7 @@
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
     SIERRA_MARK: SIERRA_MARK, ctxVariant: ctxVariant, buildPayload: buildPayload,
     syncScrollRegions: syncScrollRegions,
-    TRIES: TRIES, setView: setView, paintTheme: paintTheme,
+    TRIES: TRIES, setView: setView, paintTheme: paintTheme, WHO_PROMPT: WHO_PROMPT,
     getView: function () { return view; },
     panel: function () { return document.documentElement.hasAttribute('data-panel'); },
   };

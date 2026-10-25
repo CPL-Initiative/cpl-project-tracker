@@ -61,9 +61,11 @@ Sonnet 5 is **1.72× Haiku per input token** (2.00× uncached); the cached prefi
 `event.message.model`, never the `MODEL` constant. ⚠️ **Nothing on our side can see which
 Anthropic ACCOUNT pays** — filter the Console by key.
 
-## The standalone page on a phone — the About Sierra control (2026-09-11)
+## The standalone page on a phone (2026-09-11)
 
-Sam: *"the current mobile view is mostly consumed by the header text."* The intro and beta paragraphs became an **About Sierra** control in the header (an accessible `<button aria-expanded>` panel; the footer keeps the beta and privacy lines); the map.rccd.edu pill hides ≤560px and the tagline ≤400px (`mayHideBelow` in `a11y.config.js`). **Measured at 390×844: the conversation starts 163px down (19%) against 540px (64%) before**; `npm run a11y -- sierra` clean at all nine widths. Guard: `tests/sierra_header_about.test.js` (23). **Open (Sam's ask, flag built, bubble UI not):** a floating Sierra bubble on every COBI tab — `kb/cpl_todos.json` `s255-sam-sierra-bubble-on-every-tab`.
+Moved verbatim to `docs/cpl_assistant_lessons.md` (*Moved from the lane (S469)*); the page is now the library look
+([lane](sierra-page-redesign.md)). **Open:** a floating Sierra bubble on every COBI tab (`kb/cpl_todos.json`
+`s255-sam-sierra-bubble-on-every-tab`); `sierra/sidebar.js` is the vehicle.
 
 ## The Sierra Training tab — round 1 (2026-09-29)
 
@@ -79,6 +81,8 @@ Guard: `tests/sierra_training_round1.test.js`.
 *Sierra*, and where a site hides CPL Assistant show only *My College*.
 `sierraHost()` already sent the Sierra button there, so the two buttons opened
 one place. **One Sierra in COBI (S398, #2163; Sam, 2026-10-16: *"consolidate Sierra Assistant into Sierra AI and sunset the separate assistant ... only gain"*, `sam-sierra-one-assistant-2026-10-16`).** The CPL Assistant tab (`#chatbot`) is retired: `CPL_CHAT.open({question, send})` opens Sierra AI full screen over any COBI tab, unscoped (surface `cobi-assistant`, kept), with the reader's sign-in. *Try it in: Sierra* and *Save & ask Sierra* ask her over the Training tab and send; *My College* keeps its hand-off; both words always show. Each box keeps its own scope and starters. Its ratings carry page `cobi-sierra`. Guard: `tests/sierra_one_cobi.test.js`. **Open:** the live `cobi_nav` row `chatbot`; the Fact Sheet drawer still names itself CPL Assistant; the floating bubble is one `open()` call away.
+
+**The public CPL Library (S469, built; deploy pending at writing).** Sierra reads `cpl_library_public()` and a piece's page when the tracker hosts it: [lane](library.md#sierra-reads-the-library-sam-2320z-2026-10-24-built-s469), smoke 7x.
 
 **Statewide exhibits in full (S398-S399, live).** For a request for the whole set, Sierra receives the Fact Sheet's 164 statewide exhibits by program area (`fact-sheet/statewide_catalog.json`, rebuilt daily): #2164, deployed 2026-10-16 on Sam's go (Open Asks Sheet 85 card 7; deploy run 38943025631, production smoke 38943211844 green with mode 7w). **NEXT:** render the Fact Sheet's baked title lists from the catalog (132 baked, 50 current titles missing); retire the April vault note `map-exhibit-analysis.md`; curate the 22 "Other Statewide" exhibits into program areas.
 

@@ -23,6 +23,10 @@
 //  (11) COBI's Library tab (library.js) loads the bar on its first visit, shows the chip on that tab alone,
 //       and maps every token onto First Light (Sam, 2026-10-24: "Library and more importantly on the public
 //       library site").
+//  (12) beside the page, the reader sets the bar's width (Sam, 2026-10-24: "Make the sidebar resizable
+//       horizontally"): a separator on its left edge that drags and takes the arrow keys, Home and End; the
+//       words Narrower and Wider for anyone who cannot drag; the width held so the page keeps 600px, and
+//       remembered for this reader.
 // Run from repo root: `npm test` (or `node tests/sierra_sidebar.test.js`).
 const fs = require("fs");
 const { JSDOM, requestInterceptor } = require("jsdom");
@@ -57,7 +61,7 @@ function until(test, ms) {
 // WIDE answer the test sets, and a count of every load of Sierra's page.
 function host(opts) {
   opts = opts || {};
-  const state = { wide: !!opts.wide, listeners: [], sierraLoads: [] };
+  const state = { wide: !!opts.wide, listeners: [], sierraLoads: [], iw: opts.innerWidth || 0 };
   const theme = opts.theme === undefined ? ' data-theme="light"' : (opts.theme ? ' data-theme="' + opts.theme + '"' : "");
   const html = '<!doctype html><html lang="en"' + theme + '><head></head><body>' +
     '<header id="h"><a href="#x">Home</a></header><main id="m"><button id="b">A page control</button></main>' +
@@ -82,6 +86,8 @@ function host(opts) {
           addListener: function (f) { state.listeners.push(f); }, removeListener: function () {} };
       };
       if (opts.stored) w.localStorage.setItem("cpl_theme", opts.stored);
+      if (opts.storedW !== undefined) w.localStorage.setItem("cpl_sierra_bar_w", opts.storedW);
+      if (opts.innerWidth) Object.defineProperty(w, "innerWidth", { configurable: true, get: function () { return state.iw; } });
     }
   });
   const w = dom.window;
@@ -263,8 +269,11 @@ async function main() {
     const missing = used.filter(function (t) { return root.indexOf(t + ":") < 0; });
     check("(8b) the library's :root maps every --sierra-bar-* token the script reads onto its own tokens",
       used.length >= 9 && !missing.length && !/--sierra-bar-[a-z-]+:\s*#/.test(root), "missing: " + missing.join(", "));
-    check("(8c) with the bar open beside it, the library keeps two columns of cards until 1600px",
-      /@media \(min-width: 1200px\) and \(max-width: 1599px\) \{ html\.sbar-open \.grid \{ grid-template-columns: repeat\(2, minmax\(0, 1fr\)\); \} \}/.test(LIBRARY));
+    check("(8c) with the bar open beside it, the library's cards fit the room it leaves: a container query on the results, two columns, then one",
+      /\.results \{ container: lib-results \/ inline-size; \}/.test(LIBRARY) &&
+      /@container lib-results \(max-width: 819px\) \{ html\.sbar-open \.grid \{ grid-template-columns: repeat\(2, minmax\(0, 1fr\)\); \} \}/.test(LIBRARY) &&
+      /@container lib-results \(max-width: 539px\) \{ html\.sbar-open \.grid \{ grid-template-columns: 1fr; \} \}/.test(LIBRARY) &&
+      !/@media \(min-width: 1200px\) and \(max-width: 1599px\)/.test(LIBRARY));
     const foot = (LIBRARY.match(/\.foot-in \{ padding-block: 24px (\d+)px;/) || [])[1];
     check("(8d) the foot's last line clears the chip (16px from the bottom, 48px tall)", +foot >= 72);
     check("(8e) the bar and the chip stay off paper", /@media print \{ \.sbar-chip, \.sbar \{ display:none !important; \}/.test(BAR));
@@ -302,6 +311,73 @@ async function main() {
     h.w.CPL_SIERRA_BAR.setChip(true);
     check("(10d) setChip(true) while she is open leaves the chip hidden behind her", h.chip().hidden && !h.bar().hidden);
     h.close();
+  }
+
+  // (12) The reader sets the width.
+  {
+    const h = host({ wide: true, innerWidth: 1440 });
+    await h.ready();
+    h.chip().click();
+    await h.loaded();
+    const g = h.d.querySelector(".sbar-grip"), root = h.d.documentElement;
+    const barW = function () { return root.style.getPropertyValue("--sierra-bar-w"); };
+    const saved = function () { return h.w.localStorage.getItem("cpl_sierra_bar_w"); };
+    check("(12a) the bar's left edge is a focusable separator, named, controlling the bar, its value the width (420 of 340 to 840)",
+      !!g && g.parentNode === h.bar() && g.getAttribute("role") === "separator" && g.getAttribute("aria-orientation") === "vertical" &&
+      g.getAttribute("aria-label") === "Resize Ask Sierra" && g.getAttribute("aria-controls") === "sbar" && g.tabIndex === 0 &&
+      g.getAttribute("aria-valuenow") === "420" && g.getAttribute("aria-valuemin") === "340" && g.getAttribute("aria-valuemax") === "840" &&
+      g.getAttribute("aria-valuetext") === "420 pixels wide" && barW() === "420px" && saved() === null);
+    const css = h.d.getElementById("sbar-css").textContent;
+    const wideBlock = (css.match(/@media \(min-width: 1200px\) \{([\s\S]*?)\n\}/) || [])[1] || "";
+    check("(12b) the edge and the two words show only beside the page; a narrow window gives her the screen with neither",
+      /(^|\n)\.sbar-size, \.sbar-grip \{ display:none; \}/.test(css) && /\.sbar-size \{ display:inline-block; \}/.test(wideBlock) &&
+      /\.sbar-grip \{ display:block; position:absolute;[^}]*cursor:col-resize; touch-action:none; \}/.test(wideBlock));
+    key(g, "ArrowLeft");
+    const left = barW() === "460px" && g.getAttribute("aria-valuenow") === "460";
+    key(g, "ArrowRight"); key(g, "ArrowRight");
+    const right = barW() === "380px";
+    key(g, "Home");
+    const home = barW() === "340px";
+    key(g, "End");
+    check("(12c) ArrowLeft widens by 40px, ArrowRight narrows, Home and End go to the least and the most, and the choice is saved",
+      left && right && home && barW() === "840px" && saved() === "840", "now " + barW() + ", saved " + saved());
+    const tools = Array.prototype.map.call(h.bar().querySelectorAll(".sbar-tools button"), function (b) { return b.textContent; });
+    const wider = h.bar().querySelectorAll(".sbar-size")[1], narrower = h.bar().querySelectorAll(".sbar-size")[0];
+    const atMost = wider.getAttribute("aria-disabled") === "true";
+    wider.click();
+    const held = barW() === "840px";
+    narrower.click();
+    check("(12d) Narrower and Wider are words before Close; Wider at the most says so and does nothing; Narrower narrows",
+      tools.join("|") === "Narrower|Wider|Close" && atMost && held && barW() === "800px" && wider.getAttribute("aria-disabled") === "false" && saved() === "800");
+    g.dispatchEvent(new h.w.MouseEvent("pointerdown", { bubbles: true, cancelable: true, button: 0, clientX: 640 }));
+    const resizing = root.classList.contains("sbar-resizing");
+    h.d.dispatchEvent(new h.w.MouseEvent("pointermove", { bubbles: true, cancelable: true, clientX: 900 }));
+    const mid = barW() === "540px" && saved() === "800";
+    h.d.dispatchEvent(new h.w.MouseEvent("pointerup", { bubbles: true, cancelable: true, clientX: 900 }));
+    check("(12e) a drag of the edge sets the width from the pointer, lets the pointer past her frame while it lasts, and saves at the end",
+      resizing && mid && !root.classList.contains("sbar-resizing") && barW() === "540px" && saved() === "540" &&
+      /html\.sbar-resizing \.sbar-frame \{ pointer-events:none; \}/.test(css), "now " + barW() + ", saved " + saved());
+    h.d.dispatchEvent(new h.w.MouseEvent("pointermove", { bubbles: true, cancelable: true, clientX: 300 }));
+    g.dispatchEvent(new h.w.MouseEvent("pointerdown", { bubbles: true, cancelable: true, button: 2, clientX: 640 }));
+    h.d.dispatchEvent(new h.w.MouseEvent("pointermove", { bubbles: true, cancelable: true, clientX: 300 }));
+    check("(12f) a move after the drag, or a drag with another button, changes nothing", barW() === "540px" && !root.classList.contains("sbar-resizing"));
+    h.d.dispatchEvent(new h.w.MouseEvent("pointerup", { bubbles: true }));
+    h.close();
+    const r = host({ wide: true, innerWidth: 1440, storedW: "700" });
+    await r.ready();
+    const rw = function () { return r.d.documentElement.style.getPropertyValue("--sierra-bar-w"); };
+    const first = rw() === "700px";
+    r.iw = 1200; r.w.dispatchEvent(new r.w.Event("resize"));
+    const held2 = rw() === "600px" && r.w.localStorage.getItem("cpl_sierra_bar_w") === "700";
+    r.iw = 1440; r.w.dispatchEvent(new r.w.Event("resize"));
+    check("(12g) the next page reads the reader's width; a narrower window holds it so the page keeps 600px, and it grows back",
+      first && held2 && rw() === "700px", "now " + rw());
+    r.close();
+    const j = host({ wide: true, innerWidth: 1440, storedW: "wide" });
+    await j.ready();
+    check("(12h) a stored width that is not a number falls back to 420px",
+      j.d.documentElement.style.getPropertyValue("--sierra-bar-w") === "420px");
+    j.close();
   }
 
   // (11) COBI's Library tab.

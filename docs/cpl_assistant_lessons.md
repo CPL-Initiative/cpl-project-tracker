@@ -764,3 +764,11 @@ Verbatim from `docs/reference/lanes/sierra-retrieval-corpus.md`, moved to bring 
 ✅ **The no-match fallback reads one college by equality (S400, #2173, applied by `supabase-migrate.yml` run 38967045972):** `search_college_programs`'s fuzzy fallback filtered `(college_filter is null or p.college = college_filter)`, which a cached generic plan cannot serve from `coci_programs_college`, so the smoke's 7l negative control (a nonsense phrase at Mt. San Antonio) timed out at anon's 3 s (57014, run 38957574640). One branch per scope now; rows unchanged. The 7l call measured 2,742 ms before and 204 ms after (354 ms with generic plans forced). The materialized `tv` CTE still builds every program's tsvectors per call (about 0.9 s), the next cost to cut if timings show it.
 
 **Sierra quotes complete records (S416 to S418), the A/Bs before the deploy.** Three A/Bs preceded it: run 1 (39142613772) lost 7l to the Active-only gate (COCI marks most credit programs Approved; fixed in 57b25bb4, the gate now mirrors the harvest's STATUS_FILTER); run 2 (39145439350) regressed 7c and 9 and run 3 (39147745774) 7s, place questions that `resolveAskedPlace` strips before the college matcher runs, so neither reaches this block: model variance, not the candidate (`docs/kb-notes/methodology-a-regressed-mode-must-reach-the-changed-code.md`).
+
+## Moved from the lane (S469, 2026-10-25)
+
+Verbatim from `docs/reference/lanes/sierra-retrieval-corpus.md`; the page has since taken the library look.
+
+### The standalone page on a phone — the About Sierra control (2026-09-11)
+
+Sam: *"the current mobile view is mostly consumed by the header text."* The intro and beta paragraphs became an **About Sierra** control in the header (an accessible `<button aria-expanded>` panel; the footer keeps the beta and privacy lines); the map.rccd.edu pill hides ≤560px and the tagline ≤400px (`mayHideBelow` in `a11y.config.js`). **Measured at 390×844: the conversation starts 163px down (19%) against 540px (64%) before**; `npm run a11y -- sierra` clean at all nine widths. Guard: `tests/sierra_header_about.test.js` (23). **Open (Sam's ask, flag built, bubble UI not):** a floating Sierra bubble on every COBI tab — `kb/cpl_todos.json` `s255-sam-sierra-bubble-on-every-tab`.

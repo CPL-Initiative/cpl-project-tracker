@@ -231,11 +231,17 @@ button { font: inherit; color: inherit; }
 .s-send:disabled { opacity: .6; cursor: default; text-decoration: none; }
 
 /* Who Sierra answers for: underlined words, the pick bold with a heavier
-   underline (a weight and a rule, never color alone). Collapsed behind one
-   control on a phone and while reading. */
+   underline (a weight and a rule, never color alone). Off the screen until it
+   is needed (Sam, 2026-10-24: "I don't want to complicate the screen with all
+   the choices initially"): folded behind one control once a pick is stored, and
+   open under her question at the first Ask without one (.s-asking-who). */
 .s-aud-line { display: flex; flex-wrap: wrap; align-items: center; gap: 0 14px; }
+.s-aud-line[hidden] { display: none; }
 .s-audience { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 16px; font-size: .9375rem; }
-.s-aud-label { flex: 1 1 100%; color: var(--sierra-heading); font-weight: 700; font-size: .875rem; }
+.s-audience:not(.open) { display: none; }
+.s-aud-label { display: none; }
+.s-asking-who .s-aud-label { display: block; flex: 1 1 100%; padding-top: 2px; color: var(--sierra-heading); font-weight: 700; font-size: 1rem; }
+.s-asking-who .s-aud-toggle { display: none; }
 .s-aud-chip {
   background: none; border: 0; border-radius: 0; padding: 4px 2px; min-height: 32px; cursor: pointer;
   font: 600 .9375rem var(--sierra-font); color: var(--sierra-cobalt);
@@ -243,17 +249,12 @@ button { font: inherit; color: inherit; }
 }
 .s-aud-chip:hover { text-decoration-thickness: 2px; }
 .s-aud-chip.on { color: var(--sierra-heading); font-weight: 700; text-decoration-thickness: 2px; }
-.s-audience.s-need { outline: 2px solid var(--sierra-crimson); outline-offset: 3px; border-radius: 6px; animation: s-need-pulse .42s 2; }
-@keyframes s-need-pulse { 50% { outline-color: transparent; } }
 .s-aud-toggle {
-  display: none; background: none; border: 0; padding: 6px 2px; min-height: 36px; cursor: pointer;
+  display: inline-flex; background: none; border: 0; padding: 6px 2px; min-height: 36px; cursor: pointer;
   font: 600 .9375rem var(--sierra-font); color: var(--sierra-cobalt); text-align: left;
   text-decoration: underline; text-underline-offset: 3px;
 }
 .s-aud-toggle:hover { text-decoration-thickness: 2px; }
-body[data-view="asking"] .s-aud-toggle { display: inline-flex; }
-body[data-view="asking"] .s-audience:not(.open) { display: none; }
-body[data-view="asking"] .s-aud-label { display: none; }
 
 .s-status { font-size: .875rem; color: var(--sierra-muted); }
 .s-status:empty { display: none; }
@@ -404,6 +405,16 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
 .s-links a { display: inline-flex; align-items: center; min-height: 24px; font-weight: 600; text-underline-offset: 3px; }
 :root:not([data-panel]) .s-foot { background: var(--sierra-foot-bg); color: var(--sierra-foot-fg); }
 :root:not([data-panel]) .s-foot a { color: var(--sierra-foot-fg); }
+/* The CPL Initiative mark: white on the band in both themes; in the side bar,
+   navy on paper, white on the dark paper. */
+.s-foot-logo { height: 30px; width: auto; display: none; }
+:root:not([data-panel]) .s-foot-logo-white, :root[data-panel] .s-foot-logo-navy { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root[data-panel]:not([data-theme="light"]) .s-foot-logo-navy { display: none; }
+  :root[data-panel]:not([data-theme="light"]) .s-foot-logo-white { display: block; }
+}
+:root[data-panel][data-theme="dark"] .s-foot-logo-navy { display: none; }
+:root[data-panel][data-theme="dark"] .s-foot-logo-white { display: block; }
 
 /* ── In the side bar ── */
 :root[data-panel] .s-head { border-bottom: 0; padding-block: 4px 0; }
@@ -421,10 +432,6 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
   .s-who-head { font-size: 1.05rem; padding-left: 10px; }
   .s-main { gap: 16px; }
   .s-send { padding: 0 18px; }
-  /* One "Answering for: …" control opens the row, as while reading. */
-  .s-aud-toggle { display: inline-flex; }
-  .s-audience:not(.open) { display: none; }
-  .s-aud-label { display: none; }
   .s-user .s-bubble { max-width: 92%; }
 }
 /* Narrower still: the header holds one row by shrinking, and nothing yields. */
@@ -435,10 +442,10 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
   .s-about, .s-theme-btn { font-size: .875rem; }
 }
 
-/* Sierra animates two things: the typing indicator (infinite while an answer
-   streams) and the audience row's flash on a send without a pick. Under reduced
-   motion both stand down and neither cue is lost: the dots still say "thinking"
-   by being there, and the row keeps a solid outline. */
+/* Sierra animates one thing: the typing indicator, infinite while an answer
+   streams. Under reduced motion it stands down and the cue is not lost: the
+   dots still say "thinking" by being there. (The audience row's flash went with
+   the gentle prompt at the first Ask, which asks instead of flashing.) */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .001ms !important;
@@ -447,5 +454,4 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
     scroll-behavior: auto !important;
   }
   .s-typing { animation: none; opacity: .8; }
-  .s-audience.s-need { animation: none; outline: 3px solid var(--sierra-crimson); }
 }

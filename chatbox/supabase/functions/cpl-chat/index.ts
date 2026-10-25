@@ -5620,7 +5620,10 @@ function buildSystemPrompt(
   hostScope: HostScope | null = null,
   // Every statewide exhibit by program area, when the visitor asked for the set
   // (S398). Carries its own answer rule; see buildStatewideCatalogContext.
-  statewideCatalogContext: string = ""
+  statewideCatalogContext: string = "",
+  // The public CPL Library's pieces that fit the question (S469). Carries its own
+  // answer rule; see buildLibraryContext.
+  libraryContext: string = ""
   // TWO BLOCKS, not one string — `stable` is the cache breakpoint. See the
   // comment above the return for why the order had to change to allow it.
 ): { stable: string; volatile: string } {
@@ -5738,7 +5741,7 @@ ${assembled.alwaysText}`;
 
   const volatilePart = `
 ${hostScopeBlock(hostScope)}
-${context}${metricsContext}${statewideCatalogContext}${collegeContext}${topicContext}${offeringsContext}${programsContext}${credentialContext}${volumeContext}${alignmentContext}${prospectiveContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${statewideCatalogContext}${libraryContext}${collegeContext}${topicContext}${offeringsContext}${programsContext}${credentialContext}${volumeContext}${alignmentContext}${prospectiveContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
 
   return { stable, volatile: volatilePart };
 }
@@ -6092,6 +6095,189 @@ async function fetchStatewideCatalog(): Promise<any> {
   }
 }
 
+// ── LIBRARY BLOCK START ──────────────────────────────────────────────────────────
+// Sierra reads the public CPL Library (S469). Sam, 2026-10-20, approving the public
+// library: "It would be great if Sierra could access the info in the public
+// library... present links to appropriate library artifacts." On 2026-10-24 she
+// answered "What is one step I can take to create CPL for the ELL IET grantees?"
+// with general steps and never named ELL IET CPL Starting Points, a piece made for
+// exactly those grantees and listed on the public library, because nothing here
+// read the library. Sam: "Can you make sure she's wired to grab that info?"
+//
+// Every turn reads cpl_library_public() beside the other routes (fetchLibrary,
+// cached in the instance) and keeps the pieces the question names:
+//   · a piece made for a college, when the question names that college through the
+//     same detection every other route uses (collegeNames);
+//   · any other piece, when a word of its title, of whom it was made for or of its
+//     topics is in the question, or two words of its summary are. Words every piece
+//     shares (cpl, credit, college, starting, points) never match on their own.
+// A piece the CPL Initiative hosts itself, under the tracker's library/ on GitHub
+// Pages (Sam, 2026-10-25: "GitHub Pages now"), is read too, and its text rides
+// beside the link so she answers from what the piece says. A question about the
+// library itself lists every piece.
+const LIBRARY_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/";
+const LIBRARY_MAX_PIECES = 3;
+// A page's text, and all of them together. ELL IET CPL Starting Points reads 17,157
+// characters, its practical next steps last, so a longer page keeps its opening and
+// its end and loses its middle (libraryCut): a piece's next steps and its caveats come
+// at the end.
+const LIBRARY_TEXT_MAX = 20000;
+const LIBRARY_TEXT_TOTAL = 26000;
+const LIBRARY_STOP = new Set([
+  "what", "where", "which", "when", "how", "does", "have", "about", "their", "they",
+  "with", "from", "that", "this", "there", "here", "could", "would", "should", "will",
+  "been", "being", "your", "some", "more", "most", "other", "than", "then", "can",
+  "get", "for", "the", "and", "are", "was", "were", "has", "had", "not", "but", "all",
+  "any", "who", "its", "you", "into", "also", "just", "very", "one", "take", "make",
+  "need", "want", "know", "tell", "give", "help", "our", "out", "use", "way", "ways",
+  "step", "steps", "start", "create", "build", "new", "now", "like", "each", "per",
+]);
+// Words every piece in the library shares, so they say nothing about which one fits.
+const LIBRARY_GENERIC = new Set([
+  "cpl", "credit", "credits", "prior", "learning", "college", "colleges", "community",
+  "california", "starting", "points", "point", "analysis", "opportunity", "opportunities",
+  "piece", "pieces", "visual", "page", "library", "initiative", "map", "ccc", "statewide",
+  "preliminary", "scan", "meeting", "training", "course", "courses", "program", "programs",
+]);
+
+function libraryWords(text: string): string[] {
+  return String(text || "").toLowerCase().split(/[^a-z0-9]+/)
+    .filter((w) => w.length >= 3 && !LIBRARY_STOP.has(w));
+}
+function libraryNorm(text: string): string {
+  return String(text || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+function libraryAsk(q: string): boolean {
+  return /\b(?:cpl |public )?library\b/i.test(String(q || ""));
+}
+
+// The pieces a question names, best first. collegeNames: the colleges the question
+// resolved to (the profile detection's names), so a college's piece is matched by
+// the one college matcher, never by a second one here.
+function matchLibrary(query: string, pieces: any[], collegeNames: string[]): any[] {
+  const asked = new Set(libraryWords(query));
+  const colleges = new Set((collegeNames || []).map(libraryNorm));
+  const scored: any[] = [];
+  for (const p of (pieces || [])) {
+    if (!p || !p.url) continue;
+    let score = 0;
+    if (p.for_kind === "college") {
+      if (colleges.has(libraryNorm(p.for_name))) score = 10;
+    } else {
+      const strong = new Set(libraryWords([p.title, p.for_name, (p.topics || []).join(" ")].join(" "))
+        .filter((w) => !LIBRARY_GENERIC.has(w)));
+      const weak = new Set(libraryWords([p.summary, p.occasion].join(" "))
+        .filter((w) => !LIBRARY_GENERIC.has(w) && !strong.has(w)));
+      let hits = 0, weakHits = 0;
+      for (const w of asked) { if (strong.has(w)) hits++; else if (weak.has(w)) weakHits++; }
+      if (hits >= 1 || weakHits >= 2) score = 3 * hits + weakHits;
+    }
+    if (score > 0) scored.push({ p, score });
+  }
+  scored.sort((a, b) => b.score - a.score || String(b.p.made_on || "").localeCompare(String(a.p.made_on || "")));
+  return scored.slice(0, LIBRARY_MAX_PIECES).map((x) => x.p);
+}
+
+// Only the pages the CPL Initiative hosts under the tracker's library/ are read: they
+// are static, so their text is the piece. Anything else is linked, never fetched.
+function libraryHosted(url: string): boolean {
+  return /^https:\/\/cpl-initiative\.github\.io\/cpl-project-tracker\/library\/[a-z0-9-]+\/?$/.test(String(url || ""));
+}
+
+function libraryCut(text: string, max: number): string {
+  if (text.length <= max) return text;
+  const head = Math.floor(max * 0.6), tail = max - head;
+  return text.slice(0, head) + "\n …\n" + text.slice(text.length - tail);
+}
+
+const LIBRARY_ENTITIES: Record<string, string> = { amp: "&", lt: "<", gt: ">", quot: "\"", apos: "'", nbsp: " ", middot: "·", ndash: "–", mdash: "—", rsquo: "’", lsquo: "‘", rdquo: "”", ldquo: "“", hellip: "…" };
+// A page's reading text: no head, script, style, svg or nav, and no public header (its
+// logo and links out, between its markers or as header.cplh); the page's own header,
+// which carries its title, stays. Tags to spaces, entities to characters, whitespace
+// folded, capped.
+function libraryPageText(html: string): string {
+  const body = String(html || "")
+    .replace(/<!-- cpl-public-header:start[\s\S]*?<!-- cpl-public-header:end -->/g, " ")
+    .replace(/<header\b[^>]*\bclass="cplh"[\s\S]*?<\/header>/gi, " ")
+    .replace(/<(head|script|style|svg|nav|noscript|template)\b[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/<\/(p|div|li|h[1-6]|tr|section|article|td|th)>/gi, "$& \n")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&#(\d+);/g, (_m, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_m, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/&([a-z]+);/gi, (m, n) => LIBRARY_ENTITIES[n.toLowerCase()] ?? m);
+  const text = body.split("\n").map((l) => l.replace(/\s+/g, " ").trim()).filter(Boolean).join("\n");
+  return libraryCut(text, LIBRARY_TEXT_MAX);
+}
+
+const LIBRARY_RULE = `
+HOW TO USE THE CPL LIBRARY SECTION. The CPL Initiative made each piece listed there for the people or the question it names, and each one fits what the visitor asked.
+- Name the piece in your first paragraph as a markdown link, [its title](its link), and say in one sentence what it holds.
+- Where the section gives the piece's text, answer from it: give the projects, colleges, courses or next steps it names, as it names them, and say which it ranks first. Where the piece calls itself a preliminary scan, say so.
+- Copy names and figures as the piece writes them, and add nothing to what it says. Your own general guidance may follow, after what the piece says.
+- When the visitor asked about the library itself, list its pieces with their links and link the [CPL Library](${LIBRARY_PAGE}).`;
+
+function buildLibraryContext(matched: any[], texts: Map<string, string> | null, all: any[] | null): string {
+  const listAll = Array.isArray(all) && all.length > 0;
+  if ((!matched || matched.length === 0) && !listAll) return "";
+  let out = `\n\n--- CPL LIBRARY: PUBLISHED PIECES THAT FIT THIS QUESTION (the public CPL Library, ${LIBRARY_PAGE}) ---\n`;
+  let budget = LIBRARY_TEXT_TOTAL;
+  for (const p of (matched || [])) {
+    const made = [p.kind, p.made_on ? "made " + String(p.made_on).slice(0, 10) : "", p.for_name ? "for " + p.for_name : ""]
+      .filter(Boolean).join(", ");
+    out += `- "${p.title}" (${made}). ${p.summary || ""} Link: ${p.url}\n`;
+    const text = texts ? texts.get(p.url) : "";
+    if (text && budget > 0) {
+      const shown = libraryCut(text, budget);
+      budget -= shown.length;
+      out += `  What the piece says, from its published page:\n${shown}\n`;
+    }
+  }
+  if (listAll) {
+    out += `Every piece in the public library:\n`;
+    for (const p of (all || [])) out += `- ${p.title}${p.for_name ? " (for " + p.for_name + ")" : ""}: ${p.url}\n`;
+  }
+  return out + LIBRARY_RULE + "\n";
+}
+// ── LIBRARY BLOCK END ────────────────────────────────────────────────────────────
+
+// The library's listed pieces change when someone lists or unlists one, so a read per
+// turn would be waste: the instance keeps them LIBRARY_TTL_MS, and a piece's page text
+// as long. A failed read keeps the last good copy, or none; Sierra then answers as
+// before, with no library section.
+const LIBRARY_TTL_MS = 10 * 60 * 1000;
+let libraryCache: { at: number; rows: any[] } | null = null;
+const libraryTextCache = new Map<string, { at: number; text: string }>();
+
+async function fetchLibrary(sb: any): Promise<any[]> {
+  if (libraryCache && Date.now() - libraryCache.at < LIBRARY_TTL_MS) return libraryCache.rows;
+  try {
+    const { data, error } = await sb.rpc("cpl_library_public");
+    if (error || !Array.isArray(data)) return libraryCache ? libraryCache.rows : [];
+    libraryCache = { at: Date.now(), rows: data };
+    return data;
+  } catch {
+    return libraryCache ? libraryCache.rows : [];
+  }
+}
+
+async function fetchLibraryTexts(pieces: any[]): Promise<Map<string, string>> {
+  const out = new Map<string, string>();
+  await Promise.all((pieces || []).filter((p: any) => libraryHosted(p.url)).map(async (p: any) => {
+    const hit = libraryTextCache.get(p.url);
+    if (hit && Date.now() - hit.at < LIBRARY_TTL_MS) { if (hit.text) out.set(p.url, hit.text); return; }
+    try {
+      const res = await fetch(p.url, { signal: AbortSignal.timeout(4000) });
+      const text = res.ok ? libraryPageText(await res.text()) : "";
+      libraryTextCache.set(p.url, { at: Date.now(), text });
+      if (text) out.set(p.url, text);
+    } catch {
+      if (hit && hit.text) out.set(p.url, hit.text);
+    }
+  }));
+  return out;
+}
+
 // ── Team guidance layer (v25 — Phase 2 of the Sierra Training scope) ────────
 // The CPL/MAP team authors short response directives in `sierra_guidance`
 // (via the Sierra Training tab; reviewer/team-phrase-gated writes) and this
@@ -6395,7 +6581,7 @@ Deno.serve(async (req: Request) => {
 
     // 2. Vector search + college detection + live metrics + topic search +
     //    course-catalog offerings + team guidance (parallel)
-    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, programsResults, teamGuidance, creditData, statewideCatalog, viewer] = await Promise.all([
+    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, programsResults, teamGuidance, creditData, statewideCatalog, viewer, libraryRows] = await Promise.all([
       sb.rpc("match_document_sections", {
         query_embedding: Array.from(queryEmbedding),
         match_threshold: MATCH_THRESHOLD,
@@ -6410,6 +6596,7 @@ Deno.serve(async (req: Request) => {
       fetchCreditData(sb),                    // published credit-disposition aggregates (v36)
       catalogAsk ? fetchStatewideCatalog() : Promise.resolve(null), // the Fact Sheet's statewide catalog (S398)
       deriveViewer(req.headers),              // who is asking, from the credential — never the body (v66)
+      drafting ? Promise.resolve([]) : fetchLibrary(sb), // the public CPL Library's listed pieces (S469)
     ]);
     markTiming(timings, "retrieved", Date.now());
 
@@ -6762,6 +6949,16 @@ Deno.serve(async (req: Request) => {
       statewideCatalogContext = buildStatewideCatalogContext(statewideCatalog, catalogScope);
     }
 
+    // The public CPL Library (S469): the pieces this question names, a hosted piece's
+    // page text beside its link, every piece when the visitor asks about the library.
+    // A college's piece is matched through the colleges the detection above resolved.
+    const libraryColleges = (Array.isArray(resolvedProfile) ? resolvedProfile : resolvedProfile ? [resolvedProfile] : [])
+      .map((p: any) => String((p && p.college) || "")).filter(Boolean);
+    const libraryMatched = drafting ? [] : matchLibrary(searchText, libraryRows || [], libraryColleges);
+    const libraryTexts = libraryMatched.length > 0 ? await fetchLibraryTexts(libraryMatched) : null;
+    const libraryContext = buildLibraryContext(libraryMatched, libraryTexts,
+      !drafting && libraryAsk(trimmedQuery) ? (libraryRows || []) : null);
+
     // The curator overlay for the built-in rules. Rides the same turn; null
     // (a failed or empty read) means every rule comes from its code default,
     // which is the governed state — never the ungoverned one.
@@ -6772,7 +6969,7 @@ Deno.serve(async (req: Request) => {
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
       multiTurn, offeringsContext, programsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
       teamGuidance || "", creditContext, credentialContext, volumeContext, alignmentContext,
-      prospectiveContext, rulesOverlay, ruleReport, hostScope, statewideCatalogContext);
+      prospectiveContext, rulesOverlay, ruleReport, hostScope, statewideCatalogContext, libraryContext);
 
     /* A drafting caller gets the answer doctrine REPLACED — see DRAFTING_BLOCK.
      * Appended to `volatile` on purpose: `stable` is the prompt-cache
@@ -7017,6 +7214,14 @@ Deno.serve(async (req: Request) => {
               scope: catalogScope ? catalogScope.kind : "none",
               loaded: !!statewideCatalog,
               chars: statewideCatalogContext.length,
+            },
+          } : {}),
+          // The library pieces this answer was given (S469), and the size of the block.
+          ...(libraryContext ? {
+            library: {
+              pieces: libraryMatched.map((p: any) => p.slug),
+              texts: libraryTexts ? libraryTexts.size : 0,
+              chars: libraryContext.length,
             },
           } : {}),
         });

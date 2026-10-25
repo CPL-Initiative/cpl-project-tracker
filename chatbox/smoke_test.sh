@@ -975,6 +975,22 @@ answer_must_match "cpl-initiative\.github\.io/cpl-project-tracker/fact-sheet" "7
 answer_must_not_match -i "do(n.?t| not) have (the|a|that) (full|complete|itemized)" "7w ⭐ never says the full list is not available"
 answer_must_not_match "13\.1%|\b949\b" "7w never quotes the April vault note's statewide figures"
 
+# ── MODE 7x: the public CPL Library (S469) ────────────────────────────────────
+# Sam, 2026-10-24, in the public library's Ask Sierra side bar: "What is one step I can
+# take to create CPL for the ELL IET grantees?" Her answer gave general steps and never
+# named ELL IET CPL Starting Points, a piece made for those grantees and listed on the
+# public library: nothing in cpl-chat read the library. The library block now matches
+# the pieces cpl_library_public() lists and reads the text of a piece the tracker hosts
+# under library/ (Sam, 2026-10-25: "GitHub Pages now"), whose last section is the
+# practical next steps. Thresholds over the page's own names, never one sentence.
+run "7x the library's ELL IET piece (Sam's question, 2026-10-24)" \
+  '{"query":"What is one step I can take to create CPL for the ELL IET grantees?","session_id":"smoke-ci","surface":"public","history":[],"audience":"administrator"}'
+answer_head_must_match -i 1200 "ELL IET CPL Starting Points" "7x ⭐ names the library's piece in its opening"
+answer_must_match "cpl-initiative\.github\.io/cpl-project-tracker/library/ell-iet-cpl-starting-points" "7x ⭐ links the piece at its Pages address"
+answer_must_name_at_least -i 2 "7x ⭐ answers from what the piece says" \
+  "Fresno" "Bakersfield College" "Lemoore" "College of the Desert" "Chaffey" "Kern" \
+  "workforce board" "landing page" "CPL (contact|coordinator)" "exit credential"
+
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).
 run "8 offerings broad (who teaches construction)" \
