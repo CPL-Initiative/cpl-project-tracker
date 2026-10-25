@@ -173,7 +173,8 @@ eleven items to confirm before release. Source: `20261025_CPL_Coordinator_Guide.
 revision keeps its link and the public library and Sierra can read it once listed. Record
 `cpl-coordinator-getting-started-guide` (status draft with a brief, so In development at step 2; the Chaffey draft in the
 Drive folder *CPL Coordinator Getting Started Guides* is its first version), through
-`kb/receipts/cpl_library_coordinator_guide_2026-10-25_s480.sql`. Each revision comes from **Changes to make**; listing it
+`kb/receipts/cpl_library_coordinator_guide_2026-10-25_s480.sql`, applied by `supabase-migrate.yml` run 40245260779
+(23:34Z) and read back: the record, two `cpl_memory` rows and their two log rows. Each revision comes from **Changes to make**; listing it
 publicly, and anything sent to the Chaffey drafter, are Sam's.
 
 ## The ELL IET page is listed publicly (Sam, Open Asks Sheet 123 card 1, *list*, 13:17Z 2026-10-24)
