@@ -1992,9 +1992,12 @@
   // award on outcomes a noncredit program controls instead of on origination.
   // The share keeps its FTES sizing (nc_portion_pct and the lane split are
   // untouched); what changes is what RELEASES it:
-  //   • its own minimum conditions — a noncredit CPL coordinator named and
-  //     published, and a strike-team attestation renewed each year (COBI takes
-  //     the attestation until MAP carries the role; Sheet 113 card 5);
+  //   • its own minimum condition — a Noncredit CPL Lead named and published,
+  //     attested each year (COBI takes the attestation until MAP carries the
+  //     role; Sheet 113 card 5). The strike-team attestation beside it retired
+  //     on 2026-10-25 (Sam struck its checkbox, his first condition now reading
+  //     "CPL Coordinator and Noncredit CPL Lead assigned ... and meeting
+  //     regularly"); ncTeamShown() keeps it off unless a scenario restores it;
   //   • its own outcomes, counted rather than priced in FTES, each releasing
   //     toward its target as the credit priorities do (frontloaded, the
   //     remainder rolling forward): NC-1 exhibits built or adopted for the
@@ -2011,7 +2014,7 @@
   // exactly as the origination sources do (N2 b).
   var NC_OUTCOMES_RULE = "The noncredit share releases on the noncredit outcomes: exhibits built or adopted for the " +
     "noncredit program's learning, and a noncredit CPL portfolio-development course.";
-  var NC_COORD_REQ = "Noncredit CPL coordinator named and published";
+  var NC_COORD_REQ = "Noncredit CPL Lead named and published";
   var NC_TEAM_REQ = "Strike-team attestation on file for the year";
   function ncLaneMode() {
     var v = firstDefined(SCENARIO.ncLane, SHARED.ncLane, base().nc_lane);
@@ -2066,12 +2069,15 @@
     return Array.isArray(v) ? v.filter(isPlainObj) : [];
   }
   function ncCoordShown() { return !firstDefined(SCENARIO.ncCoordHidden, SHARED.ncCoordHidden, base().nc_coord_req_hidden); }
-  function ncTeamShown() { return !firstDefined(SCENARIO.ncTeamHidden, SHARED.ncTeamHidden, base().nc_team_req_hidden); }
+  // The strike-team condition is off unless a layer sets ncTeamHidden false
+  // (Sam, 2026-10-25: he struck its checkbox; the Noncredit CPL Lead's
+  // attestation carries "meeting regularly" now).
+  function ncTeamShown() { return firstDefined(SCENARIO.ncTeamHidden, SHARED.ncTeamHidden, base().nc_team_req_hidden, true) === false; }
   // The noncredit lane's conditions in one sentence, for the section and the rules.
   function ncCondWords() {
     var parts = [];
     if (partShown()) parts.push("the institution's confirmation");
-    if (ncCoordShown()) parts.push("a noncredit CPL coordinator named and published");
+    if (ncCoordShown()) parts.push("a Noncredit CPL Lead named and published");
     if (ncTeamShown()) parts.push("a strike-team attestation renewed each year");
     if (!parts.length) return "none";
     return parts.length === 1 ? parts[0] : parts.slice(0, -1).join(", ") + " and " + parts[parts.length - 1];
@@ -3806,21 +3812,21 @@
   // The outcomes lane's rules (Scenario 4; Sam's Sheet 113 and 114 rulings,
   // 2026-10-22), in place of the origination rules above when the scenario
   // releases the noncredit share on outcomes.
-  var NC_OUTCOMES_RULES_HTML = "<ul>" +
+  function ncOutcomesRulesHtml() { return "<ul>" +
     "<li>The noncredit share of an award counts toward <strong>the noncredit outcomes alone</strong>: it is never " +
     "available to the credit program, and the credit share never counts toward it.</li>" +
-    "<li><strong>Its own minimum conditions:</strong> a noncredit CPL coordinator named and published, and a " +
-    "strike-team attestation renewed each year. COBI takes the attestation until the MAP platform carries the role.</li>" +
+    "<li><strong>Its own minimum " + (/ and /.test(ncCondWords()) ? "conditions" : "condition") + ":</strong> " + ncCondWords() +
+    ". COBI takes the attestation, once each fiscal year, until the MAP platform carries the role.</li>" +
     "<li><strong>Two outcomes release it, 50/50</strong>, each toward its target, the remainder rolling forward: " +
     "exhibits built or adopted for the program&rsquo;s learning (the greater of 2 and 5% of its CDCP noncredit " +
     "courses, capped at 10; an adopted statewide exhibit counts), and a noncredit CPL portfolio-development course " +
     "chaptered in a CDCP program by the end of Year 1 and offered with enrollment attested in Year 2.</li>" +
     "<li>An exhibit counts through any of four channels: the exhibit names the noncredit course; its target credit " +
     "course mirrors a noncredit course at the college (for a standalone, at the district&rsquo;s credit colleges); " +
-    "its credential is one the program&rsquo;s courses name; or the strike team lists it on the attestation.</li>" +
+    "its credential is one the program&rsquo;s courses name; or the college lists it on its noncredit attestation.</li>" +
     "<li><strong>Reported, not funded:</strong> the count of former noncredit students awarded CPL credit, from the " +
     "college&rsquo;s own student information system, on the annual attestation.</li>" +
-    "</ul>";
+    "</ul>"; }
   // Sam's College Dashboard intro (mockup rounds, 2026-09-28). The pie has no
   // column header to name it any more, so the intro names it once.
   var COLLEGE_INTRO_DEFAULT_HTML =
@@ -3834,7 +3840,7 @@
     if (isRich(key)) return richPlainToHtml(richDefaultPlain(key), "tab");
     if (key === "about") return ABOUT_DEFAULT_HTML;
     if (key === "reading") return READING_DEFAULT_HTML;
-    if (key === "nc_rules") return ncOutcomesMode() ? NC_OUTCOMES_RULES_HTML : NC_RULES_DEFAULT_HTML;
+    if (key === "nc_rules") return ncOutcomesMode() ? ncOutcomesRulesHtml() : NC_RULES_DEFAULT_HTML;
     if (key === "college_intro" || key === "x_table_intro") return COLLEGE_INTRO_DEFAULT_HTML;
     if (key === "timing_note" || key === "x_timing_note") return TIMING_NOTE_DEFAULT_HTML;
     if (key === "faq" || key === "x_faq") return plainToHtml(FAQ_DEFAULT_PLAIN);
@@ -4215,21 +4221,21 @@
         "The MAP team helps institutions post exhibits during its [office hours](https://map.rccd.edu/get-involved/)." },
     // The noncredit share's two conditions (Scenario 4, Sheets 113 and 114),
     // both met by the one attestation (S470). S471's draft for Sam to curate.
-    { key: "mc_how_nc_coord", how: "nc_coord", title: "Name and publish your noncredit CPL coordinator", rows: 8,
-      where: "How to meet it: the noncredit CPL coordinator condition",
-      plain: "The noncredit share of the award asks the college to name a noncredit CPL coordinator and publish that " +
-        "person on its CPL landing page. Until MAP carries the role, the college names the coordinator on its noncredit " +
-        "attestation.\n\n" +
-        "1. Publish the coordinator's name on the college's CPL landing page.\n" +
+    { key: "mc_how_nc_coord", how: "nc_coord", title: "Name and publish your Noncredit CPL Lead", rows: 8,
+      where: "How to meet it: the Noncredit CPL Lead condition",
+      plain: "The noncredit share of the award asks the college to name a Noncredit CPL Lead, publish that person on " +
+        "its CPL landing page, and have the Lead meet regularly with the college's CPL Coordinator. Until MAP carries " +
+        "the role, the college names the Lead on its noncredit attestation, once each fiscal year.\n\n" +
+        "1. Publish the Lead's name on the college's CPL landing page.\n" +
         "2. On the Implementation Funding page, open the college's row and press Attest for the noncredit share.\n" +
-        "3. Enter the coordinator's name and title, and press Attest.\n\n" +
-        "The coordinator's name and title then appear beside the college's conditions, and the condition shows as met." },
+        "3. Enter the Lead's name and title, and press Attest.\n\n" +
+        "The Lead's name and title then appear beside the college's conditions, and the condition shows as met." },
     { key: "mc_how_nc_team", how: "nc_team", title: "Attest for your noncredit CPL strike team", rows: 10,
       where: "How to meet it: the strike-team attestation condition",
-      plain: "An administrator attests once each fiscal year, July to June, that the noncredit CPL coordinator leads a " +
+      plain: "An administrator attests once each fiscal year, July to June, that the Noncredit CPL Lead leads a " +
         "strike team for noncredit CPL. Each year needs a new attestation.\n\n" +
         "1. On the Implementation Funding page, open the college's row and press Attest for the noncredit share.\n" +
-        "2. Enter the coordinator, then your name, title and college email.\n" +
+        "2. Enter the Lead, then your name, title and college email.\n" +
         "3. If you can, report the former noncredit students the college awarded CPL, the control number of the CPL " +
         "portfolio course from COCI, and the exhibits the strike team built or adopted, by MAP exhibit ID or title.\n\n" +
         "The attestation stands once submitted, and the Chancellor's Office may reject it. The listed exhibits and a " +
@@ -4269,8 +4275,7 @@
   // the stored passage, when a curator saves one, still wins.
   var MC_NC_OUTCOMES_PLAIN = "Noncredit portion of the max funding is {noncredit portion}. It releases on the noncredit " +
     "outcomes: exhibits built or adopted for the noncredit program's learning, and a noncredit CPL portfolio-development " +
-    "course. Its own minimum conditions are a noncredit CPL coordinator named and published and a strike-team attestation " +
-    "renewed each year.";
+    "course. Its own minimum condition is a Noncredit CPL Lead named and published, attested once each fiscal year.";
   function richDefaultPlain(key) {
     if (key === "mc_nc" && ncOutcomesMode()) return plainNormalize(MC_NC_OUTCOMES_PLAIN);
     var b = EXPLAINER_BY_KEY[key] || MC_BY_KEY[key] || MEMO_BY_KEY[key];
@@ -5304,8 +5309,8 @@
       return { text: (row && row.status === "revoked" ? "Confirmation withdrawn" : "Confirmation not yet on file") + due };
     }
     if (r.kind === "nc_coord") {
-      if (r.pending) return { text: "Noncredit coordinator status pending", pending: true };
-      return { text: r.met ? "Noncredit CPL coordinator published" : "Noncredit CPL coordinator not yet attested" };
+      if (r.pending) return { text: "Noncredit CPL Lead status pending", pending: true };
+      return { text: r.met ? "Noncredit CPL Lead published" : "Noncredit CPL Lead not yet attested" };
     }
     if (r.kind === "nc_team") {
       if (r.pending) return { text: "Strike-team attestation status pending", pending: true };
@@ -5621,7 +5626,7 @@
       name: t("name"), title: t("title"), email: t("email"),
       course: t("course"), exhibits: t("exhibits"), count: null };
     var cnt = t("count");
-    if (!form.coordName) return { error: "Please enter the noncredit CPL coordinator's name." };
+    if (!form.coordName) return { error: "Please enter the Noncredit CPL Lead's name." };
     if (!form.coordTitle) return { error: "Please enter the coordinator's title." };
     if (!form.name) return { error: "Please enter your name." };
     if (NC_ATTEST_TITLES.map(function (o) { return o.val; }).indexOf(form.title) === -1) return { error: "Please choose your title." };
@@ -5687,7 +5692,7 @@
   function ncCoordWhoHtml(college) {
     var att = ncAttestOf(college);
     if (!att || !String(att.coordinator_name || "").trim()) return "";
-    return '<span class="cf-cond-who">Noncredit CPL Coordinator: ' + esc(att.coordinator_name) +
+    return '<span class="cf-cond-who">Noncredit CPL Lead: ' + esc(att.coordinator_name) +
       (att.coordinator_title ? " (" + esc(att.coordinator_title) + ")" : "") + "</span>";
   }
   function coordWhoHtml(college) {
@@ -5828,10 +5833,12 @@
     };
     return '<div class="cplfund-optin cplfund-optin-form cplfund-ncattest" data-ncattestwrap="' + esc(college) + '">' +
       '<div class="cplfund-optin-head">Noncredit attestation for <strong>' + esc(nm) + "</strong>, " + esc(fy) + "</div>" +
-      '<div class="cplfund-optin-note cplfund-ncattest-intro">The noncredit share of the award waits on two conditions: a noncredit CPL coordinator named and published on the college&#39;s CPL landing page, and a strike team that coordinator leads for noncredit CPL. The college attests to both once each fiscal year.</div>' +
-      '<fieldset class="cplfund-ncattest-set"><legend>The noncredit CPL coordinator</legend><div class="cplfund-ncattest-grid">' +
+      '<div class="cplfund-optin-note cplfund-ncattest-intro">' + (ncTeamShown()
+        ? "The noncredit share of the award waits on two conditions: a Noncredit CPL Lead named and published on the college&#39;s CPL landing page, and a strike team that Lead leads for noncredit CPL. The college attests to both once each fiscal year."
+        : "The noncredit share of the award waits on a Noncredit CPL Lead named and published on the college&#39;s CPL landing page, who meets regularly with the college&#39;s CPL Coordinator. The college attests to it once each fiscal year.") + '</div>' +
+      '<fieldset class="cplfund-ncattest-set"><legend>The Noncredit CPL Lead</legend><div class="cplfund-ncattest-grid">' +
       f("coordName", "Name", 'type="text" maxlength="120" autocomplete="off" placeholder="First Last"') +
-      f("coordTitle", "Title", 'type="text" maxlength="80" autocomplete="off" placeholder="Noncredit CPL Coordinator"') +
+      f("coordTitle", "Title", 'type="text" maxlength="80" autocomplete="off" placeholder="Noncredit CPL Lead"') +
       "</div></fieldset>" +
       '<fieldset class="cplfund-ncattest-set"><legend>You, attesting for the college</legend><div class="cplfund-ncattest-grid">' +
       f("name", "Your name", 'type="text" maxlength="120" autocomplete="name" placeholder="First Last"') +
@@ -5841,7 +5848,7 @@
       '<fieldset class="cplfund-ncattest-set"><legend>Reported this year (optional)</legend><div class="cplfund-ncattest-grid">' +
       f("count", "Former noncredit students the college awarded CPL, from its student records", 'type="number" min="0" max="100000" step="1" inputmode="numeric"') +
       f("course", "Control number of the CPL portfolio course, from COCI", 'type="text" maxlength="60" autocomplete="off" placeholder="CCC000000000"') +
-      '<label class="cplfund-ncattest-wide">Exhibits the strike team built or adopted for the program, by MAP exhibit ID or title' +
+      '<label class="cplfund-ncattest-wide">Exhibits the college built or adopted for the program, by MAP exhibit ID or title' +
       '<textarea rows="2" maxlength="2000" data-ncattestfield="exhibits"></textarea></label>' +
       "</div></fieldset>" +
       '<div class="cplfund-optin-err" data-ncattesterr="' + esc(college) + '" role="alert"></div>' +
@@ -5852,8 +5859,9 @@
       (ui.error ? ' <span class="cplfund-warn-text">The attestation was not recorded. Please try again.</span>' : "") +
       "</div>" +
       '<div class="cplfund-optin-note">By submitting, you attest that you are an administrator of ' + esc(nm) +
-      ", that the coordinator named above is published on the college&#39;s CPL landing page, and that the coordinator leads a strike team for noncredit CPL in " +
-      esc(fy) + ". The coordinator&#39;s name and title appear publicly beside the college&#39;s conditions. Your name, your email and the reported figures go to the Chancellor&#39;s Office alone. The Chancellor&#39;s Office may reject an attestation.</div>" +
+      ", that the Noncredit CPL Lead named above is published on the college&#39;s CPL landing page, and that the Lead " +
+      (ncTeamShown() ? "leads a strike team for noncredit CPL in " : "meets regularly with the college&#39;s CPL Coordinator in ") +
+      esc(fy) + ". The Lead&#39;s name and title appear publicly beside the college&#39;s conditions. Your name, your email and the reported figures go to the Chancellor&#39;s Office alone. The Chancellor&#39;s Office may reject an attestation.</div>" +
       "</div>";
   }
   // The CO's view of the attestation, on the Minimum Conditions line: who
@@ -10062,9 +10070,9 @@
     // ncSourceByMilestone() never pairs an origination twin onto them, and
     // prioGoals() reads the outcome's own stored goals instead.
     nc_exh:    { label: "Exhibits built or adopted for the noncredit program", unit: "count", lane: "nc", milestone: "exhibit", outcome: true,
-                 basis: "MAP exhibits credited to the institution's noncredit program: the exhibit names a noncredit course, its target course mirrors a noncredit course, its credential is one the program's courses name, or the strike team lists it on the attestation; an adopted statewide exhibit counts" },
+                 basis: "MAP exhibits credited to the institution's noncredit program: the exhibit names a noncredit course, its target course mirrors a noncredit course, its credential is one the program's courses name, or the college lists it on its noncredit attestation; an adopted statewide exhibit counts" },
     nc_course: { label: "Noncredit CPL portfolio-development course", unit: "count", lane: "nc", milestone: "course", outcome: true,
-                 basis: "a noncredit CPL portfolio-development course chaptered in a CDCP program in COCI (the strike team attests its control number; the COCI sync confirms it)" },
+                 basis: "a noncredit CPL portfolio-development course chaptered in a CDCP program in COCI (the college attests its control number; the COCI sync confirms it)" },
     // The denominator of NC-1's target rule, never a measure a priority pins.
     nc_cdcp:   { label: "CDCP noncredit courses in COCI", unit: "count", lane: "nc", denominator: true,
                  basis: "the institution's CDCP noncredit courses in COCI (enhanced funding: ESL, basic skills, short-term vocational, workforce preparation)" }
@@ -12801,7 +12809,7 @@
     // The noncredit share's own conditions (Scenario 4), after the institution's.
     if (ncOutcomesMode()) {
       if (ncCoordShown()) {
-        list.push({ text: "For the noncredit share of an award: a noncredit CPL coordinator named and published " +
+        list.push({ text: "For the noncredit share of an award: a Noncredit CPL Lead named and published " +
           "(attested in COBI until the MAP platform carries the role)", kind: "nc_coord" });
       }
       if (ncTeamShown()) list.push({ text: "For the noncredit share of an award: a strike-team attestation renewed each year", kind: "nc_team" });
