@@ -668,7 +668,7 @@ def read_career_attainment(resolve, path=None):
 # on two counts: NC-1 exhibits built or adopted for the noncredit program's
 # learning (target: the greater of 2 and 5% of nc_cdcp, capped at 10) and NC-2
 # a noncredit CPL portfolio-development course chaptered in a CDCP program.
-# The sets come from one service-role RPC (funding/supabase_cpl_funding_nc_counts.sql);
+# The sets come from one service-role RPC (kb/supabase_cpl_funding_nc_counts.sql);
 # the matching is here so a fixture can test it. These are catalog counts, not
 # student counts, so the funding ADR's small-cell floor does not apply.
 #

@@ -6,7 +6,7 @@ Sam's Open Asks Sheets 113 and 114 (2026-10-22) release each noncredit share on
 NC-1 (exhibits built or adopted for the noncredit program's learning, against
 the greater of 2 and 5% of nc_cdcp, capped at 10) and NC-2 (a noncredit CPL
 portfolio-development course chaptered in a CDCP program). The builder reads one
-service-role RPC (funding/supabase_cpl_funding_nc_counts.sql) and matches here.
+service-role RPC (kb/supabase_cpl_funding_nc_counts.sql) and matches here.
 
 What this pins, in order of how expensive each would be to get wrong:
 
@@ -35,7 +35,7 @@ import tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 BUILDER = os.path.join(ROOT, "funding", "_build_funding_performance.py")
-SQL = os.path.join(ROOT, "funding", "supabase_cpl_funding_nc_counts.sql")
+SQL = os.path.join(ROOT, "kb", "supabase_cpl_funding_nc_counts.sql")
 WORKFLOW = os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml")
 VIEW = "View_StudentAggregatedValues_APIDataset"
 COLUMNS = ["College", "Catalog Year", "Applied Credits", "Eligible Credits",
