@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_pages_urls_2026-10-25_s469.sql",
+ "name": "cpl_library_pages_urls_2026_10_25_s469",
+ "version": "20261025031012",
+ "sha256": "5a37f0f43e466959aa8128f70ae89d4ed62bdee0f354863e71d7a2df625a4819",
+ "run": "40156994192",
+ "status": 201,
+ "response": "[{\"slug\":\"dsp-credit-starting-points\",\"url\":\"https://cpl-initiative.github.io/cpl-project-tracker/library/dsp-credit-starting-points/\",\"public_listed\":true}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
