@@ -340,9 +340,9 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const style2 = doc.querySelector("#cplFundTable style");
   check("F: hiding District re-injects the nth-child(3) hide rule",
     !!style2 && style2.textContent.indexOf("nth-child(3)") !== -1);
-  // The store is v2 since the College Dashboard (2026-09-28).
+  // The store is v3 since the two funding columns (2026-10-25).
   check("F: the column choice persists to localStorage",
-    JSON.parse(window.localStorage.getItem("cplfund_cols_v2")).college.district === true);
+    JSON.parse(window.localStorage.getItem("cplfund_cols_v3")).college.district === true);
 
   // Sam's R10 veto kept the eligibility pie on screen; since the College
   // Dashboard (2026-09-28) it leads the Institution cell instead of holding a
@@ -390,8 +390,8 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const rows = drill.rows;
   check("G: the expand renders one priority row per priority", rows.length === NPRIO);
   const band = drill.band ? Array.from(drill.band.querySelectorAll("th")).map(function (h) { return h.textContent.trim(); }) : [];
-  check("G: the priority rows sit under the row's own column heads (Max CR · Curr CR · Max NC · Curr NC · Total · Curr Total)",
-    band.join("|") === "Priority outcomes|Max CR Funds|CurrCurrent CR Funds|Max NC Funds|CurrCurrent NC Funds|Total Funds|CurrCurrent Total Funds");
+  check("G: the priority rows sit under the row's own column heads (Max CR · Curr CR · Max NC · Curr NC · Max · Curr)",
+    band.join("|") === "Priority outcomes|Max CR Funds|CurrCurrent CR Funds|Max NC Funds|CurrCurrent NC Funds|Max Funds|CurrCurrent Funds");
   const c0 = drill.cells[0] || {}, c1 = drill.cells[1] || {};
   check("G: the measurable P1 row shows the actual beneath its Curr figure, and the hover the % of Max FTES",
     !!c0.cr_current && c0.cr_current.line.indexOf("200") !== -1 && /% of Max FTES/.test(c0.cr_current.tip));

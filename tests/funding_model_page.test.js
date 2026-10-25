@@ -76,7 +76,7 @@ check("the page loads the college-name resolver BEFORE the engine, so coordinato
   /src="\.\.\/college_short_names\.js"/.test(html) &&
   html.indexOf('src="../college_short_names.js"') < html.indexOf('src="../cpl_funding.js"'));
 check("it is a complete document, not an artifact fragment",
-  /^<!doctype html>/i.test(html) && /<html lang="en">/.test(html) && /<\/body>\s*<\/html>/.test(html));
+  /^<!doctype html>/i.test(html) && /<html lang="en"( data-theme="light")?>/.test(html) && /<\/body>\s*<\/html>/.test(html));
 check("it repaints when the model changes, rather than painting once",
   /onModelChange/.test(html) && /ensureLoaded/.test(html));
 

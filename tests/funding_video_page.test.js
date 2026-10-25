@@ -70,7 +70,7 @@ check("a1 the explainer's link says introduction, not guide, and the film's true
 // Since 2026-10-20 (S439) the link is the published film alone, so no
 // per-scenario label rewrites it.
 check("a2 the link opens the published film and no per-scenario label renames it",
-  /id="video-link" href="\.\.\/prototype\/funding_video\/funding_in_motion_s2\.html"/.test(explainer) && !/label: "Watch/.test(explainer));
+  /id="video-link" (data-plink="video" )?href="\.\.\/prototype\/funding_video\/funding_in_motion_s2\.html"/.test(explainer) && !/label: "Watch/.test(explainer));
 // Sam, 2026-10-09 (a marked-up screenshot of the explainer): the Contents keeps
 // the introduction alone; the MP4 download and the narrated cut left it. The
 // files stay where the narrated checks below read them.

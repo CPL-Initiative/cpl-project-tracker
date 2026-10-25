@@ -37,12 +37,13 @@ check("nothing on the memo page says draft", !/\bdraft\b/i.test(doc.body.textCon
 check("the page uses tokens, no raw hex outside :root",
   !/#[0-9A-Fa-f]{3,6}\b/.test(html.slice(html.indexOf(".memo h1"), html.indexOf("</style>"))));
 
-const link = /<a id="memo-link" href="memo\/">([^<]+)<\/a>/.exec(page);
+// The link carries data-plink since 2026-10-25 (a curator renames its words on the page).
+const link = /<a id="memo-link" data-plink="memo" href="memo\/">([^<]+)<\/a>/.exec(page);
 check("the funding page's Contents links the memo", !!link);
 check("the Contents link does not call it a draft", link && !/draft/i.test(link[1]));
 // The memo in Word from the Contents (Sam, 2026-10-22): the memo page's own
 // export, run once the live figures are in, and a Word button on the memo page.
-const wordLink = /<a id="memo-word-link" href="memo\/\?download=word">([^<]+)<\/a>/.exec(page);
+const wordLink = /<a id="memo-word-link" data-plink="memo_word" href="memo\/\?download=word">([^<]+)<\/a>/.exec(page);
 check("the funding page's Contents offers the memo in Word", !!wordLink && /Word/.test(wordLink[1]) && !/draft/i.test(wordLink[1]));
 check("a tabled memo takes the Word link out of the Contents too", /memo-word-link"\)\]\.forEach/.test(page));
 check("the memo page carries a Word button wired to the tab's export",

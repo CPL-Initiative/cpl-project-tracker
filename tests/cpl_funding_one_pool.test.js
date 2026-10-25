@@ -297,7 +297,8 @@ const POOL = 25240308;
       const labels = ["college", "cr_award", "cr_current", "nc_award", "nc_current", "total", "current_total"]
         .map(function (k) { return b[k].text; }).join("|");
       const foot = d.detail[d.detail.length - 1];
-      return labels === "Priority outcomes|Max CR Funds|CurrCurrent CR Funds|Max NC Funds|CurrCurrent NC Funds|Total Funds|CurrCurrent Total Funds" &&
+      // The two shown columns read Max Funds and Curr Funds since 2026-10-25.
+      return labels === "Priority outcomes|Max CR Funds|CurrCurrent CR Funds|Max NC Funds|CurrCurrent NC Funds|Max Funds|CurrCurrent Funds" &&
         b.nc_award.td.classList.contains("cf-nchead") && !b.cr_award.td.classList.contains("cf-nchead") &&
         d.cells.every(function (c) { return /^\$[\d,]+$/.test(c.nc_award.fig) && /FTES$/.test(c.nc_award.line); }) &&
         !!foot && /^Noncredit counts CPL/.test(foot.textContent.trim());
