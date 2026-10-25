@@ -123,9 +123,10 @@ function drillSum(doc, id, key) {
     JSON.stringify(keys) === JSON.stringify(["order", "college", "district", "cr_ftes", "nc_ftes",
       "cr_award", "cr_current", "nc_award", "nc_current", "total", "current_total", "working_adults"]));
   const th = (k) => doc.querySelector('#cplFundTable th[data-sort="' + k + '"]');
-  check("1b: the headers read Max CR Funds · Max NC Funds · Total Funds",
+  // Max Funds since 2026-10-25 (Sam: two funding columns); the split keeps its words in the Columns menu.
+  check("1b: the headers read Max CR Funds · Max NC Funds · Max Funds",
     th("cr_award").textContent.trim() === "Max CR Funds" && th("nc_award").textContent.trim() === "Max NC Funds" &&
-    th("total").textContent.trim() === "Total Funds");
+    th("total").textContent.trim() === "Max Funds");
   check("1c: a Curr header shows Curr and gives a screen reader the whole word",
     ["cr_current", "nc_current", "current_total"].every((k) => {
       const h = th(k);
@@ -136,25 +137,26 @@ function drillSum(doc, id, key) {
     keys.slice(1).every((k) => th(k).getAttribute("tabindex") === "0" && (k === "college" || k === "district" || k === "working_adults" || !!th(k).getAttribute("title"))));
   const style = (doc.querySelector("#cplFundTable style") || {}).textContent || "";
   const hiddenAt = (k) => style.indexOf("th:nth-child(" + (keys.indexOf(k) + 1) + ")") !== -1;
-  check("1e: #, District, the FTES pair and Working adults are hidden by default",
-    ["order", "district", "cr_ftes", "nc_ftes", "working_adults"].every(hiddenAt));
-  check("1f: a v1 store that hid the old Max award column hides nothing new — Total Funds and the funding columns show",
-    ["college", "cr_award", "cr_current", "nc_award", "nc_current", "total", "current_total"].every((k) => !hiddenAt(k)));
-  check("1g: the store is v2, and the retired v1 entry is cleared",
-    /var COLS_STORE = "cplfund_cols_v2"/.test(consumerSrc) && window.localStorage.getItem("cplfund_cols_v1") === null);
+  check("1e: #, District, the FTES pair, the CR/NC split and Working adults are hidden by default",
+    ["order", "district", "cr_ftes", "nc_ftes", "cr_award", "cr_current", "nc_award", "nc_current", "working_adults"].every(hiddenAt));
+  check("1f: a v1 store that hid the old Max award column hides nothing new — Max Funds and Curr Funds show",
+    ["college", "total", "current_total"].every((k) => !hiddenAt(k)));
+  check("1g: the store is v3, and the retired v1 and v2 entries are cleared",
+    /var COLS_STORE = "cplfund_cols_v3"/.test(consumerSrc) && window.localStorage.getItem("cplfund_cols_v1") === null &&
+    window.localStorage.getItem("cplfund_cols_v2") === null);
   const items = Array.from(doc.querySelectorAll(".cplfund-colmenu-item")).map((l) => l.textContent.trim());
   check("1h: the Columns menu names the Curr columns in full",
-    items.indexOf("Current CR Funds") !== -1 && items.indexOf("Current Total Funds") !== -1 && !items.some((t) => /Curr(?!ent)/.test(t)));
+    items.indexOf("Current CR Funds") !== -1 && items.indexOf("Current Funds") !== -1 && !items.some((t) => /Curr(?!ent)/.test(t)));
   // Hiding a column reaches the colgroup too, so the fixed layout sizes the
   // columns actually shown.
   const cols = () => Array.from(doc.querySelectorAll("#cplFundTable colgroup col")).map((c) => c.getAttribute("data-colw"));
   check("1i: the fixed layout's colgroup holds one <col> per shown column, in order",
-    JSON.stringify(cols()) === JSON.stringify(["college", "cr_award", "cr_current", "nc_award", "nc_current", "total", "current_total"]));
+    JSON.stringify(cols()) === JSON.stringify(["college", "total", "current_total"]));
   const cb = doc.querySelector('.cplfund-colmenu input[data-colkey="district"]');
   cb.checked = true; cb.dispatchEvent(new window.Event("change"));
   let v2 = null;
-  try { v2 = JSON.parse(window.localStorage.getItem("cplfund_cols_v2")); } catch (e) { v2 = null; }
-  check("1j: showing District adds its <col> in place, and the store remembers it under v2",
+  try { v2 = JSON.parse(window.localStorage.getItem("cplfund_cols_v3")); } catch (e) { v2 = null; }
+  check("1j: showing District adds its <col> in place, and the store remembers it under v3",
     JSON.stringify(cols().slice(0, 2)) === JSON.stringify(["college", "district"]) &&
     !!v2 && !!v2.college && v2.college.district === undefined);
   const table = doc.querySelector("#cplFundTable table.cplfund-table");
@@ -191,7 +193,8 @@ function drillSum(doc, id, key) {
   const capped = D_names(T).find((n) => T._alloc(n).capped);
   const ft = cellByKey(doc, rowOf(doc, floored), "total"), ct = cellByKey(doc, rowOf(doc, capped), "total");
   check("2f: Total Funds is the max award with a plain Base chip at the base…",
-    ft.childNodes[0].textContent.trim() === money(T._alloc(floored).total) &&
+    // The amount leads its .cf-amt span; the chip follows it in the markup and hangs left of it (2026-10-25).
+    ft.querySelector(".cf-amt").childNodes[0].textContent.trim() === money(T._alloc(floored).total) &&
     ft.querySelector(".cf-boundchip").textContent === "Base" && /base award/.test(ft.querySelector(".cf-boundchip").getAttribute("title")));
   check("2g: …and a Cap chip at the cap",
     ct.querySelector(".cf-boundchip").textContent === "Cap" && /cap/.test(ct.querySelector(".cf-boundchip").getAttribute("title")));
@@ -459,8 +462,9 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   check("7h: the band fills seal blue and the noncredit cells the noncredit blue, each with its ink and a fallback for the public explainer",
     /tr\.cplfund-subhead > th \{ background: var\(--seal-blue, #002F6D\); color: var\(--white, #FFFFFF\);/.test(consumerSrc) &&
     /tr\.cplfund-subhead > th\.cf-nchead \{ background: var\(--dtl-nc-head, #0047AB\); color: var\(--white, #FFFFFF\); \}/.test(consumerSrc));
+  // Sam's text, its column names following the two funding columns of 2026-10-25.
   check("7i: the college intro is Sam's new text",
-    /^The Dashboard lists the potential funding and FTES for each institution\. Total Funds is its max award/.test(
+    /^The Dashboard lists the potential funding and FTES for each institution\. Max Funds is its max award/.test(
       doc.querySelector(".cplfund-college-intro").textContent.trim()) && !/Alphabetical/.test(doc.querySelector(".cplfund-college-intro").textContent));
 }
 
@@ -539,8 +543,8 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   check("9e: the reading note describes the Dashboard's columns, not a two-line cell",
     !!reading && /^The Dashboard sets each max award beside its Curr \(current\) figure, the funding qualifying so far\./.test(reading.textContent.trim()) &&
     !/on top|beneath it/.test(reading.textContent));
-  check("9f: the allocation sentence names Total Funds and the Curr columns, not a cell's two lines",
-    /the Dashboard&#39;s " \+\s*"Total Funds\./.test(consumerSrc) &&
+  check("9f: the allocation sentence names Max Funds and Curr Funds, not a cell's two lines",
+    /the Dashboard&#39;s " \+\s*"Max Funds\./.test(consumerSrc) && /Curr Funds shows the funding qualifying so far/.test(consumerSrc) &&
     !/top line of every/.test(consumerSrc) && !/second line of each cell/.test(consumerSrc));
   // TBA wherever a measure has yet to arrive (Sam, 2026-09-28). A source check
   // reaches the branches no fixture here paints (the curator's diagnostic, the

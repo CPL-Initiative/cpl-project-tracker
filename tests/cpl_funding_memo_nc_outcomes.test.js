@@ -52,8 +52,8 @@ check("B3: a metric gets one closing period, never two",
   sec.indexOf("noncredit program&#39;s learning.</em>") !== -1 || sec.indexOf("noncredit program's learning.</em>") !== -1);
 check("B3b: a metric that ends in a period keeps exactly one", sec.indexOf("CDCP program.</em>") !== -1 && sec.indexOf("..") === -1);
 check("B4: the passage fills the conditions from the model, never braces left in",
-  sec.indexOf("a noncredit CPL coordinator named and published") !== -1 &&
-  sec.indexOf("a strike-team attestation renewed each year") !== -1 && sec.indexOf("{") === -1);
+  sec.indexOf("a Noncredit CPL Lead named and published") !== -1 &&
+  sec.indexOf("strike-team") === -1 && sec.indexOf("{") === -1);
 check("B5: the passage counts the outcomes as a word", sec.indexOf("The two outcomes below") !== -1);
 check("B6: the reported figure is printed under its own line, outside the funded list",
   sec.indexOf("Also reported: Former noncredit students awarded CPL credit.") !== -1);

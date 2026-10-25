@@ -4,7 +4,9 @@
 // 2026-10-22). A scenario under the outcomes lane gates the noncredit share on
 // two conditions: a noncredit CPL coordinator named and published, and a
 // strike-team attestation renewed each year, taken in COBI until MAP carries
-// the role. The college attests once a fiscal year, attest-first as the
+// the role. Since 2026-10-25 (Sam) the person is the Noncredit CPL Lead and the
+// strike-team condition is retired: one condition, the Lead, who meets
+// regularly with the CPL Coordinator. The college attests once a fiscal year, attest-first as the
 // participation opt-in is, and the CO acts only to reject. The SQL of record
 // is kb/supabase_cpl_funding_nc_attestation.sql.
 //
@@ -135,8 +137,8 @@ function drill(window, doc, name) {
   check("B2: a complete form reads into a record, trimmed, with no count when none is given",
     !good.error && good.form.coordName === "Ana Ruiz" && good.form.title === "NCDEAN" && good.form.count === null);
   check("B3: the form names the first missing field, in the order it asks",
-    /coordinator's name/.test(read(Object.assign({}, ok, { coordName: "" })).error) &&
-    /coordinator's title/.test(read(Object.assign({}, ok, { coordTitle: "" })).error) &&
+    /Noncredit CPL Lead's name/.test(read(Object.assign({}, ok, { coordName: "" })).error) &&
+    /Noncredit CPL Lead's title/.test(read(Object.assign({}, ok, { coordTitle: "" })).error) &&
     /your name/.test(read(Object.assign({}, ok, { name: "" })).error) &&
     /choose your title/.test(read(Object.assign({}, ok, { title: "Dean" })).error) &&
     /valid college email/.test(read(Object.assign({}, ok, { email: "ben" })).error));
@@ -153,7 +155,8 @@ function drill(window, doc, name) {
   const open = det && det.querySelector("[data-ncattestopen]");
   check("C1: once the view answers and the college has not attested, its drill-in offers the attestation, and the noncredit share is held",
     !!open && open.textContent === "Attest for the noncredit share" && before.nc_gate_blocked === true &&
-    /Strike-team attestation not yet on file/.test(flat(det.querySelector(".cf-conds-nc"))));
+    /Noncredit CPL Lead not yet attested/.test(flat(det.querySelector(".cf-conds-nc"))) &&
+    !/[Ss]trike/.test(flat(det.querySelector(".cf-conds-nc"))));
   click(window, open);
   det = drill(window, doc, COLLEGE);
   const wrap = det && det.querySelector("[data-ncattestwrap]");
@@ -166,19 +169,18 @@ function drill(window, doc, name) {
     /name and title appear publicly/.test(flat(wrap)) && /Your name, your email and the reported figures go to the Chancellor's Office alone/.test(flat(wrap)));
   click(window, wrap.querySelector("[data-ncattestsubmit]"));
   check("C4: an empty submit names the first missing field and records nothing",
-    /coordinator's name/.test(flat(wrap.querySelector("[data-ncattesterr]"))) && !T._ncAttest(COLLEGE));
+    /Noncredit CPL Lead's name/.test(flat(wrap.querySelector("[data-ncattesterr]"))) && !T._ncAttest(COLLEGE));
   const set = (k, v) => { const el = wrap.querySelector('[data-ncattestfield="' + k + '"]'); el.value = v; };
-  set("coordName", "Ana Ruiz"); set("coordTitle", "Noncredit CPL Coordinator");
+  set("coordName", "Ana Ruiz"); set("coordTitle", "Noncredit CPL Lead");
   set("name", "Ben Ko"); set("title", "NCDEAN"); set("email", "ben@mtsac.edu"); set("count", "4");
   click(window, wrap.querySelector("[data-ncattestsubmit]"));
   const att = T._ncAttest(COLLEGE), after = T._alloc(COLLEGE);
   det = drill(window, doc, COLLEGE);
-  check("C5: a complete submit stands at once (attest-first): both noncredit conditions met, the share no longer held, a thank-you",
+  check("C5: a complete submit stands at once (attest-first): the Lead's condition met, the share no longer held, a thank-you",
     !!att && att.status === "self_attested" && att.fiscal_year === T._fiscalYearOf() && after.nc_gate_blocked === false &&
-    /Noncredit CPL coordinator published/.test(flat(det.querySelector(".cf-conds-nc"))) &&
-    /Strike team attested for/.test(flat(det.querySelector(".cf-conds-nc"))) &&
+    /Noncredit CPL Lead published/.test(flat(det.querySelector(".cf-conds-nc"))) &&
     /Thank you\. The noncredit attestation for \d{4}-\d{2} is on file from today\./.test(flat(det)) &&
-    /Noncredit CPL Coordinator: Ana Ruiz \(Noncredit CPL Coordinator\)/.test(flat(det.querySelector(".cf-conds-nc"))));
+    /Noncredit CPL Lead: Ana Ruiz \(Noncredit CPL Lead\)/.test(flat(det.querySelector(".cf-conds-nc"))));
 }
 {
   const { window, doc } = setup({ elig: {} });
@@ -229,7 +231,7 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "self
   check("D4: the public page never shows the CO's controls or the attestor, even to a signed-in reviewer",
     !!det && !det.querySelector("[data-ncattestreject], [data-ncattestconfirm], [data-ncattestremove]") &&
     !/ben@mtsac\.edu|Ben Ko|former noncredit students awarded/.test(flat(det)) &&
-    /Noncredit CPL Coordinator: Ana Ruiz/.test(flat(det)));
+    /Noncredit CPL Lead: Ana Ruiz/.test(flat(det)));
 }
 {
   const { window, doc } = setup({ public: true, elig: { ncAttestOk: true, ncAttest: {} } });
@@ -249,8 +251,8 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "self
     !!dlg && /Attest for your noncredit CPL strike team/.test(dlg.textContent) &&
     /Attest for the noncredit share/.test(dlg.textContent));
   T.howToOpen("nc_coord", COLLEGE, {});
-  check("E3: the coordinator passage opens too",
-    /Name and publish your noncredit CPL coordinator/.test(doc.getElementById("cplFundHowTo").textContent));
+  check("E3: the Noncredit CPL Lead passage opens too",
+    /Name and publish your Noncredit CPL Lead/.test(doc.getElementById("cplFundHowTo").textContent));
   const brief = fs.readFileSync(path.join(__dirname, "..", "college_briefing.js"), "utf8");
   const ncBlock = (brief.match(/cond\.ncItems\.forEach\(function \(it, i\) \{([\s\S]*?)\}\);/) || [])[1] || "";
   check("E4: the college panel's noncredit list offers How to meet it, as the main list does",
