@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-447 document(s).
+448 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 478 | [Session 478 handoff: the noncredit counts are live; a hand-opened session claims the queue with a draft PR](../session_478_handoff.md) | 2026-10-25 |
 | 477 | [Session 477 handoff: the noncredit RPC gets a retry; Sheet 127 still waits](../session_477_handoff.md) | 2026-10-25 |
 | 476 | [Session 476 handoff: the funding lessons fit their budget; the daily run and Sheet 127 still wait](../session_476_handoff.md) | 2026-10-25 |
 | 475 | [Session 475 handoff: oversized_doc at 0; Sheet 127 still waits](../session_475_handoff.md) | 2026-10-25 |
