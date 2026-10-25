@@ -100,9 +100,10 @@ const SEVEN = ["about", "reading", "elig_intro", "nc_rules", "college_intro", "t
     !!doc.querySelector('details[data-sec="explainer_text"]') &&
     /My CPL Funding.s text/.test(sec.querySelector("summary").textContent));
   // Fifteen since 2026-10-15: the four How to meet it passages joined the one
-  // text (Sam's calls 4 and 5).
-  check("2b: it lists the fifteen passages, each with its editor",
-    sec.querySelectorAll(".cplfund-prose[data-textblock^=\"mc_\"]").length === 15);
+  // text (Sam's calls 4 and 5). Seventeen since S471: the two noncredit
+  // conditions' passages (mc_how_nc_coord, mc_how_nc_team).
+  check("2b: it lists the seventeen passages, each with its editor",
+    sec.querySelectorAll(".cplfund-prose[data-textblock^=\"mc_\"]").length === 17);
   // A public rendering, as the public page's engine draws it: since 2026-10-15
   // (Sam's call 1) the tab's Public page view frames funding-model/.
   w.CPL_FUNDING_PUBLIC = true; T.render();
