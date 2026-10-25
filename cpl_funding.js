@@ -229,6 +229,16 @@
       " padding: 0 7px; font-size: .68rem; font-weight: 400; white-space: nowrap;" +
       " line-height: 1.55; color: var(--seal-blue-text, #002F6D); border: 1px solid var(--cobalt-on-dark, #7DA1D4);" +
       " border-radius: 9px; cursor: help; }",
+    // The outcomes a priority serves, as chips beside its name on the college
+    // rows and on a noncredit card's heading (Sam, 2026-10-25: "make those
+    // chips on the college rows next to the titles"). A WORD each, in the Base
+    // and Cap chips' quiet ink, the statute's sentence on hover.
+    ".cf-goalchip { display: inline-block; margin-left: 2px; padding: 0 7px; font-size: .68rem; font-weight: 400;" +
+      " line-height: 1.55; white-space: nowrap; vertical-align: 1px; color: var(--seal-blue-text, #002F6D);" +
+      " border: 1px solid var(--cobalt-on-dark, #7DA1D4); border-radius: 9px; cursor: help; }",
+    ".cplfund-cardhead .cf-goalchip { font-size: .74rem; vertical-align: 2px; }",
+    // A noncredit card's own label, typed in place of NC-n.
+    ".cplfund-cardhead .cplfund-nclabel-input { display: inline-block; width: 14ch; max-width: 100%; color: var(--navy-primary); }",
     ".cf-sys-elig { font-weight: 400; color: var(--text-muted); margin-left: 10px; font-size: .75rem; }",
     // The drill-in's Minimum Conditions line: a box per condition, drawn in CSS
     // (a checkbox glyph is banned rendered text), checked when met. The boxes
@@ -2061,7 +2071,10 @@
       o = isPlainObj(o) ? o : {};
       var key = String(o.key || ("o" + (i + 1)));
       return {
-        key: "nc_" + key, ncKey: key, label: "NC-" + (i + 1), pos: i, src: "nc:" + key, lane: "nc", outcome: true,
+        // The label is the curator's (Sam, 2026-10-25: "make the NC priorities
+        // title editable (want to change it from NC-1"); empty reads NC-n.
+        key: "nc_" + key, ncKey: key, label: String(o.label || "").trim() || ("NC-" + (i + 1)),
+        pos: i, src: "nc:" + key, lane: "nc", outcome: true,
         title: String(o.title || ""), description: String(o.description || ""),
         metric: String(o.metric || ""), metric_src: String(o.metric_src || "").trim() || "nc_unmapped",
         unit: "count", unit_word: String(o.unit_word || ""),
@@ -4856,7 +4869,7 @@
     "data-secrename", "data-sectitle", "data-sectitlesave", "data-sectitlecancel", "data-cardrename",
     "data-sectitlereset",
     "data-projsel", "data-projadd", "data-projrelease", "data-priogoal", "data-priosrc",
-    "data-rcgoal", "data-rcdel", "data-rstratadd", "data-rstratdel",
+    "data-rcgoal", "data-rcgoalmulti", "data-rcdel", "data-rstratadd", "data-rstratdel",
     // The card controls of 2026-09-23: one numbering, show-on-rows, delete,
     // restore, and the "Measured from" list editor.
     "data-dragid", "data-carddrag", "data-cardpos", "data-priorows", "data-rcrows",
@@ -7254,6 +7267,26 @@
     }).join("");
   }
 
+  // The outcomes a priority serves as chips, in statute order: the word, with
+  // the citation and the statute's sentence on hover.
+  function goalChipsHtml(keys) {
+    return STATUTORY_GOALS.filter(function (g) { return (keys || []).indexOf(g.key) >= 0; }).map(function (g) {
+      return ' <span class="cf-goalchip" title="' + esc("Ed. Code \u00a778093.2(d)(1)(" + g.key + "): " + g.text) + '">' +
+        esc(g.short) + "</span>";
+    }).join("");
+  }
+  // A priority's name on a college row: its label, its title unless the title
+  // only repeats the outcome ("Priority 1: Access" reads "Priority 1"), then
+  // the chips. Sam's example: "CR Priority 1 [access chip]; NC Priority 1
+  // [access - career attainment chips]".
+  function rowNameHtml(label, title, keys) {
+    var names = STATUTORY_GOALS.filter(function (g) { return (keys || []).indexOf(g.key) >= 0; })
+      .map(function (g) { return g.short; }).join(" and ");
+    var t = String(title || "").trim();
+    if (names && t.toLowerCase() === names.toLowerCase()) t = "";
+    return esc(label) + (t ? ": " + esc(t) : "") + goalChipsHtml(keys);
+  }
+
   // ── the outcome, chosen ON THE CARD (Sam, 2026-09-14) ─────────────────
   // "Seems we can eliminate the outcomes header/layer if we can designate
   // those at the Priority Level." His screenshot draws the arrow: the band
@@ -7530,8 +7563,12 @@
         '<span class="dk">Serves</span>' +
         STATUTORY_GOALS.map(function (g) {
           var on = keys.indexOf(g.key) >= 0;
-          return '<label><input type="checkbox" ' + o.multiAttr + ' value="' + esc(g.key) + '"' + (on ? " checked" : "") +
-            "> (" + esc(g.key) + ") " + esc(g.short) + "</label>";
+          // A reported card's own goal is its identity: the picker moves it,
+          // so its box stays ticked (o.lockKey).
+          var lock = o.lockKey === g.key;
+          return '<label' + (lock ? ' title="This card&#39;s own outcome. Change it with the picker above."' : "") +
+            '><input type="checkbox" ' + o.multiAttr + ' value="' + esc(g.key) + '"' + (on ? " checked" : "") +
+            (lock ? " disabled" : "") + "> (" + esc(g.key) + ") " + esc(g.short) + "</label>";
         }).join("") + "</div>";
     }
     return '<div class="cplfund-cardhead"><h4>' + head + "</h4>" + multi + law + "</div>";
@@ -8983,8 +9020,13 @@
       var keys = (p.goals || []).filter(function (k) { return !!goalByKey(k); });
       var titleHtml = ro ? esc(p.title)
         : edText("nc-title", p.title, { slot: slot, idx: i, cls: "cplfund-prio-title-input", label: p.label + " title", placeholder: "Title" });
-      var head = '<span class="cplfund-prio-num">' + esc(p.label) + "</span> &middot; " +
-        (keys.length ? '<span class="cplfund-cardgoal-key">(' + keys.map(esc).join(") + (") + ")</span> " : "") +
+      // The label edits in place (Sam, 2026-10-25), and the outcomes it serves
+      // read as chips beside it, as on the college rows.
+      var labelHtml = ro ? esc(p.label)
+        : edText("nc-label", p.label, { slot: slot, idx: i, cls: "cplfund-nclabel-input",
+          label: "Label of noncredit outcome " + (i + 1), placeholder: "NC-" + (i + 1),
+          title: "This outcome's label on the cards, the college rows and the documents. Clear it to read NC-" + (i + 1) + "." });
+      var head = '<span class="cplfund-prio-num">' + labelHtml + "</span>" + goalChipsHtml(keys) + " " +
         '<span class="cplfund-cardhead-name">' + titleHtml + "</span>";
       var law = keys.length
         ? '<p class="cplfund-cardgoal-quote"><span class="cplfund-cardgoal-cite">' + goalCite(keys) + ":</span> " + goalQuote(keys) + "</p>"
@@ -9175,6 +9217,30 @@
     persistActive();
   }
 
+  // The outcomes a reported card serves (Sam, 2026-10-25: "set Priority 3 and
+  // 4 to have the same priority area checkboxes as the other priority areas").
+  // Its own goal always, set by its picker; the Serves boxes add the others,
+  // stored goal-keyed as `reportedGoals` beside its title. Display and the
+  // citation only, as on a measured card: the project allocation and the
+  // designated activities stay on the card's own goal.
+  function reportedGoalKeys(gkey) {
+    var v = firstDefined(
+      SCENARIO.reportedGoals && SCENARIO.reportedGoals[gkey],
+      SHARED.reportedGoals && SHARED.reportedGoals[gkey],
+      base().reported_goals && base().reported_goals[gkey]);
+    var extra = Array.isArray(v) ? v : [];
+    return STATUTORY_GOALS.filter(function (g) { return g.key === gkey || extra.indexOf(g.key) >= 0; })
+      .map(function (g) { return g.key; });
+  }
+  // An empty list is stored, never a deleted key, so a shared value cannot
+  // resurface (setPrioGoal's reason).
+  function setReportedGoals(gkey, keys) {
+    var ov = activeOverride();
+    ov.reportedGoals = isPlainObj(ov.reportedGoals) ? ov.reportedGoals : {};
+    ov.reportedGoals[gkey] = (keys || []).filter(function (k) { return k !== gkey && !!goalByKey(k); });
+    persistActive();
+  }
+
   // ── A REPORTED OUTCOME SHOWN AS A REPORT (sheet 4, card 7) ─────────────────
   // Sam, 2026-09-29, on Scenario 2: "I will be reporting on P3 Career Attainment
   // together with P4 projects using more qualitative data rather than tying it
@@ -9241,6 +9307,11 @@
     if (!goalByKey(goal)) return;
     var taken = list.some(function (c) { return c.id !== id && c.goal === goal; });
     if (taken) return;                    // the picker does not offer it either
+    // The picker sets one outcome, as on a measured card: the Serves boxes
+    // added to the old goal clear, and none carry onto the new one.
+    var from = id.replace(/^rc-/, "");
+    if (goalByKey(from) && reportedGoalKeys(from).length > 1) setReportedGoals(from, []);
+    if (from !== goal && reportedGoalKeys(goal).length > 1) setReportedGoals(goal, []);
     setReportedCards(list.map(function (c) {
       return c.id === id ? { id: "rc-" + goal, goal: goal } : c;
     }));
@@ -9384,8 +9455,9 @@
           ? '<button type="button" class="cplfund-textbtn" data-rcdel="' + esc(card.id) +
             '" title="Delete this card. Add a reported outcome card brings it back.">Delete</button>'
           : "" }) +
-      cardHeadHtml({ res: { keys: [gkey], derived: false }, ctx: ctx, selAttr: 'data-rcgoal="' + esc(card.id) + '"',
+      cardHeadHtml({ res: { keys: reportedGoalKeys(gkey), derived: false }, ctx: ctx, selAttr: 'data-rcgoal="' + esc(card.id) + '"',
         selOpt: { derivable: false, choices: reportedChoices(slot, card.id) }, title: title,
+        multiAttr: 'data-rcgoalmulti="' + esc(gkey) + '"', lockKey: gkey,
         numHtml: cardNumHtml(slot, cid, 'data-cardpos="' + esc(cid) + '"', ctx), renameKey: cid,
         titleInput: function () {
           return edText("rtitle", title, { field: gkey, cls: "cplfund-prio-title-input", label: ctx + " title", placeholder: "Title of its own" });
@@ -12374,7 +12446,7 @@
         : crA.text;
       var CELL = {
         college: '<td class="t cf-subname" title="' + esc(prioLabelTip(p, slot, np)) + '">' +
-          esc(p.label) + (p.title ? ": " + esc(p.title) : "") + "</td>",
+          rowNameHtml(p.label, p.title, prioGoals(slot, p.pos, p).keys) + "</td>",
         cr_award: maxCell(crF, isF, p, "cr"),
         cr_current: curCell(crF, crA, isF, null),
         nc_award: ncF ? maxCell(ncF, true, np, "nc") : dash,
@@ -12399,7 +12471,7 @@
     }).join("");
     var reported = (o.reported || []).map(function (r) {
       return '<tr class="cplfund-detail cplfund-subnote"><td colspan="' + cols.length + '">' +
-        esc(r.label) + ' <span class="dk">' + esc(r.note) + "</span></td></tr>";
+        esc(r.label) + goalChipsHtml(r.keys) + ' <span class="dk">' + esc(r.note) + "</span></td></tr>";
     }).join("");
     // ── the noncredit outcome rows (Scenario 4) ──
     // One row an outcome, in the table's own columns: the credit cells a dash,
@@ -12427,7 +12499,7 @@
       if (p.metric) nameTip.push("Counts: " + p.metric);
       if (ncShareSum(slot) > 0) nameTip.push("Share: " + fmtPctTrim(p.share / ncShareSum(slot)) + " of each institution's noncredit share.");
       var CELL = {
-        college: '<td class="t cf-subname" title="' + esc(nameTip.join("\n")) + '">' + esc(p.label) + (p.title ? ": " + esc(p.title) : "") + "</td>",
+        college: '<td class="t cf-subname" title="' + esc(nameTip.join("\n")) + '">' + rowNameHtml(p.label, p.title, p.goals) + "</td>",
         cr_award: dashT, cr_current: dashT,
         nc_award: '<td class="c" title="' + esc(maxTip) + '">' + fig(fmtMoney(f.maxFunds), tgtLine, f.target == null ? TBA_TIP : "") + "</td>",
         nc_current: '<td class="c' + ncGateCls + '" title="' + esc(curTip) + '">' +
@@ -12469,7 +12541,7 @@
         var n = cardNumber(slot, "r" + c.goal);
         var amt = poolGoalKeys("scaling_projects_tech").indexOf(c.goal) >= 0
           ? poolGoalAmount("scaling_projects_tech", c.goal) : 0;
-        return { label: "Priority " + n + ": " + reportedTitle(c.goal),
+        return { label: "Priority " + n + ": " + reportedTitle(c.goal), keys: reportedGoalKeys(c.goal),
           note: statewide && amt > 0
             ? "Funded statewide through the project allocation, " + fmtMoney(amt) + "."
             : "Funded statewide through the project allocation; it adds nothing to an institution's award." };
@@ -15744,6 +15816,11 @@
       setNcOutcome(slot, Number(idx), edit.slice(3), raw);
       return;
     }
+    // Its label; cleared, it reads NC-n again.
+    if (edit === "nc-label") {
+      setNcOutcome(slot, Number(idx), "label", String(raw || "").trim());
+      return;
+    }
     if (edit === "nc-share") {
       var ncs = parseNum(raw);
       if (ncs == null) { render(); return; }
@@ -16527,6 +16604,16 @@
         sel.addEventListener("change", function () {
           savingState = "";
           pointReportedCard(state.viewSlot, sel.getAttribute("data-rcgoal"), sel.value);
+          render();
+        });
+      });
+      qsa("[data-rcgoalmulti]").forEach(function (cb) {
+        cb.addEventListener("change", function () {
+          var gk = cb.getAttribute("data-rcgoalmulti");
+          var keys = [];
+          qsa('[data-rcgoalmulti="' + gk + '"]').forEach(function (x) { if (x.checked) keys.push(x.value); });
+          savingState = "";
+          setReportedGoals(gk, keys);
           render();
         });
       });

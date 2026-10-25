@@ -230,9 +230,10 @@ check("D10: the outcome cards stand in their own section under the priority card
   /waits on its own minimum conditions: the institution's confirmation and a Noncredit CPL Lead named and published/.test(flat(section)) &&
   /Reported, not funded: Former noncredit students awarded CPL credit/.test(flat(section)));
 check("D11: NC-1's card names its target as the institutions' sum and its share of the noncredit share; NC-2 counts courses",
-  /NC-1/.test(flat(cards[0])) && /28 exhibits/.test(flat(cards[0])) && /% of each institution's noncredit share/.test(flat(cards[0])) &&
+  // The label is a field for a curator since 2026-10-25 (S480), so it reads from its value.
+  (cards[0].querySelector('input[data-edit="nc-label"]') || {}).value === "NC-1" && /28 exhibits/.test(flat(cards[0])) && /% of each institution's noncredit share/.test(flat(cards[0])) &&
   (cards[0].querySelector('input[data-edit="nc-share"]') || {}).value === "50" &&
-  /NC-2/.test(flat(cards[1])) && /courses/.test(flat(cards[1])));
+  (cards[1].querySelector('input[data-edit="nc-label"]') || {}).value === "NC-2" && /courses/.test(flat(cards[1])));
 check("D12: the credit cards are untouched in number", doc.querySelectorAll("[data-priocard]").length === before.prios.length);
 const csv = T._csv();
 const head = csv.split("\n")[1] || "";
