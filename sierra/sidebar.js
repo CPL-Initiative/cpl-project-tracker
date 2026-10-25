@@ -20,7 +20,9 @@
  *     inside the frame shuts it too, unless Sierra's About panel is open: that
  *     Escape is hers, and closes About.
  *   · The frame takes the host's theme in ?theme= and follows a change of it,
- *     so Sierra never paints dark beside a page that opened Light. ?panel=1
+ *     so Sierra never paints dark beside a page that opened Light, nor light
+ *     beside one that is dark. A host with no theme of its own follows the
+ *     device (COBI's System), so the bar names the device's, and follows it. ?panel=1
  *     tells her she is in the bar: her header row keeps About Sierra alone, since
  *     the bar names her and the page beside it carries the logo.
  *   · The look is the host's. A host maps the --sierra-bar-* tokens onto its own
@@ -120,24 +122,25 @@
   function setWidth(w) { wantW = w; applyWidth(true); }
   function width() { return clampW(wantW); }
 
+  // What the host shows: its own theme, or the device's when it has none. Sierra
+  // opens Light on her own (Sam, Open Asks Sheet 126 card 2), so the bar always
+  // names the host's.
   function hostTheme() {
     var t = document.documentElement.getAttribute('data-theme');
-    return t === 'light' || t === 'dark' ? t : null;
+    if (t === 'light' || t === 'dark') return t;
+    try { return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    catch (e) { return 'light'; }
   }
-  // With no theme on the host, Sierra reads the reader's stored choice and the
-  // device as the host does, so only panel=1 rides the address.
   function frameUrl() {
-    var t = hostTheme();
-    return SIERRA_URL + '?panel=1' + (t ? '&theme=' + t : '');
+    return SIERRA_URL + '?panel=1&theme=' + hostTheme();
   }
   function frameDoc() {
     try { return frame && frame.contentDocument; } catch (e) { return null; }
   }
   function syncTheme() {
-    var d = frameDoc(), t = hostTheme();
+    var d = frameDoc();
     if (!d || !d.documentElement) return;
-    if (t) d.documentElement.setAttribute('data-theme', t);
-    else d.documentElement.removeAttribute('data-theme');
+    d.documentElement.setAttribute('data-theme', hostTheme());
   }
 
   function isWide() { return !!(wideMq && wideMq.matches); }
@@ -343,6 +346,11 @@
       observer = new MutationObserver(syncTheme);
       observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     }
+    try {
+      var dark = window.matchMedia('(prefers-color-scheme: dark)');
+      if (dark.addEventListener) dark.addEventListener('change', syncTheme);
+      else if (dark.addListener) dark.addListener(syncTheme);
+    } catch (e) { /* no matchMedia: the host's own theme still reaches her */ }
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
