@@ -714,3 +714,23 @@ Settled sections of `docs/reference/lanes/implementation-funding.md`, moved verb
 From the implementation-funding lane's noncredit paragraph, verbatim:
 
 ✅ **Sam's four asks of 10-24, worked by S468 (#2422).** (1) The NC cards edit as the credit cards do (signed in for the team, signed out a what-if; they had been read-only unsigned, so his screenshot showed no fields), with the measure, target rule, outcomes served and strategies added (`tests/cpl_funding_nc_outcomes.test.js` E0 to E8). (2) Cabrillo: NC-1's mirror channel counts from COCI and MAP, 33 exhibits against 9; 4 of 102 colleges meet on it; NC-2 is confirmable, never findable (`funding/nc_outcome_feasibility/2026-10-24_cabrillo/`). (3) The credit coordinator condition reads MAP's College Contacts; the noncredit one reads `coordinator_name` on COBI's attestation row and swaps to a `has_nc_cpl_lead` boolean from `map_coordinator_summary()` once MAP carries the role. (4) The map-users lane.
+
+## S471 SkyPenstemon (2026-10-25): the noncredit builder
+
+- **What shipped** (#2437): `cpl_funding_nc_counts()` (`kb/supabase_cpl_funding_nc_counts.sql`, service role alone)
+  returns the sets; `funding/_build_funding_performance.py` matches them into `nc_cdcp`, `nc_exh` and `nc_course`. The
+  matching lives in Python so a fixture tests it (`tests/funding_nc_counts_test.py`); the SQL only gathers.
+- **A subquery per exhibit ran past the MCP's minute.** 2,400 exhibits each scanning 142,000 COCI rows timed out; the
+  same lookup as a join on (college, code) returns the 727 KB payload in seconds. Write the target-title lookup as a join.
+- **Absent, never zero, for the denominator.** A 0 in `nc_cdcp` sets NC-1's floor of 2; COCI rows with no funding
+  category (Calbright's 57, all blank) are a data hole, not a count. The builder emits `nc_cdcp` only for an institution
+  whose COCI courses carry a category: Fresno City and Calbright read TBA.
+- **A standalone's counts go in `origination.in_scope`, never `colleges`.** `perfFor()` reads `colleges` first, so a
+  standalone there would shadow its origination cut under Scenarios 1 to 3.
+- **Measured before it ran:** channel 2 reproduced S468 exactly (Cabrillo 33, Santa Ana 17, Las Positas 9, Norco 3);
+  channel 1 by title adds one at Cabrillo (*Understanding Infant Development*, no target course in the sample).
+- **The migrate runner applies SQL from `chatbox/`, `kb/` or `supabase/` only.** The first run refused
+  `funding/…sql` and committed no receipt; the file moved under `kb/`. A server-only function nothing calls can apply
+  before its code merges, so one PR carried both.
+- **How to meet it** for the two noncredit conditions is S471's draft (`mc_how_nc_coord`, `mc_how_nc_team`), for Sam
+  to curate in the text editor.
