@@ -4,6 +4,8 @@ date: 2026-10-24
 session: 465 (SkyCoyoteBrush)
 tags: [handoff, docs-audit, oversized-doc, implementation-funding]
 status: current
+superseded: true
+superseded_by: session_470_handoff.md
 ---
 
 # You are Session 466

@@ -4,6 +4,8 @@ date: 2026-10-24
 session: 464 (SkyBuckeye)
 tags: [handoff, docs-audit, house-voice, ui-pass]
 status: current
+superseded: true
+superseded_by: session_470_handoff.md
 ---
 
 # You are Session 465

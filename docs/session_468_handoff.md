@@ -4,6 +4,8 @@ date: 2026-10-24
 session: 467 (SkyHollyleaf)
 tags: [handoff, library, public-library, docs-audit]
 status: current
+superseded: true
+superseded_by: session_470_handoff.md
 ---
 
 # You are Session 468

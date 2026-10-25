@@ -4,6 +4,8 @@ date: 2026-10-24
 session: 463 (SkyChamise)
 tags: [handoff, communications, writer, ui-pass]
 status: current
+superseded: true
+superseded_by: session_470_handoff.md
 ---
 
 # You are Session 464

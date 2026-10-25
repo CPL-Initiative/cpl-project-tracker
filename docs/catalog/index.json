@@ -14721,7 +14721,7 @@
       "chatbox/supabase/functions/cpl-chat/index.ts",
       "cpl_chat.js",
       "sierra/sierra.js",
-      "fact-sheet/factsheet_sierra.js",
+      "sierra/sidebar.js",
       "chatbox/smoke_test.sh"
      ],
      "path": "docs/sierra_technical_reference.md",
@@ -14736,7 +14736,7 @@
      ],
      "title": "Sierra \u2014 technical reference (how the CPL assistant is built)",
      "type": null,
-     "updated": "2026-07-02"
+     "updated": "2026-10-25"
     },
     {
      "created": "2026-06-16",
@@ -16071,7 +16071,7 @@
    "count": 440,
    "docs": [
     {
-     "created": "2026-10-24",
+     "created": "2026-10-25",
      "governs": [],
      "n": 470,
      "path": "docs/session_470_handoff.md",
@@ -16081,9 +16081,10 @@
       "library",
       "public-library",
       "sierra",
-      "dark-mode"
+      "dark-mode",
+      "cpl-chat"
      ],
-     "title": "Session 470 handoff: Ask Sierra opens in a side bar on the public library and COBI's Library tab; Open Asks Sheet 126",
+     "title": "Session 470 handoff: Ask Sierra resizes, asks who you are at the first Ask, reads the public library and opens on the Fact Sheet and the funding page; public pieces on GitHub Pages; public pages open Light",
      "type": null,
      "updated": ""
     },

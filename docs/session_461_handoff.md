@@ -4,6 +4,8 @@ date: 2026-10-24
 session: 460 (SkyFremontia)
 tags: [handoff, communications, library, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_470_handoff.md
 ---
 
 # You are Session 461

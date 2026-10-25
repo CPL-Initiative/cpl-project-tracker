@@ -83,7 +83,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Sierra on a vendor platform — benefits, risks, and challenges](../sierra_integration_analysis.md) | `sierra_integration_analysis.md` | 2026-07-02 | 2026-07-02 |
 | [Sierra Training tab — recommendation + phased scope](../sierra_training_tab_scope.md) | `sierra_training_tab_scope.md` | 2026-07-01 | 2026-08-12 |
 | [Sierra vendor-integration lane — session handoff](../sierra_vendor_lane_handoff.md) | `sierra_vendor_lane_handoff.md` | 2026-07-03 | 2026-07-03 |
-| [Sierra — technical reference (how the CPL assistant is built)](../sierra_technical_reference.md) | `sierra_technical_reference.md` | 2026-07-02 | 2026-07-02 |
+| [Sierra — technical reference (how the CPL assistant is built)](../sierra_technical_reference.md) | `sierra_technical_reference.md` | 2026-07-02 | 2026-10-25 |
 | [Similar-course FAMILY consolidation lane — scope + measure-first](../similar_course_family_scope.md) | `similar_course_family_scope.md` | 2026-06-16 |  |
 | [SkyView / CCR Atlas lessons — archive 2](../ccr_atlas_lessons_archive_2.md) | `ccr_atlas_lessons_archive_2.md` | 2026-10-24 | 2026-10-24 |
 | [SkyView search: the deferred commit — handoff](../deferred_commit_handoff.md) | `deferred_commit_handoff.md` |  |  |
