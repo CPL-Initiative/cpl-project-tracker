@@ -68,6 +68,10 @@ colleges, ligatures and the hand-filed step (S405), with the lane text those ses
 The hand-filed catalogs read from Sam's release copies (S406), then catalog steps for own-HTML PDF colleges, the heading preference and the migrate path (S407), with the lane text S406 retired: verbatim in
 `docs/program_requirements_harvest_lessons_archive_3.md`.
 
+## S442-S444: moved to the archive (S489 compaction)
+
+Verbatim in [`program_requirements_harvest_lessons_archive_3.md`](program_requirements_harvest_lessons_archive_3.md): a page heading a section per award serving each sibling, Foothill loaded, six colleges captured again, Reedley, CPL Pathways' college line, the page-claimed sweep, department pages, two-line headings and Program Mapper.
+
 ## S408 SkyAgave (2026-10-17): a run of numbers after one subject, a list marker at a line's end, the eight-college wave
 
 - **A run of numbers after one subject (#2206).** Glendale's 2025-2026 PDF prints "ACCTG 101, 102; BUSAD 101, 106, 120;
@@ -564,6 +568,24 @@ agents; a per-college tab; an agent per college that the college and the MAP
 team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
+
+## S489 SkySnowberry (2026-10-26, the CPL Queue routine): lists with floors under one total
+
+- **One printed total over lists that carry their own figures is still one choice.** Liberal Arts: Pathway to Health
+  Sciences A.A. 17924 read List A: Biology (3), List B: Chemistry (4) and List C (10-11) as three blocks, 17-18 against
+  18. The tab prints "Complete a total of 18 units from List A, List B, and List C" (page read 40306415059, S488).
+  `pool_lists` gains `with_floors`: the lists become one 18-unit choice, each list's figure stays in the block's
+  `floors`, a course listed in two of the lists is listed once (List C repeats A's and B's courses, which `repeated`
+  would fail inside one block), and the step never fires where the floors sum past the total. `block_pattern` (a regex on
+  the list name) stands in for `block_prefix` where the lists share no prefix.
+- **The floors are kept, not scored.** The scorer sums the block's 18. A floor is a rule on which courses, like 17912's
+  two-disciplines condition, and the record holds it so a curator and the display can still read it.
+- Reconcile 40314109801 (free) moved 17924 alone (18 of 18; degree 60 with Cal-GETC 34 and 8 elective units). The other
+  55 re-filed records changed only the `ge_overlap` flag or score bookkeeping and were restored before reread
+  40318170598, which replaced one row (before-values in its receipt). Hartnell 80 to 81 of 94. Display build 19d2397e8004.
+- **Still waiting on a reader change:** CalGETC 45096 (area totals over sub-areas, 5C's lab counted again) and Music
+  43887 (repeat counts; the record shape has no repeat field). The 45096 step needs the tab's captured text for its
+  pattern; read it from the reconcile run's `out/sources/45096.json` artifact first.
 
 ## S488 SkyThimbleberry (2026-10-26, the CPL Queue routine): Hartnell's last eight failing tabs, read
 
@@ -1111,88 +1133,3 @@ side session (Scenario 4) ran beside it, one writer per file.
 ### Moved from the lane (S445 compaction)
 
 **S444:** Golden West (79) and Imperial Valley (42) loaded; department pages are candidates, a section heading may span two lines (Sierra 35 → 81 found, MiraCosta 29 → 68, its discipline pages still lose siblings); 37 Program Mapper hosts recorded (#2330).
-
-## S444 SkyBlueOak (2026-10-21/22): the page-claimed sweep, department pages, two-line headings, Program Mapper
-
-- **Golden West and Imperial Valley loaded** under the section-per-award rule (#2331). Golden West: extraction
-  39688079435, 135 extracted for $8.72, 102 passing; load 39691321331 inserted 79, kept 50, skipped 6. Imperial Valley:
-  free capture first (found 84 → 131, page_claimed 49 → 8), extraction 39691376155, 131 for $8.02 (an extraction run
-  re-extracts every found program, never only the new ones), 109 passing; load 39694352034 inserted 42, kept 83,
-  skipped 6 as another program's page. Display build 4bcc9b504482 (16,917 → 17,038 records). Foothill (#2326) merged
-  after a main merge started its CI.
-- **A general education page as a program's only candidate means the program's own page never reached the reader.**
-  121 of 648 page-claimed statewide named only a GE page (Sierra 47, MiraCosta 43, nine colleges with 1 to 6). The fix
-  was never at the GE page.
-- **A department or discipline page names no program in its path.** Sierra (`/departments/psychology/`, no sitemap,
-  its index fallback read 3 pages) and MiraCosta (`/disciplines/psychology/`) print each award in a Degrees tab;
-  `PROGRAM_PATH` kept neither (page read 39698876304). Where the link search had reached a MiraCosta discipline page,
-  coverage was 1.0. Now a candidate (the department index itself is not).
-- **A department page holds many awards, and its heading spans two short lines.** Sierra: the title, then "AS Degree"
-  (no periods); MiraCosta: "Certificate of Achievement", then the title (page read 39704788066, from each department's
-  PDF, which prints every tab). `section_award()` reads two adjacent short lines; the award pattern still tests one
-  line alone, so an anchored "AS Degree" holds. Captures: Sierra 35 → 81 found, page_claimed 47 → 36; MiraCosta 29 →
-  68, page_claimed 43 → 82: its discipline pages (Horticulture 11 claimants, Computer Studies 17) still give one
-  claimant the page. Next look: the text the capture keeps from MiraCosta's hidden tabs (`textContent` may run the two
-  heading lines together). Sierra extraction 39709837031: 81 for $7.28, 57 passing.
-- **One college per page-read plan.** `college_page_read_test` (lints) holds a plan to one college's domain; a plan
-  reading two colleges' PDFs failed CI until split.
-- **Program Mapper (Sam, 2026-10-21, pasted programmapper.org/ppm-schools; non-CCCs set aside).** 63 community colleges;
-  the registry held a map host for 26. A guarded UPDATE through `supabase-migrate.yml` (the repo's guard holds an
-  UPDATE from the session) wrote `sequence_host` and `sequence_note` on the 37 empty rows (run 39689748697, #2330); the
-  census never writes those fields. Six list a second host for a mapper that refused the reader (Cañada, Canyons, Las
-  Positas, LA Harbor, LA Mission, Oxnard): not written, since asking it retries a refusal another way. Every mapper
-  host reached so far answers 403; the list names each college's account manager, so one request to the vendor could
-  open the maps for all 63. That ask is Sam's.
-- **Blocked catalogs, on Sam's ask:** the Procedures view's closed card says *Catalog blocked (robots.txt), read from a
-  hand-filed copy* or *needs a hand-filed copy*, with a Show filter and two glance counts (#2328). Eight catalogs block
-  the reader; all eight read from Sam's hand-filed copies. The Catalogs view now names a 404 address.
-
-### Moved from the lane (S444 compaction)
-
-**S440 (#2306):** Santa Monica, Irvine Valley and West LA loaded (a PDF may wait 2,400 s). **S442 (two runs):** Reedley 196 of 200 found, 159 loaded; a number led by a campus letter (the Ventura district's ANCT M01A) now keeps its Requirements tab (#2309), so Moorpark, Oxnard and Ventura re-read, 100, 86 and 121 passing. **S443 (#2322):** a page heading a section per award now serves each sibling: Foothill 116 → 144 found, 97 passing, 29 loaded; Golden West 81 → 95 on capture (extraction next); Palomar unchanged (its own reader look); 842 page-claimed statewide is the next sweep (lessons S443).
-
-## S443 SkyToyon (2026-10-21): a page heading a section per award serves each sibling; Foothill loaded
-
-- **Page-claimed was 842 programs statewide** (Palomar 103, Foothill 73, Imperial Valley 49, Sierra 47, Golden West 43).
-  Foothill prints a program's A.A. and its certificates as sections of one page under the banner h1, so the label named
-  no award and `page_winners()` gave the page to one claimant. `section_award()` (#2322) reads a short line naming the
-  award and every title word, or, for an A.A./A.S., Foothill's generic "Associate Degree Requirements" beside its
-  Award Type(s) line ("AA = Associate in Arts Degree"); when two or more awards head sections and the label names none,
-  each award's fullest-named claimant keeps the page. The extraction already reads by award (`section_heading`).
-- **Read the page before you trust a capture.** The first cut matched nothing on Foothill (run 39654813908): the degree
-  heading carries neither award nor title, and a page read joins short lines with " · ". A free page read (run
-  39657323731) showed both; the second capture moved Foothill from 116 to 144 found.
-- **A hub page lists degrees it does not hold.** Golden West's Physics page lists "Computer Science, Associate in
-  Science Degree", and Computer Science A.S. took it at 67% coverage, the physics it requires (page read 39666262949).
-  Guard: a section on a page whose label does not name the program at least halfway needs 80% of its listed courses.
-  Golden West then read 81 → 95 found, page_claimed 43 → 29 (run 39667910648).
-- **Palomar did not move** (224 found, 103 claimed, run 39661015658): its pages print awards another way. Reader work.
-- **Foothill:** extraction 39671107254 re-extracted all 144 for $11.85 (97 passing, from 73; no earlier record lost its
-  pass, 2 gained, 22 of 28 new pass); load 39675671980 inserted 29 and kept 97 (receipt
-  `kb/receipts/program_requirement_records_college_foothill_39675671980.json`, rollback inside); display build
-  33f68a1257d9 (16,917 records).
-- **Pipe hides a failure:** `check_generated.sh | tail` returned 0 on a stale dependency map; run it bare.
-
-## S442 SkyManzanita (2026-10-21): six colleges captured again, Reedley loaded, CPL Pathways' college line
-
-- **A free capture first says whether a reader improved.** The live list of thin colleges (active COCI programs
-  against records, under 60%) named Sierra, MiraCosta, Reedley, Golden West, Foothill and Oxnard, each read once
-  between 2026-10-15 and 10-17. A capture-only read of each (`extract=0`, one branch a college,
-  `claude/harvest-<college>-s442`) writes `capture_preview.json` and leaves `capture.json` alone, so compare the
-  preview with main's capture. Reedley's curriQunet read went from 36 of 200 programs with a closed list found to 196;
-  the five CourseLeaf colleges captured exactly as before (Sierra still reads 3 pages and falls back to the index;
-  Foothill 73 and Golden West 43 programs claimed by another program's page; MiraCosta 89 not found). Their gaps are
-  reader work, never a re-run.
-- **Reedley:** extraction run 39616074283, 196 extracted, 167 passing the machine checks, $11.18 under the $40 go;
-  load 39622476849 inserted 159 and kept 36 (receipt `kb/receipts/program_requirement_records_college_reedley_39622476849.json`,
-  its rollback inside); display build bf781cf0cd22 on the branch, display job dispatched.
-- **The thin list on 2026-10-21 (~14:00Z):** no records at Diablo Valley, Santiago Canyon, North Orange Continuing
-  Education and San Jose City (parked for the reader); under 30% at MiraCosta, Sierra, Reedley (before its load),
-  Skyline and Golden West; Skyline's ceiling is COCI itself (a closed course list for 58 of 144 programs);
-  Canyons' missing 100 are noncredit programs its credit catalog does not carry.
-- **The name on screen is CPL Pathways (Sam, 2026-10-21: "Let's use 'CPL Pathways' for now").** No rendered string
-  says ROEP or catalog harvest (`tests/cpl_pathways_college_status.test.js` g); code identifiers keep `roep`.
-- **CPL Pathways' college line (Sam's ask, #2312):** complete counts an active COCI program passing the three machine
-  checks; SLOs cover the courses the state's Program Course File lists for the college's programs; a disagreement is a
-  record failing the courses or off-list check, and the Records view gained that filter so the count opens exactly
-  what it counted.

@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1287,
-    "bytes": 13075301,
-    "over_budget": 2,
-    "handoff_max": 489,
+    "files": 1288,
+    "bytes": 13082699,
+    "over_budget": 1,
+    "handoff_max": 490,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59968,
     "superseded_files": 0,
@@ -26,18 +26,18 @@
       },
       "other": {
         "files": 134,
-        "bytes": 4025651,
+        "bytes": 4034422,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 8919,
+        "bytes": 9027,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2396142,
-        "over": 1
+        "bytes": 2389765,
+        "over": 0
       },
       "kb_note": {
         "files": 565,
@@ -46,26 +46,26 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 431348,
+        "bytes": 431294,
         "over": 1
       },
       "handoff": {
-        "files": 459,
-        "bytes": 3373584,
+        "files": 460,
+        "bytes": 3378534,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 2,
+      "oversized_doc": 1,
       "house_voice": 1,
       "vault_heavy_path": 65
     },
     "vault": {
-      "files": 24804,
-      "bytes": 3737769113,
-      "heavy_bytes": 2608939850,
-      "heavy_share": 0.698,
+      "files": 24808,
+      "bytes": 3756425432,
+      "heavy_bytes": 2627583629,
+      "heavy_share": 0.699,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -151,19 +151,6 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 121406,
-        "limit": 120000,
-        "lane": "lessons",
-        "over_by": 1406,
-        "ratio": 1.01
-      },
-      "message": "121,406 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
-      "path": "docs/program_requirements_harvest_lessons.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
         "bytes": 20949,
         "limit": 20000,
         "lane": "roadmap_lane",
@@ -190,20 +177,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1587437938,
+        "bytes": 1606083976,
         "kind": "dir"
       },
-      "message": "directory totals 1,587,437,938 B inside the vault"
+      "message": "directory totals 1,606,083,976 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 146096023,
+        "bytes": 146093764,
         "kind": "dir"
       },
-      "message": "directory totals 146,096,023 B inside the vault"
+      "message": "directory totals 146,093,764 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
