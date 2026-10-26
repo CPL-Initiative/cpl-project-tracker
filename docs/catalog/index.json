@@ -10930,7 +10930,7 @@
      ],
      "title": "The CCCCO house voice \u2014 how our outward writing should read",
      "type": "reference",
-     "updated": "2026-09-01"
+     "updated": "2026-10-26"
     },
     {
      "created": "2026-09-30",
@@ -16175,8 +16175,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 452,
+   "count": 453,
    "docs": [
+    {
+     "created": "2026-10-26",
+     "governs": [],
+     "n": 483,
+     "path": "docs/session_483_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "ell-iet",
+      "implementation-funding",
+      "funding-film",
+      "noncredit-summit-film",
+      "decision-sheets"
+     ],
+     "title": "Session 483 handoff: ELL IET Version 2 with example articulations, the funding film's v11, the Summit film's v3, Sheet 128",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-26",
      "governs": [],
@@ -23939,5 +23958,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1267
+ "total": 1268
 }

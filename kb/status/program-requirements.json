@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-26T01:07:57Z",
-  "session": 481,
-  "moniker": "SkyGoldfields",
+  "written_at": "2026-10-26T02:36:16Z",
+  "session": 482,
+  "moniker": "SkyShootingStar",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_482_handoff.md",
+  "handoff": "docs/session_483_handoff.md",
   "next_step": {
-    "title": "The Privacy page's UI pass, then the harvest's catalog sweep while the rest waits on Sam",
-    "text": "The first scheduled session of October 27 audits the Privacy page. The Coordinator Guide and the ELL visual wait on Sam's comments in the Library's Changes to make box; with nothing else open, a session takes the next college in the harvest's catalog sweep."
+    "title": "The DSP visual redone like the ELL one, then the Privacy page's UI pass",
+    "text": "Sam asked for the DSP Credit Starting Points visual to be redone the way ELL IET Version 2 was, with example articulations on each card and lines that lead with what is possible. The first scheduled session of October 27 audits the Privacy page; with nothing else open, a session takes the next college in the harvest's catalog sweep."
   },
   "calls": [
     {
@@ -114,10 +114,6 @@
   },
   "changes": [
     {
-      "at": "2026-10-25T10:45:00Z",
-      "text": "No harvest table moved this run; S474 moved the lane's S452-S459 history to lessons archive 3 so the lane fits its budget."
-    },
-    {
       "at": "2026-10-25T11:20:00Z",
       "text": "No harvest table moved this run; S475 moved the funding lessons' S285-S303 sections to archive part 4 so the doc fits its budget."
     },
@@ -144,6 +140,10 @@
     {
       "at": "2026-10-26T01:10:00Z",
       "text": "No harvest table moved this run; S481 ran the Fact Sheet's UI pass (#2455) and applied S477's waiting memory fix through the migrate workflow."
+    },
+    {
+      "at": "2026-10-26T02:45:00Z",
+      "text": "No harvest table moved this run; S482 built ELL IET Version 2 from MAP and the COCI course list, refreshed the two funding films, and opened Sheet 128 on the memo's opening and the ELL public copy."
     }
   ],
   "headline": [

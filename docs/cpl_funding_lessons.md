@@ -601,6 +601,29 @@ Sam's five asks in one hand-opened session, merged as #2446 (squash 6ed85331).
 - **`check_generated.sh` before every commit, on every branch:** the funding branch's first push failed `lints` on a
   stale dependency map the Library branch had already regenerated.
 
+## S482 (SkyShootingStar), 2026-10-26: the memo through Word, the film's v11, the Summit film's v3
+
+- **A passage the memo follows is two documents' text.** `memo_lead` follows `x_lede` until saved, so Sam's memo
+  revision, made in the Overview, reached the public funding page as *This memorandum sets out …* and doubled the memo's
+  seed-grant and confirmation passages (they print again under their own headings). The fix is curator text, his: save
+  the memo's own opening, restore the page's. Card 1 of Open Asks Sheet 128 carries the proposed opening.
+- **Checking the memo in Word without a browser:** boot `funding-model/memo/index.html` in jsdom with the live config
+  (`T._setConfig`), `T._buildMemo("memo")`, then `docx.min.js` through `Packer.toBuffer(T._memoDocxDocument(el))`, and
+  LibreOffice to PDF. A rich passage renders `1. ` lines as a Word numbered list; `1) ` lines and single newlines stay
+  line breaks inside one paragraph.
+- **Reconstructing the live config without transcribing it:** hash each top-level key of the live scenario in Postgres
+  (`md5(v::text)`) and of the newest fixture in Python with jsonb's key order (length, then bytes) and `', '`/`': '`
+  separators; fetch only the keys that differ, then confirm the whole scenario's hash. Four keys of 28 had moved; the
+  figures script then stamped the same md5 the table reports (439488ec).
+- **The film's v11:** the first minimum condition names the Noncredit CPL Lead under the outcomes lane only
+  (`COORD_LINE_NC`), so the narrated drafts keep their voiced frames; three lines at 3.2cqw step the rows down. Playfair's
+  default old-style digits sat 4px low in the condition discs; lining figures plus a .21cqw lift center them within 1px.
+  The page uses border-box sizing, so padding comes out of the height: keep the height, add the padding.
+- **The Summit film's v3** follows Scenario 4 ($3.8 million, *for two noncredit outcomes*, Sam's word for *restricted
+  to*), and its greeting ends on a period (Sam: *"so the voice comes in a bit softer on the intro"*); he picked the second
+  greeting take by ear. Two scenes re-read, 38 cues re-pinned. `tests/noncredit_video_page.test.js` pins the funding
+  card's figures, so a figure change there is a test change in the same commit.
+
 ## Moved from the lane (S480, 2026-10-26)
 
 Moved verbatim from `docs/reference/lanes/implementation-funding.md` to bring the lane under its 20 KB budget; the lane keeps a pointer and the two rules.

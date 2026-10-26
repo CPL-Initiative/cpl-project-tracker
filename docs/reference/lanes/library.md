@@ -185,6 +185,22 @@ contacts the eight projects himself. The session's staged receipt,
 `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, was never applied. Its public topics are empty; Sierra links
 it by title and summary until someone adds them.
 
+**Version 2, the first request through Changes to make (S482, 2026-10-26).** Sam asked for *"a short table to each
+grantee card that gives specific examples of potential articulations ... between the training (course or certificate)
+and specific college courses in the region of the grantee"*, then, mid-run: *"Those cards that repeatedly say 'nothing
+nearby' sound pretty negative and discouraging. Perhaps reframe it to focus on what is possible rather than what's not
+already there. That's what folks are interested in."* (`cpl_memory` `sam-s482-frame-what-is-possible-2026-10-26`).
+Each card now ends in up to six rows, Training · College · Course (units) · Basis, the basis one of three, strongest
+first: articulated in MAP at that college (`statewide_data.js` `credit_recs` by `adopter_rec_idx`); the same common
+course another college articulated, taught at this one (`unified_courses_members.js` ids); a matching course title
+(`coci_lookup_data.js`). The lines lead with what a project can start (*Ready for a first articulation at …*, *A
+precedent to adopt: … already award credit for it*, *Open for the first exhibit in MAP, built with the nearest
+college*). Draft: https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw; source `ell-iet/make_brief.py` and the brief
+`briefs/20261023_ELL_IET_CPL_Starting_Points_2.json` (CPLBrain#485); `agency-visual/build.py` now takes a table on a
+card, and the v1 brief rebuilds byte-identical. The record carries Version 2 as *Draft for review* and an empty box
+(receipt `kb/receipts/cpl_library_ell_iet_v2_2026-10-26_s482.sql`, supabase-migrate run 40256725268, read back).
+**NEEDS SAM (Open Asks Sheet 128 card 2): Version 1 stays the public copy until Sam says to replace it.**
+
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 
 Sam's asks of 2026-10-24 are built: an Ask Sierra side bar any public page loads with one script (`sierra/sidebar.js`,
@@ -213,9 +229,16 @@ Sam's edits of that record only listed it; the github.com link came from the see
 
 ## Next
 
+- **The DSP visual, redone the way the ELL one was (Sam, 2026-10-26: *"I'll want to redo the DSP visual in the Library
+  the same way we're redoing the ELL one"*), next session.** `dsp-credit-starting-points` is a hand-built page
+  (`CPLBrain/04-projects/cpl-initiative/dsp-training/20261020_DSP_Credit_Starting_Points.html`), so the redo either
+  moves it onto the agency template (`agency-visual/build.py`, with a card table) or adds the tables by hand; either way
+  the lines lead with what is possible. A new version beside v1; the public copy changes on his word.
+- **ELL IET Version 2 replaces the public copy on Sam's word:** `python3 scripts/library_page.py ell-iet-cpl-starting-points
+  <the v2 HTML>`, the record's `version` and versions statuses through a guarded update, then a commit.
 - **Sam connects the Microsoft 365 connector;** the next session after that reads the CPLLibrary folder, confirms the 16
   copies he made on 2026-10-08, and moves the three Drive-linked records and the six repo pieces to their SharePoint links
-  (a guarded update per record). The Summit film's v2 cuts go into the SharePoint Drafts folder.
+  (a guarded update per record). The Summit film's v3 cuts (S482) go into the SharePoint Drafts folder, Sam's by hand.
 - **PR 2, the move (call 5), after that:** remove the deliverable binaries from `main` (the five Title 5 files can go now;
   `.gitignore` `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's two
   player pages off the site, and add a guard test so a deliverable binary cannot be committed again. Then the vault's
