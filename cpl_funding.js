@@ -5734,8 +5734,6 @@
     var rec = { college: college, fiscal_year: fy, status: "self_attested", source: "self",
       coordinator_name: form.coordName, coordinator_title: form.coordTitle,
       attestor_name: form.name, attestor_title: form.title, attestor_email: form.email,
-      nc_awarded_count: form.count == null ? null : form.count,
-      attested_exhibits: form.exhibits || null, portfolio_course: form.course || null,
       lead_types: form.leadTypes && form.leadTypes.length ? form.leadTypes : null,
       lead_assignment: form.assignment || null, lead_meets: form.meets || null };
     NCATTEST_UI[college] = { open: true, submitting: true };
@@ -5766,11 +5764,9 @@
     var t = function (k) { return String(get(k) == null ? "" : get(k)).trim(); };
     var form = { coordName: t("coordName"), coordTitle: t("coordTitle"),
       name: t("name"), title: t("title"), email: t("email"),
-      course: t("course"), exhibits: t("exhibits"), count: null,
       leadTypes: (get("leadTypes") || []).filter(function (v) {
         return NC_LEAD_TYPES.some(function (o) { return o.val === v; });
       }), assignment: t("assignment"), meets: t("meets") };
-    var cnt = t("count");
     if (!form.coordName) return { error: "Please enter the Noncredit CPL Lead's name." };
     if (!form.coordTitle) return { error: "Please enter the Noncredit CPL Lead's title." };
     if (!form.leadTypes.length) return { error: "Please check what kind of employee the Noncredit CPL Lead is." };
@@ -5779,10 +5775,6 @@
     if (!form.name) return { error: "Please enter your name." };
     if (NC_ATTEST_TITLES.map(function (o) { return o.val; }).indexOf(form.title) === -1) return { error: "Please choose your title." };
     if (!OPTIN_EMAIL_RE.test(form.email)) return { error: "Please enter a valid college email address (name@college.edu)." };
-    if (cnt) {
-      if (!/^\d+$/.test(cnt) || Number(cnt) > 100000) return { error: "Please enter the count as a whole number, or leave it blank." };
-      form.count = Number(cnt);
-    }
     return { form: form };
   }
   // The CO's writes: Reject, Re-confirm, Remove, keyed by the row's own college
