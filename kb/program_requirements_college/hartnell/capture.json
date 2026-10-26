@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 112,
  "with_closed_list": 105,
- "started": "2026-10-26T08:29:05Z",
+ "started": "2026-10-26T11:35:34Z",
  "route": "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)",
  "coursedog": {
   "root": "https://hartnell.catalog.prod.coursedog.com",
@@ -345,11 +345,11 @@
     "name": "Public Health for Transfer Degree (AS-T)"
    },
    {
-    "code": "AS.RCP",
+    "code": "BS.RC",
     "name": "Respiratory Care"
    },
    {
-    "code": "BS.RC",
+    "code": "AS.RCP",
     "name": "Respiratory Care"
    },
    {
@@ -365,11 +365,11 @@
     "name": "Sociology for Transfer (AA-T)"
    },
    {
-    "code": "CT.SPA",
+    "code": "AA.SPA",
     "name": "Spanish"
    },
    {
-    "code": "AA.SPA",
+    "code": "CT.SPA",
     "name": "Spanish"
    },
    {
@@ -426,7 +426,7 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 103,
- "seconds": 893.2,
+ "seconds": 920.3,
  "found": 94,
  "by_method": {
   "no_closed_list": 7,
@@ -584,5 +584,5 @@
   "programs": 0,
   "list": []
  },
- "run": "40292405207"
+ "run": "40314109801"
 }

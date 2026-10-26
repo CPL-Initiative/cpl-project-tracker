@@ -191,18 +191,37 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
             # One unit figure the page prints over several subject lists, each "Complete ANY of the
             # following Courses" (Hartnell's General Studies, S487): the lists are one choice of n
             # units. Only lists the reading gave no figure of their own, and only two or more.
+            # with_floors (S489): lists that carry floors of their own under one total the page prints
+            # over them all (Hartnell's Liberal Arts 17924, "Complete a total of 18 units from List A,
+            # List B, and List C"); each floor stays on the pooled block, and a course listed twice once.
             n = _num(m.group("n"))
+            floors = bool(st.get("with_floors"))
             prefix = st.get("block_prefix") or ""
+            named = re.compile(st["block_pattern"]) if st.get("block_pattern") else None
             pool = [i for i, b in enumerate(out.get("blocks") or [])
-                    if b.get("rule") == "choose_units" and _num(b.get("minimum")) is None
-                    and not _span_of(b.get("stated"))[0] and (b.get("name") or "").startswith(prefix)]
+                    if b.get("rule") == "choose_units"
+                    and (floors or (_num(b.get("minimum")) is None and not _span_of(b.get("stated"))[0]))
+                    and (named.match(b.get("name") or "") if named else (b.get("name") or "").startswith(prefix))]
             tu = _span_of(prog.get("total_units"))
             if n is None or len(pool) < 2 or (tu[0] is not None and tu != (n, n)):
                 continue
             blocks = out["blocks"]
+            lows = [_span_of(blocks[i].get("stated"))[0] or _num(blocks[i].get("minimum")) for i in pool]
+            if floors and sum(v or 0 for v in lows) > n:
+                continue
+            courses, seen = [], set()
+            for i in pool:
+                for c in blocks[i].get("courses") or []:
+                    k = re.sub(r"\s+", "", (c.get("code") or "")).upper()
+                    if floors and k and k in seen:
+                        continue
+                    seen.add(k)
+                    courses.append(c)
             merged = {"name": st.get("name") or "Completion requirement", "rule": "choose_units",
-                      "minimum": n, "option_group": None, "stated": {"min": n, "max": n},
-                      "courses": [c for i in pool for c in blocks[i].get("courses") or []]}
+                      "minimum": n, "option_group": None, "stated": {"min": n, "max": n}, "courses": courses}
+            if floors:
+                merged["floors"] = [{"name": blocks[i].get("name"), "minimum": blocks[i].get("minimum"),
+                                     "stated": blocks[i].get("stated")} for i in pool]
             notes.append({"field": "blocks", "was": [blocks[i].get("name") for i in pool],
                           "now": merged["name"], "words": m.group(0).strip()})
             out["blocks"] = [merged if i == pool[0] else b for i, b in enumerate(blocks) if i not in pool[1:]]

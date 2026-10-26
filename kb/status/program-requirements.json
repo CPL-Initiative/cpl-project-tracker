@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-26T10:26:31Z",
-  "session": 488,
-  "moniker": "SkyThimbleberry",
+  "written_at": "2026-10-26T12:00:00Z",
+  "session": 489,
+  "moniker": "SkySnowberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_489_handoff.md",
+  "handoff": "docs/session_490_handoff.md",
   "next_step": {
-    "title": "Confirm the display build landed, then the Privacy UI pass",
-    "text": "The next session checks that the display build for Hartnell's pooled lists finished applying, merges this run's page read, and on October 27 takes the Privacy page's UI pass. Every Hartnell failure is now read; three wait on a reader change."
+    "title": "Apply the display build, then CalGETC's area totals",
+    "text": "The next session confirms the display build for Hartnell's Liberal Arts degree applied on main, then reads the CalGETC certificate's captured page and writes a reconcile step for its area totals. Two Hartnell failures wait on a reader change."
   },
   "calls": [
     {
@@ -172,6 +172,10 @@
     {
       "at": "2026-10-26T10:26:00Z",
       "text": "No harvest table moved this run; S488 read Hartnell's last eight failing pages and sorted each failure by its cause."
+    },
+    {
+      "at": "2026-10-26T12:00:00Z",
+      "text": "Hartnell's Liberal Arts: Pathway to Health Sciences degree passes: its three lists read as the one 18-unit choice the page prints, each list's own figure kept. Hartnell 81 of 94."
     }
   ],
   "headline": [
@@ -286,14 +290,14 @@
     {
       "day": "2026-10-26",
       "active": 20282,
-      "complete": 13183,
+      "complete": 13184,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-26T11:12:00Z"
+    "at": "2026-10-26T12:12:00Z"
   },
   "harvest": {
     "day": "2026-10-26",

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-459 document(s).
+460 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 490 | [Session 490 handoff: Hartnell's lists with floors under one total](../session_490_handoff.md) | 2026-10-26 |
 | 489 | [Session 489 handoff: Hartnell's last eight failing tabs, read](../session_489_handoff.md) | 2026-10-26 |
 | 488 | [Session 488 handoff: Hartnell's pooled subject lists](../session_488_handoff.md) | 2026-10-26 |
 | 487 | [Session 487 handoff: Hartnell's double-count words read as the overlap](../session_487_handoff.md) | 2026-10-26 |
