@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-26T12:00:00Z",
-  "session": 489,
-  "moniker": "SkySnowberry",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-10-26T15:20:53Z",
+  "session": 490,
+  "moniker": "SkyGooseberry",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_490_handoff.md",
+  "handoff": "docs/session_491_handoff.md",
   "next_step": {
-    "title": "Apply the display build, then CalGETC's area totals",
-    "text": "The next session confirms the display build for Hartnell's Liberal Arts degree applied on main, then reads the CalGETC certificate's captured page and writes a reconcile step for its area totals. Two Hartnell failures wait on a reader change."
+    "title": "CalGETC's area totals, then Music's repeat counts",
+    "text": "The next session reads the CalGETC certificate's captured page and writes a reconcile step for its area totals over sub-areas, then Music's repeat counts. Hartnell stands at 81 of 94, with its Liberal Arts display build applied on main."
   },
   "calls": [
     {
@@ -107,6 +107,30 @@
         "at": "2026-10-23",
         "words": "narrow"
       }
+    },
+    {
+      "title": "Do Hartnell's own double-count words read as the overlap for its local degrees?",
+      "text": "S486 read Hartnell's words, students can double-count required courses and courses for General Education, as the overlap your Sheet 82 ruling allowed for transfer degrees; three local degrees pass.",
+      "if_no_reply": "The reading stands, made on the recommendation.",
+      "link": "https://claude.ai/artifact/6SM1HwKbvPWLt5534vhcyV",
+      "link_text": "Open Sheet 131",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-26",
+        "words": "Keep, on Open Asks Sheet 131 card 3: the reading stands."
+      }
+    },
+    {
+      "title": "Does one total over lists that each carry a figure read as one choice with floors?",
+      "text": "S489 read Hartnell's Liberal Arts: Pathway to Health Sciences, 18 units from Lists A, B and C, as one choice of 18 with each list's figure as a floor; the degree passes.",
+      "if_no_reply": "The reading stands, made on the recommendation.",
+      "link": "https://claude.ai/artifact/6SM1HwKbvPWLt5534vhcyV",
+      "link_text": "Open Sheet 131",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-26",
+        "words": "Keep, on Open Asks Sheet 131 card 4: the reading stands."
+      }
     }
   ],
   "notes": {
@@ -176,6 +200,10 @@
     {
       "at": "2026-10-26T12:00:00Z",
       "text": "Hartnell's Liberal Arts: Pathway to Health Sciences degree passes: its three lists read as the one 18-unit choice the page prints, each list's own figure kept. Hartnell 81 of 94."
+    },
+    {
+      "at": "2026-10-26T15:30:00Z",
+      "text": "No harvest table moved this run; Sam kept S486's overlap reading and S489's floors (Sheet 131 cards 3 and 4). S490 built the Library's Regenerate and moved the CPL Opportunity page under library."
     }
   ],
   "headline": [
@@ -297,7 +325,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-26T12:12:00Z"
+    "at": "2026-10-27T05:12:00Z"
   },
   "harvest": {
     "day": "2026-10-26",

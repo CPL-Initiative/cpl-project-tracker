@@ -10,33 +10,33 @@
     "other": 150000
   },
   "summary": {
-    "files": 1288,
-    "bytes": 13091831,
+    "files": 1289,
+    "bytes": 13102650,
     "over_budget": 1,
-    "handoff_max": 490,
+    "handoff_max": 491,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59970,
+    "always_loaded_bytes": 59983,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59970,
+        "bytes": 59983,
         "over": 0
       },
       "other": {
         "files": 134,
-        "bytes": 4036139,
+        "bytes": 4038464,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9027,
+        "bytes": 8821,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2397980,
+        "bytes": 2400877,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 430492,
+        "bytes": 431147,
         "over": 1
       },
       "handoff": {
-        "files": 460,
-        "bytes": 3378534,
+        "files": 461,
+        "bytes": 3383669,
         "over": 0
       }
     },
@@ -59,12 +59,12 @@
       "kb_note_dialect": 1,
       "oversized_doc": 1,
       "house_voice": 1,
-      "vault_heavy_path": 195
+      "vault_heavy_path": 196
     },
     "vault": {
-      "files": 74780,
-      "bytes": 11303954361,
-      "heavy_bytes": 7887398163,
+      "files": 74800,
+      "bytes": 11332213434,
+      "heavy_bytes": 7915512240,
       "heavy_share": 0.698,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -85,6 +85,7 @@
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/.claude/worktrees/agent-a94d38b970ecb3852/kb/unclassified_fold",
         "cpl-project-tracker/.claude/worktrees/agent-a9eb10a7a2b070241/kb/unclassified_fold",
+        "cpl-project-tracker/.claude/worktrees/agent-a94d38b970ecb3852/prototype/funding_video/.narration",
         "cpl-project-tracker/prototype/landing_page_video",
         "cpl-project-tracker/.claude/worktrees/agent-a94d38b970ecb3852/prototype/landing_page_video",
         "cpl-project-tracker/.claude/worktrees/agent-a9eb10a7a2b070241/prototype/landing_page_video",
@@ -307,10 +308,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1607047758,
+        "bytes": 1607067786,
         "kind": "dir"
       },
-      "message": "directory totals 1,607,047,758 B inside the vault"
+      "message": "directory totals 1,607,067,786 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -481,6 +482,16 @@
         "kind": "dir"
       },
       "message": "directory totals 35,187,754 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": ".claude/worktrees/agent-a94d38b970ecb3852/prototype/funding_video/.narration",
+      "detail": {
+        "bytes": 28094049,
+        "kind": "dir"
+      },
+      "message": "directory totals 28,094,049 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

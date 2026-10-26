@@ -557,6 +557,34 @@ a turn ahead. `tests/public_library.test.js` (6e) fails a slide whose file is mi
 its size. CLAUDE.md's First Light rule names this page as its one departure. `cpl_memory`
 `sam-public-library-malone-look-2026-10-24`.
 
+## S490 (SkyGooseberry), 2026-10-26: Regenerate, documents on a record, and the CPL Opportunity page under the library
+
+- **One procedure for both kinds of visual.** Sam asked to regenerate a visual when he adds a note or a document, to start
+  one from an uploaded document, and whether the Library and CPL Opportunity procedures and sites should consolidate.
+  Regenerate on every record now carries the note, the documents (`sources`) and the request (`regen`); Start a piece
+  takes documents; a college page takes the MAP team's notes from `library/cpl-opportunity/notes/<slug>.json`. The college
+  page is one template for every college, so a note about one college needed a layer of its own; a change every college
+  needs still goes to the template.
+- **A draft needs somewhere to be read before it replaces a public copy.** For a Claude page that is a separate artifact
+  link; for a college's notes it is `<slug>.draft.json`, shown only with `?draft=1`. The card's *Replace the public copy*
+  records who approved it and when, so the run that publishes has the approval on the row.
+- **The builder's `b.notes` was taken.** `college_cpl_workbook.js` already keeps its data-gap messages in `b.notes`; the
+  team's notes are `b.teamNotes`. The first test run failed on `b.notes.map`, which is how it showed.
+- **A session cannot create a working scheduled task here.** `create_trigger` refused `connectors` ("not available for this
+  organization"), and without it the task stored no connectors and its session request carried `sources: []`, so its
+  sessions could reach neither the repos nor Supabase. S490 deleted it before its first firing; Sam creates the daytime
+  run on claude.ai with the paste in `scheduled_sessions.md`.
+- **Repointing public links waits for Pages.** The twelve college records' new address is its own receipt, applied after
+  the move merges and Pages serves `library/cpl-opportunity/`; until then the old address forwards, so no public link
+  points at a page not yet served.
+- **A page moved under `library/` meets the copied pages' tests.** `tests/library_pages.test.js` treats every folder under
+  `library/` as a `library_page.py` copy, so the live page is named and skipped there and guarded in
+  `tests/college_cpl_workbook.test.js`; `scripts/ui_pass.py` names a page by its first folder, so the moved page keeps
+  its ledger id `cpl-opportunity` by name.
+- **Sam's menu edits of the day never saved.** `cobi_nav`'s last write was 2026-10-22 (S448) when he asked why hidden
+  items still showed after a Pages deploy: the menu reads `cobi_nav` on every load, and saving it takes a reviewer
+  sign-in, never the team phrase.
+
 ## Moved from the lane (S490 SkyGooseberry, 2026-10-26)
 
 ## The ELL IET page is listed publicly (Sam, Open Asks Sheet 123 card 1, *list*, 13:17Z 2026-10-24)
