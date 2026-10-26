@@ -142,8 +142,7 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": [],
-   "ge_overlap": true
+   "careers": []
   },
   "blocks": [
    {
@@ -454,14 +453,123 @@
    "Requirements page only; no program outcomes or careers printed in this text."
   ]
  },
- "extracted_run": 40314109801,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_overlap",
+   "field": "course_units",
    "was": null,
-   "now": true,
-   "words": "Students can double-count required courses and courses for General Education"
+   "now": {
+    "TAC1": [
+     3,
+     3
+    ],
+    "TAC50": [
+     3,
+     3
+    ],
+    "TAC3": [
+     3,
+     3
+    ],
+    "TAC10": [
+     3,
+     3
+    ],
+    "TAC2": [
+     3,
+     3
+    ],
+    "TAC53": [
+     3,
+     3
+    ],
+    "TAC30": [
+     3,
+     3
+    ],
+    "TAC20": [
+     3,
+     3
+    ],
+    "TAC21": [
+     3,
+     3
+    ],
+    "TAC22": [
+     3,
+     3
+    ],
+    "TAC24": [
+     3,
+     3
+    ],
+    "TAC25": [
+     3,
+     3
+    ],
+    "TAC54": [
+     3,
+     3
+    ],
+    "TAC26": [
+     3,
+     3
+    ],
+    "TAC27": [
+     3,
+     3
+    ],
+    "TAC28": [
+     3,
+     3
+    ],
+    "TAC29": [
+     3,
+     3
+    ],
+    "TAC40": [
+     3,
+     3
+    ],
+    "TAC91": [
+     4,
+     4
+    ],
+    "ETH7": [
+     3,
+     3
+    ],
+    "TAC11": [
+     3,
+     3
+    ],
+    "TAC15": [
+     3,
+     3
+    ],
+    "TAC23": [
+     3,
+     3
+    ],
+    "TAC55": [
+     3,
+     3
+    ],
+    "TAC92": [
+     3,
+     3
+    ],
+    "TAC51": [
+     3,
+     3
+    ],
+    "TAC58": [
+     3,
+     3
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": 39949570443
+ "read_run": 39931703521
 }

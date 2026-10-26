@@ -130,8 +130,7 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": [],
-   "ge_overlap": true
+   "careers": []
   },
   "blocks": [
    {
@@ -231,14 +230,51 @@
    "No program learning outcomes or careers appear in the provided text (General and Degree Map tabs not included)."
   ]
  },
- "extracted_run": 40314109801,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_overlap",
+   "field": "course_units",
    "was": null,
-   "now": true,
-   "words": "Students can double-count required courses and courses for General Education"
+   "now": {
+    "ABT90": [
+     3,
+     3
+    ],
+    "CHM22": [
+     4,
+     4
+    ],
+    "CHM1A": [
+     5,
+     5
+    ],
+    "ABT53": [
+     3,
+     3
+    ],
+    "ECONC2001": [
+     3,
+     3
+    ],
+    "STATC1000": [
+     4,
+     4
+    ],
+    "ABT92": [
+     3,
+     3
+    ],
+    "MFGT71": [
+     3,
+     3
+    ],
+    "CHM12A": [
+     5,
+     5
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": 39949570443
+ "read_run": 39931703521
 }
