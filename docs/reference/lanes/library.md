@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-10-25
+updated: 2026-10-26
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -52,28 +52,10 @@ link set public, which the switch asks the lister to confirm. Schema `kb/supabas
 `tests/public_library.test.js`; `npm run a11y -- public-library public-library-dark` (the targets' names; a bare
 `library` is not one).
 
-✅ **The page in Malone's look (Sam, 2026-10-24, S467; built the same day, mock-up
-https://claude.ai/artifact/1eotDvtmj56cHMEFP363T2).** His words: *"see the page Malone designed with you for the AI
-Outcomes to Skills project. I like the look of it and it seems consistent with the CO webpages. Can you depart from our
-First Light motif and redesign the CPL Public Library based on Malone's."* The page takes map.rccd.edu/CPL-AI's look: a
-navy Georgia title over a gold rule, the search and **For** beside it in the hero, a photo in an arc on the right, white
-cards on a pale blue ground, a navy foot; colors only as tokens in the two `:root` blocks (the test fails a raw color
-anywhere else). From his markup of the old page: the eyebrow, the description, the kind and audience word filters, the
-*The library* label and the header's link to the page itself are gone; **For** sits right of the search and groups its
-names by kind when there is more than one; **Sort** opens on *Most recent* (then *Oldest first*, *Title A–Z*; undated
-pieces last); a card shows one line of its occasion and two of its summary, ending in an ellipsis, with the whole text
-in the page for search and screen readers, and the title opens the piece. **Light by default:** no device-setting
-query anywhere; dark only from the reader's own Dark click, here or in COBI (the shared `cpl_theme`). The header is the
-public header's copy restyled to the page; its other copies (`CPLBrain/04-projects/cpl-initiative/public-header/`) still
-follow the device setting. **The photo cycles** through every `.hero-slide` the page lists, one every seven seconds,
-with *Pause photos* beside it; with one photo, or for a reader who asks for reduced motion, nothing moves. It shows
-eleven (S468): the student from Malone's page first (`library/photos/hero-student-1.jpg`), then ten Career Education
-toolkit photos Sam supplied (LATTC Architecture, Construction, Fashion, InfoCommTech and Transportation; Sequoia Welding
-twice; CCD Advanced Manufacturing, BioTech and Health). Every slide is a 4:3 JPEG at most 1,200 pixels wide with its
-people near the middle, so one `object-position: 50% 50%` serves them all; only the first loads up front, each next one
-a turn ahead. `tests/public_library.test.js` (6e) fails a slide whose file is missing, is not 4:3, or whose tag misstates
-its size. CLAUDE.md's First Light rule names this page as its one departure. `cpl_memory`
-`sam-public-library-malone-look-2026-10-24`.
+✅ **The page in Malone's look (Sam, 2026-10-24, S467):** map.rccd.edu/CPL-AI's look, Light by default (dark only from
+the reader's own Dark click), eleven hero photos cycling with *Pause photos*; CLAUDE.md's First Light rule names it as its
+one departure. The full record, his words and the photo list moved verbatim to
+[`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S483, later)*.
 
 ✅ **The team phrase lists publicly too (Sam, 2026-10-23 18:50Z, his own call, reversing
 2026-10-20; built S458):** *"can you set the Library page to be editable with Team phrase and not
@@ -203,6 +185,28 @@ CCR names one. Topics: the tables of contents of DDS's DSPT Year 1 and Year 2 st
 not resolve). Draft: https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa (CPLBrain#487); the record carries it as *Draft for
 review* (receipt `kb/receipts/cpl_library_dsp_v2_2026-10-26_s483.sql`, run 40263656296, read back).
 **Version 2 is the public copy** (Sam, Sheet 129 card 3, *replace*, 03:53Z 2026-10-26): `library/dsp-credit-starting-points/` rewritten from it, the record at version 2 (same receipt).
+
+## Links, Ask Sierra and the people on each card (Sam, 2026-10-26; built S483)
+
+- **One Links menu.** The public header (`CPLBrain/04-projects/cpl-initiative/public-header/`) puts its links behind one
+  word, **Links**, each with a gray line saying what it is, CPL and MAP spelled out (*"so new-to-CPL users will not be
+  immediately lost in our acronyms"*). `library/` (its adapted copy), `cpl-opportunity/` and every `library/<slug>/`
+  carry it. Tests: `library_pages` (6), `public_library`.
+- **Ask Sierra on every visual** (*"opens the same way it does in the Public Library"*): `scripts/library_page.py` adds
+  `sierra/sidebar.js` to every `library/<slug>/` copy, its bar on the header's tokens; `cpl-opportunity/` loads it too.
+  Test: `library_pages` (7).
+- **Who is in the conversation.** `agency-visual/build.py` paints a card's `contacts`: name, role, organization, email as
+  a mailto link. Sam ruled everyone may be named publicly, with email (`cpl_memory`
+  `sam-s483-visual-links-sierra-contacts-2026-10-26`); `library_pages` (3) allows an address only there. The two
+  `make_brief.py` read `data/contacts_2026-10-26.json` (Supabase read 11:58Z), at most eight a card. ELL IET: 50 on 8
+  cards (8 project contacts from EDD's July 2023 notice, 19 CPL Coordinators, 19 MAP Faculty Leads standing in where a
+  college records no coordinator, 4 faculty in an example course's subject). DSP: 13 on 4 of 5 cards (2 coordinators,
+  11 Faculty Leads); no vault file names a DDS, Aging or LWDA contact. Three colleges record neither: Butte and Lake
+  Tahoe (ELL), Taft (DSP, so its card names no one). No store records a Noncredit CPL Lead yet (MAP's College Contacts
+  has no such field; `cpl_funding_nc_attestation` held 0 rows).
+- **The page cap again.** With the contacts the ELL IET page reads 30,975 characters, so this branch's `cpl-chat` reads
+  31,000 a page and 37,000 in all. Sheet 130's deploy (Sam, *deploy*, 12:32Z) ships 26,000 from `main`; this raise
+  needs a second deploy after #2466 merges.
 
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 

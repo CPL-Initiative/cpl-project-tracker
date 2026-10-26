@@ -11,10 +11,16 @@
 //   (1) a whole document: doctype, lang, charset, viewport, one title, the seal as its icon;
 //   (2) the public header and its Light and Dark words (Sam, 2026-10-21), and the page opens
 //       Light unless the reader picked Dark (Sam, Open Asks Sheet 126 card 2);
-//   (3) self-contained: no script from elsewhere, no Claude runtime call, no email address;
+//   (3) self-contained: no script but the library's own Sierra, no Claude runtime call, and no
+//       email address but the people a card names, each its own mailto link (Sam, 2026-10-26);
 //   (4) the address Sierra reads, and the slug a Library record can carry;
 //   (5) the script: the fragment's head lines move into <head>, the body stays as it was,
-//       a whole document gives the same page, and a page with no title or a bad slug stops.
+//       a whole document gives the same page, and a page with no title or a bad slug stops;
+//   (6) the header's links sit behind one Links word, each with a line in gray saying what it
+//       is (Sam, 2026-10-26: "so new-to-CPL users will not be immediately lost in our
+//       acronyms"), on these pages and on the CPL opportunity visual;
+//   (7) the Ask Sierra chip, opening the library's side bar (Sam, 2026-10-26: "on all visuals
+//       and opens the same way it does in the Public Library"), on the same pages.
 // Run from repo root: `node tests/library_pages.test.js`.
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -60,8 +66,28 @@ for (const p of pages) {
   check(`(2) ${p.slug}: ⭐ opens Light unless the reader picked Dark, set in <head> before its styles`,
     head.indexOf("<script>") > -1 && head.indexOf("<script>") < head.indexOf("<style") &&
     theme(null) === "light" && theme("system") === "light" && theme("dark") === "dark" && theme("light") === "light");
-  check(`(3) ${p.slug}: self-contained — no script from elsewhere, no Claude runtime call, no email address`,
-    !/<script\b[^>]*\bsrc=/i.test(h) && !/window\.claude/.test(h) && !/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i.test(h.replace(/data:[^"]+/g, "")));
+  const srcs = (h.match(/<script\b[^>]*\bsrc="[^"]*"/gi) || []).map((t) => t.match(/src="([^"]*)"/)[1]);
+  check(`(3) ${p.slug}: self-contained — no script but the library's own Sierra, no Claude runtime call`,
+    srcs.every((u) => u === "../../sierra/sidebar.js") && !/window\.claude/.test(h),
+    "scripts: " + srcs.join(", "));
+  // An address appears only among the people a card names (Sam, 2026-10-26: everyone may be
+  // named publicly, with email; cpl_memory sam-s483-visual-links-sierra-contacts-2026-10-26),
+  // each the visible text of its own mailto link. Anywhere else on the page it is still a leak.
+  const EMAIL = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i;
+  const cd = new JSDOM(h).window.document;
+  const blocks = Array.from(cd.querySelectorAll("article.card .contacts"));
+  const mails = blocks.flatMap((b) => Array.from(b.querySelectorAll('a[href^="mailto:"]')));
+  const linked = mails.every((a) => EMAIL.test(a.textContent) && a.getAttribute("href") === "mailto:" + a.textContent.trim());
+  const loose = blocks.filter((b) => {
+    const c = b.cloneNode(true);
+    c.querySelectorAll('a[href^="mailto:"]').forEach((a) => a.remove());
+    return EMAIL.test(c.innerHTML);
+  }).length;
+  blocks.forEach((b) => b.remove());
+  const rest = cd.documentElement.outerHTML.replace(/data:[^"]+/g, "");
+  check(`(3) ${p.slug}: ⭐ no email address but a card's named contacts, each its own mailto link`,
+    linked && !loose && !EMAIL.test(rest),
+    JSON.stringify({ blocks: blocks.length, mails: mails.length, linked, loose, elsewhere: (rest.match(EMAIL) || [""])[0] }));
   check(`(4) ${p.slug}: a Library slug, at the address Sierra reads`,
     /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(p.slug) &&
     /^https:\/\/cpl-initiative\.github\.io\/cpl-project-tracker\/library\/[a-z0-9-]+\/?$/.test(
@@ -79,7 +105,11 @@ for (const p of pages) {
   const built = py(`print(m.build('a-piece', open(${JSON.stringify(src)}).read()), end='')`);
   check("(5) ⭐ the fragment's head lines move into <head>; the rest stays in <body> as it was",
     /<head>\n<meta charset="utf-8">\n<meta name="viewport"[^\n]*>\n<script>[^\n]*data-theme[^\n]*<\/script>\n<title>A Piece<\/title>\n<meta name="claude:viewport-fit-sides" content="cover">\n<link rel="stylesheet"/.test(built) &&
-    /<body>\n<style>body\{color:red\}<\/style>\n<main><h1>A Piece<\/h1><\/main>\n<\/body>/.test(built));
+    /<body>\n<style>body\{color:red\}<\/style>\n<main><h1>A Piece<\/h1><\/main>\n<!-- Ask Sierra[^\n]*-->\n<script src="\.\.\/\.\.\/sierra\/sidebar\.js" defer><\/script>\n<\/body>/.test(built));
+  check("(7) ⭐ a page the script writes loads the library's Ask Sierra script, deferred, once, last in <body>, and maps the bar onto the header's tokens",
+    (built.match(/<script src="\.\.\/\.\.\/sierra\/sidebar\.js" defer><\/script>/g) || []).length === 1 &&
+    /<script src="\.\.\/\.\.\/sierra\/sidebar\.js" defer><\/script>\n<\/body>\n<\/html>\n$/.test(built) &&
+    /<style>:root\{--sierra-bar-bg:var\(--cplh-bg\)/.test(built.slice(0, built.indexOf("</head>"))));
   const whole = path.join(tmp, "whole.html");
   fs.writeFileSync(whole, '<!doctype html><html><head><meta charset=utf8><style>:root{color-scheme:light}</style></head><body>\n' + frag + '\n\n</body></html>');
   check("(5) a whole document, as Artifact read hands it back, gives the same page",
@@ -89,6 +119,84 @@ for (const p of pages) {
   try { execFileSync("python3", ["scripts/library_page.py", "Bad Slug", src], { cwd: ROOT, encoding: "utf8", stdio: "pipe" }); } catch (e) { badSlug = /not a Library slug/.test(String(e.stderr)); }
   check("(5) a page with no title, or a slug that is not a Library slug, stops the script", noTitle && badSlug);
   fs.rmSync(tmp, { recursive: true, force: true });
+}
+
+// (6) The header's Links word, on every page that carries the public header from header.html:
+// the Library's own pages and the CPL opportunity visual (the library's adapted copy is
+// checked in public_library.test.js).
+const HEADERED = pages.map((p) => ({ name: "library/" + p.slug, html: p.html }))
+  .concat([{ name: "cpl-opportunity", html: fs.readFileSync(path.join(ROOT, "cpl-opportunity", "index.html"), "utf8") }]);
+const words = (t) => t.trim().split(/\s+/).filter(Boolean).length;
+for (const p of HEADERED) {
+  const blockHtml = (p.html.match(/<!-- cpl-public-header:start[\s\S]*?<!-- cpl-public-header:end -->/) || [])[0] || "";
+  const dom = new JSDOM("<!doctype html><html><head></head><body>" + blockHtml +
+    '<main><p>Page</p><button type="button" id="elsewhere">Elsewhere</button></main></body></html>',
+    { url: "https://cpl-initiative.github.io/cpl-project-tracker/x/", runScripts: "dangerously" });
+  const w = dom.window, d = w.document;
+  const word = d.querySelector(".cplh button[data-cplh-links]");
+  const panel = word && d.getElementById(word.getAttribute("aria-controls"));
+  const nav = d.querySelector('.cplh nav[aria-label="CPL pages"]');
+  const links = nav ? Array.from(nav.querySelectorAll("a")) : [];
+  check(`(6) ${p.name}: ⭐ the links sit behind one word, Links: a button, collapsed, controlling a hidden panel`,
+    !!word && word.textContent.trim() === "Links" && word.getAttribute("type") === "button" &&
+    word.getAttribute("aria-expanded") === "false" && !!panel && panel.hidden && nav.contains(word) &&
+    d.querySelectorAll("[data-cplh-links]").length === 1 && links.length >= 5 && links.every((a) => panel.contains(a)));
+  const described = links.map((a) => {
+    const el = d.getElementById(a.getAttribute("aria-describedby") || "");
+    return { name: a.textContent.trim(), ok: !!el && el.classList.contains("cplh-desc") && el.parentNode === a.parentNode &&
+      words(el.textContent) >= 4 && words(el.textContent) <= 14, text: el ? el.textContent.trim() : "" };
+  });
+  check(`(6) ${p.name}: ⭐ every link carries a line saying what it is, beside it and named as its description, under ~12 words`,
+    described.length >= 5 && described.every((x) => x.ok), described.filter((x) => !x.ok).map((x) => x.name).join(", "));
+  const desc = (name) => (described.find((x) => x.name === name) || {}).text || "";
+  check(`(6) ${p.name}: the lines spell out the acronyms: CPL is credit for prior learning, MAP the Mapping Articulated Pathways platform`,
+    /credit for prior learning \(CPL\)/i.test(desc("CPL Fact Sheet")) && /Mapping Articulated Pathways \(MAP\) platform/.test(desc("MAP")) &&
+    !/MAP Initiative|Military Articulation Platform/.test(blockHtml));
+  check(`(6) ${p.name}: the panel counts its padding and border in its width, so at 390px it stays inside the window (measured: without it, 18px past the left edge)`,
+    /\.cplh-panel\{box-sizing:border-box;[^}]*right:max\(16px,[^}]*width:min\(38rem,calc\(100% - 32px\)\)/.test(blockHtml) && /\.cplh-in\{position:relative;/.test(blockHtml));
+  check(`(6) ${p.name}: the gray line has its own token, set for Light and for Dark`,
+    /\.cplh-desc\{color:var\(--cplh-muted\)/.test(blockHtml) &&
+    /:root\{[^}]*--cplh-muted:#5C5C55/.test(blockHtml) && /:root\[data-theme="dark"\]\{[^}]*--cplh-muted:#B4B1A8/.test(blockHtml));
+  if (word && panel) {
+    word.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+    const opened = word.getAttribute("aria-expanded") === "true" && !panel.hidden;
+    links[2].focus();
+    d.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    const escaped = word.getAttribute("aria-expanded") === "false" && panel.hidden && d.activeElement === word;
+    word.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+    d.getElementById("elsewhere").dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+    const outside = panel.hidden && word.getAttribute("aria-expanded") === "false";
+    word.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+    links[links.length - 1].dispatchEvent(new w.FocusEvent("focusout", { bubbles: true, relatedTarget: d.getElementById("elsewhere") }));
+    const tabbed = panel.hidden;
+    word.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+    links[0].dispatchEvent(new w.FocusEvent("focusout", { bubbles: true, relatedTarget: links[1] }));
+    const stays = !panel.hidden;
+    d.querySelector('[data-cplh-theme="dark"]').dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+    const themeStill = d.documentElement.getAttribute("data-theme") === "dark";
+    check(`(6) ${p.name}: ⭐ Links opens the list; Escape shuts it and hands focus back; a click outside or Tab past it shuts it; moving within it does not; the theme words still work`,
+      opened && escaped && outside && tabbed && stays && themeStill,
+      JSON.stringify({ opened, escaped, outside, tabbed, stays, themeStill }));
+  }
+  dom.window.close();
+}
+
+// (7) The Ask Sierra chip on every visual: the library's script, at the right depth, with the
+// bar's look mapped (every token sidebar.js reads, except its width and its heading font).
+{
+  const BAR = fs.readFileSync(path.join(ROOT, "sierra", "sidebar.js"), "utf8");
+  const used = Array.from(new Set((BAR.match(/var\(--sierra-bar-[a-z-]+/g) || []).map((t) => t.slice(4))))
+    .filter((t) => t !== "--sierra-bar-w" && t !== "--sierra-bar-head-font");
+  for (const p of HEADERED) {
+    const src = p.name === "cpl-opportunity" ? "../sierra/sidebar.js" : "../../sierra/sidebar.js";
+    const tag = '<script src="' + src + '" defer></script>';
+    const missing = used.filter((t) => p.html.indexOf(t + ":") < 0);
+    check(`(7) ${p.name}: ⭐ loads ${src} once, deferred, after the page's own content`,
+      p.html.split(tag).length === 2 && p.html.indexOf(tag) > p.html.lastIndexOf("</main>"));
+    check(`(7) ${p.name}: maps the bar's tokens onto its own, no raw colors, and keeps room for the chip below its last line`,
+      used.length >= 8 && !missing.length && !/--sierra-bar-[a-z-]+:\s*#/.test(p.html) && /html\.sbar-chip-on (body|main) ?\{ ?padding-bottom: ?(7[2-9]|8\d|9\d)px/.test(p.html),
+      "missing: " + missing.join(", "));
+  }
 }
 
 let pass = 0;

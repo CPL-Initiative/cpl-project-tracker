@@ -126,6 +126,39 @@ block("(2d)", function () {
   });
   check("(2d) both logos carry alt text, one per theme", (PAGE.match(/<img class="cplh-(light|dark)" src="[^"]+" alt="[^"]{20,}"/g) || []).length === 2);
   check("(2d) a light and a dark control, sharing COBI's cpl_theme", /data-cplh-theme="light"/.test(PAGE) && /data-cplh-theme="dark"/.test(PAGE) && /var KEY = "cpl_theme"/.test(PAGE));
+  // The links behind one Links word, each with a line in gray saying what it is (Sam, 2026-10-26:
+  // "so new-to-CPL users will not be immediately lost in our acronyms"). Driven on the header alone.
+  const HDR = (PAGE.match(/<!-- cpl-public-header:start[\s\S]*?<!-- cpl-public-header:end -->/) || [])[0] || "";
+  const hd = new JSDOM("<!doctype html><html><head></head><body>" + HDR + '<main><button type="button" id="elsewhere">x</button></main></body></html>',
+    { url: "https://cpl-initiative.github.io/cpl-project-tracker/library/", runScripts: "dangerously" });
+  const hw = hd.window, d = hw.document;
+  const word = d.querySelector(".cplh button[data-cplh-links]");
+  const panel = word && d.getElementById(word.getAttribute("aria-controls"));
+  const links = Array.from(d.querySelectorAll('.cplh nav[aria-label="CPL pages"] a'));
+  check("(2d) ⭐ the links sit behind one word, Links, an underlined word button, collapsed over a hidden panel",
+    !!word && word.textContent.trim() === "Links" && word.classList.contains("word") && word.getAttribute("aria-expanded") === "false" &&
+    !!panel && panel.hidden && links.length === 5 && links.every(function (a) { return panel.contains(a); }));
+  const bad = links.filter(function (a) {
+    const el = d.getElementById(a.getAttribute("aria-describedby") || "");
+    const n = el ? el.textContent.trim().split(/\s+/).length : 0;
+    return !el || !el.classList.contains("cplh-desc") || el.parentNode !== a.parentNode || n < 4 || n > 14;
+  });
+  check("(2d) ⭐ every link carries a line saying what it is, named as its description, under ~12 words", !bad.length,
+    bad.map(function (a) { return a.textContent; }).join(", "));
+  check("(2d) the line is the page's muted gray, on its surface, in a panel that fits the window",
+    /\.cplh-desc \{ color: var\(--muted\);/.test(PAGE) && /\.cplh-panel \{[^}]*width: min\(38rem, calc\(100% - var\(--gutter-l\) - var\(--gutter-r\)\)\);[^}]*background: var\(--surface\);/.test(PAGE));
+  if (word && panel && links.length) {
+    word.dispatchEvent(new hw.MouseEvent("click", { bubbles: true }));
+    const opened = word.getAttribute("aria-expanded") === "true" && !panel.hidden;
+    links[1].focus();
+    d.dispatchEvent(new hw.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    const escaped = panel.hidden && d.activeElement === word;
+    word.dispatchEvent(new hw.MouseEvent("click", { bubbles: true }));
+    d.getElementById("elsewhere").dispatchEvent(new hw.MouseEvent("click", { bubbles: true }));
+    check("(2d) Links opens the list, Escape shuts it and hands focus back, a click outside shuts it",
+      opened && escaped && panel.hidden, JSON.stringify({ opened: opened, escaped: escaped }));
+  }
+  hw.close();
 });
 
 // ── (3) The Library tab's switch ─────────────────────────────────────────

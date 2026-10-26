@@ -839,7 +839,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `sierra/art/*.webp` | none found | committed by: `sierra-art-fetch.yml` |
 | `sierra/art/fetched.json` | none found | scripts: `scripts/fetch_sierra_art.py` · committed by: `sierra-art-fetch.yml` |
 | `sierra/index.html` | scripts: `scripts/ui_pass.py` | — |
-| `sierra/sidebar.js` | tabs: `library` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `library/index.html` | — |
+| `sierra/sidebar.js` | tabs: `library` · pages: `cpl-opportunity/index.html`, `fact-sheet/index.html`, `funding-model/index.html`, `library/dsp-credit-starting-points/index.html`, `library/ell-iet-cpl-starting-points/index.html`, `library/index.html` | — |
 | `sierra/sierra.js` | pages: `sierra/index.html` | — |
 | `sierra_training.js` | pages: `CPL_Dashboard.html` | — |
 | `statewide/_probe_exhibit_authority.py` | workflows: `statewide-probe-authority.yml` | — |
@@ -1197,4 +1197,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 102 Supabase tables · 42 RPCs · 9 edge functions · 715 file
-datasets · 184 external services · 472 consumers · 58 workflows · 38 tabs.
+datasets · 184 external services · 474 consumers · 58 workflows · 38 tabs.

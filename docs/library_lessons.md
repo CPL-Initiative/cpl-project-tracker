@@ -512,3 +512,47 @@ the revision to whoever asked before it replaces a public copy, adds the version
 on a Refresh-now button:** the worker could fire the routine on demand, but that needs a stored trigger token and spends a
 session per press, a cost and permission call for Sam; until he asks, the queue and the paste carry it. Test:
 `tests/library.test.js` (13).
+
+## S483 (SkyCoyoteMint), 2026-10-26, later: one Links menu, Ask Sierra on every visual, the people on each card
+
+**Learned.** Naming people made the ELL IET page Sierra's longest read again: 30,975 characters, past the 26,000 the repo
+had raised the cap to that morning, so `tests/sierra_library.test.js` caught a second cut. The cap now reads 31,000 a page
+and 37,000 in all; Sam answered Sheet 130 *deploy* at 12:32Z, and that deploy ships 26,000 from `main`, so this raise needs a second
+deploy after #2466 merges (at 20,000 Sierra would lose three grantee cards whole). The page test's "no email address" check guarded against a leaked address.
+Sam's ruling makes a card's contacts the one place an address may appear, so the check now allows one only as the
+visible text of its own mailto link inside a card's contacts block; an address planted anywhere else still fails it. The
+ELL next steps now name the people on the card, and the Sierra test had pinned the old wording.
+
+**State.** The lane's new section holds the three changes and the counts. Both claude.ai originals match their vault
+pages again (DSP Credit Starting Points and ELL IET Version 2, republished between 12:22Z and 12:24Z, capabilities unchanged), and
+`library/<slug>/` carries the same pages through `scripts/library_page.py`.
+
+**Next.** Contacts for Butte, Lake Tahoe and Taft, and a DDS, Aging or LWDA contact for the DSP page, come from a person
+who knows them; a Noncredit CPL Lead waits on MAP adding the role.
+
+## Moved from the lane (S483, later)
+
+The library lane ran past its 20,000-byte budget again; this finished section left it verbatim, a pointer in its place.
+
+✅ **The page in Malone's look (Sam, 2026-10-24, S467; built the same day, mock-up
+https://claude.ai/artifact/1eotDvtmj56cHMEFP363T2).** His words: *"see the page Malone designed with you for the AI
+Outcomes to Skills project. I like the look of it and it seems consistent with the CO webpages. Can you depart from our
+First Light motif and redesign the CPL Public Library based on Malone's."* The page takes map.rccd.edu/CPL-AI's look: a
+navy Georgia title over a gold rule, the search and **For** beside it in the hero, a photo in an arc on the right, white
+cards on a pale blue ground, a navy foot; colors only as tokens in the two `:root` blocks (the test fails a raw color
+anywhere else). From his markup of the old page: the eyebrow, the description, the kind and audience word filters, the
+*The library* label and the header's link to the page itself are gone; **For** sits right of the search and groups its
+names by kind when there is more than one; **Sort** opens on *Most recent* (then *Oldest first*, *Title A–Z*; undated
+pieces last); a card shows one line of its occasion and two of its summary, ending in an ellipsis, with the whole text
+in the page for search and screen readers, and the title opens the piece. **Light by default:** no device-setting
+query anywhere; dark only from the reader's own Dark click, here or in COBI (the shared `cpl_theme`). The header is the
+public header's copy restyled to the page; its other copies (`CPLBrain/04-projects/cpl-initiative/public-header/`) still
+follow the device setting. **The photo cycles** through every `.hero-slide` the page lists, one every seven seconds,
+with *Pause photos* beside it; with one photo, or for a reader who asks for reduced motion, nothing moves. It shows
+eleven (S468): the student from Malone's page first (`library/photos/hero-student-1.jpg`), then ten Career Education
+toolkit photos Sam supplied (LATTC Architecture, Construction, Fashion, InfoCommTech and Transportation; Sequoia Welding
+twice; CCD Advanced Manufacturing, BioTech and Health). Every slide is a 4:3 JPEG at most 1,200 pixels wide with its
+people near the middle, so one `object-position: 50% 50%` serves them all; only the first loads up front, each next one
+a turn ahead. `tests/public_library.test.js` (6e) fails a slide whose file is missing, is not 4:3, or whose tag misstates
+its size. CLAUDE.md's First Light rule names this page as its one departure. `cpl_memory`
+`sam-public-library-malone-look-2026-10-24`.

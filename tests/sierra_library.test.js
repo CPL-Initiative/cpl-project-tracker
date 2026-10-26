@@ -118,7 +118,7 @@ const slugs = (q, colleges) => L.matchLibrary(q, PIECES, colleges || []).map((p)
   const text = L.libraryPageText(html);
   check("(5) ⭐ the ELL IET page's text carries its title, its projects and colleges, and its practical next steps, whole",
     /Fresno Area Workforce Investment Corporation/.test(text) && /Credit already articulated in MAP at Fresno City College/.test(text) &&
-    /Where credit for ELL IET training could start/.test(text) && /Practical next steps\nSend each project the card above/.test(text) &&
+    /Where credit for ELL IET training could start/.test(text) && /Practical next steps\nSend each project its card, so the first conversation is between the people it names/.test(text) &&
     /This is a preliminary scan, not an articulation\./.test(text) && text.indexOf(" …") < 0);
   check("(5) without its head, styles, scripts or the public header: its links, its logo and its theme words",
     !/<|\{|localStorage|Find your college|data:image/.test(text) && !/cplh/.test(text) && !/^Theme$|^Light$|^Dark$|Light Dark/m.test(text));
