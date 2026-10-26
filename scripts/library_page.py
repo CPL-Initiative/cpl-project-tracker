@@ -16,9 +16,10 @@ returns it. Either form works: the fragment the artifact holds (a <title>, its s
 and its body, no <html>) or a whole document. The script writes
 library/<SLUG>/index.html: the page's own head lines (title, meta, font links) in a
 real <head>, the rest unchanged in <body>, with the claude.ai frame's base rules the
-page was drawn against and no color of their own, and a theme line that opens it
-Light unless the reader picked Dark. It writes nothing else and fetches
-nothing.
+page was drawn against and no color of their own, a theme line that opens it
+Light unless the reader picked Dark, and the Ask Sierra chip the CPL Library carries
+(sierra/sidebar.js, its look mapped onto the public header's tokens). It writes
+nothing else and fetches nothing.
 
 Sierra reads a page there (cpl-chat's libraryHosted), so what the piece says reaches
 her answers. Test: tests/library_pages.test.js.
@@ -39,6 +40,22 @@ BASE = ("<style>:root{box-sizing:border-box}html{scroll-padding-top:env(safe-are
 # Dark words write the same cpl_theme choice.
 THEME = ('<script>(function(){var t=null;try{t=localStorage.getItem("cpl_theme")}catch(e){}'
          'document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")})()</script>')
+# Ask Sierra (Sam, 2026-10-26: "Make sure the Ask Sierra chip in lower corner is on all visuals and
+# opens the same way it does in the Public Library"): the library's own script, sierra/sidebar.js, two
+# folders up, so the chip opens the same side bar beside the page. The bar takes the page's look
+# through its --sierra-bar-* tokens, mapped here onto the public header's (every Library page carries
+# the header, and its tokens follow Light and Dark); where a token is missing the bar falls back to
+# the browser's system colors. The bar's heading takes the page's own font. The page's foot keeps
+# room below its last line for the chip (16px from the bottom, 48px tall).
+SIERRA_LOOK = ("<style>:root{--sierra-bar-bg:var(--cplh-bg);--sierra-bar-ink:var(--cplh-fg);"
+               "--sierra-bar-heading:var(--cplh-strong);--sierra-bar-link:var(--cplh-link);"
+               "--sierra-bar-line:var(--cplh-line);--sierra-bar-focus:var(--cplh-link);"
+               "--sierra-bar-chip-bg:var(--cplh-link);--sierra-bar-chip-ink:var(--cplh-bg);"
+               "--sierra-bar-shadow:var(--cplh-shadow)}"
+               "html.sbar-chip-on body{padding-bottom:72px}</style>")
+SIERRA = ("<!-- Ask Sierra: a chip in the bottom-right corner opens Sierra in a side bar, as on the"
+          " CPL Library. -->\n"
+          '<script src="../../sierra/sidebar.js" defer></script>')
 HEAD_LINE = re.compile(r"^\s*(<title>.*?</title>|<meta\b[^>]*>|<link\b[^>]*>)\s*$", re.I)
 
 
@@ -70,9 +87,11 @@ def build(slug, src):
         f"<!-- The CPL Library's public copy of {slug}; the claude.ai artifact is the editable"
         " original. Rebuilt by scripts/library_page.py; edit the source, never this file. -->",
         BASE,
+        SIERRA_LOOK,
         "</head>",
         "<body>",
         *lines,
+        SIERRA,
         "</body>",
         "</html>",
         "",

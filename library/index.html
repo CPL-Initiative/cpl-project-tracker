@@ -139,21 +139,30 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
      this page: the look of Malone's page, Light unless the reader picks Dark, and no link to the
      page itself, per Sam's markup of 2026-10-24; logos from ../sierra/) -->
 <style>
-.cplh { background: var(--surface); border-bottom: 1px solid var(--header-line); color: var(--ink); font-size: .95rem; line-height: 1.4; }
-.cplh-in { min-height: 76px; padding-block: 10px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 32px; }
+.cplh { position: relative; z-index: 50; background: var(--surface); border-bottom: 1px solid var(--header-line); color: var(--ink); font-size: .95rem; line-height: 1.4; }
+.cplh-in { position: relative; min-height: 76px; padding-block: 10px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 32px; }
 .cplh-logo { display: inline-flex; min-height: 24px; }
 .cplh-logo img { display: block; height: 54px; width: auto; max-width: 100%; }
 .cplh-logo .cplh-dark { display: none; }
 :root[data-theme="dark"] .cplh-logo .cplh-light { display: none; }
 :root[data-theme="dark"] .cplh-logo .cplh-dark { display: block; }
 .cplh-end { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
-.cplh-nav { display: flex; flex-wrap: wrap; gap: .3rem 1.1rem; margin: 0; padding: 0; list-style: none; }
+/* Links (Sam, 2026-10-26): one word opens the list, each link with a line in gray saying what it
+   is, "so new-to-CPL users will not be immediately lost in our acronyms". --muted on --surface:
+   5.75:1 light, 7.73:1 dark. */
+.cplh-links .word[aria-expanded="true"] { color: var(--heading); text-decoration-thickness: 2px; }
+.cplh-panel { position: absolute; top: 100%; right: var(--gutter-r); width: min(38rem, calc(100% - var(--gutter-l) - var(--gutter-r))); margin-top: 1px; padding: 6px 18px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 12px 30px var(--shadow); }
+.cplh-panel[hidden] { display: none; }
+.cplh-nav { margin: 0; padding: 0; list-style: none; }
+.cplh-nav li { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 2px 16px; align-items: baseline; padding: 9px 0; border-top: 1px solid var(--line); }
+.cplh-nav li:first-child { border-top: 0; }
 .cplh-nav a { display: inline-flex; align-items: center; min-height: 24px; color: var(--link); font-weight: 600; text-underline-offset: 3px; }
+.cplh-desc { color: var(--muted); font-size: .9rem; }
 .cplh-theme { display: flex; gap: .9rem; align-items: center; }
 .cplh-theme span { color: var(--muted); }
 .cplh-theme button { background: none; border: 0; padding: 0 2px; min-height: 24px; min-width: 24px; font: inherit; font-weight: 700; color: var(--link); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .cplh-theme button[aria-pressed="true"] { color: var(--heading); text-decoration-thickness: 2px; }
-@media (max-width: 560px) { .cplh-logo img { height: 40px; } }
+@media (max-width: 560px) { .cplh-logo img { height: 40px; } .cplh-nav li { grid-template-columns: minmax(0, 1fr); } }
 </style>
 <header class="cplh" role="banner">
   <div class="cplh-in">
@@ -162,14 +171,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       <img class="cplh-dark" src="../sierra/cpl-initiative-logo.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
     </a>
     <div class="cplh-end">
-      <nav aria-label="CPL pages">
-        <ul class="cplh-nav">
-          <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener">CPL Fact Sheet</a></li>
-          <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener">MAP</a></li>
-          <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener">Find your college</a></li>
-          <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">MAP dashboard</a></li>
-          <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener">Credit for Being You</a></li>
-        </ul>
+      <nav class="cplh-links" aria-label="CPL pages">
+        <button type="button" class="word" data-cplh-links aria-expanded="false" aria-controls="cplh-panel">Links</button>
+        <div class="cplh-panel" id="cplh-panel" hidden>
+          <ul class="cplh-nav">
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener" aria-describedby="cplh-d-fact">CPL Fact Sheet</a><span class="cplh-desc" id="cplh-d-fact">Credit for prior learning (CPL) in California: goals, live progress and funding</span></li>
+            <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener" aria-describedby="cplh-d-map">MAP</a><span class="cplh-desc" id="cplh-d-map">The Mapping Articulated Pathways (MAP) platform, where colleges record the credit they award</span></li>
+            <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener" aria-describedby="cplh-d-college">Find your college</a><span class="cplh-desc" id="cplh-d-college">Your college's credit for prior learning page and the person to contact</span></li>
+            <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener" aria-describedby="cplh-d-dash">MAP dashboard</a><span class="cplh-desc" id="cplh-d-dash">Live statewide counts of students, units of credit and savings, by college</span></li>
+            <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener" aria-describedby="cplh-d-cfby">Credit for Being You</a><span class="cplh-desc" id="cplh-d-cfby">The student portal: add what you have learned and request credit</span></li>
+          </ul>
+        </div>
       </nav>
       <div class="cplh-theme" role="group" aria-label="Theme">
         <span>Theme</span>
@@ -202,6 +214,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   });
   window.addEventListener("storage", function (e) { if (e && e.key === KEY) paint(); });
   paint();
+
+  // Links: one word opens the list. Escape, a click outside it, or Tab past its last
+  // link shuts it; Escape hands focus back to the word.
+  var word = document.querySelector("[data-cplh-links]");
+  var panel = word && document.getElementById(word.getAttribute("aria-controls"));
+  var nav = word && word.closest ? word.closest("nav") : null;
+  if (!word || !panel || !nav) return;
+  function isOpen() { return word.getAttribute("aria-expanded") === "true"; }
+  function setOpen(on) { word.setAttribute("aria-expanded", String(on)); panel.hidden = !on; }
+  word.addEventListener("click", function () { setOpen(!isOpen()); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape" || !isOpen()) return;
+    var inside = nav.contains(document.activeElement);
+    setOpen(false);
+    if (inside) word.focus();
+  });
+  document.addEventListener("click", function (e) { if (isOpen() && !nav.contains(e.target)) setOpen(false); });
+  nav.addEventListener("focusout", function (e) { if (isOpen() && e.relatedTarget && !nav.contains(e.relatedTarget)) setOpen(false); });
 })();
 </script>
 <!-- cpl-public-header:end -->

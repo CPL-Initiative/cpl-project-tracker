@@ -6,7 +6,7 @@
   "edge_functions": 9,
   "file_datasets": 715,
   "external_services": 184,
-  "consumers": 472,
+  "consumers": 474,
   "workflows": 58,
   "data_js_files": 71,
   "tabs": 38
@@ -5273,7 +5273,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 170
+     "line": 208
     }
    ],
    "served": true,
@@ -7604,7 +7604,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 88
+     "line": 107
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -16451,7 +16451,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 249
+     "line": 279
     }
    ],
    "served": true,
@@ -18028,6 +18028,13 @@
      ]
     },
     {
+     "id": "page:cpl-opportunity/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 252
+    },
+    {
      "id": "page:fact-sheet/index.html",
      "kind": "page",
      "direction": "read",
@@ -18042,11 +18049,25 @@
      "line": 1709
     },
     {
+     "id": "page:library/dsp-credit-starting-points/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 405
+    },
+    {
+     "id": "page:library/ell-iet-cpl-starting-points/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 625
+    },
+    {
      "id": "page:library/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 251
+     "line": 281
     }
    ],
    "served": true,

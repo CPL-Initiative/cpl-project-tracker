@@ -28,6 +28,10 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
     --text-muted: #5C5C55; --border: rgba(28,28,26,.14); --cobalt: #0047AB; --seal-blue: #002F6D;
     --bar-hi: #0047AB; --bar-me: #7DA1D4; --bar-lo: #D6D2C8; --on-accent: #FFFFFF;
     --display: "Playfair Display", Georgia, serif; --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    /* The Ask Sierra chip and side bar (../sierra/sidebar.js) take this page's look, as on the CPL Library. */
+    --sierra-bar-bg: var(--surface); --sierra-bar-ink: var(--text-body); --sierra-bar-heading: var(--text-strong); --sierra-bar-link: var(--cobalt);
+    --sierra-bar-line: var(--border); --sierra-bar-focus: var(--cobalt); --sierra-bar-chip-bg: var(--cobalt); --sierra-bar-chip-ink: var(--on-accent);
+    --sierra-bar-shadow: var(--border); --sierra-bar-head-font: var(--display);
     color-scheme: light;
   }
   :root[data-theme="dark"] {
@@ -38,6 +42,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
   .skip { position: absolute; left: -999px; top: 8px; background: var(--surface); color: var(--cobalt); padding: 8px 12px; }
   .skip:focus { left: 16px; }
   main { max-width: 1180px; margin: 0 auto; padding: 28px 16px 64px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  html.sbar-chip-on main { padding-bottom: 88px; } /* the last line clears the Ask Sierra chip (16px up, 48px tall) */
   h1, h2 { font-family: var(--display); color: var(--text-strong); margin: 0; text-wrap: balance; }
   h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.15; }
   h2 { font-size: clamp(1.2rem, 2.4vw, 1.5rem); }
@@ -80,31 +85,41 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
 </head>
 <body>
 <a class="skip" href="#cpo-root">Skip to the analysis</a>
-<!-- cpl-public-header:start (copied from CPLBrain/04-projects/cpl-initiative/public-header/header.html; logos from ../sierra/) -->
+<!-- cpl-public-header:start (CPLBrain/04-projects/cpl-initiative/public-header; apply.py writes this block, edit here and re-apply) -->
 <style>
 /* The public header (Sam, 2026-10-21): the CPL Initiative logo to the Chancellor's
    Office CPL page, the way out to the public CPL pages, and a light/dark control.
-   Its own tokens, so it reads the same on any host page; First Light values. */
-:root{--cplh-bg:#FFFFFF;--cplh-line:#D9D5CB;--cplh-fg:#3A3A36;--cplh-link:#0047AB;--cplh-strong:#1C1C1A}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA}}
-:root[data-theme="dark"]{--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA}
-.cplh{background:var(--cplh-bg);border-bottom:1px solid var(--cplh-line);color:var(--cplh-fg);font-family:'Source Sans 3',Arial,sans-serif;font-size:.95rem;line-height:1.4}
-.cplh-in{max-width:1080px;margin:0 auto;padding-block:.6rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem}
+   The links sit behind one word, Links, each with a line in gray saying what it is
+   (Sam, 2026-10-26: "so new-to-CPL users will not be immediately lost in our acronyms").
+   Its own tokens, so it reads the same on any host page; First Light values. The gray
+   (--cplh-muted) is First Light's muted text: 6.74:1 on the light ground, 7.52:1 on the dark. */
+:root{--cplh-bg:#FFFFFF;--cplh-line:#D9D5CB;--cplh-fg:#3A3A36;--cplh-muted:#5C5C55;--cplh-link:#0047AB;--cplh-strong:#1C1C1A;--cplh-shadow:rgba(28,28,26,.14)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-muted:#B4B1A8;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA;--cplh-shadow:rgba(0,0,0,.45)}}
+:root[data-theme="dark"]{--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-muted:#B4B1A8;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA;--cplh-shadow:rgba(0,0,0,.45)}
+.cplh{position:relative;z-index:50;background:var(--cplh-bg);border-bottom:1px solid var(--cplh-line);color:var(--cplh-fg);font-family:'Source Sans 3',Arial,sans-serif;font-size:.95rem;line-height:1.4}
+.cplh-in{position:relative;max-width:1080px;margin:0 auto;padding-block:.6rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem}
 .cplh-logo{display:inline-flex;min-height:24px}
 .cplh-logo img{display:block;height:40px;width:auto;max-width:100%}
 .cplh-logo .cplh-dark{display:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cplh-logo .cplh-light{display:none}:root:not([data-theme="light"]) .cplh-logo .cplh-dark{display:block}}
 :root[data-theme="dark"] .cplh-logo .cplh-light{display:none}
 :root[data-theme="dark"] .cplh-logo .cplh-dark{display:block}
-.cplh-nav{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;margin:0;padding:0;list-style:none;flex:1 1 auto}
+.cplh-end{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.6rem}
 .cplh a{color:var(--cplh-link)}
-.cplh-nav a{display:inline-flex;align-items:center;min-height:24px;text-underline-offset:3px}
+.cplh-word,.cplh-theme button{background:none;border:0;padding:0 2px;min-height:24px;min-width:24px;font:inherit;font-weight:600;color:var(--cplh-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.cplh-word[aria-expanded="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
+.cplh-panel{box-sizing:border-box;position:absolute;top:100%;right:max(16px,env(safe-area-inset-right,0px));width:min(38rem,calc(100% - 32px));margin-top:1px;background:var(--cplh-bg);border:1px solid var(--cplh-line);box-shadow:0 10px 28px var(--cplh-shadow);padding:.35rem 1rem}
+.cplh-panel[hidden]{display:none}
+.cplh-nav{margin:0;padding:0;list-style:none}
+.cplh-nav li{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.1rem 1rem;align-items:baseline;padding:.5rem 0;border-top:1px solid var(--cplh-line)}
+.cplh-nav li:first-child{border-top:0}
+.cplh-nav a{display:inline-flex;align-items:center;min-height:24px;font-weight:600;text-underline-offset:3px}
+.cplh-desc{color:var(--cplh-muted);font-size:.9rem}
 .cplh-theme{display:flex;gap:.9rem;align-items:center}
 .cplh-theme span{color:var(--cplh-fg)}
-.cplh-theme button{background:none;border:0;padding:0 2px;min-height:24px;min-width:24px;font:inherit;font-weight:600;color:var(--cplh-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .cplh-theme button[aria-pressed="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
 .cplh a:focus-visible,.cplh button:focus-visible{outline:2px solid var(--cplh-link);outline-offset:2px}
-@media (max-width:560px){.cplh-logo img{height:32px}.cplh-nav{flex-basis:100%}}
+@media (max-width:560px){.cplh-logo img{height:32px}.cplh-end{margin-left:0}.cplh-nav li{grid-template-columns:minmax(0,1fr)}}
 </style>
 <header class="cplh" role="banner">
   <div class="cplh-in">
@@ -112,20 +127,25 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
       <img class="cplh-light" src="../sierra/cpl-initiative-logo-navy.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
       <img class="cplh-dark" src="../sierra/cpl-initiative-logo.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
     </a>
-    <nav aria-label="CPL pages">
-      <ul class="cplh-nav">
-        <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener">CPL Fact Sheet</a></li>
-        <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener">MAP</a></li>
-        <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener">Find your college</a></li>
-        <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">MAP dashboard</a></li>
-        <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener">Credit for Being You</a></li>
-        <li><a href="./" aria-current="page">CPL Library</a></li>
-      </ul>
-    </nav>
-    <div class="cplh-theme" role="group" aria-label="Theme">
-      <span>Theme</span>
-      <button type="button" data-cplh-theme="light" aria-pressed="false">Light</button>
-      <button type="button" data-cplh-theme="dark" aria-pressed="false">Dark</button>
+    <div class="cplh-end">
+      <nav class="cplh-links" aria-label="CPL pages">
+        <button type="button" class="cplh-word" data-cplh-links aria-expanded="false" aria-controls="cplh-panel">Links</button>
+        <div class="cplh-panel" id="cplh-panel" hidden>
+          <ul class="cplh-nav">
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener" aria-describedby="cplh-d-fact">CPL Fact Sheet</a><span class="cplh-desc" id="cplh-d-fact">Credit for prior learning (CPL) in California: goals, live progress and funding</span></li>
+            <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener" aria-describedby="cplh-d-map">MAP</a><span class="cplh-desc" id="cplh-d-map">The Mapping Articulated Pathways (MAP) platform, where colleges record the credit they award</span></li>
+            <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener" aria-describedby="cplh-d-college">Find your college</a><span class="cplh-desc" id="cplh-d-college">Your college's credit for prior learning page and the person to contact</span></li>
+            <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener" aria-describedby="cplh-d-dash">MAP dashboard</a><span class="cplh-desc" id="cplh-d-dash">Live statewide counts of students, units of credit and savings, by college</span></li>
+            <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener" aria-describedby="cplh-d-cfby">Credit for Being You</a><span class="cplh-desc" id="cplh-d-cfby">The student portal: add what you have learned and request credit</span></li>
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/" target="_blank" rel="noopener" aria-describedby="cplh-d-lib">CPL Library</a><span class="cplh-desc" id="cplh-d-lib">Presentations, films, visuals and briefs from the Credit for Prior Learning Initiative</span></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="cplh-theme" role="group" aria-label="Theme">
+        <span>Theme</span>
+        <button type="button" data-cplh-theme="light" aria-pressed="false">Light</button>
+        <button type="button" data-cplh-theme="dark" aria-pressed="false">Dark</button>
+      </div>
     </div>
   </div>
 </header>
@@ -156,6 +176,24 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
   });
   if (window.matchMedia) { try { window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint); } catch (e) {} }
   paint();
+
+  // Links: one word opens the list. Escape, a click outside it, or Tab past its last
+  // link shuts it; Escape hands focus back to the word.
+  var word = document.querySelector("[data-cplh-links]");
+  var panel = word && document.getElementById(word.getAttribute("aria-controls"));
+  var nav = word && word.closest ? word.closest("nav") : null;
+  if (!word || !panel || !nav) return;
+  function isOpen() { return word.getAttribute("aria-expanded") === "true"; }
+  function setOpen(on) { word.setAttribute("aria-expanded", String(on)); panel.hidden = !on; }
+  word.addEventListener("click", function () { setOpen(!isOpen()); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape" || !isOpen()) return;
+    var inside = nav.contains(document.activeElement);
+    setOpen(false);
+    if (inside) word.focus();
+  });
+  document.addEventListener("click", function (e) { if (isOpen() && !nav.contains(e.target)) setOpen(false); });
+  nav.addEventListener("focusout", function (e) { if (isOpen() && e.relatedTarget && !nav.contains(e.relatedTarget)) setOpen(false); });
 })();
 </script>
 <!-- cpl-public-header:end -->
@@ -210,5 +248,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
   });
 })();
 </script>
+<!-- Ask Sierra (Sam, 2026-10-26: "on all visuals"): a chip in the bottom-right corner opens Sierra in a side bar, as on the CPL Library. -->
+<script src="../sierra/sidebar.js" defer></script>
 </body>
 </html>
