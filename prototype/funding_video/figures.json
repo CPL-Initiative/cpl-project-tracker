@@ -1,7 +1,7 @@
 {
- "source": "tests/fixtures/cpl_funding_config_8452c29a.json",
- "config_md5": "8452c29a",
- "read_at": "2026-10-24T13:20:27.310Z",
+ "source": "../../../tmp/claude-0/-home-user/65c92c2c-4aa9-5e23-83ce-c93d85f00633/scratchpad/memo/live.json",
+ "config_md5": "439488ec",
+ "read_at": "2026-10-26T02:20:01.767Z",
  "project": "cpl-implementation",
  "published": "Scenario 4",
  "scenarios": {
@@ -402,8 +402,16 @@
      "label": "Confirmation Deadline"
     },
     {
+     "date": "Jan 31, 2027",
+     "label": "First Report Deadline"
+    },
+    {
      "date": "Feb 2027",
      "label": "First Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "Jun 30, 2027",
+     "label": "Second Report Deadline"
     },
     {
      "date": "Jul 2027",
@@ -414,12 +422,20 @@
      "label": "Undispersed Funds Rolled to Year 2 and Releveled"
     },
     {
+     "date": "Nov 30, 2027",
+     "label": "Third Report Deadline"
+    },
+    {
      "date": "Dec 2027",
-     "label": "First Disbursement based on cumulative CPL"
+     "label": "Third Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "May 31, 2028",
+     "label": "Fourth Report Deadline"
     },
     {
      "date": "Jun 2028",
-     "label": "Second Disbursement based on cumulative CPL"
+     "label": "Fourth Disbursement based on cumulative CPL"
     },
     {
      "date": "",
