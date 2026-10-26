@@ -76,6 +76,10 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 @media (max-width:560px){.cards{grid-template-columns:1fr}
  table,thead,tbody,tr,th,td{display:block}thead{position:absolute;left:-999px}td{border:0;padding:.15rem .8rem}tr{border-bottom:1px solid var(--line);padding-block:.5rem}td:first-child{font-weight:600;color:var(--text-strong)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.card.wide{grid-column:1/-1}
+.tlead{font-size:.9rem;font-weight:600;color:var(--text-strong)}
+.card .wrap table{font-size:.92rem}
 </style>
 <a class="skip" href="#start">Skip to the projects</a>
 <!-- cpl-public-header:start (CPLBrain/04-projects/cpl-initiative/public-header; apply.py writes this block, edit here and re-apply) -->
@@ -159,7 +163,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <!-- cpl-public-header:end -->
 <main>
 <header class="top">
-<div class="eyebrow">CPL Initiative · Preliminary scan for EDD&#x27;s ELL IET Fund grantees · October 23, 2026</div>
+<div class="eyebrow">CPL Initiative · Preliminary scan for EDD&#x27;s ELL IET Fund grantees · October 26, 2026</div>
 <h1>Where credit for ELL IET training could start</h1>
 <p class="lede">On July 3, 2023 the Employment Development Department awarded $17.97 million to eight organizations under the English Language Learner Integrated Education and Training Fund. Each project trains English learners toward a credential and a job. We read the eight project summaries against the MAP platform, where California&#x27;s community colleges record the credit they award for prior learning, and against the state&#x27;s program inventory, to see where a project&#x27;s completers could already turn their training into college credit, and where a first articulation would start.</p>
 <p class="lede">A card per project, ordered by fit: credit that already exists at a college in the project&#x27;s own counties or at a partner college comes first.</p>
@@ -173,7 +177,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <p>A college in the project&#x27;s counties, or one of its named partner colleges, already articulates at least one credential the project trains. The conversation starts with that college&#x27;s existing credit recommendation.</p>
 </div>
 <div class="cards">
-<article class="card">
+<article class="card wide">
 <div class="who">Fresno Area Workforce Investment Corporation · Fresno, Madera, Kings and Tulare counties</div>
 <h3>Construction · Forestry · Healthcare</h3>
 <p class="meta">$3,330,000 · 250 participants planned · 8 colleges in its counties</p>
@@ -182,41 +186,74 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <li><div class="lh"><code>Fire, wildland fire and forestry</code><span class="u">3 colleges</span></div><span class="lt">Credit already articulated in MAP at College of the Sequoias (Firefighter 1; Firefighter EMT Certificate), Fresno City College (Intermediate Wildland Fire Behavior), Reedley College (Wildland Firefighter - 2 Year Experience)</span></li>
 <li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at Lemoore College (Certified Nurse Assistant (CNA) Certification; Nurse Assistant Training)</span></li>
 <li><div class="lh"><code>Medical terminology</code><span class="u">2 colleges</span></div><span class="lt">Credit already articulated in MAP at Fresno City College, Lemoore College (Medical Terminology)</span></li>
-<li><div class="lh"><code>Home health aide</code><span class="u">none</span></div><span class="lt">No exhibit in MAP yet; a first articulation would start here</span></li>
+<li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
 </ul>
 <p class="why">An Integrated Resource Team of two workforce boards, ValleyROP, Centro la Familia and ten employers; certified training, work-based learning, credentials and placement for 250 participants, 195 of them completing credentials.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Fresno Area Workforce Investment Corporation: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:24%"><col style="width:20%"><col style="width:32%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship</td><td>Fresno City College</td><td>PREAPP 120 MC3 Pre-Apprenticeship Core (3.5 units); PREAPP 121 MC3 Pre-Apprenticeship Essentials (3.5 units); 7 units in all</td><td>Articulated in MAP at this college</td></tr>
+<tr><td>Firefighter 1</td><td>College of the Sequoias</td><td>FIRE 155 Fire Behavior and Combustion (3 units); FIRE 159 Introduction to Fire Protection Organizations (3 units); and 1 more; 9 units in all</td><td>Articulated in MAP at this college</td></tr>
+<tr><td>Intermediate Wildland Fire Behavior</td><td>Fresno City College</td><td>FIRET 29 Intermediate Wildland Fire Behavior (1.5 units)</td><td>Articulated in MAP at this college</td></tr>
+<tr><td>Nurse Assistant Training</td><td>Lemoore College</td><td>HS 61 Nurse Assistant Training (6 units)</td><td>Articulated in MAP at this college</td></tr>
+<tr><td>Medical Terminology</td><td>Fresno City College</td><td>HIT 10 Medical Terminology (3 units)</td><td>Articulated in MAP at this college</td></tr>
+<tr><td>C-6 Cabinet, Millwork and Finish Carpentry Contractor</td><td>College of the Sequoias</td><td>CT 250 Basic Carpentry (4 units)</td><td>Same common course articulated at Cabrillo College</td></tr>
+</tbody></table></div>
 <div class="tags"><span class="tag t2">Education and trades</span><span class="tag t1">Credit exists nearby: 4 of 5</span><span class="tag tba">Articulation terms: to confirm</span></div>
 </article>
-<article class="card">
+<article class="card wide">
 <div class="who">Get Focused, Stay Focused · Kern, Inyo and Mono counties</div>
 <h3>Allied health · Business, entrepreneurship and finance · Manufacturing · Transportation and logistics</h3>
 <p class="meta">$2,492,857 · 600 participants planned · 3 colleges in its counties; partner colleges Bakersfield College, Cerro Coso Community College, Porterville College</p>
 <ul class="lines" aria-label="Get Focused, Stay Focused: the credentials it trains">
-<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">statewide</span></div><span class="lt">Nothing nearby in MAP or COCI; articulated elsewhere at Chaffey College, Lemoore College, Los Angeles Mission College and 1 more</span></li>
-<li><div class="lh"><code>Medical terminology</code><span class="u">statewide</span></div><span class="lt">Nothing nearby in MAP or COCI; articulated elsewhere at Cabrillo College, Copper Mountain College, Fresno City College and 8 more</span></li>
-<li><div class="lh"><code>Medical assisting</code><span class="u">6 programs</span></div><span class="lt">No articulation yet nearby; the program runs at Bakersfield College, Cerro Coso Community College, Taft College</span></li>
-<li><div class="lh"><code>Business, entrepreneurship and finance</code><span class="u">18 programs</span></div><span class="lt">No articulation yet nearby; the program runs at Bakersfield College, Cerro Coso Community College, Porterville College, Taft College</span></li>
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more already award credit for it</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Fresno City College and 8 more already award credit for it</span></li>
+<li><div class="lh"><code>Medical assisting</code><span class="u">6 programs</span></div><span class="lt">Ready for a first articulation at Bakersfield College, Cerro Coso Community College, Taft College, where the program is taught</span></li>
+<li><div class="lh"><code>Business, entrepreneurship and finance</code><span class="u">18 programs</span></div><span class="lt">Ready for a first articulation at Bakersfield College, Cerro Coso Community College, Porterville College, Taft College, where the program is taught</span></li>
 <li><div class="lh"><code>Welding, machining and manufacturing</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at Bakersfield College (ASME BPVC Section IX — GMAW Welder Qualification; ASME BPVC Section IX — SMAW Welder Qualification and 12 more)</span></li>
-<li><div class="lh"><code>Transportation and logistics</code><span class="u">2 programs</span></div><span class="lt">No articulation yet nearby; the program runs at Bakersfield College, Cerro Coso Community College</span></li>
-<li><div class="lh"><code>Construction trades</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at Bakersfield College (Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship; NCCER Welding Level 1 and 3 more)</span></li>
+<li><div class="lh"><code>Transportation and logistics</code><span class="u">2 programs</span></div><span class="lt">Ready for a first articulation at Bakersfield College, Cerro Coso Community College, where the program is taught</span></li>
+<li><div class="lh"><code>Construction trades</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at Bakersfield College (Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship)</span></li>
 </ul>
 <p class="why">The Kern Adult Education Consortium and the Kern, Inyo and Mono workforce board: a semester of English, career planning and contextualized skills, then a certificate at an adult school or a partner community college, with 375 of 600 students completing a credential.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Get Focused, Stay Focused: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:24%"><col style="width:20%"><col style="width:32%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>ASME BPVC Section IX — SMAW Welder Qualification</td><td>Bakersfield College</td><td>WELD B53A Shielded Metal Arc Welding (2 units); WELD B53B Shielded Metal Arc Welding 2 (2 units); and 1 more; 9 units in all</td><td>Articulated in MAP at this college</td></tr>
+<tr><td>Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship</td><td>Bakersfield College</td><td>CNST B1 Introduction to Construction (3 units); OSRM B50 General Industrial Safety (1 unit); and 1 more; 4.5 units in all</td><td>Articulated in MAP at this college</td></tr>
+<tr><td>Certified Nurse Assistant (CNA) Certification</td><td>Bakersfield College</td><td>MEDS B69 Nurse Assistant (5.5 units)</td><td>Same common course articulated at Lemoore College</td></tr>
+<tr><td>Medical Terminology</td><td>Bakersfield College</td><td>MEDS B37 Medical Terminology (3 units)</td><td>Same common course articulated at Copper Mountain College</td></tr>
+<tr><td>Entrepreneurship and Small Business (ESB) Certification</td><td>Porterville College</td><td>BSAD P160 Introduction to Entrepreneurship (3 units)</td><td>Same common course articulated at Moreno Valley College</td></tr>
+<tr><td>Introduction to Supply Chain Management</td><td>Bakersfield College</td><td>BSAD B49C Supply Chain Management (3 units)</td><td>Same common course articulated at Modesto Junior College</td></tr>
+</tbody></table></div>
 <div class="tags"><span class="tag t3">Several sectors</span><span class="tag t1">Credit exists nearby: 2 of 7</span><span class="tag tba">Articulation terms: to confirm</span></div>
 </article>
-<article class="card">
+<article class="card wide">
 <div class="who">Corona-Norco Unified School District · Riverside County</div>
 <h3>Healthcare, nursing</h3>
-<p class="meta">$2,289,375 · demand stated, no participant count · 6 colleges in its counties</p>
+<p class="meta">$2,289,375 · regional demand stated · 6 colleges in its counties</p>
 <ul class="lines" aria-label="Corona-Norco Unified School District: the credentials it trains">
-<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">1 program</span></div><span class="lt">No articulation yet nearby; the program runs at Riverside City College</span></li>
-<li><div class="lh"><code>Home health aide</code><span class="u">none</span></div><span class="lt">No exhibit in MAP yet; a first articulation would start here</span></li>
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Riverside City College, where the program is taught</span></li>
+<li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
 <li><div class="lh"><code>Vocational nursing (LVN)</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at College of the Desert (Licensed Vocational Nurse (LVN) License)</span></li>
-<li><div class="lh"><code>Medical terminology</code><span class="u">statewide</span></div><span class="lt">Nothing nearby in MAP or COCI; articulated elsewhere at Cabrillo College, Copper Mountain College, Fresno City College and 8 more</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Fresno City College and 8 more already award credit for it</span></li>
 </ul>
 <p class="why">Corona-Norco Adult School expands its Nurse Assistant training and adds Home Health Aide and Licensed Vocational Nurse training over three years, with Corona Regional Medical Center, Corona Post Acute and Riverside Workforce Development.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Corona-Norco Unified School District: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:24%"><col style="width:20%"><col style="width:32%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>Licensed Vocational Nurse (LVN) License</td><td>College of the Desert</td><td>NRN 120 Concepts of Nursing: Commonly Occurring Alterations (3.5 units); NRN 130 Concepts of Nursing: Mental Health (1 unit); and 11 more; 22 units in all</td><td>Articulated in MAP at this college</td></tr>
+<tr><td>Certified Nurse Assistant (CNA) Certification</td><td>College of the Desert</td><td>HS 64 Nurse Assistant (6 units)</td><td>Same common course articulated at Lemoore College</td></tr>
+<tr><td>Medical Terminology</td><td>College of the Desert</td><td>HS 61 Medical Terminology (3 units)</td><td>Same common course articulated at Copper Mountain College</td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>Mt. San Jacinto College</td><td>NURS 585 Certified Nursing Assistant (6 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>Home health aide</td><td>College of the Desert</td><td>HS 66 Home Health Aide (2 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>Home health aide</td><td>Mt. San Jacinto College</td><td>NURS 586 Certified Home Health Aide (CHHA) (2 units)</td><td>The college teaches a matching course</td></tr>
+</tbody></table></div>
 <div class="tags"><span class="tag t1">Healthcare</span><span class="tag t1">Credit exists nearby: 1 of 4</span><span class="tag tba">Articulation terms: to confirm</span></div>
 </article>
-<article class="card">
+<article class="card wide">
 <div class="who">Early Care &amp; Education Pathways to Success · Alameda, Contra Costa, El Dorado, Marin, San Joaquin, San Mateo, Santa Clara, Los Angeles and San Diego counties</div>
 <h3>Early care and education</h3>
 <p class="meta">$3,330,000 · 1,400 participants planned · 54 colleges in its counties; partner colleges Chabot College, College of the Canyons, Los Angeles Pierce College and 10 more</p>
@@ -224,6 +261,17 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <li><div class="lh"><code>Early care and education</code><span class="u">3 colleges</span></div><span class="lt">Credit already articulated in MAP at San Diego City College, San Diego Mesa College, San Diego Miramar College (Child Development Center Practicum; Observation and Assessment in Early Childhood and 1 more)</span></li>
 </ul>
 <p class="why">Twelve ECE Registered Apprenticeship Programs add ESL support, bilingual mentors and embedded tutors; a pre-apprenticeship, an Associate Teacher or a Teacher apprenticeship with a partner college in each community; about 1,400 participants, 42 percent of them English learners.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Early Care &amp; Education Pathways to Success: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:24%"><col style="width:20%"><col style="width:32%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>Observation and Assessment in Early Childhood</td><td>San Diego City College</td><td>CHIL 160 Observation and Assessment of Children (2 units)</td><td>Articulated in MAP at this college</td></tr>
+<tr><td>Observation and Issues in Child Development</td><td>San Diego Mesa College</td><td>CHIL 161 Observations and Issues in Child Development (2 units)</td><td>Articulated in MAP at this college</td></tr>
+<tr><td>Child Development Center Practicum</td><td>San Diego Miramar College</td><td>CHIL 291A Child Development Center Practicum (1 unit); CHIL 291B Child Development Center Practicum (1 unit); and 2 more; 4 units in all</td><td>Articulated in MAP at this college</td></tr>
+<tr><td>Child Development Associate (CDA) Credential</td><td>Merritt College</td><td>CHDEV 55 Child Development (5 units)</td><td>Same common course articulated at Saddleback College</td></tr>
+<tr><td>Child Development Associate (CDA) Credential</td><td>De Anza College</td><td>C D 12 Child, Family and Community Interrelationships (4 units)</td><td>Same common course articulated at Saddleback College</td></tr>
+<tr><td>Child Development Associate (CDA) Credential</td><td>Lake Tahoe Community College</td><td>ECE 101 Principles and Practices of Teaching Young Children (4 units)</td><td>Same common course articulated at Saddleback College</td></tr>
+</tbody></table></div>
 <div class="tags"><span class="tag t2">Education and trades</span><span class="tag t1">Credit exists nearby: 1 of 1</span><span class="tag tba">Articulation terms: to confirm</span></div>
 </article>
 </div>
@@ -231,38 +279,60 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <section id="second" aria-labelledby="h-second">
 <div class="band-head">
 <div class="eyebrow">Good fit</div>
-<h2 id="h-second">Worth a second conversation: the program runs nearby</h2>
-<p>No college in the project&#x27;s circle has articulated the credential yet, but the program is taught there, so faculty have a course to compare the training against.</p>
+<h2 id="h-second">Ready to build: the program runs nearby</h2>
+<p>A college in the project&#x27;s circle teaches the program, so its faculty have a course to compare the training against and can build the first articulation there.</p>
 </div>
 <div class="cards">
-<article class="card">
+<article class="card wide">
 <div class="who">North Central Counties Consortium · Colusa, Glenn, Yuba and Sutter counties</div>
 <h3>Education · Healthcare · Leisure and hospitality · Manufacturing · Transportation</h3>
 <p class="meta">$2,859,640 · 260 participants planned · 1 college in its counties; nearby Woodland Community College, Butte College</p>
 <ul class="lines" aria-label="North Central Counties Consortium: the credentials it trains">
-<li><div class="lh"><code>Early care and education</code><span class="u">8 programs</span></div><span class="lt">No articulation yet nearby; the program runs at Butte College, Woodland Community College, Yuba College</span></li>
-<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">statewide</span></div><span class="lt">Nothing nearby in MAP or COCI; articulated elsewhere at Chaffey College, Lemoore College, Los Angeles Mission College and 1 more</span></li>
-<li><div class="lh"><code>Medical terminology</code><span class="u">statewide</span></div><span class="lt">Nothing nearby in MAP or COCI; articulated elsewhere at Cabrillo College, Copper Mountain College, Fresno City College and 8 more</span></li>
-<li><div class="lh"><code>Hospitality and food service</code><span class="u">1 program</span></div><span class="lt">No articulation yet nearby; the program runs at Woodland Community College</span></li>
-<li><div class="lh"><code>Welding, machining and manufacturing</code><span class="u">14 programs</span></div><span class="lt">No articulation yet nearby; the program runs at Butte College, Woodland Community College, Yuba College</span></li>
-<li><div class="lh"><code>Transportation and logistics</code><span class="u">1 program</span></div><span class="lt">No articulation yet nearby; the program runs at Yuba College</span></li>
+<li><div class="lh"><code>Early care and education</code><span class="u">8 programs</span></div><span class="lt">Ready for a first articulation at Butte College, Woodland Community College, Yuba College, where the program is taught</span></li>
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more already award credit for it</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Fresno City College and 8 more already award credit for it</span></li>
+<li><div class="lh"><code>Hospitality and food service</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Woodland Community College, where the program is taught</span></li>
+<li><div class="lh"><code>Welding, machining and manufacturing</code><span class="u">14 programs</span></div><span class="lt">Ready for a first articulation at Butte College, Woodland Community College, Yuba College, where the program is taught</span></li>
+<li><div class="lh"><code>Transportation and logistics</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Yuba College, where the program is taught</span></li>
 </ul>
 <p class="why">Career English and occupational skills training with earn-and-learn placements across four county offices of education, the one-stops and local employers from clinics and post-acute care to farms, a cheese company and a transit agency; 260 participants, 174 completing credentials.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="North Central Counties Consortium: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:24%"><col style="width:20%"><col style="width:32%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>Child Development Associate (CDA) Credential</td><td>Butte College</td><td>CDF 12 Child, Family, and Community (3 units)</td><td>Same common course articulated at Saddleback College</td></tr>
+<tr><td>Child Development Associate (CDA) Credential</td><td>Woodland Community College</td><td>ECE 1A Principles and Practices of Teaching Young Children (3 units)</td><td>Same common course articulated at Saddleback College</td></tr>
+<tr><td>Medical Terminology</td><td>Butte College</td><td>ALH 104 Medical Terminology (3 units)</td><td>Same common course articulated at Copper Mountain College</td></tr>
+<tr><td>ServSafe Food Protection Manager Certification</td><td>Butte College</td><td>FN 10 Food Safety and Sanitation (3 units)</td><td>Same common course articulated at Lemoore College</td></tr>
+<tr><td>AWS D1.5 SMAW Qualified Welder</td><td>Butte College</td><td>WLD 24 Shielded Metal Arc Welding (Stick Electrode) (8 units)</td><td>Same common course articulated at Bakersfield College</td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>Butte College</td><td>NSG 100 CNA Basic Nursing Care, Theory (4 units)</td><td>The college teaches a matching course</td></tr>
+</tbody></table></div>
 <div class="tags"><span class="tag t3">Several sectors</span><span class="tag tba">Articulation terms: to confirm</span></div>
 </article>
-<article class="card">
+<article class="card wide">
 <div class="who">Mountain View Los Altos Adult School · Santa Clara and San Mateo counties</div>
 <h3>Health science and medical technology</h3>
 <p class="meta">$1,904,283 · 240 participants planned · 10 colleges in its counties; partner colleges Chabot College, Foothill College, Mission College</p>
 <ul class="lines" aria-label="Mountain View Los Altos Adult School: the credentials it trains">
-<li><div class="lh"><code>Medical terminology</code><span class="u">statewide</span></div><span class="lt">Nothing nearby in MAP or COCI; articulated elsewhere at Cabrillo College, Copper Mountain College, Fresno City College and 8 more</span></li>
-<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">statewide</span></div><span class="lt">Nothing nearby in MAP or COCI; articulated elsewhere at Chaffey College, Lemoore College, Los Angeles Mission College and 1 more</span></li>
-<li><div class="lh"><code>Medical assisting</code><span class="u">9 programs</span></div><span class="lt">No articulation yet nearby; the program runs at Cañada College, Chabot College, De Anza College, Evergreen Valley College and 2 more</span></li>
-<li><div class="lh"><code>Medical office, billing and records</code><span class="u">7 programs</span></div><span class="lt">No articulation yet nearby; the program runs at Cañada College, Chabot College, De Anza College, Gavilan College and 1 more</span></li>
-<li><div class="lh"><code>Eye care technician</code><span class="u">2 programs</span></div><span class="lt">No articulation yet nearby; the program runs at Cañada College, Chabot College</span></li>
-<li><div class="lh"><code>Home health aide</code><span class="u">none</span></div><span class="lt">No exhibit in MAP yet; a first articulation would start here</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Fresno City College and 8 more already award credit for it</span></li>
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more already award credit for it</span></li>
+<li><div class="lh"><code>Medical assisting</code><span class="u">9 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, De Anza College, Evergreen Valley College and 2 more, where the program is taught</span></li>
+<li><div class="lh"><code>Medical office, billing and records</code><span class="u">7 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, De Anza College, Gavilan College and 1 more, where the program is taught</span></li>
+<li><div class="lh"><code>Eye care technician</code><span class="u">2 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, where the program is taught</span></li>
+<li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
 </ul>
 <p class="why">Eight cohorts of 30 over 44 months: medical terminology first, then Certified Nursing Assistant, Eye Care Technician, Medical Records Specialist, Medical Office Assistant or Medical Assistant, with Home Health Aide and acute care as stackable next steps.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Mountain View Los Altos Adult School: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:24%"><col style="width:20%"><col style="width:32%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>Medical Terminology</td><td>Foothill College</td><td>AHS 52 Medical Terminology (4 units)</td><td>Same common course articulated at Copper Mountain College</td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>Mission College</td><td>HOC 019A Nursing Assistant Fundamentals (4 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>Medical assisting</td><td>Chabot College</td><td>MEDA 70A Clinical Skills For the Medical Assistant I (3 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>Medical office, billing and records</td><td>Chabot College</td><td>HIT 48 Medical Coding 1 (4 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>Eye care technician</td><td>Chabot College</td><td>OPTN 9702 Optical Dispensing and Materials (5 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>Home health aide</td><td>Mission College</td><td>HOC 019F Home Health Aide Fundamentals (1.5 units)</td><td>The college teaches a matching course</td></tr>
+</tbody></table></div>
 <div class="tags"><span class="tag t1">Healthcare</span><span class="tag tba">Articulation terms: to confirm</span></div>
 </article>
 </div>
@@ -270,19 +340,27 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <section id="precedent" aria-labelledby="h-precedent">
 <div class="band-head">
 <div class="eyebrow">A precedent elsewhere</div>
-<h2 id="h-precedent">Nothing nearby yet; another college shows the way</h2>
-<p>No college in the project&#x27;s circle articulates the credential, and none lists the program in COCI; a college elsewhere has articulated it, and that credit recommendation is the precedent the nearest college can adopt.</p>
+<h2 id="h-precedent">A precedent to adopt: another college shows the way</h2>
+<p>A college elsewhere has articulated the credential, and its credit recommendation is a precedent the nearest college can adopt.</p>
 </div>
 <div class="cards">
-<article class="card">
+<article class="card wide">
 <div class="who">Fairfield-Suisun Adult School · Solano County</div>
 <h3>Healthcare</h3>
 <p class="meta">$213,120 · 48 participants planned · 1 college in its counties</p>
 <ul class="lines" aria-label="Fairfield-Suisun Adult School: the credentials it trains">
-<li><div class="lh"><code>Medical assisting</code><span class="u">statewide</span></div><span class="lt">Nothing nearby in MAP or COCI; articulated elsewhere at Modesto Junior College</span></li>
-<li><div class="lh"><code>Medical terminology</code><span class="u">statewide</span></div><span class="lt">Nothing nearby in MAP or COCI; articulated elsewhere at Cabrillo College, Copper Mountain College, Fresno City College and 8 more</span></li>
+<li><div class="lh"><code>Medical assisting</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Modesto Junior College already award credit for it</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Fresno City College and 8 more already award credit for it</span></li>
 </ul>
 <p class="why">A 120-hour Clinical Medical Assistant bridge course with contextualized medical and office vocabulary, then CALRegional&#x27;s ten-week Clinical Medical Assistant course and a 160-hour externship; 12 students a year, 48 over the grant.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Fairfield-Suisun Adult School: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:24%"><col style="width:20%"><col style="width:32%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>Medical Terminology</td><td>Solano Community College</td><td>NURS 111 Medical Terminology (3 units)</td><td>Same common course articulated at Copper Mountain College</td></tr>
+<tr><td>Medical assisting</td><td>Solano Community College</td><td>OT 101 Study of Human Diseases for Medical Assistants (3 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>Medical assisting</td><td>Solano Community College</td><td>OT 60 Adminstrative Medical Assistant (3 units)</td><td>The college teaches a matching course</td></tr>
+</tbody></table></div>
 <div class="tags"><span class="tag t1">Healthcare</span><span class="tag tba">Articulation terms: to confirm</span></div>
 </article>
 </div>
@@ -290,19 +368,30 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <section id="wider" aria-labelledby="h-wider">
 <div class="band-head">
 <div class="eyebrow">Wider ring</div>
-<h2 id="h-wider">Training that is not credential-shaped yet</h2>
-<p>Job-related English and workplace readiness have no credential to articulate; the colleges nearby teach English as a second language and public sector programs, so the starting point is the curriculum&#x27;s own outcomes read against a course.</p>
+<h2 id="h-wider">Job-related English: a course-to-course match</h2>
+<p>The colleges nearby teach English as a second language and public sector courses, so faculty can read the project&#x27;s job-related English and workplace readiness outcomes against a course they already offer.</p>
 </div>
 <div class="cards">
-<article class="card">
+<article class="card wide">
 <div class="who">Worker Education &amp; Resource Center · Los Angeles County</div>
 <h3>Public sector · Health and social services</h3>
 <p class="meta">$1,558,715 · 234 participants planned · 21 colleges in its counties</p>
 <ul class="lines" aria-label="Worker Education &amp; Resource Center: the credentials it trains">
-<li><div class="lh"><code>English as a second language and workplace English</code><span class="u">134 programs</span></div><span class="lt">No articulation yet nearby; the program runs at Antelope Valley College, Cerritos College, Citrus College, College of the Canyons and 16 more</span></li>
-<li><div class="lh"><code>Public sector and human services</code><span class="u">17 programs</span></div><span class="lt">No articulation yet nearby; the program runs at Cerritos College, East Los Angeles College, Glendale Community College, Long Beach City College and 8 more</span></li>
+<li><div class="lh"><code>English as a second language and workplace English</code><span class="u">134 programs</span></div><span class="lt">Ready for a first articulation at Antelope Valley College, Cerritos College, Citrus College, College of the Canyons and 16 more, where the program is taught</span></li>
+<li><div class="lh"><code>Public sector and human services</code><span class="u">17 programs</span></div><span class="lt">Ready for a first articulation at Cerritos College, East Los Angeles College, Glendale Community College, Long Beach City College and 8 more, where the program is taught</span></li>
 </ul>
 <p class="why">Job-related English for incumbent County of Los Angeles workers and job seekers on the PLACE pathway into county civil service and contracted health and human services agencies, with curriculum built with LAUSD&#x27;s Division of Adult and Career Education; 234 workers trained.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Worker Education &amp; Resource Center: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:24%"><col style="width:20%"><col style="width:32%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>Introduction to Social Work and Human Services</td><td>Cerritos College</td><td>SOC 220 Introduction to Human Services (3 units)</td><td>Same common course articulated at Lemoore College</td></tr>
+<tr><td>Community Health Worker Skills</td><td>Long Beach City College</td><td>HLED 200 Introduction to Community Health Worker (3 units)</td><td>Same common course articulated at Cabrillo College</td></tr>
+<tr><td>Social and Human Services Apprenticeship</td><td>Compton College</td><td>SOCI 208A Social Work and Human Services Seminar (2 units)</td><td>Same common course articulated at San Bernardino Valley College</td></tr>
+<tr><td>English as a second language and workplace English</td><td>Long Beach City College</td><td>ESL 270 Listen/Speak for Work for ESL Level 1 (5 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>English as a second language and workplace English</td><td>East Los Angeles College</td><td>E.S.L. 003A College ESL III: Writing and Grammar (6 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>English as a second language and workplace English</td><td>Los Angeles City College</td><td>E.S.L. 006A College ESL VI: Writing and Grammar (6 units)</td><td>The college teaches a matching course</td></tr>
+</tbody></table></div>
 <div class="tags"><span class="tag t3">Several sectors</span><span class="tag tba">Articulation terms: to confirm</span></div>
 </article>
 </div>
@@ -316,22 +405,22 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <div class="wrap" role="region" aria-label="Statewide starting points by credential family" tabindex="0"><table>
 <colgroup><col style="width:22%"><col style="width:10%"><col style="width:30%"><col style="width:26%"><col style="width:12%"></colgroup>
 <thead><tr><th scope="col">Credential family</th><th scope="col">Exhibits in MAP</th><th scope="col">Articulated at</th><th scope="col">Statewide (CCC Collaborative) exhibits</th><th scope="col">Colleges that could adopt</th></tr></thead><tbody>
-<tr><td>Construction trades</td><td>69</td><td>Bakersfield College, Barstow Community College, Cabrillo College, Cerritos College, Chaffey College and 12 more</td><td>C-5 Framing and Rough Carpentry Contractor; C-6 Cabinet, Millwork and Finish Carpentry Contractor; Carpenters Apprenticeship — Acoustical Installer and 35 more</td><td>89</td></tr>
+<tr><td>Construction trades</td><td>64</td><td>Bakersfield College, Cabrillo College, Cerritos College, Chaffey College, City College of San Francisco and 8 more</td><td>C-5 Framing and Rough Carpentry Contractor; C-6 Cabinet, Millwork and Finish Carpentry Contractor; Carpenters Apprenticeship — Acoustical Installer and 31 more</td><td>89</td></tr>
 <tr><td>Fire, wildland fire and forestry</td><td>38</td><td>Bakersfield College, Cabrillo College, Cerro Coso Community College, Chabot College, Chaffey College and 21 more</td><td>Firefighter 1; Firefighter EMT Certificate; NWCG Wildland Fire Certifications (S-110 / IS-700 / IS-800 / P-101 / FI-110 / ICS-300 bundle) and 5 more</td><td>62</td></tr>
-<tr><td>Nursing assistant (CNA)</td><td>5</td><td>Chaffey College, Lemoore College, Los Angeles Mission College, Los Angeles Pierce College</td><td>local articulations only</td><td>38</td></tr>
-<tr><td>Medical terminology</td><td>4</td><td>Cabrillo College, Copper Mountain College, Fresno City College, Glendale Community College, Lemoore College and 6 more</td><td>local articulations only</td><td>94</td></tr>
-<tr><td>Home health aide</td><td>none</td><td>none yet</td><td>local articulations only</td><td>0</td></tr>
-<tr><td>Vocational nursing (LVN)</td><td>4</td><td>Chaffey College, College of the Desert, Los Angeles Pierce College, Napa Valley College</td><td>local articulations only</td><td>77</td></tr>
-<tr><td>Medical assisting</td><td>5</td><td>Modesto Junior College</td><td>local articulations only</td><td>44</td></tr>
-<tr><td>Medical office, billing and records</td><td>2</td><td>Cuesta College, Modesto Junior College</td><td>local articulations only</td><td>44</td></tr>
-<tr><td>Eye care technician</td><td>2</td><td>Los Angeles Trade Technical College</td><td>local articulations only</td><td>36</td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>5</td><td>Chaffey College, Lemoore College, Los Angeles Mission College, Los Angeles Pierce College</td><td>local articulations, ready to adopt</td><td>38</td></tr>
+<tr><td>Medical terminology</td><td>4</td><td>Cabrillo College, Copper Mountain College, Fresno City College, Glendale Community College, Lemoore College and 6 more</td><td>local articulations, ready to adopt</td><td>94</td></tr>
+<tr><td>Home health aide</td><td>0</td><td>open for a first college</td><td>local articulations, ready to adopt</td><td>0</td></tr>
+<tr><td>Vocational nursing (LVN)</td><td>4</td><td>Chaffey College, College of the Desert, Los Angeles Pierce College, Napa Valley College</td><td>local articulations, ready to adopt</td><td>77</td></tr>
+<tr><td>Medical assisting</td><td>5</td><td>Modesto Junior College</td><td>local articulations, ready to adopt</td><td>44</td></tr>
+<tr><td>Medical office, billing and records</td><td>2</td><td>Cuesta College, Modesto Junior College</td><td>local articulations, ready to adopt</td><td>44</td></tr>
+<tr><td>Eye care technician</td><td>2</td><td>Los Angeles Trade Technical College</td><td>local articulations, ready to adopt</td><td>36</td></tr>
 <tr><td>Early care and education</td><td>10</td><td>Barstow Community College, Lemoore College, Merced College, Modesto Junior College, Saddleback College and 4 more</td><td>Army Child and Youth Services--Child Development; Child Development Associate (CDA) Credential; Virtual Lab School--Child Development</td><td>109</td></tr>
-<tr><td>Business, entrepreneurship and finance</td><td>16</td><td>Cabrillo College, College of the Canyons, Copper Mountain College, Evergreen Valley College, Los Angeles Pierce College and 9 more</td><td>local articulations only</td><td>107</td></tr>
+<tr><td>Business, entrepreneurship and finance</td><td>16</td><td>Cabrillo College, College of the Canyons, Copper Mountain College, Evergreen Valley College, Los Angeles Pierce College and 9 more</td><td>local articulations, ready to adopt</td><td>107</td></tr>
 <tr><td>Welding, machining and manufacturing</td><td>96</td><td>Bakersfield College, Barstow Community College, Cabrillo College, Cerritos College, College of the Desert and 20 more</td><td>ASME BPVC Section IX — GMAW Welder Qualification; ASME BPVC Section IX — SMAW Welder Qualification; AWS D1.1 SMAW Qualified Welder and 16 more</td><td>99</td></tr>
-<tr><td>Transportation and logistics</td><td>5</td><td>Chaffey College, Copper Mountain College, Madera College, Modesto Junior College</td><td>local articulations only</td><td>22</td></tr>
+<tr><td>Transportation and logistics</td><td>5</td><td>Chaffey College, Copper Mountain College, Madera College, Modesto Junior College</td><td>local articulations, ready to adopt</td><td>22</td></tr>
 <tr><td>Hospitality and food service</td><td>29</td><td>Cabrillo College, College of the Canyons, College of the Desert, Copper Mountain College, Cuesta College and 13 more</td><td>Introduction to Hospitality Management</td><td>77</td></tr>
-<tr><td>English as a second language and workplace English</td><td>19</td><td>Cypress College, Fullerton College, Las Positas College</td><td>local articulations only</td><td>94</td></tr>
-<tr><td>Public sector and human services</td><td>9</td><td>Cabrillo College, Lemoore College, Modesto Junior College, San Bernardino Valley College, Santiago Canyon College</td><td>local articulations only</td><td>80</td></tr>
+<tr><td>English as a second language and workplace English</td><td>19</td><td>Cypress College, Fullerton College, Las Positas College</td><td>local articulations, ready to adopt</td><td>94</td></tr>
+<tr><td>Public sector and human services</td><td>9</td><td>Cabrillo College, Lemoore College, Modesto Junior College, San Bernardino Valley College, Santiago Canyon College</td><td>local articulations, ready to adopt</td><td>80</td></tr>
 </tbody></table></div>
 </section>
 <section id="confirm" aria-labelledby="h-confirm">
@@ -341,10 +430,11 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 </div>
 <p>Which credential each project&#x27;s completers actually hold at exit: the summaries name training programs and industry credentials, and the credential is what a college articulates. The state nursing assistant certificate, a Clinical Medical Assistant certification, a Child Development Permit or an NWCG wildland fire card each map to a different exhibit.</p>
 <p>Whether a project&#x27;s adult school or ROP partner holds a credit-by-exam or articulation agreement with its nearest college already; several high school and ROP articulations in MAP began that way.</p>
+<p>Each card&#x27;s examples are candidates for faculty review. A row pairs the training with a course the college already teaches, and the faculty who teach that course decide whether the training meets its outcomes; their review also settles the units a student would receive and whether the award is credit or noncredit.</p>
 <p>Delivery: our data does not record whether a matched course runs online or on the CVC Exchange, so a learner far from the college would need that confirmed.</p>
 </section>
 <section aria-labelledby="h-next"><div class="band-head"><h2 id="h-next">Practical next steps</h2></div><ol class="next"><li>Send each project the card above and its nearest college&#x27;s CPL contact from the college&#x27;s landing page on MAP, so the first conversation is between the project and a named person.</li><li>For the healthcare projects, confirm the exit credential (CNA, HHA, LVN, CMA) and compare it with the credit recommendations College of the Desert, Chaffey College and Los Angeles Pierce College already hold.</li><li>For the early care apprenticeships, ask ECEPTS which Child Development Permit level each cohort reaches, then read it against the Child Development Associate exhibit the CCC Collaborative built.</li><li>For Fresno, Kern and the north valley, start with the exhibits Bakersfield College, Fresno City College and Lemoore College already articulate, and invite their CPL coordinators to a shared call with the workforce boards.</li><li>Record every confirmed match in MAP so the next grantee cohort finds it there.</li></ol></section>
-<p class="note">This is a preliminary scan, not an articulation. Project facts come from EDD&#x27;s award notice for the ELL IET Fund Program Year 2022-23 (WSSFP22-06, awarded July 3, 2023), filed beside this page. Credit recommendations and adopters come from the MAP platform&#x27;s adoption view, programs from the COCI program inventory (the June 17, 2026 export) and each college&#x27;s county from the CPL Initiative&#x27;s college roster, all read October 23, 2026. Contact names in the notice are left off this page on purpose.</p>
+<p class="note">This is a preliminary scan, not an articulation. Project facts come from EDD&#x27;s award notice for the ELL IET Fund Program Year 2022-23 (WSSFP22-06, awarded July 3, 2023), filed beside this page. Credit recommendations, adopters and the courses each college awards come from the MAP platform&#x27;s adoption view; the example courses come from the COCI course list as the Common Course Reference holds it, with each course&#x27;s common course; programs come from the COCI program inventory (the June 17, 2026 export). All were read October 26, 2026; each college&#x27;s county comes from the CPL Initiative&#x27;s college roster, read October 23, 2026. Contact names in the notice are left off this page on purpose.</p>
 </main>
 </body>
 </html>

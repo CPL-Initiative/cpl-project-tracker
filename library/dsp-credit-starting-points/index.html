@@ -13,7 +13,7 @@
 </head>
 <body>
 <style>
-/* Layout: one reading column; three bands of colleges ranked by fit, each a row of cards; a table for the outer ring. First Light tokens. */
+/* Layout: one reading column; bands of cards ranked by fit; a table for the wider ring. First Light tokens. */
 :root{
   --paper:#F4F2ED; --surface:#FFFFFF; --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2;
   --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55; --line:#D9D5CB;
@@ -32,7 +32,7 @@
   --text-strong:#F2F0EA; --text-body:#D8D5CD; --text-muted:#AFAB9F; --line:#3A3F49;
   --seal-blue:#9DB8E0; --cobalt:#7DA1D4; --hunter:#89A67F; --mustard-text:#E3B341; --violet:#B28DEB;
   --tba-bg:#3A3220; color-scheme:dark}
-body{background:var(--paper);color:var(--text-body);font-family:var(--body);font-size:1.02rem;line-height:1.55}
+body{background:var(--paper);color:var(--text-body);font-family:var(--body);font-size:1.02rem;line-height:1.55;margin:0}
 .skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--surface);padding:.4rem .7rem;z-index:5}
 main{max-width:1080px;margin:0 auto;padding-block:clamp(1.5rem,4vw,3rem);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:2.4rem}
 h1,h2,h3{font-family:var(--display);color:var(--text-strong);text-wrap:balance;margin:0}
@@ -41,7 +41,7 @@ h2{font-size:clamp(1.3rem,3vw,1.6rem)}
 h3{font-size:1.15rem}
 p{margin:0;max-width:var(--cpl-measure,none)}
 .eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:600}
-header{display:grid;gap:.8rem}
+header.top{display:grid;gap:.8rem}
 .lede{font-size:1.12rem}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
 .fact{background:var(--surface);padding:1rem 1.1rem;display:grid;gap:.2rem}
@@ -52,28 +52,35 @@ section{display:grid;gap:1rem}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
 .card{background:var(--surface);border:1px solid var(--line);padding:1.1rem 1.2rem;display:grid;gap:.7rem;align-content:start;min-width:0}
 .card .who{font-size:.9rem;color:var(--text-muted);font-weight:600}
-.courses{margin:0;padding:0;list-style:none;display:grid;gap:.25rem;font-size:.95rem}
-.courses li{display:grid;grid-template-columns:6.2rem 1fr auto;gap:.6rem;border-top:1px solid var(--surface-muted);padding-top:.25rem}
-.courses code{font-family:var(--body);font-weight:600;color:var(--text-strong)}
-.courses .u{color:var(--text-muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.card .meta{font-size:.92rem;color:var(--text-muted)}
+.lines{margin:0;padding:0;list-style:none;display:grid;gap:.35rem;font-size:.95rem}
+.lines li{display:grid;gap:.1rem;border-top:1px solid var(--surface-muted);padding-top:.35rem}
+.lh{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem}
+.lines code{font-family:var(--body);font-weight:600;color:var(--text-strong)}
+.lines .u{color:var(--text-muted);font-variant-numeric:tabular-nums;white-space:nowrap;font-size:.88rem}
+.lt{color:var(--text-body)}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem}
 .tag{font-size:.8rem;font-weight:600;padding:.1rem .5rem;border:1px solid var(--line);color:var(--text-muted);background:var(--surface-subtle)}
-.tag.dds{color:var(--cobalt)}.tag.aging{color:var(--hunter)}.tag.lwda{color:var(--violet)}
+.tag.t1{color:var(--cobalt)}.tag.t2{color:var(--hunter)}.tag.t3{color:var(--violet)}
 .tag.tba{background:var(--tba-bg);color:var(--mustard-text);border-color:transparent}
 .why{font-size:.95rem}
 .wrap{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
 table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:.95rem}
-th,td{text-align:left;padding:.6rem .8rem;vertical-align:top;border-bottom:1px solid var(--surface-muted)}
+th,td{text-align:left;padding:.6rem .8rem;vertical-align:top;border-bottom:1px solid var(--surface-muted);overflow-wrap:anywhere}
 th{font-weight:600;color:var(--text-strong);background:var(--surface-subtle)}
 tbody tr:last-child td{border-bottom:0}
 ol.next{margin:0;padding-left:1.3rem;display:grid;gap:.5rem}
+ul.plain{margin:0;padding-left:1.2rem;display:grid;gap:.3rem}
 .note{font-size:.88rem;color:var(--text-muted)}
 a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
-@media (max-width:560px){.courses li{grid-template-columns:5.2rem 1fr auto}.cards{grid-template-columns:1fr}
+@media (max-width:560px){.cards{grid-template-columns:1fr}
  table,thead,tbody,tr,th,td{display:block}thead{position:absolute;left:-999px}td{border:0;padding:.15rem .8rem}tr{border-bottom:1px solid var(--line);padding-block:.5rem}td:first-child{font-weight:600;color:var(--text-strong)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-</style>
 
+.card.wide{grid-column:1/-1}
+.tlead{font-size:.9rem;font-weight:600;color:var(--text-strong)}
+.card .wrap table{font-size:.92rem}
+</style>
 <a class="skip" href="#start">Skip to the starting points</a>
 <!-- cpl-public-header:start (CPLBrain/04-projects/cpl-initiative/public-header; apply.py writes this block, edit here and re-apply) -->
 <style>
@@ -155,132 +162,157 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 </script>
 <!-- cpl-public-header:end -->
 <main>
-<header>
-  <div class="eyebrow">CPL Initiative · Preliminary scan for the DDS, Aging and LWDA meeting · October 20, 2026</div>
-  <h1>Where credit for DSP training could start</h1>
-  <p class="lede">California's Direct Support Professional Training gives direct care staff two 35-hour, competency-based segments, each ending in a state test. We matched its topics against the course titles and program outcomes our colleges publish. A small set of colleges already teach this work, and one of them builds a full degree around it.</p>
+<header class="top">
+<div class="eyebrow">CPL Initiative · Preliminary scan for the DDS, Aging and LWDA meeting · October 26, 2026</div>
+<h1>Where credit for DSP training could start</h1>
+<p class="lede">California&#x27;s Direct Support Professional Training gives direct care staff two 35-hour, competency-based segments, each ending in a state test. We matched its topics against the course titles and programs our colleges publish. Several colleges already teach this work, and Taft College builds two degrees and a certificate around it.</p>
+<p class="lede">A card per college, ordered by fit, each ending in examples a college&#x27;s faculty could examine first.</p>
 </header>
+<div class="facts" role="list" aria-label="At a glance"><div class="fact" role="listitem"><b>70 hours</b><span>Two 35-hour segments in successive years</span></div><div class="fact" role="listitem"><b>2 tests</b><span>A competency test ends each year; a Challenge Test can stand in for the training</span></div><div class="fact" role="listitem"><b>Seven Rights</b><span>The medication skill check, Year 1 Session 4 and Year 2 Session 3</span></div><div class="fact" role="listitem"><b>ROP and county offices</b><span>Deliver the training across the state</span></div></div>
 
-<div class="facts" role="list" aria-label="The training at a glance">
-  <div class="fact" role="listitem"><b>70 hours</b><span>Two 35-hour segments in successive years</span></div>
-  <div class="fact" role="listitem"><b>2 tests</b><span>A competency test ends each year; a Challenge Test can stand in for the training</span></div>
-  <div class="fact" role="listitem"><b>Seven Rights</b><span>The medication skill check, Year 1 Session 4 and Year 2 Session 3</span></div>
-  <div class="fact" role="listitem"><b>ROP and county offices</b><span>Deliver the training across the state</span></div>
+<section id="start" aria-labelledby="h-start">
+<div class="band-head">
+<div class="eyebrow">Strongest fit</div>
+<h2 id="h-start">Start here: two colleges teach this work as a sequence</h2>
+<p>Each teaches developmental disabilities as a run of short courses whose topics track the DSPT&#x27;s, so a DSP&#x27;s two years could count toward courses a student already needs.</p>
 </div>
-
-<section id="start" aria-labelledby="h-first">
-  <div class="band-head">
-    <div class="eyebrow">Strongest fit</div>
-    <h2 id="h-first">Start here</h2>
-    <p>These two colleges teach developmental disabilities as a sequence of short courses whose topics track the DSPT sessions.</p>
-  </div>
-  <div class="cards">
-    <article class="card">
-      <div class="who">Taft College</div>
-      <h3>Disability Services, A.S., and the Self-Determination Program awards</h3>
-      <ul class="courses" aria-label="Taft College courses">
-        <li><code>DS 1501</code><span>Introduction to Disabilities</span><span class="u">3 u</span></li>
-        <li><code>DS 1502</code><span>Disabilities and the Law</span><span class="u">3 u</span></li>
-        <li><code>DS 1503</code><span>Introduction to Medication Support</span><span class="u">3 u</span></li>
-        <li><code>DS 1504</code><span>Cultural Competency towards Disabilities</span><span class="u">3 u</span></li>
-        <li><code>DS 1505</code><span>Teaching Individuals with Disabilities and Dealing with Challenging Behaviors</span><span class="u">3 u</span></li>
-        <li><code>DS 1506</code><span>Maltreatment and Safety at Home and in the Community</span><span class="u">3 u</span></li>
-        <li><code>DS 9260</code><span>Person-Centered Planning Foundations</span><span class="u">noncredit</span></li>
-        <li><code>DS 9280</code><span>Self-Determination Program Independent Facilitator</span><span class="u">noncredit</span></li>
-      </ul>
-      <p class="why">The degree's six required courses cover the DSPT's ground almost topic for topic, medication included. The noncredit awards teach DDS's own Self-Determination Program, with outcomes such as "Demonstrate person-centered planning skills."</p>
-      <div class="tags"><span class="tag dds">DDS</span><span class="tag lwda">LWDA</span><span class="tag tba">Online or CVC: to confirm</span></div>
-    </article>
-    <article class="card">
-      <div class="who">Porterville College</div>
-      <h3>The PSYT P020 developmental disabilities series</h3>
-      <ul class="courses" aria-label="Porterville College courses">
-        <li><code>P020A</code><span>Developmental Disabilities</span><span class="u">2.5 u</span></li>
-        <li><code>P020B</code><span>Personal Development and Adjustment of the Developmentally Disabled</span><span class="u">2 u</span></li>
-        <li><code>P020C</code><span>Behavioral Support for the Developmentally Disabled</span><span class="u">2 u</span></li>
-        <li><code>P020D</code><span>Pharmacology: Concepts and Practices</span><span class="u">1.5 u</span></li>
-        <li><code>P020E</code><span>Therapeutic Communication and Relationship</span><span class="u">2 u</span></li>
-        <li><code>P020F</code><span>Clinical Practice</span><span class="u">6 u</span></li>
-      </ul>
-      <p class="why">Small courses that fit 35-hour segments well. P020A through P020E line up with DSPT topics; P020F is clinical and would stay outside a match. The college's program page describes on-campus classes with clinical training at developmental centers.</p>
-      <div class="tags"><span class="tag dds">DDS</span><span class="tag tba">Online or CVC: to confirm</span></div>
-    </article>
-  </div>
+<div class="cards">
+<article class="card wide">
+<div class="who">Taft College</div>
+<h3>Disability Services, Direct Support Education and the Self-Determination Program</h3>
+<p class="meta">Active in the state&#x27;s program inventory: Direct Support Education (certificate); Direct Support Education (A.S.); Disability Services (A.S.); Self-Determination Program: Person-Centered Planning (noncredit); Self Determination Program: Independent Facilitator (noncredit)</p>
+<ul class="lines" aria-label="Disability Services, Direct Support Education and the Self-Determination Program: what a DSP could count toward">
+<li><div class="lh"><code>Both years</code><span class="u">18 units</span></div><span class="lt">Could count toward the six required courses of the Disability Services A.S., medication support included</span></li>
+<li><div class="lh"><code>Direct Support Education</code><span class="u">2 awards</span></div><span class="lt">Could open the college&#x27;s Direct Support Education certificate and A.S., named for this workforce</span></li>
+<li><div class="lh"><code>Self-Determination</code><span class="u">noncredit</span></div><span class="lt">Could lead into DDS&#x27;s own Self-Determination Program, taught as two noncredit awards</span></li>
+</ul>
+<p class="why">The degree&#x27;s six required courses cover the DSPT&#x27;s ground almost topic for topic, medication included. The noncredit awards teach DDS&#x27;s own Self-Determination Program, with outcomes such as &quot;Demonstrate person-centered planning skills.&quot;</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Taft College: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:26%"><col style="width:20%"><col style="width:30%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>Year 1: the DSP and the developmental services system</td><td>Taft College</td><td>DS 1501 Introduction to Disabilities (3 units)</td><td>A matching course, required in the Disability Services A.S.; the same common course runs at Diablo Valley College</td></tr>
+<tr><td>Year 1: the DSP and the developmental services system</td><td>Taft College</td><td>DS 1502 Disabilities and the Law (3 units)</td><td>A matching course, required in the Disability Services A.S.</td></tr>
+<tr><td>Medication management, both years</td><td>Taft College</td><td>DS 1503 Introduction to Medication Support (3 units)</td><td>A matching course, required in the Disability Services A.S.</td></tr>
+<tr><td>Year 2: teaching strategies and positive behavior support</td><td>Taft College</td><td>DS 1505 Teaching Individuals with Disabilities and Dealing with Challenging Behaviors (3 units)</td><td>A matching course, required in the Disability Services A.S.</td></tr>
+<tr><td>Risk management and incident reporting, both years</td><td>Taft College</td><td>DS 1506 Maltreatment &amp; Safety at Home &amp; in the Community (3 units)</td><td>A matching course, required in the Disability Services A.S.</td></tr>
+<tr><td>Year 2: person-centered planning and making choices</td><td>Taft College</td><td>DS 9260 Person-Centered Planning Foundations (noncredit)</td><td>A matching course, in the Self-Determination Program awards</td></tr>
+</tbody></table></div>
+<div class="tags"><span class="tag t1">DDS</span><span class="tag t2">LWDA</span><span class="tag tba">Online or CVC: to confirm</span></div>
+</article>
+<article class="card wide">
+<div class="who">Porterville College</div>
+<h3>The PSYT P020 developmental disabilities series</h3>
+<p class="meta">Active in the state&#x27;s program inventory: Psychiatric Technology (certificate)</p>
+<ul class="lines" aria-label="The PSYT P020 developmental disabilities series: what a DSP could count toward">
+<li><div class="lh"><code>Five short courses</code><span class="u">10 units</span></div><span class="lt">Could each take a share of the DSPT&#x27;s topics, P020A through P020E</span></li>
+<li><div class="lh"><code>Clinical practice</code><span class="u">6 units</span></div><span class="lt">Could lead on to P020F, the series&#x27; clinical training at developmental centers</span></li>
+</ul>
+<p class="why">Small courses that fit 35-hour segments well. The college&#x27;s program page describes on-campus classes with clinical training at developmental centers.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Porterville College: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:26%"><col style="width:20%"><col style="width:30%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>Year 1: the DSP and the developmental services system</td><td>Porterville College</td><td>PSYT P020A Developmental Disabilities (2.5 units)</td><td>A matching course; the same common course runs at 3 more colleges</td></tr>
+<tr><td>Positive behavior support, both years</td><td>Porterville College</td><td>PSYT P020C Behavioral Support for the Developmentally Disabled (2 units)</td><td>A matching course; the same common course runs at Cuesta College and Mt. San Antonio College</td></tr>
+<tr><td>Medication management, both years</td><td>Porterville College</td><td>PSYT P020D Pharmacology/Concepts/Practices (1.5 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>Year 1: communication</td><td>Porterville College</td><td>PSYT P020E Therapeutic Communication and Relationship (2 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>Year 2: life quality</td><td>Porterville College</td><td>PSYT P020B Understanding and Promoting Personal Development and Adjustment of the Developmentally Disabled (2 units)</td><td>The college teaches a matching course</td></tr>
+</tbody></table></div>
+<div class="tags"><span class="tag t1">DDS</span><span class="tag tba">Online or CVC: to confirm</span></div>
+</article>
+</div>
 </section>
-
-<section aria-labelledby="h-second">
-  <div class="band-head">
-    <div class="eyebrow">Good fit</div>
-    <h2 id="h-second">Worth a second conversation</h2>
-  </div>
-  <div class="cards">
-    <article class="card">
-      <div class="who">Pasadena City College</div>
-      <h3>Working with adults with developmental disabilities</h3>
-      <ul class="courses" aria-label="Pasadena City College courses">
-        <li><code>SET 102</code><span>Adults with Disabilities</span><span class="u">3 u</span></li>
-        <li><code>SET 111</code><span>Introduction to Developmental Disabilities</span><span class="u">3 u</span></li>
-        <li><code>SET 112</code><span>Working with the Developmentally Disabled</span><span class="u">3 u</span></li>
-      </ul>
-      <div class="tags"><span class="tag dds">DDS</span><span class="tag tba">Online or CVC: to confirm</span></div>
-    </article>
-    <article class="card">
-      <div class="who">West Valley College</div>
-      <h3>Community Caregiver, noncredit</h3>
-      <p class="why">Its program outcome reads: "Provide safe, person-centered care that supports the well-being and independence of clients in home and community settings." The clearest bridge to the Department of Aging's caregiving workforce.</p>
-      <div class="tags"><span class="tag aging">Aging</span><span class="tag lwda">LWDA</span><span class="tag tba">Online or CVC: to confirm</span></div>
-    </article>
-    <article class="card">
-      <div class="who">San Diego Mesa College and Saddleback College</div>
-      <h3>Short medication administration courses</h3>
-      <ul class="courses" aria-label="Medication administration courses">
-        <li><code>MEDA 94</code><span>Medication Administration, San Diego Mesa</span><span class="u">0.5 u</span></li>
-        <li><code>MA 414NC</code><span>Medication Administration Procedures, Saddleback</span><span class="u">noncredit</span></li>
-      </ul>
-      <p class="why">Sized near the medication skill check. Both sit in medical assisting, so faculty would weigh scope of practice before a match.</p>
-      <div class="tags"><span class="tag dds">DDS</span><span class="tag aging">Aging</span><span class="tag tba">Online or CVC: to confirm</span></div>
-    </article>
-  </div>
+<section id="second" aria-labelledby="h-second">
+<div class="band-head">
+<div class="eyebrow">Good fit</div>
+<h2 id="h-second">Ready for a second conversation</h2>
+<p>These colleges teach part of the DSPT&#x27;s ground, a course or a noncredit program, so a conversation could start from the course they already offer.</p>
+</div>
+<div class="cards">
+<article class="card wide">
+<div class="who">Pasadena City College</div>
+<h3>Working with adults with developmental disabilities</h3>
+<ul class="lines" aria-label="Working with adults with developmental disabilities: what a DSP could count toward">
+<li><div class="lh"><code>Three courses</code><span class="u">9 units</span></div><span class="lt">Could take the DSPT&#x27;s foundations and daily practice, SET 102, SET 111 and SET 112</span></li>
+<li><div class="lh"><code>Personal care</code><span class="u">noncredit</span></div><span class="lt">Could carry the health and daily care topics into the noncredit Personal Care Attendant courses</span></li>
+</ul>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Pasadena City College: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:26%"><col style="width:20%"><col style="width:30%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>Year 1: the DSP and the developmental services system</td><td>Pasadena City College</td><td>SET 111 Introduction to Developmental Disabilities (3 units)</td><td>A matching course; the same common course runs at Coalinga College</td></tr>
+<tr><td>DSP Training, both years</td><td>Pasadena City College</td><td>SET 102 Adults with Disabilities (3 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>DSP Training, both years</td><td>Pasadena City College</td><td>SET 112 Working with the Developmentally Disabled (3 units)</td><td>The college teaches a matching course</td></tr>
+<tr><td>Year 1: health, safety and daily care</td><td>Pasadena City College</td><td>PCAN 3000 Personal Care Attendant I: Basic Care (noncredit)</td><td>A matching course; the same common course runs at Santa Barbara City College and Santa Rosa Junior College</td></tr>
+</tbody></table></div>
+<div class="tags"><span class="tag t1">DDS</span><span class="tag t3">Aging</span><span class="tag tba">Online or CVC: to confirm</span></div>
+</article>
+<article class="card wide">
+<div class="who">West Valley College</div>
+<h3>Community Caregiver, noncredit</h3>
+<p class="meta">Active in the state&#x27;s program inventory: Community Caregiver (noncredit)</p>
+<ul class="lines" aria-label="Community Caregiver, noncredit: what a DSP could count toward">
+<li><div class="lh"><code>Caregiving</code><span class="u">noncredit</span></div><span class="lt">Could open the noncredit Community Caregiver program, the clearest bridge to the Department of Aging&#x27;s caregiving workforce</span></li>
+</ul>
+<p class="why">Its program outcome reads: &quot;Provide safe, person-centered care that supports the well-being and independence of clients in home and community settings.&quot;</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="West Valley College: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:26%"><col style="width:20%"><col style="width:30%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>Year 1: the DSP and the developmental services system</td><td>West Valley College</td><td>COUN 70 Introduction to Disability Studies (3 units)</td><td>A matching course; the same common course runs at 6 more colleges</td></tr>
+<tr><td>Medication management, both years</td><td>West Valley College</td><td>HTCH 63 Medication Administration (1.5 units)</td><td>A matching course; the same common course runs at 11 more colleges</td></tr>
+</tbody></table></div>
+<div class="tags"><span class="tag t3">Aging</span><span class="tag t2">LWDA</span><span class="tag tba">Online or CVC: to confirm</span></div>
+</article>
+<article class="card wide">
+<div class="who">Medication administration at several colleges</div>
+<h3>Short medication administration courses</h3>
+<p class="meta">One common course, HLTH M1053, taught at 12 colleges</p>
+<ul class="lines" aria-label="Short medication administration courses: what a DSP could count toward">
+<li><div class="lh"><code>Skill check</code><span class="u">0.5 to 2 units or noncredit</span></div><span class="lt">Could count toward a short medication administration course at any of the 12 colleges that teach it</span></li>
+</ul>
+<p class="why">Sized near the medication skill check, and taught as one common course, so a crosswalk faculty build at one college could guide the next. Most sit in medical assisting, and faculty would weigh that scope beside the skill check.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Medication administration at several colleges: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:26%"><col style="width:20%"><col style="width:30%"><col style="width:24%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th></tr></thead><tbody>
+<tr><td>Medication management, both years</td><td>San Diego Mesa College</td><td>MEDA 94 Medication Administration (0.5 units)</td><td>A matching course, sized near the skill check</td></tr>
+<tr><td>Medication management, both years</td><td>Saddleback College</td><td>MA 414NC Medication Administration Procedures (noncredit)</td><td>A matching course, sized near the skill check</td></tr>
+<tr><td>Medication management, both years</td><td>Glendale Community College</td><td>NS 205 Essentials Of Medication Administration (0.5 units)</td><td>A matching course, sized near the skill check</td></tr>
+<tr><td>Medication management, both years</td><td>Allan Hancock College</td><td>NURS 311 Medication Administration (1.5 units)</td><td>A matching course, in nursing</td></tr>
+<tr><td>Medication management, both years</td><td>Cerro Coso Community College</td><td>HCRS C138 Medication Administration for Medical Assisting (2 units)</td><td>A matching course, in medical assisting</td></tr>
+</tbody></table></div>
+<div class="tags"><span class="tag t1">DDS</span><span class="tag t3">Aging</span><span class="tag tba">Online or CVC: to confirm</span></div>
+</article>
+</div>
 </section>
-
-<section aria-labelledby="h-third">
-  <div class="band-head">
-    <div class="eyebrow">Wider ring</div>
-    <h2 id="h-third">Programs where DSPT could count for part of a course</h2>
-  </div>
-  <div class="wrap" role="region" aria-label="Wider ring of programs" tabindex="0">
-    <table>
-      <colgroup><col style="width:24%"><col style="width:40%"><col style="width:36%"></colgroup>
-      <thead><tr><th scope="col">Area</th><th scope="col">Where</th><th scope="col">Fit</th></tr></thead>
-      <tbody>
-        <tr><td>Psychiatric technician</td><td>Coalinga, Cuesta, Cypress, Mt. San Antonio, Napa Valley, Porterville, San Bernardino Valley, San Joaquin Delta, Yuba and others</td><td>Developmental disabilities units of 5 to 18 units, licensed and clinical. Partial credit at most.</td></tr>
-        <tr><td>Introduction to Disability Studies</td><td>Cosumnes River, Cypress, Rio Hondo, San Diego City, Sierra, Victor Valley, West Valley</td><td>Three-unit survey courses; a partial match to Year 1's foundations.</td></tr>
-        <tr><td>Behavior technician</td><td>Los Angeles City, Los Angeles Valley (noncredit)</td><td>Overlaps the positive behavior support sessions.</td></tr>
-        <tr><td>Personal care and home health aide</td><td>40 noncredit courses at 64 colleges in the caregiving group</td><td>Direct care skills shared with the Department of Aging's workforce.</td></tr>
-      </tbody>
-    </table>
-  </div>
+<section id="wider" aria-labelledby="h-wider">
+<div class="band-head">
+<div class="eyebrow">Wider ring</div>
+<h2 id="h-wider">Programs where DSPT could count toward part of a course</h2>
+<p>Each of these teaches some of the DSPT&#x27;s ground inside a larger course, so the training could count toward part of it.</p>
+</div>
+<div class="wrap" role="region" aria-label="Programs where DSPT could count toward part of a course" tabindex="0"><table>
+<colgroup><col style="width:22%"><col style="width:42%"><col style="width:36%"></colgroup>
+<thead><tr><th scope="col">Area</th><th scope="col">Where</th><th scope="col">What could count</th></tr></thead><tbody>
+<tr><td>Psychiatric technician</td><td>Coalinga College, College of the Redwoods, Cuesta College, Cypress College, Mt. San Antonio College, Napa Valley College and 4 more</td><td>Developmental disabilities courses of 3.5 to 18.5 units, licensed and clinical; the DSPT could count toward part of one.</td></tr>
+<tr><td>Introduction to Disability Studies</td><td>Cosumnes River College, Cypress College, Rio Hondo College, San Diego City College, Sierra College, Victor Valley College, West Valley College</td><td>A three-unit survey course, one common course (SOCS M1041) at 7 colleges; Year 1&#x27;s foundations could count toward part of it.</td></tr>
+<tr><td>Behavior technician</td><td>Los Angeles City College, Los Angeles Valley College, Santiago Canyon College, all noncredit</td><td>The positive behavior support topics could count toward part of the training.</td></tr>
+<tr><td>Caregiving, personal care and home health aide</td><td>114 courses at 62 colleges; caregiving programs at Allan Hancock College, Chaffey College, College of the Canyons, Compton College, El Camino College and 14 more</td><td>The health, safety and daily care topics could count toward part of a course, the direct care skills the Department of Aging&#x27;s workforce shares.</td></tr>
+</tbody></table></div>
 </section>
-
-<section aria-labelledby="h-online">
-  <div class="band-head">
-    <div class="eyebrow">Online and the CVC Exchange</div>
-    <h2 id="h-online">What we still need to confirm</h2>
-  </div>
-  <p>An online section on the CVC Exchange would let a DSP anywhere in the state take the matched course from their home college at local fees. Our data does not record delivery mode, so every card above reads "to confirm." The psychiatric technician programs include clinical work and are likely to stay in person.</p>
+<section id="confirm" aria-labelledby="h-confirm">
+<div class="band-head">
+<div class="eyebrow">Online and the CVC Exchange</div>
+<h2 id="h-confirm">What we still need to confirm</h2>
+</div>
+<p>An online section on the CVC Exchange would let a DSP anywhere in the state take the matched course from their home college at local fees. Our data does not record delivery mode, so every card above reads &quot;to confirm.&quot; The psychiatric technician programs teach their clinical work in person.</p>
+<p>Each example pairs a DSPT topic with a course whose title names it. The faculty who teach the course decide whether the training meets its outcomes, how many units it carries and whether the award is credit or noncredit. MAP holds no DSPT exhibit yet, so the first college to articulate it sets the precedent every other college can adopt.</p>
+<p>The topics come from the tables of contents of DDS&#x27;s Year 1 and Year 2 student resource guides; comparing the guides&#x27; objectives with the course outlines is the next step below.</p>
 </section>
-
-<section aria-labelledby="h-next">
-  <div class="band-head"><h2 id="h-next">Practical next steps</h2></div>
-  <ol class="next">
-    <li>Obtain the DSPT Year 1 and Year 2 student resource guides and the Medication Administration Skill Check Guide, and compare their objectives with the outlines for Taft's DS courses and Porterville's P020 series.</li>
-    <li>Confirm online sections and CVC Exchange listings for the colleges above.</li>
-    <li>Ask DDS how a college can verify a DSP's certification notice for each year.</li>
-    <li>Invite Taft College faculty to examine a pilot crosswalk together.</li>
-  </ol>
-</section>
-
-<p class="note">This is a preliminary scan, not an articulation. Course titles come from the COCI course list, and program outcomes from the CPL Initiative's harvest of college catalogs (105 colleges with program outcomes), both read October 20, 2026. Training facts come from the Department of Developmental Services' DSPT pages and FAQ. College faculty decide every award of credit.</p>
+<section aria-labelledby="h-next"><div class="band-head"><h2 id="h-next">Practical next steps</h2></div><ol class="next"><li>Compare the DSPT Year 1 and Year 2 student resource guides and the Medication Administration Skill Check Guide with the outlines for Taft&#x27;s DS courses and Porterville&#x27;s P020 series, so faculty can see which topics meet which course outcomes.</li><li>Confirm online sections and CVC Exchange listings for the colleges above.</li><li>Ask DDS how a college can verify a DSP&#x27;s certification notice for each year.</li><li>Invite Taft College faculty to examine a pilot crosswalk together.</li><li>Record the first confirmed match in MAP, so every college can adopt it.</li></ol></section>
+<p class="note">This is a preliminary scan, not an articulation. Course titles, units and common courses come from the COCI course list as the Common Course Reference holds it, and programs from the COCI program inventory, both read October 26, 2026; program outcomes come from the CPL Initiative&#x27;s harvest of college catalogs, read October 20, 2026. Training facts come from the Department of Developmental Services&#x27; DSPT pages and FAQ, and the training topics from the tables of contents of its DSPT Year 1 and Year 2 student resource guides. College faculty decide every award of credit.</p>
 </main>
 </body>
 </html>
