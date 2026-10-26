@@ -30,8 +30,9 @@ search what colleges teach (`search_college_offerings` over course titles; *heal
 Fresno City AHLTH 11, Butte HIM 58 and ten more, read 15:35Z), so his row 910ebe25 now says to search the course titles
 and answer with the colleges and courses, naming no tool; and a standing directive (`created_by` sierra-s490@bot) says
 she names only what the reader can open and links only public pages. Receipt
-`kb/receipts/sierra_guidance_no_internal_names_2026-10-26_s490.sql` (before-values and rollback in it); 18 active
-directives, about 8,600 of 9,000 characters. Sierra reads them on every answer, so no deploy.
+`kb/receipts/sierra_guidance_no_internal_names_2026-10-26_s490.sql` (before-values and rollback in it), applied by
+supabase-migrate run 40349711114 and read back: the row reworded, the directive `ee287020`, 18 active directives at 8,599
+of 9,000 characters. Sierra reads them on every answer, so no deploy.
 
 **NEXT (Sam, 2026-10-26 ~15:40Z, S490):** *"If there is a way for you to analyze an instruction I add to see if it can be
 worded better for Sierra, let's do that."* Recommended shape: a **Suggest wording** word beside Save in the Sierra Training
