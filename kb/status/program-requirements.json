@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-26T00:12:51Z",
-  "session": 480,
-  "moniker": "SkyChia",
+  "written_at": "2026-10-26T01:07:57Z",
+  "session": 481,
+  "moniker": "SkyGoldfields",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_481_handoff.md",
+  "handoff": "docs/session_482_handoff.md",
   "next_step": {
-    "title": "The Fact Sheet's UI pass, then the Coordinator Guide as Sam comments",
-    "text": "The first scheduled session of October 26 audits the Fact Sheet. The Coordinator Guide's Draft 1 waits on Sam's comments in the Library's Changes to make box; a session revises it from its source when he saves them."
+    "title": "The Privacy page's UI pass, then the harvest's catalog sweep while the rest waits on Sam",
+    "text": "The first scheduled session of October 27 audits the Privacy page. The Coordinator Guide and the ELL visual wait on Sam's comments in the Library's Changes to make box; with nothing else open, a session takes the next college in the harvest's catalog sweep."
   },
   "calls": [
     {
@@ -140,6 +140,10 @@
     {
       "at": "2026-10-26T00:30:00Z",
       "text": "No harvest table moved this run; S480 built the funding tab's NC labels and outcome chips, the Library's Changes to make, and the Coordinator Guide's Draft 1."
+    },
+    {
+      "at": "2026-10-26T01:10:00Z",
+      "text": "No harvest table moved this run; S481 ran the Fact Sheet's UI pass (#2455) and applied S477's waiting memory fix through the migrate workflow."
     }
   ],
   "headline": [

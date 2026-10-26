@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-451 document(s).
+452 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 482 | [Session 482 handoff: the Fact Sheet's UI pass found six links whose labels a missing quote dropped; S477's memory fix applied](../session_482_handoff.md) | 2026-10-26 |
 | 481 | [Session 481 handoff: NC labels and outcome chips on the funding tab; the Library's Changes to make; Coordinator Guide Draft 1](../session_481_handoff.md) | 2026-10-26 |
 | 480 | [Session 480 handoff: the Coordinator Guide audit ran from the Drive; Sam confirmed twelve noncredit credential pairs](../session_480_handoff.md) | 2026-10-25 |
 | 479 | [Session 479 handoff: the funding page in two columns and the library look; the Noncredit CPL Lead](../session_479_handoff.md) | 2026-10-25 |

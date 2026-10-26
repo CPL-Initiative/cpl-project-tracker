@@ -4,6 +4,8 @@ date: 2026-10-26
 session: 480 (SkyChia)
 tags: [handoff, implementation-funding, library, coordinator-guide, nc-1, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_482_handoff.md
 ---
 
 # You are Session 481

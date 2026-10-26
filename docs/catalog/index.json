@@ -16175,8 +16175,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 451,
+   "count": 452,
    "docs": [
+    {
+     "created": "2026-10-26",
+     "governs": [],
+     "n": 482,
+     "path": "docs/session_482_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "ui-pass",
+      "fact-sheet",
+      "a11y",
+      "cpl-memory",
+      "scheduled-sessions"
+     ],
+     "title": "Session 482 handoff: the Fact Sheet's UI pass found six links whose labels a missing quote dropped; S477's memory fix applied",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-26",
      "governs": [],
@@ -23921,5 +23939,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1266
+ "total": 1267
 }
