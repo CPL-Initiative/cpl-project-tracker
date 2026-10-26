@@ -589,7 +589,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 15407,
+     "line": 15411,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -658,7 +658,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 591
+     "line": 624
     }
    ],
    "main_committers": []
@@ -1418,7 +1418,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1764
+     "line": 1797
     }
    ],
    "main_committers": []
@@ -1946,7 +1946,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 821
+     "line": 854
     }
    ],
    "main_committers": []
@@ -1965,7 +1965,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1160
+     "line": 1193
     },
     {
      "id": "module:college_briefing.js",
@@ -3793,7 +3793,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1438
+     "line": 1471
     }
    ],
    "main_committers": []
@@ -3831,7 +3831,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 319
+     "line": 322
     },
     {
      "id": "module:gr_priorities.js",
@@ -4821,7 +4821,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1329
+     "line": 1362
     },
     {
      "id": "module:admin.js",
@@ -5430,7 +5430,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1701
+     "line": 1727
     },
     {
      "id": "page:funding-model/memo/index.html",
@@ -5682,7 +5682,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1703
+     "line": 1736
     },
     {
      "id": "module:college_briefing.js",
@@ -5707,7 +5707,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1706
+     "line": 1732
     },
     {
      "id": "page:funding-model/memo/index.html",
@@ -5738,7 +5738,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 17000,
+     "line": 17004,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -5767,7 +5767,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1692
+     "line": 1718
     },
     {
      "id": "page:funding-model/memo/index.html",
@@ -5825,7 +5825,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 16927,
+     "line": 16931,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -5869,14 +5869,14 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 875
+     "line": 908
     },
     {
      "id": "module:cpl_funding.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 16912,
+     "line": 16916,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6067,7 +6067,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 317
+     "line": 350
     },
     {
      "id": "module:cpl_pathways.js",
@@ -6131,7 +6131,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1705
+     "line": 1731
     },
     {
      "id": "page:prototype/ccr_atlas_v1.html",
@@ -7520,7 +7520,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1693
+     "line": 1719
     }
    ],
    "served": true,
@@ -18062,7 +18062,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1722
+     "line": 1748
     },
     {
      "id": "page:library/cpl-opportunity/index.html",
