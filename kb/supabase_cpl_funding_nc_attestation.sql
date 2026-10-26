@@ -74,6 +74,9 @@ create table if not exists public.cpl_funding_nc_attestation (
   nc_awarded_count   integer,
   attested_exhibits  text,
   portfolio_course   text,
+  lead_types         text[],          -- S491: the Lead's employee type(s)
+  lead_assignment    text,
+  lead_meets         text,
   requested_at       timestamptz not null default now(),
   confirmed_at       timestamptz,
   confirmed_by       text,
@@ -109,6 +112,18 @@ begin
       and (confirmed_by      is null or char_length(confirmed_by)      <= 160)
       and (noted_by          is null or char_length(noted_by)          <= 160)
       and (nc_awarded_count  is null or nc_awarded_count between 0 and 100000)
+    );
+  end if;
+end $$;
+-- The Lead's details (S491; kb/supabase_cpl_funding_nc_attestation_lead.sql applied them live).
+do $$
+begin
+  if not exists (select 1 from pg_constraint where conname = 'cna_lead_chk') then
+    alter table public.cpl_funding_nc_attestation add constraint cna_lead_chk check (
+      (lead_types is null or (cardinality(lead_types) between 1 and 4
+        and lead_types <@ array['staff', 'ft_faculty', 'pt_faculty', 'administrator']::text[]))
+      and (lead_assignment is null or char_length(lead_assignment) <= 300)
+      and (lead_meets      is null or char_length(lead_meets)      <= 120)
     );
   end if;
 end $$;
@@ -171,12 +186,15 @@ create or replace view public.cpl_funding_nc_attestation_pub
 grant select on public.cpl_funding_nc_attestation_pub to anon, authenticated, service_role;
 
 -- 6. the CO's read: names, emails, the attested lists, the count ------------------
+-- Its row type grew in S491 (the Lead's details), so a re-run drops it first.
+drop function if exists public.cpl_funding_nc_attestation_review();
 create or replace function public.cpl_funding_nc_attestation_review()
 returns table (
   college text, fiscal_year text, status text, source text,
   coordinator_name text, coordinator_title text,
   attestor_name text, attestor_title text, attestor_email text,
   nc_awarded_count integer, attested_exhibits text, portfolio_course text,
+  lead_types text[], lead_assignment text, lead_meets text,
   requested_at timestamptz, confirmed_at timestamptz, confirmed_by text, revoked_at timestamptz)
 language plpgsql stable security definer set search_path = ''
 as $$
@@ -195,6 +213,7 @@ begin
                      or a.nc_awarded_count >= 10
                 then a.nc_awarded_count end,
            a.attested_exhibits, a.portfolio_course,
+           a.lead_types, a.lead_assignment, a.lead_meets,
            a.requested_at, a.confirmed_at, a.confirmed_by, a.revoked_at
     from public.cpl_funding_nc_attestation a
     order by (a.status = 'self_attested') desc, a.requested_at desc;
