@@ -68,13 +68,17 @@ function openDetail(window, doc, name) {
   // Since round 8 (Sam, 2026-09-29) each priority is a row of the college
   // table itself; its name is the first cell, under the band's "Priority
   // outcomes".
-  const prioCells = det && det.previousElementSibling
-    ? drillOf(doc, det.previousElementSibling).cells.map((c) => (c.college ? c.college.text : ""))
+  const prioTds = det && det.previousElementSibling
+    ? drillOf(doc, det.previousElementSibling).cells.map((c) => (c.college ? c.college.td : null))
     : [];
+  const prioCells = prioTds.map((td) => (td ? td.textContent.replace(/\s+/g, " ").trim() : ""));
   check("the expand has one priority row per priority", prioCells.length === NPRIO);
-  // "Priority 1: Access", the card heading's own form (2026-09-23).
+  // "Priority 1: Access" until 2026-10-25; since Sam's S480 ask ("CR Priority 1
+  // [access chip]") the outcome reads as a chip, and a title that only repeats
+  // it drops. The ordinal still never stands alone: a title or a chip follows.
   check("each carries its ordinal AND its name, not the ordinal alone",
-    prioCells.length === NPRIO && prioCells.every((t) => /^Priority \d+: \S/.test(t)));
+    prioCells.length === NPRIO && prioCells.every((t) => /^Priority \d+(: | )\S/.test(t)) &&
+    prioTds.every((td) => !!td && (!!td.querySelector(".cf-goalchip") || /: \S/.test(td.textContent))));
   check("no priority row prints an undefined title",
     prioCells.every((t) => !/undefined|null/i.test(t)));
   // The name must be the priority's own, not a positional guess.
@@ -160,8 +164,10 @@ function openDetail(window, doc, name) {
 // guard stays. Assert the guard's existence in the source, and the property
 // that actually holds at runtime.
 {
+  // rowNameHtml() since 2026-10-25 (S480): the title, unless it only repeats the
+  // outcome, then the chips.
   check("the detail row appends a name only when there is one",
-    /esc\(p\.label\) \+ \(p\.title \? ": " \+ esc\(p\.title\) : ""\)/.test(consumerSrc));
+    /esc\(label\) \+ \(t \? ": " \+ esc\(t\) : ""\) \+ goalChipsHtml\(keys\)/.test(consumerSrc));
   check("the title fallback keys on the priority's SOURCE index, not its position",
     /DEFAULT_PRIORITY_TITLES\[srcIdx\(prioSlot\(slot\), i\)\] \|\| ""/.test(consumerSrc));
   // The runtime property: every title the model yields is non-empty, so no
