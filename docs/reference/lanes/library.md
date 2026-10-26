@@ -199,7 +199,23 @@ college*). Draft: https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw; source `ell
 `briefs/20261023_ELL_IET_CPL_Starting_Points_2.json` (CPLBrain#485); `agency-visual/build.py` now takes a table on a
 card, and the v1 brief rebuilds byte-identical. The record carries Version 2 as *Draft for review* and an empty box
 (receipt `kb/receipts/cpl_library_ell_iet_v2_2026-10-26_s482.sql`, supabase-migrate run 40256725268, read back).
-**NEEDS SAM (Open Asks Sheet 128 card 2): Version 1 stays the public copy until Sam says to replace it.**
+**NEEDS SAM (Open Asks Sheet 129 card 2, carried from Sheet 128 card 2; a reply on 128 still counts): Version 1 stays the public copy until Sam says to replace it.**
+
+## DSP Credit Starting Points, Version 2 (Sam, S482: redo it the way the ELL one was; built S483)
+
+The hand-built page moved onto the agency template: `CPLBrain/04-projects/cpl-initiative/dsp-training/make_brief.py`
+writes `briefs/20261020_DSP_Credit_Starting_Points_2.json`, `agency-visual/build.py` paints it. Five cards (Taft and
+Porterville; Pasadena, West Valley and the HLTH M1053 medication administration course at 12 colleges), each ending in
+up to six rows of Training · College · Course · Basis, every line opening on what a DSP *could count toward*. The cards
+name courses by code; titles, units, credit status and common courses come from `unified_courses_members.js` and
+`coci_lookup_data.js` (a course the CCR holds under no common course, PSYT P020F, from the COCI list), programs from
+`coci_programs_data.js`. MAP holds no DSPT exhibit (0 of 2,952 in `statewide_data.js`, 2026-10-26), so every basis is a
+matching course, with the common course's reach where the CCR names one; the page says the first college to articulate
+DSPT sets the precedent. Training topics are the tables of contents of DDS's DSPT Year 1 and Year 2 student resource
+guides, read through a web search (dds.ca.gov does not resolve from a session). New in the inventory: Taft's Direct
+Support Education certificate and A.S. Draft: https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa (CPLBrain#487). The
+record carries Version 2 as *Draft for review* (receipt `kb/receipts/cpl_library_dsp_v2_2026-10-26_s483.sql`).
+**NEEDS SAM (Open Asks Sheet 129 card 3): Version 1 stays the public copy until Sam says to replace it.**
 
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 
@@ -229,11 +245,9 @@ Sam's edits of that record only listed it; the github.com link came from the see
 
 ## Next
 
-- **The DSP visual, redone the way the ELL one was (Sam, 2026-10-26: *"I'll want to redo the DSP visual in the Library
-  the same way we're redoing the ELL one"*), next session.** `dsp-credit-starting-points` is a hand-built page
-  (`CPLBrain/04-projects/cpl-initiative/dsp-training/20261020_DSP_Credit_Starting_Points.html`), so the redo either
-  moves it onto the agency template (`agency-visual/build.py`, with a card table) or adds the tables by hand; either way
-  the lines lead with what is possible. A new version beside v1; the public copy changes on his word.
+- **DSP Version 2 replaces the public copy on Sam's word:** `python3 scripts/library_page.py dsp-credit-starting-points
+  <CPLBrain/.../dsp-training/20261020_DSP_Credit_Starting_Points_2.html>`, the record's `version` and versions statuses
+  through a guarded update, then a commit.
 - **ELL IET Version 2 replaces the public copy on Sam's word:** `python3 scripts/library_page.py ell-iet-cpl-starting-points
   <the v2 HTML>`, the record's `version` and versions statuses through a guarded update, then a commit.
 - **Sam connects the Microsoft 365 connector;** the next session after that reads the CPLLibrary folder, confirms the 16

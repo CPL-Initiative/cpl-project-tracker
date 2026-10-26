@@ -35,7 +35,7 @@ related:
 
 ✅ **2026-10-19:** the memo and report lead with SB 135 (`MEMO_BLOCKS`); the opening follows `x_lede` until saved.
 
-⏳ **NEEDS SAM (Open Asks Sheet 128 card 1): the memo's opening (S482, 2026-10-26).** Sam revised the memo draft by
+⏳ **NEEDS SAM (Open Asks Sheet 129 card 1, carried from Sheet 128 card 1; a reply on 128 still counts): the memo's opening (S482, 2026-10-26).** Sam revised the memo draft by
 editing the explainer's Overview (`x_lede`, saved 01:23Z by his account), which the memo's opening follows until
 `memo_lead` is saved. Rendered through the Word export (LibreOffice), the memo now prints the seed-grant paragraph twice
 (his, then `memo_history`) and the confirmation and spend-by sentence twice (his, then *Funding Overview*); a hard line
