@@ -1,0 +1,660 @@
+{
+ "college": "Hartnell College",
+ "reread_run": "40276122401",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "40274398240",
+ "at": "2026-10-26T05:48:12Z",
+ "posted": 8,
+ "batches": 1,
+ "skipped": [],
+ "error": null,
+ "replaced": 8,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "40261",
+  "43607",
+  "43608",
+  "43609",
+  "43610",
+  "43776",
+  "44161",
+  "44574"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 6,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Hartnell College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 40274398240;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUS600",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS605",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS610",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 108,
+      "min": 108
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Basic Computer Literacy - NCCT.BCL",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 108,
+   "total_min": 108,
+   "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.BCL/requirements-ipyf8",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39895340003,
+   "program_title": "Basic Computer Literacy",
+   "control_number": "40261"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGM620",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGM622",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 216,
+      "min": 216
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "English for Multilingual Speakers-Beginning - NCCT.ENGM.BEG",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 216,
+   "total_min": 216,
+   "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.BEG/requirements-ipyf8",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39895340003,
+   "program_title": "English for Multilingual Speakers–Beginning",
+   "control_number": "43607"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGM660",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGM662",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 144,
+      "min": 144
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "English for Multilingual Speakers-Advanced - NCCT.ENGM.ADV",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 144,
+   "total_min": 144,
+   "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.ADV/requirements-ipyf8",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39895340003,
+   "program_title": "English for Multilingual Speakers–Advanced",
+   "control_number": "43608"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGM650",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGM658",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 216,
+      "min": 216
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "English for Multilingual Speakers-High Intermediate - NCCT.ENGM.HIGH",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 216,
+   "total_min": 216,
+   "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.HIGH/requirements-ipyf8",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39895340003,
+   "program_title": "English for Multilingual Speakers–High Intermediate",
+   "control_number": "43609"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGM630",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGM632",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 216,
+      "min": 216
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "English for Multilingual Speakers-Low Intermediate - NCCT.ENGM.LOW",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 216,
+   "total_min": 216,
+   "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.LOW/requirements-ipyf8",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39895340003,
+   "program_title": "English for Multilingual Speakers–Low Intermediate",
+   "control_number": "43610"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGM640",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGM642",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 216,
+      "min": 216
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "English for Multilingual Speakers-Intermediate - NCCT.ENGM.INT",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 216,
+   "total_min": 216,
+   "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.INT/requirements-ipyf8",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39895340003,
+   "program_title": "English for Multilingual Speakers-Intermediate",
+   "control_number": "43776"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "TAC326",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC327",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC328",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC329",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC340",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 630,
+      "min": 630
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Theatre Performance - NCCT.TPER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 630,
+   "total_min": 630,
+   "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.TPER/requirements-ipyf8",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39895340003,
+   "program_title": "Theatre Performance",
+   "control_number": "44161"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 4,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Complete ALL of the following Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUS650",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS660",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BUS690",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS699",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 432,
+      "min": 432
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Workforce and Academic Readiness - NCCT.WAR",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 432,
+   "total_min": 432,
+   "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.WAR/requirements-ipyf8",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39895340003,
+   "program_title": "Workforce and Academic Readiness",
+   "control_number": "44574"
+  }
+ ]
+}
