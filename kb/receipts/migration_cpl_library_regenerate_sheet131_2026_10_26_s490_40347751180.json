@@ -1,0 +1,10 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_regenerate_sheet131_2026-10-26_s490.sql",
+ "name": "cpl_library_regenerate_sheet131_2026_10_26_s490",
+ "version": "20261026151942",
+ "sha256": "6bde65b1afa5aeb3d56e41bdb864dd6e6cb685e394d4b864b1c9c2b9524d9148",
+ "run": "40347751180",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"cpl_memory\\\" violates check constraint \\\"cpl_memory_summary_check\\\"\\nDETAIL:  Failing row contains (75fb699c-98a0-4ea0-955b-c7b3ea77ac11, 2026-10-26 15:19:42.726171+00, 2026-10-26 15:19:42.726171+00, decision, Sam, 2026-10-26 ~13:50Z (S490): \\\"For the Library and CPL Opportu..., S490 recommended one procedure (Regenerate on every record, docu..., cpl, t, null, {library,cpl-opportunity,regenerate,visual}, Sam, in session S490, 2026-10-26, {}, {library-changes-to-make-built-2026-10-25,sam-claude-artifacts-g..., verified, null, internal, 2026-10-26, library-s490-2026-10-26, 2026-10-26 15:19:42.726171+00, Sam, null, sam-library-regenerate-and-consolidate-ask-2026-10-26, One button rebuilds any Library piece from a note or a document,..., Sam: Regenerate a visual when he adds a document or a note, gene...).\\n\"}"
+}
