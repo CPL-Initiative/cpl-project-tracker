@@ -12,9 +12,10 @@
 -- ROLLBACK: update public.sierra_guidance set active = true, updated_by = null,
 --   note = 'Naming convention (Sam, 2026-07-03): new identity phase — CPL Initiative + MAP platform; old name is history-only.'
 --   where id = 'cb226a48-d6a2-47ba-b42b-a47a1704d099';
--- note holds at most 300 characters (sierra_guidance_note_len): Sam's 114 plus the 83 appended.
+-- note holds at most 300 characters (sierra_guidance_note_len): Sam's 114 plus the 85 appended.
 -- Run 40387777840 returned 502; run 40388760438 failed that check with a longer suffix. Neither
 -- changed the row.
+-- APPLIED by supabase-migrate run 40394964778 (2026-10-26, S492): cb226a48 read back active false.
 -- A good result: 1 row, active false.
 update public.sierra_guidance
 set active = false,
