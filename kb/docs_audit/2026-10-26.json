@@ -10,23 +10,23 @@
     "other": 150000
   },
   "summary": {
-    "files": 1280,
-    "bytes": 13014578,
-    "over_budget": 0,
-    "handoff_max": 482,
+    "files": 1281,
+    "bytes": 13029884,
+    "over_budget": 2,
+    "handoff_max": 483,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59968,
+    "always_loaded_bytes": 59969,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59968,
+        "bytes": 59969,
         "over": 0
       },
       "other": {
         "files": 134,
-        "bytes": 4016185,
+        "bytes": 4016363,
         "over": 0
       },
       "index": {
@@ -36,46 +36,50 @@
       },
       "lessons": {
         "files": 85,
-        "bytes": 2382898,
+        "bytes": 2387301,
         "over": 0
       },
       "kb_note": {
         "files": 565,
-        "bytes": 2778669,
+        "bytes": 2779689,
         "over": 0
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 428937,
-        "over": 0
+        "bytes": 432776,
+        "over": 2
       },
       "handoff": {
-        "files": 452,
-        "bytes": 3339152,
+        "files": 453,
+        "bytes": 3345017,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
+      "oversized_doc": 2,
       "house_voice": 1,
-      "vault_heavy_path": 64
+      "vault_heavy_path": 69
     },
     "vault": {
-      "files": 24770,
-      "bytes": 3672498021,
-      "heavy_bytes": 2543809695,
-      "heavy_share": 0.693,
+      "files": 29511,
+      "bytes": 4441517788,
+      "heavy_bytes": 3305590507,
+      "heavy_share": 0.744,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
+        "cpl-project-tracker/prototype/noncredit_video/.frames",
         "cpl-project-tracker/kb/program_requirements_college",
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
+        "cpl-project-tracker/prototype/noncredit_video/.narration",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/prototype/landing_page_video",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/kb/course_outcomes",
         "cpl-project-tracker/unified_courses_member_desc.js",
+        "cpl-project-tracker/prototype/noncredit_video/.music.wav",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
         "cpl-project-tracker/unified_courses_details.js",
@@ -96,6 +100,7 @@
         "cpl-project-tracker/kb/row_audit/latest.json",
         "cpl-project-tracker/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
         "cpl-project-tracker/unified_courses_data.js",
+        "cpl-project-tracker/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v3.mp4",
         "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
         "cpl-project-tracker/kb/cid_articulation_joins.json",
         "cpl-project-tracker/coci_lookup_desc_A.js",
@@ -118,6 +123,7 @@
         "cpl-project-tracker/regional_cpl_opportunity_bay.js",
         "cpl-project-tracker/credential_reference_data.js",
         "cpl-project-tracker/regional_cpl_opportunity_la.js",
+        "cpl-project-tracker/prototype/noncredit_video/.fonts/fontsource-source-sans-3-5.3.0.tgz",
         "cpl-project-tracker/coci_lookup_desc_B.js",
         "cpl-project-tracker/coci_lookup_desc_H.js",
         "cpl-project-tracker/coci_lookup_desc_D.js",
@@ -146,6 +152,32 @@
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 21251,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 1251,
+        "ratio": 1.06
+      },
+      "message": "21,251 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/implementation-funding.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 21632,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 1632,
+        "ratio": 1.08
+      },
+      "message": "21,632 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/library.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -162,10 +194,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1532889210,
+        "bytes": 1532896096,
         "kind": "dir"
       },
-      "message": "directory totals 1,532,889,210 B inside the vault"
+      "message": "directory totals 1,532,896,096 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/noncredit_video/.frames",
+      "detail": {
+        "bytes": 672689014,
+        "kind": "dir"
+      },
+      "message": "directory totals 672,689,014 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -206,6 +248,16 @@
         "kind": "dir"
       },
       "message": "directory totals 51,991,148 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/noncredit_video/.narration",
+      "detail": {
+        "bytes": 37869031,
+        "kind": "dir"
+      },
+      "message": "directory totals 37,869,031 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -256,6 +308,16 @@
         "kind": "file"
       },
       "message": "47,883,507 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/noncredit_video/.music.wav",
+      "detail": {
+        "bytes": 38231216,
+        "kind": "file"
+      },
+      "message": "38,231,216 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -456,6 +518,16 @@
         "kind": "file"
       },
       "message": "10,096,719 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v3.mp4",
+      "detail": {
+        "bytes": 10030347,
+        "kind": "file"
+      },
+      "message": "10,030,347 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -680,6 +752,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "prototype/noncredit_video/.fonts/fontsource-source-sans-3-5.3.0.tgz",
+      "detail": {
+        "bytes": 2923285,
+        "kind": "file"
+      },
+      "message": "2,923,285 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "coci_lookup_desc_B.js",
       "detail": {
         "bytes": 2915411,
@@ -712,10 +794,10 @@
       "fixable": false,
       "path": "prototype/noncredit_video/narration.mp3",
       "detail": {
-        "bytes": 2534444,
+        "bytes": 2565477,
         "kind": "file"
       },
-      "message": "2,534,444 B single file inside the vault"
+      "message": "2,565,477 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

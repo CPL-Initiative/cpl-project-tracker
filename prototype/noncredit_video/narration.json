@@ -1,5 +1,5 @@
 {
- "_about": "The narration of the Noncredit Summit film's narrated cut, draft 1 (S335 SkyMotion, 2026-10-05). Sam, 2026-10-05: \"do one version with just music and another with voice over from our ElevenLabs narrator. See if we have access to a female voice with a slight hispanic accent.\" One to three plain sentences a scene, written from the deck's slide scripts (CPLBrain 20261005_Noncredit_Summit_CPL_Slides_1.md), every figure the film's: 52,394 served (said as more than fifty-two thousand), 7,500 a year by 2030, one in four, 29,649 (said as nearly thirty thousand), the 34% worded as the deck's .md gives it, 8 and 8.5 and 22 units, 21 colleges, 78% at 28 colleges, 49 at 253 sites, $35 million and $2 million, $50,000 grants, $1.8 million. Funding vocabulary: funding, max award; never earn for an institution, money or pool. The voice says the figures in words and writes MAP as map, so the captions and the aligner read what she says; the captions write MAP back. Draft 2 (S339 SkyReel, 2026-10-06): the voice is Sarah Explains, the narrator goes unnamed, the title opens on Sam's greeting, the funding opens on a short celebratory line, the ongoing funding is $7 million, and the learners follow deck draft 2 (Nadia's three CompTIA certifications at 9 units as at Saddleback College; Mt. San Antonio College plans to document its ladder).",
+ "_about": "The narration of the Noncredit Summit film's narrated cut, draft 1 (S335 SkyMotion, 2026-10-05). Sam, 2026-10-05: \"do one version with just music and another with voice over from our ElevenLabs narrator. See if we have access to a female voice with a slight hispanic accent.\" One to three plain sentences a scene, written from the deck's slide scripts (CPLBrain 20261005_Noncredit_Summit_CPL_Slides_1.md), every figure the film's: 52,394 served (said as more than fifty-two thousand), 7,500 a year by 2030, one in four, 29,649 (said as nearly thirty thousand), the 34% worded as the deck's .md gives it, 8 and 8.5 and 22 units, 21 colleges, 78% at 28 colleges, 49 at 253 sites, $35 million and $2 million, $50,000 grants, $1.8 million. Funding vocabulary: funding, max award; never earn for an institution, money or pool. The voice says the figures in words and writes MAP as map, so the captions and the aligner read what she says; the captions write MAP back. Draft 2 (S339 SkyReel, 2026-10-06): the voice is Sarah Explains, the narrator goes unnamed, the title opens on Sam's greeting, the funding opens on a short celebratory line, the ongoing funding is $7 million, and the learners follow deck draft 2 (Nadia's three CompTIA certifications at 9 units as at Saddleback College; Mt. San Antonio College plans to document its ladder). Draft 3 (S482 SkyShootingStar, 2026-10-26): the greeting ends on a period so the voice comes in softer (Sam), and the funding scene follows the published Scenario 4: $3.8 million in noncredit funding, for two noncredit outcomes (Sam's word, for restricted to).",
  "voice": "unnamed narrator",
  "engine": {
   "name": "elevenlabs",
@@ -21,12 +21,12 @@
  "scenes": [
   {
    "scene": "Title",
-   "text": "Greetings, Noncredit CPL Heroes! It's a great day for our system as we continue to build out our shared CPL tools to serve noncredit learners. Special thanks to our legislative partners, who supported the Board of Governors' and Chancellor Christian's request for an additional thirty-five million dollars in CPL funding. Here's how noncredit learning becomes college credit.",
+   "text": "Greetings, Noncredit CPL Heroes. It's a great day for our system as we continue to build out our shared CPL tools to serve noncredit learners. Special thanks to our legislative partners, who supported the Board of Governors' and Chancellor Christian's request for an additional thirty-five million dollars in CPL funding. Here's how noncredit learning becomes college credit.",
    "read": {
     "clip": "01.mp3",
-    "generation": "4ve0glacK4S21HGCGxsL",
-    "read_on": "2026-10-06",
-    "text_sha1": "9c37c23090a908881d41a90b8af676e1b0f29935"
+    "generation": "RxvTlgrnPeu0mepelt1H",
+    "read_on": "2026-10-26",
+    "text_sha1": "e01ad4f9bd6d5f253affc73c2e4f97f4c194770e"
    },
    "cues": [
     {
@@ -260,12 +260,12 @@
   },
   {
    "scene": "Funding",
-   "text": "Now, something to celebrate! The state budget provides thirty-five million dollars one-time and seven million ongoing for CPL. Last year, fifty-thousand-dollar grants went to four noncredit programs. This year, one point eight million dollars in noncredit funding reaches every community college noncredit program. Credit and noncredit FTES together size every max award.",
+   "text": "Now, something to celebrate! The state budget provides thirty-five million dollars one-time and seven million ongoing for CPL. Last year, fifty-thousand-dollar grants went to four noncredit programs. This year, three point eight million dollars in noncredit funding reaches every community college noncredit program, for two noncredit outcomes. Credit and noncredit FTES together size every max award.",
    "read": {
     "clip": "09.mp3",
-    "generation": "Q4aoqjSy5ENdIwI10bBF",
-    "read_on": "2026-10-06",
-    "text_sha1": "b1c70913838715b31a8ec231be5d431bb29a9b04"
+    "generation": "1Ednaa3Basq0EjR2hx2A",
+    "read_on": "2026-10-26",
+    "text_sha1": "9c11b9a4b37f0773188c39023d318fd215d05d07"
    },
    "cues": [
     {
@@ -286,7 +286,7 @@
     {
      "at": 6.4,
      "word": "This year",
-     "why": "the card This year, $1.8 million"
+     "why": "the card This year, $3.8 million"
     },
     {
      "at": 8.4,

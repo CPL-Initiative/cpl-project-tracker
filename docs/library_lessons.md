@@ -382,6 +382,28 @@ on every run.
   `kb/migrations/.apply` to main's content is what starts `test`. The SQL guard refuses a direct `insert` through the
   MCP, so a Library record always rides a receipt.
 
+## S482 (SkyShootingStar), 2026-10-26: the first request through Changes to make, ELL IET Version 2
+
+- **The box worked as built, and the Refresh-now question answered itself.** Sam typed his request into the ELL record's
+  Changes to make and asked why no button reran it. The request asked for new analysis (example articulations per card),
+  which no rerun of the old script produces, so a button would have rebuilt v1. **Copy the request into a session is
+  the path; the box is the record.** The session rebuilt, published Version 2 beside v1, added the version and emptied
+  the box through one guarded UPDATE (receipt `kb/receipts/cpl_library_ell_iet_v2_2026-10-26_s482.sql`).
+- **The course a college awards for an exhibit is already in `statewide_data.js`:** `credit_recs[]` with
+  `adopter_rec_idx` per college (the course code), `adopter_units`; titles and units come from `coci_lookup_data.js`
+  (`[college_idx, control_no, subj, num, title, units, credit_char, TOP, cid, ccn, mid]`) and the common-course ids
+  from `unified_courses_members.js`. Three bases, strongest first: articulated at that college; the same common course
+  articulated elsewhere and taught here; a title match. Filter by credential family on the course title too (a work
+  experience or pharmacology course never stands in as an example).
+- **Sam's framing rule (verbatim in `cpl_memory` `sam-s482-frame-what-is-possible-2026-10-26`):** *"focus on what is
+  possible rather than what's not already there. That's what folks are interested in."* A card line that leads with an
+  absence (*No articulation yet nearby*, *Nothing nearby in MAP or COCI*, *none yet*) reads as discouraging to the field
+  even when true; lead with the opening (*Ready for a first articulation at …*, *A precedent to adopt*, *Open for the first
+  exhibit in MAP*). A numeric zero stays a number.
+- **A data write from a session goes through the migrate workflow:** the repo's PreToolUse guard refused the MCP
+  UPDATE outright, as Rule 10 intends; `kb/migrations/.apply` on the branch applied it in about two minutes and the run
+  committed its own receipt back.
+
 ## Moved from the lane (S480)
 
 Moved verbatim from `docs/reference/lanes/library.md` on 2026-10-26 to bring the lane under its 20 KB budget; the lane keeps a pointer.

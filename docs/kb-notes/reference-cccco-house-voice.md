@@ -1,7 +1,7 @@
 ---
 title: The CCCCO house voice — how our outward writing should read
 created: 2026-09-01
-updated: 2026-09-01
+updated: 2026-10-26
 tags: [reference, house-voice, writing, communications, cccco]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -123,6 +123,18 @@ the short sentence is where the position actually gets stated.
 
 After all the reasoning: a small planning group with a concise charge. Not a
 demand, not a list — one modest, specific, next step.
+
+## Lead with what is possible (Sam, 2026-10-26)
+
+On a field-facing visual (a card per college, grantee or program), a line that opens on an absence reads as discouraging
+even when it is true. Sam, of the ELL IET cards: *"Those cards that repeatedly say 'nothing nearby' sound pretty negative
+and discouraging. Perhaps reframe it to focus on what is possible rather than what's not already there. That's what folks
+are interested in."* Say what the reader can start: *Ready for a first articulation at Bakersfield College, where the
+program is taught* in place of *No articulation yet nearby*; *A precedent to adopt: Chaffey College and Lemoore College
+already award credit for it* in place of *Nothing nearby*; *Open for the first exhibit in MAP* in place of *No exhibit
+yet*. The fact stays; the sentence points at the next step. A numeric zero in a table stays a number. This is the
+positive-declaration move above, applied to a whole page of cards, where one negative line repeated eight times sets
+the page's tone.
 
 ## Vocabulary
 

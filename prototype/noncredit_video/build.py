@@ -129,18 +129,19 @@ FACTS = {
     },
     # Slide 4. The 2026-27 state budget: $35 million one-time and $7 million ongoing (the year's $2 million increment
     # brings ongoing CPL operations to $7 million; Sam, 2026-10-06: "should be $7M"; cpl_memory m3). The published
-    # allocation (Scenario 2, final Sept. 30, 2026), read from the model (config md5 764fd264): $25,240,308 to 118
-    # institutions sized on credit + noncredit FTES; $1,812,403 noncredit, restricted to noncredit outcomes. Last year's $50,000 grants to four noncredit programs: Sam's revised funding slide (2026-10-06) adds Calbright to the
+    # allocation (Scenario 4, published Oct. 23, 2026), read from the live config 2026-10-26 (S482): $25,240,308 to 118
+    # institutions sized on credit + noncredit FTES; $3,786,046 noncredit (15.0%), restricted to the two noncredit
+    # outcomes (Scenario 2's Sept. 30 figure was $1,812,403, config md5 764fd264). Last year's $50,000 grants to four noncredit programs: Sam's revised funding slide (2026-10-06) adds Calbright to the
     # three he named on 2026-10-05, and he ruled the film follows it ("2,3,4 y").
-    # Funding vocabulary (CLAUDE.md): funding, allocated, max award, reserved; never earn, money or pool.
+    # Funding vocabulary (CLAUDE.md): funding, allocated, max award, restricted; never earn, money or pool.
     'funding': {
         'kick': 'CPL funding · the 2026–27 state budget',
         'big': 35,
         'side': 'one-time, and <b>$7 million ongoing</b>, for credit for prior learning',
         'cards': [['Last year', '$50,000 grants', 'to four noncredit programs: North Orange Continuing Education, Mt. San Antonio College, San Diego College of Continuing Education and Calbright'],
-                  ['This year', '$1.8 million', 'in noncredit funding for every community college noncredit program, reserved for noncredit outcomes']],
+                  ['This year', '$3.8 million', 'in noncredit funding for every community college noncredit program, for two noncredit outcomes']],
         'line': 'Noncredit counts from the start: credit and noncredit FTES together size every max award.',
-        'text': 'The 2026–27 state budget provides $35 million one-time and $7 million ongoing for CPL. Last year, $50,000 grants went to four noncredit programs: North Orange Continuing Education, Mt. San Antonio College, San Diego College of Continuing Education and Calbright. This year, $1.8 million in noncredit funding reaches every community college noncredit program, reserved for noncredit outcomes. Credit and noncredit FTES together size every max award.',
+        'text': 'The 2026–27 state budget provides $35 million one-time and $7 million ongoing for CPL. Last year, $50,000 grants went to four noncredit programs: North Orange Continuing Education, Mt. San Antonio College, San Diego College of Continuing Education and Calbright. This year, $3.8 million in noncredit funding reaches every community college noncredit program, for two noncredit outcomes. Credit and noncredit FTES together size every max award.',
     },
 }
 for p in FACTS['people']:
@@ -152,12 +153,12 @@ CONFIG = {
     'dek': 'A 100-second film for the 2026 Noncredit Summit, with music: four noncredit learners, the credit already waiting for them, and the funding that counts noncredit from the start. Play opens it full screen, and Esc leaves.',
     'link': PAGES + 'noncredit_in_motion_narrated.html',
     'linkLabel': 'Watch the narrated version',
-    'sources': 'Every figure is from the CPL slides for Chancellor Christian’s 2026 Noncredit Summit keynote: COMIS noncredit enrollment, awards and wages; MAP CPL data, Oct. 5, 2026; and the CPL funding allocation published Sept. 30, 2026. The learners are composites.',
+    'sources': 'Every figure is from the CPL slides for Chancellor Christian’s 2026 Noncredit Summit keynote: COMIS noncredit enrollment, awards and wages; MAP CPL data, Oct. 5, 2026; and the CPL funding allocation published Oct. 23, 2026. The learners are composites.',
     'kick': 'Vision 2030<br>Noncredit Summit 2026',
     'title': 'Noncredit learning, college credit',
     'sub': 'Four learners, the credit already waiting for them, and the funding that counts noncredit from the start.',
     'titleText': 'Noncredit learning, college credit: four learners, the credit already waiting for them, and the funding that counts noncredit from the start. Vision 2030 Noncredit Summit, 2026.',
-    'mp4': '20261005_Noncredit_Summit_in_Motion_v2.mp4',
+    'mp4': '20261005_Noncredit_Summit_in_Motion_v3.mp4',
     'facts': FACTS,
     # [the moment the bolt lands, x, y, caption]: each at the top of the scene whose fact brings it down. The
     # handoff's five (2026-10-05); "Noncredit as afterthought" is Sam's own framing of how the field feels.
@@ -191,7 +192,7 @@ VARIANTS = {
         dek='The Noncredit Summit film, narrated, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
         link=PAGES + 'noncredit_in_motion.html',
         linkLabel='Watch the music-only version',
-        mp4='20261005_Noncredit_Summit_in_Motion_Narrated_v2.mp4',
+        mp4='20261005_Noncredit_Summit_in_Motion_Narrated_v3.mp4',
         # The narrator goes unnamed (Sam, 2026-10-06: "Let's take out naming the narrator Sierra and make her
         # anonymous"): no name line on the title, and the close still says the voice is synthetic.
         audio='narration.mp3',

@@ -35,6 +35,18 @@ related:
 
 ✅ **2026-10-19:** the memo and report lead with SB 135 (`MEMO_BLOCKS`); the opening follows `x_lede` until saved.
 
+⏳ **NEEDS SAM (Open Asks Sheet 128 card 1): the memo's opening (S482, 2026-10-26).** Sam revised the memo draft by
+editing the explainer's Overview (`x_lede`, saved 01:23Z by his account), which the memo's opening follows until
+`memo_lead` is saved. Rendered through the Word export (LibreOffice), the memo now prints the seed-grant paragraph twice
+(his, then `memo_history`) and the confirmation and spend-by sentence twice (his, then *Funding Overview*); a hard line
+break splits *such as the / California Mapping Articulated Pathways Initiative*; three paragraphs join on single line
+breaks; and $25,240,308, $150,000 and $400,000 are typed where `{to institutions}`, `{base award}` and `{cap}` would
+follow the model. The public funding page's Overview now reads *This memorandum sets out …*. His text says 115 credit
+colleges and three noncredit campuses; the memo's Funding Overview and allocation table say 116 colleges and 2
+noncredit-only institutions. The proposed opening (his words, the two repeats dropped, a numbered list, braces for the
+figures) renders clean; it is on the card, and the curator pastes it under *Edit the memo's text* (text is a curator
+edit, never SQL), then puts *This page* back in the Overview. A Priority 3 strategy ends in a typo, *studentsr*.
+
 ✅ **The My College view (Sam, 2026-10-15; `cpl_memory` `sam-my-college-funding-view-asks-2026-10-15`).** The Step 1 box (`stepOneHtml`) sits above the explainer's Contents (`#cplFundStep1Mount`); **PDF asks for an institution first** (`pdfGate`), landscape. Public renderings fold the introduction, open the strategies and **name designated projects only (the register and dashboard are internal)**. ⚠️ Sam moves the tab's College Dashboard himself (`secOrder`). The panel's sentences are passages (`mc_*`, figures in braces). Guards `cpl_funding_my_college_view`, `cpl_funding_my_college_text`.
 
 ✅ **One public page (Sam's eight calls, 2026-10-15; `CPLBrain/decision-sheets/one-public-funding-page/BUILD.md`).** The tab's **Public page** view frames `funding-model/` (`renderPagePreview`), so `publicMode()` is the public page alone. **Edit this page** (`funding-model/edit_page.js`): Rename (`pubTitles`), Hide (`secHidden`), Position (`pubSecOrder`), Edit on each passage (`x_table_intro`, `x_faq`, `x_timing_note`, `x_about`). ⚠️ **`x_about` follows the tab's `about` until first saved on the page.** Guards `college_list_stays_put`, `cpl_funding_how_to_meet_it`, `funding_page_edit`.

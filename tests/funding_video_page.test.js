@@ -134,7 +134,7 @@ function boot(file, reduced) {
 }
 
 [["funding_in_motion.html", "20260926_CPL_Funding_in_Motion_v4.mp4", ""],
- ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
+ ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
   const raw = fs.readFileSync(path.join(DIR, file), "utf8");
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   check(tag + "b2 " + file + " carries the current source (the barrier layer)", raw.includes("var ENC=") && raw.includes("Play the introduction"));

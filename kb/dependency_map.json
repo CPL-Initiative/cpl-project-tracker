@@ -17222,7 +17222,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 239
+     "line": 244
     }
    ],
    "served": true,
@@ -17235,7 +17235,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 408
+     "line": 418
     },
     {
      "id": "script:prototype/funding_video/cues.py",
@@ -17262,7 +17262,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 202
+     "line": 207
     }
    ],
    "served": true,
@@ -17275,7 +17275,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 226
+     "line": 231
     }
    ],
    "served": true,
@@ -17394,7 +17394,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 199
+     "line": 200
     },
     {
      "id": "script:prototype/noncredit_video/cues.py",
@@ -17448,7 +17448,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 192
+     "line": 193
     }
    ],
    "served": true,
@@ -17461,7 +17461,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 207
+     "line": 208
     },
     {
      "id": "script:prototype/noncredit_video/cues.py",
@@ -17488,7 +17488,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 153
+     "line": 154
     }
    ],
    "served": true,

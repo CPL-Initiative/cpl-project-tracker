@@ -106,6 +106,11 @@ TIMING_VOICED = [[0, 'Sep 2026', 'Model released'], [18, 'Nov 2026', 'Confirmati
 # `capped` counts the institutions at the maximum award, whose targets it lowers.
 # The slide then subtracts the difference. "FTES reimbursement rate", never price
 # (Sam, 2026-10-02).
+# THE FIRST MINIMUM CONDITION under the noncredit outcomes lane (Scenario 4's coordLabel, 2026-10-25: "CPL
+# Coordinator and Noncredit CPL Lead assigned (on MAP and the configured college CPL Landing Page) and meeting
+# regularly"), in the film's words: the row on screen, and the scene's spoken-text summary.
+COORD_LINE_NC = 'A CPL coordinator and a Noncredit CPL Lead assigned, listed in MAP and on your college’s CPL landing page, and meeting regularly'
+COORD_WORDS_NC = 'a CPL coordinator and a Noncredit CPL Lead assigned, listed in MAP and on the college CPL landing page, and meeting regularly'
 SAMPLE_TARGET_S1 = {'ftes': 44.3, 'usd': 112484, 'ftesWords': '44.3', 'usdWords': '112,484', 'halfFtesWords': '22.2', 'halfUsdWords': '56,242'}
 
 CONFIG = {
@@ -150,7 +155,7 @@ CONFIG = {
         'linkLabel': 'How CPL funding works',
         'kick': 'An introduction for colleges',
         'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges.',
-        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4',
+        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4',
         'explainer': BASE,
         'prioName': 'Two priorities',
         'prioHead': 'Two priorities carry the funding',
@@ -312,6 +317,11 @@ def live_config(typed, fig, scenario):
         joined_nc = ', '.join(named[:-1]) + ' and ' + named[-1] if len(named) > 1 else named[0]
         c['ncLine'] = '%s noncredit outcome%s count%s toward the noncredit share: %s.' % (
             NUM_WORDS.get(len(nco), str(len(nco))), 's' if len(nco) > 1 else '', '' if len(nco) > 1 else 's', joined_nc)
+        # The outcomes lane's first minimum condition names the Noncredit CPL Lead (Sam struck the strike team,
+        # 2026-10-25; the film carries it from v11, his go of 2026-10-26, S482). The narrated drafts never read
+        # figures, so they keep the line their voices were laid out on.
+        c['coordLine'] = COORD_LINE_NC
+        c['coordWords'] = COORD_WORDS_NC
     rows, said = [], []
     for p in funded:
         key = p.get('measure') or ''
