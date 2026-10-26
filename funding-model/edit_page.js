@@ -13,6 +13,13 @@
  * section (the memo, the videos, the help links) a Rename of its words (Sam,
  * 2026-10-25), saved as pubLinks. Step 1 stays first and never moves.
  *
+ * Every title a reader meets renames here (Sam, 2026-10-26: "The edits I made
+ * to the NC priority (and other) titles did not make it over to the public
+ * page"): each sub-heading the page marks data-psub (pubTitles too), and each
+ * noncredit outcome's label and title, the fields the tab's card edits. And the
+ * bar says when this browser holds edits only it can see, which is where his
+ * NC-1 relabel had gone.
+ *
  * Every write goes through the funding module's own setters, so the layers,
  * the save, the newer-copy check and the database's RLS are the tab's, and the
  * page repaints through its paint() when the model changes. Nothing of this
@@ -33,6 +40,8 @@
   var drafts = {};         // what the curator has typed, by passage
   var renaming = null;     // the block whose title is being edited
   var linkRenaming = null; // the fixed Contents link whose words are being edited
+  var subRenaming = null;  // the sub-heading (data-psub) being renamed
+  var ncRenaming = null;   // the noncredit outcome (its index) being renamed
 
   function may() { try { return !!T.canCurate(); } catch (e) { return false; } }
   function esc(s) {
@@ -80,6 +89,15 @@
       ".pe-linked input{font:inherit; font-size:.92rem; min-height:32px; padding:2px 8px; width:min(100%,24rem); color:var(--text-strong);",
       "  background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:4px}",
       ".pe-linked input:focus-visible{outline:2px solid var(--focus-ring); outline-offset:2px}",
+      ".pe-subw{display:block; margin:-.4em 0 .8em}",
+      ".pe-localnote{flex-basis:100%; margin:0; padding:6px 10px; border-left:3px solid var(--crimson); background:var(--tint-crimson);",
+      "  color:var(--text-strong); font-size:.9rem; max-width:none}",
+      ".pe-nced{display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; margin:8px 0 4px}",
+      ".pe-nced label{display:inline-flex; align-items:center; gap:6px; font-size:.92rem; color:var(--text-strong)}",
+      ".pe-nced input{font:inherit; font-size:.95rem; min-height:36px; padding:2px 8px; color:var(--text-strong);",
+      "  background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:4px}",
+      ".pe-nced input:focus-visible{outline:2px solid var(--focus-ring); outline-offset:2px}",
+      ".pe-nced .pe-ncl{width:10rem} .pe-nced .pe-nct{width:min(100%,28rem)}",
       ".pe-hidnote{margin:0 0 10px; padding:6px 10px; border-left:3px solid var(--crimson); background:var(--tint-crimson);",
       "  color:var(--text-strong); font-size:.9rem; max-width:none}",
       "body.page-editing [data-fsec].is-curator-hidden > *:not(.pe-keep){opacity:.6}",
@@ -208,6 +226,78 @@
     return box;
   }
 
+  // ── sub-headings (Sam, 2026-10-26) ──────────────────────────────────────
+  // An h3 the page marks data-psub; its house words are kept on the element by
+  // the page's own curation pass (data-house-title).
+  function subHeads() {
+    if (typeof T.pubSubTitle !== "function") return [];
+    return Array.prototype.slice.call(doc.querySelectorAll("main [data-psub]"));
+  }
+  function plainOf(h, attr) {
+    var t = make("div", "", attr ? (h.getAttribute(attr) || h.innerHTML) : h.innerHTML);
+    return t.textContent.replace(/\s+/g, " ").trim();
+  }
+  function subControls() {
+    subHeads().forEach(function (h) {
+      var id = h.getAttribute("data-psub");
+      if (subRenaming === id) { h.parentNode.insertBefore(subEditor(h), h.nextSibling); return; }
+      var w = word("Rename", { "data-pe-subrename": id, "aria-label": "Rename the heading " + plainOf(h) });
+      w.className += " pe-x pe-subw";
+      h.parentNode.insertBefore(w, h.nextSibling);
+    });
+  }
+  function subEditor(h) {
+    var id = h.getAttribute("data-psub");
+    var box = make("div", "pe-x pe-title pe-subed");
+    var tid = "pe-st-" + id;
+    box.innerHTML = '<label class="pe-sr" for="' + tid + '">Heading</label>' +
+      '<input id="' + tid + '" type="text" maxlength="160" value="' + esc(plainOf(h)) + '">';
+    box.appendChild(word("Save", { "data-pe-subsave": id }));
+    box.appendChild(word("Cancel", { "data-pe-subcancel": id }));
+    if (T.pubSubTitle(id)) box.appendChild(word("Restore the default heading", { "data-pe-subreset": id }));
+    var hint = make("span", "pe-hint");
+    hint.textContent = "Plain text. Saves for the readers of this page.";
+    box.appendChild(hint);
+    return box;
+  }
+
+  // ── the noncredit outcomes' labels and titles (Sam, 2026-10-26) ─────────
+  // The same stored label and title the tab's card edits, so a rename here is
+  // the tab's too. A cleared label reads NC-1, NC-2 again.
+  function ncWords(i) {
+    var list = typeof T._ncOutcomes === "function" ? T._ncOutcomes("1") : [];
+    return list[i] || null;
+  }
+  function ncControls() {
+    if (typeof T.setNcOutcomeWords !== "function") return;
+    Array.prototype.forEach.call(doc.querySelectorAll("#nc-outcomes .prio[data-ncidx]"), function (card) {
+      var i = Number(card.getAttribute("data-ncidx"));
+      var p = ncWords(i);
+      if (!p) return;
+      var top = card.querySelector(".top");
+      var at = top ? top.nextSibling : card.firstChild;
+      if (ncRenaming === i) { card.insertBefore(ncEditor(i, p), at); return; }
+      var w = word("Rename", { "data-pe-ncrename": String(i),
+        "aria-label": "Rename the noncredit outcome " + p.label + (p.title ? ", " + p.title : "") });
+      w.className += " pe-x pe-subw";
+      card.insertBefore(w, at);
+    });
+  }
+  function ncEditor(i, p) {
+    var box = make("div", "pe-x pe-nced");
+    box.innerHTML = '<label for="pe-ncl-' + i + '">Label <input class="pe-ncl" id="pe-ncl-' + i + '" type="text" maxlength="40" value="' +
+      esc(p.label) + '" placeholder="NC-' + (i + 1) + '"></label>' +
+      '<label for="pe-nct-' + i + '">Title <input class="pe-nct" id="pe-nct-' + i + '" type="text" maxlength="160" value="' +
+      esc(p.title) + '"></label>';
+    box.appendChild(word("Save", { "data-pe-ncsave": String(i) }));
+    box.appendChild(word("Cancel", { "data-pe-nccancel": String(i) }));
+    var hint = make("p", "pe-hint");
+    hint.textContent = "Saves for everyone. The Implementation Funding tab's card reads the same label and title. " +
+      "Clear the label to read NC-" + (i + 1) + ".";
+    box.appendChild(hint);
+    return box;
+  }
+
   // ── passages ──────────────────────────────────────────────────────────────
   // [data-ftext] and [data-ptext] are the page's passages; the table's
   // introduction lives in the institution table, which redraws itself, so its
@@ -283,6 +373,17 @@
     var p = make("p");
     p.innerHTML = '<span class="pe-k">Curator only</span> Editing this page. Each change saves for everyone who reads it.';
     b.appendChild(p);
+    // Edits this browser holds that the page never shows: the tab shows them
+    // over the shared scenario, and a public page reads the shared scenario
+    // alone. Said here because this is where their absence is noticed.
+    var local = typeof T.localOnlyAreas === "function" ? T.localOnlyAreas() : [];
+    if (local.length) {
+      var ln = make("p", "pe-localnote");
+      ln.textContent = "This browser holds changes to " + local.join(", ") + " that only you can see. " +
+        "The Implementation Funding tab shows them; this page does not. Publish them from the tab " +
+        "(Publish this browser's changes), or make them again here.";
+      b.appendChild(ln);
+    }
     if (T.pubOrderIsCustom && T.pubOrderIsCustom()) b.appendChild(word("Restore the default order", { "data-pe-orderreset": "1" }));
     b.appendChild(word("Done", { "data-pe-done": "1" }));
     var st = make("p", "pe-hint");
@@ -303,7 +404,8 @@
     // Remember the focused control, so a redraw under the curator keeps them in place.
     var ae = doc.activeElement, keep = null;
     if (ae && ae.closest && ae.closest(".pe-x")) {
-      keep = ["data-pe-rename", "data-pe-hide", "data-pe-pos", "data-pe-edit", "data-pe-orderreset", "data-pe-linkrename"].reduce(function (k, a) {
+      keep = ["data-pe-rename", "data-pe-hide", "data-pe-pos", "data-pe-edit", "data-pe-orderreset", "data-pe-linkrename",
+        "data-pe-subrename", "data-pe-ncrename"].reduce(function (k, a) {
         return k || (ae.getAttribute(a) != null ? "[" + a + '="' + ae.getAttribute(a) + '"]' : null);
       }, null) || (ae.id ? "#" + ae.id : null);
       if (ae.tagName === "TEXTAREA") drafts[ae.id.replace(/^pe-ta-/, "")] = ae.value;
@@ -327,6 +429,8 @@
       placePassage(p, openKey === p.key ? editorFor(p.key) : passageWord(p));
     });
     linkControls();
+    subControls();
+    ncControls();
     if (keep) {
       var back = doc.querySelector(keep);
       if (back) { try { back.focus({ preventScroll: true }); } catch (e) { back.focus(); } }
@@ -339,7 +443,7 @@
     doc.body.classList.toggle("page-editing", editing);
     btn.setAttribute("aria-pressed", editing ? "true" : "false");
     btn.textContent = editing ? "Done editing" : "Edit this page";
-    if (!editing) { openKey = null; renaming = null; linkRenaming = null; clear(); }
+    if (!editing) { openKey = null; renaming = null; linkRenaming = null; subRenaming = null; ncRenaming = null; clear(); }
     ensureCss();
     repaint();      // a hidden block shows, or hides again
     sync();
@@ -354,7 +458,9 @@
     var t = e.target && e.target.closest ? e.target.closest("[data-pe-rename], [data-pe-hide], [data-pe-edit], " +
       "[data-pe-save], [data-pe-cancel], [data-pe-restore], [data-pe-mark], [data-pe-link], " +
       "[data-pe-titlesave], [data-pe-titlecancel], [data-pe-titlereset], [data-pe-done], [data-pe-orderreset], " +
-      "[data-pe-linkrename], [data-pe-linksave], [data-pe-linkcancel], [data-pe-linkreset]") : null;
+      "[data-pe-linkrename], [data-pe-linksave], [data-pe-linkcancel], [data-pe-linkreset], " +
+      "[data-pe-subrename], [data-pe-subsave], [data-pe-subcancel], [data-pe-subreset], " +
+      "[data-pe-ncrename], [data-pe-ncsave], [data-pe-nccancel]") : null;
     if (!t || !editing || !t.closest(".pe-x")) return;
     var a = function (n) { return t.getAttribute(n); };
     if (a("data-pe-done") != null) { setEditing(false); btn.focus(); return; }
@@ -384,6 +490,31 @@
       linkRenaming = null;
       T.setPubLinkLabel(lid, a("data-pe-linkreset") != null ? "" : (lin ? lin.value : ""), link ? linkHouse(link) : "");
       sync(); focusSoon('[data-pe-linkrename="' + lid + '"]');
+      return;
+    }
+    if (a("data-pe-subrename") != null) { subRenaming = a("data-pe-subrename"); sync(); focusSoon("#pe-st-" + subRenaming); return; }
+    if (a("data-pe-subcancel") != null) {
+      var sc = subRenaming; subRenaming = null; sync(); focusSoon('[data-pe-subrename="' + sc + '"]'); return;
+    }
+    if (a("data-pe-subsave") != null || a("data-pe-subreset") != null) {
+      var sid = a("data-pe-subsave") || a("data-pe-subreset");
+      var sh = doc.querySelector('main [data-psub="' + sid + '"]');
+      var sin = doc.getElementById("pe-st-" + sid);
+      subRenaming = null;
+      T.setPubTitle(sid, a("data-pe-subreset") != null ? "" : (sin ? sin.value : ""), sh ? plainOf(sh, "data-house-title") : "");
+      sync(); focusSoon('[data-pe-subrename="' + sid + '"]');
+      return;
+    }
+    if (a("data-pe-ncrename") != null) { ncRenaming = Number(a("data-pe-ncrename")); sync(); focusSoon("#pe-ncl-" + ncRenaming); return; }
+    if (a("data-pe-nccancel") != null) {
+      var nc = ncRenaming; ncRenaming = null; sync(); focusSoon('[data-pe-ncrename="' + nc + '"]'); return;
+    }
+    if (a("data-pe-ncsave") != null) {
+      var ni = Number(a("data-pe-ncsave"));
+      var nl = doc.getElementById("pe-ncl-" + ni), nt = doc.getElementById("pe-nct-" + ni);
+      ncRenaming = null;
+      T.setNcOutcomeWords(ni, nl ? nl.value : "", nt ? nt.value : "");
+      sync(); focusSoon('[data-pe-ncrename="' + ni + '"]');
       return;
     }
     if (a("data-pe-hide") != null) {
@@ -436,6 +567,20 @@
       var lk = linkRenaming;
       if (e.key === "Enter") { e.preventDefault(); var sv = doc.querySelector('[data-pe-linksave="' + lk + '"]'); if (sv) sv.click(); }
       else if (e.key === "Escape") { linkRenaming = null; sync(); focusSoon('[data-pe-linkrename="' + lk + '"]'); }
+      return;
+    }
+    // Enter saves a sub-heading or a noncredit outcome; Escape leaves it.
+    if (e.target.closest(".pe-subed") || e.target.closest(".pe-nced")) {
+      var sub = !!e.target.closest(".pe-subed");
+      var cur = sub ? subRenaming : ncRenaming;
+      if (e.key === "Enter") {
+        e.preventDefault();
+        var go = doc.querySelector(sub ? '[data-pe-subsave="' + cur + '"]' : '[data-pe-ncsave="' + cur + '"]');
+        if (go) go.click();
+      } else if (e.key === "Escape") {
+        if (sub) subRenaming = null; else ncRenaming = null;
+        sync(); focusSoon(sub ? '[data-pe-subrename="' + cur + '"]' : '[data-pe-ncrename="' + cur + '"]');
+      }
       return;
     }
     if (e.key !== "Escape" || !e.target.closest(".pe-title")) return;
