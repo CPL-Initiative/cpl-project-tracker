@@ -172,7 +172,7 @@ card, and the v1 brief rebuilds byte-identical. The record carries Version 2 as 
 (receipt `kb/receipts/cpl_library_ell_iet_v2_2026-10-26_s482.sql`, supabase-migrate run 40256725268, read back).
 **Version 2 is the public copy** (Sam, Sheet 129 card 2, *replace*, 03:53Z 2026-10-26): `library/ell-iet-cpl-starting-points/` rewritten from it, the record at version 2 (receipt `kb/receipts/cpl_library_v2_public_2026-10-26_s483.sql`).
 It reads 25,516 characters, past Sierra's 20,000-character page cap; the repo raises it to 26,000 (total 32,000).
-**Deployed** (Sam, Open Asks Sheet 130 card 1, *deploy*, 12:32Z 2026-10-26, his own call): cpl-chat from main 954a71e1 (cpl-chat-deploy run 40323496549, byte-verified), so Sierra reads the page whole; smoke run 40323790857 dispatched after it.
+**Deployed** (Sam, Open Asks Sheet 130 card 1, *deploy*, 12:32Z 2026-10-26, his own call): production reads a library page to 31,000 characters and 37,000 in all, from main f9c86491 (cpl-chat-deploy run 40329644423, 13:21Z, byte-verified; the 12:35Z run 40323496549 shipped 26,000 before #2466 raised it). Smoke run 40331201968, run alone, passed, mode 7x included; the three suites that overlapped from 12:48Z to 13:28Z failed on search and statement timeouts, never on 7x.
 
 ## DSP Credit Starting Points, Version 2 (Sam's S482 ask; built S483)
 
@@ -205,8 +205,7 @@ review* (receipt `kb/receipts/cpl_library_dsp_v2_2026-10-26_s483.sql`, run 40263
   Tahoe (ELL), Taft (DSP, so its card names no one). No store records a Noncredit CPL Lead yet (MAP's College Contacts
   has no such field; `cpl_funding_nc_attestation` held 0 rows).
 - **The page cap again.** With the contacts the ELL IET page reads 30,975 characters, so this branch's `cpl-chat` reads
-  31,000 a page and 37,000 in all. Sheet 130's deploy (Sam, *deploy*, 12:32Z) ships 26,000 from `main`; this raise
-  needs a second deploy after #2466 merges.
+  31,000 a page and 37,000 in all, deployed under Sheet 130 (run 40329644423).
 
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 
