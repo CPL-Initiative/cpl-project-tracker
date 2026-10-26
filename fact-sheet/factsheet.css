@@ -122,8 +122,17 @@ body {
   font-variant-numeric: lining-nums;
 }
 
-a { color: var(--cobalt); text-decoration: none; }
-a:hover { text-decoration: underline; }
+/* A link is an underlined word at rest (WCAG 1.4.1, axe link-in-text-block).
+   Cobalt against the body ink is 1.25-1.35:1, so in a sentence or a list the
+   color alone could not mark it, and 21 links read as plain text. The underline
+   is the cue that is not color. Two kinds of link already carry another cue and
+   opt out below: the Contents list (a column of links and nothing else) and the
+   bold resource titles. A link added anywhere else gets the underline. */
+a {
+  color: var(--cobalt);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+}
+a:hover { text-decoration-thickness: 2px; }
 
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
 
@@ -243,12 +252,28 @@ section > h2 {
 }
 section > .lede { color: var(--muted); margin: 2px 0 14px; }
 
-/* ── Collapsible sections (screen) — click an h2 to fold; print forces open ── */
+/* ── Collapsible sections (screen) — click an h2 to fold; print forces open ──
+   The APG disclosure pattern: the h2 stays a heading, so it is still in a screen
+   reader's list of headings, and a native <button> inside it carries
+   aria-expanded (factsheet.js setupCollapse). A role="button" on the h2 itself
+   had taken all 16 out of that list (axe aria-allowed-role). The button takes the
+   heading's font, color and full width, so the page looks as it did. The marker
+   has empty alternative text (the `/ ""`); a browser without that syntax drops
+   the second declaration and keeps the first. */
 h2.sec-toggle { cursor: pointer; user-select: none; }
-h2.sec-toggle::before { content: "▾"; color: var(--mustard-text); font-size: .72em; margin-right: 10px; vertical-align: middle; }
-section.collapsed > h2.sec-toggle::before { content: "▸"; }
+h2.sec-toggle > button {
+  display: block; width: 100%; margin: 0; padding: 0; border: 0; border-radius: 0;
+  background: none; color: inherit; font: inherit; letter-spacing: inherit;
+  line-height: inherit; text-align: inherit; text-transform: inherit;
+  cursor: pointer; appearance: none; -webkit-appearance: none;
+}
+h2.sec-toggle > button::before {
+  content: "▾"; content: "▾" / "";
+  color: var(--mustard-text); font-size: .72em; margin-right: 10px; vertical-align: middle;
+}
+section.collapsed > h2.sec-toggle > button::before { content: "▸"; content: "▸" / ""; }
 section.collapsed > *:not(h2) { display: none; }
-h2.sec-toggle:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; border-radius: 4px; }
+h2.sec-toggle > button:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; border-radius: 4px; }
 h3 { font-size: 1.12rem; color: var(--ink); margin: 22px 0 6px; }
 h4 { font-size: 1rem; color: var(--seal-blue-text); margin: 16px 0 4px; }
 /* Heading LEVEL follows the document outline; heading LOOK follows the role.
@@ -385,7 +410,8 @@ table.data tr.total td, table.data tr.total th { font-weight: 800; background: v
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
   padding: 12px 14px; box-shadow: var(--shadow);
 }
-.res a.res-title { font-weight: 700; color: var(--seal-blue-text); display: inline-block; min-height: 24px; padding: 3px 0 0; }
+.res a.res-title { font-weight: 700; color: var(--seal-blue-text); display: inline-block; min-height: 24px; padding: 3px 0 0; text-decoration: none; }
+.res a.res-title:hover { text-decoration: underline; }
 .res .res-desc { font-size: .86rem; color: var(--muted); margin-top: 3px; }
 
 /* ── Image figures (preserved screenshots) ─────────────────────────────── */
@@ -422,7 +448,8 @@ figure figcaption { font-size: .85rem; color: var(--muted); padding: 8px 14px; b
 
 /* ── TOC ───────────────────────────────────────────────────────────────── */
 .toc { columns: 2; column-gap: 28px; font-size: .94rem; }
-.toc a { display: block; padding: 5px 0; }  /* ≥24px target height (WCAG 2.5.8) */
+.toc a { display: block; padding: 5px 0; text-decoration: none; }  /* ≥24px target height (WCAG 2.5.8) */
+.toc a:hover { text-decoration: underline; }
 @media (max-width: 560px) { .toc { columns: 1; } }
 
 /* ── Footer ────────────────────────────────────────────────────────────── */
@@ -472,8 +499,8 @@ footer.foot strong { color: var(--ink); }
      cards below keep break-inside:avoid; heading-cohesion is protected separately. */
   section { margin-top: 14pt; break-inside: auto; }
   section.collapsed > * { display: block !important; }   /* collapsed-on-screen prints fully */
-  h2.sec-toggle { cursor: auto; }
-  h2.sec-toggle::before { content: none; }
+  h2.sec-toggle, h2.sec-toggle > button { cursor: auto; }
+  h2.sec-toggle > button::before { content: none; }
   section > h2 { font-size: 13pt; break-after: avoid; }
   h3, h4 { break-after: avoid; }
   .card, .kpi, .stat, .res, figure, .person, .strategy, table.data, .story,
