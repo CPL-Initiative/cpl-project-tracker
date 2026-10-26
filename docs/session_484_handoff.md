@@ -11,8 +11,9 @@ status: current
 Your moniker is **SkyToyon**. Session 483 (**SkyCoyoteMint**) was opened by hand by Sam at 03:10Z on 2026-10-26 and
 checkpointed at about 03:35Z, then carried out Sam's Sheet 129 answers (03:53Z) and refreshed this file at about 03:58Z.
 Its checkpoint was **full** (three Rule 10 receipts applied). It skipped `kb/README.md`, `README.md` and the Pipeline tab:
-nothing they describe moved. Read, in order: this file, then the item you act on.
-[Open Asks Sheet 129](https://claude.ai/artifact/PkU8ut6YUpy6CixkUU84j8) is answered and no card is open.
+nothing they describe moved. Read, in order: this file, then
+[Open Asks Sheet 130](https://claude.ai/artifact/4UnUdMkMRwqCVkS6bF47aD)'s `replies` (one card), then the item you act on.
+[Sheet 129](https://claude.ai/artifact/PkU8ut6YUpy6CixkUU84j8) is answered and carried out.
 
 ## Who else is working
 
@@ -44,7 +45,12 @@ S483 signs off before it, so that firing is the next writer.
 
 ## Open work, in order
 
-0. **The memo's opening waits on Sam's paste** (Sheet 129 card 1, *proposed*). Check `cpl_funding_config`
+0. **Read Sheet 130's `replies` first.** Card 1: whether cpl-chat deploys with the raised library page cap. The ELL IET
+   page reads 25,516 characters, past production's 20,000, so Sierra loses about two grantee cards from its middle; the
+   repo reads 26,000 a page and 32,000 in all (#2459, Sierra tests 30/30). On *deploy*: dispatch `cpl-chat-deploy.yml`
+   (confirm `DEPLOY`), then `cpl-chat-smoke.yml` and read mode 7 (`docs/kb-notes/playbook-deploy-shared-supabase-edge-function.md`).
+   On *keep*: revert the two constants and the test reads the page capped.
+   **The memo's opening waits on Sam's paste** (Sheet 129 card 1, *proposed*). Check `cpl_funding_config`
    (`updated_at` read 01:23:35Z at 03:55Z) before saying it is done; the text to paste is `MEMO_LEAD_PROPOSED_128` in
    the vault's sheet builder. Nothing else waits on him from this run.
 1. **The UI pass: Privacy** (`privacy.html`), for the first scheduled session of 2026-10-27 UTC.

@@ -189,6 +189,8 @@ college*). Draft: https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw; source `ell
 card, and the v1 brief rebuilds byte-identical. The record carries Version 2 as *Draft for review* and an empty box
 (receipt `kb/receipts/cpl_library_ell_iet_v2_2026-10-26_s482.sql`, supabase-migrate run 40256725268, read back).
 **Version 2 is the public copy** (Sam, Sheet 129 card 2, *replace*, 03:53Z 2026-10-26): `library/ell-iet-cpl-starting-points/` rewritten from it, the record at version 2 (receipt `kb/receipts/cpl_library_v2_public_2026-10-26_s483.sql`).
+It reads 25,516 characters, past Sierra's 20,000-character page cap; the repo raises it to 26,000 (total 32,000).
+**NEEDS SAM (Open Asks Sheet 130 card 1): deploy cpl-chat so Sierra reads the page whole.**
 
 ## DSP Credit Starting Points, Version 2 (Sam's S482 ask; built S483)
 

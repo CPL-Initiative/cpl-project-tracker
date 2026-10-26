@@ -465,6 +465,11 @@ ids date from July, so ids come from `unified_courses_members.js` and the COCI l
 03:53Z (card 3 *replace*, and card 2 *replace* for ELL IET), and `library/<slug>/` for both now carries Version 2. `dsp-training/make_brief.py` imports the ELL brief's helpers rather than copying them,
 and both v2 pages rebuild byte-identical.
 
+**A public copy is also Sierra's reading.** Version 2 of the ELL page reads 25,516 characters, and cpl-chat stops a page
+at 20,000 (its opening and end kept), so the swap would have cut about two grantee cards out of what Sierra reads;
+`tests/sierra_library.test.js` caught it on the PR. The repo now reads 26,000 a page and 32,000 in all; the deploy is
+Sam's call (Sheet 130). Measure a page's text with cpl-chat's own reader before it replaces a public copy.
+
 **Next.** Reading the DSPT guides' objectives against Taft's and Porterville's course outlines is the step that would turn the
 title matches into a crosswalk.
 
