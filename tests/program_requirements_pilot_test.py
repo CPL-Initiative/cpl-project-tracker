@@ -814,6 +814,18 @@ check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and not r["arithm
 r = S.score({**adt, "program": {**adt["program"], "degree_total": {"min": 55, "max": 58}}}, PSY, PSY_TEXT, "A.A- T Degree")
 check(r["arithmetic"].get("within") and not r["arithmetic"].get("overlap"),
       "a transfer degree whose total sits inside the span is within, not overlap")
+# S486: a local degree whose page says students can double-count required courses and General
+# Education (Hartnell's nursing tabs) carries ge_overlap from its reconcile step and adds up too.
+r = S.score({**adt, "program": {**adt["program"], "degree_total": {"min": 52, "max": 52}, "ge_overlap": True}},
+            PSY, PSY_TEXT, "A.S. Degree")
+check(r["pass"] and r["arithmetic"].get("overlap") is True,
+      "a local degree whose page allows the double count adds up past its total: %s" % json.dumps(r["arithmetic"]))
+import _program_requirements_reconcile as RC_OV
+_hn = {"program": {"degree_total": {"min": 63, "max": 63}}, "blocks": []}
+_hn_new, _hn_notes = RC_OV.reconcile(_hn, "General Education\nStudents can double-count required courses and courses "
+                                     "for General Education.", "Hartnell College", "A.S. Degree")
+check(_hn_new["program"].get("ge_overlap") is True and "ge_overlap" in [n["field"] for n in _hn_notes],
+      "Hartnell's step reads the double-count words as ge_overlap: %s" % json.dumps(_hn_notes))
 for award, want in (("A.A- T Degree", True), ("A.S. T Degree", True), ("A.S. Degree", False),
                     ("A.A. Degree", False), ("Associate in Science for Transfer", True), (None, False)):
     check(S.transfer_degree(award, {}) is want, "transfer_degree(%r) is %s" % (award, want))
@@ -1706,7 +1718,7 @@ hart = {"program": {"total_units": {"min": None, "max": None}, "degree_total": {
                     "ge_units": {"min": None, "max": None}, "electives_fill_degree": True}, "blocks": []}
 new, notes = RC.reconcile(hart, HART_PHY, "Hartnell College", "A.S. T Degree")
 deg = S.degree_check(new["program"], (60.0, 60.0), 24.0, 24.0, [], HART_PHY, "A.S. T Degree")
-check([n["field"] for n in notes] == ["ge_units"] and new["program"]["ge_units"] == {"min": 34, "max": 34}
+check([n["field"] for n in notes] == ["ge_units", "ge_overlap"] and new["program"]["ge_units"] == {"min": 34, "max": 34}
       and deg["pass"] and deg["fill"] == [2.0, 2.0],
       "Hartnell Physics AS-T reconciled: Cal-GETC 34, electives make up 2: %s" % json.dumps(deg))
 hart_tac = dict(hart, program=dict(hart["program"], ge_pattern="Local GE"))

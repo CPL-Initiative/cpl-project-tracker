@@ -523,9 +523,11 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
                    award: str | None = None) -> dict:
     """How a sum of the blocks, open electives and general education (lo-hi)
     meets the degree total the page prints: pass, status, and how it passed."""
-    if transfer_degree(award, prog) and lo > degree[0] + TOL and hi > degree[1] + TOL:
+    if (transfer_degree(award, prog) or prog.get("ge_overlap")) and lo > degree[0] + TOL and hi > degree[1] + TOL:
         # Sheet 82 card 2 ("overlap", Sam, 2026-10-14): a course counts toward the major and
-        # Cal-GETC both, so a transfer degree's sum runs past the total it prints.
+        # Cal-GETC both, so a transfer degree's sum runs past the total it prints. A local degree
+        # whose page says the same ("Students can double-count required courses and courses for
+        # General Education", Hartnell's nursing tabs, S486) carries ge_overlap from its reconcile step.
         return {"pass": True, "status": "equal", "overlap": True, "why": []}
     if prog.get("degree_total_minimum"):
         # The page prints the degree total as a floor (Cerritos: "Complete a minimum of 60 units to
