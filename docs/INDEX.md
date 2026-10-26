@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 94 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 458 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1273** | |
+| Session handoffs | 459 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1274** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-26 S488 SkyThimbleberry: Hartnell's last eight failing tabs read (light checkpoint); handoff 489.
 - 2026-10-26 S487 SkyHuckleberry (the CPL Queue routine): Hartnell's pooled subject lists; a `pool_lists` reconcile step, General Studies 17912 passes, Hartnell 80 of 94 (#2463); full checkpoint, handoff 488.
 - 2026-10-26 S486 SkyQuince (the CPL Queue routine): Hartnell's double-count words read as the overlap; three local degrees pass, the carry basis leaves the flag out (#2462); handoff 487.
 - 2026-10-26 S485 SkyElderberry (the CPL Queue routine): Hartnell's last three noncredit courses carry no hours in its data; why six of its degrees fail arithmetic, read from their tabs (#2461); light checkpoint, handoff 486.
