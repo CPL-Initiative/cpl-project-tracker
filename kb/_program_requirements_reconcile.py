@@ -183,6 +183,41 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                 notes.append({"field": "course_hours", "was": None, "now": filled,
                               "words": "%s (%s)" % ((course_hours or {}).get("call"), st.get("source_words", ""))})
             continue
+        if st["kind"] == "pool_areas":
+            # A total the page prints over each area's sub-areas (Hartnell's CalGETC 45096, S491: "A total of
+            # 6 semester units is required" over Area 3A and 3B; "A total of 7" over 5A, 5B and 5C). Each
+            # match names one area and its figure; that area's sub-area blocks become one choice of the
+            # figure, each sub-area kept in floors (its rule says whether its minimum counts courses or
+            # units), and a course listed under two sub-areas listed once (5C's laboratory repeats 5A's and
+            # 5B's courses). Only two or more blocks, and never where a sub-area's own printed figures sum
+            # past the area's.
+            for m in re.finditer(st["pattern"], text):
+                area, n = m.group("area"), _num(m.group("n"))
+                named = re.compile(st["block_pattern"].replace("{area}", re.escape(area)))
+                blocks = out.get("blocks") or []
+                pool = [i for i, b in enumerate(blocks) if named.match(b.get("name") or "")
+                        and b.get("rule") in ("choose_courses", "choose_units") and not b.get("floors")]
+                if n is None or len(pool) < 2:
+                    continue
+                if sum(_span_of(blocks[i].get("stated"))[0] or 0 for i in pool) > n:
+                    continue
+                courses, seen = [], set()
+                for i in pool:
+                    for c in blocks[i].get("courses") or []:
+                        k = re.sub(r"\s+", "", (c.get("code") or "")).upper()
+                        if k and k in seen:
+                            continue
+                        seen.add(k)
+                        courses.append(c)
+                merged = {"name": st.get("name", "Area {area}").replace("{area}", area), "rule": "choose_units",
+                          "minimum": n, "option_group": None, "stated": {"min": n, "max": n}, "courses": courses,
+                          "floors": [{"name": blocks[i].get("name"), "rule": blocks[i].get("rule"),
+                                      "minimum": blocks[i].get("minimum"), "stated": blocks[i].get("stated")}
+                                     for i in pool]}
+                notes.append({"field": "blocks", "was": [blocks[i].get("name") for i in pool],
+                              "now": merged["name"], "words": m.group(0).strip()})
+                out["blocks"] = [merged if i == pool[0] else b for i, b in enumerate(blocks) if i not in pool[1:]]
+            continue
         field = st["field"]
         m = re.search(st["pattern"], text)
         if not m:
