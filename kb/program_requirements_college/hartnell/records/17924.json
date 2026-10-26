@@ -70,10 +70,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    17.0,
+    18.0,
     18.0
    ],
    "stated": [
@@ -81,14 +81,12 @@
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 17.0-18.0; the catalog states 18.0-18.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     51.0,
+     52.0,
      52.0
     ],
     "stated": [
@@ -103,7 +101,7 @@
     "why": [],
     "fill": [
      8.0,
-     9.0
+     8.0
     ]
    }
   },
@@ -129,7 +127,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -155,17 +153,18 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
-    "name": "List A: Biology",
+    "name": "List A, List B and List C",
     "rule": "choose_units",
-    "minimum": 3,
+    "minimum": 18,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 18,
+     "max": 18
     },
     "courses": [
      {
@@ -237,19 +236,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List B: Chemistry",
-    "rule": "choose_units",
-    "minimum": 4,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "CHM1A",
       "units": 5,
@@ -284,19 +271,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "List C",
-    "rule": "choose_units",
-    "minimum": 10,
-    "option_group": null,
-    "stated": {
-     "min": 10,
-     "max": 11
-    },
-    "courses": [
+     },
      {
       "code": "ANT1",
       "units": 3,
@@ -431,90 +406,6 @@
       "catalog_addition": false
      },
      {
-      "code": "BIO1",
-      "units": 4.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO5",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO6",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO6L",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO10",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO11",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO12",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO18",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO27",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO42",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHM1A",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHM1B",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "CHM12A",
       "units": 5,
       "units_max": null,
@@ -527,27 +418,32 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     }
+    ],
+    "floors": [
+     {
+      "name": "List A: Biology",
+      "minimum": 3,
+      "stated": {
+       "min": null,
+       "max": null
+      }
      },
      {
-      "code": "CHM22",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
+      "name": "List B: Chemistry",
+      "minimum": 4,
+      "stated": {
+       "min": null,
+       "max": null
+      }
      },
      {
-      "code": "CHM23",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHM60",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
+      "name": "List C",
+      "minimum": 10,
+      "stated": {
+       "min": 10,
+       "max": 11
+      }
      }
     ]
    }
@@ -583,20 +479,24 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": 39966331452,
+ "extracted_run": 40314109801,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Students can double-count required courses and courses for General Education"
+  },
+  {
+   "field": "blocks",
+   "was": [
+    "List A: Biology",
+    "List B: Chemistry",
+    "List C"
+   ],
+   "now": "List A, List B and List C",
+   "words": "Complete a total of 18 units from List A, List B, and List C"
   }
  ],
- "read_run": 39949570443
+ "read_run": 39966331452
 }
