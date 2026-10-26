@@ -130,8 +130,7 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": [],
-   "ge_overlap": true
+   "careers": []
   },
   "blocks": [
    {
@@ -283,14 +282,90 @@
    "The catalog title for ADJ2 is 'Community Relations and the Justice System', while the state file title is 'Community Relations- Multicultural Diversity Discrimination'."
   ]
  },
- "extracted_run": 40292405207,
+ "extracted_run": "39969050595",
  "reconciled": [
   {
-   "field": "ge_overlap",
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 23,
+    "max": 23
+   },
+   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
+  },
+  {
+   "field": "course_units",
    "was": null,
-   "now": true,
-   "words": "Students can double-count required courses and courses for General Education"
+   "now": {
+    "ADJ1": [
+     3,
+     3
+    ],
+    "ADJ2": [
+     3,
+     3
+    ],
+    "ADJ3": [
+     3,
+     3
+    ],
+    "ADJ4": [
+     3,
+     3
+    ],
+    "ADJ5": [
+     3,
+     3
+    ],
+    "ADJ11": [
+     3,
+     3
+    ],
+    "ADJ21A": [
+     3,
+     3
+    ],
+    "ADJ8": [
+     3,
+     3
+    ],
+    "ADJ10": [
+     3,
+     3
+    ],
+    "ADJ25": [
+     3,
+     3
+    ],
+    "ADJ30": [
+     3,
+     3
+    ],
+    "ADJ33": [
+     3,
+     3
+    ],
+    "ADJ34": [
+     3,
+     3
+    ],
+    "ADJ36": [
+     3,
+     3
+    ],
+    "ADJ51": [
+     3,
+     3
+    ],
+    "ADJ102": [
+     3.5,
+     3.5
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
- ],
- "read_run": "39969050595"
+ ]
 }
