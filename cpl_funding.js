@@ -14428,7 +14428,11 @@
     return '<p class="cplfund-step1-k">Step 1</p>' +
       '<div class="cplfund-step1-vbody"><p class="cplfund-step1-vl">Choose a view</p>' +
       segHtml("cplFundCollegeView", VIEW_ITEMS, oneCollegeView() ? "one" : "all") +
-      '<p class="cplfund-step1-vs">Hover over a view for what it shows.</p></div>';
+      // The chosen view's description in words, so a phone or a keyboard reads what the hover
+      // says (WCAG 2.1.1, 1.4.13; S492, 2026-10-26, for the CPL Summit): the line said "Hover
+      // over a view for what it shows", which only a mouse can do.
+      '<p class="cplfund-step1-vs" aria-live="polite">' +
+      esc(VIEW_ITEMS[oneCollegeView() ? 1 : 0].title) + "</p></div>";
   }
   function stepOneViewHtml() {
     return '<div class="cplfund-step1-view">' + stepOneViewInner() + "</div>";

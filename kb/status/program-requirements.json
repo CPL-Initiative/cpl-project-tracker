@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-26T15:20:53Z",
-  "session": 490,
-  "moniker": "SkyGooseberry",
+  "written_at": "2026-10-26T19:29:25Z",
+  "session": 491,
+  "moniker": "SkySalmonberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_491_handoff.md",
+  "handoff": "docs/session_492_handoff.md",
   "next_step": {
-    "title": "CalGETC's area totals, then Music's repeat counts",
-    "text": "The next session reads the CalGETC certificate's captured page and writes a reconcile step for its area totals over sub-areas, then Music's repeat counts. Hartnell stands at 81 of 94, with its Liberal Arts display build applied on main."
+    "title": "Hartnell's CalGETC area totals",
+    "text": "Hartnell's CalGETC certificate 45096 waits on a reconcile step for its area totals over sub-areas; the next session reads page read run 40375734212's log for the area words, then finishes the pool_areas step and rereads. Hartnell stands at 81 of 94."
   },
   "calls": [
     {
@@ -204,6 +204,10 @@
     {
       "at": "2026-10-26T15:30:00Z",
       "text": "No harvest table moved this run; Sam kept S486's overlap reading and S489's floors (Sheet 131 cards 3 and 4). S490 built the Library's Regenerate and moved the CPL Opportunity page under library."
+    },
+    {
+      "at": "2026-10-26T19:29:00Z",
+      "text": "No harvest table moved this run; S491 built Sierra's wording help and drafted the funding attestation form. S492 stamped this file, which S491's checkpoint skipped."
     }
   ],
   "headline": [

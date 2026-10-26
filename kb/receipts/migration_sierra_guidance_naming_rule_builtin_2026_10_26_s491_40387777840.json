@@ -1,0 +1,10 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/sierra_guidance_naming_rule_builtin_2026-10-26_s491.sql",
+ "name": "sierra_guidance_naming_rule_builtin_2026_10_26_s491",
+ "version": "20261026193715",
+ "sha256": "c128f75ee180fa25c7c97197f018718b21a425bc4f62004648f7ba2255417882",
+ "run": "40387777840",
+ "status": 502,
+ "response": "error code: 502\n"
+}

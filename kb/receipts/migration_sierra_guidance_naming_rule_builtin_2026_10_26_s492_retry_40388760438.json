@@ -1,0 +1,10 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/sierra_guidance_naming_rule_builtin_2026-10-26_s491.sql",
+ "name": "sierra_guidance_naming_rule_builtin_2026_10_26_s492_retry",
+ "version": "20261026194239",
+ "sha256": "c128f75ee180fa25c7c97197f018718b21a425bc4f62004648f7ba2255417882",
+ "run": "40388760438",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"sierra_guidance\\\" violates check constraint \\\"sierra_guidance_note_len\\\"\\nDETAIL:  Failing row contains (cb226a48-d6a2-47ba-b42b-a47a1704d099, Naming: the program is the \\\"CPL Initiative\\\" (never \\\"MAP Initiati..., f, Naming convention (Sam, 2026-07-03): new identity phase \u2014 CPL ..., session-97, 2026-07-03 13:54:51.848379+00, sierra-s491@bot (sheet 132), 2026-10-26 19:42:40.974746+00, directive, null).\\n\"}"
+}
