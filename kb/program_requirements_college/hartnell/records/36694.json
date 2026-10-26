@@ -138,8 +138,7 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": [],
-   "ge_overlap": true
+   "careers": []
   },
   "blocks": [
    {
@@ -411,14 +410,99 @@
    "No program learning outcomes or careers are printed in the Requirements tab; the General and Degree Map tabs were not included in the text."
   ]
  },
- "extracted_run": 40285320209,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_overlap",
+   "field": "course_units",
    "was": null,
-   "now": true,
-   "words": "Students can double-count required courses and courses for General Education"
+   "now": {
+    "CMA51": [
+     3,
+     3
+    ],
+    "CMA55": [
+     3,
+     3
+    ],
+    "CMA57": [
+     3,
+     3
+    ],
+    "CMA61": [
+     4,
+     4
+    ],
+    "CMA62": [
+     4,
+     4
+    ],
+    "CMA81": [
+     3,
+     3
+    ],
+    "CMA52": [
+     3,
+     3
+    ],
+    "CMA53": [
+     3,
+     3
+    ],
+    "CMA54": [
+     3,
+     3
+    ],
+    "CMA56": [
+     3,
+     3
+    ],
+    "CMA91": [
+     3,
+     3
+    ],
+    "CMA63": [
+     3,
+     3
+    ],
+    "CMA65": [
+     3,
+     3
+    ],
+    "CMA84": [
+     3,
+     3
+    ],
+    "CMA90": [
+     3,
+     3
+    ],
+    "EGN11": [
+     3,
+     3
+    ],
+    "CMA70": [
+     3,
+     3
+    ],
+    "CMA71": [
+     3,
+     3
+    ],
+    "CMA72": [
+     3,
+     3
+    ],
+    "CMA82": [
+     3,
+     3
+    ],
+    "CMA83": [
+     3,
+     3
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": 39949570443
+ "read_run": 39931703521
 }

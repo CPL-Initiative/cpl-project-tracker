@@ -148,8 +148,7 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": [],
-   "ge_overlap": true
+   "careers": []
   },
   "blocks": [
    {
@@ -290,14 +289,79 @@
    "No program learning outcomes or careers appear on this requirements tab."
   ]
  },
- "extracted_run": 40285320209,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_overlap",
+   "field": "course_units",
    "was": null,
-   "now": true,
-   "words": "Students can double-count required courses and courses for General Education"
+   "now": {
+    "BUS50": [
+     4,
+     4
+    ],
+    "BUS110A": [
+     1,
+     1
+    ],
+    "BUS110B": [
+     1,
+     1
+    ],
+    "BUS111A": [
+     1,
+     1
+    ],
+    "BUS111B": [
+     2,
+     2
+    ],
+    "BUS135": [
+     4,
+     4
+    ],
+    "BUS140A": [
+     0.5,
+     0.5
+    ],
+    "BUS140B": [
+     0.5,
+     0.5
+    ],
+    "BUS150.15": [
+     3,
+     3
+    ],
+    "BUS172": [
+     1,
+     1
+    ],
+    "BUS173": [
+     3,
+     3
+    ],
+    "BUS175": [
+     3,
+     3
+    ],
+    "BUS177": [
+     3,
+     3
+    ],
+    "BUS190": [
+     2,
+     2
+    ],
+    "BUS194": [
+     3,
+     3
+    ],
+    "COMMC1000": [
+     3,
+     3
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": 39949570443
+ "read_run": 39931703521
 }

@@ -77,8 +77,9 @@
     23.0
    ],
    "why": [],
+   "fill": null,
    "meets": true,
-   "fill": null
+   "rescored": "Open Asks Sheet 120 card 1"
   },
   "repeated": {
    "codes": [],
@@ -128,8 +129,7 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": [],
-   "ge_overlap": true
+   "careers": []
   },
   "blocks": [
    {
@@ -259,14 +259,67 @@
    "Only the Requirements tab text was provided; no program learning outcomes or careers appear in the text."
   ]
  },
- "extracted_run": 40285320209,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_overlap",
+   "field": "course_units",
    "was": null,
-   "now": true,
-   "words": "Students can double-count required courses and courses for General Education"
+   "now": {
+    "AST1": [
+     3,
+     3
+    ],
+    "AST1L": [
+     1,
+     1
+    ],
+    "PHY4A": [
+     4,
+     4
+    ],
+    "PHY4B": [
+     4,
+     4
+    ],
+    "PHY4C": [
+     4,
+     4
+    ],
+    "MAT3A": [
+     4,
+     4
+    ],
+    "MAT3B": [
+     4,
+     4
+    ],
+    "MAT3C": [
+     4,
+     4
+    ],
+    "MAT4": [
+     3,
+     3
+    ],
+    "MAT5": [
+     3,
+     3
+    ],
+    "CHM1A": [
+     5,
+     5
+    ],
+    "CSS1": [
+     4,
+     4
+    ],
+    "CSS4": [
+     4,
+     4
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": 39949570443
+ "read_run": 39931703521
 }

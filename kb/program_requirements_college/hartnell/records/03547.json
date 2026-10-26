@@ -155,8 +155,7 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": [],
-   "ge_overlap": true
+   "careers": []
   },
   "blocks": [
    {
@@ -606,14 +605,195 @@
    "No program learning outcomes or careers appear in the text; the page shows only the Requirements tab."
   ]
  },
- "extracted_run": 40285320209,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_overlap",
+   "field": "course_units",
    "was": null,
-   "now": true,
-   "words": "Students can double-count required courses and courses for General Education"
+   "now": {
+    "HED6": [
+     3,
+     3
+    ],
+    "NUTR1": [
+     3,
+     3
+    ],
+    "PETH1": [
+     3,
+     3
+    ],
+    "PETH2": [
+     4,
+     4
+    ],
+    "PSYCC1000": [
+     3,
+     3
+    ],
+    "CHM22": [
+     4,
+     4
+    ],
+    "PHY2A": [
+     4,
+     4
+    ],
+    "PHY10": [
+     4,
+     4
+    ],
+    "BIO5": [
+     4,
+     4
+    ],
+    "BIO6": [
+     3,
+     3
+    ],
+    "BIO6L": [
+     2,
+     2
+    ],
+    "BIO11": [
+     4,
+     4
+    ],
+    "PETH4": [
+     3,
+     3
+    ],
+    "PETH5": [
+     3,
+     3
+    ],
+    "PETH10A": [
+     2,
+     2
+    ],
+    "PETH10B": [
+     2,
+     2
+    ],
+    "PEAC58": [
+     1,
+     1.5
+    ],
+    "PEAC59": [
+     1,
+     1.5
+    ],
+    "PEAC61": [
+     1,
+     1.5
+    ],
+    "PEAC62": [
+     1,
+     1.5
+    ],
+    "PEAC68": [
+     1,
+     1.5
+    ],
+    "PEAC40": [
+     1,
+     1.5
+    ],
+    "PEAC41": [
+     1,
+     1.5
+    ],
+    "PEAC52": [
+     1,
+     1.5
+    ],
+    "PEAC55": [
+     1,
+     1.5
+    ],
+    "PEAC56": [
+     1,
+     1.5
+    ],
+    "PEAC70": [
+     1,
+     1.5
+    ],
+    "PEAC74": [
+     1,
+     1.5
+    ],
+    "PEIN17": [
+     1.5,
+     1.5
+    ],
+    "PEIN19": [
+     3,
+     3
+    ],
+    "PEIN20": [
+     3,
+     3
+    ],
+    "PEIN21": [
+     3,
+     3
+    ],
+    "PEIN22": [
+     3,
+     3
+    ],
+    "PEIN23": [
+     3,
+     3
+    ],
+    "PEIN24": [
+     3,
+     3
+    ],
+    "PEIN25": [
+     1.5,
+     1.5
+    ],
+    "PEIN26": [
+     3,
+     3
+    ],
+    "PEAC32": [
+     1,
+     1.5
+    ],
+    "PEAC36": [
+     1,
+     1.5
+    ],
+    "PEAC43": [
+     1,
+     1.5
+    ],
+    "PEAC46": [
+     1,
+     1.5
+    ],
+    "PEAC47": [
+     1,
+     1.5
+    ],
+    "PEAC50": [
+     1,
+     1.5
+    ],
+    "PEAC66": [
+     1.5,
+     1.5
+    ],
+    "PEAC69": [
+     1,
+     1.5
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": 39949570443
+ "read_run": 39931703521
 }

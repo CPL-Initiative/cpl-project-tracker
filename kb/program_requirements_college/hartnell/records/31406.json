@@ -130,8 +130,7 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": [],
-   "ge_overlap": true
+   "careers": []
   },
   "blocks": [
    {
@@ -241,14 +240,55 @@
    "No program learning outcomes or careers appear in the provided text (only the Requirements tab was captured)."
   ]
  },
- "extracted_run": 40285320209,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_overlap",
+   "field": "course_units",
    "was": null,
-   "now": true,
-   "words": "Students can double-count required courses and courses for General Education"
+   "now": {
+    "POLSC1000": [
+     3,
+     3
+    ],
+    "POL2": [
+     3,
+     3
+    ],
+    "POL3": [
+     3,
+     3
+    ],
+    "POL6": [
+     3,
+     3
+    ],
+    "STATC1000": [
+     4,
+     4
+    ],
+    "ECONC2002": [
+     3,
+     3
+    ],
+    "ECONC2001": [
+     3,
+     3
+    ],
+    "ETH1": [
+     3,
+     3
+    ],
+    "POL5": [
+     3,
+     3
+    ],
+    "SOC1": [
+     3,
+     3
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": 39949570443
+ "read_run": 39931703521
 }
