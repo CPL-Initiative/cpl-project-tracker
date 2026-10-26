@@ -48,6 +48,36 @@ check("a STEM pattern page never matches", R.reconcile(rec, stem, "Cañada Colle
 filled = json.loads(json.dumps(rec)); filled["program"]["ge_units"] = {"min": 34, "max": 34}
 check("a figure already held is not set again", R.reconcile(filled, page, "Cañada College", "A.S. T Degree", steps=steps)[1] == [])
 
+print("Hartnell's pooled subject lists (S487)")
+gah = ("Requirements · Completion requirement · For the 18 units required, select courses in List A from at least two "
+       "disciplines; from one of the disciplines select at least two courses.")
+def lst(name, codes):
+    return {"name": name, "rule": "choose_units", "stated": {"min": None, "max": None}, "minimum": None,
+            "option_group": None, "courses": [{"code": c, "units": 3} for c in codes]}
+rec = {"program": {"total_units": {"min": 18, "max": 18}, "ge_units": {"min": 23, "max": 23}},
+       "blocks": [lst("List A: Anthropology", ["ANT2", "ANT20"]), lst("List A: Art", ["ART3"]),
+                  lst("List A: History", ["HIS4A", "HIS6"])]}
+new, notes = R.reconcile(rec, gah, "Hartnell College", "A.A. Degree", steps=steps)
+check("the lists the page gives one 18-unit figure become one choice of 18, courses in order",
+      len(new["blocks"]) == 1 and new["blocks"][0]["stated"] == {"min": 18, "max": 18}
+      and new["blocks"][0]["minimum"] == 18 and new["blocks"][0]["name"] == "Completion requirement"
+      and [c["code"] for c in new["blocks"][0]["courses"]] == ["ANT2", "ANT20", "ART3", "HIS4A", "HIS6"]
+      and [n for n in notes if n["field"] == "blocks"][0]["was"][0] == "List A: Anthropology")
+check("the original record is left as it was", len(rec["blocks"]) == 3)
+one = dict(rec, blocks=[lst("Completion requirement", ["ANT2", "ART3"])])
+check("one list is never pooled", not [n for n in R.reconcile(one, gah, "Hartnell College", "A.A. Degree", steps=steps)[1]
+                                       if n["field"] == "blocks"])
+other = dict(rec, program=dict(rec["program"], total_units={"min": 21, "max": 21}))
+check("a record whose total names another figure is left alone",
+      not [n for n in R.reconcile(other, gah, "Hartnell College", "A.A. Degree", steps=steps)[1] if n["field"] == "blocks"])
+stated = dict(rec, blocks=rec["blocks"][:2] + [dict(lst("List A: History", ["HIS6"]), stated={"min": 3, "max": 3})])
+got = R.reconcile(stated, gah, "Hartnell College", "A.A. Degree", steps=steps)[0]
+check("a list with a figure of its own stays a list",
+      [b["name"] for b in got["blocks"]] == ["Completion requirement", "List A: History"])
+check("a certificate is left alone",
+      not [n for n in R.reconcile(rec, gah, "Hartnell College", "Certificate of Achievement", steps=steps)[1]
+           if n["field"] == "blocks"])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)

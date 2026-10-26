@@ -9,7 +9,8 @@
   "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed)",
   "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up",
   "course_units": "a course the record lists without units takes the units the page's own course data names (the vendor call the page made as it loaded, kept by the reader as the source's course_units): never a course the reading gave units, and the note names the call",
-  "course_hours": "a course a record measured in hours lists without hours takes the top of the hours the page's own course data names (the course_units call's lecture plus lab hours, kept by the reader as the source's course_hours; the tab's noncredit total sums the tops): only in an hours record, never a course the reading gave a figure, and the note names the call"
+  "course_hours": "a course a record measured in hours lists without hours takes the top of the hours the page's own course data names (the course_units call's lecture plus lab hours, kept by the reader as the source's course_hours; the tab's noncredit total sums the tops): only in an hours record, never a course the reading gave a figure, and the note names the call",
+  "pool_lists": "several lists the reading split one choice into, pooled: where the page prints one unit figure (pattern's n) over lists each read as choose_units with no figure of their own and named with block_prefix, the lists become one choose_units block of n (name), courses in order; never one list, and never where the record's total_units names another figure"
  },
  "colleges": {
   "Cabrillo College": {
@@ -492,6 +493,15 @@
      "value": true,
      "pattern": "[Ss]tudents can double-count required courses and courses for General Education",
      "why": "S486 SkyQuince, 2026-10-26: both nursing tabs print \"Students can double-count required courses and courses for General Education.\" (college-page-read 40279150362), the overlap Sam allowed for transfer degrees (Sheet 82 card 2) stated by the page for a local degree. Vocational Nursing 39248 sums 80-89 against the 63 it prints."
+    },
+    {
+     "kind": "pool_lists",
+     "field": "blocks",
+     "awards": "associate",
+     "pattern": "For the (?P<n>\\d+) units required, select courses (?:in List A )?from at least two disciplines",
+     "block_prefix": "List A: ",
+     "name": "Completion requirement",
+     "why": "S487 SkyHuckleberry, 2026-10-26: General Studies: Arts and Humanities A.A. 17912 (AA.GAH) read its eleven subject lists as eleven choose_units blocks with no units, so arithmetic read incomplete against total_units 18. The tab prints \"For the 18 units required, select courses in List A from at least two disciplines; from one of the disciplines select at least two courses.\" over a Completion requirement whose lists each say \"Complete ANY of the following Courses\" (college-page-read 40291523425); Social and Behavioral Sciences 17911 (AA.GSB) prints the same words and was read as one 18-unit block. The two-disciplines condition is a rule on which courses, not on the units, and no field holds it."
     },
     {
      "kind": "course_units",
