@@ -147,7 +147,8 @@ Tests: `library` (13, 14, 9), `college_cpl_workbook` (the notes).
   7 a.m. to 5 p.m. Pacific, working only Library requests; card 2 *move*. **The college page moved** to
   `library/cpl-opportunity/` (S490); `cpl-opportunity/` forwards with its `?college=` and `#section`, so every link
   already sent works, and COBI, My College, CPL Pathways and the Library tab link the new address. The twelve records'
-  links move by `kb/receipts/cpl_library_opportunity_urls_library_2026-10-26_s490.sql` once Pages serves the page.
+  links moved there by `kb/receipts/cpl_library_opportunity_urls_library_2026-10-26_s490.sql` after Pages served the
+  page (16:06Z), read back 12 of 12 (#2473).
   **The daytime run waits on Sam:** a session's `create_trigger` takes no connectors here and attaches no repos (S490
   made one and deleted it unfired), so he creates it from claude.ai's routines page with the paste in
   [`scheduled_sessions`](../scheduled_sessions.md), *The daytime Library run*. Until then the overnight routine works

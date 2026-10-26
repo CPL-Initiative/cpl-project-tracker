@@ -43,10 +43,8 @@ One other session ran beside S490 on an unrelated topic (*Student-centered CCR c
 
 ## Open work, in order
 
-1. **#2472: merge** (squash) once `test` passes on its head, if S490 did not. Then, once
-   `https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-opportunity/?college=Norco%20College` serves the page,
-   apply `kb/receipts/cpl_library_opportunity_urls_library_2026-10-26_s490.sql` on a sibling branch (`kb/migrations/.apply`)
-   and read back 12 rows at the new address.
+1. **Done by S490:** #2472 merged (3d6157e3); Pages served `library/cpl-opportunity/` at 16:06Z, and #2473 moved the
+   twelve college records' links there (read back 12 of 12). If #2473 is still open, merge it on a passing `test`.
 2. **The daytime Library run waits on Sam.** A session's `create_trigger` attaches no repos or connectors here, so he
    creates it on claude.ai's routines page with the paste in `scheduled_sessions.md`, *The daytime Library run*. Once it
    exists, record its trigger id in the library lane.
