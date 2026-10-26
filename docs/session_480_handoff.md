@@ -4,6 +4,8 @@ date: 2026-10-25
 session: 479 (SkyMilkmaids)
 tags: [handoff, implementation-funding, noncredit, nc-1, library, coordinator-guide, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_481_handoff.md
 ---
 
 # You are Session 480

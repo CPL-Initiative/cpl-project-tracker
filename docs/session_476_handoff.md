@@ -4,6 +4,8 @@ date: 2026-10-25
 session: 475 (SkyGoldfields)
 tags: [handoff, docs-lint, implementation-funding, noncredit, nc-1]
 status: current
+superseded: true
+superseded_by: session_481_handoff.md
 ---
 
 # You are Session 476

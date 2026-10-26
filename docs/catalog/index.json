@@ -16175,8 +16175,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 450,
+   "count": 451,
    "docs": [
+    {
+     "created": "2026-10-26",
+     "governs": [],
+     "n": 481,
+     "path": "docs/session_481_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "library",
+      "coordinator-guide",
+      "nc-1",
+      "scheduled-sessions"
+     ],
+     "title": "Session 481 handoff: NC labels and outcome chips on the funding tab; the Library's Changes to make; Coordinator Guide Draft 1",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-25",
      "governs": [],
@@ -23903,5 +23921,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1265
+ "total": 1266
 }

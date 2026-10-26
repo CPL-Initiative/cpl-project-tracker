@@ -4,6 +4,8 @@ date: 2026-10-25
 session: 476 (SkyFiddleneck)
 tags: [handoff, implementation-funding, noncredit, nc-1, supabase]
 status: current
+superseded: true
+superseded_by: session_481_handoff.md
 ---
 
 # You are Session 477

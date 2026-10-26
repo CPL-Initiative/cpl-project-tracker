@@ -4,6 +4,8 @@ date: 2026-10-25
 session: 470 (SkyBlueCurls)
 tags: [handoff, implementation-funding, noncredit, attestation, library, ui-pass]
 status: current
+superseded: true
+superseded_by: session_481_handoff.md
 ---
 
 # You are Session 471
