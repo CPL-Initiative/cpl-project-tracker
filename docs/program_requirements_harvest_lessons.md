@@ -565,6 +565,23 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S487 SkyHuckleberry (2026-10-26, the CPL Queue routine): Hartnell's pooled subject lists
+
+- **One figure over several lists is one choice.** General Studies: Arts and Humanities A.A. 17912 (AA.GAH) read its
+  eleven "List A: <subject>" lists as eleven `choose_units` blocks with no units. The tab prints "For the 18 units
+  required, select courses in List A from at least two disciplines; from one of the disciplines select at least two
+  courses." over a Completion requirement whose lists each say "Complete ANY of the following Courses" (page read
+  40291523425). Its sibling Social and Behavioral Sciences 17911 prints the same words and was read as one 18-unit block,
+  so the extraction, and nothing on the page, split 17912. A `pool_lists` reconcile step joins two or more figureless
+  lists sharing `block_prefix` into one block of the page's figure, and never where `total_units` names another.
+- **The two-disciplines condition has no field.** It rules which courses count, never how many units; the record keeps the
+  courses and the scorer checks the units.
+- **A step that changes blocks needs no carry-basis change.** The basis keeps every block, so a confirm of the split
+  record does not carry and the curator sees the pooled list (the college test now names `pool_lists` beside
+  `course_units` and `course_hours`).
+- **Read a sibling before writing a reader change.** The passing sibling showed the reading the page supports; the page
+  read confirmed it before any code.
+
 ## S486 SkyQuince (2026-10-26, the CPL Queue routine): Hartnell's double-count words read as the overlap
 
 - **A page's own words carry a ruling past the case it was made on.** Sheet 82 card 2 allowed the overlap for transfer
