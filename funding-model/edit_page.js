@@ -43,7 +43,10 @@
   var subRenaming = null;  // the sub-heading (data-psub) being renamed
   var ncRenaming = null;   // the noncredit outcome (its index) being renamed
 
-  function may() { try { return !!T.canCurate(); } catch (e) { return false; } }
+  // Only inside COBI's Public page view, which frames this page (Sam, 2026-10-26: "hide
+  // or delete the Edit link from the public view"); the public address never shows it.
+  var framed = (function () { try { return window.self !== window.top; } catch (e) { return true; } })();
+  function may() { if (!framed) return false; try { return !!T.canCurate(); } catch (e) { return false; } }
   function esc(s) {
     return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }

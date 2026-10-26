@@ -34,10 +34,21 @@ function page(opts) {
   if (opts.signedIn) w.CPL_SESSION = session();
   ["cpl_funding_data.js", "funding_model_payload.js", "cpl_funding.js"].forEach((f) => w.eval(read(f)));
   Array.from(w.document.querySelectorAll("script:not([src])")).forEach((s) => w.eval(s.textContent));
+  // A curator edits inside COBI's Public page view, which frames this page (Sam, 2026-10-26).
+  // jsdom has no frame, so a replaced self stands in for one, set after the funding module has
+  // taken its global from self and before edit_page.js reads it.
+  if (opts.signedIn && opts.framed !== false) w.eval("self = {}");
   w.eval(read("funding-model/edit_page.js"));
   return { w, doc: w.document, T: w.CPL_FUNDING_TAB };
 }
 const click = (w, el) => el && el.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+
+// ── Edit this page lives in COBI alone (Sam, 2026-10-26) ──────────────────
+{
+  const { doc } = page({ signedIn: true, framed: false });
+  check("1z: at the public address, even a signed-in curator gets no Edit this page (Sam: hide it from the public view)",
+    doc.getElementById("edit-page-btn").hidden && !doc.querySelector(".pe-x"));
+}
 
 // ── the page's structure (calls 2, 3, 8) ──────────────────────────────────
 {
