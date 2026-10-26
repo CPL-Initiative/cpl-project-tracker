@@ -449,6 +449,26 @@ the first paragraph, answer from its text, add nothing to it. Tests: `tests/sier
 (his question). Live: `cpl-chat` deployed 03:13Z 2026-10-25 (run 40157254434); the production smoke (run
 40158212946) passed 7x, her answer linking the piece first and naming Fresno, Lemoore and Chaffey from its text.
 
+## S483 (SkyCoyoteMint), 2026-10-26: DSP Version 2 on the agency template, Sheet 129
+
+**Learned.** The ELL bases collapse for DSP: MAP holds no DSPT exhibit (0 of 2,952), so no row can rest on an
+articulation, here or elsewhere. The useful second signal is the common course's reach: PSYT P020A sits in one common
+course with three more colleges, Introduction to Disability Studies at 7, Medication Administration at 12, so a crosswalk
+faculty build once can guide the next college. The COCI inventory surfaced what Version 1 missed, Taft's Direct Support
+Education certificate and A.S. dds.ca.gov still does not resolve from a session; a web search returned the tables of
+contents of the DSPT Year 1 and Year 2 student guides, enough to name each row's topic, and the guides' text stays unread.
+Two data traps: the CCR names one college with a trailing space (`Cypress College `), and the COCI lookup's common-course
+ids date from July, so ids come from `unified_courses_members.js` and the COCI list fills in only a course the CCR lacks
+(PSYT P020F). And one process trap: the open-asks series record had sat at Sheet 123 for five sheets.
+
+**State.** Version 2 (https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa) is a draft beside Version 1; the public copy is
+Sam's call on Sheet 129 card 3. `dsp-training/make_brief.py` imports the ELL brief's helpers rather than copying them,
+and both v2 pages rebuild byte-identical.
+
+**Next.** On *replace*: `scripts/library_page.py dsp-credit-starting-points` on the v2 HTML and one guarded update.
+Reading the DSPT guides' objectives against Taft's and Porterville's course outlines is the step that would turn the
+title matches into a crosswalk.
+
 ## Moved from the lane (S483 SkyCoyoteMint, 2026-10-26)
 
 The library lane ran past its 20,000-byte budget; this finished section left it verbatim, a pointer in its place.

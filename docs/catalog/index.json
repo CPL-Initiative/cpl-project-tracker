@@ -16175,8 +16175,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 453,
+   "count": 454,
    "docs": [
+    {
+     "created": "2026-10-26",
+     "governs": [],
+     "n": 484,
+     "path": "docs/session_484_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "dsp",
+      "agency-visual",
+      "decision-sheets"
+     ],
+     "title": "Session 484 handoff: DSP Credit Starting Points Version 2 on the agency template, Open Asks Sheet 129",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-26",
      "governs": [],
@@ -23958,5 +23975,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1268
+ "total": 1269
 }
