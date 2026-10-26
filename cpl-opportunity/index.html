@@ -63,6 +63,12 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
   .cpo-fact b { font: 700 1.6rem/1.1 var(--display); color: var(--text-strong); font-variant-numeric: tabular-nums; }
   .cpo-fact span { font-size: .9rem; color: var(--text-muted); }
   .cpo-note { font-size: .9rem; color: var(--text-muted); margin: 0; }
+  /* The MAP team's notes on one college (notes/<slug>.json), body-sized like the page's prose. */
+  .cpo-notes h3 { font-family: var(--display); color: var(--text-strong); font-size: 1.1rem; margin: 6px 0 0; }
+  .cpo-notes p, .cpo-notes ul { margin: 0; color: var(--text-body); font-size: 1rem; }
+  .cpo-notes ul { padding-left: 1.2em; }
+  .cpo-notes li { margin: 2px 0; }
+  .cpo-notes a { color: var(--cobalt); }
   .cpo-filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; }
   .cpo-f { display: grid; gap: 2px; font-size: .85rem; color: var(--text-muted); }
   .cpo-count { font-size: .85rem; color: var(--text-muted); }
@@ -224,10 +230,23 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
     status.textContent = "Building " + college + "…";
     W.prepare({ college: college, loadScript: loadScript, base: "../" }, function (err, b) {
       if (err || !b) { status.textContent = "Could not build it: " + (err && err.message || "no data"); return; }
-      document.title = college + " CPL Opportunities";
-      root.innerHTML = W.pageHtml(b);
-      W.wirePage(root, b);
-      status.textContent = "";
+      // The MAP team's notes on this college, when a file holds them (notes/<slug>.json);
+      // a missing file or a failed read paints the page without them.
+      function paint(notes) {
+        b.teamNotes = notes || null;
+        document.title = college + " CPL Opportunities";
+        root.innerHTML = W.pageHtml(b);
+        W.wirePage(root, b);
+        status.textContent = "";
+      }
+      // ?draft=1 shows a draft waiting on Replace the public copy (notes/<slug>.draft.json).
+      if (!window.fetch) { paint(null); return; }
+      var draft = false;
+      try { draft = new URLSearchParams(location.search).get("draft") === "1"; } catch (e) { /* the public notes */ }
+      var stem = "notes/" + W.notesSlug(b.college);
+      function read(url) { return window.fetch(url, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }); }
+      (draft ? read(stem + ".draft.json").then(function (d) { if (d) d.draft = true; return d || read(stem + ".json"); }) : read(stem + ".json"))
+        .then(paint, function () { paint(null); });
     });
   }
   // Load the data once, fill the picker, then build the college the link names.

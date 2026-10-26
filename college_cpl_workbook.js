@@ -731,6 +731,46 @@
 
   /* PURE. The college's visual: the markup the shareable page shows. Filters are
    * wired by wirePage(); everything readable is in the markup at rest. */
+  // ── The MAP team's notes on one college's visual (Sam, 2026-10-26, S490) ──
+  // The page is one template computed from published data, so a note about one college
+  // had nowhere to go. A session writes what a note or a document asks for to
+  // cpl-opportunity/notes/<slug>.json (the Library tab's Regenerate on that college's
+  // record), and the page shows it under At a glance while the figures keep refreshing.
+  // A draft waiting on Replace the public copy is <slug>.draft.json, shown at ?draft=1.
+  // {college, updated (YYYY-MM-DD), heading?, sections: [{heading, paragraphs[], items[]}],
+  //  contacts: [{name, role, organization, email}]}. The slug is the Library's.
+  function notesSlug(name) {
+    return String(name || "").toLowerCase().replace(/\s+college$/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "college";
+  }
+  var NOTE_MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  function notesHtml(nt, college) {
+    var e = x;
+    if (!nt || typeof nt !== "object") return "";
+    if (college && nt.college && String(nt.college).toLowerCase() !== String(college).toLowerCase()) return "";
+    var arr = function (v) { return Array.isArray(v) ? v.filter(function (t) { return typeof t === "string" && t.trim(); }) : []; };
+    var secs = Array.isArray(nt.sections) ? nt.sections.filter(function (sc) { return sc && (sc.heading || arr(sc.paragraphs).length || arr(sc.items).length); }) : [];
+    var people = Array.isArray(nt.contacts) ? nt.contacts.filter(function (c) { return c && c.name; }) : [];
+    if (!secs.length && !people.length) return "";
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(nt.updated || "");
+    var when = m ? (+m[3]) + " " + NOTE_MONTHS[+m[2] - 1] + " " + m[1] : "";
+    var html = '<section aria-labelledby="cpo-h-notes" class="cpo-notes"><h2 id="cpo-h-notes">' + e(nt.heading || "Notes from the MAP team") + "</h2>"
+      + (nt.draft ? '<p class="cpo-note"><b>Draft.</b> These notes are not on the public page yet.</p>' : "")
+      + (when ? '<p class="cpo-note">Written ' + e(when) + ". The figures on this page refresh with MAP's data; these notes change when the MAP team revises them.</p>" : "");
+    secs.forEach(function (sc) {
+      if (sc.heading) html += "<h3>" + e(sc.heading) + "</h3>";
+      arr(sc.paragraphs).forEach(function (t) { html += "<p>" + e(t) + "</p>"; });
+      var items = arr(sc.items);
+      if (items.length) html += "<ul>" + items.map(function (t) { return "<li>" + e(t) + "</li>"; }).join("") + "</ul>";
+    });
+    if (people.length) {
+      html += "<h3>Who to talk to</h3><ul class=\"cpo-people\">" + people.map(function (c) {
+        var mail = /^[^\s@<>"']+@[^\s@<>"']+\.[a-z]{2,}$/i.test(c.email || "") ? ', <a href="mailto:' + e(c.email) + '">' + e(c.email) + "</a>" : "";
+        return "<li><b>" + e(c.name) + "</b>" + [c.role, c.organization].filter(Boolean).map(function (t) { return ", " + e(t); }).join("") + mail + "</li>";
+      }).join("") + "</ul>";
+    }
+    return html + "</section>";
+  }
+
   function pageHtml(b) {
     var s = b.summary, e = x;
     function n(v) { return Number(v || 0).toLocaleString("en-US"); }
@@ -784,6 +824,7 @@
       + '<div class="cpo-fact"><b>' + n(b.existing.length) + "</b><span>MAP exhibit lines (AP and IB excluded)</span></div>"
       + '<div class="cpo-fact"><b>' + n(adopt.length) + "</b><span>Could Adopt matches to a course</span></div>"
       + '<div class="cpo-fact"><b>' + n(s.priority.High) + "</b><span>high-priority course opportunities</span></div></div></section>"
+      + notesHtml(b.teamNotes, b.college)
       + '<section aria-labelledby="cpo-h-adopt"><h2 id="cpo-h-adopt">Could Adopt</h2>'
       + '<p class="cpo-note">Statewide credit recommendations the college has not adopted, matched to its courses. Each link copies the recommendation\'s exhibit ID and opens MAP\'s CPL Opportunities page. There, paste the ID into the search box and press Search: the card comes up with Request Quick Adopt (MAP asks you to sign in). MAP has no web address that opens one card. '
       + (s.verifiedAt ? "Links appear only for IDs MAP listed on that page when checked " + e(s.verifiedAt) + "."
@@ -950,6 +991,7 @@
   window.CPL_COLLEGE_WORKBOOK = {
     build: build, sheets: sheets, toXlsx: toXlsx, pageHtml: pageHtml, wirePage: wirePage, load: load, prepare: prepare, resolve: findName,
     downloadWorkbook: downloadWorkbook, catalogFor: catalogFor, shareUrl: shareUrl, colleges: colleges,
+    notesSlug: notesSlug, notesHtml: notesHtml,
     _titleMatches: titleMatches, _crc32: crc32
   };
 })();

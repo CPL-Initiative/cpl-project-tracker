@@ -238,3 +238,29 @@ alter table public.cpl_library
 alter table public.cpl_library drop constraint if exists cpl_library_kb_note_ck;
 alter table public.cpl_library add constraint cpl_library_kb_note_ck check (
   kb_note is null or (char_length(kb_note) between 1 and 300 and knowledge is true));
+
+-- ── Regenerate, and the documents a piece is built from (Sam, 2026-10-26, S490) ──
+-- Sam: "I want to make sure I can Regenerate a visual when I either add a document or
+-- note to it ... Also, when I want to generate a new visual based on a document I
+-- upload." One action on a record asks for a rebuild, and the record carries the
+-- documents the rebuild reads. A session does the rebuild (the page cannot); the
+-- scheduled runs and a pasted session read these columns.
+-- sources  the documents to work from: [{title, url, text, added_by, added_on}], each a
+--          link (https) or the document's text pasted in. The Microsoft 365 connector waits
+--          on RCCD's admin approval (Sam, 2026-10-26), so a SharePoint link is not yet
+--          readable by a session; a pasted text always is. Never a student's record.
+-- regen    the open request, or null: {requested_at, requested_by, publish ('show' | 'replace'),
+--          ready_at, draft_url, approved_at, approved_by}. The session sets ready_at and
+--          draft_url when a draft is ready; for a piece with a public copy, Replace the
+--          public copy sets approved_at; the session clears regen once the piece is rebuilt.
+-- Re-runnable; the columns ride the table-level grants above, and the history trigger
+-- files them with every prior row.
+alter table public.cpl_library
+  add column if not exists sources jsonb not null default '[]'::jsonb,
+  add column if not exists regen   jsonb;
+alter table public.cpl_library drop constraint if exists cpl_library_sources_ck;
+alter table public.cpl_library add constraint cpl_library_sources_ck check (
+  jsonb_typeof(sources) = 'array' and jsonb_array_length(sources) <= 20 and octet_length(sources::text) <= 400000);
+alter table public.cpl_library drop constraint if exists cpl_library_regen_ck;
+alter table public.cpl_library add constraint cpl_library_regen_ck check (
+  regen is null or (jsonb_typeof(regen) = 'object' and regen ? 'requested_at' and octet_length(regen::text) <= 4000));

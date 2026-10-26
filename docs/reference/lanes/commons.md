@@ -170,3 +170,12 @@ curator decides, and the tab opens on its worklist.
 **NEXT:** the Course Progress view from the shared module, with its definition of complete on a card for Sam and the
 deep link behind each count. Course is SkyView alone (Sam, 2026-10-18), so its view lives where SkyView's counts can
 reach it.
+
+**To do, later (Sam, 2026-10-26 ~15:00Z, S490):** *"The Commons program numbers don't match the PR tabs numbers. Need
+to make sure the numbers on all tabs on the commons match the commons summaries."* His two screenshots, the same morning:
+the Commons' Program Requirements card read **13,194 of 20,282 complete at 114 colleges** (3,731 failing a check, 3,357
+with no record; figures read 6:16 AM PT), while the Program Requirements tab's Progress read **17,529 records read at 114
+colleges** and **3,274 fail a machine check** (7:38 AM PT). The two count different things (complete active programs
+against records read) and from different reads, but neither page says so. Make every tab's figures and the Commons
+summary agree, or name the difference on both. The same screenshot shows both Progress cards reading *Could not be read*
+(`coci_college_programs` answered 500): check that read first, since an empty denominator can move every figure.

@@ -1,2 +1,2 @@
-file=kb/migrations/2026-10-26_s486_carry_basis_ge_overlap.sql
-name=program_record_carry_basis_ge_overlap_2026_10_26_s486
+file=kb/supabase_cpl_library.sql
+name=cpl_library_regenerate_sources_2026_10_26_s490

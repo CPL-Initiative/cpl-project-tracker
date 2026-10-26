@@ -556,3 +556,43 @@ people near the middle, so one `object-position: 50% 50%` serves them all; only 
 a turn ahead. `tests/public_library.test.js` (6e) fails a slide whose file is missing, is not 4:3, or whose tag misstates
 its size. CLAUDE.md's First Light rule names this page as its one departure. `cpl_memory`
 `sam-public-library-malone-look-2026-10-24`.
+
+## Moved from the lane (S490 SkyGooseberry, 2026-10-26)
+
+## The ELL IET page is listed publicly (Sam, Open Asks Sheet 123 card 1, *list*, 13:17Z 2026-10-24)
+
+*ELL IET CPL Starting Points* (https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe; Library record `ell-iet-cpl-starting-points`)
+is on the public library: Sam listed it himself from the Library tab at 13:44Z (`listed_by` Sam, `seen_by` public), and he
+contacts the eight projects himself. The session's staged receipt,
+`kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, was never applied. Its public topics are empty; Sierra links
+it by title and summary until someone adds them.
+
+**Version 2, the first request through Changes to make (S482, 2026-10-26).** Sam asked for *"a short table to each
+grantee card that gives specific examples of potential articulations ... between the training (course or certificate)
+and specific college courses in the region of the grantee"*, then, mid-run: *"Those cards that repeatedly say 'nothing
+nearby' sound pretty negative and discouraging. Perhaps reframe it to focus on what is possible rather than what's not
+already there. That's what folks are interested in."* (`cpl_memory` `sam-s482-frame-what-is-possible-2026-10-26`).
+Each card now ends in up to six rows, Training · College · Course (units) · Basis, the basis one of three, strongest
+first: articulated in MAP at that college (`statewide_data.js` `credit_recs` by `adopter_rec_idx`); the same common
+course another college articulated, taught at this one (`unified_courses_members.js` ids); a matching course title
+(`coci_lookup_data.js`). The lines lead with what a project can start (*Ready for a first articulation at …*, *A
+precedent to adopt: … already award credit for it*, *Open for the first exhibit in MAP, built with the nearest
+college*). Draft: https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw; source `ell-iet/make_brief.py` and the brief
+`briefs/20261023_ELL_IET_CPL_Starting_Points_2.json` (CPLBrain#485); `agency-visual/build.py` now takes a table on a
+card, and the v1 brief rebuilds byte-identical. The record carries Version 2 as *Draft for review* and an empty box
+(receipt `kb/receipts/cpl_library_ell_iet_v2_2026-10-26_s482.sql`, supabase-migrate run 40256725268, read back).
+**Version 2 is the public copy** (Sam, Sheet 129 card 2, *replace*, 03:53Z 2026-10-26): `library/ell-iet-cpl-starting-points/` rewritten from it, the record at version 2 (receipt `kb/receipts/cpl_library_v2_public_2026-10-26_s483.sql`).
+It reads 25,516 characters, past Sierra's 20,000-character page cap; the repo raises it to 26,000 (total 32,000).
+**Deployed** (Sam, Open Asks Sheet 130 card 1, *deploy*, 12:32Z 2026-10-26, his own call): cpl-chat from main 954a71e1 (cpl-chat-deploy run 40323496549, byte-verified), so Sierra reads the page whole; smoke run 40323790857 dispatched after it.
+
+## DSP Credit Starting Points, Version 2 (Sam's S482 ask; built S483)
+
+On the agency template now: `CPLBrain/04-projects/cpl-initiative/dsp-training/make_brief.py` writes
+`briefs/20261020_DSP_Credit_Starting_Points_2.json` and `agency-visual/build.py` paints it. Five cards, each ending in up to six rows of Training ·
+College · Course · Basis, every line opening on what a DSP *could count toward*. Cards name courses by code; the CCR
+(`unified_courses_members.js`, with `coci_lookup_data.js` for P020F) and `coci_programs_data.js` supply the rest. MAP holds
+no DSPT exhibit (0 of 2,952, 2026-10-26), so every basis is a matching course, with the common course's reach where the
+CCR names one. Topics: the tables of contents of DDS's DSPT Year 1 and Year 2 student guides (web search; dds.ca.gov does
+not resolve). Draft: https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa (CPLBrain#487); the record carries it as *Draft for
+review* (receipt `kb/receipts/cpl_library_dsp_v2_2026-10-26_s483.sql`, run 40263656296, read back).
+**Version 2 is the public copy** (Sam, Sheet 129 card 3, *replace*, 03:53Z 2026-10-26): `library/dsp-credit-starting-points/` rewritten from it, the record at version 2 (same receipt).

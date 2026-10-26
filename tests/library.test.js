@@ -16,6 +16,9 @@
 //   - Changes to make (Sam, 2026-10-25): a reader's comments on a piece save on
 //     the record, list it under Needs attention, and Copy the request hands over
 //     the paste that rebuilds it from its source and keeps its link;
+//   - Regenerate (Sam, 2026-10-26): one button on every record saves what to change,
+//     the documents to work from (a link or pasted text) and the request, shows where
+//     the request stands, and holds a public copy until Replace the public copy;
 //   - Start a piece saves a Requested record with its brief, In development shows
 //     it at its step and keeps it out of the register and out of Not filed, and
 //     Copy the brief hands over the whole paste, filer command included.
@@ -330,6 +333,9 @@ block("(9)", function () {
     check("(9) the typed title survives that repaint", doc.getElementById("ls-title").value === "Summit table");
     doc.getElementById("ls-say").value = "Awards by college";
     doc.getElementById("ls-due").value = "Friday";
+    check("(9) Start a piece takes documents to work from", !!doc.querySelector("#lib-startform .lib-srcset") && !!doc.getElementById("ls-stext"));
+    doc.getElementById("ls-stitle").value = "EDD notice";
+    doc.getElementById("ls-stext").value = "Eight projects funded.";
     doc.getElementById("lib-startform").dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
     return settle();
   }).then(function () {
@@ -339,6 +345,9 @@ block("(9)", function () {
     check("(9) it has no file yet", w0.body.home === "not_filed" && w0.body.url === null);
     check("(9) the brief keeps what it must say, the date needed, and who asked", b.say === "Awards by college" && b.due === "Friday" && b.requested_by === "Sam" && /^\d{4}-\d{2}-\d{2}$/.test(b.requested_on || ""), JSON.stringify(b));
     check("(9) a spreadsheet is a kind", w0.body.kind === "spreadsheet");
+    check("(9) ⭐ a document typed but not yet added saves with the brief (a new visual from an uploaded document)",
+      Array.isArray(w0.body.sources) && w0.body.sources.length === 1 && w0.body.sources[0].title === "EDD notice" &&
+      w0.body.sources[0].text === "Eight projects funded." && w0.body.sources[0].url === null, JSON.stringify(w0.body.sources));
     check("(9) For defaults to the team", w0.body.seen_by === "team");
     check("(9) the write carries the team phrase", w0.init.headers["x-team-pass"] === "p");
     check("(9) the saved brief opens for copying", m.M._state.briefShown.new1 === true && /Saved as Requested/.test(m.root.textContent));
@@ -536,26 +545,105 @@ block("(13)", function () {
       /record noncredit-summit-cpl-slides/.test(t) && /Its link: https:\/\/studentrcc/.test(t) &&
       /Its source: CPLBrain\/04-projects\/noncredit-summit\/build\.py/.test(t) &&
       /Changes to make \(Sam, 25 October 2026\):\nstudents served, the week of the summit/.test(t), t);
-    check("(13) it keeps the link, holds a public copy for whoever asked, and empties the box when done",
-      /keep its link/.test(t) && /library_page\.py/.test(t) && /before it replaces a public copy/.test(t) && /empty Changes to make/.test(t));
+    check("(13) it keeps the link, and empties the box and clears the request when done",
+      /keep its link/.test(t) && /empty Changes to make and clear regen/.test(t) && /committed receipt/.test(t));
     check("(13) it ends with what a good result looks like", /A good result: [^\n]+$/.test(t));
     click(m.w, card("a5").querySelector('[data-edittop="a5"]'));
-    const box = doc.getElementById("le-refresh");
-    check("(13) ⭐ Edit offers a comment box named Changes to make, with its help in words",
-      !!box && box.tagName === "TEXTAREA" && /Changes to make/.test(doc.querySelector('label[for="le-refresh"]').textContent) &&
-      box.getAttribute("aria-describedby") === "le-refresh-h" && /Copy the request/.test(doc.getElementById("le-refresh-h").textContent));
-    box.value = "Lead with the eight projects.\nCut the second table.";
-    click(m.w, m.root.querySelector('[data-retire="a5"]'));
-    check("(13) what was typed survives a repaint", doc.getElementById("le-refresh").value === "Lead with the eight projects.\nCut the second table.");
-    click(m.w, m.root.querySelector("[data-retireno]"));
-    submit({ w: m.w, root: m.root }, '[data-editform="a5"]');
+    check("(13) Edit no longer holds the comment box; it points to Regenerate",
+      !doc.getElementById("le-refresh") && /go on Regenerate beside Edit/.test(m.root.querySelector('[data-editform="a5"]').textContent));
+  });
+});
+
+// ── (14) Regenerate (Sam, 2026-10-26) ────────────────────────────────────
+// "I want to make sure I can Regenerate a visual when I either add a document or note
+// to it ... Also, when I want to generate a new visual based on a document I upload."
+block("(14)", function () {
+  const writes = [];
+  const rows = JSON.parse(JSON.stringify(ROWS));
+  rows[2].public_listed = true; rows[2].refresh_note = "Name the noncredit lead";
+  rows[2].sources = [{ title: "Sheet 129 notes", url: null, text: "Lead with the outcomes.", added_by: "Sam", added_on: "2026-10-26" }];
+  rows[2].regen = { requested_at: "2026-10-26T14:05:00Z", requested_by: "Sam", publish: "show",
+    ready_at: "2026-10-26T15:40:00Z", draft_url: "https://claude.ai/artifact/DRAFT1" };
+  rows[3].regen = { requested_at: "2026-10-26T14:10:00Z", requested_by: "Ashley", publish: "show" };
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (init && init.method) { writes.push({ url: url, init: init, body: JSON.parse(init.body) }); return response(204, ""); }
+    return response(200, rows);
+  } });
+  const doc = m.w.document, M = m.M;
+  check("(14) a request's state reads from the record",
+    M._regenState({}) === null && M._regenState({ regen: { requested_at: "x" } }) === "waiting" &&
+    M._regenState({ regen: { requested_at: "x", ready_at: "y" } }) === "ready" &&
+    M._regenState({ regen: { requested_at: "x", ready_at: "y", publish: "replace" } }) === "approved" &&
+    M._regenState({ regen: { requested_at: "x", ready_at: "y", approved_at: "z" } }) === "approved");
+  check("(14) the schema adds both columns under checks, re-runnably",
+    /add column if not exists sources jsonb not null default '\[\]'::jsonb/.test(SQL) && /add column if not exists regen\s+jsonb/.test(SQL) &&
+    /cpl_library_sources_ck check \(\s*jsonb_typeof\(sources\) = 'array'/.test(SQL) && /cpl_library_regen_ck check \(\s*regen is null or/.test(SQL));
+  return Promise.resolve(M.activate()).then(settle).then(function () {
+    const card = function (id) { return m.root.querySelector("#lib-t-" + id).closest("article"); };
+    check("(14) ⭐ every record offers Regenerate", ["a1", "a2", "a3", "a4", "a5"].every(function (id) {
+      return !!card(id).querySelector('[data-regen="' + id + '"]'); }));
+    check("(14) a waiting request names who asked and when, in words, and offers Copy the request",
+      /Rebuild requested by Ashley, 26 October 2026, 14:10 UTC/.test(card("a4").textContent) && !!card("a4").querySelector('[data-request="a4"]') &&
+      /Rebuild requested/.test(card("a4").querySelector(".lib-flags").textContent));
+    check("(14) a ready draft links the draft and offers Replace the public copy",
+      /Draft ready to review/.test(card("a3").querySelector(".lib-flags").textContent) &&
+      !!card("a3").querySelector('a[href="https://claude.ai/artifact/DRAFT1"]') &&
+      !!card("a3").querySelector('[data-regenokform="a3"] button[type="submit"]') && /Ask for more changes/.test(card("a3").querySelector('[data-regen="a3"]').textContent));
+    click(m.w, card("a3").querySelector('[data-request="a3"]'));
+    const t = (doc.getElementById("lib-r-a3") || {}).value || "";
+    check("(14) the paste lists the documents and says how to read pasted text",
+      /Documents to work from:\n- Sheet 129 notes: text pasted into the record, 23 characters \(added by Sam, 26 October 2026\)/.test(t) &&
+      /select sources from cpl_library where slug = 'cpl-funding-in-motion';/.test(t), t);
+    check("(14) the paste for a public piece holds the public copy until someone replaces it",
+      /the public copy stays until someone presses Replace the public copy/.test(t), t);
+    click(m.w, card("a5").querySelector('[data-regen="a5"]'));
+    const note = doc.getElementById("rg-note");
+    check("(14) Regenerate opens a labeled form: what to change, the documents, your name",
+      !!note && !!doc.querySelector('label[for="rg-note"]') && /Documents to work from/.test(doc.querySelector(".lib-srcset legend").textContent) &&
+      !!doc.getElementById("rg-stitle") && !!doc.getElementById("rg-surl") && !!doc.getElementById("rg-stext") && !!doc.getElementById("rg-by"));
+    check("(14) a piece off the public library asks no publish question", !doc.getElementById("rg-pub"));
+    check("(14) the help says what a session can read, in words", /cannot open SharePoint until RCCD approves the Microsoft 365 connector/.test(doc.getElementById("rg-stext-h").textContent) &&
+      /Never paste a student/.test(doc.getElementById("rg-stext-h").textContent));
+    note.value = "Add the welding exhibit.";
+    doc.getElementById("rg-surl").value = "https://example.org/guide.pdf";
+    click(m.w, m.root.querySelector('[data-srcadd="rg"]'));
+    check("(14) a document with no title is refused in words, and the note survives the repaint",
+      /Give the document a title/.test(m.root.textContent) && doc.getElementById("rg-note").value === "Add the welding exhibit.");
+    doc.getElementById("rg-stitle").value = "Welding guide";
+    click(m.w, m.root.querySelector('[data-srcadd="rg"]'));
+    check("(14) an added document lists by its link, and the fields clear for the next",
+      !!m.root.querySelector('.lib-srcset a[href="https://example.org/guide.pdf"]') && doc.getElementById("rg-surl").value === "");
+    doc.getElementById("rg-stitle").value = "Meeting notes";
+    doc.getElementById("rg-stext").value = "The college asked about OSHA.";
+    click(m.w, m.root.querySelector('[data-srcadd="rg"]'));
+    doc.getElementById("rg-stitle").value = "Stray";
+    doc.getElementById("rg-surl").value = "https://example.org/stray";
+    click(m.w, m.root.querySelector('[data-srcadd="rg"]'));
+    click(m.w, m.root.querySelector('[data-srcdel="rg:2"]'));
+    check("(14) Remove takes a document off the list", m.root.querySelectorAll(".lib-srcset .lib-srcs li").length === 2);
+    submit({ w: m.w, root: m.root }, '[data-regenform="a5"]');
     return settle();
   }).then(function () {
     const w0 = writes[0] || { body: {}, init: {} };
-    check("(13) Save writes the comments, line breaks kept, with who asked",
-      w0.init.method === "PATCH" && /id=eq\.a5$/.test(w0.url) && w0.body.refresh_note === "Lead with the eight projects.\nCut the second table." &&
-      w0.body.updated_by === "Sam", JSON.stringify(w0.body));
-    check("(13) and says where the request goes next", /Copy the request on the card/.test(m.root.textContent));
+    const b = w0.body || {};
+    check("(14) ⭐ Regenerate writes the note, the documents and the request, with who asked",
+      w0.init.method === "PATCH" && /id=eq\.a5$/.test(w0.url) && b.refresh_note === "Add the welding exhibit." && b.updated_by === "Sam" &&
+      Array.isArray(b.sources) && b.sources.length === 2 &&
+      b.sources[0].title === "Welding guide" && b.sources[0].url === "https://example.org/guide.pdf" && b.sources[0].text === null &&
+      b.sources[1].title === "Meeting notes" && b.sources[1].url === null && b.sources[1].text === "The college asked about OSHA." &&
+      b.regen && b.regen.requested_by === "Sam" && b.regen.publish === "show" && /^\d{4}-\d{2}-\d{2}T/.test(b.regen.requested_at), JSON.stringify(b));
+    check("(14) and says where the request goes next", /The next scheduled run rebuilds it/.test(m.root.textContent));
+    const card = function (id) { return m.root.querySelector("#lib-t-" + id).closest("article"); };
+    submit({ w: m.w, root: m.root }, '[data-regenokform="a3"]');
+    return settle().then(function () {
+      const w1 = writes[1] || { body: {}, init: {} };
+      const g = (w1.body || {}).regen || {};
+      check("(14) Replace the public copy keeps the request and adds who approved it, and when",
+        w1.init.method === "PATCH" && /id=eq\.a3$/.test(w1.url) && g.draft_url === "https://claude.ai/artifact/DRAFT1" &&
+        g.requested_by === "Sam" && g.approved_by === "Sam" && /^\d{4}-\d{2}-\d{2}T/.test(g.approved_at || ""), JSON.stringify(w1.body));
+      check("(14) no Regenerate write deletes", writes.every(function (x) { return x.init.method !== "DELETE"; }));
+      return card;
+    });
   });
 });
 

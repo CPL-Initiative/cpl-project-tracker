@@ -96,19 +96,40 @@ is his standing preference there too.
    moves to Draft ([`lanes/library.md`](lanes/library.md)). A draft is never
    outward, so it needs no hold; approving it is Sam's.
 
-   **Changes to make** are queue items too (Sam, 2026-10-25, S480): a reader's
-   comments on a piece, typed in the tab's Edit form, sit in `refresh_note`.
+   **Regenerate requests** are queue items too (Sam, 2026-10-26, S490; they replace the
+   Edit form's Changes to make box of S480). Anyone presses *Regenerate* on a record: it
+   saves what to change (`refresh_note`), the documents to work from (`sources`, each a
+   link or pasted text) and the request (`regen`). A note left by the older box, with no
+   `regen`, is still a request.
 
    ```sql
-   select slug, title, url, rebuild_from, refresh_note, updated_by, updated_at from cpl_library
-   where refresh_note is not null and retired_at is null order by updated_at;
+   select slug, title, kind, for_kind, for_name, url, public_listed, rebuild_from, refresh_note,
+          sources, regen, updated_by, updated_at from cpl_library
+   where (regen is not null or refresh_note is not null) and retired_at is null
+   order by coalesce(regen->>'approved_at', regen->>'requested_at', updated_at::text);
    ```
 
-   The tab's *Copy the request* gives the same paste. Rebuild the piece from its
-   source with the changes and keep its link (republish a Claude page to the same
-   artifact; for a public piece rerun `scripts/library_page.py`). Show the revision
-   to whoever asked before it replaces a public copy, add the version to the record,
-   and empty the box through a receipt, which takes the piece off Needs attention.
+   The tab's *Copy the request* gives the same paste. Read every source: a link with a
+   web fetch, pasted text from the row. A SharePoint link stays unreadable until RCCD
+   approves the Microsoft 365 connector (Sam, 2026-10-26); say so on the card's request
+   rather than guessing at the file. Then, by the piece:
+
+   - **An agency visual** (`rebuild_from` names `agency-visual/build.py`): change the
+     piece's `make_brief.py`, rebuild, and publish the draft as a Claude page.
+   - **A college's CPL Opportunity visual:** the page is one template, so write what the
+     note or document asks for to `cpl-opportunity/notes/<slug>.json` (the slug is the
+     Library's `collegeSlug`; the format is in `college_cpl_workbook.js`, `notesHtml`). A
+     change every college needs goes to the template instead, and says so.
+   - **Anything else:** rebuild from `rebuild_from`, keeping its link.
+
+   **Publishing.** A piece off the public library republishes at its own link and is done.
+   A piece on the public library with `regen.publish` = `show` gets its draft at a separate
+   link: write `regen.ready_at` and `regen.draft_url`, and the card offers *Replace the
+   public copy*. Once `regen.approved_at` is set, or `publish` is `replace`, rerun
+   `scripts/library_page.py`. A college's draft is `notes/<slug>.draft.json`, read at
+   `cpl-opportunity/?college=<name>&draft=1` (its `draft_url`); on approval it becomes
+   `<slug>.json` and the draft file goes. **Done:** add the version, empty `refresh_note` and set
+   `regen` to null. Every write goes through a receipt with the row's before-values (Rule 10).
 
 ## The UI pass: one view a night
 

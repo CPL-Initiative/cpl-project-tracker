@@ -196,6 +196,41 @@ check("My College offers the visual and the extract only for one college",
   /state\.scope === "college" && state\.college\s*\?\s*'<a class="cb-act" id="cb-oppvisual"/.test(src) && /id="cb-workbook">Download CPL Extract</.test(src));
 check("My College loads the builder on first use", /loadScript\("college_cpl_workbook\.js", "CPL_COLLEGE_WORKBOOK"/.test(src));
 
+// The MAP team's notes on one college (Sam, 2026-10-26, S490): the Library's Regenerate
+// on a college's visual lands in cpl-opportunity/notes/<slug>.json, and the page shows it.
+check("a college's notes file is named by the Library's slug", W.notesSlug("Mt San Antonio College") === "mt-san-antonio" &&
+  W.notesSlug("San Bernardino Valley College") === "san-bernardino-valley" && W.notesSlug("College of Alameda") === "college-of-alameda");
+const NT = { college: "Test River College", updated: "2026-10-26",
+  sections: [{ heading: "Welding & OSHA", paragraphs: ["Faculty asked <b>first</b>."], items: ["OSHA 30", ""] }],
+  contacts: [{ name: "Ann Lee", role: "CPL Coordinator", organization: "Test River College", email: "ann@trc.edu" },
+             { name: "No Mail", email: "javascript:alert(1)" }] };
+const nh = W.notesHtml(NT, "Test River College");
+check("the notes read as a labeled section with the date in words", /<section aria-labelledby="cpo-h-notes" class="cpo-notes"><h2 id="cpo-h-notes">Notes from the MAP team<\/h2>/.test(nh) && /Written 26 October 2026\./.test(nh));
+check("the notes escape what they carry", /Welding &amp; OSHA/.test(nh) && /Faculty asked &lt;b&gt;first&lt;\/b&gt;\./.test(nh) && nh.indexOf("<b>first</b>") < 0);
+check("an empty item is dropped", (nh.match(/<li>OSHA 30<\/li>/g) || []).length === 1 && nh.indexOf("<li></li>") < 0);
+check("a contact's email is a mailto link only when it is an address", /<a href="mailto:ann@trc\.edu">ann@trc\.edu<\/a>/.test(nh) && nh.indexOf("javascript:") < 0);
+check("notes written for another college are not shown", W.notesHtml(NT, "Other College") === "" && W.notesHtml(null, "x") === "" && W.notesHtml({ college: "x", sections: [] }, "x") === "");
+const bn = Object.assign({}, b, { teamNotes: NT });
+const hn = W.pageHtml(bn);
+check("the notes sit under At a glance, before Could Adopt",
+  hn.indexOf('id="cpo-h-glance"') < hn.indexOf('id="cpo-h-notes"') && hn.indexOf('id="cpo-h-notes"') < hn.indexOf('id="cpo-h-adopt"'));
+check("a page with no notes paints no notes section", html.indexOf("cpo-h-notes") < 0);
+check("the shareable page asks for its college's notes file and paints without one",
+  /var stem = "notes\/" \+ W\.notesSlug\(b\.college\);/.test(page) && /read\(stem \+ "\.json"\)/.test(page) && /paint\(null\)/.test(page));
+check("?draft=1 reads the draft file first and says it is a draft",
+  /get\("draft"\) === "1"/.test(page) && /read\(stem \+ "\.draft\.json"\)/.test(page) &&
+  /<b>Draft\.<\/b> These notes are not on the public page yet\./.test(W.notesHtml(Object.assign({}, NT, { draft: true }), "Test River College")) &&
+  nh.indexOf("Draft.") < 0);
+check("the notes' text is body-sized, like the page's prose", /\.cpo-notes p, \.cpo-notes ul \{[^}]*font-size: 1rem;/.test(page));
+// Every notes file a session commits is well formed and named for its college.
+const notesDir = "cpl-opportunity/notes";
+const notesFiles = fs.existsSync(notesDir) ? fs.readdirSync(notesDir).filter(function (f) { return /\.json$/.test(f); }) : [];
+check("every notes file parses, names its college and date, and is named by its slug", notesFiles.every(function (f) {
+  let j; try { j = JSON.parse(fs.readFileSync(notesDir + "/" + f, "utf8")); } catch (e) { return false; }
+  return j && typeof j.college === "string" && /^\d{4}-\d{2}-\d{2}$/.test(j.updated || "") && (f === W.notesSlug(j.college) + ".json" || f === W.notesSlug(j.college) + ".draft.json") &&
+    (!j.sections || Array.isArray(j.sections)) && (!j.contacts || Array.isArray(j.contacts));
+}), notesFiles.join(", "));
+
 setTimeout(function () {
 check("…and tells the reader to paste it into MAP's search", /^Copied MAPICI-CN-1-001\. In MAP, paste it/.test(said8.textContent));
 let pass = 0;
