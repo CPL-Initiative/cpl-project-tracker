@@ -8,322 +8,322 @@
   "last_tail_s": 3.4,
   "_why": "The funding film's narrated pacing: each scene is its lead-in (the seam, its barrier and the first reveal), its clip, and its air."
  },
- "total": 214.04,
+ "total": 213.73,
  "scenes": [
   {
    "scene": "Title",
    "start": 0.0,
    "speech_start": 1.4,
-   "speech_end": 26.47,
-   "end": 29.87,
+   "speech_end": 26.16,
+   "end": 29.56,
    "anchors": [
     {
      "at": 1.3,
-     "t": 2.25,
-     "said": 2.25,
+     "t": 2.13,
+     "said": 2.13,
      "word": "Noncredit CPL Heroes"
     }
    ]
   },
   {
    "scene": "The promise",
-   "start": 29.87,
-   "speech_start": 30.87,
-   "speech_end": 49.87,
-   "end": 50.67,
+   "start": 29.56,
+   "speech_start": 30.56,
+   "speech_end": 49.56,
+   "end": 50.36,
    "anchors": [
     {
      "at": 0.4,
-     "t": 33.313,
-     "said": 33.313,
+     "t": 33.003,
+     "said": 33.003,
      "word": "noncredit and not-for-credit learners"
     },
     {
      "at": 2.8,
-     "t": 36.436,
-     "said": 36.436,
+     "t": 36.126,
+     "said": 36.126,
      "word": "our CPL goal"
     },
     {
      "at": 5.4,
-     "t": 39.439,
-     "said": 39.439,
+     "t": 39.129,
+     "said": 39.129,
      "word": "more than fifty-two thousand"
     },
     {
      "at": 7.2,
-     "t": 43.57,
-     "said": 43.57,
+     "t": 43.26,
+     "said": 43.26,
      "word": "By twenty thirty"
     }
    ]
   },
   {
    "scene": "The scale",
-   "start": 50.67,
-   "speech_start": 51.67,
-   "speech_end": 71.73,
-   "end": 72.53,
+   "start": 50.36,
+   "speech_start": 51.36,
+   "speech_end": 71.42,
+   "end": 72.22,
    "anchors": [
     {
      "at": 1.0,
-     "t": 51.71,
-     "said": 51.71,
+     "t": 51.4,
+     "said": 51.4,
      "word": "About one in four"
     },
     {
      "at": 4.8,
-     "t": 56.045,
-     "said": 56.045,
+     "t": 55.735,
+     "said": 55.735,
      "word": "More than thirty thousand"
     },
     {
      "at": 6.2,
-     "t": 62.245,
-     "said": 62.245,
+     "t": 61.935,
+     "said": 61.935,
      "word": "And noncredit students who were working"
     }
    ]
   },
   {
    "scene": "Mira",
-   "start": 72.53,
-   "speech_start": 73.53,
-   "speech_end": 84.97,
-   "end": 86.87,
+   "start": 72.22,
+   "speech_start": 73.22,
+   "speech_end": 84.66,
+   "end": 86.56,
    "anchors": [
     {
      "at": 1.35,
-     "t": 74.032,
-     "said": 74.032,
+     "t": 73.702,
+     "said": 73.702,
      "word": "free noncredit community health"
     },
     {
      "at": 2.85,
-     "t": 79.72,
-     "said": 80.221,
+     "t": 79.41,
+     "said": 79.911,
      "word": "eight units of credit"
     },
     {
      "at": 4.35,
-     "t": 81.22,
-     "said": 81.643,
+     "t": 80.91,
+     "said": 81.333,
      "word": "a Certificate of Achievement"
     }
    ]
   },
   {
    "scene": "Emilio",
-   "start": 86.87,
-   "speech_start": 87.87,
-   "speech_end": 102.39,
-   "end": 104.19,
+   "start": 86.56,
+   "speech_start": 87.56,
+   "speech_end": 102.08,
+   "end": 103.88,
    "anchors": [
     {
      "at": 1.35,
-     "t": 88.872,
-     "said": 88.872,
+     "t": 88.562,
+     "said": 88.562,
      "word": "his EMT certification"
     },
     {
      "at": 2.85,
-     "t": 94.939,
-     "said": 94.939,
+     "t": 94.629,
+     "said": 94.629,
      "word": "eight and a half units"
     },
     {
      "at": 4.35,
-     "t": 97.002,
-     "said": 97.002,
+     "t": 96.692,
+     "said": 96.692,
      "word": "a paramedic or fire technology degree"
     },
     {
      "at": 5.85,
-     "t": 100.04,
-     "said": 100.145,
+     "t": 99.73,
+     "said": 99.835,
      "word": "a bachelor's in emergency management"
     }
    ]
   },
   {
    "scene": "Carla",
-   "start": 104.19,
-   "speech_start": 105.19,
-   "speech_end": 121.05,
-   "end": 121.85,
+   "start": 103.88,
+   "speech_start": 104.88,
+   "speech_end": 120.74,
+   "end": 121.54,
    "anchors": [
     {
      "at": 1.35,
-     "t": 107.596,
-     "said": 107.694,
+     "t": 107.286,
+     "said": 107.384,
      "word": "noncredit health ladder"
     },
     {
      "at": 2.85,
-     "t": 109.096,
-     "said": 109.096,
+     "t": 108.786,
+     "said": 108.786,
      "word": "to the LVN license"
     },
     {
      "at": 4.35,
-     "t": 112.6,
-     "said": 112.6,
+     "t": 112.29,
+     "said": 112.29,
      "word": "twenty-two units"
     },
     {
      "at": 5.85,
-     "t": 115.182,
-     "said": 115.182,
+     "t": 114.872,
+     "said": 114.872,
      "word": "an associate degree in nursing"
     }
    ]
   },
   {
    "scene": "Nadia",
-   "start": 121.85,
-   "speech_start": 122.85,
-   "speech_end": 144.3,
-   "end": 146.6,
+   "start": 121.54,
+   "speech_start": 122.54,
+   "speech_end": 143.99,
+   "end": 146.29,
    "anchors": [
     {
      "at": 1.35,
-     "t": 124.111,
-     "said": 124.111,
+     "t": 123.801,
+     "said": 123.801,
      "word": "a noncredit IT support certificate"
     },
     {
      "at": 2.395,
-     "t": 130.133,
-     "said": 130.133,
+     "t": 129.823,
+     "said": 129.823,
      "word": "three CompTIA certifications"
     },
     {
      "at": 3.441,
-     "t": 140.337,
-     "said": 140.337,
+     "t": 140.027,
+     "said": 140.027,
      "word": "nine units"
     },
     {
      "at": 4.486,
-     "t": 141.458,
-     "said": 141.458,
+     "t": 141.148,
+     "said": 141.148,
      "word": "an associate degree"
     }
    ]
   },
   {
    "scene": "Ready and waiting",
-   "start": 146.6,
-   "speech_start": 147.6,
-   "speech_end": 165.56,
-   "end": 166.36,
+   "start": 146.29,
+   "speech_start": 147.29,
+   "speech_end": 165.25,
+   "end": 166.05,
    "anchors": [
     {
      "at": 0.8,
-     "t": 147.64,
-     "said": 147.64,
+     "t": 147.33,
+     "said": 147.33,
      "word": "Faculty have already said yes"
     },
     {
      "at": 3.6,
-     "t": 151.785,
-     "said": 151.785,
+     "t": 151.475,
+     "said": 151.475,
      "word": "seventy-eight percent"
     },
     {
      "at": 5.6,
-     "t": 156.79,
-     "said": 156.79,
+     "t": 156.48,
+     "said": 156.48,
      "word": "forty-nine statewide"
     },
     {
      "at": 8.2,
-     "t": 163.175,
-     "said": 163.175,
+     "t": 162.865,
+     "said": 162.865,
      "word": "Most of the opportunity"
     }
    ]
   },
   {
    "scene": "Funding",
-   "start": 166.36,
-   "speech_start": 167.36,
-   "speech_end": 195.76,
-   "end": 196.56,
+   "start": 166.05,
+   "speech_start": 167.05,
+   "speech_end": 195.45,
+   "end": 196.25,
    "anchors": [
     {
      "at": 2.4,
-     "t": 171.603,
-     "said": 171.603,
+     "t": 171.293,
+     "said": 171.293,
      "word": "thirty-five million dollars"
     },
     {
      "at": 2.6,
-     "t": 174.385,
-     "said": 174.385,
+     "t": 174.075,
+     "said": 174.075,
      "word": "seven million ongoing"
     },
     {
      "at": 4.4,
-     "t": 177.215,
-     "said": 177.215,
+     "t": 176.905,
+     "said": 176.905,
      "word": "Last year"
     },
     {
      "at": 6.4,
-     "t": 182.24,
-     "said": 182.24,
+     "t": 181.93,
+     "said": 181.93,
      "word": "This year"
     },
     {
      "at": 8.4,
-     "t": 191.505,
-     "said": 191.505,
+     "t": 191.195,
+     "said": 191.195,
      "word": "Credit and noncredit FTES"
     }
    ]
   },
   {
    "scene": "Three invitations",
-   "start": 196.56,
-   "speech_start": 197.56,
-   "speech_end": 210.64,
-   "end": 214.04,
+   "start": 196.25,
+   "speech_start": 197.25,
+   "speech_end": 210.33,
+   "end": 213.73,
    "anchors": [
     {
      "at": 0.4,
-     "t": 197.61,
-     "said": 197.61,
+     "t": 197.3,
+     "said": 197.3,
      "word": "Three invitations"
     },
     {
      "at": 1.0,
-     "t": 199.55,
-     "said": 199.69,
+     "t": 199.24,
+     "said": 199.38,
      "word": "Mirror a course"
     },
     {
      "at": 2.6,
-     "t": 201.15,
-     "said": 201.15,
+     "t": 200.84,
+     "said": 200.84,
      "word": "Post your certificates"
     },
     {
      "at": 4.2,
-     "t": 203.25,
-     "said": 203.25,
+     "t": 202.94,
+     "said": 202.94,
      "word": "Invite your completers back"
     },
     {
      "at": 6.0,
-     "t": 205.2,
-     "said": 205.2,
+     "t": 204.89,
+     "said": 204.89,
      "word": "The CPL Initiative team"
     },
     {
      "at": 8.0,
-     "t": 209.105,
-     "said": 209.105,
+     "t": 208.795,
+     "said": 208.795,
      "word": "Our time is now"
     }
    ]
@@ -332,217 +332,217 @@
  "cues": [
   {
    "start": 1.4,
-   "end": 3.598,
+   "end": 4.565,
    "text": "Greetings, Noncredit CPL Heroes."
   },
   {
-   "start": 3.598,
-   "end": 10.035,
+   "start": 4.565,
+   "end": 9.965,
    "text": "It's a great day for our system as we continue to build out our shared CPL tools to serve noncredit learners."
   },
   {
-   "start": 10.035,
-   "end": 13.691,
+   "start": 9.965,
+   "end": 13.539,
    "text": "Special thanks to our legislative partners,"
   },
   {
-   "start": 13.691,
-   "end": 23.07,
+   "start": 13.539,
+   "end": 22.785,
    "text": "who supported the Board of Governors' and Chancellor Christian's request for an additional thirty-five million dollars in CPL funding."
   },
   {
-   "start": 23.07,
-   "end": 26.47,
+   "start": 22.785,
+   "end": 26.16,
    "text": "Here's how noncredit learning becomes college credit."
   },
   {
-   "start": 30.87,
-   "end": 31.71,
+   "start": 30.56,
+   "end": 31.4,
    "text": "Last year,"
   },
   {
-   "start": 31.71,
-   "end": 37.85,
+   "start": 31.4,
+   "end": 37.54,
    "text": "Chancellor Christian said that noncredit and not-for-credit learners would be key to our CPL goal."
   },
   {
-   "start": 37.85,
-   "end": 43.3,
+   "start": 37.54,
+   "end": 42.99,
    "text": "Our colleges have served more than fifty-two thousand students through CPL so far."
   },
   {
-   "start": 43.3,
-   "end": 44.68,
+   "start": 42.99,
+   "end": 44.37,
    "text": "By twenty thirty,"
   },
   {
-   "start": 44.68,
-   "end": 49.87,
+   "start": 44.37,
+   "end": 49.56,
    "text": "CPL for about seventy-five hundred noncredit learners a year is within reach."
   },
   {
-   "start": 51.67,
-   "end": 55.865,
+   "start": 51.36,
+   "end": 55.555,
    "text": "About one in four of our students takes a noncredit course each year."
   },
   {
-   "start": 55.865,
-   "end": 62.0,
+   "start": 55.555,
+   "end": 61.69,
    "text": "More than thirty thousand students earned a noncredit award in twenty twenty-four to twenty-five."
   },
   {
-   "start": 62.0,
-   "end": 71.73,
+   "start": 61.69,
+   "end": 71.42,
    "text": "And noncredit students who were working before they enrolled saw their median quarterly wages rise thirty-four percent a year after finishing or leaving their program."
   },
   {
-   "start": 73.53,
-   "end": 79.39,
+   "start": 73.22,
+   "end": 79.08,
    "text": "Mira's free noncredit community health worker courses at Cabrillo College mirror credit courses."
   },
   {
-   "start": 79.39,
-   "end": 84.97,
+   "start": 79.08,
+   "end": 84.66,
    "text": "She earned eight units of credit and a Certificate of Achievement without retaking a class."
   },
   {
-   "start": 87.87,
-   "end": 93.695,
+   "start": 87.56,
+   "end": 93.385,
    "text": "Emilio earned his EMT certification through Moreno Valley College's noncredit program."
   },
   {
-   "start": 93.695,
-   "end": 96.48,
+   "start": 93.385,
+   "end": 96.17,
    "text": "The college awards eight and a half units for it,"
   },
   {
-   "start": 96.48,
-   "end": 102.39,
+   "start": 96.17,
+   "end": 102.08,
    "text": "toward a paramedic or fire technology degree and on to a bachelor's in emergency management."
   },
   {
-   "start": 105.19,
-   "end": 110.885,
+   "start": 104.88,
+   "end": 110.575,
    "text": "Carla climbed Mount San Antonio College's noncredit health ladder to the LVN license."
   },
   {
-   "start": 110.885,
-   "end": 116.98,
+   "start": 110.575,
+   "end": 116.67,
    "text": "College of the Desert awards twenty-two units for that license toward an associate degree in nursing,"
   },
   {
-   "start": 116.98,
-   "end": 121.05,
+   "start": 116.67,
+   "end": 120.74,
    "text": "and Mount San Antonio College plans to document its own ladder."
   },
   {
-   "start": 122.85,
-   "end": 129.29,
+   "start": 122.54,
+   "end": 128.98,
    "text": "Nadia is finishing a noncredit IT support certificate at North Orange Continuing Education."
   },
   {
-   "start": 129.29,
-   "end": 135.21,
+   "start": 128.98,
+   "end": 134.9,
    "text": "She holds three CompTIA certifications, A plus, Network plus and Security plus."
   },
   {
-   "start": 135.21,
-   "end": 138.165,
+   "start": 134.9,
+   "end": 137.855,
    "text": "Twelve colleges award credit for all three,"
   },
   {
-   "start": 138.165,
-   "end": 144.3,
+   "start": 137.855,
+   "end": 143.99,
    "text": "and at Saddleback College they carry nine units toward an associate degree in information technology."
   },
   {
-   "start": 147.6,
-   "end": 149.945,
+   "start": 147.29,
+   "end": 149.635,
    "text": "Faculty have already said yes."
   },
   {
-   "start": 149.945,
-   "end": 151.655,
+   "start": 149.635,
+   "end": 151.345,
    "text": "At twenty-eight colleges,"
   },
   {
-   "start": 151.655,
-   "end": 156.375,
+   "start": 151.345,
+   "end": 156.065,
    "text": "seventy-eight percent of eligible EMT units reach a transcript,"
   },
   {
-   "start": 156.375,
-   "end": 162.955,
+   "start": 156.065,
+   "end": 162.645,
    "text": "and forty-nine statewide credit determinations sit ready at two hundred fifty-three college sites."
   },
   {
-   "start": 162.955,
-   "end": 165.56,
+   "start": 162.645,
+   "end": 165.25,
    "text": "Most of the opportunity is still ahead."
   },
   {
-   "start": 167.36,
-   "end": 169.795,
+   "start": 167.05,
+   "end": 169.485,
    "text": "Now, something to celebrate!"
   },
   {
-   "start": 169.795,
-   "end": 176.93,
+   "start": 169.485,
+   "end": 176.62,
    "text": "The state budget provides thirty-five million dollars one-time and seven million ongoing for CPL."
   },
   {
-   "start": 176.93,
-   "end": 182.04,
+   "start": 176.62,
+   "end": 181.73,
    "text": "Last year, fifty-thousand-dollar grants went to four noncredit programs."
   },
   {
-   "start": 182.04,
-   "end": 182.965,
+   "start": 181.73,
+   "end": 182.655,
    "text": "This year,"
   },
   {
-   "start": 182.965,
-   "end": 189.11,
+   "start": 182.655,
+   "end": 188.8,
    "text": "three point eight million dollars in noncredit funding reaches every community college noncredit program,"
   },
   {
-   "start": 189.11,
-   "end": 191.345,
+   "start": 188.8,
+   "end": 191.035,
    "text": "for two noncredit outcomes."
   },
   {
-   "start": 191.345,
-   "end": 195.76,
+   "start": 191.035,
+   "end": 195.45,
    "text": "Credit and noncredit FTES together size every max award."
   },
   {
-   "start": 197.56,
-   "end": 199.54,
+   "start": 197.25,
+   "end": 199.23,
    "text": "Three invitations to the field."
   },
   {
-   "start": 199.54,
-   "end": 200.97,
+   "start": 199.23,
+   "end": 200.66,
    "text": "Mirror a course."
   },
   {
-   "start": 200.97,
-   "end": 203.085,
+   "start": 200.66,
+   "end": 202.775,
    "text": "Post your certificates in MAP."
   },
   {
-   "start": 203.085,
-   "end": 204.995,
+   "start": 202.775,
+   "end": 204.685,
    "text": "Invite your completers back."
   },
   {
-   "start": 204.995,
-   "end": 208.885,
+   "start": 204.685,
+   "end": 208.575,
    "text": "The CPL Initiative team will help you with each one."
   },
   {
-   "start": 208.885,
-   "end": 210.64,
+   "start": 208.575,
+   "end": 210.33,
    "text": "Our time is now!"
   }
  ]
