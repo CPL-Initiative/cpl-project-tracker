@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-26T19:29:25Z",
-  "session": 491,
-  "moniker": "SkySalmonberry",
+  "written_at": "2026-10-26T21:27:59Z",
+  "session": 492,
+  "moniker": "SkyCloudberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_492_handoff.md",
+  "handoff": "docs/session_493_handoff.md",
   "next_step": {
-    "title": "Hartnell's CalGETC area totals",
-    "text": "Hartnell's CalGETC certificate 45096 waits on a reconcile step for its area totals over sub-areas; the next session reads page read run 40375734212's log for the area words, then finishes the pool_areas step and rereads. Hartnell stands at 81 of 94."
+    "title": "The funding film's narrated cut, then the Summit checks",
+    "text": "The next session re-reads the narrated funding film's minimum-conditions scene in Sierra's voice and offers the narrated cut on the funding page, then re-measures the public pages before the CPL Summit on October 30. Hartnell's CalGETC area totals follow."
   },
   "calls": [
     {
@@ -208,6 +208,10 @@
     {
       "at": "2026-10-26T19:29:00Z",
       "text": "No harvest table moved this run; S491 built Sierra's wording help and drafted the funding attestation form. S492 stamped this file, which S491's checkpoint skipped."
+    },
+    {
+      "at": "2026-10-26T21:27:00Z",
+      "text": "No harvest table moved this run; S492 shipped the funding page's header and accessibility work for the CPL Summit and the noncredit attestation form."
     }
   ],
   "headline": [

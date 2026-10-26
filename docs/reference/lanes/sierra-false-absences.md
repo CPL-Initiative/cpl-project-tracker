@@ -48,8 +48,11 @@ supabase-migrate run 40366680106, read back the same hour).
 **Sam's rulings ([Open Asks Sheet 132](https://claude.ai/artifact/84gYwWMaFVYKGo461YLLnT), 18:13Z 2026-10-26, each
 his own call):** 1 *build*, 2 *move*, 3 *keep*. Built by S491: *Suggest wording* beside Save (the `guidance-wording`
 drafting caller in cpl-chat, as `memory-autogen` is; `tests/sierra_suggest_wording.test.js`), and `NAMING_RULE` in
-cpl-chat's stable prompt, with row cb226a48 switched off after the deploy (receipt
-`sierra_guidance_naming_rule_builtin_2026-10-26_s491.sql`). The four corrections stand. **Deployed** from main 715788ca at 19:08Z (cpl-chat-deploy run 40383727809); smoke run
-dispatched after it (modes 7y, 7z). **NEXT:** read that smoke; on green, apply `sierra_guidance_naming_rule_builtin_2026-10-26_s491.sql`
-through supabase-migrate (row cb226a48 off) and read it back; then ask Sierra *What does MAP stand for?* once on the public page.
+cpl-chat's stable prompt; row cb226a48 is **off** (S492, supabase-migrate run 40394964778, read back inactive; #2480).
+The four corrections stand. **Deployed** from main 715788ca at 19:08Z (cpl-chat-deploy run 40383727809). The smoke after the
+switch-off (run 40396104138) passed 7y and 7z: Sierra expands MAP from the built-in rule alone. Note the column limit:
+`sierra_guidance.note` holds 300 characters (`sierra_guidance_note_len`), which failed one migrate run.
+**NEXT:** the same smoke failed 7q once: Sierra wrote *"an inactive COCI record"* though the prompt says *the catalog data*
+(Sam, 2026-09-18). 7q passed in run 373 and in #2476's branch smoke the same hour, so it reads as a slip; if it recurs, find
+where record text carries "COCI" into the program-course block and say it in her words before it reaches her.
 
