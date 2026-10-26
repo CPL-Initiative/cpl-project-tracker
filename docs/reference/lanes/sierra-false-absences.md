@@ -43,10 +43,11 @@ instruction that would stop reaching Sierra, counted the way `guidanceBlock()` c
 **a break at the first that does not fit**, so the oldest go silently. Run on the 18 switched-on instructions it found
 four faults, corrected on the recommendation (receipt `sierra_guidance_wording_fixes_2026-10-26_s491.sql`,
 supabase-migrate run 40366680106, read back the same hour).
-⚠️ **The naming rule (cb226a48) is the oldest and lives nowhere else in cpl-chat:** on My College the set reads 8,693 of
-9,000, so a new instruction over about 300 characters drops it.
-**NEEDS SAM ([Open Asks Sheet 132](https://claude.ai/artifact/84gYwWMaFVYKGo461YLLnT)):** 1 deploy cpl-chat with *Suggest wording* (a `guidance-wording` drafting caller, as
-`memory-autogen` and `skyview-ask` are; about one Sierra answer's cost a press); 2 move the naming rule into her built-in
-instructions in the same deploy and switch the row off; 3 the four corrections, made on the recommendation (reply to
-reverse).
+⚠️ **The naming rule (cb226a48) was the oldest and lived nowhere else in cpl-chat:** on My College the set read 8,693 of
+9,000, so a new instruction over about 300 characters would have dropped it. It now lives in cpl-chat's stable prompt.
+**Sam's rulings ([Open Asks Sheet 132](https://claude.ai/artifact/84gYwWMaFVYKGo461YLLnT), 18:13Z 2026-10-26, each
+his own call):** 1 *build*, 2 *move*, 3 *keep*. Built by S491: *Suggest wording* beside Save (the `guidance-wording`
+drafting caller in cpl-chat, as `memory-autogen` is; `tests/sierra_suggest_wording.test.js`), and `NAMING_RULE` in
+cpl-chat's stable prompt, with row cb226a48 switched off after the deploy (receipt
+`sierra_guidance_naming_rule_builtin_2026-10-26_s491.sql`). The four corrections stand.
 

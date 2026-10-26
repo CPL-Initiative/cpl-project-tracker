@@ -772,3 +772,25 @@ Verbatim from `docs/reference/lanes/sierra-retrieval-corpus.md`; the page has si
 ### The standalone page on a phone — the About Sierra control (2026-09-11)
 
 Sam: *"the current mobile view is mostly consumed by the header text."* The intro and beta paragraphs became an **About Sierra** control in the header (an accessible `<button aria-expanded>` panel; the footer keeps the beta and privacy lines); the map.rccd.edu pill hides ≤560px and the tagline ≤400px (`mayHideBelow` in `a11y.config.js`). **Measured at 390×844: the conversation starts 163px down (19%) against 540px (64%) before**; `npm run a11y -- sierra` clean at all nine widths. Guard: `tests/sierra_header_about.test.js` (23). **Open (Sam's ask, flag built, bubble UI not):** a floating Sierra bubble on every COBI tab — `kb/cpl_todos.json` `s255-sam-sierra-bubble-on-every-tab`.
+
+## S491 SkySalmonberry (2026-10-26): wording help for Sierra's instructions, and the budget that hid the naming rule
+
+- **Sam's ask (~15:40Z, S490): "If there is a way for you to analyze an instruction I add to see if it can be worded
+  better for Sierra, let's do that."** Mocked first (https://claude.ai/artifact/KTxz6o8byt2oioPZof73HZ), then two halves:
+  *Check wording* (`sierra_wording_check.js`, #2474), read by rule as the curator types, no model; *Suggest wording*
+  (#2475, Sheet 132 card 1 "build"), the `guidance-wording` drafting caller, which sees the TEAM GUIDANCE in its context
+  and so can name a switched-on instruction the draft repeats.
+- **The check found four live faults on its first run, each changing what Sierra said:** a link one letter off
+  (crediforbeingyou.org), an example quotation that never closed, an instruction cut at exactly 500 characters (written
+  2026-08-12, the day the old cap was raised; the lost tail is unknowable), and an ask to scan a website she cannot
+  open. Corrected on the recommendation (receipt `sierra_guidance_wording_fixes_2026-10-26_s491.sql`); Sam kept them.
+- ⚠️ **The tab's meter said how full the space was, never what would go.** `guidanceBlock()` adds the newest first and
+  BREAKS at the first instruction that does not fit 9,000, so the oldest go silently, and the oldest was the naming rule
+  (cb226a48), carried nowhere else in cpl-chat. My College read 8,693: one instruction over about 300 characters would
+  have dropped it. Sheet 132 card 2 ("move") put `NAMING_RULE` in the stable prompt and switched the row off after the
+  deploy. The check now names the instruction that would stop, counted the way the function counts (the test lifts
+  `guidanceBlock()` from `index.ts`).
+- **A runner's receipt commit starts no CI.** supabase-migrate pushes with the workflow's own token, so a PR whose head
+  is `Receipt: supabase migrate` shows zero checks; push the next real change before the merge (branch_policy).
+- **A `cpl_memory` summary is capped at 400 characters** (`cpl_memory_summary_check`); one long summary rolled the
+  whole receipt back, the series record with it. Count before committing.
