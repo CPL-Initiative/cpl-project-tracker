@@ -802,6 +802,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/funding_video/.music.wav` | none found | scripts: `prototype/funding_video/render.mjs` |
 | `prototype/funding_video/figures.json` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/funding_video/funding_in_motion.src.html` | scripts: `prototype/funding_video/build.py`, `prototype/funding_video/cues.py`, `prototype/funding_video/narrate.py` | — |
+| `prototype/funding_video/funding_in_motion_s2.html` | scripts: `scripts/ui_pass.py` | — |
 | `prototype/funding_video/narration_s1_layout.json` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/funding_video/narration_s2_layout.json` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/ironworker_video/ironworker_in_motion.html` | scripts: `prototype/ironworker_video/build.py` | scripts: `prototype/ironworker_video/build.py` |
@@ -1198,5 +1199,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 102 Supabase tables · 42 RPCs · 9 edge functions · 717 file
+Coverage: 102 Supabase tables · 42 RPCs · 9 edge functions · 718 file
 datasets · 184 external services · 474 consumers · 58 workflows · 38 tabs.
