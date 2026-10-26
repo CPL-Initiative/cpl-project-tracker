@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-25T22:23:33Z",
+ "written_at": "2026-10-26T13:16:20Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13183,
+     "n": 13194,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements"
@@ -26,7 +26,7 @@
    ],
    "issues": [
     {
-     "n": 3742,
+     "n": 3731,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "open": "#program-requirements"
@@ -50,13 +50,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-23T17:14:18Z",
+    "at": "2026-10-26T11:35:34Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13183,
-    "failing": 3742,
+    "complete": 13194,
+    "failing": 3731,
     "unread": 3357,
     "records": 18550,
     "colleges": 114,
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-25T22:20:04Z",
+    "at": "2026-10-26T13:12:04Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,7 +140,7 @@
     "records": 2667,
     "records_stamped": 1848,
     "saved_at": "2026-10-23T12:57:52Z",
-    "fold_at": "2026-10-25T22:20:04Z",
+    "fold_at": "2026-10-26T13:12:04Z",
     "map_titles": 4782,
     "unclassified": 432,
     "left_map": 606,
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-25T22:21:55+00:00",
+    "at": "2026-10-26T13:14:32+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-25T22:20:03Z",
+    "at": "2026-10-26T13:12:02Z",
     "every_hours": 24
    },
    "facts": {
@@ -414,7 +414,7 @@
     "modal": 11,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-10-25",
+    "scanned_at": "2026-10-26",
     "procedures_on": 6
    },
    "sources": [
