@@ -4,9 +4,9 @@
   "supabase_tables": 102,
   "rpcs": 42,
   "edge_functions": 9,
-  "file_datasets": 715,
-  "external_services": 184,
-  "consumers": 472,
+  "file_datasets": 717,
+  "external_services": 185,
+  "consumers": 473,
   "workflows": 58,
   "data_js_files": 71,
   "tabs": 38
@@ -1280,6 +1280,28 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:credentialengineregistry.org": {
+   "consumers": [
+    {
+     "id": "module:credential_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 5261,
+     "tabs": [
+      "credential-reference"
+     ]
+    },
+    {
+     "id": "script:kb/_fetch_ce_top50.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 26
     }
    ],
    "main_committers": []
@@ -5487,7 +5509,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5603,
+     "line": 5623,
      "tabs": [
       "credential-reference"
      ]
@@ -6260,7 +6282,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5715,
+     "line": 5735,
      "tabs": [
       "credential-reference"
      ]
@@ -7022,7 +7044,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5604,
+     "line": 5624,
      "tabs": [
       "credential-reference"
      ]
@@ -9037,7 +9059,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5342,
+     "line": 5362,
      "tabs": [
       "credential-reference"
      ]
@@ -14673,6 +14695,46 @@
    "main_committers": [
     "workflow:cos-authority-sync.yml"
    ]
+  },
+  "file:kb/reference/credential_engine_top50.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 442
+    },
+    {
+     "id": "script:kb/_fetch_ce_top50.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 25
+    },
+    {
+     "id": "script:kb/_fetch_ce_top50.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 25
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reference/credential_engine_top50_ctids.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_fetch_ce_top50.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 24
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:kb/reference/credential_registry_national_sample.json": {
    "consumers": [

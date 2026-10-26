@@ -5253,6 +5253,26 @@
         + " (sector " + c.cip.sector + ", " + c.cip.sector_title + "; assigned by "
         + (c.cip.source || "rule") + ")"]));
     }
+    if (c.ctid) {
+      // CTDL (Credential Engine's Registry record): the CTID is the join key to
+      // the Registry; the other terms come from the same JSON-LD record.
+      var t = c.ctdl || {};
+      var ctdlP = el("p", null, ["CTDL: "]);
+      ctdlP.appendChild(el("a", { href: t.registry_url || ("https://credentialengineregistry.org/resources/" + c.ctid),
+        target: "_blank", rel: "noopener noreferrer", class: "cr-ind-link" }, [c.ctid]));
+      ctdlP.appendChild(document.createTextNode(
+        (t.ctdl_type ? " · " + t.ctdl_type.replace("ceterms:", "") : "")
+        + (t.collection_count ? " · in " + t.collection_count + " Registry collections"
+          + (t.rank ? " (rank " + t.rank + " of 50)" : "") : "")));
+      div.appendChild(ctdlP);
+      var ctdlTerms = [];
+      (t.occupation_type || []).forEach(function (o) { ctdlTerms.push("Occupation " + o.code + " " + o.name); });
+      (t.industry_type || []).forEach(function (o) { ctdlTerms.push("Industry (" + o.framework + ") " + o.code + " " + o.name); });
+      (t.instructional_program_type || []).forEach(function (o) { ctdlTerms.push("Program type " + o.code + " " + o.name); });
+      if (t.audience_level && t.audience_level.length) ctdlTerms.push("Audience level " + t.audience_level.join(", "));
+      if (t.owned_by && t.owned_by.length) ctdlTerms.push("Owned by " + t.owned_by.map(function (a) { return a.name; }).join(", "));
+      if (ctdlTerms.length) div.appendChild(el("p", { class: "cr-ind-sub" }, [ctdlTerms.join(" · ")]));
+    }
     if (c.skills && c.skills.domains && c.skills.domains.length) {
       div.appendChild(el("h3", null, ["Skills the issuer publishes ("
         + (c.skills.kind || "exam domains")

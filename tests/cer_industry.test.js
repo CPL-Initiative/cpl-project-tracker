@@ -61,6 +61,12 @@ const catalog = {
     // Articulated, unchanged, with issuer skills.
     cat("ITC3", { issuer: "CompTIA", name: "CompTIA Security+", code: "SY0-701", status: "active",
       domain: "Cybersecurity", map_status: "articulated",
+      ctid: "ce-f89c44b1-b408-4805-8653-8c92da175e31",
+      ctdl: { ctdl_type: "ceterms:Certification", rank: 2, collection_count: 8,
+        registry_url: "https://credentialengineregistry.org/resources/ce-f89c44b1-b408-4805-8653-8c92da175e31",
+        occupation_type: [{ framework: "Standard Occupational Classification", code: "15-1122.00", name: "Information Security Analysts" }],
+        industry_type: [{ framework: "NAICS", code: "541519", name: "Other Computer Related Services" }],
+        owned_by: [{ ctid: "ce-186fbc60-47e3-4616-b160-72cac9e78f54", name: "CompTIA" }] },
       skills: { kind: "exam domains", exam_version: "SY0-701", source_url: "https://www.comptia.org/",
         domains: [{ domain: "General Security Concepts", weight: 12, skills: ["Compare security controls"] },
                   { domain: "Security Operations", weight: 28 }] },
@@ -195,6 +201,13 @@ const gridRow = (doc, name) => Array.from(doc.querySelectorAll("tr"))
   const skills = doc.querySelector(".cr-ind-skills");
   check("detail: issuer skills list domains with weights",
     !!skills && /General Security Concepts \(12%\)/.test(txt(skills)) && /Compare security controls/.test(txt(skills)));
+
+  const ctdlRec = doc.querySelector(".cr-ind-record");
+  check("detail: a CTID links to its Registry record and shows the CTDL terms",
+    !!ctdlRec && !!ctdlRec.querySelector('a[href$="ce-f89c44b1-b408-4805-8653-8c92da175e31"]')
+    && /Certification/.test(txt(ctdlRec)) && /rank 2 of 50/.test(txt(ctdlRec))
+    && /Occupation 15-1122\.00 Information Security Analysts/.test(txt(ctdlRec))
+    && /Industry \(NAICS\) 541519/.test(txt(ctdlRec)));
 
   // Open in the reference: back to the grid, on that row, expanded.
   rows().find((tr) => /CompTIA Security\+/.test(txt(tr))).querySelector("button.cr-ind-open").click();
