@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_dsp_v2_2026-10-26_s483.sql",
+ "name": "cpl_library_dsp_v2_2026_10_26_s483",
+ "version": "20261026032308",
+ "sha256": "4c52e8d9aa4c6eb50992ae5eecd234c92d8bb994d43b466c39363746c70d61b3",
+ "run": "40263656296",
+ "status": 201,
+ "response": "[{\"slug\":\"dsp-credit-starting-points\",\"versions\":2}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
