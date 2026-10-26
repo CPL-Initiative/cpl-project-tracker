@@ -87,7 +87,7 @@ CUTS.forEach(({ tag, file, other }) => {
     [58.5, ["Mt. San Antonio College", "22 units of CPL for the LVN license", "College of the Desert awards 22 units", "Los Angeles Pierce College awards a similar 22", "Associate degree in nursing (ADN)"]],
     [66.5, ["North Orange Continuing Education", "CompTIA A+, Network+ and Security+ certifications", "9 units of CPL for all three, as at Saddleback College", "Twelve colleges award credit for all three"]],
     [76.5, ["78%", "28 colleges", "48% across all CPL", "49", "253 college sites", "3,269", "about 4% of all CPL"]],
-    [87.5, ["$35 million", "$7 million ongoing", "$50,000 grants", "four noncredit programs: North Orange Continuing Education, Mt. San Antonio College, San Diego College of Continuing Education and Calbright", "$1.8 million", "credit and noncredit FTES together size every max award"]],
+    [87.5, ["$35 million", "$7 million ongoing", "$50,000 grants", "four noncredit programs: North Orange Continuing Education, Mt. San Antonio College, San Diego College of Continuing Education and Calbright", "$3.8 million", "for two noncredit outcomes", "credit and noncredit FTES together size every max award"]],
     [99.5, ["Mirror a course", "Post your certificates in MAP", "Invite your completers back", "Our Time is Now!"]],
   ];
   FIG.forEach(([t, want]) => {
