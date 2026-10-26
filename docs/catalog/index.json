@@ -16175,8 +16175,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 458,
+   "count": 459,
    "docs": [
+    {
+     "created": "2026-10-26",
+     "governs": [],
+     "n": 489,
+     "path": "docs/session_489_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "hartnell",
+      "coursedog"
+     ],
+     "title": "Session 489 handoff: Hartnell's last eight failing tabs, read",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-26",
      "governs": [],
@@ -24039,5 +24055,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1273
+ "total": 1274
 }

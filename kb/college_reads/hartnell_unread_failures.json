@@ -1,0 +1,72 @@
+{
+ "_readme": "S488 SkyThimbleberry, 2026-10-26. Hartnell's failing records not yet read against their tabs (handoff 488 item 3): Agriculture Business A.S. 11803 and Vocational Nursing certificate 03571 (a required course with no units), Liberal Arts: Pathway to Health Sciences A.A. 17924 (17-18 against 18), Music certificate 43887 (18-19 against 19.5), Agriculture Production 31591 (24-35 against 27), Sustainable Crop Management 43119 (25-33 against 27), Technical Support 41819 (one of five courses placed; CSS against CIS codes, 15-16 against 16), CalGETC certificate 45096 (30-44.5 against 34). This read prints each tab's own words around the list headings and unit figures, so a session chooses a step from the page before any code. Eight tabs, no model call.",
+ "college": "Hartnell College",
+ "outside_hosts": {
+  "coursedog.com": "Hartnell's catalog vendor hosts the catalog itself (hartnell.catalog.prod.coursedog.com) and its data (app.coursedog.com); the registry's catalog address is on this host."
+ },
+ "questions": {
+  "units": "How each tab states its unit figures: the program total, each list's figure and choice words (Complete ANY / select N units), and any course shown with no units or a unit range."
+ },
+ "keywords": [
+  "[Cc]omplete",
+  "[Uu]nits",
+  "[Cc]redits",
+  "[Ff]ollowing",
+  "Total",
+  "[Ss]elect",
+  "CSS",
+  "CIS",
+  "BUS 18",
+  "Emphasis"
+ ],
+ "pages": [
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.AGRI/requirements-ipyf8",
+   "answers": [
+    "units"
+   ]
+  },
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.CALGETC/requirements-ipyf8",
+   "answers": [
+    "units"
+   ]
+  },
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.LPHS/requirements-ipyf8",
+   "answers": [
+    "units"
+   ]
+  },
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.MUS/requirements-ipyf8",
+   "answers": [
+    "units"
+   ]
+  },
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGRP/requirements-ipyf8",
+   "answers": [
+    "units"
+   ]
+  },
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.TS/requirements-ipyf8",
+   "answers": [
+    "units"
+   ]
+  },
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGSC/requirements-ipyf8",
+   "answers": [
+    "units"
+   ]
+  },
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.NVN/requirements-ipyf8",
+   "answers": [
+    "units"
+   ]
+  }
+ ]
+}
