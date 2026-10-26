@@ -4,7 +4,7 @@
   "supabase_tables": 102,
   "rpcs": 42,
   "edge_functions": 9,
-  "file_datasets": 716,
+  "file_datasets": 717,
   "external_services": 184,
   "consumers": 474,
   "workflows": 58,
@@ -18106,7 +18106,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1278,
+     "line": 1285,
      "tabs": [
       "sierra-training"
      ]
@@ -18150,6 +18150,22 @@
      "direction": "read",
      "how": "inline",
      "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:sierra_wording_check.js": {
+   "consumers": [
+    {
+     "id": "module:sierra_training.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1804,
+     "tabs": [
+      "sierra-training"
+     ]
     }
    ],
    "served": true,
@@ -21715,7 +21731,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1434,
+     "line": 1441,
      "tabs": [
       "sierra-training"
      ]
@@ -21981,7 +21997,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 937,
+     "line": 944,
      "tabs": [
       "sierra-training"
      ]
@@ -24633,7 +24649,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 910,
+     "line": 917,
      "tabs": [
       "sierra-training"
      ]
@@ -24662,7 +24678,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1050,
+     "line": 1057,
      "tabs": [
       "sierra-training"
      ]
@@ -24672,7 +24688,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1120,
+     "line": 1127,
      "tabs": [
       "sierra-training"
      ]
@@ -24694,7 +24710,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1306,
+     "line": 1313,
      "tabs": [
       "sierra-training"
      ]
@@ -24704,7 +24720,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1388,
+     "line": 1395,
      "tabs": [
       "sierra-training"
      ]
@@ -24719,7 +24735,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 947,
+     "line": 954,
      "tabs": [
       "sierra-training"
      ]
@@ -24729,7 +24745,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 968,
+     "line": 975,
      "tabs": [
       "sierra-training"
      ]
@@ -24780,7 +24796,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1297,
+     "line": 1304,
      "tabs": [
       "sierra-training"
      ]
