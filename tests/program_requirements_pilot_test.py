@@ -1584,6 +1584,34 @@ check(RC.reconcile(nc, "BUS650", "Hartnell College", "Certificate", steps=hart_s
       and RC.reconcile(zero, "BUS650", "Hartnell College", "Certificate", steps=hart_steps,
                        course_units={"call": "x", "units": {"BUS650": [0, 0]}})[1] == [],
       "a program measured in hours takes no unit figure, and a noncredit course's 0 credit hours fill nothing")
+# Hartnell's noncredit programs (measure hours) list courses without hours; the same courses/search
+# answer gives each course's hours (S484), and the course_hours step fills them in an hours record only.
+cd_hours = PRC.cd_course_hours({"data": [
+    {"code": "ENGM 620", "credits": {"creditHours": {"min": 0}, "lectureHours": {"min": 80, "max": 90, "operator": ""},
+                                     "labHours": {"min": 48, "max": 54}, "financialAidHours": {"min": 288, "max": 324}}},
+    {"code": "ENGM622", "credits": {"lectureHours": {"min": 64, "max": 72}, "labHours": {"operator": ""}}},
+    {"code": "BUS660", "credits": {"lectureHours": {"max": 16, "operator": ""}}},
+    {"code": "ENGM630", "credits": {"lectureHours": {"min": True}}},
+    {"code": "AOD1", "credits": {"creditHours": {"min": 3}}}]})
+check(cd_hours == {"ENGM620": [128, 144], "ENGM622": [64, 72], "BUS660": [16, 16]},
+      "a courses/search answer reads as each course's lecture and lab hours summed, a course with none left out: %s" % cd_hours)
+hours_steps = {"Hartnell College": {"steps": [{"kind": "course_hours", "field": "units", "source_words": "lectureHours, labHours"}]}}
+beg = {"program": {"measure": "hours", "total_units": {"min": 216, "max": 216}}, "blocks": [{"name": "Required Courses",
+       "rule": "all", "courses": [{"code": "ENGM620", "units": None, "units_max": None, "alternatives": []},
+                                  {"code": "ENGM622", "units": None, "units_max": None, "alternatives": []}]}]}
+ch = {"call": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters", "hours": cd_hours}
+new, notes = RC.reconcile(beg, "ENGM620 ENGM622", "Hartnell College", "Noncredit program", steps=hours_steps, course_hours=ch)
+check([(c["units"], c["units_max"]) for c in new["blocks"][0]["courses"]] == [(144, None), (72, None)] and beg["blocks"][0]["courses"][0]["units"] is None
+      and notes[0]["field"] == "course_hours" and notes[0]["words"].startswith(ch["call"]),
+      "Hartnell: the top of each course's hours fills an hours record's empty courses (the tab's total sums the tops), "
+      "and the note names the call: %s" % json.dumps(notes))
+check(S.score(new, [{"code": "ENGM620", "units": 0}, {"code": "ENGM622", "units": 0}],
+              "Complete ALL of the following Courses: ENGM620 ENGM622 Non Credit - Total hours 216",
+              "Noncredit program")["arithmetic"]["pass"],
+      "Hartnell's English for Multilingual Speakers-Beginning sums to its printed 216 hours once filled")
+check(RC.reconcile(zero, "BUS650", "Hartnell College", "Certificate", steps=hours_steps,
+                   course_hours={"call": "x", "hours": {"BUS650": [54, 54]}})[1] == [],
+      "a program measured in units takes no hours figure")
 both = {"program": {"total_units": {"min": 36, "max": 36}}, "blocks": []}
 new, notes = RC.reconcile(both, BIO_TEXT.replace("at least 30 units", "at least 18 units"), "Cabrillo College", "A.S. Degree")
 check(new["program"]["total_units"] == {"min": 36, "max": 36} and new["program"]["degree_elective_units"] == {"min": 6, "max": 6}

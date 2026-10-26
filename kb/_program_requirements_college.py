@@ -855,6 +855,8 @@ def source_record(college: str, program: dict, reg: dict, best: dict | None, met
                if reg.get("catalog_platform") == "courseleaf" else [])
     if got.get("course_units"):
         rec["course_units"] = got["course_units"]
+    if got.get("course_hours"):
+        rec["course_hours"] = got["course_hours"]
     return rec
 
 
@@ -1873,6 +1875,37 @@ def cd_course_units(data: dict) -> dict:
     return out
 
 
+# A noncredit course's hours in the same answer (S484): credits.lectureHours and
+# credits.labHours, each a {min, max} range, summed per course. A program measured in hours
+# lists its courses without hours on the tab (Hartnell's eight noncredit programs); the
+# maxima agree with the tab's total (page read 40273805437: ENGM620 lecture 80-90 and lab
+# 48-54, ENGM622 lecture 64-72, "Non Credit - Total hours · 216").
+CD_HOURS = ("lectureHours", "labHours")
+
+
+def _cd_span(v) -> tuple | None:
+    """(min, max) of one {min, max} range; a range naming one end reads as that end."""
+    if not isinstance(v, dict):
+        return None
+    lo, hi = (x if isinstance(x, (int, float)) and not isinstance(x, bool) else None
+              for x in (v.get("min"), v.get("max")))
+    if lo is None and hi is None:
+        return None
+    return (lo if lo is not None else hi, hi if hi is not None else lo)
+
+
+def cd_course_hours(data: dict) -> dict:
+    """{code: [min, max]} from one courses/search answer, each course's lecture and lab hours summed."""
+    out = {}
+    for row in (data or {}).get("data") or []:
+        code = P.norm_code(row.get("code") or "")
+        credits = row.get("credits") or {}
+        spans = [sp for sp in (_cd_span(credits.get(k)) for k in CD_HOURS) if sp]
+        if code and spans:
+            out[code] = [sum(sp[0] for sp in spans), sum(sp[1] for sp in spans)]
+    return out
+
+
 def cd_page(got: dict, prog: dict) -> dict:
     """One Requisites tab as a page capture() reads: the program's name and award
     words as its heading, since the page's title names only the code."""
@@ -1890,12 +1923,14 @@ def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
     suffix, pages, direct, missed = None, [], 0, []
     # The course data each tab's scripts fetch while it loads (CD_COURSES), kept on the
     # page so a reconcile step can price a course the tab lists without units (S455).
-    heard: dict = {"call": None, "units": {}}
+    heard: dict = {"call": None, "units": {}, "hours": {}}
 
     def on_courses(resp):
         if CD_COURSES.search(resp.url) and resp.request.method == "POST":
             try:
-                heard["units"].update(cd_course_units(resp.json()))
+                data = resp.json()
+                heard["units"].update(cd_course_units(data))
+                heard["hours"].update(cd_course_hours(data))
                 heard["call"] = heard["call"] or resp.url.split("?", 1)[0]
             except Exception:
                 pass
@@ -1911,7 +1946,7 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
     for i, prog in enumerate(programs):
         base = "%s/programs/%s" % (root, urllib.parse.quote(prog["code"]))
         got = None
-        heard["units"] = {}
+        heard["units"], heard["hours"] = {}, {}
         if suffix:
             got = P.load(reader, base + "/" + suffix, cache, True)
             if got.get("access") == "ok" and (got.get("final_url") or "").rstrip("/").endswith(suffix) \
@@ -1927,7 +1962,7 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
                 missed.append(prog["code"])
                 continue
             suffix = suffix or link.rstrip("/").rsplit("/", 1)[-1]
-            heard["units"] = {}
+            heard["units"], heard["hours"] = {}, {}
             got = P.load(reader, link, cache, True)
             if got.get("access") != "ok":
                 missed.append(prog["code"])
@@ -1935,6 +1970,8 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
         got["links"] = (got.get("links") or [])[:50]
         if heard["units"] and "course_units" not in got:
             got["course_units"] = {"call": heard["call"], "units": dict(heard["units"])}
+        if heard["hours"] and "course_hours" not in got:
+            got["course_hours"] = {"call": heard["call"], "hours": dict(heard["hours"])}
         pages.append(cd_page(got, prog))
         if i % 25 == 24:
             print("  read %d of %d program pages" % (i + 1, len(programs)), flush=True)
@@ -2976,7 +3013,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         # The college's reconcile steps search the page again for a figure the reading left out
         # (Sam, 2026-10-14; kb/_program_requirements_reconcile.py).
         rec, notes = R.reconcile(rec, src["text"], src["college"], src.get("award"),
-                                 course_units=src.get("course_units"))
+                                 course_units=src.get("course_units"),
+                                 course_hours=src.get("course_hours"))
         if notes:
             got = dict(got, record=rec)
         try:
@@ -3037,7 +3075,8 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
             moved += 1
         if src and isinstance(rec, dict):
             new, notes = R.reconcile(rec, src["text"], college, filed.get("award") or src.get("award"),
-                                     course_units=src.get("course_units"))
+                                     course_units=src.get("course_units"),
+                                 course_hours=src.get("course_hours"))
             if notes:
                 filed = dict(filed, record=new, reconciled=notes, read_run=filed.get("extracted_run"),
                              extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id,

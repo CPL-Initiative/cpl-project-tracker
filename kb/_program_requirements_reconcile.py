@@ -125,12 +125,36 @@ def fill_course_units(out: dict, units: dict) -> dict:
     return filled
 
 
+def fill_course_hours(out: dict, hours: dict) -> dict:
+    """{code: [min, max]} for each course (and alternative) in a record measured in hours whose
+    figure is empty and whose code the vendor's answer gives hours, filled in place. In such a
+    record a course's "units" hold its hours (the scorer's reading). A course takes the top of
+    its range: the tab's "Non Credit - Total hours" sums the tops (ENGM620 144 and ENGM622 72 to
+    216, page read 40273805437), the bottoms a shorter term."""
+    from _program_requirements_pilot import norm_code
+    filled = {}
+    if (out.get("program") or {}).get("measure") != "hours":
+        return filled
+    hours = {k: v for k, v in hours.items() if v and (v[0] or v[1])}
+    for block in out.get("blocks") or []:
+        for course in block.get("courses") or []:
+            for entry in [course] + [a for a in course.get("alternatives") or [] if isinstance(a, dict)]:
+                span = hours.get(norm_code(entry.get("code")))
+                if not span or entry.get("units") is not None or entry.get("units_max") is not None:
+                    continue
+                entry["units"] = span[1] if span[1] is not None else span[0]
+                filled[entry["code"]] = entry["units"]
+    return filled
+
+
 def reconcile(record: dict, text: str | None, college: str, award: str | None = None,
-              steps: dict | None = None, course_units: dict | None = None) -> tuple[dict, list[dict]]:
+              steps: dict | None = None, course_units: dict | None = None,
+              course_hours: dict | None = None) -> tuple[dict, list[dict]]:
     """The record with the college's reconcile steps applied to its page text, and
     a note per change: the field, what it was, what it is now, and the words.
     course_units is the page's own course data where the reader kept it
-    ({"call": the vendor's address, "units": {code: [min, max]}}, cd_pages)."""
+    ({"call": the vendor's address, "units": {code: [min, max]}}, cd_pages); course_hours the
+    same answer's hours for a noncredit course ({"call": ..., "hours": {code: [min, max]}}, S484)."""
     conf = (steps if steps is not None else load_steps()).get(college)
     if not conf or not text or not isinstance(record, dict) or not awards_match(conf.get("awards"), award):
         return record, []
@@ -149,6 +173,15 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
             if filled:
                 notes.append({"field": "course_units", "was": None, "now": filled,
                               "words": "%s (%s)" % ((course_units or {}).get("call"), st.get("source_words", ""))})
+            continue
+        if st["kind"] == "course_hours":
+            # A noncredit program's course listed without hours, given them by the same call (S484):
+            # only in a record measured in hours, never over a figure the reading gave.
+            hours = {k: v for k, v in ((course_hours or {}).get("hours") or {}).items() if v}
+            filled = fill_course_hours(out, hours) if hours else {}
+            if filled:
+                notes.append({"field": "course_hours", "was": None, "now": filled,
+                              "words": "%s (%s)" % ((course_hours or {}).get("call"), st.get("source_words", ""))})
             continue
         field = st["field"]
         m = re.search(st["pattern"], text)
