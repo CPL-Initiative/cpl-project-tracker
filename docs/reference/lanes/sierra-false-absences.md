@@ -41,10 +41,11 @@ instruction I add to see if it can be worded better for Sierra, let's do that."*
 no website for Sierra to open, no internal tool named, a sentence another instruction already says) and names any
 instruction that would stop reaching Sierra, counted the way `guidanceBlock()` counts: newest first, 9,000 characters,
 **a break at the first that does not fit**, so the oldest go silently. Run on the 18 switched-on instructions it found
-four faults, corrected on the recommendation (receipt `sierra_guidance_wording_fixes_2026-10-26_s491.sql`).
+four faults, corrected on the recommendation (receipt `sierra_guidance_wording_fixes_2026-10-26_s491.sql`,
+supabase-migrate run 40366680106, read back the same hour).
 ⚠️ **The naming rule (cb226a48) is the oldest and lives nowhere else in cpl-chat:** on My College the set reads 8,693 of
 9,000, so a new instruction over about 300 characters drops it.
-**NEEDS SAM (Open Asks Sheet 132):** 1 deploy cpl-chat with *Suggest wording* (a `guidance-wording` drafting caller, as
+**NEEDS SAM ([Open Asks Sheet 132](https://claude.ai/artifact/84gYwWMaFVYKGo461YLLnT)):** 1 deploy cpl-chat with *Suggest wording* (a `guidance-wording` drafting caller, as
 `memory-autogen` and `skyview-ask` are; about one Sierra answer's cost a press); 2 move the naming rule into her built-in
 instructions in the same deploy and switch the row off; 3 the four corrections, made on the recommendation (reply to
 reverse).
