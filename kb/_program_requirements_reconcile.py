@@ -187,6 +187,26 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
         m = re.search(st["pattern"], text)
         if not m:
             continue
+        if st["kind"] == "pool_lists":
+            # One unit figure the page prints over several subject lists, each "Complete ANY of the
+            # following Courses" (Hartnell's General Studies, S487): the lists are one choice of n
+            # units. Only lists the reading gave no figure of their own, and only two or more.
+            n = _num(m.group("n"))
+            prefix = st.get("block_prefix") or ""
+            pool = [i for i, b in enumerate(out.get("blocks") or [])
+                    if b.get("rule") == "choose_units" and _num(b.get("minimum")) is None
+                    and not _span_of(b.get("stated"))[0] and (b.get("name") or "").startswith(prefix)]
+            tu = _span_of(prog.get("total_units"))
+            if n is None or len(pool) < 2 or (tu[0] is not None and tu != (n, n)):
+                continue
+            blocks = out["blocks"]
+            merged = {"name": st.get("name") or "Completion requirement", "rule": "choose_units",
+                      "minimum": n, "option_group": None, "stated": {"min": n, "max": n},
+                      "courses": [c for i in pool for c in blocks[i].get("courses") or []]}
+            notes.append({"field": "blocks", "was": [blocks[i].get("name") for i in pool],
+                          "now": merged["name"], "words": m.group(0).strip()})
+            out["blocks"] = [merged if i == pool[0] else b for i, b in enumerate(blocks) if i not in pool[1:]]
+            continue
         if st["kind"] == "fill":
             if not _empty(prog.get(field)):
                 continue

@@ -1,0 +1,15 @@
+{
+ "_readme": "S487 SkyHuckleberry, 2026-10-26. General Studies: Arts and Humanities A.A. 17912 (AA.GAH) fails arithmetic as incomplete: its record splits the major into eleven 'List A: <subject>' blocks with no stated units, against total_units 18. Its sibling Social and Behavioral Sciences 17911 (AA.GSB) passes as one 18-unit 'Completion requirement' block of 87 courses. This read prints both tabs' own words around the list headings and the unit figures, to see whether the page states one 18-unit choice across the subject lists before any reconcile step pools them. Two tabs, no model call.",
+ "college": "Hartnell College",
+ "outside_hosts": {
+  "coursedog.com": "Hartnell's catalog vendor hosts the catalog itself (hartnell.catalog.prod.coursedog.com) and its data (app.coursedog.com); the registry's catalog address is on this host."
+ },
+ "questions": {
+  "lists": "How each tab words its major: whether one unit figure (18) governs all the subject lists together, and the words that introduce List A and each subject heading."
+ },
+ "keywords": ["List A", "[Cc]omplete", "[Uu]nits", "[Cc]redits", "[Ff]ollowing", "Total", "American Sign Language", "Anthropology"],
+ "pages": [
+  {"url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.GAH/requirements-ipyf8", "answers": ["lists"]},
+  {"url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.GSB/requirements-ipyf8", "answers": ["lists"]}
+ ]
+}

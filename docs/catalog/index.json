@@ -16175,8 +16175,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 457,
+   "count": 458,
    "docs": [
+    {
+     "created": "2026-10-26",
+     "governs": [],
+     "n": 488,
+     "path": "docs/session_488_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "hartnell",
+      "coursedog"
+     ],
+     "title": "Session 488 handoff: Hartnell's pooled subject lists",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-26",
      "governs": [],
@@ -24023,5 +24039,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1272
+ "total": 1273
 }

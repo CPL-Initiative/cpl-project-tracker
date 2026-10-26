@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-457 document(s).
+458 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 488 | [Session 488 handoff: Hartnell's pooled subject lists](../session_488_handoff.md) | 2026-10-26 |
 | 487 | [Session 487 handoff: Hartnell's double-count words read as the overlap](../session_487_handoff.md) | 2026-10-26 |
 | 486 | [Session 486 handoff: Hartnell's last hours are a data gap; its degree failures read](../session_486_handoff.md) | 2026-10-26 |
 | 485 | [Session 485 handoff: Hartnell's noncredit course hours, six of eight programs pass](../session_485_handoff.md) | 2026-10-26 |
