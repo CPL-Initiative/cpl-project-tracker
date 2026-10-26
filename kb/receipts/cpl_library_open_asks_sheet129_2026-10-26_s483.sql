@@ -2,7 +2,7 @@
 -- 124 to 128 were published without its update. This brings it to Sheet 129 (https://claude.ai/artifact/PkU8ut6YUpy6CixkUU84j8,
 -- three cards: 128's two carried, and DSP Credit Starting Points Version 2 for the public copy), adding 124 to 129 to the
 -- versions, newest first, Sheet 123 moving to Earlier. Links from the vault's decision_sheets.md.
--- Rule 10: one guarded UPDATE from the before-values read live at ~04:00Z 2026-10-26:
+-- Rule 10: one guarded UPDATE from the before-values read live at ~03:25Z 2026-10-26:
 --   version 123, url https://claude.ai/artifact/4bedPAUhXKfLSEScLbEpX3, updated_by S466 SkyYerbaSanta,
 --   updated_at 2026-10-24 13:01:30.659598+00, made_by 'Each sheet by the session that built it: sheets 46 to 123 by S341
 --   SkyTerrace through S466 SkyYerbaSanta, sheet 49 by the library side session', versions[0] Sheet 123 Current (42 entries).

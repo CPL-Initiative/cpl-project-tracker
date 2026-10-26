@@ -8,7 +8,7 @@
 --     (library/dsp-credit-starting-points/): the public copy changes only on his word, so url, version and the
 --     listing are untouched. rebuild_from names the v2 brief and builder.
 -- (2) Rule 8 ingest: what was built.
--- Rule 10: one guarded UPDATE from the before-values read live at ~03:55Z 2026-10-26:
+-- Rule 10: one guarded UPDATE from the before-values read live at ~03:16Z 2026-10-26:
 --   updated_by library-pages-s469@bot, updated_at 2026-10-25 03:10:14.94232+00, versions [Version 1 only],
 --   refresh_note null, rebuild_from (below, in the rollback).
 -- rows_updated = 0 means someone edited the row since: re-read and retry.
