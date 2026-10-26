@@ -104,6 +104,17 @@ function paragraphs(xml) {
     /w:pStyle w:val="MemoField"/.test(body) && /w:pStyle w:val="MemoCc"/.test(body));
   check("the allocation table's header row is navy", /<w:shd [^>]*w:fill="002F6D"/.test(body) && /<w:tblHeader\/>/.test(body));
   check("paragraphs are spaced the way the memo is", /<w:spacing [^>]*w:after="160"/.test(styles));
+  // What a screen reader and Word's accessibility checker read (2026-10-26): the
+  // document's language, a title in its properties, real heading styles, a header
+  // row Word repeats, and no picture without its text.
+  const core = unzipEntry(buf, "docProps/core.xml") || "";
+  check("the document's language is set (en-US, in the defaults every run inherits)",
+    /<w:rPrDefault>[\s\S]*?<w:lang w:val="en-US"\/>[\s\S]*?<\/w:rPrDefault>/.test(styles));
+  check("the file carries a title in its core properties", /<dc:title>[^<]*\S[^<]*<\/dc:title>/.test(core));
+  check("headings use Word's Heading 1 and Heading 2 styles",
+    /<w:pStyle w:val="Heading1"\/>[\s\S]*?MEMORANDUM/.test(body) && /<w:pStyle w:val="Heading2"\/>/.test(body));
+  check("a picture, if the memo ever carries one, has its alternative text",
+    (body.match(/<wp:docPr [^>]*>/g) || []).every(function (p) { return /descr="[^"]+"/.test(p); }));
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

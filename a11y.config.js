@@ -2328,6 +2328,15 @@ module.exports = {
     title: "Funding guidance memo (public)",
     mayHideBelow: [],
   },
+  /* The funding introduction film (2026-10-26), the published cut the explainer
+     links as its introduction video: the player filling the window, the
+     Transcript fold and the scene list below it. Built from
+     prototype/funding_video/funding_in_motion.src.html by build.py. */
+  "funding-film": {
+    file: "prototype/funding_video/funding_in_motion_s2.html",
+    title: "Funding introduction film (public)",
+    mayHideBelow: [],
+  },
 
   /* ── The CPL opportunity visual (Ashley and Sam, 2026-10-20) ──
      library/cpl-opportunity/index.html (moved from cpl-opportunity/, which forwards,

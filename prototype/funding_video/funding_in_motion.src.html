@@ -1,3 +1,4 @@
+<html lang="en">
 <title>__PAGETITLE__</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,9 +89,29 @@ output{min-width:7.5ch;font-variant-numeric:tabular-nums;color:var(--text-muted)
 .chap[aria-current="true"]{border-color:var(--text);box-shadow:inset 0 0 0 1px var(--text)}
 .chap .tc{font-size:.8rem;font-weight:700;letter-spacing:.08em;font-variant-numeric:tabular-nums;color:var(--accent-text)}
 .chap .nm{font-weight:700}.chap .tx{font-size:.95rem;line-height:1.45;color:var(--text-body)}
+/* The transcript (2026-10-26): a fold below the player, closed until opened. The
+   summary holds its heading and a Show or Hide word, as the funding page's folds do. */
+.transcript{margin-top:clamp(28px,5vw,44px)}
+.transcript summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;min-height:24px}
+.transcript summary::-webkit-details-marker{display:none}
+.transcript summary::marker{content:''}
+.transcript h2{margin:0;font:700 1.35rem/1.2 "Playfair Display",Georgia,serif}
+.transcript .fold-word{font-size:.95rem;font-weight:600;color:var(--text-muted);text-decoration:underline;text-underline-offset:3px}
+.transcript .fold-word::before{content:"Show"}
+.transcript details[open]>summary .fold-word::before{content:"Hide"}
+.tr-note{margin:12px 0 0;color:var(--text-muted);max-width:var(--cpl-measure,none)}
+.tr{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:18px}
+.tr h3{margin:0 0 2px;font:700 1.05rem/1.3 "Source Sans 3",Arial,sans-serif}
+.tr h3 .tc{margin-right:.25em;font-size:.85rem;letter-spacing:.08em;font-variant-numeric:tabular-nums;color:var(--accent-text)}
+.tr p,.tr ul{margin:4px 0 0;color:var(--text-body);max-width:var(--cpl-measure,none)}
+.tr ul{padding-left:1.4em}
+.tr .tr-pic{font-style:italic;color:var(--text-muted)}
+.tr a{color:var(--focus);font-weight:600}
 @media (max-width:560px){.player{--ctl:112px}}
 </style>
 
+<!-- One main landmark holds the player and the page below it (axe region, 2026-10-26). -->
+<main>
 <div class="player" id="player">
   <div class="stage" id="stage" role="region" aria-label="Introduction video">
     <p class="vh" id="said" aria-live="polite"></p>
@@ -114,14 +135,21 @@ output{min-width:7.5ch;font-variant-numeric:tabular-nums;color:var(--text-muted)
     <a class="btn" id="to-public" href="__PUBLICVIEW__">Back to the public view</a>
   </div>
 </div>
-<main class="wrap">
+<div class="wrap">
   <header>
     <p class="eyebrow">__EYEBROW__</p>
     <h1>2026-2028 CPL Initiative Funding: How It Works</h1>
     <p class="dek">__DEK__</p>
   </header>
   <p style="margin:14px 0 0">The full explainer, with every institution’s figures: <a href="__EXPLAINER__" style="color:var(--focus);font-weight:600">__LINKLABEL__</a></p>
+  <!-- The film's text alternative (WCAG 1.2.1 and 1.2.3): the script below writes it from the scenes themselves. -->
+  <section class="transcript" aria-labelledby="th">
+    <details id="transcript"><summary><h2 id="th">Transcript</h2><span class="fold-word" aria-hidden="true"></span></summary>
+      <div id="transcript-body"></div>
+    </details>
+  </section>
   <section class="scenes" aria-labelledby="sh"><h2 id="sh">Scenes</h2><ol class="chapters" id="chapters"></ol></section>
+</div>
 </main>
 
 <script>
@@ -592,6 +620,69 @@ var Music=(function(){
 function fmt(t){var s=Math.floor(t+1e-6);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
 var chapWrap=$('chapters'),chaps=[];
 S.forEach(function(o){var li=E('li',null,null,chapWrap),b=E('button','chap','<span class="tc">'+fmt(nt(o.t0))+'</span><span class="nm">'+o.name+'</span><span class="tx">'+o.text+'</span>',li);b.type='button';b.addEventListener('click',function(){seek(playing?nt(o.t0):Math.min(DUR,nt(o.t1)-0.6));player.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});});chaps.push({b:b,t:nt(o.t0)});});
+/* ---- the transcript (WCAG 1.2.1 and 1.2.3, 2026-10-26). The film carries its
+   information as words and figures on screen under music, with no voice, so the
+   page gives them as text in a fold below the player. Each scene's lines are READ
+   from the scene's own elements, settled where its figures hold (the Targets
+   scene twice: on the hold at half the target, and at the target), so the
+   transcript says what the picture says and cannot drift from it: build.py's
+   figures and the source's words reach it only through the scene. The one line
+   written for it is what the picture shows, where the words do not say it; a
+   barrier's line takes its caption from the barrier. Each scene is put back as it
+   was built, style and text, so no frame changes. A scene with no reader here
+   still gives every text block it holds. ---- */
+function txt(el){return el?String(el.textContent||'').replace(/\s+/g,' ').trim():'';}
+function kids(el,sep){return Array.prototype.map.call(el.children,txt).filter(Boolean).join(sep||' ');}
+function leaves(el){return Array.prototype.filter.call(el.querySelectorAll('p,div'),function(e){return !e.querySelector('p,div');}).map(txt);}
+function settle(o,ts,read){var els=[o.root].concat(Array.prototype.slice.call(o.root.querySelectorAll('*')));
+  var was=els.map(function(e){return[e.getAttribute('style'),e.children.length?null:e.textContent];});
+  var out=ts.map(function(lt,i){o.u(o,Math.min(lt,o.t1-o.t0-0.05));return read(o,i);});
+  els.forEach(function(e,i){var s=was[i][0];if(s==null)e.removeAttribute('style');else e.setAttribute('style',s);if(was[i][1]!=null&&e.textContent!==was[i][1])e.textContent=was[i][1];});
+  return [].concat.apply([],out);}
+/* the targets slide's operators, in words */
+var OPS={'÷':'divided by','−':'less','=':'equals'},END=1e9;
+function lockLines(lk){var im=lk.querySelectorAll('img'),p=lk.querySelectorAll('p');return[im[0].alt,im[1].alt+': '+txt(p[0]),txt(p[1])];}
+/* [scene, what the picture shows, the settled moments read, the reader] */
+var TR=[
+  [S0,'The CPL Initiative logo, with the MAP logo beneath it. The red arrow from the MAP logo rests in the A of MAP, then lifts off and flies through every scene, pointing at the figure in play.',[END],
+    function(o){return lockLines(o.lock).concat([txt(o.y),txt(o.t),txt(o.s),txt(o.nb)]);}],
+  [S1,'A bar divides the funding among its destinations.',[END],
+    function(o){return[txt(o.k),txt(o.n)+' '+txt(o.l)].concat(o.lab.map(function(d){return kids(d);}));}],
+  [S2,'A line runs from the base to the cap, and a marker lands on it.',[END],
+    function(o){return[txt(o.h),txt(o.l)].concat(o.ticks.map(function(d){return kids(d);}),[kids(o.m,': '),txt(o.b)]);}],
+  [S3,'The allocation splits into its credit share and its noncredit share.',[END],
+    function(o){return[txt(o.h)+': '+txt(o.a),kids(o.c),kids(o.n),txt(o.l)];}],
+  [S4,'A card rises for each priority in turn.',[END],
+    function(o){return[txt(o.h)].concat(o.cols.map(function(c){var k=c.d.children;return txt(k[1])+' ('+txt(k[0])+'): '+txt(k[2])+(k[3]?' '+kids(k[3])+'.':'');}));}],
+  [SH,'',[END],
+    function(o){return[txt(o.h),txt(o.l)].concat([o.r1,o.r2,o.rc,o.r3].filter(Boolean).map(function(r){var op=txt(r.els[0]);return(op?(OPS[op]||op)+' ':'')+txt(r.els[1])+' '+txt(r.els[2]);}),[txt(o.b)]);}],
+  /* 6.0 s sits on the hold at half the target (the fill reaches half at 5.0 and resumes at 6.6) */
+  [S5,'A bar fills to its halfway mark and holds, then fills to the target and stops there.',[6.0,END],
+    function(o,i){return(i?[]:[txt(o.h),txt(o.l),txt(o.card.firstChild).replace(/ · /g,', ')]).concat([kids(o.row,', '),txt(o.cap)]);}],
+  [S6,'Each condition is marked Met in turn.',[END],
+    function(o){return[txt(o.h)].concat(o.rows.map(function(x){return txt(x.n)+'. '+txt(x.d.children[1])+': '+txt(x.p);}),[txt(o.b)]);}],
+  [S7,'A timeline draws from left to right, one date at a time.',[END],
+    function(o){return[txt(o.h)].concat(o.nodes.map(function(d){return kids(d,': ');}),[txt(o.a),txt(o.b)]);}],
+  [S8,'The strategies scroll past one at a time.',[END],
+    function(o){return[txt(o.h),txt(o.k),Array.prototype.map.call(o.list.children,txt),txt(o.a),txt(o.b)];}],
+  [S9,'The CPL Initiative and MAP logos return. The arrow circles them and settles back into the A.',[END],
+    function(o){var a=o.s.querySelector('a');return[txt(o.t),{href:a.getAttribute('href'),text:txt(a)},txt(o.cr)];}]];
+(function(){var body=$('transcript-body');if(!body)return;
+  function put(tag,cls,text,par){var e=E(tag,cls,null,par);e.textContent=text;return e;}
+  put('p','tr-note',(NARR?'Narrated, with music; the captions on the player carry the narration. ':'Music only, no narration. ')+
+    'Below, scene by scene, are the words and figures on screen in the order they appear, with a line on what the picture shows where the words do not say it.',body);
+  var ol=E('ol','tr',null,body);
+  S.forEach(function(o){var r=TR.filter(function(x){return x[0]===o;})[0]||[o,'',[END],function(q){return leaves(q.root);}];
+    var li=E('li',null,null,ol),h=E('h3',null,null,li);put('span','tc',fmt(nt(o.t0)),h);h.appendChild(document.createTextNode(' '+o.name));
+    var pic=function(s){put('p','tr-pic','Picture: '+s,li);},mid=(o.t0+o.t1)/2,hits=ENC.filter(function(e){return e.t>=o.t0&&e.t<o.t1;});
+    var shot=function(e){pic('The arrow shoots down a barrier labeled “'+txt(e.capT)+',” and the label is struck through.');};
+    if(r[1])pic(r[1]);
+    hits.filter(function(e){return e.t<mid;}).forEach(shot);
+    settle(o,r[2],r[3]).forEach(function(x){if(!x||x.length===0)return;
+      if(Array.isArray(x)){var ul=E('ul',null,null,li);x.forEach(function(s){put('li',null,s,ul);});}
+      else if(x.href){var a=E('a',null,null,E('p',null,null,li));a.href=x.href;a.textContent=x.text;}
+      else put('p',null,x,li);});
+    hits.filter(function(e){return e.t>=mid;}).forEach(shot);});})();
 var btnPlay=$('play'),bigplay=$('bigplay'),pos=$('pos'),time=$('time'),btnSound=$('sound'),btnFs=$('fs');
 pos.max=String(DUR);
 /* the narrated cut: the voice plays beside the score, held to the player's clock */

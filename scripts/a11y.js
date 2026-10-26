@@ -742,6 +742,11 @@ function MOTION(known) {
                  design, and every control in it read as "no ring". The same
                  controls are measured on the routes where they are live. */
               if (el.closest("[inert]")) return;
+              /* Nor can a control under visibility:hidden: the funding film's
+                 closing link (2026-10-26) sits in a scene drawn only when the
+                 film reaches it, and read as "no ring" while it waited. When its
+                 scene shows, the link takes focus and the page's ring. */
+              if (getComputedStyle(el).visibility === "hidden") return;
               el.focus();
               const cs = getComputedStyle(el);
               const ring = (cs.outlineStyle !== "none" && parseFloat(cs.outlineWidth) > 0) ||

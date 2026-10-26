@@ -14036,7 +14036,8 @@
     var ink = MEMO_DOCX_INK;
     return {
       default: {
-        document: { run: { font: MEMO_DOCX_FONT, size: 22, color: "1C1C1A" }, paragraph: { spacing: { after: 160, line: 276 } } },
+        // The document's language (WCAG 3.1.1, 2026-10-26): Word's proofing and a PDF saved from it read it.
+        document: { run: { font: MEMO_DOCX_FONT, size: 22, color: "1C1C1A", language: { value: "en-US" } }, paragraph: { spacing: { after: 160, line: 276 } } },
         heading1: { run: { font: MEMO_DOCX_FONT, size: 30, bold: true, color: ink.navy, characterSpacing: 20 },
           paragraph: { alignment: "center", spacing: { before: 120, after: 160 } } },
         heading2: { run: { font: MEMO_DOCX_FONT, size: 24, bold: true, color: ink.navy },

@@ -1,3 +1,4 @@
+<html lang="en">
 <title>CPL Funding in Motion: An Introduction</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,9 +89,29 @@ output{min-width:7.5ch;font-variant-numeric:tabular-nums;color:var(--text-muted)
 .chap[aria-current="true"]{border-color:var(--text);box-shadow:inset 0 0 0 1px var(--text)}
 .chap .tc{font-size:.8rem;font-weight:700;letter-spacing:.08em;font-variant-numeric:tabular-nums;color:var(--accent-text)}
 .chap .nm{font-weight:700}.chap .tx{font-size:.95rem;line-height:1.45;color:var(--text-body)}
+/* The transcript (2026-10-26): a fold below the player, closed until opened. The
+   summary holds its heading and a Show or Hide word, as the funding page's folds do. */
+.transcript{margin-top:clamp(28px,5vw,44px)}
+.transcript summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;min-height:24px}
+.transcript summary::-webkit-details-marker{display:none}
+.transcript summary::marker{content:''}
+.transcript h2{margin:0;font:700 1.35rem/1.2 "Playfair Display",Georgia,serif}
+.transcript .fold-word{font-size:.95rem;font-weight:600;color:var(--text-muted);text-decoration:underline;text-underline-offset:3px}
+.transcript .fold-word::before{content:"Show"}
+.transcript details[open]>summary .fold-word::before{content:"Hide"}
+.tr-note{margin:12px 0 0;color:var(--text-muted);max-width:var(--cpl-measure,none)}
+.tr{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:18px}
+.tr h3{margin:0 0 2px;font:700 1.05rem/1.3 "Source Sans 3",Arial,sans-serif}
+.tr h3 .tc{margin-right:.25em;font-size:.85rem;letter-spacing:.08em;font-variant-numeric:tabular-nums;color:var(--accent-text)}
+.tr p,.tr ul{margin:4px 0 0;color:var(--text-body);max-width:var(--cpl-measure,none)}
+.tr ul{padding-left:1.4em}
+.tr .tr-pic{font-style:italic;color:var(--text-muted)}
+.tr a{color:var(--focus);font-weight:600}
 @media (max-width:560px){.player{--ctl:112px}}
 </style>
 
+<!-- One main landmark holds the player and the page below it (axe region, 2026-10-26). -->
+<main>
 <div class="player" id="player">
   <div class="stage" id="stage" role="region" aria-label="Introduction video">
     <p class="vh" id="said" aria-live="polite"></p>
@@ -114,14 +135,21 @@ output{min-width:7.5ch;font-variant-numeric:tabular-nums;color:var(--text-muted)
     <a class="btn" id="to-public" href="https://cpl-initiative.github.io/cpl-project-tracker/?fundview=public#implementation-funding">Back to the public view</a>
   </div>
 </div>
-<main class="wrap">
+<div class="wrap">
   <header>
     <p class="eyebrow">CPL Initiative</p>
     <h1>2026-2028 CPL Initiative Funding: How It Works</h1>
     <p class="dek">A 100-second introduction to CPL funding for colleges, with music. Play opens it full screen; press Esc to leave. Detailed guidance will follow.</p>
   </header>
   <p style="margin:14px 0 0">The full explainer, with every institution’s figures: <a href="https://cpl-initiative.github.io/cpl-project-tracker/funding-model/?scenario=Scenario%201" style="color:var(--focus);font-weight:600">How CPL funding works</a></p>
+  <!-- The film's text alternative (WCAG 1.2.1 and 1.2.3): the script below writes it from the scenes themselves. -->
+  <section class="transcript" aria-labelledby="th">
+    <details id="transcript"><summary><h2 id="th">Transcript</h2><span class="fold-word" aria-hidden="true"></span></summary>
+      <div id="transcript-body"></div>
+    </details>
+  </section>
   <section class="scenes" aria-labelledby="sh"><h2 id="sh">Scenes</h2><ol class="chapters" id="chapters"></ol></section>
+</div>
 </main>
 
 <script>
@@ -191,17 +219,21 @@ var S2=scene(15,25,'Maximum allocation','Every institution has a maximum allocat
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);reveal(o.l.ws,t,0.8,0.04,0.5);var p=eio(k(t,1.6,2.6));o.track.style.transform='scaleX('+p+')';o.ticks.forEach(function(d,i){d.style.opacity=eo(k(t,2.0+i*0.35,2.7+i*0.35));});
   var x=back(k(t,4.0,5.6));o.m.style.left='calc(10cqw + '+(CFG.ex.pos*x*0.8)+'%)';o.m.style.opacity=k(t,4.0,4.3);reveal(o.b.ws,t,6.2,0.06,0.5);});
 
-var S3=scene(25,32,'Credit and noncredit','Each maximum allocation splits into a credit share and a noncredit share, by the institution’s own instructional mix.'+CFG.ex.splitText+' Only noncredit outcomes count toward the noncredit share.',function(r,o){
+/* what counts toward the noncredit share: under the outcomes lane (Scenario 4)
+   build.py names the noncredit outcomes (CFG.ncLine); otherwise the original line */
+var NCLINE=CFG.ncLine||'Only noncredit outcomes count toward the noncredit share.';
+var S3=scene(25,32,'Credit and noncredit','Each maximum allocation splits into a credit share and a noncredit share, by the institution’s own instructional mix.'+CFG.ex.splitText+' '+NCLINE,function(r,o){
   o.h=words(r,CFG.ex.splitHead,'hd');
   o.a=E('div','big abs',money(CFG.ex.max),r,'left:50%;top:14cqw;transform:translateX(-50%);font-size:15cqw');
   o.c=E('div','abs',null,r,'top:14.5cqw;text-align:center;width:44cqw');o.cv=E('div','big blue',null,o.c,'font-size:11cqw');E('div','kick','credit share',o.c,'margin-top:1.2cqw;font-size:2.4cqw');
   o.n=E('div','abs',null,r,'top:14.5cqw;text-align:center;width:44cqw');o.nv=E('div','big gold',null,o.n,'font-size:11cqw');E('div','kick','noncredit share',o.n,'margin-top:1.2cqw;font-size:2.4cqw;color:var(--stage-gold-text)');
-  o.l=words(r,'The split follows each institution’s own instructional mix. <b>Only noncredit outcomes count toward the noncredit share.</b>','ln abs');o.l.style.cssText='left:4.5cqw;right:4.5cqw;top:37.5cqw;font-size:3.5cqw';
+  o.l=words(r,'The split follows each institution’s own instructional mix. <b>'+NCLINE+'</b>','ln abs');o.l.style.cssText='left:4.5cqw;right:4.5cqw;top:37.5cqw;font-size:3.5cqw';
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);var s=eio(k(t,1.8,3.0));o.a.style.opacity=1-k(t,1.8,2.2);o.a.style.transform='translateX(-50%) scale('+(1+0.12*Math.sin(Math.PI*k(t,1.2,1.8)))+')';
   o.c.style.left=(28-24*s)+'cqw';o.n.style.left=(28+24*s)+'cqw';o.c.style.opacity=o.n.style.opacity=k(t,1.9,2.3);count(o.cv,t,1.9,3.4,CFG.ex.cr);count(o.nv,t,1.9,3.4,CFG.ex.nc);reveal(o.l.ws,t,3.8,0.05,0.5);});
 
 var S4=scene(32,46,CFG.prioName,CFG.prioText,function(r,o){
-  o.h=words(r,CFG.prioHead,'hd');o.h.style.fontSize='5.6cqw';
+  /* a heading past 36 characters (Scenario 4's "carry the credit funding") shrinks to hold one line */
+  var hl=CFG.prioHead.length;o.h=words(r,CFG.prioHead,'hd');o.h.style.fontSize=hl>36?(5.6*36/hl).toFixed(2)+'cqw':'5.6cqw';
   var P=CFG.prios;
   o.cols=P.map(function(p,i){var rep=p[0]==null;var d=E('div','abs',null,r,'left:'+(4.5+i*30.8)+'cqw;top:13.2cqw;width:29.2cqw;min-height:39cqw;padding:2.2cqw 2.2cqw 2cqw;border-top:.6cqw solid '+(rep?'var(--stage-gold)':'var(--stage-blue)')+';background:var(--surface);border-radius:.5cqw;box-shadow:0 1cqw 2.5cqw -1.5cqw var(--stage-shadow)');
     var n=rep?E('div','pill','Reported',d,'background:var(--stage-gold);color:var(--stage-ink);margin:.6cqw 0 1cqw'):E('div','big blue','0%',d,'font-size:9cqw');E('div',null,p[1],d,'font:700 '+(rep?'2.9':'3.8')+'cqw/1.08 '+PF+';margin:1cqw 0 1.2cqw');E('div','ln',p[2],d,'font-size:'+(rep?'2.3':'2.45')+'cqw;line-height:1.3');
@@ -274,14 +306,19 @@ var S5=scene(46,56,'Targets','Every priority has a target in FTES: 30 semester u
   o.fte.textContent=(v===0.5?CFG.target.halfFtesWords:v===1?CFG.target.ftesWords:(CFG.target.ftes*v).toFixed(1))+' FTES';o.usd.textContent=money(CFG.target.usd*v);
   o.cap.textContent=t<6.4?(t>5.0?'Half the target qualifies for half the share.':''):'The share is the ceiling.';o.cap.style.opacity=t<6.4?k(t,5.0,5.4):k(t,7.6,8.0);});
 
-var S6=scene(56,65,'Minimum conditions','Meet the minimum conditions by '+CFG.deadline+': a CPL coordinator assigned and listed in MAP and on the college CPL landing page; local confirmation on file; and at least 75 percent of enrolled veterans’ Joint Services Transcripts uploaded in MAP. Until then, the funding your college demonstrates is held in reserve for it.',function(r,o){
+var S6=scene(56,65,'Minimum conditions','Meet the minimum conditions by '+CFG.deadline+': '+(CFG.coordWords||'a CPL coordinator assigned and listed in MAP and on the college CPL landing page')+'; local confirmation on file; and at least 75 percent of enrolled veterans’ Joint Services Transcripts uploaded in MAP. Until then, the funding your college demonstrates is held in reserve for it.',function(r,o){
   // One line at 3.9cqw holds a 16-character date ("December 1, 2026"); a longer one
   // ("December 30, 2026", S314) wrapped its year, so the heading shrinks to fit.
   var dn=String(CFG.deadline).length;
   o.h=words(r,'Meet the minimum conditions by <span class="blue">'+CFG.deadline+'</span>','hd');o.h.style.fontSize=dn>16?(3.9*16/dn).toFixed(2)+'cqw':'3.9cqw';
-  var L=['A CPL coordinator assigned and listed in MAP and on your college’s CPL landing page','Local confirmation of participation on file','At least 75% of enrolled veterans’ Joint Services Transcripts uploaded in MAP'];
-  o.rows=L.map(function(s,i){var d=E('div','abs',null,r,'left:8cqw;right:4.5cqw;top:'+([11.6,22.2,29.8][i])+'cqw;display:flex;gap:2.2cqw;align-items:center');
-    var n=E('div',null,String(i+1),d,'flex:none;width:6cqw;height:6cqw;border-radius:50%;display:grid;place-items:center;font:900 3.4cqw/1 '+PF+';border:.35cqw solid var(--stage-ink)');
+  // The first condition follows the model under the noncredit outcomes lane (CFG.coordLine, build.py); its
+  // longer line takes three lines at 3.2cqw, so the rows below it step down (S482).
+  var L=[CFG.coordLine||'A CPL coordinator assigned and listed in MAP and on your college’s CPL landing page','Local confirmation of participation on file','At least 75% of enrolled veterans’ Joint Services Transcripts uploaded in MAP'];
+  var TOPS=CFG.coordLine?[10.6,24.4,32.0]:[11.6,22.2,29.8];
+  // Each number is a lining figure, lifted .21cqw inside its 6cqw disc: Playfair's old-style digits and tall
+  // ascender sat them 4px low at 1920 wide (Sam, 2026-10-26: "center the 1,2,3 numbers in the blue circles").
+  o.rows=L.map(function(s,i){var d=E('div','abs',null,r,'left:8cqw;right:4.5cqw;top:'+TOPS[i]+'cqw;display:flex;gap:2.2cqw;align-items:center');
+    var n=E('div',null,String(i+1),d,'flex:none;width:6cqw;height:6cqw;padding-bottom:.42cqw;border-radius:50%;display:grid;place-items:center;font:900 3.4cqw/1 '+PF+';font-variant-numeric:lining-nums;border:.35cqw solid var(--stage-ink)');
     E('div','ln',s,d,'flex:1;font-size:3.2cqw');var p=E('span','pill','Met',d,'flex:none;background:var(--stage-blue);color:var(--surface)');return{d:d,n:n,p:p};});
   o.b=words(r,'Until then, the funding your college demonstrates is <b>held in reserve for it</b>.','ln abs');o.b.style.cssText='left:4.5cqw;right:4.5cqw;bottom:3cqw;font-size:3.4cqw';
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);o.rows.forEach(function(x,i){var a=1.3+i*1.3;fade(x.d,t,a,a+0.5);var m=back(k(t,a+0.7,a+1.2));x.p.style.transform='scale('+m+')';x.p.style.opacity=k(t,a+0.7,a+0.9);var fill=k(t,a+0.7,a+0.9);x.n.style.background=fill>0.5?'var(--stage-blue)':'transparent';x.n.style.color=fill>0.5?'var(--surface)':'var(--stage-ink)';x.n.style.borderColor=fill>0.5?'var(--stage-blue)':'var(--stage-ink)';});reveal(o.b.ws,t,6.0,0.06,0.5);});
@@ -583,6 +620,69 @@ var Music=(function(){
 function fmt(t){var s=Math.floor(t+1e-6);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
 var chapWrap=$('chapters'),chaps=[];
 S.forEach(function(o){var li=E('li',null,null,chapWrap),b=E('button','chap','<span class="tc">'+fmt(nt(o.t0))+'</span><span class="nm">'+o.name+'</span><span class="tx">'+o.text+'</span>',li);b.type='button';b.addEventListener('click',function(){seek(playing?nt(o.t0):Math.min(DUR,nt(o.t1)-0.6));player.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});});chaps.push({b:b,t:nt(o.t0)});});
+/* ---- the transcript (WCAG 1.2.1 and 1.2.3, 2026-10-26). The film carries its
+   information as words and figures on screen under music, with no voice, so the
+   page gives them as text in a fold below the player. Each scene's lines are READ
+   from the scene's own elements, settled where its figures hold (the Targets
+   scene twice: on the hold at half the target, and at the target), so the
+   transcript says what the picture says and cannot drift from it: build.py's
+   figures and the source's words reach it only through the scene. The one line
+   written for it is what the picture shows, where the words do not say it; a
+   barrier's line takes its caption from the barrier. Each scene is put back as it
+   was built, style and text, so no frame changes. A scene with no reader here
+   still gives every text block it holds. ---- */
+function txt(el){return el?String(el.textContent||'').replace(/\s+/g,' ').trim():'';}
+function kids(el,sep){return Array.prototype.map.call(el.children,txt).filter(Boolean).join(sep||' ');}
+function leaves(el){return Array.prototype.filter.call(el.querySelectorAll('p,div'),function(e){return !e.querySelector('p,div');}).map(txt);}
+function settle(o,ts,read){var els=[o.root].concat(Array.prototype.slice.call(o.root.querySelectorAll('*')));
+  var was=els.map(function(e){return[e.getAttribute('style'),e.children.length?null:e.textContent];});
+  var out=ts.map(function(lt,i){o.u(o,Math.min(lt,o.t1-o.t0-0.05));return read(o,i);});
+  els.forEach(function(e,i){var s=was[i][0];if(s==null)e.removeAttribute('style');else e.setAttribute('style',s);if(was[i][1]!=null&&e.textContent!==was[i][1])e.textContent=was[i][1];});
+  return [].concat.apply([],out);}
+/* the targets slide's operators, in words */
+var OPS={'÷':'divided by','−':'less','=':'equals'},END=1e9;
+function lockLines(lk){var im=lk.querySelectorAll('img'),p=lk.querySelectorAll('p');return[im[0].alt,im[1].alt+': '+txt(p[0]),txt(p[1])];}
+/* [scene, what the picture shows, the settled moments read, the reader] */
+var TR=[
+  [S0,'The CPL Initiative logo, with the MAP logo beneath it. The red arrow from the MAP logo rests in the A of MAP, then lifts off and flies through every scene, pointing at the figure in play.',[END],
+    function(o){return lockLines(o.lock).concat([txt(o.y),txt(o.t),txt(o.s),txt(o.nb)]);}],
+  [S1,'A bar divides the funding among its destinations.',[END],
+    function(o){return[txt(o.k),txt(o.n)+' '+txt(o.l)].concat(o.lab.map(function(d){return kids(d);}));}],
+  [S2,'A line runs from the base to the cap, and a marker lands on it.',[END],
+    function(o){return[txt(o.h),txt(o.l)].concat(o.ticks.map(function(d){return kids(d);}),[kids(o.m,': '),txt(o.b)]);}],
+  [S3,'The allocation splits into its credit share and its noncredit share.',[END],
+    function(o){return[txt(o.h)+': '+txt(o.a),kids(o.c),kids(o.n),txt(o.l)];}],
+  [S4,'A card rises for each priority in turn.',[END],
+    function(o){return[txt(o.h)].concat(o.cols.map(function(c){var k=c.d.children;return txt(k[1])+' ('+txt(k[0])+'): '+txt(k[2])+(k[3]?' '+kids(k[3])+'.':'');}));}],
+  [SH,'',[END],
+    function(o){return[txt(o.h),txt(o.l)].concat([o.r1,o.r2,o.rc,o.r3].filter(Boolean).map(function(r){var op=txt(r.els[0]);return(op?(OPS[op]||op)+' ':'')+txt(r.els[1])+' '+txt(r.els[2]);}),[txt(o.b)]);}],
+  /* 6.0 s sits on the hold at half the target (the fill reaches half at 5.0 and resumes at 6.6) */
+  [S5,'A bar fills to its halfway mark and holds, then fills to the target and stops there.',[6.0,END],
+    function(o,i){return(i?[]:[txt(o.h),txt(o.l),txt(o.card.firstChild).replace(/ · /g,', ')]).concat([kids(o.row,', '),txt(o.cap)]);}],
+  [S6,'Each condition is marked Met in turn.',[END],
+    function(o){return[txt(o.h)].concat(o.rows.map(function(x){return txt(x.n)+'. '+txt(x.d.children[1])+': '+txt(x.p);}),[txt(o.b)]);}],
+  [S7,'A timeline draws from left to right, one date at a time.',[END],
+    function(o){return[txt(o.h)].concat(o.nodes.map(function(d){return kids(d,': ');}),[txt(o.a),txt(o.b)]);}],
+  [S8,'The strategies scroll past one at a time.',[END],
+    function(o){return[txt(o.h),txt(o.k),Array.prototype.map.call(o.list.children,txt),txt(o.a),txt(o.b)];}],
+  [S9,'The CPL Initiative and MAP logos return. The arrow circles them and settles back into the A.',[END],
+    function(o){var a=o.s.querySelector('a');return[txt(o.t),{href:a.getAttribute('href'),text:txt(a)},txt(o.cr)];}]];
+(function(){var body=$('transcript-body');if(!body)return;
+  function put(tag,cls,text,par){var e=E(tag,cls,null,par);e.textContent=text;return e;}
+  put('p','tr-note',(NARR?'Narrated, with music; the captions on the player carry the narration. ':'Music only, no narration. ')+
+    'Below, scene by scene, are the words and figures on screen in the order they appear, with a line on what the picture shows where the words do not say it.',body);
+  var ol=E('ol','tr',null,body);
+  S.forEach(function(o){var r=TR.filter(function(x){return x[0]===o;})[0]||[o,'',[END],function(q){return leaves(q.root);}];
+    var li=E('li',null,null,ol),h=E('h3',null,null,li);put('span','tc',fmt(nt(o.t0)),h);h.appendChild(document.createTextNode(' '+o.name));
+    var pic=function(s){put('p','tr-pic','Picture: '+s,li);},mid=(o.t0+o.t1)/2,hits=ENC.filter(function(e){return e.t>=o.t0&&e.t<o.t1;});
+    var shot=function(e){pic('The arrow shoots down a barrier labeled “'+txt(e.capT)+',” and the label is struck through.');};
+    if(r[1])pic(r[1]);
+    hits.filter(function(e){return e.t<mid;}).forEach(shot);
+    settle(o,r[2],r[3]).forEach(function(x){if(!x||x.length===0)return;
+      if(Array.isArray(x)){var ul=E('ul',null,null,li);x.forEach(function(s){put('li',null,s,ul);});}
+      else if(x.href){var a=E('a',null,null,E('p',null,null,li));a.href=x.href;a.textContent=x.text;}
+      else put('p',null,x,li);});
+    hits.filter(function(e){return e.t>=mid;}).forEach(shot);});})();
 var btnPlay=$('play'),bigplay=$('bigplay'),pos=$('pos'),time=$('time'),btnSound=$('sound'),btnFs=$('fs');
 pos.max=String(DUR);
 /* the narrated cut: the voice plays beside the score, held to the player's clock */
