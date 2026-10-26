@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-455 document(s).
+456 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 486 | [Session 486 handoff: Hartnell's last hours are a data gap; its degree failures read](../session_486_handoff.md) | 2026-10-26 |
 | 485 | [Session 485 handoff: Hartnell's noncredit course hours, six of eight programs pass](../session_485_handoff.md) | 2026-10-26 |
 | 484 | [Session 484 handoff: DSP Credit Starting Points Version 2 on the agency template, Open Asks Sheet 129](../session_484_handoff.md) | 2026-10-26 |
 | 483 | [Session 483 handoff: ELL IET Version 2 with example articulations, the funding film's v11, the Summit film's v3, Sheet 128](../session_483_handoff.md) | 2026-10-26 |
