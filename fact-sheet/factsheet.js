@@ -186,24 +186,39 @@
 
   // Make every content section (those with an <h2>) collapsible. Expanded by
   // default; print forces all open (see factsheet.css @media print).
+  //
+  // The APG disclosure pattern: the h2 stays a heading and a native <button>
+  // inside it carries aria-expanded. Writing role="button" onto the h2 itself
+  // took all 16 headings out of a screen reader's list of headings (axe
+  // aria-allowed-role). The button gets Enter and Space from the browser, so
+  // there is no key handler to keep in step. aria-controls names the section the
+  // button folds. The heading's own words move into the button, so the h2's
+  // textContent (read by the curate editor's labels) is unchanged.
+  function toggleButton(h) {
+    var b = h && h.firstElementChild;
+    return b && b.tagName === 'BUTTON' && b.classList.contains('sec-toggle-btn') ? b : null;
+  }
   function setupCollapse() {
     var secs = document.querySelectorAll('main > section');
     for (var i = 0; i < secs.length; i++) {
       (function (sec) {
         var h = sec.querySelector('h2');
-        if (!h || h.parentNode !== sec) return;
+        if (!h || h.parentNode !== sec || toggleButton(h)) return;
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'sec-toggle-btn';
+        b.setAttribute('aria-expanded', sec.classList.contains('collapsed') ? 'false' : 'true');
+        if (sec.id) b.setAttribute('aria-controls', sec.id);
+        while (h.firstChild) b.appendChild(h.firstChild);
+        h.appendChild(b);
         h.classList.add('sec-toggle');
-        h.setAttribute('role', 'button');
-        h.setAttribute('tabindex', '0');
-        h.setAttribute('aria-expanded', 'true');
         function toggle() {
           var collapsed = sec.classList.toggle('collapsed');
-          h.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+          b.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
         }
-        h.addEventListener('click', toggle);
-        h.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-        });
+        b.addEventListener('click', toggle);
+        // The heading's padding strip under the button still folds, as the whole h2 did.
+        h.addEventListener('click', function (e) { if (e.target === h) toggle(); });
       })(secs[i]);
     }
     var btn = $('#btn-collapse-all');
@@ -214,7 +229,8 @@
         var th = s[k].querySelector('h2.sec-toggle');
         if (th && th.parentNode === s[k]) {
           s[k].classList.toggle('collapsed', anyOpen);
-          th.setAttribute('aria-expanded', anyOpen ? 'false' : 'true');
+          var tb = toggleButton(th);
+          if (tb) tb.setAttribute('aria-expanded', anyOpen ? 'false' : 'true');
         }
       }
       btn.textContent = anyOpen ? 'Expand all' : 'Collapse all';

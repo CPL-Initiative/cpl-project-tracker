@@ -3689,7 +3689,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 181,
+     "line": 191,
      "pages": [
       "fact-sheet/index.html"
      ]
@@ -6124,7 +6124,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 821
+     "line": 825
     },
     {
      "id": "page:funding-model/index.html",
@@ -7137,7 +7137,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 823
+     "line": 827
     },
     {
      "id": "script:tools/source_cpl_stories.mjs",
@@ -7169,7 +7169,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 824
+     "line": 828
     }
    ],
    "served": true,
@@ -7182,7 +7182,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 822
+     "line": 826
     }
    ],
    "served": true,
@@ -7195,7 +7195,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 827
+     "line": 831
     }
    ],
    "served": true,
@@ -7208,7 +7208,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 828
+     "line": 832
     }
    ],
    "served": true,
@@ -7279,7 +7279,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 825
+     "line": 829
     },
     {
      "id": "script:fact-sheet/_build_statewide_recs.py",
@@ -7332,7 +7332,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 826
+     "line": 830
     }
    ],
    "served": true,
@@ -18055,7 +18055,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 839
+     "line": 843
     },
     {
      "id": "page:funding-model/index.html",

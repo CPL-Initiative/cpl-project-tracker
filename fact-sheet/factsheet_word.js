@@ -142,6 +142,16 @@
     strip(clone, '.fs-withheld');               // source-level withheld sections (the .fs-withheld utility)
                                                 //   — remove BEFORE the [hidden] un-hide below, else they'd reappear
 
+    // A section heading holds its fold control, a <button> (factsheet.js
+    // setupCollapse). The document keeps the heading and its words, not the control.
+    var tgs = clone.querySelectorAll('h2.sec-toggle > button');
+    for (var t = 0; t < tgs.length; t++) {
+      var hd = tgs[t].parentNode;
+      while (tgs[t].firstChild) hd.insertBefore(tgs[t].firstChild, tgs[t]);
+      hd.removeChild(tgs[t]);
+      hd.classList.remove('sec-toggle');
+    }
+
     // Expand everything for a flat printed document.
     var col = clone.querySelectorAll('.collapsed');
     for (var i = 0; i < col.length; i++) col[i].classList.remove('collapsed');
