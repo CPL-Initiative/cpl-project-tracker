@@ -634,6 +634,24 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S485 SkyElderberry (2026-10-26, the CPL Queue routine): Hartnell's last hours and its degree failures, read
+
+- **Where a vendor gives no figure, the record stays incomplete.** Page read 40278795148 (`network_find` on the codes):
+  TAC326, BUS690 and BUS699 carry only `creditHours` 0 and `billingHours` 0 under `credits`, no `lectureHours` or
+  `labHours`. The `contactHours` the answer prints belong to the instructional methods (lecture 18, lab 108 a term), not
+  to a course. Subtracting the other courses from the tab's total would make the check pass by construction, so neither
+  44161 (630) nor 44574 (432) is filled.
+- **The page reader's live run status lags.** `list_workflow_jobs` showed checkout "in progress" for twelve minutes on a
+  run that finished in a minute and a half; the logs answer 404 until the API catches up. Read the logs again rather
+  than wait on the step list.
+- **Hartnell's degree failures are structure, not misreadings** (page read 40279150362, three tabs). Both nursing tabs
+  print "Students can double-count required courses and courses for General Education.": the overlap Sam allowed for
+  transfer degrees (Sheet 82 card 2), stated by the page for a local degree. Vocational Nursing 39248 (80-89 against 63)
+  passes once the scorer reads it. RN 03570 names no whole Local GE pattern: its general education is the prerequisite
+  list plus "Local GE - Area 6". B.S. Respiratory Care 44537 prints 120, which includes the A.S. a student holds to be
+  admitted. General Studies 17912 splits one 18-unit choice into eleven subject lists. No change shipped: one record
+  passes on the overlap step, and the step rides Hartnell's next reconcile.
+
 ## S484 SkyToyon (2026-10-26, the CPL Queue routine): Hartnell's noncredit course hours
 
 - **A Coursedog course carries its noncredit hours under `credits`, as ranges.** Page read 40273805437 (two
