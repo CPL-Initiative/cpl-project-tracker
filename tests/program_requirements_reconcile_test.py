@@ -10,6 +10,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _program_requirements_reconcile as R  # noqa: E402
+import _program_requirements_score as S  # noqa: E402
 
 results = []
 
@@ -77,6 +78,28 @@ check("a list with a figure of its own stays a list",
 check("a certificate is left alone",
       not [n for n in R.reconcile(rec, gah, "Hartnell College", "Certificate of Achievement", steps=steps)[1]
            if n["field"] == "blocks"])
+
+print("Hartnell's lists with floors under one total (S489)")
+lphs = "Requirements · Complete a total of 18 units from List A, List B, and List C · List A: Biology"
+def floor(name, codes, mn, st=None):
+    return dict(lst(name, codes), minimum=mn, stated=st or {"min": None, "max": None})
+rec = {"program": {"total_units": {"min": 18, "max": 18}},
+       "blocks": [floor("List A: Biology", ["BIO5", "BIO10"], 3), floor("List B: Chemistry", ["CHM22"], 4),
+                  floor("List C", ["ANT1", "BIO5", "CHM22", "SOC1"], 10, {"min": 10, "max": 11})]}
+new, notes = R.reconcile(rec, lphs, "Hartnell College", "A.A. Degree", steps=steps)
+b = new["blocks"]
+check("three lists under one printed 18 become one choice of 18",
+      len(b) == 1 and b[0]["stated"] == {"min": 18, "max": 18} and b[0]["minimum"] == 18)
+check("a course listed in two of the lists is listed once",
+      [c["code"] for c in b[0]["courses"]] == ["BIO5", "BIO10", "CHM22", "ANT1", "SOC1"])
+check("each list's figure stays in floors",
+      [(f["name"], f["minimum"]) for f in b[0]["floors"]] == [("List A: Biology", 3), ("List B: Chemistry", 4), ("List C", 10)])
+check("the pooled record passes the scorer's sum", S.program_units(new, {})[0] == (18, 18))
+over = json.loads(json.dumps(rec)); over["blocks"][2]["stated"] = {"min": 12, "max": 12}
+check("floors that sum past the total are left alone",
+      not [n for n in R.reconcile(over, lphs, "Hartnell College", "A.A. Degree", steps=steps)[1] if n["field"] == "blocks"])
+check("the figureless step never pools lists with floors",
+      not [n for n in R.reconcile(rec, gah, "Hartnell College", "A.A. Degree", steps=steps)[1] if n["field"] == "blocks"])
 
 failed = [n for n, ok in results if not ok]
 for n, ok in results:

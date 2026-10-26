@@ -10,7 +10,7 @@
   "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up",
   "course_units": "a course the record lists without units takes the units the page's own course data names (the vendor call the page made as it loaded, kept by the reader as the source's course_units): never a course the reading gave units, and the note names the call",
   "course_hours": "a course a record measured in hours lists without hours takes the top of the hours the page's own course data names (the course_units call's lecture plus lab hours, kept by the reader as the source's course_hours; the tab's noncredit total sums the tops): only in an hours record, never a course the reading gave a figure, and the note names the call",
-  "pool_lists": "several lists the reading split one choice into, pooled: where the page prints one unit figure (pattern's n) over lists each read as choose_units with no figure of their own and named with block_prefix, the lists become one choose_units block of n (name), courses in order; never one list, and never where the record's total_units names another figure"
+  "pool_lists": "several lists the reading split one choice into, pooled: where the page prints one unit figure (pattern's n) over lists each read as choose_units with no figure of their own and named with block_prefix, the lists become one choose_units block of n (name), courses in order; never one list, and never where the record's total_units names another figure; with_floors (S489) also pools lists that carry their own figures, where the page prints one total over them all: each list's figure stays in the pooled block's floors, a course listed in two of the lists counts once, and never where the floors sum past n. block_pattern (a regex on the list name) may stand in for block_prefix"
  },
  "colleges": {
   "Cabrillo College": {
@@ -502,6 +502,16 @@
      "block_prefix": "List A: ",
      "name": "Completion requirement",
      "why": "S487 SkyHuckleberry, 2026-10-26: General Studies: Arts and Humanities A.A. 17912 (AA.GAH) read its eleven subject lists as eleven choose_units blocks with no units, so arithmetic read incomplete against total_units 18. The tab prints \"For the 18 units required, select courses in List A from at least two disciplines; from one of the disciplines select at least two courses.\" over a Completion requirement whose lists each say \"Complete ANY of the following Courses\" (college-page-read 40291523425); Social and Behavioral Sciences 17911 (AA.GSB) prints the same words and was read as one 18-unit block. The two-disciplines condition is a rule on which courses, not on the units, and no field holds it."
+    },
+    {
+     "kind": "pool_lists",
+     "field": "blocks",
+     "awards": "associate",
+     "with_floors": true,
+     "pattern": "Complete a total of (?P<n>\\d+) units from List A,\\s*List B,?\\s*and List C",
+     "block_pattern": "List [ABC]\\b",
+     "name": "List A, List B and List C",
+     "why": "S489 SkySnowberry, 2026-10-26: Liberal Arts: Pathway to Health Sciences A.A. 17924 (AA.LPHS) read its three lists as three choose_units blocks with floors of 3 (List A: Biology), 4 (List B: Chemistry) and 10-11 (List C), so arithmetic read 17-18 against total_units 18. The tab prints \"Complete a total of 18 units from List A, List B, and List C\" over the three lists (page read 40306415059, S488): one figure governs the lists, and List C repeats List A's and List B's courses. The step joins them into one 18-unit choice, keeps each list's figure in floors, and lists a course once."
     },
     {
      "kind": "course_units",
