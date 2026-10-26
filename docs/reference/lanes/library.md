@@ -185,46 +185,13 @@ contacts the eight projects himself. The session's staged receipt,
 `kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, was never applied. Its public topics are empty; Sierra links
 it by title and summary until someone adds them.
 
-## Ask Sierra beside the page (Sam, 2026-10-24; built S469)
+## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 
-Sam asked at ~17:10Z for *"an Ask Sierra chat chip that opens a Sierra side bar if clicked"*; at the start of S469 he picked
-**the library first, as one script any page can load,** and **the chip in the bottom-right corner**. `sierra/sidebar.js`
-adds the chip and a side bar that frames the public `sierra/` page, so she is the same assistant with the same surface and
-logging. The frame loads on the first open and stays loaded while shut, so a reopen keeps the conversation. From 1200px the
-page narrows beside her and stays in use; below that she takes the screen as a modal and the page behind is inert. **Beside
-the page the reader sets her width** (Sam, ~23:20Z: *"Make the sidebar resizable horizontally"*; built S469): her left edge
-is a separator that drags and takes ArrowLeft and ArrowRight (40px), Home and End; the words *Narrower* and *Wider* in her
-header do the same for anyone who cannot drag (WCAG 2.5.7). She keeps 340px, the page keeps 600px, and the width is
-remembered per reader (`cpl_sierra_bar_w`). The library's cards fit the room she leaves through a container query on
-`.results`: three columns while a card keeps about 260px, then two, then one. Close and Escape (in her frame too, unless her About panel is open) hand focus back
-to the chip. The frame takes the library's theme in `?theme=`, which her page lets beat a stored choice, and follows a
-switch. The library maps the `--sierra-bar-*` tokens onto its own. **COBI's Library tab carries it too** (Sam, ~21:05Z:
-*"Library and more importantly on the public library site:)"*): `library.js` loads the bar on the tab's first visit, shows
-the chip on that tab alone (`setChip`; any other tab hides it and shuts an open bar) and maps the tokens onto First Light.
-Test: `tests/sierra_sidebar.test.js` (51); sweep: `public-library-sierra` and `-dark` (its keyboard checks drag the edge
-across her frame at 1440px), `cobi:library`.
-**The Fact Sheet and the funding model page open her in the bar too** (Sam, Open Asks Sheet 126 card 1, *public*, 23:08Z
-2026-10-24; built S469); COBI stays as it is. Each opens her from its own *Ask Sierra* word in its action row, just ahead of
-its PDF control (Sam, 2026-10-01: *"Include an Ask Sierra link as in the Fact Sheet"*): a page with a `[data-sierra-open]`
-word shows no chip, and Close hands focus back to the word. Each names her starter questions (`CPL_SIERRA_SUGGESTED`, three
-shown) and her surface (`CPL_SIERRA_SURFACE`, `fact-sheet`, the one a host may claim); `sierra.js` reads both from the
-same-origin parent, never from the address. Their drawer (`fact-sheet/factsheet_sierra.js`, a second copy of her chat) and
-its test are gone. A page joins with one script tag and a token map. Sweep: `fact-sheet-sierra`, `-dark`,
-`funding-model-sierra`.
-
-## Sierra reads the library (Sam, ~23:20Z 2026-10-24; built S469)
-
-Sam asked Ask Sierra *"What is one step I can take to create CPL for the ELL IET grantees?"* and she gave general steps,
-never naming *ELL IET CPL Starting Points*: nothing in `cpl-chat` read the library. *"Can you make sure she's wired to grab
-that info?"* (`cpl_memory` `sam-sierra-sidebar-asks-resize-library-prompt-2026-10-24`). `cpl-chat`'s LIBRARY BLOCK reads
-`cpl_library_public()` beside the other routes (cached ten minutes per instance; drafting surfaces skip it) and keeps up to
-three pieces the question names: a college's piece through the college the detection resolved, any other piece by a word
-of its title, who it is for or its topics, or two words of its summary (words every piece shares never count). A piece on
-the tracker's `library/` is read too, and its text (to 20,000 characters, a longer page losing its middle) rides beside
-the link, so she answers from what it says; a question about the library lists every piece. The rule: link the piece in
-the first paragraph, answer from its text, add nothing to it. Tests: `tests/sierra_library.test.js` (30); smoke mode 7x
-(his question). Live: `cpl-chat` deployed 03:13Z 2026-10-25 (run 40157254434); the production smoke (run
-40158212946) passed 7x, her answer linking the piece first and naming Fresno, Lemoore and Chaffey from its text.
+Sam's asks of 2026-10-24 are built: an Ask Sierra side bar any public page loads with one script (`sierra/sidebar.js`,
+resizable, light by default; the library, COBI's Library tab, the Fact Sheet and the funding model page carry it; test
+`tests/sierra_sidebar.test.js`), and `cpl-chat`'s LIBRARY BLOCK, which reads `cpl_library_public()` and answers from a
+listed piece's own text (test `tests/sierra_library.test.js`). The full record, his words and the mechanics moved verbatim
+to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S480)*.
 
 ## Public pieces live on GitHub Pages (Sam, 2026-10-25)
 

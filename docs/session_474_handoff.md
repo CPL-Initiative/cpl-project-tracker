@@ -4,6 +4,8 @@ date: 2026-10-25
 session: 473 (SkyClarkia)
 tags: [handoff, implementation-funding, noncredit, scenario-4, nc-1]
 status: current
+superseded: true
+superseded_by: session_481_handoff.md
 ---
 
 # You are Session 474

@@ -4,6 +4,8 @@ date: 2026-10-25
 session: 469 (SkyLemonadeBerry)
 tags: [handoff, library, public-library, sierra, dark-mode, cpl-chat]
 status: current
+superseded: true
+superseded_by: session_481_handoff.md
 ---
 
 # You are Session 470

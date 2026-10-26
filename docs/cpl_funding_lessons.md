@@ -588,3 +588,23 @@ Sam's five asks in one hand-opened session, merged as #2446 (squash 6ed85331).
 - **The strike-team condition retired by Sam's strike-through**, his first condition now carrying "meeting regularly". `ncTeamShown()` defaults off rather than writing a curator setting by SQL; a layer can restore it.
 - **The timeline sorts at render**, not in storage: Sam's four report deadlines landed at the end of the stored list, and a render sort keeps every future milestone in place with no reorder control.
 - **Sam's saved passages keep their words.** `nc_rules` and `college_intro` still name the coordinator, the strike team and the old columns; they are his edits on the tab.
+
+## S480 (SkyChia), 2026-10-25: the NC label, outcome chips, Serves on the reported cards
+
+- **A positional label becomes a stored field with the old value as its default** (`label`, empty reads NC-n), so no
+  config changes until a curator types, and every reader of `p.label` (rows, CSV, memo) follows.
+- **Two older tests pinned the old wording** ("Priority 1: Access" as text, the NC label as text); updating them to the
+  new rule, with the ruling named, is part of the change, never a skip.
+- **Never switch the working tree's branch while a local test run reads it.** Half of a 38-file run tested `main`'s
+  code after a `git checkout`; the rerun on the right branch (43 files) is the one that counts. Use a worktree for the
+  other branch.
+- **`check_generated.sh` before every commit, on every branch:** the funding branch's first push failed `lints` on a
+  stale dependency map the Library branch had already regenerated.
+
+## Moved from the lane (S480, 2026-10-26)
+
+Moved verbatim from `docs/reference/lanes/implementation-funding.md` to bring the lane under its 20 KB budget; the lane keeps a pointer and the two rules.
+
+✅ **Sam, 2026-09-30:** **Refresh everything** (Internal) re-reads the model in every window (BroadcastChannel `cpl-funding-model`); My College adopts the module's config on every change; the published scenario opens every visit, a curator's pick holds for the visit only. `?fundview=public` opens the Public page view. **My CPL Funding** (`fundingPanel`, one renderer) is reached through Step 1 alone; the chooser offers every institution and each district of two or more (`d:<district>`); **Save as PDF** prints through `CPL_COLLEGE_BRIEFING.printPanel`. ⭐ **No "funding model" in college-facing text** (card 14: it is a procedure; curator lines keep the word); the seed grant's expend-by date stays off (Sam, 2026-10-01); ⭐ **"through apportionment" is for the seed grant only.**
+
+✅ **THE INTRODUCTION VIDEO: CPL Funding in Motion** ([README](../../../prototype/funding_video/README.md)), a 100-second introduction and narrated cut per scenario. `scripts/funding_video_figures.js --config live.json --write` files its figures; **Refresh everything** says whether the film matches. ⭐ **The introduction link is always the published film** (`funding_in_motion_s2.html`). ⭐ **Its Scenario 4 words (Sam, Open Asks Sheet 123 card 2, *adopt*, 13:17Z 2026-10-24):** v10 says the priorities carry the *credit* funding and names the two outcomes (`ncLine`); origination builds keep the old words. ⚠️ The timeline reads "…Rolled to Year 2 and Releveled" until Sam types card 7's line.

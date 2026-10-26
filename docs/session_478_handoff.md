@@ -4,6 +4,8 @@ date: 2026-10-25
 session: 477 (SkyOwlsClover)
 tags: [handoff, implementation-funding, noncredit, nc-1, scheduled-sessions, supabase]
 status: current
+superseded: true
+superseded_by: session_481_handoff.md
 ---
 
 # You are Session 478
