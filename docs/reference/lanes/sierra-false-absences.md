@@ -1,7 +1,7 @@
 ---
 title: "Sierra: false absences + the statewide flag — lane state"
 created: 2026-08-28
-updated: 2026-10-07
+updated: 2026-10-26
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -34,12 +34,19 @@ she names only what the reader can open and links only public pages. Receipt
 supabase-migrate run 40349711114 and read back: the row reworded, the directive `ee287020`, 18 active directives at 8,599
 of 9,000 characters. Sierra reads them on every answer, so no deploy.
 
-**NEXT (Sam, 2026-10-26 ~15:40Z, S490):** *"If there is a way for you to analyze an instruction I add to see if it can be
-worded better for Sierra, let's do that."* Recommended shape: a **Suggest wording** word beside Save in the Sierra Training
-tab (`sierra_training.js`). It sends the draft to Claude with the rules an instruction must meet (names no internal tool or
-COBI tab and links only public pages; says what Sierra can actually search; the house voice; the 9,000-character budget and
-how much is left; no clash with an active row) and shows a rewrite beside his words with a line on each change; he keeps
-his own, takes the rewrite or edits it, and nothing saves without his Save. A check in the same tab can flag the tab names
-and internal tools by rule before any model runs. The call needs a server side holding the Anthropic key (cpl-chat's, or a
-small function beside it), so its deploy and cost are his to approve.
+**Wording help for Sierra's instructions (Sam, 2026-10-26 ~15:40Z, S490):** *"If there is a way for you to analyze an
+instruction I add to see if it can be worded better for Sierra, let's do that."* S491 mocked it
+([Sierra Suggest Wording](https://claude.ai/artifact/KTxz6o8byt2oioPZof73HZ)) and built the half that needs no model:
+`sierra_wording_check.js` reads a draft by rule (a link the public can open, closed quotations, a finished last sentence,
+no website for Sierra to open, no internal tool named, a sentence another instruction already says) and names any
+instruction that would stop reaching Sierra, counted the way `guidanceBlock()` counts: newest first, 9,000 characters,
+**a break at the first that does not fit**, so the oldest go silently. Run on the 18 switched-on instructions it found
+four faults, corrected on the recommendation (receipt `sierra_guidance_wording_fixes_2026-10-26_s491.sql`,
+supabase-migrate run 40366680106, read back the same hour).
+⚠️ **The naming rule (cb226a48) is the oldest and lives nowhere else in cpl-chat:** on My College the set reads 8,693 of
+9,000, so a new instruction over about 300 characters drops it.
+**NEEDS SAM ([Open Asks Sheet 132](https://claude.ai/artifact/84gYwWMaFVYKGo461YLLnT)):** 1 deploy cpl-chat with *Suggest wording* (a `guidance-wording` drafting caller, as
+`memory-autogen` and `skyview-ask` are; about one Sierra answer's cost a press); 2 move the naming rule into her built-in
+instructions in the same deploy and switch the row off; 3 the four corrections, made on the recommendation (reply to
+reverse).
 

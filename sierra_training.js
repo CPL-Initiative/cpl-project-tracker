@@ -577,6 +577,13 @@
         + " color: var(--text-body); background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:8px; }",
       ".sit-guid-count { margin:0; font-size:.82rem; color: var(--text-muted); }",
       ".sit-guid-count.warn { color: var(--crimson); font-weight:600; }",
+      ".sit-guid-check { margin:4px 0 2px; }",
+      ".sit-guid-check-head { margin:0 0 4px; font-size:.85rem; font-weight:600; color: var(--text-strong); }",
+      ".sit-guid-check ul { list-style:none; margin:0; padding:0; display:grid; gap:4px; }",
+      ".sit-guid-check li { padding:4px 8px; border-radius:6px; font-size:.88rem; line-height:1.45; color: var(--text-body); background: var(--surface-subtle); }",
+      ".sit-guid-check li b { font-weight:700; color: var(--text-muted); }",
+      ".sit-guid-check li.fix b { color: var(--crimson); }",
+      ".sit-guid-check li.look b { color: var(--mustard-text); }",
       ".sit-guid-row { display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; }",
       ".sit-guid-note { flex:1 1 280px; min-height:36px; padding:6px 11px; font:inherit; font-size:.9rem; color: var(--text-body);"
         + " background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:8px; }",
@@ -1782,6 +1789,83 @@
     return h + "</div>";
   }
 
+  /* ── Check wording (S491; Sam, 2026-10-26: "If there is a way for you to
+   * analyze an instruction I add to see if it can be worded better for Sierra,
+   * let's do that.") ──
+   * sierra_wording_check.js reads the draft by rule as it is typed: a link the
+   * public can open, closed quotations, a finished last sentence, no website for
+   * Sierra to open, no internal tool named, a sentence another switched-on
+   * instruction already says, and WHICH instruction would stop reaching Sierra.
+   * ⚠ The meter above says only how full the space is; cpl-chat adds the newest
+   * first and stops at 9,000 characters, so a long new instruction silently drops
+   * the oldest, and the oldest is the naming rule. The check names it before Save.
+   * It reports and never blocks: Save stays the curator's. Loaded lazily, so a
+   * failed load leaves the tab exactly as it was. */
+  var WORDING_SRC = "sierra_wording_check.js";
+  var wordingAsked = false, wordingTimer = null;
+  function ensureWordingCheck(root) {
+    if (window.SierraWordingCheck || wordingAsked) return;
+    wordingAsked = true;
+    var done = function () { if (window.SierraWordingCheck) refreshWordingChecks(root); };
+    if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
+      window.CPL_TABS.loadScript(WORDING_SRC, "SierraWordingCheck", done);
+      return;
+    }
+    var s = document.createElement("script");
+    s.src = WORDING_SRC; s.onload = done;
+    document.head.appendChild(s);
+  }
+  // The switched-on rows of one kind, newest first: the order cpl-chat reads them.
+  function activeForCheck(kind) {
+    return (state.guidance || []).filter(function (r) { return r.active && guidKind(r) === kind; })
+      .map(function (r) {
+        return { id: String(r.id), rule: String(r.rule || ""), surface: r.surface || null,
+          d: String(r.created_at || "").slice(0, 10) };
+      });
+  }
+  var CHECK_LEVEL = { fix: "Fix", look: "Look", ok: "Fine" };
+  function wordingCheckInner(text, editingId, surface, kind) {
+    var C = window.SierraWordingCheck;
+    if (!C || !String(text || "").trim() || !state.guidance) return "";
+    var k = kind === "display" ? "display" : "directive";
+    var res = C.check(text, { active: activeForCheck(k), editingId: editingId == null ? null : String(editingId),
+      surface: surface || null, space: k !== "display" });
+    if (!res.findings.length) return "";
+    var fixes = res.findings.filter(function (f) { return f.level === "fix"; }).length;
+    var looks = res.findings.filter(function (f) { return f.level === "look"; }).length;
+    var head = fixes || looks
+      ? (fixes ? fixes + " to fix" : "") + (fixes && looks ? " · " : "") + (looks ? looks + " to look at" : "")
+      : "nothing to fix";
+    return '<p class="sit-guid-check-head" aria-live="polite">Before you save: ' + esc(head) + "</p><ul>"
+      + res.findings.map(function (f) {
+        return '<li class="' + esc(f.level) + '"><b>' + esc(f.kind) + " · " + esc(CHECK_LEVEL[f.level] || "") + ".</b> "
+          + esc(f.text) + "</li>";
+      }).join("") + "</ul>";
+  }
+  function draftCheckHtml() {
+    return '<div class="sit-guid-check" data-guid-check="draft">'
+      + wordingCheckInner(state.draftRule, null, state.draftSurface, state.draftKind) + "</div>";
+  }
+  function editCheckHtml(r) {
+    return '<div class="sit-guid-check" data-guid-check="edit">'
+      + wordingCheckInner(state.editRule, r.id, r.surface, guidKind(r)) + "</div>";
+  }
+  function refreshWordingChecks(root) {
+    if (!root) return;
+    var d = root.querySelector('[data-guid-check="draft"]');
+    if (d) d.innerHTML = wordingCheckInner(state.draftRule, null, state.draftSurface, state.draftKind);
+    var e = root.querySelector('[data-guid-check="edit"]');
+    if (e) {
+      var r = (state.guidance || []).filter(function (x) { return String(x.id) === String(state.editId); })[0];
+      e.innerHTML = r ? wordingCheckInner(state.editRule, r.id, r.surface, guidKind(r)) : "";
+    }
+  }
+  // Typing re-checks after a pause; the textarea itself is never re-rendered.
+  function scheduleWordingCheck(root) {
+    clearTimeout(wordingTimer);
+    wordingTimer = setTimeout(function () { refreshWordingChecks(root); }, 200);
+  }
+
   // The editor, rendered IN PLACE of the row being edited. It carries a test
   // question with it: the point of editing an instruction is to change what
   // Sierra SAYS, and the only way to know whether it worked is to ask her —
@@ -1799,6 +1883,7 @@
       + used.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
       + (used >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "")
       + "</div>"
+      + editCheckHtml(r)
       + '<input class="sit-guid-edit-note" aria-label="Note for the team" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.editNote) + '" '
       + 'title="Just for the team — Sierra never sees the note." '
       + 'placeholder="Optional note for the team — why this instruction exists">'
@@ -2061,6 +2146,7 @@
   function render(root) {
     ensureCss();
     shedPlaceholder(root);
+    ensureWordingCheck(root);
     if (state.loading) { root.innerHTML = '<div class="sit"><p class="sit-gate">Loading Sierra logs…</p></div>'; return; }
 
     var ready = signedIn() && !state.error && !state.gated;
@@ -2290,6 +2376,7 @@
         + used.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
         + (used >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "")
         + "</div>"
+        + draftCheckHtml()
         + '<div class="sit-guid-row">'
         + '<input class="sit-guid-note" aria-label="Note for the team" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.draftNote) + '" '
         + 'title="Just for the team — why you added this. Sierra never sees the note." '
@@ -2547,16 +2634,17 @@
       c.className = "sit-guid-count" + (n > GUIDANCE_RULE_MAX - 150 ? " warn" : "");
       c.textContent = n.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
         + (n >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "");
+      scheduleWordingCheck(root);
     });
     var gn = root.querySelector(".sit-guid-note");
     if (gn) gn.addEventListener("input", function () { state.draftNote = gn.value; });
     var gk = root.querySelector("[data-guid-kind]");
     // No re-render on change: re-rendering here would rebuild the composer and
     // throw away the untyped-but-unsaved textarea state the drafts exist to keep.
-    if (gk) gk.addEventListener("change", function () { state.draftKind = gk.value; });
+    if (gk) gk.addEventListener("change", function () { state.draftKind = gk.value; refreshWordingChecks(root); });
     var gs = root.querySelector("[data-guid-surface]");
     // Same reasoning as the kind select: no re-render, or the unsaved draft dies.
-    if (gs) gs.addEventListener("change", function () { state.draftSurface = gs.value; });
+    if (gs) gs.addEventListener("change", function () { state.draftSurface = gs.value; refreshWordingChecks(root); });
     var ga = root.querySelector("[data-guid-add]");
     if (ga) ga.addEventListener("click", function () {
       var rule = (state.draftRule || "").trim();
@@ -2595,6 +2683,7 @@
       c.className = "sit-guid-count" + (n > GUIDANCE_RULE_MAX - 150 ? " warn" : "");
       c.textContent = n.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
         + (n >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "");
+      scheduleWordingCheck(root);
     });
     var en = root.querySelector(".sit-guid-edit-note");
     if (en) en.addEventListener("input", function () { state.editNote = en.value; saveEditDraft(); });
@@ -2855,6 +2944,8 @@
     _FB_VIEWS: FB_VIEWS,
     _guidanceRow: guidanceRow,
     _guidanceEditor: guidanceEditor,
+    _wordingCheckInner: wordingCheckInner,
+    _refreshWordingChecks: refreshWordingChecks,
     _addGuidance: addGuidance,
     _toggleGuidance: toggleGuidance,
     _saveGuidance: saveGuidance,

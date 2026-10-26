@@ -185,6 +185,12 @@ jobs and never on `test` (a skipped required check never reports).
 list and nowhere else. Rationale and the timing table:
 [`methodology-a-memory-bound-suite-scales-across-machines-not-workers`](../kb-notes/methodology-a-memory-bound-suite-scales-across-machines-not-workers.md).
 
+**A receipt commit starts no `test` (S491, 2026-10-26).** `supabase-migrate.yml` commits its receipt
+to the PR branch as `github-actions[bot]` with the workflow's own token, and GitHub starts no workflow
+for that push, so a PR whose head is a `Receipt: supabase migrate` commit shows no checks at all
+(#2474: head b205c968, zero check runs). Pull the receipt and push the next real change before the
+merge; never an empty commit.
+
 ## Auto-merge procedure (relocated from `CLAUDE.md`, 2026-09-09)
 
 *The GATE is PUSH and stays in `CLAUDE.md`: `test` must have succeeded on the

@@ -1,0 +1,388 @@
+<title>Sierra Suggest Wording</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* First Light (prototype/first_light_theme_v1.html v1.6), with COBI's dark palette.
+   Layout: one reading column; the editor first, then the rewrite, then what the
+   check finds in the live set, then the space Sierra has. */
+:root {
+  --paper: #F4F2ED;
+  --text-strong: #1C1C1A;
+  --text-body: #3A3A36;
+  --text-muted: #5C5C55;
+  --surface-opaque: #FFFFFF;
+  --surface-subtle: #F7F5F1;
+  --surface-muted: #ECE9E2;
+  --border: rgba(28,28,26,.14);
+  --border-strong: rgba(28,28,26,.30);
+  --cobalt: #0047AB;
+  --crimson: #920000;
+  --hunter: #2C601A;
+  --mustard-text: #8B6800;
+  --seg: #C9C5BB;
+  --seg-edge: #F4F2ED;
+  --ins-bg: rgba(44,96,26,.13);
+  --del-bg: rgba(146,0,0,.09);
+  --fix-bg: rgba(146,0,0,.06);
+  --look-bg: rgba(139,104,0,.08);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  --font-data: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #151514; --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+    --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+    --border: rgba(255,255,255,.16); --border-strong: rgba(255,255,255,.34);
+    --cobalt: #7DA1D4; --crimson: #CF8F8F; --hunter: #89A67F; --mustard-text: #E3B341;
+    --seg: #4A4A46; --seg-edge: #1E1E1C;
+    --ins-bg: rgba(137,166,127,.22); --del-bg: rgba(207,143,143,.18);
+    --fix-bg: rgba(207,143,143,.10); --look-bg: rgba(227,179,65,.10);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #151514; --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+  --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+  --border: rgba(255,255,255,.16); --border-strong: rgba(255,255,255,.34);
+  --cobalt: #7DA1D4; --crimson: #CF8F8F; --hunter: #89A67F; --mustard-text: #E3B341;
+  --seg: #4A4A46; --seg-edge: #1E1E1C;
+  --ins-bg: rgba(137,166,127,.22); --del-bg: rgba(207,143,143,.18);
+  --fix-bg: rgba(207,143,143,.10); --look-bg: rgba(227,179,65,.10);
+  color-scheme: dark;
+}
+body { background: var(--paper); color: var(--text-body); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.55; }
+.wrap { max-width: 920px; margin: 0 auto; padding-block: clamp(24px, 5vw, 56px) 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+a { color: var(--cobalt); }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--surface-opaque); padding: 6px 10px; z-index: 5; }
+.eyebrow { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin: 0; }
+h1, h2 { font-family: var(--font-display); color: var(--text-strong); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; line-height: 1.1; margin-top: 6px; }
+h2 { font-size: clamp(1.35rem, 3vw, 1.65rem); font-weight: 700; line-height: 1.2; }
+.lede { font-size: 1.15rem; color: var(--text-body); margin: 14px 0 0; }
+.note { font-size: .95rem; color: var(--text-muted); margin: 10px 0 0; }
+section { margin-top: 44px; display: grid; gap: 14px; }
+section > p { margin: 0; }
+.panel { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(14px, 3vw, 22px); display: grid; gap: 12px; min-width: 0; }
+.lbl { font-size: .9rem; font-weight: 600; color: var(--text-strong); }
+textarea { width: 100%; box-sizing: border-box; min-height: 9.5em; resize: vertical; padding: 10px 12px; font: inherit; font-size: 1rem;
+  color: var(--text-body); background: var(--surface-subtle); border: 1px solid var(--border-strong); border-radius: 10px; }
+.count { font-size: .88rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.controls { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; }
+/* Controls are underlined words (Sam, 2026-10-09): no border, no fill, 24px tall. */
+.word { appearance: none; background: none; border: 0; padding: 0; min-height: 24px; font: inherit; font-size: 1rem; font-weight: 600;
+  color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.word.quiet { font-weight: 400; color: var(--text-muted); }
+.word:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; border-radius: 3px; }
+.findings { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.findings li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 4px 12px; padding: 8px 10px; border-radius: 8px; background: var(--surface-subtle); }
+.findings li.fix { background: var(--fix-bg); }
+.findings li.look { background: var(--look-bg); }
+.findings .k { font-size: .85rem; font-weight: 700; letter-spacing: .02em; }
+.findings li.fix .k { color: var(--crimson); }
+.findings li.look .k { color: var(--mustard-text); }
+.findings li.ok .k { color: var(--hunter); }
+.findings .t { min-width: 0; }
+.findings-head { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.pair > div { min-width: 0; }
+.pair .txt { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; font-size: 1rem; line-height: 1.6; }
+del { text-decoration: line-through; text-decoration-color: var(--crimson); background: var(--del-bg); color: var(--text-body); border-radius: 2px; }
+ins { text-decoration: underline; text-decoration-color: var(--hunter); text-underline-offset: 3px; background: var(--ins-bg); color: var(--text-strong); border-radius: 2px; }
+.changes { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface-opaque); }
+table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .97rem; }
+col.c1 { width: 36%; } col.c2 { width: 64%; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+th { font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; background: var(--surface-subtle); }
+tr:last-child td { border-bottom: 0; }
+td .who { display: block; font-size: .85rem; color: var(--text-muted); }
+td .f { display: block; margin-bottom: 6px; }
+td .f b { font-weight: 700; }
+td .f.fix b { color: var(--crimson); }
+td .f.look b { color: var(--mustard-text); }
+.space { display: grid; gap: 18px; }
+.place { display: grid; gap: 6px; }
+.place-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; font-variant-numeric: tabular-nums; }
+.place-head b { color: var(--text-strong); }
+.bar { display: flex; height: 26px; border-radius: 6px; overflow: hidden; background: var(--surface-muted); border: 1px solid var(--border); }
+.seg { height: 100%; background: var(--seg); border-right: 1px solid var(--seg-edge); box-sizing: border-box; min-width: 2px; }
+.seg.draft { background: var(--cobalt); opacity: .55; }
+.seg.naming { background: var(--hunter); }
+.seg.gone { background: repeating-linear-gradient(135deg, var(--crimson) 0 4px, transparent 4px 8px); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .9rem; color: var(--text-muted); }
+.legend span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; background: var(--seg); }
+.legend .l-draft::before { background: var(--cobalt); opacity: .55; }
+.legend .l-naming::before { background: var(--hunter); }
+.legend .l-gone::before { background: repeating-linear-gradient(135deg, var(--crimson) 0 3px, transparent 3px 6px); border: 1px solid var(--crimson); box-sizing: border-box; }
+.warn { color: var(--crimson); font-weight: 600; }
+.needs { display: grid; gap: 10px; }
+.needs p { margin: 0; }
+@media (max-width: 560px) {
+  .pair { grid-template-columns: 1fr; }
+  .findings li { grid-template-columns: 1fr; }
+  col.c1 { width: 42%; } col.c2 { width: 58%; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .flash { animation: flash 1.2s ease-out; }
+  @keyframes flash { from { box-shadow: 0 0 0 3px var(--cobalt); } to { box-shadow: 0 0 0 0 transparent; } }
+}
+</style>
+
+<a class="skip" href="#editor">Skip to the editor</a>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Sierra Training · a mock for Sam · Session 491 · October 26, 2026</p>
+    <h1>Suggest wording</h1>
+    <p class="lede">When you write or edit an instruction for Sierra, the tab reads your draft against the rules an instruction
+      must meet and lists what it finds under the box as you type. <b>Suggest wording</b>, beside Save, sends the draft to Claude
+      with those rules and Sierra's switched-on instructions and shows a rewrite beside your words, with a line on each change.
+      Your Save is the only thing that saves.</p>
+    <p class="note">This page is a mock. The check is real: it runs in this page on Sierra's 18 switched-on instructions as
+      they read at 17:20Z today. The rewrite is an example this session wrote from the same rules; the built version asks
+      Claude each time you press Suggest wording.</p>
+  </header>
+
+  <section id="editor" aria-labelledby="h-editor">
+    <h2 id="h-editor">The editor, with the check under it</h2>
+    <div class="panel" id="editor-panel">
+      <label class="lbl" for="draft" id="draft-lbl">Editing this instruction (added by the team, October 18)</label>
+      <textarea id="draft" maxlength="1500" rows="7"></textarea>
+      <div class="count" id="count" aria-live="polite"></div>
+      <div class="controls">
+        <button type="button" class="word" id="btn-save">Save</button>
+        <button type="button" class="word" id="btn-ask">Save and ask Sierra</button>
+        <button type="button" class="word" id="btn-suggest">Suggest wording</button>
+        <button type="button" class="word quiet" id="btn-reset">Put back the saved wording</button>
+      </div>
+      <p class="note" id="save-note" aria-live="polite" hidden></p>
+      <div class="findings-head"><span class="lbl" id="find-lbl">Before you save</span><span class="count" id="find-count"></span></div>
+      <ul class="findings" id="findings" aria-labelledby="find-lbl"></ul>
+    </div>
+  </section>
+
+  <section id="suggest" aria-labelledby="h-suggest">
+    <h2 id="h-suggest">What Suggest wording shows</h2>
+    <div class="panel" id="suggest-panel">
+      <div class="pair">
+        <div><div class="lbl" id="yours-lbl">Your words</div><div class="txt" id="yours" aria-labelledby="yours-lbl"></div></div>
+        <div><div class="lbl" id="theirs-lbl">Suggested</div><div class="txt" id="theirs" aria-labelledby="theirs-lbl"></div></div>
+      </div>
+      <div class="lbl">What changed, and why</div>
+      <ol class="changes">
+        <li>It opens with the kind of question, then gives your example, so Sierra applies it to any program and any
+          credential a learner holds. Before, it read as an instruction about Cabrillo's kitchen program.</li>
+        <li>The link reads creditforbeingyou.org. The saved spelling, crediforbeingyou.org, leads nowhere, and Sierra repeats a
+          link as written.</li>
+        <li>The example closes with the curly mark it opens with.</li>
+        <li>ServSafe is written as the certificate's name.</li>
+        <li>It asks for the college's CPL coordinator in place of Sara by name. Sierra holds each college's coordinator, so the
+          instruction stays right when the contact changes and works at every college.</li>
+        <li>It leaves out the closing sentence about leading with the simplest answer in table form. Two other switched-on
+          instructions say it already, and Sierra receives all three.</li>
+      </ol>
+      <div class="controls">
+        <button type="button" class="word" id="btn-use">Use the suggestion</button>
+        <button type="button" class="word quiet" id="btn-keep">Keep mine</button>
+      </div>
+      <p class="note">Use the suggestion puts it in the box above, where you can change it; Save still saves it. Keep mine
+        closes the suggestion and changes nothing.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-today">
+    <h2 id="h-today">What the check finds in today's instructions</h2>
+    <p>Eight of the 18 switched-on instructions show something. Four of them change what Sierra says now; the other ten
+      pass. Open one in the box above to see its check and try a fix.</p>
+    <div class="tablewrap" role="region" aria-labelledby="h-today" tabindex="0">
+      <table>
+        <colgroup><col class="c1"><col class="c2"></colgroup>
+        <thead><tr><th scope="col">Instruction</th><th scope="col">What the check finds</th></tr></thead>
+        <tbody id="today"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-space">
+    <h2 id="h-space">The space Sierra has</h2>
+    <p>Sierra receives the newest instructions first and stops at 9,000 characters, so when the space runs out the oldest
+      stop reaching her, with no message anywhere. The oldest switched-on instruction is the naming rule (CPL Initiative,
+      never MAP Initiative; added July 3). The bars below follow the box above as you type.</p>
+    <div class="panel space" id="space"></div>
+    <div class="legend" aria-hidden="true"><span>Another instruction</span><span class="l-draft">The one in the box</span>
+      <span class="l-naming">The naming rule</span><span class="l-gone">Would not reach Sierra</span></div>
+    <p id="space-say" aria-live="polite"></p>
+  </section>
+
+  <section aria-labelledby="h-needs">
+    <h2 id="h-needs">What each part needs</h2>
+    <div class="needs">
+      <p><b>The check</b> runs in the Sierra Training tab and needs nothing else: no model, no cost, no deploy.</p>
+      <p><b>Suggest wording</b> runs through Sierra's own function as a drafting caller, the way the Memory tab's
+        Autogenerate and SkyView's Ask already do. It uses her key and her model, and it sees her built-in rules and every
+        switched-on instruction, which is how it finds a clash or a sentence another instruction already says. One press
+        costs about what one Sierra answer costs. It needs one deploy of her function, which waits on your go.</p>
+      <p><b>The naming rule</b> leaves the 9,000-character count for good if it moves into Sierra's built-in instructions.
+        That is the same deploy.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+/*CHECK_JS*/
+</script>
+<script>
+(function () {
+  var ROWS = /*ROWS_JSON*/;
+  var EXAMPLE_ID = "858c6c87";
+  var SUGGESTED = /*SUGGESTED_JSON*/;
+  var C = window.SierraWordingCheck;
+  var state = { id: EXAMPLE_ID };
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function row(id) { return ROWS.filter(function (r) { return r.id === id; })[0]; }
+  function who(r) {
+    var by = /@bot$|^session|^sierra/.test(r.by) ? "added by a session" : r.by === "slee@cccco.edu" ? "added by Sam" : "added by the team";
+    var d = new Date(r.d + "T12:00:00Z").toLocaleDateString("en-US", { month: "long", day: "numeric" });
+    return by + ", " + d + (r.surface === "my-college" ? ", My College only" : "");
+  }
+  function fmt(n) { return Number(n).toLocaleString("en-US"); }
+  var LEVEL = { fix: "Fix", look: "Look", ok: "Fine" };
+
+  function renderFindings() {
+    var r = row(state.id), text = $("draft").value;
+    $("count").textContent = fmt(text.length) + " / 1,500 characters";
+    var res = C.check(text, { active: ROWS, editingId: state.id, surface: r ? r.surface : null });
+    var fixes = res.findings.filter(function (f) { return f.level === "fix"; }).length;
+    var looks = res.findings.filter(function (f) { return f.level === "look"; }).length;
+    $("find-count").textContent = fixes || looks
+      ? (fixes ? fixes + " to fix" : "") + (fixes && looks ? " · " : "") + (looks ? looks + " to look at" : "")
+      : "nothing to fix";
+    $("findings").innerHTML = res.findings.map(function (f) {
+      return '<li class="' + f.level + '"><span class="k">' + esc(f.kind) + " · " + LEVEL[f.level] + '</span><span class="t">' + esc(f.text) + "</span></li>";
+    }).join("");
+    renderSpace(res.space, r);
+  }
+
+  function renderSpace(space, r) {
+    var text = $("draft").value;
+    var rows = ROWS.slice();
+    var mine = { id: state.id, rule: text, surface: r ? r.surface : null, mine: true };
+    rows = rows.map(function (x) { return x.id === state.id ? mine : x; });
+    var places = [["", "Everywhere else Sierra appears"], ["my-college", "My College"]];
+    var say = [];
+    $("space").innerHTML = places.map(function (p) {
+      var list = rows.filter(function (x) { return !x.surface || x.surface === p[0]; });
+      var used = 0, stopped = false;
+      var segs = list.map(function (x) {
+        var len = Math.min(String(x.rule).trim().length, 1500);
+        var gone = stopped || used + len > 9000;
+        if (gone) stopped = true; else used += len + 3;
+        var cls = "seg" + (x.mine ? " draft" : "") + (x.id === "cb226a48" ? " naming" : "") + (gone ? " gone" : "");
+        return { cls: cls, w: len + 3, gone: gone, id: x.id };
+      });
+      var total = Math.max(9000, segs.reduce(function (a, s) { return a + s.w; }, 0));
+      var namingGone = segs.some(function (s) { return s.id === "cb226a48" && s.gone; });
+      if (p[0] === "my-college" || namingGone) {
+        say.push(namingGone
+          ? '<span class="warn">Saved this way, the naming rule would stop reaching Sierra on ' + esc(p[1]) + ".</span>"
+          : fmt(9000 - used) + " characters are left on " + esc(p[1]) + ". A new instruction longer than that stops the naming rule from reaching her there.");
+      }
+      return '<div class="place"><div class="place-head"><span><b>' + esc(p[1]) + "</b></span><span>" + fmt(used) + " of 9,000 characters</span></div>"
+        + '<div class="bar" role="img" aria-label="' + esc(p[1]) + ": " + fmt(used) + " of 9,000 characters used" + (namingGone ? "; the naming rule would not reach Sierra" : "") + '">'
+        + segs.map(function (s) { return '<div class="' + s.cls + '" style="width:' + (100 * s.w / total).toFixed(3) + '%"></div>'; }).join("")
+        + "</div></div>";
+    }).join("");
+    $("space-say").innerHTML = say.join(" ");
+  }
+
+  // word-level diff (LCS) for the two columns
+  function tokens(s) { return String(s).match(/\s+|[A-Za-z0-9’'.\-]+|[^\sA-Za-z0-9]/g) || []; }
+  function diff(a, b) {
+    var A = tokens(a), B = tokens(b), m = A.length, n = B.length, L = [], i, j;
+    for (i = 0; i <= m; i++) { L[i] = []; for (j = 0; j <= n; j++) L[i][j] = 0; }
+    for (i = m - 1; i >= 0; i--) for (j = n - 1; j >= 0; j--) L[i][j] = A[i] === B[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+    var left = "", right = "";
+    i = 0; j = 0;
+    while (i < m && j < n) {
+      if (A[i] === B[j]) { left += esc(A[i]); right += esc(B[j]); i++; j++; }
+      else if (L[i + 1][j] >= L[i][j + 1]) { left += "<del>" + esc(A[i]) + "</del>"; i++; }
+      else { right += "<ins>" + esc(B[j]) + "</ins>"; j++; }
+    }
+    while (i < m) left += "<del>" + esc(A[i++]) + "</del>";
+    while (j < n) right += "<ins>" + esc(B[j++]) + "</ins>";
+    return [left.replace(/<\/del>(\s*)<del>/g, "$1"), right.replace(/<\/ins>(\s*)<ins>/g, "$1")];
+  }
+  function renderSuggestion() {
+    var d = diff(row(EXAMPLE_ID).rule, SUGGESTED);
+    $("yours").innerHTML = d[0];
+    $("theirs").innerHTML = d[1];
+  }
+
+  function load(id) {
+    var r = row(id);
+    state.id = id;
+    $("draft").value = r.rule;
+    $("draft-lbl").textContent = "Editing this instruction (" + who(r) + ")";
+    $("save-note").hidden = true;
+    renderFindings();
+  }
+
+  function renderToday() {
+    var html = "";
+    ROWS.forEach(function (r) {
+      var f = C.check(r.rule, { active: ROWS, editingId: r.id, surface: r.surface }).findings
+        .filter(function (x) { return x.level !== "ok" && x.kind !== "Space"; });
+      if (!f.length) return;
+      html += '<tr><td><span>“' + esc(r.rule.replace(/\s+/g, " ").slice(0, 70).replace(/\s+\S*$/, "")) + '…”</span>'
+        + '<span class="who">' + esc(who(r)) + "</span>"
+        + '<button type="button" class="word" data-open="' + esc(r.id) + '">Open in the box</button></td><td>'
+        + f.map(function (x) { return '<span class="f ' + x.level + '"><b>' + esc(x.kind) + " · " + LEVEL[x.level] + ".</b> " + esc(x.text) + "</span>"; }).join("")
+        + "</td></tr>";
+    });
+    $("today").innerHTML = html;
+  }
+
+  $("draft").addEventListener("input", renderFindings);
+  $("btn-reset").addEventListener("click", function () { load(state.id); $("draft").focus(); });
+  $("btn-suggest").addEventListener("click", function () {
+    var p = $("suggest-panel");
+    if (state.id !== EXAMPLE_ID) load(EXAMPLE_ID);
+    p.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    p.classList.remove("flash"); void p.offsetWidth; p.classList.add("flash");
+    $("btn-use").focus({ preventScroll: true });
+  });
+  $("btn-use").addEventListener("click", function () {
+    if (state.id !== EXAMPLE_ID) load(EXAMPLE_ID);
+    $("draft").value = SUGGESTED;
+    renderFindings();
+    $("editor").scrollIntoView({ block: "start" });
+    $("draft").focus();
+  });
+  $("btn-keep").addEventListener("click", function () { $("draft").focus(); });
+  function mockSave() {
+    var n = $("save-note");
+    n.hidden = false;
+    n.textContent = "In the tab, this saves the wording and Sierra uses it on her next answer. The mock saves nothing.";
+  }
+  $("btn-save").addEventListener("click", mockSave);
+  $("btn-ask").addEventListener("click", mockSave);
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("[data-open]");
+    if (!b) return;
+    load(b.getAttribute("data-open"));
+    $("editor").scrollIntoView({ block: "start" });
+    $("draft").focus({ preventScroll: true });
+  });
+
+  renderSuggestion();
+  renderToday();
+  load(EXAMPLE_ID);
+})();
+</script>
