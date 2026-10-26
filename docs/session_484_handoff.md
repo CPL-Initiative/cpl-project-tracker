@@ -9,11 +9,10 @@ status: current
 # You are Session 484
 
 Your moniker is **SkyToyon**. Session 483 (**SkyCoyoteMint**) was opened by hand by Sam at 03:10Z on 2026-10-26 and
-checkpointed at about 03:35Z. Its checkpoint was **full** (two Rule 10 receipts applied). It skipped `kb/README.md`,
-`README.md` and the Pipeline tab: nothing they describe moved. Read, in order: this file, then
-[Open Asks Sheet 129](https://claude.ai/artifact/PkU8ut6YUpy6CixkUU84j8)'s `replies`, then
-[Sheet 128](https://claude.ai/artifact/Autcr5Dvvdb4u9Ef1JeWbq)'s (a reply there still counts for 129's cards 1 and 2),
-then the item you act on.
+checkpointed at about 03:35Z, then carried out Sam's Sheet 129 answers (03:53Z) and refreshed this file at about 03:58Z.
+Its checkpoint was **full** (three Rule 10 receipts applied). It skipped `kb/README.md`, `README.md` and the Pipeline tab:
+nothing they describe moved. Read, in order: this file, then the item you act on.
+[Open Asks Sheet 129](https://claude.ai/artifact/PkU8ut6YUpy6CixkUU84j8) is answered and no card is open.
 
 ## Who else is working
 
@@ -28,29 +27,26 @@ S483 signs off before it, so that firing is the next writer.
   medication administration course at 12 colleges), each ending in up to six rows of Training · College · Course ·
   Basis, every line opening on what a DSP *could count toward*. MAP holds no DSPT exhibit (0 of 2,952), so every basis
   is a matching course, with the common course's reach where the CCR names one. Draft:
-  https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa (CPLBrain#487). The Library record carries it as *Draft for review*
-  (receipt `kb/receipts/cpl_library_dsp_v2_2026-10-26_s483.sql`, run 40263656296, read back). **Version 1 stays the
-  public copy** (Sheet 129 card 3).
+  https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa (CPLBrain#487).
+- **ELL IET and DSP Version 2 are the public copies** (Sam, Sheet 129 cards 2 and 3, *replace*): both
+  `library/<slug>/` pages rewritten by `scripts/library_page.py` from the v2 pages, both records at version 2 (receipt
+  `kb/receipts/cpl_library_v2_public_2026-10-26_s483.sql`).
 - **Open Asks Sheet 129**, three cards: 128's two at the same positions, then the DSP public copy. Published with an
-  empty store and read back. The Library's series record `open-asks-sheets` moved from 123 to 129 (sheets 124 to 128 had
+  empty store, answered in full at 03:53Z, carried out; the builder holds no card. The Library's series record `open-asks-sheets` moved from 123 to 129 (sheets 124 to 128 had
   skipped it; receipt `kb/receipts/cpl_library_open_asks_sheet129_2026-10-26_s483.sql`, run 40264078101, read back).
 - **The library lane under its 20,000-byte budget:** the finished GitHub Pages and Changes to make sections moved
   verbatim to `docs/library_lessons.md`. `agency-visual/build.py` no longer leaves `__pycache__` in the vault.
 
 ## Decisions Sam made this run
 
-None: Sam opened the session with the greeting and nothing since. His S482 rulings stand
-(`sam-s482-frame-what-is-possible-2026-10-26`, `sam-s482-film-asks-2026-10-26`).
+- `sam-sheet-129-rulings-2026-10-26` (verified): Sheet 129, 03:53Z, each his own call: 1 *proposed* (he pastes the
+  memo's opening on the funding tab), 2 *replace* (ELL IET Version 2 public), 3 *replace* (DSP Version 2 public).
 
 ## Open work, in order
 
-0. **Read Sheet 129's `replies` first, then 128's.** Card 1 (the memo's opening) is Sam's edit on the tab, never SQL;
-   a reply of *proposed* means he pastes it, so check `cpl_funding_config` (`updated_at` 01:23:35Z on 2026-10-26 when
-   S483 looked) before saying it is done. Cards 2 and 3 *replace*: run `python3 scripts/library_page.py
-   <slug> <the v2 HTML>` (`ell-iet-cpl-starting-points` with `ell-iet/20261023_ELL_IET_CPL_Starting_Points_2.html`;
-   `dsp-credit-starting-points` with `dsp-training/20261020_DSP_Credit_Starting_Points_2.html`), move the record's
-   `version` and the versions' statuses through one guarded update, commit. Answering a card drops its lane's NEEDS SAM
-   in the same PR.
+0. **The memo's opening waits on Sam's paste** (Sheet 129 card 1, *proposed*). Check `cpl_funding_config`
+   (`updated_at` read 01:23:35Z at 03:55Z) before saying it is done; the text to paste is `MEMO_LEAD_PROPOSED_128` in
+   the vault's sheet builder. Nothing else waits on him from this run.
 1. **The UI pass: Privacy** (`privacy.html`), for the first scheduled session of 2026-10-27 UTC.
 2. **The Coordinator Guide** waits on Sam's comments under Changes to make (handoff 482 item 2 stands).
 3. **The harvest's catalog sweep** when items 0 to 2 wait (114 of 118 colleges complete; 20,282 active, 13,173
@@ -74,6 +70,5 @@ None: Sam opened the session with the greeting and nothing since. His S482 rulin
 
 ## Let go
 
-S483 drops its PR subscriptions at sign-off (cpl-project-tracker#2458 and CPLBrain#487 once merged) and set no
-check-in. The two artifacts it published (DSP v2, Sheet 129) carry wake subscriptions from their publish; the next
-session reads Sheet 129's store itself.
+S483 drops its PR subscriptions at sign-off (#2458 and CPLBrain#487 merged; the follow-up PR once merged) and set no
+check-in. The two artifacts it published (DSP v2, Sheet 129) carry wake subscriptions from their publish.

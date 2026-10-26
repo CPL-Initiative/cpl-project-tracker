@@ -188,7 +188,7 @@ college*). Draft: https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw; source `ell
 `briefs/20261023_ELL_IET_CPL_Starting_Points_2.json` (CPLBrain#485); `agency-visual/build.py` now takes a table on a
 card, and the v1 brief rebuilds byte-identical. The record carries Version 2 as *Draft for review* and an empty box
 (receipt `kb/receipts/cpl_library_ell_iet_v2_2026-10-26_s482.sql`, supabase-migrate run 40256725268, read back).
-**NEEDS SAM (Open Asks Sheet 129 card 2, carried from Sheet 128 card 2; a reply on 128 still counts): Version 1 stays the public copy until Sam says to replace it.**
+**Version 2 is the public copy** (Sam, Sheet 129 card 2, *replace*, 03:53Z 2026-10-26): `library/ell-iet-cpl-starting-points/` rewritten from it, the record at version 2 (receipt `kb/receipts/cpl_library_v2_public_2026-10-26_s483.sql`).
 
 ## DSP Credit Starting Points, Version 2 (Sam's S482 ask; built S483)
 
@@ -200,7 +200,7 @@ no DSPT exhibit (0 of 2,952, 2026-10-26), so every basis is a matching course, w
 CCR names one. Topics: the tables of contents of DDS's DSPT Year 1 and Year 2 student guides (web search; dds.ca.gov does
 not resolve). Draft: https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa (CPLBrain#487); the record carries it as *Draft for
 review* (receipt `kb/receipts/cpl_library_dsp_v2_2026-10-26_s483.sql`, run 40263656296, read back).
-**NEEDS SAM (Open Asks Sheet 129 card 3): Version 1 stays the public copy until Sam says to replace it.**
+**Version 2 is the public copy** (Sam, Sheet 129 card 3, *replace*, 03:53Z 2026-10-26): `library/dsp-credit-starting-points/` rewritten from it, the record at version 2 (same receipt).
 
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 
@@ -219,11 +219,6 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
-- **DSP Version 2 replaces the public copy on Sam's word:** `python3 scripts/library_page.py dsp-credit-starting-points
-  <CPLBrain/.../dsp-training/20261020_DSP_Credit_Starting_Points_2.html>`, the record's `version` and versions statuses
-  through a guarded update, then a commit.
-- **ELL IET Version 2 replaces the public copy on Sam's word:** `python3 scripts/library_page.py ell-iet-cpl-starting-points
-  <the v2 HTML>`, the record's `version` and versions statuses through a guarded update, then a commit.
 - **Sam connects the Microsoft 365 connector;** the next session after that reads the CPLLibrary folder, confirms the 16
   copies he made on 2026-10-08, and moves the three Drive-linked records and the six repo pieces to their SharePoint links
   (a guarded update per record). The Summit film's v3 cuts (S482) go into the SharePoint Drafts folder, Sam's by hand.

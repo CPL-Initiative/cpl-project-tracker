@@ -461,12 +461,11 @@ Two data traps: the CCR names one college with a trailing space (`Cypress Colleg
 ids date from July, so ids come from `unified_courses_members.js` and the COCI list fills in only a course the CCR lacks
 (PSYT P020F). And one process trap: the open-asks series record had sat at Sheet 123 for five sheets.
 
-**State.** Version 2 (https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa) is a draft beside Version 1; the public copy is
-Sam's call on Sheet 129 card 3. `dsp-training/make_brief.py` imports the ELL brief's helpers rather than copying them,
+**State.** Version 2 (https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa) is the public copy: Sam answered Sheet 129 at
+03:53Z (card 3 *replace*, and card 2 *replace* for ELL IET), and `library/<slug>/` for both now carries Version 2. `dsp-training/make_brief.py` imports the ELL brief's helpers rather than copying them,
 and both v2 pages rebuild byte-identical.
 
-**Next.** On *replace*: `scripts/library_page.py dsp-credit-starting-points` on the v2 HTML and one guarded update.
-Reading the DSPT guides' objectives against Taft's and Porterville's course outlines is the step that would turn the
+**Next.** Reading the DSPT guides' objectives against Taft's and Porterville's course outlines is the step that would turn the
 title matches into a crosswalk.
 
 ## Moved from the lane (S483 SkyCoyoteMint, 2026-10-26)

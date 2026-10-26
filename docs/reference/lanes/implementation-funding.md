@@ -35,17 +35,15 @@ related:
 
 ✅ **2026-10-19:** the memo and report lead with SB 135 (`MEMO_BLOCKS`); the opening follows `x_lede` until saved.
 
-⏳ **NEEDS SAM (Open Asks Sheet 129 card 1, carried from Sheet 128 card 1; a reply on 128 still counts): the memo's opening (S482, 2026-10-26).** Sam revised the memo draft by
-editing the explainer's Overview (`x_lede`, saved 01:23Z by his account), which the memo's opening follows until
-`memo_lead` is saved. Rendered through the Word export (LibreOffice), the memo now prints the seed-grant paragraph twice
-(his, then `memo_history`) and the confirmation and spend-by sentence twice (his, then *Funding Overview*); a hard line
-break splits *such as the / California Mapping Articulated Pathways Initiative*; three paragraphs join on single line
-breaks; and $25,240,308, $150,000 and $400,000 are typed where `{to institutions}`, `{base award}` and `{cap}` would
-follow the model. The public funding page's Overview now reads *This memorandum sets out …*. His text says 115 credit
-colleges and three noncredit campuses; the memo's Funding Overview and allocation table say 116 colleges and 2
-noncredit-only institutions. The proposed opening (his words, the two repeats dropped, a numbered list, braces for the
-figures) renders clean; it is on the card, and the curator pastes it under *Edit the memo's text* (text is a curator
-edit, never SQL), then puts *This page* back in the Overview. A Priority 3 strategy ends in a typo, *studentsr*.
+⏳ **The memo's opening waits on Sam's paste (Sheet 129 card 1, *proposed*, 03:53Z 2026-10-26; `cpl_memory`
+`sam-sheet-129-rulings-2026-10-26`).** Sam revised the memo by editing the explainer's Overview (`x_lede`, saved 01:23Z),
+which the memo's opening follows until `memo_lead` is saved, so the Word export printed the seed-grant paragraph and the
+confirmation sentence twice. He chose the proposed opening (his words, the two repeats dropped, a numbered list, braces
+for the figures; the text is `MEMO_LEAD_PROPOSED_128` in `CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py`).
+He pastes it under *Edit the memo's text* (curator text, never SQL) and puts *This page* back in the Overview. At 03:55Z
+`cpl_funding_config` still read 01:23:35Z, so check it before calling the opening done. Still open beside it: his text
+says 115 credit colleges and three noncredit campuses where the memo's Funding Overview says 116 and 2, and a Priority 3
+strategy ends in *studentsr*.
 
 ✅ **The My College view (Sam, 2026-10-15; `cpl_memory` `sam-my-college-funding-view-asks-2026-10-15`).** The Step 1 box (`stepOneHtml`) sits above the explainer's Contents (`#cplFundStep1Mount`); **PDF asks for an institution first** (`pdfGate`), landscape. Public renderings fold the introduction, open the strategies and **name designated projects only (the register and dashboard are internal)**. ⚠️ Sam moves the tab's College Dashboard himself (`secOrder`). The panel's sentences are passages (`mc_*`, figures in braces). Guards `cpl_funding_my_college_view`, `cpl_funding_my_college_text`.
 
