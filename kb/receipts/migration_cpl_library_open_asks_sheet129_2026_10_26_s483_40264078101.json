@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_open_asks_sheet129_2026-10-26_s483.sql",
+ "name": "cpl_library_open_asks_sheet129_2026_10_26_s483",
+ "version": "20261026032758",
+ "sha256": "91da850800003e7aec2dea5a8063211865c50aa635a4d595209d1049a08d1ab0",
+ "run": "40264078101",
+ "status": 201,
+ "response": "[{\"slug\":\"open-asks-sheets\",\"version\":\"129\",\"versions\":48}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
