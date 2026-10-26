@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/sierra_guidance_no_internal_names_2026-10-26_s490.sql",
+ "name": "sierra_guidance_no_internal_names_2026_10_26_s490",
+ "version": "20261026153218",
+ "sha256": "e3c2cb70b0fcd42965939ef5f311b576c251567aee91a4e5afa7b42836b0e714",
+ "run": "40349711114",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
