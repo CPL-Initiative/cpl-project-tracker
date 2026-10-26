@@ -182,13 +182,17 @@ check("the visual offers its shareable link", html.indexOf("https://example.org/
 check("every table header cell is scoped", (html.match(/<th /g) || []).length === (html.match(/<th scope="col">/g) || []).length);
 
 const pw = fs.readFileSync("cpl_pathways.js", "utf8");
-check("the CPL Pathways college picker links the college's visual", /"cpl-opportunity\/\?college=" \+ encodeURIComponent\(col\.value\)/.test(pw));
+check("the CPL Pathways college picker links the college's visual", /"library\/cpl-opportunity\/\?college=" \+ encodeURIComponent\(col\.value\)/.test(pw));
 check("…and offers the extract", /textContent = "Download CPL Extract"/.test(pw));
 check("…and hides both until a college is chosen", /opp\.hidden = !col\.value/.test(pw) && /\.cplpw-oppacts\[hidden\] \{ display:none; \}/.test(pw));
-const page = fs.readFileSync("cpl-opportunity/index.html", "utf8");
+const page = fs.readFileSync("library/cpl-opportunity/index.html", "utf8");
+const oldPage = fs.readFileSync("cpl-opportunity/index.html", "utf8");
+check("the old address forwards to the library's, keeping ?college= and #section (Sheet 131 card 2)",
+  /var to = "\.\.\/library\/cpl-opportunity\/" \+ \(location\.search \|\| ""\) \+ \(location\.hash \|\| ""\);/.test(oldPage) &&
+  /location\.replace\(to\)/.test(oldPage) && /<a href="\.\.\/library\/cpl-opportunity\/">/.test(oldPage));
 check("…and names itself in an h1 before a college is chosen (UI pass S446)",
   /<div id="cpo-root"><h1>CPL opportunity analysis<\/h1><\/div>/.test(page) && /root\.innerHTML = '<h1>CPL opportunity analysis<\/h1><p class="cpo-note">/.test(page));
-check("the shareable page reads its college from ?college=", /get\("college"\)/.test(page) && /\.\.\/college_cpl_workbook\.js/.test(page));
+check("the shareable page reads its college from ?college=", /get\("college"\)/.test(page) && /"\.\.\/\.\.\/college_cpl_workbook\.js"/.test(page) && /base: "\.\.\/\.\.\/"/.test(page));
 
 // the My College controls
 const src = fs.readFileSync("college_briefing.js", "utf8");
@@ -223,7 +227,7 @@ check("?draft=1 reads the draft file first and says it is a draft",
   nh.indexOf("Draft.") < 0);
 check("the notes' text is body-sized, like the page's prose", /\.cpo-notes p, \.cpo-notes ul \{[^}]*font-size: 1rem;/.test(page));
 // Every notes file a session commits is well formed and named for its college.
-const notesDir = "cpl-opportunity/notes";
+const notesDir = "library/cpl-opportunity/notes";
 const notesFiles = fs.existsSync(notesDir) ? fs.readdirSync(notesDir).filter(function (f) { return /\.json$/.test(f); }) : [];
 check("every notes file parses, names its college and date, and is named by its slug", notesFiles.every(function (f) {
   let j; try { j = JSON.parse(fs.readFileSync(notesDir + "/" + f, "utf8")); } catch (e) { return false; }

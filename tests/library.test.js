@@ -429,9 +429,9 @@ block("(11)", function () {
     const w = m.writes;
     check("(11) Make writes the pair: two POSTs to cpl_library", w.length === 2 && w.every(function (x) { return x.init.method === "POST" && /cpl_library$/.test(x.url); }), String(w.length));
     const v = w[0] ? w[0].body : {}, wb = w[1] ? w[1].body : {};
-    check("(11) the page record: kind visual, the college as MAP spells it, the live page's link",
+    check("(11) the page record: kind visual, the college as MAP spells it, the live page's link, under the library (Sheet 131 card 2)",
       v.kind === "visual" && v.for_kind === "college" && v.for_name === "Riverside City College" && v.home === "web" &&
-      v.url === "https://cpl-initiative.github.io/cpl-project-tracker/cpl-opportunity/?college=Riverside%20City%20College", JSON.stringify(v));
+      v.url === "https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-opportunity/?college=Riverside%20City%20College", JSON.stringify(v));
     check("(11) its slug follows the first twelve", v.slug === "cpl-opportunity-riverside-city-visual" && wb.slug === "cpl-opportunity-riverside-city-workbook", v.slug + " " + wb.slug);
     check("(11) the workbook record: a spreadsheet, not filed yet, made for the same college",
       wb.kind === "spreadsheet" && wb.home === "not_filed" && wb.url === null && wb.for_name === "Riverside City College" && /Download CPL Extract/.test(wb.rebuild_from), JSON.stringify(wb));

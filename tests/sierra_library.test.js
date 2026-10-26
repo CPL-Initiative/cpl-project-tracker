@@ -107,7 +107,7 @@ const slugs = (q, colleges) => L.matchLibrary(q, PIECES, colleges || []).map((p)
   check("(4) ⭐ the CPL Initiative's pages under the tracker's library/ are read",
     L.libraryHosted(PAGES + "library/ell-iet-cpl-starting-points/") && L.libraryHosted(PAGES + "library/dsp-credit-starting-points"));
   check("(4) nothing else is: a claude.ai page, an opportunity page, the library page itself, a look-alike host, a query",
-    !L.libraryHosted("https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe") && !L.libraryHosted(PAGES + "cpl-opportunity/?college=Norco") &&
+    !L.libraryHosted("https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe") && !L.libraryHosted(PAGES + "cpl-opportunity/?college=Norco") && !L.libraryHosted(PAGES + "library/cpl-opportunity/?college=Norco") &&
     !L.libraryHosted(PAGES + "library/") && !L.libraryHosted("https://cpl-initiative.github.io.evil.example/cpl-project-tracker/library/x/") &&
     !L.libraryHosted(PAGES + "library/x/?q=1") && !L.libraryHosted(PAGES + "library/../fact-sheet/"));
 }

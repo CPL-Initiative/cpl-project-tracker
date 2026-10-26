@@ -1,5 +1,6 @@
 /* The CPL opportunity analysis: one college's workbook ("Download CPL Extract")
- * and its shareable visual ("View CPL Visual", cpl-opportunity/?college=<name>).
+ * and its shareable visual ("View CPL Visual", library/cpl-opportunity/?college=<name>; the old
+ * cpl-opportunity/ address forwards there since 2026-10-26).
  *
  * WHY. Ashley (MAP team, 2026-10-20) asked for one college's CPL opportunity
  * analysis as an Excel workbook: its COCI programs and courses, its MAP
@@ -734,7 +735,7 @@
   // ── The MAP team's notes on one college's visual (Sam, 2026-10-26, S490) ──
   // The page is one template computed from published data, so a note about one college
   // had nowhere to go. A session writes what a note or a document asks for to
-  // cpl-opportunity/notes/<slug>.json (the Library tab's Regenerate on that college's
+  // library/cpl-opportunity/notes/<slug>.json (the Library tab's Regenerate on that college's
   // record), and the page shows it under At a glance while the figures keep refreshing.
   // A draft waiting on Replace the public copy is <slug>.draft.json, shown at ?draft=1.
   // {college, updated (YYYY-MM-DD), heading?, sections: [{heading, paragraphs[], items[]}],
@@ -966,7 +967,7 @@
       });
     });
   }
-  var SHARE_BASE = "https://cpl-initiative.github.io/cpl-project-tracker/cpl-opportunity/";
+  var SHARE_BASE = "https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-opportunity/";
   function shareUrl(college) { return SHARE_BASE + "?college=" + encodeURIComponent(college); }
   function colleges() {
     // The college list a picker offers: every name MAP's exhibit data uses.

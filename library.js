@@ -87,7 +87,7 @@
   // MAP's list of colleges (map_colleges, the college and district identity lane): the
   // For picker offers these names, so a piece's college matches the CPL Pathways pick.
   var NAMES_URL = SUPABASE_URL + "/rest/v1/map_colleges?select=college_name,entity_kind,district&entity_kind=in.(college,continuing_education)&order=college_name.asc";
-  var OPPORTUNITY_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/cpl-opportunity/?college=";
+  var OPPORTUNITY_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-opportunity/?college=";
   var DSP_TEMPLATE = "CPLBrain/04-projects/cpl-initiative/dsp-training/20261020_DSP_Credit_Starting_Points.html";
   var AGENCY_BUILDER = "CPLBrain/04-projects/cpl-initiative/agency-visual/build.py";
   var STATUS = { requested: "Requested", draft: "Draft", approved: "Approved", presented: "Presented" };
@@ -1187,7 +1187,7 @@
       occasion: occasion || null, made_on: when, version: "1", status: "draft", seen_by: "colleges",
       home: "web", url: OPPORTUNITY_PAGE + encodeURIComponent(name), file_type: "html", extent: "One page",
       summary: name + "'s COCI programs and courses, its MAP exhibits (AP and IB excluded), and the statewide credit recommendations it could adopt, each with a Could Adopt link to MAP.",
-      rebuild_from: "cpl-project-tracker/college_cpl_workbook.js and cpl-opportunity/index.html (built in the browser from published data); the MAP team's notes for this college in cpl-opportunity/notes/" + base + ".json",
+      rebuild_from: "cpl-project-tracker/college_cpl_workbook.js and library/cpl-opportunity/index.html (built in the browser from published data); the MAP team's notes for this college in library/cpl-opportunity/notes/" + base + ".json",
       note: "Live page: it rebuilds from the current data on each visit.",
       for_kind: "college", for_name: name, made_by: made, added_by: by
     }, {

@@ -3802,7 +3802,7 @@
   /* The CPL opportunity analysis (Ashley and Sam, 2026-10-20). "View CPL Visual"
    * opens the college's shareable page; "Download CPL Extract" builds the same
    * analysis here as an Excel workbook (college_cpl_workbook.js, loaded on first use). */
-  var OPP_PAGE = "cpl-opportunity/";
+  var OPP_PAGE = "library/cpl-opportunity/";
   function opportunityPageUrl(college) { return OPP_PAGE + "?college=" + encodeURIComponent(college); }
   /* The funding page's My Institution view for a college, named by the roster's spelling,
      the key the funding module joins on (MAP says "Laney College"; the roster, "Laney"). */

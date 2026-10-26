@@ -117,7 +117,7 @@ is his standing preference there too.
    - **An agency visual** (`rebuild_from` names `agency-visual/build.py`): change the
      piece's `make_brief.py`, rebuild, and publish the draft as a Claude page.
    - **A college's CPL Opportunity visual:** the page is one template, so write what the
-     note or document asks for to `cpl-opportunity/notes/<slug>.json` (the slug is the
+     note or document asks for to `library/cpl-opportunity/notes/<slug>.json` (the slug is the
      Library's `collegeSlug`; the format is in `college_cpl_workbook.js`, `notesHtml`). A
      change every college needs goes to the template instead, and says so.
    - **Anything else:** rebuild from `rebuild_from`, keeping its link.
@@ -127,9 +127,28 @@ is his standing preference there too.
    link: write `regen.ready_at` and `regen.draft_url`, and the card offers *Replace the
    public copy*. Once `regen.approved_at` is set, or `publish` is `replace`, rerun
    `scripts/library_page.py`. A college's draft is `notes/<slug>.draft.json`, read at
-   `cpl-opportunity/?college=<name>&draft=1` (its `draft_url`); on approval it becomes
+   `library/cpl-opportunity/?college=<name>&draft=1` (its `draft_url`); on approval it becomes
    `<slug>.json` and the draft file goes. **Done:** add the version, empty `refresh_note` and set
    `regen` to null. Every write goes through a receipt with the row's before-values (Rule 10).
+
+## The daytime Library run (Sam, Open Asks Sheet 131 card 1, 2026-10-26)
+
+Sam ruled *two-hours*: a run every two hours on weekdays, 7 a.m. to 5 p.m. Pacific, working only the Library's
+requests (step 6's two queries). It needs the three repos and the Supabase connector, which a session's
+`create_trigger` cannot attach here (S490), so Sam creates it on claude.ai's routines page: the same repos and
+connectors as the CPL queue routine, the schedule `CRON_TZ=America/Los_Angeles 34 6,8,10,12,14,16 * * 1-5`, a fresh
+session each time, and this prompt:
+
+> You are a scheduled CPL Initiative session, started by Sam's daytime Library routine (Open Asks Sheet 131 card 1),
+> not by Sam. Work from the cpl-project-tracker repository, with CPLBrain and cpl-knowledge-base beside it. Your one job
+> is the CPL Library's open requests. The overnight CPL queue routine owns everything else: take nothing from the
+> session handoff, write no handoff, claim no moniker. 1. One session at a time: step 1 of
+> docs/reference/scheduled_sessions.md; if another session is working the Library queue, end. 2. Read the open requests
+> with step 6's queries through the Supabase connector. If none is open, end at once: no commits, no checkpoint, no
+> message. 3. Otherwise work them oldest first, as many as fit in about an hour, as step 6 says for each kind of piece;
+> one branch and one pull request, merged on a passing test check. 4. Record the work in the library lane and
+> docs/library_lessons.md, and run python3 kb/_docs_audit.py before the last commit; no full checkpoint. 5. Drop any PR
+> subscription or check-in you made.
 
 ## The UI pass: one view a night
 

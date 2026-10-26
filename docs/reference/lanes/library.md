@@ -136,16 +136,22 @@ text pasted in) and, for a piece on the public library, whether the draft replac
 documents too, so a new visual can start from a document. A session does the rebuild: the scheduled runs read the
 requests (step 6 of [`scheduled_sessions`](../scheduled_sessions.md), which says how each kind of piece is rebuilt), and
 *Copy the request* hands the same paste to a session. A college's CPL Opportunity page gained a notes layer: what a note or
-document asks for goes to `cpl-opportunity/notes/<slug>.json`, shown under At a glance, with a draft at
+document asks for goes to `library/cpl-opportunity/notes/<slug>.json`, shown under At a glance, with a draft at
 `<slug>.draft.json` read at `?college=<name>&draft=1`. Schema: `kb/supabase_cpl_library.sql` (sources, regen, two checks).
 Tests: `library` (13, 14, 9), `college_cpl_workbook` (the notes).
 
 - **The Microsoft 365 connector waits on RCCD's admin approval** (Sam, 2026-10-26: *"We need to hold on the 365
   connector until I can get admin approval from RCCD"*). Until then a session reads a public link or pasted text, and
   the tab's help says so.
-- **Today only the overnight routine works a request** (nine firings, 22:12 to 06:12 Pacific), or a pasted session.
-  A daytime run, and moving the college pages under `library/`, are Sam's calls.
-  NEEDS SAM: the daytime worker's schedule, and whether college visuals move under `library/` ([Open Asks Sheet 131](https://claude.ai/artifact/6SM1HwKbvPWLt5534vhcyV) cards 1 and 2).
+- **Sam's Sheet 131 rulings (14:55-14:56Z, each his own call):** card 1 *two-hours*, a run every two hours on weekdays,
+  7 a.m. to 5 p.m. Pacific, working only Library requests; card 2 *move*. **The college page moved** to
+  `library/cpl-opportunity/` (S490); `cpl-opportunity/` forwards with its `?college=` and `#section`, so every link
+  already sent works, and COBI, My College, CPL Pathways and the Library tab link the new address. The twelve records'
+  links move by `kb/receipts/cpl_library_opportunity_urls_library_2026-10-26_s490.sql` once Pages serves the page.
+  **The daytime run waits on Sam:** a session's `create_trigger` takes no connectors here and attaches no repos (S490
+  made one and deleted it unfired), so he creates it from claude.ai's routines page with the paste in
+  [`scheduled_sessions`](../scheduled_sessions.md), *The daytime Library run*. Until then the overnight routine works
+  requests (nine firings, 22:12 to 06:12 Pacific).
 
 ## The Coordinator Guide is In development (Sam, 2026-10-25; Draft 1 by S480)
 
