@@ -32,3 +32,13 @@ and answer with the colleges and courses, naming no tool; and a standing directi
 she names only what the reader can open and links only public pages. Receipt
 `kb/receipts/sierra_guidance_no_internal_names_2026-10-26_s490.sql` (before-values and rollback in it); 18 active
 directives, about 8,600 of 9,000 characters. Sierra reads them on every answer, so no deploy.
+
+**NEXT (Sam, 2026-10-26 ~15:40Z, S490):** *"If there is a way for you to analyze an instruction I add to see if it can be
+worded better for Sierra, let's do that."* Recommended shape: a **Suggest wording** word beside Save in the Sierra Training
+tab (`sierra_training.js`). It sends the draft to Claude with the rules an instruction must meet (names no internal tool or
+COBI tab and links only public pages; says what Sierra can actually search; the house voice; the 9,000-character budget and
+how much is left; no clash with an active row) and shows a rewrite beside his words with a line on each change; he keeps
+his own, takes the rewrite or edits it, and nothing saves without his Save. A check in the same tab can flag the tab names
+and internal tools by rule before any model runs. The call needs a server side holding the Anthropic key (cpl-chat's, or a
+small function beside it), so its deploy and cost are his to approve.
+

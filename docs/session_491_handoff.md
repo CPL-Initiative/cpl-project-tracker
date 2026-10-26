@@ -52,6 +52,10 @@ One other session ran beside S490 on an unrelated topic (*Student-centered CCR c
    exists, record its trigger id in the library lane.
 3. **The funding film** (Sam's item 3: piano in place of the synthesizer, horn and drums kept, the narration added): a
    fork of S490 works it on `claude/funding-film-piano`. If its PR is open, finish it; the lane records the cut.
+3b. **Sam's ask for this session: help him word Sierra's instructions** (~15:40Z): *"If there is a way for you to analyze
+   an instruction I add to see if it can be worded better for Sierra, let's do that."* The sierra-false-absences lane's
+   NEXT holds a recommended shape (a *Suggest wording* word in the Sierra Training tab, with a rule check first). Mock it
+   for him before building; its server side and cost are his call.
 4. **The UI pass: Privacy** (`privacy.html`) for the first scheduled session of 2026-10-27 UTC.
 5. **Hartnell's last reader changes:** CalGETC 45096 (area totals over sub-areas), then Music 43887's repeat counts, then
    RN 03570 on Fable's guarded reading (lessons S488).

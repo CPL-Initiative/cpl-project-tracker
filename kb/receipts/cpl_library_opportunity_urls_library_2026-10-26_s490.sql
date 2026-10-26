@@ -45,7 +45,7 @@ update public.cpl_library set url = 'https://cpl-initiative.github.io/cpl-projec
 update public.cpl_library set url = 'https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-opportunity/?college=Sierra%20College', updated_by = 'S490 SkyGooseberry'
   where slug = 'cpl-opportunity-sierra-visual' and url = 'https://cpl-initiative.github.io/cpl-project-tracker/cpl-opportunity/?college=Sierra%20College' and updated_at = '2026-10-23 22:14:22.319777+00';
 
--- And one cpl_memory row (Sam's Sierra ask of ~15:30Z, done the same hour), INSERT-only under author/actor library-s490-urls-2026-10-26.
+-- And two cpl_memory rows (Sam's Sierra asks of ~15:30Z, done the same hour, and ~15:40Z, for the next session), INSERT-only under author/actor library-s490-urls-2026-10-26.
 -- ROLLBACK: delete from public.cpl_memory_log where actor = 'library-s490-urls-2026-10-26';
 --           delete from public.cpl_memory where author = 'library-s490-urls-2026-10-26';
 insert into public.cpl_memory (slug, kind, title, summary, detail, plain, tags, status, source, verified_by, verified_at, event_date, author, related)
@@ -68,6 +68,25 @@ from jsonb_to_recordset($json$[
   "source": "Sam, in session S490, 2026-10-26",
   "verified_by": "Sam",
   "related": []
+ },
+ {
+  "slug": "sam-sierra-instruction-wording-help-ask-2026-10-26",
+  "kind": "decision",
+  "title": "Sam asks for a way to analyze an instruction he adds to Sierra Training and suggest better wording",
+  "summary": "Sam, 2026-10-26 ~15:40Z (S490), for the next session: \"If there is a way for you to analyze an instruction I add to see if it can be worded better for Sierra, let's do that.\" Recommended: a Suggest wording word in the Sierra Training tab that shows a rewrite beside his words, with a rule check (no internal tool names, public links only, budget) before any model runs.",
+  "detail": "The shape, and what the rewrite checks, are in the sierra-false-absences lane's NEXT. Its server side holds the Anthropic key and its cost and deploy are his to approve.",
+  "plain": "Sierra's training tab could suggest a clearer wording for each new instruction.",
+  "tags": [
+   "sierra",
+   "guidance",
+   "sierra-training"
+  ],
+  "status": "verified",
+  "source": "Sam, in session S490, 2026-10-26",
+  "verified_by": "Sam",
+  "related": [
+   "sam-sierra-no-internal-tool-names-2026-10-26"
+  ]
  }
 ]$json$::jsonb)
   as x(slug text, kind text, title text, summary text, detail text, plain text, tags text[], status text,
