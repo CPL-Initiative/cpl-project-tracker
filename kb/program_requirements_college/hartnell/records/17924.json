@@ -155,7 +155,8 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -583,20 +584,14 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": 39966331452,
+ "extracted_run": 40292405207,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "Complete ALL of the following Requirement Sets:\nCal-GETC (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Students can double-count required courses and courses for General Education"
   }
  ],
- "read_run": 39949570443
+ "read_run": 39966331452
 }

@@ -75,30 +75,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "'List A: American Sign Language' chooses units but names no minimum",
-    "'List A: Anthropology' chooses units but names no minimum",
-    "'List A: Art' chooses units but names no minimum",
-    "'List A: English' chooses units but names no minimum",
-    "'List A: History' chooses units but names no minimum",
-    "'List A: Music' chooses units but names no minimum",
-    "'List A: Philosophy' chooses units but names no minimum",
-    "'List A: Photography' chooses units but names no minimum",
-    "'List A: Spanish' chooses units but names no minimum",
-    "'List A: Theater and Cinema' chooses units but names no minimum",
-    "'List A: Ethnic Studies' chooses units but names no minimum"
-   ]
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     41.0,
+     41.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     23.0,
+     23.0
+    ],
+    "why": [],
+    "fill": [
+     19.0,
+     19.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -122,7 +132,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -148,17 +158,18 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
-    "name": "List A: American Sign Language",
+    "name": "Completion requirement",
     "rule": "choose_units",
-    "minimum": null,
+    "minimum": 18,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 18,
+     "max": 18
     },
     "courses": [
      {
@@ -181,19 +192,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "List A: Anthropology",
-    "rule": "choose_units",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "ANT2",
       "units": 3,
@@ -207,19 +206,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List A: Art",
-    "rule": "choose_units",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "ART1A",
       "units": 3,
@@ -296,19 +283,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List A: English",
-    "rule": "choose_units",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "ENGLC1002",
       "units": 3,
@@ -406,19 +381,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List A: History",
-    "rule": "choose_units",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "HIS4A",
       "units": 3,
@@ -509,19 +472,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "List A: Music",
-    "rule": "choose_units",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "MUS1A",
       "units": 3,
@@ -633,19 +584,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List A: Philosophy",
-    "rule": "choose_units",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "PHL2",
       "units": 3,
@@ -666,19 +605,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List A: Photography",
-    "rule": "choose_units",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "PHO1",
       "units": 3,
@@ -699,19 +626,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List A: Spanish",
-    "rule": "choose_units",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "SPA1",
       "units": 5,
@@ -781,19 +696,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List A: Theater and Cinema",
-    "rule": "choose_units",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "TAC1",
       "units": 3,
@@ -898,19 +801,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List A: Ethnic Studies",
-    "rule": "choose_units",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "ETH6",
       "units": 3,
@@ -958,379 +849,32 @@
    "No program learning outcomes or careers are printed in this text."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": 40292405207,
  "reconciled": [
   {
-   "field": "course_units",
+   "field": "ge_overlap",
    "was": null,
-   "now": {
-    "ASL1": [
-     5,
-     5
-    ],
-    "ASL2": [
-     5,
-     5
-    ],
-    "ANT2": [
-     3,
-     3
-    ],
-    "ANT20": [
-     3,
-     3
-    ],
-    "ART1A": [
-     3,
-     3
-    ],
-    "ARTHC1200": [
-     3,
-     3
-    ],
-    "ART3": [
-     3,
-     3
-    ],
-    "ART10": [
-     3,
-     3
-    ],
-    "ART12A": [
-     3,
-     3
-    ],
-    "ART15A": [
-     3,
-     3
-    ],
-    "ART15B": [
-     3,
-     3
-    ],
-    "ART19": [
-     3,
-     3
-    ],
-    "ART70": [
-     3,
-     3
-    ],
-    "ART72": [
-     3,
-     3
-    ],
-    "ART80": [
-     3,
-     3
-    ],
-    "ENGLC1002": [
-     3,
-     3
-    ],
-    "ENG17": [
-     3,
-     3
-    ],
-    "ENG22": [
-     3,
-     3
-    ],
-    "ENG24": [
-     3,
-     3
-    ],
-    "ENG26": [
-     3,
-     3
-    ],
-    "ENG31": [
-     3,
-     3
-    ],
-    "ENG41": [
-     3,
-     3
-    ],
-    "ENG44A": [
-     3,
-     3
-    ],
-    "ENG44B": [
-     3,
-     3
-    ],
-    "ENG46A": [
-     3,
-     3
-    ],
-    "ENG46B": [
-     3,
-     3
-    ],
-    "ENG47A": [
-     3,
-     3
-    ],
-    "ENG47B": [
-     3,
-     3
-    ],
-    "ENG48": [
-     3,
-     3
-    ],
-    "HIS4A": [
-     3,
-     3
-    ],
-    "HIS4B": [
-     3,
-     3
-    ],
-    "HIS5A": [
-     3,
-     3
-    ],
-    "HIS5B": [
-     3,
-     3
-    ],
-    "HIS6": [
-     3,
-     3
-    ],
-    "HIS10": [
-     3,
-     3
-    ],
-    "HISTC1001": [
-     3,
-     3
-    ],
-    "HISTC1002": [
-     3,
-     3
-    ],
-    "HIS40": [
-     3,
-     3
-    ],
-    "HIS47": [
-     3,
-     3
-    ],
-    "HIS49A": [
-     3,
-     3
-    ],
-    "HIS49B": [
-     3,
-     3
-    ],
-    "HIS55": [
-     3,
-     3
-    ],
-    "MUS1A": [
-     3,
-     3
-    ],
-    "MUS2": [
-     3,
-     3
-    ],
-    "MUS5": [
-     3,
-     3
-    ],
-    "MUS6": [
-     3,
-     3
-    ],
-    "MUS7": [
-     3,
-     3
-    ],
-    "MUS8": [
-     3,
-     3
-    ],
-    "MUS20": [
-     1,
-     1
-    ],
-    "MUS21": [
-     1,
-     1
-    ],
-    "MUS25": [
-     1,
-     1
-    ],
-    "MUS26": [
-     1,
-     1
-    ],
-    "MUS42": [
-     3,
-     3
-    ],
-    "MUS43": [
-     3,
-     3
-    ],
-    "MUS46": [
-     4,
-     4
-    ],
-    "MUS47": [
-     4,
-     4
-    ],
-    "MUS48": [
-     4,
-     4
-    ],
-    "MUS49": [
-     4,
-     4
-    ],
-    "PHL2": [
-     3,
-     3
-    ],
-    "PHL5": [
-     3,
-     3
-    ],
-    "PHL10": [
-     3,
-     3
-    ],
-    "PHO1": [
-     3,
-     3
-    ],
-    "PHO2": [
-     3,
-     3
-    ],
-    "PHO4": [
-     3,
-     3
-    ],
-    "SPA1": [
-     5,
-     5
-    ],
-    "SPA1S": [
-     5,
-     5
-    ],
-    "SPA1X": [
-     5,
-     5
-    ],
-    "SPA2": [
-     5,
-     5
-    ],
-    "SPA2S": [
-     5,
-     5
-    ],
-    "SPA2X": [
-     5,
-     5
-    ],
-    "SPA3": [
-     5,
-     5
-    ],
-    "SPA3S": [
-     5,
-     5
-    ],
-    "SPA4S": [
-     5,
-     5
-    ],
-    "TAC1": [
-     3,
-     3
-    ],
-    "TAC2": [
-     3,
-     3
-    ],
-    "TAC3": [
-     3,
-     3
-    ],
-    "TAC20": [
-     3,
-     3
-    ],
-    "TAC21": [
-     3,
-     3
-    ],
-    "TAC23": [
-     3,
-     3
-    ],
-    "TAC24": [
-     3,
-     3
-    ],
-    "TAC25": [
-     3,
-     3
-    ],
-    "TAC26": [
-     3,
-     3
-    ],
-    "TAC29": [
-     3,
-     3
-    ],
-    "TAC40": [
-     3,
-     3
-    ],
-    "TAC50": [
-     3,
-     3
-    ],
-    "TAC53": [
-     3,
-     3
-    ],
-    "TAC92": [
-     3,
-     3
-    ],
-    "ETH6": [
-     3,
-     3
-    ],
-    "ETH7": [
-     3,
-     3
-    ],
-    "ETH12": [
-     3,
-     3
-    ],
-    "ETH56": [
-     3,
-     3
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": true,
+   "words": "Students can double-count required courses and courses for General Education"
+  },
+  {
+   "field": "blocks",
+   "was": [
+    "List A: American Sign Language",
+    "List A: Anthropology",
+    "List A: Art",
+    "List A: English",
+    "List A: History",
+    "List A: Music",
+    "List A: Philosophy",
+    "List A: Photography",
+    "List A: Spanish",
+    "List A: Theater and Cinema",
+    "List A: Ethnic Studies"
+   ],
+   "now": "Completion requirement",
+   "words": "For the 18 units required, select courses in List A from at least two disciplines"
   }
  ],
- "read_run": 39931703521
+ "read_run": 39949570443
 }

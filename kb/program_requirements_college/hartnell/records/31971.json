@@ -130,7 +130,8 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -258,59 +259,14 @@
    "No program learning outcomes or careers appear in the provided text (General and Degree Map tabs not included)."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": 40292405207,
  "reconciled": [
   {
-   "field": "course_units",
+   "field": "ge_overlap",
    "was": null,
-   "now": {
-    "ADJ1": [
-     3,
-     3
-    ],
-    "ADJ3": [
-     3,
-     3
-    ],
-    "ADJ5": [
-     3,
-     3
-    ],
-    "ADJ4": [
-     3,
-     3
-    ],
-    "ADJ8": [
-     3,
-     3
-    ],
-    "ADJ2": [
-     3,
-     3
-    ],
-    "ADJ10": [
-     3,
-     3
-    ],
-    "SOC1": [
-     3,
-     3
-    ],
-    "STATC1000": [
-     4,
-     4
-    ],
-    "PSYCC1000": [
-     3,
-     3
-    ],
-    "ADJ51": [
-     3,
-     3
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": true,
+   "words": "Students can double-count required courses and courses for General Education"
   }
  ],
- "read_run": 39931703521
+ "read_run": 39949570443
 }

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 112,
  "with_closed_list": 105,
- "started": "2026-10-26T07:23:06Z",
+ "started": "2026-10-26T08:29:05Z",
  "route": "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)",
  "coursedog": {
   "root": "https://hartnell.catalog.prod.coursedog.com",
@@ -29,11 +29,11 @@
     "name": "Addiction Studies"
    },
    {
-    "code": "AS.ADJ",
+    "code": "CT.ADJ",
     "name": "Administration of Justice"
    },
    {
-    "code": "CT.ADJ",
+    "code": "AS.ADJ",
     "name": "Administration of Justice"
    },
    {
@@ -177,19 +177,19 @@
     "name": "Cybersecurity"
    },
    {
-    "code": "AA.DA",
-    "name": "Digital Arts"
-   },
-   {
     "code": "CT.DA",
     "name": "Digital Arts"
    },
    {
-    "code": "AS.ECE",
-    "name": "Early Childhood Education"
+    "code": "AA.DA",
+    "name": "Digital Arts"
    },
    {
     "code": "CT.ECE",
+    "name": "Early Childhood Education"
+   },
+   {
+    "code": "AS.ECE",
     "name": "Early Childhood Education"
    },
    {
@@ -297,11 +297,11 @@
     "name": "Mathematics for Transfer Degree (AS-T)"
    },
    {
-    "code": "AA.MUS",
+    "code": "CT.MUS",
     "name": "Music"
    },
    {
-    "code": "CT.MUS",
+    "code": "AA.MUS",
     "name": "Music"
    },
    {
@@ -426,7 +426,7 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 103,
- "seconds": 900.4,
+ "seconds": 893.2,
  "found": 94,
  "by_method": {
   "no_closed_list": 7,
@@ -584,5 +584,5 @@
   "programs": 0,
   "list": []
  },
- "run": "40285320209"
+ "run": "40292405207"
 }

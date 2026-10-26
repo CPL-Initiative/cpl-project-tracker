@@ -134,7 +134,8 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -249,47 +250,14 @@
    "No program learning outcomes or careers appear in the provided text (the 'General' tab content was not included)."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": 40292405207,
  "reconciled": [
   {
-   "field": "course_units",
+   "field": "ge_overlap",
    "was": null,
-   "now": {
-    "MAT3A": [
-     4,
-     4
-    ],
-    "MAT3B": [
-     4,
-     4
-    ],
-    "MAT3C": [
-     4,
-     4
-    ],
-    "MAT5": [
-     3,
-     3
-    ],
-    "MAT4": [
-     3,
-     3
-    ],
-    "PHY4A": [
-     4,
-     4
-    ],
-    "CSS2A": [
-     4,
-     4
-    ],
-    "STATC1000": [
-     4,
-     4
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": true,
+   "words": "Students can double-count required courses and courses for General Education"
   }
  ],
- "read_run": 39931703521
+ "read_run": 39949570443
 }
