@@ -411,9 +411,9 @@ async function main() {
     check("(13e) ⭐ the Fact Sheet and the funding page load the bar, deferred, and no drawer remains",
       [FACT, FUND].every((p) => /<script src="\.\.\/sierra\/sidebar\.js" defer><\/script>/.test(p) && !/factsheet_sierra/.test(p)) &&
       !fs.existsSync("fact-sheet/factsheet_sierra.js"));
-    check("(13f) ⭐ each opens her from its own word, just ahead of its PDF control, and names her surface",
+    check("(13f) ⭐ the Fact Sheet opens her from its own word, just ahead of its PDF control; the funding page from the chip (no word of its own; Sam, 2026-10-26); both name her surface",
       /data-sierra-open[^>]*>Ask Sierra<\/button>\s*<button class="btn btn-primary" id="btn-print"/.test(FACT) &&
-      /data-sierra-open[^>]*>Ask Sierra<\/button>\s*<button type="button" class="btn" id="pdf-btn"/.test(FUND) &&
+      !/data-sierra-open/.test(FUND) &&
       [FACT, FUND].every((p) => /window\.CPL_SIERRA_SURFACE = "fact-sheet";/.test(p)) &&
       /window\.CPL_SIERRA_SUGGESTED = \[/.test(FACT) && /window\.CPL_SIERRA_SUGGESTED = \[/.test(FUND));
     const used = Array.from(new Set((BAR.match(/var\(--sierra-bar-[a-z-]+/g) || []).map(function (s) { return s.slice(4); })))
