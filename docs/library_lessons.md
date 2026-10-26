@@ -517,8 +517,8 @@ session per press, a cost and permission call for Sam; until he asks, the queue 
 
 **Learned.** Naming people made the ELL IET page Sierra's longest read again: 30,975 characters, past the 26,000 the repo
 had raised the cap to that morning, so `tests/sierra_library.test.js` caught a second cut. The cap now reads 31,000 a page
-and 37,000 in all; production stays at 20,000 until Sam answers Sheet 130, whose card now carries those numbers (at 20,000
-Sierra would lose three grantee cards whole). The page test's "no email address" check guarded against a leaked address.
+and 37,000 in all; Sam answered Sheet 130 *deploy* at 12:32Z, and that deploy ships 26,000 from `main`, so this raise needs a second
+deploy after #2466 merges (at 20,000 Sierra would lose three grantee cards whole). The page test's "no email address" check guarded against a leaked address.
 Sam's ruling makes a card's contacts the one place an address may appear, so the check now allows one only as the
 visible text of its own mailto link inside a card's contacts block; an address planted anywhere else still fails it. The
 ELL next steps now name the people on the card, and the Sierra test had pinned the old wording.

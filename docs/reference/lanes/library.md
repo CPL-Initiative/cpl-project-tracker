@@ -171,8 +171,7 @@ college*). Draft: https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw; source `ell
 card, and the v1 brief rebuilds byte-identical. The record carries Version 2 as *Draft for review* and an empty box
 (receipt `kb/receipts/cpl_library_ell_iet_v2_2026-10-26_s482.sql`, supabase-migrate run 40256725268, read back).
 **Version 2 is the public copy** (Sam, Sheet 129 card 2, *replace*, 03:53Z 2026-10-26): `library/ell-iet-cpl-starting-points/` rewritten from it, the record at version 2 (receipt `kb/receipts/cpl_library_v2_public_2026-10-26_s483.sql`).
-With the people on each card it reads 30,975 characters (25,516 before), past Sierra's 20,000-character page cap; the repo
-raises it to 31,000 (total 37,000).
+It reads 25,516 characters, past Sierra's 20,000-character page cap; the repo raises it to 26,000 (total 32,000).
 **NEEDS SAM (Open Asks Sheet 130 card 1): deploy cpl-chat so Sierra reads the page whole.**
 
 ## DSP Credit Starting Points, Version 2 (Sam's S482 ask; built S483)
@@ -205,6 +204,9 @@ review* (receipt `kb/receipts/cpl_library_dsp_v2_2026-10-26_s483.sql`, run 40263
   11 Faculty Leads); no vault file names a DDS, Aging or LWDA contact. Three colleges record neither: Butte and Lake
   Tahoe (ELL), Taft (DSP, so its card names no one). No store records a Noncredit CPL Lead yet (MAP's College Contacts
   has no such field; `cpl_funding_nc_attestation` held 0 rows).
+- **The page cap again.** With the contacts the ELL IET page reads 30,975 characters, so this branch's `cpl-chat` reads
+  31,000 a page and 37,000 in all. Sheet 130's deploy (Sam, *deploy*, 12:32Z) ships 26,000 from `main`; this raise
+  needs a second deploy after #2466 merges.
 
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 
@@ -230,8 +232,8 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   `.gitignore` `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's two
   player pages off the site, and add a guard test so a deliverable binary cannot be committed again. Then the vault's
   binaries (29 on 2026-10-05).
-- **Each new open-asks sheet updates the series record** `open-asks-sheets` (version 130 since S483, receipt
-  `kb/receipts/cpl_library_open_asks_sheet130_2026-10-26_s483.sql`; 124 to 128 had been skipped): one guarded UPDATE
+- **Each new open-asks sheet updates the series record** `open-asks-sheets` (version 129 since S483, receipt
+  `kb/receipts/cpl_library_open_asks_sheet129_2026-10-26_s483.sql`; 124 to 128 had been skipped): one guarded UPDATE
   from the version as read; `made_by` (capped at 300 characters) is a range each sheet extends.
 - Sam's sheet 47, 48 and 49 calls of 2026-10-07 and 2026-10-08 (the sheets to the vault, one Library record per series,
   the Ironworker film public, the Drive sharing dropped, the SharePoint folder with guests, hand and sync) are recorded in
