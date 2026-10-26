@@ -15,6 +15,12 @@ Parts 2 to 6 ([2](roadmap_archive_2.md) · [3](roadmap_archive_3.md) · [4](road
 (S474) for the 150 KB archive budget: the completed roadmap rows, the session narratives through
 S196, and the INDEX history rotated out before 2026-09-17. New rotations keep landing here.
 
+## INDEX update-history entries rotated out (2026-10-26)
+
+- 2026-10-25 S477 SkyOwlsClover (opened by hand, beside the 12:14Z firing): the noncredit counts confirmed live; the privacy screen reads only a row's own cells; a hand-opened session claims the queue with a draft PR (#2445); light checkpoint, handoff 478.
+- 2026-10-25 S473 SkyClarkia: NC-1 channel 3, the credential crosswalk (13 rows proposed, Open Asks Sheet 127); handoff 474.
+- 2026-10-25 S472 SkyBrodiaea: the funding memo prints the noncredit outcomes (#2439); light checkpoint, handoff 473.
+
 ## INDEX update-history entries rotated out (2026-10-25)
 
 - 2026-10-24 (S469 SkyLemonadeBerry, opened by hand): Ask Sierra opens in a side bar on the public library and COBI's Library tab (#2424); Sierra's page in the library look, no paintings (#2425); Open Asks Sheet 126; full checkpoint; handoff 470.

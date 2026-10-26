@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 94 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 457 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1272** | |
+| Session handoffs | 458 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1273** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-26 S487 SkyHuckleberry (the CPL Queue routine): Hartnell's pooled subject lists; a `pool_lists` reconcile step, General Studies 17912 passes, Hartnell 80 of 94 (#2463); full checkpoint, handoff 488.
 - 2026-10-26 S486 SkyQuince (the CPL Queue routine): Hartnell's double-count words read as the overlap; three local degrees pass, the carry basis leaves the flag out (#2462); handoff 487.
 - 2026-10-26 S485 SkyElderberry (the CPL Queue routine): Hartnell's last three noncredit courses carry no hours in its data; why six of its degrees fail arithmetic, read from their tabs (#2461); light checkpoint, handoff 486.
 - 2026-10-26 S483 SkyCoyoteMint (opened by hand): DSP Credit Starting Points Version 2 on the agency template, a draft beside v1 (CPLBrain#487, receipt applied); Open Asks Sheet 129 and the series record caught up to it; the library lane back under budget (#2458); full checkpoint, handoff 484.
@@ -129,6 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-26 S480 SkyChia (opened by hand): the funding tab's NC labels, outcome chips and Serves on P3 and P4 (#2453); the Library's Changes to make and Copy the request, the Coordinator Guide In development (#2452); Coordinator Guide Draft 1 (CPLBrain#482); full checkpoint, handoff 481.
 - 2026-10-25 S479 SkyMilkmaids (opened by hand): the Coordinator Guide audit ran from the Drive (#2448, CPLBrain#479); Sam's Sheet 127 *twelve*: twelve NC-1 crosswalk rows confirmed (#2449, CPLBrain#480); light checkpoint, handoff 480.
 - 2026-10-25 S478 SkyTidyTips (opened by hand): Sam's funding page asks, two funding columns, the Noncredit CPL Lead, the Report fold, Sierra light, the library look (#2446); light checkpoint, handoff 479.
-- 2026-10-25 S477 SkyOwlsClover (opened by hand, beside the 12:14Z firing): the noncredit counts confirmed live; the privacy screen reads only a row's own cells; a hand-opened session claims the queue with a draft PR (#2445); light checkpoint, handoff 478.
-- 2026-10-25 S473 SkyClarkia: NC-1 channel 3, the credential crosswalk (13 rows proposed, Open Asks Sheet 127); handoff 474.
-- 2026-10-25 S472 SkyBrodiaea: the funding memo prints the noncredit outcomes (#2439); light checkpoint, handoff 473.

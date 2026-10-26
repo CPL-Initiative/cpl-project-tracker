@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-26T07:43:29Z",
-  "session": 486,
-  "moniker": "SkyQuince",
+  "written_at": "2026-10-26T08:53:07Z",
+  "session": 487,
+  "moniker": "SkyHuckleberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_487_handoff.md",
+  "handoff": "docs/session_488_handoff.md",
   "next_step": {
-    "title": "Confirm Hartnell's display apply, then the Privacy UI pass",
-    "text": "The display apply for Hartnell's three newly passing degrees was dispatched after the merge; the next session checks that it landed. The Privacy page's UI pass comes first on October 27. Hartnell's remaining failures wait on a reader change that pools subject lists and reads a baccalaureate's admitting degree."
+    "title": "Merge Hartnell's pooled lists and apply the display build, then the Privacy UI pass",
+    "text": "General Studies: Arts and Humanities at Hartnell now passes, its subject lists read as the one 18-unit choice the page prints. The next session merges the change if it is still open and applies the display build on main. The Privacy page's UI pass comes first on October 27. Hartnell's remaining failures are a baccalaureate's admitting degree, a prerequisite list read as general education, and programs not yet read."
   },
   "calls": [
     {
@@ -164,6 +164,10 @@
     {
       "at": "2026-10-26T07:42:00Z",
       "text": "Hartnell's tabs say students can double-count required courses and general education courses; the scorer now reads those words as the overlap, and Vocational Nursing, Addiction Studies and Agricultural Mechatronics pass (Hartnell 79 of 94)."
+    },
+    {
+      "at": "2026-10-26T08:48:00Z",
+      "text": "Hartnell's General Studies: Arts and Humanities degree passes: a new reconcile step reads its eleven subject lists as the one 18-unit choice the page prints. Hartnell 80 of 94."
     }
   ],
   "headline": [
@@ -278,14 +282,14 @@
     {
       "day": "2026-10-26",
       "active": 20282,
-      "complete": 13182,
+      "complete": 13183,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-26T08:12:00Z"
+    "at": "2026-10-26T09:12:00Z"
   },
   "harvest": {
     "day": "2026-10-26",

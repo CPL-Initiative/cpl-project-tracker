@@ -574,6 +574,9 @@ the weekly apply.
   40291523425). Its sibling Social and Behavioral Sciences 17911 prints the same words and was read as one 18-unit block,
   so the extraction, and nothing on the page, split 17912. A `pool_lists` reconcile step joins two or more figureless
   lists sharing `block_prefix` into one block of the page's figure, and never where `total_units` names another.
+  Reconcile 40292405207 (free) moved 17912 alone (18 of 18 in the major, 60 with Local GE 23 and electives); 56
+  bookkeeping-only records were restored, and reread 40294638373 replaced one row (before-values in its receipt).
+  Hartnell 79 to 80 of 94. Display build 767a48c10e89.
 - **The two-disciplines condition has no field.** It rules which courses count, never how many units; the record keeps the
   courses and the scorer checks the units.
 - **A step that changes blocks needs no carry-basis change.** The basis keeps every block, so a confirm of the split
