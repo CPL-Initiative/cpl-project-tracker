@@ -84,11 +84,8 @@
     27.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 27.0-35.0; the catalog states 27.0-27.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -296,7 +293,7 @@
    "Only the Requirements tab was captured; no program learning outcomes or careers appear in the text."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": 40274398240,
  "reconciled": [
   {
    "field": "course_units",
@@ -370,5 +367,5 @@
    "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39949570443
 }

@@ -61,20 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    216.0,
+    216.0
    ],
    "stated": [
     216.0,
     216.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -139,14 +137,14 @@
     "courses": [
      {
       "code": "ENGM650",
-      "units": null,
+      "units": 144,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGM658",
-      "units": null,
+      "units": 72,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -163,5 +161,17 @@
    "The page prints no program learning outcomes and names no careers."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 40274398240,
+ "reconciled": [
+  {
+   "field": "course_hours",
+   "was": null,
+   "now": {
+    "ENGM650": 144,
+    "ENGM658": 72
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (the top of each course's credits.lectureHours plus credits.labHours in the same courses/search answer, which the tab's \"Non Credit - Total hours\" sums (college-page-read 40273805437: ENGM620 90 and 54, ENGM622 72, total 216))"
+  }
+ ],
+ "read_run": "39895340003"
 }
