@@ -334,3 +334,22 @@ Sierra Training reads `team_access` only as a one-row reviewer probe, so there i
   the new CSS and 0/2 on the old.
 - **Grep the injected CSS, not only the stylesheet.** The third view in a row to owe the Controls rule; each time the
   stragglers lived in a `.js` file's CSS string, which a sweep of the `.css` file misses.
+
+## S481 SkyGoldfields (2026-10-26): the Fact Sheet again
+
+- **A clean sweep says nothing about markup.** All four Fact Sheet targets swept clean at nine widths, light and dark,
+  before any change. Reading the HTML found six links written `rel="noopener aria-label="…"`: one missing quote folds
+  the label into `rel`, the browser drops it, and the label's words parse as junk attributes. No contrast, target or
+  focus check reads that. The guard (`tests/factsheet_a11y.test.js` (h)) reads the source for any attribute value that
+  swallows the next attribute; it found five of the six that a hand read had missed. No other page in the repo has one.
+- **Restoring a label can break Label in Name (WCAG 2.5.3).** The lost labels read *Read the full text of…* on a link
+  whose face says *read full text*; the face must sit inside the name. Each link keeps its words, and a clipped
+  `.sr-only` span adds the context and *(opens in a new tab)*.
+- **The ↗ goes the way Sierra's did.** The 16 marks on the resources and the stories link became the same clipped cue
+  (`tests/sierra_surfaces_aligned.test.js` §4), so the warning moved instead of vanishing. The Library, Sierra and the
+  funding page render none.
+- **The naming rule reached the page's own words.** *MAP Initiative* left the first resource (*MAP Platform Website*,
+  as My College has it), the contact heading and the footer (*the CPL Initiative of the California Community Colleges
+  Chancellor's Office*). Sam's title in the contact card stays as his profile gives it.
+- **Wiring agreed.** The eleven headline figures read the same on the Fact Sheet and COBI's Dashboard (57,664 students,
+  $392M, as of October 25).

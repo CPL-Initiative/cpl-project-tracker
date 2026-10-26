@@ -893,16 +893,16 @@ check("(L) an outcome the college cannot act on here is never proposed",
 check("(L) all outcomes met → no seed step", M._nextEssOutcome([{ title: "x", o: { state: "met" } }]) === null);
 
 // ── Part M — resources (SkyLink, 2026-08-11) ──
-// ⚠ The public fact sheet's first entry is titled "MAP Initiative Website",
-// which the 2026-07-03 naming convention retired. It must be FIXED here, not
-// copied forward — and the fact sheet is read to prove the old title really is
-// what we are correcting, so this cannot pass on a stale assumption.
+// ⚠ The public fact sheet's first entry was titled "MAP Initiative Website",
+// which the 2026-07-03 naming convention retired. It was FIXED here, not
+// copied forward; the fact sheet's own entry followed in the S481 UI pass, so
+// the old title now lives on neither page.
 check("(M) resources are present and substantial", M._RESOURCES.length >= 12);
 check("(M) the retired 'MAP Initiative' name is NOT carried forward",
   !M._RESOURCES.some(function (r) { return /MAP Initiative/i.test(r[1]) || /MAP Initiative/i.test(r[2]); }),
   "the programme is the CPL Initiative; the platform is the MAP platform");
-check("(M) …and the fact sheet really does still carry it (so this guards a real fix)",
-  /MAP Initiative Website/.test(fs.readFileSync("fact-sheet/index.html", "utf8")));
+check("(M) …and the fact sheet no longer carries it either (S481)",
+  !/MAP Initiative Website/.test(fs.readFileSync("fact-sheet/index.html", "utf8")));
 check("(M) every resource has a URL, a title and a description",
   M._RESOURCES.every(function (r) { return r.length === 3 && /^https:\/\//.test(r[0]) && r[1] && r[2]; }));
 check("(M) links open safely", /rel="noopener"/.test(briefingSrc));

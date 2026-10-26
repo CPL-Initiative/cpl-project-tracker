@@ -30,8 +30,8 @@
    "name": "Fact Sheet",
    "page": "fact-sheet/index.html",
    "audience": "public",
-   "last": "2026-10-20",
-   "outcome": "Swept clean before and after at 9 widths, light and dark; the Controls rule reached the last two holdouts: the statewide recs toggle (underlined at rest, its caret glyph gone) and the curator editor's Save, Hide box, Reset and Cancel (words, not boxed buttons); guard in tests/factsheet_a11y.test.js."
+   "last": "2026-10-26",
+   "outcome": "Swept clean before and after at 9 widths, light and dark; the wiring agreed (11 headline figures match COBI's Dashboard). Six links carried rel=\"noopener aria-label=\"…\" (one unclosed quote drops the label), now plain links with their context in a clipped .sr-only span; the 16 ↗ marks became the same 'opens in a new tab' cue Sierra's did; the program reads CPL Initiative in the heading, footer and first resource. Guard: tests/factsheet_a11y.test.js (h)."
   },
   {
    "id": "privacy",
