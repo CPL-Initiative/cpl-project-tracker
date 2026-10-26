@@ -2228,6 +2228,23 @@
     ov.ncOutcomes[slot] = rows;
     persistActive();
   }
+  // The public page's curator renames a noncredit outcome where a reader meets
+  // it (Sam, 2026-10-26: his NC-1 relabel never reached funding-model/). The
+  // label and title are the fields the tab's card edits, written in one save,
+  // so the two views read one value. A cleared label reads NC-n again; a
+  // cleared title keeps the one stored.
+  function setNcOutcomeWords(idx, label, title) {
+    var slot = prioSlot("1");
+    var rows = clone(ncOutcomeRows(slot));
+    if (!rows[idx] || !isPlainObj(rows[idx])) return;
+    rows[idx].label = String(label == null ? "" : label).replace(/\s+/g, " ").trim();
+    var t = String(title == null ? "" : title).replace(/\s+/g, " ").trim();
+    if (t) rows[idx].title = t;
+    var ov = activeOverride();
+    ov.ncOutcomes = isPlainObj(ov.ncOutcomes) ? ov.ncOutcomes : {};
+    ov.ncOutcomes[slot] = rows;
+    persistActive();
+  }
   function ncPriorities(slot) {
     // The outcomes lane (Scenario 4): the scenario's own list, never the twins.
     if (ncOutcomesMode()) return ncOutcomes(slot);
@@ -4547,8 +4564,13 @@
     var v = firstDefined(SCENARIO.pubTitles && SCENARIO.pubTitles[id], SHARED.pubTitles && SHARED.pubTitles[id]);
     return (v == null || !String(v).trim()) ? null : String(v);
   }
+  // The page's sub-headings rename the same way, under the same map (Sam,
+  // 2026-10-26: "How a share becomes a target" had no Rename, so a title he
+  // wanted changed could not be). Each is an h3 the page marks data-psub.
+  var PUBLIC_SUBHEAD_IDS = ["sub_dates", "sub_arrives", "sub_nc_calc", "sub_share_target", "sub_nc_outcomes"];
   function setPubTitle(id, v, housePlain) {
-    if (!PUBLIC_BY_ID[id] || PUBLIC_BY_ID[id].fixedTitle) return;
+    var sub = PUBLIC_SUBHEAD_IDS.indexOf(id) >= 0;
+    if (!sub && (!PUBLIC_BY_ID[id] || PUBLIC_BY_ID[id].fixedTitle)) return;
     var ov = activeOverride();
     var clean = oneLine(v);
     ov.pubTitles = isPlainObj(ov.pubTitles) ? ov.pubTitles : {};
@@ -4948,6 +4970,26 @@
       saveScenario();
       pendingPromotion = false;
     }
+  }
+  // WHAT THIS BROWSER HOLDS THAT THE PUBLIC PAGE NEVER SHOWS (Sam, 2026-10-26:
+  // "The edits I made to the NC priority (and other) titles did not make it
+  // over to the public page"). The live config held no label for either
+  // noncredit outcome while his tab showed one: an edit made without a fresh
+  // sign-in lands in this browser's what-if overlay, which the tab shows and a
+  // public surface never reads (syncActive). The page's curator bar reads the
+  // overlay on the published scenario only to say so, in words.
+  var LOCAL_AREA_WORDS = { ncOutcomes: "the noncredit outcomes", yearPriorities: "the priorities",
+    pubTitles: "this page's titles", pubLinks: "this page's Contents links", text: "the passages",
+    titles: "the tab's section titles", timing: "the dates", reportedTitles: "the reported outcomes' titles" };
+  function localOnlyAreas() {
+    var ov = WHATIF[activeProject + "::" + publishedScenario()];
+    if (!isPlainObj(ov)) return [];
+    var out = [];
+    Object.keys(ov).forEach(function (k) {
+      var w = LOCAL_AREA_WORDS[k] || "other settings";
+      if (out.indexOf(w) < 0) out.push(w);
+    });
+    return out;
   }
   // ── THE ONE PLACE A FUNDING WRITE GETS ITS CREDENTIAL (2026-08-28) ───────
   // All three funding tables carry the SAME policy —
@@ -17039,6 +17081,13 @@
       return { title: PUBLIC_BY_ID[id] ? pubTitleOverride(id) : titleOverride(id), hidden: secHidden(id) };
     },
     setPubTitle: setPubTitle,
+    // The page's sub-headings (data-psub), renamed under pubTitles too.
+    pubSubTitle: function (id) { return PUBLIC_SUBHEAD_IDS.indexOf(id) >= 0 ? pubTitleOverride(id) : null; },
+    publicSubheadIds: function () { return PUBLIC_SUBHEAD_IDS.slice(); },
+    // A noncredit outcome's label and title, renamed on the page (Year 1, the
+    // year the page shows), and what this browser holds that the page does not.
+    setNcOutcomeWords: setNcOutcomeWords,
+    localOnlyAreas: localOnlyAreas,
     pubLinkLabel: pubLinkLabel,
     setPubLinkLabel: setPubLinkLabel,
     publicLinkIds: function () { return PUBLIC_LINK_IDS.slice(); },
