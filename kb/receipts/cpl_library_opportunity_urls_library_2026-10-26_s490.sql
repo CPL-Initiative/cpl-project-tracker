@@ -44,3 +44,37 @@ update public.cpl_library set url = 'https://cpl-initiative.github.io/cpl-projec
   where slug = 'cpl-opportunity-santiago-canyon-visual' and url = 'https://cpl-initiative.github.io/cpl-project-tracker/cpl-opportunity/?college=Santiago%20Canyon%20College' and updated_at = '2026-10-23 22:14:22.319777+00';
 update public.cpl_library set url = 'https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-opportunity/?college=Sierra%20College', updated_by = 'S490 SkyGooseberry'
   where slug = 'cpl-opportunity-sierra-visual' and url = 'https://cpl-initiative.github.io/cpl-project-tracker/cpl-opportunity/?college=Sierra%20College' and updated_at = '2026-10-23 22:14:22.319777+00';
+
+-- And one cpl_memory row (Sam's Sierra to-do of ~15:30Z), INSERT-only under author/actor library-s490-urls-2026-10-26.
+-- ROLLBACK: delete from public.cpl_memory_log where actor = 'library-s490-urls-2026-10-26';
+--           delete from public.cpl_memory where author = 'library-s490-urls-2026-10-26';
+insert into public.cpl_memory (slug, kind, title, summary, detail, plain, tags, status, source, verified_by, verified_at, event_date, author, related)
+select x.slug, x.kind, x.title, x.summary, x.detail, x.plain, x.tags, x.status, x.source, x.verified_by,
+       case when x.verified_by is null then null else now() end, '2026-10-26'::date, 'library-s490-urls-2026-10-26', x.related
+from jsonb_to_recordset($json$[
+ {
+  "slug": "sam-sierra-no-internal-tool-names-todo-2026-10-26",
+  "kind": "decision",
+  "title": "Sam, to do later: Sierra uses what the internal tools hold but never names them or sends a reader to a page the reader cannot open",
+  "summary": "Sam, 2026-10-26 ~15:30Z (S490): his Sierra Training instruction (sierra_guidance 910ebe25) told her to check COCI Lookup and the Catalog Commons, and she referred a reader to those tabs, which are not public. \"She should reference the information from the resources but not name them.\" For later: reword his row and add the standing rule.",
+  "detail": "The sierra-false-absences lane holds his words, two steps (check what cpl-chat can read of COCI's course titles and the common course reference; reword his row by a guarded UPDATE with before-values, his rows win) and a proposed wording.",
+  "plain": "Sierra should give readers the courses and colleges, never point them at staff-only tools.",
+  "tags": [
+   "sierra",
+   "guidance",
+   "public"
+  ],
+  "status": "verified",
+  "source": "Sam, in session S490, 2026-10-26",
+  "verified_by": "Sam",
+  "related": []
+ }
+]$json$::jsonb)
+  as x(slug text, kind text, title text, summary text, detail text, plain text, tags text[], status text,
+       source text, verified_by text, related text[])
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select m.id, 'library-s490-urls-2026-10-26', 'create', 'S490: ' || m.slug, to_jsonb(m)
+from public.cpl_memory m
+where m.author = 'library-s490-urls-2026-10-26'
+  and not exists (select 1 from public.cpl_memory_log g where g.memory_id = m.id and g.actor = 'library-s490-urls-2026-10-26');

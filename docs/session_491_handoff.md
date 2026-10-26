@@ -57,6 +57,9 @@ One other session ran beside S490 on an unrelated topic (*Student-centered CCR c
    RN 03570 on Fable's guarded reading (lessons S488).
 6. **Later, Sam's:** the Commons figures to-do (start with the 500 his screenshot showed on `coci_college_programs`; an SQL
    read at 15:30Z returned 20,282 active programs, so the fault is the browser's read); the outcomes braindump.
+   **Sierra names tabs the public cannot open** (Sam, ~15:30Z): his instruction `sierra_guidance` 910ebe25 tells her to
+   check *COCI Lookup* and the *Catalog Commons*, and she sent a reader there. The sierra-false-absences lane holds his
+   words, the two steps and a proposed rewording.
 7. **Waiting, as before:** the Coordinator Guide comments; the two S448 offers; the Noncredit CPL Lead; the Baking and
    Nursing JPEGs; Sierra's logo link; one *utilize* in the proposed §55050 text; the two summit refresh notes. The
    implementation-funding lane reads 20,949 bytes against 20,000: move a finished section when that lane next moves.
