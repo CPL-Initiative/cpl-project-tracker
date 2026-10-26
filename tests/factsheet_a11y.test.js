@@ -264,6 +264,26 @@ check("the toolbar's controls are words (the Curate pencil is one of the 26 Sam 
     (bare.length ? " (" + [...new Set(bare)].join(", ") + ")" : ""), bare.length === 0);
 }
 
+// ── (h) the S481 UI pass ──
+// The sweep passed clean while the contact card's Dashboard link carried
+// rel="noopener aria-label="…": one missing quote folded the label into rel, so
+// the browser dropped it and parsed its words as junk attributes. No contrast or
+// target check reads markup like that, so the guard reads the source.
+check("no attribute value swallows the next attribute (an unclosed quote)",
+  !/="[^"<>]*\s[\w-]+="/.test(HTML.replace(/<!--[\s\S]*?-->/g, "")));
+// The 16 ↗ marks went the way Sierra's did (tests/sierra_surfaces_aligned.test.js
+// §4): the warning that a link opens a new tab moved into a clipped .sr-only
+// span instead of being deleted.
+check("no ↗ renders on the Fact Sheet", HTML.indexOf("↗") === -1);
+const resLinks = [...d.querySelectorAll("a.res-title, .cpl-stories-all a")];
+check("every resource link that opens a new tab says so to a screen reader (" + resLinks.length + ")",
+  resLinks.length >= 16 && resLinks.every((a) => a.getAttribute("target") !== "_blank" ||
+    /\(opens in a new tab\)/.test((a.querySelector(".sr-only") || {}).textContent || "")));
+// The naming rule (2026-07-03): the program is the CPL Initiative. Sam's own
+// title in the contact card is his and stays as his profile gives it.
+check("the program reads CPL Initiative, outside Sam's title",
+  (HTML.replace(/Chief Ambassador, California MAP Initiative/, "").match(/MAP Initiative/g) || []).length === 0);
+
 // ── report ──
 let failed = 0;
 for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }
