@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/supabase_cpl_funding_nc_attestation_lead.sql",
+ "name": "cpl_funding_nc_attestation_lead_2026_10_26_s492",
+ "version": "20261026195130",
+ "sha256": "c97813b41129af3ffd16afd6a32c5734b0295a167bfb0e8d346796f240940287",
+ "run": "40390095164",
+ "status": 201,
+ "response": "[{\"column_name\":\"lead_assignment\"},{\"column_name\":\"lead_meets\"},{\"column_name\":\"lead_types\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

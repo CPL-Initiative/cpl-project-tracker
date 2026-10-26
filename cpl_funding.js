@@ -244,7 +244,10 @@
     // (a checkbox glyph is banned rendered text), checked when met. The boxes
     // print their state: print-color-adjust keeps the fill a printer would
     // otherwise drop with the white check on it.
-    ".cf-conds { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; color: var(--text-strong); }",
+    // Two columns: the labels, then their boxes, so the noncredit row's boxes sit under the institution's.
+    ".cf-conds { display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: baseline; gap: 6px 12px; color: var(--text-strong); }",
+    ".cf-conds-items { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; min-width: 0; }",
+    "@media (max-width: 560px) { .cf-conds { grid-template-columns: minmax(0, 1fr); } }",
     ".cf-conds-h { font-weight: 700; color: var(--text-strong); }",
     ".cf-cond { display: inline-flex; align-items: center; gap: 6px; font-weight: 400; color: var(--text-strong); }",
     ".cf-box { position: relative; flex: 0 0 auto; box-sizing: border-box; width: 14px; height: 14px;" +
@@ -387,7 +390,7 @@
     ".cplfund-ncout-rule { margin: 0 0 10px; font-size: .85rem; }",
     ".cplfund-ncreported { margin: 10px 0 0; font-size: .85rem; }",
     ".cplfund-ncoutrow .cf-subname { color: var(--text-muted); }",
-    ".cf-conds-nc { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; margin-left: 10px; }",
+    ".cf-conds-nc { display: contents; }",
     "@media (max-width: 560px) { .cplfund-prio { grid-template-columns: minmax(0, 1fr); } }",
     // ── the statutory goal spine (§78093.2(d)(1)) ─────────────────────────
     // First Light: warm monochrome base, tokens only, no raw hex. Colour is
@@ -1158,6 +1161,10 @@
     ".cplfund-ncattest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 8px 12px; }",
     ".cplfund-ncattest-grid label { display: flex; flex-direction: column; gap: 3px; font-size: .8rem; color: var(--text-muted); }",
     ".cplfund-ncattest-grid .cplfund-ncattest-wide { grid-column: 1 / -1; }",
+    ".cplfund-ncattest-types { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; min-width: 0; }",
+    ".cplfund-ncattest-types legend { padding: 0; margin: 0 0 3px; font-size: .8rem; color: var(--text-muted); }",
+    ".cplfund-ncattest-grid .cplfund-ncattest-check { flex-direction: row; align-items: center; gap: 6px; min-height: 24px; font-size: .86rem; color: var(--text-body); }",
+    ".cplfund-ncattest-grid .cplfund-ncattest-check input { width: auto; min-height: 0; margin: 0; }",
     ".cplfund-ncattest-grid input, .cplfund-ncattest-grid select, .cplfund-ncattest-grid textarea { font-family: inherit; font-size: .86rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 5px 8px; min-height: 24px; box-sizing: border-box; width: 100%; }",
     ".cplfund-ncattest-grid input:focus, .cplfund-ncattest-grid select:focus, .cplfund-ncattest-grid textarea:focus { border-color: var(--gold-accent); }",
     // Row-level one-click opt-in CTA (Sam, 2026-08-05) — a chip beside the college name.
@@ -5727,8 +5734,8 @@
     var rec = { college: college, fiscal_year: fy, status: "self_attested", source: "self",
       coordinator_name: form.coordName, coordinator_title: form.coordTitle,
       attestor_name: form.name, attestor_title: form.title, attestor_email: form.email,
-      nc_awarded_count: form.count == null ? null : form.count,
-      attested_exhibits: form.exhibits || null, portfolio_course: form.course || null };
+      lead_types: form.leadTypes && form.leadTypes.length ? form.leadTypes : null,
+      lead_assignment: form.assignment || null, lead_meets: form.meets || null };
     NCATTEST_UI[college] = { open: true, submitting: true };
     if (!remoteEnabled()) {
       ELIG.ncAttest[college] = { college: college, fiscal_year: fy, status: "self_attested",
@@ -5757,17 +5764,17 @@
     var t = function (k) { return String(get(k) == null ? "" : get(k)).trim(); };
     var form = { coordName: t("coordName"), coordTitle: t("coordTitle"),
       name: t("name"), title: t("title"), email: t("email"),
-      course: t("course"), exhibits: t("exhibits"), count: null };
-    var cnt = t("count");
+      leadTypes: (get("leadTypes") || []).filter(function (v) {
+        return NC_LEAD_TYPES.some(function (o) { return o.val === v; });
+      }), assignment: t("assignment"), meets: t("meets") };
     if (!form.coordName) return { error: "Please enter the Noncredit CPL Lead's name." };
     if (!form.coordTitle) return { error: "Please enter the Noncredit CPL Lead's title." };
+    if (!form.leadTypes.length) return { error: "Please check what kind of employee the Noncredit CPL Lead is." };
+    if (!form.assignment) return { error: "Please tell us briefly about the Lead's assignment." };
+    if (!form.meets) return { error: "Please say how often the Lead meets with credit CPL colleagues." };
     if (!form.name) return { error: "Please enter your name." };
     if (NC_ATTEST_TITLES.map(function (o) { return o.val; }).indexOf(form.title) === -1) return { error: "Please choose your title." };
     if (!OPTIN_EMAIL_RE.test(form.email)) return { error: "Please enter a valid college email address (name@college.edu)." };
-    if (cnt) {
-      if (!/^\d+$/.test(cnt) || Number(cnt) > 100000) return { error: "Please enter the count as a whole number, or leave it blank." };
-      form.count = Number(cnt);
-    }
     return { form: form };
   }
   // The CO's writes: Reject, Re-confirm, Remove, keyed by the row's own college
@@ -5865,11 +5872,12 @@
     // The noncredit share's own conditions (Scenario 4), after the
     // institution's: a credit college with a noncredit share meets these for
     // that share alone; a standalone's list above already is this list.
-    var ncItems = (!c.nco && ncOutcomesMode() && (c.nc_award || 0) > 0.5) ? ncCondList(college) : [];
+    var ncItems = (!c.nco && ncOutcomesMode() && (c.nc_award || 0) > 0.5) ? ncCondList(college) : [], ncRow = "";
     if (ncItems.length) {
-      items += '<span class="cf-conds-nc"><strong class="cf-conds-h">Noncredit share:</strong>' + ncItems.map(one).join("") + "</span>";
-    }
-    if (ncAttestShown(c)) items += ncAttestCtlHtml(college);
+      // Its own row of the grid, so its label and boxes line up under the institution's (Sam, 2026-10-26).
+      ncRow = '<span class="cf-conds-nc"><strong class="cf-conds-h">Noncredit share:</strong><span class="cf-conds-items">' +
+        ncItems.map(one).join("") + (ncAttestShown(c) ? ncAttestCtlHtml(college) : "") + "</span></span>";
+    } else if (ncAttestShown(c)) items += ncAttestCtlHtml(college);
     // The CO's controls ride the same line, for a signed-in reviewer only and
     // never in the public preview (the preview is what a college reads). A
     // self-attestation stands until the CO rejects it (attest-first), so the
@@ -5886,7 +5894,7 @@
         (row.status === "confirmed" ? "Revoke" : "Reject") + "</button></span>";
     }
     return '<div class="cplfund-basestatus cf-conds"><strong class="cf-conds-h">Minimum Conditions:</strong>' +
-      items + ctl + "</div>";
+      '<span class="cf-conds-items">' + items + ctl + "</span>" + ncRow + "</div>";
   }
   // The per-college opt-in affordance shown in the row drill-in — a plain button
   // that expands to a short attestation form. Visible to EVERYONE (this is the
@@ -5940,6 +5948,11 @@
   // everyone, as the opt-in form is (a college attests from the public page),
   // so it uses no CURATE_ATTRS attribute. Shown only once the published view
   // has answered: before the table exists there is nothing to write to.
+  // The Lead's employee type (Sam, 2026-10-26): one or more. Mirrors cna_lead_chk.
+  var NC_LEAD_TYPES = [
+    { val: "staff", label: "Staff" }, { val: "ft_faculty", label: "FT Faculty" },
+    { val: "pt_faculty", label: "PT Faculty" }, { val: "administrator", label: "Administrator" },
+  ];
   function ncAttestAffordanceHtml(c) {
     var college = c.college;
     if (!ELIG.ncAttestOk || !ncAttestShown(c)) return "";
@@ -5965,24 +5978,27 @@
       return "<label>" + label + "<input " + attrs + ' data-ncattestfield="' + key + '"></label>';
     };
     return '<div class="cplfund-optin cplfund-optin-form cplfund-ncattest" data-ncattestwrap="' + esc(college) + '">' +
-      '<div class="cplfund-optin-head">Noncredit attestation for <strong>' + esc(nm) + "</strong>, " + esc(fy) + "</div>" +
-      '<div class="cplfund-optin-note cplfund-ncattest-intro">' + (ncTeamShown()
-        ? "The noncredit share of the award waits on two conditions: a Noncredit CPL Lead named and published on the college&#39;s CPL landing page, and a strike team that Lead leads for noncredit CPL. The college attests to both once each fiscal year."
-        : "The noncredit share of the award waits on a Noncredit CPL Lead named and published on the college&#39;s CPL landing page, who meets regularly with the college&#39;s CPL Coordinator. The college attests to it once each fiscal year.") + '</div>' +
+      '<div class="cplfund-optin-head">Noncredit attestation for ' + esc(nm) + ", " + esc(fy) + "</div>" +
+      // Sam, 2026-10-26 (S491): the intro is his sentence, and the Lead's employee type, assignment and
+      // meetings replace the optional counts, course and exhibits.
+      '<div class="cplfund-optin-note cplfund-ncattest-intro">Complete the items below to qualify for noncredit CPL funding.</div>' +
       '<fieldset class="cplfund-ncattest-set"><legend>The Noncredit CPL Lead</legend><div class="cplfund-ncattest-grid">' +
       f("coordName", "Name", 'type="text" maxlength="120" autocomplete="off" placeholder="First Last"') +
       f("coordTitle", "Title", 'type="text" maxlength="80" autocomplete="off" placeholder="Noncredit CPL Lead"') +
+      '<fieldset class="cplfund-ncattest-wide cplfund-ncattest-types"><legend>The Lead is</legend>' +
+      NC_LEAD_TYPES.map(function (o) {
+        return '<label class="cplfund-ncattest-check"><input type="checkbox" data-ncattestlead="' + esc(o.val) + '"> ' + esc(o.label) + "</label>";
+      }).join("") + "</fieldset>" +
+      '<label class="cplfund-ncattest-wide">Tell us briefly about the assignment' +
+      '<input type="text" maxlength="300" autocomplete="off" placeholder="For example: OT 10 hours per week, or 20% release fall and spring" data-ncattestfield="assignment"></label>' +
+      '<label class="cplfund-ncattest-wide">How often does the Noncredit CPL Lead meet with credit CPL colleagues?' +
+      '<input type="text" maxlength="120" autocomplete="off" placeholder="For example: every two weeks" data-ncattestfield="meets"></label>' +
+      '<p class="cplfund-optin-note cplfund-ncattest-wide">The CPL Coordinator and the Noncredit CPL Lead may be the same person.</p>' +
       "</div></fieldset>" +
       '<fieldset class="cplfund-ncattest-set"><legend>You, attesting for the college</legend><div class="cplfund-ncattest-grid">' +
       f("name", "Your name", 'type="text" maxlength="120" autocomplete="name" placeholder="First Last"') +
       "<label>Your title<select data-ncattestfield=\"title\">" + titleOpts + "</select></label>" +
       f("email", "College email", 'type="email" maxlength="160" autocomplete="email" placeholder="you@college.edu"') +
-      "</div></fieldset>" +
-      '<fieldset class="cplfund-ncattest-set"><legend>Reported this year (optional)</legend><div class="cplfund-ncattest-grid">' +
-      f("count", "Former noncredit students the college awarded CPL, from its student records", 'type="number" min="0" max="100000" step="1" inputmode="numeric"') +
-      f("course", "Control number of the CPL portfolio course, from COCI", 'type="text" maxlength="60" autocomplete="off" placeholder="CCC000000000"') +
-      '<label class="cplfund-ncattest-wide">Exhibits the college built or adopted for the program, by MAP exhibit ID or title' +
-      '<textarea rows="2" maxlength="2000" data-ncattestfield="exhibits"></textarea></label>' +
       "</div></fieldset>" +
       '<div class="cplfund-optin-err" data-ncattesterr="' + esc(college) + '" role="alert"></div>' +
       '<div class="cplfund-optin-actions">' +
@@ -5994,7 +6010,7 @@
       '<div class="cplfund-optin-note">By submitting, you attest that you are an administrator of ' + esc(nm) +
       ", that the Noncredit CPL Lead named above is published on the college&#39;s CPL landing page, and that the Lead " +
       (ncTeamShown() ? "leads a strike team for noncredit CPL in " : "meets regularly with the college&#39;s CPL Coordinator in ") +
-      esc(fy) + ". The Lead&#39;s name and title appear publicly beside the college&#39;s conditions. Your name, your email and the reported figures go to the Chancellor&#39;s Office alone. The Chancellor&#39;s Office may reject an attestation.</div>" +
+      esc(fy) + ". The Lead&#39;s name and title appear publicly beside the college&#39;s conditions. Your name, your email and the Lead&#39;s assignment go to the Chancellor&#39;s Office alone. The Chancellor&#39;s Office may reject an attestation.</div>" +
       "</div>";
   }
   // The CO's view of the attestation, on the Minimum Conditions line: who
@@ -6012,6 +6028,10 @@
       if (rev.nc_awarded_count != null) bits.push(esc(fmtInt(rev.nc_awarded_count)) + " former noncredit students awarded CPL");
       if (rev.portfolio_course) bits.push("portfolio course " + esc(rev.portfolio_course));
       if (rev.attested_exhibits) bits.push("exhibits: " + esc(rev.attested_exhibits));
+      if (rev.lead_types && rev.lead_types.length) bits.push("Lead: " + esc(rev.lead_types.map(function (v) {
+        var o = NC_LEAD_TYPES.filter(function (x) { return x.val === v; })[0]; return o ? o.label : v; }).join(", ")));
+      if (rev.lead_assignment) bits.push("assignment: " + esc(rev.lead_assignment));
+      if (rev.lead_meets) bits.push("meets credit CPL colleagues " + esc(rev.lead_meets));
     }
     var k = esc(college);
     var btns = ncAttestStanding(att)
@@ -12488,7 +12508,7 @@
         : crA.text;
       var CELL = {
         college: '<td class="t cf-subname" title="' + esc(prioLabelTip(p, slot, np)) + '">' +
-          rowNameHtml(p.label, p.title, prioGoals(slot, p.pos, p).keys) + "</td>",
+          rowNameHtml(p.label + " (CR)", p.title, prioGoals(slot, p.pos, p).keys) + "</td>",
         cr_award: maxCell(crF, isF, p, "cr"),
         cr_current: curCell(crF, crA, isF, null),
         nc_award: ncF ? maxCell(ncF, true, np, "nc") : dash,
@@ -15654,6 +15674,10 @@
         });
         if (!wrap) return;
         var res = ncAttestFormRead(function (k) {
+          if (k === "leadTypes") {
+            return Array.prototype.map.call(wrap.querySelectorAll("[data-ncattestlead]:checked"),
+              function (b) { return b.getAttribute("data-ncattestlead"); });
+          }
           var el = wrap.querySelector('[data-ncattestfield="' + k + '"]');
           return el ? el.value : "";
         });
