@@ -1,7 +1,7 @@
 ---
 title: A capped instruction list is a zero-sum budget, and the cap that binds is rarely the one on display
 created: 2026-08-21
-updated: 2026-08-21
+updated: 2026-10-26
 tags: [methodology, sierra, governance, prompt, curation, pitfall]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -103,3 +103,21 @@ zero-sum budget. Ask of each:
 - The repo's own recurring lesson — *"a settled ruling does not enforce itself,
   the consumer has to change"* — has a mirror here: **a settled ruling can also be
   quietly un-enforced by a consumer that only ever reads the newest ten.**
+
+## 2026-10-26 (S491): the meter must name what goes, and a standing rule should not be in the list
+
+Two months later the same list read 8,693 of 9,000 characters on My College. The tab's meter said *96%, getting full*,
+which was true and useless: the function adds the newest first and **breaks** at the first instruction that does not
+fit, so what goes is always the oldest, and the oldest was the naming rule, carried nowhere else in the prompt. One
+new instruction over about 300 characters would have removed it from every My College answer without a message.
+
+- **Report the consequence, not the level.** The wording check counts the draft the way the function counts and names
+  the instruction that would stop reaching the model (`sierra_wording_check.js`; its test lifts the function's own
+  `guidanceBlock()` rather than re-implementing it, so the two cannot drift).
+- **A standing rule does not belong in a list ordered by recency.** The oldest entry of a newest-first list is by
+  construction the first to go, and a standing rule is by construction old. Sam moved the naming rule into the
+  stable prompt (Open Asks Sheet 132 card 2, 2026-10-26); the list keeps the reactive instructions it was built for.
+- **Read the list for faults while you are there.** The first run of the check found four instructions that changed
+  what the model said: a link one letter off, an unclosed quotation, an instruction cut at the old 500-character cap
+  (saved the day the cap was raised), and an ask to open a website the model cannot open.
+
