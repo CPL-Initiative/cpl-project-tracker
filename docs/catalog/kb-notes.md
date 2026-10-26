@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-563 document(s).
+564 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -339,6 +339,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Follow a credit recommendation to the course that receives it](../kb-notes/methodology-follow-the-recommendation-to-the-course-that-receives-it.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Forward-looking display for a curate-now / re-key-later split](../kb-notes/methodology-forward-looking-display-curate-now-rekey-later.md) | methodology | published | 2026-06-24 | 2026-06-24 |
 | [Funding is restricted by its earning rule, not by a label](../kb-notes/methodology-funding-is-restricted-by-its-earning-rule-not-by-a-label.md) | methodology | published | 2026-08-31 | 2026-08-31 |
+| [Geometry is half an accessibility audit](../kb-notes/methodology-geometry-is-half-an-accessibility-audit.md) | methodology | published | 2026-10-26 | 2026-10-26 |
 | [Grounded lexical confidence: ranking a text against a taxonomy (finder-not-decider)](../kb-notes/methodology-grounded-lexical-cip-confidence.md) | methodology | published | 2026-07-17 |  |
 | [Group an audit by the decision, not by the symptom](../kb-notes/methodology-group-an-audit-by-the-decision-not-the-symptom.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Grouping a flat list into containers silently breaks every querySelector that assumed one](../kb-notes/methodology-grouping-a-flat-list-breaks-single-container-wiring.md) | methodology | published | 2026-09-01 | 2026-09-01 |

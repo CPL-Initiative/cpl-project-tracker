@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 563,
+   "count": 564,
    "docs": [
     {
      "created": "2026-08-14",
@@ -6301,6 +6301,24 @@
      "title": "Funding is restricted by its earning rule, not by a label",
      "type": "methodology",
      "updated": "2026-08-31"
+    },
+    {
+     "created": "2026-10-26",
+     "governs": [
+      "scripts/a11y.js",
+      "a11y.config.js"
+     ],
+     "path": "docs/kb-notes/methodology-geometry-is-half-an-accessibility-audit.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "accessibility",
+      "wcag",
+      "public-pages"
+     ],
+     "title": "Geometry is half an accessibility audit",
+     "type": "methodology",
+     "updated": "2026-10-26"
     },
     {
      "created": "2026-07-17",
@@ -16175,8 +16193,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 462,
+   "count": 463,
    "docs": [
+    {
+     "created": "2026-10-26",
+     "governs": [],
+     "n": 493,
+     "path": "docs/session_493_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "accessibility",
+      "sierra",
+      "decision-sheets"
+     ],
+     "title": "Session 493 handoff: the public funding page ready for the CPL Summit, the attestation form shipped, the naming rule built in",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-26",
      "governs": [],
@@ -24105,5 +24140,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1277
+ "total": 1279
 }

@@ -794,3 +794,18 @@ Sam: *"the current mobile view is mostly consumed by the header text."* The intr
   is `Receipt: supabase migrate` shows zero checks; push the next real change before the merge (branch_policy).
 - **A `cpl_memory` summary is capped at 400 characters** (`cpl_memory_summary_check`); one long summary rolled the
   whole receipt back, the series record with it. Count before committing.
+
+## S492 SkyCloudberry (2026-10-26): the naming rule switched off, and what it took
+
+- **Three migrate runs for one guarded UPDATE.** 40387777840 returned 502 and changed nothing; 40388760438 failed
+  `sierra_guidance_note_len` (a note holds 300 characters, and the suffix took Sam's 114 past it); 40394964778 applied.
+  To run the same file again, change a line in `.apply` (the `name`); the gate runs only on a difference from main.
+- **Read the before-values live, not from the draft.** S491's receipt named `updated_by 'session-97'` and a null note;
+  the row held `updated_by` null and Sam's dated note (`session-97` is `created_by`). The UPDATE now appends to his
+  note, so the rollback restores the row. A receipt written before its write is a plan; read the row at write time.
+- **The repo's Supabase guard blocks a direct UPDATE from the session** (PreToolUse hook): data writes go through a
+  committed receipt and supabase-migrate, which is also the record.
+- **Proving a built-in rule means switching the row off first.** The post-deploy smoke passed 7z with the row still on,
+  which proves nothing about the built-in copy; the smoke after the switch-off (run 40396104138) is the proof.
+- **The smoke's catalog modes time out some days** (statement timeout 57014 on `search_college_programs` and
+  `college_program_courses`: runs 369, 371, 372, 376). Read which modes failed before calling a smoke red for a change.
