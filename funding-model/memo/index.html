@@ -131,11 +131,18 @@ main{max-width:880px; margin:0 auto; padding:12px clamp(16px,4vw,28px) 40px}
     try {
       box.innerHTML = T._buildMemo("memo");
       // Wide tables scroll inside their own box on a phone, never the page.
+      // Each region is named for what its table holds, so no two share a name
+      // (axe landmark-unique, 2026-10-26): the summary has no header row (the
+      // awards, base, cap and range); the table with one lists each district's
+      // institutions and their max awards. A further table takes a number.
+      var names = {};
       Array.prototype.forEach.call(box.querySelectorAll("table"), function (t) {
         if (t.parentNode.className === "tbl") return;
         var w = document.createElement("div"); w.className = "tbl";
         w.setAttribute("role", "region"); w.setAttribute("tabindex", "0");
-        w.setAttribute("aria-label", "Allocation table");
+        var name = t.tHead ? "Max award by district and institution" : "Allocation summary";
+        names[name] = (names[name] || 0) + 1;
+        w.setAttribute("aria-label", names[name] > 1 ? name + " " + names[name] : name);
         t.parentNode.insertBefore(w, t); w.appendChild(t);
       });
       Array.prototype.forEach.call(box.querySelectorAll("th"), function (th) { if (!th.hasAttribute("scope")) th.setAttribute("scope", "col"); });
