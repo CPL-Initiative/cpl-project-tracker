@@ -1,0 +1,51 @@
+{
+ "_readme": "S485 SkyElderberry, 2026-10-26. The last two of Hartnell's eight noncredit programs read incomplete after S484's course_hours reconcile: the courses/search answer gave no credits.lectureHours or labHours for TAC326 (Theatre Performance 44161, 630 hours) or BUS690 and BUS699 (Workforce and Academic Readiness 44574, 432). This read prints the stretch of each answer around those codes and the hours fields, to see which field holds their hours. Two tabs, no model call.",
+ "college": "Hartnell College",
+ "outside_hosts": {
+  "coursedog.com": "Hartnell's catalog vendor hosts the catalog itself (hartnell.catalog.prod.coursedog.com) and its data (app.coursedog.com); the registry's catalog address is on this host."
+ },
+ "questions": {
+  "course_hours": "Which field of the courses/search answer carries TAC326's hours and BUS690's and BUS699's (lectureHours, labHours, contactHours, otherHours, a total, or none), and whether they sum with the rest to 630 and 432."
+ },
+ "keywords": [
+  "[Hh]ours?",
+  "TAC ?32\\d",
+  "BUS ?6\\d\\d"
+ ],
+ "pages": [
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.TPER/requirements-ipyf8",
+   "answers": [
+    "course_hours"
+   ],
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ],
+   "network_find": [
+    "TAC326",
+    "TAC 326",
+    "otherHours",
+    "contactHours",
+    "totalHours"
+   ]
+  },
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.WAR/requirements-ipyf8",
+   "answers": [
+    "course_hours"
+   ],
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ],
+   "network_find": [
+    "BUS690",
+    "BUS699",
+    "BUS 690",
+    "BUS 699",
+    "otherHours"
+   ]
+  }
+ ]
+}
