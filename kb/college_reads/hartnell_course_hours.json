@@ -1,0 +1,31 @@
+{
+ "_readme": "S484 SkyToyon, 2026-10-26. Hartnell's eight noncredit programs (measure hours) list courses with no hours, so their arithmetic reads incomplete. The Requirements tab's scripts POST courses/search to app.coursedog.com and each course object carries its hours (handoff 458: lectureHours and labHours), past the 1,500 characters the reader prints of a body. This read loads two noncredit Requirements tabs and prints the stretch of each answer around the hours fields and the course codes, to learn their shape before a reconcile kind reads them. Two tabs, no model call.",
+ "college": "Hartnell College",
+ "outside_hosts": {
+  "coursedog.com": "Hartnell's catalog vendor hosts the catalog itself (hartnell.catalog.prod.coursedog.com) and its data (app.coursedog.com); the registry's catalog address is on this host."
+ },
+ "questions": {
+  "course_hours": "The shape of each course's hours in the courses/search answer (lectureHours, labHours, any total or contact hours), and whether ENGM 620 and 622's hours sum to the program's 216 and BUS 650, 660, 690 and 699's to 432."
+ },
+ "keywords": [
+  "[Hh]ours?",
+  "ENGM ?62",
+  "BUS ?6\\d\\d"
+ ],
+ "pages": [
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.ENGM.BEG/requirements-ipyf8",
+   "answers": ["course_hours"],
+   "network": true,
+   "network_hosts": ["app.coursedog.com"],
+   "network_find": ["lectureHours", "labHours", "contactHours", "ENGM622", "ENGM 622"]
+  },
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/NCCT.WAR/requirements-ipyf8",
+   "answers": ["course_hours"],
+   "network": true,
+   "network_hosts": ["app.coursedog.com"],
+   "network_find": ["lectureHours", "labHours", "contactHours", "BUS650", "BUS 650"]
+  }
+ ]
+}
