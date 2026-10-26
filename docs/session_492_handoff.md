@@ -40,6 +40,9 @@ S491 NEXT.
 
 ## Open work, in order
 
+0. **Merge what S491 left open, on its checks:** this checkpoint (CPL-Initiative/cpl-project-tracker#2477; its
+   memory receipt applies through `.apply`, so read `migration_cpl_memory_s491_rulings_*.json`) and the vault's
+   samueltlee/CPLBrain#503 (Sheet 132 answered, the S491 session note). The post-deploy smoke is run 40384144100.
 1. **Finish the naming-rule move.** Read the smoke run S491 dispatched after the deploy (cpl-chat-smoke, main, ~19:10Z;
    modes 7y and 7z). On green, set `kb/migrations/.apply` to `kb/receipts/sierra_guidance_naming_rule_builtin_2026-10-26_s491.sql`
    on a branch, push, read row cb226a48 back as inactive, then push one real change (a runner's receipt commit starts no
@@ -62,5 +65,5 @@ S491 NEXT.
 
 ## Let go
 
-S491 drops its subscriptions on #2476 and samueltlee/CPLBrain#503 at sign-off and holds no check-in. Sheet 132's and
+S491 drops its subscriptions on #2477 and samueltlee/CPLBrain#503 at sign-off and holds no check-in. Sheet 132's and
 the mock's artifact watches lapse with the session.
