@@ -63,79 +63,10 @@ Own-HTML catalogs through the sitemap road and College of San Mateo (S404), then
 colleges, ligatures and the hand-filed step (S405), with the lane text those sessions retired: verbatim in
 `docs/program_requirements_harvest_lessons_archive_3.md`.
 
-## S406 SkyIronwood (2026-10-17, hand-opened): the hand-filed catalogs, read from Sam's release copies
+## S406-S407: moved to the archive (S486 compaction)
 
-- **A hand-filed copy is read from where the person posted it (#2199).** Sam posted eight refused colleges' catalog
-  PDFs (and Porterville's two and De Anza's one addendum) into the `catalog-files` release's text, where GitHub files
-  them as attachments. The session's proxy refuses GitHub's attachment host (403, "sessions are bound to their
-  configured repositories"); a runner fetches them. So a record names `copy_url` in place of a committed file, and the
-  read job's first step, `pin`, writes the copy's sha256, size and run the first time a runner fetches it. A pinned
-  hash never changes. The PDFs stay out of git and off the Pages site (CCSF's is 920 pages, American River's 998).
-- **The eight read almost whole.** Capture-only reads ($0) found Porterville 82 of 85 listed programs, Cerro Coso 65
-  of 74, Folsom Lake 107 of 108, De Anza 227 of 243 (its 2025-2026 catalog), Cosumnes River 217 of 219, Sacramento
-  City 204 of 207, CCSF 349 of 371 and American River 368 of 368, each in under eight minutes: one download, no page
-  loads. The four Los Rios colleges print one compiled catalog each, so the PDF reader needed nothing new.
-- **Extraction and loads** (each under the $40 go; $131.00 in all): Cerro Coso $4.87, 52 loaded; Porterville $6.13,
-  76; Folsom Lake $9.43, 104; De Anza $19.66, 210; Sacramento City $18.50, 182; Cosumnes River $18.96, 182; CCSF
-  $23.60, 294; American River $29.85, 327 (07230 took a Cloudflare 502 from the extraction gateway, then
-  re-extracted alone with `force=07230` and loaded). Records placing none of their listed courses stay out of the load: 13, 6, 3, 17, 22,
-  35, 55 and 41; 1,427 loaded in all. CCSF's 55 (16%) is the highest share of the sweep. Four read at random are
-  wrong-page picks the extraction caught and reported as not found (Physics 2.0 drew course descriptions, pages
-  795-797; Editorial Management and Design drew the Journalism degrees page), so the title gate still admits a
-  one-subject program's course pages in a large catalog. Nothing false loaded; the reader item stays open.
-- **The arithmetic check fails on a degree with a local GE pattern whose units the page does not state**
-  (`incomplete`): Cerro Coso 38 of 65. It is the known shape (record shape 5), not a reading fault.
-- **The registry rows wait on Sam (Open Asks Sheet 90 card 2).** The Supabase guard holds an UPDATE for a person, so
-  the six rows his addresses approved are a paste card. The reads do not wait on them: a hand-filed record is read
-  whatever the row names, and each record carries the copy's address and year.
-- **Cuesta's catalog is on curriQunet** (page reads 39046661339, 39046881195, 39047849634): the home page's Catalog
-  link names the class-search page the census filed; the catalog page links `cuesta.curriqunet.com/catalog/iq/29951`,
-  "Cuesta College Catalog 2026-2027", which answered the reader 200. Sheet 90 card 3.
-
-**Patterns that worked.** One branch per college cut from the code branch before it merged, so the eight captures
-ran while #2199's tests did. A Supabase result too large for the context lands in a file: parse it there and check
-it against a fingerprint computed in the same query, with nothing retyped.
-
-## Moved from the lane (S406 compaction)
-
-- Build `c111c9b05ca0` (S405): 12,424 programs at 92 colleges, adding Coalinga 52, Skyline 42, West Valley 133, Copper
-  Mountain 46, San Diego Continuing Education 90 and Solano 144, with their dated reads and San Mateo's.
-- Sheet 89 card 1's detail (S405): Grossmont's row names the catalog's cover image, and its catalog page links
-  `catalog.gcccd.edu/grossmont/`, the district CourseLeaf host Cuyamaca reads; Ohlone's names its landing page, and
-  its 2026-2027 catalog is PDF chapters, chapter 7 the curriculum guides; Cañada's names its schedule page, and its
-  online catalog `catalog.canadacollege.edu/current/` refuses the reader in robots.txt.
-- The refusing hosts before S406: De Anza and CCSF (Cloudflare 403), American River, Cosumnes River, Folsom Lake and
-  Sacramento City (404), Cerro Coso and Porterville (robots.txt on the PDF). All eight now read from Sam's copies.
-
-## S407 SkyMesquite (2026-10-17): catalog steps for own-HTML PDF colleges, the heading preference, the migrate path
-
-- **A row naming the catalog's page reads through a procedure catalog step.** LA Trade Tech and LA Mission name their
-  catalog pages; each page links its 2026-2027 PDF by words (`2026-2027 LATTC Catalog.pdf`, `2026/2027 Catalog | PDF`),
-  so a catalog step follows that link, as East LA's does, and the row stays as filed. Capture-only reads found 172 of 188
-  and 128 of 140; extraction $13.55 and $8.92; loads 158 and 125 unchecked. College of the Desert the same way (358 of
-  365 found in a 476-page PDF; its page calls the online catalog the most current, an open question on its record).
-- **A catalog step carries its file's year (#2202).** Rows naming a page name no year, so East LA's 120 records loaded
-  with none. `procedure_catalog()` passes a step's `catalog_year`, and `capture()` uses it when the row names none.
-- **The heading preference (#2203).** Among pages whose run covers the list: a clean heading (title and award on a line
-  naming no listed code) or the printed control number first, then a page that is not course descriptions (two or more
-  `CODE - Title (units)` entry lines), then the rest. A transfer degree's award words include a bare "transfer", which
-  every course line printing "Transfer: CSU, UC" carried, so course descriptions read as ADT headings. Free reconciles:
-  CCSF moved 44 picks, 43 onto named headings (Japanese AA from page 111 to 178); LA City 3 of 241. It recovers only 2 of
-  CCSF's 55 skipped: about half are noncredit programs that fall to the codes-only picker, the rest have no other page
-  covering their list. East LA's comparison mixed reader versions (its filed capture predates S403's merge).
-- **A forced re-extract after a reconcile must name its programs.** A reconcile files the new picks, so the next read
-  sees no change and extracts nothing (CCSF run 39055842443 kept 349). Pass `force=<control numbers>`.
-- **A held write goes through the runner, not to Sam.** The Supabase guard holds a session's UPDATE; S406 and S407 put
-  pastes on Sheets 90-91, and Sam (~18:10Z) pointed back to `supabase-migrate.yml`, built 2026-10-13 for exactly this.
-  One committed file per trigger, each statement keeping its receipt's guard, ending with a read-back; the receipt is
-  committed by the runner. Two applied this run, 13 rows.
-- **Procedure records written:** San Mateo, Coalinga, Copper Mountain, San Diego Continuing Education, Skyline, Solano,
-  Cerro Coso, CCSF, De Anza, Porterville (v1); the four Los Rios (v3 merges); LA Trade Tech, LA Mission, Desert (catalog
-  steps). A receipt built from a reconcile or a forced single-program run needs its step text corrected by hand (Solano,
-  American River): the builder labels every filed read as a full extraction.
-
-**Patterns that worked.** Page reads of the catalog pages before any capture (two runs named all six catalogs). Dated
-reads checked against fingerprints computed in SQL, counts and titles both.
+The hand-filed catalogs read from Sam's release copies (S406), then catalog steps for own-HTML PDF colleges, the heading preference and the migrate path (S407), with the lane text S406 retired: verbatim in
+`docs/program_requirements_harvest_lessons_archive_3.md`.
 
 ## S408 SkyAgave (2026-10-17): a run of numbers after one subject, a list marker at a line's end, the eight-college wave
 
@@ -633,6 +564,22 @@ agents; a per-college tab; an agent per college that the college and the MAP
 team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
+
+## S486 SkyQuince (2026-10-26, the CPL Queue routine): Hartnell's double-count words read as the overlap
+
+- **A page's own words carry a ruling past the case it was made on.** Sheet 82 card 2 allowed the overlap for transfer
+  degrees because Cal-GETC was the case in front of Sam; Hartnell's tabs state the same rule for local degrees ("Students
+  can double-count required courses and courses for General Education."). The reconcile `set` step records it as
+  `ge_overlap: true` (the kind already took a boolean, `degree_total_minimum`), and `degree_verdict` reads it beside
+  `transfer_degree`. Reconcile 40285320209 (free) and reread 40287110123: Vocational Nursing 39248 (80-89 against 63),
+  Addiction Studies 19718 (63 against 60) and Agricultural Mechatronics 43809 (70-79 against 60) pass; Hartnell 76 to 79.
+- **A new reconcile field joins the confirm carry basis.** `tests/program_requirements_college_test.py` requires every field
+  a step fills to be one `program_record_carry_basis` leaves out, so the function changed with the step (supabase-migrate
+  run 40285298395); otherwise a confirmed record would lose its confirm on the next reread for a flag alone.
+- **The transfer tabs print the same words**, so the step re-filed 52 transfer records with the flag and no verdict change.
+  As in S484, every record whose verdict stood was restored before `step=reread`, which then posted three.
+- **The display build needs openpyxl** (`python3 -m pip install openpyxl`; the bare `pip` here installs to another
+  interpreter). Build 8052e240575a changed only the build stamp in `cpl_pathways_roep_data.js`.
 
 ## S485 SkyElderberry (2026-10-26, the CPL Queue routine): Hartnell's last hours and its degree failures, read
 
