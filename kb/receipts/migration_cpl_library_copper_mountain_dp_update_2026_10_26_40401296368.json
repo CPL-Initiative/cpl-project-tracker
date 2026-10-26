@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_copper_mountain_dp_update_2026-10-26.sql",
+ "name": "cpl_library_copper_mountain_dp_update_2026_10_26",
+ "version": "20261026210758",
+ "sha256": "93cb472890ae75cff98d2b1367c0824eca4b6dd7b9c4e95edef9577bda56e92b",
+ "run": "40401296368",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
