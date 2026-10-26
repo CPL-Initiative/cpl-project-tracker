@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Record which statewide credit recommendations MAP's public CPL Opportunities page lists.
+"""Record which exhibits MAP's public CPL Opportunities page lists, and the college that built each.
 
 WHY. The CPL opportunity workbook on My College (college_cpl_workbook.js) puts a
 "Could Adopt - View in MAP" link beside every statewide credit recommendation a
@@ -34,9 +34,6 @@ API = "https://cpldashboardcccco.azurewebsites.net/api/collaborative-exhibits"
 PAGE_URL = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses"
 OUT = os.path.join(HERE, "reference", "map_cpl_opportunities_verified.json")
 UA = "cpl-project-tracker map-link-verify/1.0 (CPL Initiative)"
-EXAM_RE = re.compile(r"^\s*(AP|IB)\b", re.I)   # the workbook leaves out AP and IB only
-STATEWIDE_TYPES = {"CCC Collaborative", "Apprenticeship", "Industry", "Industry|Apprenticeship",
-                   "Private Institution", "CSU"}
 
 
 def load_js(path):
@@ -70,13 +67,20 @@ def search(aid):
     return None
 
 
+def record(row):
+    """What the workbook keeps of one listed exhibit: its MAP title and id, and the
+    college MAP names as its owner (the `college` field), which the Could Adopt chips show."""
+    return {"title": row.get("Title"), "map_id": row.get("id"),
+            "college": (row.get("college") or "").strip(), "college_id": row.get("CollegeID")}
+
+
 def recheck(wanted):
     out = json.load(open(OUT, encoding="utf-8"))
     todo = [i for i in wanted if i not in out["found"]]
     for aid in todo:
         row = search(aid)
         if row:
-            out["found"][aid] = {"title": row.get("Title"), "map_id": row.get("id")}
+            out["found"][aid] = record(row)
         time.sleep(0.25)
     out["found"] = dict(sorted(out["found"].items()))
     out["not_found"] = sorted(i for i in wanted if i not in out["found"])
@@ -94,11 +98,13 @@ def main():
     ap.add_argument("--recheck", action="store_true")
     a = ap.parse_args()
     sw = load_js(a.statewide)
+    # Every exhibit ID the statewide data holds: the workbook links its statewide credit
+    # recommendations, and EACR links any exhibit a college could adopt (Sam, 2026-10-26:
+    # the MAP link on every public surface that suggests an adoption).
     wanted = {}
     for e in sw["exhibits"]:
-        if e.get("collaborative_type") in STATEWIDE_TYPES and not EXAM_RE.match(e.get("unified_title") or ""):
-            for i in e.get("exhibit_ids", []):
-                wanted[i.upper()] = e["unified_title"]
+        for i in e.get("exhibit_ids", []):
+            wanted[i.upper()] = e["unified_title"]
     if a.recheck:
         recheck(wanted)
         return
@@ -120,8 +126,7 @@ def main():
         for r in d["data"]:
             aid = (r.get("AceID") or "").strip().upper()
             if aid and aid not in listed:
-                listed[aid] = {"title": r.get("Title"), "map_id": r.get("id"),
-                               "collaborative": (r.get("CollaborativeType") or "").strip()}
+                listed[aid] = record(r)
         if page >= total:
             break
         page += 1
@@ -129,16 +134,16 @@ def main():
 
     found = {i: listed[i] for i in wanted if i in listed}
     out = {
-        "_about": "Statewide-type exhibit IDs (statewide_data.js) checked against MAP's public CPL Opportunities "
-                  "page API. found = listed there, so the link below plus the ID reaches its card. No URL opens "
-                  "one card (the page keeps its search in page state).",
+        "_about": "Every exhibit ID in statewide_data.js checked against MAP's public CPL Opportunities "
+                  "page API. found = listed there, with the college MAP names as each exhibit's owner; the page "
+                  "opens searched for an ID with ?Exhibit=<ID> (Malone, 2026-10-26).",
         "_built_by": "kb/_verify_map_exhibit_links.py",
         "checked_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"),
         "page_url": PAGE_URL,
         "api": API,
         "listed_total": len(listed),
         "checked": len(wanted),
-        "found": {k: {"title": v["title"], "map_id": v["map_id"]} for k, v in sorted(found.items())},
+        "found": dict(sorted(found.items())),
         "not_found": sorted(i for i in wanted if i not in listed),
         "pages_unread": skipped,
     }
