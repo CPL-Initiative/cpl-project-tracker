@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_s491_rulings_2026-10-26.sql",
+ "name": "cpl_memory_s491_rulings_2026_10_26",
+ "version": "20261026191937",
+ "sha256": "7a94d704aec6efcff47779182ad95c5b8701b2ee2696f559fa98ebd4e83060c5",
+ "run": "40385321481",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
