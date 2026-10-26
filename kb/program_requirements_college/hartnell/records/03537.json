@@ -129,7 +129,8 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -284,78 +285,14 @@
    "Course codes are recorded as printed, without spaces (e.g. BIO1 = BIO 1). The catalog title for PHY4C includes 'Sound', which the state title omits."
   ]
  },
- "extracted_run": "39969050595",
+ "extracted_run": 40285320209,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 23,
-    "max": 23
-   },
-   "words": "Complete ALL of the following Requirement Sets:\nLocal GE (https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58: Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required)"
-  },
-  {
-   "field": "course_units",
+   "field": "ge_overlap",
    "was": null,
-   "now": {
-    "BIO1": [
-     4.5,
-     4.5
-    ],
-    "BIO2": [
-     4.5,
-     4.5
-    ],
-    "BIO3": [
-     4.5,
-     4.5
-    ],
-    "CHM1A": [
-     5,
-     5
-    ],
-    "CHM1B": [
-     5,
-     5
-    ],
-    "MAT3A": [
-     4,
-     4
-    ],
-    "PHY2A": [
-     4,
-     4
-    ],
-    "PHY2B": [
-     4,
-     4
-    ],
-    "PHY4A": [
-     4,
-     4
-    ],
-    "PHY4B": [
-     4,
-     4
-    ],
-    "PHY4C": [
-     4,
-     4
-    ],
-    "CHM12A": [
-     5,
-     5
-    ],
-    "CHM12B": [
-     5,
-     5
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": true,
+   "words": "Students can double-count required courses and courses for General Education"
   }
- ]
+ ],
+ "read_run": "39969050595"
 }

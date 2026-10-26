@@ -150,7 +150,8 @@
     "agricultural research",
     "seed industry",
     "crop health"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -941,163 +942,14 @@
    "No program learning outcomes are printed on this requirements page."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": 40285320209,
  "reconciled": [
   {
-   "field": "course_units",
+   "field": "ge_overlap",
    "was": null,
-   "now": {
-    "ABT58": [
-     3,
-     3
-    ],
-    "ABT90": [
-     3,
-     3
-    ],
-    "ABT92": [
-     3,
-     3
-    ],
-    "ABT99": [
-     1,
-     8
-    ],
-    "ABT57": [
-     3,
-     3
-    ],
-    "BUS43": [
-     4,
-     4
-    ],
-    "BUS50": [
-     4,
-     4
-    ],
-    "ABT49": [
-     3,
-     3
-    ],
-    "ABT53": [
-     3,
-     3
-    ],
-    "ABT110": [
-     2,
-     2
-    ],
-    "ABT52": [
-     3,
-     3
-    ],
-    "ABT54": [
-     3,
-     3
-    ],
-    "ABT80": [
-     3,
-     3
-    ],
-    "BUS1A": [
-     3,
-     3
-    ],
-    "BUS1B": [
-     3,
-     3
-    ],
-    "ABT95": [
-     3,
-     3
-    ],
-    "ABT96": [
-     3,
-     3
-    ],
-    "ABT97": [
-     3,
-     3
-    ],
-    "ABT98": [
-     3,
-     3
-    ],
-    "ABT83": [
-     3,
-     3
-    ],
-    "ABT81": [
-     3,
-     3
-    ],
-    "ABT93": [
-     3,
-     3
-    ],
-    "ABT94": [
-     2,
-     2
-    ],
-    "ABT101": [
-     1.5,
-     1.5
-    ],
-    "ABT102": [
-     1.5,
-     1.5
-    ],
-    "ABT103": [
-     1.5,
-     1.5
-    ],
-    "ABT104": [
-     1.5,
-     1.5
-    ],
-    "ABT105": [
-     1.5,
-     1.5
-    ],
-    "ABT130": [
-     1.5,
-     1.5
-    ],
-    "MFGT70": [
-     3,
-     3
-    ],
-    "MFGT71": [
-     3,
-     3
-    ],
-    "ABT131": [
-     1.5,
-     1.5
-    ],
-    "ABT132": [
-     1.5,
-     1.5
-    ],
-    "ABT133": [
-     1.5,
-     1.5
-    ],
-    "ABT134": [
-     1.5,
-     1.5
-    ],
-    "ABT135": [
-     1.5,
-     1.5
-    ],
-    "COM2": [
-     3,
-     3
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": true,
+   "words": "Students can double-count required courses and courses for General Education"
   }
  ],
- "read_run": 39931703521
+ "read_run": 39949570443
 }

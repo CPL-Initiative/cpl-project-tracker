@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 112,
  "with_closed_list": 105,
- "started": "2026-10-26T05:29:42Z",
+ "started": "2026-10-26T07:23:06Z",
  "route": "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)",
  "coursedog": {
   "root": "https://hartnell.catalog.prod.coursedog.com",
@@ -109,11 +109,11 @@
     "name": "Business Office Technology - Bookkeeping"
    },
    {
-    "code": "CT.BST",
+    "code": "AS.BST",
     "name": "Business Office Technology-Information Processing"
    },
    {
-    "code": "AS.BST",
+    "code": "CT.BST",
     "name": "Business Office Technology-Information Processing"
    },
    {
@@ -321,11 +321,11 @@
     "name": "Nursing-Vocational Nursing"
    },
    {
-    "code": "CT.PHO",
+    "code": "AA.PHO",
     "name": "Photography"
    },
    {
-    "code": "AA.PHO",
+    "code": "CT.PHO",
     "name": "Photography"
    },
    {
@@ -426,7 +426,7 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 103,
- "seconds": 889.5,
+ "seconds": 900.4,
  "found": 94,
  "by_method": {
   "no_closed_list": 7,
@@ -584,5 +584,5 @@
   "programs": 0,
   "list": []
  },
- "run": "40274398240"
+ "run": "40285320209"
 }

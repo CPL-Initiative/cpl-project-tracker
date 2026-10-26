@@ -93,8 +93,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     70.0,
     79.0
@@ -108,10 +108,8 @@
     23.0,
     23.0
    ],
-   "why": [
-    "the blocks and general education come to 70.0-79.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
-   "fill": null
+   "why": [],
+   "overlap": true
   },
   "repeated": {
    "codes": [],
@@ -135,7 +133,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -161,7 +159,8 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -430,119 +429,14 @@
    "No program learning outcomes or careers appear in the provided text (only the Requirements tab was captured)."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": 40285320209,
  "reconciled": [
   {
-   "field": "course_units",
+   "field": "ge_overlap",
    "was": null,
-   "now": {
-    "MFGT110": [
-     2,
-     2
-    ],
-    "MFGT111A": [
-     2,
-     2
-    ],
-    "MFGT111B": [
-     2,
-     2
-    ],
-    "MFGT112A": [
-     2,
-     2
-    ],
-    "MFGT112B": [
-     2,
-     2
-    ],
-    "MFGT113": [
-     4,
-     4
-    ],
-    "MFGT114": [
-     4,
-     4
-    ],
-    "MFGT130": [
-     3,
-     3
-    ],
-    "WLD150": [
-     3,
-     3
-    ],
-    "EGN2": [
-     3,
-     3
-    ],
-    "MFGT71": [
-     3,
-     3
-    ],
-    "MFGT131": [
-     3,
-     3
-    ],
-    "MFGT132": [
-     3,
-     3
-    ],
-    "ABT93": [
-     3,
-     3
-    ],
-    "ABT96": [
-     3,
-     3
-    ],
-    "ABT98": [
-     3,
-     3
-    ],
-    "CMA74": [
-     3,
-     3
-    ],
-    "CSS1": [
-     4,
-     4
-    ],
-    "EGN6": [
-     4,
-     4
-    ],
-    "EGN11": [
-     3,
-     3
-    ],
-    "WLD151": [
-     3,
-     3
-    ],
-    "STATC1000": [
-     4,
-     4
-    ],
-    "MAT2": [
-     4,
-     4
-    ],
-    "ABT53": [
-     3,
-     3
-    ],
-    "ABT90": [
-     3,
-     3
-    ],
-    "ABT99": [
-     1,
-     8
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": true,
+   "words": "Students can double-count required courses and courses for General Education"
   }
  ],
- "read_run": 39931703521
+ "read_run": 39949570443
 }
