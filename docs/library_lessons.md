@@ -461,12 +461,16 @@ Two data traps: the CCR names one college with a trailing space (`Cypress Colleg
 ids date from July, so ids come from `unified_courses_members.js` and the COCI list fills in only a course the CCR lacks
 (PSYT P020F). And one process trap: the open-asks series record had sat at Sheet 123 for five sheets.
 
-**State.** Version 2 (https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa) is a draft beside Version 1; the public copy is
-Sam's call on Sheet 129 card 3. `dsp-training/make_brief.py` imports the ELL brief's helpers rather than copying them,
+**State.** Version 2 (https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa) is the public copy: Sam answered Sheet 129 at
+03:53Z (card 3 *replace*, and card 2 *replace* for ELL IET), and `library/<slug>/` for both now carries Version 2. `dsp-training/make_brief.py` imports the ELL brief's helpers rather than copying them,
 and both v2 pages rebuild byte-identical.
 
-**Next.** On *replace*: `scripts/library_page.py dsp-credit-starting-points` on the v2 HTML and one guarded update.
-Reading the DSPT guides' objectives against Taft's and Porterville's course outlines is the step that would turn the
+**A public copy is also Sierra's reading.** Version 2 of the ELL page reads 25,516 characters, and cpl-chat stops a page
+at 20,000 (its opening and end kept), so the swap would have cut about two grantee cards out of what Sierra reads;
+`tests/sierra_library.test.js` caught it on the PR. The repo now reads 26,000 a page and 32,000 in all; the deploy is
+Sam's call (Sheet 130). Measure a page's text with cpl-chat's own reader before it replaces a public copy.
+
+**Next.** Reading the DSPT guides' objectives against Taft's and Porterville's course outlines is the step that would turn the
 title matches into a crosswalk.
 
 ## Moved from the lane (S483 SkyCoyoteMint, 2026-10-26)

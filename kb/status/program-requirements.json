@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-26T03:33:26Z",
+  "written_at": "2026-10-26T03:59:50Z",
   "session": 483,
   "moniker": "SkyCoyoteMint",
   "run": "Sam's session",
@@ -9,7 +9,7 @@
   "handoff": "docs/session_484_handoff.md",
   "next_step": {
     "title": "The Privacy page's UI pass, then the harvest's catalog sweep",
-    "text": "The first scheduled session of October 27 audits the Privacy page. Until then, and after it, a session takes the next college in the harvest's catalog sweep; Sam's three Open Asks Sheet 129 cards wait on his reply."
+    "text": "The first scheduled session of October 27 audits the Privacy page. Until then, and after it, a session takes the next college in the harvest's catalog sweep; the funding memo's opening waits on Sam's paste."
   },
   "calls": [
     {
@@ -148,6 +148,10 @@
     {
       "at": "2026-10-26T03:33:00Z",
       "text": "No harvest table moved this run; S483 moved DSP Credit Starting Points onto the agency template as Version 2, a draft beside Version 1, and published Open Asks Sheet 129."
+    },
+    {
+      "at": "2026-10-26T03:58:00Z",
+      "text": "No harvest table moved this run; Sam answered Open Asks Sheet 129, and S483 made ELL IET and DSP Version 2 the public copies."
     }
   ],
   "headline": [
