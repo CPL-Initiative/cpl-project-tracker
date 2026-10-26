@@ -5364,7 +5364,7 @@ type HostScope = { kind: "college" | "district" | "statewide"; label: string };
  * tests/sierra_surface.test.js pins them equal. */
 const KNOWN_SURFACES = new Set([
   "my-college", "cobi-assistant", "public", "fact-sheet", "memory-autogen",
-  "memory-briefing", "gr-analysis", "skyview-ask",
+  "memory-briefing", "gr-analysis", "skyview-ask", "guidance-wording",
 ]);
 
 function normalizeSurface(raw: any): string | null {
@@ -5401,7 +5401,12 @@ function normalizeSurface(raw: any): string | null {
  * answer doctrine above — lead with a table, name colleges in two bands, close
  * with the coordinator — is the wrong instruction for that, which is exactly
  * what DRAFTING_BLOCK exists to replace. */
-const DRAFTING_SURFACES = new Set(["memory-autogen", "memory-briefing", "gr-analysis", "skyview-ask"]);
+/* ⭐ `guidance-wording` (S491; Sam, Open Asks Sheet 132 card 1, "build", 2026-10-26) is the Sierra
+ * Training tab's Suggest wording: it sends one draft instruction with the rules an instruction must meet
+ * and asks for a rewrite as JSON. It is a drafting caller like the memory drafter, and it wants the TEAM
+ * GUIDANCE in its context on purpose: that is how it names a switched-on instruction the draft repeats or
+ * contradicts. */
+const DRAFTING_SURFACES = new Set(["memory-autogen", "memory-briefing", "gr-analysis", "skyview-ask", "guidance-wording"]);
 function isDraftingSurface(surface: string | null): boolean {
   return !!surface && DRAFTING_SURFACES.has(surface);
 }
@@ -5459,6 +5464,10 @@ const SURFACE_QUERY_CAPS: Record<string, number> = {
   "memory-briefing": QUERY_CAP_BRIEFING,
   "gr-analysis": QUERY_CAP_GR_ANALYSIS,
   "skyview-ask": QUERY_CAP_SKYVIEW,
+  // The rules (~1,900 characters), one draft (at most 1,500) and the JSON contract:
+  // sierra_training.js builds the envelope and tests/sierra_suggest_wording.test.js
+  // asserts its longest still fits under this number.
+  "guidance-wording": QUERY_CAP_DRAFTING,
 };
 function queryCapFor(surface: string | null): number {
   return (surface && SURFACE_QUERY_CAPS[surface]) || QUERY_CAP_CHAT;
@@ -5594,6 +5603,14 @@ function hostScopeBlock(scope: any) {
        + `about that one — answer it, and you may note how it relates back to ${scope.label}.\n`;
   return out;
 }
+
+/* ── The naming rule, built in (S491; Sam, Open Asks Sheet 132 card 2, "move", 2026-10-26) ──────────
+ * It lived only in sierra_guidance row cb226a48, the oldest switched-on instruction. guidanceBlock() adds
+ * the newest first and stops at the first that does not fit 9,000 characters, so on My College (8,693 of
+ * 9,000 that day) one long new instruction would have stopped it reaching Sierra, with no message. In the
+ * stable prompt it reaches every answer whatever the team adds; the row was switched off in the same
+ * change (receipt kb/receipts/sierra_guidance_naming_rule_builtin_2026-10-26_s491.sql). */
+const NAMING_RULE = `NAMING: the program is the "CPL Initiative" (never "MAP Initiative"). MAP is the platform, the "Mapping Articulated Pathways (MAP) platform". NEVER expand MAP as "Military Articulation Platform"; that was only its original 2017 launch name and belongs only in explicit history.`;
 
 function buildSystemPrompt(
   sections: any[],
@@ -5733,6 +5750,8 @@ function buildSystemPrompt(
 Your knowledge comes from the sources below. Answer based on these sources. If the sources don't contain enough information to fully answer, say so honestly and suggest the visitor contact the MAP team at MAP@rccd.edu.
 
 Be concise, friendly, and professional. Use plain language.
+
+${NAMING_RULE}
 
 THE FIRST SENTENCE IS THE ANSWER. Never open with a remark about the question — no "Great question", "Good question", "That's a great question to be asking", no thanks, no "let's line this up", no preamble of any kind — and never comment on the question before answering it. Answer the question that was asked, directly, before anything else; the supporting facts, the limits of the data and the next steps come after the answer, never in front of it.
 

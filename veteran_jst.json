@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-26T16:10:45.076432+00:00",
+  "scraped_at": "2026-10-26T18:46:06.383767+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29422,
+    "jst": 29490,
     "star_colleges": 64
   },
   "computed_star_colleges": 64,
@@ -187,7 +187,7 @@
     },
     "Clovis Community College": {
       "vets": 117,
-      "jst": 197,
+      "jst": 199,
       "star": true
     },
     "Antelope Valley College": {
@@ -230,6 +230,11 @@
       "jst": 152,
       "star": true
     },
+    "Evergreen Valley College": {
+      "vets": 87,
+      "jst": 138,
+      "star": true
+    },
     "Solano Community College": {
       "vets": 278,
       "jst": 133,
@@ -259,11 +264,6 @@
       "vets": 637,
       "jst": 237,
       "star": false
-    },
-    "Evergreen Valley College": {
-      "vets": 87,
-      "jst": 116,
-      "star": true
     },
     "San Jose City College": {
       "vets": 148,
@@ -307,7 +307,7 @@
     },
     "Laney College": {
       "vets": 96,
-      "jst": 81,
+      "jst": 82,
       "star": true
     },
     "Los Angeles Harbor College": {
@@ -495,6 +495,11 @@
       "jst": 117,
       "star": false
     },
+    "Grossmont College": {
+      "vets": 415,
+      "jst": 100,
+      "star": false
+    },
     "Cuyamaca College": {
       "vets": 130,
       "jst": 95,
@@ -508,11 +513,6 @@
     "Chabot College": {
       "vets": 304,
       "jst": 64,
-      "star": false
-    },
-    "Grossmont College": {
-      "vets": 415,
-      "jst": 57,
       "star": false
     },
     "Gavilan College": {

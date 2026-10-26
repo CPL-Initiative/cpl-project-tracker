@@ -468,12 +468,18 @@ check("the status line is empty on a successful paint",
 {
   // In the masthead's control row since 2026-10-09 (Sam's marked-up screenshot
   // moved the controls onto the version's row and the label to "PDF").
-  check("a PDF control sits in the masthead's control row, as a word rather than a mark",
+  check("the public header carries the page's controls, as words: Resource Links, the version, PDF, then Collapse all last (Sam, 2026-10-26)",
     (function () {
       const b = doc.getElementById("pdf-btn");
-      return !!b && b.tagName === "BUTTON" && b.textContent.trim() === "PDF" &&
-        !!doc.querySelector(".masthead .mh-actions #pdf-btn") &&
-        !!(doc.querySelector(".mh-actions").compareDocumentPosition(doc.querySelector("main")) & 4);
+      const row = doc.querySelector("header.cplh .mh-actions");
+      const order = row ? Array.from(row.querySelectorAll("button:not([hidden]), .ver")).map((e) => e.id || e.className) : [];
+      const links = doc.querySelector("header.cplh [data-cplh-links]");
+      return !!b && b.tagName === "BUTTON" && b.textContent.trim() === "PDF" && !!links &&
+        links.textContent.trim() === "Resource Links" && links.getAttribute("aria-expanded") === "false" &&
+        order.join(",") === "ver,pdf-btn,btn-collapse-all" &&
+        !doc.querySelector(".masthead .mh-actions") && !doc.querySelector("[data-sierra-open]") &&
+        doc.querySelectorAll("#cplh-panel .cplh-nav a").length === 5 &&
+        !doc.querySelector('#cplh-panel a[href*="/library/"]');
     })());
   const print = (html.match(/@media print\{[\s\S]*?\n\}/) || [""])[0];
   // Landscape (Sam, 2026-10-15: "If you need to use horizontal layout, that's fine").

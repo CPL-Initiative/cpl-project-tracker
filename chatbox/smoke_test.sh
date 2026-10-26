@@ -991,6 +991,22 @@ answer_must_name_at_least -i 2 "7x ⭐ answers from what the piece says" \
   "Fresno" "Bakersfield College" "Lemoore" "College of the Desert" "Chaffey" "Kern" \
   "workforce board" "landing page" "CPL (contact|coordinator)" "exit credential"
 
+# ── MODE 7y: Suggest wording, the guidance-wording drafting caller (S491) ─────
+# Sam, Open Asks Sheet 132 card 1 ("build", 2026-10-26): the Sierra Training tab sends a
+# draft instruction with the rules and asks for a rewrite as one JSON object. The draft
+# below carries the misspelled link the wording check found live (858c6c87).
+run "7y Suggest wording returns a rewrite as JSON" \
+  '{"query":"Reword this instruction for Sierra. Fix spelling and links, keep every fact. Return one JSON object and nothing else: {\"suggested\": \"<the instruction reworded>\", \"changes\": [\"<one sentence per change>\"], \"clash\": \"\"}\nINSTRUCTION:\n<<<\nWhen someone asks about a serve safe certificate, list the crediforbeingyou.org link.\n>>>","retrieval_query":"ServSafe certificate credit","session_id":"smoke-ci","surface":"guidance-wording"}'
+answer_must_match '"suggested"' "7y ⭐ answers in the JSON contract"
+answer_must_match -i "creditforbeingyou\.org" "7y ⭐ corrects the link"
+
+# ── MODE 7z: MAP's name, from Sierra's built-in instructions (S491) ───────────
+# Sam, Open Asks Sheet 132 card 2 ("move"): the naming rule left sierra_guidance (where the
+# 9,000-character budget could push it out) for cpl-chat's stable prompt.
+run "7z MAP's name" \
+  '{"query":"What does MAP stand for?","session_id":"smoke-ci","surface":"public","history":[]}'
+answer_must_match -i "Mapping Articulated Pathways" "7z ⭐ expands MAP as Mapping Articulated Pathways"
+
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).
 run "8 offerings broad (who teaches construction)" \
