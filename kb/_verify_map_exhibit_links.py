@@ -150,7 +150,7 @@ def main():
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=1, ensure_ascii=False)
         f.write("\n")
-    print(f"{OUT}: {len(found)} of {len(wanted)} statewide exhibit IDs listed ({len(listed)} exhibits on the page)")
+    print(f"{OUT}: {len(found)} of {len(wanted)} exhibit IDs listed ({len(listed)} exhibits on the page)")
 
 
 if __name__ == "__main__":
