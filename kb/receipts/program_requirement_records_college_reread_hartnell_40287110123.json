@@ -1,0 +1,849 @@
+{
+ "college": "Hartnell College",
+ "reread_run": "40287110123",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "40285320209",
+ "at": "2026-10-26T07:40:08Z",
+ "posted": 3,
+ "batches": 1,
+ "skipped": [],
+ "error": null,
+ "replaced": 3,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "19718",
+  "39248",
+  "43809"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 3,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Hartnell College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 40285320209;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 13,
+    "placed": 12,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Major Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "AOD1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AOD2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AOD3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AOD4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AOD5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AOD6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AOD9",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AOD10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AOD11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AOD99",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Major Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PSYCC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PSY22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY33",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PSY41",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "SOC41",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 23,
+      "min": 23
+     },
+     "outcomes": [],
+     "ge_pattern": "Local GE",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Addiction Studies - AA.ADD",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.ADD/requirements-ipyf8",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39949570443,
+   "program_title": "Addiction Studies",
+   "control_number": "19718"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 21,
+    "placed": 14,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Prerequisites",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGL C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1000E",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MAT 3A",
+          "units": 4,
+          "catalog_addition": true
+         },
+         {
+          "code": "MAT 3B",
+          "units": 4,
+          "catalog_addition": true
+         },
+         {
+          "code": "MAT 3C",
+          "units": 4,
+          "catalog_addition": true
+         },
+         {
+          "code": "MAT 4",
+          "units": 3,
+          "catalog_addition": true
+         },
+         {
+          "code": "MAT 5",
+          "units": 3,
+          "catalog_addition": true
+         },
+         {
+          "code": "MAT 10",
+          "units": 3,
+          "catalog_addition": true
+         },
+         {
+          "code": "MAT 12",
+          "units": 3,
+          "catalog_addition": true
+         },
+         {
+          "code": "MAT 16",
+          "units": 3,
+          "catalog_addition": true
+         },
+         {
+          "code": "MAT 24",
+          "units": 3,
+          "catalog_addition": true
+         },
+         {
+          "code": "MAT 25",
+          "units": 4,
+          "catalog_addition": true
+         },
+         {
+          "code": "MAT 27",
+          "units": 6,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Prerequisite",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIO 11",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Anatomy and Physiology prerequisite"
+     },
+     {
+      "name": "Prerequisite",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIO 5",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BIO 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BIO 6L",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": "Anatomy and Physiology prerequisite"
+     },
+     {
+      "name": "1st Semester",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "NUTR 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "NUTR 1",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "NVN 70",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSY 25",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "NVN 110",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NVN 119",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NVN 119.1",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NVN 130A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "2nd Semester",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "NVN 121",
+        "units": 6.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "NVN 121.1",
+        "units": 6.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "NVN 130B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "3rd Semester",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "NVN 123",
+        "units": 6.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "NVN 123.1",
+        "units": 6.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "NVN 130C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Nursing and Health Sciences Success Courses",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "NVN 225",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "NVN 226",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "NVN 227",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 23,
+      "min": 23
+     },
+     "outcomes": [],
+     "ge_pattern": "Local GE",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": 63,
+      "min": 63
+     },
+     "section_heading": "Required Major Courses - After acceptance into the program",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.NVN/requirements-ipyf8",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39949570443,
+   "program_title": "Vocational Nursing",
+   "control_number": "39248"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 23,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Major Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MFGT110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MFGT111A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MFGT111B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MFGT112A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MFGT112B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MFGT113",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MFGT114",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MFGT130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WLD150",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EGN2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Major Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MFGT71",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MFGT75",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MFGT131",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MFGT132",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ABT93",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ABT96",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ABT98",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CMA74",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSS1",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "EGN6",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "EGN11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "WLD151",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "Restricted General Education Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "STATC1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MAT2",
+          "units": 4,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ABT53",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ABT90",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ABT99",
+        "units": 1,
+        "units_max": 8,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 23,
+      "min": 23
+     },
+     "outcomes": [],
+     "ge_pattern": "Local GE",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Agricultural Mechatronics - AS.MECHA",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.MECHA/requirements-ipyf8",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39949570443,
+   "program_title": "Agricultural Mechatronics",
+   "control_number": "43809"
+  }
+ ]
+}
