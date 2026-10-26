@@ -33,8 +33,10 @@ const results = [];
 function check(name, cond, why) { results.push([name, !!cond, why]); }
 
 const LIB = path.join(ROOT, "library");
+// The CPL Opportunity page (library/cpl-opportunity/, moved 2026-10-26, Sheet 131 card 2) is a live page the
+// browser builds per college, not a copy library_page.py writes; tests/college_cpl_workbook.test.js guards it.
 const pages = fs.readdirSync(LIB, { withFileTypes: true })
-  .filter((d) => d.isDirectory() && fs.existsSync(path.join(LIB, d.name, "index.html")))
+  .filter((d) => d.isDirectory() && d.name !== "cpl-opportunity" && fs.existsSync(path.join(LIB, d.name, "index.html")))
   .map((d) => ({ slug: d.name, html: fs.readFileSync(path.join(LIB, d.name, "index.html"), "utf8") }));
 
 check("(0) the two pieces Sam's pick moved are pages under library/",
@@ -125,7 +127,7 @@ for (const p of pages) {
 // the Library's own pages and the CPL opportunity visual (the library's adapted copy is
 // checked in public_library.test.js).
 const HEADERED = pages.map((p) => ({ name: "library/" + p.slug, html: p.html }))
-  .concat([{ name: "cpl-opportunity", html: fs.readFileSync(path.join(ROOT, "cpl-opportunity", "index.html"), "utf8") }]);
+  .concat([{ name: "cpl-opportunity", html: fs.readFileSync(path.join(ROOT, "library", "cpl-opportunity", "index.html"), "utf8") }]);
 const words = (t) => t.trim().split(/\s+/).filter(Boolean).length;
 for (const p of HEADERED) {
   const blockHtml = (p.html.match(/<!-- cpl-public-header:start[\s\S]*?<!-- cpl-public-header:end -->/) || [])[0] || "";
@@ -188,7 +190,7 @@ for (const p of HEADERED) {
   const used = Array.from(new Set((BAR.match(/var\(--sierra-bar-[a-z-]+/g) || []).map((t) => t.slice(4))))
     .filter((t) => t !== "--sierra-bar-w" && t !== "--sierra-bar-head-font");
   for (const p of HEADERED) {
-    const src = p.name === "cpl-opportunity" ? "../sierra/sidebar.js" : "../../sierra/sidebar.js";
+    const src = "../../sierra/sidebar.js";  // every visual, the CPL Opportunity page included, sits two folders down
     const tag = '<script src="' + src + '" defer></script>';
     const missing = used.filter((t) => p.html.indexOf(t + ":") < 0);
     check(`(7) ${p.name}: ⭐ loads ${src} once, deferred, after the page's own content`,

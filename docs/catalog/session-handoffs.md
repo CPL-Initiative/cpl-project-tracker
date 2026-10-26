@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-460 document(s).
+461 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 491 | [Session 491 handoff: Regenerate in the Library, the CPL Opportunity page under library/](../session_491_handoff.md) | 2026-10-26 |
 | 490 | [Session 490 handoff: Hartnell's lists with floors under one total](../session_490_handoff.md) | 2026-10-26 |
 | 489 | [Session 489 handoff: Hartnell's last eight failing tabs, read](../session_489_handoff.md) | 2026-10-26 |
 | 488 | [Session 488 handoff: Hartnell's pooled subject lists](../session_488_handoff.md) | 2026-10-26 |

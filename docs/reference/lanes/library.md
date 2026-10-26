@@ -125,12 +125,33 @@ Sheet 121's rulings (the Knowledge Base fold, the Coordinator Guide files, the E
 photos, the IT and AI deck unlisted) are carried out; their text moved verbatim to `docs/library_lessons.md`
 (*Moved from the lane, S469*). Still open from them: the Baking and Nursing photos.
 
-## Changes to make: a reader's comments on a piece (Sam, 2026-10-25; built S480)
+## Regenerate, and the documents a piece is built from (Sam, 2026-10-26; built S490)
 
-A record's **Changes to make** box (`refresh_note`) lists the piece under Needs attention, and **Copy the request** gives a
-session the paste; the session rebuilds from `rebuild_from`, keeps the link, adds the version and empties the box (the
-scheduled run reads open requests too). The full record moved verbatim to
-[`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S483)*.
+Sam: *"I want to make sure I can Regenerate a visual when I either add a document or note to it ... Also, when I want
+to generate a new visual based on a document I upload. Seems like perhaps we should consolidate the Library and CPL
+Opportunity Analysis procedures and sites."* One procedure now serves both. **Regenerate** sits on every record: what
+to change (`refresh_note`, which moved out of Edit), the documents to work from (`sources`: a link, or the document's
+text pasted in) and, for a piece on the public library, whether the draft replaces the public copy at once or waits for
+**Replace the public copy** on the card (`regen`). **Start a piece** (and Make a visual for anyone but a college) takes
+documents too, so a new visual can start from a document. A session does the rebuild: the scheduled runs read the
+requests (step 6 of [`scheduled_sessions`](../scheduled_sessions.md), which says how each kind of piece is rebuilt), and
+*Copy the request* hands the same paste to a session. A college's CPL Opportunity page gained a notes layer: what a note or
+document asks for goes to `library/cpl-opportunity/notes/<slug>.json`, shown under At a glance, with a draft at
+`<slug>.draft.json` read at `?college=<name>&draft=1`. Schema: `kb/supabase_cpl_library.sql` (sources, regen, two checks).
+Tests: `library` (13, 14, 9), `college_cpl_workbook` (the notes).
+
+- **The Microsoft 365 connector waits on RCCD's admin approval** (Sam, 2026-10-26: *"We need to hold on the 365
+  connector until I can get admin approval from RCCD"*). Until then a session reads a public link or pasted text, and
+  the tab's help says so.
+- **Sam's Sheet 131 rulings (14:55-14:56Z, each his own call):** card 1 *two-hours*, a run every two hours on weekdays,
+  7 a.m. to 5 p.m. Pacific, working only Library requests; card 2 *move*. **The college page moved** to
+  `library/cpl-opportunity/` (S490); `cpl-opportunity/` forwards with its `?college=` and `#section`, so every link
+  already sent works, and COBI, My College, CPL Pathways and the Library tab link the new address. The twelve records'
+  links move by `kb/receipts/cpl_library_opportunity_urls_library_2026-10-26_s490.sql` once Pages serves the page.
+  **The daytime run waits on Sam:** a session's `create_trigger` takes no connectors here and attaches no repos (S490
+  made one and deleted it unfired), so he creates it from claude.ai's routines page with the paste in
+  [`scheduled_sessions`](../scheduled_sessions.md), *The daytime Library run*. Until then the overnight routine works
+  requests (nine firings, 22:12 to 06:12 Pacific).
 
 ## The Coordinator Guide is In development (Sam, 2026-10-25; Draft 1 by S480)
 
@@ -148,43 +169,13 @@ Drive folder *CPL Coordinator Getting Started Guides* is its first version), thr
 (23:34Z) and read back: the record, two `cpl_memory` rows and their two log rows. Each revision comes from **Changes to make**; listing it
 publicly, and anything sent to the Chaffey drafter, are Sam's.
 
-## The ELL IET page is listed publicly (Sam, Open Asks Sheet 123 card 1, *list*, 13:17Z 2026-10-24)
+## The ELL IET and DSP pages, Version 2 (Sam's S482 asks; built S482 and S483)
 
-*ELL IET CPL Starting Points* (https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe; Library record `ell-iet-cpl-starting-points`)
-is on the public library: Sam listed it himself from the Library tab at 13:44Z (`listed_by` Sam, `seen_by` public), and he
-contacts the eight projects himself. The session's staged receipt,
-`kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, was never applied. Its public topics are empty; Sierra links
-it by title and summary until someone adds them.
-
-**Version 2, the first request through Changes to make (S482, 2026-10-26).** Sam asked for *"a short table to each
-grantee card that gives specific examples of potential articulations ... between the training (course or certificate)
-and specific college courses in the region of the grantee"*, then, mid-run: *"Those cards that repeatedly say 'nothing
-nearby' sound pretty negative and discouraging. Perhaps reframe it to focus on what is possible rather than what's not
-already there. That's what folks are interested in."* (`cpl_memory` `sam-s482-frame-what-is-possible-2026-10-26`).
-Each card now ends in up to six rows, Training · College · Course (units) · Basis, the basis one of three, strongest
-first: articulated in MAP at that college (`statewide_data.js` `credit_recs` by `adopter_rec_idx`); the same common
-course another college articulated, taught at this one (`unified_courses_members.js` ids); a matching course title
-(`coci_lookup_data.js`). The lines lead with what a project can start (*Ready for a first articulation at …*, *A
-precedent to adopt: … already award credit for it*, *Open for the first exhibit in MAP, built with the nearest
-college*). Draft: https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw; source `ell-iet/make_brief.py` and the brief
-`briefs/20261023_ELL_IET_CPL_Starting_Points_2.json` (CPLBrain#485); `agency-visual/build.py` now takes a table on a
-card, and the v1 brief rebuilds byte-identical. The record carries Version 2 as *Draft for review* and an empty box
-(receipt `kb/receipts/cpl_library_ell_iet_v2_2026-10-26_s482.sql`, supabase-migrate run 40256725268, read back).
-**Version 2 is the public copy** (Sam, Sheet 129 card 2, *replace*, 03:53Z 2026-10-26): `library/ell-iet-cpl-starting-points/` rewritten from it, the record at version 2 (receipt `kb/receipts/cpl_library_v2_public_2026-10-26_s483.sql`).
-It reads 25,516 characters, past Sierra's 20,000-character page cap; the repo raises it to 26,000 (total 32,000).
-**Deployed** (Sam, Open Asks Sheet 130 card 1, *deploy*, 12:32Z 2026-10-26, his own call): production reads a library page to 31,000 characters and 37,000 in all, from main f9c86491 (cpl-chat-deploy run 40329644423, 13:21Z, byte-verified; the 12:35Z run 40323496549 shipped 26,000 before #2466 raised it). Smoke run 40331201968, run alone, passed, mode 7x included; the three suites that overlapped from 12:48Z to 13:28Z failed on search and statement timeouts, never on 7x.
-
-## DSP Credit Starting Points, Version 2 (Sam's S482 ask; built S483)
-
-On the agency template now: `CPLBrain/04-projects/cpl-initiative/dsp-training/make_brief.py` writes
-`briefs/20261020_DSP_Credit_Starting_Points_2.json` and `agency-visual/build.py` paints it. Five cards, each ending in up to six rows of Training ·
-College · Course · Basis, every line opening on what a DSP *could count toward*. Cards name courses by code; the CCR
-(`unified_courses_members.js`, with `coci_lookup_data.js` for P020F) and `coci_programs_data.js` supply the rest. MAP holds
-no DSPT exhibit (0 of 2,952, 2026-10-26), so every basis is a matching course, with the common course's reach where the
-CCR names one. Topics: the tables of contents of DDS's DSPT Year 1 and Year 2 student guides (web search; dds.ca.gov does
-not resolve). Draft: https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa (CPLBrain#487); the record carries it as *Draft for
-review* (receipt `kb/receipts/cpl_library_dsp_v2_2026-10-26_s483.sql`, run 40263656296, read back).
-**Version 2 is the public copy** (Sam, Sheet 129 card 3, *replace*, 03:53Z 2026-10-26): `library/dsp-credit-starting-points/` rewritten from it, the record at version 2 (same receipt).
+Both agency visuals are on the template at Version 2, each card ending in example articulations and the people in the
+conversation, and both are the public copies (Sam, Sheet 129 cards 2 and 3, *replace*, 03:53Z 2026-10-26). Sierra reads
+the ELL IET page whole: production reads 31,000 characters a page (cpl-chat-deploy run 40329644423, 13:21Z; smoke run
+40331201968, run alone, passed). The full record moved verbatim to
+[`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S490)*.
 
 ## Links, Ask Sierra and the people on each card (Sam, 2026-10-26; built S483)
 
@@ -224,7 +215,7 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
-- **Sam connects the Microsoft 365 connector;** the next session after that reads the CPLLibrary folder, confirms the 16
+- **Once RCCD's admin approves it, Sam connects the Microsoft 365 connector** (held, Sam, 2026-10-26); the next session after that reads the CPLLibrary folder, confirms the 16
   copies he made on 2026-10-08, and moves the three Drive-linked records and the six repo pieces to their SharePoint links
   (a guarded update per record). The Summit film's v3 cuts (S482) go into the SharePoint Drafts folder, Sam's by hand.
 - **PR 2, the move (call 5), after that:** remove the deliverable binaries from `main` (the five Title 5 files can go now;

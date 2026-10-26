@@ -51,6 +51,17 @@
 // gained `visual` the same day (Sam, ~20:08Z): a page opened in a browser; `document`
 // stays for Word and PDF.
 //
+// Regenerate (Sam, 2026-10-26: "I want to make sure I can Regenerate a visual when I
+// either add a document or note to it ... Also, when I want to generate a new visual
+// based on a document I upload"). One button on every record asks for a rebuild: the
+// form takes what to change (refresh_note), the documents to work from (`sources`: a
+// link, or the document's text pasted in), and, for a piece on the public library,
+// whether the draft replaces the public copy at once or waits for Replace the public
+// copy. It sets `regen`; the page cannot rebuild a piece, so a session does, in the
+// scheduled runs or from Copy the request, and puts the draft's link on the card.
+// Start a piece takes documents too. The Microsoft 365 connector waits on RCCD's
+// admin approval (Sam, 2026-10-26), so a session reads a public link or pasted text.
+//
 // STATIC module, lazy-loaded on first #library open (both HTMLs, Rule 4). It
 // injects its own CSS (the ensureCerScopeCss pattern). Tests: tests/library.test.js
 (function () {
@@ -76,7 +87,7 @@
   // MAP's list of colleges (map_colleges, the college and district identity lane): the
   // For picker offers these names, so a piece's college matches the CPL Pathways pick.
   var NAMES_URL = SUPABASE_URL + "/rest/v1/map_colleges?select=college_name,entity_kind,district&entity_kind=in.(college,continuing_education)&order=college_name.asc";
-  var OPPORTUNITY_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/cpl-opportunity/?college=";
+  var OPPORTUNITY_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-opportunity/?college=";
   var DSP_TEMPLATE = "CPLBrain/04-projects/cpl-initiative/dsp-training/20261020_DSP_Credit_Starting_Points.html";
   var AGENCY_BUILDER = "CPLBrain/04-projects/cpl-initiative/agency-visual/build.py";
   var STATUS = { requested: "Requested", draft: "Draft", approved: "Approved", presented: "Presented" };
@@ -96,9 +107,14 @@
     not_filed: { word: "Not filed", count: "not filed" },
     public_unset: { word: "Public file, no audience set", count: "public files with no audience set" },
     refresh: { word: "Changes to make", count: "with changes to make" },
+    regen: { word: "Rebuild requested", count: "waiting on a rebuild" },
+    ready: { word: "Draft ready to review", count: "with a draft to review" },
     kb_note: { word: "No KB note yet", count: "knowledge pieces with no KB note" }
   };
-  var FLAG_ORDER = ["not_filed", "public_unset", "refresh", "kb_note"];
+  var FLAG_ORDER = ["not_filed", "public_unset", "ready", "regen", "refresh", "kb_note"];
+  // A document's pasted text, and the whole list, stay under cpl_library_sources_ck.
+  var SRC_TEXT_MAX = 60000, SRC_MAX = 20, SRC_BYTES_MAX = 380000;
+  var PUBLISH = { show: "Show me the draft first; the public copy stays until I replace it", replace: "Replace the public copy as soon as it is rebuilt" };
 
   var state = {
     rows: null, loading: false, error: null,
@@ -106,7 +122,7 @@
     open: {}, edit: null, form: null, formFor: null, message: "", msgErr: false, busy: false,
     retireAsk: null, start: null, briefShown: {}, requestShown: {}, pub: null,
     madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {},
-    view: "pieces"
+    view: "pieces", regen: null, src: {}
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -175,10 +191,33 @@
     if (r.status === "requested") return f;
     if (r.home === "not_filed") f.push("not_filed");
     if (r.home === "public_repo" && !r.seen_by) f.push("public_unset");
-    if (r.refresh_note) f.push("refresh");
+    var rs = regenState(r);
+    if (rs === "ready") f.push("ready");
+    else if (rs) f.push("regen");
+    else if (r.refresh_note) f.push("refresh");
     if (r.knowledge === true && !r.kb_note) f.push("kb_note");
     return f;
   }
+  // Where a Regenerate request stands: null when none is open; "waiting" until a
+  // session puts a draft on it; "ready" while a draft of a piece with a public copy
+  // waits on Replace the public copy; "approved" once replacing is asked for.
+  function regenState(r) {
+    var g = r && r.regen;
+    if (!g || typeof g !== "object" || !g.requested_at) return null;
+    if (g.approved_at) return "approved";
+    if (g.ready_at) return g.publish === "replace" ? "approved" : "ready";
+    return "waiting";
+  }
+  function flagText(f, r) {
+    if (f === "refresh" && r.refresh_note) return "Changes to make: " + r.refresh_note;
+    if (f === "regen" && r.refresh_note) return "Rebuild requested: " + r.refresh_note;
+    return FLAGS[f].word;
+  }
+  function stamp(iso) {
+    var m = /^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})/.exec(iso || "");
+    return m ? fmtDate(m[1]) + ", " + m[2] + " UTC" : fmtDate(iso);
+  }
+  function sourceList(r) { return Array.isArray(r && r.sources) ? r.sources : []; }
   function say(text, isErr) { state.message = text; state.msgErr = !!isErr; }
   function statusWord(r) { return r.status ? STATUS[r.status] || r.status : "Not set"; }
   function seenWord(r) { return r.seen_by ? SEEN[r.seen_by] || r.seen_by : "Not set"; }
@@ -330,6 +369,17 @@
       R + " ol.lib-steps li.now{border-color:var(--cobalt);color:var(--cobalt);background:var(--surface-subtle);}",
       R + " textarea.lib-brief{width:100%;min-height:170px;margin-top:10px;font:inherit;font-size:.88rem;color:var(--text-body);background:var(--surface-subtle);border:1px solid var(--border-strong);border-radius:6px;padding:8px 10px;}",
       R + " .lib-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}",
+      // Regenerate: the request's state under the card, and the documents a piece is built from.
+      R + " .lib-regen{margin:10px 0 0;padding:8px 12px;border-left:3px solid var(--seal-blue);background:var(--surface-subtle);border-radius:0 6px 6px 0;}",
+      R + " .lib-regen p{margin:0;color:var(--text-body);font-size:.92rem;}",
+      R + " .lib-inline{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:8px;}",
+      R + " .lib-inline label{font-size:.88rem;color:var(--text-muted);}",
+      R + " .lib-inline input{font:inherit;color:var(--text-body);background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:6px;padding:5px 8px;min-width:0;}",
+      R + " .lib-srcset{border:1px solid var(--border);border-radius:6px;padding:10px 12px;margin:0;}",
+      R + " .lib-srcset legend{font-size:.76rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);padding:0 4px;}",
+      R + " .lib-srcs{margin:4px 0 8px;padding-left:1.2em;}",
+      R + " .lib-srcs li{margin:2px 0;font-size:.92rem;}",
+      R + " .lib-muted{color:var(--text-muted);}",
       "@media (max-width:560px){" + R + " .lib-devitem{grid-template-columns:minmax(0,1fr);}" + R + " .lib-devitem .lib-acts{flex-direction:row;flex-wrap:wrap;}}",
       R + " :focus-visible{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:2px;border-radius:4px;}",
       "@media (max-width:760px){" + R + " .lib-item{grid-template-columns:132px minmax(0,1fr);}" + R + " .lib-thumb{width:132px;}" + R + " .lib-acts{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;}}",
@@ -474,6 +524,8 @@
     ];
     rows.push(["Knowledge", knowledgeCell(r)]);
     if (r.refresh_note) rows.push(["Changes to make", esc(r.refresh_note)]);
+    if (sourceList(r).length) rows.push(["Documents to work from", srcListHtml(sourceList(r))]);
+    if (regenState(r)) rows.push(["Rebuild", regenWords(r)]);
     rows.push(["Rebuild from", r.rebuild_from ? "<code>" + esc(r.rebuild_from) + "</code>" : "Not recorded."]);
     if (r.note) rows.push(["Note", esc(r.note)]);
     rows.push(["Public library", publicCell(r)]);
@@ -582,8 +634,7 @@
       opt("", "Not set", r.seen_by || "") + opt("team", "Team", r.seen_by) + opt("colleges", "Colleges", r.seen_by) + opt("public", "Public", r.seen_by) + "</select></div>" +
       forFields("le", r) +
       '<div class="lib-field wide"><label for="le-url">Link to the file</label><input id="le-url" type="url" value="' + esc(r.url || "") + '" placeholder="https://studentrcc.sharepoint.com/..."></div>' +
-      '<div class="lib-field wide"><label for="le-refresh">Changes to make</label><textarea id="le-refresh" rows="4" maxlength="4000" aria-describedby="le-refresh-h" placeholder="What to change: the wording, the figures, the layout, what to add or cut. Leave empty when the piece is current.">' + esc(r.refresh_note || "") + "</textarea>" +
-      '<p class="lib-hint" id="le-refresh-h">Saved, the piece lists under Needs attention and Copy the request gives the paste for a new session. The scheduled run picks it up too. The session rebuilds the piece from its source, keeps its link, and empties this box.</p></div>' +
+      '<p class="lib-line wide">What to change, and the documents to work from, go on <b>Regenerate</b> beside Edit.</p>' +
       knowledgeFields("le", r) +
       '<div class="lib-field"><label for="le-by">Your name</label><input id="le-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
       "</div>" +
@@ -607,7 +658,8 @@
     // Edit and the public switch sit on the card itself (Sam, 2026-10-20: "move the
     // Edit button onto the top layer of the card"); each opens its form below.
     acts += '<button type="button" class="lib-btn" data-edittop="' + esc(r.id) + '">Edit</button>';
-    if (r.refresh_note) acts += requestBtn(r);
+    acts += regenBtn(r);
+    if (r.refresh_note || regenState(r)) acts += requestBtn(r);
     if (r.url && !r.public_listed) acts += '<button type="button" class="lib-btn" data-pubtop="' + esc(r.id) + '">List publicly</button>';
     acts += '<button type="button" class="lib-btn" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
     var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) +
@@ -621,9 +673,9 @@
       (r.summary ? '<p class="lib-summary">' + esc(r.summary) + "</p>" : "") +
       '<ul class="lib-chips" aria-label="Record">' + chips + "</ul>" +
       (fl.length ? '<ul class="lib-flags" aria-label="Needs attention">' + fl.map(function (f) {
-        return "<li>" + esc(f === "refresh" && r.refresh_note ? "Changes to make: " + r.refresh_note : FLAGS[f].word) + "</li>";
+        return "<li>" + esc(flagText(f, r)) + "</li>";
       }).join("") + "</ul>" : "") +
-      requestBox(r) +
+      regenBox(r) + requestBox(r) +
       '</div><div class="lib-acts">' + acts + '<span class="lib-copyslot" id="lib-c-' + esc(r.id) + '"></span></div>' +
       '<div class="lib-details" id="lib-d-' + esc(r.id) + '"' + (open ? "" : " hidden") + ">" + (open ? details(r) : "") + "</div></article>";
   }
@@ -662,6 +714,7 @@
       "Made for: " + (r.for_kind ? forLine(r) : "no one entity") + ".\n" +
       "It must say: " + (b.say || "") + "\n" +
       "Data and sources: " + (b.sources || "your call; fetch live data first for any CPL figure") + "\n" +
+      sourcesText(r) +
       "Length, template or style: " + (b.shape || "your call") + "\n" +
       "Requested by " + (b.requested_by || r.added_by || "the team") + (b.requested_on ? " on " + fmtDate(b.requested_on) : "") + ".\n\n" +
       (r.kind === "visual" && r.for_kind && r.for_kind !== "college"
@@ -686,19 +739,159 @@
   // with the paste below or in the scheduled run (scheduled_sessions.md, step 6),
   // and empties the box when the revision is in.
   function requestText(r) {
-    var asked = [r.updated_by, fmtDate(r.updated_at)].filter(Boolean).join(", ");
+    var g = r.regen || {}, rs = regenState(r);
+    var asked = rs ? [g.requested_by, stamp(g.requested_at)].filter(Boolean).join(", ")
+      : [r.updated_by, fmtDate(r.updated_at)].filter(Boolean).join(", ");
+    var pub = !!r.public_listed;
     return "Revise a CPL Library piece: record " + r.slug + ", " + r.title + ".\n" +
       "Its link: " + (r.url || "not filed yet") + ".\n" +
       "Its source: " + (r.rebuild_from || "not recorded; find it from the record and the vault, and record it with the revision") + ".\n" +
-      "Changes to make" + (asked ? " (" + asked + ")" : "") + ":\n" + (r.refresh_note || "") + "\n\n" +
-      "Rebuild it from its source with these changes and keep its link: republish a Claude page to the same artifact, " +
-      "and for a piece on the public library rerun scripts/library_page.py so its Pages copy follows. Show the revision to " +
-      "whoever asked before it replaces a public copy. Add the new version to the record, then empty Changes to make with " +
-      "Edit, which takes the piece off Needs attention.\n" +
-      "A good result: the link opens the revised piece, and the record no longer lists with changes to make.";
+      "Changes to make" + (asked ? " (" + asked + ")" : "") + ":\n" +
+      (r.refresh_note || "None typed: rebuild it from its source, the documents below and the current data.") + "\n" +
+      sourcesText(r) + "\n" +
+      (rs === "approved"
+        ? "The draft is approved (" + [g.approved_by, stamp(g.approved_at)].filter(Boolean).join(", ") + "): " + (g.draft_url || "its draft") +
+          " replaces the public copy. Rerun scripts/library_page.py from it, add the version to the record, empty Changes to make and clear regen.\n"
+        : "Rebuild it from its source with these changes and keep its link. " +
+          (pub
+            ? (g.publish === "replace"
+              ? "The requester asked that it replace the public copy at once: publish the draft, rerun scripts/library_page.py so the Pages copy follows, add the version, empty Changes to make and clear regen. "
+              : "It is on the public library, so publish the draft at its own link and put that link on the record (regen.ready_at and regen.draft_url); the public copy stays until someone presses Replace the public copy. ")
+            : "Republish a Claude page to the same artifact, add the version to the record, empty Changes to make and clear regen. ") +
+          "Record writes go through a committed receipt (Rule 10).\n") +
+      "A good result: the card shows the revision (or its draft, with Replace the public copy), and no longer lists a rebuild as requested.";
   }
 
-  // Make a visual (Sam, Sheet 120 cards 1 and 4): for a college the record pair is
+  // The documents a piece is built from, in the paste: a link opens as it stands; a
+  // pasted text is read from the record (it can run to 60,000 characters).
+  function sourcesText(r) {
+    var list = sourceList(r);
+    if (!list.length) return "";
+    var pasted = list.some(function (x) { return !x.url; });
+    return "Documents to work from:\n" + list.map(function (x) {
+      return "- " + x.title + (x.url ? ": " + x.url : ": text pasted into the record, " + String(x.text || "").length.toLocaleString("en-US") + " characters") +
+        (x.added_by ? " (added by " + x.added_by + (x.added_on ? ", " + fmtDate(x.added_on) : "") + ")" : "");
+    }).join("\n") + "\n" +
+      (pasted ? "Read the pasted text with: select sources from cpl_library where slug = '" + r.slug + "';\n" : "");
+  }
+
+  // ── Regenerate ──────────────────────────────────────────────────────────────
+  function regenBtn(r) {
+    var open = state.regen === r.id;
+    return '<button type="button" class="lib-btn' + (regenState(r) ? "" : " primary") + '" data-regen="' + esc(r.id) + '" aria-expanded="' + open + '">' +
+      (regenState(r) === "ready" ? "Ask for more changes" : "Regenerate") + "</button>";
+  }
+  function srcWords(x) {
+    return x.url
+      ? '<a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.title) + "</a>"
+      : esc(x.title) + ' <span class="lib-muted">(pasted text, ' + esc(String(x.text || "").length.toLocaleString("en-US")) + " characters)</span>";
+  }
+  function srcListHtml(list) {
+    return '<ul class="lib-srcs">' + list.map(function (x) { return "<li>" + srcWords(x) + "</li>"; }).join("") + "</ul>";
+  }
+  // What the card says while a request is open.
+  function regenWords(r) {
+    var g = r.regen || {}, rs = regenState(r);
+    if (rs === "waiting") {
+      return esc("Rebuild requested by " + (g.requested_by || "the team") + ", " + stamp(g.requested_at) + ". The next scheduled run rebuilds it from its source" +
+        (sourceList(r).length ? " and the documents" : "") + "; Copy the request starts it in a session now.");
+    }
+    if (rs === "ready") {
+      return "A draft is ready" + (g.ready_at ? " (" + esc(stamp(g.ready_at)) + ")" : "") + ": " +
+        (g.draft_url ? '<a href="' + esc(g.draft_url) + '" target="_blank" rel="noopener">open the draft</a>' : "its link is not recorded") +
+        ". The public copy stays as it is until you replace it.";
+    }
+    if (rs === "approved") {
+      return esc((g.approved_by ? "Approved by " + g.approved_by + (g.approved_at ? ", " + stamp(g.approved_at) : "") : "Approved") +
+        ". The next scheduled run replaces the public copy with the draft.");
+    }
+    return "";
+  }
+  // Under the card: the request's state, Replace the public copy on a ready draft,
+  // and the form itself when Regenerate is open.
+  function regenBox(r) {
+    var rs = regenState(r), html = "";
+    if (rs) {
+      html += '<div class="lib-regen" role="status"><p>' + regenWords(r) + "</p>";
+      if (rs === "ready") {
+        html += '<form class="lib-inline" data-regenokform="' + esc(r.id) + '"><label for="ro-by-' + esc(r.id) + '">Your name</label>' +
+          '<input id="ro-by-' + esc(r.id) + '" type="text" required value="' + esc(storedAuthor()) + '">' +
+          '<button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Replace the public copy</button></form>";
+      }
+      html += "</div>";
+    }
+    if (state.regen === r.id) html += regenForm(r);
+    return html;
+  }
+  function regenForm(r) {
+    var cur = (r.regen && r.regen.publish) || "show";
+    return '<form class="lib-form" data-regenform="' + esc(r.id) + '"><h3 class="lib-title">Regenerate this piece</h3>' +
+      "<p>Say what to change, add any document to work from, and press Regenerate. A session rebuilds the piece from its source, keeps its link, and puts the draft on this card.</p>" +
+      '<div class="lib-grid">' +
+      '<div class="lib-field wide"><label for="rg-note">What to change</label><textarea id="rg-note" rows="4" maxlength="4000" placeholder="The wording, the figures, the layout, what to add or cut. Leave it empty to rebuild from the documents and the current data.">' +
+      esc(r.refresh_note || "") + "</textarea></div>" +
+      sourcesFields("rg") +
+      (r.public_listed
+        ? '<div class="lib-field wide"><label for="rg-pub">When the draft is ready</label><select id="rg-pub">' + opt("show", PUBLISH.show, cur) + opt("replace", PUBLISH.replace, cur) + "</select></div>"
+        : "") +
+      '<div class="lib-field"><label for="rg-by">Your name</label><input id="rg-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
+      "</div>" +
+      '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Regenerate</button>" +
+      '<button type="button" class="lib-btn" data-regencancel="1">Cancel</button></div></form>';
+  }
+
+  // The documents fields, shared by Regenerate (rg) and Start a piece (ls). The list
+  // being edited lives in state.src[p] until the form saves.
+  function sourcesFields(p) {
+    var list = state.src[p] || [];
+    var rows = list.length
+      ? '<ul class="lib-srcs">' + list.map(function (x, i) {
+          return "<li>" + srcWords(x) + ' <button type="button" class="lib-btn" data-srcdel="' + p + ":" + i + '">Remove<span class="lib-vh"> ' + esc(x.title) + "</span></button></li>";
+        }).join("") + "</ul>"
+      : '<p class="lib-hint">None yet.</p>';
+    return '<fieldset class="lib-field wide lib-srcset"><legend>Documents to work from</legend>' + rows +
+      '<div class="lib-grid">' +
+      '<div class="lib-field"><label for="' + p + '-stitle">Document title</label><input id="' + p + '-stitle" type="text" maxlength="200" placeholder="DDS DSPT Year 1 student guide"></div>' +
+      '<div class="lib-field"><label for="' + p + '-surl">Its link</label><input id="' + p + '-surl" type="url" placeholder="https://..."></div>' +
+      '<div class="lib-field wide"><label for="' + p + '-stext">Or paste its text</label><textarea id="' + p + '-stext" rows="4" maxlength="' + SRC_TEXT_MAX + '" aria-describedby="' + p + '-stext-h"></textarea>' +
+      '<p class="lib-hint" id="' + p + '-stext-h">A session reads a public link or the text pasted here. It cannot open SharePoint until RCCD approves the Microsoft 365 connector, so for a SharePoint file, paste its text. Never paste a student\'s record.</p></div>' +
+      "</div>" +
+      '<div class="lib-actions-row"><button type="button" class="lib-btn" data-srcadd="' + p + '">Add this document</button></div></fieldset>';
+  }
+  function srcTyped(p) {
+    var g = function (id) { var n = document.getElementById(p + id); return n ? n.value.trim() : ""; };
+    return { title: g("-stitle"), url: g("-surl"), text: g("-stext") };
+  }
+  function clearSrcFields(p) {
+    ["-stitle", "-surl", "-stext"].forEach(function (x) { var n = document.getElementById(p + x); if (n) n.value = ""; });
+  }
+  // Adds the typed document to the list; returns an error in words, or "".
+  function takeSource(p, by) {
+    var t = srcTyped(p);
+    if (!t.title && !t.url && !t.text) return "";
+    if (!t.title) return "Give the document a title, so the request can name it.";
+    if (t.url && !/^https:\/\//.test(t.url)) return "A document's link must start with https://.";
+    if (!t.url && !t.text) return "Add the document's link, or paste its text.";
+    if (t.text.length > SRC_TEXT_MAX) return "The pasted text runs past " + SRC_TEXT_MAX.toLocaleString("en-US") + " characters. Paste the part the piece needs.";
+    var list = (state.src[p] || []).slice();
+    if (list.length >= SRC_MAX) return "A record holds up to " + SRC_MAX + " documents. Remove one first.";
+    var x = { title: t.title, url: t.url || null, text: t.url ? null : t.text, added_by: by || storedAuthor() || null, added_on: today() };
+    list.push(x);
+    if (JSON.stringify(list).length > SRC_BYTES_MAX) return "The documents together run past what a record holds. Paste the part the piece needs.";
+    state.src[p] = list;
+    return "";
+  }
+  function addSource(p) {
+    var byNode = document.getElementById(p + "-by");
+    var err = takeSource(p, byNode ? byNode.value.trim() : "");
+    if (!err && !srcTyped(p).title && !srcTyped(p).url && !srcTyped(p).text) err = "Type a title and a link, or paste the document's text, then press Add this document.";
+    if (err) { say(err, true); render(); return; }
+    say("Added. It saves with the " + (p === "rg" ? "request" : "brief") + ".");
+    render(); clearSrcFields(p);
+    var t = document.getElementById(p + "-stitle"); if (t) t.focus();
+  }
+
+    // Make a visual (Sam, Sheet 120 cards 1 and 4): for a college the record pair is
   // written now; for any other entity the brief is written with the entity set.
   function makeForm() {
     var f = state.make || {};
@@ -741,6 +934,7 @@
       '<div class="lib-field wide"><label for="ls-say">What it must say</label><input id="ls-say" type="text" required placeholder="Three points, in the order the audience needs them"></div>' +
       '<div class="lib-field wide"><label for="ls-sources">Data and sources</label><input id="ls-sources" type="text" placeholder="live_metrics.json, the funding model, last year\'s deck"></div>' +
       '<div class="lib-field wide"><label for="ls-shape">Length, template or style</label><input id="ls-shape" type="text" placeholder="Five slides on the CO template; or 100 seconds with music and Sierra\'s voice"></div>' +
+      sourcesFields("ls") +
       '<div class="lib-field"><label for="ls-by">Your name</label><input id="ls-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
       "</div>" +
       '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Save the brief</button>" +
@@ -754,7 +948,7 @@
       (state.requestShown[r.id] ? "Copy again" : "Copy the request") + "</button>";
   }
   function requestBox(r) {
-    if (!r.refresh_note || !state.requestShown[r.id]) return "";
+    if ((!r.refresh_note && !regenState(r)) || !state.requestShown[r.id]) return "";
     return '<label class="lib-vh" for="lib-r-' + esc(r.id) + '">The request to paste into a new session</label>' +
       '<textarea class="lib-brief" id="lib-r-' + esc(r.id) + '" readonly>' + esc(requestText(r)) + "</textarea>";
   }
@@ -771,7 +965,8 @@
     var acts = '<button type="button" class="lib-btn primary" data-brief="' + esc(r.id) + '">' + (shown ? "Copy again" : "Copy the brief") + "</button>";
     if (r.url) acts += '<a class="lib-btn" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open the draft</a>';
     acts += '<button type="button" class="lib-btn" data-edit="' + esc(r.id) + '">Edit record</button>';
-    if (r.refresh_note) acts += requestBtn(r);
+    if (r.status !== "requested") acts += regenBtn(r);
+    if (r.refresh_note || regenState(r)) acts += requestBtn(r);
     return '<article class="lib-devitem" aria-labelledby="lib-t-' + esc(r.id) + '"><div>' +
       '<p class="lib-kicker">' + esc(kicker.join(" · ")) + "</p>" +
       '<h3 class="lib-title" id="lib-t-' + esc(r.id) + '">' + esc(r.title) + "</h3>" +
@@ -779,7 +974,9 @@
       (r.occasion ? '<p class="lib-line">' + esc(r.occasion) + "</p>" : "") +
       '<ol class="lib-steps" aria-label="Where this piece stands">' + steps + "</ol>" +
       (shown ? '<label class="lib-vh" for="lib-b-' + esc(r.id) + '">The brief to paste into a new session</label><textarea class="lib-brief" id="lib-b-' + esc(r.id) + '" readonly>' + esc(briefText(r)) + "</textarea>" : "") +
-      (r.refresh_note ? '<p class="lib-line"><b>Changes to make:</b> ' + esc(r.refresh_note) + "</p>" : "") + requestBox(r) +
+      (r.refresh_note ? '<p class="lib-line"><b>Changes to make:</b> ' + esc(r.refresh_note) + "</p>" : "") +
+      (sourceList(r).length ? '<div class="lib-line"><b>Documents to work from:</b> ' + srcListHtml(sourceList(r)) + "</div>" : "") +
+      regenBox(r) + requestBox(r) +
       '</div><div class="lib-acts">' + acts + "</div>" +
       (state.edit === r.id ? '<div class="lib-details">' + editForm(r) + "</div>" : "") + "</article>";
   }
@@ -899,16 +1096,17 @@
     // typed into an open form. Restore only into the SAME form: the edit ids are
     // shared by every record, so a value typed for one must not land in another.
     var typed = {};
-    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],textarea[id^='le-'],input[id^='ls-'],select[id^='ls-'],input[id^='lm-'],select[id^='lm-']"), function (n) { typed[n.id] = n.value; });
+    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],textarea[id^='le-'],input[id^='ls-'],select[id^='ls-'],textarea[id^='ls-'],input[id^='lm-'],select[id^='lm-'],input[id^='rg-'],select[id^='rg-'],textarea[id^='rg-'],input[id^='ro-']"), function (n) { typed[n.id] = n.value; });
     var sameAdd = painted.formFor === state.formFor && painted.form === !!state.form;
     var sameEdit = painted.edit === state.edit;
     var focusId = document.activeElement && document.activeElement.id;
     root.innerHTML = head + attention + controls + list + how;
     Object.keys(typed).forEach(function (id) {
-      if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || (id.indexOf("ls-") === 0 && !state.start) || (id.indexOf("lm-") === 0 && !state.make)) return;
+      if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || (id.indexOf("ls-") === 0 && !state.start) || (id.indexOf("lm-") === 0 && !state.make) ||
+        (id.indexOf("rg-") === 0 && (!state.regen || painted.regen !== state.regen))) return;
       var n = document.getElementById(id); if (n) n.value = typed[id];
     });
-    painted = { form: !!state.form, formFor: state.formFor, edit: state.edit };
+    painted = { form: !!state.form, formFor: state.formFor, edit: state.edit, regen: state.regen };
     if (focusId) { var again = document.getElementById(focusId); if (again && again.focus) again.focus(); }
   }
 
@@ -957,6 +1155,8 @@
     if (!f.by) { say("Add your name, so the brief says who asked for it.", true); render(); return; }
     var madeFor = readFor("ls"), fp = forProblem(madeFor);
     if (fp) { say(fp, true); render(); return; }
+    var srcErr = takeSource("ls", f.by);
+    if (srcErr) { say(srcErr, true); render(); return; }
     rememberAuthor(f.by);
     var brief = { say: f.say, requested_by: f.by, requested_on: today() };
     if (f.sources) brief.sources = f.sources;
@@ -965,12 +1165,13 @@
     write(TABLE_URL, { method: "POST", body: {
       slug: slugFor(f.title), title: f.title, kind: f.kind || "deck", occasion: f.occasion || null,
       status: "requested", seen_by: f.seen_by || "team", home: "not_filed", url: null, added_by: f.by, brief: brief,
-      for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name
+      for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name,
+      sources: state.src.ls || []
     } }).then(function (saved) {
       var row = Array.isArray(saved) ? saved[0] : saved;
       if (row && row.id) state.briefShown[row.id] = true;
       say("Saved as Requested. Copy the brief into a new session, or the next scheduled run picks it up.");
-      state.start = null; delete state.forPick.ls;
+      state.start = null; delete state.forPick.ls; state.src.ls = [];
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
@@ -986,7 +1187,7 @@
       occasion: occasion || null, made_on: when, version: "1", status: "draft", seen_by: "colleges",
       home: "web", url: OPPORTUNITY_PAGE + encodeURIComponent(name), file_type: "html", extent: "One page",
       summary: name + "'s COCI programs and courses, its MAP exhibits (AP and IB excluded), and the statewide credit recommendations it could adopt, each with a Could Adopt link to MAP.",
-      rebuild_from: "cpl-project-tracker/college_cpl_workbook.js and cpl-opportunity/index.html (built in the browser from published data)",
+      rebuild_from: "cpl-project-tracker/college_cpl_workbook.js and library/cpl-opportunity/index.html (built in the browser from published data); the MAP team's notes for this college in library/cpl-opportunity/notes/" + base + ".json",
       note: "Live page: it rebuilds from the current data on each visit.",
       for_kind: "college", for_name: name, made_by: made, added_by: by
     }, {
@@ -1011,7 +1212,7 @@
     rememberAuthor(by);
     if (kind !== "college") {
       // Not a college: the brief, with the entity set, so Copy the brief hands the paste over.
-      state.forPick.ls = kind;
+      state.forPick.ls = kind; state.src.ls = [];
       state.start = { kind: "visual", for_kind: kind, for_category: cat || null, for_name: name, occasion: occasion,
         title: name + ": CPL " + (kind === "co" ? "visual" : "opportunities") };
       state.make = null; say(""); render();
@@ -1072,15 +1273,48 @@
     var madeFor = readFor("le"), fp = forProblem(madeFor);
     if (fp) { say(fp, true); render(); return; }
     rememberAuthor(by);
-    var body = { status: g("le-status") || null, seen_by: g("le-seen") || null, refresh_note: g("le-refresh") || null,
+    var body = { status: g("le-status") || null, seen_by: g("le-seen") || null,
       url: url || null, home: url ? homeForUrl(url) : "not_filed", updated_by: by,
       for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name,
       knowledge: knowledgeValue(g("le-knowledge"), g("le-kbnote")), kb_note: g("le-kbnote") || null };
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
-      say(body.refresh_note
-        ? "Saved. Copy the request on the card gives the paste for a new session; the scheduled run picks it up too."
-        : "Saved. The earlier version is in the history.");
+      say("Saved. The earlier version is in the history.");
       state.edit = null; state.retireAsk = null; delete state.forPick.le;
+      return load();
+    }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+  }
+
+  function submitRegen(id) {
+    var r = byId(id);
+    if (!r) return;
+    var g = function (x) { var n = document.getElementById(x); return n ? n.value.trim() : ""; };
+    var by = g("rg-by");
+    if (!by) { say("Add your name, so the request says who asked.", true); render(); return; }
+    var srcErr = takeSource("rg", by);
+    if (srcErr) { say(srcErr, true); render(); return; }
+    rememberAuthor(by);
+    var regen = { requested_at: new Date().toISOString(), requested_by: by, publish: r.public_listed && g("rg-pub") === "replace" ? "replace" : "show" };
+    var body = { refresh_note: g("rg-note") || null, sources: state.src.rg || [], regen: regen, updated_by: by };
+    write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
+      say("Requested. The next scheduled run rebuilds it and puts the draft on the card; Copy the request starts it in a session now.");
+      state.regen = null; state.src.rg = [];
+      return load();
+    }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+  }
+
+  // Replace the public copy: the draft on the card becomes the public copy in the next
+  // run. The request keeps everything it had and gains who approved it, and when.
+  function approveRegen(id) {
+    var r = byId(id);
+    if (!r || regenState(r) !== "ready") return;
+    var n = document.getElementById("ro-by-" + id), by = n ? n.value.trim() : "";
+    if (!by) { say("Add your name, so the record says who approved the draft.", true); render(); return; }
+    rememberAuthor(by);
+    var regen = {};
+    Object.keys(r.regen).forEach(function (k) { regen[k] = r.regen[k]; });
+    regen.approved_at = new Date().toISOString(); regen.approved_by = by;
+    write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { regen: regen, updated_by: by } }).then(function () {
+      say("Approved. The next scheduled run replaces the public copy with the draft.");
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
@@ -1145,7 +1379,7 @@
     } catch (e) { fallback(); }
   }
 
-  var painted = { form: false, formFor: null, edit: null };
+  var painted = { form: false, formFor: null, edit: null, regen: null };
   var wired = false;
   function wire(root) {
     if (wired) return;
@@ -1173,6 +1407,8 @@
       else if (e.target.id === "lib-startform") submitStart();
       else if (e.target.getAttribute("data-editform")) submitEdit(e.target.getAttribute("data-editform"));
       else if (e.target.getAttribute("data-pubform")) setPublic(e.target.getAttribute("data-pubform"), true);
+      else if (e.target.getAttribute("data-regenform")) submitRegen(e.target.getAttribute("data-regenform"));
+      else if (e.target.getAttribute("data-regenokform")) approveRegen(e.target.getAttribute("data-regenokform"));
     });
     root.addEventListener("click", function (e) {
       var b = e.target.closest ? e.target.closest("button") : null;
@@ -1194,13 +1430,30 @@
       }
       else if (b.getAttribute("data-makecancel")) { state.make = null; render(); var mk = document.getElementById("lib-make"); if (mk) mk.focus(); }
       else if (b.id === "lib-start") {
-        state.start = state.start ? null : {}; state.form = null; state.formFor = null; state.make = null; delete state.forPick.ls;
+        state.start = state.start ? null : {}; state.form = null; state.formFor = null; state.make = null; delete state.forPick.ls; state.src.ls = [];
         say(""); render();
         var st = document.getElementById("ls-title"); if (st) st.focus();
       }
       else if (b.getAttribute("data-startcancel")) { state.start = null; render(); var sb = document.getElementById("lib-start"); if (sb) sb.focus(); }
       else if ((v = b.getAttribute("data-brief"))) copyBrief(v);
       else if ((v = b.getAttribute("data-request"))) copyRequest(v);
+      else if ((v = b.getAttribute("data-regen"))) {
+        var rr = byId(v), opening2 = state.regen !== v;
+        state.regen = opening2 ? v : null; state.src.rg = opening2 && rr ? sourceList(rr).slice() : [];
+        say(""); render();
+        var rn = document.getElementById(opening2 ? "rg-note" : ""); if (rn) rn.focus();
+        else { var rb = root.querySelector('[data-regen="' + v + '"]'); if (rb) rb.focus(); }
+      }
+      else if (b.getAttribute("data-regencancel")) {
+        var was = state.regen; state.regen = null; state.src.rg = []; render();
+        var rb2 = was && root.querySelector('[data-regen="' + was + '"]'); if (rb2) rb2.focus();
+      }
+      else if ((v = b.getAttribute("data-srcadd"))) addSource(v);
+      else if ((v = b.getAttribute("data-srcdel"))) {
+        var parts = v.split(":"), lst = (state.src[parts[0]] || []).slice();
+        lst.splice(+parts[1], 1); state.src[parts[0]] = lst; say("Removed. The record keeps it until the form saves."); render();
+        var st2 = document.getElementById(parts[0] + "-stitle"); if (st2) st2.focus();
+      }
       else if (b.id === "lib-add") {
         state.start = null; state.make = null; delete state.forPick.la;
         if (state.form && !state.formFor) { state.form = null; } else { state.form = {}; state.formFor = null; }
@@ -1304,6 +1557,9 @@
     _collegePair: collegePair,
     _viewFromHash: viewFromHash,
     _knowledgeValue: knowledgeValue,
+    _regenState: regenState,
+    _requestText: requestText,
+    _sourcesText: sourcesText,
     _ensureSierraBar: ensureSierraBar
   };
 })();

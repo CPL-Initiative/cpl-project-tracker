@@ -556,3 +556,71 @@ people near the middle, so one `object-position: 50% 50%` serves them all; only 
 a turn ahead. `tests/public_library.test.js` (6e) fails a slide whose file is missing, is not 4:3, or whose tag misstates
 its size. CLAUDE.md's First Light rule names this page as its one departure. `cpl_memory`
 `sam-public-library-malone-look-2026-10-24`.
+
+## S490 (SkyGooseberry), 2026-10-26: Regenerate, documents on a record, and the CPL Opportunity page under the library
+
+- **One procedure for both kinds of visual.** Sam asked to regenerate a visual when he adds a note or a document, to start
+  one from an uploaded document, and whether the Library and CPL Opportunity procedures and sites should consolidate.
+  Regenerate on every record now carries the note, the documents (`sources`) and the request (`regen`); Start a piece
+  takes documents; a college page takes the MAP team's notes from `library/cpl-opportunity/notes/<slug>.json`. The college
+  page is one template for every college, so a note about one college needed a layer of its own; a change every college
+  needs still goes to the template.
+- **A draft needs somewhere to be read before it replaces a public copy.** For a Claude page that is a separate artifact
+  link; for a college's notes it is `<slug>.draft.json`, shown only with `?draft=1`. The card's *Replace the public copy*
+  records who approved it and when, so the run that publishes has the approval on the row.
+- **The builder's `b.notes` was taken.** `college_cpl_workbook.js` already keeps its data-gap messages in `b.notes`; the
+  team's notes are `b.teamNotes`. The first test run failed on `b.notes.map`, which is how it showed.
+- **A session cannot create a working scheduled task here.** `create_trigger` refused `connectors` ("not available for this
+  organization"), and without it the task stored no connectors and its session request carried `sources: []`, so its
+  sessions could reach neither the repos nor Supabase. S490 deleted it before its first firing; Sam creates the daytime
+  run on claude.ai with the paste in `scheduled_sessions.md`.
+- **Repointing public links waits for Pages.** The twelve college records' new address is its own receipt, applied after
+  the move merges and Pages serves `library/cpl-opportunity/`; until then the old address forwards, so no public link
+  points at a page not yet served.
+- **A page moved under `library/` meets the copied pages' tests.** `tests/library_pages.test.js` treats every folder under
+  `library/` as a `library_page.py` copy, so the live page is named and skipped there and guarded in
+  `tests/college_cpl_workbook.test.js`; `scripts/ui_pass.py` names a page by its first folder, so the moved page keeps
+  its ledger id `cpl-opportunity` by name.
+- **Sam's menu edits of the day never saved.** `cobi_nav`'s last write was 2026-10-22 (S448) when he asked why hidden
+  items still showed after a Pages deploy: the menu reads `cobi_nav` on every load, and saving it takes a reviewer
+  sign-in, never the team phrase.
+
+## Moved from the lane (S490 SkyGooseberry, 2026-10-26)
+
+## The ELL IET page is listed publicly (Sam, Open Asks Sheet 123 card 1, *list*, 13:17Z 2026-10-24)
+
+*ELL IET CPL Starting Points* (https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe; Library record `ell-iet-cpl-starting-points`)
+is on the public library: Sam listed it himself from the Library tab at 13:44Z (`listed_by` Sam, `seen_by` public), and he
+contacts the eight projects himself. The session's staged receipt,
+`kb/receipts/cpl_library_ell_iet_public_2026-10-24_s466.sql`, was never applied. Its public topics are empty; Sierra links
+it by title and summary until someone adds them.
+
+**Version 2, the first request through Changes to make (S482, 2026-10-26).** Sam asked for *"a short table to each
+grantee card that gives specific examples of potential articulations ... between the training (course or certificate)
+and specific college courses in the region of the grantee"*, then, mid-run: *"Those cards that repeatedly say 'nothing
+nearby' sound pretty negative and discouraging. Perhaps reframe it to focus on what is possible rather than what's not
+already there. That's what folks are interested in."* (`cpl_memory` `sam-s482-frame-what-is-possible-2026-10-26`).
+Each card now ends in up to six rows, Training · College · Course (units) · Basis, the basis one of three, strongest
+first: articulated in MAP at that college (`statewide_data.js` `credit_recs` by `adopter_rec_idx`); the same common
+course another college articulated, taught at this one (`unified_courses_members.js` ids); a matching course title
+(`coci_lookup_data.js`). The lines lead with what a project can start (*Ready for a first articulation at …*, *A
+precedent to adopt: … already award credit for it*, *Open for the first exhibit in MAP, built with the nearest
+college*). Draft: https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw; source `ell-iet/make_brief.py` and the brief
+`briefs/20261023_ELL_IET_CPL_Starting_Points_2.json` (CPLBrain#485); `agency-visual/build.py` now takes a table on a
+card, and the v1 brief rebuilds byte-identical. The record carries Version 2 as *Draft for review* and an empty box
+(receipt `kb/receipts/cpl_library_ell_iet_v2_2026-10-26_s482.sql`, supabase-migrate run 40256725268, read back).
+**Version 2 is the public copy** (Sam, Sheet 129 card 2, *replace*, 03:53Z 2026-10-26): `library/ell-iet-cpl-starting-points/` rewritten from it, the record at version 2 (receipt `kb/receipts/cpl_library_v2_public_2026-10-26_s483.sql`).
+It reads 25,516 characters, past Sierra's 20,000-character page cap; the repo raises it to 26,000 (total 32,000).
+**Deployed** (Sam, Open Asks Sheet 130 card 1, *deploy*, 12:32Z 2026-10-26, his own call): production reads a library page to 31,000 characters and 37,000 in all, from main f9c86491 (cpl-chat-deploy run 40329644423, 13:21Z, byte-verified; the 12:35Z run 40323496549 shipped 26,000 before #2466 raised it). Smoke run 40331201968, run alone, passed, mode 7x included; the three suites that overlapped from 12:48Z to 13:28Z failed on search and statement timeouts, never on 7x.
+
+## DSP Credit Starting Points, Version 2 (Sam's S482 ask; built S483)
+
+On the agency template now: `CPLBrain/04-projects/cpl-initiative/dsp-training/make_brief.py` writes
+`briefs/20261020_DSP_Credit_Starting_Points_2.json` and `agency-visual/build.py` paints it. Five cards, each ending in up to six rows of Training ·
+College · Course · Basis, every line opening on what a DSP *could count toward*. Cards name courses by code; the CCR
+(`unified_courses_members.js`, with `coci_lookup_data.js` for P020F) and `coci_programs_data.js` supply the rest. MAP holds
+no DSPT exhibit (0 of 2,952, 2026-10-26), so every basis is a matching course, with the common course's reach where the
+CCR names one. Topics: the tables of contents of DDS's DSPT Year 1 and Year 2 student guides (web search; dds.ca.gov does
+not resolve). Draft: https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa (CPLBrain#487); the record carries it as *Draft for
+review* (receipt `kb/receipts/cpl_library_dsp_v2_2026-10-26_s483.sql`, run 40263656296, read back).
+**Version 2 is the public copy** (Sam, Sheet 129 card 3, *replace*, 03:53Z 2026-10-26): `library/dsp-credit-starting-points/` rewritten from it, the record at version 2 (same receipt).

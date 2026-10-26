@@ -74,8 +74,11 @@ def views(root=ROOT):
                 "veteran-sprint-map/ca_cpl_map_selfcontained.html": "Veteran map",
                 "funding-model/index.html": "Funding model", "privacy.html": "Privacy",
                 "prototype/skyview.html": "SkyView"}.get(p, p)
-        out.append((p.split("/")[0].replace(".html", "") if p != "prototype/skyview.html" else "skyview",
-                    name, p, "public" if p in PUBLIC else "staff"))
+        # A page in a folder of another view keeps a name of its own: the CPL Opportunity page moved
+        # under library/ on 2026-10-26 (Sheet 131 card 2) and keeps its ledger row and its history.
+        vid = {"prototype/skyview.html": "skyview",
+               "library/cpl-opportunity/index.html": "cpl-opportunity"}.get(p, p.split("/")[0].replace(".html", ""))
+        out.append((vid, name, p, "public" if p in PUBLIC else "staff"))
     for tab, label in nav_tabs(root):
         out.append(("cobi:" + tab, label, "index.html#" + tab, "staff"))
     return out

@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_regenerate_sheet131_2026-10-26_s490.sql",
+ "name": "cpl_library_regenerate_sheet131_2026_10_26_s490_retry",
+ "version": "20261026152654",
+ "sha256": "27e46bd462257e58499ae8d7e2eacdd1bbd9dee32292fe7b97c5a9b9cea22eea",
+ "run": "40348993727",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

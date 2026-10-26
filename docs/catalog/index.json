@@ -16175,8 +16175,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 460,
+   "count": 461,
    "docs": [
+    {
+     "created": "2026-10-26",
+     "governs": [],
+     "n": 491,
+     "path": "docs/session_491_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "cpl-opportunity",
+      "regenerate",
+      "funding-model"
+     ],
+     "title": "Session 491 handoff: Regenerate in the Library, the CPL Opportunity page under library/",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-26",
      "governs": [],
@@ -24071,5 +24088,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1275
+ "total": 1276
 }

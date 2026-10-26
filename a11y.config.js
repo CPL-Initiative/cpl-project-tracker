@@ -2296,17 +2296,18 @@ module.exports = {
   },
 
   /* ── The CPL opportunity visual (Ashley and Sam, 2026-10-20) ──
-     cpl-opportunity/index.html, one college per ?college=, linked from My
+     library/cpl-opportunity/index.html (moved from cpl-opportunity/, which forwards,
+     Sheet 131 card 2, 2026-10-26), one college per ?college=, linked from My
      College and the CPL Pathways college picker ("View CPL Visual"). Measured
      here with no college chosen: the picker, the status line and the empty
      state, which is what the page paints before its ~45 MB of data arrive. */
   "cpl-opportunity": {
-    file: "cpl-opportunity/index.html",
+    file: "library/cpl-opportunity/index.html",
     title: "CPL opportunity visual (shareable)",
     mayHideBelow: [],
   },
   "cpl-opportunity-dark": {
-    file: "cpl-opportunity/index.html",
+    file: "library/cpl-opportunity/index.html",
     title: "CPL opportunity visual (shareable), dark",
     mayHideBelow: [],
     seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")),

@@ -3039,7 +3039,7 @@
     opp.appendChild(oppView); opp.appendChild(oppGet);
     function syncOpp() {
       opp.hidden = !col.value;
-      if (col.value) oppView.href = "cpl-opportunity/?college=" + encodeURIComponent(col.value);
+      if (col.value) oppView.href = "library/cpl-opportunity/?college=" + encodeURIComponent(col.value);
     }
     oppGet.addEventListener("click", function () {
       var college = col.value, was = "Download CPL Extract";

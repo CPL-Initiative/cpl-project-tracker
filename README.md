@@ -416,6 +416,7 @@ data refresh are captured atomically.
 ├── fact-sheet/                        ← public standalone CPL Fact Sheet (live KPIs + print-to-PDF; sits alone)
 ├── funding-model/                     ← public "How this funding model works" — LIVE off cpl_funding.js + the Supabase config (no snapshot to rebuild)
 ├── library/                           ← the public CPL Library: the pieces listed from COBI's Library tab (Malone's look, 2026-10-24)
+│   └── cpl-opportunity/               ← one college's CPL Opportunity Analysis (?college=), moved here 2026-10-26; cpl-opportunity/ forwards
 ├── privacy.html                       ← public privacy page for the Library filer (its Google consent screen links it)
 ├── CPL_Data.js / statewide_data.js    ← client-side data for filters/search
 ├── statewide_prescriptive.js          ← EACR prescriptive layer (who could adopt → likely local course)
