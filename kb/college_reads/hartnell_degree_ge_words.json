@@ -1,0 +1,38 @@
+{
+ "_readme": "S485 SkyElderberry, 2026-10-26. Three of Hartnell's degree records fail arithmetic on their general education or degree total (handoff 458 item 3): Nursing-Registered Nursing A.S. 03570 names Local GE with no units (the Local GE set step's pattern did not match its tab), Respiratory Care B.S. 44537 names Cal-GETC and a 120-unit total with no GE units (a baccalaureate), and Vocational Nursing A.S. 39248 sums to 80-89 against 63. This read prints each Requirements tab's own words around its general education and totals. Three tabs, no model call.",
+ "college": "Hartnell College",
+ "outside_hosts": {
+  "coursedog.com": "Hartnell's catalog vendor hosts the catalog itself (hartnell.catalog.prod.coursedog.com) and its data (app.coursedog.com); the registry's catalog address is on this host."
+ },
+ "questions": {
+  "ge": "How each tab words its general education (the pattern's name, any units) and its totals (major, degree), and whether prerequisites count toward the degree total."
+ },
+ "keywords": [
+  "General Education",
+  "Local GE",
+  "Cal-GETC",
+  "[Uu]pper[- ][Dd]ivision",
+  "Total",
+  "[Pp]rerequisite"
+ ],
+ "pages": [
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.NRN/requirements-ipyf8",
+   "answers": [
+    "ge"
+   ]
+  },
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/BS.RC/requirements-ipyf8",
+   "answers": [
+    "ge"
+   ]
+  },
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.NVN/requirements-ipyf8",
+   "answers": [
+    "ge"
+   ]
+  }
+ ]
+}
