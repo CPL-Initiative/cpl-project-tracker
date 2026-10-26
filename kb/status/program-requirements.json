@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-26T02:36:16Z",
-  "session": 482,
-  "moniker": "SkyShootingStar",
+  "written_at": "2026-10-26T03:33:26Z",
+  "session": 483,
+  "moniker": "SkyCoyoteMint",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_483_handoff.md",
+  "handoff": "docs/session_484_handoff.md",
   "next_step": {
-    "title": "The DSP visual redone like the ELL one, then the Privacy page's UI pass",
-    "text": "Sam asked for the DSP Credit Starting Points visual to be redone the way ELL IET Version 2 was, with example articulations on each card and lines that lead with what is possible. The first scheduled session of October 27 audits the Privacy page; with nothing else open, a session takes the next college in the harvest's catalog sweep."
+    "title": "The Privacy page's UI pass, then the harvest's catalog sweep",
+    "text": "The first scheduled session of October 27 audits the Privacy page. Until then, and after it, a session takes the next college in the harvest's catalog sweep; Sam's three Open Asks Sheet 129 cards wait on his reply."
   },
   "calls": [
     {
@@ -144,6 +144,10 @@
     {
       "at": "2026-10-26T02:45:00Z",
       "text": "No harvest table moved this run; S482 built ELL IET Version 2 from MAP and the COCI course list, refreshed the two funding films, and opened Sheet 128 on the memo's opening and the ELL public copy."
+    },
+    {
+      "at": "2026-10-26T03:33:00Z",
+      "text": "No harvest table moved this run; S483 moved DSP Credit Starting Points onto the agency template as Version 2, a draft beside Version 1, and published Open Asks Sheet 129."
     }
   ],
   "headline": [

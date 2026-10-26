@@ -145,21 +145,10 @@ photos, the IT and AI deck unlisted) are carried out; their text moved verbatim 
 
 ## Changes to make: a reader's comments on a piece (Sam, 2026-10-25; built S480)
 
-Sam: *"before I send out the link to the ELL visual in the Library, I'd like to request some edits from the Library edit
-form but there's no place for me to enter my comments and then Refresh based on the input. That would be needed for the
-Coordinator Guide and other visuals as well. Advise."* The record's `refresh_note`, which held figures to refresh, is now
-**Changes to make**: a comment box in Edit (and in an In development card's Edit record). Saved, the piece lists under
-Needs attention (*with changes to make*), and **Copy the request** on its card gives the whole paste: the record, its link,
-its source (`rebuild_from`), the comments with who asked and when, and what a good result is. No schema change: the field
-was free text, written by the team-phrase PATCH, and every edit keeps the prior row in `cpl_library_history`.
-
-**The page rebuilds nothing; a session does.** It runs from the paste, or from the scheduled run, which reads open
-requests as queue items ([`scheduled_sessions`](../scheduled_sessions.md), step 6). It rebuilds from the source, keeps the
-link (republish a Claude page to the same artifact; rerun `scripts/library_page.py` for a public piece's Pages copy), shows
-the revision to whoever asked before it replaces a public copy, adds the version, and empties the box. **The advice given
-on a Refresh-now button:** the worker could fire the routine on demand, but that needs a stored trigger token and spends a
-session per press, a cost and permission call for Sam; until he asks, the queue and the paste carry it. Test:
-`tests/library.test.js` (13).
+A record's **Changes to make** box (`refresh_note`) lists the piece under Needs attention, and **Copy the request** gives a
+session the paste; the session rebuilds from `rebuild_from`, keeps the link, adds the version and empties the box (the
+scheduled run reads open requests too). The full record moved verbatim to
+[`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S483)*.
 
 ## The Coordinator Guide is In development (Sam, 2026-10-25; Draft 1 by S480)
 
@@ -199,7 +188,19 @@ college*). Draft: https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw; source `ell
 `briefs/20261023_ELL_IET_CPL_Starting_Points_2.json` (CPLBrain#485); `agency-visual/build.py` now takes a table on a
 card, and the v1 brief rebuilds byte-identical. The record carries Version 2 as *Draft for review* and an empty box
 (receipt `kb/receipts/cpl_library_ell_iet_v2_2026-10-26_s482.sql`, supabase-migrate run 40256725268, read back).
-**NEEDS SAM (Open Asks Sheet 128 card 2): Version 1 stays the public copy until Sam says to replace it.**
+**NEEDS SAM (Open Asks Sheet 129 card 2, carried from Sheet 128 card 2; a reply on 128 still counts): Version 1 stays the public copy until Sam says to replace it.**
+
+## DSP Credit Starting Points, Version 2 (Sam's S482 ask; built S483)
+
+On the agency template now: `CPLBrain/04-projects/cpl-initiative/dsp-training/make_brief.py` writes
+`briefs/20261020_DSP_Credit_Starting_Points_2.json` and `agency-visual/build.py` paints it. Five cards, each ending in up to six rows of Training ·
+College · Course · Basis, every line opening on what a DSP *could count toward*. Cards name courses by code; the CCR
+(`unified_courses_members.js`, with `coci_lookup_data.js` for P020F) and `coci_programs_data.js` supply the rest. MAP holds
+no DSPT exhibit (0 of 2,952, 2026-10-26), so every basis is a matching course, with the common course's reach where the
+CCR names one. Topics: the tables of contents of DDS's DSPT Year 1 and Year 2 student guides (web search; dds.ca.gov does
+not resolve). Draft: https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa (CPLBrain#487); the record carries it as *Draft for
+review* (receipt `kb/receipts/cpl_library_dsp_v2_2026-10-26_s483.sql`, run 40263656296, read back).
+**NEEDS SAM (Open Asks Sheet 129 card 3): Version 1 stays the public copy until Sam says to replace it.**
 
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 
@@ -209,31 +210,18 @@ resizable, light by default; the library, COBI's Library tab, the Fact Sheet and
 listed piece's own text (test `tests/sierra_library.test.js`). The full record, his words and the mechanics moved verbatim
 to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S480)*.
 
-## Public pieces live on GitHub Pages (Sam, 2026-10-25)
+## Public pieces live on GitHub Pages (Sam, 2026-10-25; built S469 and S470)
 
-Sam, ~23:25Z 2026-10-24: *"the url that shows for the public library visuals has a claude url. Any way we can use an alias
-for all public surfaces--with cplinitiative?"* No team-owned domain exists; at ~02:00Z he picked **GitHub Pages now**
-(`cpl_memory` `sam-public-pieces-on-github-pages-2026-10-25`). A public piece made as a Claude artifact gets a copy at
-`library/<slug>/`, written by `python3 scripts/library_page.py SLUG SOURCE.html` from its vault source (or `Artifact read`
-with `path` index.html), and its record links there; the claude.ai page stays the editable original, so an edit there is
-followed by a rerun and a commit. Pages, 2026-10-25: `ell-iet-cpl-starting-points`, `dsp-credit-starting-points`
-(their vault copies match the published artifacts byte for byte). The URL switch is one guarded UPDATE per record
-(`kb/receipts/cpl_library_pages_urls_2026-10-25_s469.sql`, before-values in the receipt). Test:
-`tests/library_pages.test.js`; sweep: `library-ell-iet`, `library-dsp` and their `-dark`. Both records point there
-(applied 03:12Z, supabase-migrate run 40156994192, #2429). **Every listed piece opens at a cpl-initiative.github.io
-address:** the last, `ironworker-pathway-in-motion`, moved from the film's github.com file page to the same file on Pages
-(`.../prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4`; receipt
-`kb/receipts/cpl_library_ironworker_pages_url_2026-10-25_s470.sql`, supabase-migrate run 40162123856, read back 04:32Z).
-Sam's edits of that record only listed it; the github.com link came from the seed. Its versions keep the github.com link
-(the team view; `cpl_library_public()` returns `url` alone).
+Every listed piece opens at a cpl-initiative.github.io address; a public piece made as a Claude artifact gets a copy at
+`library/<slug>/` from `python3 scripts/library_page.py SLUG SOURCE.html`, and after an edit to the claude.ai original
+the copy is rerun and committed. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md),
+*Moved from the lane (S483)*.
 
 ## Next
 
-- **The DSP visual, redone the way the ELL one was (Sam, 2026-10-26: *"I'll want to redo the DSP visual in the Library
-  the same way we're redoing the ELL one"*), next session.** `dsp-credit-starting-points` is a hand-built page
-  (`CPLBrain/04-projects/cpl-initiative/dsp-training/20261020_DSP_Credit_Starting_Points.html`), so the redo either
-  moves it onto the agency template (`agency-visual/build.py`, with a card table) or adds the tables by hand; either way
-  the lines lead with what is possible. A new version beside v1; the public copy changes on his word.
+- **DSP Version 2 replaces the public copy on Sam's word:** `python3 scripts/library_page.py dsp-credit-starting-points
+  <CPLBrain/.../dsp-training/20261020_DSP_Credit_Starting_Points_2.html>`, the record's `version` and versions statuses
+  through a guarded update, then a commit.
 - **ELL IET Version 2 replaces the public copy on Sam's word:** `python3 scripts/library_page.py ell-iet-cpl-starting-points
   <the v2 HTML>`, the record's `version` and versions statuses through a guarded update, then a commit.
 - **Sam connects the Microsoft 365 connector;** the next session after that reads the CPLLibrary folder, confirms the 16
@@ -243,10 +231,9 @@ Sam's edits of that record only listed it; the github.com link came from the see
   `.gitignore` `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's two
   player pages off the site, and add a guard test so a deliverable binary cannot be committed again. Then the vault's
   binaries (29 on 2026-10-05).
-- **The open-asks series record reads version 123** (receipt `kb/receipts/cpl_library_open_asks_sheet123_2026-10-24_s466.sql`,
-  applied by `supabase-migrate.yml` run 40096111383): each new sheet is one guarded UPDATE from the version as read.
-  `made_by` is capped at 300 characters (`cpl_library_text_ck`), so it is a range (*sheets 46 to 122 by S341 SkyTerrace
-  through S460 SkyFremontia*) that each sheet extends by its two ends.
+- **Each new open-asks sheet updates the series record** `open-asks-sheets` (version 129 since S483, receipt
+  `kb/receipts/cpl_library_open_asks_sheet129_2026-10-26_s483.sql`; 124 to 128 had been skipped): one guarded UPDATE
+  from the version as read; `made_by` (capped at 300 characters) is a range each sheet extends.
 - Sam's sheet 47, 48 and 49 calls of 2026-10-07 and 2026-10-08 (the sheets to the vault, one Library record per series,
   the Ironworker film public, the Drive sharing dropped, the SharePoint folder with guests, hand and sync) are recorded in
   `cpl_memory` (`sam-sheet47-rulings-2026-10-07`, `sam-drop-cpllibrary-sharing-2026-10-07`,

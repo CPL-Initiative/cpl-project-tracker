@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 94 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 453 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1268** | |
+| Session handoffs | 454 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1269** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-26 S483 SkyCoyoteMint (opened by hand): DSP Credit Starting Points Version 2 on the agency template, a draft beside v1 (CPLBrain#487, receipt applied); Open Asks Sheet 129 and the series record caught up to it; the library lane back under budget (#2458); full checkpoint, handoff 484.
 - 2026-10-26 S482 SkyShootingStar (opened by hand): ELL IET Version 2 with example articulations (CPLBrain#485, receipt applied); the Summit film v3 and the funding film v11 (#2457); Open Asks Sheet 128; the house-voice note gains *Lead with what is possible*; full checkpoint, handoff 483.
 - 2026-10-26 S480 SkyChia (opened by hand): the funding tab's NC labels, outcome chips and Serves on P3 and P4 (#2453); the Library's Changes to make and Copy the request, the Coordinator Guide In development (#2452); Coordinator Guide Draft 1 (CPLBrain#482); full checkpoint, handoff 481.
 - 2026-10-25 S479 SkyMilkmaids (opened by hand): the Coordinator Guide audit ran from the Drive (#2448, CPLBrain#479); Sam's Sheet 127 *twelve*: twelve NC-1 crosswalk rows confirmed (#2449, CPLBrain#480); light checkpoint, handoff 480.
@@ -129,5 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-25 S477 SkyOwlsClover (opened by hand, beside the 12:14Z firing): the noncredit counts confirmed live; the privacy screen reads only a row's own cells; a hand-opened session claims the queue with a draft PR (#2445); light checkpoint, handoff 478.
 - 2026-10-25 S473 SkyClarkia: NC-1 channel 3, the credential crosswalk (13 rows proposed, Open Asks Sheet 127); handoff 474.
 - 2026-10-25 S472 SkyBrodiaea: the funding memo prints the noncredit outcomes (#2439); light checkpoint, handoff 473.
-- 2026-10-25 (S471 SkyPenstemon, the CPL Queue routine): the noncredit builder emits nc_cdcp, nc_exh and nc_course from a service-role RPC, applied and read back, and How to meet it for the two noncredit conditions (#2437); full checkpoint; handoff 472.
-- 2026-10-25 (S470 SkyBlueCurls, opened by hand): the ironworker film's Library link on GitHub Pages and the Veteran map's UI pass (#2432); the noncredit attestation on the funding page, applied after it reached Pages (#2433, #2436); a lessons archive within budget (#2434); full checkpoint; handoff 471.

@@ -448,3 +448,63 @@ the link, so she answers from what it says; a question about the library lists e
 the first paragraph, answer from its text, add nothing to it. Tests: `tests/sierra_library.test.js` (30); smoke mode 7x
 (his question). Live: `cpl-chat` deployed 03:13Z 2026-10-25 (run 40157254434); the production smoke (run
 40158212946) passed 7x, her answer linking the piece first and naming Fresno, Lemoore and Chaffey from its text.
+
+## S483 (SkyCoyoteMint), 2026-10-26: DSP Version 2 on the agency template, Sheet 129
+
+**Learned.** The ELL bases collapse for DSP: MAP holds no DSPT exhibit (0 of 2,952), so no row can rest on an
+articulation, here or elsewhere. The useful second signal is the common course's reach: PSYT P020A sits in one common
+course with three more colleges, Introduction to Disability Studies at 7, Medication Administration at 12, so a crosswalk
+faculty build once can guide the next college. The COCI inventory surfaced what Version 1 missed, Taft's Direct Support
+Education certificate and A.S. dds.ca.gov still does not resolve from a session; a web search returned the tables of
+contents of the DSPT Year 1 and Year 2 student guides, enough to name each row's topic, and the guides' text stays unread.
+Two data traps: the CCR names one college with a trailing space (`Cypress College `), and the COCI lookup's common-course
+ids date from July, so ids come from `unified_courses_members.js` and the COCI list fills in only a course the CCR lacks
+(PSYT P020F). And one process trap: the open-asks series record had sat at Sheet 123 for five sheets.
+
+**State.** Version 2 (https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa) is a draft beside Version 1; the public copy is
+Sam's call on Sheet 129 card 3. `dsp-training/make_brief.py` imports the ELL brief's helpers rather than copying them,
+and both v2 pages rebuild byte-identical.
+
+**Next.** On *replace*: `scripts/library_page.py dsp-credit-starting-points` on the v2 HTML and one guarded update.
+Reading the DSPT guides' objectives against Taft's and Porterville's course outlines is the step that would turn the
+title matches into a crosswalk.
+
+## Moved from the lane (S483 SkyCoyoteMint, 2026-10-26)
+
+The library lane ran past its 20,000-byte budget; this finished section left it verbatim, a pointer in its place.
+
+### Public pieces live on GitHub Pages (Sam, 2026-10-25)
+
+Sam, ~23:25Z 2026-10-24: *"the url that shows for the public library visuals has a claude url. Any way we can use an alias
+for all public surfaces--with cplinitiative?"* No team-owned domain exists; at ~02:00Z he picked **GitHub Pages now**
+(`cpl_memory` `sam-public-pieces-on-github-pages-2026-10-25`). A public piece made as a Claude artifact gets a copy at
+`library/<slug>/`, written by `python3 scripts/library_page.py SLUG SOURCE.html` from its vault source (or `Artifact read`
+with `path` index.html), and its record links there; the claude.ai page stays the editable original, so an edit there is
+followed by a rerun and a commit. Pages, 2026-10-25: `ell-iet-cpl-starting-points`, `dsp-credit-starting-points`
+(their vault copies match the published artifacts byte for byte). The URL switch is one guarded UPDATE per record
+(`kb/receipts/cpl_library_pages_urls_2026-10-25_s469.sql`, before-values in the receipt). Test:
+`tests/library_pages.test.js`; sweep: `library-ell-iet`, `library-dsp` and their `-dark`. Both records point there
+(applied 03:12Z, supabase-migrate run 40156994192, #2429). **Every listed piece opens at a cpl-initiative.github.io
+address:** the last, `ironworker-pathway-in-motion`, moved from the film's github.com file page to the same file on Pages
+(`.../prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4`; receipt
+`kb/receipts/cpl_library_ironworker_pages_url_2026-10-25_s470.sql`, supabase-migrate run 40162123856, read back 04:32Z).
+Sam's edits of that record only listed it; the github.com link came from the seed. Its versions keep the github.com link
+(the team view; `cpl_library_public()` returns `url` alone).
+
+### Changes to make: a reader's comments on a piece (Sam, 2026-10-25; built S480)
+
+Sam: *"before I send out the link to the ELL visual in the Library, I'd like to request some edits from the Library edit
+form but there's no place for me to enter my comments and then Refresh based on the input. That would be needed for the
+Coordinator Guide and other visuals as well. Advise."* The record's `refresh_note`, which held figures to refresh, is now
+**Changes to make**: a comment box in Edit (and in an In development card's Edit record). Saved, the piece lists under
+Needs attention (*with changes to make*), and **Copy the request** on its card gives the whole paste: the record, its link,
+its source (`rebuild_from`), the comments with who asked and when, and what a good result is. No schema change: the field
+was free text, written by the team-phrase PATCH, and every edit keeps the prior row in `cpl_library_history`.
+
+**The page rebuilds nothing; a session does.** It runs from the paste, or from the scheduled run, which reads open
+requests as queue items ([`scheduled_sessions`](reference/scheduled_sessions.md), step 6). It rebuilds from the source, keeps the
+link (republish a Claude page to the same artifact; rerun `scripts/library_page.py` for a public piece's Pages copy), shows
+the revision to whoever asked before it replaces a public copy, adds the version, and empties the box. **The advice given
+on a Refresh-now button:** the worker could fire the routine on demand, but that needs a stored trigger token and spends a
+session per press, a cost and permission call for Sam; until he asks, the queue and the paste carry it. Test:
+`tests/library.test.js` (13).
