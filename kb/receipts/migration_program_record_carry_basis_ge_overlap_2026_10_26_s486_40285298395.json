@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-10-26_s486_carry_basis_ge_overlap.sql",
+ "name": "program_record_carry_basis_ge_overlap_2026_10_26_s486",
+ "version": "20261026072325",
+ "sha256": "eeb9a15dd6e79459cf64b770294e7b9e80db3f71180a680bf791db1eef77b536",
+ "run": "40285298395",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

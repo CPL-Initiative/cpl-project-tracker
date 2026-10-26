@@ -487,6 +487,13 @@
      "source_words": "Hartnell College Local General Education: Area 1 English Communication 6 units required; Areas 2 Mathematical Concepts, 3 Arts & Humanities, 4 Social & Behavioral Sciences, 5 Physical & Biological Sciences, 6 Ethnic Studies 3 units required each; Area 7 Lifelong Learning & Self-Development 2 units required"
     },
     {
+     "kind": "set",
+     "field": "ge_overlap",
+     "value": true,
+     "pattern": "[Ss]tudents can double-count required courses and courses for General Education",
+     "why": "S486 SkyQuince, 2026-10-26: both nursing tabs print \"Students can double-count required courses and courses for General Education.\" (college-page-read 40279150362), the overlap Sam allowed for transfer degrees (Sheet 82 card 2) stated by the page for a local degree. Vocational Nursing 39248 sums 80-89 against the 63 it prints."
+    },
+    {
      "kind": "course_units",
      "field": "units",
      "source_words": "each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3)"

@@ -1291,8 +1291,8 @@ BASIS = RR.split("function public.program_record_carry_basis", 1)[1].split("$$;"
 check(all("- '%s'" % k in BASIS for k in ("outcomes", "careers", "total_units", "degree_total", "ge_units",
                                           "ge_pattern", "open_elective_units", "degree_elective_units",
                                           "electives_fill_degree", "degree_total_minimum",
-                                          "total_units_minimum"))
-      and BASIS.count("- '") == 11 and "'blocks',  coalesce(rec->'blocks'" in BASIS and "md5" not in BASIS
+                                          "total_units_minimum", "ge_overlap"))
+      and BASIS.count("- '") == 12 and "'blocks',  coalesce(rec->'blocks'" in BASIS and "md5" not in BASIS
       and "program_record_carry_basis(jsonb) from public, anon, authenticated" in RR,
       "the carry basis leaves out exactly the totals, the degree's figures, outcomes and careers, keeps every "
       "block, compares as jsonb (3 and 3.0 alike), and is closed to the API roles")

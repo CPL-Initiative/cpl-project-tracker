@@ -1,7 +1,7 @@
 ---
-title: "Program requirements harvest lessons — archive 3 (S399-S405)"
+title: "Program requirements harvest lessons — archive 3 (S399-S407)"
 created: 2026-10-22
-updated: 2026-10-25
+updated: 2026-10-26
 tags: [lessons, archive, program-requirements, catalog-harvest]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/lessons
@@ -270,3 +270,77 @@ Moved verbatim from `docs/reference/lanes/program-requirements-harvest.md` on 20
 **S457:** the S456 wave landed (#2381: Hartnell 31591 inserted, 03537, 03585, 21450 and 31592 re-read on their own tabs; Sierra 37810 and 38749 inserted; display build 14291ca32973, applied on `main` by run 39990555422, whose applied record committed though the run ended in failure). Sierra's two ESL noncredit certificates (38991, 44028) had lost the English as a Second Language page to their sibling 38990, which took it on coverage alone with no section matched: the catalog spells the department out ("English as a Second Language Intermediate-High Oral Skills" then "Noncredit Certificate of Competency", page read 39990920770) and `with_acronyms` read a run of four-letter-or-longer words only; it now skips a short function word between the spelled words (#2385: found 111 of 125, page-claimed 11; load 39995144054, reread 39995147379, display build d45e5d0fcf78, apply run 39999773855 on `main`, which wrote 17,529 of 17,530 and ended in failure on Victor Valley 20545's filed record, whose row S456 removed; #2391 removes the file, S458). Sierra's 11 still page-claimed are the college's (15307, 31226, 32010, 07963, 21537) and drifted titles. Hartnell's arithmetic failures by `why` after the wave (31 of 94): 7 noncredit hours-measured records whose courses carry no units, 1 degree whose eleven List A blocks name no minimum (17912), 3 missing a figure (03570 Local GE unfilled, 03571, 11803), 18 sums against a stated total, 6 of them widened by ABT 99 (Occupational Cooperative Work Experience Education) at 1-8 units from the vendor's `creditHours` (page read 40000266982: the tab prints no per-program figure). The scorer's new `meets` reading passes a program total, or an electives-filled degree total, that the low end meets exactly with a choice or a variable-unit course carrying the high end past it (Sheet 81 card 1's reading of a degree's span); measured over the filed records 258 program totals and 9 degrees read so (738 under any-inside-the-span); `kb/_program_requirements_rescore.py` rescores program totals too and 267 records are rescored in #2387 (draft) with the guarded UPDATE and its rollback in `kb/receipts/program_requirement_records_rescore_2026-10-23_s457.json`; the live apply is Sheet 119 card 9. The vendor's `courses/search` answer carries `lectureHours` and `labHours` per course (ENGM 620: lecture 80-90, lab 48-54), the opening for the seven noncredit records: a `course_hours` field in `cd_pages` and a reconcile kind for `measure: hours` are next; the page reader prints 1,500 characters of each fetched body (`NETWORK_BODY`), which hid ABT 99's own entry. **S456:** a Coursedog tab's code names its award (`cd_code_kind`; a tab whose code names another award is no candidate, as the PDF route's `pdf_code_match` has it): Hartnell's site read had filed 7 of 96 records from a sibling's tab (Biology A.S. 03537 from "Biology for Transfer Degree (AS-T) - AST.BIO", Administration of Justice A.S. 03585, Psychology A.A. 18353, Spanish A.A. 19518, Agriculture Production A.S. 12331 from CT.AGRP, two certificates from A.S. tabs). Reconcile capture 39966331452: Biology and Administration of Justice A.S. read their own AS tabs, both certificates and Agriculture Production's certificate 31591 their own CT tabs, Psychology, Spanish and Agriculture Production A.S. no page (the catalog prints none); found 94 of 105, 60 pass (59); the 4 extracted and landed in the S456 wave (#2381, S457). A second Cal-GETC step (`awards: associate`) fills a local degree whose own tab names the pattern: 08871 passes, 17924 and 33851 fail elsewhere. Sierra: a department page heads a noncredit program's section (`SECTION_AWARD["noncredit"]`, "Entrepreneurship for Makers" then "Noncredit Certificate of Completion", page read 39964750956): free capture 39967799242 found 109 of 125 (107), page-claimed 13 (15), Entrepreneurship for Makers 37810 and Construction Fundamentals 38749 extracted and landed (#2381); the two ESL noncredit landed in S457 (#2385, below). Of the 15, Interdisciplinary Entrepreneurship 15307 (the catalog heads "Innovation and Entrepreneurship, AA or AS (formerly Business Entrepreneurship)" and COCI's list, BUS 28, BUS 95, IT 60, matches no section) and the Mathematics and Physics A.S.-T (31226, 32010; the catalog prints only the 2.0 transfer degrees) are the college's to settle in COCI. Hartnell's 37 arithmetic failures by `why`: 8 a GE pattern without units, 9 a required course without units (7 noncredit programs whose courses carry 0 credit hours), 2 no total (the two certificates on A.S. tabs), 18 sums against a stated total. **S455:** Hartnell's reconcile steps set Cal-GETC 34 and Local GE 23 (S454) and now price a course the Requirements tab lists without units from the tab's own `courses/search` answer (`course_units`, skipping 0-hour noncredit courses and hours-measured programs): reconcile 39949570443, 59 of 96 pass the machine checks. Sierra reads "AA or AS" for both degrees (S454) and a short title word as the initials of the heading's words ("IT" for Information Technology, `with_acronyms`): 107 found of 125 with a closed list, 15 page-claimed (capture 39949602062). Sierra's IT: Business Information Worker (07963, 21537) is not in its 2026-2027 catalog: the college's to retire in COCI. **S453:** San Mateo landed with display build 2ab793e383e1 (#2372); measured against programs with a closed list (`with_closed_list`), only Canyons (noncredit, explained), Calbright and Sierra sat under 80 percent. **S452:** Long Beach City loaded (7 inserted, 4 replaced) with display build 504ae8333118 (17,510 programs); free captures moved nothing at East LA (137 of 234) or Marin (89 of 155) and one program at San Mateo (61 of 98, its Administration of Justice A.S.-T, extracted for the next wave); Cañada is hand-filed (its robots.txt refuses). S447-S451 (Mt. San Jacinto, Santa Barbara City, Palo Verde's Acalog catalog, Cypress, Berkeley City's Multimedia Arts, Victor Valley, Hartnell by its Coursedog site, Ohlone): lessons S447-S451.
 
 ✅ **Sheet 115 card 1 carried out (Sam, 2026-10-23 12:23Z: remove; S456):** the 16 of the S449 list's 25 still live and left out of build b0a96907bf83 (10 page-claimed and replaced, the 6 placing none) and Victor Valley's Nursing Licensure 20545 left the live table through `supabase-migrate.yml` (run 39968114807, removed 17; every row's before-values and the rollback in `kb/receipts/program_requirement_records_older_build_removed_2026-10-23_s456.json`); Sierra's IT: Cybersecurity 11965 and 21557 were re-extracted and stay. No display rebuild: the build already left the rows out. ✅ **Sam's standing rule (Open Asks Sheet 118 card 1, 18:44Z 2026-10-23, his own call: *standing*):** the older-build rows each wave leaves behind are removed at each wave with a before-values receipt by the S456 method, no card. Today's six (Hartnell's Psychology A.A. 18353, Spanish A.A. 19518 and Agriculture Production A.S. 12331, left out of build 14291ca32973; Long Beach City 43802 and 46290, whose filed records place none of their listed courses; Palo Verde 04436) left the live table in S459 by the S456 method: read live with md5 at ~21:09Z, removed by `supabase-migrate.yml` run 40025041285 (#2394; the rows as read and the rollback in `kb/receipts/program_requirement_records_older_build_removed_2026-10-23_s459.json`); the push went through in its own command. Cards 2 and 3 there *keep*, his own call: Hartnell's Local GE at 23 (S454) and Cal-GETC 34 on a local degree whose own tab names it (S456; the pilot guard reads it since S457). Sam ruled **narrow** on the scorer's `meets` reading (Open Asks Sheet 120 card 1, 2026-10-23 ~20:02Z, his own call). S457's change never reached #2387 (its container died at the context line); S459 rebuilt the reading from the PR body and the lessons' counts, found the same 258 program totals and 9 electives-filled degrees, applied the 239 that pass (28 of the 258 keep a failing degree check, record shape 6) by run 40024250589 (`kb/receipts/program_requirement_records_rescore_2026-10-23_s457.json`; the complete count read 13,173 from 12,970), and built display e021a2824548 on #2387 without Victor Valley's 20545 file.
+
+## S406 SkyIronwood (2026-10-17, hand-opened): the hand-filed catalogs, read from Sam's release copies
+
+- **A hand-filed copy is read from where the person posted it (#2199).** Sam posted eight refused colleges' catalog
+  PDFs (and Porterville's two and De Anza's one addendum) into the `catalog-files` release's text, where GitHub files
+  them as attachments. The session's proxy refuses GitHub's attachment host (403, "sessions are bound to their
+  configured repositories"); a runner fetches them. So a record names `copy_url` in place of a committed file, and the
+  read job's first step, `pin`, writes the copy's sha256, size and run the first time a runner fetches it. A pinned
+  hash never changes. The PDFs stay out of git and off the Pages site (CCSF's is 920 pages, American River's 998).
+- **The eight read almost whole.** Capture-only reads ($0) found Porterville 82 of 85 listed programs, Cerro Coso 65
+  of 74, Folsom Lake 107 of 108, De Anza 227 of 243 (its 2025-2026 catalog), Cosumnes River 217 of 219, Sacramento
+  City 204 of 207, CCSF 349 of 371 and American River 368 of 368, each in under eight minutes: one download, no page
+  loads. The four Los Rios colleges print one compiled catalog each, so the PDF reader needed nothing new.
+- **Extraction and loads** (each under the $40 go; $131.00 in all): Cerro Coso $4.87, 52 loaded; Porterville $6.13,
+  76; Folsom Lake $9.43, 104; De Anza $19.66, 210; Sacramento City $18.50, 182; Cosumnes River $18.96, 182; CCSF
+  $23.60, 294; American River $29.85, 327 (07230 took a Cloudflare 502 from the extraction gateway, then
+  re-extracted alone with `force=07230` and loaded). Records placing none of their listed courses stay out of the load: 13, 6, 3, 17, 22,
+  35, 55 and 41; 1,427 loaded in all. CCSF's 55 (16%) is the highest share of the sweep. Four read at random are
+  wrong-page picks the extraction caught and reported as not found (Physics 2.0 drew course descriptions, pages
+  795-797; Editorial Management and Design drew the Journalism degrees page), so the title gate still admits a
+  one-subject program's course pages in a large catalog. Nothing false loaded; the reader item stays open.
+- **The arithmetic check fails on a degree with a local GE pattern whose units the page does not state**
+  (`incomplete`): Cerro Coso 38 of 65. It is the known shape (record shape 5), not a reading fault.
+- **The registry rows wait on Sam (Open Asks Sheet 90 card 2).** The Supabase guard holds an UPDATE for a person, so
+  the six rows his addresses approved are a paste card. The reads do not wait on them: a hand-filed record is read
+  whatever the row names, and each record carries the copy's address and year.
+- **Cuesta's catalog is on curriQunet** (page reads 39046661339, 39046881195, 39047849634): the home page's Catalog
+  link names the class-search page the census filed; the catalog page links `cuesta.curriqunet.com/catalog/iq/29951`,
+  "Cuesta College Catalog 2026-2027", which answered the reader 200. Sheet 90 card 3.
+
+**Patterns that worked.** One branch per college cut from the code branch before it merged, so the eight captures
+ran while #2199's tests did. A Supabase result too large for the context lands in a file: parse it there and check
+it against a fingerprint computed in the same query, with nothing retyped.
+
+## Moved from the lane (S406 compaction)
+
+- Build `c111c9b05ca0` (S405): 12,424 programs at 92 colleges, adding Coalinga 52, Skyline 42, West Valley 133, Copper
+  Mountain 46, San Diego Continuing Education 90 and Solano 144, with their dated reads and San Mateo's.
+- Sheet 89 card 1's detail (S405): Grossmont's row names the catalog's cover image, and its catalog page links
+  `catalog.gcccd.edu/grossmont/`, the district CourseLeaf host Cuyamaca reads; Ohlone's names its landing page, and
+  its 2026-2027 catalog is PDF chapters, chapter 7 the curriculum guides; Cañada's names its schedule page, and its
+  online catalog `catalog.canadacollege.edu/current/` refuses the reader in robots.txt.
+- The refusing hosts before S406: De Anza and CCSF (Cloudflare 403), American River, Cosumnes River, Folsom Lake and
+  Sacramento City (404), Cerro Coso and Porterville (robots.txt on the PDF). All eight now read from Sam's copies.
+
+## S407 SkyMesquite (2026-10-17): catalog steps for own-HTML PDF colleges, the heading preference, the migrate path
+
+- **A row naming the catalog's page reads through a procedure catalog step.** LA Trade Tech and LA Mission name their
+  catalog pages; each page links its 2026-2027 PDF by words (`2026-2027 LATTC Catalog.pdf`, `2026/2027 Catalog | PDF`),
+  so a catalog step follows that link, as East LA's does, and the row stays as filed. Capture-only reads found 172 of 188
+  and 128 of 140; extraction $13.55 and $8.92; loads 158 and 125 unchecked. College of the Desert the same way (358 of
+  365 found in a 476-page PDF; its page calls the online catalog the most current, an open question on its record).
+- **A catalog step carries its file's year (#2202).** Rows naming a page name no year, so East LA's 120 records loaded
+  with none. `procedure_catalog()` passes a step's `catalog_year`, and `capture()` uses it when the row names none.
+- **The heading preference (#2203).** Among pages whose run covers the list: a clean heading (title and award on a line
+  naming no listed code) or the printed control number first, then a page that is not course descriptions (two or more
+  `CODE - Title (units)` entry lines), then the rest. A transfer degree's award words include a bare "transfer", which
+  every course line printing "Transfer: CSU, UC" carried, so course descriptions read as ADT headings. Free reconciles:
+  CCSF moved 44 picks, 43 onto named headings (Japanese AA from page 111 to 178); LA City 3 of 241. It recovers only 2 of
+  CCSF's 55 skipped: about half are noncredit programs that fall to the codes-only picker, the rest have no other page
+  covering their list. East LA's comparison mixed reader versions (its filed capture predates S403's merge).
+- **A forced re-extract after a reconcile must name its programs.** A reconcile files the new picks, so the next read
+  sees no change and extracts nothing (CCSF run 39055842443 kept 349). Pass `force=<control numbers>`.
+- **A held write goes through the runner, not to Sam.** The Supabase guard holds a session's UPDATE; S406 and S407 put
+  pastes on Sheets 90-91, and Sam (~18:10Z) pointed back to `supabase-migrate.yml`, built 2026-10-13 for exactly this.
+  One committed file per trigger, each statement keeping its receipt's guard, ending with a read-back; the receipt is
+  committed by the runner. Two applied this run, 13 rows.
+- **Procedure records written:** San Mateo, Coalinga, Copper Mountain, San Diego Continuing Education, Skyline, Solano,
+  Cerro Coso, CCSF, De Anza, Porterville (v1); the four Los Rios (v3 merges); LA Trade Tech, LA Mission, Desert (catalog
+  steps). A receipt built from a reconcile or a forced single-program run needs its step text corrected by hand (Solano,
+  American River): the builder labels every filed read as a full extraction.
+
+**Patterns that worked.** Page reads of the catalog pages before any capture (two runs named all six catalogs). Dated
+reads checked against fingerprints computed in SQL, counts and titles both.

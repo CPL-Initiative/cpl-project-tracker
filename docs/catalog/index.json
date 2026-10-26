@@ -14542,9 +14542,9 @@
       "program-requirements",
       "catalog-harvest"
      ],
-     "title": "Program requirements harvest lessons \u2014 archive 3 (S399-S405)",
+     "title": "Program requirements harvest lessons \u2014 archive 3 (S399-S407)",
      "type": null,
-     "updated": "2026-10-25"
+     "updated": "2026-10-26"
     },
     {
      "created": "2026-07-16",
@@ -16175,8 +16175,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 456,
+   "count": 457,
    "docs": [
+    {
+     "created": "2026-10-26",
+     "governs": [],
+     "n": 487,
+     "path": "docs/session_487_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "hartnell",
+      "coursedog"
+     ],
+     "title": "Session 487 handoff: Hartnell's double-count words read as the overlap",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-26",
      "governs": [],
@@ -24007,5 +24023,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1271
+ "total": 1272
 }
