@@ -473,9 +473,12 @@
     + '.cv-ex-meta{font-size:0.62rem;color:var(--text-muted);}'
     // The college that built an exhibit in MAP, as a link that opens MAP's CPL
     // Opportunities page searched for that exhibit ID (Sam, 2026-10-26).
-    + '.sw-map-chip{display:inline-flex;align-items:center;min-height:24px;padding:0 0.45rem;margin:0 0.3rem 0.15rem 0;border-radius:10px;font-size:0.68rem;font-weight:600;color:var(--cobalt);background:var(--surface-subtle);border:1px solid var(--border);text-decoration:underline;}'
+    // position:relative keeps its screen-reader text inside the chip; without it the hidden
+    // span anchors to the page and, in the table's own scroller, widens the page (390px: +666px).
+    + '.sw-map-chip{position:relative;display:inline-flex;align-items:center;min-height:24px;padding:0 0.45rem;margin:0 0.3rem 0.15rem 0;border-radius:10px;font-size:0.68rem;font-weight:600;color:var(--cobalt);background:var(--surface-subtle);border:1px solid var(--border);text-decoration:underline;}'
     + '.sw-map-chip:focus-visible{outline:2px solid var(--accent-link);outline-offset:2px;}'
     + '.sw-map-line{font-size:0.68rem;color:var(--text-body);margin-top:0.3rem;line-height:1.6;}'
+    + '.sw-map-more{color:var(--text-muted);}'
     + '.cv-ex-raw{font-size:0.62rem;color:var(--text-muted);padding-left:0.2rem;}'
     // Dark navy card so the v2 credential view's white/grey text is readable —
     // it renders on the light dashboard page, and (unlike the v1 table, which
@@ -856,19 +859,30 @@
       esc(short || "View in MAP") + '<span class="mx-sr-only"> (' + (college ? "built by " + esc(college) + "; " : "") +
       "opens MAP searched for " + esc(id) + ")</span></a>";
   }
-  // One line under a could-adopt claim: each verified exhibit of the credential,
-  // by the college that built it, opening MAP where Request Quick Adopt starts.
+  // One line under a could-adopt claim: one chip per college that built a verified
+  // exhibit of the credential (its first ID), opening MAP where Request Quick Adopt
+  // starts. A card can fold 55 IDs from 48 builders (CLEP Western Civilization 1), so
+  // the line stops at MAP_LINE_MAX; the aligned-exhibits list carries every ID.
+  var MAP_LINE_MAX = 6;
   function mapLine(cards) {
-    var seen = {}, chips = [];
+    var seen = {}, byBuilder = {}, firsts = [];
     (cards || []).forEach(function (e) {
       (e.exhibit_ids || []).forEach(function (id) {
         if (seen[id]) return;
         seen[id] = 1;
-        var c = mapChip(id);
-        if (c) chips.push(c);
+        var rec = mapVer && mapVer.found[String(id).toUpperCase()];
+        if (!rec) return;
+        var who = rec.college || id;
+        if (byBuilder[who]) return;
+        byBuilder[who] = 1;
+        firsts.push(id);
       });
     });
-    return chips.length ? '<div class="sw-map-line">Request Quick Adopt in MAP, from the exhibit each college built: ' + chips.join("") + '</div>' : "";
+    if (!firsts.length) return "";
+    var more = firsts.length - MAP_LINE_MAX;
+    return '<div class="sw-map-line">Request Quick Adopt in MAP, from the exhibit each college built: ' +
+      firsts.slice(0, MAP_LINE_MAX).map(mapChip).join("") +
+      (more > 0 ? '<span class="sw-map-more">and ' + more + ' more college' + (more === 1 ? '' : 's') + '</span>' : '') + '</div>';
   }
 
   // The MAP exhibits folded under one common reference — Sam: "list all the
