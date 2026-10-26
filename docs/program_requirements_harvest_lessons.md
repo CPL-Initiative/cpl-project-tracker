@@ -634,6 +634,24 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S484 SkyToyon (2026-10-26, the CPL Queue routine): Hartnell's noncredit course hours
+
+- **A Coursedog course carries its noncredit hours under `credits`, as ranges.** Page read 40273805437 (two
+  noncredit Requirements tabs, `network_find`): ENGM620 `lectureHours` 80-90 and `labHours` 48-54, ENGM622
+  `lectureHours` 64-72 and an empty `labHours`, beside `academicProgressHours` and `financialAidHours`, which are not
+  contact hours. The tab's "Non Credit - Total hours · 216" is the sum of the tops (90 + 54 + 72); the bottoms sum to a
+  shorter term. So the `course_hours` reconcile kind fills each course of a record measured in hours with the top of
+  lecture plus lab, citing the call, and never touches a units record.
+- **Reconcile run 40274398240 (free):** six of Hartnell's eight hours records now read `equal` (43607, 43609, 43610,
+  43776 at 216; 43608 at 144; 40261 at 108). Two stay incomplete because the answer gives no lecture or lab hours for
+  TAC326 (Theatre Performance 44161, 630) and BUS690 and BUS699 (Workforce and Academic Readiness 44574, 432). NEXT:
+  a page read with `network_find` on those codes, to see which field carries their hours.
+- **A reconcile run re-files every record a step notes, not only the ones it changed.** Seven Hartnell unit records
+  came back with only their score bookkeeping changed (the `rescored` marker and the `meets` reason); they were restored
+  from the prior commit before `step=reread`, which posts only records stamped with the newest run.
+- **The page reader prints 1,500 characters of a body.** A plan's `network_find` now prints the stretch around each
+  string it names (six places a string, 600 characters a side), which is how a long vendor answer is read.
+
 ## S459 SkyBuckeye (2026-10-23, Sam's session): the meets reading rebuilt and applied; the six rows removed
 
 - **A measured count verifies a rebuild.** S457's scorer change, rescore and receipt died with its container; the PR body

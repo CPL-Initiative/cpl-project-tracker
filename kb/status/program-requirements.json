@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-26T03:59:50Z",
-  "session": 483,
-  "moniker": "SkyCoyoteMint",
-  "run": "Sam's session",
+  "written_at": "2026-10-26T05:51:50Z",
+  "session": 484,
+  "moniker": "SkyToyon",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_484_handoff.md",
+  "handoff": "docs/session_485_handoff.md",
   "next_step": {
-    "title": "The Privacy page's UI pass, then the harvest's catalog sweep",
-    "text": "The first scheduled session of October 27 audits the Privacy page. Until then, and after it, a session takes the next college in the harvest's catalog sweep; the funding memo's opening waits on Sam's paste."
+    "title": "Hartnell's last two noncredit programs, then its other arithmetic failures",
+    "text": "Six of Hartnell's eight noncredit programs now sum to their printed hours. A page read finds where the vendor keeps TAC326, BUS690 and BUS699's hours; then the session works handoff 458's list of Hartnell's other arithmetic failures. The Privacy page's UI pass comes first on October 27."
   },
   "calls": [
     {
@@ -152,6 +152,10 @@
     {
       "at": "2026-10-26T03:58:00Z",
       "text": "No harvest table moved this run; Sam answered Open Asks Sheet 129, and S483 made ELL IET and DSP Version 2 the public copies."
+    },
+    {
+      "at": "2026-10-26T05:50:00Z",
+      "text": "S484 filled Hartnell's noncredit course hours from the catalog vendor's own course data: six of its eight noncredit programs now sum to their printed hours (13,179 programs complete, from 13,173)."
     }
   ],
   "headline": [

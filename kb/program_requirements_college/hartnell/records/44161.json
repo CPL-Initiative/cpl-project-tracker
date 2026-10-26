@@ -146,28 +146,28 @@
      },
      {
       "code": "TAC327",
-      "units": null,
+      "units": 126,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC328",
-      "units": null,
+      "units": 126,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC329",
-      "units": null,
+      "units": 126,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "TAC340",
-      "units": null,
+      "units": 126,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -184,5 +184,19 @@
    "The text prints no program learning outcomes and names no careers. Only the Requirements tab is included; the 'General' tab content is not in the text."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 40274398240,
+ "reconciled": [
+  {
+   "field": "course_hours",
+   "was": null,
+   "now": {
+    "TAC327": 126,
+    "TAC328": 126,
+    "TAC329": 126,
+    "TAC340": 126
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (the top of each course's credits.lectureHours plus credits.labHours in the same courses/search answer, which the tab's \"Non Credit - Total hours\" sums (college-page-read 40273805437: ENGM620 90 and 54, ENGM622 72, total 216))"
+  }
+ ],
+ "read_run": "39895340003"
 }

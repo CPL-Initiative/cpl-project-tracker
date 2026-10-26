@@ -278,6 +278,15 @@ dp = cpr.dropped_panels(got)
 check([d[0] for d in dp] == ["Search"] and dp[0][1].startswith("Search the catalog"),
       "the capture view lists each tab panel the capture leaves out, with its text")
 
+# ── network_find (S484): the stretch of a long body around each string the plan names ──
+body = "x" * 3000 + '"code":"ENGM 622","lectureHours":{"min":108}' + "y" * 3000 + '"lectureHours":0'
+found = cpr.network_find(body, ("lectureHours", "absent"))
+check([f["find"] for f in found] == ["lectureHours", "lectureHours"]
+      and "ENGM 622" in found[0]["text"] and len(found[0]["text"]) <= 2 * cpr.NETWORK_FIND_SPAN + len("lectureHours"),
+      "network_find prints each place a named string occurs, with the stretch around it, past NETWORK_BODY")
+check(len(cpr.network_find("ab" * 50, ("ab",))) == cpr.NETWORK_FIND_CAP,
+      "network_find stops at NETWORK_FIND_CAP places a string")
+
 if FAILS:
     print("\n%d FAILED" % len(FAILS))
     sys.exit(1)

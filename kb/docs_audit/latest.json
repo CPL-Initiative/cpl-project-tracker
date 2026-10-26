@@ -62,9 +62,9 @@
       "vault_heavy_path": 65
     },
     "vault": {
-      "files": 24784,
-      "bytes": 3683213858,
-      "heavy_bytes": 2554428640,
+      "files": 24785,
+      "bytes": 3683205118,
+      "heavy_bytes": 2554429147,
       "heavy_share": 0.694,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -177,10 +177,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1532918891,
+        "bytes": 1532919398,
         "kind": "dir"
       },
-      "message": "directory totals 1,532,918,891 B inside the vault"
+      "message": "directory totals 1,532,919,398 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 112,
  "with_closed_list": 105,
- "started": "2026-10-23T14:26:30Z",
+ "started": "2026-10-26T05:29:42Z",
  "route": "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)",
  "coursedog": {
   "root": "https://hartnell.catalog.prod.coursedog.com",
@@ -153,11 +153,11 @@
     "name": "Computer Science Info Systems-Network & Security Option"
    },
    {
-    "code": "AS.CISCS",
+    "code": "CT.CISC",
     "name": "Computer Science and Info Systems-Computer Science Option"
    },
    {
-    "code": "CT.CISC",
+    "code": "AS.CISCS",
     "name": "Computer Science and Info Systems-Computer Science Option"
    },
    {
@@ -177,11 +177,11 @@
     "name": "Cybersecurity"
    },
    {
-    "code": "CT.DA",
+    "code": "AA.DA",
     "name": "Digital Arts"
    },
    {
-    "code": "AA.DA",
+    "code": "CT.DA",
     "name": "Digital Arts"
    },
    {
@@ -313,19 +313,19 @@
     "name": "Nursing-Registered Nursing"
    },
    {
-    "code": "CT.NVN",
-    "name": "Nursing-Vocational Nursing"
-   },
-   {
     "code": "AS.NVN",
     "name": "Nursing-Vocational Nursing"
    },
    {
-    "code": "AA.PHO",
-    "name": "Photography"
+    "code": "CT.NVN",
+    "name": "Nursing-Vocational Nursing"
    },
    {
     "code": "CT.PHO",
+    "name": "Photography"
+   },
+   {
+    "code": "AA.PHO",
     "name": "Photography"
    },
    {
@@ -365,11 +365,11 @@
     "name": "Sociology for Transfer (AA-T)"
    },
    {
-    "code": "AA.SPA",
+    "code": "CT.SPA",
     "name": "Spanish"
    },
    {
-    "code": "CT.SPA",
+    "code": "AA.SPA",
     "name": "Spanish"
    },
    {
@@ -426,7 +426,7 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 103,
- "seconds": 875.2,
+ "seconds": 889.5,
  "found": 94,
  "by_method": {
   "no_closed_list": 7,
@@ -465,7 +465,7 @@
     "error": null,
     "chars": {
      "body": 2051,
-     "content": 600051,
+     "content": 600082,
      "tabs": 0
     },
     "tab_panels": []
@@ -491,7 +491,7 @@
     "error": null,
     "chars": {
      "body": 3692,
-     "content": 614380,
+     "content": 614347,
      "tabs": 0
     },
     "tab_panels": []
@@ -580,60 +580,9 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/hartnell",
-  "kept": 89,
-  "programs": 5,
-  "list": [
-   {
-    "control_number": "03537",
-    "title": "Biology",
-    "award": "A.S. Degree",
-    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.BIO/requirements-ipyf8",
-    "coverage": 1.0,
-    "was_url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.BIO/requirements-ipyf8",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "03585",
-    "title": "Administration of Justice",
-    "award": "A.S. Degree",
-    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ADJ/requirements-ipyf8",
-    "coverage": 1.0,
-    "was_url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.ADJ/requirements-ipyf8",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "21450",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.ADJ/requirements-ipyf8",
-    "coverage": 1.0,
-    "was_url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.ADJ/requirements-ipyf8",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31591",
-    "title": "Agriculture Production",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGRP/requirements-ipyf8",
-    "coverage": 0.96,
-    "was_url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGRP/requirements-ipyf8",
-    "was_coverage": 0.96,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31592",
-    "title": "Computer Science and Information Systems-Network and Security",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.PCN/requirements-ipyf8",
-    "coverage": 1.0,
-    "was_url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.PCN/requirements-ipyf8",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   }
-  ]
+  "kept": 94,
+  "programs": 0,
+  "list": []
  },
- "run": "39969050595"
+ "run": "40274398240"
 }

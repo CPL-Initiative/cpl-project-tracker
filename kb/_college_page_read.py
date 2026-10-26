@@ -24,7 +24,8 @@ for the form's action first, the same delay, and the fields it sent printed.
 A page with "network": true also prints the data its own scripts fetched from
 its own host while it loaded (no request of the reader's own), and from each
 vendor host its "network_hosts" names (a catalog on the college's domain whose
-scripts call the vendor's: Merced's catalog.mccd.edu calls app.coursedog.com).
+scripts call the vendor's: Merced's catalog.mccd.edu calls app.coursedog.com),
+and, for each string its "network_find" names, the stretch of a body around it.
 A page with "cq_view": true and "cq_catalog" reads a curriQunet entry through the
 catalog's own JSON exactly as the harvest's capture reads it (cq_view_read).
 
@@ -375,6 +376,11 @@ ROWS_JS = """(src) => {
 # requests for the page.
 NETWORK_CAP = 40         # responses printed per page
 NETWORK_BODY = 1500      # characters of each body printed
+# "network_find": a body longer than NETWORK_BODY hides what sits past its opening (S458: ENGM 622's
+# hours in Hartnell's courses/search answer). Each string the plan names prints the stretch around each
+# place it occurs in a body, up to NETWORK_FIND_CAP places a string, NETWORK_FIND_SPAN characters a side.
+NETWORK_FIND_CAP = 6
+NETWORK_FIND_SPAN = 600
 
 
 def network_kept(url: str, resource_type: str, page_url: str, hosts: tuple = ()) -> bool:
@@ -399,7 +405,22 @@ def network_listen(page, page_url: str, hosts: tuple = ()) -> tuple[list, object
     return got, on_response
 
 
-def network_read(got: list) -> list[dict]:
+def network_find(body: str, find: tuple = ()) -> list[dict]:
+    """The stretches of body around each string the plan names (network_find)."""
+    out = []
+    for word in find:
+        start = 0
+        for _ in range(NETWORK_FIND_CAP):
+            at = body.find(word, start)
+            if at < 0:
+                break
+            out.append({"find": word, "at": at,
+                        "text": body[max(0, at - NETWORK_FIND_SPAN):at + len(word) + NETWORK_FIND_SPAN]})
+            start = at + len(word)
+    return out
+
+
+def network_read(got: list, find: tuple = ()) -> list[dict]:
     out = []
     for resp in got:
         rec = {"url": resp.url, "status": resp.status, "method": resp.request.method,
@@ -407,6 +428,8 @@ def network_read(got: list) -> list[dict]:
         try:
             body = resp.text()
             rec["bytes"], rec["body"] = len(body), body[:NETWORK_BODY]
+            if find:
+                rec["found"] = network_find(body, find)
         except Exception as exc:
             rec["error"] = str(exc).splitlines()[0][:160]
         out.append(rec)
@@ -507,7 +530,7 @@ def cq_view_read(reader, url: str, catalog: int, errors: list) -> dict:
 
 def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = False,
              rows: str | None = None, network: bool = False, network_hosts: tuple = (),
-             capture_view: bool = False, cq_catalog: int = 0) -> dict:
+             network_find: tuple = (), capture_view: bool = False, cq_catalog: int = 0) -> dict:
     """One page through the census's Reader (or the pilot's PDF reader), with
     its text, its links and the excerpts around the plan's keywords."""
     from _program_requirements_pilot import read_pdf, pdfminer_pages
@@ -531,7 +554,7 @@ def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = 
                 if network:
                     reader.page.wait_for_timeout(3500)   # its data calls finish
                     reader.page.remove_listener("response", listener)
-                    out["network"] = network_read(heard)
+                    out["network"] = network_read(heard, network_find)
                 opened = None
                 if expand:
                     opened = reader.page.evaluate(EXPAND_JS)
@@ -623,6 +646,9 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
                   r.get("content_type"), r.get("bytes")))
             if r.get("body"):
                 print(fold(r["body"]))
+            for f in r.get("found") or []:
+                print("  -- %r at %d --" % (f["find"], f["at"]))
+                print(fold(f["text"]))
             if r.get("error"):
                 print("  error: " + r["error"])
     if rec.get("followed"):
@@ -717,6 +743,7 @@ def main(argv: list[str] | None = None) -> int:
                                    rows=None if parent else target.get("rows"),
                                    network=bool(target.get("network")) and not parent,
                                    network_hosts=tuple(h.lower() for h in target.get("network_hosts") or ()),
+                                   network_find=tuple(target.get("network_find") or ()),
                                    capture_view=bool(target.get("capture_view")) and not parent,
                                    cq_catalog=int(target.get("cq_catalog") or 0) if target.get("cq_view") and not parent else 0)
                 rec["answers"] = target.get("answers") or []

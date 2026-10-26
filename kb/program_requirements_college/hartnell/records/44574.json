@@ -145,14 +145,14 @@
     "courses": [
      {
       "code": "BUS650",
-      "units": null,
+      "units": 90,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUS660",
-      "units": null,
+      "units": 16,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -189,5 +189,17 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39895340003"
+ "extracted_run": 40274398240,
+ "reconciled": [
+  {
+   "field": "course_hours",
+   "was": null,
+   "now": {
+    "BUS650": 90,
+    "BUS660": 16
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (the top of each course's credits.lectureHours plus credits.labHours in the same courses/search answer, which the tab's \"Non Credit - Total hours\" sums (college-page-read 40273805437: ENGM620 90 and 54, ENGM622 72, total 216))"
+  }
+ ],
+ "read_run": "39895340003"
 }
