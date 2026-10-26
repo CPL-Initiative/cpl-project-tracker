@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/sierra_guidance_naming_rule_builtin_2026-10-26_s491.sql",
+ "name": "sierra_guidance_naming_rule_builtin_2026_10_26_s492_short_note",
+ "version": "20261026202436",
+ "sha256": "3857290eb1ef108fb26d590dc1c22f2f10c23c89309e425ed2e6bf3ac98082ca",
+ "run": "40394964778",
+ "status": 201,
+ "response": "[{\"id\":\"cb226a48\",\"active\":false,\"updated_by\":\"sierra-s491@bot (sheet 132)\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
