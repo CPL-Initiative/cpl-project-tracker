@@ -49,5 +49,7 @@ supabase-migrate run 40366680106, read back the same hour).
 his own call):** 1 *build*, 2 *move*, 3 *keep*. Built by S491: *Suggest wording* beside Save (the `guidance-wording`
 drafting caller in cpl-chat, as `memory-autogen` is; `tests/sierra_suggest_wording.test.js`), and `NAMING_RULE` in
 cpl-chat's stable prompt, with row cb226a48 switched off after the deploy (receipt
-`sierra_guidance_naming_rule_builtin_2026-10-26_s491.sql`). The four corrections stand.
+`sierra_guidance_naming_rule_builtin_2026-10-26_s491.sql`). The four corrections stand. **Deployed** from main 715788ca at 19:08Z (cpl-chat-deploy run 40383727809); smoke run
+dispatched after it (modes 7y, 7z). **NEXT:** read that smoke; on green, apply `sierra_guidance_naming_rule_builtin_2026-10-26_s491.sql`
+through supabase-migrate (row cb226a48 off) and read it back; then ask Sierra *What does MAP stand for?* once on the public page.
 

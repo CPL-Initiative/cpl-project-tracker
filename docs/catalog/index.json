@@ -605,7 +605,7 @@
      ],
      "title": "A capped instruction list is a zero-sum budget, and the cap that binds is rarely the one on display",
      "type": "methodology",
-     "updated": "2026-08-21"
+     "updated": "2026-10-26"
     },
     {
      "created": "2026-08-21",
@@ -16175,8 +16175,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 461,
+   "count": 462,
    "docs": [
+    {
+     "created": "2026-10-26",
+     "governs": [],
+     "n": 492,
+     "path": "docs/session_492_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "sierra-training",
+      "implementation-funding",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 492 handoff: Sierra's wording help live, the naming rule built in, the funding attestation form drafted",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-26",
      "governs": [],
@@ -24088,5 +24105,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1276
+ "total": 1277
 }
