@@ -753,10 +753,10 @@ section[hidden], #contents[hidden]{display:none}
          disbursements"). They sat beside the priorities from 2026-09-15; with
          the strategies open that list fell below twenty lines, so it moved here,
          and this section opens by default and follows the outcomes. -->
-    <h3 class="mile-h dates-h">Dates</h3>
+    <h3 class="mile-h dates-h" data-psub="sub_dates">Dates</h3>
     <p>The Chancellor&rsquo;s Office has set the dates below. A milestone without a date is contingent.</p>
     <ul class="timing" id="timing-list"></ul>
-    <h3 class="mile-h">How the funding arrives</h3>
+    <h3 class="mile-h" data-psub="sub_arrives">How the funding arrives</h3>
     <div data-ftext="x_timing">
     <p>Two timing settings are in effect. Neither changes the amount an institution
       can qualify for.</p>
@@ -815,7 +815,7 @@ section[hidden], #contents[hidden]{display:none}
          nothing on the page said a second lane existed, so a reader was told the
          $1,000,000 was "dedicated to noncredit" and never told who gets it or on
          what terms. Every figure here is written from D.nc by the painter. -->
-    <h3 class="nc-h">How noncredit funding is calculated</h3>
+    <h3 class="nc-h" data-psub="sub_nc_calc">How noncredit funding is calculated</h3>
     <p id="nc-body">The Chancellor&rsquo;s Office calculates noncredit funding from the noncredit FTES each
       institution reports to MIS, and that funding counts toward the priorities on this page. Noncredit FTES are counted where the
       instruction originates in the noncredit program and the credit is awarded at a credit college in the
@@ -870,7 +870,7 @@ section[hidden], #contents[hidden]{display:none}
       quarter calendar.</p>
     </div>
 
-    <h3 style="margin-top:1.6em">How a share becomes a target</h3>
+    <h3 style="margin-top:1.6em" data-psub="sub_share_target">How a share becomes a target</h3>
     <div data-ftext="x_count_target">
     <p>The Chancellor&rsquo;s Office divides each priority&rsquo;s share by its FTES reimbursement rate to set its target. That rate is the 2026-27
       state rate of <strong><span id="l-rate">$5,649.63</span> per FTES</strong>, multiplied by that
@@ -1556,13 +1556,16 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     if (D.ncMode !== "outcomes" || !D.ncOutcomes || !D.ncOutcomes.length) return;
     var SC = (D.progress && D.progress.scope) || null;
     var h = document.createElement("h3"); h.className = "nc-h"; h.textContent = "Noncredit outcomes";
+    h.setAttribute("data-psub", "sub_nc_outcomes");
     host.appendChild(h);
     var lead = document.createElement("p"); lead.className = "aim";
     lead.textContent = (D.ncRule || "") + (D.ncCondWords ? " The noncredit share of an award waits on its own minimum conditions: " + D.ncCondWords + "." : "");
     host.appendChild(lead);
     var pint = function (v) { return Math.round(v).toLocaleString("en-US"); };
-    D.ncOutcomes.forEach(function (p) {
+    D.ncOutcomes.forEach(function (p, ni) {
       var el = document.createElement("div"); el.className = "prio";
+      // The outcome's place in the stored list, for the page's curator Rename.
+      el.setAttribute("data-ncidx", String(ni));
       var top = document.createElement("div"); top.className = "top";
       var name = document.createElement("div"); name.className = "name";
       name.textContent = p.label + (p.title ? " · " + p.title : "");
@@ -1589,11 +1592,21 @@ window.CPL_PAINT_EXPLAINER = function (D) {
         : "Progress: MAP records demonstrate " + (pr.under ? "less than " : "") + money(pr.demonstrated) +
           " of the " + money(pr.totalPossible) + " Total Possible (" + (pr.under ? "under " : "") + pct2(pr.pct) + ").";
       el.appendChild(pl);
+      // The strategies in the credit cards' own shape (Sam, 2026-10-26: "The
+      // bullets on some sections of the public page are larger size that what
+      // is used elsewhere and should be uniform"). A bare <ul> took the body's
+      // size inside a card whose text is smaller; ul.strat is the card's.
       if (p.strategies && p.strategies.length) {
-        var sh = document.createElement("p"); sh.className = "aim"; sh.textContent = "Recommended strategies";
-        var ul = document.createElement("ul");
+        var det = document.createElement("details"); det.className = "strat-fold";
+        det.open = stratOpen();
+        var sum = document.createElement("summary");
+        var sh = document.createElement("span"); sh.className = "strat-h"; sh.textContent = "Recommended strategies";
+        var fw = document.createElement("span"); fw.className = "fold-word"; fw.setAttribute("aria-hidden", "true");
+        sum.appendChild(sh); sum.appendChild(fw);
+        var ul = document.createElement("ul"); ul.className = "strat";
         p.strategies.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
-        el.appendChild(sh); el.appendChild(ul);
+        det.appendChild(sum); det.appendChild(ul);
+        el.appendChild(det);
       }
       host.appendChild(el);
     });
@@ -1741,6 +1754,16 @@ window.CPL_SIERRA_SUGGESTED = [
       if (c.title) h.textContent = c.title;
       else h.innerHTML = h.getAttribute("data-house-title");
     }
+    // The sub-headings (data-psub) take a curator's rename the same way
+    // (Sam, 2026-10-26). The noncredit outcomes' heading is painted afresh on
+    // every paint, which runs before this, so it is named again each time.
+    if (typeof T.pubSubTitle !== "function") return;
+    Array.prototype.forEach.call(document.querySelectorAll("[data-psub]"), function (sh) {
+      if (sh.getAttribute("data-house-title") === null) sh.setAttribute("data-house-title", sh.innerHTML);
+      var st = T.pubSubTitle(sh.getAttribute("data-psub"));
+      if (st) sh.textContent = st;
+      else sh.innerHTML = sh.getAttribute("data-house-title");
+    });
   }
   // The order a curator set for THIS page's sections (Sam, 2026-09-11: "make
   // the sections movable when curating"). The tab stores it and resolves it;
@@ -1984,7 +2007,7 @@ window.CPL_SIERRA_SUGGESTED = [
   // A college chosen or cleared: the statewide strategies fold or open.
   document.addEventListener("cplfund:onechoice", function () {
     var open = stratOpen();
-    Array.prototype.forEach.call(document.querySelectorAll("#prios details.strat-fold"), function (d) { d.open = open; });
+    Array.prototype.forEach.call(document.querySelectorAll("#prios details.strat-fold, #nc-outcomes details.strat-fold"), function (d) { d.open = open; });
   });
 })();
 </script>

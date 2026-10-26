@@ -173,7 +173,8 @@ publicly, and anything sent to the Chaffey drafter, are Sam's.
 
 Both agency visuals are on the template at Version 2, each card ending in example articulations and the people in the
 conversation, and both are the public copies (Sam, Sheet 129 cards 2 and 3, *replace*, 03:53Z 2026-10-26). Sierra reads
-the ELL IET page whole once the 31,000-character cap from #2466 deploys. The full record moved verbatim to
+the ELL IET page whole: production reads 31,000 characters a page (cpl-chat-deploy run 40329644423, 13:21Z; smoke run
+40331201968, run alone, passed). The full record moved verbatim to
 [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S490)*.
 
 ## Links, Ask Sierra and the people on each card (Sam, 2026-10-26; built S483)
@@ -195,8 +196,7 @@ the ELL IET page whole once the 31,000-character cap from #2466 deploys. The ful
   Tahoe (ELL), Taft (DSP, so its card names no one). No store records a Noncredit CPL Lead yet (MAP's College Contacts
   has no such field; `cpl_funding_nc_attestation` held 0 rows).
 - **The page cap again.** With the contacts the ELL IET page reads 30,975 characters, so this branch's `cpl-chat` reads
-  31,000 a page and 37,000 in all. Sheet 130's deploy (Sam, *deploy*, 12:32Z) ships 26,000 from `main`; this raise
-  needs a second deploy after #2466 merges.
+  31,000 a page and 37,000 in all, deployed under Sheet 130 (run 40329644423).
 
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 

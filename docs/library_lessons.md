@@ -583,7 +583,7 @@ card, and the v1 brief rebuilds byte-identical. The record carries Version 2 as 
 (receipt `kb/receipts/cpl_library_ell_iet_v2_2026-10-26_s482.sql`, supabase-migrate run 40256725268, read back).
 **Version 2 is the public copy** (Sam, Sheet 129 card 2, *replace*, 03:53Z 2026-10-26): `library/ell-iet-cpl-starting-points/` rewritten from it, the record at version 2 (receipt `kb/receipts/cpl_library_v2_public_2026-10-26_s483.sql`).
 It reads 25,516 characters, past Sierra's 20,000-character page cap; the repo raises it to 26,000 (total 32,000).
-**Deployed** (Sam, Open Asks Sheet 130 card 1, *deploy*, 12:32Z 2026-10-26, his own call): cpl-chat from main 954a71e1 (cpl-chat-deploy run 40323496549, byte-verified), so Sierra reads the page whole; smoke run 40323790857 dispatched after it.
+**Deployed** (Sam, Open Asks Sheet 130 card 1, *deploy*, 12:32Z 2026-10-26, his own call): production reads a library page to 31,000 characters and 37,000 in all, from main f9c86491 (cpl-chat-deploy run 40329644423, 13:21Z, byte-verified; the 12:35Z run 40323496549 shipped 26,000 before #2466 raised it). Smoke run 40331201968, run alone, passed, mode 7x included; the three suites that overlapped from 12:48Z to 13:28Z failed on search and statement timeouts, never on 7x.
 
 ## DSP Credit Starting Points, Version 2 (Sam's S482 ask; built S483)
 
