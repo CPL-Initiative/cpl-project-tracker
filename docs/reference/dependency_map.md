@@ -211,7 +211,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 |---|---|---|
 | `FN` | none found | produced by: `cpl-chat-deploy.yml` |
 | `cer-classify` | none found | produced by: `chatbox/supabase/functions/cer-classify/index.ts` |
-| `cpl-chat` | tabs: `college-briefing`, `gr-priorities`, `memory` · modules: `prototype/ccr_universe.js`, `prototype/check_skyview_sweep.js` · pages: `prototype/skyview.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts` |
+| `cpl-chat` | tabs: `college-briefing`, `gr-priorities`, `memory`, `sierra-training` · modules: `prototype/ccr_universe.js`, `prototype/check_skyview_sweep.js` · pages: `prototype/skyview.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts` |
 | `cpl-chat-preview` | none found | produced by: `cpl-chat-preview-ab.yml` |
 | `cpl-news-harvest` | none found | produced by: `chatbox/supabase/functions/cpl-news-harvest/index.ts` |
 | `generate-letter` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |

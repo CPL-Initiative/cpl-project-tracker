@@ -273,7 +273,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   2017 launch name — history-only, never the current expansion.** Enforced in
   every report prompt (`NAMING_RULE` in `report_generator.js`;
   `college_report_generator.js`; `annual_report.js` polish), the docx footers,
-  a live `sierra_guidance` row (id `cb226a48`, deactivatable in the Sierra training tab),
+  Sierra's built-in instructions (`NAMING_RULE` in cpl-chat; Sheet 132, 2026-10-26),
   and the public KB's `claude/CLAUDE.md`. Historical titles/quotes stay verbatim.
 - **CO style guide (Sam, 2026-09-30):** governs our writing and CO colors and
   identity, never CCC or CCCCO; no UI change from it:

@@ -89,6 +89,16 @@
      ]
     },
     {
+     "id": "module:sierra_training.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 1887,
+     "tabs": [
+      "sierra-training"
+     ]
+    },
+    {
      "id": "page:prototype/skyview.html",
      "kind": "page",
      "direction": "call",
@@ -364,7 +374,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 6984
+     "line": 7003
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -2295,7 +2305,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5793
+     "line": 5812
     }
    ],
    "main_committers": []
@@ -18106,7 +18116,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1285,
+     "line": 1296,
      "tabs": [
       "sierra-training"
      ]
@@ -18162,7 +18172,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1804,
+     "line": 1815,
      "tabs": [
       "sierra-training"
      ]
@@ -21283,7 +21293,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6256
+     "line": 6275
     },
     {
      "id": "module:admin.js",
@@ -21408,7 +21418,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5555
+     "line": 5564
     }
    ],
    "main_committers": []
@@ -21512,7 +21522,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6586
+     "line": 6605
     }
    ],
    "main_committers": []
@@ -21731,7 +21741,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1441,
+     "line": 1452,
      "tabs": [
       "sierra-training"
      ]
@@ -21766,7 +21776,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1227
+     "line": 1243
     }
    ],
    "main_committers": []
@@ -21778,7 +21788,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5559
+     "line": 5568
     },
     {
      "id": "module:kb-portal/composer_util.js",
@@ -21990,14 +22000,14 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 7251
+     "line": 7270
     },
     {
      "id": "module:sierra_training.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 944,
+     "line": 953,
      "tabs": [
       "sierra-training"
      ]
@@ -23996,7 +24006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1204
+     "line": 1220
     },
     {
      "id": "script:kb/_identity_daily_check.py",
@@ -24649,7 +24659,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 917,
+     "line": 926,
      "tabs": [
       "sierra-training"
      ]
@@ -24659,7 +24669,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1250
+     "line": 1266
     }
    ],
    "main_committers": []
@@ -24671,14 +24681,14 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6345
+     "line": 6364
     },
     {
      "id": "module:sierra_training.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1057,
+     "line": 1066,
      "tabs": [
       "sierra-training"
      ]
@@ -24688,7 +24698,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1127,
+     "line": 1137,
      "tabs": [
       "sierra-training"
      ]
@@ -24710,7 +24720,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1313,
+     "line": 1324,
      "tabs": [
       "sierra-training"
      ]
@@ -24720,7 +24730,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1395,
+     "line": 1406,
      "tabs": [
       "sierra-training"
      ]
@@ -24735,7 +24745,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 954,
+     "line": 963,
      "tabs": [
       "sierra-training"
      ]
@@ -24745,7 +24755,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 975,
+     "line": 984,
      "tabs": [
       "sierra-training"
      ]
@@ -24796,7 +24806,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1304,
+     "line": 1315,
      "tabs": [
       "sierra-training"
      ]
