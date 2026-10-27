@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1299,
-    "bytes": 13196831,
-    "over_budget": 1,
+    "bytes": 13196472,
+    "over_budget": 0,
     "handoff_max": 500,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59997,
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 438247,
-        "over": 1
+        "bytes": 437888,
+        "over": 0
       },
       "handoff": {
         "files": 470,
@@ -57,13 +57,12 @@
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 1,
       "house_voice": 1,
       "vault_heavy_path": 65
     },
     "vault": {
       "files": 24890,
-      "bytes": 3840178355,
+      "bytes": 3840177996,
       "heavy_bytes": 2703696704,
       "heavy_share": 0.704,
       "ignore_filters": [
@@ -146,19 +145,6 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 20284,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 284,
-        "ratio": 1.01
-      },
-      "message": "20,284 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
       "rule": "house_voice",
