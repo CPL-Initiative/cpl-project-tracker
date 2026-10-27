@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_s504_2026-10-27.sql",
+ "name": "s504_library_funding_film_v12",
+ "version": "20261027232841",
+ "sha256": "557d26d73f04e6e87c132350cc2aad3e36ec03e827785f9234acfa83ff982f09",
+ "run": "40601997650",
+ "status": 201,
+ "response": "[{\"record\":\"cpl-funding-in-motion Scenario 2 v12\",\"file_name\":\"20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4\",\"cuts\":4}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
