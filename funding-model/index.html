@@ -117,13 +117,24 @@ a:hover{text-decoration-thickness:2px}
 /* ── the public header (the library's): the CPL Initiative lockup to the
    Chancellor's Office CPL page, and the way out to the public CPL pages ── */
 .cplh{background:var(--surface-opaque); border-bottom:1px solid var(--header-line); color:var(--text-body); font-size:.95rem; line-height:1.4}
-.cplh-in{min-height:76px; padding-block:10px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 32px}
+.cplh-in{position:relative; min-height:76px; padding-block:10px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 32px}
 .cplh-logo{display:inline-flex; min-height:24px}
 .cplh-logo img{display:block; height:54px; width:auto; max-width:100%}
-.cplh-nav{display:flex; flex-wrap:wrap; gap:.3rem 1.1rem; margin:0; padding:0; list-style:none}
-.cplh-nav li{margin:0}
 .cplh-nav a{display:inline-flex; align-items:center; min-height:24px; color:var(--cobalt); font-weight:600; text-underline-offset:3px}
-@media (max-width:560px){ .cplh-logo img{height:40px} }
+/* Sam, 2026-10-26, on a screenshot of this page: "put all the links in the header in one
+   Resource Links drop down. Collapse all link should be the one furthest right and pdf just to
+   the left of it", and the row under the title (Collapse all, PDF, the version) moves up here.
+   Resource Links opens the library's list, each link with a line in gray saying what it is
+   (--text-muted on --surface-opaque). The page's controls follow it, Collapse all last. */
+.cplh-end{display:flex; flex-wrap:wrap; align-items:center; gap:6px 22px; min-width:0}
+.cplh-links .btn[aria-expanded="true"]{color:var(--seal-blue); text-decoration-thickness:2px}
+.cplh-panel{position:absolute; z-index:60; top:100%; right:clamp(16px,4vw,28px); width:min(38rem, calc(100% - 2*clamp(16px,4vw,28px))); margin-top:1px; padding:6px 18px; background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:4px}
+.cplh-panel[hidden]{display:none}
+.cplh-nav{margin:0; padding:0; list-style:none}
+.cplh-nav li{display:grid; grid-template-columns:11rem minmax(0,1fr); gap:2px 16px; align-items:baseline; margin:0; padding:9px 0; border-top:1px solid var(--border)}
+.cplh-nav li:first-child{border-top:0}
+.cplh-desc{color:var(--text-muted); font-size:.9rem}
+@media (max-width:560px){ .cplh-logo img{height:40px} .cplh-nav li{grid-template-columns:minmax(0,1fr)} }
 
 /* ── masthead: the title over the library's gold rule, the controls beneath ── */
 .masthead{background:transparent}
@@ -138,11 +149,11 @@ a:hover{text-decoration-thickness:2px}
 .ver abbr{text-decoration:none}
 .mh-row{margin-top:0}
 .mh-actions{display:flex; flex-wrap:wrap; align-items:center; gap:4px 22px}
-.mh-actions .btn, .mh-actions .btn.primary{
+.mh-actions .btn, .mh-actions .btn.primary, .cplh-links .btn{
   background:none; border:0; border-radius:2px; padding:2px 0; min-height:24px;
   color:var(--cobalt); font-size:.95rem; font-weight:600;
   text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px}
-.mh-actions .btn:hover, .mh-actions .btn.primary:hover{
+.mh-actions .btn:hover, .mh-actions .btn.primary:hover, .cplh-links .btn:hover{
   background:none; color:var(--seal-blue); text-decoration-thickness:2px}
 
 /* ── contents (Sam, 2026-10-01: a link to each section that opens it) ─────
@@ -369,7 +380,7 @@ footer a{color:var(--foot-fg)}
   @page{size:letter landscape; margin:.45in}   /* landscape (Sam, 2026-10-15) */
   /* the action bar (with Ask Sierra in it) and the Contents are screen
      navigation; the PDF opens every fold instead */
-  .skip, .mh-actions, #contents, #live-status, .cplh-nav{display:none}
+  .skip, .mh-actions, #contents, #live-status, .cplh-links, .cplh-panel{display:none}
   .cplh-in{min-height:0; padding-block:0 4pt}
   .cplh-logo img{height:34pt}
   .head{padding-block:4pt 10pt}
@@ -440,15 +451,16 @@ section[hidden], #contents[hidden]{display:none}
 <!-- ── THE MASTHEAD (Sam, 2026-10-09, on a screenshot: "Let's clean up the
      explainer page formatting a bit"). The CPL Initiative's lockup replaces the
      colleges' logo; the title drops "How It Works"; the eyebrow and the draft,
-     scenario and window tags go; the version stays. The page's controls, which
-     had their own sticky bar above the masthead, sit on the version's row, so
-     the page opens on one band. Ask Sierra sits in that row just ahead of the
-     PDF button and opens her in the side bar ([data-sierra-open],
-     ../sierra/sidebar.js). Outside <main>, so a reorder of the sections never
-     moves it, and print drops the controls. -->
+     scenario and window tags go. Since 2026-10-26 the version and the page's
+     controls sit in the public header, and Ask Sierra is the chip in the
+     window's lower-right corner (../sierra/sidebar.js; Sam: "She should open in
+     a resizable sidebar view like the other public pages"). Outside <main>, so
+     a reorder of the sections never moves it. -->
 <!-- THE PUBLIC HEADER (Sam, 2026-10-21: every public page carries the CPL
      Initiative logo to the Chancellor's Office CPL page and the links out; the
-     library's version, 2026-10-24). The lockup moved here from beside the
+     library's version, 2026-10-24). The CPL Library is off this page's list
+     (Sam, 2026-10-26: "we'll just use it with our meetings with colleges and
+     agencies since it limited curated content"). The lockup moved here from beside the
      title (Sam, 2026-10-25: the library's look). Light only, so the header
      carries no Light and Dark words (Sam, 2026-10-25: "Let's just leave it light
      only"). -->
@@ -457,58 +469,72 @@ section[hidden], #contents[hidden]{display:none}
     <a class="cplh-logo" href="https://www.cccco.edu/about-us/chancellors-office/divisions/educational-services-and-support/credit-for-prior-learning/" target="_blank" rel="noopener">
       <img src="../sierra/cpl-initiative-logo-navy.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="1115" height="209">
     </a>
-    <nav aria-label="CPL pages">
-      <ul class="cplh-nav">
-        <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener">CPL Fact Sheet</a></li>
-        <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener">MAP</a></li>
-        <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener">Find your college</a></li>
-        <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">MAP dashboard</a></li>
-        <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener">Credit for Being You</a></li>
-        <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/" target="_blank" rel="noopener">CPL Library</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<div class="masthead">
-  <div class="wrap head">
-    <div class="mh-text">
-      <h1>2026-2028 CPL Initiative Funding</h1>
-      <div class="title-accent" aria-hidden="true"></div>
-      <div class="mh-row">
-        <div class="mh-actions">
-          <!-- Edit this page (Sam, 2026-10-15, call 1): a signed-in curator's
-               words for arranging and editing this page; edit_page.js shows it
-               only when the funding module says the reader may curate. -->
-          <button type="button" class="btn" id="edit-page-btn" aria-pressed="false" hidden>Edit this page</button>
-          <button type="button" class="btn" id="btn-collapse-all" aria-controls="start">Collapse all</button>
-          <!-- The My CPL Funding button is gone (Sam, 2026-10-15, call 8: "Remove
-               it"): it scrolled to the chooser, which is Step 1, directly below. -->
-          <!-- PDF (Sam, 2026-09-15: "Add a pdf download link to the top").
-               It prints THIS page rather than fetching a file, and that is the
-               point: every figure here is computed live, so a PDF built once and
-               committed would be stale the first time a dial moved. The print
-               stylesheet at the foot of the CSS opens every fold, drops the
-               controls, and repeats the table header on each page. -->
-          <button type="button" class="btn" id="btn-sierra" data-sierra-open title="Ask Sierra, the CPL assistant">Ask Sierra</button>
-          <button type="button" class="btn" id="pdf-btn"
-                  aria-describedby="pdf-note">PDF</button>
-          <!-- The version, in small type after PDF (Sam, 2026-10-09: "cut
-               Version and just use Ver: 10/9/26 -- It doesn't need a chip",
-               then "Put the Ver next to pdf"). 2026-10-21: "As of: 10/21/2026
-               Ver. 3" — the last save's date and the scenario's number, both
-               painted from the live config. -->
-          <span class="ver">As of: <span id="x-version">8/31/2026</span> <abbr title="Version">Ver.</abbr> <span id="x-scenario-no">1</span></span>
+    <div class="cplh-end">
+      <nav class="cplh-links" aria-label="Resource links">
+        <button type="button" class="btn word" data-cplh-links aria-expanded="false" aria-controls="cplh-panel">Resource Links</button>
+        <div class="cplh-panel" id="cplh-panel" hidden>
+          <ul class="cplh-nav">
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener" aria-describedby="cplh-d-fact">CPL Fact Sheet</a><span class="cplh-desc" id="cplh-d-fact">Credit for prior learning (CPL) in California: goals, live progress and funding</span></li>
+            <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener" aria-describedby="cplh-d-map">MAP</a><span class="cplh-desc" id="cplh-d-map">The Mapping Articulated Pathways (MAP) platform, where colleges record the credit they award</span></li>
+            <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener" aria-describedby="cplh-d-college">Find your college</a><span class="cplh-desc" id="cplh-d-college">Your college's credit for prior learning page and the person to contact</span></li>
+            <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener" aria-describedby="cplh-d-dash">MAP dashboard</a><span class="cplh-desc" id="cplh-d-dash">Live statewide counts of students, units of credit and savings, by college</span></li>
+            <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener" aria-describedby="cplh-d-cfby">Credit for Being You</a><span class="cplh-desc" id="cplh-d-cfby">The student portal: add what you have learned and request credit</span></li>
+          </ul>
         </div>
+      </nav>
+      <div class="mh-actions" role="group" aria-label="This page">
+        <!-- Edit this page (Sam, 2026-10-15, call 1): a signed-in curator's
+             words for arranging and editing this page. Since 2026-10-26 (Sam:
+             "hide or delete the Edit link from the public view") edit_page.js
+             shows it only inside COBI's Public page view, which frames this page. -->
+        <button type="button" class="btn" id="edit-page-btn" aria-pressed="false" hidden>Edit this page</button>
+        <!-- The version (Sam, 2026-10-21: "As of: 10/21/2026 Ver. 3"), the last
+             save's date and the scenario's number, painted from the live config. -->
+        <span class="ver">As of: <span id="x-version">8/31/2026</span> <abbr title="Version">Ver.</abbr> <span id="x-scenario-no">1</span></span>
+        <!-- PDF (Sam, 2026-09-15) prints THIS page: every figure is computed
+             live, so a committed PDF would be stale the first time a dial moved.
+             The print stylesheet opens every fold and drops the controls. -->
+        <button type="button" class="btn" id="pdf-btn" aria-describedby="pdf-note">PDF</button>
+        <button type="button" class="btn" id="btn-collapse-all" aria-controls="start">Collapse all</button>
       </div>
     </div>
   </div>
-</div>
+<script>
+/* Resource Links: one word opens the list (the library's, 2026-10-26). Escape, a
+   click outside it, or Tab past its last link shuts it; Escape hands focus back. */
+(function () {
+  var word = document.querySelector("[data-cplh-links]");
+  var panel = word && document.getElementById(word.getAttribute("aria-controls"));
+  var nav = word && word.closest ? word.closest("nav") : null;
+  if (!word || !panel || !nav) return;
+  function isOpen() { return word.getAttribute("aria-expanded") === "true"; }
+  function setOpen(on) { word.setAttribute("aria-expanded", String(on)); panel.hidden = !on; }
+  word.addEventListener("click", function () { setOpen(!isOpen()); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape" || !isOpen()) return;
+    var inside = nav.contains(document.activeElement);
+    setOpen(false);
+    if (inside) word.focus();
+  });
+  document.addEventListener("click", function (e) { if (isOpen() && !nav.contains(e.target)) setOpen(false); });
+  nav.addEventListener("focusout", function (e) { if (isOpen() && e.relatedTarget && !nav.contains(e.relatedTarget)) setOpen(false); });
+})();
+</script>
+</header>
+<section class="masthead" aria-labelledby="page-title">
+  <div class="wrap head">
+    <div class="mh-text">
+      <h1 id="page-title">2026-2028 CPL Initiative Funding</h1>
+      <div class="title-accent" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
 
 <!-- STEP 1: CHOOSE YOUR COLLEGE (Sam, 2026-10-15: "Make the College selector
      more prominent so folks see that it is an important first step"). The
      funding tab paints its own chooser here (cpl_funding.js stepOneHtml), so the
      tab's Public view and this page offer one chooser, written once. -->
-<div class="wrap step1-wrap"><div id="cplFundStep1Mount"></div></div>
+<section class="wrap step1-wrap" aria-label="Step 1, choose a view"><div id="cplFundStep1Mount"></div></section>
 
 <main id="start">
 

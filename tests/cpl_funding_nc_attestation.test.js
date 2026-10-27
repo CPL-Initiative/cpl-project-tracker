@@ -132,19 +132,30 @@ function drill(window, doc, name) {
     T._fiscalYearOf(new Date("2026-10-25T12:00:00Z")) === "2026-27" && T._fiscalYearOf(new Date("2026-06-30T12:00:00Z")) === "2025-26" &&
     T._fiscalYearOf(new Date("2026-07-01T12:00:00Z")) === "2026-27" && T._fiscalYearOf(new Date("2099-12-31T12:00:00Z")) === "2099-00");
   const read = (o) => T._ncAttestFormRead((k) => o[k]);
-  const ok = { coordName: " Ana Ruiz ", coordTitle: "Noncredit CPL Coordinator", name: "Ben Ko", title: "NCDEAN", email: "ben@college.edu" };
+  const ok = { coordName: " Ana Ruiz ", coordTitle: "Noncredit CPL Coordinator", leadTypes: ["ft_faculty"],
+    assignment: " 20% release fall and spring ", meets: "every two weeks", name: "Ben Ko", title: "NCDEAN", email: "ben@college.edu" };
   const good = read(ok);
-  check("B2: a complete form reads into a record, trimmed, with no count when none is given",
-    !good.error && good.form.coordName === "Ana Ruiz" && good.form.title === "NCDEAN" && good.form.count === null);
+  check("B2: a complete form reads into a record, trimmed, with the Lead's type, assignment and meetings and no count, course or exhibits (Sam, 2026-10-26)",
+    !good.error && good.form.coordName === "Ana Ruiz" && good.form.title === "NCDEAN" &&
+    good.form.leadTypes.join() === "ft_faculty" && good.form.assignment === "20% release fall and spring" &&
+    good.form.meets === "every two weeks" && !("count" in good.form) && !("course" in good.form) && !("exhibits" in good.form));
   check("B3: the form names the first missing field, in the order it asks",
     /Noncredit CPL Lead's name/.test(read(Object.assign({}, ok, { coordName: "" })).error) &&
     /Noncredit CPL Lead's title/.test(read(Object.assign({}, ok, { coordTitle: "" })).error) &&
+    /what kind of employee/.test(read(Object.assign({}, ok, { leadTypes: [] })).error) &&
+    /about the Lead's assignment/.test(read(Object.assign({}, ok, { assignment: " " })).error) &&
+    /how often the Lead meets/.test(read(Object.assign({}, ok, { meets: "" })).error) &&
     /your name/.test(read(Object.assign({}, ok, { name: "" })).error) &&
     /choose your title/.test(read(Object.assign({}, ok, { title: "Dean" })).error) &&
     /valid college email/.test(read(Object.assign({}, ok, { email: "ben" })).error));
-  check("B4: the count is a whole number or blank",
-    read(Object.assign({}, ok, { count: "4" })).form.count === 4 && read(Object.assign({}, ok, { count: "0" })).form.count === 0 &&
-    /whole number/.test(read(Object.assign({}, ok, { count: "-1" })).error) && /whole number/.test(read(Object.assign({}, ok, { count: "2.5" })).error));
+  const many = read(Object.assign({}, ok, { leadTypes: ["staff", "dean", "administrator"] }));
+  check("B4: the Lead may be more than one type; a type the table refuses is dropped, and none left asks again",
+    many.form.leadTypes.join() === "staff,administrator" &&
+    /what kind of employee/.test(read(Object.assign({}, ok, { leadTypes: ["dean"] })).error));
+  const jsTypes = ((consumerSrc.match(/var NC_LEAD_TYPES = \[([\s\S]*?)\];/) || [])[1] || "").match(/val: "([^"]+)"/g) || [];
+  const sqlTypes = ((SQL.match(/lead_types <@ array\[([^\]]+)\]/) || [])[1] || "").split(",").map((x) => x.trim().replace(/'/g, ""));
+  check("B5: the form's employee types are the table's check, in lockstep",
+    sqlTypes.length === 4 && jsTypes.map((x) => x.slice(6, -1)).join(",") === sqlTypes.join(","));
 }
 
 // ── C. a college attests from its drill-in ───────────────────────────────────
@@ -161,18 +172,33 @@ function drill(window, doc, name) {
   det = drill(window, doc, COLLEGE);
   const wrap = det && det.querySelector("[data-ncattestwrap]");
   const fields = wrap ? Array.from(wrap.querySelectorAll("[data-ncattestfield]")).map((el) => el.getAttribute("data-ncattestfield")) : [];
-  check("C2: the form asks for the coordinator, the attestor and the optional reported figures, in three labeled groups",
-    fields.join(",") === "coordName,coordTitle,name,title,email,count,course,exhibits" &&
-    wrap.querySelectorAll("fieldset > legend").length === 3 &&
-    Array.from(wrap.querySelectorAll("input, select, textarea")).every((el) => !!el.closest("label")));
-  check("C3: the form says what is public and what goes to the CO alone",
-    /name and title appear publicly/.test(flat(wrap)) && /Your name, your email and the reported figures go to the Chancellor's Office alone/.test(flat(wrap)));
+  const types = wrap ? Array.from(wrap.querySelectorAll("[data-ncattestlead]")) : [];
+  check("C2: the form asks for the Lead (name, title, type, assignment, meetings) and the attestor, every control labeled; no count, course or exhibits",
+    fields.join(",") === "coordName,coordTitle,assignment,meets,name,title,email" &&
+    types.map((b) => b.closest("label").textContent.trim()).join("|") === "Staff|FT Faculty|PT Faculty|Administrator" &&
+    types.every((b) => b.type === "checkbox") &&
+    Array.from(wrap.querySelectorAll("fieldset > legend")).map((l) => l.textContent).join("|") === "The Noncredit CPL Lead|The Lead is|You, attesting for the college" &&
+    Array.from(wrap.querySelectorAll("input, select, textarea")).every((el) => !!el.closest("label")) &&
+    !/Reported this year|former noncredit students|portfolio course|Exhibits the college/i.test(flat(wrap)));
+  const head = wrap && wrap.querySelector(".cplfund-optin-head");
+  check("C3: Sam's words: the college in regular type, his intro, the same-person note; what is public and what goes to the CO alone",
+    !!head && !head.querySelector("strong, b") &&
+    flat(wrap.querySelector(".cplfund-ncattest-intro")) === "Complete the items below to qualify for noncredit CPL funding." &&
+    /Tell us briefly about the assignment/.test(flat(wrap)) &&
+    /How often does the Noncredit CPL Lead meet with credit CPL colleagues\?/.test(flat(wrap)) &&
+    /The CPL Coordinator and the Noncredit CPL Lead may be the same person\./.test(flat(wrap)) &&
+    /name and title appear publicly/.test(flat(wrap)) && /Your name, your email and the Lead's assignment go to the Chancellor's Office alone/.test(flat(wrap)));
   click(window, wrap.querySelector("[data-ncattestsubmit]"));
   check("C4: an empty submit names the first missing field and records nothing",
     /Noncredit CPL Lead's name/.test(flat(wrap.querySelector("[data-ncattesterr]"))) && !T._ncAttest(COLLEGE));
   const set = (k, v) => { const el = wrap.querySelector('[data-ncattestfield="' + k + '"]'); el.value = v; };
   set("coordName", "Ana Ruiz"); set("coordTitle", "Noncredit CPL Lead");
-  set("name", "Ben Ko"); set("title", "NCDEAN"); set("email", "ben@mtsac.edu"); set("count", "4");
+  click(window, wrap.querySelector('[data-ncattestsubmit]'));
+  check("C4b: the Lead's type is asked next, before the attestor",
+    /what kind of employee/.test(flat(wrap.querySelector("[data-ncattesterr]"))) && !T._ncAttest(COLLEGE));
+  wrap.querySelector('[data-ncattestlead="pt_faculty"]').checked = true;
+  set("assignment", "OT 10 hours per week"); set("meets", "monthly");
+  set("name", "Ben Ko"); set("title", "NCDEAN"); set("email", "ben@mtsac.edu");
   click(window, wrap.querySelector("[data-ncattestsubmit]"));
   const att = T._ncAttest(COLLEGE), after = T._alloc(COLLEGE);
   det = drill(window, doc, COLLEGE);
@@ -201,7 +227,8 @@ const STANDING = { [COLLEGE]: { college: COLLEGE, fiscal_year: FY, status: "self
   coordinator_name: "Ana Ruiz", coordinator_title: "Noncredit CPL Coordinator", requested_at: "2026-10-25T04:00:00Z" } };
 const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "self_attested", attestor_name: "Ben Ko",
   attestor_title: "NCDEAN", attestor_email: "ben@mtsac.edu", nc_awarded_count: 4, portfolio_course: "CCC000123",
-  attested_exhibits: "EX-1", requested_at: "2026-10-25T04:00:00Z" }];
+  attested_exhibits: "EX-1", lead_types: ["staff", "administrator"], lead_assignment: "20% release fall and spring",
+  lead_meets: "every two weeks", requested_at: "2026-10-25T04:00:00Z" }];
 {
   const { window, doc, T } = setup({ signedIn: true,
     elig: { ncAttestOk: true, ncAttest: JSON.parse(JSON.stringify(STANDING)), ncAttestReview: REVIEW } });
@@ -211,6 +238,8 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "self
   check("D1: a signed-in reviewer reads who attested and what the college reported, with Reject alone",
     !!nc && /Noncredit attestation 2026-27 by Ben Ko \(NCDEAN\) · ben@mtsac\.edu/.test(flat(nc)) &&
     /4 former noncredit students awarded CPL/.test(flat(nc)) && /portfolio course CCC000123/.test(flat(nc)) &&
+    /Lead: Staff, Administrator/.test(flat(nc)) && /assignment: 20% release fall and spring/.test(flat(nc)) &&
+    /meets credit CPL colleagues every two weeks/.test(flat(nc)) &&
     nc.querySelectorAll("button").length === 1 && nc.querySelector("button").textContent === "Reject" &&
     !det.querySelector("[data-ncattestopen]"));
   click(window, nc.querySelector("[data-ncattestreject]"));
@@ -230,7 +259,7 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "self
   const det = drill(window, doc, COLLEGE);
   check("D4: the public page never shows the CO's controls or the attestor, even to a signed-in reviewer",
     !!det && !det.querySelector("[data-ncattestreject], [data-ncattestconfirm], [data-ncattestremove]") &&
-    !/ben@mtsac\.edu|Ben Ko|former noncredit students awarded/.test(flat(det)) &&
+    !/ben@mtsac\.edu|Ben Ko|former noncredit students awarded|20% release|every two weeks|Lead: Staff/.test(flat(det)) &&
     /Noncredit CPL Lead: Ana Ruiz/.test(flat(det)));
 }
 {

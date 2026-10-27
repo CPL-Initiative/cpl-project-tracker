@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "chatbox/supabase_sierra_guidance_surface_guidance_wording.sql",
+ "name": "sierra_guidance_surface_guidance_wording_2026_10_26_s491",
+ "version": "20261026203416",
+ "sha256": "9f3d86b84e89814e09f57ea0cebf7bb8b76fb4ee0eb8067eeb5f3967173e1409",
+ "run": "40396315777",
+ "status": 201,
+ "response": "[{\"pg_get_constraintdef\":\"CHECK (((surface IS NULL) OR (surface = ANY (ARRAY['my-college'::text, 'cobi-assistant'::text, 'public'::text, 'fact-sheet'::text, 'memory-autogen'::text, 'memory-briefing'::text, 'gr-analysis'::text, 'skyview-ask'::text, 'guidance-wording'::text]))))\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

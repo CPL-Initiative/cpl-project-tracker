@@ -30,7 +30,7 @@ const {
 // ─────────────────────────────────────────────────────────────────────────────
 
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
-[["nav button", 'data-tab="implementation-funding" role="tab"'],
+[["nav button", '<button class="cpl-tab" data-tab="implementation-funding">'],
  ["pane", 'id="tab-implementation-funding"'],
  ["mount", 'id="cplFundingMount"'],
  ["lazy boot", "loadScript('cpl_funding.js', 'CPL_FUNDING_TAB'"]].forEach(function (pair) {

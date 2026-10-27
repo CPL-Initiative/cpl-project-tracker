@@ -631,3 +631,58 @@ Moved verbatim from `docs/reference/lanes/implementation-funding.md` to bring th
 ✅ **Sam, 2026-09-30:** **Refresh everything** (Internal) re-reads the model in every window (BroadcastChannel `cpl-funding-model`); My College adopts the module's config on every change; the published scenario opens every visit, a curator's pick holds for the visit only. `?fundview=public` opens the Public page view. **My CPL Funding** (`fundingPanel`, one renderer) is reached through Step 1 alone; the chooser offers every institution and each district of two or more (`d:<district>`); **Save as PDF** prints through `CPL_COLLEGE_BRIEFING.printPanel`. ⭐ **No "funding model" in college-facing text** (card 14: it is a procedure; curator lines keep the word); the seed grant's expend-by date stays off (Sam, 2026-10-01); ⭐ **"through apportionment" is for the seed grant only.**
 
 ✅ **THE INTRODUCTION VIDEO: CPL Funding in Motion** ([README](../../../prototype/funding_video/README.md)), a 100-second introduction and narrated cut per scenario. `scripts/funding_video_figures.js --config live.json --write` files its figures; **Refresh everything** says whether the film matches. ⭐ **The introduction link is always the published film** (`funding_in_motion_s2.html`). ⭐ **Its Scenario 4 words (Sam, Open Asks Sheet 123 card 2, *adopt*, 13:17Z 2026-10-24):** v10 says the priorities carry the *credit* funding and names the two outcomes (`ncLine`); origination builds keep the old words. ⚠️ The timeline reads "…Rolled to Year 2 and Releveled" until Sam types card 7's line.
+
+## Moved from the lane (S491, 2026-10-26)
+
+Verbatim from `docs/reference/lanes/implementation-funding.md` (`oversized_doc` at 20,949 of 20,000 bytes).
+
+✅ **The My College view (Sam, 2026-10-15; `cpl_memory` `sam-my-college-funding-view-asks-2026-10-15`).** The Step 1 box (`stepOneHtml`) sits above the explainer's Contents (`#cplFundStep1Mount`); **PDF asks for an institution first** (`pdfGate`), landscape. Public renderings fold the introduction, open the strategies and **name designated projects only (the register and dashboard are internal)**. ⚠️ Sam moves the tab's College Dashboard himself (`secOrder`). The panel's sentences are passages (`mc_*`, figures in braces). Guards `cpl_funding_my_college_view`, `cpl_funding_my_college_text`.
+
+✅ **One public page (Sam's eight calls, 2026-10-15; `CPLBrain/decision-sheets/one-public-funding-page/BUILD.md`).** The tab's **Public page** view frames `funding-model/` (`renderPagePreview`), so `publicMode()` is the public page alone. **Edit this page** (`funding-model/edit_page.js`): Rename (`pubTitles`), Hide (`secHidden`), Position (`pubSecOrder`), Edit on each passage (`x_table_intro`, `x_faq`, `x_timing_note`, `x_about`). ⚠️ **`x_about` follows the tab's `about` until first saved on the page.** Guards `college_list_stays_put`, `cpl_funding_how_to_meet_it`, `funding_page_edit`.
+
+✅ **THE EXPLAINER IS THE ONE PUBLIC PAGE** (`funding-model/index.html`; `cpl_funding_public.html` redirects here), in the public library's look since S478 (Sam, 2026-10-25): its palette and Georgia/system type, the public header (logo, links out), the title over the gold rule, Step 1, a three-column Contents, a fold per section, the navy foot. Light only (Sam, 2026-10-25: *"leave it light only"*), so the Ask Sierra side bar opens Light. The Contents' fixed links rename on the page (`pubLinks`, `data-plink`). The FAQ is `T.publicFaqHtml()`. It hosts the tab's college section in embed mode (`CPL_FUNDING_EMBED = "college"`), every curator control `publicMode()`-gated. ⭐ **ONE PUBLIC LINK IS A CORRECTNESS REQUIREMENT**: a second public rendering shows colleges what the CO withheld. **Do not re-split it.** ⛔ **A SHARED SECTION ID IS A SHARED CONTROL:** `PUBLIC_SECTIONS` never meets the tab's ids; `funding_model_page.test.js` fails a collision.
+
+## S492 SkyCloudberry (2026-10-26): the attestation form finished, the public header, accessibility for the Summit
+
+- **The form (#2476).** S491's draft needed its test rewritten and the Lead columns live before merge. The order held: the columns applied through supabase-migrate (run 40390095164) first, then the form whose insert names them. The reader and the insert body dropped the count, course and exhibits outright; carrying an empty field nobody fills only invites a future reader to show it.
+- **A runner's receipt commit starts no CI, twice.** #2477 and #2476 each ended on a receipt commit with no check runs; each needed one real commit. Setting `.apply` back to main's is a natural one, but **read main fresh first**: S492 copied a stale `origin/main` value, the gate saw a difference from the new main, and the apply job ran an old trigger (it refused, "no such file"; nothing changed).
+- **Piping `check_generated.sh` hides its exit.** `bash scripts/check_generated.sh | grep … | tail` returns tail's 0, and a stale dependency map rode a push. Write the report to a file, test `$?`, then read the file.
+- **Sam's header asks (2026-10-26, on a screenshot).** One Resource Links word, Collapse all last and PDF beside it, the version up in the header, Edit hidden from the public view, the Sierra chip. Edit stays reachable where he curates: COBI's Public page view frames the page, so `window.self !== window.top` is the test, and a jsdom test stands in a frame by replacing `self` **after** the funding module loads (`cpl_funding.js` takes its global from `self`; replacing it first hid the module and failed 8 assertions).
+- **Accessibility (Sam: the Summit is Friday, everything linked must meet the latest state and federal standards).** WCAG 2.2 AA covers the 2.1 AA the DOJ Title II rule names and Section 508. The repo's runner passed every view; axe-core found what it does not measure: a film page with no `lang`, Fact Sheet links told apart by color alone, headings coded as buttons, two regions with one name. Methodology note: `methodology-geometry-is-half-an-accessibility-audit`.
+- **A music-only film carries its meaning on screen.** The transcript is generated from the scenes' own words and figures, so it cannot drift from the picture. Audio description (1.2.5) wants a narrated cut, which is Sam's call against his 2026-10-20 ruling.
+
+### Moved from the lane (S492)
+
+✅ **The attestation surface (S470, 2026-10-25, #2433).** `cpl_funding_nc_attestation`: one row per college and fiscal year (July to June), attest-first as the opt-in, the CO's Reject then Re-confirm or Remove; the college attests from its drill-in, the public page too. `cpl_funding_nc_attestation_pub` publishes the coordinator's name and title for this fiscal year and the next (last year's row lapses on July 1); `cpl_funding_nc_attestation_review()` gives the CO the attestor, the award count (1 to 9 masked for the team phrase), the course and the exhibits. DR-09. **Applied** 2026-10-25 and read back (S470). Guard `tests/cpl_funding_nc_attestation.test.js`. ✅ **The builder (S471).** `funding/_build_funding_performance.py` reads `cpl_funding_nc_counts()` (service role) and emits `nc_cdcp` (absent without a COCI category: Fresno City, Calbright), `nc_exh` (channels 1, 2, 4; a standalone's into `origination.in_scope`) and `nc_course`. **Channel 3 (S473):** `funding/nc_credential_crosswalk.json`; a row counts once `confirmed`, while a course stays CDCP. 12 rows `confirmed` (Sam, Sheet 127, 2026-10-25, *twelve*); ServSafe stays `proposed`. Guard `tests/funding_nc_counts_test.py`. ✅ **The memo's noncredit section (S472):** *Noncredit Outcomes* after the credit priorities (`memo_noncredit`, each outcome, its share, the reported figure). Guard `tests/cpl_funding_memo_nc_outcomes.test.js`
+
+## S493 SkyThimbleberry (2026-10-26): Step 2 squeezed to 21px, three days before the Summit
+
+- **An `auto` grid column grows to its content's whole line.** The Step 1 box was `auto minmax(0,1fr)`; once #2478
+  printed the chosen view's full description in Step 1, Step 1 took the row and Step 2 got 21px, its list 28px, and
+  the page scrolled sideways at 1280, 1024 and 900px. The fix gives Step 2 a floor:
+  `minmax(0,3fr) minmax(min(100%,22rem),2fr)`, one column when Step 2 hides (#2487). Sam found it from a screenshot.
+- **A sweep that leaves out the target that opens a view cannot see that view's bug.** S492's pre-Summit list named
+  `funding-model` but not `funding-model-mycpl`, the one target that opens My Institution; on main that target puts
+  the page at 1,154px wide at 1024px. Every pre-Summit sweep now names it (handoff 494, the lane).
+- **A shard that dies with no FAIL line is the runner, not the test.** #2487's shard 4 stopped inside a worklist test
+  after its header; the shard passed locally and on #2485 in the same window. One comment on the PR, then a fresh run
+  through the main merge the PR needed anyway.
+
+## S494 SkyWhortleberry (2026-10-27): the pre-Summit sweep, with axe
+
+- **The ten public targets pass on main** (`npm run a11y`, `funding-model-mycpl` included). axe-core 4.10.2 found one
+  critical among them, on the Public page view: COBI's side menu declared `role="tablist"` while holding group heads,
+  section links and launchers. It is navigation now, on every COBI route (#2494); nothing painted changed.
+- **Run axe before anything that scrolls.** In the first try axe flagged the SD Cont. Ed caret (80x27) as an obscured
+  target; the focus-ring loop had focused every control and left a table scrolled under its sticky header. Measured as
+  the page settles, both funding-model targets pass (#2492).
+- **One timeout ended a 129-target sweep.** governance-editor's seed waited past 20s at target 47 under load (it passes
+  alone); the error was uncaught and 82 targets went unmeasured. A target that throws now fails and the sweep goes on.
+
+## Moved from the lane (S494, 2026-10-27)
+
+✅ **The attestation form in Sam's words (2026-10-26; S491 drafted, S492 finished, #2476).** Regular-type college name; intro *"Complete the items below to qualify for noncredit CPL funding."*; the Lead's employee type (Staff, FT Faculty, PT Faculty, Administrator), assignment and meetings with credit CPL colleagues; the note that the Coordinator and the Lead may be the same person. The count, course and exhibits are out. `lead_types`, `lead_assignment`, `lead_meets` applied (supabase-migrate run 40390095164), CO-only; `NC_LEAD_TYPES` matches `cna_lead_chk`. Conditions in a two-column grid; credit rows read *Priority N (CR)*. **Sam's, in the tab:** each credit card's brief is its title, which he types ("Total applied (articulated) credit").
+
+## Moved from the lane (S495, 2026-10-27)
+
+Verbatim from the lane's *WCAG 2.2 AA FOR THE CPL SUMMIT* paragraph, to bring it under its 20,000-byte budget (`oversized_doc`): S494 swept the ten public targets on main (2026-10-27): funding-model, its Sierra, My Institution and How-to views, the Public page view, the memo, the film, the Fact Sheet, the public Library and Sierra all pass `npm run a11y`. axe-core 4.10.2 found one critical there, COBI's side menu declared as a tablist; it is navigation now on every COBI route (#2494). Step 2 sits beside Step 1 since #2487 (`minmax(0,3fr) minmax(min(100%,22rem),2fr)`).

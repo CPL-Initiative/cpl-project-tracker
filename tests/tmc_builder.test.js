@@ -28,7 +28,7 @@ process.on("unhandledRejection", (e) => rejections.push(e));
 const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
-check("nav has TMC Builder button", /data-tab="tmc-builder" role="tab"/.test(cpl));
+check("nav has TMC Builder button", /class="cpl-tab[^"]*" data-tab="tmc-builder"/.test(cpl));
 check("pane #tab-tmc-builder exists", /id="tab-tmc-builder"/.test(cpl));
 check("mount #tmc-builder-root exists", /id="tmc-builder-root"/.test(cpl));
 check("boot wiring: onActivate('tmc-builder')", /onActivate\('tmc-builder'/.test(cpl));

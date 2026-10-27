@@ -284,6 +284,116 @@ check("every resource link that opens a new tab says so to a screen reader (" + 
 check("the program reads CPL Initiative, outside Sam's title",
   (HTML.replace(/Chief Ambassador, California MAP Initiative/, "").match(/MAP Initiative/g) || []).length === 0);
 
+// ── (i) the summit pass (2026-10-26): what axe-core 4.10.2 found ──
+// Before the statewide summit an axe sweep found four defects the harness
+// above does not measure. Each guard below protects the failure, not the patch.
+//
+//  (i1) LINKS IN RUNNING TEXT (WCAG 1.4.1, axe link-in-text-block, 21 links).
+//       Cobalt against the body ink is 1.25-1.35:1, so color alone could not
+//       mark a link in a sentence or a list. Links are underlined at rest; the
+//       only opt-outs are links that carry another cue, and no link in prose
+//       may wear an opt-out's selector.
+{
+  const noComments = CSS.replace(/\/\*[\s\S]*?\*\//g, "");
+  const p = noComments.indexOf("@media print");
+  let screen = noComments;
+  if (p >= 0) {                                   // drop the print block: paper may differ
+    let depth = 0, i = noComments.indexOf("{", p);
+    for (; i < noComments.length; i++) {
+      if (noComments[i] === "{") depth++;
+      else if (noComments[i] === "}" && --depth === 0) break;
+    }
+    screen = noComments.slice(0, p) + noComments.slice(i + 1);
+  }
+  const rules = [...screen.matchAll(/([^{}]+)\{([^{}]*)\}/g)].map((m) => [m[1].trim(), m[2]]);
+  const bareA = rules.find(([sel]) => sel === "a");
+  check("(i1) CSS: a link is underlined at rest",
+    !!bareA && /text-decoration:\s*underline/.test(bareA[1]) && /text-underline-offset:\s*3px/.test(bareA[1]));
+  const OPT_OUT = [".toc a", ".res a.res-title", ".skip-link"];
+  const offenders = rules.filter(([sel, body]) => /text-decoration:\s*none/.test(body) &&
+    sel.split(",").map((s) => s.trim()).some((s) => /(^|[\s>+~])a([.:#\[]|$)|\.skip-link/.test(s) && OPT_OUT.indexOf(s) < 0));
+  check("(i1) CSS: only the Contents list, resource titles and the skip link drop the underline" +
+    (offenders.length ? " (also: " + offenders.map((r) => r[0]).join(" | ") + ")" : ""), offenders.length === 0);
+  const prose = [...d.querySelectorAll("main p a, main li a, main figcaption a, main .note a, main h3 a, .masthead .sub a, footer a")];
+  const optedOut = prose.filter((a) => a.matches(OPT_OUT.join(", ")));
+  check("(i1) every link in running text (" + prose.length + ") keeps the underline: none wears an opt-out selector",
+    prose.length >= 21 && optedOut.length === 0);
+}
+
+//  (i2) SECTION HEADINGS STAY HEADINGS (axe aria-allowed-role, 16). factsheet.js
+//       once wrote role="button" onto each section's h2, which took all 16 out
+//       of a screen reader's list of headings. The APG disclosure pattern: the
+//       h2 keeps its role and holds a native <button> with aria-expanded.
+//       Run the real script in jsdom and read the DOM it builds.
+{
+  const dom = new JSDOM(HTML, { runScripts: "outside-only",
+    url: "https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" });
+  const w = dom.window, doc = w.document;
+  w.fetch = () => new Promise(() => {});        // the live feeds never answer in a test
+  Object.defineProperty(doc, "readyState", { configurable: true, get: () => "complete" });
+  const textsBefore = [...doc.querySelectorAll("main > section > h2")].map((h) => h.textContent);
+  w.eval(JS);
+  const secs = [...doc.querySelectorAll("main > section")].filter((s) => {
+    const h = s.querySelector("h2"); return h && h.parentNode === s;
+  });
+  const heads = secs.map((s) => s.querySelector("h2"));
+  check("(i2) every content section has its own h2 (" + heads.length + ")", heads.length >= 16);
+  check("(i2) each section heading is still an <h2> with no role and no tabindex",
+    heads.every((h) => h.tagName === "H2" && !h.hasAttribute("role") && !h.hasAttribute("tabindex") && !h.hasAttribute("aria-expanded")));
+  const btns = heads.map((h) => h.children.length === 1 && h.firstElementChild.tagName === "BUTTON" ? h.firstElementChild : null);
+  check("(i2) each holds exactly one <button type=button>, and nothing else",
+    btns.every((b, i) => b && b.type === "button" && heads[i].childNodes.length === 1));
+  check("(i2) each button starts aria-expanded=true and names its section in aria-controls",
+    btns.every((b, i) => b && b.getAttribute("aria-expanded") === "true" && b.getAttribute("aria-controls") === secs[i].id && !!secs[i].id));
+  check("(i2) the heading's words are unchanged (the curate editor's labels read them)",
+    JSON.stringify(heads.map((h) => h.textContent)) === JSON.stringify(textsBefore));
+  const s0 = secs[0], b0 = btns[0];
+  if (b0) {
+    b0.click();
+    const shut = s0.classList.contains("collapsed") && b0.getAttribute("aria-expanded") === "false";
+    b0.click();
+    const open = !s0.classList.contains("collapsed") && b0.getAttribute("aria-expanded") === "true";
+    check("(i2) the button folds and unfolds its section, and says so in aria-expanded", shut && open);
+  } else check("(i2) the button folds and unfolds its section, and says so in aria-expanded", false);
+  const all = doc.getElementById("btn-collapse-all");
+  all.click();
+  const allShut = secs.every((s) => s.classList.contains("collapsed")) && btns.every((b) => b && b.getAttribute("aria-expanded") === "false") &&
+    all.textContent === "Expand all";
+  all.click();
+  const allOpen = secs.every((s) => !s.classList.contains("collapsed")) && btns.every((b) => b && b.getAttribute("aria-expanded") === "true") &&
+    all.textContent === "Collapse all";
+  check("(i2) Collapse all and Expand all move every section and every aria-expanded together", allShut && allOpen);
+  check("(i2) CSS: the button wears the heading's font and color, full width, no fill",
+    /h2\.sec-toggle > button \{[^}]*display: block; width: 100%;[^}]*background: none; color: inherit; font: inherit;/.test(CSS));
+  check("(i2) CSS: the button shows a focus ring",
+    /h2\.sec-toggle > button:focus-visible \{ outline: 2px solid var\(--cobalt\)/.test(CSS));
+  check("(i2) CSS: the fold marker is out of the button's name (empty alternative text)",
+    /h2\.sec-toggle > button::before \{[^}]*content: "▾" \/ "";/.test(CSS));
+  // The Word export keeps the heading and its words, never the control.
+  w.eval(WORD);
+  const docHtml = w.CPL_FACTSHEET_WORD.buildDoc().html;
+  check("(i2) the Word export carries the section headings as plain h2s, with no button",
+    /<h2[^>]*>Executive summary<\/h2>/.test(docHtml) && !/<h2[^>]*>\s*<button/.test(docHtml) && !/sec-toggle-btn/.test(docHtml));
+}
+
+//  (i3) THE STORIES GRID'S NAME IS ALLOWED (axe aria-prohibited-attr). An
+//       aria-label on a div with no role is not exposed, so the grid is a
+//       named region.
+{
+  const g = d.getElementById("cpl-stories-grid");
+  check("(i3) the stories grid is a named region", g && g.getAttribute("role") === "region" && !!(g.getAttribute("aria-label") || "").trim());
+}
+
+//  (i4) THE ACTION BAR'S TITLE SITS IN A LANDMARK (axe region). It cannot join
+//       the masthead's <header>: a sticky box sticks only inside its parent.
+{
+  const t = d.querySelector(".ab-title");
+  const lm = t && t.closest('header, main, footer, nav, aside, [role="region"][aria-label], [role="banner"]');
+  check("(i4) the action bar's title sits inside a named landmark", !!lm);
+  check("(i4) the action bar stays a direct child of <body>, so it still sticks",
+    !!d.querySelector("body > .actionbar"));
+}
+
 // ── report ──
 let failed = 0;
 for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }

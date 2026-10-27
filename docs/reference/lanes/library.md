@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-10-26
+updated: 2026-10-27
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -39,7 +39,7 @@ Draft, at its step of four (Requested, Draft, Approved, Presented). Approval mov
 into the register. A Requested record never counts as Not filed, because it has nothing to
 file yet. *Copy the brief* gives the whole paste for a new session: the ask, the
 `scripts/library_file.py` command for that record, and what a good result looks like.
-Sam's routine reads Requested records as queue items (step 6 of *At the start* in
+**File it** sits on the In development card: filing a Requested piece moves it to Draft, and a record with no made-on date takes the day it is filed, or the day Edit moves it past Requested (2026-10-27, after the Workplan Update reached Approved through Edit and sorted last, undated). Sam's routine reads Requested records as queue items (step 6 of *At the start* in
 [`scheduled_sessions`](../scheduled_sessions.md)). The versions table shows the time
 each version was filed (`filed_at`, call 8).
 

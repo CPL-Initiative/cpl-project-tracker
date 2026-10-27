@@ -3084,6 +3084,10 @@
       if (orange.length) badges.appendChild(collegeBadgeGroup("Potential adopters", orange, "cr-badge-orange", ""));
       wrap.appendChild(badges);
     }
+    // The MAP link beside potential adopters (Sam, Open Asks Sheet 134 card 2, 2026-10-27,
+    // "build"): one chip per college that built a verified exhibit, opening MAP searched for it.
+    var M = window.CPL_MAP_LINKS;
+    if (orange.length && M && r.ut) wrap.appendChild(M.node(r.ut));
     return wrap.childNodes.length ? wrap : null;
   }
 

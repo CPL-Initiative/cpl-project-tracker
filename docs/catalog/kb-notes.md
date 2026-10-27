@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-563 document(s).
+564 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -45,7 +45,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A bulk delete's receipt reads the rows outside the session's context](../kb-notes/methodology-a-bulk-delete-receipt-reads-the-rows-outside-the-context.md) | methodology | published | 2026-10-23 | 2026-10-23 |
 | [A bulk POST is one statement over the union of its keys](../kb-notes/methodology-a-bulk-post-is-one-statement-over-the-union-of-its-keys.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [A cache breakpoint must LEAD the prompt, and what sits behind it must not move](../kb-notes/methodology-a-cache-breakpoint-must-lead-and-must-not-move.md) | methodology | published | 2026-08-23 | 2026-08-23 |
-| [A capped instruction list is a zero-sum budget, and the cap that binds is rarely the one on display](../kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md) | methodology | published | 2026-08-21 | 2026-08-21 |
+| [A capped instruction list is a zero-sum budget, and the cap that binds is rarely the one on display](../kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md) | methodology | published | 2026-08-21 | 2026-10-26 |
 | [A capped list must never read as a census](../kb-notes/methodology-a-capped-list-must-never-read-as-a-census.md) | methodology | published | 2026-08-21 | 2026-08-21 |
 | [A capped retrieval must rank by relevance — popularity is only a tiebreaker](../kb-notes/methodology-capped-retrieval-ranks-by-relevance.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [A change inherits every reference into it, and the same-cycle reference is the one you miss](../kb-notes/methodology-a-change-inherits-every-reference-into-it.md) | methodology | published | 2026-08-26 | 2026-08-26 |
@@ -339,6 +339,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Follow a credit recommendation to the course that receives it](../kb-notes/methodology-follow-the-recommendation-to-the-course-that-receives-it.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Forward-looking display for a curate-now / re-key-later split](../kb-notes/methodology-forward-looking-display-curate-now-rekey-later.md) | methodology | published | 2026-06-24 | 2026-06-24 |
 | [Funding is restricted by its earning rule, not by a label](../kb-notes/methodology-funding-is-restricted-by-its-earning-rule-not-by-a-label.md) | methodology | published | 2026-08-31 | 2026-08-31 |
+| [Geometry is half an accessibility audit](../kb-notes/methodology-geometry-is-half-an-accessibility-audit.md) | methodology | published | 2026-10-26 | 2026-10-26 |
 | [Grounded lexical confidence: ranking a text against a taxonomy (finder-not-decider)](../kb-notes/methodology-grounded-lexical-cip-confidence.md) | methodology | published | 2026-07-17 |  |
 | [Group an audit by the decision, not by the symptom](../kb-notes/methodology-group-an-audit-by-the-decision-not-the-symptom.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Grouping a flat list into containers silently breaks every querySelector that assumed one](../kb-notes/methodology-grouping-a-flat-list-breaks-single-container-wiring.md) | methodology | published | 2026-09-01 | 2026-09-01 |

@@ -29,7 +29,11 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <!-- ── Sticky action bar (screen only — hidden in print) ─────────────────── -->
-<div class="actionbar no-print">
+<!-- A named region, so its title and controls sit inside a landmark (axe
+     "region"). It cannot join the masthead's <header>: a sticky box sticks only
+     inside its parent, and a shared parent would carry the bar away with the
+     masthead. A second <header> would make a second banner. -->
+<div class="actionbar no-print" role="region" aria-label="Fact sheet tools">
   <div class="wrap">
     <span class="ab-title">California CPL Fact Sheet</span>
     <span id="live-chip" class="live-chip" role="status" aria-live="polite" title="Headline progress figures are pulled live from the MAP CPL Dashboard each time this page loads.">
@@ -660,7 +664,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
     </figure>
     <div class="cpl-stories-more">
       <h3 class="cpl-stories-h">More stories from across the system</h3>
-      <div class="cpl-stories-grid" id="cpl-stories-grid" aria-label="A rotating selection of student CPL stories"></div>
+      <div class="cpl-stories-grid" id="cpl-stories-grid" role="region" aria-label="A rotating selection of student CPL stories"></div>
       <p class="cpl-stories-all"><a href="https://map.rccd.edu/cplstories/" target="_blank" rel="noopener">See all CPL Success Stories<span class="sr-only"> (opens in a new tab)</span></a></p>
     </div>
   </section>

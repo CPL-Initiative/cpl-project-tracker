@@ -384,6 +384,14 @@
    "audience": "staff",
    "last": "2026-10-20",
    "outcome": "Built 2026-10-20 to First Light; npm run a11y passes light and dark at nine widths."
+  },
+  {
+   "id": "funding-film",
+   "name": "Funding film",
+   "page": "prototype/funding_video/funding_in_motion_s2.html",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
   }
  ]
 }

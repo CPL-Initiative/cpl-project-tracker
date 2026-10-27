@@ -70,6 +70,39 @@ async function seedPublicLibrarySierra(page, theme) {
   }, null, { timeout: 5000 }).catch(() => {});
   await page.waitForTimeout(150);
 }
+// The public header's one Resource Links word (the funding page, Sam 2026-10-26): Enter opens
+// the list, Tab reaches its first link, Escape shuts it and hands focus back to the word.
+async function resourceLinksChecks(page) {
+  const st = () => page.evaluate(() => {
+    const w = document.querySelector("[data-cplh-links]"), p = w && document.getElementById(w.getAttribute("aria-controls"));
+    const r = p && p.getBoundingClientRect();
+    return { open: !!p && !p.hidden, expanded: w && w.getAttribute("aria-expanded"), onWord: document.activeElement === w,
+      inPanel: !!p && p.contains(document.activeElement), fits: !!r && r.left >= 0 && r.right <= innerWidth + 0.5 };
+  });
+  const out = [];
+  await page.focus("[data-cplh-links]");
+  await page.keyboard.press("Enter");
+  let s = await st();
+  out.push({ name: "Enter on Resource Links opens the list, inside the window", ok: s.open && s.expanded === "true" && s.fits, detail: JSON.stringify(s) });
+  await page.keyboard.press("Tab");
+  s = await st();
+  out.push({ name: "Tab reaches the list's first link", ok: s.inPanel, detail: JSON.stringify(s) });
+  await page.keyboard.press("Escape");
+  s = await st();
+  out.push({ name: "Escape shuts the list and hands focus back to Resource Links", ok: !s.open && s.onWord && s.expanded === "false", detail: JSON.stringify(s) });
+  return out;
+}
+// A page whose Ask Sierra is the bar's own chip (the funding page since 2026-10-26, Sam: "Add
+// the Ask Sierra chip in the lower right corner"): open her as the chip does.
+async function seedSierraFromChip(page, theme) {
+  if (theme === "dark") await page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark"));
+  await page.evaluate(() => { const c = document.getElementById("sbar-chip"); if (c) c.click(); });
+  await page.waitForFunction(() => {
+    const f = document.querySelector(".sbar-frame");
+    try { return !!(f && f.contentDocument && f.contentDocument.getElementById("s-input")); } catch (e) { return false; }
+  }, null, { timeout: 5000 }).catch(() => {});
+  await page.waitForTimeout(150);
+}
 // What the bar must do for a keyboard: run at 1024px (she covers the page there), then 1440px
 // (she sits beside it). The seed has left her open.
 async function publicLibrarySierraChecks(page) {
@@ -776,9 +809,16 @@ async function seedCrProgress(page, theme) {
 // Procedures: each procedure, one opened to what it did.
 async function seedCerProcedures(page, theme) {
   await openCerView(page, theme, "procs");
-  await page.waitForSelector("#tab-credential-reference .cr-proc-item button.cr-proc-word", { timeout: 30000 });
-  await page.evaluate(() => document.querySelector("#tab-credential-reference .cr-proc-item button.cr-proc-word").focus());
-  await page.keyboard.press("Enter");
+  // A procedure shows "See what it did" only when the last run settled something under it
+  // (pr.sample). The 2026-10-26 run settled none of the 13, so the seed waits for the list
+  // and opens a sample only where one exists (S495: waiting on the button timed out alone).
+  await page.waitForSelector("#tab-credential-reference .cr-proc-item", { timeout: 30000 });
+  const opened = await page.evaluate(() => {
+    const b = document.querySelector("#tab-credential-reference .cr-proc-item button.cr-proc-word");
+    if (b) b.focus();
+    return !!b;
+  });
+  if (opened) await page.keyboard.press("Enter");
   await page.waitForTimeout(300);
 }
 
@@ -1887,21 +1927,31 @@ async function veteranMapChecks(page) {
       detail: h ? h.textContent.trim().slice(0, 40) : "detail pane still empty",
     };
   }));
-  out.push(await page.evaluate(() => {
+  /* The row is a native button inside its list item (S494), so the browser's own
+     Enter is what selects it: a real key press, not a synthetic keydown. */
+  const focused = await page.evaluate(() => {
     const t = document.querySelector('.tab[data-tab="colleges"]');
     if (t) t.click();
-    const li = document.querySelector("#list-col li");
-    if (!li) return { name: "a directory row is operable", ok: false, detail: "no rows" };
-    li.focus();
-    const focused = document.activeElement === li;
-    li.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
-    const h = document.querySelector("#detail h2");
-    return {
-      name: "a directory row is focusable and Enter selects it",
-      ok: focused && !!h && h.textContent.trim().length > 0,
-      detail: "focusable=" + focused + ", detail=" + (h ? h.textContent.trim().slice(0, 30) : "empty"),
-    };
-  }));
+    const d = document.querySelector("#detail h2");
+    if (d) d.textContent = "";
+    const b = document.querySelector("#list-col li button.row");
+    if (!b) return null;
+    b.focus();
+    return document.activeElement === b;
+  });
+  if (focused === null) out.push({ name: "a directory row is operable", ok: false, detail: "no rows" });
+  else {
+    await page.keyboard.press("Enter");
+    await page.waitForTimeout(200);
+    out.push(await page.evaluate((f) => {
+      const h = document.querySelector("#detail h2");
+      return {
+        name: "a directory row is focusable and Enter selects it",
+        ok: f && !!h && h.textContent.trim().length > 0,
+        detail: "focusable=" + f + ", detail=" + (h ? h.textContent.trim().slice(0, 30) : "empty"),
+      };
+    }, focused));
+  }
   return out;
 }
 
@@ -2278,20 +2328,30 @@ module.exports = {
     file: "funding-model/index.html",
     title: "Funding model explainer (public)",
     mayHideBelow: [],
+    keyboard: async (page) => resourceLinksChecks(page),
   },
   "funding-model-sierra": {
     file: "funding-model/index.html",
-    title: "Funding model explainer, Ask Sierra open",
-    widths: [390, 1024, 1440],
+    title: "Funding model explainer, Ask Sierra open from her chip",
+    widths: [320, 390, 1024, 1440],
     mayHideBelow: [],
-    seed: (page) => seedSierraFromWord(page, "light"),
-    keyboard: async (page) => sierraFromWordChecks(page),
+    seed: (page) => seedSierraFromChip(page, "light"),
+    keyboard: async (page) => publicLibrarySierraChecks(page),
   },
 
   /* The guidance memo (Sam, 2026-10-21), linked from the explainer's Contents. */
   "funding-memo": {
     file: "funding-model/memo/index.html",
     title: "Funding guidance memo (public)",
+    mayHideBelow: [],
+  },
+  /* The funding introduction film (2026-10-26), the published cut the explainer
+     links as its introduction video: the player filling the window, the
+     Transcript fold and the scene list below it. Built from
+     prototype/funding_video/funding_in_motion.src.html by build.py. */
+  "funding-film": {
+    file: "prototype/funding_video/funding_in_motion_s2.html",
+    title: "Funding introduction film (public)",
     mayHideBelow: [],
   },
 

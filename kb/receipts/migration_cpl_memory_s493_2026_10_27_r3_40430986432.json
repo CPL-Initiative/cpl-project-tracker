@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_s493_2026-10-27.sql",
+ "name": "cpl_memory_s493_2026_10_27_r3",
+ "version": "20261027011317",
+ "sha256": "9c3bba09e83d6fac1b43b0295fab35af703e92c8644240cd4d637cc92fabe020",
+ "run": "40430986432",
+ "status": 201,
+ "response": "[{\"slug\":\"sam-sheet-134-rulings-2026-10-27\",\"status\":\"verified\"},{\"slug\":\"map-exhibit-owner-not-articulator-2026-10-26\",\"status\":\"proposed\"},{\"slug\":\"pitfall-hidden-span-widens-scrolling-table-2026-10-26\",\"status\":\"proposed\"},{\"slug\":\"funding-step2-auto-column-squeeze-2026-10-26\",\"status\":\"proposed\"},{\"slug\":\"open-asks-sheets v134\",\"status\":\"https://claude.ai/artifact/9GPuiZ5F4dvjCrinyJFr5q\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

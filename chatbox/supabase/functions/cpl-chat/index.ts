@@ -1946,6 +1946,49 @@ async function fetchAdoptionOpportunities(college: string | null, sb: any): Prom
   return data;
 }
 
+// ── MAP LINKS BLOCK START (S494; lifted by tests/sierra_map_links.test.js) ────────
+// The MAP link beside a credential a college could adopt. Sam, 2026-10-26: "the same
+// MAP link on every public surface that suggests an adoption"; Open Asks Sheet 134
+// (2026-10-27): card 1 "builder" (each link names the college MAP records as the
+// exhibit's owner), card 2 "build" (COBI first, tracker #2488; Sierra second, here).
+// The index is the tracker's kb/reference/map_cpl_opportunities_verified.json, written
+// by kb/_verify_map_exhibit_links.py: by_title (common title to the exhibit IDs MAP
+// lists) and found (ID to its builder). One link per building college, its first ID,
+// at most MAP_LINKS_MAX, opening MAP's CPL Opportunities page searched for that ID
+// (?Exhibit=, Malone, 2026-10-26), where Request Quick Adopt sits. The same rule as
+// the tracker's map_links.js, so a COBI panel and Sierra name the same colleges.
+const MAP_OPPORTUNITIES_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
+const MAP_LINKS_MAX = 6;
+
+function mapAdoptLinks(idx: any, title: string): any[] {
+  if (!idx || !idx.by_title || !idx.found || !title) return [];
+  const ids: Array<string> = idx.by_title[title] || [];
+  const seen = new Set();
+  const out: any[] = [];
+  for (const id of ids) {
+    const rec = idx.found[String(id).toUpperCase()];
+    if (!rec) continue;
+    const who = rec.college || String(id);
+    if (seen.has(who)) continue;
+    seen.add(who);
+    out.push({ college: rec.college || "", id: String(id),
+      url: MAP_OPPORTUNITIES_PAGE + "?Exhibit=" + encodeURIComponent(String(id)) });
+  }
+  return out;
+}
+
+// One context line under a credential, or "" when MAP lists no exhibit of it.
+function mapLinksLine(idx: any, title: string, indent = "    "): string {
+  const links = mapAdoptLinks(idx, title);
+  if (links.length === 0) return "";
+  const shown = links.slice(0, MAP_LINKS_MAX)
+    .map((l: any) => (l.college || "MAP") + " built " + l.id + ", " + l.url);
+  const more = links.length - shown.length;
+  return indent + "Request Quick Adopt in MAP, from the exhibit each college built: " + shown.join("; ")
+    + (more > 0 ? "; and " + more + " more college" + (more === 1 ? "" : "s") : "") + "\n";
+}
+// ── MAP LINKS BLOCK END ───────────────────────────────────────────────────────────
+
 /**
  * THE FULL CREDIT-RECOMMENDATION SET — chatbox_credential_recs, 2,205 rows.
  *
@@ -2267,6 +2310,7 @@ function buildVolumeContext(
   adopt: any[] | null,
   college: string | null,
   recs?: Map<string, any>,
+  mapIdx?: any,
 ): string {
   if ((!vol || vol.length === 0) && (!adopt || adopt.length === 0)) return "";
   let out = `\n\n--- STUDENT VOLUME BY CREDENTIAL (measured from MAP student records) ---\n`;
@@ -2307,6 +2351,10 @@ function buildVolumeContext(
     // against by keeping adopter_colleges and potential_colleges disjoint.
     const peerBand = adopt.filter((r) => r.band !== "ready_to_adopt");
     const readyBand = adopt.filter((r) => r.band === "ready_to_adopt");
+    // Called only when the index came back, so a caller with no index (and a test
+    // bundle without the MAP LINKS block) never reaches mapLinksLine.
+    const mapLine = (t: string) => (mapIdx ? mapLinksLine(mapIdx, t) : "");
+    let mapLinked = false;
 
     if (peerBand.length > 0) {
       out += `\nWHAT ${who} COULD ADOPT — already running at peer colleges `
@@ -2318,6 +2366,8 @@ function buildVolumeContext(
         const lines = renderRecLines(recs?.get(r.unified_title), "    ");
         if (lines) out += lines;
         else if (r.ccc_rec) out += `    Statewide recommendation: ${r.ccc_rec}\n`;
+        const ml = mapLine(r.unified_title);
+        if (ml) { out += ml; mapLinked = true; }
       }
     }
 
@@ -2329,6 +2379,8 @@ function buildVolumeContext(
         out += `\n`;
         const lines = renderRecLines(recs?.get(r.unified_title), "    ");
         if (lines) out += lines;
+        const ml = mapLine(r.unified_title);
+        if (ml) { out += ml; mapLinked = true; }
       }
       out += `These are NOT a lesser tier and their zero adopter count is NOT a quality signal. `
           + `MAP creates statewide exhibits ahead of demand so the credit is ready when a student `
@@ -2339,6 +2391,14 @@ function buildVolumeContext(
 
     out += `These are concrete, checkable opportunities — name them specifically rather than `
         + `describing the category.\n`;
+    if (mapLinked) {
+      out += `MAP LINKS: a "Request Quick Adopt in MAP" line names each college that built an `
+          + `exhibit of the credential and the MAP page searched for that exhibit. ${college || "The college"}'s `
+          + `CPL coordinator, signed in to MAP, requests Quick Adopt there. When you name a credential `
+          + `that carries the line, give its links as markdown links named for the building college, `
+          + `for example [Saddleback College's exhibit](URL), and say who uses them. Use only the URLs `
+          + `on those lines; a credential with no line gets no MAP link.\n`;
+    }
   }
   return out;
 }
@@ -5364,7 +5424,7 @@ type HostScope = { kind: "college" | "district" | "statewide"; label: string };
  * tests/sierra_surface.test.js pins them equal. */
 const KNOWN_SURFACES = new Set([
   "my-college", "cobi-assistant", "public", "fact-sheet", "memory-autogen",
-  "memory-briefing", "gr-analysis", "skyview-ask",
+  "memory-briefing", "gr-analysis", "skyview-ask", "guidance-wording",
 ]);
 
 function normalizeSurface(raw: any): string | null {
@@ -5401,7 +5461,12 @@ function normalizeSurface(raw: any): string | null {
  * answer doctrine above — lead with a table, name colleges in two bands, close
  * with the coordinator — is the wrong instruction for that, which is exactly
  * what DRAFTING_BLOCK exists to replace. */
-const DRAFTING_SURFACES = new Set(["memory-autogen", "memory-briefing", "gr-analysis", "skyview-ask"]);
+/* ⭐ `guidance-wording` (S491; Sam, Open Asks Sheet 132 card 1, "build", 2026-10-26) is the Sierra
+ * Training tab's Suggest wording: it sends one draft instruction with the rules an instruction must meet
+ * and asks for a rewrite as JSON. It is a drafting caller like the memory drafter, and it wants the TEAM
+ * GUIDANCE in its context on purpose: that is how it names a switched-on instruction the draft repeats or
+ * contradicts. */
+const DRAFTING_SURFACES = new Set(["memory-autogen", "memory-briefing", "gr-analysis", "skyview-ask", "guidance-wording"]);
 function isDraftingSurface(surface: string | null): boolean {
   return !!surface && DRAFTING_SURFACES.has(surface);
 }
@@ -5459,6 +5524,10 @@ const SURFACE_QUERY_CAPS: Record<string, number> = {
   "memory-briefing": QUERY_CAP_BRIEFING,
   "gr-analysis": QUERY_CAP_GR_ANALYSIS,
   "skyview-ask": QUERY_CAP_SKYVIEW,
+  // The rules (~1,900 characters), one draft (at most 1,500) and the JSON contract:
+  // sierra_training.js builds the envelope and tests/sierra_suggest_wording.test.js
+  // asserts its longest still fits under this number.
+  "guidance-wording": QUERY_CAP_DRAFTING,
 };
 function queryCapFor(surface: string | null): number {
   return (surface && SURFACE_QUERY_CAPS[surface]) || QUERY_CAP_CHAT;
@@ -5594,6 +5663,14 @@ function hostScopeBlock(scope: any) {
        + `about that one — answer it, and you may note how it relates back to ${scope.label}.\n`;
   return out;
 }
+
+/* ── The naming rule, built in (S491; Sam, Open Asks Sheet 132 card 2, "move", 2026-10-26) ──────────
+ * It lived only in sierra_guidance row cb226a48, the oldest switched-on instruction. guidanceBlock() adds
+ * the newest first and stops at the first that does not fit 9,000 characters, so on My College (8,693 of
+ * 9,000 that day) one long new instruction would have stopped it reaching Sierra, with no message. In the
+ * stable prompt it reaches every answer whatever the team adds; the row was switched off in the same
+ * change (receipt kb/receipts/sierra_guidance_naming_rule_builtin_2026-10-26_s491.sql). */
+const NAMING_RULE = `NAMING: the program is the "CPL Initiative" (never "MAP Initiative"). MAP is the platform, the "Mapping Articulated Pathways (MAP) platform". NEVER expand MAP as "Military Articulation Platform"; that was only its original 2017 launch name and belongs only in explicit history.`;
 
 function buildSystemPrompt(
   sections: any[],
@@ -5733,6 +5810,8 @@ function buildSystemPrompt(
 Your knowledge comes from the sources below. Answer based on these sources. If the sources don't contain enough information to fully answer, say so honestly and suggest the visitor contact the MAP team at MAP@rccd.edu.
 
 Be concise, friendly, and professional. Use plain language.
+
+${NAMING_RULE}
 
 THE FIRST SENTENCE IS THE ANSWER. Never open with a remark about the question — no "Great question", "Good question", "That's a great question to be asking", no thanks, no "let's line this up", no preamble of any kind — and never comment on the question before answering it. Answer the question that was asked, directly, before anything else; the supporting facts, the limits of the data and the next steps come after the answer, never in front of it.
 
@@ -6092,6 +6171,30 @@ async function fetchStatewideCatalog(): Promise<any> {
     return doc && Array.isArray(doc.sectors) && doc.sectors.length > 0 ? doc : null;
   } catch {
     return null;
+  }
+}
+
+// The MAP LINKS index (the block beside fetchAdoptionOpportunities reads it). Read once
+// per instance and kept MAP_LINKS_TTL_MS: the file is ~1.3 MB, and the
+// verify run rewrites it at most daily. CPL_MAP_LINKS_URL overrides it with no deploy
+// (a branch's raw URL, for an A/B). A failed read keeps the last copy, or none, and
+// then no line carries a link: Sierra never builds a MAP URL herself.
+const MAP_LINKS_URL = Deno.env.get("CPL_MAP_LINKS_URL")
+  || "https://raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker/main/kb/reference/map_cpl_opportunities_verified.json";
+const MAP_LINKS_TTL_MS = 60 * 60 * 1000;
+let mapLinksCache: { at: number; idx: any } | null = null;
+
+async function fetchMapLinks(): Promise<any> {
+  if (mapLinksCache && Date.now() - mapLinksCache.at < MAP_LINKS_TTL_MS) return mapLinksCache.idx;
+  try {
+    const res = await fetch(MAP_LINKS_URL, { signal: AbortSignal.timeout(5000) });
+    if (!res.ok) return mapLinksCache ? mapLinksCache.idx : null;
+    const doc = await res.json();
+    const idx = doc && doc.found && doc.by_title ? { found: doc.found, by_title: doc.by_title } : null;
+    if (idx) mapLinksCache = { at: Date.now(), idx };
+    return idx || (mapLinksCache ? mapLinksCache.idx : null);
+  } catch {
+    return mapLinksCache ? mapLinksCache.idx : null;
   }
 }
 
@@ -6788,6 +6891,9 @@ Deno.serve(async (req: Request) => {
     let alignmentContext = "";
     let prospectiveContext = "";
     let stdRecs: any = null, anyCreds: any = null, vol: any = null, adopt: any = null;
+    // The MAP links index (S494): read only when a college is named, the one case the
+    // adoption RPC runs; null leaves every could-adopt line without a link.
+    let mapIdx: any = null;
     let collegeCreds: any = null;
 
     await Promise.all([
@@ -6829,9 +6935,11 @@ Deno.serve(async (req: Request) => {
           const both = await Promise.all([
             fetchCredentialVolume(routeText, sb),
             fetchAdoptionOpportunities(singleProfile?.college || null, sb),
+            singleProfile?.college ? fetchMapLinks() : Promise.resolve(null),
           ]);
           vol = both[0];
           adopt = both[1];
+          mapIdx = both[2];
         } catch (e) {
           console.error("credential volume lookup failed:", e);
         }
@@ -6863,7 +6971,7 @@ Deno.serve(async (req: Request) => {
       ]);
       recsMap = recs;
       credentialContext = buildCredentialContext(stdRecs, anyCreds, recs, adopters);
-      volumeContext = buildVolumeContext(vol, adopt, singleProfile?.college || null, recs);
+      volumeContext = buildVolumeContext(vol, adopt, singleProfile?.college || null, recs, mapIdx);
 
       // Route ALIGN. Runs on the STRONGEST-matched credential only: the answer
       // is a per-recommendation worklist, and running it for every loosely
@@ -6924,7 +7032,7 @@ Deno.serve(async (req: Request) => {
       // leaving Sierra with no credential context at all.
       console.error("credential recs lookup failed:", e);
       credentialContext = buildCredentialContext(stdRecs, anyCreds);
-      volumeContext = buildVolumeContext(vol, adopt, singleProfile?.college || null);
+      volumeContext = buildVolumeContext(vol, adopt, singleProfile?.college || null, undefined, mapIdx);
     }
 
     // Appended OUTSIDE the try/catch above, deliberately: both branches rebuild

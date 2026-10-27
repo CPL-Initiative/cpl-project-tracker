@@ -43,6 +43,9 @@
   // AP and IB are left out; CLEP stays in (Ashley, 2026-10-20: "excluding AP and IB. Include CLEP exhibits").
   var EXAM_RE = /^\s*(AP|IB)\b/i;
   var MAP_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
+  /* MAP opens that page already searched for whatever ?Exhibit= carries (Malone, live 2026-10-26),
+   * so the link lands on the exhibit's card and its Request Quick Adopt, with nothing to paste. */
+  function mapLink(id) { return MAP_PAGE + "?Exhibit=" + encodeURIComponent(id); }
   var STATEWIDE_TYPES = { "CCC Collaborative": 1, "Apprenticeship": 1, "Industry": 1,
     "Industry|Apprenticeship": 1, "Private Institution": 1, "CSU": 1 };
   var CATALOG_STOP = /work experience|topics in|special (studies|topics)|independent study|internship|seminar/i;
@@ -292,18 +295,26 @@
       return STATEWIDE_TYPES[e.collaborative_type] && !EXAM_RE.test(e.unified_title) && !adoptedTitles[e.unified_title];
     });
     candidates.forEach(function (e) { swByTitle[e.unified_title] = e; });
-    /* "Could Adopt - View in MAP": MAP has no URL that opens one exhibit card (its
-     * CPL Opportunities page keeps its search in page state), so the link is that
-     * page and the ID to search there, given only for an ID the page's own API
-     * listed when kb/_verify_map_exhibit_links.py last ran. */
+    /* "Could Adopt - View in MAP": the link opens MAP's CPL Opportunities page searched
+     * for the exhibit ID, given only for an ID the page's own API listed when
+     * kb/_verify_map_exhibit_links.py last ran. */
     var ver = input.verified || { found: {} }, verDate = String(ver.checked_at || "").slice(0, 10);
+    /* One credential joins every exhibit MAP holds under its name, often built by different
+     * colleges (Sam, 2026-10-26: a chip per ID naming the college that built it, each opening
+     * MAP searched for its own ID). The builder is MAP's owner field, recorded by the verify script. */
+    var shortName = input.shortName || (typeof window !== "undefined" && window.cplCollegeShort) || function (n2) { return n2; };
     function linkFor(e) {
       var ids = (e.exhibit_ids || []).filter(function (i) { return ver.found && ver.found[String(i).toUpperCase()]; });
       if (ids.length) {
-        return { link: MAP_PAGE, ids: ids, status: "Verified " + verDate + ": " + ids.join(", ")
-          + " listed on MAP's CPL Opportunities page. MAP has no link to one card; search the ID there, then Request Adopt or Quick Adopt (MAP sign-in)." };
+        var chips = ids.map(function (i) {
+          var college = ver.found[String(i).toUpperCase()].college || "";
+          return { id: i, college: college, short: college ? shortName(college) || college : "", link: mapLink(i) };
+        });
+        return { link: mapLink(ids[0]), ids: ids, chips: chips, status: "Verified " + verDate + ": "
+          + chips.map(function (c) { return c.id + (c.college ? " (built by " + c.college + ")" : ""); }).join(", ")
+          + " listed on MAP's CPL Opportunities page. The link opens it searched for " + ids[0] + "; Request Adopt or Quick Adopt need a MAP sign-in." };
       }
-      return { link: "", ids: [], status: input.verified
+      return { link: "", ids: [], chips: [], status: input.verified
         ? "Not listed on MAP's CPL Opportunities page when checked " + verDate + "; no link given"
         : "Not verified: the MAP link check could not be read" };
     }
@@ -404,7 +415,7 @@
       var lk = linkFor(e);
       var base = { title: e.unified_title, ids: (e.exhibit_ids || []).join(", "), crId: lk.ids.length ? lk.ids.join(", ") : (e.exhibit_ids || [])[0] || "",
         ctype: e.collaborative_type, type: e.cpl_type, disc: e.discipline || "", related: related, adopters: e.adopters,
-        median: e.peer_units_median, link: lk.link, linkStatus: lk.status };
+        median: e.peer_units_median, link: lk.link, chips: lk.chips, linkStatus: lk.status };
       var paths = pathRows[e.unified_title] || [], titles = titleRows[e.unified_title] || [];
       paths.forEach(function (p) {
         swRows.push(Object.assign({}, base, { course: p.c.id + " " + p.c.title, courseId: p.c.id, units: p.c.units, cn: p.c.cn,
@@ -585,7 +596,7 @@
       [b.college + ": CPL opportunity analysis", "Built " + b.today + " from COBI's published data. A snapshot: MAP and COCI data change daily."],
       ["Shareable visual", L(b.shareUrl, b.shareUrl)],
       ["Scope", "AP and IB exhibits are excluded from every sheet; CLEP is included. Statewide credit recommendations are MAP exhibits whose collaborative type is CCC Collaborative, Apprenticeship, Industry, Private Institution or CSU; exhibits other colleges built locally appear as peer-college evidence."],
-      ["Could Adopt - View in MAP", "MAP's public dashboard has no web address that opens one exhibit card: its CPL Opportunities page keeps its search inside the page. Each link opens that page (" + MAP_PAGE + "); search the Statewide Credit Recommendation ID there and use Request Adopt or Quick Adopt, which MAP asks you to sign in for. A link is given only where MAP's own data listed the ID on that page when last checked (" + (s.verifiedAt || "not checked") + "): " + s.nVerified + " of " + s.nCandidates + " recommendations. Nothing is submitted to MAP from here."],
+      ["Could Adopt - View in MAP", "Each link opens MAP's CPL Opportunities page already searched for the Statewide Credit Recommendation ID (" + MAP_PAGE + "?Exhibit= and the ID), so the exhibit's card comes up with Request Adopt and Quick Adopt, which MAP asks you to sign in for. A link is given only where MAP's own data listed the ID on that page when last checked (" + (s.verifiedAt || "not checked") + "): " + s.nVerified + " of " + s.nCandidates + " recommendations. Nothing is submitted to MAP from here."],
       ["IDs", "Statewide Credit Recommendation ID: the exhibit ID MAP lists on the CPL Opportunities page. MAP Exhibit ID: every exhibit ID MAP holds under that credential's name."],
       ["Alignment tiers", "Confirmed: an exhibit exists in MAP. Needs validation: peer colleges articulate the same credential to the same common course (the Commons' M-ID or C-ID) that includes this college's course. Possible: title match only. No row says a course qualifies for CPL; discipline faculty compare the course outline of record with the credential's documented competencies first."],
       ["Priority", "High: a statewide CR reached through 2+ peer colleges, or a credential 3+ peer colleges articulate to the same common course. Medium: one peer college, a title-only match, or an apprenticeship course. Low: a TOP family with known prior-learning sources and no peer evidence."],
@@ -793,10 +804,20 @@
         + rows.map(function (r, k) { return "<tr" + (attrs ? attrs(k) : "") + ">" + r.map(function (c) { return "<td>" + c + "</td>"; }).join("") + "</tr>"; }).join("")
         + "</tbody></table></div>";
     }
+    /* Each verified exhibit ID with a chip naming the college that built it in MAP; the chip
+     * opens MAP's CPL Opportunities page searched for that ID alone. */
+    function idCell(r) {
+      if (!r.chips || !r.chips.length) return e(r.crId);
+      return r.chips.map(function (c) {
+        return '<span class="cpo-xid">' + e(c.id) + ' <a class="cpo-chip" href="' + e(c.link) + '" target="_blank" rel="noopener">'
+          + e(c.short || "View in MAP") + '<span class="cpo-sr"> (' + (c.college ? "built by " + e(c.college) + "; " : "")
+          + "opens MAP searched for " + e(c.id) + ")</span></a></span>";
+      }).join(" ");
+    }
     var adoptRows = adopt.map(function (r) {
-      return [e(r.disc), e(r.title), e(r.crId), e(r.course), e(r.courseId), e(r.units === "" || r.units == null ? "" : r.units),
+      return [e(r.disc), e(r.title), idCell(r), e(r.course), e(r.courseId), e(r.units === "" || r.units == null ? "" : r.units),
         e(r.why), e(r.tier), e(r.priority),
-        r.link ? '<a class="cpo-adopt" href="' + e(r.link) + '" target="_blank" rel="noopener" data-crid="' + e(String(r.crId).split(",")[0].trim()) + '">Could Adopt - View in MAP<span class="cpo-sr"> (copies ' + e(String(r.crId).split(",")[0].trim()) + " and opens MAP)</span></a>"
+        r.link ? '<a class="cpo-adopt" href="' + e(r.link) + '" target="_blank" rel="noopener">Could Adopt - View in MAP<span class="cpo-sr"> (opens MAP searched for ' + e(String(r.crId).split(",")[0].trim()) + ")</span></a>"
           : '<span class="cpo-muted">' + e(r.linkStatus) + "</span>"];
     });
     var exRows = b.existing.map(function (x2) {
@@ -827,10 +848,9 @@
       + '<div class="cpo-fact"><b>' + n(s.priority.High) + "</b><span>high-priority course opportunities</span></div></div></section>"
       + notesHtml(b.teamNotes, b.college)
       + '<section aria-labelledby="cpo-h-adopt"><h2 id="cpo-h-adopt">Could Adopt</h2>'
-      + '<p class="cpo-note">Statewide credit recommendations the college has not adopted, matched to its courses. Each link copies the recommendation\'s exhibit ID and opens MAP\'s CPL Opportunities page. There, paste the ID into the search box and press Search: the card comes up with Request Quick Adopt (MAP asks you to sign in). MAP has no web address that opens one card. '
+      + '<p class="cpo-note">Statewide credit recommendations the college has not adopted, matched to its courses. Each link opens MAP\'s CPL Opportunities page already searched for the recommendation\'s exhibit ID, so it comes up with Request Quick Adopt (MAP asks you to sign in). The Non-Military Credit tab there shows the exhibit as a card. Beside each exhibit ID, the college that built it in MAP opens MAP searched for that ID; MAP\'s table lists the colleges that articulated it. '
       + (s.verifiedAt ? "Links appear only for IDs MAP listed on that page when checked " + e(s.verifiedAt) + "."
         : "The check of which IDs MAP lists could not be read, so no links are shown.") + "</p>"
-      + '<p class="cpo-note" id="cpo-copied" aria-live="polite"></p>'
       + '<div class="cpo-filters"><label class="cpo-f">Search <input type="search" id="cpo-q" placeholder="Title, ID or course"></label>'
       + sel("cpo-disc", "Discipline", uniq(adopt.map(function (r) { return r.disc; })))
       + sel("cpo-pri", "Priority", ["High", "Medium", "Low"])
@@ -881,19 +901,6 @@
       return (!q || tr.textContent.toLowerCase().indexOf(q) >= 0) && (!p || (tr.getAttribute("data-pri") || "").toLowerCase() === p);
     });
     filt("cpo-bare-t", ["cpo-bq"], function (tr) { var q = val("cpo-bq"); return !q || tr.textContent.toLowerCase().indexOf(q) >= 0; });
-    // MAP keeps its search inside the page and Quick Adopt needs a MAP sign-in,
-    // so the link copies the exhibit ID to paste there (Sam and Ashley, 2026-10-21).
-    var said = root.querySelector("#cpo-copied");
-    root.addEventListener("click", function (ev) {
-      var a = ev.target && ev.target.closest ? ev.target.closest("a.cpo-adopt[data-crid]") : null;
-      if (!a) return;
-      var id = a.getAttribute("data-crid");
-      var tell = function (ok) {
-        if (said) said.textContent = ok ? "Copied " + id + ". In MAP, paste it into the search box and press Search."
-          : "In MAP, search " + id + ".";
-      };
-      try { navigator.clipboard.writeText(id).then(function () { tell(true); }, function () { tell(false); }); } catch (err) { tell(false); }
-    });
     var dl = root.querySelector("#cpo-download");
     if (dl) dl.onclick = function () { downloadWorkbook(b); dl.textContent = "Downloaded"; setTimeout(function () { dl.textContent = "Download CPL Extract"; }, 2600); };
     var cp = root.querySelector("#cpo-copy");

@@ -1678,7 +1678,7 @@
 
     html += '<div class="mapu-toolbar">'
       + '<input class="q" type="text" placeholder="Filter colleges…" value="' + esc(state.q) + '">'
-      + '<select class="mapu-select" data-sort>'
+      + '<select class="mapu-select" data-sort aria-label="Sort colleges">'
       + '<option value="users"' + (state.sort === "users" ? " selected" : "") + ">Most users</option>"
       + '<option value="college"' + (state.sort === "college" ? " selected" : "") + ">College A–Z</option>"
       + "</select>"

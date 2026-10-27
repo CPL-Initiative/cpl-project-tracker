@@ -624,3 +624,30 @@ CCR names one. Topics: the tables of contents of DDS's DSPT Year 1 and Year 2 st
 not resolve). Draft: https://claude.ai/artifact/K2h4XZQ9oRb2AXbPSJYbPa (CPLBrain#487); the record carries it as *Draft for
 review* (receipt `kb/receipts/cpl_library_dsp_v2_2026-10-26_s483.sql`, run 40263656296, read back).
 **Version 2 is the public copy** (Sam, Sheet 129 card 3, *replace*, 03:53Z 2026-10-26): `library/dsp-credit-starting-points/` rewritten from it, the record at version 2 (same receipt).
+
+## CPL Initiative Workplan Update, November 2026 (Sam's Library request, 2026-10-26)
+
+Record `cpl-initiative-workplan-update-mvpvigf6` (Start a piece, Sam, for the Chancellor's Office). The draft
+updates the May 2026 accomplishments report Sam attached, in its own format:
+`documents/20261026_CPL_Initiative_Workplan_Update_build.py SRC OUT`, where SRC is that report
+(Google Drive `1sZlIHNv72WjFHuHQydw2nNeeiPAq7xiA`, not committed). It keeps the template's styles, Vision 2030
+paragraph, footers and contributors, and replaces the period, the executive summary and the four activities' bullets.
+Sources: every COBI `item_updates` row posted since May (activities 1 to 3, projects 1.1 to 4.8), `workplan_goals`,
+and the MAP CPL Dashboard (`live_metrics.json`, `fact_sheet_metrics.json`, 18:46Z 2026-10-26). The template's
+typed page numbers became a PAGE field, its mid-list section break (a PDF-conversion artifact) went, the date box
+widened for "November", the headings gained outline levels, and the CO's A11Y stamp of 5/18/26 came off, since it
+belonged to the May report. Handed to Sam as `20261026_CPL_Initiative_Workplan_Update.docx` for the Drafts folder.
+
+For Sam before it goes out: the dashboard's transcribed units fell from 103,669 (2026-07-15) to 76,262 (2026-08-07)
+and read 84,401 now, below the May report's 96,449; nothing on file explains the August drop. The contributors line
+is the May list unchanged.
+
+## File it on the In development card (Sam, 2026-10-27)
+
+Sam filed the Workplan Update's edited draft and it seemed to vanish. The In development card offered no **File it**,
+only Copy the brief and Edit record, so he linked the file through Edit and set Approved; one write at 00:06Z
+(history row) moved the record out of In development, and with no `made_on` it sorted to the bottom of the register
+under *No occasion yet*. The brief's paste promised that File it moves the record to Draft, but File it wrote only the
+link. Now the card carries File it; filing a Requested piece sets `draft`; a record with no `made_on` takes the day it is
+filed, or the day Edit moves it past Requested; the form names the piece it files. Guarded by `tests/library.test.js`
+(9b). The Workplan record itself still has no date until its next Edit save.

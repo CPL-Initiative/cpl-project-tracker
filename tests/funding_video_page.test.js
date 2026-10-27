@@ -418,7 +418,7 @@ NARRATED.forEach(({ tag, v, s }) => {
         && !/Scenario 2/.test(w.document.querySelector("header").textContent + " " + w.document.title + " " + a.textContent));
     check(tag + "m9 the page says what the film is: a 100-second introduction to CPL funding",
       /^A 100-second introduction to CPL funding for colleges, with music\./.test(w.document.querySelector(".dek").textContent)
-        && w.document.querySelector("main a").textContent === "How CPL funding works");
+        && w.document.querySelector(".wrap a").textContent === "How CPL funding works");
     w.close();
   });
   // The clock's shift is LS, never L: buildK declares its own `var L` (the

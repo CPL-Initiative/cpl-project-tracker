@@ -19,6 +19,7 @@
 //   - Regenerate (Sam, 2026-10-26): one button on every record saves what to change,
 //     the documents to work from (a link or pasted text) and the request, shows where
 //     the request stands, and holds a public copy until Replace the public copy;
+//   - File it on a brief's card moves it to Draft and dates it (Sam, 2026-10-27);
 //   - Start a piece saves a Requested record with its brief, In development shows
 //     it at its step and keeps it out of the register and out of Not filed, and
 //     Copy the brief hands over the whole paste, filer command included.
@@ -351,6 +352,64 @@ block("(9)", function () {
     check("(9) For defaults to the team", w0.body.seen_by === "team");
     check("(9) the write carries the team phrase", w0.init.headers["x-team-pass"] === "p");
     check("(9) the saved brief opens for copying", m.M._state.briefShown.new1 === true && /Saved as Requested/.test(m.root.textContent));
+  });
+});
+
+// ── (9b) File it on a brief moves it to Draft; a dateless record takes the day (Sam, 2026-10-27) ──
+// Sam filed the Workplan Update through Edit record, the only control the In development card
+// offered, set it to Approved, and it dropped to the bottom of the register with no date.
+block("(9b)", function () {
+  const writes = [];
+  const rows = ROWS.concat([
+    { id: "r1", slug: "workplan-update-x", title: "CPL Initiative Workplan Update", kind: "document", status: "requested",
+      seen_by: "team", home: "not_filed", url: null, made_on: null, created_at: "2026-10-26T23:14:06Z",
+      brief: { say: "Update the attached document.", due: "Today", requested_by: "Sam", requested_on: "2026-10-26" }, versions: [] },
+    { id: "r2", slug: "approved-no-date", title: "Approved, no date", kind: "document", status: "requested",
+      seen_by: "team", home: "not_filed", url: null, made_on: null, brief: { say: "x" }, versions: [] }
+  ]);
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (init && init.method) { writes.push({ url: url, init: init, body: JSON.parse(init.body) }); return response(201, [{}]); }
+    return response(200, rows);
+  } });
+  const day = /^\d{4}-\d{2}-\d{2}$/;
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    const doc = m.w.document;
+    const card = doc.getElementById("lib-t-r1").closest("article");
+    const btn = card.querySelector('[data-file="r1"]');
+    check("(9b) a Requested card in In development offers File it", !!btn && card.closest(".lib-dev") !== null);
+    click(m.w, btn);
+    check("(9b) the File it form names the piece it files", /File CPL Initiative Workplan Update/.test(doc.getElementById("lib-addform").textContent));
+    doc.getElementById("la-url").value = "https://studentrcc.sharepoint.com/sites/x/Drafts/20261026_Workplan.docx";
+    submit(m, "#lib-addform");
+    return settle();
+  }).then(function () {
+    const w0 = writes[0] || { body: {}, init: {} };
+    check("(9b) ⭐ File it on a Requested piece moves it to Draft, as the brief's paste says",
+      w0.init.method === "PATCH" && /id=eq\.r1$/.test(w0.url) && w0.body.status === "draft" && w0.body.home === "drive", JSON.stringify(w0.body));
+    check("(9b) a record filed without a date takes the day it is filed", day.test(w0.body.made_on || ""), w0.body.made_on);
+    check("(9b) and says where it went", /now a Draft, under In development/.test(m.root.textContent));
+    m.M._state.edit = "r2"; m.M.render();
+    m.w.document.getElementById("le-status").value = "approved";
+    submit(m, 'form[data-editform="r2"]');
+    return settle();
+  }).then(function () {
+    const e = writes.filter(function (x) { return /id=eq\.r2$/.test(x.url); })[0] || { body: {} };
+    check("(9b) Edit moving a dateless brief past Requested gives it today's date", e.body.status === "approved" && day.test(e.body.made_on || ""), JSON.stringify(e.body));
+    m.M._state.edit = "r2"; m.M.render();
+    m.w.document.getElementById("le-status").value = "requested";
+    submit(m, 'form[data-editform="r2"]');
+    return settle();
+  }).then(function () {
+    const e = writes.filter(function (x) { return /id=eq\.r2$/.test(x.url); })[1] || { body: {} };
+    check("(9b) a brief kept at Requested stays undated (it is not made yet)", e.body.status === "requested" && !("made_on" in e.body), JSON.stringify(e.body));
+    m.M._state.form = null; m.M._state.formFor = null; m.M.render();
+    click(m.w, m.root.querySelector('[data-file="a1"]'));
+    m.w.document.getElementById("la-url").value = "https://drive.google.com/file/d/deck/view";
+    submit(m, "#lib-addform");
+    return settle();
+  }).then(function () {
+    const e = writes.filter(function (x) { return /id=eq\.a1$/.test(x.url); })[0] || { body: {} };
+    check("(9b) File it on a dated Draft changes only the link", !("status" in e.body) && !("made_on" in e.body) && e.body.url === "https://drive.google.com/file/d/deck/view", JSON.stringify(e.body));
   });
 });
 

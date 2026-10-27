@@ -35,7 +35,7 @@ check("ui pass: the rail's controls are underlined words, 24px tall, no border o
   /\.cipx-toprail \.cipx-themetog,\.cipx-toprail \.cipx-rev-expand,\.cipx-toprail \.cipx-rev-csv\{[^}]*min-height:24px;[^}]*border:0;[^}]*background:none;[^}]*text-decoration:underline;/.test(src));
 check("ui pass: Coco's name is not under the line art's opacity",
   /\.cipx-coco\{(?![^}]*opacity)[^}]*\}/.test(src) && /\.cipx-coco-svg\{display:block;opacity:\.85;\}/.test(src));
-check("nav has the CIP tab button", /data-tab="cip-crosswalk" role="tab"/.test(cpl));
+check("nav has the CIP tab button", /class="cpl-tab[^"]*" data-tab="cip-crosswalk"/.test(cpl));
 check("pane #tab-cip-crosswalk exists", /id="tab-cip-crosswalk"/.test(cpl));
 check("mount #cip-crosswalk-root exists", /id="cip-crosswalk-root"/.test(cpl));
 check("boot wiring: onActivate('cip-crosswalk')", /onActivate\('cip-crosswalk'/.test(cpl));

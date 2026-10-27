@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 49507,
-  "pa": 45317,
+  "pe": 49568,
+  "pa": 45339,
   "ppa": 122,
-  "p2": 3608,
-  "p3": 16802,
+  "p2": 3609,
+  "p3": 16809,
   "pp": 7,
   "ppe": 132,
-  "pac": 5284,
+  "pac": 5285,
   "ptc": 4622,
-  "pe_u": 1515349.45,
-  "pa_u": 276476.4,
+  "pe_u": 1518573.45,
+  "pa_u": 276722.4,
   "ppa_u": 748.5,
   "ppe_u": 6994.5,
-  "pac_u": 37791.2,
+  "pac_u": 37791.7,
   "ptc_u": 31582.45,
-  "p3_u": 84286.15,
+  "p3_u": 84327.15,
   "pp_u": 73.5,
   "nc_exh": 90,
   "nc_course": 0,
@@ -396,10 +396,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 52
   },
   "Clovis": {
-   "pe": 193,
-   "pe_u": 8367.0,
-   "pa": 193,
-   "pa_u": 1165.0,
+   "pe": 195,
+   "pe_u": 8567.0,
+   "pa": 195,
+   "pa_u": 1177.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 12.0,
@@ -755,10 +755,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 138
   },
   "Evergreen Valley": {
-   "pe": 115,
-   "pe_u": 5362.5,
-   "pa": 114,
-   "pa_u": 699.5,
+   "pe": 134,
+   "pe_u": 6680.5,
+   "pa": 133,
+   "pa_u": 927.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 6.0,
@@ -938,8 +938,8 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 66
   },
   "Grossmont": {
-   "pe": 35,
-   "pe_u": 1674.0,
+   "pe": 74,
+   "pe_u": 3336.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -1145,10 +1145,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 111
   },
   "Laney": {
-   "pe": 80,
-   "pe_u": 3373.0,
-   "pa": 80,
-   "pa_u": 480.0,
+   "pe": 81,
+   "pe_u": 3417.0,
+   "pa": 81,
+   "pa_u": 486.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1489,9 +1489,9 @@ window.CPL_FUNDING_PERF = {
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
-   "p2": 497,
-   "p3": 2138,
-   "p3_u": 12723.5,
+   "p2": 498,
+   "p3": 2145,
+   "p3_u": 12764.5,
    "pp": null,
    "pp_suppressed": true,
    "pp_u": 38.5,
@@ -1985,8 +1985,8 @@ window.CPL_FUNDING_PERF = {
    "ppe": null,
    "ppe_suppressed": true,
    "ppe_u": 27.0,
-   "pac": 57,
-   "pac_u": 502.5,
+   "pac": 58,
+   "pac_u": 503.0,
    "ptc": 32,
    "ptc_u": 225.5,
    "nc_exh": 0,
@@ -2816,8 +2816,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Clovis": {
    "Military": {
-    "pe": 193,
-    "pa": 193,
+    "pe": 195,
+    "pa": 195,
     "p3": 0
    }
   },
@@ -3012,8 +3012,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Evergreen Valley": {
    "Military": {
-    "pe": 115,
-    "pa": 114,
+    "pe": 134,
+    "pa": 133,
     "p3": 0
    }
   },
@@ -3069,7 +3069,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Grossmont": {
    "Military": {
-    "pe": 35,
+    "pe": 74,
     "pa": 0,
     "p3": 0
    }
@@ -3184,8 +3184,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Laney": {
    "Military": {
-    "pe": 80,
-    "pa": 80,
+    "pe": 81,
+    "pa": 81,
     "p3": 0
    }
   },
@@ -3545,7 +3545,7 @@ window.CPL_FUNDING_PERF = {
    "Military": {
     "pe": 1042,
     "pa": 1042,
-    "p3": 981
+    "p3": 988
    },
    "Standardized Assessment": {
     "pe": 260,
@@ -4376,9 +4376,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28807,
-   "pa": 26399,
-   "p3": 2615
+   "pe": 28868,
+   "pa": 26421,
+   "p3": 2622
   },
   "Military | Other": {
    "pe": null,
@@ -4433,14 +4433,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1515349.45,
-   "pa_u": 276476.4,
-   "p3_u": 84286.15
+   "pe_u": 1518573.45,
+   "pa_u": 276722.4,
+   "p3_u": 84327.15
   },
   "map": {
-   "pe_u": 1522343.95,
-   "pa_u": 277224.9,
-   "p3_u": 84359.65
+   "pe_u": 1525567.95,
+   "pa_u": 277470.9,
+   "p3_u": 84400.65
   },
   "ratio": {
    "pe_u": 1.0046,
@@ -4493,13 +4493,13 @@ window.CPL_FUNDING_PERF = {
   "Cerro Coso": true,
   "Ventura": true,
   "LA Mission": true,
+  "Evergreen Valley": true,
   "Solano": false,
   "Napa": true,
   "Sequoias": false,
   "Citrus": true,
   "West Hills Lemoore": false,
   "East LA": false,
-  "Evergreen Valley": true,
   "San Jose City": true,
   "Oxnard": true,
   "Golden West": false,
@@ -4546,10 +4546,10 @@ window.CPL_FUNDING_PERF = {
   "Ohlone": true,
   "Butte": false,
   "Sacramento City": false,
+  "Grossmont": false,
   "Cuyamaca": false,
   "Santa Barbara": true,
   "Chabot": false,
-  "Grossmont": false,
   "Gavilan": false,
   "Siskiyous": false,
   "Taft": false,
@@ -4746,8 +4746,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Clovis": {
    "vets": 117,
-   "jst": 197,
-   "pct": 1.6838
+   "jst": 199,
+   "pct": 1.7009
   },
   "Antelope Valley": {
    "vets": 281,
@@ -4789,6 +4789,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 152,
    "pct": 1.3571
   },
+  "Evergreen Valley": {
+   "vets": 87,
+   "jst": 138,
+   "pct": 1.5862
+  },
   "Solano": {
    "vets": 278,
    "jst": 133,
@@ -4818,11 +4823,6 @@ window.CPL_FUNDING_PERF = {
    "vets": 637,
    "jst": 237,
    "pct": 0.3721
-  },
-  "Evergreen Valley": {
-   "vets": 87,
-   "jst": 116,
-   "pct": 1.3333
   },
   "San Jose City": {
    "vets": 148,
@@ -4866,8 +4866,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Laney": {
    "vets": 96,
-   "jst": 81,
-   "pct": 0.8438
+   "jst": 82,
+   "pct": 0.8542
   },
   "LA Harbor": {
    "vets": 109,
@@ -5054,6 +5054,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 117,
    "pct": 0.5764
   },
+  "Grossmont": {
+   "vets": 415,
+   "jst": 100,
+   "pct": 0.241
+  },
   "Cuyamaca": {
    "vets": 130,
    "jst": 95,
@@ -5067,11 +5072,6 @@ window.CPL_FUNDING_PERF = {
    "vets": 304,
    "jst": 64,
    "pct": 0.2105
-  },
-  "Grossmont": {
-   "vets": 415,
-   "jst": 57,
-   "pct": 0.1373
   },
   "Gavilan": {
    "vets": 352,

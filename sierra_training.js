@@ -584,6 +584,15 @@
       ".sit-guid-check li b { font-weight:700; color: var(--text-muted); }",
       ".sit-guid-check li.fix b { color: var(--crimson); }",
       ".sit-guid-check li.look b { color: var(--mustard-text); }",
+      ".sit-guid-suggest { margin:6px 0 4px; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background: var(--surface-opaque); display:grid; gap:8px; }",
+      ".sit-guid-suggest-pair { display:grid; grid-template-columns:1fr 1fr; gap:10px; }",
+      ".sit-guid-suggest-pair > div { min-width:0; }",
+      ".sit-guid-suggest-txt { padding:8px 10px; border-radius:8px; background: var(--surface-subtle); font-size:.92rem; line-height:1.55; color: var(--text-body); }",
+      ".sit-guid-suggest del { text-decoration:line-through; text-decoration-color: var(--crimson); color: var(--text-body); }",
+      ".sit-guid-suggest ins { text-decoration:underline; text-decoration-color: var(--hunter); text-underline-offset:3px; color: var(--text-strong); }",
+      ".sit-guid-suggest ol { margin:0; padding-left:1.2em; font-size:.9rem; display:grid; gap:3px; }",
+      ".sit-guid-suggest-lbl { font-size:.85rem; font-weight:600; color: var(--text-strong); }",
+      "@media (max-width: 560px) { .sit-guid-suggest-pair { grid-template-columns:1fr; } }",
       ".sit-guid-row { display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; }",
       ".sit-guid-note { flex:1 1 280px; min-height:36px; padding:6px 11px; font:inherit; font-size:.9rem; color: var(--text-body);"
         + " background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:8px; }",
@@ -1091,6 +1100,7 @@
     { k: "memory-briefing", label: "Only when briefing on the memory entries" },
     { k: "gr-analysis", label: "Only when re-analyzing a regulation priority" },
     { k: "skyview-ask", label: "Only when turning a SkyView question into a map selection" },
+    { k: "guidance-wording", label: "Only when suggesting wording for an instruction" },
   ];
   function surfaceLabel(v) {
     for (var i = 0; i < SURFACES.length; i++) if (SURFACES[i].k === (v || "")) return SURFACES[i].label;
@@ -1190,6 +1200,7 @@
   }
   function cancelEdit(root) {
     state.editId = null; state.editRule = ""; state.editNote = ""; state.editTestQ = "";
+    if (state.suggest && state.suggest.key === "edit") state.suggest = null;
     saveEditDraft();
     render(root);
   }
@@ -1866,6 +1877,162 @@
     wordingTimer = setTimeout(function () { refreshWordingChecks(root); }, 200);
   }
 
+  /* ── Suggest wording (S491; Sam, Open Asks Sheet 132 card 1, "build", 2026-10-26) ──
+   * Sends the draft to cpl-chat as the `guidance-wording` drafting caller, with the
+   * rules an instruction must meet, and shows the rewrite beside the curator's words
+   * with a line on each change. cpl-chat puts the switched-on instructions in the
+   * model's context as TEAM GUIDANCE, which is how the rewrite names one the draft
+   * repeats or contradicts. Nothing saves: "Use the suggestion" puts it in the box,
+   * and Save stays the curator's. */
+  var CHAT_URL = SUPABASE_URL + "/functions/v1/cpl-chat";
+  var SUGGEST_RULES = [
+    "You are rewording one instruction a CPL team member wrote for Sierra, the CPL Initiative's assistant.",
+    "The instructions already switched on are in the TEAM GUIDANCE section of your context.",
+    "Rules for the rewrite:",
+    "1. Keep the author's intent and every fact, example question and link they gave. Change only what helps Sierra follow it.",
+    "2. Open with when it applies (the kind of question), then the author's example, then what Sierra should do.",
+    "3. Name only what a reader can open: never an internal tool, COBI tab or staff page. Link only public pages: a college's CPL page, creditforbeingyou.org, the CPL Library, the CPL Fact Sheet, the CPL funding page, map.rccd.edu.",
+    "4. Ask only what Sierra can do. She answers from what the team loads for her and cannot open a website while she answers.",
+    "5. Leave out a sentence another switched-on instruction already says, and name that instruction in changes.",
+    "6. Plain words, active voice, American spelling. The program is the CPL Initiative; the platform is the MAP platform.",
+    "7. Fix spelling, quotation marks and unfinished sentences.",
+  ];
+  function suggestEnvelope(text, room) {
+    var max = Math.min(GUIDANCE_RULE_MAX, room > 0 ? room : GUIDANCE_RULE_MAX);
+    return SUGGEST_RULES.join("\n")
+      + "\n8. At most " + max + " characters."
+      + "\nIf the instruction needs no change, return it unchanged with an empty changes list."
+      + '\nReturn one JSON object and nothing else: {"suggested": "<the instruction reworded>", '
+      + '"changes": ["<one plain sentence per change: what changed and why>"], '
+      + '"clash": "<one sentence naming a switched-on instruction this one contradicts or repeats, or empty>"}'
+      + "\nINSTRUCTION:\n<<<\n" + String(text || "") + "\n>>>";
+  }
+  // Characters left for this draft in the set Sierra receives, counted as the check counts.
+  function roomFor(text, editingId, surface) {
+    var C = window.SierraWordingCheck;
+    if (!C) return GUIDANCE_RULE_MAX;
+    var sp = C.space(text, { active: activeForCheck("directive"), editingId: editingId == null ? null : String(editingId),
+      surface: surface || null });
+    var worst = sp.reduce(function (a, b) { return a && a.left < b.left ? a : b; }, null);
+    return worst ? worst.left + String(text || "").length : GUIDANCE_RULE_MAX;
+  }
+  function drainSse(reader) {
+    var decoder = new TextDecoder(), buffer = "", full = "";
+    function pump() {
+      return reader.read().then(function (chunk) {
+        if (chunk.done) return full;
+        buffer += decoder.decode(chunk.value, { stream: true });
+        var events = buffer.split("\n\n"); buffer = events.pop() || "";
+        events.forEach(function (blk) {
+          var ev = "message", data = "";
+          blk.split("\n").forEach(function (line) {
+            if (line.indexOf("event:") === 0) ev = line.slice(6).trim();
+            else if (line.indexOf("data:") === 0) data += line.slice(5).trim();
+          });
+          if (ev === "text" && data) { try { var d = JSON.parse(data); if (d && typeof d.text === "string") full += d.text; } catch (e) { } }
+        });
+        return pump();
+      });
+    }
+    return pump();
+  }
+  function parseSuggestion(full) {
+    var t = String(full || ""), a = t.indexOf("{"), b = t.lastIndexOf("}");
+    if (a < 0 || b <= a) return null;
+    try {
+      var o = JSON.parse(t.slice(a, b + 1));
+      if (!o || typeof o.suggested !== "string" || !o.suggested.trim()) return null;
+      return { suggested: o.suggested.trim().slice(0, GUIDANCE_RULE_MAX),
+        changes: Array.isArray(o.changes) ? o.changes.filter(function (c) { return typeof c === "string" && c.trim(); }) : [],
+        clash: typeof o.clash === "string" ? o.clash.trim() : "" };
+    } catch (e) { return null; }
+  }
+  function requestSuggestion(text, editingId, surface) {
+    if (typeof fetch !== "function") return Promise.reject(new Error("no fetch"));
+    var headers = { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    // No history and no audience, as the memory drafter: a drafting call wants one JSON answer.
+    var body = JSON.stringify({ query: suggestEnvelope(text, roomFor(text, editingId, surface)),
+      retrieval_query: String(text || "").slice(0, 500), session_id: "cobi-guidance-wording", surface: "guidance-wording" });
+    return fetch(CHAT_URL, { method: "POST", headers: headers, body: body }).then(function (resp) {
+      if (!resp || !resp.ok) throw new Error("HTTP " + (resp && resp.status));
+      if (resp.body && resp.body.getReader) return drainSse(resp.body.getReader());
+      if (typeof resp.text === "function") return resp.text();
+      return "";
+    }).then(function (full) {
+      var got = parseSuggestion(full);
+      if (!got) throw new Error("no rewrite came back");
+      return got;
+    });
+  }
+  // Word-level difference for the two columns: struck words left, underlined words right.
+  function wordDiff(a, b) {
+    var re = /\s+|[A-Za-z0-9\u2019'.\-]+|[^\sA-Za-z0-9]/g;
+    var A = String(a || "").match(re) || [], B = String(b || "").match(re) || [];
+    var m = A.length, n = B.length, L = [], i, j;
+    for (i = 0; i <= m; i++) { L[i] = []; for (j = 0; j <= n; j++) L[i][j] = 0; }
+    for (i = m - 1; i >= 0; i--) for (j = n - 1; j >= 0; j--) L[i][j] = A[i] === B[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+    var left = "", right = "";
+    i = 0; j = 0;
+    while (i < m && j < n) {
+      if (A[i] === B[j]) { left += esc(A[i]); right += esc(B[j]); i++; j++; }
+      else if (L[i + 1][j] >= L[i][j + 1]) { left += "<del>" + esc(A[i]) + "</del>"; i++; }
+      else { right += "<ins>" + esc(B[j]) + "</ins>"; j++; }
+    }
+    while (i < m) left += "<del>" + esc(A[i++]) + "</del>";
+    while (j < n) right += "<ins>" + esc(B[j++]) + "</ins>";
+    return [left.replace(/<\/del>(\s*)<del>/g, "$1"), right.replace(/<\/ins>(\s*)<ins>/g, "$1")];
+  }
+  function suggestPanelInner(key) {
+    var sg = state.suggest;
+    if (!sg || sg.key !== key) return "";
+    if (sg.busy) return '<p class="sit-meta" aria-live="polite">Asking Claude for a suggestion. This takes about as long as one Sierra answer.</p>';
+    if (sg.error) return '<p class="sit-meta" aria-live="polite">Suggest wording did not answer (' + esc(sg.error)
+      + "). Your words are unchanged.</p>";
+    if (!sg.result) return "";
+    var d = wordDiff(sg.base, sg.result.suggested);
+    var same = sg.result.suggested === String(sg.base || "").trim();
+    return '<div class="sit-guid-suggest-lbl" aria-live="polite">' + (same ? "Claude suggests no change." : "Suggested wording") + "</div>"
+      + (same ? "" : '<div class="sit-guid-suggest-pair"><div><div class="sit-meta">Your words</div><div class="sit-guid-suggest-txt">' + d[0]
+        + '</div></div><div><div class="sit-meta">Suggested</div><div class="sit-guid-suggest-txt">' + d[1] + "</div></div></div>")
+      + (sg.result.changes.length ? '<div class="sit-guid-suggest-lbl">What changed, and why</div><ol>'
+        + sg.result.changes.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ol>" : "")
+      + (sg.result.clash ? '<p class="sit-meta"><b>Beside the switched-on instructions:</b> ' + esc(sg.result.clash) + "</p>" : "")
+      + '<div class="sit-guid-row">'
+      + (same ? "" : '<button type="button" class="sit-btn" data-guid-suggest-use="' + esc(key) + '">Use the suggestion</button>')
+      + '<button type="button" class="sit-btn" data-guid-suggest-keep="' + esc(key) + '">' + (same ? "Close" : "Keep mine") + "</button>"
+      + "</div><p class=\"sit-meta\">Use the suggestion puts it in the box above, where you can change it. Save still saves it.</p>";
+  }
+  function suggestPanelHtml(key) {
+    return '<div class="sit-guid-suggest-wrap" data-guid-suggest-panel="' + key + '">'
+      + (state.suggest && state.suggest.key === key ? '<div class="sit-guid-suggest">' + suggestPanelInner(key) + "</div>" : "")
+      + "</div>";
+  }
+  function refreshSuggestPanel(root, key) {
+    var el = root && root.querySelector('[data-guid-suggest-panel="' + key + '"]');
+    if (el) el.innerHTML = state.suggest && state.suggest.key === key ? '<div class="sit-guid-suggest">' + suggestPanelInner(key) + "</div>" : "";
+  }
+  function suggestFor(key, root) {
+    var editing = key === "edit";
+    var text = String((editing ? state.editRule : state.draftRule) || "").trim();
+    var row = editing ? (state.guidance || []).filter(function (x) { return String(x.id) === String(state.editId); })[0] : null;
+    if (text.length < 10) {
+      state.suggest = { key: key, error: "type the instruction first" };
+      refreshSuggestPanel(root, key);
+      return Promise.resolve();
+    }
+    state.suggest = { key: key, busy: true, base: text };
+    refreshSuggestPanel(root, key);
+    return requestSuggestion(text, row ? row.id : null, row ? row.surface : state.draftSurface).then(function (got) {
+      if (!state.suggest || state.suggest.base !== text) return;
+      state.suggest = { key: key, base: text, result: got };
+      refreshSuggestPanel(root, key);
+    }, function (e) {
+      if (!state.suggest || state.suggest.base !== text) return;
+      state.suggest = { key: key, base: text, error: (e && e.message) || "no answer" };
+      refreshSuggestPanel(root, key);
+    });
+  }
+
   // The editor, rendered IN PLACE of the row being edited. It carries a test
   // question with it: the point of editing an instruction is to change what
   // Sierra SAYS, and the only way to know whether it worked is to ask her —
@@ -1884,6 +2051,7 @@
       + (used >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "")
       + "</div>"
       + editCheckHtml(r)
+      + suggestPanelHtml("edit")
       + '<input class="sit-guid-edit-note" aria-label="Note for the team" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.editNote) + '" '
       + 'title="Just for the team — Sierra never sees the note." '
       + 'placeholder="Optional note for the team — why this instruction exists">'
@@ -1899,6 +2067,10 @@
       + '<button type="button" class="sit-btn" data-guid-savetest="' + esc(r.id) + '"'
       + (state.editBusy ? " disabled" : "") + ' title="' + esc(HELP.ruleSaveTest) + '">'
       + "Save &amp; ask Sierra →</button>"
+      + '<button type="button" class="sit-btn" data-guid-suggest="edit"'
+      + (state.suggest && state.suggest.key === "edit" && state.suggest.busy ? " disabled" : "")
+      + ' title="Asks Claude for a clearer wording of this instruction and shows it beside yours. Nothing saves.">'
+      + "Suggest wording</button>"
       + '<button type="button" class="sit-btn" data-guid-cancel title="Closes without saving. Your changes are discarded.">'
       + "Cancel</button>"
       + "</div>"
@@ -2377,6 +2549,7 @@
         + (used >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "")
         + "</div>"
         + draftCheckHtml()
+        + suggestPanelHtml("draft")
         + '<div class="sit-guid-row">'
         + '<input class="sit-guid-note" aria-label="Note for the team" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.draftNote) + '" '
         + 'title="Just for the team — why you added this. Sierra never sees the note." '
@@ -2396,6 +2569,10 @@
         + "</label>"
         + '<button type="button" class="sit-btn sit-btn-primary" data-guid-add' + (state.addBusy ? " disabled" : "") + ">"
         + (state.addBusy ? "Adding…" : "Add instruction") + "</button>"
+        + '<button type="button" class="sit-btn" data-guid-suggest="draft"'
+        + (state.suggest && state.suggest.key === "draft" && state.suggest.busy ? " disabled" : "")
+        + ' title="Asks Claude for a clearer wording of this instruction and shows it beside yours. Nothing saves.">'
+        + "Suggest wording</button>"
         + "</div></div>";
       var guidRows = "", shownGuid = 0;
       var rankBy = {};
@@ -2645,6 +2822,30 @@
     var gs = root.querySelector("[data-guid-surface]");
     // Same reasoning as the kind select: no re-render, or the unsaved draft dies.
     if (gs) gs.addEventListener("change", function () { state.draftSurface = gs.value; refreshWordingChecks(root); });
+    root.querySelectorAll("[data-guid-suggest]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        suggestFor(btn.getAttribute("data-guid-suggest"), root);
+      });
+    });
+    // The panel is re-filled in place, so its two words are caught by delegation.
+    if (!root.__sitSuggestWired) {
+      root.__sitSuggestWired = true;
+      root.addEventListener("click", function (e) {
+        var use = e.target && e.target.closest && e.target.closest("[data-guid-suggest-use]");
+        var keep = e.target && e.target.closest && e.target.closest("[data-guid-suggest-keep]");
+        if (!use && !keep) return;
+        var key = (use || keep).getAttribute(use ? "data-guid-suggest-use" : "data-guid-suggest-keep");
+        if (use && state.suggest && state.suggest.result) {
+          if (key === "edit") { state.editRule = state.suggest.result.suggested; saveEditDraft(); }
+          else state.draftRule = state.suggest.result.suggested;
+        }
+        state.suggest = null;
+        render(root);
+        var box = root.querySelector(key === "edit" ? ".sit-guid-edit-input" : ".sit-guid-input");
+        if (box) box.focus();
+      });
+    }
     var ga = root.querySelector("[data-guid-add]");
     if (ga) ga.addEventListener("click", function () {
       var rule = (state.draftRule || "").trim();
@@ -2945,6 +3146,10 @@
     _guidanceRow: guidanceRow,
     _guidanceEditor: guidanceEditor,
     _wordingCheckInner: wordingCheckInner,
+    _suggestEnvelope: suggestEnvelope,
+    _parseSuggestion: parseSuggestion,
+    _suggestFor: suggestFor,
+    _wordDiff: wordDiff,
     _refreshWordingChecks: refreshWordingChecks,
     _addGuidance: addGuidance,
     _toggleGuidance: toggleGuidance,

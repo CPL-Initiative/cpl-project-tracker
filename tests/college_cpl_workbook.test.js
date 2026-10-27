@@ -13,7 +13,11 @@
 //   7. a catalog code written without its space (Bakersfield's "AUTOB30") still finds its course,
 //      and one COCI pads with zeros (Foothill's "ACTG 001A" for "ACTG 1A") or a hyphenated one
 //      (Moreno Valley's "ACC-1A") does too
-//   8. each Could Adopt link carries the exhibit ID it copies for MAP's search
+//   8. each Could Adopt link opens MAP already searched for its exhibit ID (?Exhibit=, live
+//      2026-10-26), so nothing is copied and no reader is told to paste
+//   9. a credential joining several colleges' exhibits shows each ID with a chip naming the
+//      college MAP records as its builder, each opening MAP searched for its own ID (Sam,
+//      2026-10-26; the row's one link opened only the first ID)
 //
 // Run from repo root: `npm test` (or `node tests/college_cpl_workbook.test.js`).
 const fs = require("fs");
@@ -158,7 +162,7 @@ check("tab 5 carries Ashley's columns", ["Could Adopt (Yes/No)", "Statewide Cred
   "Could Adopt - View in MAP", "Link Verification Status", "Priority Level", "Recommended Next Step"].every(function (h) { return sheets[4].headers.indexOf(h) >= 0; }));
 check("tab 4 carries the same link columns", sheets[3].headers.indexOf("Could Adopt - View in MAP") >= 0 && sheets[3].headers.indexOf("Could Adopt (Yes/No)") >= 0);
 check("a verified CR's link is a working Excel hyperlink to MAP",
-  /<f>HYPERLINK\("https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses","Could Adopt - View in MAP"\)<\/f>/.test(parts["xl/worksheets/sheet5.xml"]));
+  /<f>HYPERLINK\("https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN-1-001","Could Adopt - View in MAP"\)<\/f>/.test(parts["xl/worksheets/sheet5.xml"]));
 const nw = b.swRows.find(function (r) { return r.title === "CompTIA Network+"; });
 check("the verified CR names the ID to search", nw.link && /^Verified 2026-10-20: MAPICI-CN-1-001/.test(nw.linkStatus) && nw.crId === "MAPICI-CN-1-001");
 const fi = b.swRows.find(function (r) { return r.title === "Fire Inspector 1D"; });
@@ -167,17 +171,19 @@ const b3 = W.build({ college: COLLEGE, today: "x", lookup: lookup, members: memb
 check("with no verification read, no CR gets a link", b3.swRows.every(function (r) { return r.link === ""; }));
 const html = W.pageHtml(b);
 check("the visual names the college", html.indexOf("<h1>Test River College</h1>") > 0);
-check("the visual's Could Adopt table links the verified CR to MAP", /class="cpo-adopt" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses"/.test(html));
-check("each Could Adopt link carries the exhibit ID it copies", /class="cpo-adopt"[^>]*data-crid="MAPICI-CN-1-001"/.test(html) && html.indexOf('id="cpo-copied" aria-live="polite"') > 0);
-// clicking it copies the ID and says what to do in MAP; the link still opens MAP
-let copied = null, handler = null, prevented = false;
-const said8 = { textContent: "" };
+check("the visual's Could Adopt link opens MAP searched for the verified CR's exhibit ID",
+  /class="cpo-adopt" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN-1-001" target="_blank"/.test(html));
+check("the link is MAP's page, ?Exhibit= and the first verified ID",
+  nw.link === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CN-1-001");
+check("no reader is told to copy or paste the ID", !/paste|copies|cpo-copied/i.test(html));
+// the page no longer copies on a click: the link itself opens MAP at the card
+let copied = null, handler = null;
 sandbox.navigator = { clipboard: { writeText: function (t) { copied = t; return Promise.resolve(); } } };
 W.wirePage({ addEventListener: function (type, fn) { if (type === "click") handler = fn; },
-  querySelector: function (q) { return q === "#cpo-copied" ? said8 : null; } }, b);
+  querySelector: function () { return null; } }, b);
 const link8 = { getAttribute: function (k) { return k === "data-crid" ? "MAPICI-CN-1-001" : null; } };
-handler({ target: { closest: function () { return link8; } }, preventDefault: function () { prevented = true; } });
-check("a Could Adopt click copies the exhibit ID and leaves the link to open MAP", copied === "MAPICI-CN-1-001" && !prevented);
+if (handler) handler({ target: { closest: function () { return link8; } }, preventDefault: function () {} });
+check("a Could Adopt click copies nothing", copied === null);
 check("the visual offers its shareable link", html.indexOf("https://example.org/cpl-opportunity/?college=Test%20River%20College") > 0);
 check("every table header cell is scoped", (html.match(/<th /g) || []).length === (html.match(/<th scope="col">/g) || []).length);
 
@@ -235,8 +241,40 @@ check("every notes file parses, names its college and date, and is named by its 
     (!j.sections || Array.isArray(j.sections)) && (!j.contacts || Array.isArray(j.contacts));
 }), notesFiles.join(", "));
 
+// 9. One chip per verified ID, named for the college that built it in MAP, each with its own link.
+const swChips = JSON.parse(JSON.stringify(statewide));
+swChips.exhibits[0].exhibit_ids = ["MAPICI-CN-1-001", "MAPICI-CN2-1-001", "MAPICI-CN3-1-001", "MAPICI-CNX-1-001"];
+const bChips = W.build({ college: COLLEGE, today: "2026-10-26", lookup: lookup, members: members, aligned: aligned,
+  statewide: swChips, programs: programs, catalog: catalog,
+  shortName: function (n2) { return { "Saddleback College": "Saddleback", "West Los Angeles College": "West LA" }[n2] || n2; },
+  verified: { checked_at: "2026-10-26T23:00Z", found: {
+    "MAPICI-CN-1-001": { title: "Network+ v1", college: "Saddleback College", college_id: 16 },
+    "MAPICI-CN2-1-001": { title: "Network+", college: "West Los Angeles College", college_id: 115 },
+    "MAPICI-CN3-1-001": { title: "Network+ (older read)" } } } });
+const nwChips = bChips.swRows.find(function (r) { return r.title === "CompTIA Network+"; });
+check("each verified ID becomes a chip with its builder's short name; an unlisted ID gets none",
+  nwChips.chips.length === 3 && nwChips.chips[0].short === "Saddleback" && nwChips.chips[1].short === "West LA" &&
+  nwChips.chips.every(function (c) { return c.id !== "MAPICI-CNX-1-001"; }));
+const htmlChips = W.pageHtml(bChips);
+check("each chip opens MAP searched for its own ID, not the first",
+  /<a class="cpo-chip" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN-1-001"[^>]*>Saddleback/.test(htmlChips) &&
+  /<a class="cpo-chip" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN2-1-001"[^>]*>West LA/.test(htmlChips));
+check("a chip names its builder in full for a screen reader", /West LA<span class="cpo-sr"> \(built by West Los Angeles College; opens MAP searched for MAPICI-CN2-1-001\)/.test(htmlChips));
+check("an ID MAP lists without a recorded builder still links, as View in MAP",
+  /Exhibit=MAPICI-CN3-1-001"[^>]*>View in MAP<span class="cpo-sr"> \(opens MAP searched for MAPICI-CN3-1-001\)/.test(htmlChips));
+check("the row's status names each ID's builder", /MAPICI-CN-1-001 \(built by Saddleback College\), MAPICI-CN2-1-001 \(built by West Los Angeles College\), MAPICI-CN3-1-001 listed/.test(nwChips.linkStatus));
+check("the row's own Could Adopt link still opens the first verified ID", nwChips.link === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CN-1-001");
+check("the visual says the chip is the builder and MAP's table lists articulating colleges",
+  /the college that built it in MAP opens MAP searched for that ID; MAP's table lists the colleges that articulated it\./.test(htmlChips));
+check("with no short-name helper a chip shows the full college name",
+  W.build({ college: COLLEGE, today: "x", lookup: lookup, members: members, aligned: aligned, statewide: swChips, programs: programs, catalog: catalog,
+    verified: { checked_at: "2026-10-26T23:00Z", found: { "MAPICI-CN2-1-001": { college: "West Los Angeles College" } } } })
+    .swRows.find(function (r) { return r.title === "CompTIA Network+"; }).chips[0].short === "West Los Angeles College");
+check("the shareable page loads the short-name helper before the builder",
+  page.indexOf('src="../../college_short_names.js"') > 0 && page.indexOf('src="../../college_short_names.js"') < page.indexOf('src="../../college_cpl_workbook.js"'));
+check("a chip is a 24px target with an underline", /\.cpo-chip \{[^}]*min-height: 24px;[^}]*text-decoration: underline;/.test(page));
+
 setTimeout(function () {
-check("…and tells the reader to paste it into MAP's search", /^Copied MAPICI-CN-1-001\. In MAP, paste it/.test(said8.textContent));
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);

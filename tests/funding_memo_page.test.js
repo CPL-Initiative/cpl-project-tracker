@@ -33,6 +33,14 @@ check("the memo opens with SB 135", /Senate Bill 135|SB 135/.test(text));
 check("the memo's tables scroll in their own labeled region",
   Array.from(memo.querySelectorAll("table")).every(function (t) { return t.parentNode.getAttribute("role") === "region"; }));
 check("every memo header cell carries a scope", Array.from(memo.querySelectorAll("th")).every(function (th) { return th.hasAttribute("scope"); }));
+// axe landmark-unique (2026-10-26): two regions both named "Allocation table".
+// Each is named for what its table holds, and no two share a name.
+{
+  const names = Array.from(memo.querySelectorAll(".tbl[role=region]")).map(function (r) { return r.getAttribute("aria-label") || ""; });
+  check("each table region has its own name, for what it holds (" + names.join("; ") + ")",
+    names.length >= 2 && new Set(names).size === names.length && names.includes("Allocation summary") &&
+    names.includes("Max award by district and institution") && !names.includes("Allocation table"));
+}
 check("nothing on the memo page says draft", !/\bdraft\b/i.test(doc.body.textContent));
 check("the page uses tokens, no raw hex outside :root",
   !/#[0-9A-Fa-f]{3,6}\b/.test(html.slice(html.indexOf(".memo h1"), html.indexOf("</style>"))));
