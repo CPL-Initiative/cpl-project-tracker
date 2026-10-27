@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-27T15:25:23Z",
-  "session": 500,
-  "moniker": "SkyBlackberry",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-10-27T22:35:29Z",
+  "session": 503,
+  "moniker": "SkyElderberry",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_500_handoff.md",
+  "handoff": "docs/session_504_handoff.md",
   "next_step": {
-    "title": "Sam's word on the narrated cut, then the Summit-morning sweep",
-    "text": "The next session reads Open Asks Sheet 135 and carries out his answer on the narrated cut, applies display build 89a4abee9d1c on main once #2510 merges, then re-measures the ten public pages on the morning of October 30."
+    "title": "The Summit-morning sweep",
+    "text": "On the morning of October 30 the next session re-measures the ten public pages and the narrated film with npm run a11y, then confirms the live film plays the recorded piano."
   },
   "calls": [
     {
@@ -138,64 +138,8 @@
   },
   "changes": [
     {
-      "at": "2026-10-27T15:08:00Z",
-      "text": "Delta's Architectural Drafting certificate now counts the math requirement its page prints as a line with no course, and passes: San Joaquin Delta 200 of 203."
-    },
-    {
-      "at": "2026-10-26T06:21:00Z",
-      "text": "No harvest table moved this run; S485 read where Hartnell keeps the last three noncredit courses' hours (nowhere) and why six of its degrees fail arithmetic."
-    },
-    {
-      "at": "2026-10-26T07:42:00Z",
-      "text": "Hartnell's tabs say students can double-count required courses and general education courses; the scorer now reads those words as the overlap, and Vocational Nursing, Addiction Studies and Agricultural Mechatronics pass (Hartnell 79 of 94)."
-    },
-    {
-      "at": "2026-10-26T08:48:00Z",
-      "text": "Hartnell's General Studies: Arts and Humanities degree passes: a new reconcile step reads its eleven subject lists as the one 18-unit choice the page prints. Hartnell 80 of 94."
-    },
-    {
-      "at": "2026-10-26T10:26:00Z",
-      "text": "No harvest table moved this run; S488 read Hartnell's last eight failing pages and sorted each failure by its cause."
-    },
-    {
-      "at": "2026-10-26T12:00:00Z",
-      "text": "Hartnell's Liberal Arts: Pathway to Health Sciences degree passes: its three lists read as the one 18-unit choice the page prints, each list's own figure kept. Hartnell 81 of 94."
-    },
-    {
-      "at": "2026-10-26T15:30:00Z",
-      "text": "No harvest table moved this run; Sam kept S486's overlap reading and S489's floors (Sheet 131 cards 3 and 4). S490 built the Library's Regenerate and moved the CPL Opportunity page under library."
-    },
-    {
-      "at": "2026-10-26T19:29:00Z",
-      "text": "No harvest table moved this run; S491 built Sierra's wording help and drafted the funding attestation form. S492 stamped this file, which S491's checkpoint skipped."
-    },
-    {
-      "at": "2026-10-26T21:27:00Z",
-      "text": "No harvest table moved this run; S492 shipped the funding page's header and accessibility work for the CPL Summit and the noncredit attestation form."
-    },
-    {
-      "at": "2026-10-27T00:30:00Z",
-      "text": "No harvest table moved this run. S493 fixed the public funding page's Step 2, put the MAP link with each exhibit's building college on the CPL Opportunity visual, EACR, CPL Pathways, My College and CER, and published Open Asks Sheet 134, which Sam answered."
-    },
-    {
-      "at": "2026-10-27T03:00:00Z",
-      "text": "No harvest table moved this run. S494 gave Sierra the MAP link beside each credential a college could adopt, made COBI's side menu navigation rather than a tab set, and brought the axe rule engine into the accessibility runner."
-    },
-    {
-      "at": "2026-10-27T04:45:00Z",
-      "text": "S495 finished Hartnell's Cal-GETC area step on its own branch (34 of 34 in test, waiting on its reconcile) and compacted the harvest lane under its budget; no harvest table moved."
-    },
-    {
-      "at": "2026-10-27T06:40:00Z",
-      "text": "Hartnell's Cal-GETC 45096 passes the machine checks: the reread replaced its one row, and Hartnell now passes 82 of 94."
-    },
-    {
-      "at": "2026-10-27T07:47:00Z",
-      "text": "Hartnell's Music certificate passes: a new reconcile step reads the tab's repeat counts (MUS 11 taken for two semesters, two semesters from one list), and the scorer counts them. Hartnell 83 of 94."
-    },
-    {
-      "at": "2026-10-27T10:33:00Z",
-      "text": "San Joaquin Delta's Caterpillar apprenticeship certificate passes: its page says CAT 69V is taken four times for a total of 16 units, and the repeat step now reads that printed total. Two more Delta records pass on a rescore, so Delta reads 198 of 203."
+      "at": "2026-10-27T22:33:00Z",
+      "text": "No change to the harvest this run. The funding film's recorded piano and Sierra's deploy shipped in other lanes."
     }
   ],
   "headline": [

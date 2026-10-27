@@ -192,3 +192,9 @@ Sam asked for the paintings to go and for the library's look (lane, *State*). Th
 - **The header's controls moved to the footer**: the logo became the footer's link to MAP (Sheet 53 card 2 carried), and
   About Sierra opens under the footer's row without hover, since text appearing under the pointer at the page's foot
   moves the row.
+
+## S503 SkyElderberry (2026-10-27): deployed after #2511, on six answers of A/B
+
+- **The hold's three modes were variance.** S502's A/B found four regressions; re-asked alone under Sam's fewer-runs rule (`modes=7q,7v,7x`, about six answers), both sides passed, and the deploy (run 40573709433) shipped READER_RULE and LINK_RULE.
+- **A claim guard must read past a denial.** The deploy smoke's one red was 7v's certification-tie guard on a right answer: *"general computer-skills courses, not aimed at a specific certification exam like CompTIA"*. The word it bans for the claim (*aimed*) is the word a correct denial uses. 7v now runs through `answer_must_not_match_unnegated` (#2520; `smoke_negation_stripper` block 8), the sixth guard of this class. Write any new claim-shape guard on the stripper from the start.
+- **Deleting the preview costs two answers.** `cpl-chat-preview-ab.yml` with `modes=none` and `cleanup=true` asks no smoke mode, only the cap probe (run 40578186640).

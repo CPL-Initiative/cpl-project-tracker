@@ -756,3 +756,8 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 - 2026-10-26 S490 SkyGooseberry: the Library's Regenerate and documents on a record, the MAP team's notes on a college page, the CPL Opportunity page under `library/`, Open Asks Sheet 131 answered (#2472); full checkpoint, handoff 491.
 - 2026-10-26 S488 SkyThimbleberry: Hartnell's last eight failing tabs read (light checkpoint); handoff 489.
 - 2026-10-26 S487 SkyHuckleberry (the CPL Queue routine): Hartnell's pooled subject lists; a `pool_lists` reconcile step, General Studies 17912 passes, Hartnell 80 of 94 (#2463); full checkpoint, handoff 488.
+
+### docs/INDEX.md update history, moved by S503 (2026-10-27)
+
+- 2026-10-26 (S492 SkyCloudberry): the public funding page's header and WCAG 2.2 AA pass for the CPL Summit; KB note `methodology-geometry-is-half-an-accessibility-audit`; handoff 493.
+- 2026-10-26 S491 SkySalmonberry: wording help for Sierra's instructions (Check wording #2474, Suggest wording and the built-in naming rule #2475, deployed), four live instructions corrected, Open Asks Sheet 132 answered; funding attestation form drafted (#2476); full checkpoint, handoff 492.
