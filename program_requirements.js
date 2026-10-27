@@ -1215,7 +1215,7 @@
       ".prh-dd-list { list-style:none; margin:0; padding:0; display:grid; gap:2px; }",
       ".prh-dd-list li[hidden] { display:none; }",
       ".prh-dd-list label { display:flex; flex-wrap:wrap; align-items:center; gap:2px 8px; min-height:24px; cursor:pointer; font-size:.9375rem; color:var(--text-body); }",
-      ".prh-dd-list input[type=\"checkbox\"] { width:18px; height:18px; margin:0; flex:none; accent-color:var(--cobalt); cursor:pointer; }",
+      ".prh-dd-list input[type=\"checkbox\"] { width:24px; height:24px; margin:0; flex:none; accent-color:var(--cobalt); cursor:pointer; }",
       ".prh-dd-list input[type=\"checkbox\"]:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
       ".prh-dd-acts:empty { display:none; }",
       "@media (max-width: 560px) { .prh-dd { position:static; } .prh-dd-pop { left:0; right:0; width:auto; } .prh-filterbar { position:relative; } }",
