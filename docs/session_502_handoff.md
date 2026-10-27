@@ -31,6 +31,13 @@ reread, infer, keep), and #2499 is no longer held. This checkpoint was **light**
 
 ## Open work, in order
 
+0. **Hide the public funding page's My Institution view, keep its code (Sam, ruled ~15:25Z; `cpl_memory`
+   `sam-funding-hide-my-institution-ruled-2026-10-27`):** *"OK, let's hide the My Institution and save the code ... Later,
+   when the My College or CPL Pathways pages are better settled, we can throw on a link to either on the dash college
+   row."* One shared public dashboard. The view lives in `cpl_funding.js` (`oneCollegeView()`, `VIEW_ITEMS` near line
+   14443): take its entry off the menu behind a switch, and land any link that asks for it (CPL Pathways, My College)
+   on the main dashboard with that institution's row open. Before Friday, with the review gate (item 5); the
+   `funding-model-mycpl` a11y target and its tests follow the switch.
 1. **#2511** (Sierra: no header, links, infer; carries #2512's fix and the check floor). Merge on a passing `test`,
    then dispatch `cpl-chat-deploy.yml` (LINK_RULE, READER_RULE) and `cpl-chat-smoke.yml`. The smoke has been red on
    main since run 380 for older modes; mode 17 passes; read the new answers for links and plain student wording.
@@ -69,4 +76,7 @@ reread, infer, keep), and #2499 is no longer held. This checkpoint was **light**
 
 ## Let go
 
-This session subscribed to #2511, #2512 and CPLBrain#514 and watches Sheet 136. Drop them when it signs off.
+S500 SkyLingonberry signed off at ~15:25Z with 59K context left: it dropped its subscriptions to #2511, #2499 and
+CPLBrain#514 and its watch on Sheet 136 (#2512 merged at 15:17Z). #2511 and #2499 were re-running CI (main merged into
+#2499 at 1ec29fd87); merge each on a passing `test`. The piano agent may still finish in that container; its branch was
+never pushed.
