@@ -2380,7 +2380,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                              f'                </div>\n')
                 else:
                     html += (f'                <div class="akpi-metric-row">\n'
-                             f'                    <span class="akpi-metric-unit" style="opacity:0.5;">{html_escape(str(kpi["unit"]))}</span>\n'
+                             f'                    <span class="akpi-metric-unit akpi-metric-unit-none">{html_escape(str(kpi["unit"]))}</span>\n'
                              f'                </div>\n')
                 # How the numbers are counted (projects.count_note), so a reader of a
                 # tech-development target knows what a "4" means.

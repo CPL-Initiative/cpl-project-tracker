@@ -259,7 +259,9 @@
       "#tab-tmc-builder .tmc-listtable td{padding:9px 14px;border-top:1px solid var(--border);vertical-align:middle;}" +
       "#tab-tmc-builder .tmc-listrow{cursor:pointer;}" +
       "#tab-tmc-builder .tmc-listrow:hover td{background:var(--rail-hover);}" +
-      "#tab-tmc-builder .tmc-listrow:focus{outline:2px solid var(--navy-primary);outline-offset:-2px;}" +
+      "#tab-tmc-builder .tmc-lt-open{background:none;border:0;padding:0;margin:0;min-height:24px;font:inherit;color:inherit;" +
+      "text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:2px;}" +
+      "#tab-tmc-builder .tmc-lt-open:focus-visible{outline:2px solid var(--navy-primary);outline-offset:2px;}" +
       "#tab-tmc-builder .tmc-lt-name{font-weight:600;color:var(--text-strong);}" +
       "#tab-tmc-builder .tmc-deg-sm{display:inline-block;background:var(--surface-2);color:var(--navy-primary);font-weight:700;font-size:.72rem;padding:1px 8px;border-radius:20px;}" +
       "#tab-tmc-builder .tmc-cov{font-weight:700;color:#065f46;}" +
@@ -991,10 +993,10 @@
       var src = tmcSource(t), pdf = pdfPath(t);
       var links = (src ? "<a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>official</a>" : "") +
                   (pdf ? " <a class='tmc-srclink' href='" + esc(pdf) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>PDF</a>" : "");
+      // The row is a plain row: its name is the native button that opens it, and the
+      // official and PDF links sit beside it (axe nested-interactive, S495: a row
+      // with role="button" held those links). A click anywhere on the row still opens it.
       var tr = el("tr", "tmc-listrow");
-      tr.tabIndex = 0;
-      tr.setAttribute("role", "button");
-      tr.setAttribute("aria-label", "Open " + t.discipline + (pathway ? " pathway" : " TMC"));
       // Official/Pathway carries a positive signal worth surfacing inline by the
       // name; the uniform "Draft" chip was retired (Session 69 — it was noise, and
       // the global "· Draft" disclosure covers it). The per-college ADT column
@@ -1002,14 +1004,14 @@
       var nameChip = (tmcStatus(t) === "official" || pathway)
         ? " <span class='tmc-stchip " + sm.cls + "'>" + esc(sm.label) + "</span>" : "";
       tr.innerHTML =
-        "<td class='tmc-lt-name'>" + esc(t.discipline) + nameChip + "</td>" +
+        "<td class='tmc-lt-name'><button type='button' class='tmc-lt-open' aria-label='Open " +
+          esc(t.discipline + (pathway ? " pathway" : " TMC")) + "'>" + esc(t.discipline) + "</button>" + nameChip + "</td>" +
         "<td>" + (t.degree ? "<span class='tmc-deg-sm'>" + esc(t.degree) + "</span>" : "—") + "</td>" +
         (hasAdt ? "<td>" + adtCellHtml(t) + "</td>" : "") +
         "<td class='tmc-num'>" + (nslots == null ? "—" : nslots) + "</td>" +
         (showCov ? "<td class='tmc-num'>" + (cov != null ? "<span class='tmc-cov'>" + cov + "</span> / " + nslots : "—") + "</td>" : "") +
         "<td class='tmc-lt-links'>" + (links || "—") + "</td>";
       tr.onclick = function () { openTmc(t.id); };
-      tr.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openTmc(t.id); } };
       tb.appendChild(tr);
     });
     table.appendChild(tb);
