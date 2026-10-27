@@ -101,6 +101,54 @@ check("floors that sum past the total are left alone",
 check("the figureless step never pools lists with floors",
       not [n for n in R.reconcile(rec, gah, "Hartnell College", "A.A. Degree", steps=steps)[1] if n["field"] == "blocks"])
 
+print("Hartnell's Cal-GETC area totals over sub-areas (S495)")
+cal = ("STATC1000: Introduction to Statistics \u00b7 Area 3: Arts and Humanities\n"
+       "A total of 6 semester units is required. Two courses required: one from Area 3A (Arts) and one from Area 3B (Humanities).\n"
+       "Complete at least 2 of the following Courses:\nART1A: Art History Survey I\n"
+       "Area 4: Social and Behavioral Sciences\nA total of 6 semester units is required. Two courses required from two different academic disciplines.\n"
+       "Area 5: Physical and Biological Sciences\nA total of 7 semester units is required. Two courses required: one from Area 5A "
+       "(Physical Science) and one from Area 5B (Biological Science).\n"
+       "Area 5A: Physical Science \u00b7 Complete ANY of the following Courses: \u00b7 ABT90: Soil Science\n"
+       "PHY10: Introduction to Physics \u00b7 Area 6: Ethnic Studies\nA total of 3 semester units is required. One course required.")
+def area(name, rule, codes, mn, st, units=3):
+    return {"name": name, "rule": rule, "minimum": mn, "stated": st,
+            "courses": [{"code": c, "units": units} for c in codes]}
+NONE = {"min": None, "max": None}
+rec = {"program": {"total_units": {"min": 34, "max": 34}},
+       "blocks": [area("Area 1: English Communication", "all", ["ENG1A", "ENG2", "COM1"], None, {"min": 9, "max": 9}),
+                  area("Area 2: Mathematical Concepts and Quantitative Reasoning", "choose_courses", ["MAT10", "STATC1000"], 1, {"min": 3, "max": 3}),
+                  area("Area 3: Arts and Humanities - Area 3A (Arts)", "choose_courses", ["ART1A", "MUS1A"], 1, NONE),
+                  area("Area 3: Arts and Humanities - Area 3B (Humanities)", "choose_courses", ["PHL2", "HIS4A"], 1, NONE),
+                  area("Area 4: Social and Behavioral Sciences", "choose_courses", ["SOC1", "PSY6", "ECO10"], 2, {"min": 6, "max": 6}),
+                  area("Area 5A: Physical Science", "choose_courses", ["PHY10", "CHM1A"], 1, NONE, 4),
+                  area("Area 5B: Biological Science", "choose_courses", ["BIO10", "BIO5"], 1, NONE, 4),
+                  area("Area 5C: Laboratory", "choose_courses", ["BIO10", "CHM1A", "AST1L"], 1, NONE, 1),
+                  area("Area 6: Ethnic Studies", "choose_courses", ["ETH1", "ETH7"], 1, {"min": 3, "max": 3})]}
+new, notes = R.reconcile(rec, cal, "Hartnell College", "Certificate of Achievement", steps=steps)
+b = new["blocks"]
+names = [x["name"] for x in b]
+check("Area 3's two sub-areas become one choice of 6, named for the area",
+      "Area 3: Arts and Humanities" in names and not [n for n in names if "Area 3A" in n or "Area 3B" in n]
+      and [x for x in b if x["name"] == "Area 3: Arts and Humanities"][0]["stated"] == {"min": 6, "max": 6})
+a5 = [x for x in b if x["name"] == "Area 5: Physical and Biological Sciences"]
+check("Area 5's three sub-areas become one choice of 7, 5C's laboratory kept as a floor",
+      len(a5) == 1 and a5[0]["stated"] == {"min": 7, "max": 7}
+      and [f["name"] for f in a5[0]["floors"]] == ["Area 5A: Physical Science", "Area 5B: Biological Science", "Area 5C: Laboratory"]
+      and all(f["rule"] == "choose_courses" for f in a5[0]["floors"]))
+check("a course listed under two sub-areas is listed once",
+      [c["code"] for c in a5[0]["courses"]] == ["PHY10", "CHM1A", "BIO10", "BIO5", "AST1L"])
+check("areas 1, 2, 4 and 6 are left as read", [x["name"] for x in b if x["name"].startswith(("Area 1", "Area 2", "Area 4", "Area 6"))]
+      == [x["name"] for x in rec["blocks"] if x["name"].startswith(("Area 1", "Area 2", "Area 4", "Area 6"))] and len(b) == 6)
+check("the pooled record sums to the tab's 34", S.program_units(new, {})[0] == (34, 34))
+check("the original record is left as it was", len(rec["blocks"]) == 9)
+spaced = cal.replace("\n", " ")
+check("the pattern reads the tab's words whether a capture joins them with a newline or a space",
+      len(R.reconcile(rec, spaced, "Hartnell College", "Certificate of Achievement", steps=steps)[0]["blocks"]) == 6)
+over = json.loads(json.dumps(rec)); over["blocks"][2]["stated"] = {"min": 4, "max": 4}; over["blocks"][3]["stated"] = {"min": 4, "max": 4}
+check("sub-areas whose own figures sum past the area's total are left alone",
+      len([x for x in R.reconcile(over, cal, "Hartnell College", "Certificate of Achievement", steps=steps)[0]["blocks"]
+           if x["name"].startswith("Area 3")]) == 2)
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
