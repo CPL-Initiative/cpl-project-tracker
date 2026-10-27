@@ -1,5 +1,5 @@
 {
- "_about": "The narration of Scenario 2's narrated cut, draft 2 (S317 SkyCompass, 2026-10-02), voiced by Sierra. Sam, 2026-10-02: \"write a script for the scenario 2 video for an ElevenLabs narrator. Keep it very simple and focused and see if you can select a female voice model to narrate and give her the name Sierra on the video as a sample\", and \"The music can drop to background level.\" One or two plain sentences per scene of the current Scenario 2 picture (the introduction's v7: the average allocation, the targets slide, December 30, 2026, the CPL funding page), about 330 words where draft 1 had 430. Every figure is the film's, read from the engine under the live config, md5 764fd264 (checked live 2026-10-02): $35,000,000; about $25 million to 118 institutions; the $150,000 to $400,000 range and the $213,901 average; 4,366.7 FTES statewide for each priority; 34.5 FTES for the average Access target. The voice says the figures in words and writes MAP as map, so the captions and the aligner read what she says.",
+ "_about": "The narration of Scenario 2's narrated cut, draft 2 (S317 SkyCompass, 2026-10-02), voiced by Sierra. Sam, 2026-10-02: \"write a script for the scenario 2 video for an ElevenLabs narrator. Keep it very simple and focused and see if you can select a female voice model to narrate and give her the name Sierra on the video as a sample\", and \"The music can drop to background level.\" One or two plain sentences per scene of the published film's picture (v11, figures.json under config 439488ec: the average allocation, the targets slide, December 31, 2026, the Noncredit CPL Lead, the CPL funding page), about 355 words where draft 1 had 430. Scenes 5 to 8 were read again on 2026-10-27 (scene 8 for Sheet 133 card 1, scenes 5 to 7 for Sheet 136 card 1), so every figure she says is the picture's: $35,000,000; about $25 million to 118 institutions; the $150,000 to $400,000 range and the $213,901 average; the credit funding and its two noncredit outcomes; about 3,600 FTES statewide for each priority (3,598.2); about 31 FTES for the average Access target (31.3). The voice says the figures in words and writes MAP as map, so the captions and the aligner read what she says.",
  "voice": "Sierra",
  "engine": {
   "name": "elevenlabs",
@@ -142,50 +142,52 @@
     {
      "at": 4.2,
      "word": "Only noncredit outcomes count",
-     "why": "its bold sentence, Only noncredit outcomes count toward the noncredit share"
+     "why": "its bold sentence, Two noncredit outcomes count toward the noncredit share: exhibits built or adopted and a CPL portfolio course"
     }
    ]
   },
   {
    "scene": "Two priorities",
-   "text": "Two priorities carry the funding, in equal shares. Access counts applied CPL units. Completion counts transcribed CPL units, with the map counselor step checked. The Chancellor's Office reports on career attainment together with the innovation projects.",
+   "text": "Two priorities carry the credit funding, in equal shares. Access counts applied CPL units. Completion counts transcribed CPL units. Two noncredit outcomes count toward the noncredit share: exhibits built or adopted, and a CPL portfolio course. The Chancellor's Office reports on career attainment together with the innovation projects.",
    "read": {
     "clip": "05.mp3",
-    "generation": "QWfavGqbodpp43aq0CKM",
-    "read_on": "2026-10-02",
-    "text_sha1": "1cbeb26df53c3ed567d915988fcb0b43aa01fe3f"
+    "generation": "M0PB0Si6E7RIP3bfDKyd",
+    "read_on": "2026-10-27",
+    "text_sha1": "7b6d9e6e2b34fe48a34c96e06afed4e0797bf132",
+    "why": "Re-read (S500, 2026-10-27) so her words match the v11 picture, as Sam ruled on Open Asks Sheet 136 card 1, \"reread\" (2026-10-27): the priorities carry the credit funding, Completion counts transcribed CPL units, and the two noncredit outcomes count toward the noncredit share. The first of two takes."
    },
    "cues": [
     {
      "at": 0.1,
-     "word": "Two priorities carry the funding",
-     "why": "the heading, Two priorities carry the funding"
+     "word": "Two priorities carry the credit funding",
+     "why": "the heading, Two priorities carry the credit funding"
     },
     {
      "at": 1.2,
      "word": "Access counts",
-     "why": "the Access card, 50 percent and $12,620,154 statewide"
+     "why": "the Access card, 50 percent and $10,727,131 statewide"
     },
     {
      "at": 5.2,
      "word": "Completion counts",
-     "why": "the Completion card, 50 percent and $12,620,154 statewide"
+     "why": "the Completion card, 50 percent and $10,727,131 statewide"
     },
     {
      "at": 9.2,
      "word": "The Chancellor's Office reports",
-     "why": "the reported card, Career attainment and innovation projects"
+     "why": "the reported card, Career Attainment and Innovation Projects"
     }
    ]
   },
   {
    "scene": "How a target is set",
-   "text": "The model sets each priority's statewide target from its funding and the FTES reimbursement rate: about four thousand three hundred sixty-seven FTES for each.",
+   "text": "The model sets each priority's statewide target from its funding and the FTES reimbursement rate: about three thousand six hundred FTES for each.",
    "read": {
     "clip": "06.mp3",
-    "generation": "HkJp5oAtyStUZkk3dfbr",
-    "read_on": "2026-10-02",
-    "text_sha1": "d71c3a20612c4e2bad93f4a2d449b495ac59334b"
+    "generation": "Mr7uiJARIHuXPS4fFq5J",
+    "read_on": "2026-10-27",
+    "text_sha1": "6d95d527f316069db75e929d7b27733a2ff0ff2f",
+    "why": "Re-read (S500, 2026-10-27) so her words match the v11 picture, as Sam ruled on Open Asks Sheet 136 card 1, \"reread\" (2026-10-27): about three thousand six hundred FTES for each priority, where the picture shows 3,598.2. The first of two takes."
    },
    "cues": [
     {
@@ -206,24 +208,25 @@
     },
     {
      "at": 6.4,
-     "word": "about four thousand three hundred sixty-seven",
-     "why": "the Access target lands on 4,366.7 FTES, the institutions’ targets added up"
+     "word": "about three thousand six hundred",
+     "why": "the Access target lands on 3,598.2 FTES, the institutions’ targets added up"
     },
     {
      "at": 7.2,
      "word": "for each",
-     "why": "the line, Completion is set the same way: 4,366.7 FTES"
+     "why": "the line, Completion is set the same way: 3,598.2 FTES"
     }
    ]
   },
   {
    "scene": "Targets",
-   "text": "Your college has its own target under each priority. Thirty semester units of CPL make one FTES. For the average allocation, the Access target is about thirty-four and a half FTES. Reach half the target, and your college qualifies for half the share. The full target qualifies for the full share, and that share is the ceiling.",
+   "text": "Your college has its own target under each priority. Thirty semester units of CPL make one FTES. For the average allocation, the Access target is about thirty-one FTES. Reach half the target, and your college qualifies for half the share. The full target qualifies for the full share, and that share is the ceiling.",
    "read": {
     "clip": "07.mp3",
-    "generation": "RczRtywXW3geI3ubpL2w",
-    "read_on": "2026-10-02",
-    "text_sha1": "c05cb534d3205debb7109ccf274228f4ccef29a6"
+    "generation": "2aU7DUNEgnP90khaI1Pa",
+    "read_on": "2026-10-27",
+    "text_sha1": "bf40255e64e594c29b9efd2fd6bfbeae6bcf59c9",
+    "why": "Re-read (S500, 2026-10-27) so her words match the v11 picture, as Sam ruled on Open Asks Sheet 136 card 1, \"reread\" (2026-10-27): an average Access target of about thirty-one FTES, where the picture shows 31.3. The first of two takes."
    },
    "cues": [
     {
@@ -239,7 +242,7 @@
     {
      "at": 2.0,
      "word": "For the average allocation",
-     "why": "the card, Priority 1 · Access · average allocation · target 34.5 FTES · $99,271, fades in above its empty bar"
+     "why": "the card, Priority 1 · Access · average allocation · target 31.3 FTES · $90,908, fades in above its empty bar"
     },
     {
      "at": 3.0,

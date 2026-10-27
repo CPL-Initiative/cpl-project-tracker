@@ -39,11 +39,11 @@ const html = fs.readFileSync(path.join(ROOT, "funding-model/index.html"), "utf8"
 const dom = new JSDOM(html);
 const tails = Array.from(dom.window.document.querySelectorAll("#toc-list li.toc-tail a")).map((a) => a.getAttribute("href"));
 // The guidance memo leads the tail (Sam, 2026-10-21), its Word file after it
-// (2026-10-22).
-check("(d) the memo, its Word file, the video, office hours, landing page, then the training video",
-  tails[0] === "memo/" && tails[1] === "memo/?download=word" && /funding_in_motion/.test(tails[2]) &&
-  tails[3] === "https://map.rccd.edu/get-involved/" &&
-  tails[4] === "https://map.rccd.edu/cpllandingpages/" && tails[5] === "../prototype/landing_page_video/");
+// (2026-10-22). The narrated cut follows the introduction (Sheet 136 card 1, 2026-10-27).
+check("(d) the memo, its Word file, the video, its narrated cut, office hours, landing page, then the training video",
+  tails[0] === "memo/" && tails[1] === "memo/?download=word" && /funding_in_motion_s2\.html$/.test(tails[2]) &&
+  /funding_in_motion_n2\.html$/.test(tails[3]) && tails[4] === "https://map.rccd.edu/get-involved/" &&
+  tails[5] === "https://map.rccd.edu/cpllandingpages/" && tails[6] === "../prototype/landing_page_video/");
 // The training video plays from this site, so no ads and no suggested videos
 // (Sam, 2026-10-20); the page's video file is in the repo.
 const lp = fs.readFileSync(path.join(ROOT, "prototype/landing_page_video/index.html"), "utf8");

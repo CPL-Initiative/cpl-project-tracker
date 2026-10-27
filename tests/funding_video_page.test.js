@@ -71,11 +71,15 @@ check("a1 the explainer's link says introduction, not guide, and the film's true
 // per-scenario label rewrites it.
 check("a2 the link opens the published film and no per-scenario label renames it",
   /id="video-link" (data-plink="video" )?href="\.\.\/prototype\/funding_video\/funding_in_motion_s2\.html"/.test(explainer) && !/label: "Watch/.test(explainer));
-// Sam, 2026-10-09 (a marked-up screenshot of the explainer): the Contents keeps
-// the introduction alone; the MP4 download and the narrated cut left it. The
-// files stay where the narrated checks below read them.
-check("a3 the explainer offers the introduction alone: no MP4 download, no narrated cut",
-  !/id="video-mp4"/.test(explainer) && !/id="video-narrated"/.test(explainer) && !/\.mp4"/.test(explainer));
+// Sam, 2026-10-09 (a marked-up screenshot of the explainer): the MP4 download
+// left the Contents. The narrated cut returned beside the introduction on
+// 2026-10-27 (Open Asks Sheet 136 card 1, "reread", on Sheet 133's plan): the
+// music film stays the introduction, the narrated cut its alternative for a
+// listener who cannot see the picture (WCAG 1.2.5), right after it.
+check("a3 the explainer offers the introduction, then its narrated cut, and no MP4 download",
+  !/id="video-mp4"/.test(explainer) && !/\.mp4"/.test(explainer) &&
+  /<a id="video-link"[^>]*>[^<]+<\/a><\/li>\s*(<!--[\s\S]*?-->\s*)?<li class="toc-video toc-tail"><a id="video-narrated-link" data-plink="video_narrated" href="\.\.\/prototype\/funding_video\/funding_in_motion_n2\.html">Watch the narrated introduction<\/a>/.test(explainer) &&
+  !/id="video-narrated-link"[^>]*target=/.test(explainer));
 check("a4 the source never calls itself a guide for colleges", !/guide for colleges|Play the guide/i.test(src));
 // a5 (the MP4 links point at files that exist) retired with the links, 2026-10-09.
 
@@ -97,7 +101,7 @@ const narration = readScript("s1");
 // The narrated cuts: n1 is Scenario 1's (draft 4, Kokoro), n2 Scenario 2's (draft 3, Sierra).
 const NARRATED = [
   { tag: "n1 ", v: "n1", s: "s1", mp4: "20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4" },
-  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4" },
+  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4" },
 ];
 const sha1 = (t) => crypto.createHash("sha1").update(t, "utf8").digest("hex");
 NARRATED.forEach(({ s }) => {
@@ -331,12 +335,6 @@ NARRATED.forEach(({ tag, v, s }) => {
   const s2 = readScript("s2");
   const byName = (sc, n) => (sc.scenes.find((x) => x.scene === n) || {}).text || "";
   const prio = byName(s2, "Two priorities"), targets = byName(s2, "Targets");
-  check("k1 two funded priorities, and career attainment reported with the innovation projects",
-    /^Two priorities carry the funding/.test(prio) && /Access counts/.test(prio) && /Completion counts/.test(prio)
-      && /Chancellor's Office reports on career attainment together with the innovation projects/.test(prio)
-      && !/EDD|wage records/.test(prio));
-  check("k2 the Targets voice says the average Access target the picture shows (34.5 FTES)",
-    targets.includes("For the average allocation, the Access target is about thirty-four and a half FTES."));
   const L2 = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s2_layout.json"), "utf8"));
   const words = s2.scenes.reduce((n, x) => n + x.text.split(/\s+/).length, 0);
   check("k3 a short script (" + words + " words, under 360) voicing each of the picture's eleven scenes, the targets slide included, in its order",
@@ -346,6 +344,23 @@ NARRATED.forEach(({ tag, v, s }) => {
     s2.scenes.every((x) => !x.pending && x.read));
   const cfgOf2 = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
   const cfg = cfgOf2("funding_in_motion_n2.html"), intro = cfgOf2("funding_in_motion_s2.html");
+  // Scenes 5 to 7 read again on 2026-10-27 (Sam, Open Asks Sheet 136 card 1, "reread"), so
+  // what Sierra says is what the v11 picture shows: its heading, its boxes, its noncredit
+  // outcomes and its targets, compared against the picture the page is built with.
+  const howText = byName(s2, "How a target is set");
+  check("k1 two funded priorities carrying the credit funding as the picture's heading reads, Completion's box, the two noncredit outcomes, and career attainment reported with the innovation projects",
+    prio.startsWith(cfg.prioHead + ",") && cfg.prioHead === "Two priorities carry the credit funding"
+      && /Access counts applied CPL units\./.test(prio) && /Completion counts transcribed CPL units\./.test(prio)
+      && cfg.prios[1][2] === "Transcribed CPL units." && !/counselor step/.test(prio)
+      && /exhibits built or adopted/.test(cfg.ncLine) && /a CPL portfolio course/.test(cfg.ncLine)
+      && /Two noncredit outcomes count toward the noncredit share: exhibits built or adopted, and a CPL portfolio course\./.test(prio)
+      && /Chancellor's Office reports on career attainment together with the innovation projects/.test(prio)
+      && !/EDD|wage records/.test(prio));
+  check("k2 the voice says the targets the picture shows: about 3,600 FTES per priority (" + cfg.how.rows[0][3] + ") and about 31 FTES for the average Access target (" + cfg.target.ftesWords + ")",
+    Math.round(cfg.how.rows[0][3] / 100) * 100 === 3600 && cfg.how.rows[1][3] === cfg.how.rows[0][3]
+      && howText.includes("about three thousand six hundred FTES for each.")
+      && Math.round(cfg.target.ftes) === 31
+      && targets.includes("For the average allocation, the Access target is about thirty-one FTES."));
   // The narrated cut plays the published film's picture (Sam, Sheet 133 card 1,
   // 2026-10-26; S495): every figure the introduction shows, its targets slide,
   // its minimum conditions with the Noncredit CPL Lead, and its dates.
