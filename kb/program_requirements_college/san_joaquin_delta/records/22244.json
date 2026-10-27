@@ -67,20 +67,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    19.0,
-    19.0
+    23.0,
+    23.0
    ],
    "stated": [
     23.0,
     23.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 19.0-19.0; the catalog states 23.0-23.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -104,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -201,6 +199,17 @@
       "catalog_addition": false
      }
     ]
+   },
+   {
+    "name": "Associate Degree Math Requirement",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": []
    }
   ],
   "course_outcomes": [],
@@ -212,13 +221,14 @@
    "The page links to a related Architectural Drafting AS, which is a separate award and was not read."
   ]
  },
- "extracted_run": "40517095981",
+ "extracted_run": 40523400149,
  "reconciled": [
   {
-   "field": "total_units_minimum",
+   "field": "blocks",
    "was": null,
-   "now": true,
-   "words": "Minimum Units Required: 23"
+   "now": "Associate Degree Math Requirement",
+   "words": "Associate Degree Math Requirement: Units 4"
   }
- ]
+ ],
+ "read_run": "40517095981"
 }
