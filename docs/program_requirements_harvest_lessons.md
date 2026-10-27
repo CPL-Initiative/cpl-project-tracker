@@ -1134,6 +1134,18 @@ side session (Scenario 4) ran beside it, one writer per file.
 
 **S444:** Golden West (79) and Imperial Valley (42) loaded; department pages are candidates, a section heading may span two lines (Sierra 35 → 81 found, MiraCosta 29 → 68, its discipline pages still lose siblings); 37 Program Mapper hosts recorded (#2330).
 
+## S497 SkyCrowberry (2026-10-27, the CPL Queue routine): Music 43887's repeat counts
+
+- **A repeat count is a field, never a doubled figure.** The `repeat` step gives a course `times: n` and a list
+  `repeats: true` with `minimum: n`; the record keeps each course's printed units, and only the scorer multiplies.
+  A repeating list counts n of its least course for the low end and n of its largest for the high end. No other
+  record carried either field, so no other score moved. Delta 44197 (S424) is the same gap and can take the step.
+- **The pattern matched the live capture on the first dispatch** (reconcile 40466933762): "If MUS 11 is chosen, it
+  must be taken for 2 semesters" and the block name "2 semesters of any of the following Courses". The run re-filed
+  all 58 records again; 43887 alone moved, so the rest returned to main and the summary moved 82 to 83 by hand.
+- **RN 03570 cannot take Fable's reading yet:** its record holds the four semesters and the recommended success
+  courses, and no prerequisite list, so the reading needs a page read of the tab's prerequisite words first.
+
 ## S496 SkyLingonberry (2026-10-27, the CPL Queue routine): 45096 lands
 
 - **Reconcile 40452134609 (free) moved 45096 alone in substance:** 34-35 against 34, arith equal, the units of all 163
