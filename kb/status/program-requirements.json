@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-27T15:11:18Z",
+  "written_at": "2026-10-27T15:25:23Z",
   "session": 500,
   "moniker": "SkyBlackberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_501_handoff.md",
+  "handoff": "docs/session_500_handoff.md",
   "next_step": {
     "title": "Sam's word on the narrated cut, then the Summit-morning sweep",
     "text": "The next session reads Open Asks Sheet 135 and carries out his answer on the narrated cut, applies display build 89a4abee9d1c on main once #2510 merges, then re-measures the ten public pages on the morning of October 30."

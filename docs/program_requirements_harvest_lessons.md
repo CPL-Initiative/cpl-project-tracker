@@ -1092,7 +1092,7 @@ side session (Scenario 4) ran beside it, one writer per file.
 
 **S444:** Golden West (79) and Imperial Valley (42) loaded; department pages are candidates, a section heading may span two lines (Sierra 35 → 81 found, MiraCosta 29 → 68, its discipline pages still lose siblings); 37 Program Mapper hosts recorded (#2330).
 
-## S500 SkyBlackberry (2026-10-27, the CPL Queue routine): Delta 22244 passes on a unit_line step (200 of 203)
+## S500 SkyBlackberry (2026-10-27, the CPL Queue routine, beside Sam's own S500): Delta 22244 passes on a unit_line step (200 of 203)
 
 - **A second reading made the same choice.** `force=22244` (run 40517095981, $0.05) left out "Associate Degree Math
   Requirement: Units 4" again and said so in its notes, as run 39217405432 had: the reader will not record a line with

@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 94 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 471 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1287** | |
+| Session handoffs | 470 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1286** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,7 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- 2026-10-27 (S500 SkyBlackberry): Delta Architectural Drafting 22244 passes on the new `unit_line` reconcile step, 200 of 203 (#2510, reread 40527733110, display build 89a4abee9d1c); handoff 501.
+- 2026-10-27 (S500 SkyBlackberry): Delta Architectural Drafting 22244 passes on the new `unit_line` reconcile step, 200 of 203 (#2510, reread 40527733110, display build 89a4abee9d1c); the CPL Queue routine beside Sam's S500, whose handoff carries it.
 - 2026-10-27 (S499 SkyCloudberry): Delta Cal-GETC 45621 passes on a `pool_areas` step, 199 of 203 (#2508, reread 40502212690, display build 5dc18d9ea80a); handoff 500.
 - 2026-10-27 (S497 SkyCrowberry): Hartnell Music 43887 passes on the new `repeat` reconcile step, 83 of 94 (#2506, reread 40469123943, display build 8f8a282ca526); handoff 498.
 - 2026-10-27 (S496 SkyLingonberry): Hartnell CalGETC 45096 passes, 82 of 94 (#2504, reread 40460714483, display build 588cfa081bee); the Funding film's UI pass, clean; handoff 497.
