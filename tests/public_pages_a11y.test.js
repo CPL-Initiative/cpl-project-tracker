@@ -80,9 +80,8 @@ const sd = new JSDOM(S_HTML).window.document;
 val("sierra: --sierra-faint is no longer the sub-AA #8394a3",
   () => !/--sierra-faint:\s*#8394a3/i.test(S_CSS));
 val("sierra: --sierra-faint is defined", () => /--sierra-faint:\s*#[0-9a-f]{6}/i.test(S_CSS));
-val("sierra: the beta disclaimer and footer still use a token, not a raw hex",
-  () => /\.s-beta\s*\{[^}]*color:\s*var\(--sierra-faint\)/.test(S_CSS) &&
-        /\.s-foot\s*\{[^}]*color:\s*var\(--sierra-faint\)/.test(S_CSS));
+val("sierra: the footer, which carries the beta disclaimer, still uses a token, not a raw hex",
+  () => /\.s-foot\s*\{[^}]*color:\s*var\(--sierra-faint\)/.test(S_CSS));
 
 // (b) reduced motion
 val("sierra: honours prefers-reduced-motion",
@@ -97,17 +96,10 @@ val("sierra: the reduced-motion block stands the typing pulse down",
 val("sierra: no audience flash is left to animate",
   () => !/s-need/.test(S_CSS));
 
-// (c) the audience picker describes what it is
-val("sierra: the audience picker is role=group", () => {
-  const a = sd.getElementById("s-audience");
-  return a && a.getAttribute("role") === "group";
-});
-val("sierra: it is NOT a radiogroup (its children are aria-pressed buttons)",
-  () => !/role="radiogroup"/.test(S_HTML));
-val("sierra: the picker still has an accessible name", () => {
-  const a = sd.getElementById("s-audience");
-  return a && (a.getAttribute("aria-label") || "").length > 10;
-});
+// (c) no audience picker (Sheet 136 card 2, "infer", 2026-10-27: she reads the
+// asker from the question), and no false radiogroup anywhere on the page
+val("sierra: the page asks no one who they are", () => !sd.getElementById("s-audience") && !sd.getElementById("s-aud-line"));
+val("sierra: no radiogroup on the page", () => !/role="radiogroup"/.test(S_HTML));
 val("sierra: the chips are still built as aria-pressed buttons",
   () => /setAttribute\('aria-pressed'/.test(S_JS));
 
