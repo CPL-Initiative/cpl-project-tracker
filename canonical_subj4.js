@@ -1134,7 +1134,7 @@
     if (!tb) return;
     tb.innerHTML = "";
     // Filter dropdown
-    var sel = el("select", { class: "cs-filter", id: "cs-filter" });
+    var sel = el("select", { class: "cs-filter", id: "cs-filter", "aria-label": "Show" });
     [
       ["all", "All MQ disciplines"],
       ["needs_review", "Needs curator review"],

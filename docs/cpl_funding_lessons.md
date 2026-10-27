@@ -682,3 +682,7 @@ Verbatim from `docs/reference/lanes/implementation-funding.md` (`oversized_doc` 
 ## Moved from the lane (S494, 2026-10-27)
 
 ✅ **The attestation form in Sam's words (2026-10-26; S491 drafted, S492 finished, #2476).** Regular-type college name; intro *"Complete the items below to qualify for noncredit CPL funding."*; the Lead's employee type (Staff, FT Faculty, PT Faculty, Administrator), assignment and meetings with credit CPL colleagues; the note that the Coordinator and the Lead may be the same person. The count, course and exhibits are out. `lead_types`, `lead_assignment`, `lead_meets` applied (supabase-migrate run 40390095164), CO-only; `NC_LEAD_TYPES` matches `cna_lead_chk`. Conditions in a two-column grid; credit rows read *Priority N (CR)*. **Sam's, in the tab:** each credit card's brief is its title, which he types ("Total applied (articulated) credit").
+
+## Moved from the lane (S495, 2026-10-27)
+
+Verbatim from the lane's *WCAG 2.2 AA FOR THE CPL SUMMIT* paragraph, to bring it under its 20,000-byte budget (`oversized_doc`): S494 swept the ten public targets on main (2026-10-27): funding-model, its Sierra, My Institution and How-to views, the Public page view, the memo, the film, the Fact Sheet, the public Library and Sierra all pass `npm run a11y`. axe-core 4.10.2 found one critical there, COBI's side menu declared as a tablist; it is navigation now on every COBI route (#2494). Step 2 sits beside Step 1 since #2487 (`minmax(0,3fr) minmax(min(100%,22rem),2fr)`).

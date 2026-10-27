@@ -463,6 +463,8 @@
     + '.sw-potential-likely{outline:1px solid rgba(76,175,120,0.55);font-weight:600;}'
     + '.cv-ex{margin-top:0.45rem;border-top:1px dashed var(--border);padding-top:0.35rem;}'
     + '.cv-ex>summary{cursor:pointer;font-size:0.7rem;font-weight:600;color:var(--cobalt);list-style:none;}'
+    // Each summary is a 24px target (WCAG 2.5.8; axe target-size, S495: the cards' summaries ran 14px tall)
+    + '.cv-ex>summary,.cv-rx>summary,.sw-also-entered>summary,.algo-details>summary{min-height:24px;display:flex;align-items:center;}'
     + '.cv-ex>summary::-webkit-details-marker{display:none;}'
     + '.cv-ex>summary::before{content:"▸";display:inline-block;margin-right:0.35rem;transition:transform 0.15s ease;}'
     + '.cv-ex[open]>summary::before{transform:rotate(90deg);}'
@@ -741,6 +743,7 @@
     // Checkboxes: the label is the hit area (24px), the box keeps its size.
     + '.sw-chk-hit{display:inline-flex;align-items:center;justify-content:center;min-width:24px;min-height:24px;cursor:pointer;}'
     + '.sw-chk-all{min-height:24px;}'
+    + '.sw-chk-all #sw-select-all{width:24px;height:24px;margin:0;}'
     // The flag column. index.html's rules were written for a dark card
     // (white at 22% and 85%, a raw pink); these put it on the theme's tokens.
     + '.sw-flag-none{color:var(--text-muted);}'
