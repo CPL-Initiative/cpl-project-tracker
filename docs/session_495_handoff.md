@@ -34,12 +34,13 @@ too*), `docs/cpl_funding_lessons.md` S494, `docs/college_action_page_lessons.md`
   (Library: *File it* on the In development card moves a brief to Draft; a dateless record takes the day). It holds
   nothing; its last word to Sam: set the Workplan record's Status to Draft in Edit to put it back at step 2.
 
-**Open at sign-off, both mine, both CI-green when last read:**
-- **#2492 axe in `scripts/a11y.js`** (draft): axe-core 4.10.2 pinned, run once per route before the focus-ring loop, an
-  `axeDisable` reason required, a throwing target fails without ending the sweep. Merge it once `test` is green on its
-  head; `npm run a11y` then carries axe for everyone.
-- **#2495 the first axe fixes** (draft): the dashboard's and TMC Builder's unnamed selects, SkyView's grip value, and
-  the public veteran map's directory rows (native buttons inside list items). Merge on `test`.
+- **#2492 axe in `scripts/a11y.js`** (merged 02:5xZ): axe-core 4.10.2 pinned, run once per route before the
+  focus-ring loop, an `axeDisable` reason required, a throwing target fails without ending the sweep. `npm install`
+  before `npm run a11y` in a fresh container, or the runner stops and says axe is missing.
+
+**Open at sign-off, mine:** **#2495 the first axe fixes** (the dashboard's and TMC Builder's unnamed selects,
+SkyView's grip value, the public veteran map's directory rows as native buttons inside list items). Its `test` was
+re-running after a push that moved `public_pages_a11y.test.js` to pin the new rows (57/57 locally). Merge on `test`.
 
 ## Decisions Sam made this run
 
@@ -47,13 +48,13 @@ None; he started the session with the queue. No card is open (Sheet 134 answered
 
 ## Open work, in order
 
-1. **Merge #2492 and #2495** on a green `test` (merge #2495 first: the sweep is then clean on the views it fixed).
+1. **Merge #2495** on a green `test`, if S494 did not.
 2. **The narrated funding film:** re-read scene 8 (Minimum conditions: a CPL coordinator and a Noncredit CPL Lead) in
    Sierra's voice (`prototype/funding_video/README.md`), keep the other ten reads (`voice_s2/`), rebuild n2 on v11,
    offer the narrated cut beside the music film (Sheet 133 card 1).
 3. **The morning of 10-30:** `npm run a11y -- funding-model funding-model-sierra funding-model-mycpl funding-model-howto
    funding-public funding-memo funding-film fact-sheet public-library sierra` on main. All ten passed on 2026-10-27, and
-   with axe once #2494 merged. ⚠️ Never leave out `funding-model-mycpl`.
+   with axe once #2494 merged; `npm run a11y` carries axe since #2492. ⚠️ Never leave out `funding-model-mycpl`.
 4. **The rest of the axe findings** (internal tabs; the whole sweep ran in two batches, 129 targets, *The axe sweep*
    below). Critical, unnamed selects: the CCR list view (10, `#uc-kind` and its neighbors), the Common Subjects
    table (`#cs-filter`), MAP Users' roster (`.mapu-select`). Serious: TMC Builder's rows (`role="button"` holding
