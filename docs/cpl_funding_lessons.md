@@ -727,3 +727,9 @@ The lane passed its 20,000-byte budget; this paragraph moved verbatim.
 - **A bot's push starts no CI.** The migrate workflow's receipt commit became #2514's head with no checks; a real change (a base merge) gives CI a head.
 - **A daily-run artifact can carry a reviewer's address.** Sam curated at 12:28Z signed in as a cccco.edu address and the run baked it into `credential_reference_data.js` as `curated_by`; `pii_guard` failed every PR. `_public_curator()` now writes cohort ids, the team mailbox, or "reviewer" (#2515).
 - **The runner's summary can land above the tail.** When a shard's log ends mid-file with exit 1 and no summary, the failing file is not in the tail; find it locally rather than reading 2,000 log lines (the log download host is outside this sandbox's proxy).
+
+## Moved from the lane (S503, 2026-10-27)
+
+### How NC-2 is counted (Sam, Open Asks Sheet 125 card 1, 18:12Z 2026-10-24, his own call)
+
+*Name-then-attest*: the Chancellor's Office names the course in its guidance (a title beginning *Credit for Prior Learning Portfolio*), and the COCI sync counts a CDCP course with that title chaptered in a CDCP program; a college whose course predates the guidance attests its control number, which the sync confirms. The builder takes both routes. Measured at Cabrillo: `funding/nc_outcome_feasibility/2026-10-24_cabrillo/`. `cpl_memory` `sam-sheet-125-rulings-2026-10-24`.
