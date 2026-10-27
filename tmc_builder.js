@@ -824,7 +824,9 @@
     var filt = el("div", "tmc-filters");
 
     var colPick = el("div", "tmc-pick");
-    colPick.appendChild(el("label", null, "College"));
+    var colLab = el("label", null, "College");
+    colLab.htmlFor = "tmc-college-sel";   // a label not tied to its select names nothing (axe select-name, S494)
+    colPick.appendChild(colLab);
     var colSel = el("select");
     colSel.id = "tmc-college-sel";
     colSel.appendChild(new Option("All colleges (browse / review)", ""));
@@ -838,7 +840,9 @@
     filt.appendChild(colPick);
 
     var stPick = el("div", "tmc-pick");
-    stPick.appendChild(el("label", null, "Show"));
+    var stLab = el("label", null, "Show");
+    stLab.htmlFor = "tmc-status-filter";
+    stPick.appendChild(stLab);
     var sf = el("select"); sf.id = "tmc-status-filter";
     var opts = [["all", "All TMCs"]];
     if (state.college) opts.push(["adt-yes", "✓ This college's approved ADTs"],

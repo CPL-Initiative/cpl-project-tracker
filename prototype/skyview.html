@@ -6116,7 +6116,7 @@ window.__ccrUniverse = function(opts){
            * hidable" — a grip on the panel's edge, dragged or nudged with the
            * arrow keys, and Hide as a word in its bar (the More menu's Sidebar
            * row still brings it back). */
-          '<div class="u-insp-grip" id="u-insp-grip" role="separator" aria-orientation="vertical" tabindex="0" '+
+          '<div class="u-insp-grip" id="u-insp-grip" role="separator" aria-orientation="vertical" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" '+
             'aria-label="Resize the details panel" title="Drag to resize; arrow keys nudge, Home resets"></div>'+
           '<div class="u-insp-bar"><span class="u-insp-t">Details</span>'+
             '<button type="button" class="linkish u-insp-hide" id="u-insp-hide" title="Hide the details panel">Hide</button></div>'+
@@ -6646,6 +6646,16 @@ function inspBounds(){
 function paintInspWidth(){
   var a=document.getElementById("u-inspector"); if(!a) return;
   if(inspW>0) a.style.setProperty("--u-insp-w", inspW+"px"); else a.style.removeProperty("--u-insp-w");
+  paintGripValue();
+}
+/* A focusable separator must say where it stands (ARIA 1.2; axe aria-required-attr,
+ * S494): the panel's width as a share of its widest, and 0 when it is closed. */
+function paintGripValue(){
+  var g=document.getElementById("u-insp-grip"), a=document.getElementById("u-inspector"); if(!g||!a) return;
+  var w = !inspOpen ? 0 : (inspW>0 ? inspW : (a.getBoundingClientRect().width||0));
+  var pct = Math.max(0, Math.min(100, Math.round(100*w/inspBounds()[1])));
+  g.setAttribute("aria-valuenow", String(pct));
+  g.setAttribute("aria-valuetext", w ? ("Details panel " + Math.round(w) + " pixels wide") : "Details panel closed");
 }
 /* ⭐ DRAGGING THE BORDER SHUT IS THE WAY TO SHUT IT (Sam, 2026-09-07: "Make the
  * Sidebar vert border able to close further (almost to nothing) so I don't have
@@ -6704,6 +6714,7 @@ function setInspector(open){
   var a=document.getElementById("u-inspector"), b=document.getElementById("u-insp-toggle");
   if(a) a.classList.toggle("closed", !inspOpen);
   if(b){ b.setAttribute("aria-pressed", inspOpen?"true":"false"); var sw=b.querySelector(".u-state"); if(sw) sw.textContent=inspOpen?"on":"off"; }
+  paintGripValue();
   // The panel is docked beside the canvas, so showing or hiding it changes the
   // canvas's width: refit, or the map draws at the old size.
   if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); }

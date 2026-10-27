@@ -127,7 +127,11 @@ svg.grabbing{cursor:grabbing}
 .search{width:100%;font:inherit;font-size:.95rem;min-height:40px;padding:8px 12px;border:1px solid var(--border-strong);border-radius:10px;
   background:var(--surface);color:var(--ink);margin-bottom:10px}
 .dir{list-style:none;margin:0;padding:0}
-.dir li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 6px;border-top:1px solid var(--border);cursor:pointer;min-height:44px}
+.dir li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:0 6px 0 0;border-top:1px solid var(--border);min-height:44px}
+.dir li.empty{padding:8px 6px}
+/* The row is a native button inside its list item, beside the college's link (S494: axe read
+   li role=button as a list holding no items, and a button holding a link). */
+.dir .row{flex:1 1 auto;display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:44px;padding:8px 6px;margin:0;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
 .dir li:first-child{border-top:0}
 .dir li:hover{background:var(--subtle)}
 .dir .nm{color:var(--ink);font-weight:600}
@@ -140,7 +144,7 @@ footer p{margin:0 0 6px}
   background:var(--surface);color:var(--body);border:1px solid var(--border);box-shadow:var(--shadow);font-size:.88rem}
 #tip .t{font-weight:700;color:var(--ink)}
 .btn:focus-visible,.tab:focus-visible,.search:focus-visible,a:focus-visible,.linkbtn:focus-visible,
-label.toggle:focus-within,.dir li:focus-visible,.mk:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px;border-radius:8px}
+label.toggle:focus-within,.dir .row:focus-visible,.mk:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px;border-radius:8px}
 .mk:focus-visible{outline-offset:0}
 @media (max-width:980px){
   .grid{grid-template-columns:1fr}
@@ -472,24 +476,23 @@ function switchTab(name){
 document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>switchTab(t.dataset.tab));
 
 const listCol=document.getElementById("list-col"), listBase=document.getElementById("list-base");
-function rowKeys(li,fn){ li.tabIndex=0; li.setAttribute("role","button"); li.onclick=fn; li.onkeydown=ev=>{ if(ev.target===li && (ev.key==="Enter"||ev.key===" ")){ ev.preventDefault(); fn(); } }; }
+function rowKeys(li,fn){ const b=li.querySelector("button.row"); if(b) b.onclick=fn; }
 function buildColList(f){
   f=(f||"").toLowerCase();
   const rows=DATA.colleges.filter(c=>c.n.toLowerCase().includes(f)).sort((a,b)=>a.n.localeCompare(b.n));
-  listCol.innerHTML = rows.length ? rows.map(c=>`<li data-n="${esc(c.n)}"><span><span class="nm">${esc(c.n)}</span>${c.k?'<span class="tag">Demonstration project</span>':''}
-    ${c.m==null?"":`<br><span class="ct">${num(c.m)} served</span>`}</span>
+  listCol.innerHTML = rows.length ? rows.map(c=>`<li data-n="${esc(c.n)}"><button type="button" class="row" aria-label="${esc(c.n)}, show details"><span><span class="nm">${esc(c.n)}</span>${c.k?'<span class="tag">Demonstration project</span>':''}
+    ${c.m==null?"":`<br><span class="ct">${num(c.m)} served</span>`}</span></button>
     <a href="${esc(c.u)}" target="_blank" rel="noopener">CPL page${NEWTAB}</a></li>`).join("") : '<li class="empty">No colleges match.</li>';
   listCol.querySelectorAll("li[data-n]").forEach(li=>{
-    rowKeys(li,()=>selectCollege(li.dataset.n)); li.setAttribute("aria-label", li.dataset.n + ", show details");
-    li.querySelector("a").addEventListener("click",ev=>ev.stopPropagation());
+    rowKeys(li,()=>selectCollege(li.dataset.n));
   });
 }
 function buildBaseList(f){
   f=(f||"").toLowerCase();
   const rows=DATA.bases.filter(b=>b.n.toLowerCase().includes(f)).sort((a,b)=>a.n.localeCompare(b.n));
-  listBase.innerHTML = rows.length ? rows.map(b=>`<li data-n="${esc(b.n)}"><span class="nm">${esc(b.n)}</span><span class="ct">Nearest colleges</span></li>`).join("")
+  listBase.innerHTML = rows.length ? rows.map(b=>`<li data-n="${esc(b.n)}"><button type="button" class="row" aria-label="${esc(b.n)}, show the nearest colleges"><span class="nm">${esc(b.n)}</span><span class="ct">Nearest colleges</span></button></li>`).join("")
     : '<li class="empty">No installations match.</li>';
-  listBase.querySelectorAll("li[data-n]").forEach(li=>{ rowKeys(li,()=>selectBase(li.dataset.n)); li.setAttribute("aria-label", li.dataset.n + ", show the nearest colleges"); });
+  listBase.querySelectorAll("li[data-n]").forEach(li=>{ rowKeys(li,()=>selectBase(li.dataset.n)); });
 }
 document.getElementById("search-col").addEventListener("input",e=>buildColList(e.target.value));
 document.getElementById("search-base").addEventListener("input",e=>buildBaseList(e.target.value));
