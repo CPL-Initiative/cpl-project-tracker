@@ -450,7 +450,11 @@ def _git_repo(handoff="session_9_handoff.md", extra_commits=0):
     _os.makedirs(_os.path.join(d, "docs"))
     if handoff:
         open(_os.path.join(d, "docs", handoff), "w").write("# handoff\n")
-    for cmd in (["git","init","-q"], ["git","config","user.email","t@t"],
+    # maintenance.auto false: a commit starts git's auto-maintenance DETACHED, and on
+    # the runner's git 2.55 it took and released objects/maintenance.lock while
+    # rmtree below was walking the tree (FileNotFoundError, #2492 lints, 2026-10-27).
+    for cmd in (["git","init","-q"], ["git","config","maintenance.auto","false"],
+                ["git","config","gc.auto","0"], ["git","config","user.email","t@t"],
                 ["git","config","user.name","t"], ["git","add","-A"],
                 ["git","commit","-qm","base","--allow-empty"]):
         _sp.run(cmd, cwd=d, capture_output=True)
