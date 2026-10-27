@@ -121,6 +121,7 @@
     "cpl_funding_metric_pin.test.js": 44,
     "cpl_funding_metric_wiring.test.js": 26,
     "cpl_funding_nc_attestation.test.js": 23,
+    "cpl_funding_my_institution_hidden.test.js": 12,
     "cpl_funding_nc_lane.test.js": 62,
     "cpl_funding_one_pool.test.js": 51,
     "cpl_funding_optin.test.js": 34,

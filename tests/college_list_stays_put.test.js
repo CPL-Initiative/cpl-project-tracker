@@ -37,6 +37,9 @@ const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
   w.scrollTo = function () {};
   w.Element.prototype.scrollIntoView = function () {};
   w.CPL_FUNDING_NO_REMOTE = true;
+  // My Institution is hidden on the public page (Sam, 2026-10-27); its code is kept, and this
+  // suite keeps it honest with the switch on (cpl_funding.js oneViewOn).
+  w.CPL_FUNDING_ONE_VIEW = true;
   w.CPL_FUNDING_PUBLIC = true;
   w.CPL_FUNDING_EMBED = "college";
   w.fetch = function () { return new Promise(function () {}); };
@@ -78,6 +81,9 @@ const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
   const w = dom.window;
   w.scrollTo = function () {};
   w.CPL_FUNDING_NO_REMOTE = true;
+  // My Institution is hidden on the public page (Sam, 2026-10-27); its code is kept, and this
+  // suite keeps it honest with the switch on (cpl_funding.js oneViewOn).
+  w.CPL_FUNDING_ONE_VIEW = true;
   w.fetch = function () { return new Promise(function () {}); };
   const run = (f) => { const s = w.document.createElement("script"); s.textContent = read(f); w.document.body.appendChild(s); };
   ["college_short_names.js", "cpl_funding_data.js", "cpl_funding.js", "team_phrase.js", "college_briefing.js"].forEach(run);
