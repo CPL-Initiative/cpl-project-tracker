@@ -56,6 +56,17 @@
    and once per target:
      · prefers-reduced-motion actually stopping every animation
      · the per-target FUNCTIONAL keyboard checks (behaviour, not shape)
+   and once per route at desktop, the RULE-ENGINE half:
+     · axe-core (pinned in package.json), WCAG 2.0/2.1/2.2 A and AA rules, in the
+       same served page. The checks above measure GEOMETRY and PAINT; axe reads
+       the markup's semantics, which they never look at. On 2026-10-26 this
+       runner passed eight public views and an axe-core 4.10.2 pass of the same
+       views found four classes it does not measure: a page with no `lang`,
+       links told apart by color alone, headings coded as buttons, and table
+       names repeated (methodology-geometry-is-half-an-accessibility-audit). S494
+       folded it in so the one command carries both halves. A target turns a rule
+       off only with a reason: `axeDisable: { "rule-id": "why" }` in the config.
+       An axe that is not installed FAILS the run (`--no-axe` skips it on purpose).
 
    ⚠️ One thing this instrument cannot see: Chromium 127+ makes an OVERFLOWING
    scroll container keyboard-focusable with no tabindex, so a missing tabindex
@@ -94,7 +105,7 @@
    against the registry at run time. On 2026-09-04 playwright 1.63.0 published
    with a 404 tarball, `^1.62.1` resolved to it, and every CI run on every branch
    died at install — three seconds in, before a single test body ran. With only
-   two direct dependencies and no lockfile, an EXACT pin on each is what makes
+   three direct dependencies and no lockfile, an EXACT pin on each is what makes
    `npm install` deterministic. The workflow sets
    PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1, so the package costs CI a download of the
    driver and no browser. Bump a pin deliberately; never widen one to a range.
@@ -114,6 +125,19 @@ if (!fs.existsSync(CONFIG_PATH)) {
 const CFG = require(CONFIG_PATH);
 const REPO = path.resolve(path.dirname(CONFIG_PATH), CFG.root || ".");
 const WIDTHS = CFG.widths || [320, 390, 768, 1024, 1440];
+
+/* The rule-engine half (S494). Required, not optional: a sweep that quietly
+   drops a check it could not load reports a pass it never measured. */
+const AXE_TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
+let AXE_SOURCE = null, AXE_VERSION = null;
+if (!argv.includes("--no-axe")) {
+  try { ({ source: AXE_SOURCE, version: AXE_VERSION } = require("axe-core")); }
+  catch (e) {
+    console.error("axe-core is not installed. It is pinned in package.json: run `npm install`, " +
+      "or pass --no-axe to measure geometry and paint alone.");
+    process.exit(2);
+  }
+}
 const PAGES = CFG.targets || {};
 
 /* A minimal static server over the repo. Same-origin is what makes the linked
@@ -613,7 +637,7 @@ function MOTION(known) {
     return page;
   };
 
-  for (const key of keys) {
+  const measureTarget = async (key) => {
     const cfg = PAGES[key];
     /* `query` opens the file in a state its own link reaches (S307: the funding
        tab's Public view by ?fundview=public). Kept apart from `file`, which
@@ -640,7 +664,7 @@ function MOTION(known) {
         console.log(`   FAIL  discover found no routes for "${cfg.discover.selector}" — ` +
           `the selector is stale, and a zero-route sweep would have printed a clean bill.`);
         bad++;
-        continue;
+        return;
       }
       /* Dedupe on the NAME as well as the hash. COBI's config once named
          `{hash:"", name:"dashboard"}` explicitly while the nav ALSO carries a
@@ -709,6 +733,27 @@ function MOTION(known) {
           if (h.first !== 1) note(route.name, `headings  starts at h${h.first === null ? "—(none)" : h.first}, not h1`);
           if (h.skips.length) note(route.name, `headings  skips: ${h.skips.join("; ")}`);
 
+          /* axe runs BEFORE the focus-ring loop below: that loop focuses every control,
+             which scrolls tables inside their own scrollers, and a sticky header left
+             over a row read as an obscured target (S494: the funding caret for SD
+             Cont. Ed, 80x27, flagged after the loop and clean before it). */
+          if (AXE_SOURCE) {
+            const off = cfg.axeDisable || {};
+            Object.keys(off).forEach((id) => {
+              if (!String(off[id] || "").trim()) note(route.name, `axe       rule ${id} turned off with no reason in axeDisable`);
+            });
+            if (!(await page.evaluate(() => !!window.axe))) await page.addScriptTag({ content: AXE_SOURCE });
+            const ax = await page.evaluate(async (o) => {
+              const rules = {};
+              o.off.forEach((id) => { rules[id] = { enabled: false }; });
+              const res = await window.axe.run(document, { runOnly: { type: "tag", values: o.tags }, rules, resultTypes: ["violations"] });
+              window.scrollTo(0, 0);
+              return res.violations.map((v) => ({ id: v.id, impact: v.impact, help: v.help, n: v.nodes.length,
+                where: v.nodes.slice(0, 3).map((x) => [].concat(x.target).join(" ")) }));
+            }, { tags: AXE_TAGS, off: Object.keys(off) });
+            ax.forEach((v) => note(route.name, `axe       ${v.id} (${v.impact}) ${v.n} node(s): ${v.help} — ${v.where.join(" | ")}`));
+          }
+
           const noRing = await page.evaluate(() => {
             const out = [];
             /* ⚠️ A CLOSED <details> STILL MEASURES. Chromium hides its content
@@ -760,6 +805,7 @@ function MOTION(known) {
             return out;
           });
           if (noRing.length) note(route.name, `focus     ${noRing.length} focusable with no ring: ${noRing.slice(0, 6).join(", ")}`);
+
         }
 
         if (shotDir) {
@@ -814,6 +860,18 @@ function MOTION(known) {
     if (!verbose && ![...routes].some((r) => (found.get(r.name) || []).length)) {
       console.log(`   all ${routes.length} route(s) pass`);
     }
+  };
+
+  /* A target that throws FAILS and the sweep goes on (S494). The first full run
+     with axe ended at target 47 of 129 when governance-editor's seed waited past
+     its 20s on a loaded machine (it passes alone), and the 82 after it went
+     unmeasured: one timeout cost the whole sweep. */
+  for (const key of keys) {
+    try { await measureTarget(key); }
+    catch (e) {
+      bad++;
+      console.log(`\n══ ${PAGES[key].title}\n   FAIL  the target did not finish: ${String((e && e.message) || e).split("\n")[0]}`);
+    }
   }
 
   await browser.close();
@@ -821,5 +879,6 @@ function MOTION(known) {
   console.log(bad
     ? `\n${bad} check(s) FAILED across ${routesRun} route(s).`
     : `\nAll checks pass across ${routesRun} route(s) in ${keys.length} target(s).`);
+  console.log(AXE_SOURCE ? `axe-core ${AXE_VERSION}, rules tagged ${AXE_TAGS.join(", ")}.` : "axe-core skipped (--no-axe).");
   process.exit(bad ? 1 : 0);
 })();
