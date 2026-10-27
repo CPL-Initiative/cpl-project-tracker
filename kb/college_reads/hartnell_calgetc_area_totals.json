@@ -1,0 +1,24 @@
+{
+ "_readme": "S491 (2026-10-26): Hartnell's CalGETC certificate 45096 reads 30-44.5 against 34 because the record sums sub-area blocks (3A, 3B; 5A, 5B, 5C) that the tab prints under one total per area (\"A total of 6 semester units is required\", S488). This read prints the tab's own words around each area heading and its total, so the reconcile step's pattern is written from the page. One tab, no model call.",
+ "college": "Hartnell College",
+ "outside_hosts": {
+  "coursedog.com": "Hartnell's catalog vendor hosts the catalog itself (hartnell.catalog.prod.coursedog.com) and its data (app.coursedog.com); the registry's catalog address is on this host."
+ },
+ "questions": {
+  "units": "How the tab states each Cal-GETC area's total over its sub-areas, and the words for Area 5C's laboratory."
+ },
+ "keywords": [
+  "A total of",
+  "Area [0-9]",
+  "semester units",
+  "[Ll]aborator"
+ ],
+ "pages": [
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.CALGETC/requirements-ipyf8",
+   "answers": [
+    "units"
+   ]
+  }
+ ]
+}

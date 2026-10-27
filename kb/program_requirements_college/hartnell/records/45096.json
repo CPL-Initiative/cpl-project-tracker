@@ -82,20 +82,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    30.0,
-    44.5
+    34.0,
+    35.0
    ],
    "stated": [
     34.0,
     34.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 30.0-44.5; the catalog states 34.0-34.0"
-   ]
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -119,7 +118,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -297,13 +296,13 @@
     ]
    },
    {
-    "name": "Area 3: Arts and Humanities - Area 3A (Arts)",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "name": "Area 3: Arts and Humanities",
+    "rule": "choose_units",
+    "minimum": 6,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 6
     },
     "courses": [
      {
@@ -410,19 +409,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Area 3: Arts and Humanities - Area 3B (Humanities)",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "ENGLC1002",
       "units": 3,
@@ -667,6 +654,26 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     }
+    ],
+    "floors": [
+     {
+      "name": "Area 3: Arts and Humanities - Area 3A (Arts)",
+      "rule": "choose_courses",
+      "minimum": 1,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Area 3: Arts and Humanities - Area 3B (Humanities)",
+      "rule": "choose_courses",
+      "minimum": 1,
+      "stated": {
+       "min": null,
+       "max": null
+      }
      }
     ]
    },
@@ -1124,13 +1131,13 @@
     ]
    },
    {
-    "name": "Area 5A: Physical Science",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "name": "Area 5: Physical and Biological Sciences",
+    "rule": "choose_units",
+    "minimum": 7,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 7,
+     "max": 7
     },
     "courses": [
      {
@@ -1293,19 +1300,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Area 5B: Biological Science",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "ABT92",
       "units": 3,
@@ -1439,220 +1434,34 @@
       "alternatives": [],
       "catalog_addition": false
      }
-    ]
-   },
-   {
-    "name": "Area 5C: Laboratory",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+    ],
+    "floors": [
      {
-      "code": "ABT90",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
+      "name": "Area 5A: Physical Science",
+      "rule": "choose_courses",
+      "minimum": 1,
+      "stated": {
+       "min": null,
+       "max": null
+      }
      },
      {
-      "code": "ABT92",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
+      "name": "Area 5B: Biological Science",
+      "rule": "choose_courses",
+      "minimum": 1,
+      "stated": {
+       "min": null,
+       "max": null
+      }
      },
      {
-      "code": "AST1L",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO1",
-      "units": 4.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO2",
-      "units": 4.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO3",
-      "units": 4.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO5",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO6L",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO10",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO11",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO20",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO27",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO30",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO47",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO48L",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHM1A",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHM1B",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHM12A",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHM12B",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHM22",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEL1",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEL6",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHY2A",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHY2B",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHY32",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHY4A",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHY4B",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHY4C",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHY10",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
+      "name": "Area 5C: Laboratory",
+      "rule": "choose_courses",
+      "minimum": 1,
+      "stated": {
+       "min": null,
+       "max": null
+      }
      }
     ]
    },
@@ -1769,647 +1578,27 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": 40452134609,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ENGLC1000": [
-     3,
-     3
-    ],
-    "ENGLC1000E": [
-     4,
-     4
-    ],
-    "ENGLC1002": [
-     3,
-     3
-    ],
-    "ENGLC1001": [
-     3,
-     3
-    ],
-    "COMMC1000": [
-     3,
-     3
-    ],
-    "MAT2": [
-     4,
-     4
-    ],
-    "MAT3A": [
-     4,
-     4
-    ],
-    "MAT3B": [
-     4,
-     4
-    ],
-    "MAT3C": [
-     4,
-     4
-    ],
-    "MAT4": [
-     3,
-     3
-    ],
-    "MAT5": [
-     3,
-     3
-    ],
-    "MAT10": [
-     3,
-     3
-    ],
-    "MAT12": [
-     3,
-     3
-    ],
-    "MAT16": [
-     3,
-     3
-    ],
-    "MAT25": [
-     4,
-     4
-    ],
-    "MAT27": [
-     6,
-     6
-    ],
-    "STATC1000": [
-     4,
-     4
-    ],
-    "ART1A": [
-     3,
-     3
-    ],
-    "ARTHC1200": [
-     3,
-     3
-    ],
-    "ART10": [
-     3,
-     3
-    ],
-    "ART19": [
-     3,
-     3
-    ],
-    "ETH56": [
-     3,
-     3
-    ],
-    "MUS1A": [
-     3,
-     3
-    ],
-    "MUS5": [
-     3,
-     3
-    ],
-    "MUS6": [
-     3,
-     3
-    ],
-    "MUS8": [
-     3,
-     3
-    ],
-    "MUS42": [
-     3,
-     3
-    ],
-    "TAC1": [
-     3,
-     3
-    ],
-    "TAC2": [
-     3,
-     3
-    ],
-    "TAC3": [
-     3,
-     3
-    ],
-    "TAC23": [
-     3,
-     3
-    ],
-    "TAC92": [
-     3,
-     3
-    ],
-    "ENG17": [
-     3,
-     3
-    ],
-    "ENG22": [
-     3,
-     3
-    ],
-    "ENG24": [
-     3,
-     3
-    ],
-    "ENG26": [
-     3,
-     3
-    ],
-    "ENG41": [
-     3,
-     3
-    ],
-    "ENG44A": [
-     3,
-     3
-    ],
-    "ENG44B": [
-     3,
-     3
-    ],
-    "ENG46A": [
-     3,
-     3
-    ],
-    "ENG46B": [
-     3,
-     3
-    ],
-    "ENG47A": [
-     3,
-     3
-    ],
-    "ENG47B": [
-     3,
-     3
-    ],
-    "ENG48": [
-     3,
-     3
-    ],
-    "ETH7": [
-     3,
-     3
-    ],
-    "ETH12": [
-     3,
-     3
-    ],
-    "HIS4A": [
-     3,
-     3
-    ],
-    "HIS4B": [
-     3,
-     3
-    ],
-    "HIS5A": [
-     3,
-     3
-    ],
-    "HIS5B": [
-     3,
-     3
-    ],
-    "HIS6": [
-     3,
-     3
-    ],
-    "HIS10": [
-     3,
-     3
-    ],
-    "HISTC1001": [
-     3,
-     3
-    ],
-    "HISTC1002": [
-     3,
-     3
-    ],
-    "HIS40": [
-     3,
-     3
-    ],
-    "HIS47": [
-     3,
-     3
-    ],
-    "HIS49A": [
-     3,
-     3
-    ],
-    "HIS49B": [
-     3,
-     3
-    ],
-    "MUS7": [
-     3,
-     3
-    ],
-    "PHL2": [
-     3,
-     3
-    ],
-    "PHL5": [
-     3,
-     3
-    ],
-    "PHL10": [
-     3,
-     3
-    ],
-    "SPA3S": [
-     5,
-     5
-    ],
-    "SPA4S": [
-     5,
-     5
-    ],
-    "TAC50": [
-     3,
-     3
-    ],
-    "ABT53": [
-     3,
-     3
-    ],
-    "ADJ1": [
-     3,
-     3
-    ],
-    "ADJ3": [
-     3,
-     3
-    ],
-    "ADJ51": [
-     3,
-     3
-    ],
-    "ANT2": [
-     3,
-     3
-    ],
-    "ANT10": [
-     3,
-     3
-    ],
-    "ANT20": [
-     3,
-     3
-    ],
-    "COM4": [
-     3,
-     3
-    ],
-    "ECE2": [
-     3,
-     3
-    ],
-    "ECE6": [
-     3,
-     3
-    ],
-    "ECE53": [
-     3,
-     3
-    ],
-    "ECONC2002": [
-     3,
-     3
-    ],
-    "ECONC2001": [
-     3,
-     3
-    ],
-    "ECO10": [
-     3,
-     3
-    ],
-    "ETH1": [
-     3,
-     3
-    ],
-    "ETH2": [
-     3,
-     3
-    ],
-    "ETH3": [
-     3,
-     3
-    ],
-    "ETH4": [
-     3,
-     3
-    ],
-    "ETH5": [
-     3,
-     3
-    ],
-    "ETH6": [
-     3,
-     3
-    ],
-    "ETH8": [
-     3,
-     3
-    ],
-    "ETH13": [
-     3,
-     3
-    ],
-    "ETH21": [
-     3,
-     3
-    ],
-    "GEG10": [
-     3,
-     3
-    ],
-    "HED7": [
-     3,
-     3
-    ],
-    "HES1": [
-     3,
-     3
-    ],
-    "HES2": [
-     3,
-     3
-    ],
-    "HIS46A": [
-     3,
-     3
-    ],
-    "HIS46B": [
-     3,
-     3
-    ],
-    "NRN70": [
-     3,
-     3
-    ],
-    "NVN70": [
-     3,
-     3
-    ],
-    "POL2": [
-     3,
-     3
-    ],
-    "POL3": [
-     3,
-     3
-    ],
-    "POL5": [
-     3,
-     3
-    ],
-    "POL6": [
-     3,
-     3
-    ],
-    "POLSC1000": [
-     3,
-     3
-    ],
-    "PSY6": [
-     3,
-     3
-    ],
-    "PSY9": [
-     4,
-     4
-    ],
-    "PSY12": [
-     3,
-     3
-    ],
-    "PSY14": [
-     3,
-     3
-    ],
-    "PSY15": [
-     3,
-     3
-    ],
-    "PSY22": [
-     3,
-     3
-    ],
-    "PSY25": [
-     3,
-     3
-    ],
-    "PSYCC1000": [
-     3,
-     3
-    ],
-    "SJS20": [
-     3,
-     3
-    ],
-    "SJS22": [
-     3,
-     3
-    ],
-    "SOC1": [
-     3,
-     3
-    ],
-    "SOC5": [
-     3,
-     3
-    ],
-    "SOC8": [
-     3,
-     3
-    ],
-    "SOC15": [
-     3,
-     3
-    ],
-    "SOC20": [
-     3,
-     3
-    ],
-    "SOC30": [
-     3,
-     3
-    ],
-    "SOC41": [
-     3,
-     3
-    ],
-    "SOC42": [
-     3,
-     3
-    ],
-    "ABT90": [
-     3,
-     3
-    ],
-    "ANT1": [
-     3,
-     3
-    ],
-    "AST1": [
-     3,
-     3
-    ],
-    "AST1L": [
-     1,
-     1
-    ],
-    "CHM1A": [
-     5,
-     5
-    ],
-    "CHM1B": [
-     5,
-     5
-    ],
-    "CHM12A": [
-     5,
-     5
-    ],
-    "CHM12B": [
-     5,
-     5
-    ],
-    "CHM22": [
-     4,
-     4
-    ],
-    "GEL1": [
-     4,
-     4
-    ],
-    "GEL2": [
-     3,
-     3
-    ],
-    "GEL6": [
-     4,
-     4
-    ],
-    "OCN1": [
-     3,
-     3
-    ],
-    "PHY2A": [
-     4,
-     4
-    ],
-    "PHY2B": [
-     4,
-     4
-    ],
-    "PHY32": [
-     4,
-     4
-    ],
-    "PHY4A": [
-     4,
-     4
-    ],
-    "PHY4B": [
-     4,
-     4
-    ],
-    "PHY4C": [
-     4,
-     4
-    ],
-    "PHY10": [
-     4,
-     4
-    ],
-    "ABT92": [
-     3,
-     3
-    ],
-    "BIO1": [
-     4.5,
-     4.5
-    ],
-    "BIO2": [
-     4.5,
-     4.5
-    ],
-    "BIO3": [
-     4.5,
-     4.5
-    ],
-    "BIO5": [
-     4,
-     4
-    ],
-    "BIO6": [
-     3,
-     3
-    ],
-    "BIO6L": [
-     2,
-     2
-    ],
-    "BIO10": [
-     4,
-     4
-    ],
-    "BIO11": [
-     4,
-     4
-    ],
-    "BIO12": [
-     3,
-     3
-    ],
-    "BIO18": [
-     3,
-     3
-    ],
-    "BIO20": [
-     4,
-     4
-    ],
-    "BIO27": [
-     4,
-     4
-    ],
-    "BIO30": [
-     4,
-     4
-    ],
-    "BIO42": [
-     3,
-     3
-    ],
-    "BIO47": [
-     4,
-     4
-    ],
-    "BIO48": [
-     3,
-     3
-    ],
-    "BIO48L": [
-     1,
-     1
-    ],
-    "PSY10": [
-     3,
-     3
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "field": "blocks",
+   "was": [
+    "Area 3: Arts and Humanities - Area 3A (Arts)",
+    "Area 3: Arts and Humanities - Area 3B (Humanities)"
+   ],
+   "now": "Area 3: Arts and Humanities",
+   "words": "Area 3: Arts and Humanities\n\nA total of 6 semester units is required"
+  },
+  {
+   "field": "blocks",
+   "was": [
+    "Area 5A: Physical Science",
+    "Area 5B: Biological Science",
+    "Area 5C: Laboratory"
+   ],
+   "now": "Area 5: Physical and Biological Sciences",
+   "words": "Area 5: Physical and Biological Sciences\n\nA total of 7 semester units is required"
   }
  ],
- "read_run": "39895340003"
+ "read_run": 39949570443
 }
