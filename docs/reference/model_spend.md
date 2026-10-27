@@ -31,7 +31,12 @@ private: `CPLBrain/07-session-notes/2026-10-27-api-spend-trace.md`.
 
 Supabase secrets are project-wide, so every function in a project reads the same
 `ANTHROPIC_API_KEY`. No code or log here can see which Console key that secret
-holds (cpl-chat's own header says so). To tie a Console key to a caller, compare
+holds (cpl-chat's own header says so). Sam's Console on 2026-10-27 showed Sierra's
+Sonnet 5 traffic, the extractor's Opus 5.5 and the news harvest's Sonnet 4.6 under one
+Console key, itself named `ANTHROPIC_API_KEY`, in the same Console organization as the
+other keys. Every key in an organization draws on one credit balance, so another key's
+runaway use can empty it and stop Sierra; a runaway key is disabled on its own, and the
+balance's auto-reload stays on for her. To tie a Console key to a caller, compare
 the key's hourly usage in the Console with the caller's hours in the logs below.
 A model missing from a key's Console chart rules that caller out: Sierra runs
 Sonnet 5, so a key whose chart shows no Sonnet 5 never pays for her.
