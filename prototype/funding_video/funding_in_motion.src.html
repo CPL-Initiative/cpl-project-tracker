@@ -473,13 +473,14 @@ function render(){var t=playerT(),T=ft(t);cue(t);S.forEach(function(o,i){var on=
 function measure(){var k2=buildK();if(k2)K=k2;}
 /* ---- music: orchestral, and it BUILDS (Sam, 2026-09-26: "should build
    rather than just repeat--don't be afraid to be more creative"). Seven
-   sections over one theme: a horn call alone; the theme on celesta and
-   pizzicato; the theme in the strings with the snare entering; a new
-   progression with a horn countermelody and the full march; the theme in the
-   horns with everything under it; a breakdown in the relative minor that
-   climbs; and a key change up a whole step for the last statement. Every
-   voice is built from the browser's oscillators, so the score renders
-   offline for the MP4 too. ---- */
+   sections over one theme: a horn call alone; the theme on the piano; the
+   theme in octaves with the snare entering; a new progression with a horn
+   countermelody and the full march; the theme in the horns with everything
+   under it; a breakdown in the relative minor that climbs; and a key change
+   up a whole step for the last statement. A piano in place of the strings,
+   pizzicato and bell, horns and drums kept (Sam, 2026-10-26: "piano in place
+   of the synthesizer, horn and drums kept"). Every voice is built from the
+   browser's oscillators, so the score renders offline for the MP4 too. ---- */
 var Music=(function(){
   var B=0.6,ctx=null,master=null,send=null,bus=null,idx=0,ev=[],noise=null;
   function mtof(m){return 440*Math.pow(2,(m-69)/12);}
@@ -499,7 +500,9 @@ var Music=(function(){
   /* the horn countermelody over vi-IV-I-V */
   var CM=[[[0,76,2],[2,72,1],[3,71,1]],[[0,72,2],[2,69,2]],[[0,67,1],[1,72,1],[2,76,2]],[[0,74,3],[3,71,1]]];
   function compose(){
-    var e=[],bar=4*B,bars=35,edge=[2,6,10,18,26,30];
+    var e=[],bar=4*B,bars=35,edge=[2,6,10,18,26,30],
+        /* the piano's level in each section, set so the climb measures as the orchestra's did */
+        PG={intro:1.3,a1:1.2,a2:1.38,b:0.9,c:0.85,br:1.1,cl:0.75};
     /* the targets slide: section C (the theme in the horns) runs four bars longer */
     if(HOW){var nb4=Math.round(D/bar);edge=[2,6,10,18,26+nb4,30+nb4];bars=35+nb4;}
     /* the narrated cut: each section arrives just ahead of the scene it belongs
@@ -516,23 +519,30 @@ var Music=(function(){
           lvl={intro:.4,a1:.66,a2:.74,b:.74+.14*kb/Math.max(1,nb-1),c:.92,br:.55+.21*kb/Math.max(1,nb-1),cl:1}[s],
           root=ch[0]+tr,up=ch[1].map(function(m){return m+tr;});
       function N(k,dt,o){o.t=t+dt*B;o.k=k;e.push(o);}
-      /* strings: always there, thickening */
-      N('str',0,{ms:s==='intro'?[up[0],up[2]]:up,d:bar,g:(s==='br'?0.03:s==='a1'?0.042:s==='a2'?0.05:0.018+0.02*lvl)});
-      N('str',0,{ms:[root],d:bar,g:0.024});
-      if(s==='c'||s==='cl')N('str',0,{ms:[up[1]+12,up[3]+12],d:bar,g:0.012,cut:2600});
-      /* contrabass: whole notes, then halves, then quarters, then driving eighths */
+      /* piano: P strikes one key, K a chord from the bottom up, `r` seconds apart.
+         `v` is the touch, so the build is in the tone as well as the level. */
+      var v=0.1+0.8*Math.pow(lvl,1.5),pg=PG[s];
+      function P(m,dt,d,g,vv){N('pno',dt,{m:m,d:d,g:g*pg,v:Math.max(0.15,Math.min(1,vv))});}
+      function K(ms,dt,d,g,vv,r){ms.forEach(function(m,i){P(m,dt+i*(r||0.008)/B,d,g*(i===ms.length-1?1.15:1),vv);});}
+      /* the left hand carries the bass in octaves: whole notes, then halves, then quarters, then driving eighths */
       var bn=s==='intro'?1:s==='a1'||s==='br'?2:s==='a2'||s==='b'?4:8;
-      for(var q=0;q<bn;q++)N('bass',q*4/bn,{m:root-12,d:4/bn*B*0.95,g:(q?0.045:0.06)*lvl});
+      for(var q=0;q<bn;q++)K([root-12,root],q*4/bn,bn===1?bar:4/bn*B*0.92,(q?0.07:0.09)*lvl,v-(q?0.08:0),0.004);
+      /* the right hand re-strikes the chord as the section builds: once a bar under the horn call,
+         on 1 and 3 under the first themes, rolled on 1 and 3 in the breakdown, on every beat once the march is in */
+      var hits=s==='intro'?[0]:s==='a1'||s==='a2'||s==='br'?[0,2]:[0,1,2,3],
+          rh=s==='intro'?[up[0],up[2]]:s==='a1'||s==='a2'?up.slice(0,3):up;
+      hits.forEach(function(h){K(rh,h,4/hits.length*B*0.94,(h?0.05:0.06),v-0.12,s==='br'?0.07:0.012);});
+      if(s==='c'||s==='cl')K([up[1]+12,up[3]+12],0,bar*0.94,0.03,v,0.01);
       /* the theme and who carries it */
       var mel=s==='cl'?TC[j]:s==='b'?CM[j]:TH[j];
-      if(s==='a1')mel.forEach(function(n){N('bell',n[0],{m:n[1]+tr,g:0.08});N('pizz',n[0],{m:n[1]+tr,g:0.1});});
-      if(s==='a2')mel.forEach(function(n){N('str',n[0],{ms:[n[1]],d:n[2]*B,g:0.08,cut:2400});N('bell',n[0],{m:n[1]+12,g:0.025});});
+      if(s==='a1')mel.forEach(function(n){P(n[1]+tr,n[0],n[2]*B*0.96,0.13,v+0.12);});
+      if(s==='a2')mel.forEach(function(n){P(n[1],n[0],n[2]*B*0.96,0.12,v+0.12);P(n[1]+12,n[0],n[2]*B*0.96,0.06,v);});
       if(s==='b')mel.forEach(function(n){N('horn',n[0],{m:n[1]-12,d:n[2]*B,g:0.16*lvl});N('horn',n[0],{m:n[1],d:n[2]*B,g:0.07*lvl});});
-      if(s==='b'&&kb>=nb/2)TH[j].forEach(function(n){N('bell',n[0],{m:n[1]+12,g:0.022});});
-      if(s==='c'||s==='cl')mel.forEach(function(n){var br=s==='cl';N('horn',n[0],{m:n[1]+tr,d:n[2]*B,g:0.17,bright:br});N('horn',n[0],{m:n[1]+tr-12,d:n[2]*B,g:0.12});N('str',n[0],{ms:[n[1]+tr+12],d:n[2]*B,g:br?0.03:0.022,cut:3000});});
-      if(s==='br'){N('horn',0,{m:up[2]-12,d:4*B,g:0.07+0.06*kb/Math.max(1,nb-1)});TH[j].slice(0,3).forEach(function(n){N('str',n[0]*2>3?3:n[0]*2,{ms:[n[1]-12+2],d:1.8*B,g:0.03,cut:1800});});}
-      /* pizzicato: offbeats in A, eighths from B on */
-      if(s!=='intro'&&s!=='br')for(var p=0;p<8;p++)if(s!=='a1'||p%2)N('pizz',p/2,{m:up[(p>>1)%4]-(s==='a1'?0:12),g:0.045*lvl});
+      if(s==='b'&&kb>=nb/2)TH[j].forEach(function(n){P(n[1]+12,n[0],n[2]*B*0.9,0.05,v);});
+      if(s==='c'||s==='cl')mel.forEach(function(n){var br=s==='cl';N('horn',n[0],{m:n[1]+tr,d:n[2]*B,g:0.17,bright:br});N('horn',n[0],{m:n[1]+tr-12,d:n[2]*B,g:0.12});P(n[1]+tr+12,n[0],n[2]*B*0.96,br?0.08:0.065,v+0.05);});
+      if(s==='br'){N('horn',0,{m:up[2]-12,d:4*B,g:0.07+0.06*kb/Math.max(1,nb-1)});TH[j].slice(0,3).forEach(function(n){P(n[1]-12+2,n[0]*2>3?3:n[0]*2,1.8*B,0.07,v);});}
+      /* broken chords: offbeats under the first theme, eighths from A2 on */
+      if(s!=='intro'&&s!=='br')for(var p=0;p<8;p++)if(s!=='a1'||p%2)P(up[(p>>1)%4]-(s==='a1'?0:12),p/2,0.5*B*0.92,0.05*lvl,v-0.1);
       /* timpani: one stroke, then two, then the march pattern; a heartbeat in the breakdown */
       if(s==='intro'){if(kb===nb-1)for(var r=0;r<10;r++)N('timp',2+r*0.2,{m:36,g:0.03+r*0.014});}
       else if(s==='br'){N('timp',0,{m:root-12,g:0.32*lvl});N('timp',3.5,{m:root-12,g:0.2*lvl});}
@@ -542,7 +552,7 @@ var Music=(function(){
       if(s==='b'||s==='c'||s==='cl'){for(var w=0;w<8;w++)N('snare',w/2,{g:(w===2||w===6?0.5:w%2?0.15:0.25)*lvl});
         if(kb%2===1||s!=='b')for(var z=0;z<4;z++)N('snare',3.5+z/8,{g:(0.16+z*0.08)*lvl});}
       if(s==='br'&&kb===nb-1)for(var z2=0;z2<24;z2++)N('snare',z2/6,{g:0.05+z2*0.022});
-      if(s==='cl'||(s==='c'&&kb%2===0))for(var h=0;h<4;h++)N('bell',h,{m:up[h]+24,g:0.02});
+      if(s==='cl'||(s==='c'&&kb%2===0))for(var h=0;h<4;h++)P(up[h]+24,h,0.9*B,0.035,v);
       /* the horn call opens the piece */
       if(s==='intro'){if(kb===0)[[2,67,.5],[2.5,72,.5],[3,76,1]].forEach(function(n){N('horn',n[0],{m:n[1],d:n[2]*B,g:0.09});N('horn',n[0],{m:n[1]-12,d:n[2]*B,g:0.05});});
         else [[0,74,2],[2,67,2]].forEach(function(n){N('horn',n[0],{m:n[1],d:n[2]*B,g:0.08});N('horn',n[0],{m:n[1]-12,d:n[2]*B,g:0.045});});}
@@ -553,12 +563,18 @@ var Music=(function(){
     var end=bars*bar,T2=2;
     for(var r2=0;r2<14;r2++)e.push({t:end-1.4+r2*0.1,k:'timp',m:38,g:0.1+r2*0.025});
     for(var sr=0;sr<16;sr++)e.push({t:end-1.4+sr*0.0875,k:'snare',g:0.12+sr*0.03});
-    e.push({t:end,k:'str',ms:[36,48,55,60,64,67,72,76].map(function(m){return m+T2;}),d:3.6,g:0.022});e.push({t:end,k:'bass',m:24+T2,d:3.2,g:0.07});e.push({t:end,k:'crash',g:0.28});e.push({t:end,k:'timp',m:38,g:0.55});e.push({t:end,k:'snare',g:0.6});
+    /* the last chord, both hands from the bottom of the keyboard up, held under the pedal */
+    [24,36,48,55,60,64,67,72,76].forEach(function(m,i){e.push({t:end+i*0.018,k:'pno',m:m+T2,d:3.6-i*0.018,g:i<2?0.1:0.07,v:0.9});});e.push({t:end,k:'crash',g:0.28});e.push({t:end,k:'timp',m:38,g:0.55});e.push({t:end,k:'snare',g:0.6});
     [[0,72,0.3],[0.3,76,0.3],[0.6,79,2.8]].forEach(function(n){e.push({t:end+n[0],k:'horn',m:n[1]+T2,d:n[2],g:0.15,bright:true});e.push({t:end+n[0],k:'horn',m:n[1]+T2-12,d:n[2],g:0.1});});
     /* scene seams: a soft swell, never a crash, so the sections carry the shape */
     [6,15,25,32,46].concat(HOW?[LS(46)]:[]).concat([56,65,75].map(LS)).forEach(function(s){e.push({t:nt(s)-1.0,k:'swell',g:0.06});});
     /* the barriers: a small shot and a pop, pitched in the key of the moment */
     ENC.forEach(function(x){var hi=x.t>LS(72)?2:0;e.push({t:x.h-0.27*BAR,k:'zap',m:84+hi,g:0.05});e.push({t:x.h,k:'pop',m:48+hi,g:0.16});});
+    /* a key struck again while it still sounds stops there, as the string is struck anew; two strikes at once are one */
+    var held={};e.filter(function(x){return x.k==='pno';}).sort(function(a,b){return a.t-b.t;}).forEach(function(x){var p=held[x.m];
+      if(p&&x.t-p.t<0.03){p.g=Math.max(p.g,x.g);p.v=Math.max(p.v,x.v);p.d=Math.max(p.d,x.d);x.k='';return;}
+      if(p&&p.t+p.d>x.t-0.01){p.d=Math.max(0.04,x.t-p.t-0.01);p.x=1;}held[x.m]=x;});
+    e=e.filter(function(x){return x.k;});
     /* under narration the score is a bed, 14 dB down, and dips 6 dB more under the voice */
     if(NARR)e.forEach(function(x){x.g*=0.2*duck(x.t);});
     e.sort(function(a,b){return a.t-b.t;});return e;
@@ -568,8 +584,24 @@ var Music=(function(){
   function env(a,t,p,at,r){a.gain.setValueAtTime(0.0001,t);a.gain.exponentialRampToValueAtTime(p,t+at);a.gain.exponentialRampToValueAtTime(0.0001,t+r);}
   function osc(type,f,t,stop){var o=ctx.createOscillator();o.type=type;o.frequency.value=f;o.start(t);o.stop(stop);return o;}
   function vib(o,t,stop,rate,cents){var l=osc('sine',rate,t,stop),g=ctx.createGain();g.gain.value=cents;l.connect(g);g.connect(o.detune);}
-  /* strings: three detuned saws per note, a slow bow, a little vibrato */
-  function str(ms,t,d,g,cut){ms.forEach(function(m){[-9,0,9].forEach(function(det){var stop=t+d+1.4,o=osc('sawtooth',mtof(m),t,stop),a=ctx.createGain(),lp=ctx.createBiquadFilter();o.detune.value=det;vib(o,t+0.3,stop,5.2,5);lp.type='lowpass';lp.frequency.value=cut||(m<50?420:1500);lp.Q.value=0.4;var at=cut?Math.min(0.12,d*0.3):0.35;a.gain.setValueAtTime(0.0001,t);a.gain.linearRampToValueAtTime(g,t+at);a.gain.setValueAtTime(g,t+Math.max(at,d*0.9));a.gain.linearRampToValueAtTime(0.0001,t+d+(cut?0.35:1.2));o.connect(lp);lp.connect(a);a.connect(bus);});});}
+  /* piano: each key is three strings about a cent apart, struck by a felt hammer.
+     Each partial sits a little sharp of its harmonic (the string's stiffness,
+     more of it up the keyboard) and decays on its own, the upper ones first: a
+     quick drop, then a long tail. A low-pass closes as the note fades, and the
+     damper stops it at note-off, more slowly in the bass; the top keys have no
+     damper. `v` is how hard the key is struck (0 to 1): harder is brighter.
+     `x` marks a note stopped because its key is struck again. */
+  function piano(m,t,d,g,v,x){var f=mtof(m),stiff=0.0003*Math.pow(2,(m-60)/14),np=Math.max(3,Math.min(8,Math.floor(5600/f))),
+      t1=0.85*Math.pow(2,-(m-60)/24),t2=5*Math.pow(2,-(m-60)/18),damp=x?0.012:m>88?0.7:m<48?0.13:0.075,off=t+d,
+      stop=Math.min(off+damp*8,t+3*t1+6*t2),lp=ctx.createBiquadFilter(),a=ctx.createGain(),pan=ctx.createStereoPanner(),fc=Math.min(15000,f*(3.5+11*v)+500*v);
+    lp.type='lowpass';lp.Q.value=0;lp.frequency.setValueAtTime(fc,t);lp.frequency.setTargetAtTime(Math.min(fc,f*1.7+260),t+0.005,t1*1.3);lp.frequency.setTargetAtTime(Math.max(90,f*1.05),off,damp*0.6);
+    a.gain.setValueAtTime(g,t);a.gain.setTargetAtTime(0,off,damp);pan.pan.value=Math.max(-0.4,Math.min(0.4,(m-64)/50));
+    for(var n=1;n<=np;n++){var amp=Math.pow(n,-(1.55-0.65*v))*(n===1&&m<45?0.6:1)*(n%7?1:0.5),pg=ctx.createGain(),k1=t1/(1+0.75*(n-1)),k2=t2/(1+0.5*(n-1)),
+        fn=n*f*Math.sqrt(1+stiff*n*n),st=n<=3?[-0.55,0.05,0.65]:[0.1];
+      pg.gain.setValueAtTime(0,t);pg.gain.linearRampToValueAtTime(amp/st.length,t+0.0015+0.003/n);pg.gain.setTargetAtTime(amp*0.3/st.length,t+0.005,k1);pg.gain.setTargetAtTime(0,t+0.005+2.5*k1,k2);
+      st.forEach(function(c){var o=osc('sine',fn,t,stop);o.detune.value=c;o.connect(pg);});pg.connect(lp);}
+    var h=nz(t,0.06),hb=ctx.createBiquadFilter(),ha=ctx.createGain();hb.type='bandpass';hb.frequency.value=Math.max(700,Math.min(4200,f*3.2));hb.Q.value=0.8;env(ha,t,g*(0.03+0.15*v),0.0008,0.035);h.connect(hb);hb.connect(ha);ha.connect(pan);
+    lp.connect(a);a.connect(pan);pan.connect(bus);}
   /* French horn: a saw for the buzz and a triangle for the body, through a
      dark low-pass and a formant band, with a slow attack and gentle vibrato.
      `bright` opens the filter for the last statement, nearer a trumpet. */
@@ -580,11 +612,6 @@ var Music=(function(){
     bp.type='peaking';bp.frequency.value=bright?900:480;bp.Q.value=1.4;bp.gain.value=7;
     var g1=ctx.createGain();g1.gain.value=bright?0.75:0.55;var g2=ctx.createGain();g2.gain.value=0.7;o1.connect(g1);o2.connect(g2);g1.connect(mix);g2.connect(mix);mix.connect(lp);lp.connect(bp);bp.connect(a);
     a.gain.setValueAtTime(0.0001,t);a.gain.linearRampToValueAtTime(g,t+0.08);a.gain.setValueAtTime(g,t+Math.max(0.08,d*0.88));a.gain.linearRampToValueAtTime(0.0001,t+d+0.35);a.connect(bus);}
-  /* contrabass: a saw under a low filter with a sine an octave below for weight */
-  function bass(m,t,d,g){var stop=t+d+0.4,f=mtof(m),o=osc('sawtooth',f,t,stop),sub=osc('sine',f/2,t,stop),lp=ctx.createBiquadFilter(),a=ctx.createGain(),sg=ctx.createGain();
-    lp.type='lowpass';lp.frequency.value=260;lp.Q.value=0.7;sg.gain.value=0.9;o.connect(lp);lp.connect(a);sub.connect(sg);sg.connect(a);
-    a.gain.setValueAtTime(0.0001,t);a.gain.linearRampToValueAtTime(g,t+0.03);a.gain.setValueAtTime(g,t+d*0.85);a.gain.linearRampToValueAtTime(0.0001,t+d+0.2);a.connect(bus);}
-  function pizz(m,t,g){var o=osc('triangle',mtof(m),t,t+0.4),a=ctx.createGain(),lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=1400;env(a,t,g,0.004,0.3);o.connect(lp);lp.connect(a);a.connect(bus);}
   /* timpani: a falling sine, a felt thump of low noise, and a long skin ring */
   function timp(m,t,g){var f=mtof(m),o=osc('sine',f*1.5,t,t+1.8),a=ctx.createGain();o.frequency.setValueAtTime(f*1.5,t);o.frequency.exponentialRampToValueAtTime(f,t+0.11);env(a,t,g,0.004,1.7);o.connect(a);a.connect(bus);
     var s=nz(t,0.12),lp=ctx.createBiquadFilter(),na=ctx.createGain();lp.type='lowpass';lp.frequency.value=190;env(na,t,g*0.5,0.003,0.11);s.connect(lp);lp.connect(na);na.connect(bus);
@@ -592,7 +619,6 @@ var Music=(function(){
   /* snare: a bright noise burst with a short skin tone under it */
   function snare(t,g){var s=nz(t,0.22),bp=ctx.createBiquadFilter(),hp=ctx.createBiquadFilter(),a=ctx.createGain();bp.type='bandpass';bp.frequency.value=1900;bp.Q.value=0.7;hp.type='highpass';hp.frequency.value=700;env(a,t,g*0.5,0.003,0.19);s.connect(hp);hp.connect(bp);bp.connect(a);a.connect(bus);
     var o=osc('triangle',185,t,t+0.12),oa=ctx.createGain();o.frequency.setValueAtTime(240,t);o.frequency.exponentialRampToValueAtTime(170,t+0.06);env(oa,t,g*0.35,0.002,0.1);o.connect(oa);oa.connect(bus);}
-  function bell(m,t,g){var o=osc('sine',mtof(m),t,t+1.2),m2=osc('sine',mtof(m)*3.5,t,t+1.2),mg=ctx.createGain(),a=ctx.createGain();mg.gain.setValueAtTime(mtof(m)*0.8,t);mg.gain.exponentialRampToValueAtTime(1,t+0.3);m2.connect(mg);mg.connect(o.frequency);env(a,t,g,0.005,1.1);o.connect(a);a.connect(bus);}
   /* the shot: a square blip falling two octaves, filtered so it sits under the orchestra */
   function zap(m,t,g){var o=osc('square',mtof(m),t,t+0.16),a=ctx.createGain(),lp=ctx.createBiquadFilter();o.frequency.setValueAtTime(mtof(m),t);o.frequency.exponentialRampToValueAtTime(mtof(m-24),t+0.14);lp.type='lowpass';lp.frequency.value=2600;env(a,t,g,0.003,0.15);o.connect(lp);lp.connect(a);a.connect(bus);}
   /* the pop: a crunch of band-passed noise over a low tone in the key */
@@ -601,7 +627,7 @@ var Music=(function(){
   function nz(t,d){var s=ctx.createBufferSource();s.buffer=noise;s.start(t);s.stop(t+d);return s;}
   function crash(t,g){var s=nz(t,2.6),hp=ctx.createBiquadFilter(),a=ctx.createGain();hp.type='highpass';hp.frequency.value=5000;env(a,t,g,0.004,2.4);s.connect(hp);hp.connect(a);a.connect(bus);}
   function swell(t,g){var s=nz(t,1.3),bp=ctx.createBiquadFilter(),a=ctx.createGain();bp.type='bandpass';bp.Q.value=1.2;bp.frequency.setValueAtTime(800,t);bp.frequency.exponentialRampToValueAtTime(7000,t+1.2);a.gain.setValueAtTime(0.0001,t);a.gain.exponentialRampToValueAtTime(g,t+1.15);a.gain.linearRampToValueAtTime(0.0001,t+1.25);s.connect(bp);bp.connect(a);a.connect(bus);}
-  function play(e,t){var f={str:function(){str(e.ms,t,e.d,e.g,e.cut);},horn:function(){horn(e.m,t,e.d,e.g,e.bright);},snare:function(){snare(t,e.g);},bass:function(){bass(e.m,t,e.d,e.g);},pizz:function(){pizz(e.m,t,e.g);},timp:function(){timp(e.m,t,e.g);},bell:function(){bell(e.m,t,e.g);},crash:function(){crash(t,e.g);},swell:function(){swell(t,e.g);},zap:function(){zap(e.m,t,e.g);},pop:function(){pop(e.m,t,e.g);}}[e.k];if(f)f();}
+  function play(e,t){var f={pno:function(){piano(e.m,t,e.d,e.g,e.v,e.x);},horn:function(){horn(e.m,t,e.d,e.g,e.bright);},snare:function(){snare(t,e.g);},timp:function(){timp(e.m,t,e.g);},crash:function(){crash(t,e.g);},swell:function(){swell(t,e.g);},zap:function(){zap(e.m,t,e.g);},pop:function(){pop(e.m,t,e.g);}}[e.k];if(f)f();}
   function ensure(){if(ctx)return true;var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;try{ctx=new AC();}catch(x){return false;}
     master=ctx.createGain();master.gain.value=0.6;var comp=ctx.createDynamicsCompressor();comp.threshold.value=-16;comp.ratio.value=4;
     var shelf=ctx.createBiquadFilter();shelf.type='lowshelf';shelf.frequency.value=110;shelf.gain.value=1.5;
@@ -612,7 +638,12 @@ var Music=(function(){
   function fresh(){drop();bus=ctx.createGain();bus.connect(master);bus.connect(send);}
   function find(T){var i=0;while(i<ev.length&&ev[i].t<T-0.01)i++;return i;}
   function wav(buf){var n=buf.length,ch=2,dv=new DataView(new ArrayBuffer(44+n*ch*2)),w=function(o,s){for(var i=0;i<s.length;i++)dv.setUint8(o+i,s.charCodeAt(i));};w(0,'RIFF');dv.setUint32(4,36+n*ch*2,true);w(8,'WAVE');w(12,'fmt ');dv.setUint32(16,16,true);dv.setUint16(20,1,true);dv.setUint16(22,ch,true);dv.setUint32(24,buf.sampleRate,true);dv.setUint32(28,buf.sampleRate*ch*2,true);dv.setUint16(32,ch*2,true);dv.setUint16(34,16,true);w(36,'data');dv.setUint32(40,n*ch*2,true);var L=buf.getChannelData(0),R=buf.getChannelData(1),o=44;for(var i=0;i<n;i++){dv.setInt16(o,Math.max(-1,Math.min(1,L[i]))*32767,true);dv.setInt16(o+2,Math.max(-1,Math.min(1,R[i]))*32767,true);o+=4;}var u=new Uint8Array(dv.buffer),s='';for(var j=0;j<u.length;j+=32768)s+=String.fromCharCode.apply(null,u.subarray(j,j+32768));return btoa(s);}
-  return{offline:function(){var off=new OfflineAudioContext(2,44100*(DUR+3),44100);ctx=null;var AC0=window.AudioContext;window.AudioContext=function(){return off;};ensure();window.AudioContext=AC0;fresh();ev.forEach(function(e){play(e,e.t+0.05);});return ctx.startRendering().then(wav);},start:function(T){if(!ensure())return;if(ctx.state!=='running')ctx.resume().catch(function(){});if(!bus){fresh();idx=find(T);}},
+  /* offline, each two seconds of the score is built just before the render reaches it, so the piano's
+     many short-lived nodes never wait in the graph all at once: 76 s for the introduction's score, where
+     building it all first took 751 s (2026-10-27); under a fixed seed the two agree to one LSB */
+  return{offline:function(){var off=new OfflineAudioContext(2,44100*(DUR+3),44100);ctx=null;var AC0=window.AudioContext;window.AudioContext=function(){return off;};ensure();window.AudioContext=AC0;fresh();
+      var i=0,W=2;function feed(T){while(i<ev.length&&ev[i].t<T+W){play(ev[i],ev[i].t+0.05);i++;}}feed(0);
+      for(var s=W;s<DUR+3;s+=W)(function(s){off.suspend(s).then(function(){feed(s);off.resume();});})(s);return ctx.startRendering().then(wav);},start:function(T){if(!ensure())return;if(ctx.state!=='running')ctx.resume().catch(function(){});if(!bus){fresh();idx=find(T);}},
     seek:function(T){if(!ctx)return;fresh();idx=find(T);},pause:function(){if(ctx&&ctx.state==='running')ctx.suspend().catch(function(){});},silence:function(){if(ctx)drop();},
     schedule:function(T){if(!ctx||!bus)return;var now=ctx.currentTime;while(idx<ev.length&&ev[idx].t<T+0.3){var e=ev[idx++],dt=e.t-T;if(dt<-0.05)continue;play(e,now+Math.max(0.01,dt));}}};
 })();
