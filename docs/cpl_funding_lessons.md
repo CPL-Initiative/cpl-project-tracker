@@ -686,3 +686,27 @@ Verbatim from `docs/reference/lanes/implementation-funding.md` (`oversized_doc` 
 ## Moved from the lane (S495, 2026-10-27)
 
 Verbatim from the lane's *WCAG 2.2 AA FOR THE CPL SUMMIT* paragraph, to bring it under its 20,000-byte budget (`oversized_doc`): S494 swept the ten public targets on main (2026-10-27): funding-model, its Sierra, My Institution and How-to views, the Public page view, the memo, the film, the Fact Sheet, the public Library and Sierra all pass `npm run a11y`. axe-core 4.10.2 found one critical there, COBI's side menu declared as a tablist; it is navigation now on every COBI route (#2494). Step 2 sits beside Step 1 since #2487 (`minmax(0,3fr) minmax(min(100%,22rem),2fr)`).
+
+## S495 SkySalmonberry (2026-10-27): scene 8 re-read, Sheet 135, axe on the internal tabs
+
+- **A ruling read literally can contradict the picture it is applied to; measure before carrying it out.** Sam's
+  "adjust for the small NC condition change and leave the rest of the narration" (Sheet 133 card 1) re-reads scene 8
+  alone. On the v11 picture, `build.py --check` counts 18 figures that differ from Sierra's October read: 4,367 FTES per
+  priority where the screen shows 3,598.2, an average Access target of 34.5 where it shows 31.3, "the funding" where it
+  reads "the credit funding". A listener who cannot see the screen, the person a narrated cut serves (WCAG 1.2.5), would
+  hear the October figures. Scene 8 was read (generation `ReTJQSHbCXUjxzzfhCOu`, the first of two takes; faster-whisper
+  hears both as written), and the scenes 5 to 7 question went to Sam as Open Asks Sheet 135 card 1, since reversing his
+  dated ruling is on the hold list. #2499 carries the read and n2 on the published picture (`LIVE['n2']`), held.
+- **n2's typed values now record what the voice says**, so `--check` names exactly what her read and the picture
+  differ on (17 after scene 8). The minimum-conditions rows reveal at 1.3, 2.6 and 3.9 s in both layouts, so scene 8's
+  cues held without re-timing.
+- **axe on the internal tabs, worked (S494's list).** #2498 select-name (CCR list view, Common Subjects, MAP Users);
+  #2500 nested-interactive (TMC Builder's `role="button"` rows holding links became plain rows with a native open
+  button), color-contrast (Activities units at `opacity:0.5`, Memory's ripple 4.04:1 and verified status in dark 4.09:1,
+  each hue mixed 80% toward `--text-strong`), target-size (EACR's 59 summaries, its Select All, Program Requirements'
+  filter boxes, all 24px). Each target failed on main and passed on its branch. Left: the funding section summary holding
+  a control (curator views), after the Summit because the public page shares that section.
+- **A seed that waits on data reads as load.** CER Procedures' two targets timed out alone too: the seed waited for "See
+  what it did", which renders only where the last nightly run settled something, and the 2026-10-26 run settled none of
+  13. #2501 opens a sample only where one exists.
+- **The ten public targets pass on main 82ea5ce5 with axe** (04:40Z 2026-10-27), after every merge of the run.

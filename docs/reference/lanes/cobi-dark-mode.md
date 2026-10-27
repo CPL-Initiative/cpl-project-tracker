@@ -303,3 +303,5 @@ dark rules apply to a print, so it comes out dark-on-dark; it wants `@media
 screen` scoping on every dark rule); the raw light
 grounds `#CFCBB2` / `#F1F5F9` that stay light in dark; the near-faint grays one
 step from AA.
+
+✅ **axe on the internal tabs (S494 sweep, S495 fixes):** select-name (#2498); nested-interactive, color-contrast and target-size (#2500); CER Procedures' seed (#2501). Guards `tests/axe_select_names.test.js`, `tests/axe_serious_pass.test.js`; detail in `docs/cpl_funding_lessons.md` S495. **Left:** the funding section summary holding a control, after the Summit.
