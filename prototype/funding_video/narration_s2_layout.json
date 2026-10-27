@@ -9,7 +9,7 @@
   "last_tail_s": 3.4,
   "_why": "The narrated cut paces each scene as its lead-in (the seam, its barrier and the first reveal), its clip, and its air; Sam, 2026-09-26: \"slow down and lengthen the timing a bit to accommodate readability and narration.\""
  },
- "total": 156.944,
+ "total": 164.844,
  "scenes": [
   {
    "scene": "Title",
@@ -246,118 +246,118 @@
    "scene": "Minimum conditions",
    "start": 101.344,
    "speech_start": 102.344,
-   "speech_end": 124.514,
-   "end": 125.314,
+   "speech_end": 132.414,
+   "end": 133.214,
    "anchors": [
     {
      "at": 0.1,
-     "t": 105.946,
-     "said": 105.946,
+     "t": 106.005,
+     "said": 106.005,
      "word": "meets three minimum conditions"
     },
     {
      "at": 1.3,
-     "t": 109.475,
-     "said": 109.475,
-     "word": "name a CPL coordinator"
+     "t": 109.615,
+     "said": 109.615,
+     "word": "assign a CPL coordinator"
     },
     {
      "at": 2.6,
-     "t": 111.845,
-     "said": 111.845,
+     "t": 119.635,
+     "said": 119.635,
      "word": "put your local confirmation"
     },
     {
      "at": 3.9,
-     "t": 115.15,
-     "said": 115.15,
+     "t": 122.951,
+     "said": 122.951,
      "word": "upload Joint Services Transcripts"
     },
     {
      "at": 6.0,
-     "t": 120.575,
-     "said": 120.575,
+     "t": 128.355,
+     "said": 128.355,
      "word": "Until then"
     }
    ]
   },
   {
    "scene": "Timing",
-   "start": 125.314,
-   "speech_start": 126.314,
-   "speech_end": 137.464,
-   "end": 138.264,
+   "start": 133.214,
+   "speech_start": 134.214,
+   "speech_end": 145.364,
+   "end": 146.164,
    "anchors": [
     {
      "at": 0.1,
-     "t": 126.365,
-     "said": 126.365,
+     "t": 134.265,
+     "said": 134.265,
      "word": "The Chancellor's Office releases funding"
     },
     {
      "at": 1.9,
-     "t": 128.376,
-     "said": 128.376,
+     "t": 136.276,
+     "said": 136.276,
      "word": "twice a year"
     },
     {
      "at": 4.6,
-     "t": 132.45,
-     "said": 132.45,
+     "t": 140.35,
+     "said": 140.35,
      "word": "The full two-year amount"
     },
     {
      "at": 6.4,
-     "t": 134.664,
-     "said": 135.202,
+     "t": 142.564,
+     "said": 143.102,
      "word": "what remains carries forward"
     }
    ]
   },
   {
    "scene": "Support",
-   "start": 138.264,
-   "speech_start": 139.264,
-   "speech_end": 149.264,
-   "end": 150.064,
+   "start": 146.164,
+   "speech_start": 147.164,
+   "speech_end": 157.164,
+   "end": 157.964,
    "anchors": [
     {
      "at": 0.1,
-     "t": 138.67,
-     "said": 139.31,
+     "t": 146.57,
+     "said": 147.21,
      "word": "You won't do this alone"
     },
     {
      "at": 0.8,
-     "t": 139.37,
-     "said": 140.745,
+     "t": 147.27,
+     "said": 148.645,
      "word": "Every priority comes with recommended strategies"
     },
     {
      "at": 5.2,
-     "t": 143.77,
-     "said": 143.77,
+     "t": 151.67,
+     "said": 151.67,
      "word": "a CPL Initiative help team"
     },
     {
      "at": 6.6,
-     "t": 147.58,
-     "said": 147.58,
+     "t": 155.48,
+     "said": 155.48,
      "word": "detailed guidance"
     }
    ]
   },
   {
    "scene": "Find your college",
-   "start": 150.064,
-   "speech_start": 151.064,
-   "speech_end": 153.544,
-   "end": 156.944,
+   "start": 157.964,
+   "speech_start": 158.964,
+   "speech_end": 161.444,
+   "end": 164.844,
    "anchors": [
     {
      "at": 0.9,
-     "t": 151.135,
-     "said": 151.135,
+     "t": 159.035,
+     "said": 159.035,
      "word": "Find your college"
     }
    ]
@@ -476,67 +476,72 @@
   },
   {
    "start": 102.344,
-   "end": 105.204,
+   "end": 105.214,
    "text": "Before the Chancellor's Office releases any funding,"
   },
   {
-   "start": 105.204,
-   "end": 109.134,
-   "text": "your college meets three minimum conditions by December thirtieth:"
+   "start": 105.214,
+   "end": 109.379,
+   "text": "your college meets three minimum conditions by December thirty-first:"
   },
   {
-   "start": 109.134,
-   "end": 114.714,
-   "text": "name a CPL coordinator, put your local confirmation of participation on file,"
+   "start": 109.379,
+   "end": 114.094,
+   "text": "assign a CPL coordinator and a Noncredit CPL Lead,"
   },
   {
-   "start": 114.714,
-   "end": 120.289,
-   "text": "and upload Joint Services Transcripts for at least seventy-five percent of enrolled veterans."
+   "start": 114.094,
+   "end": 116.759,
+   "text": "listed in MAP and on your college's CPL landing page,"
   },
   {
-   "start": 120.289,
-   "end": 124.514,
+   "start": 116.759,
+   "end": 128.029,
+   "text": "who meet regularly; put your local confirmation of participation on file; and upload Joint Services Transcripts for at least seventy-five percent of enrolled veterans."
+  },
+  {
+   "start": 128.029,
+   "end": 132.414,
    "text": "Until then, the funding your college demonstrates is held in reserve for it."
   },
   {
-   "start": 126.314,
-   "end": 129.349,
+   "start": 134.214,
+   "end": 137.249,
    "text": "The Chancellor's Office releases funding twice a year,"
   },
   {
-   "start": 129.349,
-   "end": 132.219,
+   "start": 137.249,
+   "end": 140.119,
    "text": "based on your college's CPL to date."
   },
   {
-   "start": 132.219,
-   "end": 134.964,
+   "start": 140.119,
+   "end": 142.864,
    "text": "The full two-year amount is available from year one,"
   },
   {
-   "start": 134.964,
-   "end": 137.464,
+   "start": 142.864,
+   "end": 145.364,
    "text": "and what remains carries forward to year two."
   },
   {
-   "start": 139.264,
-   "end": 140.574,
+   "start": 147.164,
+   "end": 148.474,
    "text": "You won't do this alone."
   },
   {
-   "start": 140.574,
-   "end": 143.624,
+   "start": 148.474,
+   "end": 151.524,
    "text": "Every priority comes with recommended strategies,"
   },
   {
-   "start": 143.624,
-   "end": 149.264,
+   "start": 151.524,
+   "end": 157.164,
    "text": "a CPL Initiative help team supports every college, and detailed guidance will follow."
   },
   {
-   "start": 151.064,
-   "end": 153.544,
+   "start": 158.964,
+   "end": 161.444,
    "text": "Find your college on the CPL funding page."
   }
  ]
