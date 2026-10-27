@@ -1,7 +1,7 @@
 -- S493 (SkyThimbleberry), 2026-10-27: Rule 8 ingest at the checkpoint. INSERT-only under author/actor
 -- memory-s493-checkpoint-2026-10-27. ROLLBACK: delete from public.cpl_memory_log where actor = 'memory-s493-checkpoint-2026-10-27';
 --   delete from public.cpl_memory where author = 'memory-s493-checkpoint-2026-10-27';
--- S494: the first apply (run 40426660389) failed on related not-null (null into a column defaulting {}); coalesced here, re-applied as _r2.
+-- S494: the first apply (run 40426660389) failed on related not-null (null into a column defaulting {}); coalesced here, re-applied as _r2; the second (run 40429270445) on summary <= 400 (one row at 438), shortened, re-applied as _r3.
 insert into public.cpl_memory (slug, kind, title, summary, detail, plain, tags, status, source, verified_by, verified_at, event_date, author, related)
 select x.slug, x.kind, x.title, x.summary, x.detail, x.plain, x.tags, x.status, x.source, x.verified_by,
        case when x.verified_by is null then null else now() end, '2026-10-27'::date, 'memory-s493-checkpoint-2026-10-27', coalesce(x.related, '{}'::text[])
@@ -20,7 +20,7 @@ from jsonb_to_recordset($json$[
   "slug": "map-exhibit-owner-not-articulator-2026-10-26",
   "kind": "fact",
   "title": "MAP records one owner per exhibit; its CPL Opportunities table lists the articulating colleges, and joined IDs are often one builder's versions",
-  "summary": "MAP's collaborative-exhibits API gives each exhibit an owner (college, CollegeID): MAPICI-DREB1-1-001 was built by Saddleback, while the CPL Opportunities table lists Chabot, Fullerton and West LA, which articulated it. In 44 of 73 multi-ID Could Adopt rows one college built two or more joined IDs; in a sample of 40 joined IDs the table opens on another college for 9. All 6,418 exhibit IDs in statewide_data.js are listed (2026-10-26).",
+  "summary": "MAP's collaborative-exhibits API names each exhibit's owner: MAPICI-DREB1-1-001 was built by Saddleback, while the CPL Opportunities table lists Chabot, Fullerton and West LA, which articulated it. In 44 of 73 multi-ID Could Adopt rows one college built two or more joined IDs; in a sample of 40 joined IDs the table opens on another college for 9. All 6,418 statewide_data.js exhibit IDs are listed.",
   "detail": null, "plain": null,
   "tags": ["my-college-action-page", "map-link", "eacr"],
   "status": "proposed", "source": "cpl-project-tracker#2485; kb/reference/map_cpl_opportunities_verified.json",
