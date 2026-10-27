@@ -1110,7 +1110,7 @@ side session (Scenario 4) ran beside it, one writer per file.
   19 to the page's 23 (05612's reader recorded the same line as a choose_units block of 4 with no courses); and 19752 was
   handed the GE page. The phrase means different things elsewhere at Delta (an "or" alternative inside an area, a line
   outside the stated total), so a college-wide step would misfire. Each needs a second reading of its own page.
-- **A page read's install step can hang.** Run 40496307093 sat in the Playwright install for 13 minutes; a cancelled
+- **A page read's install step can hang.** Run 40496307093 sat in the Playwright install for 13 minutes; a canceled
   run and a fresh dispatch finished in two (40497591551).
 
 ## S498 SkyBearberry (2026-10-27, the CPL Queue routine): RN 03570 summed, Delta 44197 passes (198 of 203)
