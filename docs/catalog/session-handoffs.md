@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-465 document(s).
+466 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 496 | [Session 496 handoff: Sierra's scene 8 re-read and Sheet 135, axe on the internal tabs worked, Hartnell's Cal-GETC area step](../session_496_handoff.md) | 2026-10-27 |
 | 495 | [Session 495 handoff: Sierra's MAP links live, COBI's menu is navigation, axe joins the accessibility runner](../session_495_handoff.md) | 2026-10-27 |
 | 494 | [Session 494 handoff: the MAP link on every adoption surface, the funding page's Step 2 fixed for the Summit](../session_494_handoff.md) | 2026-10-27 |
 | 493 | [Session 493 handoff: the public funding page ready for the CPL Summit, the attestation form shipped, the naming rule built in](../session_493_handoff.md) | 2026-10-26 |
