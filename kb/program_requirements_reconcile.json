@@ -216,6 +216,14 @@
      "field": "blocks",
      "pattern": "[Rr]equired\\s+to\\s+enroll\\s+(?P<n>[0-9]+|two|three|four|five|six)\\s+times\\s+in\\s+(?P<code>[A-Z]{2,5}\\s?[0-9]+[A-Z]?)\\s+for\\s+a\\s+total\\s+of\\s+(?P<total>[0-9]+(?:\\.[0-9]+)?)\\s+units",
      "why": "S498 SkyBearberry, 2026-10-27: Caterpillar Dealer Service Technician Apprenticeship certificate 44197 read 40-43 against 55 because the record keeps CAT 69V (Units: 1-4) once, and the page prints \"Students are required to enroll four times in CAT 69V for a total of 16 units.\" (college-page-read 40479703275). With 16, the blocks sum to 55, the page's \"Minimum Units Required: 55\" (S424 named the gap; Hartnell's repeat step, S497). The first reconcile (40480236607) moved nothing on the capture's innerText, so the pattern reads any whitespace (a no-break space or a line break) between its words."
+    },
+    {
+     "kind": "pool_areas",
+     "field": "blocks",
+     "pattern": "Area\\s+(?P<area>[35])\\s+-\\s+(?P<title>[A-Z][^\\n·•]*?)\\s*[·•]?\\s*Complete\\s+a\\s+minimum\\s+of\\s+(?P<n>[0-9]+(?:\\.[0-9]+)?)\\s+semester\\s+units\\s+with\\s+at\\s+least\\s+one\\s+course\\s+each\\s+from",
+     "block_pattern": "{area}[A-Z](?::|\\s+-)\\s",
+     "name": "Area {area} - {title}",
+     "why": "S499 SkyCloudberry, 2026-10-27: the Cal-GETC certificate 45621 read 29-40 against 34 because the record keeps Area 3's (3A, 3B) and Area 5's (5A, 5B) sub-areas as separate blocks with no figure, where the page prints one minimum over each area: \"Area 3 - Arts and Humanities / Complete a minimum of 6 semester units with at least one course each from 3A - Arts and 3B - Humanities.\" and \"Area 5 - Physical and Biological Sciences / Complete a minimum of 7 semester units with at least one course each from 5A - Physical Science and 5B - Biological Science.\" (college-page-read 40497591551, plan kb/college_reads/san_joaquin_delta_calgetc_area_totals.json). Hartnell's CalGETC 45096 shape (S495). The pattern names Areas 3 and 5 only: Area 1 prints the same words over 1A, 1B and 1C, but 1C is one required course (rule all, which the step never pools) and each sub-area picks one course, so the three already sum to the area's 9-10. Pooled, the record sums 34-35 against the page's \"Minimum Units Required: 34\", a floor (the low end meets it). Every pattern word is joined by \\s (Delta's capture keeps no-break spaces, S498). Of Delta's filed records only 45621 carries blocks named 3X or 5X."
     }
    ]
   },
