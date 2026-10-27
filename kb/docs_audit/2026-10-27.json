@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1298,
-    "bytes": 13189744,
-    "over_budget": 0,
-    "handoff_max": 499,
+    "files": 1299,
+    "bytes": 13196831,
+    "over_budget": 1,
+    "handoff_max": 500,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59997,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 134,
-        "bytes": 4048077,
+        "bytes": 4048246,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 8919,
+        "bytes": 9087,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2422792,
+        "bytes": 2424900,
         "over": 0
       },
       "kb_note": {
@@ -46,25 +46,26 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 437906,
-        "over": 0
+        "bytes": 438247,
+        "over": 1
       },
       "handoff": {
-        "files": 469,
-        "bytes": 3426819,
+        "files": 470,
+        "bytes": 3431120,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
+      "oversized_doc": 1,
       "house_voice": 1,
       "vault_heavy_path": 65
     },
     "vault": {
-      "files": 24887,
-      "bytes": 3822944547,
-      "heavy_bytes": 2686472026,
-      "heavy_share": 0.703,
+      "files": 24890,
+      "bytes": 3840178355,
+      "heavy_bytes": 2703696704,
+      "heavy_share": 0.704,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -147,6 +148,19 @@
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20284,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 284,
+        "ratio": 1.01
+      },
+      "message": "20,284 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/program-requirements-harvest.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -163,20 +177,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1663108938,
+        "bytes": 1680332904,
         "kind": "dir"
       },
-      "message": "directory totals 1,663,108,938 B inside the vault"
+      "message": "directory totals 1,680,332,904 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 146106162,
+        "bytes": 146106874,
         "kind": "dir"
       },
-      "message": "directory totals 146,106,162 B inside the vault"
+      "message": "directory totals 146,106,874 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
