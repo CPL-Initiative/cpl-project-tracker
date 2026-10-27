@@ -113,9 +113,8 @@ block("(3) the styles: the logo link, the footer row, the hidden companion", () 
   // The audience row folds behind its control at every width since the gentle prompt
   // (Sam, 2026-10-24), so the phone needs no rule of its own for it.
   const wide = CSS.replace(/@media[^{]*\{[\s\S]*?\n\}/g, "");
-  check("(3) ⭐ the audience row folds behind its control at every width",
-    /(^|\n)\.s-audience:not\(\.open\)\s*\{\s*display:\s*none/.test(wide) &&
-    /\.s-aud-toggle\s*\{\s*display:\s*inline-flex/.test(wide),
+  check("(3) ⭐ no audience row takes a phone's first screen (Sheet 136 card 2: she reads the asker)",
+    !/s-aud/.test(HTML) && !/\.s-aud/.test(wide),
     "the row was 119px of a 844px phone");
   check("(3) …and About Sierra stays (it is the only way to the text)", !/\.s-about\s*\{[^}]*display:\s*none/.test(narrow));
   check("(3) the panel has the [hidden] companion rule",
@@ -131,11 +130,9 @@ block("(3) the styles: the logo link, the footer row, the hidden companion", () 
 });
 
 block("(4) the sweep is told what may vanish, and only that", () => {
-  const sierraCfg = (CFG.match(/sierra:\s*\{[\s\S]*?mayHideBelow:\s*\[([^\]]*)\]/) || [])[1] || "";
-  check("(4) ⭐ a11y.config.js allows the audience row to fold below 560 for the Sierra target",
-    /"\.s-audience"/.test(sierraCfg), "otherwise the sweep reports a control that disappeared on a phone");
-  check("(4) …and never the control that opens it", !/"\.s-aud-toggle"/.test(sierraCfg));
-  check("(4) …and nothing else", sierraCfg.replace(/"\.s-audience"|[\s,]/g, "") === "");
+  const sierraCfg = (CFG.match(/\n  sierra: \{[\s\S]*?\n  \},/) || [""])[0];
+  check("(4) ⭐ a11y.config.js lets nothing on the Sierra target vanish at any width",
+    sierraCfg.length > 0 && !/mayHideBelow/.test(sierraCfg), "a control that disappears on a phone is a finding");
   check("(4) no width hides a footer control", !/@media \(max-width: \d+px\)\s*\{[^@]*\.s-(about|theme|foot-ctl)[^{]*\{[^}]*display:\s*none/.test(CSS));
 });
 

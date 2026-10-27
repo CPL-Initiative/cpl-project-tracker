@@ -89,98 +89,19 @@
   try {
     if (new URLSearchParams(location.search).get('ctx') === 'external') ctxVariant = 'external';
   } catch (e) { /* no URLSearchParams → no ctx (fail-open) */ }
-  var logEl, inputEl, sendBtn, statusEl, formEl, audEl, audToggle, audLine, wired = false;
+  var logEl, inputEl, sendBtn, statusEl, formEl, wired = false;
 
-  // ── Audience (primary population) ──
-  // Required before the first question (Sam, 2026-07-01): the visitor picks who
-  // they are so Sierra tailors tone + content — students shouldn't get system
-  // inside-baseball (articulation mechanics, apportionment, C-ID governance).
-  // Single-select (it's the PRIMARY population), persisted per-browser and
-  // SHARED with the COBI CPL Assistant tab (same origin, same key). Sent as an
-  // optional `audience` field — callers that omit it (the map.rccd.edu widget)
-  // are unaffected.
-  // Asked when it is needed (Sam, 2026-10-24: "Can we have her gently prompt the
-  // user to choose their population once they click Ask? I don't want to
-  // complicate the screen with all the choices initially."): with no pick the
-  // row is not on the screen at all; the first Ask holds the question, Sierra
-  // asks who the visitor is (WHO_PROMPT), and the pick sends the held question.
-  // With a pick stored, the row is one folded control, "Answering for: <pick>".
-  // Text labels, no glyphs — Sam's COBI design rule (cpl_memory
-  // cobi-no-cheesy-glyphs-design-rule), applied to cpl_chat.js in #1231 and
-  // carried here so the three surfaces that mount Sierra read identically.
-  // These strings must stay in step with cpl_chat.js AUDIENCES: the picked value
-  // is persisted under a SHARED same-origin key and travels to the same Edge
-  // Function, so a label that drifts here is the same assistant introducing
-  // itself two different ways to the same person.
-  var AUDIENCES = [
-    { k: 'student',       label: 'Student / future student' },
-    { k: 'faculty',       label: 'Faculty' },
-    { k: 'administrator', label: 'College administrator' },
-    { k: 'employer',      label: 'Employer / industry' },
-    { k: 'civic',         label: 'Civic leader' },
-  ];
-  var AUD_KEY = 'cplSierraAudience.v1';
-  var audience = null;     // in-memory copy (localStorage may be unavailable)
-  var askingWho = false;   // the first Ask is held until the visitor says who they are
-  var WHO_PROMPT = 'Who are you asking as? I\u2019ll fit my answer to you.';
+  // ── The reader ──
+  // She reads who is asking from the question (Sam, Open Asks Sheet 136 card 2,
+  // "infer", 2026-10-27). The page asked for a pick from 2026-07-01, at the first
+  // Ask from 2026-10-24; measured that day, the pick changed her wording (insider
+  // terms in 21% of student answers, 63 to 68% of faculty and administrator
+  // answers) and never her substance, and 95% of her answers, the map.rccd.edu
+  // widget's, already carried no pick. So the page sends no `audience`, and
+  // cpl-chat's READER_RULE has her read the asker and fit the answer. COBI's docked
+  // box (cpl_chat.js) still asks its signed-in staff, under the shared key, which
+  // this page no longer reads.
 
-  function loadAudience() {
-    try {
-      var v = localStorage.getItem(AUD_KEY);
-      if (AUDIENCES.some(function (a) { return a.k === v; })) audience = v;
-    } catch (e) { /* keep in-memory only */ }
-  }
-  function setAudience(k) {
-    audience = k;
-    try { localStorage.setItem(AUD_KEY, k); } catch (e) { /* in-memory only */ }
-    renderAudience();
-  }
-  // The row is folded behind one control, "Answering for: <pick>", which opens
-  // it; a pick closes it again and hands focus back to that control, so focus
-  // never lands on a button that vanished.
-  function audienceLabel() {
-    for (var i = 0; i < AUDIENCES.length; i++) if (AUDIENCES[i].k === audience) return AUDIENCES[i].label;
-    return 'choose one';
-  }
-  function setAudienceOpen(open) {
-    if (!audEl) return;
-    audEl.classList.toggle('open', !!open);
-    if (audToggle) audToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
-  // Shown once there is a pick to change, or while Sierra asks for one.
-  function paintAudLine() {
-    if (!audLine) return;
-    audLine.hidden = !audience && !askingWho;
-    audLine.classList.toggle('s-asking-who', askingWho);
-  }
-  function renderAudience() {
-    if (!audEl) return;
-    audEl.textContent = '';
-    var lab = document.createElement('span');
-    lab.className = 's-aud-label';
-    lab.id = 's-aud-label';
-    lab.textContent = WHO_PROMPT;
-    audEl.appendChild(lab);
-    AUDIENCES.forEach(function (a) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 's-aud-chip' + (audience === a.k ? ' on' : '');
-      b.setAttribute('aria-pressed', audience === a.k ? 'true' : 'false');
-      b.textContent = a.label;
-      b.addEventListener('click', function () {
-        var held = askingWho;
-        askingWho = false;
-        setAudience(a.k); setStatus('');
-        setAudienceOpen(false);
-        // The pick answers Sierra's question, so the question she held goes now.
-        if (held) { submit(); return; }
-        try { if (audToggle) audToggle.focus(); } catch (e) { /* focus is best effort */ }
-      });
-      audEl.appendChild(b);
-    });
-    if (audToggle) audToggle.textContent = 'Answering for: ' + audienceLabel();
-    paintAudLine();
-  }
   // ── About Sierra (the footer panel) ──
   // The introduction lived above the conversation and took most of a phone's
   // first screen (Sam, 2026-09-11); it sat behind a header control, and since the
@@ -215,18 +136,6 @@
       if (aboutBtn.contains(e.target) || aboutPanel.contains(e.target)) return;
       setAbout(false);
     });
-  }
-
-  // The first Ask with no pick: the question stays in the box, the row opens
-  // under it with Sierra's question, and focus moves to the first word, so a
-  // keyboard and a screen reader land where the answer is given.
-  function askWho() {
-    askingWho = true;
-    setStatus('');
-    renderAudience();
-    setAudienceOpen(true);
-    var first = audEl && audEl.querySelector('.s-aud-chip');
-    try { if (first) first.focus(); } catch (e) { /* focus is best effort */ }
   }
 
   // ── Per-answer feedback (Helpful / Not helpful + note → sierra_feedback) ──
@@ -399,7 +308,7 @@
 
     function upsert(note) {
       return sendFeedback(feedbackPayload({
-        turnId: tid, sessionId: sessionId(), page: 'sierra', audience: audience,
+        turnId: tid, sessionId: sessionId(), page: 'sierra',
         question: question, response: answer, rating: rating, note: note,
       }));
     }
@@ -664,7 +573,7 @@
     // this same public page with ctx=external, so it keeps surface 'public' —
     // two axes, deliberately not collapsed into one.
     var p = { query: query, session_id: sessionId(), history: convo.slice(),
-              audience: audience, surface: hostSurface() };
+              surface: hostSurface() };
     if (ctxVariant) p.ctx = ctxVariant;
     return p;
   }
@@ -748,7 +657,6 @@
     if (busy) return;
     var q = (inputEl.value || '').trim();
     if (!q) { inputEl.focus(); return; }
-    if (!audience) { askWho(); return; }
     busy = true;
     sendBtn.disabled = true; inputEl.disabled = true;
     setView('asking');          // the landing folds away at the first question
@@ -823,7 +731,7 @@
   // A page that links here with a question (CPL Pathways' "Ask Sierra": "What
   // does the <program> at <college> require, and which of its courses can a
   // learner clear through credit for prior learning?") puts it in the box. It
-  // never sends: the visitor picks an audience first and presses Send. Plain
+  // never sends: the visitor reads it and presses Ask. Plain
   // text, control characters dropped, capped at ASK_MAX characters.
   var ASK_MAX = 500;
   function askFromUrl() {
@@ -873,8 +781,7 @@
   }
 
   // ── The starter questions (arriving view) ──
-  // Each is a word that asks itself: it fills the box and sends, so the audience
-  // rule still holds (no pick, and the refusal says where the words are).
+  // Each is a word that asks itself: it fills the box and sends.
   function renderTries() {
     var list = document.getElementById('s-try-list');
     if (!list) return;
@@ -937,7 +844,7 @@
   // arriving: the greeting, the question box and the starter questions.
   // asking:   the conversation in a centered column, the question box docked.
   // The view lives on <body data-view>, and the one form moves between the
-  // frame and the dock, so its ids (s-form, s-input, s-send, s-audience) stay
+  // frame and the dock, so its ids (s-form, s-input, s-send) stay
   // single for every caller: the tests, the a11y sweep and the vendor embed.
   var view = 'arriving';
   function setView(v) {
@@ -951,7 +858,6 @@
     if (inputEl) inputEl.placeholder = v === 'asking'
       ? 'Ask a follow-up'
       : 'Try: ' + FIRST_TRY;
-    setAudienceOpen(false);
     view = v;
     fitInput();
   }
@@ -975,22 +881,14 @@
     sendBtn = document.getElementById('s-send');
     statusEl = document.getElementById('s-status');
     formEl = document.getElementById('s-form');
-    audEl = document.getElementById('s-audience');
-    audToggle = document.getElementById('s-aud-toggle');
-    audLine = document.getElementById('s-aud-line');
     if (!logEl || !inputEl || !sendBtn || !formEl) return;
 
-    loadAudience();
-    renderAudience();
     wireAbout();
     wireTheme();
     renderTries();
     if (inputEl) inputEl.placeholder = 'Try: ' + FIRST_TRY;
     prefillAsk();
 
-    if (audToggle) audToggle.addEventListener('click', function () {
-      setAudienceOpen(!audEl.classList.contains('open'));
-    });
     var newBtn = document.getElementById('s-new');
     if (newBtn) newBtn.addEventListener('click', newQuestion);
     formEl.addEventListener('submit', function (e) { e.preventDefault(); submit(); });
@@ -1028,10 +926,10 @@
     setAbout: setAbout,
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
     parseSse: parseSse, CHAT_URL: CHAT_URL, SUGGESTED: SUGGESTED,
-    AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
+    feedbackPayload: feedbackPayload,
     SIERRA_MARK: SIERRA_MARK, ctxVariant: ctxVariant, buildPayload: buildPayload,
     syncScrollRegions: syncScrollRegions,
-    TRIES: TRIES, setView: setView, paintTheme: paintTheme, WHO_PROMPT: WHO_PROMPT,
+    TRIES: TRIES, setView: setView, paintTheme: paintTheme,
     getView: function () { return view; },
     panel: function () { return document.documentElement.hasAttribute('data-panel'); },
   };

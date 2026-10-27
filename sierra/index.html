@@ -62,23 +62,11 @@
                   placeholder="Ask Sierra about CPL" aria-label="Ask Sierra a question about CPL"></textarea>
         <button id="s-send" class="s-send" type="submit">Ask</button>
       </div>
-      <!-- Not on the screen until it is needed (Sam, 2026-10-24: "gently prompt the
-           user to choose their population once they click Ask"): sierra.js shows it
-           folded once a pick is stored, and open with her question at the first Ask. -->
-      <div class="s-aud-line" id="s-aud-line" hidden>
-        <button class="s-aud-toggle" id="s-aud-toggle" type="button" aria-expanded="false" aria-controls="s-audience">Answering for: choose one</button>
-        <!-- role="group", NOT "radiogroup". sierra.js builds these as <button
-             aria-pressed>, and a radiogroup promises children with role="radio",
-             single-selection semantics and arrow-key roving focus, none of which
-             are here. -->
-        <div id="s-audience" class="s-audience" role="group"
-             aria-label="Tell Sierra who you are so answers fit your needs"></div>
-      </div>
       <div id="s-status" class="s-status" role="status" aria-live="polite"></div>
     </form>
   </section>
   <!-- Where the paintings were: a few of her starter questions, as words. Each
-       asks itself, so the audience rule still holds before the first send. -->
+       asks itself. -->
   <section class="s-try" id="s-try" aria-labelledby="s-try-label">
     <h2 class="s-try-label" id="s-try-label">Try</h2>
     <ul class="s-try-list" id="s-try-list"></ul>

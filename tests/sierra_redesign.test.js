@@ -22,12 +22,10 @@
 //       conversation would answer the wrong thing).
 //   (3) NOTHING MOVES ON ITS OWN. With the paintings gone the page starts no
 //       timer and cross-fades nothing.
-//   (4) THE AUDIENCE IS ASKED FOR WHEN IT IS NEEDED (Sam, 2026-10-24: "gently
-//       prompt the user to choose their population once they click Ask? I don't
-//       want to complicate the screen with all the choices initially"). With no
-//       pick the row is off the screen; the first Ask holds the question and
-//       Sierra asks who the visitor is, focus on the first word; the pick sends
-//       the held question. With a pick stored, the row is one folded control.
+//   (4) SHE READS THE ASKER FROM THE QUESTION (Sam, Open Asks Sheet 136 card 2,
+//       "infer", 2026-10-27). No audience row on the page; the first Ask sends at
+//       once with no audience; a pick COBI stored under the shared key is neither
+//       shown nor sent.
 //   (5) THE QUESTION BOX WRAPS. A one-row textarea: Enter sends, Shift+Enter
 //       does not, so a long question shows whole instead of running off a phone.
 //   (6) ONE THEME CONTROL. The reader's COBI choice (cpl_theme, same origin)
@@ -123,9 +121,8 @@ function ask(w, text) {
     const form = d.getElementById("s-form");
     check("(2) the page arrives on the arriving view, the box under the greeting",
       d.body.getAttribute("data-view") === "arriving" && form.parentNode.id === "s-frame" && API.getView() === "arriving");
-    check("(2) there is one form, one box and one audience row on the page",
-      d.querySelectorAll("form").length === 1 && d.querySelectorAll("#s-input").length === 1 &&
-      d.querySelectorAll("#s-audience").length === 1);
+    check("(2) there is one form and one box on the page",
+      d.querySelectorAll("form").length === 1 && d.querySelectorAll("#s-input").length === 1);
     ask(w, "Which colleges teach welding?");
     await drain();
     check("(2) ⭐ the first question folds the landing away and docks the box",
@@ -167,49 +164,31 @@ function ask(w, text) {
     w.close();
   });
 
-  await block("(4) the audience is asked for at the first Ask", async () => {
-    const { w, d, API, requests } = loadDom();
-    const line = d.getElementById("s-aud-line"), toggle = d.getElementById("s-aud-toggle"), row = d.getElementById("s-audience");
-    check("(4) ⭐ with no pick, the row is off the screen on arrival", line.hidden && /<div class="s-aud-line" id="s-aud-line" hidden>/.test(HTML) &&
-      /\.s-aud-line\[hidden\] \{ display: none; \}/.test(CSS));
+  await block("(4) she reads the asker from the question", async () => {
+    const { w, d, requests } = loadDom();
+    check("(4) ⭐ no audience row on the page, in its markup or its styles",
+      !d.getElementById("s-audience") && !d.getElementById("s-aud-line") && !/s-aud/.test(HTML) && !/\.s-aud|s-asking-who/.test(CSS));
     ask(w, "hello?");
-    await drain(4);
-    const first = row.querySelectorAll(".s-aud-chip")[0];
-    check("(4) ⭐ the first Ask holds the question and Sierra asks who the visitor is, the five words open beneath",
-      requests.length === 0 && d.getElementById("s-input").value === "hello?" && !line.hidden &&
-      line.classList.contains("s-asking-who") && row.classList.contains("open") &&
-      d.getElementById("s-aud-label").textContent === API.WHO_PROMPT && /^Who are you asking as\?/.test(API.WHO_PROMPT) &&
-      row.querySelectorAll(".s-aud-chip").length === 5);
-    check("(4) focus moves to the first word, so a keyboard lands where the answer is given", d.activeElement === first);
-    check("(4) it asks; it does not scold: no error style, no flash",
-      !/s-error/.test(d.getElementById("s-status").className) && d.getElementById("s-status").textContent === "");
-    check("(4) while she asks, her question shows and the folded control does not",
-      /\.s-asking-who \.s-aud-label \{ display: block;/.test(CSS) && /\.s-asking-who \.s-aud-toggle \{ display: none; \}/.test(CSS) &&
-      /(^|\n)\.s-aud-label \{ display: none; \}/.test(CSS));
-    row.querySelectorAll(".s-aud-chip")[1].click();
     await drain(14);
-    check("(4) ⭐ the pick sends the held question, with the pick",
-      requests.length === 1 && requests[0].body.query === "hello?" && requests[0].body.audience === API.AUDIENCES[1].k);
-    check("(4) after the pick the row folds to one control naming it",
-      !line.hidden && !line.classList.contains("s-asking-who") && !row.classList.contains("open") &&
-      toggle.textContent === "Answering for: " + API.AUDIENCES[1].label);
-    toggle.click();
-    check("(4) the control opens the row", row.classList.contains("open") && toggle.getAttribute("aria-expanded") === "true");
-    row.querySelectorAll(".s-aud-chip")[2].click();
-    await drain(4);
-    check("(4) a change of pick closes the row, hands focus back to its control and sends nothing",
-      !row.classList.contains("open") && toggle.getAttribute("aria-expanded") === "false" && d.activeElement === toggle &&
-      requests.length === 1 && toggle.textContent === "Answering for: " + API.AUDIENCES[2].label);
-    check("(4) the toggle is a real control naming what it opens",
-      /<button class="s-aud-toggle" id="s-aud-toggle" type="button" aria-expanded="false" aria-controls="s-audience">/.test(HTML));
-    check("(4) one rule for every width and view: no folding rule left keyed to a phone or to reading",
-      !/body\[data-view="asking"\] \.s-aud/.test(CSS) && /(^|\n)\.s-audience:not\(\.open\) \{ display: none; \}/.test(CSS));
+    check("(4) ⭐ the first Ask sends at once, with no audience",
+      requests.length === 1 && requests[0].body.query === "hello?" && !("audience" in requests[0].body) &&
+      d.body.getAttribute("data-view") === "asking");
     w.close();
     const s = loadDom({ audience: "faculty" });
-    check("(4) a stored pick shows on arrival as the one folded control",
-      !s.d.getElementById("s-aud-line").hidden && !s.d.getElementById("s-audience").classList.contains("open") &&
-      s.d.getElementById("s-aud-toggle").textContent === "Answering for: Faculty");
+    check("(4) a pick COBI stored under the shared key is not shown", !/Answering for/.test(s.d.body.textContent));
+    ask(s.w, "What is CPL?");
+    await drain(14);
+    check("(4) …and not sent", s.requests.length === 1 && !("audience" in s.requests[0].body));
     s.w.close();
+    // The server reads the asker when no audience arrives: READER_RULE in the stable prompt.
+    const SRC = fs.readFileSync("chatbox/supabase/functions/cpl-chat/index.ts", "utf8");
+    const stable = (SRC.split("const stable = `")[1] || "").split("`;")[0];
+    const rule = (SRC.match(/const READER_RULE = `([^`]*)`/) || [])[1] || "";
+    check("(4) ⭐ cpl-chat's stable prompt carries READER_RULE, and an AUDIENCE section still wins",
+      /\$\{READER_RULE\}/.test(stable) && /when an AUDIENCE section below names who is asking, follow it/.test(rule) &&
+      /read who is asking from the question and the conversation/.test(rule) &&
+      /When the question gives no sign, answer in the plain words a student needs/.test(rule) &&
+      /Never ask the reader who they are/.test(rule) && !/\$\{/.test(rule));
   });
 
   await block("(5) the question box wraps", async () => {
@@ -346,11 +325,11 @@ function ask(w, text) {
     // no header row, so in the bar the footer's row of links and controls stands down.
     check("(8) ⭐ in the bar the footer's row stands down whole, About Sierra and its panel with it",
       /:root\[data-panel\] \.s-foot-row, :root\[data-panel\] \.s-about-panel \{ display: none; \}/.test(CSS));
-    check("(8) ⭐ the starters and the link words read in regular weight; a pick keeps its bold (Sam, 2026-10-25)",
-      [".s-try-q", ".s-aud-toggle", ".s-aud-chip", ".s-word", ".s-about"].every(function (sel) {
+    check("(8) ⭐ the starters and the link words read in regular weight; a theme pick keeps its bold (Sam, 2026-10-25)",
+      [".s-try-q", ".s-word", ".s-about", ".s-theme-btn"].every(function (sel) {
         const m = new RegExp("\\" + sel + " \\{[^}]*font: (\\d+) ").exec(CSS);
         return m && m[1] === "400";
-      }) && /\.s-aud-chip\.on \{[^}]*font-weight: 700/.test(CSS));
+      }) && /\.s-theme-btn\[aria-pressed="true"\] \{[^}]*font-weight: 700/.test(CSS));
     check("(8) the side bar asks for the panel, with the host's theme", /'\?panel=1&theme='/.test(fs.readFileSync("sierra/sidebar.js", "utf8")));
     // The CPL Initiative mark in her footer (Sam, 2026-10-24: "Maybe put the CPL Initiative logo in her footer").
     const foot = (HTML.match(/<footer class="s-foot">[\s\S]*?<\/footer>/) || [""])[0];

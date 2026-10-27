@@ -5,8 +5,8 @@
    redesign are gone.
 
    Two views on one page, keyed on <body data-view>:
-     arriving — the greeting over a gold rule, the question box, the audience
-                words and a few starter questions, on a white page.
+     arriving — the greeting over a gold rule, the question box and a few
+                starter questions, on a white page.
      asking   — the greeting folds away; the conversation takes a centered column
                 and the question box docks beneath it.
    No header row (Sam, 2026-10-27): the logo, About Sierra, Light and Dark sit in
@@ -141,8 +141,8 @@ button { font: inherit; color: inherit; }
 .s-hello p { margin: 0; font-size: clamp(1.05rem, 1rem + .3vw, 1.2rem); color: var(--sierra-muted); text-wrap: balance; }
 .s-rule { width: 66px; height: 4px; background: var(--sierra-gold); }
 
-/* The question box: a bordered field and Ask, the audience words beneath.
-   Arriving it sits under the greeting; asking it docks. One form. */
+/* The question box: a bordered field and Ask. Arriving it sits under the
+   greeting; asking it docks. One form. */
 /* minmax(0, 1fr), not the implicit auto track: an auto track takes the input's
    intrinsic width (its size attribute, ~200px at this font) as a floor, and at
    320px that floor pushed the bar 15px past the edge. */
@@ -166,38 +166,12 @@ button { font: inherit; color: inherit; }
 .s-send:hover { text-decoration: underline; text-underline-offset: 3px; }
 .s-send:disabled { opacity: .6; cursor: default; text-decoration: none; }
 
-/* Who Sierra answers for: underlined words, the pick bold with a heavier
-   underline (a weight and a rule, never color alone). Off the screen until it
-   is needed (Sam, 2026-10-24: "I don't want to complicate the screen with all
-   the choices initially"): folded behind one control once a pick is stored, and
-   open under her question at the first Ask without one (.s-asking-who). */
-.s-aud-line { display: flex; flex-wrap: wrap; align-items: center; gap: 0 14px; }
-.s-aud-line[hidden] { display: none; }
-.s-audience { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 16px; font-size: .9375rem; }
-.s-audience:not(.open) { display: none; }
-.s-aud-label { display: none; }
-.s-asking-who .s-aud-label { display: block; flex: 1 1 100%; padding-top: 2px; color: var(--sierra-heading); font-weight: 700; font-size: 1rem; }
-.s-asking-who .s-aud-toggle { display: none; }
-.s-aud-chip {
-  background: none; border: 0; border-radius: 0; padding: 4px 2px; min-height: 32px; cursor: pointer;
-  font: 400 .9375rem var(--sierra-font); color: var(--sierra-cobalt);
-  text-decoration: underline; text-underline-offset: 3px;
-}
-.s-aud-chip:hover { text-decoration-thickness: 2px; }
-.s-aud-chip.on { color: var(--sierra-heading); font-weight: 700; text-decoration-thickness: 2px; }
-.s-aud-toggle {
-  display: inline-flex; background: none; border: 0; padding: 6px 2px; min-height: 36px; cursor: pointer;
-  font: 400 .9375rem var(--sierra-font); color: var(--sierra-cobalt); text-align: left;
-  text-decoration: underline; text-underline-offset: 3px;
-}
-.s-aud-toggle:hover { text-decoration-thickness: 2px; }
-
 .s-status { font-size: .875rem; color: var(--sierra-muted); }
 .s-status:empty { display: none; }
 .s-status.s-error { color: var(--sierra-crimson); font-weight: 600; }
 
 /* Arriving: starter questions where the paintings were, as words. The links and
-   starters read in regular weight (Sam, 2026-10-25); a pick keeps its bold. */
+   starters read in regular weight (Sam, 2026-10-25). */
 .s-try { display: grid; gap: 4px; }
 .s-try-label { margin: 0; font: 700 .875rem var(--sierra-font); color: var(--sierra-heading); }
 .s-try-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; }
@@ -392,8 +366,7 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
 }
 /* Sierra animates one thing: the typing indicator, infinite while an answer
    streams. Under reduced motion it stands down and the cue is not lost: the
-   dots still say "thinking" by being there. (The audience row's flash went with
-   the gentle prompt at the first Ask, which asks instead of flashing.) */
+   dots still say "thinking" by being there. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .001ms !important;

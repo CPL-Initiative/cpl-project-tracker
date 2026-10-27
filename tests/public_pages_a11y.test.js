@@ -96,17 +96,10 @@ val("sierra: the reduced-motion block stands the typing pulse down",
 val("sierra: no audience flash is left to animate",
   () => !/s-need/.test(S_CSS));
 
-// (c) the audience picker describes what it is
-val("sierra: the audience picker is role=group", () => {
-  const a = sd.getElementById("s-audience");
-  return a && a.getAttribute("role") === "group";
-});
-val("sierra: it is NOT a radiogroup (its children are aria-pressed buttons)",
-  () => !/role="radiogroup"/.test(S_HTML));
-val("sierra: the picker still has an accessible name", () => {
-  const a = sd.getElementById("s-audience");
-  return a && (a.getAttribute("aria-label") || "").length > 10;
-});
+// (c) no audience picker (Sheet 136 card 2, "infer", 2026-10-27: she reads the
+// asker from the question), and no false radiogroup anywhere on the page
+val("sierra: the page asks no one who they are", () => !sd.getElementById("s-audience") && !sd.getElementById("s-aud-line"));
+val("sierra: no radiogroup on the page", () => !/role="radiogroup"/.test(S_HTML));
 val("sierra: the chips are still built as aria-pressed buttons",
   () => /setAttribute\('aria-pressed'/.test(S_JS));
 
