@@ -1,0 +1,10 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_s493_2026-10-27.sql",
+ "name": "cpl_memory_s493_2026_10_27_r2",
+ "version": "20261027005613",
+ "sha256": "e166e59d7b9a0983865e35f5413982e1112cf26f938432eabd30412af89e1684",
+ "run": "40429270445",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"cpl_memory\\\" violates check constraint \\\"cpl_memory_summary_check\\\"\\nDETAIL:  Failing row contains (80bbf91b-8d8d-4f1a-b6c3-0ad65f0e5209, 2026-10-27 00:56:13.790288+00, 2026-10-27 00:56:13.790288+00, fact, MAP's collaborative-exhibits API gives each exhibit an owner (co..., null, cpl, t, null, {my-college-action-page,map-link,eacr}, cpl-project-tracker#2485; kb/reference/map_cpl_opportunities_ver..., {}, {}, proposed, null, internal, 2026-10-27, memory-s493-checkpoint-2026-10-27, null, null, null, map-exhibit-owner-not-articulator-2026-10-26, null, MAP records one owner per exhibit; its CPL Opportunities table l...).\\n\"}"
+}

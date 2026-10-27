@@ -4,6 +4,8 @@ date: 2026-10-26
 session: 487 (SkyHuckleberry)
 tags: [handoff, program-requirements-harvest, hartnell, coursedog]
 status: current
+superseded: true
+superseded_by: session_494_handoff.md
 ---
 
 # You are Session 488

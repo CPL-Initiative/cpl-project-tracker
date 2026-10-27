@@ -654,3 +654,16 @@ Verbatim from `docs/reference/lanes/implementation-funding.md` (`oversized_doc` 
 ### Moved from the lane (S492)
 
 ✅ **The attestation surface (S470, 2026-10-25, #2433).** `cpl_funding_nc_attestation`: one row per college and fiscal year (July to June), attest-first as the opt-in, the CO's Reject then Re-confirm or Remove; the college attests from its drill-in, the public page too. `cpl_funding_nc_attestation_pub` publishes the coordinator's name and title for this fiscal year and the next (last year's row lapses on July 1); `cpl_funding_nc_attestation_review()` gives the CO the attestor, the award count (1 to 9 masked for the team phrase), the course and the exhibits. DR-09. **Applied** 2026-10-25 and read back (S470). Guard `tests/cpl_funding_nc_attestation.test.js`. ✅ **The builder (S471).** `funding/_build_funding_performance.py` reads `cpl_funding_nc_counts()` (service role) and emits `nc_cdcp` (absent without a COCI category: Fresno City, Calbright), `nc_exh` (channels 1, 2, 4; a standalone's into `origination.in_scope`) and `nc_course`. **Channel 3 (S473):** `funding/nc_credential_crosswalk.json`; a row counts once `confirmed`, while a course stays CDCP. 12 rows `confirmed` (Sam, Sheet 127, 2026-10-25, *twelve*); ServSafe stays `proposed`. Guard `tests/funding_nc_counts_test.py`. ✅ **The memo's noncredit section (S472):** *Noncredit Outcomes* after the credit priorities (`memo_noncredit`, each outcome, its share, the reported figure). Guard `tests/cpl_funding_memo_nc_outcomes.test.js`
+
+## S493 SkyThimbleberry (2026-10-26): Step 2 squeezed to 21px, three days before the Summit
+
+- **An `auto` grid column grows to its content's whole line.** The Step 1 box was `auto minmax(0,1fr)`; once #2478
+  printed the chosen view's full description in Step 1, Step 1 took the row and Step 2 got 21px, its list 28px, and
+  the page scrolled sideways at 1280, 1024 and 900px. The fix gives Step 2 a floor:
+  `minmax(0,3fr) minmax(min(100%,22rem),2fr)`, one column when Step 2 hides (#2487). Sam found it from a screenshot.
+- **A sweep that leaves out the target that opens a view cannot see that view's bug.** S492's pre-Summit list named
+  `funding-model` but not `funding-model-mycpl`, the one target that opens My Institution; on main that target puts
+  the page at 1,154px wide at 1024px. Every pre-Summit sweep now names it (handoff 494, the lane).
+- **A shard that dies with no FAIL line is the runner, not the test.** #2487's shard 4 stopped inside a worklist test
+  after its header; the shard passed locally and on #2485 in the same window. One comment on the PR, then a fresh run
+  through the main merge the PR needed anyway.

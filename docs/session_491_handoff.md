@@ -4,6 +4,8 @@ date: 2026-10-26
 session: 490 (SkyGooseberry)
 tags: [handoff, library, cpl-opportunity, regenerate, funding-model]
 status: current
+superseded: true
+superseded_by: session_494_handoff.md
 ---
 
 # You are Session 491
