@@ -61,10 +61,10 @@
       "vault_heavy_path": 65
     },
     "vault": {
-      "files": 24883,
-      "bytes": 3820048800,
-      "heavy_bytes": 2683577290,
-      "heavy_share": 0.702,
+      "files": 24887,
+      "bytes": 3822944547,
+      "heavy_bytes": 2686472026,
+      "heavy_share": 0.703,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -163,10 +163,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1660214202,
+        "bytes": 1663108938,
         "kind": "dir"
       },
-      "message": "directory totals 1,660,214,202 B inside the vault"
+      "message": "directory totals 1,663,108,938 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
