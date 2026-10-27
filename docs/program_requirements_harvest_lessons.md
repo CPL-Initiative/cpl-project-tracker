@@ -1092,6 +1092,10 @@ side session (Scenario 4) ran beside it, one writer per file.
 
 **S444:** Golden West (79) and Imperial Valley (42) loaded; department pages are candidates, a section heading may span two lines (Sierra 35 → 81 found, MiraCosta 29 → 68, its discipline pages still lose siblings); 37 Program Mapper hosts recorded (#2330).
 
+## S500 SkyBlackberry (2026-10-27, the CPL Queue routine): Delta 22244 re-extracted (in progress)
+
+- Dispatched `step=read force=22244` on `claude/practical-meitner-93xlec` under the $40 go.
+
 ## S499 SkyCloudberry (2026-10-27, the CPL Queue routine): Delta Cal-GETC 45621 passes (199 of 203)
 
 - **The same certificate, the same shape, at a second college.** Delta's Cal-GETC 45621 read 29-40 against 34 for the
