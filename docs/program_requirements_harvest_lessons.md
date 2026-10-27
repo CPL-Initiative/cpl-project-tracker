@@ -1143,7 +1143,11 @@ side session (Scenario 4) ran beside it, one writer per file.
   required NRN units bring the total to about 71.5-78.5, against the 60 the tab prints. So the build would replace an
   *incomplete* status with an *unequal* one (the catalog's 60 understates the program). That gives a better reason and
   no pass, so it was not built this run. Read a log the earlier runs left before you load the college's site again.
-- **Delta 44197 (CAT 69V repeats):** page read on this branch (S498). The words and the step: see below once read.
+- **Delta 44197: a repeat count can come with its own printed sum.** Page read 40479703275 shows the words "Students
+  are required to enroll four times in CAT 69V for a total of 16 units" beside "Units: 1-4". Four times the range
+  would read 4-16, and the narrow `meets` reading would still fail at 43-55. So the `repeat` step takes an optional
+  `total` group and keeps it as `units_total`, which the scorer reads in place of the range times n. It also reads a
+  count written as a word. The record sums to 55, the page's "Minimum Units Required: 55". The printed units stay.
 
 ## S497 SkyCrowberry (2026-10-27, the CPL Queue routine): Music 43887's repeat counts
 
