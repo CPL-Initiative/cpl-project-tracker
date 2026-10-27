@@ -59,10 +59,12 @@ reread, infer, keep), and #2499 is no longer held. This checkpoint was **light**
    this request, please reply"; Deny = remove), the new data attributes in `CURATE_ATTRS` and both binding places. Then
    tests (several pin attest-first text), `npm run a11y -- funding-public funding-model funding-model-mycpl`, the
    governance surface map, the lane; apply the migration; open the PR; merge.
-6. **The piano score** (Sam's S490 ask, dropped by S490's fork; he asked for status today). A background agent was
-   building a sample on a **local-only** branch in `/home/user/wt-piano`; if Sam has no sample, redo it: piano in place of
-   the synthesized strings, pizzicato and bell, horns, drums and effects kept, ~45 s audio sample beside the current
-   score, then re-render the films only after he approves.
+6. **The piano score** (Sam's S490 ask). Built and pushed: `claude/funding-film-piano` at fb378c6e (no PR; the source
+   and the README's score paragraph only). Piano in place of the string pad, pizzicato, bell and melody lines, a piano
+   left hand in place of the contrabass; horns, drums and effects identical (701 events); the loudness climb holds.
+   `offline()` now builds the score in 2 s slices (76 s render, from 751 s). The 46 s samples went to Sam at ~15:35Z.
+   **On his approval:** open the PR, rebuild the pages, re-render the music film and the narrated cut (after #2499
+   merges). On a no: leave the branch.
 7. **Friday morning:** handoff 496 and 500's a11y list on main.
 
 ## Lessons to honor
