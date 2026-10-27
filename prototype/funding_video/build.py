@@ -210,10 +210,9 @@ CONFIG['n1'] = dict(
 # the scenario 2 video for an ElevenLabs narrator. Keep it very simple and
 # focused... select a female voice model to narrate and give her the name Sierra
 # on the video as a sample"; "The music can drop to background level"). The
-# introduction's own picture (every figure above, the targets slide, December
-# 30, 2026, the CPL funding page) under narration_s2.json's voice, Sierra, read
-# in ElevenLabs. Only the page, the title's name line and the closing credit
-# differ from s2. Sam ruled on the sample (2026-10-02: "Narration sounds good to
+# published film's picture (v11 since S495, LIVE['n2'] below) under
+# narration_s2.json's voice, Sierra, read in ElevenLabs. Only the page, the
+# title's name line and the closing credit differ from s2. Sam ruled on the sample (2026-10-02: "Narration sounds good to
 # start with"), and the ElevenLabs account moved to a paid plan the same day, so
 # all eleven scenes are read and the explainer's Scenario 2 view links the cut.
 CONFIG['n2'] = dict(
@@ -223,12 +222,30 @@ CONFIG['n2'] = dict(
     # no scenario (Sam, 2026-10-01), and the file names keep it.
     pageTitle='CPL Funding in Motion: The Narrated Introduction',
     eyebrow='CPL Initiative',
-    dek='The introduction to CPL funding for colleges, narrated by Sierra, about two and a half minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
-    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4',
+    dek='The introduction to CPL funding for colleges, narrated by Sierra, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
+    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4',
     narrator='Narrated by Sierra',
     audio='narration_s2.mp3',
     credit='Sierra is a synthetic voice made with ElevenLabs.',
     narr=narration('narration_s2_layout.json'),
+    # What Sierra says since the reads of 2026-10-27: scene 8 (Sam, Sheet 133 card 1:
+    # "adjust for the small NC condition change and leave the rest of the narration") and
+    # scenes 5 to 7 (Sheet 136 card 1, "reread"). Voiced: December 31 and the outcomes
+    # lane's first condition; the credit funding, Completion's transcribed CPL units and
+    # the two noncredit outcomes; about 3,600 FTES for each priority (3,598.2); about 31
+    # FTES for the average Access target (31.3). The figures she does not say (the credit
+    # and noncredit split, each priority's statewide funding and its division, the
+    # target's dollars, the reported box's sentence) are the v11 picture's (config
+    # 439488ec), so --check names a figure only where her read and the picture differ.
+    deadline='December 31, 2026', coordLine=COORD_LINE_NC, coordWords=COORD_WORDS_NC,
+    ex=dict(AVERAGE, cr=181816, nc=32085, splitText=' On average, 181,816 dollars is credit and 32,085 dollars noncredit.'),
+    prioHead='Two priorities carry the credit funding',
+    ncLine='Two noncredit outcomes count toward the noncredit share: exhibits built or adopted and a CPL portfolio course.',
+    prios=[[50, 'Access', ACCESS, 10727131], [50, 'Completion', 'Transcribed CPL units.', 10727131],
+           [None, 'Career Attainment and Innovation Projects', 'Reported by the Chancellor’s Office in qualitative terms. The credit allocations follow Access and Completion.', 9759692]],
+    how={'rows': [['Access', 10727131, 3797.5, 3598.2], ['Completion', 10727131, 3797.5, 3598.2]],
+         'rate': 5649.63, 'factor': 0.5, 'price': 2824.82, 'capped': 7},
+    target={'ftes': 31.29, 'usd': 90907.89, 'ftesWords': '31.3', 'usdWords': '90,908', 'halfFtesWords': '15.6', 'halfUsdWords': '45,454'},
 )
 
 # ── THE INTRODUCTIONS READ THE MODEL (Sam, 2026-10-19: "revise the video and
@@ -383,6 +400,9 @@ LIVE = {}
 if FIG:
     LIVE['s1'] = live_config(CONFIG['s1'], FIG, 'Scenario 1')
     LIVE['s2'] = live_config(CONFIG['s2'], FIG, FIG.get('published') or 'Scenario 2')
+    # The narrated cut plays the published film's picture (v11), its voice over it
+    # (Sam, Sheet 133 card 1, 2026-10-26; S495). n1 keeps its voiced frames.
+    LIVE['n2'] = live_config(CONFIG['n2'], FIG, FIG.get('published') or 'Scenario 2')
 
 if '--check' in sys.argv:
     if not FIG:

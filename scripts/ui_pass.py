@@ -74,11 +74,13 @@ def views(root=ROOT):
                 "veteran-sprint-map/ca_cpl_map_selfcontained.html": "Veteran map",
                 "funding-model/index.html": "Funding model", "privacy.html": "Privacy",
                 "prototype/skyview.html": "SkyView",
-                "prototype/funding_video/funding_in_motion_s2.html": "Funding film"}.get(p, p)
+                "prototype/funding_video/funding_in_motion_s2.html": "Funding film",
+                "prototype/funding_video/funding_in_motion_n2.html": "Funding film, narrated"}.get(p, p)
         # A page in a folder of another view keeps a name of its own: the CPL Opportunity page moved
         # under library/ on 2026-10-26 (Sheet 131 card 2) and keeps its ledger row and its history.
         vid = {"prototype/skyview.html": "skyview",
                "prototype/funding_video/funding_in_motion_s2.html": "funding-film",
+               "prototype/funding_video/funding_in_motion_n2.html": "funding-film-narrated",
                "library/cpl-opportunity/index.html": "cpl-opportunity"}.get(p, p.split("/")[0].replace(".html", ""))
         out.append((vid, name, p, "public" if p in PUBLIC else "staff"))
     for tab, label in nav_tabs(root):

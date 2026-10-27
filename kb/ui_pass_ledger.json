@@ -392,6 +392,14 @@
    "audience": "staff",
    "last": "2026-10-27",
    "outcome": "S496: axe (wcag 2.2 AA) passes at 9 widths; wiring reads no datasets; First Light holds (raw hex only in the :root tokens, light and dark palettes, Source Sans 3 and Playfair Display). No fix needed."
+  },
+  {
+   "id": "funding-film-narrated",
+   "name": "Funding film, narrated",
+   "page": "prototype/funding_video/funding_in_motion_n2.html",
+   "audience": "staff",
+   "last": "2026-10-27",
+   "outcome": "S500: axe (wcag 2.2 AA) passes at 9 widths; wiring reads no datasets; First Light holds (raw hex only in the :root tokens; the same source as funding-film). No fix needed."
   }
  ]
 }
