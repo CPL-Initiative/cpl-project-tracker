@@ -15,6 +15,14 @@ Parts 2 to 6 ([2](roadmap_archive_2.md) · [3](roadmap_archive_3.md) · [4](road
 (S474) for the 150 KB archive budget: the completed roadmap rows, the session narratives through
 S196, and the INDEX history rotated out before 2026-09-17. New rotations keep landing here.
 
+## INDEX update-history entries rotated out (2026-10-27)
+
+- 2026-10-26 S486 SkyQuince (the CPL Queue routine): Hartnell's double-count words read as the overlap; three local degrees pass, the carry basis leaves the flag out (#2462); handoff 487.
+- 2026-10-26 S485 SkyElderberry (the CPL Queue routine): Hartnell's last three noncredit courses carry no hours in its data; why six of its degrees fail arithmetic, read from their tabs (#2461); light checkpoint, handoff 486.
+- 2026-10-26 S483 SkyCoyoteMint (opened by hand): DSP Credit Starting Points Version 2 on the agency template, a draft beside v1 (CPLBrain#487, receipt applied); Open Asks Sheet 129 and the series record caught up to it; the library lane back under budget (#2458); full checkpoint, handoff 484.
+- 2026-10-26 S482 SkyShootingStar (opened by hand): ELL IET Version 2 with example articulations (CPLBrain#485, receipt applied); the Summit film v3 and the funding film v11 (#2457); Open Asks Sheet 128; the house-voice note gains *Lead with what is possible*; full checkpoint, handoff 483.
+- 2026-10-26 S480 SkyChia (opened by hand): the funding tab's NC labels, outcome chips and Serves on P3 and P4 (#2453); the Library's Changes to make and Copy the request, the Coordinator Guide In development (#2452); Coordinator Guide Draft 1 (CPLBrain#482); full checkpoint, handoff 481.
+
 ## INDEX update-history entries rotated out (2026-10-26)
 
 - 2026-10-25 S477 SkyOwlsClover (opened by hand, beside the 12:14Z firing): the noncredit counts confirmed live; the privacy screen reads only a row's own cells; a hand-opened session claims the queue with a draft PR (#2445); light checkpoint, handoff 478.
