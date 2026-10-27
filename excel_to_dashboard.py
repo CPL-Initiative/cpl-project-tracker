@@ -7225,6 +7225,22 @@ def _rollup_exhibit_cr_catalog(reports, title_to_ut):
     return out, diag
 
 
+# The public credential reference names who curated a row only by a cohort id
+# (`<lane>-s<N>@bot`) or the team mailbox. A reviewer signs in with a personal
+# address, and this file is public: 2026-10-27's run baked slee@cccco.edu into
+# 21 rows and tests/pii_guard.test.js failed every PR (the 2026-10-14 tabled-card
+# leak, again). A signed-in reader still sees who, from the live overlay
+# (credential_reference.js reads reviewed_by from Supabase).
+_PUBLIC_CURATORS = {"map@rccd.edu"}
+def _public_curator(v):
+    v = str(v or "").strip()
+    if not v:
+        return v
+    if v.lower().endswith("@bot") or v.lower() in _PUBLIC_CURATORS:
+        return v
+    return "reviewer" if "@" in v else v
+
+
 def export_credential_reference():
     """Build credential_reference_data.js — the lean payload consumed by the
     Credential Reference tab. Joins the credential-identity layer
@@ -7925,7 +7941,7 @@ def export_credential_reference():
                 row["_original_display_title"] = ut
                 row["display_title"] = ov["unified_title_override"]
             if ov.get("reviewed_by"):
-                row["curated_by"] = ov["reviewed_by"]
+                row["curated_by"] = _public_curator(ov["reviewed_by"])
             if ov.get("reviewed_at"):
                 row["curated_at"] = ov["reviewed_at"]
         rows.append(row)
