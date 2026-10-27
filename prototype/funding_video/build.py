@@ -81,6 +81,9 @@ SAMPLE = {'name': 'Sample College', 'max': 345220, 'cr': 340861, 'nc': 4358, 'po
 CLOSE = {'head': 'Find your college on the <span class="blue">CPL funding page</span>',
          'label': 'How CPL Funding Works', 'size': 3.2,
          'text': 'Find your college’s maximum allocation, targets, and progress on the CPL funding page.'}
+# THE RECORDING'S CREDIT (CC BY 3.0 asks for it): every variant's closing scene names the piano under the lockup
+# (Sam, 2026-10-27, on the recorded piano: "new soundtrack sounds good").
+MUSIC_CREDIT = 'Piano: the Salamander Grand Piano, sampled by Alexander Holm (CC BY 3.0).'
 def close_voiced(short, suffix):
     return {'head': 'Find your college on the <span class="blue">funding model page</span>',
             'label': 'Read the full explainer: ' + short,
@@ -155,7 +158,7 @@ CONFIG = {
         'linkLabel': 'How CPL funding works',
         'kick': 'An introduction for colleges',
         'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges.',
-        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4',
+        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4',
         'explainer': BASE,
         'prioName': 'Two priorities',
         'prioHead': 'Two priorities carry the funding',
@@ -223,7 +226,7 @@ CONFIG['n2'] = dict(
     pageTitle='CPL Funding in Motion: The Narrated Introduction',
     eyebrow='CPL Initiative',
     dek='The introduction to CPL funding for colleges, narrated by Sierra, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
-    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4',
+    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4',
     narrator='Narrated by Sierra',
     audio='narration_s2.mp3',
     credit='Sierra is a synthetic voice made with ElevenLabs.',
@@ -434,6 +437,7 @@ if variant in LIVE and LIVE[variant] and '--typed' not in sys.argv:
     print('%s: figures from figures.json (config %s, %s)' % (variant, FIG['config_md5'], cfg['figures']['scenario']))
 elif variant in ('s1', 's2'):
     print('%s: typed figures (no figures.json%s)' % (variant, ', --typed' if '--typed' in sys.argv else ''))
+cfg = dict(cfg, music=MUSIC_CREDIT)
 suffix = '' if variant == 's1' else '_' + variant
 src = (HERE / 'funding_in_motion.src.html').read_text(encoding='utf8')
 

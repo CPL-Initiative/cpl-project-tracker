@@ -17332,7 +17332,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 261
+     "line": 264
     }
    ],
    "served": true,
@@ -17345,7 +17345,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 438
+     "line": 442
     },
     {
      "id": "script:prototype/funding_video/cues.py",
@@ -17398,7 +17398,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 207
+     "line": 210
     }
    ],
    "served": true,
@@ -17411,7 +17411,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 230
+     "line": 233
     }
    ],
    "served": true,

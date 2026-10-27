@@ -348,7 +348,9 @@ var S9=scene(84,90,'Find your college',CFG.close.text,function(r,o){
   o.lock=lockup(r);
   o.t=words(r,CFG.close.head,'hd');o.t.style.cssText='position:absolute;left:55cqw;right:4cqw;top:14cqw;font-size:5.2cqw';
   o.s=E('p',null,null,r,'position:absolute;left:55cqw;right:4cqw;top:36.5cqw;margin:0');var a=E('a',null,CFG.close.label,o.s,'font:700 '+(CFG.close.size||2.3)+'cqw/1.25 \'Source Sans 3\',Arial,sans-serif;color:var(--stage-blue);position:relative;z-index:6;overflow-wrap:anywhere');a.href=EXPLAINER;a.target='_blank';a.rel='noopener';
-  if(NARR&&CFG.credit)o.cr=E('p',null,CFG.credit,r,'position:absolute;left:55cqw;right:4cqw;top:46.5cqw;margin:0;font:600 1.6cqw/1.3 \'Source Sans 3\',Arial,sans-serif;color:var(--stage-muted)');
+  /* the credits: the narrated cut's voice, then the recording the piano plays (every variant) */
+  var cr=[NARR&&CFG.credit,CFG.music].filter(Boolean).join(' ');
+  if(cr)o.cr=E('p',null,cr,r,'position:absolute;left:55cqw;right:4cqw;top:46.5cqw;margin:0;font:600 1.6cqw/1.3 \'Source Sans 3\',Arial,sans-serif;color:var(--stage-muted)');
 },function(o,t){o.lock.style.opacity=eo(k(t,0.1,1.0));reveal(o.t.ws,t,0.9,0.1,0.6);fade(o.s,t,2.4,3.0);if(o.cr)fade(o.cr,t,3.0,3.6);});
 
 /* ---- the barriers: five pixel invaders between scenes ----
@@ -486,7 +488,9 @@ function measure(){var k2=buildK();if(k2)K=k2;}
    in assets/piano/. The other voices are built from the browser's
    oscillators, and the score renders offline for the MP4 too. ---- */
 var Music=(function(){
-  var B=0.6,ctx=null,master=null,send=null,bus=null,idx=0,ev=[],noise=null;
+  /* B is one beat: 0.56 s, 107 to the minute (Sam, 2026-10-27, hearing the recorded piano: "tempos could come up a
+     bit"); the picture was cut to 0.6 s, 100 to the minute */
+  var B=0.56,ctx=null,master=null,send=null,bus=null,idx=0,ev=[],noise=null;
   function mtof(m){return 440*Math.pow(2,(m-69)/12);}
   /* the recorded piano: one sample every minor third from C1 to C8 (C, D#, F#, A), five seconds each.
      A key plays the nearest sample, re-pitched by at most a semitone and a half. Each sample starts
@@ -518,8 +522,11 @@ var Music=(function(){
     var e=[],bar=4*B,bars=35,edge=[2,6,10,18,26,30],
         /* the piano's level in each section, set so the climb measures as the orchestra's did */
         PG={intro:1.3,a1:1.2,a2:1.38,b:0.9,c:0.85,br:1.1,cl:0.75};
-    /* the targets slide: section C (the theme in the horns) runs four bars longer */
-    if(HOW){var nb4=Math.round(D/bar);edge=[2,6,10,18,26+nb4,30+nb4];bars=35+nb4;}
+    /* each section arrives at the bar nearest the time it arrived at 100 to the minute, the tempo the picture was
+       cut to, so it still comes in ahead of its scene (at 107, B lands 0.36 s before the third scene, the closest);
+       the targets slide makes section C (the theme in the horns) four of those bars longer */
+    var AT=2.4,at=edge.map(function(b,i){return (b+(HOW&&i>=4?4:0))*AT;});
+    edge=at.map(function(x){return Math.round(x/bar);});bars=Math.round((bars+(HOW?4:0))*AT/bar);
     /* the narrated cut: each section arrives just ahead of the scene it belongs
        to, at the same tempo, so a longer scene repeats more of its phrase */
     if(NARR){/* with the targets slide, C arrives ahead of the slide, as in the introductions, and every later scene sits one place on */
