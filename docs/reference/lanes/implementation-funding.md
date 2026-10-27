@@ -1,7 +1,7 @@
 ---
 title: "Implementation Funding tab / the $35M model — lane state"
 created: 2026-08-28
-updated: 2026-10-25
+updated: 2026-10-27
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -11,13 +11,13 @@ related:
 
 # Implementation Funding tab / the $35M model
 
-> **Always-current lane state, not an archive** (compacted 2026-09-03, 09-12, 09-13, 09-29, 10-24; narratives live in the [lessons](../../cpl_funding_lessons.md), which hold each dated section this file cites).
+> **Always-current lane state, not an archive** (compacted through 2026-10-27; narratives live in the [lessons](../../cpl_funding_lessons.md), which hold each dated section this file cites).
 
 **What this lane is:** The four priorities, their shares and factors, what each counts toward, and the college-by-college allocation.
 
 ## Status
 
-✅ **COLLEGE DASHBOARD ROUNDS 8 AND 9 LIVE** (S302–S303); `map_coordinator_summary()` answers booleans, never a name. ✅ **THE REPORTING BOX** (one report a year, eight NOVA categories): `cpl_funding_reports`, INSERT-only, newest per year counts, Withdraw unreports (`markReports`); college half via `cpl_funding_my_reports()`. Guards `cpl_funding_reporting_box`, `cpl_funding_reports_college_half`.
+✅ **COLLEGE DASHBOARD ROUNDS 8 AND 9 LIVE**; `map_coordinator_summary()` answers booleans, never a name. ✅ **THE REPORTING BOX** (one report a year, eight NOVA categories): `cpl_funding_reports`, INSERT-only, newest per year counts, Withdraw unreports (`markReports`); college half via `cpl_funding_my_reports()`. Guards `cpl_funding_reporting_box`, `cpl_funding_reports_college_half`.
 
 ✅ **Refresh everything, the published scenario on every visit, and My CPL Funding (Sam, 2026-09-30):** moved verbatim to [`cpl_funding_lessons.md`](../../cpl_funding_lessons.md), *Moved from the lane (S480)*. ⭐ **No "funding model" in college-facing text** (card 14); ⭐ **"through apportionment" is for the seed grant only.**
 
@@ -33,15 +33,13 @@ related:
 
 ✅ **2026-10-19:** the memo and report lead with SB 135 (`MEMO_BLOCKS`); the opening follows `x_lede` until saved.
 
-⏳ **The memo's opening waits on Sam's paste (Sheet 129 card 1, *proposed*, 03:53Z 2026-10-26; `cpl_memory`
-`sam-sheet-129-rulings-2026-10-26`).** Sam revised the memo by editing the explainer's Overview (`x_lede`, saved 01:23Z),
-which the memo's opening follows until `memo_lead` is saved, so the Word export printed the seed-grant paragraph and the
-confirmation sentence twice. He chose the proposed opening (his words, the two repeats dropped, a numbered list, braces
-for the figures; the text is `MEMO_LEAD_PROPOSED_128` in `CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py`).
-He pastes it under *Edit the memo's text* (curator text, never SQL) and puts *This page* back in the Overview. At 03:55Z
-`cpl_funding_config` still read 01:23:35Z, so check it before calling the opening done. Still open beside it: his text
-says 115 credit colleges and three noncredit campuses where the memo's Funding Overview says 116 and 2, and a Priority 3
-strategy ends in *studentsr*.
+⏳ **The memo's opening waits on Sam's paste (Sheet 129 card 1; `cpl_memory` `sam-sheet-129-rulings-2026-10-26`).**
+The memo's opening follows the explainer's Overview (`x_lede`) until `memo_lead` is saved, so the Word export printed two
+passages twice. He chose the proposed opening (`MEMO_LEAD_PROPOSED_128` in
+`CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py`) and pastes it under *Edit the memo's text* (curator text,
+never SQL). Read S503 (10-27): *This page* is back in the Overview (18:16Z 10-26); `memo_lead` is unsaved.
+Still open beside it: his text says 115 credit colleges and three noncredit campuses where the memo's Funding Overview
+says 116 and 2, and a Priority 3 strategy still ends in *studentsr*.
 
 ✅ **The My College view and the one public page (Sam, 2026-10-15):** lessons, *Moved from the lane (S491)*.
 
@@ -67,7 +65,7 @@ strategy ends in *studentsr*.
 
 ⭐ **GOAL (C) IS MEASURED BY THE CO FROM EDD WAGE DATA (Sam, 2026-09-22).** Career attainment (`ca_u`) derives (C) and qualifies nothing until the first import. Receiver: `funding/career_attainment_import.json` ([format](../../kb-notes/reference-career-attainment-import.md)) → `read_career_attainment()`; units only, an unmasked count under 10 stops the import (`tests/funding_career_import_test.py`). **CO research sends the first file.**
 
-✅ **My Institution is hidden and its code kept (Sam, 2026-10-27: *"OK, let's hide the My Institution and save the code"*; *"Hiding will mean hiding the Step 1 and 2 at the top and any other link to it"*; S502).** One switch, `oneViewOn()` in `cpl_funding.js` (`window.CPL_FUNDING_ONE_VIEW === true`, read by `college_briefing.js` too): off, the public page paints no Step 1 or Step 2 and hides the explainer's Step 1 band, PDF prints without asking for a college, and `?view=one`, `chooseOne` and My College's link open the institution's row on the dashboard. The suites that cover the view and the `funding-model-mycpl` a11y target turn it on; `cpl_funding_my_institution_hidden.test.js` pins the default. Sam's next step for the row: a link to My College or CPL Pathways once those pages settle.
+✅ **My Institution is hidden and its code kept (Sam, 2026-10-27: *"OK, let's hide the My Institution and save the code"*; *"Hiding will mean hiding the Step 1 and 2 at the top and any other link to it"*; S502).** One switch, `oneViewOn()` in `cpl_funding.js` (`window.CPL_FUNDING_ONE_VIEW === true`, read by `college_briefing.js` too): off, no Step 1 or 2 and no explainer Step 1 band, PDF prints at once, and `?view=one`, `chooseOne` and My College's link open the institution's row. The view's suites and the `funding-model-mycpl` a11y target turn it on; `cpl_funding_my_institution_hidden.test.js` pins the default. Sam's next step for the row: a link to My College or CPL Pathways once those pages settle.
 
 ✅ **My College's funding now lives here (Sam, 2026-10-21: "move funding to Implementation Funding"; S443).** My CPL Funding on My College is a link to the funding page (`?college=<roster key>`, the institution's row while My Institution is hidden; `&view=one` with the switch on; #2316); the college's expenditure reports open at the top of the 2026-28 Funding view (`reportsPanel`, #2320). ✅ **The public page forgets the chosen institution on reload (Sam, Open Asks Sheet 111 card 2, 2026-10-21: "forget", reversing call 9).** The choice lasts the visit (#2327).
 
@@ -77,13 +75,13 @@ strategy ends in *studentsr*.
 
 ✅ **Scenario 4 (built S449, 2026-10-22; published above).** The noncredit lane is a **scenario setting**, `ncLane: "outcomes"`; Scenarios 1 to 3 keep the origination twins. The share keeps its FTES sizing and releases on the scenario's own `ncOutcomes` (`unit: "count"`, each a `metric_src`, `target_rule` and share): NC-1 `nc_exh` under `pct_floor_cap` (floor 2, 5% of `nc_cdcp`, cap 10), NC-2 `nc_course` under `fixed` 1; `ncReported` carries the award count, funded by nothing. **A card's label edits in place** (Sam, 2026-10-25, S480: *"want to change it from NC-1"*): the row's `label`, empty reading NC-n, carries to the rows, the CSV and the memo; its outcomes read as chips in its heading. Guard `tests/cpl_funding_s480_asks.test.js`. Its conditions (`ncCondList`, from `cpl_funding_nc_attestation_pub`) gate the noncredit share alone (`ncLaneGate`). The statewide target sums the institutions'; one without a denominator reads TBA and $0, never the floor. Guard `tests/cpl_funding_nc_outcomes.test.js`; seed receipt `kb/receipts/cpl_funding_config_scenario4_2026-10-22_s449.sql`. ⚠️ **A missing `nc_exh`, `nc_cdcp` or `nc_course` reads TBA and $0 (never an advance); an institution that has not attested reads *not yet on file* and its noncredit share is held**; a missing view would read pending, and pending RELEASES (`ncLaneGate`: `blocked: false`). **Kept on Sam's own call (Sheet 115 cards 2 and 3):** a credit college's noncredit share gates on the confirmation plus the two noncredit conditions; a standalone's attested noncredit coordinator stands in for the MAP coordinator condition. ✅ **The attestation surface, its builder channels and the memo's noncredit section (S470 to S473):** lessons, *Moved from the lane (S492)*; DR-09; guards `tests/cpl_funding_nc_attestation.test.js`, `tests/funding_nc_counts_test.py`, `tests/cpl_funding_memo_nc_outcomes.test.js`. **NEXT (noncredit lane):** Sam curates the How to meet it passages and the memo's passage.
 
-✅ **The public requests wait for a MAP team reviewer (Sam, 2026-10-27; `cpl_memory` `sam-funding-public-domain-check-csm-accept-2026-10-27`, `-review-magic-link-`; S502).** The participation request and the noncredit attestation land as `self_attested` and count once a signed-in reviewer (magic link, `is_allowed_reviewer()`) accepts them: only a `confirmed` row meets a condition (`ELIG.optin`, `ncAttestStanding`). `cfp_insert_self` and `cna_insert_self` require an address on the institution's or its district's domain (`cpl_funding_email_domain_ok`, from `map_college_contacts` via `cpl_funding_college_map`; a district domain is one on file for two or more of its colleges; free mail never counts; no address on file accepts any), and the page asks `cpl_funding_email_domains` first. The line says *awaiting MAP team review* and hides the form; Accept confirms and opens a mailto draft to the sender alone (`cpl_funding_equity`'s PII guard keeps coordinator addresses out of `cpl_funding.js`; a reviewer copies the CPL Coordinator by hand), ending *If you did not send this request, please reply*; Deny removes the row. Migration `kb/migrations/2026-10-27_s500_funding_request_review.sql` (rollback in its header).
+✅ **The public requests wait for a MAP team reviewer (Sam, 2026-10-27; `cpl_memory` `sam-funding-public-domain-check-csm-accept-2026-10-27`, `-review-magic-link-`; S502).** The participation request and the noncredit attestation land as `self_attested` and count once a signed-in reviewer (magic link, `is_allowed_reviewer()`) accepts them: only a `confirmed` row meets a condition (`ELIG.optin`, `ncAttestStanding`). `cfp_insert_self` and `cna_insert_self` require an address on the institution's or its district's domain (`cpl_funding_email_domain_ok`, from `map_college_contacts` via `cpl_funding_college_map`; a district domain is one on file for two or more of its colleges; free mail never counts; no address on file accepts any), and the page asks `cpl_funding_email_domains` first. The line says *awaiting MAP team review* and hides the form; Accept confirms and drafts a mailto to the sender alone (`cpl_funding_equity`'s PII guard keeps coordinator addresses out of `cpl_funding.js`; a reviewer copies the CPL Coordinator by hand); Deny removes the row. Migration `kb/migrations/2026-10-27_s500_funding_request_review.sql` (rollback in its header).
 
 ✅ **The attestation form in Sam's words (#2476):** lessons, *Moved from the lane (S494)*; `NC_LEAD_TYPES` matches `cna_lead_chk`.
 
-✅ **THE PUBLIC PAGE'S HEADER (Sam, 2026-10-26, #2478).** **Resource Links** opens five links, a gray line each (the CPL Library is off this page: *"we'll just use it with our meetings with colleges and agencies"*), then *As of … Ver. N*, PDF, and Collapse all last. Ask Sierra is the lower-right chip. **Edit this page shows only inside COBI's Public page view** (`edit_page.js`: `window.self !== window.top`), never at the public address. Step 1 shows the chosen view's description in words (Sam kept it, Sheet 133 card 2).
+✅ **THE PUBLIC PAGE'S HEADER (Sam, 2026-10-26, #2478).** **Resource Links** opens five links, a gray line each (the CPL Library is off this page: *"we'll just use it with our meetings with colleges and agencies"*), then *As of … Ver. N*, PDF, and Collapse all last. Ask Sierra is the lower-right chip. **Edit this page shows only inside COBI's Public page view** (`edit_page.js`: `window.self !== window.top`), never at the public address. Step 1 names the chosen view in words (Sheet 133 card 2).
 
-⭐ **WCAG 2.2 AA FOR THE CPL SUMMIT (10-30; Sam: *"fully accessible according to the latest state and federal standards and mobile friendly"*).** ⚠️ Keep `funding-model-mycpl` in every pre-Summit sweep: it is the one target that opens My Institution. Method: [`methodology-geometry-is-half-an-accessibility-audit`](../../kb-notes/methodology-geometry-is-half-an-accessibility-audit.md). ✅ **The narrated cut (1.2.5), 2026-10-27:** Sierra read scene 8 again (S495, Sheet 133 card 1) and scenes 5 to 7 ([Open Asks Sheet 136](https://claude.ai/artifact/JLNSJm65Z9s3SMmbJxE3Cm) card 1, *reread*, 14:03Z), so she says v11's figures (3,598.2 FTES a priority, 31.3 the average Access target, *the credit funding*); `build.py --check`: n2 matches. Draft 4 (2:52) sits in the Contents right after the music film, which stays the introduction (`video-narrated-link`, #2499; a11y target `funding-film-narrated`). **NEXT:** ① The morning of 10-30: re-run the ten (`npm run a11y`, axe since #2492) and `funding-film-narrated`; all ten passed on 82ea5ce5 (S495). ② After the Summit: the funding section summary holding a control (axe, curator views).
+⭐ **WCAG 2.2 AA FOR THE CPL SUMMIT (10-30; Sam: *"fully accessible according to the latest state and federal standards and mobile friendly"*).** ⚠️ Keep `funding-model-mycpl` in every pre-Summit sweep: it is the one target that opens My Institution. Method: [`methodology-geometry-is-half-an-accessibility-audit`](../../kb-notes/methodology-geometry-is-half-an-accessibility-audit.md). ✅ **The narrated cut (1.2.5), 2026-10-27:** Sierra read scene 8 again (S495, Sheet 133 card 1) and scenes 5 to 7 ([Open Asks Sheet 136](https://claude.ai/artifact/JLNSJm65Z9s3SMmbJxE3Cm) card 1, *reread*, 14:03Z), so she says v11's figures; `build.py --check`: n2 matches. Draft 4 (2:52) sits in the Contents right after the music film, which stays the introduction (`video-narrated-link`, #2499; a11y target `funding-film-narrated`). **NEXT:** ① The morning of 10-30: re-run the ten (`npm run a11y`, axe since #2492) and `funding-film-narrated`; all ten passed on 82ea5ce5 (S495). ② After the Summit: the funding section summary holding a control (axe, curator views).
 
 ## How NC-2 is counted (Sam, Open Asks Sheet 125 card 1, 18:12Z 2026-10-24, his own call)
 
