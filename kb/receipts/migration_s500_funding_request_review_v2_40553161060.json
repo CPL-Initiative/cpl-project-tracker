@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-10-27_s500_funding_request_review.sql",
+ "name": "s500_funding_request_review_v2",
+ "version": "20261027175235",
+ "sha256": "611d42a02e915327ae45f3a2c4878b2a021f3a723d79f65046ec5c7f0568349e",
+ "run": "40553161060",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
