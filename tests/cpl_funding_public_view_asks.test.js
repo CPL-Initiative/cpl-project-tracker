@@ -49,6 +49,9 @@ function setup(opts) {
   w.scrollTo = function () {};
   w.Element.prototype.scrollIntoView = function () {};
   w.CPL_FUNDING_NO_REMOTE = true;
+  // My Institution is hidden on the public page (Sam, 2026-10-27); its code is kept, and this
+  // suite keeps it honest with the switch on (cpl_funding.js oneViewOn).
+  w.CPL_FUNDING_ONE_VIEW = true;
   w.fetch = function () { return new Promise(function () {}); };
   if (opts.signedIn) w.CPL_SESSION = session();
   if (opts.selection) w.localStorage.setItem("cpl_funding_selection_v1", JSON.stringify(opts.selection));

@@ -651,11 +651,24 @@ B._state.data = {
 const fr = wf.document.getElementById("college-briefing-root");
 B.render(fr);
 const fblk = blockOf(B), ftxt = fblk.textContent;
-check("render: My College's page carries My CPL Funding as a link to the funding page, on the college",
+// The funding page's My Institution view is hidden (Sam, 2026-10-27), so the link opens
+// the college's row on the dashboard; with the switch on, it opens My CPL Funding again.
+check("render: My College's page links the college's row on the funding page while My Institution is hidden",
+  (function () {
+    const a = fr.querySelector('details.cb-sec[data-sec="funding"] a#cb-fundpage');
+    return !!a && /^funding-model\/\?college=[^&]+$/.test(a.getAttribute("href")) &&
+      a.textContent === "Open this college\u2019s funding row".replace("\u2019", "'") &&
+      !/My Institution/.test(fr.querySelector('details.cb-sec[data-sec="funding"]').textContent);
+  })());
+wf.CPL_FUNDING_ONE_VIEW = true;
+B.render(fr);
+check("render: with the switch on, the link opens My CPL Funding on the college",
   (function () {
     const a = fr.querySelector('details.cb-sec[data-sec="funding"] a#cb-fundpage');
     return !!a && /^funding-model\/\?college=[^&]+&view=one$/.test(a.getAttribute("href")) && a.textContent === "Open My CPL Funding";
   })());
+delete wf.CPL_FUNDING_ONE_VIEW;
+B.render(fr);
 check("render: and no funding figure is left on My College's page", fr.querySelectorAll(".cb-fbig, .cb-prios").length === 0);
 check("render: the seed grant appears as money", /\$50,000/.test(ftxt));
 check("render: the allocation appears as money", /\$175,000/.test(ftxt));

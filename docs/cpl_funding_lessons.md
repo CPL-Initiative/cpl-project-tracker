@@ -710,3 +710,20 @@ Verbatim from the lane's *WCAG 2.2 AA FOR THE CPL SUMMIT* paragraph, to bring it
   what it did", which renders only where the last nightly run settled something, and the 2026-10-26 run settled none of
   13. #2501 opens a sample only where one exists.
 - **The ten public targets pass on main 82ea5ce5 with axe** (04:40Z 2026-10-27), after every merge of the run.
+
+## Moved from the lane (S502, 2026-10-27)
+
+The lane passed its 20,000-byte budget; this paragraph moved verbatim.
+
+✅ **THE ONE-POOL MODEL IS LIVE** (2026-08-31, #1427): `cpl_funding.js` runs one solve over 118 institutions (115 colleges + NOCE / SD Cont. Ed / Calbright as ordinary rows; Mt. SAC NC rides the Mt. San Antonio row) · **$150,000 base / $400,000 cap on the COMBINED award** · every award splits into credit and noncredit shares by FTES share, the NC share restricted to the noncredit measures. ⭐ **Noncredit's portion is a dial (Sam, 2026-10-14, #2132):** `pool.nc_portion_pct`; blank lets the teaching mix decide; set, `solveNcWeight()` finds one weight on noncredit FTES for `sizeOfW` and `laneShareOfW` alike ([note](../../kb-notes/methodology-a-share-target-inside-a-bounded-allocation-is-a-solved-weight.md)). ⚠️ Displays print `plainFtesOf()`; `sizeOf()` is weighted. Guard `cpl_funding_nc_portion`. Under the origination lane (Scenarios 1 to 3) the noncredit trio earn by **ORIGINATION, no advances** (N2 b). Statewide Total Possible = CR+NC. ⭐ **NEVER READ THE CONFIG — CALL `_effective()` / `_alloc()` / `_prios()` / `_ncPrios()` / `_ncAward()`**; dump live dials with `scripts/funding_effective.js --config <file>` (`npm install` first). Baked defaults are stale by design (`cpl_funding_effective.test.js`).
+
+## S502 SkyHuckleberry (2026-10-27): My Institution hidden, the review gate, main's PII leak
+
+- **A switch, not a deletion.** Sam's "hide ... and save the code" became `oneViewOn()` (`window.CPL_FUNDING_ONE_VIEW === true`). The suites that cover the kept view turn it on, so the code stays tested; `cpl_funding_my_institution_hidden.test.js` pins the default. Every way in (`?view=one`, `chooseOne`, My College's link) opens the row instead (#2513).
+- **Grep every suite that drives a view before CI does.** Two suites that drive the chooser (`cpl_funding_my_college_text`, and `cpl_funding_refresh_sources` needing a re-render after the switch) surfaced only in CI. The list of suites that load the module is cheap to compute (`tests/lib/shard.js` plus a grep); run it whole, four at a time.
+- **Source-scan guards are rules of the module.** `cpl_funding_equity` bars `coordinator_email` from `cpl_funding.js`, so Accept's confirmation mail goes to the requester alone; `cpl_funding_row_legibility` pins the Confirm chip's exact condition. Read the guards a change touches before writing it.
+- **Postgres: `= any ((select list from d))` reads as a subquery of text[] rows** (text = text[]); pass the array (`= any (d.list)`). The Management API rolled the whole batch back, so a 400 receipt means nothing applied.
+- **New tables inherit ALL privileges for anon and authenticated** from this project's default privileges; RLS alone blocked the writes. `supabase_table_grants_test.py` requires the migration's own revoke and grant.
+- **A bot's push starts no CI.** The migrate workflow's receipt commit became #2514's head with no checks; a real change (a base merge) gives CI a head.
+- **A daily-run artifact can carry a reviewer's address.** Sam curated at 12:28Z signed in as a cccco.edu address and the run baked it into `credential_reference_data.js` as `curated_by`; `pii_guard` failed every PR. `_public_curator()` now writes cohort ids, the team mailbox, or "reviewer" (#2515).
+- **The runner's summary can land above the tail.** When a shard's log ends mid-file with exit 1 and no summary, the failing file is not in the tail; find it locally rather than reading 2,000 log lines (the log download host is outside this sandbox's proxy).
