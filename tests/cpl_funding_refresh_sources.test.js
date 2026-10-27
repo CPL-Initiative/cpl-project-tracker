@@ -198,8 +198,11 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
     check("5b: a public rendering carries no Unit sources link", !doc.querySelector("[data-srcopen]"));
     check("3k: a public hover stops at the units (no exact qualifying product)",
       /units in MAP/.test(pd.cells[1].cr_current.tip) && !/so it qualifies for/.test(pd.cells[1].cr_current.tip));
-    // 6. My CPL Funding beside the table
+    // 6. My CPL Funding beside the table, with the switch on: the view is hidden on the
+    // public page (Sam, 2026-10-27) and its code kept (cpl_funding.js oneViewOn).
+    w.CPL_FUNDING_ONE_VIEW = true;
     w.eval(briefSrc);
+    T.render();
     const seg = doc.getElementById("cplFundCollegeView");
     // Sam's names since 2026-10-20: All Institutions and My Institution.
     check("6a: the public rendering offers All Institutions and My Institution",

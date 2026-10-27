@@ -14533,7 +14533,17 @@
   // block is My College's own renderer (college_briefing.js fundingPanel), so
   // the two pages cannot describe one institution two ways. It reads this
   // module, so every redraw of the model redraws it too.
-  function oneCollegeView() { return publicMode() && state.collegeView === "one"; }
+  // ⚠ MY INSTITUTION IS HIDDEN AND ITS CODE KEPT (Sam, 2026-10-27: "OK, let's hide
+  // the My Institution and save the code ... Later, when the My College or CPL
+  // Pathways pages are better settled, we can throw on a link to either on the dash
+  // college row." Then: "Hiding will mean hiding the Step 1 and 2 at the top and
+  // any other link to it."). One public dashboard: Steps 1 and 2 do not paint, PDF
+  // prints the page without asking for a college, and every way in (?view=one, My
+  // College's link, chooseOne, showMyFunding) opens the institution's row on the
+  // dashboard. window.CPL_FUNDING_ONE_VIEW = true brings all of it back; the tests
+  // that keep the view's code honest set it, and My College reads the same switch.
+  function oneViewOn() { return window.CPL_FUNDING_ONE_VIEW === true; }
+  function oneCollegeView() { return oneViewOn() && publicMode() && state.collegeView === "one"; }
   // THE VIEW COMES FIRST, AS STEP 1 (Sam, 2026-10-20: "Refine the Step 1 and 2
   // by having the user select first which view they want: 'All Institutions' or
   // 'My Institution' (note that I'm using Institution rather than spelling out
@@ -14637,7 +14647,7 @@
       "Choose another institution</button>" : "";
   }
   function stepOneHtml() {
-    if (!publicMode()) return "";
+    if (!publicMode() || !oneViewOn()) return "";
     var chosen = stepOneChosen();
     return '<div class="cplfund-step1" data-step1="1" data-view="' + (oneCollegeView() ? "one" : "all") + '">' +
       stepOneViewHtml() +
@@ -14680,6 +14690,10 @@
     else if (box) { box.insertAdjacentHTML("afterbegin", stepOneViewHtml()); }
   }
   function paintStepOneMount(host) {
+    // With My Institution hidden, the explainer's Step 1 band goes too, so no
+    // empty labeled region sits above the Contents.
+    var band = host.parentNode && host.parentNode.tagName === "SECTION" ? host.parentNode : null;
+    if (band) band.hidden = !oneViewOn() || !publicMode();
     var sel = host.querySelector("#cplFundOnePick");
     if (!sel || !publicMode()) { host.innerHTML = stepOneHtml(); return; }
     patchStepOne(sel);
@@ -14696,10 +14710,28 @@
   var ONE_STORE = "cplfund_one_choice_v1";
   function chooseOne(v) {
     v = oneChoiceValid(v) ? String(v) : "";
+    if (!oneViewOn()) { openInstitutionRow(v); return; }
     state.oneCollege = v;
     if (v) state.collegeView = "one";
     render();
     try { document.dispatchEvent(new CustomEvent("cplfund:onechoice", { detail: { value: v } })); } catch (e) {}
+  }
+  // With My Institution hidden, a choice of institution opens its row on the
+  // dashboard (a district: its colleges' rows, grouped by district) and scrolls
+  // to it, the way a ?college= link does.
+  function openInstitutionRow(v) {
+    state.collegeView = "all";
+    state.oneCollege = "";
+    if (!v) { render(); return; }
+    var dist = v.indexOf(ONE_DISTRICT) === 0;
+    var members = dist ? districtMembers(v.slice(ONE_DISTRICT.length)) : [v];
+    if (dist) state.group = "district";
+    state.q = "";
+    members.forEach(function (m) { state.open["c:" + m] = true; });
+    saveSectionState("college", true);
+    _deepLinkCollege = members[0] || null;
+    _deepLinkPending = !!_deepLinkCollege;
+    render();
   }
   var _oneRestored = false;
   function restoreOneChoice() {
@@ -14712,7 +14744,7 @@
   // statewide page as the second choice. `go` prints: window.print() on the
   // explainer, the print window on the tab.
   function pdfGate(go) {
-    if (!publicMode() || (oneCollegeView() && state.oneCollege)) { go(); return; }
+    if (!publicMode() || !oneViewOn() || (oneCollegeView() && state.oneCollege)) { go(); return; }
     var dlg = document.getElementById("cplFundPdfAsk");
     if (!dlg) {
       dlg = document.createElement("dialog");
@@ -14897,7 +14929,7 @@
   // to the one-institution view, opens the section, and puts the reader on the
   // chooser.
   function showMyFunding() {
-    if (!publicMode()) return false;
+    if (!publicMode() || !oneViewOn()) return false;
     state.collegeView = "one";
     saveSectionState("college", true);
     render();
@@ -17118,7 +17150,7 @@
     // on a public rendering, where that view lives.
     var view = "";
     try { view = new URLSearchParams(window.location.search).get("view") || ""; } catch (e) {}
-    if (view === "one" && publicMode()) {
+    if (view === "one" && publicMode() && oneViewOn()) {
       state.oneCollege = hit.college; state.collegeView = "one"; _oneRestored = true;
       _deepLinkPending = false;
       return;

@@ -53,6 +53,9 @@ function page(before) {
   const dom = new JSDOM(html, { runScripts: "outside-only", url: "https://example.org/funding-model/" });
   const w = dom.window;
   w.CPL_FUNDING_NO_REMOTE = true;
+  // My Institution is hidden on the public page (Sam, 2026-10-27); its code is kept, and this
+  // suite keeps it honest with the switch on (cpl_funding.js oneViewOn).
+  w.CPL_FUNDING_ONE_VIEW = true;
   w.scrollTo = function () {};
   w.Element.prototype.scrollIntoView = function () {};
   w.eval(read("cpl_funding_data.js"));
@@ -208,6 +211,7 @@ check("a2: My Institution with none chosen keeps the statewide cards", T._public
     { runScripts: "outside-only", url: "https://example.org/funding-model/" });
   const w2 = dom2.window;
   w2.CPL_FUNDING_NO_REMOTE = true;
+  w2.CPL_FUNDING_ONE_VIEW = true;
   w2.CPL_FUNDING_PUBLIC = true;
   w2.CPL_FUNDING_EMBED = "college";
   w2.localStorage.setItem("cplfund_one_choice_v1", both.college);
