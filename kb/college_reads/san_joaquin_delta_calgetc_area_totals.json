@@ -1,0 +1,15 @@
+{
+ "_readme": "S499 SkyCloudberry, 2026-10-27. San Joaquin Delta's Cal-GETC certificate 45621 reads 29-40 against 34 because the record keeps Area 1's (1A, 1B, 1C), Area 3's (3A, 3B) and Area 5's (5A, 5B) sub-areas as separate blocks with no figure, where the reader's notes say the page prints one minimum over each area (9, 6 and 7 units): Hartnell's CalGETC 45096 shape (S495). This read prints the page's own words around each area heading and its minimum, so a pool_areas step for Delta is written from the page. One page, no model call.",
+ "college": "San Joaquin Delta College",
+ "questions": {
+  "units": "How the page states each Cal-GETC area's minimum over its sub-areas, and the words for Area 5's laboratory."
+ },
+ "keywords": [
+  "[^<>\"]{0,160}[Mm]inimum[^<\"]{0,160}",
+  "[^<>\"]{0,40}\\bArea\\s+[0-9][^<\"]{0,160}",
+  "[^<>\"]{0,80}[Ll]aborator[^<\"]{0,120}"
+ ],
+ "pages": [
+  {"answers": ["units"], "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3403&print"}
+ ]
+}
