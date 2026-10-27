@@ -179,3 +179,16 @@ Sam asked for the paintings to go and for the library's look (lane, *State*). Th
 - **The box is a one-row textarea that grows**: a phone cut the *Try:* starters off mid-word, and the program question CPL Pathways sends in `?ask=` showed a fraction of itself. Enter sends; Shift+Enter is a new line.
 - **New question starts over**: the landing returns and the conversation and its history clear.
 - **The audience pick is still required** before the first send (Sam, 2026-07-01), so no word starts selected; a send without one opens the folded row and says where it is.
+
+## S500 (SkyLingonberry, 2026-10-27): no header row, links on every reference, the asker read from the question
+
+- **A reference she quotes is only as linked as the instruction she quotes.** Sam's portfolio instruction wrote
+  `creditforbeingyou.org` bare; she repeated it word for word and the renderers, which linked only `https://` text, showed
+  it as text. Three layers now carry the link: the renderers (bare domains, emails, `mailto:`), `LINK_RULE` in her stable
+  prompt, and Suggest wording's rule 8. `tests/sierra_links.test.js`.
+- **The audience pick changed her wording, never her substance** (matched questions: insider terms in 21% of student
+  answers, 63 to 68% of faculty and administrator answers), and 95% of her answers carried no pick. Sam ruled *infer*:
+  `READER_RULE` reads the asker; an AUDIENCE section still wins for COBI's box.
+- **The header's controls moved to the footer**: the logo became the footer's link to MAP (Sheet 53 card 2 carried), and
+  About Sierra opens under the footer's row without hover, since text appearing under the pointer at the page's foot
+  moves the row.
