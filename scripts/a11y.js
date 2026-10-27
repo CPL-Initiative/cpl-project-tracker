@@ -733,6 +733,27 @@ function MOTION(known) {
           if (h.first !== 1) note(route.name, `headings  starts at h${h.first === null ? "—(none)" : h.first}, not h1`);
           if (h.skips.length) note(route.name, `headings  skips: ${h.skips.join("; ")}`);
 
+          /* axe runs BEFORE the focus-ring loop below: that loop focuses every control,
+             which scrolls tables inside their own scrollers, and a sticky header left
+             over a row read as an obscured target (S494: the funding caret for SD
+             Cont. Ed, 80x27, flagged after the loop and clean before it). */
+          if (AXE_SOURCE) {
+            const off = cfg.axeDisable || {};
+            Object.keys(off).forEach((id) => {
+              if (!String(off[id] || "").trim()) note(route.name, `axe       rule ${id} turned off with no reason in axeDisable`);
+            });
+            if (!(await page.evaluate(() => !!window.axe))) await page.addScriptTag({ content: AXE_SOURCE });
+            const ax = await page.evaluate(async (o) => {
+              const rules = {};
+              o.off.forEach((id) => { rules[id] = { enabled: false }; });
+              const res = await window.axe.run(document, { runOnly: { type: "tag", values: o.tags }, rules, resultTypes: ["violations"] });
+              window.scrollTo(0, 0);
+              return res.violations.map((v) => ({ id: v.id, impact: v.impact, help: v.help, n: v.nodes.length,
+                where: v.nodes.slice(0, 3).map((x) => [].concat(x.target).join(" ")) }));
+            }, { tags: AXE_TAGS, off: Object.keys(off) });
+            ax.forEach((v) => note(route.name, `axe       ${v.id} (${v.impact}) ${v.n} node(s): ${v.help} — ${v.where.join(" | ")}`));
+          }
+
           const noRing = await page.evaluate(() => {
             const out = [];
             /* ⚠️ A CLOSED <details> STILL MEASURES. Chromium hides its content
@@ -785,22 +806,6 @@ function MOTION(known) {
           });
           if (noRing.length) note(route.name, `focus     ${noRing.length} focusable with no ring: ${noRing.slice(0, 6).join(", ")}`);
 
-          if (AXE_SOURCE) {
-            const off = cfg.axeDisable || {};
-            Object.keys(off).forEach((id) => {
-              if (!String(off[id] || "").trim()) note(route.name, `axe       rule ${id} turned off with no reason in axeDisable`);
-            });
-            if (!(await page.evaluate(() => !!window.axe))) await page.addScriptTag({ content: AXE_SOURCE });
-            const ax = await page.evaluate(async (o) => {
-              const rules = {};
-              o.off.forEach((id) => { rules[id] = { enabled: false }; });
-              const res = await window.axe.run(document, { runOnly: { type: "tag", values: o.tags }, rules, resultTypes: ["violations"] });
-              window.scrollTo(0, 0);
-              return res.violations.map((v) => ({ id: v.id, impact: v.impact, help: v.help, n: v.nodes.length,
-                where: v.nodes.slice(0, 3).map((x) => [].concat(x.target).join(" ")) }));
-            }, { tags: AXE_TAGS, off: Object.keys(off) });
-            ax.forEach((v) => note(route.name, `axe       ${v.id} (${v.impact}) ${v.n} node(s): ${v.help} — ${v.where.join(" | ")}`));
-          }
         }
 
         if (shotDir) {
