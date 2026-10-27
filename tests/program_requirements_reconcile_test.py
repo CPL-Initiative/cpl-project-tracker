@@ -150,7 +150,15 @@ check("sub-areas whose own figures sum past the area's total are left alone",
            if x["name"].startswith("Area 3")]) == 2)
 
 print("Hartnell's Music repeat counts (S497)")
+# The filed record carries the step's result (reconcile 40466933762), so the record as read is that one with the
+# two fields taken off: no times on any course, the 2-semester list back to the one choice the reading made.
 mus = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "hartnell", "records", "43887.json")))["record"]
+for b in mus["blocks"]:
+    if b.pop("repeats", None):
+        b["minimum"] = 1
+    for c in b["courses"]:
+        for e in [c] + c.get("alternatives", []):
+            e.pop("times", None)
 mus_text = ("Unnamed Rule \u00b7 Complete ALL of the following Courses: \u00b7 MUS 10: Class Piano I (1) or MUS 11: "
             "Applied Piano (0.5) \u00b7 If MUS 11 is chosen, it must be taken for 2 semesters.\n"
             "2 semesters of any of the following Courses: \u00b7 MUS 20: Concert Choir")
