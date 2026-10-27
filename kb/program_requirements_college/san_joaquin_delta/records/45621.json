@@ -93,20 +93,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    29.0,
-    40.0
+    34.0,
+    35.0
    ],
    "stated": [
     34.0,
     34.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 29.0-40.0; the catalog states 34.0-34.0"
-   ]
+   "why": [],
+   "minimum": true
   },
   "repeated": {
    "codes": [],
@@ -130,7 +129,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -361,13 +360,13 @@
     ]
    },
    {
-    "name": "3A - Arts",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "name": "Area 3 - Arts and Humanities",
+    "rule": "choose_units",
+    "minimum": 6,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 6
     },
     "courses": [
      {
@@ -467,19 +466,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "3B - Humanities",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "ANTH 4",
       "units": 3,
@@ -837,6 +824,26 @@
       "alternatives": [],
       "catalog_addition": false
      }
+    ],
+    "floors": [
+     {
+      "name": "3A - Arts",
+      "rule": "choose_courses",
+      "minimum": 1,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "3B - Humanities",
+      "rule": "choose_courses",
+      "minimum": 1,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     }
     ]
    },
    {
@@ -1103,13 +1110,13 @@
     ]
    },
    {
-    "name": "5A - Physical Science",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "name": "Area 5 - Physical and Biological Sciences",
+    "rule": "choose_units",
+    "minimum": 7,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 7,
+     "max": 7
     },
     "courses": [
      {
@@ -1279,19 +1286,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "5B - Biological Science",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "ANTH 2",
       "units": 3,
@@ -1389,6 +1384,26 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
+     }
+    ],
+    "floors": [
+     {
+      "name": "5A - Physical Science",
+      "rule": "choose_courses",
+      "minimum": 1,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "5B - Biological Science",
+      "rule": "choose_courses",
+      "minimum": 1,
+      "stated": {
+       "min": null,
+       "max": null
+      }
      }
     ]
    },
@@ -1491,14 +1506,26 @@
    "Text is cut off at the end in the Languages Other than English section, after the requirements."
   ]
  },
- "extracted_run": 39217405432,
- "read_run": 39116289105,
+ "extracted_run": 40498068817,
+ "read_run": 39217405432,
  "reconciled": [
   {
-   "field": "total_units_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Units Required: 34"
+   "field": "blocks",
+   "was": [
+    "3A - Arts",
+    "3B - Humanities"
+   ],
+   "now": "Area 3 - Arts and Humanities",
+   "words": "Area 3 - Arts and Humanities\n\nComplete a minimum of 6 semester units with at least one course each from"
+  },
+  {
+   "field": "blocks",
+   "was": [
+    "5A - Physical Science",
+    "5B - Biological Science"
+   ],
+   "now": "Area 5 - Physical and Biological Sciences",
+   "words": "Area 5 - Physical and Biological Sciences\n\nComplete a minimum of 7 semester units with at least one course each from"
   }
  ]
 }
