@@ -139,6 +139,9 @@ def t_changed():
     with tempfile.TemporaryDirectory() as tmp:
         run = lambda *a: subprocess.run(list(a), cwd=tmp, capture_output=True, text=True)
         run("git", "init", "-q")
+        # No detached auto-maintenance racing the directory's cleanup (see docs_audit_test).
+        run("git", "config", "maintenance.auto", "false")
+        run("git", "config", "gc.auto", "0")
         run("git", "config", "user.email", "t@t")
         run("git", "config", "user.name", "t")
         open(os.path.join(tmp, "tracked.js"), "w").write("// one\n")
