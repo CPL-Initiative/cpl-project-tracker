@@ -205,8 +205,12 @@ both("map: every marker carries an accessible name", /g\.setAttribute\("aria-lab
 both("map: Enter and Space activate a marker", /ev\.key==="Enter"\s*\|\|\s*ev\.key===" "/);
 both("map: focus shows the same tooltip hover does", /g\.addEventListener\("focus"/);
 both("map: the tooltip can be placed without a mouse event", /function showTipAt\(x,y,/);
-both("map: college directory rows are focusable", /li\.tabIndex=0/);
-both("map: directory rows respond to Enter/Space", /li\.onkeydown=ev=>/);
+// S494: each row is a native button inside its list item (axe: li role="button" left the
+// lists holding no items), so the browser makes it focusable and gives it Enter and Space.
+both("map: college directory rows are native buttons (focusable; Enter and Space by the browser)",
+  /<li data-n="\$\{esc\(c\.n\)\}"><button type="button" class="row"/);
+both("map: installation directory rows are native buttons",
+  /<li data-n="\$\{esc\(b\.n\)\}"><button type="button" class="row"/);
 val("map: the panel tabs report their state to assistive tech, not just a class",
   () => /setAttribute\("aria-pressed", t\.dataset\.tab===name \? "true" : "false"\)/.test(GEN));
 val("map: the zoom controls are words (+ and − are not names)", () => {

@@ -1920,21 +1920,31 @@ async function veteranMapChecks(page) {
       detail: h ? h.textContent.trim().slice(0, 40) : "detail pane still empty",
     };
   }));
-  out.push(await page.evaluate(() => {
+  /* The row is a native button inside its list item (S494), so the browser's own
+     Enter is what selects it: a real key press, not a synthetic keydown. */
+  const focused = await page.evaluate(() => {
     const t = document.querySelector('.tab[data-tab="colleges"]');
     if (t) t.click();
-    const li = document.querySelector("#list-col li");
-    if (!li) return { name: "a directory row is operable", ok: false, detail: "no rows" };
-    li.focus();
-    const focused = document.activeElement === li;
-    li.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
-    const h = document.querySelector("#detail h2");
-    return {
-      name: "a directory row is focusable and Enter selects it",
-      ok: focused && !!h && h.textContent.trim().length > 0,
-      detail: "focusable=" + focused + ", detail=" + (h ? h.textContent.trim().slice(0, 30) : "empty"),
-    };
-  }));
+    const d = document.querySelector("#detail h2");
+    if (d) d.textContent = "";
+    const b = document.querySelector("#list-col li button.row");
+    if (!b) return null;
+    b.focus();
+    return document.activeElement === b;
+  });
+  if (focused === null) out.push({ name: "a directory row is operable", ok: false, detail: "no rows" });
+  else {
+    await page.keyboard.press("Enter");
+    await page.waitForTimeout(200);
+    out.push(await page.evaluate((f) => {
+      const h = document.querySelector("#detail h2");
+      return {
+        name: "a directory row is focusable and Enter selects it",
+        ok: f && !!h && h.textContent.trim().length > 0,
+        detail: "focusable=" + f + ", detail=" + (h ? h.textContent.trim().slice(0, 30) : "empty"),
+      };
+    }, focused));
+  }
   return out;
 }
 
