@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-472 document(s).
+473 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 504 | [Session 504 handoff: Sierra deployed, the funding film's recorded piano live, three days to the Summit](../session_504_handoff.md) | 2026-10-27 |
 | 503 | [Session 503 handoff: My Institution hidden, the funding review gate in CI, Sierra's deploy held on its A/B](../session_503_handoff.md) | 2026-10-27 |
 | 502 | [Session 502 handoff: Sierra without a header or a picker, links on every reference; Sheet 136 answered; the funding review gate half built](../session_502_handoff.md) | 2026-10-27 |
 | 500 | [Session 500 handoff: Delta Cal-GETC 45621 passes on its area minimums (Delta 199 of 203); Sheet 135 still unanswered](../session_500_handoff.md) | 2026-10-27 |

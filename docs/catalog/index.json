@@ -16210,8 +16210,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 472,
+   "count": 473,
    "docs": [
+    {
+     "created": "2026-10-27",
+     "governs": [],
+     "n": 504,
+     "path": "docs/session_504_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "sierra-page-redesign",
+      "funding-film"
+     ],
+     "title": "Session 504 handoff: Sierra deployed, the funding film's recorded piano live, three days to the Summit",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-27",
      "governs": [],
@@ -24304,5 +24320,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1289
+ "total": 1290
 }
