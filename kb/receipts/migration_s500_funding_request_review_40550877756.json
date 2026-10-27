@@ -1,0 +1,10 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-10-27_s500_funding_request_review.sql",
+ "name": "s500_funding_request_review",
+ "version": "20261027173532",
+ "sha256": "cbb364f559f8fb580160e2ac69baeb249faf77aedd0e97b64dcb6567942e9f9e",
+ "run": "40550877756",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  42883: operator does not exist: text = text[]\\nLINE 211:     else lower(split_part(btrim(coalesce(p_email, '')), '@', 2)) = any ((select list from d))\\n                                                                           ^\\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.\\n\"}"
+}

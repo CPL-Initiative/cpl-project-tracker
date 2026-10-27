@@ -76,10 +76,10 @@ function setup(opts) {
       "2": { metric: "Applied CPL Units as FTES", metric_src: "pa_u" } } }
   }, opts.shared || {}));
   T._setElig({ coordOk: true, coord: { [QUAL]: true },
-    optinRow: Object.assign({ [QUAL]: { college: QUAL, status: "self_attested", requested_at: "2026-09-28T21:00:00Z" } }, opts.optinRow || {}),
+    optinRow: Object.assign({ [QUAL]: { college: QUAL, status: "confirmed", requested_at: "2026-09-28T21:00:00Z" } }, opts.optinRow || {}),
     optinReview: opts.optinReview || [
       { college: QUAL, name: "Sample Attester", title: "VPAA", email: "attester@example.edu",
-        status: "self_attested", requested_at: "2026-09-28T21:00:00Z" }],
+        status: "confirmed", requested_at: "2026-09-28T21:00:00Z" }],
     asOf: "2026-09-28" });
   if (opts.group) T._state.group = "district";
   T.render();
@@ -353,9 +353,11 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
     optinRow: { "Alameda": { college: "Alameda", status: "confirmed", confirmed_at: "2026-09-20T00:00:00Z" } } });
   const qd = openRow(window, doc, "c:" + QUAL);
   const corow = qd.querySelector(".cf-conds .cplfund-corow");
-  check("5a: a self-attestation shows the attester and Reject alone",
-    !!corow && /Attested by Sample Attester \(VPAA\) · attester@example\.edu · 09-28-2026/.test(corow.textContent) &&
-    corow.querySelectorAll("button").length === 1 && corow.querySelector("button[data-optinrevoke]").textContent === "Reject");
+  // An accepted request (the fixture's QUAL, confirmed since Sam's 2026-10-27 review
+  // gate; tests/cpl_funding_optin.test.js covers Accept and Deny on a waiting one).
+  check("5a: an accepted request shows who sent it and Revoke alone",
+    !!corow && /Confirmed for Sample Attester \(VPAA\) · attester@example\.edu · 09-28-2026/.test(corow.textContent) &&
+    corow.querySelectorAll("button").length === 1 && corow.querySelector("button[data-optinrevoke]").textContent === "Revoke");
   check("5b: no CO Confirm and no Mark confirmed anywhere in the table",
     !doc.querySelector("#cplFundTable [data-optinconfirm]") && !doc.querySelector("#cplFundTable [data-optin]") &&
     !/Mark confirmed/.test(doc.getElementById("cplFundTable").textContent));

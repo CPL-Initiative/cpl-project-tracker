@@ -73,8 +73,8 @@
     { val: "Other", label: "Other senior administrator" }];
   var OPTIN_EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   // The noncredit attestation (Scenario 4; Sam's Open Asks Sheets 113 and 114,
-  // 2026-10-22): a college attests once a fiscal year, attest-first as the
-  // participation opt-in is, and the CO acts only to reject one. The table
+  // 2026-10-22): a college attests once a fiscal year, and since 2026-10-27 the
+  // attestation counts once a MAP team reviewer accepts it (acceptNcAttest). The table
   // takes a write it cannot read back; the reviewer RPC reads the names and
   // emails; the published view (NC_ATTEST_URL) carries the coordinator's name
   // and title alone. kb/supabase_cpl_funding_nc_attestation.sql.
@@ -2200,7 +2200,7 @@
   function ncCondList(college) {
     if (!ncOutcomesMode()) return [];
     var att = ncAttestOf(college), pending = !ELIG.ncAttestOk;
-    var standing = !!(att && att.status !== "revoked" && att.status !== "rejected");
+    var standing = ncAttestStanding(att);
     var list = [];
     if (ncCoordShown()) {
       list.push({ kind: "nc_coord", met: standing && !!String(att.coordinator_name || "").trim(),
@@ -4914,7 +4914,9 @@
     // public rendering; the sweep is the backstop.
     "data-optinconfirm", "data-optinrevoke", "data-optinremove",
     // 2026-10-25: the CO's controls on the noncredit attestation.
-    "data-ncattestreject", "data-ncattestconfirm", "data-ncattestremove"];
+    "data-ncattestreject", "data-ncattestconfirm", "data-ncattestremove",
+    // 2026-10-27: a MAP team reviewer's Accept and Deny on a waiting request.
+    "data-optinaccept", "data-optindeny", "data-ncattestaccept", "data-ncattestdeny"];
   var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset",
     "cplFundPromote", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
@@ -5326,9 +5328,9 @@
         part.forEach(function (row) {
           var key = roster[shortName(row.college)] || row.college;
           ELIG.optinRow[key] = row;
-          // ATTEST-FIRST (Sam, 2026-08-05): a self-attested row satisfies the gate
-          // straight away; only an explicit CO revoke drops it back out.
-          if (row.status !== "revoked") ELIG.optin[key] = row;
+          // A REQUEST WAITS FOR A MAP TEAM REVIEWER (Sam, 2026-10-27, replacing
+          // 2026-08-05's attest-first): only a confirmed row meets the condition.
+          if (row.status === "confirmed") ELIG.optin[key] = row;
         });
       }
       if (Array.isArray(review)) {
@@ -5450,17 +5452,19 @@
     if (r.kind === "part") {
       if (r.met) return { text: "Confirmation on file" };
       var row = ELIG.optinRow[college];
+      if (optinPending(college)) return { text: "Confirmation received, awaiting MAP team review" };
       return { text: (row && row.status === "revoked" ? "Confirmation withdrawn" : "Confirmation not yet on file") + due };
     }
     if (r.kind === "nc_coord") {
       if (r.pending) return { text: "Noncredit CPL Lead status pending", pending: true };
-      return { text: r.met ? "Noncredit CPL Lead published" : "Noncredit CPL Lead not yet attested" };
+      return { text: r.met ? "Noncredit CPL Lead published"
+        : ncAttestPending(ncAttestOf(college)) ? "Noncredit CPL Lead attested, awaiting MAP team review" : "Noncredit CPL Lead not yet attested" };
     }
     if (r.kind === "nc_team") {
       if (r.pending) return { text: "Strike-team attestation status pending", pending: true };
       var att = ncAttestOf(college);
       return { text: r.met ? "Strike team attested" + (att && att.fiscal_year ? " for " + att.fiscal_year : "")
-        : "Strike-team attestation not yet on file" };
+        : ncAttestPending(att) ? "Strike-team attestation awaiting MAP team review" : "Strike-team attestation not yet on file" };
     }
     var pctWords = fmtPctTrim((perf() && perf().vet_star_threshold) || 0.75);
     if (r.kind === "exhibits") {
@@ -5626,6 +5630,42 @@
   function nowIso() { try { return new Date().toISOString(); } catch (e) { return null; } }
   function optinRowOf(college) { return ELIG.optinRow[college] || null; }
   function optinActive(college) { var r = ELIG.optin[college]; return !!r; }
+  // ── THE REQUEST WAITS FOR A MAP TEAM REVIEWER (Sam, 2026-10-27) ──────────
+  // "what if our current process just checked whether they had the right email
+  // domain for their college or district and the next step is for a MAP team CSM
+  // to accept or deny the request, which then confirms and sends an email
+  // confirmation?" Then: "We can use the magic link instead of team phrase if
+  // that's already wired." The two public requests (this one and the noncredit
+  // attestation) land as self_attested and count once a signed-in reviewer
+  // accepts them; Deny removes the row. cfp_insert_self and cna_insert_self check
+  // the domain (kb/migrations/2026-10-27_s500_funding_request_review.sql), and the
+  // page asks the same RPC first, so a refused insert is never the first a
+  // reader hears of it.
+  function optinPending(college) { var r = ELIG.optinRow[college]; return !!(r && r.status === "self_attested"); }
+  var DOMAIN_CACHE = {};
+  var DOMAINS_RPC = SUPABASE_URL + "/rest/v1/rpc/cpl_funding_email_domains";
+  function emailDomain(email) { return String(email || "").trim().toLowerCase().split("@")[1] || ""; }
+  // cb({ ok, domains }) — at once with no remote; a failed read passes, and the
+  // database's own check decides.
+  function domainCheck(college, email, cb) {
+    var judge = function (list) {
+      list = Array.isArray(list) ? list : [];
+      cb({ ok: !list.length || list.indexOf(emailDomain(email)) >= 0, domains: list });
+    };
+    if (!remoteEnabled()) { judge(window.CPL_FUNDING_TEST_DOMAINS ? window.CPL_FUNDING_TEST_DOMAINS[college] : []); return; }
+    if (DOMAIN_CACHE[college]) { judge(DOMAIN_CACHE[college]); return; }
+    fetch(DOMAINS_RPC, { method: "POST",
+      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" },
+      body: JSON.stringify({ p_key: college }) })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (list) { if (Array.isArray(list)) DOMAIN_CACHE[college] = list; judge(list); })
+      .catch(function () { judge(null); });
+  }
+  function domainErrText(college, domains) {
+    var at = domains.slice(0, 4).map(function (d) { return "@" + d; });
+    var list = at.length > 1 ? at.slice(0, -1).join(", ") + " or " + at[at.length - 1] : at[0];
+    return "Please use your " + dispName(college) + " or district email address" + (list ? ", ending in " + list : "") + ".";
+  }
 
   // Public write: INSERT a pending self-attestation. return=minimal because anon
   // has no SELECT on the PII columns it just wrote (it cannot read the row back);
@@ -5635,9 +5675,8 @@
       attestor_email: form.email, status: "self_attested", source: "self" };
     OPTIN_UI[college] = { open: true, submitting: true };
     if (!remoteEnabled()) {
-      ELIG.optin[college] = rec;
       ELIG.optinRow[college] = { college: college, status: "self_attested", requested_at: nowIso() };
-      OPTIN_UI[college] = { done: true };
+      OPTIN_UI[college] = { done: true, email: form.email };
       render(); return;
     }
     refreshTable();   // show the disabled "Submitting…" state at once
@@ -5649,7 +5688,7 @@
     }).then(function (r) {
       // 409 = a row already exists for this college (a race, or already opted in);
       // treat it as done and let the re-read show the true state.
-      OPTIN_UI[college] = (r.ok || r.status === 409) ? { done: true } : { error: true };
+      OPTIN_UI[college] = (r.ok || r.status === 409) ? { done: true, email: form.email } : { open: true, error: true };
       loadEligibility();
       render();
     }).catch(function () { OPTIN_UI[college] = { error: true }; render(); });
@@ -5665,19 +5704,32 @@
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
       "Content-Type": "application/json", Prefer: "return=minimal" };
     applyWriteAuth(headers);
-    fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "PATCH", headers: headers, body: JSON.stringify(body) })
+    return fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "PATCH", headers: headers, body: JSON.stringify(body) })
       .then(writeResult)
-      .then(function () { loadEligibility(); })
-      .catch(function () { loadEligibility(); });
+      .then(function () { return loadEligibility(); })
+      .catch(function () { return loadEligibility(); });
   }
   function confirmOptIn(college) {
-    if (!remoteEnabled()) { _localOptinStatus(college, "confirmed"); render(); return; }
-    reviewerPatch(college, { status: "confirmed", confirmed_at: nowIso(), confirmed_by: "(CO reviewer)", revoked_at: null });
+    if (!remoteEnabled()) { _localOptinStatus(college, "confirmed"); render(); return null; }
+    return reviewerPatch(college, { status: "confirmed", confirmed_at: nowIso(),
+      confirmed_by: curatorEmail() || "(CO reviewer)", revoked_at: null });
+  }
+  // Accept: confirm the request, then open the confirmation email to the person
+  // who sent it, for the reviewer to
+  // send (Sam, 2026-10-27: "acceptance confirms it and sends an email
+  // confirmation"). The mail opens only once the re-read shows the row confirmed.
+  function acceptOptIn(college) {
+    var rev = optinReviewOf(college);
+    var done = function () { if (ELIG.optin[college] && rev && rev.email) openConfirmMail(college, rev, "part"); };
+    var p = confirmOptIn(college);
+    if (p && typeof p.then === "function") p.then(done); else done();
   }
   function revokeOptIn(college) {
     if (!remoteEnabled()) { _localOptinStatus(college, "revoked"); render(); return; }
     reviewerPatch(college, { status: "revoked", revoked_at: nowIso() });
   }
+  // Deny removes the request, so the college may send another.
+  function denyOptIn(college) { removeOptIn(college); }
   function removeOptIn(college) {
     if (!remoteEnabled()) {
       delete ELIG.optin[college]; delete ELIG.optinRow[college];
@@ -5698,7 +5750,7 @@
     if (status === "confirmed") { r.confirmed_at = nowIso(); r.revoked_at = null; }
     if (status === "revoked") r.revoked_at = nowIso();
     ELIG.optinRow[college] = r;
-    if (status === "revoked") delete ELIG.optin[college]; else ELIG.optin[college] = r;
+    if (status === "confirmed") ELIG.optin[college] = r; else delete ELIG.optin[college];
     (ELIG.optinReview || []).forEach(function (x) { if (x.college === college) x.status = status; });
   }
 
@@ -5717,7 +5769,8 @@
     var y = d.getUTCFullYear(), a = d.getUTCMonth() >= 6 ? y : y - 1;
     return a + "-" + ("0" + ((a + 1) % 100)).slice(-2);
   }
-  function ncAttestStanding(att) { return !!(att && att.status !== "revoked" && att.status !== "rejected"); }
+  function ncAttestStanding(att) { return !!(att && att.status === "confirmed"); }
+  function ncAttestPending(att) { return !!(att && att.status === "self_attested"); }
   // An institution whose award carries a noncredit share under the outcomes lane.
   function ncAttestShown(c) {
     return !!c && ncOutcomesMode() && (ncCoordShown() || ncTeamShown()) && (!!c.nco || (c.nc_award || 0) > 0.5);
@@ -5745,7 +5798,7 @@
       ELIG.ncAttest[college] = { college: college, fiscal_year: fy, status: "self_attested",
         coordinator_name: rec.coordinator_name, coordinator_title: rec.coordinator_title, requested_at: nowIso() };
       ELIG.ncAttestOk = true;
-      NCATTEST_UI[college] = { done: true };
+      NCATTEST_UI[college] = { done: true, email: form.email };
       render(); return;
     }
     refreshTable();
@@ -5756,7 +5809,7 @@
       body: JSON.stringify(rec)
     }).then(function (r) {
       // 409: this college already attested for the year; the re-read shows it.
-      NCATTEST_UI[college] = (r.ok || r.status === 409) ? { done: true } : { error: true };
+      NCATTEST_UI[college] = (r.ok || r.status === 409) ? { done: true, email: form.email } : { open: true, error: true };
       loadEligibility();
       render();
     }).catch(function () { NCATTEST_UI[college] = { error: true }; render(); });
@@ -5797,15 +5850,50 @@
     applyWriteAuth(headers);
     var opts = { method: method, headers: headers };
     if (body) opts.body = JSON.stringify(body);
-    fetch(NC_ATTEST_TABLE_URL + "?college=eq." + encodeURIComponent(att.college) +
+    return fetch(NC_ATTEST_TABLE_URL + "?college=eq." + encodeURIComponent(att.college) +
           "&fiscal_year=eq." + encodeURIComponent(att.fiscal_year), opts)
       .then(writeResult)
-      .then(function () { loadEligibility(); })
-      .catch(function () { loadEligibility(); });
+      .then(function () { return loadEligibility(); })
+      .catch(function () { return loadEligibility(); });
   }
   function rejectNcAttest(college) { ncAttestWrite(college, "PATCH", { status: "rejected", revoked_at: nowIso() }); }
   function reconfirmNcAttest(college) {
-    ncAttestWrite(college, "PATCH", { status: "confirmed", confirmed_at: nowIso(), confirmed_by: curatorEmail() || "(CO reviewer)", revoked_at: null });
+    return ncAttestWrite(college, "PATCH", { status: "confirmed", confirmed_at: nowIso(), confirmed_by: curatorEmail() || "(CO reviewer)", revoked_at: null });
+  }
+  // Accept and Deny, as the participation request's (acceptOptIn).
+  function acceptNcAttest(college) {
+    var rev = ncAttestReviewOf(college), att = ncAttestOf(college);
+    var done = function () {
+      if (ncAttestStanding(ncAttestOf(college)) && rev && rev.attestor_email) {
+        openConfirmMail(college, { email: rev.attestor_email, name: rev.attestor_name, requested_at: rev.requested_at,
+          fiscal_year: att && att.fiscal_year }, "nc");
+      }
+    };
+    var p = reconfirmNcAttest(college);
+    if (p && typeof p.then === "function") p.then(done); else done();
+  }
+  function denyNcAttest(college) { removeNcAttest(college); }
+  // THE CONFIRMATION EMAIL: a draft in the reviewer's own mail app (a person
+  // presses send), to the submitter. It names no one else: this module never
+  // reads a coordinator's address (tests/cpl_funding_equity.test.js's PII
+  // guard), so a reviewer who wants the CPL Coordinator copied adds them.
+  function openConfirmMail(college, rev, kind) {
+    var nm = dispName(college);
+    var sent = rev.requested_at ? " on " + isoMdy(rev.requested_at) : "";
+    var subj = kind === "nc"
+      ? "CPL Implementation Funding: noncredit attestation accepted for " + nm
+      : "CPL Implementation Funding: participation confirmed for " + nm;
+    var body = (rev.name ? "Dear " + rev.name + ",\n\n" : "") +
+      (kind === "nc"
+        ? "Thank you for the noncredit attestation you sent" + sent + " for " + nm + (rev.fiscal_year ? ", " + rev.fiscal_year : "") +
+          ". The MAP team has accepted it, and the CPL funding page now shows the noncredit conditions it covers as met."
+        : "Thank you for confirming " + nm + "'s participation in CPL Implementation Funding. The MAP team has accepted the request you sent" +
+          sent + ", and the CPL funding page now shows the college's participation confirmation on file.") +
+      "\n\nIf you did not send this request, please reply to this email.\n\nThe MAP team";
+    var href = "mailto:" + encodeURIComponent(rev.email) + "?subject=" + encodeURIComponent(subj) +
+      "&body=" + encodeURIComponent(body);
+    if (typeof window.CPL_FUNDING_OPEN_MAIL === "function") { window.CPL_FUNDING_OPEN_MAIL(href); return; }
+    try { window.location.href = href; } catch (e) {}
   }
   function removeNcAttest(college) { ncAttestWrite(college, "DELETE", null); }
 
@@ -5887,15 +5975,21 @@
     // self-attestation stands until the CO rejects it (attest-first), so the
     // line offers Reject alone (Sam, 2026-09-28: the CO Confirm and Mark
     // confirmed are gone); a legacy CO-confirmed row offers Revoke.
+    // A waiting request offers Accept and Deny (Sam, 2026-10-27); a confirmed
+    // one, Revoke.
     var ctl = "";
     if (unlocked() && !publicMode() && row && row.status !== "revoked") {
-      var rev = optinReviewOf(college);
+      var rev = optinReviewOf(college), k = esc(college);
       ctl = '<span class="cplfund-corow">' +
-        (rev ? '<span class="dk">Attested by ' + esc(rev.name || "?") + " (" + esc(rev.title || "?") + ") &middot; " +
+        (rev ? '<span class="dk">' + (row.status === "confirmed" ? "Confirmed for " : "Requested by ") + esc(rev.name || "?") +
+          " (" + esc(rev.title || "?") + ") &middot; " +
           esc(rev.email || "") + (rev.requested_at ? " &middot; " + esc(isoMdy(rev.requested_at)) : "") +
           "</span> " : "") +
-        '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(college) + '">' +
-        (row.status === "confirmed" ? "Revoke" : "Reject") + "</button></span>";
+        (row.status === "confirmed"
+          ? '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + k + '">Revoke</button>'
+          : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinaccept="' + k + '">Accept</button>' +
+            '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optindeny="' + k + '">Deny</button>') +
+        "</span>";
     }
     return '<div class="cplfund-basestatus cf-conds"><strong class="cf-conds-h">Minimum Conditions:</strong>' +
       '<span class="cf-conds-items">' + items + ctl + "</span>" + ncRow + "</div>";
@@ -5911,15 +6005,15 @@
   function optinAffordanceHtml(college) {
     var row = ELIG.optinRow[college];
     var ui = OPTIN_UI[college] || {};
-    if (row && row.status !== "revoked") return "";
-    // THE THANK-YOU AND THE NOTE PROMISE NO ACKNOWLEDGMENT (Sam, 2026-09-29,
-    // open-asks sheet 3 card 5, his words verbatim). The CO step they promised
-    // left on 2026-09-28 with Mark confirmed and the CO Confirm: a
-    // self-attestation stands on submit, and the CO acts only to reject one.
+    // THE THANK-YOU SAYS WHAT HAPPENS NEXT (Sam, 2026-10-27): a MAP team reviewer
+    // accepts the request and emails the confirmation. It shows before the row's
+    // own state, since the re-read after a submit finds the request waiting.
     if (ui.done) {
-      return '<div class="cplfund-optin cplfund-optin-done">' +
-        "Thank you. Your participation is confirmed, and your college counts as participating from today.</div>";
+      return '<div class="cplfund-optin cplfund-optin-done" role="status">Thank you. A member of the MAP team will review the request and ' +
+        "send a confirmation to " + (ui.email ? esc(ui.email) : "the address you gave") + ". " + esc(dispName(college)) +
+        " meets this condition once the request is accepted.</div>";
     }
+    if (row && row.status !== "revoked") return "";
     var withdrawn = row && row.status === "revoked"
       ? '<div class="cplfund-optin-note cplfund-warn-text">A previous participation confirmation for this college was withdrawn by the Chancellor&#39;s Office. Contact the CO to re-open it.</div>'
       : "";
@@ -5932,18 +6026,19 @@
       '<div class="cplfund-optin-grid">' +
       '<label>Your name<input type="text" data-optinfield="name" autocomplete="name" maxlength="120" placeholder="First Last"></label>' +
       "<label>Your title<select data-optinfield=\"title\">" + titleOpts + "</select></label>" +
-      '<label>College email<input type="email" data-optinfield="email" autocomplete="email" maxlength="160" placeholder="you@college.edu"></label>' +
+      '<label>College or district email<input type="email" data-optinfield="email" autocomplete="email" maxlength="160" placeholder="you@college.edu"></label>' +
       "</div>" +
-      '<div class="cplfund-optin-err" data-optinerr="' + esc(college) + '"></div>' +
+      '<div class="cplfund-optin-err" data-optinerr="' + esc(college) + '" role="alert"></div>' +
       '<div class="cplfund-optin-actions">' +
       '<button type="button" class="cplfund-optbtn cplfund-optin-submit" data-optinsubmit="' + esc(college) + '"' +
       (ui.submitting ? " disabled" : "") + ">" + (ui.submitting ? "Submitting…" : "Confirm participation") + "</button>" +
       '<button type="button" class="cplfund-optbtn" data-optincancel="' + esc(college) + '">Cancel</button>' +
-      (ui.error ? ' <span class="cplfund-warn-text">Could not record the confirmation — please try again.</span>' : "") +
+      (ui.error ? ' <span class="cplfund-warn-text">The request was not recorded. Please check that the email address is on your college&#39;s or district&#39;s domain, then try again.</span>' : "") +
       "</div>" +
       '<div class="cplfund-optin-note">By submitting, you attest that you are an administrator of ' + esc(dispName(college)) +
       " requesting that it participate in CPL Implementation Funding. Your name and email are recorded for the Chancellor&#39;s " +
-      "Office and are <strong>not shown publicly</strong>. Opting in makes the college eligible for funding — it moves no funding by itself and is reversible.</div>" +
+      "Office and are <strong>not shown publicly</strong>. A member of the MAP team reviews each request and emails a confirmation " +
+      "once it is accepted. Opting in makes the college eligible for funding; it moves no funding by itself and is reversible.</div>" +
       "</div>";
   }
 
@@ -5962,10 +6057,14 @@
     if (!ELIG.ncAttestOk || !ncAttestShown(c)) return "";
     var att = ncAttestOf(college), ui = NCATTEST_UI[college] || {}, fy = fiscalYearOf();
     if (ui.done) {
-      return '<div class="cplfund-optin cplfund-optin-done">Thank you. The noncredit attestation for ' + esc(fy) +
-        " is on file from today.</div>";
+      return '<div class="cplfund-optin cplfund-optin-done" role="status">Thank you. A member of the MAP team will review the noncredit attestation for ' +
+        esc(fy) + " and send a confirmation to " + (ui.email ? esc(ui.email) : "the address you gave") + ".</div>";
     }
     if (ncAttestStanding(att)) return "";
+    if (ncAttestPending(att)) {
+      return '<div class="cplfund-optin cplfund-optin-note">The noncredit attestation for ' + esc(att.fiscal_year || fy) +
+        (att.requested_at ? ", received " + esc(isoMdy(att.requested_at)) + "," : "") + " awaits MAP team review.</div>";
+    }
     if (att) {
       return '<div class="cplfund-optin cplfund-optin-note cplfund-warn-text">The Chancellor&#39;s Office rejected this college&#39;s noncredit attestation for ' +
         esc(att.fiscal_year || fy) + ". Contact the CO to re-open it.</div>";
@@ -6002,19 +6101,19 @@
       '<fieldset class="cplfund-ncattest-set"><legend>You, attesting for the college</legend><div class="cplfund-ncattest-grid">' +
       f("name", "Your name", 'type="text" maxlength="120" autocomplete="name" placeholder="First Last"') +
       "<label>Your title<select data-ncattestfield=\"title\">" + titleOpts + "</select></label>" +
-      f("email", "College email", 'type="email" maxlength="160" autocomplete="email" placeholder="you@college.edu"') +
+      f("email", "College or district email", 'type="email" maxlength="160" autocomplete="email" placeholder="you@college.edu"') +
       "</div></fieldset>" +
       '<div class="cplfund-optin-err" data-ncattesterr="' + esc(college) + '" role="alert"></div>' +
       '<div class="cplfund-optin-actions">' +
       '<button type="button" class="cplfund-optbtn cplfund-optin-submit" data-ncattestsubmit="' + esc(college) + '"' +
       (ui.submitting ? " disabled" : "") + ">" + (ui.submitting ? "Submitting…" : "Attest") + "</button>" +
       '<button type="button" class="cplfund-optbtn" data-ncattestcancel="' + esc(college) + '">Cancel</button>' +
-      (ui.error ? ' <span class="cplfund-warn-text">The attestation was not recorded. Please try again.</span>' : "") +
+      (ui.error ? ' <span class="cplfund-warn-text">The attestation was not recorded. Please check that the email address is on your college&#39;s or district&#39;s domain, then try again.</span>' : "") +
       "</div>" +
       '<div class="cplfund-optin-note">By submitting, you attest that you are an administrator of ' + esc(nm) +
       ", that the Noncredit CPL Lead named above is published on the college&#39;s CPL landing page, and that the Lead " +
       (ncTeamShown() ? "leads a strike team for noncredit CPL in " : "meets regularly with the college&#39;s CPL Coordinator in ") +
-      esc(fy) + ". The Lead&#39;s name and title appear publicly beside the college&#39;s conditions. Your name, your email and the Lead&#39;s assignment go to the Chancellor&#39;s Office alone. The Chancellor&#39;s Office may reject an attestation.</div>" +
+      esc(fy) + ". The Lead&#39;s name and title appear publicly beside the college&#39;s conditions once the attestation is accepted. Your name, your email and the Lead&#39;s assignment go to the Chancellor&#39;s Office alone. A member of the MAP team reviews each attestation and emails a confirmation once it is accepted.</div>" +
       "</div>";
   }
   // The CO's view of the attestation, on the Minimum Conditions line: who
@@ -6038,7 +6137,10 @@
       if (rev.lead_meets) bits.push("meets credit CPL colleagues " + esc(rev.lead_meets));
     }
     var k = esc(college);
-    var btns = ncAttestStanding(att)
+    var btns = ncAttestPending(att)
+      ? '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-ncattestaccept="' + k + '">Accept</button>' +
+        '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-ncattestdeny="' + k + '">Deny</button>'
+      : ncAttestStanding(att)
       ? '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-ncattestreject="' + k + '">Reject</button>'
       : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-ncattestconfirm="' + k + '">Re-confirm</button>' +
         '<button type="button" class="cplfund-optbtn" data-ncattestremove="' + k + '">Remove</button>';
@@ -6066,13 +6168,14 @@
     var confirmed = rows.filter(function (r) { return r.status === "confirmed"; });
     var revoked = rows.filter(function (r) { return r.status === "revoked"; });
     var body = "";
-    // A self-attestation stands on submit (attest-first), so the CO acts only
-    // to reject one (Sam, 2026-09-28: the CO Confirm is gone; Reject stays).
+    // A request waits for a MAP team reviewer (Sam, 2026-10-27): Accept confirms
+    // it and opens the confirmation email; Deny removes it.
     if (pending.length) {
-      body += '<div class="cplfund-colane-sub">Self-attested (' + pending.length + ")</div>" +
+      body += '<div class="cplfund-colane-sub">Awaiting review (' + pending.length + ")</div>" +
         pending.map(function (r) {
           return line(r,
-            '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(r.college) + '">Reject</button>');
+            '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinaccept="' + esc(r.college) + '">Accept</button>' +
+            '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optindeny="' + esc(r.college) + '">Deny</button>');
         }).join("");
     }
     if (confirmed.length) {
@@ -6090,9 +6193,9 @@
         }).join("") + "</details>";
     }
     return '<div class="cplfund-colane"><div class="cplfund-colane-head">CO opt-in review' +
-      (pending.length ? ' <span class="cplfund-colane-badge">' + pending.length + " self-attested</span>" : "") +
+      (pending.length ? ' <span class="cplfund-colane-badge">' + pending.length + " awaiting review</span>" : "") +
       "</div>" +
-      '<div class="dk cplfund-colane-intro">A college administrator self-attested each request below, and the college counts as participating from that moment. Reject a request to withhold participation.</div>' +
+      '<div class="dk cplfund-colane-intro">A college administrator sent each request below from an address on the college&#39;s or district&#39;s domain. Accept confirms the request and opens a confirmation email to the sender; the college meets the condition from then. Deny removes the request.</div>' +
       body + "</div>";
   }
 
@@ -11987,7 +12090,7 @@
     // accessible name (WCAG 2.5.3, label in name: a speech-input user says
     // what they see), so the button carries no aria-label; the date spelled
     // out rides the hover.
-    if (partShown() && !ELIG.optin[c.college]) {
+    if (partShown() && !ELIG.optin[c.college] && !optinPending(c.college)) {
       var now = partDeadlinePassed();
       chips += '<button type="button" class="cplfund-optin-jump" data-optinjump="' + esc(c.college) +
         '" title="' + esc((now ? "Confirm participation now" : "Confirm participation by " + deadlineSpelled()) +
@@ -13053,7 +13156,7 @@
     var partStatus = (pub ? "" : "deadline " +
       edText("deadline", participationDeadline(), { label: "participation deadline", small: true }) +
       " &middot; ") + "<strong>" + optN + " of " + total + "</strong> colleges confirmed so far" +
-      (pendN && !publicMode() ? " &middot; <strong>" + pendN + "</strong> self-attested" : "") +
+      (pendN && !publicMode() ? " &middot; <strong>" + pendN + "</strong> awaiting review" : "") +
       ' <span class="dk">(a college&#39;s VPAA, VP of Student Services or President confirms from the college&#39;s row in the table above' +
       (unlocked() && !publicMode() ? "; review requests in the CO review panel above" : "") + ")</span>";
     var coordItem = coordShown()
@@ -15673,7 +15776,10 @@
         else if (!OPTIN_EMAIL_RE.test(email)) err = "Please enter a valid college email address (name@college.edu).";
         if (err) { if (errEl) errEl.textContent = err; return; }
         if (errEl) errEl.textContent = "";
-        submitOptIn(college, { name: name, title: title, email: email });
+        domainCheck(college, email, function (dc) {
+          if (!dc.ok) { if (errEl) errEl.textContent = domainErrText(college, dc.domains); return; }
+          submitOptIn(college, { name: name, title: title, email: email });
+        });
       });
     });
     // The noncredit attestation (Scenario 4): open, cancel and submit, for
@@ -15721,7 +15827,10 @@
         var errEl = wrap.querySelector("[data-ncattesterr]");
         if (res.error) { if (errEl) errEl.textContent = res.error; return; }
         if (errEl) errEl.textContent = "";
-        submitNcAttest(college, res.form);
+        domainCheck(college, res.form.email, function (dc) {
+          if (!dc.ok) { if (errEl) errEl.textContent = domainErrText(college, dc.domains); return; }
+          submitNcAttest(college, res.form);
+        });
       });
     });
     // Unit sources (Sam, 2026-09-30): open the panel under the priority row,
@@ -15820,6 +15929,18 @@
     });
     holder.querySelectorAll("[data-optinremove]").forEach(function (b) {
       b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; removeOptIn(b.getAttribute("data-optinremove")); });
+    });
+    holder.querySelectorAll("[data-optinaccept]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; acceptOptIn(b.getAttribute("data-optinaccept")); });
+    });
+    holder.querySelectorAll("[data-optindeny]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; denyOptIn(b.getAttribute("data-optindeny")); });
+    });
+    holder.querySelectorAll("[data-ncattestaccept]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; acceptNcAttest(b.getAttribute("data-ncattestaccept")); });
+    });
+    holder.querySelectorAll("[data-ncattestdeny]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; denyNcAttest(b.getAttribute("data-ncattestdeny")); });
     });
     focusOptinForm();
   }
@@ -16549,6 +16670,12 @@
     });
     document.querySelectorAll("#cplFundingMount .cplfund-elig [data-optinremove]").forEach(function (b) {
       b.addEventListener("click", function () { savingState = ""; removeOptIn(b.getAttribute("data-optinremove")); });
+    });
+    document.querySelectorAll("#cplFundingMount .cplfund-elig [data-optinaccept]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; acceptOptIn(b.getAttribute("data-optinaccept")); });
+    });
+    document.querySelectorAll("#cplFundingMount .cplfund-elig [data-optindeny]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; denyOptIn(b.getAttribute("data-optindeny")); });
     });
     // ── priority reorder: the drag handle and the position picker ──
     // Both land on movePriority(), which is pure over the order array — the DOM
@@ -17628,7 +17755,7 @@
       if (o.optinRow && !o.optin) {   // derive the active map from the rows
         ELIG.optin = {};
         Object.keys(o.optinRow).forEach(function (k) {
-          if (o.optinRow[k].status !== "revoked") ELIG.optin[k] = o.optinRow[k];
+          if (o.optinRow[k].status === "confirmed") ELIG.optin[k] = o.optinRow[k];
         });
       }
       ELIG.optinReview = o.optinReview || [];
@@ -17691,6 +17818,11 @@
     _submitOptin: function (c, form) { return submitOptIn(c, form); },
     _confirmOptin: function (c) { return confirmOptIn(c); },
     _revokeOptin: function (c) { return revokeOptIn(c); },
+    _optinPending: function (c) { return optinPending(c); },
+    _acceptOptin: function (c) { return acceptOptIn(c); },
+    _denyOptin: function (c) { return denyOptIn(c); },
+    _acceptNcAttest: function (c) { return acceptNcAttest(c); },
+    _denyNcAttest: function (c) { return denyNcAttest(c); },
     _optinReview: function () { return ELIG.optinReview; },
     // The noncredit attestation (Scenario 4).
     _fiscalYearOf: fiscalYearOf,

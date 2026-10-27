@@ -202,11 +202,12 @@ function drill(window, doc, name) {
   click(window, wrap.querySelector("[data-ncattestsubmit]"));
   const att = T._ncAttest(COLLEGE), after = T._alloc(COLLEGE);
   det = drill(window, doc, COLLEGE);
-  check("C5: a complete submit stands at once (attest-first): the Lead's condition met, the share no longer held, a thank-you",
-    !!att && att.status === "self_attested" && att.fiscal_year === T._fiscalYearOf() && after.nc_gate_blocked === false &&
-    /Noncredit CPL Lead published/.test(flat(det.querySelector(".cf-conds-nc"))) &&
-    /Thank you\. The noncredit attestation for \d{4}-\d{2} is on file from today\./.test(flat(det)) &&
-    /Noncredit CPL Lead: Ana Ruiz \(Noncredit CPL Lead\)/.test(flat(det.querySelector(".cf-conds-nc"))));
+  // Since Sam's 2026-10-27 ruling the attestation waits for a MAP team reviewer.
+  check("C5: a complete submit waits for a MAP team reviewer: the share stays held, the line says so, a thank-you",
+    !!att && att.status === "self_attested" && att.fiscal_year === T._fiscalYearOf() && after.nc_gate_blocked === true &&
+    /Noncredit CPL Lead attested, awaiting MAP team review/.test(flat(det.querySelector(".cf-conds-nc"))) &&
+    /Thank you\. A member of the MAP team will review the noncredit attestation for \d{4}-\d{2} and send a confirmation to ben@mtsac\.edu\./.test(flat(det)) &&
+    !/Ana Ruiz/.test(flat(det.querySelector(".cf-conds-nc"))));
 }
 {
   const { window, doc } = setup({ elig: {} });
@@ -223,12 +224,43 @@ function drill(window, doc, name) {
 
 // ── D. the CO's controls ─────────────────────────────────────────────────────
 const FY = "2026-27";
-const STANDING = { [COLLEGE]: { college: COLLEGE, fiscal_year: FY, status: "self_attested",
+const STANDING = { [COLLEGE]: { college: COLLEGE, fiscal_year: FY, status: "confirmed",
   coordinator_name: "Ana Ruiz", coordinator_title: "Noncredit CPL Coordinator", requested_at: "2026-10-25T04:00:00Z" } };
-const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "self_attested", attestor_name: "Ben Ko",
+const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "confirmed", attestor_name: "Ben Ko",
   attestor_title: "NCDEAN", attestor_email: "ben@mtsac.edu", nc_awarded_count: 4, portfolio_course: "CCC000123",
   attested_exhibits: "EX-1", lead_types: ["staff", "administrator"], lead_assignment: "20% release fall and spring",
   lead_meets: "every two weeks", requested_at: "2026-10-25T04:00:00Z" }];
+// D0. A waiting attestation (Sam, 2026-10-27): Accept confirms it and opens the
+// confirmation email; Deny removes it, and the form returns.
+{
+  const waiting = JSON.parse(JSON.stringify(STANDING)); waiting[COLLEGE].status = "self_attested";
+  const rev = JSON.parse(JSON.stringify(REVIEW)); rev[0].status = "self_attested";
+  const { window, doc, T } = setup({ signedIn: true, elig: { ncAttestOk: true, ncAttest: waiting, ncAttestReview: rev } });
+  const mails = [];
+  window.CPL_FUNDING_OPEN_MAIL = function (href) { mails.push(href); };
+  let det = drill(window, doc, COLLEGE);
+  const acc = det && det.querySelector("[data-ncattestaccept]"), deny = det && det.querySelector("[data-ncattestdeny]");
+  check("D0a: a waiting attestation offers a signed-in reviewer Accept and Deny, no Reject",
+    !!acc && !!deny && acc.textContent === "Accept" && deny.textContent === "Deny" && !det.querySelector("[data-ncattestreject]"));
+  click(window, acc);
+  det = drill(window, doc, COLLEGE);
+  check("D0b: Accept confirms it: the Lead's condition met, the share released, and Reject offered",
+    T._ncAttest(COLLEGE).status === "confirmed" && T._alloc(COLLEGE).nc_gate_blocked === false &&
+    /Noncredit CPL Lead published/.test(flat(det.querySelector(".cf-conds-nc"))) && !!det.querySelector("[data-ncattestreject]"));
+  check("D0c: …and opens the confirmation email to the attestor, with the reply line",
+    mails.length === 1 && mails[0].indexOf("mailto:ben%40mtsac.edu?") === 0 &&
+    decodeURIComponent(mails[0]).indexOf("If you did not send this request, please reply to this email.") >= 0);
+}
+{
+  const waiting = JSON.parse(JSON.stringify(STANDING)); waiting[COLLEGE].status = "self_attested";
+  const { window, doc, T } = setup({ signedIn: true, elig: { ncAttestOk: true, ncAttest: waiting, ncAttestReview: REVIEW } });
+  let det = drill(window, doc, COLLEGE);
+  const deny = det && det.querySelector("[data-ncattestdeny]");
+  if (deny) click(window, deny);
+  det = drill(window, doc, COLLEGE);
+  check("D0d: Deny removes it, and the college may attest again",
+    !!deny && !T._ncAttest(COLLEGE) && !!det.querySelector("[data-ncattestopen]"));
+}
 {
   const { window, doc, T } = setup({ signedIn: true,
     elig: { ncAttestOk: true, ncAttest: JSON.parse(JSON.stringify(STANDING)), ncAttestReview: REVIEW } });

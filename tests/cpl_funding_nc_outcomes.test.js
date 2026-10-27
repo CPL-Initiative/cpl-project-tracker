@@ -167,7 +167,7 @@ T._setElig({
   coordOk: true,
   coord: { "Mt San Antonio": true, "Santa Barbara": true },
   optin: { "Mt San Antonio": { status: "self_attested" }, "Santa Barbara": { status: "self_attested" } },
-  ncAttest: { "Mt San Antonio": { college: "Mt San Antonio", fiscal_year: "2026-27", status: "self_attested",
+  ncAttest: { "Mt San Antonio": { college: "Mt San Antonio", fiscal_year: "2026-27", status: "confirmed",
     coordinator_name: "Jane Doe", coordinator_title: "Dean" } }
 });
 T.render();
@@ -389,7 +389,7 @@ check("F2: the committed Scenario 3 is origination: twins pinned to the nc_* uni
   check("G5: the minimum conditions list ends with the noncredit share's one, its count line once the attestation is read",
     reqs.length >= 2 && /For the noncredit share of an award: a Noncredit CPL Lead named and published/.test(reqs[reqs.length - 1]) &&
     !reqs.some((r) => /strike-team/.test(r)));
-  T2._setElig({ coordOk: true, coord: {}, optin: {}, ncAttest: { "Mt San Antonio": { status: "self_attested", coordinator_name: "Jane Doe" } } });
+  T2._setElig({ coordOk: true, coord: {}, optin: {}, ncAttest: { "Mt San Antonio": { status: "confirmed", coordinator_name: "Jane Doe" } } });
   paint();
   const reqs2 = Array.from(doc2.querySelectorAll("#req-list li")).map(flat);
   check("G6: the count line names the institutions with a noncredit share that have one published",
