@@ -34,7 +34,7 @@ too*), `docs/cpl_funding_lessons.md` S494, `docs/college_action_page_lessons.md`
   (Library: *File it* on the In development card moves a brief to Draft; a dateless record takes the day). It holds
   nothing; its last word to Sam: set the Workplan record's Status to Draft in Edit to put it back at step 2.
 
-- **#2492 axe in `scripts/a11y.js`** (merged 02:5xZ): axe-core 4.10.2 pinned, run once per route before the
+- **#2492 axe in `scripts/a11y.js`** (merged ~02:53Z 2026-10-27): axe-core 4.10.2 pinned, run once per route before the
   focus-ring loop, an `axeDisable` reason required, a throwing target fails without ending the sweep. `npm install`
   before `npm run a11y` in a fresh container, or the runner stops and says axe is missing.
 
