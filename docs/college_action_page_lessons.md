@@ -1765,3 +1765,17 @@ converted to underlined words (Sam, 2026-10-09). Clean light and dark at 320, 39
   builder, at most six, and the full list stays in the card.
 - **Cross-repo order.** The vault's sheet coverage reads the tracker's main, so a tracker PR that adds or drops a
   NEEDS SAM marker merges before the vault PR that adds or drops its card.
+
+## S494 SkyWhortleberry (2026-10-27): Sierra's MAP links
+
+- **A surface that holds titles reads the same index.** Sierra's could-adopt context comes from
+  `college_adoption_opportunities` by common title, so cpl-chat reads `by_title` and `found` from the verify file and
+  prints one link per building college under each credential (#2491). The test runs Sierra's lifted block and
+  `map_links.js` over all 2,620 titles and requires the same IDs in the same order, so the two surfaces cannot drift.
+- **A rule prints only beside its links.** The MAP LINKS rule appears only when a line does; with no index or no listed
+  title the context is byte-identical to before. That is what made the post-deploy smoke failures traceable: 7x names
+  no college and 9 died in the vector search before the new code runs, so neither could reach it.
+- **A lifted region is a contract.** Two Sierra tests lift a long span of `index.ts` and evaluate it as JS; a fetcher
+  with an object type and a `Deno.env` read inside that span broke both. The fetcher sits beside
+  `fetchStatewideCatalog` now, outside every lifted span.
+

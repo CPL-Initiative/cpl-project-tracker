@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_s494_2026-10-27.sql",
+ "name": "cpl_memory_s494_2026_10_27",
+ "version": "20261027024331",
+ "sha256": "6d477bbd749f5679026dadd0bce200020939085c315866f2857f1c8039460bc8",
+ "run": "40439848599",
+ "status": 201,
+ "response": "[{\"slug\":\"sierra-map-links-live-2026-10-27\",\"status\":\"proposed\"},{\"slug\":\"cobi-side-menu-is-navigation-2026-10-27\",\"status\":\"proposed\"},{\"slug\":\"pitfall-axe-after-focus-loop-obscured-2026-10-27\",\"status\":\"proposed\"},{\"slug\":\"pitfall-lifted-span-in-cpl-chat-2026-10-27\",\"status\":\"proposed\"},{\"slug\":\"risk-smoke-7x-and-9-load-flakes-2026-10-27\",\"status\":\"proposed\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

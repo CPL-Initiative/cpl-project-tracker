@@ -4,6 +4,8 @@ date: 2026-10-27
 session: 493 (SkyThimbleberry)
 tags: [handoff, my-college-action-page, eacr-exhibit-cr-adoption, implementation-funding, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_495_handoff.md
 ---
 
 # You are Session 494
