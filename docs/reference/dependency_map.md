@@ -765,6 +765,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `map_cleanup_views.js` | pages: `CPL_Dashboard.html` | — |
 | `map_data_quality.js` | pages: `CPL_Dashboard.html` | — |
 | `map_export.js` | pages: `CPL_Dashboard.html` | — |
+| `map_links.js` | pages: `CPL_Dashboard.html` | — |
 | `map_team_queue.js` | pages: `CPL_Dashboard.html` | — |
 | `map_users.js` | tabs: `map-queue` · pages: `CPL_Dashboard.html` | — |
 | `master_report.js` | pages: `CPL_Dashboard.html` | — |
@@ -1022,7 +1023,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
 | `cpl-initiative.github.io` | tabs: `admin`, `college-briefing`, `cpl-pathways`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users` · modules: `scripts/funding_sierra_note.js` · scripts: `chatbox/health_check.sh`, `fact-sheet/_build_statewide_catalog.py`, `kb/_build_commons_status.py`, `kb/_build_partner_crosswalk.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `scripts/library_page.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:workplan-rebuild`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `letters`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` |
-| `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding`, `vision-2030` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_verify_map_exhibit_links.py` · `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding`, `vision-2030` · pages: `CPL_Dashboard.html` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_verify_map_exhibit_links.py` · `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `creditforbeingyou.org` | `edgefn:cpl-chat` |
 | `cuesta.curriqunet.com` | scripts: `kb/_course_outline_census.py` |
@@ -1199,5 +1200,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 102 Supabase tables · 42 RPCs · 9 edge functions · 718 file
-datasets · 184 external services · 474 consumers · 58 workflows · 38 tabs.
+Coverage: 102 Supabase tables · 42 RPCs · 9 edge functions · 719 file
+datasets · 184 external services · 475 consumers · 58 workflows · 38 tabs.

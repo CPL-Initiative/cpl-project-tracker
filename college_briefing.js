@@ -1144,6 +1144,13 @@
    * data file emitted before it carries only `exhibits` — rendering nothing
    * there would report "no credit recommendations" about an occupation that has
    * them, which is the worst of the three outcomes. */
+  // The MAP link beside an exhibit this college could adopt (Sam, Open Asks Sheet 134 card 2,
+  // 2026-10-27, "build"): map_links.js fills the placeholder with one chip per college that
+  // built a verified exhibit of the credential, each opening MAP searched for that ID.
+  function mapLinks(title) {
+    var M = window.CPL_MAP_LINKS;
+    return M && title ? M.placeholder(title) : "";
+  }
   function cerBlock(r) {
     var xd = r.exhibit_detail;
     if (!xd || !xd.length) {
@@ -1168,6 +1175,7 @@
             + (c.credit ? " — " + esc(c.credit) : "") + "</li>";
         }).join("") + "</ul>";
       }
+      if (!x.adopted) h += mapLinks(x.cer);
       return h + "</div>";
     }).join("");
   }
@@ -2638,7 +2646,7 @@
       h += '<div class="cb-opp"><span>Top candidates, by peers already doing it:</span>';
       t.candidates.forEach(function (c) {
         h += "<span><em>" + esc(c.title) + "</em> — " + c.peers + " peer college"
-           + (c.peers === 1 ? "" : "s") + (c.statewide ? " · statewide standard" : "") + "</span>";
+           + (c.peers === 1 ? "" : "s") + (c.statewide ? " · statewide standard" : "") + mapLinks(c.title) + "</span>";
       });
       h += "</div>";
     }

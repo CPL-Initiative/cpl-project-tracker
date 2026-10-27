@@ -92,8 +92,12 @@ function reviewerSession() {
     !!doc.getElementById("cplFundTable"));
   // The box lays out as two columns, one at a tablet's width, kickers above on a phone.
   const css = doc.getElementById("cpl-funding-css").textContent;
-  check("3e: two columns at desktop width; Step 2 drops under Step 1 below 860px; Step 2 hides by its attribute",
-    /\.cplfund-step1 \{ display: grid; grid-template-columns: auto minmax\(0,1fr\);/.test(css) &&
+  // An auto first column grows to the description's whole line and squeezed Step 2 to 21px (Sam's screenshot,
+  // 2026-10-26); Step 2 keeps a 22rem floor, and with Step 2 hidden Step 1 takes the row.
+  check("3e: two columns at desktop width, Step 2 never squeezed; Step 2 drops under Step 1 below 860px; Step 2 hides by its attribute",
+    /\.cplfund-step1 \{ display: grid; grid-template-columns: minmax\(0,3fr\) minmax\(min\(100%,22rem\),2fr\);/.test(css) &&
+    !/\.cplfund-step1 \{[^}]*grid-template-columns: auto/.test(css) &&
+    /\.cplfund-step1\[data-view="all"\] \{ grid-template-columns: minmax\(0,1fr\); \}/.test(css) &&
     /@media \(max-width: 860px\) \{ \.cplfund-step1 \{ grid-template-columns: 1fr; \} \.cplfund-step1-pick \{ padding-left: 0; border-left: 0;/.test(css) &&
     /@media \(max-width: 560px\) \{ \.cplfund-step1-view, \.cplfund-step1-pick \{ flex-direction: column;/.test(css) &&
     /\.cplfund-step1-pick\[hidden\] \{ display: none; \}/.test(css));

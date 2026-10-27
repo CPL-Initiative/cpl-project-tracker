@@ -74,7 +74,35 @@ def record(row):
             "college": (row.get("college") or "").strip(), "college_id": row.get("CollegeID")}
 
 
-def recheck(wanted):
+def by_title(sw, found):
+    """Common title -> its exhibit IDs MAP lists, for the surfaces that name a credential but
+    hold no exhibit ID (CPL Pathways, My College, CER; Sam, Open Asks Sheet 134 card 2, "build").
+    Builders stay in `found`, so a title's chips read one record per ID."""
+    out = {}
+    for e in sw["exhibits"]:
+        ids = [i.upper() for i in e.get("exhibit_ids", []) if i.upper() in found]
+        if ids:
+            out.setdefault(e["unified_title"], [])
+            out[e["unified_title"]] += [i for i in ids if i not in out[e["unified_title"]]]
+    return dict(sorted((t, sorted(v)) for t, v in out.items()))
+
+
+def write(out):
+    with open(OUT, "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=1, ensure_ascii=False)
+        f.write("\n")
+
+
+def retitle(sw):
+    """Rebuild by_title from the last run's `found` and today's statewide_data.js, with no call
+    to MAP: the daily data can rename a common title between MAP checks."""
+    out = json.load(open(OUT, encoding="utf-8"))
+    out["by_title"] = by_title(sw, out["found"])
+    write(out)
+    print(f"{OUT}: by_title rebuilt, {len(out['by_title'])} titles")
+
+
+def recheck(wanted, sw):
     out = json.load(open(OUT, encoding="utf-8"))
     todo = [i for i in wanted if i not in out["found"]]
     for aid in todo:
@@ -86,9 +114,8 @@ def recheck(wanted):
     out["not_found"] = sorted(i for i in wanted if i not in out["found"])
     out["checked"] = len(wanted)
     out["rechecked_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=1, ensure_ascii=False)
-        f.write("\n")
+    out["by_title"] = by_title(sw, out["found"])
+    write(out)
     print(f"{OUT}: rechecked {len(todo)}; {len(out['found'])} listed, {len(out['not_found'])} not")
 
 
@@ -96,8 +123,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--statewide", default=os.path.join(ROOT, "statewide_data.js"))
     ap.add_argument("--recheck", action="store_true")
+    ap.add_argument("--retitle", action="store_true")
     a = ap.parse_args()
     sw = load_js(a.statewide)
+    if a.retitle:
+        retitle(sw)
+        return
     # Every exhibit ID the statewide data holds: the workbook links its statewide credit
     # recommendations, and EACR links any exhibit a college could adopt (Sam, 2026-10-26:
     # the MAP link on every public surface that suggests an adoption).
@@ -106,7 +137,7 @@ def main():
         for i in e.get("exhibit_ids", []):
             wanted[i.upper()] = e["unified_title"]
     if a.recheck:
-        recheck(wanted)
+        recheck(wanted, sw)
         return
 
     listed, total, page, skipped = {}, None, 1, []
@@ -147,6 +178,7 @@ def main():
         "not_found": sorted(i for i in wanted if i not in listed),
         "pages_unread": skipped,
     }
+    out["by_title"] = by_title(sw, out["found"])
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=1, ensure_ascii=False)
         f.write("\n")
