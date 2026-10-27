@@ -1,0 +1,1671 @@
+{
+ "college": "Hartnell College",
+ "reread_run": "40460714483",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "40452134609",
+ "at": "2026-10-27T06:23:44Z",
+ "posted": 1,
+ "batches": 1,
+ "skipped": [],
+ "error": null,
+ "replaced": 1,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "45096"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Hartnell College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 40452134609;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 159,
+    "placed": 157,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Area 1: English Communication",
+      "rule": "all",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ENGLC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGLC1000E",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLC1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGLC1001",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMMC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Area 2: Mathematical Concepts and Quantitative Reasoning",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "MAT2",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MAT3A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MAT3B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MAT3C",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MAT4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MAT5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MAT7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MAT10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MAT12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MAT16",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MAT25",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MAT27",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STATC1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Area 3: Arts and Humanities - Area 3A (Arts)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ART1A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTHC1200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART19",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH56",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS1A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS42",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC23",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC92",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Area 3: Arts and Humanities - Area 3B (Humanities)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGLC1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG17",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG24",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG26",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG41",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG44A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG44B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG46A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG46B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG47A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG47B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG48",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS4A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS4B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS5A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS5B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HISTC1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HISTC1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS47",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS49A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS49B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHL2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHL5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHL10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPA3S",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPA4S",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "TAC50",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Area 4: Social and Behavioral Sciences",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ABT53",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADJ1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADJ3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADJ51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANT2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANT10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANT20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COM4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE53",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONC2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONC2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECO10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH13",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEG10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HED7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HES1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HES2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS5A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS5B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HISTC1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HISTC1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS46A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS46B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRN70",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NVN70",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLSC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY9",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY14",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY15",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY42",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYCC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SJS20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SJS21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "SJS22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC15",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC41",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC42",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC23",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "Area 5A: Physical Science",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ABT90",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANT1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AST1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AST1L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHM1A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHM1B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHM12A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHM12B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHM22",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEG1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "GEL1",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEL2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEL6",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEL25",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MET1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "OCN1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY2A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY2B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY32",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY4A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY4B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY4C",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY10",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Area 5B: Biological Science",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ABT92",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO1",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO2",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO3",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO5",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO6L",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO10",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO11",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO18",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO20",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO27",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO30",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO42",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO47",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO48",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO48L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Area 5C: Laboratory",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ABT90",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ABT92",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AST1L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO1",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO2",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO3",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO5",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO6L",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO10",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO11",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO20",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO27",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO30",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO47",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO48L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHM1A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHM1B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHM12A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHM12B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHM22",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEL1",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEL6",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY2A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY2B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY32",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY4A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY4B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY4C",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY10",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Area 6: Ethnic Studies",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ETH1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH13",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH56",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SJS21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "TAC7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 34,
+      "min": 34
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Calgetc - CT.CALGETC",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 34,
+   "total_min": 34,
+   "source_url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.CALGETC/requirements-ipyf8",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39949570443,
+   "program_title": "CalGETC",
+   "control_number": "45096"
+  }
+ ]
+}

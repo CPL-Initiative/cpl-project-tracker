@@ -10,7 +10,9 @@
   "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up",
   "course_units": "a course the record lists without units takes the units the page's own course data names (the vendor call the page made as it loaded, kept by the reader as the source's course_units): never a course the reading gave units, and the note names the call",
   "course_hours": "a course a record measured in hours lists without hours takes the top of the hours the page's own course data names (the course_units call's lecture plus lab hours, kept by the reader as the source's course_hours; the tab's noncredit total sums the tops): only in an hours record, never a course the reading gave a figure, and the note names the call",
-  "pool_lists": "several lists the reading split one choice into, pooled: where the page prints one unit figure (pattern's n) over lists each read as choose_units with no figure of their own and named with block_prefix, the lists become one choose_units block of n (name), courses in order; never one list, and never where the record's total_units names another figure; with_floors (S489) also pools lists that carry their own figures, where the page prints one total over them all: each list's figure stays in the pooled block's floors, a course listed in two of the lists counts once, and never where the floors sum past n. block_pattern (a regex on the list name) may stand in for block_prefix"
+  "pool_lists": "several lists the reading split one choice into, pooled: where the page prints one unit figure (pattern's n) over lists each read as choose_units with no figure of their own and named with block_prefix, the lists become one choose_units block of n (name), courses in order; never one list, and never where the record's total_units names another figure; with_floors (S489) also pools lists that carry their own figures, where the page prints one total over them all: each list's figure stays in the pooled block's floors, a course listed in two of the lists counts once, and never where the floors sum past n. block_pattern (a regex on the list name) may stand in for block_prefix",
+  "pool_areas": "an area's sub-areas the reading split into blocks, under one total the page prints over the area (pattern's area and n; Hartnell's Cal-GETC 45096): the sub-area blocks block_pattern names (with {area}) become one choice of n units, each sub-area kept in floors with its rule, a course listed under two sub-areas listed once; only two or more blocks, never where the sub-areas' own printed figures sum past n",
+  "repeat": "a course or a list the page says is taken more than once (Hartnell's Music 43887): pattern's code and n give that course or alternative times n, so its units count n times; block_pattern's n, read on a choose_courses block's name the reading gave a minimum of one, makes it n enrollments from a list a student may repeat (repeats); never a figure the reading gave; a total group (Delta's \"for a total of 16 units\") keeps the printed sum as units_total, which the scorer reads in place of the course's units times n; n may be a word (four)"
  },
  "colleges": {
   "Cabrillo College": {
@@ -208,6 +210,20 @@
      "field": "total_units_minimum",
      "value": true,
      "pattern": "Minimum (?:Major )?Units Required: \\d+(?:\\.\\d+)?"
+    },
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "[Rr]equired\\s+to\\s+enroll\\s+(?P<n>[0-9]+|two|three|four|five|six)\\s+times\\s+in\\s+(?P<code>[A-Z]{2,5}\\s?[0-9]+[A-Z]?)\\s+for\\s+a\\s+total\\s+of\\s+(?P<total>[0-9]+(?:\\.[0-9]+)?)\\s+units",
+     "why": "S498 SkyBearberry, 2026-10-27: Caterpillar Dealer Service Technician Apprenticeship certificate 44197 read 40-43 against 55 because the record keeps CAT 69V (Units: 1-4) once, and the page prints \"Students are required to enroll four times in CAT 69V for a total of 16 units.\" (college-page-read 40479703275). With 16, the blocks sum to 55, the page's \"Minimum Units Required: 55\" (S424 named the gap; Hartnell's repeat step, S497). The first reconcile (40480236607) moved nothing on the capture's innerText, so the pattern reads any whitespace (a no-break space or a line break) between its words."
+    },
+    {
+     "kind": "pool_areas",
+     "field": "blocks",
+     "pattern": "Area\\s+(?P<area>[35])\\s+-\\s+(?P<title>[A-Z][^\\n·•]*?)\\s*[·•]?\\s*Complete\\s+a\\s+minimum\\s+of\\s+(?P<n>[0-9]+(?:\\.[0-9]+)?)\\s+semester\\s+units\\s+with\\s+at\\s+least\\s+one\\s+course\\s+each\\s+from",
+     "block_pattern": "{area}[A-Z](?::|\\s+-)\\s",
+     "name": "Area {area} - {title}",
+     "why": "S499 SkyCloudberry, 2026-10-27: the Cal-GETC certificate 45621 read 29-40 against 34 because the record keeps Area 3's (3A, 3B) and Area 5's (5A, 5B) sub-areas as separate blocks with no figure, where the page prints one minimum over each area: \"Area 3 - Arts and Humanities / Complete a minimum of 6 semester units with at least one course each from 3A - Arts and 3B - Humanities.\" and \"Area 5 - Physical and Biological Sciences / Complete a minimum of 7 semester units with at least one course each from 5A - Physical Science and 5B - Biological Science.\" (college-page-read 40497591551, plan kb/college_reads/san_joaquin_delta_calgetc_area_totals.json). Hartnell's CalGETC 45096 shape (S495). The pattern names Areas 3 and 5 only: Area 1 prints the same words over 1A, 1B and 1C, but 1C is one required course (rule all, which the step never pools) and each sub-area picks one course, so the three already sum to the area's 9-10. Pooled, the record sums 34-35 against the page's \"Minimum Units Required: 34\", a floor (the low end meets it). Every pattern word is joined by \\s (Delta's capture keeps no-break spaces, S498). Of Delta's filed records only 45621 carries blocks named 3X or 5X."
     }
    ]
   },
@@ -522,6 +538,21 @@
      "kind": "course_hours",
      "field": "units",
      "source_words": "the top of each course's credits.lectureHours plus credits.labHours in the same courses/search answer, which the tab's \"Non Credit - Total hours\" sums (college-page-read 40273805437: ENGM620 90 and 54, ENGM622 72, total 216)"
+    },
+    {
+     "kind": "pool_areas",
+     "field": "blocks",
+     "pattern": "Area (?P<area>[0-9]): (?P<title>[A-Z][^\\n\\u00b7\\u2022]*?)\\s*[\\u00b7\\u2022]?\\s*A total of (?P<n>[0-9]+(?:\\.[0-9]+)?) semester units is required",
+     "block_pattern": "(?:Area {area}: [^\\n]*? - )?Area {area}[A-Z]\\b",
+     "name": "Area {area}: {title}",
+     "why": "S495 SkySalmonberry, 2026-10-27: CalGETC 45096 read 30-44.5 against 34 because the record keeps Area 3's and Area 5's sub-areas as separate blocks with no figure (\"Area 3: Arts and Humanities - Area 3A (Arts)\", 3B; \"Area 5A: Physical Science\", 5B, 5C) where the tab prints one total over each area: \"Area 3: Arts and Humanities / A total of 6 semester units is required. Two courses required: one from Area 3A (Arts) and one from Area 3B (Humanities).\" and \"Area 5: Physical and Biological Sciences / A total of 7 semester units is required.\" (college-page-read 40375734212, plan kb/college_reads/hartnell_calgetc_area_totals.json). The step pools each area's sub-areas into one choice of its total, 5C's laboratory list kept as a floor, so the pattern sums 9 + 3 + 6 + 6 + 7 + 3 = 34. Areas 2, 4 and 6 print a total over one block and are left alone."
+    },
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "If (?P<code>[A-Z]{2,5} ?[0-9]+[A-Z]?) is chosen,? it must be taken for (?P<n>[0-9]+) semesters",
+     "block_pattern": "(?P<n>[0-9]+) semesters of any of the following Courses",
+     "why": "S497 SkyCrowberry, 2026-10-27: Music certificate 43887 read 18-19 against 19.5 because the tab prints two repeat counts the record shape had no field for: \"If MUS 11 is chosen, it must be taken for 2 semesters\" (MUS 11 at 0.5 units, the alternative to MUS 10 at 1) and a list headed \"2 semesters of any of the following Courses\" (MUS 20, 21, 25, 26, 37, 1 unit each), which the reading kept as one choice (S488 read, kb/college_reads/hartnell_unread_failures.json; lessons S488). With both, the blocks sum to 19.5-20, whose low end meets the printed 19.5 (the narrow meets reading, Sheet 120 card 1). Delta 44197 (S424) is the same gap."
     }
    ]
   }

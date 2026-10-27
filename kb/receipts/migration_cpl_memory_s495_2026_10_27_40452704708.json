@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_s495_2026-10-27.sql",
+ "name": "cpl_memory_s495_2026_10_27",
+ "version": "20261027050114",
+ "sha256": "47b6fd2fc99aa7752fd588e048ff529f192e33e7463b9a5431198ba5a1ad682a",
+ "run": "40452704708",
+ "status": 201,
+ "response": "[{\"slug\":\"narrated-cut-scene8-reread-sheet135-2026-10-27\",\"status\":\"proposed\"},{\"slug\":\"a11y-seed-waiting-on-data-reads-as-load-2026-10-27\",\"status\":\"proposed\"},{\"slug\":\"axe-internal-tabs-worked-2026-10-27\",\"status\":\"proposed\"},{\"slug\":\"hartnell-calgetc-pool-areas-step-2026-10-27\",\"status\":\"proposed\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

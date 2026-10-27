@@ -1,0 +1,199 @@
+{
+ "college": "San Joaquin Delta College",
+ "reread_run": "40489395464",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "40484963062",
+ "at": "2026-10-27T10:34:55Z",
+ "posted": 1,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "19752",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 1,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "44197"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'San Joaquin Delta College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 40484963062;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 15,
+    "placed": 15,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 55,
+       "min": 55
+      },
+      "courses": [
+       {
+        "code": "CAT 21",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 69V",
+        "units": 1,
+        "units_max": 4,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 80",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 81",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 82",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 83",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 84",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 85",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 86",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 87",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 90",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 91",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 92",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 93",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT 94",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Caterpillar Machine Technician",
+      "Caterpillar diesel engine and machine technician/mechanic"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Score 60% or higher on the AED test administered by Caterpillar and/or Association of Equipment Dealers.",
+      "Demonstrate the ability to diagnose and repair heavy equipment."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 55,
+      "min": 55
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Caterpillar Dealer Service Technician Apprenticeship Certificate of Achievement",
+     "open_elective_units": null,
+     "total_units_minimum": true,
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 55,
+   "total_min": 55,
+   "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3385&print",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39217405432,
+   "program_title": "Caterpillar Dealer Service Technician Apprenticeship",
+   "control_number": "44197"
+  }
+ ]
+}

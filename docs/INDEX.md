@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 94 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 465 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1281** | |
+| Session handoffs | 470 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1286** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,14 +122,13 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-27 (S499 SkyCloudberry): Delta Cal-GETC 45621 passes on a `pool_areas` step, 199 of 203 (#2508, reread 40502212690, display build 5dc18d9ea80a); handoff 500.
+- 2026-10-27 (S497 SkyCrowberry): Hartnell Music 43887 passes on the new `repeat` reconcile step, 83 of 94 (#2506, reread 40469123943, display build 8f8a282ca526); handoff 498.
+- 2026-10-27 (S496 SkyLingonberry): Hartnell CalGETC 45096 passes, 82 of 94 (#2504, reread 40460714483, display build 588cfa081bee); the Funding film's UI pass, clean; handoff 497.
+- 2026-10-27 (S495 SkySalmonberry): Sierra's scene 8 re-read and the narrated cut on the v11 picture (#2499, held for Open Asks Sheet 135); axe on the internal tabs worked (#2498, #2500, #2501); lanes under budget (#2502); Hartnell's Cal-GETC area step on its branch; handoff 496.
 - 2026-10-27 (S493 SkyThimbleberry): the MAP link with each exhibit's builder on the CPL Opportunity visual, EACR, CPL Pathways, My College and CER (#2485, #2488); the public funding page's Step 2 fixed for the Summit (#2487); Open Asks Sheet 134 answered; handoff 494.
 - 2026-10-26 (S492 SkyCloudberry): the public funding page's header and WCAG 2.2 AA pass for the CPL Summit; KB note `methodology-geometry-is-half-an-accessibility-audit`; handoff 493.
 - 2026-10-26 S491 SkySalmonberry: wording help for Sierra's instructions (Check wording #2474, Suggest wording and the built-in naming rule #2475, deployed), four live instructions corrected, Open Asks Sheet 132 answered; funding attestation form drafted (#2476); full checkpoint, handoff 492.
 - 2026-10-26 S490 SkyGooseberry: the Library's Regenerate and documents on a record, the MAP team's notes on a college page, the CPL Opportunity page under `library/`, Open Asks Sheet 131 answered (#2472); full checkpoint, handoff 491.
 - 2026-10-26 S488 SkyThimbleberry: Hartnell's last eight failing tabs read (light checkpoint); handoff 489.
 - 2026-10-26 S487 SkyHuckleberry (the CPL Queue routine): Hartnell's pooled subject lists; a `pool_lists` reconcile step, General Studies 17912 passes, Hartnell 80 of 94 (#2463); full checkpoint, handoff 488.
-- 2026-10-26 S486 SkyQuince (the CPL Queue routine): Hartnell's double-count words read as the overlap; three local degrees pass, the carry basis leaves the flag out (#2462); handoff 487.
-- 2026-10-26 S485 SkyElderberry (the CPL Queue routine): Hartnell's last three noncredit courses carry no hours in its data; why six of its degrees fail arithmetic, read from their tabs (#2461); light checkpoint, handoff 486.
-- 2026-10-26 S483 SkyCoyoteMint (opened by hand): DSP Credit Starting Points Version 2 on the agency template, a draft beside v1 (CPLBrain#487, receipt applied); Open Asks Sheet 129 and the series record caught up to it; the library lane back under budget (#2458); full checkpoint, handoff 484.
-- 2026-10-26 S482 SkyShootingStar (opened by hand): ELL IET Version 2 with example articulations (CPLBrain#485, receipt applied); the Summit film v3 and the funding film v11 (#2457); Open Asks Sheet 128; the house-voice note gains *Lead with what is possible*; full checkpoint, handoff 483.
-- 2026-10-26 S480 SkyChia (opened by hand): the funding tab's NC labels, outcome chips and Serves on P3 and P4 (#2453); the Library's Changes to make and Copy the request, the Coordinator Guide In development (#2452); Coordinator Guide Draft 1 (CPLBrain#482); full checkpoint, handoff 481.

@@ -72,51 +72,9 @@ The hand-filed catalogs read from Sam's release copies (S406), then catalog step
 
 Verbatim in [`program_requirements_harvest_lessons_archive_3.md`](program_requirements_harvest_lessons_archive_3.md): a page heading a section per award serving each sibling, Foothill loaded, six colleges captured again, Reedley, CPL Pathways' college line, the page-claimed sweep, department pages, two-line headings and Program Mapper.
 
-## S408 SkyAgave (2026-10-17): a run of numbers after one subject, a list marker at a line's end, the eight-college wave
+## S408: moved to the archive (S498 compaction)
 
-- **A run of numbers after one subject (#2206).** Glendale's 2025-2026 PDF prints "ACCTG 101, 102; BUSAD 101, 106, 120;
-  CS/IS 100 or 101". `find_codes` matched a code only where its subject stood beside the number, so a program page named a
-  third to a half of its list, and course descriptions ("WELD 121 is the first...") outscored it. The capture-only read
-  found 190 of 267 with 117 picks at 50-80% coverage (run 39057600516); on the new finder, 258 found and 180 at full
-  coverage (run 39062348929). A number the run's words make a figure ("and 3 units", "or 3 years") ends the run; a
-  three-digit number may carry one space per digit ("B IOL 1 42, 50"); a subject may carry a slash (CS/IS). The filed
-  fixtures find all they found; Mt. San Antonio 33876 also finds CHLD 67L ("CHLD 67 & 67L"), pinned in the test.
-- **A list marker at a line's end (#2207).** Ohlone's chapter 7 PDF prints an outcome's number at the end of its first
-  line ("...deposit receipts, escrows, 2." then "and financing."); 125 of 146 records failed the outcomes check (run
-  39061732843). The scorer reads the text once more with such markers dropped. A `step=reconcile` (no model call)
-  rescored the filed records: outcome failures 125 to 8, machine passes 8 to 117 (run 39063337090).
-- **The session cannot reach a run's artifact or a college host.** Both proxies refuse (`productionresultssa19.blob...`,
-  `glendale.edu`), so a PDF's text comes from a page-read plan: keywords loose enough for spaced capitals
-  (`B\s?U\s?S\s?A\s?D\s{0,3}16[2359]`) print the pages naming them (runs 39061888500, 39062425296).
-- **A year on a catalog step reaches loaded rows only through a forced re-extraction.** East LA's step v2 carries
-  2026-2027 (migrate run 39062042558); `step=reread` posts only the newest run's records, so all 120 were forced
-  (`force=` the filed control numbers, $10.74), then reread (120 replaced) and loaded (13 new; 4 place none).
-- **Glendale's catalog prints no units per course.** 161 of 258 records read arithmetic incomplete and 25 invented (a
-  2025-2026 catalog against the state's current list); 220 loaded, 38 place none. The display fills units from COCI.
-- **Loads (all unchecked):** Desert 323 ($28.43), CCSF 41 reread + 2 ($23.72 forced), LA Southwest 84 ($6.00),
-  Grossmont 136 ($10.28), Ohlone 134 ($10.02), East LA 120 + 13, Glendale 220 ($19.80), Pasadena 290 ($20.86).
-- **The wave (#2208): build `f949e7c0ea35`, 15,336 programs at 108 colleges** (from 13,851 at 100). The registry read
-  had drifted on 16 rows, not only the six S407 changed: ten carried the 2026-10-04 census, three of them with more
-  (Mt. San Antonio's Guided Pathways sequence, Miramar's address without `/iq/20891`, West LA's mapper refusal). Compare
-  every row's md5 to live at a wave, not only the added colleges'.
-- **Merging college branches with `-X theirs` can revert shared files.** Branches cut from an older code base carried an
-  older `kb/dependency_map.json`; diff the code and generated files against `main` after the merges and restore. Push
-  merges alone: a push mixing a merge that changed `kb/migrations/.apply` with a later plain commit would fire the
-  migrate gate.
-- **Desert's online catalog** (`catalog.collegeofthedesert.edu`, 2026-2027) is the college's own HTML: no vendor marker,
-  no data calls, its Programs of Study an unlinked table (page read 39066043761). It holds the year the PDF read loaded.
-- **The UI pass's next view, Exhibit Adoption, measured and deferred.** Four faults (run at S408): `.cv-synth` 4.27:1
-  light and `.cv-ccc` 4.05:1 dark, and no focus ring on `#sw-search` and `#sw-handout`. The `sw-*` control styles sit in
-  the generator's exhibit CSS block (`index.html`, the `MAP Articulation Analysis Cards` markers), so fixes inject from
-  `statewide_interactive.js`'s `CV_STYLE`; the 🏛 beside "Statewide CCC standard" is an emoji and goes; ⚙ is the design
-  system's suggested-accent glyph.
-
-## Moved from the lane (S408 compaction)
-
-- S406-S407's sweep line: build `fec9782a4dbc` (13,851 at 100) added the eight hand-filed colleges (Cerro Coso 52,
-  Porterville 76, Folsom Lake 104, De Anza 210, Sacramento City 182, Cosumnes River 182, CCSF 294, American River 327);
-  S407 read LA Trade Tech, LA Mission and Desert through catalog steps and applied Sheets 90-91's registry corrections
-  (Cuesta, the six hand-filed rows, Grossmont, Ohlone, Cañada, Pasadena, Glendale, LA Southwest) through the runner.
+A run of numbers after one subject, a list marker at a line's end, the eight-college wave, and the lane text S408 retired: verbatim in [`program_requirements_harvest_lessons_archive_3.md`](program_requirements_harvest_lessons_archive_3.md).
 
 ## S411 SkySotol (2026-10-18): Hartnell by its code headings, the reconcile trap, Merced and SmartCatalog mapped
 
@@ -1133,3 +1091,82 @@ side session (Scenario 4) ran beside it, one writer per file.
 ### Moved from the lane (S445 compaction)
 
 **S444:** Golden West (79) and Imperial Valley (42) loaded; department pages are candidates, a section heading may span two lines (Sierra 35 → 81 found, MiraCosta 29 → 68, its discipline pages still lose siblings); 37 Program Mapper hosts recorded (#2330).
+
+## S499 SkyCloudberry (2026-10-27, the CPL Queue routine): Delta Cal-GETC 45621 passes (199 of 203)
+
+- **The same certificate, the same shape, at a second college.** Delta's Cal-GETC 45621 read 29-40 against 34 for the
+  reason Hartnell's 45096 did (S495): the page prints one minimum over each area's sub-areas, and the record kept each
+  sub-area as its own block with no figure. Page read 40497591551 gave the words ("Area 5 - Physical and Biological
+  Sciences / Complete a minimum of 7 semester units with at least one course each from 5A ... and 5B ..."), and
+  Hartnell's `pool_areas` step took a Delta pattern with no code change. Reconcile 40498068817 moved 45621 alone, 34-35
+  against the floor of 34; reread 40502212690 replaced one row.
+- **Pool only the areas whose sub-areas are choices.** Area 1 prints the same words over 1A, 1B and 1C, but 1C is one
+  required course (rule `all`, which the step never pools), and pooling 1A and 1B alone would have counted Area 1 as
+  9 plus 1C's 3. Each of Area 1's sub-areas picks one course, so they already sum to the area's 9-10. The pattern names
+  Areas 3 and 5 only. Test a step against the record locally (`reconcile()`, then `program_units()`) before dispatching.
+- **The four left at Delta are extraction misreads, each named in the Jev verdicts** (`kb/jev_harvest_verdicts/`):
+  07304 records the elective list once more beside the three Areas that already include it; 16764 counts a block a piano
+  examination can waive; 22244 leaves out "Associate Degree Math Requirement: Units 4", a non-course line that brings
+  19 to the page's 23 (05612's reader recorded the same line as a choose_units block of 4 with no courses); and 19752 was
+  handed the GE page. The phrase means different things elsewhere at Delta (an "or" alternative inside an area, a line
+  outside the stated total), so a college-wide step would misfire. Each needs a second reading of its own page.
+- **A page read's install step can hang.** Run 40496307093 sat in the Playwright install for 13 minutes; a canceled
+  run and a fresh dispatch finished in two (40497591551).
+
+## S498 SkyBearberry (2026-10-27, the CPL Queue routine): RN 03570 summed, Delta 44197 passes (198 of 203)
+
+- **RN 03570 needed no new page read.** S485's page read 40279150362 already printed the whole AS.NRN tab, prerequisite
+  list included, and every prerequisite course carries vendor units on another Hartnell record (BIO5 4, BIO6 3, BIO6L 2,
+  BIO27 4, CHM22 4, ENGLC1000 3 or 1000E 4, the math choice 3 to 6, PSY25 or NRN70 3, ANT2 and SOC1 3 each,
+  COMMC1000 or COM3 3, Local GE Area 6 at 3). Read Fable's way (S488), the prerequisites sum to about 35-42. The 36.5
+  required NRN units bring the total to about 71.5-78.5, against the 60 the tab prints. So the build would replace an
+  *incomplete* status with an *unequal* one (the catalog's 60 understates the program). That gives a better reason and
+  no pass, so it was not built this run. Read a log the earlier runs left before you load the college's site again.
+- **Delta 44197: a repeat count can come with its own printed sum.** Page read 40479703275 shows the words "Students
+  are required to enroll four times in CAT 69V for a total of 16 units" beside "Units: 1-4". Four times the range
+  would read 4-16, and the narrow `meets` reading would still fail at 43-55. So the `repeat` step takes an optional
+  `total` group and keeps it as `units_total`, which the scorer reads in place of the range times n. It also reads a
+  count written as a word. The record sums to 55, the page's "Minimum Units Required: 55". The printed units stay.
+- **Delta's capture puts a no-break space between subject and number** ("in\u00a0CAT 69V"). Reconcile 40480236607
+  moved nothing on a pattern written with a plain space. Reconcile 40484963062, with `\s` between every word, moved
+  44197 alone, to 55 against 55 (equal). Write an Acalog pattern with `\s`, never a literal space. The first run also
+  rescored 05630 (a certificate total that counts GE, `ge_included` 16) and 11970 (`fill` 18.5) to pass, under
+  readings the scorer gained after S424, so Delta reads 198 of 203. Reread 40489395464 posted 44197 and a second
+  reread (`force=40480236607`) posted the two rescores. Display build 20241d4a9117 applies on `main` after the merge.
+
+## S497 SkyCrowberry (2026-10-27, the CPL Queue routine): Music 43887's repeat counts
+
+- **A repeat count is a field, never a doubled figure.** The `repeat` step gives a course `times: n` and a list
+  `repeats: true` with `minimum: n`; the record keeps each course's printed units, and only the scorer multiplies.
+  A repeating list counts n of its least course for the low end and n of its largest for the high end. No other
+  record carried either field, so no other score moved. Delta 44197 (S424) is the same gap and can take the step.
+- **The pattern matched the live capture on the first dispatch** (reconcile 40466933762): "If MUS 11 is chosen, it
+  must be taken for 2 semesters" and the block name "2 semesters of any of the following Courses". The run re-filed
+  all 58 records again; 43887 alone moved, so the rest returned to main and the summary moved 82 to 83 by hand.
+- **RN 03570 cannot take Fable's reading yet:** its record holds the four semesters and the recommended success
+  courses, and no prerequisite list, so the reading needs a page read of the tab's prerequisite words first.
+
+## S496 SkyLingonberry (2026-10-27, the CPL Queue routine): 45096 lands
+
+- **Reconcile 40452134609 (free) moved 45096 alone in substance:** 34-35 against 34, arith equal, the units of all 163
+  courses as before. The other 57 re-filed records changed only bookkeeping (`ge_overlap`, the `reconciled` log), and the
+  capture flapped (43821 fell to a near miss, two Coursedog code pairs swapped order), so capture, sources and those
+  records returned to main and the summary moved 81 to 82 by hand. Reread 40460714483 replaced one row; read back
+  `total` 34, arithmetic `equal`.
+- **A re-filed capture can lose a program the last one found.** Restore the summary from main and edit the counts,
+  never take the run's summary whole.
+
+## S495 SkySalmonberry (2026-10-27): Hartnell CalGETC 45096's area totals, the step
+
+- **The page read named the shape; the stored record named the blocks.** Page read 40375734212 prints "Area 3: Arts and
+  Humanities / A total of 6 semester units is required. Two courses required: one from Area 3A (Arts) and one from Area
+  3B (Humanities)." and "Area 5 ... A total of 7"; the record (read through the Supabase MCP) keeps "Area 3: Arts and
+  Humanities - Area 3A (Arts)", 3B, "Area 5A: Physical Science", 5B and 5C as figureless choose_courses blocks, so one
+  `block_pattern` has to match both namings: `(?:Area {area}: [^\n]*? - )?Area {area}[A-Z]\b`.
+- **`pool_areas` finished (S491's WIP):** each area's sub-areas become one choice of the printed total, named for the
+  area (`{title}`), each sub-area kept in floors with its rule, a course under two sub-areas listed once (5C's laboratory
+  list repeats 5A's and 5B's); 9 + 3 + 6 + 6 + 7 + 3 = 34. The text pattern reads a capture joined by newline or space.
+  Eight checks in `tests/program_requirements_reconcile_test.py`; the confirm-carry check excludes `pool_areas` as it
+  does `pool_lists` (a joined block's confirm does not carry).
+- **Next:** the reconcile dispatched on the branch (extract 0) checks the pattern on `out/sources/45096.json`; then, as
+  S489 did, restore any re-filed record that changed only bookkeeping, reread, and merge.

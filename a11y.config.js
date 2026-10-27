@@ -809,9 +809,16 @@ async function seedCrProgress(page, theme) {
 // Procedures: each procedure, one opened to what it did.
 async function seedCerProcedures(page, theme) {
   await openCerView(page, theme, "procs");
-  await page.waitForSelector("#tab-credential-reference .cr-proc-item button.cr-proc-word", { timeout: 30000 });
-  await page.evaluate(() => document.querySelector("#tab-credential-reference .cr-proc-item button.cr-proc-word").focus());
-  await page.keyboard.press("Enter");
+  // A procedure shows "See what it did" only when the last run settled something under it
+  // (pr.sample). The 2026-10-26 run settled none of the 13, so the seed waits for the list
+  // and opens a sample only where one exists (S495: waiting on the button timed out alone).
+  await page.waitForSelector("#tab-credential-reference .cr-proc-item", { timeout: 30000 });
+  const opened = await page.evaluate(() => {
+    const b = document.querySelector("#tab-credential-reference .cr-proc-item button.cr-proc-word");
+    if (b) b.focus();
+    return !!b;
+  });
+  if (opened) await page.keyboard.press("Enter");
   await page.waitForTimeout(300);
 }
 

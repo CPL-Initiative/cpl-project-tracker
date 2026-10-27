@@ -58,6 +58,16 @@ def _num(s):
     return None if s is None else (int(float(s)) if float(s).is_integer() else float(s))
 
 
+_COUNTS = {"two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "twice": 2}
+
+
+def _count(s):
+    """A repeat count as the page prints it: a figure or a word (Delta's "four times", S498)."""
+    if s is None:
+        return None
+    return _COUNTS.get(s.strip().lower()) or _num(s)
+
+
 def _empty(v) -> bool:
     if isinstance(v, dict):
         return v.get("min") is None and v.get("max") is None
@@ -182,6 +192,78 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
             if filled:
                 notes.append({"field": "course_hours", "was": None, "now": filled,
                               "words": "%s (%s)" % ((course_hours or {}).get("call"), st.get("source_words", ""))})
+            continue
+        if st["kind"] == "pool_areas":
+            # A total the page prints over each area's sub-areas (Hartnell's CalGETC 45096, S491: "A total of
+            # 6 semester units is required" over Area 3A and 3B; "A total of 7" over 5A, 5B and 5C). Each
+            # match names one area and its figure; that area's sub-area blocks become one choice of the
+            # figure, each sub-area kept in floors (its rule says whether its minimum counts courses or
+            # units), and a course listed under two sub-areas listed once (5C's laboratory repeats 5A's and
+            # 5B's courses). Only two or more blocks, and never where a sub-area's own printed figures sum
+            # past the area's.
+            for m in re.finditer(st["pattern"], text):
+                area, n = m.group("area"), _num(m.group("n"))
+                named = re.compile(st["block_pattern"].replace("{area}", re.escape(area)))
+                blocks = out.get("blocks") or []
+                pool = [i for i, b in enumerate(blocks) if named.match(b.get("name") or "")
+                        and b.get("rule") in ("choose_courses", "choose_units") and not b.get("floors")]
+                if n is None or len(pool) < 2:
+                    continue
+                if sum(_span_of(blocks[i].get("stated"))[0] or 0 for i in pool) > n:
+                    continue
+                courses, seen = [], set()
+                for i in pool:
+                    for c in blocks[i].get("courses") or []:
+                        k = re.sub(r"\s+", "", (c.get("code") or "")).upper()
+                        if k and k in seen:
+                            continue
+                        seen.add(k)
+                        courses.append(c)
+                title = (m.groupdict().get("title") or "").strip()
+                name = st.get("name", "Area {area}").replace("{area}", area).replace("{title}", title)
+                merged = {"name": name, "rule": "choose_units",
+                          "minimum": n, "option_group": None, "stated": {"min": n, "max": n}, "courses": courses,
+                          "floors": [{"name": blocks[i].get("name"), "rule": blocks[i].get("rule"),
+                                      "minimum": blocks[i].get("minimum"), "stated": blocks[i].get("stated")}
+                                     for i in pool]}
+                notes.append({"field": "blocks", "was": [blocks[i].get("name") for i in pool],
+                              "now": merged["name"], "words": m.group(0).strip()})
+                out["blocks"] = [merged if i == pool[0] else b for i, b in enumerate(blocks) if i not in pool[1:]]
+            continue
+        if st["kind"] == "repeat":
+            # A course or a list the page says is taken more than once (Hartnell's Music 43887, S497):
+            # "If MUS 11 is chosen, it must be taken for 2 semesters" gives that course (or alternative)
+            # times 2; a choose_courses block the reading named "2 semesters of any of the following
+            # Courses" and read as one choice becomes 2 enrollments from a list a student may repeat.
+            # Never a figure the reading already gave.
+            from _program_requirements_pilot import norm_code
+            # Delta's Caterpillar 44197 (S498) words the count and prints the sum: "Students are required
+            # to enroll four times in CAT 69V for a total of 16 units" (a 1-4 unit course); the total group
+            # keeps that sum as units_total, so the scorer reads 16 rather than four times the range.
+            for m in re.finditer(st.get("pattern") or r"(?!)", text):
+                code, n = norm_code(m.group("code")), _count(m.group("n"))
+                total = _num(m.group("total")) if "total" in m.re.groupindex and m.group("total") else None
+                for block in out.get("blocks") or []:
+                    for course in block.get("courses") or []:
+                        for entry in [course] + [a for a in course.get("alternatives") or [] if isinstance(a, dict)]:
+                            if n and n > 1 and norm_code(entry.get("code")) == code and entry.get("times") is None:
+                                entry["times"] = n
+                                now = {entry["code"]: n}
+                                if total is not None:
+                                    entry["units_total"] = total
+                                    now = {entry["code"]: {"times": n, "units_total": total}}
+                                notes.append({"field": "times", "was": None, "now": now,
+                                              "words": m.group(0).strip()})
+            named = re.compile(st["block_pattern"]) if st.get("block_pattern") else None
+            for block in (out.get("blocks") or []) if named else []:
+                bm = named.search(block.get("name") or "")
+                n = _num(bm.group("n")) if bm else None
+                if (not n or n < 2 or block.get("rule") != "choose_courses" or block.get("repeats")
+                        or _num(block.get("minimum")) not in (None, 1)):
+                    continue
+                notes.append({"field": "blocks", "was": block.get("minimum"), "now": {block["name"]: n},
+                              "words": bm.group(0).strip()})
+                block["minimum"], block["repeats"] = int(n), True
             continue
         field = st["field"]
         m = re.search(st["pattern"], text)

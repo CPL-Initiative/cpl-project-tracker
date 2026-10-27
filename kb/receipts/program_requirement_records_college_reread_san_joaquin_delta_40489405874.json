@@ -1,0 +1,432 @@
+{
+ "college": "San Joaquin Delta College",
+ "reread_run": "40489405874",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "40480236607",
+ "at": "2026-10-27T10:36:25Z",
+ "posted": 2,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "19752",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 2,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "05630",
+  "11970"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 2,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'San Joaquin Delta College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 40480236607;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 17,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 26,
+       "min": 26
+      },
+      "courses": [
+       {
+        "code": "ECE 21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 26",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 27",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 28",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 31A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 31B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 32A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 63",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Restricted Electives - Area A",
+      "rule": "choose_units",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ECE 29",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     },
+     {
+      "name": "Restricted Electives - Area B",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ECE 24",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 29",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 72",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 73",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "teacher"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 16,
+      "min": 16
+     },
+     "outcomes": [
+      "Describe and design a developmentally appropriate room and yard environments.",
+      "Plan and implement developmentally and culturally appropriate curriculum for young children.",
+      "Apply positive guidance techniques in guiding children’s behavior.",
+      "Apply child development theory and principles in working with young children."
+     ],
+     "ge_pattern": "San Joaquin Delta College Associate Degree General Education Pattern",
+     "total_units": {
+      "max": 51,
+      "min": 51
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Early Childhood Education Teacher Certificate of Achievement",
+     "open_elective_units": null,
+     "total_units_minimum": true,
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 51,
+   "total_min": 51,
+   "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3214&print",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39217405432,
+   "program_title": "Early Childhood Education Teacher",
+   "control_number": "05630"
+  },
+  {
+   "award": "Certificate of Achievement requiring 60+S/90+Q units",
+   "checks": {
+    "listed": 15,
+    "placed": 15,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 38.5,
+       "min": 38.5
+      },
+      "courses": [
+       {
+        "code": "ECE 21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 26",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 27",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 28",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 31A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 31B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 32A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 32B",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 35",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 37",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 38",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Restricted Electives - Area A",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000E",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate knowledge of strategic and fiscal planning through budget construction by developing a budget and budget notes for a hypothetical early childhood program.",
+      "Implement ongoing professional development plans based on evaluation of staff and administrator needs by completing a written assignment.",
+      "Evaluate components of quality programs, facilities and operations including applying Title 22 and Title 5 Code of Regulations by completing examination questions.",
+      "Individualize mentoring and supervision strategies based on the roles and developmental stages of adult learners by completing a written assignment.",
+      "Describe major developmental milestones for children from conception through adolescence in the areas of physical, psychosocial, cognitive, and language development through a written assignment."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 60,
+      "min": 60
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Early Childhood Education Site Supervisor Certificate of Achievement",
+     "open_elective_units": null,
+     "total_units_minimum": true,
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 60,
+   "total_min": 60,
+   "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3213&print",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39217405432,
+   "program_title": "Early Childhood Education Site Supervisor",
+   "control_number": "11970"
+  }
+ ]
+}
