@@ -229,6 +229,11 @@ CONFIG['n2'] = dict(
     audio='narration_s2.mp3',
     credit='Sierra is a synthetic voice made with ElevenLabs.',
     narr=narration('narration_s2_layout.json'),
+    # What scene 8's read of 2026-10-27 says (Sam, Sheet 133 card 1: "adjust for the
+    # small NC condition change and leave the rest of the narration"): December 31,
+    # and the outcomes lane's first condition. The rest of this dict stays the figures
+    # Sierra read on 2026-10-02, so --check names what her read and the picture differ on.
+    deadline='December 31, 2026', coordLine=COORD_LINE_NC, coordWords=COORD_WORDS_NC,
 )
 
 # ── THE INTRODUCTIONS READ THE MODEL (Sam, 2026-10-19: "revise the video and
@@ -383,6 +388,9 @@ LIVE = {}
 if FIG:
     LIVE['s1'] = live_config(CONFIG['s1'], FIG, 'Scenario 1')
     LIVE['s2'] = live_config(CONFIG['s2'], FIG, FIG.get('published') or 'Scenario 2')
+    # The narrated cut plays the published film's picture (v11), its voice over it
+    # (Sam, Sheet 133 card 1, 2026-10-26; S495). n1 keeps its voiced frames.
+    LIVE['n2'] = live_config(CONFIG['n2'], FIG, FIG.get('published') or 'Scenario 2')
 
 if '--check' in sys.argv:
     if not FIG:

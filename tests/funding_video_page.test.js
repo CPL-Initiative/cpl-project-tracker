@@ -288,7 +288,7 @@ NARRATED.forEach(({ tag, v, s }) => {
   // participationDeadline (Scenario 1: 2026-12-01); the narrated drafts keep
   // the date their voice reads.
   [["funding_in_motion.html", "", "December 1, 2026"], ["funding_in_motion_s2.html", "s2 ", "December 31, 2026"],
-   ["funding_in_motion_n1.html", "n1 ", "November 1, 2026"], ["funding_in_motion_n2.html", "n2 ", "December 30, 2026"]].forEach(([file, tag, by]) => {
+   ["funding_in_motion_n1.html", "n1 ", "November 1, 2026"], ["funding_in_motion_n2.html", "n2 ", "December 31, 2026"]].forEach(([file, tag, by]) => {
     const w = boot(file, false), d = w.document;
     // every scene's text, its chapter and what the page announces, second by second of the film
     let shown = d.title + " " + d.getElementById("chapters").textContent;
@@ -346,14 +346,13 @@ NARRATED.forEach(({ tag, v, s }) => {
     s2.scenes.every((x) => !x.pending && x.read));
   const cfgOf2 = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
   const cfg = cfgOf2("funding_in_motion_n2.html"), intro = cfgOf2("funding_in_motion_s2.html");
-  // The narrated cut keeps the frames its voice was read on (34.5 FTES); the
-  // introduction moved to the published Scenario 3's figures on 2026-10-20
-  // (S439), so only the parts no figure drives still match until a new read.
-  // The deadline left the list with Scenario 4 (S466): the introduction reads
-  // December 31, 2026, set on the tab; the narrated cut keeps December 30.
-  const PICTURE = ["split", "timing", "close", "explainer", "kick", "titleText"];
-  check("k5 the n2 picture shares the introduction's dates, closing and address, and keeps its voiced figures",
-    PICTURE.every((k) => JSON.stringify(cfg[k]) === JSON.stringify(intro[k])) && cfg.how && cfg.target.ftesWords === "34.5");
+  // The narrated cut plays the published film's picture (Sam, Sheet 133 card 1,
+  // 2026-10-26; S495): every figure the introduction shows, its targets slide,
+  // its minimum conditions with the Noncredit CPL Lead, and its dates.
+  const PICTURE = ["split", "timing", "close", "explainer", "kick", "titleText", "ex", "prios", "prioHead", "ncLine",
+    "how", "target", "deadline", "coordLine", "coordWords", "figures"];
+  check("k5 the n2 picture is the introduction's: its figures, targets slide, conditions, dates, closing and address",
+    PICTURE.every((k) => JSON.stringify(cfg[k]) === JSON.stringify(intro[k])) && !!cfg.how && !!cfg.coordLine);
   // Sierra by name, on the video (Sam, 2026-10-02): beneath the lockup as she says it, and in the closing credit
   const w = boot("funding_in_motion_n2.html", false), d = w.document;
   const said = L2.scenes[0].anchors.find((a) => a.word === "I'm Sierra");

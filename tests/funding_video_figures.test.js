@@ -116,8 +116,9 @@ const out = path.join(tmp, "figures.json");
 {
   const dir = path.join(ROOT, "prototype", "funding_video");
   const src = read("prototype/funding_video/build.py");
-  check("3a: build.py reads figures.json for s1 and the published scenario's s2, and leaves the narrated cuts their voiced figures",
+  check("3a: build.py reads figures.json for s1 and the published scenario's s2 and n2, and leaves n1 its voiced figures",
     /FIGURES = HERE \/ 'figures\.json'/.test(src) && /LIVE\['s2'\] = live_config\(CONFIG\['s2'\], FIG, FIG\.get\('published'\)/.test(src) &&
+    /LIVE\['n2'\] = live_config\(CONFIG\['n2'\], FIG, FIG\.get\('published'\)/.test(src) && !/LIVE\['n1'\]/.test(src) &&
     src.indexOf("CONFIG['n2'] = dict(") < src.indexOf("FIG = load_figures()"));
   // A --check over the filed figures, in a copy of the folder so nothing is rebuilt here.
   const copy = path.join(tmp, "fv");
