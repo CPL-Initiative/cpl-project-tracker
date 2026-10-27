@@ -637,7 +637,7 @@ function MOTION(known) {
     return page;
   };
 
-  for (const key of keys) {
+  const measureTarget = async (key) => {
     const cfg = PAGES[key];
     /* `query` opens the file in a state its own link reaches (S307: the funding
        tab's Public view by ?fundview=public). Kept apart from `file`, which
@@ -664,7 +664,7 @@ function MOTION(known) {
         console.log(`   FAIL  discover found no routes for "${cfg.discover.selector}" — ` +
           `the selector is stale, and a zero-route sweep would have printed a clean bill.`);
         bad++;
-        continue;
+        return;
       }
       /* Dedupe on the NAME as well as the hash. COBI's config once named
          `{hash:"", name:"dashboard"}` explicitly while the nav ALSO carries a
@@ -859,6 +859,18 @@ function MOTION(known) {
     });
     if (!verbose && ![...routes].some((r) => (found.get(r.name) || []).length)) {
       console.log(`   all ${routes.length} route(s) pass`);
+    }
+  };
+
+  /* A target that throws FAILS and the sweep goes on (S494). The first full run
+     with axe ended at target 47 of 129 when governance-editor's seed waited past
+     its 20s on a loaded machine (it passes alone), and the 82 after it went
+     unmeasured: one timeout cost the whole sweep. */
+  for (const key of keys) {
+    try { await measureTarget(key); }
+    catch (e) {
+      bad++;
+      console.log(`\n══ ${PAGES[key].title}\n   FAIL  the target did not finish: ${String((e && e.message) || e).split("\n")[0]}`);
     }
   }
 
