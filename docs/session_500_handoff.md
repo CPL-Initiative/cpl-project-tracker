@@ -38,9 +38,10 @@ None. [Open Asks Sheet 135](https://claude.ai/artifact/PS3D3v2RTC8kb65mRWV5PD) (
 
 1. **Read Sheet 135's `replies` first** and carry out handoff 496's item 1 on whichever answer he gives (*reread*,
    *keep* or *later*). #2499 stays held until then.
-2. **If #2508 is not merged, merge it** on a passing `test` (squash). Then dispatch `step=display` on `main` for build
-   5dc18d9ea80a and confirm `kb/receipts/program_requirement_records_display_2026-10-23_5dc18d9ea80a.applied_*.json`
-   lands (about 50 minutes). Then compare the live row count to the build's (17,529) for the S456 removal.
+2. **#2508 merged (12:39Z) and `step=display` for build 5dc18d9ea80a is dispatched on `main` (run 40505497706,
+   12:39Z); do not dispatch it again.** Confirm
+   `kb/receipts/program_requirement_records_display_2026-10-23_5dc18d9ea80a.applied_*.json` lands (about 50 minutes),
+   then compare the live row count to the build's (17,529) for the S456 removal.
 3. **The morning of 10-30:** `npm run a11y -- funding-model funding-model-sierra funding-model-mycpl funding-model-howto
    funding-public funding-memo funding-film fact-sheet public-library sierra` on main (`npm install` first).
 4. **Delta's four left** (07304, 16764, 22244, 19752) are extraction misreads (lessons S499); each needs its own page
@@ -64,4 +65,4 @@ The CPL queue routine (`trig_01L8K64ZKYb5eALdT4HW6NAV`) fires next at 13:12Z and
 
 ## Let go
 
-S499 holds no PR subscription, check-in or artifact watch. #2508 stays open until its `test` check passes.
+S499 holds no PR subscription, check-in or artifact watch. #2508 is merged; display run 40505497706 was still running at sign-off.
