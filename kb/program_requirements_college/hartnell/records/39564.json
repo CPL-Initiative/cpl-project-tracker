@@ -127,7 +127,8 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -306,99 +307,14 @@
    "No program learning outcomes or careers are printed in the text (General and Degree Map tabs were not included)."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": 40452134609,
  "reconciled": [
   {
-   "field": "course_units",
+   "field": "ge_overlap",
    "was": null,
-   "now": {
-    "LAW41": [
-     3,
-     3
-    ],
-    "PHL10": [
-     3,
-     3
-    ],
-    "COMMC1000": [
-     3,
-     3
-    ],
-    "COM2": [
-     3,
-     3
-    ],
-    "ENGLC1000": [
-     3,
-     3
-    ],
-    "ENGLC1000E": [
-     4,
-     4
-    ],
-    "ENGLC1001": [
-     3,
-     3
-    ],
-    "STATC1000": [
-     4,
-     4
-    ],
-    "HISTC1001": [
-     3,
-     3
-    ],
-    "HISTC1002": [
-     3,
-     3
-    ],
-    "POLSC1000": [
-     3,
-     3
-    ],
-    "ADJ3": [
-     3,
-     3
-    ],
-    "ADJ4": [
-     3,
-     3
-    ],
-    "ADJ5": [
-     3,
-     3
-    ],
-    "BUS18": [
-     4,
-     4
-    ],
-    "ECONC2002": [
-     3,
-     3
-    ],
-    "ECONC2001": [
-     3,
-     3
-    ],
-    "SOC30": [
-     3,
-     3
-    ],
-    "SJS20": [
-     3,
-     3
-    ],
-    "COU1": [
-     3,
-     3
-    ],
-    "LAW42": [
-     3,
-     3
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": true,
+   "words": "Students can double-count required courses and courses for General Education"
   }
  ],
- "read_run": 39931703521
+ "read_run": 39949570443
 }

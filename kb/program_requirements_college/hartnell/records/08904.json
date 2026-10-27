@@ -130,7 +130,8 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -262,71 +263,14 @@
    "The Requirements tab text includes no program learning outcomes or careers; the General tab content was not in the text."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": 40452134609,
  "reconciled": [
   {
-   "field": "course_units",
+   "field": "ge_overlap",
    "was": null,
-   "now": {
-    "ETH1": [
-     3,
-     3
-    ],
-    "ETH3": [
-     3,
-     3
-    ],
-    "ETH4": [
-     3,
-     3
-    ],
-    "SPA1": [
-     5,
-     5
-    ],
-    "SPA1X": [
-     5,
-     5
-    ],
-    "SPA1S": [
-     5,
-     5
-    ],
-    "ETH2": [
-     3,
-     3
-    ],
-    "ETH5": [
-     3,
-     3
-    ],
-    "POL5": [
-     3,
-     3
-    ],
-    "ETH6": [
-     3,
-     3
-    ],
-    "ETH7": [
-     3,
-     3
-    ],
-    "ETH12": [
-     3,
-     3
-    ],
-    "HIS49A": [
-     3,
-     3
-    ],
-    "HIS49B": [
-     3,
-     3
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": true,
+   "words": "Students can double-count required courses and courses for General Education"
   }
  ],
- "read_run": 39931703521
+ "read_run": 39949570443
 }
