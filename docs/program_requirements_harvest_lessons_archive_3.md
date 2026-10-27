@@ -429,3 +429,10 @@ reads checked against fingerprints computed in SQL, counts and titles both.
   checks; SLOs cover the courses the state's Program Course File lists for the college's programs; a disagreement is a
   record failing the courses or off-list check, and the Records view gained that filter so the count opens exactly
   what it counted.
+
+## Moved from the lane (S495 compaction)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, 2026-10-27, to bring the lane under its 20,000-byte budget (`oversized_doc`).
+
+- From Phase 2: ✅ Modesto and Palo Verde's dated reads, loads and build (S385, #2094): lessons. Palo Verde's noncredit pages and its pages that print the degree total with general education (S386): lessons. Sheet 81's rulings, the 3,797-row build and Palo Verde's year-behind catalog: lessons, *Moved from the lane (S398 compaction)*. Sheet 78's carry-out, record shape 5, the re-read path, the Palo Verde, Cabrillo and Southwestern re-reads (S389): lessons, *Moved from the lane (S392 compaction)*.
+- From the catalog sweep: **S423-S424 (a renumbered course: a college's `course_renumbers` in `kb/program_requirements_reconcile.json` maps a catalog code to the state file's where both print the same title and units, each pair cited; Taft's BUSN 550/555; the four wrong-page rows; a Jev sitting asks only about the gating checks):** lessons S423-S424 and *Moved from the lane (S449 compaction)*. Merced's last nine are the college's to settle in COCI (lessons S423); Taft 30284 reads its own page since build e0407fdcb54b; Orange Coast 10278 passes.
