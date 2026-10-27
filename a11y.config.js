@@ -2415,11 +2415,19 @@ module.exports = {
     },
     mayHideBelow: [],
   },
+  /* My Institution is hidden on the public page and its code kept (Sam, 2026-10-27);
+     this target turns the switch on (cpl_funding.js oneViewOn) so the kept view stays
+     measured for the day it returns. */
   "funding-model-mycpl": {
     file: "funding-model/index.html",
-    title: "Funding model explainer: My CPL Funding for a district",
+    title: "Funding model explainer: My CPL Funding for a district (hidden view, switch on)",
     widths: [390, 768, 1024, 1440],
     seed: async (page) => {
+      await page.evaluate(() => {
+        window.CPL_FUNDING_ONE_VIEW = true;
+        if (window.CPL_FUNDING_TAB) window.CPL_FUNDING_TAB.render();
+      });
+      await page.waitForTimeout(300);
       await page.evaluate(() => {
         // Step 1 is the one way in since 2026-10-15 (Sam's call 8).
         const pick = document.getElementById("cplFundOnePick");

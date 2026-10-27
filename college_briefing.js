@@ -3179,11 +3179,18 @@
     // The block lives with Implementation Funding: its public page draws it for one
     // institution with this file's own renderer (fundingPanel), so the college reads
     // one description in one place. This fold says where and opens it on the college.
-    h += sec("funding", "My CPL Funding", "on the funding page",
-      '<p class="cb-note">This college&#39;s funding, the minimum conditions it meets, its targets and its next steps '
-      + "are on the CPL funding page, in its My Institution view.</p>"
+    // With the funding page's My Institution view hidden (Sam, 2026-10-27; the switch is
+    // cpl_funding.js oneViewOn), the link opens the college's row on its dashboard.
+    var oneView = window.CPL_FUNDING_ONE_VIEW === true;
+    h += sec("funding", oneView ? "My CPL Funding" : "CPL funding", "on the funding page",
+      (oneView
+        ? '<p class="cb-note">This college&#39;s funding, the minimum conditions it meets, its targets and its next steps '
+          + "are on the CPL funding page, in its My Institution view.</p>"
+        : '<p class="cb-note">This college&#39;s max award, the minimum conditions it meets and the funding qualifying '
+          + "so far are on the CPL funding page, in its row of the institution table.</p>")
       + '<p class="cb-fundlinks"><a class="cb-act" id="cb-fundpage" target="_blank" rel="noopener" href="'
-      + esc(fundingPageUrl(state.college)) + '">Open My CPL Funding</a>'
+      + esc(fundingPageUrl(state.college)) + '">' + (oneView ? "Open My CPL Funding" : "Open this college&#39;s funding row")
+      + "</a>"
       + (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function"
           ? ' <button type="button" class="cb-act" id="cb-reportsgo">Open your expenditure reports</button>' : "")
       + "</p>"
@@ -3816,7 +3823,8 @@
      the key the funding module joins on (MAP says "Laney College"; the roster, "Laney"). */
   var FUNDING_PAGE = "funding-model/";
   function fundingPageUrl(college) {
-    return FUNDING_PAGE + "?college=" + encodeURIComponent(college ? rosterKey(college) : "") + "&view=one";
+    return FUNDING_PAGE + "?college=" + encodeURIComponent(college ? rosterKey(college) : "") +
+      (window.CPL_FUNDING_ONE_VIEW === true ? "&view=one" : "");
   }
   function buildOpportunityExtract(btn) {
     var was = btn.textContent, college = state.college;
