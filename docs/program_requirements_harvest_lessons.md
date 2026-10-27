@@ -1134,6 +1134,17 @@ side session (Scenario 4) ran beside it, one writer per file.
 
 **S444:** Golden West (79) and Imperial Valley (42) loaded; department pages are candidates, a section heading may span two lines (Sierra 35 → 81 found, MiraCosta 29 → 68, its discipline pages still lose siblings); 37 Program Mapper hosts recorded (#2330).
 
+## S498 SkyBearberry (2026-10-27, the CPL Queue routine): RN 03570 summed, Delta 44197 read
+
+- **RN 03570 needed no new page read.** S485's page read 40279150362 already printed the whole AS.NRN tab, prerequisite
+  list included, and every prerequisite course carries vendor units on another Hartnell record (BIO5 4, BIO6 3, BIO6L 2,
+  BIO27 4, CHM22 4, ENGLC1000 3 or 1000E 4, the math choice 3 to 6, PSY25 or NRN70 3, ANT2 and SOC1 3 each,
+  COMMC1000 or COM3 3, Local GE Area 6 at 3). Read Fable's way (S488), the prerequisites sum to about 35-42. The 36.5
+  required NRN units bring the total to about 71.5-78.5, against the 60 the tab prints. So the build would replace an
+  *incomplete* status with an *unequal* one (the catalog's 60 understates the program). That gives a better reason and
+  no pass, so it was not built this run. Read a log the earlier runs left before you load the college's site again.
+- **Delta 44197 (CAT 69V repeats):** page read on this branch (S498). The words and the step: see below once read.
+
 ## S497 SkyCrowberry (2026-10-27, the CPL Queue routine): Music 43887's repeat counts
 
 - **A repeat count is a field, never a doubled figure.** The `repeat` step gives a course `times: n` and a list
