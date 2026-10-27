@@ -204,6 +204,24 @@ check("a second run changes nothing",
                                   steps=steps)[1] if n["field"] == "times"])
 check("a count in figures reads too", R._count("4") == 4 and R._count("four") == 4 and R._count(None) is None)
 
+print("unit_line (Delta's Architectural Drafting 22244, S500)")
+arch = {"program": {"total_units": {"min": 23, "max": 23}, "total_units_minimum": True},
+        "blocks": [{"name": "Core Requirements", "rule": "all", "minimum": None, "stated": {"min": 23, "max": 23},
+                    "courses": [{"code": c, "units": u} for c, u in
+                                (("ARCH 1", 3), ("ARCH 5", 4), ("ARCH 6", 3), ("ARCH 14", 3), ("ARCH 20", 3), ("ARCH 78", 3))]}]}
+arch_text = "ARCH 78 Units: 3\nAssociate Degree Math Requirement Units: 4\nMinimum Units Required: 23"
+check("the record before the step reads 19 against 23", S.program_units(arch, {})[0] == (19, 19))
+new, notes = R.reconcile(arch, arch_text, "San Joaquin Delta College", "Certificate of Achievement", steps=steps)
+check("the line becomes a block of 4 with no courses",
+      [b for b in new["blocks"] if b["name"] == "Associate Degree Math Requirement" and b["minimum"] == 4 and not b["courses"]])
+check("the record then sums to the page's 23", S.program_units(new, {})[0] == (23, 23))
+check("a second run changes nothing",
+      not [n for n in R.reconcile(new, arch_text, "San Joaquin Delta College", "Certificate of Achievement",
+                                  steps=steps)[1] if n["now"] == "Associate Degree Math Requirement"])
+short = R.reconcile(arch, arch_text.replace("Units: 4", "Units: 3"), "San Joaquin Delta College",
+                    "Certificate of Achievement", steps=steps)[0]
+check("a line that does not close the gap exactly adds nothing", len(short["blocks"]) == 1)
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)

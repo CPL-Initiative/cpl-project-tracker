@@ -385,7 +385,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `dashboard_filters.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `docs/*.md` | scripts: `kb/_build_docs_index.py` | — |
 | `docs/*_lessons.md` | scripts: `kb/_build_docs_index.py` | — |
-| `docs/INDEX.md` | scripts: `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/doctrine.py` | — |
+| `docs/INDEX.md` | scripts: `kb/_docs_audit.py`, `kb/doctrine.py` | — |
 | `docs/catalog/index.json` | tabs: `governance` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
 | `docs/reference/library_filer.md` | scripts: `scripts/library_file.py` | — |
@@ -803,6 +803,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/funding_video/.music.wav` | none found | scripts: `prototype/funding_video/render.mjs` |
 | `prototype/funding_video/figures.json` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/funding_video/funding_in_motion.src.html` | scripts: `prototype/funding_video/build.py`, `prototype/funding_video/cues.py`, `prototype/funding_video/narrate.py` | — |
+| `prototype/funding_video/funding_in_motion_n2.html` | scripts: `scripts/ui_pass.py` | — |
 | `prototype/funding_video/funding_in_motion_s2.html` | scripts: `scripts/ui_pass.py` | — |
 | `prototype/funding_video/narration_s1_layout.json` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/funding_video/narration_s2_layout.json` | scripts: `prototype/funding_video/build.py` | — |
@@ -1200,5 +1201,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 102 Supabase tables · 42 RPCs · 9 edge functions · 719 file
+Coverage: 102 Supabase tables · 42 RPCs · 9 edge functions · 720 file
 datasets · 184 external services · 475 consumers · 58 workflows · 38 tabs.

@@ -2348,6 +2348,15 @@ module.exports = {
     title: "Funding introduction film (public)",
     mayHideBelow: [],
   },
+  /* Its narrated cut (2026-10-27), Sierra's voice over the same picture, linked
+     right after it in the explainer's Contents as the alternative for a listener
+     who cannot see the picture (WCAG 1.2.5; Sheet 136 card 1). Built by
+     build.py n2; the captions fold over the stage. */
+  "funding-film-narrated": {
+    file: "prototype/funding_video/funding_in_motion_n2.html",
+    title: "Funding introduction film, narrated (public)",
+    mayHideBelow: [],
+  },
 
   /* ── The CPL opportunity visual (Ashley and Sam, 2026-10-20) ──
      library/cpl-opportunity/index.html (moved from cpl-opportunity/, which forwards,

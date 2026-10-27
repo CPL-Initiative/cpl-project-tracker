@@ -4,7 +4,7 @@
   "supabase_tables": 102,
   "rpcs": 42,
   "edge_functions": 9,
-  "file_datasets": 719,
+  "file_datasets": 720,
   "external_services": 184,
   "consumers": 475,
   "workflows": 58,
@@ -5467,7 +5467,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1727
+     "line": 1734
     },
     {
      "id": "page:funding-model/memo/index.html",
@@ -5751,7 +5751,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1732
+     "line": 1739
     },
     {
      "id": "page:funding-model/memo/index.html",
@@ -5811,7 +5811,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1718
+     "line": 1725
     },
     {
      "id": "page:funding-model/memo/index.html",
@@ -6175,7 +6175,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1731
+     "line": 1738
     },
     {
      "id": "page:prototype/ccr_atlas_v1.html",
@@ -6553,13 +6553,6 @@
   },
   "file:docs/INDEX.md": {
    "consumers": [
-    {
-     "id": "script:kb/_build_docs_index.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 50
-    },
     {
      "id": "script:kb/_docs_audit.py",
      "kind": "script",
@@ -7564,7 +7557,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1719
+     "line": 1726
     }
    ],
    "served": true,
@@ -16515,7 +16508,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 82
+     "line": 84
     }
    ],
    "served": true,
@@ -17312,7 +17305,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 244
+     "line": 261
     }
    ],
    "served": true,
@@ -17325,7 +17318,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 418
+     "line": 438
     },
     {
      "id": "script:prototype/funding_video/cues.py",
@@ -17340,6 +17333,19 @@
      "direction": "read",
      "how": "literal",
      "line": 50
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/funding_video/funding_in_motion_n2.html": {
+   "consumers": [
+    {
+     "id": "script:scripts/ui_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
     }
    ],
    "served": true,
@@ -17378,7 +17384,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 231
+     "line": 230
     }
    ],
    "served": true,
@@ -18142,7 +18148,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1748
+     "line": 1755
     },
     {
      "id": "page:library/cpl-opportunity/index.html",

@@ -122,7 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- 2026-10-27 (S500 SkyLingonberry): handoff 502 beside the routine's 501; Sierra's footer, links and reader rule; the funding review gate's database half (light checkpoint).
+- 2026-10-27 (S500 SkyBlackberry): Delta Architectural Drafting 22244 passes on the new `unit_line` reconcile step, 200 of 203 (#2510, reread 40527733110, display build 89a4abee9d1c); the CPL Queue routine beside Sam's S500, whose handoff carries it.
 - 2026-10-27 (S499 SkyCloudberry): Delta Cal-GETC 45621 passes on a `pool_areas` step, 199 of 203 (#2508, reread 40502212690, display build 5dc18d9ea80a); handoff 500.
 - 2026-10-27 (S497 SkyCrowberry): Hartnell Music 43887 passes on the new `repeat` reconcile step, 83 of 94 (#2506, reread 40469123943, display build 8f8a282ca526); handoff 498.
 - 2026-10-27 (S496 SkyLingonberry): Hartnell CalGETC 45096 passes, 82 of 94 (#2504, reread 40460714483, display build 588cfa081bee); the Funding film's UI pass, clean; handoff 497.
@@ -130,6 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-27 (S493 SkyThimbleberry): the MAP link with each exhibit's builder on the CPL Opportunity visual, EACR, CPL Pathways, My College and CER (#2485, #2488); the public funding page's Step 2 fixed for the Summit (#2487); Open Asks Sheet 134 answered; handoff 494.
 - 2026-10-26 (S492 SkyCloudberry): the public funding page's header and WCAG 2.2 AA pass for the CPL Summit; KB note `methodology-geometry-is-half-an-accessibility-audit`; handoff 493.
 - 2026-10-26 S491 SkySalmonberry: wording help for Sierra's instructions (Check wording #2474, Suggest wording and the built-in naming rule #2475, deployed), four live instructions corrected, Open Asks Sheet 132 answered; funding attestation form drafted (#2476); full checkpoint, handoff 492.
-- 2026-10-26 S490 SkyGooseberry: the Library's Regenerate and documents on a record, the MAP team's notes on a college page, the CPL Opportunity page under `library/`, Open Asks Sheet 131 answered (#2472); full checkpoint, handoff 491.
-- 2026-10-26 S488 SkyThimbleberry: Hartnell's last eight failing tabs read (light checkpoint); handoff 489.
-- 2026-10-26 S487 SkyHuckleberry (the CPL Queue routine): Hartnell's pooled subject lists; a `pool_lists` reconcile step, General Studies 17912 passes, Hartnell 80 of 94 (#2463); full checkpoint, handoff 488.

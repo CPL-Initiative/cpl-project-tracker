@@ -1,0 +1,144 @@
+{
+ "college": "San Joaquin Delta College",
+ "reread_run": "40527733110",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "40523400149",
+ "at": "2026-10-27T15:08:26Z",
+ "posted": 1,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "19752",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 1,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "22244"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'San Joaquin Delta College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 40523400149;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 23,
+       "min": 23
+      },
+      "courses": [
+       {
+        "code": "ARCH 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH 5",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH 14",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GRART 3A",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH 78",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "computer-aided drafter"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate a general understanding of the Architectural, Engineering, and Construction industry.",
+      "Demonstrate an understanding that drawings represent not only a graphic language, but also a way of technical thinking wherein designs created in someone’s mind are then transmitted via drawings to become a built structure.",
+      "Understand basic design theory.",
+      "Demonstrate a general understanding of the basic materials and methods of construction for single family residential dwellings.",
+      "Demonstrate a basic understanding of the state building code and analysis."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 23,
+      "min": 23
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Architectural Drafting Certificate of Achievement",
+     "open_elective_units": null,
+     "total_units_minimum": true,
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 23,
+   "total_min": 23,
+   "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3310&print",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39217405432,
+   "program_title": "Architectural Drafting",
+   "control_number": "22244"
+  }
+ ]
+}

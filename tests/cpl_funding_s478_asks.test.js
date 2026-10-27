@@ -188,8 +188,8 @@ function hiddenKeys(doc) {
 // ── 4. the Contents' fixed links ────────────────────────────────────────────
 {
   const { T } = setup();
-  check("4a the fixed links are the memo, the memo in Word, the video and the three help links",
-    T.publicLinkIds().join(",") === "memo,memo_word,video,hours,landing,training");
+  check("4a the fixed links are the memo, the memo in Word, the video, its narrated cut and the three help links",
+    T.publicLinkIds().join(",") === "memo,memo_word,video,video_narrated,hours,landing,training");
   T.setPubLinkLabel("video", "  Watch the  introduction ", "Watch the 100-second introduction");
   T.setPubLinkLabel("memo", "Read the funding guidance memo", "Read the funding guidance memo");
   T.setPubLinkLabel("nope", "Anything", "");

@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-27T12:19:47Z",
-  "session": 499,
-  "moniker": "SkyCloudberry",
+  "written_at": "2026-10-27T15:25:23Z",
+  "session": 500,
+  "moniker": "SkyBlackberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
   "handoff": "docs/session_500_handoff.md",
   "next_step": {
     "title": "Sam's word on the narrated cut, then the Summit-morning sweep",
-    "text": "The next session reads Open Asks Sheet 135 and carries out his answer on the narrated cut, applies display build 5dc18d9ea80a on main once #2508 merges, then re-measures the ten public pages on the morning of October 30."
+    "text": "The next session reads Open Asks Sheet 135 and carries out his answer on the narrated cut, applies display build 89a4abee9d1c on main once #2510 merges, then re-measures the ten public pages on the morning of October 30."
   },
   "calls": [
     {
@@ -137,6 +137,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-10-27T15:08:00Z",
+      "text": "Delta's Architectural Drafting certificate now counts the math requirement its page prints as a line with no course, and passes: San Joaquin Delta 200 of 203."
+    },
     {
       "at": "2026-10-26T06:21:00Z",
       "text": "No harvest table moved this run; S485 read where Hartnell keeps the last three noncredit courses' hours (nowhere) and why six of its degrees fail arithmetic."
@@ -312,14 +316,14 @@
     {
       "day": "2026-10-27",
       "active": 20282,
-      "complete": 13187,
+      "complete": 13191,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-27T11:12:00Z"
+    "at": "2026-10-28T05:12:00Z"
   },
   "harvest": {
     "day": "2026-10-27",
