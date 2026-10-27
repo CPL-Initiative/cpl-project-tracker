@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-26T21:27:59Z",
-  "session": 492,
-  "moniker": "SkyCloudberry",
+  "written_at": "2026-10-27T00:25:34Z",
+  "session": 493,
+  "moniker": "SkyThimbleberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_493_handoff.md",
+  "handoff": "docs/session_494_handoff.md",
   "next_step": {
-    "title": "The funding film's narrated cut, then the Summit checks",
-    "text": "The next session re-reads the narrated funding film's minimum-conditions scene in Sierra's voice and offers the narrated cut on the funding page, then re-measures the public pages before the CPL Summit on October 30. Hartnell's CalGETC area totals follow."
+    "title": "The funding film's narrated cut, Sierra's MAP links, then the Summit checks",
+    "text": "The next session re-reads the narrated funding film's minimum-conditions scene in Sierra's voice and offers the narrated cut on the funding page, gives Sierra's could-adopt answers the MAP link (Open Asks Sheet 134 card 2's second part), and re-measures the public pages, My Institution included, before the CPL Summit on October 30."
   },
   "calls": [
     {
@@ -212,6 +212,10 @@
     {
       "at": "2026-10-26T21:27:00Z",
       "text": "No harvest table moved this run; S492 shipped the funding page's header and accessibility work for the CPL Summit and the noncredit attestation form."
+    },
+    {
+      "at": "2026-10-27T00:30:00Z",
+      "text": "No harvest table moved this run. S493 fixed the public funding page's Step 2, put the MAP link with each exhibit's building college on the CPL Opportunity visual, EACR, CPL Pathways, My College and CER, and published Open Asks Sheet 134, which Sam answered."
     }
   ],
   "headline": [
@@ -328,6 +332,12 @@
       "active": 20282,
       "complete": 13184,
       "colleges": 114
+    },
+    {
+      "day": "2026-10-27",
+      "active": 20282,
+      "complete": 13184,
+      "colleges": 114
     }
   ],
   "next_run": {
@@ -336,7 +346,7 @@
     "at": "2026-10-27T05:12:00Z"
   },
   "harvest": {
-    "day": "2026-10-26",
+    "day": "2026-10-27",
     "gaps": 3031,
     "parts": {
       "links": {

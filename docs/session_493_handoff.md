@@ -4,6 +4,8 @@ date: 2026-10-26
 session: 492 (SkyCloudberry)
 tags: [handoff, implementation-funding, accessibility, sierra, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_494_handoff.md
 ---
 
 # You are Session 493

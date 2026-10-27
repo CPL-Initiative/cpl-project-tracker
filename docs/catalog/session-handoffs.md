@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-463 document(s).
+464 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 494 | [Session 494 handoff: the MAP link on every adoption surface, the funding page's Step 2 fixed for the Summit](../session_494_handoff.md) | 2026-10-27 |
 | 493 | [Session 493 handoff: the public funding page ready for the CPL Summit, the attestation form shipped, the naming rule built in](../session_493_handoff.md) | 2026-10-26 |
 | 492 | [Session 492 handoff: Sierra's wording help live, the naming rule built in, the funding attestation form drafted](../session_492_handoff.md) | 2026-10-26 |
 | 491 | [Session 491 handoff: Regenerate in the Library, the CPL Opportunity page under library/](../session_491_handoff.md) | 2026-10-26 |

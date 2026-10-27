@@ -4,6 +4,8 @@ date: 2026-10-26
 session: 491 (SkySalmonberry)
 tags: [handoff, sierra, sierra-training, implementation-funding, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_494_handoff.md
 ---
 
 # You are Session 492

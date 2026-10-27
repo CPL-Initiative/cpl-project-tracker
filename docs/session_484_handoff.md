@@ -4,6 +4,8 @@ date: 2026-10-26
 session: 483 (SkyCoyoteMint)
 tags: [handoff, library, dsp, agency-visual, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_494_handoff.md
 ---
 
 # You are Session 484
