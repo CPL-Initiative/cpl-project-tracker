@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-27T12:19:32.748Z",
+  "scraped_at": "2026-10-27T15:25:54.787Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -228,17 +228,17 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 646,
-          "units": 9063,
-          "avgUnits": 14.029411764705882,
-          "transcriptionRate": 13.3,
-          "avgTranscribed": 1.8630030959752322,
+          "students": 647,
+          "units": 9098,
+          "avgUnits": 14.061823802163833,
+          "transcriptionRate": 13.2,
+          "avgTranscribed": 1.8601236476043277,
           "criteriaMetCount": 3,
-          "militaryStudents": 593,
+          "militaryStudents": 594,
           "nonMilitaryStudents": 68,
           "apprenticeStudents": 0,
-          "savings": 16143717.5,
-          "yearImpact": 58059958.5,
+          "savings": 16204267.5,
+          "yearImpact": 58272303.5,
           "transcribedUnits": 1203.5
         },
         {
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "57,967",
+      "value": "57,968",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "29,670"
+          "value": "29,671"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 57967,
-    "Units": 278272.9,
+    "Students": 57968,
+    "Units": 278307.9,
     "TranscribedUnits": 84405.65,
-    "Savings": 394174857.75,
-    "YearImpact": 1600743954.3999999,
-    "MilitaryStudents": 29670,
+    "Savings": 394235407.75,
+    "YearImpact": 1600956299.3999999,
+    "MilitaryStudents": 29671,
     "NonMilitaryStudents": 28392,
     "AprenticeStudents": 953,
-    "AverageUnits": 4.800539962392396,
-    "TranscribedAverage": 1.4560982973070884
+    "AverageUnits": 4.8010609301683695,
+    "TranscribedAverage": 1.4560731783052718
   }
 }
