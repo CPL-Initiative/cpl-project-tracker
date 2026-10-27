@@ -715,7 +715,7 @@
       row.appendChild(el("span", { style: "font-size:.75rem;color:var(--text-muted);" },
         ["(voice unavailable in this browser — type instead)"]));
     }
-    var stance = el("select", { style: "padding:4px 6px;border:1px solid #cbd5e1;border-radius:6px;font-size:.8rem;",
+    var stance = el("select", { "aria-label": "Stance", style: "padding:4px 6px;border:1px solid #cbd5e1;border-radius:6px;font-size:.8rem;",
       title: "What you'd DO with this group — saved with the note so the doctrine learns the action, not just the words" });
     [["commentary", "stance: commentary"], ["merge_all", "merge all"], ["merge_partial", "merge some"],
      ["package", "package levels"], ["mint", "mint new"], ["keep", "keep separate"], ["unsure", "unsure"]]
@@ -1765,7 +1765,7 @@
         mintWrap.appendChild(el("div", { style: "font-weight:600;margin-bottom:4px;" }, ["✨ Mint a new standalone course"]));
         var titleIn = el("input", { type: "text", value: e.t || "", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
         mintWrap.appendChild(titleIn);
-        var discSel = el("select", { class: "uc-filter", style: "min-width:260px;margin-top:6px;" });
+        var discSel = el("select", { class: "uc-filter", "aria-label": "Discipline of the new course", style: "min-width:260px;margin-top:6px;" });
         discSel.appendChild(el("option", { value: "" }, ["— discipline (optional) —"]));
         mqList.forEach(function (d) { discSel.appendChild(el("option", { value: d }, [d])); });
         mintWrap.appendChild(discSel);
@@ -1898,7 +1898,7 @@
       container.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
         ["Course Discipline",
          infoIcon("The MQ discipline of the merged course. When you merge INTO an existing course it's inherited from that surviving ★ course (shown below, read-only here) — change it later from that course's row, or on the per-row ⚇ dialog where re-disciplining is enabled. When you MINT a new course it's pre-filled from the members and editable here. Never set on a firewalled official C-ID/CCN course (it keeps its own).")]));
-      var discSel = el("select", { class: "uc-filter", style: "min-width:280px;" });
+      var discSel = el("select", { class: "uc-filter", "aria-label": "Course Discipline", style: "min-width:280px;" });
       discSel.appendChild(el("option", { value: "" }, ["— choose —"]));
       var mqSet = {};
       mqList.forEach(function (d) { mqSet[d] = 1; discSel.appendChild(el("option", { value: d }, [d])); });
@@ -2827,7 +2827,7 @@
         function groupMatchesDisc(g) { return !discFilter || groupDiscs(g).indexOf(discFilter) >= 0; }
         var discRow = el("div", { style: "margin:7px 0 0;font-size:.78rem;color:var(--text-muted);display:flex;align-items:center;gap:5px;" });
         discRow.appendChild(el("span", { style: "font-weight:600;" }, ["Discipline:"]));
-        var discSel = el("select", { class: "uc-filter", style: "max-width:75%;font-size:.8rem;" });
+        var discSel = el("select", { class: "uc-filter", "aria-label": "Discipline", style: "max-width:75%;font-size:.8rem;" });
         discSel.appendChild(el("option", { value: "" }, ["All disciplines"]));
         Object.keys(discCount).sort().forEach(function (d) { discSel.appendChild(el("option", { value: d }, [d + " (" + discCount[d] + ")"])); });
         discSel.onchange = function () { discFilter = this.value; i = 0; renderGroup(); };
@@ -3219,8 +3219,13 @@
     }
 
     // ---- toolbar ----
+    // Each filter is named for a screen reader (axe select-name, S495): its first
+    // option says "All kinds", which a listener hears as a value, never a name.
+    var FILTER_NAMES = { "uc-kind": "Kind", "uc-source": "Source", "uc-status": "Status", "uc-disc": "Discipline",
+      "uc-subj": "Common SUBJ", "uc-credit": "Credit status", "uc-conf": "Confidence", "uc-artic": "Adoption",
+      "uc-official": "Official ID", "uc-triage": "Triage" };
     function sel(id, label, opts, labelFn) {
-      var s = el("select", { id: id, class: "uc-filter" });
+      var s = el("select", { id: id, class: "uc-filter", "aria-label": FILTER_NAMES[id] || label });
       s.appendChild(el("option", { value: "" }, [label]));
       opts.forEach(function (o) { s.appendChild(el("option", { value: o }, [labelFn ? labelFn(o) : o])); });
       return s;
@@ -3995,7 +4000,7 @@
       }
       function showEditor() {
         td.innerHTML = "";
-        var s = el("select", { class: "uc-filter" });
+        var s = el("select", { class: "uc-filter", "aria-label": "Discipline" });
         s.appendChild(el("option", { value: "" }, ["— choose —"]));
         mqList.forEach(function (d) {
           var o = el("option", { value: d }, [d]);
@@ -4047,7 +4052,7 @@
       // to promote it. The displayed (official) discipline is left unchanged.
       function showProposalEditor() {
         td.innerHTML = "";
-        var s = el("select", { class: "uc-filter" });
+        var s = el("select", { class: "uc-filter", "aria-label": "Proposed discipline" });
         s.appendChild(el("option", { value: "" }, ["— propose discipline —"]));
         var curProp = (anchorProposals[r.id] && anchorProposals[r.id].value) || r.disc;
         mqList.forEach(function (d) {
