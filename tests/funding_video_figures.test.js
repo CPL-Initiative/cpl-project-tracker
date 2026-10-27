@@ -125,7 +125,9 @@ const out = path.join(tmp, "figures.json");
   fs.mkdirSync(copy);
   ["build.py", "funding_in_motion.src.html"].forEach((f) => fs.copyFileSync(path.join(dir, f), path.join(copy, f)));
   fs.mkdirSync(path.join(copy, "assets"));
-  fs.readdirSync(path.join(dir, "assets")).forEach((f) => fs.copyFileSync(path.join(dir, "assets", f), path.join(copy, "assets", f)));
+  // The images build.py inlines; the piano's samples (assets/piano/) are fetched at play time, never built in.
+  fs.readdirSync(path.join(dir, "assets")).filter((f) => fs.statSync(path.join(dir, "assets", f)).isFile())
+    .forEach((f) => fs.copyFileSync(path.join(dir, "assets", f), path.join(copy, "assets", f)));
   const script = path.join(ROOT, "scripts", "funding_video_figures.js");
   execFileSync("node", [script, "--config", FIXTURE, "--write", "--out", path.join(copy, "figures.json")], { encoding: "utf8" });
   let checkOut = "", checkStatus = 0;
@@ -210,7 +212,8 @@ const out = path.join(tmp, "figures.json");
     const dir = path.join(ROOT, "prototype", "funding_video"), nest = path.join(t4, "prototype", "funding_video");
     fs.mkdirSync(path.join(nest, "assets"), { recursive: true });
     ["build.py", "funding_in_motion.src.html"].forEach((x) => fs.copyFileSync(path.join(dir, x), path.join(nest, x)));
-    fs.readdirSync(path.join(dir, "assets")).forEach((x) => fs.copyFileSync(path.join(dir, "assets", x), path.join(nest, "assets", x)));
+    fs.readdirSync(path.join(dir, "assets")).filter((x) => fs.statSync(path.join(dir, "assets", x)).isFile())
+      .forEach((x) => fs.copyFileSync(path.join(dir, "assets", x), path.join(nest, "assets", x)));
     execFileSync("node", [path.join(ROOT, "scripts", "funding_video_figures.js"), "--config", FIX4, "--write", "--out", path.join(nest, "figures.json")]);
     const cfgOf = (v) => {
       execFileSync("python3", [path.join(nest, "build.py"), v], { encoding: "utf8" });

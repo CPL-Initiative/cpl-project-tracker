@@ -1,0 +1,5 @@
+Salamander Grand Piano V3 (Yamaha C5), sampled by Alexander Holm.
+License: Creative Commons Attribution 3.0, http://creativecommons.org/licenses/by/3.0/
+Source: the 44.1 kHz set Tone.js hosts (github.com/Tonejs/audio, salamander/), one sample every
+minor third. Changed here: each cut to its first 5 seconds with a 1.2-second fade, encoded as
+128 kbps MP3 (2026-10-27). The funding film's closing credits the recording.

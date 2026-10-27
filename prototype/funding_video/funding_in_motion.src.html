@@ -479,11 +479,26 @@ function measure(){var k2=buildK();if(k2)K=k2;}
    under it; a breakdown in the relative minor that climbs; and a key change
    up a whole step for the last statement. A piano in place of the strings,
    pizzicato and bell, horns and drums kept (Sam, 2026-10-26: "piano in place
-   of the synthesizer, horn and drums kept"). Every voice is built from the
-   browser's oscillators, so the score renders offline for the MP4 too. ---- */
+   of the synthesizer, horn and drums kept"). The piano is RECORDED (Sam,
+   2026-10-27, on the synthesized one: "too obviously electronic--like a childs
+   play piano. Any way to get a realistic sound with rich chords?"): the
+   Salamander Grand Piano, a Yamaha C5 sampled by Alexander Holm (CC BY 3.0),
+   in assets/piano/. The other voices are built from the browser's
+   oscillators, and the score renders offline for the MP4 too. ---- */
 var Music=(function(){
   var B=0.6,ctx=null,master=null,send=null,bus=null,idx=0,ev=[],noise=null;
   function mtof(m){return 440*Math.pow(2,(m-69)/12);}
+  /* the recorded piano: one sample every minor third from C1 to C8 (C, D#, F#, A), five seconds each.
+     A key plays the nearest sample, re-pitched by at most a semitone and a half. Each sample starts
+     where its sound starts (the first sample above the noise floor), so no decoder's padding or the
+     recording's lead-in puts a note behind the drums. */
+  var PS=[],pbuf={},pload=null,pready=false,PK=5.4;
+  for(var oc=1;oc<=8;oc++)['C','Ds','Fs','A'].forEach(function(n,i){var m=12*(oc+1)+3*i;if(m<=108)PS.push({m:m,f:n+oc});});
+  function loadPiano(){if(pload)return pload;var OAC=window.OfflineAudioContext||window.webkitOfflineAudioContext;
+    if(!OAC||!window.XMLHttpRequest)return(pload=Promise.resolve());var dc=new OAC(2,1,44100);
+    pload=Promise.all(PS.map(function(s){return new Promise(function(ok){var x=new XMLHttpRequest();x.open('GET','assets/piano/'+s.f+'.mp3');x.responseType='arraybuffer';
+      x.onload=function(){if(!x.response){ok();return;}dc.decodeAudioData(x.response,function(b){var d=b.getChannelData(0),i=0;while(i<d.length&&Math.abs(d[i])<0.002)i++;pbuf[s.m]={b:b,o:i/b.sampleRate};ok();},function(){ok();});};
+      x.onerror=function(){ok();};x.send();});})).then(function(){pready=true;});return pload;}
   /* chords: [bass root, upper voicing] */
   var C=[48,[60,64,67,72]],Am=[45,[60,64,69,72]],F=[41,[60,65,69,72]],G=[43,[59,62,67,71]],
       Bm=[47,[59,62,66,71]],Gd=[43,[59,62,67,71]],Em=[40,[59,64,67,71]],A7=[45,[57,61,64,67]];
@@ -524,19 +539,25 @@ var Music=(function(){
       var v=0.1+0.8*Math.pow(lvl,1.5),pg=PG[s];
       function P(m,dt,d,g,vv){N('pno',dt,{m:m,d:d,g:g*pg,v:Math.max(0.15,Math.min(1,vv))});}
       function K(ms,dt,d,g,vv,r){ms.forEach(function(m,i){P(m,dt+i*(r||0.008)/B,d,g*(i===ms.length-1?1.15:1),vv);});}
-      /* the left hand carries the bass in octaves: whole notes, then halves, then quarters, then driving eighths */
+      /* the left hand carries the bass in octaves: whole notes, then halves, then quarters, then driving eighths;
+         the downbeat opens to root, fifth and octave wherever the fifth sits clear of the low register's mud */
       var bn=s==='intro'?1:s==='a1'||s==='br'?2:s==='a2'||s==='b'?4:8;
-      for(var q=0;q<bn;q++)K([root-12,root],q*4/bn,bn===1?bar:4/bn*B*0.92,(q?0.07:0.09)*lvl,v-(q?0.08:0),0.004);
+      for(var q=0;q<bn;q++)K(!q&&root-5>=38?[root-12,root-5,root]:[root-12,root],q*4/bn,bn===1?bar:4/bn*B*0.92,(q?0.07:0.09)*lvl,v-(q?0.08:0),0.004);
       /* the right hand re-strikes the chord as the section builds: once a bar under the horn call,
          on 1 and 3 under the first themes, rolled on 1 and 3 in the breakdown, on every beat once the march is in */
+      /* open, spread voicings: under the piano's own theme the chord sits low and wide (the third a tenth
+         under the root), clear of the melody; once the horns carry the tune it spreads above middle C */
       var hits=s==='intro'?[0]:s==='a1'||s==='a2'||s==='br'?[0,2]:[0,1,2,3],
-          rh=s==='intro'?[up[0],up[2]]:s==='a1'||s==='a2'?up.slice(0,3):up;
+          rh=s==='intro'?[up[0],up[2]]:s==='a1'||s==='a2'||s==='br'?[up[1]-12,up[0],up[2]]:[up[0],up[2],up[1]+12];
       hits.forEach(function(h){K(rh,h,4/hits.length*B*0.94,(h?0.05:0.06),v-0.12,s==='br'?0.07:0.012);});
-      if(s==='c'||s==='cl')K([up[1]+12,up[3]+12],0,bar*0.94,0.03,v,0.01);
+      if(s==='c'||s==='cl')K([up[2]+12,up[3]+12],0,bar*0.94,0.03,v,0.01);
+      /* the sustain pedal changes with the chord, at every bar line */
+      e.push({t:t,k:'ped'});
       /* the theme and who carries it */
       var mel=s==='cl'?TC[j]:s==='b'?CM[j]:TH[j];
-      if(s==='a1')mel.forEach(function(n){P(n[1]+tr,n[0],n[2]*B*0.96,0.13,v+0.12);});
-      if(s==='a2')mel.forEach(function(n){P(n[1],n[0],n[2]*B*0.96,0.12,v+0.12);P(n[1]+12,n[0],n[2]*B*0.96,0.06,v);});
+      function M(m,dt,d,g,vv){P(m,dt,d,g,vv);e[e.length-1].mel=1;}
+      if(s==='a1')mel.forEach(function(n){M(n[1]+tr,n[0],n[2]*B*0.96,0.13,v+0.12);});
+      if(s==='a2')mel.forEach(function(n){M(n[1],n[0],n[2]*B*0.96,0.12,v+0.12);M(n[1]+12,n[0],n[2]*B*0.96,0.06,v);});
       if(s==='b')mel.forEach(function(n){N('horn',n[0],{m:n[1]-12,d:n[2]*B,g:0.16*lvl});N('horn',n[0],{m:n[1],d:n[2]*B,g:0.07*lvl});});
       if(s==='b'&&kb>=nb/2)TH[j].forEach(function(n){P(n[1]+12,n[0],n[2]*B*0.9,0.05,v);});
       if(s==='c'||s==='cl')mel.forEach(function(n){var br=s==='cl';N('horn',n[0],{m:n[1]+tr,d:n[2]*B,g:0.17,bright:br});N('horn',n[0],{m:n[1]+tr-12,d:n[2]*B,g:0.12});P(n[1]+tr+12,n[0],n[2]*B*0.96,br?0.08:0.065,v+0.05);});
@@ -570,6 +591,14 @@ var Music=(function(){
     [6,15,25,32,46].concat(HOW?[LS(46)]:[]).concat([56,65,75].map(LS)).forEach(function(s){e.push({t:nt(s)-1.0,k:'swell',g:0.06});});
     /* the barriers: a small shot and a pop, pitched in the key of the moment */
     ENC.forEach(function(x){var hi=x.t>LS(72)?2:0;e.push({t:x.h-0.27*BAR,k:'zap',m:84+hi,g:0.05});e.push({t:x.h,k:'pop',m:48+hi,g:0.16});});
+    /* the pedal holds the chord and the bass to the next bar line; the melody is played legato, each note
+       held into the next by a hair, so the tune stays clear where the harmony rings */
+    var lifts=e.filter(function(x){return x.k==='ped';}).map(function(x){return x.t;}).concat([end]).sort(function(a,b){return a-b;}),
+        mels=e.filter(function(x){return x.mel;}).sort(function(a,b){return a.t-b.t;});
+    e.filter(function(x){return x.k==='pno'&&x.t<end;}).forEach(function(x){var L=end;for(var u=0;u<lifts.length;u++)if(lifts[u]>x.t+0.05){L=lifts[u];break;}
+      if(!x.mel){x.d=Math.max(x.d,L-x.t+0.02);return;}
+      for(var w=0;w<mels.length;w++)if(mels[w].t>x.t+0.03&&Math.abs(mels[w].m-x.m)<=12){x.d=Math.min(Math.max(x.d,mels[w].t-x.t+0.06),L-x.t+0.02);break;}});
+    e=e.filter(function(x){return x.k!=='ped';});
     /* a key struck again while it still sounds stops there, as the string is struck anew; two strikes at once are one */
     var held={};e.filter(function(x){return x.k==='pno';}).sort(function(a,b){return a.t-b.t;}).forEach(function(x){var p=held[x.m];
       if(p&&x.t-p.t<0.03){p.g=Math.max(p.g,x.g);p.v=Math.max(p.v,x.v);p.d=Math.max(p.d,x.d);x.k='';return;}
@@ -584,24 +613,17 @@ var Music=(function(){
   function env(a,t,p,at,r){a.gain.setValueAtTime(0.0001,t);a.gain.exponentialRampToValueAtTime(p,t+at);a.gain.exponentialRampToValueAtTime(0.0001,t+r);}
   function osc(type,f,t,stop){var o=ctx.createOscillator();o.type=type;o.frequency.value=f;o.start(t);o.stop(stop);return o;}
   function vib(o,t,stop,rate,cents){var l=osc('sine',rate,t,stop),g=ctx.createGain();g.gain.value=cents;l.connect(g);g.connect(o.detune);}
-  /* piano: each key is three strings about a cent apart, struck by a felt hammer.
-     Each partial sits a little sharp of its harmonic (the string's stiffness,
-     more of it up the keyboard) and decays on its own, the upper ones first: a
-     quick drop, then a long tail. A low-pass closes as the note fades, and the
-     damper stops it at note-off, more slowly in the bass; the top keys have no
-     damper. `v` is how hard the key is struck (0 to 1): harder is brighter.
-     `x` marks a note stopped because its key is struck again. */
-  function piano(m,t,d,g,v,x){var f=mtof(m),stiff=0.0003*Math.pow(2,(m-60)/14),np=Math.max(3,Math.min(8,Math.floor(5600/f))),
-      t1=0.85*Math.pow(2,-(m-60)/24),t2=5*Math.pow(2,-(m-60)/18),damp=x?0.012:m>88?0.7:m<48?0.13:0.075,off=t+d,
-      stop=Math.min(off+damp*8,t+3*t1+6*t2),lp=ctx.createBiquadFilter(),a=ctx.createGain(),pan=ctx.createStereoPanner(),fc=Math.min(15000,f*(3.5+11*v)+500*v);
-    lp.type='lowpass';lp.Q.value=0;lp.frequency.setValueAtTime(fc,t);lp.frequency.setTargetAtTime(Math.min(fc,f*1.7+260),t+0.005,t1*1.3);lp.frequency.setTargetAtTime(Math.max(90,f*1.05),off,damp*0.6);
-    a.gain.setValueAtTime(g,t);a.gain.setTargetAtTime(0,off,damp);pan.pan.value=Math.max(-0.4,Math.min(0.4,(m-64)/50));
-    for(var n=1;n<=np;n++){var amp=Math.pow(n,-(1.55-0.65*v))*(n===1&&m<45?0.6:1)*(n%7?1:0.5),pg=ctx.createGain(),k1=t1/(1+0.75*(n-1)),k2=t2/(1+0.5*(n-1)),
-        fn=n*f*Math.sqrt(1+stiff*n*n),st=n<=3?[-0.55,0.05,0.65]:[0.1];
-      pg.gain.setValueAtTime(0,t);pg.gain.linearRampToValueAtTime(amp/st.length,t+0.0015+0.003/n);pg.gain.setTargetAtTime(amp*0.3/st.length,t+0.005,k1);pg.gain.setTargetAtTime(0,t+0.005+2.5*k1,k2);
-      st.forEach(function(c){var o=osc('sine',fn,t,stop);o.detune.value=c;o.connect(pg);});pg.connect(lp);}
-    var h=nz(t,0.06),hb=ctx.createBiquadFilter(),ha=ctx.createGain();hb.type='bandpass';hb.frequency.value=Math.max(700,Math.min(4200,f*3.2));hb.Q.value=0.8;env(ha,t,g*(0.03+0.15*v),0.0008,0.035);h.connect(hb);hb.connect(ha);ha.connect(pan);
-    lp.connect(a);a.connect(pan);pan.connect(bus);}
+  /* piano: the nearest recorded key, re-pitched. `v` is how hard the key is struck (0 to 1): a soft touch is
+     darker, so a low-pass opens with it (never below the note's own overtones). The damper stops the note at
+     note-off, more slowly in the bass; the top keys have no damper, as on the instrument. `x` marks a note
+     stopped because its key is struck again. The recording is stereo, so a key sits where it sat under the
+     microphones. */
+  function piano(m,t,d,g,v,x){var best=null;PS.forEach(function(s){if(pbuf[s.m]&&(!best||Math.abs(s.m-m)<Math.abs(best.m-m)))best=s;});if(!best)return;
+    var p=pbuf[best.m],src=ctx.createBufferSource(),lp=ctx.createBiquadFilter(),a=ctx.createGain(),rate=Math.pow(2,(m-best.m)/12),
+        off=t+d,damp=x?0.02:m>88?0:m<48?0.12:0.07,last=t+(p.b.duration-p.o)/rate;
+    src.buffer=p.b;src.playbackRate.value=rate;lp.type='lowpass';lp.Q.value=0.5;lp.frequency.value=Math.min(18000,Math.max(mtof(m)*3,700+17000*v*v));
+    a.gain.value=g*PK;if(damp)a.gain.setTargetAtTime(0,off,damp);
+    src.connect(lp);lp.connect(a);a.connect(bus);src.start(t,p.o);src.stop(damp?Math.min(last,off+damp*8):last);}
   /* French horn: a saw for the buzz and a triangle for the body, through a
      dark low-pass and a formant band, with a slow attack and gentle vibrato.
      `bright` opens the filter for the last statement, nearer a trumpet. */
@@ -641,11 +663,12 @@ var Music=(function(){
   /* offline, each two seconds of the score is built just before the render reaches it, so the piano's
      many short-lived nodes never wait in the graph all at once: 76 s for the introduction's score, where
      building it all first took 751 s (2026-10-27); under a fixed seed the two agree to one LSB */
-  return{offline:function(){var off=new OfflineAudioContext(2,44100*(DUR+3),44100);ctx=null;var AC0=window.AudioContext;window.AudioContext=function(){return off;};ensure();window.AudioContext=AC0;fresh();
+  return{offline:function(){return loadPiano().then(function(){var off=new OfflineAudioContext(2,44100*(DUR+3),44100);ctx=null;var AC0=window.AudioContext;window.AudioContext=function(){return off;};ensure();window.AudioContext=AC0;fresh();
       var i=0,W=2;function feed(T){while(i<ev.length&&ev[i].t<T+W){play(ev[i],ev[i].t+0.05);i++;}}feed(0);
-      for(var s=W;s<DUR+3;s+=W)(function(s){off.suspend(s).then(function(){feed(s);off.resume();});})(s);return ctx.startRendering().then(wav);},start:function(T){if(!ensure())return;if(ctx.state!=='running')ctx.resume().catch(function(){});if(!bus){fresh();idx=find(T);}},
-    seek:function(T){if(!ctx)return;fresh();idx=find(T);},pause:function(){if(ctx&&ctx.state==='running')ctx.suspend().catch(function(){});},silence:function(){if(ctx)drop();},
-    schedule:function(T){if(!ctx||!bus)return;var now=ctx.currentTime;while(idx<ev.length&&ev[idx].t<T+0.3){var e=ev[idx++],dt=e.t-T;if(dt<-0.05)continue;play(e,now+Math.max(0.01,dt));}}};
+      for(var s=W;s<DUR+3;s+=W)(function(s){off.suspend(s).then(function(){feed(s);off.resume();});})(s);return ctx.startRendering().then(wav);});},start:function(T){loadPiano();if(!ensure())return;if(ctx.state!=='running')ctx.resume().catch(function(){});if(!bus){fresh();idx=find(T);}},
+    load:loadPiano,seek:function(T){if(!ctx)return;fresh();idx=find(T);},pause:function(){if(ctx&&ctx.state==='running')ctx.suspend().catch(function(){});},silence:function(){if(ctx)drop();},
+    /* nothing is scheduled until the piano has loaded: the film plays on, and the score joins it in step */
+    schedule:function(T){if(!ctx||!bus||!pready)return;var now=ctx.currentTime;while(idx<ev.length&&ev[idx].t<T+0.3){var e=ev[idx++],dt=e.t-T;if(dt<-0.05)continue;play(e,now+Math.max(0.01,dt));}}};
 })();
 /* ---- player ---- */
 function fmt(t){var s=Math.floor(t+1e-6);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
@@ -749,6 +772,7 @@ var m=/^#t(\d+)$/.exec(location.hash||'');if(m)T=parseFloat(m[1]);
 measure();render();ui();
 window.addEventListener('resize',function(){measure();render();});
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){measure();render();});
+Music.load();
 window.__film={dur:DUR,narrated:!!NARR,seek:function(t){measure();T=t;render();},audio:function(){return Music.offline();},ft:ft,nt:nt};
 })();
 </script>
