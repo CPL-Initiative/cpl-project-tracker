@@ -1,2 +1,2 @@
-file=kb/receipts/cpl_memory_s495_2026-10-27.sql
-name=cpl_memory_s495_2026_10_27
+file=kb/migrations/2026-10-27_s500_funding_request_review.sql
+name=s500_funding_request_review

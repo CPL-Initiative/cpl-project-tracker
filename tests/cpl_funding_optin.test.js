@@ -2,9 +2,10 @@
 //
 // Self-service administrator opt-in (SkyOptIn, 2026-08-05).
 // A college's VPAA / VP of Student Services / President opts the institution in
-// from its own row — on the PUBLIC page as well as the private tab. Sam's ruling
-// was ATTEST-FIRST: the request satisfies the participation gate the moment it is
-// submitted; the Chancellor's Office confirms or revokes in a reviewer-only lane.
+// from its own row — on the PUBLIC page as well as the private tab. Since Sam's
+// 2026-10-27 ruling (replacing 2026-08-05's attest-first) the request WAITS for a
+// MAP team reviewer: it meets the condition once a signed-in reviewer accepts it,
+// which opens the confirmation email; Deny removes it.
 // The attestor's name/email are PII and must never reach the public page.
 //
 // Own file (not tests/cpl_funding.test.js) — that file is already heap-heavy with
@@ -118,8 +119,8 @@ function reviewerSession() {
     /Jane Admin/.test(html) && /jane@college\.edu/.test(html));
   // Sam, 2026-09-28: a self-attestation stands (attest-first), so the CO acts
   // only to reject one; the CO Confirm is gone.
-  check("B3: the lane offers Reject on a self-attestation, and no Confirm",
-    !/data-optinconfirm=/.test(html) && /data-optinrevoke=/.test(html));
+  check("B3: the lane offers Accept and Deny on a waiting request (Sam, 2026-10-27)",
+    /data-optinaccept=/.test(html) && /data-optindeny=/.test(html) && /Awaiting review \(1\)/.test(html));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -137,12 +138,12 @@ function reviewerSession() {
 
   const selfRow = {}; selfRow[COL] = { college: COL, status: "self_attested" };
   T._setElig({ coordOk: true, coord: coord, optinRow: selfRow });
-  check("C2: a SELF-ATTESTED opt-in clears the gate on submit (attest-first, no CO step)",
-    T._gate(COL).blocked === false && T._optinActive(COL) === true);
+  check("C2: a SELF-ATTESTED request waits for a MAP team reviewer: the gate stays closed (Sam, 2026-10-27)",
+    T._gate(COL).blocked === true && T._optinActive(COL) === false && T._optinPending(COL) === true);
 
   const confRow = {}; confRow[COL] = { college: COL, status: "confirmed" };
   T._setElig({ coordOk: true, coord: coord, optinRow: confRow });
-  check("C3: a CO-confirmed opt-in also clears the gate", T._gate(COL).blocked === false);
+  check("C3: an accepted (confirmed) request clears the gate", T._gate(COL).blocked === false && T._optinActive(COL) === true);
 
   const revRow = {}; revRow[COL] = { college: COL, status: "revoked" };
   T._setElig({ coordOk: true, coord: coord, optinRow: revRow });
@@ -166,8 +167,11 @@ function reviewerSession() {
   check("D1: gate blocked before opt-in", T._gate(COL).blocked === true);
 
   T._submitOptin(COL, { name: "Jane Admin", title: "VPAA", email: "jane@college.edu" });
-  check("D2: after a self-submit the gate clears immediately (attest-first)",
-    T._gate(COL).blocked === false && T._optinActive(COL) === true);
+  check("D2: after a self-submit the gate stays closed and the request waits",
+    T._gate(COL).blocked === true && T._optinActive(COL) === false && T._optinPending(COL) === true);
+
+  T._acceptOptin(COL);
+  check("D2b: a reviewer's Accept clears the gate", T._gate(COL).blocked === false && T._optinActive(COL) === true);
 
   T._revokeOptin(COL);
   check("D3: after a CO revoke the gate re-blocks and the opt-in goes inactive",
@@ -202,8 +206,11 @@ function reviewerSession() {
 
   wrap.querySelector('[data-optinfield="email"]').value = "jane@college.edu";
   click(dom.window, doc.querySelector("[data-optinsubmit]"));
-  check("E2: a valid submission records the opt-in and clears the gate",
-    T._optinActive(rowCollege) === true);
+  check("E2: a valid submission records a waiting request and leaves the gate closed",
+    T._optinActive(rowCollege) === false && T._optinPending(rowCollege) === true);
+  check("E2b: the thank-you says a MAP team reviewer confirms it, to the address given",
+    /A member of the MAP team will review the request and send a confirmation to jane@college\.edu/.test(
+      doc.getElementById("cplFundTable").textContent));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -239,7 +246,7 @@ function reviewerSession() {
   T.render();
   const stillThere = Array.from(doc.querySelectorAll("[data-optinjump]"))
     .map(function (b) { return b.getAttribute("data-optinjump"); });
-  check("F2: the Opt-in chip is hidden once the college has opted in", stillThere.indexOf(COL) === -1);
+  check("F2: the Opt-in chip is hidden once the college's request is waiting", stillThere.indexOf(COL) === -1);
   check("F2b: other (not-opted-in) colleges still show the chip", stillThere.length > 0);
 }
 {
@@ -264,17 +271,45 @@ function reviewerSession() {
   const t = doc.getElementById("cplFundTable").innerHTML;
   check("F3: the row drill-in shows the CO confirm block inline (where Sam looked)",
     /cplfund-corow/.test(t));
-  check("F3b: the inline block offers Reject alone, with the attestor identity",
-    !/data-optinconfirm=/.test(t) && /data-optinrevoke=/.test(t) &&
+  check("F3b: the inline block offers Accept and Deny on a waiting request, with the requester's identity",
+    /data-optinaccept=/.test(t) && /data-optindeny=/.test(t) && !/data-optinrevoke=/.test(t) &&
     /Jane Admin/.test(t) && /jane@college\.edu/.test(t));
 
-  const rejectBtn = doc.querySelector("#cplFundTable [data-optinrevoke]");
-  check("F4: the inline Reject button is present in the drill-in, with no Confirm beside it",
-    !!rejectBtn && rejectBtn.textContent === "Reject" && !doc.querySelector("#cplFundTable [data-optinconfirm]"));
-  if (rejectBtn) click(priv.window, rejectBtn);
+  const mails = [];
+  priv.window.CPL_FUNDING_OPEN_MAIL = function (href) { mails.push(href); };
+  priv.window.CPL_FUNDING_TEST_COORD_EMAIL = {}; priv.window.CPL_FUNDING_TEST_COORD_EMAIL[COL] = "coord@college.edu";
+  const acceptBtn = doc.querySelector("#cplFundTable [data-optinaccept]");
+  check("F4: the inline Accept button is present in the drill-in", !!acceptBtn && acceptBtn.textContent === "Accept");
+  if (acceptBtn) click(priv.window, acceptBtn);
   const t2 = doc.getElementById("cplFundTable").textContent;
-  check("F4b: clicking inline Reject withdraws the opt-in (holder-scoped binding survives refreshTable)",
-    /Confirmation withdrawn \(due /.test(t2) && P._optinActive(COL) === false);
+  check("F4b: clicking inline Accept confirms the request (holder-scoped binding survives refreshTable)",
+    P._optinActive(COL) === true && /Confirmation on file/.test(t2));
+  const m = mails[0] || "";
+  check("F4c: …and opens the confirmation email to the requester, copied to the CPL Coordinator, with the reply line",
+    mails.length === 1 && m.indexOf("mailto:jane%40college.edu?") === 0 && /cc=coord%40college\.edu/.test(m) &&
+    decodeURIComponent(m).indexOf("If you did not send this request, please reply to this email.") >= 0);
+  const revokeBtn = doc.querySelector("#cplFundTable [data-optinrevoke]");
+  check("F4d: a confirmed request offers Revoke", !!revokeBtn && revokeBtn.textContent === "Revoke");
+}
+{
+  // F4e — Deny removes a waiting request, so the college may send another.
+  const priv = freshDom();
+  priv.window.CPL_SESSION = reviewerSession();
+  const doc = boot(priv.window);
+  const P = priv.window.CPL_FUNDING_TAB;
+  const selfRow = {}; selfRow[COL] = { college: COL, status: "self_attested", source: "self" };
+  P._setElig({ coordOk: true, coord: {}, optinRow: selfRow, optinReview: [
+    { college: COL, name: "Jane Admin", title: "VPAA", email: "jane@college.edu",
+      status: "self_attested", requested_at: "2026-08-05" }
+  ] });
+  P.render();
+  click(priv.window, doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + COL + '"]'));
+  const denyBtn = doc.querySelector("#cplFundTable [data-optindeny]");
+  if (denyBtn) click(priv.window, denyBtn);
+  const t = doc.getElementById("cplFundTable").textContent;
+  check("F4e: Deny removes the request and the row offers the Confirm chip again",
+    !!denyBtn && P._optinPending(COL) === false && P._optinActive(COL) === false && /Confirmation not yet on file/.test(t) &&
+    Array.from(doc.querySelectorAll("[data-optinjump]")).some((b) => b.getAttribute("data-optinjump") === COL));
 }
 {
   // F5 — a LOCKED (public / non-reviewer) drill-in never shows the CO controls,
@@ -290,8 +325,8 @@ function reviewerSession() {
   const t = doc.getElementById("cplFundTable").innerHTML;
   check("F5: a locked (non-reviewer) drill-in shows NO CO confirm controls",
     !/cplfund-corow/.test(t) && !/data-optinconfirm/.test(t));
-  check("F5b: the locked drill-in still shows the college-facing opted-in status",
-    /Minimum Conditions:[\s\S]*Confirmation on file/.test(t.replace(/<[^>]+>/g, " ")));
+  check("F5b: the locked drill-in shows the request waiting for review",
+    /Minimum Conditions:[\s\S]*Confirmation received, awaiting MAP team review/.test(t.replace(/<[^>]+>/g, " ")));
 }
 
 // ── the participation-requirement join (2026-08-27) ─────────────────────────

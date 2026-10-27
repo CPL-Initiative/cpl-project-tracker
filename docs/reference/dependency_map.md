@@ -167,6 +167,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `college_geo_replace` | scripts: `chatbox/sync_coci_offerings.py` | — |
 | `college_program_courses` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
 | `course_outcomes_load` | scripts: `kb/_course_outcomes_load.py` | — |
+| `cpl_funding_email_domains` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | — |
 | `cpl_funding_my_reports` | tabs: `college-briefing`, `cpl-pathways` | — |
 | `cpl_funding_nc_attestation_review` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | — |
 | `cpl_funding_optin_review` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | — |
@@ -264,7 +265,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `college_lookup.js` | `CCC_COLLEGE_LOOKUP` | not stated in header | tabs: `vision-2030` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_apply_asccc_areas.py` |
 | `cpl_baccalaureates_data.js` | `CPL_BACCALAUREATES` | `kb/_build_baccalaureate_pathways.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_baccalaureate_pathways.py`, `kb/_build_cpl_pathway_ccr.py`, `kb/_build_cpl_pathway_membership.py` |
 | `cpl_coci_course_keys.js` | `CPL_COCI_COURSE_KEYS` | `kb/_build_coci_lookup.py` | tabs: `cpl-pathways` · scripts: `kb/_build_coci_lookup.py` |
-| `cpl_funding_data.js` | `CPL_FUNDING` | not stated in header | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `prototype/build_funding_model_explainer.js` · pages: `funding-model/index.html`, `funding-model/memo/index.html` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `funding/_build_funding_performance.py` |
+| `cpl_funding_data.js` | `CPL_FUNDING` | not stated in header | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `kb/_build_funding_college_map.js`, `prototype/build_funding_model_explainer.js` · pages: `funding-model/index.html`, `funding-model/memo/index.html` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `funding/_build_funding_performance.py` |
 | `cpl_funding_ess.js` | `CPL_FUNDING_ESS` | not stated in header | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · scripts: `funding/_build_funding_ess.py` |
 | `cpl_funding_performance.js` | `CPL_FUNDING_PERF` | not stated in header | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `a11y.config.js` · scripts: `funding/_build_funding_performance.py` |
 | `cpl_pathways_ccr_data.js` | `CPL_PATHWAY_CCR` | `kb/_build_cpl_pathway_ccr.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_ccr.py` |
@@ -615,6 +616,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/issuer_preseed.json` | tabs: `credential-reference` · scripts: `kb/_preseed_null_issuers.py`, `kb/_verify_issuer_preseed.py` | scripts: `kb/_preseed_null_issuers.py` |
 | `kb/it_ai_credential_catalog.json` | tabs: `credential-reference` · scripts: `kb/_build_it_ai_credential_catalog.py` | scripts: `kb/_build_it_ai_credential_catalog.py` |
 | `kb/kb/reference/coci_program_course_file.csv.gz` | modules: `kb/_college_apprenticeship_cpl_roster.js` | — |
+| `kb/kb/reference/map_college_names.json` | modules: `kb/_build_funding_college_map.js` | — |
 | `kb/kin_pe_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/kin_pe_pass2_out/2026-06-12/athl_family_analysis.md` | scripts: `kb/_athl_fitness_merge_curation.py` | scripts: `kb/_athl_fitness_merge_curation.py` |
 | `kb/kin_pe_pass2_out/2026-06-12/hs_title_fold.json` | none found | scripts: `kb/_hs_title_fold.py` |
@@ -1200,5 +1202,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 102 Supabase tables · 42 RPCs · 9 edge functions · 719 file
-datasets · 184 external services · 475 consumers · 58 workflows · 38 tabs.
+Coverage: 102 Supabase tables · 43 RPCs · 9 edge functions · 720 file
+datasets · 184 external services · 476 consumers · 58 workflows · 38 tabs.

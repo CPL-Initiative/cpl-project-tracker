@@ -27,8 +27,10 @@
 // Run from repo root: `npm test` (or `node tests/cpl_funding_demonstrated_and_thanks.test.js`).
 const { consumerSrc, check, finish, freshDom, boot, click } = require("./lib/cpl_funding_harness.js");
 
-// Sam's words, verbatim (2026-09-29).
-const SAM_THANKS = "Thank you. Your participation is confirmed, and your college counts as participating from today.";
+// Card 5's thank-you (2026-09-29) said the college counted from today. Since Sam's
+// 2026-10-27 ruling a MAP team reviewer accepts the request and emails the
+// confirmation, so the thank-you says that, to the address given; it still names
+// no Chancellor's Office acknowledgment step (5f).
 const SAM_NOTE = "Your name and email are recorded for the Chancellor's Office and are not shown publicly.";
 
 const flat = (el) => (el ? el.textContent : "").replace(/\s+/g, " ").trim();
@@ -107,6 +109,10 @@ async function part5() {
     if (method === "POST" && /\/rest\/v1\/cpl_funding_participation$/.test(url)) {
       return Promise.resolve({ ok: true, status: 201, json: function () { return Promise.resolve([]); } });
     }
+    // The domain check first (2026-10-27): no domains on file, so any address passes.
+    if (method === "POST" && /\/rest\/v1\/rpc\/cpl_funding_email_domains$/.test(url)) {
+      return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve([]); } });
+    }
     return new Promise(function () {});
   };
   wrap.querySelector('[data-optinfield="name"]').value = "Jane Admin";
@@ -115,14 +121,16 @@ async function part5() {
   const submit = Array.from(doc.querySelectorAll("[data-optinsubmit]"))
     .filter((b) => b.getAttribute("data-optinsubmit") === college)[0];
   if (submit) click(window, submit);
-  await new Promise((r) => setTimeout(r, 0));
+  await new Promise((r) => setTimeout(r, 20));
 
   const done = doc.querySelector(".cplfund-optin-done");
   check("5c: the submit went out as the live POST",
     calls.some((c) => /^POST .*\/rest\/v1\/cpl_funding_participation$/.test(c)));
-  check("5d: the thank-you reads Sam's words exactly", !!done && flat(done) === SAM_THANKS);
-  check("5e: the thank-you promises no acknowledgment",
-    !!done && !/acknowledg|in the meantime/i.test(flat(done)));
+  const head = "Thank you. A member of the MAP team will review the request and send a confirmation to jane@college.edu. ";
+  check("5d: the thank-you says a MAP team reviewer confirms it, to the address given (Sam, 2026-10-27)",
+    !!done && flat(done).indexOf(head) === 0 && / meets this condition once the request is accepted\.$/.test(flat(done)));
+  check("5e: the thank-you names no Chancellor's Office acknowledgment",
+    !!done && !/acknowledg|in the meantime|Chancellor/i.test(flat(done)));
 
   // The source, for the branches no fixture paints: nothing in the opt-in
   // affordance promises the Chancellor's Office an acknowledgment step.

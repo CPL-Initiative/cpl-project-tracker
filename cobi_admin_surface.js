@@ -111,6 +111,7 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_reports"
       ],
       "rpcs": [
+        "cpl_funding_email_domains",
         "cpl_funding_nc_attestation_review",
         "cpl_funding_optin_review",
         "map_coordinator_summary"
@@ -192,6 +193,7 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_reports"
       ],
       "rpcs": [
+        "cpl_funding_email_domains",
         "cpl_funding_my_reports",
         "cpl_funding_nc_attestation_review",
         "cpl_funding_optin_review",
@@ -318,6 +320,7 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_reports"
       ],
       "rpcs": [
+        "cpl_funding_email_domains",
         "cpl_funding_my_reports",
         "cpl_funding_nc_attestation_review",
         "cpl_funding_optin_review",
