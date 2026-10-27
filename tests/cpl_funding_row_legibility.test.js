@@ -199,7 +199,9 @@ function openDetail(window, doc, name) {
     !/function earnedSubHtml\(/.test(src) && fnBody("totalFundsCellHtml") !== "" &&
     fnBody("totalFundsCellHtml").indexOf("sub") === -1);
   check("...and the prompt is the Confirm chip, which fires on the participation state alone",
-    /if \(partShown\(\) && !ELIG\.optin\[c\.college\]\)/.test(fnBody("rowChips")) &&
+    // Since 2026-10-27 the chip also stands down while a request waits for a MAP
+    // team reviewer (optinPending): still the participation state, never a figure.
+    /if \(partShown\(\) && !ELIG\.optin\[c\.college\] && !optinPending\(c\.college\)\)/.test(fnBody("rowChips")) &&
     fnBody("rowChips").indexOf("earned_withheld") === -1);
   // `cellFig` reads the span the award covers (the window under Combined
   // funding, the viewed year under Annual, 2026-09-27).
