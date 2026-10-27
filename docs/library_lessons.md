@@ -641,3 +641,13 @@ belonged to the May report. Handed to Sam as `20261026_CPL_Initiative_Workplan_U
 For Sam before it goes out: the dashboard's transcribed units fell from 103,669 (2026-07-15) to 76,262 (2026-08-07)
 and read 84,401 now, below the May report's 96,449; nothing on file explains the August drop. The contributors line
 is the May list unchanged.
+
+## File it on the In development card (Sam, 2026-10-27)
+
+Sam filed the Workplan Update's edited draft and it seemed to vanish. The In development card offered no **File it**,
+only Copy the brief and Edit record, so he linked the file through Edit and set Approved; one write at 00:06Z
+(history row) moved the record out of In development, and with no `made_on` it sorted to the bottom of the register
+under *No occasion yet*. The brief's paste promised that File it moves the record to Draft, but File it wrote only the
+link. Now the card carries File it; filing a Requested piece sets `draft`; a record with no `made_on` takes the day it is
+filed, or the day Edit moves it past Requested; the form names the piece it files. Guarded by `tests/library.test.js`
+(9b). The Workplan record itself still has no date until its next Edit save.
