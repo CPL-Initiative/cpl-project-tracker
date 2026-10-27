@@ -26,7 +26,8 @@ private: `CPLBrain/07-session-notes/2026-10-27-api-spend-trace.md`.
 | Jev (TypeSafe) | Jev | Repo secret `TYPESAFE_API_KEY` | `typesafe-smoke.yml`, dispatch only |
 | Grok (the second reader) | xAI | `XAI_API_KEY` | `second-reader.yml`, `xai-smoke.yml`, dispatch only |
 | `kb/*.py` scripts naming `claude-opus-4-7` (classify, seeds, curation) | `claude-opus-4-7` | Whatever key the person running them holds | By hand |
-| Claude Code sessions, the queue routine included | `claude-opus-5-5` | The Team plan's seats first; past a seat's limits, the Console organization's API credits at API rates (the credit balance serves "the API, Claude Code, and playground"), refilled from the card while auto-reload is on | People, Sam's routines, and teammates on the same Team plan |
+| Claude Code sessions (terminal, IDE, desktop, web), Cowork, the queue routine | `claude-opus-5-5` | The Team plan's seats; past a seat's limits, the Team's usage credits (extra usage) when the organization enables them, under an org-wide monthly limit and per-member limits set in claude.ai Organization settings > Usage | People, Sam's routines, teammates on the same Team plan |
+| Anything run with a Console API key: the API, the Agent SDK, headless `claude -p`, Managed Agents | Whatever the caller names | The linked Console organization's credits (the Team plan's monthly API credits, then purchased credits and auto-reload); everyone holding a key in that organization draws on one balance | The holder of the key |
 
 Supabase secrets are project-wide, so every function in a project reads the same
 `ANTHROPIC_API_KEY`. No code or log here can see which Console key that secret
@@ -65,13 +66,17 @@ handful of session ids a day are the smoke test too.
 `function_id` (ids from `list_edge_functions`). One invocation is about one model
 call for the extractor and the classifier.
 
-**Claude Code's overflow.** The largest spend measured here (2026-10-26 and 27) was
-Claude Code past the Team plan's limits, billed to the Console credits under the key
-the Team plan's API-credit setup made. Its signature on the Cost page, grouped by token
-type: nearly all prompt-cache reads and 5-minute cache writes, almost no uncached input,
-an agent re-reading a long context at every step (Sierra shows the reverse). With
-auto-reload on, the overflow never stops on its own; with it off, sessions pause at the
-plan's limits. The Team admin's usage page names the member.
+**Two bills, two places.** A Team plan's monthly API credits sit in a linked Console
+organization and cover the API, the Playground, Managed Agents, the Agent SDK and
+`claude -p` run with an API key; they never cover interactive Claude Code or extra usage
+("Monthly API credits for Max and Team plans", support.claude.com). Interactive Claude
+Code past a seat's limits draws on the Team's usage credits instead, which an owner caps
+in Organization settings > Usage (an org-wide monthly limit and spend limits by user).
+An agent's signature on the Console Cost page, grouped by token type: nearly all
+prompt-cache reads and 5-minute cache writes, almost no uncached input (Sierra shows the
+reverse). On a Console key that signature means an Agent SDK app or headless `claude -p`
+holding the key, and the key's creator and last-used time on the Console's API keys page
+name where to look.
 
 **The Console.** Cost page, filtered by API key and grouped by model, is the bill
 itself. A workspace spend limit can cap a key's monthly spend and send alerts at
