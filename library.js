@@ -683,7 +683,7 @@
   function addForm() {
     var f = state.form || {};
     var filing = !!state.formFor;
-    return '<form class="lib-form" id="lib-addform"><h2 class="lib-h">' + (filing ? "File this piece" : "Add to the Library") + "</h2>" +
+    return '<form class="lib-form" id="lib-addform"><h2 class="lib-h">' + (filing ? "File " + (f.title ? esc(f.title) : "this piece") : "Add to the Library") + "</h2>" +
       "<p>" + (filing ? "" : "The Library keeps the record and links to the file. ") +
       "Put the file in the team's SharePoint folder first: an approved piece in the " +
       '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>, a draft in its Drafts folder. ' +
@@ -963,7 +963,9 @@
     if (b.due) kicker.push("needed " + b.due.charAt(0).toLowerCase() + b.due.slice(1));
     var shown = !!state.briefShown[r.id];
     var acts = '<button type="button" class="lib-btn primary" data-brief="' + esc(r.id) + '">' + (shown ? "Copy again" : "Copy the brief") + "</button>";
-    if (r.url) acts += '<a class="lib-btn" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open the draft</a>';
+    // File it is the step the brief's paste names: it links the draft and moves the piece to Draft.
+    acts += r.url ? '<a class="lib-btn" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open the draft</a>'
+      : '<button type="button" class="lib-btn" data-file="' + esc(r.id) + '">File it</button>';
     acts += '<button type="button" class="lib-btn" data-edit="' + esc(r.id) + '">Edit record</button>';
     if (r.status !== "requested") acts += regenBtn(r);
     if (r.refresh_note || regenState(r)) acts += requestBtn(r);
@@ -1124,9 +1126,15 @@
     rememberAuthor(f.by);
     var filing = state.formFor;
     var p;
+    var drafted = false;
     if (filing) {
-      p = write(TABLE_URL + "?id=eq." + encodeURIComponent(filing), { method: "PATCH",
-        body: { url: f.url, home: homeForUrl(f.url), updated_by: f.by } });
+      var fr = byId(filing) || {};
+      var body = { url: f.url, home: homeForUrl(f.url), updated_by: f.by };
+      // A requested piece's first file makes it a Draft, step 2 of In development, as the
+      // brief's paste promises; and a record filed without a date takes the day it is filed.
+      if (fr.status === "requested") { body.status = "draft"; drafted = true; }
+      if (!fr.made_on) body.made_on = today();
+      p = write(TABLE_URL + "?id=eq." + encodeURIComponent(filing), { method: "PATCH", body: body });
     } else {
       if (!f.title) { say("Add a title.", true); render(); return; }
       var madeFor = readFor("la"), fp = forProblem(madeFor);
@@ -1140,7 +1148,8 @@
       } });
     }
     p.then(function () {
-      say(filing ? "Filed. The record now links to the file." : "Added to the Library.");
+      say(!filing ? "Added to the Library." : drafted ? "Filed. The record links to the file and is now a Draft, under In development."
+        : "Filed. The record now links to the file.");
       state.form = null; state.formFor = null; delete state.forPick.la;
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
@@ -1277,6 +1286,10 @@
       url: url || null, home: url ? homeForUrl(url) : "not_filed", updated_by: by,
       for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name,
       knowledge: knowledgeValue(g("le-knowledge"), g("le-kbnote")), kb_note: g("le-kbnote") || null };
+    // A piece started as a brief has no date until it is made; one that moves past Requested
+    // without one takes today's, so it sorts with its peers rather than last.
+    var r = byId(id) || {};
+    if (!r.made_on && body.status && body.status !== "requested") body.made_on = today();
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
       say("Saved. The earlier version is in the history.");
       state.edit = null; state.retireAsk = null; delete state.forPick.le;
