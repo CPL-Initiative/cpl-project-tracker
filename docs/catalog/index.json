@@ -6318,7 +6318,7 @@
      ],
      "title": "Geometry is half an accessibility audit",
      "type": "methodology",
-     "updated": "2026-10-26"
+     "updated": "2026-10-27"
     },
     {
      "created": "2026-07-17",
@@ -16193,8 +16193,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 465,
+   "count": 466,
    "docs": [
+    {
+     "created": "2026-10-27",
+     "governs": [],
+     "n": 496,
+     "path": "docs/session_496_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "accessibility",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 496 handoff: Sierra's scene 8 re-read and Sheet 135, axe on the internal tabs worked, Hartnell's Cal-GETC area step",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-27",
      "governs": [],
@@ -24174,5 +24190,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1281
+ "total": 1282
 }

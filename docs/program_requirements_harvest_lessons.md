@@ -1133,3 +1133,18 @@ side session (Scenario 4) ran beside it, one writer per file.
 ### Moved from the lane (S445 compaction)
 
 **S444:** Golden West (79) and Imperial Valley (42) loaded; department pages are candidates, a section heading may span two lines (Sierra 35 → 81 found, MiraCosta 29 → 68, its discipline pages still lose siblings); 37 Program Mapper hosts recorded (#2330).
+
+## S495 SkySalmonberry (2026-10-27): Hartnell CalGETC 45096's area totals, the step
+
+- **The page read named the shape; the stored record named the blocks.** Page read 40375734212 prints "Area 3: Arts and
+  Humanities / A total of 6 semester units is required. Two courses required: one from Area 3A (Arts) and one from Area
+  3B (Humanities)." and "Area 5 ... A total of 7"; the record (read through the Supabase MCP) keeps "Area 3: Arts and
+  Humanities - Area 3A (Arts)", 3B, "Area 5A: Physical Science", 5B and 5C as figureless choose_courses blocks, so one
+  `block_pattern` has to match both namings: `(?:Area {area}: [^\n]*? - )?Area {area}[A-Z]\b`.
+- **`pool_areas` finished (S491's WIP):** each area's sub-areas become one choice of the printed total, named for the
+  area (`{title}`), each sub-area kept in floors with its rule, a course under two sub-areas listed once (5C's laboratory
+  list repeats 5A's and 5B's); 9 + 3 + 6 + 6 + 7 + 3 = 34. The text pattern reads a capture joined by newline or space.
+  Eight checks in `tests/program_requirements_reconcile_test.py`; the confirm-carry check excludes `pool_areas` as it
+  does `pool_lists` (a joined block's confirm does not carry).
+- **Next:** the reconcile dispatched on the branch (extract 0) checks the pattern on `out/sources/45096.json`; then, as
+  S489 did, restore any re-filed record that changed only bookkeeping, reread, and merge.

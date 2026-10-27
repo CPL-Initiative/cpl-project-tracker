@@ -1,7 +1,7 @@
 ---
 title: Geometry is half an accessibility audit
 created: 2026-10-26
-updated: 2026-10-26
+updated: 2026-10-27
 tags: [methodology, accessibility, wcag, public-pages]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -57,3 +57,10 @@ Each fix was re-measured with both tools at 1280 and 390px (#2478, #2479, #2482)
 - The first full run with axe found what geometry never could on COBI: a side menu declared as a tablist that held group heads and links (critical, every route; #2494), unnamed filter selects, a focusable separator with no value, and directory rows that were buttons standing in for list items (#2495).
 - A target turns an axe rule off only with a reason (`axeDisable`), and a target that throws fails without ending the sweep.
 - A film's transcript should be generated from the scenes' own words, so it cannot drift from the picture.
+
+## A seed that waits on data reads as load (S495)
+
+A target that times out under a full sweep and again when run alone is not load. CER Procedures' seed waited for a
+control the view paints only when the last nightly run produced something to show; the run produced nothing, so the
+seed could never finish. Seed on the structure every run paints (the list), and open data-dependent detail only where
+it exists. Re-run a timed-out target alone before calling it a flake.
