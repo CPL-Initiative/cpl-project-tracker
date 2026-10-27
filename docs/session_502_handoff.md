@@ -65,6 +65,12 @@ reread, infer, keep), and #2499 is no longer held. This checkpoint was **light**
    `offline()` now builds the score in 2 s slices (76 s render, from 751 s). The 46 s samples went to Sam at ~15:35Z.
    **On his approval:** open the PR, rebuild the pages, re-render the music film and the narrated cut (after #2499
    merges). On a no: leave the branch.
+   **Sam heard it (~15:45Z): no.** *"The piano is too obviously electronic--like a childs play piano. Any way to get a
+   realistic sound with rich chords?"* Next: a recorded piano in place of the synthesized one: the Salamander Grand
+   Piano samples (Alexander Holm, CC BY 3.0; credit it in the closing), a few notes per octave committed under
+   `prototype/funding_video/assets/piano/` and played through WebAudio, with fuller voicings (open spread chords,
+   octave bass, sustain pedal). `tonejs.github.io` is refused by this environment's proxy; try the samples' GitHub
+   source through the git proxy. Send Sam a new 46 s sample before any re-render.
 7. **Friday morning:** handoff 496 and 500's a11y list on main.
 
 ## Lessons to honor
