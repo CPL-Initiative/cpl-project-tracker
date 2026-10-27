@@ -34,7 +34,7 @@ reread, infer, keep), and #2499 is no longer held. This checkpoint was **light**
 0. **Hide the public funding page's My Institution view, keep its code (Sam, ruled ~15:25Z; `cpl_memory`
    `sam-funding-hide-my-institution-ruled-2026-10-27`):** *"OK, let's hide the My Institution and save the code ... Later,
    when the My College or CPL Pathways pages are better settled, we can throw on a link to either on the dash college
-   row."* One shared public dashboard. The view lives in `cpl_funding.js` (`oneCollegeView()`, `VIEW_ITEMS` near line
+   row."* Sam, minutes later: *"Hiding will mean hiding the Step 1 and 2 at the top and any other link to it."* So the switch hides the page's Step 1 and Step 2 at the top as well as the view, and every link that opens it. One shared public dashboard. The view lives in `cpl_funding.js` (`oneCollegeView()`, `VIEW_ITEMS` near line
    14443): take its entry off the menu behind a switch, and land any link that asks for it (CPL Pathways, My College)
    on the main dashboard with that institution's row open. Before Friday, with the review gate (item 5); the
    `funding-model-mycpl` a11y target and its tests follow the switch.
