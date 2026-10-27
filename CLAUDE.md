@@ -751,7 +751,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 133](https://claude.ai/artifact/Vzy2jpwwBJsJoZ2Y3fv199), 2026-10-26, answered; card 1, the film's narration, continues). Answering
+> (latest: [Open Asks Sheet 134](https://claude.ai/artifact/9GPuiZ5F4dvjCrinyJFr5q), 2026-10-27, both answered; none open). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
