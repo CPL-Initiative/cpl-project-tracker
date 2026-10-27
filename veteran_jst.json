@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-26T18:46:06.383767+00:00",
+  "scraped_at": "2026-10-27T12:19:33.074217+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29490,
+    "jst": 29670,
     "star_colleges": 64
   },
   "computed_star_colleges": 64,
@@ -22,7 +22,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 387,
+      "jst": 386,
       "star": true
     },
     "City College of San Francisco": {
@@ -97,7 +97,7 @@
     },
     "Coastline Community College": {
       "vets": 231,
-      "jst": 984,
+      "jst": 1087,
       "star": true
     },
     "Mt. San Antonio College": {
@@ -125,6 +125,11 @@
       "jst": 422,
       "star": true
     },
+    "Barstow Community College": {
+      "vets": 106,
+      "jst": 155,
+      "star": true
+    },
     "Modesto Junior College": {
       "vets": 80,
       "jst": 153,
@@ -138,11 +143,6 @@
     "Cypress College": {
       "vets": 259,
       "jst": 387,
-      "star": true
-    },
-    "Barstow Community College": {
-      "vets": 106,
-      "jst": 139,
       "star": true
     },
     "Los Angeles Valley College": {
@@ -167,7 +167,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 527,
+      "jst": 529,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -192,7 +192,7 @@
     },
     "Antelope Valley College": {
       "vets": 281,
-      "jst": 282,
+      "jst": 283,
       "star": true
     },
     "Shasta College": {
@@ -202,7 +202,7 @@
     },
     "Fullerton College": {
       "vets": 291,
-      "jst": 562,
+      "jst": 563,
       "star": true
     },
     "Mission College": {
@@ -225,14 +225,14 @@
       "jst": 195,
       "star": true
     },
+    "Evergreen Valley College": {
+      "vets": 87,
+      "jst": 140,
+      "star": true
+    },
     "Los Angeles Mission College": {
       "vets": 112,
       "jst": 152,
-      "star": true
-    },
-    "Evergreen Valley College": {
-      "vets": 87,
-      "jst": 138,
       "star": true
     },
     "Solano Community College": {
@@ -410,6 +410,11 @@
       "jst": 50,
       "star": true
     },
+    "Columbia College": {
+      "vets": 33,
+      "jst": 24,
+      "star": false
+    },
     "Las Positas College": {
       "vets": 233,
       "jst": 21,
@@ -435,11 +440,6 @@
       "jst": 183,
       "star": true
     },
-    "Columbia College": {
-      "vets": 33,
-      "jst": 24,
-      "star": false
-    },
     "Santa Monica College": {
       "vets": 676,
       "jst": 4,
@@ -462,7 +462,7 @@
     },
     "Moorpark College": {
       "vets": 179,
-      "jst": 233,
+      "jst": 237,
       "star": true
     },
     "Monterey Peninsula College": {
@@ -480,6 +480,11 @@
       "jst": 193,
       "star": false
     },
+    "Grossmont College": {
+      "vets": 415,
+      "jst": 152,
+      "star": false
+    },
     "Ohlone College": {
       "vets": 49,
       "jst": 132,
@@ -493,11 +498,6 @@
     "Sacramento City College": {
       "vets": 203,
       "jst": 117,
-      "star": false
-    },
-    "Grossmont College": {
-      "vets": 415,
-      "jst": 100,
       "star": false
     },
     "Cuyamaca College": {
