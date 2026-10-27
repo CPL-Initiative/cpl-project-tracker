@@ -31,6 +31,11 @@ create table if not exists public.cpl_funding_college_map (
 alter table public.cpl_funding_college_map enable row level security;
 drop policy if exists cfcm_select on public.cpl_funding_college_map;
 create policy cfcm_select on public.cpl_funding_college_map for select to anon, authenticated using (true);
+-- Grants: read for everyone, as the policy says; RLS has no write policy, and the default
+-- privileges granted anon and authenticated every privilege, so narrow them to select
+-- (applied after v2 as s500_funding_college_map_grants).
+revoke all on public.cpl_funding_college_map from anon, authenticated;
+grant select on public.cpl_funding_college_map to anon, authenticated, service_role;
 truncate public.cpl_funding_college_map;
 insert into public.cpl_funding_college_map (key, map_college, district) values
   ('Alameda', 'College of Alameda', 'Peralta Community College District'),
