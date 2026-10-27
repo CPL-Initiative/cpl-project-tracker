@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-470 document(s).
+471 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 501 | [Session 501 handoff: Delta 22244 passes on a unit_line step (Delta 200 of 203); Sheet 135 still unanswered](../session_501_handoff.md) | 2026-10-27 |
 | 500 | [Session 500 handoff: Delta Cal-GETC 45621 passes on its area minimums (Delta 199 of 203); Sheet 135 still unanswered](../session_500_handoff.md) | 2026-10-27 |
 | 499 | [Session 499 handoff: Delta Caterpillar 44197 passes on a printed repeat total (Delta 198 of 203); Sheet 135 still unanswered](../session_499_handoff.md) | 2026-10-27 |
 | 498 | [Session 498 handoff: Hartnell Music 43887 lands on the repeat step (83 of 94); Sheet 135 still unanswered](../session_498_handoff.md) | 2026-10-27 |

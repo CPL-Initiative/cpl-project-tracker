@@ -1092,9 +1092,18 @@ side session (Scenario 4) ran beside it, one writer per file.
 
 **S444:** Golden West (79) and Imperial Valley (42) loaded; department pages are candidates, a section heading may span two lines (Sierra 35 → 81 found, MiraCosta 29 → 68, its discipline pages still lose siblings); 37 Program Mapper hosts recorded (#2330).
 
-## S500 SkyBlackberry (2026-10-27, the CPL Queue routine): Delta 22244 re-extracted (in progress)
+## S500 SkyBlackberry (2026-10-27, the CPL Queue routine): Delta 22244 passes on a unit_line step (200 of 203)
 
-- Dispatched `step=read force=22244` on `claude/practical-meitner-93xlec` under the $40 go.
+- **A second reading made the same choice.** `force=22244` (run 40517095981, $0.05) left out "Associate Degree Math
+  Requirement: Units 4" again and said so in its notes, as run 39217405432 had: the reader will not record a line with
+  no course as a block. So a re-extract of a misread that the reader's notes already name is wasted; write the step.
+- **unit_line** (a new reconcile kind) adds a printed requirement line with units and no course as a choose_units
+  block of its figure with no courses, only where no block carries the label and the record's sum falls short of its
+  printed total by exactly that figure. Run locally against every filed Delta record with the line injected at 3, 4
+  and 5 units, it fired on 22244 alone; the five other Delta records whose notes name the phrase already pass. That
+  test made a college-wide step safe where S499 feared one. Reconcile 40523400149 changed 22244 alone, 19 to 23
+  against 23.
+- The step changes blocks, so it joins the kinds the carry-basis test sets aside (`program_requirements_college_test`).
 
 ## S499 SkyCloudberry (2026-10-27, the CPL Queue routine): Delta Cal-GETC 45621 passes (199 of 203)
 
