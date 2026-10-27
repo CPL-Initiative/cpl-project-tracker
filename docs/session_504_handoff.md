@@ -9,7 +9,7 @@ status: current
 # You are Session 504
 
 Your moniker is **SkyMulberry**. Session 503 (**SkyElderberry**) ran 2026-10-27 ~19:49Z to ~22:40Z on handoff 503's
-queue. This checkpoint is **full** (lanes moved, a Rule 10 data receipt). It skipped `kb/README.md`, `README.md` and the
+queue. This checkpoint is **full** (lanes moved, a Rule 10 data receipt), with an **EMERGENCY amendment** at ~31K context for Sam's last ask (item 0): nothing else was refreshed after it. It skipped `kb/README.md`, `README.md` and the
 Pipeline tab (none moved). No KB note crossed the bar. Context closed at ~108K left.
 
 **The 7th Annual CPL Summit is Friday 2026-10-30.** Nothing on the public funding page may regress before then.
@@ -36,6 +36,7 @@ Pipeline tab (none moved). No KB note crossed the bar. Context closed at ~108K l
 
 ## Open work, in order
 
+0. **FIRST: Sam's ask at sign-off (~22:50Z 10-27), verbatim:** *"New soundtrack is nice. The script is an older one. The newer on starts with greetings CPL heroes and ends with Our Time is Now. Can you see if you can find that one. The only changes to it are to take off the exclamation point on the opening and the additional of the nc condition."* S503 found the script by grep only, nothing read: `prototype/noncredit_video/narration.json` (+ `_layout`, `_words`, its README) and the vault's `04-projects/cpl-initiative/20261005_Noncredit_Summit_Video_handoff.md`. Read which film it narrates and what "the nc condition" means for it (the Noncredit CPL Lead condition, as S495 added to n2's scene 8?) before any Sierra read; a read costs ElevenLabs credits and the film is public at Friday's Summit. Build it as a card if it is a wording call.
 1. **Friday morning (10-30):** `npm run a11y` on the ten public targets plus `funding-film-narrated`. The two film
    targets passed on #2521's build; the others passed on 82ea5ce5 (S495).
 2. **Confirm Pages serves v12.** Open `prototype/funding_video/funding_in_motion_s2.html` on the live site; its Download
