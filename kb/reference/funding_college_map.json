@@ -1,0 +1,650 @@
+{
+ "_about": "Each CPL funding institution key (cpl_funding_data.js colleges[].college, and the four noncredit-only institutions by short and full name) to its college name(s) in map_college_contacts, with its district. Built by kb/_build_funding_college_map.js; loaded into public.cpl_funding_college_map by kb/migrations/2026-10-27_s500_funding_request_review.sql. Names only, no contact data.",
+ "rows": [
+  {
+   "key": "Alameda",
+   "map_college": "College of Alameda",
+   "district": "Peralta Community College District"
+  },
+  {
+   "key": "Allan Hancock",
+   "map_college": "Allan Hancock College",
+   "district": "Allan Hancock Joint Community College District"
+  },
+  {
+   "key": "American River",
+   "map_college": "American River College",
+   "district": "Los Rios Community College District"
+  },
+  {
+   "key": "Antelope Valley",
+   "map_college": "Antelope Valley College",
+   "district": "Antelope Valley Community College District"
+  },
+  {
+   "key": "Bakersfield",
+   "map_college": "Bakersfield College",
+   "district": "Kern Community College District"
+  },
+  {
+   "key": "Barstow",
+   "map_college": "Barstow Community College",
+   "district": "Barstow Community College District"
+  },
+  {
+   "key": "Berkeley City",
+   "map_college": "Berkeley City College",
+   "district": "Peralta Community College District"
+  },
+  {
+   "key": "Butte",
+   "map_college": "Butte College",
+   "district": "Butte-Glenn Community College District"
+  },
+  {
+   "key": "Cabrillo",
+   "map_college": "Cabrillo College",
+   "district": "Cabrillo Community College District"
+  },
+  {
+   "key": "Calbright College",
+   "map_college": "Calbright College Credit",
+   "district": null
+  },
+  {
+   "key": "Calbright College",
+   "map_college": "Calbright College Non-Credit",
+   "district": null
+  },
+  {
+   "key": "Calbright",
+   "map_college": "Calbright College Credit",
+   "district": null
+  },
+  {
+   "key": "Calbright",
+   "map_college": "Calbright College Non-Credit",
+   "district": null
+  },
+  {
+   "key": "Canada",
+   "map_college": "Cañada College",
+   "district": "San Mateo County Community College District"
+  },
+  {
+   "key": "Canyons",
+   "map_college": "College of the Canyons",
+   "district": "Santa Clarita Community College District"
+  },
+  {
+   "key": "Cerritos",
+   "map_college": "Cerritos College",
+   "district": "Cerritos Community College District"
+  },
+  {
+   "key": "Cerro Coso",
+   "map_college": "Cerro Coso Community College",
+   "district": "Kern Community College District"
+  },
+  {
+   "key": "Chabot",
+   "map_college": "Chabot College",
+   "district": "Chabot-Las Positas Community College District"
+  },
+  {
+   "key": "Chaffey",
+   "map_college": "Chaffey College",
+   "district": "Chaffey Community College District"
+  },
+  {
+   "key": "Citrus",
+   "map_college": "Citrus College",
+   "district": "Citrus Community College District"
+  },
+  {
+   "key": "Clovis",
+   "map_college": "Clovis Community College",
+   "district": "State Center Community College District"
+  },
+  {
+   "key": "Coastline",
+   "map_college": "Coastline Community College",
+   "district": "Coast Community College District"
+  },
+  {
+   "key": "Columbia",
+   "map_college": "Columbia College",
+   "district": "Yosemite Community College District"
+  },
+  {
+   "key": "Compton",
+   "map_college": "Compton College",
+   "district": "Compton Community College District"
+  },
+  {
+   "key": "Contra Costa",
+   "map_college": "Contra Costa College",
+   "district": "Contra Costa Community College District"
+  },
+  {
+   "key": "Copper Mountain",
+   "map_college": "Copper Mountain College",
+   "district": "Copper Mountain Community College District"
+  },
+  {
+   "key": "Cosumnes River",
+   "map_college": "Cosumnes River College",
+   "district": "Los Rios Community College District"
+  },
+  {
+   "key": "Crafton Hills",
+   "map_college": "Crafton Hills College",
+   "district": "San Bernardino Community College District"
+  },
+  {
+   "key": "Cuesta",
+   "map_college": "Cuesta College",
+   "district": "San Luis Obispo County Community College District"
+  },
+  {
+   "key": "Cuyamaca",
+   "map_college": "Cuyamaca College",
+   "district": "Grossmont-Cuyamaca Community College District"
+  },
+  {
+   "key": "Cypress",
+   "map_college": "Cypress College",
+   "district": "North Orange County Community College District"
+  },
+  {
+   "key": "De Anza",
+   "map_college": "De Anza College",
+   "district": "Foothill-De Anza Community College District"
+  },
+  {
+   "key": "Desert",
+   "map_college": "College of the Desert",
+   "district": "Desert Community College District"
+  },
+  {
+   "key": "Diablo Valley",
+   "map_college": "Diablo Valley College",
+   "district": "Contra Costa Community College District"
+  },
+  {
+   "key": "East LA",
+   "map_college": "East Los Angeles College",
+   "district": "Los Angeles Community College District"
+  },
+  {
+   "key": "El Camino",
+   "map_college": "El Camino College",
+   "district": "El Camino Community College District"
+  },
+  {
+   "key": "Evergreen Valley",
+   "map_college": "Evergreen Valley College",
+   "district": "San Jose-Evergreen Community College District"
+  },
+  {
+   "key": "Feather River",
+   "map_college": "Feather River College",
+   "district": "Feather River Community College District"
+  },
+  {
+   "key": "Folsom Lake",
+   "map_college": "Folsom Lake College",
+   "district": "Los Rios Community College District"
+  },
+  {
+   "key": "Foothill",
+   "map_college": "Foothill College",
+   "district": "Foothill-De Anza Community College District"
+  },
+  {
+   "key": "Fresno City",
+   "map_college": "Fresno City College",
+   "district": "State Center Community College District"
+  },
+  {
+   "key": "Fullerton",
+   "map_college": "Fullerton College",
+   "district": "North Orange County Community College District"
+  },
+  {
+   "key": "Gavilan",
+   "map_college": "Gavilan College",
+   "district": "Gavilan Joint Community College District"
+  },
+  {
+   "key": "Glendale",
+   "map_college": "Glendale Community College",
+   "district": "Glendale Community College District"
+  },
+  {
+   "key": "Golden West",
+   "map_college": "Golden West College",
+   "district": "Coast Community College District"
+  },
+  {
+   "key": "Grossmont",
+   "map_college": "Grossmont College",
+   "district": "Grossmont-Cuyamaca Community College District"
+  },
+  {
+   "key": "Hartnell",
+   "map_college": "Hartnell College",
+   "district": "Hartnell Community College District"
+  },
+  {
+   "key": "Imperial",
+   "map_college": "Imperial Valley College",
+   "district": "Imperial Community College District"
+  },
+  {
+   "key": "Irvine",
+   "map_college": "Irvine Valley College",
+   "district": "South Orange County Community College District"
+  },
+  {
+   "key": "LA City",
+   "map_college": "Los Angeles City College",
+   "district": "Los Angeles Community College District"
+  },
+  {
+   "key": "LA Harbor",
+   "map_college": "Los Angeles Harbor College",
+   "district": "Los Angeles Community College District"
+  },
+  {
+   "key": "LA Mission",
+   "map_college": "Los Angeles Mission College",
+   "district": "Los Angeles Community College District"
+  },
+  {
+   "key": "LA Pierce",
+   "map_college": "Los Angeles Pierce College",
+   "district": "Los Angeles Community College District"
+  },
+  {
+   "key": "LA Swest",
+   "map_college": "Los Angeles Southwest College",
+   "district": "Los Angeles Community College District"
+  },
+  {
+   "key": "LA Trade",
+   "map_college": "Los Angeles Trade Technical College",
+   "district": "Los Angeles Community College District"
+  },
+  {
+   "key": "LA Valley",
+   "map_college": "Los Angeles Valley College",
+   "district": "Los Angeles Community College District"
+  },
+  {
+   "key": "Lake Tahoe",
+   "map_college": "Lake Tahoe Community College",
+   "district": "Lake Tahoe Community College District"
+  },
+  {
+   "key": "Laney",
+   "map_college": "Laney College",
+   "district": "Peralta Community College District"
+  },
+  {
+   "key": "Las Positas",
+   "map_college": "Las Positas College",
+   "district": "Chabot-Las Positas Community College District"
+  },
+  {
+   "key": "Lassen",
+   "map_college": "Lassen College",
+   "district": "Lassen Community College District"
+  },
+  {
+   "key": "Long Beach",
+   "map_college": "Long Beach City College",
+   "district": "Long Beach Community College District"
+  },
+  {
+   "key": "Los Medanos",
+   "map_college": "Los Medanos College",
+   "district": "Contra Costa Community College District"
+  },
+  {
+   "key": "Madera",
+   "map_college": "Madera College",
+   "district": "State Center Community College District"
+  },
+  {
+   "key": "Marin",
+   "map_college": "College of Marin",
+   "district": "Marin Community College District"
+  },
+  {
+   "key": "Mendocino",
+   "map_college": "Mendocino College",
+   "district": "Mendocino-Lake Community College District"
+  },
+  {
+   "key": "Merced",
+   "map_college": "Merced College",
+   "district": "Merced Community College District"
+  },
+  {
+   "key": "Merritt",
+   "map_college": "Merritt College",
+   "district": "Peralta Community College District"
+  },
+  {
+   "key": "MiraCosta",
+   "map_college": "MiraCosta College",
+   "district": "MiraCosta Community College District"
+  },
+  {
+   "key": "Mission",
+   "map_college": "Mission College",
+   "district": "West Valley-Mission Community College District"
+  },
+  {
+   "key": "Modesto",
+   "map_college": "Modesto Junior College",
+   "district": "Yosemite Community College District"
+  },
+  {
+   "key": "Monterey",
+   "map_college": "Monterey Peninsula College",
+   "district": "Monterey Peninsula Community College District"
+  },
+  {
+   "key": "Moorpark",
+   "map_college": "Moorpark College",
+   "district": "Ventura County Community College District"
+  },
+  {
+   "key": "Moreno Valley",
+   "map_college": "Moreno Valley College",
+   "district": "Riverside Community College District"
+  },
+  {
+   "key": "Mt San Antonio",
+   "map_college": "Mt. San Antonio College",
+   "district": "Mt. San Antonio Community College District"
+  },
+  {
+   "key": "Mt. SAC NC",
+   "map_college": "Mt. San Antonio College",
+   "district": "Mt. San Antonio Community College District"
+  },
+  {
+   "key": "Mt. San Antonio College — Noncredit",
+   "map_college": "Mt. San Antonio College",
+   "district": "Mt. San Antonio Community College District"
+  },
+  {
+   "key": "Mt. San Jacinto",
+   "map_college": "Mt. San Jacinto College",
+   "district": "Mt. San Jacinto Community College District"
+  },
+  {
+   "key": "Napa",
+   "map_college": "Napa Valley College",
+   "district": "Napa Valley Community College District"
+  },
+  {
+   "key": "NOCE",
+   "map_college": "North Orange Continuing Education",
+   "district": "North Orange County Community College District"
+  },
+  {
+   "key": "NOCE",
+   "map_college": "North Orange Continuing Education Credit",
+   "district": "North Orange County Community College District"
+  },
+  {
+   "key": "Norco College",
+   "map_college": "Norco College",
+   "district": "Riverside Community College District"
+  },
+  {
+   "key": "North Orange Continuing Education",
+   "map_college": "North Orange Continuing Education",
+   "district": "North Orange County Community College District"
+  },
+  {
+   "key": "North Orange Continuing Education",
+   "map_college": "North Orange Continuing Education Credit",
+   "district": "North Orange County Community College District"
+  },
+  {
+   "key": "Ohlone",
+   "map_college": "Ohlone College",
+   "district": "Ohlone Community College District"
+  },
+  {
+   "key": "Orange Coast",
+   "map_college": "Orange Coast College",
+   "district": "Coast Community College District"
+  },
+  {
+   "key": "Oxnard",
+   "map_college": "Oxnard College",
+   "district": "Ventura County Community College District"
+  },
+  {
+   "key": "Palo Verde",
+   "map_college": "Palo Verde College",
+   "district": "Palo Verde Community College District"
+  },
+  {
+   "key": "Palomar",
+   "map_college": "Palomar College",
+   "district": "Palomar Community College District"
+  },
+  {
+   "key": "Pasadena",
+   "map_college": "Pasadena City College",
+   "district": "Pasadena Area Community College District"
+  },
+  {
+   "key": "Porterville",
+   "map_college": "Porterville College",
+   "district": "Kern Community College District"
+  },
+  {
+   "key": "Redwoods",
+   "map_college": "College of the Redwoods",
+   "district": "Redwoods Community College District"
+  },
+  {
+   "key": "Reedley College",
+   "map_college": "Reedley College",
+   "district": "State Center Community College District"
+  },
+  {
+   "key": "Rio Hondo",
+   "map_college": "Rio Hondo College",
+   "district": "Rio Hondo Community College District"
+  },
+  {
+   "key": "Riverside",
+   "map_college": "Riverside City College",
+   "district": "Riverside Community College District"
+  },
+  {
+   "key": "Sacramento City",
+   "map_college": "Sacramento City College",
+   "district": "Los Rios Community College District"
+  },
+  {
+   "key": "Saddleback",
+   "map_college": "Saddleback College",
+   "district": "South Orange County Community College District"
+  },
+  {
+   "key": "San Bernardino",
+   "map_college": "San Bernardino Valley College",
+   "district": "San Bernardino Community College District"
+  },
+  {
+   "key": "San Diego City",
+   "map_college": "San Diego City College",
+   "district": "San Diego Community College District"
+  },
+  {
+   "key": "San Diego College of Continuing Education",
+   "map_college": "San Diego College of Continuing Education",
+   "district": "San Diego Community College District"
+  },
+  {
+   "key": "San Diego College of Continuing Education",
+   "map_college": "San Diego College of Continuing Education Credit",
+   "district": "San Diego Community College District"
+  },
+  {
+   "key": "San Diego Mesa",
+   "map_college": "San Diego Mesa College",
+   "district": "San Diego Community College District"
+  },
+  {
+   "key": "San Diego Miramar",
+   "map_college": "San Diego Miramar College",
+   "district": "San Diego Community College District"
+  },
+  {
+   "key": "San Francisco",
+   "map_college": "City College of San Francisco",
+   "district": "San Francisco Community College District"
+  },
+  {
+   "key": "San Joaquin Delta",
+   "map_college": "San Joaquin Delta College",
+   "district": "San Joaquin Delta Community College District"
+  },
+  {
+   "key": "San Jose City",
+   "map_college": "San Jose City College",
+   "district": "San Jose-Evergreen Community College District"
+  },
+  {
+   "key": "San Mateo",
+   "map_college": "College of San Mateo",
+   "district": "San Mateo County Community College District"
+  },
+  {
+   "key": "Santa Ana",
+   "map_college": "Santa Ana College",
+   "district": "Rancho Santiago Community College District"
+  },
+  {
+   "key": "Santa Barbara",
+   "map_college": "Santa Barbara City College",
+   "district": "Santa Barbara Community College District"
+  },
+  {
+   "key": "Santa Monica",
+   "map_college": "Santa Monica College",
+   "district": "Santa Monica Community College District"
+  },
+  {
+   "key": "Santa Rosa",
+   "map_college": "Santa Rosa Junior College",
+   "district": "Sonoma County Junior College District"
+  },
+  {
+   "key": "Santiago Canyon",
+   "map_college": "Santiago Canyon College",
+   "district": "Rancho Santiago Community College District"
+  },
+  {
+   "key": "SD Cont. Ed",
+   "map_college": "San Diego College of Continuing Education",
+   "district": "San Diego Community College District"
+  },
+  {
+   "key": "SD Cont. Ed",
+   "map_college": "San Diego College of Continuing Education Credit",
+   "district": "San Diego Community College District"
+  },
+  {
+   "key": "Sequoias",
+   "map_college": "College of the Sequoias",
+   "district": "Sequoias Community College District"
+  },
+  {
+   "key": "Shasta",
+   "map_college": "Shasta College",
+   "district": "Shasta-Tehama-Trinity Joint Community College District"
+  },
+  {
+   "key": "Sierra",
+   "map_college": "Sierra College",
+   "district": "Sierra Joint Community College District"
+  },
+  {
+   "key": "Siskiyous",
+   "map_college": "College of the Siskiyous",
+   "district": "Siskiyou Joint Community College District"
+  },
+  {
+   "key": "Skyline",
+   "map_college": "Skyline College",
+   "district": "San Mateo County Community College District"
+  },
+  {
+   "key": "Solano",
+   "map_college": "Solano Community College",
+   "district": "Solano County Community College District"
+  },
+  {
+   "key": "Southwestern",
+   "map_college": "Southwestern College",
+   "district": "Southwestern Community College District"
+  },
+  {
+   "key": "Taft",
+   "map_college": "Taft College",
+   "district": "West Kern Community College District"
+  },
+  {
+   "key": "Ventura",
+   "map_college": "Ventura College",
+   "district": "Ventura County Community College District"
+  },
+  {
+   "key": "Victor Valley",
+   "map_college": "Victor Valley College",
+   "district": "Victor Valley Community College District"
+  },
+  {
+   "key": "West Hills Coalinga",
+   "map_college": "Coalinga College",
+   "district": "West Hills Community College District"
+  },
+  {
+   "key": "West Hills Lemoore",
+   "map_college": "Lemoore College",
+   "district": "West Hills Community College District"
+  },
+  {
+   "key": "West LA",
+   "map_college": "West Los Angeles College",
+   "district": "Los Angeles Community College District"
+  },
+  {
+   "key": "West Valley",
+   "map_college": "West Valley College",
+   "district": "West Valley-Mission Community College District"
+  },
+  {
+   "key": "Woodland",
+   "map_college": "Woodland Community College",
+   "district": "Yuba Community College District"
+  },
+  {
+   "key": "Yuba",
+   "map_college": "Yuba College",
+   "district": "Yuba Community College District"
+  }
+ ]
+}
