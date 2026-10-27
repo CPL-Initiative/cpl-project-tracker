@@ -9,8 +9,9 @@
                 words and a few starter questions, on a white page.
      asking   — the greeting folds away; the conversation takes a centered column
                 and the question box docks beneath it.
-   In the Ask Sierra side bar (<html data-panel>, from sidebar.js's ?panel=1) the
-   header row keeps About Sierra alone and the footer is plain text.
+   No header row (Sam, 2026-10-27): the logo, About Sierra, Light and Dark sit in
+   the footer. In the Ask Sierra side bar (<html data-panel>, from sidebar.js's
+   ?panel=1) the footer is plain text: the mark and the beta note.
 
    Self-contained: the page loads no COBI file and no web font. Its tokens carry
    the library's values (library/index.html) under Sierra's own names, and every
@@ -110,51 +111,6 @@ button { font: inherit; color: inherit; }
   transition: top .12s ease-in;
 }
 .s-skip:focus { top: 8px; }
-
-/* ── Header: the logo (the link to MAP), Sierra's name while reading, About, Light and Dark ── */
-.s-head {
-  display: flex; flex-wrap: nowrap; align-items: center; gap: 12px;
-  width: 100%; padding-block: 10px; padding-inline: max(16px, calc((100% - 1180px) / 2));
-  border-bottom: 1px solid var(--sierra-border);
-}
-.s-home { display: inline-flex; align-items: center; min-height: 44px; border-radius: 6px; flex: 0 0 auto; }
-.s-home:hover { opacity: .85; }
-.s-logo { height: 40px; width: auto; display: block; }
-.s-logo-dark { display: none; }
-:root[data-theme="dark"] .s-logo-light { display: none; }
-:root[data-theme="dark"] .s-logo-dark { display: block; }
-.s-who-head {
-  display: none; font-family: var(--sierra-display); font-size: 1.15rem; font-weight: 700;
-  color: var(--sierra-ghost); padding-left: 12px; border-left: 1px solid var(--sierra-border-strong);
-  white-space: nowrap;
-}
-/* The About control and the theme words are words, like every control on the
-   page. A <button> inherits neither font nor color, so both are spelled out. */
-.s-about {
-  margin-left: auto; background: none; border: 0; padding: 8px 4px; min-height: 44px;
-  cursor: pointer; white-space: nowrap;
-  font: 400 1rem var(--sierra-font); color: var(--sierra-cobalt);
-  text-decoration: underline; text-underline-offset: 3px;
-}
-.s-about:hover, .s-about[aria-expanded="true"] { text-decoration-thickness: 2px; }
-.s-theme { display: flex; gap: 12px; flex: 0 0 auto; }
-.s-theme-btn {
-  background: none; border: 0; padding: 8px 2px; min-height: 44px; min-width: 24px; cursor: pointer; white-space: nowrap;
-  font: 400 1rem var(--sierra-font); color: var(--sierra-cobalt);
-  text-decoration: underline; text-underline-offset: 3px;
-}
-.s-theme-btn[aria-pressed="true"] { color: var(--sierra-heading); font-weight: 700; text-decoration-thickness: 2px; }
-/* The [hidden] companion is deliberate: an author `display` would otherwise
-   beat the UA's [hidden] (the 2026-08-14 lesson on .s-fb-note). */
-.s-about-panel { padding: 12px 16px 0; }
-.s-about-panel[hidden] { display: none; }
-.s-about-inner {
-  max-width: 46rem; margin: 0 auto; display: grid; gap: 8px;
-  background: var(--sierra-subtle); border: 1px solid var(--sierra-border); border-radius: 11px;
-  padding: 14px 18px; font-size: .9375rem; color: var(--sierra-body);
-}
-.s-about-inner p { margin: 0; }
-.s-beta { color: var(--sierra-faint); }
 
 /* ── The page ── */
 .s-main {
@@ -266,11 +222,6 @@ body[data-view="asking"] .s-hello {
   overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
 }
 body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display: none; }
-/* Her name in the header while reading, where the header has room for it. */
-@media (min-width: 561px) {
-  body[data-view="asking"] .s-who-head { display: block; }
-}
-
 /* ── Asking: the conversation, a centered column ── */
 .s-log {
   width: 100%; max-width: 46rem; margin: 0 auto; padding-top: 4px;
@@ -376,16 +327,44 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
 .s-dock .s-form { background: var(--sierra-paper); }
 .s-dock-row { display: flex; justify-content: flex-end; padding: 2px 4px 0; background: var(--sierra-paper); }
 
-/* ── Footer: the beta note and the links out. On her own page, the library's
-   navy band; in the side bar, plain text, the links left to the page beside her. */
+/* ── Footer: the mark (the link to MAP), the beta note, the links out, About
+   Sierra, Light and Dark. On her own page, the library's navy band; in the side
+   bar, plain text, the links and controls left to the page beside her. */
 .s-foot { margin-top: 18px; font-size: .875rem; color: var(--sierra-faint); }
 .s-foot-in { max-width: 1180px; margin: 0 auto; padding: 18px 16px 22px; display: grid; gap: 10px; }
 .s-foot p { margin: 0; }
 .s-foot a { color: var(--sierra-cobalt); }
+.s-home { justify-self: start; display: inline-flex; align-items: center; min-height: 24px; border-radius: 4px; }
+.s-home:hover { opacity: .85; }
+.s-foot-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; }
 .s-links ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 4px 18px; }
 .s-links a { display: inline-flex; align-items: center; min-height: 24px; font-weight: 400; text-underline-offset: 3px; }
+/* About Sierra, Light and Dark: words like every control on the page, at the
+   links' size and on their row, set to its right where the row has room. A
+   <button> inherits neither font nor color, so both are spelled out. */
+.s-foot-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; margin-left: auto; }
+.s-about {
+  background: none; border: 0; padding: 0; min-height: 24px; cursor: pointer; white-space: nowrap;
+  font: 400 .875rem var(--sierra-font); color: var(--sierra-foot-fg);
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.s-about:hover, .s-about[aria-expanded="true"] { text-decoration-thickness: 2px; }
+.s-theme { display: flex; gap: 12px; }
+.s-theme-btn {
+  background: none; border: 0; padding: 0 2px; min-height: 24px; min-width: 24px; cursor: pointer; white-space: nowrap;
+  font: 400 .875rem var(--sierra-font); color: var(--sierra-foot-fg);
+  text-decoration: underline; text-underline-offset: 3px;
+}
+/* The pick is bold with a heavier rule, so color is never the only signal. */
+.s-theme-btn[aria-pressed="true"] { font-weight: 700; text-decoration-thickness: 2px; }
+/* Her introduction opens under the row as footer text. The [hidden] companion is
+   deliberate: an author `display` would otherwise beat the UA's [hidden] (the
+   2026-08-14 lesson on .s-fb-note). */
+.s-about-panel { display: block; max-width: 46rem; }
+.s-about-panel[hidden] { display: none; }
 :root:not([data-panel]) .s-foot { background: var(--sierra-foot-bg); color: var(--sierra-foot-fg); }
 :root:not([data-panel]) .s-foot a { color: var(--sierra-foot-fg); }
+:root:not([data-panel]) .s-foot :focus-visible { outline-color: var(--sierra-foot-fg); }
 /* The CPL Initiative mark: white on the band in both themes; in the side bar,
    navy on paper, white on the dark paper. */
 .s-foot-logo { height: 30px; width: auto; display: none; }
@@ -394,10 +373,11 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
 :root[data-panel][data-theme="dark"] .s-foot-logo-white { display: block; }
 
 /* ── In the side bar ── */
-/* The bar names her and the page beside it carries the logo; her footer says
+/* The bar names her and the page beside it carries the links; her footer says
    what About Sierra said (Sam, 2026-10-25: "No need for the About Sierra button
-   since you include it in the footer"). So her header row stands down whole. */
-:root[data-panel] .s-head, :root[data-panel] .s-about-panel, :root[data-panel] .s-links { display: none; }
+   since you include it in the footer"), and the host sets her theme. So the
+   footer's row of links and controls stands down whole, the introduction with it. */
+:root[data-panel] .s-foot-row, :root[data-panel] .s-about-panel { display: none; }
 :root[data-panel] .s-main { padding-top: 4px; }
 :root[data-panel] .s-hello h1 { font-size: 1.95rem; }
 :root[data-panel] .s-try-list li:nth-child(n+3) { display: none; }
@@ -406,21 +386,10 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
 
 /* ── Phone ── */
 @media (max-width: 560px) {
-  .s-head { flex-wrap: nowrap; gap: 10px; }
-  .s-logo { height: 28px; }
-  .s-who-head { font-size: 1.05rem; padding-left: 10px; }
   .s-main { gap: 16px; }
   .s-send { padding: 0 18px; }
   .s-user .s-bubble { max-width: 92%; }
 }
-/* Narrower still: the header holds one row by shrinking, and nothing yields. */
-@media (max-width: 400px) {
-  .s-head { gap: 8px; }
-  .s-logo { height: 18px; }
-  .s-theme { gap: 8px; }
-  .s-about, .s-theme-btn { font-size: .875rem; }
-}
-
 /* Sierra animates one thing: the typing indicator, infinite while an answer
    streams. Under reduced motion it stands down and the cue is not lost: the
    dots still say "thinking" by being there. (The audience row's flash went with

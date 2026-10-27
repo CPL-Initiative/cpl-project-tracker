@@ -39,8 +39,9 @@
 //       written twice with the same values; the page loads no web font and no
 //       file from a third party; every link off the site says it opens a new tab.
 //   (8) THE SIDE BAR. ?panel=1 marks the page before the stylesheet paints, and
-//       the header row keeps About Sierra alone; the footer carries the CPL
-//       Initiative mark, so she keeps it in the bar.
+//       the footer's row of links and controls stands down; the footer carries
+//       the CPL Initiative mark (the link to MAP since the header row went,
+//       2026-10-27), so she keeps it in the bar.
 //
 // Run from repo root: `npm test` (or `node tests/sierra_redesign.test.js`).
 const fs = require("fs");
@@ -255,8 +256,9 @@ function ask(w, text) {
   await block("(2b) the mountain line is kept", async () => {
     const peak = /<span class="s-peak">Sierra<svg class="s-ridge"[^>]*aria-hidden="true"[\s\S]*?<\/svg><\/span>/g;
     const ridges = HTML.match(peak) || [];
-    check("(2b) ⭐ the logo stands over her name in the greeting and in the reading header",
-      ridges.length === 2 && /<h1>Hello, I'm <span class="s-peak">Sierra<svg class="s-ridge"/.test(HTML),
+    // The reading header's copy went with the header row (Sam, 2026-10-27).
+    check("(2b) ⭐ the logo stands over her name in the greeting",
+      ridges.length === 1 && /<h1>Hello, I'm <span class="s-peak">Sierra<svg class="s-ridge"/.test(HTML),
       "Sam, 2026-10-08: \"I like the mountain line\"");
     check("(2b) ⭐ the name and its line share one navy, by token in light and dark",
       /class="s-ridge"[\s\S]*?stroke="currentColor"/.test(HTML) &&
@@ -340,9 +342,10 @@ function ask(w, text) {
       panelScript.length > 0 && head.indexOf(panelScript) < head.indexOf('href="./sierra.css"') &&
       marks("?panel=1") && marks("?theme=dark&panel=1") && !marks("") && !marks("?panel=10"));
     // Since 2026-10-25 About Sierra goes too (Sam: "No need for the About Sierra
-    // button since you include it in the footer"), so the whole header row stands down.
-    check("(8) ⭐ in the bar the header row stands down whole, About Sierra and its panel with it",
-      /:root\[data-panel\] \.s-head, :root\[data-panel\] \.s-about-panel, :root\[data-panel\] \.s-links \{ display: none; \}/.test(CSS));
+    // button since you include it in the footer"), and since 2026-10-27 the page has
+    // no header row, so in the bar the footer's row of links and controls stands down.
+    check("(8) ⭐ in the bar the footer's row stands down whole, About Sierra and its panel with it",
+      /:root\[data-panel\] \.s-foot-row, :root\[data-panel\] \.s-about-panel \{ display: none; \}/.test(CSS));
     check("(8) ⭐ the starters and the link words read in regular weight; a pick keeps its bold (Sam, 2026-10-25)",
       [".s-try-q", ".s-aud-toggle", ".s-aud-chip", ".s-word", ".s-about"].every(function (sel) {
         const m = new RegExp("\\" + sel + " \\{[^}]*font: (\\d+) ").exec(CSS);
@@ -351,10 +354,11 @@ function ask(w, text) {
     check("(8) the side bar asks for the panel, with the host's theme", /'\?panel=1&theme='/.test(fs.readFileSync("sierra/sidebar.js", "utf8")));
     // The CPL Initiative mark in her footer (Sam, 2026-10-24: "Maybe put the CPL Initiative logo in her footer").
     const foot = (HTML.match(/<footer class="s-foot">[\s\S]*?<\/footer>/) || [""])[0];
-    check("(8) ⭐ her footer carries the CPL Initiative mark, white and navy, each named, neither a link",
+    check("(8) ⭐ her footer carries the CPL Initiative mark, white and navy, each named, in the one link to MAP",
       /<img class="s-foot-logo s-foot-logo-white" src="\.\/cpl-initiative-logo\.png" alt="CPL Initiative"/.test(foot) &&
       /<img class="s-foot-logo s-foot-logo-navy" src="\.\/cpl-initiative-logo-navy\.png" alt="CPL Initiative"/.test(foot) &&
-      !/<a[^>]*>\s*<img class="s-foot-logo/.test(foot));
+      /<a class="s-home" href="https:\/\/map\.rccd\.edu"[^>]*>\s*<img class="s-foot-logo s-foot-logo-white"[^>]*>\s*<img class="s-foot-logo s-foot-logo-navy"/.test(foot) &&
+      (HTML.match(/class="s-foot-logo /g) || []).length === 2);
     check("(8) white on her page's navy band; navy on the bar's paper, white on the dark paper",
       /\.s-foot-logo \{[^}]*display: none; \}/.test(CSS) &&
       /:root:not\(\[data-panel\]\) \.s-foot-logo-white, :root\[data-panel\] \.s-foot-logo-navy \{ display: block; \}/.test(CSS) &&

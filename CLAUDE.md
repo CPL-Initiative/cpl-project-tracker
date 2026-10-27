@@ -751,7 +751,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 135](https://claude.ai/artifact/PS3D3v2RTC8kb65mRWV5PD), 2026-10-27, one card open: the narrated cut's scenes 5 to 7). Answering
+> (latest: [Open Asks Sheet 136](https://claude.ai/artifact/JLNSJm65Z9s3SMmbJxE3Cm), 2026-10-27, three cards open: the narrated cut's scenes 5 to 7, Sierra's audience picker, her Ask button). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

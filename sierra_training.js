@@ -1896,11 +1896,15 @@
     "5. Leave out a sentence another switched-on instruction already says, and name that instruction in changes.",
     "6. Plain words, active voice, American spelling. The program is the CPL Initiative; the platform is the MAP platform.",
     "7. Fix spelling, quotation marks and unfinished sentences.",
+    // Sam, 2026-10-27: "maybe the suggest revision procedure should always add the full url to any
+    // suggested revisions." Sierra repeats an instruction's words, so a bare domain reached her
+    // answer as text a reader could not click.
+    "8. Write every website as a markdown link with its full address, [creditforbeingyou.org](https://creditforbeingyou.org), and every email as [MAP@rccd.edu](mailto:MAP@rccd.edu), including inside a quotation Sierra is to repeat.",
   ];
   function suggestEnvelope(text, room) {
     var max = Math.min(GUIDANCE_RULE_MAX, room > 0 ? room : GUIDANCE_RULE_MAX);
     return SUGGEST_RULES.join("\n")
-      + "\n8. At most " + max + " characters."
+      + "\n9. At most " + max + " characters."
       + "\nIf the instruction needs no change, return it unchanged with an empty changes list."
       + '\nReturn one JSON object and nothing else: {"suggested": "<the instruction reworded>", '
       + '"changes": ["<one plain sentence per change: what changed and why>"], '

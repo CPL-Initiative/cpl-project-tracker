@@ -181,19 +181,22 @@
     if (audToggle) audToggle.textContent = 'Answering for: ' + audienceLabel();
     paintAudLine();
   }
-  // ── About Sierra (the header panel) ──
-  // The introduction and the beta note lived above the conversation and took
-  // most of a phone's first screen (Sam, 2026-09-11). They sit behind a header
-  // control now. Hover-only content fails WCAG 1.4.13 and every touch and
-  // keyboard user, so hover is a convenience on pointer devices and never the
-  // only way in: click or Enter toggles, Escape closes and returns focus, a
-  // click outside closes. The panel stays open until dismissed (1.4.13:
-  // dismissible, hoverable, persistent).
+  // ── About Sierra (the footer panel) ──
+  // The introduction lived above the conversation and took most of a phone's
+  // first screen (Sam, 2026-09-11); it sat behind a header control, and since the
+  // header row went (Sam, 2026-10-27) the control is a word in the footer and the
+  // text opens under its row. Click or Enter toggles, Escape closes and returns
+  // focus, a click outside closes; it stays open until dismissed (WCAG 1.4.13).
+  // No hover opening: at the foot of the page, text that appears under the
+  // pointer moves the row it sits on.
   var aboutBtn, aboutPanel;
   function setAbout(open) {
     if (!aboutBtn || !aboutPanel) return;
     aboutBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
     aboutPanel.hidden = !open;
+    if (open && typeof aboutPanel.scrollIntoView === 'function') {
+      try { aboutPanel.scrollIntoView({ block: 'nearest' }); } catch (e) { /* best effort */ }
+    }
   }
   function wireAbout() {
     aboutBtn = document.getElementById('s-about-btn');
@@ -202,9 +205,6 @@
     aboutBtn.addEventListener('click', function () {
       setAbout(aboutBtn.getAttribute('aria-expanded') !== 'true');
     });
-    var hoverable = false;
-    try { hoverable = !!(window.matchMedia && window.matchMedia('(hover: hover)').matches); } catch (e) { /* no matchMedia → click only */ }
-    if (hoverable) aboutBtn.addEventListener('mouseenter', function () { setAbout(true); });
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape' || aboutPanel.hidden) return;
       setAbout(false);
@@ -490,15 +490,33 @@
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
   }
+  // Links (Sam, 2026-10-27: "I want links embedded for all references in
+  // sierra"). She wrote creditforbeingyou.org bare, quoting his instruction, and
+  // only an https address became a link. Now a markdown link may be http(s) or
+  // mailto, and a bare https address, a bare email and a bare domain on a known
+  // ending (creditforbeingyou.org, map.rccd.edu/...) become links too. A trailing
+  // period stays text. The bare pass skips the anchors already made, so a link
+  // never nests in another.
+  var LINK_ATTRS = ' target="_blank" rel="noopener noreferrer"';
+  var BARE_LINK = /(^|[\s(>])(?:(https?:\/\/[^\s<)]*[^\s<).,;:!?])|([A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,})|((?:[A-Za-z0-9-]+\.)+(?:org|edu|gov|com|net|us|io)(?![A-Za-z0-9-])(?:\/(?:[^\s<)]*[^\s<).,;:!?])?)?))/g;
+  function linkBare(s) {
+    return s.split(/(<a [^>]*>[\s\S]*?<\/a>)/).map(function (part, i) {
+      if (i % 2) return part;
+      return part.replace(BARE_LINK, function (m, pre, url, mail, host) {
+        if (url) return pre + '<a href="' + url + '"' + LINK_ATTRS + '>' + url + '</a>';
+        if (mail) return pre + '<a href="mailto:' + mail + '">' + mail + '</a>';
+        return pre + '<a href="https://' + host + '"' + LINK_ATTRS + '>' + host + '</a>';
+      });
+    }).join('');
+  }
   function inlineMd(s) {
-    return s
+    return linkBare(s
       .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
       .replace(/(^|[^*])\*([^*\s][^*]*)\*(?!\*)/g, '$1<em>$2</em>')
       .replace(/`([^`]+)`/g, '<code>$1</code>')
-      .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
-        '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-      .replace(/(^|[\s(])((https?:\/\/)[^\s)]+)(?=[\s).,;!?]|$)/g,
-        '$1<a href="$2" target="_blank" rel="noopener noreferrer">$2</a>');
+      .replace(/\[([^\]]+)\]\(((?:https?:\/\/|mailto:)[^\s)]+)\)/g, function (m, text, href) {
+        return '<a href="' + href + '"' + (/^mailto:/.test(href) ? '' : LINK_ATTRS) + '>' + text + '</a>';
+      }));
   }
   var MD_TABLE_SEP = /^\s*\|?\s*:?-{2,}[-\s:|]*$/;   // | --- | :--- | …
   function mdCells(row) {

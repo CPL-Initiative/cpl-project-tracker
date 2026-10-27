@@ -195,7 +195,7 @@ block("replacement words", function () {
   check("the Fact Sheet: its own word still says Ask Sierra; the funding page leaves her to the chip (Sam, 2026-10-26)",
     /<button[^>]*data-sierra-open[^>]*>Ask Sierra<\/button>/.test(fs.readFileSync("fact-sheet/index.html", "utf8")) &&
     !/data-sierra-open/.test(fs.readFileSync("funding-model/index.html", "utf8")));
-  check("standalone page: Beta notice kept its text", /class="s-beta">Beta —/.test(PAGE_HTML));
+  check("standalone page: the footer keeps the beta notice", /<footer class="s-foot">[\s\S]*?Sierra is in beta/.test(PAGE_HTML));
 });
 
 // ── 4. The ↗ became a cue, not nothing ────────────────────────────────────────

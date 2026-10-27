@@ -80,9 +80,8 @@ const sd = new JSDOM(S_HTML).window.document;
 val("sierra: --sierra-faint is no longer the sub-AA #8394a3",
   () => !/--sierra-faint:\s*#8394a3/i.test(S_CSS));
 val("sierra: --sierra-faint is defined", () => /--sierra-faint:\s*#[0-9a-f]{6}/i.test(S_CSS));
-val("sierra: the beta disclaimer and footer still use a token, not a raw hex",
-  () => /\.s-beta\s*\{[^}]*color:\s*var\(--sierra-faint\)/.test(S_CSS) &&
-        /\.s-foot\s*\{[^}]*color:\s*var\(--sierra-faint\)/.test(S_CSS));
+val("sierra: the footer, which carries the beta disclaimer, still uses a token, not a raw hex",
+  () => /\.s-foot\s*\{[^}]*color:\s*var\(--sierra-faint\)/.test(S_CSS));
 
 // (b) reduced motion
 val("sierra: honours prefers-reduced-motion",
