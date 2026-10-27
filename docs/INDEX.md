@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 94 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 62 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 467 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1283** | |
+| Session handoffs | 468 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1284** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-27 (S497 SkyCrowberry): Hartnell Music 43887 passes on the new `repeat` reconcile step, 83 of 94 (#2506, reread 40469123943, display build 8f8a282ca526); handoff 498.
 - 2026-10-27 (S496 SkyLingonberry): Hartnell CalGETC 45096 passes, 82 of 94 (#2504, reread 40460714483, display build 588cfa081bee); the Funding film's UI pass, clean; handoff 497.
 - 2026-10-27 (S495 SkySalmonberry): Sierra's scene 8 re-read and the narrated cut on the v11 picture (#2499, held for Open Asks Sheet 135); axe on the internal tabs worked (#2498, #2500, #2501); lanes under budget (#2502); Hartnell's Cal-GETC area step on its branch; handoff 496.
 - 2026-10-27 (S493 SkyThimbleberry): the MAP link with each exhibit's builder on the CPL Opportunity visual, EACR, CPL Pathways, My College and CER (#2485, #2488); the public funding page's Step 2 fixed for the Summit (#2487); Open Asks Sheet 134 answered; handoff 494.

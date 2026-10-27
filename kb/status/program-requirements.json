@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-27T06:31:20Z",
-  "session": 496,
-  "moniker": "SkyLingonberry",
+  "written_at": "2026-10-27T07:56:41Z",
+  "session": 497,
+  "moniker": "SkyCrowberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_497_handoff.md",
+  "handoff": "docs/session_498_handoff.md",
   "next_step": {
     "title": "Sam's word on the narrated cut, then the Summit-morning sweep",
-    "text": "The next session reads Open Asks Sheet 135 and carries out his answer on the narrated cut, then re-measures the ten public pages on the morning of October 30. Hartnell's last reader gaps, Music 43887 and RN 03570, follow."
+    "text": "The next session reads Open Asks Sheet 135 and carries out his answer on the narrated cut, confirms the two display applies on main, then re-measures the ten public pages on the morning of October 30. Hartnell's last reader gap, RN 03570, needs a page read of its prerequisite list first."
   },
   "calls": [
     {
@@ -184,6 +184,10 @@
     {
       "at": "2026-10-27T06:40:00Z",
       "text": "Hartnell's Cal-GETC 45096 passes the machine checks: the reread replaced its one row, and Hartnell now passes 82 of 94."
+    },
+    {
+      "at": "2026-10-27T07:47:00Z",
+      "text": "Hartnell's Music certificate passes: a new reconcile step reads the tab's repeat counts (MUS 11 taken for two semesters, two semesters from one list), and the scorer counts them. Hartnell 83 of 94."
     }
   ],
   "headline": [
@@ -304,14 +308,14 @@
     {
       "day": "2026-10-27",
       "active": 20282,
-      "complete": 13185,
+      "complete": 13186,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-27T07:12:00Z"
+    "at": "2026-10-27T08:12:00Z"
   },
   "harvest": {
     "day": "2026-10-27",
