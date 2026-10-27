@@ -27,6 +27,8 @@ pipeline did not move). Read, in order: this file, the implementation-funding la
 - **#2501** CER Procedures' seed opens a sample only where one exists (the timeouts were never load).
 - **#2502** harvest and implementation-funding lanes back under 20,000 bytes.
 - **The ten public Summit targets pass with axe on main 82ea5ce5** (04:40Z 2026-10-27).
+- **Four `cpl_memory` rows** (author `memory-s495-checkpoint-2026-10-27`, all `proposed`), applied by supabase-migrate
+  run 40452704708 and read back at 05:15Z.
 
 **Open, mine:**
 - **#2499 (held for Sheet 135 card 1, green):** scene 8 re-read in Sierra's voice (ElevenLabs `ReTJQSHbCXUjxzzfhCOu`,
