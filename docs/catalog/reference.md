@@ -15,7 +15,7 @@ related:
 
 Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per §11 roadmap lane under `reference/lanes/`. PULL — read the one lane you are working.
 
-62 document(s).
+63 document(s).
 
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
@@ -73,6 +73,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Funding vocabulary: Sam's rulings in his words (CLAUDE.md offload)](../reference/funding_vocabulary.md) | — | `funding_vocabulary.md` | 2026-10-21 | 2026-10-21 |
 | [Knowledge Base & Unified Courses Curation — Build Status (CLAUDE.md offload)](../reference/kb_build_status.md) | — | `kb_build_status.md` | 2026-07-10 |  |
 | [M-ID Lifecycle, Model Curriculum (MC), and the CID/CIDx Pathway (CLAUDE.md offload)](../reference/mid_lifecycle.md) | — | `mid_lifecycle.md` | 2026-07-10 |  |
+| [Model spend — what calls a model, on which key, and how to measure it](../reference/model_spend.md) | — | `model_spend.md` | 2026-10-27 | 2026-10-27 |
 | [Obsidian vault wiring (CLAUDE.md offload)](../reference/obsidian_vault_wiring.md) | — | `obsidian_vault_wiring.md` | 2026-08-28 | 2026-08-28 |
 | [Pipeline Reference — architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)](../reference/pipeline_reference.md) | — | `pipeline_reference.md` | 2026-07-10 |  |
 | [Scheduled sessions — what a session started by Sam's routine does](../reference/scheduled_sessions.md) | — | `scheduled_sessions.md` | 2026-10-04 | 2026-10-14 |

@@ -31,8 +31,11 @@ name: cpl-chat deploy
 # (NOT the service-role key; that one is data-plane only and cannot deploy
 # functions). Nothing else is needed — the project ref is public and pinned below.
 #
-# AFTER A RUN: this triggers nothing automatically. Dispatch cpl-chat-smoke.yml
-# and read mode 7, per the deploy playbook in CLAUDE.md §7c.
+# AFTER A RUN: a cpl-chat deploy runs the smoke test itself (the smoke job below,
+# Sam, 2026-10-27), so one smoke run follows each deploy and nobody dispatches a
+# second. The other two functions run no smoke. Read the smoke job's log, and
+# re-check a failed mode by dispatching cpl-chat-smoke.yml with modes=
+# (docs/reference/pipeline_reference.md §7c).
 #
 # ONE MORE FUNCTION (S360, 2026-10-11): program-requirements-extract, the
 # harvest's model call (20 KB, with non-ASCII in its prompt), deploys the same
@@ -171,6 +174,8 @@ jobs:
           echo "Confirm the live version incremented and verify_jwt is false:"
           supabase functions list --project-ref hvuwhnbuahrtptokpqfh || true
 
-      - name: Next step
-        run: |
-          echo "::notice::Deployed. Now dispatch cpl-chat-smoke.yml and read mode 7 — it was red BEFORE this change because production returned a Dental Board certificate for an NCCER carpentry question (the generic-term flooding defect #1016 fixes). If it goes green, that closes the loop."
+  smoke:
+    # One smoke run per cpl-chat deploy, against what just landed.
+    needs: deploy
+    if: ${{ (inputs.function || 'cpl-chat') == 'cpl-chat' }}
+    uses: ./.github/workflows/cpl-chat-smoke.yml

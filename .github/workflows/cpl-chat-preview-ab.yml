@@ -26,8 +26,11 @@ name: cpl-chat preview A/B
 #     the SAME function differ in wording. Compare the PASS/FAIL grid; read the
 #     prose with your eyes.
 #
-# ⚠ COST: this runs the full smoke suite TWICE, so it makes roughly double a
-# normal smoke run's model calls. It is a pre-deploy instrument, not a cron job.
+# ⚠ COST: this runs the smoke suite TWICE, about 66 billed Sierra answers. Run it
+# before a production deploy whose change could move her answers, and name the
+# modes the change can reach with modes= when you know them (a mode that cannot
+# reach the changed code cannot regress from it). Procedure:
+# docs/reference/pipeline_reference.md §7c.
 #
 # ⚠ THE PREVIEW FUNCTION PERSISTS after the run so it can be poked at directly.
 # Set cleanup=true to delete it, and delete it once a candidate has shipped —
@@ -40,6 +43,10 @@ on:
         description: 'Delete the preview function after the run'
         type: boolean
         default: false
+      modes:
+        description: 'Only these smoke modes, by the first word of their label (7c or 7x,9). Blank asks all 33 on each side.'
+        required: false
+        default: ''
 
 concurrency:
   group: cpl-chat-preview-ab
@@ -118,6 +125,7 @@ jobs:
       - name: Smoke — PRODUCTION (cpl-chat, the deployed version)
         env:
           CPL_CHAT_URL: https://hvuwhnbuahrtptokpqfh.supabase.co/functions/v1/cpl-chat
+          SMOKE_MODES: ${{ inputs.modes }}
         run: |
           # `|| true`: a failing mode is DATA here, not a broken job. The
           # annotation prefix is stripped so a production failure does not
@@ -133,6 +141,7 @@ jobs:
           # function URL. It handles a preview slug correctly, but pin it here
           # too so modes 12 and 15d can never be blamed on the candidate.
           CPL_REST_BASE: https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1
+          SMOKE_MODES: ${{ inputs.modes }}
         run: |
           bash chatbox/smoke_test.sh 2>&1 | sed 's/::error:://g; s/::warning:://g' \
             | tee preview.log || true

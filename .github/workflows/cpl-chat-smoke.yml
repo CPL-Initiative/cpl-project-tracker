@@ -4,16 +4,26 @@ name: cpl-chat smoke test
 # multi-turn follow-up. Runs on a runner because the agent sandbox is
 # egress-blocked from *.supabase.co. See chatbox/smoke_test.sh + CLAUDE.md §7c.
 #
-# Triggers: manual dispatch, and any push that touches the smoke script or this
-# workflow (so a cpl-chat change pushed alongside the script is verified). It
-# does NOT run on the daily cron — it's a deploy-time check, not a scheduled job.
+# Triggers (Sam, 2026-10-27): the deploy, a dispatch, nothing else. The test asks
+# the LIVE function, so a push to a branch re-tests code that is already deployed:
+# on 2026-10-26 and 27 pushes, merges of main into branches, and re-runs set off
+# about 20 runs of 33 Sierra answers each. cpl-chat-deploy.yml now calls this
+# workflow after it deploys cpl-chat, so one run follows each deploy. To re-check a
+# failed mode, dispatch with modes= naming it (7c, or 7x,9): one or two answers
+# instead of 33. Procedure: docs/reference/pipeline_reference.md §7c.
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - chatbox/smoke_test.sh
-      - chatbox/supabase/functions/cpl-chat/index.ts
-      - .github/workflows/cpl-chat-smoke.yml
+    inputs:
+      modes:
+        description: 'Only these modes, by the first word of their label (7c or 7x,9). Blank asks all 33; each is one billed Sierra answer.'
+        required: false
+        default: ''
+  workflow_call:
+    inputs:
+      modes:
+        type: string
+        required: false
+        default: ''
 
 jobs:
   smoke:
@@ -24,4 +34,6 @@ jobs:
         with:
           python-version: '3.x'
       - name: Run cpl-chat smoke test
+        env:
+          SMOKE_MODES: ${{ inputs.modes }}
         run: bash chatbox/smoke_test.sh
