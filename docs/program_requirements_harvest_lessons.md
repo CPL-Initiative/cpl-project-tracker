@@ -1134,6 +1134,16 @@ side session (Scenario 4) ran beside it, one writer per file.
 
 **S444:** Golden West (79) and Imperial Valley (42) loaded; department pages are candidates, a section heading may span two lines (Sierra 35 → 81 found, MiraCosta 29 → 68, its discipline pages still lose siblings); 37 Program Mapper hosts recorded (#2330).
 
+## S496 SkyLingonberry (2026-10-27, the CPL Queue routine): 45096 lands
+
+- **Reconcile 40452134609 (free) moved 45096 alone in substance:** 34-35 against 34, arith equal, the units of all 163
+  courses as before. The other 57 re-filed records changed only bookkeeping (`ge_overlap`, the `reconciled` log), and the
+  capture flapped (43821 fell to a near miss, two Coursedog code pairs swapped order), so capture, sources and those
+  records returned to main and the summary moved 81 to 82 by hand. Reread 40460714483 replaced one row; read back
+  `total` 34, arithmetic `equal`.
+- **A re-filed capture can lose a program the last one found.** Restore the summary from main and edit the counts,
+  never take the run's summary whole.
+
 ## S495 SkySalmonberry (2026-10-27): Hartnell CalGETC 45096's area totals, the step
 
 - **The page read named the shape; the stored record named the blocks.** Page read 40375734212 prints "Area 3: Arts and
