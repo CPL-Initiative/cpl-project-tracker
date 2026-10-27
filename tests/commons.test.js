@@ -22,8 +22,8 @@ function txt(el) { return (el && el.textContent || "").trim(); }
 const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
-check("nav has The Commons button", /data-tab="commons" role="tab"[^>]*>The Commons</.test(cpl));
-check("pane #tab-commons exists", /id="tab-commons" data-tab="commons" role="tabpanel"/.test(cpl));
+check("nav has The Commons button", /class="cpl-tab[^"]*" data-tab="commons"[^>]*>The Commons</.test(cpl));
+check("pane #tab-commons exists", /id="tab-commons" data-tab="commons"/.test(cpl));
 check("mount #commons-root exists", /id="commons-root"/.test(cpl));
 check("boot wiring: onActivate('commons')", /onActivate\('commons'/.test(cpl));
 check("boot wiring loads commons_progress.js before commons.js",

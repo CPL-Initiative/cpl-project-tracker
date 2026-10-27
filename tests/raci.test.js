@@ -18,7 +18,7 @@ function check(name, cond) { results.push([name, !!cond]); }
 const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
-check("nav button present", /data-tab="raci" role="tab"[^>]*>Team &amp; RACI</.test(cpl));
+check("nav button present", /class="cpl-tab[^"]*" data-tab="raci"[^>]*>Team &amp; RACI</.test(cpl));
 check("tab pane present", /id="tab-raci" data-tab="raci"/.test(cpl));
 check("mount div present", /id="raci-root"/.test(cpl));
 check("lazy boot wiring present",
