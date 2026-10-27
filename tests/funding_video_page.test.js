@@ -101,7 +101,7 @@ const narration = readScript("s1");
 // The narrated cuts: n1 is Scenario 1's (draft 4, Kokoro), n2 Scenario 2's (draft 3, Sierra).
 const NARRATED = [
   { tag: "n1 ", v: "n1", s: "s1", mp4: "20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4" },
-  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4" },
+  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4" },
 ];
 const sha1 = (t) => crypto.createHash("sha1").update(t, "utf8").digest("hex");
 NARRATED.forEach(({ s }) => {
@@ -138,7 +138,7 @@ function boot(file, reduced) {
 }
 
 [["funding_in_motion.html", "20260926_CPL_Funding_in_Motion_v4.mp4", ""],
- ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
+ ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
   const raw = fs.readFileSync(path.join(DIR, file), "utf8");
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   check(tag + "b2 " + file + " carries the current source (the barrier layer)", raw.includes("var ENC=") && raw.includes("Play the introduction"));
@@ -377,8 +377,11 @@ NARRATED.forEach(({ tag, v, s }) => {
   check("k6 the title scene names her, Narrated by Sierra, appearing as she says her name",
     early === 0 && later > 0.9 && said.t <= said.said);
   w.__film.seek(L2.total - 0.3);
+  // the closing credits name the voice first, then the recorded piano (CC BY 3.0 asks for the credit; S503)
   check("k7 the closing credit says Sierra is a synthetic voice made with ElevenLabs",
-    Array.from(d.querySelectorAll("#stage p")).some((e) => e.textContent === "Sierra is a synthetic voice made with ElevenLabs."));
+    Array.from(d.querySelectorAll("#stage p")).some((e) => e.textContent.startsWith("Sierra is a synthetic voice made with ElevenLabs. ")));
+  check("k7b the closing credits the recorded piano: the Salamander Grand Piano, Alexander Holm, CC BY 3.0",
+    Array.from(d.querySelectorAll("#stage p")).some((e) => /Salamander Grand Piano, sampled by Alexander Holm \(CC BY 3\.0\)\.$/.test(e.textContent)));
   // a scene waiting on its read plays its picture at the film's own pace, and the score does not dip for a voice that is not there
   const pend = L2.scenes.map((x, i) => [x, i]).filter(([x]) => x.pending), spans2 = spansFor(L2);
   check("k8 a scene waiting on its read plays at the film's pace (" + pend.map(([x]) => x.scene).join(", ") + ")",
