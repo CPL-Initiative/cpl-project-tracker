@@ -21,9 +21,7 @@ file, `docs/program_requirements_harvest_lessons.md` S496, and handoff 496's *Op
 - **#2504** Hartnell CalGETC 45096: S495's `pool_areas` step, reconcile 40452134609 (only 45096 changed in substance;
   the other 57 re-filed records, capture and sources were restored to main), reread 40460714483 (one row replaced,
   before-values in `kb/receipts/program_requirement_records_college_reread_hartnell_40460714483.json`; read back:
-  total 34, arithmetic equal), display build 588cfa081bee. **Hartnell 82 of 94.** Merged on a passing `test` (if it
-  is still open, merge it, then dispatch `program-requirements-college.yml` `step=display` on `main`, college
-  `Hartnell College`, and confirm the `..._588cfa081bee.applied_*.json` receipt lands).
+  total 34, arithmetic equal), display build 588cfa081bee. **Hartnell 82 of 94.** Merged as f498c16a; `step=display` dispatched on `main` at ~06:50Z (college `Hartnell College`).
 - **UI pass: Funding film** (`funding-film`): axe passes at 9 widths, no datasets, First Light holds. Ledger recorded.
 
 ## Decisions Sam made this run
@@ -37,7 +35,9 @@ None. [Open Asks Sheet 135](https://claude.ai/artifact/PS3D3v2RTC8kb65mRWV5PD) (
    *keep* or *later*). #2499 stays held until then.
 2. **The morning of 10-30:** `npm run a11y -- funding-model funding-model-sierra funding-model-mycpl funding-model-howto
    funding-public funding-memo funding-film fact-sheet public-library sierra` on main (`npm install` first).
-3. **Display apply for build 588cfa081bee** if #2504 merged without one (above).
+3. **Confirm the display apply for build 588cfa081bee:** the `program-requirements-college.yml` `step=display` run on
+   `main` (dispatched ~06:50Z) should land `kb/receipts/program_requirement_records_display_2026-10-23_588cfa081bee.applied_*.json`
+   on `main`. If it failed, read its log and dispatch it again.
 4. **Library: IACA regenerate** (`iaca-mvpmcjyl`, requested by Crystal Nasio 2026-10-26, `publish` show). It names no
    change and no sources, `rebuild_from` is empty, and its file is a SharePoint .pptx that no session can read until
    RCCD approves the Microsoft 365 connector. Nothing to work from: it waits on Crystal saying what to change. The two
@@ -58,4 +58,4 @@ The CPL queue routine (`trig_01L8K64ZKYb5eALdT4HW6NAV`) fires next at 07:12Z and
 
 ## Let go
 
-S496 set no PR subscription, check-in or artifact watch.
+S496 drops its subscription on #2505 once it merges (#2504's was dropped at merge). No check-ins, no artifact watches.
