@@ -12,7 +12,7 @@
   "course_hours": "a course a record measured in hours lists without hours takes the top of the hours the page's own course data names (the course_units call's lecture plus lab hours, kept by the reader as the source's course_hours; the tab's noncredit total sums the tops): only in an hours record, never a course the reading gave a figure, and the note names the call",
   "pool_lists": "several lists the reading split one choice into, pooled: where the page prints one unit figure (pattern's n) over lists each read as choose_units with no figure of their own and named with block_prefix, the lists become one choose_units block of n (name), courses in order; never one list, and never where the record's total_units names another figure; with_floors (S489) also pools lists that carry their own figures, where the page prints one total over them all: each list's figure stays in the pooled block's floors, a course listed in two of the lists counts once, and never where the floors sum past n. block_pattern (a regex on the list name) may stand in for block_prefix",
   "pool_areas": "an area's sub-areas the reading split into blocks, under one total the page prints over the area (pattern's area and n; Hartnell's Cal-GETC 45096): the sub-area blocks block_pattern names (with {area}) become one choice of n units, each sub-area kept in floors with its rule, a course listed under two sub-areas listed once; only two or more blocks, never where the sub-areas' own printed figures sum past n",
-  "repeat": "a course or a list the page says is taken more than once (Hartnell's Music 43887): pattern's code and n give that course or alternative times n, so its units count n times; block_pattern's n, read on a choose_courses block's name the reading gave a minimum of one, makes it n enrollments from a list a student may repeat (repeats); never a figure the reading gave"
+  "repeat": "a course or a list the page says is taken more than once (Hartnell's Music 43887): pattern's code and n give that course or alternative times n, so its units count n times; block_pattern's n, read on a choose_courses block's name the reading gave a minimum of one, makes it n enrollments from a list a student may repeat (repeats); never a figure the reading gave; a total group (Delta's \"for a total of 16 units\") keeps the printed sum as units_total, which the scorer reads in place of the course's units times n; n may be a word (four)"
  },
  "colleges": {
   "Cabrillo College": {
@@ -210,6 +210,12 @@
      "field": "total_units_minimum",
      "value": true,
      "pattern": "Minimum (?:Major )?Units Required: \\d+(?:\\.\\d+)?"
+    },
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "[Rr]equired\\s+to\\s+enroll\\s+(?P<n>[0-9]+|two|three|four|five|six)\\s+times\\s+in\\s+(?P<code>[A-Z]{2,5}\\s?[0-9]+[A-Z]?)\\s+for\\s+a\\s+total\\s+of\\s+(?P<total>[0-9]+(?:\\.[0-9]+)?)\\s+units",
+     "why": "S498 SkyBearberry, 2026-10-27: Caterpillar Dealer Service Technician Apprenticeship certificate 44197 read 40-43 against 55 because the record keeps CAT 69V (Units: 1-4) once, and the page prints \"Students are required to enroll four times in CAT 69V for a total of 16 units.\" (college-page-read 40479703275). With 16, the blocks sum to 55, the page's \"Minimum Units Required: 55\" (S424 named the gap; Hartnell's repeat step, S497). The first reconcile (40480236607) moved nothing on the capture's innerText, so the pattern reads any whitespace (a no-break space or a line break) between its words."
     }
    ]
   },

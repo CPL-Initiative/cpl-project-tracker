@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-27T07:56:41Z",
-  "session": 497,
-  "moniker": "SkyCrowberry",
+  "written_at": "2026-10-27T10:36:59Z",
+  "session": 498,
+  "moniker": "SkyBearberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_498_handoff.md",
+  "handoff": "docs/session_499_handoff.md",
   "next_step": {
     "title": "Sam's word on the narrated cut, then the Summit-morning sweep",
-    "text": "The next session reads Open Asks Sheet 135 and carries out his answer on the narrated cut, confirms the two display applies on main, then re-measures the ten public pages on the morning of October 30. Hartnell's last reader gap, RN 03570, needs a page read of its prerequisite list first."
+    "text": "The next session reads Open Asks Sheet 135 and carries out his answer on the narrated cut, applies display build 20241d4a9117 on main once #2507 merges, then re-measures the ten public pages on the morning of October 30."
   },
   "calls": [
     {
@@ -188,6 +188,10 @@
     {
       "at": "2026-10-27T07:47:00Z",
       "text": "Hartnell's Music certificate passes: a new reconcile step reads the tab's repeat counts (MUS 11 taken for two semesters, two semesters from one list), and the scorer counts them. Hartnell 83 of 94."
+    },
+    {
+      "at": "2026-10-27T10:33:00Z",
+      "text": "San Joaquin Delta's Caterpillar apprenticeship certificate passes: its page says CAT 69V is taken four times for a total of 16 units, and the repeat step now reads that printed total. Two more Delta records pass on a rescore, so Delta reads 198 of 203."
     }
   ],
   "headline": [
@@ -308,14 +312,14 @@
     {
       "day": "2026-10-27",
       "active": 20282,
-      "complete": 13186,
+      "complete": 13187,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-27T08:12:00Z"
+    "at": "2026-10-27T11:12:00Z"
   },
   "harvest": {
     "day": "2026-10-27",

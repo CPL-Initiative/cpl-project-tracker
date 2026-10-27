@@ -60,20 +60,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    40.0,
-    43.0
+    55.0,
+    55.0
    ],
    "stated": [
     55.0,
     55.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 40.0-43.0; the catalog states 55.0-55.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -97,7 +95,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -151,7 +149,9 @@
       "units": 1,
       "units_max": 4,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 4,
+      "units_total": 16
      },
      {
       "code": "CAT 80",
@@ -257,14 +257,19 @@
    "The program learning outcomes are printed for 'this program' on the certificate page; recorded as the certificate's outcomes."
   ]
  },
- "extracted_run": 39217405432,
- "read_run": 39116289105,
+ "extracted_run": 40484963062,
+ "read_run": 39217405432,
  "reconciled": [
   {
-   "field": "total_units_minimum",
+   "field": "times",
    "was": null,
-   "now": true,
-   "words": "Minimum Units Required: 55"
+   "now": {
+    "CAT 69V": {
+     "times": 4,
+     "units_total": 16
+    }
+   },
+   "words": "required to enroll four times in CAT 69V for a total of 16 units"
   }
  ]
 }

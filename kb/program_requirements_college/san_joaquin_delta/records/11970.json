@@ -60,8 +60,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     41.5,
     41.5
@@ -71,8 +71,10 @@
     60.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 41.5-41.5; the catalog states 60.0-60.0"
+   "why": [],
+   "fill": [
+    18.5,
+    18.5
    ]
   },
   "repeated": {
@@ -97,7 +99,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -270,8 +272,8 @@
    "All courses require a grade of C or better."
   ]
  },
- "extracted_run": 39217405432,
- "read_run": 39116289105,
+ "extracted_run": 40480236607,
+ "read_run": 39217405432,
  "reconciled": [
   {
    "field": "total_units_minimum",

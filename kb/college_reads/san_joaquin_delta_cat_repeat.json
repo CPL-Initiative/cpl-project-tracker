@@ -1,0 +1,16 @@
+{
+ "_readme": "S498 SkyBearberry, 2026-10-27. San Joaquin Delta's Caterpillar Dealer Service Technician Apprenticeship certificate 44197 reads 40-43 against 55: the record keeps CAT 69V (1-4 units) once, and S424 found the page has it taken more than once, a repeat count the record shape had no field for until Hartnell's repeat step (S497). This read prints the page's own words around CAT 69V and the total, so the repeat step's pattern for Delta is written from the page. One page, no model call.",
+ "college": "San Joaquin Delta College",
+ "questions": {
+  "repeat": "How the page states CAT 69V's repeats (times, units each) and the certificate's unit total."
+ },
+ "keywords": [
+  "[^<>\"]{0,200}69V[^<\"]{0,200}",
+  "[^<>\"]{0,120}\\b(?:times|semesters|repeat\\w*)\\b[^<\"]{0,120}",
+  "[Tt]otal[^<\"]{0,80}",
+  "\\b55\\b[^<\"]{0,80}"
+ ],
+ "pages": [
+  {"answers": ["repeat"], "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3385&print"}
+ ]
+}

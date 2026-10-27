@@ -16193,8 +16193,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 468,
+   "count": 469,
    "docs": [
+    {
+     "created": "2026-10-27",
+     "governs": [],
+     "n": 499,
+     "path": "docs/session_499_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "library",
+      "implementation-funding"
+     ],
+     "title": "Session 499 handoff: Delta Caterpillar 44197 passes on a printed repeat total (Delta 198 of 203); Sheet 135 still unanswered",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-27",
      "governs": [],
@@ -24223,5 +24239,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1284
+ "total": 1285
 }
