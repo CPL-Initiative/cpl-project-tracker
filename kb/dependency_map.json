@@ -1445,7 +1445,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1797
+     "line": 1804
     }
    ],
    "main_committers": []
@@ -1973,7 +1973,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 854
+     "line": 861
     }
    ],
    "main_committers": []
@@ -1992,7 +1992,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1193
+     "line": 1200
     },
     {
      "id": "module:college_briefing.js",
@@ -3820,7 +3820,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1471
+     "line": 1478
     }
    ],
    "main_committers": []
@@ -4848,7 +4848,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1362
+     "line": 1369
     },
     {
      "id": "module:admin.js",
@@ -5716,7 +5716,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1736
+     "line": 1743
     },
     {
      "id": "module:college_briefing.js",
@@ -5903,7 +5903,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 908
+     "line": 915
     },
     {
      "id": "module:cpl_funding.js",
