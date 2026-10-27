@@ -214,8 +214,8 @@
     {
      "kind": "repeat",
      "field": "blocks",
-     "pattern": "[Rr]equired to enroll (?P<n>[0-9]+|two|three|four|five|six) times in (?P<code>[A-Z]{2,5} ?[0-9]+[A-Z]?) for a total of (?P<total>[0-9]+(?:\\.[0-9]+)?) units",
-     "why": "S498 SkyBearberry, 2026-10-27: Caterpillar Dealer Service Technician Apprenticeship certificate 44197 read 40-43 against 55 because the record keeps CAT 69V (Units: 1-4) once, and the page prints \"Students are required to enroll four times in CAT 69V for a total of 16 units.\" (college-page-read 40479703275). With 16, the blocks sum to 55, the page's \"Minimum Units Required: 55\" (S424 named the gap; Hartnell's repeat step, S497)."
+     "pattern": "[Rr]equired\\s+to\\s+enroll\\s+(?P<n>[0-9]+|two|three|four|five|six)\\s+times\\s+in\\s+(?P<code>[A-Z]{2,5}\\s?[0-9]+[A-Z]?)\\s+for\\s+a\\s+total\\s+of\\s+(?P<total>[0-9]+(?:\\.[0-9]+)?)\\s+units",
+     "why": "S498 SkyBearberry, 2026-10-27: Caterpillar Dealer Service Technician Apprenticeship certificate 44197 read 40-43 against 55 because the record keeps CAT 69V (Units: 1-4) once, and the page prints \"Students are required to enroll four times in CAT 69V for a total of 16 units.\" (college-page-read 40479703275). With 16, the blocks sum to 55, the page's \"Minimum Units Required: 55\" (S424 named the gap; Hartnell's repeat step, S497). The first reconcile (40480236607) moved nothing on the capture's innerText, so the pattern reads any whitespace (a no-break space or a line break) between its words."
     }
    ]
   },
