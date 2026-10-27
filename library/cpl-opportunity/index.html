@@ -82,6 +82,10 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
   th { color: var(--text-strong); font-weight: 600; background: var(--surface-subtle); position: sticky; top: 0; }
   .cpo-adopt { display: inline-block; font-weight: 700; color: var(--on-accent); background: var(--seal-blue); padding: 4px 10px; border-radius: 6px; text-decoration: underline; white-space: nowrap; }
   .cpo-muted { color: var(--text-muted); font-size: .85rem; }
+  /* An exhibit ID and the college that built it in MAP; the chip opens MAP searched for that ID (Sam, 2026-10-26). */
+  .cpo-xid { display: inline-flex; align-items: center; gap: 4px; margin: 0 8px 4px 0; white-space: nowrap; }
+  .cpo-chip { position: relative; display: inline-flex; align-items: center; min-height: 24px; padding: 0 8px; border-radius: 10px; font-size: .8rem; font-weight: 600;
+    color: var(--cobalt); background: var(--surface-subtle); border: 1px solid var(--border); text-decoration: underline; }
   .cpo-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .cpo-legend { display: flex; gap: 16px; font-size: .85rem; color: var(--text-muted); }
   .cpo-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
@@ -215,6 +219,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
   </div>
   <div id="cpo-root"><h1>CPL opportunity analysis</h1></div>
 </main>
+<script src="../../college_short_names.js"></script>
 <script src="../../college_cpl_workbook.js"></script>
 <script>
 (function () {
