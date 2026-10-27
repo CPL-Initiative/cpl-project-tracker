@@ -30,7 +30,9 @@ CPL SUMMIT*), `docs/college_action_page_lessons.md` S493.
   Pathways' adoption panels, My College's register and By CPL type, and CER's Potential adopters.
 - **samueltlee/CPLBrain#506** Open Asks Sheet 134 (built, answered, retired) and this run's session note.
 
-Check each of #2487, #2488 and CPLBrain#506 merged; S493 merged them on `test` if the checks finished in its window.
+**At S493's sign-off (~00:35Z, context emergency) these were open, CI running: #2487 (Step 2; its first shard-4 run died inside `uc_worklist_chrome.test.js` with no FAIL line, passed locally; the main merge gave a fresh run), #2488 (MAP links), #2490 (this checkpoint; its push ran `.apply` for `kb/receipts/cpl_memory_s493_2026-10-27.sql`: read the four rows and the Library's `open-asks-sheets` v134 back) and samueltlee/CPLBrain#506 (Sheet 134 retired, the session note; its coverage check passes once #2487 and #2488 merge). Merge each on `test`, the tracker ones first; then restore `.apply` to main's.**
+
+**Fold in Sam's side session** 01V74v72G5Sou1WaWEsnL9aN (*CPL Initiative Workplan Update draft*, branch `claude/funny-goodall-pcjybi`), which was waiting on its own `test` at 00:23Z: read its PR and transcript, and add what it shipped to this handoff's record in your checkpoint.
 
 ## Decisions Sam made this run
 
