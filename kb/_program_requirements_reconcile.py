@@ -58,6 +58,16 @@ def _num(s):
     return None if s is None else (int(float(s)) if float(s).is_integer() else float(s))
 
 
+_COUNTS = {"two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "twice": 2}
+
+
+def _count(s):
+    """A repeat count as the page prints it: a figure or a word (Delta's "four times", S498)."""
+    if s is None:
+        return None
+    return _COUNTS.get(s.strip().lower()) or _num(s)
+
+
 def _empty(v) -> bool:
     if isinstance(v, dict):
         return v.get("min") is None and v.get("max") is None
@@ -227,14 +237,22 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
             # Courses" and read as one choice becomes 2 enrollments from a list a student may repeat.
             # Never a figure the reading already gave.
             from _program_requirements_pilot import norm_code
+            # Delta's Caterpillar 44197 (S498) words the count and prints the sum: "Students are required
+            # to enroll four times in CAT 69V for a total of 16 units" (a 1-4 unit course); the total group
+            # keeps that sum as units_total, so the scorer reads 16 rather than four times the range.
             for m in re.finditer(st.get("pattern") or r"(?!)", text):
-                code, n = norm_code(m.group("code")), _num(m.group("n"))
+                code, n = norm_code(m.group("code")), _count(m.group("n"))
+                total = _num(m.group("total")) if "total" in m.re.groupindex and m.group("total") else None
                 for block in out.get("blocks") or []:
                     for course in block.get("courses") or []:
                         for entry in [course] + [a for a in course.get("alternatives") or [] if isinstance(a, dict)]:
                             if n and n > 1 and norm_code(entry.get("code")) == code and entry.get("times") is None:
                                 entry["times"] = n
-                                notes.append({"field": "times", "was": None, "now": {entry["code"]: n},
+                                now = {entry["code"]: n}
+                                if total is not None:
+                                    entry["units_total"] = total
+                                    now = {entry["code"]: {"times": n, "units_total": total}}
+                                notes.append({"field": "times", "was": None, "now": now,
                                               "words": m.group(0).strip()})
             named = re.compile(st["block_pattern"]) if st.get("block_pattern") else None
             for block in (out.get("blocks") or []) if named else []:

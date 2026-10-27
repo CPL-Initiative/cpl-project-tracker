@@ -182,6 +182,28 @@ check("a list the reading gave a count above one is left alone",
       [b for b in R.reconcile(two, mus_text, "Hartnell College", "Certificate of Achievement", steps=steps)[0]["blocks"]
        if "2 semesters" in b["name"]][0]["minimum"] == 3)
 
+print("Delta's Caterpillar repeat count (S498)")
+cat = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "san_joaquin_delta", "records",
+                                  "44197.json")))["record"]
+for b in cat["blocks"]:
+    for c in b["courses"]:
+        for e in [c] + c.get("alternatives", []):
+            if isinstance(e, dict):
+                e.pop("times", None); e.pop("units_total", None)
+cat_text = ("CAT 69V Internship: Heavy Equipment-Caterpillar Units: 1-4 Students are required to enroll four times in "
+            "CAT 69V for a total of 16 units.\nMinimum Units Required: 55")
+cat["program"].pop("total_units_minimum", None)
+check("the record before the step reads 40-43 against 55", S.program_units(cat, {})[0] == (40, 43))
+new, notes = R.reconcile(cat, cat_text, "San Joaquin Delta College", "Certificate of Achievement", steps=steps)
+c69 = [c for b in new["blocks"] for c in b["courses"] if c["code"] == "CAT 69V"][0]
+check("CAT 69V carries times 4 and the page's 16 units", c69["times"] == 4 and c69["units_total"] == 16)
+check("its printed range is kept", c69["units"] == 1 and c69["units_max"] == 4)
+check("the record then sums to the page's 55", S.program_units(new, {})[0] == (55, 55))
+check("a second run changes nothing",
+      not [n for n in R.reconcile(new, cat_text, "San Joaquin Delta College", "Certificate of Achievement",
+                                  steps=steps)[1] if n["field"] == "times"])
+check("a count in figures reads too", R._count("4") == 4 and R._count("four") == 4 and R._count(None) is None)
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)

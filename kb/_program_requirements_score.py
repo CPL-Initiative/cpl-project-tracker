@@ -261,6 +261,10 @@ def choice_units(course: dict, listed: dict, hours: bool = False) -> tuple[float
         # for 2 semesters", Hartnell's Music 43887, S497) carries times: its units count that often.
         times = _num(entry.get("times")) or 1
         own = [v * times for v in (_num(entry.get("units")), _num(entry.get("units_max"))) if v is not None]
+        if _num(entry.get("units_total")) is not None:
+            # The page prints the repeats' sum ("four times in CAT 69V for a total of 16 units", Delta 44197,
+            # S498): that figure, never the course's range times the count.
+            own = [_num(entry["units_total"])]
         if own:
             vals += own
         elif not hours:
