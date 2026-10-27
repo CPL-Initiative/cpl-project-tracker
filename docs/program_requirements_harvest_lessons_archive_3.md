@@ -436,3 +436,49 @@ Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, 2026-10-27
 
 - From Phase 2: ✅ Modesto and Palo Verde's dated reads, loads and build (S385, #2094): lessons. Palo Verde's noncredit pages and its pages that print the degree total with general education (S386): lessons. Sheet 81's rulings, the 3,797-row build and Palo Verde's year-behind catalog: lessons, *Moved from the lane (S398 compaction)*. Sheet 78's carry-out, record shape 5, the re-read path, the Palo Verde, Cabrillo and Southwestern re-reads (S389): lessons, *Moved from the lane (S392 compaction)*.
 - From the catalog sweep: **S423-S424 (a renumbered course: a college's `course_renumbers` in `kb/program_requirements_reconcile.json` maps a catalog code to the state file's where both print the same title and units, each pair cited; Taft's BUSN 550/555; the four wrong-page rows; a Jev sitting asks only about the gating checks):** lessons S423-S424 and *Moved from the lane (S449 compaction)*. Merced's last nine are the college's to settle in COCI (lessons S423); Taft 30284 reads its own page since build e0407fdcb54b; Orange Coast 10278 passes.
+
+## S408 SkyAgave (2026-10-17): a run of numbers after one subject, a list marker at a line's end, the eight-college wave
+
+- **A run of numbers after one subject (#2206).** Glendale's 2025-2026 PDF prints "ACCTG 101, 102; BUSAD 101, 106, 120;
+  CS/IS 100 or 101". `find_codes` matched a code only where its subject stood beside the number, so a program page named a
+  third to a half of its list, and course descriptions ("WELD 121 is the first...") outscored it. The capture-only read
+  found 190 of 267 with 117 picks at 50-80% coverage (run 39057600516); on the new finder, 258 found and 180 at full
+  coverage (run 39062348929). A number the run's words make a figure ("and 3 units", "or 3 years") ends the run; a
+  three-digit number may carry one space per digit ("B IOL 1 42, 50"); a subject may carry a slash (CS/IS). The filed
+  fixtures find all they found; Mt. San Antonio 33876 also finds CHLD 67L ("CHLD 67 & 67L"), pinned in the test.
+- **A list marker at a line's end (#2207).** Ohlone's chapter 7 PDF prints an outcome's number at the end of its first
+  line ("...deposit receipts, escrows, 2." then "and financing."); 125 of 146 records failed the outcomes check (run
+  39061732843). The scorer reads the text once more with such markers dropped. A `step=reconcile` (no model call)
+  rescored the filed records: outcome failures 125 to 8, machine passes 8 to 117 (run 39063337090).
+- **The session cannot reach a run's artifact or a college host.** Both proxies refuse (`productionresultssa19.blob...`,
+  `glendale.edu`), so a PDF's text comes from a page-read plan: keywords loose enough for spaced capitals
+  (`B\s?U\s?S\s?A\s?D\s{0,3}16[2359]`) print the pages naming them (runs 39061888500, 39062425296).
+- **A year on a catalog step reaches loaded rows only through a forced re-extraction.** East LA's step v2 carries
+  2026-2027 (migrate run 39062042558); `step=reread` posts only the newest run's records, so all 120 were forced
+  (`force=` the filed control numbers, $10.74), then reread (120 replaced) and loaded (13 new; 4 place none).
+- **Glendale's catalog prints no units per course.** 161 of 258 records read arithmetic incomplete and 25 invented (a
+  2025-2026 catalog against the state's current list); 220 loaded, 38 place none. The display fills units from COCI.
+- **Loads (all unchecked):** Desert 323 ($28.43), CCSF 41 reread + 2 ($23.72 forced), LA Southwest 84 ($6.00),
+  Grossmont 136 ($10.28), Ohlone 134 ($10.02), East LA 120 + 13, Glendale 220 ($19.80), Pasadena 290 ($20.86).
+- **The wave (#2208): build `f949e7c0ea35`, 15,336 programs at 108 colleges** (from 13,851 at 100). The registry read
+  had drifted on 16 rows, not only the six S407 changed: ten carried the 2026-10-04 census, three of them with more
+  (Mt. San Antonio's Guided Pathways sequence, Miramar's address without `/iq/20891`, West LA's mapper refusal). Compare
+  every row's md5 to live at a wave, not only the added colleges'.
+- **Merging college branches with `-X theirs` can revert shared files.** Branches cut from an older code base carried an
+  older `kb/dependency_map.json`; diff the code and generated files against `main` after the merges and restore. Push
+  merges alone: a push mixing a merge that changed `kb/migrations/.apply` with a later plain commit would fire the
+  migrate gate.
+- **Desert's online catalog** (`catalog.collegeofthedesert.edu`, 2026-2027) is the college's own HTML: no vendor marker,
+  no data calls, its Programs of Study an unlinked table (page read 39066043761). It holds the year the PDF read loaded.
+- **The UI pass's next view, Exhibit Adoption, measured and deferred.** Four faults (run at S408): `.cv-synth` 4.27:1
+  light and `.cv-ccc` 4.05:1 dark, and no focus ring on `#sw-search` and `#sw-handout`. The `sw-*` control styles sit in
+  the generator's exhibit CSS block (`index.html`, the `MAP Articulation Analysis Cards` markers), so fixes inject from
+  `statewide_interactive.js`'s `CV_STYLE`; the 🏛 beside "Statewide CCC standard" is an emoji and goes; ⚙ is the design
+  system's suggested-accent glyph.
+
+## Moved from the lane (S408 compaction)
+
+- S406-S407's sweep line: build `fec9782a4dbc` (13,851 at 100) added the eight hand-filed colleges (Cerro Coso 52,
+  Porterville 76, Folsom Lake 104, De Anza 210, Sacramento City 182, Cosumnes River 182, CCSF 294, American River 327);
+  S407 read LA Trade Tech, LA Mission and Desert through catalog steps and applied Sheets 90-91's registry corrections
+  (Cuesta, the six hand-filed rows, Grossmont, Ohlone, Cañada, Pasadena, Glendale, LA Southwest) through the runner.

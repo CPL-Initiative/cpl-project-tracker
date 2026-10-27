@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-468 document(s).
+469 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 499 | [Session 499 handoff: Delta Caterpillar 44197 passes on a printed repeat total (Delta 198 of 203); Sheet 135 still unanswered](../session_499_handoff.md) | 2026-10-27 |
 | 498 | [Session 498 handoff: Hartnell Music 43887 lands on the repeat step (83 of 94); Sheet 135 still unanswered](../session_498_handoff.md) | 2026-10-27 |
 | 497 | [Session 497 handoff: Hartnell CalGETC 45096 lands (82 of 94), the Funding film's UI pass, IACA waits on its asker](../session_497_handoff.md) | 2026-10-27 |
 | 496 | [Session 496 handoff: Sierra's scene 8 re-read and Sheet 135, axe on the internal tabs worked, Hartnell's Cal-GETC area step](../session_496_handoff.md) | 2026-10-27 |
