@@ -5715,7 +5715,7 @@
       confirmed_by: curatorEmail() || "(CO reviewer)", revoked_at: null });
   }
   // Accept: confirm the request, then open the confirmation email to the person
-  // who sent it, copied to the college's CPL Coordinator, for the reviewer to
+  // who sent it, for the reviewer to
   // send (Sam, 2026-10-27: "acceptance confirms it and sends an email
   // confirmation"). The mail opens only once the re-read shows the row confirmed.
   function acceptOptIn(college) {
@@ -5874,9 +5874,9 @@
   }
   function denyNcAttest(college) { removeNcAttest(college); }
   // THE CONFIRMATION EMAIL: a draft in the reviewer's own mail app (a person
-  // presses send), to the submitter, copied to the college's CPL Coordinator
-  // from MAP's directory (read with the reviewer's session; RLS answers anyone
-  // else with nothing, and the mail then goes to the submitter alone).
+  // presses send), to the submitter. It names no one else: this module never
+  // reads a coordinator's address (tests/cpl_funding_equity.test.js's PII
+  // guard), so a reviewer who wants the CPL Coordinator copied adds them.
   function openConfirmMail(college, rev, kind) {
     var nm = dispName(college);
     var sent = rev.requested_at ? " on " + isoMdy(rev.requested_at) : "";
@@ -5890,29 +5890,10 @@
         : "Thank you for confirming " + nm + "'s participation in CPL Implementation Funding. The MAP team has accepted the request you sent" +
           sent + ", and the CPL funding page now shows the college's participation confirmation on file.") +
       "\n\nIf you did not send this request, please reply to this email.\n\nThe MAP team";
-    var go = function (cc) {
-      var href = "mailto:" + encodeURIComponent(rev.email) + "?" +
-        (cc && cc.toLowerCase() !== String(rev.email).toLowerCase() ? "cc=" + encodeURIComponent(cc) + "&" : "") +
-        "subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
-      if (typeof window.CPL_FUNDING_OPEN_MAIL === "function") { window.CPL_FUNDING_OPEN_MAIL(href); return; }
-      try { window.location.href = href; } catch (e) {}
-    };
-    coordEmailOf(college, go);
-  }
-  function coordEmailOf(college, cb) {
-    if (!remoteEnabled()) { cb((window.CPL_FUNDING_TEST_COORD_EMAIL || {})[college] || ""); return; }
-    var rh = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
-    applyWriteAuth(rh);
-    var roster = rosterByShortName();
-    fetch(SUPABASE_URL + "/rest/v1/map_college_contacts?select=college,cpl_coordinator_email", { headers: rh })
-      .then(function (r) { return r.ok ? r.json() : []; })
-      .then(function (rows) {
-        var hit = (rows || []).filter(function (row) {
-          return (roster[shortName(row.college)] || row.college) === college && String(row.cpl_coordinator_email || "").indexOf("@") > 0;
-        })[0];
-        cb(hit ? String(hit.cpl_coordinator_email).split(/[,;\s]+/)[0] : "");
-      })
-      .catch(function () { cb(""); });
+    var href = "mailto:" + encodeURIComponent(rev.email) + "?subject=" + encodeURIComponent(subj) +
+      "&body=" + encodeURIComponent(body);
+    if (typeof window.CPL_FUNDING_OPEN_MAIL === "function") { window.CPL_FUNDING_OPEN_MAIL(href); return; }
+    try { window.location.href = href; } catch (e) {}
   }
   function removeNcAttest(college) { ncAttestWrite(college, "DELETE", null); }
 
@@ -6214,7 +6195,7 @@
     return '<div class="cplfund-colane"><div class="cplfund-colane-head">CO opt-in review' +
       (pending.length ? ' <span class="cplfund-colane-badge">' + pending.length + " awaiting review</span>" : "") +
       "</div>" +
-      '<div class="dk cplfund-colane-intro">A college administrator sent each request below from an address on the college&#39;s or district&#39;s domain. Accept confirms the request and opens a confirmation email to the sender, copied to the college&#39;s CPL Coordinator; the college meets the condition from then. Deny removes the request.</div>' +
+      '<div class="dk cplfund-colane-intro">A college administrator sent each request below from an address on the college&#39;s or district&#39;s domain. Accept confirms the request and opens a confirmation email to the sender; the college meets the condition from then. Deny removes the request.</div>' +
       body + "</div>";
   }
 

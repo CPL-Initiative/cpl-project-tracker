@@ -277,7 +277,6 @@ function reviewerSession() {
 
   const mails = [];
   priv.window.CPL_FUNDING_OPEN_MAIL = function (href) { mails.push(href); };
-  priv.window.CPL_FUNDING_TEST_COORD_EMAIL = {}; priv.window.CPL_FUNDING_TEST_COORD_EMAIL[COL] = "coord@college.edu";
   const acceptBtn = doc.querySelector("#cplFundTable [data-optinaccept]");
   check("F4: the inline Accept button is present in the drill-in", !!acceptBtn && acceptBtn.textContent === "Accept");
   if (acceptBtn) click(priv.window, acceptBtn);
@@ -285,8 +284,10 @@ function reviewerSession() {
   check("F4b: clicking inline Accept confirms the request (holder-scoped binding survives refreshTable)",
     P._optinActive(COL) === true && /Confirmation on file/.test(t2));
   const m = mails[0] || "";
-  check("F4c: …and opens the confirmation email to the requester, copied to the CPL Coordinator, with the reply line",
-    mails.length === 1 && m.indexOf("mailto:jane%40college.edu?") === 0 && /cc=coord%40college\.edu/.test(m) &&
+  // To the requester alone: this module never reads a coordinator's address
+  // (tests/cpl_funding_equity.test.js's PII guard).
+  check("F4c: …and opens the confirmation email to the requester alone, with the reply line",
+    mails.length === 1 && m.indexOf("mailto:jane%40college.edu?") === 0 && !/cc=/.test(m) &&
     decodeURIComponent(m).indexOf("If you did not send this request, please reply to this email.") >= 0);
   const revokeBtn = doc.querySelector("#cplFundTable [data-optinrevoke]");
   check("F4d: a confirmed request offers Revoke", !!revokeBtn && revokeBtn.textContent === "Revoke");
