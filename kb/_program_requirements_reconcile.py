@@ -230,6 +230,28 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                               "now": merged["name"], "words": m.group(0).strip()})
                 out["blocks"] = [merged if i == pool[0] else b for i, b in enumerate(blocks) if i not in pool[1:]]
             continue
+        if st["kind"] == "unit_line":
+            # A requirement the page prints as a line with units and no course (Delta's Architectural
+            # Drafting 22244, S500: "Associate Degree Math Requirement: Units 4" in a list of courses
+            # summing 19 under "Complete 23 units"). The line becomes a choose_units block of its figure
+            # with no courses, only where no block carries the label already and only where the
+            # record's sum falls short of its printed total by exactly that figure: the same words sit
+            # elsewhere at Delta as an alternative inside an area, or beside a total that leaves them out.
+            from _program_requirements_score import program_units
+            tu = _span_of(prog.get("total_units"))
+            for m in re.finditer(st["pattern"], text):
+                label, n = m.group("label").strip(), _num(m.group("n"))
+                blocks = out.get("blocks") or []
+                if n is None or tu[0] is None or any(label.lower() in (b.get("name") or "").lower() for b in blocks):
+                    continue
+                (lo, _hi), why = program_units(out, {})
+                if why or abs(tu[0] - lo - n) > 1e-9:
+                    continue
+                block = {"name": label, "rule": "choose_units", "minimum": n, "option_group": None,
+                         "stated": {"min": n, "max": n}, "courses": []}
+                notes.append({"field": "blocks", "was": None, "now": label, "words": m.group(0).strip()})
+                out["blocks"] = blocks + [block]
+            continue
         if st["kind"] == "repeat":
             # A course or a list the page says is taken more than once (Hartnell's Music 43887, S497):
             # "If MUS 11 is chosen, it must be taken for 2 semesters" gives that course (or alternative)

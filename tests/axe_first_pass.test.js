@@ -27,6 +27,18 @@ for (const f of ["index.html", "CPL_Dashboard.html"]) {
   });
   check(`${f}: the dashboard's three filter selects carry a name`, unnamed.length === 0, unnamed.join(", "));
 }
+// ⭐ …and in the template the daily run copies into both (excel_to_dashboard.py
+// _load_college_activity_template). #2495 named them in the HTMLs alone, and the
+// 2026-10-27 cron (b28e2886) rebuilt the section from the template without them.
+{
+  const tpl = new JSDOM(read("college_activity_template.html")).window.document;
+  const unnamedTpl = ["caDistrictFilter", "tierFilter", "caDisciplineFilter"].filter((id) => {
+    const el = tpl.getElementById(id);
+    return !el || !(el.getAttribute("aria-label") || "").trim();
+  });
+  check("college_activity_template.html: the three filter selects carry a name, so the daily run keeps them",
+    unnamedTpl.length === 0, unnamedTpl.join(", "));
+}
 
 // ── TMC Builder: each label is tied to its select ─────────────────────────────
 const tmc = read("tmc_builder.js");

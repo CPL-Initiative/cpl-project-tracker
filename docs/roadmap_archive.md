@@ -750,3 +750,9 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 - 2026-10-25 (S471 SkyPenstemon, the CPL Queue routine): the noncredit builder emits nc_cdcp, nc_exh and nc_course from a service-role RPC, applied and read back, and How to meet it for the two noncredit conditions (#2437); full checkpoint; handoff 472.
 - 2026-10-25 (S470 SkyBlueCurls, opened by hand): the ironworker film's Library link on GitHub Pages and the Veteran map's UI pass (#2432); the noncredit attestation on the funding page, applied after it reached Pages (#2433, #2436); a lessons archive within budget (#2434); full checkpoint; handoff 471.
+
+## INDEX update history, moved by S500 (2026-10-27)
+
+- 2026-10-26 S490 SkyGooseberry: the Library's Regenerate and documents on a record, the MAP team's notes on a college page, the CPL Opportunity page under `library/`, Open Asks Sheet 131 answered (#2472); full checkpoint, handoff 491.
+- 2026-10-26 S488 SkyThimbleberry: Hartnell's last eight failing tabs read (light checkpoint); handoff 489.
+- 2026-10-26 S487 SkyHuckleberry (the CPL Queue routine): Hartnell's pooled subject lists; a `pool_lists` reconcile step, General Studies 17912 passes, Hartnell 80 of 94 (#2463); full checkpoint, handoff 488.
