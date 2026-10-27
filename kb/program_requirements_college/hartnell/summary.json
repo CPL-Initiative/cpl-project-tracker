@@ -2,7 +2,7 @@
  "college": "Hartnell College",
  "programs": 112,
  "with_closed_list": 105,
- "found": 93,
+ "found": 94,
  "extracted": 94,
  "errors": 0,
  "passed_machine_checks": 82,
@@ -75,33 +75,7 @@
    "near_miss": {
     "why": "no page read names the program"
    }
-  },
-  {
-   "control_number": "43821",
-   "title": "Foundations of Agricultural Mechatronics",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.MECHA/requirements-ipyf8",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "textContent",
-    "coverage": 0.091,
-    "body": 0.0,
-    "content": 0.091,
-    "net": 1,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 1 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1228,
-     "content": 601058,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
   }
  ],
- "run": "40452134609"
+ "run": "40314109801"
 }

@@ -157,8 +157,7 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": [],
-   "ge_overlap": true
+   "careers": []
   },
   "blocks": [
    {
@@ -417,14 +416,119 @@
    "The section heading is taken from the major-course heading because the program's own heading is not in the text."
   ]
  },
- "extracted_run": 40452134609,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_overlap",
+   "field": "course_units",
    "was": null,
-   "now": true,
-   "words": "Students can double-count required courses and courses for General Education"
+   "now": {
+    "NRN110": [
+     1,
+     1
+    ],
+    "NRN46": [
+     6.5,
+     6.5
+    ],
+    "NRN47": [
+     1.5,
+     1.5
+    ],
+    "NRN48": [
+     1,
+     1
+    ],
+    "NRN49": [
+     1.5,
+     1.5
+    ],
+    "NRN56": [
+     8,
+     8
+    ],
+    "NRN57": [
+     0.5,
+     0.5
+    ],
+    "NRN58": [
+     0.5,
+     0.5
+    ],
+    "NRN66": [
+     8,
+     8
+    ],
+    "NRN76": [
+     7,
+     7
+    ],
+    "NRN77": [
+     1,
+     1
+    ],
+    "NRN50.41": [
+     0.5,
+     0.5
+    ],
+    "NRN50.42": [
+     0.5,
+     0.5
+    ],
+    "NRN50.43": [
+     0.5,
+     0.5
+    ],
+    "NRN50.44": [
+     0.5,
+     0.5
+    ],
+    "NRN225": [
+     1,
+     1
+    ],
+    "NRN226": [
+     1,
+     1
+    ],
+    "NRN227": [
+     0.5,
+     0.5
+    ],
+    "NRN228": [
+     0.5,
+     0.5
+    ],
+    "BIO18": [
+     3,
+     3
+    ],
+    "HES1": [
+     3,
+     3
+    ],
+    "HES2": [
+     3,
+     3
+    ],
+    "HES3": [
+     3,
+     3
+    ],
+    "HES80": [
+     3,
+     3
+    ],
+    "LIB6": [
+     1,
+     1
+    ],
+    "NUTR1": [
+     3,
+     3
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": 39949570443
+ "read_run": "39895340003"
 }

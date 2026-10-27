@@ -3542,10 +3542,11 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.565,
+  "coverage": 0.696,
   "codes_found": [
-   "ABT57",
+   "ABT93",
    "ABT99",
+   "CMA74",
    "MFGT110",
    "MFGT111A",
    "MFGT111B",
@@ -3555,8 +3556,10 @@
    "MFGT114",
    "MFGT130",
    "MFGT131",
+   "MFGT132",
    "MFGT71",
-   "WLD150"
+   "WLD150",
+   "WLD151"
   ],
   "source": {
    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.MECHA/requirements-ipyf8",
@@ -3572,19 +3575,43 @@
    }
   },
   "listed": 23,
-  "text_chars": 2675
+  "text_chars": 2855
  },
  {
   "control_number": "43821",
   "title": "Foundations of Agricultural Mechatronics",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABT57",
+   "BUS50",
+   "CMA74",
+   "CMA81",
+   "MFGT110",
+   "MFGT111A",
+   "MFGT111B",
+   "MFGT112A",
+   "MFGT112B",
+   "MFGT130",
+   "WLD150"
+  ],
+  "source": {
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.MECHA/requirements-ipyf8",
+   "title": "CT.MECHA Program | Hartnell College Catalog",
+   "h1": "Hartnell College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 1974
  },
  {
   "control_number": "43883",
