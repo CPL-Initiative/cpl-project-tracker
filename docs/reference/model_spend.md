@@ -26,7 +26,7 @@ private: `CPLBrain/07-session-notes/2026-10-27-api-spend-trace.md`.
 | Jev (TypeSafe) | Jev | Repo secret `TYPESAFE_API_KEY` | `typesafe-smoke.yml`, dispatch only |
 | Grok (the second reader) | xAI | `XAI_API_KEY` | `second-reader.yml`, `xai-smoke.yml`, dispatch only |
 | `kb/*.py` scripts naming `claude-opus-4-7` (classify, seeds, curation) | `claude-opus-4-7` | Whatever key the person running them holds | By hand |
-| Claude Code sessions, the queue routine included | `claude-opus-5-5` | The Claude plan, unless a client is signed in with an API key | People and Sam's routines |
+| Claude Code sessions, the queue routine included | `claude-opus-5-5` | The Team plan's seats first; past a seat's limits, the Console organization's API credits at API rates (the credit balance serves "the API, Claude Code, and playground"), refilled from the card while auto-reload is on | People, Sam's routines, and teammates on the same Team plan |
 
 Supabase secrets are project-wide, so every function in a project reads the same
 `ANTHROPIC_API_KEY`. No code or log here can see which Console key that secret
@@ -64,6 +64,14 @@ handful of session ids a day are the smoke test too.
 **Every other function.** Count invocations in `function_edge_logs` by
 `function_id` (ids from `list_edge_functions`). One invocation is about one model
 call for the extractor and the classifier.
+
+**Claude Code's overflow.** The largest spend measured here (2026-10-26 and 27) was
+Claude Code past the Team plan's limits, billed to the Console credits under the key
+the Team plan's API-credit setup made. Its signature on the Cost page, grouped by token
+type: nearly all prompt-cache reads and 5-minute cache writes, almost no uncached input,
+an agent re-reading a long context at every step (Sierra shows the reverse). With
+auto-reload on, the overflow never stops on its own; with it off, sessions pause at the
+plan's limits. The Team admin's usage page names the member.
 
 **The Console.** Cost page, filtered by API key and grouped by model, is the bill
 itself. A workspace spend limit can cap a key's monthly spend and send alerts at
