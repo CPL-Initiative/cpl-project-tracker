@@ -21332,7 +21332,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 783
+     "line": 810
     }
    ],
    "main_committers": []
@@ -21749,7 +21749,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 635
+     "line": 662
     }
    ],
    "main_committers": []
@@ -21780,7 +21780,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 403
+     "line": 430
     }
    ],
    "main_committers": []
@@ -21799,7 +21799,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 475
+     "line": 502
     }
    ],
    "main_committers": []
@@ -21906,7 +21906,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1243
+     "line": 1270
     }
    ],
    "main_committers": []
@@ -24136,7 +24136,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1220
+     "line": 1247
     },
     {
      "id": "script:kb/_identity_daily_check.py",
@@ -24504,7 +24504,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 865
+     "line": 892
     },
     {
      "id": "script:scripts/catalog_framing.py",
@@ -24799,7 +24799,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1266
+     "line": 1293
     }
    ],
    "main_committers": []

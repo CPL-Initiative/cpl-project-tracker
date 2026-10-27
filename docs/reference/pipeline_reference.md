@@ -542,11 +542,34 @@ reuse, so keep it self-contained behind its CONFIG block.
   Cross-cutting rules go in a **module-level const appended to every mode's prompt**,
   not inlined per-mode. `cpl_chat.js` sends `history`; the production widget omits it
   and stays single-turn (backward-compatible — never regress that).
-- **Smoke-test on a RUNNER, not the sandbox.** `*.supabase.co` is egress-blocked
-  (org policy → 403 at the agent proxy), so you can't curl the function locally.
-  `chatbox/smoke_test.sh` + `.github/workflows/cpl-chat-smoke.yml` run all 4 modes +
-  a multi-turn follow-up on a GitHub Actions runner (push the script → read the
-  Actions log). Re-run after every redeploy.
+- **Smoke-test on a RUNNER, once per deploy (Sam, 2026-10-27).** `*.supabase.co` is
+  egress-blocked (org policy → 403 at the agent proxy), so `chatbox/smoke_test.sh`
+  runs on a GitHub Actions runner through `.github/workflows/cpl-chat-smoke.yml`.
+  Every `run()` in it is one billed Sierra answer, 33 in all; on 2026-10-26 and 27 it
+  ran about 20 times and asked about 95% of her questions
+  ([`docs/reference/model_spend.md`](model_spend.md) has the measurement and the queries). Five steps:
+  1. **One run per deploy.** `cpl-chat-deploy.yml` calls the smoke after it deploys
+     cpl-chat. The smoke has no push trigger: it asks the live function, and a push
+     to a branch changes nothing live. Read the deploy run's smoke job; dispatch no
+     second full run.
+  2. **Re-check only what failed.** Dispatch `cpl-chat-smoke.yml` with `modes=`
+     naming the failed modes by the first word of their label (`7x`, or `7x,9`): one
+     or two answers. Re-check after a change that could move the answer, and give a
+     mode known to vary (7c's precedent, 9's route time limit) one re-check, no more.
+     A new or changed mode is verified the same way, with `modes=` naming it.
+  3. **A/B only before a deploy that could move her answers.**
+     `cpl-chat-preview-ab.yml` asks the suite twice, about 66 answers. Pass `modes=`
+     with the modes the change can reach when you know them: a mode that cannot reach
+     the changed code cannot regress from it.
+  4. **A capped key for tests waits for Sam.** Supabase secrets are project-wide, so
+     cpl-chat and its preview read one `ANTHROPIC_API_KEY`. A separate test key would
+     take a Console key in its own workspace with a spend limit, a second secret, and a
+     cpl-chat change that picks it for smoke requests. Sam, 2026-10-27: *"let's not be
+     drastic with her--she's doing great right now"*. Build it only when he asks.
+  5. **Retrieval is her largest cost per answer, and its makeup is unmeasured**
+     (about 30,600 uncached input tokens a question). Any cap starts by splitting the
+     input in her log line (prefix, retrieval, history, question), then an A/B of the
+     cap, then Sam's go before a deploy.
 - **Heading toward "Sierra" + the CPL Student Portal.** Sam: the assistant will be
   named **Sierra** and embedded in the upcoming **CPL Student Portal** (students
   assemble a prior-learning portfolio + document storage + statewide

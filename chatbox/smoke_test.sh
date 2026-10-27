@@ -33,6 +33,24 @@ REST_BASE="${CPL_REST_BASE:-${URL%%/functions/*}/rest/v1}"
 
 fail=0
 
+# ── THE MODE FILTER (Sam, 2026-10-27) ────────────────────────────────────────
+# Every run() below is one Sierra answer billed to her Anthropic key, and the whole
+# file asks 33. On 2026-10-26 and 27 this file ran about 20 times (pushes to branches
+# that touched her code, merges of main into them, and re-runs of a failed mode); with
+# one A/B and the health check it asked about 95% of her questions those two days
+# (docs/reference/model_spend.md). SMOKE_MODES names the modes to
+# ask, comma-separated, by the first word of their run() label: 7c, 9, 15a; "7v" asks
+# both 7v turns. Empty asks every mode. The PostgREST checks (7r, 12, 15d, 16r) make
+# no model call and always run. Procedure: docs/reference/pipeline_reference.md §7c.
+SMOKE_MODES="${SMOKE_MODES:-}"
+SKIP_MODE=0   # 1 while the last run() was not asked; its assertions then pass over it
+asked=0
+mode_selected() { # label
+  [ -z "$SMOKE_MODES" ] && return 0
+  case ",${SMOKE_MODES// /}," in *",${1%% *},"*) return 0 ;; esac
+  return 1
+}
+
 # Write the SSE parser to a file ONCE. (Don't inline it as `python3 - <<'PY'`
 # inside a function that also receives piped data — the heredoc becomes python's
 # stdin and the piped SSE never reaches sys.stdin.read(), so every answer parses
@@ -62,6 +80,8 @@ LAST_ANSWER=""   # captured text of the most recent run(), for assertions
 run() { # label  json-body
   local label="$1" body="$2"
   LAST_ANSWER=""
+  if ! mode_selected "$label"; then SKIP_MODE=1; echo "skipped (SMOKE_MODES): $label"; return; fi
+  SKIP_MODE=0; asked=$((asked + 1))
   echo "===================================================================="
   echo "MODE: $label"
   echo "REQUEST: $body"
@@ -110,6 +130,7 @@ run() { # label  json-body
 # The same match, on the HEAD of the answer only: the direct answer must come
 # FIRST (Sam, 2026-09-18: "give the most direct answer to the direct question").
 answer_head_must_match() { # [-i] chars regex label
+  [ "${SKIP_MODE:-0}" = 1 ] && return 0   # its run() was not asked (SMOKE_MODES)
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local chars="$1" re="$2" label="$3"
   if printf '%s' "$LAST_ANSWER" | head -c "$chars" | grep -E $flag -q -- "$re"; then
@@ -124,6 +145,7 @@ answer_head_must_match() { # [-i] chars regex label
 # production with a CNA course — Golden West NURS G060N, then Santa Ana VHLTH
 # 101 — the program that trains the credential the visitor already holds.
 answer_head_must_not_match() { # [-i] chars regex label
+  [ "${SKIP_MODE:-0}" = 1 ] && return 0   # its run() was not asked (SMOKE_MODES)
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local chars="$1" re="$2" label="$3"
   if printf '%s' "$LAST_ANSWER" | head -c "$chars" | grep -E $flag -q -- "$re"; then
@@ -135,6 +157,7 @@ answer_head_must_not_match() { # [-i] chars regex label
 
 # Content assertions on the LAST run()'s answer. Optional leading -i = ignore case.
 answer_must_match() {     # [-i] regex label
+  [ "${SKIP_MODE:-0}" = 1 ] && return 0   # its run() was not asked (SMOKE_MODES)
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2"
   if printf '%s' "$LAST_ANSWER" | grep -E $flag -q -- "$re"; then
@@ -144,6 +167,7 @@ answer_must_match() {     # [-i] regex label
   fi
 }
 answer_must_not_match() { # [-i] regex label
+  [ "${SKIP_MODE:-0}" = 1 ] && return 0   # its run() was not asked (SMOKE_MODES)
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2"
   if printf '%s' "$LAST_ANSWER" | grep -E $flag -q -- "$re"; then
@@ -193,6 +217,7 @@ answer_must_not_match() { # [-i] regex label
 # sed against the recorded answers that went red (runs 34621090976, 34639257647,
 # 35279516157 and 35281579500) and against controls that must stay red.
 answer_must_not_match_unnegated() { # [-i] regex label
+  [ "${SKIP_MODE:-0}" = 1 ] && return 0   # its run() was not asked (SMOKE_MODES)
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2" stripped
   stripped="$(printf '%s' "$LAST_ANSWER" | sed -E \
@@ -239,6 +264,7 @@ answer_must_not_match_unnegated() { # [-i] regex label
 # an articulation or exhibit within a few words; "has yet set up a formal LVN program"
 # still fails.
 answer_must_not_claim_absence() { # [-i] regex label
+  [ "${SKIP_MODE:-0}" = 1 ] && return 0   # its run() was not asked (SMOKE_MODES)
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2" stripped
   # Markdown emphasis first: run 36951885947 (2026-10-02) wrote "none of the three
@@ -271,6 +297,7 @@ answer_must_not_claim_absence() { # [-i] regex label
 # that still fails loudly. Pass patterns, not a single alternation, so the
 # failure message can say WHICH ones were missing.
 answer_must_name_at_least() { # [-i] count label pattern...
+  [ "${SKIP_MODE:-0}" = 1 ] && return 0   # its run() was not asked (SMOKE_MODES)
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local need="$1" label="$2"; shift 2
   local total=$# hits=0 found="" missed="" p
@@ -1407,8 +1434,17 @@ run "17 could-adopt credentials carry MAP's Quick Adopt link (Norco)" \
 answer_must_match -i "Norco" "17 host named"
 answer_must_match "cpldashboardcccco\.azurewebsites\.net/insights/exhibit-courses\?Exhibit=" "17 ⭐ a MAP link searched for an exhibit"
 
+if [ -n "$SMOKE_MODES" ] && [ "$asked" -eq 0 ]; then
+  echo "::error::SMOKE_MODES=$SMOKE_MODES matched no mode: name each by the first word of its run() label (7c, 9, 15a)"
+  fail=1
+fi
 if [ "$fail" -ne 0 ]; then
   echo "SMOKE TEST FAILED"
   exit 1
 fi
-echo "ALL MODES OK"
+# The A/B harness reads "ALL MODES OK", so a filtered run keeps the phrase.
+if [ -n "$SMOKE_MODES" ]; then
+  echo "ALL MODES OK (asked only $SMOKE_MODES: $asked answers)"
+else
+  echo "ALL MODES OK"
+fi
