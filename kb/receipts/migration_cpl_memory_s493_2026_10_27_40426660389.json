@@ -1,0 +1,10 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_s493_2026-10-27.sql",
+ "name": "cpl_memory_s493_2026_10_27",
+ "version": "20261027003419",
+ "sha256": "d12392710b9fde46495766674dd0bee79195f13ee53c56023be6b56bd120696f",
+ "run": "40426660389",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23502: null value in column \\\"related\\\" of relation \\\"cpl_memory\\\" violates not-null constraint\\nDETAIL:  Failing row contains (8fd81cdc-3d3f-43b1-9987-7cd2370aeed9, 2026-10-27 00:34:20.278395+00, 2026-10-27 00:34:20.278395+00, decision, Sam, Open Asks Sheet 134, 00:09Z 2026-10-27, both his own call, ..., null, cpl, t, null, {my-college-action-page,map-link,could-adopt,decision-sheets}, Open Asks Sheet 134 replies store (https://claude.ai/artifact/9G..., {}, null, verified, null, internal, 2026-10-27, memory-s493-checkpoint-2026-10-27, 2026-10-27 00:34:20.278395+00, Sam (sheet reply), null, sam-sheet-134-rulings-2026-10-27, null, Sam's Sheet 134 rulings: the Could Adopt chip names MAP's builde...).\\n\"}"
+}
