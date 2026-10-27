@@ -54,10 +54,13 @@ None; he started the session with the queue. No card is open (Sheet 134 answered
 3. **The morning of 10-30:** `npm run a11y -- funding-model funding-model-sierra funding-model-mycpl funding-model-howto
    funding-public funding-memo funding-film fact-sheet public-library sierra` on main. All ten passed on 2026-10-27, and
    with axe once #2494 merged. ⚠️ Never leave out `funding-model-mycpl`.
-4. **The rest of the axe findings** (serious, internal tabs; the full sweep S494 ran, two batches, *The axe sweep*
-   below): TMC Builder's rows (`role="button"` holding controls, 45), EACR's `summary` targets (59), the Activities
-   metric units' contrast (7), the funding section summary holding a control (1, curator views too), Memory's record
-   status contrast (2). Work them with `/a11y-pass`, triage first.
+4. **The rest of the axe findings** (internal tabs; the whole sweep ran in two batches, 129 targets, *The axe sweep*
+   below). Critical, unnamed selects: the CCR list view (10, `#uc-kind` and its neighbors), the Common Subjects
+   table (`#cs-filter`), MAP Users' roster (`.mapu-select`). Serious: TMC Builder's rows (`role="button"` holding
+   controls, 45), EACR's `summary` targets (59 on the matrix, 1 on the table), Program Requirements' filter target
+   (1), the funding section summary holding a control (1, curator views too), the Activities metric units' contrast
+   (7), Memory's record status contrast (2). CER Procedures' two targets timed out in their seed under load; run
+   them alone. Work them with `/a11y-pass`, triage first; a select's fix is an `aria-label` or a tied `<label>`.
 5. Carried: Malone's tab parameter for `mapLink()` (MAP reads `exhibit`, `Exhibit`, `search` only); Sierra 7q (*"an
    inactive COCI record"*), Hartnell CalGETC 45096, the daytime Library run, Music 43887 and RN 03570, the Commons
    figures to-do, the harvest lane file's size (`oversized_doc`, 20,753 of 20,000).
@@ -65,7 +68,8 @@ None; he started the session with the queue. No card is open (Sheet 134 answered
 ## The axe sweep (S494)
 
 The first full `scripts/a11y.js` run with axe crashed at target 47 of 129 (governance-editor's seed timed out under
-load; it passes alone). The runner now fails such a target and goes on; the remaining 82 ran in a second batch.
+load; it passes alone). The runner now fails such a target and goes on; the remaining 82 ran in a second batch
+(18 failed checks across 81 routes, all listed in open work 4; two of them CER Procedures' seed timeouts).
 Findings are in the open work above. Production smoke after the Sierra deploy: attempt 1 failed only 7x (the ELL IET
 answer named one grantee), attempt 2 only mode 9 (`Search failed`, a vector-search timeout before the new code runs).
 Neither mode reaches the change; `cpl_memory` `risk-smoke-7x-and-9-load-flakes-2026-10-27`.
