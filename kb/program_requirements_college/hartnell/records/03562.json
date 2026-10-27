@@ -140,7 +140,8 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -294,75 +295,14 @@
    "No program learning outcomes or careers appear in the text (only the Requirements tab was captured)."
   ]
  },
- "extracted_run": 39949570443,
+ "extracted_run": 40466933762,
  "reconciled": [
   {
-   "field": "course_units",
+   "field": "ge_overlap",
    "was": null,
-   "now": {
-    "CMA74": [
-     3,
-     3
-    ],
-    "MFGT110": [
-     2,
-     2
-    ],
-    "WLD150": [
-     3,
-     3
-    ],
-    "WLD151": [
-     3,
-     3
-    ],
-    "WLD152": [
-     2,
-     2
-    ],
-    "WLD153": [
-     3,
-     3
-    ],
-    "WLD154": [
-     3,
-     3
-    ],
-    "WLD155": [
-     2,
-     2
-    ],
-    "WLD156": [
-     2,
-     2
-    ],
-    "WLD157": [
-     3,
-     3
-    ],
-    "WLD158": [
-     2,
-     2
-    ],
-    "CMA75": [
-     3,
-     3
-    ],
-    "CMA81": [
-     3,
-     3
-    ],
-    "MFGT130": [
-     3,
-     3
-    ],
-    "WLD99": [
-     1,
-     8
-    ]
-   },
-   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
+   "now": true,
+   "words": "Students can double-count required courses and courses for General Education"
   }
  ],
- "read_run": 39931703521
+ "read_run": 39949570443
 }
