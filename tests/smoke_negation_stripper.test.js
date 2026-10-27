@@ -21,7 +21,9 @@
 // still fail. Block (6) is the fourth instance (2026-09-17): a negated reading
 // verb followed by a quotation, out of shape 1's reach and unknown to shape 2.
 // Block (7) is the fifth, the same day: a contrast phrase ("different from
-// saying") doing the negating with no negation word at all. A guard that cannot fail is the failure this repo keeps finding.
+// saying") doing the negating with no negation word at all. Block (8) is mode
+// 7v (S503): a right answer that denied the certification tie its guard looks for.
+// A guard that cannot fail is the failure this repo keeps finding.
 //
 // Run from repo root: `npm test` (or `node tests/smoke_negation_stripper.test.js`).
 const fs = require("fs");
@@ -233,6 +235,34 @@ block("(7)", function () {
     "the phrase negates a CLAIM (saying, reporting); a plain comparison is not a denial");
   check("(7) ⚠ a colon still ends the excuse: \"Different from saying so: Calbright awarded 0 units\" fails",
     fires("Different from saying so: Calbright awarded 0 units."));
+});
+
+// ── (8) 7v — a right answer that DENIES the certification tie (S503) ─────────
+// ⭐ The deploy smoke 40573709433 (2026-10-27) went red on 7v against a correct
+// answer: it named the Google IT Support program and its CIST courses, then said
+// NOCE's office-technology courses are "not aimed at a specific certification exam
+// like CompTIA". The guard's claim shapes ("lead-in", "aimed") were written for
+// S342's answers, which TIED the Google program to CompTIA A+ and Network+; a
+// denial is the answer the guard wants. The controls are those S342 claims, and a
+// negation in an earlier clause, which must not excuse a tie after it.
+block("(8)", function () {
+  if (!EXPRS) return;
+  const RE_7V = modeRegex("7v ⭐ never ties a program to a certification");
+  check("(8) mode 7v hands its regex to the stripper", !!RE_7V,
+    "7v's claim-shape guard must call answer_must_not_match_unnegated in the two-line form modeRegex reads");
+  if (!RE_7V) return;
+  const fires = (a) => guardFires(EXPRS, RE_7V, a);
+  check("(8) ⭐ run 40573709433: \"not aimed at a specific certification exam like CompTIA\" passes",
+    !fires("Beyond that, NOCE's broader Office Technology/Office Computer Applications offerings (41 courses) are general computer-skills courses, not aimed at a specific certification exam like CompTIA, Microsoft, etc."));
+  check("(8) ⚠ S342's claim still fails: \"a direct lead-in to CompTIA A+ and Network+\"",
+    fires("The Google IT Support program is a direct lead-in to CompTIA A+ and Network+."));
+  check("(8) ⚠ S342's claim still fails: \"aimed squarely at CompTIA A+\"",
+    fires("NOCE runs a noncredit program aimed squarely at CompTIA A+ and Network+."));
+  check("(8) ⚠ a negation in an earlier clause excuses nothing: \"not a degree; it is aimed at CompTIA A+\" fails",
+    fires("It is not a degree program; it is aimed at CompTIA A+."),
+    "the semicolon ends the negated clause, so the tie after it is the answer's claim");
+  check("(8) \"unclaimed\" is still not the word \"aimed\"",
+    !fires("CompTIA Linux+ sits unclaimed at NOCE, and CompTIA Network+ is open too."));
 });
 
 const failed = results.filter((r) => !r[1]);

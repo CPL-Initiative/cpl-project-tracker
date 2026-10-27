@@ -970,7 +970,12 @@ answer_must_match -i "Google IT Support" "7v names the Google IT Support program
 # matched as whole words because "aimed" sits inside "unclaimed", which the deployed
 # answer used correctly about CompTIA Linux+ (post-deploy smoke 37696012819); and the
 # course list's duplicate spelling read as a second college "about 1 mile away".
-answer_must_not_match -i "\b(lead-in|aimed)\b[^.]{0,120}(CompTIA|Network\+)" "7v ⭐ never ties a program to a certification its titles do not name"
+# S503: the deploy smoke 40573709433 went red on a right answer that DENIED the tie
+# ("general computer-skills courses, not aimed at a specific certification exam like
+# CompTIA"), so the claim shapes run through the negation stripper;
+# tests/smoke_negation_stripper.test.js block (8) holds that answer and the controls.
+answer_must_not_match_unnegated -i "\b(lead-in|aimed)\b[^.]{0,120}(CompTIA|Network\+)" \
+  "7v ⭐ never ties a program to a certification its titles do not name"
 answer_must_not_match -i "Continuing Education Credit|about 1 mile" "7v ⭐ NOCE's second spelling in the course list is not a second college"
 run "7v follow-up after a wrong 'no data' reply (COCI is not College of the Canyons)" \
   "$(printf '{"query":"You have the noncredit courses in COCI and the MIS program and course dataset. Check again and let me know.","session_id":"smoke-ci","history":[{"role":"user","content":"%s"},{"role":"assistant","content":"I do not have North Orange Continuing Education noncredit course catalog data in front of me, so I cannot confirm specific IT certification prep courses."}]}' "$NOCE_QUESTION")"
