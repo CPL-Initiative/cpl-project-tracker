@@ -209,7 +209,9 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                             continue
                         seen.add(k)
                         courses.append(c)
-                merged = {"name": st.get("name", "Area {area}").replace("{area}", area), "rule": "choose_units",
+                title = (m.groupdict().get("title") or "").strip()
+                name = st.get("name", "Area {area}").replace("{area}", area).replace("{title}", title)
+                merged = {"name": name, "rule": "choose_units",
                           "minimum": n, "option_group": None, "stated": {"min": n, "max": n}, "courses": courses,
                           "floors": [{"name": blocks[i].get("name"), "rule": blocks[i].get("rule"),
                                       "minimum": blocks[i].get("minimum"), "stated": blocks[i].get("stated")}
