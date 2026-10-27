@@ -899,7 +899,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 958,
+     "line": 977,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -1231,6 +1231,16 @@
      "line": 2822,
      "tabs": [
       "cpl-pathways"
+     ]
+    },
+    {
+     "id": "module:statewide_interactive.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 844,
+     "tabs": [
+      "vision-2030"
      ]
     },
     {
@@ -2371,7 +2381,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 681,
+     "line": 690,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -4919,7 +4929,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 928,
+     "line": 947,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -5097,7 +5107,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 930,
+     "line": 949,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -5283,7 +5293,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 218
+     "line": 223
     }
    ],
    "served": true,
@@ -5438,6 +5448,13 @@
      "direction": "read",
      "how": "markup",
      "line": 101
+    },
+    {
+     "id": "page:library/cpl-opportunity/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 222
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -14805,6 +14822,16 @@
   "file:kb/reference/map_cpl_opportunities_verified.json": {
    "consumers": [
     {
+     "id": "module:statewide_interactive.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 848,
+     "tabs": [
+      "vision-2030"
+     ]
+    },
+    {
      "id": "script:kb/_verify_map_exhibit_links.py",
      "kind": "script",
      "direction": "read",
@@ -18082,7 +18109,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 275
+     "line": 280
     },
     {
      "id": "page:library/dsp-credit-starting-points/index.html",
@@ -18214,7 +18241,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 929,
+     "line": 948,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -18225,7 +18252,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2581,
+     "line": 2639,
      "tabs": [
       "vision-2030"
      ]
@@ -18347,7 +18374,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 93
+     "line": 97
     }
    ],
    "producers": [
@@ -18392,7 +18419,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2582,
+     "line": 2640,
      "tabs": [
       "vision-2030"
      ]
@@ -20303,7 +20330,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 929,
+     "line": 948,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -20650,7 +20677,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 928,
+     "line": 947,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -24356,7 +24383,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 915,
+     "line": 934,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -24432,7 +24459,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 910,
+     "line": 929,
      "tabs": [
       "college-briefing",
       "cpl-pathways"

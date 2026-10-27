@@ -15,6 +15,9 @@
 //      (Moreno Valley's "ACC-1A") does too
 //   8. each Could Adopt link opens MAP already searched for its exhibit ID (?Exhibit=, live
 //      2026-10-26), so nothing is copied and no reader is told to paste
+//   9. a credential joining several colleges' exhibits shows each ID with a chip naming the
+//      college MAP records as its builder, each opening MAP searched for its own ID (Sam,
+//      2026-10-26; the row's one link opened only the first ID)
 //
 // Run from repo root: `npm test` (or `node tests/college_cpl_workbook.test.js`).
 const fs = require("fs");
@@ -237,6 +240,39 @@ check("every notes file parses, names its college and date, and is named by its 
   return j && typeof j.college === "string" && /^\d{4}-\d{2}-\d{2}$/.test(j.updated || "") && (f === W.notesSlug(j.college) + ".json" || f === W.notesSlug(j.college) + ".draft.json") &&
     (!j.sections || Array.isArray(j.sections)) && (!j.contacts || Array.isArray(j.contacts));
 }), notesFiles.join(", "));
+
+// 9. One chip per verified ID, named for the college that built it in MAP, each with its own link.
+const swChips = JSON.parse(JSON.stringify(statewide));
+swChips.exhibits[0].exhibit_ids = ["MAPICI-CN-1-001", "MAPICI-CN2-1-001", "MAPICI-CN3-1-001", "MAPICI-CNX-1-001"];
+const bChips = W.build({ college: COLLEGE, today: "2026-10-26", lookup: lookup, members: members, aligned: aligned,
+  statewide: swChips, programs: programs, catalog: catalog,
+  shortName: function (n2) { return { "Saddleback College": "Saddleback", "West Los Angeles College": "West LA" }[n2] || n2; },
+  verified: { checked_at: "2026-10-26T23:00Z", found: {
+    "MAPICI-CN-1-001": { title: "Network+ v1", college: "Saddleback College", college_id: 16 },
+    "MAPICI-CN2-1-001": { title: "Network+", college: "West Los Angeles College", college_id: 115 },
+    "MAPICI-CN3-1-001": { title: "Network+ (older read)" } } } });
+const nwChips = bChips.swRows.find(function (r) { return r.title === "CompTIA Network+"; });
+check("each verified ID becomes a chip with its builder's short name; an unlisted ID gets none",
+  nwChips.chips.length === 3 && nwChips.chips[0].short === "Saddleback" && nwChips.chips[1].short === "West LA" &&
+  nwChips.chips.every(function (c) { return c.id !== "MAPICI-CNX-1-001"; }));
+const htmlChips = W.pageHtml(bChips);
+check("each chip opens MAP searched for its own ID, not the first",
+  /<a class="cpo-chip" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN-1-001"[^>]*>Saddleback/.test(htmlChips) &&
+  /<a class="cpo-chip" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN2-1-001"[^>]*>West LA/.test(htmlChips));
+check("a chip names its builder in full for a screen reader", /West LA<span class="cpo-sr"> \(built by West Los Angeles College; opens MAP searched for MAPICI-CN2-1-001\)/.test(htmlChips));
+check("an ID MAP lists without a recorded builder still links, as View in MAP",
+  /Exhibit=MAPICI-CN3-1-001"[^>]*>View in MAP<span class="cpo-sr"> \(opens MAP searched for MAPICI-CN3-1-001\)/.test(htmlChips));
+check("the row's status names each ID's builder", /MAPICI-CN-1-001 \(built by Saddleback College\), MAPICI-CN2-1-001 \(built by West Los Angeles College\), MAPICI-CN3-1-001 listed/.test(nwChips.linkStatus));
+check("the row's own Could Adopt link still opens the first verified ID", nwChips.link === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CN-1-001");
+check("the visual says the chip is the builder and MAP's table lists articulating colleges",
+  /the college that built it in MAP opens MAP searched for that ID; MAP's table lists the colleges that articulated it\./.test(htmlChips));
+check("with no short-name helper a chip shows the full college name",
+  W.build({ college: COLLEGE, today: "x", lookup: lookup, members: members, aligned: aligned, statewide: swChips, programs: programs, catalog: catalog,
+    verified: { checked_at: "2026-10-26T23:00Z", found: { "MAPICI-CN2-1-001": { college: "West Los Angeles College" } } } })
+    .swRows.find(function (r) { return r.title === "CompTIA Network+"; }).chips[0].short === "West Los Angeles College");
+check("the shareable page loads the short-name helper before the builder",
+  page.indexOf('src="../../college_short_names.js"') > 0 && page.indexOf('src="../../college_short_names.js"') < page.indexOf('src="../../college_cpl_workbook.js"'));
+check("a chip is a 24px target with an underline", /\.cpo-chip \{[^}]*min-height: 24px;[^}]*text-decoration: underline;/.test(page));
 
 setTimeout(function () {
 let pass = 0;

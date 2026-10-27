@@ -129,6 +129,14 @@ half landed with the 2026-09-24 17:03 UTC build, and every card carries
     the literals drift); two or none → the tab opens and asks, as it always
     does.
 
+✅ **EVERY COULD-ADOPT CLAIM CARRIES THE WAY TO ACT ON IT IN MAP (Sam, 2026-10-26: "the same MAP link on every public
+surface that suggests an adoption"; S493, #2485).** Beside each ID in a card's aligned-exhibits list, a chip names the
+college that built it (MAP's owner field) and opens MAP's CPL Opportunities page searched for that ID (`?Exhibit=`,
+Malone, 2026-10-26), where Request Quick Adopt sits. Under the could-adopt block, the near-me band and the table's Could
+Adopt column, one line of chips, one per building college, at most six (a card can fold 55 IDs from 48 builders, CLEP
+Western Civilization 1) and then *and N more*. Links only for IDs `kb/reference/map_cpl_opportunities_verified.json`
+lists (6,418 of 6,418, 2026-10-26); no file, no links. Guard `tests/eacr_map_links.test.js`.
+
 **Standing rulings that survive:** brown is the PEER BENCHMARK, never
 `rec_units_total` · columns open on COLLEGES · brown on CREDIBLE cells only ·
 `matrixCell()` is ONE function for grid, panel and CSV · roster rules
