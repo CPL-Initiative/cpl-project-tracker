@@ -21,7 +21,7 @@ function txt(el) { return (el && el.textContent || "").trim(); }
 const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
-check("nav has Our Process button", /data-tab="our-process" role="tab"/.test(cpl));
+check("nav has Our Process button", /class="cpl-tab[^"]*" data-tab="our-process"/.test(cpl));
 check("pane #tab-our-process exists", /id="tab-our-process"/.test(cpl));
 check("mount #our-process-root exists", /id="our-process-root"/.test(cpl));
 check("boot wiring: onActivate('our-process')", /onActivate\('our-process'/.test(cpl));

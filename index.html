@@ -4619,32 +4619,32 @@
         <div class="cpl-sidebar-brand">
             <a href="#" data-tab="dashboard">COBI</a>
         </div>
-        <nav class="cpl-tabs" role="tablist" aria-label="Dashboard sections">
-            <button class="cpl-tab active" data-tab="dashboard" role="tab" aria-selected="true">Dashboard</button>
-            <button class="cpl-tab" data-tab="activities-projects" role="tab" aria-selected="false">Activities</button>
-            <button class="cpl-tab" data-tab="raci" role="tab" aria-selected="false">Team &amp; RACI</button>
-            <button class="cpl-tab" data-tab="map-users" role="tab" aria-selected="false">MAP Users</button>
-            <button class="cpl-tab" data-tab="workplan-goals" role="tab" aria-selected="false">Annual Workplan Goals</button>
-            <button class="cpl-tab" data-tab="budget" role="tab" aria-selected="false">Budget</button>
-            <button class="cpl-tab" data-tab="implementation-funding" role="tab" aria-selected="false">Implementation Funding</button>
-            <button class="cpl-tab" data-tab="contracts" role="tab" aria-selected="false">Contracts</button>
-            <button class="cpl-tab" data-tab="vision-2030" role="tab" aria-selected="false">Vision 2030</button>
-            <button class="cpl-tab" data-tab="military-partnerships" role="tab" aria-selected="false">Military Partnerships</button>
-            <button class="cpl-tab" data-tab="cpl-pathways" role="tab" aria-selected="false">CPL Pathways</button>
-            <button class="cpl-tab" data-tab="nc-learning-partners" role="tab" aria-selected="false">Noncredit &amp; Learning Partners</button>
-            <button class="cpl-tab" data-tab="governance" role="tab" aria-selected="false">Governance</button>
-            <button class="cpl-tab" data-tab="team-phrases" role="tab" aria-selected="false">Team Phrases</button>
+        <nav class="cpl-tabs" aria-label="Dashboard sections">
+            <button class="cpl-tab active" data-tab="dashboard" aria-current="page">Dashboard</button>
+            <button class="cpl-tab" data-tab="activities-projects">Activities</button>
+            <button class="cpl-tab" data-tab="raci">Team &amp; RACI</button>
+            <button class="cpl-tab" data-tab="map-users">MAP Users</button>
+            <button class="cpl-tab" data-tab="workplan-goals">Annual Workplan Goals</button>
+            <button class="cpl-tab" data-tab="budget">Budget</button>
+            <button class="cpl-tab" data-tab="implementation-funding">Implementation Funding</button>
+            <button class="cpl-tab" data-tab="contracts">Contracts</button>
+            <button class="cpl-tab" data-tab="vision-2030">Vision 2030</button>
+            <button class="cpl-tab" data-tab="military-partnerships">Military Partnerships</button>
+            <button class="cpl-tab" data-tab="cpl-pathways">CPL Pathways</button>
+            <button class="cpl-tab" data-tab="nc-learning-partners">Noncredit &amp; Learning Partners</button>
+            <button class="cpl-tab" data-tab="governance">Governance</button>
+            <button class="cpl-tab" data-tab="team-phrases">Team Phrases</button>
             <!-- Admin: the side-menu inventory and, beside it, what actually gates each
                  tab. Deliberately TOP-LEVEL (not in a nav group) and listed in
                  cobi_orgs.js ALWAYS, so it survives the per-site nav filter — it manages
                  the sites, so it must not be filterable out BY one (Sam, 2026-08-14:
                  "should the Admin tab be at the top level so I can manage all the orgs?"). -->
-            <button class="cpl-tab" data-tab="admin" role="tab" aria-selected="false">Admin</button>
-            <button class="cpl-tab" data-tab="map-queue" role="tab" aria-selected="false">MAP Team Queue</button>
-            <button class="cpl-tab" data-tab="college-briefing" role="tab" aria-selected="false">My College</button>
-            <button class="cpl-tab" data-tab="college-identity" role="tab" aria-selected="false">College Identity</button>
-            <button class="cpl-tab" data-tab="annual-report" role="tab" aria-selected="false">Annual Report</button>
-            <button class="cpl-tab" data-tab="unified-courses" role="tab" aria-selected="false">Common Course Reference</button>
+            <button class="cpl-tab" data-tab="admin">Admin</button>
+            <button class="cpl-tab" data-tab="map-queue">MAP Team Queue</button>
+            <button class="cpl-tab" data-tab="college-briefing">My College</button>
+            <button class="cpl-tab" data-tab="college-identity">College Identity</button>
+            <button class="cpl-tab" data-tab="annual-report">Annual Report</button>
+            <button class="cpl-tab" data-tab="unified-courses">Common Course Reference</button>
             <!-- External launch: SkyView in its own FULL WINDOW (Sam, 2026-09-04: "open Skyview from CCR
                  side menu link directly to the full window version of SkyView, not another view"). Inside the
                  Common Course Reference tab SkyView is an IFRAME beside the list, which is the right shape
@@ -4654,25 +4654,25 @@
             <a class="cpl-tab cpl-tab-external" data-nav-link="skyview" href="prototype/skyview.html" target="_blank" rel="noopener"
                style="text-decoration:none;display:block"
                title="Open SkyView — the whole Common Course Reference as a map — full window in a new tab">SkyView</a>
-            <button class="cpl-tab" data-tab="canonical-subj4" role="tab" aria-selected="false">Common Subjects Reference</button>
-            <button class="cpl-tab" data-tab="cr-reference" role="tab" aria-selected="false">Common CR Reference</button>
-            <button class="cpl-tab" data-tab="coci-lookup" role="tab" aria-selected="false">COCI Lookup</button>
-            <button class="cpl-tab" data-tab="cip-crosswalk" role="tab" aria-selected="false">CIP Codes</button>
-            <button class="cpl-tab" data-tab="program-requirements" role="tab" aria-selected="false">Program Requirements</button>
-            <button class="cpl-tab" data-tab="commons" role="tab" aria-selected="false">The Commons</button>
-            <button class="cpl-tab" data-tab="gr-priorities" role="tab" aria-selected="false">GR Priorities</button>
-            <button class="cpl-tab" data-tab="memory" role="tab" aria-selected="false">Memory</button>
-            <button class="cpl-tab" data-tab="map-data-quality" role="tab" aria-selected="false">MAP Data Quality</button>
-            <button class="cpl-tab" data-tab="credential-reference" role="tab" aria-selected="false">Common Exhibit Reference</button>
-            <button class="cpl-tab" data-tab="map-export" role="tab" aria-selected="false">MAP Export</button>
-            <button class="cpl-tab" data-tab="exhibit-adoption" role="tab" aria-selected="false">Exhibit Adoption</button>
-            <button class="cpl-tab" data-tab="tmc-builder" role="tab" aria-selected="false">TMC Builder</button>
-            <button class="cpl-tab" data-tab="pipeline" role="tab" aria-selected="false">Pipeline</button>
-            <button class="cpl-tab" data-tab="our-process" role="tab" aria-selected="false">Our Process</button>
-            <button class="cpl-tab" data-tab="letters" role="tab" aria-selected="false">Letters, Memos &amp; Reports</button>
-            <button class="cpl-tab" data-tab="cpl-news" role="tab" aria-selected="false">CPL News</button>
-            <button class="cpl-tab" data-tab="sierra-training" role="tab" aria-selected="false">Sierra Training</button>
-            <button class="cpl-tab" data-tab="library" role="tab" aria-selected="false">Library</button>
+            <button class="cpl-tab" data-tab="canonical-subj4">Common Subjects Reference</button>
+            <button class="cpl-tab" data-tab="cr-reference">Common CR Reference</button>
+            <button class="cpl-tab" data-tab="coci-lookup">COCI Lookup</button>
+            <button class="cpl-tab" data-tab="cip-crosswalk">CIP Codes</button>
+            <button class="cpl-tab" data-tab="program-requirements">Program Requirements</button>
+            <button class="cpl-tab" data-tab="commons">The Commons</button>
+            <button class="cpl-tab" data-tab="gr-priorities">GR Priorities</button>
+            <button class="cpl-tab" data-tab="memory">Memory</button>
+            <button class="cpl-tab" data-tab="map-data-quality">MAP Data Quality</button>
+            <button class="cpl-tab" data-tab="credential-reference">Common Exhibit Reference</button>
+            <button class="cpl-tab" data-tab="map-export">MAP Export</button>
+            <button class="cpl-tab" data-tab="exhibit-adoption">Exhibit Adoption</button>
+            <button class="cpl-tab" data-tab="tmc-builder">TMC Builder</button>
+            <button class="cpl-tab" data-tab="pipeline">Pipeline</button>
+            <button class="cpl-tab" data-tab="our-process">Our Process</button>
+            <button class="cpl-tab" data-tab="letters">Letters, Memos &amp; Reports</button>
+            <button class="cpl-tab" data-tab="cpl-news">CPL News</button>
+            <button class="cpl-tab" data-tab="sierra-training">Sierra Training</button>
+            <button class="cpl-tab" data-tab="library">Library</button>
             <!-- External launch: the public, standalone CPL Fact Sheet (own page, no COBI nav).
                  NOT a tab (no data-tab) so tabs.js ignores it; opens in a new tab. Mirror this block in the sibling HTML (Rule 4). -->
             <a class="cpl-tab cpl-tab-external" data-nav-link="fact-sheet" href="fact-sheet/" target="_blank" rel="noopener"
@@ -4695,7 +4695,7 @@
     </aside>
     <main class="cpl-main">
 
-    <div class="cpl-tab-pane active" id="tab-dashboard" data-tab="dashboard" role="tabpanel" aria-labelledby="tab-dashboard"
+    <div class="cpl-tab-pane active" id="tab-dashboard" data-tab="dashboard"
         data-sections='[{"slug":"kpis","id":"kpiSectionWrapper","label":"KPI Metrics"},{"slug":"analytics","id":"cplAnalyticsWrapper","label":"CPL Analytics"}]'>
 
     <!-- KPI Summary Cards -->
@@ -5749,7 +5749,7 @@
     </div>
     <!-- /tab-dashboard -->
 
-    <div class="cpl-tab-pane" id="tab-activities-projects" data-tab="activities-projects" role="tabpanel" aria-labelledby="tab-activities-projects"
+    <div class="cpl-tab-pane" id="tab-activities-projects" data-tab="activities-projects"
         data-sections='[{"slug":"metrics","id":"activityKpiSection","label":"Activity Metrics"}]'>
 
     <!-- Actions Bar — slim filter/actions row at the top of the Activities pane
@@ -8122,7 +8122,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
     <!-- /tab-activities-projects -->
 
 
-    <div class="cpl-tab-pane" id="tab-budget" data-tab="budget" role="tabpanel" aria-labelledby="tab-budget"
+    <div class="cpl-tab-pane" id="tab-budget" data-tab="budget"
         data-sections='[{"slug":"funding","id":"budget-funding","label":"5-Year Funding Plan"},{"slug":"expenditure","id":"budget-expenditure","label":"Expenditure"},{"slug":"personnel","id":"budget-personnel","label":"Personnel Plan"}]'>
         <div class="main-container">
 
@@ -8373,7 +8373,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
     </div>
     <!-- /tab-budget -->
 
-    <div class="cpl-tab-pane" id="tab-workplan-goals" data-tab="workplan-goals" role="tabpanel" aria-labelledby="tab-workplan-goals">
+    <div class="cpl-tab-pane" id="tab-workplan-goals" data-tab="workplan-goals">
         <div class="main-container">
 
 
@@ -9480,7 +9480,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-workplan-goals -->
 
-    <div class="cpl-tab-pane" id="tab-vision-2030" data-tab="vision-2030" role="tabpanel" aria-labelledby="tab-vision-2030">
+    <div class="cpl-tab-pane" id="tab-vision-2030" data-tab="vision-2030">
         <div class="main-container">
 
         <!-- Vision 2030 Section -->
@@ -9548,7 +9548,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-vision-2030 -->
 
-    <div class="cpl-tab-pane" id="tab-unified-courses" data-tab="unified-courses" role="tabpanel" aria-labelledby="tab-unified-courses">
+    <div class="cpl-tab-pane" id="tab-unified-courses" data-tab="unified-courses">
         <div class="main-container">
         <style>
             #tab-unified-courses .uc-beta-banner { background:var(--surface-subtle); border:1px solid var(--mustard-fill); color:var(--text-body); padding:10px 14px; border-radius:8px; font-size:.9rem; margin-bottom:14px; }
@@ -9668,7 +9668,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-unified-courses -->
 
-    <div class="cpl-tab-pane" id="tab-canonical-subj4" data-tab="canonical-subj4" role="tabpanel" aria-labelledby="tab-canonical-subj4">
+    <div class="cpl-tab-pane" id="tab-canonical-subj4" data-tab="canonical-subj4">
         <div class="main-container">
         <style>
             #tab-canonical-subj4 .cs-banner { background:#FFF6E0; border:1px solid var(--gold-accent); color:#7a5c00; padding:10px 14px; border-radius:8px; font-size:.9rem; margin-bottom:14px; }
@@ -9844,7 +9844,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-canonical-subj4 -->
 
-    <div class="cpl-tab-pane" id="tab-credential-reference" data-tab="credential-reference" role="tabpanel" aria-labelledby="tab-credential-reference">
+    <div class="cpl-tab-pane" id="tab-credential-reference" data-tab="credential-reference">
         <div class="main-container">
         <style>
             #tab-credential-reference h2 { margin-bottom:4px; }
@@ -9972,7 +9972,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-credential-reference -->
 
-    <div class="cpl-tab-pane" id="tab-map-export" data-tab="map-export" role="tabpanel" aria-labelledby="tab-map-export">
+    <div class="cpl-tab-pane" id="tab-map-export" data-tab="map-export">
         <div class="main-container">
             <!-- MAP Export mounts here. STATIC shell (NOT regenerated by excel_to_dashboard.py);
                  map_export.js (lazy) injects its own CSS, lazy-loads credential_reference_data.js
@@ -9988,7 +9988,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     <!-- /tab-map-export -->
 
     <!-- ═══ Exhibit Adoption Tab (statewide EACR table, moved out of CPL Analytics 2026-05-30) ═══ -->
-    <div class="cpl-tab-pane" id="tab-exhibit-adoption" data-tab="exhibit-adoption" role="tabpanel" aria-labelledby="tab-exhibit-adoption"
+    <div class="cpl-tab-pane" id="tab-exhibit-adoption" data-tab="exhibit-adoption"
         data-sections='[{"slug":"adoption","id":"statewide-interactive-container","label":"Exhibit Adoption table"}]'>
       <div class="main-container">
         <h2 style="color:var(--navy-primary);margin:0 0 4px;">Exhibit Adoption &amp; Credit Recommendations</h2>
@@ -9998,7 +9998,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-exhibit-adoption -->
 
-    <div class="cpl-tab-pane" id="tab-pipeline" data-tab="pipeline" role="tabpanel" aria-labelledby="tab-pipeline"
+    <div class="cpl-tab-pane" id="tab-pipeline" data-tab="pipeline"
         data-sections='[{"slug":"roadmap","id":"pl-section-roadmap","label":"Phase roadmap"},{"slug":"lifecycle","id":"pl-section-lifecycle","label":"M-ID lifecycle"},{"slug":"audit","id":"pl-section-audit","label":"Auditor receipt"},{"slug":"remint","id":"pl-section-remint","label":"Recent re-mint"}]'>
         <div class="main-container">
 
@@ -10050,7 +10050,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
          Lazy-loaded via our_process.js on first #our-process open; the module injects
          its own scoped CSS and renders into #our-process-root.
          Mirror in CPL_Dashboard.html AND index.html (Rule 4). ═══ -->
-    <div class="cpl-tab-pane" id="tab-our-process" data-tab="our-process" role="tabpanel" aria-labelledby="tab-our-process">
+    <div class="cpl-tab-pane" id="tab-our-process" data-tab="our-process">
         <div class="main-container">
             <div id="our-process-root"></div>
         </div>
@@ -10058,7 +10058,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     <!-- /tab-our-process -->
 
     <!-- ═══ Letters Tab (Budget Support Letter Curator) ═══ -->
-    <div class="cpl-tab-pane" id="tab-letters" data-tab="letters" role="tabpanel" aria-labelledby="tab-letters">
+    <div class="cpl-tab-pane" id="tab-letters" data-tab="letters">
         <div class="main-container">
             <!-- Letters, Memos & Reports: one register for every communication the Initiative
                  sends, recipients by MAP roster role, figures from the daily feeds (Sam,
@@ -10073,7 +10073,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-letters -->
 
-    <div class="cpl-tab-pane" id="tab-library" data-tab="library" role="tabpanel" aria-labelledby="tab-library">
+    <div class="cpl-tab-pane" id="tab-library" data-tab="library">
         <div class="main-container">
             <!-- Library: one record per deck, film and document, linking to where the file
                  lives (Sam, 2026-10-05). Read live from cpl_library behind the team phrase.
@@ -10107,7 +10107,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-library -->
 
-    <div class="cpl-tab-pane" id="tab-military-partnerships" data-tab="military-partnerships" role="tabpanel" aria-labelledby="tab-military-partnerships">
+    <div class="cpl-tab-pane" id="tab-military-partnerships" data-tab="military-partnerships">
         <div class="main-container">
             <!-- Veteran Sprint: California colleges × military installations CPL map.
                  STATIC shell (NOT regenerated by excel_to_dashboard.py). Embeds the
@@ -10136,7 +10136,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-military-partnerships -->
 
-    <div class="cpl-tab-pane" id="tab-cpl-pathways" data-tab="cpl-pathways" role="tabpanel" aria-labelledby="tab-cpl-pathways">
+    <div class="cpl-tab-pane" id="tab-cpl-pathways" data-tab="cpl-pathways">
         <div class="main-container">
             <!-- CPL Pathways: apprenticeship-to-baccalaureate course maps with CPL/CLEP
                  check-offs. STATIC shell (NOT regenerated by excel_to_dashboard.py);
@@ -10152,7 +10152,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-cpl-pathways -->
 
-    <div class="cpl-tab-pane" id="tab-nc-learning-partners" data-tab="nc-learning-partners" role="tabpanel" aria-labelledby="tab-nc-learning-partners">
+    <div class="cpl-tab-pane" id="tab-nc-learning-partners" data-tab="nc-learning-partners">
         <div class="main-container">
             <!-- Noncredit & Learning Partners: the ACTIONABLE half of
                  docs/noncredit_cpl_thinking.md — the six modes of Learning Partner CPL,
@@ -10169,7 +10169,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-nc-learning-partners -->
 
-    <div class="cpl-tab-pane" id="tab-team-phrases" data-tab="team-phrases" role="tabpanel" aria-labelledby="tab-team-phrases">
+    <div class="cpl-tab-pane" id="tab-team-phrases" data-tab="team-phrases">
         <div class="main-container">
             <!-- Team Phrases: the shared phrases that unlock COBI's team tabs, and where
                  they are rotated. Listed in the nav for everyone; CONTENTS gated on a
@@ -10182,7 +10182,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
             <div id="team-phrases-root"></div>
         </div>
     </div>
-    <div class="cpl-tab-pane" id="tab-admin" data-tab="admin" role="tabpanel" aria-labelledby="tab-admin">
+    <div class="cpl-tab-pane" id="tab-admin" data-tab="admin">
         <div class="main-container">
             <!-- Admin: every side-menu item, and what actually protects the data behind it.
                  The two halves share one table on purpose — a nav "visibility" setting is a
@@ -10193,7 +10193,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
             <div id="admin-root"></div>
         </div>
     </div>
-    <div class="cpl-tab-pane" id="tab-governance" data-tab="governance" role="tabpanel" aria-labelledby="tab-governance">
+    <div class="cpl-tab-pane" id="tab-governance" data-tab="governance">
         <div class="main-container">
             <!-- Governance: the decision-rights register — who decides what, how far each
                  input is trusted, and which loops actually run. TEAM-GATED (internal
@@ -10208,7 +10208,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-governance -->
 
-    <div class="cpl-tab-pane" id="tab-cr-reference" data-tab="cr-reference" role="tabpanel" aria-labelledby="tab-cr-reference">
+    <div class="cpl-tab-pane" id="tab-cr-reference" data-tab="cr-reference">
         <div class="main-container">
             <!-- Common CR Reference: a canonical vocabulary for credit recommendations — what the
                  CER did for freehand credential titles, for the freehand recommendation text.
@@ -10228,7 +10228,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
 
     
 
-    <div class="cpl-tab-pane" id="tab-contracts" data-tab="contracts" role="tabpanel" aria-labelledby="tab-contracts">
+    <div class="cpl-tab-pane" id="tab-contracts" data-tab="contracts">
         <div class="main-container">
             <!-- Contracts: the FIN site's register of vendor agreements — what each one
                  obligates, what has been reported against it, and the signed paper itself.
@@ -10247,7 +10247,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-contracts -->
 
-    <div class="cpl-tab-pane" id="tab-map-queue" data-tab="map-queue" role="tabpanel" aria-labelledby="tab-map-queue">
+    <div class="cpl-tab-pane" id="tab-map-queue" data-tab="map-queue">
         <div class="main-container">
             <!-- MAP Team Queue: what is waiting on the MAP team, oldest first — the inward-facing
                  half of the "one engine, two audiences" pair (the other half is the college-facing
@@ -10270,13 +10270,13 @@ The work is intended to accelerate CPL exploration while preserving local curric
          could see the absence. STATIC shell (NOT regenerated by
          excel_to_dashboard.py); college_identity.js (lazy) injects its own CSS.
          Rule 4: mirror in CPL_Dashboard.html AND index.html. -->
-    <div class="cpl-tab-pane" id="tab-college-identity" data-tab="college-identity" role="tabpanel" aria-labelledby="tab-college-identity">
+    <div class="cpl-tab-pane" id="tab-college-identity" data-tab="college-identity">
         <div class="main-container">
             <div id="college-identity-root" style="border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); color: var(--text-muted); padding: 28px; text-align: center;">Loading College Identity&hellip;</div>
         </div>
     </div>
 
-    <div class="cpl-tab-pane" id="tab-college-briefing" data-tab="college-briefing" role="tabpanel" aria-labelledby="tab-college-briefing">
+    <div class="cpl-tab-pane" id="tab-college-briefing" data-tab="college-briefing">
         <div class="main-container">
             <!-- College Briefing: the college-facing half of the "one engine, two audiences" pair.
                  The MAP Team Queue leads with AGE ("what is waiting on me?"); this leads with
@@ -10294,7 +10294,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-college-briefing -->
 
-    <div class="cpl-tab-pane" id="tab-cip-crosswalk" data-tab="cip-crosswalk" role="tabpanel" aria-labelledby="tab-cip-crosswalk">
+    <div class="cpl-tab-pane" id="tab-cip-crosswalk" data-tab="cip-crosswalk">
         <div class="main-container">
             <!-- CIP Code Taxonomy: the faculty-facing REFERENCE MANUAL for the TOP→CIP
                  transition (ESS 26-06, fall 2026) — the successor to the CCC TOP Code
@@ -10311,7 +10311,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-cip-crosswalk -->
 
-    <div class="cpl-tab-pane" id="tab-program-requirements" data-tab="program-requirements" role="tabpanel" aria-labelledby="tab-program-requirements">
+    <div class="cpl-tab-pane" id="tab-program-requirements" data-tab="program-requirements">
         <div class="main-container">
             <!-- Program Requirements (Beta draft): the program requirements harvest, read live
                  from program_source_registry and program_requirement_records (anon SELECT):
@@ -10327,14 +10327,14 @@ The work is intended to accelerate CPL exploration while preserving local curric
     <!-- The Commons tab — STATIC (NOT regenerated by excel_to_dashboard.py).
          Lazy-loaded via commons.js on first #commons open; the module injects
          its own scoped CSS and renders into #commons-root. -->
-    <div class="cpl-tab-pane" id="tab-commons" data-tab="commons" role="tabpanel" aria-labelledby="tab-commons">
+    <div class="cpl-tab-pane" id="tab-commons" data-tab="commons">
       <div class="main-container">
         <div id="commons-root" style="border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); color: var(--text-muted); padding: 28px; text-align: center;">Loading the Commons&hellip;</div>
       </div>
     </div>
     <!-- /tab-commons -->
 
-    <div class="cpl-tab-pane" id="tab-gr-priorities" data-tab="gr-priorities" role="tabpanel" aria-labelledby="tab-gr-priorities">
+    <div class="cpl-tab-pane" id="tab-gr-priorities" data-tab="gr-priorities">
         <div class="main-container">
             <!-- GR — Government Relations REGISTER: policy / regulation revisions
                  under consideration, per Chancellor's Office PRIORITY AREA, with the
@@ -10352,7 +10352,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-gr-priorities -->
 
-    <div class="cpl-tab-pane" id="tab-memory" data-tab="memory" role="tabpanel" aria-labelledby="tab-memory">
+    <div class="cpl-tab-pane" id="tab-memory" data-tab="memory">
         <div class="main-container">
             <!-- 🧠 Memory — the team's retrieval-first change-impact memory.
                  TEAM-GATED: cpl_memory.js (lazy) prompts for the MAP-team phrase and
@@ -10366,7 +10366,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-memory -->
 
-    <div class="cpl-tab-pane" id="tab-map-data-quality" data-tab="map-data-quality" role="tabpanel" aria-labelledby="tab-map-data-quality">
+    <div class="cpl-tab-pane" id="tab-map-data-quality" data-tab="map-data-quality">
         <div class="main-container">
             <!-- 🩺 MAP Data Quality — team-curated register of data-quality defects in
                  MAP platform data (Custom Report Generator). TEAM-GATED: map_data_quality.js
@@ -10387,7 +10387,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-map-data-quality -->
 
-    <div class="cpl-tab-pane" id="tab-cpl-news" data-tab="cpl-news" role="tabpanel" aria-labelledby="tab-cpl-news">
+    <div class="cpl-tab-pane" id="tab-cpl-news" data-tab="cpl-news">
         <div class="main-container">
             <!-- CPL News mounts here. STATIC shell (NOT regenerated by excel_to_dashboard.py);
                  cpl_news.js (lazy) injects its own CSS + reads public.cpl_news live from Supabase
@@ -10400,7 +10400,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-cpl-news -->
 
-    <div class="cpl-tab-pane" id="tab-map-users" data-tab="map-users" role="tabpanel" aria-labelledby="tab-map-users">
+    <div class="cpl-tab-pane" id="tab-map-users" data-tab="map-users">
         <div class="main-container">
             <!-- MAP Users mounts here. STATIC shell (NOT regenerated by excel_to_dashboard.py);
                  map_users.js (lazy) injects its own CSS + reads the gated Supabase
@@ -10414,7 +10414,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-map-users -->
 
-    <div class="cpl-tab-pane" id="tab-coci-lookup" data-tab="coci-lookup" role="tabpanel" aria-labelledby="tab-coci-lookup">
+    <div class="cpl-tab-pane" id="tab-coci-lookup" data-tab="coci-lookup">
         <div class="main-container">
             <!-- COCI Lookup mounts here. STATIC shell (NOT regenerated by excel_to_dashboard.py);
                  coci_lookup.js (lazy) injects its own CSS + renders the raw COCI catalog
@@ -10428,7 +10428,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-coci-lookup -->
 
-    <div class="cpl-tab-pane" id="tab-sierra-training" data-tab="sierra-training" role="tabpanel" aria-labelledby="tab-sierra-training">
+    <div class="cpl-tab-pane" id="tab-sierra-training" data-tab="sierra-training">
         <div class="main-container">
             <!-- Sierra Training mounts here. STATIC shell (NOT regenerated by excel_to_dashboard.py);
                  sierra_training.js (lazy) injects its own CSS + reads the gated Supabase
@@ -10444,7 +10444,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-sierra-training -->
 
-    <div class="cpl-tab-pane" id="tab-raci" data-tab="raci" role="tabpanel" aria-labelledby="tab-raci">
+    <div class="cpl-tab-pane" id="tab-raci" data-tab="raci">
         <div class="main-container">
             <!-- Team & RACI mounts here. STATIC shell (NOT regenerated by excel_to_dashboard.py);
                  raci.js (lazy) injects its own CSS + reads Supabase team_members/item_raci live.
@@ -10456,7 +10456,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-raci -->
 
-    <div class="cpl-tab-pane" id="tab-annual-report" data-tab="annual-report" role="tabpanel" aria-labelledby="tab-annual-report">
+    <div class="cpl-tab-pane" id="tab-annual-report" data-tab="annual-report">
         <div class="main-container">
             <!-- Annual Report mounts here. STATIC shell (NOT regenerated by excel_to_dashboard.py);
                  annual_report.js (lazy) injects its own CSS + assembles a report draft from live
@@ -10468,7 +10468,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-annual-report -->
 
-    <div class="cpl-tab-pane" id="tab-implementation-funding" data-tab="implementation-funding" role="tabpanel" aria-labelledby="tab-implementation-funding">
+    <div class="cpl-tab-pane" id="tab-implementation-funding" data-tab="implementation-funding">
         <div class="main-container">
             <div style="margin: 16px 0 12px 0;">
                 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px;">
@@ -10484,7 +10484,7 @@ The work is intended to accelerate CPL exploration while preserving local curric
     </div>
     <!-- /tab-implementation-funding -->
 
-    <div class="cpl-tab-pane" id="tab-tmc-builder" data-tab="tmc-builder" role="tabpanel" aria-labelledby="tab-tmc-builder">
+    <div class="cpl-tab-pane" id="tab-tmc-builder" data-tab="tmc-builder">
         <div class="main-container">
             <!-- TMC Builder mounts here. STATIC shell (NOT regenerated by excel_to_dashboard.py);
                  tmc_builder.js (lazy) injects its own CSS + renders into #tmc-builder-root.

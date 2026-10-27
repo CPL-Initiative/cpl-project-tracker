@@ -16,7 +16,7 @@ function check(name, cond) { results.push([name, !!cond]); }
 const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
-check("nav button present", /data-tab="cpl-news" role="tab"[^>]*>CPL News</.test(cpl));
+check("nav button present", /class="cpl-tab[^"]*" data-tab="cpl-news"[^>]*>CPL News</.test(cpl));
 check("tab pane present", /id="tab-cpl-news" data-tab="cpl-news"/.test(cpl));
 check("mount div present", /id="cplNewsMount"/.test(cpl));
 check("lazy boot wiring present", /onActivate\('cpl-news'/.test(cpl) && /loadScript\('cpl_news\.js', 'CPL_NEWS_TAB'/.test(cpl));
