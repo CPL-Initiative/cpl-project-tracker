@@ -1396,6 +1396,17 @@ run "16b a district whose colleges are NOT named after it (Peralta)" \
 answer_must_match -i "laney" "16b ⭐ names Laney — unreachable by name match"
 answer_must_match -i "merritt|alameda|berkeley city" "16b ⭐ names a second Peralta college"
 
+# THE MAP LINK BESIDE A COULD-ADOPT CREDENTIAL (S494; Open Asks Sheet 134 card 2,
+# "build", Sierra second). A named college runs college_adoption_opportunities, and
+# each credential it returns carries one MAP link per building college, read from
+# kb/reference/map_cpl_opportunities_verified.json. All eight of Norco's titles were
+# listed there on 2026-10-27. The link opens MAP's CPL Opportunities page searched
+# for the exhibit, where the coordinator requests Quick Adopt.
+run "17 could-adopt credentials carry MAP's Quick Adopt link (Norco)" \
+  '{"query":"What credentials could Norco College adopt that other colleges already articulate, and where would our CPL coordinator request Quick Adopt?","session_id":"smoke-ci","audience":"administrator"}'
+answer_must_match -i "Norco" "17 host named"
+answer_must_match "cpldashboardcccco\.azurewebsites\.net/insights/exhibit-courses\?Exhibit=" "17 ⭐ a MAP link searched for an exhibit"
+
 if [ "$fail" -ne 0 ]; then
   echo "SMOKE TEST FAILED"
   exit 1

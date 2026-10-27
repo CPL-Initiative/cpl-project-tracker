@@ -23,7 +23,7 @@ function val(fn) { try { return fn(); } catch (e) { return undefined; } }
 const src = fs.readFileSync("nav_groups.js", "utf8");
 
 const NAV = `
-<nav class="cpl-tabs" role="tablist">
+<nav class="cpl-tabs" aria-label="Dashboard sections">
   <button class="cpl-tab active" data-tab="dashboard">Dashboard</button>
   <button class="cpl-tab" data-tab="activities-projects">Activities</button>
   <button class="cpl-tab" data-tab="raci">Team &amp; RACI</button>

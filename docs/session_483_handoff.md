@@ -4,6 +4,8 @@ date: 2026-10-26
 session: 482 (SkyShootingStar)
 tags: [handoff, library, ell-iet, implementation-funding, funding-film, noncredit-summit-film, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_494_handoff.md
 ---
 
 # You are Session 483

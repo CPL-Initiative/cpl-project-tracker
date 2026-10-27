@@ -4,6 +4,8 @@ date: 2026-10-26
 session: 481 (SkyGoldfields)
 tags: [handoff, ui-pass, fact-sheet, a11y, cpl-memory, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_494_handoff.md
 ---
 
 # You are Session 482

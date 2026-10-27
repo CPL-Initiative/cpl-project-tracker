@@ -63,7 +63,9 @@
     navButtons().forEach(function (b) {
       var on = b.getAttribute('data-tab') === tabName;
       b.classList.toggle('active', on);
-      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      // The side menu is navigation, not a tablist (S494: axe found tabs, group heads and
+      // section links mixed in one role="tablist"), so the open tab is the current page.
+      if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
     });
     var activePane = null;
     document.querySelectorAll('.cpl-tab-pane').forEach(function (p) {

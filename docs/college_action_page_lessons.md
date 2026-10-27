@@ -1745,3 +1745,23 @@ converted to underlined words (Sam, 2026-10-09). Clean light and dark at 320, 39
   Handout* now hands the college over in memory with `open: "my-college"`, and CPL Pathways opens the section; the
   old stored-key hand-off and its two lockstep checks retired (check floor 16 to 14). Sierra Training's *Try it in:
   My College* still opens the tab by address: cpl_chat.js delivers it only into a dock inside `#tab-college-briefing`.
+
+## S493 SkyThimbleberry (2026-10-26/27): the MAP link with each exhibit's builder, on every adoption surface
+
+- **Measure the premise before building on it.** The side session's note said the joined IDs in a Could Adopt row
+  looked like each college's own exhibit. MAP's API (`college`, its owner field) says otherwise for 44 of the 73
+  multi-ID rows: one college built two or more of the joined IDs (DLPT Spanish: six IDs, one builder). And MAP's own
+  table lists the *articulating* colleges, row by row, which is where "under Chabot" came from: Saddleback built
+  `MAPICI-DREB1-1-001`. In a sample of 40 joined IDs, MAP's table opens on another college for 9. Sam ruled the chip
+  names the builder (Sheet 134 card 1).
+- **A visually hidden span needs a positioned ancestor.** EACR's table scrolled the page sideways by 666px at 390px:
+  the chip's screen-reader span was absolutely positioned with no positioned ancestor, so it anchored to the page
+  from inside the table's own scroller. `position:relative` on the chip fixed it; main passed the same target, which
+  is how the cause was isolated.
+- **A title index beats a per-surface join.** CPL Pathways, My College and CER name a credential by its common title;
+  one `by_title` index in the verify file (2,620 titles; CER joins 2,189 of 2,453) serves all three through one
+  module, `map_links.js`, instead of three copies of the chip.
+- **Cap a line a reader scans.** A card can fold 55 IDs from 48 builders; the could-adopt line shows one chip per
+  builder, at most six, and the full list stays in the card.
+- **Cross-repo order.** The vault's sheet coverage reads the tracker's main, so a tracker PR that adds or drops a
+  NEEDS SAM marker merges before the vault PR that adds or drops its card.
