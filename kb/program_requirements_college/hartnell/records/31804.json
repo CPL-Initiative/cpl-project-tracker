@@ -131,8 +131,7 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": [],
-   "ge_overlap": true
+   "careers": []
   },
   "blocks": [
    {
@@ -365,14 +364,103 @@
    "No program learning outcomes or careers appear in the text."
   ]
  },
- "extracted_run": 40466933762,
+ "extracted_run": 39949570443,
  "reconciled": [
   {
-   "field": "ge_overlap",
+   "field": "course_units",
    "was": null,
-   "now": true,
-   "words": "Students can double-count required courses and courses for General Education"
+   "now": {
+    "EDU1": [
+     3,
+     3
+    ],
+    "ECE6": [
+     3,
+     3
+    ],
+    "BIO10": [
+     4,
+     4
+    ],
+    "GEL2": [
+     3,
+     3
+    ],
+    "GEL6": [
+     4,
+     4
+    ],
+    "MAT12": [
+     3,
+     3
+    ],
+    "COMMC1000": [
+     3,
+     3
+    ],
+    "ENGLC1000": [
+     3,
+     3
+    ],
+    "ENGLC1000E": [
+     4,
+     4
+    ],
+    "ENGLC1002": [
+     3,
+     3
+    ],
+    "GEG10": [
+     3,
+     3
+    ],
+    "HIS5A": [
+     3,
+     3
+    ],
+    "HISTC1001": [
+     3,
+     3
+    ],
+    "POLSC1000": [
+     3,
+     3
+    ],
+    "PHY32": [
+     4,
+     4
+    ],
+    "CHM22": [
+     4,
+     4
+    ],
+    "PHY10": [
+     4,
+     4
+    ],
+    "ENGLC1001": [
+     3,
+     3
+    ],
+    "ART10": [
+     3,
+     3
+    ],
+    "MUS1A": [
+     3,
+     3
+    ],
+    "TAC1": [
+     3,
+     3
+    ],
+    "TAC92": [
+     3,
+     3
+    ]
+   },
+   "words": "https://app.coursedog.com/api/v1/cm/hartnell_colleague/courses/search/%24filters (each course's credits.creditHours in the Requirements tab's own courses/search answer (college-page-read 39930495321: ADJ1 3))"
   }
  ],
- "read_run": 39949570443
+ "read_run": 39931703521
 }

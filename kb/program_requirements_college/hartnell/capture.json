@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 112,
  "with_closed_list": 105,
- "started": "2026-10-27T07:30:34Z",
+ "started": "2026-10-26T11:35:34Z",
  "route": "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)",
  "coursedog": {
   "root": "https://hartnell.catalog.prod.coursedog.com",
@@ -21,11 +21,11 @@
   ],
   "catalog": [
    {
-    "code": "AA.ADD",
+    "code": "CT.ADD",
     "name": "Addiction Studies"
    },
    {
-    "code": "CT.ADD",
+    "code": "AA.ADD",
     "name": "Addiction Studies"
    },
    {
@@ -153,11 +153,11 @@
     "name": "Computer Science Info Systems-Network & Security Option"
    },
    {
-    "code": "AS.CISCS",
+    "code": "CT.CISC",
     "name": "Computer Science and Info Systems-Computer Science Option"
    },
    {
-    "code": "CT.CISC",
+    "code": "AS.CISCS",
     "name": "Computer Science and Info Systems-Computer Science Option"
    },
    {
@@ -177,11 +177,11 @@
     "name": "Cybersecurity"
    },
    {
-    "code": "AA.DA",
+    "code": "CT.DA",
     "name": "Digital Arts"
    },
    {
-    "code": "CT.DA",
+    "code": "AA.DA",
     "name": "Digital Arts"
    },
    {
@@ -297,11 +297,11 @@
     "name": "Mathematics for Transfer Degree (AS-T)"
    },
    {
-    "code": "AA.MUS",
+    "code": "CT.MUS",
     "name": "Music"
    },
    {
-    "code": "CT.MUS",
+    "code": "AA.MUS",
     "name": "Music"
    },
    {
@@ -426,13 +426,13 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 103,
- "seconds": 901.7,
- "found": 93,
+ "seconds": 920.3,
+ "found": 94,
  "by_method": {
   "no_closed_list": 7,
-  "not_found": 4,
+  "not_found": 3,
   "page_claimed": 8,
-  "sitemap_page": 93
+  "sitemap_page": 94
  },
  "shared_pages": {
   "https://hartnell.catalog.prod.coursedog.com/programs/AAT.COM2/requirements-ipyf8": [
@@ -504,32 +504,6 @@
    "near_miss": {
     "why": "no page read names the program"
    }
-  },
-  {
-   "control_number": "43821",
-   "title": "Foundations of Agricultural Mechatronics",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.MECHA/requirements-ipyf8",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "textContent",
-    "coverage": 0.091,
-    "body": 0.0,
-    "content": 0.091,
-    "net": 1,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 1 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1228,
-     "content": 601058,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
   }
  ],
  "page_claimed": [
@@ -594,31 +568,21 @@
    "title": "Manufacturing Technology",
    "award": "A.S. Degree",
    "pages": [
-    "https://hartnell.catalog.prod.coursedog.com/programs/AS.WLD/requirements-ipyf8"
+    "https://hartnell.catalog.prod.coursedog.com/programs/AS.WLD/requirements-ipyf8",
+    "https://hartnell.catalog.prod.coursedog.com/programs/AS.MECHA/requirements-ipyf8"
    ]
   }
  ],
  "coverage_bands": {
   "0.5-0.8": 3,
   "0.8-1.0": 17,
-  "1.0": 73
+  "1.0": 74
  },
  "would_extract": {
   "against": "kb/program_requirements_college/hartnell",
-  "kept": 92,
-  "programs": 1,
-  "list": [
-   {
-    "control_number": "43809",
-    "title": "Agricultural Mechatronics",
-    "award": "A.S. Degree",
-    "url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.MECHA/requirements-ipyf8",
-    "coverage": 0.565,
-    "was_url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.MECHA/requirements-ipyf8",
-    "was_coverage": 0.696,
-    "was_method": "sitemap_page"
-   }
-  ]
+  "kept": 94,
+  "programs": 0,
+  "list": []
  },
- "run": "40466933762"
+ "run": "40314109801"
 }
