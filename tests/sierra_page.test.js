@@ -11,11 +11,11 @@
 //  (d) MULTI-TURN — the prior turn rides in `history` on the next request;
 //  (e) XSS-safe — a crafted streamed delta injects no live <script>/<img>;
 //  (f) graceful when fetch is unavailable;
-//  (g) AUDIENCE — the primary-population pick is REQUIRED before the first
-//      send, persists to localStorage (key shared with the COBI tab), and
-//      rides in the POST body as `audience`;
+//  (g) THE READER — no audience pick (Open Asks Sheet 136 card 2, "infer",
+//      2026-10-27): the first Ask sends at once with no `audience`, and a pick
+//      COBI stored under the shared key is neither shown nor sent;
 //  (h) FEEDBACK — 👍/👎 under each answer calls the sierra_feedback_upsert RPC
-//      (rating, turn_id, audience, Q/A snapshot — a direct table upsert would
+//      (rating, turn_id, page, Q/A snapshot — a direct table upsert would
 //      trip RLS since anon has no SELECT) and the optional note re-upserts the
 //      SAME turn row;
 //  (i) feedbackPayload clamps note/question/response lengths.
@@ -94,7 +94,7 @@ function lastBotBubble(w) {
 check("index.html loads sierra.js", /<script src="\.\/sierra\.js"><\/script>/.test(HTML));
 check("index.html has the chat structure", /id="s-log"/.test(HTML) && /id="s-form"/.test(HTML) &&
   /id="s-input"/.test(HTML) && /id="s-send"/.test(HTML));
-check("index.html has the audience selector container", /id="s-audience"/.test(HTML));
+check("index.html has no audience selector (Sheet 136 card 2)", !/id="s-audience"/.test(HTML) && !/s-aud-line/.test(HTML));
 check("favicon references the repo-root seal", /href="\.\.\/cccco_seal\.png"/.test(HTML));
 check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl-tab/.test(HTML));
 {
@@ -109,7 +109,7 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
   // pics") put a few starters where the paintings were, each a word that asks
   // itself; the box's placeholder keeps the first.
   {
-    const { w, API } = loadDom({ noAudience: true });
+    const { w, API, requests: requests0 } = loadDom({ noAudience: true });
     const input = w.document.getElementById("s-input");
     check("wiring puts a starter question in the box's placeholder",
       API.SUGGESTED.length >= 3 && input.placeholder === "Try: " + API.SUGGESTED[0]);
@@ -120,16 +120,16 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
       tries.length === 3 && API.TRIES.length === 3 &&
       Array.prototype.every.call(tries, (b, i) => b.tagName === "BUTTON" && b.type === "button" && b.textContent === API.TRIES[i]));
     tries[0].click();
-    check("a starter asks itself, and with no audience picked Sierra asks who the visitor is, the question held in the box",
-      input.value === API.TRIES[0] && !w.document.getElementById("s-aud-line").hidden &&
-      w.document.getElementById("s-aud-label").textContent === API.WHO_PROMPT);
+    await drain(14);
+    check("a starter asks itself at once, with no audience picked",
+      requests0.length === 1 && requests0[0].body.query === API.TRIES[0] && !("audience" in requests0[0].body));
     w.close();
   }
   {
     const { w, API, requests } = loadDom();
     w.document.querySelectorAll("#s-try-list .s-try-q")[1].click();
     await drain(14);
-    check("with an audience picked, a starter sends itself to Sierra",
+    check("with a pick stored by COBI, a starter still sends itself to Sierra",
       requests.length === 1 && requests[0].body && requests[0].body.query === API.TRIES[1] &&
       w.document.body.getAttribute("data-view") === "asking");
     w.close();
@@ -217,25 +217,21 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
     check("(h) nothing reads starters or a surface from the address", !/get\(["']tries["']\)|get\(["']surface["']\)/.test(SRC));
   }
 
-  // ── (g) audience — required, persisted, sent ──
+  // ── (g) the reader: no pick asked, none sent ──
   {
-    const { w, requests, API } = loadDom({ noAudience: true });
-    const chips = w.document.querySelectorAll("#s-audience .s-aud-chip");
-    check("audience selector renders 5 population chips", chips.length === 5);
-    check("with no pick, the row is off the screen on arrival", w.document.getElementById("s-aud-line").hidden);
+    const { w, requests } = loadDom({ noAudience: true });
+    check("no audience row on the page", !w.document.getElementById("s-audience") && !w.document.getElementById("s-aud-line"));
     submit(w, "hello?");
-    await drain(6);
-    check("send is HELD until an audience is picked (no request)", requests.length === 0);
-    check("the hold asks who the visitor is, in words, not as an error",
-      /who are you asking as/i.test(w.document.getElementById("s-aud-label").textContent) &&
-      !/s-error/.test(w.document.getElementById("s-status").className));
-    w.document.querySelectorAll("#s-audience .s-aud-chip")[1].click(); // Faculty
     await drain(14);
-    check("the pick sends the held question, carrying `audience`",
-      requests.length === 1 && requests[0].body.audience === API.AUDIENCES[1].k && requests[0].body.query === "hello?");
-    check("the pick persists to the SHARED localStorage key",
-      w.localStorage.getItem(API.AUD_KEY) === API.AUDIENCES[1].k &&
-      API.AUD_KEY === "cplSierraAudience.v1");
+    check("the first Ask sends at once, with no `audience`",
+      requests.length === 1 && requests[0].body.query === "hello?" && !("audience" in requests[0].body));
+    check("and asks nothing in the status line", !/who are you asking as/i.test(w.document.getElementById("s-status").textContent));
+  }
+  {
+    const { w, requests } = loadDom();   // a pick COBI stored under the shared key
+    submit(w, "hello?");
+    await drain(14);
+    check("a pick COBI stored is not sent", requests.length === 1 && !("audience" in requests[0].body));
   }
 
   // ── (h) feedback — 👍/👎 + note upsert ──
@@ -253,8 +249,8 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
     check("clicking 👍 calls the feedback RPC with a rating (turn_id present)",
       fbReqs.length === 1 && fbReqs[0].body.p_rating === "up" &&
       typeof fbReqs[0].body.p_turn_id === "string" && fbReqs[0].body.p_turn_id.length >= 8);
-    check("the row carries audience + page + the Q/A snapshot",
-      fbReqs[0].body.p_audience === "student" && fbReqs[0].body.p_page === "sierra" &&
+    check("the row carries page + the Q/A snapshot, and no audience",
+      fbReqs[0].body.p_audience === null && fbReqs[0].body.p_page === "sierra" &&
       /real estate/.test(fbReqs[0].body.p_question) && fbReqs[0].body.p_response.length > 0);
     const noteWrap = fb.querySelector(".s-fb-note");
     check("the optional note box appears after rating", noteWrap && noteWrap.hidden === false);

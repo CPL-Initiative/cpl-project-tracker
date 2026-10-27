@@ -122,17 +122,33 @@
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
   }
+  // Links (Sam, 2026-10-27: "I want links embedded for all references in
+  // sierra"). She wrote creditforbeingyou.org bare, quoting his instruction, and
+  // only an https address became a link. Now a markdown link may be http(s) or
+  // mailto, and a bare https address, a bare email and a bare domain on a known
+  // ending (creditforbeingyou.org, map.rccd.edu/...) become links too. A trailing
+  // period stays text. The bare pass skips the anchors already made, so a link
+  // never nests in another.
+  var LINK_ATTRS = ' target="_blank" rel="noopener noreferrer"';
+  var BARE_LINK = /(^|[\s(>])(?:(https?:\/\/[^\s<)]*[^\s<).,;:!?])|([A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,})|((?:[A-Za-z0-9-]+\.)+(?:org|edu|gov|com|net|us|io)(?![A-Za-z0-9-])(?:\/(?:[^\s<)]*[^\s<).,;:!?])?)?))/g;
+  function linkBare(s) {
+    return s.split(/(<a [^>]*>[\s\S]*?<\/a>)/).map(function (part, i) {
+      if (i % 2) return part;
+      return part.replace(BARE_LINK, function (m, pre, url, mail, host) {
+        if (url) return pre + '<a href="' + url + '"' + LINK_ATTRS + '>' + url + '</a>';
+        if (mail) return pre + '<a href="mailto:' + mail + '">' + mail + '</a>';
+        return pre + '<a href="https://' + host + '"' + LINK_ATTRS + '>' + host + '</a>';
+      });
+    }).join('');
+  }
   function inlineMd(s) {
-    return s
+    return linkBare(s
       .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
       .replace(/(^|[^*])\*([^*\s][^*]*)\*(?!\*)/g, '$1<em>$2</em>')
       .replace(/`([^`]+)`/g, '<code>$1</code>')
-      // links: only http(s), target=_blank, escaped text already
-      .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
-        '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-      // bare URLs → links
-      .replace(/(^|[\s(])((https?:\/\/)[^\s)]+)(?=[\s).,;!?]|$)/g,
-        '$1<a href="$2" target="_blank" rel="noopener noreferrer">$2</a>');
+      .replace(/\[([^\]]+)\]\(((?:https?:\/\/|mailto:)[^\s)]+)\)/g, function (m, text, href) {
+        return '<a href="' + href + '"' + (/^mailto:/.test(href) ? '' : LINK_ATTRS) + '>' + text + '</a>';
+      }));
   }
   var MD_TABLE_SEP = /^\s*\|?\s*:?-{2,}[-\s:|]*$/;   // | --- | :--- | …
   function mdCells(row) {
