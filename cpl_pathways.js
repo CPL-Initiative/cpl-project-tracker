@@ -36,6 +36,14 @@
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var ADOPT_INTAKE = SUPABASE_URL + "/rest/v1/cpl_adoption_interest";
 
+  // ── The MAP link beside a credential this college could adopt (Sam, Open Asks Sheet 134
+  // card 2, 2026-10-27, "build"): map_links.js draws one chip per college that built a
+  // verified exhibit, each opening MAP searched for that exhibit's ID. No module, no line.
+  function mapLinksNode(title) {
+    var M = window.CPL_MAP_LINKS;
+    return M && title ? M.node(title) : null;
+  }
+
   // ── ⚡ Quick Adopt intake (v1: records the request; the CPL team routes it.
   //    Re-point at the MAP platform's authenticated adoption flow when the
   //    Exhibit Module exposes one.) ──────────────────────────────────────────
@@ -865,6 +873,8 @@
           });
           adoptPanel.appendChild(el("div", "cred", "⊕ " + o.credential));
           adoptPanel.appendChild(ul);
+          var ml = mapLinksNode(o.credential);
+          if (ml) adoptPanel.appendChild(ml);
         });
         adoptPanel.appendChild(buildQuickAdopt(prog, r));
       }
@@ -2741,6 +2751,8 @@
             (l.units != null ? " (" + fmtU(l.units) + "u)" : "")));
         });
         panel.appendChild(ul);
+        var ml = mapLinksNode(pc.credential);
+        if (ml) panel.appendChild(ml);
         panel.appendChild(buildQuickAdopt(prog, {
           code: null, title: pc.credential,
           adoptOptions: [{ credential: pc.credential, lines: pc.lines }],
