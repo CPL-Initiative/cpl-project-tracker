@@ -220,6 +220,33 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                               "now": merged["name"], "words": m.group(0).strip()})
                 out["blocks"] = [merged if i == pool[0] else b for i, b in enumerate(blocks) if i not in pool[1:]]
             continue
+        if st["kind"] == "repeat":
+            # A course or a list the page says is taken more than once (Hartnell's Music 43887, S497):
+            # "If MUS 11 is chosen, it must be taken for 2 semesters" gives that course (or alternative)
+            # times 2; a choose_courses block the reading named "2 semesters of any of the following
+            # Courses" and read as one choice becomes 2 enrollments from a list a student may repeat.
+            # Never a figure the reading already gave.
+            from _program_requirements_pilot import norm_code
+            for m in re.finditer(st.get("pattern") or r"(?!)", text):
+                code, n = norm_code(m.group("code")), _num(m.group("n"))
+                for block in out.get("blocks") or []:
+                    for course in block.get("courses") or []:
+                        for entry in [course] + [a for a in course.get("alternatives") or [] if isinstance(a, dict)]:
+                            if n and n > 1 and norm_code(entry.get("code")) == code and entry.get("times") is None:
+                                entry["times"] = n
+                                notes.append({"field": "times", "was": None, "now": {entry["code"]: n},
+                                              "words": m.group(0).strip()})
+            named = re.compile(st["block_pattern"]) if st.get("block_pattern") else None
+            for block in (out.get("blocks") or []) if named else []:
+                bm = named.search(block.get("name") or "")
+                n = _num(bm.group("n")) if bm else None
+                if (not n or n < 2 or block.get("rule") != "choose_courses" or block.get("repeats")
+                        or _num(block.get("minimum")) not in (None, 1)):
+                    continue
+                notes.append({"field": "blocks", "was": block.get("minimum"), "now": {block["name"]: n},
+                              "words": bm.group(0).strip()})
+                block["minimum"], block["repeats"] = int(n), True
+            continue
         field = st["field"]
         m = re.search(st["pattern"], text)
         if not m:

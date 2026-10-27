@@ -257,13 +257,16 @@ def choice_units(course: dict, listed: dict, hours: bool = False) -> tuple[float
     smallest option to its largest. In hours, the closed list is never read."""
     vals = []
     for entry in [course] + alternatives(course):
-        own = [v for v in (_num(entry.get("units")), _num(entry.get("units_max"))) if v is not None]
+        # A course the page says is taken more than once ("If MUS 11 is chosen, it must be taken
+        # for 2 semesters", Hartnell's Music 43887, S497) carries times: its units count that often.
+        times = _num(entry.get("times")) or 1
+        own = [v * times for v in (_num(entry.get("units")), _num(entry.get("units_max"))) if v is not None]
         if own:
             vals += own
         elif not hours:
             u = listed.get(listed_key(entry.get("code"), listed))
             if u is not None:
-                vals.append(u)
+                vals.append(u * times)
     if not vals:
         return None
     return (min(vals), max(vals))
@@ -303,6 +306,12 @@ def block_units(block: dict, listed: dict, hours: bool = False
         if len(known) < n:
             return None, ["'%s' chooses %d courses but %d carry units"
                           % (block.get("name"), n, len(known))]
+        if block.get("repeats"):
+            # n enrollments from a list a student may repeat ("2 semesters of any of the following
+            # Courses", Music 43887, S497): the least course n times, the largest n times.
+            if not known:
+                return None, ["'%s' chooses %d courses but none carries units" % (block.get("name"), n)]
+            return (min(s[0] for s in known) * n, max(s[1] for s in known) * n), []
         lows = sorted(s[0] for s in known)[:n]
         highs = sorted((s[1] for s in known), reverse=True)[:n]
         return (sum(lows), sum(highs)), []

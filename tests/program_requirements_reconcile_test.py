@@ -149,6 +149,31 @@ check("sub-areas whose own figures sum past the area's total are left alone",
       len([x for x in R.reconcile(over, cal, "Hartnell College", "Certificate of Achievement", steps=steps)[0]["blocks"]
            if x["name"].startswith("Area 3")]) == 2)
 
+print("Hartnell's Music repeat counts (S497)")
+mus = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "hartnell", "records", "43887.json")))["record"]
+mus_text = ("Unnamed Rule \u00b7 Complete ALL of the following Courses: \u00b7 MUS 10: Class Piano I (1) or MUS 11: "
+            "Applied Piano (0.5) \u00b7 If MUS 11 is chosen, it must be taken for 2 semesters.\n"
+            "2 semesters of any of the following Courses: \u00b7 MUS 20: Concert Choir")
+check("the record before the step reads 18-19 against 19.5", S.program_units(mus, {})[0] == (18, 19))
+new, notes = R.reconcile(mus, mus_text, "Hartnell College", "Certificate of Achievement", steps=steps)
+alt = [a for c in new["blocks"][0]["courses"] for a in c["alternatives"] if a["code"] == "MUS 11"]
+check("MUS 11, the alternative the page says is taken twice, carries times 2", alt and alt[0]["times"] == 2)
+rep = [b for b in new["blocks"] if "2 semesters" in b["name"]][0]
+check("the list of 2 semesters becomes 2 enrollments a student may repeat", rep["minimum"] == 2 and rep["repeats"] is True)
+check("the record then sums to 19.5-20, its low end the tab's 19.5", S.program_units(new, {})[0] == (19.5, 20))
+check("each change is noted with the page's words", sorted(n["field"] for n in notes) == ["blocks", "times"]
+      and all(n["words"] for n in notes))
+check("the original record is left as it was", "times" not in json.dumps(mus) and "repeats" not in json.dumps(mus))
+again = R.reconcile(new, mus_text, "Hartnell College", "Certificate of Achievement", steps=steps)[1]
+check("a second run changes nothing", not [n for n in again if n["field"] in ("times", "blocks")])
+check("a text without the words changes nothing",
+      not [n for n in R.reconcile(mus, "MUS 10: Class Piano I", "Hartnell College", "Certificate of Achievement",
+                                  steps=steps)[1] if n["field"] == "times"])
+two = json.loads(json.dumps(mus)); two["blocks"][2]["minimum"] = 3
+check("a list the reading gave a count above one is left alone",
+      [b for b in R.reconcile(two, mus_text, "Hartnell College", "Certificate of Achievement", steps=steps)[0]["blocks"]
+       if "2 semesters" in b["name"]][0]["minimum"] == 3)
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
