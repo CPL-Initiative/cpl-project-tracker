@@ -205,11 +205,13 @@ create or replace function public.cpl_funding_email_domain_ok(p_key text, p_emai
 returns boolean
 language sql stable security definer set search_path = ''
 as $fn$
-  with d as (select public.cpl_funding_email_domains(p_key) as list)
+  -- ANY takes the array itself: `= any ((select list from d))` reads as a
+  -- subquery of text[] rows and fails (text = text[]; run 40550877756, rolled back).
   select case
-    when cardinality((select list from d)) = 0 then true
-    else lower(split_part(btrim(coalesce(p_email, '')), '@', 2)) = any ((select list from d))
-  end;
+    when cardinality(d.list) = 0 then true
+    else lower(split_part(btrim(coalesce(p_email, '')), '@', 2)) = any (d.list)
+  end
+  from (select public.cpl_funding_email_domains(p_key) as list) d;
 $fn$;
 
 revoke all on function public.cpl_funding_email_domains(text) from public;
