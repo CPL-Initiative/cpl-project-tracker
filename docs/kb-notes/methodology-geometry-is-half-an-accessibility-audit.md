@@ -53,6 +53,7 @@ Each fix was re-measured with both tools at 1280 and 390px (#2478, #2479, #2482)
 
 ## Implications
 
-- Before a public view ships, run `npm run a11y` **and** an axe pass.
-- The next step is folding axe into `scripts/a11y.js`, so the one command carries both halves.
+- Before a public view ships, run `npm run a11y` **and** an axe pass. Since S494 (#2492) `scripts/a11y.js` runs axe-core 4.10.2 itself, once per route at the widest width, before the focus-ring loop: that loop scrolls tables under their sticky headers, and axe then read an 80x27 caret as obscured.
+- The first full run with axe found what geometry never could on COBI: a side menu declared as a tablist that held group heads and links (critical, every route; #2494), unnamed filter selects, a focusable separator with no value, and directory rows that were buttons standing in for list items (#2495).
+- A target turns an axe rule off only with a reason (`axeDisable`), and a target that throws fails without ending the sweep.
 - A film's transcript should be generated from the scenes' own words, so it cannot drift from the picture.

@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-27T00:25:34Z",
-  "session": 493,
-  "moniker": "SkyThimbleberry",
+  "written_at": "2026-10-27T02:38:58Z",
+  "session": 494,
+  "moniker": "SkyWhortleberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_494_handoff.md",
+  "handoff": "docs/session_495_handoff.md",
   "next_step": {
-    "title": "The funding film's narrated cut, Sierra's MAP links, then the Summit checks",
-    "text": "The next session re-reads the narrated funding film's minimum-conditions scene in Sierra's voice and offers the narrated cut on the funding page, gives Sierra's could-adopt answers the MAP link (Open Asks Sheet 134 card 2's second part), and re-measures the public pages, My Institution included, before the CPL Summit on October 30."
+    "title": "The narrated funding film, then the Summit-morning sweep with axe",
+    "text": "The next session re-reads the narrated funding film's minimum-conditions scene in Sierra's voice and offers the narrated cut on the funding page, merges the accessibility runner's axe pass and the first fixes it found, and re-measures the ten public pages on the morning of the CPL Summit, October 30."
   },
   "calls": [
     {
@@ -216,6 +216,10 @@
     {
       "at": "2026-10-27T00:30:00Z",
       "text": "No harvest table moved this run. S493 fixed the public funding page's Step 2, put the MAP link with each exhibit's building college on the CPL Opportunity visual, EACR, CPL Pathways, My College and CER, and published Open Asks Sheet 134, which Sam answered."
+    },
+    {
+      "at": "2026-10-27T03:00:00Z",
+      "text": "No harvest table moved this run. S494 gave Sierra the MAP link beside each credential a college could adopt, made COBI's side menu navigation rather than a tab set, and brought the axe rule engine into the accessibility runner."
     }
   ],
   "headline": [

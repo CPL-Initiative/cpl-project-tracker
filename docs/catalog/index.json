@@ -16193,8 +16193,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 464,
+   "count": 465,
    "docs": [
+    {
+     "created": "2026-10-27",
+     "governs": [],
+     "n": 495,
+     "path": "docs/session_495_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "my-college-action-page",
+      "sierra-retrieval-corpus",
+      "implementation-funding",
+      "accessibility"
+     ],
+     "title": "Session 495 handoff: Sierra's MAP links live, COBI's menu is navigation, axe joins the accessibility runner",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-27",
      "governs": [],
@@ -24157,5 +24174,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1280
+ "total": 1281
 }

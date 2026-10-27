@@ -667,3 +667,18 @@ Verbatim from `docs/reference/lanes/implementation-funding.md` (`oversized_doc` 
 - **A shard that dies with no FAIL line is the runner, not the test.** #2487's shard 4 stopped inside a worklist test
   after its header; the shard passed locally and on #2485 in the same window. One comment on the PR, then a fresh run
   through the main merge the PR needed anyway.
+
+## S494 SkyWhortleberry (2026-10-27): the pre-Summit sweep, with axe
+
+- **The ten public targets pass on main** (`npm run a11y`, `funding-model-mycpl` included). axe-core 4.10.2 found one
+  critical among them, on the Public page view: COBI's side menu declared `role="tablist"` while holding group heads,
+  section links and launchers. It is navigation now, on every COBI route (#2494); nothing painted changed.
+- **Run axe before anything that scrolls.** In the first try axe flagged the SD Cont. Ed caret (80x27) as an obscured
+  target; the focus-ring loop had focused every control and left a table scrolled under its sticky header. Measured as
+  the page settles, both funding-model targets pass (#2492).
+- **One timeout ended a 129-target sweep.** governance-editor's seed waited past 20s at target 47 under load (it passes
+  alone); the error was uncaught and 82 targets went unmeasured. A target that throws now fails and the sweep goes on.
+
+## Moved from the lane (S494, 2026-10-27)
+
+✅ **The attestation form in Sam's words (2026-10-26; S491 drafted, S492 finished, #2476).** Regular-type college name; intro *"Complete the items below to qualify for noncredit CPL funding."*; the Lead's employee type (Staff, FT Faculty, PT Faculty, Administrator), assignment and meetings with credit CPL colleagues; the note that the Coordinator and the Lead may be the same person. The count, course and exhibits are out. `lead_types`, `lead_assignment`, `lead_meets` applied (supabase-migrate run 40390095164), CO-only; `NC_LEAD_TYPES` matches `cna_lead_chk`. Conditions in a two-column grid; credit rows read *Priority N (CR)*. **Sam's, in the tab:** each credit card's brief is its title, which he types ("Total applied (articulated) credit").
