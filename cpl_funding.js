@@ -506,10 +506,14 @@
     // on the left; Step 2, the college or district, to its right under My
     // Institution alone. A light card, the list large and outlined in the seal
     // blue, each step named in words.
-    ".cplfund-step1 { display: grid; grid-template-columns: auto minmax(0,1fr); align-items: stretch; column-gap: 20px; row-gap: 12px; padding: 16px 18px; margin: 0 0 14px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; }",
+    // Step 1 takes three parts and Step 2 two, never under 22rem: an auto column grew to its description's
+    // whole line once Step 1 printed the chosen view's words (#2478), and squeezed Step 2 to 21px (Sam's
+    // screenshot, 2026-10-26). With Step 2 hidden (All Institutions), Step 1 takes the row.
+    ".cplfund-step1 { display: grid; grid-template-columns: minmax(0,3fr) minmax(min(100%,22rem),2fr); align-items: stretch; column-gap: 20px; row-gap: 12px; padding: 16px 18px; margin: 0 0 14px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; }",
     ".cplfund-step1-view, .cplfund-step1-pick { display: flex; align-items: center; gap: 20px; min-width: 0; }",
     ".cplfund-step1-pick { padding-left: 20px; border-left: 1px solid var(--border-strong); }",
     ".cplfund-step1-pick[hidden] { display: none; }",
+    ".cplfund-step1[data-view=\"all\"] { grid-template-columns: minmax(0,1fr); }",
     ".cplfund-step1-vbody, .cplfund-step1-pbody { display: flex; flex-direction: column; gap: 6px; min-width: 0; }",
     ".cplfund-step1-pbody { flex: 1 1 auto; }",
     ".cplfund-step1-vl { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.1rem, .95rem + .5vw, 1.3rem); color: var(--text-strong); font-weight: 600; line-height: 1.25; }",
