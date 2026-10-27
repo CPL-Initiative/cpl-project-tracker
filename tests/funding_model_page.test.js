@@ -174,15 +174,16 @@ check("...and a curator's edit to the page's own FAQ reaches it, escaped",
   })());
 // THE CONTENTS: one link per section, each to the section's own id, and a
 // link opens its section's fold. Driven through the page's own handler.
-check("the Contents list carries one link per section, in page order, to each section's id, then the memo, its Word file, the video and the three help items last",
+check("the Contents list carries one link per section, in page order, to each section's id, then the memo, its Word file, the video, its narrated cut and the three help items last",
   (function () {
     const links = Array.from(doc.querySelectorAll('#toc-list a[href^="#"]'));
     const ids = Array.from(doc.querySelectorAll("main > section")).map((sec) => sec.id);
     const items = Array.from(doc.querySelectorAll("#toc-list > li"));
     return links.length === ids.length && links.every((a, i) => a.getAttribute("href") === "#" + ids[i]) &&
-      items.length === ids.length + 6 && !!items[ids.length].querySelector("#memo-link") &&
+      items.length === ids.length + 7 && !!items[ids.length].querySelector("#memo-link") &&
       !!items[ids.length + 1].querySelector("#memo-word-link") &&
       !!items[ids.length + 2].querySelector("#video-link") &&
+      !!items[ids.length + 3].querySelector("#video-narrated-link") &&
       !!items[items.length - 2].querySelector("#landing-link");
   })());
 check("a Contents link OPENS its section's fold, and Collapse all / Expand all flips every fold",

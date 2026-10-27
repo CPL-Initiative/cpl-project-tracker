@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-27T15:25:55.232655+00:00",
+  "scraped_at": "2026-10-27T18:10:00.722832+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29671,
+    "jst": 29722,
     "star_colleges": 64
   },
   "computed_star_colleges": 64,
@@ -22,7 +22,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 386,
+      "jst": 393,
       "star": true
     },
     "City College of San Francisco": {
@@ -222,7 +222,7 @@
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 195,
+      "jst": 196,
       "star": true
     },
     "Evergreen Valley College": {
@@ -267,7 +267,7 @@
     },
     "San Jose City College": {
       "vets": 148,
-      "jst": 123,
+      "jst": 124,
       "star": true
     },
     "Oxnard College": {
@@ -482,7 +482,7 @@
     },
     "Grossmont College": {
       "vets": 415,
-      "jst": 152,
+      "jst": 194,
       "star": false
     },
     "Ohlone College": {

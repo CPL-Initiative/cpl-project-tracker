@@ -75,10 +75,12 @@ const BASE = "https://cpl-initiative.github.io/cpl-project-tracker/sierra/";
     const chat = requests.filter((r) => /\/functions\/v1\/cpl-chat$/.test(r.url));
     check("default visit sends a chat request", chat.length === 1);
     check("default visit sends NO ctx key at all", chat.length === 1 && !("ctx" in chat[0].body));
-    check("default payload keeps query/session_id/history/audience",
+    // Since Sheet 136 card 2 ("infer", 2026-10-27) the page sends no audience, even
+    // with a pick COBI stored under the shared key: she reads the asker from the question.
+    check("default payload keeps query/session_id/history, and sends no audience",
       chat.length === 1 && chat[0].body.query === "What is CPL?" &&
       typeof chat[0].body.session_id === "string" && Array.isArray(chat[0].body.history) &&
-      chat[0].body.audience === "student");
+      !("audience" in chat[0].body));
   }
 
   // ── (b) ?ctx=external: ctx rides on every chat POST ──
@@ -89,9 +91,9 @@ const BASE = "https://cpl-initiative.github.io/cpl-project-tracker/sierra/";
     await drain();
     const chat = requests.filter((r) => /\/functions\/v1\/cpl-chat$/.test(r.url));
     check("?ctx=external sends ctx:'external'", chat.length === 1 && chat[0].body.ctx === "external");
-    check("?ctx=external payload still carries query/history/audience",
+    check("?ctx=external payload still carries query/history, and no audience",
       chat.length === 1 && typeof chat[0].body.query === "string" &&
-      Array.isArray(chat[0].body.history) && chat[0].body.audience === "student");
+      Array.isArray(chat[0].body.history) && !("audience" in chat[0].body));
     // second turn also carries it
     submit(w, "And at Norco College?");
     await drain();

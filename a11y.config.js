@@ -199,9 +199,8 @@ async function sierraFromWordChecks(page) {
   out.push({ name: "Escape shuts her and hands focus back to the page's Ask Sierra", ok: !s.open && s.onWord && s.expanded === "false", detail: JSON.stringify(s) });
   return out;
 }
-async function seedSierraWho(page, theme) {
+async function seedSierraFirstAsk(page, theme) {
   await page.evaluate((th) => {
-    try { localStorage.removeItem("cplSierraAudience.v1"); } catch (e) {}
     if (th === "dark") document.documentElement.setAttribute("data-theme", "dark");
     document.getElementById("s-input").value = "What is one step I can take to create CPL for the ELL IET grantees?";
     document.getElementById("s-send").click();
@@ -248,11 +247,11 @@ async function seedSierraConversation(page, theme) {
 }
 async function sierraArrivingChecks(page) {
   return [await page.evaluate(() => {
-    const aud = document.getElementById("s-audience");
+    const aud = document.getElementById("s-audience") || document.getElementById("s-aud-line");
     return {
-      name: "the audience picker is a group, not a false radiogroup",
-      ok: aud.getAttribute("role") === "group",
-      detail: 'role="' + aud.getAttribute("role") + '"',
+      name: "she asks no one who they are (Sheet 136 card 2): the page has no audience picker",
+      ok: !aud,
+      detail: aud ? "found #" + aud.id : "none",
     };
   }), await page.evaluate(() => {
     const form = document.getElementById("s-form");
@@ -2009,51 +2008,46 @@ module.exports = {
      question bar on its top edge) and asking (the conversation in a centered
      column on paper, the bar docked). Each is measured in light and in dark,
      because a token swap is not a proof (see "COBI, dark" below).
-     Below 560px the audience row folds behind its one control, "Answering
-     for: …", which shows in its place; nothing else may vanish. */
+     Nothing may vanish at any width. */
   sierra: {
     file: "sierra/index.html",
     title: "Sierra (public CPL assistant), arriving",
-    mayHideBelow: [".s-audience"],
     keyboard: async (page) => sierraArrivingChecks(page),
   },
   "sierra-dark": {
     file: "sierra/index.html",
     title: "Sierra, arriving, dark",
-    mayHideBelow: [".s-audience"],
     seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")),
     keyboard: async (page) => sierraArrivingChecks(page),
   },
-  /* The gentle prompt (Sam, 2026-10-24: "gently prompt the user to choose their population
-     once they click Ask"): the first Ask with no pick, her question open under the box. */
+  /* The first Ask sends at once (Sam, Open Asks Sheet 136 card 2, "infer", 2026-10-27): she
+     reads who is asking from the question, so nothing holds it. */
   "sierra-who": {
     file: "sierra/index.html",
-    title: "Sierra, asking who the visitor is",
-    seed: (page) => seedSierraWho(page, "light"),
+    title: "Sierra, the first Ask",
+    seed: (page) => seedSierraFirstAsk(page, "light"),
     keyboard: async (page) => [await page.evaluate(() => {
-      const line = document.getElementById("s-aud-line"), a = document.activeElement;
-      return { name: "the first Ask holds the question, asks who the visitor is, focus on the first word",
-        ok: !!line && !line.hidden && line.classList.contains("s-asking-who") && !!a && a.classList.contains("s-aud-chip"),
-        detail: `line hidden=${line && line.hidden}, focus on ${a && (a.className || a.tagName)}` };
+      const view = document.body.getAttribute("data-view"), mine = document.querySelector("#s-log .s-user");
+      return { name: "the first Ask sends at once: the conversation opens with the question",
+        ok: view === "asking" && !!mine,
+        detail: `view=${view}, question in the log=${!!mine}` };
     })],
   },
   "sierra-who-dark": {
     file: "sierra/index.html",
-    title: "Sierra, asking who the visitor is, dark",
+    title: "Sierra, the first Ask, dark",
     widths: [390, 1280],
-    seed: (page) => seedSierraWho(page, "dark"),
+    seed: (page) => seedSierraFirstAsk(page, "dark"),
   },
   "sierra-asking": {
     file: "sierra/index.html",
     title: "Sierra, a conversation",
-    mayHideBelow: [".s-audience"],
     seed: (page) => seedSierraConversation(page, "light"),
     keyboard: async (page) => sierraAskingChecks(page),
   },
   "sierra-asking-dark": {
     file: "sierra/index.html",
     title: "Sierra, a conversation, dark",
-    mayHideBelow: [".s-audience"],
     seed: (page) => seedSierraConversation(page, "dark"),
     keyboard: async (page) => sierraAskingChecks(page),
   },
@@ -2352,6 +2346,15 @@ module.exports = {
   "funding-film": {
     file: "prototype/funding_video/funding_in_motion_s2.html",
     title: "Funding introduction film (public)",
+    mayHideBelow: [],
+  },
+  /* Its narrated cut (2026-10-27), Sierra's voice over the same picture, linked
+     right after it in the explainer's Contents as the alternative for a listener
+     who cannot see the picture (WCAG 1.2.5; Sheet 136 card 1). Built by
+     build.py n2; the captions fold over the stage. */
+  "funding-film-narrated": {
+    file: "prototype/funding_video/funding_in_motion_n2.html",
+    title: "Funding introduction film, narrated (public)",
     mayHideBelow: [],
   },
 

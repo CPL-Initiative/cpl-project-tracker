@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-27T15:30:21Z",
+ "written_at": "2026-10-27T18:14:30Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13200,
+     "n": 13201,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements"
@@ -26,7 +26,7 @@
    ],
    "issues": [
     {
-     "n": 3725,
+     "n": 3724,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "open": "#program-requirements"
@@ -50,13 +50,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-27T11:44:02Z",
+    "at": "2026-10-27T14:43:03Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13200,
-    "failing": 3725,
+    "complete": 13201,
+    "failing": 3724,
     "unread": 3357,
     "records": 18550,
     "colleges": 114,
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-27T15:26:08Z",
+    "at": "2026-10-27T18:10:14Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,7 +140,7 @@
     "records": 2686,
     "records_stamped": 1867,
     "saved_at": "2026-10-23T12:57:52Z",
-    "fold_at": "2026-10-27T15:26:08Z",
+    "fold_at": "2026-10-27T18:10:14Z",
     "map_titles": 4782,
     "unclassified": 432,
     "left_map": 606,
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-27T15:28:17+00:00",
+    "at": "2026-10-27T18:12:23+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-27T15:26:07Z",
+    "at": "2026-10-27T18:10:12Z",
     "every_hours": 24
    },
    "facts": {

@@ -569,6 +569,11 @@ section[hidden], #contents[hidden]{display:none}
       <li class="toc-tail"><a id="memo-link" data-plink="memo" href="memo/">Read the funding guidance memo</a></li>
       <li class="toc-tail"><a id="memo-word-link" data-plink="memo_word" href="memo/?download=word">Download the funding guidance memo in Word</a></li>
       <li class="toc-video toc-tail"><a id="video-link" data-plink="video" href="../prototype/funding_video/funding_in_motion_s2.html">Watch the 100-second introduction</a></li>
+      <!-- The narrated cut beside it (Sam, Open Asks Sheet 136 card 1, "reread",
+           2026-10-27, on Sheet 133's plan): the music film stays the
+           introduction, and Sierra's narrated cut is its alternative for a
+           listener who cannot see the picture (WCAG 1.2.5). -->
+      <li class="toc-video toc-tail"><a id="video-narrated-link" data-plink="video_narrated" href="../prototype/funding_video/funding_in_motion_n2.html">Watch the narrated introduction</a></li>
       <!-- Help, after the video (Sam, 2026-10-20): the MAP team's office hours,
            the chosen college's CPL landing page (its hover recommends office
            hours for configuring one), and the training video on configuring a
@@ -1091,7 +1096,9 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // name). It used to switch per scenario, and the first paint, which runs
   // before the live config loads, reads Scenario 1: the link went to the
   // three-priority film and no later paint put it back (Sam, 2026-10-20). The
-  // MP4 and narrated alternates left the Contents on 2026-10-09.
+  // MP4 left the Contents on 2026-10-09; the narrated cut returned beside the
+  // introduction on 2026-10-27 (Sheet 136 card 1), the published film's
+  // picture in Sierra's voice (funding_in_motion_n2).
   // A draft scenario opened by ?scenario= (Sam, 2026-09-25) says so in words
   // at the top, so a preview link passed along is never mistaken for the
   // published page.

@@ -131,31 +131,24 @@ function audienceLabels(src, what) {
   return out;
 }
 
-// ── 1. ⭐ THE ALIGNMENT ITSELF — the two audience pickers must be identical ────
+// ── 1. THE AUDIENCE ROW — only COBI's box still asks ─────────────────────────
+// Since Open Asks Sheet 136 card 2 ("infer", 2026-10-27) the public page asks no
+// one who they are; cpl-chat's READER_RULE reads the asker. COBI's docked box
+// (cpl_chat.js, signed-in staff) keeps its row, so its own shape stays pinned.
 block("audience alignment", function () {
   const a = audienceLabels(CHAT, "cpl_chat.js");
-  const b = audienceLabels(PAGE, "sierra/sierra.js");
-  /* ⭐ THE CONTAINER ROLE, which drifted for a week. sierra/index.html carries
-   * role="group"; cpl_chat.js carried role="radiogroup" over `aria-pressed`
-   * toggle buttons — a radiogroup promises role="radio" + aria-checked
-   * children, so a screen reader announced a radio group containing something
-   * that is not a radio. Sky175 fixed the public page; COBI kept the old markup
-   * because nothing compared the two. That is this file's whole job. */
-  check("⭐ neither audience row claims role=radiogroup over aria-pressed buttons",
+  /* ⭐ THE CONTAINER ROLE, which drifted for a week: a radiogroup over
+   * `aria-pressed` toggle buttons promises role="radio" children. */
+  check("⭐ COBI's audience row claims no role=radiogroup over aria-pressed buttons",
     !/role: 'radiogroup'/.test(CHAT) && !/role="radiogroup"/.test(PAGE_HTML));
-  check("…and both still group + label the row for assistive tech",
-    /role: 'group'/.test(CHAT) && /role="group"/.test(PAGE_HTML) &&
-    /'aria-label': 'Tell the assistant who you are/.test(CHAT));
+  check("…and still groups + labels the row for assistive tech",
+    /role: 'group'/.test(CHAT) && /'aria-label': 'Tell the assistant who you are/.test(CHAT));
   check("cpl_chat.js declares 5 audiences", a.length === 5);
-  check("sierra/sierra.js declares 5 audiences", b.length === 5);
-  check("⭐ the two audience lists are identical, keys and labels, in order",
-    JSON.stringify(a) === JSON.stringify(b));
-  // Pinned so a "strip the glyphs" pass that also blanked a label cannot pass.
-  check("labels kept their WORDS", b.every(function (p) { return /[A-Za-z]{3}/.test(p[1]); }));
+  check("labels kept their WORDS", a.every(function (p) { return /[A-Za-z]{3}/.test(p[1]); }));
   check("labels are distinct from one another",
-    new Set(b.map(function (p) { return p[1]; })).size === 5);
-  check("the shared persistence key still matches",
-    /cplSierraAudience\.v1/.test(CHAT) && /cplSierraAudience\.v1/.test(PAGE));
+    new Set(a.map(function (p) { return p[1]; })).size === 5);
+  check("⭐ the public page declares no audience list and reads no stored pick",
+    !/var AUDIENCES = \[/.test(PAGE) && !/cplSierraAudience/.test(PAGE) && !/id="s-audience"/.test(PAGE_HTML));
 });
 
 // ── 2. No glyphs in what a visitor sees, on any Sierra surface ────────────────
@@ -195,7 +188,7 @@ block("replacement words", function () {
   check("the Fact Sheet: its own word still says Ask Sierra; the funding page leaves her to the chip (Sam, 2026-10-26)",
     /<button[^>]*data-sierra-open[^>]*>Ask Sierra<\/button>/.test(fs.readFileSync("fact-sheet/index.html", "utf8")) &&
     !/data-sierra-open/.test(fs.readFileSync("funding-model/index.html", "utf8")));
-  check("standalone page: Beta notice kept its text", /class="s-beta">Beta —/.test(PAGE_HTML));
+  check("standalone page: the footer keeps the beta notice", /<footer class="s-foot">[\s\S]*?Sierra is in beta/.test(PAGE_HTML));
 });
 
 // ── 4. The ↗ became a cue, not nothing ────────────────────────────────────────
@@ -251,24 +244,7 @@ block("rendered page", function () {
   // empty list. Dispatched deterministically, as sierra_page.test.js does.
   w.document.dispatchEvent(new w.Event("DOMContentLoaded", { bubbles: false }));
 
-  const chips = w.document.querySelectorAll("#s-audience .s-aud-chip");
-  check("the 5 audience chips render", chips.length === 5);
-  const texts = Array.prototype.map.call(chips, function (c) { return c.textContent.trim(); });
-  // ⚠ Both of these are `.some()`/`.every()` over `texts`, which are vacuously
-  // true on an empty list — so each REQUIRES the five chips as part of its own
-  // condition. An unbooted page must fail them, not sail through them.
-  check("⭐ no rendered chip carries a glyph",
-    texts.length === 5 && !texts.some(function (t) { return GLYPH.test(t); }));
-  check("every rendered chip still has a readable label",
-    texts.length === 5 && texts.every(function (t) { return /[A-Za-z]{3}/.test(t); }));
-  // Compared against the module's OWN live array, not the regex parse above —
-  // so this check still means something if the parse ever goes wrong.
-  const live = (w.CPL_SIERRA_PAGE || {}).AUDIENCES || [];
-  check("the rendered chips match the module's live AUDIENCES",
-    live.length === 5 && JSON.stringify(texts) === JSON.stringify(live.map(function (a) { return a.label; })));
-  check("the live array matches what cpl_chat.js declares",
-    JSON.stringify(live.map(function (a) { return [a.k, a.label]; }))
-      === JSON.stringify(audienceLabels(CHAT, "cpl_chat.js")));
+  check("the page renders no audience chip", w.document.querySelectorAll(".s-aud-chip").length === 0);
   // Scripts are removed from the clone first: an inline <script>'s source is
   // part of body.textContent, so scanning it verbatim would read this file's own
   // explanatory comments as visitor-facing text.

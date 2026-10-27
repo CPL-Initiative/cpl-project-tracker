@@ -4,7 +4,7 @@
   "supabase_tables": 102,
   "rpcs": 42,
   "edge_functions": 9,
-  "file_datasets": 719,
+  "file_datasets": 720,
   "external_services": 184,
   "consumers": 475,
   "workflows": 58,
@@ -374,7 +374,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 7092
+     "line": 7111
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -658,7 +658,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 624
+     "line": 623
     }
    ],
    "main_committers": []
@@ -1329,6 +1329,16 @@
      "direction": "read",
      "how": "url",
      "line": 4985
+    },
+    {
+     "id": "module:sierra_training.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1902,
+     "tabs": [
+      "sierra-training"
+     ]
     }
    ],
    "main_committers": []
@@ -1445,7 +1455,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1804
+     "line": 1803
     }
    ],
    "main_committers": []
@@ -1973,7 +1983,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 861
+     "line": 860
     }
    ],
    "main_committers": []
@@ -1992,7 +2002,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1200
+     "line": 1199
     },
     {
      "id": "module:college_briefing.js",
@@ -2332,7 +2342,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5872
+     "line": 5891
     }
    ],
    "main_committers": []
@@ -3820,7 +3830,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1478
+     "line": 1477
     }
    ],
    "main_committers": []
@@ -4848,7 +4858,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1369
+     "line": 1368
     },
     {
      "id": "module:admin.js",
@@ -5457,7 +5467,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1727
+     "line": 1734
     },
     {
      "id": "page:funding-model/memo/index.html",
@@ -5716,7 +5726,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1743
+     "line": 1742
     },
     {
      "id": "module:college_briefing.js",
@@ -5741,7 +5751,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1732
+     "line": 1739
     },
     {
      "id": "page:funding-model/memo/index.html",
@@ -5801,7 +5811,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1718
+     "line": 1725
     },
     {
      "id": "page:funding-model/memo/index.html",
@@ -5903,7 +5913,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 915
+     "line": 914
     },
     {
      "id": "module:cpl_funding.js",
@@ -6101,7 +6111,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 350
+     "line": 349
     },
     {
      "id": "module:cpl_pathways.js",
@@ -6165,7 +6175,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1731
+     "line": 1738
     },
     {
      "id": "page:prototype/ccr_atlas_v1.html",
@@ -7554,7 +7564,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1719
+     "line": 1726
     }
    ],
    "served": true,
@@ -16505,7 +16515,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 82
+     "line": 84
     }
    ],
    "served": true,
@@ -17302,7 +17312,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 244
+     "line": 261
     }
    ],
    "served": true,
@@ -17315,7 +17325,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 418
+     "line": 438
     },
     {
      "id": "script:prototype/funding_video/cues.py",
@@ -17330,6 +17340,19 @@
      "direction": "read",
      "how": "literal",
      "line": 50
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/funding_video/funding_in_motion_n2.html": {
+   "consumers": [
+    {
+     "id": "script:scripts/ui_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
     }
    ],
    "served": true,
@@ -17368,7 +17391,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 231
+     "line": 230
     }
    ],
    "served": true,
@@ -18132,7 +18155,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1748
+     "line": 1755
     },
     {
      "id": "page:library/cpl-opportunity/index.html",
@@ -18173,7 +18196,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 157
+     "line": 136
     }
    ],
    "served": true,
@@ -21363,7 +21386,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6359
+     "line": 6378
     },
     {
      "id": "module:admin.js",
@@ -21592,7 +21615,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6689
+     "line": 6708
     }
    ],
    "main_committers": []
@@ -21826,7 +21849,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 629,
+     "line": 645,
      "tabs": [
       "college-briefing"
      ]
@@ -21836,7 +21859,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 330,
+     "line": 239,
      "pages": [
       "sierra/index.html"
      ]
@@ -22070,7 +22093,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 7359
+     "line": 7378
     },
     {
      "id": "module:sierra_training.js",
@@ -24751,7 +24774,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6448
+     "line": 6467
     },
     {
      "id": "module:sierra_training.js",

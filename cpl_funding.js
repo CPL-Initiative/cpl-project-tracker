@@ -4596,7 +4596,7 @@
   // names no section is a link a curator renames on the page, under `pubLinks`
   // beside `pubTitles`; plain text, and the page passes its house words so an
   // unchanged label stores nothing.
-  var PUBLIC_LINK_IDS = ["memo", "memo_word", "video", "hours", "landing", "training"];
+  var PUBLIC_LINK_IDS = ["memo", "memo_word", "video", "video_narrated", "hours", "landing", "training"];
   function pubLinkLabel(id) {
     var v = firstDefined(SCENARIO.pubLinks && SCENARIO.pubLinks[id], SHARED.pubLinks && SHARED.pubLinks[id]);
     return (v == null || !String(v).trim()) ? null : String(v);
