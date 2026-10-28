@@ -1092,6 +1092,34 @@ side session (Scenario 4) ran beside it, one writer per file.
 
 **S444:** Golden West (79) and Imperial Valley (42) loaded; department pages are candidates, a section heading may span two lines (Sierra 35 → 81 found, MiraCosta 29 → 68, its discipline pages still lose siblings); 37 Program Mapper hosts recorded (#2330).
 
+## S505 SkyBoysenberry (2026-10-28): Glendale 45 to 80 passing of its filed records, on its catalog's own words
+
+- **List the thin colleges live first (S442), and it named Glendale:** 220 loaded, 65 of 296 active programs passing,
+  the largest gap at a loaded college. 114 records failed arithmetic alone, as incomplete, and 54 failed outcomes.
+- **Three free page reads gave every fix its words** (`kb/college_reads/glendale_program_totals`,
+  `glendale_prefix_titles`, `glendale_theatre_program_pages`; runs 40690480267, 40692306069, 40701293232). The program
+  pages print the old prefixes and numbers (PSYCH 170, T ART 101, ENGL 101); the course descriptions print the state's
+  (PSYC 170 Sports Psychology, THTR 101, "C1000 · ... · (Previously ENGL 101)"). Glendale's reconcile entry files
+  PSYCH and TART as prefix aliases and ENGL 101, ENGL 104 and POL S 101 as renumbers. ART for ARTH stays out: no read
+  printed an ARTH description, and ART is a live Glendale prefix.
+- **The capture now looks for a listed course under an aliased prefix (4a925a33).** `with_renumbers` set `printed` for
+  renumbers only, so a program page printing TART codes named none of the THTR list and the THTR descriptions won the
+  page: three Theatre records read course descriptions. The page picker moved them to their program pages (88, 114,
+  123) and found two programs never filed (Theatre Arts: General 11176, Sociology 30813). A listed prefix that only
+  begins with an alias's (ARTH under ART) is never rewritten; guarded in `program_requirements_pilot_test`.
+- **The outcome scorer's no-space reading now joins line-end hyphens and fires on letter-spaced lines and spaced
+  semicolons (4e53790c).** Glendale's PDF prints "Fulﬁ ll requirements for transfer to a col-\nlege", "b e  a b l e
+  t o" and "occupations ;". The reading only adds; outcome failures went 54 to 0 on the reconcile (run 40711704988).
+- **The Edge Function's BOOT_ERROR (HTTP 503) is transient and leaves a record empty.** Three of 27 failed on run
+  40704760867, two again on the forced retry; the third forcing filed all (runs 40707595210, 40710163463). Check every
+  record's `error` after an extraction before any reread, and force the empty ones.
+- **A reread posts the newest run only,** so records filed by earlier runs on the branch need `force=<run>` each
+  (40704760867, 40710163463, 40707595210 after the reconcile's own).
+- **Left at Glendale:** 180 records fail arithmetic. Most are courses the state's file lists with no units (63 courses,
+  unspaced codes such as BIOL298, ACCTG101); their units print only in the course descriptions ("3.0 Units"), so a
+  reader step that takes a course's units from its description is next. Biotechnology 41767 sums 25-27 against its
+  printed 28-30, the catalog's own disagreement. Cost: $2.64 + about $0.40 in forced retries.
+
 ## S500 SkyBlackberry (2026-10-27, the CPL Queue routine, beside Sam's own S500): Delta 22244 passes on a unit_line step (200 of 203)
 
 - **A second reading made the same choice.** `force=22244` (run 40517095981, $0.05) left out "Associate Degree Math
