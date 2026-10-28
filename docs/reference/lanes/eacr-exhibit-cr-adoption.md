@@ -136,6 +136,10 @@ Malone, 2026-10-26), where Request Quick Adopt sits. Under the could-adopt block
 Adopt column, one line of chips, one per building college, at most six (a card can fold 55 IDs from 48 builders, CLEP
 Western Civilization 1) and then *and N more*. Links only for IDs `kb/reference/map_cpl_opportunities_verified.json`
 lists (6,418 of 6,418, 2026-10-26); no file, no links. Guard `tests/eacr_map_links.test.js`.
+Since 2026-10-28 every link adds `View=Non-Military` (Pedro's routing), so MAP opens on the exhibit's own
+Non-Military card, and the workbook and visual's link reads **Request Adopt** (Sam). Sierra carries the same link
+(#2530). **NEXT (Sam, 2026-10-28):** sweep the public views that suggest an adoption but carry no MAP link and add it
+where feasible, the Fact Sheet's statewide exhibits first.
 
 **Standing rulings that survive:** brown is the PEER BENCHMARK, never
 `rec_units_total` · columns open on COLLEGES · brown on CREDIBLE cells only ·
