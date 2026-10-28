@@ -4,8 +4,8 @@
  "with_closed_list": 267,
  "found": 260,
  "extracted": 260,
- "errors": 2,
- "passed_machine_checks": 52,
+ "errors": 0,
+ "passed_machine_checks": 54,
  "failed": {
   "coverage": 35,
   "invented": 2,
@@ -13,8 +13,8 @@
   "repeated": 0,
   "outcomes": 54
  },
- "cost_usd": 19.79,
- "cost_per_program": 0.0761,
+ "cost_usd": 20.11,
+ "cost_per_program": 0.0773,
  "not_found": [
   {
    "control_number": "11147",
@@ -80,5 +80,5 @@
    }
   }
  ],
- "run": "40707595210"
+ "run": "40710163463"
 }
