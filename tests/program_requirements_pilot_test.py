@@ -1881,6 +1881,21 @@ check(sorted(found) == ["AGMA11", "AGMA20"],
 DRONE = [{"code": "DRON 10", "printed": RC.course_renumbers("Merced College").get("DRON10")}]
 check(P.coverage(P.find_codes("CPSC-17 Drone Technology I (Total Credits 3.0 - 3.0)", DRONE), DRONE) == 1.0,
       "a printed code the page hyphens (CPSC-17 for DRON 10) is found: %s" % DRONE)
+# Glendale (S505): the program pages print TART 101 and PSYCH 170 where the file lists THTR 101 and PSYC 170;
+# the capture looks for the catalog's prefix too, or the THTR course descriptions win the page.
+import _program_requirements_college as PC
+GCC = [{"closed_list": [{"code": "THTR 101"}, {"code": "PSYC 170"}, {"code": "ENGL C1000"}, {"code": "KIN 157"}]}]
+PC.with_renumbers(GCC, RC.course_renumbers("Glendale Community College"),
+                  RC.load_steps()["Glendale Community College"]["prefix_aliases"])
+GCL = GCC[0]["closed_list"]
+check([c.get("printed") for c in GCL] == ["TART 101", "PSYCH 170", "ENGL 101", None],
+      "an aliased prefix and a renumber each give the code the catalog prints: %s" % GCL)
+check(sorted(P.find_codes("Required Courses: K I N 157; P SYC H 170; TART 1 0 1; ENGL 1 01", GCL))
+      == ["ENGLC1000", "KIN157", "PSYC170", "THTR101"], "the program page names all four listed courses")
+SJ = [{"closed_list": [{"code": "ANTHR 2L"}, {"code": "ARTH 12"}]}]
+PC.with_renumbers(SJ, {}, {"ARTH": "ART", "ANTH": "ANTHR"})
+check([c.get("printed") for c in SJ[0]["closed_list"]] == ["ANTH 2L", None],
+      "a listed prefix that only begins with an alias's (ARTH under ART) is never rewritten")
 # San Joaquin Delta (S422): a noncredit page prints "Total Contact Hours: 288" and "Units: 0" beside each course.
 SJD_NC = ("Core Requirements \u00b7 ESL 9088 Health Careers Reading Units: 0 \u00b7 ESL 9059 Writing Units: 0 \u00b7 "
           "Restrictive Electives \u00b7 Complete 1 course from: \u00b7 ESL 9086 Advanced Reading Units: 0 \u00b7 Total Contact Hours: 288")
