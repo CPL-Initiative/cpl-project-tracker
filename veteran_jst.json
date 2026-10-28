@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-10-27T18:10:00.722832+00:00",
+  "scraped_at": "2026-10-28T13:02:57.112975+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29722,
-    "star_colleges": 64
+    "jst": 29936,
+    "star_colleges": 65
   },
-  "computed_star_colleges": 64,
+  "computed_star_colleges": 65,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
@@ -117,7 +117,7 @@
     },
     "San Bernardino Valley College": {
       "vets": 207,
-      "jst": 207,
+      "jst": 215,
       "star": true
     },
     "College of the Desert": {
@@ -157,7 +157,7 @@
     },
     "Sierra College": {
       "vets": 326,
-      "jst": 331,
+      "jst": 329,
       "star": true
     },
     "Mt. San Jacinto College": {
@@ -367,7 +367,7 @@
     },
     "Foothill College": {
       "vets": 915,
-      "jst": 75,
+      "jst": 76,
       "star": false
     },
     "Coalinga College": {
@@ -387,7 +387,7 @@
     },
     "Hartnell College": {
       "vets": 106,
-      "jst": 63,
+      "jst": 64,
       "star": false
     },
     "College of Alameda": {
@@ -437,7 +437,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 183,
+      "jst": 184,
       "star": true
     },
     "Santa Monica College": {
@@ -475,14 +475,14 @@
       "jst": 3,
       "star": false
     },
+    "Grossmont College": {
+      "vets": 415,
+      "jst": 399,
+      "star": true
+    },
     "Los Angeles City College": {
       "vets": 301,
       "jst": 193,
-      "star": false
-    },
-    "Grossmont College": {
-      "vets": 415,
-      "jst": 194,
       "star": false
     },
     "Ohlone College": {
