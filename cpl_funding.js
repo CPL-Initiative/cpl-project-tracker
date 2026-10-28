@@ -3810,6 +3810,11 @@
   // "It arrives through the apportionment funding procedure used by the CO ... it is important to use
   // the term because funding distributed through the apportionment procedure can get buried at the
   // colleges"), so cpl_funding_calm allows the word in that answer and the seed grant's sentence.
+  // Malone's twelve (via Sam in session, 2026-10-28, "add them to our funding FAQs") join each group
+  // in place, as he wrote them (Sam, 2026-10-28: "push them as written by Malone"; "It's OK to lead
+  // with negatives as long as it's human authored"), so cpl_funding_calm exempts his sentences by
+  // name. His refresh question stays out, since "How often do the figures on this page change?"
+  // answers it.
   var FAQ_DEFAULT_PLAIN = [
     "Q: What must an institution do to qualify for funding?",
     "Meet the three minimum conditions: a CPL Coordinator assigned in MAP, with the college's CPL landing " +
@@ -3840,6 +3845,9 @@
       "priorities over the two years. Curr Funds (current) is the funding it qualifies for so far from the CPL " +
       "outcomes recorded in MAP, once it meets all three minimum conditions. Select an institution's row to see " +
       "each priority's figures.",
+    "Q: Does one college earning more funding reduce the amount available to other colleges?",
+    "No. Each college has its own maximum award. A college's progress does not take funding away from another " +
+      "institution.",
     "Q: What do the priority outcomes measure?",
     "Two outcomes determine the credit share of each award, half each. Access counts applied (articulated) " +
       "CPL units available to students in MAP, and Completion counts transcribed CPL units, each measured in " +
@@ -3876,6 +3884,9 @@
     "Q: How often do the figures on this page change?",
     "The figures refresh from MAP data once a day, so a CPL request, an articulation or a transcription " +
       "recorded in MAP shows here after the next refresh.",
+    "Q: Are the CPL Funding Dashboard totals limited to the current academic year?",
+    "No. The dashboard uses cumulative MAP records rather than limiting calculations to a single catalog or " +
+      "academic year. However, you can filter by academic year to see filtered results.",
     "Q: Has the Chancellor's Office released guidance for this funding?",
     "The Chancellor's Office will release detailed guidance once the CPL funding procedure is final. " +
       "The outcomes respond to Education Code §78093.2(d), which directs the Chancellor's Office to allocate " +
@@ -3925,6 +3936,26 @@
       "information system.",
     "Q: Will there be guidance on minimum data entry, so colleges report on a consistent basis?",
     "Yes. The Chancellor's Office will release detailed guidance once the CPL funding procedure is final.",
+    "Q: Does MAP actually award or transcribe CPL credit?",
+    "No. MAP helps colleges identify CPL opportunities, manage reviews, document decisions, and track " +
+      "progress. The college's Admissions and Records team completes the official transcription in its student " +
+      "information system.",
+    "Q: What is a MAP CPL plan (petition)?",
+    "A CPL plan summarizes the student's prior-learning evidence, applicable credit recommendations, and " +
+      "matched college courses. It can be printed or emailed to support counseling, student consent, and the " +
+      "handoff to Admissions and Records.",
+    "Q: How should a college document that a student accepted the credit?",
+    "Until the automated accept, decline, and appeal feature is available, colleges can use their local " +
+      "consent form or documented email confirmation. The signed documentation can be uploaded to the " +
+      "student's MAP record, and the \"student verified\" step should be completed after the student has been " +
+      "counseled about the implications of accepting the credit.",
+    "Q: What should I do when MAP identifies a possible duplicate student?",
+    "Review the records and choose whether to merge them, keep them as separate students, or remove the newly " +
+      "uploaded record. If one record is already marked as transcribed, that record remains the primary record " +
+      "during a merge.",
+    "Q: Will merging duplicate student records erase or duplicate CPL decisions?",
+    "No. MAP preserves actions already taken on credit recommendations. Existing decisions are not " +
+      "overwritten, and the same credit recommendation is not duplicated when records are merged.",
     "Q: Where can a college get support to make CPL easier for students to find and use?",
     "Start with the college's CPL landing page in MAP. It tells students what CPL the college offers and whom " +
       "to contact, and its Request CPL function opens a CPL petition in MAP. A configured landing page is part " +
@@ -3961,6 +3992,27 @@
       "the MAP website, the MAP dashboard and the CPL Fact Sheet. Units applied through an adopted statewide " +
       "exhibit count toward the Access and Completion outcomes, as units through any faculty-approved exhibit " +
       "do.",
+    "Q: Who determines whether prior learning is equivalent to a college course?",
+    "Faculty determine the academic equivalency and appropriate credit. Counselors, CPL coordinators, " +
+      "initiators, and articulation officers may support the workflow, but the exact review and approval " +
+      "process depends on the college's locally approved procedures.",
+    "Q: When should a college use Quick Adopt instead of creating a new exhibit?",
+    "Use Quick Adopt when a relevant statewide or existing exhibit already describes the prior learning. " +
+      "Create a custom exhibit when the college's opportunity is genuinely different. A common recommended " +
+      "sequence is to adopt statewide opportunities first, bulk upload approved standardized exams and " +
+      "credit-by-exam opportunities, and create custom exhibits only where necessary.",
+    "Q: Does creating an exhibit automatically mean that credit has been approved?",
+    "No. An exhibit describes the prior learning, credential, examination, or experience. The corresponding " +
+      "college credit must still be articulated and approved through the institution's workflow. Bulk uploads " +
+      "should only be used for CPL that has already received the required local approval.",
+    "Q: Why might a certification or experience not appear in a MAP search?",
+    "Colleges may use different titles, issuers, abbreviations, or CPL classifications for similar learning. " +
+      "Search using concise keywords from the credential's official name or issuer, and avoid assuming that a " +
+      "missing exact match means no CPL opportunity exists.",
+    "Q: What should a student do if the Student Portal does not find an exact match?",
+    "The student can still submit a petition to a college and provide supporting materials such as a " +
+      "résumé, certificate, license, or description of relevant experience. No exact match does not " +
+      "necessarily mean the student is ineligible for CPL.",
     "Q: Where can a college get help setting up its MAP records?",
     "The MAP team meets with colleges to set up their records, and holds office hours listed at " +
       "https://map.rccd.edu/get-involved/. For technical support with MAP or this page, email map@rccd.edu."
