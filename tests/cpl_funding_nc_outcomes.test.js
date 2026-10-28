@@ -240,6 +240,8 @@ const head = csv.split("\n")[1] || "";
 const line = csv.split("\n").find((l) => /^\d+,Mt San Antonio,/.test(l)) || "";
 check("D13: the CSV carries a target and an actual per outcome, in the outcome's unit, after the credit priorities' columns",
   /NC-1 target \(exhibits\),NC-1 actual,NC-2 target \(courses\),NC-2 actual/.test(head) && /,10,5,1,0,/.test(line));
+check("D13b: the Noncredit Funding Rules fold is gone under the outcomes lane; the cards carry the rules (Sam, 2026-10-23)",
+  !doc.querySelector(".cplfund-ncrules") && /releases on the noncredit outcomes/.test(flat(section)));
 check("D14: no origination sentence anywhere on the tab under the outcomes lane",
   !/originat/i.test(doc.body.textContent));
 
