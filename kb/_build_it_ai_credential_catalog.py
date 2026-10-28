@@ -369,6 +369,36 @@ def domain_of(name, issuer):
     return "Cybersecurity" if issuer in SECURITY_ISSUERS else OTHER_IT
 
 
+# Credential Engine top-50 CTID -> the catalog rows it is, where the names differ
+# in more than punctuation or a vendor prefix (a person read each pairing). A
+# Certiport/Pearson pair of one IT Specialist exam carries the CTID on both rows.
+# Credentials the catalog lacks (PCEP, CAPM, the trades) stay in
+# kb/reference/credential_engine_top50.json with no catalog row.
+CE_TOP50_ALIASES = {
+    "ce-969da20e-c127-4175-93f3-0722063ca7fc": ["AWS Certified Cloud Practitioner"],
+    "ce-b9eb2864-f5a6-4c55-b048-3b5aa7bc8c4c": ["CCNA Certification"],
+    "ce-9b80b165-9629-409c-8d6c-e7de0d22a973": [
+        "IT Specialist - HTML5 Application Development",
+        "Information Technology Specialist - HTML5 Application Development"],
+    "ce-af9f9fa7-63bc-43cd-899c-ebc3a464103b": ["Information Technology Specialist - HTML and CSS"],
+    "ce-60a4069d-d037-4ed1-b7ef-f3f70ff7de01": [
+        "Information Technology Specialist - Device Configuration and Management"],
+}
+
+
+def ctdl_block(t):
+    """The CTDL terms a catalog row carries from its Registry record."""
+    keep = ("ctdl_type", "status", "audience_level", "occupation_type", "industry_type",
+            "instructional_program_type", "estimated_duration", "renewal_frequency",
+            "subject_webpage", "registry_url", "same_as", "requires_credential_ctids",
+            "requires_conditions")
+    b = {k: t[k] for k in keep if t.get(k) not in (None, "", [])}
+    b["owned_by"] = [{"ctid": a["ctid"], "name": a["name"]} for a in t.get("owned_by", [])]
+    b["collection_count"] = t["collection_count"]
+    b["rank"] = t["rank"]
+    return b
+
+
 def load_json(path):
     with open(path, encoding="utf-8") as fh:
         return json.load(fh)
@@ -409,6 +439,8 @@ def build(root=ROOT):
     watch = load_json(watch_path) if os.path.exists(watch_path) else {"credentials": []}
     skills_path = os.path.join(root, "kb", "reference", "industry_credential_skills.json")
     skills = load_json(skills_path) if os.path.exists(skills_path) else {"credentials": []}
+    top_path = os.path.join(root, "kb", "reference", "credential_engine_top50.json")
+    top50 = load_json(top_path) if os.path.exists(top_path) else {"credentials": []}
     cip_titles = load_cip_titles(os.path.join(root, "kb", "reference", "CIPCode2020.csv"))
     for rules in CIP_RULES.values():
         for _p, code in rules:
@@ -532,6 +564,24 @@ def build(root=ROOT):
                          "harvested_on": skills.get("_harvested_on")}
         skills_attached += 1
 
+    # Credential Engine's most-referenced credentials: the Registry's CTID and
+    # CTDL terms ride on the catalog row they are, joined on the core name and
+    # then on the reviewed aliases above. One CTID may mark two rows.
+    ctid_attached = set()
+    by_name = defaultdict(list)
+    for r in rows:
+        by_name[r["name"]].append(r)
+        by_name["~" + core(r["name"])].append(r)
+    for t in top50.get("credentials", []):
+        hits = [h for n in CE_TOP50_ALIASES.get(t["ctid"], []) for h in by_name.get(n, [])] \
+            or by_name.get("~" + core(t["name"]), [])
+        for h in hits:
+            h["ctid"] = t["ctid"]
+            h["ctdl"] = ctdl_block(t)
+            if "Credential Engine" not in h["sources"]:
+                h["sources"].append("Credential Engine")
+            ctid_attached.add(t["ctid"])
+
     for r in rows:
         code = cip_of(r["name"], r["domain"])
         r["cip"] = {"code": code, "title": cip_titles[code],
@@ -568,6 +618,7 @@ def build(root=ROOT):
             "credential_engine_coverage": ce.get("_coverage"),
             "watch_verified_on": watch.get("_verified_on"),
             "cer_generated_at": cer.get("_generated_at"),
+            "ce_top50_fetched_on": top50.get("_fetched_on"),
         },
         "_stats": {
             "credentials": len(rows),
@@ -577,6 +628,9 @@ def build(root=ROOT):
             "in_map": sum(r["map_status"] != "not in MAP" for r in rows),
             "articulated": sum(r["map_status"] == "articulated" for r in rows),
             "with_issuer_skills": skills_attached,
+            "with_ctid": sum(bool(r.get("ctid")) for r in rows),
+            "ce_top50_in_catalog": len(ctid_attached),
+            "ce_top50_total": len(top50.get("credentials", [])),
             "by_cip_sector": dict(Counter(f'{r["cip"]["sector"]} {r["cip"]["sector_title"]}'
                                           for r in rows).most_common()),
             "by_domain": {d: dict(c) for d, c in sorted(by_domain.items())},
@@ -645,7 +699,7 @@ def write_xlsx(cat, path):
             ("Status", 10), ("MAP status", 26), ("Colleges articulating", 12),
             ("Units (range)", 13), ("MAP title", 44), ("Colleges", 60),
             ("Sources", 34), ("Official page", 48), ("Issuer-published skills", 90),
-            ("Skills source", 48), ("Notes", 50)]
+            ("Skills source", 48), ("Notes", 50), ("CTID", 44), ("CTDL occupation", 40)]
 
     def sheet(title, rows):
         w = wb.create_sheet(title)
@@ -673,7 +727,8 @@ def write_xlsx(cat, path):
                     r.get("status") or "", r["map_status"], m.get("colleges_n") or "",
                     units, "; ".join(m.get("titles", [])), "; ".join(m.get("colleges", [])),
                     ", ".join(r["sources"]), r.get("url") or "", skill_text,
-                    sk.get("source_url") or "", r.get("notes") or ""]
+                    sk.get("source_url") or "", r.get("notes") or "", r.get("ctid") or "",
+                    "; ".join(f'{o["code"]} {o["name"]}' for o in (r.get("ctdl") or {}).get("occupation_type", []))]
             for j, v in enumerate(vals, 1):
                 w.cell(row=i, column=j, value=v)
         w.freeze_panes = "F2"
