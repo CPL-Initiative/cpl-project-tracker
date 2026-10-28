@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_s504_2026-10-28.sql",
+ "name": "s504_memory_funding_film_script",
+ "version": "20261028010139",
+ "sha256": "d82fdb9324070ef57366f941a9a8823b7e57326f91a3e0e4f0334b757ed78357",
+ "run": "40612129278",
+ "status": 201,
+ "response": "[{\"slug\":\"sam-funding-film-his-script-draft-6-2026-10-27\",\"status\":\"verified\"},{\"slug\":\"side-session-pr-2323-never-merged-2026-10-28\",\"status\":\"proposed\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
