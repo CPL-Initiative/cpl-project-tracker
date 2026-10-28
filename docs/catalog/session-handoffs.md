@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-475 document(s).
+476 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 507 | [Session 507 handoff: Glendale on its catalog's own words (45 to 80 passing); MAP links open the Non-Military card; Sierra deployed](../session_507_handoff.md) | 2026-10-28 |
 | 506 | [Session 506 handoff: four orphaned PRs landed or ported; the Summit is Friday](../session_506_handoff.md) | 2026-10-28 |
 | 505 | [Session 505 handoff: the narrated funding film speaks Sam's own script (Draft 7), two days to the Summit](../session_505_handoff.md) | 2026-10-28 |
 | 504 | [Session 504 handoff: Sierra deployed, the funding film's recorded piano live, three days to the Summit](../session_504_handoff.md) | 2026-10-27 |

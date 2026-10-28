@@ -766,3 +766,6 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ### docs/INDEX.md update history, moved by S504 (2026-10-28)
 
 - 2026-10-27 (S493 SkyThimbleberry): the MAP link with each exhibit's builder on the CPL Opportunity visual, EACR, CPL Pathways, My College and CER (#2485, #2488); the public funding page's Step 2 fixed for the Summit (#2487); Open Asks Sheet 134 answered; handoff 494.
+
+## INDEX update history (moved)
+- 2026-10-27 (S496 SkyLingonberry): Hartnell CalGETC 45096 passes, 82 of 94 (#2504, reread 40460714483, display build 588cfa081bee); the Funding film's UI pass, clean; handoff 497.

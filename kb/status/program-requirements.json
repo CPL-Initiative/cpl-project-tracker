@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-28T14:24:00Z",
+  "written_at": "2026-10-28T17:32:22Z",
   "session": 505,
   "moniker": "SkyBoysenberry",
-  "run": "the CPL Queue routine",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_506_handoff.md",
+  "handoff": "docs/session_507_handoff.md",
   "next_step": {
-    "title": "The Summit-morning sweep",
-    "text": "On the morning of October 30 the next session re-measures the ten public pages and the narrated film with npm run a11y, after confirming the live site serves the narrated Draft 7 and the music cut v13."
+    "title": "Glendale's course units from its descriptions",
+    "text": "180 Glendale records fail arithmetic, most on courses the state's file lists without units; the next session reads each such course's units from the catalog's course descriptions, which print them, and rescores."
   },
   "calls": [
     {
@@ -138,8 +138,12 @@
   },
   "changes": [
     {
-      "at": "2026-10-28T14:24:00Z",
-      "text": "No change to the harvest this run. Four old pull requests were landed or ported: the noncredit funding words of October 23 and the credential catalog."
+      "at": "2026-10-28T16:52:00Z",
+      "text": "Glendale's filed records passing rose from 45 to 80 of 260: its catalog's old prefixes and numbers map to the state's, the capture reads an aliased prefix, and the outcome check reads its letter-spaced text. 66 rows replaced, 6 inserted, display build 41c15eee3f75."
+    },
+    {
+      "at": "2026-10-28T17:10:00Z",
+      "text": "Every MAP link now opens the exhibit's own Non-Military card, and the adopt link reads Request Adopt; Sierra deployed with the same links."
     }
   ],
   "headline": [
@@ -266,7 +270,7 @@
     {
       "day": "2026-10-28",
       "active": 20282,
-      "complete": 13200,
+      "complete": 13201,
       "colleges": 114
     }
   ],
@@ -277,7 +281,7 @@
   },
   "harvest": {
     "day": "2026-10-28",
-    "gaps": 3031,
+    "gaps": 3029,
     "parts": {
       "links": {
         "catalog": [
@@ -294,11 +298,11 @@
         ]
       },
       "roep": [
-        19148,
+        19152,
         20282
       ],
       "coci": [
-        16117,
+        16123,
         20282
       ],
       "outcomes": {
@@ -307,12 +311,12 @@
           89192
         ],
         "plo": [
-          16117,
+          16123,
           20282
         ]
       },
       "careers": [
-        15081,
+        15087,
         20282
       ]
     }
