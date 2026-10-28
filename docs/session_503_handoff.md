@@ -4,6 +4,8 @@ date: 2026-10-27
 session: 502 (SkyHuckleberry)
 tags: [handoff, implementation-funding, funding-public, sierra-page-redesign]
 status: current
+superseded: true
+superseded_by: session_505_handoff.md
 ---
 
 # You are Session 503

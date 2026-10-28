@@ -4,6 +4,8 @@ date: 2026-10-27
 session: 503 (SkyElderberry)
 tags: [handoff, implementation-funding, sierra-page-redesign, funding-film]
 status: current
+superseded: true
+superseded_by: session_505_handoff.md
 ---
 
 # You are Session 504

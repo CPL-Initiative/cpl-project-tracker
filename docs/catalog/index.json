@@ -11980,7 +11980,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-10-25"
+     "updated": "2026-10-28"
     },
     {
      "created": "2026-06-21",
@@ -16210,8 +16210,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 473,
+   "count": 474,
    "docs": [
+    {
+     "created": "2026-10-28",
+     "governs": [],
+     "n": 505,
+     "path": "docs/session_505_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "funding-film",
+      "library"
+     ],
+     "title": "Session 505 handoff: the narrated funding film speaks Sam's own script (Draft 7), two days to the Summit",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-27",
      "governs": [],
@@ -24320,5 +24336,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1290
+ "total": 1291
 }

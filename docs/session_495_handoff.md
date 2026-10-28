@@ -4,6 +4,8 @@ date: 2026-10-27
 session: 494 (SkyWhortleberry)
 tags: [handoff, my-college-action-page, sierra-retrieval-corpus, implementation-funding, accessibility]
 status: current
+superseded: true
+superseded_by: session_505_handoff.md
 ---
 
 # You are Session 495
