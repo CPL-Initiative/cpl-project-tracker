@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_s505b_2026-10-28.sql",
+ "name": "s505b_cpl_memory_map_links_harvest",
+ "version": "20261028174150",
+ "sha256": "4930173c9a2345ee961f539f3e2820c304d40051cf310b668810de966a48b8bd",
+ "run": "40736487645",
+ "status": 201,
+ "response": "[{\"slug\":\"harvest-edge-boot-error-leaves-record-empty-2026-10-28\",\"status\":\"proposed\"},{\"slug\":\"harvest-capture-reads-aliased-prefix-2026-10-28\",\"status\":\"proposed\"},{\"slug\":\"routine-and-session-share-a-session-number-2026-10-28\",\"status\":\"proposed\"},{\"slug\":\"sam-map-links-open-non-military-card-2026-10-28\",\"status\":\"verified\"},{\"slug\":\"sam-request-adopt-label-2026-10-28\",\"status\":\"verified\"},{\"slug\":\"sam-sweep-public-views-for-map-link-2026-10-28\",\"status\":\"verified\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
