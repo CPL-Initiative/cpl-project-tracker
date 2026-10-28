@@ -669,3 +669,51 @@ Shipped: #2524 (the Library record at v12, then v13), #2525 (Draft 7, v13, the m
 - **#2379 never merged.** S450 closed at its context emergency line with the PR open and a merge checklist in its body; handoffs 462 to 476 listed it as open and none acted. Its data half (the strategies receipt) had run on 10-23 and read back live; its code half had not. #2527 ported what main still lacked: under the outcomes lane the Noncredit Funding Rules fold is gone (Sam, 10-23: *"we can eliminate the Noncredit Funding Rules section as long as everything has a home in the priority cards"*), and the rule text names his four exhibit bases and the Career Exploration and CPL Portfolio course. Guard D13b. The receipt is committed as record (`kb/receipts/cpl_funding_config_scenario4_strategies_2026-10-23_s450.sql`).
 - **What stayed main's.** The branch's condition words (a coordinator *on the college CPL Strike Team*) predate Sam's 10-25 rulings (the Noncredit CPL Lead, the strike-team condition struck), so main kept its own.
 
+
+
+## S506 SkyCloudberry (2026-10-28): email-first forms, a deletion that sticks, and the FAQ on a sheet
+
+**What Sam asked, and what shipped.** Seven funding-tab asks from one screenshot (#2531), then two answers (#2533):
+the public Confirm and Attest forms start with the email, acknowledge an allowed address and name `map@rccd.edu`; the
+Attest word moved onto the Noncredit share row under the second box; unmet boxes are gray; Confirm by takes the row's
+size; the memo's Contents item reads *(TBA)*, its Word item gone; the version sits left of Resource Links; the two
+curator text sections are one. Then *"Yes on NOCE"* (`cpl_funding_district_domains`, migration
+`kb/migrations/2026-10-28_s506_funding_district_domains.sql`) and *"Awaiting CPL Initiative Confirmation"*.
+
+**Learned.**
+- **The domain gate held when measured read-only.** The repo's Supabase guard refuses a `do` block, even one that rolls
+  back, so the test called the policy's own function: right domain in any case passes; gmail, a sister college, a
+  look-alike and a subdomain fail; every one of 119 institutions has domains, so none falls to "accepts any".
+- **A deleted passage came back for two reasons.** An empty save deleted the override (Restore by another name), and a
+  signed-in save went to the shared layer while the tab read the browser's what-if layer first. A third, on the public
+  page: the painter skipped an empty passage and left the typed default. `TEXT_BLANK`, the what-if drop in `setText`,
+  and the painter's blank check fix the three (`cpl_funding_s506_asks` 7c to 7e).
+- **The funded Completion measure has no counselor step.** Live Scenario 4: Access is applied (articulated) units,
+  Completion transcribed units, half each; the Counselor-step text from card 11 never reached the config. Two of Sam's
+  FAQ drafts leaned on counseling counting; the sheet's revisions name the two measures.
+- **Noncredit's 15 percent is a policy, not the FTES ratio.** Noncredit is 6.0 percent of combined FTES (70,831 of
+  1,179,339); unset, the model gives it about 7 percent. Sam's reason, 2026-10-28: *"we bumped the % to NC because it
+  is generally strained for resources locally, and there is great opportunity for expansion of CPL."*
+- **The carve-out is $9,759,692**, not about $9.5M: $8,959,692 CPL Projects & Innovation and $800,000 for the two CO
+  posts, leaving $25,240,308 to institutions (the dashboard's Statewide Max Funds).
+
+**State.** #2531 and #2533 merged; the district domain is live. Open Asks Sheet 138 (21 FAQ cards) waits on Sam. With
+his go, the accessibility session (`session_01Rvwe2UxUSbbW31PYap4U9J`) holds `cpl_funding.js` and the funding-model
+files for its sweep and carries the FAQ post in its handoff.
+
+**Next.** On Sheet 138's verdicts: write the settled set into `FAQ_DEFAULT_PLAIN`, then a KB note (and the public KB
+through curation), a Library record, and drop the lane's NEEDS SAM.
+
+### Moved from the lane (S506)
+
+**Email first (Sam, 2026-10-28; S506):** both forms open on the address alone; Continue runs the domain check, and only a pass opens the rest, under an acknowledgment (*… may confirm …; once CPL Initiative staff approve the request, the confirmation shows as complete on this dashboard*). Every step names `map@rccd.edu` for technical support. **Measured live S506** (read-only; the repo's Supabase guard refuses even a rolled-back write): `cpl_funding_email_domain_ok` passes the right domain in any case and refuses free mail, a sister college's domain, a look-alike and a subdomain; anon holds EXECUTE on both functions; all 115 credit institutions and the four noncredit-only ones have a domain on file, so none falls to "accepts any". A district's own domain may also be named outright in `cpl_funding_district_domains` (service role alone; both functions read it): MAP holds no `nocccd.edu` address for any North Orange college, so Sam's *"Yes on NOCE"* (2026-10-28) added it there, and it counts for NOCE, Cypress and Fullerton (migration `kb/migrations/2026-10-28_s506_funding_district_domains.sql`, rollback in its header). A waiting request reads *Awaiting CPL Initiative Confirmation* (Sam, 2026-10-28), the noncredit one *Noncredit CPL Lead: Awaiting CPL Initiative Confirmation*. Report and notes are reviewer-only on the page and in RLS, so Confirm and Attest are the only public writes. The Attest word rides the Noncredit share row of Minimum Conditions, under the institution row's second box; unmet boxes are gray. Guards `cpl_funding_optin` (G1–G6), `cpl_funding_nc_attestation` (C1b–C1d); a11y target `funding-model-forms`.
+
+Prose blocks edit in curate (`TEXT_BLOCKS`); the explainer's and My CPL Funding's passages share one curator-only section, *The explainer and My CPL Funding text* (Sam, 2026-10-28). ⭐ **An emptied passage stays empty** (`TEXT_BLANK`; Restore the default text is the way back), and a signed-in save drops this browser's what-if copy of that passage, which the tab reads first. A list line indented two spaces (a tab, Indent, or Tab on the line) nests under the one above (`indentLines`, `nestedListHtml`; guard `cpl_funding_s506_asks`).
+
+Since 2026-10-28 the version sits left of Resource Links, and the guidance memo's Contents item is gray with *(TBA)* and no link, its Word item gone, until the CO publishes the memo (Sam: *"we will link to the CO memo once it is officially published"*; give `#memo-link` that address and drop `toc-tba` then). Under the outcomes lane the drill-in no longer closes on the lane's rule line (Sam struck it).
+
+⏳ **NEEDS SAM: the funding FAQ (S506, Open Asks Sheet 138).** Sam sent nine FAQ drafts on 2026-10-28 to check "against what you know", invited more for the rollout, and asked that the settled set post to the funding tab and join the knowledge base and the Library. The sheet carries his nine with a recommended revision each, the help answer with the support address, and eleven new questions (`CPLBrain/decision-sheets/open-asks/2026-10-28-funding-faq-138.json` holds the text). On his verdicts the FAQ posts as the house text, `FAQ_DEFAULT_PLAIN` in `cpl_funding.js` (no scenario holds a `faq` or `x_faq` override, read S506, so the tab and the public page both show it), then a KB note and a Library record.
+
+✅ **My Institution is hidden and its code kept (Sam, 2026-10-27: *"OK, let's hide the My Institution and save the code"*; *"Hiding will mean hiding the Step 1 and 2 at the top and any other link to it"*; S502).** One switch, `oneViewOn()` in `cpl_funding.js` (`window.CPL_FUNDING_ONE_VIEW === true`, read by `college_briefing.js` too): off, no Step 1 or 2 and no explainer Step 1 band, PDF prints at once, and `?view=one`, `chooseOne` and My College's link open the institution's row. The view's suites and the `funding-model-mycpl` a11y target turn it on; `cpl_funding_my_institution_hidden.test.js` pins the default. Sam's next step for the row: a link to My College or CPL Pathways once those pages settle.
+
+✅ **My College's funding now lives here (Sam, 2026-10-21: "move funding to Implementation Funding"; S443).** My CPL Funding on My College is a link to the funding page (`?college=<roster key>`, the institution's row while My Institution is hidden; `&view=one` with the switch on; #2316); the college's expenditure reports open at the top of the 2026-28 Funding view (`reportsPanel`, #2320). ✅ **The public page forgets the chosen institution on reload (Sam, Open Asks Sheet 111 card 2, 2026-10-21: "forget", reversing call 9).** The choice lasts the visit (#2327).
