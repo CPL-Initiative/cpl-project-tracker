@@ -482,3 +482,50 @@ Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, 2026-10-27
   Porterville 76, Folsom Lake 104, De Anza 210, Sacramento City 182, Cosumnes River 182, CCSF 294, American River 327);
   S407 read LA Trade Tech, LA Mission and Desert through catalog steps and applied Sheets 90-91's registry corrections
   (Cuesta, the six hand-filed rows, Grossmont, Ohlone, Cañada, Pasadena, Glendale, LA Southwest) through the runner.
+
+## Moved from the lessons doc (S505 compaction)
+
+## S445 SkyCurrant (2026-10-22): a shared page per heading, MiraCosta's degree lists, Palomar's "Cert. Achievement"
+
+- **Read the capture's own text before changing a reader.** No capture keeps the text it read, so a page read with
+  `"capture_view": true` (#2336) runs the pilot's `PAGE_JS` and prints innerText plus the hidden tab panels line for
+  line, a run of blank lines as one "(blank)"; since #2341 it also prints each tab panel the capture leaves out. The
+  first view (39718674469) showed MiraCosta's certificates headed exactly as the two-line rule expects: the text was
+  sound and the fault was in the sharing.
+- **A shared page goes to each section heading's claimant (#2337).** `page_winners()` grouped sections by award kind
+  and kept the claimant the page HEADING named most fully, so a discipline page heading six certificates kept one
+  (Horticulture went to the A.A. sharing "Horticulture"; 15 of 16 claimants read no page). `section_match()` now
+  records the heading each claimant reads (of several, the one whose own words its title names most fully,
+  `heading_fit()`) and each heading keeps its fullest-named claimant. Free captures: MiraCosta 68 to 122 found,
+  Foothill 144 to 185, Citrus 148 to 178, Sierra 81 to 92, Orange Coast 242 to 277; Palomar unchanged.
+- **A loser's fallback must name it.** Sierra's first capture on the new rule put Mathematics A.S.-T, after it lost
+  eleven pages, on the Nursing page at 0.50. A program that lost a page now takes a later one only when the page
+  names it at least halfway, carries 80% of its courses, or heads its section.
+- **MiraCosta's degrees are certificates plus general education.** Its Degrees tab lists each degree by title and
+  says "Students may earn one of the above-named associate degrees by completing a certificate of achievement and
+  the general education courses" (Computer Studies: "its respective certificate of achievement requirements"). A
+  listed degree reads its certificate's section; the tab names no course, so `hidden_tabs_text()` keeps it only for
+  that sentence. A listed line that IS the title outranks a two-line pair that only contains its words
+  ("Associate in Arts Degrees" + "Child Development Associate Teacher" had taken Child Development Teacher's).
+  "Cybersecurity" heads Cyber Security; a transfer degree's heading spans "Associate in Arts Degree" then
+  "Psychology for Transfer" (#2342).
+- **Palomar heads a degree-and-certificate page "Accounting - A.S. Degree Major/Cert. Achievement".** `AWARD_WORDS`
+  read the A.S. and not the abbreviated certificate: 63 A.S. kept `-AS-CA` pages, 2 certificates did, and 60 of
+  its 82 page-claimed certificates had their own page among the ones they lost (#2339). The other 22 never had
+  their own page as a candidate.
+- **Extraction re-extracts every found program** (confirmed: MiraCosta 119 for $10.02, Foothill 185 for $14.82,
+  Citrus 175 for $11.56, Sierra 92 for $8.48, Orange Coast 274 for $19.44). Passing: MiraCosta 41 to 80, Foothill
+  97 to 138, Citrus 122 to 145, Sierra 57 to 66, Orange Coast 138 to 189. Loads inserted 185 (49, 43, 26, 12, 55);
+  display build 82d6298a0c67 (17,116 to 17,302 rows).
+- **A GE page as a candidate costs extraction, not data.** 69 filed sources statewide read a GE page, about a dozen
+  of them GE certificates; live, 16 loaded records come from one, 15 of them GE certificates. The load's
+  other-program's-page rule keeps the majors out.
+- **The handoff's page-claimed counts can be stale.** It named Ventura and Moorpark 39 and Oxnard 31; main's
+  captures said 5, 1 and 10 (S442's re-reads). Tally `capture.json` across colleges before choosing the next.
+- **`check_generated.sh | tail` hid a stale dependency map again** (S443's lesson); run it bare, every push.
+- **MiraCosta, after #2342 (capture 39734514856):** 119 to 142 found, page-claimed 31 to 8. **Palomar, after #2339 (capture 39731740658):** 224 to 282 found, 103 to 45 (23 A.S., 21 certificates and 1 A.A. remain; 22 of those certificates never had their own page as a candidate).
+
+### Moved from the lane (S445 compaction)
+
+**S444:** Golden West (79) and Imperial Valley (42) loaded; department pages are candidates, a section heading may span two lines (Sierra 35 → 81 found, MiraCosta 29 → 68, its discipline pages still lose siblings); 37 Program Mapper hosts recorded (#2330).
+

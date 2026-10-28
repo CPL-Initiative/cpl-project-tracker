@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1304,
-    "bytes": 13249992,
-    "over_budget": 1,
+    "bytes": 13250328,
+    "over_budget": 0,
     "handoff_max": 505,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59972,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 135,
-        "bytes": 4078492,
+        "bytes": 4082907,
         "over": 0
       },
       "index": {
@@ -36,8 +36,8 @@
       },
       "lessons": {
         "files": 85,
-        "bytes": 2422922,
-        "over": 1
+        "bytes": 2418805,
+        "over": 0
       },
       "kb_note": {
         "files": 566,
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 441300,
+        "bytes": 441338,
         "over": 0
       },
       "handoff": {
@@ -57,14 +57,13 @@
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 1,
       "house_voice": 1,
       "vault_heavy_path": 70,
       "checkpoint_overdue": 1
     },
     "vault": {
       "files": 24967,
-      "bytes": 3955892656,
+      "bytes": 3955892992,
       "heavy_bytes": 2809675137,
       "heavy_share": 0.71,
       "ignore_filters": [
@@ -152,19 +151,6 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 122334,
-        "limit": 120000,
-        "lane": "lessons",
-        "over_by": 2334,
-        "ratio": 1.02
-      },
-      "message": "122,334 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
-      "path": "docs/program_requirements_harvest_lessons.md"
     },
     {
       "rule": "house_voice",
@@ -883,11 +869,11 @@
       "fixable": false,
       "path": "docs/session_505_handoff.md",
       "detail": {
-        "commits_since": 19,
+        "commits_since": 20,
         "budget": 6,
         "handoff": "session_505_handoff.md"
       },
-      "message": "19 commit(s) have landed since `docs/session_505_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
+      "message": "20 commit(s) have landed since `docs/session_505_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
