@@ -983,6 +983,21 @@ check(S.outcomes_check({**marked, "program": {**marked["program"], "outcomes": [
 check(not S.outcomes_check({**marked, "program": {**marked["program"], "outcomes": [
     "Demonstrate knowledge of real estate listings, escrows, and financing."]}}, MARK_TEXT)["pass"],
       "an outcome missing words is still reworded with the marker reading")
+# Glendale (S505): a ligature break and a line-end hyphen in one sentence, a line spaced letter by letter,
+# and a semicolon spaced from its word, all on its 2025-2026 PDF (pages 67, 88 and 114).
+GCC_TEXT = ("Program Learning Outcomes: Upon completion of this program, students will be able to Learn skills necessary\n"
+            "for a lab technician job. Fulﬁ ll requirements for transfer to a col-\nlege with a BS in Biotechnology.\n"
+            "b e  a b l e  t o  E v a l u a t e  c o a c h i n g  p h i l o s o p h i e s ,  l e a d e r s h i p  s t y l e s ,\n"
+            "be able to identify theatre terms and occupations ; and will identify theatre as a collaborative art form.")
+gcc = {**plo, "program": {**plo["program"], "outcomes": [
+    "Fulfill requirements for transfer to a college with a BS in Biotechnology.",
+    "Evaluate coaching philosophies, leadership styles,",
+    "be able to identify theatre terms and occupations; and will identify theatre as a collaborative art form."]}}
+check(S.outcomes_check(gcc, GCC_TEXT)["pass"],
+      "Glendale's ligature-and-hyphen break, letter-spaced line and spaced semicolon read verbatim (S505)")
+check(not S.outcomes_check({**gcc, "program": {**gcc["program"], "outcomes": [
+    "Fulfill requirements for transfer to a university with a BS in Biotechnology."]}}, GCC_TEXT)["pass"],
+      "a changed word still fails under the no-space readings")
 check(not S.outcomes_check({**lig, "program": {**lig["program"], "outcomes": ["Design and draft a landscape plan."]}},
                            LIG_TEXT)["pass"],
       "the ligature reading still refuses a word the text does not print")
