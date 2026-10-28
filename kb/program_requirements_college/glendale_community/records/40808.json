@@ -82,15 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "They will be able to effectively plan, implement and evaluate developmentally appropriate, culturally and linguistically relevant curriculum to support the development and learning of young children with special emphasis on Transitional Kindergarten (TK) and children enrolled in a TK program."
-   ],
-   "why": [
-    "not in the catalog text as printed: They will be able to effectively plan, implement and evaluate developmentally ap"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -237,5 +233,6 @@
    "The page also prints Technical Theatre, Unix/Linux System Administrator, Web Development and Welding sections; they were ignored."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

@@ -85,17 +85,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "demonstrate the skills required in the field of machine and manufacturing technology, such as use of manual machining equipment",
-    "demonstrate the skills required in the field of machine and manufacturing technology, such as metallurgy and heat treating"
-   ],
-   "why": [
-    "not in the catalog text as printed: demonstrate the skills required in the field of machine and manufacturing techno",
-    "not in the catalog text as printed: demonstrate the skills required in the field of machine and manufacturing techno"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -209,5 +203,6 @@
    "No general education pattern or degree total is printed in this section for the AS degree."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

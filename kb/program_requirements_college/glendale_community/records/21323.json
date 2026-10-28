@@ -92,15 +92,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "demonstrate an understanding of concepts in: criminal law, law enforcement procedures, crisis intervention, legal aspects of evidence and forensic science; discuss the aspects of community relations; discuss the techniques used in investigation procedures; and discuss the different aspects of special crimes."
-   ],
-   "why": [
-    "not in the catalog text as printed: demonstrate an understanding of concepts in: criminal law, law enforcement proce"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 6,
@@ -114,7 +110,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -318,5 +314,6 @@
    "Career 'probation or parole officer' is kept as printed; it could be read as two titles."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

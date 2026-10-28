@@ -82,15 +82,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "develop an understanding of young children, and of the multiple interacting influences on children’s development and learning in order to create environments that are healthy, respectful, supportive and challenging for all children; understand and value the importance and complex characteristics of children’s families and communities; use this understanding to create respectful, reciprocal relationships that support and empower families and involve families in their children’s learning and development; articulate and understand the goals, benefits, and uses of observation and assessment, develop competence in the use of observation, documentation and assessment techniques and tools to support teaching and learning in partnership with families and other professionals; plan and implement developmentally appropriate, culturally and linguistically relevant experiences that promote and/or support development and learning for all young children; and identify as a member of the early childhood profession, understand and use ethical guidelines and other professional standards related to early childhood practice."
-   ],
-   "why": [
-    "not in the catalog text as printed: develop an understanding of young children, and of the multiple interacting infl"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
@@ -102,7 +98,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -231,5 +227,6 @@
    "Careers include the shared program description's career areas and the Infant/Toddler section's 'teaching in an infant/toddler education setting'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

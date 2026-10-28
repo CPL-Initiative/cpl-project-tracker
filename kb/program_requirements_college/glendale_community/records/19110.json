@@ -90,15 +90,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "teach technical dance skills using correct body alignment and muscle coordination, design dance lesson plans for children, adults, and seniors, and create dance programs for private studios, fitness centers, and community centers."
-   ],
-   "why": [
-    "not in the catalog text as printed: teach technical dance skills using correct body alignment and muscle coordinatio"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -420,5 +416,6 @@
    "DANCE 111, 116 and 121 each appear in two of the three option blocks."
   ]
  },
- "extracted_run": "40704760867"
+ "extracted_run": 40711704988,
+ "read_run": "40704760867"
 }

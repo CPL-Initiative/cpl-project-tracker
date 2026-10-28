@@ -82,15 +82,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "Upon completion of this program, students will develop an understanding of young children, and of the multiple interacting influences on children’s development and learning in order to create environments that are healthy, respectful, supportive and challenging for all children; understand and value the importance and complex characteristics of children’s families and communities; use this understanding to create respectful, reciprocal relationships that support and empower families and involve families in their children’s learning and development; articulate and understand the goals, benefits, and uses of observation and assessment, develop competence in the use of observation, documentation and assessment techniques and tools to support teaching and learning in partnership with families and other professionals; plan and implement developmentally appropriate, culturally and linguistically relevant experiences that promote and/or support development and learning for all young children; and identify as a member of the early childhood profession, understand and use ethical guidelines and other professional standards related to early childhood practice."
-   ],
-   "why": [
-    "not in the catalog text as printed: Upon completion of this program, students will develop an understanding of young"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -102,7 +98,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -228,5 +224,6 @@
    "Careers: 'School Age Child Care' is taken from the overall program introduction, which also names Infant, Toddler, and/or Preschool Education and Early Childhood Administration and Supervision for other options."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

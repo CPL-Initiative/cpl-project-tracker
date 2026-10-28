@@ -84,15 +84,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Fulfill requirements for transfer to a college with a BS in Biotechnology."
-   ],
-   "why": [
-    "not in the catalog text as printed: Fulfill requirements for transfer to a college with a BS in Biotechnology."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -273,6 +269,6 @@
    "Outcomes were run together in the PDF text; split at sentence boundaries, with ligature 'Fulﬁ ll' read as 'Fulfill' and the line-break hyphen in 'col-lege' read as 'college'."
   ]
  },
- "extracted_run": 40696243319,
- "read_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": 40696243319
 }

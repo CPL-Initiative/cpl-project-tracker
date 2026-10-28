@@ -94,15 +94,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "students will demonstrate an effective ability to work as a member of a team to achieve the challenges of technical and conceptual goals of the project from origination to the completion of the high quality final deliverable media productions; demonstrate mastery of conceptual editing techniques to support storytelling and solving story problems through the use of editing dialogue, sound design, music, and sound effects to complete the creation of the master for final deliverables; and demonstrate an understanding of composition, film language and lighting techniques to support the creative vision of the director."
-   ],
-   "why": [
-    "not in the catalog text as printed: students will demonstrate an effective ability to work as a member of a team to "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -284,5 +280,6 @@
    "T ART 100 recorded as a catalog addition; it may correspond to closed-list THTR 100 (Introduction to Acting)."
   ]
  },
- "extracted_run": "40704760867"
+ "extracted_run": 40711704988,
+ "read_run": "40704760867"
 }

@@ -88,15 +88,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "apply the basic principles and procedures used in valuing residential properties. They will be able to choose the appropriate method to determine value for a specific property, estimate gross income and calculate expenses for income producing property and meet Appraisal Qualifications Board (AQB) licensing requirements for filling out forms and completing the USPAP form."
-   ],
-   "why": [
-    "not in the catalog text as printed: apply the basic principles and procedures used in valuing residential properties"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -106,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -284,5 +280,6 @@
    "The total of 29 units comes from the sentence 'to complete a total of 29 units'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

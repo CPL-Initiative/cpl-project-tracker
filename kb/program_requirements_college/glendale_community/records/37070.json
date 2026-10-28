@@ -88,15 +88,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Students will demonstrate the proper server operation procedures, maintenance procedures and managing risk associated with real world networks."
-   ],
-   "why": [
-    "not in the catalog text as printed: Students will demonstrate the proper server operation procedures, maintenance pr"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 6,
@@ -108,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -261,6 +257,6 @@
    "CS/IS 180 and CS/IS 183 are not in the closed list and are marked catalog additions."
   ]
  },
- "extracted_run": 39114562289,
- "read_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": 39114562289
 }

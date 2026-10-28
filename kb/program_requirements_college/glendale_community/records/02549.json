@@ -84,15 +84,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "recognize, analyze, and assess current economic challenges facing global and domestic businesses; analyze, evaluate, and explain business problems using basic concepts and terminology of accounting and finance; and understand and apply the four P’s of marketing, business law, investments, and management."
-   ],
-   "why": [
-    "not in the catalog text as printed: recognize, analyze, and assess current economic challenges facing global and dom"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -257,5 +253,6 @@
    "The page also prints Business Administration AS degrees (Entrepreneurship/Small Business, Financial Planning and Investment, General Business, International Business); these were not read."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

@@ -88,15 +88,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "students will apply skills and knowledge of theatre in preparation for transferability or vocation; be able to analyze a play from script to performance; be able to identify theatre terms and occupations; and will identify theatre as a collaborative art form."
-   ],
-   "why": [
-    "not in the catalog text as printed: students will apply skills and knowledge of theatre in preparation for transfera"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -108,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -312,5 +308,6 @@
    "The page labels this a 'CERTIFICATE NON-DEGREE'; the award requested is a Certificate of Achievement (16-<30 units), consistent with the 20-unit minimum."
   ]
  },
- "extracted_run": "40704760867"
+ "extracted_run": 40711704988,
+ "read_run": "40704760867"
 }

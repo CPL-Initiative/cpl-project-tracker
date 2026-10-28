@@ -82,15 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "students will learn to apply the principles and methods involved in the recruitment, selection and placement of employees with regard to affirmative action programs, training, experience and aptitudes."
-   ],
-   "why": [
-    "not in the catalog text as printed: students will learn to apply the principles and methods involved in the recruitm"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -223,5 +219,6 @@
    "Certificate is labeled 'CERTIFICATE NON-DEGREE'; total stated as 'to total 18 units'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

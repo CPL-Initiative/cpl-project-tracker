@@ -84,15 +84,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "create, use, develop, and integrate digital photography techniques and workflows into their photographic practice."
-   ],
-   "why": [
-    "not in the catalog text as printed: create, use, develop, and integrate digital photography techniques and workflows"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
@@ -183,5 +179,6 @@
    "The certificate is marked '**Financial Aid Ineligible'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

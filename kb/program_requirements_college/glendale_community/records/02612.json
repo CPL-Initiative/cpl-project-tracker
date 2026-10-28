@@ -86,17 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate an understanding of film aesthetics composition, film language, lighting and sound techniques to support the creative vision of the director",
-    "Demonstrate mastery of conceptual editing techniques to support storytelling and solving story problems through the use of editing dialogue, sound design, music, and sound effects to complete the creation of the master for final deliverables."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate an understanding of film aesthetics composition, film language, ligh",
-    "not in the catalog text as printed: Demonstrate mastery of conceptual editing techniques to support storytelling and"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -339,5 +333,6 @@
    "Career entry 'film and television industry' is read from the description's 'pathway into the film and television industry'; reviewer may judge whether this counts as a career field."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

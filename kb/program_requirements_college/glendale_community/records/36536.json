@@ -84,15 +84,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "transfer to a bachelor’s degree program in order to finish preparing for a career in a specific discipline of electrical engineering."
-   ],
-   "why": [
-    "not in the catalog text as printed: transfer to a bachelor's degree program in order to finish preparing for a caree"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -251,5 +247,6 @@
    "The Civil and Mechanical certificates on the same page list ENGR 240 and other ENGR courses; only the Electrical section was read."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

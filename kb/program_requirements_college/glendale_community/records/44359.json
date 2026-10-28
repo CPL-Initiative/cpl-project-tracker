@@ -84,15 +84,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "practice professional and compassionate communication during contact with patients, bystanders, coworkers, and other health care providers; employ the ability to be a team leader or team member with the cognitive, psychomotor, and affective skills necessary for an advanced level EMS provider; and articulate the cognitive and psychomotor skills necessary to integrate paramedic concepts learned through this program, in all emergency situations."
-   ],
-   "why": [
-    "not in the catalog text as printed: practice professional and compassionate communication during contact with patien"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -221,5 +217,6 @@
    "Career entry 'paramedic profession' is taken from the description ('knowledge of the paramedic profession'); work settings (emergency rooms, labor and delivery, fire departments) were not recorded as careers."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

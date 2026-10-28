@@ -92,15 +92,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Practice effective listening strategies in team settings, contributing to better collaboration and conflict resolution."
-   ],
-   "why": [
-    "not in the catalog text as printed: Practice effective listening strategies in team settings, contributing to better"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -248,5 +244,6 @@
    "The page also prints the Marketing II, Mass Communications and Medical Office certificates. They were not read for this record."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

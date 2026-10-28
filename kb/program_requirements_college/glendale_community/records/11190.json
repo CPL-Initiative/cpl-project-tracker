@@ -82,15 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "develop an understanding of young children, and of the multiple interacting influences on children’s development and learning in order to create environments that are healthy, respectful, supportive and challenging for all children"
-   ],
-   "why": [
-    "not in the catalog text as printed: develop an understanding of young children, and of the multiple interacting infl"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
@@ -105,7 +101,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -239,5 +235,6 @@
    "Careers include those named in the shared Child Development introduction ('a career in: Infant, Toddler, and/or Preschool Education; School Age Child Care; and/or Early Childhood Administration and Supervision') plus the School-Age Care section's own 'careers in teaching in a school-age child care setting'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

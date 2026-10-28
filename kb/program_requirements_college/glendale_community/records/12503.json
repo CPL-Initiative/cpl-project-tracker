@@ -113,15 +113,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "apply literary, rhetorical, and interdisciplinary studies concepts, and discipline-specific concepts (such as dance or French) in order to critically read, write, think, and research about the idea of creativity."
-   ],
-   "why": [
-    "not in the catalog text as printed: apply literary, rhetorical, and interdisciplinary studies concepts, and discipli"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -470,5 +466,6 @@
    "No general education pattern, degree total or careers are printed in this section."
   ]
  },
- "extracted_run": "40704760867"
+ "extracted_run": 40711704988,
+ "read_run": "40704760867"
 }

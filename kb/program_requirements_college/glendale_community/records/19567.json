@@ -88,15 +88,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "the student will be able to use a variety of office procedures to perform such tasks as sorting mail and answering telephones; filing and processing documents; edit and revise memos, e-mails, letters and reports; the student will be able to identify the personal traits that lead to effective human relation skills in business and develop skills to work more effectively with customers and other employees, including communicating with clients verbally face-to-face and over the telephone; the student will be able to perform basic operations in Word, Excel, Access, and PowerPoint; compose entry-level correspondence using appropriate business language and cohesive, grammatically correct sentences; become familiar with Global information systems and be able to sign on to an account and use common utilities including e-mail and Web browsers to search a variety of databases for information; the student will be able to utilize the Windows operating system and to understand basic computer terminologies; and the student will be able to type by touch at a minimum of thirty (30) words a minute and to create, edit, and format advanced features for any business document including forms, medical and legal forms, resumes, job applications, bibliographies, footnotes/endnotes, newsletters."
-   ],
-   "why": [
-    "not in the catalog text as printed: the student will be able to use a variety of office procedures to perform such t"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -234,5 +230,6 @@
    "The career 'office staff' is taken from the description ('qualified office staff')."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

@@ -86,15 +86,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "apply scientific method of thinking to analyze and critically evaluate relevant literature and information, and the use of evidence for support; communicate effectively in a variety of ways, such as scientific writing, visualization of data and ideas, or through oral communication; solve quantitative problems, analyze results from data and measurements, form hypotheses from data, test hypotheses; recognize the interdisciplinary nature of science and enjoy the process of learning science."
-   ],
-   "why": [
-    "not in the catalog text as printed: apply scientific method of thinking to analyze and critically evaluate relevant "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -242,5 +238,6 @@
    "Course codes 'ASTRO 110 or 120' expanded to ASTRO 110 or ASTRO 120."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

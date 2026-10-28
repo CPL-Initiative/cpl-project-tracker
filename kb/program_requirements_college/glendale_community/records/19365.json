@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "discuss loss exposures, personal risk insurance, and types of personal insurance policies, as well as, define commercial insurance and commercial insurance policies."
-   ],
-   "why": [
-    "not in the catalog text as printed: discuss loss exposures, personal risk insurance, and types of personal insurance"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 7,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -276,5 +272,6 @@
    "The 4-10 unit statement for the elective block is recorded as its stated total; the certificate total of 18-24 units is the program total."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }
