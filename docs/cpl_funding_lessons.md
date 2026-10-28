@@ -717,3 +717,21 @@ Since 2026-10-28 the version sits left of Resource Links, and the guidance memo'
 ✅ **My Institution is hidden and its code kept (Sam, 2026-10-27: *"OK, let's hide the My Institution and save the code"*; *"Hiding will mean hiding the Step 1 and 2 at the top and any other link to it"*; S502).** One switch, `oneViewOn()` in `cpl_funding.js` (`window.CPL_FUNDING_ONE_VIEW === true`, read by `college_briefing.js` too): off, no Step 1 or 2 and no explainer Step 1 band, PDF prints at once, and `?view=one`, `chooseOne` and My College's link open the institution's row. The view's suites and the `funding-model-mycpl` a11y target turn it on; `cpl_funding_my_institution_hidden.test.js` pins the default. Sam's next step for the row: a link to My College or CPL Pathways once those pages settle.
 
 ✅ **My College's funding now lives here (Sam, 2026-10-21: "move funding to Implementation Funding"; S443).** My CPL Funding on My College is a link to the funding page (`?college=<roster key>`, the institution's row while My Institution is hidden; `&view=one` with the switch on; #2316); the college's expenditure reports open at the top of the 2026-28 Funding view (`reportsPanel`, #2320). ✅ **The public page forgets the chosen institution on reload (Sam, Open Asks Sheet 111 card 2, 2026-10-21: "forget", reversing call 9).** The choice lasts the visit (#2327).
+
+## Moved from the lane (S507, 2026-10-28)
+
+Verbatim from `docs/reference/lanes/implementation-funding.md`, to bring it under its 20,000-byte budget (`oversized_doc`). The header's link order predates the version's move left of Resource Links on 2026-10-28; *Moved from the lane (S506)* above holds the current place.
+
+The share keeps its FTES sizing and releases on the scenario's own `ncOutcomes` (`unit: "count"`, each a `metric_src`, `target_rule` and share): NC-1 `nc_exh` under `pct_floor_cap` (floor 2, 5% of `nc_cdcp`, cap 10), NC-2 `nc_course` under `fixed` 1; `ncReported` carries the award count, funded by nothing.
+
+✅ **The recorded piano (Sam, 2026-10-27, Sheet 137 card 1 in chat: *"new soundtrack sounds good. tempos could come up a bit, but I won't be too picky on that"*).** #2521: the Salamander Grand (CC BY 3.0, credited in the closing), open voicings and the pedal, the score at 107 (sections still ahead of their scenes); v12; v13 adds the Veteran Star (S504). ✅ **The narrated cut (1.2.5) speaks Sam's own script:** Draft 7 (S504; his 10-21 markup, *Greetings CPL heroes* to *Our time is now*, with the period and the Noncredit CPL Lead he asked for on 10-27; #2323, which first built it, never merged). It sits in the Contents after the music film, which stays the introduction (`video-narrated-link`; a11y target `funding-film-narrated`); `build.py --check`: n2 matches.
+
+**Resource Links** opens five links, a gray line each (the CPL Library is off this page: *"we'll just use it with our meetings with colleges and agencies"*), then *As of … Ver. N*, PDF, and Collapse all last. Ask Sierra is the lower-right chip.
+
+**The reported cards (P3, P4) carry the Serves boxes too** (Sam, 2026-10-25, S480): their own goal stays ticked (the picker moves it), and the others store goal-keyed as `reportedGoals`, a caption and citation only; the project allocation and the designated activities stay on the card's own goal.
+
+⭐ **Each row names its outcomes as chips beside its title** (Sam, 2026-10-25, S480: *"CR Priority 1 [access chip]; NC Priority 1 [access - career attainment chips]"*; `rowNameHtml()`, `.cf-goalchip` in the Base and Cap chips' ink); a title that only repeats its outcome drops, so P1 reads *Priority 1 [Access]*.
+
+Chaffey's large figure is mostly AP exam exhibits, which Sam called *"valid and useful"*.
+
+The timeline renders in date order (`timingOrder`).
