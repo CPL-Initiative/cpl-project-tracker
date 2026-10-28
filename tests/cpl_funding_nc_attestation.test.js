@@ -224,7 +224,7 @@ function drill(window, doc, name) {
   // Since Sam's 2026-10-27 ruling the attestation waits for a MAP team reviewer.
   check("C5: a complete submit waits for a MAP team reviewer: the share stays held, the line says so, a thank-you",
     !!att && att.status === "self_attested" && att.fiscal_year === T._fiscalYearOf() && after.nc_gate_blocked === true &&
-    /Noncredit CPL Lead attested, awaiting MAP team review/.test(flat(det.querySelector(".cf-conds-nc"))) &&
+    /Noncredit CPL Lead: Awaiting CPL Initiative Confirmation/.test(flat(det.querySelector(".cf-conds-nc"))) &&
     /Thank you\. CPL Initiative staff will review the noncredit attestation for \d{4}-\d{2} and send a confirmation to ben@mtsac\.edu\. Once they approve it, the Noncredit CPL Lead shows as complete on this dashboard\./.test(flat(det)) &&
     !/Ana Ruiz/.test(flat(det.querySelector(".cf-conds-nc"))));
 }
