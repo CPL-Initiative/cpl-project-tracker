@@ -1,0 +1,10 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_s507_2026-10-28.sql",
+ "name": "s507_cpl_memory_faq_sheets_a11y",
+ "version": "20261028223253",
+ "sha256": "37a0a22d67a26b8cadc3616815c373831368f123960e5be067ac0b24db2c2a58",
+ "run": "40780317923",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"cpl_memory\\\" violates check constraint \\\"cpl_memory_summary_check\\\"\\nDETAIL:  Failing row contains (f0bb4ded-2369-46a2-9371-3b67f2391d58, 2026-10-28 22:32:53.881738+00, 2026-10-28 22:32:53.881738+00, decision, Sam completed Open Asks Sheet 138 (the funding FAQ, 21 cards) at..., null, cpl, t, null, {implementation-funding,funding-faq}, Open Asks Sheet 138 replies store; cpl-project-tracker#2536, {}, {}, verified, null, internal, 2026-10-28, memory-s507-2026-10-28, 2026-10-28 22:32:53.881738+00, Sam, null, sam-sheet-138-faq-rulings-2026-10-28, null, Sam's Sheet 138 rulings: the funding FAQ, his words on seven car...).\\n\"}"
+}

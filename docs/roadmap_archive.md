@@ -769,3 +769,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 ## INDEX update history (moved)
 - 2026-10-27 (S496 SkyLingonberry): Hartnell CalGETC 45096 passes, 82 of 94 (#2504, reread 40460714483, display build 588cfa081bee); the Funding film's UI pass, clean; handoff 497.
+
+Moved from docs/INDEX.md's update history (S507):
+
+- 2026-10-27 (S497 SkyCrowberry): Hartnell Music 43887 passes on the new `repeat` reconcile step, 83 of 94 (#2506, reread 40469123943, display build 8f8a282ca526); handoff 498.

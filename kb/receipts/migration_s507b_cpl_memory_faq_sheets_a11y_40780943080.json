@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_s507_2026-10-28.sql",
+ "name": "s507b_cpl_memory_faq_sheets_a11y",
+ "version": "20261028223752",
+ "sha256": "30b63a179aaa165e4a0153986f54b7f5be35ac269e165bf16979984bae8ac9eb",
+ "run": "40780943080",
+ "status": 201,
+ "response": "[{\"slug\":\"sam-sheet-138-faq-rulings-2026-10-28\",\"status\":\"verified\"},{\"slug\":\"sam-funding-procedure-not-proposed-2026-10-28\",\"status\":\"verified\"},{\"slug\":\"sam-apportionment-in-funding-faq-2026-10-28\",\"status\":\"verified\"},{\"slug\":\"sam-statute-link-leaves-section-title-2026-10-28\",\"status\":\"verified\"},{\"slug\":\"a11y-sweep-s507-131-targets-2026-10-28\",\"status\":\"proposed\"},{\"slug\":\"pitfall-two-sessions-one-sheet-number-2026-10-28\",\"status\":\"proposed\"},{\"slug\":\"pitfall-glyph-sweep-counts-by-line-2026-10-28\",\"status\":\"proposed\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

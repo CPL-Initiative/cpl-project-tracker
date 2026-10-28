@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-28T17:32:22Z",
-  "session": 505,
-  "moniker": "SkyBoysenberry",
+  "written_at": "2026-10-28T22:24:15Z",
+  "session": 507,
+  "moniker": "SkyDewberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_507_handoff.md",
+  "handoff": "docs/session_508_handoff.md",
   "next_step": {
     "title": "Glendale's course units from its descriptions",
     "text": "180 Glendale records fail arithmetic, most on courses the state's file lists without units; the next session reads each such course's units from the catalog's course descriptions, which print them, and rescores."
@@ -136,16 +136,7 @@
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
-  "changes": [
-    {
-      "at": "2026-10-28T16:52:00Z",
-      "text": "Glendale's filed records passing rose from 45 to 80 of 260: its catalog's old prefixes and numbers map to the state's, the capture reads an aliased prefix, and the outcome check reads its letter-spaced text. 66 rows replaced, 6 inserted, display build 41c15eee3f75."
-    },
-    {
-      "at": "2026-10-28T17:10:00Z",
-      "text": "Every MAP link now opens the exhibit's own Non-Military card, and the adopt link reads Request Adopt; Sierra deployed with the same links."
-    }
-  ],
+  "changes": [],
   "headline": [
     {
       "day": "2026-10-08",

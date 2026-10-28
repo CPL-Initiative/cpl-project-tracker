@@ -254,6 +254,9 @@ check("the register's own goals are named as the operational plan",
 //        reading (was: the lane re-scope — retired with the lane switch, R1) ──
 // Sam renamed the section live (2026-08-31) and linked the title to the law
 // itself, so a reader can check the model against the statute in one click.
+// On 2026-10-28 (Open Asks Sheet 139 card 1, "move") the link left the title
+// for the section's first line: a link inside the <summary> is a control inside
+// the control that opens the section (axe nested-interactive).
 check("the section title reads 'Funding Outcomes Required by …' (Sam's rename)",
   !!goalsSec && /Funding Outcomes Required by/.test(flat(goalsSec.querySelector("summary"))));
 check("the title links to the statute on california.public.law",
@@ -261,11 +264,15 @@ check("the title links to the statute on california.public.law",
     const a = doc.querySelector('a[href*="california.public.law/codes/education_code_section_78093.2"]');
     return !!a && a.getAttribute("target") === "_blank" && /noopener/.test(a.getAttribute("rel") || "");
   })());
-check("the statute link IS the goals section's own title, not a footnote elsewhere",
+check("the statute link opens the goals section's own body, and the title holds no link",
   (function () {
     const a = doc.querySelector('a[href*="california.public.law"]');
-    return !!a && !!goalsSec && !!a.closest("summary") && goalsSec.contains(a);
+    const ref = goalsSec && goalsSec.querySelector(".cplfund-sec-body > .cplfund-sec-ref");
+    return !!a && !!ref && ref.contains(a) && /^Source:/.test(ref.textContent.trim()) &&
+      !goalsSec.querySelector("summary a, summary button");
   })());
+check("...and the title keeps its words: Funding Outcomes Required by Ed. Code §78093.2(d)(1)",
+  !!goalsSec && /Funding Outcomes Required by Ed\. Code §78093\.2\(d\)\(1\)/.test(flat(goalsSec.querySelector("summary"))));
 // R1 (2026-08-31): the lane switch is retired — there is no control left that
 // could re-scope this spine to one lane. tests/cpl_funding_lane_switch.test.js
 // carries the full retirement guard; this is the spine's own stake in it.

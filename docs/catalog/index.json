@@ -16210,8 +16210,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 476,
+   "count": 477,
    "docs": [
+    {
+     "created": "2026-10-28",
+     "governs": [],
+     "n": 508,
+     "path": "docs/session_508_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "a11y",
+      "implementation-funding",
+      "decision-sheets",
+      "scheduled-sessions"
+     ],
+     "title": "Session 508 handoff: the Summit sweep passes; the funding FAQ posted as Sam settled it; two Sheet 138s reconciled",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-28",
      "governs": [],
@@ -24370,5 +24387,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1293
+ "total": 1294
 }
