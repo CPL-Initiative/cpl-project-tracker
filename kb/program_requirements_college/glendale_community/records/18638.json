@@ -11,10 +11,10 @@
  "usage": null,
  "cost_usd": null,
  "ms": null,
- "seconds": 10.4,
+ "seconds": 10.5,
  "parts": null,
  "error": "HTTP 503: {\"code\":\"BOOT_ERROR\",\"message\":\"Function failed to start (please check logs)\"}",
  "score": null,
  "record": null,
- "extracted_run": "40704760867"
+ "extracted_run": "40707595210"
 }
