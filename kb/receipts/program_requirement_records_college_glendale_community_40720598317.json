@@ -1,0 +1,391 @@
+{
+ "college": "Glendale Community College",
+ "load_run": "40720598317",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-28T15:55:59Z",
+ "records": 260,
+ "posted": 226,
+ "batches": 10,
+ "inserted": 6,
+ "kept": 220,
+ "skipped": [
+  {
+   "control_number": "02570",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "02587",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12571",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15584",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19269",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19562",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "24010",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30032",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30561",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30813",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31597",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32738",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36155",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36596",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41825",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44774",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45057",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45393",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45394",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45395",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45396",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45397",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45399",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45596",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45681",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45682",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45854",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45996",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46004",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46050",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46051",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46052",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46053",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46054",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39063367252",
+  "39114562289",
+  "40696243319",
+  "40704760867",
+  "40707595210",
+  "40710163463",
+  "40711704988"
+ ],
+ "machine_pass": 80,
+ "inserted_keys": [
+  "02550",
+  "11176",
+  "32707",
+  "35473",
+  "35585",
+  "44773"
+ ],
+ "kept_keys": [
+  "02547",
+  "02548",
+  "02549",
+  "02551",
+  "02552",
+  "02553",
+  "02555",
+  "02556",
+  "02557",
+  "02569",
+  "02571",
+  "02572",
+  "02575",
+  "02580",
+  "02588",
+  "02598",
+  "02599",
+  "02602",
+  "02603",
+  "02611",
+  "02612",
+  "02615",
+  "09482",
+  "10055",
+  "10057",
+  "10412",
+  "11143",
+  "11144",
+  "11145",
+  "11151",
+  "11153",
+  "11155",
+  "11159",
+  "11161",
+  "11162",
+  "11163",
+  "11175",
+  "11177",
+  "11189",
+  "11190",
+  "11191",
+  "11193",
+  "12498",
+  "12499",
+  "12500",
+  "12501",
+  "12502",
+  "12503",
+  "12570",
+  "12574",
+  "16972",
+  "17645",
+  "17760",
+  "18638",
+  "18639",
+  "18640",
+  "18660",
+  "18661",
+  "19110",
+  "19111",
+  "19365",
+  "19366",
+  "19546",
+  "19555",
+  "19558",
+  "19559",
+  "19560",
+  "19561",
+  "19563",
+  "19564",
+  "19565",
+  "19566",
+  "19567",
+  "19569",
+  "19570",
+  "19571",
+  "19573",
+  "19574",
+  "19575",
+  "19576",
+  "19577",
+  "19578",
+  "19581",
+  "21299",
+  "21302",
+  "21303",
+  "21304",
+  "21305",
+  "21306",
+  "21307",
+  "21308",
+  "21314",
+  "21315",
+  "21317",
+  "21318",
+  "21319",
+  "21320",
+  "21323",
+  "24011",
+  "24042",
+  "24161",
+  "24327",
+  "24356",
+  "24377",
+  "24381",
+  "30031",
+  "30744",
+  "30814",
+  "31928",
+  "32168",
+  "32178",
+  "32199",
+  "32234",
+  "32267",
+  "32394",
+  "32420",
+  "32462",
+  "32463",
+  "32605",
+  "32607",
+  "33294",
+  "33295",
+  "33598",
+  "33665",
+  "33911",
+  "33934",
+  "35029",
+  "35283",
+  "35597",
+  "35628",
+  "36102",
+  "36107",
+  "36270",
+  "36416",
+  "36419",
+  "36424",
+  "36480",
+  "36536",
+  "36580",
+  "36598",
+  "36599",
+  "36600",
+  "36601",
+  "36667",
+  "36710",
+  "36711",
+  "36712",
+  "36713",
+  "36714",
+  "36717",
+  "36720",
+  "36722",
+  "36723",
+  "36724",
+  "36725",
+  "36726",
+  "36727",
+  "36728",
+  "37070",
+  "37071",
+  "37854",
+  "37855",
+  "37856",
+  "37857",
+  "37952",
+  "37960",
+  "38144",
+  "38717",
+  "38973",
+  "39285",
+  "39289",
+  "39406",
+  "39905",
+  "39910",
+  "39912",
+  "40808",
+  "40814",
+  "40846",
+  "40847",
+  "40863",
+  "41379",
+  "41573",
+  "41650",
+  "41651",
+  "41729",
+  "41730",
+  "41767",
+  "41768",
+  "41775",
+  "41776",
+  "41826",
+  "41827",
+  "41828",
+  "42126",
+  "42263",
+  "42378",
+  "42738",
+  "43038",
+  "44351",
+  "44359",
+  "44360",
+  "44484",
+  "44485",
+  "44486",
+  "44487",
+  "44488",
+  "44489",
+  "44568",
+  "44569",
+  "44570",
+  "44571",
+  "44572",
+  "44640",
+  "44775",
+  "44951",
+  "45101",
+  "45108",
+  "45150",
+  "45211",
+  "45212"
+ ],
+ "rollback": "delete from public.program_requirement_records where college = 'Glendale Community College' and checked = false and control_number in ('02550', '11176', '32707', '35473', '35585', '44773');"
+}
