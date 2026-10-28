@@ -1,391 +1,12 @@
 {
-  "_generated_at": "2026-10-28T16:14:08Z",
+  "_generated_at": "2026-10-28T18:29:19Z",
   "mode": "apply",
   "gates": {
     "V2_target_credential": true,
     "V3_additive_plus_declared": true
   },
   "apply_safe": true,
-  "clean": [
-    {
-      "raw": "AP Art History Area 3A",
-      "assigned": "AP Art History",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Art History Area 3B",
-      "assigned": "AP Art History",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Calculus AB Area 2",
-      "assigned": "AP Calculus AB",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Calculus BC Area 2",
-      "assigned": "AP Calculus BC",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Calculus BC/AB Subscore - Area 2",
-      "assigned": "AP Calculus BC — AB Subscore",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP European History - Area 3B",
-      "assigned": "AP European History",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP European History - Area 4",
-      "assigned": "AP European History",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP French Language and Culture, Score of 3",
-      "assigned": "AP French Language and Culture",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP French Language and Culture, Score of 4-5",
-      "assigned": "AP French Language and Culture",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Music Theory, Score of 3-4",
-      "assigned": "AP Music Theory",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Music Theory, Score of 5",
-      "assigned": "AP Music Theory",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Physics C  - Electricity / Magnetism",
-      "assigned": "AP Physics C: Electricity and Magnetism",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP PreCalculus - Area 2",
-      "assigned": "AP Precalculus",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Spanish Language and Culture, Score of 3",
-      "assigned": "AP Spanish Language and Culture",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Spanish Language and Culture, Score of 4-5",
-      "assigned": "AP Spanish Language and Culture",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Spanish Literature and Culture, Score of 3",
-      "assigned": "AP Spanish Literature and Culture",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Spanish Literature and Culture, Score of 4-5",
-      "assigned": "AP Spanish Literature and Culture",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Statistics - Area 2",
-      "assigned": "AP Statistics",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Studio Art: 2D Design",
-      "assigned": "AP 2-D Art and Design",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Studio Art: 3D Design",
-      "assigned": "AP 3-D Art and Design",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP Studio Art: Drawing",
-      "assigned": "AP Drawing",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP U.S. History,  Area 4",
-      "assigned": "AP U.S. History",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP U.S. History, Area 3B",
-      "assigned": "AP U.S. History",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP World History Modern - Area 3B",
-      "assigned": "AP World History: Modern",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP World History Modern - Area 4",
-      "assigned": "AP World History: Modern",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP World History: Modern, Area 3",
-      "assigned": "AP World History: Modern",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP World History: Modern, Area 4",
-      "assigned": "AP World History: Modern",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "AP calculus AB",
-      "assigned": "AP Calculus AB",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP Biology, Area 5B",
-      "assigned": "CLEP Biology",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP Calculus, Area 2",
-      "assigned": "CLEP Calculus",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP French Language: Level II",
-      "assigned": "CLEP French Language Level 2",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP German Language: Level II",
-      "assigned": "CLEP German Language Level 2",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP History, United States I: Early Colonization to 1877",
-      "assigned": "CLEP History of the United States 1",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP History, United States II: 1865 to the Present",
-      "assigned": "CLEP History of the United States 2",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP Natural Sciences, Area 5A",
-      "assigned": "CLEP Natural Sciences",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP Natural Sciences, Area 5B",
-      "assigned": "CLEP Natural Sciences",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP Principles of Macroeconomics - Area 4",
-      "assigned": "CLEP Principles of Macroeconomics",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP Principles of Microeconomics - Area 4",
-      "assigned": "CLEP Principles of Microeconomics",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP Spanish Language: Level II",
-      "assigned": "CLEP Spanish Language Level 2",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP Spanish with Writing: Level II",
-      "assigned": "CLEP Spanish with Writing Level II",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP Western Civilization I - Area 3B",
-      "assigned": "CLEP Western Civilization 1",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP Western Civilization I - Area 4",
-      "assigned": "CLEP Western Civilization 1",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP Western Civilization I: Ancient Near East to 1648 (Area 3)",
-      "assigned": "CLEP Western Civilization 1",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "CLEP Western Civilization I: Ancient Near East to 1648 (Area 4)",
-      "assigned": "CLEP Western Civilization 1",
-      "issuer": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "DSST Business 475 Business Ethics and Society",
-      "assigned": "DSST Business Ethics and Society",
-      "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "DSST Business 532 Principles of Supervision - Business",
-      "assigned": "DSST Principles of Supervision",
-      "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "DSST Business 532 Principles of Supervision - Management",
-      "assigned": "DSST Principles of Supervision",
-      "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "DSST Physical Science 508 Health and Human Development",
-      "assigned": "DSST Health and Human Development",
-      "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "IB History HL, any region (Area 3)",
-      "assigned": "IB History HL",
-      "issuer": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "IB History HL, any region (Area 4)",
-      "assigned": "IB History HL",
-      "issuer": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "IB History, any region HL - Area 3B",
-      "assigned": "IB History HL",
-      "issuer": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "IB History, any region HL - Area 4",
-      "assigned": "IB History HL",
-      "issuer": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "IB Mathematics HL: Analysis and Approaches",
-      "assigned": "IB Mathematics: Analysis and Approaches HL",
-      "issuer": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    },
-    {
-      "raw": "IB Mathematics HL: Applications and Interpretation",
-      "assigned": "IB Mathematics: Applications and Interpretation HL",
-      "issuer": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00"
-    }
-  ],
+  "clean": [],
   "skip": [
     {
       "raw": "A S T 025 - Fundamentals of Auto Mechanics",
@@ -860,6 +481,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "AP Art History Area 3A",
+      "assigned": "AP Art History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Art History Area 3B",
+      "assigned": "AP Art History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "AP Art Studio 2-D (Score 3-5)",
       "assigned": "AP 2-D Art and Design",
       "issuer": "College Board",
@@ -1028,6 +665,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "AP Calculus AB Area 2",
+      "assigned": "AP Calculus AB",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "AP Calculus BC (Score of 3 or higher)",
       "assigned": "AP Calculus BC",
       "issuer": "College Board",
@@ -1156,6 +801,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "AP Calculus BC Area 2",
+      "assigned": "AP Calculus BC",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "AP Calculus BC with AB subscore",
       "assigned": "AP Calculus BC — AB Subscore",
       "issuer": "College Board",
@@ -1193,6 +846,14 @@
       "issuer": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Calculus BC/AB Subscore - Area 2",
+      "assigned": "AP Calculus BC — AB Subscore",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -1908,6 +1569,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "AP European History - Area 3B",
+      "assigned": "AP European History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP European History - Area 4",
+      "assigned": "AP European History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "AP European History - Area C",
       "assigned": "AP European History",
       "issuer": "College Board",
@@ -2137,6 +1814,22 @@
       "issuer": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP French Language and Culture, Score of 3",
+      "assigned": "AP French Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP French Language and Culture, Score of 4-5",
+      "assigned": "AP French Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -2636,6 +2329,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "AP Music Theory, Score of 3-4",
+      "assigned": "AP Music Theory",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Music Theory, Score of 5",
+      "assigned": "AP Music Theory",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "AP Physics 1",
       "assigned": "AP Physics 1",
       "issuer": "College Board",
@@ -2801,6 +2510,14 @@
       "issuer": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Physics C  - Electricity / Magnetism",
+      "assigned": "AP Physics C: Electricity and Magnetism",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -2993,6 +2710,14 @@
       "issuer": "College Board",
       "reviewed_by": "cer-procedure-brand-family@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP PreCalculus - Area 2",
+      "assigned": "AP Precalculus",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -3308,6 +3033,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "AP Spanish Language and Culture, Score of 3",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Spanish Language and Culture, Score of 4-5",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "AP Spanish Literature & Culture",
       "assigned": "AP Spanish Literature and Culture",
       "issuer": "College Board",
@@ -3404,6 +3145,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "AP Spanish Literature and Culture, Score of 3",
+      "assigned": "AP Spanish Literature and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Spanish Literature and Culture, Score of 4-5",
+      "assigned": "AP Spanish Literature and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "AP Statistics (STAT C1000)",
       "assigned": "AP Statistics",
       "issuer": "College Board",
@@ -3433,6 +3190,14 @@
       "issuer": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Statistics - Area 2",
+      "assigned": "AP Statistics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -3548,6 +3313,30 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "AP Studio Art: 2D Design",
+      "assigned": "AP 2-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Studio Art: 3D Design",
+      "assigned": "AP 3-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Studio Art: Drawing",
+      "assigned": "AP Drawing",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "AP U.S Government and Politics",
       "assigned": "AP U.S. Government and Politics",
       "issuer": "College Board",
@@ -3620,6 +3409,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "AP U.S. History,  Area 4",
+      "assigned": "AP U.S. History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP U.S. History, Area 3B",
+      "assigned": "AP U.S. History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "AP US Government and Politics",
       "assigned": "AP United States Government and Politics",
       "issuer": "College Board",
@@ -3676,6 +3481,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "AP World History Modern - Area 3B",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP World History Modern - Area 4",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "AP World History: Modern (Score of 3 or higher)",
       "assigned": "AP World History: Modern",
       "issuer": "College Board",
@@ -3721,6 +3542,30 @@
       "issuer": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP World History: Modern, Area 3",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP World History: Modern, Area 4",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP calculus AB",
+      "assigned": "AP Calculus AB",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -5708,6 +5553,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "CLEP Biology, Area 5B",
+      "assigned": "CLEP Biology",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "CLEP Calculus (F09 or prior)",
       "assigned": "CLEP Calculus",
       "issuer": "College Board",
@@ -5729,6 +5582,14 @@
       "issuer": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP Calculus, Area 2",
+      "assigned": "CLEP Calculus",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -6004,6 +5865,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "CLEP French Language: Level II",
+      "assigned": "CLEP French Language Level 2",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "CLEP French Level III",
       "assigned": "CLEP French Language Level III",
       "issuer": "College Board",
@@ -6049,6 +5918,14 @@
       "issuer": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP German Language: Level II",
+      "assigned": "CLEP German Language Level 2",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -6100,6 +5977,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "CLEP History, United States I: Early Colonization to 1877",
+      "assigned": "CLEP History of the United States 1",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "CLEP History, United States II (ACE Recommended Score of 50)",
       "assigned": "CLEP History of the United States 2",
       "issuer": "College Board",
@@ -6113,6 +5998,14 @@
       "issuer": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP History, United States II: 1865 to the Present",
+      "assigned": "CLEP History of the United States 2",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -6348,6 +6241,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "CLEP Natural Sciences, Area 5A",
+      "assigned": "CLEP Natural Sciences",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP Natural Sciences, Area 5B",
+      "assigned": "CLEP Natural Sciences",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "CLEP Pre Calculus",
       "assigned": "CLEP Precalculus",
       "issuer": "College Board",
@@ -6452,6 +6361,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "CLEP Principles of Macroeconomics - Area 4",
+      "assigned": "CLEP Principles of Macroeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "CLEP Principles of Management",
       "assigned": "CLEP Principles of Management",
       "issuer": "",
@@ -6524,6 +6441,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "CLEP Principles of Microeconomics - Area 4",
+      "assigned": "CLEP Principles of Microeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "CLEP Social Sciences and History",
       "assigned": "CLEP Social Sciences and History",
       "issuer": "College Board",
@@ -6537,6 +6462,14 @@
       "issuer": "College Board",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:05:25.195447+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP Spanish Language: Level II",
+      "assigned": "CLEP Spanish Language Level 2",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -6636,6 +6569,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "CLEP Spanish with Writing: Level II",
+      "assigned": "CLEP Spanish with Writing Level II",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "CLEP Trigonometry (only if taken before F06)",
       "assigned": "CLEP Trigonometry",
       "issuer": "College Board",
@@ -6697,6 +6638,38 @@
       "issuer": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP Western Civilization I - Area 3B",
+      "assigned": "CLEP Western Civilization 1",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP Western Civilization I - Area 4",
+      "assigned": "CLEP Western Civilization 1",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP Western Civilization I: Ancient Near East to 1648 (Area 3)",
+      "assigned": "CLEP Western Civilization 1",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP Western Civilization I: Ancient Near East to 1648 (Area 4)",
+      "assigned": "CLEP Western Civilization 1",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -7937,6 +7910,38 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:38.514777+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "DSST Business 475 Business Ethics and Society",
+      "assigned": "DSST Business Ethics and Society",
+      "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "DSST Business 532 Principles of Supervision - Business",
+      "assigned": "DSST Principles of Supervision",
+      "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "DSST Business 532 Principles of Supervision - Management",
+      "assigned": "DSST Principles of Supervision",
+      "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "DSST Physical Science 508 Health and Human Development",
+      "assigned": "DSST Health and Human Development",
+      "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -9860,11 +9865,43 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "IB History HL, any region (Area 3)",
+      "assigned": "IB History HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IB History HL, any region (Area 4)",
+      "assigned": "IB History HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "IB History, any region HL",
       "assigned": "IB History HL",
       "issuer": "International Baccalaureate Organization (IBO)",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IB History, any region HL - Area 3B",
+      "assigned": "IB History HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IB History, any region HL - Area 4",
+      "assigned": "IB History HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -10081,6 +10118,22 @@
       "issuer": "International Baccalaureate Organization (IBO)",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IB Mathematics HL: Analysis and Approaches",
+      "assigned": "IB Mathematics: Analysis and Approaches HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IB Mathematics HL: Applications and Interpretation",
+      "assigned": "IB Mathematics: Applications and Interpretation HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
       "why": "already classified to the same target"
     },
     {

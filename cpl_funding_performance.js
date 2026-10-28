@@ -8,8 +8,8 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 50146,
-  "pa": 45516,
+  "pe": 50220,
+  "pa": 45519,
   "ppa": 123,
   "p2": 3611,
   "p3": 16813,
@@ -17,8 +17,8 @@ window.CPL_FUNDING_PERF = {
   "ppe": 134,
   "pac": 5292,
   "ptc": 4626,
-  "pe_u": 1552213.2,
-  "pa_u": 278264.9,
+  "pe_u": 1557087.2,
+  "pa_u": 278273.9,
   "ppa_u": 760.5,
   "ppe_u": 7264.5,
   "pac_u": 37907.7,
@@ -939,8 +939,8 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 66
   },
   "Grossmont": {
-   "pe": 425,
-   "pe_u": 24851.0,
+   "pe": 495,
+   "pe_u": 29569.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -1740,10 +1740,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 31
   },
   "Redwoods": {
-   "pe": 72,
-   "pe_u": 2760.0,
-   "pa": 72,
-   "pa_u": 216.0,
+   "pe": 74,
+   "pe_u": 2832.0,
+   "pa": 74,
+   "pa_u": 222.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1762,10 +1762,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 24
   },
   "Reedley College": {
-   "pe": 135,
-   "pe_u": 5045.5,
-   "pa": 115,
-   "pa_u": 555.5,
+   "pe": 136,
+   "pe_u": 5089.5,
+   "pa": 116,
+   "pa_u": 558.5,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1833,8 +1833,8 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 66
   },
   "Sacramento City": {
-   "pe": 78,
-   "pe_u": 3001.0,
+   "pe": 79,
+   "pe_u": 3041.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -3073,7 +3073,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Grossmont": {
    "Military": {
-    "pe": 425,
+    "pe": 495,
     "pa": 0,
     "p3": 0
    }
@@ -3715,8 +3715,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Redwoods": {
    "Military": {
-    "pe": 72,
-    "pa": 72,
+    "pe": 74,
+    "pa": 74,
     "p3": 0
    }
   },
@@ -3736,8 +3736,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 130,
-    "pa": 111,
+    "pe": 131,
+    "pa": 112,
     "p3": 0
    },
    "Portfolio Review": {
@@ -3782,7 +3782,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Sacramento City": {
    "Military": {
-    "pe": 78,
+    "pe": 79,
     "pa": 0,
     "p3": 0
    }
@@ -4381,8 +4381,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 29434,
-   "pa": 26584,
+   "pe": 29508,
+   "pa": 26587,
    "p3": 2623
   },
   "Military | Other": {
@@ -4438,13 +4438,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1552213.2,
-   "pa_u": 278264.9,
+   "pe_u": 1557087.2,
+   "pa_u": 278273.9,
    "p3_u": 84404.15
   },
   "map": {
-   "pe_u": 1559477.7,
-   "pa_u": 279025.4,
+   "pe_u": 1564351.7,
+   "pa_u": 279034.4,
    "p3_u": 84477.65
   },
   "ratio": {
@@ -4528,7 +4528,7 @@ window.CPL_FUNDING_PERF = {
   "Foothill": false,
   "West Hills Coalinga": false,
   "Pasadena": false,
-  "Redwoods": false,
+  "Redwoods": true,
   "Hartnell": false,
   "Alameda": true,
   "Crafton Hills": false,
@@ -4572,7 +4572,7 @@ window.CPL_FUNDING_PERF = {
  },
  "vet_star_as_of": "2026-10-28",
  "vet_star_threshold": 0.75,
- "vet_star_n": 65,
+ "vet_star_n": 66,
  "vet_jst": {
   "LA Pierce": {
    "vets": 296,
@@ -4866,8 +4866,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Reedley College": {
    "vets": 82,
-   "jst": 132,
-   "pct": 1.6098
+   "jst": 133,
+   "pct": 1.622
   },
   "Laney": {
    "vets": 96,
@@ -4946,8 +4946,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Redwoods": {
    "vets": 98,
-   "jst": 73,
-   "pct": 0.7449
+   "jst": 75,
+   "pct": 0.7653
   },
   "Hartnell": {
    "vets": 106,
@@ -5041,8 +5041,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Grossmont": {
    "vets": 415,
-   "jst": 481,
-   "pct": 1.159
+   "jst": 556,
+   "pct": 1.3398
   },
   "LA City": {
    "vets": 301,
@@ -5061,8 +5061,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Sacramento City": {
    "vets": 203,
-   "jst": 117,
-   "pct": 0.5764
+   "jst": 118,
+   "pct": 0.5813
   },
   "Cuyamaca": {
    "vets": 130,

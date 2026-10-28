@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-28T16:18:45Z",
+ "written_at": "2026-10-28T18:33:20Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13201,
+     "n": 13211,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements"
@@ -26,13 +26,13 @@
    ],
    "issues": [
     {
-     "n": 3724,
+     "n": 3716,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "open": "#program-requirements"
     },
     {
-     "n": 3357,
+     "n": 3355,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "open": "#program-requirements"
@@ -50,15 +50,15 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-27T14:43:03Z",
+    "at": "2026-10-28T15:04:02Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13201,
-    "failing": 3724,
-    "unread": 3357,
-    "records": 18550,
+    "complete": 13211,
+    "failing": 3716,
+    "unread": 3355,
+    "records": 18552,
     "colleges": 114,
     "outside_active": 1625
    },
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-28T16:14:08Z",
+    "at": "2026-10-28T18:29:19Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,7 +140,7 @@
     "records": 2686,
     "records_stamped": 1867,
     "saved_at": "2026-10-28T14:36:41Z",
-    "fold_at": "2026-10-28T16:14:08Z",
+    "fold_at": "2026-10-28T18:29:19Z",
     "map_titles": 4839,
     "unclassified": 435,
     "left_map": 606,
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-28T16:16:24+00:00",
+    "at": "2026-10-28T18:31:32+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-28T16:14:06Z",
+    "at": "2026-10-28T18:29:18Z",
     "every_hours": 24
    },
    "facts": {

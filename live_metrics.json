@@ -1,10 +1,10 @@
 {
-  "scraped_at": "2026-10-28T16:13:53.363Z",
+  "scraped_at": "2026-10-28T18:29:11.526Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
   "active_college_count": 105,
-  "star_college_count": 65,
+  "star_college_count": 66,
   "tiers": {
     "criteria": [
       "Students >= 500",
@@ -487,6 +487,21 @@
           "transcribedUnits": 7
         },
         {
+          "college": "Grossmont College",
+          "students": 556,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 1,
+          "militaryStudents": 556,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Mt. San Jacinto College",
           "students": 546,
           "units": 1611,
@@ -952,21 +967,6 @@
           "transcribedUnits": 0
         },
         {
-          "college": "Grossmont College",
-          "students": 481,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 481,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
-          "transcribedUnits": 0
-        },
-        {
           "college": "Santa Rosa Junior College",
           "students": 444,
           "units": 1776,
@@ -1222,6 +1222,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Reedley College",
+          "students": 137,
+          "units": 558.5,
+          "avgUnits": 4.076642335766423,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 133,
+          "nonMilitaryStudents": 4,
+          "apprenticeStudents": 0,
+          "savings": 880142.5,
+          "yearImpact": 3238457,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Irvine Valley College",
           "students": 137,
           "units": 405,
@@ -1234,21 +1249,6 @@
           "apprenticeStudents": 0,
           "savings": 695460,
           "yearImpact": 2438934,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Reedley College",
-          "students": 136,
-          "units": 555.5,
-          "avgUnits": 4.084558823529412,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 132,
-          "nonMilitaryStudents": 4,
-          "apprenticeStudents": 0,
-          "savings": 874952.5,
-          "yearImpact": 3220256,
           "transcribedUnits": 0
         },
         {
@@ -1298,13 +1298,13 @@
         },
         {
           "college": "Sacramento City College",
-          "students": 117,
+          "students": 118,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 117,
+          "militaryStudents": 118,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 0,
@@ -1372,6 +1372,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "College of the Redwoods",
+          "students": 77,
+          "units": 222,
+          "avgUnits": 2.883116883116883,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 75,
+          "nonMilitaryStudents": 2,
+          "apprenticeStudents": 1,
+          "savings": 384060,
+          "yearImpact": 1346874,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Foothill College",
           "students": 76,
           "units": 304,
@@ -1384,21 +1399,6 @@
           "apprenticeStudents": 0,
           "savings": 505160,
           "yearImpact": 1771564,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "College of the Redwoods",
-          "students": 75,
-          "units": 216,
-          "avgUnits": 2.88,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 73,
-          "nonMilitaryStudents": 2,
-          "apprenticeStudents": 1,
-          "savings": 373680,
-          "yearImpact": 1310472,
           "transcribedUnits": 0
         },
         {
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "58,390",
+      "value": "58,469",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "30,091"
+          "value": "30,170"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 58390,
-    "Units": 279025.4,
+    "Students": 58469,
+    "Units": 279034.4,
     "TranscribedUnits": 84477.65,
-    "Savings": 395413587.75,
-    "YearImpact": 1605205534.8999999,
-    "MilitaryStudents": 30091,
+    "Savings": 395429157.75,
+    "YearImpact": 1605260137.8999999,
+    "MilitaryStudents": 30170,
     "NonMilitaryStudents": 28394,
     "AprenticeStudents": 953,
-    "AverageUnits": 4.778650453844837,
-    "TranscribedAverage": 1.4467828395273161
+    "AverageUnits": 4.772347739827944,
+    "TranscribedAverage": 1.4448280285279378
   }
 }
