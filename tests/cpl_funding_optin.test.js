@@ -44,6 +44,14 @@ function boot(window) {
   return window.document;
 }
 function click(window, el) { el.dispatchEvent(new window.MouseEvent("click", { bubbles: true })); }
+// EMAIL FIRST (Sam, 2026-10-28): the form opens on the address; Continue checks
+// its domain and opens the rest. Returns the row's form after the check.
+function passEmail(window, doc, college, email) {
+  const wrapOf = () => Array.from(doc.querySelectorAll("[data-optinwrap]")).find((w) => w.getAttribute("data-optinwrap") === college);
+  wrapOf().querySelector('[data-optinfield="email"]').value = email;
+  click(window, wrapOf().querySelector("[data-optinemailgo]"));
+  return wrapOf();
+}
 // A reviewer session: unlocked() === !!(tp() && tp().session()).
 // ⚠️ THE CREDENTIAL CHANGED, THE INTENT DID NOT (2026-08-28). These blocks have
 // always meant "the private, UNLOCKED reviewer view" — the team phrase was just
@@ -92,11 +100,16 @@ function reviewerSession() {
   check("A1: a public college row offers the self-service opt-in button",
     /data-optinjump=/.test(t1) && !/data-optinbtn=/.test(t1));
 
+  const jumpCollege = doc.querySelector("[data-optinjump]").getAttribute("data-optinjump");
   click(pub.window, doc.querySelector("[data-optinjump]"));               // open the form
   const t2 = doc.getElementById("cplFundTable").innerHTML;
-  check("A2: the opt-in form (name/title/email + submit) survives stripCurateAffordances in public mode",
-    /data-optinfield="name"/.test(t2) && /data-optinfield="title"/.test(t2) &&
-    /data-optinfield="email"/.test(t2) && /data-optinsubmit=/.test(t2));
+  check("A2: the opt-in form opens on the email alone, with Continue and the support address, in public mode",
+    /data-optinfield="email"/.test(t2) && /data-optinemailgo=/.test(t2) && /mailto:map@rccd\.edu/.test(t2) &&
+    !/data-optinfield="name"/.test(t2) && !/data-optinsubmit=/.test(t2));
+  passEmail(pub.window, doc, jumpCollege, "jane@college.edu");
+  const t3 = doc.getElementById("cplFundTable").innerHTML;
+  check("A2b: an allowed address opens name, title and submit, which survive stripCurateAffordances in public mode",
+    /data-optinfield="name"/.test(t3) && /data-optinfield="title"/.test(t3) && /data-optinsubmit=/.test(t3));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -194,22 +207,21 @@ function reviewerSession() {
   const rowCollege = btn.getAttribute("data-optinjump");
   click(dom.window, btn);                                                 // expand + open the form
 
-  const wrap = doc.querySelector("[data-optinwrap]");
-  wrap.querySelector('[data-optinfield="name"]').value = "Jane Admin";
-  wrap.querySelector('[data-optinfield="title"]').value = "VPAA";
-  wrap.querySelector('[data-optinfield="email"]').value = "not-an-email";
-  click(dom.window, doc.querySelector("[data-optinsubmit]"));
-  check("E1: an invalid email is rejected client-side — no opt-in recorded",
-    T._optinActive(rowCollege) === false);
+  let wrap = passEmail(dom.window, doc, rowCollege, "not-an-email");
+  check("E1: an invalid email is rejected client-side — no opt-in recorded, and the form stays on the address",
+    T._optinActive(rowCollege) === false && T._optinPending(rowCollege) === false &&
+    !wrap.querySelector('[data-optinfield="name"]'));
   check("E1b: an inline validation error is shown",
     /valid college email/i.test(doc.querySelector("[data-optinerr]").textContent || ""));
 
-  wrap.querySelector('[data-optinfield="email"]').value = "jane@college.edu";
+  wrap = passEmail(dom.window, doc, rowCollege, "jane@college.edu");
+  wrap.querySelector('[data-optinfield="name"]').value = "Jane Admin";
+  wrap.querySelector('[data-optinfield="title"]').value = "VPAA";
   click(dom.window, doc.querySelector("[data-optinsubmit]"));
   check("E2: a valid submission records a waiting request and leaves the gate closed",
     T._optinActive(rowCollege) === false && T._optinPending(rowCollege) === true);
-  check("E2b: the thank-you says a MAP team reviewer confirms it, to the address given",
-    /A member of the MAP team will review the request and send a confirmation to jane@college\.edu/.test(
+  check("E2b: the thank-you says CPL Initiative staff review it and confirm to the address given",
+    /CPL Initiative staff will review the request and send a confirmation to jane@college\.edu\. Once they approve it, the confirmation shows as complete on this dashboard\./.test(
       doc.getElementById("cplFundTable").textContent));
 }
 
@@ -237,8 +249,8 @@ function reviewerSession() {
   // open state by "c:" + c.college — the drill-in never opened, so Sam's
   // one-click "✎ Confirm" (2026-08-05) was a dead click. Fixed same day
   // (handler re-keyed by name); this check is the regression guard.
-  check("F1b: clicking the chip opens that row's attestation form (name field present)",
-    !!wrap && !!wrap.querySelector('[data-optinfield="name"]'));
+  check("F1b: clicking the chip opens that row's attestation form, on its email field",
+    !!wrap && !!wrap.querySelector('[data-optinfield="email"]'));
 
   // F2 — the chip disappears once the college has opted in.
   const selfRow2 = {}; selfRow2[COL] = { college: COL, status: "self_attested", source: "self" };
@@ -362,6 +374,63 @@ function reviewerSession() {
   check("every call site composes through partReqText() — none keeps its own concatenation",
     !/partLabel\(\)\s*\+\s*" by "/.test(consumerSrc) &&
     (consumerSrc.match(/partReqText\(\)/g) || []).length >= 4);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part G — EMAIL FIRST (Sam, 2026-10-28): "start with the email field and give an
+// acknowledgement once an allowed email is entered that the user may complete the
+// action and, once approved by CPL Initiative staff will show as complete on the
+// dashboard. Provide an email contact (map@rccd.edu) for technical support." Only
+// an address on the institution's or its district's domains opens the form; the
+// database's own check (cfp_insert_self) stays the gate behind it.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const dom = freshDom();
+  const doc = boot(dom.window);
+  const T = dom.window.CPL_FUNDING_TAB;
+  dom.window.CPL_FUNDING_TEST_DOMAINS = { [COL]: ["peralta.edu"] };
+  T._setElig({ coordOk: true, coord: {}, optinRow: {} });
+  T.render();
+  const jump = Array.from(doc.querySelectorAll("[data-optinjump]")).find((b) => b.getAttribute("data-optinjump") === COL);
+  click(dom.window, jump);
+  let wrap = passEmail(dom.window, doc, COL, "dean@gmail.com");
+  const errText = (wrap.querySelector("[data-optinerr]").textContent || "");
+  check("G1: an address off the institution's domains is refused, names the domain that passes, and opens nothing",
+    /ending in @peralta\.edu/.test(errText) && !wrap.querySelector('[data-optinfield="name"]') &&
+    !wrap.querySelector("[data-optinsubmit]") && !wrap.querySelector(".cplfund-optin-ack"));
+  check("G2: the email step names the support address as a mail link",
+    !!wrap.querySelector('.cplfund-support a[href="mailto:map@rccd.edu"]'));
+  // Enter in the field is Continue.
+  wrap.querySelector('[data-optinfield="email"]').value = "Dean@Peralta.edu";
+  wrap.querySelector('[data-optinfield="email"]').dispatchEvent(new dom.window.KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+  wrap = Array.from(doc.querySelectorAll("[data-optinwrap]")).find((w) => w.getAttribute("data-optinwrap") === COL);
+  const ack = wrap.querySelector(".cplfund-optin-ack");
+  check("G3: an allowed address (any case, by Enter) is acknowledged: it may confirm, and shows as complete once CPL Initiative staff approve",
+    !!ack && ack.getAttribute("role") === "status" &&
+    /Dean@Peralta\.edu may confirm .+'s participation\. Once CPL Initiative staff approve the request, the confirmation shows as complete on this dashboard\./.test(ack.textContent));
+  check("G4: the rest of the form opens with the support address still under it, and the address field is gone",
+    !!wrap.querySelector('[data-optinfield="name"]') && !!wrap.querySelector("[data-optinsubmit]") &&
+    !wrap.querySelector('[data-optinfield="email"]') && !!wrap.querySelector('.cplfund-support a[href="mailto:map@rccd.edu"]'));
+  wrap.querySelector('[data-optinfield="name"]').value = "Dean Ortiz";
+  wrap.querySelector('[data-optinfield="title"]').value = "VPAA";
+  click(dom.window, wrap.querySelector("[data-optinsubmit]"));
+  check("G5: the request carries the address the check passed", T._optinPending(COL) === true &&
+    /send a confirmation to Dean@Peralta\.edu/.test(doc.getElementById("cplFundTable").textContent));
+}
+{
+  const dom = freshDom();
+  const doc = boot(dom.window);
+  const T = dom.window.CPL_FUNDING_TAB;
+  dom.window.CPL_FUNDING_TEST_DOMAINS = { [COL]: ["peralta.edu"] };
+  T._setElig({ coordOk: true, coord: {}, optinRow: {} });
+  T.render();
+  click(dom.window, Array.from(doc.querySelectorAll("[data-optinjump]")).find((b) => b.getAttribute("data-optinjump") === COL));
+  let wrap = passEmail(dom.window, doc, COL, "dean@peralta.edu");
+  click(dom.window, wrap.querySelector("[data-optinemailchange]"));
+  wrap = Array.from(doc.querySelectorAll("[data-optinwrap]")).find((w) => w.getAttribute("data-optinwrap") === COL);
+  check("G6: Use a different address returns to the email step, the address kept for editing",
+    !!wrap.querySelector('[data-optinfield="email"]') && wrap.querySelector('[data-optinfield="email"]').value === "dean@peralta.edu" &&
+    !wrap.querySelector('[data-optinfield="name"]'));
 }
 
 let pass = 0;

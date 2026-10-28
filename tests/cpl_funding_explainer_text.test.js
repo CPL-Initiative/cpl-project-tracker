@@ -144,8 +144,9 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   };
   T.render();
   const sec = doc.querySelector('details.cplfund-sec[data-sec="explainer_text"]');
-  check("signed in, the tab ends with The explainer's text, marked Curator only",
-    !!sec && /The explainer’s text/.test(sec.querySelector("summary").textContent) &&
+  // One section for both since 2026-10-28 (Sam: "Can we consolidate these into one").
+  check("signed in, the tab ends with The explainer and My CPL Funding text, marked Curator only",
+    !!sec && /The explainer and My CPL Funding text/.test(sec.querySelector("summary").textContent) &&
     /Curator only/.test(sec.querySelector("summary").textContent));
   check("every passage is listed there with the word Edit",
     !!sec && blocks.every(function (b) { return !!sec.querySelector('[data-textedit="' + b.key + '"]'); }));

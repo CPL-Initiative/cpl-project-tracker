@@ -133,6 +133,9 @@ function hiddenKeys(doc) {
     T._alloc(COLLEGE).nc_gate_blocked === true && /Noncredit CPL Lead named and published/.test(consumerSrc) &&
     !/Noncredit CPL coordinator/.test(consumerSrc));
   click(window, det.querySelector("[data-ncattestopen]"));
+  // Email first (2026-10-28): the address opens the rest of the form.
+  doc.querySelector('[data-ncattestwrap] [data-ncattestfield="email"]').value = "dean@college.edu";
+  click(window, doc.querySelector("[data-ncattestwrap] [data-ncattestemailgo]"));
   const wrap = doc.querySelector("[data-ncattestwrap]");
   check("2c the attestation names the Lead and has the Lead meet regularly with the CPL Coordinator",
     /The Noncredit CPL Lead/.test(flat(wrap)) && /meets regularly with the college's CPL Coordinator/.test(flat(wrap)) &&

@@ -2415,6 +2415,35 @@ module.exports = {
     },
     mayHideBelow: [],
   },
+  /* The participation form, email first (Sam, 2026-10-28): one row's form on its
+     address and Continue, a second row's past the check with the acknowledgement,
+     the name, the title and the support address. Forms paint only on a click, so
+     no other target measures them. The domain check reads no remote here and
+     passes, as a failed read does on the page. */
+  "funding-model-forms": {
+    file: "funding-model/index.html",
+    title: "Funding model explainer: the confirmation form, on the address and past it",
+    widths: [390, 768, 1440],
+    seed: async (page) => {
+      await page.evaluate(async () => {
+        const jumps = () => Array.from(document.querySelectorAll("[data-optinjump]"));
+        const wrapOf = (c) => Array.from(document.querySelectorAll("[data-optinwrap]")).find((w) => w.getAttribute("data-optinwrap") === c);
+        const first = jumps()[0], second = jumps()[1];
+        const a = first && first.getAttribute("data-optinjump"), b = second && second.getAttribute("data-optinjump");
+        if (second) second.click();
+        const w = b && wrapOf(b);
+        if (w) {
+          w.querySelector('[data-optinfield="email"]').value = "dean@college.edu";
+          w.querySelector("[data-optinemailgo]").click();
+          await new Promise((r) => setTimeout(r, 400));
+        }
+        const f = jumps().find((x) => x.getAttribute("data-optinjump") === a);
+        if (f) f.click();
+      });
+      await page.waitForTimeout(400);
+    },
+    mayHideBelow: [],
+  },
   /* My Institution is hidden on the public page and its code kept (Sam, 2026-10-27);
      this target turns the switch on (cpl_funding.js oneViewOn) so the kept view stays
      measured for the day it returns. */

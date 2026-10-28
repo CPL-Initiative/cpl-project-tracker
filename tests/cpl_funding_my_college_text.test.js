@@ -97,11 +97,16 @@ const SEVEN = ["about", "reading", "elig_intro", "nc_rules", "college_intro", "t
 {
   const { w, doc, T } = setup({ signedIn: true });
   T.render();
-  const sec = doc.querySelector('details[data-sec="mc_text"]');
-  check("2a: a curator sees My CPL Funding's text, curator only, beside The explainer's text",
-    !!sec && sec.getAttribute("data-curator-only") === "1" &&
-    !!doc.querySelector('details[data-sec="explainer_text"]') &&
-    /My CPL Funding.s text/.test(sec.querySelector("summary").textContent));
+  // One section since 2026-10-28 (Sam: "Can we consolidate these into one"): My CPL Funding's passages follow the
+  // explainer's under their own heading, and the section of their own (mc_text) is gone.
+  const sec = doc.querySelector('details[data-sec="explainer_text"]');
+  const groupH = sec ? Array.from(sec.querySelectorAll("h4.cplfund-xtext-group")) : [];
+  check("2a: a curator sees My CPL Funding's text, curator only, inside the one text section under its own heading",
+    !!sec && sec.getAttribute("data-curator-only") === "1" && !doc.querySelector('details[data-sec="mc_text"]') &&
+    /The explainer and My CPL Funding text/.test(sec.querySelector("summary").textContent) &&
+    groupH.length === 1 && groupH[0].textContent === "My CPL Funding" &&
+    !!(groupH[0].compareDocumentPosition(sec.querySelector('.cplfund-prose[data-textblock="mc_intro"]')) & 4) &&
+    !(groupH[0].compareDocumentPosition(sec.querySelector('.cplfund-prose[data-textblock="x_lede"]')) & 4));
   // Fifteen since 2026-10-15: the four How to meet it passages joined the one
   // text (Sam's calls 4 and 5). Seventeen since S471: the two noncredit
   // conditions' passages (mc_how_nc_coord, mc_how_nc_team).
@@ -110,7 +115,8 @@ const SEVEN = ["about", "reading", "elig_intro", "nc_rules", "college_intro", "t
   // A public rendering, as the public page's engine draws it: since 2026-10-15
   // (Sam's call 1) the tab's Public page view frames funding-model/.
   w.CPL_FUNDING_PUBLIC = true; T.render();
-  check("2c: a public rendering carries no such section", !doc.querySelector('details[data-sec="mc_text"]'));
+  check("2c: a public rendering carries no such section",
+    !doc.querySelector('details[data-sec="explainer_text"]') && !doc.querySelector('.cplfund-prose[data-textblock^="mc_"] [data-textedit]'));
   w.CPL_FUNDING_PUBLIC = false;
 
   check("2d: a passage fills in its institution's figure by name",

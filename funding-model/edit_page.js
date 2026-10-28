@@ -320,8 +320,9 @@
   function hintFor(m) {
     if (m.faq) return "A paragraph that opens with Q: starts a question; the paragraphs after it are its answer. A web address becomes a link.";
     var h = "A blank line starts a paragraph, and a paragraph of “> ” lines is a quotation. **bold**, *italic*, and [words](https://…) for a link.";
-    if (m.rich) h = "A blank line starts a paragraph. Lines that open “- ” or “1. ” make a list, “> ” a quotation. " +
-      "**bold**, *italic*, [words](https://…) for a link, and a name in braces, such as {cap}, for a figure the page fills in.";
+    if (m.rich) h = "A blank line starts a paragraph. Lines that open “- ” or “1. ” make a list, “> ” a quotation; Indent, or Tab " +
+      "on a list line, nests it under the line above. **bold**, *italic*, [words](https://…) for a link, and a name in braces, " +
+      "such as {cap}, for a figure the page fills in.";
     return h;
   }
   function editorFor(key) {
@@ -337,6 +338,19 @@
     var tools = make("div", "pe-tools");
     tools.appendChild(word("Bold", { "data-pe-mark": "**", "data-pe-key": key }));
     tools.appendChild(word("Italic", { "data-pe-mark": "*", "data-pe-key": key }));
+    // Indent and Outdent nest a list line (Sam, 2026-10-28: "I need a way to indent (tab) bullets"); Tab and
+    // Shift+Tab on a list line do the same, and elsewhere move the focus as usual.
+    if (m.rich && typeof T.indentLines === "function") {
+      tools.appendChild(word("Indent", { "data-pe-indent": "1", "data-pe-key": key }));
+      tools.appendChild(word("Outdent", { "data-pe-indent": "-1", "data-pe-key": key }));
+      ta.addEventListener("keydown", function (e) {
+        if (e.key !== "Tab" || e.altKey || e.ctrlKey || e.metaKey) return;
+        var r = T.indentLines(ta.value, ta.selectionStart, ta.selectionEnd, e.shiftKey ? -1 : 1, ta);
+        if (!r.changed) return;
+        e.preventDefault();
+        drafts[key] = ta.value;
+      });
+    }
     if (!m.faq) tools.appendChild(word("Link", { "data-pe-link": key }));
     tools.appendChild(word("Save", { "data-pe-save": key }));
     tools.appendChild(word("Cancel", { "data-pe-cancel": key }));
@@ -533,8 +547,15 @@
       var key = a("data-pe-save") || a("data-pe-restore");
       var ta = doc.getElementById("pe-ta-" + key);
       openKey = null; delete drafts[key];
-      T.setText(key, a("data-pe-restore") != null ? "" : (ta ? ta.value : ""));
+      T.setText(key, a("data-pe-restore") != null ? "" : (ta ? ta.value : ""), a("data-pe-restore") != null);
       sync(); focusSoon('[data-pe-edit="' + key + '"]');
+      return;
+    }
+    if (a("data-pe-indent") != null) {
+      var ik = a("data-pe-key"), iarea = doc.getElementById("pe-ta-" + ik);
+      if (!iarea) return;
+      if (T.indentLines(iarea.value, iarea.selectionStart || 0, iarea.selectionEnd || 0, Number(a("data-pe-indent")), iarea).changed) drafts[ik] = iarea.value;
+      iarea.focus();
       return;
     }
     if (a("data-pe-mark") != null || a("data-pe-link") != null) {

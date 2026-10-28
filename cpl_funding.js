@@ -202,7 +202,8 @@
     // The Confirm word sits at the cell's right edge (Sam, 2026-10-25: "Make the
     // Confirm by links line up right justified so they look uniform up and down
     // the table"), whatever the length of the name before it.
-    ".cplfund-table td.cf-inst .cplfund-optin-jump { float: right; margin-left: 12px; }",
+    // In the row's own type size (Sam, 2026-10-28: "the same font size as other row data").
+    ".cplfund-table td.cf-inst .cplfund-optin-jump { float: right; margin-left: 12px; font-size: inherit; }",
     // The same net for a header and for Total Funds' chip: at the table's
     // minimum width both fit on one line, and a wider font wraps rather than
     // painting over the next column.
@@ -244,15 +245,22 @@
     // (a checkbox glyph is banned rendered text), checked when met. The boxes
     // print their state: print-color-adjust keeps the fill a printer would
     // otherwise drop with the white check on it.
-    // Two columns: the labels, then their boxes, so the noncredit row's boxes sit under the institution's.
-    ".cf-conds { display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: baseline; gap: 6px 12px; color: var(--text-strong); }",
+    // Three columns: the labels, each row's first box, then the rest, so the noncredit row's boxes sit under the
+    // institution's and its Attest word under the second box (Sam, 2026-10-28: "aligned vertically under the
+    // confirmation check box").
+    ".cf-conds { display: grid; grid-template-columns: max-content auto minmax(0, 1fr); align-items: baseline; gap: 6px 18px; color: var(--text-strong); }",
     ".cf-conds-items { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; min-width: 0; }",
+    ".cf-conds-first { display: flex; min-width: 0; }",
+    ".cf-conds .cplfund-ncattest-open { margin-left: 0; }",
     "@media (max-width: 560px) { .cf-conds { grid-template-columns: minmax(0, 1fr); } }",
     ".cf-conds-h { font-weight: 700; color: var(--text-strong); }",
     ".cf-cond { display: inline-flex; align-items: center; gap: 6px; font-weight: 400; color: var(--text-strong); }",
     ".cf-box { position: relative; flex: 0 0 auto; box-sizing: border-box; width: 14px; height: 14px;" +
       " border: 1.5px solid var(--text-body); border-radius: 2px; background: var(--surface-opaque);" +
       " -webkit-print-color-adjust: exact; print-color-adjust: exact; }",
+    // An unmet box is gray (Sam, 2026-10-28: "so users don't think they should click on them to take action"):
+    // the box reports a state, and the words beside it say which.
+    ".cf-cond:not(.cf-met) .cf-box { border-color: var(--border-strong); background: var(--surface-subtle); }",
     ".cf-met .cf-box { background: var(--seal-blue, #002F6D); border-color: var(--seal-blue-text, #002F6D); }",
     ".cf-met .cf-box::after { content: \"\"; position: absolute; left: 3.5px; top: 0.5px; width: 3.5px; height: 7.5px;" +
       " border: solid var(--white, #FFFFFF); border-width: 0 2px 2px 0; transform: rotate(45deg); }",
@@ -1152,6 +1160,15 @@
     ".cplfund-optin-actions { margin-top: 9px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }",
     ".cplfund-optin-err:not(:empty) { color: var(--red-alert); font-size: .8rem; margin-top: 6px; }",
     ".cplfund-optin-note { color: var(--text-muted); font-size: .76rem; margin-top: 8px; line-height: 1.4; }",
+    // Email first (Sam, 2026-10-28): the address and Continue on one line, then the acknowledgement in a quiet band.
+    ".cplfund-optin-email { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px 18px; margin-top: 6px; }",
+    ".cplfund-optin-email label { display: flex; flex-direction: column; gap: 3px; flex: 1 1 260px; min-width: 0; max-width: 420px; font-size: .8rem; color: var(--text-muted); }",
+    ".cplfund-optin-email input { font-family: inherit; font-size: .86rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 5px 8px; min-height: 24px; box-sizing: border-box; width: 100%; }",
+    ".cplfund-optin-email input:focus { border-color: var(--gold-accent); }",
+    ".cplfund-optin-email .cplfund-optbtn, .cplfund-optin-ack .cplfund-optbtn { margin-left: 0; }",
+    ".cplfund-optin-ack { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; margin: 0 0 10px; padding: 8px 10px; border-left: 3px solid var(--seal-blue); background: var(--surface-subtle); color: var(--text-body); font-size: .84rem; line-height: 1.45; }",
+    ".cplfund-optin-ack p { margin: 0; flex: 1 1 320px; min-width: 0; overflow-wrap: anywhere; }",
+    ".cplfund-support a { color: var(--cobalt); text-underline-offset: 2px; }",
     // The noncredit attestation's form: three short groups, one column on a phone.
     // On a phone the drill-in is as wide as the table, which scrolls inside its
     // wrapper; the form takes the wrapper's visible width (a size container,
@@ -1159,6 +1176,8 @@
     // screen. The wrapper holds no fixed-position element (the splash is on body).
     ".cplfund-tablewrap { container-type: inline-size; }",
     ".cplfund-ncattest { max-width: min(760px, calc(100cqi - 44px)); position: sticky; left: 26px; box-sizing: border-box; }",
+    // The confirmation form fits the visible part of a table that scrolls sideways on a phone, as the attestation does (2026-10-28).
+    ".cplfund-optin-form:not(.cplfund-ncattest) { max-width: min(640px, calc(100cqi - 44px)); position: sticky; left: 26px; box-sizing: border-box; }",
     ".cplfund-ncattest-intro { margin: 0 0 8px; }",
     ".cplfund-ncattest-set { border: 0; margin: 0 0 8px; padding: 0; min-width: 0; }",
     ".cplfund-ncattest-set legend { font-size: .8rem; font-weight: 600; color: var(--navy-secondary); padding: 0; margin-bottom: 4px; }",
@@ -1241,6 +1260,7 @@
     ".cplfund-fig-token { color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }",
     ".cplfund-xtext-lead { margin: 0 0 10px; color: var(--text-body); }",
     ".cplfund-xtext-h { margin: 18px 0 4px; font-size: .95rem; color: var(--text-strong); }",
+    ".cplfund-xtext-group { margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 1.05rem; }",
     ".cplfund-xtext-k { margin: 10px 0 4px; font-size: .78rem; font-weight: 600; color: var(--text-muted); }",
     ".cplfund-prose.cplfund-xtext ul { margin: .4em 0 .8em; padding-left: 1.3em; }",
     ".cplfund-xtext-figs { margin-top: 16px; font-size: .85rem; color: var(--text-body); }",
@@ -3975,9 +3995,25 @@
       .replace(/&amp;/g, "&");
     return plainNormalize(t);
   }
+  // An indented list item keeps its depth (Sam, 2026-10-28: "I need a way to
+  // indent (tab) bullets"): a tab or two spaces before "- " or "1. " is one
+  // level, stored as two spaces a level, up to LIST_DEPTH_MAX. Every other
+  // line is trimmed and its runs of spaces collapse, as before.
+  var LIST_DEPTH_MAX = 3;
+  var LIST_INDENT = /^([ \t]+)(?=(?:[-\u2022]|\d{1,2}\.)[ \t])/;
+  function listDepthOf(ws) {
+    var n = 0;
+    String(ws || "").split("").forEach(function (ch) { n += ch === "\t" ? 2 : 1; });
+    return Math.min(LIST_DEPTH_MAX, Math.floor(n / 2));
+  }
   function plainNormalize(t) {
     return String(t == null ? "" : t).replace(/\r\n?/g, "\n").split(/\n\s*\n/)
-      .map(function (para) { return para.replace(/[ \t]+/g, " ").replace(/ ?\n ?/g, "\n").trim(); })
+      .map(function (para) {
+        return para.split("\n").map(function (ln) {
+          var m = LIST_INDENT.exec(ln), lead = m ? new Array(listDepthOf(m[1]) + 1).join("  ") : "";
+          return lead + ln.replace(/[ \t]+/g, " ").trim();
+        }).filter(function (ln) { return ln.trim(); }).join("\n");
+      })
       .filter(Boolean).join("\n\n");
   }
   // A paragraph whose EVERY line begins with ">" renders as a quotation (Sam,
@@ -3991,7 +4027,9 @@
     return para.split("\n").every(function (ln) { return QUOTE_LINE.test(ln); });
   }
   function plainToHtml(t) {
-    return plainNormalize(t).split(/\n\n/).map(function (para) {
+    t = plainNormalize(t);
+    if (!t) return "";
+    return t.split(/\n\n/).map(function (para) {
       var quoted = isQuoteBlock(para);
       var body = quoted
         ? para.split("\n").map(function (ln) { return ln.replace(QUOTE_LINE, ""); }).join("\n")
@@ -4000,14 +4038,21 @@
       return quoted ? "<blockquote>" + p + "</blockquote>" : p;
     }).join("");
   }
+  // A passage saved with no words stays without words (Sam, 2026-10-28: "I try
+  // to delete the text and it reappears on save"). An empty save once deleted
+  // the override, which brought the house text back; it now stores TEXT_BLANK,
+  // and Restore the default text is the one way back to the house words.
+  var TEXT_BLANK = "__blank__";
   function textOverride(key) {
     var v = firstDefined(
       SCENARIO.text && SCENARIO.text[key],
       SHARED.text && SHARED.text[key],
       key === "elig_intro" ? SCENARIO.eligIntro : undefined,
       key === "elig_intro" ? SHARED.eligIntro : undefined);
+    if (v === TEXT_BLANK) return "";
     return (v == null || !String(v).trim()) ? null : String(v);
   }
+  function textIsBlank(key) { return textOverride(key) === ""; }
   function textIsCustom(key) { return textOverride(key) != null; }
   function textDefaultPlain(key) {
     if (isRich(key)) return richDefaultPlain(key);
@@ -4031,14 +4076,26 @@
     if (isRich(key)) return richPlainToHtml(textPlain(key), "tab");
     var o = textOverride(key); return o != null ? (hasMarks(key) ? markInline(linkMarks(plainToHtml(o))) : plainToHtml(o)) : textDefaultHtml(key);
   }
-  function setText(key, v) {
+  // `reset` (Restore the default text) drops the override; a save keeps what
+  // was typed, an empty one as TEXT_BLANK. A save that matches the house text
+  // drops it too, unless a layer beneath would then show other words. Signed
+  // in, the save also drops this browser's what-if copy of the passage, which
+  // the tab reads first and which otherwise kept showing the old words over
+  // the shared save (cpl_memory pitfall-funding-edit-saves-to-browser-whatif-2026-10-26).
+  function setText(key, v, reset) {
     var ov = activeOverride();
     var clean = plainNormalize(v);
+    if (SCENARIO !== ov && isPlainObj(SCENARIO.text) && Object.prototype.hasOwnProperty.call(SCENARIO.text, key)) {
+      delete SCENARIO.text[key];
+      if (!Object.keys(SCENARIO.text).length) delete SCENARIO.text;
+      saveScenario();
+    }
     ov.text = isPlainObj(ov.text) ? ov.text : {};
-    if (!clean || clean === textDefaultPlain(key)) delete ov.text[key];
-    else ov.text[key] = clean;
-    if (!Object.keys(ov.text).length) delete ov.text;
+    delete ov.text[key];
     if (key === "elig_intro") delete ov.eligIntro;   // the legacy key this block replaced
+    // What the passage reads with this layer's words gone: a save that matches it stores nothing.
+    if (!reset && !(clean && textPlain(key) === clean)) ov.text[key] = clean || TEXT_BLANK;
+    if (!Object.keys(ov.text).length) delete ov.text;
     persistActive();
   }
   // ── A STATUS PER DOCUMENT (Sam, 2026-10-21: "for status, I meant the reports on
@@ -4407,19 +4464,42 @@
     return h.replace(/\*\*([^*]+?)\*\*/g, "<strong>$1</strong>")
       .replace(/(^|[^*\w])\*([^*\s](?:[^*]*?[^*\s])?)\*(?![*\w])/g, "$1<em>$2</em>");
   }
-  var BULLET_LINE = /^[-•][ \t]+/;
-  // A paragraph whose every line opens "1. " is a numbered list (call 5).
-  var NUMBER_LINE = /^\d{1,2}\.[ \t]+/;
-  function richPlainToHtml(t, mode, seeds) {
-    return plainNormalize(t).split(/\n\n/).map(function (para) {
-      var lines = para.split("\n");
-      var list = lines.every(function (ln) { return BULLET_LINE.test(ln); }) ? ["ul", BULLET_LINE]
-        : lines.every(function (ln) { return NUMBER_LINE.test(ln); }) ? ["ol", NUMBER_LINE] : null;
-      if (list) {
-        return "<" + list[0] + ">" + lines.map(function (ln) {
-          return "<li>" + richInline(ln.replace(list[1], ""), mode, seeds) + "</li>";
-        }).join("") + "</" + list[0] + ">";
+  // A paragraph whose every line opens "- " is a bulleted list, "1. " a
+  // numbered one (call 5). An item two spaces in nests under the one above it (Sam, 2026-10-28), a
+  // list of either kind; the top level is all bullets or all numbers, as before.
+  var LIST_ITEM = /^((?:  )*)([-•]|\d{1,2}\.)[ \t]+/;
+  function listItems(lines) {
+    var items = [];
+    for (var i = 0; i < lines.length; i++) {
+      var m = LIST_ITEM.exec(lines[i]);
+      if (!m) return null;
+      items.push({ depth: m[1].length / 2, tag: /\d/.test(m[2]) ? "ol" : "ul", text: lines[i].slice(m[0].length) });
+    }
+    var top = items.filter(function (it) { return !it.depth; });
+    if (!top.length || top.some(function (it) { return it.tag !== top[0].tag; })) return null;
+    return items;
+  }
+  function nestedListHtml(items, mode, seeds) {
+    var out = "", open = [];   // the tag of each list open, outermost first
+    items.forEach(function (it) {
+      var cur = open.length - 1, d = Math.min(it.depth, cur + 1);
+      if (d > cur) { out += "<" + it.tag + ">"; open.push(it.tag); }
+      else {
+        while (open.length - 1 > d) out += "</li></" + open.pop() + ">";
+        out += "</li>";
       }
+      out += "<li>" + richInline(it.text, mode, seeds);
+    });
+    while (open.length) out += "</li></" + open.pop() + ">";
+    return out;
+  }
+  function richPlainToHtml(t, mode, seeds) {
+    t = plainNormalize(t);
+    if (!t) return "";     // an emptied passage is no paragraph at all
+    return t.split(/\n\n/).map(function (para) {
+      var lines = para.split("\n");
+      var items = listItems(lines);
+      if (items) return nestedListHtml(items, mode, seeds);
       var quoted = isQuoteBlock(para);
       var body = lines.map(function (ln) {
         return richInline(quoted ? ln.replace(QUOTE_LINE, "") : ln, mode, seeds);
@@ -4471,6 +4551,36 @@
     }
     return out;
   }
+  // Indent and Outdent (Sam, 2026-10-28: "I need a way to indent (tab)
+  // bullets"): every list line the selection touches moves one level in or
+  // out, two spaces a level. A pure function of the text and the selection, as
+  // wrapMark is; `ta`, when given, gets the new text and selection. `changed`
+  // is false when no line could move, so Tab there still leaves the box.
+  function indentLines(text, a, b, dir, ta) {
+    text = String(text || ""); a = Math.max(0, a | 0); b = Math.max(a, b | 0);
+    var start = text.lastIndexOf("\n", a - 1) + 1;
+    var stop = text.indexOf("\n", b > a && text.charAt(b - 1) === "\n" ? b - 1 : b);
+    if (stop === -1) stop = text.length;
+    var first = 0, total = 0, changed = false;
+    var lines = text.slice(start, stop).split("\n").map(function (ln, i) {
+      var m = /^([ \t]*)(?=(?:[-\u2022]|\d{1,2}\.)[ \t])/.exec(ln);
+      if (!m) return ln;
+      var depth = Math.max(0, Math.min(LIST_DEPTH_MAX, listDepthOf(m[1]) + (dir < 0 ? -1 : 1)));
+      var lead = new Array(depth + 1).join("  "), delta = lead.length - m[1].length;
+      if (!delta && lead === m[1]) return ln;
+      changed = true;
+      if (!i) first = delta;
+      total += delta;
+      return lead + ln.slice(m[1].length);
+    });
+    var out = text.slice(0, start) + lines.join("\n") + text.slice(stop);
+    var s0 = Math.max(start, a + first), s1 = Math.max(s0, b + total);
+    if (changed && ta && typeof ta.setSelectionRange === "function") {
+      ta.value = out;
+      try { ta.setSelectionRange(s0, s1); } catch (e) { /* a detached field */ }
+    }
+    return { text: out, changed: changed, a: s0, b: s1 };
+  }
   function explainerTextHtml(key, seeds) {
     if (!EXPLAINER_BY_KEY[key]) return "";
     return richPlainToHtml(textPlain(key), "page", seeds);
@@ -4502,31 +4612,27 @@
         (k === "x_about" && !textIsCustom(k) ? ", which shows this tab&rsquo;s Introduction until it is saved" : "") +
         "</p>" + proseBlockHtml(k, "cplfund-xtext");
     });
-    body += '<details class="cplfund-xtext-figs"><summary>The figures a passage can name</summary><ul>' +
+    body += '<details class="cplfund-xtext-figs"><summary>The figures an explainer passage can name</summary><ul>' +
       FIG_TOKENS.map(function (t) {
         return "<li><code>{" + esc(t[0]) + "}</code> " + esc(t[2]) + "</li>";
       }).join("") + "</ul></details>";
-    // data-curator-only: never a public section, so it carries no Rename or
-    // Hide (cpl_funding_section_titles excludes it by this mark alone).
-    return '<details class="cplfund-sec" data-sec="explainer_text" data-curator-only="1"' + (sectionOpen("explainer_text") ? " open" : "") + ">" +
-      '<summary class="cplfund-sec-sum"><h3>The explainer&rsquo;s text</h3>' +
-      '<span class="cplfund-sec-flag">Curator only</span>' +
-      '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
-      '<div class="cplfund-sec-body">' + body + "</div></details>";
-  }
-  function mcTextSectionHtml() {
-    if (!unlocked() || publicMode()) return "";
-    var body = '<p class="cplfund-xtext-lead">The sentences every My CPL Funding view prints: My College, this ' +
+    // My CPL Funding's text joins the explainer's in this one section (Sam,
+    // 2026-10-28: "Can we consolidate these into one"); it was its own section
+    // (mc_text) from 2026-10-15.
+    body += '<h4 class="cplfund-xtext-h cplfund-xtext-group">My CPL Funding</h4>' +
+      '<p class="cplfund-xtext-lead">The sentences every My CPL Funding view prints: My College, this ' +
       "tab&rsquo;s Public view and the explainer. Save an edit here and all three show it; Refresh everything " +
       "reaches windows already open. A name in braces is a figure filled in for each institution.</p>";
     MC_BLOCKS.forEach(function (b) {
       body += '<p class="cplfund-xtext-k">' + esc(b.where) + "</p>" + proseBlockHtml(b.key, "cplfund-xtext");
     });
-    body += '<details class="cplfund-xtext-figs"><summary>The figures a passage can name</summary><ul>' +
+    body += '<details class="cplfund-xtext-figs"><summary>The figures a My CPL Funding passage can name</summary><ul>' +
       MC_FIGS.map(function (t) { return "<li><code>{" + esc(t[0]) + "}</code> " + esc(t[1]) + "</li>"; }).join("") +
       "</ul></details>";
-    return '<details class="cplfund-sec" data-sec="mc_text" data-curator-only="1"' + (sectionOpen("mc_text") ? " open" : "") + ">" +
-      '<summary class="cplfund-sec-sum"><h3>My CPL Funding&rsquo;s text</h3>' +
+    // data-curator-only: never a public section, so it carries no Rename or
+    // Hide (cpl_funding_section_titles excludes it by this mark alone).
+    return '<details class="cplfund-sec" data-sec="explainer_text" data-curator-only="1"' + (sectionOpen("explainer_text") ? " open" : "") + ">" +
+      '<summary class="cplfund-sec-sum"><h3>The explainer and My CPL Funding text</h3>' +
       '<span class="cplfund-sec-flag">Curator only</span>' +
       '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
       '<div class="cplfund-sec-body">' + body + "</div></details>";
@@ -4825,6 +4931,10 @@
           ? '<button type="button" class="cplfund-textbtn" data-textwrap="**" data-textfor="' + esc(key) + '">Bold</button>' +
             '<button type="button" class="cplfund-textbtn" data-textwrap="*" data-textfor="' + esc(key) + '">Italic</button>'
           : "") +
+        (isRich(key)
+          ? '<button type="button" class="cplfund-textbtn" data-textindent="1" data-textfor="' + esc(key) + '">Indent</button>' +
+            '<button type="button" class="cplfund-textbtn" data-textindent="-1" data-textfor="' + esc(key) + '">Outdent</button>'
+          : "") +
         '<button type="button" class="cplfund-textbtn primary" data-textsave="' + esc(key) + '">Save</button>' +
         '<button type="button" class="cplfund-textbtn" data-textcancel="' + esc(key) + '">Cancel</button>' +
         (custom ? '<button type="button" class="cplfund-textbtn" data-textreset="' + esc(key) + '">Restore the default text</button>' : "") +
@@ -4832,7 +4942,8 @@
         (TEXT_BLOCKS[key] && TEXT_BLOCKS[key].rich
           ? '<span class="dk">Plain text. Select words and press Bold or Italic, or type **two asterisks** on each side for bold ' +
             'and *one* for italic. A blank line starts a new paragraph; a paragraph whose every line starts with - is a bulleted ' +
-            'list. A name in braces, such as {base award}, is a figure the explainer fills in from the model. Saves for everyone.</span></div>'
+            'list. Indent, or Tab on a bulleted line, nests a bullet under the one above it; Outdent, or Shift+Tab, moves it back. ' +
+            'A name in braces, such as {base award}, is a figure the explainer fills in from the model. Saves for everyone.</span></div>'
           : hasMarks(key)
           ? '<span class="dk">Plain text. Select words and press Bold or Italic, or type **two asterisks** on each side for bold ' +
             'and *one* for italic. A blank line starts a new paragraph; start every line with &gt; to set a passage as a ' +
@@ -5661,6 +5772,37 @@
       .then(function (list) { if (Array.isArray(list)) DOMAIN_CACHE[college] = list; judge(list); })
       .catch(function () { judge(null); });
   }
+  // ── EMAIL FIRST (Sam, 2026-10-28) ─────────────────────────────────────────
+  // "Rather than starting with the name field, start with the email field and
+  // give an acknowledgement once an allowed email is entered that the user may
+  // complete the action and, once approved by CPL Initiative staff will show as
+  // complete on the dashboard. Provide an email contact (map@rccd.edu) for
+  // technical support." Both public forms open on the address alone; Continue
+  // asks domainCheck, and only an address on the institution's or its
+  // district's domain opens the rest of the form. The database's own check
+  // (cfp_insert_self, cna_insert_self) stays the gate behind it.
+  var SUPPORT_EMAIL = "map@rccd.edu";
+  function supportHtml() {
+    return '<p class="cplfund-optin-note cplfund-support">For technical support, email <a href="mailto:' +
+      SUPPORT_EMAIL + '">' + SUPPORT_EMAIL + "</a>.</p>";
+  }
+  // pre: the form's attribute prefix ("optin" or "ncattest"); kind: "part" or "nc".
+  function emailStepHtml(college, pre, kind, ui) {
+    var nm = esc(dispName(college));
+    if (ui.verified && ui.email) {
+      return '<div class="cplfund-optin-ack" role="status"><p>' + esc(ui.email) +
+        (kind === "nc"
+          ? " may attest for " + nm + "&#39;s noncredit share. Once CPL Initiative staff approve the attestation, the Noncredit CPL Lead shows as complete on this dashboard."
+          : " may confirm " + nm + "&#39;s participation. Once CPL Initiative staff approve the request, the confirmation shows as complete on this dashboard.") +
+        '</p><button type="button" class="cplfund-optbtn" data-' + pre + 'emailchange="' + esc(college) + '">Use a different address</button></div>';
+    }
+    return '<p class="cplfund-optin-note">Start with your email address. An address on ' + nm +
+      "&#39;s or its district&#39;s domain may complete this form.</p>" +
+      '<div class="cplfund-optin-email"><label>College or district email<input type="email" data-' + pre +
+      'field="email" autocomplete="email" maxlength="160" placeholder="you@college.edu" value="' + esc(ui.email || "") + '"></label>' +
+      '<button type="button" class="cplfund-optbtn cplfund-optin-submit" data-' + pre + 'emailgo="' + esc(college) + '"' +
+      (ui.checking ? " disabled" : "") + ">" + (ui.checking ? "Checking…" : "Continue") + "</button></div>";
+  }
   function domainErrText(college, domains) {
     var at = domains.slice(0, 4).map(function (d) { return "@" + d; });
     var list = at.length > 1 ? at.slice(0, -1).join(", ") + " or " + at[at.length - 1] : at[0];
@@ -5673,7 +5815,9 @@
   function submitOptIn(college, form) {
     var rec = { college: college, attestor_name: form.name, attestor_title: form.title,
       attestor_email: form.email, status: "self_attested", source: "self" };
-    OPTIN_UI[college] = { open: true, submitting: true };
+    // The checked address rides every state, so the form never falls back to step one.
+    var keep = function (o) { o.open = true; o.email = form.email; o.verified = true; return o; };
+    OPTIN_UI[college] = keep({ submitting: true });
     if (!remoteEnabled()) {
       ELIG.optinRow[college] = { college: college, status: "self_attested", requested_at: nowIso() };
       OPTIN_UI[college] = { done: true, email: form.email };
@@ -5688,10 +5832,10 @@
     }).then(function (r) {
       // 409 = a row already exists for this college (a race, or already opted in);
       // treat it as done and let the re-read show the true state.
-      OPTIN_UI[college] = (r.ok || r.status === 409) ? { done: true, email: form.email } : { open: true, error: true };
+      OPTIN_UI[college] = (r.ok || r.status === 409) ? { done: true, email: form.email } : keep({ error: true });
       loadEligibility();
       render();
-    }).catch(function () { OPTIN_UI[college] = { error: true }; render(); });
+    }).catch(function () { OPTIN_UI[college] = keep({ error: true }); render(); });
   }
 
   // Reviewer writes (confirm / revoke / remove). Each re-reads afterwards — a
@@ -5793,7 +5937,8 @@
       attestor_name: form.name, attestor_title: form.title, attestor_email: form.email,
       lead_types: form.leadTypes && form.leadTypes.length ? form.leadTypes : null,
       lead_assignment: form.assignment || null, lead_meets: form.meets || null };
-    NCATTEST_UI[college] = { open: true, submitting: true };
+    var keep = function (o) { o.open = true; o.email = form.email; o.verified = true; return o; };
+    NCATTEST_UI[college] = keep({ submitting: true });
     if (!remoteEnabled()) {
       ELIG.ncAttest[college] = { college: college, fiscal_year: fy, status: "self_attested",
         coordinator_name: rec.coordinator_name, coordinator_title: rec.coordinator_title, requested_at: nowIso() };
@@ -5809,10 +5954,10 @@
       body: JSON.stringify(rec)
     }).then(function (r) {
       // 409: this college already attested for the year; the re-read shows it.
-      NCATTEST_UI[college] = (r.ok || r.status === 409) ? { done: true, email: form.email } : { open: true, error: true };
+      NCATTEST_UI[college] = (r.ok || r.status === 409) ? { done: true, email: form.email } : keep({ error: true });
       loadEligibility();
       render();
-    }).catch(function () { NCATTEST_UI[college] = { error: true }; render(); });
+    }).catch(function () { NCATTEST_UI[college] = keep({ error: true }); render(); });
   }
   // The form's fields into a record, or the first thing wrong with them, in the
   // order the form asks. The same checks as cna_insert_self, so a refused
@@ -5960,16 +6105,19 @@
         (w.star ? '<span class="cplfund-vstar" role="img" aria-label="Veteran Star" title="Veteran Star">★</span>' : "") +
         vc + "</span>";
     };
-    var items = eligReqList(college).map(one).join("");
+    var conds = eligReqList(college).map(one), items = conds.slice(1).join("");
     // The noncredit share's own conditions (Scenario 4), after the
     // institution's: a credit college with a noncredit share meets these for
     // that share alone; a standalone's list above already is this list.
-    var ncItems = (!c.nco && ncOutcomesMode() && (c.nc_award || 0) > 0.5) ? ncCondList(college) : [], ncRow = "";
+    var ncItems = (!c.nco && ncOutcomesMode() && (c.nc_award || 0) > 0.5) ? ncCondList(college).map(one) : [], ncRow = "";
+    var ncAct = ncAttestShown(c) ? ncAttestOpenHtml(c) + ncAttestCtlHtml(college) : "";
     if (ncItems.length) {
-      // Its own row of the grid, so its label and boxes line up under the institution's (Sam, 2026-10-26).
-      ncRow = '<span class="cf-conds-nc"><strong class="cf-conds-h">Noncredit share:</strong><span class="cf-conds-items">' +
-        ncItems.map(one).join("") + (ncAttestShown(c) ? ncAttestCtlHtml(college) : "") + "</span></span>";
-    } else if (ncAttestShown(c)) items += ncAttestCtlHtml(college);
+      // Its own row of the grid, so its label and boxes line up under the institution's (Sam, 2026-10-26), and
+      // the Attest word follows the Lead's words, under the second box (Sam, 2026-10-28).
+      ncRow = '<span class="cf-conds-nc"><strong class="cf-conds-h">Noncredit share:</strong>' +
+        '<span class="cf-conds-first">' + ncItems[0] + '</span><span class="cf-conds-items">' +
+        ncItems.slice(1).join("") + ncAct + "</span></span>";
+    } else items += ncAct;
     // The CO's controls ride the same line, for a signed-in reviewer only and
     // never in the public preview (the preview is what a college reads). A
     // self-attestation stands until the CO rejects it (attest-first), so the
@@ -5992,7 +6140,7 @@
         "</span>";
     }
     return '<div class="cplfund-basestatus cf-conds"><strong class="cf-conds-h">Minimum Conditions:</strong>' +
-      '<span class="cf-conds-items">' + items + ctl + "</span>" + ncRow + "</div>";
+      '<span class="cf-conds-first">' + (conds[0] || "") + '</span><span class="cf-conds-items">' + items + ctl + "</span>" + ncRow + "</div>";
   }
   // The per-college opt-in affordance shown in the row drill-in — a plain button
   // that expands to a short attestation form. Visible to EVERYONE (this is the
@@ -6009,9 +6157,9 @@
     // accepts the request and emails the confirmation. It shows before the row's
     // own state, since the re-read after a submit finds the request waiting.
     if (ui.done) {
-      return '<div class="cplfund-optin cplfund-optin-done" role="status">Thank you. A member of the MAP team will review the request and ' +
-        "send a confirmation to " + (ui.email ? esc(ui.email) : "the address you gave") + ". " + esc(dispName(college)) +
-        " meets this condition once the request is accepted.</div>";
+      return '<div class="cplfund-optin cplfund-optin-done" role="status">Thank you. CPL Initiative staff will review the request and ' +
+        "send a confirmation to " + (ui.email ? esc(ui.email) : "the address you gave") + ". Once they approve it, " +
+        "the confirmation shows as complete on this dashboard.</div>";
     }
     if (row && row.status !== "revoked") return "";
     var withdrawn = row && row.status === "revoked"
@@ -6021,25 +6169,30 @@
     var titleOpts = OPTIN_TITLES.map(function (o) {
       return '<option value="' + esc(o.val) + '">' + esc(o.label) + "</option>";
     }).join("");
-    return '<div class="cplfund-optin cplfund-optin-form" data-optinwrap="' + esc(college) + '">' + withdrawn +
-      '<div class="cplfund-optin-head">Confirm <strong>' + esc(dispName(college)) + "</strong>&#39;s participation in CPL Implementation Funding</div>" +
+    var head = '<div class="cplfund-optin-head">Confirm <strong>' + esc(dispName(college)) + "</strong>&#39;s participation in CPL Implementation Funding</div>";
+    var err = '<div class="cplfund-optin-err" data-optinerr="' + esc(college) + '" role="alert"></div>';
+    var cancel = '<button type="button" class="cplfund-optbtn" data-optincancel="' + esc(college) + '">Cancel</button>';
+    if (!ui.verified) {
+      return '<div class="cplfund-optin cplfund-optin-form" data-optinwrap="' + esc(college) + '">' + withdrawn + head +
+        emailStepHtml(college, "optin", "part", ui) + err + '<div class="cplfund-optin-actions">' + cancel + "</div>" +
+        supportHtml() + "</div>";
+    }
+    return '<div class="cplfund-optin cplfund-optin-form" data-optinwrap="' + esc(college) + '">' + withdrawn + head +
+      emailStepHtml(college, "optin", "part", ui) +
       '<div class="cplfund-optin-grid">' +
       '<label>Your name<input type="text" data-optinfield="name" autocomplete="name" maxlength="120" placeholder="First Last"></label>' +
       "<label>Your title<select data-optinfield=\"title\">" + titleOpts + "</select></label>" +
-      '<label>College or district email<input type="email" data-optinfield="email" autocomplete="email" maxlength="160" placeholder="you@college.edu"></label>' +
-      "</div>" +
-      '<div class="cplfund-optin-err" data-optinerr="' + esc(college) + '" role="alert"></div>' +
+      "</div>" + err +
       '<div class="cplfund-optin-actions">' +
       '<button type="button" class="cplfund-optbtn cplfund-optin-submit" data-optinsubmit="' + esc(college) + '"' +
-      (ui.submitting ? " disabled" : "") + ">" + (ui.submitting ? "Submitting…" : "Confirm participation") + "</button>" +
-      '<button type="button" class="cplfund-optbtn" data-optincancel="' + esc(college) + '">Cancel</button>' +
-      (ui.error ? ' <span class="cplfund-warn-text">The request was not recorded. Please check that the email address is on your college&#39;s or district&#39;s domain, then try again.</span>' : "") +
+      (ui.submitting ? " disabled" : "") + ">" + (ui.submitting ? "Submitting…" : "Confirm participation") + "</button>" + cancel +
+      (ui.error ? ' <span class="cplfund-warn-text">The request was not recorded. Please try again, or email ' + SUPPORT_EMAIL + " for technical support.</span>" : "") +
       "</div>" +
       '<div class="cplfund-optin-note">By submitting, you attest that you are an administrator of ' + esc(dispName(college)) +
       " requesting that it participate in CPL Implementation Funding. Your name and email are recorded for the Chancellor&#39;s " +
-      "Office and are <strong>not shown publicly</strong>. A member of the MAP team reviews each request and emails a confirmation " +
-      "once it is accepted. Opting in makes the college eligible for funding; it moves no funding by itself and is reversible.</div>" +
-      "</div>";
+      "Office and are <strong>not shown publicly</strong>. CPL Initiative staff review each request and email a confirmation " +
+      "once they approve it. Opting in makes the college eligible for funding; it moves no funding by itself and is reversible.</div>" +
+      supportHtml() + "</div>";
   }
 
   // The noncredit attestation's form, under the Minimum Conditions line, for an
@@ -6052,13 +6205,27 @@
     { val: "staff", label: "Staff" }, { val: "ft_faculty", label: "FT Faculty" },
     { val: "pt_faculty", label: "PT Faculty" }, { val: "administrator", label: "Administrator" },
   ];
+  // The Attest word rides the Minimum Conditions line, after the Lead's words
+  // (Sam, 2026-10-28: "Move the NC attest link up next to the NC checkbox to the
+  // right of the label text"). It opens the form below the line and, open,
+  // closes it. Shown while the college has nothing on file for the year.
+  function ncAttestOpenHtml(c) {
+    var college = c.college;
+    if (!ELIG.ncAttestOk || !ncAttestShown(c) || ncAttestOf(college)) return "";
+    var ui = NCATTEST_UI[college] || {};
+    if (ui.done) return "";
+    return '<button type="button" class="cplfund-optbtn cplfund-ncattest-open" data-ncattestopen="' + esc(college) +
+      '" aria-expanded="' + (ui.open ? "true" : "false") + '" title="Once each fiscal year; ' + esc(fiscalYearOf()) +
+      ' is open.">Attest for the noncredit share</button>';
+  }
   function ncAttestAffordanceHtml(c) {
     var college = c.college;
     if (!ELIG.ncAttestOk || !ncAttestShown(c)) return "";
     var att = ncAttestOf(college), ui = NCATTEST_UI[college] || {}, fy = fiscalYearOf();
     if (ui.done) {
-      return '<div class="cplfund-optin cplfund-optin-done" role="status">Thank you. A member of the MAP team will review the noncredit attestation for ' +
-        esc(fy) + " and send a confirmation to " + (ui.email ? esc(ui.email) : "the address you gave") + ".</div>";
+      return '<div class="cplfund-optin cplfund-optin-done" role="status">Thank you. CPL Initiative staff will review the noncredit attestation for ' +
+        esc(fy) + " and send a confirmation to " + (ui.email ? esc(ui.email) : "the address you gave") +
+        ". Once they approve it, the Noncredit CPL Lead shows as complete on this dashboard.</div>";
     }
     if (ncAttestStanding(att)) return "";
     if (ncAttestPending(att)) {
@@ -6069,10 +6236,7 @@
       return '<div class="cplfund-optin cplfund-optin-note cplfund-warn-text">The Chancellor&#39;s Office rejected this college&#39;s noncredit attestation for ' +
         esc(att.fiscal_year || fy) + ". Contact the CO to re-open it.</div>";
     }
-    if (!ui.open) {
-      return '<div class="cplfund-optin"><button type="button" class="cplfund-optbtn" data-ncattestopen="' + esc(college) +
-        '" aria-expanded="false">Attest for the noncredit share</button> <span class="dk">Once each fiscal year; ' + esc(fy) + " is open.</span></div>";
-    }
+    if (!ui.open) return "";
     var titleOpts = NC_ATTEST_TITLES.map(function (o) {
       return '<option value="' + esc(o.val) + '">' + esc(o.label) + "</option>";
     }).join("");
@@ -6080,8 +6244,17 @@
     var f = function (key, label, attrs) {
       return "<label>" + label + "<input " + attrs + ' data-ncattestfield="' + key + '"></label>';
     };
-    return '<div class="cplfund-optin cplfund-optin-form cplfund-ncattest" data-ncattestwrap="' + esc(college) + '">' +
-      '<div class="cplfund-optin-head">Noncredit attestation for ' + esc(nm) + ", " + esc(fy) + "</div>" +
+    var head = '<div class="cplfund-optin-head">Noncredit attestation for ' + esc(nm) + ", " + esc(fy) + "</div>";
+    var err = '<div class="cplfund-optin-err" data-ncattesterr="' + esc(college) + '" role="alert"></div>';
+    var cancel = '<button type="button" class="cplfund-optbtn" data-ncattestcancel="' + esc(college) + '">Cancel</button>';
+    // The address first (Sam, 2026-10-28); the items open once it is on the domain.
+    if (!ui.verified) {
+      return '<div class="cplfund-optin cplfund-optin-form cplfund-ncattest" data-ncattestwrap="' + esc(college) + '">' + head +
+        emailStepHtml(college, "ncattest", "nc", ui) + err + '<div class="cplfund-optin-actions">' + cancel + "</div>" +
+        supportHtml() + "</div>";
+    }
+    return '<div class="cplfund-optin cplfund-optin-form cplfund-ncattest" data-ncattestwrap="' + esc(college) + '">' + head +
+      emailStepHtml(college, "ncattest", "nc", ui) +
       // Sam, 2026-10-26 (S491): the intro is his sentence, and the Lead's employee type, assignment and
       // meetings replace the optional counts, course and exhibits.
       '<div class="cplfund-optin-note cplfund-ncattest-intro">Complete the items below to qualify for noncredit CPL funding.</div>' +
@@ -6101,20 +6274,17 @@
       '<fieldset class="cplfund-ncattest-set"><legend>You, attesting for the college</legend><div class="cplfund-ncattest-grid">' +
       f("name", "Your name", 'type="text" maxlength="120" autocomplete="name" placeholder="First Last"') +
       "<label>Your title<select data-ncattestfield=\"title\">" + titleOpts + "</select></label>" +
-      f("email", "College or district email", 'type="email" maxlength="160" autocomplete="email" placeholder="you@college.edu"') +
-      "</div></fieldset>" +
-      '<div class="cplfund-optin-err" data-ncattesterr="' + esc(college) + '" role="alert"></div>' +
+      "</div></fieldset>" + err +
       '<div class="cplfund-optin-actions">' +
       '<button type="button" class="cplfund-optbtn cplfund-optin-submit" data-ncattestsubmit="' + esc(college) + '"' +
-      (ui.submitting ? " disabled" : "") + ">" + (ui.submitting ? "Submitting…" : "Attest") + "</button>" +
-      '<button type="button" class="cplfund-optbtn" data-ncattestcancel="' + esc(college) + '">Cancel</button>' +
-      (ui.error ? ' <span class="cplfund-warn-text">The attestation was not recorded. Please check that the email address is on your college&#39;s or district&#39;s domain, then try again.</span>' : "") +
+      (ui.submitting ? " disabled" : "") + ">" + (ui.submitting ? "Submitting…" : "Attest") + "</button>" + cancel +
+      (ui.error ? ' <span class="cplfund-warn-text">The attestation was not recorded. Please try again, or email ' + SUPPORT_EMAIL + " for technical support.</span>" : "") +
       "</div>" +
       '<div class="cplfund-optin-note">By submitting, you attest that you are an administrator of ' + esc(nm) +
       ", that the Noncredit CPL Lead named above is published on the college&#39;s CPL landing page, and that the Lead " +
       (ncTeamShown() ? "leads a strike team for noncredit CPL in " : "meets regularly with the college&#39;s CPL Coordinator in ") +
-      esc(fy) + ". The Lead&#39;s name and title appear publicly beside the college&#39;s conditions once the attestation is accepted. Your name, your email and the Lead&#39;s assignment go to the Chancellor&#39;s Office alone. A member of the MAP team reviews each attestation and emails a confirmation once it is accepted.</div>" +
-      "</div>";
+      esc(fy) + ". The Lead&#39;s name and title appear publicly beside the college&#39;s conditions once the attestation is accepted. Your name, your email and the Lead&#39;s assignment go to the Chancellor&#39;s Office alone. CPL Initiative staff review each attestation and email a confirmation once they approve it.</div>" +
+      supportHtml() + "</div>";
   }
   // The CO's view of the attestation, on the Minimum Conditions line: who
   // attested, what the college reported, and Reject (or Re-confirm and Remove
@@ -12775,7 +12945,8 @@
         gated: false,
         reported: reportedDetailRows(slot, true)
       });
-      laneWords = ncFunds > 0.5 ? ncLaneRule() : "Credit only: this institution has no noncredit share.";
+      // Under the outcomes lane the rows name their outcomes, so the rule line goes (Sam, 2026-10-28, struck on a screenshot).
+      laneWords = ncFunds > 0.5 ? (outcomes ? "" : ncLaneRule()) : "Credit only: this institution has no noncredit share.";
     }
     var ncols = COLS_COLLEGE().length;
     return '<tr class="cplfund-detail"><td colspan="' + ncols + '">' +
@@ -12785,8 +12956,8 @@
       fmtInt(oneRoster().length) + " institutions</div>" +
       prio +
       "</div></td></tr>" +
-      (subRows ? subRows + '<tr class="cplfund-detail cplfund-detail-foot"><td colspan="' + ncols + '">' +
-        '<div class="cplfund-detail-grid"><p class="cplfund-dtl-foot dk">' + laneWords + "</p></div></td></tr>" : "");
+      (subRows && laneWords ? subRows + '<tr class="cplfund-detail cplfund-detail-foot"><td colspan="' + ncols + '">' +
+        '<div class="cplfund-detail-grid"><p class="cplfund-dtl-foot dk">' + laneWords + "</p></div></td></tr>" : subRows);
   }
 
   function collegeDetailHtml(c, alt) {
@@ -12848,7 +13019,7 @@
         gated: !!c.gate_blocked,
         reported: reportedDetailRows(slot, false)
       });
-      laneWords = hasNc ? ncLaneRule()
+      laneWords = hasNc ? (outcomes ? "" : ncLaneRule())
         : "Credit only: " + esc(dispName(c.college)) + " reports no noncredit FTES, so its whole award is the credit share.";
     }
     // The county and district line that closed the drill-in (one footer line
@@ -12890,6 +13061,7 @@
       prio +
       "</div></td></tr>";
     if (!subRows) return top;
+    if (!laneWords) return top + subRows;
     // The priority rows, then one closing line: the lane's rule.
     return top + subRows +
       '<tr class="cplfund-detail cplfund-detail-foot' + (alt || "") + '"><td colspan="' + ncols + '">' +
@@ -15603,7 +15775,7 @@
       }) +
       // The explainer's own passages, last and closed: a curator's tool, never
       // one of the sections a college reads (Sam, 2026-10-09).
-      explainerTextSectionHtml() + mcTextSectionHtml() +
+      explainerTextSectionHtml() +
       "</div>";
     keepStepOne(keptPick, mount);
     updateCount();
@@ -15708,8 +15880,8 @@
     _optinFocusCollege = null;
     if (!wrap) return;
     if (wrap.scrollIntoView) { try { wrap.scrollIntoView({ block: "center" }); } catch (e) {} }
-    var name = wrap.querySelector('[data-optinfield="name"]');
-    if (name) { try { name.focus(); } catch (e) {} }
+    var first = wrap.querySelector("input");
+    if (first) { try { first.focus(); } catch (e) {} }
   }
   // Measure the frozen offsets (Sam's item 11, 2026-08-30). The statewide pair
   // pins under the sticky header at top = the header's REAL height (and the
@@ -15781,6 +15953,62 @@
     });
     holder.querySelectorAll(".cplfund-optin-form input, .cplfund-optin-form select, .cplfund-optin-form label")
       .forEach(function (el) { el.addEventListener("click", function (e) { e.stopPropagation(); }); });
+    // EMAIL FIRST (Sam, 2026-10-28): Continue checks the address against the
+    // institution's and its district's domains; a pass opens the rest of the
+    // form with the acknowledgement, and a miss names the domains that pass.
+    // Enter in the field is Continue. "Use a different address" goes back.
+    [["optin", OPTIN_UI, "data-optinwrap", "name"], ["ncattest", NCATTEST_UI, "data-ncattestwrap", "coordName"]].forEach(function (f) {
+      var pre = f[0], UI = f[1], wrapAttr = f[2], firstField = f[3];
+      var wrapOf = function (college) {
+        var hit = null;
+        holder.querySelectorAll("[" + wrapAttr + "]").forEach(function (w) { if (w.getAttribute(wrapAttr) === college) hit = w; });
+        return hit;
+      };
+      var go = function (college) {
+        var wrap = wrapOf(college);
+        if (!wrap) return;
+        var input = wrap.querySelector("[data-" + pre + 'field="email"]');
+        var errEl = wrap.querySelector("[data-" + pre + "err]");
+        var email = String(input ? input.value : "").trim();
+        if (!OPTIN_EMAIL_RE.test(email)) {
+          if (errEl) errEl.textContent = "Please enter a valid college email address (name@college.edu).";
+          return;
+        }
+        if (errEl) errEl.textContent = "";
+        domainCheck(college, email, function (dc) {
+          if (!dc.ok) {
+            var w2 = wrapOf(college), e2 = w2 && w2.querySelector("[data-" + pre + "err]");
+            if (e2) e2.textContent = domainErrText(college, dc.domains);
+            return;
+          }
+          UI[college] = { open: true, email: email, verified: true };
+          refreshTable();
+          var w3 = wrapOf(college), first = w3 && w3.querySelector("[data-" + pre + 'field="' + firstField + '"]');
+          if (first) { try { first.focus(); } catch (e) {} }
+        });
+      };
+      holder.querySelectorAll("[data-" + pre + "emailgo]").forEach(function (b) {
+        b.addEventListener("click", function (e) { e.stopPropagation(); go(b.getAttribute("data-" + pre + "emailgo")); });
+      });
+      holder.querySelectorAll("[" + wrapAttr + "] [data-" + pre + 'field="email"]').forEach(function (input) {
+        input.addEventListener("keydown", function (e) {
+          if (e.key !== "Enter") return;
+          e.preventDefault();
+          var w = input.closest("[" + wrapAttr + "]");
+          if (w) go(w.getAttribute(wrapAttr));
+        });
+      });
+      holder.querySelectorAll("[data-" + pre + "emailchange]").forEach(function (b) {
+        b.addEventListener("click", function (e) {
+          e.stopPropagation();
+          var college = b.getAttribute("data-" + pre + "emailchange");
+          UI[college] = { open: true, email: (UI[college] || {}).email || "" };
+          refreshTable();
+          var w = wrapOf(college), input = w && w.querySelector("[data-" + pre + 'field="email"]');
+          if (input) { try { input.focus(); } catch (e2) {} }
+        });
+      });
+    });
     holder.querySelectorAll("[data-optinsubmit]").forEach(function (b) {
       b.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -15791,7 +16019,7 @@
         });
         if (!wrap) return;
         var g = function (f) { var el = wrap.querySelector('[data-optinfield="' + f + '"]'); return el ? el.value : ""; };
-        var name = String(g("name")).trim(), title = String(g("title")), email = String(g("email")).trim();
+        var name = String(g("name")).trim(), title = String(g("title")), email = String((OPTIN_UI[college] || {}).email || "").trim();
         var errEl = wrap.querySelector("[data-optinerr]");
         var err = "";
         if (!name) err = "Please enter your name.";
@@ -15814,8 +16042,10 @@
       b.addEventListener("click", function (e) {
         e.stopPropagation();
         var college = b.getAttribute("data-ncattestopen");
-        NCATTEST_UI[college] = { open: true };
+        var wasOpen = !!(NCATTEST_UI[college] || {}).open;
+        NCATTEST_UI[college] = wasOpen ? {} : { open: true };
         refreshTable();
+        if (wasOpen) return;
         var first = null;
         holder.querySelectorAll("[data-ncattestwrap]").forEach(function (w) {
           if (w.getAttribute("data-ncattestwrap") === college) first = w.querySelector("input");
@@ -15844,6 +16074,7 @@
             return Array.prototype.map.call(wrap.querySelectorAll("[data-ncattestlead]:checked"),
               function (b) { return b.getAttribute("data-ncattestlead"); });
           }
+          if (k === "email") return (NCATTEST_UI[college] || {}).email || "";
           var el = wrap.querySelector('[data-ncattestfield="' + k + '"]');
           return el ? el.value : "";
         });
@@ -16529,6 +16760,30 @@
         ta.focus();
       });
     });
+    // Indent / Outdent, and Tab / Shift+Tab on a list line. Tab where no line
+    // can move (prose, or a bullet already at the edge) still moves the focus,
+    // so the box never holds the keyboard.
+    document.querySelectorAll("#cplFundingMount [data-textindent]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var key = b.getAttribute("data-textfor"), dir = Number(b.getAttribute("data-textindent"));
+        var ta = document.querySelector('#cplFundingMount [data-textarea="' + key + '"]');
+        if (!ta) return;
+        var r = indentLines(ta.value, ta.selectionStart, ta.selectionEnd, dir, ta);
+        if (r.changed) state.textDraft[key] = ta.value;
+        ta.focus();
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-textarea]").forEach(function (ta) {
+      var key = ta.getAttribute("data-textarea");
+      if (!isRich(key)) return;
+      ta.addEventListener("keydown", function (e) {
+        if (e.key !== "Tab" || e.altKey || e.ctrlKey || e.metaKey) return;
+        var r = indentLines(ta.value, ta.selectionStart, ta.selectionEnd, e.shiftKey ? -1 : 1, ta);
+        if (!r.changed) return;
+        e.preventDefault();
+        state.textDraft[key] = ta.value;
+      });
+    });
     document.querySelectorAll("#cplFundingMount [data-textcancel]").forEach(function (b) {
       b.addEventListener("click", function () {
         var key = b.getAttribute("data-textcancel");
@@ -16541,7 +16796,7 @@
         var key = b.getAttribute("data-textreset");
         state.textEditing = null; delete state.textDraft[key];
         savingState = "";
-        setText(key, "");
+        setText(key, "", true);
       });
     });
     // Section titles (2026-09-09): Rename opens a one-line input; Save commits
@@ -17245,7 +17500,8 @@
     // funding-model/). Every write goes through the layers the tab's editors
     // use, so the database's RLS decides what a save may do.
     canCurate: function () { return unlocked(); },
-    setText: setText, textPlain: textPlain, textIsCustom: textIsCustom,
+    setText: setText, textPlain: textPlain, textIsCustom: textIsCustom, textIsBlank: textIsBlank,
+    indentLines: function (text, a, b, dir, ta) { return indentLines(text, a, b, dir, ta); },
     setSecHidden: setSecHidden, secHidden: secHidden,
     movePublicSection: movePublicSection, resetPublicSectionOrder: resetPublicSectionOrder,
     pubOrderIsCustom: function () { return pubOrderIsCustom(); },

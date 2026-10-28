@@ -221,8 +221,9 @@ const s1 = sysOut.length ? readCells(keys, sysOut[0]) : null;
 check("D8: the Statewide expand sums the institutions: the target 28 exhibits, the actual the feed's statewide figure, the funds what institutions receive",
   !!s1 && s1.nc_award.line === "Target 28 exhibits" && s1.nc_current.line === "Actual 12 exhibits" && s1.nc_current.fig === "$26,195");
 const feet = Array.from(doc.querySelectorAll(".cplfund-dtl-foot")).map(flat);
-check("D9: the drill-ins' closing line states the outcomes rule, never the origination one",
-  feet.some((f) => /releases on the noncredit outcomes/.test(f)) && !feet.some((f) => /originate/.test(f)));
+// Gone under the outcomes lane since 2026-10-28 (Sam struck it on a screenshot): the rows name their outcomes.
+check("D9: the drill-ins carry no closing rule line under the outcomes lane, and never the origination one",
+  !feet.some((f) => /releases on the noncredit outcomes/.test(f)) && !feet.some((f) => /originate/.test(f)));
 const cards = doc.querySelectorAll("[data-nccard]");
 const section = doc.querySelector(".cplfund-ncout");
 check("D10: the outcome cards stand in their own section under the priority cards, two of them, with the rule and the conditions in words",

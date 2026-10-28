@@ -174,16 +174,17 @@ check("...and a curator's edit to the page's own FAQ reaches it, escaped",
   })());
 // THE CONTENTS: one link per section, each to the section's own id, and a
 // link opens its section's fold. Driven through the page's own handler.
-check("the Contents list carries one link per section, in page order, to each section's id, then the memo, its Word file, the video, its narrated cut and the three help items last",
+check("the Contents list carries one link per section, in page order, to each section's id, then the memo (TBA), the video, its narrated cut and the three help items last",
   (function () {
     const links = Array.from(doc.querySelectorAll('#toc-list a[href^="#"]'));
     const ids = Array.from(doc.querySelectorAll("main > section")).map((sec) => sec.id);
     const items = Array.from(doc.querySelectorAll("#toc-list > li"));
     return links.length === ids.length && links.every((a, i) => a.getAttribute("href") === "#" + ids[i]) &&
-      items.length === ids.length + 7 && !!items[ids.length].querySelector("#memo-link") &&
-      !!items[ids.length + 1].querySelector("#memo-word-link") &&
-      !!items[ids.length + 2].querySelector("#video-link") &&
-      !!items[ids.length + 3].querySelector("#video-narrated-link") &&
+      items.length === ids.length + 6 && !!items[ids.length].querySelector("#memo-link") &&
+      !items[ids.length].querySelector("#memo-link").hasAttribute("href") && /\(TBA\)$/.test(items[ids.length].textContent.trim()) &&
+      !doc.getElementById("memo-word-link") &&
+      !!items[ids.length + 1].querySelector("#video-link") &&
+      !!items[ids.length + 2].querySelector("#video-narrated-link") &&
       !!items[items.length - 2].querySelector("#landing-link");
   })());
 check("a Contents link OPENS its section's fold, and Collapse all / Expand all flips every fold",
@@ -469,15 +470,17 @@ check("the status line is empty on a successful paint",
 {
   // In the masthead's control row since 2026-10-09 (Sam's marked-up screenshot
   // moved the controls onto the version's row and the label to "PDF").
-  check("the public header carries the page's controls, as words: Resource Links, the version, PDF, then Collapse all last (Sam, 2026-10-26)",
+  // The version moved left of Resource Links on 2026-10-28 (Sam: "Move the 'As of...' gray label to the left of the
+  // Resources Links").
+  check("the public header carries the version, then Resource Links, PDF and Collapse all last, as words (Sam, 2026-10-26, 10-28)",
     (function () {
       const b = doc.getElementById("pdf-btn");
-      const row = doc.querySelector("header.cplh .mh-actions");
-      const order = row ? Array.from(row.querySelectorAll("button:not([hidden]), .ver")).map((e) => e.id || e.className) : [];
+      const end = doc.querySelector("header.cplh .cplh-end");
+      const order = end ? Array.from(end.querySelectorAll(".ver, [data-cplh-links], .mh-actions button:not([hidden])")).map((e) => e.id || e.className) : [];
       const links = doc.querySelector("header.cplh [data-cplh-links]");
       return !!b && b.tagName === "BUTTON" && b.textContent.trim() === "PDF" && !!links &&
         links.textContent.trim() === "Resource Links" && links.getAttribute("aria-expanded") === "false" &&
-        order.join(",") === "ver,pdf-btn,btn-collapse-all" &&
+        order.join(",") === "ver,btn word,pdf-btn,btn-collapse-all" && !doc.querySelector(".mh-actions .ver") &&
         !doc.querySelector(".masthead .mh-actions") && !doc.querySelector("[data-sierra-open]") &&
         doc.querySelectorAll("#cplh-panel .cplh-nav a").length === 5 &&
         !doc.querySelector('#cplh-panel a[href*="/library/"]');

@@ -164,17 +164,36 @@ function drill(window, doc, name) {
   const before = T._alloc(COLLEGE);
   let det = drill(window, doc, COLLEGE);
   const open = det && det.querySelector("[data-ncattestopen]");
+  // Since 2026-10-28 (Sam: "Move the NC attest link up next to the NC checkbox to the right of the label text and
+  // aligned vertically under the confirmation check box") the word rides the noncredit row, after the Lead's words,
+  // in the cell under the institution row's second box.
+  const ncRow = det && det.querySelector(".cf-conds-nc");
   check("C1: once the view answers and the college has not attested, its drill-in offers the attestation, and the noncredit share is held",
     !!open && open.textContent === "Attest for the noncredit share" && before.nc_gate_blocked === true &&
-    /Noncredit CPL Lead not yet attested/.test(flat(det.querySelector(".cf-conds-nc"))) &&
-    !/[Ss]trike/.test(flat(det.querySelector(".cf-conds-nc"))));
+    /Noncredit CPL Lead not yet attested/.test(flat(ncRow)) && !/[Ss]trike/.test(flat(ncRow)) &&
+    open.getAttribute("aria-expanded") === "false" && /Once each fiscal year; \d{4}-\d{2} is open\./.test(open.title));
+  check("C1b: the word sits in the noncredit row's second cell, after the Lead's box, and the row's first cell holds the Lead",
+    !!ncRow && open.parentNode === ncRow.querySelector(":scope > .cf-conds-items") &&
+    /Noncredit CPL Lead not yet attested/.test(flat(ncRow.querySelector(":scope > .cf-conds-first"))) &&
+    !!det.querySelector(".cf-conds > .cf-conds-first") && !det.querySelector(".cplfund-optin [data-ncattestopen]"));
   click(window, open);
   det = drill(window, doc, COLLEGE);
-  const wrap = det && det.querySelector("[data-ncattestwrap]");
+  let wrap = det && det.querySelector("[data-ncattestwrap]");
+  check("C1c: the word opens the form, which starts on the attestor's email alone, the support address under it",
+    !!wrap && wrap.querySelectorAll("[data-ncattestfield]").length === 1 && !!wrap.querySelector('[data-ncattestfield="email"]') &&
+    !!wrap.querySelector('.cplfund-support a[href="mailto:map@rccd.edu"]') && !wrap.querySelector("[data-ncattestsubmit]") &&
+    det.querySelector("[data-ncattestopen]").getAttribute("aria-expanded") === "true");
+  wrap.querySelector('[data-ncattestfield="email"]').value = "ben@mtsac.edu";
+  click(window, wrap.querySelector("[data-ncattestemailgo]"));
+  det = drill(window, doc, COLLEGE);
+  wrap = det && det.querySelector("[data-ncattestwrap]");
+  const ack = wrap && wrap.querySelector(".cplfund-optin-ack");
+  check("C1d: an allowed address is acknowledged: it may attest, and the Lead shows as complete once CPL Initiative staff approve",
+    !!ack && /ben@mtsac\.edu may attest for .+'s noncredit share\. Once CPL Initiative staff approve the attestation, the Noncredit CPL Lead shows as complete on this dashboard\./.test(flat(ack)));
   const fields = wrap ? Array.from(wrap.querySelectorAll("[data-ncattestfield]")).map((el) => el.getAttribute("data-ncattestfield")) : [];
   const types = wrap ? Array.from(wrap.querySelectorAll("[data-ncattestlead]")) : [];
   check("C2: the form asks for the Lead (name, title, type, assignment, meetings) and the attestor, every control labeled; no count, course or exhibits",
-    fields.join(",") === "coordName,coordTitle,assignment,meets,name,title,email" &&
+    fields.join(",") === "coordName,coordTitle,assignment,meets,name,title" &&
     types.map((b) => b.closest("label").textContent.trim()).join("|") === "Staff|FT Faculty|PT Faculty|Administrator" &&
     types.every((b) => b.type === "checkbox") &&
     Array.from(wrap.querySelectorAll("fieldset > legend")).map((l) => l.textContent).join("|") === "The Noncredit CPL Lead|The Lead is|You, attesting for the college" &&
@@ -198,7 +217,7 @@ function drill(window, doc, name) {
     /what kind of employee/.test(flat(wrap.querySelector("[data-ncattesterr]"))) && !T._ncAttest(COLLEGE));
   wrap.querySelector('[data-ncattestlead="pt_faculty"]').checked = true;
   set("assignment", "OT 10 hours per week"); set("meets", "monthly");
-  set("name", "Ben Ko"); set("title", "NCDEAN"); set("email", "ben@mtsac.edu");
+  set("name", "Ben Ko"); set("title", "NCDEAN");
   click(window, wrap.querySelector("[data-ncattestsubmit]"));
   const att = T._ncAttest(COLLEGE), after = T._alloc(COLLEGE);
   det = drill(window, doc, COLLEGE);
@@ -206,7 +225,7 @@ function drill(window, doc, name) {
   check("C5: a complete submit waits for a MAP team reviewer: the share stays held, the line says so, a thank-you",
     !!att && att.status === "self_attested" && att.fiscal_year === T._fiscalYearOf() && after.nc_gate_blocked === true &&
     /Noncredit CPL Lead attested, awaiting MAP team review/.test(flat(det.querySelector(".cf-conds-nc"))) &&
-    /Thank you\. A member of the MAP team will review the noncredit attestation for \d{4}-\d{2} and send a confirmation to ben@mtsac\.edu\./.test(flat(det)) &&
+    /Thank you\. CPL Initiative staff will review the noncredit attestation for \d{4}-\d{2} and send a confirmation to ben@mtsac\.edu\. Once they approve it, the Noncredit CPL Lead shows as complete on this dashboard\./.test(flat(det)) &&
     !/Ana Ruiz/.test(flat(det.querySelector(".cf-conds-nc"))));
 }
 {

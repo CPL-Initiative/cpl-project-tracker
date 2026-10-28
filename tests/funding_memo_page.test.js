@@ -45,15 +45,15 @@ check("nothing on the memo page says draft", !/\bdraft\b/i.test(doc.body.textCon
 check("the page uses tokens, no raw hex outside :root",
   !/#[0-9A-Fa-f]{3,6}\b/.test(html.slice(html.indexOf(".memo h1"), html.indexOf("</style>"))));
 
-// The link carries data-plink since 2026-10-25 (a curator renames its words on the page).
-const link = /<a id="memo-link" data-plink="memo" href="memo\/">([^<]+)<\/a>/.exec(page);
-check("the funding page's Contents links the memo", !!link);
-check("the Contents link does not call it a draft", link && !/draft/i.test(link[1]));
-// The memo in Word from the Contents (Sam, 2026-10-22): the memo page's own
-// export, run once the live figures are in, and a Word button on the memo page.
-const wordLink = /<a id="memo-word-link" data-plink="memo_word" href="memo\/\?download=word">([^<]+)<\/a>/.exec(page);
-check("the funding page's Contents offers the memo in Word", !!wordLink && /Word/.test(wordLink[1]) && !/draft/i.test(wordLink[1]));
-check("a tabled memo takes the Word link out of the Contents too", /memo-word-link"\)\]\.forEach/.test(page));
+// The link carries data-plink since 2026-10-25 (a curator renames its words on the page). Since 2026-10-28 (Sam:
+// "Delete the TOC link to Guidance memo in Word and gray the Guidance memo link and add (TBA) to the link text--we
+// will link to the CO memo once it is officially published") the item is a placeholder: no href, (TBA) after its
+// words, gray, and the Word item is gone.
+const link = /<li class="toc-tail toc-tba"><a id="memo-link" data-plink="memo">([^<]+)<\/a> \(TBA\)<\/li>/.exec(page);
+check("the funding page's Contents names the memo, (TBA), with no link until the CO publishes it", !!link);
+check("the Contents item does not call it a draft", link && !/draft/i.test(link[1]));
+check("the Contents item reads in gray, never as a link", /\.toc \.toc-tba, \.toc \.toc-tba a\{color:var\(--text-muted\); text-decoration:none/.test(page));
+check("the Contents no longer offers the memo in Word", !/memo-word-link/.test(page) && !/href="memo\/\?download=word"/.test(page));
 check("the memo page carries a Word button wired to the tab's export",
   !!doc.getElementById("word-btn") && typeof w.CPL_FUNDING_TAB._downloadMemoDocx === "function" &&
   /download=word/.test(html) && /T\._downloadMemoDocx\(box\)/.test(html));
