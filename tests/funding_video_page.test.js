@@ -101,7 +101,7 @@ const narration = readScript("s1");
 // The narrated cuts: n1 is Scenario 1's (draft 4, Kokoro), n2 Scenario 2's (draft 3, Sierra).
 const NARRATED = [
   { tag: "n1 ", v: "n1", s: "s1", mp4: "20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4" },
-  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4" },
+  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4" },
 ];
 const sha1 = (t) => crypto.createHash("sha1").update(t, "utf8").digest("hex");
 NARRATED.forEach(({ s }) => {
@@ -117,9 +117,10 @@ NARRATED.forEach(({ s }) => {
       ["sˈiː pˈiː ˈɛl", "twˈɛnti twˈɛnti", "ˌɛmˌeɪpˈiː"].every((b) => (script.never || []).some((n) => n.phonemes === b)));
   } else {
     // ElevenLabs reads outside the repo: each committed clip must have been read from its scene's current text
+    // (its `say`, the spoken form, where the captions' written form differs: C.P.L. for CPL)
     const eng = script.engine, voiced = script.scenes.filter((x) => !x.pending);
     check(tag + "n4 every voiced scene's clip is committed and was read from the scene's current text",
-      voiced.length > 0 && voiced.every((x) => x.read && x.read.text_sha1 === sha1(x.text) && fs.existsSync(path.join(DIR, eng.clips, x.read.clip))));
+      voiced.length > 0 && voiced.every((x) => x.read && x.read.text_sha1 === sha1(x.say || x.text) && fs.existsSync(path.join(DIR, eng.clips, x.read.clip))));
     check(tag + "n5 a scene still waiting on its read says why, and carries no clip",
       script.scenes.filter((x) => x.pending).every((x) => x.pending.length > 40 && !x.read));
   }
@@ -138,7 +139,7 @@ function boot(file, reduced) {
 }
 
 [["funding_in_motion.html", "20260926_CPL_Funding_in_Motion_v4.mp4", ""],
- ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
+ ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
   const raw = fs.readFileSync(path.join(DIR, file), "utf8");
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   check(tag + "b2 " + file + " carries the current source (the barrier layer)", raw.includes("var ENC=") && raw.includes("Play the introduction"));
@@ -234,7 +235,7 @@ NARRATED.forEach(({ tag, v, s }) => {
   const off = anchors.map((a) => Math.max(Math.abs(nt(a.film) - a.t), Math.abs(ft(a.t) - a.film)));
   check(tag + "h2 the clock passes through each anchor within 0.05 s (worst " + Math.max(...off).toExponential(1) + " s)",
     spans.length === L.scenes.length && off.every((x) => x < 0.05));
-  const norm = (t) => t.replace(/\u2019/g, "'").replace(/^[^\w']+|[^\w']+$/g, "").toLowerCase();
+  const norm = (t) => t.replace(/\u2019/g, "'").replace(/^[^\w']+|[^\w']+$/g, "").replace(/\./g, "").toLowerCase();
   const onset = anchors.map((a) => {
     const ws = H.scenes[a.scene].words, ph = a.word.split(/\s+/).map(norm);
     const i = ws.findIndex((_, j) => ph.every((p, k) => ws[j + k] && norm(ws[j + k][0]) === p));
@@ -284,7 +285,7 @@ NARRATED.forEach(({ tag, v, s }) => {
     const L = JSON.parse(fs.readFileSync(path.join(DIR, "narration_" + s + "_layout.json"), "utf8"));
     const spoken8 = readScript(s).scenes.map((x) => [x.scene, x.text].concat((x.cues || []).map((c) => c.word + " " + c.why)).join(" ")).join(" ");
     check(s + " t1 the narration says minimum conditions, never baseline",
-      !RETIRED.test(spoken8) && /meets three minimum conditions/.test(spoken8));
+      !RETIRED.test(spoken8) && /meets three minimum conditions|needs to meet three conditions/.test(spoken8));
     check(s + " t2 the captions and the narrated timeline's scene names never say baseline",
       !RETIRED.test(L.cues.map((c) => c.text).concat(L.scenes.map((x) => x.scene)).join(" ")));
   });
@@ -335,46 +336,42 @@ NARRATED.forEach(({ tag, v, s }) => {
   const s2 = readScript("s2");
   const byName = (sc, n) => (sc.scenes.find((x) => x.scene === n) || {}).text || "";
   const prio = byName(s2, "Two priorities"), targets = byName(s2, "Targets");
+  // Sam's edited script (2026-10-21): his words for the two priorities and the
+  // reported outcomes, and the published scenario's average Access target. On
+  // 2026-10-27 he asked for two changes to it: the greeting ends on a period, and
+  // the first condition names the Noncredit CPL Lead, as the picture's first row does.
+  const minText = byName(s2, "Minimum conditions");
+  check("k1 two funded priorities, and career attainment reported with the infrastructure and innovation projects",
+    /^Funding is based on two priority outcomes/.test(prio) && /access priority counts/.test(prio) && /completion priority counts/.test(prio)
+      && /Chancellor's Office will report on career attainment together with the infrastructure and innovation projects/.test(prio)
+      && !/EDD|wage records/.test(prio));
+  check("k1b the first condition names a CPL coordinator and a Noncredit CPL Lead, as the picture's first row does",
+    /name a CPL coordinator and a Noncredit CPL Lead in map,/.test(minText));
+  check("k2 the Targets voice says the average Access target the picture shows (31.3 FTES, said as about thirty-one)",
+    targets.includes("For the average allocation, the Access target is about thirty-one FTES."));
   const L2 = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s2_layout.json"), "utf8"));
   const words = s2.scenes.reduce((n, x) => n + x.text.split(/\s+/).length, 0);
   check("k3 a short script (" + words + " words, under 360) voicing each of the picture's eleven scenes, the targets slide included, in its order",
     words < 360 && s2.scenes.length === 11 && L2.scenes.map((x) => x.scene).join("|") === s2.scenes.map((x) => x.scene).join("|")
-      && s2.scenes[5].scene === "How a target is set" && /^Hi, I'm Sierra\./.test(s2.scenes[0].text));
+      && s2.scenes[5].scene === "How a target is set" && /^Greetings CPL heroes\. /.test(s2.scenes[0].text));
   check("k4 every scene is read (the plan moved to paid, 2026-10-02)",
     s2.scenes.every((x) => !x.pending && x.read));
   const cfgOf2 = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
   const cfg = cfgOf2("funding_in_motion_n2.html"), intro = cfgOf2("funding_in_motion_s2.html");
-  // Scenes 5 to 7 read again on 2026-10-27 (Sam, Open Asks Sheet 136 card 1, "reread"), so
-  // what Sierra says is what the v11 picture shows: its heading, its boxes, its noncredit
-  // outcomes and its targets, compared against the picture the page is built with.
-  const howText = byName(s2, "How a target is set");
-  check("k1 two funded priorities carrying the credit funding as the picture's heading reads, Completion's box, the two noncredit outcomes, and career attainment reported with the innovation projects",
-    prio.startsWith(cfg.prioHead + ",") && cfg.prioHead === "Two priorities carry the credit funding"
-      && /Access counts applied CPL units\./.test(prio) && /Completion counts transcribed CPL units\./.test(prio)
-      && cfg.prios[1][2] === "Transcribed CPL units." && !/counselor step/.test(prio)
-      && /exhibits built or adopted/.test(cfg.ncLine) && /a CPL portfolio course/.test(cfg.ncLine)
-      && /Two noncredit outcomes count toward the noncredit share: exhibits built or adopted, and a CPL portfolio course\./.test(prio)
-      && /Chancellor's Office reports on career attainment together with the innovation projects/.test(prio)
-      && !/EDD|wage records/.test(prio));
-  check("k2 the voice says the targets the picture shows: about 3,600 FTES per priority (" + cfg.how.rows[0][3] + ") and about 31 FTES for the average Access target (" + cfg.target.ftesWords + ")",
-    Math.round(cfg.how.rows[0][3] / 100) * 100 === 3600 && cfg.how.rows[1][3] === cfg.how.rows[0][3]
-      && howText.includes("about three thousand six hundred FTES for each.")
-      && Math.round(cfg.target.ftes) === 31
-      && targets.includes("For the average allocation, the Access target is about thirty-one FTES."));
   // The narrated cut plays the published film's picture (Sam, Sheet 133 card 1,
   // 2026-10-26; S495): every figure the introduction shows, its targets slide,
-  // its minimum conditions with the Noncredit CPL Lead, and its dates.
+  // its minimum conditions with the Noncredit CPL Lead and the Veteran Star, and its dates.
   const PICTURE = ["split", "timing", "close", "explainer", "kick", "titleText", "ex", "prios", "prioHead", "ncLine",
-    "how", "target", "deadline", "coordLine", "coordWords", "figures"];
+    "how", "target", "deadline", "coordLine", "coordWords", "vet", "figures"];
   check("k5 the n2 picture is the introduction's: its figures, targets slide, conditions, dates, closing and address",
-    PICTURE.every((k) => JSON.stringify(cfg[k]) === JSON.stringify(intro[k])) && !!cfg.how && !!cfg.coordLine);
+    PICTURE.every((k) => JSON.stringify(cfg[k]) === JSON.stringify(intro[k])) && !!cfg.how && !!cfg.coordLine && !!cfg.vet);
   // Sierra by name, on the video (Sam, 2026-10-02): beneath the lockup as she says it, and in the closing credit
   const w = boot("funding_in_motion_n2.html", false), d = w.document;
-  const said = L2.scenes[0].anchors.find((a) => a.word === "I'm Sierra");
+  const said = L2.scenes[0].anchors.find((a) => a.word === "Greetings CPL heroes");
   // the name line's opacity at a moment of the narrated clock (-1 when the page has no name line)
   const nameAt = (t) => { w.__film.seek(t); const e = Array.from(d.querySelectorAll("#stage p")).find((x) => x.textContent === "Narrated by Sierra"); return e ? Number(e.style.opacity) : -1; };
   const early = nameAt(0.2), later = nameAt(said.said + 0.8);
-  check("k6 the title scene names her, Narrated by Sierra, appearing as she says her name",
+  check("k6 the title scene names her, Narrated by Sierra, appearing as she greets the viewer",
     early === 0 && later > 0.9 && said.t <= said.said);
   w.__film.seek(L2.total - 0.3);
   // the closing credits name the voice first, then the recorded piano (CC BY 3.0 asks for the credit; S503)
@@ -462,6 +459,66 @@ NARRATED.forEach(({ tag, v, s }) => {
         && cfg.ex.kickLead === "Sample College · Access");
     w.close();
   });
+}
+
+{
+  // 12. Sam, 2026-10-21, on Draft 5: "There is one spot that has a bit of a
+  // white screen lag and another that has the pointer moving slowly... Would be
+  // nice to use those moments for the pointer to shoot down some more
+  // barriers:) Can you add a gold star to the vet sprint qualifying condition
+  // and highlight that 63 colleges already meet this condition, which was also
+  // a commitment for the previous $50k funding?"
+  const cfgOf = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
+  const BAR = Number((/var BAR=NARR\?([\d.]+):1/.exec(src) || [])[1]);
+  const cfg = cfgOf("funding_in_motion_n2.html"), L = cfg.narr, V = cfg.volleys || [];
+  check("v1 n2 carries two volleys, Targets and Minimum conditions, seven barriers in all, each captioned",
+    V.length === 2 && V.map((v) => v.scene).join() === "Targets,Minimum conditions" &&
+    V.reduce((n, v) => n + v.hits.length, 0) === 7 && V.every((v) => v.hits.every((h) => h.label.length > 8)));
+  const w = boot("funding_in_motion_n2.html", false), d = w.document, { ft } = w.__film;
+  const inv = Array.from(d.querySelectorAll("#fx .inv"));
+  check("v2 the page draws them: five seam barriers and seven in the volleys", inv.length === 12);
+  // each window is where the narration outran the picture: the film moves less than a third of real time
+  check("v3 each volley fills a window where the picture is held (film advances under a third of narration time)",
+    V.every((v) => v.to - v.from > 4 && (ft(v.to) - ft(v.from)) / (v.to - v.from) < 0.34 &&
+      L.scenes.some((s) => s.scene === v.scene && Math.abs(s.start - v.from) < 1e-9)));
+  check("v4 every volley barrier drops in after its window opens and is gone before the word that closes it",
+    V.every((v) => v.hits.every((h, i) => h.t - 0.95 * BAR > v.from - 0.3 && h.t + 0.8 * BAR < v.to + 0.7 &&
+      (i === 0 || h.t - v.hits[i - 1].t >= 1.2))));
+  const visibleAt = (win, t) => { win.__film.seek(t); return Array.from(win.document.querySelectorAll("#fx .inv")).filter((e) => e.style.visibility === "visible").length; };
+  check("v5 a barrier shows at each volley hit", V.every((v) => v.hits.every((h) => visibleAt(w, h.t) >= 1)));
+  // jsdom lays nothing out, so the flight is read from the source: the arrow reaches each barrier
+  // before its recoil begins (0.27 barrier-seconds before the hit) and stays until after the burst
+  const arrive = Number((/P\(h\.t-([\d.]+),h\.x,ty,0\),P\(h\.t\+([\d.]+),h\.x,ty,0\)/.exec(src) || [])[1]);
+  check("v6 inside a volley the arrow flies on the narration's clock and sits under each barrier before it fires",
+    arrive >= 0.27 * BAR && /vw=volAt\(t\),a=vw\?arrowAt\(t,vw\.K\):arrowAt\(T\)/.test(src) && /K=k2;buildVol\(\)/.test(src));
+  const wr = boot("funding_in_motion_n2.html", true);
+  check("v7 reduced motion: no volley barriers either", V.every((v) => v.hits.every((h) => visibleAt(wr, h.t) === 0)));
+  check("v8 the introductions carry no volleys", ["funding_in_motion.html", "funding_in_motion_s2.html"].every((f) => !cfgOf(f).volleys));
+  w.close(); wr.close();
+  // The Veteran Star and the count, in s2 and n2; the count is the model's (figures.json `vet`)
+  const FIG = JSON.parse(fs.readFileSync(path.join(DIR, "figures.json"), "utf8"));
+  const vet = FIG.scenarios[FIG.published].vet;
+  check("v9 figures.json files the colleges meeting the veterans' condition, from the performance feed",
+    vet && Number.isInteger(vet.met) && vet.met > 0 && vet.met <= vet.of && vet.threshold === 0.75 && /^\d{4}-\d{2}-\d{2}$/.test(vet.asOf));
+  [["funding_in_motion_s2.html", "s2 ", 65.6 + 7.5], ["funding_in_motion_n2.html", "n2 ", null]].forEach(([file, tag, t]) => {
+    const c = cfgOf(file), ww = boot(file, false), dd = ww.document;
+    const sc = c.narr ? c.narr.scenes.find((s) => s.scene === "Minimum conditions") : null;
+    ww.__film.seek(t != null ? t : sc.end - 1);
+    const star = dd.querySelector("#stage .vstar"), line = dd.querySelector("#stage .vetline");
+    const want = vet.met + " colleges already meet this condition, a commitment they also made for the 2025–26 $50,000 funding.";
+    check(tag + "v10 the veterans' condition carries the Veteran Star, gold, beside it",
+      !!star && star.textContent === "★" && star.getAttribute("aria-label") === "Veteran Star" &&
+      /\.vstar\{[^}]*color:var\(--stage-gold\)/.test(src) && star.parentNode.textContent.includes("Joint Services Transcripts"));
+    check(tag + "v11 and the line beneath it says how many colleges meet it (" + vet.met + "), and the 2025–26 commitment",
+      !!line && line.textContent === want && c.vet.met === vet.met && Number(line.style.opacity) > 0.99);
+    ww.close();
+  });
+  const w1 = boot("funding_in_motion.html", false);
+  w1.__film.seek(72);
+  check("v12 Scenario 1's introduction is unchanged: no star, no count", !w1.document.querySelector("#stage .vstar") && !cfgOf("funding_in_motion.html").vet);
+  w1.close();
+  check("v13 the new marks use the page's tokens, no raw color", ![".vstar{", ".vetline{"].some((sel) => {
+    const i = src.indexOf(sel); return i < 0 || /#[0-9A-Fa-f]{3,6}\b/.test(src.slice(i, src.indexOf("}", i))); }));
 }
 
 let fail = 0;

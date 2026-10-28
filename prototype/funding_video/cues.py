@@ -23,7 +23,8 @@ begins where the voice resumes.
 
 WHEN A CUE LANDS. A cue names one reveal: `at` is the film time in its scene
 where the reveal begins (a count is cued where it lands, the moment its figure
-reads), and `word` is the phrase that names it, found once in the scene's text;
+reads), and `word` is the phrase that names it, found once in the scene's text
+(as the voice reads it, `say`, where that differs: C.P.L. matches CPL);
 the anchor is the onset of the phrase's first word. No stretch of the picture may
 play faster than the 90-second introduction (MIN_STRETCH): where two cues sit
 closer in the narration than in the picture, the earlier one moves earlier, so a
@@ -48,7 +49,7 @@ ALIGN = {'repo': 'Xenova/wav2vec2-base-960h', 'revision': 'a19f851b3d42865797e41
          'file': 'onnx/model_quantized.onnx'}
 CTC_DIR = pathlib.Path(os.environ.get('CTC_DIR', pathlib.Path.home() / '.cache' / 'wav2vec2-ctc'))
 # letters the voice says one by one, spelled as the aligner hears them
-SAY = {'CPL': 'SEE PEE ELL', 'EDD': 'EE DEE DEE', 'FTES': 'EFF TEE EE ESS'}
+SAY = {'CPL': 'SEE PEE ELL', 'EDD': 'EE DEE DEE', 'FTES': 'EFF TEE EE ESS', 'FTEs': 'EFF TEE EES'}
 
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
 variant = args[0] if args else 's1'
@@ -59,7 +60,13 @@ MP3 = HERE / ('narration_%s.mp3' % variant)
 
 
 def norm(tok):
-    return re.sub(r"^[^\w']+|[^\w']+$", '', tok.replace('’', "'")).lower()
+    # C.P.L. as said and CPL as written are one word to a cue
+    return re.sub(r"^[^\w']+|[^\w']+$", '', tok.replace('’', "'")).replace('.', '').lower()
+
+
+def spoken(sc):
+    """The scene as the voice reads it: its `say` where the spoken form differs from the caption's."""
+    return sc.get('say', sc['text'])
 
 
 def sha256(p):
@@ -155,8 +162,10 @@ def listen(spec, layout):
         segs, _ = ear.transcribe(clip, language='en', word_timestamps=True, beam_size=HEAR['beam_size'],
                                  condition_on_previous_text=False)
         heard = [[round(s0 + w.start, 3), round(s0 + w.end, 3), w.word, round(w.probability, 3)] for g in segs for w in g.words]
-        words = sc['text'].split()
-        span, fr = align(clip, words)
+        words = spoken(sc).split()
+        # the aligner reads the voice and a short tail only: where the picture runs on well past the
+        # last word (How a target is set, 4.2 s since Draft 7), CTC stretched that word into the silence
+        span, fr = align(clip[:int((min(s1, lay.get('speech_end', s1) + 0.3) - s0) * RATE)], words)
         out, prev_end = [], s0
         for wi, w in enumerate(words):
             a, b = span[wi]
@@ -214,7 +223,7 @@ def pin(spec, layout, heard):
             rows += [(sc['scene'], c['why'], c['word'], float('nan'), lay['start'] + c['at'], lay['start'] + c['at'], True)
                      for c in sc.get('cues', [])]
             continue
-        assert [w[0] for w in hs['words']] == sc['text'].split(), '%s: the words file was heard from other text' % sc['scene']
+        assert [w[0] for w in hs['words']] == spoken(sc).split(), '%s: the words file was heard from other text' % sc['scene']
         toks = [norm(w[0]) for w in hs['words']]
         cues = []
         for c in sc.get('cues', []):

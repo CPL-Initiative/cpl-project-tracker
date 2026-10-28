@@ -73,6 +73,9 @@ h1{margin:0;font:700 clamp(1.7rem,1.15rem + 2.2vw,2.7rem)/1.12 "Playfair Display
 .inv i{position:absolute;display:block;background:var(--stage-barrier)}
 .inv .cap{position:absolute;left:50%;top:100%;margin-top:1cqw;transform:translateX(-50%);white-space:nowrap;font:700 1.9cqw/1 "Source Sans 3",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--stage-muted)}
 .inv .strike{position:absolute;left:0;right:0;top:50%;height:.3cqw;background:var(--map-red);transform-origin:left;transform:scaleX(0)}
+/* the Veteran Star beside the veterans' condition, and its count (Sam, 2026-10-21) */
+.vstar{flex:none;font:900 4.4cqw/1 Arial,sans-serif;color:var(--stage-gold);-webkit-text-stroke:.14cqw var(--stage-gold-text)}
+.vetline{font:600 2.4cqw/1.3 "Source Sans 3",Arial,sans-serif;color:var(--stage-gold-text)}
 .bolt{position:absolute;z-index:3;width:.4cqw;height:2.4cqw;border-radius:.2cqw;background:var(--map-red);pointer-events:none;visibility:hidden}
 .bigplay{position:absolute;left:50%;top:88%;transform:translate(-50%,-50%);min-height:48px;padding:0 1.6em;border:0;border-radius:999px;background:var(--stage-ink);color:var(--stage-paper);font:700 clamp(15px,1.7cqw,22px)/1 "Source Sans 3",Arial,sans-serif;cursor:pointer;z-index:5}
 .controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-top:10px}
@@ -312,16 +315,21 @@ var S6=scene(56,65,'Minimum conditions','Meet the minimum conditions by '+CFG.de
   var dn=String(CFG.deadline).length;
   o.h=words(r,'Meet the minimum conditions by <span class="blue">'+CFG.deadline+'</span>','hd');o.h.style.fontSize=dn>16?(3.9*16/dn).toFixed(2)+'cqw':'3.9cqw';
   // The first condition follows the model under the noncredit outcomes lane (CFG.coordLine, build.py); its
-  // longer line takes three lines at 3.2cqw, so the rows below it step down (S482).
+  // longer line takes three lines at 3.2cqw, so the rows below it step down (S482). With the veterans' count
+  // beneath the third condition (CFG.vet) every row sits higher, so the closing line keeps its air (S443, S504).
   var L=[CFG.coordLine||'A CPL coordinator assigned and listed in MAP and on your college’s CPL landing page','Local confirmation of participation on file','At least 75% of enrolled veterans’ Joint Services Transcripts uploaded in MAP'];
-  var TOPS=CFG.coordLine?[10.6,24.4,32.0]:[11.6,22.2,29.8];
+  var TOPS=CFG.coordLine?(CFG.vet?[9.0,22.2,28.6]:[10.6,24.4,32.0]):(CFG.vet?[10.8,20.8,27.8]:[11.6,22.2,29.8]);
   // Each number is a lining figure, lifted .21cqw inside its 6cqw disc: Playfair's old-style digits and tall
   // ascender sat them 4px low at 1920 wide (Sam, 2026-10-26: "center the 1,2,3 numbers in the blue circles").
   o.rows=L.map(function(s,i){var d=E('div','abs',null,r,'left:8cqw;right:4.5cqw;top:'+TOPS[i]+'cqw;display:flex;gap:2.2cqw;align-items:center');
     var n=E('div',null,String(i+1),d,'flex:none;width:6cqw;height:6cqw;padding-bottom:.42cqw;border-radius:50%;display:grid;place-items:center;font:900 3.4cqw/1 '+PF+';font-variant-numeric:lining-nums;border:.35cqw solid var(--stage-ink)');
-    E('div','ln',s,d,'flex:1;font-size:3.2cqw');var p=E('span','pill','Met',d,'flex:none;background:var(--stage-blue);color:var(--surface)');return{d:d,n:n,p:p};});
+    E('div','ln',s,d,'flex:1;font-size:3.2cqw');
+    // the Veteran Star beside the veterans' condition, one of the ruled marks (Sam, 2026-09-09), with its count in words beneath (CFG.vet)
+    var st=i===2&&CFG.vet?E('span','vstar','★',d):null;if(st){st.setAttribute('role','img');st.setAttribute('aria-label','Veteran Star');}
+    var p=E('span','pill','Met',d,'flex:none;background:var(--stage-blue);color:var(--surface)');return{d:d,n:n,p:p,st:st};});
+  if(CFG.vet)o.v=E('div','abs vetline',CFG.vet.text,r,'left:16.2cqw;right:4.5cqw;top:'+(CFG.coordLine?37.2:36.6)+'cqw');
   o.b=words(r,'Until then, the funding your college demonstrates is <b>held in reserve for it</b>.','ln abs');o.b.style.cssText='left:4.5cqw;right:4.5cqw;bottom:3cqw;font-size:3.4cqw';
-},function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);o.rows.forEach(function(x,i){var a=1.3+i*1.3;fade(x.d,t,a,a+0.5);var m=back(k(t,a+0.7,a+1.2));x.p.style.transform='scale('+m+')';x.p.style.opacity=k(t,a+0.7,a+0.9);var fill=k(t,a+0.7,a+0.9);x.n.style.background=fill>0.5?'var(--stage-blue)':'transparent';x.n.style.color=fill>0.5?'var(--surface)':'var(--stage-ink)';x.n.style.borderColor=fill>0.5?'var(--stage-blue)':'var(--stage-ink)';});reveal(o.b.ws,t,6.0,0.06,0.5);});
+},function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);o.rows.forEach(function(x,i){var a=1.3+i*1.3;fade(x.d,t,a,a+0.5);var m=back(k(t,a+0.7,a+1.2));x.p.style.transform='scale('+m+')';x.p.style.opacity=k(t,a+0.7,a+0.9);var fill=k(t,a+0.7,a+0.9);x.n.style.background=fill>0.5?'var(--stage-blue)':'transparent';x.n.style.color=fill>0.5?'var(--surface)':'var(--stage-ink)';x.n.style.borderColor=fill>0.5?'var(--stage-blue)':'var(--stage-ink)';if(x.st){var sp=reduced?(t>=a+0.9?1:0):back(k(t,a+0.9,a+1.4));x.st.style.transform='scale('+sp+')';x.st.style.opacity=k(t,a+0.9,a+1.1);}});if(o.v)fade(o.v,t,5.1,5.6);reveal(o.b.ws,t,6.0,0.06,0.5);});
 
 var S7=scene(65,75,'Timing','The full two-year amount is available from year one. Funding is released twice a year based on cumulative CPL: February and July 2027, then December 2027 and June 2028. What remains after year one carries forward to year two for your college.',function(r,o){
   o.h=words(r,'Funding arrives in stages','hd');
@@ -363,6 +371,19 @@ var ENC=[{t:15.35,x:76,y:25,label:'Retaking what you know'},
          {t:LS(65.35),x:74,y:36,label:'Nobody to ask'},
          {t:LS(75.35),x:77,y:31,label:'Unclear local policy'},
          {t:LS(83.55),x:80,y:40,label:'Credit left on the table'}];
+/* THE VOLLEYS, the narrated cut only (Sam, 2026-10-21: "There is one spot that
+   has a bit of a white screen lag and another that has the pointer moving
+   slowly... Would be nice to use those moments for the pointer to shoot down
+   some more barriers"). Where a scene's narration runs well past its picture,
+   the clock holds the picture and the arrow drifts: the opening of Minimum
+   conditions held a blank stage for five seconds, and the flight into Targets
+   took ten. A volley names that window in narration time (`from`, `to`) and
+   its barriers (`hits`, each landing at narration time `t`); build.py resolves
+   them from the layout. Inside the window the arrow flies on the narration's
+   clock, from where the film's path has it at `from`, under each barrier in
+   turn, and back onto the film's path at `to`. The barriers are the same
+   invaders, at the same narrated pace. The introductions carry none. */
+var VOL=(NARR&&CFG.volleys)||[];VOL.forEach(function(v){v.hits.forEach(function(h){ENC.push({n:h.t,x:h.x,y:h.y,label:h.label});});});
 var SPRITE=[['..X.....X..','...X...X...','..XXXXXXX..','.XX.XXX.XX.','XXXXXXXXXXX','X.XXXXXXX.X','X.X.....X.X','...XX.XX...'],
             ['..X.....X..','X..X...X..X','X.XXXXXXX.X','XXX.XXX.XXX','XXXXXXXXXXX','.XXXXXXXXX.','..X.....X..','.X.......X.']];
 var PX=0.72,GAP=5.5,fx=$('fx');
@@ -433,7 +454,7 @@ function buildK(){var st=stage.getBoundingClientRect();if(!st.width)return;
   var L=rel(S9.lock),cx=L.l+L.w/2,cy=L.t+L.h/2,rx=L.w/2+4,ry=L.h/2+3;for(var i=0;i<=8;i++){var th=Math.PI*(0.5+i*0.25);K.push(P(LS(84.4)+i*0.28,cx+rx*Math.cos(th),cy+ry*Math.sin(th),(th*180/Math.PI+180)%360,1.2));}
   K.push(P(LS(87.3),HOME.x,HOME.y-1.2,0,1.3),P(LS(87.7),HOME.x,HOME.y,0,1),P(LS(90),HOME.x,HOME.y,0,1));
   K.sort(function(p,q){return p.t-q.t;});window.__K=K;return K;}
-function arrowAt(T){var i=0;while(i<K.length-1&&K[i+1].t<=T)i++;var a=K[i],b=K[Math.min(i+1,K.length-1)];if(a===b||b.t<=a.t)return a;var p=eio(k(T,a.t,b.t));
+function arrowAt(T,KK){var K2=KK||K,i=0;while(i<K2.length-1&&K2[i+1].t<=T)i++;var a=K2[i],b=K2[Math.min(i+1,K2.length-1)];if(a===b||b.t<=a.t)return a;var p=eio(k(T,a.t,b.t));
   var dr=b.r-a.r;dr=((dr+540)%360)-180;return{x:a.x+(b.x-a.x)*p,y:a.y+(b.y-a.y)*p,r:a.r+dr*p,s:a.s+(b.s-a.s)*p};}
 var trailBox=$('trail'),GH=[];for(var gi=0;gi<7;gi++){var g=E('img','ghost',null,trailBox);g.src=arrow.src;g.alt='';GH.push(g);}
 /* place the arrow so its TIP sits at (x, y): the tip is 58% of the height
@@ -441,12 +462,16 @@ var trailBox=$('trail'),GH=[];for(var gi=0;gi<7;gi++){var g=E('img','ghost',null
 function placeArrow(el,a,bob,alpha,shrink){var s=a.s*shrink,d=0.58*AH*s,rr=a.r*Math.PI/180,ox=a.x-d*Math.sin(rr),oy=a.y+d*Math.cos(rr)+bob;
   el.style.display='block';el.style.left=(ox-AW/2)+'cqw';el.style.top=(oy-0.58*AH)+'cqw';el.style.transform='rotate('+a.r+'deg) scale('+s+')';el.style.opacity=alpha;}
 function recoil(b){return b<-0.27||b>-0.05?0:0.7*(b<-0.2?eio(k(b,-0.27,-0.2)):1-eio(k(b,-0.2,-0.05)));}
+/* a volley's flight, in narration time: from the film's path, under each barrier while it fires, back to the path */
+function buildVol(){VOL.forEach(function(v){var s=arrowAt(ft(v.from)),z=arrowAt(ft(v.to)),VK=[P(v.from,s.x,s.y,s.r,s.s)];
+  v.hits.forEach(function(h){var ty=h.y+8*PX+GAP;VK.push(P(h.t-0.6,h.x,ty,0),P(h.t+0.3,h.x,ty,0));});VK.push(P(v.to,z.x,z.y,z.r,z.s));v.K=VK;});}
+function volAt(t){for(var i=0;i<VOL.length;i++)if(VOL[i].K&&t>VOL[i].from&&t<VOL[i].to)return VOL[i];return null;}
 function drawArrow(T,t){if(!K.length)return;if(reduced){var home=T<6||T>=LS(87.7);arrow.style.display=home?'block':'none';placeArrow(arrow,P(0,HOME.x,HOME.y,0,1),0,1,1);GH.forEach(function(g){g.style.display='none';});return;}
-  var fly=T>5.4&&T<LS(87.6),a=arrowAt(T),bob=(T>6&&T<LS(87))?0.35*Math.sin(T*6.3):0;ENC.forEach(function(e){var b=(t-e.h)/BAR;if(Math.abs(b)<0.55)bob=0;if(NARR)bob+=recoil(b);});placeArrow(arrow,a,bob,1,1);
+  var fly=T>5.4&&T<LS(87.6),vw=volAt(t),a=vw?arrowAt(t,vw.K):arrowAt(T),bob=(T>6&&T<LS(87))?0.35*Math.sin(T*6.3):0;ENC.forEach(function(e){var b=(t-e.h)/BAR;if(Math.abs(b)<0.55)bob=0;if(NARR)bob+=recoil(b);});placeArrow(arrow,a,bob,1,1);
   // The trail: the arrow's own recent positions, 40 ms apart. Sampling the
   // path rather than a fixed offset keeps the trail behind the ship through a
   // turn, and it only appears while the ship is under way.
-  GH.forEach(function(g,i){if(!fly){g.style.display='none';return;}var lag=0.04*(i+1),b=arrowAt(T-lag),moving=Math.abs(b.x-a.x)+Math.abs(b.y-a.y)>0.05;if(!moving){g.style.display='none';return;}var bb=(T-lag>6)?0.35*Math.sin((T-lag)*6.3):0;placeArrow(g,b,bb,0.42*(1-i/7),1-0.09*(i+1));});}
+  GH.forEach(function(g,i){if(!fly){g.style.display='none';return;}var lag=0.04*(i+1),b=vw?arrowAt(t-lag,vw.K):arrowAt(T-lag),moving=Math.abs(b.x-a.x)+Math.abs(b.y-a.y)>0.05;if(!moving){g.style.display='none';return;}var bb=(T-lag>6)?0.35*Math.sin((T-lag)*6.3):0;placeArrow(g,b,bb,0.42*(1-i/7),1-0.09*(i+1));});}
 
 /* ---- render ---- */
 var T=0,playing=false,soundOn=true,t0=0,base=0,raf=0,scrubbing=false,lastSaid=-1;
@@ -465,14 +490,14 @@ function nt(t){return pw(t,1,0);}
 /* each barrier keeps its own pace, BAR times the introduction's, around the
    moment the clock lands its hit (h): where the clock slows for a heading that
    types in with the voice, the barrier beside it still plays as a wink */
-var BAR=NARR?1.8:1;ENC.forEach(function(e){e.h=nt(e.t);});
+var BAR=NARR?1.8:1;ENC.forEach(function(e){if(e.n!=null){e.h=e.n;e.t=ft(e.n);}else e.h=nt(e.t);});
 function playerT(){return T;}
 var CUES=NARR?NARR.cues:[],ccOn=true,cc=null,ccSpan=null;
 if(CUES.length){cc=E('p','cc',null,stage);cc.setAttribute('aria-hidden','true');ccSpan=E('span',null,null,cc);cc.hidden=true;}
 function cue(t){if(!cc)return;var c=null;for(var i=0;i<CUES.length;i++)if(t>=CUES[i].start&&t<CUES[i].end+0.2){c=CUES[i];break;}
   var txt=ccOn&&c?c.text:'';if(ccSpan.textContent!==txt)ccSpan.textContent=txt;cc.hidden=!txt;}
 function render(){var t=playerT(),T=ft(t);cue(t);S.forEach(function(o,i){var on=T>=o.t0-0.001&&(T<o.t1||(i===S.length-1&&T<=DUR));var fo=i<S.length-1?cl((o.t1-T)/0.45):1;o.root.style.visibility=on?'visible':'hidden';if(on){o.root.style.opacity=fo;o.u(o,T-o.t0);if(i!==lastSaid){lastSaid=i;said.textContent=o.text;}}});drawInvaders(t);drawArrow(T,t);}
-function measure(){var k2=buildK();if(k2)K=k2;}
+function measure(){var k2=buildK();if(k2){K=k2;buildVol();}}
 /* ---- music: orchestral, and it BUILDS (Sam, 2026-09-26: "should build
    rather than just repeat--don't be afraid to be more creative"). Seven
    sections over one theme: a horn call alone; the theme on the piano; the

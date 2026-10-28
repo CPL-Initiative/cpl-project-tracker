@@ -18,7 +18,9 @@ and give her the name Sierra on the video"), an ElevenLabs voice. ElevenLabs rea
 each scene through its connector, outside this script; the clips are committed
 under the narration's `engine.clips` folder, and each scene's `read.text_sha1` is
 the SHA-1 of the text its clip was read from, so a scene edited after its read
-fails here until it is read again. A scene still waiting on its read carries
+fails here until it is read again. A scene may carry `say`, the text as the voice
+reads it (Sam, 2026-10-21: CPL as C.P.L., one FTES as F.T.E.S., several as FTEs);
+the voice, its SHA-1 and the aligner read `say`, and the captions keep `text`. A scene still waiting on its read carries
 `pending`, the reason: it plays silent, at the introduction's own pace.
 
 The narration drives the narrated cut's clock: each scene lasts its lead-in, its
@@ -120,7 +122,7 @@ def read_elevenlabs():
             clips.append(None)
             continue
         read = s.get('read') or {}
-        if read.get('text_sha1') != hashlib.sha1(s['text'].encode('utf8')).hexdigest():
+        if read.get('text_sha1') != hashlib.sha1(s.get('say', s['text']).encode('utf8')).hexdigest():
             problems.append('%s: its clip was read from other text; read the scene again in ElevenLabs' % s['scene'])
             continue
         raw = subprocess.run([ffmpeg, '-v', 'error', '-i', str(HERE / eng['clips'] / read['clip']), '-f', 'f32le', '-ac', '1',
