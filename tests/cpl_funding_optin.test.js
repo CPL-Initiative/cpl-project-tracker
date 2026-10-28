@@ -338,8 +338,10 @@ function reviewerSession() {
   const t = doc.getElementById("cplFundTable").innerHTML;
   check("F5: a locked (non-reviewer) drill-in shows NO CO confirm controls",
     !/cplfund-corow/.test(t) && !/data-optinconfirm/.test(t));
-  check("F5b: the locked drill-in shows the request waiting for review",
-    /Minimum Conditions:[\s\S]*Confirmation received, awaiting MAP team review/.test(t.replace(/<[^>]+>/g, " ")));
+  // Sam, 2026-10-28: "The awaiting MAP team review should be 'Awaiting CPL Initiative Confirmation'".
+  check("F5b: the locked drill-in shows the request Awaiting CPL Initiative Confirmation",
+    /Minimum Conditions:[\s\S]*Awaiting CPL Initiative Confirmation/.test(t.replace(/<[^>]+>/g, " ")) &&
+    !/MAP team review/.test(t.replace(/<[^>]+>/g, " ")));
 }
 
 // ── the participation-requirement join (2026-08-27) ─────────────────────────

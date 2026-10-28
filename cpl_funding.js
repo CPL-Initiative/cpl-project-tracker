@@ -5563,19 +5563,20 @@
     if (r.kind === "part") {
       if (r.met) return { text: "Confirmation on file" };
       var row = ELIG.optinRow[college];
-      if (optinPending(college)) return { text: "Confirmation received, awaiting MAP team review" };
+      // Sam, 2026-10-28: "The awaiting MAP team review should be 'Awaiting CPL Initiative Confirmation'".
+      if (optinPending(college)) return { text: "Awaiting CPL Initiative Confirmation" };
       return { text: (row && row.status === "revoked" ? "Confirmation withdrawn" : "Confirmation not yet on file") + due };
     }
     if (r.kind === "nc_coord") {
       if (r.pending) return { text: "Noncredit CPL Lead status pending", pending: true };
       return { text: r.met ? "Noncredit CPL Lead published"
-        : ncAttestPending(ncAttestOf(college)) ? "Noncredit CPL Lead attested, awaiting MAP team review" : "Noncredit CPL Lead not yet attested" };
+        : ncAttestPending(ncAttestOf(college)) ? "Noncredit CPL Lead: Awaiting CPL Initiative Confirmation" : "Noncredit CPL Lead not yet attested" };
     }
     if (r.kind === "nc_team") {
       if (r.pending) return { text: "Strike-team attestation status pending", pending: true };
       var att = ncAttestOf(college);
       return { text: r.met ? "Strike team attested" + (att && att.fiscal_year ? " for " + att.fiscal_year : "")
-        : ncAttestPending(att) ? "Strike-team attestation awaiting MAP team review" : "Strike-team attestation not yet on file" };
+        : ncAttestPending(att) ? "Strike-team attestation: Awaiting CPL Initiative Confirmation" : "Strike-team attestation not yet on file" };
     }
     var pctWords = fmtPctTrim((perf() && perf().vet_star_threshold) || 0.75);
     if (r.kind === "exhibits") {
@@ -6230,7 +6231,7 @@
     if (ncAttestStanding(att)) return "";
     if (ncAttestPending(att)) {
       return '<div class="cplfund-optin cplfund-optin-note">The noncredit attestation for ' + esc(att.fiscal_year || fy) +
-        (att.requested_at ? ", received " + esc(isoMdy(att.requested_at)) + "," : "") + " awaits MAP team review.</div>";
+        (att.requested_at ? ", received " + esc(isoMdy(att.requested_at)) + "," : "") + " is awaiting CPL Initiative confirmation.</div>";
     }
     if (att) {
       return '<div class="cplfund-optin cplfund-optin-note cplfund-warn-text">The Chancellor&#39;s Office rejected this college&#39;s noncredit attestation for ' +
