@@ -46,18 +46,16 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 13,
    "listed": 13,
-   "share": 0.923,
-   "missing": [
-    "ENGLC1001"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 9,
    "codes": [
     "ANTHR102",
     "ANTHR102H",
@@ -65,7 +63,6 @@
     "COMM115",
     "COMM117",
     "ENGL102H",
-    "ENGL104",
     "JOURN102",
     "MCOMM101",
     "SOC101H"
@@ -77,7 +74,6 @@
     "COMM115",
     "COMM117",
     "ENGL102H",
-    "ENGL104",
     "JOURN102",
     "MCOMM101",
     "SOC101H"
@@ -362,5 +358,6 @@
    "No GE pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

@@ -46,9 +46,9 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 18,
    "listed": 41,
-   "share": 0.341,
+   "share": 0.439,
    "missing": [
     "ANTHR110",
     "ART130",
@@ -69,11 +69,7 @@
     "HUMAN145",
     "MUSIC125",
     "MUSIC126",
-    "THTR103",
-    "THTR104",
-    "THTR109",
     "THTR113",
-    "THTR123",
     "THTR171",
     "THTR172",
     "THTR173"
@@ -83,23 +79,15 @@
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 3,
    "codes": [
     "BIOL123",
-    "TART103",
-    "TART104",
-    "TART109",
     "TART121",
-    "TART123",
     "TART134"
    ],
    "flagged": [
     "BIOL123",
-    "TART103",
-    "TART104",
-    "TART109",
     "TART121",
-    "TART123",
     "TART134"
    ],
    "pass": true
@@ -481,5 +469,6 @@
    "BIOL 123 is not in the closed list."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

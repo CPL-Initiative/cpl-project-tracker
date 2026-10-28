@@ -5,7 +5,7 @@
  "catalog_year": "2025-2026",
  "programs": 317,
  "with_closed_list": 267,
- "started": "2026-10-18T09:15:56Z",
+ "started": "2026-10-28T13:27:22Z",
  "pdf": {
   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
   "access": "ok",
@@ -62,16 +62,14 @@
    {
     "control_number": "02550",
     "pages": [
-     128,
-     129,
-     130
+     89
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.889,
-    "opens": "[page 128] ACCOUNTING 50 ACCOUNTING INTERNSHIP 1.0 to 3.0 Units ACCTG 50 is a discipline-speci ﬁ c course, which allows students to earn from 1-3 units for structured, supervised work on-campus or o ﬀ -campus in the"
+    "coverage": 0.667,
+    "opens": "[page 89] The following certiﬁ cates do not satisfy the major requirements for an AA/AS degree. ACCOUNTING CERTIFICATE Program Learning Outcomes: Upon completion of this pro- gram, students will be able to demonstrate t"
    },
    {
     "control_number": "02551",
@@ -144,7 +142,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.75,
+    "coverage": 0.875,
     "opens": "[page 82] MASS COMMUNICATIONS AA DEGREE This program prepares students to recognize and replicate the methods by which the Mass Media inform and persuade, with language or pictures, and the cognitive and emotional imp"
    },
    {
@@ -200,12 +198,12 @@
     "pages": [
      84
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 84] NURSING - SEE REGISTERED NURSING PHOTOGRAPHY AS DEGREE OR CERTIFICATE DIGITAL PHOTOGRAPHY This d egree o r certiﬁ ca te is d esi gned to prep are stu d en ts fo r work as professional photographers and photogr"
+    "opens": "[page 84] AS DEGREE OR CERTIFICATE DIGITAL PHOTOGRAPHY This d egree o r certiﬁ ca te is d esi gned to prep are stu d en ts fo r work as professional photographers and photographic assistants, as well as prepares studen"
    },
    {
     "control_number": "02580",
@@ -229,7 +227,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.533,
+    "coverage": 0.6,
     "opens": "[page 75] The English Creative Writing AA degree is designed to pro- vide students with a solid foundation of creative writing skills. Students will understand genre, literary concepts, and socio- cultural inﬂ uences on"
    },
    {
@@ -242,7 +240,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.917,
+    "coverage": 1.0,
     "opens": "[page 117] AS-T — BUSINESS ADMINISTRATION 2.0 The AS-T in Business Administration 2.0 provides stu dents wi th a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students"
    },
    {
@@ -399,12 +397,12 @@
      67,
      68
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 67] BIOTECHNOLOGY AS DEGREE The AS degree in Biotechnology provides a strong foundation for transfer to a college (two- or four- year) to complete a BS in Biotechnology. It also prepares students with the foundat"
+    "opens": "[page 67] AS DEGREE ENTREPRENEURSHIP/SMALL BUSINESS T h i s d e g r e e e q u i p s s t u d e n t s w i t h t h e e s s e n t i a l s k i l l s a n d knowledge to start and manage successful small businesses."
    },
    {
     "control_number": "11145",
@@ -425,12 +423,12 @@
      71,
      72
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 70] CHOREOGRAPHIC STUDIES AND DANCE TECHNIQUES AA DEGREE This program is designed to prepare students for transfer to four year institutions or to work in the dance industry. Students gain the knowledge, skills"
+    "opens": "[page 70] AS DEGREE OR CERTIFICATE ADMINISTRATIVE ASSISTANT This degree or certi ﬁ cate prepares students for employment in an oﬃ ce sett ing performing clerical job duties, such as word- processing business correspond"
    },
    {
     "control_number": "11153",
@@ -453,7 +451,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.857,
+    "coverage": 1.0,
     "opens": "[page 82] MASS COMMUNICATIONS AA DEGREE This program prepares students to recognize and replicate the methods by which the Mass Media inform and persuade, with language or pictures, and the cognitive and emotional imp"
    },
    {
@@ -789,12 +787,12 @@
     "pages": [
      104
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 104] FIRE ACADEMY CERTIFICATE NON-DEGREE VERDUGO FIRE ACADEMY Program Learning Outcomes: U pon com p leti on o f this pro- gram, students will be able to discuss the skills required for ﬁ re prevention techniques;"
+    "opens": "[page 104] CERTIFICATE NON-DEGREE VERDUGO FIRE ACADEMY Program Learning Outcomes: U pon com p leti on o f this pro- gram, students will be able to discuss the skills required for ﬁ re prevention techniques; discuss the "
    },
    {
     "control_number": "18661",
@@ -925,12 +923,12 @@
      92,
      93
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 92] BIOTECHNOLOGY RESEARCH LAB ASSISTANT CERTIFICATE The Biotechnology Research Lab Assistant Certificate of Achievement Program is the second level that introduces stu- dents to the ﬁ eld of biotechnology through"
+    "opens": "[page 92] CERTIFICATE ENTREPRENEURSHIP/ SMALL BUSINESS II This certiﬁ c a t e e q u i p s s t u d e n t s w i t h t h e e s s e n t i a l s k i l l s a n d knowledge to start and manage successful small business"
    },
    {
     "control_number": "19561",
@@ -951,12 +949,12 @@
      71,
      72
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 70] CHOREOGRAPHIC STUDIES AND DANCE TECHNIQUES AA DEGREE This program is designed to prepare students for transfer to four year institutions or to work in the dance industry. Students gain the knowledge, skills"
+    "opens": "[page 70] AS DEGREE OR CERTIFICATE ADMINISTRATIVE ASSISTANT This degree or certi ﬁ cate prepares students for employment in an oﬃ ce sett ing performing clerical job duties, such as word- processing business correspond"
    },
    {
     "control_number": "19563",
@@ -1175,7 +1173,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.857,
+    "coverage": 1.0,
     "opens": "[page 82] MASS COMMUNICATIONS AA DEGREE This program prepares students to recognize and replicate the methods by which the Mass Media inform and persuade, with language or pictures, and the cognitive and emotional imp"
    },
    {
@@ -1259,14 +1257,15 @@
    {
     "control_number": "21315",
     "pages": [
-     83
+     109,
+     110
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 83] MEDICAL CODING ASSISTANT This degree or certi ﬁ cate is designed to prepare students for a position as a medical coder in an acute care hospital, clinic or physician’s oﬃ ce, long-term care facility, and oth"
+    "opens": "[page 109] MEDICAL CODING ASSISTANT This certi ﬁ cate is designed to prepare students for a position as a medical coder in an acute care hospital, clinic or physician’s oﬃ ce, long-term care facility, and other health"
    },
    {
     "control_number": "21317",
@@ -1285,12 +1284,12 @@
     "pages": [
      84
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 84] NURSING - SEE REGISTERED NURSING PHOTOGRAPHY AS DEGREE OR CERTIFICATE DIGITAL PHOTOGRAPHY This d egree o r certiﬁ ca te is d esi gned to prep are stu d en ts fo r work as professional photographers and photogr"
+    "opens": "[page 84] AS DEGREE OR CERTIFICATE DIGITAL PHOTOGRAPHY This d egree o r certiﬁ ca te is d esi gned to prep are stu d en ts fo r work as professional photographers and photographic assistants, as well as prepares studen"
    },
    {
     "control_number": "21319",
@@ -1331,6 +1330,7 @@
    {
     "control_number": "24010",
     "pages": [
+     276,
      277,
      278,
      279
@@ -1340,7 +1340,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 277] 61 LEARNING LAB AND SUPPORT FOR HIGH SCHOOL AND HIGH SCHOOL EQUIVALENCY 0 Units ABSE 61 is a learning lab designed for both high school and high school equivalency students who want additional instructio"
+    "opens": "[page 276] Noncredit Continuing Education ADULT BASIC AND SECONDARY EDUCATION 273 [page 277] 61 LEARNING LAB AND SUPPORT FOR HIGH SCHOOL AND HIGH SCHOOL EQUIVALENCY 0 Units ABSE 61 is a learning lab designed for bot"
    },
    {
     "control_number": "24011",
@@ -1491,7 +1491,8 @@
     "control_number": "30814",
     "pages": [
      117,
-     118
+     118,
+     119
     ],
     "named": true,
     "code": null,
@@ -1534,7 +1535,9 @@
     "control_number": "32168",
     "pages": [
      116,
-     117
+     117,
+     118,
+     119
     ],
     "named": true,
     "code": null,
@@ -1723,8 +1726,8 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.75,
-    "opens": "[page 119] AA-T — GEOGRAPHY The AA-T in Geography provides students with a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students who have completed the AA-T in Geogra"
+    "coverage": 0.8,
+    "opens": "[page 119] AA-T — JOURNALISM T h e A A - T i n J o u r n a l i s m p r o v i d e s s t u d e n t s w i t h a s t r o n g academic foundation in the ﬁ eld and preparation for upper division baccalaureate study."
    },
    {
     "control_number": "33598",
@@ -1833,12 +1836,12 @@
      82,
      83
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 82] MASS COMMUNICATIONS AA DEGREE This program prepares students to recognize and replicate the methods by which the Mass Media inform and persuade, with language or pictures, and the cognitive and emotional imp"
+    "opens": "[page 82] AS DEGREE OR CERTIFICATE ADMINISTRATIVE MEDICAL ASSISTANT This degree or certi ﬁ cate is designed to prepare students for employment as a medical assistant in a physician’s oﬃ ce or clinic. The curriculum is"
    },
    {
     "control_number": "35628",
@@ -1846,12 +1849,12 @@
      82,
      83
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 82] MASS COMMUNICATIONS AA DEGREE This program prepares students to recognize and replicate the methods by which the Mass Media inform and persuade, with language or pictures, and the cognitive and emotional imp"
+    "opens": "[page 82] AS DEGREE OR CERTIFICATE ADMINISTRATIVE MEDICAL ASSISTANT This degree or certi ﬁ cate is designed to prepare students for employment as a medical assistant in a physician’s oﬃ ce or clinic. The curriculum is"
    },
    {
     "control_number": "36102",
@@ -2071,12 +2074,12 @@
     "pages": [
      77
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 77] ITALIAN LANGUAGE The degree or certiﬁ cate in Italian Language provides rigorous academic preparation in Italian Language. Students are pre- pared to transfer to baccalaureate degree programs in Italian or Ro"
+    "opens": "[page 77] AA DEGREE OR CERTIFICATE ARMENIAN LANGUAGE The degree or certiﬁ cate in Armenian Language provides a rigor- ous academic preparation in the Armenian Language. Students are prepared to transfer to baccalaureate"
    },
    {
     "control_number": "36711",
@@ -2134,12 +2137,12 @@
     "pages": [
      77
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 77] ITALIAN LANGUAGE The degree or certiﬁ cate in Italian Language provides rigorous academic preparation in Italian Language. Students are pre- pared to transfer to baccalaureate degree programs in Italian or Ro"
+    "opens": "[page 77] AA DEGREE OR CERTIFICATE ARMENIAN LANGUAGE The degree or certiﬁ cate in Armenian Language provides a rigor- ous academic preparation in the Armenian Language. Students are prepared to transfer to baccalaureate"
    },
    {
     "control_number": "36720",
@@ -2294,7 +2297,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 73] Students completing an AS degree in Civil Engineering develop abilities in mathematics, basic sciences, engineering topics such as structural statics, as well as general education subjects that complement te"
+    "opens": "[page 73] AS DEGREE CIVIL ENGINEERING Students completing an AS degree in Civil Engineering develop abilities in mathematics, basic sciences, engineering topics such as structural statics, as well as general education "
    },
    {
     "control_number": "37856",
@@ -2330,7 +2333,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.9,
+    "coverage": 0.933,
     "opens": "[page 118] The AA-T in Elementary Teacher Education provides students with a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students who have completed the AA-T in Elem"
    },
    {
@@ -2356,7 +2359,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.923,
+    "coverage": 1.0,
     "opens": "[page 75] The English Creative Writing AA degree is designed to pro- vide students with a solid foundation of creative writing skills. Students will understand genre, literary concepts, and socio- cultural inﬂ uences on"
    },
    {
@@ -2409,7 +2412,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.906,
+    "coverage": 0.938,
     "opens": "[page 122] AA-T — SOCIAL WORK AND HUMAN SERVICES The AA-T in Social Work and Human Services provides students with a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Stude"
    },
    {
@@ -2609,7 +2612,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.909,
+    "coverage": 1.0,
     "opens": "[page 67] The AS degree in Biotechnology provides a strong foundation for transfer to a college (two- or four- year) to complete a BS in Biotechnology. It also prepares students with the foundation in microbiology, mo"
    },
    {
@@ -2621,7 +2624,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.889,
+    "coverage": 1.0,
     "opens": "[page 92] The Biotechnology Research Lab Assistant Certificate of Achievement Program is the second level that introduces stu- dents to the ﬁ eld of biotechnology through strengthening and building on the basic biotech"
    },
    {
@@ -2633,7 +2636,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.875,
+    "coverage": 1.0,
     "opens": "[page 92] The Biotechnology Research Lab Assistant Certificate of Achievement Program is the second level that introduces stu- dents to the ﬁ eld of biotechnology through strengthening and building on the basic biotech"
    },
    {
@@ -2645,7 +2648,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.909,
+    "coverage": 1.0,
     "opens": "[page 67] BIOTECHNOLOGY AS DEGREE The AS degree in Biotechnology provides a strong foundation for transfer to a college (two- or four- year) to complete a BS in Biotechnology. It also prepares students with the foundat"
    },
    {
@@ -2665,24 +2668,24 @@
     "pages": [
      111
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 111] PHOTOGRAPHY CERTIFICATE DIGITAL PHOTOGRAPHY This certi ﬁ cate is designed to prepare students for work as professional photographers and photographic assistants, as w e l l a s p r e p a r e s s t u d e n"
+    "opens": "[page 111] CERTIFICATE NON-DEGREE DIGITAL PHOTOGRAPHY TECHNICIAN This certiﬁ cate prepares students for work in digital photogra- phy, as well as preparing students for ﬁ elds in digital photogra- phy editing, digital as"
    },
    {
     "control_number": "41827",
     "pages": [
      84
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 84] NURSING - SEE REGISTERED NURSING PHOTOGRAPHY AS DEGREE OR CERTIFICATE DIGITAL PHOTOGRAPHY This d egree o r certiﬁ ca te is d esi gned to prep are stu d en ts fo r work as professional photographers and photogr"
+    "opens": "[page 84] AS DEGREE OR CERTIFICATE DIGITAL PHOTOGRAPHY This d egree o r certiﬁ ca te is d esi gned to prep are stu d en ts fo r work as professional photographers and photographic assistants, as well as prepares studen"
    },
    {
     "control_number": "41828",
@@ -2701,12 +2704,12 @@
     "pages": [
      84
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 84] NURSING - SEE REGISTERED NURSING PHOTOGRAPHY AS DEGREE OR CERTIFICATE DIGITAL PHOTOGRAPHY This d egree o r certiﬁ ca te is d esi gned to prep are stu d en ts fo r work as professional photographers and photogr"
+    "opens": "[page 84] AS DEGREE OR CERTIFICATE DIGITAL PHOTOGRAPHY This d egree o r certiﬁ ca te is d esi gned to prep are stu d en ts fo r work as professional photographers and photographic assistants, as well as prepares studen"
    },
    {
     "control_number": "42263",
@@ -2841,7 +2844,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.765,
+    "coverage": 0.824,
     "opens": "[page 102] ADVANCED ESL: LANGUAGE & COMMUNICATION PATHWAY The Advanced ESL: Language & Communication Pathway certiﬁ cate is designed to prepare non-native English speakers to succeed in Language and Communication acad"
    },
    {
@@ -2856,7 +2859,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.857,
+    "coverage": 0.905,
     "opens": "[page 102] ADVANCED ESL: LANGUAGE & COMMUNICATION PATHWAY The Advanced ESL: Language & Communication Pathway certiﬁ cate is designed to prepare non-native English speakers to succeed in Language and Communication acad"
    },
    {
@@ -2894,12 +2897,12 @@
      75,
      76
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.875,
-    "opens": "[page 75] ENGLISH: CREATIVE WRITING AA DEGREE The English Creative Writing AA degree is designed to pro- vide students with a solid foundation of creative writing skills. Students will understand genre, literary concep"
+    "opens": "[page 75] AA DEGREE OR CERTIFICATE DOCUMENTARY FILM PRODUCTION T h i s d e g r e e o r c e r t iﬁ c a t e i s d e s i g n e d t o h e l p s t u d e n t s g a i n the breadth of knowledge, appreciation and unde"
    },
    {
     "control_number": "44569",
@@ -2907,12 +2910,12 @@
      75,
      76
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.875,
-    "opens": "[page 75] ENGLISH: CREATIVE WRITING AA DEGREE The English Creative Writing AA degree is designed to pro- vide students with a solid foundation of creative writing skills. Students will understand genre, literary concep"
+    "opens": "[page 75] AA DEGREE OR CERTIFICATE DOCUMENTARY FILM PRODUCTION T h i s d e g r e e o r c e r t iﬁ c a t e i s d e s i g n e d t o h e l p s t u d e n t s g a i n the breadth of knowledge, appreciation and unde"
    },
    {
     "control_number": "44570",
@@ -2969,14 +2972,15 @@
    {
     "control_number": "44773",
     "pages": [
-     83
+     109,
+     110
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 83] MEDICAL CODING ASSISTANT This degree or certi ﬁ cate is designed to prepare students for a position as a medical coder in an acute care hospital, clinic or physician’s oﬃ ce, long-term care facility, and oth"
+    "opens": "[page 109] CERTIFICATE NON-DEGREE MUSIC HISTORY This certiﬁ cate is designed to help students entering the music ﬁ eld. Students will explore the rich history of music from dis- tant and recent past as well as gain a br"
    },
    {
     "control_number": "44774",
@@ -3157,15 +3161,15 @@
    {
     "control_number": "45399",
     "pages": [
-     67,
-     68
+     92,
+     93
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 67] BIOTECHNOLOGY AS DEGREE The AS degree in Biotechnology provides a strong foundation for transfer to a college (two- or four- year) to complete a BS in Biotechnology. It also prepares students with the foundat"
+    "opens": "[page 92] CERTIFICATE ENTREPRENEURSHIP/ SMALL BUSINESS II This certiﬁ c a t e e q u i p s s t u d e n t s w i t h t h e e s s e n t i a l s k i l l s a n d knowledge to start and manage successful small business"
    },
    {
     "control_number": "45596",
@@ -3307,7 +3311,7 @@
   "unproven": []
  },
  "loads": 1,
- "seconds": 123.6,
+ "seconds": 213.9,
  "found": 258,
  "by_method": {
   "no_closed_list": 50,
@@ -3337,12 +3341,7 @@
    "19555",
    "41767",
    "41776",
-   "45397",
-   "45399"
-  ],
-  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=128": [
-   "02550",
-   "12571"
+   "45397"
   ],
   "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81": [
    "02552",
@@ -3397,11 +3396,9 @@
    "02572",
    "10057",
    "19546",
-   "21315",
    "33911",
    "33934",
    "36480",
-   "44773",
    "44774",
    "46051"
   ],
@@ -3558,7 +3555,8 @@
   "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92": [
    "19560",
    "41768",
-   "41775"
+   "41775",
+   "45399"
   ],
   "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=74": [
    "19569",
@@ -3569,6 +3567,10 @@
   "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=95": [
    "21302",
    "41379"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109": [
+   "21315",
+   "44773"
   ],
   "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270": [
    "24011",
@@ -3757,15 +3759,216 @@
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 28,
-  "0.8-1.0": 50,
-  "1.0": 180
+  "0.5-0.8": 26,
+  "0.8-1.0": 44,
+  "1.0": 188
  },
  "would_extract": {
   "against": "kb/program_requirements_college/glendale_community",
-  "kept": 258,
-  "programs": 0,
-  "list": []
+  "kept": 238,
+  "programs": 20,
+  "list": [
+   {
+    "control_number": "02550",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=89",
+    "coverage": 0.667,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=128",
+    "was_coverage": 0.889,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02557",
+    "title": "Mass Communications",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+    "coverage": 0.875,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+    "was_coverage": 0.75,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02587",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+    "coverage": 0.6,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+    "was_coverage": 0.533,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02588",
+    "title": "Speech/Communication",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
+    "was_coverage": 0.917,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "11155",
+    "title": "Mass Communications",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21303",
+    "title": "Mass Communications",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21315",
+    "title": "Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "24010",
+    "title": "Adult Basic Education",
+    "award": "Noncredit program",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=276",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=277",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33295",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
+    "coverage": 0.8,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
+    "was_coverage": 0.75,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "37952",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=118",
+    "coverage": 0.933,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=118",
+    "was_coverage": 0.9,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38144",
+    "title": "English: Creative Writing",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+    "was_coverage": 0.923,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39289",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+    "coverage": 0.938,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+    "was_coverage": 0.906,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41767",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "was_coverage": 0.909,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41768",
+    "title": "Biotechnology Research Lab Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+    "was_coverage": 0.889,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41775",
+    "title": "Biotechnology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+    "was_coverage": 0.875,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41776",
+    "title": "Biotechnology Research Lab Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "was_coverage": 0.909,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44486",
+    "title": "Advanced ESL: Language & Communication Pathway",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+    "coverage": 0.824,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+    "was_coverage": 0.765,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44487",
+    "title": "Advanced ESL: People, Power & Perspective Pathway",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+    "coverage": 0.905,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44773",
+    "title": "Music History",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45399",
+    "title": "Entrepreneurship/Small Business I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   }
+  ]
  },
- "run": "39114562289"
+ "run": "40696243319"
 }

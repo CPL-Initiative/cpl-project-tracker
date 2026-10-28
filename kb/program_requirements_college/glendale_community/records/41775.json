@@ -46,25 +46,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 8,
    "listed": 8,
-   "share": 0.875,
-   "missing": [
-    "ENGLC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "BIOL142",
-    "ENGL101"
+    "BIOL142"
    ],
    "flagged": [
-    "BIOL142",
-    "ENGL101"
+    "BIOL142"
    ],
    "pass": true
   },
@@ -258,5 +254,6 @@
    "BIOL 142 and ENGL 101 are not in the closed list; ENGL 101 may correspond to ENGL C1000 in the state file."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

@@ -46,34 +46,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 131,
+   "placed": 135,
    "listed": 135,
-   "share": 0.97,
-   "missing": [
-    "THTR101",
-    "THTR102",
-    "THTR107",
-    "THTR113"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 1,
    "codes": [
-    "HUMAN140",
-    "TART101",
-    "TART102",
-    "TART107",
-    "TART113"
+    "HUMAN140"
    ],
    "flagged": [
-    "HUMAN140",
-    "TART101",
-    "TART102",
-    "TART107",
-    "TART113"
+    "HUMAN140"
    ],
    "pass": true
   },
@@ -1138,5 +1125,6 @@
    "In the second outcome the PDF text reads 'de ﬁ ne' (ligature extraction artifact); recorded as 'define'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

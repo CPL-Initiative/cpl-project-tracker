@@ -110,33 +110,29 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.889,
+  "coverage": 0.667,
   "codes_found": [
    "ACCTG101",
    "ACCTG102",
    "ACCTG120",
-   "ACCTG130",
-   "ACCTG150",
-   "ACCTG160",
    "ACCTG180",
+   "BUSAD101",
    "CABOT270"
   ],
   "source": {
-   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=128",
-   "title": "ACCOUNTING",
-   "h1": "ACCOUNTING",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=89",
+   "title": "The following certiﬁ cates do not satisfy the major requirements for an AA/AS degree.",
+   "h1": "The following certiﬁ cates do not satisfy the major requirements for an AA/AS degree.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    128,
-    129,
-    130
+    89
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 3165
  },
  {
   "control_number": "02551",
@@ -330,8 +326,9 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 0.875,
   "codes_found": [
+   "ENGLC1000",
    "JOURN102",
    "JOURN103",
    "JOURN104",
@@ -598,18 +595,18 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-   "title": "NURSING - SEE REGISTERED NURSING",
-   "h1": "NURSING - SEE REGISTERED NURSING",
+   "title": "AS DEGREE OR CERTIFICATE",
+   "h1": "AS DEGREE OR CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     84
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 5398
+  "text_chars": 5353
  },
  {
   "control_number": "02577",
@@ -680,7 +677,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.533,
+  "coverage": 0.6,
   "codes_found": [
    "ENGL102",
    "ENGL103",
@@ -689,7 +686,8 @@
    "ENGL110",
    "ENGL112",
    "ENGL117",
-   "ENGL123"
+   "ENGL123",
+   "ENGLC1001"
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
@@ -712,7 +710,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
    "COMM100",
    "COMM103",
@@ -723,6 +721,7 @@
    "COMM120",
    "COMM160",
    "COMMC1000",
+   "ENGLC1000",
    "PSYCC1000",
    "SOC101"
   ],
@@ -1281,8 +1280,8 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-   "title": "BIOTECHNOLOGY",
-   "h1": "BIOTECHNOLOGY",
+   "title": "AS DEGREE",
+   "h1": "AS DEGREE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1290,10 +1289,10 @@
     68
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 8306
+  "text_chars": 6126
  },
  {
   "control_number": "11145",
@@ -1364,8 +1363,8 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-   "title": "CHOREOGRAPHIC STUDIES AND DANCE",
-   "h1": "CHOREOGRAPHIC STUDIES AND DANCE",
+   "title": "AS DEGREE OR CERTIFICATE",
+   "h1": "AS DEGREE OR CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1374,10 +1373,10 @@
     72
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 13940
+  "text_chars": 12024
  },
  {
   "control_number": "11153",
@@ -1427,7 +1426,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "ECON101",
    "ENGL102",
@@ -1440,13 +1439,16 @@
    "ENGL123",
    "ENGL125",
    "ENGL127",
+   "ENGLC1000",
+   "ENGLC1001",
    "HIST140",
    "HIST141",
    "JOURN102",
    "JOURN103",
    "JOURN104",
    "JOURN107",
-   "MEDIA101"
+   "MEDIA101",
+   "POLSC1000"
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
@@ -2910,18 +2912,18 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
-   "title": "FIRE ACADEMY",
-   "h1": "FIRE ACADEMY",
+   "title": "CERTIFICATE NON-DEGREE",
+   "h1": "CERTIFICATE NON-DEGREE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     104
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 4638
+  "text_chars": 4625
  },
  {
   "control_number": "18661",
@@ -3341,8 +3343,8 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
-   "title": "BIOTECHNOLOGY RESEARCH LAB ASSISTANT",
-   "h1": "BIOTECHNOLOGY RESEARCH LAB ASSISTANT",
+   "title": "CERTIFICATE",
+   "h1": "CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3350,10 +3352,10 @@
     93
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 9774
+  "text_chars": 6361
  },
  {
   "control_number": "19561",
@@ -3410,8 +3412,8 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-   "title": "CHOREOGRAPHIC STUDIES AND DANCE",
-   "h1": "CHOREOGRAPHIC STUDIES AND DANCE",
+   "title": "AS DEGREE OR CERTIFICATE",
+   "h1": "AS DEGREE OR CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3420,10 +3422,10 @@
     72
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 13940
+  "text_chars": 12024
  },
  {
   "control_number": "19563",
@@ -4099,7 +4101,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "ECON101",
    "ENGL102",
@@ -4112,13 +4114,16 @@
    "ENGL123",
    "ENGL125",
    "ENGL127",
+   "ENGLC1000",
+   "ENGLC1001",
    "HIST140",
    "HIST141",
    "JOURN102",
    "JOURN103",
    "JOURN104",
    "JOURN107",
-   "MEDIA101"
+   "MEDIA101",
+   "POLSC1000"
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
@@ -4466,19 +4471,20 @@
    "MUSIC242"
   ],
   "source": {
-   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109",
    "title": "MEDICAL CODING ASSISTANT",
    "h1": "MEDICAL CODING ASSISTANT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83
+    109,
+    110
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 35,
-  "text_chars": 5280
+  "text_chars": 10809
  },
  {
   "control_number": "21316",
@@ -4557,18 +4563,18 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-   "title": "NURSING - SEE REGISTERED NURSING",
-   "h1": "NURSING - SEE REGISTERED NURSING",
+   "title": "AS DEGREE OR CERTIFICATE",
+   "h1": "AS DEGREE OR CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     84
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 5398
+  "text_chars": 5353
  },
  {
   "control_number": "21319",
@@ -4696,12 +4702,13 @@
    "ABSE65"
   ],
   "source": {
-   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=277",
-   "title": "61",
-   "h1": "61",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=276",
+   "title": "Noncredit Continuing Education ADULT BASIC AND SECONDARY EDUCATION 273",
+   "h1": "Noncredit Continuing Education ADULT BASIC AND SECONDARY EDUCATION 273",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    276,
     277,
     278,
     279
@@ -5176,13 +5183,14 @@
    "label": null,
    "pages": [
     117,
-    118
+    118,
+    119
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 13,
-  "text_chars": 8816
+  "text_chars": 13702
  },
  {
   "control_number": "31597",
@@ -5358,13 +5366,15 @@
    "label": null,
    "pages": [
     116,
-    117
+    117,
+    118,
+    119
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 25,
-  "text_chars": 8435
+  "text_chars": 16000
  },
  {
   "control_number": "32178",
@@ -5980,12 +5990,13 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 0.8,
   "codes_found": [
    "ECON101",
    "ECON102",
    "ECON102H",
    "ECON127",
+   "ENGLC1001",
    "JOURN102",
    "JOURN103",
    "JOURN104",
@@ -6000,8 +6011,8 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
-   "title": "AA-T — GEOGRAPHY",
-   "h1": "AA-T — GEOGRAPHY",
+   "title": "AA-T — JOURNALISM",
+   "h1": "AA-T — JOURNALISM",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6340,8 +6351,8 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-   "title": "MASS COMMUNICATIONS",
-   "h1": "MASS COMMUNICATIONS",
+   "title": "AS DEGREE OR CERTIFICATE",
+   "h1": "AS DEGREE OR CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6349,10 +6360,10 @@
     83
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 10047
+  "text_chars": 6961
  },
  {
   "control_number": "35628",
@@ -6375,8 +6386,8 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-   "title": "MASS COMMUNICATIONS",
-   "h1": "MASS COMMUNICATIONS",
+   "title": "AS DEGREE OR CERTIFICATE",
+   "h1": "AS DEGREE OR CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6384,10 +6395,10 @@
     83
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 10047
+  "text_chars": 6961
  },
  {
   "control_number": "36102",
@@ -7007,18 +7018,18 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-   "title": "ITALIAN LANGUAGE",
-   "h1": "ITALIAN LANGUAGE",
+   "title": "AA DEGREE OR CERTIFICATE",
+   "h1": "AA DEGREE OR CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     77
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 5382
+  "text_chars": 2736
  },
  {
   "control_number": "36711",
@@ -7180,18 +7191,18 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-   "title": "ITALIAN LANGUAGE",
-   "h1": "ITALIAN LANGUAGE",
+   "title": "AA DEGREE OR CERTIFICATE",
+   "h1": "AA DEGREE OR CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     77
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 5382
+  "text_chars": 2736
  },
  {
   "control_number": "36720",
@@ -7598,8 +7609,8 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
-   "title": "Students completing an AS degree in Civil Engineering develop",
-   "h1": "Students completing an AS degree in Civil Engineering develop",
+   "title": "AS DEGREE",
+   "h1": "AS DEGREE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7610,7 +7621,7 @@
    "heading_named": true
   },
   "listed": 15,
-  "text_chars": 7839
+  "text_chars": 7867
  },
  {
   "control_number": "37856",
@@ -7692,7 +7703,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.9,
+  "coverage": 0.933,
   "codes_found": [
    "ANTHR105",
    "ARTH115",
@@ -7709,6 +7720,7 @@
    "ENGL122",
    "ENGL123",
    "ENGL127",
+   "ENGLC1000",
    "ENGLC1001",
    "GEOG103",
    "GEOL105",
@@ -7789,7 +7801,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "ENGL102",
    "ENGL103",
@@ -7801,6 +7813,7 @@
    "ENGL115",
    "ENGL118",
    "ENGL123",
+   "ENGLC1001",
    "HUMAN105",
    "HUMAN105H"
   ],
@@ -7948,7 +7961,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.906,
+  "coverage": 0.938,
   "codes_found": [
    "ADMJ101",
    "ANTHR102",
@@ -7964,6 +7977,7 @@
    "ECON102",
    "ECON102H",
    "ECON127",
+   "ENGLC1001",
    "ETHS121",
    "HIST117",
    "PSYC106",
@@ -8600,7 +8614,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL101",
    "BIOL112",
@@ -8611,6 +8625,7 @@
    "BIOL298",
    "BIOL50",
    "CHEM110",
+   "ENGLC1000",
    "MATH100"
   ],
   "source": {
@@ -8634,7 +8649,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL101",
    "BIOL112",
@@ -8643,6 +8658,7 @@
    "BIOL141",
    "BIOL142",
    "BIOL298",
+   "ENGLC1000",
    "MATH100"
   ],
   "source": {
@@ -8666,7 +8682,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL101",
    "BIOL112",
@@ -8674,6 +8690,7 @@
    "BIOL140",
    "BIOL141",
    "BIOL298",
+   "ENGLC1000",
    "MATH100"
   ],
   "source": {
@@ -8697,7 +8714,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL101",
    "BIOL112",
@@ -8708,6 +8725,7 @@
    "BIOL298",
    "BIOL50",
    "CHEM110",
+   "ENGLC1000",
    "MATH100"
   ],
   "source": {
@@ -8766,18 +8784,18 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=111",
-   "title": "PHOTOGRAPHY",
-   "h1": "PHOTOGRAPHY",
+   "title": "CERTIFICATE NON-DEGREE",
+   "h1": "CERTIFICATE NON-DEGREE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     111
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 5105
+  "text_chars": 2451
  },
  {
   "control_number": "41827",
@@ -8800,18 +8818,18 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-   "title": "NURSING - SEE REGISTERED NURSING",
-   "h1": "NURSING - SEE REGISTERED NURSING",
+   "title": "AS DEGREE OR CERTIFICATE",
+   "h1": "AS DEGREE OR CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     84
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 5398
+  "text_chars": 5353
  },
  {
   "control_number": "41828",
@@ -8862,18 +8880,18 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-   "title": "NURSING - SEE REGISTERED NURSING",
-   "h1": "NURSING - SEE REGISTERED NURSING",
+   "title": "AS DEGREE OR CERTIFICATE",
+   "h1": "AS DEGREE OR CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     84
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 5398
+  "text_chars": 5353
  },
  {
   "control_number": "42262",
@@ -9197,11 +9215,12 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.765,
+  "coverage": 0.824,
   "codes_found": [
    "ARMEN101",
    "ASL101",
    "CHIN101",
+   "ENGLC1000",
    "ESL151",
    "ESL155",
    "ESL159",
@@ -9237,7 +9256,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.857,
+  "coverage": 0.905,
   "codes_found": [
    "ANTHR102",
    "CHLDV101",
@@ -9255,6 +9274,7 @@
    "HIST121",
    "HIST131",
    "HIST132",
+   "POLSC1000",
    "SOC101",
    "SOC101H"
   ],
@@ -9373,8 +9393,8 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-   "title": "ENGLISH: CREATIVE WRITING",
-   "h1": "ENGLISH: CREATIVE WRITING",
+   "title": "AA DEGREE OR CERTIFICATE",
+   "h1": "AA DEGREE OR CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9382,10 +9402,10 @@
     76
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 10574
+  "text_chars": 8483
  },
  {
   "control_number": "44569",
@@ -9405,8 +9425,8 @@
   ],
   "source": {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-   "title": "ENGLISH: CREATIVE WRITING",
-   "h1": "ENGLISH: CREATIVE WRITING",
+   "title": "AA DEGREE OR CERTIFICATE",
+   "h1": "AA DEGREE OR CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9414,10 +9434,10 @@
     76
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 10574
+  "text_chars": 8483
  },
  {
   "control_number": "44570",
@@ -9594,19 +9614,20 @@
    "MUSIC127"
   ],
   "source": {
-   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-   "title": "MEDICAL CODING ASSISTANT",
-   "h1": "MEDICAL CODING ASSISTANT",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109",
+   "title": "CERTIFICATE NON-DEGREE",
+   "h1": "CERTIFICATE NON-DEGREE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83
+    109,
+    110
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 5280
+  "text_chars": 6665
  },
  {
   "control_number": "44774",
@@ -10106,20 +10127,20 @@
    "ENTRE103"
   ],
   "source": {
-   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-   "title": "BIOTECHNOLOGY",
-   "h1": "BIOTECHNOLOGY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+   "title": "CERTIFICATE",
+   "h1": "CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    67,
-    68
+    92,
+    93
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 8306
+  "text_chars": 6361
  },
  {
   "control_number": "45596",

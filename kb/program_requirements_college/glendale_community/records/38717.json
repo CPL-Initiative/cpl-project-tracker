@@ -46,16 +46,14 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 17,
    "listed": 26,
-   "share": 0.577,
+   "share": 0.654,
    "missing": [
     "COMM115",
     "ECON127",
     "HIST111H",
-    "PSYC105",
     "PSYC131",
-    "PSYC200",
     "SOC108",
     "SOC200",
     "STATC1000",
@@ -67,16 +65,12 @@
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "MATH136",
-    "PSYCH105",
-    "PSYCH200"
+    "MATH136"
    ],
    "flagged": [
-    "MATH136",
-    "PSYCH105",
-    "PSYCH200"
+    "MATH136"
    ],
    "pass": true
   },
@@ -85,7 +79,7 @@
    "status": "unequal",
    "computed": [
     18.0,
-    18.0
+    19.0
    ],
    "stated": [
     18.0,
@@ -93,7 +87,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 18.0-18.0; the catalog states 18.0-20.0"
+    "the blocks sum to 18.0-19.0; the catalog states 18.0-20.0"
    ]
   },
   "repeated": {
@@ -352,5 +346,6 @@
   ],
   "notes": []
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

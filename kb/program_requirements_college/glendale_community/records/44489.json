@@ -46,27 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 16,
-   "share": 0.938,
-   "missing": [
-    "THTR101"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "ART130",
-    "ESL156",
-    "TART101"
+    "ESL156"
    ],
    "flagged": [
     "ART130",
-    "ESL156",
-    "TART101"
+    "ESL156"
    ],
    "pass": true
   },
@@ -305,5 +301,6 @@
    "Total stated as 'a minimum of 17 units'; recorded as 17."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

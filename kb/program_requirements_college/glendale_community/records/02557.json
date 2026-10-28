@@ -46,24 +46,20 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 8,
    "listed": 8,
-   "share": 0.875,
-   "missing": [
-    "ENGLC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ENGL101",
     "MCOMM101"
    ],
    "flagged": [
-    "ENGL101",
     "MCOMM101"
    ],
    "pass": true
@@ -243,5 +239,6 @@
    "The description names public relations only as a transfer field of study, not a career, so careers is empty."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

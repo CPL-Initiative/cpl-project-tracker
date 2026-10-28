@@ -46,28 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 26,
    "listed": 26,
-   "share": 0.923,
-   "missing": [
-    "PSYC106",
-    "THTR173"
-   ],
-   "unexplained": [
-    "PSYC106",
-    "THTR173"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "PSYCH106",
-    "TART173"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -81,11 +72,8 @@
     31.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 30.0-32.0; the catalog states 30.0-31.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -424,5 +412,6 @@
    "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

@@ -84,7 +84,7 @@
    "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -236,5 +236,6 @@
    "No GE pattern, degree total, or named careers are printed in this section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

@@ -46,9 +46,9 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 7,
    "listed": 20,
-   "share": 0.25,
+   "share": 0.35,
    "missing": [
     "COMM104",
     "COMM120",
@@ -56,12 +56,10 @@
     "ECON102",
     "ECON102H",
     "ECON127",
-    "ENGLC1001",
     "MCOMM120",
     "PHILO117",
     "PHOTO100",
     "POLS102",
-    "POLSC1000",
     "STATC1000",
     "STATC1000E",
     "STATC1000H"
@@ -71,18 +69,14 @@
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
-    "ENGL104",
     "JOURN110",
-    "JOURN250",
-    "POLS101"
+    "JOURN250"
    ],
    "flagged": [
-    "ENGL104",
     "JOURN110",
-    "JOURN250",
-    "POLS101"
+    "JOURN250"
    ],
    "pass": true
   },
@@ -329,5 +323,6 @@
    "No GE pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

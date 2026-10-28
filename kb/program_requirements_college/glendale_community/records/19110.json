@@ -46,29 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 25,
    "listed": 26,
-   "share": 0.885,
+   "share": 0.962,
    "missing": [
-    "HLTH110",
-    "PSYC106",
-    "THTR173"
+    "HLTH110"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "HLTH101",
-    "PSYCH106",
-    "TART173"
+    "HLTH101"
    ],
    "flagged": [
-    "HLTH101",
-    "PSYCH106",
-    "TART173"
+    "HLTH101"
    ],
    "pass": true
   },
@@ -434,5 +428,6 @@
    "Career 'teaching dance' taken from the description: 'enter the workforce teaching dance to all age groups in private studios, fitness centers, community centers, and school and after school programs'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

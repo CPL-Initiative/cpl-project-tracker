@@ -46,41 +46,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 13,
    "listed": 13,
-   "share": 0.923,
-   "missing": [
-    "ENGLC1001"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGL104"
-   ],
-   "flagged": [
-    "ENGL104"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    9.0,
-    9.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -282,5 +274,6 @@
    "Outcomes are printed as one semicolon-separated sentence; split at the semicolons. 'writt en' is copied as printed (PDF ligature artifact for 'written')."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

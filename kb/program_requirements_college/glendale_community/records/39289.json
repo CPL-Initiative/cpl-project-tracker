@@ -46,24 +46,18 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 31,
+   "placed": 32,
    "listed": 32,
-   "share": 0.969,
-   "missing": [
-    "ENGLC1001"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGL104"
-   ],
-   "flagged": [
-    "ENGL104"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -389,5 +383,6 @@
    "The list separator in List A ('HIST 117; 118 or 118H') was read as HIST 117 alone and HIST 118 or HIST 118H as one choice."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

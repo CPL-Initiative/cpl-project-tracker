@@ -46,35 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 25,
+   "placed": 29,
    "listed": 30,
-   "share": 0.833,
+   "share": 0.967,
    "missing": [
-    "COMMC1000",
-    "ENGLC1000",
-    "ENGLC1001",
-    "POLSC1000",
-    "THTR101"
+    "COMMC1000"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 1,
    "codes": [
-    "ENGL101",
-    "ENGL104",
-    "POLS101",
-    "SPCH101",
-    "TART101"
+    "SPCH101"
    ],
    "flagged": [
-    "ENGL101",
-    "ENGL104",
-    "POLS101",
-    "SPCH101",
-    "TART101"
+    "SPCH101"
    ],
    "pass": true
   },
@@ -444,5 +432,6 @@
    "No general education pattern, degree total, or careers are printed for this award."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

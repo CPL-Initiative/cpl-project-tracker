@@ -46,41 +46,34 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 25,
    "listed": 25,
-   "share": 0.96,
-   "missing": [
-    "PSYC200"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "PSYCH200"
-   ],
-   "flagged": [
-    "PSYCH200"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
-    18.0
+    21.0
    ],
    "stated": [
     18.0,
     19.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-18.0; the catalog states 18.0-19.0"
-   ]
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -107,7 +100,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -362,5 +355,6 @@
    "No general education pattern or degree total is printed in this section; the asterisk on the major total refers to a footnote not included in the text."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

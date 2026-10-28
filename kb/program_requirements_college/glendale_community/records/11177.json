@@ -46,37 +46,20 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 28,
    "listed": 28,
-   "share": 0.821,
-   "missing": [
-    "THTR101",
-    "THTR103",
-    "THTR104",
-    "THTR109",
-    "THTR123"
-   ],
-   "unexplained": [
-    "THTR101",
-    "THTR103",
-    "THTR104",
-    "THTR109",
-    "THTR123"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 5,
    "codes": [
     "ART130",
     "DANCE126",
     "DANCE128",
-    "TART101",
-    "TART103",
-    "TART104",
-    "TART109",
-    "TART123",
     "TART129",
     "TART134"
    ],
@@ -87,7 +70,7 @@
     "TART129",
     "TART134"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -128,7 +111,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -433,5 +416,6 @@
    "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

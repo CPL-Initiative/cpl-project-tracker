@@ -46,9 +46,9 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 59,
+   "placed": 66,
    "listed": 87,
-   "share": 0.678,
+   "share": 0.759,
    "missing": [
     "ANTHR101",
     "CHLDV142",
@@ -68,31 +68,16 @@
     "POLS110",
     "POLS112",
     "PSYC103",
-    "PSYC104",
-    "PSYC105",
-    "PSYC106",
     "PSYC110",
-    "PSYC113",
-    "PSYC115",
-    "PSYC131",
-    "PSYC150",
     "PSYC203",
     "SOC140"
    ],
-   "unexplained": [
-    "PSYC104",
-    "PSYC105",
-    "PSYC106",
-    "PSYC113",
-    "PSYC115",
-    "PSYC131",
-    "PSYC150"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 50,
+   "count": 43,
    "codes": [
     "ANTHR102H",
     "ANTHR114",
@@ -125,14 +110,7 @@
     "POLS170",
     "POLS171",
     "PSYCC1000H",
-    "PSYCH104",
     "PSYCH104H",
-    "PSYCH105",
-    "PSYCH106",
-    "PSYCH113",
-    "PSYCH115",
-    "PSYCH131",
-    "PSYCH150",
     "PSYCH200",
     "SOC101H",
     "SOC108",
@@ -190,7 +168,7 @@
     "SPCH115",
     "SPCH120"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -1125,5 +1103,6 @@
    "Program learning outcomes are printed as run-in prose; split into three sentences as printed, with the lead-in 'Upon completion of this program, students will be able to' removed from the first. The PDF ligature artifact 'e ﬀ ectively' is kept as printed."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

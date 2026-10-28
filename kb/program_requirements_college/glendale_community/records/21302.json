@@ -46,32 +46,29 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 10,
    "listed": 11,
-   "share": 0.818,
+   "share": 0.909,
    "missing": [
-    "PHOTO160",
-    "THTR100"
+    "PHOTO160"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 4,
    "codes": [
     "ENGL112",
     "PHOTO106",
     "PHOTO121",
-    "PHOTO130",
-    "TART100"
+    "PHOTO130"
    ],
    "flagged": [
     "ENGL112",
     "PHOTO106",
     "PHOTO121",
-    "PHOTO130",
-    "TART100"
+    "PHOTO130"
    ],
    "pass": true
   },
@@ -287,5 +284,6 @@
    "ENGL 112, PHOTO 121, PHOTO 106 and PHOTO 130 are in the catalog section but not on the closed list."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

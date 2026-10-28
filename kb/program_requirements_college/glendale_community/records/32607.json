@@ -46,25 +46,20 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 32,
+   "placed": 33,
    "listed": 34,
-   "share": 0.941,
+   "share": 0.971,
    "missing": [
-    "ETHS110",
-    "PSYC200"
+    "ETHS110"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "PSYCH200"
-   ],
-   "flagged": [
-    "PSYCH200"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -430,5 +425,6 @@
    "No general education pattern, degree total, or careers are printed in this section. Required Units for Major: 18-23 units* (asterisk footnote not included in the text)."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

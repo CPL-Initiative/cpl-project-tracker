@@ -46,50 +46,32 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 30,
    "listed": 31,
-   "share": 0.774,
+   "share": 0.968,
    "missing": [
-    "PSYC105",
-    "PSYC110",
-    "PSYC113",
-    "PSYC115",
-    "PSYC131",
-    "PSYC200",
     "PSYCH104"
    ],
    "unexplained": [
-    "PSYC105",
-    "PSYC110",
-    "PSYC113",
-    "PSYC115",
-    "PSYC131",
-    "PSYC200",
     "PSYCH104"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 7,
+   "count": 1,
    "codes": [
-    "PSYC104",
-    "PSYCH105",
-    "PSYCH110",
-    "PSYCH113",
-    "PSYCH115",
-    "PSYCH131",
-    "PSYCH200"
+    "PSYC104"
    ],
    "flagged": [],
    "pass": false
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    9.0,
-    10.0
+    20.0,
+    22.0
    ],
    "stated": [
     20.0,
@@ -97,7 +79,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Required Core' has no units"
+    "the blocks sum to 20.0-22.0; the catalog states 20.0-25.0"
    ]
   },
   "repeated": {
@@ -425,5 +407,6 @@
    "Ligature artifacts in the outcomes ('aﬀ ect', 'speciﬁ c') are rendered as 'affect' and 'specific'. The program learning outcomes are printed inline after a lead-in sentence."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

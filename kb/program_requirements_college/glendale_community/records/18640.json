@@ -46,44 +46,22 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 97,
+   "placed": 104,
    "listed": 107,
-   "share": 0.907,
+   "share": 0.972,
    "missing": [
     "COMM108",
     "COMM115",
-    "COMM120",
-    "PSYC104H",
-    "PSYC105",
-    "PSYC106",
-    "PSYC113",
-    "PSYC115",
-    "PSYC131",
-    "PSYC150"
+    "COMM120"
    ],
-   "unexplained": [
-    "PSYC104H",
-    "PSYC105",
-    "PSYC106",
-    "PSYC113",
-    "PSYC115",
-    "PSYC131",
-    "PSYC150"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 12,
+   "count": 5,
    "codes": [
     "MCOMM101",
-    "PSYCH104H",
-    "PSYCH105",
-    "PSYCH106",
-    "PSYCH113",
-    "PSYCH115",
-    "PSYCH131",
-    "PSYCH150",
     "PSYCH200",
     "SPCH108",
     "SPCH115",
@@ -96,7 +74,7 @@
     "SPCH115",
     "SPCH120"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -960,5 +938,6 @@
    "No careers named in the section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }
