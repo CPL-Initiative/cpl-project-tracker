@@ -407,6 +407,42 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "AP Art History Area 3A": {
+   "raw_title": "AP Art History Area 3A",
+   "unified_title": "AP Art History",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Articulation-area suffix 'Area 3A' stripped; joins AP Art History family.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP Art History Area 3B": {
+   "raw_title": "AP Art History Area 3B",
+   "unified_title": "AP Art History",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Articulation-area suffix 'Area 3B' stripped; joins AP Art History family.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "AP Art History HS-LEUSD": {
    "raw_title": "AP Art History HS-LEUSD",
    "unified_title": "AP Art History",
@@ -699,6 +735,24 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "AP Calculus AB Area 2": {
+   "raw_title": "AP Calculus AB Area 2",
+   "unified_title": "AP Calculus AB",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Area suffix stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "AP Calculus BC (Score of 3 or higher)": {
    "raw_title": "AP Calculus BC (Score of 3 or higher)",
    "unified_title": "AP Calculus BC",
@@ -974,6 +1028,24 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "AP Calculus BC Area 2": {
+   "raw_title": "AP Calculus BC Area 2",
+   "unified_title": "AP Calculus BC",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Area suffix stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "AP Calculus BC with AB subscore": {
    "raw_title": "AP Calculus BC with AB subscore",
    "unified_title": "AP Calculus BC — AB Subscore",
@@ -1040,6 +1112,24 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "AP Calculus BC/AB Subscore - Area 2": {
+   "raw_title": "AP Calculus BC/AB Subscore - Area 2",
+   "unified_title": "AP Calculus BC — AB Subscore",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.92,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Area suffix stripped; joins existing AB-subscore family rather than full BC.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "AP Calculus BC/AB Subscore - Score of 3": {
    "raw_title": "AP Calculus BC/AB Subscore - Score of 3",
@@ -2445,6 +2535,42 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "AP European History - Area 3B": {
+   "raw_title": "AP European History - Area 3B",
+   "unified_title": "AP European History",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Area suffix stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP European History - Area 4": {
+   "raw_title": "AP European History - Area 4",
+   "unified_title": "AP European History",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Area suffix stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "AP European History - Area C": {
    "raw_title": "AP European History - Area C",
    "unified_title": "AP European History",
@@ -2652,6 +2778,42 @@
    "_notes": "Score band and historical version note stripped.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "AP French Language and Culture, Score of 3": {
+   "raw_title": "AP French Language and Culture, Score of 3",
+   "unified_title": "AP French Language and Culture",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Score band stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP French Language and Culture, Score of 4-5": {
+   "raw_title": "AP French Language and Culture, Score of 4-5",
+   "unified_title": "AP French Language and Culture",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Score band stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "AP German Language and Culture (Score of 3 or higher)": {
    "raw_title": "AP German Language and Culture (Score of 3 or higher)",
@@ -3543,6 +3705,42 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "AP Music Theory, Score of 3-4": {
+   "raw_title": "AP Music Theory, Score of 3-4",
+   "unified_title": "AP Music Theory",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Score band stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP Music Theory, Score of 5": {
+   "raw_title": "AP Music Theory, Score of 5",
+   "unified_title": "AP Music Theory",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Score band stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "AP Physics 1 & 2": {
    "raw_title": "AP Physics 1 & 2",
    "unified_title": "AP Physics",
@@ -3780,6 +3978,24 @@
    "_notes": "Score band stripped.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "AP Physics C  - Electricity / Magnetism": {
+   "raw_title": "AP Physics C  - Electricity / Magnetism",
+   "unified_title": "AP Physics C: Electricity and Magnetism",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.96,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Whitespace/slash noise normalized to house family name.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "AP Physics C (Electricity and Magnetism) (Score of 3)": {
    "raw_title": "AP Physics C (Electricity and Magnetism) (Score of 3)",
@@ -4067,6 +4283,24 @@
    "_notes": "Score band and historical-type note stripped; joined existing AP family.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "AP PreCalculus - Area 2": {
+   "raw_title": "AP PreCalculus - Area 2",
+   "unified_title": "AP Precalculus",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Area suffix stripped; casing normalized to house family.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "AP Precalculus (Score of 3 or higher)": {
    "raw_title": "AP Precalculus (Score of 3 or higher)",
@@ -4565,6 +4799,42 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "AP Spanish Language and Culture, Score of 3": {
+   "raw_title": "AP Spanish Language and Culture, Score of 3",
+   "unified_title": "AP Spanish Language and Culture",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Score band stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP Spanish Language and Culture, Score of 4-5": {
+   "raw_title": "AP Spanish Language and Culture, Score of 4-5",
+   "unified_title": "AP Spanish Language and Culture",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Score band stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "AP Spanish Literature & Culture - Area 3": {
    "raw_title": "AP Spanish Literature & Culture - Area 3",
    "unified_title": "AP Spanish Literature and Culture",
@@ -4706,6 +4976,42 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "AP Spanish Literature and Culture, Score of 3": {
+   "raw_title": "AP Spanish Literature and Culture, Score of 3",
+   "unified_title": "AP Spanish Literature and Culture",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP Spanish Literature and Culture, Score of 4-5": {
+   "raw_title": "AP Spanish Literature and Culture, Score of 4-5",
+   "unified_title": "AP Spanish Literature and Culture",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "AP Statistics (STAT C1000)": {
    "raw_title": "AP Statistics (STAT C1000)",
    "unified_title": "AP Statistics",
@@ -4773,6 +5079,24 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "AP Statistics - Area 2": {
+   "raw_title": "AP Statistics - Area 2",
+   "unified_title": "AP Statistics",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.98,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "AP Statistics - Score of 3": {
    "raw_title": "AP Statistics - Score of 3",
@@ -4962,6 +5286,60 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "AP Studio Art: 2D Design": {
+   "raw_title": "AP Studio Art: 2D Design",
+   "unified_title": "AP 2-D Art and Design",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 3",
+    "Rule 5d"
+   ],
+   "_notes": "AP Studio Art: 2-D Design is the pre-2019 name of AP 2-D Art and Design; joined as a version variant.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP Studio Art: 3D Design": {
+   "raw_title": "AP Studio Art: 3D Design",
+   "unified_title": "AP 3-D Art and Design",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 3",
+    "Rule 5d"
+   ],
+   "_notes": "AP Studio Art: 3-D Design is the pre-2019 name of AP 3-D Art and Design; joined as a version variant.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP Studio Art: Drawing": {
+   "raw_title": "AP Studio Art: Drawing",
+   "unified_title": "AP Drawing",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.92,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 3",
+    "Rule 5d"
+   ],
+   "_notes": "AP Studio Art: Drawing is the pre-2019 name of AP Drawing.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "AP U.S Government and Politics": {
    "raw_title": "AP U.S Government and Politics",
    "unified_title": "AP U.S. Government and Politics",
@@ -5118,6 +5496,42 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "AP U.S. History,  Area 4": {
+   "raw_title": "AP U.S. History,  Area 4",
+   "unified_title": "AP U.S. History",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP U.S. History, Area 3B": {
+   "raw_title": "AP U.S. History, Area 3B",
+   "unified_title": "AP U.S. History",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "AP United States Government and Politics - Area 4": {
    "raw_title": "AP United States Government and Politics - Area 4",
    "unified_title": "AP United States Government and Politics",
@@ -5203,6 +5617,80 @@
    "_notes": "AP World History was renamed AP World History: Modern in 2019-20. The two are treated as one exam across versions, and faculty may split the pre-2020 exam out.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "AP World History Modern - Area 3B": {
+   "raw_title": "AP World History Modern - Area 3B",
+   "unified_title": "AP World History: Modern",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP World History Modern - Area 4": {
+   "raw_title": "AP World History Modern - Area 4",
+   "unified_title": "AP World History: Modern",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP World History, Area 3B": {
+   "raw_title": "AP World History, Area 3B",
+   "unified_title": "AP World History: Modern",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 3",
+    "join-when-likely-one",
+    "Rule 5d"
+   ],
+   "_notes": "AP World History (pre-2019 name, broader time span) joined to AP World History: Modern as a version variant; faculty may split later.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP World History, Area 4": {
+   "raw_title": "AP World History, Area 4",
+   "unified_title": "AP World History: Modern",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 3",
+    "join-when-likely-one",
+    "Rule 5d"
+   ],
+   "_notes": "AP World History (pre-2019 name, broader time span) joined to AP World History: Modern as a version variant; faculty may split later.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "AP World History: Modern (Score of 3 or higher)": {
    "raw_title": "AP World History: Modern (Score of 3 or higher)",
@@ -5307,6 +5795,42 @@
    "_notes": "Score qualifier and HISTORICAL type note stripped as version decoration.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "AP World History: Modern, Area 3": {
+   "raw_title": "AP World History: Modern, Area 3",
+   "unified_title": "AP World History: Modern",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.98,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "AP World History: Modern, Area 4": {
+   "raw_title": "AP World History: Modern, Area 4",
+   "unified_title": "AP World History: Modern",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.98,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "AP  Statistics (Score of 4 or 5)": {
    "raw_title": "AP  Statistics (Score of 4 or 5)",
@@ -7679,6 +8203,24 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "CLEP Biology, Area 5B": {
+   "raw_title": "CLEP Biology, Area 5B",
+   "unified_title": "CLEP Biology",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.98,
+   "confidence_issuer": 0.99,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "CLEP Calculus (Score of 50 or higher)": {
    "raw_title": "CLEP Calculus (Score of 50 or higher)",
    "unified_title": "CLEP Calculus",
@@ -7695,6 +8237,24 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "CLEP Calculus, Area 2": {
+   "raw_title": "CLEP Calculus, Area 2",
+   "unified_title": "CLEP Calculus",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Articulation-area suffix stripped; joins house CLEP family.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "CLEP Chemistry (ACE Recommended Score of 50)": {
    "raw_title": "CLEP Chemistry (ACE Recommended Score of 50)",
@@ -8157,6 +8717,24 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "CLEP History, United States I: Early Colonization to 1877": {
+   "raw_title": "CLEP History, United States I: Early Colonization to 1877",
+   "unified_title": "CLEP History of the United States 1",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.96,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Exam subtitle stripped; joins house family.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "CLEP History, United States II (ACE Recommended Score of 50)": {
    "raw_title": "CLEP History, United States II (ACE Recommended Score of 50)",
    "unified_title": "CLEP History of the United States 2",
@@ -8190,6 +8768,24 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "CLEP History, United States II: 1865 to the Present": {
+   "raw_title": "CLEP History, United States II: 1865 to the Present",
+   "unified_title": "CLEP History of the United States 2",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.96,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Exam subtitle stripped; joins house family.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "CLEP Human Growth and Development (ACE Recommended Score of 50)": {
    "raw_title": "CLEP Human Growth and Development (ACE Recommended Score of 50)",
@@ -8397,6 +8993,42 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "CLEP Natural Sciences, Area 5A": {
+   "raw_title": "CLEP Natural Sciences, Area 5A",
+   "unified_title": "CLEP Natural Sciences",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Area suffix stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "CLEP Natural Sciences, Area 5B": {
+   "raw_title": "CLEP Natural Sciences, Area 5B",
+   "unified_title": "CLEP Natural Sciences",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Area suffix stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "CLEP Precalculus (Score of 50 or higher)": {
    "raw_title": "CLEP Precalculus (Score of 50 or higher)",
    "unified_title": "CLEP Precalculus",
@@ -8464,6 +9096,24 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "CLEP Principles of Macroeconomics - Area 4": {
+   "raw_title": "CLEP Principles of Macroeconomics - Area 4",
+   "unified_title": "CLEP Principles of Macroeconomics",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Area suffix stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "CLEP Principles of Management (Score of 50 or higher)": {
    "raw_title": "CLEP Principles of Management (Score of 50 or higher)",
@@ -8551,6 +9201,24 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "CLEP Principles of Microeconomics - Area 4": {
+   "raw_title": "CLEP Principles of Microeconomics - Area 4",
+   "unified_title": "CLEP Principles of Microeconomics",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Area suffix stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "CLEP Spanish Language: Levels 1 and 2": {
    "raw_title": "CLEP Spanish Language: Levels 1 and 2",
@@ -8756,6 +9424,78 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "CLEP Western Civilization I - Area 3B": {
+   "raw_title": "CLEP Western Civilization I - Area 3B",
+   "unified_title": "CLEP Western Civilization 1",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Area suffix stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "CLEP Western Civilization I - Area 4": {
+   "raw_title": "CLEP Western Civilization I - Area 4",
+   "unified_title": "CLEP Western Civilization 1",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Area suffix stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "CLEP Western Civilization I: Ancient Near East to 1648 (Area 3)": {
+   "raw_title": "CLEP Western Civilization I: Ancient Near East to 1648 (Area 3)",
+   "unified_title": "CLEP Western Civilization 1",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Subtitle and area suffix stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "CLEP Western Civilization I: Ancient Near East to 1648 (Area 4)": {
+   "raw_title": "CLEP Western Civilization I: Ancient Near East to 1648 (Area 4)",
+   "unified_title": "CLEP Western Civilization 1",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Subtitle and area suffix stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "CLEP Western Civilization II (1648 to the Present)": {
    "raw_title": "CLEP Western Civilization II (1648 to the Present)",
@@ -10711,6 +11451,76 @@
    "_notes": "No house DSST family for Physical Geography (likely a retired DANTES exam); new title proposed in the DSST family shape, distinct from the local course family Physical Geography.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "DSST Business 475 Business Ethics and Society": {
+   "raw_title": "DSST Business 475 Business Ethics and Society",
+   "unified_title": "DSST Business Ethics and Society",
+   "issuing_agency": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1"
+   ],
+   "_notes": "Exam category/number stripped; joins house DSST family.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "DSST Business 532 Principles of Supervision - Business": {
+   "raw_title": "DSST Business 532 Principles of Supervision - Business",
+   "unified_title": "DSST Principles of Supervision",
+   "issuing_agency": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 2"
+   ],
+   "_notes": "Articulation-area suffix (Business) stripped; same exam as Management variant.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "DSST Business 532 Principles of Supervision - Management": {
+   "raw_title": "DSST Business 532 Principles of Supervision - Management",
+   "unified_title": "DSST Principles of Supervision",
+   "issuing_agency": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 2"
+   ],
+   "_notes": "Articulation-area suffix (Management) stripped; same exam as Business variant.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "DSST Physical Science 508 Health and Human Development": {
+   "raw_title": "DSST Physical Science 508 Health and Human Development",
+   "unified_title": "DSST Health and Human Development",
+   "issuing_agency": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1"
+   ],
+   "_notes": "Exam category/number stripped; joins house DSST family.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "Dance Rehearsal & Performance I": {
    "raw_title": "Dance Rehearsal & Performance I",
@@ -13944,6 +14754,42 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "IB History HL, any region (Area 3)": {
+   "raw_title": "IB History HL, any region (Area 3)",
+   "unified_title": "IB History HL",
+   "issuing_agency": "International Baccalaureate Organization (IBO)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Joined the IB History HL house family; the region and articulation-area suffixes were stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "IB History HL, any region (Area 4)": {
+   "raw_title": "IB History HL, any region (Area 4)",
+   "unified_title": "IB History HL",
+   "issuing_agency": "International Baccalaureate Organization (IBO)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Joined the IB History HL house family; the region and articulation-area suffixes were stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
   "IB History, any region HL": {
    "raw_title": "IB History, any region HL",
    "unified_title": "IB History HL",
@@ -13960,6 +14806,42 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "IB History, any region HL - Area 3B": {
+   "raw_title": "IB History, any region HL - Area 3B",
+   "unified_title": "IB History HL",
+   "issuing_agency": "International Baccalaureate Organization (IBO)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Joined the IB History HL house family; the region and area suffixes were stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "IB History, any region HL - Area 4": {
+   "raw_title": "IB History, any region HL - Area 4",
+   "unified_title": "IB History HL",
+   "issuing_agency": "International Baccalaureate Organization (IBO)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ],
+   "_notes": "Joined the IB History HL house family; the region and area suffixes were stripped.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "IB Language A - any language except English HL": {
    "raw_title": "IB Language A - any language except English HL",
@@ -14422,6 +15304,40 @@
    "_notes": "Singular/plural wording variant normalized to the house IB family title.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "IB Mathematics HL: Analysis and Approaches": {
+   "raw_title": "IB Mathematics HL: Analysis and Approaches",
+   "unified_title": "IB Mathematics: Analysis and Approaches HL",
+   "issuing_agency": "International Baccalaureate Organization (IBO)",
+   "training_agency": null,
+   "confidence_title": 0.96,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 5d"
+   ],
+   "_notes": "Joined the house family as written; the source only reorders the HL marker.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
+  },
+  "IB Mathematics HL: Applications and Interpretation": {
+   "raw_title": "IB Mathematics HL: Applications and Interpretation",
+   "unified_title": "IB Mathematics: Applications and Interpretation HL",
+   "issuing_agency": "International Baccalaureate Organization (IBO)",
+   "training_agency": null,
+   "confidence_title": 0.96,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 5d"
+   ],
+   "_notes": "Joined the house family as written; the source only reorders the HL marker.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-28"
   },
   "IB Mathematics: Analysis and Approaches HL (Score of 4 or higher)": {
    "raw_title": "IB Mathematics: Analysis and Approaches HL (Score of 4 or higher)",
@@ -17763,6 +18679,24 @@
    "rules": "575c290d755b",
    "hints": "8fa4c03bee",
    "asked": "2026-10-18"
+  },
+  "Noncredit for CIS 100": {
+   "raw_title": "Noncredit for CIS 100",
+   "unified_title": "AI (Artificial Intelligence) in the Workplace",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint was set aside because it kept the method phrase and course code. Took the catalog title for Las Positas CIS 100; verify the COCI join. No named outside trainer, so the issuer is California Community Colleges.",
+   "rules": "575c290d755b",
+   "hints": "f42a3e628a",
+   "asked": "2026-10-28"
   },
   "Noncredit for ENG 110": {
    "raw_title": "Noncredit for ENG 110",

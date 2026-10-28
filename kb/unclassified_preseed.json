@@ -1,10 +1,10 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-10-27T13:39:55Z",
- "_queue_count": 432,
+ "_generated_at": "2026-10-28T14:36:40Z",
+ "_queue_count": 489,
  "_counts": {
-  "staged": 396,
-  "needs_you": 450,
+  "staged": 453,
+  "needs_you": 453,
   "not_yet_asked": 0
  },
  "_residual": [],
@@ -150,6 +150,32 @@
     "Rule 5c"
    ]
   },
+  "AP Art History Area 3A": {
+   "title": "AP Art History",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Articulation-area suffix 'Area 3A' stripped; joins AP Art History family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP Art History Area 3B": {
+   "title": "AP Art History",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Articulation-area suffix 'Area 3B' stripped; joins AP Art History family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
   "AP Art History HS-LEUSD": {
    "title": "AP Art History",
    "issuer": "College Board",
@@ -164,6 +190,45 @@
     "join-when-likely-one"
    ],
    "trainer": "Lake Elsinore Unified School District (LEUSD)"
+  },
+  "AP Calculus AB Area 2": {
+   "title": "AP Calculus AB",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Area suffix stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP Calculus BC Area 2": {
+   "title": "AP Calculus BC",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Area suffix stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP Calculus BC/AB Subscore - Area 2": {
+   "title": "AP Calculus BC — AB Subscore",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "Area suffix stripped; joins existing AB-subscore family rather than full BC.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
   },
   "AP Calculus: PreCalculus": {
    "title": "AP Precalculus",
@@ -260,6 +325,58 @@
     "Rule 1"
    ]
   },
+  "AP European History - Area 3B": {
+   "title": "AP European History",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Area suffix stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP European History - Area 4": {
+   "title": "AP European History",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Area suffix stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP French Language and Culture, Score of 3": {
+   "title": "AP French Language and Culture",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Score band stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP French Language and Culture, Score of 4-5": {
+   "title": "AP French Language and Culture",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Score band stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
   "AP History – World History (Area A-3)": {
    "title": "AP World History: Modern",
    "issuer": "College Board",
@@ -303,6 +420,32 @@
     "join-when-likely-one"
    ]
   },
+  "AP Music Theory, Score of 3-4": {
+   "title": "AP Music Theory",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Score band stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP Music Theory, Score of 5": {
+   "title": "AP Music Theory",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Score band stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
   "AP Physics 1 & 2": {
    "title": "AP Physics",
    "issuer": "College Board",
@@ -314,6 +457,162 @@
     "brand-family",
     "Rule 5d",
     "Rule 4"
+   ]
+  },
+  "AP Physics C  - Electricity / Magnetism": {
+   "title": "AP Physics C: Electricity and Magnetism",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.96,
+   "note": "Whitespace/slash noise normalized to house family name.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP PreCalculus - Area 2": {
+   "title": "AP Precalculus",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Area suffix stripped; casing normalized to house family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP Spanish Language and Culture, Score of 3": {
+   "title": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Score band stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP Spanish Language and Culture, Score of 4-5": {
+   "title": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Score band stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP Spanish Literature and Culture, Score of 3": {
+   "title": "AP Spanish Literature and Culture",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP Spanish Literature and Culture, Score of 4-5": {
+   "title": "AP Spanish Literature and Culture",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP Statistics - Area 2": {
+   "title": "AP Statistics",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.98,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP Studio Art: 2D Design": {
+   "title": "AP 2-D Art and Design",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "AP Studio Art: 2-D Design is the pre-2019 name of AP 2-D Art and Design; joined as a version variant.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 3",
+    "Rule 5d"
+   ]
+  },
+  "AP Studio Art: 3D Design": {
+   "title": "AP 3-D Art and Design",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "AP Studio Art: 3-D Design is the pre-2019 name of AP 3-D Art and Design; joined as a version variant.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 3",
+    "Rule 5d"
+   ]
+  },
+  "AP Studio Art: Drawing": {
+   "title": "AP Drawing",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "AP Studio Art: Drawing is the pre-2019 name of AP Drawing.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 3",
+    "Rule 5d"
+   ]
+  },
+  "AP U.S. History,  Area 4": {
+   "title": "AP U.S. History",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP U.S. History, Area 3B": {
+   "title": "AP U.S. History",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
    ]
   },
   "AP World History Exam": {
@@ -329,6 +628,94 @@
     "Rule 3",
     "join-when-likely-one"
    ]
+  },
+  "AP World History Modern - Area 3B": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP World History Modern - Area 4": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP World History, Area 3B": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "AP World History (pre-2019 name, broader time span) joined to AP World History: Modern as a version variant; faculty may split later.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 3",
+    "join-when-likely-one",
+    "Rule 5d"
+   ]
+  },
+  "AP World History, Area 4": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "AP World History (pre-2019 name, broader time span) joined to AP World History: Modern as a version variant; faculty may split later.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 3",
+    "join-when-likely-one",
+    "Rule 5d"
+   ]
+  },
+  "AP World History: Modern, Area 3": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.98,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP World History: Modern, Area 4": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.98,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "AP calculus AB": {
+   "title": "AP Calculus AB",
+   "issuer": "College Board",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'AP Calculus AB'; issuer from the curated credential KB.",
+   "procedure": "brand-family"
   },
   "AR-1728-0135 Basic Military Police (STO2)": {
    "title": "Basic Military Police",
@@ -1204,6 +1591,48 @@
     "Rule 1"
    ]
   },
+  "CLEP Biology, Area 5B": {
+   "title": "CLEP Biology",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.98,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "CLEP Calculus, Area 2": {
+   "title": "CLEP Calculus",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Articulation-area suffix stripped; joins house CLEP family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "CLEP French Language: Level II": {
+   "title": "CLEP French Language Level 2",
+   "issuer": "College Board",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'CLEP French Language Level 2'; issuer from the curated credential KB.",
+   "procedure": "brand-family"
+  },
+  "CLEP German Language: Level II": {
+   "title": "CLEP German Language Level 2",
+   "issuer": "College Board",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'CLEP German Language Level 2'; issuer from the curated credential KB.",
+   "procedure": "brand-family"
+  },
   "CLEP History I": {
    "title": "CLEP History of the United States 1",
    "issuer": "College Board",
@@ -1230,6 +1659,92 @@
     "Rule 8"
    ]
   },
+  "CLEP History, United States I: Early Colonization to 1877": {
+   "title": "CLEP History of the United States 1",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.96,
+   "note": "Exam subtitle stripped; joins house family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "CLEP History, United States II: 1865 to the Present": {
+   "title": "CLEP History of the United States 2",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.96,
+   "note": "Exam subtitle stripped; joins house family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "CLEP Natural Sciences, Area 5A": {
+   "title": "CLEP Natural Sciences",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Area suffix stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "CLEP Natural Sciences, Area 5B": {
+   "title": "CLEP Natural Sciences",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Area suffix stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "CLEP Principles of Macroeconomics - Area 4": {
+   "title": "CLEP Principles of Macroeconomics",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Area suffix stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "CLEP Principles of Microeconomics - Area 4": {
+   "title": "CLEP Principles of Microeconomics",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Area suffix stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "CLEP Spanish Language: Level II": {
+   "title": "CLEP Spanish Language Level 2",
+   "issuer": "College Board",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'CLEP Spanish Language Level 2'; issuer from the curated credential KB.",
+   "procedure": "brand-family"
+  },
   "CLEP Spanish Language: Levels 1 and 2": {
    "title": "CLEP Spanish Language Levels 1 and 2",
    "issuer": "College Board",
@@ -1244,6 +1759,14 @@
     "Rule 9"
    ]
   },
+  "CLEP Spanish with Writing: Level II": {
+   "title": "CLEP Spanish with Writing Level II",
+   "issuer": "College Board",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'CLEP Spanish with Writing Level II'; issuer from the curated credential KB.",
+   "procedure": "brand-family"
+  },
   "CLEP Spanish with Writing: Levels 1 and 2": {
    "title": "CLEP Spanish with Writing 2",
    "issuer": "College Board",
@@ -1255,6 +1778,58 @@
     "brand-family",
     "Rule 5d",
     "join-when-likely-one"
+   ]
+  },
+  "CLEP Western Civilization I - Area 3B": {
+   "title": "CLEP Western Civilization 1",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Area suffix stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "CLEP Western Civilization I - Area 4": {
+   "title": "CLEP Western Civilization 1",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Area suffix stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "CLEP Western Civilization I: Ancient Near East to 1648 (Area 3)": {
+   "title": "CLEP Western Civilization 1",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Subtitle and area suffix stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "CLEP Western Civilization I: Ancient Near East to 1648 (Area 4)": {
+   "title": "CLEP Western Civilization 1",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "Subtitle and area suffix stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
    ]
   },
   "CSTI Certified FRA & FRO Instructor": {
@@ -2163,6 +2738,56 @@
     "Rule 1"
    ]
   },
+  "DSST Business 475 Business Ethics and Society": {
+   "title": "DSST Business Ethics and Society",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "Exam category/number stripped; joins house DSST family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1"
+   ]
+  },
+  "DSST Business 532 Principles of Supervision - Business": {
+   "title": "DSST Principles of Supervision",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "Articulation-area suffix (Business) stripped; same exam as Management variant.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 2"
+   ]
+  },
+  "DSST Business 532 Principles of Supervision - Management": {
+   "title": "DSST Principles of Supervision",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "Articulation-area suffix (Management) stripped; same exam as Business variant.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 2"
+   ]
+  },
+  "DSST Physical Science 508 Health and Human Development": {
+   "title": "DSST Health and Human Development",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "Exam category/number stripped; joins house DSST family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1"
+   ]
+  },
   "Dance Rehearsal & Performance I": {
    "title": "Dance Rehearsal and Performance",
    "issuer": "California Community Colleges",
@@ -3022,6 +3647,58 @@
     "Rule 1"
    ]
   },
+  "IB History HL, any region (Area 3)": {
+   "title": "IB History HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "Joined the IB History HL house family; the region and articulation-area suffixes were stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "IB History HL, any region (Area 4)": {
+   "title": "IB History HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "Joined the IB History HL house family; the region and articulation-area suffixes were stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "IB History, any region HL - Area 3B": {
+   "title": "IB History HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "Joined the IB History HL house family; the region and area suffixes were stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
+  "IB History, any region HL - Area 4": {
+   "title": "IB History HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "Joined the IB History HL house family; the region and area suffixes were stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 1",
+    "Rule 5d"
+   ]
+  },
   "IB Language A - any language except English HL": {
    "title": "IB Language A: Literature HL (Non-English)",
    "issuer": "International Baccalaureate Organization (IBO)",
@@ -3046,6 +3723,30 @@
    "rests_on": [
     "brand-family",
     "join-when-likely-one",
+    "Rule 5d"
+   ]
+  },
+  "IB Mathematics HL: Analysis and Approaches": {
+   "title": "IB Mathematics: Analysis and Approaches HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "Joined the house family as written; the source only reorders the HL marker.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 5d"
+   ]
+  },
+  "IB Mathematics HL: Applications and Interpretation": {
+   "title": "IB Mathematics: Applications and Interpretation HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "Joined the house family as written; the source only reorders the HL marker.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
     "Rule 5d"
    ]
   },
@@ -4263,6 +4964,19 @@
    "rests_on": [
     "course-identity",
     "Rule 5c"
+   ]
+  },
+  "Noncredit for CIS 100": {
+   "title": "AI (Artificial Intelligence) in the Workplace",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.7,
+   "note": "The cx hint was set aside because it kept the method phrase and course code. Took the catalog title for Las Positas CIS 100; verify the COCI join. No named outside trainer, so the issuer is California Community Colleges.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
    ]
   },
   "Noncredit for ENG 110": {

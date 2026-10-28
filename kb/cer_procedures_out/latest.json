@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-10-27T13:39:55Z",
+ "_generated_at": "2026-10-28T14:36:40Z",
  "procedures_hash": "575c290d755b",
- "queue": 432,
+ "queue": 489,
  "saved_not_folded": 0,
- "waiting": 432,
- "proposed": 396,
- "needs_you_count": 450,
+ "waiting": 489,
+ "proposed": 453,
+ "needs_you_count": 453,
  "not_yet_asked": 0,
  "fold_held": 18,
  "procedures": [
@@ -21,9 +21,30 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 0,
-   "held": 97,
-   "sample": []
+   "settled": 54,
+   "held": 99,
+   "sample": [
+    [
+     "AP calculus AB",
+     "AP Calculus AB"
+    ],
+    [
+     "CLEP French Language: Level II",
+     "CLEP French Language Level 2"
+    ],
+    [
+     "CLEP German Language: Level II",
+     "CLEP German Language Level 2"
+    ],
+    [
+     "CLEP Spanish Language: Level II",
+     "CLEP Spanish Language Level 2"
+    ],
+    [
+     "CLEP Spanish with Writing: Level II",
+     "CLEP Spanish with Writing Level II"
+    ]
+   ]
   },
   {
    "id": "statewide-catalog",
@@ -112,7 +133,7 @@
     "skill": "Rule 5c"
    },
    "settled": 0,
-   "held": 179,
+   "held": 180,
    "sample": []
   },
   {
@@ -173,7 +194,7 @@
     "skill": "Rule 8c"
    },
    "settled": 0,
-   "held": 53,
+   "held": 54,
    "sample": []
   },
   {
@@ -188,7 +209,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 91,
+   "held": 93,
    "sample": []
   },
   {
@@ -201,12 +222,38 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 0,
-   "held": 432,
-   "sample": []
+   "settled": 49,
+   "held": 435,
+   "sample": [
+    [
+     "AP Art History Area 3A",
+     "AP Art History"
+    ],
+    [
+     "AP Art History Area 3B",
+     "AP Art History"
+    ],
+    [
+     "AP Calculus AB Area 2",
+     "AP Calculus AB"
+    ],
+    [
+     "AP Calculus BC Area 2",
+     "AP Calculus BC"
+    ],
+    [
+     "AP Calculus BC/AB Subscore - Area 2",
+     "AP Calculus BC — AB Subscore"
+    ]
+   ]
   }
  ],
- "classifier_run": null,
+ "classifier_run": {
+  "calls": 4,
+  "answered": 4,
+  "errors": [],
+  "cost_usd": 1.91
+ },
  "needs_you": [
   {
    "raw_title": "1st Receiver Ops & Decon",
@@ -609,6 +656,32 @@
    },
    "colleges": [
     "Napa Valley College"
+   ]
+  },
+  {
+   "raw_title": "AP World History, Area 3B",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "AP World History: Modern",
+    "issuer": "College Board",
+    "confidence": 0.8,
+    "note": "AP World History (pre-2019 name, broader time span) joined to AP World History: Modern as a version variant; faculty may split later."
+   },
+   "colleges": [
+    "California State University Los Angeles"
+   ]
+  },
+  {
+   "raw_title": "AP World History, Area 4",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "AP World History: Modern",
+    "issuer": "College Board",
+    "confidence": 0.8,
+    "note": "AP World History (pre-2019 name, broader time span) joined to AP World History: Modern as a version variant; faculty may split later."
+   },
+   "colleges": [
+    "California State University Los Angeles"
    ]
   },
   {
@@ -4681,6 +4754,19 @@
    ]
   },
   {
+   "raw_title": "Noncredit for CIS 100",
+   "why": "the classifier is unsure (0.70)",
+   "proposal": {
+    "title": "AI (Artificial Intelligence) in the Workplace",
+    "issuer": "California Community Colleges",
+    "confidence": 0.7,
+    "note": "The cx hint was set aside because it kept the method phrase and course code. Took the catalog title for Las Positas CIS 100; verify the COCI join. No named outside trainer, so the issuer is California Community Colleges."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
    "raw_title": "Noncredit for ENG 110",
    "why": "the classifier is unsure (0.80)",
    "proposal": {
@@ -5836,7 +5922,7 @@
     "Juvenile Law and Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -5851,7 +5937,7 @@
     "Automotive Technology Maintenance and Light Repair (MLR)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -5866,7 +5952,7 @@
     "Business Management and Entrepreneurship"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -5881,7 +5967,7 @@
     "Center for Financial Training (CFT) — Human Resources Management"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -5896,7 +5982,7 @@
     "Anatomy and Physiology Honors"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -5911,7 +5997,7 @@
     "History of Architecture 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -5926,7 +6012,7 @@
     "Modern Dance Techniques 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -5941,7 +6027,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -5956,7 +6042,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -5971,7 +6057,7 @@
     "Construction Inspection: Uniform Plumbing Code (UPC) Advanced"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -5986,7 +6072,7 @@
     "Medical Assisting Clinical Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -6001,7 +6087,7 @@
     "Medical Assisting Laboratory Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -6016,7 +6102,7 @@
     "McDonald's Business Leadership Practices"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -6031,7 +6117,7 @@
     "McDonald's Mid-Management Foundations Curriculum"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -6046,7 +6132,7 @@
     "Music Skills 2"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -6061,7 +6147,7 @@
     "Pharmacology"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -6076,7 +6162,7 @@
     "Landscape Installation and Maintenance 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   },
   {
@@ -6091,7 +6177,7 @@
     "Sustainable Gardening for Landscapes (Horticulture)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-27",
+   "fold_report": "2026-10-28",
    "colleges": []
   }
  ]
