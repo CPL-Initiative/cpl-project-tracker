@@ -560,6 +560,19 @@
      "why": "S497 SkyCrowberry, 2026-10-27: Music certificate 43887 read 18-19 against 19.5 because the tab prints two repeat counts the record shape had no field for: \"If MUS 11 is chosen, it must be taken for 2 semesters\" (MUS 11 at 0.5 units, the alternative to MUS 10 at 1) and a list headed \"2 semesters of any of the following Courses\" (MUS 20, 21, 25, 26, 37, 1 unit each), which the reading kept as one choice (S488 read, kb/college_reads/hartnell_unread_failures.json; lessons S488). With both, the blocks sum to 19.5-20, whose low end meets the printed 19.5 (the narrow meets reading, Sheet 120 card 1). Delta 44197 (S424) is the same gap."
     }
    ]
+  },
+  "Glendale Community College": {
+   "why": "S505 SkyBoysenberry, 2026-10-28. Glendale's 2025-2026 catalog prints its program pages under older subject prefixes and older numbers than its own course descriptions and the state's file keep. The program pages print PSYCH 170 and TART 101 (Sports Coaching, page 88; college-page-read 40690480267); the course descriptions print '170 · SPORTS PSYCHOLOGY · 3.0 Units · PSYC 170 is designed...' (page 252) and '101 · INTRODUCTION TO THEATRE · 3.0 Units · THTR 101 introduces...' (college-page-read 40692306069), the same numbers and titles the state's file lists as PSYC 170 Sports Psychology and THTR 101 Introduction To Theatre (coci_program_courses, read 2026-10-28). Filed records placing PSYCH codes the file lists as PSYC: 11; TART for THTR: 9. The renumbers are the descriptions' own words: 'C1000 · ACADEMIC READING AND WRITING · 4.0 Units · (Previously ENGL 101)' (page 188, read 40690480267), 'C1001 · CRITICAL THINKING AND WRITING · 3.0 Units · (Previously ENGL 104)' and 'C1000 · AMERICAN GOVERNMENT AND POLITICS · 3.0 Units · (Previously POL S 101)' (read 40692306069). ART for ARTH (5 records) is left out: neither read printed an ARTH description, and ART is a live Glendale prefix of its own.",
+   "prefix_aliases": {
+    "PSYCH": "PSYC",
+    "TART": "THTR"
+   },
+   "course_renumbers": {
+    "ENGL101": "ENGL C1000",
+    "ENGL104": "ENGL C1001",
+    "POLS101": "POL S C1000"
+   },
+   "steps": []
   }
  }
 }
