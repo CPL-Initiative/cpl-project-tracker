@@ -16210,8 +16210,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 474,
+   "count": 475,
    "docs": [
+    {
+     "created": "2026-10-28",
+     "governs": [],
+     "n": 506,
+     "path": "docs/session_506_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "implementation-funding",
+      "credential-registry",
+      "ctdl-partner-exchange"
+     ],
+     "title": "Session 506 handoff: four orphaned PRs landed or ported; the Summit is Friday",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-28",
      "governs": [],
@@ -24336,5 +24353,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1291
+ "total": 1292
 }

@@ -17,6 +17,7 @@ S196, and the INDEX history rotated out before 2026-09-17. New rotations keep la
 
 ## INDEX update-history entries rotated out (2026-10-27)
 
+- 2026-10-27 (S495 SkySalmonberry): Sierra's scene 8 re-read and the narrated cut on the v11 picture (#2499, held for Open Asks Sheet 135); axe on the internal tabs worked (#2498, #2500, #2501); lanes under budget (#2502); Hartnell's Cal-GETC area step on its branch; handoff 496.
 - 2026-10-26 S486 SkyQuince (the CPL Queue routine): Hartnell's double-count words read as the overlap; three local degrees pass, the carry basis leaves the flag out (#2462); handoff 487.
 - 2026-10-26 S485 SkyElderberry (the CPL Queue routine): Hartnell's last three noncredit courses carry no hours in its data; why six of its degrees fail arithmetic, read from their tabs (#2461); light checkpoint, handoff 486.
 - 2026-10-26 S483 SkyCoyoteMint (opened by hand): DSP Credit Starting Points Version 2 on the agency template, a draft beside v1 (CPLBrain#487, receipt applied); Open Asks Sheet 129 and the series record caught up to it; the library lane back under budget (#2458); full checkpoint, handoff 484.

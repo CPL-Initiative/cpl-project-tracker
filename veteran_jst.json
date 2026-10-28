@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-10-27T18:10:00.722832+00:00",
+  "scraped_at": "2026-10-28T16:13:53.657085+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29722,
-    "star_colleges": 64
+    "jst": 30091,
+    "star_colleges": 65
   },
-  "computed_star_colleges": 64,
+  "computed_star_colleges": 65,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 594,
+      "jst": 595,
       "star": true
     },
     "Norco College": {
@@ -77,7 +77,7 @@
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 819,
+      "jst": 884,
       "star": true
     },
     "De Anza College": {
@@ -117,7 +117,7 @@
     },
     "San Bernardino Valley College": {
       "vets": 207,
-      "jst": 207,
+      "jst": 215,
       "star": true
     },
     "College of the Desert": {
@@ -157,7 +157,7 @@
     },
     "Sierra College": {
       "vets": 326,
-      "jst": 331,
+      "jst": 329,
       "star": true
     },
     "Mt. San Jacinto College": {
@@ -205,6 +205,11 @@
       "jst": 563,
       "star": true
     },
+    "Cerro Coso Community College": {
+      "vets": 115,
+      "jst": 190,
+      "star": true
+    },
     "Mission College": {
       "vets": 158,
       "jst": 172,
@@ -213,11 +218,6 @@
     "Victor Valley College": {
       "vets": 97,
       "jst": 346,
-      "star": true
-    },
-    "Cerro Coso Community College": {
-      "vets": 115,
-      "jst": 185,
       "star": true
     },
     "Ventura College": {
@@ -280,15 +280,15 @@
       "jst": 100,
       "star": false
     },
+    "Allan Hancock College": {
+      "vets": 392,
+      "jst": 145,
+      "star": false
+    },
     "Cerritos College": {
       "vets": 185,
       "jst": 170,
       "star": true
-    },
-    "Allan Hancock College": {
-      "vets": 392,
-      "jst": 143,
-      "star": false
     },
     "Diablo Valley College": {
       "vets": 211,
@@ -367,7 +367,7 @@
     },
     "Foothill College": {
       "vets": 915,
-      "jst": 75,
+      "jst": 76,
       "star": false
     },
     "Coalinga College": {
@@ -387,7 +387,7 @@
     },
     "Hartnell College": {
       "vets": 106,
-      "jst": 63,
+      "jst": 64,
       "star": false
     },
     "College of Alameda": {
@@ -437,7 +437,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 183,
+      "jst": 184,
       "star": true
     },
     "Santa Monica College": {
@@ -475,14 +475,14 @@
       "jst": 3,
       "star": false
     },
+    "Grossmont College": {
+      "vets": 415,
+      "jst": 481,
+      "star": true
+    },
     "Los Angeles City College": {
       "vets": 301,
       "jst": 193,
-      "star": false
-    },
-    "Grossmont College": {
-      "vets": 415,
-      "jst": 194,
       "star": false
     },
     "Ohlone College": {

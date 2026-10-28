@@ -4,9 +4,9 @@
   "supabase_tables": 102,
   "rpcs": 43,
   "edge_functions": 9,
-  "file_datasets": 721,
-  "external_services": 184,
-  "consumers": 476,
+  "file_datasets": 723,
+  "external_services": 185,
+  "consumers": 477,
   "workflows": 58,
   "data_js_files": 71,
   "tabs": 38
@@ -589,7 +589,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 15589,
+     "line": 15594,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -920,7 +920,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 13287,
+     "line": 13292,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -1317,6 +1317,28 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:credentialengineregistry.org": {
+   "consumers": [
+    {
+     "id": "module:credential_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 5265,
+     "tabs": [
+      "credential-reference"
+     ]
+    },
+    {
+     "id": "script:kb/_fetch_ce_top50.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 26
     }
    ],
    "main_committers": []
@@ -5541,7 +5563,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5607,
+     "line": 5627,
      "tabs": [
       "credential-reference"
      ]
@@ -5782,7 +5804,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 17210,
+     "line": 17215,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -5876,7 +5898,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 17137,
+     "line": 17142,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -5927,7 +5949,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 17122,
+     "line": 17127,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6321,7 +6343,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5719,
+     "line": 5739,
      "tabs": [
       "credential-reference"
      ]
@@ -7083,7 +7105,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5608,
+     "line": 5628,
      "tabs": [
       "credential-reference"
      ]
@@ -9098,7 +9120,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5346,
+     "line": 5366,
      "tabs": [
       "credential-reference"
      ]
@@ -14747,6 +14769,46 @@
    "main_committers": [
     "workflow:cos-authority-sync.yml"
    ]
+  },
+  "file:kb/reference/credential_engine_top50.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 442
+    },
+    {
+     "id": "script:kb/_fetch_ce_top50.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 25
+    },
+    {
+     "id": "script:kb/_fetch_ce_top50.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 25
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reference/credential_engine_top50_ctids.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_fetch_ce_top50.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 24
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:kb/reference/credential_registry_national_sample.json": {
    "consumers": [
@@ -23631,7 +23693,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 12435,
+     "line": 12440,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -23782,7 +23844,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 12411,
+     "line": 12416,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24093,7 +24155,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 12390,
+     "line": 12395,
      "tabs": [
       "college-briefing",
       "cpl-pathways",

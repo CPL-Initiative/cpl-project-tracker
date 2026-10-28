@@ -2050,8 +2050,8 @@
   // reading Scenario 3 until Sam publishes 4. ⚠️ NEVER AN ADVANCE: a count
   // outcome whose measure the daily feed does not carry yet reads TBA and $0,
   // exactly as the origination sources do (N2 b).
-  var NC_OUTCOMES_RULE = "The noncredit share releases on the noncredit outcomes: exhibits built or adopted for the " +
-    "noncredit program's learning, and a noncredit CPL portfolio-development course.";
+  var NC_OUTCOMES_RULE = "The noncredit share releases on the noncredit outcomes: exhibits articulating the noncredit " +
+    "program's CDCP courses, and a noncredit Career Exploration and CPL Portfolio course.";
   var NC_COORD_REQ = "Noncredit CPL Lead named and published";
   var NC_TEAM_REQ = "Strike-team attestation on file for the year";
   function ncLaneMode() {
@@ -3917,12 +3917,12 @@
     "<li><strong>Its own minimum " + (/ and /.test(ncCondWords()) ? "conditions" : "condition") + ":</strong> " + ncCondWords() +
     ". COBI takes the attestation, once each fiscal year, until the MAP platform carries the role.</li>" +
     "<li><strong>Two outcomes release it, 50/50</strong>, each toward its target, the remainder rolling forward: " +
-    "exhibits built or adopted for the program&rsquo;s learning (the greater of 2 and 5% of its CDCP noncredit " +
-    "courses, capped at 10; an adopted statewide exhibit counts), and a noncredit CPL portfolio-development course " +
-    "chaptered in a CDCP program by the end of Year 1 and offered with enrollment attested in Year 2.</li>" +
-    "<li>An exhibit counts through any of four channels: the exhibit names the noncredit course; its target credit " +
-    "course mirrors a noncredit course at the college (for a standalone, at the district&rsquo;s credit colleges); " +
-    "its credential is one the program&rsquo;s courses name; or the college lists it on its noncredit attestation.</li>" +
+    "in collaboration with college(s), exhibits articulating at least 5% of the noncredit program&rsquo;s CDCP " +
+    "courses (the greater of 2 and 5%, capped at 10), and a noncredit Career Exploration and CPL Portfolio course " +
+    "developed, adapted or documented, designed to offer credit toward an academic pathway leading to career " +
+    "attainment.</li>" +
+    "<li>An exhibit counts when it is based on a noncredit course or certificate (credit by exam or a mirrored " +
+    "course), an industry credential, a not-for-credit course or certificate, or a portfolio.</li>" +
     "<li><strong>Reported, not funded:</strong> the count of former noncredit students awarded CPL credit, from the " +
     "college&rsquo;s own student information system, on the annual attestation.</li>" +
     "</ul>"; }
@@ -4372,8 +4372,8 @@
   // My CPL Funding's noncredit sentence under the outcomes lane (Scenario 4);
   // the stored passage, when a curator saves one, still wins.
   var MC_NC_OUTCOMES_PLAIN = "Noncredit portion of the max funding is {noncredit portion}. It releases on the noncredit " +
-    "outcomes: exhibits built or adopted for the noncredit program's learning, and a noncredit CPL portfolio-development " +
-    "course. Its own minimum condition is a Noncredit CPL Lead named and published, attested once each fiscal year.";
+    "outcomes: exhibits articulating the noncredit program's CDCP courses, and a noncredit Career Exploration and CPL " +
+    "Portfolio course. Its own minimum condition is a Noncredit CPL Lead named and published, attested once each fiscal year.";
   function richDefaultPlain(key) {
     if (key === "mc_nc" && ncOutcomesMode()) return plainNormalize(MC_NC_OUTCOMES_PLAIN);
     var b = EXPLAINER_BY_KEY[key] || MC_BY_KEY[key] || MEMO_BY_KEY[key];
@@ -10010,6 +10010,11 @@
   // the one place the restriction and the origination rule are stated in
   // words, under the cards whose arithmetic honors them.
   function ncEarningRulesFoldHtml() {
+    // Under the outcomes lane the noncredit outcome cards carry the rules, so
+    // the fold is gone (Sam, 2026-10-23: "we can eliminate the Noncredit
+    // Funding Rules section as long as everything has a home in the priority
+    // cards"; S450's #2379, ported S505).
+    if (ncOutcomesMode()) return "";
     return '<details class="cplfund-pool-projects cplfund-ncrules"><summary><strong>The noncredit funding rules</strong> ' +
       '<span class="dk">&mdash; show them</span></summary>' +
       proseBlockHtml("nc_rules") + "</details>";

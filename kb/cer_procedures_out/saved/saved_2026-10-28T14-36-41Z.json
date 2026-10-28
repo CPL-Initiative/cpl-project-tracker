@@ -1,0 +1,1531 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-10-28T14-36-41Z",
+ "run_id": "40706812147",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "575c290d755b",
+ "cohorts": [
+  "cer-procedure-brand-family@bot",
+  "cer-procedure-classifier@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History Area 3A",
+   "field": "unified_title_assignment",
+   "value": "AP Art History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History Area 3A",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History Area 3B",
+   "field": "unified_title_assignment",
+   "value": "AP Art History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus AB Area 2",
+   "field": "unified_title_assignment",
+   "value": "AP Calculus AB",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus AB Area 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC Area 2",
+   "field": "unified_title_assignment",
+   "value": "AP Calculus BC",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC Area 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB Subscore - Area 2",
+   "field": "unified_title_assignment",
+   "value": "AP Calculus BC — AB Subscore",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB Subscore - Area 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP European History - Area 3B",
+   "field": "unified_title_assignment",
+   "value": "AP European History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP European History - Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP European History - Area 4",
+   "field": "unified_title_assignment",
+   "value": "AP European History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP European History - Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP French Language and Culture, Score of 3",
+   "field": "unified_title_assignment",
+   "value": "AP French Language and Culture",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP French Language and Culture, Score of 3",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP French Language and Culture, Score of 4-5",
+   "field": "unified_title_assignment",
+   "value": "AP French Language and Culture",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP French Language and Culture, Score of 4-5",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Music Theory, Score of 3-4",
+   "field": "unified_title_assignment",
+   "value": "AP Music Theory",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Music Theory, Score of 3-4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Music Theory, Score of 5",
+   "field": "unified_title_assignment",
+   "value": "AP Music Theory",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Music Theory, Score of 5",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Physics C  - Electricity / Magnetism",
+   "field": "unified_title_assignment",
+   "value": "AP Physics C: Electricity and Magnetism",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Physics C  - Electricity / Magnetism",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP PreCalculus - Area 2",
+   "field": "unified_title_assignment",
+   "value": "AP Precalculus",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP PreCalculus - Area 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Language and Culture, Score of 3",
+   "field": "unified_title_assignment",
+   "value": "AP Spanish Language and Culture",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Language and Culture, Score of 3",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Language and Culture, Score of 4-5",
+   "field": "unified_title_assignment",
+   "value": "AP Spanish Language and Culture",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Language and Culture, Score of 4-5",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Literature and Culture, Score of 3",
+   "field": "unified_title_assignment",
+   "value": "AP Spanish Literature and Culture",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Literature and Culture, Score of 3",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Literature and Culture, Score of 4-5",
+   "field": "unified_title_assignment",
+   "value": "AP Spanish Literature and Culture",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Literature and Culture, Score of 4-5",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Statistics - Area 2",
+   "field": "unified_title_assignment",
+   "value": "AP Statistics",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Statistics - Area 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Studio Art: 2D Design",
+   "field": "unified_title_assignment",
+   "value": "AP 2-D Art and Design",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Studio Art: 2D Design",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Studio Art: 3D Design",
+   "field": "unified_title_assignment",
+   "value": "AP 3-D Art and Design",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Studio Art: 3D Design",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Studio Art: Drawing",
+   "field": "unified_title_assignment",
+   "value": "AP Drawing",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Studio Art: Drawing",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History,  Area 4",
+   "field": "unified_title_assignment",
+   "value": "AP U.S. History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History,  Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History, Area 3B",
+   "field": "unified_title_assignment",
+   "value": "AP U.S. History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History, Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History Modern - Area 3B",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History Modern - Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History Modern - Area 4",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History Modern - Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History: Modern, Area 3",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History: Modern, Area 3",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History: Modern, Area 4",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History: Modern, Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP calculus AB",
+   "field": "unified_title_assignment",
+   "value": "AP Calculus AB",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP calculus AB",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Biology, Area 5B",
+   "field": "unified_title_assignment",
+   "value": "CLEP Biology",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Biology, Area 5B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Calculus, Area 2",
+   "field": "unified_title_assignment",
+   "value": "CLEP Calculus",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Calculus, Area 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP French Language: Level II",
+   "field": "unified_title_assignment",
+   "value": "CLEP French Language Level 2",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP French Language: Level II",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP German Language: Level II",
+   "field": "unified_title_assignment",
+   "value": "CLEP German Language Level 2",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP German Language: Level II",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP History, United States I: Early Colonization to 1877",
+   "field": "unified_title_assignment",
+   "value": "CLEP History of the United States 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP History, United States I: Early Colonization to 1877",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP History, United States II: 1865 to the Present",
+   "field": "unified_title_assignment",
+   "value": "CLEP History of the United States 2",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP History, United States II: 1865 to the Present",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Natural Sciences, Area 5A",
+   "field": "unified_title_assignment",
+   "value": "CLEP Natural Sciences",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Natural Sciences, Area 5A",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Natural Sciences, Area 5B",
+   "field": "unified_title_assignment",
+   "value": "CLEP Natural Sciences",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Natural Sciences, Area 5B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Principles of Macroeconomics - Area 4",
+   "field": "unified_title_assignment",
+   "value": "CLEP Principles of Macroeconomics",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Principles of Macroeconomics - Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Principles of Microeconomics - Area 4",
+   "field": "unified_title_assignment",
+   "value": "CLEP Principles of Microeconomics",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Principles of Microeconomics - Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Language: Level II",
+   "field": "unified_title_assignment",
+   "value": "CLEP Spanish Language Level 2",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Language: Level II",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing: Level II",
+   "field": "unified_title_assignment",
+   "value": "CLEP Spanish with Writing Level II",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing: Level II",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I - Area 3B",
+   "field": "unified_title_assignment",
+   "value": "CLEP Western Civilization 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I - Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I - Area 4",
+   "field": "unified_title_assignment",
+   "value": "CLEP Western Civilization 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I - Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I: Ancient Near East to 1648 (Area 3)",
+   "field": "unified_title_assignment",
+   "value": "CLEP Western Civilization 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I: Ancient Near East to 1648 (Area 3)",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I: Ancient Near East to 1648 (Area 4)",
+   "field": "unified_title_assignment",
+   "value": "CLEP Western Civilization 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I: Ancient Near East to 1648 (Area 4)",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Business 475 Business Ethics and Society",
+   "field": "unified_title_assignment",
+   "value": "DSST Business Ethics and Society",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Business 475 Business Ethics and Society",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Business 532 Principles of Supervision - Business",
+   "field": "unified_title_assignment",
+   "value": "DSST Principles of Supervision",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Business 532 Principles of Supervision - Business",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Business 532 Principles of Supervision - Management",
+   "field": "unified_title_assignment",
+   "value": "DSST Principles of Supervision",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Business 532 Principles of Supervision - Management",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Physical Science 508 Health and Human Development",
+   "field": "unified_title_assignment",
+   "value": "DSST Health and Human Development",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Physical Science 508 Health and Human Development",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History HL, any region (Area 3)",
+   "field": "unified_title_assignment",
+   "value": "IB History HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History HL, any region (Area 3)",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History HL, any region (Area 4)",
+   "field": "unified_title_assignment",
+   "value": "IB History HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History HL, any region (Area 4)",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History, any region HL - Area 3B",
+   "field": "unified_title_assignment",
+   "value": "IB History HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History, any region HL - Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History, any region HL - Area 4",
+   "field": "unified_title_assignment",
+   "value": "IB History HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History, any region HL - Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Mathematics HL: Analysis and Approaches",
+   "field": "unified_title_assignment",
+   "value": "IB Mathematics: Analysis and Approaches HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Mathematics HL: Analysis and Approaches",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Mathematics HL: Applications and Interpretation",
+   "field": "unified_title_assignment",
+   "value": "IB Mathematics: Applications and Interpretation HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Mathematics HL: Applications and Interpretation",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History Area 3A",
+   "field": "unified_title_assignment",
+   "value": "AP Art History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History Area 3A",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History Area 3B",
+   "field": "unified_title_assignment",
+   "value": "AP Art History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus AB Area 2",
+   "field": "unified_title_assignment",
+   "value": "AP Calculus AB",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus AB Area 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC Area 2",
+   "field": "unified_title_assignment",
+   "value": "AP Calculus BC",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC Area 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB Subscore - Area 2",
+   "field": "unified_title_assignment",
+   "value": "AP Calculus BC — AB Subscore",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB Subscore - Area 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP European History - Area 3B",
+   "field": "unified_title_assignment",
+   "value": "AP European History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP European History - Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP European History - Area 4",
+   "field": "unified_title_assignment",
+   "value": "AP European History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP European History - Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP French Language and Culture, Score of 3",
+   "field": "unified_title_assignment",
+   "value": "AP French Language and Culture",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP French Language and Culture, Score of 3",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP French Language and Culture, Score of 4-5",
+   "field": "unified_title_assignment",
+   "value": "AP French Language and Culture",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP French Language and Culture, Score of 4-5",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Music Theory, Score of 3-4",
+   "field": "unified_title_assignment",
+   "value": "AP Music Theory",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Music Theory, Score of 3-4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Music Theory, Score of 5",
+   "field": "unified_title_assignment",
+   "value": "AP Music Theory",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Music Theory, Score of 5",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Physics C  - Electricity / Magnetism",
+   "field": "unified_title_assignment",
+   "value": "AP Physics C: Electricity and Magnetism",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Physics C  - Electricity / Magnetism",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP PreCalculus - Area 2",
+   "field": "unified_title_assignment",
+   "value": "AP Precalculus",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP PreCalculus - Area 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Language and Culture, Score of 3",
+   "field": "unified_title_assignment",
+   "value": "AP Spanish Language and Culture",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Language and Culture, Score of 3",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Language and Culture, Score of 4-5",
+   "field": "unified_title_assignment",
+   "value": "AP Spanish Language and Culture",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Language and Culture, Score of 4-5",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Literature and Culture, Score of 3",
+   "field": "unified_title_assignment",
+   "value": "AP Spanish Literature and Culture",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Literature and Culture, Score of 3",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Literature and Culture, Score of 4-5",
+   "field": "unified_title_assignment",
+   "value": "AP Spanish Literature and Culture",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Spanish Literature and Culture, Score of 4-5",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Statistics - Area 2",
+   "field": "unified_title_assignment",
+   "value": "AP Statistics",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Statistics - Area 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Studio Art: 2D Design",
+   "field": "unified_title_assignment",
+   "value": "AP 2-D Art and Design",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Studio Art: 2D Design",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Studio Art: 3D Design",
+   "field": "unified_title_assignment",
+   "value": "AP 3-D Art and Design",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Studio Art: 3D Design",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Studio Art: Drawing",
+   "field": "unified_title_assignment",
+   "value": "AP Drawing",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Studio Art: Drawing",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History,  Area 4",
+   "field": "unified_title_assignment",
+   "value": "AP U.S. History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History,  Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History, Area 3B",
+   "field": "unified_title_assignment",
+   "value": "AP U.S. History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History, Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History Modern - Area 3B",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History Modern - Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History Modern - Area 4",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History Modern - Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History: Modern, Area 3",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History: Modern, Area 3",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History: Modern, Area 4",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History: Modern, Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP calculus AB",
+   "field": "unified_title_assignment",
+   "value": "AP Calculus AB",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP calculus AB",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Biology, Area 5B",
+   "field": "unified_title_assignment",
+   "value": "CLEP Biology",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Biology, Area 5B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Calculus, Area 2",
+   "field": "unified_title_assignment",
+   "value": "CLEP Calculus",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Calculus, Area 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP French Language: Level II",
+   "field": "unified_title_assignment",
+   "value": "CLEP French Language Level 2",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP French Language: Level II",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP German Language: Level II",
+   "field": "unified_title_assignment",
+   "value": "CLEP German Language Level 2",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP German Language: Level II",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP History, United States I: Early Colonization to 1877",
+   "field": "unified_title_assignment",
+   "value": "CLEP History of the United States 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP History, United States I: Early Colonization to 1877",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP History, United States II: 1865 to the Present",
+   "field": "unified_title_assignment",
+   "value": "CLEP History of the United States 2",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP History, United States II: 1865 to the Present",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Natural Sciences, Area 5A",
+   "field": "unified_title_assignment",
+   "value": "CLEP Natural Sciences",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Natural Sciences, Area 5A",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Natural Sciences, Area 5B",
+   "field": "unified_title_assignment",
+   "value": "CLEP Natural Sciences",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Natural Sciences, Area 5B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Principles of Macroeconomics - Area 4",
+   "field": "unified_title_assignment",
+   "value": "CLEP Principles of Macroeconomics",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Principles of Macroeconomics - Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Principles of Microeconomics - Area 4",
+   "field": "unified_title_assignment",
+   "value": "CLEP Principles of Microeconomics",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Principles of Microeconomics - Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Language: Level II",
+   "field": "unified_title_assignment",
+   "value": "CLEP Spanish Language Level 2",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Language: Level II",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing: Level II",
+   "field": "unified_title_assignment",
+   "value": "CLEP Spanish with Writing Level II",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing: Level II",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I - Area 3B",
+   "field": "unified_title_assignment",
+   "value": "CLEP Western Civilization 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I - Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I - Area 4",
+   "field": "unified_title_assignment",
+   "value": "CLEP Western Civilization 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I - Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I: Ancient Near East to 1648 (Area 3)",
+   "field": "unified_title_assignment",
+   "value": "CLEP Western Civilization 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I: Ancient Near East to 1648 (Area 3)",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I: Ancient Near East to 1648 (Area 4)",
+   "field": "unified_title_assignment",
+   "value": "CLEP Western Civilization 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Western Civilization I: Ancient Near East to 1648 (Area 4)",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Business 475 Business Ethics and Society",
+   "field": "unified_title_assignment",
+   "value": "DSST Business Ethics and Society",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Business 475 Business Ethics and Society",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Business 532 Principles of Supervision - Business",
+   "field": "unified_title_assignment",
+   "value": "DSST Principles of Supervision",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Business 532 Principles of Supervision - Business",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Business 532 Principles of Supervision - Management",
+   "field": "unified_title_assignment",
+   "value": "DSST Principles of Supervision",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Business 532 Principles of Supervision - Management",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Physical Science 508 Health and Human Development",
+   "field": "unified_title_assignment",
+   "value": "DSST Health and Human Development",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DSST Physical Science 508 Health and Human Development",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History HL, any region (Area 3)",
+   "field": "unified_title_assignment",
+   "value": "IB History HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History HL, any region (Area 3)",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History HL, any region (Area 4)",
+   "field": "unified_title_assignment",
+   "value": "IB History HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History HL, any region (Area 4)",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History, any region HL - Area 3B",
+   "field": "unified_title_assignment",
+   "value": "IB History HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History, any region HL - Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History, any region HL - Area 4",
+   "field": "unified_title_assignment",
+   "value": "IB History HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB History, any region HL - Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Mathematics HL: Analysis and Approaches",
+   "field": "unified_title_assignment",
+   "value": "IB Mathematics: Analysis and Approaches HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Mathematics HL: Analysis and Approaches",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Mathematics HL: Applications and Interpretation",
+   "field": "unified_title_assignment",
+   "value": "IB Mathematics: Applications and Interpretation HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Mathematics HL: Applications and Interpretation",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}

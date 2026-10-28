@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-474 document(s).
+475 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 506 | [Session 506 handoff: four orphaned PRs landed or ported; the Summit is Friday](../session_506_handoff.md) | 2026-10-28 |
 | 505 | [Session 505 handoff: the narrated funding film speaks Sam's own script (Draft 7), two days to the Summit](../session_505_handoff.md) | 2026-10-28 |
 | 504 | [Session 504 handoff: Sierra deployed, the funding film's recorded piano live, three days to the Summit](../session_504_handoff.md) | 2026-10-27 |
 | 503 | [Session 503 handoff: My Institution hidden, the funding review gate in CI, Sierra's deploy held on its A/B](../session_503_handoff.md) | 2026-10-27 |
