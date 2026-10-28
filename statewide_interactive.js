@@ -845,6 +845,7 @@
   // link is given only for an ID MAP's API listed when kb/_verify_map_exhibit_links.py
   // last ran, and each chip names the college MAP records as the exhibit's builder.
   var MAP_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
+  var MAP_VIEW = "&View=Non-Military";   // the exhibit's Non-Military card (Pedro, 2026-10-28)
   var mapVer = null;
   function loadMapVerified() {
     if (typeof fetch !== "function") return;
@@ -858,7 +859,7 @@
     if (!rec) return "";
     var college = rec.college || "";
     var short = college && typeof window.cplCollegeShort === "function" ? window.cplCollegeShort(college) || college : college;
-    return '<a class="sw-map-chip" href="' + escAttr(MAP_PAGE + "?Exhibit=" + encodeURIComponent(id)) + '" target="_blank" rel="noopener">' +
+    return '<a class="sw-map-chip" href="' + escAttr(MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + MAP_VIEW) + '" target="_blank" rel="noopener">' +
       esc(short || "View in MAP") + '<span class="mx-sr-only"> (' + (college ? "built by " + esc(college) + "; " : "") +
       "opens MAP searched for " + esc(id) + ")</span></a>";
   }

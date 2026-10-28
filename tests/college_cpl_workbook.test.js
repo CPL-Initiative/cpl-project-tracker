@@ -13,7 +13,7 @@
 //   7. a catalog code written without its space (Bakersfield's "AUTOB30") still finds its course,
 //      and one COCI pads with zeros (Foothill's "ACTG 001A" for "ACTG 1A") or a hyphenated one
 //      (Moreno Valley's "ACC-1A") does too
-//   8. each Could Adopt link opens MAP already searched for its exhibit ID (?Exhibit=, live
+//   8. each Could Adopt link opens MAP searched for its exhibit ID on its Non-Military card (?Exhibit=, View=Non-Military; live
 //      2026-10-26), so nothing is copied and no reader is told to paste
 //   9. a credential joining several colleges' exhibits shows each ID with a chip naming the
 //      college MAP records as its builder, each opening MAP searched for its own ID (Sam,
@@ -162,7 +162,7 @@ check("tab 5 carries Ashley's columns", ["Could Adopt (Yes/No)", "Statewide Cred
   "Could Adopt - View in MAP", "Link Verification Status", "Priority Level", "Recommended Next Step"].every(function (h) { return sheets[4].headers.indexOf(h) >= 0; }));
 check("tab 4 carries the same link columns", sheets[3].headers.indexOf("Could Adopt - View in MAP") >= 0 && sheets[3].headers.indexOf("Could Adopt (Yes/No)") >= 0);
 check("a verified CR's link is a working Excel hyperlink to MAP",
-  /<f>HYPERLINK\("https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN-1-001","Could Adopt - View in MAP"\)<\/f>/.test(parts["xl/worksheets/sheet5.xml"]));
+  /<f>HYPERLINK\("https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN-1-001&amp;View=Non-Military","Could Adopt - View in MAP"\)<\/f>/.test(parts["xl/worksheets/sheet5.xml"]));
 const nw = b.swRows.find(function (r) { return r.title === "CompTIA Network+"; });
 check("the verified CR names the ID to search", nw.link && /^Verified 2026-10-20: MAPICI-CN-1-001/.test(nw.linkStatus) && nw.crId === "MAPICI-CN-1-001");
 const fi = b.swRows.find(function (r) { return r.title === "Fire Inspector 1D"; });
@@ -172,9 +172,9 @@ check("with no verification read, no CR gets a link", b3.swRows.every(function (
 const html = W.pageHtml(b);
 check("the visual names the college", html.indexOf("<h1>Test River College</h1>") > 0);
 check("the visual's Could Adopt link opens MAP searched for the verified CR's exhibit ID",
-  /class="cpo-adopt" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN-1-001" target="_blank"/.test(html));
+  /class="cpo-adopt" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN-1-001&amp;View=Non-Military" target="_blank"/.test(html));
 check("the link is MAP's page, ?Exhibit= and the first verified ID",
-  nw.link === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CN-1-001");
+  nw.link === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CN-1-001&View=Non-Military");
 check("no reader is told to copy or paste the ID", !/paste|copies|cpo-copied/i.test(html));
 // the page no longer copies on a click: the link itself opens MAP at the card
 let copied = null, handler = null;
@@ -257,13 +257,13 @@ check("each verified ID becomes a chip with its builder's short name; an unliste
   nwChips.chips.every(function (c) { return c.id !== "MAPICI-CNX-1-001"; }));
 const htmlChips = W.pageHtml(bChips);
 check("each chip opens MAP searched for its own ID, not the first",
-  /<a class="cpo-chip" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN-1-001"[^>]*>Saddleback/.test(htmlChips) &&
-  /<a class="cpo-chip" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN2-1-001"[^>]*>West LA/.test(htmlChips));
+  /<a class="cpo-chip" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN-1-001&amp;View=Non-Military"[^>]*>Saddleback/.test(htmlChips) &&
+  /<a class="cpo-chip" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN2-1-001&amp;View=Non-Military"[^>]*>West LA/.test(htmlChips));
 check("a chip names its builder in full for a screen reader", /West LA<span class="cpo-sr"> \(built by West Los Angeles College; opens MAP searched for MAPICI-CN2-1-001\)/.test(htmlChips));
 check("an ID MAP lists without a recorded builder still links, as View in MAP",
-  /Exhibit=MAPICI-CN3-1-001"[^>]*>View in MAP<span class="cpo-sr"> \(opens MAP searched for MAPICI-CN3-1-001\)/.test(htmlChips));
+  /Exhibit=MAPICI-CN3-1-001&amp;View=Non-Military"[^>]*>View in MAP<span class="cpo-sr"> \(opens MAP searched for MAPICI-CN3-1-001\)/.test(htmlChips));
 check("the row's status names each ID's builder", /MAPICI-CN-1-001 \(built by Saddleback College\), MAPICI-CN2-1-001 \(built by West Los Angeles College\), MAPICI-CN3-1-001 listed/.test(nwChips.linkStatus));
-check("the row's own Could Adopt link still opens the first verified ID", nwChips.link === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CN-1-001");
+check("the row's own Could Adopt link still opens the first verified ID", nwChips.link === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CN-1-001&View=Non-Military");
 check("the visual says the chip is the builder and MAP's table lists articulating colleges",
   /the college that built it in MAP opens MAP searched for that ID; MAP's table lists the colleges that articulated it\./.test(htmlChips));
 check("with no short-name helper a chip shows the full college name",

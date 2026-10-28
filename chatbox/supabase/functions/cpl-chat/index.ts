@@ -1958,6 +1958,8 @@ async function fetchAdoptionOpportunities(college: string | null, sb: any): Prom
 // (?Exhibit=, Malone, 2026-10-26), where Request Quick Adopt sits. The same rule as
 // the tracker's map_links.js, so a COBI panel and Sierra name the same colleges.
 const MAP_OPPORTUNITIES_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
+// The exhibit's own Non-Military card (Pedro, 2026-10-28); COBI's map_links.js carries the same.
+const MAP_OPPORTUNITIES_VIEW = "&View=Non-Military";
 const MAP_LINKS_MAX = 6;
 
 function mapAdoptLinks(idx: any, title: string): any[] {
@@ -1972,7 +1974,7 @@ function mapAdoptLinks(idx: any, title: string): any[] {
     if (seen.has(who)) continue;
     seen.add(who);
     out.push({ college: rec.college || "", id: String(id),
-      url: MAP_OPPORTUNITIES_PAGE + "?Exhibit=" + encodeURIComponent(String(id)) });
+      url: MAP_OPPORTUNITIES_PAGE + "?Exhibit=" + encodeURIComponent(String(id)) + MAP_OPPORTUNITIES_VIEW });
   }
   return out;
 }
