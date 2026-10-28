@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 10859,
-    "output_tokens": 3675,
+    "output_tokens": 3600,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3675,
+  "output_tokens": 3600,
   "output_tokens_details": {
-   "thinking_tokens": 1434
+   "thinking_tokens": 1110
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11694,
- "ms": 28635,
- "seconds": 29.1,
+ "cost_usd": 0.11544,
+ "ms": 28549,
+ "seconds": 29.9,
  "parts": null,
  "error": null,
  "score": {
@@ -114,10 +114,10 @@
    "courses": 0,
    "count": 1,
    "not_verbatim": [
-    "students will apply literary, rhetorical, and interdisciplinary studies concepts, and discipline-specific concepts (such as dance or French) in order to critically read, write, think, and research about the idea of creativity."
+    "apply literary, rhetorical, and interdisciplinary studies concepts, and discipline-specific concepts (such as dance or French) in order to critically read, write, think, and research about the idea of creativity."
    ],
    "why": [
-    "not in the catalog text as printed: students will apply literary, rhetorical, and interdisciplinary studies concepts"
+    "not in the catalog text as printed: apply literary, rhetorical, and interdisciplinary studies concepts, and discipli"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -160,7 +160,7 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "students will apply literary, rhetorical, and interdisciplinary studies concepts, and discipline-specific concepts (such as dance or French) in order to critically read, write, think, and research about the idea of creativity."
+    "apply literary, rhetorical, and interdisciplinary studies concepts, and discipline-specific concepts (such as dance or French) in order to critically read, write, think, and research about the idea of creativity."
    ],
    "careers": []
   },
@@ -171,8 +171,8 @@
     "minimum": 6,
     "option_group": null,
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -197,8 +197,8 @@
     "minimum": 3,
     "option_group": null,
     "stated": {
-     "min": 3,
-     "max": 3
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -223,8 +223,8 @@
     "minimum": 9,
     "option_group": null,
     "stated": {
-     "min": 9,
-     "max": 9
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -353,7 +353,7 @@
   "missing_explained": [
    {
     "code": "ANTHR 110",
-    "why": "not in the Creativity option text"
+    "why": "not in the text"
    },
    {
     "code": "ART 130",
@@ -361,7 +361,7 @@
    },
    {
     "code": "ENGL 103H",
-    "why": "honors twin not printed in the text"
+    "why": "honors twin not named in the section"
    },
    {
     "code": "ENGL 114",
@@ -377,15 +377,15 @@
    },
    {
     "code": "HUMAN 105H",
-    "why": "honors twin not printed in the Creativity option"
+    "why": "named only in the Liberal Arts: Arts and Humanities section"
    },
    {
     "code": "HUMAN 111",
-    "why": "not in the Creativity option text"
+    "why": "named only in the Liberal Arts: Arts and Humanities section"
    },
    {
     "code": "HUMAN 115",
-    "why": "not in the Creativity option text"
+    "why": "named only in the Liberal Arts: Arts and Humanities section"
    },
    {
     "code": "HUMAN 115H",
@@ -393,11 +393,11 @@
    },
    {
     "code": "HUMAN 117H",
-    "why": "honors twin not printed in the text"
+    "why": "honors twin not named in the section"
    },
    {
     "code": "HUMAN 125",
-    "why": "not in the Creativity option text"
+    "why": "named only in the Liberal Arts: Arts and Humanities section"
    },
    {
     "code": "HUMAN 125H",
@@ -405,7 +405,7 @@
    },
    {
     "code": "HUMAN 135",
-    "why": "not in the Creativity option text"
+    "why": "named only in the Liberal Arts: Arts and Humanities section"
    },
    {
     "code": "HUMAN 140H",
@@ -413,39 +413,39 @@
    },
    {
     "code": "HUMAN 145",
-    "why": "not in the Creativity option text"
+    "why": "named only in the Liberal Arts: Arts and Humanities section"
    },
    {
     "code": "HUMAN140",
-    "why": "not in the Creativity option text"
+    "why": "named only in the Liberal Arts: Arts and Humanities section (as HUMAN 140)"
    },
    {
     "code": "MUSIC 125",
-    "why": "not in the Creativity option text"
+    "why": "named only in the Liberal Arts: Arts and Humanities section"
    },
    {
     "code": "MUSIC 126",
-    "why": "not in the Creativity option text"
+    "why": "named only in the Liberal Arts: Arts and Humanities section"
    },
    {
     "code": "THTR 103",
-    "why": "catalog prints T ART 103 (likely same course under old subject code)"
+    "why": "catalog prints T ART 103 instead; likely the same course under a different subject code"
    },
    {
     "code": "THTR 104",
-    "why": "catalog prints T ART 104 (likely same course under old subject code)"
+    "why": "catalog prints T ART 104 instead; likely the same course under a different subject code"
    },
    {
     "code": "THTR 109",
-    "why": "catalog prints T ART 109 (likely same course under old subject code)"
-   },
-   {
-    "code": "THTR 123",
-    "why": "catalog prints T ART 123 (likely same course under old subject code)"
+    "why": "catalog prints T ART 109 instead; likely the same course under a different subject code"
    },
    {
     "code": "THTR 113",
-    "why": "not in the text"
+    "why": "not in this section (T ART 113 appears only in Liberal Arts: Arts and Humanities)"
+   },
+   {
+    "code": "THTR 123",
+    "why": "catalog prints T ART 123 instead; likely the same course under a different subject code"
    },
    {
     "code": "THTR 171",
@@ -461,14 +461,14 @@
    }
   ],
   "notes": [
-   "The catalog prints no units beside any course and no total for the major or degree; course units are null.",
-   "The program learning outcome is printed once for the Interdisciplinary Humanities AA degree as a whole; the Creativity option shares it.",
-   "The third block requires courses from at least three different disciplines.",
-   "Catalog prints theatre courses as 'T ART' while the closed list uses THTR; T ART 103/104/109/123 likely correspond to THTR 103/104/109/123 but were marked as catalog additions because the codes differ. T ART 121 and 134 have no THTR counterpart in the closed list.",
-   "Catalog prints 'ANTHR 101'; closed list stores 'ANTHR101' (spacing only), treated as the same course.",
-   "BIOL 123 is not in the closed list."
+   "The section heading is INTERDISCIPLINARY HUMANITIES AA DEGREE with 'Option: Creativity'; only the Creativity option is printed.",
+   "No units are printed beside any course and no program total is stated; the blocks' rules (6 + 3 + 9 units) were not summed into a total.",
+   "The 9-unit block requires courses from at least three disciplines; this constraint is not captured by the schema.",
+   "The catalog uses subject code 'T ART' where the closed list uses 'THTR'; T ART codes were marked as catalog additions. Reviewer should confirm whether they are the same courses (THTR 103, 104, 109, 123 titles match likely equivalents).",
+   "ANTHR 101 matched to closed-list entry 'ANTHR101' (spacing difference only).",
+   "The outcome's lead-in 'Upon completion of this program, students will' was removed; the outcome is a single sentence in the source. Ligature/line-break hyphenation normalized ('discipline-speciﬁ c' -> 'discipline-specific', 'interdisciplin-ary' -> 'interdisciplinary').",
+   "No general education pattern, degree total or careers are printed in this section."
   ]
  },
- "extracted_run": 40696243319,
- "read_run": "39063367252"
+ "extracted_run": "40704760867"
 }

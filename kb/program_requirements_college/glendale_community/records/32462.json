@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11014,
-    "output_tokens": 3476,
+    "output_tokens": 3616,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3476,
+  "output_tokens": 3616,
   "output_tokens_details": {
-   "thinking_tokens": 1502
+   "thinking_tokens": 1446
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11358,
- "ms": 27338,
- "seconds": 27.7,
+ "cost_usd": 0.11638,
+ "ms": 27702,
+ "seconds": 28.2,
  "parts": null,
  "error": null,
  "score": {
@@ -52,19 +52,19 @@
    "missing": [
     "PSYCH104"
    ],
-   "unexplained": [
-    "PSYCH104"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
    "count": 1,
    "codes": [
     "PSYC104"
    ],
-   "flagged": [],
-   "pass": false
+   "flagged": [
+    "PSYC104"
+   ],
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -154,7 +154,7 @@
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "STAT C1000",
@@ -248,7 +248,7 @@
         "catalog_addition": false
        }
       ],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "PSYC 106",
@@ -349,35 +349,35 @@
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "PSYCH 110",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "PSYCH 113",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "PSYCH 115",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "PSYCH 131",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "SOC 101",
@@ -396,17 +396,45 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "PSYC 200",
+    "why": "catalog prints it as PSYCH 200 (likely same course)"
+   },
+   {
+    "code": "PSYCH 104",
+    "why": "catalog prints it as PSYC 104 (likely same course)"
+   },
+   {
+    "code": "PSYC 105",
+    "why": "catalog prints it as PSYCH 105 (likely same course)"
+   },
+   {
+    "code": "PSYC 110",
+    "why": "catalog prints it as PSYCH 110 (likely same course)"
+   },
+   {
+    "code": "PSYC 113",
+    "why": "catalog prints it as PSYCH 113 (likely same course)"
+   },
+   {
+    "code": "PSYC 115",
+    "why": "catalog prints it as PSYCH 115 (likely same course)"
+   },
+   {
+    "code": "PSYC 131",
+    "why": "catalog prints it as PSYCH 131 (likely same course)"
+   }
+  ],
   "notes": [
-   "The catalog prints no units beside individual courses, so course units are null.",
-   "The catalog mixes the prefixes PSYC and PSYCH. PSYCH 200 is read as closed-list PSYC 200 (Research Methods for Psychology). PSYCH 105, 110, 113, 115 and 131 are read as closed-list PSYC 105, 110, 113, 115 and 131. PSYC 104 is read as closed-list PSYCH 104 (Social Psychology). These are not flagged as catalog additions; a reviewer should confirm.",
-   "'STAT C 1000H' is printed with a space (a PDF extraction artifact) and is recorded as STAT C1000H.",
-   "List B also allows any course from List A not already used. List C also allows any course from List A or B not already used. Those courses are not repeated in the later blocks.",
-   "The total 'Required Units for Major: 20 - 25 units*' has an asterisk whose footnote is not in the text.",
-   "No degree total and no GE pattern are printed in this section.",
-   "Ligature artifacts in the outcomes ('aﬀ ect', 'speciﬁ c') are rendered as 'affect' and 'specific'. The program learning outcomes are printed inline after a lead-in sentence."
+   "The catalog prints no units beside any course; units are null throughout.",
+   "Subject prefixes PSYC/PSYCH are inconsistent in the catalog versus the closed list; codes recorded as printed and flagged as catalog additions (PSYCH 200, PSYC 104, PSYCH 105/110/113/115/131). Reviewer should confirm these are the closed-list PSYC/PSYCH courses.",
+   "'STAT C 1000H' printed with a space; recorded as STAT C1000H.",
+   "List B may also be satisfied by any List A course not already used; List C may also be satisfied by any List A or List B course not already used. Those courses are not repeated in the List B/C blocks.",
+   "Required Units for Major '20 - 25 units*' carries an asterisk whose footnote is not in the extracted text.",
+   "No general education pattern or degree total printed in this section.",
+   "Outcomes text had ligature/spacing artifacts ('aﬀ ect', 'speciﬁ c') normalized to 'affect' and 'specific'."
   ]
  },
- "extracted_run": 40696243319,
- "read_run": "39063367252"
+ "extracted_run": "40704760867"
 }

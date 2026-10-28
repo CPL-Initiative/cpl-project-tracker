@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11842,
-    "output_tokens": 7226,
+    "output_tokens": 6916,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 7226,
+  "output_tokens": 6916,
   "output_tokens_details": {
-   "thinking_tokens": 1969
+   "thinking_tokens": 1704
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.19189,
- "ms": 53648,
- "seconds": 54.2,
+ "cost_usd": 0.18569,
+ "ms": 49694,
+ "seconds": 50.2,
  "parts": null,
  "error": null,
  "score": {
@@ -618,7 +618,7 @@
       "catalog_addition": true
      },
      {
-      "code": "POLSC1000",
+      "code": "POLS C1000",
       "units": null,
       "units_max": null,
       "alternatives": [],
@@ -688,12 +688,12 @@
       "catalog_addition": false
      },
      {
-      "code": "PSYCC1000",
+      "code": "PSYC C1000",
       "units": null,
       "units_max": null,
       "alternatives": [
        {
-        "code": "PSYCC1000H",
+        "code": "PSYC C1000H",
         "units": null,
         "catalog_addition": false
        }
@@ -915,29 +915,27 @@
   "missing_explained": [
    {
     "code": "COMM 108",
-    "why": "catalog prints SPCH 108 instead; likely the same course under an older subject code"
+    "why": "catalog prints it as SPCH 108 (recorded as catalog addition)"
    },
    {
     "code": "COMM 115",
-    "why": "catalog prints SPCH 115 instead; likely the same course under an older subject code"
+    "why": "catalog prints it as SPCH 115 (recorded as catalog addition)"
    },
    {
     "code": "COMM 120",
-    "why": "catalog prints SPCH 120 instead; likely the same course under an older subject code"
+    "why": "catalog prints it as SPCH 120 (recorded as catalog addition)"
    }
   ],
   "notes": [
-   "The section prints no units beside any course and no program total; the only figure is the block rule 'Select a minimum of 18 units', recorded as the block minimum. total_units left null rather than computed.",
-   "Block also requires courses from at least two disciplines.",
-   "Honors courses (ANTHR 102H, ECON 102H, HIST 102H/111H/118H/133H, LING 101H/102H/103H, PSYCC1000H, PSYCH 104H, SOC 101H) recorded as alternatives of their non-honors twins.",
-   "Codes kept as printed: 'POL S' (closed list mostly writes POLS 103, POLS 104, POLS170, etc.), 'POLSC1000' (closed list POLS C1000), 'PSYCC1000'/'PSYCC1000H' (closed list PSYC C1000/C1000H), 'PSYCH 104H'-'PSYCH 150' (closed list PSYC 104H, PSYC 105, etc.); these were treated as matching closed-list courses, not additions.",
-   "PSYCH 200 and MCOMM 101 are not in the closed list; marked catalog_addition.",
-   "SPCH 108, 115, 120 printed in the catalog appear to correspond to closed-list COMM 108, 115, 120 (subject renamed); marked as additions, reviewer should confirm.",
-   "Catalog prints 'LING 101, 101H, 102; 102H' with a stray semicolon; read as LING 102H.",
-   "Outcomes are printed as running prose; split at sentence boundaries into three outcomes. PDF ligature artifact 'e ﬀ ectively' transcribed as 'effectively'.",
-   "No careers named in the section."
+   "The catalog prints no units beside any course; units are null throughout. No program total is printed beyond the rule 'Select a minimum of 18 units', recorded as the block minimum; total_units left null.",
+   "The rule also requires courses from at least two disciplines.",
+   "Honors twins listed separately in the catalog (e.g., ANTHR 102, 102H) are recorded as one entry with the honors course as an alternative.",
+   "Subject spellings differ from the closed list but were matched as the same courses: catalog 'POL S 103/104/108/111/114/115/170/171' vs closed list 'POLS 103' etc. and 'POLS170'; catalog 'PSYCH 104H/105/106/113/115/131/150' vs closed list 'PSYC'. Catalog prints 'POLSC1000' and 'PSYCC1000, 1000H' without a space; recorded as POLS C1000, PSYC C1000 and PSYC C1000H.",
+   "PSYCH 200 and MCOMM 101 are in the catalog list but not in the closed list. SPCH 108, 115, 120 appear to correspond to closed-list COMM 108, 115, 120; reviewer should confirm.",
+   "Catalog text prints 'LING 101, 101H, 102; 102H' with a stray semicolon; read as LING 102H.",
+   "Outcomes are run into the description paragraph; split into three sentences as printed. The PDF ligature artifact 'e ﬀ ectively' was read as 'effectively'.",
+   "No general education pattern, degree total, or careers are named in this section."
   ]
  },
- "extracted_run": 40696243319,
- "read_run": "39063367252"
+ "extracted_run": "40704760867"
 }

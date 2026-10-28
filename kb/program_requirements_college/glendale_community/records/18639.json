@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9868,
-    "output_tokens": 6450,
+    "output_tokens": 6759,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 6450,
+  "output_tokens": 6759,
   "output_tokens_details": {
-   "thinking_tokens": 2149
+   "thinking_tokens": 2422
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.16847,
- "ms": 48935,
- "seconds": 49.5,
+ "cost_usd": 0.17465,
+ "ms": 50318,
+ "seconds": 50.8,
  "parts": null,
  "error": null,
  "score": {
@@ -78,7 +78,7 @@
    "status": "incomplete",
    "computed": [
     9.0,
-    16.0
+    9.0
    ],
    "stated": [
     18.0,
@@ -149,8 +149,8 @@
   "blocks": [
    {
     "name": "LIFE SCIENCE",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "rule": "choose_units",
+    "minimum": 3,
     "option_group": null,
     "stated": {
      "min": null,
@@ -278,8 +278,8 @@
    },
    {
     "name": "PHYSICAL SCIENCES",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "rule": "choose_units",
+    "minimum": 3,
     "option_group": null,
     "stated": {
      "min": null,
@@ -449,8 +449,8 @@
    },
    {
     "name": "MATHEMATICS",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "rule": "choose_units",
+    "minimum": 3,
     "option_group": null,
     "stated": {
      "min": null,
@@ -786,17 +786,15 @@
    }
   ],
   "notes": [
-   "The rule is a single pool: select a minimum of 18 units from all lists, with at least one course (3 units) each from Life Science, Physical Sciences and Mathematics; the additional-course list counts only toward reaching 18 units, so its block minimum is left null.",
-   "The catalog prints no units beside any course; all course units are null.",
-   "PSYCH 103 and PSYCH 203 are printed with subject PSYCH; matched to closed-list PSYC 103 and PSYC 203.",
-   "Catalog prints 'STATC1000, 1000E, 1000H'; recorded as STATC1000, STATC1000E, STATC1000H and matched to closed-list STAT C1000, C1000E, C1000H.",
-   "ANTHR 101, MATH 111 and MATH 134 matched to closed-list entries ANTHR101, MATH111, MATH134 (no space).",
-   "MATH 110A, MATH 110B and MATH 133 are printed in the Mathematics list but are not in the closed list.",
-   "Honors versions were recorded as alternatives of their base course (e.g., BIOL 123/123H, GEOL 101/101H, MATH 103E/103EH, STATC1000/STATC1000H); support versions (e.g., MATH 103E+) are listed as separate entries.",
-   "Outcomes: PDF ligature artifacts ('scientiﬁ c') were read as 'scientific'; first outcome follows the lead-in 'students will be able to'.",
-   "total_units 18 taken from 'Select a minimum of 18 units'."
+   "Requirement reads 'Select a minimum of 18 units from the following, with at least one course (3 units) from Life Science, one course (3 units) from Physical Science, and one course (3 units) from Mathematics'; recorded 18 as total_units and each area block as choose_units 3. The remaining units may come from any of the three areas or from the additional-course list, which has no fixed minimum (minimum null).",
+   "The catalog prints no units beside any course; all units are null.",
+   "PSYCH 103 and PSYCH 203 in the catalog correspond to closed-list PSYC 103 and PSYC 203 (subject abbreviation differs); treated as the same courses, not additions.",
+   "Catalog prints 'STATC1000, 1000E, 1000H'; matched to closed-list STAT C1000, STAT C1000E, STAT C1000H. ANTHR 101, MATH 111, MATH 134 match closed-list entries written without a space.",
+   "Honors twins (e.g., BIOL 123H, MATH 103EH, PHY 101H, STATC1000H, GEOL 111H) recorded as alternatives; support versions (MATH 100+, 102+, 103E+, 112+) kept as separate entries as printed.",
+   "MATH 110A, MATH 110B and MATH 133 appear in the catalog but not in the closed list (catalog additions).",
+   "Program learning outcomes are printed as running text after 'Upon completion of this program, students will be able to'; split into three sentences as printed. PDF ligature artifacts ('scientiﬁ c') normalized to 'scientific'.",
+   "No general education pattern, degree total, or careers are printed in this section."
   ]
  },
- "extracted_run": 40696243319,
- "read_run": "39063367252"
+ "extracted_run": "40704760867"
 }

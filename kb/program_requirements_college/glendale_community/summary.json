@@ -2,19 +2,19 @@
  "college": "Glendale Community College",
  "programs": 317,
  "with_closed_list": 267,
- "found": 258,
- "extracted": 258,
- "errors": 0,
- "passed_machine_checks": 53,
+ "found": 260,
+ "extracted": 260,
+ "errors": 2,
+ "passed_machine_checks": 51,
  "failed": {
-  "coverage": 40,
-  "invented": 3,
-  "arithmetic": 179,
+  "coverage": 36,
+  "invented": 2,
+  "arithmetic": 180,
   "repeated": 0,
   "outcomes": 54
  },
- "cost_usd": 19.8,
- "cost_per_program": 0.0767,
+ "cost_usd": 19.78,
+ "cost_per_program": 0.0761,
  "not_found": [
   {
    "control_number": "11147",
@@ -23,15 +23,6 @@
    "near_miss": {
     "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=96",
     "coverage": 0.292
-   }
-  },
-  {
-   "control_number": "11176",
-   "title": "Theatre Arts: General",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-    "coverage": 0.118
    }
   },
   {
@@ -80,15 +71,6 @@
    }
   },
   {
-   "control_number": "30813",
-   "title": "Sociology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
-    "coverage": 0.412
-   }
-  },
-  {
    "control_number": "45068",
    "title": "Cal-GETC",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -98,5 +80,5 @@
    }
   }
  ],
- "run": "40696243319"
+ "run": "40704760867"
 }

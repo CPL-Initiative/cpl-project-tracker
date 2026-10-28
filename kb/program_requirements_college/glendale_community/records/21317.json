@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8253,
-    "output_tokens": 3059,
+    "output_tokens": 3082,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3059,
+  "output_tokens": 3082,
   "output_tokens_details": {
-   "thinking_tokens": 1080
+   "thinking_tokens": 1061
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09419,
- "ms": 23261,
- "seconds": 23.7,
+ "cost_usd": 0.09465,
+ "ms": 23950,
+ "seconds": 24.5,
  "parts": null,
  "error": null,
  "score": {
@@ -52,9 +52,11 @@
    "missing": [
     "DANCE131"
    ],
-   "unexplained": [],
+   "unexplained": [
+    "DANCE131"
+   ],
    "none_placed": false,
-   "pass": true
+   "pass": false
   },
   "invented": {
    "count": 5,
@@ -110,7 +112,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -404,21 +406,15 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "DANCE 131",
-    "why": "named only in the AA degree section, not in the AS degree or certificate section"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The section covers both the AS degree and the Certificate of Achievement; requirements are shared.",
-   "Total is printed as 'a minimum of 25 units'; recorded as 25.",
-   "The catalog prints no units beside individual courses; units left null.",
-   "Catalog prints theatre courses as 'T ART'; the closed list uses 'THTR'. T ART 101, 103, 104, 109, 123 were treated as matching THTR 101, 103, 104, 109, 123 (catalog_addition false); T ART 129 and 134 have no closed-list match. Reviewer should confirm.",
-   "DANCE 127 appears both as a required course and in the elective list ('DANCE 127 or 128'); recorded in both blocks as printed.",
-   "The program learning outcome is shared with the AA degree section on the same page and is printed as one sentence; recorded as one entry."
+   "The section heading covers both the AS degree and the certificate; this record reads it for the Certificate of Achievement. The text says 'choose additional courses to total a minimum of 25 units'; recorded as total_units 25 (stated as a minimum).",
+   "The catalog prints no units beside any course, so all course units are null.",
+   "The catalog prints 'T ART 101, 103, 104, 109, 123' while the closed list names THTR 101, 103, 104, 109, 123; these were treated as the same courses (catalog_addition false). Reviewer should confirm the T ART/THTR subject mapping. T ART 129 and 134 have no THTR match in the closed list and are marked as catalog additions.",
+   "DANCE 127 appears both in the required list and in the elective list ('DANCE 127 or 128'); recorded in both places as printed.",
+   "The program learning outcomes are printed once in the shared AS degree/certificate section (the same text appears under the AA degree); recorded for this certificate.",
+   "The preceding AA DEGREE section (Choreographic Studies and Dance Techniques) is a different award and was not read."
   ]
  },
- "extracted_run": 40696243319,
- "read_run": "39063367252"
+ "extracted_run": "40704760867"
 }

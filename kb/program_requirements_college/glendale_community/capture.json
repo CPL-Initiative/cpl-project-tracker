@@ -5,7 +5,7 @@
  "catalog_year": "2025-2026",
  "programs": 317,
  "with_closed_list": 267,
- "started": "2026-10-28T13:27:22Z",
+ "started": "2026-10-28T14:21:35Z",
  "pdf": {
   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
   "access": "ok",
@@ -14,7 +14,7 @@
   "pages_total": 303,
   "error": null,
   "chars_total": 1647209,
-  "pypdf_accepted": 258,
+  "pypdf_accepted": 260,
   "sample": [
    "p91: 'AVIATION AND TRANSPORTATION\\nCERTIFICATE\\nA VIATION ADMINISTRATION \\nThis degree or certiﬁ cate is designed for those who wish to enter \\ncivil aviation work as clerks, agents, station and traﬃ  c manag-\\ners, or ﬁ xed base operators. Program Le'",
    "p182: '   160\\nINSPECTION AND CODES FOR \\nELECTRICIANS\\n3.0  Units  \\nECT 160 is a course designed to introduce \\nthe student to the National Electrical Code \\n(NEC) using national, state and local codes.  \\nI n c l u d e d  i n  t h e  c o u r s e  a r '"
@@ -289,7 +289,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.701,
+    "coverage": 0.782,
     "opens": "[page 81] LIBERAL ARTS: SOCIAL AND BEHAVIORAL SCIENCES EMPHASIS AA DEGREE This program is designed for students who wish to have a broad knowledge of the social and behavioral sciences, and is recom- mended for transfe"
    },
    {
@@ -521,6 +521,18 @@
     "opens": "[page 68] GENERAL BUSINESS This degree is designed for students who are interested in a broad knowledge of business. Students completing this degree are interested in working in a medium or large business envi- ronment"
    },
    {
+    "control_number": "11176",
+    "pages": [
+     88
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.853,
+    "opens": "[page 88] SPORTS COACHING AS DEGREE OR CERTIFICATE T h i s d e g r e e o r c e r t iﬁ c a t e p r o v i d e s s t u d e n t s a f o u n d a t i o n i n e v i d e n c e - b a s e d c o a c h i n g t h e o r i "
+   },
+   {
     "control_number": "11177",
     "pages": [
      70
@@ -529,7 +541,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.607,
+    "coverage": 0.786,
     "opens": "[page 70] CHOREOGRAPHIC STUDIES AND DANCE TECHNIQUES AA DEGREE This program is designed to prepare students for transfer to four year institutions or to work in the dance industry. Students gain the knowledge, skills"
    },
    {
@@ -651,7 +663,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.537,
+    "coverage": 0.659,
     "opens": "[page 79] INFORMATION TECHNOLOGY AS DEGREE This degree prepares students for employment in a variety of jobs, including work as network and computer systems admin- istrators, computer support specialists and data base a"
    },
    {
@@ -754,7 +766,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.97,
+    "coverage": 1.0,
     "opens": "[page 80] IT TECHNICIAN III AS DEGREE This degree is the third stage of the statewide IT Technician path- way and equips students with the advanced IT skills required of an IT Technician. As student’s complete coursewor"
    },
    {
@@ -766,7 +778,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.655,
+    "coverage": 0.679,
     "opens": "[page 80] IT TECHNICIAN III AS DEGREE This degree is the third stage of the statewide IT Technician path- way and equips students with the advanced IT skills required of an IT Technician. As student’s complete coursewor"
    },
    {
@@ -779,7 +791,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.869,
+    "coverage": 0.935,
     "opens": "[page 81] LIBERAL ARTS: SOCIAL AND BEHAVIORAL SCIENCES EMPHASIS AA DEGREE This program is designed for students who wish to have a broad knowledge of the social and behavioral sciences, and is recom- mended for transfe"
    },
    {
@@ -815,7 +827,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.846,
+    "coverage": 0.923,
     "opens": "[page 72] COMPUTER SOFTWARE TECHNICIAN AS DEGREE OR CERTIFICATE This degree or certi ﬁ cate is designed to train students to meet the rapidly growing need for quali ﬁ ed hardware/software technicians, having a blend of"
    },
    {
@@ -827,7 +839,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.885,
+    "coverage": 0.962,
     "opens": "[page 72] COMPUTER SOFTWARE TECHNICIAN AS DEGREE OR CERTIFICATE This degree or certi ﬁ cate is designed to train students to meet the rapidly growing need for quali ﬁ ed hardware/software technicians, having a blend of"
    },
    {
@@ -1161,7 +1173,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.818,
+    "coverage": 0.909,
     "opens": "[page 95] MASTER TEACHER This curriculum is designed for those students who plan teach- ing careers in an early childhood sett ing. The program requires completion of the 27 units of Child Development curriculum plus 1"
    },
    {
@@ -1276,7 +1288,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.621,
+    "coverage": 0.793,
     "opens": "[page 70] CHOREOGRAPHIC STUDIES AND DANCE TECHNIQUES AA DEGREE This program is designed to prepare students for transfer to four year institutions or to work in the dance industry. Students gain the knowledge, skills"
    },
    {
@@ -1488,6 +1500,19 @@
     "opens": "[page 120] AS-T — MATHEMATICS The AS-T in Mathematics provides students with a strong a c a d e m i c f o u n d a t i o n i n t h e ﬁ eld and preparation for upper division baccalaureate study. Students who have c"
    },
    {
+    "control_number": "30813",
+    "pages": [
+     87,
+     88
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.549,
+    "opens": "[page 87] D. A dvanced Placement 1. CA REER LADDER a. Prerequisite requirement: Current active California VN licensure in good standing. b . R e q u i r e d p r e r e q u i s i t e c o u r s e s : S a m e "
+   },
+   {
     "control_number": "30814",
     "pages": [
      117,
@@ -1543,7 +1568,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.96,
+    "coverage": 1.0,
     "opens": "[page 116] AS-T — ADMINISTRATION OF JUSTICE The AS-T in Administration of Justice provides students with a strong academic foundation in the ﬁ eld and prepara- tion for upper division baccalaureate study. Students who "
    },
    {
@@ -1632,7 +1657,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.871,
+    "coverage": 1.0,
     "opens": "[page 122] AA-T — PSYCHOLOGY T h e A A - T i n P s y c h o l o g y p r o v i d e s s t u d e n t s w i t h a s t r o n g academic foundation in the ﬁ eld and preparation for upper division baccalaureate study."
    },
    {
@@ -1672,23 +1697,20 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.971,
+    "coverage": 1.0,
     "opens": "[page 116] AA-T — ANTHROPOLOGY The AA-T in Anthropology provides students with a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students who have completed the AA - T i"
    },
    {
     "control_number": "32707",
     "pages": [
-     263,
-     264,
-     265,
-     266
+     123
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.909,
-    "opens": "[page 263] 104 ACTING FUNDAMENTALS II 3.0 Units THTR 104 follows THTR 103, and continues the exploration of theories and techniques used to interpret dramatic writing through the acting of scenes and monologues."
+    "coverage": 0.955,
+    "opens": "[page 123] AA-T — THEATRE ARTS The AA-T in Theatre Arts provides students with a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students who have completed the AA-T in "
    },
    {
     "control_number": "32738",
@@ -1805,30 +1827,26 @@
    {
     "control_number": "35473",
     "pages": [
-     262,
-     263,
-     264,
-     265
+     88
     ],
     "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.708,
-    "opens": "[page 262] THEATRE ARTS T h e a t re A r t s c o nt a i n s s e v e n f a m i li e s (S e e p age 1 2 3 for more information on course families): • Acting (THTR 100, 103, 104, 111, 140) • Directing, Playwriting"
+    "coverage": 0.917,
+    "opens": "[page 88] SPORTS COACHING AS DEGREE OR CERTIFICATE T h i s d e g r e e o r c e r t iﬁ c a t e p r o v i d e s s t u d e n t s a f o u n d a t i o n i n e v i d e n c e - b a s e d c o a c h i n g t h e o r i "
    },
    {
     "control_number": "35585",
     "pages": [
-     262,
-     263
+     114
     ],
     "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 262] THEATRE ARTS T h e a t re A r t s c o nt a i n s s e v e n f a m i li e s (S e e p age 1 2 3 for more information on course families): • Acting (THTR 100, 103, 104, 111, 140) • Directing, Playwriting"
+    "opens": "[page 114] TECHNICAL THEATRE CERTIFICATE NON-DEGREE This certi ﬁ cate provides training in basic technical theatre skills for career em p loyment in prod uction and performance within the theatre industry. Students mu"
    },
    {
     "control_number": "35597",
@@ -2372,7 +2390,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.769,
+    "coverage": 0.885,
     "opens": "[page 122] AA-T — PSYCHOLOGY T h e A A - T i n P s y c h o l o g y p r o v i d e s s t u d e n t s w i t h a s t r o n g academic foundation in the ﬁ eld and preparation for upper division baccalaureate study."
    },
    {
@@ -2450,7 +2468,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.96,
+    "coverage": 1.0,
     "opens": "[page 88] SPORTS COACHING AS DEGREE OR CERTIFICATE T h i s d e g r e e o r c e r t iﬁ c a t e p r o v i d e s s t u d e n t s a f o u n d a t i o n i n e v i d e n c e - b a s e d c o a c h i n g t h e o r i "
    },
    {
@@ -2462,7 +2480,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.96,
+    "coverage": 1.0,
     "opens": "[page 88] SPORTS COACHING AS DEGREE OR CERTIFICATE T h i s d e g r e e o r c e r t iﬁ c a t e p r o v i d e s s t u d e n t s a f o u n d a t i o n i n e v i d e n c e - b a s e d c o a c h i n g t h e o r i "
    },
    {
@@ -2888,7 +2906,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.938,
+    "coverage": 1.0,
     "opens": "[page 102] ADVANCED ESL: LANGUAGE & COMMUNICATION PATHWAY The Advanced ESL: Language & Communication Pathway certiﬁ cate is designed to prepare non-native English speakers to succeed in Language and Communication acad"
    },
    {
@@ -3311,12 +3329,12 @@
   "unproven": []
  },
  "loads": 1,
- "seconds": 213.9,
- "found": 258,
+ "seconds": 211.9,
+ "found": 260,
  "by_method": {
   "no_closed_list": 50,
-  "not_found": 9,
-  "pdf_pages": 258
+  "not_found": 7,
+  "pdf_pages": 260
  },
  "shared_pages": {
   "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65": [
@@ -3382,9 +3400,11 @@
   ],
   "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88": [
    "02569",
+   "11176",
    "17645",
    "19570",
    "21308",
+   "35473",
    "39910",
    "39912"
   ],
@@ -3539,6 +3559,7 @@
   ],
   "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=114": [
    "19366",
+   "35585",
    "40808"
   ],
   "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93": [
@@ -3621,11 +3642,8 @@
   ],
   "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123": [
    "32394",
+   "32707",
    "33598"
-  ],
-  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=262": [
-   "35473",
-   "35585"
   ],
   "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=100": [
    "36416",
@@ -3685,15 +3703,6 @@
    }
   },
   {
-   "control_number": "11176",
-   "title": "Theatre Arts: General",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-    "coverage": 0.118
-   }
-  },
-  {
    "control_number": "19556",
    "title": "Bookkeeping",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -3739,15 +3748,6 @@
    }
   },
   {
-   "control_number": "30813",
-   "title": "Sociology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
-    "coverage": 0.412
-   }
-  },
-  {
    "control_number": "45068",
    "title": "Cal-GETC",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -3759,14 +3759,14 @@
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 26,
-  "0.8-1.0": 44,
-  "1.0": 188
+  "0.5-0.8": 25,
+  "0.8-1.0": 40,
+  "1.0": 195
  },
  "would_extract": {
   "against": "kb/program_requirements_college/glendale_community",
-  "kept": 238,
-  "programs": 20,
+  "kept": 233,
+  "programs": 27,
   "list": [
    {
     "control_number": "02550",
@@ -3774,58 +3774,108 @@
     "award": "A.S. Degree",
     "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=89",
     "coverage": 0.667,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=128",
-    "was_coverage": 0.889,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=89",
+    "was_coverage": 0.667,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "02557",
-    "title": "Mass Communications",
+    "control_number": "02603",
+    "title": "Social Science",
     "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-    "coverage": 0.875,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-    "was_coverage": 0.75,
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+    "coverage": 0.782,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+    "was_coverage": 0.701,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "02587",
-    "title": "English",
+    "control_number": "11176",
+    "title": "Theatre Arts: General",
     "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-    "coverage": 0.6,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-    "was_coverage": 0.533,
-    "was_method": "pdf_pages"
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+    "coverage": 0.853,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "02588",
-    "title": "Speech/Communication",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-    "was_coverage": 0.917,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11155",
-    "title": "Mass Communications",
+    "control_number": "11177",
+    "title": "Choreographic Studies & Dance Technique",
     "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-    "was_coverage": 0.857,
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+    "coverage": 0.786,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+    "was_coverage": 0.607,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "21303",
-    "title": "Mass Communications",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+    "control_number": "12503",
+    "title": "Interdisciplinary Humanities: Creativity",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+    "coverage": 0.659,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+    "was_coverage": 0.537,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18638",
+    "title": "Liberal Arts: Arts and Humanities Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-    "was_coverage": 0.857,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
+    "was_coverage": 0.97,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18639",
+    "title": "Liberal Arts: Science and Mathematics Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
+    "coverage": 0.679,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
+    "was_coverage": 0.655,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18640",
+    "title": "Liberal Arts: Social and Behavioral Sciences Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+    "coverage": 0.935,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+    "was_coverage": 0.869,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "19110",
+    "title": "Dance Teaching",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+    "coverage": 0.923,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+    "was_coverage": 0.846,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "19111",
+    "title": "Dance Teaching",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+    "coverage": 0.962,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+    "was_coverage": 0.885,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21302",
+    "title": "Cinematography and Editing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=95",
+    "coverage": 0.909,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=95",
+    "was_coverage": 0.818,
     "was_method": "pdf_pages"
    },
    {
@@ -3834,8 +3884,18 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109",
     "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21317",
+    "title": "Choreographic Studies & Dance Technique",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+    "coverage": 0.793,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+    "was_coverage": 0.621,
     "was_method": "pdf_pages"
    },
    {
@@ -3844,108 +3904,118 @@
     "award": "Noncredit program",
     "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=276",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=277",
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=276",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "33295",
-    "title": "Journalism",
+    "control_number": "30813",
+    "title": "Sociology",
     "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
-    "coverage": 0.8,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=87",
+    "coverage": 0.549,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "37952",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=118",
-    "coverage": 0.933,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=118",
-    "was_coverage": 0.9,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "38144",
-    "title": "English: Creative Writing",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+    "control_number": "32168",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-    "was_coverage": 0.923,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
+    "was_coverage": 0.96,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "39289",
-    "title": "Social Work and Human Services",
+    "control_number": "32462",
+    "title": "Psychology",
     "award": "A.A- T Degree",
     "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
-    "coverage": 0.938,
+    "coverage": 1.0,
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
-    "was_coverage": 0.906,
+    "was_coverage": 0.871,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "41767",
-    "title": "Biotechnology",
+    "control_number": "32607",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
+    "was_coverage": 0.971,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32707",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
+    "coverage": 0.955,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=263",
+    "was_coverage": 0.909,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35473",
+    "title": "Theatre Arts: Acting",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+    "coverage": 0.917,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=262",
+    "was_coverage": 0.708,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35585",
+    "title": "Technical Theatre",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=114",
+    "coverage": 1.0,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=262",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38717",
+    "title": "Social Justice: Gender Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+    "coverage": 0.885,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+    "was_coverage": 0.769,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39910",
+    "title": "Sports Coaching",
     "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "was_coverage": 0.909,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+    "was_coverage": 0.96,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "41768",
-    "title": "Biotechnology Research Lab Assistant",
+    "control_number": "39912",
+    "title": "Sports Coaching",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
-    "was_coverage": 0.889,
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+    "was_coverage": 0.96,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "41775",
-    "title": "Biotechnology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41776",
-    "title": "Biotechnology Research Lab Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "was_coverage": 0.909,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44486",
-    "title": "Advanced ESL: Language & Communication Pathway",
+    "control_number": "44489",
+    "title": "Advanced ESL: Visual & Performing Arts Pathway",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
-    "coverage": 0.824,
+    "coverage": 1.0,
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
-    "was_coverage": 0.765,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44487",
-    "title": "Advanced ESL: People, Power & Perspective Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
-    "coverage": 0.905,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
-    "was_coverage": 0.857,
+    "was_coverage": 0.938,
     "was_method": "pdf_pages"
    },
    {
@@ -3954,7 +4024,7 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3964,11 +4034,11 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    }
   ]
  },
- "run": "40696243319"
+ "run": "40704760867"
 }

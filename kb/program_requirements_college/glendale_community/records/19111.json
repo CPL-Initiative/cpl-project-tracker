@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8214,
-    "output_tokens": 3124,
+    "output_tokens": 2856,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3124,
+  "output_tokens": 2856,
   "output_tokens_details": {
-   "thinking_tokens": 1097
+   "thinking_tokens": 817
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09534,
- "ms": 23568,
- "seconds": 24.1,
+ "cost_usd": 0.08998,
+ "ms": 21903,
+ "seconds": 22.3,
  "parts": null,
  "error": null,
  "score": {
@@ -221,7 +221,7 @@
     "name": "Option One",
     "rule": "all",
     "minimum": null,
-    "option_group": "Technique options",
+    "option_group": "Select one of three options",
     "stated": {
      "min": null,
      "max": null
@@ -254,7 +254,7 @@
     "name": "Option Two",
     "rule": "all",
     "minimum": null,
-    "option_group": "Technique options",
+    "option_group": "Select one of three options",
     "stated": {
      "min": null,
      "max": null
@@ -287,7 +287,7 @@
     "name": "Option Three",
     "rule": "all",
     "minimum": null,
-    "option_group": "Technique options",
+    "option_group": "Select one of three options",
     "stated": {
      "min": null,
      "max": null
@@ -380,7 +380,7 @@
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "SOC S 101",
@@ -394,24 +394,31 @@
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "PSYC 106",
+    "why": "catalog prints PSYCH 106 in the electives list; likely the same course under an older subject code"
+   },
+   {
+    "code": "THTR 173",
+    "why": "catalog prints T ART 173 in the electives list; likely the same course under an older subject code"
+   }
+  ],
   "notes": [
-   "The section covers both the A.S. degree and the certificate ('AS DEGREE OR CERTIFICATE'); the same requirements, total and outcomes are shared by both awards.",
-   "The catalog prints no units beside any course; units are left null.",
-   "'HLTH 101 and KIN 157 or BIOL 120' was read as HLTH 101 required plus KIN 157 or BIOL 120; it could also be read as (HLTH 101 and KIN 157) or BIOL 120. Reviewer should check.",
-   "The electives heading prints 'Select ix units'; read as 'Select six units'.",
-   "Catalog prints 'PSYCH 106', recorded as printed and treated as the closed list's PSYC 106 (Developmental Psychology); catalog_addition set false.",
-   "Catalog prints 'T ART 173', recorded as printed and treated as the closed list's THTR 173 (Lighting Design Fundamentals); catalog_addition set false.",
-   "The program learning outcome is printed as one sentence after the lead-in 'Upon completion of this program, students will be able to'; recorded as one entry with line-break hyphenation (stu-dios) and ligature spacing removed.",
+   "The catalog prints no units beside any course in this section, so all course units are null.",
+   "The section covers both the AS degree and the certificate; the same requirements, total (30-31 units) and program learning outcomes are shared by both awards.",
+   "The outcomes are printed as a single run-on sentence after the lead-in 'Upon completion of this program, students will be able to'; recorded as one entry without splitting.",
+   "'HLTH 101 and KIN 157 or BIOL 120' read as HLTH 101 required plus KIN 157 or BIOL 120; it could alternatively mean (HLTH 101 and KIN 157) or BIOL 120. Reviewer should check.",
+   "Elective heading printed as 'Select ix units' (OCR); read as six units.",
+   "PSYCH 106 and T ART 173 are recorded as printed with catalog_addition true; they likely correspond to closed-list PSYC 106 and THTR 173.",
    "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": 40696243319,
- "read_run": "39063367252"
+ "extracted_run": "40704760867"
 }

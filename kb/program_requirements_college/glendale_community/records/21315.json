@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Music",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8681,
+  "input_tokens": 10737,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8681,
-    "output_tokens": 4136,
+    "input_tokens": 10737,
+    "output_tokens": 4128,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4136,
+  "output_tokens": 4128,
   "output_tokens_details": {
-   "thinking_tokens": 964
+   "thinking_tokens": 907
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11744,
- "ms": 29405,
- "seconds": 29.9,
+ "cost_usd": 0.12551,
+ "ms": 30596,
+ "seconds": 31.2,
  "parts": null,
  "error": null,
  "score": {
@@ -138,7 +138,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "MUSIC AS DEGREE OR CERTIFICATE",
+   "section_heading": "MUSIC CERTIFICATE",
    "measure": "units",
    "total_units": {
     "min": 22,
@@ -642,12 +642,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section 'MUSIC AS DEGREE OR CERTIFICATE' is shared by the A.S. degree and the certificate; its minimum 22-unit total and its program learning outcomes are recorded for the certificate as shared.",
-   "The outcomes are printed as prose following the lead-in 'Upon completion of this program, students will be able to'; the first outcome is recorded without that lead-in.",
-   "The catalog prints no units beside individual courses, so course units are null.",
-   "MUSIC 121, 122 and 127 appear both in the 'Select one course' history list and in the Electives list.",
-   "The separate 'MUSIC AA DEGREE' section (26 units) was not used."
+   "Read the MUSIC CERTIFICATE section (page 109), not the separate non-degree Music History/Theory/Piano/Voice/World Music certificates that follow.",
+   "The catalog prints no units beside individual courses, so course units are null; block totals come from the printed parentheticals ('2 units', '8 units required').",
+   "Total of 22 units is stated as 'a minimum of 22 units'.",
+   "MUSIC 121, 122 and 127 appear both in the history choice list and in the electives list; recorded in each block as printed.",
+   "The first outcome follows the lead-in 'Upon completion of this program, students will be able to'; the lead-in was dropped.",
+   "'music industry' recorded as a career field from 'students who will be entering the music industry'; reviewer may check.",
+   "Note says students can also earn an AS by completing General Education requirements; no degree total printed."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "40704760867"
 }

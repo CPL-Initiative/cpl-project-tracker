@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Technical Theatre",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=262",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=114",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11492,
+  "input_tokens": 7882,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11492,
-    "output_tokens": 1000,
+    "input_tokens": 7882,
+    "output_tokens": 2493,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,82 +30,80 @@
     "model": null
    }
   ],
-  "output_tokens": 1000,
+  "output_tokens": 2493,
   "output_tokens_details": {
-   "thinking_tokens": 208
+   "thinking_tokens": 1094
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06597,
- "ms": 8383,
- "seconds": 8.8,
+ "cost_usd": 0.08139,
+ "ms": 20267,
+ "seconds": 20.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 14,
    "listed": 14,
-   "share": 0.0,
-   "missing": [
-    "THTR100",
-    "THTR101",
-    "THTR103",
-    "THTR109",
-    "THTR110",
-    "THTR121",
-    "THTR123",
-    "THTR171",
-    "THTR173",
-    "THTR180",
-    "THTR181",
-    "THTR182",
-    "THTR183",
-    "THTR184"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "TART122",
+    "TART172"
+   ],
+   "flagged": [
+    "TART122",
+    "TART172"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    20.0,
+    20.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": false,
+   "count": 1,
+   "not_verbatim": [
+    "students will apply skills and knowledge of theatre in preparation for transferability or vocation; be able to analyze a play from script to performance; be able to identify theatre terms and occupations; and will identify theatre as a collaborative art form."
+   ],
+   "why": [
+    "not in the catalog text as printed: students will apply skills and knowledge of theatre in preparation for transfera"
+   ],
+   "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
+   "count": 1,
+   "not_verbatim": [
+    "production and performance within the theatre industry"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -114,11 +112,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "THEATRE ARTS",
+   "section_heading": "TECHNICAL THEATRE CERTIFICATE NON-DEGREE",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 20,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -135,74 +133,184 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "students will apply skills and knowledge of theatre in preparation for transferability or vocation; be able to analyze a play from script to performance; be able to identify theatre terms and occupations; and will identify theatre as a collaborative art form."
+   ],
+   "careers": [
+    "production and performance within the theatre industry"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "THTR 100",
-    "why": "appears only in course descriptions and family list; certificate requirements not in text"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "T ART 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 171",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 173",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "THTR 101",
-    "why": "appears only in course descriptions; certificate requirements not in text"
+    "name": "Three units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "T ART 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 172",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "THTR 103",
-    "why": "appears only in course descriptions and family list; certificate requirements not in text"
+    "name": "Four units from the following",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "T ART 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 181",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 182",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 183",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 184",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "THTR 109",
-    "why": "appears only in course descriptions and family list; certificate requirements not in text"
-   },
-   {
-    "code": "THTR 110",
-    "why": "appears only in course descriptions and family list; certificate requirements not in text"
-   },
-   {
-    "code": "THTR 121",
-    "why": "appears only in course descriptions and family list; certificate requirements not in text"
-   },
-   {
-    "code": "THTR 123",
-    "why": "appears only in course descriptions and family list; certificate requirements not in text"
-   },
-   {
-    "code": "THTR 171",
-    "why": "named only in course family list; certificate requirements not in text"
-   },
-   {
-    "code": "THTR 173",
-    "why": "named only in course family list; certificate requirements not in text"
-   },
-   {
-    "code": "THTR 180",
-    "why": "named only in course family list; certificate requirements not in text"
-   },
-   {
-    "code": "THTR 181",
-    "why": "named only in course family list; certificate requirements not in text"
-   },
-   {
-    "code": "THTR 182",
-    "why": "named only in course family list; certificate requirements not in text"
-   },
-   {
-    "code": "THTR 183",
-    "why": "named only in course family list; certificate requirements not in text"
-   },
-   {
-    "code": "THTR 184",
-    "why": "named only in course family list; certificate requirements not in text"
+    "name": "Four units from the following",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "T ART 109",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "T ART 123",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog pages 262-263) contains only the Theatre Arts course families list and course descriptions (THTR 47-123); it does not include the Technical Theatre Certificate of Achievement requirements, total units, outcomes or careers. The program requirements section of the catalog should be located and read.",
-   "Course description prints THTR 121 Stage Scenic Design as 3.0 units, while the closed list stores 2 units.",
-   "No blocks recorded because no requirement list for this award appears in the text."
+   "The catalog prints the subject as 'T ART' while the closed list uses 'THTR'; courses with matching numbers (100, 101, 103, 109, 110, 121, 123, 171, 173, 180-184) were treated as the same courses (catalog_addition false). T ART 172 and T ART 122 have no THTR counterpart in the closed list and are marked as catalog additions.",
+   "The catalog prints no units beside individual courses, so course units are null.",
+   "The program learning outcomes are printed as one sentence joined by semicolons; recorded as a single entry word for word (lead-in 'Upon completion of this program,' omitted, hyphenation 'transfer-ability' joined).",
+   "Total of 20 units comes from 'Students must complete all required courses for a minimum of 20 units.'",
+   "The page labels this a 'CERTIFICATE NON-DEGREE'; the award requested is a Certificate of Achievement (16-<30 units), consistent with the 20-unit minimum."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "40704760867"
 }
