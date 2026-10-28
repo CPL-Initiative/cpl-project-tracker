@@ -16210,8 +16210,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 475,
+   "count": 476,
    "docs": [
+    {
+     "created": "2026-10-28",
+     "governs": [],
+     "n": 507,
+     "path": "docs/session_507_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "eacr",
+      "map-links",
+      "sierra"
+     ],
+     "title": "Session 507 handoff: Glendale on its catalog's own words (45 to 80 passing); MAP links open the Non-Military card; Sierra deployed",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-28",
      "governs": [],
@@ -24353,5 +24370,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1292
+ "total": 1293
 }
