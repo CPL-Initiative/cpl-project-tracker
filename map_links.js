@@ -25,6 +25,9 @@
   "use strict";
 
   var MAP_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
+  // MAP opens the Non-Military Credit tab on the exhibit's own card (Pedro, 2026-10-28: View=Military or
+  // Non-Military); without it the page opens on Course Credit. Every ID the index holds is non-military.
+  var MAP_VIEW = "&View=Non-Military";
   var MAX = 6;
   var index = null, loading = null, pending = false;
 
@@ -71,7 +74,7 @@
   function chip(id) {
     var rec = index.found[String(id).toUpperCase()] || {};
     var college = rec.college || "";
-    return '<a class="cpl-mapchip" href="' + esc(MAP_PAGE + "?Exhibit=" + encodeURIComponent(id)) +
+    return '<a class="cpl-mapchip" href="' + esc(MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + MAP_VIEW) +
       '" target="_blank" rel="noopener">' + esc(college ? short(college) : "View in MAP") +
       '<span class="cpl-ml-sr"> (' + (college ? "built by " + esc(college) + "; " : "") +
       "opens MAP searched for " + esc(id) + ")</span></a>";
@@ -135,6 +138,7 @@
     load: load,
     fillAll: fillAll,
     MAP_PAGE: MAP_PAGE,
+    MAP_VIEW: MAP_VIEW,
     MAX: MAX
   };
   window.CPL_MAP_LINKS = api;

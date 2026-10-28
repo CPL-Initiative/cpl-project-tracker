@@ -51,8 +51,8 @@ setTimeout(() => {
   check("one chip per building college: Saddleback's two IDs give one chip", chips.length === 2);
   check("each chip is named for its builder and opens MAP searched for that exhibit's ID",
     chips[0].textContent.indexOf("West LA") === 0 &&
-    chips[0].getAttribute("href") === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CREB1-1-001" &&
-    chips[1].textContent.indexOf("Saddleback") === 0 && /\?Exhibit=MAPICI-DREB-1-001$/.test(chips[1].getAttribute("href")));
+    chips[0].getAttribute("href") === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CREB1-1-001&View=Non-Military" &&
+    chips[1].textContent.indexOf("Saddleback") === 0 && /\?Exhibit=MAPICI-DREB-1-001&View=Non-Military$/.test(chips[1].getAttribute("href")));
   check("a chip names its builder in full for a screen reader",
     / \(built by Saddleback College; opens MAP searched for MAPICI-DREB-1-001\)/.test(chips[1].textContent));
   check("a chip opens MAP in a new tab", chips[0].getAttribute("target") === "_blank" && /noopener/.test(chips[0].getAttribute("rel")));

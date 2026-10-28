@@ -61,8 +61,8 @@ setTimeout(() => {
   const west = chips.find((a) => /West LA/.test(a.textContent));
   const sadd = chips.find((a) => /Saddleback/.test(a.textContent));
   check("a chip opens MAP searched for its own ID",
-    west && west.getAttribute("href") === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CREB1-1-001" &&
-    sadd && sadd.getAttribute("href") === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-DREB1-1-001");
+    west && west.getAttribute("href") === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CREB1-1-001&View=Non-Military" &&
+    sadd && sadd.getAttribute("href") === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-DREB1-1-001&View=Non-Military");
   check("the chip sits beside its own ID",
     sadd && sadd.previousElementSibling && sadd.previousElementSibling.textContent === "MAPICI-DREB1-1-001");
   check("a chip names the builder in full for a screen reader",

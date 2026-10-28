@@ -34,7 +34,7 @@ const check = (name, cond, msg) => results.push([!!cond, name + (cond ? "" : " �
 let lifted = null, liftErr = null;
 try {
   lifted = liftBlock(src, "// ── MAP LINKS BLOCK START", "// ── MAP LINKS BLOCK END",
-    ["mapAdoptLinks", "mapLinksLine", "MAP_OPPORTUNITIES_PAGE", "MAP_LINKS_MAX"]);
+    ["mapAdoptLinks", "mapLinksLine", "MAP_OPPORTUNITIES_PAGE", "MAP_OPPORTUNITIES_VIEW", "MAP_LINKS_MAX"]);
 } catch (e) { liftErr = e; }
 check("the MAP LINKS block lifts and evaluates", lifted, liftErr && liftErr.message);
 
@@ -50,11 +50,11 @@ async function cobiLines() {
   await api.load();
   return api;
 }
-const hrefIds = (html) => [...String(html).matchAll(/\?Exhibit=([^"]+)"/g)].map((m) => decodeURIComponent(m[1]));
+const hrefIds = (html) => [...String(html).matchAll(/\?Exhibit=([^"&]+)[&"]/g)].map((m) => decodeURIComponent(m[1]));
 
 (async () => {
   if (lifted) {
-    const { mapAdoptLinks, mapLinksLine, MAP_OPPORTUNITIES_PAGE, MAP_LINKS_MAX } = lifted;
+    const { mapAdoptLinks, mapLinksLine, MAP_OPPORTUNITIES_PAGE, MAP_OPPORTUNITIES_VIEW, MAP_LINKS_MAX } = lifted;
     const api = await cobiLines();
     const titles = Object.keys(INDEX.by_title);
     let agree = 0, withLinks = 0, firstMiss = null;
@@ -70,7 +70,7 @@ const hrefIds = (html) => [...String(html).matchAll(/\?Exhibit=([^"]+)"/g)].map(
     check("the index gives most titles a link (a broken read would give none)",
       withLinks > titles.length * 0.9, `${withLinks} of ${titles.length}`);
     check("the page and the cap match COBI's",
-      MAP_OPPORTUNITIES_PAGE === api.MAP_PAGE && MAP_LINKS_MAX === api.MAX);
+      MAP_OPPORTUNITIES_PAGE === api.MAP_PAGE && MAP_OPPORTUNITIES_VIEW === api.MAP_VIEW && MAP_LINKS_MAX === api.MAX);
 
     /* ── 3. One link per builder, each a verified ID of that title ──────────── */
     let bad = null;
@@ -80,7 +80,7 @@ const hrefIds = (html) => [...String(html).matchAll(/\?Exhibit=([^"]+)"/g)].map(
       if (new Set(colleges).size !== colleges.length) { bad = `${t}: a college twice`; break; }
       for (const l of links) {
         if (!INDEX.by_title[t].includes(l.id) || !INDEX.found[l.id.toUpperCase()]) { bad = `${t}: ${l.id} unverified`; break; }
-        if (l.url !== MAP_OPPORTUNITIES_PAGE + "?Exhibit=" + encodeURIComponent(l.id)) { bad = `${t}: ${l.url}`; break; }
+        if (l.url !== MAP_OPPORTUNITIES_PAGE + "?Exhibit=" + encodeURIComponent(l.id) + "&View=Non-Military") { bad = `${t}: ${l.url}`; break; }
       }
       if (bad) break;
     }

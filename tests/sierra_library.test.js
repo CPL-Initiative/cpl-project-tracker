@@ -34,7 +34,7 @@ const PAGES = "https://cpl-initiative.github.io/cpl-project-tracker/";
 // their Pages addresses (Sam, 2026-10-25: "GitHub Pages now").
 const college = (name, made) => ({ slug: "cpl-opportunity-" + name.toLowerCase().replace(/ college$/, "").replace(/[^a-z]+/g, "-") + "-visual",
   title: name + ": CPL Opportunity Analysis", kind: "visual", occasion: "CPL college workgroup meeting, 2026-10-21", made_on: made,
-  summary: name + "'s COCI programs and courses, its MAP exhibits (AP and IB excluded), and the statewide credit recommendations it could adopt, each with a Could Adopt link to MAP.",
+  summary: name + "'s COCI programs and courses, its MAP exhibits (AP and IB excluded), and the statewide credit recommendations it could adopt, each with a Request Adopt link to MAP.",
   topics: [], url: PAGES + "cpl-opportunity/?college=" + encodeURIComponent(name), for_kind: "college", for_category: null, for_name: name });
 const PIECES = [
   { slug: "ell-iet-cpl-starting-points", title: "ELL IET CPL Starting Points", kind: "visual", occasion: "Prepare to meet with grant recipients on CPL",
