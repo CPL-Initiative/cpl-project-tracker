@@ -1195,7 +1195,7 @@
       slug: "cpl-opportunity-" + base + "-visual", title: name + ": CPL Opportunity Analysis", kind: "visual",
       occasion: occasion || null, made_on: when, version: "1", status: "draft", seen_by: "colleges",
       home: "web", url: OPPORTUNITY_PAGE + encodeURIComponent(name), file_type: "html", extent: "One page",
-      summary: name + "'s COCI programs and courses, its MAP exhibits (AP and IB excluded), and the statewide credit recommendations it could adopt, each with a Could Adopt link to MAP.",
+      summary: name + "'s COCI programs and courses, its MAP exhibits (AP and IB excluded), and the statewide credit recommendations it could adopt, each with a Request Adopt link to MAP.",
       rebuild_from: "cpl-project-tracker/college_cpl_workbook.js and library/cpl-opportunity/index.html (built in the browser from published data); the MAP team's notes for this college in library/cpl-opportunity/notes/" + base + ".json",
       note: "Live page: it rebuilds from the current data on each visit.",
       for_kind: "college", for_name: name, made_by: made, added_by: by

@@ -2,7 +2,7 @@
 """Record which exhibits MAP's public CPL Opportunities page lists, and the college that built each.
 
 WHY. The CPL opportunity workbook on My College (college_cpl_workbook.js) puts a
-"Could Adopt - View in MAP" link beside every statewide credit recommendation a
+"Request Adopt" link beside every statewide credit recommendation a
 college has not adopted (Ashley, 2026-10-20: "Only include verified, working
 links"). MAP's public dashboard has no URL that opens one exhibit card: the
 CPL Opportunities page (/insights/exhibit-courses, where Quick Adopt lives)
