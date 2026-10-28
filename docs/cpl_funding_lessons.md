@@ -690,3 +690,7 @@ A list line indented two spaces (a tab, Indent, or Tab on the line) nests under 
 ⭐ **Each row names its outcomes as chips beside its title** (Sam, 2026-10-25, S480: *"CR Priority 1 [access chip]; NC Priority 1 [access - career attainment chips]"*; `rowNameHtml()`, `.cf-goalchip` in the Base and Cap chips' ink); a title that only repeats its outcome drops, so P1 reads *Priority 1 [Access]*.
 
 `cfp_insert_self` and `cna_insert_self` require an address on the institution's or its district's domain (`cpl_funding_email_domain_ok`, from `map_college_contacts` via `cpl_funding_college_map`; a district domain is one on file for two or more of its colleges; free mail never counts; no address on file accepts any), and the page asks `cpl_funding_email_domains` first.
+
+Chaffey's large figure is mostly AP exam exhibits, which Sam called *"valid and useful"*.
+
+The timeline renders in date order (`timingOrder`).
