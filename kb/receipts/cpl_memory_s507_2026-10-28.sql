@@ -10,7 +10,7 @@ from jsonb_to_recordset($json$[
   "slug": "sam-sheet-138-faq-rulings-2026-10-28",
   "kind": "decision",
   "title": "Sam's Sheet 138 rulings: the funding FAQ, his words on seven cards, card 8 left out",
-  "summary": "Sam completed Open Asks Sheet 138 (the funding FAQ, 21 cards) at 21:16Z 2026-10-28, all his own call: his own answers on cards 2, 4, 6, 7, 9 and 17; card 1 his draft plus his added sentence (\"by screening incoming students for CPL, colleges will inevitably improve their Priority 1 outcomes and funding\"); cards 3, 5, 10 and 11-21 as revised; card 8 left out: \"Do not include this question since we are no longer linking adoption of statewide exhibits to the funding outcomes.\" S507 posted the set to FAQ_DEFAULT_PLAIN (cpl-project-tracker#2536).",
+  "summary": "Sam completed Open Asks Sheet 138 (the funding FAQ, 21 cards) at 21:16Z 2026-10-28, all his own call: his own answers on cards 2, 4, 6, 7, 9 and 17; card 1 his draft plus his added sentence (\"by screening incoming students for CPL, colleges will inevitably improve their Priority 1 outcomes and funding\"); cards 3, 5, 10 and 11-21 as revised;",
   "tags": [
    "implementation-funding",
    "funding-faq"
@@ -18,7 +18,7 @@ from jsonb_to_recordset($json$[
   "status": "verified",
   "source": "Open Asks Sheet 138 replies store; cpl-project-tracker#2536",
   "verified_by": "Sam",
-  "detail": null,
+  "detail": "Sam completed Open Asks Sheet 138 (the funding FAQ, 21 cards) at 21:16Z 2026-10-28, all his own call: his own answers on cards 2, 4, 6, 7, 9 and 17; card 1 his draft plus his added sentence (\"by screening incoming students for CPL, colleges will inevitably improve their Priority 1 outcomes and funding\"); cards 3, 5, 10 and 11-21 as revised; card 8 left out: \"Do not include this question since we are no longer linking adoption of statewide exhibits to the funding outcomes.\" S507 posted the set to FAQ_DEFAULT_PLAIN (cpl-project-tracker#2536).",
   "plain": null,
   "event_date": "2026-10-28",
   "related": null
@@ -45,7 +45,7 @@ from jsonb_to_recordset($json$[
   "slug": "sam-apportionment-in-funding-faq-2026-10-28",
   "kind": "decision",
   "title": "Sam: the FAQ names the apportionment procedure, because funding through it can get buried at colleges",
-  "summary": "Sam, Open Asks Sheet 139 card 2 (\"written\"), 22:00Z 2026-10-28: \"It arrives through the apportionment funding procedure used by the CO. It is not apportionment for CPL, which is something we hope for in the future, but it is important to use the term because funding distributed through the apportionment procedure can get buried at the colleges.\" His FAQ answer on where the funding goes posts as written; cpl_funding_calm lifts out his two phrases and no other. Narrows his 2026-10-01 ruling (\"through apportionment\" for the seed grant only) for this one answer.",
+  "summary": "Sam, Sheet 139 card 2 (\"written\"), 2026-10-28: \"it is important to use the term because funding distributed through the apportionment procedure can get buried at the colleges.\" His FAQ answer on where the funding goes posts as written; cpl_funding_calm lifts out his two phrases. Narrows his 2026-10-01 seed-grant-only ruling.",
   "tags": [
    "implementation-funding",
    "funding-vocabulary",
@@ -54,7 +54,7 @@ from jsonb_to_recordset($json$[
   "status": "verified",
   "source": "Open Asks Sheet 139 replies store; cpl-project-tracker#2536",
   "verified_by": "Sam",
-  "detail": null,
+  "detail": "Sam, Open Asks Sheet 139 card 2 (\"written\"), 22:00Z 2026-10-28: \"It arrives through the apportionment funding procedure used by the CO. It is not apportionment for CPL, which is something we hope for in the future, but it is important to use the term because funding distributed through the apportionment procedure can get buried at the colleges.\" His FAQ answer on where the funding goes posts as written; cpl_funding_calm lifts out his two phrases and no other. Narrows his 2026-10-01 ruling (\"through apportionment\" for the seed grant only) for this one answer.",
   "plain": null,
   "event_date": "2026-10-28",
   "related": null
@@ -81,7 +81,7 @@ from jsonb_to_recordset($json$[
   "slug": "a11y-sweep-s507-131-targets-2026-10-28",
   "kind": "fact",
   "title": "S507 swept all 131 a11y targets two days before the Summit: 125 passed, six shared one node",
-  "summary": "npm run a11y on main 157c3b39 (after #2533's funding forms): the ten public Summit targets, funding-film-narrated, the public pages' dark themes and every other view pass, axe-core 4.10.2 included. cobi, cobi-dark and the four funding-curator targets failed on one node, the priorities title's statute link inside its <summary>; #2536 moved it on Sam's word, and its FAQ answers wrap a long URL so the tab stays inside 390px. Re-measured clean in both themes.",
+  "summary": "npm run a11y on main 157c3b39 (after #2533's funding forms): the ten public Summit targets, funding-film-narrated, the public pages' dark themes and every other view pass, axe-core 4.10.2 included. cobi, cobi-dark and the four funding-curator targets failed on one node, the priorities title's statute link inside its <summary>;",
   "tags": [
    "a11y",
    "implementation-funding",
@@ -90,7 +90,7 @@ from jsonb_to_recordset($json$[
   "status": "proposed",
   "source": "docs/reference/lanes/cobi-dark-mode.md; cpl-project-tracker#2534, #2536",
   "verified_by": null,
-  "detail": null,
+  "detail": "npm run a11y on main 157c3b39 (after #2533's funding forms): the ten public Summit targets, funding-film-narrated, the public pages' dark themes and every other view pass, axe-core 4.10.2 included. cobi, cobi-dark and the four funding-curator targets failed on one node, the priorities title's statute link inside its <summary>; #2536 moved it on Sam's word, and its FAQ answers wrap a long URL so the tab stays inside 390px. Re-measured clean in both themes.",
   "plain": null,
   "event_date": "2026-10-28",
   "related": null
@@ -99,7 +99,7 @@ from jsonb_to_recordset($json$[
   "slug": "pitfall-two-sessions-one-sheet-number-2026-10-28",
   "kind": "pitfall",
   "title": "Two live sessions both published an Open Asks Sheet 138, and one nearly overwrote handoff 507",
-  "summary": "On 2026-10-28 S506 (funding tweaks) and S507 (a11y sweep) each built and published a Sheet 138 on the same lane within minutes, editing the same builder lines; S506 then set out to write docs/session_507_handoff.md, which already held Sam's S505 checkpoint. Caught because Sam flagged the other session. Before numbering a sheet or a handoff, run list_sessions and read the open PRs, and agree the number and one writer per file with any live session.",
+  "summary": "On 2026-10-28 S506 (funding tweaks) and S507 (a11y sweep) each built and published a Sheet 138 on the same lane within minutes, editing the same builder lines; S506 then set out to write docs/session_507_handoff.md, which already held Sam's S505 checkpoint. Caught because Sam flagged the other session.",
   "tags": [
    "scheduled-sessions",
    "decision-sheets"
@@ -107,7 +107,7 @@ from jsonb_to_recordset($json$[
   "status": "proposed",
   "source": "S507 session; samueltlee/CPLBrain#523, #524",
   "verified_by": null,
-  "detail": null,
+  "detail": "On 2026-10-28 S506 (funding tweaks) and S507 (a11y sweep) each built and published a Sheet 138 on the same lane within minutes, editing the same builder lines; S506 then set out to write docs/session_507_handoff.md, which already held Sam's S505 checkpoint. Caught because Sam flagged the other session. Before numbering a sheet or a handoff, run list_sessions and read the open PRs, and agree the number and one writer per file with any live session.",
   "plain": null,
   "event_date": "2026-10-28",
   "related": null
